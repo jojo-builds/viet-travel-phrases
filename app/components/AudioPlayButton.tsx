@@ -1,37 +1,124 @@
-import { useState } from 'react';
-import { Pressable, Text } from 'react-native';
-import { Audio } from 'expo-av';
-import { audioRegistry } from '../assets/audio/registry';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Animated, Pressable, Text, View } from 'react-native';
+import * as Haptics from 'expo-haptics';
+import { Audio, AVPlaybackStatus } from 'expo-av';
+import audioRegistry from '../assets/audio/registry';
 
-export function AudioPlayButton({ audioKey }: { audioKey: string }) {
-  const [loading, setLoading] = useState(false);
-  const [failed, setFailed] = useState(false);
+type Props = {
+  audioFile: string;
+  size?: number;
+};
 
-  const handlePress = async () => {
-    const source = audioRegistry[audioKey];
-    if (!source) {
-      setFailed(true);
+type AudioModule = typeof Audio & {
+  createSoundObjectAsync?: (source: number) => Promise<{ sound: Audio.Sound }>;
+};
+
+let activeSound: Audio.Sound | null = null;
+let activeStop: (() => Promise<void>) | null = null;
+
+export function AudioPlayButton({ audioFile, size = 48 }: Props) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const scale = useRef(new Animated.Value(1)).current;
+
+  useEffect(() => () => {
+    if (activeStop) {
+      void activeStop();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isPlaying) {
+      scale.stopAnimation();
+      scale.setValue(1);
       return;
     }
-    setLoading(true);
-    setFailed(false);
-    const { sound } = await Audio.Sound.createAsync(source);
-    await sound.playAsync();
-    sound.setOnPlaybackStatusUpdate((status) => {
-      if (status.isLoaded && status.didJustFinish) {
-        void sound.unloadAsync();
+
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(scale, { toValue: 1.06, duration: 450, useNativeDriver: true }),
+        Animated.timing(scale, { toValue: 1, duration: 450, useNativeDriver: true }),
+      ]),
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [isPlaying, scale]);
+
+  const iconSize = useMemo(() => Math.round(size * 0.42), [size]);
+
+  const handlePress = async () => {
+    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+
+    if (isPlaying && activeStop) {
+      await activeStop();
+      return;
+    }
+
+    const source = audioRegistry[audioFile];
+    if (!source) {
+      setHasError(true);
+      return;
+    }
+
+    try {
+      if (activeStop) {
+        await activeStop();
       }
-    });
-    setLoading(false);
+
+      setHasError(false);
+      const audioModule = Audio as AudioModule;
+      const playback = audioModule.createSoundObjectAsync
+        ? await audioModule.createSoundObjectAsync(source)
+        : await Audio.Sound.createAsync(source);
+      const sound = playback.sound;
+      activeSound = sound;
+      setIsPlaying(true);
+
+      activeStop = async () => {
+        try {
+          if (activeSound) {
+            await activeSound.stopAsync().catch(() => undefined);
+            await activeSound.unloadAsync().catch(() => undefined);
+          }
+        } finally {
+          activeSound = null;
+          activeStop = null;
+          setIsPlaying(false);
+        }
+      };
+
+      sound.setOnPlaybackStatusUpdate((status: AVPlaybackStatus) => {
+        if (status.isLoaded && status.didJustFinish && activeStop) {
+          void activeStop();
+        }
+      });
+
+      await sound.playAsync();
+    } catch {
+      setHasError(true);
+      setIsPlaying(false);
+      if (activeStop) {
+        await activeStop();
+      }
+    }
   };
 
   return (
-    <Pressable
-      accessibilityRole="button"
-      onPress={() => void handlePress()}
-      className={`h-12 w-12 items-center justify-center rounded-full bg-primary ${loading ? 'opacity-70' : ''}`}
-    >
-      <Text className="text-base font-semibold text-white">{failed ? '!' : '▶'}</Text>
-    </Pressable>
+    <View className="items-center">
+      <Animated.View style={{ transform: [{ scale }] }}>
+        <Pressable
+          accessibilityLabel={isPlaying ? 'Stop phrase audio' : 'Play phrase audio'}
+          accessibilityRole="button"
+          onPress={() => void handlePress()}
+          className="items-center justify-center rounded-full bg-primary"
+          style={{ height: size, width: size }}
+        >
+          <Text className="font-semibold text-white" style={{ fontSize: iconSize }}>
+            {isPlaying ? '■' : '▶'}
+          </Text>
+        </Pressable>
+      </Animated.View>
+      {hasError ? <Text className="mt-1 text-xs text-primary">!</Text> : null}
+    </View>
   );
 }

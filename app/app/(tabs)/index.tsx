@@ -38,13 +38,17 @@ export default function HomeScreen() {
             </Pressable>
           </View>
           <View className="space-y-4">
-            <ThemedText variant="subtitle">Quick Phrases</ThemedText>
+            <View className="space-y-1">
+              <ThemedText variant="subtitle">Essential Phrases</ThemedText>
+              <ThemedText variant="caption">Tap to hear</ThemedText>
+            </View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View className="flex-row gap-3 pb-1">
                 {quickPhrases.map((phrase) => (
                   <View key={phrase.id} className="flex-row items-center gap-3 rounded-full border border-primary bg-surface px-4 py-3">
-                    <View className="max-w-[140px]">
-                      <ThemedText variant="romanized" className="text-base">{phrase.vietnamese}</ThemedText>
+                    <View className="max-w-[160px]">
+                      <ThemedText variant="vietnamese" className="text-base">{phrase.vietnamese}</ThemedText>
+                      <ThemedText variant="english" className="text-xs">{phrase.english}</ThemedText>
                     </View>
                     <AudioPlayButton audioFile={`${phrase.audioKey}.mp3`} />
                   </View>

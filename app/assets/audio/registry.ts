@@ -1,1 +1,5 @@
-export const audioRegistry: Record<string, number> = {};
+const audioRegistry: Record<string, number> = {
+
+};
+
+export default audioRegistry;

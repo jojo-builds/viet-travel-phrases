@@ -5,7 +5,10 @@ import { Audio } from 'expo-av';
 
 export default function RootLayout() {
   useEffect(() => {
-    void Audio.setAudioModeAsync({ playsInSilentModeIOS: true });
+    void Audio.setAudioModeAsync({
+      playsInSilentModeIOS: true,
+      staysActiveInBackground: false,
+    });
   }, []);
 
   return (
