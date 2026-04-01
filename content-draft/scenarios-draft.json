@@ -1,0 +1,722 @@
+[
+  {
+    "id": "coffee-shop",
+    "name": "Coffee Shop",
+    "emoji": "☕",
+    "description": "Order coffee the local way",
+    "tip": "Vietnamese coffee is usually sweet and strong. Check whether your drink comes with condensed milk and lots of ice before ordering a second one.",
+    "phrases": [
+      {
+        "id": "coffee-1",
+        "vietnamese": "Cho tôi một cà phê sữa đá",
+        "romanized": "cho toy moht kah-FEH soo-ah DAH",
+        "english": "One iced milk coffee please",
+        "context": "Use this at almost any café when you want the classic Vietnamese coffee order.",
+        "emoji": "☕",
+        "audioFile": "coffee-1.mp3"
+      },
+      {
+        "id": "coffee-2",
+        "vietnamese": "Cho tôi cà phê đen đá",
+        "romanized": "cho toy kah-FEH den DAH",
+        "english": "I’d like an iced black coffee",
+        "context": "Say this when you want coffee without milk at a café or coffee cart.",
+        "emoji": "🧊",
+        "audioFile": "coffee-2.mp3"
+      },
+      {
+        "id": "coffee-3",
+        "vietnamese": "Cho tôi bạc xỉu đá",
+        "romanized": "cho toy bahk SIU DAH",
+        "english": "I’d like an iced bạc xỉu",
+        "context": "Use this if you want a sweeter, milkier coffee drink popular in the south.",
+        "emoji": "🥛",
+        "audioFile": "coffee-3.mp3"
+      },
+      {
+        "id": "coffee-4",
+        "vietnamese": "Ít đá thôi",
+        "romanized": "eet DAH toy",
+        "english": "Just a little ice",
+        "context": "Add this when you want your drink less watered down in the heat.",
+        "emoji": "🧊",
+        "audioFile": "coffee-4.mp3"
+      },
+      {
+        "id": "coffee-5",
+        "vietnamese": "Không đường nhé",
+        "romanized": "khong doong NYEH",
+        "english": "No sugar please",
+        "context": "Use this to make your drink less sweet when ordering coffee or tea.",
+        "emoji": "🚫",
+        "audioFile": "coffee-5.mp3"
+      },
+      {
+        "id": "coffee-6",
+        "vietnamese": "Mang đi",
+        "romanized": "mang dee",
+        "english": "To go",
+        "context": "Say this when you want takeaway instead of sitting down.",
+        "emoji": "🥤",
+        "audioFile": "coffee-6.mp3"
+      },
+      {
+        "id": "coffee-7",
+        "vietnamese": "Tính tiền giúp tôi",
+        "romanized": "teen tee-en zoop toy",
+        "english": "Please let me pay",
+        "context": "Use this when you are done and want the bill at a café.",
+        "emoji": "💵",
+        "audioFile": "coffee-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "street-food",
+    "name": "Street Food / Restaurant",
+    "emoji": "🍜",
+    "description": "Order fast and eat well",
+    "tip": "Busy stalls with high turnover are usually the safest bet, and cash in small notes speeds things up.",
+    "phrases": [
+      {
+        "id": "food-1",
+        "vietnamese": "Cho tôi một phần",
+        "romanized": "cho toy moht fuhn",
+        "english": "One portion please",
+        "context": "Use this for simple food orders when pointing at what you want.",
+        "emoji": "🍽️",
+        "audioFile": "food-1.mp3"
+      },
+      {
+        "id": "food-2",
+        "vietnamese": "Cho tôi tô này",
+        "romanized": "cho toy toh NAI",
+        "english": "I’ll take this bowl",
+        "context": "Say this while pointing when choosing from prepared noodle dishes.",
+        "emoji": "🍜",
+        "audioFile": "food-2.mp3"
+      },
+      {
+        "id": "food-3",
+        "vietnamese": "Không cay nhé",
+        "romanized": "khong kai NYEH",
+        "english": "Not spicy please",
+        "context": "Use this before the dish is made if you do not want chili added.",
+        "emoji": "🌶️",
+        "audioFile": "food-3.mp3"
+      },
+      {
+        "id": "food-4",
+        "vietnamese": "Cho thêm rau",
+        "romanized": "cho them rau",
+        "english": "More herbs please",
+        "context": "Use this at noodle stalls or bánh mì shops when you want extra greens.",
+        "emoji": "🥬",
+        "audioFile": "food-4.mp3"
+      },
+      {
+        "id": "food-5",
+        "vietnamese": "Có nước suối không?",
+        "romanized": "koh nook soo-ee khong",
+        "english": "Do you have bottled water?",
+        "context": "Ask this when you want plain bottled water with your meal.",
+        "emoji": "💧",
+        "audioFile": "food-5.mp3"
+      },
+      {
+        "id": "food-6",
+        "vietnamese": "Cho tôi muỗng với đũa",
+        "romanized": "cho toy moo-ung voy doo-ah",
+        "english": "A spoon and chopsticks please",
+        "context": "Use this if utensils were not set out or you need an extra pair.",
+        "emoji": "🥢",
+        "audioFile": "food-6.mp3"
+      },
+      {
+        "id": "food-7",
+        "vietnamese": "Gói mang về",
+        "romanized": "goy mang veh",
+        "english": "Pack it to go",
+        "context": "Say this when you want takeaway from a restaurant or street stall.",
+        "emoji": "🛍️",
+        "audioFile": "food-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "grab-taxi",
+    "name": "Grab / Taxi",
+    "emoji": "🚕",
+    "description": "Get around without confusion",
+    "tip": "For city rides, Grab usually avoids fare arguments. Always check the license plate before getting in.",
+    "phrases": [
+      {
+        "id": "taxi-1",
+        "vietnamese": "Cho tôi tới đây",
+        "romanized": "cho toy tuy DAI",
+        "english": "Take me here",
+        "context": "Use this while showing your destination on your phone to the driver.",
+        "emoji": "📍",
+        "audioFile": "taxi-1.mp3"
+      },
+      {
+        "id": "taxi-2",
+        "vietnamese": "Đi quận Một",
+        "romanized": "dee gwen moht",
+        "english": "Go to District 1",
+        "context": "Say this for a simple district destination when the place is already understood.",
+        "emoji": "🏙️",
+        "audioFile": "taxi-2.mp3"
+      },
+      {
+        "id": "taxi-3",
+        "vietnamese": "Dừng ở đây được rồi",
+        "romanized": "zoong uh DAI dook roy",
+        "english": "You can stop here",
+        "context": "Use this when you want the driver to let you out at the current spot.",
+        "emoji": "🛑",
+        "audioFile": "taxi-3.mp3"
+      },
+      {
+        "id": "taxi-4",
+        "vietnamese": "Đi đường này đi",
+        "romanized": "dee doong NAI dee",
+        "english": "Go this way",
+        "context": "Say this if you know a better route and need to guide the driver.",
+        "emoji": "➡️",
+        "audioFile": "taxi-4.mp3"
+      },
+      {
+        "id": "taxi-5",
+        "vietnamese": "Mở máy lạnh giúp tôi",
+        "romanized": "muh my lahn zoop toy",
+        "english": "Please turn on the air conditioning",
+        "context": "Use this on a hot ride when the car air conditioning is off.",
+        "emoji": "❄️",
+        "audioFile": "taxi-5.mp3"
+      },
+      {
+        "id": "taxi-6",
+        "vietnamese": "Chờ tôi năm phút",
+        "romanized": "choy toy nahm foot",
+        "english": "Wait for me five minutes",
+        "context": "Use this if you need a very short stop and the driver agrees to wait.",
+        "emoji": "⏳",
+        "audioFile": "taxi-6.mp3"
+      },
+      {
+        "id": "taxi-7",
+        "vietnamese": "Tôi trả bằng tiền mặt",
+        "romanized": "toy cha bang tee-en maht",
+        "english": "I’ll pay cash",
+        "context": "Say this if payment method needs to be clear before the ride ends.",
+        "emoji": "💵",
+        "audioFile": "taxi-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "asking-price",
+    "name": "Asking the Price",
+    "emoji": "💸",
+    "description": "Check prices before you buy",
+    "tip": "At markets, ask the price before agreeing and keep smaller bills ready so change is easy.",
+    "phrases": [
+      {
+        "id": "price-1",
+        "vietnamese": "Cái này bao nhiêu?",
+        "romanized": "gai NAI bao nyew",
+        "english": "How much is this?",
+        "context": "Use this while pointing at an item in a market, shop, or food stall.",
+        "emoji": "🏷️",
+        "audioFile": "price-1.mp3"
+      },
+      {
+        "id": "price-2",
+        "vietnamese": "Bao nhiêu một ký?",
+        "romanized": "bao nyew moht kee",
+        "english": "How much per kilo?",
+        "context": "Use this when buying fruit, snacks, or other goods sold by weight.",
+        "emoji": "⚖️",
+        "audioFile": "price-2.mp3"
+      },
+      {
+        "id": "price-3",
+        "vietnamese": "Mắc quá",
+        "romanized": "mahk gwah",
+        "english": "Too expensive",
+        "context": "Say this lightly when bargaining or reacting to a high quoted price.",
+        "emoji": "😅",
+        "audioFile": "price-3.mp3"
+      },
+      {
+        "id": "price-4",
+        "vietnamese": "Bớt chút được không?",
+        "romanized": "buht choot dook khong",
+        "english": "Can you lower it a little?",
+        "context": "Use this politely in markets where bargaining is normal.",
+        "emoji": "🤝",
+        "audioFile": "price-4.mp3"
+      },
+      {
+        "id": "price-5",
+        "vietnamese": "Giá cuối bao nhiêu?",
+        "romanized": "yah kooy bao nyew",
+        "english": "What’s your final price?",
+        "context": "Ask this when you want the seller’s best price before deciding.",
+        "emoji": "💬",
+        "audioFile": "price-5.mp3"
+      },
+      {
+        "id": "price-6",
+        "vietnamese": "Cho tôi xem cái khác",
+        "romanized": "cho toy sem gai khahk",
+        "english": "Show me another one",
+        "context": "Use this when you want to compare options instead of buying immediately.",
+        "emoji": "👀",
+        "audioFile": "price-6.mp3"
+      },
+      {
+        "id": "price-7",
+        "vietnamese": "Tôi lấy cái này",
+        "romanized": "toy lay gai NAI",
+        "english": "I’ll take this one",
+        "context": "Say this once you agree on the item and price.",
+        "emoji": "🛍️",
+        "audioFile": "price-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "polite-basics",
+    "name": "Polite Basics",
+    "emoji": "🙏",
+    "description": "Be polite in everyday moments",
+    "tip": "A friendly tone and a small smile go a long way in Vietnam, especially in busy service situations.",
+    "phrases": [
+      {
+        "id": "polite-1",
+        "vietnamese": "Xin chào",
+        "romanized": "sin CHOW",
+        "english": "Hello",
+        "context": "Use this to greet people in shops, hotels, and casual encounters.",
+        "emoji": "👋",
+        "audioFile": "polite-1.mp3"
+      },
+      {
+        "id": "polite-2",
+        "vietnamese": "Cảm ơn",
+        "romanized": "kahm UHN",
+        "english": "Thank you",
+        "context": "Say this anytime someone helps you, serves you, or gives directions.",
+        "emoji": "🙏",
+        "audioFile": "polite-2.mp3"
+      },
+      {
+        "id": "polite-3",
+        "vietnamese": "Dạ",
+        "romanized": "yah",
+        "english": "Yes / polite acknowledgment",
+        "context": "Use this as a soft, respectful response when someone speaks to you.",
+        "emoji": "🙂",
+        "audioFile": "polite-3.mp3"
+      },
+      {
+        "id": "polite-4",
+        "vietnamese": "Không, cảm ơn",
+        "romanized": "khong, kahm UHN",
+        "english": "No, thank you",
+        "context": "Use this to decline offers from vendors or service staff politely.",
+        "emoji": "🙅",
+        "audioFile": "polite-4.mp3"
+      },
+      {
+        "id": "polite-5",
+        "vietnamese": "Xin lỗi",
+        "romanized": "sin loy",
+        "english": "Excuse me / sorry",
+        "context": "Use this to get attention, pass by someone, or apologize for a small mistake.",
+        "emoji": "🙏",
+        "audioFile": "polite-5.mp3"
+      },
+      {
+        "id": "polite-6",
+        "vietnamese": "Không sao đâu",
+        "romanized": "khong sao doh",
+        "english": "It’s okay",
+        "context": "Say this when someone apologizes and you want to reassure them.",
+        "emoji": "👌",
+        "audioFile": "polite-6.mp3"
+      },
+      {
+        "id": "polite-7",
+        "vietnamese": "Tạm biệt",
+        "romanized": "tahm bee-et",
+        "english": "Goodbye",
+        "context": "Use this when leaving a shop, café, or hotel desk.",
+        "emoji": "👋",
+        "audioFile": "polite-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "convenience-store",
+    "name": "Convenience Store",
+    "emoji": "🏪",
+    "description": "Handle quick shop stops",
+    "tip": "Many convenience stores have seating upstairs or outside, but some charge separately for heated food or add-on items.",
+    "phrases": [
+      {
+        "id": "store-1",
+        "vietnamese": "Cho tôi chai nước",
+        "romanized": "cho toy chai nook",
+        "english": "A bottle of water please",
+        "context": "Use this for the most common quick purchase in a mini-mart.",
+        "emoji": "💧",
+        "audioFile": "store-1.mp3"
+      },
+      {
+        "id": "store-2",
+        "vietnamese": "Có túi không?",
+        "romanized": "koh too-ee khong",
+        "english": "Do you have a bag?",
+        "context": "Ask this if you are buying several items and need a carry bag.",
+        "emoji": "🛍️",
+        "audioFile": "store-2.mp3"
+      },
+      {
+        "id": "store-3",
+        "vietnamese": "Cho tôi khăn giấy",
+        "romanized": "cho toy khan zai",
+        "english": "Tissues please",
+        "context": "Use this when you need tissues, wipes, or napkins at the counter.",
+        "emoji": "🧻",
+        "audioFile": "store-3.mp3"
+      },
+      {
+        "id": "store-4",
+        "vietnamese": "Ở đâu có kem chống nắng?",
+        "romanized": "uh dow koh kem chong nahng",
+        "english": "Where is the sunscreen?",
+        "context": "Ask this when you need help finding sunscreen in a larger convenience store.",
+        "emoji": "🧴",
+        "audioFile": "store-4.mp3"
+      },
+      {
+        "id": "store-5",
+        "vietnamese": "Mở cái này giúp tôi",
+        "romanized": "muh gai NAI zoop toy",
+        "english": "Please open this for me",
+        "context": "Use this for bottled drinks or packaged items that are hard to open.",
+        "emoji": "🔓",
+        "audioFile": "store-5.mp3"
+      },
+      {
+        "id": "store-6",
+        "vietnamese": "Tôi quẹt thẻ được không?",
+        "romanized": "toy kweht teh dook khong",
+        "english": "Can I pay by card?",
+        "context": "Ask this before checkout if you are not carrying enough cash.",
+        "emoji": "💳",
+        "audioFile": "store-6.mp3"
+      },
+      {
+        "id": "store-7",
+        "vietnamese": "Cho tôi hóa đơn",
+        "romanized": "cho toy hwah dun",
+        "english": "Please give me the receipt",
+        "context": "Use this if you need the receipt for tracking spending or reimbursement.",
+        "emoji": "🧾",
+        "audioFile": "store-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "hotel-hostel",
+    "name": "Hotel / Hostel",
+    "emoji": "🏨",
+    "description": "Handle check-in and room needs",
+    "tip": "Keep your passport ready at check-in. Most places need to register guests with local authorities.",
+    "phrases": [
+      {
+        "id": "hotel-1",
+        "vietnamese": "Tôi có đặt phòng",
+        "romanized": "toy koh daht fong",
+        "english": "I have a reservation",
+        "context": "Use this first at reception when you arrive to check in.",
+        "emoji": "🛎️",
+        "audioFile": "hotel-1.mp3"
+      },
+      {
+        "id": "hotel-2",
+        "vietnamese": "Cho tôi nhận phòng",
+        "romanized": "cho toy nyun fong",
+        "english": "I’d like to check in",
+        "context": "Say this when you are ready to begin the check-in process.",
+        "emoji": "🔑",
+        "audioFile": "hotel-2.mp3"
+      },
+      {
+        "id": "hotel-3",
+        "vietnamese": "Mấy giờ trả phòng?",
+        "romanized": "may zuh cha fong",
+        "english": "What time is check-out?",
+        "context": "Ask this early so you know the departure deadline.",
+        "emoji": "⏰",
+        "audioFile": "hotel-3.mp3"
+      },
+      {
+        "id": "hotel-4",
+        "vietnamese": "Phòng này có nóng quá",
+        "romanized": "fong NAI koh nong gwah",
+        "english": "This room is too hot",
+        "context": "Use this if the room cooling is not working well.",
+        "emoji": "🥵",
+        "audioFile": "hotel-4.mp3"
+      },
+      {
+        "id": "hotel-5",
+        "vietnamese": "Máy lạnh không chạy",
+        "romanized": "my lahn khong chai",
+        "english": "The air conditioner isn’t working",
+        "context": "Say this when you need staff to fix or check the AC.",
+        "emoji": "❄️",
+        "audioFile": "hotel-5.mp3"
+      },
+      {
+        "id": "hotel-6",
+        "vietnamese": "Cho tôi thêm khăn",
+        "romanized": "cho toy them khan",
+        "english": "More towels please",
+        "context": "Use this when you need extra towels brought to your room.",
+        "emoji": "🧺",
+        "audioFile": "hotel-6.mp3"
+      },
+      {
+        "id": "hotel-7",
+        "vietnamese": "Giữ hành lý giúp tôi",
+        "romanized": "zoo han-lee zoop toy",
+        "english": "Please hold my luggage",
+        "context": "Use this if you arrive early or leave after check-out.",
+        "emoji": "🧳",
+        "audioFile": "hotel-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "directions",
+    "name": "Directions",
+    "emoji": "🗺️",
+    "description": "Find your way around town",
+    "tip": "Save your hotel name and address in Vietnamese on your phone in case maps or data fail.",
+    "phrases": [
+      {
+        "id": "directions-1",
+        "vietnamese": "Cho hỏi đi chợ Bến Thành",
+        "romanized": "cho hoy dee chuh benh TANH",
+        "english": "Excuse me, how do I get to Bến Thành Market?",
+        "context": "Use this when asking for a route to a famous place or landmark.",
+        "emoji": "🗺️",
+        "audioFile": "directions-1.mp3"
+      },
+      {
+        "id": "directions-2",
+        "vietnamese": "Ở gần đây không?",
+        "romanized": "uh guhn DAI khong",
+        "english": "Is it near here?",
+        "context": "Ask this when deciding whether to walk or call a ride.",
+        "emoji": "📍",
+        "audioFile": "directions-2.mp3"
+      },
+      {
+        "id": "directions-3",
+        "vietnamese": "Đi bộ bao lâu?",
+        "romanized": "dee boh bao low",
+        "english": "How long on foot?",
+        "context": "Use this to check whether walking is realistic in the heat or rain.",
+        "emoji": "🚶",
+        "audioFile": "directions-3.mp3"
+      },
+      {
+        "id": "directions-4",
+        "vietnamese": "Rẽ trái ở đâu?",
+        "romanized": "reh chai uh dow",
+        "english": "Where do I turn left?",
+        "context": "Ask this when someone is giving you step-by-step directions.",
+        "emoji": "⬅️",
+        "audioFile": "directions-4.mp3"
+      },
+      {
+        "id": "directions-5",
+        "vietnamese": "Rẽ phải phải không?",
+        "romanized": "reh fai fai khong",
+        "english": "Turn right, correct?",
+        "context": "Use this to confirm you understood the next turn correctly.",
+        "emoji": "➡️",
+        "audioFile": "directions-5.mp3"
+      },
+      {
+        "id": "directions-6",
+        "vietnamese": "Đi thẳng hả?",
+        "romanized": "dee thang hah",
+        "english": "Go straight?",
+        "context": "Ask this to confirm you should keep going forward.",
+        "emoji": "⬆️",
+        "audioFile": "directions-6.mp3"
+      },
+      {
+        "id": "directions-7",
+        "vietnamese": "Cảm ơn, tôi hiểu rồi",
+        "romanized": "kahm UHN, toy hee-u roy",
+        "english": "Thanks, I understand now",
+        "context": "Use this to politely end the exchange after getting directions.",
+        "emoji": "🙏",
+        "audioFile": "directions-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "simple-problems",
+    "name": "Simple Problems",
+    "emoji": "⚠️",
+    "description": "Handle common travel hiccups",
+    "tip": "If something goes wrong, stay calm and show photos, screenshots, or booking details on your phone to speed up help.",
+    "phrases": [
+      {
+        "id": "problems-1",
+        "vietnamese": "Tôi bị lạc đường",
+        "romanized": "toy bee laht doong",
+        "english": "I’m lost",
+        "context": "Use this when you need immediate help finding your way back.",
+        "emoji": "😵",
+        "audioFile": "problems-1.mp3"
+      },
+      {
+        "id": "problems-2",
+        "vietnamese": "Tôi không hiểu",
+        "romanized": "toy khong hee-u",
+        "english": "I don’t understand",
+        "context": "Say this when someone is speaking too quickly or using unfamiliar words.",
+        "emoji": "🤔",
+        "audioFile": "problems-2.mp3"
+      },
+      {
+        "id": "problems-3",
+        "vietnamese": "Nói chậm chút được không?",
+        "romanized": "noy chuhm choot dook khong",
+        "english": "Can you speak a little slower?",
+        "context": "Use this when you need the other person to slow down.",
+        "emoji": "🐢",
+        "audioFile": "problems-3.mp3"
+      },
+      {
+        "id": "problems-4",
+        "vietnamese": "Tôi quên đồ rồi",
+        "romanized": "toy gwen doh roy",
+        "english": "I left something behind",
+        "context": "Say this if you forgot an item in a car, room, or café.",
+        "emoji": "🎒",
+        "audioFile": "problems-4.mp3"
+      },
+      {
+        "id": "problems-5",
+        "vietnamese": "Wifi không hoạt động",
+        "romanized": "wai-fai khong hwaht dohng",
+        "english": "The Wi‑Fi isn’t working",
+        "context": "Use this at hotels, cafés, or hostels when you cannot connect.",
+        "emoji": "📶",
+        "audioFile": "problems-5.mp3"
+      },
+      {
+        "id": "problems-6",
+        "vietnamese": "Tôi cần bác sĩ",
+        "romanized": "toy guhn bahk-see",
+        "english": "I need a doctor",
+        "context": "Use this if you feel sick and need medical help quickly.",
+        "emoji": "🩺",
+        "audioFile": "problems-6.mp3"
+      },
+      {
+        "id": "problems-7",
+        "vietnamese": "Gọi giúp tôi với",
+        "romanized": "goy zoop toy voy",
+        "english": "Please call for me",
+        "context": "Say this when you need someone to make a phone call on your behalf.",
+        "emoji": "📞",
+        "audioFile": "problems-7.mp3"
+      }
+    ]
+  },
+  {
+    "id": "small-talk",
+    "name": "Small Talk",
+    "emoji": "💬",
+    "description": "Make light conversation",
+    "tip": "Short friendly chat often starts with where you are from and whether it is your first time in Vietnam.",
+    "phrases": [
+      {
+        "id": "smalltalk-1",
+        "vietnamese": "Tôi đến từ Mỹ",
+        "romanized": "toy den too mee",
+        "english": "I’m from the United States",
+        "context": "Use this when locals ask where you are from.",
+        "emoji": "🇺🇸",
+        "audioFile": "smalltalk-1.mp3"
+      },
+      {
+        "id": "smalltalk-2",
+        "vietnamese": "Tôi từ Anh",
+        "romanized": "toy too anh",
+        "english": "I’m from England",
+        "context": "Use this as a simple answer when introducing yourself.",
+        "emoji": "🇬🇧",
+        "audioFile": "smalltalk-2.mp3"
+      },
+      {
+        "id": "smalltalk-3",
+        "vietnamese": "Đây là lần đầu của tôi",
+        "romanized": "dai lah luhn dow koo-a toy",
+        "english": "This is my first time",
+        "context": "Say this when talking about your first visit to Vietnam or the city.",
+        "emoji": "✨",
+        "audioFile": "smalltalk-3.mp3"
+      },
+      {
+        "id": "smalltalk-4",
+        "vietnamese": "Tôi thích Việt Nam",
+        "romanized": "toy teak vee-et NAM",
+        "english": "I like Vietnam",
+        "context": "Use this as an easy positive comment in casual conversation.",
+        "emoji": "❤️",
+        "audioFile": "smalltalk-4.mp3"
+      },
+      {
+        "id": "smalltalk-5",
+        "vietnamese": "Đồ ăn ngon quá",
+        "romanized": "doh an ngon gwah",
+        "english": "The food is so good",
+        "context": "Say this to compliment a meal or local food recommendation.",
+        "emoji": "😋",
+        "audioFile": "smalltalk-5.mp3"
+      },
+      {
+        "id": "smalltalk-6",
+        "vietnamese": "Thời tiết nóng quá",
+        "romanized": "toy tee-et nong gwah",
+        "english": "The weather is so hot",
+        "context": "Use this as simple small talk on a hot day.",
+        "emoji": "☀️",
+        "audioFile": "smalltalk-6.mp3"
+      },
+      {
+        "id": "smalltalk-7",
+        "vietnamese": "Bạn khỏe không?",
+        "romanized": "bahn khweh khong",
+        "english": "How are you?",
+        "context": "Use this with friendly staff or locals after an initial greeting.",
+        "emoji": "😊",
+        "audioFile": "smalltalk-7.mp3"
+      }
+    ]
+  }
+]
