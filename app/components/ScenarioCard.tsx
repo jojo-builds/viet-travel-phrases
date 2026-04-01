@@ -13,7 +13,7 @@ export function ScenarioCard({ scenario, onPress, visited = false, index = 0 }: 
         accessibilityRole="button"
         onPress={() => { void Haptics.selectionAsync(); onPress(); }}
         style={({ pressed }) => [{ transform: [{ scale: pressed ? 0.97 : 1 }] }, { opacity: pressed ? 0.92 : 1 }]}
-        className="flex-1 rounded-2xl border border-border bg-surface p-4 shadow-sm"
+        className="flex-1 rounded-2xl border border-border bg-surface p-4 shadow-sm min-h-[160px]"
       >
         <View className="space-y-3">
           <View className="flex-row items-center justify-between">

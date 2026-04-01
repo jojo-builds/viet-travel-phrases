@@ -3,7 +3,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Linking from 'expo-linking';
 import { ThemedText } from '../components/ui/ThemedText';
 
-const legalUrl = 'https://jayopsai.substack.com';
+const privacyUrl = 'https://jojo-builds.github.io/viet-travel-phrases/privacy.html';
+const termsUrl = 'https://jojo-builds.github.io/viet-travel-phrases/terms.html';
 type Row = { section: 'About' | 'Legal' | 'Feedback'; label: string; action: () => void };
 const openAbout = () => Alert.alert('Vietnamese Travel Phrasebook', 'Offline travel Vietnamese for everyday situations.\n\nMade with ❤️ in Vietnam');
 const openRate = () => Alert.alert('Coming soon', 'Store rating link will be added post-launch.');
@@ -21,8 +22,8 @@ export default function SettingsScreen() {
 
   const rows: Row[] = [
     { section: 'About', label: 'About this app', action: openAbout },
-    { section: 'Legal', label: 'Privacy Policy', action: () => void openUrl(legalUrl) },
-    { section: 'Legal', label: 'Terms', action: () => void openUrl(legalUrl) },
+    { section: 'Legal', label: 'Privacy Policy', action: () => void openUrl(privacyUrl) },
+    { section: 'Legal', label: 'Terms of Use', action: () => void openUrl(termsUrl) },
     { section: 'Feedback', label: 'Send Feedback', action: () => void openUrl('mailto:feedback@jayopsai.com?subject=App Feedback') },
     { section: 'Feedback', label: 'Rate this App', action: openRate },
   ];
