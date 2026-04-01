@@ -1,27 +1,24 @@
 import { Tabs } from 'expo-router';
-import { Text } from 'react-native';
+import { ThemedText } from '../../components/ui/ThemedText';
 
 export default function TabsLayout() {
   return (
     <Tabs
-      screenOptions={{
+      screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: '#FF6B35',
+        tabBarInactiveTintColor: '#9CA3AF',
+        tabBarShowLabel: false,
         tabBarStyle: { backgroundColor: '#FFFFFF', borderTopColor: '#E5E7EB' },
-      }}
+        tabBarIcon: ({ color, focused }) => (
+          <ThemedText className="text-lg" style={{ color }}>
+            {route.name === 'saved' ? (focused ? '♥' : '♡') : focused ? '⌂' : '⌂'}
+          </ThemedText>
+        ),
+      })}
     >
-      <Tabs.Screen
-        name="index"
-        options={{ title: 'Learn', tabBarIcon: ({ color }) => <TabIcon color={color} label="⌂" /> }}
-      />
-      <Tabs.Screen
-        name="saved"
-        options={{ title: 'Saved', tabBarIcon: ({ color }) => <TabIcon color={color} label="♥" /> }}
-      />
+      <Tabs.Screen name="index" options={{ title: 'Home' }} />
+      <Tabs.Screen name="saved" options={{ title: 'Saved' }} />
     </Tabs>
   );
-}
-
-function TabIcon({ color, label }: { color: string; label: string }) {
-  return <Text style={{ color, fontSize: 16 }}>{label}</Text>;
 }
