@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react';
 import { FlatList, RefreshControl, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Animated, { FadeOut } from 'react-native-reanimated';
 import { useFocusEffect } from 'expo-router';
 import { PhraseCard } from '../../components/PhraseCard';
 import { ThemedText } from '../../components/ui/ThemedText';
@@ -41,7 +40,7 @@ export default function SavedScreen() {
         getItemLayout={(_, index) => ({ length: 170, offset: 170 * index, index })}
         keyExtractor={(item) => item.phrase.id}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => void refresh()} tintColor="#FF6B35" />}
-        renderItem={({ item, index }) => <Animated.View exiting={FadeOut.duration(180)}><PhraseCard footerLabel={`from ${item.scenarioName}`} index={index} onFavoriteChange={(saved) => handleFavoriteChange(item.phrase.id, saved)} phrase={item.phrase} /></Animated.View>}
+        renderItem={({ item, index }) => <PhraseCard footerLabel={`from ${item.scenarioName}`} index={index} onFavoriteChange={(saved) => handleFavoriteChange(item.phrase.id, saved)} phrase={item.phrase} />}
         ListHeaderComponent={<ThemedText variant="title">Saved Phrases</ThemedText>}
       />
     </SafeAreaView>
