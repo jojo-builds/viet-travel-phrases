@@ -1,5 +1,4 @@
 import { Pressable, View } from 'react-native';
-import Animated, { FadeInUp } from 'react-native-reanimated';
 import { Scenario } from '../content/types';
 import { ThemedText } from './ui/ThemedText';
 
@@ -7,7 +6,7 @@ type Props = { scenario: Scenario; onPress: () => void; visited?: boolean; index
 
 export function ScenarioCard({ scenario, onPress, visited = false, index = 0 }: Props) {
   return (
-    <Animated.View entering={FadeInUp.delay(index * 50).duration(220)}>
+    <View>
       <Pressable
         accessibilityLabel={`${scenario.name}, ${scenario.phrases.length} phrases`}
         accessibilityRole="button"
@@ -25,6 +24,6 @@ export function ScenarioCard({ scenario, onPress, visited = false, index = 0 }: 
           <ThemedText variant="caption">{scenario.phrases.length} phrases</ThemedText>
         </View>
       </Pressable>
-    </Animated.View>
+    </View>
   );
 }
