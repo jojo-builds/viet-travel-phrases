@@ -35,6 +35,10 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "privacyPolicyUrl": "https://jojo-builds.github.io/viet-travel-phrases/privacy.html",
+      "termsOfUseUrl": "https://jojo-builds.github.io/viet-travel-phrases/terms.html"
+    }
   }
 }
