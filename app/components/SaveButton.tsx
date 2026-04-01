@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Pressable } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
+import * as Haptics from 'expo-haptics';
 import { isFavorite, toggleFavoriteId } from '../lib/favorites';
 import { ThemedText } from './ui/ThemedText';
 
@@ -31,6 +32,7 @@ export function SaveButton({ phraseId, onChange }: Props) {
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
 
   const handlePress = async () => {
+    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     const nextIds = await toggleFavoriteId(phraseId);
     const nextSaved = nextIds.includes(phraseId);
     setSaved(nextSaved);

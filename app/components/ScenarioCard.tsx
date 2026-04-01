@@ -1,4 +1,5 @@
 import { Pressable, View } from 'react-native';
+import * as Haptics from 'expo-haptics';
 import { Scenario } from '../content/types';
 import { ThemedText } from './ui/ThemedText';
 
@@ -10,7 +11,7 @@ export function ScenarioCard({ scenario, onPress, visited = false, index = 0 }: 
       <Pressable
         accessibilityLabel={`${scenario.name}, ${scenario.phrases.length} phrases`}
         accessibilityRole="button"
-        onPress={onPress}
+        onPress={() => { void Haptics.selectionAsync(); onPress(); }}
         style={({ pressed }) => [{ transform: [{ scale: pressed ? 0.97 : 1 }] }, { opacity: pressed ? 0.92 : 1 }]}
         className="flex-1 rounded-2xl border border-border bg-surface p-4 shadow-sm"
       >
