@@ -92,6 +92,17 @@
 - Issue encountered: Expo/NativeWind Metro startup currently throws `ERR_UNSUPPORTED_ESM_URL_SCHEME` on this Windows Node 22 VPS when loading `metro.config.js`. TypeScript passes, but Expo start needs a follow-up compatibility fix or Node/runtime workaround before phone preview.
 - Ready for Day 3: add bundled MP3 files to `assets/audio/`, populate `assets/audio/registry.ts`, and finish true playback verification once the Metro/runtime issue is resolved.
 
+### 2026-04-01 — Day 3 audio infrastructure in place, generation blocked by invalid key
+- Added `scripts/generate-audio.ts` to read the phrase dataset and generate bundled MP3s with OpenAI TTS (`gpt-4o-mini-tts`, voice `nova`) into `assets/audio/`.
+- Added `scripts/generate-audio-registry.ts` to build a static `assets/audio/registry.ts` file for React Native explicit requires.
+- Rebuilt `components/AudioPlayButton.tsx` with `expo-av`, light haptics, singleton playback control, graceful missing-file fallback, and pulse/stop playback state.
+- Updated `components/PhraseCard.tsx` to use the real audio button and `app/_layout.tsx` to enable silent-mode iOS playback with inactive background audio.
+- Installed required script deps: `openai`, `dotenv`, and `tsx`. `expo-av` was already present in the app.
+- Verification: `npx tsc --noEmit` passes.
+- TTS generation attempt failed immediately with OpenAI 401 `invalid_api_key` using the only `OPENAI_API_KEY` available in environment (`OPENAI_API_KEY` matched `OPENROUTER_API_KEY`).
+- Current artifact counts: `0/70` audio files generated, registry entry count `0`, AudioPlayButton code complete but not fully verified with real MP3 assets yet.
+- Note: the live phrase dataset currently contains **70** phrases, not 60.
+
 ---
 
 ## Design System (locked, do not change)
@@ -127,3 +138,15 @@ Border:     #E5E7EB
 - OpenAI API key: Jojo must provide before Day 3
 
 DAYS 4-5 COMPLETE: Favorites/Settings/animations/edge cases done, committed to GitHub
+
+### 2026-04-01 — Code review fixes (Jay)
+- Fixed PhraseCard spacing: `space-y-2` → `space-y-3` per design system
+- Fixed Quick Phrases: Vietnamese text was using `romanized` variant, now uses `vietnamese` variant with English subtitle
+- Updated Quick Phrases header: "Essential Phrases" + "Tap to hear" per plan spec
+- Fixed app.json: added `bundleIdentifier: com.jojobuilds.viettravelphrases`, `buildNumber: 1`, splash `backgroundColor: #FAFAF8`, portrait lock, iOS status bar config
+- Replaced text-character tab icons with proper Ionicons (home/home-outline, heart/heart-outline) per plan
+- Installed `@expo/vector-icons` (Expo default package)
+- Verified Metro starts successfully — `ERR_UNSUPPORTED_ESM_URL_SCHEME` bug is FIXED (GPT's path normalization fix in metro.config.js worked)
+- TypeScript passes clean (`npx tsc --noEmit` — no errors)
+- NativeWind v4.2.3 config verified correct: metro.config.js, tailwind.config.js, babel.config.js, global.css, nativewind-env.d.ts all aligned
+- Remaining blockers: audio files (need OpenAI API key), Expo/EAS login, Apple Developer Account

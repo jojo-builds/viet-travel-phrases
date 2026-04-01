@@ -18,11 +18,12 @@ function PhraseCardBase({ phrase, onFavoriteChange, footerLabel, index = 0 }: Pr
     <Animated.View entering={FadeInDown.delay(index * 40).duration(220)}>
       <View className="rounded-2xl border border-border bg-surface p-4 shadow-sm">
         <View className="flex-row items-start justify-between gap-3">
-          <View className="flex-1 space-y-2">
+          <View className="flex-1 space-y-3">
             <ThemedText variant="vietnamese">{phrase.vietnamese}</ThemedText>
             <ThemedText variant="romanized">{phrase.romanized}</ThemedText>
             <ThemedText variant="english">{phrase.english}</ThemedText>
           </View>
+
           <View className="items-center gap-3">
             <AudioPlayButton audioFile={`${phrase.audioKey}.mp3`} />
             <SaveButton phraseId={phrase.id} onChange={onFavoriteChange} />
