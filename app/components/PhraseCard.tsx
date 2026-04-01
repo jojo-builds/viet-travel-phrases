@@ -1,4 +1,6 @@
+import { memo } from 'react';
 import { View } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Phrase } from '../content/types';
 import { AudioPlayButton } from './AudioPlayButton';
 import { SaveButton } from './SaveButton';
@@ -7,27 +9,30 @@ import { ThemedText } from './ui/ThemedText';
 type Props = {
   phrase: Phrase;
   onFavoriteChange?: (isSaved: boolean) => void;
+  footerLabel?: string;
+  index?: number;
 };
 
-export function PhraseCard({ phrase, onFavoriteChange }: Props) {
+function PhraseCardBase({ phrase, onFavoriteChange, footerLabel, index = 0 }: Props) {
   return (
-    <View className="rounded-2xl border border-border bg-surface p-4 shadow-sm">
-      <View className="flex-row items-start justify-between gap-3">
-        <View className="flex-1 space-y-2">
-          <ThemedText variant="vietnamese">{phrase.vietnamese}</ThemedText>
-          <ThemedText variant="romanized">{phrase.romanized}</ThemedText>
-          <ThemedText variant="english">{phrase.english}</ThemedText>
+    <Animated.View entering={FadeInDown.delay(index * 40).duration(220)}>
+      <View className="rounded-2xl border border-border bg-surface p-4 shadow-sm">
+        <View className="flex-row items-start justify-between gap-3">
+          <View className="flex-1 space-y-2">
+            <ThemedText variant="vietnamese">{phrase.vietnamese}</ThemedText>
+            <ThemedText variant="romanized">{phrase.romanized}</ThemedText>
+            <ThemedText variant="english">{phrase.english}</ThemedText>
+          </View>
+          <View className="items-center gap-3">
+            <AudioPlayButton audioFile={`${phrase.audioKey}.mp3`} />
+            <SaveButton phraseId={phrase.id} onChange={onFavoriteChange} />
+          </View>
         </View>
-        <View className="items-center gap-3">
-          <AudioPlayButton audioKey={phrase.audioKey} />
-          <SaveButton phraseId={phrase.id} onChange={onFavoriteChange} />
-        </View>
+        {phrase.context ? <ThemedText variant="caption" className="mt-3">{phrase.context}</ThemedText> : null}
+        {footerLabel ? <ThemedText variant="caption" className="mt-3 text-secondary">{footerLabel}</ThemedText> : null}
       </View>
-      {phrase.context ? (
-        <ThemedText variant="caption" className="mt-3">
-          {phrase.context}
-        </ThemedText>
-      ) : null}
-    </View>
+    </Animated.View>
   );
 }
+
+export const PhraseCard = memo(PhraseCardBase);

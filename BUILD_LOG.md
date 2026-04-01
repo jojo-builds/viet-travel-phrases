@@ -125,3 +125,5 @@ Border:     #E5E7EB
 - Apple Developer Account: Jojo to confirm status
 - App name: decide before Day 8 (max 30 chars)
 - OpenAI API key: Jojo must provide before Day 3
+
+DAYS 4-5 COMPLETE: Favorites/Settings/animations/edge cases done, committed to GitHub

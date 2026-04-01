@@ -1,43 +1,53 @@
 import { useEffect, useState } from 'react';
-import { Pressable, Text } from 'react-native';
-import { getFavoriteIds, toggleFavoriteId } from '../lib/favorites';
+import { Pressable } from 'react-native';
+import Animated, { useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
+import { isFavorite, toggleFavoriteId } from '../lib/favorites';
+import { ThemedText } from './ui/ThemedText';
 
-type Props = {
-  phraseId: string;
-  onChange?: (isSaved: boolean) => void;
-};
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+
+type Props = { phraseId: string; onChange?: (isSaved: boolean) => void };
 
 export function SaveButton({ phraseId, onChange }: Props) {
-  const [isSaved, setIsSaved] = useState(false);
+  const [saved, setSaved] = useState(false);
   const [loading, setLoading] = useState(true);
+  const scale = useSharedValue(1);
 
   useEffect(() => {
     let active = true;
-    getFavoriteIds()
-      .then((ids) => active && setIsSaved(ids.includes(phraseId)))
-      .finally(() => active && setLoading(false));
+    (async () => {
+      try {
+        const next = await isFavorite(phraseId);
+        if (active) setSaved(next);
+      } finally {
+        if (active) setLoading(false);
+      }
+    })();
     return () => {
       active = false;
     };
   }, [phraseId]);
 
+  const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
+
   const handlePress = async () => {
-    const ids = await toggleFavoriteId(phraseId);
-    const next = ids.includes(phraseId);
-    setIsSaved(next);
-    onChange?.(next);
+    const nextIds = await toggleFavoriteId(phraseId);
+    const nextSaved = nextIds.includes(phraseId);
+    setSaved(nextSaved);
+    if (nextSaved) scale.value = withSequence(withTiming(1.3, { duration: 100 }), withTiming(1, { duration: 100 }));
+    onChange?.(nextSaved);
   };
 
   return (
-    <Pressable
+    <AnimatedPressable
+      accessibilityLabel={saved ? 'Unsave phrase' : 'Save phrase'}
       accessibilityRole="button"
       disabled={loading}
       onPress={() => void handlePress()}
-      className={`h-12 w-12 items-center justify-center rounded-xl border border-primary ${
-        isSaved ? 'bg-primary' : 'bg-surface'
-      } ${loading ? 'opacity-50' : ''}`}
+      style={animatedStyle}
+      className={`h-12 w-12 items-center justify-center rounded-xl border border-primary ${saved ? 'bg-primary' : 'bg-surface'} ${loading ? 'opacity-50' : ''}`}
     >
-      <Text className={`text-xl ${isSaved ? 'text-white' : 'text-primary'}`}>♥</Text>
-    </Pressable>
+      <ThemedText className={`text-xl ${saved ? 'text-white' : 'text-primary'}`}>{saved ? '♥' : '♡'}</ThemedText>
+    </AnimatedPressable>
   );
 }
