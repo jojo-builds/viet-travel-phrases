@@ -38,7 +38,12 @@
     ],
     "extra": {
       "privacyPolicyUrl": "https://jojo-builds.github.io/viet-travel-phrases/privacy.html",
-      "termsOfUseUrl": "https://jojo-builds.github.io/viet-travel-phrases/terms.html"
-    }
+      "termsOfUseUrl": "https://jojo-builds.github.io/viet-travel-phrases/terms.html",
+      "router": {},
+      "eas": {
+        "projectId": "a87550d4-1656-4ad3-aa90-d76272f8bb90"
+      }
+    },
+    "owner": "jayopsai"
   }
 }
