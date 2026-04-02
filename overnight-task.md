@@ -1,0 +1,129 @@
+# Day 9 Overnight Task Brief
+
+## Context
+Vietnamese Travel Phrasebook iOS app. Days 1-8 complete. App running on developer's iPhone via Expo Go.
+
+Repo: C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases\app
+Output file: C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases\day9-results.md
+
+CRITICAL: Read CLAUDE.md in the app root FIRST before doing anything.
+
+Last commits:
+- d9de100 — Day 8: Fix eas.json, link EAS project  
+- 978eb82 — Day 8: In-app privacy/terms, EAS config, App Store listing copy
+
+## Task 1: App icon preparation (1024x1024)
+
+Icon variants are at: C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases\app-icons\app-icon-variant-1.png
+
+They are ~1000x1000px. Expo requires exactly 1024x1024.
+
+Steps:
+1. Check if sharp-cli is available: `npx sharp-cli --version`
+2. If not: `npm install -g sharp-cli`  
+3. Resize app-icon-variant-1.png to 1024x1024 → save to app\assets\images\icon.png
+4. Also save a copy as app\assets\images\adaptive-icon.png
+5. Verify app\app.json references correct paths for ios.icon and android.adaptiveIcon.foregroundImage
+
+If sharp-cli won't work, try using Node.js canvas or jimp:
+```
+cd C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases\app
+npm install jimp --save-dev
+node -e "
+const Jimp = require('jimp');
+Jimp.read('../app-icons/app-icon-variant-1.png').then(img => {
+  img.resize(1024, 1024).write('assets/images/icon.png');
+  img.resize(1024, 1024).write('assets/images/adaptive-icon.png');
+  console.log('Icons saved');
+});
+"
+```
+
+## Task 2: Update privacy/terms URLs to speaklocal.app
+
+In app\app.json, update any GitHub Pages privacy/terms URLs to:
+- Privacy: https://speaklocal.app/privacy  
+- Terms: https://speaklocal.app/terms
+
+Also check app\app\settings.tsx for any external Linking.openURL calls that still point to GitHub Pages — update those too.
+
+## Task 3: App Store listing cleanup
+
+Read app\docs\app-store-listing.md. The file may have encoding issues (garbled Vietnamese chars, broken emojis) due to Windows PowerShell encoding.
+
+1. Check the file for garbled text
+2. Rewrite the clean version with:
+   - App name: "Viet Travel Phrasebook" (23 chars)
+   - Subtitle: "Travel Vietnamese Made Easy" (29 chars)
+   - Clean description with proper Vietnamese characters (use Unicode directly: Cà phê sữa đá, etc.)
+   - Keep the structure: name, subtitle, promo text, description, keywords, category, rating
+
+Save the cleaned version back to app\docs\app-store-listing.md
+
+## Task 4: TypeScript validation
+
+Run from app\ directory:
+```
+npx tsc --noEmit 2>&1
+```
+
+Fix any errors found. Report what was fixed.
+
+## Task 5: EAS build attempt
+
+From app\ directory:
+```
+npx eas build --platform ios --profile preview --non-interactive 2>&1
+```
+
+- If build starts/completes: capture build URL or job ID
+- If gates on Apple 2FA: report the exact message, STOP — do not try to bypass
+- If other error: report full error text
+
+Apple ID for submission: alexiusxerxes@gmail.com (do NOT enter this anywhere unless prompted)
+
+## Task 6: Commit all changes
+
+```
+cd C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases\app
+git add -A
+git commit -m "Day 9: App icon 1024x1024, speaklocal.app URLs, App Store listing cleanup"
+git push origin main
+```
+
+## Required Output
+
+Write results to: C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases\day9-results.md
+
+```md
+# Day 9 Overnight Results
+
+## Task 1 — App Icon
+Status: done/failed
+Details: ...
+
+## Task 2 — Privacy/Terms URLs  
+Status: done/failed
+Changes: ...
+
+## Task 3 — App Store Listing
+Status: done/failed
+Encoding issues found: yes/no
+Changes: ...
+
+## Task 4 — TypeScript
+Status: clean/errors fixed
+Errors fixed: ...
+
+## Task 5 — EAS Build
+Status: started / gated-on-2fa / failed
+Build URL/ID: 
+Message: ...
+
+## Task 6 — Commit
+Hash: ...
+
+## Blockers for Jojo (needs human action)
+- [ ] item 1
+- [ ] item 2
+```

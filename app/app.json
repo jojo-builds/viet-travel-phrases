@@ -4,7 +4,7 @@
     "slug": "viet-travel-phrases",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/icon.png",
     "scheme": "viet-travel-phrases",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
@@ -18,12 +18,13 @@
       "bundleIdentifier": "com.jojobuilds.viettravelphrases",
       "buildNumber": "1",
       "infoPlist": {
-        "UIStatusBarStyle": "UIStatusBarStyleDarkContent"
+        "UIStatusBarStyle": "UIStatusBarStyleDarkContent",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#FAFAF8"
       },
       "edgeToEdgeEnabled": true,
@@ -37,8 +38,8 @@
       "expo-router"
     ],
     "extra": {
-      "privacyPolicyUrl": "https://jojo-builds.github.io/viet-travel-phrases/privacy.html",
-      "termsOfUseUrl": "https://jojo-builds.github.io/viet-travel-phrases/terms.html",
+      "privacyPolicyUrl": "https://speaklocal.app/privacy",
+      "termsOfUseUrl": "https://speaklocal.app/terms",
       "router": {},
       "eas": {
         "projectId": "a87550d4-1656-4ad3-aa90-d76272f8bb90"
