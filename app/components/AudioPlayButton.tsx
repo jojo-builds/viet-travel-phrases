@@ -9,10 +9,6 @@ type Props = {
   size?: number;
 };
 
-type AudioModule = typeof Audio & {
-  createSoundObjectAsync?: (source: number) => Promise<{ sound: Audio.Sound }>;
-};
-
 let activeSound: Audio.Sound | null = null;
 let activeStop: (() => Promise<void>) | null = null;
 
@@ -66,11 +62,7 @@ export function AudioPlayButton({ audioFile, size = 48 }: Props) {
       }
 
       setHasError(false);
-      const audioModule = Audio as AudioModule;
-      const playback = audioModule.createSoundObjectAsync
-        ? await audioModule.createSoundObjectAsync(source)
-        : await Audio.Sound.createAsync(source);
-      const sound = playback.sound;
+      const { sound } = await Audio.Sound.createAsync(source);
       activeSound = sound;
       setIsPlaying(true);
 

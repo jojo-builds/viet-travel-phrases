@@ -40,6 +40,8 @@ export function FeedbackModal({ visible, onClose }: Props) {
     onClose();
   };
 
+  const canSend = message.trim() && !sending;
+
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={handleClose}>
       <KeyboardAvoidingView
@@ -47,19 +49,19 @@ export function FeedbackModal({ visible, onClose }: Props) {
         className="flex-1 justify-end"
       >
         <Pressable className="flex-1 bg-black/40" onPress={handleClose} />
-        <View className="bg-surface rounded-t-3xl px-5 pt-5 pb-10">
-          <View className="flex-row items-center justify-between mb-4">
+        <View className="rounded-t-3xl bg-surface px-5 pb-10 pt-5">
+          <View className="mb-4 flex-row items-center justify-between">
             <ThemedText variant="subtitle">Send Feedback</ThemedText>
             <Pressable onPress={handleClose} className="p-1">
-              <ThemedText className="text-text-secondary text-lg">✕</ThemedText>
+              <ThemedText className="text-lg text-text-secondary">✕</ThemedText>
             </Pressable>
           </View>
 
           {sent ? (
             <View className="items-center py-8">
-              <ThemedText className="text-2xl mb-2">✅</ThemedText>
+              <ThemedText className="mb-2 text-2xl">✅</ThemedText>
               <ThemedText variant="subtitle">Thanks!</ThemedText>
-              <ThemedText variant="caption" className="text-center mt-1">
+              <ThemedText variant="caption" className="mt-1 text-center">
                 Your feedback has been received.
               </ThemedText>
             </View>
@@ -72,36 +74,17 @@ export function FeedbackModal({ visible, onClose }: Props) {
                 placeholderTextColor="#9CA3AF"
                 multiline
                 autoFocus
-                style={{
-                  borderWidth: 1.5,
-                  borderColor: '#E5E7EB',
-                  borderRadius: 12,
-                  padding: 14,
-                  fontSize: 15,
-                  color: '#1A1A2E',
-                  minHeight: 120,
-                  textAlignVertical: 'top',
-                  marginBottom: 14,
-                  backgroundColor: '#FAFAF8',
-                }}
+                className="mb-3.5 min-h-[120px] rounded-xl border-[1.5px] border-border bg-background p-3.5 text-[15px] text-text-primary"
+                style={{ textAlignVertical: 'top' }}
               />
               <Pressable
                 onPress={handleSend}
-                disabled={!message.trim() || sending}
-                style={({ pressed }) => ({
-                  backgroundColor: message.trim() && !sending ? '#FF6B35' : '#E5E7EB',
-                  borderRadius: 12,
-                  padding: 14,
-                  alignItems: 'center',
-                  opacity: pressed ? 0.85 : 1,
-                })}
+                disabled={!canSend}
+                className={`items-center rounded-xl p-3.5 ${canSend ? 'bg-primary' : 'bg-border'}`}
+                style={({ pressed }) => ({ opacity: pressed ? 0.85 : 1 })}
               >
                 <ThemedText
-                  style={{
-                    color: message.trim() && !sending ? '#fff' : '#9CA3AF',
-                    fontWeight: '600',
-                    fontSize: 16,
-                  }}
+                  className={`text-base font-semibold ${canSend ? 'text-white' : 'text-caption'}`}
                 >
                   {sending ? 'Sending…' : 'Send'}
                 </ThemedText>
