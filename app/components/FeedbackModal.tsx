@@ -16,7 +16,7 @@ export function FeedbackModal({ visible, onClose }: Props) {
     if (!message.trim()) return;
     setSending(true);
     try {
-      await fetch('https://formspree.io/f/xpwzgwrb', {
+      await fetch('https://formspree.io/f/mojpkagy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ message: message.trim(), _subject: 'App Feedback — Viet Travel Phrasebook' }),
