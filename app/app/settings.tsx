@@ -31,7 +31,7 @@ export default function SettingsScreen() {
     {
       section: 'Feedback',
       label: 'Send Feedback',
-      action: () => void openUrl('mailto:alexiusxerxes@gmail.com?subject=Viet%20Travel%20Phrasebook%20Feedback'),
+      action: () => void openUrl('https://speaklocal.app/feedback'),
     },
     { section: 'Feedback', label: 'Rate this App', action: openRate },
   ];
