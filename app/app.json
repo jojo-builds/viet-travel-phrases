@@ -19,7 +19,8 @@
       "buildNumber": "1",
       "infoPlist": {
         "UIStatusBarStyle": "UIStatusBarStyleDarkContent",
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "LSApplicationQueriesSchemes": ["mailto"]
       }
     },
     "android": {

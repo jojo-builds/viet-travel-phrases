@@ -18,8 +18,6 @@ export default function SettingsScreen() {
 
   const openUrl = async (url: string) => {
     try {
-      const supported = await Linking.canOpenURL(url);
-      if (!supported) throw new Error('unsupported');
       await Linking.openURL(url);
     } catch {
       Alert.alert('Unable to open link', 'Please try again later.');
@@ -33,7 +31,7 @@ export default function SettingsScreen() {
     {
       section: 'Feedback',
       label: 'Send Feedback',
-      action: () => void openUrl('mailto:feedback@jayopsai.com?subject=App Feedback'),
+      action: () => void openUrl('mailto:alexiusxerxes@gmail.com?subject=Viet%20Travel%20Phrasebook%20Feedback'),
     },
     { section: 'Feedback', label: 'Rate this App', action: openRate },
   ];
