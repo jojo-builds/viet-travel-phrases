@@ -1,38 +1,30 @@
+import { useState } from 'react';
 import { Alert, Pressable, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
-import * as Linking from 'expo-linking';
 import { ThemedText } from '../components/ui/ThemedText';
+import { FeedbackModal } from '../components/FeedbackModal';
 
 type Row = { section: 'About' | 'Legal' | 'Feedback'; label: string; action: () => void };
+
 const openAbout = () =>
   Alert.alert(
     'Vietnamese Travel Phrasebook',
     'Offline travel Vietnamese for everyday situations.\n\nMade with ❤️ in Vietnam',
   );
+
 const openRate = () =>
   Alert.alert('Coming soon', 'Store rating link will be added post-launch.');
 
 export default function SettingsScreen() {
   const router = useRouter();
-
-  const openUrl = async (url: string) => {
-    try {
-      await Linking.openURL(url);
-    } catch {
-      Alert.alert('Unable to open link', 'Please try again later.');
-    }
-  };
+  const [feedbackVisible, setFeedbackVisible] = useState(false);
 
   const rows: Row[] = [
     { section: 'About', label: 'About this app', action: openAbout },
     { section: 'Legal', label: 'Privacy Policy', action: () => router.push('/privacy') },
     { section: 'Legal', label: 'Terms of Use', action: () => router.push('/terms') },
-    {
-      section: 'Feedback',
-      label: 'Send Feedback',
-      action: () => void openUrl('https://speaklocal.app/feedback'),
-    },
+    { section: 'Feedback', label: 'Send Feedback', action: () => setFeedbackVisible(true) },
     { section: 'Feedback', label: 'Rate this App', action: openRate },
   ];
 
@@ -67,6 +59,8 @@ export default function SettingsScreen() {
           Version 1.0.0 • Made with ❤️ in Vietnam
         </ThemedText>
       </View>
+
+      <FeedbackModal visible={feedbackVisible} onClose={() => setFeedbackVisible(false)} />
     </SafeAreaView>
   );
 }
