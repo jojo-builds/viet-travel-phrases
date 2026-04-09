@@ -28,6 +28,8 @@ Reference files:
 - Store build `0db6c21a-703a-433b-a10f-626ef4fc9507` has been uploaded to App Store Connect / TestFlight
 - App Privacy has been configured and published in App Store Connect
 - TestFlight build `1.0.0 (2)` is now installed on iPhone
+- Local release config now matches the current shipped iOS build number:
+  - `app/app.json` -> `ios.buildNumber = "2"`
 - In-app privacy and terms screens exist
 - Public privacy, terms, and landing docs exist
 - App Store listing copy exists
@@ -57,10 +59,13 @@ Reference files:
 
 4. **Screenshots**
    - Screenshot status is still unresolved
+   - Local screenshot asset folder is empty:
+     - `app/assets/screenshots/`
    - Jojo must confirm they are already in App Store Connect or re-create/upload them
 
 5. **Real feedback-path verification**
-   - A live end-to-end feedback submission test should be done before submission
+   - Formspree endpoint has been verified from the VPS with the app's real payload shape (`{"ok": true}`)
+   - The remaining open item is confirming the support inbox receives the message
 
 6. **Final pre-submit review**
    - One more final pass should happen against the updated working tree before store submission
@@ -72,7 +77,7 @@ Reference files:
 
 ### Manual / Apple-side blockers
 - Screenshots not yet confirmed
-- Feedback flow not yet tested end-to-end
+- Support inbox receipt for feedback submissions is not yet confirmed
 
 ## Icon status
 

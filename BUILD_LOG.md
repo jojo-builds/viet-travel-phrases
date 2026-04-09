@@ -179,3 +179,5 @@ DAYS 4-5 COMPLETE: Favorites/Settings/animations/edge cases done, committed to G
   - App Privacy has been published in App Store Connect
   - Privacy Policy URL is set to the live public policy
   - the TestFlight build is installed on iPhone
+  - Formspree endpoint verification from the VPS returned `{"next":"/thanks","ok":true}`
+  - local screenshot asset folder is still empty, so screenshot proof remains unresolved

@@ -18,6 +18,8 @@ This note captures the current reality for getting the latest iOS build into Tes
   - `npx expo-doctor`
 - App Privacy is published in App Store Connect
 - TestFlight build `1.0.0 (2)` is installed on iPhone
+- VPS verification of the Formspree endpoint succeeded:
+  - response: `{"next":"/thanks","ok":true}`
 
 ## What happened
 
@@ -36,7 +38,7 @@ This note captures the current reality for getting the latest iOS build into Tes
 ## After submit succeeds
 
 1. Run the device checklist in `reviews/IOS-TESTING-INSTRUCTIONS-2026-04-08.md`
-2. Verify the feedback submission path end-to-end
+2. Verify the feedback submission path end-to-end, including inbox receipt
 3. Confirm screenshots and remaining App Store metadata
 
 ## Meanwhile

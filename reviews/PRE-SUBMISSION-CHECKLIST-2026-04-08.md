@@ -28,6 +28,7 @@ Use this before any new TestFlight build or App Store submission attempt.
 ## Device / build validation
 
 - [ ] Run one real feedback submission test and verify the message arrives through Formspree
+  Note: the Formspree endpoint itself has already returned success from a VPS verification request; inbox receipt is the remaining proof step.
 - [ ] Do one more preview/TestFlight validation pass after the current fixes
 - [ ] Verify icon rendering on device looks full-bleed and not washed out
 - [ ] Re-check privacy, terms, settings, favorites, and audio playback on device
