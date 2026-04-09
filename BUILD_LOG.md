@@ -1,5 +1,16 @@
 # Viet Travel Phrases — Build Log
 
+---
+## ⚠️ ASSET CAPTURE RULE (permanent)
+When Jojo sends screenshots, images, or files in Discord:
+1. Ask Jojo to also upload them to GitHub repo (`jojo-builds/viet-travel-phrases`) under `assets/screenshots/` OR to the project Google Drive
+2. OR Jay must immediately save them via the Discord attachment URL to `projects/viet-travel-phrases/app/assets/screenshots/` and commit
+3. NEVER rely on chat-only delivery for project assets — they will be lost on session reset
+
+Day 8 status: Jojo confirmed screenshots and app icon were done in a prior session.
+Screenshots current location: UNKNOWN — not in workspace. Jojo to re-share or confirm GitHub location.
+---
+
 **App:** Vietnamese Travel Phrasebook (iOS)  
 **GitHub:** https://github.com/jojo-builds/viet-travel-phrases  
 **Tracker:** https://docs.google.com/spreadsheets/d/1xn37ov4nd5HlSETDFuDHXFeqVmrYNT4uOmSBu5xNKP4  
@@ -150,3 +161,21 @@ DAYS 4-5 COMPLETE: Favorites/Settings/animations/edge cases done, committed to G
 - TypeScript passes clean (`npx tsc --noEmit` — no errors)
 - NativeWind v4.2.3 config verified correct: metro.config.js, tailwind.config.js, babel.config.js, global.css, nativewind-env.d.ts all aligned
 - Remaining blockers: audio files (need OpenAI API key), Expo/EAS login, Apple Developer Account
+
+### 2026-04-09 - TestFlight handoff advanced
+- Confirmed finished EAS iOS builds:
+  - Internal preview build `6467e106-a6d6-4973-9de7-b8e381f0aec6`
+  - Store build `0db6c21a-703a-433b-a10f-626ef4fc9507`
+- Created the App Store Connect app record for bundle ID `com.jojobuilds.viettravelphrases`
+  - Apple app ID: `6761904350`
+- Updated `app/eas.json` so the submit profile now includes `ascAppId: 6761904350`
+- Ran interactive `eas submit` for store build `0db6c21a-703a-433b-a10f-626ef4fc9507`
+- Upload succeeded and Apple is now processing build `1.0.0 (2)` for TestFlight
+- Immediate next Apple-side step:
+  - wait for processing to finish in TestFlight
+  - confirm internal tester access
+  - install on iPhone and run the phone validation checklist
+- Follow-up status:
+  - App Privacy has been published in App Store Connect
+  - Privacy Policy URL is set to the live public policy
+  - the TestFlight build is installed on iPhone
