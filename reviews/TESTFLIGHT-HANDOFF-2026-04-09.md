@@ -41,6 +41,13 @@ This note captures the current reality for getting the latest iOS build into Tes
 2. Verify the feedback submission path end-to-end, including inbox receipt
 3. Confirm screenshots and remaining App Store metadata
 
+## Latest status
+
+- Screenshots were uploaded successfully after converting them to App Store-safe dimensions and formats
+- App version `1.0.0 (2)` has now been submitted to Apple App Review
+- App Store Connect currently shows:
+  - `Waiting for Review`
+
 ## Meanwhile
 
 Use the internal preview build for immediate on-device validation while TestFlight distribution is being completed.

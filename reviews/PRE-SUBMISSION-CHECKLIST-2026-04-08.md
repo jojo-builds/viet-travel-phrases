@@ -21,7 +21,7 @@ Use this before any new TestFlight build or App Store submission attempt.
 
 - [x] In App Store Connect, set App Privacy to disclose optional feedback collection via Formspree
 - [x] Confirm the bundle ID `com.jojobuilds.viettravelphrases` is the one being submitted
-- [ ] Confirm screenshots are already uploaded to App Store Connect, or recreate/upload them
+- [x] Confirm screenshots are already uploaded to App Store Connect, or recreate/upload them
 - [x] Confirm the privacy policy URL used in App Store Connect matches the updated public policy
 - [ ] Confirm the support email `feedback@jayopsai.com` is monitored
 
@@ -44,3 +44,7 @@ Use this before any new TestFlight build or App Store submission attempt.
 ## Submission gate
 
 Do not submit until every unchecked item above is either complete or deliberately waived with a written reason.
+
+Submission status:
+- Submitted to Apple App Review on 2026-04-09
+- Current status: `Waiting for Review`

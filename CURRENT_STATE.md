@@ -30,6 +30,9 @@ Reference files:
 - TestFlight build `1.0.0 (2)` is now installed on iPhone
 - Local release config now matches the current shipped iOS build number:
   - `app/app.json` -> `ios.buildNumber = "2"`
+- App version `1.0.0 (2)` has been submitted to Apple App Review
+- Current App Store Connect review status:
+  - `Waiting for Review`
 - In-app privacy and terms screens exist
 - Public privacy, terms, and landing docs exist
 - App Store listing copy exists
@@ -49,26 +52,27 @@ Reference files:
 1. **Commit and push the current working tree**
    - The repo still has important uncommitted changes
 
-2. **Run the TestFlight device validation pass**
-   - The TestFlight build is available and installed on iPhone
-   - The next step is to run the on-device checklist and capture any bugs or submission risks
+2. **Monitor the App Review queue**
+   - The app is now submitted and waiting for Apple review
+   - The next step is to watch for review feedback or approval
 
 3. **App Store Connect privacy disclosure**
    - Privacy disclosure is now published
    - The remaining task is just to keep it aligned with the shipping app behavior
 
 4. **Screenshots**
-   - Screenshot status is still unresolved
-   - Local screenshot asset folder is empty:
+   - App Store screenshots have now been uploaded in App Store Connect
+   - Local screenshot asset folder is still empty:
      - `app/assets/screenshots/`
-   - Jojo must confirm they are already in App Store Connect or re-create/upload them
+   - Repo-side asset capture is still worth doing later so the approved screenshots are not lost
 
 5. **Real feedback-path verification**
    - Formspree endpoint has been verified from the VPS with the app's real payload shape (`{"ok": true}`)
    - The remaining open item is confirming the support inbox receives the message
 
-6. **Final pre-submit review**
-   - One more final pass should happen against the updated working tree before store submission
+6. **Post-submit follow-up**
+   - Watch for Apple review notes, approval, or rejection
+   - If rejected, respond with the exact rejection text and fix only what is required
 
 ## Submission blockers now
 
@@ -76,7 +80,6 @@ Reference files:
 - Uncommitted working tree
 
 ### Manual / Apple-side blockers
-- Screenshots not yet confirmed
 - Support inbox receipt for feedback submissions is not yet confirmed
 
 ## Icon status
@@ -99,4 +102,4 @@ This split is intentional and should stay consistent.
 
 ## Immediate next step
 
-Run the TestFlight phone checklist on build `1.0.0 (2)`, especially audio, favorites persistence, legal links, icon rendering, and the real feedback submission path.
+Watch App Store Connect for the review status change from `Waiting for Review`, and keep the exact submission details handy in case Apple replies with questions.
