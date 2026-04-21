@@ -1,0 +1,57 @@
+{
+  "taskId": "T-087",
+  "title": "Desktop Codex automation pilot, France first-wave authoring scaffold completion",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-50-2-20260420T155251586Z",
+    "label": "desktop-automation-20260420-105251"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T10:52:51.5861503-05:00",
+    "lastHeartbeatAt": "2026-04-20T11:19:17.6890637-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T13:19:17.6890637-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "french_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-087\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-087\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-087\\reviews\\",
+    "logs": ".agent\\tasks\\T-087\\logs\\",
+    "requiredForDone": [
+      "content-draft\\french\\README.md",
+      "content-draft\\french\\source-notes.md",
+      "content-draft\\french\\phrase-source.csv",
+      "content-draft\\french\\first-wave-priority.csv",
+      "content-draft\\french\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T11:19:17.6890637-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

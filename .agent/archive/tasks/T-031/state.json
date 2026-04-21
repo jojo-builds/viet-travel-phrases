@@ -1,0 +1,54 @@
+{
+  "taskId": "T-031",
+  "title": "Desktop Codex automation pilot, France first-wave authoring scaffold completion",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-automation-20260419T160401-0500",
+    "label": "Codex desktop queue T-030 reclaim"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T16:04:01.384450-05:00",
+    "lastHeartbeatAt": "2026-04-19T16:11:10.861939-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T16:11:10.861939-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "french_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    {
+      "summary": "This worker session does not expose a usable spawn_agent surface, so it cannot run the mandatory 3 review gates with exactly 4 Codex subagents per gate."
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-031/result.md",
+    "reviews": ".agent/tasks/T-031/reviews/",
+    "logs": ".agent/tasks/T-031/logs/",
+    "draftLane": "content-draft/french/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-19T16:11:10.861939-05:00"
+}

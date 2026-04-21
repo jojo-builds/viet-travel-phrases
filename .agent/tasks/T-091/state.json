@@ -1,0 +1,55 @@
+{
+  "taskId": "T-091",
+  "title": "Desktop Codex automation pilot, Vietnam website starter trust-panel and reachability evidence refresh",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-50-2-b350a5b6-62af-4071-8b80-6660a89d8e64",
+    "label": "Task Queue 50 automation"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T13:51:38.2816315-05:00",
+    "lastHeartbeatAt": "2026-04-20T14:02:29.6563521-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T16:02:29.6563521-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "website_content_conversion"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-091\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-091\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-091\\reviews\\",
+    "logs": ".agent\\tasks\\T-091\\logs\\",
+    "requiredForDone": [
+      "docs\\website\\PHRASE_AUDIO_DELIVERY.md",
+      "site\\src\\data\\phrasePreviewManifest.ts",
+      "site\\src\\routes\\(marketing)\\vietnamese\\+page.svelte"
+    ]
+  },
+  "lastUpdated": "2026-04-20T14:02:29.6563521-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "taskId": "T-093",
+  "title": "Desktop Codex automation pilot, Vietnam website starter export evidence ledger and validator hardening",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-20-20260420T192112733Z",
+    "label": "Task Queue 20 automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T19:21:12.7330559Z",
+    "lastHeartbeatAt": "2026-04-20T19:32:15.8527819Z",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T21:32:15.8638843Z",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "website_starter_exports"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-093\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-093\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-093\\reviews\\",
+    "logs": ".agent\\tasks\\T-093\\logs\\",
+    "requiredForDone": [
+      "docs\\website\\PHRASE_AUDIO_DELIVERY.md",
+      "site\\data\\phrase-previews\\manifest.json",
+      "site\\public\\data\\phrase-previews\\manifest.json"
+    ]
+  },
+  "lastUpdated": "2026-04-20T14:32:15.8097637-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

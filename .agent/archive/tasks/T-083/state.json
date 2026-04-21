@@ -1,0 +1,50 @@
+{
+  "taskId": "T-083",
+  "title": "Desktop Codex automation pilot, controlled Viet audio follow-up batch",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "75e3e6b4-9b4c-4edf-822e-27908bec2557",
+    "label": "task-queue-30-T-083"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T09:32:33.9411459-05:00",
+    "lastHeartbeatAt": "2026-04-20T09:38:45.5420488-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T11:38:45.5420488-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "shared_audio_pipeline"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-083\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-083\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-083\\reviews\\",
+    "logs": ".agent\\tasks\\T-083\\logs\\"
+  },
+  "lastUpdated": "2026-04-20T09:38:45.5420488-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

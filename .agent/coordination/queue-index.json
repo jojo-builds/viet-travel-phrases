@@ -1,0 +1,463 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-21T14:11:28.607387-05:00",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "selectionPolicy": {
+    "preferredGroups": [
+      "reclaimable",
+      "queued"
+    ],
+    "lifecycleTruth": ".agent/tasks/T-xxx/state.json",
+    "indexRole": "fast-selection-aid",
+    "rebuildRule": "If queue-index.json is missing, stale, or disagrees materially with task state, trust state.json and rebuild the index from task folders.",
+    "orderingRule": "Across preferred groups, group preference wins first, then lower automation.selectionOrder, then task id."
+  },
+  "groups": {
+    "reclaimable": [
+      {
+        "taskId": "T-125",
+        "title": "Desktop Codex automation pilot, Tagalog v2 direct-pickup promotion packet and runtime-handoff hardening",
+        "state": ".agent\\tasks\\T-125\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_v2_prep_lane"
+      },
+      {
+        "taskId": "T-128",
+        "title": "Desktop Codex automation pilot, shared search normalization replay and bounded matcher-shell packet",
+        "state": ".agent\\tasks\\T-128\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "ios_family_shared_ui"
+      }
+    ],
+    "queued": [
+      {
+        "taskId": "T-129",
+        "title": "Desktop Codex automation pilot, Viet live-audio orphan disposition and parity packet",
+        "state": ".agent\\tasks\\T-129\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "shared_audio_pipeline"
+      },
+      {
+        "taskId": "T-130",
+        "title": "Desktop Codex automation pilot, Viet arrival relation coverage and starter export parity packet",
+        "state": ".agent\\tasks\\T-130\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_starter_exports"
+      },
+      {
+        "taskId": "T-131",
+        "title": "Desktop Codex automation pilot, Viet restore-path walkthrough and locked-state shell packet",
+        "state": ".agent\\tasks\\T-131\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "ios_viet_app_shell"
+      },
+      {
+        "taskId": "T-132",
+        "title": "Desktop Codex automation pilot, Viet device-proof blocker ledger and return-readiness packet hardening",
+        "state": ".agent\\tasks\\T-132\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "ops_docs_truth"
+      },
+      {
+        "taskId": "T-133",
+        "title": "Desktop Codex automation pilot, Viet ASC non-consumable and preview-launch checklist packet",
+        "state": ".agent\\tasks\\T-133\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "apple_release_testflight"
+      },
+      {
+        "taskId": "T-134",
+        "title": "Desktop Codex automation pilot, Viet country-route follow-on ladder and off-hub support honesty packet",
+        "state": ".agent\\tasks\\T-134\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_content_conversion"
+      }
+    ],
+    "in_progress": [],
+    "blocked": [
+      {
+        "taskId": "T-073",
+        "title": "Desktop Codex automation pilot, shared search normalization audit and bounded family-shell fix pass",
+        "state": ".agent\\tasks\\T-073\\state.json",
+        "selectionOrder": 4,
+        "writeLock": ".agent/tasks/T-073/**"
+      },
+      {
+        "taskId": "T-099",
+        "title": "Desktop Codex automation pilot, controlled Viet audio follow-up batch and seam ledger update",
+        "state": ".agent\\tasks\\T-099\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "shared_audio_pipeline"
+      }
+    ],
+    "draft": [
+      {
+        "taskId": "T-002",
+        "title": "Website preview-manifest sanity check and cleanup pilot",
+        "state": ".agent\\tasks\\T-002\\state.json",
+        "selectionOrder": 0,
+        "writeLock": ".agent/coordination/locks.yaml"
+      }
+    ],
+    "recently_completed": [
+      {
+        "taskId": "T-127",
+        "title": "Desktop Codex automation pilot, Viet country-route trust-panel parity and app-depth honesty packet",
+        "state": ".agent\\tasks\\T-127\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_content_conversion"
+      },
+      {
+        "taskId": "T-126",
+        "title": "Desktop Codex automation pilot, Viet device-proof return packet and ASC evidence sync contract",
+        "state": ".agent\\tasks\\T-126\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "ops_docs_truth"
+      },
+      {
+        "taskId": "T-122",
+        "title": "Desktop Codex automation pilot, Japan starter-handoff and graduation-boundary packet",
+        "state": ".agent\\tasks\\T-122\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "japanese_prep_lane"
+      },
+      {
+        "taskId": "T-124",
+        "title": "Desktop Codex automation pilot, Viet relation-safe starter export and phrase-detail module packet",
+        "state": ".agent\\tasks\\T-124\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "website_starter_exports"
+      },
+      {
+        "taskId": "T-121",
+        "title": "Desktop Codex automation pilot, Turkey graduation-boundary and native-review closure packet",
+        "state": ".agent\\tasks\\T-121\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "turkish_prep_lane"
+      },
+      {
+        "taskId": "T-120",
+        "title": "Desktop Codex automation pilot, Spain residual handoff and graduation-boundary packet",
+        "state": ".agent\\tasks\\T-120\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "spanish_prep_lane"
+      },
+      {
+        "taskId": "T-119",
+        "title": "Desktop Codex automation pilot, France residual handoff and graduation-boundary packet",
+        "state": ".agent\\tasks\\T-119\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "french_prep_lane"
+      },
+      {
+        "taskId": "T-110",
+        "title": "Desktop Codex automation pilot, Viet phrase-page audio playback seam and starter export hardening pass",
+        "state": ".agent\\tasks\\T-110\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_starter_exports"
+      },
+      {
+        "taskId": "T-123",
+        "title": "Desktop Codex automation pilot, Viet historical audio truth cleanup and orphan disposition packet",
+        "state": ".agent\\tasks\\T-123\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "shared_audio_pipeline"
+      },
+      {
+        "taskId": "T-116",
+        "title": "Desktop Codex automation pilot, Tagalog v2 expansion-cluster pickup and graduation-boundary hardening pass",
+        "state": ".agent\\tasks\\T-116\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_v2_prep_lane"
+      },
+      {
+        "taskId": "T-115",
+        "title": "Desktop Codex automation pilot, Vietnam starter conversion path and situation-copy hardening pass",
+        "state": ".agent\\tasks\\T-115\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_content_conversion"
+      },
+      {
+        "taskId": "T-114",
+        "title": "Desktop Codex automation pilot, Tagalog relation-cluster expansion and retrieval handoff hardening pass",
+        "state": ".agent\\tasks\\T-114\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_relation_model"
+      },
+      {
+        "taskId": "T-118",
+        "title": "Desktop Codex automation pilot, Italy residual holdout adjudication and graduation-readiness packet",
+        "state": ".agent\\tasks\\T-118\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "italian_prep_lane"
+      },
+      {
+        "taskId": "T-117",
+        "title": "Desktop Codex automation pilot, Viet starter export contract and off-hub module parity hardening pass",
+        "state": ".agent\\tasks\\T-117\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_starter_exports"
+      },
+      {
+        "taskId": "T-113",
+        "title": "Desktop Codex automation pilot, Viet relation-cluster expansion and listing-handoff hardening pass",
+        "state": ".agent\\tasks\\T-113\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "viet_relation_model"
+      },
+      {
+        "taskId": "T-112",
+        "title": "Desktop Codex automation pilot, Viet device-proof execution packet hardening and blocker-surface sync pass",
+        "state": ".agent\\tasks\\T-112\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "ops_docs_truth"
+      },
+      {
+        "taskId": "T-111",
+        "title": "Desktop Codex automation pilot, Italy next utility translation pack and holdout cleanup",
+        "state": ".agent\\tasks\\T-111\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "italian_prep_lane"
+      },
+      {
+        "taskId": "T-109",
+        "title": "Desktop Codex automation pilot, Tagalog v2 starter handoff clustering and retrieval-ready contract pass",
+        "state": ".agent\\tasks\\T-109\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_v2_prep_lane"
+      },
+      {
+        "taskId": "T-106",
+        "title": "Desktop Codex automation pilot, Germany residual-review packet and release-posture closeout",
+        "state": ".agent\\tasks\\T-106\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "german_prep_lane"
+      },
+      {
+        "taskId": "T-105",
+        "title": "Desktop Codex automation pilot, France second translation wave and residual-risk isolation pass",
+        "state": ".agent\\tasks\\T-105\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "french_prep_lane"
+      },
+      {
+        "taskId": "T-108",
+        "title": "Desktop Codex automation pilot, Tagalog relation-ready phrase family pack and follow-on graph prep",
+        "state": ".agent\\tasks\\T-108\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "tagalog_relation_model"
+      },
+      {
+        "taskId": "T-107",
+        "title": "Desktop Codex automation pilot, Viet phrase relationship schema draft and listing-detail handoff pack",
+        "state": ".agent\\tasks\\T-107\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "viet_relation_model"
+      },
+      {
+        "taskId": "T-104",
+        "title": "Desktop Codex automation pilot, Turkey residual-tail closure and native-review handoff pack",
+        "state": ".agent\\tasks\\T-104\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "turkish_prep_lane"
+      },
+      {
+        "taskId": "T-103",
+        "title": "Desktop Codex automation pilot, Tagalog v2 parked-backlog reopen order and next-pass curation pack",
+        "state": ".agent\\tasks\\T-103\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_v2_prep_lane"
+      },
+      {
+        "taskId": "T-102",
+        "title": "Desktop Codex automation pilot, Vietnam website starter module subset and conversion ordering pass",
+        "state": ".agent\\tasks\\T-102\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_content_conversion"
+      },
+      {
+        "taskId": "T-101",
+        "title": "Desktop Codex automation pilot, Japan deferred-row decision and starter-slice curation pack",
+        "state": ".agent\\tasks\\T-101\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "japanese_prep_lane"
+      },
+      {
+        "taskId": "T-100",
+        "title": "Desktop Codex automation pilot, Viet device-proof evidence packet and blocker handoff tightening",
+        "state": ".agent\\tasks\\T-100\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "ops_docs_truth"
+      },
+      {
+        "taskId": "T-095",
+        "title": "Desktop Codex automation pilot, Spain pronunciation-rule validation and small-tail triage pass",
+        "state": ".agent\\tasks\\T-095\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "spanish_prep_lane"
+      },
+      {
+        "taskId": "T-098",
+        "title": "Desktop Codex automation pilot, France first-wave translation pack and pronunciation helper pass",
+        "state": ".agent\\tasks\\T-098\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "french_prep_lane"
+      },
+      {
+        "taskId": "T-097",
+        "title": "Desktop Codex automation pilot, Turkey next utility translation pack and holdout review pass",
+        "state": ".agent\\tasks\\T-097\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "turkish_prep_lane"
+      },
+      {
+        "taskId": "T-096",
+        "title": "Desktop Codex automation pilot, Tagalog v2 starter-core promotion pack and deferred-row recheck",
+        "state": ".agent\\tasks\\T-096\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_v2_prep_lane"
+      },
+      {
+        "taskId": "T-094",
+        "title": "Desktop Codex automation pilot, Japan next utility translation pack and unresolved-row reduction",
+        "state": ".agent\\tasks\\T-094\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "japanese_prep_lane"
+      },
+      {
+        "taskId": "T-093",
+        "title": "Desktop Codex automation pilot, Vietnam website starter export evidence ledger and validator hardening",
+        "state": ".agent\\tasks\\T-093\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_starter_exports"
+      },
+      {
+        "taskId": "T-092",
+        "title": "Desktop Codex automation pilot, Viet audio continuity ledger refresh and next-batch allowlist hardening",
+        "state": ".agent\\tasks\\T-092\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "shared_audio_pipeline"
+      },
+      {
+        "taskId": "T-091",
+        "title": "Desktop Codex automation pilot, Vietnam website starter trust-panel and reachability evidence refresh",
+        "state": ".agent\\tasks\\T-091\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "website_content_conversion"
+      },
+      {
+        "taskId": "T-090",
+        "title": "Desktop Codex automation pilot, Viet readiness truth refresh and blocker-ledger hardening",
+        "state": ".agent\\tasks\\T-090\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "ops_docs_truth"
+      },
+      {
+        "taskId": "T-089",
+        "title": "Desktop Codex automation pilot, Germany lone-holdout isolation and native-review handoff pack",
+        "state": ".agent\\tasks\\T-089\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "german_prep_lane"
+      },
+      {
+        "taskId": "T-088",
+        "title": "Desktop Codex automation pilot, Tagalog v2 active follow-on completion and runtime-handoff hardening",
+        "state": ".agent\\tasks\\T-088\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_v2_prep_lane"
+      },
+      {
+        "taskId": "T-065",
+        "title": "Desktop Codex automation pilot, Portugal research and prep-only lane bootstrap",
+        "state": ".agent\\tasks\\T-065\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "future_language_content_drafts"
+      },
+      {
+        "taskId": "T-086",
+        "title": "Desktop Codex automation pilot, Indonesia holdout-management pass and residual queue reduction",
+        "state": ".agent\\tasks\\T-086\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "indonesia_prep_lane"
+      },
+      {
+        "taskId": "T-087",
+        "title": "Desktop Codex automation pilot, France first-wave authoring scaffold completion",
+        "state": ".agent\\tasks\\T-087\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "french_prep_lane"
+      },
+      {
+        "taskId": "T-027",
+        "title": "Desktop Codex automation pilot, Japan second first-wave translation pass and unresolved-row reduction",
+        "state": ".agent\\tasks\\T-027\\state.json",
+        "selectionOrder": 1,
+        "writeLock": "japanese_prep_lane"
+      },
+      {
+        "taskId": "T-013",
+        "title": "Desktop Codex automation pilot, Spain first-wave translation pass",
+        "state": ".agent\\tasks\\T-013\\state.json",
+        "selectionOrder": 1,
+        "writeLock": "spanish_prep_lane"
+      },
+      {
+        "taskId": "T-072",
+        "title": "Desktop Codex automation pilot, Viet purchase-surface honesty and small-screen shell audit",
+        "state": ".agent\\tasks\\T-072\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "ios_viet_app_shell"
+      },
+      {
+        "taskId": "T-076",
+        "title": "Desktop Codex automation pilot, South Korea first-wave translation pack and prep-ready expansion pass",
+        "state": ".agent\\tasks\\T-076\\state.json",
+        "selectionOrder": 2,
+        "writeLock": "korean_prep_lane"
+      },
+      {
+        "taskId": "T-075",
+        "title": "Desktop Codex automation pilot, Indonesia first-wave translation pack and prep-ready expansion pass",
+        "state": ".agent\\tasks\\T-075\\state.json",
+        "selectionOrder": 2,
+        "writeLock": "indonesia_prep_lane"
+      },
+      {
+        "taskId": "T-030",
+        "title": "Desktop Codex automation pilot, Italy second first-wave translation pass and unresolved-row reduction",
+        "state": ".agent\\tasks\\T-030\\state.json",
+        "selectionOrder": 1,
+        "writeLock": "italian_prep_lane"
+      },
+      {
+        "taskId": "T-074",
+        "title": "Desktop Codex automation pilot, cross-language ElevenLabs prep audio batch",
+        "state": ".agent\\tasks\\T-074\\state.json",
+        "selectionOrder": 0,
+        "writeLock": "shared_audio_pipeline"
+      },
+      {
+        "taskId": "T-071",
+        "title": "Desktop Codex automation pilot, Viet device-proof ops truth sync and evidence pack refresh",
+        "state": ".agent\\tasks\\T-071\\state.json",
+        "selectionOrder": 2,
+        "writeLock": "ops_docs_truth"
+      }
+    ],
+    "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
+  },
+  "stats": {
+    "queuedCount": 6,
+    "reclaimableCount": 2,
+    "inProgressCount": 0,
+    "blockedCount": 2,
+    "draftCount": 1,
+    "recentlyCompletedCount": 49
+  },
+  "notes": [
+    "This index is intentionally small and selection-focused.",
+    "Workers should read this file before task states, then verify only the referenced candidate states until one task is selected.",
+    "Queue order is explicit here; do not linear-scan the full task tree when the index is healthy.",
+    "Use automation.selectionOrder for intentional proof-task or hotfix prioritization without renumbering task ids."
+  ]
+}

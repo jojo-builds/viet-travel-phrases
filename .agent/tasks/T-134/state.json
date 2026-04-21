@@ -1,0 +1,57 @@
+{
+  "taskId": "T-134",
+  "title": "Desktop Codex automation pilot, Viet country-route follow-on ladder and off-hub support honesty packet",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "website_content_conversion"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-134\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-134\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-134\\reviews\\",
+    "logs": ".agent\\tasks\\T-134\\logs\\",
+    "requiredForDone": [
+      "site\\countries\\vietnam.html",
+      "site\\countries\\vietnam\\index.html",
+      "docs\\website\\PHRASE_AUDIO_DELIVERY.md",
+      ".agent\\tasks\\T-134\\logs\\viet-follow-on-ladder-audit.md",
+      ".agent\\tasks\\T-134\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T14:11:00-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

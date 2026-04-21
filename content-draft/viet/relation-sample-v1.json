@@ -1,0 +1,1282 @@
+{
+  "schemaVersion": 1,
+  "sampleId": "viet-relation-sample-v1",
+  "language": "Vietnamese",
+  "status": "draft-handoff",
+  "clusterCount": 29,
+  "purpose": "Additive relation-ready starter-safe handoff for phrase-detail and listing work across 29 high-value Viet family clusters without replacing the current scenario -> family -> phrase-row model.",
+  "sourceOfTruth": {
+    "authoringCsv": "content-draft/viet/phrase-source.csv",
+    "generatedPack": "app/family/packs/viet.generated.ts",
+    "rowMembershipField": "notes",
+    "membershipMarkerPrefix": "relation-sample=",
+    "membershipTokenFormat": "<clusterId>:anchor | <clusterId>:variant:clearer | <clusterId>:variant:more-polite | <clusterId>:variant:also-common",
+    "precedenceRules": [
+      "Phrase text, access, scenario membership, and variant role still come from the base CSV and generated pack.",
+      "The notes marker only marks which rows participate in this bounded relation sample.",
+      "This sidecar owns family-level relation edges and advisory likely-reply or next-step guidance.",
+      "youMayHearSignals and possibleTravelerResponses are hints, not deterministic runtime promises."
+    ]
+  },
+  "relationTypes": [
+    {
+      "id": "reply_to",
+      "description": "The target family is a direct reply or acknowledgment to the current family."
+    },
+    {
+      "id": "likely_answer_to",
+      "description": "The target family is a likely thing the traveler may hear back after saying the current family."
+    },
+    {
+      "id": "next_step_after",
+      "description": "The target family is the most likely next useful traveler move."
+    },
+    {
+      "id": "repair_for",
+      "description": "The target family is the safer repair branch when the current family is not enough."
+    },
+    {
+      "id": "same_need_alt_context",
+      "description": "The target family serves a similar need in a nearby context."
+    },
+    {
+      "id": "see_also",
+      "description": "The target family is nearby utility worth surfacing without implying strict sequence."
+    }
+  ],
+  "clusters": [
+    {
+      "clusterId": "viet-greeting-hello",
+      "coverageMoment": "greeting",
+      "scenarioId": "polite-basics",
+      "familyId": "polite-hello",
+      "familyTitle": "Hello",
+      "accessTier": "starter",
+      "anchorPhraseId": "polite-1",
+      "shortestFormPhraseId": "polite-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "acknowledgment",
+          "familyId": "polite-acknowledge",
+          "phraseId": "polite-3",
+          "note": "A soft acknowledgment is the most likely response or immediate follow-up around desks, rides, and counters."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "likely_answer_to",
+          "targetFamilyId": "polite-acknowledge",
+          "reason": "A greeting often gets a short acknowledgment back before the real request starts."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "transport-destination",
+          "reason": "A ride interaction often moves from greeting straight into the destination."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "hotel-reservation",
+          "reason": "A hotel desk interaction often moves from greeting straight into the reservation declaration."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-greeting-acknowledge",
+      "coverageMoment": "greeting",
+      "scenarioId": "polite-basics",
+      "familyId": "polite-acknowledge",
+      "familyTitle": "Yes / okay",
+      "accessTier": "starter",
+      "anchorPhraseId": "polite-3",
+      "shortestFormPhraseId": "polite-3",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-understand",
+          "phraseId": "problems-2",
+          "note": "If the other side keeps going too quickly, the next safe branch is to admit you do not understand."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "reply_to",
+          "targetFamilyId": "polite-hello",
+          "reason": "This family commonly appears as the light reply to an opening greeting."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-understand",
+          "reason": "If acknowledgment is not enough to keep up, the user often has to move into repair immediately."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-transport-destination",
+      "coverageMoment": "transport",
+      "scenarioId": "transport",
+      "familyId": "transport-destination",
+      "familyTitle": "Take me here",
+      "accessTier": "starter",
+      "anchorPhraseId": "taxi-1",
+      "shortestFormPhraseId": "taxi-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "This entrance or the next one?",
+          "sourcePhraseId": "taxi-1",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "price-check",
+          "familyId": "transport-fare",
+          "phraseId": "transport-fare",
+          "note": "After confirming the destination, the next useful branch is often the fare."
+        },
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "If the address is not landing clearly, switch to a write-it-down or show-it approach."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "transport-fare",
+          "reason": "Destination and fare are the two most common ride-opening moves."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "transport-stop-here",
+          "reason": "Once the route is understood, the rider often needs the drop-off phrase ready for the final turn."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Writing or showing the destination is the safest repair when speech alone is not enough."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-understand",
+          "reason": "If the driver starts asking route questions you cannot follow, the direct repair branch matters immediately."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-transport-fare",
+      "coverageMoment": "transport",
+      "scenarioId": "transport",
+      "familyId": "transport-fare",
+      "familyTitle": "Fare",
+      "accessTier": "starter",
+      "anchorPhraseId": "transport-fare",
+      "shortestFormPhraseId": "transport-fare",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "Fixed price, not meter.",
+          "sourcePhraseId": "transport-fare",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "comparison",
+          "familyId": "money-final-price",
+          "phraseId": "price-5",
+          "note": "When the first fare number is vague or inflated, the traveler often needs the final amount next."
+        },
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "If the spoken number is hard to catch, written confirmation is the cleanest repair."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "money-how-much",
+          "reason": "Both families solve amount-checking, but this one is ride-specific and the other is general-item pricing."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "money-final-price",
+          "reason": "A vague or negotiable first fare often leads into a final-price check."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Written numbers reduce errors around fares, totals, and route charges."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-understand",
+          "reason": "If the driver explains too much too quickly, a direct understanding repair is safer than guessing."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-food-menu",
+      "coverageMoment": "food",
+      "scenarioId": "food-drink",
+      "familyId": "food-menu",
+      "familyTitle": "See the menu",
+      "accessTier": "starter",
+      "anchorPhraseId": "food-menu",
+      "shortestFormPhraseId": "food-menu",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "constraint",
+          "familyId": "food-not-spicy",
+          "phraseId": "food-3",
+          "note": "Once the menu is open, a diet or spice constraint is often the next thing the traveler needs."
+        },
+        {
+          "kind": "order-follow-up",
+          "familyId": "food-bottled-water",
+          "phraseId": "food-5",
+          "note": "Water is a common immediate add-on after the menu appears."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "food-not-spicy",
+          "reason": "Menu-first often leads directly into an allergy, spice, or preference constraint."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "food-bottled-water",
+          "reason": "A drink order is a common second move once the menu is visible."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "food-need-table",
+          "reason": "Some restaurant flows need seating before the menu becomes the next real decision."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "When dish names or ingredients are still unclear, written help is often faster than repeated speech."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-food-not-spicy",
+      "coverageMoment": "food",
+      "scenarioId": "food-drink",
+      "familyId": "food-not-spicy",
+      "familyTitle": "Not spicy",
+      "accessTier": "starter",
+      "anchorPhraseId": "food-3",
+      "shortestFormPhraseId": "food-3",
+      "clearerFormPhraseId": "food-not-spicy-clearer",
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "drink-follow-up",
+          "familyId": "food-bottled-water",
+          "phraseId": "food-5",
+          "note": "Even after asking for mild food, water is a common next move."
+        },
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-understand",
+          "phraseId": "problems-2",
+          "note": "If the cook or server explains ingredients quickly, the safer next move is to say you do not understand."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "food-menu",
+          "reason": "The menu family usually precedes this food-preference branch."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "food-bottled-water",
+          "reason": "Water is a practical adjacent ask once food preferences are clear."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-understand",
+          "reason": "Ingredient talk can get fast, and the user needs a clean repair branch."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-food-bottled-water",
+      "coverageMoment": "food",
+      "scenarioId": "food-drink",
+      "familyId": "food-bottled-water",
+      "familyTitle": "Bottled water",
+      "accessTier": "starter",
+      "anchorPhraseId": "food-5",
+      "shortestFormPhraseId": "food-5",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "price-check",
+          "familyId": "money-final-price",
+          "phraseId": "price-5",
+          "note": "Once the add-on is clear, the next useful move is often the final amount."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "food-menu",
+          "reason": "Water is usually ordered from the same table/menu moment."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "money-final-price",
+          "reason": "A quick total check is a common next move when the table order is set."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-money-how-much",
+      "coverageMoment": "money",
+      "scenarioId": "money-numbers-prices",
+      "familyId": "money-how-much",
+      "familyTitle": "How much is this?",
+      "accessTier": "starter",
+      "anchorPhraseId": "price-1",
+      "shortestFormPhraseId": "price-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "Forty thousand, cash only.",
+          "sourcePhraseId": "price-1",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "decision-branch",
+          "familyId": "money-final-price",
+          "phraseId": "price-5",
+          "note": "After the first quoted number, the traveler often asks for the final amount."
+        },
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "Written numbers are safer than guessing when a spoken price is unclear."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "money-final-price",
+          "reason": "Initial price checks often turn into a final-price decision point."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Written or shown numbers prevent common traveler mistakes around prices."
+        },
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "transport-fare",
+          "reason": "Both families solve amount-checking, but one is general shopping and the other is ride-specific."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-money-final-price",
+      "coverageMoment": "money",
+      "scenarioId": "money-numbers-prices",
+      "familyId": "money-final-price",
+      "familyTitle": "Final price",
+      "accessTier": "starter",
+      "anchorPhraseId": "price-5",
+      "shortestFormPhraseId": "price-5",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "If the amount still feels muddy, written confirmation is safer than repeating the same question."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "transport-fare",
+          "reason": "Final-price confirmation is a nearby pattern in rides, markets, and service counters."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Totals are easy to mishear, so a written branch is worth surfacing."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-hotel-reservation",
+      "coverageMoment": "hotel",
+      "scenarioId": "hotel-accommodation",
+      "familyId": "hotel-reservation",
+      "familyTitle": "I have a reservation",
+      "accessTier": "starter",
+      "anchorPhraseId": "hotel-1",
+      "shortestFormPhraseId": "hotel-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "next-desk-step",
+          "familyId": "hotel-check-in",
+          "phraseId": "hotel-2",
+          "note": "After stating the reservation, the next useful move is usually the check-in request itself."
+        },
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "Names, booking codes, and room numbers often need written backup."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "hotel-check-in",
+          "reason": "Reservation declaration and check-in are the natural first desk pair."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Written confirmation helps when the booking name, code, or room number is not landing clearly."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-hotel-check-in",
+      "coverageMoment": "hotel",
+      "scenarioId": "hotel-accommodation",
+      "familyId": "hotel-check-in",
+      "familyTitle": "Check in",
+      "accessTier": "starter",
+      "anchorPhraseId": "hotel-2",
+      "shortestFormPhraseId": "hotel-2",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": "hotel-check-in-polite",
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "room-problem-follow-up",
+          "familyId": "hotel-room-hot",
+          "phraseId": "hotel-4",
+          "note": "Once the room is assigned, a basic room-problem family is a practical next branch."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "hotel-reservation",
+          "reason": "This family usually sits right beside the reservation family on the same desk surface."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "hotel-room-hot",
+          "reason": "A room problem is one of the first high-value follow-ons after successful check-in."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "hotel-checkout-time",
+          "reason": "Check-in and check-out-time questions often live on the same bounded hotel desk surface."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Written room numbers or desk notes reduce confusion during check-in."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-hotel-room-hot",
+      "coverageMoment": "hotel",
+      "scenarioId": "hotel-accommodation",
+      "familyId": "hotel-room-hot",
+      "familyTitle": "Room too hot",
+      "accessTier": "starter",
+      "anchorPhraseId": "hotel-4",
+      "shortestFormPhraseId": "hotel-4",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-understand",
+          "phraseId": "problems-2",
+          "note": "If the staff explanation about the room or AC is unclear, the user needs a direct repair branch."
+        },
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "Thermostat settings, room changes, or engineer times are often easier to confirm in writing."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-understand",
+          "reason": "Room-fix explanations can be fast and technical."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "A written number or room-change note is often the cleanest recovery path."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "hotel-aircon-broken",
+          "reason": "Travelers often need a more specific AC-failure phrase when the generic heat complaint is not enough."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-repair-understand",
+      "coverageMoment": "repair",
+      "scenarioId": "understanding-repair",
+      "familyId": "repair-understand",
+      "familyTitle": "I don't understand",
+      "accessTier": "starter",
+      "anchorPhraseId": "problems-2",
+      "shortestFormPhraseId": "problems-2",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "repair-speed",
+          "familyId": "repair-slower",
+          "phraseId": "problems-3",
+          "note": "If the issue is speed rather than vocabulary, slowing the other person down is often the first clean fix."
+        },
+        {
+          "kind": "repair-escalation",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "Writing is the clean next escalation when a spoken repair still is not enough."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-slower",
+          "reason": "Speed is often the first thing to fix before jumping straight to written repair."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-write-down",
+          "reason": "If speech repair is still failing, written confirmation is the next strongest move."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "transport-destination",
+          "reason": "Destination conversations are one of the most common places where this repair branch gets used."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "hotel-room-hot",
+          "reason": "Room-problem explanations are another high-value place to expose the repair branch."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-repair-write-down",
+      "coverageMoment": "repair",
+      "scenarioId": "understanding-repair",
+      "familyId": "repair-write-down",
+      "familyTitle": "Write it down",
+      "accessTier": "starter",
+      "anchorPhraseId": "repair-2",
+      "shortestFormPhraseId": "repair-2",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "I will write it here.",
+          "sourcePhraseId": "repair-2",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "context-return",
+          "familyId": "transport-destination",
+          "phraseId": "taxi-1",
+          "note": "Writing often resolves the route or address problem and lets the user return to the destination family."
+        },
+        {
+          "kind": "context-return",
+          "familyId": "money-how-much",
+          "phraseId": "price-1",
+          "note": "Written numbers often resolve the amount problem and let the user return to the price family."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "transport-destination",
+          "reason": "Addresses and destination names are often clearer in writing than in speech."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "money-how-much",
+          "reason": "Written numbers prevent mistakes around prices, totals, and change."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "hotel-reservation",
+          "reason": "Names, booking numbers, and room numbers often need written backup."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "hotel-room-hot",
+          "reason": "Written room changes, times, or control settings can rescue a room-fix conversation."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "v500-phon-inte-powe-my-map-is-not-working",
+          "reason": "Showing or writing the destination is often the fastest recovery when the phone map fails mid-trip."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-airport-passport",
+      "coverageMoment": "arrival",
+      "scenarioId": "airport-border-arrival",
+      "familyId": "v500-airp-bord-arri-here-is-my-passport",
+      "familyTitle": "Here is my passport",
+      "accessTier": "starter",
+      "anchorPhraseId": "v500-airp-bord-arri-here-is-my-passport",
+      "shortestFormPhraseId": "v500-airp-bord-arri-here-is-my-passport",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "document-follow-up",
+          "familyId": "v500-airp-bord-arri-here-is-my-visa",
+          "phraseId": "v500-airp-bord-arri-here-is-my-visa",
+          "note": "Document counters often move from passport presentation into a visa or onward document check."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "v500-airp-bord-arri-here-is-my-visa",
+          "reason": "Passport presentation commonly leads into the next document request."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "transport-destination",
+          "reason": "Once the document check clears, the next useful traveler move is often the ride handoff."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-airport-visa",
+      "coverageMoment": "arrival",
+      "scenarioId": "airport-border-arrival",
+      "familyId": "v500-airp-bord-arri-here-is-my-visa",
+      "familyTitle": "Here is my visa",
+      "accessTier": "starter",
+      "anchorPhraseId": "v500-airp-bord-arri-here-is-my-visa",
+      "shortestFormPhraseId": "v500-airp-bord-arri-here-is-my-visa",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "arrival-next-step",
+          "familyId": "transport-destination",
+          "phraseId": "taxi-1",
+          "note": "After the document handoff, the traveler often needs to move immediately into ground transport."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "v500-airp-bord-arri-here-is-my-passport",
+          "reason": "Passport and visa often sit on the same arrival counter surface."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "transport-destination",
+          "reason": "Clearing the arrival desk often moves directly into the ride or pickup handoff."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "v500-airp-bord-arri-where-is-the-atm",
+          "reason": "Some arrival flows move from documents straight into airport-service needs like cash."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-airport-atm",
+      "coverageMoment": "arrival",
+      "scenarioId": "airport-border-arrival",
+      "familyId": "v500-airp-bord-arri-where-is-the-atm",
+      "familyTitle": "Where is the ATM",
+      "accessTier": "starter",
+      "anchorPhraseId": "v500-airp-bord-arri-where-is-the-atm",
+      "shortestFormPhraseId": "v500-airp-bord-arri-where-is-the-atm",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "The ATM is upstairs by the SIM kiosks.",
+          "sourcePhraseId": "v500-airp-bord-arri-where-is-the-atm",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "arrival-service-follow-up",
+          "familyId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "phraseId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "note": "Airport cash and SIM help often live on the same immediate arrival service surface."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "reason": "A traveler who fixes cash at arrival often fixes connectivity in the same stop."
+        },
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "money-how-much",
+          "reason": "Both families serve money pressure, but this one is airport-service navigation rather than item pricing."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "transport-destination",
+          "reason": "After airport services, the traveler usually moves into the actual ride handoff."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-transport-meter",
+      "coverageMoment": "transport",
+      "scenarioId": "transport",
+      "familyId": "transport-meter",
+      "familyTitle": "Use the meter",
+      "accessTier": "starter",
+      "anchorPhraseId": "transport-meter",
+      "shortestFormPhraseId": "transport-meter",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "The meter is already running.",
+          "sourcePhraseId": "transport-meter",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "fare-check",
+          "familyId": "transport-fare",
+          "phraseId": "transport-fare",
+          "note": "If the driver resists or explains the price another way, the fare family is the next grounded move."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "transport-fare",
+          "reason": "Meter requests and fare checks belong to the same opening price-protection moment."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-number",
+          "reason": "If the driver answers with a fast number, the user often needs the number-specific repair next."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Written numbers or totals are safer than guessing when the meter conversation gets muddy."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-transport-stop-here",
+      "coverageMoment": "transport",
+      "scenarioId": "transport",
+      "familyId": "transport-stop-here",
+      "familyTitle": "Stop here",
+      "accessTier": "starter",
+      "anchorPhraseId": "taxi-3",
+      "shortestFormPhraseId": "taxi-3",
+      "clearerFormPhraseId": "transport-stop-here-clearer",
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "arrival-on-foot",
+          "familyId": "food-need-table",
+          "phraseId": "food-need-table",
+          "note": "Once the ride ends at a cafe or restaurant, getting seated is a common immediate next move."
+        },
+        {
+          "kind": "arrival-at-hotel",
+          "familyId": "hotel-check-in",
+          "phraseId": "hotel-2",
+          "note": "A drop-off at the hotel often moves straight into the desk handoff."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "transport-destination",
+          "reason": "Destination and drop-off phrases are the bookends of the same ride flow."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "food-need-table",
+          "reason": "A meal stop often moves from the last turn straight into seating."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "hotel-check-in",
+          "reason": "A hotel arrival often moves from the drop-off straight to the front desk."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-food-need-table",
+      "coverageMoment": "food",
+      "scenarioId": "food-drink",
+      "familyId": "food-need-table",
+      "familyTitle": "Table for two",
+      "accessTier": "starter",
+      "anchorPhraseId": "food-need-table",
+      "shortestFormPhraseId": "food-need-table",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "next-order-step",
+          "familyId": "food-menu",
+          "phraseId": "food-menu",
+          "note": "After seating is settled, the menu is usually the next useful move."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "food-menu",
+          "reason": "Seating usually comes before the menu or order conversation."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "food-pay-now",
+          "reason": "This cluster belongs on the same bounded restaurant surface as the close-out payment phrase."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-food-pay-now",
+      "coverageMoment": "food",
+      "scenarioId": "food-drink",
+      "familyId": "food-pay-now",
+      "familyTitle": "Ready to pay",
+      "accessTier": "starter",
+      "anchorPhraseId": "coffee-7",
+      "shortestFormPhraseId": "coffee-7",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "total-check",
+          "familyId": "money-final-price",
+          "phraseId": "price-5",
+          "note": "Once the bill appears, the next useful check is often the final total."
+        },
+        {
+          "kind": "repair-number",
+          "familyId": "repair-number",
+          "phraseId": "repair-6",
+          "note": "If the total is spoken too quickly, the number-specific repair branch matters immediately."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "money-final-price",
+          "reason": "Food payment often turns directly into a final-total confirmation."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-number",
+          "reason": "Bill totals are one of the clearest places where a number-specific repair matters."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "food-bottled-water",
+          "reason": "Both phrases belong to the same table or counter flow even when the sequence changes."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-hotel-checkout-time",
+      "coverageMoment": "hotel",
+      "scenarioId": "hotel-accommodation",
+      "familyId": "hotel-checkout-time",
+      "familyTitle": "Check-out time",
+      "accessTier": "starter",
+      "anchorPhraseId": "hotel-3",
+      "shortestFormPhraseId": "hotel-3",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "stay-closeout",
+          "familyId": "hotel-checkout",
+          "phraseId": "hotel-checkout",
+          "note": "Once the time is clear, the later close-out phrase is the next bounded desk move."
+        },
+        {
+          "kind": "number-repair",
+          "familyId": "repair-number",
+          "phraseId": "repair-6",
+          "note": "Times are easy to mishear, so the number-repair branch matters here."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "hotel-checkout",
+          "reason": "Knowing the time sets up the actual check-out conversation later."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-number",
+          "reason": "Check-out deadlines are exactly the kind of detail travelers need repeated accurately."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "hotel-check-in",
+          "reason": "Both clusters belong on the same hotel desk listing surface."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-hotel-aircon-broken",
+      "coverageMoment": "hotel",
+      "scenarioId": "hotel-accommodation",
+      "familyId": "hotel-aircon-broken",
+      "familyTitle": "AC not working",
+      "accessTier": "starter",
+      "anchorPhraseId": "hotel-5",
+      "shortestFormPhraseId": "hotel-5",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-understand",
+          "phraseId": "problems-2",
+          "note": "If the staff explains settings or timing too quickly, understanding repair is the first safe branch."
+        },
+        {
+          "kind": "repair-branch",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "Written room changes or engineer times are often easier to confirm than spoken details."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "hotel-room-hot",
+          "reason": "The generic room-temperature complaint and the AC-specific phrase belong on the same repair rail."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-understand",
+          "reason": "Technical room-fix explanations can be fast and hard to catch."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Written notes are often the cleanest way to confirm the fix window or room change."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-phone-local-sim",
+      "coverageMoment": "phone",
+      "scenarioId": "phone-internet-power",
+      "familyId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "familyTitle": "Where can I get a local SIM card",
+      "accessTier": "starter",
+      "anchorPhraseId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "shortestFormPhraseId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "offline-follow-up",
+          "familyId": "v500-phon-inte-powe-my-map-is-not-working",
+          "phraseId": "v500-phon-inte-powe-my-map-is-not-working",
+          "note": "Connectivity help often turns into a map or ride-hailing problem right away."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "v500-phon-inte-powe-my-map-is-not-working",
+          "reason": "Even after finding the SIM counter, the next problem is often still the broken app or map flow."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "v500-airp-bord-arri-where-is-the-atm",
+          "reason": "Arrival cash and SIM help often sit in the same airport-service decision cluster."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "repair-english-help",
+          "reason": "Phone-store interactions often need the English-help branch when the setup explanation gets too technical."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-phone-map-not-working",
+      "coverageMoment": "phone",
+      "scenarioId": "phone-internet-power",
+      "familyId": "v500-phon-inte-powe-my-map-is-not-working",
+      "familyTitle": "My map is not working",
+      "accessTier": "starter",
+      "anchorPhraseId": "v500-phon-inte-powe-my-map-is-not-working",
+      "shortestFormPhraseId": "v500-phon-inte-powe-my-map-is-not-working",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "The signal is weak here.",
+          "sourcePhraseId": "v500-phon-inte-powe-my-map-is-not-working",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "manual-routing",
+          "familyId": "transport-destination",
+          "phraseId": "taxi-1",
+          "note": "If the phone fails completely, the traveler often falls back to showing the destination or saying it directly."
+        },
+        {
+          "kind": "connectivity-fix",
+          "familyId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "phraseId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "note": "If the failure is data-related, the SIM help branch is the next bounded move."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "repair-write-down",
+          "reason": "Writing or showing the address is often the fastest recovery when the map dies mid-trip."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "transport-destination",
+          "reason": "Map failure and destination handoff often collapse into the same traveler problem."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "reason": "The map problem and SIM problem often belong on the same phone-support listing surface."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-repair-slower",
+      "coverageMoment": "repair",
+      "scenarioId": "understanding-repair",
+      "familyId": "repair-slower",
+      "familyTitle": "Speak slower",
+      "accessTier": "starter",
+      "anchorPhraseId": "problems-3",
+      "shortestFormPhraseId": "problems-3",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": "repair-slower-polite",
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "repeat-request",
+          "familyId": "repair-repeat",
+          "phraseId": "repair-1",
+          "note": "If slowing down still is not enough, the next move is to ask for the sentence again."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "repair-understand",
+          "reason": "These two families sit side by side on the same repair rail."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-repeat",
+          "reason": "After slowing the pace, the traveler often still needs the sentence repeated."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-write-down",
+          "reason": "If pace control still fails, written repair is the next strongest move."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-repair-repeat",
+      "coverageMoment": "repair",
+      "scenarioId": "understanding-repair",
+      "familyId": "repair-repeat",
+      "familyTitle": "Say that again",
+      "accessTier": "starter",
+      "anchorPhraseId": "repair-1",
+      "shortestFormPhraseId": "repair-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "number-follow-up",
+          "familyId": "repair-number",
+          "phraseId": "repair-6",
+          "note": "If the only thing still missing is the number, the repair path should narrow instead of repeating the whole sentence again."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "repair-slower",
+          "reason": "Travelers often bounce between repeat and slow-down requests in the same moment."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-number",
+          "reason": "A number-specific repair is often the clean next move after a general repeat request."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-write-down",
+          "reason": "If another repeat still fails, written repair is the clean escalation."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-repair-number",
+      "coverageMoment": "repair",
+      "scenarioId": "understanding-repair",
+      "familyId": "repair-number",
+      "familyTitle": "Say the number again",
+      "accessTier": "starter",
+      "anchorPhraseId": "repair-6",
+      "shortestFormPhraseId": "repair-6",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "price-context-return",
+          "familyId": "money-final-price",
+          "phraseId": "price-5",
+          "note": "After the number is caught correctly, the traveler can return to the real price or total decision."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "money-how-much",
+          "reason": "Price and total conversations are one of the main places where this repair phrase gets used."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "transport-fare",
+          "reason": "Ride numbers are another common place where the number-specific repair matters."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-write-down",
+          "reason": "If the number still is not landing, written confirmation is the next clean escalation."
+        }
+      ]
+    },
+    {
+      "clusterId": "viet-repair-english-help",
+      "coverageMoment": "repair",
+      "scenarioId": "understanding-repair",
+      "familyId": "repair-english-help",
+      "familyTitle": "English help",
+      "accessTier": "starter",
+      "anchorPhraseId": "repair-english-help",
+      "shortestFormPhraseId": "repair-english-help",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "translation-fallback",
+          "familyId": "repair-write-down",
+          "phraseId": "repair-2",
+          "note": "If English is not an option, written or shown backup is still the safest next move."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "repair-understand",
+          "reason": "English-help requests usually appear after the broader understanding-repair family is already in play."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "repair-write-down",
+          "reason": "When English is not available, writing or showing the detail is the next strongest branch."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "v500-phon-inte-powe-my-map-is-not-working",
+          "reason": "Phone and SIM support moments often need this branch when explanations turn too technical."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "taskId": "T-037",
+  "title": "Desktop Codex automation pilot, Portugal first-wave authoring scaffold completion",
+  "status": "blocked",
+  "phase": "deferred-from-active-backlog",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "future_language_content_drafts"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [
+    {
+      "summary": "Deferred from the active desktop queue backlog so the queue returns to six current meaningful non-test tasks. Portugal authoring scaffold work is not part of the active queue set right now."
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-037/result.md",
+    "reviews": ".agent/tasks/T-037/reviews/",
+    "logs": ".agent/tasks/T-037/logs/",
+    "research": "research/language-pipeline/portuguese/PORTUGAL-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/portuguese/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-19T14:40:00-05:00"
+}

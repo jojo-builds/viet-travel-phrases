@@ -1,0 +1,46 @@
+{
+  "taskId": "T-002",
+  "title": "Website preview-manifest sanity check and cleanup pilot",
+  "status": "draft",
+  "phase": "planning",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "openclaw-main",
+    "sessionId": "current-session",
+    "label": "T-002 website preview pilot"
+  },
+  "locks": {
+    "write": [
+      ".agent/coordination/locks.yaml",
+      ".agent/tasks/T-002/**",
+      "site/data/phrase-previews/**",
+      "site/public/data/phrase-previews/**"
+    ],
+    "read": [
+      "site/**",
+      "content-draft/viet/website-preview.json"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live-or-planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-002/result.md",
+    "reviews": ".agent/tasks/T-002/reviews/",
+    "logs": ".agent/tasks/T-002/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance",
+    "meaningfulTaskContractEligible": false,
+    "eligibilityReason": "Current draft scope is too small to justify the mandatory 3 review gates. Re-scope before queueing."
+  },
+  "lastUpdated": "2026-04-18T03:59:00-05:00"
+}

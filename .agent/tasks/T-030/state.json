@@ -1,0 +1,50 @@
+{
+  "taskId": "T-030",
+  "title": "Desktop Codex automation pilot, Italy second first-wave translation pass and unresolved-row reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-20-20260420T0422284539-0500",
+    "label": "Task Queue 20 automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T04:22:28.4539365-05:00",
+    "lastHeartbeatAt": "2026-04-20T04:42:20.0502012-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T06:42:20.0502012-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "italian_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-030/result.md",
+    "reviews": ".agent/tasks/T-030/reviews/",
+    "logs": ".agent/tasks/T-030/logs/",
+    "draftLane": "content-draft/italian/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-20T04:42:20.0502012-05:00"
+}

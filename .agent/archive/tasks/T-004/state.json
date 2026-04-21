@@ -1,0 +1,53 @@
+{
+  "taskId": "T-004",
+  "title": "Desktop Codex automation pilot, Japan research plus first authoring scaffold",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-in-app-family-20260418T131211",
+    "label": "desktop-codex-automation"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-18T13:12:11-05:00",
+    "lastHeartbeatAt": "2026-04-18T13:16:47-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T13:16:47-05:00",
+    "reclaimReason": "Reclaimed stale task because phase was stale-awaiting-reclaim with no active sessionId proving a live owner."
+  },
+  "launch": {
+    "confirmedAt": "2026-04-18T12:45:00-05:00",
+    "confirmationNote": "User reported the desktop Codex runner was launched for this task.",
+    "tool": "Codex Desktop Automation"
+  },
+  "locks": {
+    "write": [
+      "japanese_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-004/result.md",
+    "research": "research/language-pipeline/japanese/JAPAN-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/japanese/",
+    "reviews": ".agent/tasks/T-004/reviews/",
+    "logs": ".agent/tasks/T-004/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4
+  },
+  "lastUpdated": "2026-04-18T13:16:47-05:00"
+}

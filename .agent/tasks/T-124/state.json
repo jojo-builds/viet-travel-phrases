@@ -1,0 +1,58 @@
+{
+  "taskId": "T-124",
+  "title": "Desktop Codex automation pilot, Viet relation-safe starter export and phrase-detail module packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-aa5af3ba-69e6-4412-bb54-0485090d3240",
+    "label": "Task Queue 40 automation"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-21T11:42:53.9899780-05:00",
+    "lastHeartbeatAt": "2026-04-21T11:53:19.5996041-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T13:53:19.5996041-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "website_starter_exports"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-124\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-124\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-124\\reviews\\",
+    "logs": ".agent\\tasks\\T-124\\logs\\",
+    "requiredForDone": [
+      "docs\\PHRASE_RELATIONSHIP_MODEL.md",
+      "docs\\V2_CONTENT_MODEL.md",
+      "site\\data\\phrase-previews\\manifest.json",
+      "site\\public\\data\\phrase-previews\\manifest.json",
+      "scripts\\website\\Test-SpeakLocalWebsiteArtifact.ps1",
+      ".agent\\tasks\\T-124\\logs\\viet-relation-export-packet.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T11:53:19.5996041-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

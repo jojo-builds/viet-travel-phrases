@@ -1,0 +1,60 @@
+{
+  "taskId": "T-099",
+  "title": "Desktop Codex automation pilot, controlled Viet audio follow-up batch and seam ledger update",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "08de2e46-8b77-454b-a6ff-3ebead631471",
+    "label": "desktop-automation-20260420-205250"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T20:52:50.1581527Z",
+    "lastHeartbeatAt": "2026-04-20T20:57:53.5329860Z",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T21:27:53.5329860Z",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "shared_audio_pipeline"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [
+    "Gate 1 did not pass unanimously: the sampled 24-row allowlist is already live across phrase source, manifest, registry, and generated Viet pack surfaces, while the task spec still requires a real follow-up batch promotion and a nonexistent `app/family/packs/viet.json` artifact."
+  ],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-099\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-099\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-099\\reviews\\",
+    "logs": ".agent\\tasks\\T-099\\logs\\",
+    "requiredForDone": [
+      "content-draft\\viet\\audio-review\\FOLLOW-UP-BATCH-ALLOWLIST-2026-04-20.md",
+      "content-draft\\viet\\audio-review\\CONTINUITY-BENCHMARK.md",
+      "app\\assets\\audio\\manifest.json",
+      "app\\assets\\audio\\registry.ts",
+      "app\\family\\packs\\viet.json",
+      ".agent\\tasks\\T-099\\logs\\audio-follow-up-batch.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T20:57:53.5329860Z",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

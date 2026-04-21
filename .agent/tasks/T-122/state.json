@@ -1,0 +1,58 @@
+{
+  "taskId": "T-122",
+  "title": "Desktop Codex automation pilot, Japan starter-handoff and graduation-boundary packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "fde4304e-12f6-46b3-9d7c-d70fa8d106d7",
+    "label": "task-queue-50-2"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T11:51:42.4552372-05:00",
+    "lastHeartbeatAt": "2026-04-21T12:06:33.6994371-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T14:06:33.7016156-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "japanese_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-122\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-122\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-122\\reviews\\",
+    "logs": ".agent\\tasks\\T-122\\logs\\",
+    "requiredForDone": [
+      "content-draft\\japanese\\README.md",
+      "content-draft\\japanese\\source-notes.md",
+      "content-draft\\japanese\\phrase-source.csv",
+      "content-draft\\japanese\\first-wave-priority.csv",
+      "content-draft\\japanese\\research-backlog.md",
+      ".agent\\tasks\\T-122\\logs\\japan-graduation-packet.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T12:06:33.6994371-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

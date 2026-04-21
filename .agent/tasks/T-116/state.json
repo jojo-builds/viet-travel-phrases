@@ -1,0 +1,61 @@
+{
+  "taskId": "T-116",
+  "title": "Desktop Codex automation pilot, Tagalog v2 expansion-cluster pickup and graduation-boundary hardening pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-20260421T134149444Z",
+    "label": "Task Queue 40"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-21T08:41:49.4447761-05:00",
+    "lastHeartbeatAt": "2026-04-21T09:06:12.0354191-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T11:06:12.0354191-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "tagalog_v2_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-116\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-116\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-116\\reviews\\",
+    "logs": ".agent\\tasks\\T-116\\logs\\",
+    "requiredForDone": [
+      "content-draft\\tagalog\\README.md",
+      "content-draft\\tagalog\\source-notes.md",
+      "content-draft\\tagalog\\phrase-source.csv",
+      "content-draft\\tagalog\\first-wave-priority.csv",
+      "content-draft\\tagalog\\tagalog-v2-first-wave.csv",
+      "content-draft\\tagalog\\scenario-plan.json",
+      "content-draft\\tagalog\\research-backlog.md",
+      "content-draft\\tagalog\\risk-review.md",
+      ".agent\\tasks\\T-116\\logs\\tagalog-expansion-cluster-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T09:06:12.0354191-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

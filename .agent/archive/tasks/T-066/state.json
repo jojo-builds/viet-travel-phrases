@@ -1,0 +1,54 @@
+{
+  "taskId": "T-066",
+  "title": "Desktop Codex automation pilot, Vietnam website starter runtime fetch and audio reachability audit",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-test-20260420T012619-0500",
+    "label": "task-queue-41-test"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T01:26:19.5242563-05:00",
+    "lastHeartbeatAt": "2026-04-20T01:50:49.7971582-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T01:50:49.7971582-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "website_content_conversion"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-066/result.md",
+    "recoveryNotes": ".agent/tasks/T-066/recovery-notes.md",
+    "reviews": ".agent/tasks/T-066/reviews/",
+    "logs": ".agent/tasks/T-066/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-066/logs/runtime-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T01:50:49.7971582-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 2,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance",
+    "truthFoldedAt": "2026-04-20T02:12:30-05:00"
+  }
+}

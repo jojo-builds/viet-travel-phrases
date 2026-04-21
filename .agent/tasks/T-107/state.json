@@ -1,0 +1,57 @@
+{
+  "taskId": "T-107",
+  "title": "Desktop Codex automation pilot, Viet phrase relationship schema draft and listing-detail handoff pack",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-10-T-107-20260421T041308-0500",
+    "label": "task-queue-10-t107-reclaim"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-21T04:13:08.7347138-05:00",
+    "lastHeartbeatAt": "2026-04-21T04:30:04.3691647-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T06:30:04.3612690-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "viet_relation_model"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-107\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-107\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-107\\reviews\\",
+    "logs": ".agent\\tasks\\T-107\\logs\\",
+    "requiredForDone": [
+      "docs\\PHRASE_RELATIONSHIP_MODEL.md",
+      "docs\\V2_CONTENT_MODEL.md",
+      "content-draft\\viet\\relation-sample-v1.json",
+      "content-draft\\viet\\relation-authoring-notes.md",
+      ".agent\\tasks\\T-107\\logs\\relation-schema-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T04:30:04.3691647-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

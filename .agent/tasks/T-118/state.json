@@ -1,0 +1,58 @@
+{
+  "taskId": "T-118",
+  "title": "Desktop Codex automation pilot, Italy residual holdout adjudication and graduation-readiness packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-50-20260421T075321224-0500",
+    "label": "Task Queue 50"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T07:53:21.2365384-05:00",
+    "lastHeartbeatAt": "2026-04-21T08:08:34.4472743-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T10:08:34.4529008-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "italian_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-118\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-118\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-118\\reviews\\",
+    "logs": ".agent\\tasks\\T-118\\logs\\",
+    "requiredForDone": [
+      "content-draft\\italian\\README.md",
+      "content-draft\\italian\\source-notes.md",
+      "content-draft\\italian\\phrase-source.csv",
+      "content-draft\\italian\\first-wave-priority.csv",
+      "content-draft\\italian\\research-backlog.md",
+      ".agent\\tasks\\T-118\\logs\\italian-graduation-packet.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T08:08:34.4472743-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

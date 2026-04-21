@@ -1,0 +1,392 @@
+{
+  "liveCounts": {
+    "__all": {
+      "starter": 128,
+      "premium": 30,
+      "total": 158
+    },
+    "polite-basics": {
+      "starter": 7,
+      "premium": 0,
+      "total": 7
+    },
+    "understanding-repair": {
+      "starter": 7,
+      "premium": 3,
+      "total": 10
+    },
+    "transport": {
+      "starter": 10,
+      "premium": 2,
+      "total": 12
+    },
+    "hotel-accommodation": {
+      "starter": 8,
+      "premium": 3,
+      "total": 11
+    },
+    "food-drink": {
+      "starter": 18,
+      "premium": 2,
+      "total": 20
+    },
+    "money-numbers-prices": {
+      "starter": 8,
+      "premium": 2,
+      "total": 10
+    },
+    "directions-navigation": {
+      "starter": 7,
+      "premium": 2,
+      "total": 9
+    },
+    "airport-border-arrival": {
+      "starter": 5,
+      "premium": 1,
+      "total": 6
+    },
+    "health-pharmacy": {
+      "starter": 7,
+      "premium": 0,
+      "total": 7
+    },
+    "problems-help": {
+      "starter": 5,
+      "premium": 2,
+      "total": 7
+    },
+    "time-dates-booking": {
+      "starter": 5,
+      "premium": 2,
+      "total": 7
+    },
+    "shopping": {
+      "starter": 5,
+      "premium": 1,
+      "total": 6
+    },
+    "phone-internet-power": {
+      "starter": 5,
+      "premium": 2,
+      "total": 7
+    },
+    "bathroom-personal-needs": {
+      "starter": 6,
+      "premium": 1,
+      "total": 7
+    },
+    "emergency-safety": {
+      "starter": 6,
+      "premium": 2,
+      "total": 8
+    },
+    "social-small-talk": {
+      "starter": 7,
+      "premium": 2,
+      "total": 9
+    },
+    "sightseeing-activities": {
+      "starter": 5,
+      "premium": 1,
+      "total": 6
+    },
+    "local-services-everyday-tasks": {
+      "starter": 7,
+      "premium": 2,
+      "total": 9
+    }
+  },
+  "promotedCounts": {
+    "__all": {
+      "starter": 0,
+      "premium": 47,
+      "total": 47
+    },
+    "polite-basics": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "understanding-repair": {
+      "starter": 0,
+      "premium": 6,
+      "total": 6
+    },
+    "transport": {
+      "starter": 0,
+      "premium": 6,
+      "total": 6
+    },
+    "hotel-accommodation": {
+      "starter": 0,
+      "premium": 6,
+      "total": 6
+    },
+    "food-drink": {
+      "starter": 0,
+      "premium": 6,
+      "total": 6
+    },
+    "money-numbers-prices": {
+      "starter": 0,
+      "premium": 6,
+      "total": 6
+    },
+    "directions-navigation": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "airport-border-arrival": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "health-pharmacy": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "problems-help": {
+      "starter": 0,
+      "premium": 5,
+      "total": 5
+    },
+    "time-dates-booking": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "shopping": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "phone-internet-power": {
+      "starter": 0,
+      "premium": 6,
+      "total": 6
+    },
+    "bathroom-personal-needs": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "emergency-safety": {
+      "starter": 0,
+      "premium": 6,
+      "total": 6
+    },
+    "social-small-talk": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "sightseeing-activities": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "local-services-everyday-tasks": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    }
+  },
+  "generatedCounts": {
+    "__all": {
+      "starter": 22,
+      "premium": 320,
+      "total": 342
+    },
+    "polite-basics": {
+      "starter": 1,
+      "premium": 5,
+      "total": 6
+    },
+    "understanding-repair": {
+      "starter": 1,
+      "premium": 36,
+      "total": 37
+    },
+    "transport": {
+      "starter": 0,
+      "premium": 31,
+      "total": 31
+    },
+    "hotel-accommodation": {
+      "starter": 1,
+      "premium": 25,
+      "total": 26
+    },
+    "food-drink": {
+      "starter": 0,
+      "premium": 20,
+      "total": 20
+    },
+    "money-numbers-prices": {
+      "starter": 1,
+      "premium": 26,
+      "total": 27
+    },
+    "directions-navigation": {
+      "starter": 1,
+      "premium": 16,
+      "total": 17
+    },
+    "airport-border-arrival": {
+      "starter": 3,
+      "premium": 21,
+      "total": 24
+    },
+    "health-pharmacy": {
+      "starter": 1,
+      "premium": 15,
+      "total": 16
+    },
+    "problems-help": {
+      "starter": 1,
+      "premium": 29,
+      "total": 30
+    },
+    "time-dates-booking": {
+      "starter": 2,
+      "premium": 18,
+      "total": 20
+    },
+    "shopping": {
+      "starter": 2,
+      "premium": 9,
+      "total": 11
+    },
+    "phone-internet-power": {
+      "starter": 3,
+      "premium": 20,
+      "total": 23
+    },
+    "bathroom-personal-needs": {
+      "starter": 0,
+      "premium": 6,
+      "total": 6
+    },
+    "emergency-safety": {
+      "starter": 3,
+      "premium": 19,
+      "total": 22
+    },
+    "social-small-talk": {
+      "starter": 0,
+      "premium": 8,
+      "total": 8
+    },
+    "sightseeing-activities": {
+      "starter": 1,
+      "premium": 6,
+      "total": 7
+    },
+    "local-services-everyday-tasks": {
+      "starter": 1,
+      "premium": 10,
+      "total": 11
+    }
+  },
+  "mergedCounts": {
+    "__all": {
+      "starter": 150,
+      "premium": 350,
+      "total": 500
+    },
+    "polite-basics": {
+      "starter": 8,
+      "premium": 5,
+      "total": 13
+    },
+    "understanding-repair": {
+      "starter": 8,
+      "premium": 39,
+      "total": 47
+    },
+    "transport": {
+      "starter": 10,
+      "premium": 33,
+      "total": 43
+    },
+    "hotel-accommodation": {
+      "starter": 9,
+      "premium": 28,
+      "total": 37
+    },
+    "food-drink": {
+      "starter": 18,
+      "premium": 22,
+      "total": 40
+    },
+    "money-numbers-prices": {
+      "starter": 9,
+      "premium": 28,
+      "total": 37
+    },
+    "directions-navigation": {
+      "starter": 8,
+      "premium": 18,
+      "total": 26
+    },
+    "airport-border-arrival": {
+      "starter": 8,
+      "premium": 22,
+      "total": 30
+    },
+    "health-pharmacy": {
+      "starter": 8,
+      "premium": 15,
+      "total": 23
+    },
+    "problems-help": {
+      "starter": 6,
+      "premium": 31,
+      "total": 37
+    },
+    "time-dates-booking": {
+      "starter": 7,
+      "premium": 20,
+      "total": 27
+    },
+    "shopping": {
+      "starter": 7,
+      "premium": 10,
+      "total": 17
+    },
+    "phone-internet-power": {
+      "starter": 8,
+      "premium": 22,
+      "total": 30
+    },
+    "bathroom-personal-needs": {
+      "starter": 6,
+      "premium": 7,
+      "total": 13
+    },
+    "emergency-safety": {
+      "starter": 9,
+      "premium": 21,
+      "total": 30
+    },
+    "social-small-talk": {
+      "starter": 7,
+      "premium": 10,
+      "total": 17
+    },
+    "sightseeing-activities": {
+      "starter": 6,
+      "premium": 7,
+      "total": 13
+    },
+    "local-services-everyday-tasks": {
+      "starter": 8,
+      "premium": 12,
+      "total": 20
+    }
+  },
+  "generatedRowCount": 342,
+  "translatedPhraseCount": 342
+}

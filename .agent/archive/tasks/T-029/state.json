@@ -1,0 +1,52 @@
+{
+  "taskId": "T-029",
+  "title": "Desktop Codex automation pilot, Thailand first-wave translation pass and unresolved-row reduction",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "22edfe61-3749-44e4-88bc-3b3b62a0815b",
+    "label": "queue-burnin-r1-contract-enforcer"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-19T09:48:07.819435-05:00",
+    "lastHeartbeatAt": "2026-04-19T09:49:19.298961-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T09:49:19.298961-05:00",
+    "reclaimReason": "lease-expired"
+  },
+  "locks": {
+    "write": [
+      "thai_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    {
+      "summary": "Current subagent runtime cannot spawn the mandatory 3 review gates with 4 Codex reviewers each, so T-029 cannot be completed honestly in this environment."
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-029/result.md",
+    "reviews": ".agent/tasks/T-029/reviews/",
+    "logs": ".agent/tasks/T-029/logs/",
+    "draftLane": "content-draft/thai/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-19T09:49:19.298961-05:00"
+}

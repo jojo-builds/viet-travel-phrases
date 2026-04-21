@@ -1,0 +1,58 @@
+{
+  "taskId": "T-132",
+  "title": "Desktop Codex automation pilot, Viet device-proof blocker ledger and return-readiness packet hardening",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ops_docs_truth"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-132\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-132\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-132\\reviews\\",
+    "logs": ".agent\\tasks\\T-132\\logs\\",
+    "requiredForDone": [
+      "docs\\operations\\CURRENT_BLOCKERS.md",
+      "docs\\operations\\LATEST_VALIDATION.md",
+      "docs\\operations\\APP_STATUS.md",
+      "ops\\apps\\viet.json",
+      ".agent\\tasks\\T-132\\logs\\viet-return-readiness-ledger.md",
+      ".agent\\tasks\\T-132\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T13:13:00-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

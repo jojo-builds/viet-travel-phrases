@@ -1,0 +1,58 @@
+{
+  "taskId": "T-112",
+  "title": "Desktop Codex automation pilot, Viet device-proof execution packet hardening and blocker-surface sync pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-50-2-20260421T055323-eb3fd6fc",
+    "label": "Task Queue 50"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T05:53:23.0768836-05:00",
+    "lastHeartbeatAt": "2026-04-21T06:29:04.5528149-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T08:29:04.6298593-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ops_docs_truth"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-112\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-112\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-112\\reviews\\",
+    "logs": ".agent\\tasks\\T-112\\logs\\",
+    "requiredForDone": [
+      "docs\\operations\\VIET_TESTFLIGHT_EXECUTION_PACKET.md",
+      "docs\\operations\\TESTING_RUNBOOK.md",
+      "docs\\operations\\CURRENT_BLOCKERS.md",
+      "docs\\operations\\APP_STATUS.md",
+      "ops\\apps\\viet.json",
+      ".agent\\tasks\\T-112\\logs\\device-proof-packet-hardening.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T06:29:04.5528149-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

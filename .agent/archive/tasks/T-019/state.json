@@ -1,0 +1,51 @@
+{
+  "taskId": "T-019",
+  "title": "Desktop Codex automation pilot, France research and prep-only lane bootstrap",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-3-20260418T153401",
+    "label": "Task Queue 3 automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T15:34:01.3800628-05:00",
+    "lastHeartbeatAt": "2026-04-18T16:33:32.5147842-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T16:33:32.5147842-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "french_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-019/result.md",
+    "reviews": ".agent/tasks/T-019/reviews/",
+    "logs": ".agent/tasks/T-019/logs/",
+    "research": "research/language-pipeline/french/FRANCE-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/french/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T16:33:32.5147842-05:00"
+}

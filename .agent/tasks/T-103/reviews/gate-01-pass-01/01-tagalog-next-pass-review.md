@@ -1,0 +1,3 @@
+The proposed next-pass contract is coherent: it preserves `tagalog-polite-basics-4` as deferred, keeps the parked set split into a 5-row reopen order plus a 2-row later-only hold, and the row ordering matches the current rationale in the reviewed Tagalog prep surfaces. I do not see a misplaced parked row; `tagalog-directions-1`, the three hotel rows, and `tagalog-convenience-store-6` are the right pickup set, while `tagalog-simple-problems-7` and `tagalog-grab-taxi-7` are correctly held back. The current docs and CSV surfaces already point toward this split, so the main need is to make the next-pass versus later-only distinction more explicit.
+
+Approval: APPROVE

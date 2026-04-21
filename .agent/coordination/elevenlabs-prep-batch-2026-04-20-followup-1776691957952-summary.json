@@ -1,0 +1,113 @@
+{
+  "runId": "elevenlabs-prep-batch-2026-04-20-followup-1776691957952",
+  "createdAt": "2026-04-20T13:37:12.787Z",
+  "voiceId": "EXAVITQu4vr4xnSDxMaL",
+  "modelId": "eleven_multilingual_v2",
+  "basedOnSummary": "E:\\AI\\SpeakLocal-App-Family\\.agent\\coordination\\elevenlabs-prep-audio-batch-summary-2026-04-20.json",
+  "languages": [
+    {
+      "language": "german",
+      "phrases": 27,
+      "generated": 27,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 707,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\german\\audio-draft\\elevenlabs-prep-batch-2026-04-20-followup-1776691957952"
+    },
+    {
+      "language": "spanish",
+      "phrases": 28,
+      "generated": 28,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 744,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\spanish\\audio-draft\\elevenlabs-prep-batch-2026-04-20-followup-1776691957952"
+    },
+    {
+      "language": "italian",
+      "phrases": 37,
+      "generated": 37,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 901,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\italian\\audio-draft\\elevenlabs-prep-batch-2026-04-20-followup-1776691957952"
+    },
+    {
+      "language": "turkish",
+      "phrases": 23,
+      "generated": 23,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 497,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\turkish\\audio-draft\\elevenlabs-prep-batch-2026-04-20-followup-1776691957952"
+    },
+    {
+      "language": "indonesian",
+      "phrases": 59,
+      "generated": 59,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 1152,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\indonesian\\audio-draft\\elevenlabs-prep-batch-2026-04-20-followup-1776691957952"
+    },
+    {
+      "language": "korean",
+      "phrases": 62,
+      "generated": 62,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 634,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\korean\\audio-draft\\elevenlabs-prep-batch-2026-04-20-followup-1776691957952"
+    }
+  ],
+  "totals": {
+    "generated": 236,
+    "skipped": 0,
+    "failed": 0,
+    "chars": 4635
+  },
+  "inspection": [
+    {
+      "language": "german",
+      "translated": 57,
+      "latestBatchDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\german\\audio-draft\\elevenlabs-prep-batch-2026-04-20",
+      "missing": 27
+    },
+    {
+      "language": "japanese",
+      "translated": 47,
+      "latestBatchDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\japanese\\audio-draft\\elevenlabs-prep-batch-2026-04-20",
+      "missing": 0
+    },
+    {
+      "language": "spanish",
+      "translated": 53,
+      "latestBatchDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\spanish\\audio-draft\\elevenlabs-prep-batch-2026-04-20",
+      "missing": 28
+    },
+    {
+      "language": "italian",
+      "translated": 61,
+      "latestBatchDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\italian\\audio-draft\\elevenlabs-prep-batch-2026-04-20",
+      "missing": 37
+    },
+    {
+      "language": "turkish",
+      "translated": 46,
+      "latestBatchDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\turkish\\audio-draft\\elevenlabs-prep-batch-2026-04-20",
+      "missing": 23
+    },
+    {
+      "language": "indonesian",
+      "translated": 59,
+      "latestBatchDir": null,
+      "missing": 59
+    },
+    {
+      "language": "korean",
+      "translated": 62,
+      "latestBatchDir": null,
+      "missing": 62
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "runId": "elevenlabs-prep-batch-2026-04-20",
+  "createdAt": "2026-04-20T07:48:04.379Z",
+  "voiceId": "EXAVITQu4vr4xnSDxMaL",
+  "modelId": "eleven_multilingual_v2",
+  "languages": [
+    {
+      "language": "german",
+      "phrases": 30,
+      "generated": 30,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 745,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\german\\audio-draft\\elevenlabs-prep-batch-2026-04-20"
+    },
+    {
+      "language": "japanese",
+      "phrases": 47,
+      "generated": 47,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 492,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\japanese\\audio-draft\\elevenlabs-prep-batch-2026-04-20"
+    },
+    {
+      "language": "spanish",
+      "phrases": 25,
+      "generated": 25,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 509,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\spanish\\audio-draft\\elevenlabs-prep-batch-2026-04-20"
+    },
+    {
+      "language": "italian",
+      "phrases": 24,
+      "generated": 24,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 523,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\italian\\audio-draft\\elevenlabs-prep-batch-2026-04-20"
+    },
+    {
+      "language": "turkish",
+      "phrases": 24,
+      "generated": 24,
+      "skipped": 0,
+      "failed": 0,
+      "chars": 478,
+      "outDir": "E:\\AI\\SpeakLocal-App-Family\\content-draft\\turkish\\audio-draft\\elevenlabs-prep-batch-2026-04-20"
+    }
+  ],
+  "totals": {
+    "generated": 150,
+    "skipped": 0,
+    "failed": 0,
+    "chars": 2747
+  }
+}

@@ -1,0 +1,215 @@
+import { AppPresentationConfig } from '../contracts';
+import { vietPremiumConfig } from './vietPremium';
+
+export const vietPresentation: AppPresentationConfig = {
+  labels: {
+    targetText: 'Vietnamese',
+    pronunciation: 'How it sounds',
+    sourceText: 'In English',
+  },
+  tabs: {
+    learnTitle: 'Situations',
+    savedTitle: 'Saved',
+  },
+  home: {
+    greeting: '',
+    subtitle: 'Situation-first Vietnamese for real travel pressure',
+    heroTitle: 'Start with the situation you are in',
+    heroBody: 'Search fast, open the situation that matches what is happening, or tap a short safe phrase when time is tight.',
+    settingsLabel: 'Open settings',
+    quickPhrasesTitle: 'Say this now',
+    quickPhrasesSubtitle: 'Short safe starter phrases for the moments that go sideways fastest.',
+    scenariosTitle: 'High-stress situations',
+    scenariosSubtitle: 'Arrival, transport, money, food, pharmacy, emergencies, SIM/internet, and misunderstanding repair should be one tap away.',
+    libraryTitle: 'All travel situations',
+    librarySubtitle: 'Free covers all 18 situations. Full Trip Pack adds deeper follow-up help inside the same places.',
+    quickPhraseIds: ['airport-5', 'taxi-1', 'price-1', 'food-3', 'health-1', 'phone-2', 'problems-2'],
+    scenarioOrder: [
+      'airport-border-arrival',
+      'transport',
+      'money-numbers-prices',
+      'food-drink',
+      'health-pharmacy',
+      'emergency-safety',
+      'phone-internet-power',
+      'understanding-repair',
+      'problems-help',
+      'hotel-accommodation',
+      'directions-navigation',
+      'bathroom-personal-needs',
+      'time-dates-booking',
+      'shopping',
+      'local-services-everyday-tasks',
+      'polite-basics',
+      'social-small-talk',
+      'sightseeing-activities',
+    ],
+  },
+  search: {
+    placeholder: 'Search driver, SIM, ATM, allergy, or how it sounds',
+    resultsTitle: 'Results',
+    emptyTitle: 'No phrases found',
+    emptyBody: 'Try a situation word like driver, ATM, pharmacy, SIM, or repeat.',
+    clearLabel: 'Clear search',
+  },
+  saved: {
+    title: 'Saved phrases',
+    emptyIcon: 'heart-outline',
+    emptyTitle: 'No saved phrases yet',
+    emptyBody: 'Save a phrase to keep it easy to find offline.',
+    scenarioPrefix: 'from',
+  },
+  scenario: {
+    notFoundTitle: 'Scenario not found',
+    notFoundBody: 'The phrase list for this route is missing or invalid.',
+    tipFallback: 'Speak slowly, smile, and point to context when needed.',
+    tipIcon: 'bulb-outline',
+  },
+  phrase: {
+    audioUnavailableLabel: 'Text only',
+  },
+  premium: vietPremiumConfig,
+  settings: {
+    title: 'Settings',
+    audioSpeedTitle: 'Audio speed presets',
+    audioSpeedBody: 'Use the same phrase audio at 0.5x, 0.75x, or 1.0x without downloading extra copies.',
+    audioSpeedOptions: {
+      halfSpeedLabel: '0.5x Extra Slow',
+      halfSpeedBody: 'Best when you want careful listening and repeat-after-me practice.',
+      threeQuarterSpeedLabel: '0.75x Slower',
+      threeQuarterSpeedBody: 'A slower learner pace that stays closer to the natural rhythm.',
+      normalLabel: '1.0x Normal',
+      normalBody: 'The recorded phrase at its natural pace.',
+    },
+    sectionTitles: {
+      about: 'About',
+      legal: 'Legal',
+      feedback: 'Feedback',
+    },
+    rowLabels: {
+      aboutApp: 'About this app',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Use',
+      sendFeedback: 'Send Feedback',
+      rateApp: 'Rate this App',
+    },
+    aboutAlertTitle: 'SpeakLocal Vietnam',
+    aboutAlertBody: 'Offline travel Vietnamese for real travel situations in Vietnam.\n\nBuilt for pressure moments, not language school.',
+    rateComingSoonTitle: 'Coming soon',
+    rateComingSoonBody: 'Store rating link will be added post-launch.',
+    footer: 'Version 1.0.0 | SpeakLocal Vietnam',
+    chevron: 'chevron-forward',
+  },
+  privacy: {
+    title: 'Privacy Policy',
+    effectiveDate: 'Effective: April 1, 2026',
+    backLabel: 'Back',
+    sections: [
+      {
+        title: 'Overview',
+        body: 'SpeakLocal Vietnam is a fully offline app. We do not collect, store, or transmit any personal data. Your privacy matters, and the app is designed to keep the phrasebook useful without an account.',
+      },
+      {
+        title: 'Data Collection',
+        body: 'We collect no personal information to use the phrasebook. No login, email address, or profile is required.',
+      },
+      {
+        title: 'Analytics and Tracking',
+        body: 'The app does not include analytics SDKs, ad identifiers, or third-party tracking services in the current build.',
+      },
+      {
+        title: 'Local Storage',
+        body: 'AsyncStorage is used only for on-device favorites, visited scenarios, and local premium-access state. App Store purchase records stay with Apple when you choose to unlock the Full Trip Pack.',
+      },
+      {
+        title: 'Network Access',
+        body: 'The phrasebook is designed to work offline. Feedback submission uses a form only if you actively choose to send a message.',
+      },
+      {
+        title: 'Third-Party Services',
+        body: 'We do not integrate third-party services that collect personal data during normal phrasebook use.',
+      },
+      {
+        title: 'Children\'s Privacy',
+        body: 'The app does not knowingly collect data from children and is designed to be safe for general use.',
+      },
+      {
+        title: 'Changes to This Policy',
+        body: 'If this policy changes, the updated copy will ship in a future app update with a revised effective date.',
+      },
+      {
+        title: 'Contact',
+        body: 'Questions about this policy can be sent to feedback@jayopsai.com.',
+      },
+    ],
+  },
+  terms: {
+    title: 'Terms of Use',
+    effectiveDate: 'Effective: April 1, 2026',
+    backLabel: 'Back',
+    sections: [
+      {
+        title: 'Acceptance of Terms',
+        body: 'By downloading or using SpeakLocal Vietnam, you agree to these Terms of Use. If you do not agree, please do not use the app.',
+      },
+      {
+        title: 'App Description',
+        body: 'SpeakLocal Vietnam is an offline travel phrasebook with pronunciation guides, audio, saved phrases, and a one-time Full Trip Pack unlock for deeper trip coverage. It is a communication aid, not an academic language course.',
+      },
+      {
+        title: 'License',
+        body: 'We grant you a limited, non-exclusive, non-transferable, revocable license to use the app for personal, non-commercial purposes on devices you own or control, subject to Apple platform terms where applicable.',
+      },
+      {
+        title: 'Content Accuracy',
+        body: 'We aim for practical and accurate Vietnamese travel phrases, but language varies by region and context. Please use your judgment in real conversations.',
+      },
+      {
+        title: 'Intellectual Property',
+        body: 'All content in the app, including text, audio, design, and code, is owned by JojoBuilds unless otherwise noted. You may not redistribute or commercialize the content without permission.',
+      },
+      {
+        title: 'Prohibited Uses',
+        body: 'You may not reverse-engineer the app, extract phrase or audio assets for redistribution, or use the app for unlawful purposes.',
+      },
+      {
+        title: 'Disclaimer of Warranties',
+        body: 'The app is provided as is without warranties of any kind. We do not guarantee that every phrase will fit every situation.',
+      },
+      {
+        title: 'Limitation of Liability',
+        body: 'To the maximum extent permitted by law, JojoBuilds will not be liable for indirect, incidental, or consequential damages arising from use of the app.',
+      },
+      {
+        title: 'Changes to Terms',
+        body: 'We may update these terms from time to time. Updated terms will ship with a future app update and continued use means you accept the revised terms.',
+      },
+      {
+        title: 'Contact',
+        body: 'Questions about these terms can be sent to feedback@jayopsai.com.',
+      },
+    ],
+  },
+  feedback: {
+    title: 'Send Feedback',
+    formEndpoint: 'https://formspree.io/f/mojpkagy',
+    subject: 'App Feedback - SpeakLocal Vietnam',
+    errorTitle: 'Error',
+    errorBody: 'Could not send feedback. Please try again.',
+    successIcon: 'OK',
+    successTitle: 'Thanks!',
+    successBody: 'Your feedback has been received.',
+    placeholder: 'Tell us what felt unclear, report a bug, or suggest a phrase...',
+    sendLabel: 'Send',
+    sendingLabel: 'Sending...',
+    closeIcon: 'X',
+  },
+  capabilities: {
+    audio: true,
+    favorites: true,
+    pronunciation: true,
+    search: true,
+    flashcards: false,
+    recents: false,
+  },
+};

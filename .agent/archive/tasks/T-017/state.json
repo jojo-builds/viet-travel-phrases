@@ -1,0 +1,53 @@
+{
+  "taskId": "T-017",
+  "title": "Desktop Codex automation pilot, Indonesia research and prep-only lane bootstrap",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-20260418T151936",
+    "label": "Task Queue 41"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T15:19:36.9597440-05:00",
+    "lastHeartbeatAt": "2026-04-18T15:27:51.1557990-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T15:27:51.1557990-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "indonesia_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    "Task spec requires 3 review gates with exactly 4 Codex subagents per gate. This session created the Indonesia prep lane artifacts but could not execute that workflow, so done would be dishonest."
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-017/result.md",
+    "reviews": ".agent/tasks/T-017/reviews/",
+    "logs": ".agent/tasks/T-017/logs/",
+    "research": "research/language-pipeline/indonesian/INDONESIA-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/indonesian/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T15:27:51.1557990-05:00"
+}

@@ -1,0 +1,50 @@
+{
+  "taskId": "T-013",
+  "title": "Desktop Codex automation pilot, Spain first-wave translation pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-task-queue-10-fc286b98-6157-48d7-a537-eadb87019fff",
+    "label": "task-queue-10"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T05:12:20.3042220-05:00",
+    "lastHeartbeatAt": "2026-04-20T05:21:32.7301010-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T07:21:32.7301010-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "spanish_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-013/result.md",
+    "draftLane": "content-draft/spanish/",
+    "reviews": ".agent/tasks/T-013/reviews/",
+    "logs": ".agent/tasks/T-013/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-20T05:21:32.7301010-05:00"
+}

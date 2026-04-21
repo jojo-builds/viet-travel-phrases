@@ -1,0 +1,61 @@
+{
+  "taskId": "T-063",
+  "title": "Desktop Codex automation pilot, South Korea first-wave authoring scaffold completion",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "manual-automation-proof-b8e35ea71f2445d9b6822993eb39f7d3",
+    "label": "Manual automation proof"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T23:50:44.975511-05:00",
+    "lastHeartbeatAt": "2026-04-20T00:15:45.708712-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T00:15:45.708712-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "korean_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-063/result.md",
+    "recoveryNotes": ".agent/tasks/T-063/recovery-notes.md",
+    "reviews": ".agent/tasks/T-063/reviews/",
+    "logs": ".agent/tasks/T-063/logs/",
+    "requiredForDone": [
+      "content-draft/korean/README.md",
+      "content-draft/korean/source-notes.md",
+      "content-draft/korean/scenario-plan.json",
+      "content-draft/korean/phrase-source.csv",
+      "content-draft/korean/first-wave-priority.csv",
+      "content-draft/korean/research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T00:15:45.708712-05:00",
+  "resultSummary": "South Korea now has a 70-row phrase-source scaffold and a ranked 30-row first-wave shortlist, so the next bounded translation pass can start immediately.",
+  "foldedIntoTruthAt": "2026-04-20T01:12:00-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 2,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance",
+    "truthFoldedAt": "2026-04-20T02:12:30-05:00"
+  }
+}

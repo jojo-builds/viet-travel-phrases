@@ -1,0 +1,53 @@
+{
+  "taskId": "T-072",
+  "title": "Desktop Codex automation pilot, Viet purchase-surface honesty and small-screen shell audit",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-50-2-20260420T0451533471-0500",
+    "label": "Task Queue 50 automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T04:51:53.3471375-05:00",
+    "lastHeartbeatAt": "2026-04-20T05:01:36.1319240-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T07:01:36.1319240-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ios_viet_app_shell"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-072/result.md",
+    "recoveryNotes": ".agent/tasks/T-072/recovery-notes.md",
+    "reviews": ".agent/tasks/T-072/reviews/",
+    "logs": ".agent/tasks/T-072/logs/",
+    "requiredForDone": [
+      "docs/operations/LATEST_VALIDATION.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T05:01:36.1319240-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

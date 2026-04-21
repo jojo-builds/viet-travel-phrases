@@ -1,0 +1,48 @@
+{
+  "taskId": "T-028",
+  "title": "Desktop Codex automation pilot, Turkey second first-wave translation pass and unresolved-row reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-task-queue-30-58b83b16-b5c6-4684-ab1f-b43ba7548c78",
+    "label": "Task Queue 30 automation"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T05:33:15.8838604-05:00",
+    "lastHeartbeatAt": "2026-04-20T05:51:09.6181171-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T07:51:09.6181171-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "turkish_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-028/result.md",
+    "reviews": ".agent/tasks/T-028/reviews/",
+    "logs": ".agent/tasks/T-028/logs/",
+    "draftLane": "content-draft/turkish/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-20T05:51:09.6181171-05:00"
+}

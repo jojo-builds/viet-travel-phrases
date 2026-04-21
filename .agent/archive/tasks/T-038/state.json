@@ -1,0 +1,58 @@
+{
+  "taskId": "T-038",
+  "title": "Desktop Codex automation proof task, helper-based claim heartbeat finish verification",
+  "status": "blocked",
+  "phase": "negative-path-tests-complete",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "test-negative-live",
+    "label": "negative live"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T05:34:03.807242-05:00",
+    "lastHeartbeatAt": "2026-04-19T05:34:51.708329-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T05:34:51.708329-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      ".agent/tasks/T-038/**"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [
+    {
+      "summary": "Negative-path validation run completed; helper correctly blocked done without required proof artifacts and process feedback."
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-038/result.md",
+    "recoveryNotes": ".agent/tasks/T-038/recovery-notes.md",
+    "reviews": ".agent/tasks/T-038/reviews/",
+    "logs": ".agent/tasks/T-038/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-038/logs/proof-run.md"
+    ]
+  },
+  "lastUpdated": "2026-04-19T05:34:51.708329-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "proof",
+    "proofTask": true,
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 1,
+    "reviewersRequired": 0,
+    "reviewGatesRequired": 0,
+    "reviewGateConsensusRequired": 0,
+    "reviewGateLoop": "not-required-for-synthetic-proof-task"
+  }
+}

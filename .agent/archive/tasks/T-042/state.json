@@ -1,0 +1,54 @@
+{
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "contract-4c9164cf-c303-4efb-b640-18e6dcf46705",
+    "label": "queue-burnin-r2-contract-2026-04-19-0958"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T10:00:02.714973-05:00",
+    "lastHeartbeatAt": "2026-04-19T10:02:12.521943-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T10:02:12.521943-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      ".agent/tasks/T-042/**"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-042/result.md",
+    "recoveryNotes": ".agent/tasks/T-042/recovery-notes.md",
+    "reviews": ".agent/tasks/T-042/reviews/",
+    "logs": ".agent/tasks/T-042/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-042/logs/events-and-recovery-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-19T10:02:12.521943-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "proof",
+    "proofTask": true,
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 0,
+    "reviewersRequired": 0,
+    "reviewGatesRequired": 0,
+    "reviewGateConsensusRequired": 0,
+    "reviewGateLoop": "not-required-for-proof-canary-task"
+  },
+  "taskId": "T-042",
+  "title": "Burn-in proof, queue-events and recovery-breadcrumb usability audit"
+}

@@ -1,0 +1,50 @@
+{
+  "taskId": "T-016",
+  "title": "Desktop Codex automation pilot, Viet audio continuity benchmark evidence pack and orphan cleanup recommendation",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-in-app-family-2-20260418T151810",
+    "label": "Task Queue In App Family 2"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T15:18:10.6745423-05:00",
+    "lastHeartbeatAt": "2026-04-18T16:01:11.3556488-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T16:01:11.3556488-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "shared_audio_pipeline"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-016/result.md",
+    "reviews": ".agent/tasks/T-016/reviews/",
+    "logs": ".agent/tasks/T-016/logs/",
+    "draftLane": "content-draft/viet/audio-review/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T16:01:11.3556488-05:00"
+}

@@ -1,0 +1,57 @@
+{
+  "taskId": "T-123",
+  "title": "Desktop Codex automation pilot, Viet historical audio truth cleanup and orphan disposition packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-50-2-20260421T135136Z-7b4f97",
+    "label": "Task Queue 50"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T08:51:36.9376386-05:00",
+    "lastHeartbeatAt": "2026-04-21T09:43:11.9930907-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T11:43:11.9930907-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "shared_audio_pipeline"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-123\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-123\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-123\\reviews\\",
+    "logs": ".agent\\tasks\\T-123\\logs\\",
+    "requiredForDone": [
+      "content-draft\\viet\\audio-review\\CONTINUITY-BENCHMARK.md",
+      "content-draft\\viet\\audio-review\\FOLLOW-UP-BATCH-ALLOWLIST-2026-04-20.md",
+      "content-draft\\viet\\audio-review\\RELEASE-POSTURE-RECOMMENDATION.md",
+      "content-draft\\viet\\autonomous-500\\generated-rows.csv",
+      ".agent\\tasks\\T-123\\logs\\audio-truth-cleanup.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T09:43:11.9930907-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

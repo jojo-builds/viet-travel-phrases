@@ -1,0 +1,49 @@
+{
+  "taskId": "T-023",
+  "title": "Desktop Codex automation pilot, Viet purchase-surface honesty and small-screen shell audit",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-in-app-family-20260418T160430",
+    "label": "Task Queue In App Family"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T16:04:30.4988374-05:00",
+    "lastHeartbeatAt": "2026-04-18T16:34:15.5769881-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T16:34:15.5769881-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ios_viet_app_shell"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [
+    "Queue contract requires 3 review gates with 4 Codex subagents each, but this session cannot spawn subagents because the user did not explicitly authorize delegation."
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-023/result.md",
+    "reviews": ".agent/tasks/T-023/reviews/",
+    "logs": ".agent/tasks/T-023/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T16:34:15.5769881-05:00"
+}

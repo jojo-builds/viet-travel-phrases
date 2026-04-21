@@ -1,0 +1,3 @@
+APPROVE
+
+`E:\AI\SpeakLocal-App-Family\.agent\tasks\T-049\logs\root-cause.md:128-143` now keeps Gate 1 scoped to what is actually proven: direct helper invocation plus `Path(__file__).resolve()` collapsing the canonical junction to the alias, without claiming cwd was necessary. `E:\AI\SpeakLocal-App-Family\.agent\tasks\T-049\logs\root-cause.md:87-126` also adds enough evidence that the proposed prompt-side wrapper is a plausible in-scope fix from an alias-born shell, while `:156-164` correctly treats the `replace_with_retry` concern as required post-patch verification rather than overstating today’s proof. That is sufficient for the root-cause gate to advance.

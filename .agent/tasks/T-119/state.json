@@ -1,0 +1,58 @@
+{
+  "taskId": "T-119",
+  "title": "Desktop Codex automation pilot, France residual handoff and graduation-boundary packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "c98c3a07-e346-4c5f-a101-a7fb3a1438f2",
+    "label": "task-queue-50-2-T-119"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-21T10:52:08.0320515-05:00",
+    "lastHeartbeatAt": "2026-04-21T10:58:30.5180092-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T12:58:30.5180092-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "french_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-119\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-119\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-119\\reviews\\",
+    "logs": ".agent\\tasks\\T-119\\logs\\",
+    "requiredForDone": [
+      "content-draft\\french\\README.md",
+      "content-draft\\french\\source-notes.md",
+      "content-draft\\french\\phrase-source.csv",
+      "content-draft\\french\\first-wave-priority.csv",
+      "content-draft\\french\\research-backlog.md",
+      ".agent\\tasks\\T-119\\logs\\french-residual-packet.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T10:58:30.5180092-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

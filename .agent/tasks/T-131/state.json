@@ -1,0 +1,54 @@
+{
+  "taskId": "T-131",
+  "title": "Desktop Codex automation pilot, Viet restore-path walkthrough and locked-state shell packet",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ios_viet_app_shell"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-131\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-131\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-131\\reviews\\",
+    "logs": ".agent\\tasks\\T-131\\logs\\",
+    "requiredForDone": [
+      ".agent\\tasks\\T-131\\logs\\viet-restore-walkthrough.md",
+      ".agent\\tasks\\T-131\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T12:19:00-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

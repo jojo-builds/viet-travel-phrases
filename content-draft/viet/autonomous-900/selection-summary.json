@@ -1,0 +1,427 @@
+{
+  "startingBoundary": {
+    "starter": 150,
+    "premium": 350,
+    "total": 500
+  },
+  "premiumQuotas": {
+    "polite-basics": 7,
+    "understanding-repair": 8,
+    "transport": 50,
+    "hotel-accommodation": 42,
+    "food-drink": 52,
+    "money-numbers-prices": 25,
+    "directions-navigation": 26,
+    "airport-border-arrival": 25,
+    "health-pharmacy": 42,
+    "problems-help": 4,
+    "time-dates-booking": 32,
+    "shopping": 20,
+    "phone-internet-power": 17,
+    "bathroom-personal-needs": 1,
+    "emergency-safety": 13,
+    "social-small-talk": 0,
+    "sightseeing-activities": 15,
+    "local-services-everyday-tasks": 21
+  },
+  "availablePremiumCounts": {
+    "__all": {
+      "starter": 0,
+      "premium": 468,
+      "total": 468
+    },
+    "polite-basics": {
+      "starter": 0,
+      "premium": 30,
+      "total": 30
+    },
+    "understanding-repair": {
+      "starter": 0,
+      "premium": 8,
+      "total": 8
+    },
+    "transport": {
+      "starter": 0,
+      "premium": 50,
+      "total": 50
+    },
+    "hotel-accommodation": {
+      "starter": 0,
+      "premium": 42,
+      "total": 42
+    },
+    "food-drink": {
+      "starter": 0,
+      "premium": 66,
+      "total": 66
+    },
+    "money-numbers-prices": {
+      "starter": 0,
+      "premium": 25,
+      "total": 25
+    },
+    "directions-navigation": {
+      "starter": 0,
+      "premium": 26,
+      "total": 26
+    },
+    "airport-border-arrival": {
+      "starter": 0,
+      "premium": 25,
+      "total": 25
+    },
+    "health-pharmacy": {
+      "starter": 0,
+      "premium": 42,
+      "total": 42
+    },
+    "problems-help": {
+      "starter": 0,
+      "premium": 4,
+      "total": 4
+    },
+    "time-dates-booking": {
+      "starter": 0,
+      "premium": 32,
+      "total": 32
+    },
+    "shopping": {
+      "starter": 0,
+      "premium": 30,
+      "total": 30
+    },
+    "phone-internet-power": {
+      "starter": 0,
+      "premium": 17,
+      "total": 17
+    },
+    "bathroom-personal-needs": {
+      "starter": 0,
+      "premium": 1,
+      "total": 1
+    },
+    "emergency-safety": {
+      "starter": 0,
+      "premium": 13,
+      "total": 13
+    },
+    "social-small-talk": {
+      "starter": 0,
+      "premium": 12,
+      "total": 12
+    },
+    "sightseeing-activities": {
+      "starter": 0,
+      "premium": 24,
+      "total": 24
+    },
+    "local-services-everyday-tasks": {
+      "starter": 0,
+      "premium": 21,
+      "total": 21
+    }
+  },
+  "availableCounts": {
+    "polite-basics": 30,
+    "understanding-repair": 8,
+    "transport": 50,
+    "hotel-accommodation": 42,
+    "food-drink": 66,
+    "money-numbers-prices": 25,
+    "directions-navigation": 26,
+    "airport-border-arrival": 25,
+    "health-pharmacy": 42,
+    "problems-help": 4,
+    "time-dates-booking": 32,
+    "shopping": 30,
+    "phone-internet-power": 17,
+    "bathroom-personal-needs": 1,
+    "emergency-safety": 13,
+    "social-small-talk": 12,
+    "sightseeing-activities": 24,
+    "local-services-everyday-tasks": 21
+  },
+  "selectedCounts": {
+    "__all": {
+      "starter": 0,
+      "premium": 400,
+      "total": 400
+    },
+    "polite-basics": {
+      "starter": 0,
+      "premium": 7,
+      "total": 7
+    },
+    "understanding-repair": {
+      "starter": 0,
+      "premium": 8,
+      "total": 8
+    },
+    "transport": {
+      "starter": 0,
+      "premium": 50,
+      "total": 50
+    },
+    "hotel-accommodation": {
+      "starter": 0,
+      "premium": 42,
+      "total": 42
+    },
+    "food-drink": {
+      "starter": 0,
+      "premium": 52,
+      "total": 52
+    },
+    "money-numbers-prices": {
+      "starter": 0,
+      "premium": 25,
+      "total": 25
+    },
+    "directions-navigation": {
+      "starter": 0,
+      "premium": 26,
+      "total": 26
+    },
+    "airport-border-arrival": {
+      "starter": 0,
+      "premium": 25,
+      "total": 25
+    },
+    "health-pharmacy": {
+      "starter": 0,
+      "premium": 42,
+      "total": 42
+    },
+    "problems-help": {
+      "starter": 0,
+      "premium": 4,
+      "total": 4
+    },
+    "time-dates-booking": {
+      "starter": 0,
+      "premium": 32,
+      "total": 32
+    },
+    "shopping": {
+      "starter": 0,
+      "premium": 20,
+      "total": 20
+    },
+    "phone-internet-power": {
+      "starter": 0,
+      "premium": 17,
+      "total": 17
+    },
+    "bathroom-personal-needs": {
+      "starter": 0,
+      "premium": 1,
+      "total": 1
+    },
+    "emergency-safety": {
+      "starter": 0,
+      "premium": 13,
+      "total": 13
+    },
+    "social-small-talk": {
+      "starter": 0,
+      "premium": 0,
+      "total": 0
+    },
+    "sightseeing-activities": {
+      "starter": 0,
+      "premium": 15,
+      "total": 15
+    },
+    "local-services-everyday-tasks": {
+      "starter": 0,
+      "premium": 21,
+      "total": 21
+    }
+  },
+  "selectedPriorityMix": {
+    "P0": 17,
+    "P1": 357,
+    "P2": 26
+  },
+  "finalTargets": {
+    "polite-basics": {
+      "starter": 8,
+      "total": 20
+    },
+    "understanding-repair": {
+      "starter": 8,
+      "total": 55
+    },
+    "transport": {
+      "starter": 10,
+      "total": 93
+    },
+    "hotel-accommodation": {
+      "starter": 9,
+      "total": 79
+    },
+    "food-drink": {
+      "starter": 18,
+      "total": 92
+    },
+    "money-numbers-prices": {
+      "starter": 9,
+      "total": 62
+    },
+    "directions-navigation": {
+      "starter": 8,
+      "total": 52
+    },
+    "airport-border-arrival": {
+      "starter": 8,
+      "total": 55
+    },
+    "health-pharmacy": {
+      "starter": 8,
+      "total": 65
+    },
+    "problems-help": {
+      "starter": 6,
+      "total": 41
+    },
+    "time-dates-booking": {
+      "starter": 7,
+      "total": 59
+    },
+    "shopping": {
+      "starter": 7,
+      "total": 37
+    },
+    "phone-internet-power": {
+      "starter": 8,
+      "total": 47
+    },
+    "bathroom-personal-needs": {
+      "starter": 6,
+      "total": 14
+    },
+    "emergency-safety": {
+      "starter": 9,
+      "total": 43
+    },
+    "social-small-talk": {
+      "starter": 7,
+      "total": 17
+    },
+    "sightseeing-activities": {
+      "starter": 6,
+      "total": 28
+    },
+    "local-services-everyday-tasks": {
+      "starter": 8,
+      "total": 41
+    }
+  },
+  "mergedCounts": {
+    "__all": {
+      "starter": 150,
+      "premium": 750,
+      "total": 900
+    },
+    "polite-basics": {
+      "starter": 8,
+      "premium": 12,
+      "total": 20
+    },
+    "understanding-repair": {
+      "starter": 8,
+      "premium": 47,
+      "total": 55
+    },
+    "transport": {
+      "starter": 10,
+      "premium": 83,
+      "total": 93
+    },
+    "hotel-accommodation": {
+      "starter": 9,
+      "premium": 70,
+      "total": 79
+    },
+    "food-drink": {
+      "starter": 18,
+      "premium": 74,
+      "total": 92
+    },
+    "money-numbers-prices": {
+      "starter": 9,
+      "premium": 53,
+      "total": 62
+    },
+    "directions-navigation": {
+      "starter": 8,
+      "premium": 44,
+      "total": 52
+    },
+    "airport-border-arrival": {
+      "starter": 8,
+      "premium": 47,
+      "total": 55
+    },
+    "health-pharmacy": {
+      "starter": 8,
+      "premium": 57,
+      "total": 65
+    },
+    "problems-help": {
+      "starter": 6,
+      "premium": 35,
+      "total": 41
+    },
+    "time-dates-booking": {
+      "starter": 7,
+      "premium": 52,
+      "total": 59
+    },
+    "shopping": {
+      "starter": 7,
+      "premium": 30,
+      "total": 37
+    },
+    "phone-internet-power": {
+      "starter": 8,
+      "premium": 39,
+      "total": 47
+    },
+    "bathroom-personal-needs": {
+      "starter": 6,
+      "premium": 8,
+      "total": 14
+    },
+    "emergency-safety": {
+      "starter": 9,
+      "premium": 34,
+      "total": 43
+    },
+    "social-small-talk": {
+      "starter": 7,
+      "premium": 10,
+      "total": 17
+    },
+    "sightseeing-activities": {
+      "starter": 6,
+      "premium": 22,
+      "total": 28
+    },
+    "local-services-everyday-tasks": {
+      "starter": 8,
+      "premium": 33,
+      "total": 41
+    }
+  },
+  "generatedRowCount": 403,
+  "translatedPhraseCount": 403,
+  "postSelectionDuplicateFix": {
+    "demotedDuplicatePrimaries": 3,
+    "manualReplacementFamiliesAdded": 3,
+    "notes": [
+      "Merged duplicate 500-era say-first rows into their existing transport and hotel families as non-primary variants.",
+      "Added three distinct manual 900-pass replacement families to keep the live boundary at 150 starter / 750 premium / 900 total."
+    ]
+  }
+}

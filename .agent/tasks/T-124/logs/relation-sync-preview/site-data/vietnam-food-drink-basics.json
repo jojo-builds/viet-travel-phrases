@@ -1,0 +1,318 @@
+﻿{
+    "schemaVersion":  3,
+    "exportType":  "website-phrase-audio-module",
+    "exportedAt":  "2026-04-18T09:37:44.117Z",
+    "moduleId":  "vietnam-food-drink-basics",
+    "moduleSlug":  "vietnam-food-drink-basics",
+    "destinationSlug":  "vietnam",
+    "destinationName":  "Vietnam",
+    "variant":  "viet",
+    "language":  "Vietnamese",
+    "languageCode":  "vi",
+    "country":  "Vietnam",
+    "scenarioId":  "food-drink",
+    "scenarioSlug":  "food-drink",
+    "scenarioName":  "Food \u0026 Drink",
+    "editorialStatus":  "preview-ready",
+    "appStatus":  "live",
+    "websiteAudioStatus":  "ready",
+    "audioStatus":  "ready",
+    "audioDelivery":  "site-static",
+    "audioCoverage":  {
+                          "status":  "ready",
+                          "readyPhraseCount":  4,
+                          "plannedPhraseCount":  0,
+                          "totalPhraseCount":  4
+                      },
+    "headline":  "The first food and coffee phrases worth carrying into Vietnam",
+    "summary":  "A starter slice for coffee, bottled water, spice, and takeaway. Enough to get the first order out cleanly before the deeper app backup matters.",
+    "travelerStage":  "Coffee stops and meals",
+    "difficulty":  "Easy",
+    "formality":  "Neutral",
+    "audioDurationMs":  null,
+    "transcriptChecked":  null,
+    "phraseCount":  4,
+    "familyCount":  4,
+    "relationCoverage":  {
+                             "status":  "partial",
+                             "advisoryOnly":  true,
+                             "coveredFamilyCount":  2,
+                             "coveredPhraseCount":  2,
+                             "totalFamilyCount":  4,
+                             "coveredFamilyIds":  [
+                                                      "food-not-spicy",
+                                                      "food-bottled-water"
+                                                  ],
+                             "coveredClusterIds":  [
+                                                       "viet-food-not-spicy",
+                                                       "viet-food-bottled-water"
+                                                   ]
+                         },
+    "articleReference":  {
+                             "primaryLabel":  "Install Viet Travel Phrasebook",
+                             "primaryUrl":  "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+                             "secondaryLabel":  "See the full Vietnam phrase guide",
+                             "secondaryUrl":  "/blog/phrases-tourists-actually-need-in-vietnam/"
+                         },
+    "trust":  {
+                  "sourceLabel":  "Live Viet starter export",
+                  "sourceNote":  "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+                  "appBoundary":  "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+                  "methodologyLabel":  "How SpeakLocal builds packs",
+                  "methodologyUrl":  "/about/",
+                  "correctionsLabel":  "Report a phrase or audio gap",
+                  "correctionsUrl":  "/feedback/"
+              },
+    "cta":  {
+                "primaryLabel":  "Install Viet Travel Phrasebook",
+                "primaryUrl":  "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+                "secondaryLabel":  "See the full Vietnam phrase guide",
+                "secondaryUrl":  "/blog/phrases-tourists-actually-need-in-vietnam/"
+            },
+    "phrases":  [
+                    {
+                        "phraseId":  "coffee-1",
+                        "phraseSlug":  "coffee-1",
+                        "id":  "coffee-1",
+                        "moduleId":  "vietnam-food-drink-basics",
+                        "destinationSlug":  "vietnam",
+                        "variant":  "viet",
+                        "language":  "Vietnamese",
+                        "languageCode":  "vi",
+                        "country":  "Vietnam",
+                        "scenarioId":  "food-drink",
+                        "scenarioSlug":  "food-drink",
+                        "scenarioName":  "Food \u0026 Drink",
+                        "familyId":  "food-coffee-milk",
+                        "familySlug":  "food-coffee-milk",
+                        "familyTitle":  "Iced milk coffee",
+                        "familySummary":  "Start with the base drink before you add any small changes.",
+                        "accessTier":  "starter",
+                        "variantRole":  "say-first",
+                        "variantLabel":  "Say this first",
+                        "englishText":  "One iced milk coffee please",
+                        "sourceText":  "One iced milk coffee please",
+                        "targetText":  "Cho tÃ´i má»™t cÃ  phÃª sá»¯a Ä‘Ã¡",
+                        "canonicalTargetText":  "Cho tÃ´i má»™t cÃ  phÃª sá»¯a Ä‘Ã¡",
+                        "pronunciation":  "cho toy mot ka feh sue-ah dah",
+                        "context":  "Use this at a cafÃ© when you want the classic Vietnamese coffee order.",
+                        "audioStatus":  "ready",
+                        "audioDelivery":  "site-static",
+                        "audioUrl":  "/data/phrase-audio/vietnam/coffee-1.mp3",
+                        "audioReference":  {
+                                               "provider":  "speaklocal-site",
+                                               "delivery":  "site-static",
+                                               "audioKey":  "coffee-1",
+                                               "filename":  "coffee-1.mp3",
+                                               "relativePath":  "vietnam/coffee-1.mp3",
+                                               "url":  "/data/phrase-audio/vietnam/coffee-1.mp3"
+                                           },
+                        "audioDurationMs":  null,
+                        "transcriptChecked":  null,
+                        "websiteReferences":  {
+                                                  "moduleId":  "vietnam-food-drink-basics",
+                                                  "articleUrl":  "/blog/phrases-tourists-actually-need-in-vietnam/"
+                                              }
+                    },
+                    {
+                        "phraseId":  "food-3",
+                        "phraseSlug":  "food-3",
+                        "id":  "food-3",
+                        "moduleId":  "vietnam-food-drink-basics",
+                        "destinationSlug":  "vietnam",
+                        "variant":  "viet",
+                        "language":  "Vietnamese",
+                        "languageCode":  "vi",
+                        "country":  "Vietnam",
+                        "scenarioId":  "food-drink",
+                        "scenarioSlug":  "food-drink",
+                        "scenarioName":  "Food \u0026 Drink",
+                        "familyId":  "food-not-spicy",
+                        "familySlug":  "food-not-spicy",
+                        "familyTitle":  "Not spicy",
+                        "familySummary":  "This is one of the most practical restaurant safety phrases.",
+                        "accessTier":  "starter",
+                        "variantRole":  "say-first",
+                        "variantLabel":  "Say this first",
+                        "englishText":  "Not spicy please",
+                        "sourceText":  "Not spicy please",
+                        "targetText":  "KhÃ´ng cay nhÃ©",
+                        "canonicalTargetText":  "KhÃ´ng cay nhÃ©",
+                        "pronunciation":  "khong kai nhe",
+                        "context":  "Use this before the dish is prepared if you want mild food.",
+                        "relationContext":  {
+                                                "sampleId":  "viet-relation-sample-v1",
+                                                "clusterId":  "viet-food-not-spicy",
+                                                "coverageMoment":  "food",
+                                                "starterSafe":  true,
+                                                "advisoryOnly":  true,
+                                                "shortestFormPhraseId":  "food-3",
+                                                "clearerFormPhraseId":  "food-not-spicy-clearer",
+                                                "morePoliteFormPhraseId":  null,
+                                                "youMayHearSignals":  [
+
+                                                                      ],
+                                                "possibleTravelerResponses":  [
+                                                                                  {
+                                                                                      "kind":  "drink-follow-up",
+                                                                                      "familyId":  "food-bottled-water",
+                                                                                      "note":  "Even after asking for mild food, water is a common next move.",
+                                                                                      "phraseId":  "food-5"
+                                                                                  },
+                                                                                  {
+                                                                                      "kind":  "repair-branch",
+                                                                                      "familyId":  "repair-understand",
+                                                                                      "note":  "If the cook or server explains ingredients quickly, the safer next move is to say you do not understand.",
+                                                                                      "phraseId":  "problems-2"
+                                                                                  }
+                                                                              ],
+                                                "familyRelations":  [
+                                                                        {
+                                                                            "relationType":  "next_step_after",
+                                                                            "targetFamilyId":  "food-bottled-water",
+                                                                            "reason":  "Water is a practical adjacent ask once food preferences are clear."
+                                                                        },
+                                                                        {
+                                                                            "relationType":  "repair_for",
+                                                                            "targetFamilyId":  "repair-understand",
+                                                                            "reason":  "Ingredient talk can get fast, and the user needs a clean repair branch."
+                                                                        }
+                                                                    ]
+                                            },
+                        "audioStatus":  "ready",
+                        "audioDelivery":  "site-static",
+                        "audioUrl":  "/data/phrase-audio/vietnam/food-3.mp3",
+                        "audioReference":  {
+                                               "provider":  "speaklocal-site",
+                                               "delivery":  "site-static",
+                                               "audioKey":  "food-3",
+                                               "filename":  "food-3.mp3",
+                                               "relativePath":  "vietnam/food-3.mp3",
+                                               "url":  "/data/phrase-audio/vietnam/food-3.mp3"
+                                           },
+                        "audioDurationMs":  null,
+                        "transcriptChecked":  null,
+                        "websiteReferences":  {
+                                                  "moduleId":  "vietnam-food-drink-basics",
+                                                  "articleUrl":  "/blog/phrases-tourists-actually-need-in-vietnam/"
+                                              }
+                    },
+                    {
+                        "phraseId":  "food-5",
+                        "phraseSlug":  "food-5",
+                        "id":  "food-5",
+                        "moduleId":  "vietnam-food-drink-basics",
+                        "destinationSlug":  "vietnam",
+                        "variant":  "viet",
+                        "language":  "Vietnamese",
+                        "languageCode":  "vi",
+                        "country":  "Vietnam",
+                        "scenarioId":  "food-drink",
+                        "scenarioSlug":  "food-drink",
+                        "scenarioName":  "Food \u0026 Drink",
+                        "familyId":  "food-bottled-water",
+                        "familySlug":  "food-bottled-water",
+                        "familyTitle":  "Bottled water",
+                        "familySummary":  "Use this when you want bottled water instead of tap water.",
+                        "accessTier":  "starter",
+                        "variantRole":  "say-first",
+                        "variantLabel":  "Say this first",
+                        "englishText":  "Do you have bottled water?",
+                        "sourceText":  "Do you have bottled water?",
+                        "targetText":  "CÃ³ nÆ°á»›c suá»‘i khÃ´ng?",
+                        "canonicalTargetText":  "CÃ³ nÆ°á»›c suá»‘i khÃ´ng?",
+                        "pronunciation":  "koh nook soy khong",
+                        "context":  "Ask this when you want bottled water with your meal.",
+                        "relationContext":  {
+                                                "sampleId":  "viet-relation-sample-v1",
+                                                "clusterId":  "viet-food-bottled-water",
+                                                "coverageMoment":  "food",
+                                                "starterSafe":  true,
+                                                "advisoryOnly":  true,
+                                                "shortestFormPhraseId":  "food-5",
+                                                "clearerFormPhraseId":  null,
+                                                "morePoliteFormPhraseId":  null,
+                                                "youMayHearSignals":  [
+
+                                                                      ],
+                                                "possibleTravelerResponses":  [
+                                                                                  {
+                                                                                      "kind":  "price-check",
+                                                                                      "familyId":  "money-final-price",
+                                                                                      "note":  "Once the add-on is clear, the next useful move is often the final amount.",
+                                                                                      "phraseId":  "price-5"
+                                                                                  }
+                                                                              ],
+                                                "familyRelations":  [
+                                                                        {
+                                                                            "relationType":  "next_step_after",
+                                                                            "targetFamilyId":  "money-final-price",
+                                                                            "reason":  "A quick total check is a common next move when the table order is set."
+                                                                        }
+                                                                    ]
+                                            },
+                        "audioStatus":  "ready",
+                        "audioDelivery":  "site-static",
+                        "audioUrl":  "/data/phrase-audio/vietnam/food-5.mp3",
+                        "audioReference":  {
+                                               "provider":  "speaklocal-site",
+                                               "delivery":  "site-static",
+                                               "audioKey":  "food-5",
+                                               "filename":  "food-5.mp3",
+                                               "relativePath":  "vietnam/food-5.mp3",
+                                               "url":  "/data/phrase-audio/vietnam/food-5.mp3"
+                                           },
+                        "audioDurationMs":  null,
+                        "transcriptChecked":  null,
+                        "websiteReferences":  {
+                                                  "moduleId":  "vietnam-food-drink-basics",
+                                                  "articleUrl":  "/blog/phrases-tourists-actually-need-in-vietnam/"
+                                              }
+                    },
+                    {
+                        "phraseId":  "food-7",
+                        "phraseSlug":  "food-7",
+                        "id":  "food-7",
+                        "moduleId":  "vietnam-food-drink-basics",
+                        "destinationSlug":  "vietnam",
+                        "variant":  "viet",
+                        "language":  "Vietnamese",
+                        "languageCode":  "vi",
+                        "country":  "Vietnam",
+                        "scenarioId":  "food-drink",
+                        "scenarioSlug":  "food-drink",
+                        "scenarioName":  "Food \u0026 Drink",
+                        "familyId":  "food-pack-to-go",
+                        "familySlug":  "food-pack-to-go",
+                        "familyTitle":  "Pack it to go",
+                        "familySummary":  "This is the default restaurant exit phrase when you still want the food.",
+                        "accessTier":  "starter",
+                        "variantRole":  "say-first",
+                        "variantLabel":  "Say this first",
+                        "englishText":  "Pack it to go",
+                        "sourceText":  "Pack it to go",
+                        "targetText":  "GÃ³i mang vá»",
+                        "canonicalTargetText":  "GÃ³i mang vá»",
+                        "pronunciation":  "goy mang veh",
+                        "context":  "Say this when you want takeaway from a stall or restaurant.",
+                        "audioStatus":  "ready",
+                        "audioDelivery":  "site-static",
+                        "audioUrl":  "/data/phrase-audio/vietnam/food-7.mp3",
+                        "audioReference":  {
+                                               "provider":  "speaklocal-site",
+                                               "delivery":  "site-static",
+                                               "audioKey":  "food-7",
+                                               "filename":  "food-7.mp3",
+                                               "relativePath":  "vietnam/food-7.mp3",
+                                               "url":  "/data/phrase-audio/vietnam/food-7.mp3"
+                                           },
+                        "audioDurationMs":  null,
+                        "transcriptChecked":  null,
+                        "websiteReferences":  {
+                                                  "moduleId":  "vietnam-food-drink-basics",
+                                                  "articleUrl":  "/blog/phrases-tourists-actually-need-in-vietnam/"
+                                              }
+                    }
+                ]
+}
+

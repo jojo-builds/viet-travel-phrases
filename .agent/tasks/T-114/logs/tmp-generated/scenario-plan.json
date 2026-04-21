@@ -1,0 +1,278 @@
+{
+  "variant": "tagalog",
+  "appId": "tagalog-travel-phrases",
+  "displayName": "SpeakLocal Philippines",
+  "language": "Tagalog",
+  "languageCode": "tl",
+  "country": "Philippines",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "tagalog-simple-problems-2",
+    "tagalog-simple-problems-3",
+    "tagalog-grab-taxi-1",
+    "tagalog-asking-price-1",
+    "tagalog-convenience-store-1"
+  ],
+  "handoffContract": {
+    "outcomeCounts": {
+      "starter": 16,
+      "deferred": 1,
+      "nextPassExpansion": 5,
+      "laterOnlyHold": 2,
+      "total": 24
+    },
+    "rowLinkedCsvFields": [
+      "relation_cluster_id",
+      "family_role",
+      "anchor_phrase_id",
+      "shortest_form_phrase_id",
+      "clearer_or_more_polite_phrase_id",
+      "likely_reply_family",
+      "primary_next_family",
+      "repair_family",
+      "parked_follow_on_family",
+      "parked_follow_on_class"
+    ],
+    "statusNormalization": {
+      "baseRowStatusField": "current_status",
+      "followOnClassField": "parked_follow_on_class",
+      "sidecarTargetStatusField": "targetStatus",
+      "sidecarTargetFollowOnClassField": "targetFollowOnClass"
+    },
+    "starterRows": [
+      "tagalog-simple-problems-2",
+      "tagalog-simple-problems-3",
+      "tagalog-grab-taxi-1",
+      "tagalog-grab-taxi-3",
+      "tagalog-asking-price-1",
+      "tagalog-convenience-store-1",
+      "tagalog-street-food-3",
+      "tagalog-directions-2",
+      "tagalog-directions-3",
+      "tagalog-polite-basics-5",
+      "tagalog-polite-basics-2",
+      "tagalog-simple-problems-6",
+      "tagalog-street-food-7",
+      "tagalog-asking-price-6",
+      "tagalog-asking-price-7",
+      "tagalog-polite-basics-3"
+    ],
+    "deferredRows": [
+      "tagalog-polite-basics-4"
+    ],
+    "deferredRowDetails": [
+      {
+        "phraseId": "tagalog-polite-basics-4",
+        "anchorPhraseId": "tagalog-polite-basics-4",
+        "shortestFormPhraseId": "tagalog-polite-basics-4",
+        "clearerOrMorePolitePhraseId": null,
+        "likelyReplyFamily": null,
+        "primaryNextFamily": "tagalog-polite-basics-2",
+        "repairFamily": "tagalog-simple-problems-2",
+        "followOnClass": "deferred-review",
+        "boundaryRule": "Keep visible as a refusal boundary only; if surfaced in relation UI, route back into thanks or the direct repair lane."
+      }
+    ],
+    "nextPassExpansionCluster": {
+      "clusterId": "tagalog-v2-next-pass-expansion",
+      "summary": "One ordered pickup cluster covering map-showing, hotel arrival and room issue, then card payment follow-up.",
+      "scenarioOrder": [
+        "directions",
+        "hotel-hostel",
+        "convenience-store"
+      ],
+      "rows": [
+        "tagalog-directions-1",
+        "tagalog-hotel-hostel-1",
+        "tagalog-hotel-hostel-2",
+        "tagalog-hotel-hostel-5",
+        "tagalog-convenience-store-6"
+      ],
+      "rowDetails": [
+        {
+          "phraseId": "tagalog-directions-1",
+          "anchorPhraseId": "tagalog-directions-1",
+          "shortestFormPhraseId": "tagalog-directions-1",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-directions-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup"
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-1",
+          "anchorPhraseId": "tagalog-hotel-hostel-1",
+          "shortestFormPhraseId": "tagalog-hotel-hostel-1",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-hotel-hostel-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup"
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-2",
+          "anchorPhraseId": "tagalog-hotel-hostel-2",
+          "shortestFormPhraseId": "tagalog-hotel-hostel-2",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-hotel-hostel-5",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup"
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-5",
+          "anchorPhraseId": "tagalog-hotel-hostel-5",
+          "shortestFormPhraseId": "tagalog-hotel-hostel-5",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-polite-basics-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup"
+        },
+        {
+          "phraseId": "tagalog-convenience-store-6",
+          "anchorPhraseId": "tagalog-convenience-store-6",
+          "shortestFormPhraseId": "tagalog-convenience-store-6",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-polite-basics-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup"
+        }
+      ]
+    },
+    "laterOnlyHold": {
+      "clusterId": "tagalog-v2-later-only-hold",
+      "unlockRule": "Reopen these only after the five-row next-pass expansion cluster is promoted or explicitly rejected in order.",
+      "rows": [
+        "tagalog-simple-problems-7",
+        "tagalog-grab-taxi-7"
+      ],
+      "rowDetails": [
+        {
+          "phraseId": "tagalog-simple-problems-7",
+          "anchorPhraseId": "tagalog-simple-problems-7",
+          "shortestFormPhraseId": "tagalog-simple-problems-7",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-polite-basics-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "later-only-hold"
+        },
+        {
+          "phraseId": "tagalog-grab-taxi-7",
+          "anchorPhraseId": "tagalog-grab-taxi-7",
+          "shortestFormPhraseId": "tagalog-grab-taxi-7",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-polite-basics-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "later-only-hold"
+        }
+      ]
+    },
+    "rowOutcomeCsv": "content-draft/tagalog/tagalog-v2-first-wave.csv",
+    "rowOutcomePriorityCsv": "content-draft/tagalog/first-wave-priority.csv",
+    "rowOutcomeLedgerRoles": [
+      "anchor",
+      "deferred-boundary",
+      "pickup-candidate",
+      "later-only-hold"
+    ],
+    "rowOutcomeCsvOrder": "Rows 1-16 are starter-core anchors, row 17 is the deferred refusal boundary, rows 18-22 are ordered pickup candidates, and rows 23-24 remain later-only holds."
+  },
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Cafe menus often use English terms but a short Tagalog phrase still helps when the shop is busy."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Pointing helps at busy stalls but simple Tagalog is useful for spice level water and takeout."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Grab / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Grab is common in major cities and showing the destination on your phone helps drivers quickly."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Ask the price before agreeing and keep small bills ready when shopping at markets or street stalls."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "A warm tone and a simple greeting go a long way in hotels shops rides and casual conversations."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Mini-marts are good for water tissues sunscreen and quick snacks during a long day out."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Keep your passport and booking details ready because front desks usually register guests at check-in."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Save your hotel name and one landmark in your phone so you can ask for help even if maps fail."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "If something goes wrong stay calm and show booking screens photos or screenshots to speed up help."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Short friendly chat often starts with where you are from whether it is your first visit and what food you like."
+    }
+  ],
+  "notes": "Canonical drafting baseline for Tagalog parity with the Viet 10-scenario traveler surface, plus a retrieval-ready handoff contract for the current starter, deferred, pickup, and hold boundaries."
+}

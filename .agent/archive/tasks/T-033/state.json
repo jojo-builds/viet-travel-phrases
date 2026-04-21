@@ -1,0 +1,55 @@
+{
+  "taskId": "T-033",
+  "title": "Desktop Codex automation pilot, Viet allowlisted audio follow-up batch",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-automation-20260419T160310-0500",
+    "label": "Codex queue proof worker"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T16:05:09.444918-05:00",
+    "lastHeartbeatAt": "2026-04-19T16:10:21.425738-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T16:10:21.425738-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "shared_audio_pipeline"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    {
+      "summary": "Worker session does not expose a usable spawn_agent subagent-launch surface for the required 3 review gates with exactly 4 Codex subagents per gate."
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-033/result.md",
+    "reviews": ".agent/tasks/T-033/reviews/",
+    "logs": ".agent/tasks/T-033/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-19T16:10:21.425738-05:00"
+}

@@ -1,0 +1,49 @@
+{
+  "taskId": "T-022",
+  "title": "Desktop Codex automation pilot, Viet device-proof ops truth sync and evidence pack refresh",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-3-2026-04-18T16-02-57-7922075-05-00",
+    "label": "Task Queue 3"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T16:02:57.7922075-05:00",
+    "lastHeartbeatAt": "2026-04-18T16:35:05.5913621-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T16:35:05.5913621-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ops_docs_truth"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [
+    "Task spec requires 3 review gates with exactly 4 Codex subagents per gate. This session advanced the Viet ops-truth sync and evidence-pack wording but could not execute that workflow, so done would be dishonest."
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-022/result.md",
+    "reviews": ".agent/tasks/T-022/reviews/",
+    "logs": ".agent/tasks/T-022/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T16:35:05.5913621-05:00"
+}

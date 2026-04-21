@@ -1,0 +1,54 @@
+{
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "6899ad1d-3e8e-4380-8c6c-28ae75599ef1",
+    "label": "queue-burnin-r3-edgehunter-20260419-1006"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T10:06:02.007436-05:00",
+    "lastHeartbeatAt": "2026-04-19T10:07:52.605921-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T10:07:52.605921-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      ".agent/tasks/T-046/**"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-046/result.md",
+    "recoveryNotes": ".agent/tasks/T-046/recovery-notes.md",
+    "reviews": ".agent/tasks/T-046/reviews/",
+    "logs": ".agent/tasks/T-046/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-046/logs/heartbeat-lease-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-19T10:07:52.605921-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "proof",
+    "proofTask": true,
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 0,
+    "reviewersRequired": 0,
+    "reviewGatesRequired": 0,
+    "reviewGateConsensusRequired": 0,
+    "reviewGateLoop": "not-required-for-proof-canary-task"
+  },
+  "taskId": "T-046",
+  "title": "Burn-in proof, heartbeat and lease observability audit"
+}

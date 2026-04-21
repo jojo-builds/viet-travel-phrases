@@ -1,0 +1,56 @@
+{
+  "taskId": "T-018",
+  "title": "Desktop Codex automation pilot, South Korea research and prep-only lane bootstrap",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-20260418T152714-0500",
+    "label": "Desktop Codex automation claim 2026-04-18 15:27 CDT"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T15:27:14.3335525-05:00",
+    "lastHeartbeatAt": "2026-04-18T15:32:54.6081786-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T15:32:54.6081786-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "korean_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [
+    {
+      "type": "execution-policy",
+      "summary": "Mandatory 3-gate review workflow requires 4 Codex subagents per gate, but this session cannot spawn subagents without explicit user authorization."
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-018/result.md",
+    "reviews": ".agent/tasks/T-018/reviews/",
+    "logs": ".agent/tasks/T-018/logs/",
+    "research": "research/language-pipeline/korean/SOUTH-KOREA-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/korean/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T15:32:54.6081786-05:00"
+}

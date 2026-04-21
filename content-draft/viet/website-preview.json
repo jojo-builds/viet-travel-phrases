@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 2,
+  "destinationSlug": "vietnam",
+  "destinationName": "Vietnam",
+  "language": "Vietnamese",
+  "trustDefaults": {
+    "sourceLabel": "Live Viet starter export",
+    "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+    "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+    "methodologyLabel": "How SpeakLocal builds packs",
+    "methodologyUrl": "/about/",
+    "correctionsLabel": "Report a phrase or audio gap",
+    "correctionsUrl": "/feedback/"
+  },
+  "modules": [
+    {
+      "moduleId": "vietnam-essential-basics",
+      "scenarioId": "polite-basics",
+      "editorialStatus": "preview-ready",
+      "audioStatus": "ready",
+      "audioDelivery": "site-static",
+      "appStatus": "live",
+      "headline": "The starter phrases that help you get by on day one",
+      "summary": "Greeting, thanks, apology, and a polite no. This is the free preview layer: small on purpose, useful fast, and a clean handoff into the deeper app backup.",
+      "travelerStage": "Day 1",
+      "difficulty": "Easy",
+      "formality": "Polite",
+      "cta": {
+        "primaryLabel": "Install Viet Travel Phrasebook",
+        "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+        "secondaryLabel": "See the full Vietnam phrase guide",
+        "secondaryUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+      },
+      "phraseIds": [
+        "polite-1",
+        "polite-2",
+        "polite-4",
+        "polite-5"
+      ]
+    },
+    {
+      "moduleId": "vietnam-arrival-basics",
+      "scenarioId": "airport-border-arrival",
+      "editorialStatus": "preview-ready",
+      "audioStatus": "ready",
+      "audioDelivery": "site-static",
+      "appStatus": "live",
+      "headline": "The starter arrival phrases that keep the first handoff from turning sloppy",
+      "summary": "Use these app-aligned starter lines for immigration, baggage, pickup, and the first airport problem. Small on purpose, fast under pressure, and still only a preview of the deeper app backup.",
+      "travelerStage": "Airport arrival",
+      "difficulty": "Easy",
+      "formality": "Neutral",
+      "cta": {
+        "primaryLabel": "Install Viet Travel Phrasebook",
+        "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+        "secondaryLabel": "Read the Vietnam arrival guide",
+        "secondaryUrl": "/blog/vietnam-first-24-hours/"
+      },
+      "phraseIds": [
+        "airport-1",
+        "airport-2",
+        "airport-5",
+        "airport-6"
+      ]
+    },
+    {
+      "moduleId": "vietnam-transport-basics",
+      "scenarioId": "transport",
+      "editorialStatus": "preview-ready",
+      "audioStatus": "ready",
+      "audioDelivery": "site-static",
+      "appStatus": "live",
+      "headline": "The starter transport phrases that fix the address, fare, and meter problems first",
+      "summary": "These are the short transport lines from the app starter layer that matter when the ride, route, or handoff gets tense. Phrase-first, audio-ready, and still clearly smaller than the app backup.",
+      "travelerStage": "Pickup and ride handoff",
+      "difficulty": "Easy",
+      "formality": "Neutral",
+      "cta": {
+        "primaryLabel": "Install Viet Travel Phrasebook",
+        "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+        "secondaryLabel": "Read the Vietnam transport guide",
+        "secondaryUrl": "/blog/vietnam-grab-taxi-confusion/"
+      },
+      "phraseIds": [
+        "taxi-1",
+        "taxi-3",
+        "transport-fare",
+        "transport-meter"
+      ]
+    },
+    {
+      "moduleId": "vietnam-money-basics",
+      "scenarioId": "money-numbers-prices",
+      "editorialStatus": "preview-ready",
+      "audioStatus": "ready",
+      "audioDelivery": "site-static",
+      "appStatus": "live",
+      "headline": "The starter money phrases that protect the total before the moment gets expensive",
+      "summary": "Use this small money slice for price checks, final totals, ATM help, and one real payment problem. It stays app-aligned and starter-only instead of pretending the website now carries the full free layer.",
+      "travelerStage": "Prices, totals, and ATM stress",
+      "difficulty": "Medium",
+      "formality": "Neutral",
+      "cta": {
+        "primaryLabel": "Install Viet Travel Phrasebook",
+        "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+        "secondaryLabel": "See the full Vietnam phrase guide",
+        "secondaryUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+      },
+      "phraseIds": [
+        "price-1",
+        "price-5",
+        "airport-4",
+        "v500-mone-numb-pric-the-atm-kept-my-card"
+      ]
+    },
+    {
+      "moduleId": "vietnam-phone-basics",
+      "scenarioId": "phone-internet-power",
+      "editorialStatus": "preview-ready",
+      "audioStatus": "ready",
+      "audioDelivery": "site-static",
+      "appStatus": "live",
+      "headline": "The starter phone and SIM phrases that get you back online fast",
+      "summary": "A tight starter set for Wi-Fi, SIMs, eSIMs, and the first map failure. These are selected starter preview modules from the app starter layer, not a separate website phone system.",
+      "travelerStage": "Phone, SIM, and maps",
+      "difficulty": "Easy",
+      "formality": "Neutral",
+      "cta": {
+        "primaryLabel": "Install Viet Travel Phrasebook",
+        "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+        "secondaryLabel": "Read the SIM and offline guide",
+        "secondaryUrl": "/blog/vietnam-sim-esim-offline-setup/"
+      },
+      "phraseIds": [
+        "phone-1",
+        "phone-2",
+        "v500-phon-inte-powe-i-need-an-esim",
+        "v500-phon-inte-powe-my-map-is-not-working"
+      ]
+    },
+    {
+      "moduleId": "vietnam-understanding-repair",
+      "scenarioId": "understanding-repair",
+      "editorialStatus": "preview-ready",
+      "audioStatus": "ready",
+      "audioDelivery": "site-static",
+      "appStatus": "live",
+      "headline": "The repair phrases that stop a small miss from turning into a bigger problem",
+      "summary": "Use these starter repair lines when you miss the number, speed, or sentence. They preview the do-not-get-stuck layer without pretending the website is the whole phrasebook.",
+      "travelerStage": "When the conversation slips",
+      "difficulty": "Medium",
+      "formality": "Neutral",
+      "cta": {
+        "primaryLabel": "Install Viet Travel Phrasebook",
+        "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+        "secondaryLabel": "See the full Vietnam phrase guide",
+        "secondaryUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+      },
+      "phraseIds": [
+        "problems-2",
+        "problems-3",
+        "repair-1",
+        "repair-2"
+      ]
+    },
+    {
+      "moduleId": "vietnam-food-drink-basics",
+      "scenarioId": "food-drink",
+      "editorialStatus": "preview-ready",
+      "audioStatus": "ready",
+      "audioDelivery": "site-static",
+      "appStatus": "live",
+      "headline": "The first food and coffee phrases worth carrying into Vietnam",
+      "summary": "A starter slice for coffee, bottled water, spice, and takeaway. Enough to get the first order out cleanly before the deeper app backup matters.",
+      "travelerStage": "Coffee stops and meals",
+      "difficulty": "Easy",
+      "formality": "Neutral",
+      "cta": {
+        "primaryLabel": "Install Viet Travel Phrasebook",
+        "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+        "secondaryLabel": "See the full Vietnam phrase guide",
+        "secondaryUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+      },
+      "phraseIds": [
+        "coffee-1",
+        "food-3",
+        "food-5",
+        "food-7"
+      ]
+    }
+  ]
+}

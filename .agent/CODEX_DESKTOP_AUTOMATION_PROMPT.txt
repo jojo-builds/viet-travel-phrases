@@ -1,0 +1,22 @@
+Repo-local queue run only.
+Use `E:\AI\SpeakLocal-App-Family` as the canonical root.
+Ignore broad family startup and do not use `$orchestrate-speaklocal-family` during queue startup.
+
+Read, in order:
+1. `AGENTS.md`
+2. `.agent/README.md`
+3. `.agent/QUEUE_START.md`
+4. `.agent/AUTOMATION.md`
+
+Queue flow:
+- confirm this worker exposes a callable `functions.spawn_agent`
+- use `.agent/coordination/queue-index.json` only as a shortlist: try `reclaimable`, then `queued`; for each candidate, read live `state.json`, skip stale entries, claim by direct `state.json` patch, and re-read immediately to confirm ownership
+- if no candidate can be claimed, stop honestly instead of looping
+
+After claim:
+- ignore queue-index and locks unless the task is explicitly queue maintenance
+- read only `spec.md` and task-required files, stay inside task scope, and heartbeat/re-read the claimed `state.json` on material phase changes and before finish
+- for meaningful 3-gate tasks, follow the lean review contract in `.agent/AUTOMATION.md`: reviewers return judgment text only, the parent writes the 4 review artifacts in one patch, and harvested reviewer agents are closed promptly
+- write `result.md`, include `Process feedback`, require latest-pass `Approval: APPROVE` or `Approval: BLOCK`, and finish by patching `state.json` directly to `done` or `blocked` with `result.md` agreeing
+
+Process one task only, then stop.

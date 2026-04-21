@@ -1,0 +1,54 @@
+{
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "queue-burnin-r3-contract-0c92f42c-6435-42c6-9fe8-f10f7e6161d0",
+    "label": "queue-burnin-r3-contract"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T10:05:55.460736-05:00",
+    "lastHeartbeatAt": "2026-04-19T10:07:29.338857-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T10:07:29.338857-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      ".agent/tasks/T-045/**"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-045/result.md",
+    "recoveryNotes": ".agent/tasks/T-045/recovery-notes.md",
+    "reviews": ".agent/tasks/T-045/reviews/",
+    "logs": ".agent/tasks/T-045/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-045/logs/reclaim-breadcrumb-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-19T10:07:29.338857-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "proof",
+    "proofTask": true,
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 0,
+    "reviewersRequired": 0,
+    "reviewGatesRequired": 0,
+    "reviewGateConsensusRequired": 0,
+    "reviewGateLoop": "not-required-for-proof-canary-task"
+  },
+  "taskId": "T-045",
+  "title": "Burn-in proof, reclaim-resume breadcrumb completeness audit"
+}

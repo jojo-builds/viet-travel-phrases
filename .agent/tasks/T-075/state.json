@@ -1,0 +1,57 @@
+{
+  "taskId": "T-075",
+  "title": "Desktop Codex automation pilot, Indonesia first-wave translation pack and prep-ready expansion pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-30-20260420T0433182776-0500",
+    "label": "Task Queue 30 automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T04:33:18.2776163-05:00",
+    "lastHeartbeatAt": "2026-04-20T04:49:59.2133569-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T06:49:59.2133569-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "indonesia_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-075/result.md",
+    "recoveryNotes": ".agent/tasks/T-075/recovery-notes.md",
+    "reviews": ".agent/tasks/T-075/reviews/",
+    "logs": ".agent/tasks/T-075/logs/",
+    "requiredForDone": [
+      "content-draft/indonesian/README.md",
+      "content-draft/indonesian/source-notes.md",
+      "content-draft/indonesian/phrase-source.csv",
+      "content-draft/indonesian/first-wave-priority.csv",
+      "content-draft/indonesian/research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T04:49:59.2133569-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 2,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

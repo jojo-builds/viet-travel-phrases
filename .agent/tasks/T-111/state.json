@@ -1,0 +1,58 @@
+{
+  "taskId": "T-111",
+  "title": "Desktop Codex automation pilot, Italy next utility translation pack and holdout cleanup",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-20260421T054113",
+    "label": "Task Queue 40"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T05:41:13-05:00",
+    "lastHeartbeatAt": "2026-04-21T05:55:52-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T07:55:52-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "italian_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-111\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-111\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-111\\reviews\\",
+    "logs": ".agent\\tasks\\T-111\\logs\\",
+    "requiredForDone": [
+      "content-draft\\italian\\README.md",
+      "content-draft\\italian\\source-notes.md",
+      "content-draft\\italian\\phrase-source.csv",
+      "content-draft\\italian\\first-wave-priority.csv",
+      "content-draft\\italian\\research-backlog.md",
+      ".agent\\tasks\\T-111\\logs\\italian-next-pack-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T05:55:52-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

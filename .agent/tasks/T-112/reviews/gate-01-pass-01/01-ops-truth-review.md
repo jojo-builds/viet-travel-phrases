@@ -1,0 +1,8 @@
+Approval: BLOCK
+
+The core evidence boundary and build-state facts are already mostly aligned: the touched surfaces agree that the last durable device proof stops at `2026-04-16`, the last installable preview artifact is build `1.0.0 (3)` / `ae55c880-0d6b-49b5-ba5e-64d82787eb25`, and builds `1.0.0 (4)` / `39b7fbfd-909c-48fe-9317-f8be2c5e6e02` and `1.0.0 (5)` / `5f61efeb-661d-426b-a280-aed866dcb5c2` are still only in-flight references. I’m blocking because the packet owner and mirrored operator-sync wording are not fully in agreement yet.
+
+Concrete issues to fix before edits:
+- `docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md` still says `Last updated: 2026-04-20`, while `docs/operations/APP_STATUS.md`, `docs/operations/TESTING_RUNBOOK.md`, `docs/operations/CURRENT_BLOCKERS.md`, and `ops/apps/viet.json` all frame the current packet as a `2026-04-21` refresh. That leaves the checklist owner one sync cycle behind the surfaces that point to it.
+- The mirrored sync contract still diverges. `docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md` says `ops/apps/viet.json` should update if gate status, hard-block wording, or handoff wording changed; `docs/operations/TESTING_RUNBOOK.md` omits handoff-wording changes; `docs/operations/APP_STATUS.md` and `ops/apps/viet.json` describe the six-item packet in slightly different mirror language. Those need one exact packet story.
+- `docs/operations/CURRENT_BLOCKERS.md` carries the same blocker facts, but its still-missing evidence package and sync wording do not yet cleanly mirror the packet-owner language used in the execution packet and dashboard JSON. Tighten that so the next operator does not have to reconcile near-duplicates by hand.

@@ -1,0 +1,287 @@
+﻿{
+    "schemaVersion":  3,
+    "exportType":  "website-phrase-audio-module",
+    "exportedAt":  "2026-04-18T09:37:44.117Z",
+    "moduleId":  "vietnam-phone-basics",
+    "moduleSlug":  "vietnam-phone-basics",
+    "destinationSlug":  "vietnam",
+    "destinationName":  "Vietnam",
+    "variant":  "viet",
+    "language":  "Vietnamese",
+    "languageCode":  "vi",
+    "country":  "Vietnam",
+    "scenarioId":  "phone-internet-power",
+    "scenarioSlug":  "phone-internet-power",
+    "scenarioName":  "Phone \u0026 Internet",
+    "editorialStatus":  "preview-ready",
+    "appStatus":  "live",
+    "websiteAudioStatus":  "ready",
+    "audioStatus":  "ready",
+    "audioDelivery":  "site-static",
+    "audioCoverage":  {
+                          "status":  "ready",
+                          "readyPhraseCount":  4,
+                          "plannedPhraseCount":  0,
+                          "totalPhraseCount":  4
+                      },
+    "headline":  "The starter phone and SIM phrases that get you back online fast",
+    "summary":  "A tight starter set for Wi-Fi, SIMs, eSIMs, and the first map failure. These are selected starter preview modules from the app starter layer, not a separate website phone system.",
+    "travelerStage":  "Phone, SIM, and maps",
+    "difficulty":  "Easy",
+    "formality":  "Neutral",
+    "audioDurationMs":  null,
+    "transcriptChecked":  null,
+    "phraseCount":  4,
+    "familyCount":  4,
+    "relationCoverage":  {
+                             "status":  "partial",
+                             "advisoryOnly":  true,
+                             "coveredFamilyCount":  1,
+                             "coveredPhraseCount":  1,
+                             "totalFamilyCount":  4,
+                             "coveredFamilyIds":  [
+                                                      "v500-phon-inte-powe-my-map-is-not-working"
+                                                  ],
+                             "coveredClusterIds":  [
+                                                       "viet-phone-map-not-working"
+                                                   ]
+                         },
+    "articleReference":  {
+                             "primaryLabel":  "Install Viet Travel Phrasebook",
+                             "primaryUrl":  "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+                             "secondaryLabel":  "Read the SIM and offline guide",
+                             "secondaryUrl":  "/blog/vietnam-sim-esim-offline-setup/"
+                         },
+    "trust":  {
+                  "sourceLabel":  "Live Viet starter export",
+                  "sourceNote":  "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+                  "appBoundary":  "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+                  "methodologyLabel":  "How SpeakLocal builds packs",
+                  "methodologyUrl":  "/about/",
+                  "correctionsLabel":  "Report a phrase or audio gap",
+                  "correctionsUrl":  "/feedback/"
+              },
+    "cta":  {
+                "primaryLabel":  "Install Viet Travel Phrasebook",
+                "primaryUrl":  "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
+                "secondaryLabel":  "Read the SIM and offline guide",
+                "secondaryUrl":  "/blog/vietnam-sim-esim-offline-setup/"
+            },
+    "phrases":  [
+                    {
+                        "phraseId":  "phone-1",
+                        "phraseSlug":  "phone-1",
+                        "id":  "phone-1",
+                        "moduleId":  "vietnam-phone-basics",
+                        "destinationSlug":  "vietnam",
+                        "variant":  "viet",
+                        "language":  "Vietnamese",
+                        "languageCode":  "vi",
+                        "country":  "Vietnam",
+                        "scenarioId":  "phone-internet-power",
+                        "scenarioSlug":  "phone-internet-power",
+                        "scenarioName":  "Phone \u0026 Internet",
+                        "familyId":  "phone-wifi-password",
+                        "familySlug":  "phone-wifi-password",
+                        "familyTitle":  "Wi-Fi password",
+                        "familySummary":  "Use this when you need to get online quickly.",
+                        "accessTier":  "starter",
+                        "variantRole":  "say-first",
+                        "variantLabel":  "Say this first",
+                        "englishText":  "What is the Wi-Fi password?",
+                        "sourceText":  "What is the Wi-Fi password?",
+                        "targetText":  "Máº­t kháº©u Wi-Fi lÃ  gÃ¬?",
+                        "canonicalTargetText":  "Máº­t kháº©u Wi-Fi lÃ  gÃ¬?",
+                        "pronunciation":  "mat khau wai-fai la zee",
+                        "context":  "Use this when Wi-Fi exists but you need the password.",
+                        "audioStatus":  "ready",
+                        "audioDelivery":  "site-static",
+                        "audioUrl":  "/data/phrase-audio/vietnam/phone-1.mp3",
+                        "audioReference":  {
+                                               "provider":  "speaklocal-site",
+                                               "delivery":  "site-static",
+                                               "audioKey":  "phone-1",
+                                               "filename":  "phone-1.mp3",
+                                               "relativePath":  "vietnam/phone-1.mp3",
+                                               "url":  "/data/phrase-audio/vietnam/phone-1.mp3"
+                                           },
+                        "audioDurationMs":  null,
+                        "transcriptChecked":  null,
+                        "websiteReferences":  {
+                                                  "moduleId":  "vietnam-phone-basics",
+                                                  "articleUrl":  "/blog/vietnam-sim-esim-offline-setup/"
+                                              }
+                    },
+                    {
+                        "phraseId":  "phone-2",
+                        "phraseSlug":  "phone-2",
+                        "id":  "phone-2",
+                        "moduleId":  "vietnam-phone-basics",
+                        "destinationSlug":  "vietnam",
+                        "variant":  "viet",
+                        "language":  "Vietnamese",
+                        "languageCode":  "vi",
+                        "country":  "Vietnam",
+                        "scenarioId":  "phone-internet-power",
+                        "scenarioSlug":  "phone-internet-power",
+                        "scenarioName":  "Phone \u0026 Internet",
+                        "familyId":  "phone-sim",
+                        "familySlug":  "phone-sim",
+                        "familyTitle":  "SIM cards",
+                        "familySummary":  "Keep this separate from airport phrasing because the need keeps recurring later in town.",
+                        "accessTier":  "starter",
+                        "variantRole":  "say-first",
+                        "variantLabel":  "Say this first",
+                        "englishText":  "Do you sell SIM cards?",
+                        "sourceText":  "Do you sell SIM cards?",
+                        "targetText":  "CÃ³ bÃ¡n SIM khÃ´ng?",
+                        "canonicalTargetText":  "CÃ³ bÃ¡n SIM khÃ´ng?",
+                        "pronunciation":  "koh ban sim khong",
+                        "context":  "Use this in convenience stores or phone shops when you still need a SIM.",
+                        "youMayHear":  "Prepaid or eSIM?",
+                        "audioStatus":  "ready",
+                        "audioDelivery":  "site-static",
+                        "audioUrl":  "/data/phrase-audio/vietnam/phone-2.mp3",
+                        "audioReference":  {
+                                               "provider":  "speaklocal-site",
+                                               "delivery":  "site-static",
+                                               "audioKey":  "phone-2",
+                                               "filename":  "phone-2.mp3",
+                                               "relativePath":  "vietnam/phone-2.mp3",
+                                               "url":  "/data/phrase-audio/vietnam/phone-2.mp3"
+                                           },
+                        "audioDurationMs":  null,
+                        "transcriptChecked":  null,
+                        "websiteReferences":  {
+                                                  "moduleId":  "vietnam-phone-basics",
+                                                  "articleUrl":  "/blog/vietnam-sim-esim-offline-setup/"
+                                              }
+                    },
+                    {
+                        "phraseId":  "v500-phon-inte-powe-i-need-an-esim",
+                        "phraseSlug":  "v500-phon-inte-powe-i-need-an-esim",
+                        "id":  "v500-phon-inte-powe-i-need-an-esim",
+                        "moduleId":  "vietnam-phone-basics",
+                        "destinationSlug":  "vietnam",
+                        "variant":  "viet",
+                        "language":  "Vietnamese",
+                        "languageCode":  "vi",
+                        "country":  "Vietnam",
+                        "scenarioId":  "phone-internet-power",
+                        "scenarioSlug":  "phone-internet-power",
+                        "scenarioName":  "Phone \u0026 Internet",
+                        "familyId":  "v500-phon-inte-powe-i-need-an-esim",
+                        "familySlug":  "v500-phon-inte-powe-i-need-an-esim",
+                        "familyTitle":  "I need an eSIM",
+                        "familySummary":  "Use this when you need to explain that i need an esim.",
+                        "accessTier":  "starter",
+                        "variantRole":  "say-first",
+                        "variantLabel":  "Say this first",
+                        "englishText":  "I need an eSIM",
+                        "sourceText":  "I need an eSIM",
+                        "targetText":  "TÃ´i cáº§n má»™t eSIM",
+                        "canonicalTargetText":  "TÃ´i cáº§n má»™t eSIM",
+                        "pronunciation":  "Toi can mot eSIM",
+                        "context":  "Use this when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need.",
+                        "audioStatus":  "ready",
+                        "audioDelivery":  "site-static",
+                        "audioUrl":  "/data/phrase-audio/vietnam/v500-phon-inte-powe-i-need-an-esim.mp3",
+                        "audioReference":  {
+                                               "provider":  "speaklocal-site",
+                                               "delivery":  "site-static",
+                                               "audioKey":  "v500-phon-inte-powe-i-need-an-esim",
+                                               "filename":  "v500-phon-inte-powe-i-need-an-esim.mp3",
+                                               "relativePath":  "vietnam/v500-phon-inte-powe-i-need-an-esim.mp3",
+                                               "url":  "/data/phrase-audio/vietnam/v500-phon-inte-powe-i-need-an-esim.mp3"
+                                           },
+                        "audioDurationMs":  null,
+                        "transcriptChecked":  null,
+                        "websiteReferences":  {
+                                                  "moduleId":  "vietnam-phone-basics",
+                                                  "articleUrl":  "/blog/vietnam-sim-esim-offline-setup/"
+                                              }
+                    },
+                    {
+                        "phraseId":  "v500-phon-inte-powe-my-map-is-not-working",
+                        "phraseSlug":  "v500-phon-inte-powe-my-map-is-not-working",
+                        "id":  "v500-phon-inte-powe-my-map-is-not-working",
+                        "moduleId":  "vietnam-phone-basics",
+                        "destinationSlug":  "vietnam",
+                        "variant":  "viet",
+                        "language":  "Vietnamese",
+                        "languageCode":  "vi",
+                        "country":  "Vietnam",
+                        "scenarioId":  "phone-internet-power",
+                        "scenarioSlug":  "phone-internet-power",
+                        "scenarioName":  "Phone \u0026 Internet",
+                        "familyId":  "v500-phon-inte-powe-my-map-is-not-working",
+                        "familySlug":  "v500-phon-inte-powe-my-map-is-not-working",
+                        "familyTitle":  "My map is not working",
+                        "familySummary":  "Use this when you need to explain that my map is not working.",
+                        "accessTier":  "starter",
+                        "variantRole":  "say-first",
+                        "variantLabel":  "Say this first",
+                        "englishText":  "My map is not working",
+                        "sourceText":  "My map is not working",
+                        "targetText":  "Báº£n Ä‘á»“ cá»§a tÃ´i khÃ´ng hoáº¡t Ä‘á»™ng",
+                        "canonicalTargetText":  "Báº£n Ä‘á»“ cá»§a tÃ´i khÃ´ng hoáº¡t Ä‘á»™ng",
+                        "pronunciation":  "Ban do cua toi khong hoat dong",
+                        "context":  "Use this when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need.",
+                        "relationContext":  {
+                                                "sampleId":  "viet-relation-sample-v1",
+                                                "clusterId":  "viet-phone-map-not-working",
+                                                "coverageMoment":  "phone",
+                                                "starterSafe":  true,
+                                                "advisoryOnly":  true,
+                                                "shortestFormPhraseId":  "v500-phon-inte-powe-my-map-is-not-working",
+                                                "clearerFormPhraseId":  null,
+                                                "morePoliteFormPhraseId":  null,
+                                                "youMayHearSignals":  [
+                                                                          {
+                                                                              "signalText":  "The signal is weak here.",
+                                                                              "sourcePhraseId":  "v500-phon-inte-powe-my-map-is-not-working",
+                                                                              "advisoryOnly":  true
+                                                                          }
+                                                                      ],
+                                                "possibleTravelerResponses":  [
+                                                                                  {
+                                                                                      "kind":  "manual-routing",
+                                                                                      "familyId":  "transport-destination",
+                                                                                      "note":  "If the phone fails completely, the traveler often falls back to showing the destination or saying it directly.",
+                                                                                      "phraseId":  "taxi-1"
+                                                                                  }
+                                                                              ],
+                                                "familyRelations":  [
+                                                                        {
+                                                                            "relationType":  "repair_for",
+                                                                            "targetFamilyId":  "repair-write-down",
+                                                                            "reason":  "Writing or showing the address is often the fastest recovery when the map dies mid-trip."
+                                                                        },
+                                                                        {
+                                                                            "relationType":  "see_also",
+                                                                            "targetFamilyId":  "transport-destination",
+                                                                            "reason":  "Map failure and destination handoff often collapse into the same traveler problem."
+                                                                        }
+                                                                    ]
+                                            },
+                        "audioStatus":  "ready",
+                        "audioDelivery":  "site-static",
+                        "audioUrl":  "/data/phrase-audio/vietnam/v500-phon-inte-powe-my-map-is-not-working.mp3",
+                        "audioReference":  {
+                                               "provider":  "speaklocal-site",
+                                               "delivery":  "site-static",
+                                               "audioKey":  "v500-phon-inte-powe-my-map-is-not-working",
+                                               "filename":  "v500-phon-inte-powe-my-map-is-not-working.mp3",
+                                               "relativePath":  "vietnam/v500-phon-inte-powe-my-map-is-not-working.mp3",
+                                               "url":  "/data/phrase-audio/vietnam/v500-phon-inte-powe-my-map-is-not-working.mp3"
+                                           },
+                        "audioDurationMs":  null,
+                        "transcriptChecked":  null,
+                        "websiteReferences":  {
+                                                  "moduleId":  "vietnam-phone-basics",
+                                                  "articleUrl":  "/blog/vietnam-sim-esim-offline-setup/"
+                                              }
+                    }
+                ]
+}
+

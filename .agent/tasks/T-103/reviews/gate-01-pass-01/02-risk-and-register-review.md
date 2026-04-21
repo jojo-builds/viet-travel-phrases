@@ -1,0 +1,3 @@
+The proposed split preserves the caution contract: `tagalog-polite-basics-4` stays deferred, the safety-sensitive and escalation rows stay out of the core, and `tagalog-simple-problems-7` plus `tagalog-grab-taxi-7` remain later-only holds. The next-pass pickup set matches the ordered reopen logic for directions, hotel, and payment wording, so the hotel-borrowing and card-normalization risks stay visible instead of being blurred into the active core. No material risk-contract gap remains as long as `tagalog-convenience-store-6` is still described as payment-wording follow-up rather than generic retail expansion.
+
+Approval: APPROVE

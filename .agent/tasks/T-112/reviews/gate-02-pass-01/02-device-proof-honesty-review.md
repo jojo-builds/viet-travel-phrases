@@ -1,0 +1,3 @@
+Approval: APPROVE
+
+The evidence boundary now holds across the reviewed surfaces. `docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md` explicitly says build `1.0.0 (3)` is only an older installable artifact that predates the `2026-04-16` snapshot and cannot count as proof for the newer snapshot, and it gates the preview and TestFlight/device lanes on actual installable or processed status before those steps run. `docs/operations/APP_STATUS.md`, `docs/operations/CURRENT_BLOCKERS.md`, `docs/operations/TESTING_RUNBOOK.md`, and `ops/apps/viet.json` stay aligned with that posture and do not imply fresh install, TestFlight, purchase, or physical-device proof beyond current repo truth.

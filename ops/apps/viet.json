@@ -1,0 +1,55 @@
+{
+  "appId": "viet-travel-phrases",
+  "variant": "viet",
+  "displayName": "SpeakLocal Vietnam",
+  "country": "Vietnam",
+  "language": "Vietnamese",
+  "stage": "live",
+  "testingGates": {
+    "localValidation": {
+      "status": "passed",
+      "evidenceRef": "docs/operations/LATEST_VALIDATION.md#commands-that-passed"
+    },
+    "previewBuild": {
+      "status": "pending",
+      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md#current-blockers-to-shipping-viet-v2"
+    },
+    "previewInstall": {
+      "status": "pending",
+      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md#current-blockers-to-shipping-viet-v2"
+    },
+    "runtimeManualSmoke": {
+      "status": "pending",
+      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md#current-blockers-to-freezing-the-shared-viet--tagalog-search-baseline"
+    },
+    "deviceWalkthrough": {
+      "status": "pending",
+      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md#current-blockers-to-shipping-viet-v2"
+    }
+  },
+  "hardBlock": {
+    "active": true,
+    "type": "app-store-connect",
+    "owner": "user",
+    "system": "App Store Connect + iOS device testing",
+    "detail": "As of 2026-04-21, repo truth still proves a live 900-family Viet pack, a fully mapped 919-row audio seam, a situation-first pre-build app pass, and repo-side one-time purchase / restore plumbing, but it does not prove fresher device evidence than the 2026-04-16 validation snapshot. The latest known older installable preview artifact remains `ae55c880-0d6b-49b5-ba5e-64d82787eb25` at `1.0.0 (3)`, and it predates the current 2026-04-16 repo snapshot. Preview build `39b7fbfd-909c-48fe-9317-f8be2c5e6e02` at `1.0.0 (4)` and store/TestFlight build `5f61efeb-661d-426b-a280-aed866dcb5c2` at `1.0.0 (5)` remain the current in-flight references from `E:\\AI\\SpeakLocal-EAS-Build-20260416-viet-preview-r1`; repo truth still does not prove preview installability, TestFlight processing, or Apple-side purchase-lane readiness for that snapshot. The later `2026-04-18` Viet purchase-surface audit and `2026-04-20` Tagalog search-copy rerun improved repo-side honesty only and did not change those blockers. EAS confirmed App Store Connect app ID `6761904350` plus an API key on file, so the remaining blocker is still the exact Step 6 six-item return packet in `docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md`: `Preview-install state`, `Store/TestFlight state`, `Apple-side purchase readiness`, `Physical device proof`, `Shared-search carry-forward`, and `Repo sync decision`.",
+    "nextHumanAction": "Use docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md as the sole ordered checklist. Return Step 6 with the same six headings and stable field labels, then fold the evidence back in this order: execution packet first, APP_STATUS.md second, TESTING_RUNBOOK.md third if its lane truth changed, this file fourth, CURRENT_BLOCKERS.md only if blocker truth changed, and LATEST_VALIDATION.md only if the durable validation snapshot changed."
+  },
+  "contentReadiness": "v2-900-live-pack-authored",
+  "audioReadiness": "919-ready-0-planned",
+  "baselineParity": "family-baseline-proven",
+  "featureEligibility": {
+    "search": false,
+    "flashcards": false
+  },
+  "pendingFeatureRollouts": [
+    "search"
+  ],
+  "featureIntakeStatus": "active",
+  "releaseStatus": "live",
+  "blockerTag": "blocked:human",
+  "blockerDetail": "As of 2026-04-21, Viet still has a live 900-family source pack, a fully mapped 919-row audio seam, a refreshed situation-first app shell, and repo-side one-time purchase / restore plumbing, but the current v2 premium flow is still blocked on fresher install, TestFlight, and device evidence. The last known older installable preview artifact remains `ae55c880-0d6b-49b5-ba5e-64d82787eb25` at `1.0.0 (3)`, which predates the current 2026-04-16 repo snapshot. Preview build `39b7fbfd-909c-48fe-9317-f8be2c5e6e02` and store build `5f61efeb-661d-426b-a280-aed866dcb5c2` remain the tracked in-flight build references from the current repo truth; the later `2026-04-18` Viet purchase-surface audit and `2026-04-20` Tagalog search-copy rerun improved repo-side honesty only. The remaining proof is still the Step 6 six-item return packet in `docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md`, using the same six headings and stable field labels.",
+  "nextStep": "Use docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md as the sole ordered checklist for the next operator pass. Return Step 6 with the same six headings, then fold the evidence back in this order: execution packet, APP_STATUS.md, TESTING_RUNBOOK.md if needed, this file, CURRENT_BLOCKERS.md only if blocker truth changed, and LATEST_VALIDATION.md only if the durable validation snapshot changed.",
+  "sessionRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "lastValidatedAt": "2026-04-21"
+}

@@ -1,0 +1,35 @@
+{
+  "taskId": "T-001",
+  "title": "Repo-local workflow pilot dry run",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "openclaw-main",
+    "sessionId": "current-session",
+    "label": "T-001 workflow dry run"
+  },
+  "locks": {
+    "write": [
+      ".agent/coordination/locks.yaml",
+      ".agent/tasks/T-001/**"
+    ],
+    "read": [
+      "AGENTS.md",
+      ".agent/README.md",
+      ".agent/tasks/TEMPLATE/**"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-001/result.md",
+    "reviews": ".agent/tasks/T-001/reviews/",
+    "logs": ".agent/tasks/T-001/logs/"
+  },
+  "lastUpdated": "2026-04-18T03:50:00-05:00"
+}

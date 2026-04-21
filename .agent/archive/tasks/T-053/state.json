@@ -1,0 +1,54 @@
+{
+  "taskId": "T-053",
+  "title": "Desktop queue production proof run 04",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "t048-b1-harvey",
+    "label": "T-048 proof burn-in batch 1"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T11:45:07.192041-05:00",
+    "lastHeartbeatAt": "2026-04-19T11:46:08.869908-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T11:46:08.869908-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      ".agent/tasks/T-053/**"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-053/result.md",
+    "recoveryNotes": ".agent/tasks/T-053/recovery-notes.md",
+    "reviews": ".agent/tasks/T-053/reviews/",
+    "logs": ".agent/tasks/T-053/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-053/logs/proof-run.md"
+    ]
+  },
+  "lastUpdated": "2026-04-19T11:46:08.869908-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "proof",
+    "proofTask": true,
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 0,
+    "reviewersRequired": 0,
+    "reviewGatesRequired": 0,
+    "reviewGateConsensusRequired": 0,
+    "reviewGateLoop": "not-required-for-proof-burn-in-task"
+  }
+}

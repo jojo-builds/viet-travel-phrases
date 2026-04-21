@@ -1,0 +1,47 @@
+{
+  "taskId": "T-006",
+  "title": "Desktop Codex automation pilot, Spain research plus first authoring scaffold",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-in-app-family-20260418T131842",
+    "label": "desktop-codex-automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T13:18:42.8767166-05:00",
+    "lastHeartbeatAt": "2026-04-18T13:28:57.0543588-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T13:28:57.0543588-05:00"
+  },
+  "locks": {
+    "write": [
+      "spanish_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-006/result.md",
+    "research": "research/language-pipeline/spanish/SPAIN-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/spanish/",
+    "reviews": ".agent/tasks/T-006/reviews/",
+    "logs": ".agent/tasks/T-006/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4
+  },
+  "lastUpdated": "2026-04-18T13:28:57.0543588-05:00"
+}

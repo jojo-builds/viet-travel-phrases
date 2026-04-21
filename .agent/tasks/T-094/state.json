@@ -1,0 +1,57 @@
+{
+  "taskId": "T-094",
+  "title": "Desktop Codex automation pilot, Japan next utility translation pack and unresolved-row reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-20260420T194243784Z",
+    "label": "Task Queue 40 automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T19:42:43.7859111Z",
+    "lastHeartbeatAt": "2026-04-20T19:57:36.0970305Z",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T21:57:36.0970305Z",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "japanese_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-094\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-094\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-094\\reviews\\",
+    "logs": ".agent\\tasks\\T-094\\logs\\",
+    "requiredForDone": [
+      "content-draft\\japanese\\README.md",
+      "content-draft\\japanese\\source-notes.md",
+      "content-draft\\japanese\\phrase-source.csv",
+      "content-draft\\japanese\\first-wave-priority.csv",
+      "content-draft\\japanese\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T14:57:36.1035910-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

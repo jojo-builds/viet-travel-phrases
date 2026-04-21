@@ -1,0 +1,55 @@
+{
+  "appId": "tagalog-travel-phrases",
+  "variant": "tagalog",
+  "displayName": "SpeakLocal Philippines",
+  "country": "Philippines",
+  "language": "Tagalog",
+  "stage": "testing",
+  "testingGates": {
+    "localValidation": {
+      "status": "passed",
+      "evidenceRef": "docs/operations/LATEST_VALIDATION.md#commands-that-passed"
+    },
+    "previewBuild": {
+      "status": "pending",
+      "evidenceRef": "docs/operations/APP_STATUS.md#current-operational-truth"
+    },
+    "previewInstall": {
+      "status": "pending",
+      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md#current-blockers-to-freezing-the-shared-viet--tagalog-search-baseline"
+    },
+    "runtimeManualSmoke": {
+      "status": "pending",
+      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md#current-blockers-to-freezing-the-shared-viet--tagalog-search-baseline"
+    },
+    "deviceWalkthrough": {
+      "status": "pending",
+      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md#current-blockers-to-freezing-the-shared-viet--tagalog-search-baseline"
+    }
+  },
+  "hardBlock": {
+    "active": true,
+    "type": "device-access",
+    "owner": "user",
+    "system": "iOS device testing",
+    "detail": "Tagalog still needs durable physical-device evidence for the remaining shared-search debt, and it still has not started the real v2 content-pack lane after that. The shared premium plumbing is ready, but Tagalog-specific store proof is still later work.",
+    "nextHumanAction": "Use a current Tagalog preview build on device for the shared-search blocker first, then author the first real Tagalog v2 pack before any Tagalog store-proof lane starts."
+  },
+  "contentReadiness": "thin-pack-on-shared-schema",
+  "audioReadiness": "70-ready-0-planned",
+  "baselineParity": "family-parity-validated",
+  "featureEligibility": {
+    "search": false,
+    "flashcards": false
+  },
+  "pendingFeatureRollouts": [
+    "search"
+  ],
+  "featureIntakeStatus": "active",
+  "releaseStatus": "preview-only",
+  "blockerTag": "blocked:human",
+  "blockerDetail": "Tagalog is still in testing on the older thin 10-scenario / 70-phrase pack. The family premium plumbing now exists and will carry forward automatically, but Tagalog still needs shared-search device proof and then its own real v2 content pass before later App Store work.",
+  "nextStep": "Resume Tagalog device testing for the shared-search blocker first, then author the first real Tagalog v2 pack on top of the shared schema, export tooling, and inherited premium plumbing.",
+  "sessionRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "lastValidatedAt": "2026-04-21"
+}

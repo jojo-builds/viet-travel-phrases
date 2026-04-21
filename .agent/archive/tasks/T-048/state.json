@@ -1,0 +1,68 @@
+{
+  "taskId": "T-048",
+  "title": "Desktop queue runner parity, lock recovery, and live no-review-subagents verification",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-direct-task-contract",
+    "sessionId": "t048-direct-c8a40286-be5b-49ae-ad97-f89dbf6d2870",
+    "label": "T-048 direct contract"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T10:57:49-05:00",
+    "lastHeartbeatAt": "2026-04-19T12:04:46.3677639-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T12:57:49-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      ".agent/tasks/T-048/**",
+      ".agent/queue_tool.py",
+      ".agent/CODEX_DESKTOP_AUTOMATION_PROMPT.txt",
+      ".agent/QUEUE_START.md",
+      ".agent/AUTOMATION.md",
+      "C:\\Users\\Administrator\\.codex\\automations\\task-queue-10\\automation.toml",
+      "C:\\Users\\Administrator\\.codex\\automations\\task-queue-10-2\\automation.toml"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-048/result.md",
+    "recoveryNotes": ".agent/tasks/T-048/recovery-notes.md",
+    "reviews": ".agent/tasks/T-048/reviews/",
+    "logs": ".agent/tasks/T-048/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-048/logs/baseline-observations.md",
+      ".agent/tasks/T-048/logs/repair-plan.md",
+      ".agent/tasks/T-048/logs/unsupported-runtime-proof.md",
+      ".agent/tasks/T-048/logs/meaningful-capable-proof.md",
+      ".agent/tasks/T-048/logs/forced-write-failure-proof.md",
+      ".agent/tasks/T-048/logs/stale-lock-recovery.md",
+      ".agent/tasks/T-048/logs/authoritative-automation-smoke.md",
+      ".agent/tasks/T-048/logs/proof-run-ledger.md",
+      ".agent/tasks/T-048/logs/throughput-parallel-proof.md"
+    ]
+  },
+  "lastUpdated": "2026-04-19T12:04:46.3677639-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "direct-task-contract",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "runtimeReviewPathProven": true,
+    "selectionOrder": 0,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

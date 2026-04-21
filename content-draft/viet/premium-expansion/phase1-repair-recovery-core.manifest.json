@@ -1,0 +1,55 @@
+{
+  "laneId": "phase1-repair-recovery-core",
+  "variant": "viet",
+  "title": "Phase 1A Repair & Recovery Core",
+  "phase": "phase-1",
+  "status": "promoted-live",
+  "summary": "First premium implementation-prep lane for Vietnam, centered on the moments where travelers get stuck fastest after the free first sentence stops being enough.",
+  "whyFirst": "This lane turns the premium promise into repair, clarification, confidence, and cost-control under pressure before spending depth on softer or lower-stakes categories.",
+  "priceTarget": "$4.99",
+  "currentLiveBoundary": {
+    "starter": 150,
+    "premium": 350,
+    "total": 500
+  },
+  "preparedDelta": {
+    "starter": 0,
+    "premium": 24,
+    "total": 24,
+    "rawPhraseRows": 24
+  },
+  "preparedBoundaryIfPromoted": {
+    "starter": 117,
+    "premium": 53,
+    "total": 170
+  },
+  "sourceCsv": "phase1-repair-recovery-core.csv",
+  "scenarios": [
+    {
+      "scenarioId": "understanding-repair",
+      "newPremiumFamilies": 6,
+      "whyIncluded": "Repair language multiplies value across every other category and is the clearest premium proof for 'do not get stuck'."
+    },
+    {
+      "scenarioId": "money-numbers-prices",
+      "newPremiumFamilies": 6,
+      "whyIncluded": "Billing confusion is high-stakes because it combines stress, embarrassment, and direct cost exposure."
+    },
+    {
+      "scenarioId": "transport",
+      "newPremiumFamilies": 6,
+      "whyIncluded": "Ride and pickup failures escalate quickly, so premium should cover route correction and wrong-vehicle recovery early."
+    },
+    {
+      "scenarioId": "hotel-accommodation",
+      "newPremiumFamilies": 6,
+      "whyIncluded": "Hotel recovery is one of the most believable paid-value buckets because it turns room and booking problems into fixable next steps."
+    }
+  ],
+  "nextRecommendedLaneId": "phase1-food-connectivity-help",
+  "notes": [
+    "This lane started as a prepared-not-live premium scaffold and was promoted into the live 500-family Viet pack during the autonomous completion pass.",
+    "The preparedDelta math remains useful as the historical size of this lane.",
+    "The preparedBoundaryIfPromoted field below is historical pre-promotion staging math, not the current live boundary."
+  ]
+}

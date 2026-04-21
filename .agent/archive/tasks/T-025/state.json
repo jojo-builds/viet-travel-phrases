@@ -1,0 +1,50 @@
+{
+  "taskId": "T-025",
+  "title": "Desktop Codex automation pilot, Vietnam website starter runtime fetch and audio reachability audit",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-3-20260418T163352-0500",
+    "label": "Task Queue 3 automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T16:33:52.9909626-05:00",
+    "lastHeartbeatAt": "2026-04-18T17:03:25.6980628-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T17:03:25.6980628-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "website_content_conversion"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [
+    "Mandatory 3-gate review workflow remains incomplete: no latest-pass artifact sets with exactly 4 reviewer outputs and unanimous approval exist under .agent/tasks/T-025/reviews/.",
+    "A Gate 1 reviewer run was attempted, but the subagent review loop did not complete cleanly in this automation run."
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-025/result.md",
+    "reviews": ".agent/tasks/T-025/reviews/",
+    "logs": ".agent/tasks/T-025/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T17:03:25.6980628-05:00"
+}

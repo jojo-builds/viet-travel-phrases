@@ -1,0 +1,57 @@
+{
+  "taskId": "T-117",
+  "title": "Desktop Codex automation pilot, Viet starter export contract and off-hub module parity hardening pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-20260421T074240902-0500",
+    "label": "Task Queue 40"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T07:42:40.9026965-05:00",
+    "lastHeartbeatAt": "2026-04-21T08:06:08.1045011-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T10:06:08.1045011-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "website_starter_exports"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-117\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-117\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-117\\reviews\\",
+    "logs": ".agent\\tasks\\T-117\\logs\\",
+    "requiredForDone": [
+      "docs\\website\\PHRASE_AUDIO_DELIVERY.md",
+      "site\\data\\phrase-previews\\manifest.json",
+      "site\\public\\data\\phrase-previews\\manifest.json",
+      "scripts\\website\\Test-SpeakLocalWebsiteArtifact.ps1",
+      ".agent\\tasks\\T-117\\logs\\viet-starter-export-contract.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T08:06:08.1045011-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

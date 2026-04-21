@@ -1,0 +1,58 @@
+{
+  "taskId": "T-098",
+  "title": "Desktop Codex automation pilot, France first-wave translation pack and pronunciation helper pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "54dd45ed-2157-4a79-ad1c-4172f024f8c2",
+    "label": "desktop-automation-task-queue-41"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T20:43:02.1212310Z",
+    "lastHeartbeatAt": "2026-04-20T21:06:12.3885365Z",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T21:26:12.4320020Z",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "french_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-098\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-098\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-098\\reviews\\",
+    "logs": ".agent\\tasks\\T-098\\logs\\",
+    "requiredForDone": [
+      "content-draft\\french\\README.md",
+      "content-draft\\french\\source-notes.md",
+      "content-draft\\french\\phrase-source.csv",
+      "content-draft\\french\\first-wave-priority.csv",
+      "content-draft\\french\\research-backlog.md",
+      ".agent\\tasks\\T-098\\logs\\french-first-wave-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T21:06:12.3885365Z",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

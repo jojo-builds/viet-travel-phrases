@@ -1,0 +1,57 @@
+{
+  "taskId": "T-081",
+  "title": "Desktop Codex automation pilot, Spain second translation pack and unresolved-row reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-202dab72-580e-40fb-b5f0-fab5e8ed1602",
+    "label": "task-queue-10-T-081"
+  },
+  "execution": {
+    "attempt": 3,
+    "claimedAt": "2026-04-20T09:12:01.1828896-05:00",
+    "lastHeartbeatAt": "2026-04-20T09:30:36.3942078-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T11:30:36.3942078-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "spanish_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-081\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-081\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-081\\reviews\\",
+    "logs": ".agent\\tasks\\T-081\\logs\\",
+    "requiredForDone": [
+      "content-draft\\spanish\\README.md",
+      "content-draft\\spanish\\source-notes.md",
+      "content-draft\\spanish\\phrase-source.csv",
+      "content-draft\\spanish\\first-wave-priority.csv",
+      "content-draft\\spanish\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T09:30:36.3942078-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

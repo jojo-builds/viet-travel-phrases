@@ -1,0 +1,53 @@
+{
+  "taskId": "T-034",
+  "title": "Desktop Codex automation pilot, Viet TestFlight readiness and purchase-proof execution packet",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "t061-main-01",
+    "label": "T-061 main worker 01"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T16:57:12.675795-05:00",
+    "lastHeartbeatAt": "2026-04-19T17:18:05.451415-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T17:18:05.451415-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "apple_release_testflight"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [
+    {
+      "summary": "Gate 2 failed to reach unanimous approval within the 2-pass cap; Step 5 in docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md still hard-codes historical TestFlight build 1.0.0 (5) instead of the build selected after any retry branch."
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-034/result.md",
+    "reviews": ".agent/tasks/T-034/reviews/",
+    "logs": ".agent/tasks/T-034/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-19T17:18:05.451415-05:00"
+}

@@ -1,0 +1,49 @@
+{
+  "taskId": "T-024",
+  "title": "Desktop Codex automation pilot, shared search normalization audit and bounded family-shell fix pass",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-10-20260418T162937-0500-T024",
+    "label": "Task Queue 10 automation claim"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T16:29:37.7266192-05:00",
+    "lastHeartbeatAt": "2026-04-18T17:03:26.2240363-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T17:03:26.2240363-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ios_family_shared_ui"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [
+    "Task spec requires 3 review gates with exactly 4 Codex subagents per gate. This run completed the bounded search audit/fix work but could not execute that workflow, so done would be dishonest."
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-024/result.md",
+    "reviews": ".agent/tasks/T-024/reviews/",
+    "logs": ".agent/tasks/T-024/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T17:03:26.2240363-05:00"
+}

@@ -1,0 +1,49 @@
+{
+  "taskId": "T-035",
+  "title": "Desktop Codex automation pilot, shared phrasebook source seam audit for active prep lanes",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "t061-main-02",
+    "label": "T-061 main worker 02"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T17:18:23.557120-05:00",
+    "lastHeartbeatAt": "2026-04-19T17:37:34.039671-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T17:37:34.039671-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "shared_phrasebook_truth"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-035/result.md",
+    "reviews": ".agent/tasks/T-035/reviews/",
+    "logs": ".agent/tasks/T-035/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-19T17:37:34.039671-05:00"
+}

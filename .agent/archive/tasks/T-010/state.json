@@ -1,0 +1,51 @@
+{
+  "taskId": "T-010",
+  "title": "Desktop Codex automation pilot, Thailand first-wave authoring scaffold completion",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-task-queue-in-app-family-20260418T144824-0500",
+    "label": "Task Queue In App Family"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T14:48:24.0136896-05:00",
+    "lastHeartbeatAt": "2026-04-18T15:14:46.1769593-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T15:14:46.1769593-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "thai_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-010/result.md",
+    "research": "research/language-pipeline/thai/THAI-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/thai/",
+    "reviews": ".agent/tasks/T-010/reviews/",
+    "logs": ".agent/tasks/T-010/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T15:14:46.1769593-05:00"
+}

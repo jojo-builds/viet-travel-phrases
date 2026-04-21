@@ -1,0 +1,65 @@
+{
+  "taskId": "T-130",
+  "title": "Desktop Codex automation pilot, Viet arrival relation coverage and starter export parity packet",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "website_starter_exports"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-130\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-130\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-130\\reviews\\",
+    "logs": ".agent\\tasks\\T-130\\logs\\",
+    "requiredForDone": [
+      "docs\\PHRASE_RELATIONSHIP_MODEL.md",
+      "docs\\V2_CONTENT_MODEL.md",
+      "content-draft\\viet\\source-notes.md",
+      "content-draft\\viet\\phrase-source.csv",
+      "content-draft\\viet\\relation-sample-v1.json",
+      "content-draft\\viet\\relation-authoring-notes.md",
+      "site\\data\\phrase-previews\\manifest.json",
+      "site\\public\\data\\phrase-previews\\manifest.json",
+      "site\\data\\phrase-previews\\vietnam-arrival-basics.json",
+      "site\\public\\data\\phrase-previews\\vietnam-arrival-basics.json",
+      "scripts\\website\\Test-SpeakLocalWebsiteArtifact.ps1",
+      ".agent\\tasks\\T-130\\logs\\viet-arrival-relation-parity.md",
+      ".agent\\tasks\\T-130\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T12:14:00-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "taskId": "T-069",
+  "title": "Desktop Codex automation pilot, Tagalog v2 first-wave translation pack and starter-premium boundary pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-20260420T020354-0500-t069",
+    "label": "Task Queue 41"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T02:03:54.3964199-05:00",
+    "lastHeartbeatAt": "2026-04-20T02:14:32.2383471-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T02:14:32.2383471-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "tagalog_v2_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-069/result.md",
+    "recoveryNotes": ".agent/tasks/T-069/recovery-notes.md",
+    "reviews": ".agent/tasks/T-069/reviews/",
+    "logs": ".agent/tasks/T-069/logs/",
+    "requiredForDone": [
+      "content-draft/tagalog/README.md",
+      "content-draft/tagalog/source-notes.md",
+      "content-draft/tagalog/phrase-source.csv",
+      "content-draft/tagalog/first-wave-priority.csv",
+      "content-draft/tagalog/rewrite-notes.md",
+      "content-draft/tagalog/tagalog-v2-first-wave.csv"
+    ]
+  },
+  "lastUpdated": "2026-04-20T02:14:32.2383471-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 2,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

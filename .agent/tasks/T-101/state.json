@@ -1,0 +1,58 @@
+{
+  "taskId": "T-101",
+  "title": "Desktop Codex automation pilot, Japan deferred-row decision and starter-slice curation pack",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-20260421-011202-task-queue-10-T-101",
+    "label": "task-queue-10-T-101"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-21T01:12:02.0727749-05:00",
+    "lastHeartbeatAt": "2026-04-21T01:34:38.0245659-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T03:34:38.0245659-05:00",
+    "reclaimReason": "lease-expired"
+  },
+  "locks": {
+    "write": [
+      "japanese_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-101\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-101\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-101\\reviews\\",
+    "logs": ".agent\\tasks\\T-101\\logs\\",
+    "requiredForDone": [
+      "content-draft\\japanese\\README.md",
+      "content-draft\\japanese\\source-notes.md",
+      "content-draft\\japanese\\phrase-source.csv",
+      "content-draft\\japanese\\first-wave-priority.csv",
+      "content-draft\\japanese\\research-backlog.md",
+      ".agent\\tasks\\T-101\\logs\\starter-slice-curation.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T01:34:38.0245659-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "taskId": "T-003",
+  "title": "Desktop Codex automation pilot, Thailand research and prep-only lane bootstrap",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "2026-04-18T12:14:54-05:00",
+    "label": "desktop-codex-automation"
+  },
+  "locks": {
+    "write": [
+      "future_language_content_drafts"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-003/result.md",
+    "research": "research/language-pipeline/thai/THAI-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/thai/",
+    "reviews": ".agent/tasks/T-003/reviews/",
+    "logs": ".agent/tasks/T-003/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1
+  },
+  "lastUpdated": "2026-04-18T12:22:00-05:00"
+}

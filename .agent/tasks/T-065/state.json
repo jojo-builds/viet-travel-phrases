@@ -1,0 +1,57 @@
+{
+  "taskId": "T-065",
+  "title": "Desktop Codex automation pilot, Portugal research and prep-only lane bootstrap",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-20-53ffff5c-43e8-4303-85a7-f800f3712f73",
+    "label": "Task Queue 20 2026-04-20 11:21:41 -05:00"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T11:21:41-05:00",
+    "lastHeartbeatAt": "2026-04-20T11:46:10-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T13:46:10-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "future_language_content_drafts"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-065/result.md",
+    "recoveryNotes": ".agent/tasks/T-065/recovery-notes.md",
+    "reviews": ".agent/tasks/T-065/reviews/",
+    "logs": ".agent/tasks/T-065/logs/",
+    "requiredForDone": [
+      "research/language-pipeline/portuguese/PORTUGAL-TRAVEL-RESEARCH.md",
+      "content-draft/portuguese/README.md",
+      "content-draft/portuguese/source-notes.md",
+      "content-draft/portuguese/scenario-plan.json",
+      "content-draft/portuguese/research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T11:46:10-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

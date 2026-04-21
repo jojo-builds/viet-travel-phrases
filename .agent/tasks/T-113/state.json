@@ -1,0 +1,57 @@
+﻿{
+  "taskId": "T-113",
+  "title": "Desktop Codex automation pilot, Viet relation-cluster expansion and listing-handoff hardening pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "20a78749-bb10-4355-bf6e-5c51823cef42",
+    "label": "task-queue-10-T-113"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T06:11:41.2637752-05:00",
+    "lastHeartbeatAt": "2026-04-21T06:40:03.3258355-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T08:40:03.3408862-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "viet_relation_model"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-113\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-113\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-113\\reviews\\",
+    "logs": ".agent\\tasks\\T-113\\logs\\",
+    "requiredForDone": [
+      "docs\\PHRASE_RELATIONSHIP_MODEL.md",
+      "docs\\V2_CONTENT_MODEL.md",
+      "content-draft\\viet\\relation-sample-v1.json",
+      "content-draft\\viet\\relation-authoring-notes.md",
+      ".agent\\tasks\\T-113\\logs\\viet-relation-expansion-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T06:40:03.3258355-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

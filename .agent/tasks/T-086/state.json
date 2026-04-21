@@ -1,0 +1,57 @@
+{
+  "taskId": "T-086",
+  "title": "Desktop Codex automation pilot, Indonesia holdout-management pass and residual queue reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "b3e1f749-72f2-41ee-b0aa-1ff3422fa1a6",
+    "label": "task-queue-10-T-086"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T11:11:52.0080612-05:00",
+    "lastHeartbeatAt": "2026-04-20T11:30:30.5122978-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T13:30:30.5153939-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "indonesia_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-086\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-086\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-086\\reviews\\",
+    "logs": ".agent\\tasks\\T-086\\logs\\",
+    "requiredForDone": [
+      "content-draft\\indonesian\\README.md",
+      "content-draft\\indonesian\\source-notes.md",
+      "content-draft\\indonesian\\phrase-source.csv",
+      "content-draft\\indonesian\\first-wave-priority.csv",
+      "content-draft\\indonesian\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T11:30:30.5122978-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

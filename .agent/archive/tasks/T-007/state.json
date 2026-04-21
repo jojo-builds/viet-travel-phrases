@@ -1,0 +1,47 @@
+{
+  "taskId": "T-007",
+  "title": "Desktop Codex automation pilot, Italy research plus first authoring scaffold",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-in-app-family-20260418T132200",
+    "label": "desktop-codex-automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T13:22:00-05:00",
+    "lastHeartbeatAt": "2026-04-18T13:26:39.9082439-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T13:26:39.9082439-05:00"
+  },
+  "locks": {
+    "write": [
+      "italian_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-007/result.md",
+    "research": "research/language-pipeline/italian/ITALY-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/italian/",
+    "reviews": ".agent/tasks/T-007/reviews/",
+    "logs": ".agent/tasks/T-007/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4
+  },
+  "lastUpdated": "2026-04-18T13:26:39.9082439-05:00"
+}

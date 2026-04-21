@@ -1,0 +1,54 @@
+{
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "c6a8f562-96c5-4660-a5a8-73e06ec2a339",
+    "label": "queue-burnin-r3-recovery-20260419-1004"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T10:06:06.525525-05:00",
+    "lastHeartbeatAt": "2026-04-19T10:07:15.398651-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T10:07:15.398651-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      ".agent/tasks/T-047/**"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-047/result.md",
+    "recoveryNotes": ".agent/tasks/T-047/recovery-notes.md",
+    "reviews": ".agent/tasks/T-047/reviews/",
+    "logs": ".agent/tasks/T-047/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-047/logs/prompt-discipline-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-19T10:07:15.398651-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "proof",
+    "proofTask": true,
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 0,
+    "reviewersRequired": 0,
+    "reviewGatesRequired": 0,
+    "reviewGateConsensusRequired": 0,
+    "reviewGateLoop": "not-required-for-proof-canary-task"
+  },
+  "taskId": "T-047",
+  "title": "Burn-in proof, prompt minimalism and runner-discipline audit"
+}

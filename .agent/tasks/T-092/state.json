@@ -1,0 +1,55 @@
+{
+  "taskId": "T-092",
+  "title": "Desktop Codex automation pilot, Viet audio continuity ledger refresh and next-batch allowlist hardening",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-10-20260420T191224538Z",
+    "label": "Task Queue 10 automation"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T19:12:24.5384121Z",
+    "lastHeartbeatAt": "2026-04-20T19:31:52.5362632Z",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T21:31:52.5362632Z",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "shared_audio_pipeline"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-092\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-092\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-092\\reviews\\",
+    "logs": ".agent\\tasks\\T-092\\logs\\",
+    "requiredForDone": [
+      "content-draft\\viet\\audio-review\\CONTINUITY-BENCHMARK.md",
+      "content-draft\\viet\\audio-review\\FOLLOW-UP-BATCH-ALLOWLIST-2026-04-20.md",
+      "content-draft\\viet\\audio-review\\RELEASE-POSTURE-RECOMMENDATION.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T14:31:52.5362632-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

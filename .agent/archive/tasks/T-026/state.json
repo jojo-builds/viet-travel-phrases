@@ -1,0 +1,51 @@
+{
+  "taskId": "T-026",
+  "title": "Desktop Codex automation pilot, Vietnam website starter export regression guardrail audit",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "467b4ec3-d639-4bab-949b-5396b200ea5e",
+    "label": "queue-burnin-r1-pragmatist"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-19T09:47:50.731315-05:00",
+    "lastHeartbeatAt": "2026-04-19T09:49:50.442310-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T09:49:50.442310-05:00",
+    "reclaimReason": "lease-expired"
+  },
+  "locks": {
+    "write": [
+      "website_starter_exports"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [
+    {
+      "summary": "Required 3-gate 4-subagent review workflow was not executable in this subagent runtime, so the task could not be honestly completed as done."
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-026/result.md",
+    "reviews": ".agent/tasks/T-026/reviews/",
+    "logs": ".agent/tasks/T-026/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-19T09:49:50.442310-05:00"
+}

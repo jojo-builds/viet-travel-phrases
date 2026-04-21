@@ -1,0 +1,57 @@
+{
+  "taskId": "T-079",
+  "title": "Desktop Codex automation pilot, South Korea second translation pack and unresolved-row reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "075ff011-df15-40a5-9449-2c736f0a8df6",
+    "label": "Task Queue 10"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T06:12:35.7856734-05:00",
+    "lastHeartbeatAt": "2026-04-20T06:25:52.2011995-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T08:25:52.2011995-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "korean_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-079\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-079\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-079\\reviews\\",
+    "logs": ".agent\\tasks\\T-079\\logs\\",
+    "requiredForDone": [
+      "content-draft\\korean\\README.md",
+      "content-draft\\korean\\source-notes.md",
+      "content-draft\\korean\\phrase-source.csv",
+      "content-draft\\korean\\first-wave-priority.csv",
+      "content-draft\\korean\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T06:25:52.2011995-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

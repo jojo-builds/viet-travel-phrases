@@ -1,0 +1,53 @@
+{
+  "taskId": "T-068",
+  "title": "Desktop Codex automation pilot, Viet TestFlight execution packet selected-build branch fix and final gate rerun",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "f1f7c130-dcea-4395-809b-354ecf641553",
+    "label": "Task Queue 10"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T01:57:35.1307415-05:00",
+    "lastHeartbeatAt": "2026-04-20T02:10:57.4912504-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T04:10:57.4912504-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "apple_release_testflight"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-068/result.md",
+    "recoveryNotes": ".agent/tasks/T-068/recovery-notes.md",
+    "reviews": ".agent/tasks/T-068/reviews/",
+    "logs": ".agent/tasks/T-068/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-068/logs/packet-branch-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T02:10:57.4912504-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 2,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

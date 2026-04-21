@@ -1,0 +1,58 @@
+{
+  "taskId": "T-105",
+  "title": "Desktop Codex automation pilot, France second translation wave and residual-risk isolation pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-task-queue-41-T-105-20260421T044250-0500",
+    "label": "task-queue-41-t105"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T04:42:50-05:00",
+    "lastHeartbeatAt": "2026-04-21T04:56:30-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T06:56:30-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "french_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-105\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-105\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-105\\reviews\\",
+    "logs": ".agent\\tasks\\T-105\\logs\\",
+    "requiredForDone": [
+      "content-draft\\french\\README.md",
+      "content-draft\\french\\source-notes.md",
+      "content-draft\\french\\phrase-source.csv",
+      "content-draft\\french\\first-wave-priority.csv",
+      "content-draft\\french\\research-backlog.md",
+      ".agent\\tasks\\T-105\\logs\\french-second-wave-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T04:56:30-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

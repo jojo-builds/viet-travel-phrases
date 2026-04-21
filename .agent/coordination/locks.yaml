@@ -1,0 +1,1596 @@
+﻿version: 1
+updated_at: 2026-04-18
+notes:
+  - Phase-1 pilot lock file for OpenClaw â†” Codex workflow inside SpeakLocal.
+  - Keep this file small and ownership-focused.
+  - Use it to prevent overlapping write scopes, not to store full task history.
+lock_classes:
+  - id: shared_phrasebook_truth
+    description: Shared phrasebook truth, source rows, mapping logic, premium boundaries, and phrase-family integrity.
+  - id: shared_audio_pipeline
+    description: Shared audio generation, mapping, naming, seam validation, and app-audio asset integrity.
+  - id: ios_viet_app_shell
+    description: Viet-specific iOS app presentation, monetization framing, search surfaces, and scenario detail behavior.
+  - id: ios_family_shared_ui
+    description: Shared family app shell, shared components, app registry, and family presentation/runtime behavior.
+  - id: website_starter_exports
+    description: Export-driven starter-module outputs, preview JSON, and website export seams.
+  - id: website_content_conversion
+    description: Website copy, conversion framing, trust panels, and destination content alignment.
+  - id: ops_docs_truth
+    description: Operational docs, readiness docs, validation records, blockers, and operator-facing truth.
+  - id: apple_release_testflight
+    description: Build, submit, TestFlight, App Store Connect, sandbox, and purchase-test coordination.
+  - id: future_language_content_drafts
+    description: Prep-only future language research and content-draft lanes that should not silently spill into runtime wiring.
+  - id: thai_prep_lane
+    description: Prep-only research and authoring-scaffold work for the Thailand / Thai lane.
+  - id: japanese_prep_lane
+    description: Prep-only research and authoring-scaffold work for the Japan / Japanese lane.
+  - id: turkish_prep_lane
+    description: Prep-only research and authoring-scaffold work for the Turkey / Turkish lane.
+  - id: spanish_prep_lane
+    description: Prep-only research and authoring-scaffold work for the Spain / Spanish lane.
+  - id: italian_prep_lane
+    description: Prep-only research and authoring-scaffold work for the Italy / Italian lane.
+  - id: tagalog_v2_prep_lane
+    description: Tagalog v2 prep and authoring-scaffold work that strengthens the lane without wiring new runtime behavior.
+  - id: german_prep_lane
+    description: Prep-only research and authoring-scaffold work for the Germany / German lane.
+  - id: french_prep_lane
+    description: Prep-only research and authoring-scaffold work for the France / French lane.
+  - id: korean_prep_lane
+    description: Prep-only research and authoring-scaffold work for the South Korea / Korean lane.
+  - id: indonesia_prep_lane
+    description: Prep-only research and authoring-scaffold work for the Indonesia / Indonesian lane.
+active_tasks:
+  T-001:
+    title: Repo-local workflow pilot dry run
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/coordination/locks.yaml
+      - .agent/tasks/T-001/**
+    may_read:
+      - AGENTS.md
+      - .agent/README.md
+      - .agent/tasks/TEMPLATE/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - content-draft/**
+      - docs/operations/**
+      - ops/apps/**
+    token_budget:
+      spec_max_words: 700
+      result_max_words: 350
+      log_excerpt_max_lines: 40
+      openclaw_reads_full_logs: false
+  T-002:
+    title: Website preview-manifest sanity check and cleanup pilot
+    status: draft
+    phase: planning
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/coordination/locks.yaml
+      - .agent/tasks/T-002/**
+      - site/data/phrase-previews/**
+      - site/public/data/phrase-previews/**
+    may_read:
+      - site/**
+      - content-draft/viet/website-preview.json
+    must_not_touch:
+      - app/**
+      - docs/operations/**
+      - ops/apps/**
+      - Apple/TestFlight/build files
+      - unrelated website conversion copy outside the preview seam
+    token_budget:
+      spec_max_words: 900
+      result_max_words: 400
+      log_excerpt_max_lines: 40
+      openclaw_reads_full_logs: false
+  T-003:
+    title: Desktop Codex automation pilot, Thailand research and prep-only lane bootstrap
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-003/**
+      - research/language-pipeline/thai/**
+      - content-draft/thai/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - existing content under content-draft/viet/** or content-draft/tagalog/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+    token_budget:
+      spec_max_words: 1200
+      result_max_words: 450
+      log_excerpt_max_lines: 40
+      openclaw_reads_full_logs: false
+  T-004:
+    title: Desktop Codex automation pilot, Japan research plus first authoring scaffold
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-004/**
+      - research/language-pipeline/japanese/**
+      - content-draft/japanese/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/thai/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1600
+      result_max_words: 550
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-005:
+    title: Desktop Codex automation pilot, Turkey research plus first authoring scaffold
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-005/**
+      - research/language-pipeline/turkish/**
+      - content-draft/turkish/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/thai/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/japanese/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1600
+      result_max_words: 550
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-006:
+    title: Desktop Codex automation pilot, Spain research plus first authoring scaffold
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-006/**
+      - research/language-pipeline/spanish/**
+      - content-draft/spanish/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/thai/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1600
+      result_max_words: 550
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-007:
+    title: Desktop Codex automation pilot, Italy research plus first authoring scaffold
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-007/**
+      - research/language-pipeline/italian/**
+      - content-draft/italian/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/thai/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1600
+      result_max_words: 550
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-008:
+    title: Desktop Codex automation pilot, Tagalog v2 first-wave authoring scaffold and risk review
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-008/**
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - audio asset generation or mapping files outside draft notes
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1700
+      result_max_words: 600
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-009:
+    title: Desktop Codex automation pilot, Tagalog v2 first-wave rewrite and authoring pass
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-009/**
+      - .agent/coordination/queue-index.json
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - audio asset generation or mapping files outside draft notes
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-010:
+    title: Desktop Codex automation pilot, Thailand first-wave authoring scaffold completion
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-010/**
+      - .agent/coordination/queue-index.json
+      - research/language-pipeline/thai/**
+      - content-draft/thai/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-011:
+    title: Desktop Codex automation pilot, Japan first-wave translation pass
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-011/**
+      - .agent/coordination/queue-index.json
+      - content-draft/japanese/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - content-draft/thai/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-012:
+    title: Desktop Codex automation pilot, Turkey first-wave translation pass
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-012/**
+      - .agent/coordination/queue-index.json
+      - content-draft/turkish/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-013:
+    title: Desktop Codex automation pilot, Spain first-wave translation pass
+    status: in_progress
+    phase: automation-claimed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-013/**
+      - .agent/coordination/queue-index.json
+      - content-draft/spanish/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+  T-014:
+    title: Desktop Codex automation pilot, Italy first-wave translation pass
+    status: in_progress
+    phase: implementation
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-014/**
+      - .agent/coordination/queue-index.json
+      - content-draft/italian/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-015:
+    title: Desktop Codex automation pilot, website starter export seam integrity audit and repair
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-015/**
+      - .agent/coordination/queue-index.json
+      - site/data/phrase-previews/**
+      - site/public/data/phrase-previews/**
+    may_read:
+      - docs/**
+      - content-draft/viet/**
+      - site/**
+      - app/family/packs/**
+    must_not_touch:
+      - app/**
+      - ops/**
+      - docs/operations/**
+      - broad website strategy docs
+      - unrelated website conversion copy
+      - release/build/TestFlight files
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-016:
+    title: Desktop Codex automation pilot, Viet audio continuity benchmark evidence pack and orphan cleanup recommendation
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-016/**
+      - .agent/coordination/queue-index.json
+      - content-draft/viet/audio-review/**
+    may_read:
+      - docs/**
+      - content-draft/viet/**
+      - app/assets/audio/**
+      - app/family/packs/**
+    must_not_touch:
+      - app/assets/audio/** as a destructive write surface
+      - app/family/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - release/build/TestFlight files
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-017:
+    title: Desktop Codex automation pilot, Indonesia research and prep-only lane bootstrap
+    status: blocked
+    phase: blocked
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-017/**
+      - .agent/coordination/queue-index.json
+      - research/language-pipeline/indonesian/**
+      - content-draft/indonesian/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - existing content-draft/viet/**
+      - existing content-draft/tagalog/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+    token_budget:
+      spec_max_words: 1700
+      result_max_words: 600
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-018:
+    title: Desktop Codex automation pilot, South Korea research and prep-only lane bootstrap
+    status: blocked
+    phase: blocked
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-018/**
+      - .agent/coordination/queue-index.json
+      - research/language-pipeline/korean/**
+      - content-draft/korean/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - existing content-draft/viet/**
+      - existing content-draft/tagalog/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+    token_budget:
+      spec_max_words: 1700
+      result_max_words: 600
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-019:
+    title: Desktop Codex automation pilot, France research and prep-only lane bootstrap
+    status: done
+    phase: completed
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-019/**
+      - .agent/coordination/queue-index.json
+      - research/language-pipeline/french/**
+      - content-draft/french/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - existing content-draft/viet/**
+      - existing content-draft/tagalog/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+    token_budget:
+      spec_max_words: 1700
+      result_max_words: 600
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-020:
+    title: Desktop Codex automation pilot, Germany research and prep-only lane bootstrap
+    status: blocked
+    phase: blocked
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-020/**
+      - .agent/coordination/queue-index.json
+      - research/language-pipeline/german/**
+      - content-draft/german/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/tagalog/**
+      - content-draft/viet/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - existing content-draft/viet/**
+      - existing content-draft/tagalog/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+    token_budget:
+      spec_max_words: 1700
+      result_max_words: 600
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-021:
+    title: Desktop Codex automation pilot, Tagalog v2 shortlist rewrite and authoring-ready source pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-021/**
+      - .agent/coordination/queue-index.json
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - audio asset generation or mapping files outside draft notes
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1900
+      result_max_words: 700
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-022:
+    title: Desktop Codex automation pilot, Viet device-proof ops truth sync and evidence pack refresh
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-022/**
+      - .agent/coordination/queue-index.json
+      - docs/operations/**
+      - ops/apps/viet.json
+    may_read:
+      - docs/**
+      - ops/**
+      - app/family/**
+      - content-draft/viet/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - content-draft/** as a write surface
+      - release/build/TestFlight files
+      - unrelated lane task folders outside .agent/tasks/T-022/**
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-023:
+    title: Desktop Codex automation pilot, Viet purchase-surface honesty and small-screen shell audit
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-023/**
+      - .agent/coordination/queue-index.json
+      - app/family/**
+      - docs/operations/**
+    may_read:
+      - docs/**
+      - ops/**
+      - content-draft/viet/**
+    must_not_touch:
+      - site/**
+      - release/build/TestFlight files as generated artifacts
+      - unrelated task folders outside .agent/tasks/T-023/**
+      - broad shared-search work that belongs in ios_family_shared_ui
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-024:
+    title: Desktop Codex automation pilot, shared search normalization audit and bounded family-shell fix pass
+    status: blocked
+    phase: blocked
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-024/**
+      - .agent/coordination/queue-index.json
+      - app/family/**
+      - docs/operations/**
+    may_read:
+      - docs/**
+      - ops/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+    must_not_touch:
+      - site/**
+      - release/build/TestFlight files
+      - unrelated research lanes outside search/shared-shell scope
+    token_budget:
+      spec_max_words: 1900
+      result_max_words: 700
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-025:
+    title: Desktop Codex automation pilot, Vietnam website starter runtime fetch and audio reachability audit
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-025/**
+      - .agent/coordination/queue-index.json
+      - site/**
+      - docs/**
+    may_read:
+      - content-draft/viet/**
+      - app/family/packs/**
+      - app/assets/audio/**
+    must_not_touch:
+      - app/** as a broad write surface outside website-safe seams
+      - ops/**
+      - docs/operations/**
+      - release/build/TestFlight files
+      - unrelated content-draft lanes
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-026:
+    title: Desktop Codex automation pilot, Vietnam website starter export regression guardrail audit
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-026/**
+      - .agent/coordination/queue-index.json
+      - site/data/phrase-previews/**
+      - site/public/data/phrase-previews/**
+      - docs/**
+    may_read:
+      - content-draft/viet/**
+      - app/family/packs/**
+      - site/**
+    must_not_touch:
+      - app/** as a write surface
+      - ops/**
+      - docs/operations/**
+      - release/build/TestFlight files
+      - unrelated content-draft lanes
+    token_budget:
+      spec_max_words: 1800
+      result_max_words: 650
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-069:
+    title: Desktop Codex automation pilot, Tagalog v2 first-wave translation pack and starter-premium boundary pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-069/**
+      - .agent/coordination/queue-index.json
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1900
+      result_max_words: 700
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-070:
+    title: Desktop Codex automation pilot, Germany first-wave translation pack and prep-ready expansion pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-070/**
+      - .agent/coordination/queue-index.json
+      - content-draft/german/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - content-draft/thai/**
+      - content-draft/japanese/**
+      - content-draft/turkish/**
+      - content-draft/spanish/**
+      - content-draft/italian/**
+      - content-draft/korean/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+    token_budget:
+      spec_max_words: 1900
+      result_max_words: 700
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-077:
+    title: Desktop Codex automation pilot, Tagalog v2 starter-core graduation pack and unresolved-row reduction
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-077/**
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+  T-078:
+    title: Desktop Codex automation pilot, Germany second translation pack and unresolved-row reduction
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-078/**
+      - content-draft/german/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+  T-079:
+    title: Desktop Codex automation pilot, South Korea second translation pack and unresolved-row reduction
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-079/**
+      - content-draft/korean/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+  T-080:
+    title: Desktop Codex automation pilot, Indonesia second translation pack and unresolved-row reduction
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-080/**
+      - content-draft/indonesian/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+  T-081:
+    title: Desktop Codex automation pilot, Spain second translation pack and unresolved-row reduction
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-081/**
+      - content-draft/spanish/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+  T-082:
+    title: Desktop Codex automation pilot, Tagalog v2 premium-follow-on pack and holdout reduction
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-082/**
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+  T-083:
+    title: Desktop Codex automation pilot, controlled Viet audio follow-up batch
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-083/**
+      - app/assets/audio/**
+      - app/family/packs/**
+      - content-draft/viet/audio-review/**
+      - docs/operations/**
+    may_read:
+      - docs/**
+      - content-draft/viet/**
+      - app/**
+      - ops/**
+    must_not_touch:
+      - site/**
+      - unrelated language lanes
+      - release/build/TestFlight files
+
+  T-109:
+    title: Desktop Codex automation pilot, Tagalog v2 starter handoff clustering and retrieval-ready contract pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-109/**
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+    must_not_touch:
+      - app/**
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+
+  T-110:
+    title: Desktop Codex automation pilot, Viet phrase-page audio playback seam and starter export hardening pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-110/**
+      - site/** within Viet phrase-page, loader, and starter-export playback scope
+      - docs/website/PHRASE_AUDIO_DELIVERY.md
+      - scripts/website/Test-SpeakLocalWebsiteArtifact.ps1
+    may_read:
+      - docs/**
+      - content-draft/viet/**
+      - app/family/packs/**
+      - app/assets/audio/**
+    must_not_touch:
+      - app/** as a write surface
+      - ops/**
+      - docs/operations/**
+      - release/build/TestFlight files
+      - unrelated country pages or broad website conversion strategy surfaces outside the Viet starter/audio seam
+      - manual edits to generated preview JSON when source or exporter truth should drive the fix instead
+
+  T-111:
+    title: Desktop Codex automation pilot, Italy next utility translation pack and holdout cleanup
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-111/**
+      - content-draft/italian/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes
+
+  T-112:
+    title: Desktop Codex automation pilot, Viet device-proof execution packet hardening and blocker-surface sync pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-112/**
+      - docs/operations/**
+      - ops/apps/viet.json
+    may_read:
+      - docs/**
+      - ops/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - content-draft/**
+      - release/build/TestFlight generated artifacts
+      - unrelated lane task folders outside .agent/tasks/T-112/**
+  T-113:
+    title: Desktop Codex automation pilot, Viet relation-cluster expansion and listing-handoff hardening pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-113/**
+      - docs/PHRASE_RELATIONSHIP_MODEL.md
+      - docs/V2_CONTENT_MODEL.md
+      - content-draft/viet/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/tagalog/**
+      - app/family/**
+      - site/**
+    must_not_touch:
+      - app/** as a write surface
+      - release/build/TestFlight files
+      - unrelated non-Viet language lanes except read-only inspection
+      - billing / purchase / device-proof docs unless directly needed as a bounded reference
+  T-114:
+    title: Desktop Codex automation pilot, Tagalog relation-cluster expansion and retrieval handoff hardening pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-114/**
+      - content-draft/tagalog/**
+      - docs/V2_CONTENT_MODEL.md
+      - docs/PHRASE_RELATIONSHIP_MODEL.md
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+      - site/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/** as a write surface
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes except read-only inspection
+
+  T-115:
+    title: Desktop Codex automation pilot, Vietnam starter conversion path and situation-copy hardening pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-115/**
+      - site/countries/vietnam.html
+      - site/countries/vietnam/index.html
+    may_read:
+      - docs/**
+      - content-draft/viet/**
+      - site/**
+      - app/family/packs/**
+    must_not_touch:
+      - app/** as a write surface
+      - ops/**
+      - docs/operations/**
+      - release/build/TestFlight files
+      - unrelated country pages or broad website strategy surfaces outside the Vietnam country-route conversion seam
+      - manual edits to generated preview JSON when source or exporter truth should drive the fix instead
+
+  T-116:
+    title: Desktop Codex automation pilot, Tagalog v2 expansion-cluster pickup and graduation-boundary hardening pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-116/**
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated language lanes except read-only comparison
+
+  T-117:
+    title: Desktop Codex automation pilot, Viet starter export contract and off-hub module parity hardening pass
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-117/**
+      - docs/website/PHRASE_AUDIO_DELIVERY.md
+      - site/data/phrase-previews/**
+      - site/public/data/phrase-previews/**
+      - scripts/website/Test-SpeakLocalWebsiteArtifact.ps1
+    may_read:
+      - docs/**
+      - content-draft/viet/**
+      - site/**
+      - app/family/packs/**
+    must_not_touch:
+      - app/** as a write surface
+      - ops/**
+      - docs/operations/**
+      - unrelated country-page conversion copy outside the export contract
+      - release/build/TestFlight files
+
+  T-118:
+    title: Desktop Codex automation pilot, Italy residual holdout adjudication and graduation-readiness packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-118/**
+      - content-draft/italian/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated language lanes except read-only comparison
+
+  T-119:
+    title: Desktop Codex automation pilot, France residual handoff and graduation-boundary packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-119/**
+      - content-draft/french/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated language lanes except read-only comparison
+
+  T-120:
+    title: Desktop Codex automation pilot, Spain residual handoff and graduation-boundary packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-120/**
+      - content-draft/spanish/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated language lanes except read-only comparison
+
+  T-121:
+    title: Desktop Codex automation pilot, Turkey graduation-boundary and native-review closure packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-121/**
+      - content-draft/turkish/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated language lanes except read-only comparison
+
+  T-122:
+    title: Desktop Codex automation pilot, Japan starter-handoff and graduation-boundary packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-122/**
+      - content-draft/japanese/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated language lanes except read-only comparison
+
+  T-125:
+    title: Desktop Codex automation pilot, Tagalog v2 direct-pickup promotion packet and runtime-handoff hardening
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-125/**
+      - content-draft/tagalog/**
+    may_read:
+      - docs/**
+      - templates/**
+      - research/**
+      - content-draft/viet/**
+      - app/family/**
+      - site/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/** as a write surface
+      - ops/**
+      - docs/operations/**
+      - runtime registry wiring
+      - release/build/TestFlight files
+      - unrelated edits under other language lanes except read-only comparison
+    token_budget:
+      spec_max_words: 2000
+      result_max_words: 750
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-126:
+    title: Desktop Codex automation pilot, Viet device-proof return packet and ASC evidence sync contract
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-126/**
+      - docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md
+      - docs/operations/TESTING_RUNBOOK.md
+      - docs/operations/APP_STATUS.md
+      - ops/apps/viet.json
+    may_read:
+      - docs/**
+      - ops/**
+      - app/family/**
+      - content-draft/viet/**
+    must_not_touch:
+      - app/** as a write surface
+      - site/**
+      - content-draft/** as a write surface
+      - docs/operations/CURRENT_BLOCKERS.md
+      - docs/operations/LATEST_VALIDATION.md
+      - release/build/TestFlight generated artifacts
+      - unrelated task folders outside .agent/tasks/T-126/**
+    token_budget:
+      spec_max_words: 1900
+      result_max_words: 700
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-127:
+    title: Desktop Codex automation pilot, Viet country-route trust-panel parity and app-depth honesty packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-127/**
+      - site/countries/vietnam.html
+      - site/countries/vietnam/index.html
+    may_read:
+      - docs/**
+      - content-draft/viet/**
+      - site/**
+      - app/family/packs/**
+    must_not_touch:
+      - app/** as a write surface
+      - ops/**
+      - docs/operations/**
+      - release/build/TestFlight files
+      - unrelated country pages or broad website strategy surfaces outside the Vietnam country-route trust/conversion seam
+      - manual edits to generated preview JSON when source or exporter truth should drive the fix instead
+    token_budget:
+      spec_max_words: 1900
+      result_max_words: 700
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-128:
+    title: Desktop Codex automation pilot, shared search normalization replay and bounded matcher-shell packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-128/**
+      - app/lib/searchPhrases.ts
+      - app/family/** within the bounded shared-search scope only
+    may_read:
+      - docs/**
+      - ops/** as read-only context only
+      - .agent/tasks/T-073/**
+      - content-draft/viet/**
+      - content-draft/tagalog/**
+      - app/** within search-related surfaces only
+    must_not_touch:
+      - site/**
+      - docs/operations/**
+      - unrelated language lanes outside read-only wording comparison
+      - release/build/TestFlight files
+      - broad family-shell work outside shared search
+    token_budget:
+      spec_max_words: 2000
+      result_max_words: 750
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-129:
+    title: Desktop Codex automation pilot, Viet live-audio orphan disposition and parity packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-129/**
+      - content-draft/viet/audio-review/**
+      - app/assets/audio/** within the bounded orphan and parity scope only
+    may_read:
+      - docs/**
+      - ops/** as read-only context only
+      - content-draft/viet/**
+      - app/** within the bounded audio seam only
+      - .agent/tasks/T-099/**
+      - .agent/tasks/T-123/**
+    must_not_touch:
+      - site/**
+      - docs/operations/**
+      - unrelated language lanes
+      - release/build/TestFlight files
+      - broad app-shell or content work outside the Viet audio seam
+    token_budget:
+      spec_max_words: 2000
+      result_max_words: 750
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-130:
+    title: Desktop Codex automation pilot, Viet arrival relation coverage and starter export parity packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-130/**
+      - docs/PHRASE_RELATIONSHIP_MODEL.md
+      - docs/V2_CONTENT_MODEL.md
+      - content-draft/viet/source-notes.md
+      - content-draft/viet/phrase-source.csv
+      - content-draft/viet/relation-sample-v1.json
+      - content-draft/viet/relation-authoring-notes.md
+      - site/data/phrase-previews/manifest.json
+      - site/public/data/phrase-previews/manifest.json
+      - site/data/phrase-previews/vietnam-arrival-basics.json
+      - site/public/data/phrase-previews/vietnam-arrival-basics.json
+      - scripts/website/Test-SpeakLocalWebsiteArtifact.ps1
+    may_read:
+      - docs/**
+      - content-draft/viet/**
+      - site/**
+      - app/family/packs/** as read-only starter-shape reference only
+    must_not_touch:
+      - app/** as a write surface
+      - ops/**
+      - docs/operations/**
+      - unrelated country-page conversion copy outside the bounded Viet arrival relation/export seam
+      - premium-only or non-exported target-family rails
+      - release/build/TestFlight files
+    token_budget:
+      spec_max_words: 2100
+      result_max_words: 800
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false
+
+  T-131:
+    title: Desktop Codex automation pilot, Viet restore-path walkthrough and locked-state shell packet
+    status: queued
+    phase: queued-for-desktop-codex
+    worktree: E:\AI\SpeakLocal-App-Family
+    owns:
+      - .agent/tasks/T-131/**
+      - app/family/** within the bounded Viet purchase, restore, restart-persistence, and locked-state walkthrough scope only
+    may_read:
+      - docs/**
+      - ops/** as read-only context only
+      - .agent/tasks/T-072/**
+      - .agent/tasks/T-126/** as read-only context only
+      - content-draft/viet/**
+    must_not_touch:
+      - site/**
+      - docs/operations/** as a write surface
+      - release/build/TestFlight files as generated artifacts
+      - unrelated shared-search or family-shell work outside the bounded Viet purchase / restore walkthrough scope
+      - unrelated task folders outside .agent/tasks/T-131/**
+    token_budget:
+      spec_max_words: 2000
+      result_max_words: 750
+      log_excerpt_max_lines: 60
+      openclaw_reads_full_logs: false

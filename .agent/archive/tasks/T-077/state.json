@@ -1,0 +1,59 @@
+{
+  "taskId": "T-077",
+  "title": "Desktop Codex automation pilot, Tagalog v2 starter-core graduation pack and unresolved-row reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-50-2-20260420T055244359",
+    "label": "Task Queue 50 #20260420-055244"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T05:52:44.3597289-05:00",
+    "lastHeartbeatAt": "2026-04-20T06:04:10.0160116-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T08:04:10.0160116-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "tagalog_v2_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-077\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-077\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-077\\reviews\\",
+    "logs": ".agent\\tasks\\T-077\\logs\\",
+    "requiredForDone": [
+      "content-draft\\tagalog\\README.md",
+      "content-draft\\tagalog\\source-notes.md",
+      "content-draft\\tagalog\\phrase-source.csv",
+      "content-draft\\tagalog\\first-wave-priority.csv",
+      "content-draft\\tagalog\\rewrite-notes.md",
+      "content-draft\\tagalog\\tagalog-v2-first-wave.csv",
+      "content-draft\\tagalog\\risk-review.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T06:04:10.0160116-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 2,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

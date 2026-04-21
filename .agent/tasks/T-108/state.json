@@ -1,0 +1,55 @@
+{
+  "taskId": "T-108",
+  "title": "Desktop Codex automation pilot, Tagalog relation-ready phrase family pack and follow-on graph prep",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-task-queue-20-T-108-20260421T0423-0500",
+    "label": "task-queue-20-t108-reclaim-2"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-21T04:22:51.5567640-05:00",
+    "lastHeartbeatAt": "2026-04-21T04:48:34.1449041-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T06:48:34.1449041-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "tagalog_relation_model"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-108\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-108\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-108\\reviews\\",
+    "logs": ".agent\\tasks\\T-108\\logs\\",
+    "requiredForDone": [
+      "content-draft\\tagalog\\relation-sample-v1.json",
+      "content-draft\\tagalog\\relation-authoring-notes.md",
+      ".agent\\tasks\\T-108\\logs\\tagalog-relation-pack-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T04:48:34.1449041-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

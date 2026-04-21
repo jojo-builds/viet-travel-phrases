@@ -1,0 +1,57 @@
+{
+  "taskId": "T-126",
+  "title": "Desktop Codex automation pilot, Viet device-proof return packet and ASC evidence sync contract",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-20-T-126-20260421T1221415367561-0500",
+    "label": "Task Queue 20"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T12:21:41.5367561-05:00",
+    "lastHeartbeatAt": "2026-04-21T12:37:10.5028496-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T14:37:10.5028496-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ops_docs_truth"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-126\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-126\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-126\\reviews\\",
+    "logs": ".agent\\tasks\\T-126\\logs\\",
+    "requiredForDone": [
+      "docs\\operations\\VIET_TESTFLIGHT_EXECUTION_PACKET.md",
+      "docs\\operations\\TESTING_RUNBOOK.md",
+      "docs\\operations\\APP_STATUS.md",
+      "ops\\apps\\viet.json",
+      ".agent\\tasks\\T-126\\logs\\viet-device-proof-return-packet.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T12:37:10.5028496-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

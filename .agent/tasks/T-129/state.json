@@ -1,0 +1,59 @@
+{
+  "taskId": "T-129",
+  "title": "Desktop Codex automation pilot, Viet live-audio orphan disposition and parity packet",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "shared_audio_pipeline"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-129\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-129\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-129\\reviews\\",
+    "logs": ".agent\\tasks\\T-129\\logs\\",
+    "requiredForDone": [
+      "content-draft\\viet\\audio-review\\CONTINUITY-BENCHMARK.md",
+      "content-draft\\viet\\audio-review\\FOLLOW-UP-BATCH-ALLOWLIST-2026-04-20.md",
+      "content-draft\\viet\\audio-review\\RELEASE-POSTURE-RECOMMENDATION.md",
+      "app\\assets\\audio\\manifest.json",
+      "app\\assets\\audio\\registry.ts",
+      ".agent\\tasks\\T-129\\logs\\viet-audio-orphan-parity.md",
+      ".agent\\tasks\\T-129\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T11:42:00-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

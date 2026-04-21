@@ -1,0 +1,58 @@
+{
+  "taskId": "T-100",
+  "title": "Desktop Codex automation pilot, Viet device-proof evidence packet and blocker handoff tightening",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "11068cef-aaea-409e-a6ff-0e3b7c1f719b",
+    "label": "desktop-automation-11068cef"
+  },
+  "execution": {
+    "attempt": 4,
+    "claimedAt": "2026-04-21T00:52:59.5552206-05:00",
+    "lastHeartbeatAt": "2026-04-21T00:56:18.9595092-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T02:56:18.9595092-05:00",
+    "reclaimReason": "lease-expired"
+  },
+  "locks": {
+    "write": [
+      "ops_docs_truth"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-100\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-100\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-100\\reviews\\",
+    "logs": ".agent\\tasks\\T-100\\logs\\",
+    "requiredForDone": [
+      "docs\\operations\\APP_STATUS.md",
+      "docs\\operations\\CURRENT_BLOCKERS.md",
+      "docs\\operations\\LATEST_VALIDATION.md",
+      "docs\\operations\\TESTING_RUNBOOK.md",
+      "ops\\apps\\viet.json",
+      ".agent\\tasks\\T-100\\logs\\device-proof-handoff.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T00:56:18.9595092-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

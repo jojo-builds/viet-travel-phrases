@@ -1,0 +1,57 @@
+{
+  "taskId": "T-095",
+  "title": "Desktop Codex automation pilot, Spain pronunciation-rule validation and small-tail triage pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-10-20260420T211207438Z",
+    "label": "Task Queue 10 automation"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T21:12:07.4388304+00:00",
+    "lastHeartbeatAt": "2026-04-20T22:12:15.8599246+00:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T00:12:15.8599246+00:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "spanish_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-095\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-095\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-095\\reviews\\",
+    "logs": ".agent\\tasks\\T-095\\logs\\",
+    "requiredForDone": [
+      "content-draft\\spanish\\README.md",
+      "content-draft\\spanish\\source-notes.md",
+      "content-draft\\spanish\\phrase-source.csv",
+      "content-draft\\spanish\\first-wave-priority.csv",
+      "content-draft\\spanish\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T22:12:15.8599246+00:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "taskId": "T-082",
+  "title": "Desktop Codex automation pilot, Tagalog v2 premium-follow-on pack and holdout reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-d7d27a0f-fb01-4e9d-a2b8-15746f78e839",
+    "label": "desktop-automation-task-queue-10"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T08:11:37.3893339-05:00",
+    "lastHeartbeatAt": "2026-04-20T08:30:15.1210253-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T10:30:15.1210253-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "tagalog_v2_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-082\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-082\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-082\\reviews\\",
+    "logs": ".agent\\tasks\\T-082\\logs\\",
+    "requiredForDone": [
+      "content-draft\\tagalog\\README.md",
+      "content-draft\\tagalog\\source-notes.md",
+      "content-draft\\tagalog\\phrase-source.csv",
+      "content-draft\\tagalog\\first-wave-priority.csv",
+      "content-draft\\tagalog\\rewrite-notes.md",
+      "content-draft\\tagalog\\risk-review.md",
+      "content-draft\\tagalog\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T08:30:15.1210253-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

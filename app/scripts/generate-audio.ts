@@ -1,10 +1,13 @@
 import 'dotenv/config';
 import { mkdir, access, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import OpenAI from 'openai';
-import { phrases } from '../content/scenarios';
+import { vietPack } from '../family/packs/viet';
 
-const AUDIO_DIR = path.resolve(process.cwd(), 'assets/audio');
+const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
+const APP_ROOT = path.resolve(SCRIPT_DIR, '..');
+const AUDIO_DIR = path.join(APP_ROOT, 'assets', 'audio');
 const DELAY_MS = 500;
 
 async function main() {
@@ -16,11 +19,11 @@ async function main() {
   const client = new OpenAI({ apiKey });
   await mkdir(AUDIO_DIR, { recursive: true });
 
-  const total = phrases.length;
+  const total = vietPack.phrases.length;
   let completed = 0;
   let generated = 0;
 
-  for (const phrase of phrases) {
+  for (const phrase of vietPack.phrases) {
     completed += 1;
     const filename = `${phrase.audioKey}.mp3`;
     const outputPath = path.join(AUDIO_DIR, filename);
@@ -33,7 +36,7 @@ async function main() {
     const response = await client.audio.speech.create({
       model: 'gpt-4o-mini-tts',
       voice: 'nova',
-      input: phrase.vietnamese,
+      input: phrase.targetText,
       instructions:
         'Speak slowly and clearly in Vietnamese. This is for language learners. Southern Vietnamese dialect.',
       response_format: 'mp3',

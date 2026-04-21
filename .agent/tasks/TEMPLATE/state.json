@@ -1,0 +1,50 @@
+{
+  "taskId": "T-XXX",
+  "title": "Short task title",
+  "status": "draft",
+  "phase": "planning",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live|prepared-next|planning|future-option"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-XXX/result.md",
+    "recoveryNotes": ".agent/tasks/T-XXX/recovery-notes.md",
+    "reviews": ".agent/tasks/T-XXX/reviews/",
+    "logs": ".agent/tasks/T-XXX/logs/",
+    "requiredForDone": []
+  },
+  "lastUpdated": "2026-04-18T03:45:00-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 0,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

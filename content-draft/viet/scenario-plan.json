@@ -1,0 +1,184 @@
+{
+  "variant": "viet",
+  "appId": "viet-travel-phrases",
+  "displayName": "SpeakLocal Vietnam",
+  "language": "Vietnamese",
+  "languageCode": "vi",
+  "country": "Vietnam",
+  "scenarioOrder": [
+    "airport-border-arrival",
+    "transport",
+    "money-numbers-prices",
+    "food-drink",
+    "health-pharmacy",
+    "emergency-safety",
+    "phone-internet-power",
+    "understanding-repair",
+    "problems-help",
+    "hotel-accommodation",
+    "directions-navigation",
+    "bathroom-personal-needs",
+    "time-dates-booking",
+    "shopping",
+    "local-services-everyday-tasks",
+    "polite-basics",
+    "social-small-talk",
+    "sightseeing-activities"
+  ],
+  "quickPhraseIds": [
+    "airport-5",
+    "taxi-1",
+    "price-1",
+    "food-3",
+    "health-1",
+    "phone-2",
+    "problems-2"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "airport-border-arrival",
+      "name": "Airport & Arrival",
+      "emoji": "\ud83d\udeec",
+      "description": "Get through arrival and into the city.",
+      "tip": "Keep arrival questions short: luggage, ATM, SIM, pickup."
+    },
+    {
+      "order": 2,
+      "id": "transport",
+      "name": "Transport",
+      "emoji": "\ud83d\ude95",
+      "description": "Handle rides, buses, and stations with less confusion.",
+      "tip": "Show the map, speak in short chunks, and confirm the stop before the ride moves on."
+    },
+    {
+      "order": 3,
+      "id": "money-numbers-prices",
+      "name": "Prices & Payment",
+      "emoji": "\ud83d\udcb5",
+      "description": "Check prices and pay without getting lost in the numbers.",
+      "tip": "Point to the amount when you can."
+    },
+    {
+      "order": 4,
+      "id": "food-drink",
+      "name": "Food & Drink",
+      "emoji": "\ud83c\udf5c",
+      "description": "Order, adjust the meal, and fix the order when needed.",
+      "tip": "Start with the main order, then add one small change if you need it."
+    },
+    {
+      "order": 5,
+      "id": "health-pharmacy",
+      "name": "Health & Pharmacy",
+      "emoji": "\ud83d\udc8a",
+      "description": "Cover common travel symptoms and pharmacy needs.",
+      "tip": "Keep symptom phrases short and direct."
+    },
+    {
+      "order": 6,
+      "id": "emergency-safety",
+      "name": "Emergency & Safety",
+      "emoji": "\ud83d\udea8",
+      "description": "Keep emergency phrases short and easy to reach.",
+      "tip": "Say what is wrong right now, not the whole story."
+    },
+    {
+      "order": 7,
+      "id": "phone-internet-power",
+      "name": "Phone & Internet",
+      "emoji": "\ud83d\udcf1",
+      "description": "Get your phone, data, or battery working again.",
+      "tip": "The fastest fixes are usually Wi-Fi, SIM, charger, or outlet."
+    },
+    {
+      "order": 8,
+      "id": "understanding-repair",
+      "name": "Repeat & Clarify",
+      "emoji": "\ud83e\udded",
+      "description": "Repeat, slow down, or move the conversation to writing.",
+      "tip": "When one word or number is the problem, ask for it again or ask to see it written."
+    },
+    {
+      "order": 9,
+      "id": "problems-help",
+      "name": "Get Help",
+      "emoji": "\ud83c\udd98",
+      "description": "Get practical help when something goes wrong.",
+      "tip": "Name the problem first, then ask for the help you need."
+    },
+    {
+      "order": 10,
+      "id": "hotel-accommodation",
+      "name": "Hotel & Room",
+      "emoji": "\ud83c\udfe8",
+      "description": "Handle check-in, room issues, and front desk fixes.",
+      "tip": "Start with the room or reservation, then ask for the next step."
+    },
+    {
+      "order": 11,
+      "id": "directions-navigation",
+      "name": "Directions",
+      "emoji": "\ud83d\uddfa\ufe0f",
+      "description": "Get where you need to go one turn at a time.",
+      "tip": "Ask one step at a time instead of the whole route."
+    },
+    {
+      "order": 12,
+      "id": "bathroom-personal-needs",
+      "name": "Bathroom & Basics",
+      "emoji": "\ud83d\udebb",
+      "description": "Handle the small needs that still matter on the road.",
+      "tip": "Keep these requests short because the moment is usually immediate."
+    },
+    {
+      "order": 13,
+      "id": "time-dates-booking",
+      "name": "Time & Bookings",
+      "emoji": "\ud83d\udd52",
+      "description": "Confirm times, dates, and booking details.",
+      "tip": "Pair the time with a date, room, bus, or booking."
+    },
+    {
+      "order": 14,
+      "id": "shopping",
+      "name": "Shopping",
+      "emoji": "\ud83d\uded2",
+      "description": "Compare size, color, fit, and checkout.",
+      "tip": "Use these to choose, try on, and pay."
+    },
+    {
+      "order": 15,
+      "id": "local-services-everyday-tasks",
+      "name": "Everyday Errands",
+      "emoji": "\ud83c\udfea",
+      "description": "Handle the little errands that keep the trip moving.",
+      "tip": "Keep errands short: item first, action second."
+    },
+    {
+      "order": 16,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "\ud83d\ude4f",
+      "description": "The short polite phrases you use all day.",
+      "tip": "Short polite phrases work better than long textbook sentences."
+    },
+    {
+      "order": 17,
+      "id": "social-small-talk",
+      "name": "Small Talk",
+      "emoji": "\ud83d\udcac",
+      "description": "Stay friendly without overthinking it.",
+      "tip": "Short friendly comments work better than deep small talk."
+    },
+    {
+      "order": 18,
+      "id": "sightseeing-activities",
+      "name": "Sightseeing",
+      "emoji": "\ud83d\udcf8",
+      "description": "Use simple phrases for tickets, times, and meeting points.",
+      "tip": "Ask about the price, the time, and where to start before you begin."
+    }
+  ],
+  "notes": "First real Viet v2 pack source. Scenario remains the runtime spine while the visible app language can bias toward travel situations and high-stress retrieval."
+}

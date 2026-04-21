@@ -1,0 +1,25 @@
+# SpeakLocal repo-level local/runtime ignore rules
+#
+# Keep repo truth visible. Ignore only local temp/runtime surfaces that should
+# not drive queue selection, repo audits, or workflow decisions.
+
+# Local Codex/Desktop runtime state
+/memory/
+/state/
+
+# Queue runtime temp and mutable local ledgers
+/.agent/coordination/.queue-locks/
+/.agent/coordination/queue-events.jsonl
+/.agent/coordination/desktop-app-recovery.json
+/.agent/tasks/*/state.json.*.tmp
+/.agent/archive/tasks/*/state.json.*.tmp
+
+# Disposable build/export inspection roots
+/tmp-eas-inspect-*/
+/tmp-eas-prebuild-*/
+
+# Local Expo preview/export artifacts
+/app/.expo/
+/app/.expo-web-*/
+/app/.expo-export*/
+/app/tmp-expo-web.log

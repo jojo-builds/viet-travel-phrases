@@ -1,0 +1,55 @@
+{
+  "taskId": "T-127",
+  "title": "Desktop Codex automation pilot, Viet country-route trust-panel parity and app-depth honesty packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-a705bf29-a240-4528-b3a2-a27592da55cd",
+    "label": "Task Queue 40"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T12:42:12.6061755-05:00",
+    "lastHeartbeatAt": "2026-04-21T13:27:43.6006118-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T20:27:44.2155912Z",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "website_content_conversion"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-127\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-127\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-127\\reviews\\",
+    "logs": ".agent\\tasks\\T-127\\logs\\",
+    "requiredForDone": [
+      "site\\countries\\vietnam.html",
+      "site\\countries\\vietnam\\index.html",
+      ".agent\\tasks\\T-127\\logs\\viet-country-trust-parity-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T13:27:43.6006118-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

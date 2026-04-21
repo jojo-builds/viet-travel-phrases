@@ -1,0 +1,53 @@
+{
+  "taskId": "T-020",
+  "title": "Desktop Codex automation pilot, Germany research and prep-only lane bootstrap",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-41-20260418T154307-0500",
+    "label": "Task Queue 41 automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T15:43:07.1692758-05:00",
+    "lastHeartbeatAt": "2026-04-18T15:58:26.9472667-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T15:58:26.9472667-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "german_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    "Queue contract requires 3 review gates with 4 Codex subagents each, but this automation runtime does not allow spawning subagents unless the user explicitly requests delegation."
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-020/result.md",
+    "reviews": ".agent/tasks/T-020/reviews/",
+    "logs": ".agent/tasks/T-020/logs/",
+    "research": "research/language-pipeline/german/GERMANY-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/german/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T15:58:26.9472667-05:00"
+}

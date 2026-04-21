@@ -1,0 +1,57 @@
+{
+  "taskId": "T-074",
+  "title": "Desktop Codex automation pilot, cross-language ElevenLabs prep audio batch",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-task-queue-10-f947f1df-9a15-4169-b2bb-14a9305734f4",
+    "label": "task-queue-10"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T03:13:07.6080835-05:00",
+    "lastHeartbeatAt": "2026-04-20T03:23:56.7514992-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T05:23:56.7514992-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "shared_audio_pipeline"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-074/result.md",
+    "recoveryNotes": ".agent/tasks/T-074/recovery-notes.md",
+    "reviews": ".agent/tasks/T-074/reviews/",
+    "logs": ".agent/tasks/T-074/logs/",
+    "requiredForDone": [
+      "content-draft/german/audio-draft",
+      "content-draft/japanese/audio-draft",
+      "content-draft/spanish/audio-draft",
+      "content-draft/italian/audio-draft",
+      "content-draft/turkish/audio-draft"
+    ]
+  },
+  "lastUpdated": "2026-04-20T03:23:56.7514992-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 0,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

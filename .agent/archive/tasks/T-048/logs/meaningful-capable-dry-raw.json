@@ -1,0 +1,5 @@
+﻿{
+    "command":  "py .agent\\queue_tool.py claim-next --session-id \"t048-proof-meaningful-dry-ab340375-4bb3-4208-b080-617a55e276a1\" --label \"T-048 meaningful dry proof\" --dry-run",
+    "exitCode":  0,
+    "output":  "{\n  \"status\": \"ok\",\n  \"result\": \"dry-run-claimable\",\n  \"taskId\": \"T-030\",\n  \"claimGroup\": \"reclaimable\",\n  \"taskClass\": \"meaningful\",\n  \"proofTask\": false,\n  \"statePath\": \".agent\\\\tasks\\\\T-030\\\\state.json\",\n  \"specPath\": \".agent\\\\tasks\\\\T-030\\\\spec.md\",\n  \"resultPath\": \".agent\\\\tasks\\\\T-030\\\\result.md\",\n  \"repairChanges\": [],\n  \"skippedIneligible\": [],\n  \"indexStats\": {\n    \"queuedCount\": 7,\n    \"reclaimableCount\": 1,\n    \"inProgressCount\": 0,\n    \"blockedCount\": 13,\n    \"draftCount\": 2,\n    \"recentlyCompletedCount\": 25\n  }\n}"
+}

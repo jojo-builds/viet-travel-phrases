@@ -1,0 +1,227 @@
+{
+  "version": "2026-04-13",
+  "canonicalSessionRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "compatibilityAliases": [
+    "E:\\AI\\Viet-Travel-Phrases"
+  ],
+  "canonicalSurfaces": {
+    "manifestDir": "ops/apps",
+    "runtimeRegistry": "app/family/appRegistry.js",
+    "dynamicConfig": "app/app.config.js",
+    "releaseConfig": "app/eas.json",
+    "operationsDocs": "docs/operations",
+    "draftRoot": "content-draft"
+  },
+  "requiredFields": [
+    "appId",
+    "variant",
+    "displayName",
+    "country",
+    "language",
+    "stage",
+    "testingGates",
+    "hardBlock",
+    "contentReadiness",
+    "audioReadiness",
+    "baselineParity",
+    "featureEligibility",
+    "pendingFeatureRollouts",
+    "featureIntakeStatus",
+    "releaseStatus",
+    "blockerTag",
+    "blockerDetail",
+    "nextStep",
+    "sessionRoot",
+    "lastValidatedAt"
+  ],
+  "testingGateKeys": [
+    "localValidation",
+    "previewBuild",
+    "previewInstall",
+    "runtimeManualSmoke",
+    "deviceWalkthrough"
+  ],
+  "enums": {
+    "stage": [
+      "defined",
+      "runtime-wired",
+      "baseline-valid",
+      "testing",
+      "release-ready",
+      "live"
+    ],
+    "testingGateStatus": [
+      "pending",
+      "passed",
+      "not-applicable"
+    ],
+    "blockerTag": [
+      "blocked:none",
+      "blocked:content",
+      "blocked:audio",
+      "blocked:release",
+      "blocked:core",
+      "blocked:decision",
+      "blocked:validation",
+      "blocked:human"
+    ],
+    "releaseStatus": [
+      "not-configured",
+      "preview-only",
+      "app-store-connect-pending",
+      "submission-ready",
+      "submitted",
+      "live"
+    ],
+    "featureIntakeStatus": [
+      "active",
+      "frozen"
+    ],
+    "hardBlockOwner": [
+      "none",
+      "user",
+      "agent",
+      "external"
+    ],
+    "hardBlockType": [
+      "none",
+      "device-access",
+      "apple-login",
+      "apple-credentials",
+      "app-store-connect",
+      "build-environment",
+      "external-review",
+      "other"
+    ]
+  },
+  "defaults": {
+    "featureEligibility": {
+      "search": false,
+      "flashcards": false
+    },
+    "pendingFeatureRollouts": [],
+    "featureIntakeStatus": "active",
+    "testingGates": {
+      "localValidation": {
+        "status": "not-applicable",
+        "evidenceRef": ""
+      },
+      "previewBuild": {
+        "status": "not-applicable",
+        "evidenceRef": ""
+      },
+      "previewInstall": {
+        "status": "not-applicable",
+        "evidenceRef": ""
+      },
+      "runtimeManualSmoke": {
+        "status": "not-applicable",
+        "evidenceRef": ""
+      },
+      "deviceWalkthrough": {
+        "status": "not-applicable",
+        "evidenceRef": ""
+      }
+    },
+    "hardBlock": {
+      "active": false,
+      "type": "none",
+      "owner": "none",
+      "system": "",
+      "detail": "",
+      "nextHumanAction": ""
+    },
+    "prepLane": {
+      "stage": "defined",
+      "releaseStatus": "not-configured",
+      "blockerTag": "blocked:content",
+      "blockerDetail": "This language has a prepared draft lane and dashboard manifest, but translation, pronunciation, audio posture, localized search copy, and the required UX/localization review before runtime promotion are still incomplete.",
+      "nextStep": "Continue the prep lane: confirm the shared traveler baseline, fill translation and pronunciation in phrase-source.csv, decide audio posture, add localized search copy, then pause for UX/localization review before any runtime wiring."
+    }
+  },
+  "contractNotes": {
+    "hardBlockSummaryRule": "ops/apps/*.json stores hardBlock as a compact summary only. Exact evidence and the durable outcome of human-only actions stay in docs/operations/*. Active hardBlock entries must include system, detail, and nextHumanAction; inactive entries must clear those string fields. Human-only pauses use blockerTag=blocked:human; build-environment failures use blockerTag=blocked:validation with hardBlock.type=build-environment.",
+    "testingEvidenceRule": "testingGates.*.evidenceRef points to the operational evidence surface. Pending or passed testing gates must carry a non-empty evidenceRef. The manifest does not replace validation logs or blocker notes.",
+    "manualTestingRule": "For runtime variants, previewBuild, previewInstall, runtimeManualSmoke, and deviceWalkthrough summarize the current active manual-device checkpoint for the current priority rollout. Pending previewInstall, runtimeManualSmoke, or deviceWalkthrough values are allowed when a released app still carries active rollout debt or another human-gated pause. stage=release-ready and releaseStatus values of submission-ready or submitted require the current rollout manual-device gates to be satisfied and their evidence captured in docs/operations/*.",
+    "rolloutScopeRule": "v1 manifest testingGates summarize only the current active shared rollout priority. Keep pendingFeatureRollouts to at most one active shared feature in ops/apps/*.json; if more than one shared rollout is active, track exact per-feature state in docs/operations/* and summarize only the current priority in the manifest.",
+    "releaseReadyRule": "stage=release-ready and releaseStatus values of submission-ready or submitted require runtimeManualSmoke=passed and deviceWalkthrough=passed. Pending preview-install or device-only follow-up must use blockerTag=blocked:human plus hardBlock.active=true.",
+    "terminalRule": "An app is terminal only when stage=live, releaseStatus=live, runtimeManualSmoke=passed, deviceWalkthrough=passed, pendingFeatureRollouts is empty, featureIntakeStatus=frozen, and hardBlock.active=false.",
+    "startupSurfaceRule": "Broad manual repo sessions start from AGENTS.md, docs/DECISIONS.md, docs/PRIORITIES.md, and docs/operations/README.md. Queue automation runs start from AGENTS.md plus the repo-local .agent queue docs. Compatibility files such as docs/START_SESSION.md, docs/CURRENT_STATE.md, and docs/NEXT_STEPS.md may exist only as redirect stubs and must not become duplicate workflow authorities."
+  },
+  "legacyMappings": [
+    {
+      "legacyTerm": "preview-built",
+      "normalizedState": {
+        "stage": "testing",
+        "testingGates": {
+          "previewBuild": "passed",
+          "previewInstall": "pending"
+        }
+      },
+      "note": "Operational docs may keep the preview-built term."
+    },
+    {
+      "legacyTerm": "preview-installed",
+      "normalizedState": {
+        "stage": "testing",
+        "testingGates": {
+          "previewBuild": "passed",
+          "previewInstall": "passed"
+        }
+      },
+      "note": "Use nextStep and blockerDetail to preserve the human-facing resume point."
+    },
+    {
+      "legacyTerm": "preview-installed-awaiting-full-device-walkthrough",
+      "normalizedState": {
+        "stage": "testing",
+        "releaseStatus": "preview-only",
+        "testingGates": {
+          "previewBuild": "passed",
+          "previewInstall": "passed",
+          "deviceWalkthrough": "pending"
+        }
+      },
+      "note": "Operational docs may still describe the richer preview-installed phrase."
+    },
+    {
+      "legacyTerm": "device-tested",
+      "normalizedState": {
+        "stage": "testing",
+        "testingGates": {
+          "deviceWalkthrough": "passed"
+        }
+      },
+      "note": "The coarse stage stays testing until release-ready or live."
+    },
+    {
+      "legacyTerm": "not release-ready",
+      "normalizedState": {
+        "stage": "testing",
+        "releaseStatus": "preview-only"
+      },
+      "note": "Use hardBlock only when a human or external dependency is the active stop."
+    }
+  ],
+  "audit": {
+    "ignorePathGlobs": [
+      "tmp-eas-inspect-*",
+      "tmp-eas-prebuild-*",
+      "app/.expo-export*"
+    ],
+    "repoMarkers": [
+      "AGENTS.md",
+      ".agent/README.md",
+      ".agent/QUEUE_START.md",
+      ".agent/AUTOMATION.md",
+      "docs/DECISIONS.md",
+      "docs/PRIORITIES.md",
+      "docs/operations/README.md",
+      "docs/START_SESSION.md",
+      "ops/apps",
+      "app/family/appRegistry.js",
+      "app/app.config.js",
+      "app/eas.json"
+    ]
+  }
+}

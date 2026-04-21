@@ -1,0 +1,56 @@
+{
+  "taskId": "T-032",
+  "title": "Desktop Codex automation pilot, Tagalog v2 first-wave translation pass",
+  "status": "blocked",
+  "phase": "blocked",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-proof-20260419T160200-0500-7d8f3a1c",
+    "label": "Codex Desktop queue proof run"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-19T16:04:15.380705-05:00",
+    "lastHeartbeatAt": "2026-04-19T16:10:34.784800-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-19T16:10:34.784800-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "tagalog_v2_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    {
+      "summary": "spawn_agent unavailable in this worker runtime; mandatory 3-gate 4-subagent review workflow cannot be executed honestly"
+    }
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-032/result.md",
+    "reviews": ".agent/tasks/T-032/reviews/",
+    "logs": ".agent/tasks/T-032/logs/",
+    "draftLane": "content-draft/tagalog/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-19T16:10:34.784800-05:00"
+}

@@ -1,0 +1,3 @@
+APPROVED
+
+The launcher/helper split is described precisely. `AUTOMATION.md` requires a real current-session `functions.spawn_agent` check before setting `SPEAKLOCAL_REVIEW_RUNTIME=subagents`, while `queue_tool.py` only enforces the env-var affirmation plus repo-level production readiness and cannot itself prove nested `spawn_agent` availability. Because the task artifacts explicitly admit that weaker helper enforcement and also show the four proof workers still failed the required review contract, `blocked` remains the honest outcome in `state.json`, `result.md`, and `queue-runtime-contract-audit.md`.

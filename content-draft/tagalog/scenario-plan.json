@@ -1,0 +1,442 @@
+{
+  "variant": "tagalog",
+  "appId": "tagalog-travel-phrases",
+  "displayName": "SpeakLocal Philippines",
+  "language": "Tagalog",
+  "languageCode": "tl",
+  "country": "Philippines",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "tagalog-simple-problems-2",
+    "tagalog-simple-problems-3",
+    "tagalog-grab-taxi-1",
+    "tagalog-asking-price-1",
+    "tagalog-convenience-store-1"
+  ],
+  "handoffContract": {
+    "outcomeCounts": {
+      "starter": 16,
+      "deferred": 1,
+      "nextPassExpansion": 5,
+      "laterOnlyHold": 2,
+      "total": 24
+    },
+    "rowLinkedCsvFields": [
+      "relation_cluster_id",
+      "family_role",
+      "anchor_phrase_id",
+      "shortest_form_phrase_id",
+      "clearer_or_more_polite_phrase_id",
+      "likely_reply_family",
+      "primary_next_family",
+      "repair_family",
+      "parked_follow_on_family",
+      "parked_follow_on_class"
+    ],
+    "statusNormalization": {
+      "baseRowStatusField": "current_status",
+      "followOnClassField": "parked_follow_on_class",
+      "sidecarTargetStatusField": "targetStatus",
+      "sidecarTargetFollowOnClassField": "targetFollowOnClass"
+    },
+    "starterRows": [
+      "tagalog-simple-problems-2",
+      "tagalog-simple-problems-3",
+      "tagalog-grab-taxi-1",
+      "tagalog-grab-taxi-3",
+      "tagalog-asking-price-1",
+      "tagalog-convenience-store-1",
+      "tagalog-street-food-3",
+      "tagalog-directions-2",
+      "tagalog-directions-3",
+      "tagalog-polite-basics-5",
+      "tagalog-polite-basics-2",
+      "tagalog-simple-problems-6",
+      "tagalog-street-food-7",
+      "tagalog-asking-price-6",
+      "tagalog-asking-price-7",
+      "tagalog-polite-basics-3"
+    ],
+    "deferredRows": [
+      "tagalog-polite-basics-4"
+    ],
+    "deferredRowDetails": [
+      {
+        "phraseId": "tagalog-polite-basics-4",
+        "anchorPhraseId": "tagalog-polite-basics-4",
+        "shortestFormPhraseId": "tagalog-polite-basics-4",
+        "clearerOrMorePolitePhraseId": null,
+        "likelyReplyFamily": null,
+        "primaryNextFamily": "tagalog-polite-basics-2",
+        "repairFamily": "tagalog-simple-problems-2",
+        "followOnClass": "deferred-review",
+        "boundaryRule": "Keep visible as a refusal boundary only; if surfaced in relation UI, route back into thanks or the direct repair lane."
+      }
+    ],
+    "nextPassExpansionCluster": {
+      "clusterId": "tagalog-v2-next-pass-expansion",
+      "summary": "One ordered direct-pickup cluster covering map-showing, hotel arrival and room issue, then card payment follow-up.",
+      "scenarioOrder": [
+        "directions",
+        "hotel-hostel",
+        "convenience-store"
+      ],
+      "rows": [
+        "tagalog-directions-1",
+        "tagalog-hotel-hostel-1",
+        "tagalog-hotel-hostel-2",
+        "tagalog-hotel-hostel-5",
+        "tagalog-convenience-store-6"
+      ],
+      "rowDetails": [
+        {
+          "phraseId": "tagalog-directions-1",
+          "anchorPhraseId": "tagalog-directions-1",
+          "shortestFormPhraseId": "tagalog-directions-1",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-directions-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup",
+          "packetOutcome": "promote-now",
+          "packetOutcomeReason": "Strongest map-showing bridge back into the starter directions pair; advance it into the next prep-only slice while still carrying directions confidence review."
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-1",
+          "anchorPhraseId": "tagalog-hotel-hostel-1",
+          "shortestFormPhraseId": "tagalog-hotel-hostel-1",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-hotel-hostel-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup",
+          "packetOutcome": "promote-now",
+          "packetOutcomeReason": "Hotel-arrival anchor for the next prep-only slice; keep it adjacent to check-in while hotel-language review continues."
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-2",
+          "anchorPhraseId": "tagalog-hotel-hostel-2",
+          "shortestFormPhraseId": "tagalog-hotel-hostel-2",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-hotel-hostel-5",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup",
+          "packetOutcome": "promote-now",
+          "packetOutcomeReason": "Arrival-pair companion to reservation; advance it in the same next prep-only slice instead of separating the pair."
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-5",
+          "anchorPhraseId": "tagalog-hotel-hostel-5",
+          "shortestFormPhraseId": "tagalog-hotel-hostel-5",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-polite-basics-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup",
+          "packetOutcome": "defer-native-expert-review",
+          "packetOutcomeReason": "Keep the first room-issue branch visible, but `aircon` wording still needs the stricter hotel-language review surface before it advances."
+        },
+        {
+          "phraseId": "tagalog-convenience-store-6",
+          "anchorPhraseId": "tagalog-convenience-store-6",
+          "shortestFormPhraseId": "tagalog-convenience-store-6",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-polite-basics-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "recommended-next-pass-pickup",
+          "packetOutcome": "keep-prep-only",
+          "packetOutcomeReason": "Keep the strongest payment follow-on visible and retrievable, but outside the immediate next slice while payment-language review remains open."
+        }
+      ]
+    },
+    "directPickupContract": {
+      "clusterId": "tagalog-v2-direct-pickup-contract",
+      "summary": "One ordered five-row direct-pickup contract that must stay adjacent and review-bound until runtime-safe promotion blockers are resolved.",
+      "packetOutcomeRule": "`promote-now` means advance into the next prep-only runtime/content working slice. It does not mean runtime-safe promotion, live readiness, or app wiring readiness.",
+      "promotionRule": "Keep all five rows outside runtime-safe promotion until their blocker surfaces are resolved or explicitly rejected in order.",
+      "rows": [
+        "tagalog-directions-1",
+        "tagalog-hotel-hostel-1",
+        "tagalog-hotel-hostel-2",
+        "tagalog-hotel-hostel-5",
+        "tagalog-convenience-store-6"
+      ],
+      "promoteNowRows": [
+        "tagalog-directions-1",
+        "tagalog-hotel-hostel-1",
+        "tagalog-hotel-hostel-2"
+      ],
+      "deferNativeExpertReviewRows": [
+        "tagalog-hotel-hostel-5"
+      ],
+      "keepPrepOnlyRows": [
+        "tagalog-convenience-store-6"
+      ],
+      "packetOutcomeRows": [
+        {
+          "phraseId": "tagalog-directions-1",
+          "packetOutcome": "promote-now",
+          "why": "Strongest map-showing bridge back into the starter directions pair."
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-1",
+          "packetOutcome": "promote-now",
+          "why": "Hotel-arrival anchor for the next prep-only slice."
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-2",
+          "packetOutcome": "promote-now",
+          "why": "Advance with reservation so the arrival pair stays intact."
+        },
+        {
+          "phraseId": "tagalog-hotel-hostel-5",
+          "packetOutcome": "defer-native-expert-review",
+          "why": "Keep visible, but `aircon` wording still needs the stricter hotel-language review surface before it advances."
+        },
+        {
+          "phraseId": "tagalog-convenience-store-6",
+          "packetOutcome": "keep-prep-only",
+          "why": "Useful payment follow-on that stays visible outside the immediate next slice while payment-language review remains open."
+        }
+      ],
+      "blockerSurfaces": [
+        {
+          "blockerId": "directions-confidence-review",
+          "appliesTo": [
+            "tagalog-directions-1"
+          ],
+          "why": "Map-showing utility is strong, but native confidence review still needs to confirm the directions wording before promotion."
+        },
+        {
+          "blockerId": "hotel-language-review",
+          "appliesTo": [
+            "tagalog-hotel-hostel-1",
+            "tagalog-hotel-hostel-2",
+            "tagalog-hotel-hostel-5"
+          ],
+          "why": "Reservation, check-in, and aircon wording should move as one hotel lane and stay outside promotion until the hotel-language review lands."
+        },
+        {
+          "blockerId": "payment-language-review",
+          "appliesTo": [
+            "tagalog-convenience-store-6"
+          ],
+          "why": "Card-payment wording remains useful but still needs payment-language review before promotion."
+        }
+      ],
+      "laterOnlySeparationRule": "Do not reopen the later-only hold rows until the full five-row direct-pickup contract is promoted or explicitly rejected in order."
+    },
+    "runtimeHandoffAudit": {
+      "immediateTrust": [
+        "Preserve the five-row direct-pickup contract exactly as the ordered retrieval boundary.",
+        "When the lane expands beyond the 16 starter rows, advance only `tagalog-directions-1`, `tagalog-hotel-hostel-1`, and `tagalog-hotel-hostel-2` first.",
+        "Keep `tagalog-hotel-hostel-5` visible but `defer-native-expert-review`.",
+        "Keep `tagalog-convenience-store-6` visible but `keep-prep-only`."
+      ],
+      "stillNeedsValidation": [
+        "Refusal-tone review for `tagalog-polite-basics-4`.",
+        "Directions confidence review for `tagalog-directions-1`.",
+        "Hotel-language review for `tagalog-hotel-hostel-1`, `tagalog-hotel-hostel-2`, and `tagalog-hotel-hostel-5`.",
+        "Payment-language review for `tagalog-convenience-store-6`.",
+        "Escalation/register review for `tagalog-simple-problems-7`.",
+        "Pronunciation posture review for the expanded Tagalog lane."
+      ],
+      "noLongerNeedsRediscovery": [
+        "The exact five-row direct-pickup order.",
+        "Which three rows advance now.",
+        "Which one row stays deferred for native/expert review.",
+        "Which one row stays prep-only.",
+        "That `tagalog-polite-basics-4` remains the deferred refusal boundary.",
+        "That `tagalog-simple-problems-7` and `tagalog-grab-taxi-7` remain the only later-only holds.",
+        "That Tagalog is still `prepared-next`, not live."
+      ]
+    },
+    "laterOnlyHold": {
+      "clusterId": "tagalog-v2-later-only-hold",
+      "unlockRule": "Reopen these only after the five-row direct-pickup contract is promoted or explicitly rejected in order.",
+      "rows": [
+        "tagalog-simple-problems-7",
+        "tagalog-grab-taxi-7"
+      ],
+      "rowDetails": [
+        {
+          "phraseId": "tagalog-simple-problems-7",
+          "anchorPhraseId": "tagalog-simple-problems-7",
+          "shortestFormPhraseId": "tagalog-simple-problems-7",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-polite-basics-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "later-only-hold"
+        },
+        {
+          "phraseId": "tagalog-grab-taxi-7",
+          "anchorPhraseId": "tagalog-grab-taxi-7",
+          "shortestFormPhraseId": "tagalog-grab-taxi-7",
+          "clearerOrMorePolitePhraseId": null,
+          "likelyReplyFamily": null,
+          "primaryNextFamily": "tagalog-polite-basics-2",
+          "repairFamily": "tagalog-simple-problems-2",
+          "followOnClass": "later-only-hold"
+        }
+      ]
+    },
+    "graduationBoundary": {
+      "status": "prep-only",
+      "summary": "The Tagalog lane is not runtime-safe to promote yet. Reopening later-only hold rows is separate from safe promotion.",
+      "promotionBlockedBy": [
+        {
+          "blockerId": "refusal-tone-review",
+          "appliesTo": [
+            "tagalog-polite-basics-4"
+          ],
+          "why": "The refusal row stays visible but deferred until native review confirms it works as a polite decline in sales or offer contexts."
+        },
+        {
+          "blockerId": "directions-confidence-review",
+          "appliesTo": [
+            "tagalog-directions-1"
+          ],
+          "why": "The map-showing directions row remains the first direct-pickup candidate, but it still needs native confidence before promotion."
+        },
+        {
+          "blockerId": "hotel-language-review",
+          "appliesTo": [
+            "tagalog-hotel-hostel-1",
+            "tagalog-hotel-hostel-2",
+            "tagalog-hotel-hostel-5"
+          ],
+          "why": "The hotel arrival and room-issue rows stay as one review lane until their wording is normalized together."
+        },
+        {
+          "blockerId": "payment-language-review",
+          "appliesTo": [
+            "tagalog-convenience-store-6"
+          ],
+          "why": "Card-payment wording remains outside promotion until payment-language review lands."
+        },
+        {
+          "blockerId": "escalation-register-review",
+          "appliesTo": [
+            "tagalog-simple-problems-7"
+          ],
+          "why": "The call-for-me escalation row remains later-only because register and pronoun risk are still higher than the direct-pickup set."
+        },
+        {
+          "blockerId": "pronunciation-posture-review",
+          "appliesTo": [
+            "expanded-tagalog-lane"
+          ],
+          "why": "Pronunciation remains helper-only draft guidance and is not yet a locked traveler-facing contract."
+        }
+      ],
+      "laterOnlyHoldRule": "Keep `tagalog-simple-problems-7` and `tagalog-grab-taxi-7` visible but out of the next pass until the five-row direct-pickup contract is promoted or explicitly rejected in order.",
+      "stopCondition": "Keep the lane prep-only until the deferred refusal row and all five direct-pickup rows either clear review or are explicitly rejected, and do not treat later-only reopen eligibility as runtime-safe promotion."
+    },
+    "rowOutcomeCsv": "content-draft/tagalog/tagalog-v2-first-wave.csv",
+    "rowOutcomePriorityCsv": "content-draft/tagalog/first-wave-priority.csv",
+    "rowOutcomeLedgerRoles": [
+      "anchor",
+      "deferred-boundary",
+      "pickup-candidate",
+      "later-only-hold"
+    ],
+    "rowOutcomeCsvOrder": "Rows 1-16 are starter-core anchors, row 17 is the deferred refusal boundary, rows 18-22 are ordered direct-pickup contract rows, and rows 23-24 remain later-only holds."
+  },
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Cafe menus often use English terms but a short Tagalog phrase still helps when the shop is busy."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Pointing helps at busy stalls but simple Tagalog is useful for spice level water and takeout."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Grab / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Grab is common in major cities and showing the destination on your phone helps drivers quickly."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Ask the price before agreeing and keep small bills ready when shopping at markets or street stalls."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "A warm tone and a simple greeting go a long way in hotels shops rides and casual conversations."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Mini-marts are good for water tissues sunscreen and quick snacks during a long day out."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Keep your passport and booking details ready because front desks usually register guests at check-in."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Save your hotel name and one landmark in your phone so you can ask for help even if maps fail."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "If something goes wrong stay calm and show booking screens photos or screenshots to speed up help."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Short friendly chat often starts with where you are from whether it is your first visit and what food you like."
+    }
+  ],
+  "notes": "Canonical drafting baseline for Tagalog parity with the Viet 10-scenario traveler surface, plus a retrieval-ready handoff contract for the current starter, deferred, direct-pickup, later-only, and graduation-boundary rules."
+}

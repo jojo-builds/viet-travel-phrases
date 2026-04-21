@@ -1,0 +1,66 @@
+{
+  "taskId": "T-049",
+  "title": "Canonical-root queue launcher hardening for disposable Codex automation clones",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      ".agent/tasks/T-049/**",
+      ".agent/CODEX_DESKTOP_AUTOMATION_PROMPT.txt",
+      ".agent/QUEUE_START.md",
+      ".agent/AUTOMATION.md",
+      "C:\\Users\\Administrator\\.codex\\automations\\task-queue-10\\automation.toml",
+      "C:\\Users\\Administrator\\.codex\\automations\\task-queue-10-3\\automation.toml",
+      "C:\\Users\\Administrator\\.codex\\automations\\task-queue-10-3\\memory.md",
+      "C:\\Users\\Administrator\\.codex\\skills\\orchestrate-speaklocal-family\\SKILL.md",
+      "C:\\Users\\Administrator\\.codex\\skills\\orchestrate-speaklocal-family\\agents\\openai.yaml"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-049/result.md",
+    "recoveryNotes": ".agent/tasks/T-049/recovery-notes.md",
+    "reviews": ".agent/tasks/T-049/reviews/",
+    "logs": ".agent/tasks/T-049/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-049/logs/root-cause.md",
+      ".agent/tasks/T-049/logs/canonical-root-proof.md",
+      ".agent/tasks/T-049/logs/unsupported-runtime-proof.md",
+      ".agent/tasks/T-049/logs/meaningful-capable-proof.md",
+      ".agent/tasks/T-049/logs/alias-path-safety.md"
+    ]
+  },
+  "lastUpdated": "2026-04-19T14:21:38.1416449-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "direct-task-contract",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "runtimeReviewPathProven": true,
+    "selectionOrder": 0,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

@@ -1,0 +1,3 @@
+APPROVED
+
+The backlog-floor proof is strong enough for the narrower claim it now makes. `queue-index.json` and the eight queued state files directly establish a current queued claimable floor of eight meaningful, non-proof tasks with distinct write locks, and `reclaimableCount: 0` removes hidden overlap from that active path. The overlap/live wording is properly scoped because the proof explicitly limits itself to the queued claimable set, acknowledges blocked-task lock reuse outside that set, and states that some of the backlog is `prepared-next` rather than `live`, so it no longer overclaims a globally non-overlapping or fully live-only queue.

@@ -1,0 +1,48 @@
+{
+  "taskId": "T-027",
+  "title": "Desktop Codex automation pilot, Japan second first-wave translation pass and unresolved-row reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-20-0dc28fdc-0878-415f-b957-aaff612428af",
+    "label": "Task Queue 20 automation"
+  },
+  "execution": {
+    "attempt": 2,
+    "claimedAt": "2026-04-20T05:22:36.0926015-05:00",
+    "lastHeartbeatAt": "2026-04-20T05:32:01.2196572-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T07:32:01.2196572-05:00",
+    "reclaimReason": "inactive-in-progress"
+  },
+  "locks": {
+    "write": [
+      "japanese_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-027/result.md",
+    "reviews": ".agent/tasks/T-027/reviews/",
+    "logs": ".agent/tasks/T-027/logs/",
+    "draftLane": "content-draft/japanese/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-20T05:32:01.2196572-05:00"
+}

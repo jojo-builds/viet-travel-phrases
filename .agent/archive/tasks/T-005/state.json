@@ -1,0 +1,40 @@
+{
+  "taskId": "T-005",
+  "title": "Desktop Codex automation pilot, Turkey research plus first authoring scaffold",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-in-app-family-2026-04-18T13:06:57.5271832-05:00",
+    "label": "desktop-codex-automation"
+  },
+  "locks": {
+    "write": [
+      "turkish_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-005/result.md",
+    "research": "research/language-pipeline/turkish/TURKEY-TRAVEL-RESEARCH.md",
+    "draftLane": "content-draft/turkish/",
+    "reviews": ".agent/tasks/T-005/reviews/",
+    "logs": ".agent/tasks/T-005/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4
+  },
+  "lastUpdated": "2026-04-18T13:38:00-05:00"
+}

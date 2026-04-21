@@ -1,0 +1,57 @@
+{
+  "taskId": "T-080",
+  "title": "Desktop Codex automation pilot, Indonesia second translation pack and unresolved-row reduction",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-9e0d53ec-0e9c-489e-9eaa-5c667dee7371",
+    "label": "desktop-automation-task-queue-20"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T06:21:42.1619733-05:00",
+    "lastHeartbeatAt": "2026-04-20T06:34:50.7883589-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T08:34:50.7883589-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "indonesia_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-080\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-080\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-080\\reviews\\",
+    "logs": ".agent\\tasks\\T-080\\logs\\",
+    "requiredForDone": [
+      "content-draft\\indonesian\\README.md",
+      "content-draft\\indonesian\\source-notes.md",
+      "content-draft\\indonesian\\phrase-source.csv",
+      "content-draft\\indonesian\\first-wave-priority.csv",
+      "content-draft\\indonesian\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T06:34:50.7883589-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

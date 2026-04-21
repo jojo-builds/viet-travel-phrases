@@ -1,0 +1,57 @@
+{
+  "taskId": "T-085",
+  "title": "Desktop Codex automation pilot, South Korea residual-tail triage and native-review handoff pack",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-c62358a2-a4da-4f4b-af79-fcd2bc4954c1",
+    "label": "Task Queue 50"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T08:52:47.6188456-05:00",
+    "lastHeartbeatAt": "2026-04-20T09:09:55.4425893-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T11:09:55.4402496-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "korean_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-085\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-085\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-085\\reviews\\",
+    "logs": ".agent\\tasks\\T-085\\logs\\",
+    "requiredForDone": [
+      "content-draft\\korean\\README.md",
+      "content-draft\\korean\\source-notes.md",
+      "content-draft\\korean\\phrase-source.csv",
+      "content-draft\\korean\\first-wave-priority.csv",
+      "content-draft\\korean\\research-backlog.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T09:09:55.4425893-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

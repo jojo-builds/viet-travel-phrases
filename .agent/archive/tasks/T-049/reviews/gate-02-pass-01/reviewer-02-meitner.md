@@ -1,0 +1,5 @@
+APPROVE
+
+Within the reviewed surfaces, the patch removes direct cwd-sensitive helper launch guidance: `E:\AI\SpeakLocal-App-Family\.agent\CODEX_DESKTOP_AUTOMATION_PROMPT.txt:17`, `E:\AI\SpeakLocal-App-Family\.agent\QUEUE_START.md:39`, and `E:\AI\SpeakLocal-App-Family\.agent\AUTOMATION.md:29` all prohibit direct `py .agent\queue_tool.py ...` calls, define the same canonical `Invoke-SpeakLocalQueueTool` wrapper, and route `claim-next`, `heartbeat`, and `finish` through it instead of automation cwd or alias-path startup. Those same files also explicitly fence off stale memory and broad-family drift (`CODEX_DESKTOP_AUTOMATION_PROMPT.txt:1`, `:14`, `QUEUE_START.md:30`, `AUTOMATION.md:21`).
+
+Queue safety and helper enforcement stay intact because the wrapper still terminates in the existing helper path checks and lifecycle guards in `E:\AI\SpeakLocal-App-Family\.agent\queue_tool.py:310`, `:967`, `:1076`, and `:1116`, matching the intended fix described in `E:\AI\SpeakLocal-App-Family\.agent\tasks\T-049\logs\root-cause.md:116`.

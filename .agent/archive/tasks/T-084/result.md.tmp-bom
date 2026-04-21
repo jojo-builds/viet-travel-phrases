@@ -1,0 +1,46 @@
+﻿# Result: T-084
+
+## Status
+- in_review
+
+## Truth changed
+- prepared-next
+
+## Changed files
+- `content-draft/german/phrase-source.csv` - translated the 12 formerly `pending-later` residual rows, preserved `coffee-shop-4` as the lone explicit defer, and kept pronunciation help compact.
+- `content-draft/german/first-wave-priority.csv` - moved the residual-tail rows to `translated-third-pass` and documented the single remaining holdout honestly.
+- `content-draft/german/README.md` - updated the lane summary to reflect the now-cleared residual tail and the one-row holdout state.
+- `content-draft/german/source-notes.md` - recorded the residual-tail completion decisions, newly translated politeness and social rows, and remaining review-sensitive cautions.
+- `content-draft/german/research-backlog.md` - shifted the backlog from translation cleanup to lone-holdout handling, native review, and pronunciation follow-up.
+- `.agent/tasks/T-084/logs/residual-tail-audit.md` - captured the starting residual set, the 12 rows cleared here, and the single remaining holdout.
+- `.agent/tasks/T-084/reviews/gate-01-pass-01/*` - unanimous Gate 1 planning approval artifacts.
+- `.agent/tasks/T-084/result.md` - draft closeout artifact created before Gate 2 to avoid an incomplete review snapshot.
+
+## Validation performed
+- parsed `content-draft/german/phrase-source.csv` successfully with `70` rows
+- verified `69` rows now have non-empty `target_text`
+- verified `12` rows now carry `third-pass-translated` status in `phrase-source.csv`
+- verified `content-draft/german/first-wave-priority.csv` parses successfully with `70` ranked rows
+- verified `12` rows now carry `translated-third-pass` in `first-wave-priority.csv`
+- verified the residual queue is down to `1` explicit holdout: `german-coffee-shop-4`
+
+## Review findings and what was fixed
+- Gate 1 unanimously approved the residual-tail plan with the same cautions kept visible: medical, transit, ride-guidance, service wording, and the `coffee-shop-4` defer.
+- This run drafts `result.md` before Gate 2 so contract review can judge a complete task snapshot instead of blocking on missing closeout bookkeeping.
+
+## Gate outcomes
+- Gate 1 pass 01: `APPROVE x4`
+- Gate 2 and Gate 3 outcomes will be recorded after those review passes complete
+
+## Remaining risks / cautions
+- `coffee-shop-4` is still the one weak Germany-first cafe intent and remains deferred.
+- `simple-problems-6` still needs expert medical review before any graduation claim.
+- `grab-taxi-4`, `directions-1`, `directions-5`, and `directions-6` should remain review-visible as ride-guidance or transit-sensitive wording.
+- The newly translated polite and social rows still need native review for final register polish.
+
+## Recommended next step
+- run Gate 2 on the edited lane, then keep Gate 3 focused on the one-holdout closeout summary and remaining review posture
+
+## Process feedback
+- SUGGESTION: meaningful queue tasks that require reviewer contract checks should create `result.md` before Gate 2 by default, because waiting until Gate 3 can produce avoidable process-only blocks.
+

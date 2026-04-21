@@ -1,0 +1,61 @@
+{
+  "taskId": "T-109",
+  "title": "Desktop Codex automation pilot, Tagalog v2 starter handoff clustering and retrieval-ready contract pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-10-20260421T051236-0500-T109",
+    "label": "Task Queue 10 T-109"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-21T05:12:36.4060024-05:00",
+    "lastHeartbeatAt": "2026-04-21T05:29:20.5345091-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-21T07:29:20.5345091-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "tagalog_v2_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-109\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-109\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-109\\reviews\\",
+    "logs": ".agent\\tasks\\T-109\\logs\\",
+    "requiredForDone": [
+      "content-draft\\tagalog\\README.md",
+      "content-draft\\tagalog\\source-notes.md",
+      "content-draft\\tagalog\\phrase-source.csv",
+      "content-draft\\tagalog\\first-wave-priority.csv",
+      "content-draft\\tagalog\\tagalog-v2-first-wave.csv",
+      "content-draft\\tagalog\\scenario-plan.json",
+      "content-draft\\tagalog\\research-backlog.md",
+      "content-draft\\tagalog\\risk-review.md",
+      ".agent\\tasks\\T-109\\logs\\tagalog-starter-contract.md"
+    ]
+  },
+  "lastUpdated": "2026-04-21T05:29:20.5345091-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

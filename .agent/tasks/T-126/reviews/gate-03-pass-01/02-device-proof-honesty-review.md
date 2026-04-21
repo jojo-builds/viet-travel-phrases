@@ -1,0 +1,3 @@
+Approval: APPROVE
+
+The final artifact set stays honest about the no-new-evidence boundary: every touched surface says it only hardened the Viet intake contract, keeps `1.0.0 (3)` as the older installable reference, and still marks preview, TestFlight, Apple-side purchase readiness, and device proof as pending. The owner, six field labels, and fold-in order are consistent across the packet, runbook, app status, and dashboard JSON; `ops/apps/viet.json` parses cleanly; and the latest Gate 1 and Gate 2 passes each have exactly four review files with unanimous approval. No fake readiness claim or out-of-scope blocker rewrite is present in the allowed write set.

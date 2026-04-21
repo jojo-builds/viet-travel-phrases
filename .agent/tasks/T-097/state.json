@@ -1,0 +1,58 @@
+{
+  "taskId": "T-097",
+  "title": "Desktop Codex automation pilot, Turkey next utility translation pack and holdout review pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-20-T-097-20260420T202221Z",
+    "label": "Task Queue 20"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-20T15:22:21.6996443-05:00",
+    "lastHeartbeatAt": "2026-04-20T16:01:30-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-20T18:01:30-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "turkish_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-097\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-097\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-097\\reviews\\",
+    "logs": ".agent\\tasks\\T-097\\logs\\",
+    "requiredForDone": [
+      "content-draft\\turkish\\README.md",
+      "content-draft\\turkish\\source-notes.md",
+      "content-draft\\turkish\\phrase-source.csv",
+      "content-draft\\turkish\\first-wave-priority.csv",
+      "content-draft\\turkish\\research-backlog.md",
+      ".agent\\tasks\\T-097\\logs\\turkish-utility-audit.md"
+    ]
+  },
+  "lastUpdated": "2026-04-20T16:01:30-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

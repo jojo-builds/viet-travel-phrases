@@ -1,0 +1,50 @@
+{
+  "taskId": "T-021",
+  "title": "Desktop Codex automation pilot, Tagalog v2 shortlist rewrite and authoring-ready source pass",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "5b81d2d1-7edd-488b-9c0f-4f796e4939d6",
+    "label": "Task Queue 50"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T15:51:23.2497898-05:00",
+    "lastHeartbeatAt": "2026-04-18T18:06:11.0146656-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T18:06:11.0146656-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "tagalog_v2_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-021/result.md",
+    "reviews": ".agent/tasks/T-021/reviews/",
+    "logs": ".agent/tasks/T-021/logs/",
+    "draftLane": "content-draft/tagalog/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "lastUpdated": "2026-04-18T18:06:11.0146656-05:00"
+}

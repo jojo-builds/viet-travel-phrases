@@ -1,0 +1,56 @@
+{
+  "laneId": "phase1-food-connectivity-help",
+  "variant": "viet",
+  "title": "Phase 1B Food + Connectivity + Urgent Help",
+  "phase": "phase-1",
+  "status": "promoted-live",
+  "summary": "Second premium implementation-prep lane for Vietnam, focused on the table, the phone, and the official-help moments where a traveler stops feeling in control.",
+  "whyFirst": "This lane strengthens the $4.99 story with repair, recovery, clarification, cost-control, and urgent escalation before widening into softer convenience depth.",
+  "priceTarget": "$4.99",
+  "currentLiveBoundary": {
+    "starter": 150,
+    "premium": 350,
+    "total": 500
+  },
+  "preparedDelta": {
+    "starter": 0,
+    "premium": 23,
+    "total": 23,
+    "rawPhraseRows": 23
+  },
+  "preparedBoundaryIfPromoted": {
+    "starter": 117,
+    "premium": 52,
+    "total": 169
+  },
+  "sourceCsv": "phase1-food-connectivity-help.csv",
+  "scenarios": [
+    {
+      "scenarioId": "food-drink",
+      "newPremiumFamilies": 6,
+      "whyIncluded": "Food premium should fix wrong or risky meals, not just add more ordering vocabulary."
+    },
+    {
+      "scenarioId": "phone-internet-power",
+      "newPremiumFamilies": 6,
+      "whyIncluded": "Connectivity failures break maps, rides, payments, and check-ins, so this is core recovery value."
+    },
+    {
+      "scenarioId": "problems-help",
+      "newPremiumFamilies": 5,
+      "whyIncluded": "Practical human support becomes premium-worthy when the traveler needs translation, printing, escort, or a call they cannot make alone."
+    },
+    {
+      "scenarioId": "emergency-safety",
+      "newPremiumFamilies": 6,
+      "whyIncluded": "Urgent escalation needs specific police, passport, theft, and safety-next-step phrasing, not just generic panic lines."
+    }
+  ],
+  "nextRecommendedLaneId": "phase1-arrival-booking-navigation",
+  "notes": [
+    "This lane started as a prepared-not-live premium scaffold and was promoted into the live 500-family Viet pack during the autonomous completion pass.",
+    "The preparedDelta math remains useful as the historical size of this lane.",
+    "If stacked after phase1-repair-recovery-core, the prepared-not-live math would have become 117 / 76 / 193 before the final promotion work.",
+    "The preparedBoundaryIfPromoted field below is historical pre-promotion staging math, not the current live boundary."
+  ]
+}

@@ -1,0 +1,1619 @@
+{
+  "schemaVersion": 1,
+  "sampleId": "tagalog-relation-sample-v1",
+  "language": "Tagalog",
+  "status": "draft-handoff",
+  "clusterCount": 16,
+  "parkedFamilyCandidateCount": 8,
+  "purpose": "Additive relation-ready handoff for Tagalog phrase-detail and listing work without changing runtime truth.",
+  "sourceOfTruth": {
+    "authoringCsv": "content-draft/tagalog/phrase-source.csv",
+    "workingPriorityCsv": "content-draft/tagalog/first-wave-priority.csv",
+    "handoffCsv": "content-draft/tagalog/tagalog-v2-first-wave.csv",
+    "rowMembershipField": "notes",
+    "membershipMarkerPrefix": "relation-sample=",
+    "membershipTokenFormat": "<clusterId>:<role>",
+    "precedenceRules": [
+      "Phrase text, pronunciation, context, and row status still come from the Tagalog CSV handoff files.",
+      "The notes marker only marks which core rows participate in this bounded sample.",
+      "This sidecar owns family-level relation edges and advisory next-step or repair guidance.",
+      "Parked or deferred follow-ons must stay explicit about status and must not count as promoted clusters."
+    ],
+    "membershipRoles": [
+      "anchor",
+      "deferred-boundary",
+      "pickup-candidate",
+      "later-only-hold"
+    ],
+    "rowOutcomeCsv": "content-draft/tagalog/tagalog-v2-first-wave.csv",
+    "rowOutcomePriorityCsv": "content-draft/tagalog/first-wave-priority.csv",
+    "rowOutcomeLedgerRule": "Use the 24-row outcome ledger to retrieve the full prep-only starter, deferred, pickup, and later-only contract without inferring hidden promotion."
+  },
+  "relationTypes": [
+    {
+      "id": "reply_to",
+      "description": "The target family is a direct reply or acknowledgment to the current family."
+    },
+    {
+      "id": "likely_answer_to",
+      "description": "The target family is a likely thing the traveler may hear back after saying the current family."
+    },
+    {
+      "id": "next_step_after",
+      "description": "The target family is the most likely next useful traveler move."
+    },
+    {
+      "id": "repair_for",
+      "description": "The target family is the safer repair branch when the current family is not enough."
+    },
+    {
+      "id": "escalation_for",
+      "description": "The target family is a stronger fallback when the current family still is not enough."
+    },
+    {
+      "id": "same_need_alt_context",
+      "description": "The target family solves a similar need in a nearby context."
+    },
+    {
+      "id": "see_also",
+      "description": "The target family is nearby utility worth surfacing without implying strict sequence."
+    }
+  ],
+  "parkedFamilyCandidates": [
+    {
+      "familyId": "tagalog-directions-1",
+      "familyTitle": "Excuse me, how do I get to this place?",
+      "scenarioId": "directions",
+      "sourcePhraseId": "tagalog-directions-1",
+      "currentStatus": "drafted",
+      "followOnClass": "recommended-next-pass-pickup",
+      "followOnClusterId": "tagalog-next-pass-pickup",
+      "reopenOrder": 1,
+      "anchorPhraseId": "tagalog-directions-1",
+      "shortestFormPhraseId": "tagalog-directions-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-directions-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "retrievalNote": "Map-showing stays the first pickup because it closes the biggest current directions gap and routes cleanly back into the live starter direction rows.",
+      "note": "Strongest parked row; useful map-showing opener, but it still wants native confidence before promotion.",
+      "relationClusterId": "tagalog-directions-map-showing",
+      "familyRole": "pickup-candidate"
+    },
+    {
+      "familyId": "tagalog-hotel-hostel-1",
+      "familyTitle": "I have a reservation",
+      "scenarioId": "hotel-hostel",
+      "sourcePhraseId": "tagalog-hotel-hostel-1",
+      "currentStatus": "drafted",
+      "followOnClass": "recommended-next-pass-pickup",
+      "followOnClusterId": "tagalog-next-pass-pickup",
+      "reopenOrder": 2,
+      "anchorPhraseId": "tagalog-hotel-hostel-1",
+      "shortestFormPhraseId": "tagalog-hotel-hostel-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-hotel-hostel-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "retrievalNote": "Reservation stays adjacent to check-in so the next hotel pickup can start from one arrival desk sequence instead of separate backlog rows.",
+      "note": "Useful arrival follow-on, but reservation borrowing still needs hotel-language review.",
+      "relationClusterId": "tagalog-hotel-reservation",
+      "familyRole": "pickup-candidate"
+    },
+    {
+      "familyId": "tagalog-hotel-hostel-2",
+      "familyTitle": "I'd like to check in",
+      "scenarioId": "hotel-hostel",
+      "sourcePhraseId": "tagalog-hotel-hostel-2",
+      "currentStatus": "drafted",
+      "followOnClass": "recommended-next-pass-pickup",
+      "followOnClusterId": "tagalog-next-pass-pickup",
+      "reopenOrder": 3,
+      "anchorPhraseId": "tagalog-hotel-hostel-2",
+      "shortestFormPhraseId": "tagalog-hotel-hostel-2",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-hotel-hostel-5",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "retrievalNote": "Check-in remains the second arrival-desk move and should keep routing forward to the first room-issue branch instead of floating as an isolated hotel row.",
+      "note": "Keep adjacent to reservation work; mixed-English check-in wording still needs review.",
+      "relationClusterId": "tagalog-hotel-check-in",
+      "familyRole": "pickup-candidate"
+    },
+    {
+      "familyId": "tagalog-hotel-hostel-5",
+      "familyTitle": "The air conditioning isn't working",
+      "scenarioId": "hotel-hostel",
+      "sourcePhraseId": "tagalog-hotel-hostel-5",
+      "currentStatus": "drafted",
+      "followOnClass": "recommended-next-pass-pickup",
+      "followOnClusterId": "tagalog-next-pass-pickup",
+      "reopenOrder": 4,
+      "anchorPhraseId": "tagalog-hotel-hostel-5",
+      "shortestFormPhraseId": "tagalog-hotel-hostel-5",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "retrievalNote": "The room-issue branch stays in the same pickup cluster so the arrival desk and first in-room problem live on one hotel relation path.",
+      "note": "Useful room-issue branch, but aircon borrowing still needs the same hotel-language review lane.",
+      "relationClusterId": "tagalog-hotel-aircon-repair",
+      "familyRole": "pickup-candidate"
+    },
+    {
+      "familyId": "tagalog-convenience-store-6",
+      "familyTitle": "Can I pay by card?",
+      "scenarioId": "convenience-store",
+      "sourcePhraseId": "tagalog-convenience-store-6",
+      "currentStatus": "drafted",
+      "followOnClass": "recommended-next-pass-pickup",
+      "followOnClusterId": "tagalog-next-pass-pickup",
+      "reopenOrder": 5,
+      "anchorPhraseId": "tagalog-convenience-store-6",
+      "shortestFormPhraseId": "tagalog-convenience-store-6",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "retrievalNote": "Card payment remains the last next-pass pickup because it is broader than the cash declaration but still needs the same loanword and service-register caution.",
+      "note": "Best payment follow-on after the hotel and directions pickup set is resolved.",
+      "relationClusterId": "tagalog-store-card-payment",
+      "familyRole": "pickup-candidate"
+    },
+    {
+      "familyId": "tagalog-simple-problems-7",
+      "familyTitle": "Could you call them for me?",
+      "scenarioId": "simple-problems",
+      "sourcePhraseId": "tagalog-simple-problems-7",
+      "currentStatus": "drafted",
+      "followOnClass": "later-only-hold",
+      "followOnClusterId": "tagalog-later-only-hold",
+      "reopenOrder": null,
+      "anchorPhraseId": "tagalog-simple-problems-7",
+      "shortestFormPhraseId": "tagalog-simple-problems-7",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "retrievalNote": "The escalation branch stays visible for recovery design, but it remains behind the stronger directions, hotel, and card-payment pickup set.",
+      "note": "Escalation utility is real, but register and pronoun risk keep it behind the stronger pickup set.",
+      "relationClusterId": "tagalog-escalation-call-for-me",
+      "familyRole": "later-only-hold"
+    },
+    {
+      "familyId": "tagalog-grab-taxi-7",
+      "familyTitle": "I'll pay in cash",
+      "scenarioId": "grab-taxi",
+      "sourcePhraseId": "tagalog-grab-taxi-7",
+      "currentStatus": "drafted",
+      "followOnClass": "later-only-hold",
+      "followOnClusterId": "tagalog-later-only-hold",
+      "reopenOrder": null,
+      "anchorPhraseId": "tagalog-grab-taxi-7",
+      "shortestFormPhraseId": "tagalog-grab-taxi-7",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "retrievalNote": "Cash stays as a visible later-only ride follow-on, but it must not outrank the broader card-payment branch.",
+      "note": "Narrower than the broader card-payment check, so it stays behind the stronger pickup set.",
+      "relationClusterId": "tagalog-ride-cash-payment",
+      "familyRole": "later-only-hold"
+    },
+    {
+      "familyId": "tagalog-polite-basics-4",
+      "familyTitle": "No thanks, I'm okay",
+      "scenarioId": "polite-basics",
+      "sourcePhraseId": "tagalog-polite-basics-4",
+      "currentStatus": "first-wave-deferred",
+      "followOnClass": "deferred-review",
+      "reopenOrder": null,
+      "followOnClusterId": "tagalog-deferred-boundary",
+      "anchorPhraseId": "tagalog-polite-basics-4",
+      "shortestFormPhraseId": "tagalog-polite-basics-4",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": "tagalog-polite-basics-2",
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "retrievalNote": "The refusal row stays a visible boundary only. If a future detail surface exposes it, it should route back into thanks or the repair lane instead of reading like a promoted starter family.",
+      "note": "Visible honesty boundary only; keep out of the promoted cluster count until refusal-tone review lands.",
+      "relationClusterId": "tagalog-polite-decline-boundary",
+      "familyRole": "deferred-boundary"
+    }
+  ],
+  "retrievalContract": {
+    "version": 2,
+    "outcomeCounts": {
+      "starter": 16,
+      "deferred": 1,
+      "nextPassExpansion": 5,
+      "laterOnlyHold": 2,
+      "total": 24
+    },
+    "rowLinkedCsvFields": [
+      "relation_cluster_id",
+      "family_role",
+      "anchor_phrase_id",
+      "shortest_form_phrase_id",
+      "clearer_or_more_polite_phrase_id",
+      "likely_reply_family",
+      "primary_next_family",
+      "repair_family",
+      "parked_follow_on_family",
+      "parked_follow_on_class"
+    ],
+    "statusNormalization": {
+      "baseRowStatusField": "currentStatus",
+      "followOnClassField": "followOnClass",
+      "relationTargetStatusField": "targetStatus",
+      "relationTargetFollowOnClassField": "targetFollowOnClass",
+      "note": "Keep real row status and follow-on class separate so prepared-next relation links do not invent hybrid pseudo-status values."
+    },
+    "starterFamilyIds": [
+      "tagalog-simple-problems-2",
+      "tagalog-simple-problems-3",
+      "tagalog-grab-taxi-1",
+      "tagalog-grab-taxi-3",
+      "tagalog-asking-price-1",
+      "tagalog-convenience-store-1",
+      "tagalog-street-food-3",
+      "tagalog-directions-2",
+      "tagalog-directions-3",
+      "tagalog-polite-basics-5",
+      "tagalog-polite-basics-2",
+      "tagalog-simple-problems-6",
+      "tagalog-street-food-7",
+      "tagalog-asking-price-6",
+      "tagalog-asking-price-7",
+      "tagalog-polite-basics-3"
+    ],
+    "deferredBoundaryFamilyIds": [
+      "tagalog-polite-basics-4"
+    ],
+    "followOnClusters": [
+      {
+        "clusterId": "tagalog-next-pass-pickup",
+        "followOnClass": "recommended-next-pass-pickup",
+        "summary": "Ordered pickup cluster covering map-showing first, then hotel arrival and room issue, then card payment.",
+        "unlockRule": "Reopen in the listed order only. Keep the five rows adjacent so downstream pickup can recover one travel path instead of a loose parked list.",
+        "familyIds": [
+          "tagalog-directions-1",
+          "tagalog-hotel-hostel-1",
+          "tagalog-hotel-hostel-2",
+          "tagalog-hotel-hostel-5",
+          "tagalog-convenience-store-6"
+        ]
+      },
+      {
+        "clusterId": "tagalog-later-only-hold",
+        "followOnClass": "later-only-hold",
+        "summary": "Visible later-only hold set for escalation and cash branches that remain behind the stronger pickup cluster.",
+        "unlockRule": "Reopen only after the five-row pickup cluster is promoted or explicitly rejected in order.",
+        "familyIds": [
+          "tagalog-simple-problems-7",
+          "tagalog-grab-taxi-7"
+        ]
+      }
+    ],
+    "rowOutcomeCsv": "content-draft/tagalog/tagalog-v2-first-wave.csv",
+    "rowOutcomePriorityCsv": "content-draft/tagalog/first-wave-priority.csv",
+    "rowOutcomeLedgerCount": 24,
+    "rowOutcomeLedgerRoles": [
+      "anchor",
+      "deferred-boundary",
+      "pickup-candidate",
+      "later-only-hold"
+    ],
+    "rowOutcomeCsvOrder": "Rows 1-16 stay starter-core anchors, row 17 stays the deferred refusal boundary, rows 18-22 stay the ordered next-pass pickup cluster, and rows 23-24 stay later-only holds."
+  },
+  "deferredBoundaryFamilies": [
+    {
+      "familyId": "tagalog-polite-basics-4",
+      "familyTitle": "No thanks, I'm okay",
+      "scenarioId": "polite-basics",
+      "sourcePhraseId": "tagalog-polite-basics-4",
+      "currentStatus": "first-wave-deferred",
+      "followOnClass": "deferred-review",
+      "anchorPhraseId": "tagalog-polite-basics-4",
+      "shortestFormPhraseId": "tagalog-polite-basics-4",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "likelyReplyFamilyId": "tagalog-polite-basics-2",
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "youMayHearSignals": [
+        {
+          "signalText": "Okay, maybe later.",
+          "sourcePhraseId": "tagalog-polite-basics-4",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "courtesy-close",
+          "familyId": "tagalog-polite-basics-2",
+          "phraseId": "tagalog-polite-basics-2",
+          "note": "If the refusal lands cleanly, the safest visible close is still a quick thank you.",
+          "targetStatus": "first-wave-core"
+        },
+        {
+          "kind": "repair-branch",
+          "familyId": "tagalog-simple-problems-2",
+          "phraseId": "tagalog-simple-problems-2",
+          "note": "If the seller keeps explaining or offering things you cannot follow, route back into the direct repair branch.",
+          "targetStatus": "first-wave-core"
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-polite-basics-2",
+          "targetStatus": "first-wave-core",
+          "reason": "The refusal boundary should close back into the courtesy lane rather than float as a promoted utility family."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-simple-problems-2",
+          "targetStatus": "first-wave-core",
+          "reason": "If the decline does not land or the follow-up becomes hard to parse, the user needs the direct repair branch immediately."
+        }
+      ],
+      "note": "Visible deferred boundary only; do not count this family inside the promoted starter cluster count.",
+      "relationClusterId": "tagalog-polite-decline-boundary",
+      "familyRole": "deferred-boundary"
+    }
+  ],
+  "clusters": [
+    {
+      "clusterId": "tagalog-repair-understand",
+      "coverageMoment": "repair",
+      "scenarioId": "simple-problems",
+      "familyId": "tagalog-simple-problems-2",
+      "familyTitle": "I don't understand",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-simple-problems-2",
+      "shortestFormPhraseId": "tagalog-simple-problems-2",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "repair-branch",
+          "familyId": "tagalog-simple-problems-3",
+          "phraseId": "tagalog-simple-problems-3",
+          "note": "The cleanest next move is usually to ask the speaker to slow down."
+        },
+        {
+          "kind": "escalation",
+          "familyId": "tagalog-simple-problems-7",
+          "phraseId": "tagalog-simple-problems-7",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "later-only-hold",
+          "note": "If the conversation still is not landing, the later-hold call-for-me branch is the stronger fallback."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-simple-problems-3",
+          "reason": "Slower speech is the fastest repair after admitting you do not understand."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-directions-1",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "Showing the pinned place is a practical recovery when the hard part is the destination itself."
+        },
+        {
+          "relationType": "escalation_for",
+          "targetFamilyId": "tagalog-simple-problems-7",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "later-only-hold",
+          "reason": "Calling for help is useful but intentionally parked behind stronger pickup rows."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-repair-slower",
+      "coverageMoment": "repair",
+      "scenarioId": "simple-problems",
+      "familyId": "tagalog-simple-problems-3",
+      "familyTitle": "Can you speak a little slower?",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-simple-problems-3",
+      "shortestFormPhraseId": "tagalog-simple-problems-3",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "acknowledgment",
+          "familyId": "tagalog-polite-basics-3",
+          "phraseId": "tagalog-polite-basics-3",
+          "note": "A respectful acknowledgment is a likely short close after the speaker slows down."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "reply_to",
+          "targetFamilyId": "tagalog-simple-problems-2",
+          "reason": "This family is the natural follow-up to the direct understanding repair."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-polite-basics-3",
+          "reason": "A brief acknowledgment is the cleanest close once the pace improves."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-directions-1",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "If the missing piece is a place name, the parked map-showing line is still the better fallback."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-ride-destination",
+      "coverageMoment": "transport",
+      "scenarioId": "grab-taxi",
+      "familyId": "tagalog-grab-taxi-1",
+      "familyTitle": "Please take me here",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-grab-taxi-1",
+      "shortestFormPhraseId": "tagalog-grab-taxi-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "Here or the next entrance?",
+          "sourcePhraseId": "tagalog-grab-taxi-1",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "next-step",
+          "familyId": "tagalog-grab-taxi-3",
+          "phraseId": "tagalog-grab-taxi-3",
+          "note": "Once the driver understands the destination, the next high-value move is often telling them where to stop."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-grab-taxi-3",
+          "reason": "Destination and drop-off control are the two most practical ride-control moves in the current starter slice."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-simple-problems-2",
+          "reason": "If the driver starts speaking too quickly, the repair lane matters immediately."
+        },
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "tagalog-directions-1",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "The parked map-showing line solves the same destination problem in a more explicit way."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-ride-stop",
+      "coverageMoment": "transport",
+      "scenarioId": "grab-taxi",
+      "familyId": "tagalog-grab-taxi-3",
+      "familyTitle": "You can stop here",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-grab-taxi-3",
+      "shortestFormPhraseId": "tagalog-grab-taxi-3",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "courtesy-close",
+          "familyId": "tagalog-polite-basics-2",
+          "phraseId": "tagalog-polite-basics-2",
+          "note": "Thank you is the cleanest close once the stop lands."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-grab-taxi-1",
+          "reason": "This family usually appears on the same ride-control surface as the destination line."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-polite-basics-2",
+          "reason": "The travel exchange usually closes with a quick thank you."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-grab-taxi-7",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "later-only-hold",
+          "reason": "Cash remains a visible but intentionally parked payment follow-on."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-price-check",
+      "coverageMoment": "buying",
+      "scenarioId": "asking-price",
+      "familyId": "tagalog-asking-price-1",
+      "familyTitle": "How much is this?",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-asking-price-1",
+      "shortestFormPhraseId": "tagalog-asking-price-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "One hundred, cash or card?",
+          "sourcePhraseId": "tagalog-asking-price-1",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "comparison",
+          "familyId": "tagalog-asking-price-6",
+          "phraseId": "tagalog-asking-price-6",
+          "note": "If the first option is not right, the next likely move is to ask for another one."
+        },
+        {
+          "kind": "decision-branch",
+          "familyId": "tagalog-asking-price-7",
+          "phraseId": "tagalog-asking-price-7",
+          "note": "If the price works, the traveler often moves straight to the commit phrase."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-asking-price-6",
+          "reason": "Comparison shopping is the most common next move after the first price quote."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-asking-price-7",
+          "reason": "The current starter slice needs a clean branch from quote to purchase commit."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-convenience-store-6",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "Card payment stays visible as a parked follow-on without being promoted yet."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-store-water",
+      "coverageMoment": "store",
+      "scenarioId": "convenience-store",
+      "familyId": "tagalog-convenience-store-1",
+      "familyTitle": "A bottle of water, please",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-convenience-store-1",
+      "shortestFormPhraseId": "tagalog-convenience-store-1",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "price-check",
+          "familyId": "tagalog-asking-price-1",
+          "phraseId": "tagalog-asking-price-1",
+          "note": "A quick price check is the most likely next move for this convenience-store ask."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-asking-price-1",
+          "reason": "Water purchase utility improves when the traveler can move directly into price confirmation."
+        },
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "tagalog-street-food-3",
+          "reason": "Hydration and spice-control often live on the same practical food-and-drink surface."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-convenience-store-6",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "Card payment is the nearby parked follow-on once the stronger pickup set is reopened."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-food-not-spicy",
+      "coverageMoment": "food",
+      "scenarioId": "street-food",
+      "familyId": "tagalog-street-food-3",
+      "familyTitle": "Not spicy, please",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-street-food-3",
+      "shortestFormPhraseId": "tagalog-street-food-3",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "order-follow-up",
+          "familyId": "tagalog-street-food-7",
+          "phraseId": "tagalog-street-food-7",
+          "note": "Takeaway is a practical next branch once the food preference is clear."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-street-food-7",
+          "reason": "Takeaway is one of the most practical nearby food actions in the current starter slice."
+        },
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "tagalog-convenience-store-1",
+          "reason": "Water is a nearby comfort need even though it lives in a store context instead of a stall context."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-simple-problems-2",
+          "reason": "If the server starts explaining ingredients or options too quickly, the repair lane matters immediately."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-directions-near",
+      "coverageMoment": "directions",
+      "scenarioId": "directions",
+      "familyId": "tagalog-directions-2",
+      "familyTitle": "Is it near here?",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-directions-2",
+      "shortestFormPhraseId": "tagalog-directions-2",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "Just a few minutes, maybe walkable.",
+          "sourcePhraseId": "tagalog-directions-2",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "distance-check",
+          "familyId": "tagalog-directions-3",
+          "phraseId": "tagalog-directions-3",
+          "note": "If the answer is vague, the next useful question is usually how long the walk will take."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-directions-3",
+          "reason": "Near-here and walk-time checks belong on the same direction-repair surface."
+        },
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "tagalog-grab-taxi-1",
+          "reason": "If the place is not near, the traveler often jumps from walking to ride-control."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-directions-1",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "The parked map-showing line is the cleaner fallback if naming the place is the real blocker."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-directions-walk-time",
+      "coverageMoment": "directions",
+      "scenarioId": "directions",
+      "familyId": "tagalog-directions-3",
+      "familyTitle": "How long if I walk?",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-directions-3",
+      "shortestFormPhraseId": "tagalog-directions-3",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "transport-branch",
+          "familyId": "tagalog-grab-taxi-1",
+          "phraseId": "tagalog-grab-taxi-1",
+          "note": "If the walk is too long or unclear, the traveler often jumps straight to ride-control."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "same_need_alt_context",
+          "targetFamilyId": "tagalog-grab-taxi-1",
+          "reason": "Walking versus riding is the main decision boundary this family feeds."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-polite-basics-2",
+          "reason": "A simple thank you is the cleanest close once the answer is clear."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-simple-problems-2",
+          "reason": "If the timing explanation is too fast or too detailed, the traveler needs the repair lane."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-polite-excuse-me",
+      "coverageMoment": "courtesy",
+      "scenarioId": "polite-basics",
+      "familyId": "tagalog-polite-basics-5",
+      "familyTitle": "Excuse me",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-polite-basics-5",
+      "shortestFormPhraseId": "tagalog-polite-basics-5",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "question-branch",
+          "familyId": "tagalog-asking-price-1",
+          "phraseId": "tagalog-asking-price-1",
+          "note": "Price-checking is one of the most common questions that follows a polite opener."
+        },
+        {
+          "kind": "question-branch",
+          "familyId": "tagalog-directions-1",
+          "phraseId": "tagalog-directions-1",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "note": "The parked map-showing line is the best next-step candidate when the need is finding a place."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-asking-price-1",
+          "reason": "Shopping questions are a common follow-up after this polite opener."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-directions-1",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "Map-showing remains the most useful parked follow-on after a polite attention-getter."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-simple-problems-2",
+          "reason": "If the conversation starts moving too quickly right after the opener, the repair lane is the safest fallback."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-polite-thank-you",
+      "coverageMoment": "courtesy",
+      "scenarioId": "polite-basics",
+      "familyId": "tagalog-polite-basics-2",
+      "familyTitle": "Thank you",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-polite-basics-2",
+      "shortestFormPhraseId": "tagalog-polite-basics-2",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "You're welcome / okay.",
+          "sourcePhraseId": "tagalog-polite-basics-2",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "acknowledgment",
+          "familyId": "tagalog-polite-basics-3",
+          "phraseId": "tagalog-polite-basics-3",
+          "note": "A respectful acknowledgment is a likely short reply after thanks.",
+          "targetStatus": "first-wave-core"
+        },
+        {
+          "kind": "deferred-boundary",
+          "familyId": "tagalog-polite-basics-4",
+          "phraseId": "tagalog-polite-basics-4",
+          "note": "If the moment is really a polite decline rather than a thank-you close, keep the refusal row visible as a deferred boundary only.",
+          "targetStatus": "first-wave-deferred",
+          "targetFollowOnClass": "deferred-review"
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "likely_answer_to",
+          "targetFamilyId": "tagalog-polite-basics-3",
+          "targetStatus": "first-wave-core",
+          "reason": "A short respectful acknowledgment is a plausible reply after the traveler says thank you."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-polite-basics-4",
+          "targetStatus": "first-wave-deferred",
+          "targetFollowOnClass": "deferred-review",
+          "reason": "The deferred refusal line stays visible as a boundary case, not as a promoted courtesy family."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-medical-doctor",
+      "coverageMoment": "medical",
+      "scenarioId": "simple-problems",
+      "familyId": "tagalog-simple-problems-6",
+      "familyTitle": "I need a doctor",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-simple-problems-6",
+      "shortestFormPhraseId": "tagalog-simple-problems-6",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [
+        {
+          "signalText": "Wait here, we can call someone.",
+          "sourcePhraseId": "tagalog-simple-problems-6",
+          "advisoryOnly": true
+        }
+      ],
+      "possibleTravelerResponses": [
+        {
+          "kind": "attention-getter",
+          "familyId": "tagalog-polite-basics-5",
+          "phraseId": "tagalog-polite-basics-5",
+          "note": "The traveler may still need a polite attention-getter before delivering the urgent request."
+        },
+        {
+          "kind": "escalation",
+          "familyId": "tagalog-simple-problems-7",
+          "phraseId": "tagalog-simple-problems-7",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "later-only-hold",
+          "note": "Call-for-me remains the visible escalation branch, but it stays parked until stronger rows are cleared."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-polite-basics-5",
+          "reason": "Getting attention politely still matters in many non-emergency medical situations."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-simple-problems-2",
+          "reason": "If the response is too fast or too detailed, the user still needs the direct repair branch."
+        },
+        {
+          "relationType": "escalation_for",
+          "targetFamilyId": "tagalog-simple-problems-7",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "later-only-hold",
+          "reason": "Calling someone for the traveler is useful but intentionally kept in the later-only hold lane."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-food-takeaway",
+      "coverageMoment": "food",
+      "scenarioId": "street-food",
+      "familyId": "tagalog-street-food-7",
+      "familyTitle": "Please pack this to go",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-street-food-7",
+      "shortestFormPhraseId": "tagalog-street-food-7",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "courtesy-close",
+          "familyId": "tagalog-polite-basics-2",
+          "phraseId": "tagalog-polite-basics-2",
+          "note": "Thank you is the cleanest close once the takeaway request is understood."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-street-food-3",
+          "reason": "Food preference and takeaway live on the same practical food surface."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-polite-basics-2",
+          "reason": "A quick thank you usually closes the food-counter exchange."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-asking-price-7",
+          "reason": "The purchase-commit family is a nearby utility branch when the traveler is deciding whether to take the item."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-price-compare",
+      "coverageMoment": "buying",
+      "scenarioId": "asking-price",
+      "familyId": "tagalog-asking-price-6",
+      "familyTitle": "Please show me another one",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-asking-price-6",
+      "shortestFormPhraseId": "tagalog-asking-price-6",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "decision-branch",
+          "familyId": "tagalog-asking-price-7",
+          "phraseId": "tagalog-asking-price-7",
+          "note": "Once the better option is visible, the next likely move is to commit to it."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-asking-price-1",
+          "reason": "Comparison shopping still sits under the same price-check surface."
+        },
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-asking-price-7",
+          "reason": "The current sample should let the traveler move cleanly from comparison to commit."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-convenience-store-6",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "Payment method stays visible as the next parked follow-on once the stronger pickup set is reopened."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-price-commit",
+      "coverageMoment": "buying",
+      "scenarioId": "asking-price",
+      "familyId": "tagalog-asking-price-7",
+      "familyTitle": "I'll take this one",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-asking-price-7",
+      "shortestFormPhraseId": "tagalog-asking-price-7",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "courtesy-close",
+          "familyId": "tagalog-polite-basics-2",
+          "phraseId": "tagalog-polite-basics-2",
+          "note": "A quick thank you is the cleanest close once the purchase decision is made."
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "next_step_after",
+          "targetFamilyId": "tagalog-polite-basics-2",
+          "reason": "Many short purchase exchanges simply close with thanks once the item is chosen."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-convenience-store-6",
+          "targetStatus": "drafted",
+          "targetFollowOnClass": "recommended-next-pass-pickup",
+          "reason": "Card payment remains the most relevant parked follow-on after a purchase commit."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-asking-price-1",
+          "reason": "The traveler often jumps between commit and renewed price clarification in the same browse surface."
+        }
+      ]
+    },
+    {
+      "clusterId": "tagalog-polite-acknowledge",
+      "coverageMoment": "courtesy",
+      "scenarioId": "polite-basics",
+      "familyId": "tagalog-polite-basics-3",
+      "familyTitle": "Yes, respectfully / I understand",
+      "accessTier": "starter",
+      "anchorPhraseId": "tagalog-polite-basics-3",
+      "shortestFormPhraseId": "tagalog-polite-basics-3",
+      "clearerFormPhraseId": null,
+      "morePoliteFormPhraseId": null,
+      "youMayHearSignals": [],
+      "possibleTravelerResponses": [
+        {
+          "kind": "courtesy-close",
+          "familyId": "tagalog-polite-basics-2",
+          "phraseId": "tagalog-polite-basics-2",
+          "note": "After a respectful acknowledgment, the conversation often closes with thanks.",
+          "targetStatus": "first-wave-core"
+        },
+        {
+          "kind": "deferred-boundary",
+          "familyId": "tagalog-polite-basics-4",
+          "phraseId": "tagalog-polite-basics-4",
+          "note": "If the moment shifts from acknowledgment into a polite decline, keep the refusal row visible as a deferred boundary only.",
+          "targetStatus": "first-wave-deferred",
+          "targetFollowOnClass": "deferred-review"
+        }
+      ],
+      "familyRelations": [
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-polite-basics-2",
+          "targetStatus": "first-wave-core",
+          "reason": "Respectful acknowledgment and thanks are the two main courtesy closers in the current starter slice."
+        },
+        {
+          "relationType": "repair_for",
+          "targetFamilyId": "tagalog-simple-problems-2",
+          "targetStatus": "first-wave-core",
+          "reason": "If the traveler nodded along but still is lost, the repair branch must stay nearby."
+        },
+        {
+          "relationType": "see_also",
+          "targetFamilyId": "tagalog-polite-basics-4",
+          "targetStatus": "first-wave-deferred",
+          "targetFollowOnClass": "deferred-review",
+          "reason": "The refusal row is a visible boundary neighbor, but it stays outside the promoted courtesy cluster."
+        }
+      ]
+    }
+  ],
+  "rowOutcomeLedgerCount": 24,
+  "rowOutcomeLedger": [
+    {
+      "rank": 1,
+      "phraseId": "tagalog-simple-problems-2",
+      "scenarioId": "simple-problems",
+      "englishText": "I don't understand",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-repair-understand",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-simple-problems-2",
+      "shortestFormPhraseId": "tagalog-simple-problems-2",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-simple-problems-3",
+      "repairFamilyId": "tagalog-directions-1",
+      "parkedFollowOnFamilyId": "tagalog-simple-problems-7",
+      "parkedFollowOnClass": "later-only-hold",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core repair phrase"
+    },
+    {
+      "rank": 2,
+      "phraseId": "tagalog-simple-problems-3",
+      "scenarioId": "simple-problems",
+      "englishText": "Can you speak a little slower?",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-repair-slower",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-simple-problems-3",
+      "shortestFormPhraseId": "tagalog-simple-problems-3",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": "tagalog-polite-basics-3",
+      "primaryNextFamilyId": "tagalog-polite-basics-3",
+      "repairFamilyId": "tagalog-directions-1",
+      "parkedFollowOnFamilyId": "tagalog-directions-1",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core slower speech request"
+    },
+    {
+      "rank": 3,
+      "phraseId": "tagalog-grab-taxi-1",
+      "scenarioId": "grab-taxi",
+      "englishText": "Please take me here",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-ride-destination",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-grab-taxi-1",
+      "shortestFormPhraseId": "tagalog-grab-taxi-1",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-grab-taxi-3",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-directions-1",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core show-screen ride control"
+    },
+    {
+      "rank": 4,
+      "phraseId": "tagalog-grab-taxi-3",
+      "scenarioId": "grab-taxi",
+      "englishText": "You can stop here",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-ride-stop",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-grab-taxi-3",
+      "shortestFormPhraseId": "tagalog-grab-taxi-3",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-grab-taxi-7",
+      "parkedFollowOnClass": "later-only-hold",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core drop-off control"
+    },
+    {
+      "rank": 5,
+      "phraseId": "tagalog-asking-price-1",
+      "scenarioId": "asking-price",
+      "englishText": "How much is this?",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-price-check",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-asking-price-1",
+      "shortestFormPhraseId": "tagalog-asking-price-1",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-asking-price-6",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-convenience-store-6",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core purchase anchor"
+    },
+    {
+      "rank": 6,
+      "phraseId": "tagalog-convenience-store-1",
+      "scenarioId": "convenience-store",
+      "englishText": "A bottle of water, please",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-store-water",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-convenience-store-1",
+      "shortestFormPhraseId": "tagalog-convenience-store-1",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-asking-price-1",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-convenience-store-6",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core low-friction retail line with clearer bottle wording"
+    },
+    {
+      "rank": 7,
+      "phraseId": "tagalog-street-food-3",
+      "scenarioId": "street-food",
+      "englishText": "Not spicy, please",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-food-not-spicy",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-street-food-3",
+      "shortestFormPhraseId": "tagalog-street-food-3",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-street-food-7",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "translate-now",
+      "reviewFlag": "food-review",
+      "summary": "starter handoff core keep food review caution"
+    },
+    {
+      "rank": 8,
+      "phraseId": "tagalog-directions-2",
+      "scenarioId": "directions",
+      "englishText": "Is it near here?",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-directions-near",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-directions-2",
+      "shortestFormPhraseId": "tagalog-directions-2",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-directions-3",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-directions-1",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core navigation repair line"
+    },
+    {
+      "rank": 9,
+      "phraseId": "tagalog-directions-3",
+      "scenarioId": "directions",
+      "englishText": "How long if I walk?",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-directions-walk-time",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-directions-3",
+      "shortestFormPhraseId": "tagalog-directions-3",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-grab-taxi-1",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-directions-1",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core walking decision line phrased as a direct traveler question"
+    },
+    {
+      "rank": 10,
+      "phraseId": "tagalog-polite-basics-5",
+      "scenarioId": "polite-basics",
+      "englishText": "Excuse me",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-polite-excuse-me",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-polite-basics-5",
+      "shortestFormPhraseId": "tagalog-polite-basics-5",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-asking-price-1",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-directions-1",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core neutral polite opener"
+    },
+    {
+      "rank": 11,
+      "phraseId": "tagalog-polite-basics-2",
+      "scenarioId": "polite-basics",
+      "englishText": "Thank you",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-polite-thank-you",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-polite-basics-2",
+      "shortestFormPhraseId": "tagalog-polite-basics-2",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": "tagalog-polite-basics-3",
+      "primaryNextFamilyId": null,
+      "repairFamilyId": null,
+      "parkedFollowOnFamilyId": "tagalog-polite-basics-4",
+      "parkedFollowOnClass": "deferred-review",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core courtesy anchor"
+    },
+    {
+      "rank": 12,
+      "phraseId": "tagalog-simple-problems-6",
+      "scenarioId": "simple-problems",
+      "englishText": "I need a doctor",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-medical-doctor",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-simple-problems-6",
+      "shortestFormPhraseId": "tagalog-simple-problems-6",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-5",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-simple-problems-7",
+      "parkedFollowOnClass": "later-only-hold",
+      "nextAction": "translate-now",
+      "reviewFlag": "medical-review",
+      "summary": "starter handoff core keep medical review caution"
+    },
+    {
+      "rank": 13,
+      "phraseId": "tagalog-street-food-7",
+      "scenarioId": "street-food",
+      "englishText": "Please pack this to go",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-food-takeaway",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-street-food-7",
+      "shortestFormPhraseId": "tagalog-street-food-7",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core takeaway request"
+    },
+    {
+      "rank": 14,
+      "phraseId": "tagalog-asking-price-6",
+      "scenarioId": "asking-price",
+      "englishText": "Please show me another one",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-price-compare",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-asking-price-6",
+      "shortestFormPhraseId": "tagalog-asking-price-6",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-asking-price-7",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-convenience-store-6",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core comparison-shopping line with clearer polite request wording"
+    },
+    {
+      "rank": 15,
+      "phraseId": "tagalog-asking-price-7",
+      "scenarioId": "asking-price",
+      "englishText": "I'll take this one",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-price-commit",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-asking-price-7",
+      "shortestFormPhraseId": "tagalog-asking-price-7",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": "tagalog-convenience-store-6",
+      "parkedFollowOnClass": "recommended-next-pass-pickup",
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core purchase closure line"
+    },
+    {
+      "rank": 16,
+      "phraseId": "tagalog-polite-basics-3",
+      "scenarioId": "polite-basics",
+      "englishText": "Yes, respectfully / I understand",
+      "currentStatus": "first-wave-core",
+      "packBucket": "starter-core",
+      "accessTierCandidate": "starter",
+      "relationClusterId": "tagalog-polite-acknowledge",
+      "familyRole": "anchor",
+      "anchorPhraseId": "tagalog-polite-basics-3",
+      "shortestFormPhraseId": "tagalog-polite-basics-3",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "translate-now",
+      "reviewFlag": "none",
+      "summary": "starter handoff core usage note tightened"
+    },
+    {
+      "rank": 17,
+      "phraseId": "tagalog-polite-basics-4",
+      "scenarioId": "polite-basics",
+      "englishText": "No thanks, I'm okay",
+      "currentStatus": "first-wave-deferred",
+      "packBucket": "deferred-review",
+      "accessTierCandidate": "premium",
+      "relationClusterId": "tagalog-polite-decline-boundary",
+      "familyRole": "deferred-boundary",
+      "anchorPhraseId": "tagalog-polite-basics-4",
+      "shortestFormPhraseId": "tagalog-polite-basics-4",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "keep-deferred-refusal-review",
+      "reviewFlag": "rewrite-before-review",
+      "summary": "deferred boundary after T-114 audit: keep outside the starter handoff until native refusal review confirms the sales-decline tone; if surfaced as a relation branch, route back to thanks or the direct repair lane"
+    },
+    {
+      "rank": 18,
+      "phraseId": "tagalog-directions-1",
+      "scenarioId": "directions",
+      "englishText": "Excuse me, how do I get to this place?",
+      "currentStatus": "drafted",
+      "packBucket": "next-pass-expansion",
+      "accessTierCandidate": null,
+      "relationClusterId": "tagalog-directions-map-showing",
+      "familyRole": "pickup-candidate",
+      "anchorPhraseId": "tagalog-directions-1",
+      "shortestFormPhraseId": "tagalog-directions-1",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-directions-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "ordered-pickup-1-review",
+      "reviewFlag": "native-confidence-review",
+      "summary": "ordered next-pass pickup #1 after T-114 because it is the strongest parked map-showing row and cleanly routes back into the current starter directions rows"
+    },
+    {
+      "rank": 19,
+      "phraseId": "tagalog-hotel-hostel-1",
+      "scenarioId": "hotel-hostel",
+      "englishText": "I have a reservation",
+      "currentStatus": "drafted",
+      "packBucket": "next-pass-expansion",
+      "accessTierCandidate": null,
+      "relationClusterId": "tagalog-hotel-reservation",
+      "familyRole": "pickup-candidate",
+      "anchorPhraseId": "tagalog-hotel-hostel-1",
+      "shortestFormPhraseId": "tagalog-hotel-hostel-1",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-hotel-hostel-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "ordered-pickup-2-review",
+      "reviewFlag": "hotel-language-review",
+      "summary": "ordered next-pass pickup #2 after T-114 because reservation wording is useful but still needs hotel-language review before runtime handoff"
+    },
+    {
+      "rank": 20,
+      "phraseId": "tagalog-hotel-hostel-2",
+      "scenarioId": "hotel-hostel",
+      "englishText": "I'd like to check in",
+      "currentStatus": "drafted",
+      "packBucket": "next-pass-expansion",
+      "accessTierCandidate": null,
+      "relationClusterId": "tagalog-hotel-check-in",
+      "familyRole": "pickup-candidate",
+      "anchorPhraseId": "tagalog-hotel-hostel-2",
+      "shortestFormPhraseId": "tagalog-hotel-hostel-2",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-hotel-hostel-5",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "ordered-pickup-3-review",
+      "reviewFlag": "hotel-language-review",
+      "summary": "ordered next-pass pickup #3 after T-114 because the arrival pair should stay adjacent while mixed-English check-in wording is reviewed"
+    },
+    {
+      "rank": 21,
+      "phraseId": "tagalog-hotel-hostel-5",
+      "scenarioId": "hotel-hostel",
+      "englishText": "The air conditioning isn't working",
+      "currentStatus": "drafted",
+      "packBucket": "next-pass-expansion",
+      "accessTierCandidate": null,
+      "relationClusterId": "tagalog-hotel-aircon-repair",
+      "familyRole": "pickup-candidate",
+      "anchorPhraseId": "tagalog-hotel-hostel-5",
+      "shortestFormPhraseId": "tagalog-hotel-hostel-5",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "ordered-pickup-4-review",
+      "reviewFlag": "hotel-language-review",
+      "summary": "ordered next-pass pickup #4 after T-114 because room-issue usefulness is real but aircon borrowing still needs the same hotel-language review lane"
+    },
+    {
+      "rank": 22,
+      "phraseId": "tagalog-convenience-store-6",
+      "scenarioId": "convenience-store",
+      "englishText": "Can I pay by card?",
+      "currentStatus": "drafted",
+      "packBucket": "next-pass-expansion",
+      "accessTierCandidate": null,
+      "relationClusterId": "tagalog-store-card-payment",
+      "familyRole": "pickup-candidate",
+      "anchorPhraseId": "tagalog-convenience-store-6",
+      "shortestFormPhraseId": "tagalog-convenience-store-6",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "ordered-pickup-5-review",
+      "reviewFlag": "payment-review",
+      "summary": "ordered next-pass pickup #5 after T-114 because card wording is the strongest non-hotel follow-on once the directions and hotel rows are reviewed together"
+    },
+    {
+      "rank": 23,
+      "phraseId": "tagalog-simple-problems-7",
+      "scenarioId": "simple-problems",
+      "englishText": "Could you call them for me?",
+      "currentStatus": "drafted",
+      "packBucket": "later-only-hold",
+      "accessTierCandidate": null,
+      "relationClusterId": "tagalog-escalation-call-for-me",
+      "familyRole": "later-only-hold",
+      "anchorPhraseId": "tagalog-simple-problems-7",
+      "shortestFormPhraseId": "tagalog-simple-problems-7",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "keep-later-only-hold",
+      "reviewFlag": "register-review",
+      "summary": "later-only hold boundary after T-114 because the escalation register risk remains higher than the ordered directions-hotel-card pickup cluster"
+    },
+    {
+      "rank": 24,
+      "phraseId": "tagalog-grab-taxi-7",
+      "scenarioId": "grab-taxi",
+      "englishText": "I'll pay in cash",
+      "currentStatus": "drafted",
+      "packBucket": "later-only-hold",
+      "accessTierCandidate": null,
+      "relationClusterId": "tagalog-ride-cash-payment",
+      "familyRole": "later-only-hold",
+      "anchorPhraseId": "tagalog-grab-taxi-7",
+      "shortestFormPhraseId": "tagalog-grab-taxi-7",
+      "clearerOrMorePolitePhraseId": null,
+      "likelyReplyFamilyId": null,
+      "primaryNextFamilyId": "tagalog-polite-basics-2",
+      "repairFamilyId": "tagalog-simple-problems-2",
+      "parkedFollowOnFamilyId": null,
+      "parkedFollowOnClass": null,
+      "nextAction": "keep-later-only-hold",
+      "reviewFlag": "payment-scope-review",
+      "summary": "later-only hold boundary after T-114 because the cash declaration is narrower than the broader card-payment follow-on and should stay behind the ordered pickup cluster"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "taskId": "T-008",
+  "title": "Desktop Codex automation pilot, Tagalog v2 first-wave authoring scaffold and risk review",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "task-queue-in-app-family-20260418T133446",
+    "label": "desktop-codex-automation"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-18T13:34:46.8662544-05:00",
+    "lastHeartbeatAt": "2026-04-18T13:40:10.7996733-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-18T13:40:10.7996733-05:00"
+  },
+  "locks": {
+    "write": [
+      "tagalog_v2_prep_lane"
+    ],
+    "read": [
+      "shared_phrasebook_truth"
+    ],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-008/result.md",
+    "draftLane": "content-draft/tagalog/",
+    "reviews": ".agent/tasks/T-008/reviews/",
+    "logs": ".agent/tasks/T-008/logs/"
+  },
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "selectionOrder": 1,
+    "reviewersRequired": 4
+  },
+  "lastUpdated": "2026-04-18T13:40:10.7996733-05:00"
+}

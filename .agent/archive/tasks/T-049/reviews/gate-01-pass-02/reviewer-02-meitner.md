@@ -1,0 +1,3 @@
+APPROVE
+
+`E:\AI\SpeakLocal-App-Family\.agent\tasks\T-049\logs\root-cause.md:128-154` now narrows the diagnosis correctly to launch-time path binding, without over-claiming that alias cwd was necessary. The added prototype evidence at `E:\AI\SpeakLocal-App-Family\.agent\tasks\T-049\logs\root-cause.md:87-126` is enough for Gate 1 because it shows the proposed in-scope wrapper can rebind helper paths to `E:\AI\SpeakLocal-App-Family` even when launched from `E:\AI\Viet-Travel-Phrases`. Moving the `replace_with_retry(... destination.resolve())` concern into explicit later verification at `E:\AI\SpeakLocal-App-Family\.agent\tasks\T-049\logs\root-cause.md:156-164` is the right boundary for this gate, so the audit is now accurate enough for Gate 1 to advance.

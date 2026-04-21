@@ -1,0 +1,3 @@
+APPROVE
+
+The corrected verification set is now internally consistent and sufficient for Gate 3: `canonical-root-proof.md:9` shows the live wrappers all ship the same canonical-only retry override and successfully run from `E:\AI\Viet-Travel-Phrases`; `unsupported-runtime-proof.md:13` proves the hardened path fails closed with `no_task`; `meaningful-capable-proof.md:13` proves the same launcher still surfaces real meaningful work; and `alias-path-safety.md:20` closes the degraded-retry alias-collapse gap. Those results now match the final live wrappers in `E:\AI\SpeakLocal-App-Family\.agent\CODEX_DESKTOP_AUTOMATION_PROMPT.txt:17`, `E:\AI\SpeakLocal-App-Family\.agent\QUEUE_START.md:39`, and `E:\AI\SpeakLocal-App-Family\.agent\AUTOMATION.md:29`, so Gate 3 can advance.

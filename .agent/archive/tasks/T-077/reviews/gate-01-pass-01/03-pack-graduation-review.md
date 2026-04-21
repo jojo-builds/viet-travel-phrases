@@ -1,0 +1,3 @@
+Approval: APPROVE
+
+Reasoning: `tagalog-v2-first-wave.csv` parses cleanly as 24 row outcomes with `scenario_id` and `phrase_id` on every row, and the split is correctly bounded at 16 `starter-core`, 6 `premium-follow-on`, and 2 `deferred-review`. The starter-core slice is hardened enough for the next pass because the remaining hotel, payment, aircon, and escalation items are explicitly fenced out as holdouts or deferred rewrites instead of being mixed back into the core. The unresolved reduction is real, not just cosmetic reformatting: the pack now gives the next worker a smaller, clearer starter surface plus named review clusters and next actions.
