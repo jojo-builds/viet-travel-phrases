@@ -14,6 +14,7 @@
 /.agent/coordination/desktop-app-recovery.json
 /.agent/tasks/*/state.json.*.tmp
 /.agent/archive/tasks/*/state.json.*.tmp
+/.agent/archive/tasks/*/logs/*.exe
 
 # Disposable build/export inspection roots
 /tmp-eas-inspect-*/
