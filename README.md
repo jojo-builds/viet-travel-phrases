@@ -16,7 +16,8 @@ Operator entrypoint:
 
 - use `docs/operations/APP_STATUS.md` for the live build/test snapshot and current handoff order
 - use `docs/operations/CURRENT_BLOCKERS.md` for open gates
-- use `docs/operations/TESTING_RUNBOOK.md` plus the OpenClaw build/App Store Connect/device runbooks for the literal next human path
+- use `docs/operations/VIET_TESTFLIGHT_EXECUTION_PACKET.md` as the single ordered checklist for the next human Viet build/TestFlight/device pass
+- use `docs/operations/TESTING_RUNBOOK.md` for the repo-owned validation and sync sequence around that operator run
 
 This README is a landing page only, not the execution authority for the Viet build/test lane.
 
