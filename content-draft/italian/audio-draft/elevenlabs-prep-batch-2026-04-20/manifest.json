@@ -1,0 +1,242 @@
+{
+  "italian-coffee-shop-5": {
+    "phraseId": "italian-coffee-shop-5",
+    "fileName": "italian-coffee-shop-5.mp3",
+    "language": "italian",
+    "text": "Senza zucchero, per favore.",
+    "chars": 27,
+    "generatedAt": "2026-04-20T07:47:09.087Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-coffee-shop-6": {
+    "phraseId": "italian-coffee-shop-6",
+    "fileName": "italian-coffee-shop-6.mp3",
+    "language": "italian",
+    "text": "Da asporto, per favore.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T07:47:10.211Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-street-food-1": {
+    "phraseId": "italian-street-food-1",
+    "fileName": "italian-street-food-1.mp3",
+    "language": "italian",
+    "text": "Una porzione, per favore.",
+    "chars": 25,
+    "generatedAt": "2026-04-20T07:47:11.344Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-street-food-5": {
+    "phraseId": "italian-street-food-5",
+    "fileName": "italian-street-food-5.mp3",
+    "language": "italian",
+    "text": "Avete acqua in bottiglia?",
+    "chars": 25,
+    "generatedAt": "2026-04-20T07:47:12.458Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-grab-taxi-1": {
+    "phraseId": "italian-grab-taxi-1",
+    "fileName": "italian-grab-taxi-1.mp3",
+    "language": "italian",
+    "text": "Mi porti qui, per favore.",
+    "chars": 25,
+    "generatedAt": "2026-04-20T07:47:13.583Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-grab-taxi-3": {
+    "phraseId": "italian-grab-taxi-3",
+    "fileName": "italian-grab-taxi-3.mp3",
+    "language": "italian",
+    "text": "Si fermi qui, per favore.",
+    "chars": 25,
+    "generatedAt": "2026-04-20T07:47:16.788Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-asking-price-1": {
+    "phraseId": "italian-asking-price-1",
+    "fileName": "italian-asking-price-1.mp3",
+    "language": "italian",
+    "text": "Quanto costa questo?",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:47:17.889Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-polite-basics-1": {
+    "phraseId": "italian-polite-basics-1",
+    "fileName": "italian-polite-basics-1.mp3",
+    "language": "italian",
+    "text": "Salve.",
+    "chars": 6,
+    "generatedAt": "2026-04-20T07:47:18.967Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-polite-basics-2": {
+    "phraseId": "italian-polite-basics-2",
+    "fileName": "italian-polite-basics-2.mp3",
+    "language": "italian",
+    "text": "Grazie.",
+    "chars": 7,
+    "generatedAt": "2026-04-20T07:47:20.092Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-polite-basics-5": {
+    "phraseId": "italian-polite-basics-5",
+    "fileName": "italian-polite-basics-5.mp3",
+    "language": "italian",
+    "text": "Scusi.",
+    "chars": 6,
+    "generatedAt": "2026-04-20T07:47:21.169Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-convenience-store-1": {
+    "phraseId": "italian-convenience-store-1",
+    "fileName": "italian-convenience-store-1.mp3",
+    "language": "italian",
+    "text": "Una bottiglia d'acqua, per favore.",
+    "chars": 34,
+    "generatedAt": "2026-04-20T07:47:22.312Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-convenience-store-2": {
+    "phraseId": "italian-convenience-store-2",
+    "fileName": "italian-convenience-store-2.mp3",
+    "language": "italian",
+    "text": "Avete un sacchetto?",
+    "chars": 19,
+    "generatedAt": "2026-04-20T07:47:23.414Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-convenience-store-6": {
+    "phraseId": "italian-convenience-store-6",
+    "fileName": "italian-convenience-store-6.mp3",
+    "language": "italian",
+    "text": "Posso pagare con la carta?",
+    "chars": 26,
+    "generatedAt": "2026-04-20T07:47:24.557Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-convenience-store-7": {
+    "phraseId": "italian-convenience-store-7",
+    "fileName": "italian-convenience-store-7.mp3",
+    "language": "italian",
+    "text": "Mi dà lo scontrino, per favore?",
+    "chars": 31,
+    "generatedAt": "2026-04-20T07:47:25.676Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-hotel-hostel-1": {
+    "phraseId": "italian-hotel-hostel-1",
+    "fileName": "italian-hotel-hostel-1.mp3",
+    "language": "italian",
+    "text": "Ho una prenotazione.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:47:26.801Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-hotel-hostel-2": {
+    "phraseId": "italian-hotel-hostel-2",
+    "fileName": "italian-hotel-hostel-2.mp3",
+    "language": "italian",
+    "text": "Vorrei fare il check-in.",
+    "chars": 24,
+    "generatedAt": "2026-04-20T07:47:27.941Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-hotel-hostel-3": {
+    "phraseId": "italian-hotel-hostel-3",
+    "fileName": "italian-hotel-hostel-3.mp3",
+    "language": "italian",
+    "text": "A che ora è il check-out?",
+    "chars": 25,
+    "generatedAt": "2026-04-20T07:47:29.070Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-directions-2": {
+    "phraseId": "italian-directions-2",
+    "fileName": "italian-directions-2.mp3",
+    "language": "italian",
+    "text": "È vicino?",
+    "chars": 9,
+    "generatedAt": "2026-04-20T07:47:30.191Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-directions-3": {
+    "phraseId": "italian-directions-3",
+    "fileName": "italian-directions-3.mp3",
+    "language": "italian",
+    "text": "Quanto ci vuole a piedi?",
+    "chars": 24,
+    "generatedAt": "2026-04-20T07:47:31.331Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-simple-problems-1": {
+    "phraseId": "italian-simple-problems-1",
+    "fileName": "italian-simple-problems-1.mp3",
+    "language": "italian",
+    "text": "Non trovo la strada.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:47:32.447Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-simple-problems-2": {
+    "phraseId": "italian-simple-problems-2",
+    "fileName": "italian-simple-problems-2.mp3",
+    "language": "italian",
+    "text": "Non capisco.",
+    "chars": 12,
+    "generatedAt": "2026-04-20T07:47:33.570Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-simple-problems-3": {
+    "phraseId": "italian-simple-problems-3",
+    "fileName": "italian-simple-problems-3.mp3",
+    "language": "italian",
+    "text": "Può parlare più piano, per favore?",
+    "chars": 34,
+    "generatedAt": "2026-04-20T07:47:34.754Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-simple-problems-6": {
+    "phraseId": "italian-simple-problems-6",
+    "fileName": "italian-simple-problems-6.mp3",
+    "language": "italian",
+    "text": "Ho bisogno di un medico.",
+    "chars": 24,
+    "generatedAt": "2026-04-20T07:47:35.882Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-simple-problems-7": {
+    "phraseId": "italian-simple-problems-7",
+    "fileName": "italian-simple-problems-7.mp3",
+    "language": "italian",
+    "text": "Può chiamare per me, per favore?",
+    "chars": 32,
+    "generatedAt": "2026-04-20T07:47:37.039Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  }
+}

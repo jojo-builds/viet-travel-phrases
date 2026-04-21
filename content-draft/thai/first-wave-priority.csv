@@ -1,0 +1,39 @@
+rank,scenario_id,phrase_id,english_text,priority_reason,confidence,review_flag
+1,polite-basics,thai-polite-basics-5,"Excuse me","Highest-frequency opener for getting attention and opening short requests across markets rides counters and hotels.",high,politeness-review
+2,polite-basics,thai-polite-basics-2,"Thank you","Essential courtesy phrase that supports the lane's polite default and works across nearly every travel exchange.",high,none
+3,asking-price,thai-asking-price-1,"How much is this","Core purchase and confirmation phrase for markets shops kiosks and quick traveler decisions.",high,none
+4,grab-taxi,thai-grab-taxi-1,"Take me here","Strong show-screen phrase for taxis and ride pickups where the destination pin does most of the work.",high,none
+5,grab-taxi,thai-grab-taxi-8,"Please use the meter","Thailand-specific taxi safeguard that should be drafted early because price trust matters before the ride starts.",high,transport-review
+6,grab-taxi,thai-grab-taxi-3,"You can stop here","High-value drop-off phrase for busy curbs hotel arrivals and ride corrections.",high,none
+7,simple-problems,thai-simple-problems-2,"I do not understand","Top repair phrase for any fast Thai reply and a critical pressure-reduction card for first-time travelers.",high,none
+8,simple-problems,thai-simple-problems-3,"Can you speak a little slower","Pairs with the repair layer and makes the Thai lane more usable before deeper comprehension exists.",high,pronunciation-risk
+9,street-food,thai-street-food-3,"Not spicy please","High-value food comfort phrase that should be translated early and reviewed carefully for natural Thai wording.",high,food-review
+10,street-food,thai-street-food-8,"No ice please","Thailand-specific drink modifier with strong traveler utility in restaurants cafes and casual counters.",high,food-review
+11,hotel-hostel,thai-hotel-hostel-1,"I have a reservation","High-value front-desk phrase that should be translated early because hotel check-in is a common arrival moment.",high,none
+12,hotel-hostel,thai-hotel-hostel-2,"I would like to check in","Companion to reservation lookup and useful when the booking name alone is not enough.",high,none
+13,convenience-store,thai-convenience-store-1,"A bottle of water please","High-frequency purchase that fits convenience stores kiosks and station stops without extra grammar.",high,none
+14,directions,thai-directions-8,"Where is the station","Thailand-specific navigation repair phrase that fits BTS MRT rail and ferry transfer moments.",high,none
+15,convenience-store,thai-convenience-store-6,"Can I pay by card","Useful payment-clarity phrase for smaller counters where card acceptance is uncertain.",medium,money-review
+16,grab-taxi,thai-grab-taxi-7,"I will pay cash","Payment method clarification remains important for taxis rides and some small counters.",medium,money-review
+17,polite-basics,thai-polite-basics-8,"Yes","Fast confirmation token that supports repair moments when the traveler only catches part of the reply.",medium,none
+18,polite-basics,thai-polite-basics-9,"No","Fast correction token for taxi ride shop and hotel misunderstandings.",medium,none
+19,simple-problems,thai-simple-problems-9,"Please repeat that","Core repair phrase for fast Thai replies when the first response was missed.",medium,pronunciation-risk
+20,simple-problems,thai-simple-problems-10,"Can you write it down","High-value recovery phrase when spoken Thai is hard to catch but the traveler can read or compare on screen.",medium,none
+21,simple-problems,thai-simple-problems-11,"Can you show me","Useful fallback when the answer can be pointed to on a screen sign or menu.",medium,none
+22,simple-problems,thai-simple-problems-12,"Can you point","Useful fallback when a physical direction cue is easier than a spoken explanation.",medium,none
+23,simple-problems,thai-simple-problems-13,"How many","Useful for quantity price ticket and count clarification in repair-heavy moments.",medium,none
+24,directions,thai-directions-9,"How many minutes","Useful for route timing pickup waits and short travel-duration clarification.",medium,none
+25,directions,thai-directions-2,"Is it near here","Compact navigation repair phrase that works well with pointing and show-screen behavior.",medium,none
+26,directions,thai-directions-3,"How long on foot","Useful walking-time check for station exits markets and hotel-area routing.",medium,none
+27,polite-basics,thai-polite-basics-1,"Hello","Useful polite opener but slightly lower than excuse me and thank you for pressure-first traveler use.",medium,politeness-review
+28,polite-basics,thai-polite-basics-4,"No thank you","Common decliner that keeps the polite-basic set usable in markets and service moments.",medium,none
+29,street-food,thai-street-food-7,"Pack it to go","Useful takeaway phrase for food stalls and quick restaurant stops.",medium,none
+30,asking-price,thai-asking-price-6,"Show me another one","Better early fit than bargaining-heavy language for item comparison in shops and souvenir counters.",medium,none
+31,convenience-store,thai-convenience-store-7,"Please give me the receipt","Useful follow-through phrase for money disputes reimbursements or expense tracking.",medium,money-review
+32,simple-problems,thai-simple-problems-7,"Please call for me","Helpful escalation phrase for transport hotel or booking friction but should stay review-visible.",medium,expert-review
+33,simple-problems,thai-simple-problems-6,"I need a doctor","Critical safety phrase that belongs in the first wave while remaining explicitly expert-reviewed.",medium,expert-review
+34,simple-problems,thai-simple-problems-8,"Please call the police","Important emergency escalation row that should stay visible early but must keep later expert review.",medium,expert-review
+35,simple-problems,thai-simple-problems-1,"I am lost","High-stress repair phrase that pairs well with map-showing and direction follow-up.",medium,none
+36,coffee-shop,thai-coffee-shop-4,"Just a little ice","Useful drink-adjustment line but likely needs wording review against the stronger no-ice Thai supplemental row.",medium,rewrite-before-translation
+37,directions,thai-directions-1,"Excuse me how do I get to the city center","Baseline direction slot is still usable but likely needs Thai-specific rewriting toward station or landmark wording.",low,rewrite-before-translation
+38,asking-price,thai-asking-price-4,"Can you lower it a little","This may fit some market contexts but should stay low priority and rewrite-reviewed before translation.",low,rewrite-before-translation

@@ -1,0 +1,110 @@
+{
+  "variant": "german",
+  "appId": "german-travel-phrases",
+  "displayName": "SpeakLocal Germany",
+  "language": "German",
+  "languageCode": "de",
+  "country": "Germany",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "german-polite-basics-5",
+    "german-polite-basics-2",
+    "german-grab-taxi-1",
+    "german-convenience-store-6",
+    "german-simple-problems-2"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Use this for cafe, bakery, and takeaway-counter moments; simple drink, sugar, and takeaway language matters more than heavy customization."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Pointing still helps, but short phrases for one portion, bottled water, takeaway, and allergy-sensitive clarification do more work than long ordering sentences."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Showing the address on your phone helps, but the bigger Germany need is clear stop-here, station, and card-or-cash clarification."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Use this mostly for price confirmation, item selection, and receipt clarity; bargaining is low priority for Germany."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "A brief greeting, thanks, and excuse-me phrase cover a large share of everyday Germany travel friction, especially with strangers and staff."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Keep this scenario practical for station kiosks, mini-marts, and drugstores: water, bag, card, and receipt language matters most."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Reservation, check-in, checkout, and luggage help belong first; many front-desk interactions stay brief and formal."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Save the address, station name, and platform details in your phone because transit-heavy directions often hinge on exact place names."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "Start with repair phrases and slower-speech requests before longer explanations; screen-showing helps when fast replies pile up."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Keep small talk light; first-visit comments and food or city compliments are enough for the first authoring wave."
+    }
+  ],
+  "notes": "Shared traveler baseline scaffold for German, now reprioritized toward Germany travel utility and backed by a full 70-row source scaffold plus a ranked first-wave shortlist. Fill translation, pronunciation, and audio posture before runtime wiring."
+}

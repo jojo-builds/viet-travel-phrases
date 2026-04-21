@@ -1,6 +1,7 @@
 {
   "schemaVersion": 3,
   "exportType": "website-phrase-audio-module",
+  "exportedAt": "2026-04-18T09:37:44.117Z",
   "moduleId": "vietnam-phone-basics",
   "moduleSlug": "vietnam-phone-basics",
   "destinationSlug": "vietnam",
@@ -32,11 +33,33 @@
   "transcriptChecked": null,
   "phraseCount": 4,
   "familyCount": 4,
+  "relationCoverage": {
+    "status": "partial",
+    "advisoryOnly": true,
+    "coveredFamilyCount": 1,
+    "coveredPhraseCount": 1,
+    "totalFamilyCount": 4,
+    "coveredFamilyIds": [
+      "v500-phon-inte-powe-my-map-is-not-working"
+    ],
+    "coveredClusterIds": [
+      "viet-phone-map-not-working"
+    ]
+  },
   "articleReference": {
     "primaryLabel": "Install Viet Travel Phrasebook",
     "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
     "secondaryLabel": "Read the SIM and offline guide",
     "secondaryUrl": "/blog/vietnam-sim-esim-offline-setup/"
+  },
+  "trust": {
+    "sourceLabel": "Live Viet starter export",
+    "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+    "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+    "methodologyLabel": "How SpeakLocal builds packs",
+    "methodologyUrl": "/about/",
+    "correctionsLabel": "Report a phrase or audio gap",
+    "correctionsUrl": "/feedback/"
   },
   "cta": {
     "primaryLabel": "Install Viet Travel Phrasebook",
@@ -204,6 +227,43 @@
       "canonicalTargetText": "Bản đồ của tôi không hoạt động",
       "pronunciation": "Ban do cua toi khong hoat dong",
       "context": "Use this when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-phone-map-not-working",
+        "coverageMoment": "phone",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "v500-phon-inte-powe-my-map-is-not-working",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [
+          {
+            "signalText": "The signal is weak here.",
+            "sourcePhraseId": "v500-phon-inte-powe-my-map-is-not-working",
+            "advisoryOnly": true
+          }
+        ],
+        "possibleTravelerResponses": [
+          {
+            "kind": "manual-routing",
+            "familyId": "transport-destination",
+            "note": "If the phone fails completely, the traveler often falls back to showing the destination or saying it directly.",
+            "phraseId": "taxi-1"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-write-down",
+            "reason": "Writing or showing the address is often the fastest recovery when the map dies mid-trip."
+          },
+          {
+            "relationType": "see_also",
+            "targetFamilyId": "transport-destination",
+            "reason": "Map failure and destination handoff often collapse into the same traveler problem."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/v500-phon-inte-powe-my-map-is-not-working.mp3",

@@ -1,6 +1,7 @@
 {
   "schemaVersion": 3,
   "exportType": "website-phrase-audio-module",
+  "exportedAt": "2026-04-18T09:37:44.117Z",
   "moduleId": "vietnam-understanding-repair",
   "moduleSlug": "vietnam-understanding-repair",
   "destinationSlug": "vietnam",
@@ -32,11 +33,39 @@
   "transcriptChecked": null,
   "phraseCount": 4,
   "familyCount": 4,
+  "relationCoverage": {
+    "status": "full",
+    "advisoryOnly": true,
+    "coveredFamilyCount": 4,
+    "coveredPhraseCount": 4,
+    "totalFamilyCount": 4,
+    "coveredFamilyIds": [
+      "repair-understand",
+      "repair-slower",
+      "repair-repeat",
+      "repair-write-down"
+    ],
+    "coveredClusterIds": [
+      "viet-repair-understand",
+      "viet-repair-slower",
+      "viet-repair-repeat",
+      "viet-repair-write-down"
+    ]
+  },
   "articleReference": {
     "primaryLabel": "Install Viet Travel Phrasebook",
     "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
     "secondaryLabel": "See the full Vietnam phrase guide",
     "secondaryUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+  },
+  "trust": {
+    "sourceLabel": "Live Viet starter export",
+    "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+    "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+    "methodologyLabel": "How SpeakLocal builds packs",
+    "methodologyUrl": "/about/",
+    "correctionsLabel": "Report a phrase or audio gap",
+    "correctionsUrl": "/feedback/"
   },
   "cta": {
     "primaryLabel": "Install Viet Travel Phrasebook",
@@ -71,6 +100,48 @@
       "canonicalTargetText": "Tôi không hiểu",
       "pronunciation": "toy khong hyew",
       "context": "Use this when someone is speaking too quickly or using unfamiliar words.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-repair-understand",
+        "coverageMoment": "repair",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "problems-2",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [],
+        "possibleTravelerResponses": [
+          {
+            "kind": "repair-speed",
+            "familyId": "repair-slower",
+            "note": "If the issue is speed rather than vocabulary, slowing the other person down is often the first clean fix.",
+            "phraseId": "problems-3"
+          },
+          {
+            "kind": "repair-escalation",
+            "familyId": "repair-write-down",
+            "note": "Writing is the clean next escalation when a spoken repair still is not enough.",
+            "phraseId": "repair-2"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "repair-slower",
+            "reason": "Speed is often the first thing to fix before jumping straight to written repair."
+          },
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "repair-write-down",
+            "reason": "If speech repair is still failing, written confirmation is the next strongest move."
+          },
+          {
+            "relationType": "see_also",
+            "targetFamilyId": "transport-destination",
+            "reason": "Destination conversations are one of the most common places where this repair branch gets used."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/problems-2.mp3",
@@ -115,6 +186,42 @@
       "canonicalTargetText": "Nói chậm chút được không?",
       "pronunciation": "noy chuhm choot dook khong",
       "context": "Use this when you need the other person to slow down.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-repair-slower",
+        "coverageMoment": "repair",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "problems-3",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": "repair-slower-polite",
+        "youMayHearSignals": [],
+        "possibleTravelerResponses": [
+          {
+            "kind": "repeat-request",
+            "familyId": "repair-repeat",
+            "note": "If slowing down still is not enough, the next move is to ask for the sentence again.",
+            "phraseId": "repair-1"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "see_also",
+            "targetFamilyId": "repair-understand",
+            "reason": "These two families sit side by side on the same repair rail."
+          },
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "repair-repeat",
+            "reason": "After slowing the pace, the traveler often still needs the sentence repeated."
+          },
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "repair-write-down",
+            "reason": "If pace control still fails, written repair is the next strongest move."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/problems-3.mp3",
@@ -159,6 +266,30 @@
       "canonicalTargetText": "Làm ơn nói lại",
       "pronunciation": "lahm uhn noy lie",
       "context": "Use this when you missed the last sentence and need it repeated.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-repair-repeat",
+        "coverageMoment": "repair",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "repair-1",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [],
+        "possibleTravelerResponses": [],
+        "familyRelations": [
+          {
+            "relationType": "see_also",
+            "targetFamilyId": "repair-slower",
+            "reason": "Travelers often bounce between repeat and slow-down requests in the same moment."
+          },
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "repair-write-down",
+            "reason": "If another repeat still fails, written repair is the clean escalation."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/repair-1.mp3",
@@ -204,6 +335,54 @@
       "pronunciation": "vee-et zoong zoop toy",
       "context": "Use this for numbers, names, room numbers, or addresses.",
       "youMayHear": "I will write it here.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-repair-write-down",
+        "coverageMoment": "repair",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "repair-2",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [
+          {
+            "signalText": "I will write it here.",
+            "sourcePhraseId": "repair-2",
+            "advisoryOnly": true
+          }
+        ],
+        "possibleTravelerResponses": [
+          {
+            "kind": "context-return",
+            "familyId": "transport-destination",
+            "note": "Writing often resolves the route or address problem and lets the user return to the destination family.",
+            "phraseId": "taxi-1"
+          },
+          {
+            "kind": "context-return",
+            "familyId": "money-how-much",
+            "note": "Written numbers often resolve the amount problem and let the user return to the price family.",
+            "phraseId": "price-1"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "transport-destination",
+            "reason": "Addresses and destination names are often clearer in writing than in speech."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "money-how-much",
+            "reason": "Written numbers prevent mistakes around prices, totals, and change."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "v500-phon-inte-powe-my-map-is-not-working",
+            "reason": "Showing or writing the destination is often the fastest recovery when the phone map fails mid-trip."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/repair-2.mp3",

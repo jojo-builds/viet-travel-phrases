@@ -1,0 +1,521 @@
+{
+  "quickPhraseSlotIds": [
+    "polite-basics-1",
+    "polite-basics-2",
+    "polite-basics-5",
+    "asking-price-1",
+    "polite-basics-4"
+  ],
+  "scenarios": [
+    {
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Point to the menu if needed and keep the order short when the shop is busy.",
+      "phrases": [
+        {
+          "slotId": "coffee-shop-1",
+          "english": "One iced milk coffee please",
+          "context": "Use this for a standard iced coffee order.",
+          "emoji": "☕"
+        },
+        {
+          "slotId": "coffee-shop-2",
+          "english": "I would like an iced black coffee",
+          "context": "Use this when you want coffee without milk.",
+          "emoji": "🥤"
+        },
+        {
+          "slotId": "coffee-shop-3",
+          "english": "I would like an iced latte",
+          "context": "Useful when ordering a familiar milk coffee drink.",
+          "emoji": "🥛"
+        },
+        {
+          "slotId": "coffee-shop-4",
+          "english": "Just a little ice",
+          "context": "Add this when you want less ice in your drink.",
+          "emoji": "🧊"
+        },
+        {
+          "slotId": "coffee-shop-5",
+          "english": "No sugar please",
+          "context": "Use this to keep your drink less sweet.",
+          "emoji": "🚫"
+        },
+        {
+          "slotId": "coffee-shop-6",
+          "english": "For takeaway",
+          "context": "Say this when you want takeaway instead of staying.",
+          "emoji": "🥤"
+        },
+        {
+          "slotId": "coffee-shop-7",
+          "english": "Could I pay, please?",
+          "context": "Use this when you are ready to pay or ask for the bill.",
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Pointing helps, but simple phrases are useful for spice level, water, and takeaway.",
+      "phrases": [
+        {
+          "slotId": "street-food-1",
+          "english": "One portion please",
+          "context": "Use this for a simple food order while pointing.",
+          "emoji": "🍽️"
+        },
+        {
+          "slotId": "street-food-2",
+          "english": "I will take this bowl",
+          "context": "Use this while pointing at the dish you want.",
+          "emoji": "🍜"
+        },
+        {
+          "slotId": "street-food-3",
+          "english": "Not spicy please",
+          "context": "Say this before the food is prepared if you want mild food.",
+          "emoji": "🌶️"
+        },
+        {
+          "slotId": "street-food-4",
+          "english": "More herbs please",
+          "context": "Use this when you want extra greens or garnish.",
+          "emoji": "🥬"
+        },
+        {
+          "slotId": "street-food-5",
+          "english": "Do you have bottled water",
+          "context": "Ask this when you want bottled water with your meal.",
+          "emoji": "💧"
+        },
+        {
+          "slotId": "street-food-6",
+          "english": "A spoon and chopsticks please",
+          "context": "Use this if utensils were not set out.",
+          "emoji": "🥢"
+        },
+        {
+          "slotId": "street-food-7",
+          "english": "Pack it to go",
+          "context": "Say this when you want takeaway from a stall or restaurant.",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Showing the destination on your phone helps even when the language is limited.",
+      "phrases": [
+        {
+          "slotId": "grab-taxi-1",
+          "english": "Take me here",
+          "context": "Use this while showing your destination on your phone.",
+          "emoji": "📍"
+        },
+        {
+          "slotId": "grab-taxi-2",
+          "english": "Go to the city center",
+          "context": "Use this for a simple destination when the driver already knows the area.",
+          "emoji": "🏙️"
+        },
+        {
+          "slotId": "grab-taxi-3",
+          "english": "You can stop here",
+          "context": "Use this when you want the driver to stop at the current spot.",
+          "emoji": "🛑"
+        },
+        {
+          "slotId": "grab-taxi-4",
+          "english": "Go this way",
+          "context": "Use this if you need to guide the driver.",
+          "emoji": "➡️"
+        },
+        {
+          "slotId": "grab-taxi-5",
+          "english": "Please turn on the air conditioning",
+          "context": "Use this on a hot ride if the air conditioning is off.",
+          "emoji": "❄️"
+        },
+        {
+          "slotId": "grab-taxi-6",
+          "english": "Wait for me five minutes",
+          "context": "Use this if you need a very short stop.",
+          "emoji": "⏳"
+        },
+        {
+          "slotId": "grab-taxi-7",
+          "english": "I will pay cash",
+          "context": "Use this when payment method needs to be clear.",
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Ask the price before agreeing and keep small bills ready when shopping.",
+      "phrases": [
+        {
+          "slotId": "asking-price-1",
+          "english": "How much is this",
+          "context": "Use this while pointing at an item.",
+          "emoji": "🏷️"
+        },
+        {
+          "slotId": "asking-price-2",
+          "english": "How much per kilo",
+          "context": "Use this for produce or anything sold by weight.",
+          "emoji": "⚖️"
+        },
+        {
+          "slotId": "asking-price-3",
+          "english": "Too expensive",
+          "context": "Say this lightly when reacting to a high price.",
+          "emoji": "😅"
+        },
+        {
+          "slotId": "asking-price-4",
+          "english": "Can you lower it a little",
+          "context": "Use this politely when bargaining is normal.",
+          "emoji": "🤝"
+        },
+        {
+          "slotId": "asking-price-5",
+          "english": "What is your final price",
+          "context": "Ask this before making a final decision.",
+          "emoji": "💬"
+        },
+        {
+          "slotId": "asking-price-6",
+          "english": "Show me another one",
+          "context": "Use this when you want to compare options.",
+          "emoji": "👀"
+        },
+        {
+          "slotId": "asking-price-7",
+          "english": "I will take this one",
+          "context": "Say this once you agree on the item and price.",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "A friendly tone and a simple greeting go a long way in travel situations.",
+      "phrases": [
+        {
+          "slotId": "polite-basics-1",
+          "english": "Hello",
+          "context": "Use this to greet people in casual travel moments.",
+          "emoji": "👋"
+        },
+        {
+          "slotId": "polite-basics-2",
+          "english": "Thank you",
+          "context": "Say this anytime someone helps you.",
+          "emoji": "🙏"
+        },
+        {
+          "slotId": "polite-basics-3",
+          "english": "Yes polite acknowledgment",
+          "context": "Use this as a respectful yes or acknowledgment.",
+          "emoji": "🙂"
+        },
+        {
+          "slotId": "polite-basics-4",
+          "english": "No thank you",
+          "context": "Use this to politely decline something.",
+          "emoji": "🙅"
+        },
+        {
+          "slotId": "polite-basics-5",
+          "english": "Excuse me",
+          "context": "Use this to get attention politely or open a short request.",
+          "emoji": "🙏"
+        },
+        {
+          "slotId": "polite-basics-6",
+          "english": "It is okay",
+          "context": "Say this when someone apologizes to you.",
+          "emoji": "👌"
+        },
+        {
+          "slotId": "polite-basics-7",
+          "english": "Goodbye",
+          "context": "Use this when leaving a shop, hotel, or ride.",
+          "emoji": "👋"
+        }
+      ]
+    },
+    {
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Mini-marts are useful for water, tissues, medicine, and quick snacks during a long day out.",
+      "phrases": [
+        {
+          "slotId": "convenience-store-1",
+          "english": "A bottle of water please",
+          "context": "Use this for a quick water purchase.",
+          "emoji": "💧"
+        },
+        {
+          "slotId": "convenience-store-2",
+          "english": "Do you have a bag",
+          "context": "Ask this if you need a carry bag.",
+          "emoji": "🛍️"
+        },
+        {
+          "slotId": "convenience-store-3",
+          "english": "Tissues please",
+          "context": "Use this when you need tissues at the counter.",
+          "emoji": "🧻"
+        },
+        {
+          "slotId": "convenience-store-4",
+          "english": "Where is the sunscreen",
+          "context": "Ask this when you need help finding sunscreen.",
+          "emoji": "🧴"
+        },
+        {
+          "slotId": "convenience-store-5",
+          "english": "Please open this for me",
+          "context": "Use this for bottled drinks or hard packaging.",
+          "emoji": "🔓"
+        },
+        {
+          "slotId": "convenience-store-6",
+          "english": "Can I pay by card",
+          "context": "Ask this before checkout if you are short on cash.",
+          "emoji": "💳"
+        },
+        {
+          "slotId": "convenience-store-7",
+          "english": "Please give me the receipt",
+          "context": "Use this if you need the receipt for your purchase.",
+          "emoji": "🧾"
+        }
+      ]
+    },
+    {
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Keep your passport and booking details ready because front desks often need them at check-in.",
+      "phrases": [
+        {
+          "slotId": "hotel-hostel-1",
+          "english": "I have a reservation",
+          "context": "Use this first when you arrive at reception.",
+          "emoji": "🛎️"
+        },
+        {
+          "slotId": "hotel-hostel-2",
+          "english": "I would like to check in",
+          "context": "Say this when you are ready to start check-in.",
+          "emoji": "🔑"
+        },
+        {
+          "slotId": "hotel-hostel-3",
+          "english": "What time is check out",
+          "context": "Ask this early so you know the departure time.",
+          "emoji": "⏰"
+        },
+        {
+          "slotId": "hotel-hostel-4",
+          "english": "This room is too hot",
+          "context": "Use this if the room feels too warm.",
+          "emoji": "🥵"
+        },
+        {
+          "slotId": "hotel-hostel-5",
+          "english": "The air conditioner is not working",
+          "context": "Say this when you need staff to check the AC.",
+          "emoji": "❄️"
+        },
+        {
+          "slotId": "hotel-hostel-6",
+          "english": "More towels please",
+          "context": "Use this when you need extra towels.",
+          "emoji": "🧺"
+        },
+        {
+          "slotId": "hotel-hostel-7",
+          "english": "Please hold my luggage",
+          "context": "Use this if you need the desk to hold your bags.",
+          "emoji": "🧳"
+        }
+      ]
+    },
+    {
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Save your hotel name and one landmark in your phone so you can ask for help even if maps fail.",
+      "phrases": [
+        {
+          "slotId": "directions-1",
+          "english": "Excuse me how do I get to the city center",
+          "context": "Use this when asking for a route to a known area or landmark.",
+          "emoji": "🗺️"
+        },
+        {
+          "slotId": "directions-2",
+          "english": "Is it near here",
+          "context": "Ask this when deciding whether to walk or ride.",
+          "emoji": "📍"
+        },
+        {
+          "slotId": "directions-3",
+          "english": "How long on foot",
+          "context": "Use this to check whether walking is realistic.",
+          "emoji": "🚶"
+        },
+        {
+          "slotId": "directions-4",
+          "english": "Where do I turn left",
+          "context": "Ask this when someone is giving step by step directions.",
+          "emoji": "⬅️"
+        },
+        {
+          "slotId": "directions-5",
+          "english": "Turn right correct",
+          "context": "Use this to confirm the next turn.",
+          "emoji": "➡️"
+        },
+        {
+          "slotId": "directions-6",
+          "english": "Go straight",
+          "context": "Use this to confirm you should keep moving forward.",
+          "emoji": "⬆️"
+        },
+        {
+          "slotId": "directions-7",
+          "english": "Thanks I understand now",
+          "context": "Use this to politely end the directions exchange.",
+          "emoji": "🙏"
+        }
+      ]
+    },
+    {
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "If something goes wrong, stay calm and show booking screens, photos, or screenshots to speed up help.",
+      "phrases": [
+        {
+          "slotId": "simple-problems-1",
+          "english": "I am lost",
+          "context": "Use this when you need immediate help finding your way.",
+          "emoji": "😵"
+        },
+        {
+          "slotId": "simple-problems-2",
+          "english": "I do not understand",
+          "context": "Say this when someone is speaking too quickly.",
+          "emoji": "🤔"
+        },
+        {
+          "slotId": "simple-problems-3",
+          "english": "Can you speak a little slower",
+          "context": "Use this when you need the other person to slow down.",
+          "emoji": "🐢"
+        },
+        {
+          "slotId": "simple-problems-4",
+          "english": "I left something behind",
+          "context": "Say this if you forgot an item in a car, room, or cafe.",
+          "emoji": "🎒"
+        },
+        {
+          "slotId": "simple-problems-5",
+          "english": "The Wi Fi is not working",
+          "context": "Use this at hotels or cafes when you cannot connect.",
+          "emoji": "📶"
+        },
+        {
+          "slotId": "simple-problems-6",
+          "english": "I need a doctor",
+          "context": "Use this if you feel sick and need medical help.",
+          "emoji": "🩺"
+        },
+        {
+          "slotId": "simple-problems-7",
+          "english": "Please call for me",
+          "context": "Say this when you need someone to make a call for you.",
+          "emoji": "📞"
+        }
+      ]
+    },
+    {
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Short friendly chat often starts with where you are from, whether it is your first visit, and what food you like.",
+      "phrases": [
+        {
+          "slotId": "small-talk-1",
+          "english": "I am from the United States",
+          "context": "Use this when someone asks where you are from.",
+          "emoji": "🇺🇸"
+        },
+        {
+          "slotId": "small-talk-2",
+          "english": "I am from England",
+          "context": "Use this as a simple answer when introducing yourself.",
+          "emoji": "🇬🇧"
+        },
+        {
+          "slotId": "small-talk-3",
+          "english": "This is my first time",
+          "context": "Say this when talking about your first visit.",
+          "emoji": "✨"
+        },
+        {
+          "slotId": "small-talk-4",
+          "english": "I like it here",
+          "context": "Use this as an easy positive comment in conversation.",
+          "emoji": "❤"
+        },
+        {
+          "slotId": "small-talk-5",
+          "english": "The food is so good",
+          "context": "Use this to compliment a meal or recommendation.",
+          "emoji": "😋"
+        },
+        {
+          "slotId": "small-talk-6",
+          "english": "The weather is very hot",
+          "context": "Use this as easy weather small talk on a hot day.",
+          "emoji": "☀️"
+        },
+        {
+          "slotId": "small-talk-7",
+          "english": "How are you",
+          "context": "Use this with friendly staff or locals after a greeting.",
+          "emoji": "😊"
+        }
+      ]
+    }
+  ]
+}

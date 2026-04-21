@@ -1,6 +1,7 @@
 {
   "schemaVersion": 3,
   "exportType": "website-phrase-audio-module",
+  "exportedAt": "2026-04-18T09:37:44.117Z",
   "moduleId": "vietnam-essential-basics",
   "moduleSlug": "vietnam-essential-basics",
   "destinationSlug": "vietnam",
@@ -32,11 +33,33 @@
   "transcriptChecked": null,
   "phraseCount": 4,
   "familyCount": 4,
+  "relationCoverage": {
+    "status": "partial",
+    "advisoryOnly": true,
+    "coveredFamilyCount": 1,
+    "coveredPhraseCount": 1,
+    "totalFamilyCount": 4,
+    "coveredFamilyIds": [
+      "polite-hello"
+    ],
+    "coveredClusterIds": [
+      "viet-greeting-hello"
+    ]
+  },
   "articleReference": {
     "primaryLabel": "Install Viet Travel Phrasebook",
     "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
     "secondaryLabel": "See the full Vietnam phrase guide",
     "secondaryUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+  },
+  "trust": {
+    "sourceLabel": "Live Viet starter export",
+    "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+    "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+    "methodologyLabel": "How SpeakLocal builds packs",
+    "methodologyUrl": "/about/",
+    "correctionsLabel": "Report a phrase or audio gap",
+    "correctionsUrl": "/feedback/"
   },
   "cta": {
     "primaryLabel": "Install Viet Travel Phrasebook",
@@ -71,6 +94,25 @@
       "canonicalTargetText": "Xin chào",
       "pronunciation": "sin chow",
       "context": "Use this to open a shop, desk, ride, or casual exchange politely.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-greeting-hello",
+        "coverageMoment": "greeting",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "polite-1",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [],
+        "possibleTravelerResponses": [],
+        "familyRelations": [
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "transport-destination",
+            "reason": "A ride interaction often moves from greeting straight into the destination."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/polite-1.mp3",

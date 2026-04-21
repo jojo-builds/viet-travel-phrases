@@ -1,0 +1,110 @@
+{
+  "variant": "portuguese",
+  "appId": "portuguese-travel-phrases",
+  "displayName": "Portuguese Phrases",
+  "language": "Portuguese",
+  "languageCode": "pt-PT",
+  "country": "Portugal",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "portuguese-polite-basics-1",
+    "portuguese-polite-basics-2",
+    "portuguese-polite-basics-5",
+    "portuguese-simple-problems-2",
+    "portuguese-grab-taxi-1"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Portugal coffee stops often happen at a cafe or pastelaria counter, so simple greeting-first ordering, water, takeaway, and bill language matter more than heavy drink customization."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "For Portugal, treat this as cafe, snack-bar, takeaway, and casual restaurant language; the practical asks are menu clarity, water, the bill, and simple food adjustments rather than bargaining."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Showing the destination on your phone still helps, especially for station pickups, airport transfers, hotel drop-offs, and short city rides when the driver replies quickly."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Use this mostly for price confirmation and item choice; marked prices usually matter more than negotiation language in Portugal."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "Greeting first is part of the utility in Portugal, so hello, thank you, excuse me, and no thank you deserve first-wave priority."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Keep this scenario practical: water, bag, receipt, card payment, and simple item-finding help do more work than browsing-heavy shopping vocabulary."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Keep your passport and booking details ready and prioritize reservation, check-in, checkout, luggage help, and simple room-problem language first."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Save your hotel, station, or airport stop on your phone because Portugal-friendly direction help often depends on station, metro, stop, or nearby-landmark language."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "If something goes wrong, start with repair phrases and show booking screens, tickets, or screenshots before trying longer explanations."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Keep small talk light and secondary; practical travel utility should be authored before conversation filler."
+    }
+  ],
+  "notes": "Shared traveler baseline scaffold for Portugal-focused European Portuguese, kept prep-only and reprioritized toward greetings, repair, transport, hotels, payment, bathroom help, and bill requests before runtime wiring."
+}

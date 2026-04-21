@@ -2,9 +2,58 @@
   "schemaVersion": 3,
   "exportType": "website-phrase-audio-manifest",
   "generatedFor": "website-safe-phrase-audio-export",
+  "exportedAt": "2026-04-18T09:37:44.117Z",
   "moduleCount": 7,
+  "surfaceContract": {
+    "version": 1,
+    "destinationSlug": "vietnam",
+    "starterModuleCount": 7,
+    "hubModuleCount": 4,
+    "offHubModuleCount": 3,
+    "approvedHubModuleOrder": [
+      "vietnam-arrival-basics",
+      "vietnam-transport-basics",
+      "vietnam-money-basics",
+      "vietnam-phone-basics"
+    ],
+    "approvedOffHubModuleIds": [
+      "vietnam-essential-basics",
+      "vietnam-understanding-repair",
+      "vietnam-food-drink-basics"
+    ]
+  },
+  "relationExport": {
+    "version": 1,
+    "sampleId": "viet-relation-sample-v1",
+    "sampleClusterCount": 29,
+    "minimumCoveredClusterCount": 12,
+    "currentCoveredClusterCount": 14,
+    "coveredFamilyCount": 14,
+    "exportedFamilyCount": 28,
+    "coveredModuleCount": 6,
+    "coveredModuleIds": [
+      "vietnam-essential-basics",
+      "vietnam-transport-basics",
+      "vietnam-money-basics",
+      "vietnam-phone-basics",
+      "vietnam-understanding-repair",
+      "vietnam-food-drink-basics"
+    ],
+    "advisoryOnly": true,
+    "starterOnly": true,
+    "edgeTargetRule": "starter-safe and exported-target-only",
+    "phraseRelationFieldNames": [
+      "shortestFormPhraseId",
+      "clearerFormPhraseId",
+      "morePoliteFormPhraseId",
+      "youMayHearSignals",
+      "possibleTravelerResponses",
+      "familyRelations"
+    ]
+  },
   "modules": [
     {
+      "exportedAt": "2026-04-18T09:37:44.117Z",
       "moduleId": "vietnam-essential-basics",
       "moduleSlug": "vietnam-essential-basics",
       "path": "/data/phrase-previews/vietnam-essential-basics.json",
@@ -36,9 +85,33 @@
       "transcriptChecked": null,
       "phraseCount": 4,
       "familyCount": 4,
-      "articleUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+      "relationCoverage": {
+        "status": "partial",
+        "advisoryOnly": true,
+        "coveredFamilyCount": 1,
+        "coveredPhraseCount": 1,
+        "totalFamilyCount": 4,
+        "coveredFamilyIds": [
+          "polite-hello"
+        ],
+        "coveredClusterIds": [
+          "viet-greeting-hello"
+        ]
+      },
+      "surfacePlacement": "off-hub",
+      "articleUrl": "/blog/phrases-tourists-actually-need-in-vietnam/",
+      "trust": {
+        "sourceLabel": "Live Viet starter export",
+        "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+        "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+        "methodologyLabel": "How SpeakLocal builds packs",
+        "methodologyUrl": "/about/",
+        "correctionsLabel": "Report a phrase or audio gap",
+        "correctionsUrl": "/feedback/"
+      }
     },
     {
+      "exportedAt": "2026-04-18T09:37:44.117Z",
       "moduleId": "vietnam-arrival-basics",
       "moduleSlug": "vietnam-arrival-basics",
       "path": "/data/phrase-previews/vietnam-arrival-basics.json",
@@ -70,9 +143,29 @@
       "transcriptChecked": null,
       "phraseCount": 4,
       "familyCount": 4,
-      "articleUrl": "/blog/vietnam-first-24-hours/"
+      "relationCoverage": {
+        "status": "none",
+        "advisoryOnly": true,
+        "coveredFamilyCount": 0,
+        "coveredPhraseCount": 0,
+        "totalFamilyCount": 4,
+        "coveredFamilyIds": [],
+        "coveredClusterIds": []
+      },
+      "surfacePlacement": "country-hub",
+      "articleUrl": "/blog/vietnam-first-24-hours/",
+      "trust": {
+        "sourceLabel": "Live Viet starter export",
+        "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+        "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+        "methodologyLabel": "How SpeakLocal builds packs",
+        "methodologyUrl": "/about/",
+        "correctionsLabel": "Report a phrase or audio gap",
+        "correctionsUrl": "/feedback/"
+      }
     },
     {
+      "exportedAt": "2026-04-18T09:37:44.117Z",
       "moduleId": "vietnam-transport-basics",
       "moduleSlug": "vietnam-transport-basics",
       "path": "/data/phrase-previews/vietnam-transport-basics.json",
@@ -104,9 +197,39 @@
       "transcriptChecked": null,
       "phraseCount": 4,
       "familyCount": 4,
-      "articleUrl": "/blog/vietnam-grab-taxi-confusion/"
+      "relationCoverage": {
+        "status": "full",
+        "advisoryOnly": true,
+        "coveredFamilyCount": 4,
+        "coveredPhraseCount": 4,
+        "totalFamilyCount": 4,
+        "coveredFamilyIds": [
+          "transport-destination",
+          "transport-stop-here",
+          "transport-fare",
+          "transport-meter"
+        ],
+        "coveredClusterIds": [
+          "viet-transport-destination",
+          "viet-transport-stop-here",
+          "viet-transport-fare",
+          "viet-transport-meter"
+        ]
+      },
+      "surfacePlacement": "country-hub",
+      "articleUrl": "/blog/vietnam-grab-taxi-confusion/",
+      "trust": {
+        "sourceLabel": "Live Viet starter export",
+        "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+        "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+        "methodologyLabel": "How SpeakLocal builds packs",
+        "methodologyUrl": "/about/",
+        "correctionsLabel": "Report a phrase or audio gap",
+        "correctionsUrl": "/feedback/"
+      }
     },
     {
+      "exportedAt": "2026-04-18T09:37:44.117Z",
       "moduleId": "vietnam-money-basics",
       "moduleSlug": "vietnam-money-basics",
       "path": "/data/phrase-previews/vietnam-money-basics.json",
@@ -138,9 +261,35 @@
       "transcriptChecked": null,
       "phraseCount": 4,
       "familyCount": 4,
-      "articleUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+      "relationCoverage": {
+        "status": "partial",
+        "advisoryOnly": true,
+        "coveredFamilyCount": 2,
+        "coveredPhraseCount": 2,
+        "totalFamilyCount": 4,
+        "coveredFamilyIds": [
+          "money-how-much",
+          "money-final-price"
+        ],
+        "coveredClusterIds": [
+          "viet-money-how-much",
+          "viet-money-final-price"
+        ]
+      },
+      "surfacePlacement": "country-hub",
+      "articleUrl": "/blog/phrases-tourists-actually-need-in-vietnam/",
+      "trust": {
+        "sourceLabel": "Live Viet starter export",
+        "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+        "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+        "methodologyLabel": "How SpeakLocal builds packs",
+        "methodologyUrl": "/about/",
+        "correctionsLabel": "Report a phrase or audio gap",
+        "correctionsUrl": "/feedback/"
+      }
     },
     {
+      "exportedAt": "2026-04-18T09:37:44.117Z",
       "moduleId": "vietnam-phone-basics",
       "moduleSlug": "vietnam-phone-basics",
       "path": "/data/phrase-previews/vietnam-phone-basics.json",
@@ -172,9 +321,33 @@
       "transcriptChecked": null,
       "phraseCount": 4,
       "familyCount": 4,
-      "articleUrl": "/blog/vietnam-sim-esim-offline-setup/"
+      "relationCoverage": {
+        "status": "partial",
+        "advisoryOnly": true,
+        "coveredFamilyCount": 1,
+        "coveredPhraseCount": 1,
+        "totalFamilyCount": 4,
+        "coveredFamilyIds": [
+          "v500-phon-inte-powe-my-map-is-not-working"
+        ],
+        "coveredClusterIds": [
+          "viet-phone-map-not-working"
+        ]
+      },
+      "surfacePlacement": "country-hub",
+      "articleUrl": "/blog/vietnam-sim-esim-offline-setup/",
+      "trust": {
+        "sourceLabel": "Live Viet starter export",
+        "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+        "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+        "methodologyLabel": "How SpeakLocal builds packs",
+        "methodologyUrl": "/about/",
+        "correctionsLabel": "Report a phrase or audio gap",
+        "correctionsUrl": "/feedback/"
+      }
     },
     {
+      "exportedAt": "2026-04-18T09:37:44.117Z",
       "moduleId": "vietnam-understanding-repair",
       "moduleSlug": "vietnam-understanding-repair",
       "path": "/data/phrase-previews/vietnam-understanding-repair.json",
@@ -206,9 +379,39 @@
       "transcriptChecked": null,
       "phraseCount": 4,
       "familyCount": 4,
-      "articleUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+      "relationCoverage": {
+        "status": "full",
+        "advisoryOnly": true,
+        "coveredFamilyCount": 4,
+        "coveredPhraseCount": 4,
+        "totalFamilyCount": 4,
+        "coveredFamilyIds": [
+          "repair-understand",
+          "repair-slower",
+          "repair-repeat",
+          "repair-write-down"
+        ],
+        "coveredClusterIds": [
+          "viet-repair-understand",
+          "viet-repair-slower",
+          "viet-repair-repeat",
+          "viet-repair-write-down"
+        ]
+      },
+      "surfacePlacement": "off-hub",
+      "articleUrl": "/blog/phrases-tourists-actually-need-in-vietnam/",
+      "trust": {
+        "sourceLabel": "Live Viet starter export",
+        "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+        "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+        "methodologyLabel": "How SpeakLocal builds packs",
+        "methodologyUrl": "/about/",
+        "correctionsLabel": "Report a phrase or audio gap",
+        "correctionsUrl": "/feedback/"
+      }
     },
     {
+      "exportedAt": "2026-04-18T09:37:44.117Z",
       "moduleId": "vietnam-food-drink-basics",
       "moduleSlug": "vietnam-food-drink-basics",
       "path": "/data/phrase-previews/vietnam-food-drink-basics.json",
@@ -240,7 +443,32 @@
       "transcriptChecked": null,
       "phraseCount": 4,
       "familyCount": 4,
-      "articleUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+      "relationCoverage": {
+        "status": "partial",
+        "advisoryOnly": true,
+        "coveredFamilyCount": 2,
+        "coveredPhraseCount": 2,
+        "totalFamilyCount": 4,
+        "coveredFamilyIds": [
+          "food-not-spicy",
+          "food-bottled-water"
+        ],
+        "coveredClusterIds": [
+          "viet-food-not-spicy",
+          "viet-food-bottled-water"
+        ]
+      },
+      "surfacePlacement": "off-hub",
+      "articleUrl": "/blog/phrases-tourists-actually-need-in-vietnam/",
+      "trust": {
+        "sourceLabel": "Live Viet starter export",
+        "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+        "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+        "methodologyLabel": "How SpeakLocal builds packs",
+        "methodologyUrl": "/about/",
+        "correctionsLabel": "Report a phrase or audio gap",
+        "correctionsUrl": "/feedback/"
+      }
     }
   ]
 }

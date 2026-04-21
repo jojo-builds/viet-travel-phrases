@@ -1,0 +1,472 @@
+{
+  "japanese-coffee-shop-1": {
+    "phraseId": "japanese-coffee-shop-1",
+    "fileName": "japanese-coffee-shop-1.mp3",
+    "language": "japanese",
+    "text": "アイスのミルクコーヒーを一つお願いします",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:45:45.419Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-coffee-shop-5": {
+    "phraseId": "japanese-coffee-shop-5",
+    "fileName": "japanese-coffee-shop-5.mp3",
+    "language": "japanese",
+    "text": "砂糖なしでお願いします",
+    "chars": 11,
+    "generatedAt": "2026-04-20T07:45:46.562Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-coffee-shop-6": {
+    "phraseId": "japanese-coffee-shop-6",
+    "fileName": "japanese-coffee-shop-6.mp3",
+    "language": "japanese",
+    "text": "持ち帰りでお願いします",
+    "chars": 11,
+    "generatedAt": "2026-04-20T07:45:47.691Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-street-food-1": {
+    "phraseId": "japanese-street-food-1",
+    "fileName": "japanese-street-food-1.mp3",
+    "language": "japanese",
+    "text": "一つお願いします",
+    "chars": 8,
+    "generatedAt": "2026-04-20T07:45:48.812Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-street-food-2": {
+    "phraseId": "japanese-street-food-2",
+    "fileName": "japanese-street-food-2.mp3",
+    "language": "japanese",
+    "text": "この丼をお願いします",
+    "chars": 10,
+    "generatedAt": "2026-04-20T07:45:50.150Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-street-food-3": {
+    "phraseId": "japanese-street-food-3",
+    "fileName": "japanese-street-food-3.mp3",
+    "language": "japanese",
+    "text": "辛さ控えめでお願いします",
+    "chars": 12,
+    "generatedAt": "2026-04-20T07:45:51.309Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-street-food-5": {
+    "phraseId": "japanese-street-food-5",
+    "fileName": "japanese-street-food-5.mp3",
+    "language": "japanese",
+    "text": "ミネラルウォーターはありますか",
+    "chars": 15,
+    "generatedAt": "2026-04-20T07:45:52.444Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-street-food-6": {
+    "phraseId": "japanese-street-food-6",
+    "fileName": "japanese-street-food-6.mp3",
+    "language": "japanese",
+    "text": "スプーンとお箸をお願いします",
+    "chars": 14,
+    "generatedAt": "2026-04-20T07:45:53.604Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-street-food-7": {
+    "phraseId": "japanese-street-food-7",
+    "fileName": "japanese-street-food-7.mp3",
+    "language": "japanese",
+    "text": "持ち帰りにしてください",
+    "chars": 11,
+    "generatedAt": "2026-04-20T07:45:54.755Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-grab-taxi-1": {
+    "phraseId": "japanese-grab-taxi-1",
+    "fileName": "japanese-grab-taxi-1.mp3",
+    "language": "japanese",
+    "text": "ここまでお願いします",
+    "chars": 10,
+    "generatedAt": "2026-04-20T07:45:55.882Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-grab-taxi-3": {
+    "phraseId": "japanese-grab-taxi-3",
+    "fileName": "japanese-grab-taxi-3.mp3",
+    "language": "japanese",
+    "text": "ここでお願いします",
+    "chars": 9,
+    "generatedAt": "2026-04-20T07:45:57.042Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-grab-taxi-7": {
+    "phraseId": "japanese-grab-taxi-7",
+    "fileName": "japanese-grab-taxi-7.mp3",
+    "language": "japanese",
+    "text": "現金で払います",
+    "chars": 7,
+    "generatedAt": "2026-04-20T07:45:58.178Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-asking-price-1": {
+    "phraseId": "japanese-asking-price-1",
+    "fileName": "japanese-asking-price-1.mp3",
+    "language": "japanese",
+    "text": "これはいくらですか",
+    "chars": 9,
+    "generatedAt": "2026-04-20T07:45:59.306Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-asking-price-4": {
+    "phraseId": "japanese-asking-price-4",
+    "fileName": "japanese-asking-price-4.mp3",
+    "language": "japanese",
+    "text": "免税になりますか",
+    "chars": 8,
+    "generatedAt": "2026-04-20T07:46:00.418Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-asking-price-6": {
+    "phraseId": "japanese-asking-price-6",
+    "fileName": "japanese-asking-price-6.mp3",
+    "language": "japanese",
+    "text": "別のものを見せてください",
+    "chars": 12,
+    "generatedAt": "2026-04-20T07:46:01.567Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-polite-basics-1": {
+    "phraseId": "japanese-polite-basics-1",
+    "fileName": "japanese-polite-basics-1.mp3",
+    "language": "japanese",
+    "text": "こんにちは",
+    "chars": 5,
+    "generatedAt": "2026-04-20T07:46:02.642Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-polite-basics-2": {
+    "phraseId": "japanese-polite-basics-2",
+    "fileName": "japanese-polite-basics-2.mp3",
+    "language": "japanese",
+    "text": "ありがとうございます",
+    "chars": 10,
+    "generatedAt": "2026-04-20T07:46:03.747Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-polite-basics-3": {
+    "phraseId": "japanese-polite-basics-3",
+    "fileName": "japanese-polite-basics-3.mp3",
+    "language": "japanese",
+    "text": "はい",
+    "chars": 2,
+    "generatedAt": "2026-04-20T07:46:04.821Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-polite-basics-4": {
+    "phraseId": "japanese-polite-basics-4",
+    "fileName": "japanese-polite-basics-4.mp3",
+    "language": "japanese",
+    "text": "結構です、ありがとうございます",
+    "chars": 15,
+    "generatedAt": "2026-04-20T07:46:05.994Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-polite-basics-5": {
+    "phraseId": "japanese-polite-basics-5",
+    "fileName": "japanese-polite-basics-5.mp3",
+    "language": "japanese",
+    "text": "すみません",
+    "chars": 5,
+    "generatedAt": "2026-04-20T07:46:07.080Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-polite-basics-7": {
+    "phraseId": "japanese-polite-basics-7",
+    "fileName": "japanese-polite-basics-7.mp3",
+    "language": "japanese",
+    "text": "失礼します",
+    "chars": 5,
+    "generatedAt": "2026-04-20T07:46:08.173Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-convenience-store-1": {
+    "phraseId": "japanese-convenience-store-1",
+    "fileName": "japanese-convenience-store-1.mp3",
+    "language": "japanese",
+    "text": "水を一本お願いします",
+    "chars": 10,
+    "generatedAt": "2026-04-20T07:46:09.310Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-convenience-store-2": {
+    "phraseId": "japanese-convenience-store-2",
+    "fileName": "japanese-convenience-store-2.mp3",
+    "language": "japanese",
+    "text": "袋はありますか",
+    "chars": 7,
+    "generatedAt": "2026-04-20T07:46:10.424Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-convenience-store-3": {
+    "phraseId": "japanese-convenience-store-3",
+    "fileName": "japanese-convenience-store-3.mp3",
+    "language": "japanese",
+    "text": "ティッシュをお願いします",
+    "chars": 12,
+    "generatedAt": "2026-04-20T07:46:11.562Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-convenience-store-4": {
+    "phraseId": "japanese-convenience-store-4",
+    "fileName": "japanese-convenience-store-4.mp3",
+    "language": "japanese",
+    "text": "日焼け止めはどこですか",
+    "chars": 11,
+    "generatedAt": "2026-04-20T07:46:12.683Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-convenience-store-5": {
+    "phraseId": "japanese-convenience-store-5",
+    "fileName": "japanese-convenience-store-5.mp3",
+    "language": "japanese",
+    "text": "これを開けてもらえますか",
+    "chars": 12,
+    "generatedAt": "2026-04-20T07:46:13.820Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-convenience-store-6": {
+    "phraseId": "japanese-convenience-store-6",
+    "fileName": "japanese-convenience-store-6.mp3",
+    "language": "japanese",
+    "text": "カードで払えますか",
+    "chars": 9,
+    "generatedAt": "2026-04-20T07:46:14.936Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-convenience-store-7": {
+    "phraseId": "japanese-convenience-store-7",
+    "fileName": "japanese-convenience-store-7.mp3",
+    "language": "japanese",
+    "text": "レシートをお願いします",
+    "chars": 11,
+    "generatedAt": "2026-04-20T07:46:16.053Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-hotel-hostel-1": {
+    "phraseId": "japanese-hotel-hostel-1",
+    "fileName": "japanese-hotel-hostel-1.mp3",
+    "language": "japanese",
+    "text": "予約しています",
+    "chars": 7,
+    "generatedAt": "2026-04-20T07:46:17.171Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-hotel-hostel-2": {
+    "phraseId": "japanese-hotel-hostel-2",
+    "fileName": "japanese-hotel-hostel-2.mp3",
+    "language": "japanese",
+    "text": "チェックインをお願いします",
+    "chars": 13,
+    "generatedAt": "2026-04-20T07:46:18.281Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-hotel-hostel-3": {
+    "phraseId": "japanese-hotel-hostel-3",
+    "fileName": "japanese-hotel-hostel-3.mp3",
+    "language": "japanese",
+    "text": "チェックアウトは何時ですか",
+    "chars": 13,
+    "generatedAt": "2026-04-20T07:46:19.449Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-hotel-hostel-4": {
+    "phraseId": "japanese-hotel-hostel-4",
+    "fileName": "japanese-hotel-hostel-4.mp3",
+    "language": "japanese",
+    "text": "部屋が暑すぎます",
+    "chars": 8,
+    "generatedAt": "2026-04-20T07:46:20.574Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-hotel-hostel-5": {
+    "phraseId": "japanese-hotel-hostel-5",
+    "fileName": "japanese-hotel-hostel-5.mp3",
+    "language": "japanese",
+    "text": "エアコンが動いていません",
+    "chars": 12,
+    "generatedAt": "2026-04-20T07:46:21.680Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-hotel-hostel-6": {
+    "phraseId": "japanese-hotel-hostel-6",
+    "fileName": "japanese-hotel-hostel-6.mp3",
+    "language": "japanese",
+    "text": "タオルをもう少しお願いします",
+    "chars": 14,
+    "generatedAt": "2026-04-20T07:46:22.846Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-hotel-hostel-7": {
+    "phraseId": "japanese-hotel-hostel-7",
+    "fileName": "japanese-hotel-hostel-7.mp3",
+    "language": "japanese",
+    "text": "荷物を預かってもらえますか",
+    "chars": 13,
+    "generatedAt": "2026-04-20T07:46:23.992Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-directions-1": {
+    "phraseId": "japanese-directions-1",
+    "fileName": "japanese-directions-1.mp3",
+    "language": "japanese",
+    "text": "すみません、どの出口から出ればいいですか",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:46:25.175Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-directions-2": {
+    "phraseId": "japanese-directions-2",
+    "fileName": "japanese-directions-2.mp3",
+    "language": "japanese",
+    "text": "ここから近いですか",
+    "chars": 9,
+    "generatedAt": "2026-04-20T07:46:26.289Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-directions-3": {
+    "phraseId": "japanese-directions-3",
+    "fileName": "japanese-directions-3.mp3",
+    "language": "japanese",
+    "text": "歩いてどのくらいですか",
+    "chars": 11,
+    "generatedAt": "2026-04-20T07:46:27.396Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-directions-4": {
+    "phraseId": "japanese-directions-4",
+    "fileName": "japanese-directions-4.mp3",
+    "language": "japanese",
+    "text": "左に曲がるのはどこですか",
+    "chars": 12,
+    "generatedAt": "2026-04-20T07:46:28.508Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-directions-5": {
+    "phraseId": "japanese-directions-5",
+    "fileName": "japanese-directions-5.mp3",
+    "language": "japanese",
+    "text": "次は右で合っていますか",
+    "chars": 11,
+    "generatedAt": "2026-04-20T07:46:29.626Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-directions-6": {
+    "phraseId": "japanese-directions-6",
+    "fileName": "japanese-directions-6.mp3",
+    "language": "japanese",
+    "text": "まっすぐでいいですか",
+    "chars": 10,
+    "generatedAt": "2026-04-20T07:46:30.784Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-simple-problems-1": {
+    "phraseId": "japanese-simple-problems-1",
+    "fileName": "japanese-simple-problems-1.mp3",
+    "language": "japanese",
+    "text": "道に迷いました",
+    "chars": 7,
+    "generatedAt": "2026-04-20T07:46:34.189Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-simple-problems-2": {
+    "phraseId": "japanese-simple-problems-2",
+    "fileName": "japanese-simple-problems-2.mp3",
+    "language": "japanese",
+    "text": "よくわかりません",
+    "chars": 8,
+    "generatedAt": "2026-04-20T07:46:35.293Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-simple-problems-3": {
+    "phraseId": "japanese-simple-problems-3",
+    "fileName": "japanese-simple-problems-3.mp3",
+    "language": "japanese",
+    "text": "もう少しゆっくりお願いします",
+    "chars": 14,
+    "generatedAt": "2026-04-20T07:46:36.439Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-simple-problems-4": {
+    "phraseId": "japanese-simple-problems-4",
+    "fileName": "japanese-simple-problems-4.mp3",
+    "language": "japanese",
+    "text": "忘れ物をしました",
+    "chars": 8,
+    "generatedAt": "2026-04-20T07:46:37.580Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-simple-problems-6": {
+    "phraseId": "japanese-simple-problems-6",
+    "fileName": "japanese-simple-problems-6.mp3",
+    "language": "japanese",
+    "text": "医者が必要です",
+    "chars": 7,
+    "generatedAt": "2026-04-20T07:46:38.723Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "japanese-simple-problems-7": {
+    "phraseId": "japanese-simple-problems-7",
+    "fileName": "japanese-simple-problems-7.mp3",
+    "language": "japanese",
+    "text": "代わりに電話してもらえますか",
+    "chars": 14,
+    "generatedAt": "2026-04-20T07:46:39.918Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  }
+}

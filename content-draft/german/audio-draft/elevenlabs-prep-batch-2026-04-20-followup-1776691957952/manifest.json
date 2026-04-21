@@ -1,0 +1,272 @@
+{
+  "german-coffee-shop-2": {
+    "phraseId": "german-coffee-shop-2",
+    "fileName": "german-coffee-shop-2.mp3",
+    "language": "german",
+    "text": "Einen schwarzen Kaffee, bitte.",
+    "chars": 30,
+    "generatedAt": "2026-04-20T13:32:38.743Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-coffee-shop-3": {
+    "phraseId": "german-coffee-shop-3",
+    "fileName": "german-coffee-shop-3.mp3",
+    "language": "german",
+    "text": "Einen Cappuccino, bitte.",
+    "chars": 24,
+    "generatedAt": "2026-04-20T13:32:40.542Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-coffee-shop-5": {
+    "phraseId": "german-coffee-shop-5",
+    "fileName": "german-coffee-shop-5.mp3",
+    "language": "german",
+    "text": "Ohne Zucker, bitte.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:32:41.656Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-street-food-2": {
+    "phraseId": "german-street-food-2",
+    "fileName": "german-street-food-2.mp3",
+    "language": "german",
+    "text": "Ich nehme dieses hier.",
+    "chars": 22,
+    "generatedAt": "2026-04-20T13:32:42.772Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-street-food-3": {
+    "phraseId": "german-street-food-3",
+    "fileName": "german-street-food-3.mp3",
+    "language": "german",
+    "text": "Nicht scharf, bitte.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:32:43.900Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-street-food-6": {
+    "phraseId": "german-street-food-6",
+    "fileName": "german-street-food-6.mp3",
+    "language": "german",
+    "text": "Eine Gabel und ein Messer, bitte.",
+    "chars": 33,
+    "generatedAt": "2026-04-20T13:32:45.056Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-street-food-7": {
+    "phraseId": "german-street-food-7",
+    "fileName": "german-street-food-7.mp3",
+    "language": "german",
+    "text": "Zum Mitnehmen, bitte.",
+    "chars": 21,
+    "generatedAt": "2026-04-20T13:32:46.165Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-grab-taxi-4": {
+    "phraseId": "german-grab-taxi-4",
+    "fileName": "german-grab-taxi-4.mp3",
+    "language": "german",
+    "text": "Bitte fahren Sie hier entlang.",
+    "chars": 30,
+    "generatedAt": "2026-04-20T13:32:47.306Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-grab-taxi-5": {
+    "phraseId": "german-grab-taxi-5",
+    "fileName": "german-grab-taxi-5.mp3",
+    "language": "german",
+    "text": "Können Sie bitte die Klimaanlage anmachen?",
+    "chars": 42,
+    "generatedAt": "2026-04-20T13:32:48.503Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-grab-taxi-6": {
+    "phraseId": "german-grab-taxi-6",
+    "fileName": "german-grab-taxi-6.mp3",
+    "language": "german",
+    "text": "Warten Sie bitte fünf Minuten auf mich.",
+    "chars": 39,
+    "generatedAt": "2026-04-20T13:32:49.701Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-grab-taxi-7": {
+    "phraseId": "german-grab-taxi-7",
+    "fileName": "german-grab-taxi-7.mp3",
+    "language": "german",
+    "text": "Ich zahle bar.",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:32:50.820Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-asking-price-2": {
+    "phraseId": "german-asking-price-2",
+    "fileName": "german-asking-price-2.mp3",
+    "language": "german",
+    "text": "Wie viel kostet das pro Kilo?",
+    "chars": 29,
+    "generatedAt": "2026-04-20T13:32:51.950Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-asking-price-3": {
+    "phraseId": "german-asking-price-3",
+    "fileName": "german-asking-price-3.mp3",
+    "language": "german",
+    "text": "Zu teuer.",
+    "chars": 9,
+    "generatedAt": "2026-04-20T13:32:53.027Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-asking-price-7": {
+    "phraseId": "german-asking-price-7",
+    "fileName": "german-asking-price-7.mp3",
+    "language": "german",
+    "text": "Ich nehme das hier.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:32:54.131Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-convenience-store-2": {
+    "phraseId": "german-convenience-store-2",
+    "fileName": "german-convenience-store-2.mp3",
+    "language": "german",
+    "text": "Haben Sie eine Tüte?",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:32:55.267Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-convenience-store-3": {
+    "phraseId": "german-convenience-store-3",
+    "fileName": "german-convenience-store-3.mp3",
+    "language": "german",
+    "text": "Taschentücher, bitte.",
+    "chars": 21,
+    "generatedAt": "2026-04-20T13:32:56.388Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-convenience-store-4": {
+    "phraseId": "german-convenience-store-4",
+    "fileName": "german-convenience-store-4.mp3",
+    "language": "german",
+    "text": "Wo finde ich Sonnencreme?",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:32:57.523Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-convenience-store-5": {
+    "phraseId": "german-convenience-store-5",
+    "fileName": "german-convenience-store-5.mp3",
+    "language": "german",
+    "text": "Können Sie das bitte für mich öffnen?",
+    "chars": 37,
+    "generatedAt": "2026-04-20T13:32:58.711Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-hotel-hostel-4": {
+    "phraseId": "german-hotel-hostel-4",
+    "fileName": "german-hotel-hostel-4.mp3",
+    "language": "german",
+    "text": "Dieses Zimmer ist zu warm.",
+    "chars": 26,
+    "generatedAt": "2026-04-20T13:32:59.839Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-hotel-hostel-5": {
+    "phraseId": "german-hotel-hostel-5",
+    "fileName": "german-hotel-hostel-5.mp3",
+    "language": "german",
+    "text": "Die Klimaanlage funktioniert nicht.",
+    "chars": 35,
+    "generatedAt": "2026-04-20T13:33:01.010Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-hotel-hostel-6": {
+    "phraseId": "german-hotel-hostel-6",
+    "fileName": "german-hotel-hostel-6.mp3",
+    "language": "german",
+    "text": "Mehr Handtücher, bitte.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:33:02.114Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-directions-4": {
+    "phraseId": "german-directions-4",
+    "fileName": "german-directions-4.mp3",
+    "language": "german",
+    "text": "Wo muss ich links abbiegen?",
+    "chars": 27,
+    "generatedAt": "2026-04-20T13:33:03.226Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-directions-5": {
+    "phraseId": "german-directions-5",
+    "fileName": "german-directions-5.mp3",
+    "language": "german",
+    "text": "Ist die nächste Abbiegung rechts?",
+    "chars": 33,
+    "generatedAt": "2026-04-20T13:33:04.364Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-directions-6": {
+    "phraseId": "german-directions-6",
+    "fileName": "german-directions-6.mp3",
+    "language": "german",
+    "text": "Gehe ich weiter geradeaus?",
+    "chars": 26,
+    "generatedAt": "2026-04-20T13:33:05.520Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-directions-7": {
+    "phraseId": "german-directions-7",
+    "fileName": "german-directions-7.mp3",
+    "language": "german",
+    "text": "Danke, jetzt verstehe ich.",
+    "chars": 26,
+    "generatedAt": "2026-04-20T13:33:06.659Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-simple-problems-4": {
+    "phraseId": "german-simple-problems-4",
+    "fileName": "german-simple-problems-4.mp3",
+    "language": "german",
+    "text": "Ich habe etwas liegen lassen.",
+    "chars": 29,
+    "generatedAt": "2026-04-20T13:33:07.766Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-simple-problems-5": {
+    "phraseId": "german-simple-problems-5",
+    "fileName": "german-simple-problems-5.mp3",
+    "language": "german",
+    "text": "Das WLAN funktioniert nicht.",
+    "chars": 28,
+    "generatedAt": "2026-04-20T13:33:08.893Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  }
+}

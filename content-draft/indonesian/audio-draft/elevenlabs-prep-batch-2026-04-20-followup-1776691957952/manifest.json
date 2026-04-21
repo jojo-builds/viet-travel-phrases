@@ -1,0 +1,592 @@
+{
+  "indonesian-coffee-shop-5": {
+    "phraseId": "indonesian-coffee-shop-5",
+    "fileName": "indonesian-coffee-shop-5.mp3",
+    "language": "indonesian",
+    "text": "Gulanya sedikit saja, tolong.",
+    "chars": 29,
+    "generatedAt": "2026-04-20T13:34:54.700Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-coffee-shop-6": {
+    "phraseId": "indonesian-coffee-shop-6",
+    "fileName": "indonesian-coffee-shop-6.mp3",
+    "language": "indonesian",
+    "text": "Untuk dibawa pulang.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:34:55.842Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-coffee-shop-7": {
+    "phraseId": "indonesian-coffee-shop-7",
+    "fileName": "indonesian-coffee-shop-7.mp3",
+    "language": "indonesian",
+    "text": "Bisa saya bayar sekarang?",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:34:56.963Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-street-food-1": {
+    "phraseId": "indonesian-street-food-1",
+    "fileName": "indonesian-street-food-1.mp3",
+    "language": "indonesian",
+    "text": "Satu porsi, tolong.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:34:58.065Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-street-food-2": {
+    "phraseId": "indonesian-street-food-2",
+    "fileName": "indonesian-street-food-2.mp3",
+    "language": "indonesian",
+    "text": "Saya mau yang ini.",
+    "chars": 18,
+    "generatedAt": "2026-04-20T13:34:59.164Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-street-food-3": {
+    "phraseId": "indonesian-street-food-3",
+    "fileName": "indonesian-street-food-3.mp3",
+    "language": "indonesian",
+    "text": "Tolong jangan pedas.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:35:00.277Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-street-food-5": {
+    "phraseId": "indonesian-street-food-5",
+    "fileName": "indonesian-street-food-5.mp3",
+    "language": "indonesian",
+    "text": "Ada air botol?",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:35:01.379Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-street-food-6": {
+    "phraseId": "indonesian-street-food-6",
+    "fileName": "indonesian-street-food-6.mp3",
+    "language": "indonesian",
+    "text": "Sendok dan garpu, tolong.",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:35:02.524Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-street-food-7": {
+    "phraseId": "indonesian-street-food-7",
+    "fileName": "indonesian-street-food-7.mp3",
+    "language": "indonesian",
+    "text": "Tolong bungkus untuk dibawa pulang.",
+    "chars": 35,
+    "generatedAt": "2026-04-20T13:35:03.675Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-1": {
+    "phraseId": "indonesian-grab-taxi-1",
+    "fileName": "indonesian-grab-taxi-1.mp3",
+    "language": "indonesian",
+    "text": "Tolong antar saya ke sini.",
+    "chars": 26,
+    "generatedAt": "2026-04-20T13:35:04.794Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-2": {
+    "phraseId": "indonesian-grab-taxi-2",
+    "fileName": "indonesian-grab-taxi-2.mp3",
+    "language": "indonesian",
+    "text": "Tolong antar saya ke alamat ini.",
+    "chars": 32,
+    "generatedAt": "2026-04-20T13:35:05.940Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-3": {
+    "phraseId": "indonesian-grab-taxi-3",
+    "fileName": "indonesian-grab-taxi-3.mp3",
+    "language": "indonesian",
+    "text": "Bisa berhenti di sini.",
+    "chars": 22,
+    "generatedAt": "2026-04-20T13:35:07.066Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-4": {
+    "phraseId": "indonesian-grab-taxi-4",
+    "fileName": "indonesian-grab-taxi-4.mp3",
+    "language": "indonesian",
+    "text": "Tolong ikuti petanya.",
+    "chars": 21,
+    "generatedAt": "2026-04-20T13:35:08.175Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-5": {
+    "phraseId": "indonesian-grab-taxi-5",
+    "fileName": "indonesian-grab-taxi-5.mp3",
+    "language": "indonesian",
+    "text": "Tolong nyalakan AC.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:35:09.285Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-6": {
+    "phraseId": "indonesian-grab-taxi-6",
+    "fileName": "indonesian-grab-taxi-6.mp3",
+    "language": "indonesian",
+    "text": "Tunggu saya lima menit.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:35:10.439Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-7": {
+    "phraseId": "indonesian-grab-taxi-7",
+    "fileName": "indonesian-grab-taxi-7.mp3",
+    "language": "indonesian",
+    "text": "Saya bayar tunai.",
+    "chars": 17,
+    "generatedAt": "2026-04-20T13:35:11.554Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-asking-price-1": {
+    "phraseId": "indonesian-asking-price-1",
+    "fileName": "indonesian-asking-price-1.mp3",
+    "language": "indonesian",
+    "text": "Berapa harganya?",
+    "chars": 16,
+    "generatedAt": "2026-04-20T13:35:12.707Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-asking-price-2": {
+    "phraseId": "indonesian-asking-price-2",
+    "fileName": "indonesian-asking-price-2.mp3",
+    "language": "indonesian",
+    "text": "Berapa per kilo?",
+    "chars": 16,
+    "generatedAt": "2026-04-20T13:35:13.809Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-asking-price-5": {
+    "phraseId": "indonesian-asking-price-5",
+    "fileName": "indonesian-asking-price-5.mp3",
+    "language": "indonesian",
+    "text": "Totalnya berapa?",
+    "chars": 16,
+    "generatedAt": "2026-04-20T13:35:14.919Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-asking-price-6": {
+    "phraseId": "indonesian-asking-price-6",
+    "fileName": "indonesian-asking-price-6.mp3",
+    "language": "indonesian",
+    "text": "Tunjukkan yang lain.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:35:16.046Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-asking-price-7": {
+    "phraseId": "indonesian-asking-price-7",
+    "fileName": "indonesian-asking-price-7.mp3",
+    "language": "indonesian",
+    "text": "Saya ambil yang ini.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:35:17.303Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-polite-basics-1": {
+    "phraseId": "indonesian-polite-basics-1",
+    "fileName": "indonesian-polite-basics-1.mp3",
+    "language": "indonesian",
+    "text": "Halo.",
+    "chars": 5,
+    "generatedAt": "2026-04-20T13:35:18.397Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-polite-basics-2": {
+    "phraseId": "indonesian-polite-basics-2",
+    "fileName": "indonesian-polite-basics-2.mp3",
+    "language": "indonesian",
+    "text": "Terima kasih.",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:35:19.472Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-polite-basics-3": {
+    "phraseId": "indonesian-polite-basics-3",
+    "fileName": "indonesian-polite-basics-3.mp3",
+    "language": "indonesian",
+    "text": "Ya.",
+    "chars": 3,
+    "generatedAt": "2026-04-20T13:35:20.535Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-polite-basics-4": {
+    "phraseId": "indonesian-polite-basics-4",
+    "fileName": "indonesian-polite-basics-4.mp3",
+    "language": "indonesian",
+    "text": "Tidak, terima kasih.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:35:21.636Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-polite-basics-5": {
+    "phraseId": "indonesian-polite-basics-5",
+    "fileName": "indonesian-polite-basics-5.mp3",
+    "language": "indonesian",
+    "text": "Permisi.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:35:22.726Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-polite-basics-6": {
+    "phraseId": "indonesian-polite-basics-6",
+    "fileName": "indonesian-polite-basics-6.mp3",
+    "language": "indonesian",
+    "text": "Tidak apa-apa.",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:35:23.795Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-polite-basics-7": {
+    "phraseId": "indonesian-polite-basics-7",
+    "fileName": "indonesian-polite-basics-7.mp3",
+    "language": "indonesian",
+    "text": "Sampai jumpa.",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:35:24.875Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-convenience-store-1": {
+    "phraseId": "indonesian-convenience-store-1",
+    "fileName": "indonesian-convenience-store-1.mp3",
+    "language": "indonesian",
+    "text": "Satu botol air, tolong.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:35:26.054Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-convenience-store-2": {
+    "phraseId": "indonesian-convenience-store-2",
+    "fileName": "indonesian-convenience-store-2.mp3",
+    "language": "indonesian",
+    "text": "Bisa minta kantong?",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:35:27.157Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-convenience-store-3": {
+    "phraseId": "indonesian-convenience-store-3",
+    "fileName": "indonesian-convenience-store-3.mp3",
+    "language": "indonesian",
+    "text": "Tisu, tolong.",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:35:28.243Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-convenience-store-5": {
+    "phraseId": "indonesian-convenience-store-5",
+    "fileName": "indonesian-convenience-store-5.mp3",
+    "language": "indonesian",
+    "text": "Tolong bukakan ini.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:35:29.362Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-convenience-store-7": {
+    "phraseId": "indonesian-convenience-store-7",
+    "fileName": "indonesian-convenience-store-7.mp3",
+    "language": "indonesian",
+    "text": "Minta struknya, tolong.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:35:30.491Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-hotel-hostel-1": {
+    "phraseId": "indonesian-hotel-hostel-1",
+    "fileName": "indonesian-hotel-hostel-1.mp3",
+    "language": "indonesian",
+    "text": "Saya ada reservasi.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:35:31.603Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-hotel-hostel-2": {
+    "phraseId": "indonesian-hotel-hostel-2",
+    "fileName": "indonesian-hotel-hostel-2.mp3",
+    "language": "indonesian",
+    "text": "Saya mau check-in.",
+    "chars": 18,
+    "generatedAt": "2026-04-20T13:35:32.704Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-hotel-hostel-3": {
+    "phraseId": "indonesian-hotel-hostel-3",
+    "fileName": "indonesian-hotel-hostel-3.mp3",
+    "language": "indonesian",
+    "text": "Check-out jam berapa?",
+    "chars": 21,
+    "generatedAt": "2026-04-20T13:35:33.908Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-hotel-hostel-4": {
+    "phraseId": "indonesian-hotel-hostel-4",
+    "fileName": "indonesian-hotel-hostel-4.mp3",
+    "language": "indonesian",
+    "text": "Kamar ini terlalu panas.",
+    "chars": 24,
+    "generatedAt": "2026-04-20T13:35:35.029Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-hotel-hostel-5": {
+    "phraseId": "indonesian-hotel-hostel-5",
+    "fileName": "indonesian-hotel-hostel-5.mp3",
+    "language": "indonesian",
+    "text": "AC-nya tidak berfungsi.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:35:36.131Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-hotel-hostel-6": {
+    "phraseId": "indonesian-hotel-hostel-6",
+    "fileName": "indonesian-hotel-hostel-6.mp3",
+    "language": "indonesian",
+    "text": "Tolong tambah handuk.",
+    "chars": 21,
+    "generatedAt": "2026-04-20T13:35:37.260Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-hotel-hostel-7": {
+    "phraseId": "indonesian-hotel-hostel-7",
+    "fileName": "indonesian-hotel-hostel-7.mp3",
+    "language": "indonesian",
+    "text": "Bisa titip koper?",
+    "chars": 17,
+    "generatedAt": "2026-04-20T13:35:38.379Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-directions-2": {
+    "phraseId": "indonesian-directions-2",
+    "fileName": "indonesian-directions-2.mp3",
+    "language": "indonesian",
+    "text": "Dekat dari sini?",
+    "chars": 16,
+    "generatedAt": "2026-04-20T13:35:39.476Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-directions-3": {
+    "phraseId": "indonesian-directions-3",
+    "fileName": "indonesian-directions-3.mp3",
+    "language": "indonesian",
+    "text": "Berapa lama jalan kaki?",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:35:40.598Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-1": {
+    "phraseId": "indonesian-simple-problems-1",
+    "fileName": "indonesian-simple-problems-1.mp3",
+    "language": "indonesian",
+    "text": "Saya tersesat.",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:35:41.701Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-2": {
+    "phraseId": "indonesian-simple-problems-2",
+    "fileName": "indonesian-simple-problems-2.mp3",
+    "language": "indonesian",
+    "text": "Saya tidak mengerti.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:35:42.843Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-3": {
+    "phraseId": "indonesian-simple-problems-3",
+    "fileName": "indonesian-simple-problems-3.mp3",
+    "language": "indonesian",
+    "text": "Bisa bicara lebih pelan sedikit?",
+    "chars": 32,
+    "generatedAt": "2026-04-20T13:35:43.968Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-4": {
+    "phraseId": "indonesian-simple-problems-4",
+    "fileName": "indonesian-simple-problems-4.mp3",
+    "language": "indonesian",
+    "text": "Saya ketinggalan barang.",
+    "chars": 24,
+    "generatedAt": "2026-04-20T13:35:45.092Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-5": {
+    "phraseId": "indonesian-simple-problems-5",
+    "fileName": "indonesian-simple-problems-5.mp3",
+    "language": "indonesian",
+    "text": "Wi-Fi-nya tidak berfungsi.",
+    "chars": 26,
+    "generatedAt": "2026-04-20T13:35:46.267Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-7": {
+    "phraseId": "indonesian-simple-problems-7",
+    "fileName": "indonesian-simple-problems-7.mp3",
+    "language": "indonesian",
+    "text": "Bisa teleponkan untuk saya?",
+    "chars": 27,
+    "generatedAt": "2026-04-20T13:35:47.387Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-polite-basics-8": {
+    "phraseId": "indonesian-polite-basics-8",
+    "fileName": "indonesian-polite-basics-8.mp3",
+    "language": "indonesian",
+    "text": "Maaf.",
+    "chars": 5,
+    "generatedAt": "2026-04-20T13:35:48.484Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-8": {
+    "phraseId": "indonesian-grab-taxi-8",
+    "fileName": "indonesian-grab-taxi-8.mp3",
+    "language": "indonesian",
+    "text": "Saya tunggu di mana?",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:35:49.596Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-grab-taxi-9": {
+    "phraseId": "indonesian-grab-taxi-9",
+    "fileName": "indonesian-grab-taxi-9.mp3",
+    "language": "indonesian",
+    "text": "Tolong tunggu sebentar.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:35:50.730Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-asking-price-8": {
+    "phraseId": "indonesian-asking-price-8",
+    "fileName": "indonesian-asking-price-8.mp3",
+    "language": "indonesian",
+    "text": "Bisa bayar tunai?",
+    "chars": 17,
+    "generatedAt": "2026-04-20T13:35:51.832Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-asking-price-9": {
+    "phraseId": "indonesian-asking-price-9",
+    "fileName": "indonesian-asking-price-9.mp3",
+    "language": "indonesian",
+    "text": "Bisa bayar pakai kartu?",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:35:52.959Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-asking-price-10": {
+    "phraseId": "indonesian-asking-price-10",
+    "fileName": "indonesian-asking-price-10.mp3",
+    "language": "indonesian",
+    "text": "Bisa bayar pakai QR?",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:35:54.106Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-convenience-store-8": {
+    "phraseId": "indonesian-convenience-store-8",
+    "fileName": "indonesian-convenience-store-8.mp3",
+    "language": "indonesian",
+    "text": "Toiletnya di mana?",
+    "chars": 18,
+    "generatedAt": "2026-04-20T13:35:55.204Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-8": {
+    "phraseId": "indonesian-simple-problems-8",
+    "fileName": "indonesian-simple-problems-8.mp3",
+    "language": "indonesian",
+    "text": "Tolong ulangi.",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:35:56.318Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-9": {
+    "phraseId": "indonesian-simple-problems-9",
+    "fileName": "indonesian-simple-problems-9.mp3",
+    "language": "indonesian",
+    "text": "Bisa tolong ditulis?",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:35:57.462Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-10": {
+    "phraseId": "indonesian-simple-problems-10",
+    "fileName": "indonesian-simple-problems-10.mp3",
+    "language": "indonesian",
+    "text": "Bisa tunjukkan di peta?",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:35:58.632Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "indonesian-simple-problems-11": {
+    "phraseId": "indonesian-simple-problems-11",
+    "fileName": "indonesian-simple-problems-11.mp3",
+    "language": "indonesian",
+    "text": "Tolong bantu saya.",
+    "chars": 18,
+    "generatedAt": "2026-04-20T13:35:59.788Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  }
+}

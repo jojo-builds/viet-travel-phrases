@@ -1,0 +1,372 @@
+{
+  "italian-coffee-shop-1": {
+    "phraseId": "italian-coffee-shop-1",
+    "fileName": "italian-coffee-shop-1.mp3",
+    "language": "italian",
+    "text": "Un caffè, per favore.",
+    "chars": 21,
+    "generatedAt": "2026-04-20T13:33:46.328Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-coffee-shop-2": {
+    "phraseId": "italian-coffee-shop-2",
+    "fileName": "italian-coffee-shop-2.mp3",
+    "language": "italian",
+    "text": "Un caffè americano, per favore.",
+    "chars": 31,
+    "generatedAt": "2026-04-20T13:33:47.468Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-coffee-shop-3": {
+    "phraseId": "italian-coffee-shop-3",
+    "fileName": "italian-coffee-shop-3.mp3",
+    "language": "italian",
+    "text": "Un cappuccino, per favore.",
+    "chars": 26,
+    "generatedAt": "2026-04-20T13:33:48.596Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-coffee-shop-7": {
+    "phraseId": "italian-coffee-shop-7",
+    "fileName": "italian-coffee-shop-7.mp3",
+    "language": "italian",
+    "text": "Posso pagare, per favore?",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:33:49.711Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-street-food-2": {
+    "phraseId": "italian-street-food-2",
+    "fileName": "italian-street-food-2.mp3",
+    "language": "italian",
+    "text": "Prendo questo, grazie.",
+    "chars": 22,
+    "generatedAt": "2026-04-20T13:33:50.831Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-street-food-3": {
+    "phraseId": "italian-street-food-3",
+    "fileName": "italian-street-food-3.mp3",
+    "language": "italian",
+    "text": "Non piccante, per favore.",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:33:51.953Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-street-food-6": {
+    "phraseId": "italian-street-food-6",
+    "fileName": "italian-street-food-6.mp3",
+    "language": "italian",
+    "text": "Una forchetta e un cucchiaio, per favore.",
+    "chars": 41,
+    "generatedAt": "2026-04-20T13:33:53.169Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-street-food-7": {
+    "phraseId": "italian-street-food-7",
+    "fileName": "italian-street-food-7.mp3",
+    "language": "italian",
+    "text": "Me lo prepari da asporto, per favore.",
+    "chars": 37,
+    "generatedAt": "2026-04-20T13:33:54.331Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-grab-taxi-2": {
+    "phraseId": "italian-grab-taxi-2",
+    "fileName": "italian-grab-taxi-2.mp3",
+    "language": "italian",
+    "text": "Mi porti alla stazione, per favore.",
+    "chars": 35,
+    "generatedAt": "2026-04-20T13:33:55.470Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-grab-taxi-4": {
+    "phraseId": "italian-grab-taxi-4",
+    "fileName": "italian-grab-taxi-4.mp3",
+    "language": "italian",
+    "text": "Da questa parte.",
+    "chars": 16,
+    "generatedAt": "2026-04-20T13:33:56.578Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-grab-taxi-5": {
+    "phraseId": "italian-grab-taxi-5",
+    "fileName": "italian-grab-taxi-5.mp3",
+    "language": "italian",
+    "text": "Può accendere l'aria condizionata, per favore?",
+    "chars": 46,
+    "generatedAt": "2026-04-20T13:33:57.767Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-grab-taxi-6": {
+    "phraseId": "italian-grab-taxi-6",
+    "fileName": "italian-grab-taxi-6.mp3",
+    "language": "italian",
+    "text": "Mi aspetti cinque minuti, per favore.",
+    "chars": 37,
+    "generatedAt": "2026-04-20T13:33:59.004Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-grab-taxi-7": {
+    "phraseId": "italian-grab-taxi-7",
+    "fileName": "italian-grab-taxi-7.mp3",
+    "language": "italian",
+    "text": "Pago in contanti.",
+    "chars": 17,
+    "generatedAt": "2026-04-20T13:34:00.151Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-asking-price-2": {
+    "phraseId": "italian-asking-price-2",
+    "fileName": "italian-asking-price-2.mp3",
+    "language": "italian",
+    "text": "Quanto costa al chilo?",
+    "chars": 22,
+    "generatedAt": "2026-04-20T13:34:01.277Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-asking-price-3": {
+    "phraseId": "italian-asking-price-3",
+    "fileName": "italian-asking-price-3.mp3",
+    "language": "italian",
+    "text": "Costa troppo.",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:34:02.372Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-asking-price-5": {
+    "phraseId": "italian-asking-price-5",
+    "fileName": "italian-asking-price-5.mp3",
+    "language": "italian",
+    "text": "Quanto fa in tutto?",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:34:03.480Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-asking-price-6": {
+    "phraseId": "italian-asking-price-6",
+    "fileName": "italian-asking-price-6.mp3",
+    "language": "italian",
+    "text": "Me ne fa vedere un altro?",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:34:04.589Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-asking-price-7": {
+    "phraseId": "italian-asking-price-7",
+    "fileName": "italian-asking-price-7.mp3",
+    "language": "italian",
+    "text": "Prendo questo.",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:34:05.670Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-polite-basics-3": {
+    "phraseId": "italian-polite-basics-3",
+    "fileName": "italian-polite-basics-3.mp3",
+    "language": "italian",
+    "text": "Sì.",
+    "chars": 3,
+    "generatedAt": "2026-04-20T13:34:06.778Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-polite-basics-4": {
+    "phraseId": "italian-polite-basics-4",
+    "fileName": "italian-polite-basics-4.mp3",
+    "language": "italian",
+    "text": "No, grazie.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:34:07.864Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-polite-basics-6": {
+    "phraseId": "italian-polite-basics-6",
+    "fileName": "italian-polite-basics-6.mp3",
+    "language": "italian",
+    "text": "Non fa niente.",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:34:08.948Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-polite-basics-7": {
+    "phraseId": "italian-polite-basics-7",
+    "fileName": "italian-polite-basics-7.mp3",
+    "language": "italian",
+    "text": "Arrivederci.",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:34:10.031Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-convenience-store-3": {
+    "phraseId": "italian-convenience-store-3",
+    "fileName": "italian-convenience-store-3.mp3",
+    "language": "italian",
+    "text": "Dei fazzoletti, per favore.",
+    "chars": 27,
+    "generatedAt": "2026-04-20T13:34:11.172Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-convenience-store-4": {
+    "phraseId": "italian-convenience-store-4",
+    "fileName": "italian-convenience-store-4.mp3",
+    "language": "italian",
+    "text": "Dov'è la crema solare?",
+    "chars": 22,
+    "generatedAt": "2026-04-20T13:34:12.289Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-convenience-store-5": {
+    "phraseId": "italian-convenience-store-5",
+    "fileName": "italian-convenience-store-5.mp3",
+    "language": "italian",
+    "text": "Me lo apre, per favore?",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:34:13.415Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-hotel-hostel-4": {
+    "phraseId": "italian-hotel-hostel-4",
+    "fileName": "italian-hotel-hostel-4.mp3",
+    "language": "italian",
+    "text": "Questa camera è troppo calda.",
+    "chars": 29,
+    "generatedAt": "2026-04-20T13:34:14.543Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-hotel-hostel-5": {
+    "phraseId": "italian-hotel-hostel-5",
+    "fileName": "italian-hotel-hostel-5.mp3",
+    "language": "italian",
+    "text": "L'aria condizionata non funziona.",
+    "chars": 33,
+    "generatedAt": "2026-04-20T13:34:15.707Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-hotel-hostel-6": {
+    "phraseId": "italian-hotel-hostel-6",
+    "fileName": "italian-hotel-hostel-6.mp3",
+    "language": "italian",
+    "text": "Più asciugamani, per favore.",
+    "chars": 28,
+    "generatedAt": "2026-04-20T13:34:16.819Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-hotel-hostel-7": {
+    "phraseId": "italian-hotel-hostel-7",
+    "fileName": "italian-hotel-hostel-7.mp3",
+    "language": "italian",
+    "text": "Può tenere i miei bagagli, per favore?",
+    "chars": 38,
+    "generatedAt": "2026-04-20T13:34:17.986Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-directions-1": {
+    "phraseId": "italian-directions-1",
+    "fileName": "italian-directions-1.mp3",
+    "language": "italian",
+    "text": "Come arrivo alla stazione?",
+    "chars": 26,
+    "generatedAt": "2026-04-20T13:34:19.124Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-directions-4": {
+    "phraseId": "italian-directions-4",
+    "fileName": "italian-directions-4.mp3",
+    "language": "italian",
+    "text": "Dove devo girare a sinistra?",
+    "chars": 28,
+    "generatedAt": "2026-04-20T13:34:20.253Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-directions-5": {
+    "phraseId": "italian-directions-5",
+    "fileName": "italian-directions-5.mp3",
+    "language": "italian",
+    "text": "Devo girare a destra qui?",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:34:21.374Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-directions-6": {
+    "phraseId": "italian-directions-6",
+    "fileName": "italian-directions-6.mp3",
+    "language": "italian",
+    "text": "Sempre dritto?",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:34:22.476Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-directions-7": {
+    "phraseId": "italian-directions-7",
+    "fileName": "italian-directions-7.mp3",
+    "language": "italian",
+    "text": "Grazie, adesso ho capito.",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:34:23.607Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-simple-problems-4": {
+    "phraseId": "italian-simple-problems-4",
+    "fileName": "italian-simple-problems-4.mp3",
+    "language": "italian",
+    "text": "Ho dimenticato qualcosa.",
+    "chars": 24,
+    "generatedAt": "2026-04-20T13:34:24.728Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-simple-problems-5": {
+    "phraseId": "italian-simple-problems-5",
+    "fileName": "italian-simple-problems-5.mp3",
+    "language": "italian",
+    "text": "Il Wi-Fi non funziona.",
+    "chars": 22,
+    "generatedAt": "2026-04-20T13:34:25.834Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "italian-small-talk-3": {
+    "phraseId": "italian-small-talk-3",
+    "fileName": "italian-small-talk-3.mp3",
+    "language": "italian",
+    "text": "È la mia prima volta qui.",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:34:26.955Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  }
+}

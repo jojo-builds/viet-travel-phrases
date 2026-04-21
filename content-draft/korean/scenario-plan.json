@@ -1,0 +1,110 @@
+{
+  "variant": "korean",
+  "appId": "korean-travel-phrases",
+  "displayName": "Korean Phrases",
+  "language": "Korean",
+  "languageCode": "ko",
+  "country": "South Korea",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "korean-polite-basics-5",
+    "korean-polite-basics-2",
+    "korean-asking-price-1",
+    "korean-grab-taxi-1",
+    "korean-simple-problems-2"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Cafe kiosks, takeaway pickup, and drink customizations are common; short phrases for less ice, no syrup, or takeaway matter most."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Pointing helps, but simple Korean is useful for portion count, not spicy, water, takeaway, and quick menu confirmation."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Showing the destination on your phone is standard; short phrases for take me here, stop here, wait a minute, and payment method matter most."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Use this more for price confirmation and item choice than bargaining; card versus cash follow-through matters more in South Korea."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "Short respectful phrases do a lot of work in Korea; excuse me, thank you, sorry, and polite acknowledgment matter more than casual friendliness."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Convenience stores solve many traveler problems fast: water, tissues, chargers, receipt, bag, and card-payment confirmation."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Reservation lookup, passport handling, check-in, checkout time, luggage storage, and room-problem reporting are the highest-value front-desk moments."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Station names, subway exits, line numbers, and whether something is near here matter more than generic city-center wording."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "Show your screen early; repair phrases for slower speech, repetition, lost items, and calling for help matter more than long explanations."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Keep this light and optional; ordering, directions, payment, and repair phrases matter more than forced conversation in the first pack."
+    }
+  ],
+  "notes": "Shared traveler baseline for Korean, reprioritized around polite utility, Hangul show-screen readability, and non-Latin search caution. Fill translation, pronunciation, and audio posture before runtime wiring."
+}

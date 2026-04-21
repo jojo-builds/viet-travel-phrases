@@ -1,0 +1,110 @@
+{
+  "variant": "turkish",
+  "appId": "turkish-travel-phrases",
+  "displayName": "Turkish Phrases",
+  "language": "Turkish",
+  "languageCode": "tr",
+  "country": "Turkey",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "turkish-polite-basics-5",
+    "turkish-polite-basics-2",
+    "turkish-asking-price-1",
+    "turkish-grab-taxi-1",
+    "turkish-simple-problems-2"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Tea and coffee stops move quickly, so point if needed and say sugar or takeaway early."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Keep the order short and confirm takeaway, bottled water, or spice level before they plate it."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Show the map first, then confirm the stop or route if traffic or pickup points get confusing."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Ask the price before agreeing; some bazaars allow negotiation, but many everyday shops do not."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "Merhaba, tesekkur ederim, and pardon or affedersiniz carry a lot of everyday goodwill."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "These shops are useful for water, tissues, chargers, receipts, and quick card-or-cash questions."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Have your passport and booking ready, and ask early about checkout time or room problems."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Ask about the metro, tram, ferry, or the nearest landmark and keep the map open while they answer."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "Use a short repair phrase first, then show the booking, map, medicine box, or screenshot."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Short friendly chat usually stays simple: where you are from, whether it is your first visit, and compliments about food."
+    }
+  ],
+  "notes": "Shared traveler baseline scaffold for Turkish, now reordered around first-wave traveler utility. Fill translation, pronunciation, Turkish-character search handling, and audio posture before runtime wiring."
+}

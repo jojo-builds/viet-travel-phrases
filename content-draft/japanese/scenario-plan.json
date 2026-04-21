@@ -1,0 +1,110 @@
+{
+  "variant": "japanese",
+  "appId": "japanese-travel-phrases",
+  "displayName": "Japanese Phrases",
+  "language": "Japanese",
+  "languageCode": "ja",
+  "country": "Japan",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "japanese-polite-basics-5",
+    "japanese-polite-basics-2",
+    "japanese-asking-price-1",
+    "japanese-grab-taxi-1",
+    "japanese-simple-problems-2"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Self-order kiosks and pickup counters are common; short phrases matter most when changing ice, sugar, or takeaway."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Ticket machines, tablet menus, and set meals are common; short requests for water, takeaway, or spice level matter more than long explanations."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Showing the destination screen is standard; short phrases for take me here, stop here, and payment method are more useful than long directions."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Bargaining is uncommon in Japan; use this scenario more for price confirmation, item choice, and receipt or tax-free follow-through."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "Short polite forms matter more than casual friendliness; excuse me and thank you do a lot of work in travel moments."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Convenience stores solve many traveler problems fast: water, ATM, bag, receipt, charger, and quick checkout questions."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Passport presentation, reservation lookup, checkout time, and luggage storage are common front-desk moments."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Station names, exits, platforms, and whether something is walkable matter more than street names."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "Show your screen early; repair phrases for slower speech, repetition, and lost-item help matter more than long explanations."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Keep this light and optional; service usefulness matters more than forcing conversation in the first pack."
+    }
+  ],
+  "notes": "Shared traveler baseline for Japanese, now reprioritized around polite utility, show-screen readability, and non-Latin search caution. Fill translation, pronunciation, and audio posture before runtime wiring."
+}

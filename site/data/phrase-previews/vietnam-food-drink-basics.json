@@ -1,6 +1,7 @@
 {
   "schemaVersion": 3,
   "exportType": "website-phrase-audio-module",
+  "exportedAt": "2026-04-18T09:37:44.117Z",
   "moduleId": "vietnam-food-drink-basics",
   "moduleSlug": "vietnam-food-drink-basics",
   "destinationSlug": "vietnam",
@@ -32,11 +33,35 @@
   "transcriptChecked": null,
   "phraseCount": 4,
   "familyCount": 4,
+  "relationCoverage": {
+    "status": "partial",
+    "advisoryOnly": true,
+    "coveredFamilyCount": 2,
+    "coveredPhraseCount": 2,
+    "totalFamilyCount": 4,
+    "coveredFamilyIds": [
+      "food-not-spicy",
+      "food-bottled-water"
+    ],
+    "coveredClusterIds": [
+      "viet-food-not-spicy",
+      "viet-food-bottled-water"
+    ]
+  },
   "articleReference": {
     "primaryLabel": "Install Viet Travel Phrasebook",
     "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
     "secondaryLabel": "See the full Vietnam phrase guide",
     "secondaryUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+  },
+  "trust": {
+    "sourceLabel": "Live Viet starter export",
+    "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+    "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+    "methodologyLabel": "How SpeakLocal builds packs",
+    "methodologyUrl": "/about/",
+    "correctionsLabel": "Report a phrase or audio gap",
+    "correctionsUrl": "/feedback/"
   },
   "cta": {
     "primaryLabel": "Install Viet Travel Phrasebook",
@@ -115,6 +140,43 @@
       "canonicalTargetText": "Không cay nhé",
       "pronunciation": "khong kai nhe",
       "context": "Use this before the dish is prepared if you want mild food.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-food-not-spicy",
+        "coverageMoment": "food",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "food-3",
+        "clearerFormPhraseId": "food-not-spicy-clearer",
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [],
+        "possibleTravelerResponses": [
+          {
+            "kind": "drink-follow-up",
+            "familyId": "food-bottled-water",
+            "note": "Even after asking for mild food, water is a common next move.",
+            "phraseId": "food-5"
+          },
+          {
+            "kind": "repair-branch",
+            "familyId": "repair-understand",
+            "note": "If the cook or server explains ingredients quickly, the safer next move is to say you do not understand.",
+            "phraseId": "problems-2"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "food-bottled-water",
+            "reason": "Water is a practical adjacent ask once food preferences are clear."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-understand",
+            "reason": "Ingredient talk can get fast, and the user needs a clean repair branch."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/food-3.mp3",
@@ -159,6 +221,32 @@
       "canonicalTargetText": "Có nước suối không?",
       "pronunciation": "koh nook soy khong",
       "context": "Ask this when you want bottled water with your meal.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-food-bottled-water",
+        "coverageMoment": "food",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "food-5",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [],
+        "possibleTravelerResponses": [
+          {
+            "kind": "price-check",
+            "familyId": "money-final-price",
+            "note": "Once the add-on is clear, the next useful move is often the final amount.",
+            "phraseId": "price-5"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "money-final-price",
+            "reason": "A quick total check is a common next move when the table order is set."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/food-5.mp3",

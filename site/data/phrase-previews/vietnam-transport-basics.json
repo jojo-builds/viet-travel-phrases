@@ -1,6 +1,7 @@
 {
   "schemaVersion": 3,
   "exportType": "website-phrase-audio-module",
+  "exportedAt": "2026-04-18T09:37:44.117Z",
   "moduleId": "vietnam-transport-basics",
   "moduleSlug": "vietnam-transport-basics",
   "destinationSlug": "vietnam",
@@ -32,11 +33,39 @@
   "transcriptChecked": null,
   "phraseCount": 4,
   "familyCount": 4,
+  "relationCoverage": {
+    "status": "full",
+    "advisoryOnly": true,
+    "coveredFamilyCount": 4,
+    "coveredPhraseCount": 4,
+    "totalFamilyCount": 4,
+    "coveredFamilyIds": [
+      "transport-destination",
+      "transport-stop-here",
+      "transport-fare",
+      "transport-meter"
+    ],
+    "coveredClusterIds": [
+      "viet-transport-destination",
+      "viet-transport-stop-here",
+      "viet-transport-fare",
+      "viet-transport-meter"
+    ]
+  },
   "articleReference": {
     "primaryLabel": "Install Viet Travel Phrasebook",
     "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
     "secondaryLabel": "Read the Vietnam transport guide",
     "secondaryUrl": "/blog/vietnam-grab-taxi-confusion/"
+  },
+  "trust": {
+    "sourceLabel": "Live Viet starter export",
+    "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+    "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+    "methodologyLabel": "How SpeakLocal builds packs",
+    "methodologyUrl": "/about/",
+    "correctionsLabel": "Report a phrase or audio gap",
+    "correctionsUrl": "/feedback/"
   },
   "cta": {
     "primaryLabel": "Install Viet Travel Phrasebook",
@@ -72,6 +101,59 @@
       "pronunciation": "cho toy toy day",
       "context": "Use this while showing your destination on your phone.",
       "youMayHear": "This entrance or the next one?",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-transport-destination",
+        "coverageMoment": "transport",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "taxi-1",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [
+          {
+            "signalText": "This entrance or the next one?",
+            "sourcePhraseId": "taxi-1",
+            "advisoryOnly": true
+          }
+        ],
+        "possibleTravelerResponses": [
+          {
+            "kind": "price-check",
+            "familyId": "transport-fare",
+            "note": "After confirming the destination, the next useful branch is often the fare.",
+            "phraseId": "transport-fare"
+          },
+          {
+            "kind": "repair-branch",
+            "familyId": "repair-write-down",
+            "note": "If the address is not landing clearly, switch to a write-it-down or show-it approach.",
+            "phraseId": "repair-2"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "transport-fare",
+            "reason": "Destination and fare are the two most common ride-opening moves."
+          },
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "transport-stop-here",
+            "reason": "Once the route is understood, the rider often needs the drop-off phrase ready for the final turn."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-write-down",
+            "reason": "Writing or showing the destination is the safest repair when speech alone is not enough."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-understand",
+            "reason": "If the driver starts asking route questions you cannot follow, the direct repair branch matters immediately."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/taxi-1.mp3",
@@ -116,6 +198,25 @@
       "canonicalTargetText": "Dừng ở đây được rồi",
       "pronunciation": "zoong uh day dook roy",
       "context": "Use this when you want the driver to stop at the current spot.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-transport-stop-here",
+        "coverageMoment": "transport",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "taxi-3",
+        "clearerFormPhraseId": "transport-stop-here-clearer",
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [],
+        "possibleTravelerResponses": [],
+        "familyRelations": [
+          {
+            "relationType": "see_also",
+            "targetFamilyId": "transport-destination",
+            "reason": "Destination and drop-off phrases are the bookends of the same ride flow."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/taxi-3.mp3",
@@ -161,6 +262,59 @@
       "pronunciation": "tyen seh bao nyew",
       "context": "Use this before or during the ride when you need the fare clearly.",
       "youMayHear": "Fixed price, not meter.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-transport-fare",
+        "coverageMoment": "transport",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "transport-fare",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [
+          {
+            "signalText": "Fixed price, not meter.",
+            "sourcePhraseId": "transport-fare",
+            "advisoryOnly": true
+          }
+        ],
+        "possibleTravelerResponses": [
+          {
+            "kind": "comparison",
+            "familyId": "money-final-price",
+            "note": "When the first fare number is vague or inflated, the traveler often needs the final amount next.",
+            "phraseId": "price-5"
+          },
+          {
+            "kind": "repair-branch",
+            "familyId": "repair-write-down",
+            "note": "If the spoken number is hard to catch, written confirmation is the cleanest repair.",
+            "phraseId": "repair-2"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "same_need_alt_context",
+            "targetFamilyId": "money-how-much",
+            "reason": "Both families solve amount-checking, but this one is ride-specific and the other is general-item pricing."
+          },
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "money-final-price",
+            "reason": "A vague or negotiable first fare often leads into a final-price check."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-write-down",
+            "reason": "Written numbers reduce errors around fares, totals, and route charges."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-understand",
+            "reason": "If the driver explains too much too quickly, a direct understanding repair is safer than guessing."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/transport-fare.mp3",
@@ -205,6 +359,43 @@
       "canonicalTargetText": "Làm ơn bật đồng hồ giúp tôi",
       "pronunciation": "lahm uhn but dong ho zoop toy",
       "context": "Use this at the start of the ride when you need the meter running.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-transport-meter",
+        "coverageMoment": "transport",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "transport-meter",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [
+          {
+            "signalText": "The meter is already running.",
+            "sourcePhraseId": "transport-meter",
+            "advisoryOnly": true
+          }
+        ],
+        "possibleTravelerResponses": [
+          {
+            "kind": "fare-check",
+            "familyId": "transport-fare",
+            "note": "If the driver resists or explains the price another way, the fare family is the next grounded move.",
+            "phraseId": "transport-fare"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "see_also",
+            "targetFamilyId": "transport-fare",
+            "reason": "Meter requests and fare checks belong to the same opening price-protection moment."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-write-down",
+            "reason": "Written numbers or totals are safer than guessing when the meter conversation gets muddy."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/transport-meter.mp3",

@@ -1,0 +1,110 @@
+{
+  "variant": "thai",
+  "appId": "thai-travel-phrases",
+  "displayName": "Thai Phrases",
+  "language": "Thai",
+  "languageCode": "th",
+  "country": "Thailand",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "thai-polite-basics-1",
+    "thai-polite-basics-2",
+    "thai-polite-basics-5",
+    "thai-asking-price-1",
+    "thai-polite-basics-4"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Short Thai helps when you need to adjust sweetness, ice, or takeaway quickly at a busy cafe."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Street-food Thai should prioritize spice, ice, takeaway, and simple allergy or ingredient repair."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Showing the map pin helps, but Thailand still needs quick phrases for pickup points, meter use, and stop-here moments."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Ask the price early and be ready for cash, card, or QR-payment clarification in small shops and markets."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "Thai politeness particles matter, so this scenario should stay near the front of the starter experience."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Convenience stores are high-frequency traveler stops for water, chargers, tissues, SIM help, and receipts."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Hotel Thai should cover passports, reservations, deposits, air conditioning, towels, and key-card trouble."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Directions should bias toward stations, exits, piers, and map-confirmation repair rather than textbook navigation drills."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "This lane should cover misunderstanding, phone/data trouble, getting lost, and first-step medical or police escalation."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Keep Thai small talk short, warm, and optional; it should never crowd out the higher-stress service scenarios."
+    }
+  ],
+  "notes": "Shared traveler baseline scaffold for Thai. No scenario-ID deviation from the family 10-scenario seam; Thai-specific changes belong in phrase choice, script/pronunciation handling, and quick-phrase priority before any runtime wiring."
+}

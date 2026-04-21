@@ -1,27 +1,57 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, Pressable, Text, View } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Animated, Pressable, View } from 'react-native';
 import * as Haptics from 'expo-haptics';
-import { Audio, AVPlaybackStatus } from 'expo-av';
-import audioRegistry from '../assets/audio/registry';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Audio, AVPlaybackStatus, PitchCorrectionQuality } from 'expo-av';
+import { currentApp } from '../family/currentApp';
+import { formatAudioPlaybackRate, useAudioPlaybackPreference } from '../lib/audioPlaybackPreferences';
+import { ThemedText } from './ui/ThemedText';
 
 type Props = {
-  audioFile: string;
+  audioKey: string;
   size?: number;
+  showLabel?: boolean;
+  tone?: 'solid' | 'subtle';
 };
 
 let activeSound: Audio.Sound | null = null;
 let activeStop: (() => Promise<void>) | null = null;
+let activeOwnerId: symbol | null = null;
 
-export function AudioPlayButton({ audioFile, size = 48 }: Props) {
+async function applyPlaybackRate(sound: Audio.Sound, playbackRate: number) {
+  if (playbackRate === 1) {
+    await sound.setRateAsync(1, false, PitchCorrectionQuality.Medium).catch(() => undefined);
+    return;
+  }
+
+  await sound.setRateAsync(playbackRate, true, PitchCorrectionQuality.Medium).catch(async () => {
+    await sound.setRateAsync(1, false, PitchCorrectionQuality.Medium).catch(() => undefined);
+  });
+}
+
+export function AudioPlayButton({ audioKey, size = 48, showLabel = false, tone = 'solid' }: Props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
   const scale = useRef(new Animated.Value(1)).current;
+  const ownerId = useRef(Symbol(audioKey));
+  const { option: playbackSpeedOption, rate: playbackRate } = useAudioPlaybackPreference();
+  const iconSize = Math.round(size * 0.42);
+  const isSubtle = tone === 'subtle';
+  const speedLabel = formatAudioPlaybackRate(playbackRate);
+  const showSpeedBadge = playbackSpeedOption !== '1.0x';
+  const buttonClassName = isSubtle
+    ? `items-center justify-center rounded-full border ${isPlaying ? 'border-premium bg-premium' : 'border-border bg-background'}`
+    : `items-center justify-center rounded-2xl shadow-sm ${isPlaying ? 'bg-premium' : 'bg-primary'}`;
+  const iconColor = isSubtle ? (isPlaying ? '#FFFFFF' : '#D97745') : '#FFFFFF';
 
-  useEffect(() => () => {
-    if (activeStop) {
-      void activeStop();
-    }
-  }, []);
+  useEffect(
+    () => () => {
+      if (activeOwnerId === ownerId.current && activeStop) {
+        void activeStop();
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!isPlaying) {
@@ -36,21 +66,28 @@ export function AudioPlayButton({ audioFile, size = 48 }: Props) {
         Animated.timing(scale, { toValue: 1, duration: 450, useNativeDriver: true }),
       ]),
     );
+
     loop.start();
     return () => loop.stop();
   }, [isPlaying, scale]);
 
-  const iconSize = useMemo(() => Math.round(size * 0.42), [size]);
+  useEffect(() => {
+    if (!isPlaying || activeOwnerId !== ownerId.current || !activeSound) {
+      return;
+    }
+
+    void applyPlaybackRate(activeSound, playbackRate).catch(() => undefined);
+  }, [isPlaying, playbackRate]);
 
   const handlePress = async () => {
     await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
 
-    if (isPlaying && activeStop) {
+    if (isPlaying && activeOwnerId === ownerId.current && activeStop) {
       await activeStop();
       return;
     }
 
-    const source = audioRegistry[audioFile];
+    const source = currentApp.audio.resolveAudioSource(audioKey);
     if (!source) {
       setHasError(true);
       return;
@@ -63,7 +100,9 @@ export function AudioPlayButton({ audioFile, size = 48 }: Props) {
 
       setHasError(false);
       const { sound } = await Audio.Sound.createAsync(source);
+      await applyPlaybackRate(sound, playbackRate);
       activeSound = sound;
+      activeOwnerId = ownerId.current;
       setIsPlaying(true);
 
       activeStop = async () => {
@@ -73,6 +112,9 @@ export function AudioPlayButton({ audioFile, size = 48 }: Props) {
             await activeSound.unloadAsync().catch(() => undefined);
           }
         } finally {
+          if (activeOwnerId === ownerId.current) {
+            activeOwnerId = null;
+          }
           activeSound = null;
           activeStop = null;
           setIsPlaying(false);
@@ -80,7 +122,7 @@ export function AudioPlayButton({ audioFile, size = 48 }: Props) {
       };
 
       sound.setOnPlaybackStatusUpdate((status: AVPlaybackStatus) => {
-        if (status.isLoaded && status.didJustFinish && activeStop) {
+        if (status.isLoaded && status.didJustFinish && activeOwnerId === ownerId.current && activeStop) {
           void activeStop();
         }
       });
@@ -89,7 +131,7 @@ export function AudioPlayButton({ audioFile, size = 48 }: Props) {
     } catch {
       setHasError(true);
       setIsPlaying(false);
-      if (activeStop) {
+      if (activeOwnerId === ownerId.current && activeStop) {
         await activeStop();
       }
     }
@@ -97,20 +139,38 @@ export function AudioPlayButton({ audioFile, size = 48 }: Props) {
 
   return (
     <View className="items-center">
-      <Animated.View style={{ transform: [{ scale }] }}>
-        <Pressable
-          accessibilityLabel={isPlaying ? 'Stop phrase audio' : 'Play phrase audio'}
-          accessibilityRole="button"
-          onPress={() => void handlePress()}
-          className="items-center justify-center rounded-full bg-primary"
-          style={{ height: size, width: size }}
-        >
-          <Text className="font-semibold text-white" style={{ fontSize: iconSize }}>
-            {isPlaying ? '■' : '▶'}
-          </Text>
-        </Pressable>
-      </Animated.View>
-      {hasError ? <Text className="mt-1 text-xs text-primary">!</Text> : null}
+      <View className="relative">
+        <Animated.View style={{ transform: [{ scale }] }}>
+          <Pressable
+            accessibilityHint={showSpeedBadge ? 'Uses the same phrase audio clip at a slower playback speed.' : undefined}
+            accessibilityLabel={isPlaying ? 'Stop phrase audio' : `Play phrase audio at ${speedLabel}`}
+            accessibilityRole="button"
+            onPress={() => void handlePress()}
+            className={buttonClassName}
+            style={{ height: size, width: size }}
+            testID={`audio-play-${audioKey}`}
+          >
+            <Ionicons name={isPlaying ? 'stop' : 'volume-high'} size={iconSize} color={iconColor} />
+          </Pressable>
+        </Animated.View>
+        {showSpeedBadge ? (
+          <View className="absolute -right-1 -top-1 rounded-full border border-border bg-surface px-1.5 py-[2px]">
+            <ThemedText variant="caption" className="text-[10px] font-semibold leading-3 text-text-primary">
+              {speedLabel}
+            </ThemedText>
+          </View>
+        ) : null}
+      </View>
+      {showLabel ? (
+        <ThemedText variant="caption" className="mt-2 font-semibold text-text-secondary">
+          {isPlaying ? 'Stop audio' : `Play audio${showSpeedBadge ? ` at ${speedLabel}` : ''}`}
+        </ThemedText>
+      ) : null}
+      {hasError ? (
+        <ThemedText variant="caption" className="mt-2 font-semibold text-primary">
+          Audio unavailable
+        </ThemedText>
+      ) : null}
     </View>
   );
 }

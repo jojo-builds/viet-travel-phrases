@@ -1,0 +1,3678 @@
+{
+  "polite-1": {
+    "fileName": "polite-1.mp3",
+    "text": "Xin chào"
+  },
+  "polite-2": {
+    "fileName": "polite-2.mp3",
+    "text": "Cảm ơn"
+  },
+  "polite-thank-you-polite": {
+    "fileName": "polite-thank-you-polite.mp3",
+    "text": "Cảm ơn nhiều"
+  },
+  "polite-3": {
+    "fileName": "polite-3.mp3",
+    "text": "Dạ"
+  },
+  "polite-4": {
+    "fileName": "polite-4.mp3",
+    "text": "Không, cảm ơn"
+  },
+  "polite-5": {
+    "fileName": "polite-5.mp3",
+    "text": "Xin lỗi"
+  },
+  "polite-6": {
+    "fileName": "polite-6.mp3",
+    "text": "Không sao đâu"
+  },
+  "polite-7": {
+    "fileName": "polite-7.mp3",
+    "text": "Tạm biệt"
+  },
+  "v500-poli-basi-yes": {
+    "fileName": "v500-poli-basi-yes.mp3",
+    "text": "Đúng"
+  },
+  "v500-poli-basi-okay": {
+    "fileName": "v500-poli-basi-okay.mp3",
+    "text": "Đồng ý"
+  },
+  "v500-poli-basi-sorry": {
+    "fileName": "v500-poli-basi-sorry.mp3",
+    "text": "Lấy làm tiếc"
+  },
+  "v500-poli-basi-excuse-me": {
+    "fileName": "v500-poli-basi-excuse-me.mp3",
+    "text": "Xin lỗi"
+  },
+  "v500-poli-basi-i-need-this": {
+    "fileName": "v500-poli-basi-i-need-this.mp3",
+    "text": "tôi cần cái này"
+  },
+  "v500-poli-basi-thats-okay": {
+    "fileName": "v500-poli-basi-thats-okay.mp3",
+    "text": "Không sao đâu"
+  },
+  "v900-poli-basi-may-i": {
+    "fileName": "v900-poli-basi-may-i.mp3",
+    "text": "Tôi có thể không?"
+  },
+  "v900-poli-basi-no-problem": {
+    "fileName": "v900-poli-basi-no-problem.mp3",
+    "text": "Không có gì"
+  },
+  "v900-poli-basi-thats-fine": {
+    "fileName": "v900-poli-basi-thats-fine.mp3",
+    "text": "Không sao đâu"
+  },
+  "v900-poli-basi-can-i-come-in": {
+    "fileName": "v900-poli-basi-can-i-come-in.mp3",
+    "text": "Tôi có thể vào được không?"
+  },
+  "v900-poli-basi-im-in-a-hurry": {
+    "fileName": "v900-poli-basi-im-in-a-hurry.mp3",
+    "text": "tôi đang vội"
+  },
+  "v900-poli-basi-im-very-sorry": {
+    "fileName": "v900-poli-basi-im-very-sorry.mp3",
+    "text": "tôi rất xin lỗi"
+  },
+  "v900-poli-basi-can-i-sit-here": {
+    "fileName": "v900-poli-basi-can-i-sit-here.mp3",
+    "text": "Tôi có thể ngồi đây được không?"
+  },
+  "problems-2": {
+    "fileName": "problems-2.mp3",
+    "text": "Tôi không hiểu"
+  },
+  "problems-3": {
+    "fileName": "problems-3.mp3",
+    "text": "Nói chậm chút được không?"
+  },
+  "repair-slower-polite": {
+    "fileName": "repair-slower-polite.mp3",
+    "text": "Nói chậm giúp tôi được không?"
+  },
+  "repair-1": {
+    "fileName": "repair-1.mp3",
+    "text": "Làm ơn nói lại"
+  },
+  "repair-2": {
+    "fileName": "repair-2.mp3",
+    "text": "Viết xuống giúp tôi"
+  },
+  "repair-3": {
+    "fileName": "repair-3.mp3",
+    "text": "Cái đó nghĩa là gì?"
+  },
+  "repair-4": {
+    "fileName": "repair-4.mp3",
+    "text": "Ý anh/chị là cái nào?"
+  },
+  "repair-show-me": {
+    "fileName": "repair-show-me.mp3",
+    "text": "Chỉ cho tôi được không?"
+  },
+  "repair-5": {
+    "fileName": "repair-5.mp3",
+    "text": "Chỉ trên bản đồ giúp tôi được không?"
+  },
+  "repair-6": {
+    "fileName": "repair-6.mp3",
+    "text": "Làm ơn nói lại số đó"
+  },
+  "repair-number-amount": {
+    "fileName": "repair-number-amount.mp3",
+    "text": "Anh/chị vừa nói bao nhiêu?"
+  },
+  "repair-english-help": {
+    "fileName": "repair-english-help.mp3",
+    "text": "Anh/chị nói tiếng Anh không?"
+  },
+  "repair-english-help-self-limit": {
+    "fileName": "repair-english-help-self-limit.mp3",
+    "text": "Xin lỗi, tôi không nói tiếng Việt"
+  },
+  "repair-translate-this": {
+    "fileName": "repair-translate-this.mp3",
+    "text": "Dịch giúp tôi cái này được không?"
+  },
+  "repair-premium-simpler-words": {
+    "fileName": "repair-premium-simpler-words.mp3",
+    "text": "Bạn có thể sử dụng những từ đơn giản hơn?"
+  },
+  "repair-premium-type-phone": {
+    "fileName": "repair-premium-type-phone.mp3",
+    "text": "Bạn có thể gõ nó trên điện thoại của bạn?"
+  },
+  "repair-premium-text-me": {
+    "fileName": "repair-premium-text-me.mp3",
+    "text": "Bạn có thể nhắn tin cho tôi được không?"
+  },
+  "repair-premium-spell-name": {
+    "fileName": "repair-premium-spell-name.mp3",
+    "text": "Bạn có thể đánh vần tên cho tôi được không?"
+  },
+  "repair-premium-which-exit": {
+    "fileName": "repair-premium-which-exit.mp3",
+    "text": "Đó là lối ra nào?"
+  },
+  "repair-premium-time-exact": {
+    "fileName": "repair-premium-time-exact.mp3",
+    "text": "Chính xác là mấy giờ?"
+  },
+  "v500-unde-repa-please-say-it-slowly": {
+    "fileName": "v500-unde-repa-please-say-it-slowly.mp3",
+    "text": "Hãy nói từ từ nhé"
+  },
+  "v500-unde-repa-how-much-did-you-say": {
+    "fileName": "v500-unde-repa-how-much-did-you-say.mp3",
+    "text": "Bạn đã nói bao nhiêu?"
+  },
+  "v500-unde-repa-can-you-show-me-on-the-map": {
+    "fileName": "v500-unde-repa-can-you-show-me-on-the-map.mp3",
+    "text": "Bạn có thể chỉ cho tôi trên bản đồ được không?"
+  },
+  "v500-unde-repa-sorry-i-dont-speak-vietnamese": {
+    "fileName": "v500-unde-repa-sorry-i-dont-speak-vietnamese.mp3",
+    "text": "Xin lỗi, tôi không nói được tiếng Việt"
+  },
+  "v500-unde-repa-please-point-to-it": {
+    "fileName": "v500-unde-repa-please-point-to-it.mp3",
+    "text": "Hãy chỉ vào nó"
+  },
+  "v500-unde-repa-is-that-per-person": {
+    "fileName": "v500-unde-repa-is-that-per-person.mp3",
+    "text": "Đó có phải là mỗi người?"
+  },
+  "v500-unde-repa-please-mark-it-here": {
+    "fileName": "v500-unde-repa-please-mark-it-here.mp3",
+    "text": "Hãy đánh dấu nó ở đây"
+  },
+  "v500-unde-repa-is-that-good-or-bad": {
+    "fileName": "v500-unde-repa-is-that-good-or-bad.mp3",
+    "text": "Điều đó tốt hay xấu?"
+  },
+  "v500-unde-repa-do-you-mean-this-one": {
+    "fileName": "v500-unde-repa-do-you-mean-this-one.mp3",
+    "text": "Ý bạn là cái này phải không?"
+  },
+  "v500-unde-repa-i-understand-a-little": {
+    "fileName": "v500-unde-repa-i-understand-a-little.mp3",
+    "text": "Tôi hiểu một chút"
+  },
+  "v500-unde-repa-i-missed-what-you-said": {
+    "fileName": "v500-unde-repa-i-missed-what-you-said.mp3",
+    "text": "Tôi đã bỏ lỡ những gì bạn nói"
+  },
+  "v500-unde-repa-okay-now-i-understand": {
+    "fileName": "v500-unde-repa-okay-now-i-understand.mp3",
+    "text": "Được rồi, bây giờ tôi đã hiểu"
+  },
+  "v500-unde-repa-can-you-spell-the-name": {
+    "fileName": "v500-unde-repa-can-you-spell-the-name.mp3",
+    "text": "Bạn có thể đánh vần tên được không?"
+  },
+  "v500-unde-repa-can-you-write-the-time": {
+    "fileName": "v500-unde-repa-can-you-write-the-time.mp3",
+    "text": "Bạn có thể viết thời gian được không?"
+  },
+  "v500-unde-repa-let-me-show-you-instead": {
+    "fileName": "v500-unde-repa-let-me-show-you-instead.mp3",
+    "text": "Thay vào đó hãy để tôi chỉ cho bạn"
+  },
+  "v500-unde-repa-can-you-write-the-price": {
+    "fileName": "v500-unde-repa-can-you-write-the-price.mp3",
+    "text": "Bạn có thể viết giá được không?"
+  },
+  "v500-unde-repa-is-that-the-final-total": {
+    "fileName": "v500-unde-repa-is-that-the-final-total.mp3",
+    "text": "Đó có phải là tổng số cuối cùng?"
+  },
+  "v500-unde-repa-that-is-not-what-i-meant": {
+    "fileName": "v500-unde-repa-that-is-not-what-i-meant.mp3",
+    "text": "Đó không phải là ý tôi"
+  },
+  "v500-unde-repa-is-this-the-right-number": {
+    "fileName": "v500-unde-repa-is-this-the-right-number.mp3",
+    "text": "Đây có phải là con số đúng không?"
+  },
+  "v500-unde-repa-please-be-patient-with-me": {
+    "fileName": "v500-unde-repa-please-be-patient-with-me.mp3",
+    "text": "Xin hãy kiên nhẫn với tôi"
+  },
+  "v500-unde-repa-can-you-show-me-a-picture": {
+    "fileName": "v500-unde-repa-can-you-show-me-a-picture.mp3",
+    "text": "Bạn có thể cho tôi xem một bức ảnh được không?"
+  },
+  "v500-unde-repa-can-you-write-the-address": {
+    "fileName": "v500-unde-repa-can-you-write-the-address.mp3",
+    "text": "Bạn có thể viết địa chỉ được không?"
+  },
+  "v500-unde-repa-please-speak-into-my-phone": {
+    "fileName": "v500-unde-repa-please-speak-into-my-phone.mp3",
+    "text": "Hãy nói vào điện thoại của tôi"
+  },
+  "v500-unde-repa-please-show-me-where-to-tap": {
+    "fileName": "v500-unde-repa-please-show-me-where-to-tap.mp3",
+    "text": "Vui lòng chỉ cho tôi nơi để nhấn"
+  },
+  "v500-unde-repa-thank-you-for-understanding": {
+    "fileName": "v500-unde-repa-thank-you-for-understanding.mp3",
+    "text": "Cảm ơn bạn đã hiểu"
+  },
+  "v500-unde-repa-can-i-use-a-translation-app": {
+    "fileName": "v500-unde-repa-can-i-use-a-translation-app.mp3",
+    "text": "Tôi có thể sử dụng ứng dụng dịch thuật không?"
+  },
+  "v500-unde-repa-i-dont-understand-this-word": {
+    "fileName": "v500-unde-repa-i-dont-understand-this-word.mp3",
+    "text": "Tôi không hiểu từ này"
+  },
+  "v500-unde-repa-is-this-translation-correct": {
+    "fileName": "v500-unde-repa-is-this-translation-correct.mp3",
+    "text": "Bản dịch này có đúng không?"
+  },
+  "v500-unde-repa-can-you-repeat-the-last-part": {
+    "fileName": "v500-unde-repa-can-you-repeat-the-last-part.mp3",
+    "text": "Bạn có thể nhắc lại phần cuối được không?"
+  },
+  "v500-unde-repa-is-this-the-place-on-the-map": {
+    "fileName": "v500-unde-repa-is-this-the-place-on-the-map.mp3",
+    "text": "Đây có phải là địa điểm trên bản đồ không?"
+  },
+  "v500-unde-repa-please-type-it-into-my-phone": {
+    "fileName": "v500-unde-repa-please-type-it-into-my-phone.mp3",
+    "text": "Hãy gõ nó vào điện thoại của tôi."
+  },
+  "v900-unde-repa-can-you-explain-it-in-english": {
+    "fileName": "v900-unde-repa-can-you-explain-it-in-english.mp3",
+    "text": "Bạn có thể giải thích nó bằng tiếng Anh không?"
+  },
+  "v900-unde-repa-can-you-read-this-translation": {
+    "fileName": "v900-unde-repa-can-you-read-this-translation.mp3",
+    "text": "Bạn có đọc được bản dịch này không?"
+  },
+  "v900-unde-repa-do-you-mean-today-or-tomorrow": {
+    "fileName": "v900-unde-repa-do-you-mean-today-or-tomorrow.mp3",
+    "text": "Ý bạn là hôm nay hay ngày mai?"
+  },
+  "v900-unde-repa-can-you-say-it-in-a-simpler-way": {
+    "fileName": "v900-unde-repa-can-you-say-it-in-a-simpler-way.mp3",
+    "text": "Bạn có thể nói nó một cách đơn giản hơn?"
+  },
+  "v900-unde-repa-i-think-there-is-a-misunderstanding": {
+    "fileName": "v900-unde-repa-i-think-there-is-a-misunderstanding.mp3",
+    "text": "Tôi nghĩ có sự hiểu lầm"
+  },
+  "v900-unde-repa-is-there-someone-who-speaks-english": {
+    "fileName": "v900-unde-repa-is-there-someone-who-speaks-english.mp3",
+    "text": "Có ai nói được tiếng Anh không?"
+  },
+  "v900-unde-repa-could-you-speak-a-little-slower-please": {
+    "fileName": "v900-unde-repa-could-you-speak-a-little-slower-please.mp3",
+    "text": "Bạn có thể nói chậm lại một chút được không?"
+  },
+  "v900-unde-repa-im-trying-but-i-dont-know-the-right-words": {
+    "fileName": "v900-unde-repa-im-trying-but-i-dont-know-the-right-words.mp3",
+    "text": "Tôi đang cố gắng nhưng không biết dùng từ thích hợp"
+  },
+  "taxi-1": {
+    "fileName": "taxi-1.mp3",
+    "text": "Cho tôi tới đây"
+  },
+  "taxi-2": {
+    "fileName": "taxi-2.mp3",
+    "text": "Đi quận 1"
+  },
+  "taxi-3": {
+    "fileName": "taxi-3.mp3",
+    "text": "Dừng ở đây được rồi"
+  },
+  "transport-stop-here-clearer": {
+    "fileName": "transport-stop-here-clearer.mp3",
+    "text": "Cho tôi xuống ngay đây"
+  },
+  "taxi-4": {
+    "fileName": "taxi-4.mp3",
+    "text": "Đi đường này đi"
+  },
+  "taxi-5": {
+    "fileName": "taxi-5.mp3",
+    "text": "Mở máy lạnh giúp tôi"
+  },
+  "taxi-6": {
+    "fileName": "taxi-6.mp3",
+    "text": "Chờ tôi năm phút"
+  },
+  "taxi-7": {
+    "fileName": "taxi-7.mp3",
+    "text": "Tôi trả bằng tiền mặt"
+  },
+  "transport-fare": {
+    "fileName": "transport-fare.mp3",
+    "text": "Tiền xe bao nhiêu?"
+  },
+  "transport-meter": {
+    "fileName": "transport-meter.mp3",
+    "text": "Làm ơn bật đồng hồ giúp tôi"
+  },
+  "transport-lost": {
+    "fileName": "transport-lost.mp3",
+    "text": "Tôi nghĩ chúng ta bị lạc rồi"
+  },
+  "transport-1": {
+    "fileName": "transport-1.mp3",
+    "text": "Đây có đúng bến không?"
+  },
+  "transport-2": {
+    "fileName": "transport-2.mp3",
+    "text": "Xe này có đi tới… không?"
+  },
+  "transport-premium-wrong-car": {
+    "fileName": "transport-premium-wrong-car.mp3",
+    "text": "Đây không phải là xe của tôi."
+  },
+  "transport-premium-wrong-pickup-point": {
+    "fileName": "transport-premium-wrong-pickup-point.mp3",
+    "text": "Đây có phải là điểm đón phù hợp không?"
+  },
+  "transport-premium-wait-here": {
+    "fileName": "transport-premium-wait-here.mp3",
+    "text": "Xin hãy đợi ở đây, tôi đang tới."
+  },
+  "transport-premium-route-wrong": {
+    "fileName": "transport-premium-route-wrong.mp3",
+    "text": "Tuyến đường này sai."
+  },
+  "transport-premium-turn-around": {
+    "fileName": "transport-premium-turn-around.mp3",
+    "text": "Xin hãy quay lại."
+  },
+  "v500-tran-please-turn-around": {
+    "fileName": "v500-tran-please-turn-around.mp3",
+    "text": "Xin hãy quay lại theo hướng khác"
+  },
+  "transport-premium-luggage-trunk": {
+    "fileName": "transport-premium-luggage-trunk.mp3",
+    "text": "Hành lý của tôi ở trong cốp xe."
+  },
+  "v500-tran-do-you-have-a-helmet": {
+    "fileName": "v500-tran-do-you-have-a-helmet.mp3",
+    "text": "Bạn có mũ bảo hiểm không?"
+  },
+  "v500-tran-please-let-me-out-here": {
+    "fileName": "v500-tran-please-let-me-out-here.mp3",
+    "text": "Xin vui lòng cho tôi ra khỏi đây"
+  },
+  "v500-tran-please-stop-right-here": {
+    "fileName": "v500-tran-please-stop-right-here.mp3",
+    "text": "Xin dừng lại ở đây"
+  },
+  "v500-tran-does-this-bus-go-there": {
+    "fileName": "v500-tran-does-this-bus-go-there.mp3",
+    "text": "Xe buýt này có đi đến đó không?"
+  },
+  "v500-tran-i-feel-unsafe-please-stop": {
+    "fileName": "v500-tran-i-feel-unsafe-please-stop.mp3",
+    "text": "Tôi cảm thấy không an toàn, xin hãy dừng lại"
+  },
+  "v500-tran-i-left-something-in-the-car": {
+    "fileName": "v500-tran-i-left-something-in-the-car.mp3",
+    "text": "Tôi để quên thứ gì đó trong xe"
+  },
+  "v500-tran-please-take-me-to-this-hotel": {
+    "fileName": "v500-tran-please-take-me-to-this-hotel.mp3",
+    "text": "Vui lòng đưa tôi đến khách sạn này"
+  },
+  "v500-tran-i-will-pay-the-driver-in-cash": {
+    "fileName": "v500-tran-i-will-pay-the-driver-in-cash.mp3",
+    "text": "Tôi sẽ trả tiền mặt cho tài xế"
+  },
+  "v500-tran-is-this-my-car": {
+    "fileName": "v500-tran-is-this-my-car.mp3",
+    "text": "Đây có phải là xe của tôi không?"
+  },
+  "v500-tran-i-missed-my-stop": {
+    "fileName": "v500-tran-i-missed-my-stop.mp3",
+    "text": "Tôi đã bỏ lỡ điểm dừng của mình"
+  },
+  "v500-tran-please-wait-here": {
+    "fileName": "v500-tran-please-wait-here.mp3",
+    "text": "Xin vui lòng đợi ở đây"
+  },
+  "v500-tran-are-you-my-driver": {
+    "fileName": "v500-tran-are-you-my-driver.mp3",
+    "text": "Bạn là tài xế của tôi à?"
+  },
+  "v500-tran-please-go-straight": {
+    "fileName": "v500-tran-please-go-straight.mp3",
+    "text": "Hãy đi thẳng"
+  },
+  "v900-tran-pick-me-up-at-this-entrance": {
+    "fileName": "v900-tran-pick-me-up-at-this-entrance.mp3",
+    "text": "Hãy đón tôi ở lối vào này"
+  },
+  "v500-tran-please-drive-slower": {
+    "fileName": "v500-tran-please-drive-slower.mp3",
+    "text": "Xin hãy lái xe chậm lại"
+  },
+  "v500-tran-please-follow-the-map": {
+    "fileName": "v500-tran-please-follow-the-map.mp3",
+    "text": "Hãy đi theo bản đồ"
+  },
+  "v500-tran-please-open-the-trunk": {
+    "fileName": "v500-tran-please-open-the-trunk.mp3",
+    "text": "Vui lòng mở cốp xe"
+  },
+  "v500-tran-when-is-the-next-bus": {
+    "fileName": "v500-tran-when-is-the-next-bus.mp3",
+    "text": "Khi nào có chuyến xe buýt tiếp theo?"
+  },
+  "v500-tran-where-do-i-return-it": {
+    "fileName": "v500-tran-where-do-i-return-it.mp3",
+    "text": "Tôi có thể trả lại nó ở đâu?"
+  },
+  "v500-tran-can-i-put-my-bag-here": {
+    "fileName": "v500-tran-can-i-put-my-bag-here.mp3",
+    "text": "Tôi có thể đặt túi của tôi ở đây được không?"
+  },
+  "v500-tran-i-got-on-the-wrong-bus": {
+    "fileName": "v500-tran-i-got-on-the-wrong-bus.mp3",
+    "text": "Tôi lên nhầm xe buýt"
+  },
+  "v500-tran-is-this-train-delayed": {
+    "fileName": "v500-tran-is-this-train-delayed.mp3",
+    "text": "Chuyến tàu này có bị trễ không?"
+  },
+  "v500-tran-please-call-the-driver": {
+    "fileName": "v500-tran-please-call-the-driver.mp3",
+    "text": "Vui lòng gọi tài xế"
+  },
+  "v500-tran-please-drive-carefully": {
+    "fileName": "v500-tran-please-drive-carefully.mp3",
+    "text": "Hãy lái xe cẩn thận"
+  },
+  "v500-tran-please-lower-the-music": {
+    "fileName": "v500-tran-please-lower-the-music.mp3",
+    "text": "Làm ơn giảm nhạc đi"
+  },
+  "v900-tran-please-open-the-window": {
+    "fileName": "v900-tran-please-open-the-window.mp3",
+    "text": "Hãy mở cửa sổ"
+  },
+  "v900-tran-please-turn-right-here": {
+    "fileName": "v900-tran-please-turn-right-here.mp3",
+    "text": "Vui lòng rẽ phải ở đây"
+  },
+  "v900-tran-is-this-seat-available": {
+    "fileName": "v900-tran-is-this-seat-available.mp3",
+    "text": "Chỗ ngồi này có sẵn không?"
+  },
+  "v900-tran-please-avoid-toll-roads": {
+    "fileName": "v900-tran-please-avoid-toll-roads.mp3",
+    "text": "Vui lòng tránh đường thu phí"
+  },
+  "v900-tran-please-close-the-window": {
+    "fileName": "v900-tran-please-close-the-window.mp3",
+    "text": "Hãy đóng cửa sổ lại"
+  },
+  "v900-tran-where-is-the-boat-pier": {
+    "fileName": "v900-tran-where-is-the-boat-pier.mp3",
+    "text": "Bến thuyền ở đâu?"
+  },
+  "v900-tran-can-you-break-this-bill": {
+    "fileName": "v900-tran-can-you-break-this-bill.mp3",
+    "text": "Bạn có thể phá vỡ hóa đơn này?"
+  },
+  "v900-tran-can-you-pick-me-up-here": {
+    "fileName": "v900-tran-can-you-pick-me-up-here.mp3",
+    "text": "Bạn có thể đón tôi ở đây được không?"
+  },
+  "v900-tran-does-that-include-tolls": {
+    "fileName": "v900-tran-does-that-include-tolls.mp3",
+    "text": "Điều đó có bao gồm phí cầu đường không?"
+  },
+  "v900-tran-i-booked-through-the-app": {
+    "fileName": "v900-tran-i-booked-through-the-app.mp3",
+    "text": "Tôi đã đặt qua ứng dụng"
+  },
+  "v900-tran-is-that-the-total-price": {
+    "fileName": "v900-tran-is-that-the-total-price.mp3",
+    "text": "Đó có phải là tổng giá không?"
+  },
+  "v900-tran-is-there-an-airport-fee": {
+    "fileName": "v900-tran-is-there-an-airport-fee.mp3",
+    "text": "Có phí sân bay không?"
+  },
+  "v900-tran-please-avoid-the-highway": {
+    "fileName": "v900-tran-please-avoid-the-highway.mp3",
+    "text": "Xin hãy tránh đường cao tốc"
+  },
+  "v900-tran-please-give-me-a-receipt": {
+    "fileName": "v900-tran-please-give-me-a-receipt.mp3",
+    "text": "Vui lòng đưa cho tôi biên nhận"
+  },
+  "v900-tran-how-many-stops-from-here": {
+    "fileName": "v900-tran-how-many-stops-from-here.mp3",
+    "text": "Có bao nhiêu điểm dừng từ đây?"
+  },
+  "v900-tran-i-paid-in-the-app-already": {
+    "fileName": "v900-tran-i-paid-in-the-app-already.mp3",
+    "text": "Tôi đã thanh toán trong ứng dụng rồi"
+  },
+  "v900-tran-i-think-the-fare-is-wrong": {
+    "fileName": "v900-tran-i-think-the-fare-is-wrong.mp3",
+    "text": "Tôi nghĩ giá vé sai"
+  },
+  "v900-tran-this-is-the-wrong-address": {
+    "fileName": "v900-tran-this-is-the-wrong-address.mp3",
+    "text": "Đây là địa chỉ sai"
+  },
+  "v900-tran-where-can-i-buy-a-ticket": {
+    "fileName": "v900-tran-where-can-i-buy-a-ticket.mp3",
+    "text": "Tôi có thể mua vé ở đâu?"
+  },
+  "v900-tran-please-wait-while-i-get-in": {
+    "fileName": "v900-tran-please-wait-while-i-get-in.mp3",
+    "text": "Vui lòng đợi trong khi tôi vào"
+  },
+  "v900-tran-thank-you-keep-the-change": {
+    "fileName": "v900-tran-thank-you-keep-the-change.mp3",
+    "text": "Cảm ơn bạn, hãy giữ sự thay đổi"
+  },
+  "v900-tran-the-driver-left-without-me": {
+    "fileName": "v900-tran-the-driver-left-without-me.mp3",
+    "text": "Người lái xe rời đi mà không có tôi"
+  },
+  "v900-tran-are-we-going-the-right-way": {
+    "fileName": "v900-tran-are-we-going-the-right-way.mp3",
+    "text": "Chúng ta có đang đi đúng hướng không?"
+  },
+  "v900-tran-can-i-pay-the-fare-by-card": {
+    "fileName": "v900-tran-can-i-pay-the-fare-by-card.mp3",
+    "text": "Tôi có thể thanh toán tiền vé bằng thẻ không?"
+  },
+  "v900-tran-the-car-number-is-different": {
+    "fileName": "v900-tran-the-car-number-is-different.mp3",
+    "text": "Số xe khác hẳn"
+  },
+  "v900-tran-the-motorbike-has-a-problem": {
+    "fileName": "v900-tran-the-motorbike-has-a-problem.mp3",
+    "text": "Xe máy có vấn đề"
+  },
+  "v900-tran-this-is-the-correct-address": {
+    "fileName": "v900-tran-this-is-the-correct-address.mp3",
+    "text": "Đây là địa chỉ chính xác"
+  },
+  "v900-tran-id-like-to-rent-a-motorbike": {
+    "fileName": "v900-tran-id-like-to-rent-a-motorbike.mp3",
+    "text": "Tôi muốn thuê một chiếc xe máy"
+  },
+  "v900-tran-please-take-the-faster-route": {
+    "fileName": "v900-tran-please-take-the-faster-route.mp3",
+    "text": "Hãy đi con đường nhanh hơn"
+  },
+  "v900-tran-one-ticket-to-da-nang-please": {
+    "fileName": "v900-tran-one-ticket-to-da-nang-please.mp3",
+    "text": "Cho xin 1 vé đi Đà Nẵng"
+  },
+  "v900-tran-please-stop-near-the-entrance": {
+    "fileName": "v900-tran-please-stop-near-the-entrance.mp3",
+    "text": "Vui lòng dừng gần lối vào"
+  },
+  "v900-tran-this-is-not-the-place-i-meant": {
+    "fileName": "v900-tran-this-is-not-the-place-i-meant.mp3",
+    "text": "Đây không phải là nơi tôi muốn nói"
+  },
+  "v900-tran-please-show-me-how-to-start-it": {
+    "fileName": "v900-tran-please-show-me-how-to-start-it.mp3",
+    "text": "Hãy chỉ cho tôi cách bắt đầu nó"
+  },
+  "v900-tran-please-stop-at-the-next-corner": {
+    "fileName": "v900-tran-please-stop-at-the-next-corner.mp3",
+    "text": "Vui lòng dừng lại ở góc tiếp theo"
+  },
+  "v900-tran-please-take-me-to-this-address": {
+    "fileName": "v900-tran-please-take-me-to-this-address.mp3",
+    "text": "Hãy đưa tôi đến địa chỉ này"
+  },
+  "v900-tran-please-tell-me-when-to-get-off": {
+    "fileName": "v900-tran-please-tell-me-when-to-get-off.mp3",
+    "text": "Hãy cho tôi biết khi nào nên xuống xe"
+  },
+  "v900-tran-can-i-see-the-rental-agreement": {
+    "fileName": "v900-tran-can-i-see-the-rental-agreement.mp3",
+    "text": "Tôi có thể xem hợp đồng thuê được không?"
+  },
+  "v900-tran-how-much-is-the-rental-per-day": {
+    "fileName": "v900-tran-how-much-is-the-rental-per-day.mp3",
+    "text": "Giá thuê một ngày là bao nhiêu?"
+  },
+  "v900-tran-the-app-shows-a-different-route": {
+    "fileName": "v900-tran-the-app-shows-a-different-route.mp3",
+    "text": "Ứng dụng hiển thị một tuyến đường khác"
+  },
+  "v900-tran-the-driver-asked-for-more-money": {
+    "fileName": "v900-tran-the-driver-asked-for-more-money.mp3",
+    "text": "Tài xế đòi thêm tiền"
+  },
+  "v900-tran-which-stop-should-i-get-off-at": {
+    "fileName": "v900-tran-which-stop-should-i-get-off-at.mp3",
+    "text": "Tôi nên xuống ở điểm dừng nào?"
+  },
+  "v900-tran-what-time-is-the-last-boat-back": {
+    "fileName": "v900-tran-what-time-is-the-last-boat-back.mp3",
+    "text": "Chuyến tàu cuối cùng về lúc mấy giờ?"
+  },
+  "v900-tran-the-entrance-is-on-the-other-side": {
+    "fileName": "v900-tran-the-entrance-is-on-the-other-side.mp3",
+    "text": "Lối vào nằm ở phía bên kia"
+  },
+  "v900-tran-does-the-rental-include-insurance": {
+    "fileName": "v900-tran-does-the-rental-include-insurance.mp3",
+    "text": "Giá thuê có bao gồm bảo hiểm không?"
+  },
+  "v900-tran-which-bus-goes-to-the-city-center": {
+    "fileName": "v900-tran-which-bus-goes-to-the-city-center.mp3",
+    "text": "Xe buýt nào đi vào trung tâm thành phố?"
+  },
+  "v900-tran-please-turn-left-at-the-next-street": {
+    "fileName": "v900-tran-please-turn-left-at-the-next-street.mp3",
+    "text": "Vui lòng rẽ trái ở đường tiếp theo"
+  },
+  "v900-tran-can-you-help-me-contact-the-company": {
+    "fileName": "v900-tran-can-you-help-me-contact-the-company.mp3",
+    "text": "Bạn có thể giúp tôi liên hệ với công ty được không?"
+  },
+  "v900-tran-please-fill-up-the-tank": {
+    "fileName": "v900-tran-please-fill-up-the-tank.mp3",
+    "text": "Hãy đổ đầy bình."
+  },
+  "v900-tran-please-use-the-price-in-the-grab-app": {
+    "fileName": "v900-tran-please-use-the-price-in-the-grab-app.mp3",
+    "text": "Vui lòng sử dụng giá trên ứng dụng Grab."
+  },
+  "v900-tran-can-i-pay-by-bank-transfer": {
+    "fileName": "v900-tran-can-i-pay-by-bank-transfer.mp3",
+    "text": "Tôi có thể thanh toán bằng chuyển khoản ngân hàng không?"
+  },
+  "hotel-1": {
+    "fileName": "hotel-1.mp3",
+    "text": "Tôi có đặt phòng"
+  },
+  "hotel-2": {
+    "fileName": "hotel-2.mp3",
+    "text": "Cho tôi nhận phòng"
+  },
+  "hotel-check-in-polite": {
+    "fileName": "hotel-check-in-polite.mp3",
+    "text": "Cho tôi nhận phòng nhé"
+  },
+  "hotel-3": {
+    "fileName": "hotel-3.mp3",
+    "text": "Mấy giờ trả phòng?"
+  },
+  "hotel-quiet-room": {
+    "fileName": "hotel-quiet-room.mp3",
+    "text": "Cho tôi phòng yên tĩnh được không?"
+  },
+  "hotel-checkout": {
+    "fileName": "hotel-checkout.mp3",
+    "text": "Cho tôi trả phòng"
+  },
+  "hotel-4": {
+    "fileName": "hotel-4.mp3",
+    "text": "Phòng này nóng quá"
+  },
+  "hotel-5": {
+    "fileName": "hotel-5.mp3",
+    "text": "Máy lạnh không chạy"
+  },
+  "hotel-6": {
+    "fileName": "hotel-6.mp3",
+    "text": "Cho tôi thêm khăn"
+  },
+  "hotel-more-supplies-paper": {
+    "fileName": "hotel-more-supplies-paper.mp3",
+    "text": "Cho tôi thêm giấy vệ sinh được không?"
+  },
+  "hotel-7": {
+    "fileName": "hotel-7.mp3",
+    "text": "Giữ hành lý giúp tôi"
+  },
+  "hotel-8": {
+    "fileName": "hotel-8.mp3",
+    "text": "Thẻ phòng không mở được"
+  },
+  "hotel-9": {
+    "fileName": "hotel-9.mp3",
+    "text": "Gọi taxi giúp tôi được không?"
+  },
+  "hotel-premium-booking-wrong": {
+    "fileName": "hotel-premium-booking-wrong.mp3",
+    "text": "Tôi nghĩ có vấn đề với việc đặt phòng của tôi."
+  },
+  "hotel-premium-different-room": {
+    "fileName": "hotel-premium-different-room.mp3",
+    "text": "Tôi đã đặt một phòng khác."
+  },
+  "hotel-premium-room-not-ready": {
+    "fileName": "hotel-premium-room-not-ready.mp3",
+    "text": "Căn phòng vẫn chưa sẵn sàng."
+  },
+  "hotel-premium-no-hot-water": {
+    "fileName": "hotel-premium-no-hot-water.mp3",
+    "text": "Ở đây không có nước nóng."
+  },
+  "v500-hote-acco-there-is-no-hot-water": {
+    "fileName": "v500-hote-acco-there-is-no-hot-water.mp3",
+    "text": "Vòi sen chỉ có nước lạnh"
+  },
+  "hotel-premium-too-noisy": {
+    "fileName": "hotel-premium-too-noisy.mp3",
+    "text": "Căn phòng quá ồn ào."
+  },
+  "v500-hote-acco-the-room-is-too-noisy": {
+    "fileName": "v500-hote-acco-the-room-is-too-noisy.mp3",
+    "text": "Tôi không thể ngủ được vì quá ồn ào"
+  },
+  "hotel-premium-late-checkout": {
+    "fileName": "hotel-premium-late-checkout.mp3",
+    "text": "Tôi có thể trả phòng sau được không?"
+  },
+  "v500-hote-acco-the-door-does-not-lock": {
+    "fileName": "v500-hote-acco-the-door-does-not-lock.mp3",
+    "text": "Cửa không khóa"
+  },
+  "v500-hote-acco-the-electricity-is-out": {
+    "fileName": "v500-hote-acco-the-electricity-is-out.mp3",
+    "text": "Điện đã hết"
+  },
+  "v500-hote-acco-can-someone-come-fix-it": {
+    "fileName": "v500-hote-acco-can-someone-come-fix-it.mp3",
+    "text": "Ai đó có thể đến sửa nó được không?"
+  },
+  "v500-hote-acco-the-toilet-is-not-working": {
+    "fileName": "v500-hote-acco-the-toilet-is-not-working.mp3",
+    "text": "Nhà vệ sinh không hoạt động"
+  },
+  "v500-hote-acco-here-is-my-passport-for-check-in": {
+    "fileName": "v500-hote-acco-here-is-my-passport-for-check-in.mp3",
+    "text": "Đây là hộ chiếu của tôi để nhận phòng"
+  },
+  "v500-hote-acco-can-i-pay-now": {
+    "fileName": "v500-hote-acco-can-i-pay-now.mp3",
+    "text": "Tôi có thể thanh toán bây giờ được không?"
+  },
+  "v500-hote-acco-i-booked-online": {
+    "fileName": "v500-hote-acco-i-booked-online.mp3",
+    "text": "Tôi đã đặt trực tuyến"
+  },
+  "v500-hote-acco-can-i-change-rooms": {
+    "fileName": "v500-hote-acco-can-i-change-rooms.mp3",
+    "text": "Tôi có thể đổi phòng được không?"
+  },
+  "v500-hote-acco-can-i-have-an-iron": {
+    "fileName": "v500-hote-acco-can-i-have-an-iron.mp3",
+    "text": "Tôi có thể có một cái bàn ủi được không?"
+  },
+  "v500-hote-acco-can-i-check-in-early": {
+    "fileName": "v500-hote-acco-can-i-check-in-early.mp3",
+    "text": "Tôi có thể nhận phòng sớm được không?"
+  },
+  "v500-hote-acco-can-i-check-out-late": {
+    "fileName": "v500-hote-acco-can-i-check-out-late.mp3",
+    "text": "Tôi có thể trả phòng muộn được không?"
+  },
+  "v500-hote-acco-can-i-have-more-soap": {
+    "fileName": "v500-hote-acco-can-i-have-more-soap.mp3",
+    "text": "Tôi có thể lấy thêm xà phòng được không?"
+  },
+  "v500-hote-acco-the-room-is-not-clean": {
+    "fileName": "v500-hote-acco-the-room-is-not-clean.mp3",
+    "text": "Phòng không sạch sẽ"
+  },
+  "v900-hote-acco-the-shower-is-not-working": {
+    "fileName": "v900-hote-acco-the-shower-is-not-working.mp3",
+    "text": "Vòi hoa sen không hoạt động"
+  },
+  "v900-hote-acco-the-water-pressure-is-too-low": {
+    "fileName": "v900-hote-acco-the-water-pressure-is-too-low.mp3",
+    "text": "Áp lực nước quá thấp"
+  },
+  "v500-hote-acco-do-you-need-a-deposit": {
+    "fileName": "v500-hote-acco-do-you-need-a-deposit.mp3",
+    "text": "Bạn có cần đặt cọc không?"
+  },
+  "v500-hote-acco-is-breakfast-included": {
+    "fileName": "v500-hote-acco-is-breakfast-included.mp3",
+    "text": "Có bao gồm bữa sáng không?"
+  },
+  "v500-hote-acco-please-remove-the-trash": {
+    "fileName": "v500-hote-acco-please-remove-the-trash.mp3",
+    "text": "Vui lòng loại bỏ thùng rác"
+  },
+  "v500-hote-acco-the-safe-is-not-opening": {
+    "fileName": "v500-hote-acco-the-safe-is-not-opening.mp3",
+    "text": "két sắt không mở được"
+  },
+  "v500-hote-acco-what-time-is-breakfast": {
+    "fileName": "v500-hote-acco-what-time-is-breakfast.mp3",
+    "text": "Bữa sáng lúc mấy giờ?"
+  },
+  "v900-hote-acco-can-i-have-a-hair-dryer": {
+    "fileName": "v900-hote-acco-can-i-have-a-hair-dryer.mp3",
+    "text": "Tôi có thể có máy sấy tóc được không?"
+  },
+  "v900-hote-acco-can-i-have-an-extra-bed": {
+    "fileName": "v900-hote-acco-can-i-have-an-extra-bed.mp3",
+    "text": "Tôi có thể có một giường phụ không?"
+  },
+  "v900-hote-acco-i-want-to-cancel-my-stay": {
+    "fileName": "v900-hote-acco-i-want-to-cancel-my-stay.mp3",
+    "text": "Tôi muốn hủy thời gian lưu trú của mình"
+  },
+  "v900-hote-acco-please-change-the-sheets": {
+    "fileName": "v900-hote-acco-please-change-the-sheets.mp3",
+    "text": "Vui lòng thay ga trải giường"
+  },
+  "v900-hote-acco-please-wake-me-up-at-six": {
+    "fileName": "v900-hote-acco-please-wake-me-up-at-six.mp3",
+    "text": "Hãy đánh thức tôi lúc sáu giờ nhé"
+  },
+  "v900-hote-acco-can-i-see-the-room-first": {
+    "fileName": "v900-hote-acco-can-i-see-the-room-first.mp3",
+    "text": "Tôi có thể xem phòng trước được không?"
+  },
+  "v900-hote-acco-is-this-the-total-amount": {
+    "fileName": "v900-hote-acco-is-this-the-total-amount.mp3",
+    "text": "Đây có phải là tổng số tiền?"
+  },
+  "v900-hote-acco-was-the-deposit-refunded": {
+    "fileName": "v900-hote-acco-was-the-deposit-refunded.mp3",
+    "text": "Tiền đặt cọc có được hoàn lại không?"
+  },
+  "v900-hote-acco-can-i-get-laundry-service": {
+    "fileName": "v900-hote-acco-can-i-get-laundry-service.mp3",
+    "text": "Tôi có thể nhận dịch vụ giặt ủi không?"
+  },
+  "v900-hote-acco-can-i-have-a-higher-floor": {
+    "fileName": "v900-hote-acco-can-i-have-a-higher-floor.mp3",
+    "text": "Tôi có thể có tầng cao hơn không?"
+  },
+  "v900-hote-acco-can-i-stay-one-more-night": {
+    "fileName": "v900-hote-acco-can-i-stay-one-more-night.mp3",
+    "text": "Tôi có thể ở lại thêm một đêm nữa được không?"
+  },
+  "v900-hote-acco-the-room-smells-like-smoke": {
+    "fileName": "v900-hote-acco-the-room-smells-like-smoke.mp3",
+    "text": "Căn phòng có mùi khói"
+  },
+  "v900-hote-acco-the-shower-is-not-draining": {
+    "fileName": "v900-hote-acco-the-shower-is-not-draining.mp3",
+    "text": "Vòi sen không chảy nước"
+  },
+  "v900-hote-acco-how-much-is-one-extra-night": {
+    "fileName": "v900-hote-acco-how-much-is-one-extra-night.mp3",
+    "text": "Thêm một đêm là bao nhiêu?"
+  },
+  "v900-hote-acco-id-like-to-check-in-please": {
+    "fileName": "v900-hote-acco-id-like-to-check-in-please.mp3",
+    "text": "Tôi muốn nhận phòng, vui lòng"
+  },
+  "v900-hote-acco-can-you-clean-the-room-today": {
+    "fileName": "v900-hote-acco-can-you-clean-the-room-today.mp3",
+    "text": "Hôm nay bạn có thể dọn phòng được không?"
+  },
+  "v900-hote-acco-can-you-email-me-the-invoice": {
+    "fileName": "v900-hote-acco-can-you-email-me-the-invoice.mp3",
+    "text": "Bạn có thể gửi email cho tôi hóa đơn được không?"
+  },
+  "v900-hote-acco-can-you-help-me-with-my-bags": {
+    "fileName": "v900-hote-acco-can-you-help-me-with-my-bags.mp3",
+    "text": "Bạn có thể giúp tôi mang túi xách được không?"
+  },
+  "v900-hote-acco-there-are-insects-in-the-room": {
+    "fileName": "v900-hote-acco-there-are-insects-in-the-room.mp3",
+    "text": "Có côn trùng trong phòng"
+  },
+  "v900-hote-acco-this-is-not-the-room-i-booked": {
+    "fileName": "v900-hote-acco-this-is-not-the-room-i-booked.mp3",
+    "text": "Đây không phải là phòng tôi đã đặt"
+  },
+  "v900-hote-acco-can-i-have-a-non-smoking-room": {
+    "fileName": "v900-hote-acco-can-i-have-a-non-smoking-room.mp3",
+    "text": "Tôi có thể có phòng không hút thuốc được không?"
+  },
+  "v900-hote-acco-can-you-arrange-a-taxi-for-me": {
+    "fileName": "v900-hote-acco-can-you-arrange-a-taxi-for-me.mp3",
+    "text": "Bạn có thể sắp xếp một chiếc taxi cho tôi được không?"
+  },
+  "v900-hote-acco-can-i-have-more-drinking-water": {
+    "fileName": "v900-hote-acco-can-i-have-more-drinking-water.mp3",
+    "text": "Tôi có thể uống thêm nước được không?"
+  },
+  "v900-hote-acco-can-you-put-us-in-nearby-rooms": {
+    "fileName": "v900-hote-acco-can-you-put-us-in-nearby-rooms.mp3",
+    "text": "Bạn có thể đưa chúng tôi vào phòng gần đó được không?"
+  },
+  "v900-hote-acco-is-this-room-available-tonight": {
+    "fileName": "v900-hote-acco-is-this-room-available-tonight.mp3",
+    "text": "Phòng này có trống tối nay không?"
+  },
+  "v900-hote-acco-where-can-i-pick-up-my-luggage": {
+    "fileName": "v900-hote-acco-where-can-i-pick-up-my-luggage.mp3",
+    "text": "Tôi có thể nhận hành lý của mình ở đâu?"
+  },
+  "v900-hote-acco-can-i-get-a-refund-for-the-room": {
+    "fileName": "v900-hote-acco-can-i-get-a-refund-for-the-room.mp3",
+    "text": "Tôi có thể được hoàn lại tiền phòng không?"
+  },
+  "v900-hote-acco-can-i-have-a-room-with-a-window": {
+    "fileName": "v900-hote-acco-can-i-have-a-room-with-a-window.mp3",
+    "text": "Tôi có thể đặt phòng có cửa sổ được không?"
+  },
+  "v900-hote-acco-can-i-have-a-room-with-two-beds": {
+    "fileName": "v900-hote-acco-can-i-have-a-room-with-two-beds.mp3",
+    "text": "Tôi có thể đặt một phòng có hai giường được không?"
+  },
+  "v900-hote-acco-can-you-print-my-document-for-me": {
+    "fileName": "v900-hote-acco-can-you-print-my-document-for-me.mp3",
+    "text": "Bạn có thể in tài liệu cho tôi được không?"
+  },
+  "v900-hote-acco-can-you-book-a-car-to-the-airport": {
+    "fileName": "v900-hote-acco-can-you-book-a-car-to-the-airport.mp3",
+    "text": "Bạn có thể đặt xe tới sân bay được không?"
+  },
+  "v900-hote-acco-please-do-not-clean-the-room-today": {
+    "fileName": "v900-hote-acco-please-do-not-clean-the-room-today.mp3",
+    "text": "Xin vui lòng không dọn phòng ngày hôm nay"
+  },
+  "v900-hote-acco-the-reservation-is-under-this-name": {
+    "fileName": "v900-hote-acco-the-reservation-is-under-this-name.mp3",
+    "text": "Đặt chỗ dưới tên này"
+  },
+  "v900-hote-acco-can-i-leave-my-bags-until-check-in": {
+    "fileName": "v900-hote-acco-can-i-leave-my-bags-until-check-in.mp3",
+    "text": "Tôi có thể để lại hành lý của mình cho đến khi nhận phòng không?"
+  },
+  "v900-hote-acco-the-wi-fi-is-not-working-in-my-room": {
+    "fileName": "v900-hote-acco-the-wi-fi-is-not-working-in-my-room.mp3",
+    "text": "Wi-Fi không hoạt động trong phòng tôi"
+  },
+  "v900-hote-acco-can-i-have-a-room-away-from-the-street": {
+    "fileName": "v900-hote-acco-can-i-have-a-room-away-from-the-street.mp3",
+    "text": "Tôi có thể có một phòng cách xa đường phố được không?"
+  },
+  "v900-hote-acco-can-you-store-my-luggage-after-check-out": {
+    "fileName": "v900-hote-acco-can-you-store-my-luggage-after-check-out.mp3",
+    "text": "Bạn có thể gửi hành lý của tôi sau khi trả phòng không?"
+  },
+  "v900-hote-acco-i-was-charged-for-something-i-did-not-use": {
+    "fileName": "v900-hote-acco-i-was-charged-for-something-i-did-not-use.mp3",
+    "text": "Tôi đã bị tính phí cho thứ mà tôi không sử dụng"
+  },
+  "v900-hote-acco-can-you-write-down-the-cancellation-policy": {
+    "fileName": "v900-hote-acco-can-you-write-down-the-cancellation-policy.mp3",
+    "text": "Bạn có thể viết ra chính sách hủy được không?"
+  },
+  "v900-hote-acco-can-i-have-a-baby-crib": {
+    "fileName": "v900-hote-acco-can-i-have-a-baby-crib.mp3",
+    "text": "Tôi có thể có một cái cũi em bé được không?"
+  },
+  "v900-hote-acco-everything-was-good-thank-you": {
+    "fileName": "v900-hote-acco-everything-was-good-thank-you.mp3",
+    "text": "Mọi thứ đều tốt, cảm ơn bạn"
+  },
+  "v900-hote-acco-can-you-recommend-a-nearby-restaurant": {
+    "fileName": "v900-hote-acco-can-you-recommend-a-nearby-restaurant.mp3",
+    "text": "Bạn có thể giới thiệu một nhà hàng gần đó không?"
+  },
+  "coffee-1": {
+    "fileName": "coffee-1.mp3",
+    "text": "Cho tôi một cà phê sữa đá"
+  },
+  "coffee-2": {
+    "fileName": "coffee-2.mp3",
+    "text": "Cho tôi cà phê đen đá"
+  },
+  "coffee-3": {
+    "fileName": "coffee-3.mp3",
+    "text": "Cho tôi bạc xỉu đá"
+  },
+  "coffee-4": {
+    "fileName": "coffee-4.mp3",
+    "text": "Ít đá thôi"
+  },
+  "coffee-5": {
+    "fileName": "coffee-5.mp3",
+    "text": "Không đường nhé"
+  },
+  "coffee-6": {
+    "fileName": "coffee-6.mp3",
+    "text": "Mang đi"
+  },
+  "coffee-7": {
+    "fileName": "coffee-7.mp3",
+    "text": "Tính tiền giúp tôi"
+  },
+  "food-need-table": {
+    "fileName": "food-need-table.mp3",
+    "text": "Cho tôi bàn cho hai người nhé"
+  },
+  "food-menu": {
+    "fileName": "food-menu.mp3",
+    "text": "Cho tôi xem thực đơn được không?"
+  },
+  "food-1": {
+    "fileName": "food-1.mp3",
+    "text": "Cho tôi một phần"
+  },
+  "food-2": {
+    "fileName": "food-2.mp3",
+    "text": "Cho tôi tô này"
+  },
+  "food-3": {
+    "fileName": "food-3.mp3",
+    "text": "Không cay nhé"
+  },
+  "food-not-spicy-clearer": {
+    "fileName": "food-not-spicy-clearer.mp3",
+    "text": "Làm ơn cay ít thôi"
+  },
+  "food-4": {
+    "fileName": "food-4.mp3",
+    "text": "Cho thêm rau"
+  },
+  "food-5": {
+    "fileName": "food-5.mp3",
+    "text": "Có nước suối không?"
+  },
+  "food-6": {
+    "fileName": "food-6.mp3",
+    "text": "Cho tôi muỗng với đũa"
+  },
+  "food-7": {
+    "fileName": "food-7.mp3",
+    "text": "Gói mang về"
+  },
+  "food-vegetarian": {
+    "fileName": "food-vegetarian.mp3",
+    "text": "Tôi ăn chay"
+  },
+  "food-peanut-allergy": {
+    "fileName": "food-peanut-allergy.mp3",
+    "text": "Tôi bị dị ứng đậu phộng"
+  },
+  "food-15": {
+    "fileName": "food-15.mp3",
+    "text": "Món này có trứng hay đậu phộng không?"
+  },
+  "food-16": {
+    "fileName": "food-16.mp3",
+    "text": "Đây không phải món tôi gọi"
+  },
+  "food-17": {
+    "fileName": "food-17.mp3",
+    "text": "Trả riêng được không?"
+  },
+  "food-premium-has-peanuts": {
+    "fileName": "food-premium-has-peanuts.mp3",
+    "text": "Cái này có đậu phộng không?"
+  },
+  "food-premium-no-meat": {
+    "fileName": "food-premium-no-meat.mp3",
+    "text": "Làm ơn đừng có thịt."
+  },
+  "food-premium-without-this-ingredient": {
+    "fileName": "food-premium-without-this-ingredient.mp3",
+    "text": "Bạn có thể làm nó mà không cần thành phần này?"
+  },
+  "food-premium-too-spicy-now": {
+    "fileName": "food-premium-too-spicy-now.mp3",
+    "text": "Món này quá cay đối với tôi."
+  },
+  "food-premium-which-dish-safe": {
+    "fileName": "food-premium-which-dish-safe.mp3",
+    "text": "Món ăn nào an toàn nhất cho người bị dị ứng này?"
+  },
+  "food-premium-has-meat-in-it": {
+    "fileName": "food-premium-has-meat-in-it.mp3",
+    "text": "Cái này có thịt trong đó."
+  },
+  "v500-food-drin-this-tastes-spoiled": {
+    "fileName": "v500-food-drin-this-tastes-spoiled.mp3",
+    "text": "Cái này có vị hư hỏng"
+  },
+  "v500-food-drin-does-this-contain-shrimp": {
+    "fileName": "v500-food-drin-does-this-contain-shrimp.mp3",
+    "text": "Cái này có chứa tôm không?"
+  },
+  "v500-food-drin-does-this-contain-peanuts": {
+    "fileName": "v500-food-drin-does-this-contain-peanuts.mp3",
+    "text": "Cái này có chứa đậu phộng không?"
+  },
+  "v500-food-drin-i-am-allergic-to-shellfish": {
+    "fileName": "v500-food-drin-i-am-allergic-to-shellfish.mp3",
+    "text": "Tôi bị dị ứng với động vật có vỏ"
+  },
+  "v500-food-drin-id-like-a-b-nh-m-please": {
+    "fileName": "v500-food-drin-id-like-a-b-nh-m-please.mp3",
+    "text": "Làm ơn cho tôi một cái bánh mì"
+  },
+  "v500-food-drin-i-am-allergic-to-fish-sauce": {
+    "fileName": "v500-food-drin-i-am-allergic-to-fish-sauce.mp3",
+    "text": "Tôi bị dị ứng với nước mắm"
+  },
+  "v500-food-drin-there-is-something-in-my-food": {
+    "fileName": "v500-food-drin-there-is-something-in-my-food.mp3",
+    "text": "Có thứ gì đó trong thức ăn của tôi"
+  },
+  "v500-food-drin-does-this-have-egg-or-peanuts": {
+    "fileName": "v500-food-drin-does-this-have-egg-or-peanuts.mp3",
+    "text": "Cái này có trứng hay đậu phộng không?"
+  },
+  "v500-food-drin-i-ordered-this-without-peanuts": {
+    "fileName": "v500-food-drin-i-ordered-this-without-peanuts.mp3",
+    "text": "Tôi đã gọi món này mà không có đậu phộng"
+  },
+  "v500-food-drin-id-like-a-bowl-of-ph-please": {
+    "fileName": "v500-food-drin-id-like-a-bowl-of-ph-please.mp3",
+    "text": "Làm ơn cho tôi một tô phở"
+  },
+  "v500-food-drin-please-make-it-without-peanuts": {
+    "fileName": "v500-food-drin-please-make-it-without-peanuts.mp3",
+    "text": "Hãy làm món này mà không cần đậu phộng"
+  },
+  "v500-food-drin-i-cannot-eat-this-because-of-an-allergy": {
+    "fileName": "v500-food-drin-i-cannot-eat-this-because-of-an-allergy.mp3",
+    "text": "Tôi không thể ăn món này vì bị dị ứng"
+  },
+  "v500-food-drin-this-is-cold": {
+    "fileName": "v500-food-drin-this-is-cold.mp3",
+    "text": "Trời lạnh quá"
+  },
+  "v500-food-drin-no-ice-please": {
+    "fileName": "v500-food-drin-no-ice-please.mp3",
+    "text": "Làm ơn đừng có đá"
+  },
+  "v900-food-drin-no-msg-please": {
+    "fileName": "v900-food-drin-no-msg-please.mp3",
+    "text": "Không có bột ngọt, làm ơn"
+  },
+  "v900-food-drin-is-this-cooked": {
+    "fileName": "v900-food-drin-is-this-cooked.mp3",
+    "text": "Cái này đã được nấu chín chưa?"
+  },
+  "v900-food-drin-can-i-have-lime": {
+    "fileName": "v900-food-drin-can-i-have-lime.mp3",
+    "text": "Tôi có thể có vôi không?"
+  },
+  "v900-food-drin-one-more-please": {
+    "fileName": "v900-food-drin-one-more-please.mp3",
+    "text": "Xin thêm một cái nữa"
+  },
+  "v900-food-drin-i-do-not-eat-beef": {
+    "fileName": "v900-food-drin-i-do-not-eat-beef.mp3",
+    "text": "Tôi không ăn thịt bò"
+  },
+  "v900-food-drin-i-do-not-eat-pork": {
+    "fileName": "v900-food-drin-i-do-not-eat-pork.mp3",
+    "text": "Tôi không ăn thịt lợn"
+  },
+  "v900-food-drin-i-cannot-eat-dairy": {
+    "fileName": "v900-food-drin-i-cannot-eat-dairy.mp3",
+    "text": "Tôi không thể ăn sữa"
+  },
+  "v900-food-drin-less-sugar-please": {
+    "fileName": "v900-food-drin-less-sugar-please.mp3",
+    "text": "Làm ơn bớt đường đi"
+  },
+  "v900-food-drin-can-i-have-napkins": {
+    "fileName": "v900-food-drin-can-i-have-napkins.mp3",
+    "text": "Tôi có thể có khăn ăn được không?"
+  },
+  "v900-food-drin-i-cannot-eat-gluten": {
+    "fileName": "v900-food-drin-i-cannot-eat-gluten.mp3",
+    "text": "Tôi không thể ăn gluten"
+  },
+  "v900-food-drin-this-is-undercooked": {
+    "fileName": "v900-food-drin-this-is-undercooked.mp3",
+    "text": "Món này chưa được nấu chín kỹ"
+  },
+  "v900-food-drin-can-you-change-this": {
+    "fileName": "v900-food-drin-can-you-change-this.mp3",
+    "text": "Bạn có thể thay đổi điều này?"
+  },
+  "v900-food-drin-i-do-not-eat-seafood": {
+    "fileName": "v900-food-drin-i-do-not-eat-seafood.mp3",
+    "text": "Tôi không ăn hải sản"
+  },
+  "v900-food-drin-one-iced-tea-please": {
+    "fileName": "v900-food-drin-one-iced-tea-please.mp3",
+    "text": "Làm ơn cho một ly trà đá"
+  },
+  "v900-food-drin-two-of-these-please": {
+    "fileName": "v900-food-drin-two-of-these-please.mp3",
+    "text": "Xin vui lòng cho hai trong số này"
+  },
+  "v900-food-drin-can-we-sit-by-the-fan": {
+    "fileName": "v900-food-drin-can-we-sit-by-the-fan.mp3",
+    "text": "Chúng ta có thể ngồi cạnh quạt được không?"
+  },
+  "v900-food-drin-one-hot-coffee-please": {
+    "fileName": "v900-food-drin-one-hot-coffee-please.mp3",
+    "text": "Làm ơn cho một ly cà phê nóng"
+  },
+  "v900-food-drin-what-do-you-recommend": {
+    "fileName": "v900-food-drin-what-do-you-recommend.mp3",
+    "text": "Bạn đề xuất món gì?"
+  },
+  "v900-food-drin-what-is-not-too-spicy": {
+    "fileName": "v900-food-drin-what-is-not-too-spicy.mp3",
+    "text": "Cái gì không quá cay?"
+  },
+  "v900-food-drin-a-table-for-one-please": {
+    "fileName": "v900-food-drin-a-table-for-one-please.mp3",
+    "text": "Vui lòng cho một bàn"
+  },
+  "v900-food-drin-can-i-have-chili-sauce": {
+    "fileName": "v900-food-drin-can-i-have-chili-sauce.mp3",
+    "text": "Tôi có thể dùng tương ớt được không?"
+  },
+  "v900-food-drin-a-table-for-four-please": {
+    "fileName": "v900-food-drin-a-table-for-four-please.mp3",
+    "text": "Vui lòng cho một bàn cho bốn người"
+  },
+  "v900-food-drin-can-you-clean-this-table": {
+    "fileName": "v900-food-drin-can-you-clean-this-table.mp3",
+    "text": "Bạn có thể lau cái bàn này được không?"
+  },
+  "v900-food-drin-it-is-okay-now-thank-you": {
+    "fileName": "v900-food-drin-it-is-okay-now-thank-you.mp3",
+    "text": "Bây giờ thì ổn rồi, cảm ơn bạn"
+  },
+  "v900-food-drin-one-fresh-coconut-please": {
+    "fileName": "v900-food-drin-one-fresh-coconut-please.mp3",
+    "text": "Làm ơn cho một quả dừa tươi"
+  },
+  "v900-food-drin-please-make-it-less-spicy": {
+    "fileName": "v900-food-drin-please-make-it-less-spicy.mp3",
+    "text": "Làm ơn làm cho nó bớt cay đi"
+  },
+  "v900-food-drin-sauce-on-the-side-please": {
+    "fileName": "v900-food-drin-sauce-on-the-side-please.mp3",
+    "text": "Xin vui lòng cho nước sốt vào bên cạnh"
+  },
+  "v900-food-drin-can-i-have-rice-with-this": {
+    "fileName": "v900-food-drin-can-i-have-rice-with-this.mp3",
+    "text": "Tôi có thể ăn cơm với cái này không?"
+  },
+  "v900-food-drin-can-i-order-half-a-portion": {
+    "fileName": "v900-food-drin-can-i-order-half-a-portion.mp3",
+    "text": "Tôi có thể gọi một nửa phần được không?"
+  },
+  "v900-food-drin-one-sugarcane-juice-please": {
+    "fileName": "v900-food-drin-one-sugarcane-juice-please.mp3",
+    "text": "Xin cho một ly nước mía"
+  },
+  "v900-food-drin-please-make-it-without-meat": {
+    "fileName": "v900-food-drin-please-make-it-without-meat.mp3",
+    "text": "Hãy làm món này không có thịt"
+  },
+  "v900-food-drin-can-i-have-soup-on-the-side": {
+    "fileName": "v900-food-drin-can-i-have-soup-on-the-side.mp3",
+    "text": "Tôi có thể ăn súp bên cạnh được không?"
+  },
+  "v900-food-drin-is-there-a-wait-for-a-table": {
+    "fileName": "v900-food-drin-is-there-a-wait-for-a-table.mp3",
+    "text": "Có phải đợi bàn không?"
+  },
+  "v900-food-drin-does-this-contain-fish-sauce": {
+    "fileName": "v900-food-drin-does-this-contain-fish-sauce.mp3",
+    "text": "Cái này có nước mắm không?"
+  },
+  "v900-food-drin-can-i-order-this-without-meat": {
+    "fileName": "v900-food-drin-can-i-order-this-without-meat.mp3",
+    "text": "Tôi có thể gọi món này mà không có thịt được không?"
+  },
+  "v900-food-drin-ill-have-what-they-are-having": {
+    "fileName": "v900-food-drin-ill-have-what-they-are-having.mp3",
+    "text": "Tôi sẽ có những gì họ đang có"
+  },
+  "v900-food-drin-i-have-been-waiting-a-long-time": {
+    "fileName": "v900-food-drin-i-have-been-waiting-a-long-time.mp3",
+    "text": "Tôi đã chờ đợi rất lâu rồi"
+  },
+  "v900-food-drin-is-this-pork-beef-or-chicken": {
+    "fileName": "v900-food-drin-is-this-pork-beef-or-chicken.mp3",
+    "text": "Đây là thịt lợn, thịt bò hay thịt gà?"
+  },
+  "v900-food-drin-can-you-remove-this-from-the-bill": {
+    "fileName": "v900-food-drin-can-you-remove-this-from-the-bill.mp3",
+    "text": "Bạn có thể loại bỏ điều này khỏi hóa đơn?"
+  },
+  "v900-food-drin-do-we-order-here-or-at-the-counter": {
+    "fileName": "v900-food-drin-do-we-order-here-or-at-the-counter.mp3",
+    "text": "Chúng ta đặt hàng ở đây hay tại quầy?"
+  },
+  "v900-food-drin-i-think-there-is-a-mistake-on-the-bill": {
+    "fileName": "v900-food-drin-i-think-there-is-a-mistake-on-the-bill.mp3",
+    "text": "Tôi nghĩ có sai sót trên hóa đơn"
+  },
+  "v900-food-drin-please-pack-it-to-go": {
+    "fileName": "v900-food-drin-please-pack-it-to-go.mp3",
+    "text": "Hãy đóng gói nó để đi."
+  },
+  "v900-food-drin-thats-all-thank-you": {
+    "fileName": "v900-food-drin-thats-all-thank-you.mp3",
+    "text": "Đó là tất cả, cảm ơn bạn."
+  },
+  "v900-food-drin-can-i-have-a-cup-of-ice": {
+    "fileName": "v900-food-drin-can-i-have-a-cup-of-ice.mp3",
+    "text": "Tôi có thể có một cốc đá được không?"
+  },
+  "v900-food-drin-id-like-it-to-go-please": {
+    "fileName": "v900-food-drin-id-like-it-to-go-please.mp3",
+    "text": "Tôi muốn nó đi, làm ơn."
+  },
+  "v900-food-drin-can-i-pay-the-bill-by-card": {
+    "fileName": "v900-food-drin-can-i-pay-the-bill-by-card.mp3",
+    "text": "Tôi có thể thanh toán hóa đơn bằng thẻ không?"
+  },
+  "v900-food-drin-i-asked-for-this-not-spicy": {
+    "fileName": "v900-food-drin-i-asked-for-this-not-spicy.mp3",
+    "text": "Tôi yêu cầu món này không cay."
+  },
+  "v900-food-drin-no-straw-please": {
+    "fileName": "v900-food-drin-no-straw-please.mp3",
+    "text": "Làm ơn đừng có rơm"
+  },
+  "v900-food-drin-do-you-have-beer": {
+    "fileName": "v900-food-drin-do-you-have-beer.mp3",
+    "text": "Bạn có bia không?"
+  },
+  "v900-food-drin-can-we-sit-inside": {
+    "fileName": "v900-food-drin-can-we-sit-inside.mp3",
+    "text": "Chúng ta có thể ngồi bên trong được không?"
+  },
+  "v900-food-drin-that-was-very-good": {
+    "fileName": "v900-food-drin-that-was-very-good.mp3",
+    "text": "Điều đó rất tốt"
+  },
+  "v900-food-drin-can-we-sit-outside": {
+    "fileName": "v900-food-drin-can-we-sit-outside.mp3",
+    "text": "Chúng ta có thể ngồi bên ngoài được không?"
+  },
+  "price-1": {
+    "fileName": "price-1.mp3",
+    "text": "Cái này bao nhiêu?"
+  },
+  "money-how-much-common": {
+    "fileName": "money-how-much-common.mp3",
+    "text": "Cái này nhiêu tiền?"
+  },
+  "price-2": {
+    "fileName": "price-2.mp3",
+    "text": "Bao nhiêu một ký?"
+  },
+  "price-3": {
+    "fileName": "price-3.mp3",
+    "text": "Mắc quá"
+  },
+  "price-4": {
+    "fileName": "price-4.mp3",
+    "text": "Bớt chút được không?"
+  },
+  "price-5": {
+    "fileName": "price-5.mp3",
+    "text": "Giá cuối bao nhiêu?"
+  },
+  "price-6": {
+    "fileName": "price-6.mp3",
+    "text": "Cho tôi xem cái khác"
+  },
+  "price-7": {
+    "fileName": "price-7.mp3",
+    "text": "Tôi lấy cái này"
+  },
+  "price-8": {
+    "fileName": "price-8.mp3",
+    "text": "Tổng cộng bao nhiêu?"
+  },
+  "airport-4": {
+    "fileName": "airport-4.mp3",
+    "text": "ATM gần nhất ở đâu?"
+  },
+  "price-9": {
+    "fileName": "price-9.mp3",
+    "text": "Có tiền lẻ không?"
+  },
+  "money-premium-total-wrong": {
+    "fileName": "money-premium-total-wrong.mp3",
+    "text": "Tổng số này là sai."
+  },
+  "money-premium-price-changed": {
+    "fileName": "money-premium-price-changed.mp3",
+    "text": "Sao bây giờ giá lại khác thế?"
+  },
+  "money-premium-what-fee": {
+    "fileName": "money-premium-what-fee.mp3",
+    "text": "Khoản phí này dùng để làm gì?"
+  },
+  "money-premium-write-total": {
+    "fileName": "money-premium-write-total.mp3",
+    "text": "Hãy viết tổng số ra."
+  },
+  "money-premium-service-included": {
+    "fileName": "money-premium-service-included.mp3",
+    "text": "Dịch vụ đã được bao gồm chưa?"
+  },
+  "money-premium-split-payment": {
+    "fileName": "money-premium-split-payment.mp3",
+    "text": "Chúng ta có thể chia tiền thanh toán được không?"
+  },
+  "v500-mone-numb-pric-the-atm-kept-my-card": {
+    "fileName": "v500-mone-numb-pric-the-atm-kept-my-card.mp3",
+    "text": "ATM đã giữ thẻ của tôi"
+  },
+  "v500-mone-numb-pric-can-i-have-a-receipt": {
+    "fileName": "v500-mone-numb-pric-can-i-have-a-receipt.mp3",
+    "text": "Tôi có thể có biên nhận được không?"
+  },
+  "v500-mone-numb-pric-where-can-i-exchange-money": {
+    "fileName": "v500-mone-numb-pric-where-can-i-exchange-money.mp3",
+    "text": "Tôi có thể đổi tiền ở đâu?"
+  },
+  "v500-mone-numb-pric-the-atm-did-not-give-me-cash": {
+    "fileName": "v500-mone-numb-pric-the-atm-did-not-give-me-cash.mp3",
+    "text": "ATM không đưa tiền mặt cho tôi"
+  },
+  "v500-mone-numb-pric-is-this-enough": {
+    "fileName": "v500-mone-numb-pric-is-this-enough.mp3",
+    "text": "Thế này đã đủ chưa?"
+  },
+  "v500-mone-numb-pric-is-tax-included": {
+    "fileName": "v500-mone-numb-pric-is-tax-included.mp3",
+    "text": "Có bao gồm thuế không?"
+  },
+  "v500-mone-numb-pric-how-much-for-one": {
+    "fileName": "v500-mone-numb-pric-how-much-for-one.mp3",
+    "text": "Bao nhiêu một cái?"
+  },
+  "v500-mone-numb-pric-ill-think-about-it": {
+    "fileName": "v500-mone-numb-pric-ill-think-about-it.mp3",
+    "text": "Tôi sẽ nghĩ về nó"
+  },
+  "v500-mone-numb-pric-is-this-per-person": {
+    "fileName": "v500-mone-numb-pric-is-this-per-person.mp3",
+    "text": "Đây có phải là mỗi người?"
+  },
+  "v500-mone-numb-pric-i-need-smaller-bills": {
+    "fileName": "v500-mone-numb-pric-i-need-smaller-bills.mp3",
+    "text": "Tôi cần hóa đơn nhỏ hơn"
+  },
+  "v500-mone-numb-pric-is-there-a-card-fee": {
+    "fileName": "v500-mone-numb-pric-is-there-a-card-fee.mp3",
+    "text": "Có tính phí thẻ không?"
+  },
+  "v500-mone-numb-pric-my-card-was-declined": {
+    "fileName": "v500-mone-numb-pric-my-card-was-declined.mp3",
+    "text": "Thẻ của tôi đã bị từ chối"
+  },
+  "v500-mone-numb-pric-i-only-have-this-much": {
+    "fileName": "v500-mone-numb-pric-i-only-have-this-much.mp3",
+    "text": "Tôi chỉ có bấy nhiêu thôi"
+  },
+  "v500-mone-numb-pric-please-count-it-again": {
+    "fileName": "v500-mone-numb-pric-please-count-it-again.mp3",
+    "text": "Hãy đếm lại nhé"
+  },
+  "v500-mone-numb-pric-is-there-an-extra-fee": {
+    "fileName": "v500-mone-numb-pric-is-there-an-extra-fee.mp3",
+    "text": "Có phải trả thêm phí không?"
+  },
+  "v500-mone-numb-pric-no-thanks-maybe-later": {
+    "fileName": "v500-mone-numb-pric-no-thanks-maybe-later.mp3",
+    "text": "Không, cảm ơn, có thể để sau"
+  },
+  "v500-mone-numb-pric-please-write-the-price": {
+    "fileName": "v500-mone-numb-pric-please-write-the-price.mp3",
+    "text": "Hãy viết giá"
+  },
+  "v500-mone-numb-pric-can-i-try-another-card": {
+    "fileName": "v500-mone-numb-pric-can-i-try-another-card.mp3",
+    "text": "Tôi có thể thử thẻ khác được không?"
+  },
+  "v500-mone-numb-pric-can-you-give-me-change": {
+    "fileName": "v500-mone-numb-pric-can-you-give-me-change.mp3",
+    "text": "Bạn có thể cho tôi tiền lẻ được không?"
+  },
+  "v500-mone-numb-pric-do-i-need-exact-change": {
+    "fileName": "v500-mone-numb-pric-do-i-need-exact-change.mp3",
+    "text": "Tôi có cần thay đổi chính xác không?"
+  },
+  "v500-mone-numb-pric-i-only-have-large-bills": {
+    "fileName": "v500-mone-numb-pric-i-only-have-large-bills.mp3",
+    "text": "Tôi chỉ có hóa đơn lớn"
+  },
+  "v900-mone-numb-pric-is-there-an-atm-nearby": {
+    "fileName": "v900-mone-numb-pric-is-there-an-atm-nearby.mp3",
+    "text": "Có máy ATM nào gần đây không?"
+  },
+  "v900-mone-numb-pric-please-do-not-tap-again": {
+    "fileName": "v900-mone-numb-pric-please-do-not-tap-again.mp3",
+    "text": "Làm ơn đừng gõ nữa"
+  },
+  "v900-mone-numb-pric-the-payment-went-through": {
+    "fileName": "v900-mone-numb-pric-the-payment-went-through.mp3",
+    "text": "Việc thanh toán đã được thông qua"
+  },
+  "v900-mone-numb-pric-this-receipt-is-not-mine": {
+    "fileName": "v900-mone-numb-pric-this-receipt-is-not-mine.mp3",
+    "text": "Biên lai này không phải của tôi"
+  },
+  "v900-mone-numb-pric-can-you-process-a-refund": {
+    "fileName": "v900-mone-numb-pric-can-you-process-a-refund.mp3",
+    "text": "Bạn có thể xử lý hoàn tiền không?"
+  },
+  "v900-mone-numb-pric-i-gave-you-the-wrong-bill": {
+    "fileName": "v900-mone-numb-pric-i-gave-you-the-wrong-bill.mp3",
+    "text": "Tôi đưa nhầm hóa đơn cho bạn"
+  },
+  "v900-mone-numb-pric-can-you-email-the-receipt": {
+    "fileName": "v900-mone-numb-pric-can-you-email-the-receipt.mp3",
+    "text": "Bạn có thể gửi email hóa đơn được không?"
+  },
+  "v900-mone-numb-pric-can-you-print-the-receipt": {
+    "fileName": "v900-mone-numb-pric-can-you-print-the-receipt.mp3",
+    "text": "Bạn có thể in biên lai được không?"
+  },
+  "v900-mone-numb-pric-is-there-a-withdrawal-fee": {
+    "fileName": "v900-mone-numb-pric-is-there-a-withdrawal-fee.mp3",
+    "text": "Có phí rút tiền không?"
+  },
+  "v900-mone-numb-pric-what-is-the-exchange-rate": {
+    "fileName": "v900-mone-numb-pric-what-is-the-exchange-rate.mp3",
+    "text": "Tỷ giá hối đoái là gì?"
+  },
+  "v900-mone-numb-pric-i-think-the-change-is-wrong": {
+    "fileName": "v900-mone-numb-pric-i-think-the-change-is-wrong.mp3",
+    "text": "Tôi nghĩ sự thay đổi là sai"
+  },
+  "v900-mone-numb-pric-can-you-refund-the-difference": {
+    "fileName": "v900-mone-numb-pric-can-you-refund-the-difference.mp3",
+    "text": "Bạn có thể hoàn lại tiền chênh lệch không?"
+  },
+  "v900-mone-numb-pric-i-was-charged-the-wrong-amount": {
+    "fileName": "v900-mone-numb-pric-i-was-charged-the-wrong-amount.mp3",
+    "text": "Tôi đã bị tính sai số tiền"
+  },
+  "v900-mone-numb-pric-can-you-give-me-a-better-price": {
+    "fileName": "v900-mone-numb-pric-can-you-give-me-a-better-price.mp3",
+    "text": "Bạn có thể cho tôi một mức giá tốt hơn?"
+  },
+  "v900-mone-numb-pric-is-the-service-charge-included": {
+    "fileName": "v900-mone-numb-pric-is-the-service-charge-included.mp3",
+    "text": "Có bao gồm phí dịch vụ không?"
+  },
+  "v900-mone-numb-pric-please-cancel-that-card-payment": {
+    "fileName": "v900-mone-numb-pric-please-cancel-that-card-payment.mp3",
+    "text": "Vui lòng hủy thanh toán thẻ đó"
+  },
+  "v900-mone-numb-pric-the-card-machine-is-not-working": {
+    "fileName": "v900-mone-numb-pric-the-card-machine-is-not-working.mp3",
+    "text": "Máy thẻ không hoạt động"
+  },
+  "v900-mone-numb-pric-can-you-help-me-contact-the-bank": {
+    "fileName": "v900-mone-numb-pric-can-you-help-me-contact-the-bank.mp3",
+    "text": "Bạn có thể giúp tôi liên hệ với ngân hàng được không?"
+  },
+  "v900-mone-numb-pric-is-this-price-in-vietnamese-dong": {
+    "fileName": "v900-mone-numb-pric-is-this-price-in-vietnamese-dong.mp3",
+    "text": "Giá này bằng đồng Việt Nam phải không?"
+  },
+  "v900-mone-numb-pric-can-you-make-it-cheaper-if-i-buy-two": {
+    "fileName": "v900-mone-numb-pric-can-you-make-it-cheaper-if-i-buy-two.mp3",
+    "text": "Bạn có thể làm cho nó rẻ hơn nếu tôi mua hai?"
+  },
+  "v900-mone-numb-pric-how-much-for-two-of-them": {
+    "fileName": "v900-mone-numb-pric-how-much-for-two-of-them.mp3",
+    "text": "Hai cái đó bao nhiêu?"
+  },
+  "v900-mone-numb-pric-please-give-me-the-change": {
+    "fileName": "v900-mone-numb-pric-please-give-me-the-change.mp3",
+    "text": "Xin vui lòng đưa cho tôi tiền lẻ."
+  },
+  "v900-mone-numb-pric-can-i-pay-by-qr-code": {
+    "fileName": "v900-mone-numb-pric-can-i-pay-by-qr-code.mp3",
+    "text": "Tôi có thể thanh toán bằng mã QR không?"
+  },
+  "v900-mone-numb-pric-do-you-accept-us-dollars": {
+    "fileName": "v900-mone-numb-pric-do-you-accept-us-dollars.mp3",
+    "text": "Bạn có chấp nhận đô la Mỹ không?"
+  },
+  "v900-mone-numb-pric-is-this-the-same-price-for-children": {
+    "fileName": "v900-mone-numb-pric-is-this-the-same-price-for-children.mp3",
+    "text": "Đây có phải là mức giá tương tự cho trẻ em?"
+  },
+  "directions-1": {
+    "fileName": "directions-1.mp3",
+    "text": "Cho hỏi, đi tới đó thế nào?"
+  },
+  "directions-2": {
+    "fileName": "directions-2.mp3",
+    "text": "Ở gần đây không?"
+  },
+  "directions-3": {
+    "fileName": "directions-3.mp3",
+    "text": "Đi bộ mất bao lâu?"
+  },
+  "directions-4": {
+    "fileName": "directions-4.mp3",
+    "text": "Rẽ trái ở đâu?"
+  },
+  "directions-5": {
+    "fileName": "directions-5.mp3",
+    "text": "Tôi rẽ phải đúng không?"
+  },
+  "directions-6": {
+    "fileName": "directions-6.mp3",
+    "text": "Tôi đi thẳng phải không?"
+  },
+  "directions-7": {
+    "fileName": "directions-7.mp3",
+    "text": "Cảm ơn, tôi hiểu rồi"
+  },
+  "directions-8": {
+    "fileName": "directions-8.mp3",
+    "text": "Điểm đón ở đâu?"
+  },
+  "directions-9": {
+    "fileName": "directions-9.mp3",
+    "text": "Lối ra nào?"
+  },
+  "v500-dire-navi-where-is-the-nearest-restroom": {
+    "fileName": "v500-dire-navi-where-is-the-nearest-restroom.mp3",
+    "text": "Nhà vệ sinh gần nhất ở đâu?"
+  },
+  "v500-dire-navi-can-you-help-me-get-back-to-my-hotel": {
+    "fileName": "v500-dire-navi-can-you-help-me-get-back-to-my-hotel.mp3",
+    "text": "Bạn có thể giúp tôi quay lại khách sạn được không?"
+  },
+  "v500-dire-navi-how-far-is-it": {
+    "fileName": "v500-dire-navi-how-far-is-it.mp3",
+    "text": "Nó cách đây bao xa?"
+  },
+  "v500-dire-navi-is-it-open-now": {
+    "fileName": "v500-dire-navi-is-it-open-now.mp3",
+    "text": "Bây giờ nó có mở không?"
+  },
+  "v500-dire-navi-can-i-walk-there": {
+    "fileName": "v500-dire-navi-can-i-walk-there.mp3",
+    "text": "Tôi có thể đi bộ tới đó được không?"
+  },
+  "v500-dire-navi-do-i-go-upstairs": {
+    "fileName": "v500-dire-navi-do-i-go-upstairs.mp3",
+    "text": "Tôi có lên lầu không?"
+  },
+  "v500-dire-navi-do-i-go-downstairs": {
+    "fileName": "v500-dire-navi-do-i-go-downstairs.mp3",
+    "text": "Tôi có đi xuống tầng dưới không?"
+  },
+  "v500-dire-navi-is-it-on-the-corner": {
+    "fileName": "v500-dire-navi-is-it-on-the-corner.mp3",
+    "text": "Nó có ở góc không?"
+  },
+  "v500-dire-navi-i-found-it-thank-you": {
+    "fileName": "v500-dire-navi-i-found-it-thank-you.mp3",
+    "text": "Tôi đã tìm thấy nó, cảm ơn bạn"
+  },
+  "v500-dire-navi-is-it-inside-the-mall": {
+    "fileName": "v500-dire-navi-is-it-inside-the-mall.mp3",
+    "text": "Nó có ở trong trung tâm mua sắm không?"
+  },
+  "v500-dire-navi-is-it-near-the-market": {
+    "fileName": "v500-dire-navi-is-it-near-the-market.mp3",
+    "text": "Có gần chợ không?"
+  },
+  "v500-dire-navi-is-it-too-far-to-walk": {
+    "fileName": "v500-dire-navi-is-it-too-far-to-walk.mp3",
+    "text": "Đi bộ có xa quá không?"
+  },
+  "v500-dire-navi-where-is-the-bus-stop": {
+    "fileName": "v500-dire-navi-where-is-the-bus-stop.mp3",
+    "text": "Trạm xe buýt ở đâu?"
+  },
+  "v500-dire-navi-where-is-the-elevator": {
+    "fileName": "v500-dire-navi-where-is-the-elevator.mp3",
+    "text": "Thang máy ở đâu?"
+  },
+  "v500-dire-navi-do-i-go-over-the-bridge": {
+    "fileName": "v500-dire-navi-do-i-go-over-the-bridge.mp3",
+    "text": "Tôi có đi qua cầu không?"
+  },
+  "v500-dire-navi-is-it-next-to-the-hotel": {
+    "fileName": "v500-dire-navi-is-it-next-to-the-hotel.mp3",
+    "text": "Nó có ở cạnh khách sạn không?"
+  },
+  "v500-dire-navi-my-map-app-is-not-working": {
+    "fileName": "v500-dire-navi-my-map-app-is-not-working.mp3",
+    "text": "Ứng dụng bản đồ của tôi không hoạt động"
+  },
+  "v900-dire-navi-should-i-cross-the-street": {
+    "fileName": "v900-dire-navi-should-i-cross-the-street.mp3",
+    "text": "Tôi có nên băng qua đường không?"
+  },
+  "v900-dire-navi-is-it-behind-this-building": {
+    "fileName": "v900-dire-navi-is-it-behind-this-building.mp3",
+    "text": "Nó có ở phía sau tòa nhà này không?"
+  },
+  "v900-dire-navi-is-this-the-correct-street": {
+    "fileName": "v900-dire-navi-is-this-the-correct-street.mp3",
+    "text": "Đây có phải là đường phố chính xác không?"
+  },
+  "v900-dire-navi-where-is-the-back-entrance": {
+    "fileName": "v900-dire-navi-where-is-the-back-entrance.mp3",
+    "text": "Lối vào phía sau ở đâu?"
+  },
+  "v900-dire-navi-where-is-the-main-entrance": {
+    "fileName": "v900-dire-navi-where-is-the-main-entrance.mp3",
+    "text": "Lối vào chính ở đâu?"
+  },
+  "v900-dire-navi-where-is-the-ticket-office": {
+    "fileName": "v900-dire-navi-where-is-the-ticket-office.mp3",
+    "text": "Phòng bán vé ở đâu?"
+  },
+  "v900-dire-navi-where-is-the-train-station": {
+    "fileName": "v900-dire-navi-where-is-the-train-station.mp3",
+    "text": "Nhà ga xe lửa ở đâu?"
+  },
+  "v900-dire-navi-i-think-i-went-the-wrong-way": {
+    "fileName": "v900-dire-navi-i-think-i-went-the-wrong-way.mp3",
+    "text": "Tôi nghĩ tôi đã đi sai đường"
+  },
+  "v900-dire-navi-which-entrance-should-i-use": {
+    "fileName": "v900-dire-navi-which-entrance-should-i-use.mp3",
+    "text": "Tôi nên sử dụng lối vào nào?"
+  },
+  "v900-dire-navi-is-it-past-the-traffic-light": {
+    "fileName": "v900-dire-navi-is-it-past-the-traffic-light.mp3",
+    "text": "Có vượt qua đèn giao thông không?"
+  },
+  "v900-dire-navi-where-should-the-driver-stop": {
+    "fileName": "v900-dire-navi-where-should-the-driver-stop.mp3",
+    "text": "Người lái xe nên dừng ở đâu?"
+  },
+  "v900-dire-navi-please-write-the-address-for-me": {
+    "fileName": "v900-dire-navi-please-write-the-address-for-me.mp3",
+    "text": "Hãy viết địa chỉ cho tôi"
+  },
+  "v900-dire-navi-where-do-i-meet-the-tour-group": {
+    "fileName": "v900-dire-navi-where-do-i-meet-the-tour-group.mp3",
+    "text": "Tôi gặp nhóm du lịch ở đâu?"
+  },
+  "v900-dire-navi-what-time-does-this-place-close": {
+    "fileName": "v900-dire-navi-what-time-does-this-place-close.mp3",
+    "text": "Nơi này đóng cửa lúc mấy giờ?"
+  },
+  "v900-dire-navi-where-is-the-exit-to-the-street": {
+    "fileName": "v900-dire-navi-where-is-the-exit-to-the-street.mp3",
+    "text": "Lối ra đường ở đâu?"
+  },
+  "v900-dire-navi-is-it-on-this-side-of-the-street": {
+    "fileName": "v900-dire-navi-is-it-on-this-side-of-the-street.mp3",
+    "text": "Có phải ở phía bên này của đường phố?"
+  },
+  "v900-dire-navi-is-this-the-correct-pickup-point": {
+    "fileName": "v900-dire-navi-is-this-the-correct-pickup-point.mp3",
+    "text": "Đây có phải là điểm đón chính xác không?"
+  },
+  "v900-dire-navi-please-point-me-in-the-right-direction": {
+    "fileName": "v900-dire-navi-please-point-me-in-the-right-direction.mp3",
+    "text": "Xin hãy chỉ cho tôi đi đúng hướng"
+  },
+  "v900-dire-navi-where-is-the-nearest-information-desk": {
+    "fileName": "v900-dire-navi-where-is-the-nearest-information-desk.mp3",
+    "text": "Bàn thông tin gần nhất ở đâu?"
+  },
+  "v900-dire-navi-where-is-the-nearest-convenience-store": {
+    "fileName": "v900-dire-navi-where-is-the-nearest-convenience-store.mp3",
+    "text": "Cửa hàng tiện lợi gần nhất ở đâu?"
+  },
+  "v900-dire-navi-is-this-the-old-location-or-the-new-one": {
+    "fileName": "v900-dire-navi-is-this-the-old-location-or-the-new-one.mp3",
+    "text": "Đây là địa điểm cũ hay địa điểm mới?"
+  },
+  "v900-dire-navi-is-it-across-from-the-cafe": {
+    "fileName": "v900-dire-navi-is-it-across-from-the-cafe.mp3",
+    "text": "Nó có ở đối diện quán cà phê không?"
+  },
+  "v900-dire-navi-how-long-does-it-take-by-taxi": {
+    "fileName": "v900-dire-navi-how-long-does-it-take-by-taxi.mp3",
+    "text": "Đi taxi mất bao lâu?"
+  },
+  "v900-dire-navi-how-long-does-it-take-by-motorbike": {
+    "fileName": "v900-dire-navi-how-long-does-it-take-by-motorbike.mp3",
+    "text": "Đi xe máy mất bao lâu?"
+  },
+  "v900-dire-navi-can-you-point-out-a-nearby-landmark": {
+    "fileName": "v900-dire-navi-can-you-point-out-a-nearby-landmark.mp3",
+    "text": "Bạn có thể chỉ ra một điểm mốc gần đó không?"
+  },
+  "v900-dire-navi-can-you-call-this-place-and-ask-for-directions": {
+    "fileName": "v900-dire-navi-can-you-call-this-place-and-ask-for-directions.mp3",
+    "text": "Bạn có thể gọi đến nơi này và hỏi đường được không?"
+  },
+  "airport-1": {
+    "fileName": "airport-1.mp3",
+    "text": "Nhập cảnh ở đâu?"
+  },
+  "airport-2": {
+    "fileName": "airport-2.mp3",
+    "text": "Lấy hành lý ở đâu?"
+  },
+  "airport-3": {
+    "fileName": "airport-3.mp3",
+    "text": "Mua SIM ở đâu?"
+  },
+  "airport-5": {
+    "fileName": "airport-5.mp3",
+    "text": "Khu đón ở đâu?"
+  },
+  "airport-pickup-clearer": {
+    "fileName": "airport-pickup-clearer.mp3",
+    "text": "Tôi gặp tài xế ở đâu?"
+  },
+  "airport-6": {
+    "fileName": "airport-6.mp3",
+    "text": "Hành lý của tôi chưa tới"
+  },
+  "airport-7": {
+    "fileName": "airport-7.mp3",
+    "text": "Nhà ga nội địa ở đâu?"
+  },
+  "v500-airp-bord-arri-here-is-my-visa": {
+    "fileName": "v500-airp-bord-arri-here-is-my-visa.mp3",
+    "text": "Đây là thị thực của tôi"
+  },
+  "v500-airp-bord-arri-where-is-the-atm": {
+    "fileName": "v500-airp-bord-arri-where-is-the-atm.mp3",
+    "text": "ATM ở đâu?"
+  },
+  "v500-airp-bord-arri-here-is-my-passport": {
+    "fileName": "v500-airp-bord-arri-here-is-my-passport.mp3",
+    "text": "Đây là hộ chiếu của tôi"
+  },
+  "v500-airp-bord-arri-i-am-here-for-tourism": {
+    "fileName": "v500-airp-bord-arri-i-am-here-for-tourism.mp3",
+    "text": "Tôi đến đây để du lịch"
+  },
+  "v500-airp-bord-arri-my-suitcase-is-missing": {
+    "fileName": "v500-airp-bord-arri-my-suitcase-is-missing.mp3",
+    "text": "Vali của tôi bị mất"
+  },
+  "v500-airp-bord-arri-where-are-the-restrooms": {
+    "fileName": "v500-airp-bord-arri-where-are-the-restrooms.mp3",
+    "text": "Nhà vệ sinh ở đâu?"
+  },
+  "v500-airp-bord-arri-where-do-i-meet-the-driver": {
+    "fileName": "v500-airp-bord-arri-where-do-i-meet-the-driver.mp3",
+    "text": "Tôi gặp tài xế ở đâu?"
+  },
+  "v500-airp-bord-arri-i-need-to-report-lost-luggage": {
+    "fileName": "v500-airp-bord-arri-i-need-to-report-lost-luggage.mp3",
+    "text": "Tôi cần báo cáo hành lý thất lạc"
+  },
+  "v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki": {
+    "fileName": "v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki.mp3",
+    "text": "Vui lòng đưa tôi đến khách sạn được liệt kê trong đặt phòng này."
+  },
+  "v500-airp-bord-arri-where-do-i-sign": {
+    "fileName": "v500-airp-bord-arri-where-do-i-sign.mp3",
+    "text": "Tôi ký ở đâu?"
+  },
+  "v500-airp-bord-arri-my-bag-is-damaged": {
+    "fileName": "v500-airp-bord-arri-my-bag-is-damaged.mp3",
+    "text": "Túi của tôi bị hỏng"
+  },
+  "v500-airp-bord-arri-where-is-gate-10": {
+    "fileName": "v500-airp-bord-arri-where-is-gate-10.mp3",
+    "text": "Cổng 10 ở đâu?"
+  },
+  "v500-airp-bord-arri-my-driver-canceled": {
+    "fileName": "v500-airp-bord-arri-my-driver-canceled.mp3",
+    "text": "Tài xế của tôi đã hủy"
+  },
+  "v500-airp-bord-arri-when-will-it-arrive": {
+    "fileName": "v500-airp-bord-arri-when-will-it-arrive.mp3",
+    "text": "Khi nào nó sẽ đến?"
+  },
+  "v500-airp-bord-arri-this-is-my-baggage-tag": {
+    "fileName": "v500-airp-bord-arri-this-is-my-baggage-tag.mp3",
+    "text": "Đây là thẻ hành lý của tôi"
+  },
+  "v500-airp-bord-arri-how-much-to-district-1": {
+    "fileName": "v500-airp-bord-arri-how-much-to-district-1.mp3",
+    "text": "Đến Quận 1 bao nhiêu?"
+  },
+  "v500-airp-bord-arri-i-cannot-find-my-driver": {
+    "fileName": "v500-airp-bord-arri-i-cannot-find-my-driver.mp3",
+    "text": "Tôi không thể tìm thấy trình điều khiển của mình"
+  },
+  "v500-airp-bord-arri-i-will-stay-for-five-days": {
+    "fileName": "v500-airp-bord-arri-i-will-stay-for-five-days.mp3",
+    "text": "Tôi sẽ ở lại năm ngày"
+  },
+  "v500-airp-bord-arri-can-i-show-it-on-my-phone": {
+    "fileName": "v500-airp-bord-arri-can-i-show-it-on-my-phone.mp3",
+    "text": "Tôi có thể hiển thị nó trên điện thoại của tôi không?"
+  },
+  "v500-airp-bord-arri-i-am-staying-at-this-hotel": {
+    "fileName": "v500-airp-bord-arri-i-am-staying-at-this-hotel.mp3",
+    "text": "Tôi đang ở khách sạn này"
+  },
+  "v500-airp-bord-arri-someone-took-the-wrong-bag": {
+    "fileName": "v500-airp-bord-arri-someone-took-the-wrong-bag.mp3",
+    "text": "Có người lấy nhầm túi"
+  },
+  "v500-airp-bord-arri-where-is-the-taxi-counter": {
+    "fileName": "v500-airp-bord-arri-where-is-the-taxi-counter.mp3",
+    "text": "Quầy taxi ở đâu?"
+  },
+  "v500-airp-bord-arri-can-i-get-a-written-report": {
+    "fileName": "v500-airp-bord-arri-can-i-get-a-written-report.mp3",
+    "text": "Tôi có thể nhận được một báo cáo bằng văn bản không?"
+  },
+  "v500-airp-bord-arri-i-dont-have-a-printed-copy": {
+    "fileName": "v500-airp-bord-arri-i-dont-have-a-printed-copy.mp3",
+    "text": "Tôi không có bản in"
+  },
+  "v900-airp-bord-arri-where-is-the-arrivals-hall": {
+    "fileName": "v900-airp-bord-arri-where-is-the-arrivals-hall.mp3",
+    "text": "Sảnh đến ở đâu?"
+  },
+  "v900-airp-bord-arri-can-you-help-me-book-a-taxi": {
+    "fileName": "v900-airp-bord-arri-can-you-help-me-book-a-taxi.mp3",
+    "text": "Bạn có thể giúp tôi đặt một chiếc taxi được không?"
+  },
+  "v900-airp-bord-arri-i-made-a-mistake-on-the-form": {
+    "fileName": "v900-airp-bord-arri-i-made-a-mistake-on-the-form.mp3",
+    "text": "Tôi đã mắc lỗi trong biểu mẫu"
+  },
+  "v900-airp-bord-arri-please-send-it-to-this-hotel": {
+    "fileName": "v900-airp-bord-arri-please-send-it-to-this-hotel.mp3",
+    "text": "Vui lòng gửi nó đến khách sạn này"
+  },
+  "v900-airp-bord-arri-where-can-i-charge-my-phone": {
+    "fileName": "v900-airp-bord-arri-where-can-i-charge-my-phone.mp3",
+    "text": "Tôi có thể sạc điện thoại ở đâu?"
+  },
+  "v900-airp-bord-arri-where-is-the-departure-hall": {
+    "fileName": "v900-airp-bord-arri-where-is-the-departure-hall.mp3",
+    "text": "Sảnh khởi hành ở đâu?"
+  },
+  "v900-airp-bord-arri-can-i-pay-the-driver-by-card": {
+    "fileName": "v900-airp-bord-arri-can-i-pay-the-driver-by-card.mp3",
+    "text": "Tôi có thể thanh toán cho tài xế bằng thẻ không?"
+  },
+  "v900-airp-bord-arri-can-you-help-me-track-my-bag": {
+    "fileName": "v900-airp-bord-arri-can-you-help-me-track-my-bag.mp3",
+    "text": "Bạn có thể giúp tôi theo dõi túi của tôi?"
+  },
+  "v900-airp-bord-arri-please-call-this-driver-for-me": {
+    "fileName": "v900-airp-bord-arri-please-call-this-driver-for-me.mp3",
+    "text": "Hãy gọi tài xế này cho tôi"
+  },
+  "v900-airp-bord-arri-where-can-i-get-airport-wi-fi": {
+    "fileName": "v900-airp-bord-arri-where-can-i-get-airport-wi-fi.mp3",
+    "text": "Tôi có thể lấy Wi-Fi sân bay ở đâu?"
+  },
+  "v900-airp-bord-arri-where-is-the-information-desk": {
+    "fileName": "v900-airp-bord-arri-where-is-the-information-desk.mp3",
+    "text": "Bàn thông tin ở đâu?"
+  },
+  "v900-airp-bord-arri-i-have-an-airport-pickup-booked": {
+    "fileName": "v900-airp-bord-arri-i-have-an-airport-pickup-booked.mp3",
+    "text": "Tôi đã đặt dịch vụ đón tại sân bay"
+  },
+  "v900-airp-bord-arri-is-this-the-official-taxi-line": {
+    "fileName": "v900-airp-bord-arri-is-this-the-official-taxi-line.mp3",
+    "text": "Đây có phải là tuyến taxi chính thức?"
+  },
+  "v900-airp-bord-arri-where-is-the-grab-pickup-point": {
+    "fileName": "v900-airp-bord-arri-where-is-the-grab-pickup-point.mp3",
+    "text": "Điểm đón Grab ở đâu?"
+  },
+  "v900-airp-bord-arri-do-i-need-to-fill-out-this-form": {
+    "fileName": "v900-airp-bord-arri-do-i-need-to-fill-out-this-form.mp3",
+    "text": "Tôi có cần điền vào mẫu đơn này không?"
+  },
+  "v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water": {
+    "fileName": "v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water.mp3",
+    "text": "Tôi có thể mua một chai nước ở đâu?"
+  },
+  "v900-airp-bord-arri-i-think-i-went-to-the-wrong-terminal": {
+    "fileName": "v900-airp-bord-arri-i-think-i-went-to-the-wrong-terminal.mp3",
+    "text": "Tôi nghĩ tôi đã đến nhầm nhà ga"
+  },
+  "v900-airp-bord-arri-where-is-the-international-terminal": {
+    "fileName": "v900-airp-bord-arri-where-is-the-international-terminal.mp3",
+    "text": "Nhà ga quốc tế ở đâu?"
+  },
+  "v900-airp-bord-arri-where-is-the-oversized-baggage-area": {
+    "fileName": "v900-airp-bord-arri-where-is-the-oversized-baggage-area.mp3",
+    "text": "Khu vực hành lý quá khổ ở đâu?"
+  },
+  "v900-airp-bord-arri-is-there-a-shuttle-between-terminals": {
+    "fileName": "v900-airp-bord-arri-is-there-a-shuttle-between-terminals.mp3",
+    "text": "Có xe đưa đón giữa các nhà ga không?"
+  },
+  "v900-airp-bord-arri-is-this-the-correct-immigration-line": {
+    "fileName": "v900-airp-bord-arri-is-this-the-correct-immigration-line.mp3",
+    "text": "Đây có phải là đường nhập cư chính xác không?"
+  },
+  "v900-airp-bord-arri-how-long-does-it-take-to-get-downtown": {
+    "fileName": "v900-airp-bord-arri-how-long-does-it-take-to-get-downtown.mp3",
+    "text": "Đi vào trung tâm thành phố mất bao lâu?"
+  },
+  "v900-airp-bord-arri-where-can-i-buy-a-bus-ticket-to-the-city": {
+    "fileName": "v900-airp-bord-arri-where-can-i-buy-a-bus-ticket-to-the-city.mp3",
+    "text": "Mua vé xe buýt vào thành phố ở đâu?"
+  },
+  "v900-airp-bord-arri-where-is-the-currency-exchange": {
+    "fileName": "v900-airp-bord-arri-where-is-the-currency-exchange.mp3",
+    "text": "Đổi tiền ở đâu?"
+  },
+  "v900-airp-bord-arri-where-is-the-smoking-area": {
+    "fileName": "v900-airp-bord-arri-where-is-the-smoking-area.mp3",
+    "text": "Khu vực hút thuốc ở đâu?"
+  },
+  "problems-6": {
+    "fileName": "problems-6.mp3",
+    "text": "Tôi cần bác sĩ"
+  },
+  "health-pharmacy-clearer": {
+    "fileName": "health-pharmacy-clearer.mp3",
+    "text": "Nhà thuốc gần nhất ở đâu?"
+  },
+  "health-1": {
+    "fileName": "health-1.mp3",
+    "text": "Nhà thuốc ở đâu?"
+  },
+  "health-2": {
+    "fileName": "health-2.mp3",
+    "text": "Tôi bị đau đầu"
+  },
+  "health-3": {
+    "fileName": "health-3.mp3",
+    "text": "Tôi đau bụng"
+  },
+  "health-4": {
+    "fileName": "health-4.mp3",
+    "text": "Có thuốc say xe không?"
+  },
+  "health-5": {
+    "fileName": "health-5.mp3",
+    "text": "Tôi bị dị ứng cái này"
+  },
+  "health-6": {
+    "fileName": "health-6.mp3",
+    "text": "Tôi cần thuốc tiêu chảy"
+  },
+  "v500-heal-phar-i-feel-dizzy": {
+    "fileName": "v500-heal-phar-i-feel-dizzy.mp3",
+    "text": "tôi cảm thấy chóng mặt"
+  },
+  "v500-heal-phar-i-am-pregnant": {
+    "fileName": "v500-heal-phar-i-am-pregnant.mp3",
+    "text": "tôi đang mang thai"
+  },
+  "v500-heal-phar-i-have-asthma": {
+    "fileName": "v500-heal-phar-i-have-asthma.mp3",
+    "text": "Tôi bị hen suyễn"
+  },
+  "v500-heal-phar-i-have-a-fever": {
+    "fileName": "v500-heal-phar-i-have-a-fever.mp3",
+    "text": "tôi bị sốt"
+  },
+  "v500-heal-phar-i-feel-nauseous": {
+    "fileName": "v500-heal-phar-i-feel-nauseous.mp3",
+    "text": "tôi cảm thấy buồn nôn"
+  },
+  "v500-heal-phar-i-have-diabetes": {
+    "fileName": "v500-heal-phar-i-have-diabetes.mp3",
+    "text": "Tôi bị tiểu đường"
+  },
+  "v500-heal-phar-i-have-diarrhea": {
+    "fileName": "v500-heal-phar-i-have-diarrhea.mp3",
+    "text": "Tôi bị tiêu chảy"
+  },
+  "v500-heal-phar-i-need-a-clinic": {
+    "fileName": "v500-heal-phar-i-need-a-clinic.mp3",
+    "text": "Tôi cần một phòng khám"
+  },
+  "v500-heal-phar-i-need-a-dentist": {
+    "fileName": "v500-heal-phar-i-need-a-dentist.mp3",
+    "text": "Tôi cần một nha sĩ"
+  },
+  "v500-heal-phar-i-have-chest-pain": {
+    "fileName": "v500-heal-phar-i-have-chest-pain.mp3",
+    "text": "Tôi bị đau ngực"
+  },
+  "v500-heal-phar-i-need-a-hospital": {
+    "fileName": "v500-heal-phar-i-need-a-hospital.mp3",
+    "text": "Tôi cần một bệnh viện"
+  },
+  "v500-heal-phar-how-do-i-take-this": {
+    "fileName": "v500-heal-phar-how-do-i-take-this.mp3",
+    "text": "Làm thế nào để tôi thực hiện điều này?"
+  },
+  "v500-heal-phar-i-have-food-poisoning": {
+    "fileName": "v500-heal-phar-i-have-food-poisoning.mp3",
+    "text": "Tôi bị ngộ độc thực phẩm"
+  },
+  "v500-heal-phar-can-you-call-a-doctor": {
+    "fileName": "v500-heal-phar-can-you-call-a-doctor.mp3",
+    "text": "Bạn có thể gọi bác sĩ được không?"
+  },
+  "v500-heal-phar-where-is-the-pharmacy": {
+    "fileName": "v500-heal-phar-where-is-the-pharmacy.mp3",
+    "text": "Hiệu thuốc ở đâu?"
+  },
+  "v500-heal-phar-how-many-times-per-day": {
+    "fileName": "v500-heal-phar-how-many-times-per-day.mp3",
+    "text": "Bao nhiêu lần mỗi ngày?"
+  },
+  "v900-heal-phar-i-need-allergy-medicine": {
+    "fileName": "v900-heal-phar-i-need-allergy-medicine.mp3",
+    "text": "Tôi cần thuốc dị ứng"
+  },
+  "v900-heal-phar-i-have-trouble-breathing": {
+    "fileName": "v900-heal-phar-i-have-trouble-breathing.mp3",
+    "text": "Tôi khó thở"
+  },
+  "v900-heal-phar-i-need-rehydration-salts": {
+    "fileName": "v900-heal-phar-i-need-rehydration-salts.mp3",
+    "text": "Tôi cần muối bù nước"
+  },
+  "v900-heal-phar-how-many-pills-each-time": {
+    "fileName": "v900-heal-phar-how-many-pills-each-time.mp3",
+    "text": "Mỗi lần bao nhiêu viên?"
+  },
+  "v900-heal-phar-can-you-call-an-ambulance": {
+    "fileName": "v900-heal-phar-can-you-call-an-ambulance.mp3",
+    "text": "Bạn có thể gọi xe cứu thương được không?"
+  },
+  "v900-heal-phar-i-am-allergic-to-penicillin": {
+    "fileName": "v900-heal-phar-i-am-allergic-to-penicillin.mp3",
+    "text": "Tôi bị dị ứng với penicillin"
+  },
+  "v900-heal-phar-is-there-a-pharmacy-nearby": {
+    "fileName": "v900-heal-phar-is-there-a-pharmacy-nearby.mp3",
+    "text": "Có hiệu thuốc nào gần đây không?"
+  },
+  "v900-heal-phar-please-write-the-instructions": {
+    "fileName": "v900-heal-phar-please-write-the-instructions.mp3",
+    "text": "Hãy viết hướng dẫn"
+  },
+  "v900-heal-phar-when-should-i-seek-emergency-help": {
+    "fileName": "v900-heal-phar-when-should-i-seek-emergency-help.mp3",
+    "text": "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?"
+  },
+  "v900-heal-phar-can-you-help-me-call-my-travel-insurance": {
+    "fileName": "v900-heal-phar-can-you-help-me-call-my-travel-insurance.mp3",
+    "text": "Bạn có thể giúp tôi gọi bảo hiểm du lịch của tôi được không?"
+  },
+  "v900-heal-phar-i-have-a-rash": {
+    "fileName": "v900-heal-phar-i-have-a-rash.mp3",
+    "text": "tôi bị phát ban"
+  },
+  "v900-heal-phar-i-hurt-my-arm": {
+    "fileName": "v900-heal-phar-i-hurt-my-arm.mp3",
+    "text": "tôi bị thương ở tay"
+  },
+  "v900-heal-phar-i-have-a-cough": {
+    "fileName": "v900-heal-phar-i-have-a-cough.mp3",
+    "text": "tôi bị ho"
+  },
+  "v900-heal-phar-i-hurt-my-foot": {
+    "fileName": "v900-heal-phar-i-hurt-my-foot.mp3",
+    "text": "Tôi bị thương ở chân"
+  },
+  "v900-heal-phar-i-need-bandages": {
+    "fileName": "v900-heal-phar-i-need-bandages.mp3",
+    "text": "Tôi cần băng bó"
+  },
+  "v900-heal-phar-i-need-antiseptic": {
+    "fileName": "v900-heal-phar-i-need-antiseptic.mp3",
+    "text": "Tôi cần thuốc sát trùng"
+  },
+  "v900-heal-phar-i-have-a-sore-throat": {
+    "fileName": "v900-heal-phar-i-have-a-sore-throat.mp3",
+    "text": "Tôi bị đau họng"
+  },
+  "v900-heal-phar-i-need-cold-medicine": {
+    "fileName": "v900-heal-phar-i-need-cold-medicine.mp3",
+    "text": "Tôi cần thuốc cảm"
+  },
+  "v900-heal-phar-i-need-pain-medicine": {
+    "fileName": "v900-heal-phar-i-need-pain-medicine.mp3",
+    "text": "Tôi cần thuốc giảm đau"
+  },
+  "v900-heal-phar-i-need-fever-medicine": {
+    "fileName": "v900-heal-phar-i-need-fever-medicine.mp3",
+    "text": "Tôi cần thuốc hạ sốt"
+  },
+  "v900-heal-phar-do-i-need-to-come-back": {
+    "fileName": "v900-heal-phar-do-i-need-to-come-back.mp3",
+    "text": "Tôi có cần quay lại không?"
+  },
+  "v900-heal-phar-i-need-mosquito-repellent": {
+    "fileName": "v900-heal-phar-i-need-mosquito-repellent.mp3",
+    "text": "Tôi cần thuốc chống muỗi"
+  },
+  "v900-heal-phar-i-was-bitten-by-an-insect": {
+    "fileName": "v900-heal-phar-i-was-bitten-by-an-insect.mp3",
+    "text": "Tôi bị côn trùng cắn"
+  },
+  "v900-heal-phar-will-this-make-me-sleepy": {
+    "fileName": "v900-heal-phar-will-this-make-me-sleepy.mp3",
+    "text": "Điều này có làm tôi buồn ngủ không?"
+  },
+  "v900-heal-phar-do-you-have-this-medicine": {
+    "fileName": "v900-heal-phar-do-you-have-this-medicine.mp3",
+    "text": "Bạn có thuốc này không?"
+  },
+  "v900-heal-phar-i-have-high-blood-pressure": {
+    "fileName": "v900-heal-phar-i-have-high-blood-pressure.mp3",
+    "text": "Tôi bị cao huyết áp"
+  },
+  "v900-heal-phar-can-i-get-a-medical-report": {
+    "fileName": "v900-heal-phar-can-i-get-a-medical-report.mp3",
+    "text": "Tôi có thể nhận được báo cáo y tế không?"
+  },
+  "v900-heal-phar-should-i-take-it-with-food": {
+    "fileName": "v900-heal-phar-should-i-take-it-with-food.mp3",
+    "text": "Tôi có nên dùng nó cùng với thức ăn không?"
+  },
+  "v900-heal-phar-how-long-is-the-clinic-wait": {
+    "fileName": "v900-heal-phar-how-long-is-the-clinic-wait.mp3",
+    "text": "Phòng khám phải đợi bao lâu?"
+  },
+  "v900-heal-phar-should-i-take-it-before-bed": {
+    "fileName": "v900-heal-phar-should-i-take-it-before-bed.mp3",
+    "text": "Tôi có nên dùng nó trước khi đi ngủ không?"
+  },
+  "v900-heal-phar-can-i-drink-alcohol-with-this": {
+    "fileName": "v900-heal-phar-can-i-drink-alcohol-with-this.mp3",
+    "text": "Tôi có thể uống rượu với cái này không?"
+  },
+  "v900-heal-phar-i-take-this-medicine-every-day": {
+    "fileName": "v900-heal-phar-i-take-this-medicine-every-day.mp3",
+    "text": "Tôi uống thuốc này mỗi ngày"
+  },
+  "v900-heal-phar-is-this-safe-with-my-medicine": {
+    "fileName": "v900-heal-phar-is-this-safe-with-my-medicine.mp3",
+    "text": "Điều này có an toàn với thuốc của tôi không?"
+  },
+  "v900-heal-phar-can-you-email-the-report-to-me": {
+    "fileName": "v900-heal-phar-can-you-email-the-report-to-me.mp3",
+    "text": "Bạn có thể gửi email báo cáo cho tôi được không?"
+  },
+  "v900-heal-phar-how-many-days-should-i-take-it": {
+    "fileName": "v900-heal-phar-how-many-days-should-i-take-it.mp3",
+    "text": "Tôi nên dùng nó trong bao nhiêu ngày?"
+  },
+  "v900-heal-phar-can-i-get-a-receipt-for-insurance": {
+    "fileName": "v900-heal-phar-can-i-get-a-receipt-for-insurance.mp3",
+    "text": "Tôi có thể nhận được biên nhận bảo hiểm không?"
+  },
+  "v900-heal-phar-can-i-pay-the-clinic-bill-by-card": {
+    "fileName": "v900-heal-phar-can-i-pay-the-clinic-bill-by-card.mp3",
+    "text": "Tôi có thể thanh toán hóa đơn phòng khám bằng thẻ không?"
+  },
+  "v900-heal-phar-please-check-for-drug-interactions": {
+    "fileName": "v900-heal-phar-please-check-for-drug-interactions.mp3",
+    "text": "Vui lòng kiểm tra tương tác thuốc"
+  },
+  "v900-heal-phar-please-write-the-address-of-the-clinic": {
+    "fileName": "v900-heal-phar-please-write-the-address-of-the-clinic.mp3",
+    "text": "Hãy ghi địa chỉ phòng khám"
+  },
+  "v900-heal-phar-thank-you-i-understand-the-instructions": {
+    "fileName": "v900-heal-phar-thank-you-i-understand-the-instructions.mp3",
+    "text": "Cảm ơn bạn, tôi hiểu hướng dẫn"
+  },
+  "v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis": {
+    "fileName": "v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis.mp3",
+    "text": "Có bác sĩ hoặc dược sĩ nói tiếng Anh không?"
+  },
+  "v900-heal-phar-i-need-sunscreen": {
+    "fileName": "v900-heal-phar-i-need-sunscreen.mp3",
+    "text": "Tôi cần kem chống nắng"
+  },
+  "problems-1": {
+    "fileName": "problems-1.mp3",
+    "text": "Tôi bị lạc đường"
+  },
+  "problems-4": {
+    "fileName": "problems-4.mp3",
+    "text": "Tôi quên đồ rồi"
+  },
+  "help-need-help-direct": {
+    "fileName": "help-need-help-direct.mp3",
+    "text": "Giúp tôi với"
+  },
+  "help-1": {
+    "fileName": "help-1.mp3",
+    "text": "Anh/chị giúp tôi với"
+  },
+  "help-2": {
+    "fileName": "help-2.mp3",
+    "text": "Gọi khách sạn giúp tôi"
+  },
+  "help-3": {
+    "fileName": "help-3.mp3",
+    "text": "Tôi cần quản lý"
+  },
+  "help-4": {
+    "fileName": "help-4.mp3",
+    "text": "Tôi bị tính tiền hai lần"
+  },
+  "help-5": {
+    "fileName": "help-5.mp3",
+    "text": "Tôi cần làm biên bản"
+  },
+  "help-premium-translate-for-me": {
+    "fileName": "help-premium-translate-for-me.mp3",
+    "text": "Bạn có thể dịch giúp tôi được không?"
+  },
+  "help-premium-call-this-number": {
+    "fileName": "help-premium-call-this-number.mp3",
+    "text": "Bạn có thể gọi số này hộ tôi được không?"
+  },
+  "help-premium-contact-embassy": {
+    "fileName": "help-premium-contact-embassy.mp3",
+    "text": "Bạn có thể giúp tôi liên hệ với đại sứ quán được không?"
+  },
+  "help-premium-print-document": {
+    "fileName": "help-premium-print-document.mp3",
+    "text": "Tôi cần một bản in của tài liệu này."
+  },
+  "help-premium-come-with-me": {
+    "fileName": "help-premium-come-with-me.mp3",
+    "text": "Bạn có thể đi cùng tôi được không?"
+  },
+  "v500-prob-help-i-need-help-now": {
+    "fileName": "v500-prob-help-i-need-help-now.mp3",
+    "text": "Tôi cần giúp đỡ bây giờ"
+  },
+  "v500-prob-help-can-you-help-me": {
+    "fileName": "v500-prob-help-can-you-help-me.mp3",
+    "text": "Bạn có thể giúp tôi được không?"
+  },
+  "v500-prob-help-my-phone-is-missing": {
+    "fileName": "v500-prob-help-my-phone-is-missing.mp3",
+    "text": "Điện thoại của tôi bị mất"
+  },
+  "v500-prob-help-please-stay-with-me": {
+    "fileName": "v500-prob-help-please-stay-with-me.mp3",
+    "text": "Xin hãy ở lại với tôi"
+  },
+  "v500-prob-help-my-wallet-is-missing": {
+    "fileName": "v500-prob-help-my-wallet-is-missing.mp3",
+    "text": "Ví của tôi bị mất"
+  },
+  "v500-prob-help-please-call-my-hotel": {
+    "fileName": "v500-prob-help-please-call-my-hotel.mp3",
+    "text": "Vui lòng gọi cho khách sạn của tôi"
+  },
+  "v500-prob-help-someone-took-my-phone": {
+    "fileName": "v500-prob-help-someone-took-my-phone.mp3",
+    "text": "Ai đó đã lấy điện thoại của tôi"
+  },
+  "v500-prob-help-can-you-call-security": {
+    "fileName": "v500-prob-help-can-you-call-security.mp3",
+    "text": "Bạn có thể gọi bảo vệ được không?"
+  },
+  "v500-prob-help-please-call-this-number": {
+    "fileName": "v500-prob-help-please-call-this-number.mp3",
+    "text": "Vui lòng gọi số này"
+  },
+  "v500-prob-help-where-is-the-police-station": {
+    "fileName": "v500-prob-help-where-is-the-police-station.mp3",
+    "text": "Đồn cảnh sát ở đâu?"
+  },
+  "v500-prob-help-i-need-to-speak-with-the-manager": {
+    "fileName": "v500-prob-help-i-need-to-speak-with-the-manager.mp3",
+    "text": "Tôi cần nói chuyện với người quản lý"
+  },
+  "v500-prob-help-please-help-me-contact-my-embassy": {
+    "fileName": "v500-prob-help-please-help-me-contact-my-embassy.mp3",
+    "text": "Xin hãy giúp tôi liên hệ với đại sứ quán của tôi"
+  },
+  "v500-prob-help-can-you-call-my-emergency-contact": {
+    "fileName": "v500-prob-help-can-you-call-my-emergency-contact.mp3",
+    "text": "Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không?"
+  },
+  "v500-prob-help-i-lost-my-room-key": {
+    "fileName": "v500-prob-help-i-lost-my-room-key.mp3",
+    "text": "Tôi bị mất chìa khóa phòng"
+  },
+  "v500-prob-help-this-is-what-happened": {
+    "fileName": "v500-prob-help-this-is-what-happened.mp3",
+    "text": "Đây là những gì đã xảy ra"
+  },
+  "v500-prob-help-can-i-have-an-interpreter": {
+    "fileName": "v500-prob-help-can-i-have-an-interpreter.mp3",
+    "text": "Tôi có thể có một thông dịch viên?"
+  },
+  "v500-prob-help-can-you-contact-the-driver": {
+    "fileName": "v500-prob-help-can-you-contact-the-driver.mp3",
+    "text": "Bạn có thể liên hệ với tài xế được không?"
+  },
+  "v500-prob-help-i-have-contacted-my-embassy": {
+    "fileName": "v500-prob-help-i-have-contacted-my-embassy.mp3",
+    "text": "Tôi đã liên lạc với đại sứ quán của tôi"
+  },
+  "v500-prob-help-please-speak-to-them-for-me": {
+    "fileName": "v500-prob-help-please-speak-to-them-for-me.mp3",
+    "text": "Hãy nói chuyện với họ giúp tôi"
+  },
+  "v500-prob-help-please-write-down-your-name": {
+    "fileName": "v500-prob-help-please-write-down-your-name.mp3",
+    "text": "Hãy viết tên của bạn"
+  },
+  "v500-prob-help-can-you-help-me-look-for-it": {
+    "fileName": "v500-prob-help-can-you-help-me-look-for-it.mp3",
+    "text": "Bạn có thể giúp tôi tìm nó được không?"
+  },
+  "v500-prob-help-where-is-the-nearest-embassy": {
+    "fileName": "v500-prob-help-where-is-the-nearest-embassy.mp3",
+    "text": "Đại sứ quán gần nhất ở đâu?"
+  },
+  "v500-prob-help-can-you-help-me-contact-my-hotel": {
+    "fileName": "v500-prob-help-can-you-help-me-contact-my-hotel.mp3",
+    "text": "Bạn có thể giúp tôi liên hệ với khách sạn của tôi được không?"
+  },
+  "v500-prob-help-can-you-check-the-security-camera": {
+    "fileName": "v500-prob-help-can-you-check-the-security-camera.mp3",
+    "text": "Bạn có thể kiểm tra camera an ninh được không?"
+  },
+  "v500-prob-help-can-i-leave-my-contact-information": {
+    "fileName": "v500-prob-help-can-i-leave-my-contact-information.mp3",
+    "text": "Tôi có thể để lại thông tin liên lạc của mình được không?"
+  },
+  "v900-prob-help-can-you-help-me-contact-my-airline": {
+    "fileName": "v900-prob-help-can-you-help-me-contact-my-airline.mp3",
+    "text": "Bạn có thể giúp tôi liên hệ với hãng hàng không của tôi không?"
+  },
+  "v900-prob-help-please-give-me-a-copy-of-the-report": {
+    "fileName": "v900-prob-help-please-give-me-a-copy-of-the-report.mp3",
+    "text": "Xin vui lòng cho tôi một bản sao của báo cáo"
+  },
+  "v900-prob-help-i-need-a-police-report-for-insurance": {
+    "fileName": "v900-prob-help-i-need-a-police-report-for-insurance.mp3",
+    "text": "Tôi cần báo cáo của cảnh sát về bảo hiểm"
+  },
+  "v900-prob-help-thank-you-for-helping-me-report-this": {
+    "fileName": "v900-prob-help-thank-you-for-helping-me-report-this.mp3",
+    "text": "Cảm ơn bạn đã giúp tôi báo cáo điều này"
+  },
+  "time-1": {
+    "fileName": "time-1.mp3",
+    "text": "Mấy giờ?"
+  },
+  "time-2": {
+    "fileName": "time-2.mp3",
+    "text": "Hôm nay"
+  },
+  "time-3": {
+    "fileName": "time-3.mp3",
+    "text": "Sáng mai"
+  },
+  "time-4": {
+    "fileName": "time-4.mp3",
+    "text": "Tôi có đặt chỗ"
+  },
+  "time-5": {
+    "fileName": "time-5.mp3",
+    "text": "Mấy giờ mở cửa?"
+  },
+  "time-6": {
+    "fileName": "time-6.mp3",
+    "text": "Dời lại muộn hơn được không?"
+  },
+  "time-7": {
+    "fileName": "time-7.mp3",
+    "text": "Mấy giờ bắt đầu lên máy bay?"
+  },
+  "v500-time-date-book-is-there-a-wait": {
+    "fileName": "v500-time-date-book-is-there-a-wait.mp3",
+    "text": "Có chờ đợi không?"
+  },
+  "v500-time-date-book-one-ticket-please": {
+    "fileName": "v500-time-date-book-one-ticket-please.mp3",
+    "text": "Xin một vé"
+  },
+  "v500-time-date-book-can-i-make-a-reservation": {
+    "fileName": "v500-time-date-book-can-i-make-a-reservation.mp3",
+    "text": "Tôi có thể đặt chỗ được không?"
+  },
+  "v500-time-date-book-i-need-to-change-my-booking": {
+    "fileName": "v500-time-date-book-i-need-to-change-my-booking.mp3",
+    "text": "Tôi cần thay đổi đặt chỗ của mình"
+  },
+  "v500-time-date-book-is-it-open-today": {
+    "fileName": "v500-time-date-book-is-it-open-today.mp3",
+    "text": "Hôm nay có mở cửa không?"
+  },
+  "v500-time-date-book-can-i-book-online": {
+    "fileName": "v500-time-date-book-can-i-book-online.mp3",
+    "text": "Tôi có thể đặt chỗ trực tuyến không?"
+  },
+  "v500-time-date-book-where-is-the-line": {
+    "fileName": "v500-time-date-book-where-is-the-line.mp3",
+    "text": "Đường dây ở đâu?"
+  },
+  "v500-time-date-book-two-tickets-please": {
+    "fileName": "v500-time-date-book-two-tickets-please.mp3",
+    "text": "Xin cho hai vé"
+  },
+  "v500-time-date-book-do-i-need-a-deposit": {
+    "fileName": "v500-time-date-book-do-i-need-a-deposit.mp3",
+    "text": "Tôi có cần đặt cọc không?"
+  },
+  "v500-time-date-book-is-it-open-tomorrow": {
+    "fileName": "v500-time-date-book-is-it-open-tomorrow.mp3",
+    "text": "Ngày mai có mở cửa không?"
+  },
+  "v500-time-date-book-is-re-entry-allowed": {
+    "fileName": "v500-time-date-book-is-re-entry-allowed.mp3",
+    "text": "Có được phép nhập cảnh lại không?"
+  },
+  "v500-time-date-book-can-i-choose-my-seat": {
+    "fileName": "v500-time-date-book-can-i-choose-my-seat.mp3",
+    "text": "Tôi có thể chọn chỗ ngồi của mình không?"
+  },
+  "v500-time-date-book-how-long-is-the-wait": {
+    "fileName": "v500-time-date-book-how-long-is-the-wait.mp3",
+    "text": "Thời gian chờ đợi là bao lâu?"
+  },
+  "v500-time-date-book-when-is-the-next-one": {
+    "fileName": "v500-time-date-book-when-is-the-next-one.mp3",
+    "text": "Lần tiếp theo là khi nào?"
+  },
+  "v500-time-date-book-can-i-change-the-date": {
+    "fileName": "v500-time-date-book-can-i-change-the-date.mp3",
+    "text": "Tôi có thể thay đổi ngày được không?"
+  },
+  "v500-time-date-book-can-i-change-the-time": {
+    "fileName": "v500-time-date-book-can-i-change-the-time.mp3",
+    "text": "Tôi có thể thay đổi thời gian được không?"
+  },
+  "v500-time-date-book-how-long-does-it-take": {
+    "fileName": "v500-time-date-book-how-long-does-it-take.mp3",
+    "text": "Phải mất bao lâu?"
+  },
+  "v500-time-date-book-is-there-a-change-fee": {
+    "fileName": "v500-time-date-book-is-there-a-change-fee.mp3",
+    "text": "Có phí thay đổi không?"
+  },
+  "v500-time-date-book-i-booked-the-wrong-date": {
+    "fileName": "v500-time-date-book-i-booked-the-wrong-date.mp3",
+    "text": "Tôi đã đặt sai ngày"
+  },
+  "v500-time-date-book-i-booked-the-wrong-time": {
+    "fileName": "v500-time-date-book-i-booked-the-wrong-time.mp3",
+    "text": "Tôi đã đặt sai thời gian"
+  },
+  "v900-time-date-book-is-this-the-right-line": {
+    "fileName": "v900-time-date-book-is-this-the-right-line.mp3",
+    "text": "Đây có phải là dòng đúng không?"
+  },
+  "v900-time-date-book-please-send-it-by-email": {
+    "fileName": "v900-time-date-book-please-send-it-by-email.mp3",
+    "text": "Vui lòng gửi nó qua email"
+  },
+  "v900-time-date-book-one-adult-ticket-please": {
+    "fileName": "v900-time-date-book-one-adult-ticket-please.mp3",
+    "text": "Cho xin một vé người lớn"
+  },
+  "v900-time-date-book-what-time-does-it-start": {
+    "fileName": "v900-time-date-book-what-time-does-it-start.mp3",
+    "text": "Nó bắt đầu lúc mấy giờ?"
+  },
+  "v900-time-date-book-can-i-have-a-window-seat": {
+    "fileName": "v900-time-date-book-can-i-have-a-window-seat.mp3",
+    "text": "Tôi có thể ngồi cạnh cửa sổ được không?"
+  },
+  "v900-time-date-book-is-this-ticket-for-today": {
+    "fileName": "v900-time-date-book-is-this-ticket-for-today.mp3",
+    "text": "Đây có phải là vé cho ngày hôm nay không?"
+  },
+  "v900-time-date-book-what-time-does-it-finish": {
+    "fileName": "v900-time-date-book-what-time-does-it-finish.mp3",
+    "text": "Mấy giờ thì xong?"
+  },
+  "v900-time-date-book-can-i-get-a-ticket-refund": {
+    "fileName": "v900-time-date-book-can-i-get-a-ticket-refund.mp3",
+    "text": "Tôi có thể được hoàn tiền vé không?"
+  },
+  "v900-time-date-book-can-i-have-seats-together": {
+    "fileName": "v900-time-date-book-can-i-have-seats-together.mp3",
+    "text": "Tôi có thể ngồi chung được không?"
+  },
+  "v900-time-date-book-can-i-move-it-to-tomorrow": {
+    "fileName": "v900-time-date-book-can-i-move-it-to-tomorrow.mp3",
+    "text": "Tôi có thể chuyển nó sang ngày mai được không?"
+  },
+  "v900-time-date-book-do-i-need-to-arrive-early": {
+    "fileName": "v900-time-date-book-do-i-need-to-arrive-early.mp3",
+    "text": "Tôi có cần đến sớm không?"
+  },
+  "v900-time-date-book-please-write-down-the-time": {
+    "fileName": "v900-time-date-book-please-write-down-the-time.mp3",
+    "text": "Hãy ghi lại thời gian"
+  },
+  "v900-time-date-book-can-you-confirm-my-booking": {
+    "fileName": "v900-time-date-book-can-you-confirm-my-booking.mp3",
+    "text": "Bạn có thể xác nhận đặt phòng của tôi?"
+  },
+  "v900-time-date-book-i-need-to-cancel-my-booking": {
+    "fileName": "v900-time-date-book-i-need-to-cancel-my-booking.mp3",
+    "text": "Tôi cần hủy đặt chỗ của mình"
+  },
+  "v900-time-date-book-where-do-i-scan-the-ticket": {
+    "fileName": "v900-time-date-book-where-do-i-scan-the-ticket.mp3",
+    "text": "Tôi quét vé ở đâu?"
+  },
+  "v900-time-date-book-id-like-to-book-for-tomorrow": {
+    "fileName": "v900-time-date-book-id-like-to-book-for-tomorrow.mp3",
+    "text": "Tôi muốn đặt chỗ cho ngày mai"
+  },
+  "v900-time-date-book-please-write-down-the-address": {
+    "fileName": "v900-time-date-book-please-write-down-the-address.mp3",
+    "text": "Hãy ghi lại địa chỉ"
+  },
+  "v900-time-date-book-please-send-it-by-text-message": {
+    "fileName": "v900-time-date-book-please-send-it-by-text-message.mp3",
+    "text": "Vui lòng gửi nó bằng tin nhắn văn bản"
+  },
+  "v900-time-date-book-the-booking-is-under-this-name": {
+    "fileName": "v900-time-date-book-the-booking-is-under-this-name.mp3",
+    "text": "Đặt chỗ dưới tên này"
+  },
+  "v900-time-date-book-do-i-need-to-bring-my-passport": {
+    "fileName": "v900-time-date-book-do-i-need-to-bring-my-passport.mp3",
+    "text": "Tôi có cần mang theo hộ chiếu không?"
+  },
+  "v900-time-date-book-id-like-to-book-for-two-people": {
+    "fileName": "v900-time-date-book-id-like-to-book-for-two-people.mp3",
+    "text": "Tôi muốn đặt chỗ cho hai người"
+  },
+  "v900-time-date-book-how-many-people-are-ahead-of-me": {
+    "fileName": "v900-time-date-book-how-many-people-are-ahead-of-me.mp3",
+    "text": "Có bao nhiêu người đang ở phía trước tôi?"
+  },
+  "v900-time-date-book-can-you-put-me-on-the-waiting-list": {
+    "fileName": "v900-time-date-book-can-you-put-me-on-the-waiting-list.mp3",
+    "text": "Bạn có thể đưa tôi vào danh sách chờ được không?"
+  },
+  "v900-time-date-book-please-send-the-refund-to-this-card": {
+    "fileName": "v900-time-date-book-please-send-the-refund-to-this-card.mp3",
+    "text": "Vui lòng gửi tiền hoàn lại vào thẻ này"
+  },
+  "v900-time-date-book-can-you-send-a-confirmation-message": {
+    "fileName": "v900-time-date-book-can-you-send-a-confirmation-message.mp3",
+    "text": "Bạn có thể gửi tin nhắn xác nhận không?"
+  },
+  "v900-time-date-book-please-call-my-name-when-it-is-ready": {
+    "fileName": "v900-time-date-book-please-call-my-name-when-it-is-ready.mp3",
+    "text": "Hãy gọi tên tôi khi nó sẵn sàng"
+  },
+  "v900-time-date-book-do-you-have-anything-available-today": {
+    "fileName": "v900-time-date-book-do-you-have-anything-available-today.mp3",
+    "text": "Hôm nay bạn có sẵn thứ gì không?"
+  },
+  "v900-time-date-book-do-you-have-anything-available-this-afternoon": {
+    "fileName": "v900-time-date-book-do-you-have-anything-available-this-afternoon.mp3",
+    "text": "Chiều nay bạn có việc gì không?"
+  },
+  "v900-time-date-book-great-see-you-then": {
+    "fileName": "v900-time-date-book-great-see-you-then.mp3",
+    "text": "Tuyệt vời, gặp bạn sau nhé"
+  },
+  "v900-time-date-book-is-it-closed-on-mondays": {
+    "fileName": "v900-time-date-book-is-it-closed-on-mondays.mp3",
+    "text": "Nó có đóng cửa vào thứ Hai không?"
+  },
+  "v900-time-date-book-one-child-ticket-please": {
+    "fileName": "v900-time-date-book-one-child-ticket-please.mp3",
+    "text": "Cho xin một vé trẻ em"
+  },
+  "v900-time-date-book-is-there-a-student-discount": {
+    "fileName": "v900-time-date-book-is-there-a-student-discount.mp3",
+    "text": "Có giảm giá cho sinh viên không?"
+  },
+  "shop-1": {
+    "fileName": "shop-1.mp3",
+    "text": "Tôi muốn cỡ này"
+  },
+  "shop-2": {
+    "fileName": "shop-2.mp3",
+    "text": "Có màu khác không?"
+  },
+  "shop-3": {
+    "fileName": "shop-3.mp3",
+    "text": "Tôi thử cái này được không?"
+  },
+  "shop-4": {
+    "fileName": "shop-4.mp3",
+    "text": "Tôi chỉ xem thôi"
+  },
+  "shop-5": {
+    "fileName": "shop-5.mp3",
+    "text": "Trả ở đâu?"
+  },
+  "shop-6": {
+    "fileName": "shop-6.mp3",
+    "text": "Tôi muốn đổi cái này"
+  },
+  "v500-shop-how-much-is-this-item": {
+    "fileName": "v500-shop-how-much-is-this-item.mp3",
+    "text": "Mặt hàng này giá bao nhiêu?"
+  },
+  "v500-shop-can-you-lower-the-price": {
+    "fileName": "v500-shop-can-you-lower-the-price.mp3",
+    "text": "Bạn có thể giảm giá được không?"
+  },
+  "v500-shop-can-you-put-it-in-a-bag": {
+    "fileName": "v500-shop-can-you-put-it-in-a-bag.mp3",
+    "text": "Bạn có thể bỏ nó vào túi được không?"
+  },
+  "v500-shop-can-you-show-me-another-one": {
+    "fileName": "v500-shop-can-you-show-me-another-one.mp3",
+    "text": "Bạn có thể cho tôi xem một cái khác được không?"
+  },
+  "v500-shop-is-this-new": {
+    "fileName": "v500-shop-is-this-new.mp3",
+    "text": "Cái này có mới không?"
+  },
+  "v500-shop-can-i-touch-it": {
+    "fileName": "v500-shop-can-i-touch-it.mp3",
+    "text": "Tôi có thể chạm vào nó được không?"
+  },
+  "v500-shop-this-is-too-big": {
+    "fileName": "v500-shop-this-is-too-big.mp3",
+    "text": "Cái này quá lớn"
+  },
+  "v500-shop-can-i-return-it": {
+    "fileName": "v500-shop-can-i-return-it.mp3",
+    "text": "Tôi có thể trả lại nó được không?"
+  },
+  "v500-shop-do-you-have-this": {
+    "fileName": "v500-shop-do-you-have-this.mp3",
+    "text": "Bạn có cái này không?"
+  },
+  "v500-shop-this-is-too-small": {
+    "fileName": "v500-shop-this-is-too-small.mp3",
+    "text": "Cái này quá nhỏ"
+  },
+  "v500-shop-okay-ill-take-it": {
+    "fileName": "v500-shop-okay-ill-take-it.mp3",
+    "text": "Được rồi, tôi sẽ lấy nó"
+  },
+  "v900-shop-can-i-see-that-one": {
+    "fileName": "v900-shop-can-i-see-that-one.mp3",
+    "text": "Tôi có thể xem cái đó được không?"
+  },
+  "v900-shop-this-one-is-damaged": {
+    "fileName": "v900-shop-this-one-is-damaged.mp3",
+    "text": "Cái này bị hỏng"
+  },
+  "v900-shop-im-looking-for-a-gift": {
+    "fileName": "v900-shop-im-looking-for-a-gift.mp3",
+    "text": "Tôi đang tìm một món quà"
+  },
+  "v900-shop-i-bought-the-wrong-size": {
+    "fileName": "v900-shop-i-bought-the-wrong-size.mp3",
+    "text": "Tôi mua nhầm kích thước"
+  },
+  "v900-shop-what-is-your-best-price": {
+    "fileName": "v900-shop-what-is-your-best-price.mp3",
+    "text": "Giá tốt nhất của bạn là gì?"
+  },
+  "v900-shop-can-you-wrap-it-carefully": {
+    "fileName": "v900-shop-can-you-wrap-it-carefully.mp3",
+    "text": "Bạn có thể gói nó cẩn thận được không?"
+  },
+  "v900-shop-do-you-have-a-cheaper-one": {
+    "fileName": "v900-shop-do-you-have-a-cheaper-one.mp3",
+    "text": "Bạn có cái nào rẻ hơn không?"
+  },
+  "v900-shop-do-you-have-a-larger-size": {
+    "fileName": "v900-shop-do-you-have-a-larger-size.mp3",
+    "text": "Bạn có kích thước lớn hơn không?"
+  },
+  "v900-shop-do-you-have-this-in-black": {
+    "fileName": "v900-shop-do-you-have-this-in-black.mp3",
+    "text": "Bạn có cái này màu đen không?"
+  },
+  "v900-shop-where-is-the-fitting-room": {
+    "fileName": "v900-shop-where-is-the-fitting-room.mp3",
+    "text": "Phòng thử đồ ở đâu?"
+  },
+  "v900-shop-can-you-give-me-a-discount": {
+    "fileName": "v900-shop-can-you-give-me-a-discount.mp3",
+    "text": "Bạn có thể giảm giá cho tôi được không?"
+  },
+  "v900-shop-can-you-pack-it-for-travel": {
+    "fileName": "v900-shop-can-you-pack-it-for-travel.mp3",
+    "text": "Bạn có thể đóng gói nó để đi du lịch?"
+  },
+  "v900-shop-can-you-show-me-the-inside": {
+    "fileName": "v900-shop-can-you-show-me-the-inside.mp3",
+    "text": "Bạn có thể cho tôi xem bên trong được không?"
+  },
+  "v900-shop-do-you-have-a-smaller-size": {
+    "fileName": "v900-shop-do-you-have-a-smaller-size.mp3",
+    "text": "Bạn có kích thước nhỏ hơn không?"
+  },
+  "v900-shop-can-you-make-it-a-round-number": {
+    "fileName": "v900-shop-can-you-make-it-a-round-number.mp3",
+    "text": "Bạn có thể biến nó thành một số tròn được không?"
+  },
+  "v900-shop-do-you-have-a-better-quality-one": {
+    "fileName": "v900-shop-do-you-have-a-better-quality-one.mp3",
+    "text": "Bạn có cái nào chất lượng hơn không?"
+  },
+  "v900-shop-that-is-still-too-expensive-for-me": {
+    "fileName": "v900-shop-that-is-still-too-expensive-for-me.mp3",
+    "text": "Điều đó vẫn còn quá đắt đối với tôi"
+  },
+  "v900-shop-i-will-buy-two-if-the-price-is-good": {
+    "fileName": "v900-shop-i-will-buy-two-if-the-price-is-good.mp3",
+    "text": "Mình sẽ mua 2 cái nếu giá tốt"
+  },
+  "v900-shop-no-thank-you-ill-look-around-first": {
+    "fileName": "v900-shop-no-thank-you-ill-look-around-first.mp3",
+    "text": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước"
+  },
+  "v900-shop-this-fits-well": {
+    "fileName": "v900-shop-this-fits-well.mp3",
+    "text": "Điều này rất phù hợp"
+  },
+  "phone-1": {
+    "fileName": "phone-1.mp3",
+    "text": "Mật khẩu Wi-Fi là gì?"
+  },
+  "phone-wifi-common": {
+    "fileName": "phone-wifi-common.mp3",
+    "text": "Pass Wi-Fi là gì?"
+  },
+  "phone-2": {
+    "fileName": "phone-2.mp3",
+    "text": "Có bán SIM không?"
+  },
+  "phone-3": {
+    "fileName": "phone-3.mp3",
+    "text": "Điện thoại tôi hết pin rồi"
+  },
+  "phone-4": {
+    "fileName": "phone-4.mp3",
+    "text": "Có sạc không?"
+  },
+  "phone-5": {
+    "fileName": "phone-5.mp3",
+    "text": "Tôi sạc điện thoại ở đây được không?"
+  },
+  "phone-6": {
+    "fileName": "phone-6.mp3",
+    "text": "Tôi cần nạp thêm dữ liệu"
+  },
+  "phone-7": {
+    "fileName": "phone-7.mp3",
+    "text": "eSIM của tôi không hoạt động"
+  },
+  "phone-premium-otp-not-arriving": {
+    "fileName": "phone-premium-otp-not-arriving.mp3",
+    "text": "Mã xác minh không đến."
+  },
+  "phone-premium-password-not-working": {
+    "fileName": "phone-premium-password-not-working.mp3",
+    "text": "Mật khẩu Wi-Fi không hoạt động."
+  },
+  "phone-premium-login-page-not-loading": {
+    "fileName": "phone-premium-login-page-not-loading.mp3",
+    "text": "Trang đăng nhập Wi-Fi không tải."
+  },
+  "phone-premium-no-signal": {
+    "fileName": "phone-premium-no-signal.mp3",
+    "text": "Không có tín hiệu ở đây."
+  },
+  "phone-premium-data-not-working": {
+    "fileName": "phone-premium-data-not-working.mp3",
+    "text": "Dữ liệu của tôi không hoạt động."
+  },
+  "phone-premium-activate-sim": {
+    "fileName": "phone-premium-activate-sim.mp3",
+    "text": "Bạn có thể giúp tôi kích hoạt SIM được không?"
+  },
+  "v500-phon-inte-powe-my-map-is-not-working": {
+    "fileName": "v500-phon-inte-powe-my-map-is-not-working.mp3",
+    "text": "Bản đồ của tôi không hoạt động"
+  },
+  "v500-phon-inte-powe-where-can-i-get-a-local-sim-card": {
+    "fileName": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card.mp3",
+    "text": "Tôi có thể lấy thẻ SIM địa phương ở đâu?"
+  },
+  "v500-phon-inte-powe-i-need-an-esim": {
+    "fileName": "v500-phon-inte-powe-i-need-an-esim.mp3",
+    "text": "Tôi cần một eSIM"
+  },
+  "v500-phon-inte-powe-my-phone-got-wet": {
+    "fileName": "v500-phon-inte-powe-my-phone-got-wet.mp3",
+    "text": "Điện thoại của tôi bị ướt"
+  },
+  "v500-phon-inte-powe-my-screen-is-broken": {
+    "fileName": "v500-phon-inte-powe-my-screen-is-broken.mp3",
+    "text": "Màn hình của tôi bị hỏng"
+  },
+  "v500-phon-inte-powe-can-i-use-the-wi-fi": {
+    "fileName": "v500-phon-inte-powe-can-i-use-the-wi-fi.mp3",
+    "text": "Tôi có thể sử dụng Wi-Fi không?"
+  },
+  "v500-phon-inte-powe-can-i-borrow-a-charger": {
+    "fileName": "v500-phon-inte-powe-can-i-borrow-a-charger.mp3",
+    "text": "Tôi có thể mượn bộ sạc được không?"
+  },
+  "v500-phon-inte-powe-i-need-a-charging-cable": {
+    "fileName": "v500-phon-inte-powe-i-need-a-charging-cable.mp3",
+    "text": "Tôi cần một cáp sạc"
+  },
+  "v500-phon-inte-powe-can-i-make-a-phone-call": {
+    "fileName": "v500-phon-inte-powe-can-i-make-a-phone-call.mp3",
+    "text": "Tôi có thể gọi điện thoại được không?"
+  },
+  "v500-phon-inte-powe-please-write-the-password": {
+    "fileName": "v500-phon-inte-powe-please-write-the-password.mp3",
+    "text": "Vui lòng viết mật khẩu"
+  },
+  "v500-phon-inte-powe-the-internet-is-very-slow": {
+    "fileName": "v500-phon-inte-powe-the-internet-is-very-slow.mp3",
+    "text": "Internet rất chậm"
+  },
+  "v500-phon-inte-powe-where-can-i-fix-my-phone": {
+    "fileName": "v500-phon-inte-powe-where-can-i-fix-my-phone.mp3",
+    "text": "Tôi có thể sửa điện thoại ở đâu?"
+  },
+  "v500-phon-inte-powe-can-you-install-it-for-me": {
+    "fileName": "v500-phon-inte-powe-can-you-install-it-for-me.mp3",
+    "text": "Bạn có thể cài đặt nó cho tôi được không?"
+  },
+  "v500-phon-inte-powe-how-many-days-is-it-valid": {
+    "fileName": "v500-phon-inte-powe-how-many-days-is-it-valid.mp3",
+    "text": "Có hiệu lực trong bao nhiêu ngày?"
+  },
+  "v500-phon-inte-powe-can-you-activate-it-for-me": {
+    "fileName": "v500-phon-inte-powe-can-you-activate-it-for-me.mp3",
+    "text": "Bạn có thể kích hoạt nó cho tôi được không?"
+  },
+  "v500-phon-inte-powe-can-you-restart-the-router": {
+    "fileName": "v500-phon-inte-powe-can-you-restart-the-router.mp3",
+    "text": "Bạn có thể khởi động lại bộ định tuyến không?"
+  },
+  "v500-phon-inte-powe-i-need-a-sim-card-with-data": {
+    "fileName": "v500-phon-inte-powe-i-need-a-sim-card-with-data.mp3",
+    "text": "Tôi cần một thẻ SIM có dữ liệu"
+  },
+  "v900-phon-inte-powe-the-password-is-not-working": {
+    "fileName": "v900-phon-inte-powe-the-password-is-not-working.mp3",
+    "text": "Mật khẩu không hoạt động"
+  },
+  "v900-phon-inte-powe-the-sim-card-is-not-working": {
+    "fileName": "v900-phon-inte-powe-the-sim-card-is-not-working.mp3",
+    "text": "Thẻ SIM không hoạt động"
+  },
+  "v900-phon-inte-powe-can-you-help-me-book-a-grab": {
+    "fileName": "v900-phon-inte-powe-can-you-help-me-book-a-grab.mp3",
+    "text": "Bạn có thể giúp tôi đặt xe Grab được không?"
+  },
+  "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting": {
+    "fileName": "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting.mp3",
+    "text": "Wi-Fi liên tục bị ngắt kết nối"
+  },
+  "v900-phon-inte-powe-where-can-i-buy-a-power-bank": {
+    "fileName": "v900-phon-inte-powe-where-can-i-buy-a-power-bank.mp3",
+    "text": "Tôi có thể mua sạc dự phòng ở đâu?"
+  },
+  "v900-phon-inte-powe-can-you-send-me-your-location": {
+    "fileName": "v900-phon-inte-powe-can-you-send-me-your-location.mp3",
+    "text": "Bạn có thể gửi cho tôi vị trí của bạn?"
+  },
+  "v900-phon-inte-powe-how-long-will-the-repair-take": {
+    "fileName": "v900-phon-inte-powe-how-long-will-the-repair-take.mp3",
+    "text": "Việc sửa chữa sẽ mất bao lâu?"
+  },
+  "v900-phon-inte-powe-the-app-will-not-accept-my-card": {
+    "fileName": "v900-phon-inte-powe-the-app-will-not-accept-my-card.mp3",
+    "text": "Ứng dụng sẽ không chấp nhận thẻ của tôi"
+  },
+  "v900-phon-inte-powe-can-you-type-the-address-for-me": {
+    "fileName": "v900-phon-inte-powe-can-you-type-the-address-for-me.mp3",
+    "text": "Bạn có thể gõ địa chỉ cho tôi được không?"
+  },
+  "v900-phon-inte-powe-does-this-work-outside-the-city": {
+    "fileName": "v900-phon-inte-powe-does-this-work-outside-the-city.mp3",
+    "text": "Cái này có hoạt động bên ngoài thành phố không?"
+  },
+  "v900-phon-inte-powe-how-many-gigabytes-are-included": {
+    "fileName": "v900-phon-inte-powe-how-many-gigabytes-are-included.mp3",
+    "text": "Có bao nhiêu gigabyte được bao gồm?"
+  },
+  "v900-phon-inte-powe-is-this-the-correct-location-pin": {
+    "fileName": "v900-phon-inte-powe-is-this-the-correct-location-pin.mp3",
+    "text": "Đây có phải là pin vị trí chính xác không?"
+  },
+  "v900-phon-inte-powe-please-speak-to-them-on-the-phone": {
+    "fileName": "v900-phon-inte-powe-please-speak-to-them-on-the-phone.mp3",
+    "text": "Hãy nói chuyện với họ qua điện thoại"
+  },
+  "v900-phon-inte-powe-which-wi-fi-network-should-i-use": {
+    "fileName": "v900-phon-inte-powe-which-wi-fi-network-should-i-use.mp3",
+    "text": "Tôi nên sử dụng mạng Wi-Fi nào?"
+  },
+  "v900-phon-inte-powe-can-you-send-a-text-message-for-me": {
+    "fileName": "v900-phon-inte-powe-can-you-send-a-text-message-for-me.mp3",
+    "text": "Bạn có thể gửi tin nhắn văn bản cho tôi được không?"
+  },
+  "v900-phon-inte-powe-can-you-check-this-address-in-the-app": {
+    "fileName": "v900-phon-inte-powe-can-you-check-this-address-in-the-app.mp3",
+    "text": "Bạn có thể kiểm tra địa chỉ này trong ứng dụng không?"
+  },
+  "v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t": {
+    "fileName": "v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t.mp3",
+    "text": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng."
+  },
+  "bath-1": {
+    "fileName": "bath-1.mp3",
+    "text": "Nhà vệ sinh ở đâu?"
+  },
+  "bath-2": {
+    "fileName": "bath-2.mp3",
+    "text": "Có giấy vệ sinh không?"
+  },
+  "bathroom-use": {
+    "fileName": "bathroom-use.mp3",
+    "text": "Tôi dùng nhà vệ sinh được không?"
+  },
+  "bath-3": {
+    "fileName": "bath-3.mp3",
+    "text": "Có xà phòng không?"
+  },
+  "bath-4": {
+    "fileName": "bath-4.mp3",
+    "text": "Tôi rửa tay ở đây được không?"
+  },
+  "bath-5": {
+    "fileName": "bath-5.mp3",
+    "text": "Tôi cần nước"
+  },
+  "bath-6": {
+    "fileName": "bath-6.mp3",
+    "text": "Ở đây có chỗ tắm không?"
+  },
+  "v500-bath-pers-need-where-is-the-toilet": {
+    "fileName": "v500-bath-pers-need-where-is-the-toilet.mp3",
+    "text": "Nhà vệ sinh ở đâu?"
+  },
+  "v500-bath-pers-need-where-can-i-buy-shampoo": {
+    "fileName": "v500-bath-pers-need-where-can-i-buy-shampoo.mp3",
+    "text": "Tôi có thể mua dầu gội ở đâu?"
+  },
+  "v500-bath-pers-need-where-can-i-wash-my-hands": {
+    "fileName": "v500-bath-pers-need-where-can-i-wash-my-hands.mp3",
+    "text": "Tôi có thể rửa tay ở đâu?"
+  },
+  "v500-bath-pers-need-do-you-have-hand-sanitizer": {
+    "fileName": "v500-bath-pers-need-do-you-have-hand-sanitizer.mp3",
+    "text": "Bạn có nước rửa tay khô không?"
+  },
+  "v500-bath-pers-need-where-can-i-buy-toothpaste": {
+    "fileName": "v500-bath-pers-need-where-can-i-buy-toothpaste.mp3",
+    "text": "Tôi có thể mua kem đánh răng ở đâu?"
+  },
+  "v500-bath-pers-need-is-there-a-public-bathroom-nearby": {
+    "fileName": "v500-bath-pers-need-is-there-a-public-bathroom-nearby.mp3",
+    "text": "Có phòng tắm công cộng nào gần đây không?"
+  },
+  "v900-bath-pers-need-is-there-a-fee-for-the-bathroom": {
+    "fileName": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom.mp3",
+    "text": "Có tính phí cho phòng tắm không?"
+  },
+  "emergency-1": {
+    "fileName": "emergency-1.mp3",
+    "text": "Gọi công an"
+  },
+  "emergency-2": {
+    "fileName": "emergency-2.mp3",
+    "text": "Gọi xe cứu thương"
+  },
+  "emergency-3": {
+    "fileName": "emergency-3.mp3",
+    "text": "Tôi mất hộ chiếu"
+  },
+  "emergency-4": {
+    "fileName": "emergency-4.mp3",
+    "text": "Tôi cảm thấy không an toàn"
+  },
+  "emergency-emergency": {
+    "fileName": "emergency-emergency.mp3",
+    "text": "Đây là trường hợp khẩn cấp"
+  },
+  "emergency-5": {
+    "fileName": "emergency-5.mp3",
+    "text": "Cứu tôi với!"
+  },
+  "emergency-hospital": {
+    "fileName": "emergency-hospital.mp3",
+    "text": "Bệnh viện gần nhất ở đâu?"
+  },
+  "emergency-6": {
+    "fileName": "emergency-6.mp3",
+    "text": "Túi của tôi bị lấy mất"
+  },
+  "emergency-7": {
+    "fileName": "emergency-7.mp3",
+    "text": "Tôi cần đại sứ quán"
+  },
+  "emergency-premium-tourist-police": {
+    "fileName": "emergency-premium-tourist-police.mp3",
+    "text": "Tôi cần cảnh sát du lịch."
+  },
+  "emergency-premium-police-station": {
+    "fileName": "emergency-premium-police-station.mp3",
+    "text": "Làm ơn đưa tôi đến đồn cảnh sát."
+  },
+  "emergency-premium-phone-stolen": {
+    "fileName": "emergency-premium-phone-stolen.mp3",
+    "text": "Điện thoại của tôi đã bị đánh cắp."
+  },
+  "emergency-premium-wallet-stolen": {
+    "fileName": "emergency-premium-wallet-stolen.mp3",
+    "text": "Ví của tôi đã bị đánh cắp."
+  },
+  "emergency-premium-passport-report": {
+    "fileName": "emergency-premium-passport-report.mp3",
+    "text": "Tôi cần một báo cáo về hộ chiếu bị mất của tôi."
+  },
+  "emergency-premium-take-me-safe": {
+    "fileName": "emergency-premium-take-me-safe.mp3",
+    "text": "Làm ơn đưa tôi đến nơi nào đó an toàn."
+  },
+  "v500-emer-safe-i-am-injured": {
+    "fileName": "v500-emer-safe-i-am-injured.mp3",
+    "text": "tôi bị thương"
+  },
+  "v500-emer-safe-i-cannot-move": {
+    "fileName": "v500-emer-safe-i-cannot-move.mp3",
+    "text": "Tôi không thể di chuyển"
+  },
+  "v500-emer-safe-do-not-touch-me": {
+    "fileName": "v500-emer-safe-do-not-touch-me.mp3",
+    "text": "Đừng chạm vào tôi"
+  },
+  "v500-emer-safe-there-is-a-fire": {
+    "fileName": "v500-emer-safe-there-is-a-fire.mp3",
+    "text": "Có một ngọn lửa"
+  },
+  "v500-emer-safe-i-need-first-aid": {
+    "fileName": "v500-emer-safe-i-need-first-aid.mp3",
+    "text": "Tôi cần sơ cứu"
+  },
+  "v500-emer-safe-stop-following-me": {
+    "fileName": "v500-emer-safe-stop-following-me.mp3",
+    "text": "Dừng theo dõi tôi"
+  },
+  "v500-emer-safe-someone-is-injured": {
+    "fileName": "v500-emer-safe-someone-is-injured.mp3",
+    "text": "Có người bị thương"
+  },
+  "v500-emer-safe-please-stay-near-me": {
+    "fileName": "v500-emer-safe-please-stay-near-me.mp3",
+    "text": "Xin hãy ở gần tôi"
+  },
+  "v500-emer-safe-my-friend-needs-help": {
+    "fileName": "v500-emer-safe-my-friend-needs-help.mp3",
+    "text": "Bạn tôi cần giúp đỡ"
+  },
+  "v500-emer-safe-i-lost-my-credit-card": {
+    "fileName": "v500-emer-safe-i-lost-my-credit-card.mp3",
+    "text": "Tôi bị mất thẻ tín dụng"
+  },
+  "v500-emer-safe-please-leave-me-alone": {
+    "fileName": "v500-emer-safe-please-leave-me-alone.mp3",
+    "text": "Xin hãy để tôi yên"
+  },
+  "v500-emer-safe-my-passport-is-missing": {
+    "fileName": "v500-emer-safe-my-passport-is-missing.mp3",
+    "text": "Hộ chiếu của tôi bị mất"
+  },
+  "v500-emer-safe-please-call-the-police": {
+    "fileName": "v500-emer-safe-please-call-the-police.mp3",
+    "text": "Hãy gọi cảnh sát"
+  },
+  "v500-emer-safe-please-call-an-ambulance": {
+    "fileName": "v500-emer-safe-please-call-an-ambulance.mp3",
+    "text": "Hãy gọi xe cấp cứu"
+  },
+  "v500-emer-safe-i-do-not-have-my-passport": {
+    "fileName": "v500-emer-safe-i-do-not-have-my-passport.mp3",
+    "text": "Tôi không có hộ chiếu"
+  },
+  "v500-emer-safe-there-has-been-an-accident": {
+    "fileName": "v500-emer-safe-there-has-been-an-accident.mp3",
+    "text": "Đã có một tai nạn"
+  },
+  "v900-emer-safe-please-call-the-manager-now": {
+    "fileName": "v900-emer-safe-please-call-the-manager-now.mp3",
+    "text": "Hãy gọi ngay cho người quản lý"
+  },
+  "v900-emer-safe-this-person-is-bothering-me": {
+    "fileName": "v900-emer-safe-this-person-is-bothering-me.mp3",
+    "text": "Người này đang làm phiền tôi"
+  },
+  "v900-emer-safe-please-call-emergency-services": {
+    "fileName": "v900-emer-safe-please-call-emergency-services.mp3",
+    "text": "Vui lòng gọi dịch vụ khẩn cấp"
+  },
+  "v900-emer-safe-please-help-me-get-out-of-here": {
+    "fileName": "v900-emer-safe-please-help-me-get-out-of-here.mp3",
+    "text": "Xin hãy giúp tôi ra khỏi đây"
+  },
+  "v900-emer-safe-please-take-me-to-the-hospital": {
+    "fileName": "v900-emer-safe-please-take-me-to-the-hospital.mp3",
+    "text": "Làm ơn đưa tôi đến bệnh viện"
+  },
+  "v900-emer-safe-can-you-help-me-cancel-my-card": {
+    "fileName": "v900-emer-safe-can-you-help-me-cancel-my-card.mp3",
+    "text": "Bạn có thể giúp tôi hủy thẻ được không?"
+  },
+  "v900-emer-safe-please-send-my-location-to-this-person": {
+    "fileName": "v900-emer-safe-please-send-my-location-to-this-person.mp3",
+    "text": "Vui lòng gửi vị trí của tôi cho người này"
+  },
+  "v900-emer-safe-i-am-safe-now": {
+    "fileName": "v900-emer-safe-i-am-safe-now.mp3",
+    "text": "Bây giờ tôi đã an toàn"
+  },
+  "v900-emer-safe-i-think-this-is-a-scam": {
+    "fileName": "v900-emer-safe-i-think-this-is-a-scam.mp3",
+    "text": "Tôi nghĩ đây là một trò lừa đảo"
+  },
+  "v900-emer-safe-i-do-not-want-any-trouble": {
+    "fileName": "v900-emer-safe-i-do-not-want-any-trouble.mp3",
+    "text": "Tôi không muốn bất kỳ rắc rối nào"
+  },
+  "v900-emer-safe-i-did-not-agree-to-that-price": {
+    "fileName": "v900-emer-safe-i-did-not-agree-to-that-price.mp3",
+    "text": "Tôi không đồng ý với mức giá đó"
+  },
+  "v900-emer-safe-please-write-down-what-happened": {
+    "fileName": "v900-emer-safe-please-write-down-what-happened.mp3",
+    "text": "Hãy viết ra điều gì đã xảy ra"
+  },
+  "v900-emer-safe-i-need-a-temporary-travel-document": {
+    "fileName": "v900-emer-safe-i-need-a-temporary-travel-document.mp3",
+    "text": "Tôi cần giấy thông hành tạm thời"
+  },
+  "smalltalk-1": {
+    "fileName": "smalltalk-1.mp3",
+    "text": "Tôi đến từ Mỹ"
+  },
+  "smalltalk-2": {
+    "fileName": "smalltalk-2.mp3",
+    "text": "Tôi từ Anh"
+  },
+  "smalltalk-3": {
+    "fileName": "smalltalk-3.mp3",
+    "text": "Đây là lần đầu của tôi"
+  },
+  "smalltalk-4": {
+    "fileName": "smalltalk-4.mp3",
+    "text": "Tôi thích Việt Nam"
+  },
+  "smalltalk-5": {
+    "fileName": "smalltalk-5.mp3",
+    "text": "Đồ ăn ngon quá"
+  },
+  "smalltalk-6": {
+    "fileName": "smalltalk-6.mp3",
+    "text": "Thời tiết nóng quá"
+  },
+  "smalltalk-7": {
+    "fileName": "smalltalk-7.mp3",
+    "text": "Bạn khỏe không?"
+  },
+  "social-8": {
+    "fileName": "social-8.mp3",
+    "text": "Bạn ở đây bao lâu?"
+  },
+  "social-9": {
+    "fileName": "social-9.mp3",
+    "text": "Bạn gợi ý gì ở đây?"
+  },
+  "v500-soci-smal-talk-will-it-rain-today": {
+    "fileName": "v500-soci-smal-talk-will-it-rain-today.mp3",
+    "text": "Hôm nay trời có mưa không?"
+  },
+  "v500-soci-smal-talk-can-we-go-somewhere-cooler": {
+    "fileName": "v500-soci-smal-talk-can-we-go-somewhere-cooler.mp3",
+    "text": "Chúng ta có thể đi đâu đó mát mẻ hơn được không?"
+  },
+  "v500-soci-smal-talk-i-need-to-rest-for-a-moment": {
+    "fileName": "v500-soci-smal-talk-i-need-to-rest-for-a-moment.mp3",
+    "text": "Tôi cần nghỉ ngơi một lát"
+  },
+  "v500-soci-smal-talk-please-do-not-take-my-photo": {
+    "fileName": "v500-soci-smal-talk-please-do-not-take-my-photo.mp3",
+    "text": "Làm ơn đừng chụp ảnh tôi"
+  },
+  "v500-soci-smal-talk-where-can-i-buy-a-raincoat": {
+    "fileName": "v500-soci-smal-talk-where-can-i-buy-a-raincoat.mp3",
+    "text": "Tôi có thể mua áo mưa ở đâu?"
+  },
+  "v500-soci-smal-talk-i-want-to-be-alone-thank-you": {
+    "fileName": "v500-soci-smal-talk-i-want-to-be-alone-thank-you.mp3",
+    "text": "Tôi muốn ở một mình, cảm ơn bạn"
+  },
+  "v500-soci-smal-talk-where-can-i-wait-out-the-rain": {
+    "fileName": "v500-soci-smal-talk-where-can-i-wait-out-the-rain.mp3",
+    "text": "Tôi có thể chờ mưa ở đâu?"
+  },
+  "v500-soci-smal-talk-no-thank-you-im-not-interested": {
+    "fileName": "v500-soci-smal-talk-no-thank-you-im-not-interested.mp3",
+    "text": "Không, cảm ơn, tôi không quan tâm"
+  },
+  "sight-1": {
+    "fileName": "sight-1.mp3",
+    "text": "Vé bao nhiêu?"
+  },
+  "sight-2": {
+    "fileName": "sight-2.mp3",
+    "text": "Bắt đầu ở đâu?"
+  },
+  "sight-3": {
+    "fileName": "sight-3.mp3",
+    "text": "Tôi chụp hình ở đây được không?"
+  },
+  "sight-4": {
+    "fileName": "sight-4.mp3",
+    "text": "Mấy giờ đóng cửa?"
+  },
+  "sight-5": {
+    "fileName": "sight-5.mp3",
+    "text": "Điểm gặp ở đâu?"
+  },
+  "sight-6": {
+    "fileName": "sight-6.mp3",
+    "text": "Tôi cần đặt trước không?"
+  },
+  "v500-sigh-acti-i-have-a-tour-booking": {
+    "fileName": "v500-sigh-acti-i-have-a-tour-booking.mp3",
+    "text": "Tôi có một đặt chỗ du lịch"
+  },
+  "v500-sigh-acti-where-is-the-entrance": {
+    "fileName": "v500-sigh-acti-where-is-the-entrance.mp3",
+    "text": "Lối vào ở đâu?"
+  },
+  "v500-sigh-acti-where-can-i-buy-tickets": {
+    "fileName": "v500-sigh-acti-where-can-i-buy-tickets.mp3",
+    "text": "Tôi có thể mua vé ở đâu?"
+  },
+  "v500-sigh-acti-can-i-have-a-map": {
+    "fileName": "v500-sigh-acti-can-i-have-a-map.mp3",
+    "text": "Tôi có thể có bản đồ được không?"
+  },
+  "v500-sigh-acti-can-i-join-today": {
+    "fileName": "v500-sigh-acti-can-i-join-today.mp3",
+    "text": "Tôi có thể tham gia ngay hôm nay không?"
+  },
+  "v500-sigh-acti-where-is-the-exit": {
+    "fileName": "v500-sigh-acti-where-is-the-exit.mp3",
+    "text": "Lối ra ở đâu?"
+  },
+  "v500-sigh-acti-what-should-i-avoid": {
+    "fileName": "v500-sigh-acti-what-should-i-avoid.mp3",
+    "text": "Tôi nên tránh những gì?"
+  },
+  "v900-sigh-acti-what-should-i-bring": {
+    "fileName": "v900-sigh-acti-what-should-i-bring.mp3",
+    "text": "Tôi nên mang theo những gì?"
+  },
+  "v900-sigh-acti-id-like-to-book-a-tour": {
+    "fileName": "v900-sigh-acti-id-like-to-book-a-tour.mp3",
+    "text": "Tôi muốn đặt một chuyến tham quan"
+  },
+  "v900-sigh-acti-is-photography-allowed": {
+    "fileName": "v900-sigh-acti-is-photography-allowed.mp3",
+    "text": "Có được phép chụp ảnh không?"
+  },
+  "v900-sigh-acti-can-i-take-a-photo-here": {
+    "fileName": "v900-sigh-acti-can-i-take-a-photo-here.mp3",
+    "text": "Tôi có thể chụp ảnh ở đây được không?"
+  },
+  "v900-sigh-acti-where-does-the-tour-meet": {
+    "fileName": "v900-sigh-acti-where-does-the-tour-meet.mp3",
+    "text": "Chuyến đi gặp nhau ở đâu?"
+  },
+  "v900-sigh-acti-is-there-an-english-guide": {
+    "fileName": "v900-sigh-acti-is-there-an-english-guide.mp3",
+    "text": "Có hướng dẫn tiếng Anh không?"
+  },
+  "v900-sigh-acti-is-this-area-safe-at-night": {
+    "fileName": "v900-sigh-acti-is-this-area-safe-at-night.mp3",
+    "text": "Khu vực này có an toàn vào ban đêm không?"
+  },
+  "v900-sigh-acti-is-this-the-right-entrance": {
+    "fileName": "v900-sigh-acti-is-this-the-right-entrance.mp3",
+    "text": "Đây có phải là lối vào bên phải không?"
+  },
+  "v900-sigh-acti-i-cannot-find-the-tour-guide": {
+    "fileName": "v900-sigh-acti-i-cannot-find-the-tour-guide.mp3",
+    "text": "Tôi không thể tìm thấy hướng dẫn viên du lịch"
+  },
+  "v900-sigh-acti-can-you-write-the-name-for-me": {
+    "fileName": "v900-sigh-acti-can-you-write-the-name-for-me.mp3",
+    "text": "Bạn có thể viết tên cho tôi được không?"
+  },
+  "v900-sigh-acti-what-time-does-the-tour-start": {
+    "fileName": "v900-sigh-acti-what-time-does-the-tour-start.mp3",
+    "text": "Chuyến tham quan bắt đầu lúc mấy giờ?"
+  },
+  "v900-sigh-acti-is-this-included-in-the-ticket": {
+    "fileName": "v900-sigh-acti-is-this-included-in-the-ticket.mp3",
+    "text": "Cái này có bao gồm trong vé không?"
+  },
+  "v900-sigh-acti-please-send-me-the-meeting-point": {
+    "fileName": "v900-sigh-acti-please-send-me-the-meeting-point.mp3",
+    "text": "Vui lòng gửi cho tôi điểm tập trung"
+  },
+  "v900-sigh-acti-is-lunch-included": {
+    "fileName": "v900-sigh-acti-is-lunch-included.mp3",
+    "text": "Có bao gồm bữa trưa không?"
+  },
+  "v900-sigh-acti-where-is-less-crowded": {
+    "fileName": "v900-sigh-acti-where-is-less-crowded.mp3",
+    "text": "Nơi nào ít đông đúc hơn?"
+  },
+  "store-1": {
+    "fileName": "store-1.mp3",
+    "text": "Cho tôi chai nước"
+  },
+  "store-2": {
+    "fileName": "store-2.mp3",
+    "text": "Có túi không?"
+  },
+  "store-3": {
+    "fileName": "store-3.mp3",
+    "text": "Cho tôi khăn giấy"
+  },
+  "store-4": {
+    "fileName": "store-4.mp3",
+    "text": "Ở đâu có kem chống nắng?"
+  },
+  "store-5": {
+    "fileName": "store-5.mp3",
+    "text": "Mở cái này giúp tôi"
+  },
+  "store-6": {
+    "fileName": "store-6.mp3",
+    "text": "Tôi quẹt thẻ được không?"
+  },
+  "store-7": {
+    "fileName": "store-7.mp3",
+    "text": "Cho tôi hóa đơn"
+  },
+  "service-8": {
+    "fileName": "service-8.mp3",
+    "text": "In cái này được không?"
+  },
+  "service-9": {
+    "fileName": "service-9.mp3",
+    "text": "Châm thêm nước vào chai này được không?"
+  },
+  "v500-loca-serv-ever-task-where-can-i-buy-water": {
+    "fileName": "v500-loca-serv-ever-task-where-can-i-buy-water.mp3",
+    "text": "Tôi có thể mua nước ở đâu?"
+  },
+  "v500-loca-serv-ever-task-i-need-tissues": {
+    "fileName": "v500-loca-serv-ever-task-i-need-tissues.mp3",
+    "text": "Tôi cần khăn giấy"
+  },
+  "v500-loca-serv-ever-task-is-there-a-ramp": {
+    "fileName": "v500-loca-serv-ever-task-is-there-a-ramp.mp3",
+    "text": "Có đoạn đường nối không?"
+  },
+  "v500-loca-serv-ever-task-can-you-fix-this": {
+    "fileName": "v500-loca-serv-ever-task-can-you-fix-this.mp3",
+    "text": "Bạn có thể sửa cái này được không?"
+  },
+  "v500-loca-serv-ever-task-how-much-per-page": {
+    "fileName": "v500-loca-serv-ever-task-how-much-per-page.mp3",
+    "text": "Bao nhiêu một trang?"
+  },
+  "v500-loca-serv-ever-task-i-need-an-umbrella": {
+    "fileName": "v500-loca-serv-ever-task-i-need-an-umbrella.mp3",
+    "text": "Tôi cần một chiếc ô"
+  },
+  "v500-loca-serv-ever-task-one-item-is-missing": {
+    "fileName": "v500-loca-serv-ever-task-one-item-is-missing.mp3",
+    "text": "Một mặt hàng bị thiếu"
+  },
+  "v500-loca-serv-ever-task-i-need-a-rain-poncho": {
+    "fileName": "v500-loca-serv-ever-task-i-need-a-rain-poncho.mp3",
+    "text": "Tôi cần một chiếc áo mưa"
+  },
+  "v500-loca-serv-ever-task-i-need-bottled-water": {
+    "fileName": "v500-loca-serv-ever-task-i-need-bottled-water.mp3",
+    "text": "Tôi cần nước đóng chai"
+  },
+  "v500-loca-serv-ever-task-is-there-an-elevator": {
+    "fileName": "v500-loca-serv-ever-task-is-there-an-elevator.mp3",
+    "text": "Có thang máy không?"
+  },
+  "v500-loca-serv-ever-task-how-long-will-it-take": {
+    "fileName": "v500-loca-serv-ever-task-how-long-will-it-take.mp3",
+    "text": "Sẽ mất bao lâu?"
+  },
+  "v900-loca-serv-ever-task-how-much-will-it-cost": {
+    "fileName": "v900-loca-serv-ever-task-how-much-will-it-cost.mp3",
+    "text": "Nó sẽ có giá bao nhiêu?"
+  },
+  "v900-loca-serv-ever-task-i-need-laundry-service": {
+    "fileName": "v900-loca-serv-ever-task-i-need-laundry-service.mp3",
+    "text": "Tôi cần dịch vụ giặt ủi"
+  },
+  "v900-loca-serv-ever-task-when-will-it-be-ready": {
+    "fileName": "v900-loca-serv-ever-task-when-will-it-be-ready.mp3",
+    "text": "Khi nào nó sẽ sẵn sàng?"
+  },
+  "v900-loca-serv-ever-task-can-you-email-it-to-me": {
+    "fileName": "v900-loca-serv-ever-task-can-you-email-it-to-me.mp3",
+    "text": "Bạn có thể gửi email cho tôi được không?"
+  },
+  "v900-loca-serv-ever-task-where-can-i-do-laundry": {
+    "fileName": "v900-loca-serv-ever-task-where-can-i-do-laundry.mp3",
+    "text": "Tôi có thể giặt đồ ở đâu?"
+  },
+  "v900-loca-serv-ever-task-where-can-i-print-this": {
+    "fileName": "v900-loca-serv-ever-task-where-can-i-print-this.mp3",
+    "text": "Tôi có thể in cái này ở đâu?"
+  },
+  "v900-loca-serv-ever-task-my-child-needs-a-bathroom": {
+    "fileName": "v900-loca-serv-ever-task-my-child-needs-a-bathroom.mp3",
+    "text": "Con tôi cần một phòng tắm"
+  },
+  "v900-loca-serv-ever-task-can-you-dry-these-clothes": {
+    "fileName": "v900-loca-serv-ever-task-can-you-dry-these-clothes.mp3",
+    "text": "Bạn có thể làm khô những bộ quần áo này không?"
+  },
+  "v900-loca-serv-ever-task-can-you-print-this-for-me": {
+    "fileName": "v900-loca-serv-ever-task-can-you-print-this-for-me.mp3",
+    "text": "Bạn có thể in cái này cho tôi được không?"
+  },
+  "v900-loca-serv-ever-task-can-you-copy-this-document": {
+    "fileName": "v900-loca-serv-ever-task-can-you-copy-this-document.mp3",
+    "text": "Bạn có thể sao chép tài liệu này?"
+  },
+  "v900-loca-serv-ever-task-can-you-scan-this-document": {
+    "fileName": "v900-loca-serv-ever-task-can-you-scan-this-document.mp3",
+    "text": "Bạn có thể scan tài liệu này được không?"
+  },
+  "v900-loca-serv-ever-task-can-you-wash-these-clothes": {
+    "fileName": "v900-loca-serv-ever-task-can-you-wash-these-clothes.mp3",
+    "text": "Bạn có thể giặt những bộ quần áo này không?"
+  },
+  "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler": {
+    "fileName": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler.mp3",
+    "text": "Chúng ta có thể ngồi chỗ nào mát hơn được không?"
+  },
+  "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter": {
+    "fileName": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter.mp3",
+    "text": "Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không?"
+  },
+  "v900-loca-serv-ever-task-how-much-per-kilo-for-laundry": {
+    "fileName": "v900-loca-serv-ever-task-how-much-per-kilo-for-laundry.mp3",
+    "text": "Giặt đồ bao nhiêu một kg?"
+  },
+  "v900-loca-serv-ever-task-please-print-it-in-black-and-white": {
+    "fileName": "v900-loca-serv-ever-task-please-print-it-in-black-and-white.mp3",
+    "text": "Vui lòng in nó bằng màu đen và trắng"
+  },
+  "v900-loca-serv-ever-task-where-can-i-buy-mosquito-repellent": {
+    "fileName": "v900-loca-serv-ever-task-where-can-i-buy-mosquito-repellent.mp3",
+    "text": "Tôi có thể mua thuốc chống muỗi ở đâu?"
+  },
+  "v900-loca-serv-ever-task-can-you-sew-this": {
+    "fileName": "v900-loca-serv-ever-task-can-you-sew-this.mp3",
+    "text": "Bạn có thể may cái này được không?"
+  },
+  "v900-loca-serv-ever-task-please-do-not-shrink-this": {
+    "fileName": "v900-loca-serv-ever-task-please-do-not-shrink-this.mp3",
+    "text": "Xin đừng thu nhỏ cái này"
+  },
+  "v900-loca-serv-ever-task-where-can-i-buy-sunscreen": {
+    "fileName": "v900-loca-serv-ever-task-where-can-i-buy-sunscreen.mp3",
+    "text": "Tôi có thể mua kem chống nắng ở đâu?"
+  },
+  "v900-loca-serv-ever-task-where-can-i-repair-my-bag": {
+    "fileName": "v900-loca-serv-ever-task-where-can-i-repair-my-bag.mp3",
+    "text": "Tôi có thể sửa túi ở đâu?"
+  }
+}

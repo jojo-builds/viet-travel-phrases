@@ -1,0 +1,110 @@
+{
+  "variant": "indonesian",
+  "appId": "indonesian-travel-phrases",
+  "displayName": "SpeakLocal Indonesia",
+  "language": "Indonesian",
+  "languageCode": "id",
+  "country": "Indonesia",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "indonesian-polite-basics-1",
+    "indonesian-polite-basics-2",
+    "indonesian-polite-basics-5",
+    "indonesian-asking-price-1",
+    "indonesian-polite-basics-4"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Cafe Indonesian should stay short and practical for sugar level, takeaway, and familiar iced-drink orders."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Street-food Indonesian should prioritize spice, takeaway, bottled water, and simple ingredient or allergy repair."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Grab and Gojek are part of the real transport flow, so this lane should cover pickup points, stop-here requests, and payment clarification."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Ask the price early and be ready for cash, card, or QR-payment clarification in markets and small shops."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "Short phrases built around thanks, excuse me, sorry, and soft requests will carry a lot of the first Indonesian pack."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Convenience stores are high-frequency traveler stops for water, tissues, bags, receipts, and quick payment clarification."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Hotel Indonesian should cover reservations, check-in, checkout time, air conditioning, towels, and luggage hold requests."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Directions should bias toward landmarks, hotels, stations, ports, and map-pin confirmation rather than textbook route drills."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "This lane should cover misunderstanding, getting lost, forgotten items, phone trouble, and first-step medical escalation."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Keep Indonesian small talk short and optional so it supports warmth without crowding out the higher-stress service scenarios."
+    }
+  ],
+  "notes": "Shared traveler baseline scaffold for Indonesian. No scenario-ID deviation from the family 10-scenario seam; Indonesia-specific changes belong in phrase choice, politeness defaults, payment language, and search alias planning before any runtime wiring."
+}

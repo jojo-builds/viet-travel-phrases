@@ -1,0 +1,302 @@
+{
+  "german-coffee-shop-1": {
+    "phraseId": "german-coffee-shop-1",
+    "fileName": "german-coffee-shop-1.mp3",
+    "language": "german",
+    "text": "Einen Kaffee, bitte.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:45:11.506Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-coffee-shop-6": {
+    "phraseId": "german-coffee-shop-6",
+    "fileName": "german-coffee-shop-6.mp3",
+    "language": "german",
+    "text": "Zum Mitnehmen, bitte.",
+    "chars": 21,
+    "generatedAt": "2026-04-20T07:45:12.638Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-coffee-shop-7": {
+    "phraseId": "german-coffee-shop-7",
+    "fileName": "german-coffee-shop-7.mp3",
+    "language": "german",
+    "text": "Kann ich bitte bezahlen?",
+    "chars": 24,
+    "generatedAt": "2026-04-20T07:45:13.759Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-street-food-1": {
+    "phraseId": "german-street-food-1",
+    "fileName": "german-street-food-1.mp3",
+    "language": "german",
+    "text": "Eine Portion, bitte.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:45:14.859Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-street-food-5": {
+    "phraseId": "german-street-food-5",
+    "fileName": "german-street-food-5.mp3",
+    "language": "german",
+    "text": "Haben Sie Wasser in Flaschen?",
+    "chars": 29,
+    "generatedAt": "2026-04-20T07:45:15.989Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-grab-taxi-1": {
+    "phraseId": "german-grab-taxi-1",
+    "fileName": "german-grab-taxi-1.mp3",
+    "language": "german",
+    "text": "Bitte fahren Sie mich hierhin.",
+    "chars": 30,
+    "generatedAt": "2026-04-20T07:45:17.124Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-grab-taxi-2": {
+    "phraseId": "german-grab-taxi-2",
+    "fileName": "german-grab-taxi-2.mp3",
+    "language": "german",
+    "text": "Bitte bringen Sie mich zum Bahnhof.",
+    "chars": 35,
+    "generatedAt": "2026-04-20T07:45:18.277Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-grab-taxi-3": {
+    "phraseId": "german-grab-taxi-3",
+    "fileName": "german-grab-taxi-3.mp3",
+    "language": "german",
+    "text": "Hier bitte.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T07:45:19.377Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-asking-price-1": {
+    "phraseId": "german-asking-price-1",
+    "fileName": "german-asking-price-1.mp3",
+    "language": "german",
+    "text": "Wie viel kostet das?",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:45:20.477Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-asking-price-4": {
+    "phraseId": "german-asking-price-4",
+    "fileName": "german-asking-price-4.mp3",
+    "language": "german",
+    "text": "Gibt es eine günstigere?",
+    "chars": 24,
+    "generatedAt": "2026-04-20T07:45:21.599Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-asking-price-5": {
+    "phraseId": "german-asking-price-5",
+    "fileName": "german-asking-price-5.mp3",
+    "language": "german",
+    "text": "Was kostet das zusammen?",
+    "chars": 24,
+    "generatedAt": "2026-04-20T07:45:22.711Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-asking-price-6": {
+    "phraseId": "german-asking-price-6",
+    "fileName": "german-asking-price-6.mp3",
+    "language": "german",
+    "text": "Zeigen Sie mir bitte noch eins.",
+    "chars": 31,
+    "generatedAt": "2026-04-20T07:45:23.865Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-polite-basics-2": {
+    "phraseId": "german-polite-basics-2",
+    "fileName": "german-polite-basics-2.mp3",
+    "language": "german",
+    "text": "Danke.",
+    "chars": 6,
+    "generatedAt": "2026-04-20T07:45:24.944Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-polite-basics-4": {
+    "phraseId": "german-polite-basics-4",
+    "fileName": "german-polite-basics-4.mp3",
+    "language": "german",
+    "text": "Nein, danke.",
+    "chars": 12,
+    "generatedAt": "2026-04-20T07:45:26.044Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-polite-basics-5": {
+    "phraseId": "german-polite-basics-5",
+    "fileName": "german-polite-basics-5.mp3",
+    "language": "german",
+    "text": "Entschuldigung.",
+    "chars": 15,
+    "generatedAt": "2026-04-20T07:45:27.137Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-convenience-store-1": {
+    "phraseId": "german-convenience-store-1",
+    "fileName": "german-convenience-store-1.mp3",
+    "language": "german",
+    "text": "Eine Flasche Wasser, bitte.",
+    "chars": 27,
+    "generatedAt": "2026-04-20T07:45:28.256Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-convenience-store-6": {
+    "phraseId": "german-convenience-store-6",
+    "fileName": "german-convenience-store-6.mp3",
+    "language": "german",
+    "text": "Kann ich mit Karte bezahlen?",
+    "chars": 28,
+    "generatedAt": "2026-04-20T07:45:29.391Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-convenience-store-7": {
+    "phraseId": "german-convenience-store-7",
+    "fileName": "german-convenience-store-7.mp3",
+    "language": "german",
+    "text": "Die Quittung bitte.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T07:45:30.499Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-hotel-hostel-1": {
+    "phraseId": "german-hotel-hostel-1",
+    "fileName": "german-hotel-hostel-1.mp3",
+    "language": "german",
+    "text": "Ich habe eine Reservierung.",
+    "chars": 27,
+    "generatedAt": "2026-04-20T07:45:31.618Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-hotel-hostel-2": {
+    "phraseId": "german-hotel-hostel-2",
+    "fileName": "german-hotel-hostel-2.mp3",
+    "language": "german",
+    "text": "Ich möchte einchecken.",
+    "chars": 22,
+    "generatedAt": "2026-04-20T07:45:32.771Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-hotel-hostel-3": {
+    "phraseId": "german-hotel-hostel-3",
+    "fileName": "german-hotel-hostel-3.mp3",
+    "language": "german",
+    "text": "Um wie viel Uhr ist Check-out?",
+    "chars": 30,
+    "generatedAt": "2026-04-20T07:45:33.928Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-hotel-hostel-7": {
+    "phraseId": "german-hotel-hostel-7",
+    "fileName": "german-hotel-hostel-7.mp3",
+    "language": "german",
+    "text": "Können Sie mein Gepäck bitte aufbewahren?",
+    "chars": 41,
+    "generatedAt": "2026-04-20T07:45:35.097Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-directions-1": {
+    "phraseId": "german-directions-1",
+    "fileName": "german-directions-1.mp3",
+    "language": "german",
+    "text": "Entschuldigung, welchen Bahnsteig brauche ich?",
+    "chars": 46,
+    "generatedAt": "2026-04-20T07:45:36.279Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-directions-2": {
+    "phraseId": "german-directions-2",
+    "fileName": "german-directions-2.mp3",
+    "language": "german",
+    "text": "Ist das in der Nähe?",
+    "chars": 20,
+    "generatedAt": "2026-04-20T07:45:37.379Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-directions-3": {
+    "phraseId": "german-directions-3",
+    "fileName": "german-directions-3.mp3",
+    "language": "german",
+    "text": "Wie lange zu Fuß?",
+    "chars": 17,
+    "generatedAt": "2026-04-20T07:45:38.520Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-simple-problems-1": {
+    "phraseId": "german-simple-problems-1",
+    "fileName": "german-simple-problems-1.mp3",
+    "language": "german",
+    "text": "Ich habe mich verlaufen.",
+    "chars": 24,
+    "generatedAt": "2026-04-20T07:45:39.640Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-simple-problems-2": {
+    "phraseId": "german-simple-problems-2",
+    "fileName": "german-simple-problems-2.mp3",
+    "language": "german",
+    "text": "Ich verstehe das nicht.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T07:45:40.774Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-simple-problems-3": {
+    "phraseId": "german-simple-problems-3",
+    "fileName": "german-simple-problems-3.mp3",
+    "language": "german",
+    "text": "Können Sie bitte etwas langsamer sprechen?",
+    "chars": 42,
+    "generatedAt": "2026-04-20T07:45:41.940Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-simple-problems-6": {
+    "phraseId": "german-simple-problems-6",
+    "fileName": "german-simple-problems-6.mp3",
+    "language": "german",
+    "text": "Ich brauche einen Arzt.",
+    "chars": 23,
+    "generatedAt": "2026-04-20T07:45:43.063Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "german-simple-problems-7": {
+    "phraseId": "german-simple-problems-7",
+    "fileName": "german-simple-problems-7.mp3",
+    "language": "german",
+    "text": "Können Sie bitte für mich anrufen?",
+    "chars": 34,
+    "generatedAt": "2026-04-20T07:45:44.201Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  }
+}

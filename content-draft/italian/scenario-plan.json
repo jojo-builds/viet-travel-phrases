@@ -1,0 +1,110 @@
+{
+  "variant": "italian",
+  "appId": "italian-travel-phrases",
+  "displayName": "Italian Phrases",
+  "language": "Italian",
+  "languageCode": "it",
+  "country": "Italy",
+  "scenarioOrder": [
+    "coffee-shop",
+    "street-food",
+    "grab-taxi",
+    "asking-price",
+    "polite-basics",
+    "convenience-store",
+    "hotel-hostel",
+    "directions",
+    "simple-problems",
+    "small-talk"
+  ],
+  "quickPhraseIds": [
+    "italian-polite-basics-5",
+    "italian-polite-basics-2",
+    "italian-grab-taxi-1",
+    "italian-simple-problems-2",
+    "italian-convenience-store-6"
+  ],
+  "scenarios": [
+    {
+      "order": 1,
+      "id": "coffee-shop",
+      "name": "Coffee Shop",
+      "emoji": "☕",
+      "description": "Order coffee and cafe drinks easily",
+      "tip": "Keep the order short and screen-show friendly; simple drink, sugar, and takeaway language matters more than heavy customization."
+    },
+    {
+      "order": 2,
+      "id": "street-food",
+      "name": "Street Food / Restaurant",
+      "emoji": "🍜",
+      "description": "Order fast and eat well",
+      "tip": "Pointing still helps, but short phrases for water, takeaway, and simple menu clarification do more work than long ordering sentences."
+    },
+    {
+      "order": 3,
+      "id": "grab-taxi",
+      "name": "Ride App / Taxi",
+      "emoji": "🚕",
+      "description": "Get around without confusion",
+      "tip": "Showing the destination on your phone helps, especially when street names or station names are hard to pronounce clearly."
+    },
+    {
+      "order": 4,
+      "id": "asking-price",
+      "name": "Asking the Price",
+      "emoji": "💸",
+      "description": "Check prices before you buy",
+      "tip": "Use this mostly for price confirmation and item comparison; bargaining language is lower priority for Italy."
+    },
+    {
+      "order": 5,
+      "id": "polite-basics",
+      "name": "Polite Basics",
+      "emoji": "🙏",
+      "description": "Be polite in everyday moments",
+      "tip": "A brief greeting, thanks, and excuse-me phrase cover a large share of everyday Italy travel friction."
+    },
+    {
+      "order": 6,
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "emoji": "🏪",
+      "description": "Handle quick shop stops",
+      "tip": "Keep this scenario practical: water, bag, card, and receipt language matters more than browsing-heavy shopping vocabulary."
+    },
+    {
+      "order": 7,
+      "id": "hotel-hostel",
+      "name": "Hotel / Hostel",
+      "emoji": "🏨",
+      "description": "Handle check-in and room needs",
+      "tip": "Keep your passport and booking details ready and prioritize reservation, check-in, checkout, and luggage help language first."
+    },
+    {
+      "order": 8,
+      "id": "directions",
+      "name": "Directions",
+      "emoji": "🗺️",
+      "description": "Find your way around town",
+      "tip": "Save your hotel name, a station or landmark, and the full address in your phone so you can ask for help even if maps fail."
+    },
+    {
+      "order": 9,
+      "id": "simple-problems",
+      "name": "Simple Problems",
+      "emoji": "⚠️",
+      "description": "Handle common travel hiccups",
+      "tip": "If something goes wrong, start with repair phrases and show booking screens or photos before trying longer explanations."
+    },
+    {
+      "order": 10,
+      "id": "small-talk",
+      "name": "Small Talk",
+      "emoji": "💬",
+      "description": "Make light conversation",
+      "tip": "Keep small talk light; first-visit comments and food compliments are enough for the first authoring wave."
+    }
+  ],
+  "notes": "Shared traveler baseline scaffold for Italian, now reprioritized toward Italy travel utility. Fill translation, pronunciation, and audio posture before runtime wiring."
+}

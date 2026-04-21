@@ -1,0 +1,622 @@
+{
+  "korean-coffee-shop-1": {
+    "phraseId": "korean-coffee-shop-1",
+    "fileName": "korean-coffee-shop-1.mp3",
+    "language": "korean",
+    "text": "아메리카노 한 잔 주세요.",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:36:00.916Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-coffee-shop-2": {
+    "phraseId": "korean-coffee-shop-2",
+    "fileName": "korean-coffee-shop-2.mp3",
+    "language": "korean",
+    "text": "뜨거운 아메리카노 한 잔 주세요.",
+    "chars": 18,
+    "generatedAt": "2026-04-20T13:36:02.603Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-coffee-shop-3": {
+    "phraseId": "korean-coffee-shop-3",
+    "fileName": "korean-coffee-shop-3.mp3",
+    "language": "korean",
+    "text": "카페라테 한 잔 주세요.",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:36:03.753Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-coffee-shop-4": {
+    "phraseId": "korean-coffee-shop-4",
+    "fileName": "korean-coffee-shop-4.mp3",
+    "language": "korean",
+    "text": "얼음 적게 해 주세요.",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:36:04.890Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-coffee-shop-5": {
+    "phraseId": "korean-coffee-shop-5",
+    "fileName": "korean-coffee-shop-5.mp3",
+    "language": "korean",
+    "text": "덜 달게 해 주세요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:36:06.005Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-coffee-shop-6": {
+    "phraseId": "korean-coffee-shop-6",
+    "fileName": "korean-coffee-shop-6.mp3",
+    "language": "korean",
+    "text": "포장해 주세요.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:36:07.149Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-coffee-shop-7": {
+    "phraseId": "korean-coffee-shop-7",
+    "fileName": "korean-coffee-shop-7.mp3",
+    "language": "korean",
+    "text": "결제할게요.",
+    "chars": 6,
+    "generatedAt": "2026-04-20T13:36:08.248Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-street-food-1": {
+    "phraseId": "korean-street-food-1",
+    "fileName": "korean-street-food-1.mp3",
+    "language": "korean",
+    "text": "1인분 주세요.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:36:09.353Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-street-food-2": {
+    "phraseId": "korean-street-food-2",
+    "fileName": "korean-street-food-2.mp3",
+    "language": "korean",
+    "text": "이거 주세요.",
+    "chars": 7,
+    "generatedAt": "2026-04-20T13:36:10.461Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-street-food-3": {
+    "phraseId": "korean-street-food-3",
+    "fileName": "korean-street-food-3.mp3",
+    "language": "korean",
+    "text": "안 맵게 해 주세요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:36:11.590Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-street-food-4": {
+    "phraseId": "korean-street-food-4",
+    "fileName": "korean-street-food-4.mp3",
+    "language": "korean",
+    "text": "반찬 좀 더 주세요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:36:12.710Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-street-food-5": {
+    "phraseId": "korean-street-food-5",
+    "fileName": "korean-street-food-5.mp3",
+    "language": "korean",
+    "text": "생수 있어요?",
+    "chars": 7,
+    "generatedAt": "2026-04-20T13:36:13.807Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-street-food-6": {
+    "phraseId": "korean-street-food-6",
+    "fileName": "korean-street-food-6.mp3",
+    "language": "korean",
+    "text": "수저랑 젓가락 주세요.",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:36:14.971Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-street-food-7": {
+    "phraseId": "korean-street-food-7",
+    "fileName": "korean-street-food-7.mp3",
+    "language": "korean",
+    "text": "포장해 주세요.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:36:16.068Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-grab-taxi-1": {
+    "phraseId": "korean-grab-taxi-1",
+    "fileName": "korean-grab-taxi-1.mp3",
+    "language": "korean",
+    "text": "여기로 가 주세요.",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:36:17.195Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-grab-taxi-2": {
+    "phraseId": "korean-grab-taxi-2",
+    "fileName": "korean-grab-taxi-2.mp3",
+    "language": "korean",
+    "text": "역으로 가 주세요.",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:36:20.469Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-grab-taxi-3": {
+    "phraseId": "korean-grab-taxi-3",
+    "fileName": "korean-grab-taxi-3.mp3",
+    "language": "korean",
+    "text": "여기 세워 주세요.",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:36:21.590Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-grab-taxi-4": {
+    "phraseId": "korean-grab-taxi-4",
+    "fileName": "korean-grab-taxi-4.mp3",
+    "language": "korean",
+    "text": "이 길로 가 주세요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:36:22.686Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-grab-taxi-5": {
+    "phraseId": "korean-grab-taxi-5",
+    "fileName": "korean-grab-taxi-5.mp3",
+    "language": "korean",
+    "text": "에어컨 좀 켜 주세요.",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:36:23.822Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-grab-taxi-6": {
+    "phraseId": "korean-grab-taxi-6",
+    "fileName": "korean-grab-taxi-6.mp3",
+    "language": "korean",
+    "text": "오 분만 기다려 주세요.",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:36:24.947Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-grab-taxi-7": {
+    "phraseId": "korean-grab-taxi-7",
+    "fileName": "korean-grab-taxi-7.mp3",
+    "language": "korean",
+    "text": "카드로 결제할게요.",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:36:26.061Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-asking-price-1": {
+    "phraseId": "korean-asking-price-1",
+    "fileName": "korean-asking-price-1.mp3",
+    "language": "korean",
+    "text": "이거 얼마예요?",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:36:27.192Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-asking-price-2": {
+    "phraseId": "korean-asking-price-2",
+    "fileName": "korean-asking-price-2.mp3",
+    "language": "korean",
+    "text": "하나에 얼마예요?",
+    "chars": 9,
+    "generatedAt": "2026-04-20T13:36:28.309Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-asking-price-4": {
+    "phraseId": "korean-asking-price-4",
+    "fileName": "korean-asking-price-4.mp3",
+    "language": "korean",
+    "text": "더 저렴한 것도 있어요?",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:36:29.458Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-asking-price-5": {
+    "phraseId": "korean-asking-price-5",
+    "fileName": "korean-asking-price-5.mp3",
+    "language": "korean",
+    "text": "총 얼마예요?",
+    "chars": 7,
+    "generatedAt": "2026-04-20T13:36:30.564Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-asking-price-6": {
+    "phraseId": "korean-asking-price-6",
+    "fileName": "korean-asking-price-6.mp3",
+    "language": "korean",
+    "text": "다른 것도 보여 주세요.",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:36:31.679Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-asking-price-7": {
+    "phraseId": "korean-asking-price-7",
+    "fileName": "korean-asking-price-7.mp3",
+    "language": "korean",
+    "text": "이걸로 할게요.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:36:32.791Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-polite-basics-1": {
+    "phraseId": "korean-polite-basics-1",
+    "fileName": "korean-polite-basics-1.mp3",
+    "language": "korean",
+    "text": "안녕하세요.",
+    "chars": 6,
+    "generatedAt": "2026-04-20T13:36:33.883Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-polite-basics-2": {
+    "phraseId": "korean-polite-basics-2",
+    "fileName": "korean-polite-basics-2.mp3",
+    "language": "korean",
+    "text": "감사합니다.",
+    "chars": 6,
+    "generatedAt": "2026-04-20T13:36:34.989Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-polite-basics-3": {
+    "phraseId": "korean-polite-basics-3",
+    "fileName": "korean-polite-basics-3.mp3",
+    "language": "korean",
+    "text": "네.",
+    "chars": 2,
+    "generatedAt": "2026-04-20T13:36:36.098Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-polite-basics-4": {
+    "phraseId": "korean-polite-basics-4",
+    "fileName": "korean-polite-basics-4.mp3",
+    "language": "korean",
+    "text": "괜찮아요 감사합니다.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:36:37.231Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-polite-basics-5": {
+    "phraseId": "korean-polite-basics-5",
+    "fileName": "korean-polite-basics-5.mp3",
+    "language": "korean",
+    "text": "실례합니다.",
+    "chars": 6,
+    "generatedAt": "2026-04-20T13:36:38.371Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-polite-basics-6": {
+    "phraseId": "korean-polite-basics-6",
+    "fileName": "korean-polite-basics-6.mp3",
+    "language": "korean",
+    "text": "괜찮아요.",
+    "chars": 5,
+    "generatedAt": "2026-04-20T13:36:39.452Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-polite-basics-7": {
+    "phraseId": "korean-polite-basics-7",
+    "fileName": "korean-polite-basics-7.mp3",
+    "language": "korean",
+    "text": "안녕히 계세요.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:36:40.602Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-convenience-store-1": {
+    "phraseId": "korean-convenience-store-1",
+    "fileName": "korean-convenience-store-1.mp3",
+    "language": "korean",
+    "text": "물 한 병 주세요.",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:36:41.696Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-convenience-store-2": {
+    "phraseId": "korean-convenience-store-2",
+    "fileName": "korean-convenience-store-2.mp3",
+    "language": "korean",
+    "text": "봉투 주세요.",
+    "chars": 7,
+    "generatedAt": "2026-04-20T13:36:42.789Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-convenience-store-3": {
+    "phraseId": "korean-convenience-store-3",
+    "fileName": "korean-convenience-store-3.mp3",
+    "language": "korean",
+    "text": "휴지 주세요.",
+    "chars": 7,
+    "generatedAt": "2026-04-20T13:36:44.141Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-convenience-store-4": {
+    "phraseId": "korean-convenience-store-4",
+    "fileName": "korean-convenience-store-4.mp3",
+    "language": "korean",
+    "text": "휴대폰 충전기 있어요?",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:36:45.270Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-convenience-store-5": {
+    "phraseId": "korean-convenience-store-5",
+    "fileName": "korean-convenience-store-5.mp3",
+    "language": "korean",
+    "text": "이것 좀 열어 주세요.",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:36:46.380Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-convenience-store-6": {
+    "phraseId": "korean-convenience-store-6",
+    "fileName": "korean-convenience-store-6.mp3",
+    "language": "korean",
+    "text": "카드로 결제할 수 있어요?",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:36:47.493Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-convenience-store-7": {
+    "phraseId": "korean-convenience-store-7",
+    "fileName": "korean-convenience-store-7.mp3",
+    "language": "korean",
+    "text": "영수증 주세요.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:36:48.598Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-hotel-hostel-1": {
+    "phraseId": "korean-hotel-hostel-1",
+    "fileName": "korean-hotel-hostel-1.mp3",
+    "language": "korean",
+    "text": "예약이 있어요.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:36:49.692Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-hotel-hostel-2": {
+    "phraseId": "korean-hotel-hostel-2",
+    "fileName": "korean-hotel-hostel-2.mp3",
+    "language": "korean",
+    "text": "체크인 부탁드려요.",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:36:50.816Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-hotel-hostel-3": {
+    "phraseId": "korean-hotel-hostel-3",
+    "fileName": "korean-hotel-hostel-3.mp3",
+    "language": "korean",
+    "text": "체크아웃이 몇 시예요?",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:36:51.954Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-hotel-hostel-4": {
+    "phraseId": "korean-hotel-hostel-4",
+    "fileName": "korean-hotel-hostel-4.mp3",
+    "language": "korean",
+    "text": "방이 너무 더워요.",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:36:53.091Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-hotel-hostel-5": {
+    "phraseId": "korean-hotel-hostel-5",
+    "fileName": "korean-hotel-hostel-5.mp3",
+    "language": "korean",
+    "text": "에어컨이 안 돼요.",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:36:54.226Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-hotel-hostel-6": {
+    "phraseId": "korean-hotel-hostel-6",
+    "fileName": "korean-hotel-hostel-6.mp3",
+    "language": "korean",
+    "text": "수건 좀 더 주세요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:36:55.339Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-hotel-hostel-7": {
+    "phraseId": "korean-hotel-hostel-7",
+    "fileName": "korean-hotel-hostel-7.mp3",
+    "language": "korean",
+    "text": "짐 좀 맡아 주세요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:36:56.488Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-directions-1": {
+    "phraseId": "korean-directions-1",
+    "fileName": "korean-directions-1.mp3",
+    "language": "korean",
+    "text": "어느 출구로 나가면 돼요?",
+    "chars": 14,
+    "generatedAt": "2026-04-20T13:36:57.616Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-directions-2": {
+    "phraseId": "korean-directions-2",
+    "fileName": "korean-directions-2.mp3",
+    "language": "korean",
+    "text": "여기서 가까워요?",
+    "chars": 9,
+    "generatedAt": "2026-04-20T13:36:58.744Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-directions-3": {
+    "phraseId": "korean-directions-3",
+    "fileName": "korean-directions-3.mp3",
+    "language": "korean",
+    "text": "걸어서 얼마나 걸려요?",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:36:59.890Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-directions-4": {
+    "phraseId": "korean-directions-4",
+    "fileName": "korean-directions-4.mp3",
+    "language": "korean",
+    "text": "어느 호선을 타면 돼요?",
+    "chars": 13,
+    "generatedAt": "2026-04-20T13:37:01.018Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-directions-5": {
+    "phraseId": "korean-directions-5",
+    "fileName": "korean-directions-5.mp3",
+    "language": "korean",
+    "text": "이 출구가 맞아요?",
+    "chars": 10,
+    "generatedAt": "2026-04-20T13:37:02.141Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-directions-6": {
+    "phraseId": "korean-directions-6",
+    "fileName": "korean-directions-6.mp3",
+    "language": "korean",
+    "text": "계속 직진하면 돼요?",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:37:03.253Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-directions-7": {
+    "phraseId": "korean-directions-7",
+    "fileName": "korean-directions-7.mp3",
+    "language": "korean",
+    "text": "네 이제 알겠어요 감사합니다.",
+    "chars": 16,
+    "generatedAt": "2026-04-20T13:37:04.397Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-simple-problems-1": {
+    "phraseId": "korean-simple-problems-1",
+    "fileName": "korean-simple-problems-1.mp3",
+    "language": "korean",
+    "text": "길을 잃었어요.",
+    "chars": 8,
+    "generatedAt": "2026-04-20T13:37:05.524Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-simple-problems-2": {
+    "phraseId": "korean-simple-problems-2",
+    "fileName": "korean-simple-problems-2.mp3",
+    "language": "korean",
+    "text": "잘 못 알아들었어요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:37:06.631Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-simple-problems-3": {
+    "phraseId": "korean-simple-problems-3",
+    "fileName": "korean-simple-problems-3.mp3",
+    "language": "korean",
+    "text": "조금 천천히 말씀해 주세요.",
+    "chars": 15,
+    "generatedAt": "2026-04-20T13:37:07.800Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-simple-problems-4": {
+    "phraseId": "korean-simple-problems-4",
+    "fileName": "korean-simple-problems-4.mp3",
+    "language": "korean",
+    "text": "두고 온 게 있어요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:37:08.896Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-simple-problems-5": {
+    "phraseId": "korean-simple-problems-5",
+    "fileName": "korean-simple-problems-5.mp3",
+    "language": "korean",
+    "text": "와이파이가 안 돼요.",
+    "chars": 11,
+    "generatedAt": "2026-04-20T13:37:10.004Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-simple-problems-6": {
+    "phraseId": "korean-simple-problems-6",
+    "fileName": "korean-simple-problems-6.mp3",
+    "language": "korean",
+    "text": "의사가 필요해요.",
+    "chars": 9,
+    "generatedAt": "2026-04-20T13:37:11.119Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "korean-simple-problems-7": {
+    "phraseId": "korean-simple-problems-7",
+    "fileName": "korean-simple-problems-7.mp3",
+    "language": "korean",
+    "text": "저 대신 전화해 주실 수 있어요?",
+    "chars": 18,
+    "generatedAt": "2026-04-20T13:37:12.284Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  }
+}

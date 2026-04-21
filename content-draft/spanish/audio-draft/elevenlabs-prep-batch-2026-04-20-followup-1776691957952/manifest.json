@@ -1,0 +1,282 @@
+{
+  "spanish-coffee-shop-1": {
+    "phraseId": "spanish-coffee-shop-1",
+    "fileName": "spanish-coffee-shop-1.mp3",
+    "language": "spanish",
+    "text": "Un café con leche con hielo por favor.",
+    "chars": 38,
+    "generatedAt": "2026-04-20T13:33:10.073Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-coffee-shop-2": {
+    "phraseId": "spanish-coffee-shop-2",
+    "fileName": "spanish-coffee-shop-2.mp3",
+    "language": "spanish",
+    "text": "Quisiera un café solo con hielo.",
+    "chars": 32,
+    "generatedAt": "2026-04-20T13:33:11.266Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-coffee-shop-3": {
+    "phraseId": "spanish-coffee-shop-3",
+    "fileName": "spanish-coffee-shop-3.mp3",
+    "language": "spanish",
+    "text": "Quisiera un latte con hielo.",
+    "chars": 28,
+    "generatedAt": "2026-04-20T13:33:14.962Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-coffee-shop-4": {
+    "phraseId": "spanish-coffee-shop-4",
+    "fileName": "spanish-coffee-shop-4.mp3",
+    "language": "spanish",
+    "text": "Con poco hielo por favor.",
+    "chars": 25,
+    "generatedAt": "2026-04-20T13:33:16.095Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-grab-taxi-4": {
+    "phraseId": "spanish-grab-taxi-4",
+    "fileName": "spanish-grab-taxi-4.mp3",
+    "language": "spanish",
+    "text": "Por aquí por favor.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:33:17.204Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-grab-taxi-5": {
+    "phraseId": "spanish-grab-taxi-5",
+    "fileName": "spanish-grab-taxi-5.mp3",
+    "language": "spanish",
+    "text": "¿Puede poner el aire acondicionado por favor?",
+    "chars": 45,
+    "generatedAt": "2026-04-20T13:33:18.388Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-grab-taxi-6": {
+    "phraseId": "spanish-grab-taxi-6",
+    "fileName": "spanish-grab-taxi-6.mp3",
+    "language": "spanish",
+    "text": "Espéreme cinco minutos por favor.",
+    "chars": 33,
+    "generatedAt": "2026-04-20T13:33:19.575Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-grab-taxi-7": {
+    "phraseId": "spanish-grab-taxi-7",
+    "fileName": "spanish-grab-taxi-7.mp3",
+    "language": "spanish",
+    "text": "Pagaré en efectivo.",
+    "chars": 19,
+    "generatedAt": "2026-04-20T13:33:20.723Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-asking-price-2": {
+    "phraseId": "spanish-asking-price-2",
+    "fileName": "spanish-asking-price-2.mp3",
+    "language": "spanish",
+    "text": "¿Cuánto cuesta el kilo?",
+    "chars": 23,
+    "generatedAt": "2026-04-20T13:33:21.827Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-asking-price-3": {
+    "phraseId": "spanish-asking-price-3",
+    "fileName": "spanish-asking-price-3.mp3",
+    "language": "spanish",
+    "text": "Es demasiado caro.",
+    "chars": 18,
+    "generatedAt": "2026-04-20T13:33:22.963Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-asking-price-4": {
+    "phraseId": "spanish-asking-price-4",
+    "fileName": "spanish-asking-price-4.mp3",
+    "language": "spanish",
+    "text": "¿Tiene uno más barato?",
+    "chars": 22,
+    "generatedAt": "2026-04-20T13:33:24.071Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-asking-price-5": {
+    "phraseId": "spanish-asking-price-5",
+    "fileName": "spanish-asking-price-5.mp3",
+    "language": "spanish",
+    "text": "¿Cuánto es en total?",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:33:26.756Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-asking-price-6": {
+    "phraseId": "spanish-asking-price-6",
+    "fileName": "spanish-asking-price-6.mp3",
+    "language": "spanish",
+    "text": "¿Me enseña otro por favor?",
+    "chars": 26,
+    "generatedAt": "2026-04-20T13:33:27.860Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-convenience-store-2": {
+    "phraseId": "spanish-convenience-store-2",
+    "fileName": "spanish-convenience-store-2.mp3",
+    "language": "spanish",
+    "text": "¿Tiene una bolsa?",
+    "chars": 17,
+    "generatedAt": "2026-04-20T13:33:28.962Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-convenience-store-3": {
+    "phraseId": "spanish-convenience-store-3",
+    "fileName": "spanish-convenience-store-3.mp3",
+    "language": "spanish",
+    "text": "Pañuelos de papel por favor.",
+    "chars": 28,
+    "generatedAt": "2026-04-20T13:33:30.141Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-convenience-store-4": {
+    "phraseId": "spanish-convenience-store-4",
+    "fileName": "spanish-convenience-store-4.mp3",
+    "language": "spanish",
+    "text": "¿Dónde está el protector solar?",
+    "chars": 31,
+    "generatedAt": "2026-04-20T13:33:31.296Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-convenience-store-5": {
+    "phraseId": "spanish-convenience-store-5",
+    "fileName": "spanish-convenience-store-5.mp3",
+    "language": "spanish",
+    "text": "¿Me lo puede abrir por favor?",
+    "chars": 29,
+    "generatedAt": "2026-04-20T13:33:32.468Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-hotel-hostel-3": {
+    "phraseId": "spanish-hotel-hostel-3",
+    "fileName": "spanish-hotel-hostel-3.mp3",
+    "language": "spanish",
+    "text": "¿A qué hora es el check-out?",
+    "chars": 28,
+    "generatedAt": "2026-04-20T13:33:33.626Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-hotel-hostel-4": {
+    "phraseId": "spanish-hotel-hostel-4",
+    "fileName": "spanish-hotel-hostel-4.mp3",
+    "language": "spanish",
+    "text": "Hace demasiado calor en la habitación.",
+    "chars": 38,
+    "generatedAt": "2026-04-20T13:33:34.817Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-hotel-hostel-5": {
+    "phraseId": "spanish-hotel-hostel-5",
+    "fileName": "spanish-hotel-hostel-5.mp3",
+    "language": "spanish",
+    "text": "El aire acondicionado no funciona.",
+    "chars": 34,
+    "generatedAt": "2026-04-20T13:33:35.991Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-hotel-hostel-6": {
+    "phraseId": "spanish-hotel-hostel-6",
+    "fileName": "spanish-hotel-hostel-6.mp3",
+    "language": "spanish",
+    "text": "Más toallas por favor.",
+    "chars": 22,
+    "generatedAt": "2026-04-20T13:33:37.091Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-directions-1": {
+    "phraseId": "spanish-directions-1",
+    "fileName": "spanish-directions-1.mp3",
+    "language": "spanish",
+    "text": "Perdón. ¿Cómo voy a la estación de metro?",
+    "chars": 41,
+    "generatedAt": "2026-04-20T13:33:38.306Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-directions-4": {
+    "phraseId": "spanish-directions-4",
+    "fileName": "spanish-directions-4.mp3",
+    "language": "spanish",
+    "text": "¿Dónde giro a la izquierda?",
+    "chars": 27,
+    "generatedAt": "2026-04-20T13:33:39.439Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-directions-5": {
+    "phraseId": "spanish-directions-5",
+    "fileName": "spanish-directions-5.mp3",
+    "language": "spanish",
+    "text": "¿Giro a la derecha aquí?",
+    "chars": 24,
+    "generatedAt": "2026-04-20T13:33:40.590Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-directions-6": {
+    "phraseId": "spanish-directions-6",
+    "fileName": "spanish-directions-6.mp3",
+    "language": "spanish",
+    "text": "¿Sigo recto?",
+    "chars": 12,
+    "generatedAt": "2026-04-20T13:33:41.683Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-directions-7": {
+    "phraseId": "spanish-directions-7",
+    "fileName": "spanish-directions-7.mp3",
+    "language": "spanish",
+    "text": "Gracias. Ahora lo entiendo.",
+    "chars": 27,
+    "generatedAt": "2026-04-20T13:33:42.851Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-simple-problems-4": {
+    "phraseId": "spanish-simple-problems-4",
+    "fileName": "spanish-simple-problems-4.mp3",
+    "language": "spanish",
+    "text": "Me he dejado algo.",
+    "chars": 18,
+    "generatedAt": "2026-04-20T13:33:43.969Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  },
+  "spanish-simple-problems-5": {
+    "phraseId": "spanish-simple-problems-5",
+    "fileName": "spanish-simple-problems-5.mp3",
+    "language": "spanish",
+    "text": "El wifi no funciona.",
+    "chars": 20,
+    "generatedAt": "2026-04-20T13:33:45.131Z",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "modelId": "eleven_multilingual_v2"
+  }
+}

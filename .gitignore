@@ -8,6 +8,7 @@
 /state/
 
 # Queue runtime temp and mutable local ledgers
+/.agent/__pycache__/
 /.agent/coordination/.queue-locks/
 /.agent/coordination/queue-events.jsonl
 /.agent/coordination/desktop-app-recovery.json
@@ -22,4 +23,5 @@
 /app/.expo/
 /app/.expo-web-*/
 /app/.expo-export*/
+/app/artifacts/
 /app/tmp-expo-web.log

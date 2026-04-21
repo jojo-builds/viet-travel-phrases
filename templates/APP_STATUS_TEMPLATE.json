@@ -1,0 +1,55 @@
+{
+    "appId":  "example-app",
+    "variant":  "example",
+    "displayName":  "Example Phrases",
+    "country":  "Example Country",
+    "language":  "Example Language",
+    "stage":  "defined",
+    "testingGates":  {
+                         "localValidation":  {
+                                                 "status":  "not-applicable",
+                                                 "evidenceRef":  ""
+                                             },
+                         "previewBuild":  {
+                                              "status":  "not-applicable",
+                                              "evidenceRef":  ""
+                                          },
+                         "previewInstall":  {
+                                                "status":  "not-applicable",
+                                                "evidenceRef":  ""
+                                            },
+                         "runtimeManualSmoke":  {
+                                                    "status":  "not-applicable",
+                                                    "evidenceRef":  ""
+                                                },
+                         "deviceWalkthrough":  {
+                                                   "status":  "not-applicable",
+                                                   "evidenceRef":  ""
+                                               }
+                     },
+    "hardBlock":  {
+                      "active":  false,
+                      "type":  "none",
+                      "owner":  "none",
+                      "system":  "",
+                      "detail":  "",
+                      "nextHumanAction":  ""
+                  },
+    "contentReadiness":  "stub",
+    "audioReadiness":  "planned",
+    "baselineParity":  "unknown",
+    "featureEligibility":  {
+                               "search":  false,
+                               "flashcards":  false
+                           },
+    "pendingFeatureRollouts":  [
+
+                               ],
+    "featureIntakeStatus":  "active",
+    "releaseStatus":  "not-configured",
+    "blockerTag":  "blocked:content",
+    "blockerDetail":  "This language has a prepared draft lane and dashboard manifest, but translation, pronunciation, audio posture, localized search copy, and the required UX/localization review before runtime promotion are still incomplete.",
+    "nextStep":  "Continue the prep lane: confirm the shared traveler baseline, fill translation and pronunciation in phrase-source.csv, decide audio posture, add localized search copy, then pause for UX/localization review before any runtime wiring.",
+    "sessionRoot":  "\u003csync from ops/app-manifest-contract.json canonicalSessionRoot\u003e",
+    "lastValidatedAt":  ""
+}

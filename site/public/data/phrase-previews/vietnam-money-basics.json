@@ -1,6 +1,7 @@
 {
   "schemaVersion": 3,
   "exportType": "website-phrase-audio-module",
+  "exportedAt": "2026-04-18T09:37:44.117Z",
   "moduleId": "vietnam-money-basics",
   "moduleSlug": "vietnam-money-basics",
   "destinationSlug": "vietnam",
@@ -32,11 +33,35 @@
   "transcriptChecked": null,
   "phraseCount": 4,
   "familyCount": 4,
+  "relationCoverage": {
+    "status": "partial",
+    "advisoryOnly": true,
+    "coveredFamilyCount": 2,
+    "coveredPhraseCount": 2,
+    "totalFamilyCount": 4,
+    "coveredFamilyIds": [
+      "money-how-much",
+      "money-final-price"
+    ],
+    "coveredClusterIds": [
+      "viet-money-how-much",
+      "viet-money-final-price"
+    ]
+  },
   "articleReference": {
     "primaryLabel": "Install Viet Travel Phrasebook",
     "primaryUrl": "https://apps.apple.com/us/app/viet-travel-phrasebook/id6744290828",
     "secondaryLabel": "See the full Vietnam phrase guide",
     "secondaryUrl": "/blog/phrases-tourists-actually-need-in-vietnam/"
+  },
+  "trust": {
+    "sourceLabel": "Live Viet starter export",
+    "sourceNote": "Selected starter preview modules from the live Viet pack. The website stays intentionally smaller than the app.",
+    "appBoundary": "The app carries the deeper backup for the same trip moments: broader coverage, search, saved phrases, and offline use.",
+    "methodologyLabel": "How SpeakLocal builds packs",
+    "methodologyUrl": "/about/",
+    "correctionsLabel": "Report a phrase or audio gap",
+    "correctionsUrl": "/feedback/"
   },
   "cta": {
     "primaryLabel": "Install Viet Travel Phrasebook",
@@ -72,6 +97,54 @@
       "pronunciation": "gai nai bao nyew",
       "context": "Use this while pointing at an item.",
       "youMayHear": "Forty thousand, cash only.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-money-how-much",
+        "coverageMoment": "money",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "price-1",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [
+          {
+            "signalText": "Forty thousand, cash only.",
+            "sourcePhraseId": "price-1",
+            "advisoryOnly": true
+          }
+        ],
+        "possibleTravelerResponses": [
+          {
+            "kind": "decision-branch",
+            "familyId": "money-final-price",
+            "note": "After the first quoted number, the traveler often asks for the final amount.",
+            "phraseId": "price-5"
+          },
+          {
+            "kind": "repair-branch",
+            "familyId": "repair-write-down",
+            "note": "Written numbers are safer than guessing when a spoken price is unclear.",
+            "phraseId": "repair-2"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "next_step_after",
+            "targetFamilyId": "money-final-price",
+            "reason": "Initial price checks often turn into a final-price decision point."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-write-down",
+            "reason": "Written or shown numbers prevent common traveler mistakes around prices."
+          },
+          {
+            "relationType": "same_need_alt_context",
+            "targetFamilyId": "transport-fare",
+            "reason": "Both families solve amount-checking, but one is general shopping and the other is ride-specific."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/price-1.mp3",
@@ -116,6 +189,37 @@
       "canonicalTargetText": "Giá cuối bao nhiêu?",
       "pronunciation": "za gooy bao nyew",
       "context": "Ask this before making a final decision.",
+      "relationContext": {
+        "sampleId": "viet-relation-sample-v1",
+        "clusterId": "viet-money-final-price",
+        "coverageMoment": "money",
+        "starterSafe": true,
+        "advisoryOnly": true,
+        "shortestFormPhraseId": "price-5",
+        "clearerFormPhraseId": null,
+        "morePoliteFormPhraseId": null,
+        "youMayHearSignals": [],
+        "possibleTravelerResponses": [
+          {
+            "kind": "repair-branch",
+            "familyId": "repair-write-down",
+            "note": "If the amount still feels muddy, written confirmation is safer than repeating the same question.",
+            "phraseId": "repair-2"
+          }
+        ],
+        "familyRelations": [
+          {
+            "relationType": "same_need_alt_context",
+            "targetFamilyId": "transport-fare",
+            "reason": "Final-price confirmation is a nearby pattern in rides, markets, and service counters."
+          },
+          {
+            "relationType": "repair_for",
+            "targetFamilyId": "repair-write-down",
+            "reason": "Totals are easy to mishear, so a written branch is worth surfacing."
+          }
+        ]
+      },
       "audioStatus": "ready",
       "audioDelivery": "site-static",
       "audioUrl": "/data/phrase-audio/vietnam/price-5.mp3",

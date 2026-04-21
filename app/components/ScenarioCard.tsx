@@ -1,9 +1,9 @@
 import { Pressable, View } from 'react-native';
 import * as Haptics from 'expo-haptics';
-import { Scenario } from '../content/types';
+import { AppScenario } from '../family/contracts';
 import { ThemedText } from './ui/ThemedText';
 
-type Props = { scenario: Scenario; onPress: () => void; visited?: boolean; index?: number };
+type Props = { scenario: AppScenario; onPress: () => void; visited?: boolean; index?: number };
 
 export function ScenarioCard({ scenario, onPress, visited = false, index = 0 }: Props) {
   return (
@@ -14,6 +14,7 @@ export function ScenarioCard({ scenario, onPress, visited = false, index = 0 }: 
         onPress={() => { void Haptics.selectionAsync(); onPress(); }}
         style={({ pressed }) => [{ transform: [{ scale: pressed ? 0.97 : 1 }] }, { opacity: pressed ? 0.92 : 1 }]}
         className="flex-1 rounded-2xl border border-border bg-surface p-4 shadow-sm min-h-[160px]"
+        testID={`scenario-card-${scenario.id}`}
       >
         <View className="space-y-3">
           <View className="flex-row items-center justify-between">
