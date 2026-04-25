@@ -1,0 +1,57 @@
+name: SpeakLocalNative
+options:
+  minimumXcodeGenVersion: 2.45.4
+  deploymentTarget:
+    iOS: "26.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  SpeakLocalNative:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: App
+      - path: Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.speaklocal.vietnam.native
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: SpeakLocal Vietnam
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+  SpeakLocalNativeTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: Tests
+    dependencies:
+      - target: SpeakLocalNative
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.speaklocal.vietnam.native.tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SpeakLocalNative.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpeakLocalNative"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+    info:
+      path: Tests/Info.plist
+      properties:
+        CFBundleDisplayName: SpeakLocalNativeTests
+schemes:
+  SpeakLocalNative:
+    build:
+      targets:
+        SpeakLocalNative: all
+        SpeakLocalNativeTests: [test]
+    test:
+      targets:
+        - name: SpeakLocalNativeTests
