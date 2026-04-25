@@ -2,6 +2,16 @@ import XCTest
 @testable import SpeakLocalNative
 
 final class PhrasePageFixtureTests: XCTestCase {
+    private let expectedLocalGreetingWays: [String: [String]] = [
+        "viet-hello-anh": ["Chào anh", "Xin chào anh", "Dạ, chào anh", "Anh ơi!", "Anh đi đâu đấy?", "Anh ăn cơm chưa?"],
+        "viet-hello-chi": ["Chào chị", "Xin chào chị", "Dạ, chào chị", "Chị ơi!", "Chị đi đâu đấy?", "Chị ăn cơm chưa?"],
+        "viet-hello-em": ["Chào em", "Xin chào em", "Chào em nhé", "Em ơi!", "Em khỏe không?", "Em ăn cơm chưa?"],
+        "viet-hello-ong": ["Chào ông", "Xin chào ông", "Dạ, chào ông", "Ông ơi!", "Ông khỏe không?", "Ông ăn cơm chưa?"],
+        "viet-hello-ba": ["Chào bà", "Xin chào bà", "Dạ, chào bà", "Bà ơi!", "Bà khỏe không?", "Bà ăn cơm chưa?"],
+        "viet-hello-chu": ["Chào chú", "Xin chào chú", "Dạ, chào chú", "Chú ơi!", "Chú đi đâu đấy?", "Chú ăn cơm chưa?"],
+        "viet-hello-co": ["Chào cô", "Xin chào cô", "Dạ, chào cô", "Cô ơi!", "Cô đi đâu đấy?", "Cô ăn cơm chưa?"],
+    ]
+
     func testXinChaoFixtureRepresentsFirstAnswerPageWithoutNumberedSections() {
         let page = PhrasePage.xinChao
 
@@ -71,8 +81,8 @@ final class PhrasePageFixtureTests: XCTestCase {
 
         XCTAssertEqual(page.sections.map(\.title), [
             "At a glance",
-            "Ways to say it",
             "Break it down",
+            "Ways to say it",
             "When to use it",
             "Local tip",
         ])
@@ -87,7 +97,11 @@ final class PhrasePageFixtureTests: XCTestCase {
             "Anh đi đâu đấy?",
             "Anh ăn cơm chưa?",
         ])
-        XCTAssertTrue(ways.phrases.allSatisfy { $0.detailPageID == nil })
+        XCTAssertTrue(ways.phrases.allSatisfy { $0.detailPageID != nil })
+        XCTAssertTrue(ways.phrases.allSatisfy { phrase in
+            guard let detailPageID = phrase.detailPageID else { return false }
+            return PhraseDetailPage.page(withID: detailPageID)?.title == phrase.vietnamese
+        })
 
         let breakdown = try XCTUnwrap(page.sections.first { $0.id == "breakdown" })
         XCTAssertEqual(breakdown.breakdown.map(\.vietnamese), ["Chào", "anh", "Chào anh"])
@@ -99,16 +113,6 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testAllLocalGreetingDetailsUseDeepAnswerPattern() throws {
-        let expectedWays: [String: [String]] = [
-            "viet-hello-anh": ["Chào anh", "Xin chào anh", "Dạ, chào anh", "Anh ơi!", "Anh đi đâu đấy?", "Anh ăn cơm chưa?"],
-            "viet-hello-chi": ["Chào chị", "Xin chào chị", "Dạ, chào chị", "Chị ơi!", "Chị đi đâu đấy?", "Chị ăn cơm chưa?"],
-            "viet-hello-em": ["Chào em", "Xin chào em", "Chào em nhé", "Em ơi!", "Em khỏe không?", "Em ăn cơm chưa?"],
-            "viet-hello-ong": ["Chào ông", "Xin chào ông", "Dạ, chào ông", "Ông ơi!", "Ông khỏe không?", "Ông ăn cơm chưa?"],
-            "viet-hello-ba": ["Chào bà", "Xin chào bà", "Dạ, chào bà", "Bà ơi!", "Bà khỏe không?", "Bà ăn cơm chưa?"],
-            "viet-hello-chu": ["Chào chú", "Xin chào chú", "Dạ, chào chú", "Chú ơi!", "Chú đi đâu đấy?", "Chú ăn cơm chưa?"],
-            "viet-hello-co": ["Chào cô", "Xin chào cô", "Dạ, chào cô", "Cô ơi!", "Cô đi đâu đấy?", "Cô ăn cơm chưa?"],
-        ]
-
         for phrase in PhrasePage.xinChao.localGreetings {
             let detailPageID = try XCTUnwrap(phrase.detailPageID)
             let page = try XCTUnwrap(PhraseDetailPage.page(withID: detailPageID))
@@ -116,15 +120,19 @@ final class PhrasePageFixtureTests: XCTestCase {
 
             XCTAssertEqual(page.sections.map(\.title), [
                 "At a glance",
-                "Ways to say it",
                 "Break it down",
+                "Ways to say it",
                 "When to use it",
                 "Local tip",
             ], page.id)
 
             let ways = try XCTUnwrap(page.sections.first { $0.id == "ways-to-say" }, page.id)
-            XCTAssertEqual(ways.phrases.map(\.vietnamese), expectedWays[page.id], page.id)
-            XCTAssertTrue(ways.phrases.allSatisfy { $0.detailPageID == nil }, page.id)
+            XCTAssertEqual(ways.phrases.map(\.vietnamese), expectedLocalGreetingWays[page.id], page.id)
+            XCTAssertTrue(ways.phrases.allSatisfy { $0.detailPageID != nil }, page.id)
+            XCTAssertTrue(ways.phrases.allSatisfy { phrase in
+                guard let childID = phrase.detailPageID else { return false }
+                return PhraseDetailPage.page(withID: childID)?.title == phrase.vietnamese
+            }, page.id)
 
             let breakdown = try XCTUnwrap(page.sections.first { $0.id == "breakdown" }, page.id)
             XCTAssertEqual(breakdown.breakdown.map(\.vietnamese), ["Chào", relationshipWord, page.title], page.id)
@@ -135,9 +143,54 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testDetailPagesStayOneLevelDeep() {
-        XCTAssertEqual(PhraseDetailPage.all.count, 17)
+        let expectedChildPageCount = expectedLocalGreetingWays.values.reduce(0) { $0 + $1.count } - expectedLocalGreetingWays.count
+
+        XCTAssertEqual(PhraseDetailPage.all.count, 17 + expectedChildPageCount)
         XCTAssertNotNil(PhraseDetailPage.page(withID: "viet-local-greetings"))
         XCTAssertTrue(PhraseDetailPage.all.flatMap(\.examples).allSatisfy { $0.detailPageID == nil })
-        XCTAssertTrue(PhraseDetailPage.all.flatMap(\.sections).flatMap(\.phrases).allSatisfy { $0.detailPageID == nil })
+
+        let childPages = PhraseDetailPage.all.filter { $0.id.contains("-way-") }
+        XCTAssertEqual(childPages.count, expectedChildPageCount)
+        XCTAssertTrue(childPages.flatMap(\.sections).flatMap(\.phrases).allSatisfy { $0.detailPageID == nil })
+    }
+
+    func testLocalGreetingStandardWaysUseCanonicalParentPage() throws {
+        for phrase in PhrasePage.xinChao.localGreetings {
+            let parentID = try XCTUnwrap(phrase.detailPageID)
+            let parentPage = try XCTUnwrap(PhraseDetailPage.page(withID: parentID))
+            let ways = try XCTUnwrap(parentPage.sections.first { $0.id == "ways-to-say" })
+            let standardWay = try XCTUnwrap(ways.phrases.first)
+
+            XCTAssertEqual(standardWay.vietnamese, parentPage.title)
+            XCTAssertEqual(standardWay.detailPageID, parentPage.id)
+            XCTAssertNil(PhraseDetailPage.page(withID: "\(parentPage.id)-way-standard"))
+        }
+    }
+
+    func testPhrasePageTitlesAreCanonicalAndUnique() {
+        let groupedByTitle = Dictionary(grouping: PhraseDetailPage.all) { page in
+            page.title
+                .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+                .lowercased()
+        }
+
+        let duplicates = groupedByTitle.filter { $0.value.count > 1 }
+        XCTAssertTrue(duplicates.isEmpty, "Duplicate canonical page titles: \(duplicates)")
+    }
+
+    func testSearchIndexCanOpenWayPhrasePagesDirectly() throws {
+        let results = PhraseSearchIndex.search("Anh ơi")
+        let result = try XCTUnwrap(results.first)
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: result.pageID))
+
+        XCTAssertEqual(page.title, "Anh ơi!")
+        XCTAssertEqual(result.pageID, page.id)
+    }
+
+    func testSearchIndexResolvesChaoAnhToOneCanonicalPage() throws {
+        let results = PhraseSearchIndex.search("Chào anh")
+        let exactMatches = results.filter { $0.title == "Chào anh" }
+
+        XCTAssertEqual(exactMatches.map(\.pageID), ["viet-hello-anh"])
     }
 }

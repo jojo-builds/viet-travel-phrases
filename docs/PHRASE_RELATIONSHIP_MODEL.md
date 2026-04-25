@@ -1,7 +1,7 @@
 # Phrase Relationship Model
 
 Status: active direction for content-system and phrase-detail design
-Last updated: 2026-04-21
+Last updated: 2026-04-26
 Scope: phrase-family structure, related-phrase modeling, listing/detail behavior, and scaling implications for app plus website
 
 ## Why this exists
@@ -18,6 +18,57 @@ The user experience should keep moving forward:
 - keep scrolling/tapping without feeling forced to back out to start over
 
 The target interaction is closer to a utility-rich listing/detail graph than a flat phrase table.
+
+## Canonical page graph rule
+
+Phrase/listing navigation is a graph, not a strict parent-child tree.
+
+Each traveler-facing phrase page must have one canonical page identity:
+- one stable page ID per real phrase/listing page
+- one canonical page title per phrase page, such as `Chào anh`
+- search, browse, related rows, answer-page variants, and "ways to say it" links all point to that same canonical page
+- never create a duplicate page just because the same phrase appears inside another page's row list
+
+Example:
+- `Chào anh` owns canonical page ID `viet-hello-anh`
+- any link whose visible phrase is `Chào anh` should open `viet-hello-anh`
+- the system should not also create `viet-hello-anh-way-standard` with the same title
+
+Forward progress still matters. Pages should link onward when the next target teaches something real, including sideways or looping links, just like a useful Wikipedia graph. The anti-pattern is duplicated pages with the same phrase identity, not cyclic exploration.
+
+Back behavior is navigation context only. A page may know where the user came from for the current session, but page identity must not depend on that route.
+
+That product direction should be expected to grow the content graph over time. More useful phrase-detail/listing pages will often require additional rows and connected families for shortest forms, clearer forms, polite/service-safe forms, follow-ups, repair branches, and likely next-step phrases.
+
+Completeness therefore means more than "do we have one phrase for this need?"
+
+For major traveler intents, the stronger question is:
+- do we have the real cluster of useful ways to say it?
+- do we know what someone may say back?
+- do we know what the traveler should say next if the first try is not enough?
+- and have we saved those useful rows into durable authored truth so they can carry audio and future runtime behavior?
+
+Practical depth heuristic:
+- a hub should usually be treated as `deep` when the moment branches by social register, context, likely reply, repair path, or next-step need in `3+` meaningful ways
+- a hub should usually be treated as `support` when it has `1-2` meaningful branches that improve traveler utility but do not require a flagship-sized answer surface
+- a hub can remain `baseline` when it is low-risk and low-branching, but even baseline hubs should preserve genuinely useful row truth for future promotion
+
+Examples:
+- `hello` and `yes` are not automatically shallow just because they are short
+- `hello` becomes deep because it branches into social hierarchy, relationship language, situational greeting forms, and what to say next
+- `yes` becomes support-to-deep because it branches into respectful assent, casual assent, confirmation, agreement, and traveler context like hotel, taxi, or restaurant interactions
+
+## Terminology note
+
+This doc keeps `family` because it is still the current internal model term, but product discussion should now read it this way:
+
+- `category` / `scenario` = browse bucket or folder
+- `scenario page` = optional page listing phrase hubs inside one category
+- `listing page` / `product page` / `listing detail page` = the dedicated phrase-hub page the user opens
+- `family` = the internal authored/runtime grouping behind one listing page
+- `variant` / `phrase row` = one wording inside that listing page
+
+Do not assume every category/scenario must become a dedicated page, and do not assume every app must share identical scenario lists just because the runtime contract is shared.
 
 ## Product direction
 
@@ -234,7 +285,14 @@ New language tasks should not only translate rows. They should increasingly:
 - identify polite/service-safe alternatives
 - identify likely reply branches
 - identify next-step or repair connections
+- identify genuinely useful additional rows that should be retained instead of rediscovered later
 - leave behind relation-ready truth for future app/runtime consumption
+
+When AI is used to brainstorm phrase clusters, treat the output as a candidate set to be triaged:
+- keep rows that create real traveler utility differences
+- keep rows that change social safety or likely conversation flow
+- keep rows that create a better relation graph around the listing page
+- do not automatically keep every plausible synonym just because the model can produce one
 
 Vietnam should be the first language where this model is intentionally hardened, because it is the active runtime priority.
 Tagalog and future languages should start with the model earlier so they do not need as much retrofitting later.

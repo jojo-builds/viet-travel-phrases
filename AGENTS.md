@@ -6,6 +6,7 @@ Read these first for broad manual repo sessions:
 - `docs/operations/README.md` when the question touches live build, validation, release, or blocker truth
 - `docs/V2_BASELINE.md` when the question touches shared app/product shape or the product blueprint
 - `docs/V2_CONTENT_MODEL.md` when the question touches content schema, export seams, premium boundaries, or blueprint details
+- `docs/PHRASE_RELATIONSHIP_MODEL.md` when the question touches phrase pages, listing pages, search/browse destinations, or related-page navigation
 - `docs/LANGUAGE_PREP_WORKFLOW.md` when the task is future-language prep
 
 For repo-local queue automation runs, do this instead:
@@ -20,15 +21,18 @@ For repo-local queue automation runs, do this instead:
 Rules:
 - This is the canonical implementation home for the SpeakLocal app family.
 - Start new family-app sessions here:
+  - `/Users/jojolim/Developer/products/speaklocal/app-family`
   - `E:\AI\SpeakLocal-App-Family`
   - `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
 - Treat these as compatibility aliases only, not preferred roots:
+  - `/Users/jojolim/Documents/Projects/speaklocal-app-family`
   - `E:\AI\Viet-Travel-Phrases`
   - `C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases`
 - Stay scoped to shared app-family implementation, current Viet/Tagalog dual-variant work, and future reusable feature rollout.
 - Keep the existing Expo app shell under `app\` intact unless there is a concrete blocker.
 - `app\family\appRegistry.js` owns runtime/build app identity truth.
 - `app\family\*` owns shared runtime truth.
+- Phrase/listing navigation is a canonical page graph, not a strict parent-child tree. Each traveler-facing phrase page has one stable page ID, and search, browse, related rows, and "ways to say it" links must all point to that canonical page instead of creating duplicate pages for the same phrase.
 - `docs\operations\*` owns live operational truth for build, validation, release, and blocker questions.
 - `ops\apps\*.json` owns operator-facing app readiness truth for dashboard and onboarding visibility.
 - `docs\*` owns durable explanation only when it remains a real source of truth. Do not keep duplicate startup or next-step docs alive once they stop being maintained.

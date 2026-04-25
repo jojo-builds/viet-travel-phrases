@@ -4,6 +4,7 @@ struct PhraseDetailView: View {
     let page: PhraseDetailPage
     var onBackTapped: () -> Void
     var onSearchTapped: () -> Void
+    var onDetailTapped: (String) -> Void
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -16,7 +17,7 @@ struct PhraseDetailView: View {
 
                     VStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
                         ForEach(page.sections) { section in
-                            DetailSectionView(section: section)
+                            DetailSectionView(section: section, onOpenDetail: onDetailTapped)
                         }
 
                         if !page.examples.isEmpty {
@@ -145,10 +146,11 @@ struct PhraseDetailView: View {
 
 private struct DetailSectionView: View {
     let section: PhraseDetailSection
+    let onOpenDetail: (String) -> Void
 
     var body: some View {
         if !section.phrases.isEmpty {
-            DetailPhraseListSection(section: section)
+            DetailPhraseListSection(section: section, onOpenDetail: onOpenDetail)
         } else if !section.breakdown.isEmpty {
             DetailBreakdownSection(section: section)
         } else {
@@ -178,6 +180,7 @@ private struct DetailSectionCard: View {
 
 private struct DetailPhraseListSection: View {
     let section: PhraseDetailSection
+    let onOpenDetail: (String) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -194,7 +197,7 @@ private struct DetailPhraseListSection: View {
 
             VStack(spacing: 0) {
                 ForEach(section.phrases) { phrase in
-                    DetailExampleRow(phrase: phrase)
+                    DetailExampleRow(phrase: phrase, onOpenDetail: onOpenDetail)
 
                     if phrase.id != section.phrases.last?.id {
                         Divider().padding(.leading, 70)
@@ -230,6 +233,7 @@ private struct DetailBreakdownSection: View {
 
 private struct DetailExampleRow: View {
     let phrase: PhraseOption
+    var onOpenDetail: ((String) -> Void)? = nil
 
     var body: some View {
         HStack(spacing: 12) {
@@ -247,6 +251,20 @@ private struct DetailExampleRow: View {
             }
 
             Spacer()
+
+            if phrase.detailPageID != nil && onOpenDetail != nil {
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            guard let detailPageID = phrase.detailPageID else {
+                return
+            }
+
+            onOpenDetail?(detailPageID)
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 9)
@@ -270,5 +288,5 @@ private struct DetailDockItem: View {
 }
 
 #Preview {
-    PhraseDetailView(page: .localGreetings, onBackTapped: {}, onSearchTapped: {})
+    PhraseDetailView(page: .localGreetings, onBackTapped: {}, onSearchTapped: {}, onDetailTapped: { _ in })
 }

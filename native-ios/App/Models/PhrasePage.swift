@@ -79,6 +79,14 @@ struct PhraseDetailSection: Identifiable, Equatable {
     var breakdown: [BreakdownToken] = []
 }
 
+struct PhraseSearchResult: Identifiable, Equatable {
+    let pageID: String
+    let title: String
+    let subtitle: String
+
+    var id: String { pageID }
+}
+
 enum AccentTint: String, Equatable {
     case red
     case orange
@@ -196,18 +204,95 @@ extension PhrasePage {
     )
 }
 
+enum PhraseSearchIndex {
+    static func search(_ query: String) -> [PhraseSearchResult] {
+        let normalizedQuery = normalize(query)
+        guard !normalizedQuery.isEmpty else {
+            return []
+        }
+
+        let tokens = normalizedQuery
+            .split(separator: " ")
+            .map(String.init)
+
+        return PhraseDetailPage.all
+            .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
+                let haystack = normalize(searchText(for: page))
+                guard tokens.allSatisfy({ haystack.contains($0) }) else {
+                    return nil
+                }
+
+                let title = normalize(page.title)
+                let englishTitle = normalize(page.englishTitle)
+                var score = 0
+
+                if title == normalizedQuery {
+                    score += 120
+                }
+
+                if title.contains(normalizedQuery) {
+                    score += 70
+                }
+
+                if englishTitle.contains(normalizedQuery) {
+                    score += 35
+                }
+
+                if haystack.contains(normalizedQuery) {
+                    score += 10
+                }
+
+                return (
+                    PhraseSearchResult(
+                        pageID: page.id,
+                        title: page.title,
+                        subtitle: page.englishTitle
+                    ),
+                    score
+                )
+            }
+            .sorted {
+                if $0.score == $1.score {
+                    return $0.result.title < $1.result.title
+                }
+
+                return $0.score > $1.score
+            }
+            .map(\.result)
+    }
+
+    private static func searchText(for page: PhraseDetailPage) -> String {
+        let sectionText = page.sections.flatMap { section in
+            [section.title, section.body]
+                + section.phrases.flatMap { [$0.vietnamese, $0.english, $0.pronunciation] }
+                + section.breakdown.flatMap { [$0.vietnamese, $0.english] }
+        }
+
+        let exampleText = page.examples.flatMap { [$0.vietnamese, $0.english, $0.pronunciation] }
+
+        return ([page.title, page.englishTitle, page.pronunciation, page.summary] + sectionText + exampleText)
+            .joined(separator: " ")
+    }
+
+    private static func normalize(_ value: String) -> String {
+        value
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+            .lowercased()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+
 extension PhraseDetailPage {
-    static let all: [PhraseDetailPage] = [
+    static var all: [PhraseDetailPage] {
+        basePages + localGreetingWayPages
+    }
+
+    private static var basePages: [PhraseDetailPage] {
+        [
         respectfulHello,
         phoneHello,
         localGreetings,
-        helloAnh,
-        helloChi,
-        helloEm,
-        helloOng,
-        helloBa,
-        helloChu,
-        helloCo,
+        ] + localGreetingRootPages + [
         timeGreetings,
         howAreYou,
         whereGoing,
@@ -215,10 +300,37 @@ extension PhraseDetailPage {
         thankYou,
         excuseSorry,
         goodbye,
-    ]
+        ]
+    }
+
+    private static var localGreetingRootPages: [PhraseDetailPage] {
+        [
+            helloAnh,
+            helloChi,
+            helloEm,
+            helloOng,
+            helloBa,
+            helloChu,
+            helloCo,
+        ]
+    }
 
     static func page(withID id: String) -> PhraseDetailPage? {
         all.first { $0.id == id }
+    }
+
+    private static func wayPageID(parentID: String, wayID: String) -> String {
+        "\(parentID)-way-\(wayID)"
+    }
+
+    private static func linkedWays(for parentID: String, _ ways: [PhraseOption]) -> [PhraseOption] {
+        ways.map { phrase in
+            var linkedPhrase = phrase
+            linkedPhrase.detailPageID = phrase.id == "standard"
+                ? parentID
+                : wayPageID(parentID: parentID, wayID: phrase.id)
+            return linkedPhrase
+        }
     }
 
     private static func localGreetingPage(
@@ -237,7 +349,9 @@ extension PhraseDetailPage {
         whenToUse: String,
         localTip: String
     ) -> PhraseDetailPage {
-        PhraseDetailPage(
+        let displayedWays = linkedWays(for: id, ways)
+
+        return PhraseDetailPage(
             id: id,
             title: title,
             englishTitle: englishTitle,
@@ -248,12 +362,6 @@ extension PhraseDetailPage {
             sections: [
                 PhraseDetailSection(id: "at-glance", title: "At a glance", body: atGlance),
                 PhraseDetailSection(
-                    id: "ways-to-say",
-                    title: "Ways to say it",
-                    body: waysLeadIn,
-                    phrases: ways
-                ),
-                PhraseDetailSection(
                     id: "breakdown",
                     title: "Break it down",
                     body: "The same pattern powers most local greeting pages: chào does the greeting, and the relationship word tells the listener how you are placing them socially.",
@@ -262,6 +370,12 @@ extension PhraseDetailPage {
                         BreakdownToken(id: relationshipWord, vietnamese: relationshipWord, english: relationshipMeaning),
                         BreakdownToken(id: "full", vietnamese: title, english: fullMeaning),
                     ]
+                ),
+                PhraseDetailSection(
+                    id: "ways-to-say",
+                    title: "Ways to say it",
+                    body: waysLeadIn,
+                    phrases: displayedWays
                 ),
                 PhraseDetailSection(id: "when-to-use", title: "When to use it", body: whenToUse),
                 PhraseDetailSection(id: "local-tip", title: "Local tip", body: localTip),
@@ -285,19 +399,6 @@ extension PhraseDetailPage {
                 body: "Anh literally means older brother, but in daily Vietnamese it is also the normal way to address a man who seems a little older than you. The greeting changes with respect level and setting, so Chào anh is only the center of a small phrase family."
             ),
             PhraseDetailSection(
-                id: "ways-to-say",
-                title: "Ways to say it",
-                body: "Pick the version that matches the setting: standard, formal, respectful, attention-getting, or local small talk.",
-                phrases: [
-                    PhraseOption(id: "standard", vietnamese: "Chào anh", english: "Standard everyday hello", pronunciation: "chow anh", symbolName: "speaker.wave.2.fill", tintName: .blue, detailPageID: nil),
-                    PhraseOption(id: "formal", vietnamese: "Xin chào anh", english: "More formal / polished hello", pronunciation: "sin chow anh", symbolName: "speaker.wave.2.fill", tintName: .blue, detailPageID: nil),
-                    PhraseOption(id: "respectful", vietnamese: "Dạ, chào anh", english: "Respectful and well-mannered", pronunciation: "yah chow anh", symbolName: "speaker.wave.2.fill", tintName: .red, detailPageID: nil),
-                    PhraseOption(id: "attention", vietnamese: "Anh ơi!", english: "Excuse me / hey, older brother", pronunciation: "anh oy", symbolName: "speaker.wave.2.fill", tintName: .orange, detailPageID: nil),
-                    PhraseOption(id: "where-going", vietnamese: "Anh đi đâu đấy?", english: "Where are you going?", pronunciation: "anh dee dow day", symbolName: "speaker.wave.2.fill", tintName: .green, detailPageID: nil),
-                    PhraseOption(id: "eaten-yet", vietnamese: "Anh ăn cơm chưa?", english: "Have you eaten yet?", pronunciation: "anh un guhm chua", symbolName: "speaker.wave.2.fill", tintName: .green, detailPageID: nil),
-                ]
-            ),
-            PhraseDetailSection(
                 id: "breakdown",
                 title: "Break it down",
                 body: "The same pattern powers most local greeting pages: chào does the greeting, and the relationship word tells the listener how you are placing them socially.",
@@ -306,6 +407,19 @@ extension PhraseDetailPage {
                     BreakdownToken(id: "anh", vietnamese: "anh", english: "older brother"),
                     BreakdownToken(id: "full", vietnamese: "Chào anh", english: "hello, older man"),
                 ]
+            ),
+            PhraseDetailSection(
+                id: "ways-to-say",
+                title: "Ways to say it",
+                body: "Pick the version that matches the setting: standard, formal, respectful, attention-getting, or local small talk.",
+                phrases: linkedWays(for: "viet-hello-anh", [
+                    PhraseOption(id: "standard", vietnamese: "Chào anh", english: "Standard everyday hello", pronunciation: "chow anh", symbolName: "speaker.wave.2.fill", tintName: .blue, detailPageID: nil),
+                    PhraseOption(id: "formal", vietnamese: "Xin chào anh", english: "More formal / polished hello", pronunciation: "sin chow anh", symbolName: "speaker.wave.2.fill", tintName: .blue, detailPageID: nil),
+                    PhraseOption(id: "respectful", vietnamese: "Dạ, chào anh", english: "Respectful and well-mannered", pronunciation: "yah chow anh", symbolName: "speaker.wave.2.fill", tintName: .red, detailPageID: nil),
+                    PhraseOption(id: "attention", vietnamese: "Anh ơi!", english: "Excuse me / hey, older brother", pronunciation: "anh oy", symbolName: "speaker.wave.2.fill", tintName: .orange, detailPageID: nil),
+                    PhraseOption(id: "where-going", vietnamese: "Anh đi đâu đấy?", english: "Where are you going?", pronunciation: "anh dee dow day", symbolName: "speaker.wave.2.fill", tintName: .green, detailPageID: nil),
+                    PhraseOption(id: "eaten-yet", vietnamese: "Anh ăn cơm chưa?", english: "Have you eaten yet?", pronunciation: "anh un guhm chua", symbolName: "speaker.wave.2.fill", tintName: .green, detailPageID: nil),
+                ])
             ),
             PhraseDetailSection(
                 id: "when-to-use",
@@ -464,6 +578,119 @@ extension PhraseDetailPage {
         whenToUse: "Use Chào cô for an adult woman older than you, especially if she feels closer to an aunt than an older sister. It is also common for teachers and respectful service interactions.",
         localTip: "If she is only slightly older, Chào chị may feel smoother. If she is elderly, Chào bà is more respectful."
     )
+
+    private static var localGreetingWayPages: [PhraseDetailPage] {
+        localGreetingRootPages.flatMap { parent -> [PhraseDetailPage] in
+            guard let ways = parent.sections.first(where: { $0.id == "ways-to-say" }) else {
+                return []
+            }
+
+            return ways.phrases.compactMap { phrase in
+                guard let childID = phrase.detailPageID else {
+                    return nil
+                }
+
+                guard childID != parent.id else {
+                    return nil
+                }
+
+                return localGreetingWayPage(parent: parent, phrase: phrase, id: childID)
+            }
+        }
+    }
+
+    private static func localGreetingWayPage(parent: PhraseDetailPage, phrase: PhraseOption, id: String) -> PhraseDetailPage {
+        let copy = localGreetingWayCopy(parent: parent, phrase: phrase)
+        var playablePhrase = phrase
+        playablePhrase.detailPageID = nil
+
+        return PhraseDetailPage(
+            id: id,
+            title: phrase.vietnamese,
+            englishTitle: phrase.english,
+            pronunciation: phrase.pronunciation,
+            summary: copy.summary,
+            iconName: phrase.symbolName,
+            tintName: phrase.tintName,
+            sections: [
+                PhraseDetailSection(id: "at-glance", title: "At a glance", body: copy.atGlance),
+                PhraseDetailSection(id: "how-it-fits", title: "How it fits", body: copy.howItFits),
+                PhraseDetailSection(id: "when-to-use", title: "When to use it", body: copy.whenToUse),
+            ],
+            examples: [playablePhrase]
+        )
+    }
+
+    private static func localGreetingWayCopy(
+        parent: PhraseDetailPage,
+        phrase: PhraseOption
+    ) -> (summary: String, atGlance: String, howItFits: String, whenToUse: String) {
+        switch phrase.id {
+        case "standard":
+            return (
+                "The plain default form inside the \(parent.title) greeting family.",
+                "\(phrase.vietnamese) is the clean everyday version. It keeps the relationship word, so it sounds more local than a generic Xin chào without adding extra formality.",
+                "This is the center phrase for \(parent.title). The other versions add respect, attention, or small-talk flavor around this same relationship choice.",
+                "Use it when the person’s age or role is clear and the moment is friendly, normal, or service-oriented."
+            )
+        case "formal":
+            return (
+                "A more polished version of \(parent.title) for formal or careful moments.",
+                "Adding Xin makes the greeting more formal and slightly more distant. It is useful when you want to sound careful, polite, or professional.",
+                "This still belongs to the \(parent.title) family, but Xin moves it closer to a formal introduction than a casual local greeting.",
+                "Use it at reception desks, business-like introductions, hosted stays, or any moment where a plain chào feels too casual."
+            )
+        case "respectful":
+            return (
+                "The respectful upgrade for \(parent.title).",
+                "Dạ at the front works like a small verbal bow. It signals respect before the greeting even starts.",
+                "This keeps the same relationship word as \(parent.title), but adds an extra layer of deference.",
+                "Use it with older adults, hosts, drivers, staff helping you, or anyone you want to treat with extra respect."
+            )
+        case "attention":
+            return (
+                "A natural attention-getter connected to \(parent.title).",
+                "\(phrase.vietnamese) is closer to calling someone over than saying a formal hello. In Vietnam, getting someone’s attention often acts as the start of the greeting.",
+                "The ơi ending turns the relationship word into a call: friendly, direct, and very common in shops, cafes, and casual service moments.",
+                "Use it when you need someone’s attention. Keep your tone warm so it feels friendly instead of abrupt."
+            )
+        case "where-going":
+            return (
+                "A local social greeting that sounds like a question.",
+                "\(phrase.vietnamese) literally asks where someone is going, but socially it can work like casual neighborly small talk.",
+                "This moves beyond hello into the kind of light question locals may use when they already share a friendly moment.",
+                "Use it with familiar people or when someone has already made the interaction casual. Avoid it as a first line with strangers."
+            )
+        case "eaten-yet":
+            return (
+                "A warm social check that can follow hello.",
+                "\(phrase.vietnamese) literally asks whether the person has eaten. In social use, it can show care more than a need for meal details.",
+                "This phrase belongs after the greeting. It turns \(parent.title) from a quick hello into a warmer local exchange.",
+                "Use it with hosts, neighbors, family-style settings, or friendly people you already have rapport with."
+            )
+        case "how-are-you":
+            return (
+                "A friendly health check attached to the greeting.",
+                "\(phrase.vietnamese) asks how the person is. It is useful when the greeting has room to become small talk.",
+                "This is a follow-up path from \(parent.title), not just a replacement for hello.",
+                "Use it with someone younger or familiar when the moment is relaxed enough for a short social exchange."
+            )
+        case "soft":
+            return (
+                "A softer friendly version of \(parent.title).",
+                "The nhé ending softens the phrase and makes it feel warmer. It can sound friendly when speaking to someone younger.",
+                "This keeps the same greeting structure, but changes the tone from plain to gentle.",
+                "Use it in relaxed, friendly moments. Avoid it if the relationship is formal or the age dynamic is unclear."
+            )
+        default:
+            return (
+                "A focused phrase page from the \(parent.title) greeting family.",
+                "\(phrase.vietnamese) is one of the usable forms connected to \(parent.title).",
+                "It shares the same core relationship logic as the parent page, but teaches one exact phrase.",
+                "Use it when its tone and setting match the moment."
+            )
+        }
+    }
 
     static let respectfulHello = PhraseDetailPage(
         id: "viet-respectful-hello",

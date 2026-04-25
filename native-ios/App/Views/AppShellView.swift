@@ -1,11 +1,16 @@
 import SwiftUI
 
 struct AppShellView: View {
-    @State private var contentRoute: AppRoute
+    @State private var detailPath: [String]
     @State private var isSearchPresented: Bool
 
     init(initialRoute: AppRoute = AppShellView.initialRoute) {
-        _contentRoute = State(initialValue: initialRoute == .search ? .phrasePage : initialRoute)
+        if case .detailPage(let detailPageID) = initialRoute {
+            _detailPath = State(initialValue: [detailPageID])
+        } else {
+            _detailPath = State(initialValue: [])
+        }
+
         _isSearchPresented = State(initialValue: initialRoute == .search)
     }
 
@@ -17,29 +22,33 @@ struct AppShellView: View {
                 onSearchTapped: openSearch,
                 onDetailTapped: openDetail
             )
-            .allowsHitTesting(activeDetailPage == nil && !isSearchPresented)
+            .allowsHitTesting(detailPath.isEmpty && !isSearchPresented)
 
             if let activeDetailPage {
                 PhraseDetailView(
                     page: activeDetailPage,
-                    onBackTapped: { contentRoute = .phrasePage },
-                    onSearchTapped: openSearch
+                    onBackTapped: goBack,
+                    onSearchTapped: openSearch,
+                    onDetailTapped: openDetail
                 )
                 .transition(.opacity)
             }
 
             if isSearchPresented {
-                SearchPageView(onClose: { isSearchPresented = false })
+                SearchPageView(
+                    onClose: { isSearchPresented = false },
+                    onOpenDetail: openDetailFromSearch
+                )
                     .transition(.opacity)
             }
         }
-        .animation(.snappy(duration: 0.32), value: contentRoute)
+        .animation(.snappy(duration: 0.32), value: detailPath)
         .animation(.snappy(duration: 0.32), value: isSearchPresented)
         .preferredColorScheme(.light)
     }
 
     private var activeDetailPage: PhraseDetailPage? {
-        guard case .detailPage(let detailPageID) = contentRoute else {
+        guard let detailPageID = detailPath.last else {
             return nil
         }
 
@@ -47,7 +56,28 @@ struct AppShellView: View {
     }
 
     private func openDetail(_ id: String) {
-        contentRoute = .detailPage(id)
+        guard PhraseDetailPage.page(withID: id) != nil else {
+            return
+        }
+
+        guard detailPath.last != id else {
+            return
+        }
+
+        detailPath.append(id)
+    }
+
+    private func openDetailFromSearch(_ id: String) {
+        isSearchPresented = false
+        openDetail(id)
+    }
+
+    private func goBack() {
+        guard !detailPath.isEmpty else {
+            return
+        }
+
+        detailPath.removeLast()
     }
 
     private func openSearch() {

@@ -10,6 +10,31 @@ Keep the current app shell shippable while moving the content system away from a
 - intent family = visible traveler decision unit inside a category
 - phrase row = one primary phrase or one nearby variant inside a family
 
+## Terminology guardrail
+
+To avoid mixing data-model terms with UI page types, use these meanings consistently:
+
+- `category` / `scenario`
+  - the browse bucket, folder, or filter group
+  - not automatically a dedicated page by itself
+- `scenario page`
+  - an optional page that shows the phrase hubs inside one category/scenario
+- `intent family`
+  - the internal authored/runtime unit for one phrase hub
+  - keep this mostly as a model term, not the preferred day-to-day product term
+- `listing page` / `product page` / `listing detail page`
+  - the dedicated page for one phrase hub
+  - this is the page the user opens for a specific phrase experience
+- `phrase row` / `variant`
+  - one wording inside the listing page / product page
+
+The hierarchy is:
+
+1. category / scenario
+2. optional scenario page
+3. listing page / product page
+4. phrase row / variant
+
 ## Phrase-family rules
 
 Every family must have exactly one `say-first` phrase.
@@ -31,6 +56,13 @@ Allowed warning-note types:
 ## Phrase-detail and relation rules
 
 The product should not behave like a flat searchable phrase database.
+
+Phrase/detail navigation should be modeled as a canonical page graph:
+- every real traveler-facing phrase/listing page gets one stable canonical page ID
+- links from search, browse, related rows, and answer-page variants resolve to that canonical page
+- do not create duplicate pages for the same phrase text just because the phrase appears as a row on another page
+- parent/child is route context, not content identity
+- cyclic or sideways exploration is allowed when it has teaching value; duplicated page identity is not
 
 Each visible phrase family should increasingly act like a detail/listing surface with:
 - one shortest socially safe phrase the traveler can say first to just get by
@@ -55,6 +87,38 @@ Relation modeling should not stop at shared category/scenario membership. Phrase
 
 Listing/detail surfaces should be designed so a traveler can tap from one phrase into adjacent useful phrases, more like a dense utility listing page than a dead-end card.
 
+This direction also means raw phrase-row growth should be expected when it materially improves the phrase hubs. As phrase-detail/listing pages become richer, the content system may need more shortest-form, clearer, polite, follow-up, repair, and adjacent next-step rows than a flatter phrase database would have carried.
+
+Completeness should now be interpreted this way:
+- not every listing page needs the same handcrafted depth on day one
+- but when a major traveler intent genuinely has multiple useful ways to say it, likely replies, repair branches, or nearby next-step phrases, those rows should be saved into authored truth instead of left as temporary reasoning
+- richer answer hubs should therefore be expected to create and preserve more real rows over time, not just more decorative page copy
+
+Recommended depth tiers:
+- `deep` = flagship answer hubs with rich module content, real relation rails, and meaningful variant/support coverage
+- `support` = nearby hubs with lighter module payloads but still real phrase rows and relation truth
+- `baseline` = long-tail hubs that may start lighter, but should still preserve useful phrase-row truth so they can be promoted later without rediscovery
+
+Practical triage rule:
+- `deep` when the traveler moment branches in `3+` meaningful ways, for example:
+  - politeness or hierarchy meaningfully changes the correct phrase
+  - context changes the best wording (`restaurant`, `hotel`, `taxi`, `market`, `medical`)
+  - the traveler is likely to need a repair, escalation, or next-step phrase immediately after
+  - the moment is high-risk for money, safety, health, or social friction
+  - locals often use something different from the obvious textbook default
+- `support` when the page has `1-2` meaningful branch points and benefits from saved variants or linked helpers, but does not yet justify a flagship-sized answer surface
+- `baseline` when the page is low-branching, low-risk, and mostly solved by one strong default plus maybe one nearby helper
+
+Examples:
+- `deep`: `hello`, `yes`, `I need a doctor`, `how much is this?`, `take me here`, `I don't understand`
+- `support`: `thank you`, `where is the bathroom?`, `I have a reservation`, `can I pay by card?`
+- `baseline`: `one`, `two`, `today`, `tomorrow`, `here`, `there`
+
+Important nuance:
+- phrase length does not determine depth
+- branching social utility does
+- a short word like `yes` can still be `support` or `deep` if it changes by politeness, situation, or confirmation type
+
 ## Relation authoring seam
 
 The current relation-ready handoff is additive rather than a replacement model.
@@ -74,6 +138,25 @@ Use these sidecar fields when the family needs relation-ready behavior:
 - `familyRelations`
 
 The sidecar is allowed to enrich phrase-detail and listing behavior, but it must not become a second source of phrase text truth. Phrase text and access still come from the base family/row model.
+
+Implication for variants and related rows:
+- if the system learns that a phrase family needs a shorter, clearer, more polite, more common, likely-reply, repair, escalation, or adjacent next-step row, the preferred outcome is to save that row into the authored phrase source when it is genuinely useful
+- do not rely on repeated future rediscovery of those rows from memory or ad hoc model output
+- answer-page sidecars should point at saved row truth, not silently invent unsaved phrase variants
+
+AI-assisted harvesting rule:
+- prompts like `Different ways to say [PHRASE] in Vietnam` are useful candidate generators, not automatic truth
+- candidate rows should be retained when they introduce one of these:
+  - a genuinely different politeness or hierarchy-safe option
+  - a distinct confirmation or agreement function
+  - a distinct traveler context
+  - a likely reply, repair, escalation, or next-step move
+  - a locally common form that differs from the obvious learner default
+- candidate rows should usually be rejected or demoted to a note when they are:
+  - decorative paraphrases with no real traveler utility difference
+  - duplicates of the same function with only cosmetic wording changes
+  - overly bookish or formal unless that warning itself is useful
+  - weakly supported forms that do not improve the traveler's actual decision surface
 
 Prepared-next lanes may also carry:
 - a top-level `retrievalContract` object that summarizes starter, deferred, pickup, and later-only outcomes in one place
@@ -160,6 +243,8 @@ Website export output:
 
 - the current live Viet pack now has all `919` approved rows audio-backed in the app seam
 - future newly authored rows may still stay `audioStatus=planned` until app audio catches up
+- approved traveler-facing phrase rows should remain auditable against audio coverage, even when content grows faster than generation
+- the long-term product target is that useful retained phrase rows receive audio rather than remaining a permanent text-only shadow layer
 - website preview audio, when exported as ready, must be copied into the site-owned static artifact and served from the same staging/live deployment root
 
 ## Website rule
