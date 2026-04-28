@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-28T18:08:23.734466+07:00",
+  "updatedAt": "2026-04-28T19:03:54.118986+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -145,6 +145,13 @@
         "state": ".agent\\tasks\\T-158\\state.json",
         "selectionOrder": 20,
         "writeLock": "native_ios_language_pack_resource_migration"
+      },
+      {
+        "taskId": "T-159",
+        "title": "Research and design pre-live Practice/Quiz + mascot lane",
+        "state": ".agent\\tasks\\T-159\\state.json",
+        "selectionOrder": 30,
+        "writeLock": "practice_quiz_prelive_plan"
       }
     ],
     "recently_completed": [
@@ -618,7 +625,7 @@
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,
-    "draftCount": 2,
+    "draftCount": 3,
     "recentlyCompletedCount": 66
   },
   "notes": [

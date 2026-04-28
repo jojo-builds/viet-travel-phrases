@@ -1,0 +1,62 @@
+{
+  "taskId": "T-159",
+  "title": "Research and design pre-live Practice/Quiz + mascot lane",
+  "status": "draft",
+  "phase": "blocked-until-T-157-smoke-passes",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 180,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "practice_quiz_prelive_plan",
+      "agent_task_T-159"
+    ],
+    "read": [],
+    "blockedBy": [
+      "T-157"
+    ]
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    "Promote this task from draft to queued only after T-157 proves manual worker claim, heartbeat, finish, and commit on the Mac queue."
+  ],
+  "artifacts": {
+    "result": ".agent/tasks/T-159/result.md",
+    "recoveryNotes": ".agent/tasks/T-159/recovery-notes.md",
+    "reviews": ".agent/tasks/T-159/reviews/",
+    "logs": ".agent/tasks/T-159/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-159/result.md",
+      ".agent/tasks/T-159/state.json"
+    ]
+  },
+  "lastUpdated": "2026-04-28T18:58:04+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "60-180",
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 30,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}
