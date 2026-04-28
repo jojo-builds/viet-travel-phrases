@@ -854,7 +854,7 @@ function semanticBreakdownPieces(targetText, englishText) {
     ["được không", "is it possible?"],
     ["đúng không", "right?"],
     ["phải không", "is that right?"],
-    ["không", "question marker"],
+    ["không", "yes/no question"],
   ];
 
   for (const [vietnamese, english] of suffixes) {

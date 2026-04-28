@@ -920,7 +920,7 @@ enum GeneratedVietContent {
             ("được không", "is it possible?"),
             ("đúng không", "right?"),
             ("phải không", "is that right?"),
-            ("không", "question marker"),
+            ("không", "yes/no question"),
         ]
 
         for suffix in suffixes {
