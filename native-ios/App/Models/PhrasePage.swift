@@ -41,12 +41,38 @@ struct PhraseOption: Identifiable, Equatable {
     let symbolName: String
     let tintName: AccentTint
     var detailPageID: String?
+    var audioKey: String? = nil
+
+    var playbackAudioKey: String? {
+        let manifest = AudioAssetManifest.main
+
+        if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
+            return audioKey
+        }
+
+        if manifest?.hasPlayableEntry(for: id, matchingText: vietnamese) == true {
+            return id
+        }
+
+        return manifest?.audioKey(forExactText: vietnamese)
+    }
 }
 
 struct BreakdownToken: Identifiable, Equatable {
     let id: String
     let vietnamese: String
     let english: String
+    var audioKey: String? = nil
+
+    var playbackAudioKey: String? {
+        let manifest = AudioAssetManifest.main
+
+        if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
+            return audioKey
+        }
+
+        return manifest?.audioKey(forExactText: vietnamese)
+    }
 }
 
 struct PhraseLink: Identifiable, Equatable {
@@ -69,6 +95,79 @@ struct PhraseDetailPage: Identifiable, Equatable {
     let tintName: AccentTint
     let sections: [PhraseDetailSection]
     let examples: [PhraseOption]
+    var audioKey: String? = nil
+
+    var playbackAudioKey: String? {
+        let manifest = AudioAssetManifest.main
+
+        if manifest?.hasPlayableEntry(for: audioKey, matchingText: title) == true {
+            return audioKey
+        }
+
+        if let exactTitleKey = manifest?.audioKey(forExactText: title) {
+            return exactTitleKey
+        }
+
+        return examples.first?.playbackAudioKey
+    }
+}
+
+struct PhraseArticlePage: Identifiable, Equatable {
+    let id: String
+    let destination: String
+    let title: String
+    let englishTitle: String
+    let pronunciation: String
+    let summary: String
+    let iconName: String
+    let tintName: AccentTint
+    let playbackAudioKey: String?
+    let sections: [PhraseArticleSection]
+    var showsCatalogExplore: Bool = true
+}
+
+struct PhraseArticleSection: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let body: String
+    let phrases: [PhraseOption]
+    let breakdown: [BreakdownToken]
+    let presentation: SectionPresentation
+}
+
+enum SectionPresentation: String, Decodable, Equatable {
+    case automatic
+    case plainText = "plain-text"
+    case phraseList = "phrase-list"
+    case horizontalPhraseCards = "horizontal-phrase-cards"
+    case breakdownStrip = "breakdown-strip"
+    case tipCallout = "tip-callout"
+    case warningCallout = "warning-callout"
+
+    func resolved(sectionID: String, hasPhrases: Bool, hasBreakdown: Bool) -> SectionPresentation {
+        guard self == .automatic else {
+            return self
+        }
+
+        if hasBreakdown {
+            return .breakdownStrip
+        }
+
+        switch sectionID {
+        case "breakdown":
+            return .breakdownStrip
+        case "standard-way", "quick-say", "ways-to-say", "relationship-forms", "pronoun-swap", "common-follow-ups", "explore-next":
+            return hasPhrases ? .phraseList : .plainText
+        case "natural-variations", "nearby-phrases", "situational-use", "common-situations":
+            return hasPhrases ? .horizontalPhraseCards : .plainText
+        case "watch-out":
+            return .warningCallout
+        case "local-tip", "traveler-tip", "cultural-note":
+            return .tipCallout
+        default:
+            return hasPhrases ? .phraseList : .plainText
+        }
+    }
 }
 
 struct PhraseDetailSection: Identifiable, Equatable {
@@ -77,6 +176,35 @@ struct PhraseDetailSection: Identifiable, Equatable {
     let body: String
     var phrases: [PhraseOption] = []
     var breakdown: [BreakdownToken] = []
+    var presentation: SectionPresentation = .automatic
+
+    var articleSection: PhraseArticleSection {
+        let resolvedPresentation = presentation.resolved(
+            sectionID: id,
+            hasPhrases: !phrases.isEmpty,
+            hasBreakdown: !breakdown.isEmpty
+        )
+
+        return PhraseArticleSection(
+            id: id,
+            title: articleTitle(forPresentation: resolvedPresentation),
+            body: body,
+            phrases: phrases,
+            breakdown: breakdown,
+            presentation: resolvedPresentation
+        )
+    }
+
+    private func articleTitle(forPresentation presentation: SectionPresentation) -> String {
+        switch id {
+        case "standard-way":
+            return "Quick say"
+        case "nearby-phrases":
+            return title == "Nearby phrases" ? "Useful next phrases" : title
+        default:
+            return title
+        }
+    }
 }
 
 struct PhraseSearchResult: Identifiable, Equatable {
@@ -85,6 +213,88 @@ struct PhraseSearchResult: Identifiable, Equatable {
     let subtitle: String
 
     var id: String { pageID }
+}
+
+struct PhraseCategory: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let symbolName: String
+    let tintName: AccentTint
+}
+
+struct PhraseCatalogItem: Identifiable, Equatable {
+    let pageID: String
+    let title: String
+    let subtitle: String
+    let categoryIDs: [String]
+    let symbolName: String
+    let tintName: AccentTint
+    var audioKey: String? = nil
+
+    var id: String { pageID }
+    var categoryID: String { categoryIDs.first ?? "greetings" }
+    var playbackAudioKey: String? {
+        let manifest = AudioAssetManifest.main
+
+        if manifest?.hasPlayableEntry(for: audioKey, matchingText: title) == true {
+            return audioKey
+        }
+
+        if let exactTitleAudioKey = manifest?.audioKey(forExactText: title) {
+            return exactTitleAudioKey
+        }
+
+        if let audioKey, manifest?.url(for: audioKey) != nil {
+            return audioKey
+        }
+
+        return nil
+    }
+
+    init(
+        pageID: String,
+        title: String,
+        subtitle: String,
+        categoryID: String,
+        symbolName: String,
+        tintName: AccentTint,
+        audioKey: String? = nil
+    ) {
+        self.init(
+            pageID: pageID,
+            title: title,
+            subtitle: subtitle,
+            categoryIDs: [categoryID],
+            symbolName: symbolName,
+            tintName: tintName,
+            audioKey: audioKey
+        )
+    }
+
+    init(
+        pageID: String,
+        title: String,
+        subtitle: String,
+        categoryIDs: [String],
+        symbolName: String,
+        tintName: AccentTint,
+        audioKey: String? = nil
+    ) {
+        self.pageID = pageID
+        self.title = title
+        self.subtitle = subtitle
+        self.categoryIDs = categoryIDs
+        self.symbolName = symbolName
+        self.tintName = tintName
+        self.audioKey = audioKey
+    }
+}
+
+struct PhraseCatalogSection: Identifiable, Equatable {
+    let category: PhraseCategory
+    let items: [PhraseCatalogItem]
+
+    var id: String { category.id }
 }
 
 enum AccentTint: String, Equatable {
@@ -97,7 +307,268 @@ enum AccentTint: String, Equatable {
     case gray
 }
 
+enum PhraseCatalog {
+    static let allCategoryID = "all"
+
+    static var categories: [PhraseCategory] {
+        cache.categories
+    }
+
+    static func items(
+        selectedCategoryID: String,
+        excludingPageID: String? = nil
+    ) -> [PhraseCatalogItem] {
+        let selectedItems = selectedCategoryID == allCategoryID
+            ? cache.allItems
+            : cache.itemsByCategoryID[selectedCategoryID, default: []]
+
+        guard let excludingPageID else {
+            return selectedItems
+        }
+
+        return selectedItems.filter { $0.pageID != excludingPageID }
+    }
+
+    static func defaultCategoryID(forPageID pageID: String) -> String {
+        cache.defaultCategoryIDByPageID[pageID] ?? "greetings"
+    }
+
+    static func browseCategories(defaultCategoryID: String) -> [PhraseCategory] {
+        let defaultCategory = category(withID: defaultCategoryID)
+        let remainingCategories = cache.categories.filter { $0.id != defaultCategory?.id }
+
+        return [defaultCategory].compactMap { $0 } + remainingCategories
+    }
+
+    static func browseSections(
+        defaultCategoryID: String,
+        excludingPageID: String? = nil
+    ) -> [PhraseCatalogSection] {
+        browseCategories(defaultCategoryID: defaultCategoryID)
+            .compactMap { category in
+                let categoryItems = items(
+                    selectedCategoryID: category.id,
+                    excludingPageID: excludingPageID
+                )
+
+                guard !categoryItems.isEmpty else {
+                    return nil
+                }
+
+                return PhraseCatalogSection(category: category, items: categoryItems)
+            }
+    }
+
+    static func category(withID id: String) -> PhraseCategory? {
+        cache.categoriesByID[id]
+    }
+
+    static func isOpenablePageID(_ pageID: String) -> Bool {
+        pageID == PhrasePage.xinChao.id
+            || PhraseDetailPage.hasAuthoredPage(withID: pageID)
+            || GeneratedVietContent.hasDetailPage(withID: pageID)
+    }
+
+    static var allItems: [PhraseCatalogItem] {
+        cache.allItems
+    }
+
+    private static let cache = Cache()
+
+    private struct Cache {
+        let categories: [PhraseCategory]
+        let categoriesByID: [String: PhraseCategory]
+        let allItems: [PhraseCatalogItem]
+        let itemsByCategoryID: [String: [PhraseCatalogItem]]
+        let defaultCategoryIDByPageID: [String: String]
+
+        init() {
+            let categories = baseCategories + GeneratedVietContent.scenarioCategories
+            let categoriesByID = Dictionary(uniqueKeysWithValues: categories.map { ($0.id, $0) })
+
+            let allItems = Self.makeAllItems()
+            var itemsByCategoryID: [String: [PhraseCatalogItem]] = [:]
+
+            for item in allItems {
+                for categoryID in item.categoryIDs {
+                    itemsByCategoryID[categoryID, default: []].append(item)
+                }
+            }
+
+            self.categories = categories
+            self.categoriesByID = categoriesByID
+            self.allItems = allItems
+            self.itemsByCategoryID = itemsByCategoryID
+            self.defaultCategoryIDByPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.pageID, $0.categoryID) })
+        }
+
+        private static func makeAllItems() -> [PhraseCatalogItem] {
+            let designedItems = [rootItem] + PhraseDetailPage.all.map(catalogItem)
+            let designedPageIDs = Set(designedItems.map(\.pageID))
+
+            return designedItems + GeneratedVietContent.catalogItems(excludingPageIDs: designedPageIDs)
+        }
+    }
+
+    private static let baseCategories: [PhraseCategory] = [
+        PhraseCategory(id: "greetings", title: "Greetings", symbolName: "hand.wave.fill", tintName: .red),
+        PhraseCategory(id: "local-greetings", title: "Relationship greetings", symbolName: "person.2.fill", tintName: .blue),
+        PhraseCategory(id: "politeness", title: "Polite", symbolName: "sparkles", tintName: .red),
+        PhraseCategory(id: "attention", title: "Attention", symbolName: "bell.fill", tintName: .orange),
+        PhraseCategory(id: "small-talk", title: "Small talk", symbolName: "bubble.left.and.bubble.right.fill", tintName: .green),
+        PhraseCategory(id: "phone", title: "Phone", symbolName: "phone.fill", tintName: .green),
+        PhraseCategory(id: "time", title: "Time", symbolName: "sun.max.fill", tintName: .blue),
+        PhraseCategory(id: "meeting", title: "Meeting", symbolName: "hands.sparkles.fill", tintName: .teal),
+        PhraseCategory(id: "gratitude", title: "Gratitude", symbolName: "heart.fill", tintName: .green),
+        PhraseCategory(id: "repair", title: "Get unstuck", symbolName: "hand.raised.fill", tintName: .blue),
+        PhraseCategory(id: "goodbyes", title: "Goodbyes", symbolName: "arrowshape.turn.up.left.fill", tintName: .purple),
+    ]
+
+    private static let rootItem = PhraseCatalogItem(
+        pageID: PhrasePage.xinChao.id,
+        title: PhrasePage.xinChao.title,
+        subtitle: PhrasePage.xinChao.intentSummary,
+        categoryIDs: ["greetings"],
+        symbolName: "hand.wave.fill",
+        tintName: .red,
+        audioKey: PhrasePage.xinChao.quickSay.first?.playbackAudioKey
+    )
+
+    private static func catalogItem(for page: PhraseDetailPage) -> PhraseCatalogItem {
+        PhraseCatalogItem(
+            pageID: page.id,
+            title: page.title,
+            subtitle: page.englishTitle,
+            categoryIDs: categoryIDs(for: page.id),
+            symbolName: page.iconName,
+            tintName: page.tintName,
+            audioKey: page.playbackAudioKey
+        )
+    }
+
+    private static func categoryIDs(for pageID: String) -> [String] {
+        if let categoryIDs = AuthoredVietListingPages.categoryIDs(for: pageID) {
+            return categoryIDs
+        }
+
+        if pageID.hasSuffix("-way-formal") || pageID.hasSuffix("-way-respectful") {
+            return ["politeness", "greetings", "local-greetings"]
+        }
+
+        if pageID.hasSuffix("-way-attention") {
+            return ["attention", "greetings", "local-greetings"]
+        }
+
+        if pageID.hasSuffix("-way-where-going")
+            || pageID.hasSuffix("-way-eaten-yet")
+            || pageID.hasSuffix("-way-how-are-you") {
+            return ["small-talk", "greetings", "local-greetings"]
+        }
+
+        if pageID.hasSuffix("-way-soft") {
+            return ["local-greetings", "greetings"]
+        }
+
+        if pageID.hasPrefix("viet-hello-") || pageID == "viet-local-greetings" {
+            return ["local-greetings", "greetings"]
+        }
+
+        switch pageID {
+        case "viet-respectful-hello":
+            return ["politeness", "greetings"]
+        case "viet-phone-hello":
+            return ["phone", "greetings"]
+        case "viet-time-greetings":
+            return ["time", "greetings"]
+        case "viet-how-are-you", "viet-where-going":
+            return ["small-talk", "greetings"]
+        case "viet-nice-to-meet-you":
+            return ["meeting", "greetings"]
+        case "viet-thank-you":
+            return ["gratitude"]
+        case "viet-excuse-sorry":
+            return ["repair"]
+        case "viet-goodbye":
+            return ["goodbyes"]
+        default:
+            return ["greetings"]
+        }
+    }
+}
+
 extension PhrasePage {
+    var articleTemplate: PhraseArticlePage {
+        PhraseArticlePage(
+            id: id,
+            destination: destination,
+            title: title,
+            englishTitle: englishTitle,
+            pronunciation: pronunciation,
+            summary: intentSummary,
+            iconName: "star.fill",
+            tintName: .red,
+            playbackAudioKey: quickSay.first?.playbackAudioKey,
+            sections: [
+                PhraseArticleSection(
+                    id: "at-glance",
+                    title: "At a glance",
+                    body: atGlance,
+                    phrases: [],
+                    breakdown: [],
+                    presentation: .plainText
+                ),
+                PhraseArticleSection(
+                    id: "quick-say",
+                    title: "Quick say",
+                    body: "",
+                    phrases: quickSay,
+                    breakdown: [],
+                    presentation: .phraseList
+                ),
+                PhraseArticleSection(
+                    id: "breakdown",
+                    title: "Break it down",
+                    body: "",
+                    phrases: [],
+                    breakdown: breakdown,
+                    presentation: .breakdownStrip
+                ),
+                PhraseArticleSection(
+                    id: "situational-greetings",
+                    title: "Situational greetings",
+                    body: situationalGreetingsLeadIn,
+                    phrases: situationalGreetings,
+                    breakdown: [],
+                    presentation: .horizontalPhraseCards
+                ),
+                PhraseArticleSection(
+                    id: "local-greetings",
+                    title: "How locals actually greet",
+                    body: localGreetingsLeadIn,
+                    phrases: localGreetings,
+                    breakdown: [],
+                    presentation: .phraseList
+                ),
+                PhraseArticleSection(
+                    id: "common-follow-ups",
+                    title: "Common follow-ups",
+                    body: followUpsLeadIn,
+                    phrases: followUps,
+                    breakdown: [],
+                    presentation: .phraseList
+                ),
+                PhraseArticleSection(
+                    id: "cultural-note",
+                    title: "Cultural note",
+                    body: culturalNote,
+                    phrases: [],
+                    breakdown: [],
+                    presentation: .tipCallout
+                ),
+            ]
+        )
+    }
+
     static let xinChao = PhrasePage(
         id: "viet-polite-hello",
         destination: "SpeakLocal Vietnam",
@@ -135,7 +606,7 @@ extension PhrasePage {
                 pronunciation: "chow ban",
                 symbolName: "person.2",
                 tintName: .orange,
-                detailPageID: "viet-local-greetings"
+                detailPageID: nil
             ),
             PhraseOption(
                 id: "formal",
@@ -185,9 +656,9 @@ extension PhrasePage {
             PhraseOption(id: "co", vietnamese: "Chào cô", english: "Hello, aunt / older woman", pronunciation: "chow koh", symbolName: "person", tintName: .red, detailPageID: "viet-hello-co"),
         ],
         breakdown: [
-            BreakdownToken(id: "xin", vietnamese: "Xin", english: "polite ask"),
-            BreakdownToken(id: "chao", vietnamese: "chào", english: "greet / hello"),
-            BreakdownToken(id: "full", vietnamese: "Xin chào", english: "polite hello"),
+            BreakdownToken(id: "xin", vietnamese: "Xin", english: "polite ask", audioKey: "breakdown-xin"),
+            BreakdownToken(id: "chao", vietnamese: "chào", english: "greet / hello", audioKey: "breakdown-chao"),
+            BreakdownToken(id: "full", vietnamese: "Xin chào", english: "polite hello", audioKey: "polite-1"),
         ],
         followUpsLeadIn: "After hello, small talk often checks health, movement, or the social moment. Use these when the exchange has room to continue.",
         followUps: [
@@ -215,42 +686,71 @@ enum PhraseSearchIndex {
             .split(separator: " ")
             .map(String.init)
 
-        return PhraseDetailPage.all
+        let rootResults = rootPages
             .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
                 let haystack = normalize(searchText(for: page))
-                guard tokens.allSatisfy({ haystack.contains($0) }) else {
+                guard SearchTextMatcher.matchesAllTokens(tokens, in: haystack) else {
                     return nil
                 }
 
-                let title = normalize(page.title)
-                let englishTitle = normalize(page.englishTitle)
-                var score = 0
+                let identityHaystack = normalize(searchIdentityText(for: page))
+                return (
+                    PhraseSearchResult(
+                        pageID: page.id,
+                        title: page.title,
+                        subtitle: page.intentSummary
+                    ),
+                    score(
+                        title: page.title,
+                        englishTitle: page.englishTitle,
+                        pronunciation: page.pronunciation,
+                        haystack: haystack,
+                        normalizedQuery: normalizedQuery,
+                        priority: .anchor,
+                        priorityMatchesQuery: SearchTextMatcher.matchesAllTokens(tokens, in: identityHaystack)
+                    )
+                )
+            }
 
-                if title == normalizedQuery {
-                    score += 120
+        let designedResults = PhraseDetailPage.all
+            .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
+                let haystack = normalize(searchText(for: page))
+                guard SearchTextMatcher.matchesAllTokens(tokens, in: haystack) else {
+                    return nil
                 }
 
-                if title.contains(normalizedQuery) {
-                    score += 70
-                }
-
-                if englishTitle.contains(normalizedQuery) {
-                    score += 35
-                }
-
-                if haystack.contains(normalizedQuery) {
-                    score += 10
-                }
-
+                let identityHaystack = normalize(searchIdentityText(for: page))
                 return (
                     PhraseSearchResult(
                         pageID: page.id,
                         title: page.title,
                         subtitle: page.englishTitle
                     ),
-                    score
+                    score(
+                        title: page.title,
+                        englishTitle: page.englishTitle,
+                        pronunciation: page.pronunciation,
+                        haystack: haystack,
+                        normalizedQuery: normalizedQuery,
+                        priority: searchPriority(for: page),
+                        priorityMatchesQuery: SearchTextMatcher.matchesAllTokens(tokens, in: identityHaystack)
+                    )
                 )
             }
+
+        let generatedResults = GeneratedVietContent.search(query)
+            .map { (result: $0.result, score: $0.score) }
+
+        var bestByPageID: [String: (result: PhraseSearchResult, score: Int)] = [:]
+
+        for scoredResult in rootResults + designedResults + generatedResults {
+            let currentScore = bestByPageID[scoredResult.result.pageID]?.score ?? Int.min
+            if scoredResult.score > currentScore {
+                bestByPageID[scoredResult.result.pageID] = scoredResult
+            }
+        }
+
+        return bestByPageID.values
             .sorted {
                 if $0.score == $1.score {
                     return $0.result.title < $1.result.title
@@ -259,6 +759,101 @@ enum PhraseSearchIndex {
                 return $0.score > $1.score
             }
             .map(\.result)
+    }
+
+    private static var rootPages: [PhrasePage] {
+        [
+            .xinChao,
+        ]
+    }
+
+    private static let tierOneDesignedPageIDs: Set<String> = [
+        "viet-family-repair-meaning",
+        "viet-thank-you",
+        "viet-excuse-sorry",
+        "viet-goodbye",
+        "viet-how-are-you",
+    ]
+
+    private static func searchPriority(for page: PhraseDetailPage) -> SearchPriorityTier {
+        GeneratedVietContent.tierOnePageIDs.contains(page.id) || tierOneDesignedPageIDs.contains(page.id)
+            ? .tier1
+            : .supporting
+    }
+
+    private static func score(
+        title: String,
+        englishTitle: String,
+        pronunciation: String,
+        haystack: String,
+        normalizedQuery: String,
+        priority: SearchPriorityTier,
+        priorityMatchesQuery: Bool
+    ) -> Int {
+        let title = normalize(title)
+        let englishTitle = normalize(englishTitle)
+        let pronunciation = normalize(pronunciation)
+        var score = priorityMatchesQuery ? priority.scoreBoost : 0
+
+        if title == normalizedQuery {
+            score += 120
+        }
+
+        if englishTitle == normalizedQuery {
+            score += 110
+        }
+
+        if title.contains(normalizedQuery) {
+            score += 70
+        }
+
+        if pronunciation == normalizedQuery {
+            score += 90
+        }
+
+        if pronunciation.contains(normalizedQuery) {
+            score += 45
+        }
+
+        if englishTitle.contains(normalizedQuery) {
+            score += 35
+        }
+
+        if haystack.contains(normalizedQuery) {
+            score += 10
+        }
+
+        return score
+    }
+
+    private static func searchText(for page: PhrasePage) -> String {
+        let optionText = (page.quickSay + page.situationalGreetings + page.localGreetings + page.followUps)
+            .flatMap { [$0.vietnamese, $0.english, $0.pronunciation] }
+        let breakdownText = page.breakdown.flatMap { [$0.vietnamese, $0.english] }
+        let exploreText = page.exploreNext.flatMap { [$0.vietnamese, $0.english, $0.relation] }
+
+        return ([
+            page.title,
+            page.englishTitle,
+            page.pronunciation,
+            page.intentSummary,
+            page.atGlance,
+            page.situationalGreetingsLeadIn,
+            page.localGreetingsLeadIn,
+            page.followUpsLeadIn,
+            page.culturalNote,
+        ] + optionText + breakdownText + exploreText)
+            .joined(separator: " ")
+    }
+
+    private static func searchIdentityText(for page: PhrasePage) -> String {
+        let optionText = (page.quickSay + page.situationalGreetings + page.localGreetings + page.followUps)
+            .flatMap { [$0.vietnamese, $0.english, $0.pronunciation] }
+        let breakdownText = page.breakdown.flatMap { [$0.vietnamese, $0.english] }
+        let exploreText = page.exploreNext.flatMap { [$0.vietnamese, $0.english, $0.relation] }
+
+        return ([page.title, page.englishTitle, page.pronunciation] + optionText + breakdownText + exploreText)
+            .joined(separator: " ")
     }
 
     private static func searchText(for page: PhraseDetailPage) -> String {
@@ -274,24 +869,53 @@ enum PhraseSearchIndex {
             .joined(separator: " ")
     }
 
+    private static func searchIdentityText(for page: PhraseDetailPage) -> String {
+        let sectionText = page.sections.flatMap { section in
+            section.phrases.flatMap { [$0.vietnamese, $0.english, $0.pronunciation] }
+                + section.breakdown.flatMap { [$0.vietnamese, $0.english] }
+        }
+
+        let exampleText = page.examples.flatMap { [$0.vietnamese, $0.english, $0.pronunciation] }
+
+        return ([page.title, page.englishTitle, page.pronunciation] + sectionText + exampleText)
+            .joined(separator: " ")
+    }
+
     private static func normalize(_ value: String) -> String {
-        value
+        let folded = value
             .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
             .lowercased()
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        let searchable = folded.unicodeScalars
+            .map { scalar in
+                CharacterSet.alphanumerics.contains(scalar) ? String(scalar) : " "
+            }
+            .joined()
+
+        return searchable
+            .split(separator: " ")
+            .joined(separator: " ")
     }
 }
 
 extension PhraseDetailPage {
-    static var all: [PhraseDetailPage] {
-        basePages + localGreetingWayPages
+    static let all: [PhraseDetailPage] = uniquePages(AuthoredVietListingPages.all + basePages + localGreetingWayPages)
+
+    private static let pagesByID: [String: PhraseDetailPage] = Dictionary(
+        uniqueKeysWithValues: all.map { ($0.id, $0) }
+    )
+
+    private static func uniquePages(_ pages: [PhraseDetailPage]) -> [PhraseDetailPage] {
+        var seen = Set<String>()
+        return pages.filter { page in
+            seen.insert(page.id).inserted
+        }
     }
 
     private static var basePages: [PhraseDetailPage] {
         [
         respectfulHello,
         phoneHello,
-        localGreetings,
         ] + localGreetingRootPages + [
         timeGreetings,
         howAreYou,
@@ -316,7 +940,26 @@ extension PhraseDetailPage {
     }
 
     static func page(withID id: String) -> PhraseDetailPage? {
-        all.first { $0.id == id }
+        pagesByID[id] ?? GeneratedVietContent.detailPage(withID: id)
+    }
+
+    static func hasAuthoredPage(withID id: String) -> Bool {
+        pagesByID[id] != nil
+    }
+
+    var articleTemplate: PhraseArticlePage {
+        PhraseArticlePage(
+            id: id,
+            destination: "SpeakLocal Vietnam",
+            title: title,
+            englishTitle: englishTitle,
+            pronunciation: pronunciation,
+            summary: summary,
+            iconName: iconName,
+            tintName: tintName,
+            playbackAudioKey: playbackAudioKey,
+            sections: sections.map(\.articleSection)
+        )
     }
 
     private static func wayPageID(parentID: String, wayID: String) -> String {
@@ -366,9 +1009,9 @@ extension PhraseDetailPage {
                     title: "Break it down",
                     body: "The same pattern powers most local greeting pages: chào does the greeting, and the relationship word tells the listener how you are placing them socially.",
                     breakdown: [
-                        BreakdownToken(id: "chao", vietnamese: "Chào", english: "greet / hello"),
-                        BreakdownToken(id: relationshipWord, vietnamese: relationshipWord, english: relationshipMeaning),
-                        BreakdownToken(id: "full", vietnamese: title, english: fullMeaning),
+                        BreakdownToken(id: "chao", vietnamese: "Chào", english: "greet / hello", audioKey: "breakdown-chao"),
+                        BreakdownToken(id: relationshipWord, vietnamese: relationshipWord, english: relationshipMeaning, audioKey: "breakdown-\(id)-relationship"),
+                        BreakdownToken(id: "full", vietnamese: title, english: fullMeaning, audioKey: "breakdown-\(id)-full"),
                     ]
                 ),
                 PhraseDetailSection(
@@ -403,9 +1046,9 @@ extension PhraseDetailPage {
                 title: "Break it down",
                 body: "The same pattern powers most local greeting pages: chào does the greeting, and the relationship word tells the listener how you are placing them socially.",
                 breakdown: [
-                    BreakdownToken(id: "chao", vietnamese: "Chào", english: "greet / hello"),
-                    BreakdownToken(id: "anh", vietnamese: "anh", english: "older brother"),
-                    BreakdownToken(id: "full", vietnamese: "Chào anh", english: "hello, older man"),
+                    BreakdownToken(id: "chao", vietnamese: "Chào", english: "greet / hello", audioKey: "breakdown-chao"),
+                    BreakdownToken(id: "anh", vietnamese: "anh", english: "older brother", audioKey: "breakdown-viet-hello-anh-relationship"),
+                    BreakdownToken(id: "full", vietnamese: "Chào anh", english: "hello, older man", audioKey: "breakdown-viet-hello-anh-full"),
                 ]
             ),
             PhraseDetailSection(
@@ -809,15 +1452,61 @@ extension PhraseDetailPage {
         title: "Rất vui được gặp bạn",
         englishTitle: "Nice to meet you",
         pronunciation: "zuht voo-ee duhk gap ban",
-        summary: "A useful next phrase when hello becomes an introduction.",
+        summary: "Different ways to make an introduction feel warm, polite, or more formal after the first hello.",
         iconName: "hands.sparkles.fill",
         tintName: .teal,
         sections: [
-            PhraseDetailSection(id: "why", title: "Why it matters", body: "This moves the exchange from a greeting into a social introduction without needing a long conversation."),
-            PhraseDetailSection(id: "use", title: "Use it when", body: "Use it after someone tells you their name, when meeting a host, guide, classmate, or new friend."),
+            PhraseDetailSection(
+                id: "at-glance",
+                title: "At a glance",
+                body: "Vietnamese does not lean on Nice to meet you as often as English does. People may move straight from hello into a friendly question. Still, this phrase is polite, easy to understand, and useful when an introduction deserves a little warmth."
+            ),
+            PhraseDetailSection(
+                id: "breakdown",
+                title: "Break it down",
+                body: "The phrase says you are very happy to meet the person. Swap the final pronoun when the person is older, younger, or in a more respectful role.",
+                breakdown: [
+                    BreakdownToken(id: "rat", vietnamese: "Rất", english: "very", audioKey: "audio-phrase-rat"),
+                    BreakdownToken(id: "vui", vietnamese: "vui", english: "happy"),
+                    BreakdownToken(id: "duoc-gap", vietnamese: "được gặp", english: "to meet", audioKey: "audio-phrase-duoc-gap"),
+                    BreakdownToken(id: "ban", vietnamese: "bạn", english: "you / friend"),
+                    BreakdownToken(id: "full", vietnamese: "Rất vui được gặp bạn", english: "Nice to meet you", audioKey: "audio-phrase-rat-vui-duoc-gap-ban"),
+                ]
+            ),
+            PhraseDetailSection(
+                id: "ways-to-say",
+                title: "Ways to say it",
+                body: "Use the standard form for most introductions, then shift the ending or tone when the relationship is clearer.",
+                phrases: [
+                    PhraseOption(id: "standard", vietnamese: "Rất vui được gặp bạn", english: "Standard nice to meet you", pronunciation: "zuht voo-ee duhk gap ban", symbolName: "speaker.wave.2.fill", tintName: .teal, detailPageID: nil, audioKey: "audio-phrase-rat-vui-duoc-gap-ban"),
+                    PhraseOption(id: "older-man", vietnamese: "Rất vui được gặp anh", english: "Nice to meet you, older man", pronunciation: "zuht voo-ee duhk gap anh", symbolName: "speaker.wave.2.fill", tintName: .blue, detailPageID: nil),
+                    PhraseOption(id: "older-woman", vietnamese: "Rất vui được gặp chị", english: "Nice to meet you, older woman", pronunciation: "zuht voo-ee duhk gap chee", symbolName: "speaker.wave.2.fill", tintName: .red, detailPageID: nil),
+                    PhraseOption(id: "formal-anh", vietnamese: "Rất hân hạnh được gặp anh", english: "Honored to meet you, older man", pronunciation: "zuht hun hanh duhk gap anh", symbolName: "speaker.wave.2.fill", tintName: .purple, detailPageID: nil),
+                    PhraseOption(id: "formal-chi", vietnamese: "Rất hân hạnh được gặp chị", english: "Honored to meet you, older woman", pronunciation: "zuht hun hanh duhk gap chee", symbolName: "speaker.wave.2.fill", tintName: .purple, detailPageID: nil),
+                    PhraseOption(id: "deep-respect-anh", vietnamese: "Vinh dự được gặp anh", english: "It is an honor to meet you, older man", pronunciation: "vinh zoo duhk gap anh", symbolName: "speaker.wave.2.fill", tintName: .purple, detailPageID: nil),
+                    PhraseOption(id: "deep-respect-chi", vietnamese: "Vinh dự được gặp chị", english: "It is an honor to meet you, older woman", pronunciation: "vinh zoo duhk gap chee", symbolName: "speaker.wave.2.fill", tintName: .purple, detailPageID: nil),
+                    PhraseOption(id: "friendly", vietnamese: "Vui quá!", english: "So happy! / How nice!", pronunciation: "voo-ee gwah", symbolName: "speaker.wave.2.fill", tintName: .orange, detailPageID: nil),
+                    PhraseOption(id: "again", vietnamese: "Rất vui được gặp lại bạn", english: "Nice to see you again", pronunciation: "zuht voo-ee duhk gap lie ban", symbolName: "speaker.wave.2.fill", tintName: .green, detailPageID: nil),
+                ]
+            ),
+            PhraseDetailSection(
+                id: "pronoun-refresher",
+                title: "Pronoun refresher",
+                body: "Use anh for a slightly older man, chị for a slightly older woman, chú for an uncle-aged man, cô for an aunt-aged woman, em for someone younger, and bạn for a peer or when you want a neutral friendly default."
+            ),
+            PhraseDetailSection(
+                id: "when-to-use",
+                title: "When to use it",
+                body: "Use this after someone shares their name, when meeting a host, guide, teacher, classmate, coworker, or new friend. In quick service moments, a greeting plus thanks may be more natural than a full introduction phrase."
+            ),
+            PhraseDetailSection(
+                id: "local-tip",
+                title: "Local tip",
+                body: "To make the exchange feel more natural, follow it with a light question like Bạn đến từ đâu? or Bạn ở đây lâu chưa? That moves the phrase from polite introduction into a real conversation."
+            ),
         ],
         examples: [
-            PhraseOption(id: "nice-meet", vietnamese: "Rất vui được gặp bạn", english: "Nice to meet you", pronunciation: "zuht voo-ee duhk gap ban", symbolName: "speaker.wave.2.fill", tintName: .teal, detailPageID: nil),
+            PhraseOption(id: "nice-meet", vietnamese: "Rất vui được gặp bạn", english: "Nice to meet you", pronunciation: "zuht voo-ee duhk gap ban", symbolName: "speaker.wave.2.fill", tintName: .teal, detailPageID: nil, audioKey: "audio-phrase-rat-vui-duoc-gap-ban"),
         ]
     )
 
@@ -848,7 +1537,7 @@ extension PhraseDetailPage {
         iconName: "hand.raised.fill",
         tintName: .blue,
         sections: [
-            PhraseDetailSection(id: "why", title: "Why it matters", body: "Xin lỗi can mean sorry or excuse me, so it is one of the safest repair phrases for travelers."),
+            PhraseDetailSection(id: "why", title: "Why it matters", body: "Xin lỗi can mean sorry or excuse me, so it is one of the safest ways for travelers to reset a small social moment."),
             PhraseDetailSection(id: "use", title: "Use it when", body: "Use it before asking a question, when squeezing past someone, or after a small mistake."),
         ],
         examples: [

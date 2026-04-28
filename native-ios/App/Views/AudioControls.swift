@@ -3,21 +3,43 @@ import SwiftUI
 struct AudioSpeakerButton: View {
     let tint: AccentTint
     var size: CGFloat = 48
+    var audioKey: String? = nil
 
-    var body: some View {
-        Button {
-        } label: {
-            Image(systemName: "speaker.wave.2.fill")
-                .font(.system(size: size * 0.36, weight: .semibold))
-                .foregroundStyle(tint.audioColor)
-                .frame(width: size, height: size)
+    static func isPlayableAudioKey(_ audioKey: String?) -> Bool {
+        playableAudioKey(audioKey) != nil
+    }
+
+    private static func playableAudioKey(_ audioKey: String?) -> String? {
+        guard
+            let audioKey,
+            AudioAssetManifest.main?.url(for: audioKey) != nil
+        else {
+            return nil
         }
-        .buttonStyle(.plain)
-        .nativeGlass(cornerRadius: size / 2, interactive: true)
+
+        return audioKey
+    }
+
+    @ViewBuilder
+    var body: some View {
+        if let playableAudioKey = Self.playableAudioKey(audioKey) {
+            Button {
+                AudioPlaybackService.shared.play(audioKey: playableAudioKey)
+            } label: {
+                Image(systemName: "speaker.wave.2.fill")
+                    .font(.system(size: size * 0.36, weight: .semibold))
+                    .foregroundStyle(tint.audioColor)
+                    .frame(width: size, height: size)
+            }
+            .buttonStyle(.plain)
+            .nativeGlass(cornerRadius: size / 2, interactive: true)
+        }
     }
 }
 
 struct PlaybackDockView: View {
+    var audioKey: String? = nil
+
     @State private var selectedSpeed = "1.0x"
     @State private var isSaved = false
 
@@ -77,6 +99,7 @@ struct PlaybackDockView: View {
 
     private var raisedPlayButton: some View {
         Button {
+            AudioPlaybackService.shared.play(audioKey: audioKey, rate: selectedRate)
         } label: {
             ZStack {
                 Circle()
@@ -107,6 +130,17 @@ struct PlaybackDockView: View {
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: 48, tint: .white, interactive: true)
+    }
+
+    private var selectedRate: Double {
+        switch selectedSpeed {
+        case "0.5x":
+            return 0.5
+        case "0.75x":
+            return 0.75
+        default:
+            return 1.0
+        }
     }
 
     private var speedSegmentedControl: some View {

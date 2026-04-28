@@ -10,15 +10,23 @@
 		034037B7D97D6400BEC8F0E8 /* AppChromeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094EBCA2A1C2908334452B3A /* AppChromeTests.swift */; };
 		0705C583B1734184937E5F87 /* AppChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92E39F9AC9626410FF3CDC /* AppChrome.swift */; };
 		3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875EEA097A552AA1510358 /* AppShellView.swift */; };
+		532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */; };
+		5E445B4FD180B59D157E434D /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = C29EA500445CB089DEEDA380 /* Audio */; };
 		63A9110E76FE4649A20494AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */; };
 		74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */; };
 		88192A7C638E2A96E565F2D5 /* NativeGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C98DE73722F896A42D9AEC1 /* NativeGlass.swift */; };
+		9578844B965CC6CF7688AC98 /* GeneratedVietContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */; };
 		A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152EC4AC0563F01164AC24D5 /* SearchPageView.swift */; };
 		A7D9EAC643A14747CC53B62E /* PhrasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */; };
 		AE8BE3879C05C9EC7BA1F804 /* AudioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16251C7B60B5DAA58A148B9 /* AudioControls.swift */; };
 		B34399CF6C5B98FB4862E2E9 /* PhraseListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C570403C2E33918DCE587ED /* PhraseListingView.swift */; };
 		B4BB1FA3BE7357CB5035A731 /* PhrasePageFixtureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */; };
+		B6D206ADF0EE288783D8CAD9 /* viet-authored-audio-audit.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CA4CCC52A4DA7FD6AD5490 /* viet-authored-audio-audit.json */; };
+		BDEF4C9D76C1888D12F3D195 /* viet-authored-listing-pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C57227E47AA382AB3CBE502 /* viet-authored-listing-pages.json */; };
 		C4CCD078FF1A029730CCD5FD /* PhraseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */; };
+		CCD6C25405A027CE9B26C2F8 /* viet-phrase-catalog.json in Resources */ = {isa = PBXBuildFile; fileRef = 123BAB8DDA1FF3C999381CF0 /* viet-phrase-catalog.json */; };
+		EA5ADDE73A6232C5884B736C /* AuthoredVietListingPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */; };
+		F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,21 +41,29 @@
 
 /* Begin PBXFileReference section */
 		094EBCA2A1C2908334452B3A /* AppChromeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChromeTests.swift; sourceTree = "<group>"; };
+		0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthoredVietListingPages.swift; sourceTree = "<group>"; };
+		123BAB8DDA1FF3C999381CF0 /* viet-phrase-catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-phrase-catalog.json"; sourceTree = "<group>"; };
 		152EC4AC0563F01164AC24D5 /* SearchPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageView.swift; sourceTree = "<group>"; };
 		18EA78216F5959BDB34B09C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E92E39F9AC9626410FF3CDC /* AppChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChrome.swift; sourceTree = "<group>"; };
+		21CA4CCC52A4DA7FD6AD5490 /* viet-authored-audio-audit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-authored-audio-audit.json"; sourceTree = "<group>"; };
 		2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeakLocalNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C98DE73722F896A42D9AEC1 /* NativeGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeGlass.swift; sourceTree = "<group>"; };
 		4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDetailView.swift; sourceTree = "<group>"; };
 		4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-audio-manifest.json"; sourceTree = "<group>"; };
 		65875EEA097A552AA1510358 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
 		75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePageFixtureTests.swift; sourceTree = "<group>"; };
 		7C570403C2E33918DCE587ED /* PhraseListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListingView.swift; sourceTree = "<group>"; };
+		7C57227E47AA382AB3CBE502 /* viet-authored-listing-pages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-authored-listing-pages.json"; sourceTree = "<group>"; };
 		81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLocalNativeApp.swift; sourceTree = "<group>"; };
 		B16251C7B60B5DAA58A148B9 /* AudioControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControls.swift; sourceTree = "<group>"; };
+		C29EA500445CB089DEEDA380 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Audio; path = Resources/Audio; sourceTree = SOURCE_ROOT; };
+		C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAssetManifest.swift; sourceTree = "<group>"; };
 		CAFC680CFAC8603E5527F4D7 /* SpeakLocalNativeTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SpeakLocalNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34BE92DD2418521F1F8A962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePage.swift; sourceTree = "<group>"; };
+		F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedVietContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -85,6 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */,
+				54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */,
+				21CA4CCC52A4DA7FD6AD5490 /* viet-authored-audio-audit.json */,
+				7C57227E47AA382AB3CBE502 /* viet-authored-listing-pages.json */,
+				123BAB8DDA1FF3C999381CF0 /* viet-phrase-catalog.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -102,6 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				1E92E39F9AC9626410FF3CDC /* AppChrome.swift */,
+				C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */,
+				0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */,
+				F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */,
 				EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */,
 			);
 			path = Models;
@@ -122,6 +145,7 @@
 		F3DB1F16F0EEC2E9A07CB46D = {
 			isa = PBXGroup;
 			children = (
+				C29EA500445CB089DEEDA380 /* Audio */,
 				E0F2C96854957777ACE8C283 /* App */,
 				7EEA46CD4D18A7F1A968A922 /* Resources */,
 				0B6DE062040ABE1399548B98 /* Tests */,
@@ -205,6 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A9110E76FE4649A20494AC /* Assets.xcassets in Resources */,
+				5E445B4FD180B59D157E434D /* Audio in Resources */,
+				F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */,
+				B6D206ADF0EE288783D8CAD9 /* viet-authored-audio-audit.json in Resources */,
+				BDEF4C9D76C1888D12F3D195 /* viet-authored-listing-pages.json in Resources */,
+				CCD6C25405A027CE9B26C2F8 /* viet-phrase-catalog.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +255,10 @@
 			files = (
 				0705C583B1734184937E5F87 /* AppChrome.swift in Sources */,
 				3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */,
+				532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */,
 				AE8BE3879C05C9EC7BA1F804 /* AudioControls.swift in Sources */,
+				EA5ADDE73A6232C5884B736C /* AuthoredVietListingPages.swift in Sources */,
+				9578844B965CC6CF7688AC98 /* GeneratedVietContent.swift in Sources */,
 				88192A7C638E2A96E565F2D5 /* NativeGlass.swift in Sources */,
 				C4CCD078FF1A029730CCD5FD /* PhraseDetailView.swift in Sources */,
 				B34399CF6C5B98FB4862E2E9 /* PhraseListingView.swift in Sources */,

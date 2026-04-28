@@ -1,0 +1,3675 @@
+{
+  "metadata": {
+    "generatedAt": "2026-04-27T21:31:21.149Z",
+    "tierOneFamilyCount": 150,
+    "requiredAudioCount": 458,
+    "missingAudioCount": 0
+  },
+  "required": [
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "polite-2",
+      "text": "Cảm ơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "polite-thank-you-polite",
+      "text": "Cảm ơn nhiều",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "polite-1",
+      "text": "Xin chào",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "polite-3",
+      "text": "Dạ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "polite-4",
+      "text": "Không, cảm ơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "polite-5",
+      "text": "Xin lỗi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "polite-6",
+      "text": "Không sao đâu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "polite-7",
+      "text": "Tạm biệt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-poli-basi-yes",
+      "text": "Đúng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-polite-no-thanks",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-4-first",
+      "text": "Không,",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-polite-no-thanks",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "polite-2",
+      "text": "cảm ơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-goodbye",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-7-first",
+      "text": "Tạm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-goodbye",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-7-rest",
+      "text": "biệt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "problems-2",
+      "text": "Tôi không hiểu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-khong-d857f6f7a6",
+      "text": "Tôi không",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-unde-repa-i-understand-a-little-piece-2",
+      "text": "hiểu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "problems-3",
+      "text": "Nói chậm chút được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "repair-1",
+      "text": "Làm ơn nói lại",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "repair-2",
+      "text": "Viết xuống giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "repair-3",
+      "text": "Cái đó nghĩa là gì?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "repair-6",
+      "text": "Làm ơn nói lại số đó",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "repair-english-help",
+      "text": "Anh/chị nói tiếng Anh không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-understand",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-unde-repa-please-say-it-slowly",
+      "text": "Hãy nói từ từ nhé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-slower",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-problems-3-first",
+      "text": "Nói",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-slower",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-5",
+      "text": "chậm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-slower",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-unde-repa-i-understand-a-little-piece-4",
+      "text": "chút",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-slower",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9",
+      "text": "được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-slower",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "repair-slower-polite",
+      "text": "Nói chậm giúp tôi được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-repeat",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-lam-on-94fabbadab",
+      "text": "Làm ơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-repeat",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-noi-lai-aad8913b45",
+      "text": "nói lại",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-write-down",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-viet-xuong-13d1fda322",
+      "text": "Viết xuống",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-write-down",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-giup-toi-38e527ca39",
+      "text": "giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-number",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-tran-the-car-number-is-different-first",
+      "text": "số",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-number",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-repair-premium-which-exit-first",
+      "text": "đó",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-number",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "repair-number-amount",
+      "text": "Anh/chị vừa nói bao nhiêu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-english-help",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-repair-english-help-first",
+      "text": "Anh/chị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-english-help",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-problems-3-first",
+      "text": "nói",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-english-help",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-tieng-anh-70a5f1228a",
+      "text": "tiếng Anh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-english-help",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-bath-6-piece-6",
+      "text": "không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-repair-english-help",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "repair-english-help-self-limit",
+      "text": "Xin lỗi, tôi không nói tiếng Việt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "taxi-1",
+      "text": "Cho tôi tới đây",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cho-toi-18c6fe1018",
+      "text": "Cho tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-hote-acco-can-you-book-a-car-to-the-airport-piece-6",
+      "text": "tới",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-transport-1-first",
+      "text": "đây",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "taxi-2",
+      "text": "Đi quận 1",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "taxi-3",
+      "text": "Dừng ở đây được rồi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "taxi-4",
+      "text": "Đi đường này đi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "taxi-5",
+      "text": "Mở máy lạnh giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "taxi-6",
+      "text": "Chờ tôi năm phút",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "taxi-7",
+      "text": "Tôi trả bằng tiền mặt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "transport-fare",
+      "text": "Tiền xe bao nhiêu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "transport-meter",
+      "text": "Làm ơn bật đồng hồ giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-destination",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "transport-lost",
+      "text": "Tôi nghĩ chúng ta bị lạc rồi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-main-destination",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-coffee-6-rest",
+      "text": "Đi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-main-destination",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-2-piece-2",
+      "text": "quận",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-main-destination",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-2-piece-3",
+      "text": "1",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-stop-here",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-3-first",
+      "text": "Dừng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-stop-here",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-directions-2-first",
+      "text": "ở",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-stop-here",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first",
+      "text": "được",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-stop-here",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-roi-081cfe9299",
+      "text": "rồi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-stop-here",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "transport-stop-here-clearer",
+      "text": "Cho tôi xuống ngay đây",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-route",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-tran-the-app-shows-a-different-route-piece-7",
+      "text": "đường",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-route",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2",
+      "text": "này",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-route",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-coffee-6-rest",
+      "text": "đi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-aircon",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-5-first",
+      "text": "Mở",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-aircon",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-may-lanh-59af7c874b",
+      "text": "máy lạnh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-wait",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cho-toi-588928baee",
+      "text": "Chờ tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-wait",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-6-piece-3",
+      "text": "năm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-wait",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-6-piece-4",
+      "text": "phút",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-cash",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-tra-d144c89c24",
+      "text": "Tôi trả",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-cash",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-airp-bord-arri-can-i-get-a-written-report-piece-9",
+      "text": "bằng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-cash",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-tien-mat-16c6e89498",
+      "text": "tiền mặt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-fare",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-transport-fare-first",
+      "text": "Tiền",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-fare",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-transport-2-first",
+      "text": "xe",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-fare",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-bao-nhieu-415a7b69fa",
+      "text": "bao nhiêu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-meter",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-bat-558b946a47",
+      "text": "bật",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-meter",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-poli-basi-okay-first",
+      "text": "đồng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-meter",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-ho-118e7abdc8",
+      "text": "hồ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-lost",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first",
+      "text": "Tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-lost",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-emer-safe-i-think-this-is-a-scam-piece-2",
+      "text": "nghĩ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-lost",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-money-premium-split-payment-first",
+      "text": "chúng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-lost",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-ta-00a6ba21da",
+      "text": "ta",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-lost",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-help-4-piece-2",
+      "text": "bị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-transport-lost",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-lac-960ecbbaf0",
+      "text": "lạc",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "hotel-1",
+      "text": "Tôi có đặt phòng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-co-054b2152b4",
+      "text": "Tôi có",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-hote-acco-the-reservation-is-under-this-name-first",
+      "text": "đặt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-hotel-4-first",
+      "text": "phòng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "hotel-2",
+      "text": "Cho tôi nhận phòng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "hotel-3",
+      "text": "Mấy giờ trả phòng?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "hotel-checkout",
+      "text": "Cho tôi trả phòng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "hotel-4",
+      "text": "Phòng này nóng quá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "hotel-5",
+      "text": "Máy lạnh không chạy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "hotel-6",
+      "text": "Cho tôi thêm khăn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "hotel-7",
+      "text": "Giữ hành lý giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-reservation",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-hote-acco-the-door-does-not-lock",
+      "text": "Cửa không khóa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-check-in",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-nhan-phong-2c8d3eb3c0",
+      "text": "nhận phòng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-check-in",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "hotel-check-in-polite",
+      "text": "Cho tôi nhận phòng nhé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-checkout-time",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-hotel-3-first",
+      "text": "Mấy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-checkout-time",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-time-7-piece-2",
+      "text": "giờ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-checkout-time",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-token-tra-phong",
+      "text": "trả phòng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-room-hot",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-hotel-4-first",
+      "text": "Phòng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-room-hot",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-food-drin-one-hot-coffee-please-piece-8",
+      "text": "nóng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-room-hot",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-price-3-rest",
+      "text": "quá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-aircon-broken",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-may-lanh-59af7c874b",
+      "text": "Máy lạnh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-aircon-broken",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-6-first",
+      "text": "không",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-aircon-broken",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-chay-8a7f58294c",
+      "text": "chạy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-more-supplies",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-hote-acco-how-much-is-one-extra-night-first",
+      "text": "thêm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-more-supplies",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-khan-2f6c7b4aaf",
+      "text": "khăn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-more-supplies",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "hotel-more-supplies-paper",
+      "text": "Cho tôi thêm giấy vệ sinh được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-luggage",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-hotel-7-first",
+      "text": "Giữ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-hotel-luggage",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-airport-baggage-subject-2",
+      "text": "hành lý",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "coffee-1",
+      "text": "Cho tôi một cà phê sữa đá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-loca-serv-ever-task-one-item-is-missing-first",
+      "text": "một",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-ca-phe-sua-617d03a211",
+      "text": "cà phê sữa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-coffee-1-piece-7",
+      "text": "đá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "coffee-2",
+      "text": "Cho tôi cà phê đen đá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "coffee-3",
+      "text": "Cho tôi bạc xỉu đá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "coffee-4",
+      "text": "Ít đá thôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "coffee-5",
+      "text": "Không đường nhé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "coffee-6",
+      "text": "Mang đi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "coffee-7",
+      "text": "Tính tiền giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-need-table",
+      "text": "Cho tôi bàn cho hai người nhé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-menu",
+      "text": "Cho tôi xem thực đơn được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-1",
+      "text": "Cho tôi một phần",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-2",
+      "text": "Cho tôi tô này",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-3",
+      "text": "Không cay nhé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-4",
+      "text": "Cho thêm rau",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-black",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-ca-phe-den-855822aaf3",
+      "text": "cà phê đen",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-bac-xiu",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-bac-8a73542df7",
+      "text": "bạc",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-bac-xiu",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-xiu-d6fdbab10c",
+      "text": "xỉu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-less-ice",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-coffee-4-first",
+      "text": "Ít",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-less-ice",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-mone-numb-pric-i-only-have-this-much-piece-6",
+      "text": "thôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-no-sugar",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-khong-duong-cffc0ba1c4",
+      "text": "Không đường",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-no-sugar",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-food-need-table-piece-7",
+      "text": "nhé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-to-go",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-coffee-6-first",
+      "text": "Mang",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-pay-now",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-coffee-7-first",
+      "text": "Tính",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-pay-now",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-transport-fare-first",
+      "text": "tiền",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-need-table",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-food-need-table-piece-3",
+      "text": "bàn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-need-table",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-1-first",
+      "text": "cho",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-need-table",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-mone-numb-pric-how-much-for-two-of-them-first",
+      "text": "hai",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-need-table",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-tran-the-driver-left-without-me-first",
+      "text": "người",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-menu",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-unde-repa-can-you-show-me-a-picture-piece-6",
+      "text": "xem",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-menu",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-thuc-don-e20262c8d2",
+      "text": "thực đơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-one-portion",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-food-1-piece-4",
+      "text": "phần",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-this-bowl",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-food-drin-id-like-a-bowl-of-ph-please-piece-6",
+      "text": "tô",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-not-spicy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-6-first",
+      "text": "Không",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-not-spicy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cay-fc99e1ed31",
+      "text": "cay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-not-spicy",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "audio-authored-it-cay-thoi-05b8e258a2",
+      "text": "Ít cay thôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-more-herbs",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-1-first",
+      "text": "Cho",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-more-herbs",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-rau-0b99694876",
+      "text": "rau",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-bottled-water",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "food-5",
+      "text": "Có nước suối không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-bottled-water",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-food-5-first",
+      "text": "Có",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-bottled-water",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-nuoc-suoi-69c78e2722",
+      "text": "nước suối",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-utensils",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "food-6",
+      "text": "Cho tôi muỗng với đũa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-utensils",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-muong-7f339246d3",
+      "text": "muỗng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-utensils",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-voi-25e5621456",
+      "text": "với",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-utensils",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dua-740addc075",
+      "text": "đũa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-pack-to-go",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "food-7",
+      "text": "Gói mang về",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-pack-to-go",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-food-7-first",
+      "text": "Gói",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-pack-to-go",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-coffee-6-first",
+      "text": "mang",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-pack-to-go",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-emergency-premium-passport-report-piece-6",
+      "text": "về",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-vegetarian",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "food-vegetarian",
+      "text": "Tôi ăn chay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-vegetarian",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-food-drin-i-do-not-eat-seafood-piece-3",
+      "text": "ăn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-vegetarian",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-chay-78f4254ec2",
+      "text": "chay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-peanut-allergy",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "food-peanut-allergy",
+      "text": "Tôi bị dị ứng đậu phộng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-peanut-allergy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-bi-0a9d4721f7",
+      "text": "Tôi bị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-peanut-allergy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-di-b18afef0af",
+      "text": "dị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-peanut-allergy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-dire-navi-my-map-app-is-not-working-first",
+      "text": "ứng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-peanut-allergy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dau-9b24b3d631",
+      "text": "đậu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-peanut-allergy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-phong-a47787ffce",
+      "text": "phộng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-peanut-allergy",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "food-15",
+      "text": "Món này có trứng hay đậu phộng không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "price-1",
+      "text": "Cái này bao nhiêu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-repair-3-first",
+      "text": "Cái",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "money-how-much-common",
+      "text": "Cái này nhiêu tiền?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "price-2",
+      "text": "Bao nhiêu một ký?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "price-3",
+      "text": "Mắc quá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "price-4",
+      "text": "Bớt chút được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "price-5",
+      "text": "Giá cuối bao nhiêu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "price-6",
+      "text": "Cho tôi xem cái khác",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "price-7",
+      "text": "Tôi lấy cái này",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "airport-4",
+      "text": "ATM gần nhất ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-how-much",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card",
+      "text": "ATM đã giữ thẻ của tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-per-kilo",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-bao-nhieu-415a7b69fa",
+      "text": "Bao nhiêu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-per-kilo",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-ky-ae0d1a249d",
+      "text": "ký",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-too-expensive",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-price-3-first",
+      "text": "Mắc",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-lower-price",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-price-4-first",
+      "text": "Bớt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-final-price",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-price-5-first",
+      "text": "Giá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-final-price",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cuoi-f50444f233",
+      "text": "cuối",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-another-one",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-repair-3-first",
+      "text": "cái",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-another-one",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-money-premium-price-changed-piece-6",
+      "text": "khác",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-take-this",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-poli-basi-sorry-first",
+      "text": "lấy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-find-atm",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-mone-numb-pric-the-atm-kept-my-card-first",
+      "text": "ATM",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-find-atm",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-gan-nhat-43fcc2ceca",
+      "text": "gần nhất",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-money-find-atm",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-where",
+      "text": "ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "directions-1",
+      "text": "Cho hỏi, đi tới đó thế nào?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cho-hoi-a992b387aa",
+      "text": "Cho hỏi,",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-mone-numb-pric-is-this-enough-first",
+      "text": "thế",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-bath-pers-need-is-there-a-public-bathroom-nearby-piece-6",
+      "text": "nào",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "directions-2",
+      "text": "Ở gần đây không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "directions-3",
+      "text": "Đi bộ mất bao lâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "directions-4",
+      "text": "Rẽ trái ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "directions-5",
+      "text": "Tôi rẽ phải đúng không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "directions-6",
+      "text": "Tôi đi thẳng phải không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "directions-7",
+      "text": "Cảm ơn, tôi hiểu rồi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-to-get",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-dire-navi-where-is-the-nearest-restroom",
+      "text": "Nhà vệ sinh gần nhất ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-near",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-directions-2-first",
+      "text": "Ở",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-near",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-bath-pers-need-is-there-a-public-bathroom-nearby-piece-7",
+      "text": "gần",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-long",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-di-bo-4b0917ce90",
+      "text": "Đi bộ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-long",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-emergency-premium-passport-report-piece-10",
+      "text": "mất",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-how-long",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-bao-lau-e86acb5e0c",
+      "text": "bao lâu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-turn-left",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-directions-turn-left-subject",
+      "text": "Rẽ trái",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-turn-right",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-re-phai-904ff447ef",
+      "text": "rẽ phải",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-turn-right",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dung-khong-c31a53b0bc",
+      "text": "đúng không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-go-straight",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-tran-please-go-straight-rest",
+      "text": "đi thẳng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-go-straight",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-phai-khong-5fe2a5276e",
+      "text": "phải không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-understand-now",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cam-on-da6d4fa684",
+      "text": "Cảm ơn,",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-directions-understand-now",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first",
+      "text": "tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "airport-1",
+      "text": "Nhập cảnh ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-airport-immigration-subject",
+      "text": "Nhập cảnh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "airport-2",
+      "text": "Lấy hành lý ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "airport-3",
+      "text": "Mua SIM ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "airport-5",
+      "text": "Khu đón ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "airport-6",
+      "text": "Hành lý của tôi chưa tới",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-airp-bord-arri-here-is-my-visa",
+      "text": "Đây là thị thực của tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-airp-bord-arri-where-is-the-atm",
+      "text": "ATM ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-airp-bord-arri-here-is-my-passport",
+      "text": "Đây là hộ chiếu của tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-baggage",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-poli-basi-sorry-first",
+      "text": "Lấy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-sim",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-airport-sim-subject",
+      "text": "Mua SIM",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-pickup",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-airport-pickup-subject",
+      "text": "Khu đón",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-pickup",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "airport-pickup-clearer",
+      "text": "Tôi gặp tài xế ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-bag-missing",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-airport-baggage-subject-2",
+      "text": "Hành lý",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-bag-missing",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-3-piece-4",
+      "text": "của tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-airport-bag-missing",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-food-drin-this-is-undercooked-piece-3",
+      "text": "chưa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "problems-6",
+      "text": "Tôi cần bác sĩ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-can-b0dd0f0330",
+      "text": "Tôi cần",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-bac-si-4d00793cbd",
+      "text": "bác sĩ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "health-pharmacy-clearer",
+      "text": "Nhà thuốc gần nhất ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "health-2",
+      "text": "Tôi bị đau đầu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "health-3",
+      "text": "Tôi đau bụng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "health-4",
+      "text": "Có thuốc say xe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "health-5",
+      "text": "Tôi bị dị ứng cái này",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "health-6",
+      "text": "Tôi cần thuốc tiêu chảy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-doctor",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-heal-phar-i-feel-dizzy",
+      "text": "Tôi cảm thấy chóng mặt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-pharmacy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-nha-thuoc-0ff922e96f",
+      "text": "Nhà thuốc",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-pharmacy",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "health-1",
+      "text": "Nhà thuốc ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-headache",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dau-05338a0df3",
+      "text": "đau",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-headache",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-time-7-piece-4",
+      "text": "đầu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-stomach",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-bung-bdc8238476",
+      "text": "bụng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-motion-sickness",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-heal-phar-i-need-mosquito-repellent-piece-3",
+      "text": "thuốc",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-motion-sickness",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-say-xe-b7d705f395",
+      "text": "say xe",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-diarrhea",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-tieu-47813fbd96",
+      "text": "tiêu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-diarrhea",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-chay-2e1a5981cb",
+      "text": "chảy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-lost",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "problems-1",
+      "text": "Tôi bị lạc đường",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-lost",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "problems-4",
+      "text": "Tôi quên đồ rồi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-lost",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "help-need-help-direct",
+      "text": "Giúp tôi với",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-lost",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "help-2",
+      "text": "Gọi khách sạn giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-lost",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "help-3",
+      "text": "Tôi cần quản lý",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-lost",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-prob-help-i-need-help-now",
+      "text": "Tôi cần giúp đỡ bây giờ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-left-something",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-quen-834ba616ad",
+      "text": "quên",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-left-something",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-5-first",
+      "text": "đồ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-need-help",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-giup-toi-38e527ca39",
+      "text": "Giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-need-help",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "help-1",
+      "text": "Anh/chị giúp tôi với",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-call-hotel",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-hotel-9-first",
+      "text": "Gọi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-call-hotel",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-khach-san-3f2b5c17cf",
+      "text": "khách sạn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-manager",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-quan-e55539121e",
+      "text": "quản",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-help-manager",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-hote-acco-can-you-store-my-luggage-after-check-out-piece-6",
+      "text": "lý",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-what-time",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "time-1",
+      "text": "Mấy giờ?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-what-time",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "time-2",
+      "text": "Hôm nay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-what-time",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "time-3",
+      "text": "Sáng mai",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-what-time",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "time-4",
+      "text": "Tôi có đặt chỗ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-what-time",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "time-5",
+      "text": "Mấy giờ mở cửa?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-what-time",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-time-date-book-is-there-a-wait",
+      "text": "Có chờ đợi không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-what-time",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-time-date-book-one-ticket-please",
+      "text": "Xin một vé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-today",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-time-2-first",
+      "text": "Hôm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-today",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-time-2-rest",
+      "text": "nay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-tomorrow-morning",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-time-3-first",
+      "text": "Sáng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-tomorrow-morning",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-time-3-rest",
+      "text": "mai",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-have-booking",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-tran-is-this-seat-available-first",
+      "text": "chỗ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-open",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-5-first",
+      "text": "mở",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-time-open",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-hote-acco-the-door-does-not-lock-first",
+      "text": "cửa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "shop-1",
+      "text": "Tôi muốn cỡ này",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-muon-bc9bf5f414",
+      "text": "Tôi muốn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-co-9064def352",
+      "text": "cỡ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "shop-2",
+      "text": "Có màu khác không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "shop-3",
+      "text": "Tôi thử cái này được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "shop-4",
+      "text": "Tôi chỉ xem thôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "shop-5",
+      "text": "Trả ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-shop-how-much-is-this-item",
+      "text": "Mặt hàng này giá bao nhiêu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f",
+      "text": "Giảm giá chút được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-color",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-mau-6ba425176c",
+      "text": "màu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-try-on",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-thu-fb28e562c2",
+      "text": "thử",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-just-looking",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-repair-show-me-first",
+      "text": "chỉ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-shopping-pay-where",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-food-17-first",
+      "text": "Trả",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "phone-1",
+      "text": "Mật khẩu Wi-Fi là gì?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-mat-khau-888c9c47cf",
+      "text": "Mật khẩu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-hote-acco-the-wi-fi-is-not-working-in-my-room-first",
+      "text": "Wi-Fi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-tran-how-much-is-the-rental-per-day-piece-5",
+      "text": "là",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-gi-d067b67cb3",
+      "text": "gì",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "phone-wifi-common",
+      "text": "Pass Wi-Fi là gì?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "phone-2",
+      "text": "Có bán SIM không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "phone-3",
+      "text": "Điện thoại tôi hết pin rồi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "phone-4",
+      "text": "Có sạc không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "phone-5",
+      "text": "Tôi sạc điện thoại ở đây được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-phon-inte-powe-my-map-is-not-working",
+      "text": "Bản đồ của tôi không hoạt động",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87",
+      "text": "Tôi có thể mua SIM ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-wifi-password",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-phon-inte-powe-i-need-an-esim",
+      "text": "Tôi cần một eSIM",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-sim",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-co-ban-b2bd3fcaed",
+      "text": "Có bán",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-sim",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-airport-sim-subject-2",
+      "text": "SIM",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-battery-dead",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dien-thoai-bad3a61e57",
+      "text": "Điện thoại",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-battery-dead",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-het-6a8751044e",
+      "text": "hết",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-battery-dead",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-pin-d145a2a905",
+      "text": "pin",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-charger",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-phon-inte-powe-i-need-a-charging-cable-piece-5",
+      "text": "sạc",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-charge-here",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dien-thoai-bad3a61e57",
+      "text": "điện thoại",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "bath-1",
+      "text": "Nhà vệ sinh ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-bathroom-where-subject",
+      "text": "Nhà vệ sinh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "bath-2",
+      "text": "Có giấy vệ sinh không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "bathroom-use",
+      "text": "Tôi dùng nhà vệ sinh được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "bath-3",
+      "text": "Có xà phòng không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "bath-4",
+      "text": "Tôi rửa tay ở đây được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "bath-5",
+      "text": "Tôi cần nước",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-paper",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-emer-safe-i-need-a-temporary-travel-document-piece-3",
+      "text": "giấy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-paper",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-ve-5592bb10cb",
+      "text": "vệ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-paper",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-sinh-688cfd5ead",
+      "text": "sinh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-use",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dung-97ac08e579",
+      "text": "dùng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-use",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-bathroom-where-subject",
+      "text": "nhà vệ sinh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-soap",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-xa-c275fda8be",
+      "text": "xà",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-wash-hands",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-rua-ac068417b7",
+      "text": "rửa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-wash-hands",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-tay-32014f7f8e",
+      "text": "tay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-bathroom-water",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-food-drin-one-sugarcane-juice-please-piece-5",
+      "text": "nước",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "emergency-1",
+      "text": "Gọi công an",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-bath-pers-need-is-there-a-public-bathroom-nearby-piece-4",
+      "text": "công",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-emer-safe-i-am-safe-now-piece-5",
+      "text": "an",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "emergency-2",
+      "text": "Gọi xe cứu thương",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "emergency-3",
+      "text": "Tôi mất hộ chiếu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "emergency-4",
+      "text": "Tôi cảm thấy không an toàn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "emergency-emergency",
+      "text": "Đây là trường hợp khẩn cấp",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "emergency-hospital",
+      "text": "Bệnh viện gần nhất ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-emer-safe-i-am-injured",
+      "text": "tôi bị thương",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-emer-safe-i-cannot-move",
+      "text": "Tôi không thể di chuyển",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-police",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-emer-safe-do-not-touch-me",
+      "text": "Đừng chạm vào tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-ambulance",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cuu-981c314329",
+      "text": "cứu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-ambulance",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-thuong-5c76da3bd9",
+      "text": "thương",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-passport",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-airp-bord-arri-here-is-my-passport-piece-3",
+      "text": "hộ chiếu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-not-safe",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cam-thay-8ff4ed8cf3",
+      "text": "cảm thấy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-not-safe",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-emer-safe-i-am-safe-now-piece-6",
+      "text": "toàn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-emergency",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-transport-1-first",
+      "text": "Đây",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-emergency",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-truong-hop-5675f19b1b",
+      "text": "trường hợp",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-emergency",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-khan-7988841eb5",
+      "text": "khẩn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-emergency",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cap-2f1dbad871",
+      "text": "cấp",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-emergency",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "emergency-5",
+      "text": "Cứu tôi với!",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-hospital",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-heal-phar-i-need-a-hospital-piece-4",
+      "text": "Bệnh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-hospital",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-heal-phar-i-need-a-hospital-piece-5",
+      "text": "viện",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "smalltalk-1",
+      "text": "Tôi đến từ Mỹ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-airp-bord-arri-how-much-to-district-1-first",
+      "text": "đến",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-tu-c826c3782d",
+      "text": "từ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-my-bcc6991c28",
+      "text": "Mỹ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "smalltalk-2",
+      "text": "Tôi từ Anh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "smalltalk-3",
+      "text": "Đây là lần đầu của tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "smalltalk-4",
+      "text": "Tôi thích Việt Nam",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "smalltalk-5",
+      "text": "Đồ ăn ngon quá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "smalltalk-6",
+      "text": "Thời tiết nóng quá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "smalltalk-7",
+      "text": "Bạn khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-uk",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-anh-relationship",
+      "text": "Anh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-first-time",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-time-date-book-when-is-the-next-one-first",
+      "text": "lần",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-like-vietnam",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-4-piece-2",
+      "text": "thích",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-like-vietnam",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-4-piece-3",
+      "text": "Việt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-like-vietnam",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-4-piece-4",
+      "text": "Nam",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-food-good",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-5-first",
+      "text": "Đồ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-food-good",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-ngon-206621adf2",
+      "text": "ngon",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-weather-hot",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-6-first",
+      "text": "Thời",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-weather-hot",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-tiet-735d8b2d61",
+      "text": "tiết",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-7-first",
+      "text": "Bạn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-khoe-172d93f8d9",
+      "text": "khỏe",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you",
+      "sectionID": "relationship-forms",
+      "kind": "phrase",
+      "audioKey": "audio-authored-anh-khoe-khong-942769853d",
+      "text": "Anh khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you",
+      "sectionID": "relationship-forms",
+      "kind": "phrase",
+      "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
+      "text": "Chị khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you",
+      "sectionID": "relationship-forms",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-em-khoe-khong",
+      "text": "Em khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-ticket",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "sight-1",
+      "text": "Vé bao nhiêu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-ticket",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-sight-1-first",
+      "text": "Vé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-ticket",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "sight-2",
+      "text": "Bắt đầu ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-ticket",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "sight-3",
+      "text": "Tôi chụp hình ở đây được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-ticket",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "sight-4",
+      "text": "Mấy giờ đóng cửa?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-ticket",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "sight-5",
+      "text": "Điểm gặp ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-ticket",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af",
+      "text": "Tôi có đặt tour",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-start",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-time-7-piece-3",
+      "text": "Bắt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-photos",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-chup-f7b9fe0c5d",
+      "text": "chụp",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-photos",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-hinh-18287abbee",
+      "text": "hình",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-close",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-time-date-book-is-it-closed-on-mondays-piece-3",
+      "text": "đóng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-meeting-point",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-dire-navi-can-you-point-out-a-nearby-landmark-piece-7",
+      "text": "Điểm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-sight-meeting-point",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-time-date-book-great-see-you-then-piece-3",
+      "text": "gặp",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "store-1",
+      "text": "Cho tôi chai nước",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water-subject-6",
+      "text": "chai",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "store-2",
+      "text": "Có túi không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "store-3",
+      "text": "Cho tôi khăn giấy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "store-4",
+      "text": "Ở đâu có kem chống nắng?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "store-5",
+      "text": "Mở cái này giúp tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "store-6",
+      "text": "Tôi quẹt thẻ được không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "store-7",
+      "text": "Cho tôi hóa đơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-water",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water",
+      "text": "Tôi có thể mua nước ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-bag",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-emergency-6-first",
+      "text": "túi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-sunscreen",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-o-dau-ca439c525d",
+      "text": "Ở đâu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-sunscreen",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-food-5-first",
+      "text": "có",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-sunscreen",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-kem-9788976da9",
+      "text": "kem",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-sunscreen",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-heal-phar-i-need-mosquito-repellent-piece-4",
+      "text": "chống",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-sunscreen",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-nang-b82b96e096",
+      "text": "nắng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-card",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-quet-f98989a914",
+      "text": "quẹt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-card",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-hotel-8-first",
+      "text": "thẻ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-receipt",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-hoa-f3c614644a",
+      "text": "hóa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-service-receipt",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-unde-repa-can-you-say-it-in-a-simpler-way-piece-8",
+      "text": "đơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-unde-repa-please-say-it-slowly",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-money-premium-write-total-first",
+      "text": "Hãy",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-hote-acco-the-door-does-not-lock",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-hote-acco-the-door-does-not-lock-first",
+      "text": "Cửa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-hote-acco-the-door-does-not-lock",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-khoa-2a71e53085",
+      "text": "khóa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-emer-safe-there-has-been-an-accident-first",
+      "text": "đã",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-hotel-7-first",
+      "text": "giữ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-airp-bord-arri-here-is-my-visa-piece-3",
+      "text": "thị thực",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-heal-phar-i-feel-dizzy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-chong-mat-2e09cfc713",
+      "text": "chóng mặt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-prob-help-i-need-help-now",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-help-need-help-direct-first",
+      "text": "giúp",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-prob-help-i-need-help-now",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-prob-help-i-need-help-now-piece-4",
+      "text": "đỡ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-prob-help-i-need-help-now",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-dire-navi-is-it-open-now-first",
+      "text": "bây",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-time-date-book-is-there-a-wait",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-taxi-6-first",
+      "text": "chờ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-time-date-book-is-there-a-wait",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-doi-9f2d797405",
+      "text": "đợi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-time-date-book-one-ticket-please",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-xin",
+      "text": "Xin",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-time-date-book-one-ticket-please",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-sight-1-first",
+      "text": "vé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-shop-how-much-is-this-item",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-shop-how-much-is-this-item-first",
+      "text": "Mặt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-shop-how-much-is-this-item",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-loca-serv-ever-task-one-item-is-missing-piece-3",
+      "text": "hàng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-shop-how-much-is-this-item",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-price-5-first",
+      "text": "giá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-shop-can-you-lower-the-price",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-giam-gia-dc1ca2512b",
+      "text": "Giảm giá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-phon-inte-powe-my-map-is-not-working-first",
+      "text": "Bản",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-hoat-5d8338b06c",
+      "text": "hoạt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dong-5d0ad963d2",
+      "text": "động",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-co-the-c42da3d159",
+      "text": "Tôi có thể",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-airport-sim-subject",
+      "text": "mua SIM",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-phon-inte-powe-i-need-an-esim",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-phone-7-first",
+      "text": "eSIM",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-emer-safe-i-am-injured",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-bi-0a9d4721f7",
+      "text": "tôi bị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-emer-safe-i-cannot-move",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-hotel-premium-late-checkout-piece-3",
+      "text": "thể",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-emer-safe-i-cannot-move",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-di-f502e82c25",
+      "text": "di",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-emer-safe-i-cannot-move",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-chuyen-8aeabb62a5",
+      "text": "chuyển",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-emer-safe-do-not-touch-me",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-emer-safe-do-not-touch-me-first",
+      "text": "Đừng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-emer-safe-do-not-touch-me",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cham-1e86c7e059",
+      "text": "chạm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-emer-safe-do-not-touch-me",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-tran-the-entrance-is-on-the-other-side-piece-2",
+      "text": "vào",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-sigh-acti-i-have-a-tour-booking",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dat-tour-22d17cd279",
+      "text": "đặt tour",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-v500-loca-serv-ever-task-where-can-i-buy-water",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-dire-navi-is-it-inside-the-mall-piece-7",
+      "text": "mua",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-polite-thank-you-polite",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-nhieu-5128d5a1d4",
+      "text": "nhiều",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-repair-number-amount",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-vua-0467562c66",
+      "text": "vừa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-repair-english-help-self-limit",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-xin-loi-f08350a24d",
+      "text": "Xin lỗi,",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-repair-english-help-self-limit",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-khong-d857f6f7a6",
+      "text": "tôi không",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-repair-english-help-self-limit",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-tieng-cdab7036ce",
+      "text": "tiếng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-transport-stop-here-clearer",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-xuong-8272d5a25c",
+      "text": "xuống",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-transport-stop-here-clearer",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-ngay-27a5da243f",
+      "text": "ngay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-food-not-spicy-clearer",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-it-cay-df4790e281",
+      "text": "Ít cay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-food-15",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-food-premium-too-spicy-now-first",
+      "text": "Món",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-food-15",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-trung-7e4461a3f9",
+      "text": "trứng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-food-15",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-hay-ebddd6b268",
+      "text": "hay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-money-how-much-common",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-price-2-piece-2",
+      "text": "nhiêu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-airport-pickup-clearer",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-airp-bord-arri-my-driver-canceled-first",
+      "text": "tài",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-airport-pickup-clearer",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-xe-6c2eb6f528",
+      "text": "xế",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-phone-wifi-common",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-pass-d7cd56f2a2",
+      "text": "Pass",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-emergency-5",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cuu-981c314329",
+      "text": "Cứu",
+      "resolved": true
+    }
+  ],
+  "missing": []
+}

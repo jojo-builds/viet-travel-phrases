@@ -17,6 +17,11 @@ targets:
     sources:
       - path: App
       - path: Resources
+        excludes:
+          - Audio
+      - path: Resources/Audio
+        type: folder
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: app.speaklocal.vietnam.native

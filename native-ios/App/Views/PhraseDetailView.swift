@@ -2,71 +2,138 @@ import SwiftUI
 
 struct PhraseDetailView: View {
     let page: PhraseDetailPage
+    let scrollToTopTrigger: Int
+    let chromeNamespace: Namespace.ID?
+    let isSearchActive: Bool
+    let showsChrome: Bool
     var onBackTapped: () -> Void
     var onSearchTapped: () -> Void
     var onDetailTapped: (String) -> Void
 
+    init(
+        page: PhraseDetailPage,
+        scrollToTopTrigger: Int = 0,
+        chromeNamespace: Namespace.ID? = nil,
+        isSearchActive: Bool = false,
+        showsChrome: Bool = true,
+        onBackTapped: @escaping () -> Void,
+        onSearchTapped: @escaping () -> Void,
+        onDetailTapped: @escaping (String) -> Void
+    ) {
+        self.page = page
+        self.scrollToTopTrigger = scrollToTopTrigger
+        self.chromeNamespace = chromeNamespace
+        self.isSearchActive = isSearchActive
+        self.showsChrome = showsChrome
+        self.onBackTapped = onBackTapped
+        self.onSearchTapped = onSearchTapped
+        self.onDetailTapped = onDetailTapped
+    }
+
+    @ViewBuilder
     var body: some View {
+        if PhraseDetailPage.hasAuthoredPage(withID: page.id) {
+            PhraseArticleTemplateView(
+                page: page.articleTemplate,
+                chromeRoute: .detailPage(page.id),
+                scrollToTopTrigger: scrollToTopTrigger,
+                chromeNamespace: chromeNamespace,
+                isSearchActive: isSearchActive,
+                showsChrome: showsChrome,
+                onBackTapped: onBackTapped,
+                onSearchTapped: onSearchTapped,
+                onDetailTapped: onDetailTapped
+            )
+        } else {
+            legacyBody
+        }
+    }
+
+    private var legacyBody: some View {
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
 
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 0) {
-                    hero
+            ScrollViewReader { scrollProxy in
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack(spacing: 0) {
+                        Color.clear
+                            .frame(height: 0)
+                            .id(Self.scrollTopID)
 
-                    VStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
-                        ForEach(page.sections) { section in
-                            DetailSectionView(section: section, onOpenDetail: onDetailTapped)
-                        }
+                        hero
 
-                        if !page.examples.isEmpty {
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Practice it")
-                                    .font(.headline.weight(.bold))
+                        LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
+                            ForEach(visibleSections) { section in
+                                DetailSectionView(section: section, onOpenDetail: onDetailTapped)
+                            }
 
-                                VStack(spacing: 0) {
-                                    ForEach(page.examples) { phrase in
-                                        DetailExampleRow(phrase: phrase)
+                            if !page.examples.isEmpty {
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text("Practice it")
+                                        .font(.headline.weight(.bold))
 
-                                        if phrase.id != page.examples.last?.id {
-                                            Divider().padding(.leading, 70)
+                                    VStack(spacing: 0) {
+                                        ForEach(page.examples) { phrase in
+                                            DetailExampleRow(phrase: phrase)
+
+                                            if phrase.id != page.examples.last?.id {
+                                                Divider().padding(.leading, 70)
+                                            }
                                         }
                                     }
+                                    .padding(.vertical, 8)
+                                    .phraseListCard()
                                 }
-                                .padding(.vertical, 8)
-                                .phraseListCard()
                             }
+
+                            ExploreCatalogSection(
+                                currentPageID: page.id,
+                                onOpenDetail: onDetailTapped
+                            )
                         }
+                        .padding(.horizontal, PhrasePageStyle.horizontalPadding)
+                        .padding(.top, 24)
+                        .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
                     }
-                    .padding(.horizontal, PhrasePageStyle.horizontalPadding)
-                    .padding(.top, 24)
-                    .padding(.bottom, 118)
+                }
+                .onChange(of: scrollToTopTrigger) { _, _ in
+                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
             }
             .ignoresSafeArea(edges: .top)
             .overlay(alignment: .topLeading) {
-                Button {
-                    onBackTapped()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.title3.weight(.semibold))
-                        .frame(width: 52, height: 52)
-                        .foregroundStyle(.primary)
-                        .contentShape(Circle())
+                if showsChrome {
+                    Button {
+                        onBackTapped()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .font(.title3.weight(.semibold))
+                            .frame(width: 52, height: 52)
+                            .foregroundStyle(.primary)
+                            .contentShape(Circle())
+                    }
+                    .buttonStyle(.plain)
+                    .nativeGlass(cornerRadius: 26, interactive: true)
+                    .padding(.leading, 24)
+                    .padding(.top, 6)
+                    .offset(y: -24)
                 }
-                .buttonStyle(.plain)
-                .nativeGlass(cornerRadius: 26, interactive: true)
-                .padding(.leading, 24)
-                .padding(.top, 6)
-                .offset(y: -24)
             }
 
-            bottomChrome
-                .padding(.horizontal, 16)
-                .padding(.bottom, -14)
-                .offset(y: 14)
+            if showsChrome {
+                bottomChrome
+                    .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
+                    .padding(.bottom, AppChromeLayout.bottomPadding)
+                    .offset(y: AppChromeLayout.bottomOffset)
+            }
         }
+    }
+
+    private static let scrollTopID = "PhraseDetailViewTop"
+
+    private var visibleSections: [PhraseDetailSection] {
+        page.sections
     }
 
     private var hero: some View {
@@ -109,7 +176,7 @@ struct PhraseDetailView: View {
                         .minimumScaleFactor(0.76)
                 }
 
-                PlaybackDockView()
+                PlaybackDockView(audioKey: page.playbackAudioKey)
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
             }
             .padding(.horizontal, 24)
@@ -119,16 +186,27 @@ struct PhraseDetailView: View {
         .background(PhrasePageStyle.pageBackground)
     }
 
+    @ViewBuilder
     private var bottomChrome: some View {
-        HStack(spacing: 10) {
-            HStack(spacing: 16) {
+        if #available(iOS 26.0, *) {
+            GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
+                bottomChromeContent
+            }
+        } else {
+            bottomChromeContent
+        }
+    }
+
+    private var bottomChromeContent: some View {
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            HStack(spacing: AppChromeLayout.dockItemSpacing) {
                 ForEach(AppChrome(route: .detailPage(page.id)).primaryDockItems, id: \.self) { item in
                     DetailDockItem(kind: item, selected: item == .home)
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 5)
-            .nativeGlass(cornerRadius: 32)
+            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
+            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
+            .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
 
             Button {
                 onSearchTapped()
@@ -136,10 +214,12 @@ struct PhraseDetailView: View {
                 Image(systemName: "magnifyingglass")
                     .font(.title2.weight(.medium))
                     .foregroundStyle(.primary)
-                    .frame(width: 64, height: 64)
+                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
             }
             .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: 32, interactive: true)
+            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
+            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchActive)
         }
     }
 }
@@ -236,19 +316,24 @@ private struct DetailExampleRow: View {
     var onOpenDetail: ((String) -> Void)? = nil
 
     var body: some View {
-        HStack(spacing: 12) {
-            AudioSpeakerButton(tint: phrase.tintName)
+        HStack(alignment: .center, spacing: 12) {
+            AudioSpeakerButton(tint: phrase.tintName, audioKey: phrase.playbackAudioKey)
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
                     .font(.headline.weight(.bold))
                     .foregroundStyle(.primary)
-                    .lineLimit(1)
+                    .lineLimit(2)
                     .minimumScaleFactor(0.72)
+                    .fixedSize(horizontal: false, vertical: true)
 
-                PannableLineText(text: phrase.english, font: .subheadline, color: .secondary)
-                    .frame(height: 20)
+                Text(phrase.english)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(DetailPhraseRowLayout.secondaryLineLimit)
+                    .fixedSize(horizontal: false, vertical: true)
             }
+            .layoutPriority(1)
 
             Spacer()
 
@@ -267,8 +352,12 @@ private struct DetailExampleRow: View {
             onOpenDetail?(detailPageID)
         }
         .padding(.horizontal, 14)
-        .padding(.vertical, 9)
+        .padding(.vertical, 11)
     }
+}
+
+enum DetailPhraseRowLayout {
+    static let secondaryLineLimit = 2
 }
 
 private struct DetailDockItem: View {

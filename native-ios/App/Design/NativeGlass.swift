@@ -62,6 +62,34 @@ extension View {
     func nativeGlass(cornerRadius: CGFloat, tint: Color = .white, interactive: Bool = false) -> some View {
         modifier(NativeGlass(cornerRadius: cornerRadius, tint: tint, interactive: interactive))
     }
+
+    @ViewBuilder
+    func nativeGlassMorphID(_ id: String, namespace: Namespace.ID?) -> some View {
+        if #available(iOS 26.0, *), let namespace {
+            glassEffectID(id, in: namespace)
+        } else {
+            self
+        }
+    }
+
+    @ViewBuilder
+    func chromeMorph(_ id: String, namespace: Namespace.ID?, isSource: Bool) -> some View {
+        if let namespace {
+            matchedGeometryEffect(
+                id: id,
+                in: namespace,
+                properties: .frame,
+                anchor: .center,
+                isSource: isSource
+            )
+        } else {
+            self
+        }
+    }
+}
+
+enum AppChromeMorphID {
+    static let search = "app.chrome.search"
 }
 
 enum PhrasePageStyle {
@@ -78,8 +106,35 @@ enum PhrasePageStyle {
     static let leadInToContentSpacing: CGFloat = 16
     static let listCardCornerRadius: CGFloat = 22
     static let compactCardCornerRadius: CGFloat = 20
+    static let bottomChromeContentClearance: CGFloat = 176
     static let cardFillOpacity = 0.72
     static let cardStrokeOpacity = 0.06
+}
+
+enum AppChromeLayout {
+    static let bottomOuterHorizontalPadding: CGFloat = 16
+    static let bottomSpacing: CGFloat = 8
+    static let bottomPadding: CGFloat = -10
+    static let bottomOffset: CGFloat = 10
+    static let dockItemSpacing: CGFloat = 12
+    static let dockHorizontalPadding: CGFloat = 12
+    static let dockVerticalPadding: CGFloat = 3
+    static let dockCornerRadius: CGFloat = 30
+    static let searchIslandSize: CGFloat = 58
+    static let searchIslandCornerRadius: CGFloat = 29
+    static let searchFieldHeight: CGFloat = 58
+    static let searchFieldHorizontalPadding: CGFloat = 14
+}
+
+enum SearchPageLayout {
+    static let horizontalPadding: CGFloat = 24
+    static let titleTopPadding: CGFloat = 74
+    static let contentSpacing: CGFloat = 20
+    static let resultGroupSpacing: CGFloat = 12
+    static let resultGroupTopPadding: CGFloat = 10
+    static let resultsBottomClearance: CGFloat = 148
+    static let resultsZIndex: Double = 0
+    static let pinnedChromeZIndex: Double = 2
 }
 
 private struct PhraseListCard: ViewModifier {

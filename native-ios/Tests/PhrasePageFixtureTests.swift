@@ -112,6 +112,106 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertTrue(tip.body.contains("Chào ông"))
     }
 
+    func testNiceToMeetYouUsesDeepAnswerPattern() throws {
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-nice-to-meet-you"))
+
+        XCTAssertEqual(page.sections.map(\.title), [
+            "At a glance",
+            "Break it down",
+            "Ways to say it",
+            "Pronoun refresher",
+            "When to use it",
+            "Local tip",
+        ])
+
+        let breakdown = try XCTUnwrap(page.sections.first { $0.id == "breakdown" })
+        XCTAssertEqual(breakdown.breakdown.map(\.vietnamese), [
+            "Rất",
+            "vui",
+            "được gặp",
+            "bạn",
+            "Rất vui được gặp bạn",
+        ])
+        XCTAssertEqual(breakdown.breakdown.last?.playbackAudioKey, "audio-phrase-rat-vui-duoc-gap-ban")
+
+        let ways = try XCTUnwrap(page.sections.first { $0.id == "ways-to-say" })
+        XCTAssertEqual(ways.phrases.map(\.vietnamese), [
+            "Rất vui được gặp bạn",
+            "Rất vui được gặp anh",
+            "Rất vui được gặp chị",
+            "Rất hân hạnh được gặp anh",
+            "Rất hân hạnh được gặp chị",
+            "Vinh dự được gặp anh",
+            "Vinh dự được gặp chị",
+            "Vui quá!",
+            "Rất vui được gặp lại bạn",
+        ])
+        XCTAssertTrue(ways.body.contains("relationship"))
+
+        let tip = try XCTUnwrap(page.sections.first { $0.id == "local-tip" })
+        XCTAssertTrue(tip.body.contains("Bạn đến từ đâu?"))
+        XCTAssertTrue(tip.body.contains("Bạn ở đây lâu chưa?"))
+    }
+
+    func testRepairMeaningUsesAuthoredDifferentWaysAnswer() throws {
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-meaning"))
+
+        XCTAssertEqual(page.title, "Cái đó nghĩa là gì?")
+        XCTAssertEqual(page.englishTitle, "What does that mean?")
+        XCTAssertEqual(page.sections.map(\.title), [
+            "At a glance",
+            "Break it down",
+            "The standard way",
+            "Natural variations",
+            "Pronoun swap",
+            "When to use it",
+            "Watch out",
+            "Local tip",
+            "Explore next",
+        ])
+
+        let atGlance = try XCTUnwrap(page.sections.first { $0.id == "at-glance" })
+        XCTAssertTrue(atGlance.body.contains("when Vietnamese stops making sense"))
+        XCTAssertTrue(atGlance.body.contains("word, sign, menu item"))
+        XCTAssertFalse(page.sections.map(\.body).joined(separator: " ").contains("repair phrase"))
+
+        let standard = try XCTUnwrap(page.sections.first { $0.id == "standard-way" })
+        XCTAssertEqual(standard.phrases.map(\.vietnamese), [
+            "Cái đó nghĩa là gì?",
+            "Cái này nghĩa là gì?",
+        ])
+        XCTAssertTrue(standard.body.contains("works in most situations"))
+
+        let variations = try XCTUnwrap(page.sections.first { $0.id == "natural-variations" })
+        XCTAssertEqual(variations.phrases.map(\.vietnamese), [
+            "Nghĩa là sao?",
+            "Ý bạn là gì?",
+            "Từ này nghĩa là gì?",
+            "Cho hỏi, cái này nghĩa là gì ạ?",
+        ])
+        XCTAssertTrue(variations.body.contains("not every kind of confusion"))
+
+        let pronounSwap = try XCTUnwrap(page.sections.first { $0.id == "pronoun-swap" })
+        XCTAssertTrue(pronounSwap.body.contains("relationship word"))
+        XCTAssertEqual(pronounSwap.phrases.map(\.vietnamese), [
+            "Anh nói thế nghĩa là sao?",
+            "Chị nói thế nghĩa là sao?",
+            "Em nói cái này nghĩa là gì?",
+            "Cái này nghĩa là gì vậy em?",
+        ])
+        XCTAssertEqual(pronounSwap.phrases.map(\.english), [
+            "To an older man: what do you mean by that?",
+            "To an older woman: what do you mean by that?",
+            "To someone younger: what does this mean?",
+            "Softer, to someone younger: what does this mean?",
+        ])
+
+        let watchOut = try XCTUnwrap(page.sections.first { $0.id == "watch-out" })
+        XCTAssertTrue(watchOut.body.contains("defensive"))
+
+        XCTAssertEqual(PhraseSearchIndex.search("what does that mean").first?.pageID, page.id)
+    }
+
     func testAllLocalGreetingDetailsUseDeepAnswerPattern() throws {
         for phrase in PhrasePage.xinChao.localGreetings {
             let detailPageID = try XCTUnwrap(phrase.detailPageID)
@@ -142,16 +242,28 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
-    func testDetailPagesStayOneLevelDeep() {
+    func testLocalGreetingWayPagesStayOneLevelDeep() {
         let expectedChildPageCount = expectedLocalGreetingWays.values.reduce(0) { $0 + $1.count } - expectedLocalGreetingWays.count
 
-        XCTAssertEqual(PhraseDetailPage.all.count, 17 + expectedChildPageCount)
-        XCTAssertNotNil(PhraseDetailPage.page(withID: "viet-local-greetings"))
+        XCTAssertNil(PhraseDetailPage.page(withID: "viet-local-greetings"))
         XCTAssertTrue(PhraseDetailPage.all.flatMap(\.examples).allSatisfy { $0.detailPageID == nil })
 
         let childPages = PhraseDetailPage.all.filter { $0.id.contains("-way-") }
         XCTAssertEqual(childPages.count, expectedChildPageCount)
         XCTAssertTrue(childPages.flatMap(\.sections).flatMap(\.phrases).allSatisfy { $0.detailPageID == nil })
+    }
+
+    func testLegacyLocalGreetingsCatchAllIsNotLinkedFromXinChao() {
+        let phraseGroups: [[PhraseOption]] = [
+            PhrasePage.xinChao.quickSay,
+            PhrasePage.xinChao.situationalGreetings,
+            PhrasePage.xinChao.localGreetings,
+            PhrasePage.xinChao.followUps,
+        ]
+        let linkedPageIDs = phraseGroups.flatMap { $0 }.compactMap(\.detailPageID)
+
+        XCTAssertFalse(linkedPageIDs.contains("viet-local-greetings"))
+        XCTAssertFalse(PhraseCatalog.isOpenablePageID("viet-local-greetings"))
     }
 
     func testLocalGreetingStandardWaysUseCanonicalParentPage() throws {
@@ -192,5 +304,820 @@ final class PhrasePageFixtureTests: XCTestCase {
         let exactMatches = results.filter { $0.title == "Chào anh" }
 
         XCTAssertEqual(exactMatches.map(\.pageID), ["viet-hello-anh"])
+    }
+
+    func testSearchIndexPrioritizesCanonicalHelloPageForHelloQuery() throws {
+        let result = try XCTUnwrap(PhraseSearchIndex.search("hello").first)
+
+        XCTAssertEqual(result.pageID, PhrasePage.xinChao.id)
+        XCTAssertEqual(result.title, "Xin chào")
+    }
+
+    func testSearchIndexPrioritizesCanonicalHelloPageForPhoneticQuery() throws {
+        let result = try XCTUnwrap(PhraseSearchIndex.search("sin chow").first)
+
+        XCTAssertEqual(result.pageID, PhrasePage.xinChao.id)
+        XCTAssertEqual(result.title, "Xin chào")
+    }
+
+    func testStarterSayFirstFamiliesAreTierOneSearchPriority() {
+        XCTAssertEqual(GeneratedVietContent.searchPriority(forFamilyID: "airport-baggage"), .tier1)
+        XCTAssertEqual(GeneratedVietContent.searchPriority(forFamilyID: "transport-destination"), .tier1)
+    }
+
+    func testPremiumSayFirstFamiliesStayBelowTierOneSearchPriority() {
+        XCTAssertEqual(GeneratedVietContent.searchPriority(forFamilyID: "hotel-quiet-room"), .deepCatalog)
+    }
+
+    func testTierOnePageIDsExposeAuthoredListingUpgradeQueue() {
+        let pageIDs = GeneratedVietContent.tierOnePageIDs
+
+        XCTAssertTrue(pageIDs.contains(PhrasePage.xinChao.id))
+        XCTAssertTrue(pageIDs.contains("viet-family-airport-baggage"))
+        XCTAssertTrue(pageIDs.contains("viet-family-transport-destination"))
+        XCTAssertEqual(pageIDs.count, 150)
+        XCTAssertEqual(AuthoredVietListingPages.bundledTierOneFamilyCount, 150)
+        XCTAssertEqual(AuthoredVietListingPages.bundledMainPageCount, 148)
+        XCTAssertEqual(AuthoredVietListingPages.bundledChildPageCount, 15)
+    }
+
+    func testAllTierOnePagesAreAuthoredOrCoveredByRootPage() {
+        let pageIDs = GeneratedVietContent.tierOnePageIDs
+        let missing = pageIDs.filter { pageID in
+            pageID != PhrasePage.xinChao.id && !PhraseDetailPage.hasAuthoredPage(withID: pageID)
+        }
+
+        XCTAssertTrue(missing.isEmpty, "Tier 1 pages still using generated fallback: \(missing.sorted())")
+    }
+
+    func testAllTierOnePagesUseArticleTemplateContract() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+
+        for pageID in GeneratedVietContent.tierOnePageIDs.sorted() {
+            let article: PhraseArticlePage
+
+            if pageID == PhrasePage.xinChao.id {
+                article = PhrasePage.xinChao.articleTemplate
+            } else {
+                XCTAssertTrue(PhraseDetailPage.hasAuthoredPage(withID: pageID), pageID)
+                article = try XCTUnwrap(PhraseDetailPage.page(withID: pageID), pageID).articleTemplate
+            }
+
+            let sectionIDs = Set(article.sections.map(\.id))
+
+            XCTAssertTrue(sectionIDs.contains("at-glance"), pageID)
+            XCTAssertTrue(sectionIDs.contains("breakdown"), pageID)
+            XCTAssertTrue(article.showsCatalogExplore, pageID)
+            XCTAssertNotNil(manifest.url(for: article.playbackAudioKey), pageID)
+            XCTAssertTrue(article.sections.contains { section in
+                !section.phrases.isEmpty
+                    && (section.presentation == .phraseList || section.presentation == .horizontalPhraseCards)
+            }, pageID)
+            XCTAssertTrue(article.sections.allSatisfy { section in
+                section.phrases.isEmpty || section.breakdown.isEmpty
+            }, pageID)
+        }
+    }
+
+    func testAuthoredTierOneSectionPresentationRolesAreExplicit() throws {
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-write-down"))
+        let sectionsByID = Dictionary(uniqueKeysWithValues: page.articleTemplate.sections.map { ($0.id, $0) })
+
+        XCTAssertEqual(sectionsByID["breakdown"]?.presentation, .breakdownStrip)
+        XCTAssertEqual(sectionsByID["standard-way"]?.presentation, .phraseList)
+        XCTAssertEqual(sectionsByID["nearby-phrases"]?.presentation, .horizontalPhraseCards)
+        XCTAssertEqual(sectionsByID["watch-out"]?.presentation, .warningCallout)
+        XCTAssertEqual(sectionsByID["local-tip"]?.presentation, .tipCallout)
+        XCTAssertEqual(sectionsByID["standard-way"]?.title, "Quick say")
+    }
+
+    func testTierOneArticleVisibleAudioKeysResolve() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+
+        for pageID in GeneratedVietContent.tierOnePageIDs.sorted() {
+            let article = try articleTemplate(forTierOnePageID: pageID)
+
+            XCTAssertNotNil(manifest.url(for: article.playbackAudioKey), pageID)
+            XCTAssertTrue(
+                manifest.hasPlayableEntry(for: article.playbackAudioKey, matchingText: article.title),
+                pageID
+            )
+
+            for phrase in article.sections.flatMap(\.phrases) {
+                XCTAssertNotNil(manifest.url(for: phrase.playbackAudioKey), "\(pageID): \(phrase.vietnamese)")
+                XCTAssertTrue(
+                    manifest.hasPlayableEntry(for: phrase.playbackAudioKey, matchingText: phrase.vietnamese),
+                    "\(pageID): \(phrase.vietnamese)"
+                )
+            }
+
+            for token in article.sections.flatMap(\.breakdown) {
+                XCTAssertNotNil(manifest.url(for: token.playbackAudioKey), "\(pageID): \(token.vietnamese)")
+                XCTAssertTrue(
+                    manifest.hasPlayableEntry(for: token.playbackAudioKey, matchingText: token.vietnamese),
+                    "\(pageID): \(token.vietnamese)"
+                )
+            }
+        }
+    }
+
+    func testTierOneCatalogAudioKeysMatchVisibleTitles() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+
+        for pageID in GeneratedVietContent.tierOnePageIDs.sorted() {
+            guard let item = PhraseCatalog.allItems.first(where: { $0.pageID == pageID }) else {
+                continue
+            }
+
+            XCTAssertTrue(
+                manifest.hasPlayableEntry(for: item.playbackAudioKey, matchingText: item.title),
+                "\(pageID): \(item.title)"
+            )
+        }
+    }
+
+    func testAuthoredResourceSectionsCarryPresentationMetadata() throws {
+        let url = try XCTUnwrap(Bundle.main.url(
+            forResource: "viet-authored-listing-pages",
+            withExtension: "json"
+        ))
+        let data = try Data(contentsOf: url)
+        let object = try XCTUnwrap(try JSONSerialization.jsonObject(with: data) as? [String: Any])
+        let pages = try XCTUnwrap(object["pages"] as? [[String: Any]])
+        let allowedPresentations = Set([
+            "plain-text",
+            "phrase-list",
+            "horizontal-phrase-cards",
+            "breakdown-strip",
+            "tip-callout",
+            "warning-callout",
+        ])
+
+        for page in pages {
+            let pageID = try XCTUnwrap(page["id"] as? String)
+            let sections = try XCTUnwrap(page["sections"] as? [[String: Any]], pageID)
+
+            for section in sections {
+                let presentation = try XCTUnwrap(section["presentation"] as? String, pageID)
+                XCTAssertTrue(allowedPresentations.contains(presentation), "\(pageID): \(presentation)")
+            }
+        }
+    }
+
+    func testTierOneGeneratedPagesUseExpandedListingPattern() throws {
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-write-down"))
+
+        XCTAssertEqual(page.sections.prefix(7).map(\.title), [
+            "At a glance",
+            "Break it down",
+            "The standard way",
+            "Why it matters",
+            "When to use it",
+            "Watch out",
+            "Local tip",
+        ])
+        XCTAssertEqual(page.sections.last?.title, "Explore next")
+        XCTAssertTrue(page.sections.first { $0.id == "at-glance" }?.body.contains("Written text often rescues") == true)
+        XCTAssertTrue(page.sections.first { $0.id == "why-it-matters" }?.body.contains("cooperative") == true)
+        let linkedFlowCount = (page.sections.first { $0.id == "nearby-phrases" }?.phrases.count ?? 0)
+            + (page.sections.first { $0.id == "explore-next" }?.phrases.count ?? 0)
+        XCTAssertGreaterThanOrEqual(linkedFlowCount, 6)
+    }
+
+    func testAllTierOneGeneratedPagesHaveExpandedListingPattern() throws {
+        for pageID in GeneratedVietContent.tierOnePageIDs.sorted() {
+            guard pageID != PhrasePage.xinChao.id else {
+                continue
+            }
+
+            guard pageID.hasPrefix("viet-family-") else {
+                continue
+            }
+
+            let page = try XCTUnwrap(PhraseDetailPage.page(withID: pageID), pageID)
+            let sectionIDs = page.sections.map(\.id)
+
+            XCTAssertTrue(sectionIDs.contains("at-glance"), pageID)
+            XCTAssertTrue(sectionIDs.contains("breakdown"), pageID)
+            XCTAssertTrue(sectionIDs.contains("when-to-use"), pageID)
+            XCTAssertTrue(sectionIDs.contains("watch-out"), pageID)
+            XCTAssertTrue(sectionIDs.contains("traveler-tip") || sectionIDs.contains("local-tip"), pageID)
+            XCTAssertTrue(sectionIDs.contains("explore-next"), pageID)
+            XCTAssertGreaterThanOrEqual(sectionIDs.count, 6, pageID)
+        }
+    }
+
+    func testSearchPrefersTierOneTravelPhraseForBroadRoomQuery() throws {
+        let results = PhraseSearchIndex.search("room")
+        let result = try XCTUnwrap(results.first)
+
+        XCTAssertEqual(result.pageID, "viet-family-hotel-room-hot")
+        XCTAssertEqual(result.title, "Phòng này nóng quá")
+        XCTAssertFalse(results.prefix(5).contains { $0.pageID == PhrasePage.xinChao.id })
+    }
+
+    func testExactPremiumMatchStillWinsOverTierOneBoost() throws {
+        let result = try XCTUnwrap(PhraseSearchIndex.search("quiet room").first)
+
+        XCTAssertEqual(result.pageID, "viet-family-hotel-quiet-room")
+        XCTAssertEqual(result.title, "Cho tôi phòng yên tĩnh được không?")
+    }
+
+    func testSearchReturnsCanonicalAuthoredArticlePagesFirst() throws {
+        let expectations = [
+            ("Cái đó nghĩa là gì?", "viet-family-repair-meaning"),
+            ("Viết xuống giúp tôi", "viet-family-repair-write-down"),
+            ("What time is check-out?", "viet-family-hotel-checkout-time"),
+            ("Where is baggage claim?", "viet-family-airport-baggage"),
+            ("How much is this?", "viet-family-money-how-much"),
+        ]
+
+        for (query, expectedPageID) in expectations {
+            let result = try XCTUnwrap(PhraseSearchIndex.search(query).first, query)
+            XCTAssertEqual(result.pageID, expectedPageID, query)
+            XCTAssertTrue(PhraseCatalog.isOpenablePageID(result.pageID), query)
+            XCTAssertTrue(
+                result.pageID == PhrasePage.xinChao.id || PhraseDetailPage.hasAuthoredPage(withID: result.pageID),
+                query
+            )
+        }
+    }
+
+    func testEveryTierOneArticleIsSearchableByExactTitleAndEnglish() throws {
+        for pageID in GeneratedVietContent.tierOnePageIDs.sorted() {
+            let article = try articleTemplate(forTierOnePageID: pageID)
+
+            XCTAssertEqual(
+                PhraseSearchIndex.search(article.title).first?.pageID,
+                pageID,
+                "\(pageID): \(article.title)"
+            )
+
+            XCTAssertTrue(
+                PhraseSearchIndex.search(article.englishTitle).prefix(5).contains { $0.pageID == pageID },
+                "\(pageID): \(article.englishTitle)"
+            )
+        }
+    }
+
+    func testExploreCatalogDefaultsToCurrentPageCategory() {
+        XCTAssertEqual(PhraseCatalog.defaultCategoryID(forPageID: PhrasePage.xinChao.id), "greetings")
+        XCTAssertEqual(PhraseCatalog.defaultCategoryID(forPageID: "viet-hello-anh"), "local-greetings")
+        XCTAssertEqual(PhraseCatalog.defaultCategoryID(forPageID: "viet-thank-you"), "gratitude")
+    }
+
+    func testRelationshipGreetingCategoryIsSpecificInsteadOfGenericLocal() throws {
+        let category = try XCTUnwrap(PhraseCatalog.category(withID: "local-greetings"))
+
+        XCTAssertEqual(category.title, "Relationship greetings")
+        XCTAssertEqual(category.symbolName, "person.2.fill")
+    }
+
+    func testUnderstandingCategoryUsesTravelerFacingLanguage() throws {
+        let category = try XCTUnwrap(PhraseCatalog.category(withID: "understanding-repair"))
+
+        XCTAssertEqual(category.title, "When You Don't Understand")
+        XCTAssertEqual(category.symbolName, "questionmark.bubble.fill")
+        XCTAssertFalse(PhraseCatalog.categories.contains { $0.title.contains("Repair") })
+    }
+
+    func testTierOneGeneratedPagesExposeEnoughNearbyPhrasesToTestFlow() throws {
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-write-down"))
+        let nearbyPhrases = page.sections.first { $0.id == "nearby-phrases" }?.phrases ?? []
+        let exploreNext = try XCTUnwrap(page.sections.first { $0.id == "explore-next" })
+        let linkedFlowPhrases = nearbyPhrases + exploreNext.phrases
+        let linkedPageIDs = linkedFlowPhrases.compactMap(\.detailPageID)
+
+        XCTAssertGreaterThanOrEqual(linkedFlowPhrases.count, 7)
+        XCTAssertTrue(linkedFlowPhrases.contains { $0.vietnamese == "Tôi không hiểu" })
+        XCTAssertTrue(linkedFlowPhrases.contains { $0.vietnamese == "Anh/chị nói tiếng Anh không?" })
+        XCTAssertTrue(linkedFlowPhrases.allSatisfy { $0.detailPageID != nil })
+        XCTAssertEqual(Set(linkedPageIDs).count, linkedPageIDs.count)
+    }
+
+    func testAuthoredTierOneLinksResolveToOpenableCanonicalPages() throws {
+        let pageIDs = GeneratedVietContent.tierOnePageIDs
+            .filter { $0 != PhrasePage.xinChao.id }
+
+        for pageID in pageIDs {
+            let page = try XCTUnwrap(PhraseDetailPage.page(withID: pageID), pageID)
+            let links = page.sections.flatMap(\.phrases).compactMap(\.detailPageID)
+
+            XCTAssertFalse(links.isEmpty, pageID)
+            XCTAssertTrue(links.allSatisfy { PhraseCatalog.isOpenablePageID($0) }, pageID)
+            XCTAssertEqual(Set(links).count, links.count, pageID)
+        }
+    }
+
+    func testAuthoredTierOneCategoryIDsAreValid() {
+        let categoryIDs = Set(PhraseCatalog.categories.map(\.id))
+
+        for pageID in GeneratedVietContent.tierOnePageIDs {
+            guard pageID != PhrasePage.xinChao.id else {
+                continue
+            }
+
+            let authoredCategoryIDs = AuthoredVietListingPages.categoryIDs(for: pageID) ?? []
+
+            XCTAssertFalse(authoredCategoryIDs.isEmpty, pageID)
+            XCTAssertTrue(authoredCategoryIDs.allSatisfy { categoryIDs.contains($0) }, pageID)
+        }
+    }
+
+    func testAuthoredAudioAuditHasNoMissingAssignedAudio() throws {
+        let audit = try authoredAudioAudit()
+        let metadata = try XCTUnwrap(audit["metadata"] as? [String: Any])
+        let missing = try XCTUnwrap(audit["missing"] as? [[String: Any]])
+
+        XCTAssertEqual(metadata["tierOneFamilyCount"] as? Int, 150)
+        XCTAssertEqual(metadata["missingAudioCount"] as? Int, 0)
+        XCTAssertTrue(missing.isEmpty)
+    }
+
+    func testExploreCatalogBrowseSectionsStartWithCurrentCategory() {
+        XCTAssertEqual(
+            PhraseCatalog.browseSections(
+                defaultCategoryID: "airport-border-arrival",
+                excludingPageID: "viet-family-airport-immigration"
+            )
+            .prefix(2)
+            .map(\.category.id),
+            [
+                "airport-border-arrival",
+                "greetings",
+            ]
+        )
+
+        let localSections = PhraseCatalog.browseSections(
+            defaultCategoryID: "local-greetings",
+            excludingPageID: "viet-hello-anh"
+        )
+
+        XCTAssertEqual(localSections.first?.category.id, "local-greetings")
+        XCTAssertFalse(localSections.map(\.category.id).contains(PhraseCatalog.allCategoryID))
+        XCTAssertFalse(localSections.flatMap(\.items).contains { $0.pageID == "viet-hello-anh" })
+    }
+
+    func testExploreCatalogItemsCanFilterByCategoryAndExcludeCurrentPage() {
+        let localItems = PhraseCatalog.items(
+            selectedCategoryID: "local-greetings",
+            excludingPageID: "viet-hello-anh"
+        )
+
+        XCTAssertFalse(localItems.contains { $0.pageID == "viet-hello-anh" })
+        XCTAssertTrue(localItems.contains { $0.pageID == "viet-hello-chi" })
+        XCTAssertTrue(localItems.allSatisfy { $0.categoryIDs.contains("local-greetings") })
+
+        let allItems = PhraseCatalog.items(
+            selectedCategoryID: PhraseCatalog.allCategoryID,
+            excludingPageID: "viet-hello-anh"
+        )
+
+        XCTAssertGreaterThan(allItems.count, localItems.count)
+        XCTAssertFalse(allItems.contains { $0.pageID == "viet-hello-anh" })
+        XCTAssertTrue(allItems.contains { $0.pageID == PhrasePage.xinChao.id })
+
+        let greetingItems = PhraseCatalog.items(
+            selectedCategoryID: "greetings",
+            excludingPageID: PhrasePage.xinChao.id
+        )
+
+        XCTAssertGreaterThanOrEqual(greetingItems.count, 8)
+        XCTAssertTrue(greetingItems.contains { $0.pageID == "viet-hello-anh" })
+        XCTAssertTrue(greetingItems.contains { $0.pageID == "viet-phone-hello" })
+    }
+
+    func testExploreCatalogUsesCanonicalOpenablePagesOnly() {
+        let items = PhraseCatalog.items(selectedCategoryID: PhraseCatalog.allCategoryID)
+        let categoryIDs = Set(PhraseCatalog.categories.map(\.id))
+
+        XCTAssertGreaterThan(items.count, PhraseDetailPage.all.count)
+        XCTAssertTrue(items.allSatisfy { item in
+            item.categoryIDs.contains(item.categoryID)
+                && item.categoryIDs.allSatisfy { categoryIDs.contains($0) }
+        })
+        XCTAssertTrue(items.allSatisfy { PhraseCatalog.isOpenablePageID($0.pageID) })
+        XCTAssertEqual(items.filter { $0.title == "Chào anh" }.map(\.pageID), ["viet-hello-anh"])
+        XCTAssertEqual(items.filter { $0.title == "Cảm ơn" }.map(\.pageID), ["viet-thank-you"])
+        XCTAssertEqual(items.filter { $0.title == "Xin lỗi" }.map(\.pageID), ["viet-excuse-sorry"])
+        XCTAssertEqual(Set(items.map(\.pageID)).count, items.count)
+    }
+
+    func testGeneratedVietContentBundleLoadsApprovedFamilies() throws {
+        let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
+
+        XCTAssertEqual(catalog.metadata.phraseCount, 919)
+        XCTAssertEqual(catalog.families.count, 900)
+        XCTAssertEqual(catalog.scenarios.count, 18)
+        XCTAssertEqual(catalog.scenario(withID: "airport-border-arrival")?.title, "Airport Border Arrival")
+
+        let airport = try XCTUnwrap(catalog.family(withPageID: "viet-family-airport-immigration"))
+        XCTAssertEqual(airport.id, "airport-immigration")
+        XCTAssertEqual(airport.primaryPhraseID, "airport-1")
+        XCTAssertEqual(catalog.phrase(withID: airport.primaryPhraseID)?.targetText, "Nhập cảnh ở đâu?")
+    }
+
+    func testGeneratedVietContentBuildsFallbackDetailPageForNonTierOneCatalogFamily() throws {
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-hotel-quiet-room"))
+
+        XCTAssertEqual(page.title, "Cho tôi phòng yên tĩnh được không?")
+        XCTAssertEqual(page.englishTitle, "Can I have a quiet room?")
+        XCTAssertEqual(page.pronunciation, "cho toy fong yen tinh dook khong")
+        XCTAssertEqual(page.audioKey, "hotel-quiet-room")
+        XCTAssertEqual(page.sections.map(\.title), [
+            "At a glance",
+            "Break it down",
+            "When to use it",
+            "Explore next",
+        ])
+        XCTAssertTrue(page.sections.first { $0.id == "at-glance" }?.body.contains("room location matters") == true)
+        XCTAssertEqual(page.sections.first { $0.id == "breakdown" }?.breakdown.map(\.vietnamese), [
+            "Cho tôi",
+            "phòng",
+            "yên tĩnh",
+            "được không?",
+            "Cho tôi phòng yên tĩnh được không?",
+        ])
+        XCTAssertNil(page.sections.first { $0.id == "ways-to-say" })
+        XCTAssertTrue(page.sections.first { $0.id == "explore-next" }?.phrases.allSatisfy { phrase in
+            guard let detailPageID = phrase.detailPageID else { return false }
+            return PhraseCatalog.isOpenablePageID(detailPageID)
+        } == true)
+        XCTAssertTrue(page.examples.isEmpty)
+    }
+
+    func testGeneratedMultiPhraseFamiliesKeepWaysToSayVariants() throws {
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-slower"))
+        let ways = try XCTUnwrap(page.sections.first { $0.id == "natural-variations" })
+
+        XCTAssertFalse(ways.phrases.isEmpty)
+        XCTAssertTrue(ways.phrases.allSatisfy { $0.detailPageID != nil })
+        XCTAssertEqual(page.examples.first?.vietnamese, page.title)
+    }
+
+    func testGeneratedBreakdownTokensExposePlayableAudioKeys() throws {
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-airport-baggage"))
+        let breakdown = try XCTUnwrap(page.sections.first { $0.id == "breakdown" }?.breakdown)
+
+        XCTAssertEqual(breakdown.map(\.vietnamese), [
+            "Lấy",
+            "hành lý",
+            "ở đâu?",
+            "Lấy hành lý ở đâu?",
+        ])
+
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        for token in breakdown {
+            let audioKey = try XCTUnwrap(token.playbackAudioKey, token.vietnamese)
+            XCTAssertEqual(manifest.entry(for: audioKey)?.text, token.vietnamese)
+            XCTAssertNotNil(manifest.url(for: audioKey), token.vietnamese)
+        }
+    }
+
+    func testBreakdownSeparatorsUsePlusUntilFinalEquals() {
+        XCTAssertEqual(
+            (0..<3).compactMap { BreakdownView.separator(afterTokenAt: $0, tokenCount: 4) },
+            ["+", "+", "="]
+        )
+
+        XCTAssertEqual(
+            (0..<2).compactMap { BreakdownView.separator(afterTokenAt: $0, tokenCount: 3) },
+            ["+", "="]
+        )
+    }
+
+    func testGeneratedBreakdownSplitsNumbersIntoTheirOwnCards() throws {
+        let gatePage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-v500-airp-bord-arri-where-is-gate-10"))
+        let gateBreakdown = try XCTUnwrap(gatePage.sections.first { $0.id == "breakdown" }?.breakdown)
+
+        XCTAssertEqual(gateBreakdown.map(\.vietnamese), [
+            "Cổng",
+            "10",
+            "ở đâu?",
+            "Cổng 10 ở đâu?",
+        ])
+
+        let ticketPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-v500-time-date-book-two-tickets-please"))
+        let ticketBreakdown = try XCTUnwrap(ticketPage.sections.first { $0.id == "breakdown" }?.breakdown)
+
+        XCTAssertTrue(ticketBreakdown.contains { $0.vietnamese == "hai" && $0.english == "two" })
+        XCTAssertTrue(ticketBreakdown.contains { $0.vietnamese == "vé" && $0.english == "ticket" })
+    }
+
+    func testGeneratedVisaBreakdownUsesRealMeanings() throws {
+        let visaPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-v500-airp-bord-arri-here-is-my-visa"))
+        let breakdownSection = try XCTUnwrap(visaPage.sections.first { $0.id == "breakdown" })
+        let breakdown = breakdownSection.breakdown
+
+        XCTAssertEqual(breakdown.map(\.vietnamese), [
+            "Đây",
+            "là",
+            "thị thực",
+            "của tôi",
+            "Đây là thị thực của tôi",
+        ])
+        XCTAssertEqual(breakdown.map(\.english), [
+            "here / this",
+            "is",
+            "visa",
+            "my / mine",
+            "Here is my visa",
+        ])
+        XCTAssertEqual(
+            breakdownSection.body,
+            "Use this when you are showing a document or item. The phrase points to it, names it, then marks it as yours."
+        )
+
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        for audioKey in breakdown.compactMap(\.playbackAudioKey) {
+            XCTAssertNotNil(manifest.entry(for: audioKey), audioKey)
+            XCTAssertNotNil(manifest.url(for: audioKey), audioKey)
+        }
+    }
+
+    func testGeneratedQuestionBreakdownUsesSmallTeachingPieces() throws {
+        let quietRoomPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-hotel-quiet-room"))
+        let breakdown = try XCTUnwrap(quietRoomPage.sections.first { $0.id == "breakdown" }?.breakdown)
+
+        XCTAssertEqual(breakdown.map(\.vietnamese), [
+            "Cho tôi",
+            "phòng",
+            "yên tĩnh",
+            "được không?",
+            "Cho tôi phòng yên tĩnh được không?",
+        ])
+        XCTAssertEqual(breakdown.map(\.english), [
+            "can I have",
+            "room",
+            "quiet",
+            "is it possible?",
+            "Can I have a quiet room?",
+        ])
+    }
+
+    func testGeneratedBreakdownReusesExistingAudioForSharedTokens() throws {
+        let checkoutPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-hotel-checkout-time"))
+        let breakdown = try XCTUnwrap(checkoutPage.sections.first { $0.id == "breakdown" }?.breakdown)
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+
+        let sharedTokens = breakdown.dropLast()
+        XCTAssertEqual(sharedTokens.map(\.vietnamese), ["Mấy", "giờ", "trả phòng"])
+
+        for token in sharedTokens {
+            let playbackAudioKey = try XCTUnwrap(token.playbackAudioKey, token.vietnamese)
+            XCTAssertNotNil(manifest.url(for: playbackAudioKey), token.vietnamese)
+            XCTAssertEqual(manifest.entry(for: playbackAudioKey)?.text, token.vietnamese)
+        }
+    }
+
+    func testGeneratedBreakdownAvoidsOversizedNonFinalCards() throws {
+        let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
+
+        for family in catalog.families {
+            let primaryPhrase = catalog.phrase(withID: family.primaryPhraseID)
+            let pageID = GeneratedVietContent.canonicalPageID(for: family, primaryPhrase: primaryPhrase)
+            guard pageID == family.pageID else {
+                continue
+            }
+
+            let page = try XCTUnwrap(PhraseDetailPage.page(withID: pageID), pageID)
+            let breakdown = try XCTUnwrap(page.sections.first { $0.id == "breakdown" }?.breakdown, pageID)
+            let nonFinalTokens = breakdown.dropLast()
+
+            XCTAssertTrue(nonFinalTokens.allSatisfy { token in
+                token.vietnamese.split(separator: " ").count <= 3
+            }, pageID)
+            XCTAssertTrue(nonFinalTokens.allSatisfy { token in
+                token.vietnamese.count <= 24
+            }, pageID)
+        }
+    }
+
+    func testGeneratedBreakdownLabelsDoNotUsePlaceholderCopy() throws {
+        let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
+        let forbiddenLabels = Set(["key word", "phrase ending", "word", "action", "place / service"])
+
+        for family in catalog.families {
+            let primaryPhrase = catalog.phrase(withID: family.primaryPhraseID)
+            let pageID = GeneratedVietContent.canonicalPageID(for: family, primaryPhrase: primaryPhrase)
+            guard pageID == family.pageID else {
+                continue
+            }
+
+            let page = try XCTUnwrap(PhraseDetailPage.page(withID: pageID), pageID)
+            let labels = page.sections.flatMap(\.breakdown).map { $0.english.lowercased() }
+            XCTAssertTrue(labels.allSatisfy { !forbiddenLabels.contains($0) }, pageID)
+        }
+    }
+
+    func testGeneratedListingPagesDoNotExposeAuthoringPlaceholderCopy() throws {
+        let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
+        let forbiddenSnippets = [
+            "placeholder",
+            "will appear",
+            "main phrase for the situation",
+            "related versions",
+            "key word",
+            "phrase ending",
+            "coming soon",
+            "todo",
+            "tbd",
+        ]
+
+        for family in catalog.families {
+            let primaryPhrase = catalog.phrase(withID: family.primaryPhraseID)
+            let pageID = GeneratedVietContent.canonicalPageID(for: family, primaryPhrase: primaryPhrase)
+            guard pageID == family.pageID else {
+                continue
+            }
+
+            let page = try XCTUnwrap(PhraseDetailPage.page(withID: pageID), pageID)
+            let visibleCopy = generatedVisibleCopy(for: page).joined(separator: " ").lowercased()
+
+            XCTAssertTrue(
+                forbiddenSnippets.allSatisfy { !visibleCopy.contains($0) },
+                pageID
+            )
+        }
+    }
+
+    private func generatedVisibleCopy(for page: PhraseDetailPage) -> [String] {
+        let sectionCopy = page.sections.flatMap { section in
+            [section.title, section.body]
+                + section.phrases.flatMap { [$0.vietnamese, $0.english, $0.pronunciation] }
+                + section.breakdown.flatMap { [$0.vietnamese, $0.english] }
+        }
+
+        let exampleCopy = page.examples.flatMap { [$0.vietnamese, $0.english, $0.pronunciation] }
+
+        return [page.title, page.englishTitle, page.pronunciation, page.summary] + sectionCopy + exampleCopy
+    }
+
+    private func articleTemplate(forTierOnePageID pageID: String) throws -> PhraseArticlePage {
+        if pageID == PhrasePage.xinChao.id {
+            return PhrasePage.xinChao.articleTemplate
+        }
+
+        return try XCTUnwrap(PhraseDetailPage.page(withID: pageID), pageID).articleTemplate
+    }
+
+    private func authoredAudioAudit() throws -> [String: Any] {
+        let url = try XCTUnwrap(Bundle.main.url(
+            forResource: "viet-authored-audio-audit",
+            withExtension: "json"
+        ))
+        let data = try Data(contentsOf: url)
+        let object = try JSONSerialization.jsonObject(with: data)
+
+        return try XCTUnwrap(object as? [String: Any])
+    }
+
+    func testSearchIndexCanOpenGeneratedPhraseFamilies() throws {
+        let results = PhraseSearchIndex.search("where is the ATM")
+        let result = try XCTUnwrap(results.first { $0.pageID == "viet-family-v500-airp-bord-arri-where-is-the-atm" })
+
+        XCTAssertEqual(result.title, "ATM ở đâu?")
+        XCTAssertEqual(result.subtitle, "Where is the ATM?")
+        XCTAssertNotNil(PhraseDetailPage.page(withID: result.pageID))
+    }
+
+    func testSearchIndexKeepsGeneratedDuplicatesOnCanonicalDesignedPages() {
+        let xinLoiResults = PhraseSearchIndex.search("Xin lỗi").filter { $0.title == "Xin lỗi" }
+        let camOnResults = PhraseSearchIndex.search("Cảm ơn").filter { $0.title == "Cảm ơn" }
+
+        XCTAssertEqual(xinLoiResults.map(\.pageID), ["viet-excuse-sorry"])
+        XCTAssertEqual(camOnResults.map(\.pageID), ["viet-thank-you"])
+    }
+
+    func testExploreCatalogIncludesGeneratedCategoriesAndFamilies() {
+        let categoryIDs = Set(PhraseCatalog.categories.map(\.id))
+        let airportItems = PhraseCatalog.items(selectedCategoryID: "airport-border-arrival")
+
+        XCTAssertTrue(categoryIDs.contains("airport-border-arrival"))
+        XCTAssertTrue(airportItems.contains { $0.pageID == "viet-family-airport-immigration" })
+        XCTAssertTrue(airportItems.allSatisfy { $0.categoryIDs.contains("airport-border-arrival") })
+        XCTAssertTrue(PhraseCatalog.isOpenablePageID("viet-family-airport-immigration"))
+    }
+
+    func testExploreCatalogItemsExposePlayableAudio() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let missingAudioItems = PhraseCatalog.allItems.compactMap { item -> String? in
+            guard let audioKey = item.playbackAudioKey, manifest.url(for: audioKey) != nil else {
+                return "\(item.pageID): \(item.title)"
+            }
+
+            return nil
+        }
+
+        XCTAssertTrue(missingAudioItems.isEmpty, missingAudioItems.joined(separator: "\n"))
+    }
+
+    func testAudioManifestResolvesBundledPhraseAudio() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let entry = try XCTUnwrap(manifest.entry(for: "airport-1"))
+
+        XCTAssertEqual(entry.fileName, "airport-1.mp3")
+        XCTAssertEqual(entry.text, "Nhập cảnh ở đâu?")
+        XCTAssertNotNil(manifest.url(for: "airport-1"))
+    }
+
+    func testDesignedPhraseAudioFallbackReusesExactTextAudio() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let politeHello = try XCTUnwrap(PhrasePage.xinChao.quickSay.first { $0.id == "polite-1" })
+        let casualHello = try XCTUnwrap(PhrasePage.xinChao.quickSay.first { $0.id == "polite-5" })
+
+        XCTAssertEqual(politeHello.playbackAudioKey, "polite-1")
+        let casualAudioKey = try XCTUnwrap(casualHello.playbackAudioKey)
+        XCTAssertNotNil(manifest.url(for: casualAudioKey))
+        XCTAssertEqual(manifest.entry(for: casualAudioKey)?.text, "Chào")
+    }
+
+    func testXinChaoRowsReuseAvailableExactAudio() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let options = PhrasePage.xinChao.quickSay
+            + PhrasePage.xinChao.localGreetings
+            + PhrasePage.xinChao.followUps
+        let expectedPlayableTexts = [
+            "Xin chào",
+            "Chào",
+            "Chào anh",
+            "Chào chị",
+            "Chào em",
+            "Chào ông",
+            "Chào bà",
+            "Chào chú",
+            "Chào cô",
+            "Bạn khỏe không?",
+        ]
+
+        for expectedText in expectedPlayableTexts {
+            let option = try XCTUnwrap(options.first { $0.vietnamese == expectedText }, expectedText)
+            let audioKey = try XCTUnwrap(option.playbackAudioKey, expectedText)
+
+            XCTAssertNotNil(manifest.url(for: audioKey), expectedText)
+            XCTAssertEqual(manifest.entry(for: audioKey)?.text, expectedText)
+        }
+    }
+
+    func testSpeakerButtonOnlyTreatsBundledAudioAsPlayable() {
+        XCTAssertTrue(AudioSpeakerButton.isPlayableAudioKey("polite-1"))
+        XCTAssertFalse(AudioSpeakerButton.isPlayableAudioKey(nil))
+        XCTAssertFalse(AudioSpeakerButton.isPlayableAudioKey("missing-audio-key"))
+    }
+
+    func testAllResolvedPhraseOptionAudioKeysPointToBundledFiles() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let rootOptions = PhrasePage.xinChao.quickSay
+            + PhrasePage.xinChao.situationalGreetings
+            + PhrasePage.xinChao.localGreetings
+            + PhrasePage.xinChao.followUps
+        var optionsByContext = rootOptions.map { ("\(PhrasePage.xinChao.id): \($0.vietnamese)", $0) }
+
+        for item in PhraseCatalog.allItems {
+            guard let page = PhraseDetailPage.page(withID: item.pageID) else {
+                continue
+            }
+
+            optionsByContext += page.examples.map { ("\(page.id): \($0.vietnamese)", $0) }
+            optionsByContext += page.sections.flatMap { section in
+                section.phrases.map { ("\(page.id) / \(section.id): \($0.vietnamese)", $0) }
+            }
+        }
+
+        for (context, option) in optionsByContext {
+            if let audioKey = option.playbackAudioKey {
+                XCTAssertNotNil(manifest.url(for: audioKey), context)
+            }
+        }
+    }
+
+    func testAllPhraseOptionsResolvePlayableAudio() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let rootOptions = PhrasePage.xinChao.quickSay
+            + PhrasePage.xinChao.situationalGreetings
+            + PhrasePage.xinChao.localGreetings
+            + PhrasePage.xinChao.followUps
+        var optionsByContext = rootOptions.map { ("\(PhrasePage.xinChao.id): \($0.vietnamese)", $0) }
+
+        for item in PhraseCatalog.allItems {
+            guard let page = PhraseDetailPage.page(withID: item.pageID) else {
+                continue
+            }
+
+            optionsByContext += page.examples.map { ("\(page.id): \($0.vietnamese)", $0) }
+            optionsByContext += page.sections.flatMap { section in
+                section.phrases.map { ("\(page.id) / \(section.id): \($0.vietnamese)", $0) }
+            }
+        }
+
+        let missingContexts = optionsByContext.compactMap { context, option -> String? in
+            guard let audioKey = option.playbackAudioKey, manifest.url(for: audioKey) != nil else {
+                return context
+            }
+
+            return nil
+        }
+
+        XCTAssertTrue(missingContexts.isEmpty, missingContexts.joined(separator: "\n"))
     }
 }

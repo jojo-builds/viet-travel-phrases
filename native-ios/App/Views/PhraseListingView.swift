@@ -2,114 +2,133 @@ import SwiftUI
 
 struct PhraseListingView: View {
     let page: PhrasePage
+    let scrollToTopTrigger: Int
+    let chromeNamespace: Namespace.ID?
+    let isSearchActive: Bool
+    let showsChrome: Bool
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onDetailTapped: (String) -> Void = { _ in }
+
+    init(
+        page: PhrasePage,
+        scrollToTopTrigger: Int = 0,
+        chromeNamespace: Namespace.ID? = nil,
+        isSearchActive: Bool = false,
+        showsChrome: Bool = true,
+        onBackTapped: @escaping () -> Void = {},
+        onSearchTapped: @escaping () -> Void = {},
+        onDetailTapped: @escaping (String) -> Void = { _ in }
+    ) {
+        self.page = page
+        self.scrollToTopTrigger = scrollToTopTrigger
+        self.chromeNamespace = chromeNamespace
+        self.isSearchActive = isSearchActive
+        self.showsChrome = showsChrome
+        self.onBackTapped = onBackTapped
+        self.onSearchTapped = onSearchTapped
+        self.onDetailTapped = onDetailTapped
+    }
+
+    var body: some View {
+        PhraseArticleTemplateView(
+            page: page.articleTemplate,
+            chromeRoute: .phrasePage,
+            scrollToTopTrigger: scrollToTopTrigger,
+            chromeNamespace: chromeNamespace,
+            isSearchActive: isSearchActive,
+            showsChrome: showsChrome,
+            onBackTapped: onBackTapped,
+            onSearchTapped: onSearchTapped,
+            onDetailTapped: onDetailTapped
+        )
+    }
+}
+
+struct PhraseArticleTemplateView: View {
+    let page: PhraseArticlePage
+    let chromeRoute: AppRoute
+    let scrollToTopTrigger: Int
+    let chromeNamespace: Namespace.ID?
+    let isSearchActive: Bool
+    let showsChrome: Bool
+    var onBackTapped: () -> Void = {}
+    var onSearchTapped: () -> Void = {}
+    var onDetailTapped: (String) -> Void = { _ in }
+
+    init(
+        page: PhraseArticlePage,
+        chromeRoute: AppRoute,
+        scrollToTopTrigger: Int = 0,
+        chromeNamespace: Namespace.ID? = nil,
+        isSearchActive: Bool = false,
+        showsChrome: Bool = true,
+        onBackTapped: @escaping () -> Void = {},
+        onSearchTapped: @escaping () -> Void = {},
+        onDetailTapped: @escaping (String) -> Void = { _ in }
+    ) {
+        self.page = page
+        self.chromeRoute = chromeRoute
+        self.scrollToTopTrigger = scrollToTopTrigger
+        self.chromeNamespace = chromeNamespace
+        self.isSearchActive = isSearchActive
+        self.showsChrome = showsChrome
+        self.onBackTapped = onBackTapped
+        self.onSearchTapped = onSearchTapped
+        self.onDetailTapped = onDetailTapped
+    }
 
     var body: some View {
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
 
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 0) {
-                    hero
+            ScrollViewReader { scrollProxy in
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack(spacing: 0) {
+                        Color.clear
+                            .frame(height: 0)
+                            .id(Self.scrollTopID)
 
-                    VStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
-                        SectionBlock(title: "At a glance") {
-                            Text(page.atGlance)
-                                .font(.body)
-                                .foregroundStyle(.secondary)
-                                .lineSpacing(3)
-                        }
+                        hero
 
-                        SectionBlock(title: "Quick say") {
-                            VStack(spacing: 0) {
-                                ForEach(page.quickSay) { phrase in
-                                    PhraseRow(phrase: phrase, onOpenDetail: onDetailTapped)
-                                    if phrase.id != page.quickSay.last?.id {
-                                        Divider().padding(.leading, 70)
-                                    }
-                                }
+                        LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
+                            ForEach(visibleSections) { section in
+                                ArticleSectionView(section: section, onOpenDetail: onDetailTapped)
                             }
-                            .padding(.vertical, 8)
-                            .phraseListCard()
-                        }
 
-                        SectionBlock(title: "Break it down") {
-                            BreakdownView(tokens: page.breakdown)
-                        }
-
-                        SectionBlock(title: "Situational greetings", trailing: "See all", leadIn: page.situationalGreetingsLeadIn) {
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 12) {
-                                    ForEach(page.situationalGreetings) { phrase in
-                                        SituationCard(phrase: phrase, onOpenDetail: onDetailTapped)
-                                    }
-                                }
-                                .padding(.horizontal, 2)
-                                .padding(.bottom, 2)
+                            if page.showsCatalogExplore {
+                                ExploreCatalogSection(
+                                    currentPageID: page.id,
+                                    onOpenDetail: onDetailTapped
+                                )
                             }
                         }
-
-                        SectionBlock(title: "How locals actually greet", leadIn: page.localGreetingsLeadIn) {
-                            VStack(spacing: 0) {
-                                ForEach(page.localGreetings) { phrase in
-                                    LocalGreetingRow(phrase: phrase, onOpenDetail: onDetailTapped)
-                                    if phrase.id != page.localGreetings.last?.id {
-                                        Divider().padding(.leading, 70)
-                                    }
-                                }
-                            }
-                            .padding(.vertical, 8)
-                            .phraseListCard()
-                        }
-
-                        SectionBlock(title: "Common follow-ups", leadIn: page.followUpsLeadIn) {
-                            VStack(spacing: 0) {
-                                ForEach(page.followUps) { phrase in
-                                    PhraseRow(phrase: phrase, onOpenDetail: onDetailTapped)
-                                    if phrase.id != page.followUps.last?.id {
-                                        Divider().padding(.leading, 70)
-                                    }
-                                }
-                            }
-                            .padding(.vertical, 8)
-                            .phraseListCard()
-                        }
-
-                        CulturalNote(text: page.culturalNote)
-
-                        SectionBlock(title: "Explore next") {
-                            VStack(spacing: 0) {
-                                ForEach(page.exploreNext) { link in
-                                    ExploreLinkRow(link: link, onOpenDetail: onDetailTapped)
-                                    if link.id != page.exploreNext.last?.id {
-                                        Divider().padding(.leading, 48)
-                                    }
-                                }
-                            }
-                            .padding(.vertical, 6)
-                            .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius)
-                        }
+                        .padding(.horizontal, PhrasePageStyle.horizontalPadding)
+                        .padding(.top, 72)
+                        .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
                     }
-                    .padding(.horizontal, PhrasePageStyle.horizontalPadding)
-                    .padding(.top, 72)
-                    .padding(.bottom, 118)
+                }
+                .onChange(of: scrollToTopTrigger) { _, _ in
+                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
             }
             .ignoresSafeArea(edges: .top)
             .overlay(alignment: .topLeading) {
-                fixedBackButton
-                    .padding(.leading, 24)
-                    .padding(.top, 6)
-                    .offset(y: -24)
+                if showsChrome {
+                    fixedBackButton
+                        .padding(.leading, 24)
+                        .padding(.top, 6)
+                        .offset(y: -24)
+                }
             }
 
-            bottomChrome
-                .padding(.horizontal, 16)
-                .padding(.bottom, -14)
-                .offset(y: 14)
+            if showsChrome {
+                bottomChrome
+                    .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
+                    .padding(.bottom, AppChromeLayout.bottomPadding)
+                    .offset(y: AppChromeLayout.bottomOffset)
+            }
         }
     }
 
@@ -119,13 +138,7 @@ struct PhraseListingView: View {
 
             VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 8) {
-                    ZStack {
-                        Circle().fill(Color.red)
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 8, weight: .bold))
-                            .foregroundStyle(.yellow)
-                    }
-                    .frame(width: 22, height: 22)
+                    heroBadge
 
                     Text(page.destination.uppercased())
                         .font(.caption.weight(.semibold))
@@ -133,14 +146,16 @@ struct PhraseListingView: View {
                 }
 
                 Text(page.title)
-                    .font(.system(size: 56, weight: .black, design: .serif))
+                    .font(.system(size: 54, weight: .black, design: .serif))
                     .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.72)
+                    .lineLimit(page.id == PhrasePage.xinChao.id ? 1 : 2)
+                    .minimumScaleFactor(0.62)
 
-                Text(page.intentSummary)
+                Text(page.summary)
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(.secondary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.78)
 
                 HStack(spacing: 10) {
                     Image(systemName: "waveform")
@@ -148,9 +163,11 @@ struct PhraseListingView: View {
                     Text(page.pronunciation)
                         .font(.title3)
                         .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.76)
                 }
 
-                PlaybackDockView()
+                PlaybackDockView(audioKey: page.playbackAudioKey)
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
             }
             .padding(.horizontal, 24)
@@ -158,6 +175,33 @@ struct PhraseListingView: View {
             .padding(.bottom, PhrasePageStyle.heroTextBottomPadding)
         }
         .background(PhrasePageStyle.pageBackground)
+    }
+
+    private static let scrollTopID = "PhraseArticleTemplateViewTop"
+
+    private var visibleSections: [PhraseArticleSection] {
+        page.sections.filter { section in
+            !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty
+        }
+    }
+
+    @ViewBuilder
+    private var heroBadge: some View {
+        if page.id == PhrasePage.xinChao.id {
+            ZStack {
+                Circle().fill(Color.red)
+                Image(systemName: "star.fill")
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundStyle(.yellow)
+            }
+            .frame(width: 22, height: 22)
+        } else {
+            Image(systemName: page.iconName)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(page.tintName.color)
+                .frame(width: 22, height: 22)
+                .nativeGlass(cornerRadius: 11)
+        }
     }
 
     private var fixedBackButton: some View {
@@ -174,16 +218,27 @@ struct PhraseListingView: View {
         .nativeGlass(cornerRadius: 26, interactive: true)
     }
 
+    @ViewBuilder
     private var bottomChrome: some View {
-        HStack(spacing: 10) {
-            HStack(spacing: 16) {
-                ForEach(AppChrome(route: .phrasePage).primaryDockItems, id: \.self) { item in
+        if #available(iOS 26.0, *) {
+            GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
+                bottomChromeContent
+            }
+        } else {
+            bottomChromeContent
+        }
+    }
+
+    private var bottomChromeContent: some View {
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            HStack(spacing: AppChromeLayout.dockItemSpacing) {
+                ForEach(AppChrome(route: chromeRoute).primaryDockItems, id: \.self) { item in
                     DockItem(kind: item, selected: item == .home)
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 5)
-            .nativeGlass(cornerRadius: 32)
+            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
+            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
+            .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
 
             Button {
                 onSearchTapped()
@@ -191,10 +246,150 @@ struct PhraseListingView: View {
                 Image(systemName: "magnifyingglass")
                     .font(.title2.weight(.medium))
                     .foregroundStyle(.primary)
-                    .frame(width: 64, height: 64)
+                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
             }
             .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: 32, interactive: true)
+            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
+            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchActive)
+        }
+    }
+}
+
+private struct ArticleSectionView: View {
+    let section: PhraseArticleSection
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        switch section.presentation {
+        case .breakdownStrip:
+            breakdownSection
+        case .horizontalPhraseCards:
+            horizontalCardsSection
+        case .phraseList:
+            phraseListSection
+        case .tipCallout:
+            ArticleCallout(
+                title: section.title,
+                text: section.body,
+                symbolName: "sparkles",
+                tint: .orange
+            )
+        case .warningCallout:
+            ArticleCallout(
+                title: section.title,
+                text: section.body,
+                symbolName: "exclamationmark.triangle.fill",
+                tint: .orange
+            )
+        case .plainText, .automatic:
+            plainTextSection
+        }
+    }
+
+    private var plainTextSection: some View {
+        SectionBlock(title: section.title) {
+            Text(section.body)
+                .font(.body)
+                .foregroundStyle(.secondary)
+                .lineSpacing(3)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private var phraseListSection: some View {
+        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+            if section.phrases.isEmpty {
+                Text(section.body)
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                VStack(spacing: 0) {
+                    ForEach(section.phrases) { phrase in
+                        LocalGreetingRow(phrase: phrase, onOpenDetail: onOpenDetail)
+
+                        if phrase.id != section.phrases.last?.id {
+                            Divider().padding(.leading, 70)
+                        }
+                    }
+                }
+                .padding(.vertical, 8)
+                .phraseListCard()
+            }
+        }
+    }
+
+    private var horizontalCardsSection: some View {
+        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+            if section.phrases.isEmpty {
+                Text(section.body)
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(section.phrases) { phrase in
+                            SituationCard(phrase: phrase, onOpenDetail: onOpenDetail)
+                        }
+                    }
+                    .padding(.horizontal, 2)
+                    .padding(.bottom, 2)
+                }
+                .scrollClipDisabled()
+            }
+        }
+    }
+
+    private var breakdownSection: some View {
+        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+            if section.breakdown.isEmpty {
+                Text(section.body)
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                BreakdownView(tokens: section.breakdown)
+            }
+        }
+    }
+}
+
+private struct ArticleCallout: View {
+    let title: String
+    let text: String
+    let symbolName: String
+    let tint: AccentTint
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 14) {
+            Image(systemName: symbolName)
+                .font(.title2.weight(.semibold))
+                .foregroundStyle(tint.color)
+                .frame(width: 48, height: 48)
+                .nativeGlass(cornerRadius: 24)
+
+            VStack(alignment: .leading, spacing: 5) {
+                Text(title)
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.primary)
+
+                Text(text)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .padding(16)
+        .background(tint.color.opacity(0.10), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .stroke(tint.color.opacity(0.22), lineWidth: 1)
         }
     }
 }
@@ -227,6 +422,12 @@ private struct SectionBlock<Content: View>: View {
                     .padding(.top, PhrasePageStyle.headerToContentSpacing)
             }
         }
+    }
+}
+
+private extension String {
+    var nilIfEmpty: String? {
+        isEmpty ? nil : self
     }
 }
 
@@ -269,7 +470,7 @@ private struct PhraseRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            AudioSpeakerButton(tint: phrase.tintName)
+            AudioSpeakerButton(tint: phrase.tintName, audioKey: phrase.playbackAudioKey)
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
@@ -310,7 +511,7 @@ private struct SituationCard: View {
             cardSummary
 
             HStack(spacing: 10) {
-                AudioSpeakerButton(tint: phrase.tintName, size: 42)
+                AudioSpeakerButton(tint: phrase.tintName, size: 42, audioKey: phrase.playbackAudioKey)
 
                 if phrase.detailPageID != nil {
                     Image(systemName: "chevron.right")
@@ -367,7 +568,7 @@ private struct LocalGreetingRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            AudioSpeakerButton(tint: phrase.tintName)
+            AudioSpeakerButton(tint: phrase.tintName, audioKey: phrase.playbackAudioKey)
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
@@ -406,33 +607,81 @@ struct BreakdownView: View {
     let tokens: [BreakdownToken]
 
     var body: some View {
-        HStack(spacing: 9) {
-            ForEach(Array(tokens.enumerated()), id: \.element.id) { index, token in
-                VStack(spacing: 4) {
-                    Text(token.vietnamese)
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(.red)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.72)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 9) {
+                ForEach(Array(tokens.enumerated()), id: \.element.id) { index, token in
+                    BreakdownTokenCard(
+                        token: token,
+                        width: tokenWidth(for: token, index: index)
+                    )
 
-                    Text(token.english)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.78)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
-                .phraseListCard(cornerRadius: 16, strokeOpacity: 0.05)
-
-                if index < tokens.count - 1 {
-                    Text(index == 0 ? "+" : "=")
-                        .font(.title.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                    if let separator = Self.separator(afterTokenAt: index, tokenCount: tokens.count) {
+                        Text(separator)
+                            .font(.title.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                            .frame(width: 28)
+                    }
                 }
             }
+            .padding(.horizontal, 2)
+            .padding(.vertical, 2)
         }
+        .scrollClipDisabled()
+    }
+
+    static func separator(afterTokenAt index: Int, tokenCount: Int) -> String? {
+        guard index >= 0, index < tokenCount - 1 else {
+            return nil
+        }
+
+        return index == tokenCount - 2 ? "=" : "+"
+    }
+
+    private func tokenWidth(for token: BreakdownToken, index: Int) -> CGFloat {
+        let longestTextCount = max(token.vietnamese.count, token.english.count)
+        let baseWidth = CGFloat(longestTextCount) * 7 + 58
+
+        if index == tokens.count - 1 {
+            return min(max(baseWidth, 188), 270)
+        }
+
+        return min(max(baseWidth, 138), 210)
+    }
+}
+
+private struct BreakdownTokenCard: View {
+    let token: BreakdownToken
+    let width: CGFloat
+
+    var body: some View {
+        VStack(spacing: 6) {
+            Text(token.vietnamese)
+                .font(.headline.weight(.black))
+                .foregroundStyle(.red)
+                .lineLimit(2)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.84)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Text(token.english)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.82)
+                .fixedSize(horizontal: false, vertical: true)
+
+            if let audioKey = token.playbackAudioKey {
+                AudioSpeakerButton(tint: .red, size: 30, audioKey: audioKey)
+                    .padding(.top, 1)
+                    .accessibilityLabel("Play \(token.vietnamese)")
+            }
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 12)
+        .frame(width: width)
+        .frame(minHeight: 112)
+        .phraseListCard(cornerRadius: 16, strokeOpacity: 0.05)
     }
 }
 
@@ -466,45 +715,232 @@ private struct CulturalNote: View {
     }
 }
 
-private struct ExploreLinkRow: View {
-    let link: PhraseLink
+struct ExploreCatalogSection: View {
+    let currentPageID: String
+    let onOpenDetail: (String) -> Void
+
+    private var sections: [PhraseCatalogSection] {
+        PhraseCatalog.browseSections(
+            defaultCategoryID: PhraseCatalog.defaultCategoryID(forPageID: currentPageID),
+            excludingPageID: currentPageID
+        )
+    }
+
+    var body: some View {
+        if sections.isEmpty {
+            ExploreCatalogEmptyState()
+        } else {
+            LazyVStack(alignment: .leading, spacing: ExploreCatalogLayout.sectionSpacing) {
+                ForEach(sections) { section in
+                    ExploreCatalogCategoryShelf(section: section, onOpenDetail: onOpenDetail)
+                }
+            }
+        }
+    }
+}
+
+enum ExploreCatalogLayout {
+    static let itemsPerGroup = 3
+    static let sectionSpacing: CGFloat = 28
+    static let groupSpacing: CGFloat = 12
+    static let rowHeight: CGFloat = 86
+    static let groupVerticalPadding: CGFloat = 8
+    static let rowSubtitleLineLimit = 2
+
+    static func groupHeight(for itemCount: Int) -> CGFloat {
+        let visibleRows = max(1, min(itemCount, itemsPerGroup))
+        return (rowHeight * CGFloat(visibleRows)) + (groupVerticalPadding * 2)
+    }
+
+    static var fullGroupHeight: CGFloat {
+        groupHeight(for: itemsPerGroup)
+    }
+}
+
+private struct ExploreCatalogCategoryShelf: View {
+    let section: PhraseCatalogSection
+    let onOpenDetail: (String) -> Void
+
+    private var itemGroups: [[PhraseCatalogItem]] {
+        section.items.chunked(into: ExploreCatalogLayout.itemsPerGroup)
+    }
+
+    private var shelfHeight: CGFloat {
+        ExploreCatalogLayout.groupHeight(for: Swift.min(section.items.count, ExploreCatalogLayout.itemsPerGroup))
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 3) {
+                HStack(spacing: 5) {
+                    Text(section.category.title)
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+
+                    Image(systemName: "chevron.right")
+                        .font(.headline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                Text(subtitle)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.82)
+            }
+
+            GeometryReader { proxy in
+                let groupWidth = max(260, min(326, proxy.size.width - 42))
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: ExploreCatalogLayout.groupSpacing) {
+                        ForEach(Array(itemGroups.enumerated()), id: \.offset) { _, group in
+                            ExploreCatalogGroupCard(
+                                items: group,
+                                width: groupWidth,
+                                onOpenDetail: onOpenDetail
+                            )
+                        }
+                    }
+                    .scrollTargetLayout()
+                }
+                .scrollTargetBehavior(.viewAligned)
+                .scrollClipDisabled()
+            }
+            .frame(height: shelfHeight)
+        }
+    }
+
+    private var subtitle: String {
+        switch section.category.id {
+        case "greetings":
+            return "Core hellos, polite openers, and first words"
+        case "local-greetings":
+            return "Pronoun-based greetings for anh, chị, em, ông, bà"
+        case "politeness":
+            return "Softer ways to sound respectful"
+        case "attention":
+            return "Get someone's attention without sounding abrupt"
+        case "small-talk":
+            return "Natural openers for casual conversation"
+        case "phone":
+            return "Phrases that make calls easier"
+        case "time":
+            return "Timing, schedules, and daily moments"
+        case "meeting":
+            return "Friendly ways to start meeting someone"
+        case "gratitude":
+            return "Thanks, apologies, and warm closers"
+        case "repair":
+            return "Recover when the conversation gets stuck"
+        case "understanding-repair":
+            return "Ask what it means, slow things down, or get it written"
+        case "goodbyes":
+            return "Leave conversations cleanly"
+        default:
+            return "Useful phrase pages for this travel moment"
+        }
+    }
+}
+
+private struct ExploreCatalogGroupCard: View {
+    let items: [PhraseCatalogItem]
+    let width: CGFloat
+    let onOpenDetail: (String) -> Void
+
+    private var cardHeight: CGFloat {
+        ExploreCatalogLayout.groupHeight(for: items.count)
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ForEach(items) { item in
+                ExploreCatalogRow(item: item, onOpenDetail: onOpenDetail)
+                    .frame(height: ExploreCatalogLayout.rowHeight)
+
+                if item.id != items.last?.id {
+                    Divider().padding(.leading, 70)
+                }
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, ExploreCatalogLayout.groupVerticalPadding)
+        .frame(width: width, height: cardHeight, alignment: .top)
+        .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius)
+    }
+}
+
+private extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        guard size > 0 else {
+            return []
+        }
+
+        return stride(from: 0, to: count, by: size).map { startIndex in
+            Array(self[startIndex..<Swift.min(startIndex + size, count)])
+        }
+    }
+}
+
+private struct ExploreCatalogRow: View {
+    let item: PhraseCatalogItem
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(link.detailPageID ?? link.id)
-        } label: {
-            HStack(spacing: 12) {
-                Image(systemName: link.symbolName)
-                    .font(.callout.weight(.semibold))
-                    .foregroundStyle(link.tintName.color)
-                    .frame(width: 44, height: 44)
-                    .nativeGlass(cornerRadius: 22)
+        HStack(spacing: 0) {
+            AudioSpeakerButton(tint: item.tintName, size: 44, audioKey: item.playbackAudioKey)
+                .padding(.leading, 14)
+                .padding(.trailing, 12)
 
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(link.vietnamese)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.72)
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                HStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.title)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
 
-                    Text(link.english)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.78)
+                        Text(item.subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(ExploreCatalogLayout.rowSubtitleLineLimit)
+                            .minimumScaleFactor(0.78)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .layoutPriority(1)
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.tertiary)
                 }
-
-                Spacer()
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
+                .contentShape(Rectangle())
             }
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 8)
+            .padding(.trailing, 14)
+            .accessibilityIdentifier("ExploreCatalogRow.\(item.pageID)")
+            .accessibilityLabel("\(item.title), \(item.subtitle)")
         }
-        .buttonStyle(.plain)
-        .padding(.horizontal, 14)
-        .padding(.vertical, 8)
+    }
+}
+
+private struct ExploreCatalogEmptyState: View {
+    var body: some View {
+        Text("More phrases for this category are being shaped.")
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(.secondary)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(16)
+            .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius)
     }
 }
 
