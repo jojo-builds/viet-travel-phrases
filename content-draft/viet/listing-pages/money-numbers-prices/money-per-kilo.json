@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this for fruit, snacks, or anything sold by weight. This is especially useful in markets and fruit stalls. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Bao nhiêu một ký? answers the traveler question \"How much per kilo\" in prices, quantities, payment, and ATM moments. Use this for fruit, snacks, or anything sold by weight. This is especially useful in markets and fruit stalls. Its job is making the price or amount the center of the exchange. Expect a number, typed amount, calculator screen, or direct yes/no about payment; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Bao nhiêu một ký? is the version to learn first for \"How much per kilo?\". Use this for fruit, snacks, or anything sold by weight. Point to the place, object, or screen that gives the phrase context.",
+      "body": "Start with Bao nhiêu một ký? when \"How much per kilo\" is the main thing you need understood. Use this for fruit, snacks, or anything sold by weight. The phrase works because it is specific enough to invite a number, typed amount, calculator screen, or direct yes/no about payment. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "price-2",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"How much per kilo\", the useful move is making the price or amount the center of the exchange. Repeat or show the number before paying if the amount matters.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Money, Numbers & Prices, locals often answer with a number, typed amount, calculator screen, or direct yes/no about payment rather than a long explanation. That makes Bao nhiêu một ký? strongest when you say it once, pause, and let the other person show the next step. Point to the place, object, or screen that gives the phrase context.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for fruit, snacks, or anything sold by weight. Use it in prices, quantities, payment, and ATM moments when one clear sentence will work better than a long explanation.",
+      "body": "Use this for fruit, snacks, or anything sold by weight. It fits prices, quantities, payment, and ATM moments, especially when the next step is a number, typed amount, calculator screen, or direct yes/no about payment. Repeat or show the number before paying if the amount matters.",
       "presentation": "plain-text"
     },
     {

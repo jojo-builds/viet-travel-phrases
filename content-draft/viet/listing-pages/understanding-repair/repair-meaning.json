@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when one word or phrase is blocking your understanding. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Cái đó nghĩa là gì? answers the traveler question \"What does that mean\" in moments when Vietnamese stops making sense. This is for when one word or phrase is blocking your understanding. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cái đó nghĩa là gì? is the version to learn first for \"What does that mean?\". Use this when one word or phrase is blocking your understanding. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "Start with Cái đó nghĩa là gì? when \"What does that mean\" is the main thing you need understood. This is for when one word or phrase is blocking your understanding. The phrase works because it is specific enough to invite a short answer, gesture, or practical next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "repair-3",
@@ -86,13 +86,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping.",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"What does that mean\", the useful move is keeping the useful noun or action in the center of the phrase. Use the related phrases below if the exchange moves one step further.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In When You Don't Understand, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Cái đó nghĩa là gì? strongest when you say it once, pause, and let the other person show the next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when one word or phrase is blocking your understanding. It helps in moments when Vietnamese stops making sense, especially when one clear sentence will work better than a long explanation.",
+      "body": "This is for when one word or phrase is blocking your understanding. It fits moments when Vietnamese stops making sense, especially when the next step is a short answer, gesture, or practical next step. Use the related phrases below if the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {

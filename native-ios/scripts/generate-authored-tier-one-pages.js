@@ -100,8 +100,9 @@ const familyCopyOverrides = {
   "v500-sigh-acti-i-have-a-tour-booking": {
     summary: "Use this when staff need to find an existing tour reservation, not sell you a new ticket.",
     atGlance: "Use this at a tour desk, pier, hotel lobby, or attraction entrance when you already booked and need staff to find your reservation. Show the booking name, QR code, or confirmation screen while you say it.",
-    standard: "Tôi có đặt tour is the compact version to learn first. Tour is widely understood in travel settings, and đặt keeps the meaning on a booking or reservation rather than a casual plan.",
+    standard: "Start with Tôi có đặt tour when staff need to find an existing reservation. Tour is widely understood in travel settings, and đặt keeps the meaning on a booking or reservation rather than a casual plan.",
     when: "Use it before a tour starts, when checking in with a guide, or when a desk asks whether you already booked. Follow with the booking name if they look uncertain.",
+    why: "Tour check-ins move quickly because staff are usually matching names, times, and group lists. This phrase tells them you are already in the system, so the next useful answer is likely a meeting point, guide name, or confirmation request.",
     watch: "Pair the phrase with the voucher or booking code when the place is busy so staff can match the right tour quickly.",
     tip: "If staff answer with a time or meeting point, ask them to point to it on the voucher or map.",
   },
@@ -115,17 +116,19 @@ const familyCopyOverrides = {
   },
   "v500-shop-can-you-lower-the-price": {
     summary: "Use this when bargaining is normal and you want to ask for a small discount.",
-    atGlance: "Use this in markets or flexible-price shops, not at fixed-price counters. Giảm giá chút được không? asks for a small discount without using the peer-like bạn.",
-    standard: "Giảm giá chút được không? is the cleaner discount question here. It keeps the ask light and lets the seller say yes, no, or counteroffer.",
-    when: "Use it after you know the price and still want to buy if the seller can lower it a little.",
+    atGlance: "Use this in markets or flexible-price shops, not at fixed-price counters. Giảm giá chút được không? asks for a small discount without using the peer-like bạn, so it keeps the bargain about the price instead of the relationship.",
+    standard: "Giảm giá chút được không? is the cleaner discount question here. It keeps the ask light, includes chút for 'a little,' and gives the seller room to say yes, no, or counteroffer without losing face.",
+    when: "Use it after you know the price and still want to buy if the seller can lower it a little. It works best when you are holding or pointing at one item, not while asking about a whole shelf.",
+    why: "Price talk is partly social in markets. A small, friendly ask sounds better than a hard demand because it lets the seller protect the mood while still changing the number.",
     watch: "Keep your tone friendly. In Vietnam, bargaining can be playful in markets but awkward in fixed-price stores.",
     tip: "Point to the item, smile, and pause. The pause gives the seller room to answer without pressure.",
   },
   "money-lower-price": {
     summary: "Use this short market phrase only where bargaining is normal.",
-    atGlance: "Bớt chút được không? is the compact local-feeling way to ask for a little lower price. It is useful in markets, informal stalls, or flexible-price moments.",
-    standard: "Bớt chút được không? literally asks whether they can reduce it a little. It is shorter and more natural than a full textbook sentence.",
-    when: "Use it after hearing the price, while still holding or pointing at the item.",
+    atGlance: "Bớt chút được không? is the compact local-feeling way to ask for a little lower price. It is useful in markets, informal stalls, or flexible-price moments where the seller expects some back-and-forth.",
+    standard: "Bớt chút được không? literally asks whether they can reduce it a little. It is shorter and more natural than a full textbook sentence, and chút keeps the request modest instead of confrontational.",
+    when: "Use it after hearing the price, while still holding or pointing at the item. It is best for one specific item, one ride price, or one quoted number you want softened.",
+    why: "The phrase works because it asks for a small adjustment, not a fight over value. Sellers can answer with a smaller number, a smile, or a firm final price while the exchange stays friendly.",
     watch: "Use it where prices are flexible, such as markets or informal stalls. At fixed-price counters, confirm the posted price instead.",
     tip: "If the answer is a number, ask them to type it on a calculator so you do not mishear the final price.",
   },
@@ -277,7 +280,7 @@ const glossary = new Map(Object.entries({
   "ơn": "gratitude",
   "nhiều": "much / many",
   "dạ": "polite yes",
-  "không": "no / not / question",
+  "không": "no / not / asks yes or no",
   "cho": "give / let",
   "tôi": "I / me",
   "mình": "I / me",
@@ -521,24 +524,121 @@ function instructionLikeSentence(text) {
   return /^(use|ask|say|add|show|point|keep)\b/i.test((text ?? "").trim());
 }
 
+function cleanEnglishIntent(englishText) {
+  return englishText
+    .replace(/[?!]+$/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function contextAsSituation(text, fallback) {
+  const source = (text || fallback || "").trim();
+  if (!source) return "";
+
+  return sentence(source
+    .replace(/^Use this when\s+/i, "This is for when ")
+    .replace(/^Use this at\s+/i, "This is for ")
+    .replace(/^Use this in\s+/i, "This is for ")
+    .replace(/^Use this before\s+/i, "This comes before ")
+    .replace(/^Use this if\s+/i, "This helps if ")
+    .replace(/^Use this to\s+/i, "This helps you ")
+    .replace(/^Ask this when\s+/i, "This is for when "));
+}
+
+function intentTeaching(primaryPhrase) {
+  const english = cleanEnglishIntent(primaryPhrase.englishText).toLowerCase();
+
+  if (/^(where|where can|where do|where is|where are)\b/.test(english) || /\bnearest\b/.test(english)) {
+    return {
+      moment: "finding a place, counter, pickup point, or service without explaining the whole situation",
+      strategy: "turning the problem into something the other person can point to, type, or mark on a map",
+      response: "a point, short direction, nearby option, or counter name",
+      followUp: "If the answer is longer than a point or a place name, ask them to show it on your phone.",
+    };
+  }
+
+  if (/^(how much|what.*price|.*fare|.*cost|.*ticket.*price|.*bao nhiêu)/.test(english) || /\bprice\b|\bfare\b|\batm\b/.test(english)) {
+    return {
+      moment: "getting a number clear before money, tickets, rides, or quantities become awkward",
+      strategy: "making the price or amount the center of the exchange",
+      response: "a number, typed amount, calculator screen, or direct yes/no about payment",
+      followUp: "Repeat or show the number before paying if the amount matters.",
+    };
+  }
+
+  if (/^(can i|could i|may i|do you have|do you sell|is there|are there)\b/.test(english)) {
+    return {
+      moment: "asking for permission or availability while keeping the interaction soft",
+      strategy: "letting the other person answer yes, no, or point you to the right option",
+      response: "a yes/no answer, a gesture toward the item, or a short alternative",
+      followUp: "If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+    };
+  }
+
+  if (/^(i need|i want|i'd like|i would like|please|a table|one |more )\b/.test(english)) {
+    return {
+      moment: "making a request where the other person can help right away",
+      strategy: "putting the need first and leaving room for the helper to confirm the detail",
+      response: "a confirmation, a handoff, a price, or a follow-up question",
+      followUp: "Pause after the phrase so the person can confirm before you add more words.",
+    };
+  }
+
+  if (/^(i have|here is|this is|i left|i lost|my .*not|my .*is not|the .*does not|the .*isn't|i cannot|i can't)\b/.test(english) || /\bmissing\b|\bnot working\b|\bbroken\b|\bkept my card\b|\bbehind\b/.test(english)) {
+    return {
+      moment: "showing a document, reporting a problem, or explaining what went wrong",
+      strategy: "naming the concrete item or problem first so staff can choose the next action",
+      response: "a request to see the item, a direction to another desk, or a practical next step",
+      followUp: "Show the document, photo, room number, receipt, or screen connected to the problem.",
+    };
+  }
+
+  if (/^(no|not|i am vegetarian|i'm vegetarian|i am allergic|i'm allergic|do not)\b/.test(english) || /\ballergic\b|\bvegetarian\b|\bnot spicy\b|\bno sugar\b/.test(english)) {
+    return {
+      moment: "setting a food, safety, comfort, or personal boundary clearly",
+      strategy: "stating the limit before the order or interaction moves too far",
+      response: "a confirmation, a substitute, or a question about what is allowed",
+      followUp: "Confirm visually when the detail affects safety, health, or the final order.",
+    };
+  }
+
+  if (/^(today|tomorrow|morning|what time|goodbye|yes|thank you|it'?s okay|how are you|i like|i'm from|i am from|this is my first|the food|the weather)\b/.test(english)) {
+    return {
+      moment: "keeping a short social or scheduling exchange warm and easy to answer",
+      strategy: "giving the other person a simple anchor rather than a long explanation",
+      response: "a short reply, a smile, a time, or a light follow-up question",
+      followUp: "Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
+    };
+  }
+
+  return {
+    moment: "turning the travel need into one clear sentence",
+    strategy: "keeping the useful noun or action in the center of the phrase",
+    response: "a short answer, gesture, or practical next step",
+    followUp: "Use the related phrases below if the exchange moves one step further.",
+  };
+}
+
 function atGlanceText(family, primaryPhrase) {
   const copy = scenarioCopy(family.scenarioID);
   const override = familyOverride(family);
   if (override.atGlance) return override.atGlance;
 
-  const lead = primaryPhrase.context
-    ? sentence(primaryPhrase.context)
-    : `${primaryPhrase.targetText} gives you a compact way to say "${primaryPhrase.englishText}" in ${copy.moment}.`;
+  const teaching = intentTeaching(primaryPhrase);
+  const intent = cleanEnglishIntent(primaryPhrase.englishText);
+  const situation = contextAsSituation(primaryPhrase.context, family.summary);
   const summaryCandidate = override.summary ?? (weakSummary(family.summary) ? "" : sentence(family.summary));
   const usefulSummary = primaryPhrase.context && instructionLikeSentence(summaryCandidate) ? "" : summaryCandidate;
-  const nextStep = (family.phraseIDs ?? []).length > 1
-    ? "Use the other forms below when tone, setting, or politeness changes."
-    : "After the first answer, the related phrases help you handle the likely follow-up without starting over.";
+  const variantCue = (family.phraseIDs ?? []).length > 1
+    ? "The forms below show how tone, setting, or politeness changes the best choice."
+    : `Expect ${teaching.response}; then use Explore next if the reply creates another small task.`;
 
   return [
-    lead,
+    `${primaryPhrase.targetText} answers the traveler question "${intent}" in ${copy.moment}.`,
+    situation,
     usefulSummary,
-    nextStep,
+    `Its job is ${teaching.strategy}.`,
+    variantCue,
   ].filter(Boolean).join(" ");
 }
 
@@ -564,6 +664,10 @@ function contextCueText(family) {
       return "Show the document, symptom, location, or item connected to the need so helpers can act faster.";
     case "bathroom-personal-needs":
       return "Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.";
+    case "polite-basics":
+      return "Keep your voice calm and let the short phrase do the politeness work before you add another request.";
+    case "social-small-talk":
+      return "Use it after a greeting or shared moment, then leave space for a short friendly reply.";
     case "understanding-repair":
       return "If speech still does not land, move to writing, pointing, or showing the exact word on your phone.";
     default:
@@ -575,9 +679,13 @@ function standardText(family, primaryPhrase) {
   const override = familyOverride(family);
   if (override.standard) return override.standard;
 
+  const teaching = intentTeaching(primaryPhrase);
+  const intent = cleanEnglishIntent(primaryPhrase.englishText);
+  const situation = contextAsSituation(primaryPhrase.context, family.summary);
   return [
-    `${primaryPhrase.targetText} is the version to learn first for "${primaryPhrase.englishText}".`,
-    primaryPhrase.context ? sentence(primaryPhrase.context) : "It is short enough to say in a real travel moment.",
+    `Start with ${primaryPhrase.targetText} when "${intent}" is the main thing you need understood.`,
+    situation || `It keeps the focus on ${teaching.moment}.`,
+    `The phrase works because it is specific enough to invite ${teaching.response}.`,
     contextCueText(family),
   ].join(" ");
 }
@@ -587,14 +695,17 @@ function usageText(family, primaryPhrase) {
   const override = familyOverride(family);
   if (override.when) return override.when;
 
+  const teaching = intentTeaching(primaryPhrase);
+  const situation = contextAsSituation(primaryPhrase.context, family.summary);
   const momentSentence = copy.moment.startsWith("moments when")
-    ? `It helps in ${copy.moment}, especially when one clear sentence will work better than a long explanation.`
-    : `Use it in ${copy.moment} when one clear sentence will work better than a long explanation.`;
+    ? `It fits ${copy.moment}, especially when the next step is ${teaching.response}.`
+    : `It fits ${copy.moment}, especially when the next step is ${teaching.response}.`;
 
   return [
-    primaryPhrase.context ? sentence(primaryPhrase.context) : sentence(family.summary),
+    situation,
     momentSentence,
-  ].join(" ");
+    teaching.followUp,
+  ].filter(Boolean).join(" ");
 }
 
 function watchOutText(family, primaryPhrase) {
@@ -616,8 +727,27 @@ function localTipText(family, primaryPhrase) {
   return familyOverride(family).tip ?? scenarioCopy(family.scenarioID).tip;
 }
 
-function whyItMattersText(family) {
-  return familyOverride(family).why ?? scenarioCopy(family.scenarioID).why;
+function whyItMattersText(family, primaryPhrase) {
+  const override = familyOverride(family);
+  if (override.why) return override.why;
+
+  const teaching = intentTeaching(primaryPhrase);
+  return [
+    scenarioCopy(family.scenarioID).why,
+    `For "${cleanEnglishIntent(primaryPhrase.englishText)}", the useful move is ${teaching.strategy}.`,
+    teaching.followUp,
+  ].join(" ");
+}
+
+function travelerInsightText(family, primaryPhrase) {
+  const teaching = intentTeaching(primaryPhrase);
+  const scenario = scenarioByID.get(family.scenarioID);
+  const categoryName = scenario?.title ?? "this situation";
+  return [
+    `In ${categoryName}, locals often answer with ${teaching.response} rather than a long explanation.`,
+    `That makes ${primaryPhrase.targetText} strongest when you say it once, pause, and let the other person show the next step.`,
+    contextCueText(family),
+  ].join(" ");
 }
 
 function normalizedVietnameseKey(value) {
@@ -888,7 +1018,7 @@ function semanticBreakdownPieces(targetText, englishText) {
     ["được không", "is it possible?"],
     ["đúng không", "right?"],
     ["phải không", "is that right?"],
-    ["không", "yes/no question"],
+    ["không", "asks yes or no"],
   ];
 
   for (const [vietnamese, english] of suffixes) {
@@ -1015,7 +1145,7 @@ function breakdownLeadIn(phrase) {
   }
 
   if (targetText.includes("không")) {
-    return "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.";
+    return "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.";
   }
 
   if (phrase.targetText.startsWith("Đây là")) {
@@ -1119,7 +1249,12 @@ function childPageForVariant(family, variantPhrase, primaryPhrase) {
       {
         id: "when-to-use",
         title: "When to use it",
-        body: `${sentence(variantPhrase.context || family.summary)} Use ${primaryPhrase.targetText} when you want the shorter, more basic version.`,
+        body: `${contextAsSituation(variantPhrase.context, family.summary)} Use ${primaryPhrase.targetText} when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.`,
+      },
+      {
+        id: "traveler-insight",
+        title: "Traveler insight",
+        body: travelerInsightText(family, variantPhrase),
       },
       {
         id: "good-to-know",
@@ -1215,13 +1350,17 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     sections.push(variationsSection);
   }
 
-  if (depth === "deep") {
-    sections.push({
-      id: "why-it-matters",
-      title: "Why it matters",
-      body: whyItMattersText(family),
-    });
-  }
+  sections.push({
+    id: "why-it-matters",
+    title: "Why it matters",
+    body: whyItMattersText(family, primaryPhrase),
+  });
+
+  sections.push({
+    id: "traveler-insight",
+    title: "Traveler insight",
+    body: travelerInsightText(family, primaryPhrase),
+  });
 
   if (family.id === "social-how-are-you") {
     sections.push({

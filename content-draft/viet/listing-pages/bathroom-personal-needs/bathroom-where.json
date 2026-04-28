@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need the restroom immediately. This is a direct survival phrase and should stay short. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Nhà vệ sinh ở đâu? answers the traveler question \"Where is the bathroom\" in bathrooms, soap, paper, water, and basic personal needs. This is for when you need the restroom immediately. This is a direct survival phrase and should stay short. Its job is turning the problem into something the other person can point to, type, or mark on a map. Expect a point, short direction, nearby option, or counter name; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Nhà vệ sinh ở đâu? is the version to learn first for \"Where is the bathroom?\". Use this when you need the restroom immediately. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "Start with Nhà vệ sinh ở đâu? when \"Where is the bathroom\" is the main thing you need understood. This is for when you need the restroom immediately. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
       "phrases": [
         {
           "id": "bath-1",
@@ -66,9 +66,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "These phrases are practical and often need a quick answer, not a long conversation. For \"Where is the bathroom\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Bathroom & Personal Needs, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Nhà vệ sinh ở đâu? strongest when you say it once, pause, and let the other person show the next step. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you need the restroom immediately. Use it in bathrooms, soap, paper, water, and basic personal needs when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you need the restroom immediately. It fits bathrooms, soap, paper, water, and basic personal needs, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

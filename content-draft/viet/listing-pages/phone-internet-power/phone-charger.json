@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need any charger before you explain more detail. This is the quickest recovery phrase when the battery problem can be fixed nearby. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Có sạc không? answers the traveler question \"Do you have a charger\" in Wi-Fi, SIM, battery, charging, maps, and phone setup. This is for when you need any charger before you explain more detail. This is the quickest recovery phrase when the battery problem can be fixed nearby. Its job is letting the other person answer yes, no, or point you to the right option. Expect a yes/no answer, a gesture toward the item, or a short alternative; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "phone-4-piece-1",
@@ -41,7 +41,7 @@
         {
           "id": "phone-4-piece-3",
           "vietnamese": "không?",
-          "english": "yes/no question",
+          "english": "asks yes or no",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Có sạc không? is the version to learn first for \"Do you have a charger?\". Use this when you need any charger before you explain more detail. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Start with Có sạc không? when \"Do you have a charger\" is the main thing you need understood. This is for when you need any charger before you explain more detail. The phrase works because it is specific enough to invite a yes/no answer, a gesture toward the item, or a short alternative. Show the phone screen or error message first so the problem is visible before you add more words.",
       "phrases": [
         {
           "id": "phone-4",
@@ -72,9 +72,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Phone phrases work best when the other person can see the exact screen or error. For \"Do you have a charger\", the useful move is letting the other person answer yes, no, or point you to the right option. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Phone, Internet & Power, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Có sạc không? strongest when you say it once, pause, and let the other person show the next step. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you need any charger before you explain more detail. Use it in Wi-Fi, SIM, battery, charging, maps, and phone setup when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you need any charger before you explain more detail. It fits Wi-Fi, SIM, battery, charging, maps, and phone setup, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
       "presentation": "plain-text"
     },
     {

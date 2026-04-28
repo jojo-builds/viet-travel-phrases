@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the booking exists and you need staff to find it first. Start with the booking before you ask about timing changes. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi có đặt chỗ answers the traveler question \"I have a booking\" in times, dates, tickets, waits, and bookings. This is for when the booking exists and you need staff to find it first. Start with the booking before you ask about timing changes. Its job is naming the concrete item or problem first so staff can choose the next action. Expect a request to see the item, a direction to another desk, or a practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi có đặt chỗ is the version to learn first for \"I have a booking\". Use this when the booking exists and you need staff to find it first. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "body": "Start with Tôi có đặt chỗ when \"I have a booking\" is the main thing you need understood. This is for when the booking exists and you need staff to find it first. The phrase works because it is specific enough to invite a request to see the item, a direction to another desk, or a practical next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "time-4",
@@ -72,9 +72,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Time phrases prevent missed pickups, bookings, and closing times. For \"I have a booking\", the useful move is naming the concrete item or problem first so staff can choose the next action. Show the document, photo, room number, receipt, or screen connected to the problem.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Time, Dates & Booking, locals often answer with a request to see the item, a direction to another desk, or a practical next step rather than a long explanation. That makes Tôi có đặt chỗ strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when the booking exists and you need staff to find it first. Use it in times, dates, tickets, waits, and bookings when one clear sentence will work better than a long explanation.",
+      "body": "This is for when the booking exists and you need staff to find it first. It fits times, dates, tickets, waits, and bookings, especially when the next step is a request to see the item, a direction to another desk, or a practical next step. Show the document, photo, room number, receipt, or screen connected to the problem.",
       "presentation": "plain-text"
     },
     {

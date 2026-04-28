@@ -62,7 +62,13 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when the driver seems likely to roll past the stop. Use Dừng ở đây được rồi when you want the shorter, more basic version.",
+      "body": "This is for when the driver seems likely to roll past the stop. Use Dừng ở đây được rồi when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Transport, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Cho tôi xuống ngay đây strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "presentation": "plain-text"
     },
     {

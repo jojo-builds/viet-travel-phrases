@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the air conditioner is not working at all. This is the more specific follow-up when the heat problem is the air conditioner. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Máy lạnh không chạy answers the traveler question \"The air conditioner isn’t working\" in front desk, room, check-in, and hotel-service moments. This is for when the air conditioner is not working at all. This is the more specific follow-up when the heat problem is the air conditioner. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "hotel-5-piece-1",
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Máy lạnh không chạy is the version to learn first for \"The air conditioner isn’t working\". Use this when the air conditioner is not working at all. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "body": "Start with Máy lạnh không chạy when \"The air conditioner isn’t working\" is the main thing you need understood. This is for when the air conditioner is not working at all. The phrase works because it is specific enough to invite a short answer, gesture, or practical next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "hotel-5",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need.",
+      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"The air conditioner isn’t working\", the useful move is keeping the useful noun or action in the center of the phrase. Use the related phrases below if the exchange moves one step further.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Hotel Accommodation, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Máy lạnh không chạy strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when the air conditioner is not working at all. Use it in front desk, room, check-in, and hotel-service moments when one clear sentence will work better than a long explanation.",
+      "body": "This is for when the air conditioner is not working at all. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a short answer, gesture, or practical next step. Use the related phrases below if the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {

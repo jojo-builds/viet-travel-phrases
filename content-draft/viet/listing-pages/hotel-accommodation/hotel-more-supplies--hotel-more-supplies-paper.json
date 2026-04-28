@@ -24,7 +24,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "hotel-more-supplies-paper-piece-1",
@@ -74,7 +74,13 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when the room needs more toilet paper rather than more towels. Use Cho tôi thêm khăn when you want the shorter, more basic version.",
+      "body": "This is for when the room needs more toilet paper rather than more towels. Use Cho tôi thêm khăn when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Hotel Accommodation, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Cho tôi thêm giấy vệ sinh được không? strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "presentation": "plain-text"
     },
     {

@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bớt chút được không? is the compact local-feeling way to ask for a little lower price. It is useful in markets, informal stalls, or flexible-price moments.",
+      "body": "Bớt chút được không? is the compact local-feeling way to ask for a little lower price. It is useful in markets, informal stalls, or flexible-price moments where the seller expects some back-and-forth.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "price-4-piece-1",
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Bớt chút được không? literally asks whether they can reduce it a little. It is shorter and more natural than a full textbook sentence.",
+      "body": "Bớt chút được không? literally asks whether they can reduce it a little. It is shorter and more natural than a full textbook sentence, and chút keeps the request modest instead of confrontational.",
       "phrases": [
         {
           "id": "price-4",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts.",
+      "body": "The phrase works because it asks for a small adjustment, not a fight over value. Sellers can answer with a smaller number, a smile, or a firm final price while the exchange stays friendly.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Money, Numbers & Prices, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Bớt chút được không? strongest when you say it once, pause, and let the other person show the next step. Point to the place, object, or screen that gives the phrase context.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it after hearing the price, while still holding or pointing at the item.",
+      "body": "Use it after hearing the price, while still holding or pointing at the item. It is best for one specific item, one ride price, or one quoted number you want softened.",
       "presentation": "plain-text"
     },
     {

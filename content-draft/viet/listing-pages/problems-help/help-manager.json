@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the staff cannot solve the problem and you need escalation. This is a practical escalation phrase, not a dramatic one. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi cần quản lý answers the traveler question \"I need the manager\" in lost items, help, managers, and recovery moments. This is for when the staff cannot solve the problem and you need escalation. This is a practical escalation phrase, not a dramatic one. Its job is putting the need first and leaving room for the helper to confirm the detail. Expect a confirmation, a handoff, a price, or a follow-up question; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi cần quản lý is the version to learn first for \"I need the manager\". Use this when the staff cannot solve the problem and you need escalation. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Start with Tôi cần quản lý when \"I need the manager\" is the main thing you need understood. This is for when the staff cannot solve the problem and you need escalation. The phrase works because it is specific enough to invite a confirmation, a handoff, a price, or a follow-up question. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "help-3",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need.",
+      "body": "Help phrases work when they name the problem and the next person or action you need. For \"I need the manager\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Problems & Help, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Tôi cần quản lý strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when the staff cannot solve the problem and you need escalation. Use it in lost items, help, managers, and recovery moments when one clear sentence will work better than a long explanation.",
+      "body": "This is for when the staff cannot solve the problem and you need escalation. It fits lost items, help, managers, and recovery moments, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {

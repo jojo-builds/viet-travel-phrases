@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you think you missed only the number. This is useful for room numbers, gates, fares, and prices. Use the other forms below when tone, setting, or politeness changes.",
+      "body": "Làm ơn nói lại số đó answers the traveler question \"Please say the number again\" in moments when Vietnamese stops making sense. This is for when you think you missed only the number. This is useful for room numbers, gates, fares, and prices. Its job is putting the need first and leaving room for the helper to confirm the detail. The forms below show how tone, setting, or politeness changes the best choice.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Làm ơn nói lại số đó is the version to learn first for \"Please say the number again\". Use this when you think you missed only the number. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "Start with Làm ơn nói lại số đó when \"Please say the number again\" is the main thing you need understood. This is for when you think you missed only the number. The phrase works because it is specific enough to invite a confirmation, a handoff, a price, or a follow-up question. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "repair-6",
@@ -98,13 +98,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping.",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"Please say the number again\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In When You Don't Understand, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Làm ơn nói lại số đó strongest when you say it once, pause, and let the other person show the next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you think you missed only the number. It helps in moments when Vietnamese stops making sense, especially when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you think you missed only the number. It fits moments when Vietnamese stops making sense, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {

@@ -2,6 +2,8 @@
 
 Date: 2026-04-29
 
+Superseded: `docs/content-audits/tier1-listing-pages-audit-002.md` is the current completion audit after the broad Tier 1 enrichment pass.
+
 Scope: the current SpeakLocal Vietnam Tier 1 phrase-page inventory pinned by `content-draft/viet/listing-pages/_tier-one-index.json`. This audit covers all 150 Tier 1 family pages and notes the 15 generated child variant pages that sit under those families. It intentionally avoids `native-ios/App/**` while T-167 is active.
 
 ## Summary

@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this in markets or flexible-price shops, not at fixed-price counters. Giảm giá chút được không? asks for a small discount without using the peer-like bạn.",
+      "body": "Use this in markets or flexible-price shops, not at fixed-price counters. Giảm giá chút được không? asks for a small discount without using the peer-like bạn, so it keeps the bargain about the price instead of the relationship.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "v500-shop-can-you-lower-the-price-piece-1",
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Giảm giá chút được không? is the cleaner discount question here. It keeps the ask light and lets the seller say yes, no, or counteroffer.",
+      "body": "Giảm giá chút được không? is the cleaner discount question here. It keeps the ask light, includes chút for 'a little,' and gives the seller room to say yes, no, or counteroffer without losing face.",
       "phrases": [
         {
           "id": "v500-shop-can-you-lower-the-price",
@@ -72,9 +72,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Price talk is partly social in markets. A small, friendly ask sounds better than a hard demand because it lets the seller protect the mood while still changing the number.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Shopping, locals often answer with a number, typed amount, calculator screen, or direct yes/no about payment rather than a long explanation. That makes Giảm giá chút được không? strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it after you know the price and still want to buy if the seller can lower it a little.",
+      "body": "Use it after you know the price and still want to buy if the seller can lower it a little. It works best when you are holding or pointing at one item, not while asking about a whole shelf.",
       "presentation": "plain-text"
     },
     {

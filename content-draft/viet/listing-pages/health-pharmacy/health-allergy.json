@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when an ingredient, medicine, or product may trigger an allergy. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi bị dị ứng cái này answers the traveler question \"I am allergic to this\" in doctors, pharmacies, symptoms, and medication. This is for when an ingredient, medicine, or product may trigger an allergy. Its job is stating the limit before the order or interaction moves too far. Expect a confirmation, a substitute, or a question about what is allowed; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi bị dị ứng cái này is the version to learn first for \"I am allergic to this\". Use this when an ingredient, medicine, or product may trigger an allergy. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Start with Tôi bị dị ứng cái này when \"I am allergic to this\" is the main thing you need understood. This is for when an ingredient, medicine, or product may trigger an allergy. The phrase works because it is specific enough to invite a confirmation, a substitute, or a question about what is allowed. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "health-5",
@@ -86,13 +86,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up.",
+      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. For \"I am allergic to this\", the useful move is stating the limit before the order or interaction moves too far. Confirm visually when the detail affects safety, health, or the final order.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Health & Pharmacy, locals often answer with a confirmation, a substitute, or a question about what is allowed rather than a long explanation. That makes Tôi bị dị ứng cái này strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when an ingredient, medicine, or product may trigger an allergy. Use it in doctors, pharmacies, symptoms, and medication when one clear sentence will work better than a long explanation.",
+      "body": "This is for when an ingredient, medicine, or product may trigger an allergy. It fits doctors, pharmacies, symptoms, and medication, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
       "presentation": "plain-text"
     },
     {

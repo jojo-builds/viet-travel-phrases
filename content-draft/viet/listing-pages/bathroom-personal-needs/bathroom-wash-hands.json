@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you only need a sink or hand-washing spot. Useful in markets, food areas, and roadside stops. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi rửa tay ở đây được không? answers the traveler question \"Can I wash my hands here\" in bathrooms, soap, paper, water, and basic personal needs. This is for when you only need a sink or hand-washing spot. Useful in markets, food areas, and roadside stops. Its job is letting the other person answer yes, no, or point you to the right option. Expect a yes/no answer, a gesture toward the item, or a short alternative; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "bath-4-piece-1",
@@ -74,7 +74,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi rửa tay ở đây được không? is the version to learn first for \"Can I wash my hands here?\". Use this when you only need a sink or hand-washing spot. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "Start with Tôi rửa tay ở đây được không? when \"Can I wash my hands here\" is the main thing you need understood. This is for when you only need a sink or hand-washing spot. The phrase works because it is specific enough to invite a yes/no answer, a gesture toward the item, or a short alternative. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
       "phrases": [
         {
           "id": "bath-4",
@@ -90,9 +90,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "These phrases are practical and often need a quick answer, not a long conversation. For \"Can I wash my hands here\", the useful move is letting the other person answer yes, no, or point you to the right option. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Bathroom & Personal Needs, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Tôi rửa tay ở đây được không? strongest when you say it once, pause, and let the other person show the next step. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you only need a sink or hand-washing spot. Use it in bathrooms, soap, paper, water, and basic personal needs when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you only need a sink or hand-washing spot. It fits bathrooms, soap, paper, water, and basic personal needs, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
       "presentation": "plain-text"
     },
     {

@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Bản đồ của tôi không hoạt động answers the traveler question \"My map is not working\" in Wi-Fi, SIM, battery, charging, maps, and phone setup. This is for when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need. Its job is naming the concrete item or problem first so staff can choose the next action. Expect a request to see the item, a direction to another desk, or a practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "v500-phon-inte-powe-my-map-is-not-working-piece-1",
@@ -74,7 +74,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Bản đồ của tôi không hoạt động is the version to learn first for \"My map is not working\". Use this when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Start with Bản đồ của tôi không hoạt động when \"My map is not working\" is the main thing you need understood. This is for when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need. The phrase works because it is specific enough to invite a request to see the item, a direction to another desk, or a practical next step. Show the phone screen or error message first so the problem is visible before you add more words.",
       "phrases": [
         {
           "id": "v500-phon-inte-powe-my-map-is-not-working",
@@ -90,9 +90,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Phone phrases work best when the other person can see the exact screen or error. For \"My map is not working\", the useful move is naming the concrete item or problem first so staff can choose the next action. Show the document, photo, room number, receipt, or screen connected to the problem.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Phone, Internet & Power, locals often answer with a request to see the item, a direction to another desk, or a practical next step rather than a long explanation. That makes Bản đồ của tôi không hoạt động strongest when you say it once, pause, and let the other person show the next step. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need. Use it in Wi-Fi, SIM, battery, charging, maps, and phone setup when one clear sentence will work better than a long explanation.",
+      "body": "This is for when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need. It fits Wi-Fi, SIM, battery, charging, maps, and phone setup, especially when the next step is a request to see the item, a direction to another desk, or a practical next step. Show the document, photo, room number, receipt, or screen connected to the problem.",
       "presentation": "plain-text"
     },
     {

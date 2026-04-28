@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when safety, theft, documents, police, or urgent help needs to be clear right now. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Đừng chạm vào tôi answers the traveler question \"Do not touch me\" in police, ambulance, hospitals, passports, and immediate safety. This is for when safety, theft, documents, police, or urgent help needs to be clear right now. Its job is stating the limit before the order or interaction moves too far. Expect a confirmation, a substitute, or a question about what is allowed; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Đừng chạm vào tôi is the version to learn first for \"Do not touch me\". Use this when safety, theft, documents, police, or urgent help needs to be clear right now. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Start with Đừng chạm vào tôi when \"Do not touch me\" is the main thing you need understood. This is for when safety, theft, documents, police, or urgent help needs to be clear right now. The phrase works because it is specific enough to invite a confirmation, a substitute, or a question about what is allowed. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "v500-emer-safe-do-not-touch-me",
@@ -80,13 +80,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster.",
+      "body": "Emergency phrases put the urgent need first so help can move faster. For \"Do not touch me\", the useful move is stating the limit before the order or interaction moves too far. Confirm visually when the detail affects safety, health, or the final order.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Emergency & Safety, locals often answer with a confirmation, a substitute, or a question about what is allowed rather than a long explanation. That makes Đừng chạm vào tôi strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when safety, theft, documents, police, or urgent help needs to be clear right now. Use it in police, ambulance, hospitals, passports, and immediate safety when one clear sentence will work better than a long explanation.",
+      "body": "This is for when safety, theft, documents, police, or urgent help needs to be clear right now. It fits police, ambulance, hospitals, passports, and immediate safety, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
       "presentation": "plain-text"
     },
     {

@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you want to confirm that you should keep going straight. This is one of the clearest ways to check the route before you keep walking. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi đi thẳng phải không? answers the traveler question \"Should I go straight\" in finding places, turns, distance, and walking directions. This is for when you want to confirm that you should keep going straight. This is one of the clearest ways to check the route before you keep walking. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "directions-6-piece-1",
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi đi thẳng phải không? is the version to learn first for \"Should I go straight?\". Use this when you want to confirm that you should keep going straight. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Start with Tôi đi thẳng phải không? when \"Should I go straight\" is the main thing you need understood. This is for when you want to confirm that you should keep going straight. The phrase works because it is specific enough to invite a short answer, gesture, or practical next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "directions-6",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Direction phrases turn a vague travel problem into a specific next step.",
+      "body": "Direction phrases turn a vague travel problem into a specific next step. For \"Should I go straight\", the useful move is keeping the useful noun or action in the center of the phrase. Use the related phrases below if the exchange moves one step further.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Directions & Navigation, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Tôi đi thẳng phải không? strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you want to confirm that you should keep going straight. Use it in finding places, turns, distance, and walking directions when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you want to confirm that you should keep going straight. It fits finding places, turns, distance, and walking directions, especially when the next step is a short answer, gesture, or practical next step. Use the related phrases below if the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {

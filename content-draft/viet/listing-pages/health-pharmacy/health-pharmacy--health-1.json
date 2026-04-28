@@ -50,7 +50,13 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you need a pharmacy and a simple direct wording is enough. Use Nhà thuốc gần nhất ở đâu? when you want the shorter, more basic version.",
+      "body": "This is for when you need a pharmacy and a simple direct wording is enough. Use Nhà thuốc gần nhất ở đâu? when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Health & Pharmacy, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Nhà thuốc ở đâu? strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "presentation": "plain-text"
     },
     {

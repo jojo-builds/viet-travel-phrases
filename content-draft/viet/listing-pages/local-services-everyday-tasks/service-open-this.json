@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when packaging or a bottle cap is the problem. This solves the small real-world task without extra explanation. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Mở cái này giúp tôi answers the traveler question \"Please open this for me\" in buying small items, receipts, bags, and everyday errands. This is for when packaging or a bottle cap is the problem. This solves the small real-world task without extra explanation. Its job is putting the need first and leaving room for the helper to confirm the detail. Expect a confirmation, a handoff, a price, or a follow-up question; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Mở cái này giúp tôi is the version to learn first for \"Please open this for me\". Use this when packaging or a bottle cap is the problem. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Start with Mở cái này giúp tôi when \"Please open this for me\" is the main thing you need understood. This is for when packaging or a bottle cap is the problem. The phrase works because it is specific enough to invite a confirmation, a handoff, a price, or a follow-up question. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "store-5",
@@ -78,9 +78,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Everyday service phrases keep small tasks smooth without needing a full conversation. For \"Please open this for me\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Local Services & Everyday Tasks, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Mở cái này giúp tôi strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when packaging or a bottle cap is the problem. Use it in buying small items, receipts, bags, and everyday errands when one clear sentence will work better than a long explanation.",
+      "body": "This is for when packaging or a bottle cap is the problem. It fits buying small items, receipts, bags, and everyday errands, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {

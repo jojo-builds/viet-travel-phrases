@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this at the front desk or in the room when you need the hotel to fix the next step. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Cửa không khóa answers the traveler question \"The door does not lock\" in front desk, room, check-in, and hotel-service moments. This is for the front desk or in the room when you need the hotel to fix the next step. Its job is naming the concrete item or problem first so staff can choose the next action. Expect a request to see the item, a direction to another desk, or a practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "v500-hote-acco-the-door-does-not-lock-piece-1",
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cửa không khóa is the version to learn first for \"The door does not lock\". Use this at the front desk or in the room when you need the hotel to fix the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "body": "Start with Cửa không khóa when \"The door does not lock\" is the main thing you need understood. This is for the front desk or in the room when you need the hotel to fix the next step. The phrase works because it is specific enough to invite a request to see the item, a direction to another desk, or a practical next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "v500-hote-acco-the-door-does-not-lock",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need.",
+      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"The door does not lock\", the useful move is naming the concrete item or problem first so staff can choose the next action. Show the document, photo, room number, receipt, or screen connected to the problem.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Hotel Accommodation, locals often answer with a request to see the item, a direction to another desk, or a practical next step rather than a long explanation. That makes Cửa không khóa strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this at the front desk or in the room when you need the hotel to fix the next step. Use it in front desk, room, check-in, and hotel-service moments when one clear sentence will work better than a long explanation.",
+      "body": "This is for the front desk or in the room when you need the hotel to fix the next step. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a request to see the item, a direction to another desk, or a practical next step. Show the document, photo, room number, receipt, or screen connected to the problem.",
       "presentation": "plain-text"
     },
     {

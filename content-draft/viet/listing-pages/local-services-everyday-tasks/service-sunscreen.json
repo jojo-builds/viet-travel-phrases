@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need the exact aisle or shelf, not general help. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Ở đâu có kem chống nắng? answers the traveler question \"Where is the sunscreen\" in buying small items, receipts, bags, and everyday errands. This is for when you need the exact aisle or shelf, not general help. Its job is turning the problem into something the other person can point to, type, or mark on a map. Expect a point, short direction, nearby option, or counter name; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Ở đâu có kem chống nắng? is the version to learn first for \"Where is the sunscreen?\". Use this when you need the exact aisle or shelf, not general help. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Start with Ở đâu có kem chống nắng? when \"Where is the sunscreen\" is the main thing you need understood. This is for when you need the exact aisle or shelf, not general help. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "store-4",
@@ -84,9 +84,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Everyday service phrases keep small tasks smooth without needing a full conversation. For \"Where is the sunscreen\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Local Services & Everyday Tasks, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Ở đâu có kem chống nắng? strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you need the exact aisle or shelf, not general help. Use it in buying small items, receipts, bags, and everyday errands when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you need the exact aisle or shelf, not general help. It fits buying small items, receipts, bags, and everyday errands, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

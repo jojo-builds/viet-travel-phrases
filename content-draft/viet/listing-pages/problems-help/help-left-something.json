@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say this if you forgot an item in a car, room, or café. This is a common hotel, taxi, and café recovery phrase. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi quên đồ rồi answers the traveler question \"I left something behind\" in lost items, help, managers, and recovery moments. Say this if you forgot an item in a car, room, or café. This is a common hotel, taxi, and café recovery phrase. Its job is naming the concrete item or problem first so staff can choose the next action. Expect a request to see the item, a direction to another desk, or a practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi quên đồ rồi is the version to learn first for \"I left something behind\". Say this if you forgot an item in a car, room, or café. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Start with Tôi quên đồ rồi when \"I left something behind\" is the main thing you need understood. Say this if you forgot an item in a car, room, or café. The phrase works because it is specific enough to invite a request to see the item, a direction to another desk, or a practical next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "problems-4",
@@ -80,13 +80,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need.",
+      "body": "Help phrases work when they name the problem and the next person or action you need. For \"I left something behind\", the useful move is naming the concrete item or problem first so staff can choose the next action. Show the document, photo, room number, receipt, or screen connected to the problem.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Problems & Help, locals often answer with a request to see the item, a direction to another desk, or a practical next step rather than a long explanation. That makes Tôi quên đồ rồi strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Say this if you forgot an item in a car, room, or café. Use it in lost items, help, managers, and recovery moments when one clear sentence will work better than a long explanation.",
+      "body": "Say this if you forgot an item in a car, room, or café. It fits lost items, help, managers, and recovery moments, especially when the next step is a request to see the item, a direction to another desk, or a practical next step. Show the document, photo, room number, receipt, or screen connected to the problem.",
       "presentation": "plain-text"
     },
     {

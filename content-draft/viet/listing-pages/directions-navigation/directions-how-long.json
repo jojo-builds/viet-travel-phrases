@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need walking time, not just direction words. This keeps the answer concrete instead of vague. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Đi bộ mất bao lâu? answers the traveler question \"How long does it take on foot\" in finding places, turns, distance, and walking directions. This is for when you need walking time, not just direction words. This keeps the answer concrete instead of vague. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Đi bộ mất bao lâu? is the version to learn first for \"How long does it take on foot?\". Use this when you need walking time, not just direction words. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Start with Đi bộ mất bao lâu? when \"How long does it take on foot\" is the main thing you need understood. This is for when you need walking time, not just direction words. The phrase works because it is specific enough to invite a short answer, gesture, or practical next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "directions-3",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Direction phrases turn a vague travel problem into a specific next step.",
+      "body": "Direction phrases turn a vague travel problem into a specific next step. For \"How long does it take on foot\", the useful move is keeping the useful noun or action in the center of the phrase. Use the related phrases below if the exchange moves one step further.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Directions & Navigation, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Đi bộ mất bao lâu? strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you need walking time, not just direction words. Use it in finding places, turns, distance, and walking directions when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you need walking time, not just direction words. It fits finding places, turns, distance, and walking directions, especially when the next step is a short answer, gesture, or practical next step. Use the related phrases below if the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {

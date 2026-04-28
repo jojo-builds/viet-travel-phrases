@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this if you need to guide the driver. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Đi đường này đi answers the traveler question \"Go this way\" in rides, routes, pickup points, and stops. This helps if you need to guide the driver. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Đi đường này đi is the version to learn first for \"Go this way\". Use this if you need to guide the driver. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Start with Đi đường này đi when \"Go this way\" is the main thing you need understood. This helps if you need to guide the driver. The phrase works because it is specific enough to invite a short answer, gesture, or practical next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -80,13 +80,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark.",
+      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Go this way\", the useful move is keeping the useful noun or action in the center of the phrase. Use the related phrases below if the exchange moves one step further.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Transport, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Đi đường này đi strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this if you need to guide the driver. Use it in rides, routes, pickup points, and stops when one clear sentence will work better than a long explanation.",
+      "body": "This helps if you need to guide the driver. It fits rides, routes, pickup points, and stops, especially when the next step is a short answer, gesture, or practical next step. Use the related phrases below if the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {

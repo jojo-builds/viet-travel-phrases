@@ -25,7 +25,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "smalltalk-7-piece-1",
@@ -42,7 +42,7 @@
         {
           "id": "smalltalk-7-piece-3",
           "vietnamese": "không?",
-          "english": "yes/no question",
+          "english": "asks yes or no",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -71,6 +71,18 @@
         }
       ],
       "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. For \"How are you\", the useful move is giving the other person a simple anchor rather than a long explanation. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Social Small Talk, locals often answer with a short reply, a smile, a time, or a light follow-up question rather than a long explanation. That makes Bạn khỏe không? strongest when you say it once, pause, and let the other person show the next step. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "presentation": "plain-text"
     },
     {
       "id": "relationship-forms",

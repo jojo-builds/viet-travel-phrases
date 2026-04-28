@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you have the item and need the payment point. This is the traveler version of checkout phrasing. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Trả ở đâu? answers the traveler question \"Where do I pay\" in sizes, colors, trying things on, and payment. This is for when you have the item and need the payment point. This is the traveler version of checkout phrasing. Its job is turning the problem into something the other person can point to, type, or mark on a map. Expect a point, short direction, nearby option, or counter name; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Trả ở đâu? is the version to learn first for \"Where do I pay?\". Use this when you have the item and need the payment point. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Start with Trả ở đâu? when \"Where do I pay\" is the main thing you need understood. This is for when you have the item and need the payment point. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "shop-5",
@@ -66,9 +66,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. For \"Where do I pay\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Shopping, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Trả ở đâu? strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you have the item and need the payment point. Use it in sizes, colors, trying things on, and payment when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you have the item and need the payment point. It fits sizes, colors, trying things on, and payment, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

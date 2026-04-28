@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this for rideshare, shuttle, or private pickup handoffs. This keeps the first transport handoff from going messy. Use the other forms below when tone, setting, or politeness changes.",
+      "body": "Khu đón ở đâu? answers the traveler question \"Where is the pickup area\" in arrival, immigration, baggage, SIM cards, pickup, and airport services. Use this for rideshare, shuttle, or private pickup handoffs. This keeps the first transport handoff from going messy. Its job is turning the problem into something the other person can point to, type, or mark on a map. The forms below show how tone, setting, or politeness changes the best choice.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Khu đón ở đâu? is the version to learn first for \"Where is the pickup area?\". Use this for rideshare, shuttle, or private pickup handoffs. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Start with Khu đón ở đâu? when \"Where is the pickup area\" is the main thing you need understood. Use this for rideshare, shuttle, or private pickup handoffs. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "airport-5",
@@ -86,13 +86,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Airport phrases help staff route you to the next counter or service without a long explanation.",
+      "body": "Airport phrases help staff route you to the next counter or service without a long explanation. For \"Where is the pickup area\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Airport Border Arrival, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Khu đón ở đâu? strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for rideshare, shuttle, or private pickup handoffs. Use it in arrival, immigration, baggage, SIM cards, pickup, and airport services when one clear sentence will work better than a long explanation.",
+      "body": "Use this for rideshare, shuttle, or private pickup handoffs. It fits arrival, immigration, baggage, SIM cards, pickup, and airport services, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

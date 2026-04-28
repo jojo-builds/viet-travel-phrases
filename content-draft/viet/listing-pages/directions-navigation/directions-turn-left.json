@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you are already on the route and need the next turn. Take the route one turn at a time. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Rẽ trái ở đâu? answers the traveler question \"Where do I turn left\" in finding places, turns, distance, and walking directions. This is for when you are already on the route and need the next turn. Take the route one turn at a time. Its job is turning the problem into something the other person can point to, type, or mark on a map. Expect a point, short direction, nearby option, or counter name; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Rẽ trái ở đâu? is the version to learn first for \"Where do I turn left?\". Use this when you are already on the route and need the next turn. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Start with Rẽ trái ở đâu? when \"Where do I turn left\" is the main thing you need understood. This is for when you are already on the route and need the next turn. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "directions-4",
@@ -68,13 +68,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Direction phrases turn a vague travel problem into a specific next step.",
+      "body": "Direction phrases turn a vague travel problem into a specific next step. For \"Where do I turn left\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Directions & Navigation, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Rẽ trái ở đâu? strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already on the route and need the next turn. Use it in finding places, turns, distance, and walking directions when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you are already on the route and need the next turn. It fits finding places, turns, distance, and walking directions, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

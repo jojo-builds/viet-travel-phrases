@@ -24,7 +24,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "food-15-piece-1",
@@ -71,7 +71,7 @@
         {
           "id": "food-15-piece-8",
           "vietnamese": "không?",
-          "english": "yes/no question",
+          "english": "asks yes or no",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -86,7 +86,13 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this after the allergy warning when you need to check the ingredients directly. Use Tôi bị dị ứng đậu phộng when you want the shorter, more basic version.",
+      "body": "Use this after the allergy warning when you need to check the ingredients directly. Use Tôi bị dị ứng đậu phộng when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Food & Drink, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Món này có trứng hay đậu phộng không? strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "presentation": "plain-text"
     },
     {

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this at the desk when you have already booked. At check-in, reservation first is usually the fastest path. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi có đặt phòng answers the traveler question \"I have a reservation\" in front desk, room, check-in, and hotel-service moments. This is for the desk when you have already booked. At check-in, reservation first is usually the fastest path. Its job is naming the concrete item or problem first so staff can choose the next action. Expect a request to see the item, a direction to another desk, or a practical next step; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi có đặt phòng is the version to learn first for \"I have a reservation\". Use this at the desk when you have already booked. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "body": "Start with Tôi có đặt phòng when \"I have a reservation\" is the main thing you need understood. This is for the desk when you have already booked. The phrase works because it is specific enough to invite a request to see the item, a direction to another desk, or a practical next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need.",
+      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"I have a reservation\", the useful move is naming the concrete item or problem first so staff can choose the next action. Show the document, photo, room number, receipt, or screen connected to the problem.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Hotel Accommodation, locals often answer with a request to see the item, a direction to another desk, or a practical next step rather than a long explanation. That makes Tôi có đặt phòng strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this at the desk when you have already booked. Use it in front desk, room, check-in, and hotel-service moments when one clear sentence will work better than a long explanation.",
+      "body": "This is for the desk when you have already booked. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a request to see the item, a direction to another desk, or a practical next step. Show the document, photo, room number, receipt, or screen connected to the problem.",
       "presentation": "plain-text"
     },
     {

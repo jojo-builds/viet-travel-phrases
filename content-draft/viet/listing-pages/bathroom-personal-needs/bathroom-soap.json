@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the sink area is missing soap. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Có xà phòng không? answers the traveler question \"Do you have soap\" in bathrooms, soap, paper, water, and basic personal needs. This is for when the sink area is missing soap. Its job is letting the other person answer yes, no, or point you to the right option. Expect a yes/no answer, a gesture toward the item, or a short alternative; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "bath-3-piece-1",
@@ -47,7 +47,7 @@
         {
           "id": "bath-3-piece-4",
           "vietnamese": "không?",
-          "english": "yes/no question",
+          "english": "asks yes or no",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Có xà phòng không? is the version to learn first for \"Do you have soap?\". Use this when the sink area is missing soap. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "Start with Có xà phòng không? when \"Do you have soap\" is the main thing you need understood. This is for when the sink area is missing soap. The phrase works because it is specific enough to invite a yes/no answer, a gesture toward the item, or a short alternative. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
       "phrases": [
         {
           "id": "bath-3",
@@ -78,9 +78,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "These phrases are practical and often need a quick answer, not a long conversation. For \"Do you have soap\", the useful move is letting the other person answer yes, no, or point you to the right option. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Bathroom & Personal Needs, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Có xà phòng không? strongest when you say it once, pause, and let the other person show the next step. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when the sink area is missing soap. Use it in bathrooms, soap, paper, water, and basic personal needs when one clear sentence will work better than a long explanation.",
+      "body": "This is for when the sink area is missing soap. It fits bathrooms, soap, paper, water, and basic personal needs, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
       "presentation": "plain-text"
     },
     {

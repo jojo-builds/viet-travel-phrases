@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when drinking water or rinse water is the immediate need. This covers both bathroom and personal-need moments where you just need water fast. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi cần nước answers the traveler question \"I need water\" in bathrooms, soap, paper, water, and basic personal needs. This is for when drinking water or rinse water is the immediate need. This covers both bathroom and personal-need moments where you just need water fast. Its job is putting the need first and leaving room for the helper to confirm the detail. Expect a confirmation, a handoff, a price, or a follow-up question; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi cần nước is the version to learn first for \"I need water\". Use this when drinking water or rinse water is the immediate need. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "Start with Tôi cần nước when \"I need water\" is the main thing you need understood. This is for when drinking water or rinse water is the immediate need. The phrase works because it is specific enough to invite a confirmation, a handoff, a price, or a follow-up question. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
       "phrases": [
         {
           "id": "bath-5",
@@ -66,9 +66,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "These phrases are practical and often need a quick answer, not a long conversation. For \"I need water\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Bathroom & Personal Needs, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Tôi cần nước strongest when you say it once, pause, and let the other person show the next step. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when drinking water or rinse water is the immediate need. Use it in bathrooms, soap, paper, water, and basic personal needs when one clear sentence will work better than a long explanation.",
+      "body": "This is for when drinking water or rinse water is the immediate need. It fits bathrooms, soap, paper, water, and basic personal needs, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {

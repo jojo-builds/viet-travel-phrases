@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need cash and want the closest ATM, not just any airport machine. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "ATM gần nhất ở đâu? answers the traveler question \"Where is the nearest ATM\" in prices, quantities, payment, and ATM moments. This is for when you need cash and want the closest ATM, not just any airport machine. Its job is turning the problem into something the other person can point to, type, or mark on a map. Expect a point, short direction, nearby option, or counter name; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "ATM gần nhất ở đâu? is the version to learn first for \"Where is the nearest ATM?\". Use this when you need cash and want the closest ATM, not just any airport machine. Point to the place, object, or screen that gives the phrase context.",
+      "body": "Start with ATM gần nhất ở đâu? when \"Where is the nearest ATM\" is the main thing you need understood. This is for when you need cash and want the closest ATM, not just any airport machine. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "airport-4",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"Where is the nearest ATM\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Money, Numbers & Prices, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes ATM gần nhất ở đâu? strongest when you say it once, pause, and let the other person show the next step. Point to the place, object, or screen that gives the phrase context.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you need cash and want the closest ATM, not just any airport machine. Use it in prices, quantities, payment, and ATM moments when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you need cash and want the closest ATM, not just any airport machine. It fits prices, quantities, payment, and ATM moments, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

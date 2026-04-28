@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this before a tour, boat, or day trip starts. This avoids missed tours and pickup confusion. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Điểm gặp ở đâu? answers the traveler question \"Where is the meeting point\" in tickets, tours, photos, closing times, and meeting points. This comes before a tour, boat, or day trip starts. This avoids missed tours and pickup confusion. Its job is turning the problem into something the other person can point to, type, or mark on a map. Expect a point, short direction, nearby option, or counter name; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Điểm gặp ở đâu? is the version to learn first for \"Where is the meeting point?\". Use this before a tour, boat, or day trip starts. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "body": "Start with Điểm gặp ở đâu? when \"Where is the meeting point\" is the main thing you need understood. This comes before a tour, boat, or day trip starts. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "sight-5",
@@ -72,9 +72,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Sightseeing phrases help staff answer with a point, ticket, time, or location. For \"Where is the meeting point\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Sightseeing & Activities, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Điểm gặp ở đâu? strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before a tour, boat, or day trip starts. Use it in tickets, tours, photos, closing times, and meeting points when one clear sentence will work better than a long explanation.",
+      "body": "This comes before a tour, boat, or day trip starts. It fits tickets, tours, photos, closing times, and meeting points, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

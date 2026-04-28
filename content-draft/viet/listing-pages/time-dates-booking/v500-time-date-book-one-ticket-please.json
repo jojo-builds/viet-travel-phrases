@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need the exact time, date, booking detail, or schedule change to be clear. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Xin một vé answers the traveler question \"One ticket, please\" in times, dates, tickets, waits, and bookings. This is for when you need the exact time, date, booking detail, or schedule change to be clear. Its job is putting the need first and leaving room for the helper to confirm the detail. Expect a confirmation, a handoff, a price, or a follow-up question; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Xin một vé is the version to learn first for \"One ticket, please\". Use this when you need the exact time, date, booking detail, or schedule change to be clear. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "body": "Start with Xin một vé when \"One ticket, please\" is the main thing you need understood. This is for when you need the exact time, date, booking detail, or schedule change to be clear. The phrase works because it is specific enough to invite a confirmation, a handoff, a price, or a follow-up question. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "v500-time-date-book-one-ticket-please",
@@ -72,9 +72,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Time phrases prevent missed pickups, bookings, and closing times. For \"One ticket, please\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Time, Dates & Booking, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Xin một vé strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you need the exact time, date, booking detail, or schedule change to be clear. Use it in times, dates, tickets, waits, and bookings when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you need the exact time, date, booking detail, or schedule change to be clear. It fits times, dates, tickets, waits, and bookings, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {

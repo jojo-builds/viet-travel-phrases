@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need the nearest pharmacy, not just any pharmacy. Use the other forms below when tone, setting, or politeness changes.",
+      "body": "Nhà thuốc gần nhất ở đâu? answers the traveler question \"Where is the nearest pharmacy\" in doctors, pharmacies, symptoms, and medication. This is for when you need the nearest pharmacy, not just any pharmacy. Its job is turning the problem into something the other person can point to, type, or mark on a map. The forms below show how tone, setting, or politeness changes the best choice.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Nhà thuốc gần nhất ở đâu? is the version to learn first for \"Where is the nearest pharmacy?\". Use this when you need the nearest pharmacy, not just any pharmacy. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Start with Nhà thuốc gần nhất ở đâu? when \"Where is the nearest pharmacy\" is the main thing you need understood. This is for when you need the nearest pharmacy, not just any pharmacy. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "health-pharmacy-clearer",
@@ -92,13 +92,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up.",
+      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. For \"Where is the nearest pharmacy\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Health & Pharmacy, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Nhà thuốc gần nhất ở đâu? strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you need the nearest pharmacy, not just any pharmacy. Use it in doctors, pharmacies, symptoms, and medication when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you need the nearest pharmacy, not just any pharmacy. It fits doctors, pharmacies, symptoms, and medication, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

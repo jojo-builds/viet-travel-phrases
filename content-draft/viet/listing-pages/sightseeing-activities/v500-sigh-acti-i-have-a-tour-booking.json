@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi có đặt tour is the compact version to learn first. Tour is widely understood in travel settings, and đặt keeps the meaning on a booking or reservation rather than a casual plan.",
+      "body": "Start with Tôi có đặt tour when staff need to find an existing reservation. Tour is widely understood in travel settings, and đặt keeps the meaning on a booking or reservation rather than a casual plan.",
       "phrases": [
         {
           "id": "v500-sigh-acti-i-have-a-tour-booking",
@@ -64,6 +64,18 @@
         }
       ],
       "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Tour check-ins move quickly because staff are usually matching names, times, and group lists. This phrase tells them you are already in the system, so the next useful answer is likely a meeting point, guide name, or confirmation request.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Sightseeing & Activities, locals often answer with a request to see the item, a direction to another desk, or a practical next step rather than a long explanation. That makes Tôi có đặt tour strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "presentation": "plain-text"
     },
     {
       "id": "when-to-use",

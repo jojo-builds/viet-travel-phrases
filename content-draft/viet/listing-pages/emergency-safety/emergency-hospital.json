@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the urgent need is reaching a hospital quickly. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Bệnh viện gần nhất ở đâu? answers the traveler question \"Where is the nearest hospital\" in police, ambulance, hospitals, passports, and immediate safety. This is for when the urgent need is reaching a hospital quickly. Its job is turning the problem into something the other person can point to, type, or mark on a map. Expect a point, short direction, nearby option, or counter name; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Bệnh viện gần nhất ở đâu? is the version to learn first for \"Where is the nearest hospital?\". Use this when the urgent need is reaching a hospital quickly. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Start with Bệnh viện gần nhất ở đâu? when \"Where is the nearest hospital\" is the main thing you need understood. This is for when the urgent need is reaching a hospital quickly. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "emergency-hospital",
@@ -80,13 +80,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster.",
+      "body": "Emergency phrases put the urgent need first so help can move faster. For \"Where is the nearest hospital\", the useful move is turning the problem into something the other person can point to, type, or mark on a map. If the answer is longer than a point or a place name, ask them to show it on your phone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Emergency & Safety, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Bệnh viện gần nhất ở đâu? strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when the urgent need is reaching a hospital quickly. Use it in police, ambulance, hospitals, passports, and immediate safety when one clear sentence will work better than a long explanation.",
+      "body": "This is for when the urgent need is reaching a hospital quickly. It fits police, ambulance, hospitals, passports, and immediate safety, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
       "presentation": "plain-text"
     },
     {

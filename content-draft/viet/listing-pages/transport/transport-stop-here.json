@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you want the driver to stop at the current spot. Use the other forms below when tone, setting, or politeness changes.",
+      "body": "Dừng ở đây được rồi answers the traveler question \"You can stop here\" in rides, routes, pickup points, and stops. This is for when you want the driver to stop at the current spot. Its job is keeping the useful noun or action in the center of the phrase. The forms below show how tone, setting, or politeness changes the best choice.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Dừng ở đây được rồi is the version to learn first for \"You can stop here\". Use this when you want the driver to stop at the current spot. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Start with Dừng ở đây được rồi when \"You can stop here\" is the main thing you need understood. This is for when you want the driver to stop at the current spot. The phrase works because it is specific enough to invite a short answer, gesture, or practical next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "taxi-3",
@@ -104,13 +104,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark.",
+      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"You can stop here\", the useful move is keeping the useful noun or action in the center of the phrase. Use the related phrases below if the exchange moves one step further.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Transport, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Dừng ở đây được rồi strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you want the driver to stop at the current spot. Use it in rides, routes, pickup points, and stops when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you want the driver to stop at the current spot. It fits rides, routes, pickup points, and stops, especially when the next step is a short answer, gesture, or practical next step. Use the related phrases below if the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {

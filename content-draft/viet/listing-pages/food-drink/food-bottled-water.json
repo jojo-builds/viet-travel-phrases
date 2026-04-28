@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ask this when you want bottled water with your meal. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Có nước suối không? answers the traveler question \"Do you have bottled water\" in ordering, adjusting dishes, and checking ingredients. This is for when you want bottled water with your meal. Its job is letting the other person answer yes, no, or point you to the right option. Expect a yes/no answer, a gesture toward the item, or a short alternative; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "food-5-piece-1",
@@ -41,7 +41,7 @@
         {
           "id": "food-5-piece-3",
           "vietnamese": "không?",
-          "english": "yes/no question",
+          "english": "asks yes or no",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Có nước suối không? is the version to learn first for \"Do you have bottled water?\". Ask this when you want bottled water with your meal. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Start with Có nước suối không? when \"Do you have bottled water\" is the main thing you need understood. This is for when you want bottled water with your meal. The phrase works because it is specific enough to invite a yes/no answer, a gesture toward the item, or a short alternative. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "food-5",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order.",
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"Do you have bottled water\", the useful move is letting the other person answer yes, no, or point you to the right option. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Food & Drink, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Có nước suối không? strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Ask this when you want bottled water with your meal. Use it in ordering, adjusting dishes, and checking ingredients when one clear sentence will work better than a long explanation.",
+      "body": "This is for when you want bottled water with your meal. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
       "presentation": "plain-text"
     },
     {

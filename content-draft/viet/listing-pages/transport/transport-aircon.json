@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this on a hot ride if the air conditioning is off. This is a small comfort phrase, but it matters on long hot rides. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Mở máy lạnh giúp tôi answers the traveler question \"Please turn on the air conditioning\" in rides, routes, pickup points, and stops. Use this on a hot ride if the air conditioning is off. This is a small comfort phrase, but it matters on long hot rides. Its job is putting the need first and leaving room for the helper to confirm the detail. Expect a confirmation, a handoff, a price, or a follow-up question; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Mở máy lạnh giúp tôi is the version to learn first for \"Please turn on the air conditioning\". Use this on a hot ride if the air conditioning is off. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Start with Mở máy lạnh giúp tôi when \"Please turn on the air conditioning\" is the main thing you need understood. Use this on a hot ride if the air conditioning is off. The phrase works because it is specific enough to invite a confirmation, a handoff, a price, or a follow-up question. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -74,13 +74,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark.",
+      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Please turn on the air conditioning\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Transport, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Mở máy lạnh giúp tôi strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this on a hot ride if the air conditioning is off. Use it in rides, routes, pickup points, and stops when one clear sentence will work better than a long explanation.",
+      "body": "Use this on a hot ride if the air conditioning is off. It fits rides, routes, pickup points, and stops, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {

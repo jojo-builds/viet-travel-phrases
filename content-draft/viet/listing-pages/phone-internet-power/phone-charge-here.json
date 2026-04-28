@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the place has power and you need permission or a spot to charge. This works in cafés, hotels, airports, and waiting areas. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
+      "body": "Tôi sạc điện thoại ở đây được không? answers the traveler question \"Can I charge my phone here\" in Wi-Fi, SIM, battery, charging, maps, and phone setup. This is for when the place has power and you need permission or a spot to charge. This works in cafés, hotels, airports, and waiting areas. Its job is letting the other person answer yes, no, or point you to the right option. Expect a yes/no answer, a gesture toward the item, or a short alternative; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
           "id": "phone-5-piece-1",
@@ -74,7 +74,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi sạc điện thoại ở đây được không? is the version to learn first for \"Can I charge my phone here?\". Use this when the place has power and you need permission or a spot to charge. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Start with Tôi sạc điện thoại ở đây được không? when \"Can I charge my phone here\" is the main thing you need understood. This is for when the place has power and you need permission or a spot to charge. The phrase works because it is specific enough to invite a yes/no answer, a gesture toward the item, or a short alternative. Show the phone screen or error message first so the problem is visible before you add more words.",
       "phrases": [
         {
           "id": "phone-5",
@@ -90,9 +90,21 @@
       "presentation": "phrase-list"
     },
     {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Phone phrases work best when the other person can see the exact screen or error. For \"Can I charge my phone here\", the useful move is letting the other person answer yes, no, or point you to the right option. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "traveler-insight",
+      "title": "Traveler insight",
+      "body": "In Phone, Internet & Power, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Tôi sạc điện thoại ở đây được không? strongest when you say it once, pause, and let the other person show the next step. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "presentation": "plain-text"
+    },
+    {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when the place has power and you need permission or a spot to charge. Use it in Wi-Fi, SIM, battery, charging, maps, and phone setup when one clear sentence will work better than a long explanation.",
+      "body": "This is for when the place has power and you need permission or a spot to charge. It fits Wi-Fi, SIM, battery, charging, maps, and phone setup, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
       "presentation": "plain-text"
     },
     {
