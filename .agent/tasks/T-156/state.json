@@ -1,0 +1,54 @@
+{
+  "taskId": "T-156",
+  "title": "Mac queue smoke test and manual worker handoff",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "leaseDurationMinutes": 60,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "agent_task_T-156"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-156/result.md",
+    "recoveryNotes": ".agent/tasks/T-156/recovery-notes.md",
+    "reviews": ".agent/tasks/T-156/reviews/",
+    "logs": ".agent/tasks/T-156/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-156/result.md",
+      ".agent/tasks/T-156/state.json"
+    ]
+  },
+  "lastUpdated": "2026-04-28T16:12:00+07:00",
+  "automation": {
+    "runner": "manual-codex",
+    "mode": "single-task",
+    "taskClass": "proof",
+    "proofTask": true,
+    "selectionOrder": 0,
+    "reviewersRequired": 0,
+    "reviewGatesRequired": 0,
+    "reviewGateConsensusRequired": 0,
+    "reviewGateLoop": "not-required-proof-task"
+  }
+}
