@@ -7,7 +7,7 @@ Short task title.
 Describe the concrete outcome to achieve.
 
 ## Repo / Working Surface
-- repo root: `E:\AI\SpeakLocal-App-Family`
+- repo root: `/Users/jojolim/Developer/products/speaklocal/app-family`
 - working cwd: set per task
 
 ## Read first
@@ -16,6 +16,9 @@ Describe the concrete outcome to achieve.
 - do not list `.agent/coordination/queue-index.json` or `.agent/coordination/locks.yaml` here unless this task is explicitly queue maintenance/self-heal
 
 ## Scope
+- expected worker size: normally `30` minutes to several hours when the task has a clear write boundary and recoverable checkpoints
+- do not shrink this task just to make it tiny; shrink only if write scopes conflict, validation would be unmanageable, or recovery would be unclear
+
 ### Allowed write scopes
 - list writable paths or lock classes
 
@@ -32,6 +35,18 @@ Describe the concrete outcome to achieve.
 
 ## Required checks
 - list the exact validation/build/test commands to run when relevant
+
+## Heartbeat and recovery contract
+- keep `session.owner` as `codex-desktop-automation`; put `manual-*` or `automation-*` in `session.label`
+- heartbeat immediately after claim, every `10` to `15` minutes during active work, before/after long builds or simulator checks, before/after spawned subagent waits, and before finish
+- preferred heartbeat:
+
+```bash
+python3 .agent/queue_tool.py heartbeat --task-id T-XXX --session-id "<session-id>" --phase "<short-phase>" --lease-minutes 120
+```
+
+- if helper heartbeat is blocked, patch the claimed `state.json` directly and explain the helper failure in `result.md`
+- for long tasks, keep compact task-local breadcrumbs under `.agent/tasks/T-XXX/logs/` when useful
 
 ## Review gate
 - state whether review is mandatory
@@ -67,6 +82,8 @@ Describe the concrete outcome to achieve.
 
 ## Meaningful-task sizing rule
 If this task declares the full meaningful 3-gate / 4-reviewer contract, write the contract so the review cost is justified.
+
+The goal is not the smallest possible batch. The goal is the largest coherent packet a single worker session can complete, validate, and leave recoverable if interrupted.
 
 Prefer tasks that combine several of these at once:
 - restructure a phrase family or unresolved cluster, not just isolated rows

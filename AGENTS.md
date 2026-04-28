@@ -17,6 +17,10 @@ For repo-local queue automation runs, do this instead:
 - for prompt-only desktop queue runs, read `.agent/coordination/queue-index.json`, then claim by patching the chosen task's live `state.json` directly and re-reading it immediately to confirm ownership
 - treat `.agent/tasks/T-xxx/state.json` as lifecycle truth and `.agent/coordination/queue-index.json` as a fast-selection aid only
 - best-effort queue-index or event-log updates may be helpful, but they must never block claim or finish for desktop prompt-only runs
+- queue tasks are allowed to be substantial single-session packets, commonly `30` minutes to several hours, when the write scope and recovery trail are clear
+- manual worker launch prompts should stay short; the actual assignment belongs in `.agent/tasks/T-xxx/spec.md`
+- keep `session.owner` as `codex-desktop-automation` for helper-backed heartbeat/finish, even for manual workers; distinguish manual runs in `session.label`
+- long queue work must heartbeat after claim, every `10` to `15` minutes during active work, before/after spawned subagent waits, and before finish
 
 Rules:
 - This is the canonical implementation home for the SpeakLocal app family.

@@ -13,6 +13,13 @@ Use this file when the automation prompt says to process the next repo-local que
 2. Execute only that task and keep ownership fresh with heartbeat patches.
 3. Write `result.md`, then patch `state.json` to `done` or `blocked`.
 
+## Task size and prompt shape
+- One automation run processes one task, but that task may be a substantial `30` minute to multi-hour packet.
+- Do not split work merely to keep tasks tiny. Split only when write scopes conflict, recovery would be unclear, or the worker cannot reasonably validate the result in one session.
+- The automation prompt is only a bootstrap. The real prompt/spec must live in the claimed task folder, mainly `spec.md`, so the exact assignment is archived with the task.
+- Long-running workers must heartbeat through `.agent/queue_tool.py heartbeat` or an equivalent direct state patch during phase changes, subagent waits, build/test runs, and before finish.
+- A paused or scheduled Codex automation card can point at `.agent/CODEX_DESKTOP_AUTOMATION_PROMPT.txt`. When activated, each created session should claim one task, work it, commit or block it, then stop.
+
 ## Meaningful Review Contract
 - Reviewers are fully read-only. They must not edit repo files or write review artifacts themselves.
 - Each reviewer returns judgment text only, including explicit `Approval: APPROVE` or `Approval: BLOCK`.

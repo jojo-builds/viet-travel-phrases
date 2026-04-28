@@ -1,8 +1,8 @@
 {
   "taskId": "T-129",
   "title": "Desktop Codex automation pilot, Viet live-audio orphan disposition and parity packet",
-  "status": "queued",
-  "phase": "queued-for-desktop-codex",
+  "status": "blocked",
+  "phase": "superseded-by-mac-queue-reset",
   "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
   "cwd": "E:\\AI\\SpeakLocal-App-Family",
   "session": {
@@ -28,7 +28,11 @@
   "truthClassification": {
     "target": "live"
   },
-  "blockers": [],
+  "blockers": [
+    {
+      "summary": "Superseded during the Mac queue reset on 2026-04-28; preserved as historical Windows-era automation work."
+    }
+  ],
   "artifacts": {
     "result": ".agent\\tasks\\T-129\\result.md",
     "recoveryNotes": ".agent\\tasks\\T-129\\recovery-notes.md",
@@ -44,7 +48,7 @@
       ".agent\\tasks\\T-129\\result.md"
     ]
   },
-  "lastUpdated": "2026-04-21T11:42:00-05:00",
+  "lastUpdated": "2026-04-28T18:05:00+07:00",
   "automation": {
     "runner": "desktop-codex",
     "mode": "single-task",

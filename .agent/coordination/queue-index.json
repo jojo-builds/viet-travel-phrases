@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-28T16:14:55.948308+07:00",
+  "updatedAt": "2026-04-28T17:47:49.033709+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -13,13 +13,52 @@
     "orderingRule": "Across preferred groups, group preference wins first, then lower automation.selectionOrder, then task id."
   },
   "groups": {
-    "reclaimable": [
+    "reclaimable": [],
+    "queued": [
+      {
+        "taskId": "T-157",
+        "title": "Mac queue heartbeat smoke test and short-prompt handoff",
+        "state": ".agent\\tasks\\T-157\\state.json",
+        "selectionOrder": 0,
+        "writeLock": "agent_task_T-157"
+      }
+    ],
+    "in_progress": [],
+    "blocked": [
+      {
+        "taskId": "T-148",
+        "title": "SpeakLocal V2 Liquid Glass answer-page visual fidelity pass toward approved mockup",
+        "state": ".agent\\tasks\\T-148\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "ios_family_shared_ui"
+      },
+      {
+        "taskId": "T-073",
+        "title": "Desktop Codex automation pilot, shared search normalization audit and bounded family-shell fix pass",
+        "state": ".agent\\tasks\\T-073\\state.json",
+        "selectionOrder": 4,
+        "writeLock": ".agent/tasks/T-073/**"
+      },
+      {
+        "taskId": "T-149",
+        "title": "Viet answer-page expansion pack 2 with supporting phrase growth and deeper traveler copy",
+        "state": ".agent\\tasks\\T-149\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "viet_relation_model"
+      },
       {
         "taskId": "T-154",
         "title": "Viet flagship phrase-cluster harvest, retained-row promotion, and answer-page deepening packet",
         "state": ".agent\\tasks\\T-154\\state.json",
         "selectionOrder": 4,
         "writeLock": "viet_relation_model"
+      },
+      {
+        "taskId": "T-099",
+        "title": "Desktop Codex automation pilot, controlled Viet audio follow-up batch and seam ledger update",
+        "state": ".agent\\tasks\\T-099\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "shared_audio_pipeline"
       },
       {
         "taskId": "T-125",
@@ -34,15 +73,6 @@
         "state": ".agent\\tasks\\T-128\\state.json",
         "selectionOrder": 5,
         "writeLock": "ios_family_shared_ui"
-      }
-    ],
-    "queued": [
-      {
-        "taskId": "T-156",
-        "title": "Mac queue smoke test and manual worker handoff",
-        "state": ".agent\\tasks\\T-156\\state.json",
-        "selectionOrder": 0,
-        "writeLock": "agent_task_T-156"
       },
       {
         "taskId": "T-129",
@@ -85,37 +115,6 @@
         "state": ".agent\\tasks\\T-134\\state.json",
         "selectionOrder": 5,
         "writeLock": "website_content_conversion"
-      }
-    ],
-    "in_progress": [],
-    "blocked": [
-      {
-        "taskId": "T-148",
-        "title": "SpeakLocal V2 Liquid Glass answer-page visual fidelity pass toward approved mockup",
-        "state": ".agent\\tasks\\T-148\\state.json",
-        "selectionOrder": 3,
-        "writeLock": "ios_family_shared_ui"
-      },
-      {
-        "taskId": "T-073",
-        "title": "Desktop Codex automation pilot, shared search normalization audit and bounded family-shell fix pass",
-        "state": ".agent\\tasks\\T-073\\state.json",
-        "selectionOrder": 4,
-        "writeLock": ".agent/tasks/T-073/**"
-      },
-      {
-        "taskId": "T-149",
-        "title": "Viet answer-page expansion pack 2 with supporting phrase growth and deeper traveler copy",
-        "state": ".agent\\tasks\\T-149\\state.json",
-        "selectionOrder": 4,
-        "writeLock": "viet_relation_model"
-      },
-      {
-        "taskId": "T-099",
-        "title": "Desktop Codex automation pilot, controlled Viet audio follow-up batch and seam ledger update",
-        "state": ".agent\\tasks\\T-099\\state.json",
-        "selectionOrder": 5,
-        "writeLock": "shared_audio_pipeline"
       },
       {
         "taskId": "T-139",
@@ -142,6 +141,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-156",
+        "title": "Mac queue smoke test and manual worker handoff",
+        "state": ".agent\\tasks\\T-156\\state.json",
+        "selectionOrder": 0,
+        "writeLock": "agent_task_T-156"
+      },
       {
         "taskId": "T-142",
         "title": "Indonesian prep-lane recovery closeout and final review-gate completion packet",
@@ -601,12 +607,12 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 7,
-    "reclaimableCount": 3,
+    "queuedCount": 1,
+    "reclaimableCount": 0,
     "inProgressCount": 0,
-    "blockedCount": 6,
+    "blockedCount": 15,
     "draftCount": 1,
-    "recentlyCompletedCount": 65
+    "recentlyCompletedCount": 66
   },
   "notes": [
     "This index is intentionally small and selection-focused.",

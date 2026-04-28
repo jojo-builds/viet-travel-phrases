@@ -2,6 +2,7 @@ Repo-local manual task run only.
 Use `/Users/jojolim/Developer/products/speaklocal/app-family` as the canonical root.
 Treat Windows paths in old task artifacts as migration/archive references only.
 This prompt is for an explicitly assigned task id, not for automatic queue selection.
+The chat launch prompt should be short: repo path plus task id. The actual task instructions must live in `.agent/tasks/T-xxx/spec.md`.
 
 Read, in order:
 1. `AGENTS.md`
@@ -21,11 +22,15 @@ Manual-task flow:
 - do not ask the user to manually switch branches just to start the task unless the task spec explicitly requires a human branch action
 - if the task is already terminal or owned by another live session, stop honestly instead of silently choosing another task
 - claim by direct `state.json` patch, then re-read immediately to confirm ownership
+- keep `session.owner` as `codex-desktop-automation`; use `session.label` to show it is a manual run
 
 After claim:
 - trust the assigned task's `spec.md` and `state.json`
 - use the task's declared `cwd` and write scope, even if the implementation work happens in a separate feature worktree
 - ignore queue-index and locks unless the task is explicitly queue maintenance
+- send a helper heartbeat after claim when possible:
+  `python3 .agent/queue_tool.py heartbeat --task-id T-xxx --session-id "<session-id>" --phase "<short-phase>" --lease-minutes 120`
+- heartbeat every `10` to `15` minutes during long work, before/after subagent waits, and before finish
 - if the task requires the meaningful 3-gate / 4-reviewer contract, follow it exactly as written in the task spec and `.agent/AUTOMATION.md`
 - write `result.md`, include `Process feedback`, and finish by patching `state.json` directly to `done` or `blocked` with `result.md` agreeing
 

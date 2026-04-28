@@ -3,7 +3,7 @@
   "title": "Short task title",
   "status": "draft",
   "phase": "planning",
-  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "cwd": "",
   "session": {
     "owner": "",
@@ -14,6 +14,7 @@
     "attempt": 0,
     "claimedAt": "",
     "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
     "leaseDurationMinutes": 120,
     "leaseExpiresAt": "",
     "reclaimReason": ""
@@ -40,6 +41,7 @@
     "mode": "single-task",
     "taskClass": "meaningful",
     "proofTask": false,
+    "expectedRunMinutes": "30-180",
     "runtimeReviewPathProven": false,
     "selectionOrder": 0,
     "reviewersRequired": 4,

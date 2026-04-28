@@ -35,16 +35,27 @@ Use this file for repo-local Codex queue runs.
   - `execution.claimedAt`, `execution.lastHeartbeatAt`, `execution.leaseExpiresAt`
   - `lastUpdated`
 - Re-read the same `state.json` immediately. If the session id is not yours, treat the claim as lost and continue to the next candidate.
+- Manual workers use the same `session.owner` value. Put `manual-...` in `session.label` instead of changing the owner, because helper-backed heartbeat and finish verify `codex-desktop-automation`.
 
 ## Execution
 - Read the chosen `spec.md` and only task-required files.
 - Ignore `.agent/coordination/queue-index.json` and `.agent/coordination/locks.yaml` after claim unless the task is explicitly about queue maintenance/self-heal.
-- Heartbeat by patching the claimed task's `state.json`:
+- The task spec is the real prompt. Do not rely on the launch chat to carry task requirements.
+- Queue tasks may be substantial. A normal worker task can run for `30` minutes to several hours if the spec has clear write scope, validations, recovery notes, and review expectations.
+- Heartbeat at least every `10` to `15` minutes during active work, and always before or after long waits such as builds, simulator checks, review gates, or spawned subagents.
+- Prefer helper-backed heartbeat after claim:
+
+```bash
+python3 .agent/queue_tool.py heartbeat --task-id T-xxx --session-id "<session-id>" --phase "<short-phase>" --lease-minutes 120
+```
+
+- If helper-backed heartbeat is unavailable, patch the claimed task's `state.json` directly:
   - update `phase`
   - update `execution.lastHeartbeatAt`
   - update `execution.leaseExpiresAt`
   - update `lastUpdated`
 - Re-read `state.json` before substantial work, before long review passes, and before finish. If ownership changed, stop.
+- For long tasks, keep compact recovery breadcrumbs in a task-local log such as `.agent/tasks/T-xxx/logs/progress.md` when the spec allows it.
 - For meaningful 3-gate review tasks:
   - reviewers are fully read-only and must not write repo files or review artifacts themselves
   - each reviewer returns judgment text with explicit `Approval: APPROVE` or `Approval: BLOCK`
@@ -64,6 +75,12 @@ Use this file for repo-local Codex queue runs.
   - done: `status: "done"`, `phase: "completed"`
   - blocked: `status: "blocked"`, `phase: "blocked"`, real blocker in `blockers`
   - also update `execution.lastHeartbeatAt`, `execution.leaseExpiresAt`, and `lastUpdated`
+- Prefer helper-backed finish when possible:
+
+```bash
+python3 .agent/queue_tool.py finish --task-id T-xxx --status done --session-id "<session-id>"
+```
+
 - Make `result.md` agree with the final `state.json` before stopping.
 
 Process one task only, then stop.
