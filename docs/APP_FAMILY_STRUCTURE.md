@@ -67,7 +67,7 @@ native-ios/Resources/viet-authored-audio-audit.json
 native-ios/Resources/Audio/
 ```
 
-`native-ios/Resources/LanguagePacks/` is now a reserved target folder, not the live runtime source yet. Moving into it requires one coordinated task that updates:
+`native-ios/Resources/LanguagePacks/` is now the target language-pack folder. The Viet SQLite fixture under `LanguagePacks/viet/` is bundled for a debug-only read-path spike, but the live production runtime still loads the root-level JSON resources above. Moving the JSON/audio runtime into language packs still requires one coordinated task that updates:
 
 - Swift resource loaders
 - native generators
@@ -95,4 +95,3 @@ The orchestrator should decide whether work belongs in:
 - `content-draft/<language>/` plus generators/resources for language-pack work
 - `.agent/tasks/T-xxx/` for worker assignments
 - `docs/` for durable source-of-truth changes
-

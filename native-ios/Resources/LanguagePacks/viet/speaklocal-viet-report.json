@@ -22,7 +22,7 @@
     },
     "xcodeProject": {
       "path": "native-ios/project.yml",
-      "sha256": "623121ca3277855e5d64a3599f1445179412b4464749aa115efa25253bcc97a9"
+      "sha256": "590c247b8209561addcf9fbfb80ef5c22796451459adb20f3b08278e3d6af89d"
     },
     "schema": {
       "path": "native-ios/scripts/sqlite/001_initial.sql",
@@ -39,9 +39,9 @@
   "bundlePackaging": {
     "xcodeProjectPath": "native-ios/project.yml",
     "resourcePath": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
-    "isIncludedInXcodeResources": false,
-    "status": "generated-not-bundled",
-    "requiredNextStep": "Update native-ios/project.yml resource rules before opening this fixture with Bundle.main."
+    "isIncludedInXcodeResources": true,
+    "status": "bundle-ready",
+    "requiredNextStep": ""
   },
   "countParity": {
     "scenarios": {

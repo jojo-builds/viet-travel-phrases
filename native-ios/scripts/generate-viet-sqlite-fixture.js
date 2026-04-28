@@ -126,7 +126,10 @@ function main() {
   );
   const generatedAt = `source-hash:${inputHash.slice(0, 16)}`;
   const contentVersion = `viet-sqlite-fixture:${inputHash.slice(0, 16)}`;
-  const languagePacksExcludedFromResources = /excludes:\s*(?:\n\s+- .*)*\n\s+- LanguagePacks/m.test(xcodeProject);
+  const languagePacksExcludedFromBroadResources = /excludes:\s*(?:\n\s+- .*)*\n\s+- LanguagePacks/m.test(xcodeProject);
+  const languagePacksExplicitlyIncluded = /-\s+path:\s*Resources\/LanguagePacks\b/m.test(xcodeProject);
+  const languagePacksIncludedInXcodeResources =
+    languagePacksExplicitlyIncluded || !languagePacksExcludedFromBroadResources;
 
   const scenarioByID = new Map(catalog.scenarios.map((scenario) => [scenario.id, scenario]));
   const familyByID = new Map(catalog.families.map((family) => [family.id, family]));
@@ -637,11 +640,11 @@ function main() {
     bundlePackaging: {
       xcodeProjectPath: relative(xcodeProjectPath),
       resourcePath: relative(databasePath),
-      isIncludedInXcodeResources: !languagePacksExcludedFromResources,
-      status: languagePacksExcludedFromResources ? "generated-not-bundled" : "bundle-ready",
-      requiredNextStep: languagePacksExcludedFromResources
-        ? "Update native-ios/project.yml resource rules before opening this fixture with Bundle.main."
-        : "",
+      isIncludedInXcodeResources: languagePacksIncludedInXcodeResources,
+      status: languagePacksIncludedInXcodeResources ? "bundle-ready" : "generated-not-bundled",
+      requiredNextStep: languagePacksIncludedInXcodeResources
+        ? ""
+        : "Update native-ios/project.yml resource rules before opening this fixture with Bundle.main.",
     },
     countParity: {
       scenarios: { expected: 18, actual: catalog.scenarios.length, ok: catalog.scenarios.length === 18 },

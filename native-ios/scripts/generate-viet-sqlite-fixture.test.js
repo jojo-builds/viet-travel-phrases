@@ -93,8 +93,8 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
   assert.deepStrictEqual(report.bundlePackaging, {
     xcodeProjectPath: "native-ios/project.yml",
     resourcePath: "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
-    isIncludedInXcodeResources: false,
-    status: "generated-not-bundled",
-    requiredNextStep: "Update native-ios/project.yml resource rules before opening this fixture with Bundle.main.",
+    isIncludedInXcodeResources: true,
+    status: "bundle-ready",
+    requiredNextStep: "",
   });
 });

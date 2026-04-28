@@ -23,6 +23,11 @@ targets:
       - path: Resources/Audio
         type: folder
         buildPhase: resources
+      - path: Resources/LanguagePacks
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - sdk: libsqlite3.tbd
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: app.speaklocal.vietnam.native

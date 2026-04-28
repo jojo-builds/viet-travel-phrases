@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		034037B7D97D6400BEC8F0E8 /* AppChromeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094EBCA2A1C2908334452B3A /* AppChromeTests.swift */; };
+		05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */; };
 		0705C583B1734184937E5F87 /* AppChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92E39F9AC9626410FF3CDC /* AppChrome.swift */; };
+		36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */; };
+		38B893276AD8652F98766E0F /* LanguagePacks in Resources */ = {isa = PBXBuildFile; fileRef = A83272548030E59BD55C69E3 /* LanguagePacks */; };
 		3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875EEA097A552AA1510358 /* AppShellView.swift */; };
+		3CC4718D118F88AD295C606F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */; };
 		532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */; };
 		5E445B4FD180B59D157E434D /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = C29EA500445CB089DEEDA380 /* Audio */; };
 		63A9110E76FE4649A20494AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */; };
@@ -49,14 +53,18 @@
 		21CA4CCC52A4DA7FD6AD5490 /* viet-authored-audio-audit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-authored-audio-audit.json"; sourceTree = "<group>"; };
 		2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeakLocalNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C98DE73722F896A42D9AEC1 /* NativeGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeGlass.swift; sourceTree = "<group>"; };
+		488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDetailView.swift; sourceTree = "<group>"; };
 		4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-audio-manifest.json"; sourceTree = "<group>"; };
+		5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteLanguagePackRepositoryTests.swift; sourceTree = "<group>"; };
 		65875EEA097A552AA1510358 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
 		75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePageFixtureTests.swift; sourceTree = "<group>"; };
 		7C570403C2E33918DCE587ED /* PhraseListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListingView.swift; sourceTree = "<group>"; };
 		7C57227E47AA382AB3CBE502 /* viet-authored-listing-pages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-authored-listing-pages.json"; sourceTree = "<group>"; };
 		81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLocalNativeApp.swift; sourceTree = "<group>"; };
+		8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSQLiteLanguagePackRepository.swift; sourceTree = "<group>"; };
+		A83272548030E59BD55C69E3 /* LanguagePacks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LanguagePacks; path = Resources/LanguagePacks; sourceTree = SOURCE_ROOT; };
 		B16251C7B60B5DAA58A148B9 /* AudioControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControls.swift; sourceTree = "<group>"; };
 		C29EA500445CB089DEEDA380 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Audio; path = Resources/Audio; sourceTree = SOURCE_ROOT; };
 		C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAssetManifest.swift; sourceTree = "<group>"; };
@@ -66,6 +74,17 @@
 		F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedVietContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		E3539FF1E3924983FD4B4CCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CC4718D118F88AD295C606F /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		0B6DE062040ABE1399548B98 /* Tests */ = {
 			isa = PBXGroup;
@@ -73,6 +92,7 @@
 				094EBCA2A1C2908334452B3A /* AppChromeTests.swift */,
 				18EA78216F5959BDB34B09C0 /* Info.plist */,
 				75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */,
+				5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -118,6 +138,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D0850BDEA197B6FB6F8181F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9203EC5401AAB82C7F001E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +154,7 @@
 				0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */,
 				F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */,
 				EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */,
+				8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,9 +175,11 @@
 			isa = PBXGroup;
 			children = (
 				C29EA500445CB089DEEDA380 /* Audio */,
+				A83272548030E59BD55C69E3 /* LanguagePacks */,
 				E0F2C96854957777ACE8C283 /* App */,
 				7EEA46CD4D18A7F1A968A922 /* Resources */,
 				0B6DE062040ABE1399548B98 /* Tests */,
+				D0850BDEA197B6FB6F8181F1 /* Frameworks */,
 				983DA75FA56A7C126D4A3996 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -180,6 +211,7 @@
 			buildPhases = (
 				A3407C85C36B05DAEEC751B7 /* Sources */,
 				44CBEB86FF5EDAB770E76B9C /* Resources */,
+				E3539FF1E3924983FD4B4CCE /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +262,7 @@
 			files = (
 				63A9110E76FE4649A20494AC /* Assets.xcassets in Resources */,
 				5E445B4FD180B59D157E434D /* Audio in Resources */,
+				38B893276AD8652F98766E0F /* LanguagePacks in Resources */,
 				F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */,
 				B6D206ADF0EE288783D8CAD9 /* viet-authored-audio-audit.json in Resources */,
 				BDEF4C9D76C1888D12F3D195 /* viet-authored-listing-pages.json in Resources */,
@@ -246,6 +279,7 @@
 			files = (
 				034037B7D97D6400BEC8F0E8 /* AppChromeTests.swift in Sources */,
 				B4BB1FA3BE7357CB5035A731 /* PhrasePageFixtureTests.swift in Sources */,
+				05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +299,7 @@
 				A7D9EAC643A14747CC53B62E /* PhrasePage.swift in Sources */,
 				A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */,
 				74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */,
+				36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
