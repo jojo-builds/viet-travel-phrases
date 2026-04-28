@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal Practice</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #eff3f4;
+      --paper: rgba(255, 255, 255, 0.78);
+      --paper-strong: #ffffff;
+      --ink: #162024;
+      --muted: #637077;
+      --line: rgba(22, 32, 36, 0.10);
+      --red: #c41224;
+      --red-bright: #ed1f2f;
+      --gold: #d39719;
+      --green: #22755b;
+      --blue: #23689e;
+      --shadow: 0 22px 60px rgba(18, 30, 35, 0.16);
+      --soft-shadow: 0 12px 32px rgba(18, 30, 35, 0.10);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(145deg, rgba(237, 31, 47, 0.10), transparent 34%),
+        linear-gradient(215deg, rgba(34, 117, 91, 0.13), transparent 38%),
+        var(--bg);
+      color: var(--ink);
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .phone {
+      width: min(390px, 100vw);
+      height: min(844px, 100vh);
+      min-height: 720px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+    }
+
+    .masthead {
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 234px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0) 58%, var(--bg) 98%),
+        url("../../../native-ios/Resources/Assets.xcassets/HeroVietnamMasthead.imageset/hero-vietnam-masthead.png") center top / cover no-repeat,
+        linear-gradient(135deg, #d7e7e4, #f3e4d0);
+    }
+
+    .screen {
+      position: relative;
+      z-index: 2;
+      height: calc(100% - 92px);
+      padding: 32px 18px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+    }
+
+    .screen::-webkit-scrollbar {
+      display: none;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 54px;
+    }
+
+    .glass-button,
+    .glass-pill,
+    .dock,
+    .search-island {
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.70);
+      box-shadow: var(--soft-shadow);
+      backdrop-filter: blur(18px) saturate(1.2);
+      -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    }
+
+    .glass-button {
+      width: 52px;
+      height: 52px;
+      border-radius: 26px;
+      border: 0;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .glass-pill {
+      border-radius: 24px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .hero-copy {
+      margin-top: 126px;
+      padding: 0 6px;
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .flag-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--red);
+      position: relative;
+      box-shadow: 0 5px 18px rgba(237, 31, 47, 0.25);
+    }
+
+    .flag-dot::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      clip-path: polygon(50% 0, 62% 34%, 98% 35%, 69% 56%, 79% 91%, 50% 70%, 21% 91%, 31% 56%, 2% 35%, 38% 34%);
+    }
+
+    h1 {
+      margin: 10px 0 6px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.2rem;
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.36;
+      font-weight: 650;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--soft-shadow);
+      padding: 16px;
+    }
+
+    .deck-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .deck-card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.76);
+      border-radius: 18px;
+      padding: 13px;
+      min-height: 104px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .deck-card strong {
+      display: block;
+      font-size: 0.96rem;
+      line-height: 1.18;
+      margin-bottom: 8px;
+    }
+
+    .deck-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.3;
+    }
+
+    .primary-action {
+      border: 0;
+      border-radius: 18px;
+      padding: 15px 16px;
+      background: var(--red);
+      color: #ffffff;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(237, 31, 47, 0.22);
+    }
+
+    .secondary-action {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 8px;
+      background: rgba(22, 32, 36, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), var(--gold), var(--green));
+      border-radius: inherit;
+      transition: width 260ms ease;
+    }
+
+    .progress-text {
+      width: 44px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .prompt-label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .prompt-title {
+      margin: 0;
+      font-size: 1.42rem;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .source-line {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    .audio-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .speaker {
+      width: 52px;
+      height: 52px;
+      border-radius: 26px;
+      border: 0;
+      background: #fff;
+      color: var(--red);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: var(--soft-shadow);
+      position: relative;
+    }
+
+    .speaker::before,
+    .speaker::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(237, 31, 47, 0.32);
+      opacity: 0;
+      transform: scale(0.72);
+    }
+
+    .speaker.playing::before,
+    .speaker.playing::after {
+      animation: pulse 900ms ease-out;
+    }
+
+    .speaker.playing::after {
+      animation-delay: 180ms;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.75; transform: scale(0.72); }
+      100% { opacity: 0; transform: scale(1.75); }
+    }
+
+    .audio-caption {
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.28;
+    }
+
+    .choices {
+      display: grid;
+      gap: 10px;
+    }
+
+    .choice {
+      border: 1px solid var(--line);
+      background: var(--paper-strong);
+      border-radius: 18px;
+      padding: 14px;
+      text-align: left;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .choice .mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: rgba(22, 32, 36, 0.06);
+      color: var(--muted);
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .choice strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .choice span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.80rem;
+      line-height: 1.24;
+      margin-top: 3px;
+    }
+
+    .choice .choice-detail {
+      display: none;
+    }
+
+    .choice.revealed .choice-detail {
+      display: block;
+    }
+
+    .choice.correct {
+      border-color: rgba(34, 117, 91, 0.45);
+      background: rgba(34, 117, 91, 0.10);
+    }
+
+    .choice.selected:not(.correct) {
+      border-color: rgba(211, 151, 25, 0.55);
+      background: rgba(211, 151, 25, 0.10);
+    }
+
+    .feedback {
+      display: none;
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.38;
+      font-size: 0.9rem;
+    }
+
+    .feedback.visible {
+      display: block;
+    }
+
+    .feedback strong {
+      color: var(--ink);
+    }
+
+    .mascot-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .chameleon {
+      width: 70px;
+      height: 54px;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .chameleon .body {
+      position: absolute;
+      left: 8px;
+      top: 16px;
+      width: 48px;
+      height: 28px;
+      border-radius: 22px 24px 20px 20px;
+      background: linear-gradient(135deg, #4c9878, #1f6b55);
+      box-shadow: inset -8px -6px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .chameleon .head {
+      position: absolute;
+      right: 4px;
+      top: 10px;
+      width: 30px;
+      height: 28px;
+      border-radius: 18px 20px 16px 16px;
+      background: #4f9d7a;
+    }
+
+    .chameleon .eye {
+      position: absolute;
+      right: 11px;
+      top: 15px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #173a31;
+    }
+
+    .chameleon .tail {
+      position: absolute;
+      left: 0;
+      top: 22px;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      border: 6px solid #2b7058;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      transform: rotate(-28deg);
+    }
+
+    .chameleon .motif {
+      position: absolute;
+      left: 26px;
+      top: 21px;
+      width: 20px;
+      height: 8px;
+      border-radius: 8px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 260ms ease;
+    }
+
+    .chameleon.level-1 .motif { transform: scaleX(0.38); }
+    .chameleon.level-2 .motif { transform: scaleX(0.62); }
+    .chameleon.level-3 .motif { transform: scaleX(0.82); }
+    .chameleon.level-4 .motif { transform: scaleX(1); }
+
+    .chameleon .star {
+      position: absolute;
+      left: 48px;
+      top: 24px;
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      clip-path: polygon(50% 0, 62% 34%, 98% 35%, 69% 56%, 79% 91%, 50% 70%, 21% 91%, 31% 56%, 2% 35%, 38% 34%);
+      opacity: 0;
+      transition: opacity 260ms ease;
+    }
+
+    .chameleon.level-4 .star { opacity: 1; }
+
+    .mascot-copy strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.94rem;
+    }
+
+    .mascot-copy span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.3;
+    }
+
+    .completion {
+      display: grid;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .completion h2 {
+      margin: 0;
+      font-size: 1.7rem;
+      letter-spacing: 0;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.2rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .bottom-chrome {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 12px;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .dock {
+      height: 58px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 12px;
+    }
+
+    .dock-item {
+      width: 52px;
+      height: 50px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+    }
+
+    .dock-item.selected {
+      color: var(--red);
+    }
+
+    .dock-symbol {
+      display: block;
+      font-size: 1.05rem;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .search-island {
+      width: 58px;
+      height: 58px;
+      border-radius: 29px;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-left: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .quiz-mascot-panel {
+      display: none;
+    }
+
+    .motif-chip {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      align-self: flex-start;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 999px;
+      padding: 7px 10px 7px 7px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 750;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .motif-chip .chameleon {
+      width: 42px;
+      height: 32px;
+      transform: scale(0.62);
+      transform-origin: left center;
+      margin-right: -14px;
+      flex-basis: 42px;
+    }
+
+    #quiz-screen {
+      padding-bottom: 28px;
+      scroll-padding-bottom: 28px;
+    }
+
+    #next-button {
+      margin-top: 12px;
+      scroll-margin-bottom: 28px;
+      box-shadow: 0 18px 32px rgba(196, 18, 36, 0.22);
+    }
+
+    .quiz-bottom-spacer {
+      min-height: 8px;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 420px) {
+      .phone {
+        border-radius: 0;
+        min-height: 100vh;
+      }
+
+      .screen {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      h1 {
+        font-size: 2.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-live="polite">
+    <div class="masthead" aria-hidden="true"></div>
+
+    <section id="start-screen" class="screen">
+      <div class="topbar">
+        <button class="glass-button" type="button" aria-label="Back">‹</button>
+        <div class="glass-pill">Offline practice</div>
+      </div>
+
+      <div class="hero-copy">
+        <div class="kicker"><span class="flag-dot"></span> SpeakLocal Vietnam</div>
+        <h1>Practice</h1>
+        <p class="subtitle">Short, audio-first phrase practice that stays connected to the page you were already reading.</p>
+      </div>
+
+      <div class="panel mascot-panel">
+        <div class="mascot-row">
+          <div class="chameleon level-0" aria-hidden="true">
+            <span class="tail"></span><span class="body"></span><span class="head"></span><span class="eye"></span><span class="motif"></span><span class="star"></span>
+          </div>
+          <div class="mascot-copy">
+            <strong>Glass Rehearsal Deck</strong>
+            <span>Try four prompt types, then return to the source phrase page.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="deck-grid" aria-label="Practice deck choices">
+        <button class="deck-card" type="button" data-start>
+          <strong>Practice this page</strong>
+          <span>Xin chào, hotel check-in, pronouns, and price phrases.</span>
+        </button>
+        <button class="deck-card" type="button" data-start>
+          <strong>Starter essentials</strong>
+          <span>Five short prompts from core Vietnam moments.</span>
+        </button>
+        <button class="deck-card" type="button" data-start>
+          <strong>Pronoun coach</strong>
+          <span>Relationship cues without over-teaching grammar.</span>
+        </button>
+        <button class="deck-card" type="button" data-start>
+          <strong>Review missed</strong>
+          <span>Due-first recall with calm, non-punitive copy.</span>
+        </button>
+      </div>
+
+      <button class="primary-action" type="button" data-start>Start practice</button>
+    </section>
+
+    <section id="quiz-screen" class="screen hidden">
+      <div class="topbar">
+        <button class="glass-button" type="button" id="back-to-start" aria-label="Back">‹</button>
+        <div class="glass-pill" id="mode-pill">Listen And Choose</div>
+      </div>
+
+      <div class="progress-row">
+        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="progress-text" id="progress-text">1/4</div>
+      </div>
+
+      <div class="motif-chip" aria-live="polite">
+        <div class="chameleon level-0" id="motif-chip-mascot" aria-hidden="true">
+          <span class="tail"></span><span class="body"></span><span class="head"></span><span class="eye"></span><span class="motif"></span><span class="star"></span>
+        </div>
+        <span id="motif-chip-label">Base companion</span>
+      </div>
+
+      <div class="panel">
+        <div class="prompt-label" id="prompt-label">Listen And Choose</div>
+        <h2 class="prompt-title" id="prompt-title">Which Vietnamese phrase did you hear?</h2>
+        <p class="source-line" id="source-line">Source: Xin chào listing page</p>
+        <div class="audio-row">
+          <button class="speaker" type="button" id="speaker" aria-label="Play phrase audio">)))</button>
+          <div class="audio-caption" id="audio-caption">Listen, then choose the Vietnamese phrase.</div>
+        </div>
+      </div>
+
+      <div class="choices" id="choices"></div>
+
+      <div class="feedback" id="feedback"></div>
+
+      <div class="panel mascot-panel quiz-mascot-panel">
+        <div class="mascot-row">
+          <div class="chameleon" id="mascot" aria-hidden="true">
+            <span class="tail"></span><span class="body"></span><span class="head"></span><span class="eye"></span><span class="motif"></span><span class="star"></span>
+          </div>
+          <div class="mascot-copy">
+            <strong id="mascot-title">Ready to listen</strong>
+            <span id="mascot-copy">The chameleon gains subtle Vietnam details as the session covers real cues.</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="primary-action" type="button" id="next-button" disabled>Choose an answer</button>
+      <div class="quiz-bottom-spacer" aria-hidden="true"></div>
+    </section>
+
+    <section id="completion-screen" class="screen hidden">
+      <div class="topbar">
+        <button class="glass-button" type="button" id="completion-back" aria-label="Back">‹</button>
+        <div class="glass-pill">Session complete</div>
+      </div>
+
+      <div class="hero-copy">
+        <div class="kicker"><span class="flag-dot"></span> Vietnam motif earned</div>
+        <h1>Ready cue</h1>
+        <p class="subtitle">You rehearsed listening, situation phrase choice, pronoun tone, and a source-page price phrase.</p>
+      </div>
+
+      <div class="panel completion">
+        <div class="mascot-row">
+          <div class="chameleon level-4" aria-hidden="true">
+            <span class="tail"></span><span class="body"></span><span class="head"></span><span class="eye"></span><span class="motif"></span><span class="star"></span>
+          </div>
+          <div class="mascot-copy">
+            <strong>Star motif unlocked</strong>
+            <span>Progress is private and positive. Missed prompts become review cues, not penalties.</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><strong>4</strong><span>prompts</span></div>
+          <div class="stat"><strong>3</strong><span>modes</span></div>
+          <div class="stat"><strong>2</strong><span>source pages</span></div>
+        </div>
+        <button class="primary-action" type="button" id="restart">Practice again</button>
+        <button class="secondary-action" type="button" id="source-page">Return to source page</button>
+      </div>
+    </section>
+
+    <nav class="bottom-chrome" aria-label="App navigation">
+      <div class="dock">
+        <button class="dock-item selected" type="button"><span class="dock-symbol">⌂</span>Home</button>
+        <button class="dock-item" type="button"><span class="dock-symbol">▤</span>Browse</button>
+        <button class="dock-item" type="button"><span class="dock-symbol">◌</span>Saved</button>
+      </div>
+      <div class="search-island" aria-hidden="true">⌕</div>
+    </nav>
+  </main>
+
+  <script>
+    const prompts = [
+      {
+        mode: "Listen And Choose",
+        label: "Listen And Choose",
+        title: "Which Vietnamese phrase did you hear?",
+        source: "Source: Xin chào listing page",
+        audio: "../../../native-ios/Resources/Audio/polite-1.mp3",
+        audioCaption: "Listen, then choose the Vietnamese phrase.",
+        choices: [
+          { text: "Xin chào", detail: "Hello. Use it to open a shop, desk, ride, or casual exchange.", correct: true },
+          { text: "Cảm ơn", detail: "Thank you." },
+          { text: "Cái này bao nhiêu?", detail: "How much is this?" },
+          { text: "Tôi có đặt phòng", detail: "I have a reservation." }
+        ],
+        feedback: "Xin chào means Hello. You recognized the Vietnamese greeting before seeing the English."
+      },
+      {
+        mode: "Situation Pick",
+        label: "Situation Pick",
+        title: "You already booked a room. Choose the Vietnamese phrase to show the desk clerk.",
+        source: "Source: Tôi có đặt phòng listing page",
+        audio: "",
+        audioCaption: "Choose the Vietnamese phrase first.",
+        choices: [
+          { text: "Tôi có đặt phòng", detail: "I have a reservation.", correct: true },
+          { text: "Cho tôi nhận phòng", detail: "I would like to check in." },
+          { text: "Mấy giờ trả phòng?", detail: "What time is check-out?" },
+          { text: "Giữ hành lý giúp tôi", detail: "Please hold my luggage." }
+        ],
+        feedback: "Tôi có đặt phòng means I have a reservation. This is the phrase to recognize or show at the desk."
+      },
+      {
+        mode: "Pronoun Coach",
+        label: "Pronoun Coach",
+        title: "Choose the Vietnamese check-in for an older woman.",
+        source: "Source: Bạn khỏe không? relationship-forms section",
+        audio: "",
+        audioCaption: "Focus on the relationship word inside the Vietnamese phrase.",
+        choices: [
+          { text: "Chị khỏe không?", detail: "How are you, older woman?", correct: true },
+          { text: "Anh khỏe không?", detail: "How are you, older man?" },
+          { text: "Em khỏe không?", detail: "How are you, younger person?" },
+          { text: "Bạn khỏe không?", detail: "How are you, peer or friend?" }
+        ],
+        feedback: "Chị khỏe không? means How are you, older woman? Choose it when the relationship cue points to an older woman."
+      },
+      {
+        mode: "Practice This Page",
+        label: "Review Missed",
+        title: "Which Vietnamese phrase matches: “How much is this?”",
+        source: "Source: Cái này bao nhiêu? listing page",
+        audio: "",
+        audioCaption: "Review the Vietnamese phrase, then return to the source page if needed.",
+        choices: [
+          { text: "Cái này bao nhiêu?", detail: "How much is this?", correct: true },
+          { text: "Tiền xe bao nhiêu?", detail: "How much is the fare?" },
+          { text: "Tổng cộng bao nhiêu?", detail: "How much altogether?" },
+          { text: "Giá cuối bao nhiêu?", detail: "What is your final price?" }
+        ],
+        feedback: "Cái này bao nhiêu? means How much is this? Keep it ready for asking a price at a counter or stall."
+      }
+    ];
+
+    let index = 0;
+    let answered = false;
+    let currentAudio = null;
+
+    const startScreen = document.getElementById("start-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const completionScreen = document.getElementById("completion-screen");
+    const progressFill = document.getElementById("progress-fill");
+    const progressText = document.getElementById("progress-text");
+    const modePill = document.getElementById("mode-pill");
+    const promptLabel = document.getElementById("prompt-label");
+    const promptTitle = document.getElementById("prompt-title");
+    const sourceLine = document.getElementById("source-line");
+    const audioCaption = document.getElementById("audio-caption");
+    const choices = document.getElementById("choices");
+    const feedback = document.getElementById("feedback");
+    const nextButton = document.getElementById("next-button");
+    const speaker = document.getElementById("speaker");
+    const mascot = document.getElementById("mascot");
+    const mascotTitle = document.getElementById("mascot-title");
+    const mascotCopy = document.getElementById("mascot-copy");
+    const motifChipMascot = document.getElementById("motif-chip-mascot");
+    const motifChipLabel = document.getElementById("motif-chip-label");
+
+    function showStart() {
+      index = 0;
+      answered = false;
+      startScreen.classList.remove("hidden");
+      quizScreen.classList.add("hidden");
+      completionScreen.classList.add("hidden");
+    }
+
+    function startPractice() {
+      index = 0;
+      startScreen.classList.add("hidden");
+      completionScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+      renderPrompt();
+    }
+
+    function renderPrompt() {
+      const prompt = prompts[index];
+      answered = false;
+      progressFill.style.width = `${(index / prompts.length) * 100}%`;
+      progressText.textContent = `${index + 1}/${prompts.length}`;
+      modePill.textContent = prompt.mode;
+      promptLabel.textContent = prompt.label;
+      promptTitle.textContent = prompt.title;
+      sourceLine.textContent = prompt.source;
+      audioCaption.textContent = prompt.audioCaption;
+      feedback.classList.remove("visible");
+      feedback.textContent = "";
+      nextButton.textContent = "Choose an answer";
+      nextButton.disabled = true;
+      mascot.className = `chameleon level-${index}`;
+      motifChipMascot.className = `chameleon level-${index}`;
+      motifChipLabel.textContent = index === 0 ? "Base companion" : "Motif progress";
+      mascotTitle.textContent = index === 0 ? "Ready to listen" : "Motif progress added";
+      mascotCopy.textContent = "Answer, read the cue, then continue when you are ready.";
+
+      choices.innerHTML = "";
+      prompt.choices.forEach((choice, choiceIndex) => {
+        const button = document.createElement("button");
+        button.className = "choice";
+        button.type = "button";
+        button.innerHTML = `
+          <span class="mark">${String.fromCharCode(65 + choiceIndex)}</span>
+          <span><strong>${choice.text}</strong><span class="choice-detail">${choice.detail}</span></span>
+        `;
+        button.addEventListener("click", () => selectChoice(button, choice));
+        choices.appendChild(button);
+      });
+    }
+
+    function selectChoice(button, choice) {
+      if (answered) return;
+      answered = true;
+      [...choices.children].forEach((child, childIndex) => {
+        child.disabled = true;
+        child.classList.toggle("correct", prompts[index].choices[childIndex].correct);
+        child.classList.toggle(
+          "revealed",
+          prompts[index].choices[childIndex].correct || child === button
+        );
+      });
+      button.classList.add("selected");
+      feedback.innerHTML = `<strong>${choice.correct ? "Good cue." : "Useful distinction."}</strong> ${prompts[index].feedback}`;
+      feedback.classList.add("visible");
+      progressFill.style.width = `${((index + 1) / prompts.length) * 100}%`;
+      mascot.className = `chameleon level-${Math.min(index + 1, 4)}`;
+      motifChipMascot.className = `chameleon level-${Math.min(index + 1, 4)}`;
+      motifChipLabel.textContent = choice.correct ? "Motif detail added" : "Saved for review";
+      mascotTitle.textContent = choice.correct ? "Cue covered" : "Saved for review";
+      mascotCopy.textContent = choice.correct
+        ? "The reward is coverage, not points."
+        : "A miss becomes a gentle review prompt later.";
+      nextButton.disabled = false;
+      nextButton.textContent = index === prompts.length - 1 ? "Complete session" : "Next prompt";
+      nextButton.scrollIntoView({ block: "center", behavior: "smooth" });
+    }
+
+    function playAudio() {
+      const prompt = prompts[index];
+      speaker.classList.remove("playing");
+      void speaker.offsetWidth;
+      speaker.classList.add("playing");
+
+      if (!prompt.audio) {
+        return;
+      }
+
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+
+      currentAudio = new Audio(prompt.audio);
+      currentAudio.play().catch(() => {
+        audioCaption.textContent = "Audio is unavailable here. Continue with the visible Vietnamese phrase choices.";
+      });
+    }
+
+    function goNext() {
+      if (!answered) return;
+      if (index === prompts.length - 1) {
+        quizScreen.classList.add("hidden");
+        completionScreen.classList.remove("hidden");
+        return;
+      }
+      index += 1;
+      renderPrompt();
+    }
+
+    function sourcePageConcept() {
+      startScreen.classList.remove("hidden");
+      quizScreen.classList.add("hidden");
+      completionScreen.classList.add("hidden");
+      const subtitle = document.querySelector(".subtitle");
+      subtitle.textContent = "Back on the source phrase page. Practice this page is ready when you want another quick review.";
+    }
+
+    document.querySelectorAll("[data-start]").forEach((button) => {
+      button.addEventListener("click", startPractice);
+    });
+    document.getElementById("back-to-start").addEventListener("click", showStart);
+    document.getElementById("completion-back").addEventListener("click", showStart);
+    document.getElementById("restart").addEventListener("click", startPractice);
+    document.getElementById("source-page").addEventListener("click", sourcePageConcept);
+    nextButton.addEventListener("click", goNext);
+    speaker.addEventListener("click", playAudio);
+  </script>
+</body>
+</html>
