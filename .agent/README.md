@@ -10,6 +10,8 @@ This folder is the repo-local task surface for Codex queue work.
   coordination/
     locks.yaml
     queue-index.json
+  orchestrator/
+    digests/
   tasks/
     TEMPLATE/
       spec.md
@@ -32,6 +34,7 @@ This folder is the repo-local task surface for Codex queue work.
 - A good handoff prompt should be short: identify the repo and task ID, then let the task files carry the real specification.
 - When a worker finishes, the orchestrator should read that task's `result.md` and changed source-of-truth docs, then report back to Jojo with a completion digest: what changed, what we learned, what decisions are now locked in, what remains risky, and the recommended next tasks.
 - Worker completion is not "done" from the orchestrator perspective until the outcome is folded into the roadmap/source truth or explicitly parked.
+- Store durable completion digests under `.agent/orchestrator/digests/T-xxx.md` so future sessions can recover the strategic meaning without rereading every worker artifact.
 
 Copy-paste shape for a manual worker:
 
