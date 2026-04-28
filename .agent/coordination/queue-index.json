@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-28T20:44:25.806902+07:00",
+  "updatedAt": "2026-04-28T23:42:42.408499+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -14,15 +14,7 @@
   },
   "groups": {
     "reclaimable": [],
-    "queued": [
-      {
-        "taskId": "T-159",
-        "title": "Research and design pre-live Practice/Quiz + mascot lane",
-        "state": ".agent\\tasks\\T-159\\state.json",
-        "selectionOrder": 30,
-        "writeLock": "practice_quiz_prelive_plan"
-      }
-    ],
+    "queued": [],
     "in_progress": [],
     "blocked": [
       {
@@ -148,6 +140,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-159",
+        "title": "Research and design pre-live Practice/Quiz + mascot lane",
+        "state": ".agent\\tasks\\T-159\\state.json",
+        "selectionOrder": 30,
+        "writeLock": "practice_quiz_prelive_plan"
+      },
       {
         "taskId": "T-157",
         "title": "Mac queue heartbeat smoke test and short-prompt handoff",
@@ -621,12 +620,12 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 1,
+    "queuedCount": 0,
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 67
+    "recentlyCompletedCount": 68
   },
   "notes": [
     "This index is intentionally small and selection-focused.",
