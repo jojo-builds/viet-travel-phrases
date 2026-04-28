@@ -37,6 +37,15 @@ It is acceptable for the orchestrator to make small direct edits when the edit i
 
 If Jojo explicitly asks the pinned thread to execute a task here, it may do so. Otherwise, prefer: clarify outcome, create/update the task packet, commit the queue/doc change, and hand off a short worker prompt.
 
+When a worker completes, the pinned thread should close the loop before creating more work from that lane:
+
+- inspect the task `result.md`, changed files, and any durable source-of-truth docs;
+- summarize what changed and what the worker learned in user-facing language;
+- identify decisions that are now locked in versus proposals that still need Jojo's approval;
+- explain how the result folds into the product/system;
+- recommend the next one to three tasks or say no immediate follow-up is needed;
+- if the worker finished but left required artifacts uncommitted, checkpoint or call out the cleanup before launching another worker.
+
 The worker should understand:
 
 - what must be true when the task is done

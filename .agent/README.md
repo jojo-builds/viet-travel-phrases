@@ -30,6 +30,8 @@ This folder is the repo-local task surface for Codex queue work.
 - Long research, implementation, simulator/device proof, multi-file content work, audio generation, and broad audits should normally become `.agent/tasks/T-xxx` work for fresh worker sessions.
 - Keep direct orchestrator edits small and queue/source-of-truth oriented unless Jojo explicitly asks this thread to execute the task itself.
 - A good handoff prompt should be short: identify the repo and task ID, then let the task files carry the real specification.
+- When a worker finishes, the orchestrator should read that task's `result.md` and changed source-of-truth docs, then report back to Jojo with a completion digest: what changed, what we learned, what decisions are now locked in, what remains risky, and the recommended next tasks.
+- Worker completion is not "done" from the orchestrator perspective until the outcome is folded into the roadmap/source truth or explicitly parked.
 
 Copy-paste shape for a manual worker:
 
