@@ -31,6 +31,14 @@ This folder is the repo-local task surface for Codex queue work.
 - Keep direct orchestrator edits small and queue/source-of-truth oriented unless Jojo explicitly asks this thread to execute the task itself.
 - A good handoff prompt should be short: identify the repo and task ID, then let the task files carry the real specification.
 
+Copy-paste shape for a manual worker:
+
+```text
+Open /Users/jojolim/Developer/products/speaklocal/app-family and process queue task T-XXX.
+Read .agent/CODEX_MANUAL_TASK_PROMPT.txt, then follow .agent/tasks/T-XXX/spec.md exactly.
+Process only T-XXX, commit or block it, and stop.
+```
+
 ## Truth
 - task lifecycle truth lives in each task's `state.json`
 - interrupted-task to recovery-task linkage lives in task `state.json` under `recovery`; `.agent/coordination/desktop-app-recovery.json` may mirror that linkage for maintenance visibility, but it is not lifecycle authority

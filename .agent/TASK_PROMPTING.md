@@ -88,6 +88,8 @@ Step lists are allowed only when the order is a real safety requirement, such as
 - Make stopping conditions explicit.
 - Ask for concise rationale and evidence in `result.md`, not hidden chain-of-thought.
 - Keep launch prompts tiny. The task file is the real prompt.
+- Manual worker launch prompts should be no more than repo path, task ID, and an instruction to read `.agent/CODEX_MANUAL_TASK_PROMPT.txt` plus the assigned task's `spec.md`.
+- Do not paste the full task body into chat unless the repo files are unavailable.
 
 ## What To Include
 

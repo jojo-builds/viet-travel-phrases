@@ -2,7 +2,17 @@ Repo-local manual task run only.
 Use `/Users/jojolim/Developer/products/speaklocal/app-family` as the canonical root.
 Treat Windows paths in old task artifacts as migration/archive references only.
 This prompt is for an explicitly assigned task id, not for automatic queue selection.
-The chat launch prompt should be short: repo path plus task id. The actual task instructions must live in `.agent/tasks/T-xxx/spec.md`.
+The chat launch prompt should be tiny: repo path plus task id. The actual task instructions must live in `.agent/tasks/T-xxx/spec.md`.
+
+Canonical launch prompt to paste into a fresh worker session:
+
+```text
+Open /Users/jojolim/Developer/products/speaklocal/app-family and process queue task T-XXX.
+Read .agent/CODEX_MANUAL_TASK_PROMPT.txt, then follow .agent/tasks/T-XXX/spec.md exactly.
+Process only T-XXX, commit or block it, and stop.
+```
+
+For a worker session, do not paste the full task body into chat. If more context is needed, write it into the task folder first.
 
 Read, in order:
 1. `AGENTS.md`
