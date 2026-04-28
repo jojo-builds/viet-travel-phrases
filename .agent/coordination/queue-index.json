@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T00:18:01.229007+07:00",
+  "updatedAt": "2026-04-29T00:40:52.299979+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -15,13 +15,6 @@
   "groups": {
     "reclaimable": [],
     "queued": [
-      {
-        "taskId": "T-161",
-        "title": "Implement parallel-safe queue claiming and worker lane contract",
-        "state": ".agent\\tasks\\T-161\\state.json",
-        "selectionOrder": 1,
-        "writeLock": "queue_parallel_claim_safety"
-      },
       {
         "taskId": "T-160",
         "title": "Design offline SQLite phrase graph and canonical phrase-page model",
@@ -155,6 +148,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-161",
+        "title": "Implement parallel-safe queue claiming and worker lane contract",
+        "state": ".agent\\tasks\\T-161\\state.json",
+        "selectionOrder": 1,
+        "writeLock": "queue_parallel_claim_safety"
+      },
       {
         "taskId": "T-159",
         "title": "Research and design pre-live Practice/Quiz + mascot lane",
@@ -635,12 +635,12 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 2,
+    "queuedCount": 1,
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 68
+    "recentlyCompletedCount": 69
   },
   "notes": [
     "This index is intentionally small and selection-focused.",

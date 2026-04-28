@@ -1,6 +1,6 @@
 # SpeakLocal Queue Task Prompting Standard
 
-Last updated: 2026-04-28
+Last updated: 2026-04-29
 
 This is the source of truth for how orchestrator-created `.agent/tasks/T-xxx/spec.md` files should be written for GPT-5.5-powered Codex workers.
 
@@ -155,13 +155,20 @@ The parent worker writes review artifacts under the task folder, resolves blocke
 
 ## Parallel Work Standard
 
-Parallel workers are allowed when their write scopes do not overlap.
+Parallel workers are allowed when their write scopes do not overlap. Queue tasks express that boundary through `state.json` `locks.write`.
+
+Use lock classes deliberately:
+
+- named lane locks for shared conceptual ownership, such as `ios_family_shared_ui`, `shared_audio_pipeline`, `viet_relation_model`, `tagalog_relation_model`, or `queue_parallel_claim_safety`
+- path-scope locks for broad filesystem ownership, such as `native-ios/App/**`; these conflict with narrower descendant paths
+- task-local locks such as `agent_task_T-161` for the task folder itself; these should accompany, not replace, the real lane/path lock
 
 The orchestrator should create separate tasks when:
 
 - two outcomes can be completed independently
 - file ownership can be separated clearly
 - validation can run independently
+- the tasks can use distinct non-overlapping `locks.write` values
 - failure in one task should not block the other
 
 The orchestrator should keep work in one task when:
@@ -169,6 +176,9 @@ The orchestrator should keep work in one task when:
 - the files are tightly coupled
 - the validation has to prove one integrated behavior
 - splitting would create merge conflicts or duplicate decisions
+- the required write locks would overlap anyway
+
+Do not use broad write locks just to be cautious. Use the narrowest lock that protects the real ownership boundary, because broad locks reduce safe parallelism.
 
 ## Result Standard
 

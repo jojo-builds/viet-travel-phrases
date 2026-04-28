@@ -48,9 +48,19 @@ Process only T-XXX, commit or block it, and stop.
 - review artifacts belong in a task-local `reviews/` folder
 - for meaningful review tasks, reviewer subagents return judgments only; the parent worker persists the review artifacts after collecting those judgments
 
+## Write Locks And Parallel Claims
+- `locks.write` is the machine-enforced ownership boundary for queue parallelism.
+- Use a named lane lock for shared conceptual ownership, for example `ios_family_shared_ui`, `shared_audio_pipeline`, `tagalog_relation_model`, or `queue_parallel_claim_safety`.
+- Use a path-scope lock only when the task owns a broad filesystem area, for example `native-ios/App/**`; that conflicts with narrower descendants such as `native-ios/App/Models/PhrasePage.swift`.
+- Include the task-local lock, for example `agent_task_T-161`, for task-folder ownership; task-local locks do not block unrelated tasks.
+- Prefer the narrowest durable lock that protects the real write scope. Do not use a broad lock as a substitute for clear task ownership.
+- `claim-next` skips queued or reclaimable candidates whose write locks conflict with an active `in_progress` task. Exact lock names conflict, and path-scope `/**` locks conflict with descendants.
+- One worker run still processes one task. Parallelism comes from multiple workers or automation cards claiming different non-overlapping tasks.
+
 ## Desktop queue rule
-- Prompt-only desktop runs should claim and finish by patching the chosen task's `state.json` directly with exact context and then re-reading to confirm ownership.
-- Treat that as an optimistic compare-and-swap claim: if the patch no longer applies or the re-read session id is not yours, move to the next eligible task.
+- Prefer helper-backed claiming with `SPEAKLOCAL_REVIEW_RUNTIME=subagents python3 .agent/queue_tool.py claim-next ...` when the worker lane can call reviewer subagents; this enforces active write-lock conflicts before claim.
+- Prompt-only desktop fallback runs may claim and finish by patching the chosen task's `state.json` directly with exact context and then re-reading to confirm ownership.
+- Treat a direct patch as an optimistic compare-and-swap claim: if the patch no longer applies, the re-read session id is not yours, or the candidate's write locks conflict with an active `in_progress` task, move to the next eligible task.
 - Use `.agent/coordination/queue-index.json` to choose candidates quickly, but never trust it over the candidate's live `state.json`.
 - Once a task is claimed, ordinary runs should stop reading or writing hot queue surfaces other than that task's own `state.json` unless the task is explicitly a queue-maintenance/self-heal task.
 - For interrupted meaningful-task salvage on the Mac, inspect with `python3 .agent/queue_tool.py recovery-handoff --task-id T-xxx --dry-run` before any write-mode recovery handoff generation or legacy metadata backfill.

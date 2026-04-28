@@ -18,13 +18,22 @@ Use this file for repo-local Codex queue runs.
   2. `queued`
 - Within a group, keep the listed order.
 - Before claiming, read the candidate's live `state.json` and trust that over the index.
+- Skip a candidate whose `locks.write` conflicts with any active `in_progress` task's `locks.write`.
+- Lock conflicts are exact lock-name matches plus path-scope overlaps where a `/**` lock owns a descendant path. Task-local locks such as `agent_task_T-161` do not block unrelated tasks.
 - If a listed candidate is already terminal, owned by another live session, or otherwise ineligible, skip it immediately instead of trying to repair it during an ordinary run.
 
 ## Claim
 - Confirm this worker exposes `functions.spawn_agent`.
-- If using the queue helper, set `SPEAKLOCAL_REVIEW_RUNTIME=subagents` only after confirming reviewer subagents are callable in the current worker session.
+- Prefer helper-backed claim when the helper is available:
+
+```bash
+SPEAKLOCAL_REVIEW_RUNTIME=subagents python3 .agent/queue_tool.py claim-next --session-id "<session-id>" --label "<label>" --lease-minutes 180
+```
+
+- Set `SPEAKLOCAL_REVIEW_RUNTIME=subagents` only after confirming reviewer subagents are callable in the current worker session.
+- Helper-backed `claim-next` enforces active write-lock conflicts in both `--dry-run` and real claim paths.
 - Generate a fresh session id and label.
-- Claim by patching the candidate `state.json` directly with exact context.
+- If helper-backed claim is unavailable in a prompt-only run, claim by patching the candidate `state.json` directly with exact context after applying the same lock-conflict skip rule from Selection.
 - Required claim fields:
   - `status: "in_progress"`
   - `phase: "automation-claimed"`

@@ -9,12 +9,13 @@ Use this file when the automation prompt says to process the next repo-local que
 - Once claimed, do not keep revisiting queue-index or locks unless the task is explicitly queue maintenance/self-heal.
 
 ## Core Flow
-1. Follow `.agent/QUEUE_START.md` to shortlist and claim exactly one task by direct `state.json` patch plus immediate re-read.
+1. Follow `.agent/QUEUE_START.md` to shortlist and claim exactly one task, preferring helper-backed `claim-next` and using direct `state.json` patch only as the documented fallback.
 2. Execute only that task and keep ownership fresh with heartbeat patches.
 3. Write `result.md`, then patch `state.json` to `done` or `blocked`.
 
 ## Task size and prompt shape
 - One automation run processes one task, but that task may be a substantial `30` minute to multi-hour packet.
+- Multiple automation runs or cards may run at the same time when their task `locks.write` values do not overlap.
 - Do not split work merely to keep tasks tiny. Split only when write scopes conflict, recovery would be unclear, or the worker cannot reasonably validate the result in one session.
 - The automation prompt is only a bootstrap. The real prompt/spec must live in the claimed task folder, mainly `spec.md`, so the exact assignment is archived with the task.
 - Task specs should follow `.agent/TASK_PROMPTING.md`: lead with outcome and success criteria, then constraints, context, validation, review, and recovery.
@@ -35,6 +36,8 @@ Use this file when the automation prompt says to process the next repo-local que
 
 ## Guardrails
 - `state.json` is lifecycle truth; `queue-index.json` is advisory only.
+- `claim-next` is the parallel-safe claim surface. It skips queued/reclaimable candidates that conflict with active `in_progress` write locks.
+- Direct-patch fallback claims must apply the same conservative lock rule: exact lock names conflict, path-scope `/**` locks conflict with descendants, and task-local `agent_task_T-xxx` locks only protect that task's folder.
 - Skip stale shortlist entries quickly instead of trying to heal them during ordinary task execution.
 - If a claim patch fails or the re-read `session.sessionId` is not yours, move to the next eligible task instead of looping on the same file.
 - If no candidate can be claimed, stop honestly and report why.

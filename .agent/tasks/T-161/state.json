@@ -1,22 +1,22 @@
 {
   "taskId": "T-161",
   "title": "Implement parallel-safe queue claiming and worker lane contract",
-  "status": "queued",
-  "phase": "queued-for-desktop-codex",
+  "status": "done",
+  "phase": "completed",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "session": {
     "owner": "codex-desktop-automation",
-    "sessionId": "",
-    "label": ""
+    "sessionId": "5707916F-FB56-44BF-9AC9-A729673AD179",
+    "label": "automation-speaklocal-queue-worker-20260429"
   },
   "execution": {
-    "attempt": 0,
-    "claimedAt": "",
-    "lastHeartbeatAt": "",
+    "attempt": 1,
+    "claimedAt": "2026-04-29T00:23:55+07:00",
+    "lastHeartbeatAt": "2026-04-29T00:40:52.294756+07:00",
     "heartbeatEveryMinutes": 10,
     "leaseDurationMinutes": 180,
-    "leaseExpiresAt": "",
+    "leaseExpiresAt": "2026-04-29T00:40:52.294756+07:00",
     "reclaimReason": ""
   },
   "locks": {
@@ -41,7 +41,7 @@
       ".agent/tasks/T-161/state.json"
     ]
   },
-  "lastUpdated": "2026-04-29T00:14:57+07:00",
+  "lastUpdated": "2026-04-29T00:40:52.294756+07:00",
   "automation": {
     "runner": "desktop-codex",
     "mode": "single-task",

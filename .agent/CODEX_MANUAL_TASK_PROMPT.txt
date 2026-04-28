@@ -24,6 +24,7 @@ Read, in order:
 Manual-task flow:
 - the user-supplied task id is authoritative
 - when using `.agent/queue_tool.py` to claim a meaningful task, run it with `SPEAKLOCAL_REVIEW_RUNTIME=subagents` in the command environment because this lane requires reviewer-subagent capability before claim
+- `claim-next` is queue-selection based, so use it for manual assigned tasks only when the assigned task is the next eligible claim target; otherwise use the direct-patch claim fallback after the lock-conflict check
 - do not auto-pick from `.agent/coordination/queue-index.json`
 - you may read `queue-index.json` only to confirm the task exists or to mirror metadata, not to choose a different task
 - read the assigned task's live `state.json` and `spec.md`
@@ -33,7 +34,7 @@ Manual-task flow:
 - if the task's `cwd` points at a separate worktree, run the task from that worktree and keep all commands/tools normalized to that path
 - do not ask the user to manually switch branches just to start the task unless the task spec explicitly requires a human branch action
 - if the task is already terminal or owned by another live session, stop honestly instead of silently choosing another task
-- claim by direct `state.json` patch, then re-read immediately to confirm ownership
+- if direct patching is used instead of the helper, first check active `in_progress` write-lock conflicts; if there is no conflict, patch `state.json` and re-read immediately to confirm ownership
 - keep `session.owner` as `codex-desktop-automation`; use `session.label` to show it is a manual run
 
 After claim:

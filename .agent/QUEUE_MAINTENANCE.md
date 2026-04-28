@@ -113,6 +113,8 @@ Do not reread old completed tasks just to restate known truth.
 - minimum queued depth target: `6`
 - if queued depth drops below `6`, seed enough new tasks to restore it to at least `6`
 - favor distinct write locks so multiple desktop Codex runs can stay parallel-safe
+- use named lane locks for shared ownership, path-scope `/**` locks only for real broad filesystem ownership, and task-local `agent_task_T-xxx` locks only for the task folder
+- avoid broad locks when a narrower lane or path lock can protect the work; broad locks reduce useful parallelism
 - bias new queued work toward Tagalog/Viet implementation and validation before adding more future-language prep
 - do not seed tasks whose likely execution scope is too small to justify the full 3-gate / 4-reviewer unanimous-review cost
 - default to tasks that require real synthesis, restructuring, or multi-artifact hardening, not simple row cleanup or a thin second-pass sweep

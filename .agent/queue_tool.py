@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import os
 import re
@@ -761,6 +762,92 @@ def task_entry(state: dict[str, Any], state_path: Path) -> dict[str, Any]:
 
 def to_repo_relative(path: Path) -> str:
     return str(path.relative_to(REPO_ROOT)).replace("/", "\\")
+
+
+TASK_LOCAL_LOCK_RE = re.compile(r"^agent_task_T-\d+$", re.IGNORECASE)
+
+
+def normalize_write_lock(raw_lock: Any) -> str:
+    return re.sub(r"/+", "/", str(raw_lock or "").strip().replace("\\", "/")).rstrip("/")
+
+
+def path_lock_prefix(lock: str) -> str:
+    normalized = normalize_write_lock(lock)
+    if normalized.endswith("/**"):
+        return normalized[:-3].rstrip("/")
+    return ""
+
+
+def lock_is_in_path_scope(lock: str, scope_prefix: str) -> bool:
+    normalized = normalize_write_lock(lock)
+    if not normalized or not scope_prefix:
+        return False
+    normalized = normalized[:-3].rstrip("/") if normalized.endswith("/**") else normalized
+    return normalized == scope_prefix or normalized.startswith(f"{scope_prefix}/")
+
+
+def write_locks_conflict(left: str, right: str) -> bool:
+    left_normalized = normalize_write_lock(left)
+    right_normalized = normalize_write_lock(right)
+    if not left_normalized or not right_normalized:
+        return False
+    if left_normalized == right_normalized:
+        return True
+    if TASK_LOCAL_LOCK_RE.match(left_normalized) or TASK_LOCAL_LOCK_RE.match(right_normalized):
+        return False
+
+    left_prefix = path_lock_prefix(left_normalized)
+    if left_prefix and lock_is_in_path_scope(right_normalized, left_prefix):
+        return True
+
+    right_prefix = path_lock_prefix(right_normalized)
+    if right_prefix and lock_is_in_path_scope(left_normalized, right_prefix):
+        return True
+
+    return False
+
+
+def state_write_locks(state: dict[str, Any]) -> list[str]:
+    raw_locks = (state.get("locks", {}) or {}).get("write", []) or []
+    return [normalize_write_lock(lock) for lock in raw_locks if normalize_write_lock(lock)]
+
+
+def active_write_lock_conflicts(
+    candidate_task_id: str,
+    candidate_state: dict[str, Any],
+    states: dict[str, dict[str, Any]],
+    now: datetime,
+) -> list[dict[str, Any]]:
+    candidate_locks = state_write_locks(candidate_state)
+    if not candidate_locks:
+        return []
+
+    conflicts: list[dict[str, Any]] = []
+    for active_task_id in sorted(states.keys(), key=task_number):
+        if active_task_id == candidate_task_id:
+            continue
+        active_state = states[active_task_id]
+        if not active_owner(active_state, now):
+            continue
+        for candidate_lock in candidate_locks:
+            for active_lock in state_write_locks(active_state):
+                if write_locks_conflict(candidate_lock, active_lock):
+                    conflicts.append({
+                        "activeTaskId": active_task_id,
+                        "activeLock": active_lock,
+                        "candidateLock": candidate_lock,
+                    })
+    return conflicts
+
+
+def lock_conflict_skip_record(task_id: str, claim_group: str, conflicts: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        "taskId": task_id,
+        "claimGroup": claim_group,
+        "reason": "active-write-lock-conflict",
+        "detail": "Candidate write locks overlap an active in_progress task, so claim-next skipped it.",
+        "conflicts": conflicts,
+    }
 
 
 def active_owner(state: dict[str, Any], now: datetime) -> bool:
@@ -2083,6 +2170,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
         repair_changes = normalize_reclaimable_states(states, now)
         index = build_queue_index(states, now)
         skipped_ineligible: list[dict[str, Any]] = []
+        skipped_lock_conflicts: list[dict[str, Any]] = []
         for candidate_group, candidate_task_id in ordered_candidates(index):
             current = load_json(task_state_path(candidate_task_id))
             current_group, _issues = classify_task(current, now_local())
@@ -2097,10 +2185,16 @@ def command_claim_next(args: argparse.Namespace) -> int:
                     "actualGroup": current_group,
                     "taskId": candidate_task_id,
                     "indexStats": refreshed_index["stats"],
+                    "skippedLockConflicts": skipped_lock_conflicts,
                 }
                 maybe_add_warnings(output, warnings)
                 print(json.dumps(output, indent=2))
                 return 3
+            states[candidate_task_id] = current
+            lock_conflicts = active_write_lock_conflicts(candidate_task_id, current, states, now_local())
+            if lock_conflicts:
+                skipped_lock_conflicts.append(lock_conflict_skip_record(candidate_task_id, candidate_group, lock_conflicts))
+                continue
             eligibility_errors = claim_eligibility_errors(current)
             if eligibility_errors:
                 skipped_ineligible.append({
@@ -2121,6 +2215,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 "resultPath": f".agent\\tasks\\{candidate_task_id}\\result.md",
                 "repairChanges": repair_changes,
                 "skippedIneligible": skipped_ineligible,
+                "skippedLockConflicts": skipped_lock_conflicts,
                 "indexStats": index["stats"],
             }
             maybe_add_warnings(output, warnings)
@@ -2136,6 +2231,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 reason=reason,
                 repairChanges=repair_changes,
                 skippedIneligible=skipped_ineligible,
+                skippedLockConflicts=skipped_lock_conflicts,
                 indexStats=index["stats"],
             )
             output = {
@@ -2144,17 +2240,19 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 "detail": detail,
                 "repairChanges": repair_changes,
                 "skippedIneligible": skipped_ineligible,
+                "skippedLockConflicts": skipped_lock_conflicts,
                 "indexStats": index["stats"],
             }
             maybe_add_warnings(output, warnings)
             print(json.dumps(output, indent=2))
             return 6
-        best_effort_append_event(warnings, "claim-next-no-task", dryRun=True, repairChanges=repair_changes, skippedIneligible=skipped_ineligible, indexStats=index["stats"])
+        best_effort_append_event(warnings, "claim-next-no-task", dryRun=True, repairChanges=repair_changes, skippedIneligible=skipped_ineligible, skippedLockConflicts=skipped_lock_conflicts, indexStats=index["stats"])
         output = {
             "status": "ok",
             "result": "no_task",
             "repairChanges": repair_changes,
             "skippedIneligible": skipped_ineligible,
+            "skippedLockConflicts": skipped_lock_conflicts,
             "indexStats": index["stats"],
         }
         maybe_add_warnings(output, warnings)
@@ -2179,6 +2277,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 )
         index = best_effort_write_index(states, now, warnings)
         skipped_ineligible: list[dict[str, Any]] = []
+        skipped_lock_conflicts: list[dict[str, Any]] = []
         skipped_write_blocked: list[dict[str, Any]] = []
         for candidate_group, candidate_task_id in ordered_candidates(index):
             current = load_json(task_state_path(candidate_task_id))
@@ -2194,10 +2293,16 @@ def command_claim_next(args: argparse.Namespace) -> int:
                     "actualGroup": current_group,
                     "taskId": candidate_task_id,
                     "indexStats": refreshed_index["stats"],
+                    "skippedLockConflicts": skipped_lock_conflicts,
                 }
                 maybe_add_warnings(output, warnings)
                 print(json.dumps(output, indent=2))
                 return 3
+            states[candidate_task_id] = current
+            lock_conflicts = active_write_lock_conflicts(candidate_task_id, current, states, now_local())
+            if lock_conflicts:
+                skipped_lock_conflicts.append(lock_conflict_skip_record(candidate_task_id, candidate_group, lock_conflicts))
+                continue
             eligibility_errors = claim_eligibility_errors(current)
             if eligibility_errors:
                 skipped_ineligible.append({
@@ -2219,17 +2324,19 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 "resultPath": f".agent\\tasks\\{candidate_task_id}\\result.md",
                 "repairChanges": repair_changes,
                 "skippedIneligible": skipped_ineligible,
+                "skippedLockConflicts": skipped_lock_conflicts,
                 "skippedWriteBlocked": skipped_write_blocked,
                 "indexStats": index["stats"],
             }
 
             claim_time = now_local()
-            execution = current.setdefault("execution", {})
-            session = current.setdefault("session", {})
+            claim_state = copy.deepcopy(current)
+            execution = claim_state.setdefault("execution", {})
+            session = claim_state.setdefault("session", {})
             prior_attempt = int(execution.get("attempt") or 0)
             reclaim_reason = execution.get("reclaimReason") or ""
-            current["status"] = "in_progress"
-            current["phase"] = "automation-claimed"
+            claim_state["status"] = "in_progress"
+            claim_state["phase"] = "automation-claimed"
             session["owner"] = args.owner
             session["sessionId"] = args.session_id
             session["label"] = args.label
@@ -2239,10 +2346,10 @@ def command_claim_next(args: argparse.Namespace) -> int:
             execution["leaseDurationMinutes"] = args.lease_minutes
             execution["leaseExpiresAt"] = iso_timestamp(claim_time + timedelta(minutes=args.lease_minutes))
             execution["reclaimReason"] = reclaim_reason if candidate_group == "reclaimable" else ""
-            current["lastUpdated"] = iso_timestamp(claim_time)
+            claim_state["lastUpdated"] = iso_timestamp(claim_time)
 
             try:
-                write_json_atomic(task_state_path(candidate_task_id), current)
+                write_json_atomic(task_state_path(candidate_task_id), claim_state)
             except OSError as error:
                 if is_write_blocked_error(error):
                     skipped = claim_write_block_skip_record(candidate_task_id, candidate_group, task_state_path(candidate_task_id), error)
@@ -2269,7 +2376,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 )
             if candidate_group == "reclaimable":
                 best_effort_append_event(warnings, "claim-next-reclaimed", taskId=candidate_task_id, priorAttempt=prior_attempt, reclaimReason=reclaim_reason or "reclaimable", sessionId=args.session_id)
-            best_effort_append_event(warnings, "claim-next-claimed", taskId=candidate_task_id, claimGroup=candidate_group, taskClass=preview["taskClass"], proofTask=preview["proofTask"], sessionId=args.session_id, skippedIneligible=skipped_ineligible)
+            best_effort_append_event(warnings, "claim-next-claimed", taskId=candidate_task_id, claimGroup=candidate_group, taskClass=preview["taskClass"], proofTask=preview["proofTask"], sessionId=args.session_id, skippedIneligible=skipped_ineligible, skippedLockConflicts=skipped_lock_conflicts)
             confirmed = load_json(task_state_path(candidate_task_id))
             if confirmed.get("session", {}).get("sessionId") != args.session_id:
                 refreshed_states = load_all_states()
@@ -2301,6 +2408,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 reason=reason,
                 repairChanges=repair_changes,
                 skippedIneligible=skipped_ineligible,
+                skippedLockConflicts=skipped_lock_conflicts,
                 indexStats=index["stats"],
             )
             output = {
@@ -2309,6 +2417,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 "detail": detail,
                 "repairChanges": repair_changes,
                 "skippedIneligible": skipped_ineligible,
+                "skippedLockConflicts": skipped_lock_conflicts,
                 "indexStats": index["stats"],
             }
             maybe_add_warnings(output, warnings)
@@ -2327,6 +2436,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 "claim-next-retry",
                 reason="task-state-write-access-denied",
                 detail=detail,
+                skippedLockConflicts=skipped_lock_conflicts,
                 skippedWriteBlocked=skipped_write_blocked,
                 indexStats=refreshed_index["stats"],
             )
@@ -2334,6 +2444,7 @@ def command_claim_next(args: argparse.Namespace) -> int:
                 "status": "retry",
                 "reason": "task-state-write-access-denied",
                 "detail": detail,
+                "skippedLockConflicts": skipped_lock_conflicts,
                 "skippedWriteBlocked": skipped_write_blocked,
                 "indexStats": refreshed_index["stats"],
             }
@@ -2343,12 +2454,13 @@ def command_claim_next(args: argparse.Namespace) -> int:
 
         refreshed_states = load_all_states()
         refreshed_index = best_effort_write_index(refreshed_states, now_local(), warnings)
-        best_effort_append_event(warnings, "claim-next-no-task", dryRun=False, repairChanges=repair_changes, skippedIneligible=skipped_ineligible, indexStats=refreshed_index["stats"])
+        best_effort_append_event(warnings, "claim-next-no-task", dryRun=False, repairChanges=repair_changes, skippedIneligible=skipped_ineligible, skippedLockConflicts=skipped_lock_conflicts, indexStats=refreshed_index["stats"])
         output = {
             "status": "ok",
             "result": "no_task",
             "repairChanges": repair_changes,
             "skippedIneligible": skipped_ineligible,
+            "skippedLockConflicts": skipped_lock_conflicts,
             "skippedWriteBlocked": skipped_write_blocked,
             "indexStats": refreshed_index["stats"],
         }
