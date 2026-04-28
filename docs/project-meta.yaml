@@ -8,6 +8,9 @@ authoritative_root: '/Users/jojolim/Developer/products/speaklocal/app-family'
 native_ios_root: '/Users/jojolim/Developer/products/speaklocal/app-family/native-ios'
 skill_lab_root: '/Users/jojolim/Developer/labs/skill-labs'
 docs_root: '/Users/jojolim/Developer/products/speaklocal/app-family/docs'
+app_family_structure_doc: '/Users/jojolim/Developer/products/speaklocal/app-family/docs/APP_FAMILY_STRUCTURE.md'
+native_app_config_root: '/Users/jojolim/Developer/products/speaklocal/app-family/native-ios/Config/apps'
+native_language_pack_target_root: '/Users/jojolim/Developer/products/speaklocal/app-family/native-ios/Resources/LanguagePacks'
 task_registry_key: 'viet-v900-runtime-truth'
 related_tasks:
   - 'native-ios-family-shell'
@@ -22,7 +25,7 @@ blockers:
   - 'tagalog-v2-pack'
 legacy_roots:
   - 'E:\AI\SpeakLocal-App-Family'
-  - 'C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family'
+  - 'E:\AI\Viet-Travel-Phrases'
 external_trackers:
   feature_intake_doc: 'https://docs.google.com/document/d/11XpOXF-l_wW_leO7ua3h7Ju0wHONZx3U2OcOak_6vWw/edit'
   feature_tracker_sheet: 'https://docs.google.com/spreadsheets/d/1eoJ_0XwCDRbhLn59Q0oeu8NFGan_5GrGLI5ZgdaCX7Y/edit'

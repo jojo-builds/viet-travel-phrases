@@ -55,11 +55,10 @@ Authority notes:
   - `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
 - Legacy Windows roots are archive/migration references only:
   - `E:\AI\SpeakLocal-App-Family`
-  - `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
   - `E:\AI\Viet-Travel-Phrases`
-  - `C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases`
+  - older Windows desktop-agent workspace paths may appear in archived logs only
 - Do not answer live operational questions from archived planning roots or older architecture notes when these operational docs cover them.
-- The three older OpenClaw Viet execution docs remain useful historical reference inputs, but they are no longer the primary checklist authority now that this folder carries `VIET_TESTFLIGHT_EXECUTION_PACKET.md`.
+- The older Windows-era Viet execution docs remain useful historical reference inputs, but they are no longer the primary checklist authority now that this folder carries `VIET_TESTFLIGHT_EXECUTION_PACKET.md`.
 - `ops/apps/*.json` is stage/readiness truth for dashboard visibility only. It must not be used as a replacement for operational runbooks, validation logs, or release notes.
 - `ops/apps/*.json` may summarize `testingGates`, `hardBlock`, and pending rollout debt, but the exact evidence for those summaries still lives in this folder.
 - When a manifest gate is `pending` or `passed`, its `testingGates.*.evidenceRef` should point back into this folder.

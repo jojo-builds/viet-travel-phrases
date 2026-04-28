@@ -18,12 +18,12 @@ The pre-cutover broken recursive tree was preserved for safety at:
 
 - canonical family path:
   - `E:\AI\SpeakLocal-App-Family`
-- canonical OpenClaw/Codex workspace path:
-  - `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
+- older Windows desktop-agent workspace path:
+  - archived only; do not use as an active startup path on this Mac
 - compatibility alias:
   - `E:\AI\Viet-Travel-Phrases`
 - compatibility workspace alias:
-  - `C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases`
+  - archived only; do not use as an active startup path on this Mac
 
 ## What changed
 

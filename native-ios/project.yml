@@ -19,6 +19,7 @@ targets:
       - path: Resources
         excludes:
           - Audio
+          - LanguagePacks
       - path: Resources/Audio
         type: folder
         buildPhase: resources

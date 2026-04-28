@@ -1,0 +1,19 @@
+{
+  "appID": "japan",
+  "languagePackID": "japanese",
+  "displayName": "SpeakLocal Japan",
+  "status": "future-planning",
+  "bundleIdentifiers": {
+    "plannedOrLegacy": null,
+    "nativeDevelopment": null
+  },
+  "premiumProductID": null,
+  "paths": {
+    "contentDraft": "content-draft/japanese",
+    "targetLanguagePack": "native-ios/Resources/LanguagePacks/japanese"
+  },
+  "notes": [
+    "Japanese is a future prep lane, not a runtime-ready native pack.",
+    "This file reserves the app-config shape so future language work does not invent a different config pattern."
+  ]
+}

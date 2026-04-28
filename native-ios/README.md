@@ -13,11 +13,14 @@ Use the root when the task is about docs, content authoring, resource generation
 ## Current Status
 
 - Native SwiftUI/Xcode is now the active ship-facing app lane.
+- This folder is the shared native app shell for future SpeakLocal app variants.
 - The app target is `SpeakLocalNative`.
 - The project is generated from `project.yml`.
 - The flagship flow is the Liquid Glass-style `Xin chào` listing page plus canonical deeper phrase pages, search, audio, and back/forward navigation.
 - The 150 Tier 1 Vietnam listing pages are authored offline article pages sourced from `../content-draft/viet/listing-pages/**`.
 - Runtime phrase content stays bundled/offline.
+- App-variant planning config lives in `Config/apps/*.json`.
+- `Resources/LanguagePacks/<language>/` is reserved for the future per-language bundle layout. Current Viet resources still load from root-level `Resources/*.json` and `Resources/Audio/`.
 
 ## Build And Run
 
@@ -44,6 +47,7 @@ After visible UI changes, launch the app in the iOS simulator for Jojo to test.
 ## Important Files
 
 - `project.yml` - XcodeGen project source
+- `Config/apps/*.json` - native app-variant planning/config surface
 - `App/SpeakLocalNativeApp.swift` - app entrypoint
 - `App/Views/AppShellView.swift` - shell chrome, route stack, search presentation, back/forward gestures
 - `App/Views/PhraseListingView.swift` - flagship listing page and shared listing/article components
@@ -58,6 +62,7 @@ After visible UI changes, launch the app in the iOS simulator for Jojo to test.
 - `Resources/viet-authored-listing-pages.json` - generated authored Tier 1 listing pages
 - `Resources/viet-audio-manifest.json` - generated audio manifest
 - `Resources/viet-authored-audio-audit.json` - generated authored-page audio audit
+- `Resources/LanguagePacks/` - reserved target folder for future per-language native resource bundles
 
 ## Generation
 

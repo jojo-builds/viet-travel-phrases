@@ -17,8 +17,8 @@ Authority lane: live app operational truth
 - Native iOS app-session root: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
 - Current legacy Expo/live app code root for commands below: `/Users/jojolim/Developer/products/speaklocal/app-family/app`
 - Legacy Windows root retained for archive/migration lookup only: `E:\AI\SpeakLocal-App-Family`
-- Legacy Windows workspace path retained for archive/migration lookup only: `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
 - Legacy compatibility alias retained for archive/migration lookup only: `E:\AI\Viet-Travel-Phrases`
+Older Windows desktop-agent workspace paths may appear in archived logs only; do not use them as active startup roots.
 ## Use this doc for
 
 - current live operational snapshot

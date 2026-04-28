@@ -1,0 +1,19 @@
+{
+  "appID": "philippines",
+  "languagePackID": "tagalog",
+  "displayName": "SpeakLocal Philippines",
+  "status": "planned-native-language-pack",
+  "bundleIdentifiers": {
+    "plannedOrLegacy": "com.jojobuilds.tagalogtravelphrases",
+    "nativeDevelopment": null
+  },
+  "premiumProductID": "com.jojobuilds.tagalogtravelphrases.premiumunlock",
+  "paths": {
+    "contentDraft": "content-draft/tagalog",
+    "targetLanguagePack": "native-ios/Resources/LanguagePacks/tagalog"
+  },
+  "notes": [
+    "Tagalog is the next known app-family candidate.",
+    "Do not wire this into the native runtime until the Tagalog content pack has a native-ready generated resource contract."
+  ]
+}

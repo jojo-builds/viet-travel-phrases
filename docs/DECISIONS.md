@@ -4,7 +4,9 @@
 
 - `/Users/jojolim/Developer/products/speaklocal/app-family` is the canonical Mac implementation root for the SpeakLocal app family.
 - `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios` is the active native iOS app-session root in Codex for SwiftUI/Xcode work.
-- Legacy Windows roots such as `E:\AI\SpeakLocal-App-Family` and `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family` are migration/archive references, not the preferred active workspace.
+- Legacy Windows roots such as `E:\AI\SpeakLocal-App-Family` are migration/archive references, not the preferred active workspace. Older Windows desktop-agent paths may appear in historical logs only.
+- The preferred native family architecture is one shared SwiftUI/Xcode shell plus per-app config and language packs. SpeakLocal Vietnam is the active proof app; future destinations should inherit the shell rather than become separate rewrites.
+- Current live Viet native resources remain at `native-ios/Resources/*.json` plus `native-ios/Resources/Audio/` until a coordinated language-pack migration updates Swift loaders, generators, XcodeGen resource rules, tests, and docs together.
 - `app/` remains the canonical shared content/pipeline workspace during the transition, but the ship-facing app-shell direction is now a native SwiftUI/Xcode family shell. Expo is the bridge/reference lane, not the final premium UX destination.
 - `app/family/appRegistry.js` remains the canonical shared runtime/build registry.
 - Hidden Expo web/native preview routes under `app/app/design-preview/*` and `app/app/app-preview-wireframes/*` are the preferred fast visual review surface for UI iteration; they are sidecar review tools, not ship-facing product routes.

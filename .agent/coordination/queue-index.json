@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-28T17:47:49.033709+07:00",
+  "updatedAt": "2026-04-28T18:08:23.734466+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -138,6 +138,13 @@
         "state": ".agent\\tasks\\T-002\\state.json",
         "selectionOrder": 0,
         "writeLock": ".agent/coordination/locks.yaml"
+      },
+      {
+        "taskId": "T-158",
+        "title": "Migrate native Viet resources into LanguagePacks/viet",
+        "state": ".agent\\tasks\\T-158\\state.json",
+        "selectionOrder": 20,
+        "writeLock": "native_ios_language_pack_resource_migration"
       }
     ],
     "recently_completed": [
@@ -611,7 +618,7 @@
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,
-    "draftCount": 1,
+    "draftCount": 2,
     "recentlyCompletedCount": 66
   },
   "notes": [

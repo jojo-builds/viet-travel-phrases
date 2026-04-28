@@ -1,0 +1,27 @@
+{
+  "appID": "vietnam",
+  "languagePackID": "viet",
+  "displayName": "SpeakLocal Vietnam",
+  "status": "active-native-proof",
+  "bundleIdentifiers": {
+    "releasedOrLegacy": "com.jojobuilds.viettravelphrases",
+    "nativeDevelopment": "app.speaklocal.vietnam.native"
+  },
+  "premiumProductID": "com.jojobuilds.viettravelphrases.premiumunlock",
+  "paths": {
+    "contentDraft": "content-draft/viet",
+    "currentNativeResources": "native-ios/Resources",
+    "targetLanguagePack": "native-ios/Resources/LanguagePacks/viet"
+  },
+  "currentGeneratedResources": {
+    "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json",
+    "authoredListingPages": "native-ios/Resources/viet-authored-listing-pages.json",
+    "audioManifest": "native-ios/Resources/viet-audio-manifest.json",
+    "authoredAudioAudit": "native-ios/Resources/viet-authored-audio-audit.json",
+    "audioDirectory": "native-ios/Resources/Audio"
+  },
+  "notes": [
+    "Viet is the active native proof app.",
+    "Generated resources remain at native-ios/Resources until the language-pack migration updates loaders, generators, XcodeGen, and tests together."
+  ]
+}

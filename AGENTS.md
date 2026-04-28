@@ -31,18 +31,21 @@ Rules:
 - Do not start app work from `/Users/jojolim/Documents/New project`; that folder is not this repo.
 - Legacy Windows roots are preserved only as migration/archive references:
   - `E:\AI\SpeakLocal-App-Family`
-  - `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
 - Treat these as compatibility aliases only, not preferred roots:
   - `/Users/jojolim/Documents/Projects/speaklocal-app-family`
   - `E:\AI\Viet-Travel-Phrases`
-  - `C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases`
+- Older Windows desktop-agent workspace paths may appear in historical logs or archived task files only. Do not use them as active startup paths.
 - Stay scoped to shared app-family implementation, current Viet/Tagalog dual-variant work, and future reusable feature rollout.
 - `native-ios/` is the active ship-facing SwiftUI app lane on the Mac.
+- `native-ios/` should be treated as one shared native shell with app/language variants supplied by config and language packs.
+- `docs/APP_FAMILY_STRUCTURE.md` is the durable source for the monorepo/native-language-pack structure.
+- `native-ios/Config/apps/*.json` is the native app-variant planning/config surface.
+- `native-ios/Resources/LanguagePacks/<language>/` is the reserved target for per-language generated bundles, but current live Viet native resources still remain at `native-ios/Resources/*.json` plus `native-ios/Resources/Audio/`.
 - Keep the existing Expo app shell under `app/` intact unless there is a concrete blocker; treat it as legacy/reference/bridge during the native transition, not the final premium UX target.
 - `app/family/appRegistry.js` owns runtime/build app identity truth.
 - `app/family/*` owns shared runtime truth.
 - `native-ios/project.yml` is the reproducible XcodeGen source for the native project.
-- `native-ios/Resources/viet-phrase-catalog.json`, `native-ios/Resources/viet-authored-listing-pages.json`, and `native-ios/Resources/viet-audio-manifest.json` are generated native resources; regenerate them from source instead of hand-editing them unless doing a narrow emergency inspection.
+- `native-ios/Resources/viet-phrase-catalog.json`, `native-ios/Resources/viet-authored-listing-pages.json`, and `native-ios/Resources/viet-audio-manifest.json` are generated native resources; regenerate them from source instead of hand-editing them unless doing a narrow emergency inspection. Do not move them into `LanguagePacks/viet/` until loaders, generators, XcodeGen, and tests are updated together.
 - `native-ios/scripts/generate-viet-catalog.js` generates the native phrase catalog from repo content.
 - `native-ios/scripts/generate-authored-tier-one-pages.js` generates the authored Tier 1 listing-page resource and audio audit from `content-draft/viet/listing-pages/**`.
 - Phrase/listing navigation is a canonical page graph, not a strict parent-child tree. Each traveler-facing phrase page has one stable page ID, and search, browse, related rows, and "ways to say it" links must all point to that canonical page instead of creating duplicate pages for the same phrase.

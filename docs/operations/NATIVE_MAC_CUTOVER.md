@@ -68,7 +68,12 @@ Authority lane: native iOS transition and Codex carryover truth
 - `content-draft/viet/listing-pages/**` remains the authored Tier 1 listing-page source for native article pages.
 - `app/family/` remains shared runtime/content contract history until native parity fully replaces those runtime reads.
 - `native-ios/project.yml` remains the reproducible native project source.
+- `docs/APP_FAMILY_STRUCTURE.md` now owns the monorepo/native-language-pack structure.
+- `native-ios/Config/apps/*.json` is the native app-variant planning/config surface.
+- `native-ios/Resources/LanguagePacks/<language>/` is reserved for per-language generated bundles.
 - `native-ios/Resources/viet-phrase-catalog.json`, `native-ios/Resources/viet-authored-listing-pages.json`, and `native-ios/Resources/viet-audio-manifest.json` remain generated native resource outputs.
+  - Current Viet resources stay at root-level `native-ios/Resources/*.json` plus `native-ios/Resources/Audio/`.
+  - Do not move them into `LanguagePacks/viet/` until Swift loaders, generators, XcodeGen resource rules, tests, and docs are updated together.
 
 ## What to carry from Windows to the Mac
 
@@ -179,6 +184,7 @@ Current implementation lane:
 - `native-ios/App/Views/SearchPageView.swift` owns the dedicated search page.
 - `native-ios/scripts/generate-viet-catalog.js` projects repo content into the native phrase catalog.
 - `native-ios/scripts/generate-authored-tier-one-pages.js` projects `content-draft/viet/listing-pages/**` into `native-ios/Resources/viet-authored-listing-pages.json` and `native-ios/Resources/viet-authored-audio-audit.json`.
+- The next native-resource architecture step is a coordinated language-pack migration from root-level Viet resources into `native-ios/Resources/LanguagePacks/viet/`.
 
 ## Native product/design continuity
 

@@ -41,8 +41,6 @@ COMPATIBILITY_REPO_ROOTS = {
     "/Users/jojolim/Developer/products/speaklocal/app-family",
     "E:\\AI\\Viet-Travel-Phrases",
     "E:\\AI\\SpeakLocal-App-Family",
-    "C:\\Users\\Administrator\\.openclaw\\workspace\\projects\\speaklocal-app-family",
-    "C:\\Users\\Administrator\\.openclaw\\workspace\\projects\\viet-travel-phrases",
 }
 DEFAULT_LOCK_TIMEOUT_SECONDS = 30
 STALE_LOCK_SECONDS = 900

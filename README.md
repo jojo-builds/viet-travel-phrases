@@ -11,14 +11,15 @@ Canonical session roots:
 Legacy Windows roots retained for archive/migration lookup only:
 
 - `E:\AI\SpeakLocal-App-Family`
-- `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
 - `E:\AI\Viet-Travel-Phrases`
-- `C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases`
+
+Older Windows desktop-agent workspace paths may still appear in archived logs, but they are not active Codex startup roots on this Mac.
 
 Do not open `/Users/jojolim/Documents/New project` for app work; it is not this repo.
 
 Operator entrypoint:
 
+- use `docs/APP_FAMILY_STRUCTURE.md` for monorepo/native-language-pack structure
 - use `native-ios/README.md` and `native-ios/AGENTS.md` for native app sessions in Codex
 - use `docs/operations/NATIVE_MAC_CUTOVER.md` for Mac migration/cutover status
 - use `docs/operations/APP_STATUS.md` for the live build/test snapshot and current handoff order
@@ -39,8 +40,10 @@ Use this repo for:
 Current reality summary:
 
 - The Mac is now the primary day-to-day native iOS development machine.
-- `native-ios/` is the active SwiftUI/Xcode app lane for SpeakLocal Vietnam.
+- `native-ios/` is the active shared SwiftUI/Xcode app shell. SpeakLocal Vietnam is the current live native proof app.
 - The native app is generated from `native-ios/project.yml` and runs as `SpeakLocalNative`.
+- Native app-variant planning config now lives in `native-ios/Config/apps/*.json`.
+- The long-term native resource target is `native-ios/Resources/LanguagePacks/<language>/`, but current live Viet resources still remain at `native-ios/Resources/*.json` and `native-ios/Resources/Audio/` until a coordinated loader/generator migration.
 - The current flagship native flow is the Liquid Glass-style `Xin chào` listing page plus canonical deeper phrase pages, search, back/forward navigation, bottom chrome, bundled audio, and authored Tier 1 listing pages.
 - Authored Tier 1 listing-page content lives in `content-draft/viet/listing-pages/**` and is bundled into `native-ios/Resources/viet-authored-listing-pages.json`.
 - Listing pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" answer pages, not generic generated filler.
