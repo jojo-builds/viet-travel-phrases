@@ -54,10 +54,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not soften urgent medical needs too much. Clear and direct is safer.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
+      "presentation": "tip-callout"
     },
     {
       "id": "explore-next",

@@ -72,10 +72,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "explore-next",

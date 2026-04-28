@@ -66,10 +66,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "explore-next",

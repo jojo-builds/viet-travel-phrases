@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Khu đón ở đâu? is the version to learn first for \"Where is the pickup area?\". Use this for rideshare, shuttle, or private pickup handoffs. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Khu đón ở đâu? is the version to learn first for \"Where is the pickup area?\". Use this for rideshare, shuttle, or private pickup handoffs. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "airport-5",
@@ -96,10 +96,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

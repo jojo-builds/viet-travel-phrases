@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need cash and want the closest ATM, not just any airport machine. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need cash and want the closest ATM, not just any airport machine. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "ATM gần nhất ở đâu? is the version to learn first for \"Where is the nearest ATM?\". Use this when you need cash and want the closest ATM, not just any airport machine. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "ATM gần nhất ở đâu? is the version to learn first for \"Where is the nearest ATM?\". Use this when you need cash and want the closest ATM, not just any airport machine. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "airport-4",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

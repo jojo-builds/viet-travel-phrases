@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the air conditioner is not working at all. This is the more specific follow-up when the heat problem is the air conditioner. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the air conditioner is not working at all. This is the more specific follow-up when the heat problem is the air conditioner. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Máy lạnh không chạy is the version to learn first for \"The air conditioner isn’t working\". Use this when the air conditioner is not working at all. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Máy lạnh không chạy is the version to learn first for \"The air conditioner isn’t working\". Use this when the air conditioner is not working at all. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "hotel-5",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

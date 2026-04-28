@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need immediate help finding your way back. This is the simplest first sentence when navigation has already failed. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need immediate help finding your way back. This is the simplest first sentence when navigation has already failed. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi bị lạc đường is the version to learn first for \"I’m lost\". Use this when you need immediate help finding your way back. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi bị lạc đường is the version to learn first for \"I’m lost\". Use this when you need immediate help finding your way back. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "problems-1",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

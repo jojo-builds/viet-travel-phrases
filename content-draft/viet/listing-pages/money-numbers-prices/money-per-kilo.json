@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this for fruit, snacks, or anything sold by weight. This is especially useful in markets and fruit stalls. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this for fruit, snacks, or anything sold by weight. This is especially useful in markets and fruit stalls. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Bao nhiêu một ký? is the version to learn first for \"How much per kilo?\". Use this for fruit, snacks, or anything sold by weight. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Bao nhiêu một ký? is the version to learn first for \"How much per kilo?\". Use this for fruit, snacks, or anything sold by weight. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "price-2",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you want to compare options. This keeps the interaction moving without committing yet. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you want to compare options. This keeps the interaction moving without committing yet. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cho tôi xem cái khác is the version to learn first for \"Show me another one\". Use this when you want to compare options. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Cho tôi xem cái khác is the version to learn first for \"Show me another one\". Use this when you want to compare options. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "price-6",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

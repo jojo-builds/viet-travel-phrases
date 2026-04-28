@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Nói chậm chút được không? is the version to learn first for \"Can you speak a little slower?\". Use this when you need the other person to slow down. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Nói chậm chút được không? is the version to learn first for \"Can you speak a little slower?\". Use this when you need the other person to slow down. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "problems-3",
@@ -108,10 +108,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

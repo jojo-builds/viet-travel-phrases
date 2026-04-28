@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say this if you forgot an item in a car, room, or café. This is a common hotel, taxi, and café recovery phrase. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Say this if you forgot an item in a car, room, or café. This is a common hotel, taxi, and café recovery phrase. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi quên đồ rồi is the version to learn first for \"I left something behind\". Say this if you forgot an item in a car, room, or café. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi quên đồ rồi is the version to learn first for \"I left something behind\". Say this if you forgot an item in a car, room, or café. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "problems-4",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

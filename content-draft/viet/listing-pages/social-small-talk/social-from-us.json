@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this in light conversation after someone asks where you are from. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this in light conversation after someone asks where you are from. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi đến từ Mỹ is the version to learn first for \"I’m from the United States\". Use this in light conversation after someone asks where you are from. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi đến từ Mỹ is the version to learn first for \"I’m from the United States\". Use this in light conversation after someone asks where you are from. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

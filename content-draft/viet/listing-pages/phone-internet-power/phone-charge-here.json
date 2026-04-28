@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the place has power and you need permission or a spot to charge. This works in cafés, hotels, airports, and waiting areas. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the place has power and you need permission or a spot to charge. This works in cafés, hotels, airports, and waiting areas. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -74,7 +74,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi sạc điện thoại ở đây được không? is the version to learn first for \"Can I charge my phone here?\". Use this when the place has power and you need permission or a spot to charge. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi sạc điện thoại ở đây được không? is the version to learn first for \"Can I charge my phone here?\". Use this when the place has power and you need permission or a spot to charge. Show the phone screen or error message first so the problem is visible before you add more words.",
       "phrases": [
         {
           "id": "phone-5",
@@ -96,10 +96,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not hand over your unlocked phone unless you trust the situation. Show the screen first.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Show the screen first and keep control of your phone unless the situation feels trustworthy.",
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

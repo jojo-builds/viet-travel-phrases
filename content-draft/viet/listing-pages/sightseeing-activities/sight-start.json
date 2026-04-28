@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this at tours, activity desks, or museum entrances. This helps when the entrance area is not obvious. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this at tours, activity desks, or museum entrances. This helps when the entrance area is not obvious. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Bắt đầu ở đâu? is the version to learn first for \"Where do we start?\". Use this at tours, activity desks, or museum entrances. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Bắt đầu ở đâu? is the version to learn first for \"Where do we start?\". Use this at tours, activity desks, or museum entrances. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "sight-2",
@@ -78,10 +78,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Meeting points and start times are worth confirming twice, especially on busy tours.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you only need a sink or hand-washing spot. Useful in markets, food areas, and roadside stops. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you only need a sink or hand-washing spot. Useful in markets, food areas, and roadside stops. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -74,7 +74,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi rửa tay ở đây được không? is the version to learn first for \"Can I wash my hands here?\". Use this when you only need a sink or hand-washing spot. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi rửa tay ở đây được không? is the version to learn first for \"Can I wash my hands here?\". Use this when you only need a sink or hand-washing spot. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
       "phrases": [
         {
           "id": "bath-4",
@@ -96,10 +96,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Some places may not have paper or soap available. Asking early avoids an awkward surprise.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

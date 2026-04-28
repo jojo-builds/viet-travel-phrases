@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Làm ơn nói lại số đó is the version to learn first for \"Please say the number again\". Use this when you think you missed only the number. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Làm ơn nói lại số đó is the version to learn first for \"Please say the number again\". Use this when you think you missed only the number. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "repair-6",
@@ -108,10 +108,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

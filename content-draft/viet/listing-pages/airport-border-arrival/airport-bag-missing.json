@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when your bag did not appear on the carousel. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when your bag did not appear on the carousel. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Hành lý của tôi chưa tới is the version to learn first for \"My bag did not arrive\". Use this when your bag did not appear on the carousel. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Hành lý của tôi chưa tới is the version to learn first for \"My bag did not arrive\". Use this when your bag did not appear on the carousel. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "airport-6",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when an ingredient, medicine, or product may trigger an allergy. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when an ingredient, medicine, or product may trigger an allergy. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi bị dị ứng cái này is the version to learn first for \"I am allergic to this\". Use this when an ingredient, medicine, or product may trigger an allergy. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi bị dị ứng cái này is the version to learn first for \"I am allergic to this\". Use this when an ingredient, medicine, or product may trigger an allergy. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "health-5",
@@ -96,10 +96,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not soften urgent medical needs too much. Clear and direct is safer.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

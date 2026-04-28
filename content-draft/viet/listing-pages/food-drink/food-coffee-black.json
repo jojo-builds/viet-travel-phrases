@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you want coffee without milk. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you want coffee without milk. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cho tôi cà phê đen đá is the version to learn first for \"I’d like an iced black coffee\". Use this when you want coffee without milk. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Cho tôi cà phê đen đá is the version to learn first for \"I’d like an iced black coffee\". Use this when you want coffee without milk. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "coffee-2",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Đây là hộ chiếu của tôi is the version to learn first for \"Here is my passport\". Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Đây là hộ chiếu của tôi is the version to learn first for \"Here is my passport\". Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-here-is-my-passport",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

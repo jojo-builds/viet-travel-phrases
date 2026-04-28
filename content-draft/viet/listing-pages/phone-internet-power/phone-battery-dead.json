@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this before asking for a charger or outlet. This is the short version of a common travel problem. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this before asking for a charger or outlet. This is the short version of a common travel problem. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Điện thoại tôi hết pin rồi is the version to learn first for \"My phone battery is dead\". Use this before asking for a charger or outlet. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Điện thoại tôi hết pin rồi is the version to learn first for \"My phone battery is dead\". Use this before asking for a charger or outlet. Show the phone screen or error message first so the problem is visible before you add more words.",
       "phrases": [
         {
           "id": "phone-3",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not hand over your unlocked phone unless you trust the situation. Show the screen first.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Show the screen first and keep control of your phone unless the situation feels trustworthy.",
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

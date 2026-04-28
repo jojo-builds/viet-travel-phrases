@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you are already on the route and need the next turn. Take the route one turn at a time. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you are already on the route and need the next turn. Take the route one turn at a time. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Rẽ trái ở đâu? is the version to learn first for \"Where do I turn left?\". Use this when you are already on the route and need the next turn. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Rẽ trái ở đâu? is the version to learn first for \"Where do I turn left?\". Use this when you are already on the route and need the next turn. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "directions-4",
@@ -78,10 +78,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "If the answer is long, ask them to point or type it. Street directions can be hard to catch by ear.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

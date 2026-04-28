@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say this when someone apologizes and you want to reassure them. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Say this when someone apologizes and you want to reassure them. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -44,7 +44,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Không sao đâu is the version to learn first for \"It’s okay\". Say this when someone apologizes and you want to reassure them. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Không sao đâu is the version to learn first for \"It’s okay\". Say this when someone apologizes and you want to reassure them. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "polite-6",
@@ -66,10 +66,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not overthink the grammar in quick service moments. Clear, polite, and short is better than a long sentence said nervously.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need any charger before you explain more detail. This is the quickest recovery phrase when the battery problem can be fixed nearby. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need any charger before you explain more detail. This is the quickest recovery phrase when the battery problem can be fixed nearby. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Có sạc không? is the version to learn first for \"Do you have a charger?\". Use this when you need any charger before you explain more detail. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Có sạc không? is the version to learn first for \"Do you have a charger?\". Use this when you need any charger before you explain more detail. Show the phone screen or error message first so the problem is visible before you add more words.",
       "phrases": [
         {
           "id": "phone-4",
@@ -78,10 +78,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not hand over your unlocked phone unless you trust the situation. Show the screen first.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Show the screen first and keep control of your phone unless the situation feels trustworthy.",
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -72,10 +72,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not rely on the phrase alone if the place is busy. Show the voucher or booking code so staff can match the right tour.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Pair the phrase with the voucher or booking code when the place is busy so staff can match the right tour quickly.",
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

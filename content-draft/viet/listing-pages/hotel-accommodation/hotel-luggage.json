@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need the hotel to hold your bags for a while. This is a common before-check-in or after-checkout phrase. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need the hotel to hold your bags for a while. This is a common before-check-in or after-checkout phrase. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Giữ hành lý giúp tôi is the version to learn first for \"Please hold my luggage\". Use this when you need the hotel to hold your bags for a while. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Giữ hành lý giúp tôi is the version to learn first for \"Please hold my luggage\". Use this when you need the hotel to hold your bags for a while. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "hotel-7",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

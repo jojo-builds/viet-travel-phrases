@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cho tôi thêm khăn is the version to learn first for \"More towels please\". Use this for a straightforward front-desk request for more room supplies. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Cho tôi thêm khăn is the version to learn first for \"More towels please\". Use this for a straightforward front-desk request for more room supplies. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "hotel-6",
@@ -102,10 +102,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

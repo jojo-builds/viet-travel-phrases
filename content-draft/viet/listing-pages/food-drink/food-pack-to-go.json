@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say this when you want takeaway from a stall or restaurant. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Say this when you want takeaway from a stall or restaurant. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Gói mang về is the version to learn first for \"Pack it to go\". Say this when you want takeaway from a stall or restaurant. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Gói mang về is the version to learn first for \"Pack it to go\". Say this when you want takeaway from a stall or restaurant. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "food-7",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

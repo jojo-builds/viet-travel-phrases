@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when someone is speaking too quickly or using unfamiliar words. Lead with this before you ask for a repeat or a simpler version. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when someone is speaking too quickly or using unfamiliar words. Lead with this before you ask for a repeat or a simpler version. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi không hiểu is the version to learn first for \"I don’t understand\". Use this when someone is speaking too quickly or using unfamiliar words. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi không hiểu is the version to learn first for \"I don’t understand\". Use this when someone is speaking too quickly or using unfamiliar words. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "problems-2",
@@ -78,10 +78,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

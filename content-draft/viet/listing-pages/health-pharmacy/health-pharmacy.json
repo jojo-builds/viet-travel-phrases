@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Nhà thuốc gần nhất ở đâu? is the version to learn first for \"Where is the nearest pharmacy?\". Use this when you need the nearest pharmacy, not just any pharmacy. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Nhà thuốc gần nhất ở đâu? is the version to learn first for \"Where is the nearest pharmacy?\". Use this when you need the nearest pharmacy, not just any pharmacy. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "health-pharmacy-clearer",
@@ -102,10 +102,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not soften urgent medical needs too much. Clear and direct is safer.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

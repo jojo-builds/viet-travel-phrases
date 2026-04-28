@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Dừng ở đây được rồi is the version to learn first for \"You can stop here\". Use this when you want the driver to stop at the current spot. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Dừng ở đây được rồi is the version to learn first for \"You can stop here\". Use this when you want the driver to stop at the current spot. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "taxi-3",
@@ -114,10 +114,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

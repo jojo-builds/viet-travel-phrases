@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when packaging or a bottle cap is the problem. This solves the small real-world task without extra explanation. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when packaging or a bottle cap is the problem. This solves the small real-world task without extra explanation. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Mở cái này giúp tôi is the version to learn first for \"Please open this for me\". Use this when packaging or a bottle cap is the problem. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Mở cái này giúp tôi is the version to learn first for \"Please open this for me\". Use this when packaging or a bottle cap is the problem. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "store-5",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

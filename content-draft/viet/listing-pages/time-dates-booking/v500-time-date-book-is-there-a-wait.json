@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need the exact time, date, booking detail, or schedule change to be clear. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need the exact time, date, booking detail, or schedule change to be clear. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Có chờ đợi không? is the version to learn first for \"Is there a wait?\". Use this when you need the exact time, date, booking detail, or schedule change to be clear. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Có chờ đợi không? is the version to learn first for \"Is there a wait?\". Use this when you need the exact time, date, booking detail, or schedule change to be clear. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "v500-time-date-book-is-there-a-wait",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

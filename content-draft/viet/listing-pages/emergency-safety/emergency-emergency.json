@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Đây là trường hợp khẩn cấp is the version to learn first for \"This is an emergency\". Use this when the first thing people need to know is that the situation is urgent. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Đây là trường hợp khẩn cấp is the version to learn first for \"This is an emergency\". Use this when the first thing people need to know is that the situation is urgent. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "emergency-emergency",
@@ -114,10 +114,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

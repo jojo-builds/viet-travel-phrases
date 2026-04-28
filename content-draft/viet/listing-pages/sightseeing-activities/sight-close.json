@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need to plan the visit window. This is the most useful sightseeing follow-up after ticket price. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need to plan the visit window. This is the most useful sightseeing follow-up after ticket price. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Mấy giờ đóng cửa? is the version to learn first for \"What time does it close?\". Use this when you need to plan the visit window. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Mấy giờ đóng cửa? is the version to learn first for \"What time does it close?\". Use this when you need to plan the visit window. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "sight-4",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Meeting points and start times are worth confirming twice, especially on busy tours.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

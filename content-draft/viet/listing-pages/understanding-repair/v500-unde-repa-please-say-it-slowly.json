@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the conversation is stuck and you need a clearer next step fast. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the conversation is stuck and you need a clearer next step fast. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Hãy nói từ từ nhé is the version to learn first for \"Please say it slowly\". Use this when the conversation is stuck and you need a clearer next step fast. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Hãy nói từ từ nhé is the version to learn first for \"Please say it slowly\". Use this when the conversation is stuck and you need a clearer next step fast. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "v500-unde-repa-please-say-it-slowly",
@@ -96,10 +96,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

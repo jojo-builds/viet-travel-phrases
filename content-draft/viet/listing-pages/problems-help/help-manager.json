@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the staff cannot solve the problem and you need escalation. This is a practical escalation phrase, not a dramatic one. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the staff cannot solve the problem and you need escalation. This is a practical escalation phrase, not a dramatic one. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi cần quản lý is the version to learn first for \"I need the manager\". Use this when the staff cannot solve the problem and you need escalation. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi cần quản lý is the version to learn first for \"I need the manager\". Use this when the staff cannot solve the problem and you need escalation. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "help-3",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

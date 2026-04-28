@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need local help contacting your hotel fast. This is a high-value second sentence once the problem involves a room, booking, or bag. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need local help contacting your hotel fast. This is a high-value second sentence once the problem involves a room, booking, or bag. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Gọi khách sạn giúp tôi is the version to learn first for \"Please call the hotel for me\". Use this when you need local help contacting your hotel fast. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Gọi khách sạn giúp tôi is the version to learn first for \"Please call the hotel for me\". Use this when you need local help contacting your hotel fast. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "help-2",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

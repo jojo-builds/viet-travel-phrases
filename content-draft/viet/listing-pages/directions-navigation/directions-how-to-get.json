@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need the route to a place and can point or name it separately. Lead with the place name, not a long route story. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need the route to a place and can point or name it separately. Lead with the place name, not a long route story. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -74,7 +74,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cho hỏi, đi tới đó thế nào? is the version to learn first for \"Excuse me, how do I get there?\". Use this when you need the route to a place and can point or name it separately. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Cho hỏi, đi tới đó thế nào? is the version to learn first for \"Excuse me, how do I get there?\". Use this when you need the route to a place and can point or name it separately. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "directions-1",
@@ -102,10 +102,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "If the answer is long, ask them to point or type it. Street directions can be hard to catch by ear.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

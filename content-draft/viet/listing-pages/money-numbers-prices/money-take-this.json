@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say this once you agree on the item and price. This closes the shopping moment quickly. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Say this once you agree on the item and price. This closes the shopping moment quickly. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi lấy cái này is the version to learn first for \"I’ll take this one\". Say this once you agree on the item and price. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi lấy cái này is the version to learn first for \"I’ll take this one\". Say this once you agree on the item and price. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "price-7",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

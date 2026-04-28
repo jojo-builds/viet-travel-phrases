@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ask this before making a final decision. This helps you move from browsing to decision. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Ask this before making a final decision. This helps you move from browsing to decision. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Giá cuối bao nhiêu? is the version to learn first for \"What’s your final price?\". Ask this before making a final decision. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Giá cuối bao nhiêu? is the version to learn first for \"What’s your final price?\". Ask this before making a final decision. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "price-5",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this while pointing at the bowl or plate you want. Pointing plus this phrase works well at busy stalls. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this while pointing at the bowl or plate you want. Pointing plus this phrase works well at busy stalls. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cho tôi tô này is the version to learn first for \"I’ll take this bowl\". Use this while pointing at the bowl or plate you want. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Cho tôi tô này is the version to learn first for \"I’ll take this bowl\". Use this while pointing at the bowl or plate you want. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "food-2",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Không cay nhé is the version to learn first for \"Not spicy please\". Use this before the dish is prepared if you want mild food. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Không cay nhé is the version to learn first for \"Not spicy please\". Use this before the dish is prepared if you want mild food. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "food-3",
@@ -102,10 +102,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

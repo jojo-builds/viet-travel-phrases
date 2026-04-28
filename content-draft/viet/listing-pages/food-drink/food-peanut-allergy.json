@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi bị dị ứng đậu phộng is the version to learn first for \"I am allergic to peanuts\". Use this before you order when peanuts are the main food risk. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi bị dị ứng đậu phộng is the version to learn first for \"I am allergic to peanuts\". Use this before you order when peanuts are the main food risk. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "food-peanut-allergy",
@@ -114,10 +114,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when one word or phrase is blocking your understanding. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when one word or phrase is blocking your understanding. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cái đó nghĩa là gì? is the version to learn first for \"What does that mean?\". Use this when one word or phrase is blocking your understanding. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Cái đó nghĩa là gì? is the version to learn first for \"What does that mean?\". Use this when one word or phrase is blocking your understanding. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "repair-3",
@@ -96,10 +96,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the bathroom exists but you need permission to use it. Permission to use the bathroom is a separate traveler moment from finding it. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the bathroom exists but you need permission to use it. Permission to use the bathroom is a separate traveler moment from finding it. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi dùng nhà vệ sinh được không? is the version to learn first for \"Can I use the bathroom?\". Use this when the bathroom exists but you need permission to use it. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi dùng nhà vệ sinh được không? is the version to learn first for \"Can I use the bathroom?\". Use this when the bathroom exists but you need permission to use it. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
       "phrases": [
         {
           "id": "bathroom-use",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Some places may not have paper or soap available. Asking early avoids an awkward surprise.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

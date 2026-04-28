@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when confirming tomorrow-morning timing without a full sentence. Short date anchors keep booking conversations simple. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when confirming tomorrow-morning timing without a full sentence. Short date anchors keep booking conversations simple. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Sáng mai is the version to learn first for \"Tomorrow morning\". Use this when confirming tomorrow-morning timing without a full sentence. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Sáng mai is the version to learn first for \"Tomorrow morning\". Use this when confirming tomorrow-morning timing without a full sentence. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "time-3",
@@ -72,10 +72,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

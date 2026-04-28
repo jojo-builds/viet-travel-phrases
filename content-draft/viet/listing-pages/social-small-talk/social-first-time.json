@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when someone asks whether you have visited before. This is one of the easiest travel small-talk answers to use. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when someone asks whether you have visited before. This is one of the easiest travel small-talk answers to use. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Đây là lần đầu của tôi is the version to learn first for \"This is my first time\". Use this when someone asks whether you have visited before. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Đây là lần đầu của tôi is the version to learn first for \"This is my first time\". Use this when someone asks whether you have visited before. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "smalltalk-3",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

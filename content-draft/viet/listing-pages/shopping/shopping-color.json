@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the item is right but the color is wrong. This is the simplest comparison phrase for clothing and small goods. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the item is right but the color is wrong. This is the simplest comparison phrase for clothing and small goods. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Có màu khác không? is the version to learn first for \"Do you have another color?\". Use this when the item is right but the color is wrong. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Có màu khác không? is the version to learn first for \"Do you have another color?\". Use this when the item is right but the color is wrong. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "shop-2",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "In markets, price talk can feel playful. Keep your tone light when asking for a lower price.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

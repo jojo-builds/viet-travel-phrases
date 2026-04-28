@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this if utensils were not set out. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this if utensils were not set out. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cho tôi muỗng với đũa is the version to learn first for \"A spoon and chopsticks please\". Use this if utensils were not set out. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Cho tôi muỗng với đũa is the version to learn first for \"A spoon and chopsticks please\". Use this if utensils were not set out. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "food-6",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -94,7 +94,7 @@ const familyCopyOverrides = {
     atGlance: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech. Use this when you need the other person to give you something you can read, save, or show again.",
     standard: "Viết xuống giúp tôi is the clearest version to start with when you need someone to write it down. It keeps the request polite and specific without needing to explain what you missed.",
     when: "Use it for hotel addresses, pickup points, prices, room numbers, names, or any detail you need to keep after the conversation ends.",
-    watch: "Do not make it sound like a demand. A calm tone keeps the request cooperative, especially if the person already repeated themselves once.",
+    watch: "Frame it as a cooperative request. A calm tone keeps the other person with you, especially if they already repeated themselves once.",
     tip: "Hand over your phone with a blank note open if paper is not nearby. The phrase plus the blank screen usually makes the request obvious.",
   },
   "v500-sigh-acti-i-have-a-tour-booking": {
@@ -102,7 +102,7 @@ const familyCopyOverrides = {
     atGlance: "Use this at a tour desk, pier, hotel lobby, or attraction entrance when you already booked and need staff to find your reservation. Show the booking name, QR code, or confirmation screen while you say it.",
     standard: "Tôi có đặt tour is the compact version to learn first. Tour is widely understood in travel settings, and đặt keeps the meaning on a booking or reservation rather than a casual plan.",
     when: "Use it before a tour starts, when checking in with a guide, or when a desk asks whether you already booked. Follow with the booking name if they look uncertain.",
-    watch: "Do not rely on the phrase alone if the place is busy. Show the voucher or booking code so staff can match the right tour.",
+    watch: "Pair the phrase with the voucher or booking code when the place is busy so staff can match the right tour quickly.",
     tip: "If staff answer with a time or meeting point, ask them to point to it on the voucher or map.",
   },
   "v500-phon-inte-powe-where-can-i-get-a-local-sim-card": {
@@ -126,7 +126,7 @@ const familyCopyOverrides = {
     atGlance: "Bớt chút được không? is the compact local-feeling way to ask for a little lower price. It is useful in markets, informal stalls, or flexible-price moments.",
     standard: "Bớt chút được không? literally asks whether they can reduce it a little. It is shorter and more natural than a full textbook sentence.",
     when: "Use it after hearing the price, while still holding or pointing at the item.",
-    watch: "Do not use it in places with fixed prices, posted menus, or official counters. There it can feel misplaced.",
+    watch: "Use it where prices are flexible, such as markets or informal stalls. At fixed-price counters, confirm the posted price instead.",
     tip: "If the answer is a number, ask them to type it on a calculator so you do not mishear the final price.",
   },
   "v500-heal-phar-i-feel-dizzy": {
@@ -134,7 +134,7 @@ const familyCopyOverrides = {
     atGlance: "Use this at a pharmacy, clinic, hotel desk, or with a guide when you feel light-headed or dizzy. Keep it direct so the other person knows this is a health issue, not small talk.",
     standard: "Tôi cảm thấy chóng mặt is the safer complete sentence. It says 'I feel dizzy' clearly and gives the helper a symptom they can act on.",
     when: "Use it before asking for medicine, a place to sit, a clinic, or help contacting someone.",
-    watch: "If dizziness is severe, repeated, or paired with chest pain, fainting, or trouble breathing, move to an emergency phrase instead of trying to soften it.",
+    watch: "Keep severe dizziness direct, especially with chest pain, fainting, or trouble breathing. Move to an emergency phrase when the situation needs urgent help.",
     tip: "Point to yourself, sit if you need to, and show any medicine or condition note you carry.",
   },
   "social-how-are-you": {
@@ -164,7 +164,7 @@ const scenarioGuidance = {
     moment: "small service and first-contact moments",
     why: "Polite Vietnamese often works by softening the start or end of an interaction before the main request.",
     tip: "A small smile and a calm pace matter. These short phrases are often enough to make a service moment feel warmer.",
-    watch: "Do not overthink the grammar in quick service moments. Clear, polite, and short is better than a long sentence said nervously.",
+    watch: "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
   },
   "understanding-repair": {
     moment: "moments when Vietnamese stops making sense",
@@ -212,7 +212,7 @@ const scenarioGuidance = {
     moment: "doctors, pharmacies, symptoms, and medication",
     why: "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up.",
     tip: "Show the symptom, medication, or affected area when possible. It gives the helper something concrete.",
-    watch: "Do not soften urgent medical needs too much. Clear and direct is safer.",
+    watch: "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
   },
   "problems-help": {
     moment: "lost items, help, managers, and recovery moments",
@@ -236,7 +236,7 @@ const scenarioGuidance = {
     moment: "Wi-Fi, SIM, battery, charging, maps, and phone setup",
     why: "Phone phrases work best when the other person can see the exact screen or error.",
     tip: "Show the phone screen while you speak. A visible error message often explains the problem faster than more words.",
-    watch: "Do not hand over your unlocked phone unless you trust the situation. Show the screen first.",
+    watch: "Show the screen first and keep control of your phone unless the situation feels trustworthy.",
   },
   "bathroom-personal-needs": {
     moment: "bathrooms, soap, paper, water, and basic personal needs",
@@ -479,7 +479,7 @@ function scenarioCopy(scenarioID) {
     moment: "the travel moment in front of you",
     why: "The phrase says the practical need plainly before the conversation gets complicated.",
     tip: "Say the phrase first, then point, show, or gesture to the detail that matters.",
-    watch: "Keep the sentence short and clear. More words are not always more helpful.",
+    watch: "Keep the sentence short and clear. The right pointed detail usually helps more than extra words.",
   };
 }
 
@@ -533,13 +533,42 @@ function atGlanceText(family, primaryPhrase) {
   const usefulSummary = primaryPhrase.context && instructionLikeSentence(summaryCandidate) ? "" : summaryCandidate;
   const nextStep = (family.phraseIDs ?? []).length > 1
     ? "Use the other forms below when tone, setting, or politeness changes."
-    : "Learn the full phrase first; the related phrases below help when the exchange moves one step further.";
+    : "After the first answer, the related phrases help you handle the likely follow-up without starting over.";
 
   return [
     lead,
     usefulSummary,
     nextStep,
   ].filter(Boolean).join(" ");
+}
+
+function contextCueText(family) {
+  switch (family.scenarioID) {
+    case "transport":
+    case "directions-navigation":
+      return "Show the map, address, or destination while you say it so the answer has a clear anchor.";
+    case "hotel-accommodation":
+    case "time-dates-booking":
+    case "sightseeing-activities":
+      return "Show the booking, ticket, room number, or time on your phone when the exact detail matters.";
+    case "food-drink":
+    case "shopping":
+    case "local-services-everyday-tasks":
+      return "Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.";
+    case "phone-internet-power":
+      return "Show the phone screen or error message first so the problem is visible before you add more words.";
+    case "airport-border-arrival":
+    case "emergency-safety":
+    case "health-pharmacy":
+    case "problems-help":
+      return "Show the document, symptom, location, or item connected to the need so helpers can act faster.";
+    case "bathroom-personal-needs":
+      return "Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.";
+    case "understanding-repair":
+      return "If speech still does not land, move to writing, pointing, or showing the exact word on your phone.";
+    default:
+      return "Point to the place, object, or screen that gives the phrase context.";
+  }
 }
 
 function standardText(family, primaryPhrase) {
@@ -549,7 +578,7 @@ function standardText(family, primaryPhrase) {
   return [
     `${primaryPhrase.targetText} is the version to learn first for "${primaryPhrase.englishText}".`,
     primaryPhrase.context ? sentence(primaryPhrase.context) : "It is short enough to say in a real travel moment.",
-    "If the person hesitates, show the place, object, or screen that gives the phrase context.",
+    contextCueText(family),
   ].join(" ");
 }
 
@@ -1093,8 +1122,8 @@ function childPageForVariant(family, variantPhrase, primaryPhrase) {
         body: `${sentence(variantPhrase.context || family.summary)} Use ${primaryPhrase.targetText} when you want the shorter, more basic version.`,
       },
       {
-        id: "watch-out",
-        title: "Watch out",
+        id: "good-to-know",
+        title: "Good to know",
         body: watchOutText(family, variantPhrase),
       },
       {
@@ -1130,8 +1159,9 @@ function sectionPresentation(section) {
     case "natural-variations":
     case "nearby-phrases":
       return (section.phrases ?? []).length > 0 ? "horizontal-phrase-cards" : "plain-text";
+    case "good-to-know":
     case "watch-out":
-      return "warning-callout";
+      return "tip-callout";
     case "local-tip":
     case "traveler-tip":
       return "tip-callout";
@@ -1213,8 +1243,8 @@ function pageForFamily(family, childPageIDsByPhraseID) {
       body: usageText(family, primaryPhrase),
     },
     {
-      id: "watch-out",
-      title: "Watch out",
+      id: "good-to-know",
+      title: "Good to know",
       body: watchOutText(family, primaryPhrase),
     },
     {

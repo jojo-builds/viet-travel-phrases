@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this on a hot ride if the air conditioning is off. This is a small comfort phrase, but it matters on long hot rides. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this on a hot ride if the air conditioning is off. This is a small comfort phrase, but it matters on long hot rides. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Mở máy lạnh giúp tôi is the version to learn first for \"Please turn on the air conditioning\". Use this on a hot ride if the air conditioning is off. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Mở máy lạnh giúp tôi is the version to learn first for \"Please turn on the air conditioning\". Use this on a hot ride if the air conditioning is off. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the urgent need is reaching a hospital quickly. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the urgent need is reaching a hospital quickly. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Bệnh viện gần nhất ở đâu? is the version to learn first for \"Where is the nearest hospital?\". Use this when the urgent need is reaching a hospital quickly. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Bệnh viện gần nhất ở đâu? is the version to learn first for \"Where is the nearest hospital?\". Use this when the urgent need is reaching a hospital quickly. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "emergency-hospital",
@@ -90,10 +90,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

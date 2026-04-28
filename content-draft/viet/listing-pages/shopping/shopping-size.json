@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the main choice is size, not price. Shopping should stay traveler-practical, not fashion-school. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the main choice is size, not price. Shopping should stay traveler-practical, not fashion-school. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi muốn cỡ này is the version to learn first for \"I want this size\". Use this when the main choice is size, not price. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi muốn cỡ này is the version to learn first for \"I want this size\". Use this when the main choice is size, not price. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "shop-1",
@@ -78,10 +78,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "In markets, price talk can feel playful. Keep your tone light when asking for a lower price.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

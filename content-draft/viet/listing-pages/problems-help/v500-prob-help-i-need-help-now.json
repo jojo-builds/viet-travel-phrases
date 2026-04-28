@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the trip is off track and you need another person to help solve the practical problem. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the trip is off track and you need another person to help solve the practical problem. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi cần giúp đỡ bây giờ is the version to learn first for \"I need help now\". Use this when the trip is off track and you need another person to help solve the practical problem. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi cần giúp đỡ bây giờ is the version to learn first for \"I need help now\". Use this when the trip is off track and you need another person to help solve the practical problem. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "v500-prob-help-i-need-help-now",
@@ -96,10 +96,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

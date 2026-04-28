@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you already both know what the event is and you just need the time. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you already both know what the event is and you just need the time. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Mấy giờ? is the version to learn first for \"What time?\". Use this when you already both know what the event is and you just need the time. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Mấy giờ? is the version to learn first for \"What time?\". Use this when you already both know what the event is and you just need the time. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "time-1",
@@ -72,10 +72,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

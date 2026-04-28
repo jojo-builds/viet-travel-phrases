@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the booking exists and you need staff to find it first. Start with the booking before you ask about timing changes. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when the booking exists and you need staff to find it first. Start with the booking before you ask about timing changes. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi có đặt chỗ is the version to learn first for \"I have a booking\". Use this when the booking exists and you need staff to find it first. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi có đặt chỗ is the version to learn first for \"I have a booking\". Use this when the booking exists and you need staff to find it first. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "time-4",
@@ -78,10 +78,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

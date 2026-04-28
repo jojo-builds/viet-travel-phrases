@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
-      "body": "Do not use it in places with fixed prices, posted menus, or official counters. There it can feel misplaced.",
-      "presentation": "warning-callout"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Use it where prices are flexible, such as markets or informal stalls. At fixed-price counters, confirm the posted price instead.",
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

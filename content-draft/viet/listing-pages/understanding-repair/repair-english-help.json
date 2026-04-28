@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Anh/chị nói tiếng Anh không? is the version to learn first for \"Do you speak English?\". Use this when you need to know whether English is an option. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Anh/chị nói tiếng Anh không? is the version to learn first for \"Do you speak English?\". Use this when you need to know whether English is an option. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "repair-english-help",
@@ -108,10 +108,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

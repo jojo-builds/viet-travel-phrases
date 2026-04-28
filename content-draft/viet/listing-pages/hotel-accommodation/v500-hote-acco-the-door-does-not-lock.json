@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this at the front desk or in the room when you need the hotel to fix the next step. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this at the front desk or in the room when you need the hotel to fix the next step. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cửa không khóa is the version to learn first for \"The door does not lock\". Use this at the front desk or in the room when you need the hotel to fix the next step. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Cửa không khóa is the version to learn first for \"The door does not lock\". Use this at the front desk or in the room when you need the hotel to fix the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "v500-hote-acco-the-door-does-not-lock",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

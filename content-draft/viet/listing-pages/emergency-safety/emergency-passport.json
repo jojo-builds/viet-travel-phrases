@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need immediate help after losing your passport. Lost passport is a core travel emergency and should stay accessible. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this when you need immediate help after losing your passport. Lost passport is a core travel emergency and should stay accessible. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi mất hộ chiếu is the version to learn first for \"I lost my passport\". Use this when you need immediate help after losing your passport. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi mất hộ chiếu is the version to learn first for \"I lost my passport\". Use this when you need immediate help after losing your passport. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "emergency-3",
@@ -84,10 +84,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",

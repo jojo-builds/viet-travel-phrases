@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this before you take out the camera in restricted places. This is a common temple, museum, and activity phrase. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
+      "body": "Use this before you take out the camera in restricted places. This is a common temple, museum, and activity phrase. After the first answer, the related phrases help you handle the likely follow-up without starting over.",
       "presentation": "plain-text"
     },
     {
@@ -74,7 +74,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Tôi chụp hình ở đây được không? is the version to learn first for \"Can I take photos here?\". Use this before you take out the camera in restricted places. If the person hesitates, show the place, object, or screen that gives the phrase context.",
+      "body": "Tôi chụp hình ở đây được không? is the version to learn first for \"Can I take photos here?\". Use this before you take out the camera in restricted places. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
       "phrases": [
         {
           "id": "sight-3",
@@ -96,10 +96,10 @@
       "presentation": "plain-text"
     },
     {
-      "id": "watch-out",
-      "title": "Watch out",
+      "id": "good-to-know",
+      "title": "Good to know",
       "body": "Meeting points and start times are worth confirming twice, especially on busy tours.",
-      "presentation": "warning-callout"
+      "presentation": "tip-callout"
     },
     {
       "id": "local-tip",
