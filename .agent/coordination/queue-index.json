@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T03:03:56.944410+07:00",
+  "updatedAt": "2026-04-29T03:20:43.576482+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -21,17 +21,16 @@
         "state": ".agent\\tasks\\T-165\\state.json",
         "selectionOrder": 14,
         "writeLock": "sqlite_swift_read_path"
-      }
-    ],
-    "in_progress": [
+      },
       {
-        "taskId": "T-162",
-        "title": "Design practice quiz visual concepts, prototype, and chameleon mascot progression",
-        "state": ".agent\\tasks\\T-162\\state.json",
-        "selectionOrder": 11,
-        "writeLock": "practice_quiz_visual_design"
+        "taskId": "T-166",
+        "title": "Fold saved and practice personalization into Home, Practice, and offline data contracts",
+        "state": ".agent\\tasks\\T-166\\state.json",
+        "selectionOrder": 15,
+        "writeLock": "practice_home_personalization_contract"
       }
     ],
+    "in_progress": [],
     "blocked": [
       {
         "taskId": "T-148",
@@ -156,6 +155,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-162",
+        "title": "Design practice quiz visual concepts, prototype, and chameleon mascot progression",
+        "state": ".agent\\tasks\\T-162\\state.json",
+        "selectionOrder": 11,
+        "writeLock": "practice_quiz_visual_design"
+      },
       {
         "taskId": "T-164",
         "title": "Research and design SpeakLocal homepage strategy",
@@ -664,12 +670,12 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 1,
+    "queuedCount": 2,
     "reclaimableCount": 0,
-    "inProgressCount": 1,
+    "inProgressCount": 0,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 72
+    "recentlyCompletedCount": 73
   },
   "notes": [
     "This index is intentionally small and selection-focused.",
