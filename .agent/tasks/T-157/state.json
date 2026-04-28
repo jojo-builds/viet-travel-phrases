@@ -1,22 +1,22 @@
 {
   "taskId": "T-157",
   "title": "Mac queue heartbeat smoke test and short-prompt handoff",
-  "status": "queued",
-  "phase": "queued-for-desktop-codex",
+  "status": "done",
+  "phase": "completed",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "session": {
-    "owner": "",
-    "sessionId": "",
-    "label": ""
+    "owner": "codex-desktop-automation",
+    "sessionId": "76EB8794-69CE-4674-B2EB-5D542B7FE3CF",
+    "label": "manual-T-157-heartbeat-smoke"
   },
   "execution": {
-    "attempt": 0,
-    "claimedAt": "",
-    "lastHeartbeatAt": "",
+    "attempt": 1,
+    "claimedAt": "2026-04-28T20:24:33+07:00",
+    "lastHeartbeatAt": "2026-04-28T20:25:28.127637+07:00",
     "heartbeatEveryMinutes": 10,
     "leaseDurationMinutes": 120,
-    "leaseExpiresAt": "",
+    "leaseExpiresAt": "2026-04-28T20:25:28.127637+07:00",
     "reclaimReason": ""
   },
   "locks": {
@@ -40,7 +40,7 @@
       ".agent/tasks/T-157/state.json"
     ]
   },
-  "lastUpdated": "2026-04-28T17:55:00+07:00",
+  "lastUpdated": "2026-04-28T20:25:28.127637+07:00",
   "automation": {
     "runner": "manual-codex",
     "mode": "single-task",
