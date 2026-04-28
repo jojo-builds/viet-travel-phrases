@@ -1,16 +1,25 @@
-# T-162: Design Practice Quiz Visual Concepts And Chameleon Mascot Progression
+# T-162: Design Practice Quiz Visual Concepts, Prototype, And Chameleon Mascot Progression
 
 ## Objective
 
-Create a visual/product design concept packet for SpeakLocal's pre-live Practice/Quiz area and chameleon mascot progression.
+Create a visual/product design concept packet plus a small browser-playable prototype for SpeakLocal's pre-live Practice/Quiz area and chameleon mascot progression.
 
-The outcome should let Jojo compare several native-feeling directions before implementation starts. This is design exploration and handoff work only: do not implement SwiftUI screens, edit app runtime resources, generate practice data, change SQLite architecture docs, or modify audio.
+The outcome should let Jojo compare several native-feeling directions and actually click through a small mock quiz before implementation starts. This is design exploration and handoff work only: do not implement SwiftUI screens, edit app runtime resources, generate practice data, change SQLite architecture docs, or modify audio.
 
 The designs must feel like they belong inside the current SpeakLocal native iOS app: Liquid Glass-style chrome, restrained Vietnam accent colors, white/readable content areas, audio-first phrase learning, and the same calm article/listing-page rhythm already established by `Xin chào`.
 
 ## Success Criteria
 
 - Create `docs/design/practice-quiz-concepts/README.md` as the design packet.
+- Create a small static browser prototype at `docs/design/practice-quiz-concepts/prototype.html` that Jojo can open in the Codex in-app browser or serve locally.
+- The prototype must include `3` to `4` mock quiz prompts and enough interaction to feel the loop:
+  - start/select practice;
+  - answer choices;
+  - speaker/audio-style controls;
+  - immediate feedback/explanation;
+  - mascot/progress change;
+  - completion moment;
+  - option to return to a source phrase page conceptually.
 - Include `5` distinct practice/quiz concept directions, each with:
   - a clear name;
   - target user feeling;
@@ -43,6 +52,7 @@ The designs must feel like they belong inside the current SpeakLocal native iOS 
   - `Practice This Page`;
   - `Review Missed`.
 - Include image-generation prompts for the mascot and each of the five concept directions. If an image-generation tool is available and appropriate, the worker may generate visual concept images and save/reference them under `docs/design/practice-quiz-concepts/assets/`; otherwise, polished prompts are enough.
+- Include screenshot-ready visual states. If the worker can capture screenshots of the prototype or generated concept images, save them under `docs/design/practice-quiz-concepts/assets/` and reference them from the README. If not, the prototype and prompts must still be polished enough to review visually in-browser.
 - Include implementation handoff notes for a future SwiftUI worker, but do not start implementation.
 
 ## Repo / Working Surface
@@ -77,6 +87,8 @@ The designs must feel like they belong inside the current SpeakLocal native iOS 
 - If the simulator or screenshots are available, use them for visual parity. If they are not available, inspect current SwiftUI views/resources and say what was used instead.
 - Make the concepts feel seamless with the app. Do not create a marketing page, web app, Duolingo clone, classroom course, or game that fights the existing listing-page design.
 - Prefer calm, tactile, delightful interaction over noisy gamification.
+- Treat the browser prototype as a design artifact, not production code. It should be polished enough for Jojo to click around and react to, but it must not create a new web-app architecture or production dependency.
+- The prototype should visually approximate native iOS and Liquid Glass using static HTML/CSS/JS: iPhone-sized frame, glass bottom chrome/search island, white content areas, soft motion, and restrained Vietnam accents.
 - Record decisions, tradeoffs, and evidence in `result.md`; do not dump hidden chain-of-thought.
 
 ## Concept Directions To Explore
@@ -95,6 +107,28 @@ Use these as starting points, then improve or rename them if better ideas emerge
    - choose what to say next in a simple local interaction, then see why it fits.
 
 The final packet may recommend combining pieces, but it must still show five comparable options.
+
+## Browser Prototype Requirements
+
+Create `docs/design/practice-quiz-concepts/prototype.html` as a single-file static prototype unless there is a strong reason to split assets.
+
+The prototype should:
+
+- fit an iPhone-sized viewport and remain usable at small mobile widths;
+- include a start/deck screen or practice-entry surface;
+- include `3` to `4` mock prompts drawn from realistic SpeakLocal Vietnam use cases, such as:
+  - Listen And Choose: identify `Xin chào` or another familiar phrase by audio-style prompt;
+  - Situation Pick: hotel/airport/food moment;
+  - Pronoun Coach: choose a warmer relationship-based phrase;
+  - Practice This Page: short drill from a source phrase page;
+- include mascot/progress feedback that shows the chameleon gaining subtle Vietnam camouflage details;
+- include answer feedback that teaches the travel cue without negative framing;
+- include a completion screen with motif/progress reward and a natural next action;
+- include a short `Preview instructions` section in the README with one of these paths:
+  - open `docs/design/practice-quiz-concepts/prototype.html` directly in the in-app browser if local file URLs work;
+  - or run `python3 -m http.server 8787 -d docs/design/practice-quiz-concepts` and open `http://127.0.0.1:8787/prototype.html`.
+
+Speaker buttons in the prototype should behave honestly. If real local audio can be wired from existing app resources without touching audio files, use it for at least one prompt. If not, make the button animate/toggle as a prototype-only audio affordance and explain that real audio will be wired in the SwiftUI implementation task.
 
 ## Design Constraints
 
@@ -132,6 +166,7 @@ Create:
 ```text
 docs/design/practice-quiz-concepts/
   README.md
+  prototype.html
   assets/
     .gitkeep
 ```
@@ -182,10 +217,13 @@ Keep the packet polished enough that Jojo can review it directly.
 - `python3 .agent/queue_tool.py repair --fail-on-unhealthy`
 - If JSON files are edited, validate each with `python3 -m json.tool <path> >/tmp/<safe-name>.json`
 - If an HTML concept board is created, open/read it enough to catch obvious broken paths or malformed markup.
+- If `prototype.html` is created, preview it directly or via a local static server and record the URL/method in `result.md`. Do not leave long-running servers active after validation unless Jojo explicitly asks.
 
 ## Relevant Skills
 
 - `superpowers:brainstorming` for product/design exploration.
+- `browser-use:browser` for opening/testing the local prototype in the Codex in-app browser if available.
+- `build-web-apps:frontend-app-builder` only for shaping the static prototype as a high-quality design artifact; do not turn it into a production web app.
 - `build-ios-apps:swiftui-liquid-glass` for native Liquid Glass design vocabulary.
 - `build-ios-apps:swiftui-ui-patterns` for native SwiftUI interaction patterns.
 - `speaklocal-listing-pages` for how practice should connect back into article/listing pages.
@@ -221,11 +259,11 @@ Gate 2, handoff readiness:
 - accessibility/readability reviewer;
 - source-of-truth/queue-scope reviewer.
 
-Gate 3, visual packet readiness:
+Gate 3, visual/prototype packet readiness:
 
 - five-concept comparison reviewer;
+- browser prototype usability reviewer;
 - chameleon progression reviewer;
-- image-prompt/concept-art reviewer;
 - Jojo-reviewability reviewer.
 
 Review artifacts should be stored under `.agent/tasks/T-162/reviews/gate-XX-pass-YY/`.
@@ -245,6 +283,7 @@ This task is a meaningful design task:
 
 - The design packet exists under `docs/design/practice-quiz-concepts/`.
 - It gives Jojo five clear, native-feeling options to compare.
+- It includes a playable static prototype with `3` to `4` mock questions that Jojo can test in the Codex in-app browser.
 - It recommends one direction and one backup direction.
 - It makes the chameleon/camouflage progression concrete enough for a future visual asset task.
 - It maps the design into the current app entrypoints and MVP practice modes.

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T01:08:48.921403+07:00",
+  "updatedAt": "2026-04-29T01:19:00.557159+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -17,7 +17,7 @@
     "queued": [
       {
         "taskId": "T-162",
-        "title": "Design practice quiz visual concepts and chameleon mascot progression",
+        "title": "Design practice quiz visual concepts, prototype, and chameleon mascot progression",
         "state": ".agent\\tasks\\T-162\\state.json",
         "selectionOrder": 11,
         "writeLock": "practice_quiz_visual_design"
