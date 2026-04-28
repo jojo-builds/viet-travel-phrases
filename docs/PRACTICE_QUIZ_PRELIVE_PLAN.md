@@ -1,6 +1,6 @@
 # Practice And Quiz Pre-Live Plan
 
-Last updated: 2026-04-28  
+Last updated: 2026-04-29
 Owner lane: SpeakLocal native app-family planning  
 Status: implementation-ready planning source of truth
 
@@ -16,6 +16,7 @@ First version decisions:
 - Start with compact native sessions that rehearse the exact phrase graph users are already browsing: authored listing pages, phrase rows, pronunciation audio, breakdown tokens, and category context.
 - Practice is phrase-sourced. From any phrase listing page, the user can add that phrase to a local practice pool, then practice those chosen phrases by quiz mode, category, source page, saved/recent, or missed status.
 - Every generated practice prompt must have a selected source phrase, row, or breakdown token as the correct answer. Multiple-choice distractors fill the other slots from graph-nearby phrases; the practiced phrase is never just decorative context.
+- Saved phrase IDs, practice-selected phrase IDs, recently opened page IDs, practiced counts, missed items, and last-used filters are local user intent signals. Home, Explore shelves, category rows, and Practice should rank from those signals before falling back to generic global ordering.
 - MVP modes are `Listen And Choose`, `Situation Pick`, `Pronoun Coach`, `Practice This Page`, and `Review Missed`.
 - MVP active recall is deliberate but bounded: users must retrieve meaning, use-case, social role, or next action before seeing feedback. Hold full phrase-construction `Build It` for the first post-MVP iteration unless a follow-up deck/audio generator task proves token sequencing and token audio are release-clean.
 - Use a `Practice` destination from home/quick access plus contextual `Practice this` actions on listing pages. Wait on a permanent fourth bottom-chrome item until simulator/device proof says it improves navigation instead of crowding the app shell.
@@ -36,6 +37,8 @@ The practice area should help users rehearse:
 - saved, recent, or missed phrases;
 - listening recognition with bundled audio;
 - short real-world situations rather than abstract translation drills.
+
+The first-launch experience has no local user state, so it should start from curated essentials, categories, and authored phrase pages. As soon as the user saves, opens, practices, misses, or adds a phrase to practice, that local state should become the strongest personalization input for future surfaces.
 
 ## Phrase-sourced practice pool
 
@@ -78,6 +81,27 @@ Distractor rules:
 - Keep distractors explainable: feedback should say why the correct phrase fits and why a tempting nearby phrase is different.
 
 Conceptually, every phrase should be practice-capable. That does not mean hand-writing a separate quiz file for every phrase. The durable model should store generated practice templates keyed by canonical phrase/page IDs, then use local user-selected phrase IDs to assemble sessions.
+
+### Local personalization contract
+
+The mutable user-state model should stay local, private, and deterministic. It should not depend on accounts, cloud sync, remote ranking, analytics, or runtime AI.
+
+Local state should capture:
+
+- saved canonical phrase/page IDs;
+- practice-selected phrase IDs and optional page/deck selections;
+- recently opened canonical page IDs with lightweight source context such as search, Home, category, or related row;
+- practiced prompt/phrase history, including counts and last practiced time;
+- missed/due prompt IDs plus the source phrase/page that taught them;
+- last selected practice mode/filter when it helps resume the user's intent.
+
+Ranking rules:
+
+- Explicit user selections win: `Add to practice` and saved phrases are stronger than passive recency.
+- Missed/due items can be suggested calmly, but they should not overwhelm new material or make Home feel punitive.
+- Recently opened pages should influence `Continue`, related suggestions, and category ordering, but should decay behind saved/practice-selected items.
+- Graph-nearby phrase suggestions should start from the user's saved, practice-selected, missed, or recently opened phrases, then use same scenario, relationship family, phrase cluster, likely reply, next-step, and repair edges as deterministic expansion candidates.
+- When there is no local state, fall back to curated essentials and travel-urgency ordering.
 
 ## Research signals
 
@@ -376,12 +400,15 @@ Recommended first version:
 - Add a `Practice` card or quick-access destination from home.
 - Add `Practice this` on authored listing pages.
 - Let users choose:
+  - my practice phrases;
   - starter Tier 1;
   - category;
   - pronouns/social;
   - current listing page;
+  - saved;
+  - recent;
   - missed/retry.
-- Add Saved/recent phrase decks after the basic local progress model exists.
+- Add Saved/recent phrase decks once saved/recent page ID persistence exists; add `My practice phrases` as soon as the add/remove pool exists.
 - End every session with:
   - practiced count;
   - missed count;
@@ -505,10 +532,13 @@ For SQLite, the bundled read model should be able to represent:
 
 Mutable local user data should stay outside the bundled read-only SQLite file:
 
+- saved phrase/page IDs;
 - selected practice phrase IDs;
 - removed/hidden phrase IDs;
+- recently opened page IDs;
 - practiced/missed/due state;
-- last selected quiz modes and filters.
+- last selected quiz modes and filters;
+- lightweight ranking timestamps such as savedAt, addedToPracticeAt, openedAt, practicedAt, and missedAt.
 
 Suggested skill tags:
 
@@ -523,8 +553,10 @@ Suggested skill tags:
 
 Local device state can stay simple:
 
+- saved phrase/page IDs;
 - selected practice phrase IDs;
 - selected practice page IDs if the user adds a full page/deck later;
+- recent canonical page IDs;
 - prompt ID;
 - practiced count;
 - correct count;
@@ -538,6 +570,54 @@ Local device state can stay simple:
 - source page ID.
 
 The first implementation should avoid cloud sync, accounts, social state, and remote analytics.
+
+## Implementation readiness contract
+
+Keep the first implementation split into four layers so Home, Practice, Search/Browse, and future SQLite work do not duplicate product decisions.
+
+### Bundled read-only phrase graph data
+
+Bundled content owns:
+
+- phrase, page, cluster, scenario, relation, section, breakdown-token, and audio IDs;
+- generated practice prompt templates and distractor pools keyed to canonical phrase/page IDs;
+- speaker-control eligibility and missing-audio audit output;
+- search/routing aliases that keep every phrase on one canonical page.
+
+The app must not mutate this bundled content at runtime. JSON remains the current live source until the SQLite read path is packaged and validated; SQLite is the planned read model, not the user-state store.
+
+### Mutable local user state
+
+Local app-container state owns:
+
+- saved and unsaved page/phrase IDs;
+- practice-pool add/remove choices;
+- recent page history;
+- practiced, missed, due, and last-result fields;
+- last mode/filter choices that help resume a session.
+
+This state can later migrate between storage implementations, but the product contract stays the same: it is private, offline, deterministic, and device-local for MVP.
+
+### Recommendation and ranking rules
+
+Ranking should combine deterministic bundled graph signals with local intent:
+
+- saved and practice-selected phrases first;
+- due/missed practice items next when the user is in Practice or a calm review shelf;
+- recent pages for `Continue`, related rows, and category reordering;
+- graph-nearby phrases from the same scenario, phrase cluster, social/relationship family, likely reply, next-step, repair, or escalation relation;
+- curated essentials when local state is empty.
+
+These are deterministic rules, not AI recommendations.
+
+### User-facing surfaces
+
+The consuming surfaces are:
+
+- Home: first launch shows essentials; returning Home can show `Continue`, saved/practice-pool shelves, and calm "Because you practiced..." recommendations.
+- Practice: `My practice phrases`, `Saved`, `Recent`, `This page`, `Review missed`, category, and pronoun/social filters all assemble sessions from the same prompt templates.
+- Search/Browse/Explore: category rows and related shelves can favor saved/practiced/recent graph neighborhoods without hiding the full library.
+- Listing pages: phrase pages and row surfaces offer `Add to practice`, remove/manage state, `Practice this page`, and source-page return after a session.
 
 ## Generator direction
 
@@ -641,7 +721,7 @@ Validation:
 - practice audio audit;
 - small sample readback of each prompt mode.
 
-### T-161: Native Practice UI and listing-page entrypoints
+### Follow-up: Native Practice UI and listing-page entrypoints
 
 Outcome: Build the SwiftUI Practice destination, session flow, feedback states, and `Practice this` listing-page entrypoint against generated resources.
 
@@ -657,7 +737,7 @@ Validation:
 - iPhone 17 Pro simulator build;
 - manual simulator smoke of home entry, page entry, answer feedback, missed review, and back/search chrome behavior.
 
-### T-162: Mascot art direction and asset integration
+### Follow-up: Mascot art direction and asset integration
 
 Outcome: Choose and integrate the first mascot asset sheet with usage rules and native render points.
 
@@ -673,7 +753,25 @@ Validation:
 - light/dark/background checks;
 - serious-context absence/neutrality check.
 
-### T-163: Practice validation and release-readiness pass
+### Follow-up: Local user-state store and personalized shelves
+
+Outcome: Add local saved, recent, practice-pool, practiced, and missed state contracts, then expose only the Home/Practice shelves whose state exists.
+
+Write scope:
+
+- native local-state models/storage;
+- Home/Practice selectors;
+- tests or focused validation logs;
+- operational docs only if release truth changes.
+
+Validation:
+
+- local state persists across restart;
+- removing from practice or unsaving updates Home/Practice surfaces;
+- no shelf appears as a dead empty promise on first launch;
+- all stored IDs are canonical page/phrase IDs or explicit aliases.
+
+### Follow-up: Practice validation and release-readiness pass
 
 Outcome: Validate practice data, audio, navigation, local progress, simulator behavior, and device-proof checklist before any go-live claim.
 

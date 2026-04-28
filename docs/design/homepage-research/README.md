@@ -10,12 +10,15 @@ Build Home as **Start Speaking Now with graph-backed discovery shelves**.
 
 The first real Home screen should not be a marketing page, a course dashboard, or a generic phrase list. It should answer one traveler question immediately: "What can I tap right now to say something useful in Vietnam?" Then it should make the phrase graph visible through calm shelves: situations, local relationship words, authored "Different ways to say..." pages, saved/recent items, and eventually short practice.
 
+Home should have two honest states. On first launch, there is no local user state, so Home starts with curated essentials, search, and traveler-task shelves. Once the user saves, opens, practices, misses, or adds phrases to practice, that local state becomes a high-signal ranking input for Home, Explore shelves, category rows, and Practice entry.
+
 Primary direction:
 
 1. Lead with immediate utility: country identity, search, and a short "Use now" strip.
 2. Use shelves to expose the graph without explaining the graph: situations, relationship words, useful next phrases, and featured authored pages.
 3. Keep the existing bottom search island central. Search is a product promise, not an afterthought.
 4. Let practice and mascot progression appear only when they help the traveler rehearse a real phrase page. Do not make Home depend on streaks, XP, leagues, or daily pressure.
+5. Treat saved phrases and practice-selected phrases as stronger intent than passive recency; use them before generic global ordering when local state exists.
 
 ## First Viewport
 
@@ -45,7 +48,7 @@ Recommended first viewport on first launch:
 4. **Next row hint**
    - The top edge of the next shelf should be visible below the fold. The page should feel like there is useful content below without becoming busy.
 
-If saved/recent data exists, the first viewport can replace one "Use now" card with "Continue: [last phrase page]". If there is no local state yet, do not show empty state copy in the first viewport.
+If saved/recent/practice-pool data exists, the first viewport can replace one "Use now" card with a concrete continuation such as "Continue: [last phrase page]" or "Practice: [saved phrase]". If there is no local state yet, do not show empty state copy in the first viewport.
 
 ## Alternatives Compared
 
@@ -169,27 +172,32 @@ Design notes:
 - Speaker icons are promises. If audio lookup fails, omit the speaker and create an audio audit follow-up.
 - Keep emergency/health cards visually calm. No mascot cheer states.
 
-### 4. Continue, Saved, And Recent
+### 4. Continue, Saved, Recent, And Practice Pool
 
 Job:
 
 - Bring the user back to the phrase pages they actually care about.
+- Treat explicit saved and practice-pool phrases as the strongest local intent signal.
 
 Data source:
 
 - V1 local app state can store canonical page IDs for recent and saved pages.
+- V1 local app state should also store practice-selected canonical phrase/page IDs once `Add to practice` exists.
 - V2 should use SQLite canonical page IDs and aliases so old family IDs do not create duplicate pages.
 
 V1 recommendation:
 
 - Ship "Continue" only if a local recent page exists.
 - Ship "Saved" only after save/unsave exists. Do not show a dead saved shelf.
+- Ship "My practice phrases" only after add/remove practice-pool state exists.
 - Use page title, English title, category icon, and last action such as "Played audio" or "Opened from Search" if that data exists.
 
 Design notes:
 
 - Keep this shelf near the top for returning users.
 - For first launch, replace it with "Start with essentials".
+- If multiple local signals exist, rank practice-selected and saved phrases before recent-only pages.
+- Do not frame missed/due items as failure. Use calm copy such as "Review what you practiced" or "Practice from your saved phrases."
 
 ### 5. Situation Shelves
 
@@ -308,9 +316,11 @@ V1 recommendation:
 
 - Do not ship a Home practice module until the practice design and deck generation are accepted.
 - When ready, start with:
+  - "My practice phrases" from the local practice pool.
   - "Practice this page" from listing pages.
   - "Review missed" only after local missed state exists.
   - "Listen and choose" as the most Home-friendly entry.
+  - Saved/recent practice suggestions only after those local state tables exist.
 
 Design notes:
 
@@ -318,7 +328,39 @@ Design notes:
 - Avoid streak pressure, hearts, leaderboards, daily guilt, and mystery XP.
 - Mascot can appear as a restrained hint/guide only after the mascot lane has real assets and tone rules.
 
-### 9. Browse All
+### 9. Personalized Recommendations
+
+Job:
+
+- Use local intent to suggest the next useful phrase without making Home feel like a course dashboard.
+
+Data source:
+
+- Local user state: saved page/phrase IDs, practice-pool phrase IDs, recent page IDs, practiced/missed prompt IDs, last practiced timestamps, and last selected practice filters.
+- Bundled graph data: canonical phrase pages, scenarios, phrase clusters, relation edges, page sections, and audio eligibility.
+
+Ranking rule:
+
+1. Start with explicit state: practice-selected phrases and saved phrases.
+2. Add due/missed practice items when the shelf is clearly a practice/review shelf.
+3. Add recent pages for continuation and nearby suggestions.
+4. Expand deterministically through graph-nearby phrases: same scenario, relationship family, phrase cluster, likely reply, next-step, repair, or escalation edge.
+5. Fall back to curated essentials when local state is empty.
+
+Suggested shelf copy:
+
+- "Because you practiced hotel check-in"
+- "From your saved phrases"
+- "Next after asking for the bathroom"
+- "Review what you practiced"
+
+Design notes:
+
+- Keep recommendation rows calm and specific. Do not use daily guilt, streak pressure, or algorithmic mystery copy.
+- Never imply cloud personalization or remote AI; these are local offline suggestions from saved/practiced/recent IDs plus the bundled phrase graph.
+- If the source phrase has no safe graph-nearby candidate, show the source page or a curated essential instead of inventing a recommendation.
+
+### 10. Browse All
 
 Job:
 
@@ -341,7 +383,7 @@ Home should encourage useful clicks by showing real next actions, not by manufac
 Use:
 
 - immediate playable phrases;
-- recent/saved return paths;
+- recent/saved/practice-pool return paths;
 - category shelves based on travel situations;
 - relationship-word cards that answer a clear social question;
 - "Explore next" style links from authored pages;
@@ -405,6 +447,7 @@ Liquid Glass handoff:
 - Featured authored listing pages from Tier 1 inventory.
 - Browse all categories.
 - Local recent page IDs if quick to implement; otherwise omit until persistence exists.
+- Saved and practice-pool shelves only if matching local persistence and add/remove UX exist before live.
 
 ### Wait For SQLite Graph Runtime
 
@@ -414,6 +457,7 @@ Liquid Glass handoff:
 - Search ranking from SQLite FTS/search documents.
 - Relationship clusters beyond the current greeting pages.
 - Practice decks seeded directly from canonical phrase/page/audio IDs.
+- Graph-nearby personalized shelves beyond simple scenario/category neighbors.
 
 T-163 has generated `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite` and a report with `919` canonical phrase pages, but `native-ios/project.yml` does not bundle `LanguagePacks` yet. Home V1 should not assume `Bundle.main` can open the SQLite fixture.
 
@@ -438,21 +482,24 @@ Suggested later SwiftUI task:
 6. Reuse `AccentTint` and current symbol names from scenarios.
 7. Keep search integration aligned with `SearchPageView` and the bottom chrome morph.
 8. Store recent/saved as canonical page IDs so the future alias layer can migrate cleanly.
-9. Do not edit generated JSON resources by hand for Home. Build data selectors over current resources.
-10. Do not add runtime AI/network calls.
+9. Store practice-pool additions as canonical phrase/page IDs, separate from bundled phrase graph data.
+10. Rank Home rows with deterministic local rules: saved/practice-selected, due/missed practice, recent, graph-nearby, then curated essentials.
+11. Do not edit generated JSON resources by hand for Home. Build data selectors over current resources.
+12. Do not add runtime AI/network calls.
 
 Recommended follow-up tasks:
 
 1. Implement native `HomeView` V1 with search, use-now, situations, relationship shelf, and featured authored pages.
-2. Add local recent/saved page ID persistence and Home shelves.
+2. Add local recent/saved/practice-pool page and phrase ID persistence, then expose only the Home shelves backed by real state.
 3. Add XcodeGen resource rules for `Resources/LanguagePacks/**`, then build a debug-gated SQLite repository spike.
-4. After practice concept acceptance, create a practice deck generator and Home practice entry.
+4. After the separate practice deck generator and native Practice UI entrypoint tasks land, add only the Home-facing practice entry that consumes their accepted local state and deck outputs.
 5. Audit relationship greeting pages/audio into the SQLite graph so `anh`, `chị`, `em`, `ông`, `bà`, `chú`, `cô`, and `bạn` become data-driven shelves.
 
 ## Risks
 
 - **Overcrowding:** Home can become a pile of shelves. Keep V1 to search, use-now, situations, relationships, featured pages, and browse.
 - **False data promises:** Do not show saved/recent/practice/mascot modules before the runtime state/assets exist.
+- **Personalization opacity:** Recommendations should name their source, such as saved, practiced, or recently opened, instead of implying a remote algorithm.
 - **Duplicate routing:** Relationship and authored rows must route to one canonical page ID. The SQLite report still flags six duplicate normalized target-text groups for later audit.
 - **Search weakness:** If search results remain limited to current in-memory indexes, Home must compensate with strong curated cards until SQLite search is bundled.
 - **Tone drift:** Mascot/progress should not make serious travel moments playful.
@@ -463,7 +510,7 @@ Recommended follow-up tasks:
 Home should be the shortest path to a useful phrase and the calm front door into the phrase graph. It should route search, immediate phrase cards, category shelves, relationship cards, and authored article entries to canonical phrase pages.
 
 **How should Home balance immediate utility, exploration, search, browse, saved/recent, practice, and mascot progress?**
-Immediate utility and search lead. Exploration follows through shelves. Saved/recent appears when local state exists. Practice appears only after deck design and local progress exist. Mascot progress waits until there is a real mascot asset/tone system.
+Immediate utility and search lead on first launch. Exploration follows through shelves. Saved, recent, and practice-pool surfaces appear only when local state exists, with saved and practice-selected phrases ranked ahead of passive recency. Practice appears only after deck design, local state, and prompt generation exist. Mascot progress waits until there is a real mascot asset/tone system.
 
 **What belongs in the first viewport?**
 Vietnam identity, search prompt, 3 to 5 use-now phrases, and a visible hint of the first shelf below.
@@ -481,4 +528,4 @@ Feature a few authored Tier 1 pages as editorial utility cards with phrase chips
 Borrow stable bottom navigation/search, visible search suggestions, compact discovery shelves, and content moving under functional glass chrome. Avoid marketing hero pages, overloaded tab bars, hidden search, heavy gamification, and cards that are decorative rather than actionable.
 
 **What current assets/data are ready for Home today, and what requires SQLite graph or practice work first?**
-Ready today: 18 scenarios, 900 families, 919 catalog phrases, 163 authored listing pages, 150 Tier 1 inventory target, local greeting relationship pages, 3,756 audio manifest entries, and 2,427 MP3 assets. Requires later work: bundled SQLite runtime, full graph-driven shelves, robust alias/dedup routing, saved/recent persistence if not already present, practice decks, mascot assets, and practice progress.
+Ready today: 18 scenarios, 900 families, 919 catalog phrases, 163 authored listing pages, 150 Tier 1 inventory target, local greeting relationship pages, 3,756 audio manifest entries, and 2,427 MP3 assets. Requires later work: bundled SQLite runtime, full graph-driven shelves, robust alias/dedup routing, saved/recent/practice-pool persistence if not already present, practice decks, mascot assets, and practice progress.

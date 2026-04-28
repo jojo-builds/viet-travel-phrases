@@ -10,6 +10,8 @@ Primary direction: **Glass Rehearsal Deck**.
 
 This should be the first native Practice shape because it fits the current app instead of competing with it. The session feels like the `Xin chào` article page becoming interactive for a few minutes: stable glass chrome, a readable white prompt surface, speaker-first Vietnamese recognition, phrase-choice recall, calm feedback, and a clear way back to the source listing page. It supports every MVP mode without needing a full game map, accounts, timers, or a noisy reward economy.
 
+Accepted product steer: practice starts from phrases the user cares about. Phrase pages and eligible phrase rows should expose `Add to practice`; the Practice hub should include `My practice phrases` as a source/filter; users need an obvious way to manage and remove selected practice phrases; and every generated prompt should target a selected phrase, row, relation, or breakdown token rather than using that phrase as decorative context.
+
 Fallback / alternate direction: **Market Mission**.
 
 Use this when Jojo wants a stronger scenario wrapper for Home and Search/Browse entry. It turns decks into travel moments like hotel desk, taxi, food, airport, and market. It is more memorable than plain cards, but it needs careful restraint so it does not drift into a separate game shell.
@@ -72,10 +74,38 @@ Current reality that shaped the packet:
 - Sessions should be short: 3 to 5 prompts for a page and about 5 prompts for a deck.
 - Feedback should explain the travel cue without punitive copy.
 - Progress should mean readiness, coverage, confidence, and local familiarity.
+- Saved phrases, practice-selected phrases, recently opened pages, practiced items, and missed items are local user intent signals. They should shape deck suggestions and Home/Explore surfaces once state exists.
 - The chameleon is a calm guide, not a mascot that takes over the learning loop.
 - Health, emergency, police, money dispute, and safety prompts should use minimal or no mascot presence.
 - Every prompt must require Vietnamese language recognition or Vietnamese phrase choice. Avoid travel-common-sense questions where the user can answer without reading or listening to Vietnamese.
 - Answer choices should show Vietnamese first. Do not reveal English translations under every option before selection; show English and explanation after the user answers.
+
+## Accepted Practice Personalization Contract
+
+Practice is not a separate quiz database. It is a phrase-page rehearsal layer over the same canonical graph the user browses.
+
+Required interaction model:
+
+- Phrase pages expose `Add to practice` for the hero phrase.
+- Eligible phrase rows expose `Add to practice` when they have canonical phrase identity and resolved practice/audio eligibility.
+- The Practice hub includes `My practice phrases` as a first-class source/filter alongside `This page`, `Saved`, `Recent`, `Category`, `Pronouns`, and `Review missed`.
+- Users can manage and remove selected practice phrases without returning to each source page.
+- A phrase page already in the pool shows selected state and a remove/manage path.
+- `Practice this page` creates a short source-page deck without automatically adding the whole page to the user's practice pool unless the user chooses that.
+
+Prompt contract:
+
+- The selected phrase, phrase row, relation target, or breakdown token is always the correct-answer target.
+- Distractors come from graph-nearby phrases when possible: same scenario, relationship family, phrase cluster, phrase shape, likely reply, next-step, or repair path.
+- Feedback returns to the source phrase/page/section that taught the distinction.
+- Saved, recent, practiced, missed, and practice-pool signals can rank decks and suggestions, but runtime generation remains offline and deterministic.
+
+Home and Explore implications:
+
+- First launch should show curated essentials because no local state exists yet.
+- Once state exists, saved and practice-selected phrases outrank passive recency.
+- "Because you practiced..." shelves are acceptable when calm, specific, and graph-backed.
+- Empty saved/practice shelves should not appear before the user has created that state.
 
 ## Concept 1: Glass Rehearsal Deck
 
@@ -102,9 +132,10 @@ Question types supported:
 Entry points:
 
 - Home: `Practice` quick-access card with due missed count and starter deck.
-- Search/Browse: category rows can show `Practice 5`.
-- Saved: saved/recent deck after local progress exists.
-- Listing page: `Practice this page` near the hero/player or after the first phrase section.
+- Search/Browse: category rows can show `Practice 5` and eligible phrase rows can offer `Add to practice`.
+- Saved: saved/recent deck after local saved/recent state exists.
+- Practice: `My practice phrases` for the user's selected local pool, with manage/remove.
+- Listing page: `Practice this page` near the hero/player or after the first phrase section, plus `Add to practice` for the hero phrase.
 
 Reward/progress model:
 
@@ -292,14 +323,15 @@ Fit with SpeakLocal:
 
 ## Practice User Flow
 
-1. Deck selection: user chooses `This page`, `Starter essentials`, a category, `Pronoun Coach`, or `Review missed`.
-2. Prompt screen: one clear language task with a speaker control when audio is available.
-3. Answer selection: options show Vietnamese first, are large/readable, and wrap naturally.
-4. Feedback/explanation: English meaning, correct phrase, and one phrase-page cue expand after the answer.
-5. Reward/progress moment: progress strip advances; chameleon gains a subtle motif detail outside the answer area.
-6. Next prompt: user advances manually; no timer.
-7. Completion: summary says what is now more familiar, what to review, and what source page to reopen.
-8. Return or continue: `Open source page`, `Review missed`, or `Keep going`.
+1. Phrase selection: from a page or phrase row, the user can add/remove a phrase in the local practice pool.
+2. Deck selection: user chooses `My practice phrases`, `This page`, `Saved`, `Recent`, `Starter essentials`, a category, `Pronoun Coach`, or `Review missed`.
+3. Prompt screen: one clear language task with a speaker control when audio is available.
+4. Answer selection: options show Vietnamese first, are large/readable, and wrap naturally.
+5. Feedback/explanation: English meaning, correct phrase, and one phrase-page cue expand after the answer.
+6. Reward/progress moment: progress strip advances; chameleon gains a subtle motif detail outside the answer area.
+7. Next prompt: user advances manually; no timer.
+8. Completion: summary says what is now more familiar, what to review, and what source page to reopen.
+9. Return or continue: `Open source page`, `Review missed`, `Manage practice phrases`, or `Keep going`.
 
 ## Chameleon Mascot Progression
 
@@ -406,7 +438,7 @@ Likely data dependencies:
 - Generated deterministic practice decks.
 - Practice-specific audio audit.
 - Source page/family/phrase IDs resolved against authored listing pages.
-- Local-only progress state with `seenCount`, `correctStreak`, `missedCount`, `lastSeenAt`, `nextDueAt`, and source IDs.
+- Local-only saved/recent/practice-pool/progress state with selected phrase IDs, saved page IDs, recent canonical page IDs, `seenCount`, `correctStreak`, `missedCount`, `lastSeenAt`, `nextDueAt`, and source IDs.
 
 Native implementation notes:
 
@@ -417,5 +449,6 @@ Native implementation notes:
 - Keep quiz choices language-first: Vietnamese visible before selection; English meaning and explanation revealed only after selection.
 - Keep real audio controls wired through `AudioAssetManifest`; if an audio key is unresolved, do not show a speaker icon.
 - Source-page return should route through the existing canonical page graph.
+- `Add to practice`, saved, recent, and missed state should store canonical phrase/page IDs so future SQLite aliases do not fork user history.
 - Mascot integration should be optional per prompt and suppressed for serious contexts.
 - Pronoun Coach production prompts should source the first release from authored pages such as `viet-how-are-you`, where `Chị khỏe không?` and nearby relationship forms are explicit. Do not promote unanchored greeting variants into practice until their source page/section IDs resolve.
