@@ -1,0 +1,60 @@
+{
+  "taskId": "T-165",
+  "title": "Bundle Viet SQLite fixture and add Swift read-only repository spike",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 180,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "sqlite_swift_read_path",
+      "native_ios_language_pack_resource_packaging",
+      "agent_task_T-165"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-165/result.md",
+    "recoveryNotes": ".agent/tasks/T-165/recovery-notes.md",
+    "reviews": ".agent/tasks/T-165/reviews/",
+    "logs": ".agent/tasks/T-165/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-165/result.md",
+      ".agent/tasks/T-165/state.json",
+      "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite"
+    ]
+  },
+  "lastUpdated": "2026-04-29T02:55:00+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "90-180",
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 14,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}
