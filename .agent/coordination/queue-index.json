@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T03:43:12.061922+07:00",
+  "updatedAt": "2026-04-29T04:11:45.349938+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -14,7 +14,15 @@
   },
   "groups": {
     "reclaimable": [],
-    "queued": [],
+    "queued": [
+      {
+        "taskId": "T-167",
+        "title": "Implement Native Home V1 And Local User Intent State",
+        "state": ".agent\\tasks\\T-167\\state.json",
+        "selectionOrder": 16,
+        "writeLock": "native_home_v1_local_intent_state"
+      }
+    ],
     "in_progress": [],
     "blocked": [
       {
@@ -669,7 +677,7 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 0,
+    "queuedCount": 1,
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,

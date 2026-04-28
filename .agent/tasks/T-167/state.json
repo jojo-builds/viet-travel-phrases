@@ -1,0 +1,59 @@
+{
+  "taskId": "T-167",
+  "title": "Implement Native Home V1 And Local User Intent State",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 180,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "native_home_v1_local_intent_state",
+      "agent_task_T-167"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-167/result.md",
+    "recoveryNotes": ".agent/tasks/T-167/recovery-notes.md",
+    "reviews": ".agent/tasks/T-167/reviews/",
+    "logs": ".agent/tasks/T-167/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-167/result.md",
+      ".agent/tasks/T-167/state.json",
+      "native-ios/App/Views/AppShellView.swift"
+    ]
+  },
+  "lastUpdated": "2026-04-29T04:07:55+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "90-180",
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 16,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}
