@@ -23,6 +23,7 @@ Read, in order:
 
 Manual-task flow:
 - the user-supplied task id is authoritative
+- when using `.agent/queue_tool.py` to claim a meaningful task, run it with `SPEAKLOCAL_REVIEW_RUNTIME=subagents` in the command environment because this lane requires reviewer-subagent capability before claim
 - do not auto-pick from `.agent/coordination/queue-index.json`
 - you may read `queue-index.json` only to confirm the task exists or to mirror metadata, not to choose a different task
 - read the assigned task's live `state.json` and `spec.md`

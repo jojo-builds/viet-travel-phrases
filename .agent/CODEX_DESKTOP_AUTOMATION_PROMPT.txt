@@ -15,6 +15,7 @@ Read, in order:
 
 Queue flow:
 - confirm this worker exposes a callable `functions.spawn_agent`
+- when using `.agent/queue_tool.py claim-next` for meaningful tasks, run it with `SPEAKLOCAL_REVIEW_RUNTIME=subagents` in the command environment because this lane requires reviewer-subagent capability before claim
 - use `.agent/coordination/queue-index.json` only as a shortlist: try `reclaimable`, then `queued`; for each candidate, read live `state.json`, skip stale entries, claim by direct `state.json` patch, and re-read immediately to confirm ownership
 - if no candidate can be claimed, stop honestly instead of looping
 

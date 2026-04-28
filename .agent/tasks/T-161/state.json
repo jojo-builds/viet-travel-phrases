@@ -1,0 +1,58 @@
+{
+  "taskId": "T-161",
+  "title": "Implement parallel-safe queue claiming and worker lane contract",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 180,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "queue_parallel_claim_safety",
+      "agent_task_T-161"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-161/result.md",
+    "recoveryNotes": ".agent/tasks/T-161/recovery-notes.md",
+    "reviews": ".agent/tasks/T-161/reviews/",
+    "logs": ".agent/tasks/T-161/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-161/result.md",
+      ".agent/tasks/T-161/state.json"
+    ]
+  },
+  "lastUpdated": "2026-04-29T00:14:57+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "60-180",
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 1,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}
