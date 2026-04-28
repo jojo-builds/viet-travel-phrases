@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T01:22:03.328560+07:00",
+  "updatedAt": "2026-04-29T01:45:56.019407+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -16,6 +16,15 @@
     "reclaimable": [],
     "queued": [
       {
+        "taskId": "T-163",
+        "title": "Build SQLite schema and Viet fixture generator",
+        "state": ".agent\\tasks\\T-163\\state.json",
+        "selectionOrder": 12,
+        "writeLock": "sqlite_viet_fixture_generator"
+      }
+    ],
+    "in_progress": [
+      {
         "taskId": "T-162",
         "title": "Design practice quiz visual concepts, prototype, and chameleon mascot progression",
         "state": ".agent\\tasks\\T-162\\state.json",
@@ -23,7 +32,6 @@
         "writeLock": "practice_quiz_visual_design"
       }
     ],
-    "in_progress": [],
     "blocked": [
       {
         "taskId": "T-148",
@@ -644,7 +652,7 @@
   "stats": {
     "queuedCount": 1,
     "reclaimableCount": 0,
-    "inProgressCount": 0,
+    "inProgressCount": 1,
     "blockedCount": 15,
     "draftCount": 2,
     "recentlyCompletedCount": 70
