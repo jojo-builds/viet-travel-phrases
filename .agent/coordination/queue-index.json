@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T00:40:52.299979+07:00",
+  "updatedAt": "2026-04-29T01:08:48.921403+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -16,6 +16,15 @@
     "reclaimable": [],
     "queued": [
       {
+        "taskId": "T-162",
+        "title": "Design practice quiz visual concepts and chameleon mascot progression",
+        "state": ".agent\\tasks\\T-162\\state.json",
+        "selectionOrder": 11,
+        "writeLock": "practice_quiz_visual_design"
+      }
+    ],
+    "in_progress": [
+      {
         "taskId": "T-160",
         "title": "Design offline SQLite phrase graph and canonical phrase-page model",
         "state": ".agent\\tasks\\T-160\\state.json",
@@ -23,7 +32,6 @@
         "writeLock": "sqlite_phrase_graph_design"
       }
     ],
-    "in_progress": [],
     "blocked": [
       {
         "taskId": "T-148",
@@ -637,7 +645,7 @@
   "stats": {
     "queuedCount": 1,
     "reclaimableCount": 0,
-    "inProgressCount": 0,
+    "inProgressCount": 1,
     "blockedCount": 15,
     "draftCount": 2,
     "recentlyCompletedCount": 69

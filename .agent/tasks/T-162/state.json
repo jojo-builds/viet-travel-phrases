@@ -1,0 +1,59 @@
+{
+  "taskId": "T-162",
+  "title": "Design practice quiz visual concepts and chameleon mascot progression",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "session": {
+    "owner": "",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 180,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "practice_quiz_visual_design",
+      "agent_task_T-162"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-162/result.md",
+    "recoveryNotes": ".agent/tasks/T-162/recovery-notes.md",
+    "reviews": ".agent/tasks/T-162/reviews/",
+    "logs": ".agent/tasks/T-162/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-162/result.md",
+      ".agent/tasks/T-162/state.json",
+      "docs/design/practice-quiz-concepts/"
+    ]
+  },
+  "lastUpdated": "2026-04-29T01:01:29+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "90-180",
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 11,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}
