@@ -1,22 +1,22 @@
 {
   "taskId": "T-164",
   "title": "Research and design SpeakLocal homepage strategy",
-  "status": "queued",
-  "phase": "queued-for-desktop-codex",
+  "status": "done",
+  "phase": "completed",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "session": {
     "owner": "codex-desktop-automation",
-    "sessionId": "",
-    "label": ""
+    "sessionId": "c20de32c-447d-412e-986e-a3af4dc7d1d4",
+    "label": "automation-speaklocal-queue-worker-20260428T193931Z"
   },
   "execution": {
-    "attempt": 0,
-    "claimedAt": "",
-    "lastHeartbeatAt": "",
+    "attempt": 1,
+    "claimedAt": "2026-04-29T02:39:31.626464+07:00",
+    "lastHeartbeatAt": "2026-04-29T03:02:30.888260+07:00",
     "heartbeatEveryMinutes": 10,
-    "leaseDurationMinutes": 180,
-    "leaseExpiresAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-29T03:02:30.888260+07:00",
     "reclaimReason": ""
   },
   "locks": {
@@ -42,7 +42,7 @@
       "docs/design/homepage-research/README.md"
     ]
   },
-  "lastUpdated": "2026-04-29T02:35:00+07:00",
+  "lastUpdated": "2026-04-29T03:02:30.888260+07:00",
   "automation": {
     "runner": "desktop-codex",
     "mode": "single-task",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T02:30:14.627212+07:00",
+  "updatedAt": "2026-04-29T03:03:56.944410+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -16,11 +16,11 @@
     "reclaimable": [],
     "queued": [
       {
-        "taskId": "T-164",
-        "title": "Research and design SpeakLocal homepage strategy",
-        "state": ".agent\\tasks\\T-164\\state.json",
-        "selectionOrder": 13,
-        "writeLock": "homepage_research_design"
+        "taskId": "T-165",
+        "title": "Bundle Viet SQLite fixture and add Swift read-only repository spike",
+        "state": ".agent\\tasks\\T-165\\state.json",
+        "selectionOrder": 14,
+        "writeLock": "sqlite_swift_read_path"
       }
     ],
     "in_progress": [
@@ -156,6 +156,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-164",
+        "title": "Research and design SpeakLocal homepage strategy",
+        "state": ".agent\\tasks\\T-164\\state.json",
+        "selectionOrder": 13,
+        "writeLock": "homepage_research_design"
+      },
       {
         "taskId": "T-163",
         "title": "Build SQLite schema and Viet fixture generator",
@@ -662,7 +669,7 @@
     "inProgressCount": 1,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 71
+    "recentlyCompletedCount": 72
   },
   "notes": [
     "This index is intentionally small and selection-focused.",
