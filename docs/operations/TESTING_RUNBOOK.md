@@ -1,6 +1,6 @@
 # Testing Runbook
 
-Last updated: 2026-04-21
+Last updated: 2026-04-28
 Authority lane: live app operational truth
 
 ## Use this doc for
@@ -15,8 +15,10 @@ Truth-sync note: this `2026-04-21` refresh did not add new build or device evide
 
 ## Working directories
 
-- Canonical repo root: `E:\AI\SpeakLocal-App-Family`
-- Preferred app root: `E:\AI\SpeakLocal-App-Family\app`
+- Canonical Mac repo root: `/Users/jojolim/Developer/products/speaklocal/app-family`
+- Preferred legacy Expo app root: `/Users/jojolim/Developer/products/speaklocal/app-family/app`
+- Preferred native iOS app root: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
+- Legacy Windows root retained for archive/migration lookup only: `E:\AI\SpeakLocal-App-Family`
 
 ## Codex app preview loop
 
@@ -46,7 +48,7 @@ Notes:
 
 ## Current local validation commands
 
-From `E:\AI\SpeakLocal-App-Family\app`:
+From `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
 
 1. `npm run build:viet-pack`
 2. `npm run build:tagalog-pack`
@@ -67,10 +69,10 @@ From `E:\AI\SpeakLocal-App-Family\app`:
 
 ## Private phone preview for live UI passes
 
-From `E:\AI\SpeakLocal-App-Family\app`:
+From `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
 
 1. Start the authenticated Expo web lane:
-   - `cmd.exe /c "set EXPO_PUBLIC_APP_VARIANT=viet&& set BROWSER=none&& npx expo start --web --port 19008 --clear"`
+   - `EXPO_PUBLIC_APP_VARIANT=viet BROWSER=none npx expo start --web --port 19008 --clear`
 2. Sign into `https://dashboard.jayopsai.com`
 3. Open:
    - `https://dashboard.jayopsai.com/design/viet`
@@ -82,10 +84,10 @@ Notes:
 - Use `/design-live/<preset>` routes when you need deterministic real-app states like search results, saved-filled, premium-unlocked, or scenario-locked instead of tapping through the app by hand.
 - If the frame ever stalls after a larger change, use the canvas `Reload frame` button before treating the route as broken.
 
-Optional screenshot verification from `E:\AI\SpeakLocal-App-Family\app`:
+Optional screenshot verification from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
 
 1. Set dashboard auth in the shell if you are targeting the hosted domain:
-   - `$env:DASHBOARD_AUTH_TOKEN='<dashboard token>'`
+   - `export DASHBOARD_AUTH_TOKEN='<dashboard token>'`
 2. Capture the exact hosted canvas state:
    - `npm run capture:design -- --dashboard-url https://dashboard.jayopsai.com --route /design-live/home-search-results --device iphone-15-pro`
 
@@ -143,35 +145,35 @@ When a task edits the richer website bundle under `site/`, also validate:
    - `site/public/data/phrase-previews/manifest.json`
    - no stale source-unbacked preview JSON files
    - manifest and module JSON shape stays valid for the website-safe phrase/audio seam
-4. run the repo validator from `E:\AI\SpeakLocal-App-Family`:
-   - `powershell -ExecutionPolicy Bypass -File .\scripts\website\Test-SpeakLocalWebsiteArtifact.ps1`
+4. run the repo validator from `/Users/jojolim/Developer/products/speaklocal/app-family`:
+   - `pwsh -NoProfile -File ./scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`
 5. manual smoke on the pages actually changed before calling the website pass complete
    - confirm the page fetches the exported module JSON over HTTP rather than relying on hardcoded phrase markup
 
 ## Website staging-first publish flow
 
-From `E:\AI\SpeakLocal-App-Family`:
+From `/Users/jojolim/Developer/products/speaklocal/app-family`:
 
 1. Edit `site/`
-2. If preview data changed, regenerate it from `app\`:
+2. If preview data changed, regenerate it from `app/`:
    - `npm run export:website-previews`
 3. Validate the artifact:
-   - `powershell -ExecutionPolicy Bypass -File .\scripts\website\Test-SpeakLocalWebsiteArtifact.ps1`
+   - `pwsh -NoProfile -File ./scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`
 4. Review the working artifact locally:
-   - `py -m http.server 4173 --directory site`
+   - `python3 -m http.server 4173 --directory site`
    - review `http://127.0.0.1:4173/`
 5. Publish the reviewed bytes to staging:
-   - `powershell -ExecutionPolicy Bypass -File .\scripts\website\Publish-SpeakLocalWebsiteStaging.ps1`
+   - `pwsh -NoProfile -File ./scripts/website/Publish-SpeakLocalWebsiteStaging.ps1`
 6. Review the real staging surface:
    - `http://speaklocal.app:8081/`
    - fallback: `http://38.247.143.2:8081/`
    - inspect `/__deployment.json` if you need to confirm which artifact is staged
 7. Promote only after signoff:
-   - `powershell -ExecutionPolicy Bypass -File .\scripts\website\Promote-SpeakLocalWebsiteLive.ps1`
+   - `pwsh -NoProfile -File ./scripts/website/Promote-SpeakLocalWebsiteLive.ps1`
 8. Verify live:
    - `https://speaklocal.app/`
    - `https://www.speaklocal.app/`
-9. Roll back from the latest live backup under `E:\AI\Shared\Backups\speaklocal-site\` if a promotion needs to be undone
+9. Roll back from the latest live backup noted in the deployment handoff if a promotion needs to be undone
 
 ## Exact next Viet iPhone validation pass
 

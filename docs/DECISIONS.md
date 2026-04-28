@@ -2,10 +2,12 @@
 
 ## Durable repo and product decisions
 
-- `E:\AI\SpeakLocal-App-Family` is the canonical implementation root for the SpeakLocal app family.
-- `app\` remains the canonical shared content/pipeline workspace during the transition, but the long-term ship-facing app-shell direction is now a native SwiftUI/Xcode family shell. Expo is the bridge/reference lane, not the final premium UX destination.
-- `app\family\appRegistry.js` remains the canonical shared runtime/build registry.
-- Hidden Expo web/native preview routes under `app\app\design-preview\*` and `app\app\app-preview-wireframes\*` are the preferred fast visual review surface for UI iteration; they are sidecar review tools, not ship-facing product routes.
+- `/Users/jojolim/Developer/products/speaklocal/app-family` is the canonical Mac implementation root for the SpeakLocal app family.
+- `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios` is the active native iOS app-session root in Codex for SwiftUI/Xcode work.
+- Legacy Windows roots such as `E:\AI\SpeakLocal-App-Family` and `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family` are migration/archive references, not the preferred active workspace.
+- `app/` remains the canonical shared content/pipeline workspace during the transition, but the ship-facing app-shell direction is now a native SwiftUI/Xcode family shell. Expo is the bridge/reference lane, not the final premium UX destination.
+- `app/family/appRegistry.js` remains the canonical shared runtime/build registry.
+- Hidden Expo web/native preview routes under `app/app/design-preview/*` and `app/app/app-preview-wireframes/*` are the preferred fast visual review surface for UI iteration; they are sidecar review tools, not ship-facing product routes.
 - SpeakLocal v2 is being framed as a travel phrasebook, not an academic language-learning app.
 - Current repo naming and pricing direction is now:
   - `SpeakLocal Vietnam`
@@ -105,20 +107,27 @@
   - one active feature branch per major feature or workstream
   - do not advance the same feature on multiple active branches in parallel once a winner is clear
   - when multiple approved features need one paid iPhone test pass, bundle them into a single integration candidate branch/build instead of paying for isolated builds per feature
-- The remaining Windows-server time should be used to harden portable content/model/export seams and design references, not to overinvest in final Expo-only shell polish once the native direction is clear.
+- Windows-server history should now be used only for archive/migration lookup. Current hardening of portable content/model/export seams and design references happens from the Mac repo.
 
 ## Native iOS transition decisions
 
 - SpeakLocal is now committing to a native SwiftUI/Xcode family-shell direction for the premium iOS experience across the app family.
-- The near-term priority before the Mac overlap begins is to harden the phrase database, listing-page answer content, relation graph, audio/export seams, and other portable product truth, not to start speculative Swift implementation on the Windows lane.
-- The first native milestone should prove one reusable family shell plus three flagship surfaces:
+- The Mac/Xcode cutover has happened for day-to-day native work. The active app lane is `native-ios/` on the Mac.
+- The first native milestone should continue proving one reusable family shell plus three flagship surfaces:
   - home
   - dedicated search
   - listing/answer page
 - Native proof should start with `Xin chào` as the flagship greeting page and `I need a doctor` as the flagship urgent-help page.
+- `Xin chào` is the flagship visual/content rhythm for listing pages: strong hero phrase, native player, breakdown, useful variants, relationship/local guidance, follow-ups, cultural note, and Explore next.
+- Tier 1 listing pages should read like offline AI-answer articles for "Different ways to say [phrase] in Vietnam," while staying fully authored and bundled offline.
+- The native chrome direction is static Liquid Glass-style navigation and playback chrome, with page content animating under it rather than moving the chrome layer itself.
+- Search should feel like the bottom search island morphing into the dedicated search field; avoid hard swaps when a native transition is feasible.
+- Back and forward navigation should behave like a browser-style page graph: swipe back/forward is desirable, a forward button may appear when forward history exists, and opening a new route after going back clears forward history.
+- Speaker icons are promises of playable bundled audio. Missing visible audio should be handled through a deduped audio audit/generation queue, not by silently removing expected audio controls.
+- Arrows mean navigation to canonical page IDs. Search, browse, Explore shelves, row links, and variants must resolve to one canonical page per phrase, not duplicate pages.
 - The shared repo remains the single source of truth during the native transition. Do not fork content, relation data, audio manifests, or premium-boundary logic into a separate planning repo.
 - The preferred native transition shape is one shared native family shell that future destination apps inherit, not ten separate app rewrites done independently.
-- Swift/Xcode implementation work should begin only after the Mac server is commissioned and the overlap period is active, so native work happens against the real target toolchain instead of a guessed pre-cutover workflow.
+- `content-draft/viet/listing-pages/**` is the current authored source for the 150 Tier 1 native listing pages, with `native-ios/scripts/generate-authored-tier-one-pages.js` projecting that content into the bundled native JSON resource.
 
 ## Current live Viet boundary decisions
 

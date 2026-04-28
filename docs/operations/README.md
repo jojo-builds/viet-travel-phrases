@@ -14,7 +14,7 @@ Read in this order:
 1. `APP_STATUS.md`
 2. `CURRENT_BLOCKERS.md`
 3. `TESTING_RUNBOOK.md`
-4. `NATIVE_MAC_CUTOVER.md` when the question touches Mac provisioning, Codex carryover, or the native SwiftUI/Xcode transition
+4. `NATIVE_MAC_CUTOVER.md` when the question touches Mac status, Codex carryover, or the native SwiftUI/Xcode transition
 5. `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the exact next Viet operator checklist
 6. `LATEST_VALIDATION.md`
 7. `VARIANT_MATRIX.md`
@@ -28,7 +28,7 @@ Read in this order:
 - `TESTING_RUNBOOK.md`
   - repo-owned build/test sequence, lane split, and repo sync targets
 - `NATIVE_MAC_CUTOVER.md`
-  - native Mac provisioning, Codex continuity, and the staged transition from the current Windows/Expo lane into the native SwiftUI/Xcode lane
+  - native Mac status, Codex continuity, and the transition from the legacy Windows/Expo lane into the native SwiftUI/Xcode lane
 - `VIET_TESTFLIGHT_EXECUTION_PACKET.md`
   - single ordered operator checklist for the next Viet preview/TestFlight/App Store Connect/device-proof lane
 - `LATEST_VALIDATION.md`
@@ -49,13 +49,14 @@ Read in this order:
 Authority notes:
 
 - This folder is the authoritative operational-truth pack for the current live app family.
-- Preferred live app session root:
+- Preferred Mac repo root:
+  - `/Users/jojolim/Developer/products/speaklocal/app-family`
+- Preferred native iOS app-session root:
+  - `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
+- Legacy Windows roots are archive/migration references only:
   - `E:\AI\SpeakLocal-App-Family`
-- Preferred OpenClaw/Codex workspace root:
   - `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
-- Current physical backing repo during transition:
   - `E:\AI\Viet-Travel-Phrases`
-- Compatibility workspace alias during transition:
   - `C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases`
 - Do not answer live operational questions from archived planning roots or older architecture notes when these operational docs cover them.
 - The three older OpenClaw Viet execution docs remain useful historical reference inputs, but they are no longer the primary checklist authority now that this folder carries `VIET_TESTFLIGHT_EXECUTION_PACKET.md`.

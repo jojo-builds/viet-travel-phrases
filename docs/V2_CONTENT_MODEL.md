@@ -193,8 +193,19 @@ Viet:
 - `content-draft/viet/phrase-source.csv`
 - `content-draft/viet/relation-sample-v1.json`
 - `content-draft/viet/relation-authoring-notes.md`
+- `content-draft/viet/listing-pages/_tier-one-index.json` for the current computed 150-page Tier 1 inventory
+- `content-draft/viet/listing-pages/<scenario>/<family-id>.json` for authored offline Tier 1 listing-page articles
 - `content-draft/viet/premium-expansion/` for future lane scaffolds and promoted-live historical manifests
 - `content-draft/viet/website-preview.json` for article-module selection and ordering only
+
+Viet Tier 1 listing-page quality standard:
+
+- Use the installed `speaklocal-listing-pages` skill for authoring and review.
+- Pages should feel like thoughtful offline answers to "Different ways to say [phrase] in Vietnam."
+- Each page should carry phrase-specific explanation, useful variants, tone/register guidance, local/cultural notes or watch-outs, canonical links, and audio-backed rows.
+- Avoid visible internal terms such as `repair` when they are not traveler-friendly; for example, use "When You Don't Understand" in UI copy instead of "Understanding Repair."
+- Runtime remains offline. AI-style means editorial structure and usefulness, not runtime AI calls.
+- Speaker icons imply bundled audio or a missing-audio audit item; exact normalized audio should be reused before generating new files.
 
 Tagalog prep sample:
 
@@ -207,6 +218,17 @@ Tagalog prep sample:
 Generated runtime output:
 
 - `app/family/packs/viet.generated.ts`
+- `native-ios/Resources/viet-phrase-catalog.json`
+- `native-ios/Resources/viet-authored-listing-pages.json`
+- `native-ios/Resources/viet-audio-manifest.json`
+- `native-ios/Resources/viet-authored-audio-audit.json`
+
+Native generation scripts:
+
+- `native-ios/scripts/generate-viet-catalog.js`
+- `native-ios/scripts/generate-authored-tier-one-pages.js`
+- `native-ios/scripts/sync-viet-audio.js`
+- `native-ios/scripts/generate-breakdown-audio-elevenlabs.js`
 
 Website export output:
 

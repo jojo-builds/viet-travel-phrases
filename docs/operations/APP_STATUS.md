@@ -1,6 +1,6 @@
 # App Status
 
-Last updated: 2026-04-21
+Last updated: 2026-04-28
 Authority lane: live app operational truth
 
 ## Live app status
@@ -13,16 +13,19 @@ Authority lane: live app operational truth
 
 ## Authority paths
 
-- Canonical session root: `E:\AI\SpeakLocal-App-Family`
-- Canonical workspace path: `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
-- Compatibility alias still present during transition: `E:\AI\Viet-Travel-Phrases`
-- Current live app code root for commands below: `E:\AI\SpeakLocal-App-Family\app`
-
+- Canonical Mac repo root: `/Users/jojolim/Developer/products/speaklocal/app-family`
+- Native iOS app-session root: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
+- Current legacy Expo/live app code root for commands below: `/Users/jojolim/Developer/products/speaklocal/app-family/app`
+- Legacy Windows root retained for archive/migration lookup only: `E:\AI\SpeakLocal-App-Family`
+- Legacy Windows workspace path retained for archive/migration lookup only: `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
+- Legacy compatibility alias retained for archive/migration lookup only: `E:\AI\Viet-Travel-Phrases`
 ## Use this doc for
 
 - current live operational snapshot
 - latest installable artifact and install-lane truth
 - the current ordered handoff path
+
+Use `NATIVE_MAC_CUTOVER.md` and `native-ios/README.md` for current Mac/native app implementation status. This document still describes live/release operational truth and the legacy Expo build/test lane.
 
 Do not use this doc as the literal build or device execution checklist. `TESTING_RUNBOOK.md` owns the repo-side sequence, and `VIET_TESTFLIGHT_EXECUTION_PACKET.md` owns the exact operator checklist for the next real Viet pass.
 
@@ -145,7 +148,7 @@ Use `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the exact six-item return packet. 
 
 This section is summary truth only. For the exact standalone-root commands and evidence package, use `VIET_TESTFLIGHT_EXECUTION_PACKET.md`.
 
-- Canonical `E:\AI\SpeakLocal-App-Family\app` still resolves Viet as `1.0.0 (2)` when inspected through `$env:EXPO_PUBLIC_APP_VARIANT='viet'; npx expo config --json`.
+- The legacy Windows app root previously resolved Viet as `1.0.0 (2)` when inspected through PowerShell/Expo config. Re-check from `/Users/jojolim/Developer/products/speaklocal/app-family/app` before treating that build number as current.
 - The prior successful standalone preview build only became installable because its staged `app.config.js` was bumped to build `3`.
 - The `2026-04-16` staged build lane therefore used:
   - fresh dated standalone root `E:\AI\SpeakLocal-EAS-Build-20260416-viet-preview-r1`

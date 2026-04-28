@@ -38,6 +38,15 @@ Forward progress still matters. Pages should link onward when the next target te
 
 Back behavior is navigation context only. A page may know where the user came from for the current session, but page identity must not depend on that route.
 
+Native iOS navigation implementation note:
+- the native shell should preserve browser-like back and forward history across phrase pages and search
+- swipe back and swipe forward should be available where the route stack supports it
+- if the user goes back and then opens a new page, forward history should clear
+- glass chrome such as the back button, forward button, bottom toolbar, and search island should stay visually stable while page content animates under it
+- the search affordance should feel like the bottom search island morphing into the search page's search field
+- a visible arrow on a phrase row means it opens that phrase's canonical page ID
+- a visible speaker icon means the phrase or token should play bundled audio or be captured by the missing-audio audit
+
 That product direction should be expected to grow the content graph over time. More useful phrase-detail/listing pages will often require additional rows and connected families for shortest forms, clearer forms, polite/service-safe forms, follow-ups, repair branches, and likely next-step phrases.
 
 Completeness therefore means more than "do we have one phrase for this need?"

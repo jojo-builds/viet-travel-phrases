@@ -26,7 +26,9 @@ Current lanes:
 - `japanese` - prep lane
 - `turkish` - prep lane
 
-Primary commands from `E:\AI\SpeakLocal-App-Family\app`:
+Primary commands from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
 
 - `npm run scaffold:language-prep -- --variant <variant> --language "<language>" --country "<country>" --language-code <code> --display-name "<display name>"`
 - `npm run build:pack -- --variant <variant>`
+
+For native Viet Tier 1 listing-page article work, use `viet/listing-pages/**` plus the native generation scripts under `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios/scripts/`.

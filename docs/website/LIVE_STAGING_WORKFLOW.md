@@ -1,12 +1,12 @@
 # Website Live/Staging Workflow
 
-Last updated: 2026-04-15
+Last updated: 2026-04-28
 Status: current truth from repo/docs/local evidence
 
 ## Verified facts
 
 - Live website domain: `https://speaklocal.app/`
-- Canonical local website artifact for this repo: `E:\AI\SpeakLocal-App-Family\site`
+- Canonical local website artifact for this repo on the Mac: `/Users/jojolim/Developer/products/speaklocal/app-family/site`
 - Public staging review URL: `http://speaklocal.app:8081/`
 - Public raw-IP staging fallback: `http://38.247.143.2:8081/`
 - Live Caddy config path: `C:\Users\Administrator\Caddyfile`
@@ -44,21 +44,21 @@ Status: current truth from repo/docs/local evidence
    - current export mirrors into both `site/public/data/phrase-previews/` and direct-serve `site/data/phrase-previews/`
 5. Validate the static bundle locally before calling it ready.
    - from repo root:
-     - `powershell -ExecutionPolicy Bypass -File .\scripts\website\Test-SpeakLocalWebsiteArtifact.ps1`
+     - `pwsh -NoProfile -File ./scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`
    - do not use `file://`
    - local preview:
-     - `py -m http.server 4173 --directory site`
+     - `python3 -m http.server 4173 --directory site`
    - then review `http://127.0.0.1:4173/`
 6. Publish the artifact to the real staging surface.
    - from repo root:
-     - `powershell -ExecutionPolicy Bypass -File .\scripts\website\Publish-SpeakLocalWebsiteStaging.ps1`
+     - `pwsh -NoProfile -File ./scripts/website/Publish-SpeakLocalWebsiteStaging.ps1`
    - review:
      - `http://speaklocal.app:8081/`
      - `http://38.247.143.2:8081/`
    - staging adds `X-Robots-Tag: noindex, nofollow, noarchive` at the host layer so the review lane is not the live SEO lane
 7. Promote the same staged artifact to live only after review signoff.
    - from repo root:
-     - `powershell -ExecutionPolicy Bypass -File .\scripts\website\Promote-SpeakLocalWebsiteLive.ps1`
+     - `pwsh -NoProfile -File ./scripts/website/Promote-SpeakLocalWebsiteLive.ps1`
    - verify:
      - `https://speaklocal.app/`
      - `https://www.speaklocal.app/`

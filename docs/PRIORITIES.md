@@ -5,25 +5,28 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 
 ## Active focus
 
-1. Use the remaining Windows-server time to harden the phrase database, answer-page/listing-page content, relation graph, audio manifests, and export seams that the native app will consume.
-2. Keep the shared repo authoritative and portable so the future native client reads correct product truth instead of rebuilding logic from scratch.
-3. Keep Viet and Tagalog content expansion moving in parallel so the first native app lands on real answer-page data rather than thin mock data.
+1. Continue the native SwiftUI/Xcode app in `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`; this is now the active ship-facing app lane on the Mac.
+2. Keep the shared repo authoritative and portable so the native client reads correct product truth instead of rebuilding logic from scratch.
+3. Finish and keep improving the 150 Tier 1 Viet listing pages as authored offline "Different ways to say [phrase] in Vietnam" article pages using `content-draft/viet/listing-pages/**` and the `speaklocal-listing-pages` skill.
 4. Treat destination-app completeness as a phrase-graph problem: save the real alternate phrasings, relation branches, likely replies, and adjacent next-step phrases for major traveler intents instead of stopping at one visible phrase per page.
-5. Keep audio attached to that phrase graph over time. Newly authored rows may enter with planned audio, but approved traveler-facing rows should stay auditable and move toward full audio coverage rather than silent drift.
-6. Prepare and execute the Mac/Xcode cutover while keeping actual Swift/Xcode implementation deferred until the Mac server is commissioned and the overlap period is active.
-7. Use Expo only as a bridge/reference lane during the transition. Keep design exploration and structural proof moving there, but stop treating Expo shell polish as the final destination once it stops teaching us something.
-8. After the Mac overlap begins, start the first native iOS family shell around the flagship surfaces:
+5. Keep audio attached to that phrase graph. Speaker icons imply bundled audio or an explicit missing-audio audit item; reuse exact normalized audio before generating new ElevenLabs assets.
+6. Tighten native app UX around the flagship surfaces:
    - home
    - dedicated search
    - listing/answer page
-   - prove first with `Xin chào`, then `I need a doctor`
+   - canonical child phrase pages
+   - static glass chrome
+   - swipe back and forward history
+   - search-island-to-search-field morphing
+7. Use Expo only as a bridge/reference lane during the transition. Keep design exploration and structural proof there when useful, but stop treating Expo shell polish as the final destination once it stops teaching us something.
+8. Keep Viet first. Tagalog and future destinations should inherit the hardened content/listing-page/native-shell pattern rather than forcing simultaneous rewrites.
 
 ## Not doing right now
 
 - subscriptions
 - account sync
 - cloud-backed unlock dependency
-- speculative Swift/Xcode implementation before the Mac server exists
+- treating Windows as the main working machine
 - deleting Expo or the shared repo before native parity exists
 - rewriting all 10+ apps simultaneously before the family shell exists
 - a third runtime-wired app before Viet + Tagalog content proof is stronger

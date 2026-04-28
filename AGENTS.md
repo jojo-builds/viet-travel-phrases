@@ -20,8 +20,12 @@ For repo-local queue automation runs, do this instead:
 
 Rules:
 - This is the canonical implementation home for the SpeakLocal app family.
-- Start new family-app sessions here:
-  - `/Users/jojolim/Developer/products/speaklocal/app-family`
+- Current Mac session roots:
+  - native iOS app work: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
+  - full repo, content, docs, generators, and migration work: `/Users/jojolim/Developer/products/speaklocal/app-family`
+  - reusable Codex skill work: `/Users/jojolim/Developer/labs/skill-labs`
+- Do not start app work from `/Users/jojolim/Documents/New project`; that folder is not this repo.
+- Legacy Windows roots are preserved only as migration/archive references:
   - `E:\AI\SpeakLocal-App-Family`
   - `C:\Users\Administrator\.openclaw\workspace\projects\speaklocal-app-family`
 - Treat these as compatibility aliases only, not preferred roots:
@@ -29,10 +33,26 @@ Rules:
   - `E:\AI\Viet-Travel-Phrases`
   - `C:\Users\Administrator\.openclaw\workspace\projects\viet-travel-phrases`
 - Stay scoped to shared app-family implementation, current Viet/Tagalog dual-variant work, and future reusable feature rollout.
-- Keep the existing Expo app shell under `app\` intact unless there is a concrete blocker.
-- `app\family\appRegistry.js` owns runtime/build app identity truth.
-- `app\family\*` owns shared runtime truth.
+- `native-ios/` is the active ship-facing SwiftUI app lane on the Mac.
+- Keep the existing Expo app shell under `app/` intact unless there is a concrete blocker; treat it as legacy/reference/bridge during the native transition, not the final premium UX target.
+- `app/family/appRegistry.js` owns runtime/build app identity truth.
+- `app/family/*` owns shared runtime truth.
+- `native-ios/project.yml` is the reproducible XcodeGen source for the native project.
+- `native-ios/Resources/viet-phrase-catalog.json`, `native-ios/Resources/viet-authored-listing-pages.json`, and `native-ios/Resources/viet-audio-manifest.json` are generated native resources; regenerate them from source instead of hand-editing them unless doing a narrow emergency inspection.
+- `native-ios/scripts/generate-viet-catalog.js` generates the native phrase catalog from repo content.
+- `native-ios/scripts/generate-authored-tier-one-pages.js` generates the authored Tier 1 listing-page resource and audio audit from `content-draft/viet/listing-pages/**`.
 - Phrase/listing navigation is a canonical page graph, not a strict parent-child tree. Each traveler-facing phrase page has one stable page ID, and search, browse, related rows, and "ways to say it" links must all point to that canonical page instead of creating duplicate pages for the same phrase.
+- Listing pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" article pages with real traveler utility, not generic generated filler.
+- Tier 1 authored listing page source lives in `content-draft/viet/listing-pages/<scenario>/<family-id>.json`; `_tier-one-index.json` pins the current 150-page inventory.
+- Runtime copy must stay offline. No runtime AI calls are part of the product direction.
+- Speaker icons imply playable bundled audio or an explicit missing-audio queue item. Reuse exact normalized audio before generating new ElevenLabs audio.
+- Native design direction:
+  - `Xin chào` is the flagship visual/content pattern for listing pages.
+  - Use native SwiftUI/Liquid Glass-style chrome, restrained Vietnam accents, and readable white content areas over distracting hero imagery.
+  - Back/search/bottom chrome stays visually static while page content animates beneath it.
+  - Swipe back and swipe forward should feel browser-like; forward history resets when a new route is opened.
+  - Search should feel like the bottom search island morphing into the search field, not a hard page swap.
+  - Long phrase rows need readable subtitles; wrap or route to canonical pages instead of clipping important meaning.
 - `docs\operations\*` owns live operational truth for build, validation, release, and blocker questions.
 - `ops\apps\*.json` owns operator-facing app readiness truth for dashboard and onboarding visibility.
 - `docs\*` owns durable explanation only when it remains a real source of truth. Do not keep duplicate startup or next-step docs alive once they stop being maintained.

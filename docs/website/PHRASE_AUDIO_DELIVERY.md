@@ -1,6 +1,6 @@
 # Phrase Audio Delivery
 
-Last updated: 2026-04-21
+Last updated: 2026-04-28
 Status: live export shape for Viet starter slices with repeatable regression guardrail
 
 ## Recommendation summary
@@ -17,7 +17,7 @@ The website preview export now runs through:
 
 - source approval: `content-draft/viet/website-preview.json`
 - export command: `npm --prefix app run export:website-previews`
-- artifact verifier: `powershell -ExecutionPolicy Bypass -File scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`
+- artifact verifier: `pwsh -NoProfile -File scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`
 - current Vietnam hub surface: `site/countries/vietnam.html`, hydrated by `site/scripts/phrase-module-loader.js` and `site/scripts/trust-panel-loader.js`
 - output manifests:
   - `site/public/data/phrase-previews/manifest.json`
@@ -215,7 +215,7 @@ Each phrase item currently carries:
 Use this when the pack, the website preview config, or the export output changes:
 
 1. Regenerate the website-safe preview exports with `npm --prefix app run export:website-previews`.
-2. Run `powershell -ExecutionPolicy Bypass -File scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`.
+2. Run `pwsh -NoProfile -File scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`.
 3. Treat any validator failure as real seam drift or staleness until proven otherwise; do not hand-edit the generated JSON to make the check pass.
 
 The validator currently covers:
@@ -235,7 +235,7 @@ The validator currently covers:
 
 For a quick starter-export seam audit before reopening any repair work, also confirm:
 
-- `powershell -ExecutionPolicy Bypass -File scripts/website/Test-SpeakLocalWebsiteArtifact.ps1` still passes, because it now directly asserts `content-draft/viet/website-preview.json` parity with `site/data/phrase-previews/manifest.json` on module count and approved `(moduleId, scenarioId)` pairs, then separately enforces the approved `surfaceContract` and per-module `surfacePlacement` truth.
+- `pwsh -NoProfile -File scripts/website/Test-SpeakLocalWebsiteArtifact.ps1` still passes, because it now directly asserts `content-draft/viet/website-preview.json` parity with `site/data/phrase-previews/manifest.json` on module count and approved `(moduleId, scenarioId)` pairs, then separately enforces the approved `surfaceContract` and per-module `surfacePlacement` truth.
 - matching files under `site/data/phrase-previews/**` and `site/public/data/phrase-previews/**` are still pair-complete and byte-identical.
 - each exported module payload still matches its manifest entry on `phraseCount`, `familyCount`, and `articleUrl`.
 - exported phrase rows in the website preview seam still stay `accessTier=starter`; treat any premium phrase leak as a real boundary regression.

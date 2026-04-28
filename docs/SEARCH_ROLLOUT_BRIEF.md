@@ -1,8 +1,9 @@
 # Search Rollout Brief
 
-## Canonical session root
+## Current session root
 
-- `E:\AI\SpeakLocal-App-Family`
+- Current Mac root: `/Users/jojolim/Developer/products/speaklocal/app-family`
+- Legacy Windows root retained for archive lookup only: `E:\AI\SpeakLocal-App-Family`
 
 ## What is already true
 
@@ -75,16 +76,16 @@ Use 4 reviewer lanes at each gate:
 
 ## Validation expectations
 
-Run from `E:\AI\SpeakLocal-App-Family\app`:
+Run from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
 
 - `npm run build:tagalog-pack`
 - `npm run validate:family`
 - `npx --no-install tsc --noEmit`
 - `npx expo config --type public --json`
 - `npx expo export --platform ios --output-dir .expo-export-viet-check`
-- `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx --no-install tsc --noEmit`
-- `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx expo config --type public --json`
-- `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx expo export --platform ios --output-dir .expo-export-tagalog-check`
+- `EXPO_PUBLIC_APP_VARIANT=tagalog npx --no-install tsc --noEmit`
+- `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo config --type public --json`
+- `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo export --platform ios --output-dir .expo-export-tagalog-check`
 
 Search-specific validation must prove:
 
@@ -105,9 +106,9 @@ Search-specific validation must prove:
   - `npm run validate:family`
   - `npx --no-install tsc --noEmit`
   - `npx expo config --type public --json`
-  - `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx expo config --type public --json`
+  - `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo config --type public --json`
   - `npx expo export --platform ios --output-dir .expo-export-viet-check`
-  - `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx expo export --platform ios --output-dir .expo-export-tagalog-check`
+  - `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo export --platform ios --output-dir .expo-export-tagalog-check`
 - The remaining blockers are the device proof gates on both variants:
   - verify or install the current Viet preview target before smoke if needed
   - capture runtime/manual search smoke in both Viet and Tagalog
@@ -123,7 +124,7 @@ Search-specific validation must prove:
 - Search-enabled internal preview builds now exist for that smoke step:
   - Viet: `fd48c1f8-3105-4228-9b6d-98a66e9c8299`
   - Tagalog: `d1cfa295-fdad-43ed-b23b-dacb9d914c0d`
-  - build root used: `E:\AI\SpeakLocal-EAS-Build`
+  - historical Windows build root used: `E:\AI\SpeakLocal-EAS-Build`
 
 ## After Viet + Tagalog search is proven
 

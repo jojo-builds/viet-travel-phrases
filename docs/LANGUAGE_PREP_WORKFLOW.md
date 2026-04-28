@@ -19,7 +19,7 @@ Do not wire a new language into `app/family/appRegistry.js` or `app/family/curre
 
 ## Commands
 
-Run from `E:\AI\SpeakLocal-App-Family\app`:
+Run from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
 
 - scaffold a new prep lane:
   - `npm run scaffold:language-prep -- --variant <variant> --language "<language>" --country "<country>" --language-code <code> --display-name "<display name>"`

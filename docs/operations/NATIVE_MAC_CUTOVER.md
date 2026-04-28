@@ -1,18 +1,18 @@
 # Native Mac Cutover
 
-Last updated: 2026-04-23  
+Last updated: 2026-04-28
 Authority lane: native iOS transition and Codex carryover truth
 
 ## Use this doc for
 
-- provisioning the new Mac server
+- confirming the current Mac/native status
 - deciding what stays on Windows during the overlap period
 - moving Codex over without losing workflow continuity
 - keeping the native SwiftUI/Xcode transition grounded in the current shared repo instead of creating split-brain state
 
-## Target state
+## Current target state
 
-- The Mac becomes the primary native iOS development machine.
+- The Mac is the primary day-to-day native iOS development machine.
 - Xcode and SwiftUI become the primary ship-facing app-shell toolchain.
 - The current repo remains the single source of truth for:
   - app-family registry
@@ -25,9 +25,11 @@ Authority lane: native iOS transition and Codex carryover truth
   - durable project decisions
 - Expo remains the bridge/reference lane during the transition, not the final UX destination.
 
-## Mac status on 2026-04-25
+## Mac status on 2026-04-28
 
 - Canonical Mac repo path: `/Users/jojolim/Developer/products/speaklocal/app-family`
+- Native iOS app-session path: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
+- Skill Lab path: `/Users/jojolim/Developer/labs/skill-labs`
 - Compatibility symlink path: `/Users/jojolim/Documents/Projects/speaklocal-app-family`
 - Recovered Windows worktree snapshots: `/Users/jojolim/Developer/products/speaklocal/recovered-worktrees`
 - Command Line Tools, Swift CLI, Git, full Xcode, Homebrew, Node, and npm are installed.
@@ -36,25 +38,37 @@ Authority lane: native iOS transition and Codex carryover truth
 - Native SwiftUI implementation has started in `native-ios/`.
 - The first native proof app is `native-ios/SpeakLocalNative.xcodeproj`.
 - The first flagship page running natively is the `Xin chào` listing/answer page.
+- The current native lane includes authored Tier 1 listing pages, canonical page graph navigation, bundled offline audio, search, bottom glass chrome, back swipe, forward swipe/history, and deeper phrase pages.
+- App-family checkpoint commits:
+  - `e53ffcb` `Checkpoint migrated app family state`
+  - `42438a2` `Checkpoint native iOS article pages`
+- Skill Lab checkpoint commits:
+  - `ada6eb3` `Checkpoint migrated skill lab`
+  - `bd297c2` `Add SpeakLocal listing page skill`
 
-## Current overlap plan
+## Post-cutover posture
 
-- Keep the current Windows server active as the main orchestration/content lane for its remaining term.
-- Use that remaining Windows time to:
-  - keep Viet and Tagalog content moving
-  - keep answer-page exports and relation data clean
-  - preserve the current dashboard/design-preview lane as a fast visual reference surface
-  - avoid overinvesting in final Expo-only shell polish once the native direction is clear
-- Do not start real Swift/Xcode implementation before the Mac server is commissioned. The overlap period is the trigger for native implementation, not the architectural decision by itself.
-- Bring the Mac up in parallel rather than doing a cold cutover.
+- Use the Mac native lane for day-to-day app implementation.
+- Treat the Windows server as legacy/archive lookup unless deliberately inspecting old state.
+- Keep portable product truth in the repo:
+  - content under `content-draft/`
+  - native generated resources under `native-ios/Resources/`
+  - durable decisions under `docs/`
+  - skill process truth under `/Users/jojolim/Developer/labs/skill-labs`
+- Preserve Expo as bridge/reference and live-app history, but do not optimize final UX around it unless a concrete migration blocker requires it.
+- New implementation should happen in fresh focused Codex sessions opened at the correct Mac folder instead of old Windows threads.
 
 ## What must survive unchanged
 
-- `E:\AI\SpeakLocal-App-Family` remains the canonical repo truth today.
+- `/Users/jojolim/Developer/products/speaklocal/app-family` is the canonical repo truth on the Mac.
+- `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios` is the native app folder to open for SwiftUI work in Codex.
 - `.agent\` remains the canonical queue/task-state lane.
 - `.codex\` in the repo remains the project-local Codex workflow lane.
 - `content-draft\` remains the authored content source of truth.
-- `app\family\` remains the shared runtime/content contract source until the native shell fully owns those runtime reads.
+- `content-draft/viet/listing-pages/**` remains the authored Tier 1 listing-page source for native article pages.
+- `app/family/` remains shared runtime/content contract history until native parity fully replaces those runtime reads.
+- `native-ios/project.yml` remains the reproducible native project source.
+- `native-ios/Resources/viet-phrase-catalog.json`, `native-ios/Resources/viet-authored-listing-pages.json`, and `native-ios/Resources/viet-audio-manifest.json` remain generated native resource outputs.
 
 ## What to carry from Windows to the Mac
 
@@ -81,30 +95,29 @@ Highest-value carryover inside Codex home:
 
 Do not treat app logs as project memory. The durable continuity source is the repo plus selected Codex-home state.
 
-## Mac bootstrap checklist
+## New Mac session checklist
 
-1. Provision the Mac server in the closest acceptable region.
-2. Install:
-   - Xcode 26.x
-   - Xcode Command Line Tools
-   - git
-   - Node LTS
-   - Homebrew
-   - Codex app
-3. Reauthenticate:
-   - Codex app
-   - Apple Developer / App Store Connect as needed
-   - Git hosting as needed
-4. Clone the repo.
-5. Restore selected `~/.codex/` state from Windows if desired.
-6. Open the repo in Codex.
-7. Validate the shared tooling from the repo root:
+1. Open app coding sessions in Codex at:
+   - `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
+2. Open content/docs/generator sessions at:
+   - `/Users/jojolim/Developer/products/speaklocal/app-family`
+3. Read, in this order:
+   - `native-ios/AGENTS.md` for active native app rules
+   - root `AGENTS.md` for repo-wide rules
+   - `docs/PHRASE_RELATIONSHIP_MODEL.md` for canonical page graph behavior
+   - `docs/V2_CONTENT_MODEL.md` for content/source model truth
+   - `content-draft/viet/README.md` for Viet authored source surfaces
+4. Validate the shared tooling from the repo root when touching shared content:
    - `node script/build_and_run.js doctor`
-8. Validate the content/runtime lane from `app\`:
+5. Validate the content/runtime lane from `app/` when touching Expo/shared pack logic:
    - `npm run build:viet-pack`
    - `npm run validate:family`
    - `npm run validate:premium-boundary`
    - `npm run validate:premium-expansion`
+6. Validate the native lane from `native-ios/` when touching SwiftUI/native resources:
+   - `xcodegen generate`
+   - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build`
+7. After visible native UI changes, launch the app in the simulator so Jojo can test the exact result.
 
 ## Codex workflow continuity on the Mac
 
@@ -137,7 +150,7 @@ Codex run actions should prefer the Node wrapper so the same project-local actio
 
 ## Native first milestone
 
-The first native SwiftUI milestone should prove one reusable family shell with:
+The first native SwiftUI milestone is underway and should continue proving one reusable family shell with:
 
 - home
 - dedicated search
@@ -147,6 +160,7 @@ Flagship answer pages for the first native proof:
 
 - `Xin chào`
 - `I need a doctor`
+- representative Tier 1 support pages such as `What does that mean?`, `Nice to meet you`, `What time is check-out?`, and `Can I have a quiet room?`
 
 Those screens should consume the same repo-owned content truth rather than a second manually maintained native-only content layer.
 
@@ -156,16 +170,31 @@ Current implementation lane:
 
 - `native-ios/project.yml` is the reproducible XcodeGen source for the native project.
 - `native-ios/SpeakLocalNative.xcodeproj` is generated from that file for Xcode/simulator work.
-- `native-ios/App/Models/PhrasePage.swift` holds the first static fixture while the generated SQLite/content export is not wired yet.
-- `native-ios/App/Views/PhraseListingView.swift` is the first SwiftUI listing/answer page implementation.
+- `native-ios/App/Models/PhrasePage.swift` defines phrase, detail, article, search, category, and catalog models.
+- `native-ios/App/Models/AuthoredVietListingPages.swift` loads the bundled authored listing-page resource and still carries selected hand-authored anchors.
+- `native-ios/App/Models/GeneratedVietContent.swift` loads the generated native catalog.
+- `native-ios/App/Views/AppShellView.swift` owns the native shell, static glass chrome, search presentation, and back/forward navigation history.
+- `native-ios/App/Views/PhraseListingView.swift` owns the flagship `Xin chào` page and shared article/listing rendering components.
+- `native-ios/App/Views/PhraseDetailView.swift` owns detail/article pages for authored listing resources and child phrase pages.
+- `native-ios/App/Views/SearchPageView.swift` owns the dedicated search page.
+- `native-ios/scripts/generate-viet-catalog.js` projects repo content into the native phrase catalog.
+- `native-ios/scripts/generate-authored-tier-one-pages.js` projects `content-draft/viet/listing-pages/**` into `native-ios/Resources/viet-authored-listing-pages.json` and `native-ios/Resources/viet-authored-audio-audit.json`.
 
-## When the Mac can become primary
+## Native product/design continuity
 
-The Mac can become the primary day-to-day machine once all of these are true:
+- `Xin chào` is the visual and content rhythm reference for listing pages.
+- Listing pages should feel like offline AI-style answers to "Different ways to say [phrase] in Vietnam."
+- The runtime remains fully offline. No app runtime AI or network dependency should be introduced for phrase copy.
+- Back/search/bottom chrome should feel native and glassy while staying readable. The chrome should stay static while page content animates under it.
+- Search should feel like the bottom search island morphing into the search field.
+- Swipe back and swipe forward should behave like browser-style navigation history. Forward history is cleared when the user opens a new route after going back.
+- Speaker icons should play bundled audio; if a visible icon has no audio, audit and generate/reuse the missing asset instead of silently removing the affordance.
+- Arrows mean navigation to one canonical page ID. Do not create duplicate pages for the same phrase.
+- Explore sections should keep the user moving forward through useful phrase/category shelves, not behave like dead-end lists.
 
-- Codex is installed and authenticated
-- the repo opens cleanly in Codex
-- the shared validation commands pass
-- the first native app workspace builds in Xcode
-- one flagship flow is running natively
-- the queue/docs workflow feels stable enough that shutting down the Windows server does not strand project memory
+## Skill Lab continuity
+
+- The Mac skill lab lives at `/Users/jojolim/Developer/labs/skill-labs`.
+- The installed SpeakLocal listing-page skill lives at `~/.codex/skills/speaklocal-listing-pages/SKILL.md`.
+- Use that skill whenever authoring, reviewing, or refactoring SpeakLocal phrase listing/detail pages.
+- The skill captures Jojo's current listing-page preference: thoughtful Gemini/LLM-style answer pages with phrase-specific sections, cultural/tone guidance, real variants, canonical links, and offline audio discipline.

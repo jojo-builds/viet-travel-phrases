@@ -3,9 +3,10 @@
 Superseded as the default next execution target by `docs/SEARCH_ROLLOUT_BRIEF.md`.
 Keep this brief for Tagalog-specific preview, release, and fuller device-validation follow-up only.
 
-## Canonical session root
+## Current session root
 
-- `E:\AI\SpeakLocal-App-Family`
+- Current Mac root: `/Users/jojolim/Developer/products/speaklocal/app-family`
+- Legacy Windows root retained for archive lookup only: `E:\AI\SpeakLocal-App-Family`
 
 ## What is already true
 
@@ -58,23 +59,23 @@ Keep this brief for Tagalog-specific preview, release, and fuller device-validat
 
 ## Validation expectations
 
-Run from `E:\AI\SpeakLocal-App-Family\app`:
+Run from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
 
 - `npm run build:tagalog-pack`
 - `npm run validate:family`
 - `npx --no-install tsc --noEmit`
 - `npx expo config --type public --json`
 - `npx expo export --platform ios --output-dir .expo-export-viet-check`
-- `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx --no-install tsc --noEmit`
-- `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx expo config --type public --json`
-- `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx expo export --platform ios --output-dir .expo-export-tagalog-check`
+- `EXPO_PUBLIC_APP_VARIANT=tagalog npx --no-install tsc --noEmit`
+- `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo config --type public --json`
+- `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo export --platform ios --output-dir .expo-export-tagalog-check`
 - `npx eas-cli credentials:configure-build -p ios -e preview-tagalog`
 
 If another Tagalog preview build is needed before the canonical repo-path EAS packaging issue is fixed:
 
-1. copy `E:\AI\SpeakLocal-App-Family\app` to a standalone app-root folder such as `E:\AI\SpeakLocal-EAS-Build`
+1. copy `/Users/jojolim/Developer/products/speaklocal/app-family/app` to a standalone app-root folder
 2. from that standalone folder, run `npm ci`
-3. from that standalone folder, run `$env:EXPO_PUBLIC_APP_VARIANT='tagalog'; npx eas-cli build --platform ios --profile preview-tagalog --non-interactive`
+3. from that standalone folder, run `EXPO_PUBLIC_APP_VARIANT=tagalog npx eas-cli build --platform ios --profile preview-tagalog --non-interactive`
 
 If the session materially changes audio, content wiring, or app readiness truth, also update:
 
