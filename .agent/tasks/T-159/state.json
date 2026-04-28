@@ -1,8 +1,8 @@
 {
   "taskId": "T-159",
   "title": "Research and design pre-live Practice/Quiz + mascot lane",
-  "status": "draft",
-  "phase": "blocked-until-T-157-smoke-passes",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "session": {
@@ -25,16 +25,12 @@
       "agent_task_T-159"
     ],
     "read": [],
-    "blockedBy": [
-      "T-157"
-    ]
+    "blockedBy": []
   },
   "truthClassification": {
     "target": "prepared-next"
   },
-  "blockers": [
-    "Promote this task from draft to queued only after T-157 proves manual worker claim, heartbeat, finish, and commit on the Mac queue."
-  ],
+  "blockers": [],
   "artifacts": {
     "result": ".agent/tasks/T-159/result.md",
     "recoveryNotes": ".agent/tasks/T-159/recovery-notes.md",
@@ -45,7 +41,7 @@
       ".agent/tasks/T-159/state.json"
     ]
   },
-  "lastUpdated": "2026-04-28T18:58:04+07:00",
+  "lastUpdated": "2026-04-28T20:41:59+07:00",
   "automation": {
     "runner": "desktop-codex",
     "mode": "single-task",

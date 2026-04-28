@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-28T20:25:28.132225+07:00",
+  "updatedAt": "2026-04-28T20:44:25.806902+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -14,7 +14,15 @@
   },
   "groups": {
     "reclaimable": [],
-    "queued": [],
+    "queued": [
+      {
+        "taskId": "T-159",
+        "title": "Research and design pre-live Practice/Quiz + mascot lane",
+        "state": ".agent\\tasks\\T-159\\state.json",
+        "selectionOrder": 30,
+        "writeLock": "practice_quiz_prelive_plan"
+      }
+    ],
     "in_progress": [],
     "blocked": [
       {
@@ -137,13 +145,6 @@
         "state": ".agent\\tasks\\T-158\\state.json",
         "selectionOrder": 20,
         "writeLock": "native_ios_language_pack_resource_migration"
-      },
-      {
-        "taskId": "T-159",
-        "title": "Research and design pre-live Practice/Quiz + mascot lane",
-        "state": ".agent\\tasks\\T-159\\state.json",
-        "selectionOrder": 30,
-        "writeLock": "practice_quiz_prelive_plan"
       }
     ],
     "recently_completed": [
@@ -620,11 +621,11 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 0,
+    "queuedCount": 1,
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,
-    "draftCount": 3,
+    "draftCount": 2,
     "recentlyCompletedCount": 67
   },
   "notes": [
