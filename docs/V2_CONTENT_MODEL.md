@@ -202,7 +202,7 @@ Viet Tier 1 listing-page quality standard:
 
 - Use the installed `speaklocal-listing-pages` skill for authoring and review.
 - Pages should feel like thoughtful offline answers to "Different ways to say [phrase] in Vietnam."
-- Each page should carry phrase-specific explanation, useful variants, tone/register guidance, local/cultural notes or watch-outs, canonical links, and audio-backed rows.
+- Each page should carry phrase-specific explanation, useful variants, tone/register guidance, positively framed local/cultural/travel notes, canonical links, and audio-backed rows.
 - Avoid visible internal terms such as `repair` when they are not traveler-friendly; for example, use "When You Don't Understand" in UI copy instead of "Understanding Repair."
 - Runtime remains offline. AI-style means editorial structure and usefulness, not runtime AI calls.
 - Speaker icons imply bundled audio or a missing-audio audit item; exact normalized audio should be reused before generating new files.

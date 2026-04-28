@@ -1,0 +1,59 @@
+{
+  "taskId": "T-160",
+  "title": "Design offline SQLite phrase graph and canonical phrase-page model",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 180,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "sqlite_phrase_graph_design",
+      "agent_task_T-160"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-160/result.md",
+    "recoveryNotes": ".agent/tasks/T-160/recovery-notes.md",
+    "reviews": ".agent/tasks/T-160/reviews/",
+    "logs": ".agent/tasks/T-160/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-160/result.md",
+      ".agent/tasks/T-160/state.json",
+      "docs/OFFLINE_SQLITE_PHRASE_GRAPH_PLAN.md"
+    ]
+  },
+  "lastUpdated": "2026-04-29T00:01:04+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "90-240",
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 10,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

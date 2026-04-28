@@ -26,7 +26,7 @@ Current posture:
 - existing bundled audio is preserved where legacy phrases already had assets
 - `listing-pages/_tier-one-index.json` pins the current computed Tier 1 inventory at 150 pages
 - `listing-pages/<scenario>/<family-id>.json` contains authored offline article copy for native Tier 1 listing pages
-- native Tier 1 page copy should follow the installed `speaklocal-listing-pages` skill: thoughtful "Different ways to say [phrase] in Vietnam" pages with concrete variants, tone/context guidance, watch-outs or local tips, canonical links, and no generic filler
+- native phrase-page copy should follow the installed `speaklocal-listing-pages` skill: thoughtful "Different ways to say [phrase] in Vietnam" pages with concrete variants, tone/context guidance, positively framed good-to-know/local/travel notes, canonical links, and no generic filler
 
 Current relation-ready handoff:
 
