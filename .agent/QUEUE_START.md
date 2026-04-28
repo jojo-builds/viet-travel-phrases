@@ -41,6 +41,7 @@ Use this file for repo-local Codex queue runs.
 - Read the chosen `spec.md` and only task-required files.
 - Ignore `.agent/coordination/queue-index.json` and `.agent/coordination/locks.yaml` after claim unless the task is explicitly about queue maintenance/self-heal.
 - The task spec is the real prompt. Do not rely on the launch chat to carry task requirements.
+- Interpret the task spec through `.agent/TASK_PROMPTING.md`: deliver the requested outcome, preserve hard constraints, choose a sound implementation path, and report evidence rather than hidden reasoning.
 - Queue tasks may be substantial. A normal worker task can run for `30` minutes to several hours if the spec has clear write scope, validations, recovery notes, and review expectations.
 - Heartbeat at least every `10` to `15` minutes during active work, and always before or after long waits such as builds, simulator checks, review gates, or spawned subagents.
 - Prefer helper-backed heartbeat after claim:

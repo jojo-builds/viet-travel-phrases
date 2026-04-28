@@ -148,6 +148,7 @@
 
 - High-level pre-v2 feature intake and progress should live in the external visual tracker (`SpeakLocal V2 Feature Tracker` Google Sheet), not in the repo-local queue by default.
 - The repo-local `.agent/` queue remains useful only for execution-grade tasks with a clear deliverable, clear write scope, a recoverable heartbeat trail, and a prompt packet worth autonomous pickup. Tasks do not need to be tiny; the preferred worker shape is the largest coherent packet a single Codex session can complete, validate, and commit, often `30` minutes to several hours.
+- Queue task specs should be outcome-driven for GPT-5.5 workers: describe the desired end state, success criteria, constraints, validation, recovery, and review gates, then let the worker reason about the implementation path. `.agent/TASK_PROMPTING.md` owns that prompting standard.
 - Do not use the queue as the main roadmap, idea backlog, or product-brain surface; use it only after the orchestrator has already shaped a feature into a real implementation task.
 - This pinned Codex thread is the orchestrator lane. Heavy implementation work should run in fresh worker threads on explicit feature/recovery tasks, not in old recovered threads that already hit `loading model` or reauthentication trouble.
 - When Codex desktop starts showing the recurring `loading model` / reauthentication pattern on long-running worker or reviewer threads, the preferred operator recovery is:

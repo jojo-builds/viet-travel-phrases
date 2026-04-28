@@ -4,7 +4,12 @@
 Short task title.
 
 ## Objective
-Describe the concrete outcome to achieve.
+Describe the concrete outcome to achieve. Write this as the desired end state, not a command-by-command recipe.
+
+## Success Criteria
+- list what must be true when the task is done
+- include user-visible behavior, source-of-truth updates, artifact expectations, and validation expectations
+- keep this concrete enough that another worker can judge whether the outcome was achieved
 
 ## Repo / Working Surface
 - repo root: `/Users/jojolim/Developer/products/speaklocal/app-family`
@@ -12,8 +17,14 @@ Describe the concrete outcome to achieve.
 
 ## Read first
 - `AGENTS.md`
+- `.agent/TASK_PROMPTING.md`
 - list exact source-of-truth files for this task here
 - do not list `.agent/coordination/queue-index.json` or `.agent/coordination/locks.yaml` here unless this task is explicitly queue maintenance/self-heal
+
+## Worker Judgment
+- use GPT-5.5 reasoning to choose the safest implementation path within the constraints
+- do not follow a brittle step sequence unless this spec marks a step as a safety requirement
+- record concise decisions, evidence, and tradeoffs in `result.md`; do not dump hidden chain-of-thought
 
 ## Scope
 - expected worker size: normally `30` minutes to several hours when the task has a clear write boundary and recoverable checkpoints
@@ -35,6 +46,15 @@ Describe the concrete outcome to achieve.
 
 ## Required checks
 - list the exact validation/build/test commands to run when relevant
+- if a check is required, do not weaken it with "if possible"; if it cannot run, document the blocker and bounded investigation
+
+## Relevant skills
+- list the minimum task-relevant skills, for example:
+  - `speaklocal-listing-pages` for Vietnam phrase listing/detail content
+  - `build-ios-apps:ios-debugger-agent` for native build/simulator checks
+  - `build-ios-apps:swiftui-liquid-glass` for Liquid Glass SwiftUI work
+  - `openai-docs` for OpenAI model/API/prompt guidance
+- do not load broad skills just in case
 
 ## Heartbeat and recovery contract
 - keep `session.owner` as `codex-desktop-automation`; put `manual-*` or `automation-*` in `session.label`
@@ -51,6 +71,7 @@ python3 .agent/queue_tool.py heartbeat --task-id T-XXX --session-id "<session-id
 ## Review gate
 - state whether review is mandatory
 - if mandatory, specify what the reviewer must challenge
+- define reviewer lanes by actual outcome risk, not generic titles
 - for meaningful Codex tasks, require at least 3 review gates
 - each review gate must use exactly 4 Codex subagents
 - each gate must loop until all 4 subagents explicitly agree the task can advance

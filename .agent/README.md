@@ -17,6 +17,13 @@ This folder is the repo-local task surface for Codex queue work.
       result.md
 ```
 
+## Task Prompting
+- `.agent/TASK_PROMPTING.md` owns the queue task-prompting standard.
+- Write worker specs as outcome contracts, not line-by-line scripts.
+- The worker should reason from the goal, constraints, source truth, and validation requirements.
+- Put hard requirements, write scopes, validation, and stopping conditions in the task file.
+- Leave implementation path choices to the worker unless the sequence is a real safety requirement.
+
 ## Truth
 - task lifecycle truth lives in each task's `state.json`
 - interrupted-task to recovery-task linkage lives in task `state.json` under `recovery`; `.agent/coordination/desktop-app-recovery.json` may mirror that linkage for maintenance visibility, but it is not lifecycle authority

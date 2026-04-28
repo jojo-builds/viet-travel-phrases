@@ -17,6 +17,9 @@ Use this file when the automation prompt says to process the next repo-local que
 - One automation run processes one task, but that task may be a substantial `30` minute to multi-hour packet.
 - Do not split work merely to keep tasks tiny. Split only when write scopes conflict, recovery would be unclear, or the worker cannot reasonably validate the result in one session.
 - The automation prompt is only a bootstrap. The real prompt/spec must live in the claimed task folder, mainly `spec.md`, so the exact assignment is archived with the task.
+- Task specs should follow `.agent/TASK_PROMPTING.md`: lead with outcome and success criteria, then constraints, context, validation, review, and recovery.
+- Workers should use reasoning to choose the implementation path. Do not treat the spec as a brittle line-by-line script unless the spec says a step is a safety requirement.
+- Results should report decisions, evidence, and tradeoffs. Do not request hidden chain-of-thought.
 - Long-running workers must heartbeat through `.agent/queue_tool.py heartbeat` or an equivalent direct state patch during phase changes, subagent waits, build/test runs, and before finish.
 - A paused or scheduled Codex automation card can point at `.agent/CODEX_DESKTOP_AUTOMATION_PROMPT.txt`. When activated, each created session should claim one task, work it, commit or block it, then stop.
 

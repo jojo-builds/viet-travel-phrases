@@ -8,12 +8,21 @@ Move the current live Viet native generated resources into the reserved language
 
 This is the coordinated implementation task for the structure introduced in `docs/APP_FAMILY_STRUCTURE.md`. Do not run it until `T-157` has proved the Mac queue claim/heartbeat/finish/commit workflow.
 
+## Success Criteria
+- Vietnam phrase catalog, authored listing pages, audio manifest, audio audit, and audio assets load from one coherent Viet language-pack contract or documented compatibility shim.
+- Swift loaders, generator scripts, XcodeGen resource rules, tests, and docs all agree on the same resource path model.
+- Visible app behavior stays unchanged after the migration.
+- The old root-level resource shape is either removed or clearly documented as a temporary compatibility bridge.
+- Required build/resource checks pass, or a real blocker is documented after bounded investigation.
+- All mandatory review gates pass before the task is marked done.
+
 ## Repo / Working Surface
 - repo root: `/Users/jojolim/Developer/products/speaklocal/app-family`
 - working cwd: `/Users/jojolim/Developer/products/speaklocal/app-family`
 
 ## Read first
 - `AGENTS.md`
+- `.agent/TASK_PROMPTING.md`
 - `docs/APP_FAMILY_STRUCTURE.md`
 - `native-ios/README.md`
 - `native-ios/Config/README.md`
@@ -28,6 +37,12 @@ Do not auto-pick another queued task. Process `T-158` only after it has been exp
 - this is a meaningful migration task, not a small docs tweak
 - keep the app fully offline
 - preserve existing native app behavior while changing resource layout
+
+## Worker Judgment
+- Treat this spec as an outcome contract, not a brittle step list.
+- Choose the safest migration path after inspecting current loaders, scripts, project resources, and tests.
+- If a compatibility shim is safer than a full move in one pass, justify it in `result.md` and make the remaining work explicit.
+- Record concise decisions, evidence, and tradeoffs; do not dump hidden chain-of-thought.
 
 ### Allowed write scopes
 - `native-ios/project.yml`
@@ -73,6 +88,11 @@ Do not auto-pick another queued task. Process `T-158` only after it has been exp
   - authored listing pages load from the Viet language pack
   - the audio manifest loads from the Viet language pack
   - bundled audio paths resolve after the move
+
+## Relevant skills
+- `build-ios-apps:ios-debugger-agent` for native build/simulator verification
+- `build-ios-apps:swiftui-ui-patterns` only if loader changes require minimal SwiftUI/runtime inspection
+- `superpowers:verification-before-completion` before claiming completion
 
 ## Heartbeat and recovery contract
 - keep `session.owner` as `codex-desktop-automation`; put `manual-*` or `automation-*` in `session.label`

@@ -21,6 +21,7 @@ For repo-local queue automation runs, do this instead:
 - manual worker launch prompts should stay short; the actual assignment belongs in `.agent/tasks/T-xxx/spec.md`
 - keep `session.owner` as `codex-desktop-automation` for helper-backed heartbeat/finish, even for manual workers; distinguish manual runs in `session.label`
 - long queue work must heartbeat after claim, every `10` to `15` minutes during active work, before/after spawned subagent waits, and before finish
+- new queue task specs must follow `.agent/TASK_PROMPTING.md`: outcome-driven, success-criteria-first, with constraints and validation explicit while leaving implementation reasoning to the worker
 
 Rules:
 - This is the canonical implementation home for the SpeakLocal app family.
