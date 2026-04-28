@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T01:45:56.019407+07:00",
+  "updatedAt": "2026-04-29T02:20:32.525291+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -14,15 +14,7 @@
   },
   "groups": {
     "reclaimable": [],
-    "queued": [
-      {
-        "taskId": "T-163",
-        "title": "Build SQLite schema and Viet fixture generator",
-        "state": ".agent\\tasks\\T-163\\state.json",
-        "selectionOrder": 12,
-        "writeLock": "sqlite_viet_fixture_generator"
-      }
-    ],
+    "queued": [],
     "in_progress": [
       {
         "taskId": "T-162",
@@ -156,6 +148,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-163",
+        "title": "Build SQLite schema and Viet fixture generator",
+        "state": ".agent\\tasks\\T-163\\state.json",
+        "selectionOrder": 12,
+        "writeLock": "sqlite_viet_fixture_generator"
+      },
       {
         "taskId": "T-160",
         "title": "Design offline SQLite phrase graph and canonical phrase-page model",
@@ -650,12 +649,12 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 1,
+    "queuedCount": 0,
     "reclaimableCount": 0,
     "inProgressCount": 1,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 70
+    "recentlyCompletedCount": 71
   },
   "notes": [
     "This index is intentionally small and selection-focused.",

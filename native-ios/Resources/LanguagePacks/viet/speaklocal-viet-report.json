@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "languagePack": {
+    "id": "viet",
+    "appID": "speaklocal-vietnam",
+    "languageCode": "vi",
+    "contentVersion": "viet-sqlite-fixture:8f6e8a885fc37fc8",
+    "generatedAt": "source-hash:8f6e8a885fc37fc8"
+  },
+  "sourceInputs": {
+    "catalog": {
+      "path": "native-ios/Resources/viet-phrase-catalog.json",
+      "sha256": "4d700de8102f8513038723612f25acdcf8b52b3140d31e4c609f71d510b6576e"
+    },
+    "authoredPages": {
+      "path": "native-ios/Resources/viet-authored-listing-pages.json",
+      "sha256": "6570f273e3d2870d1f81dd2f7af5b5663a1a567bc2fdd9856a58b6f0c3e50921"
+    },
+    "audioManifest": {
+      "path": "native-ios/Resources/viet-audio-manifest.json",
+      "sha256": "2e87ca72dc7765ef551f5db48fb98cb9184a6d73bdc396d2f0b29b0d0ad2318e"
+    },
+    "xcodeProject": {
+      "path": "native-ios/project.yml",
+      "sha256": "623121ca3277855e5d64a3599f1445179412b4464749aa115efa25253bcc97a9"
+    },
+    "schema": {
+      "path": "native-ios/scripts/sqlite/001_initial.sql",
+      "sha256": "ee3a6f42c73e9af1a16606316b9bf097451aadf059617b9da83b4416e88be906"
+    }
+  },
+  "outputs": {
+    "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
+    "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
+    "schema": "native-ios/scripts/sqlite/001_initial.sql",
+    "databaseSha256": "9af98e46400d980c8ad7cb5e275b8db7b1307b153c7089047fddeb46fd21c188",
+    "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
+  },
+  "bundlePackaging": {
+    "xcodeProjectPath": "native-ios/project.yml",
+    "resourcePath": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
+    "isIncludedInXcodeResources": false,
+    "status": "generated-not-bundled",
+    "requiredNextStep": "Update native-ios/project.yml resource rules before opening this fixture with Bundle.main."
+  },
+  "countParity": {
+    "scenarios": {
+      "expected": 18,
+      "actual": 18,
+      "ok": true
+    },
+    "clusters": {
+      "expected": 900,
+      "actual": 900,
+      "ok": true
+    },
+    "phrases": {
+      "expected": 919,
+      "actual": 919,
+      "ok": true
+    },
+    "authoredPagesOrAliases": {
+      "expected": 163,
+      "actual": 163,
+      "ok": true
+    }
+  },
+  "generatedCounts": {
+    "languagePacks": 1,
+    "scenarios": 18,
+    "clusters": 900,
+    "clusterMembers": 919,
+    "phrases": 919,
+    "pages": 919,
+    "aliases": 920,
+    "pageCategories": 164,
+    "sections": 1304,
+    "sectionItems": 2083,
+    "breakdownTokens": 720,
+    "searchDocuments": 919,
+    "audioAssets": 3756,
+    "audioUsages": 3165,
+    "audioTextDedupeRows": 2343,
+    "missingAudioAuditRows": 0
+  },
+  "validation": {
+    "integrityCheck": "ok",
+    "foreignKeyCheckRows": 0,
+    "ftsRowCount": 919
+  },
+  "unresolvedReferences": {
+    "detailPageIDCount": 0,
+    "detailPageIDs": [],
+    "authoredPagePhraseIDMissingCount": 0,
+    "authoredPagePhraseIDMissing": [],
+    "authoredPhraseItemsNotInCatalogCount": 3,
+    "authoredPhraseItemsNotInCatalog": [
+      {
+        "pageID": "viet-how-are-you",
+        "sectionID": "relationship-forms",
+        "phraseID": "how-are-you-anh",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-how-are-you",
+        "sectionID": "relationship-forms",
+        "phraseID": "how-are-you-chi",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-how-are-you",
+        "sectionID": "relationship-forms",
+        "phraseID": "how-are-you-em",
+        "detailPageID": null
+      }
+    ]
+  },
+  "canonicalIdentityWarnings": {
+    "duplicateNormalizedTargetTextGroupCount": 6,
+    "duplicateNormalizedTargetTextGroups": [
+      {
+        "normalizedTargetText": "đặt chỗ dưới tên này",
+        "phraseIDs": [
+          "v900-hote-acco-the-reservation-is-under-this-name",
+          "v900-time-date-book-the-booking-is-under-this-name"
+        ]
+      },
+      {
+        "normalizedTargetText": "không sao đâu",
+        "phraseIDs": [
+          "polite-6",
+          "v500-poli-basi-thats-okay",
+          "v900-poli-basi-thats-fine"
+        ]
+      },
+      {
+        "normalizedTargetText": "nhà vệ sinh ở đâu?",
+        "phraseIDs": [
+          "bath-1",
+          "v500-airp-bord-arri-where-are-the-restrooms",
+          "v500-bath-pers-need-where-is-the-toilet"
+        ]
+      },
+      {
+        "normalizedTargetText": "tôi có thể mua vé ở đâu?",
+        "phraseIDs": [
+          "v500-sigh-acti-where-can-i-buy-tickets",
+          "v900-tran-where-can-i-buy-a-ticket"
+        ]
+      },
+      {
+        "normalizedTargetText": "tôi gặp tài xế ở đâu?",
+        "phraseIDs": [
+          "airport-pickup-clearer",
+          "v500-airp-bord-arri-where-do-i-meet-the-driver"
+        ]
+      },
+      {
+        "normalizedTargetText": "xin lỗi",
+        "phraseIDs": [
+          "polite-5",
+          "v500-poli-basi-excuse-me"
+        ]
+      }
+    ],
+    "aliasConflictCount": 0,
+    "aliasConflicts": []
+  },
+  "audio": {
+    "manifestEntries": 3756,
+    "uniqueNormalizedSpokenTextCount": 2343,
+    "assets": 3756,
+    "usages": 3165,
+    "missingAudioAuditRows": 0,
+    "missingAudioAuditSample": []
+  },
+  "categoryData": {
+    "authoredCategoryCount": 23,
+    "authoredCategoryIDs": [
+      "airport-border-arrival",
+      "bathroom-personal-needs",
+      "directions-navigation",
+      "emergency-safety",
+      "food-drink",
+      "goodbyes",
+      "gratitude",
+      "greetings",
+      "health-pharmacy",
+      "hotel-accommodation",
+      "local-services-everyday-tasks",
+      "money-numbers-prices",
+      "phone-internet-power",
+      "polite-basics",
+      "problems-help",
+      "repair",
+      "shopping",
+      "sightseeing-activities",
+      "small-talk",
+      "social-small-talk",
+      "time-dates-booking",
+      "transport",
+      "understanding-repair"
+    ]
+  },
+  "notes": [
+    "The native Swift runtime still reads the existing root-level JSON resources.",
+    "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet for migration proof only.",
+    "All phrase rows receive canonical phrase_page rows; legacy family, authored page, and section detail IDs are represented as page_alias rows.",
+    "The initial relation and practice tables are schema-ready but intentionally unpopulated in this fixture step."
+  ]
+}

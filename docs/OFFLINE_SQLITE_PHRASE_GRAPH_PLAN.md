@@ -522,6 +522,8 @@ Do not use negative `Watch out` framing in user-facing app copy. If an internal 
 
 ### Stage 1: Generate A SQLite Fixture Beside JSON
 
+Implementation note: T-163 created the first deterministic Viet fixture generator at `native-ios/scripts/generate-viet-sqlite-fixture.js`, the schema migration at `native-ios/scripts/sqlite/001_initial.sql`, and the generated outputs at `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite` plus `speaklocal-viet-report.json`. The app runtime still reads the root-level JSON resources. The report also records the current packaging limitation: `native-ios/project.yml` still excludes `LanguagePacks`, so a follow-up Swift read-path task must update XcodeGen resource rules before opening the fixture through `Bundle.main`.
+
 - Add a build-time script, probably under `native-ios/scripts/`, that reads the same source inputs as the JSON generators.
 - Emit `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite` as a fixture, but do not ship it as the active runtime source yet.
 - Create a schema migration folder with `001_initial.sql` and deterministic build output.
