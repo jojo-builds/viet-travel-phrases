@@ -2,7 +2,7 @@
 
 ## Task Done
 
-The native iOS app has a conflict-safe, simulator-proven SQLite phrase graph read path for Vietnam search, canonical page opening, article section rendering, related-page navigation, and visible audio-key resolution; the current stale phrase fixture tests are repaired to the new positive article/content standard; and the full native test suite is either green or has only precisely documented external simulator/tooling blockers.
+The native iOS app has a conflict-safe, simulator-proven SQLite phrase graph read path for every current Vietnamese phrase row in the repo: all current phrase rows resolve into canonical database-backed phrase pages, and Swift can prove Vietnam search, canonical page opening, article section rendering, related-page navigation, and visible audio-key resolution from that graph; the current stale phrase fixture tests are repaired to the new positive article/content standard; and the full native test suite is either green or has only precisely documented external simulator/tooling blockers.
 
 ## Outcome
 
@@ -27,6 +27,7 @@ The app still needs the native Swift side to consume this correctly, and the old
 ## Success Criteria
 
 - The task branch/worktree contains both the committed Home V1 work and the completed content-data universe fixture.
+- All current Vietnamese phrase rows discovered by the generator are mapped into the SQLite fixture and resolve through canonical phrase/page IDs. As of the content-data receipt, the expected floor is 919 source phrase rows and 911 canonical `phrase_page` rows; if the live generator discovers a different count, explain why and prove there are no orphan rows.
 - The bundled SQLite fixture is present in the app resource graph and can be opened by Swift tests.
 - Swift has a clean repository/read-model path for at least:
   - search documents and canonical result ranking;
@@ -228,6 +229,7 @@ The parent worker writes the review artifacts after collecting responses and clo
 
 - T-168 task is claimed, heartbeated, reviewed, and marked done or blocked.
 - The worker branch/worktree contains Home V1 plus the content-data universe fixture.
+- Every current Vietnamese phrase row is represented in the SQLite fixture and resolves to one canonical openable page, with no orphan phrases, duplicate canonical pages, or broken relation/search targets.
 - SQLite phrase graph data is readable by Swift and test-proven for search, canonical page open, sections, relations, and audio references.
 - Stale phrase fixture tests are repaired to the current positive article standard.
 - Full native test suite passes, or any failure is precisely bounded and unrelated to this task.
