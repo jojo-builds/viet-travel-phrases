@@ -24,6 +24,13 @@ This folder is the repo-local task surface for Codex queue work.
 - Put hard requirements, write scopes, validation, and stopping conditions in the task file.
 - Leave implementation path choices to the worker unless the sequence is a real safety requirement.
 
+## Pinned orchestrator behavior
+- The pinned Codex thread is primarily an orchestrator, not the default worker.
+- Its normal job is to absorb Jojo's brain dumps, shape them into task packets, update source-of-truth docs, keep queue state clean, and stay available for the next idea.
+- Long research, implementation, simulator/device proof, multi-file content work, audio generation, and broad audits should normally become `.agent/tasks/T-xxx` work for fresh worker sessions.
+- Keep direct orchestrator edits small and queue/source-of-truth oriented unless Jojo explicitly asks this thread to execute the task itself.
+- A good handoff prompt should be short: identify the repo and task ID, then let the task files carry the real specification.
+
 ## Truth
 - task lifecycle truth lives in each task's `state.json`
 - interrupted-task to recovery-task linkage lives in task `state.json` under `recovery`; `.agent/coordination/desktop-app-recovery.json` may mirror that linkage for maintenance visibility, but it is not lifecycle authority

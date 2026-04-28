@@ -14,6 +14,29 @@ Official references checked on 2026-04-28:
 
 Write task specs as outcome contracts, not step-by-step scripts.
 
+## Pinned Orchestrator Rule
+
+The pinned Codex thread is the orchestration lane. Its default job is to keep Jojo's ideas moving, shape work into queue-ready tasks, preserve source-of-truth decisions, and keep the repo/queue clean.
+
+By default, the orchestrator should not take on long-running worker execution inside the pinned thread. Package the work for a worker instead when it involves:
+
+- research that should run longer than a short pass
+- app implementation or broad refactors
+- simulator/device proof
+- multi-file content generation or copy review
+- audio generation/audit work
+- tasks likely to take more than about `10` to `15` minutes
+- tasks that would block Jojo from continuing to brainstorm or redirect the roadmap
+
+It is acceptable for the orchestrator to make small direct edits when the edit is itself queue/source-of-truth housekeeping, for example:
+
+- writing or repairing `.agent/tasks/T-xxx` task specs and state
+- updating roadmap or decision docs so workers receive correct context
+- running quick queue health checks
+- committing orchestration-only changes
+
+If Jojo explicitly asks the pinned thread to execute a task here, it may do so. Otherwise, prefer: clarify outcome, create/update the task packet, commit the queue/doc change, and hand off a short worker prompt.
+
 The worker should understand:
 
 - what must be true when the task is done
