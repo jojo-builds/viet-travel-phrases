@@ -4,6 +4,8 @@ Status: active direction for content-system and phrase-detail design
 Last updated: 2026-04-26
 Scope: phrase-family structure, related-phrase modeling, listing/detail behavior, and scaling implications for app plus website
 
+Alignment note: `docs/OFFLINE_SQLITE_PHRASE_GRAPH_PLAN.md` now owns the proposed long-term bundled SQLite read model. This document remains the product/content relationship model; the SQLite plan maps `family` into `phrase_cluster` while making phrase pages canonical per phrase.
+
 ## Why this exists
 
 SpeakLocal should not feel like a dead-end searchable phrase database.

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T01:19:00.557159+07:00",
+  "updatedAt": "2026-04-29T01:22:03.328560+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -23,15 +23,7 @@
         "writeLock": "practice_quiz_visual_design"
       }
     ],
-    "in_progress": [
-      {
-        "taskId": "T-160",
-        "title": "Design offline SQLite phrase graph and canonical phrase-page model",
-        "state": ".agent\\tasks\\T-160\\state.json",
-        "selectionOrder": 10,
-        "writeLock": "sqlite_phrase_graph_design"
-      }
-    ],
+    "in_progress": [],
     "blocked": [
       {
         "taskId": "T-148",
@@ -156,6 +148,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-160",
+        "title": "Design offline SQLite phrase graph and canonical phrase-page model",
+        "state": ".agent\\tasks\\T-160\\state.json",
+        "selectionOrder": 10,
+        "writeLock": "sqlite_phrase_graph_design"
+      },
       {
         "taskId": "T-161",
         "title": "Implement parallel-safe queue claiming and worker lane contract",
@@ -645,10 +644,10 @@
   "stats": {
     "queuedCount": 1,
     "reclaimableCount": 0,
-    "inProgressCount": 1,
+    "inProgressCount": 0,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 69
+    "recentlyCompletedCount": 70
   },
   "notes": [
     "This index is intentionally small and selection-focused.",

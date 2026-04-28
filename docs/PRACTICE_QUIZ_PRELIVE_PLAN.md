@@ -4,6 +4,8 @@ Last updated: 2026-04-28
 Owner lane: SpeakLocal native app-family planning  
 Status: implementation-ready planning source of truth
 
+Alignment note: `T-160` is now the SQLite phrase-graph architecture task, not the practice deck generator. Any remaining practice generator, practice audio audit, skipped-candidate report, simulator proof, or device proof work belongs to follow-up queue tasks.
+
 ## Decision snapshot
 
 SpeakLocal practice should be a traveler rehearsal layer, not a generic course game.
@@ -13,7 +15,7 @@ First version decisions:
 - Keep practice fully offline and deterministic from bundled content. No runtime AI, network prompt generation, accounts, leagues, public leaderboards, hearts, or punitive lives.
 - Start with compact native sessions that rehearse the exact phrase graph users are already browsing: authored listing pages, phrase rows, pronunciation audio, breakdown tokens, and category context.
 - MVP modes are `Listen And Choose`, `Situation Pick`, `Pronoun Coach`, `Practice This Page`, and `Review Missed`.
-- MVP active recall is deliberate but bounded: users must retrieve meaning, use-case, social role, or next action before seeing feedback. Hold full phrase-construction `Build It` for the first post-MVP iteration unless the deck/audio generator proves token sequencing and token audio are release-clean during T-160.
+- MVP active recall is deliberate but bounded: users must retrieve meaning, use-case, social role, or next action before seeing feedback. Hold full phrase-construction `Build It` for the first post-MVP iteration unless a follow-up deck/audio generator task proves token sequencing and token audio are release-clean.
 - Use a `Practice` destination from home/quick access plus contextual `Practice this` actions on listing pages. Wait on a permanent fourth bottom-chrome item until simulator/device proof says it improves navigation instead of crowding the app shell.
 - Use the mascot sparingly as a guide, hint, completion, or cultural-note layer. In health, emergency, safety, and money-dispute contexts, keep the mascot neutral or absent.
 - Default sessions should be short: `5` prompts for a deck, `3` to `5` prompts from a single listing page, with `Keep going` after completion.
@@ -133,7 +135,7 @@ Practice should treat these pages as teaching surfaces. A prompt can ask recall,
 - `145` phrase audio entries;
 - `290` breakdown audio entries.
 
-This clears the current authored-page audio audit, but it does not automatically clear practice. T-160 must create a practice-specific audio audit because practice prompts can expose audio in new combinations.
+This clears the current authored-page audio audit, but it does not automatically clear practice. A follow-up practice-generator task must create a practice-specific audio audit because practice prompts can expose audio in new combinations.
 
 ### Current native app surface
 
@@ -237,7 +239,7 @@ Best source data:
 
 Generator rules:
 
-- Keep the first release bounded to authored evidence. If the current page set does not contain enough explicit pronoun teaching for a safe deck, T-160 should emit a skipped-candidate report instead of inventing `Chào anh`, `Chào chị`, `Chào em`, `Chào ông`, `Chào bà`, `Chào chú`, or `Chào cô` pages.
+- Keep the first release bounded to authored evidence. If the current page set does not contain enough explicit pronoun teaching for a safe deck, the follow-up generator should emit a skipped-candidate report instead of inventing `Chào anh`, `Chào chị`, `Chào em`, `Chào ông`, `Chào bà`, `Chào chú`, or `Chào cô` pages.
 - Use explanations that describe social relationship plainly.
 - Do not overgeneralize Vietnamese kinship terms beyond the authored page evidence.
 
@@ -320,7 +322,7 @@ This is not a full spaced-repetition engine. It is a transparent MVP schedule th
 
 The app shows shuffled breakdown cards and asks the user to put them in phrase order, then plays the full phrase.
 
-This is high value but should wait unless T-160 proves the data is clean enough. It needs a more custom UI, stricter token ordering, and careful audio behavior for tokens plus full phrases.
+This is high value but should wait unless follow-up generator and UI proof show the data is clean enough. It needs a more custom UI, stricter token ordering, and careful audio behavior for tokens plus full phrases.
 
 ## Navigation and UX shape
 
@@ -395,7 +397,7 @@ native-ios/Resources/LanguagePacks/viet/
   practice-audio-audit.json
 ```
 
-Current resource reality: live Viet loaders still use root-level `native-ios/Resources/*.json`. If T-160 starts before the language-pack migration, it may generate:
+Current resource reality: live Viet loaders still use root-level `native-ios/Resources/*.json`. If the follow-up practice-generator task starts before the language-pack migration, it may generate:
 
 ```text
 native-ios/Resources/viet-practice-decks.json
@@ -465,7 +467,7 @@ The first implementation should avoid cloud sync, accounts, social state, and re
 
 ## Generator direction
 
-T-160 should produce a deterministic generator that:
+A follow-up practice-generator task should produce a deterministic generator that:
 
 - reads the generated Viet phrase catalog;
 - reads authored listing pages;
@@ -492,7 +494,7 @@ Prompt generation quality rules:
 
 Known current graph cleanup issue:
 
-- Gate 2 review found unresolved authored-page `detailPageID` targets including `viet-polite-hello` and `viet-family-repair-meaning`. This planning task does not edit generated authored resources, so T-160 must protect practice output by validating and skipping unresolved targets, while a separate content/graph task can repair the underlying authored links.
+- Gate 2 review found unresolved authored-page `detailPageID` targets including `viet-polite-hello` and `viet-family-repair-meaning`. This planning task does not edit generated authored resources, so the follow-up practice-generator task must protect practice output by validating and skipping unresolved targets, while a separate content/graph task can repair the underlying authored links.
 
 ## Mascot lane
 
@@ -543,7 +545,7 @@ Before any go-live claim involving practice:
 
 These are draft recommendations. Do not queue them until Jojo reviews this plan.
 
-### T-160: Offline Viet practice deck generator
+### Follow-up: Offline Viet practice deck generator
 
 Outcome: Generate deterministic practice deck resources from the Viet catalog, authored listing pages, and audio audit.
 

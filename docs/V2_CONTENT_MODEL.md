@@ -1,5 +1,7 @@
 # V2 Content Model
 
+Alignment note: `docs/OFFLINE_SQLITE_PHRASE_GRAPH_PLAN.md` now owns the proposed long-term bundled SQLite read model for canonical phrase pages, clusters, search, audio, and practice hooks. This document remains the current content blueprint and live count/reference surface.
+
 ## Goal
 
 Keep the current app shell shippable while moving the content system away from a phrase warehouse and toward a traveler decision engine.
