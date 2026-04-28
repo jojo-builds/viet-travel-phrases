@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T02:20:32.525291+07:00",
+  "updatedAt": "2026-04-29T02:30:14.627212+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -14,7 +14,15 @@
   },
   "groups": {
     "reclaimable": [],
-    "queued": [],
+    "queued": [
+      {
+        "taskId": "T-164",
+        "title": "Research and design SpeakLocal homepage strategy",
+        "state": ".agent\\tasks\\T-164\\state.json",
+        "selectionOrder": 13,
+        "writeLock": "homepage_research_design"
+      }
+    ],
     "in_progress": [
       {
         "taskId": "T-162",
@@ -649,7 +657,7 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 0,
+    "queuedCount": 1,
     "reclaimableCount": 0,
     "inProgressCount": 1,
     "blockedCount": 15,

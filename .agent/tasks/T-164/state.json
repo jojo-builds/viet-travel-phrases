@@ -1,0 +1,59 @@
+{
+  "taskId": "T-164",
+  "title": "Research and design SpeakLocal homepage strategy",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 180,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "homepage_research_design",
+      "agent_task_T-164"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-164/result.md",
+    "recoveryNotes": ".agent/tasks/T-164/recovery-notes.md",
+    "reviews": ".agent/tasks/T-164/reviews/",
+    "logs": ".agent/tasks/T-164/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-164/result.md",
+      ".agent/tasks/T-164/state.json",
+      "docs/design/homepage-research/README.md"
+    ]
+  },
+  "lastUpdated": "2026-04-29T02:35:00+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "120-240",
+    "runtimeReviewPathProven": false,
+    "selectionOrder": 13,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}
