@@ -3,7 +3,8 @@
 Use this file for repo-local Codex queue runs.
 
 ## Startup
-- Normalize to `E:\AI\SpeakLocal-App-Family`.
+- Normalize to `/Users/jojolim/Developer/products/speaklocal/app-family`.
+- Treat legacy Windows roots as archive references only.
 - Read, in order:
   1. `AGENTS.md`
   2. `.agent/README.md`
@@ -21,6 +22,7 @@ Use this file for repo-local Codex queue runs.
 
 ## Claim
 - Confirm this worker exposes `functions.spawn_agent`.
+- If using the queue helper, set `SPEAKLOCAL_REVIEW_RUNTIME=subagents` only after confirming reviewer subagents are callable in the current worker session.
 - Generate a fresh session id and label.
 - Claim by patching the candidate `state.json` directly with exact context.
 - Required claim fields:

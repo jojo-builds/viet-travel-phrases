@@ -2,9 +2,7 @@
 from __future__ import annotations
 
 import argparse
-import ctypes
 import json
-import msvcrt
 import os
 import re
 import subprocess
@@ -13,10 +11,16 @@ import tempfile
 import time
 import uuid
 from contextlib import contextmanager
-from ctypes import wintypes
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
+
+if os.name == "nt":
+    import ctypes
+    import msvcrt
+    from ctypes import wintypes
+else:
+    import fcntl
 
 OWNER_DEFAULT = "codex-desktop-automation"
 DEFAULT_LEASE_MINUTES = 120
@@ -31,10 +35,12 @@ LOCK_ROOT = AGENT_ROOT / "coordination" / ".queue-locks"
 EVENT_LOG_PATH = AGENT_ROOT / "coordination" / "queue-events.jsonl"
 RUNTIME_REVIEW_STATUS_PATH = AGENT_ROOT / "coordination" / "runtime-review-path.json"
 DESKTOP_APP_RECOVERY_PATH = AGENT_ROOT / "coordination" / "desktop-app-recovery.json"
-CANONICAL_REPO_ROOT = "E:\\AI\\SpeakLocal-App-Family"
+CANONICAL_REPO_ROOT = str(REPO_ROOT)
 COMPATIBILITY_REPO_ROOTS = {
     CANONICAL_REPO_ROOT,
+    "/Users/jojolim/Developer/products/speaklocal/app-family",
     "E:\\AI\\Viet-Travel-Phrases",
+    "E:\\AI\\SpeakLocal-App-Family",
     "C:\\Users\\Administrator\\.openclaw\\workspace\\projects\\speaklocal-app-family",
     "C:\\Users\\Administrator\\.openclaw\\workspace\\projects\\viet-travel-phrases",
 }
@@ -57,7 +63,7 @@ FILE_SHARE_WRITE = 0x00000002
 FILE_SHARE_DELETE = 0x00000004
 OPEN_EXISTING = 3
 FILE_ATTRIBUTE_NORMAL = 0x00000080
-INVALID_HANDLE_VALUE = ctypes.c_void_p(-1).value
+INVALID_HANDLE_VALUE = ctypes.c_void_p(-1).value if os.name == "nt" else None
 
 
 def normalize_root_value(raw_root: str) -> str:
@@ -78,25 +84,28 @@ def accepted_real_roots() -> set[str]:
 
 ALLOWED_REAL_ROOTS = accepted_real_roots()
 
-KERNEL32 = ctypes.WinDLL("kernel32", use_last_error=True)
-KERNEL32.CreateMutexW.argtypes = [wintypes.LPVOID, wintypes.BOOL, wintypes.LPCWSTR]
-KERNEL32.CreateMutexW.restype = wintypes.HANDLE
-KERNEL32.CreateFileW.argtypes = [
-    wintypes.LPCWSTR,
-    wintypes.DWORD,
-    wintypes.DWORD,
-    wintypes.LPVOID,
-    wintypes.DWORD,
-    wintypes.DWORD,
-    wintypes.HANDLE,
-]
-KERNEL32.CreateFileW.restype = wintypes.HANDLE
-KERNEL32.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
-KERNEL32.WaitForSingleObject.restype = wintypes.DWORD
-KERNEL32.ReleaseMutex.argtypes = [wintypes.HANDLE]
-KERNEL32.ReleaseMutex.restype = wintypes.BOOL
-KERNEL32.CloseHandle.argtypes = [wintypes.HANDLE]
-KERNEL32.CloseHandle.restype = wintypes.BOOL
+if os.name == "nt":
+    KERNEL32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    KERNEL32.CreateMutexW.argtypes = [wintypes.LPVOID, wintypes.BOOL, wintypes.LPCWSTR]
+    KERNEL32.CreateMutexW.restype = wintypes.HANDLE
+    KERNEL32.CreateFileW.argtypes = [
+        wintypes.LPCWSTR,
+        wintypes.DWORD,
+        wintypes.DWORD,
+        wintypes.LPVOID,
+        wintypes.DWORD,
+        wintypes.DWORD,
+        wintypes.HANDLE,
+    ]
+    KERNEL32.CreateFileW.restype = wintypes.HANDLE
+    KERNEL32.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+    KERNEL32.WaitForSingleObject.restype = wintypes.DWORD
+    KERNEL32.ReleaseMutex.argtypes = [wintypes.HANDLE]
+    KERNEL32.ReleaseMutex.restype = wintypes.BOOL
+    KERNEL32.CloseHandle.argtypes = [wintypes.HANDLE]
+    KERNEL32.CloseHandle.restype = wintypes.BOOL
+else:
+    KERNEL32 = None
 
 
 def now_local() -> datetime:
@@ -615,6 +624,12 @@ def best_effort_remove_lock_metadata(lock_path: Path, expected_token: str) -> No
 
 @contextmanager
 def stale_cleanup_mutex(name: str, timeout_seconds: int):
+    if os.name != "nt":
+        lock_path = LOCK_ROOT / f"stale-cleanup-{re.sub(r'[^A-Za-z0-9_.-]', '-', name)}.lock"
+        with posix_queue_file_lock(lock_path, {"name": name, "kind": "stale-cleanup"}, timeout_seconds):
+            yield
+        return
+
     mutex_name = stale_cleanup_mutex_name(name)
     handle = KERNEL32.CreateMutexW(None, False, mutex_name)
     if not handle:
@@ -639,6 +654,11 @@ def queue_mutation_lock(name: str = "queue-mutation", timeout_seconds: int = DEF
     LOCK_ROOT.mkdir(parents=True, exist_ok=True)
     lock_path = LOCK_ROOT / f"{name}.lock"
     lock_token = uuid.uuid4().hex
+    if os.name != "nt":
+        with posix_queue_file_lock(lock_path, {"name": name, "kind": "queue-mutation", "token": lock_token}, timeout_seconds):
+            yield
+        return
+
     mutex_name = queue_mutation_mutex_name(name)
     handle = KERNEL32.CreateMutexW(None, False, mutex_name)
     if not handle:
@@ -671,6 +691,42 @@ def queue_mutation_lock(name: str = "queue-mutation", timeout_seconds: int = DEF
         if acquired:
             KERNEL32.ReleaseMutex(handle)
         KERNEL32.CloseHandle(handle)
+
+
+@contextmanager
+def posix_queue_file_lock(lock_path: Path, payload: dict[str, Any], timeout_seconds: int):
+    LOCK_ROOT.mkdir(parents=True, exist_ok=True)
+    start = time.monotonic()
+    with lock_path.open("a+", encoding="utf-8") as handle:
+        while True:
+            try:
+                fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.monotonic() - start >= timeout_seconds:
+                    metadata = read_lock_metadata(lock_path)
+                    raise TimeoutError(f"timed out acquiring queue mutation lock: {lock_path} metadata={metadata}")
+                time.sleep(0.1)
+
+        metadata = {
+            "pid": os.getpid(),
+            "createdAt": iso_timestamp(now_local()),
+            **payload,
+        }
+        handle.seek(0)
+        handle.truncate()
+        handle.write(json.dumps(metadata, ensure_ascii=False))
+        handle.flush()
+        os.fsync(handle.fileno())
+        try:
+            yield
+        finally:
+            handle.seek(0)
+            handle.truncate()
+            handle.flush()
+            os.fsync(handle.fileno())
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+            safe_unlink(lock_path)
 
 
 def task_number(task_id: str) -> int:
@@ -1117,12 +1173,15 @@ def generated_recovery_read_first_lines(original_task_id: str, original_state: d
     ]
     recovery_notes_path = task_recovery_notes_path(original_task_id, original_state)
     if recovery_notes_path.exists():
-        lines.append(f"- `{to_repo_relative(recovery_notes_path).replace('\\', '/')}`")
+        recovery_notes_rel = to_repo_relative(recovery_notes_path).replace("\\", "/")
+        lines.append(f"- `{recovery_notes_rel}`")
     result_path = task_result_path(original_task_id, original_state)
     if result_path.exists():
-        lines.append(f"- `{to_repo_relative(result_path).replace('\\', '/')}`")
+        result_rel = to_repo_relative(result_path).replace("\\", "/")
+        lines.append(f"- `{result_rel}`")
     for log_path in real_files(task_logs_root(original_task_id, original_state))[:4]:
-        lines.append(f"- `{to_repo_relative(log_path).replace('\\', '/')}`")
+        log_rel = to_repo_relative(log_path).replace("\\", "/")
+        lines.append(f"- `{log_rel}`")
     return lines
 
 
@@ -2759,7 +2818,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str]) -> int:
-    if globals().get("__name__") == "__main__":
+    if globals().get("__name__") == "__main__" and os.name == "nt":
         print(json.dumps({
             "status": "error",
             "reason": "queue-tool-direct-launch-not-supported",

@@ -14,12 +14,12 @@ Use this file for the heavier maintenance and queue top-up pass.
 Read only what is needed, in this order.
 
 1. `.agent/QUEUE_REPAIR.md`
-2. run `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 repair`
+2. run `python3 .agent/queue_tool.py repair`
 3. `.agent/coordination/locks.yaml`
 4. the `state.json` files for tasks currently listed in `reclaimable`, `queued`, `in_progress`, and `blocked`
 5. `state.json` files for at most the newest `4` tasks in `recently_completed`, and only to verify whether one of them changed since the last folded truth
 6. `result.md` only for tasks whose `state.json` now says `done` or `blocked` and whose output has not yet been folded into durable truth
-7. `E:\AI\OpenClaw\workspace\ops\LANES.md` only if there is drift to repair, a newly completed task to fold in, or a new queued task to seed
+7. current repo docs only if there is drift to repair, a newly completed task to fold in, or a new queued task to seed
 8. `docs/LANGUAGE_PREP_WORKFLOW.md` only if a completed prep-lane task changed prep truth
 9. `docs/PRIORITIES.md`, `docs/V2_BASELINE.md`, and `docs/V2_CONTENT_MODEL.md` only if a completed task actually changed roadmap or blueprint truth
 10. `.agent/queue_tool.py` only if the wrapper failed or this run is explicitly in queue self-heal/debugging mode
@@ -28,7 +28,7 @@ Do not read broad repo docs just because this is an hourly pass. If nothing chan
 
 ## Fast-exit rule
 After the helper-backed state check, stop immediately with no further reads or writes when all of the following are true:
-- `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 repair` made no lifecycle-truth changes beyond a clean queue-index rewrite
+- `python3 .agent/queue_tool.py repair` made no lifecycle-truth changes beyond a clean queue-index rewrite
 - no task newly moved to `done` or `blocked`
 - queued depth is already `6` or more
 - no reclaimable stale task needs action
@@ -40,7 +40,7 @@ A healthy quiet top-up pass should usually end here.
 ## Queue-index handling rule
 Treat `queue-index.json` as a rebuildable fast-selection aid, not a fragile patch target.
 
-1. Prefer `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 repair` as the first repair path.
+1. Prefer `python3 .agent/queue_tool.py repair` as the first repair path.
 2. Let the helper normalize reclaimable task state and rewrite `queue-index.json` in one pass.
 3. Do not issue multiple partial edits to `queue-index.json` in the same maintenance run when a helper-backed rewrite can do the job.
 4. After rewriting, treat the file as settled for the rest of the run unless a newly seeded task requires one final full rewrite.
@@ -50,7 +50,7 @@ Prefer a single full-file rewrite over brittle exact-text edits.
 ## Interrupted meaningful-task recovery handoff rule
 Use the explicit recovery-handoff surface when a meaningful task has stale or expired ownership and already-landed work should be salvaged through a fresh closeout task instead of reopening the stale original task.
 
-1. Start with `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 recovery-handoff --task-id T-xxx --dry-run`.
+1. Start with `python3 .agent/queue_tool.py recovery-handoff --task-id T-xxx --dry-run`.
 2. Treat `would_create` as the signal that the task is eligible for a new recovery handoff packet.
 3. Treat `already_recovered` as the signal that an existing recovery task already owns the closeout; write mode may still backfill machine-readable recovery metadata onto that original/recovery pair.
 4. Keep `repair` cheap and non-seeding; do not hide recovery-task creation inside ordinary repair.
@@ -87,7 +87,7 @@ Treat these as a likely stall signal when taken together:
 When that signal is present:
 1. check a small recovery ledger under `.agent/coordination/desktop-app-recovery.json`
 2. if the Codex desktop app is not running and queued/reclaimable/in-progress work exists, start it first and record that start event
-3. otherwise, if no restart was attempted recently, do one controlled restart of the Windows Codex desktop app
+3. otherwise, if no restart was attempted recently, surface a blocker for human/operator recovery; Mac desktop restart automation is not enabled yet
 4. record the timestamp, reason, and observed queue state in the recovery ledger
 5. do not loop starts/restarts inside the same maintenance run
 6. on the next hourly run, prefer evidence of resumed claims/completions before attempting another restart
@@ -104,7 +104,6 @@ Guardrails:
 Default fold-in targets are narrow:
 - repo-local task `state.json`
 - `queue-index.json`
-- `E:\AI\OpenClaw\workspace\ops\LANES.md`
 - the smallest affected project truth file, such as `docs/LANGUAGE_PREP_WORKFLOW.md`
 
 Do not reopen roadmap or blueprint docs unless the completed task genuinely changes them.

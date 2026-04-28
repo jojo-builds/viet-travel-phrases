@@ -148,12 +148,11 @@
 - The repo-local `.agent/` queue remains useful only for bounded execution-grade tasks with a clear deliverable, clear write scope, and a prompt packet worth autonomous pickup.
 - Do not use the queue as the main roadmap, idea backlog, or product-brain surface; use it only after the orchestrator has already shaped a feature into a real implementation task.
 - This pinned Codex thread is the orchestrator lane. Heavy implementation work should run in fresh worker threads on explicit feature/recovery tasks, not in old recovered threads that already hit `loading model` or reauthentication trouble.
-- When the Codex Windows app starts showing the recurring `loading model` / reauthentication pattern on long-running worker or reviewer threads, the preferred operator recovery is:
-  - restart the Codex Windows desktop app
+- When Codex desktop starts showing the recurring `loading model` / reauthentication pattern on long-running worker or reviewer threads, the preferred operator recovery is:
+  - restart the Codex desktop app
   - reopen the repo
   - resume from the task files in a fresh worker thread instead of trusting the old thread to self-heal cleanly
-- Codex on this machine is installed through the Microsoft Store lane. The preferred update command is:
-  - `winget install Codex -s msstore`
+- The active Codex machine is now this Mac; Windows Codex install/update notes are archive-only unless the old server is intentionally reopened.
 - Queue recovery should prefer explicit recovery tasks over silently reusing interrupted tasks. If a meaningful task is materially complete but the app/runtime interrupted the closeout, keep the original task as historical interruption truth and finish the salvage path in a fresh recovery task.
 - For machine transitions, repo-persisted docs plus `.agent` task state are the primary continuity source, not any single live Codex thread.
 - Preferred Codex carryover into a new machine is:

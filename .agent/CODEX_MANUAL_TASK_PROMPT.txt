@@ -1,5 +1,6 @@
 Repo-local manual task run only.
-Use `E:\AI\SpeakLocal-App-Family` as the canonical root.
+Use `/Users/jojolim/Developer/products/speaklocal/app-family` as the canonical root.
+Treat Windows paths in old task artifacts as migration/archive references only.
 This prompt is for an explicitly assigned task id, not for automatic queue selection.
 
 Read, in order:

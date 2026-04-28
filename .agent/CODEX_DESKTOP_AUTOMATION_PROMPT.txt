@@ -1,5 +1,6 @@
 Repo-local queue run only.
-Use `E:\AI\SpeakLocal-App-Family` as the canonical root.
+Use `/Users/jojolim/Developer/products/speaklocal/app-family` as the canonical root.
+Treat Windows paths in old task artifacts as migration/archive references only.
 Ignore broad family startup and do not use `$orchestrate-speaklocal-family` during queue startup.
 This prompt is for already-shaped execution tasks only, not for high-level roadmap intake, broad feature triage, or backlog creation.
 Treat the external visual tracker / orchestrator lane as the place where new feature ideas are shaped before they ever enter the queue.

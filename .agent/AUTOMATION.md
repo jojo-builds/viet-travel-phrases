@@ -37,6 +37,6 @@ Use this file when the automation prompt says to process the next repo-local que
   - audits the interrupted task's current truth
   - reruns only the missing validations and review gates
   - leaves the original interrupted task as historical truth
-- For repo-local queue tooling, inspect first with `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 recovery-handoff --task-id T-xxx --dry-run`.
+- For repo-local queue tooling on the Mac, inspect first with `python3 .agent/queue_tool.py recovery-handoff --task-id T-xxx --dry-run`.
 - Use write-mode `recovery-handoff` only when the interrupted task is meaningful, stale, and has landed work worth salvaging; keep `repair` non-seeding and keep `desktop-recover` limited to app start/restart plus recovery-ledger updates.
 - Recovery tasks should be explicit about whether they are allowed to repair worktree files or only close out the interrupted artifact set.

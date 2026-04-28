@@ -31,7 +31,7 @@ This folder is the repo-local task surface for Codex queue work.
 - Treat that as an optimistic compare-and-swap claim: if the patch no longer applies or the re-read session id is not yours, move to the next eligible task.
 - Use `.agent/coordination/queue-index.json` to choose candidates quickly, but never trust it over the candidate's live `state.json`.
 - Once a task is claimed, ordinary runs should stop reading or writing hot queue surfaces other than that task's own `state.json` unless the task is explicitly a queue-maintenance/self-heal task.
-- For interrupted meaningful-task salvage, inspect with `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 recovery-handoff --task-id T-xxx --dry-run` before any write-mode recovery handoff generation or legacy metadata backfill.
+- For interrupted meaningful-task salvage on the Mac, inspect with `python3 .agent/queue_tool.py recovery-handoff --task-id T-xxx --dry-run` before any write-mode recovery handoff generation or legacy metadata backfill.
 - Best-effort queue-index and event-log updates are optional for desktop prompt-only runs; they must never block task claim or completion.
 
 ## Scope

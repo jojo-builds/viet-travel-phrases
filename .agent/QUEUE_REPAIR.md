@@ -9,11 +9,11 @@ Use this file for the cheap recurring queue repair pass.
 - stop fast when the queue is already healthy
 
 ## Read order
-1. run `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 repair`
+1. run `python3 .agent/queue_tool.py repair`
 2. `queue-index.json` only after the helper runs, to confirm resulting counts if needed
 3. `state.json` only for tasks whose status newly moved to `done` or `blocked`
 4. `result.md` only for those newly completed/blocked tasks when their output has not yet been folded into durable truth
-5. `E:\AI\OpenClaw\workspace\ops\LANES.md` only if newly completed/blocked task truth needs to be folded or surfaced
+5. current repo docs only if newly completed/blocked task truth needs to be folded or surfaced
 6. `.agent/queue_tool.py` only if the wrapper failed or this run is explicitly in queue self-heal/debugging mode
 
 Do not seed new tasks in this pass.
@@ -22,7 +22,7 @@ Do not do strategic prioritization in this pass.
 
 ## Fast exit
 Stop immediately when all of the following are true:
-- `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 repair` made no lifecycle-truth changes beyond a clean queue-index rewrite
+- `python3 .agent/queue_tool.py repair` made no lifecycle-truth changes beyond a clean queue-index rewrite
 - no task newly moved to `done` or `blocked`
 - no malformed `in_progress` task exists
 - no reclaimable stale task needs surfacing
@@ -41,7 +41,7 @@ A healthy quiet hour should usually end here.
 - no write-mode `recovery-handoff` generation during ordinary cheap repair
 - no broad doc rereads
 - no manual patching of `queue-index.json` when the helper can rewrite it
-- no direct `py .agent\queue_tool.py ...` launch from recurring repair; use the wrapper
+- no legacy Windows PowerShell wrapper requirement on the Mac; use `python3 .agent/queue_tool.py ...`
 
 ## Why this exists
 The old hourly pass mixed repair, intake, and strategy. That made it heavier and raised the failure surface. This file keeps the recurring lane cheap and deterministic.
