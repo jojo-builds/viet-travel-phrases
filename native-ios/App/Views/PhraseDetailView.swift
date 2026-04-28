@@ -6,8 +6,12 @@ struct PhraseDetailView: View {
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
+    let isSaved: Bool
+    let isInPractice: Bool
     var onBackTapped: () -> Void
     var onSearchTapped: () -> Void
+    var onToggleSaved: (() -> Void)?
+    var onTogglePractice: (() -> Void)?
     var onDetailTapped: (String) -> Void
 
     init(
@@ -16,8 +20,12 @@ struct PhraseDetailView: View {
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
+        isSaved: Bool = false,
+        isInPractice: Bool = false,
         onBackTapped: @escaping () -> Void,
         onSearchTapped: @escaping () -> Void,
+        onToggleSaved: (() -> Void)? = nil,
+        onTogglePractice: (() -> Void)? = nil,
         onDetailTapped: @escaping (String) -> Void
     ) {
         self.page = page
@@ -25,8 +33,12 @@ struct PhraseDetailView: View {
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
+        self.isSaved = isSaved
+        self.isInPractice = isInPractice
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
+        self.onToggleSaved = onToggleSaved
+        self.onTogglePractice = onTogglePractice
         self.onDetailTapped = onDetailTapped
     }
 
@@ -40,8 +52,12 @@ struct PhraseDetailView: View {
                 chromeNamespace: chromeNamespace,
                 isSearchActive: isSearchActive,
                 showsChrome: showsChrome,
+                isSaved: isSaved,
+                isInPractice: isInPractice,
                 onBackTapped: onBackTapped,
                 onSearchTapped: onSearchTapped,
+                onToggleSaved: onToggleSaved,
+                onTogglePractice: onTogglePractice,
                 onDetailTapped: onDetailTapped
             )
         } else {
@@ -176,8 +192,20 @@ struct PhraseDetailView: View {
                         .minimumScaleFactor(0.76)
                 }
 
-                PlaybackDockView(audioKey: page.playbackAudioKey)
+                PlaybackDockView(
+                    audioKey: page.playbackAudioKey,
+                    isSaved: isSaved,
+                    onToggleSaved: onToggleSaved
+                )
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
+
+                if let onTogglePractice {
+                    DetailPracticeIntentButton(
+                        isInPractice: isInPractice,
+                        onTogglePractice: onTogglePractice
+                    )
+                    .padding(.top, 4)
+                }
             }
             .padding(.horizontal, 24)
             .padding(.top, PhrasePageStyle.heroTextTopPadding)
@@ -236,6 +264,34 @@ private struct DetailSectionView: View {
         } else {
             DetailSectionCard(section: section)
         }
+    }
+}
+
+private struct DetailPracticeIntentButton: View {
+    let isInPractice: Bool
+    let onTogglePractice: () -> Void
+
+    var body: some View {
+        Button {
+            onTogglePractice()
+        } label: {
+            HStack(spacing: 10) {
+                Image(systemName: isInPractice ? "checkmark.circle.fill" : "plus.circle.fill")
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(.red)
+
+                Text(isInPractice ? "In practice pool" : "Add to practice")
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(.primary)
+
+                Spacer()
+            }
+            .padding(.horizontal, 16)
+            .frame(height: 52)
+            .phraseListCard(cornerRadius: 20, strokeOpacity: 0.05)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(isInPractice ? "Remove from practice pool" : "Add to practice pool")
     }
 }
 

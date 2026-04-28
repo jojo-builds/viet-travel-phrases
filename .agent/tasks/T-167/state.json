@@ -1,22 +1,22 @@
 {
   "taskId": "T-167",
   "title": "Implement Native Home V1 And Local User Intent State",
-  "status": "queued",
-  "phase": "queued-for-desktop-codex",
+  "status": "done",
+  "phase": "completed",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "session": {
-    "owner": "",
-    "sessionId": "",
-    "label": ""
+    "owner": "codex-desktop-automation",
+    "sessionId": "c8ba1a17-be3b-4ff9-b34b-1e863017a728",
+    "label": "manual-t-167-home-v1"
   },
   "execution": {
-    "attempt": 0,
-    "claimedAt": "",
-    "lastHeartbeatAt": "",
+    "attempt": 1,
+    "claimedAt": "2026-04-29T04:28:41+07:00",
+    "lastHeartbeatAt": "2026-04-29T05:52:17.167261+07:00",
     "heartbeatEveryMinutes": 10,
     "leaseDurationMinutes": 180,
-    "leaseExpiresAt": "",
+    "leaseExpiresAt": "2026-04-29T05:52:17.167261+07:00",
     "reclaimReason": ""
   },
   "locks": {
@@ -42,7 +42,7 @@
       "native-ios/App/Views/AppShellView.swift"
     ]
   },
-  "lastUpdated": "2026-04-29T04:07:55+07:00",
+  "lastUpdated": "2026-04-29T05:52:17.167261+07:00",
   "automation": {
     "runner": "desktop-codex",
     "mode": "single-task",

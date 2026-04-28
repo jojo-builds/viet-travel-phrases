@@ -86,6 +86,8 @@ Conceptually, every phrase should be practice-capable. That does not mean hand-w
 
 The mutable user-state model should stay local, private, and deterministic. It should not depend on accounts, cloud sync, remote ranking, analytics, or runtime AI.
 
+T-167 implementation note: the native app now has a first local user-intent store for recent page IDs, saved page IDs, and practice-pool page IDs. It powers Home shelves and listing/detail page save/practice affordances only at page level; generated practice decks, prompt progress, missed/due state, and a full Practice destination remain follow-up work.
+
 Local state should capture:
 
 - saved canonical phrase/page IDs;
@@ -228,7 +230,7 @@ Current native image assets are:
 - `HeroXinChao`;
 - `HeroVietnamMasthead`.
 
-`native-ios/Resources/LanguagePacks/viet/` exists but currently contains only `.gitkeep`. Per `docs/APP_FAMILY_STRUCTURE.md`, the language-pack folder is the target resource direction, while current live Viet resources still sit at `native-ios/Resources/*.json`.
+`native-ios/Resources/LanguagePacks/viet/` now contains the bundled T-165 SQLite fixture and report for DEBUG read-only validation. Production Viet resources still sit at `native-ios/Resources/*.json`, and visible runtime reads remain JSON-backed until SQLite search/page rendering reaches parity.
 
 ## Product principles
 
@@ -584,7 +586,7 @@ Bundled content owns:
 - speaker-control eligibility and missing-audio audit output;
 - search/routing aliases that keep every phrase on one canonical page.
 
-The app must not mutate this bundled content at runtime. JSON remains the current live source until the SQLite read path is packaged and validated; SQLite is the planned read model, not the user-state store.
+The app must not mutate this bundled content at runtime. JSON remains the current production live source while the T-165 DEBUG SQLite read path proves bundle packaging/read-only access; SQLite is the planned read model, not the user-state store.
 
 ### Mutable local user state
 
@@ -753,14 +755,14 @@ Validation:
 - light/dark/background checks;
 - serious-context absence/neutrality check.
 
-### Follow-up: Local user-state store and personalized shelves
+### Follow-up: Practice progress state and personalized shelves
 
-Outcome: Add local saved, recent, practice-pool, practiced, and missed state contracts, then expose only the Home/Practice shelves whose state exists.
+Outcome: Extend the T-167 local intent store with practiced, missed, due, and session-progress contracts, then expose only the Home/Practice shelves whose state exists.
 
 Write scope:
 
-- native local-state models/storage;
-- Home/Practice selectors;
+- native local-state model extensions/storage migrations;
+- Practice selectors and any Home shelf extensions beyond T-167's saved/recent/practice-pool shelves;
 - tests or focused validation logs;
 - operational docs only if release truth changes.
 

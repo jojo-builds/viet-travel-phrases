@@ -1,8 +1,10 @@
 # SpeakLocal Vietnam Homepage Research
 
-Status: T-164 recommendation packet
+Status: T-164 recommendation packet, with T-167 native Home V1 implementation note
 Date: 2026-04-29
-Scope: product/design strategy only. No SwiftUI implementation is included here.
+Scope: product/design strategy plus concise implementation-reality notes.
+
+T-167 implementation note: native Home V1 is now the default launch route in `native-ios/`. It is backed by the current bundled JSON/catalog helpers, starts first-launch users on search, curated essentials, situations, relationship links, featured authored pages, and browse, and only shows Continue, Saved, and Practice Pool shelves when real local user-intent state exists.
 
 ## Executive Recommendation
 
@@ -84,7 +86,7 @@ Tradeoffs:
 
 - Too abstract for the first viewport.
 - Risk of feeling like a taxonomy browser if search and immediate actions are not dominant.
-- Full graph shelves want the SQLite runtime/read path, which is generated but not bundled into the app yet.
+- Full graph shelves want production SQLite search/page-renderer parity; the T-165 bundled DEBUG read path proves packaging only.
 
 Verdict: use as the second-layer discovery system, not the first screen's lead idea.
 
@@ -459,7 +461,7 @@ Liquid Glass handoff:
 - Practice decks seeded directly from canonical phrase/page/audio IDs.
 - Graph-nearby personalized shelves beyond simple scenario/category neighbors.
 
-T-163 has generated `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite` and a report with `919` canonical phrase pages, but `native-ios/project.yml` does not bundle `LanguagePacks` yet. Home V1 should not assume `Bundle.main` can open the SQLite fixture.
+T-165 packaged `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite` as a bundled resource and added a DEBUG-only read-only repository that can open it from `Bundle.main`. Home V1 should still stay on the current JSON/catalog runtime until search, page rendering, and graph shelf parity are validated against SQLite.
 
 ### Wait For Practice/Mascot Acceptance
 
@@ -472,27 +474,21 @@ T-163 has generated `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sql
 
 ## Implementation Handoff Notes
 
-Suggested later SwiftUI task:
+T-167 implemented the first native `HomeView` route, local page-level recent/saved/practice-pool state, and Home/Saved/ Browse chrome routing. Remaining handoff notes:
 
-1. Add `HomeView` as the root route instead of using `PhraseListingView(page: .xinChao)` as Home.
-2. Keep `Xin chào` as a featured phrase/page, not the whole Home screen.
-3. Add a `HomeSection` / `HomeCard` model layer that can be backed first by JSON/catalog helpers and later by SQLite.
-4. Route every phrase card through existing `openDetail(_:)` with canonical page IDs.
-5. Reuse `PlaybackDockView` or a compact audio button only when `AudioAssetManifest` resolves.
-6. Reuse `AccentTint` and current symbol names from scenarios.
-7. Keep search integration aligned with `SearchPageView` and the bottom chrome morph.
-8. Store recent/saved as canonical page IDs so the future alias layer can migrate cleanly.
-9. Store practice-pool additions as canonical phrase/page IDs, separate from bundled phrase graph data.
-10. Rank Home rows with deterministic local rules: saved/practice-selected, due/missed practice, recent, graph-nearby, then curated essentials.
-11. Do not edit generated JSON resources by hand for Home. Build data selectors over current resources.
-12. Do not add runtime AI/network calls.
+1. Keep `Xin chào` as a featured phrase/page and Browse doorway, not the whole Home screen.
+2. Keep Home cards routed through canonical page IDs and existing page renderers.
+3. Keep recent/saved/practice-pool additions as canonical page IDs separate from bundled phrase graph data.
+4. Rank future Home rows with deterministic local rules: saved/practice-selected, due/missed practice, recent, graph-nearby, then curated essentials.
+5. Do not edit generated JSON resources by hand for Home. Build data selectors over current resources.
+6. Do not add runtime AI/network calls.
 
 Recommended follow-up tasks:
 
-1. Implement native `HomeView` V1 with search, use-now, situations, relationship shelf, and featured authored pages.
-2. Add local recent/saved/practice-pool page and phrase ID persistence, then expose only the Home shelves backed by real state.
-3. Add XcodeGen resource rules for `Resources/LanguagePacks/**`, then build a debug-gated SQLite repository spike.
-4. After the separate practice deck generator and native Practice UI entrypoint tasks land, add only the Home-facing practice entry that consumes their accepted local state and deck outputs.
+1. Build an offline Viet practice deck generator from canonical page/audio IDs.
+2. Add the native Practice destination and listing-page practice entrypoints against generated deck resources.
+3. Add Home-facing practice recommendations only after the accepted Practice data/UI path exists.
+4. Add SQLite search/page-renderer parity behind DEBUG before switching any production Home/search/listing route.
 5. Audit relationship greeting pages/audio into the SQLite graph so `anh`, `chị`, `em`, `ông`, `bà`, `chú`, `cô`, and `bạn` become data-driven shelves.
 
 ## Risks

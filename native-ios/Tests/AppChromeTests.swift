@@ -34,6 +34,23 @@ final class AppChromeTests: XCTestCase {
         let chrome = AppChrome(route: .phrasePage)
 
         XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved])
+        XCTAssertEqual(chrome.selectedDockItem, .browse)
+        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
+    }
+
+    func testHomeChromeUsesHomeSelectedDockWithSearchIsland() {
+        let chrome = AppChrome(route: .home)
+
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved])
+        XCTAssertEqual(chrome.selectedDockItem, .home)
+        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
+    }
+
+    func testSavedChromeUsesSavedSelectedDockWithSearchIsland() {
+        let chrome = AppChrome(route: .saved)
+
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved])
+        XCTAssertEqual(chrome.selectedDockItem, .saved)
         XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
 
@@ -41,6 +58,7 @@ final class AppChromeTests: XCTestCase {
         let chrome = AppChrome(route: .search)
 
         XCTAssertEqual(chrome.primaryDockItems, [.home])
+        XCTAssertEqual(chrome.selectedDockItem, .home)
         XCTAssertEqual(chrome.searchPresentation, .expandedField)
     }
 
@@ -48,6 +66,13 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--search"]),
             .search
+        )
+    }
+
+    func testDefaultLaunchStartsAtHome() {
+        XCTAssertEqual(
+            AppShellView.initialRoute(for: ["SpeakLocalNative"]),
+            .home
         )
     }
 
@@ -61,7 +86,7 @@ final class AppChromeTests: XCTestCase {
     func testStaleDetailLaunchArgumentFallsBackToSafeRoute() {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--detail-page", "missing-page"]),
-            .phrasePage
+            .home
         )
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--search", "--detail-page", "missing-page"]),
@@ -84,6 +109,7 @@ final class AppChromeTests: XCTestCase {
         let chrome = AppChrome(route: .detailPage("viet-local-greetings"))
 
         XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved])
+        XCTAssertEqual(chrome.selectedDockItem, .browse)
         XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
 
@@ -106,9 +132,93 @@ final class AppChromeTests: XCTestCase {
 
         navigation.openDetail(PhrasePage.xinChao.id)
 
+        XCTAssertEqual(navigation.currentRoute, .phrasePage)
         XCTAssertTrue(navigation.detailPath.isEmpty)
         XCTAssertEqual(navigation.rootScrollToTopTrigger, 1)
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 0)
+    }
+
+    func testHomeOpensDetailAndBackReturnsHome() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openDetail("viet-hello-anh")
+
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-hello-anh"))
+        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh"])
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-hello-anh")])
+    }
+
+    func testOpeningPhraseRootFromHomeCanReturnHome() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openDetail(PhrasePage.xinChao.id)
+
+        XCTAssertEqual(navigation.currentRoute, .phrasePage)
+        XCTAssertTrue(navigation.detailPath.isEmpty)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.phrasePage])
+    }
+
+    func testOpeningSavedRouteCanReturnHome() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openSaved()
+
+        XCTAssertEqual(navigation.currentRoute, .saved)
+        XCTAssertTrue(navigation.detailPath.isEmpty)
+        XCTAssertEqual(navigation.savedScrollToTopTrigger, 1)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.saved])
+    }
+
+    func testOpeningHomeFromSearchClearsHistoryToHome() {
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
+        navigation.openSearch()
+
+        navigation.openHome()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertTrue(navigation.detailPath.isEmpty)
+        XCTAssertFalse(navigation.isSearchPresented)
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
+        XCTAssertEqual(navigation.homeScrollToTopTrigger, 1)
+    }
+
+    func testBackPreviewRouteUsesActualBackDestination() {
+        var navigation = AppShellNavigationState()
+
+        XCTAssertNil(navigation.backPreviewRoute)
+
+        navigation.openSaved()
+        XCTAssertEqual(navigation.backPreviewRoute, .home)
+
+        navigation.openDetail("viet-hello-anh")
+        XCTAssertEqual(navigation.backPreviewRoute, .saved)
+
+        navigation.openDetail("viet-hello-chi")
+        XCTAssertEqual(navigation.backPreviewRoute, .detailPage("viet-hello-anh"))
+    }
+
+    func testSearchBackPreviewUsesRouteBelowSearch() {
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
+        navigation.openSearch()
+
+        XCTAssertEqual(navigation.backPreviewRoute, .detailPage("viet-hello-anh"))
+
+        var homeSearchNavigation = AppShellNavigationState()
+        homeSearchNavigation.openSearch()
+
+        XCTAssertEqual(homeSearchNavigation.backPreviewRoute, .home)
     }
 
     func testDuplicateCurrentDetailDoesNotRequestTopScroll() {
@@ -247,7 +357,7 @@ final class AppChromeTests: XCTestCase {
         navigation.openSearch()
         navigation.goBack()
 
-        XCTAssertEqual(navigation.currentRoute, .phrasePage)
+        XCTAssertEqual(navigation.currentRoute, .home)
         XCTAssertEqual(navigation.forwardStack, [.search])
 
         navigation.goForward()
@@ -270,7 +380,7 @@ final class AppChromeTests: XCTestCase {
 
         navigation.goBack()
 
-        XCTAssertEqual(navigation.currentRoute, .phrasePage)
+        XCTAssertEqual(navigation.currentRoute, .home)
         XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-family-repair-meaning")])
 
         navigation.goForward()
@@ -326,5 +436,60 @@ final class AppChromeTests: XCTestCase {
             1,
             accuracy: 0.001
         )
+    }
+}
+
+// MARK: - Local User Intent Store Tests
+
+final class LocalUserIntentStoreTests: XCTestCase {
+    private var suiteName: String!
+    private var defaults: UserDefaults!
+
+    override func setUp() {
+        super.setUp()
+        suiteName = "LocalUserIntentStoreTests.\(UUID().uuidString)"
+        defaults = UserDefaults(suiteName: suiteName)!
+        defaults.removePersistentDomain(forName: suiteName)
+    }
+
+    override func tearDown() {
+        defaults.removePersistentDomain(forName: suiteName)
+        defaults = nil
+        suiteName = nil
+        super.tearDown()
+    }
+
+    func testFreshStoreHasNoReturningUserShelves() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        XCTAssertTrue(store.recentPageIDs.isEmpty)
+        XCTAssertTrue(store.savedPageIDs.isEmpty)
+        XCTAssertTrue(store.practicePageIDs.isEmpty)
+        XCTAssertFalse(store.hasReturningUserState)
+    }
+
+    func testRecentPagesUseCanonicalIDsAndMoveReopenedPageToFront() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.recordOpenedPage("viet-hello-anh", source: .home)
+        store.recordOpenedPage("viet-thank-you", source: .search)
+        store.recordOpenedPage("viet-hello-anh", source: .article)
+        store.recordOpenedPage("missing-page", source: .article)
+
+        XCTAssertEqual(store.recentPageIDs, ["viet-hello-anh", "viet-thank-you"])
+        XCTAssertEqual(store.recentPages.first?.source, .article)
+    }
+
+    func testSavedAndPracticeIDsPersistPrivatelyInUserDefaults() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.toggleSavedPage("viet-family-repair-understand")
+        store.togglePracticePage("viet-family-repair-understand")
+
+        let restoredStore = LocalUserIntentStore(defaults: defaults)
+
+        XCTAssertEqual(restoredStore.savedPageIDs, ["viet-family-repair-understand"])
+        XCTAssertEqual(restoredStore.practicePageIDs, ["viet-family-repair-understand"])
+        XCTAssertTrue(restoredStore.hasReturningUserState)
     }
 }

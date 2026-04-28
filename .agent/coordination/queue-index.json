@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T04:11:45.349938+07:00",
+  "updatedAt": "2026-04-29T05:52:17.172298+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -14,15 +14,7 @@
   },
   "groups": {
     "reclaimable": [],
-    "queued": [
-      {
-        "taskId": "T-167",
-        "title": "Implement Native Home V1 And Local User Intent State",
-        "state": ".agent\\tasks\\T-167\\state.json",
-        "selectionOrder": 16,
-        "writeLock": "native_home_v1_local_intent_state"
-      }
-    ],
+    "queued": [],
     "in_progress": [],
     "blocked": [
       {
@@ -148,6 +140,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-167",
+        "title": "Implement Native Home V1 And Local User Intent State",
+        "state": ".agent\\tasks\\T-167\\state.json",
+        "selectionOrder": 16,
+        "writeLock": "native_home_v1_local_intent_state"
+      },
       {
         "taskId": "T-165",
         "title": "Bundle Viet SQLite fixture and add Swift read-only repository spike",
@@ -677,12 +676,12 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 1,
+    "queuedCount": 0,
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 75
+    "recentlyCompletedCount": 76
   },
   "notes": [
     "This index is intentionally small and selection-focused.",

@@ -39,10 +39,10 @@ struct AudioSpeakerButton: View {
 
 struct PlaybackDockView: View {
     var audioKey: String? = nil
+    var isSaved = false
+    var onToggleSaved: (() -> Void)? = nil
 
     @State private var selectedSpeed = "1.0x"
-    @State private var isSaved = false
-
     private let speeds = ["0.5x", "0.75x", "1.0x"]
 
     var body: some View {
@@ -79,7 +79,7 @@ struct PlaybackDockView: View {
 
     private var favoriteButton: some View {
         Button {
-            isSaved.toggle()
+            onToggleSaved?()
         } label: {
             ZStack {
                 Circle()
@@ -95,6 +95,7 @@ struct PlaybackDockView: View {
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: 27, interactive: true)
+        .accessibilityLabel(isSaved ? "Unsave phrase page" : "Save phrase page")
     }
 
     private var raisedPlayButton: some View {
