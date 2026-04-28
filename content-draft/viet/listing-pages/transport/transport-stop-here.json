@@ -1,0 +1,229 @@
+{
+  "id": "viet-family-transport-stop-here",
+  "familyID": "transport-stop-here",
+  "phraseID": "taxi-3",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Dừng ở đây được rồi",
+  "englishTitle": "You can stop here",
+  "pronunciation": "zoong uh day dook roy",
+  "summary": "Different ways to say \"You can stop here\" in Vietnam, with the safe phrase, useful variants, and nearby next steps.",
+  "iconName": "car.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "transport"
+  ],
+  "audioKey": "taxi-3",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you want the driver to stop at the current spot. This is the safe phrase for the last turn or final stop. Use the nearby forms below when tone, setting, or politeness changes.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "taxi-3-piece-1",
+          "vietnamese": "Dừng",
+          "english": "correct",
+          "audioKey": "breakdown-taxi-3-first"
+        },
+        {
+          "id": "taxi-3-piece-2",
+          "vietnamese": "ở",
+          "english": "at / in",
+          "audioKey": "breakdown-directions-2-first"
+        },
+        {
+          "id": "taxi-3-piece-3",
+          "vietnamese": "đây",
+          "english": "here / this",
+          "audioKey": "breakdown-transport-1-first"
+        },
+        {
+          "id": "taxi-3-piece-4",
+          "vietnamese": "được",
+          "english": "can / okay",
+          "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+        },
+        {
+          "id": "taxi-3-piece-5",
+          "vietnamese": "rồi",
+          "english": "you can stop here",
+          "audioKey": "breakdown-authored-roi-081cfe9299"
+        },
+        {
+          "id": "taxi-3-full",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "audioKey": "taxi-3"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Dừng ở đây được rồi is the safest default for \"You can stop here\". Use this when you want the driver to stop at the current spot. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "taxi-3"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "natural-variations",
+      "title": "Natural variations",
+      "body": "This nearby form changes the tone or setting. Use it when the note under the row matches the moment.",
+      "phrases": [
+        {
+          "id": "transport-stop-here-clearer",
+          "vietnamese": "Cho tôi xuống ngay đây",
+          "english": "Please stop right here",
+          "pronunciation": "cho toy zoong ngay day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-transport-stop-here-clearer",
+          "audioKey": "transport-stop-here-clearer"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you want the driver to stop at the current spot. Use it in rides, routes, pickup points, and stops when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Show the location on your phone while you say the phrase. The visual context reduces mistakes.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-destination",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-main-destination",
+          "audioKey": "taxi-2"
+        },
+        {
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-route",
+          "audioKey": "taxi-4"
+        },
+        {
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-aircon",
+          "audioKey": "taxi-5"
+        },
+        {
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-wait",
+          "audioKey": "taxi-6"
+        },
+        {
+          "id": "taxi-7",
+          "vietnamese": "Tôi trả bằng tiền mặt",
+          "english": "I’ll pay cash",
+          "pronunciation": "toy tra bang tyen mat",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-cash",
+          "audioKey": "taxi-7"
+        },
+        {
+          "id": "transport-fare",
+          "vietnamese": "Tiền xe bao nhiêu?",
+          "english": "How much is the fare?",
+          "pronunciation": "tyen seh bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-fare",
+          "audioKey": "transport-fare"
+        },
+        {
+          "id": "transport-meter",
+          "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+          "english": "Please use the meter",
+          "pronunciation": "lahm uhn but dong ho zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-meter",
+          "audioKey": "transport-meter"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "taxi-3",
+      "vietnamese": "Dừng ở đây được rồi",
+      "english": "You can stop here",
+      "pronunciation": "zoong uh day dook roy",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "taxi-3"
+    }
+  ]
+}

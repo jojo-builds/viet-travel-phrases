@@ -18,6 +18,32 @@ Truth-sync note: this `2026-04-21` refresh did not add new build or device evide
 - Canonical repo root: `E:\AI\SpeakLocal-App-Family`
 - Preferred app root: `E:\AI\SpeakLocal-App-Family\app`
 
+## Codex app preview loop
+
+For the Codex desktop app, the repo now exposes project-local run actions through:
+
+- `.codex/environments/environment.toml`
+- `script/build_and_run.js`
+- compatibility wrappers:
+  - `script/build_and_run.cmd`
+  - `script/build_and_run.sh`
+
+Preferred Codex-side loop:
+
+1. Use the Codex app `Run Web Preview` action.
+2. Let it start Expo web from `app/` on port `19008`.
+3. Use the Codex app browser/preview surfaces for the local web output when available, and fall back to the authenticated dashboard canvas when you need the stable phone-framed route.
+
+Notes:
+
+- This is the fast in-app visual loop for routine UI work, not a replacement for paid native iPhone milestone builds.
+- The Codex-side preview is the closest available "vibe-code and inspect immediately" path for this Expo repo. It reflects the web/native-review lane, not a true iPhone simulator.
+- If the Codex desktop app starts showing repeated `loading model` or reauthentication issues during worker-heavy runs, restart the app first before assuming the repo or machine is at fault.
+- The preferred direct command path is now cross-platform:
+  - `node script/build_and_run.js web`
+  - `node script/build_and_run.js doctor`
+  - `node script/build_and_run.js run`
+
 ## Current local validation commands
 
 From `E:\AI\SpeakLocal-App-Family\app`:
@@ -68,6 +94,43 @@ Notes:
 - The capture script uses the same authenticated dashboard surface rather than a separate local-only page.
 - Default output lands under `artifacts/design-captures/`.
 - For loopback-only validation on the server, you can swap `https://dashboard.jayopsai.com` for `http://127.0.0.1:18790`.
+
+## Branch and paid-build policy
+
+Use this branch/testing model unless a task has a stronger explicit release instruction:
+
+1. `main` is the current accepted baseline.
+2. Each major feature or workstream should have one active feature branch.
+3. Do not keep pushing the same feature forward on multiple active branches once a winner is clear.
+4. Use the dashboard/authenticated Expo web preview as the default loop for design, copy, state, and interaction iteration.
+5. Treat paid native iPhone builds as milestone validation, not the default preview loop.
+
+### When to pay for a native iPhone build
+
+Prefer a paid build only when at least one of these is true:
+
+- the branch bundles a substantial set of changes, roughly `10+` meaningful tested features/fixes
+- the branch contains one clearly substantial experience change such as a new shell/navigation model, purchase flow, or major phrase-page interaction redesign
+- real device behavior is the thing being validated, such as StoreKit, haptics, safe areas, gesture feel, audio behavior, keyboard behavior, or native-only optical polish
+
+Do not spend a paid build for:
+
+- small copy edits
+- isolated spacing/color tweaks
+- routine dashboard-preview design passes
+- minor hidden-review-route experiments that can be judged on the authenticated web lane
+
+### How to bundle multiple features into one paid build
+
+When several approved features should be tested together on iPhone:
+
+1. keep each major feature on its own feature branch while it is still moving
+2. once the included features are approved for the same test pass, create one integration candidate branch from `main`
+3. merge the approved feature branches into that integration candidate branch
+4. run the paid iPhone build from the integration candidate branch
+5. after device validation, merge the accepted result back to `main`
+
+This keeps the paid build cadence aligned with meaningful milestone testing instead of forcing a separate native build for every feature branch.
 
 ## Website bundle checks for `site/` passes
 

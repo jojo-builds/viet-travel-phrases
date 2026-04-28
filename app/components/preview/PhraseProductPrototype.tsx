@@ -1,8 +1,8 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useState } from 'react';
-import { Pressable, ScrollView, View } from 'react-native';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Pressable, ScrollView, StyleSheet, TextInput, type TextStyle, View, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { PreviewChip } from './PreviewShell';
+import Animated, { Easing, interpolate, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { ThemedText } from '../ui/ThemedText';
 
 type SpeedOption = '0.5x' | '0.75x' | '1.0x';
@@ -42,6 +42,23 @@ type PhrasePage = {
 };
 
 const speedOptions: SpeedOption[] = ['0.5x', '0.75x', '1.0x'];
+
+const palette = {
+  page: '#F5F6F8',
+  paper: '#FFFFFF',
+  text: '#0F172A',
+  muted: '#667085',
+  subtle: '#98A2B3',
+  line: 'rgba(148, 163, 184, 0.22)',
+  glass: 'rgba(255, 255, 255, 0.78)',
+  glassStrong: 'rgba(255, 255, 255, 0.92)',
+  glassBorder: 'rgba(255, 255, 255, 0.88)',
+  red: '#D84E42',
+  redSoft: 'rgba(216, 78, 66, 0.12)',
+  yellow: '#E1B847',
+  yellowSoft: 'rgba(225, 184, 71, 0.16)',
+  shadow: '#B6BFCC',
+} as const;
 
 const phraseHeroes: Record<string, PhraseHero> = {
   'doctor-main': {
@@ -553,17 +570,88 @@ const phrasePages: Record<string, PhrasePage> = {
   },
 };
 
+type SearchEntry = {
+  key: string;
+  pageId: string;
+  heroId: string;
+  groupLabel: string;
+  targetText: string;
+  sourceText: string;
+  context: string;
+};
+
+const bottomToolbarItems = [
+  { id: 'quick', label: 'Quick', icon: 'flash-outline', sectionId: 'quick' },
+  { id: 'breakdown', label: 'Break', icon: 'reorder-three-outline', sectionId: 'breakdown' },
+  { id: 'next', label: 'Next', icon: 'arrow-forward-outline', sectionId: 'next' },
+] as const;
+
+const searchEntries: SearchEntry[] = Object.values(phrasePages).flatMap((page) => {
+  const heroIds = Array.from(new Set([page.defaultHeroId, page.quickSayId, ...page.otherWayIds]));
+
+  return heroIds.map((heroId) => {
+    const hero = phraseHeroes[heroId];
+
+    return {
+      key: `${page.id}:${hero.id}`,
+      pageId: page.id,
+      heroId: hero.id,
+      groupLabel: hero.label,
+      targetText: hero.targetText,
+      sourceText: hero.sourceText,
+      context: `${page.momentLabel} · ${page.situation}`,
+    };
+  });
+});
+
+const webSearchInputReset = {
+  boxShadow: 'none',
+  outlineColor: 'transparent',
+  outlineStyle: 'none',
+  outlineWidth: 0,
+} as unknown as TextStyle;
+
 function SectionHeading({ label, note }: { label: string; note?: string }) {
   return (
-    <View className="mt-6">
-      <ThemedText variant="label" className="text-primary">
+    <View style={styles.sectionHeader}>
+      <ThemedText variant="label" style={styles.sectionLabel}>
         {label}
       </ThemedText>
       {note ? (
-        <ThemedText variant="caption" className="mt-2">
+        <ThemedText variant="caption" style={styles.sectionNote}>
           {note}
         </ThemedText>
       ) : null}
+    </View>
+  );
+}
+
+function MetaChip({
+  label,
+  tone = 'neutral',
+}: {
+  label: string;
+  tone?: 'neutral' | 'red' | 'yellow';
+}) {
+  const style =
+    tone === 'red'
+      ? styles.metaChipRed
+      : tone === 'yellow'
+        ? styles.metaChipYellow
+        : styles.metaChipNeutral;
+
+  const textStyle =
+    tone === 'red'
+      ? styles.metaChipTextRed
+      : tone === 'yellow'
+        ? styles.metaChipTextYellow
+        : styles.metaChipTextNeutral;
+
+  return (
+    <View style={[styles.metaChip, style]}>
+      <ThemedText variant="caption" style={[styles.metaChipText, textStyle]}>
+        {label}
+      </ThemedText>
     </View>
   );
 }
@@ -581,9 +669,9 @@ function TogglePill({
     <Pressable
       accessibilityRole="button"
       onPress={onPress}
-      className={`rounded-full px-4 py-2 ${selected ? 'bg-primary' : 'bg-background'}`}
+      style={[styles.controlPill, selected ? styles.controlPillSelected : styles.controlPillIdle]}
     >
-      <ThemedText variant="caption" className={selected ? 'text-background' : 'text-text-secondary'}>
+      <ThemedText variant="caption" style={selected ? styles.controlPillTextSelected : styles.controlPillTextIdle}>
         {label}
       </ThemedText>
     </Pressable>
@@ -591,11 +679,18 @@ function TogglePill({
 }
 
 export function PhraseProductPrototype() {
+  const scrollViewRef = useRef<ScrollView>(null);
+  const searchInputRef = useRef<TextInput>(null);
   const [pageStack, setPageStack] = useState<string[]>(['doctor']);
   const [heroOverrides, setHeroOverrides] = useState<Record<string, string>>({});
   const [savedHeroIds, setSavedHeroIds] = useState<string[]>(['doctor-main']);
   const [playbackSpeed, setPlaybackSpeed] = useState<SpeedOption>('1.0x');
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sectionOffsets, setSectionOffsets] = useState<Record<string, number>>({});
+  const searchProgress = useSharedValue(0);
+  const { width } = useWindowDimensions();
 
   const currentPageId = pageStack[pageStack.length - 1] ?? 'doctor';
   const currentPage = phrasePages[currentPageId];
@@ -604,6 +699,119 @@ export function PhraseProductPrototype() {
   const quickSayHero = phraseHeroes[currentPage.quickSayId];
   const otherWays = currentPage.otherWayIds.map((heroId) => phraseHeroes[heroId]);
   const isSaved = savedHeroIds.includes(activeHeroId);
+  const collapsedSearchWidth = 56;
+  const expandedSearchWidth = Math.max(224, Math.min(width - 56, 352));
+  const toolbarActionWidth = Math.min(156, Math.max(132, width * 0.34));
+
+  useEffect(() => {
+    searchProgress.value = withTiming(isSearchExpanded ? 1 : 0, {
+      duration: 380,
+      easing: Easing.bezier(0.22, 1, 0.36, 1),
+    });
+
+    if (isSearchExpanded) {
+      const timeout = setTimeout(() => searchInputRef.current?.focus(), 170);
+      return () => clearTimeout(timeout);
+    }
+
+    searchInputRef.current?.blur();
+  }, [isSearchExpanded, searchProgress]);
+
+  const suggestedEntries = useMemo(() => {
+    const seen = new Set<string>();
+    const samePageEntries = [quickSayHero, ...otherWays]
+      .filter((hero) => {
+        const key = `${currentPage.id}:${hero.id}`;
+        if (seen.has(key)) {
+          return false;
+        }
+
+        seen.add(key);
+        return true;
+      })
+      .slice(0, 2)
+      .map(
+        (hero): SearchEntry => ({
+          key: `${currentPage.id}:${hero.id}`,
+          pageId: currentPage.id,
+          heroId: hero.id,
+          groupLabel: hero.label,
+          targetText: hero.targetText,
+          sourceText: hero.sourceText,
+          context: 'Swap hero in place',
+        }),
+      );
+
+    const nextEntries = currentPage.nextLinks.slice(0, 3).map((link) => {
+      const nextPage = phrasePages[link.pageId];
+      const nextHero = phraseHeroes[nextPage.defaultHeroId];
+
+      return {
+        key: `${nextPage.id}:${nextHero.id}`,
+        pageId: nextPage.id,
+        heroId: nextHero.id,
+        groupLabel: link.label,
+        targetText: nextHero.targetText,
+        sourceText: nextHero.sourceText,
+        context: link.hint,
+      } satisfies SearchEntry;
+    });
+
+    return [...samePageEntries, ...nextEntries].slice(0, 4);
+  }, [currentPage.id, currentPage.nextLinks, otherWays, quickSayHero]);
+
+  const visibleSearchResults = useMemo(() => {
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+    if (!normalizedQuery) {
+      return suggestedEntries;
+    }
+
+    return searchEntries
+      .filter((entry) =>
+        [entry.targetText, entry.sourceText, entry.context, entry.groupLabel].join(' ').toLowerCase().includes(normalizedQuery),
+      )
+      .slice(0, 4);
+  }, [searchQuery, suggestedEntries]);
+
+  const toolbarActionsStyle = useAnimatedStyle(() => ({
+    width: interpolate(searchProgress.value, [0, 1], [toolbarActionWidth, 0]),
+    opacity: interpolate(searchProgress.value, [0, 1], [1, 0]),
+    marginRight: interpolate(searchProgress.value, [0, 1], [12, 0]),
+    transform: [
+      { translateX: interpolate(searchProgress.value, [0, 1], [0, -18]) },
+      { scale: interpolate(searchProgress.value, [0, 1], [1, 0.92]) },
+    ],
+  }));
+
+  const searchCapsuleStyle = useAnimatedStyle(() => ({
+    width: interpolate(searchProgress.value, [0, 1], [collapsedSearchWidth, expandedSearchWidth]),
+    transform: [{ translateY: interpolate(searchProgress.value, [0, 1], [0, -2]) }],
+  }));
+
+  const searchInputWrapStyle = useAnimatedStyle(() => ({
+    width: interpolate(searchProgress.value, [0, 1], [0, expandedSearchWidth - 94]),
+    opacity: interpolate(searchProgress.value, [0, 0.4, 1], [0, 0, 1]),
+    marginLeft: interpolate(searchProgress.value, [0, 1], [0, 6]),
+  }));
+
+  const searchResultsStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(searchProgress.value, [0, 1], [0, 1]),
+    transform: [
+      { translateY: interpolate(searchProgress.value, [0, 1], [18, 0]) },
+      { scale: interpolate(searchProgress.value, [0, 1], [0.98, 1]) },
+    ],
+  }));
+
+  function handleToggleSearch(nextValue?: boolean) {
+    setIsSearchExpanded((current) => {
+      const next = nextValue ?? !current;
+      if (!next) {
+        setSearchQuery('');
+      }
+
+      return next;
+    });
+  }
 
   function handleSelectHero(heroId: string) {
     setHeroOverrides((current) => ({ ...current, [currentPageId]: heroId }));
@@ -630,167 +838,187 @@ export function PhraseProductPrototype() {
     );
   }
 
+  function handleSearchResultPress(entry: SearchEntry) {
+    if (entry.pageId === currentPageId) {
+      handleSelectHero(entry.heroId);
+    } else {
+      setHeroOverrides((current) => ({ ...current, [entry.pageId]: entry.heroId }));
+      setPageStack((current) => [...current, entry.pageId]);
+      setIsPlaying(false);
+    }
+
+    setSearchQuery('');
+    setIsSearchExpanded(false);
+  }
+
+  function rememberSectionOffset(sectionId: string, offset: number) {
+    setSectionOffsets((current) => {
+      if (current[sectionId] === offset) {
+        return current;
+      }
+
+      return { ...current, [sectionId]: offset };
+    });
+  }
+
+  function handleJumpToSection(sectionId: string) {
+    const target = sectionOffsets[sectionId];
+    if (typeof target !== 'number') {
+      return;
+    }
+
+    scrollViewRef.current?.scrollTo({
+      y: Math.max(target - 104, 0),
+      animated: true,
+    });
+  }
+
   return (
-    <SafeAreaView className="flex-1 bg-background" edges={['top', 'bottom']}>
-      <View className="flex-1 overflow-hidden bg-background">
-        <View className="absolute -right-10 top-6 h-40 w-40 rounded-full bg-accent-soft" style={{ opacity: 0.92 }} />
-        <View className="absolute -left-14 bottom-16 h-48 w-48 rounded-full bg-premium-soft" style={{ opacity: 0.55 }} />
+    <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
+      <View style={styles.root}>
+        <View style={[styles.lightOrb, styles.redOrb]} />
+        <View style={[styles.lightOrb, styles.yellowOrb]} />
+        <View style={[styles.lightOrb, styles.whiteOrb]} />
 
-        <ScrollView className="flex-1" contentContainerClassName="px-5 pb-14 pt-4">
-          <View className="flex-row items-center justify-between gap-3">
-            <PreviewChip label="Preview 02" tone="warm" />
-            <PreviewChip label="Phrase flow wireframe" />
+        <View style={styles.backLayer} pointerEvents="box-none">
+          <Pressable
+            accessibilityRole="button"
+            hitSlop={10}
+            onPress={handleBack}
+            style={[styles.backGlassButton, pageStack.length <= 1 ? styles.disabledBackGlassButton : null]}
+          >
+            <Ionicons name="arrow-back" size={20} color={palette.text} />
+          </Pressable>
+        </View>
+
+        <ScrollView
+          ref={scrollViewRef}
+          contentContainerStyle={styles.scrollContent}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+        >
+          <View style={styles.topMetaRow}>
+            <MetaChip label={currentPage.situation} tone="yellow" />
+            <MetaChip label={currentPage.momentLabel} />
+            <MetaChip label={activeHero.label} tone="red" />
+            {pageStack.length > 1 ? <MetaChip label={`${pageStack.length} pages deep`} /> : null}
           </View>
 
-          <View className="mt-4 flex-row items-center gap-3">
-            <Pressable
-              accessibilityRole="button"
-              hitSlop={10}
-              onPress={handleBack}
-              className={`h-12 w-12 items-center justify-center rounded-full border border-border bg-surface ${
-                pageStack.length <= 1 ? 'opacity-45' : ''
-              }`}
-            >
-              <Ionicons name="arrow-back" size={20} color="#111827" />
-            </Pressable>
-
-            <View className="flex-1 flex-row items-center gap-3 rounded-full border border-border bg-surface px-4 py-3 shadow-sm">
-              <Ionicons name="search-outline" size={18} color="#6B7280" />
-              <View className="flex-1">
-                <ThemedText variant="caption">Search phrases or situations</ThemedText>
-              </View>
-            </View>
-          </View>
-
-          <View className="mt-4 flex-row flex-wrap gap-2">
-            <PreviewChip label={currentPage.situation} tone="warm" />
-            <PreviewChip label={currentPage.momentLabel} />
-            {pageStack.length > 1 ? <PreviewChip label={`${pageStack.length} pages deep`} tone="premium" /> : null}
-          </View>
-
-          <ThemedText variant="caption" className="mt-3">
-            Quick say and Other ways swap the hero in place. Next opens another full phrase page with the same shell.
-          </ThemedText>
-
-          <View className="mt-5 rounded-[34px] border border-border bg-surface px-5 py-6 shadow-sm">
-            <View className="flex-row items-center justify-between gap-3">
-              <View>
-                <ThemedText variant="label" className="text-primary">
-                  Hero phrase
-                </ThemedText>
-                <ThemedText variant="caption" className="mt-2">
-                  {activeHero.label}
-                </ThemedText>
-              </View>
-              <PreviewChip label={currentPage.momentLabel} tone="warm" />
+          <View style={styles.heroCopyBlock}>
+            <View style={styles.heroAccentDots}>
+              <View style={[styles.heroAccentDot, styles.heroAccentDotRed]} />
+              <View style={[styles.heroAccentDot, styles.heroAccentDotYellow]} />
             </View>
 
-            <ThemedText variant="target" className="mt-5 text-[33px] leading-[39px]">
+            <ThemedText variant="target" style={styles.heroTarget}>
               {activeHero.targetText}
             </ThemedText>
-            <ThemedText variant="pronunciation" className="mt-3">
+            <ThemedText variant="pronunciation" style={styles.heroPronunciation}>
               {activeHero.pronunciation}
             </ThemedText>
-            <ThemedText variant="source" className="mt-2 text-[17px] leading-[24px]">
+            <ThemedText variant="source" style={styles.heroSource}>
               {activeHero.sourceText}
             </ThemedText>
-            <ThemedText variant="caption" className="mt-3">
+            <ThemedText variant="caption" style={styles.heroDetail}>
               {activeHero.detailHint}
             </ThemedText>
+          </View>
 
-            <View className="mt-6 flex-row items-center gap-4">
+          <View style={styles.controlDock}>
+            <View style={styles.controlDockRow}>
               <Pressable
                 accessibilityRole="button"
                 onPress={() => setIsPlaying((current) => !current)}
-                className="h-24 w-24 items-center justify-center rounded-full bg-accent-soft"
+                style={[styles.playOrbOuter, isPlaying ? styles.playOrbOuterActive : null]}
               >
-                <Ionicons name={isPlaying ? 'pause' : 'play'} size={34} color="#1F6F78" />
+                <View style={styles.playOrbInner}>
+                  <Ionicons name={isPlaying ? 'pause' : 'play'} size={28} color={palette.paper} />
+                </View>
               </Pressable>
 
-              <View className="flex-1 gap-3">
-                <View className="flex-row flex-wrap gap-2">
-                  {speedOptions.map((speed) => (
-                    <TogglePill
-                      key={speed}
-                      label={speed}
-                      selected={playbackSpeed === speed}
-                      onPress={() => setPlaybackSpeed(speed)}
-                    />
-                  ))}
-                </View>
-
-                <Pressable
-                  accessibilityRole="button"
-                  onPress={handleToggleSave}
-                  className={`flex-row items-center self-start rounded-full px-4 py-2 ${
-                    isSaved ? 'bg-premium-soft' : 'bg-background'
-                  }`}
-                >
-                  <Ionicons
-                    name={isSaved ? 'bookmark' : 'bookmark-outline'}
-                    size={16}
-                    color={isSaved ? '#8A5A16' : '#6B7280'}
-                  />
-                  <ThemedText
-                    variant="caption"
-                    className={`ml-2 ${isSaved ? 'text-premium' : 'text-text-secondary'}`}
-                  >
-                    Save
-                  </ThemedText>
-                </Pressable>
+              <View style={styles.controlDockCopy}>
+                <ThemedText variant="label" style={styles.controlEyebrow}>
+                  Playback
+                </ThemedText>
+                <ThemedText variant="caption" style={styles.controlHint}>
+                  Hear the full line, slow it down, then save it if this is one you will need again.
+                </ThemedText>
               </View>
+            </View>
+
+            <View style={styles.controlCluster}>
+              <View style={styles.speedRow}>
+                {speedOptions.map((speed) => (
+                  <TogglePill
+                    key={speed}
+                    label={speed}
+                    selected={playbackSpeed === speed}
+                    onPress={() => setPlaybackSpeed(speed)}
+                  />
+                ))}
+              </View>
+
+              <Pressable accessibilityRole="button" onPress={handleToggleSave} style={styles.savePill}>
+                <Ionicons
+                  name={isSaved ? 'bookmark' : 'bookmark-outline'}
+                  size={16}
+                  color={isSaved ? palette.red : palette.muted}
+                />
+                <ThemedText variant="caption" style={isSaved ? styles.savePillTextActive : styles.savePillText}>
+                  Save
+                </ThemedText>
+              </Pressable>
             </View>
           </View>
 
-          <SectionHeading label="Quick say" note="Shortest useful version under stress." />
-          <Pressable
-            accessibilityRole="button"
-            onPress={() => handleSelectHero(quickSayHero.id)}
-            className={`mt-3 rounded-[24px] border px-4 py-4 ${
-              activeHeroId === quickSayHero.id ? 'border-primary bg-accent-soft' : 'border-border bg-surface'
-            }`}
-          >
-            <View className="flex-row items-center justify-between gap-3">
-              <View className="flex-1">
-                <ThemedText variant="subtitle" className="text-[19px] leading-[24px]">
-                  {quickSayHero.targetText}
-                </ThemedText>
-                <ThemedText variant="caption" className="mt-1">
-                  {quickSayHero.sourceText}
-                </ThemedText>
-              </View>
-              <Ionicons
-                name={activeHeroId === quickSayHero.id ? 'radio-button-on' : 'chevron-forward'}
-                size={18}
-                color={activeHeroId === quickSayHero.id ? '#1F6F78' : '#D97745'}
-              />
-            </View>
-          </Pressable>
-
-          <SectionHeading label="Break it down" note="Keep every non-English piece paired with plain English." />
-          <View className="mt-3 rounded-[26px] bg-surface px-4 py-1">
-            {activeHero.breakdown.map((item, index) => (
-              <View
-                key={`${activeHero.id}-${item.targetText}-${index}`}
-                className={`flex-row items-start justify-between gap-3 py-4 ${
-                  index < activeHero.breakdown.length - 1 ? 'border-b border-border' : ''
-                }`}
-              >
-                <View className="flex-1">
-                  <ThemedText variant="subtitle" className="text-[18px] leading-[22px]">
-                    {item.targetText}
+          <View onLayout={({ nativeEvent }) => rememberSectionOffset('quick', nativeEvent.layout.y)}>
+            <SectionHeading label="Quick say" note="Shortest useful version under stress." />
+            <Pressable accessibilityRole="button" onPress={() => handleSelectHero(quickSayHero.id)} style={styles.rowSurface}>
+              <View style={styles.rowMain}>
+                <View style={styles.rowCopy}>
+                  <ThemedText variant="subtitle" style={styles.rowTitle}>
+                    {quickSayHero.targetText}
                   </ThemedText>
-                  <ThemedText variant="caption" className="mt-1">
-                    {item.sourceText}
+                  <ThemedText variant="caption" style={styles.rowSubtitle}>
+                    {quickSayHero.sourceText}
                   </ThemedText>
                 </View>
-                <Ionicons name="remove" size={18} color="#A7AFBD" />
+                <View style={styles.rowTrailing}>
+                  {activeHeroId === quickSayHero.id ? <MetaChip label="Active" tone="red" /> : null}
+                  <Ionicons
+                    name={activeHeroId === quickSayHero.id ? 'radio-button-on' : 'chevron-forward'}
+                    size={18}
+                    color={activeHeroId === quickSayHero.id ? palette.red : palette.muted}
+                  />
+                </View>
               </View>
-            ))}
+            </Pressable>
+          </View>
+
+          <View onLayout={({ nativeEvent }) => rememberSectionOffset('breakdown', nativeEvent.layout.y)}>
+            <SectionHeading label="Break it down" note="Keep every non-English piece paired with plain English." />
+            <View style={styles.listSurface}>
+              {activeHero.breakdown.map((item, index) => (
+                <View
+                  key={`${activeHero.id}-${item.targetText}-${index}`}
+                  style={[styles.breakdownRow, index < activeHero.breakdown.length - 1 ? styles.breakdownDivider : null]}
+                >
+                  <View style={styles.breakdownCopy}>
+                    <ThemedText variant="subtitle" style={styles.breakdownTitle}>
+                      {item.targetText}
+                    </ThemedText>
+                    <ThemedText variant="caption" style={styles.breakdownSubtitle}>
+                      {item.sourceText}
+                    </ThemedText>
+                  </View>
+                  <Ionicons name="remove" size={18} color={palette.subtle} />
+                </View>
+              ))}
+            </View>
           </View>
 
           <SectionHeading label="Other ways" note="These keep you on the same page and swap the hero." />
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-3" contentContainerClassName="gap-3 pr-5">
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.horizontalRail}>
             {otherWays.map((hero) => {
               const selected = activeHeroId === hero.id;
 
@@ -799,20 +1027,18 @@ export function PhraseProductPrototype() {
                   key={hero.id}
                   accessibilityRole="button"
                   onPress={() => handleSelectHero(hero.id)}
-                  className={`w-[220px] rounded-[24px] border px-4 py-4 ${
-                    selected ? 'border-primary bg-accent-soft' : 'border-border bg-surface'
-                  }`}
+                  style={[styles.variantTile, selected ? styles.variantTileSelected : null]}
                 >
-                  <View className="flex-row items-start justify-between gap-2">
-                    <ThemedText variant="label" className={selected ? 'text-primary' : ''}>
+                  <View style={styles.variantTopRow}>
+                    <ThemedText variant="label" style={selected ? styles.variantLabelSelected : styles.variantLabel}>
                       {hero.label}
                     </ThemedText>
-                    {selected ? <PreviewChip label="Active" tone="warm" /> : null}
+                    {selected ? <MetaChip label="Active" tone="red" /> : null}
                   </View>
-                  <ThemedText variant="subtitle" className="mt-3 text-[18px] leading-[23px]">
+                  <ThemedText variant="subtitle" style={styles.variantTitle}>
                     {hero.targetText}
                   </ThemedText>
-                  <ThemedText variant="caption" className="mt-2">
+                  <ThemedText variant="caption" style={styles.variantSubtitle}>
                     {hero.sourceText}
                   </ThemedText>
                 </Pressable>
@@ -821,37 +1047,698 @@ export function PhraseProductPrototype() {
           </ScrollView>
 
           <SectionHeading label="When to say" />
-          <ThemedText className="mt-3 text-[15px] leading-7">{activeHero.whenToSay}</ThemedText>
+          <ThemedText style={styles.whenToSayText}>{activeHero.whenToSay}</ThemedText>
 
-          <SectionHeading label="Next" note="These are deeper phrase pages, not hero swaps." />
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-3" contentContainerClassName="gap-3 pr-5">
-            {currentPage.nextLinks.map((nextLink) => (
-              <Pressable
-                key={`${currentPage.id}-${nextLink.pageId}`}
-                accessibilityRole="button"
-                onPress={() => handleOpenNext(nextLink.pageId)}
-                className="w-[230px] rounded-[24px] border border-border bg-surface px-4 py-4"
-              >
-                <View className="flex-row items-center justify-between gap-3">
-                  <ThemedText variant="label" className="text-primary">
-                    {nextLink.label}
+          <View onLayout={({ nativeEvent }) => rememberSectionOffset('next', nativeEvent.layout.y)}>
+            <SectionHeading label="Next" note="These are deeper phrase pages, not hero swaps." />
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.horizontalRail}>
+              {currentPage.nextLinks.map((nextLink) => (
+                <Pressable
+                  key={`${currentPage.id}-${nextLink.pageId}`}
+                  accessibilityRole="button"
+                  onPress={() => handleOpenNext(nextLink.pageId)}
+                  style={styles.nextTile}
+                >
+                  <View style={styles.nextTileTopRow}>
+                    <MetaChip label={nextLink.label} tone="yellow" />
+                    <Ionicons name="arrow-forward" size={18} color={palette.red} />
+                  </View>
+                  <ThemedText variant="subtitle" style={styles.nextTitle}>
+                    {nextLink.targetText}
                   </ThemedText>
-                  <Ionicons name="arrow-forward" size={18} color="#D97745" />
-                </View>
-                <ThemedText variant="subtitle" className="mt-3 text-[18px] leading-[23px]">
-                  {nextLink.targetText}
-                </ThemedText>
-                <ThemedText variant="caption" className="mt-2">
-                  {nextLink.sourceText}
-                </ThemedText>
-                <ThemedText variant="caption" className="mt-4 text-primary">
-                  {nextLink.hint}
-                </ThemedText>
-              </Pressable>
-            ))}
-          </ScrollView>
+                  <ThemedText variant="caption" style={styles.nextSubtitle}>
+                    {nextLink.sourceText}
+                  </ThemedText>
+                  <ThemedText variant="caption" style={styles.nextHint}>
+                    {nextLink.hint}
+                  </ThemedText>
+                </Pressable>
+              ))}
+            </ScrollView>
+          </View>
         </ScrollView>
+
+        <Animated.View pointerEvents={isSearchExpanded ? 'auto' : 'none'} style={[styles.searchResultsLayer, searchResultsStyle]}>
+          <View style={styles.searchResultsShell}>
+            <View style={styles.searchResultsHeader}>
+              <ThemedText variant="label" style={styles.searchResultsEyebrow}>
+                {searchQuery.trim() ? 'Search' : 'Jump from here'}
+              </ThemedText>
+              <ThemedText variant="caption" style={styles.searchResultsCount}>
+                {searchQuery.trim() ? `${visibleSearchResults.length} matches` : 'Quick phrase pivots'}
+              </ThemedText>
+            </View>
+
+            {visibleSearchResults.length ? (
+              visibleSearchResults.map((entry, index) => (
+                <Pressable
+                  key={entry.key}
+                  accessibilityRole="button"
+                  onPress={() => handleSearchResultPress(entry)}
+                  style={[styles.searchResultRow, index < visibleSearchResults.length - 1 ? styles.searchResultDivider : null]}
+                >
+                  <View style={styles.searchResultCopy}>
+                    <View style={styles.searchResultMetaRow}>
+                      <MetaChip label={entry.groupLabel} tone="red" />
+                    </View>
+                    <ThemedText variant="subtitle" style={styles.searchResultTitle}>
+                      {entry.targetText}
+                    </ThemedText>
+                    <ThemedText variant="caption" style={styles.searchResultSubtitle}>
+                      {entry.sourceText}
+                    </ThemedText>
+                    <ThemedText variant="caption" style={styles.searchResultContext}>
+                      {entry.context}
+                    </ThemedText>
+                  </View>
+                  <Ionicons name="arrow-forward" size={18} color={palette.red} />
+                </Pressable>
+              ))
+            ) : (
+              <ThemedText variant="caption" style={styles.searchEmptyText}>
+                No matches yet. Try doctor, pharmacy, pain, or medicine.
+              </ThemedText>
+            )}
+          </View>
+        </Animated.View>
+
+        <View style={styles.bottomDockLayer} pointerEvents="box-none">
+          <View style={styles.bottomDockShell}>
+            <Animated.View style={[styles.bottomToolsRow, toolbarActionsStyle]}>
+              {bottomToolbarItems.map((item) => (
+                <Pressable
+                  key={item.id}
+                  accessibilityRole="button"
+                  accessibilityLabel={item.label}
+                  onPress={() => handleJumpToSection(item.sectionId)}
+                  style={styles.bottomToolButton}
+                >
+                  <View style={styles.bottomToolIcon}>
+                    <Ionicons name={item.icon} size={16} color={palette.text} />
+                  </View>
+                </Pressable>
+              ))}
+            </Animated.View>
+
+            <Animated.View style={[styles.searchCapsule, searchCapsuleStyle]}>
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={isSearchExpanded ? 'Focus search' : 'Open search'}
+                onPress={() => {
+                  if (!isSearchExpanded) {
+                    handleToggleSearch(true);
+                    return;
+                  }
+
+                  searchInputRef.current?.focus();
+                }}
+                style={styles.searchIconButton}
+              >
+                <Ionicons name="search-outline" size={18} color={palette.text} />
+              </Pressable>
+
+              <Animated.View style={[styles.searchInputWrap, searchInputWrapStyle]}>
+                <TextInput
+                  ref={searchInputRef}
+                  value={searchQuery}
+                  onChangeText={setSearchQuery}
+                  placeholder="Search phrases or situations"
+                  placeholderTextColor={palette.muted}
+                  selectionColor={palette.red}
+                  style={[styles.searchInput, webSearchInputReset]}
+                />
+
+                <Pressable
+                  accessibilityRole="button"
+                  onPress={() => {
+                    if (searchQuery.length > 0) {
+                      setSearchQuery('');
+                      return;
+                    }
+
+                    handleToggleSearch(false);
+                  }}
+                  style={styles.searchCloseButton}
+                >
+                  <Ionicons name={searchQuery.length > 0 ? 'close-circle' : 'close'} size={16} color={palette.muted} />
+                </Pressable>
+              </Animated.View>
+            </Animated.View>
+          </View>
+        </View>
       </View>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: palette.page,
+  },
+  root: {
+    flex: 1,
+    overflow: 'hidden',
+    backgroundColor: palette.page,
+  },
+  scrollContent: {
+    paddingHorizontal: 20,
+    paddingTop: 88,
+    paddingBottom: 188,
+  },
+  lightOrb: {
+    position: 'absolute',
+    borderRadius: 999,
+  },
+  redOrb: {
+    right: -52,
+    top: 86,
+    width: 208,
+    height: 208,
+    backgroundColor: 'rgba(216, 78, 66, 0.12)',
+  },
+  yellowOrb: {
+    left: -34,
+    top: 248,
+    width: 180,
+    height: 180,
+    backgroundColor: 'rgba(225, 184, 71, 0.14)',
+  },
+  whiteOrb: {
+    right: 36,
+    top: 214,
+    width: 156,
+    height: 156,
+    backgroundColor: 'rgba(255, 255, 255, 0.84)',
+  },
+  backLayer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 20,
+  },
+  backGlassButton: {
+    marginLeft: 20,
+    marginTop: 8,
+    width: 54,
+    height: 54,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 27,
+    backgroundColor: palette.glass,
+    borderWidth: 1,
+    borderColor: palette.glassBorder,
+    shadowColor: palette.shadow,
+    shadowOpacity: 0.18,
+    shadowRadius: 22,
+    shadowOffset: { width: 0, height: 10 },
+    elevation: 10,
+  },
+  disabledBackGlassButton: {
+    opacity: 0.48,
+  },
+  topMetaRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  metaChip: {
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  metaChipNeutral: {
+    backgroundColor: 'rgba(255, 255, 255, 0.82)',
+    borderWidth: 1,
+    borderColor: palette.glassBorder,
+  },
+  metaChipRed: {
+    backgroundColor: palette.redSoft,
+  },
+  metaChipYellow: {
+    backgroundColor: palette.yellowSoft,
+  },
+  metaChipText: {
+    lineHeight: 16,
+  },
+  metaChipTextNeutral: {
+    color: palette.muted,
+  },
+  metaChipTextRed: {
+    color: palette.red,
+  },
+  metaChipTextYellow: {
+    color: '#9A6D0A',
+  },
+  heroCopyBlock: {
+    marginTop: 24,
+  },
+  heroAccentDots: {
+    flexDirection: 'row',
+    gap: 8,
+    marginTop: 8,
+  },
+  heroAccentDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 999,
+  },
+  heroAccentDotRed: {
+    backgroundColor: palette.red,
+  },
+  heroAccentDotYellow: {
+    backgroundColor: palette.yellow,
+  },
+  heroTarget: {
+    marginTop: 18,
+    color: palette.text,
+    fontSize: 40,
+    lineHeight: 46,
+  },
+  heroPronunciation: {
+    marginTop: 12,
+    color: palette.red,
+    fontSize: 19,
+    lineHeight: 24,
+  },
+  heroSource: {
+    marginTop: 10,
+    color: palette.text,
+    fontSize: 18,
+    lineHeight: 24,
+  },
+  heroDetail: {
+    marginTop: 14,
+    color: palette.muted,
+    lineHeight: 22,
+  },
+  controlDock: {
+    marginTop: 20,
+    padding: 18,
+    borderRadius: 32,
+    backgroundColor: palette.glass,
+    borderWidth: 1,
+    borderColor: palette.glassBorder,
+    shadowColor: palette.shadow,
+    shadowOpacity: 0.2,
+    shadowRadius: 26,
+    shadowOffset: { width: 0, height: 14 },
+    elevation: 8,
+  },
+  controlDockRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
+  },
+  playOrbOuter: {
+    width: 92,
+    height: 92,
+    borderRadius: 999,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+  },
+  playOrbOuterActive: {
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+  },
+  playOrbInner: {
+    width: 66,
+    height: 66,
+    borderRadius: 999,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: palette.red,
+    shadowColor: palette.red,
+    shadowOpacity: 0.28,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 6,
+  },
+  controlDockCopy: {
+    flex: 1,
+  },
+  controlEyebrow: {
+    color: palette.red,
+  },
+  controlHint: {
+    marginTop: 8,
+    color: palette.muted,
+    lineHeight: 21,
+  },
+  controlCluster: {
+    marginTop: 18,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 14,
+  },
+  speedRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    flex: 1,
+  },
+  controlPill: {
+    borderRadius: 999,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  controlPillIdle: {
+    backgroundColor: palette.glassStrong,
+  },
+  controlPillSelected: {
+    backgroundColor: palette.red,
+  },
+  controlPillTextIdle: {
+    color: palette.muted,
+  },
+  controlPillTextSelected: {
+    color: palette.paper,
+  },
+  savePill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    borderRadius: 999,
+    backgroundColor: palette.glassStrong,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  savePillText: {
+    color: palette.muted,
+  },
+  savePillTextActive: {
+    color: palette.red,
+  },
+  sectionHeader: {
+    marginTop: 28,
+  },
+  sectionLabel: {
+    color: palette.red,
+  },
+  sectionNote: {
+    marginTop: 8,
+    color: palette.muted,
+  },
+  rowSurface: {
+    marginTop: 12,
+    borderRadius: 24,
+    backgroundColor: palette.paper,
+    borderWidth: 1,
+    borderColor: palette.line,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+  },
+  rowMain: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 12,
+  },
+  rowCopy: {
+    flex: 1,
+  },
+  rowTitle: {
+    color: palette.text,
+    fontSize: 19,
+    lineHeight: 24,
+  },
+  rowSubtitle: {
+    marginTop: 4,
+    color: palette.muted,
+  },
+  rowTrailing: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  listSurface: {
+    marginTop: 12,
+    borderRadius: 26,
+    backgroundColor: palette.paper,
+    borderWidth: 1,
+    borderColor: palette.line,
+    paddingHorizontal: 16,
+    paddingVertical: 4,
+  },
+  breakdownRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    gap: 12,
+    paddingVertical: 16,
+  },
+  breakdownDivider: {
+    borderBottomWidth: 1,
+    borderBottomColor: palette.line,
+  },
+  breakdownCopy: {
+    flex: 1,
+  },
+  breakdownTitle: {
+    color: palette.text,
+    fontSize: 18,
+    lineHeight: 22,
+  },
+  breakdownSubtitle: {
+    marginTop: 4,
+    color: palette.muted,
+  },
+  horizontalRail: {
+    gap: 12,
+    paddingRight: 20,
+    marginTop: 12,
+  },
+  variantTile: {
+    width: 222,
+    borderRadius: 24,
+    backgroundColor: palette.glass,
+    borderWidth: 1,
+    borderColor: palette.glassBorder,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+  },
+  variantTileSelected: {
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    borderColor: 'rgba(216, 78, 66, 0.18)',
+  },
+  variantTopRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 8,
+  },
+  variantLabel: {
+    color: palette.muted,
+  },
+  variantLabelSelected: {
+    color: palette.red,
+  },
+  variantTitle: {
+    marginTop: 14,
+    color: palette.text,
+    fontSize: 18,
+    lineHeight: 23,
+  },
+  variantSubtitle: {
+    marginTop: 8,
+    color: palette.muted,
+  },
+  whenToSayText: {
+    marginTop: 12,
+    color: palette.text,
+    lineHeight: 27,
+  },
+  nextTile: {
+    width: 236,
+    borderRadius: 24,
+    backgroundColor: palette.paper,
+    borderWidth: 1,
+    borderColor: palette.line,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+  },
+  nextTileTopRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 10,
+  },
+  nextTitle: {
+    marginTop: 14,
+    color: palette.text,
+    fontSize: 18,
+    lineHeight: 23,
+  },
+  nextSubtitle: {
+    marginTop: 8,
+    color: palette.muted,
+  },
+  nextHint: {
+    marginTop: 16,
+    color: palette.red,
+  },
+  searchResultsLayer: {
+    position: 'absolute',
+    left: 18,
+    right: 18,
+    bottom: 106,
+    zIndex: 16,
+  },
+  searchResultsShell: {
+    borderRadius: 30,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    backgroundColor: 'rgba(255, 255, 255, 0.88)',
+    borderWidth: 1,
+    borderColor: palette.glassBorder,
+    shadowColor: palette.shadow,
+    shadowOpacity: 0.18,
+    shadowRadius: 26,
+    shadowOffset: { width: 0, height: 14 },
+    elevation: 10,
+  },
+  searchResultsHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 12,
+    paddingBottom: 8,
+  },
+  searchResultsEyebrow: {
+    color: palette.red,
+  },
+  searchResultsCount: {
+    color: palette.muted,
+  },
+  searchResultRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 12,
+    paddingVertical: 14,
+  },
+  searchResultDivider: {
+    borderBottomWidth: 1,
+    borderBottomColor: palette.line,
+  },
+  searchResultCopy: {
+    flex: 1,
+  },
+  searchResultMetaRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  searchResultTitle: {
+    marginTop: 10,
+    color: palette.text,
+    fontSize: 18,
+    lineHeight: 24,
+  },
+  searchResultSubtitle: {
+    marginTop: 4,
+    color: palette.muted,
+  },
+  searchResultContext: {
+    marginTop: 8,
+    color: palette.red,
+  },
+  searchEmptyText: {
+    paddingVertical: 12,
+    color: palette.muted,
+    lineHeight: 21,
+  },
+  bottomDockLayer: {
+    position: 'absolute',
+    left: 18,
+    right: 18,
+    bottom: 18,
+    zIndex: 18,
+  },
+  bottomDockShell: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  bottomToolsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    overflow: 'hidden',
+  },
+  bottomToolButton: {
+    width: 44,
+    height: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 22,
+    backgroundColor: palette.glass,
+    borderWidth: 1,
+    borderColor: palette.glassBorder,
+    shadowColor: palette.shadow,
+    shadowOpacity: 0.16,
+    shadowRadius: 18,
+    shadowOffset: { width: 0, height: 10 },
+    elevation: 8,
+  },
+  bottomToolIcon: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: palette.glassStrong,
+  },
+  searchCapsule: {
+    height: 58,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    backgroundColor: palette.glassStrong,
+    borderWidth: 1,
+    borderColor: palette.glassBorder,
+    shadowColor: palette.shadow,
+    shadowOpacity: 0.22,
+    shadowRadius: 22,
+    shadowOffset: { width: 0, height: 12 },
+    elevation: 10,
+    overflow: 'hidden',
+  },
+  searchIconButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: palette.glassStrong,
+  },
+  searchInputWrap: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    overflow: 'hidden',
+  },
+  searchInput: {
+    flex: 1,
+    minWidth: 0,
+    color: palette.text,
+    fontSize: 15,
+    backgroundColor: 'transparent',
+    borderWidth: 0,
+    borderColor: 'transparent',
+    paddingVertical: 0,
+    paddingHorizontal: 0,
+  },
+  searchCloseButton: {
+    width: 28,
+    height: 28,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 8,
+  },
+});

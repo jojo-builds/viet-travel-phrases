@@ -1,0 +1,9 @@
+Approval: APPROVE
+
+The planned 24->50 hub expansion is structurally sound for the current answer-page/relation seam. It extends the existing additive model instead of inventing a new source of truth: `phrase-source.csv` still owns phrase rows, `relation-sample-v1.json` owns family-level links, and `answer-page-sample-v1.json` stays the module-layer consumer. The only real seam caution is the proposed CSV support-note marker expansion, which should be made explicit rather than implied.
+
+- The math is clean: the current sample has `24` answer hubs and `43` relation clusters, so the planned `19` relation-backed additions are exactly the `43 - 24` clusters that already exist in `relation-sample-v1.json` but are not yet answer-page-promoted.
+- The `7` proposed new cluster+hubs are grounded in existing CSV family truth: `polite-goodbye`, `repair-meaning`, `repair-show-me`, `repair-spell-name`, `emergency-passport-gone`, `emergency-police-report`, and `service-scan-docs` all already resolve in `phrase-source.csv`.
+- Keeping the current `4` phrase classes is viable. The new items map cleanly into the existing classes, and the current module mixes already show enough flexibility to handle openers, closers, repair flows, urgent flows, and practical task flows without needing a fifth class.
+- Implementation should promote the remaining `19` existing clusters to the full answer-page-ready relation shape inside `relation-sample-v1.json` itself (`phraseClass`, `familySummary`, `answerPageReady`, `relationBuckets`), rather than letting `answer-page-sample-v1.json` become the only place that knows those semantics.
+- The only seam condition to enforce up front is the new answer-page support-note token grammar: it should be explicitly documented as answer-page-only and kept parseable, while `relation-sample=` remains anchor/variant-only.

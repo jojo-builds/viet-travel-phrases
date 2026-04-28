@@ -1,0 +1,157 @@
+{
+  "id": "viet-family-sight-ticket",
+  "familyID": "sight-ticket",
+  "phraseID": "sight-1",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Vé bao nhiêu?",
+  "englishTitle": "How much is the ticket?",
+  "pronunciation": "veh bao nyew",
+  "summary": "Different ways to say \"How much is the ticket?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "camera.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "sightseeing-activities"
+  ],
+  "audioKey": "sight-1",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this before you commit to an attraction or activity. Tickets, hours, and meeting points are the core sightseeing needs. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "sight-1-piece-1",
+          "vietnamese": "Vé",
+          "english": "ticket",
+          "audioKey": "breakdown-sight-1-first"
+        },
+        {
+          "id": "sight-1-piece-2",
+          "vietnamese": "bao nhiêu",
+          "english": "how much",
+          "audioKey": "breakdown-authored-bao-nhieu-415a7b69fa"
+        },
+        {
+          "id": "sight-1-full",
+          "vietnamese": "Vé bao nhiêu?",
+          "english": "How much is the ticket?",
+          "audioKey": "sight-1"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Vé bao nhiêu? is the safest default for \"How much is the ticket?\". Use this before you commit to an attraction or activity. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "sight-1",
+          "vietnamese": "Vé bao nhiêu?",
+          "english": "How much is the ticket?",
+          "pronunciation": "veh bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "sight-1"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this before you commit to an attraction or activity. Use it in tickets, tours, photos, closing times, and meeting points when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Meeting points and start times are worth confirming twice, especially on busy tours.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Show the tour booking, ticket, or map while you ask.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "sight-2",
+          "vietnamese": "Bắt đầu ở đâu?",
+          "english": "Where do we start?",
+          "pronunciation": "bat dow uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-start",
+          "audioKey": "sight-2"
+        },
+        {
+          "id": "sight-3",
+          "vietnamese": "Tôi chụp hình ở đây được không?",
+          "english": "Can I take photos here?",
+          "pronunciation": "toy choop hinh uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-photos",
+          "audioKey": "sight-3"
+        },
+        {
+          "id": "sight-4",
+          "vietnamese": "Mấy giờ đóng cửa?",
+          "english": "What time does it close?",
+          "pronunciation": "may zyuh dong koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-close",
+          "audioKey": "sight-4"
+        },
+        {
+          "id": "sight-5",
+          "vietnamese": "Điểm gặp ở đâu?",
+          "english": "Where is the meeting point?",
+          "pronunciation": "deeym gap uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-meeting-point",
+          "audioKey": "sight-5"
+        },
+        {
+          "id": "v500-sigh-acti-i-have-a-tour-booking",
+          "vietnamese": "Tôi có đặt tour",
+          "english": "I have a tour booking",
+          "pronunciation": "toy koh dat tour",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-v500-sigh-acti-i-have-a-tour-booking",
+          "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "sight-1",
+      "vietnamese": "Vé bao nhiêu?",
+      "english": "How much is the ticket?",
+      "pronunciation": "veh bao nyew",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "sight-1"
+    }
+  ]
+}

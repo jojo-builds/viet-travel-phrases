@@ -1,0 +1,179 @@
+{
+  "id": "viet-family-time-open",
+  "familyID": "time-open",
+  "phraseID": "time-5",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Mấy giờ mở cửa?",
+  "englishTitle": "What time does it open?",
+  "pronunciation": "may zyuh muh koo-ah",
+  "summary": "Different ways to say \"What time does it open?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "calendar",
+  "tintName": "teal",
+  "categoryIDs": [
+    "time-dates-booking"
+  ],
+  "audioKey": "time-5",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this for museums, cafés, counters, or services you plan to return to. This is one of the highest-value time questions for everyday travel. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "time-5-piece-1",
+          "vietnamese": "Mấy",
+          "english": "what / which",
+          "audioKey": "breakdown-hotel-3-first"
+        },
+        {
+          "id": "time-5-piece-2",
+          "vietnamese": "giờ",
+          "english": "time / hour",
+          "audioKey": "breakdown-time-7-piece-2"
+        },
+        {
+          "id": "time-5-piece-3",
+          "vietnamese": "mở",
+          "english": "open",
+          "audioKey": "breakdown-taxi-5-first"
+        },
+        {
+          "id": "time-5-piece-4",
+          "vietnamese": "cửa",
+          "english": "of",
+          "audioKey": "breakdown-v500-hote-acco-the-door-does-not-lock-first"
+        },
+        {
+          "id": "time-5-full",
+          "vietnamese": "Mấy giờ mở cửa?",
+          "english": "What time does it open?",
+          "audioKey": "time-5"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Mấy giờ mở cửa? is the safest default for \"What time does it open?\". Use this for museums, cafés, counters, or services you plan to return to. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "time-5",
+          "vietnamese": "Mấy giờ mở cửa?",
+          "english": "What time does it open?",
+          "pronunciation": "may zyuh muh koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "time-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this for museums, cafés, counters, or services you plan to return to. Use it in times, dates, tickets, waits, and bookings when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Confirm the answer visually on a phone, ticket, or calendar when the exact time matters.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "time-1",
+          "vietnamese": "Mấy giờ?",
+          "english": "What time?",
+          "pronunciation": "may zyuh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-time-what-time",
+          "audioKey": "time-1"
+        },
+        {
+          "id": "time-2",
+          "vietnamese": "Hôm nay",
+          "english": "Today",
+          "pronunciation": "hom nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-time-today",
+          "audioKey": "time-2"
+        },
+        {
+          "id": "time-3",
+          "vietnamese": "Sáng mai",
+          "english": "Tomorrow morning",
+          "pronunciation": "sahng mai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-time-tomorrow-morning",
+          "audioKey": "time-3"
+        },
+        {
+          "id": "time-4",
+          "vietnamese": "Tôi có đặt chỗ",
+          "english": "I have a booking",
+          "pronunciation": "toy koh dat choh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-time-have-booking",
+          "audioKey": "time-4"
+        },
+        {
+          "id": "v500-time-date-book-is-there-a-wait",
+          "vietnamese": "Có chờ đợi không?",
+          "english": "Is there a wait?",
+          "pronunciation": "Co cho doi khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-time-date-book-is-there-a-wait",
+          "audioKey": "v500-time-date-book-is-there-a-wait"
+        },
+        {
+          "id": "v500-time-date-book-one-ticket-please",
+          "vietnamese": "Xin một vé",
+          "english": "One ticket, please",
+          "pronunciation": "Xin mot ve",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+          "audioKey": "v500-time-date-book-one-ticket-please"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "time-5",
+      "vietnamese": "Mấy giờ mở cửa?",
+      "english": "What time does it open?",
+      "pronunciation": "may zyuh muh koo-ah",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "time-5"
+    }
+  ]
+}

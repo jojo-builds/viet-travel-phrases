@@ -1,0 +1,9 @@
+Approval: APPROVE
+
+The plan is safely inside `T-151` scope and consistent with the repo contract: it reruns the interrupted `T-149` packet on the dedicated Viet worktree, deepens the existing bounded answer-page/relation sidecars instead of creating a new format, and preserves the required 3-gate, 4-reviewer recovery workflow. There is no scope or process issue that should block implementation, provided the new hubs are anchored to real approved Viet rows and any doc updates stay limited to actual branch-truth changes.
+
+- `T-151` is a clean rerun with no salvage path, and it requires unanimous approval from exactly four reviewers at Gate 1, Gate 2, and Gate 3 before the task can close.
+- The move from `24` to `50` answer-page hubs and from `43` to `50` relation clusters fits the declared task envelope and stays within the allowed write surfaces under `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion`; it is an expansion of the current sample, not a second content system.
+- Every added hub and relation must resolve back to real approved rows in `phrase-source.csv`, the `notes` field must stay limited to lightweight `relation-sample=` / `answer-page-sample=` tokens, and `answer-page-sample-v1.json` must remain compact and id-driven rather than duplicating phrase wording.
+- The planned `80+` newly resolved/supporting CSV rows are in scope, but they should be satisfied by real linked phrase support on the expanded hubs, not by synthetic filler rows or by turning the CSV notes field into a richer schema than the current marker contract allows.
+- Repo-contract discipline remains strict: only `T-151` artifacts plus the listed Viet files and mirrored branch-truth docs may change; `ops/**`, `docs/operations/**`, app UI files, and unrelated language lanes stay out of bounds.

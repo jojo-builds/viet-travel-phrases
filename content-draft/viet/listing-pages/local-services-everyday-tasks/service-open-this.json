@@ -1,0 +1,189 @@
+{
+  "id": "viet-family-service-open-this",
+  "familyID": "service-open-this",
+  "phraseID": "store-5",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Mở cái này giúp tôi",
+  "englishTitle": "Please open this for me",
+  "pronunciation": "muh gai nai zoop toy",
+  "summary": "Different ways to say \"Please open this for me\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "building.2.fill",
+  "tintName": "teal",
+  "categoryIDs": [
+    "local-services-everyday-tasks"
+  ],
+  "audioKey": "store-5",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when packaging or a bottle cap is the problem. This solves the small real-world task without extra explanation. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "store-5-piece-1",
+          "vietnamese": "Mở",
+          "english": "open",
+          "audioKey": "breakdown-taxi-5-first"
+        },
+        {
+          "id": "store-5-piece-2",
+          "vietnamese": "cái",
+          "english": "open",
+          "audioKey": "breakdown-repair-3-first"
+        },
+        {
+          "id": "store-5-piece-3",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "store-5-piece-4",
+          "vietnamese": "giúp tôi",
+          "english": "help me",
+          "audioKey": "breakdown-authored-giup-toi-38e527ca39"
+        },
+        {
+          "id": "store-5-full",
+          "vietnamese": "Mở cái này giúp tôi",
+          "english": "Please open this for me",
+          "audioKey": "store-5"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Mở cái này giúp tôi is the safest default for \"Please open this for me\". Use this when packaging or a bottle cap is the problem. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "store-5",
+          "vietnamese": "Mở cái này giúp tôi",
+          "english": "Please open this for me",
+          "pronunciation": "muh gai nai zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "store-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when packaging or a bottle cap is the problem. Use it in buying small items, receipts, bags, and everyday errands when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to the item or show a photo when you can. It avoids guessing from pronunciation alone.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "store-1",
+          "vietnamese": "Cho tôi chai nước",
+          "english": "A bottle of water please",
+          "pronunciation": "cho toy chai nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-water",
+          "audioKey": "store-1"
+        },
+        {
+          "id": "store-2",
+          "vietnamese": "Có túi không?",
+          "english": "Do you have a bag?",
+          "pronunciation": "koh too-ee khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-bag",
+          "audioKey": "store-2"
+        },
+        {
+          "id": "store-3",
+          "vietnamese": "Cho tôi khăn giấy",
+          "english": "Tissues please",
+          "pronunciation": "cho toy khan zai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-tissues",
+          "audioKey": "store-3"
+        },
+        {
+          "id": "store-4",
+          "vietnamese": "Ở đâu có kem chống nắng?",
+          "english": "Where is the sunscreen?",
+          "pronunciation": "uh dow koh kem chong nang",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-sunscreen",
+          "audioKey": "store-4"
+        },
+        {
+          "id": "store-6",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "pronunciation": "toy quet teh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-card",
+          "audioKey": "store-6"
+        },
+        {
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
+        },
+        {
+          "id": "v500-loca-serv-ever-task-where-can-i-buy-water",
+          "vietnamese": "Tôi có thể mua nước ở đâu?",
+          "english": "Where can I buy water?",
+          "pronunciation": "Toi co the mua nuoc o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-loca-serv-ever-task-where-can-i-buy-water",
+          "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "store-5",
+      "vietnamese": "Mở cái này giúp tôi",
+      "english": "Please open this for me",
+      "pronunciation": "muh gai nai zoop toy",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "store-5"
+    }
+  ]
+}

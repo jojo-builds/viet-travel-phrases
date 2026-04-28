@@ -1,0 +1,31 @@
+Repo-local manual task run only.
+Use `E:\AI\SpeakLocal-App-Family` as the canonical root.
+This prompt is for an explicitly assigned task id, not for automatic queue selection.
+
+Read, in order:
+1. `AGENTS.md`
+2. `.agent/README.md`
+3. `.agent/QUEUE_START.md`
+4. `.agent/AUTOMATION.md`
+
+Manual-task flow:
+- the user-supplied task id is authoritative
+- do not auto-pick from `.agent/coordination/queue-index.json`
+- you may read `queue-index.json` only to confirm the task exists or to mirror metadata, not to choose a different task
+- read the assigned task's live `state.json` and `spec.md`
+- if the operator is recovering from a Codex app `loading model` or reauthentication event, assume this fresh thread is the intended recovery lane; do not ask the user to revive the old thread first
+- treat the assigned task's declared `cwd` as the execution authority
+- do not assume the Codex UI's currently shown branch/worktree is the correct one for the task
+- if the task's `cwd` points at a separate worktree, run the task from that worktree and keep all commands/tools normalized to that path
+- do not ask the user to manually switch branches just to start the task unless the task spec explicitly requires a human branch action
+- if the task is already terminal or owned by another live session, stop honestly instead of silently choosing another task
+- claim by direct `state.json` patch, then re-read immediately to confirm ownership
+
+After claim:
+- trust the assigned task's `spec.md` and `state.json`
+- use the task's declared `cwd` and write scope, even if the implementation work happens in a separate feature worktree
+- ignore queue-index and locks unless the task is explicitly queue maintenance
+- if the task requires the meaningful 3-gate / 4-reviewer contract, follow it exactly as written in the task spec and `.agent/AUTOMATION.md`
+- write `result.md`, include `Process feedback`, and finish by patching `state.json` directly to `done` or `blocked` with `result.md` agreeing
+
+Process the explicitly assigned task only, then stop.

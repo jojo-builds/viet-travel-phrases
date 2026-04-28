@@ -21,8 +21,8 @@ export const appPreviewSlides: {
   {
     id: 'phrase',
     label: 'Preview 02',
-    title: 'Phrase product page',
-    body: 'Prototype the hero phrase, in-place variant swaps, and deeper next-step taps as one guided flow.',
+    title: 'Liquid Glass phrase page',
+    body: 'Prototype a floating-back shell, a bottom-right morphing search control, and calmer phrase content that still drives deeper taps.',
   },
   {
     id: 'search',

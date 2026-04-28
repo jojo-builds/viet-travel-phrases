@@ -1,0 +1,57 @@
+{
+  "taskId": "T-152",
+  "title": "Viet flagship answer-hub deepening, phrase-class expansion, and cross-link growth packet",
+  "status": "done",
+  "phase": "done",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-t-152-20260423t171140-0500-450bbc63",
+    "label": "manual-t152-content-expansion"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T17:11:40.4181490-05:00",
+    "lastHeartbeatAt": "2026-04-23T18:32:26.1574518-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T18:32:26.1574518-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "viet_relation_model"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-152\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-152\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-152\\reviews\\",
+    "logs": ".agent\\tasks\\T-152\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion\\content-draft\\viet\\answer-page-sample-v1.json",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion\\content-draft\\viet\\phrase-source.csv",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion\\content-draft\\viet\\relation-sample-v1.json",
+      ".agent\\tasks\\T-152\\logs\\viet-flagship-answer-hub-deepening-notes.md",
+      ".agent\\tasks\\T-152\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T18:32:26.1574518-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

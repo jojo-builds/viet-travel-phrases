@@ -1,0 +1,163 @@
+{
+  "id": "viet-family-sight-meeting-point",
+  "familyID": "sight-meeting-point",
+  "phraseID": "sight-5",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Điểm gặp ở đâu?",
+  "englishTitle": "Where is the meeting point?",
+  "pronunciation": "deeym gap uh dow",
+  "summary": "Different ways to say \"Where is the meeting point?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "camera.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "sightseeing-activities"
+  ],
+  "audioKey": "sight-5",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this before a tour, boat, or day trip starts. This avoids missed tours and pickup confusion. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
+      "breakdown": [
+        {
+          "id": "sight-5-piece-1",
+          "vietnamese": "Điểm",
+          "english": "the",
+          "audioKey": "breakdown-v900-dire-navi-can-you-point-out-a-nearby-landmark-piece-7"
+        },
+        {
+          "id": "sight-5-piece-2",
+          "vietnamese": "gặp",
+          "english": "meeting",
+          "audioKey": "breakdown-v900-time-date-book-great-see-you-then-piece-3"
+        },
+        {
+          "id": "sight-5-piece-3",
+          "vietnamese": "ở đâu?",
+          "english": "where?",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "sight-5-full",
+          "vietnamese": "Điểm gặp ở đâu?",
+          "english": "Where is the meeting point?",
+          "audioKey": "sight-5"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Điểm gặp ở đâu? is the safest default for \"Where is the meeting point?\". Use this before a tour, boat, or day trip starts. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "sight-5",
+          "vietnamese": "Điểm gặp ở đâu?",
+          "english": "Where is the meeting point?",
+          "pronunciation": "deeym gap uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "sight-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this before a tour, boat, or day trip starts. Use it in tickets, tours, photos, closing times, and meeting points when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Meeting points and start times are worth confirming twice, especially on busy tours.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Show the tour booking, ticket, or map while you ask.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "sight-1",
+          "vietnamese": "Vé bao nhiêu?",
+          "english": "How much is the ticket?",
+          "pronunciation": "veh bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-ticket",
+          "audioKey": "sight-1"
+        },
+        {
+          "id": "sight-2",
+          "vietnamese": "Bắt đầu ở đâu?",
+          "english": "Where do we start?",
+          "pronunciation": "bat dow uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-start",
+          "audioKey": "sight-2"
+        },
+        {
+          "id": "sight-3",
+          "vietnamese": "Tôi chụp hình ở đây được không?",
+          "english": "Can I take photos here?",
+          "pronunciation": "toy choop hinh uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-photos",
+          "audioKey": "sight-3"
+        },
+        {
+          "id": "sight-4",
+          "vietnamese": "Mấy giờ đóng cửa?",
+          "english": "What time does it close?",
+          "pronunciation": "may zyuh dong koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-close",
+          "audioKey": "sight-4"
+        },
+        {
+          "id": "v500-sigh-acti-i-have-a-tour-booking",
+          "vietnamese": "Tôi có đặt tour",
+          "english": "I have a tour booking",
+          "pronunciation": "toy koh dat tour",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-v500-sigh-acti-i-have-a-tour-booking",
+          "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "sight-5",
+      "vietnamese": "Điểm gặp ở đâu?",
+      "english": "Where is the meeting point?",
+      "pronunciation": "deeym gap uh dow",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "sight-5"
+    }
+  ]
+}

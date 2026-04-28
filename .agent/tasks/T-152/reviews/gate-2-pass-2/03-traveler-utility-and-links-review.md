@@ -1,0 +1,12 @@
+The corrected support and cross-class linking now reads materially more traveler-realistic than density-fill. The hubs I checked no longer dead-end into arbitrary support pools; instead they now use believable likely-reply, repair, next-step, escalation, and nearby-useful rails that match what a traveler would actually tap next, and the sampled relation targets all resolve cleanly in the CSV.
+
+Findings:
+- none
+
+Evidence:
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-sample-v1.json`: `viet-rel-service-water` now routes through `money-how-much` and `food-pay-now`, with nearby-useful exits to `food-bottled-water`, `food-need-table`, `service-inside-seat`, and `service-quiet-seat`; those targets resolve in `phrase-source.csv` rows 57, 64, 72, 1214, 1215, and 167.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-sample-v1.json` and `answer-page-sample-v1.json`: `viet-rel-directions-right-route` / `viet-directions-right-route` now use a coherent route-confirmation chain of `transport-stop-here` -> `directions-map-pin`, plus nearby exits `transport-destination`, `directions-follow-signs`, `directions-landmark-nearby`, and `directions-last-turn`; matching rows resolve in `phrase-source.csv` at 24, 26, 1155, 1159, 1161, and 1171.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-sample-v1.json`: emergency and medical hubs `viet-rel-emergency-manager-now`, `viet-rel-emergency-call-help`, `viet-rel-emergency-get-away`, `viet-rel-health-doctor`, `viet-rel-health-allergy`, and `viet-rel-emergency-wallet-stolen` now center on believable rails like `repair-type-phone`, `emergency-police`, `emergency-police-report`, `emergency-ambulance`, `repair-translate-this`, and `v900-heal-phar-please-write-the-instructions`; those families resolve in `phrase-source.csv` rows 23, 99, 105, 143, 144, 177, 763, 1182, 1193, and 1173.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-sample-v1.json` and `answer-page-sample-v1.json`: billing and repair hubs `viet-rel-service-receipt`, `viet-rel-money-total`, `viet-rel-money-what-fee`, `viet-rel-repair-translate-this`, `viet-rel-repair-which-one`, and `viet-rel-v900-heal-phar-please-write-the-instructions` now form practical “clarify -> verify -> next action” loops rather than stopping cold; supporting targets resolve in `phrase-source.csv` rows 16, 23, 80, 173, 184, 1259, 1267, 1271, and 1281.
+
+Approval: APPROVE

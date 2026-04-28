@@ -1,0 +1,171 @@
+{
+  "id": "viet-family-v500-poli-basi-yes",
+  "familyID": "v500-poli-basi-yes",
+  "phraseID": "v500-poli-basi-yes",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Đúng",
+  "englishTitle": "Yes",
+  "pronunciation": "Dung",
+  "summary": "Different ways to say \"Yes\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "hand.wave.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "polite-basics"
+  ],
+  "audioKey": "v500-poli-basi-yes",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this in short everyday travel exchanges when you want to stay polite without overexplaining. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "v500-poli-basi-yes-piece-1",
+          "vietnamese": "Đúng",
+          "english": "correct",
+          "audioKey": "v500-poli-basi-yes"
+        },
+        {
+          "id": "v500-poli-basi-yes-full",
+          "vietnamese": "Đúng",
+          "english": "Yes",
+          "audioKey": "v500-poli-basi-yes"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Đúng is the safest default for \"Yes\". Use this in short everyday travel exchanges when you want to stay polite without overexplaining. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "v500-poli-basi-yes",
+          "vietnamese": "Đúng",
+          "english": "Yes",
+          "pronunciation": "Dung",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "v500-poli-basi-yes"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in short everyday travel exchanges when you want to stay polite without overexplaining. Use it in small service and first-contact moments when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Do not overthink the grammar in quick service moments. Clear, polite, and short is better than a long sentence said nervously.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "A small smile and a calm pace matter. These short phrases are often enough to make a service moment feel warmer.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "polite-1",
+          "vietnamese": "Xin chào",
+          "english": "Hello",
+          "pronunciation": "sin chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-polite-hello",
+          "audioKey": "polite-1"
+        },
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        },
+        {
+          "id": "polite-3",
+          "vietnamese": "Dạ",
+          "english": "Yes / polite acknowledgment",
+          "pronunciation": "yah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-polite-acknowledge",
+          "audioKey": "polite-3"
+        },
+        {
+          "id": "polite-4",
+          "vietnamese": "Không, cảm ơn",
+          "english": "No, thank you",
+          "pronunciation": "khong kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-polite-no-thanks",
+          "audioKey": "polite-4"
+        },
+        {
+          "id": "polite-5",
+          "vietnamese": "Xin lỗi",
+          "english": "Excuse me / sorry",
+          "pronunciation": "sin loy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-excuse-sorry",
+          "audioKey": "polite-5"
+        },
+        {
+          "id": "polite-6",
+          "vietnamese": "Không sao đâu",
+          "english": "It’s okay",
+          "pronunciation": "khong sao doh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-polite-its-okay",
+          "audioKey": "polite-6"
+        },
+        {
+          "id": "polite-7",
+          "vietnamese": "Tạm biệt",
+          "english": "Goodbye",
+          "pronunciation": "tahm bee-et",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-goodbye",
+          "audioKey": "polite-7"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-poli-basi-yes",
+      "vietnamese": "Đúng",
+      "english": "Yes",
+      "pronunciation": "Dung",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "v500-poli-basi-yes"
+    }
+  ]
+}

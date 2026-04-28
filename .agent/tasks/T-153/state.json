@@ -1,0 +1,57 @@
+{
+  "taskId": "T-153",
+  "title": "Tagalog answer-page sidecar bootstrap and first substantial listing-hub enrichment packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\tagalog-v2-expansion",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "t153-20260423t171244-3176813-0500",
+    "label": "desktop-codex-t153"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T17:12:44.3176813-05:00",
+    "lastHeartbeatAt": "2026-04-23T17:53:20.7529502-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T19:53:31.1577768-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "tagalog_relation_model"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-153\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-153\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-153\\reviews\\",
+    "logs": ".agent\\tasks\\T-153\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\tagalog-v2-expansion\\content-draft\\tagalog\\answer-page-sample-v1.json",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\tagalog-v2-expansion\\content-draft\\tagalog\\phrase-source.csv",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\tagalog-v2-expansion\\content-draft\\tagalog\\relation-sample-v1.json",
+      ".agent\\tasks\\T-153\\logs\\tagalog-answer-page-bootstrap-notes.md",
+      ".agent\\tasks\\T-153\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T17:53:20.7529502-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

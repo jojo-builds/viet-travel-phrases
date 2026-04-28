@@ -1,0 +1,197 @@
+{
+  "id": "viet-family-repair-write-down",
+  "familyID": "repair-write-down",
+  "phraseID": "repair-2",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Viết xuống giúp tôi",
+  "englishTitle": "Please write it down",
+  "pronunciation": "vee-et zoong zoop toy",
+  "summary": "Different ways to say \"Please write it down\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "questionmark.bubble.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "understanding-repair"
+  ],
+  "audioKey": "repair-2",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Written text often rescues numbers, names, room numbers, and addresses faster than more speech. Use this when you need the other person to give you something you can read, save, or show again.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "repair-2-piece-1",
+          "vietnamese": "Viết xuống",
+          "english": "write down",
+          "audioKey": "breakdown-authored-viet-xuong-13d1fda322"
+        },
+        {
+          "id": "repair-2-piece-2",
+          "vietnamese": "giúp tôi",
+          "english": "help me",
+          "audioKey": "breakdown-authored-giup-toi-38e527ca39"
+        },
+        {
+          "id": "repair-2-full",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "audioKey": "repair-2"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Viết xuống giúp tôi is the safest default for asking someone to write it down. It keeps the request polite and specific without needing to explain what you missed.",
+      "phrases": [
+        {
+          "id": "repair-2",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "pronunciation": "vee-et zoong zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "repair-2"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it for hotel addresses, pickup points, prices, room numbers, names, or any detail you need to keep after the conversation ends.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Do not make it sound like a demand. A calm tone keeps the request cooperative, especially if the person already repeated themselves once.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Hand over your phone with a blank note open if paper is not nearby. The phrase plus the blank screen usually makes the request obvious.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        },
+        {
+          "id": "repair-3",
+          "vietnamese": "Cái đó nghĩa là gì?",
+          "english": "What does that mean?",
+          "pronunciation": "gai doh ngee-ah lah zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-meaning",
+          "audioKey": "repair-3"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "you-may-hear",
+      "title": "You may hear",
+      "body": "A local may answer with: I will write it here.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "repair-6",
+          "vietnamese": "Làm ơn nói lại số đó",
+          "english": "Please say the number again",
+          "pronunciation": "lahm uhn noy lie soh doh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-number",
+          "audioKey": "repair-6"
+        },
+        {
+          "id": "repair-english-help",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
+          "english": "Do you speak English?",
+          "pronunciation": "anh chee noy tyeng anh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-english-help",
+          "audioKey": "repair-english-help"
+        },
+        {
+          "id": "v500-unde-repa-please-say-it-slowly",
+          "vietnamese": "Hãy nói từ từ nhé",
+          "english": "Please say it slowly",
+          "pronunciation": "Hay noi tu tu nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-unde-repa-please-say-it-slowly",
+          "audioKey": "v500-unde-repa-please-say-it-slowly"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "repair-2",
+      "vietnamese": "Viết xuống giúp tôi",
+      "english": "Please write it down",
+      "pronunciation": "vee-et zoong zoop toy",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "repair-2"
+    }
+  ]
+}

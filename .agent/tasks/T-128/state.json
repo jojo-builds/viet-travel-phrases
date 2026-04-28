@@ -16,7 +16,7 @@
     "lastHeartbeatAt": "2026-04-21T13:21:36.6002276-05:00",
     "leaseDurationMinutes": 120,
     "leaseExpiresAt": "2026-04-21T15:21:36.6002276-05:00",
-    "reclaimReason": "inactive-in-progress"
+    "reclaimReason": "lease-expired"
   },
   "locks": {
     "write": [
@@ -40,7 +40,7 @@
       ".agent\\tasks\\T-128\\result.md"
     ]
   },
-  "lastUpdated": "2026-04-21T14:09:04.158598-05:00",
+  "lastUpdated": "2026-04-21T16:09:12.739238-05:00",
   "automation": {
     "runner": "desktop-codex",
     "mode": "single-task",

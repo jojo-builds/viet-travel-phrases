@@ -1,0 +1,157 @@
+{
+  "id": "viet-family-bathroom-water",
+  "familyID": "bathroom-water",
+  "phraseID": "bath-5",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Tôi cần nước",
+  "englishTitle": "I need water",
+  "pronunciation": "toy gun nook",
+  "summary": "Different ways to say \"I need water\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "person.fill",
+  "tintName": "teal",
+  "categoryIDs": [
+    "bathroom-personal-needs"
+  ],
+  "audioKey": "bath-5",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when drinking water or rinse water is the immediate need. This covers both bathroom and personal-need moments where you just need water fast. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "bath-5-piece-1",
+          "vietnamese": "Tôi cần",
+          "english": "I need",
+          "audioKey": "breakdown-authored-toi-can-b0dd0f0330"
+        },
+        {
+          "id": "bath-5-piece-2",
+          "vietnamese": "nước",
+          "english": "water",
+          "audioKey": "breakdown-v900-food-drin-one-sugarcane-juice-please-piece-5"
+        },
+        {
+          "id": "bath-5-full",
+          "vietnamese": "Tôi cần nước",
+          "english": "I need water",
+          "audioKey": "bath-5"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi cần nước is the safest default for \"I need water\". Use this when drinking water or rinse water is the immediate need. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "bath-5",
+          "vietnamese": "Tôi cần nước",
+          "english": "I need water",
+          "pronunciation": "toy gun nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "bath-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when drinking water or rinse water is the immediate need. Use it in bathrooms, soap, paper, water, and basic personal needs when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Some places may not have paper or soap available. Asking early avoids an awkward surprise.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Ask directly and follow gestures. People may simply point you toward the right place.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "bath-1",
+          "vietnamese": "Nhà vệ sinh ở đâu?",
+          "english": "Where is the bathroom?",
+          "pronunciation": "nya veh sinh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-where",
+          "audioKey": "bath-1"
+        },
+        {
+          "id": "bath-2",
+          "vietnamese": "Có giấy vệ sinh không?",
+          "english": "Do you have toilet paper?",
+          "pronunciation": "koh zai veh sinh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-paper",
+          "audioKey": "bath-2"
+        },
+        {
+          "id": "bathroom-use",
+          "vietnamese": "Tôi dùng nhà vệ sinh được không?",
+          "english": "Can I use the bathroom?",
+          "pronunciation": "toy zoong nya veh sinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-use",
+          "audioKey": "bathroom-use"
+        },
+        {
+          "id": "bath-3",
+          "vietnamese": "Có xà phòng không?",
+          "english": "Do you have soap?",
+          "pronunciation": "koh sa fong khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-soap",
+          "audioKey": "bath-3"
+        },
+        {
+          "id": "bath-4",
+          "vietnamese": "Tôi rửa tay ở đây được không?",
+          "english": "Can I wash my hands here?",
+          "pronunciation": "toy zoo-ah tai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-wash-hands",
+          "audioKey": "bath-4"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "bath-5",
+      "vietnamese": "Tôi cần nước",
+      "english": "I need water",
+      "pronunciation": "toy gun nook",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "bath-5"
+    }
+  ]
+}

@@ -3,6 +3,23 @@
 Last updated: 2026-04-21
 Scope: Viet phrase-detail experience before broader family rollout
 
+## Terminology note
+
+In product discussion, this doc's `phrase page` means the dedicated `listing page` / `product page` / `listing detail page` for one phrase hub.
+
+It does **not** mean:
+
+- a category/scenario folder by itself
+- a scenario page that lists multiple phrase hubs
+
+The current preferred mapping is:
+
+- `category` / `scenario` = browse bucket or filter group
+- `scenario page` = optional page showing phrase hubs in that category
+- `listing page` / `product page` / `listing detail page` = one dedicated phrase-hub page
+- `variant` = one wording inside that page
+- `family` = internal data-model term for the grouping behind that page
+
 ## Core product thesis
 
 SpeakLocal should not try to beat AI products at open-ended translation.
@@ -96,11 +113,23 @@ Each phrase page should use the same shell:
 
 This repeated shell makes deep tapping feel safe and predictable.
 
+### Current shell preference
+
+As of 2026-04-21, the preferred phrase-page shell is now more explicitly native-iOS and motion-led:
+
+- the back button should float on its own as a top-layer Liquid Glass control
+- content should scroll underneath that back control
+- the search entry point should live in the lower toolbar area instead of staying permanently expanded at the top
+- the bottom-right search control should begin as a magnifying-glass glass button and expand into a wider search capsule when tapped
+- when search expands, the other bottom toolbar controls should shrink/fade away rather than competing with it
+- the expanded search state can surface a floating suggestion/results tray above the toolbar so the user can pivot quickly without leaving the phrase page
+
 ## Liquid Glass integration
 
 - The phrase page should adopt Liquid Glass primarily in the shell and control layer, not the entire content stack.
 - Best candidates for glass treatment:
-  - back/search top shell
+  - top-layer back control
+  - bottom toolbar search control and search-results tray
   - hero playback controls
   - floating or grouped primary actions
 - Lower informational sections should stay calmer and more content-led:

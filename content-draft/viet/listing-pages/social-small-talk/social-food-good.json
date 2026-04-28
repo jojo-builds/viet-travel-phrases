@@ -1,0 +1,179 @@
+{
+  "id": "viet-family-social-food-good",
+  "familyID": "social-food-good",
+  "phraseID": "smalltalk-5",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Đồ ăn ngon quá",
+  "englishTitle": "The food is so good",
+  "pronunciation": "doh an ngon gwah",
+  "summary": "Different ways to say \"The food is so good\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "bubble.left.and.bubble.right.fill",
+  "tintName": "green",
+  "categoryIDs": [
+    "social-small-talk"
+  ],
+  "audioKey": "smalltalk-5",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this in friendly conversation with restaurant staff or locals. This is one of the easiest friendly travel comments to make. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "smalltalk-5-piece-1",
+          "vietnamese": "Đồ",
+          "english": "map / thing",
+          "audioKey": "breakdown-smalltalk-5-first"
+        },
+        {
+          "id": "smalltalk-5-piece-2",
+          "vietnamese": "ăn",
+          "english": "eat",
+          "audioKey": "breakdown-v900-food-drin-i-do-not-eat-seafood-piece-3"
+        },
+        {
+          "id": "smalltalk-5-piece-3",
+          "vietnamese": "ngon",
+          "english": "is",
+          "audioKey": "breakdown-authored-ngon-206621adf2"
+        },
+        {
+          "id": "smalltalk-5-piece-4",
+          "vietnamese": "quá",
+          "english": "so",
+          "audioKey": "breakdown-price-3-rest"
+        },
+        {
+          "id": "smalltalk-5-full",
+          "vietnamese": "Đồ ăn ngon quá",
+          "english": "The food is so good",
+          "audioKey": "smalltalk-5"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Đồ ăn ngon quá is the safest default for \"The food is so good\". Use this in friendly conversation with restaurant staff or locals. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "smalltalk-5",
+          "vietnamese": "Đồ ăn ngon quá",
+          "english": "The food is so good",
+          "pronunciation": "doh an ngon gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "smalltalk-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in friendly conversation with restaurant staff or locals. Use it in friendly introductions and light local conversation when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Keep it light. A friendly question after the phrase often feels more natural than a long introduction.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "smalltalk-1",
+          "vietnamese": "Tôi đến từ Mỹ",
+          "english": "I’m from the United States",
+          "pronunciation": "toy den too mee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-social-from-us",
+          "audioKey": "smalltalk-1"
+        },
+        {
+          "id": "smalltalk-2",
+          "vietnamese": "Tôi từ Anh",
+          "english": "I’m from England",
+          "pronunciation": "toy too anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-social-from-uk",
+          "audioKey": "smalltalk-2"
+        },
+        {
+          "id": "smalltalk-3",
+          "vietnamese": "Đây là lần đầu của tôi",
+          "english": "This is my first time",
+          "pronunciation": "day la lun dow koo-ah toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-social-first-time",
+          "audioKey": "smalltalk-3"
+        },
+        {
+          "id": "smalltalk-4",
+          "vietnamese": "Tôi thích Việt Nam",
+          "english": "I like Vietnam",
+          "pronunciation": "toy thik vyet nam",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-social-like-vietnam",
+          "audioKey": "smalltalk-4"
+        },
+        {
+          "id": "smalltalk-6",
+          "vietnamese": "Thời tiết nóng quá",
+          "english": "The weather is so hot",
+          "pronunciation": "thoy tyet nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-social-weather-hot",
+          "audioKey": "smalltalk-6"
+        },
+        {
+          "id": "smalltalk-7",
+          "vietnamese": "Bạn khỏe không?",
+          "english": "How are you?",
+          "pronunciation": "ban khoe khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you",
+          "audioKey": "smalltalk-7"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "smalltalk-5",
+      "vietnamese": "Đồ ăn ngon quá",
+      "english": "The food is so good",
+      "pronunciation": "doh an ngon gwah",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "smalltalk-5"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 ## Durable repo and product decisions
 
 - `E:\AI\SpeakLocal-App-Family` is the canonical implementation root for the SpeakLocal app family.
-- `app\` remains the permanent Expo workspace for now. No broad repo refactor is part of the Viet v2 monetization pass.
+- `app\` remains the canonical shared content/pipeline workspace during the transition, but the long-term ship-facing app-shell direction is now a native SwiftUI/Xcode family shell. Expo is the bridge/reference lane, not the final premium UX destination.
 - `app\family\appRegistry.js` remains the canonical shared runtime/build registry.
 - Hidden Expo web/native preview routes under `app\app\design-preview\*` and `app\app\app-preview-wireframes\*` are the preferred fast visual review surface for UI iteration; they are sidecar review tools, not ship-facing product routes.
 - SpeakLocal v2 is being framed as a travel phrasebook, not an academic language-learning app.
@@ -42,6 +42,13 @@
 - Scenario remains the category-level runtime truth for the current app shell, routes, premium cards, and website module contract.
 - Intent family is the authored decision unit inside each scenario/category.
 - The visible entry count is the family primary (`say-first`) phrase, not every raw phrase row.
+- Shared traveler/runtime structure does not require every destination app to use identical scenario/category lists. A "shared backbone" should mean shared traveler coverage goals plus shared runtime/schema contracts, not forced scenario symmetry across all countries.
+- Product/UI terminology should now be interpreted this way:
+  - `category` / `scenario` = browse bucket, folder, or filter group
+  - `scenario page` = optional page that lists phrase hubs inside a category
+  - `listing page` / `product page` / `listing detail page` = the dedicated page for one phrase hub
+  - `intent family` = internal authored/runtime grouping behind one listing page
+  - `phrase row` / `variant` = one wording inside that listing page
 - Compact variant roles are fixed to:
   - `say-first`
   - `more-polite`
@@ -49,8 +56,13 @@
   - `also-common`
 - `say-first` should be the shortest socially safe phrase that still gets the traveler by, often 1 to 2 words when honest and usable.
 - Phrase families should be authored as navigable detail surfaces, not isolated database rows.
+- Listing/detail pages are now product-defined as AI-shaped answer pages: they should answer traveler intent with modular sections, linked follow-ons, and audio-backed phrasing instead of acting like a flat phrase record.
 - Related-phrase modeling should exist both within a scenario and across nearby traveler intents such as follow-up, repair, escalation, likely reply, and clearer/politer forms.
 - Listing/detail pages should increasingly behave like utility-rich phrase hubs where users can tap deeper into adjacent useful phrases, not just view one phrase and stop.
+- The phrase-page product direction now assumes richer phrase hubs will increase raw row density and adjacent-family coverage over time; future content/database growth is an expected consequence of better phrase-detail/listing surfaces, not accidental library bloat.
+- Product completeness for a destination app should now be interpreted as saving the real phrase graph behind the major traveler intents, not merely publishing one primary phrase per listing page. When meaningful alternate phrasings, relation branches, likely replies, repair paths, or adjacent next-step phrases exist, they should be authored and retained as durable content truth rather than improvised later from memory.
+- The content system should increasingly distinguish between richly enriched answer hubs for the highest-value traveler pages, medium-depth support hubs that still carry real relation truth, and baseline long-tail families that may start lighter but should still preserve useful row truth for future promotion.
+- Audio is part of the durable phrase-graph contract. Newly authored rows may temporarily remain `audioStatus=planned`, but the long-term expectation for approved traveler-facing phrase rows is that they will eventually receive audio coverage instead of being treated as throwaway text-only variants.
 - The preferred architecture for phrase relationships is to extend the current authored family/row model with relation metadata first, not to jump immediately to a separate graph database.
 - Vietnam is the first runtime-priority lane where relation-ready phrase/detail modeling should be hardened intentionally; Tagalog and future languages should adopt that model earlier in authoring.
 - The hourly queue-maintenance cron is also the preferred place for guarded Codex desktop recovery when the queue appears stalled; do not create a separate rapid restart loop. If Codex is not running at all while actionable queued/reclaimable work exists, the same hourly lane should start it back up before considering a restart path.
@@ -87,6 +99,26 @@
 - The Expo app keeps hidden review routes under `app/app/design-preview/*`, and the dashboard proxies those routes so phone review can happen without building or installing a fresh iPhone binary for every visual pass.
 - Exact deterministic real-app review states now live under `app/app/design-live/*`, with preset truth owned by `app/lib/designReviewPresets.ts` and state overrides owned by `app/lib/designReview.tsx`.
 - Dashboard review should prefer `design-live` preset routes for repeatable frontend work, and the repo now ships `npm run capture:design` so the same authenticated dashboard surface can be screenshot-verified with Playwright instead of relying on manual visual memory alone.
+- The dashboard/authenticated Expo web lane is the default review surface for routine UI and copy iteration; paid native iPhone builds should be treated as milestone validation, not the default loop for small design tweaks.
+- Build/release workflow should follow a simple branch policy:
+  - `main` = current accepted baseline
+  - one active feature branch per major feature or workstream
+  - do not advance the same feature on multiple active branches in parallel once a winner is clear
+  - when multiple approved features need one paid iPhone test pass, bundle them into a single integration candidate branch/build instead of paying for isolated builds per feature
+- The remaining Windows-server time should be used to harden portable content/model/export seams and design references, not to overinvest in final Expo-only shell polish once the native direction is clear.
+
+## Native iOS transition decisions
+
+- SpeakLocal is now committing to a native SwiftUI/Xcode family-shell direction for the premium iOS experience across the app family.
+- The near-term priority before the Mac overlap begins is to harden the phrase database, listing-page answer content, relation graph, audio/export seams, and other portable product truth, not to start speculative Swift implementation on the Windows lane.
+- The first native milestone should prove one reusable family shell plus three flagship surfaces:
+  - home
+  - dedicated search
+  - listing/answer page
+- Native proof should start with `Xin chào` as the flagship greeting page and `I need a doctor` as the flagship urgent-help page.
+- The shared repo remains the single source of truth during the native transition. Do not fork content, relation data, audio manifests, or premium-boundary logic into a separate planning repo.
+- The preferred native transition shape is one shared native family shell that future destination apps inherit, not ten separate app rewrites done independently.
+- Swift/Xcode implementation work should begin only after the Mac server is commissioned and the overlap period is active, so native work happens against the real target toolchain instead of a guessed pre-cutover workflow.
 
 ## Current live Viet boundary decisions
 
@@ -100,6 +132,26 @@
 - The autonomous completion audits for the live Viet pack now live under:
   - `content-draft/viet/autonomous-500/`
   - `content-draft/viet/autonomous-900/`
+
+## Execution-tracking decisions
+
+- High-level pre-v2 feature intake and progress should live in the external visual tracker (`SpeakLocal V2 Feature Tracker` Google Sheet), not in the repo-local queue by default.
+- The repo-local `.agent/` queue remains useful only for bounded execution-grade tasks with a clear deliverable, clear write scope, and a prompt packet worth autonomous pickup.
+- Do not use the queue as the main roadmap, idea backlog, or product-brain surface; use it only after the orchestrator has already shaped a feature into a real implementation task.
+- This pinned Codex thread is the orchestrator lane. Heavy implementation work should run in fresh worker threads on explicit feature/recovery tasks, not in old recovered threads that already hit `loading model` or reauthentication trouble.
+- When the Codex Windows app starts showing the recurring `loading model` / reauthentication pattern on long-running worker or reviewer threads, the preferred operator recovery is:
+  - restart the Codex Windows desktop app
+  - reopen the repo
+  - resume from the task files in a fresh worker thread instead of trusting the old thread to self-heal cleanly
+- Codex on this machine is installed through the Microsoft Store lane. The preferred update command is:
+  - `winget install Codex -s msstore`
+- Queue recovery should prefer explicit recovery tasks over silently reusing interrupted tasks. If a meaningful task is materially complete but the app/runtime interrupted the closeout, keep the original task as historical interruption truth and finish the salvage path in a fresh recovery task.
+- For machine transitions, repo-persisted docs plus `.agent` task state are the primary continuity source, not any single live Codex thread.
+- Preferred Codex carryover into a new machine is:
+  - clone the repo
+  - keep `.agent\` and `.codex\` from the repo
+  - reinstall and reauthenticate the Codex app
+  - selectively migrate `$CODEX_HOME` assets such as skills, automations, config, and optional archived sessions if historical transcripts are worth carrying over
 
 ## Future boundary decisions
 

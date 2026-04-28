@@ -1,0 +1,213 @@
+{
+  "id": "viet-family-repair-english-help",
+  "familyID": "repair-english-help",
+  "phraseID": "repair-english-help",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Anh/chị nói tiếng Anh không?",
+  "englishTitle": "Do you speak English?",
+  "pronunciation": "anh chee noy tyeng anh khong",
+  "summary": "Different ways to say \"Do you speak English?\" in Vietnam, with the safe phrase, useful variants, and nearby next steps.",
+  "iconName": "questionmark.bubble.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "understanding-repair"
+  ],
+  "audioKey": "repair-english-help",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you need to know whether English is an option. Switch the conversation toward English when Vietnamese stops working. Use the nearby forms below when tone, setting, or politeness changes.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "repair-english-help-piece-1",
+          "vietnamese": "Anh/chị",
+          "english": "you (polite)",
+          "audioKey": "breakdown-repair-english-help-first"
+        },
+        {
+          "id": "repair-english-help-piece-2",
+          "vietnamese": "nói",
+          "english": "speak / say",
+          "audioKey": "breakdown-problems-3-first"
+        },
+        {
+          "id": "repair-english-help-piece-3",
+          "vietnamese": "tiếng Anh",
+          "english": "English",
+          "audioKey": "breakdown-authored-tieng-anh-70a5f1228a"
+        },
+        {
+          "id": "repair-english-help-piece-4",
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "repair-english-help-full",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
+          "english": "Do you speak English?",
+          "audioKey": "repair-english-help"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Anh/chị nói tiếng Anh không? is the safest default for \"Do you speak English?\". Use this when you need to know whether English is an option. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "repair-english-help",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
+          "english": "Do you speak English?",
+          "pronunciation": "anh chee noy tyeng anh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "repair-english-help"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "natural-variations",
+      "title": "Natural variations",
+      "body": "This nearby form changes the tone or setting. Use it when the note under the row matches the moment.",
+      "phrases": [
+        {
+          "id": "repair-english-help-self-limit",
+          "vietnamese": "Xin lỗi, tôi không nói tiếng Việt",
+          "english": "Sorry, I don’t speak Vietnamese",
+          "pronunciation": "sin loy toy khong noy tyeng vyet",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-repair-english-help-self-limit",
+          "audioKey": "repair-english-help-self-limit"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need to know whether English is an option. It helps in moments when Vietnamese stops making sense, especially when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "If speaking does not work, move quickly to writing, pointing, or showing the exact word on your phone.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        },
+        {
+          "id": "repair-2",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "pronunciation": "vee-et zoong zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-write-down",
+          "audioKey": "repair-2"
+        },
+        {
+          "id": "repair-3",
+          "vietnamese": "Cái đó nghĩa là gì?",
+          "english": "What does that mean?",
+          "pronunciation": "gai doh ngee-ah lah zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-meaning",
+          "audioKey": "repair-3"
+        },
+        {
+          "id": "repair-6",
+          "vietnamese": "Làm ơn nói lại số đó",
+          "english": "Please say the number again",
+          "pronunciation": "lahm uhn noy lie soh doh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-number",
+          "audioKey": "repair-6"
+        },
+        {
+          "id": "v500-unde-repa-please-say-it-slowly",
+          "vietnamese": "Hãy nói từ từ nhé",
+          "english": "Please say it slowly",
+          "pronunciation": "Hay noi tu tu nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-unde-repa-please-say-it-slowly",
+          "audioKey": "v500-unde-repa-please-say-it-slowly"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "repair-english-help",
+      "vietnamese": "Anh/chị nói tiếng Anh không?",
+      "english": "Do you speak English?",
+      "pronunciation": "anh chee noy tyeng anh khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "repair-english-help"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "taskId": "T-144",
+  "title": "SpeakLocal V2 AI-shaped listing page implementation and connected phrase-answer workflow",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-T-144-20260423T060258-0500",
+    "label": "manual-T-144-20260423T060258-0500"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T06:02:58.3819954-05:00",
+    "lastHeartbeatAt": "2026-04-23T07:05:00.0000000-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T09:05:00.0000000-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ios_family_shared_ui"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-144\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-144\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-144\\reviews\\",
+    "logs": ".agent\\tasks\\T-144\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\components\\preview\\PhraseProductPrototype.tsx",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\components\\preview\\previewContent.ts",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\docs\\phrase-page-blueprint.md",
+      ".agent\\tasks\\T-144\\logs\\ai-shaped-listing-page-notes.md",
+      ".agent\\tasks\\T-144\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T07:05:00.0000000-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "id": "viet-family-v500-heal-phar-i-feel-dizzy",
+  "familyID": "v500-heal-phar-i-feel-dizzy",
+  "phraseID": "v500-heal-phar-i-feel-dizzy",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Tôi cảm thấy chóng mặt",
+  "englishTitle": "I feel dizzy",
+  "pronunciation": "toy gahm thay chong mat",
+  "summary": "Different ways to say \"I feel dizzy\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "cross.case.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "health-pharmacy"
+  ],
+  "audioKey": "v500-heal-phar-i-feel-dizzy",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this at a pharmacy, clinic, hotel desk, or with a guide when you feel light-headed or dizzy. Keep it direct so the other person knows this is a health issue, not small talk.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "v500-heal-phar-i-feel-dizzy-piece-1",
+          "vietnamese": "Tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "v500-heal-phar-i-feel-dizzy-piece-2",
+          "vietnamese": "cảm thấy",
+          "english": "feel",
+          "audioKey": "breakdown-authored-cam-thay-8ff4ed8cf3"
+        },
+        {
+          "id": "v500-heal-phar-i-feel-dizzy-piece-3",
+          "vietnamese": "chóng mặt",
+          "english": "dizzy",
+          "audioKey": "breakdown-authored-chong-mat-2e09cfc713"
+        },
+        {
+          "id": "v500-heal-phar-i-feel-dizzy-full",
+          "vietnamese": "Tôi cảm thấy chóng mặt",
+          "english": "I feel dizzy",
+          "audioKey": "v500-heal-phar-i-feel-dizzy"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi cảm thấy chóng mặt is the safer complete sentence. It says 'I feel dizzy' clearly and gives the helper a symptom they can act on.",
+      "phrases": [
+        {
+          "id": "v500-heal-phar-i-feel-dizzy",
+          "vietnamese": "Tôi cảm thấy chóng mặt",
+          "english": "I feel dizzy",
+          "pronunciation": "toy gahm thay chong mat",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "v500-heal-phar-i-feel-dizzy"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it before asking for medicine, a place to sit, a clinic, or help contacting someone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If dizziness is severe, repeated, or paired with chest pain, fainting, or trouble breathing, move to an emergency phrase instead of trying to soften it.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to yourself, sit if you need to, and show any medicine or condition note you carry.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "problems-6",
+          "vietnamese": "Tôi cần bác sĩ",
+          "english": "I need a doctor",
+          "pronunciation": "toy gun bak see",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-doctor",
+          "audioKey": "problems-6"
+        },
+        {
+          "id": "health-pharmacy-clearer",
+          "vietnamese": "Nhà thuốc gần nhất ở đâu?",
+          "english": "Where is the nearest pharmacy?",
+          "pronunciation": "nya thoo-ok gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-pharmacy",
+          "audioKey": "health-pharmacy-clearer"
+        },
+        {
+          "id": "health-2",
+          "vietnamese": "Tôi bị đau đầu",
+          "english": "I have a headache",
+          "pronunciation": "toy bee dow dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-headache",
+          "audioKey": "health-2"
+        },
+        {
+          "id": "health-3",
+          "vietnamese": "Tôi đau bụng",
+          "english": "My stomach hurts",
+          "pronunciation": "toy dow boong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-stomach",
+          "audioKey": "health-3"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "health-4",
+          "vietnamese": "Có thuốc say xe không?",
+          "english": "Do you have motion sickness medicine?",
+          "pronunciation": "koh thoo-ok sai seh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-motion-sickness",
+          "audioKey": "health-4"
+        },
+        {
+          "id": "health-5",
+          "vietnamese": "Tôi bị dị ứng cái này",
+          "english": "I am allergic to this",
+          "pronunciation": "toy bee zee oong gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-allergy",
+          "audioKey": "health-5"
+        },
+        {
+          "id": "health-6",
+          "vietnamese": "Tôi cần thuốc tiêu chảy",
+          "english": "I need something for diarrhea",
+          "pronunciation": "toy gun thoo-ok tyew chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-diarrhea",
+          "audioKey": "health-6"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-heal-phar-i-feel-dizzy",
+      "vietnamese": "Tôi cảm thấy chóng mặt",
+      "english": "I feel dizzy",
+      "pronunciation": "toy gahm thay chong mat",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "v500-heal-phar-i-feel-dizzy"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "viet-family-v500-sigh-acti-i-have-a-tour-booking",
+  "familyID": "v500-sigh-acti-i-have-a-tour-booking",
+  "phraseID": "v500-sigh-acti-i-have-a-tour-booking",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Tôi có đặt tour",
+  "englishTitle": "I have a tour booking",
+  "pronunciation": "toy koh dat tour",
+  "summary": "Different ways to say \"I have a tour booking\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "camera.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "sightseeing-activities"
+  ],
+  "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this at a tour desk, pier, hotel lobby, or attraction entrance when you already booked and need staff to find your reservation. Show the booking name, QR code, or confirmation screen while you say it.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "v500-sigh-acti-i-have-a-tour-booking-piece-1",
+          "vietnamese": "Tôi có",
+          "english": "I have",
+          "audioKey": "breakdown-authored-toi-co-054b2152b4"
+        },
+        {
+          "id": "v500-sigh-acti-i-have-a-tour-booking-piece-2",
+          "vietnamese": "đặt tour",
+          "english": "booked a tour",
+          "audioKey": "breakdown-authored-dat-tour-22d17cd279"
+        },
+        {
+          "id": "v500-sigh-acti-i-have-a-tour-booking-full",
+          "vietnamese": "Tôi có đặt tour",
+          "english": "I have a tour booking",
+          "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi có đặt tour is the compact version to learn first. Tour is widely understood in travel settings, and đặt keeps the meaning on a booking or reservation rather than a casual plan.",
+      "phrases": [
+        {
+          "id": "v500-sigh-acti-i-have-a-tour-booking",
+          "vietnamese": "Tôi có đặt tour",
+          "english": "I have a tour booking",
+          "pronunciation": "toy koh dat tour",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it before a tour starts, when checking in with a guide, or when a desk asks whether you already booked. Follow with the booking name if they look uncertain.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Do not rely on the phrase alone if the place is busy. Show the voucher or booking code so staff can match the right tour.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "If staff answer with a time or meeting point, ask them to point to it on the voucher or map.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "sight-1",
+          "vietnamese": "Vé bao nhiêu?",
+          "english": "How much is the ticket?",
+          "pronunciation": "veh bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-ticket",
+          "audioKey": "sight-1"
+        },
+        {
+          "id": "sight-2",
+          "vietnamese": "Bắt đầu ở đâu?",
+          "english": "Where do we start?",
+          "pronunciation": "bat dow uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-start",
+          "audioKey": "sight-2"
+        },
+        {
+          "id": "sight-3",
+          "vietnamese": "Tôi chụp hình ở đây được không?",
+          "english": "Can I take photos here?",
+          "pronunciation": "toy choop hinh uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-photos",
+          "audioKey": "sight-3"
+        },
+        {
+          "id": "sight-4",
+          "vietnamese": "Mấy giờ đóng cửa?",
+          "english": "What time does it close?",
+          "pronunciation": "may zyuh dong koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-close",
+          "audioKey": "sight-4"
+        },
+        {
+          "id": "sight-5",
+          "vietnamese": "Điểm gặp ở đâu?",
+          "english": "Where is the meeting point?",
+          "pronunciation": "deeym gap uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-meeting-point",
+          "audioKey": "sight-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-sigh-acti-i-have-a-tour-booking",
+      "vietnamese": "Tôi có đặt tour",
+      "english": "I have a tour booking",
+      "pronunciation": "toy koh dat tour",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
+    }
+  ]
+}

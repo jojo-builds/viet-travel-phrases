@@ -157,12 +157,16 @@ def load_json_if_exists(path: Path) -> dict[str, Any]:
         return {}
 
 
-def load_recovery_ledger() -> dict[str, Any]:
-    ledger = load_json_if_exists(DESKTOP_APP_RECOVERY_PATH)
-    if ledger:
-        return ledger
+def read_text_if_exists(path: Path, encoding: str = "utf-8", errors: str = "strict") -> str:
+    try:
+        return read_text_delete_shared(path, encoding=encoding, errors=errors)
+    except FileNotFoundError:
+        return ""
+
+
+def default_recovery_ledger() -> dict[str, Any]:
     return {
-        "version": 1,
+        "version": 2,
         "lastRestartAt": "",
         "lastRestartReason": "",
         "lastObservedQueueState": {
@@ -174,11 +178,41 @@ def load_recovery_ledger() -> dict[str, Any]:
         },
         "cooldownHours": 2,
         "stuckEpisodeActive": False,
+        "recoveryHandoffs": {},
         "notes": [
             "Used by hourly queue maintenance to avoid repeated Codex desktop restarts.",
             "Only perform one controlled desktop-app restart per stuck episode, then wait for the next hourly run to judge recovery.",
+            "Recovery handoff entries summarize original-task to recovery-task linkage, but task state remains the authoritative lifecycle truth.",
         ],
     }
+
+
+def ensure_recovery_ledger_shape(ledger: dict[str, Any]) -> dict[str, Any]:
+    if not ledger:
+        return default_recovery_ledger()
+
+    normalized = default_recovery_ledger()
+    normalized.update(ledger)
+
+    observed = normalized.get("lastObservedQueueState")
+    if not isinstance(observed, dict):
+        normalized["lastObservedQueueState"] = default_recovery_ledger()["lastObservedQueueState"]
+    else:
+        observed.setdefault("queuedCount", 0)
+        observed.setdefault("inProgressCount", 0)
+        observed.setdefault("reclaimableCount", 0)
+        observed.setdefault("blockedCount", 0)
+        observed.setdefault("staleTaskIds", [])
+
+    if not isinstance(normalized.get("recoveryHandoffs"), dict):
+        normalized["recoveryHandoffs"] = {}
+
+    normalized["version"] = max(int(normalized.get("version") or 0), 2)
+    return normalized
+
+
+def load_recovery_ledger() -> dict[str, Any]:
+    return ensure_recovery_ledger_shape(load_json_if_exists(DESKTOP_APP_RECOVERY_PATH))
 
 
 def persist_recovery_ledger(ledger: dict[str, Any]) -> None:
@@ -290,6 +324,39 @@ def write_json_atomic(path: Path, data: dict[str, Any]) -> None:
             if not is_write_blocked_error(error):
                 raise
             write_text_in_place_with_retry(path, serialized)
+            safe_unlink(temp_path)
+            temp_path = None
+        cleanup_orphan_temp_files(path)
+    except OSError:
+        if temp_path is not None:
+            safe_unlink(temp_path)
+        raise
+
+
+def write_text_atomic(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    cleanup_orphan_temp_files(path)
+    temp_path: Path | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            delete=False,
+            dir=path.parent,
+            prefix=f"{path.name}.",
+            suffix=".tmp",
+            encoding="utf-8",
+            newline="\n",
+        ) as temp_file:
+            temp_file.write(text)
+            temp_file.flush()
+            os.fsync(temp_file.fileno())
+            temp_path = Path(temp_file.name)
+        try:
+            replace_with_retry(temp_path, path)
+        except OSError as error:
+            if not is_write_blocked_error(error):
+                raise
+            write_text_in_place_with_retry(path, text)
             safe_unlink(temp_path)
             temp_path = None
         cleanup_orphan_temp_files(path)
@@ -735,6 +802,450 @@ def task_recovery_notes_path(task_id: str, state: dict[str, Any]) -> Path:
     return path_from_repo_reference(state.get("artifacts", {}).get("recoveryNotes"), task_state_path(task_id).with_name("recovery-notes.md")) or task_state_path(task_id).with_name("recovery-notes.md")
 
 
+def task_spec_path(task_id: str) -> Path:
+    return TASKS_ROOT / task_id / "spec.md"
+
+
+def task_logs_root(task_id: str, state: dict[str, Any]) -> Path:
+    return path_from_repo_reference(state.get("artifacts", {}).get("logs"), task_state_path(task_id).parent / "logs") or task_state_path(task_id).parent / "logs"
+
+
+def recovery_dedupe_key(original_task_id: str) -> str:
+    return f"interrupted-recovery:{original_task_id}"
+
+
+def recovery_metadata(state: dict[str, Any]) -> dict[str, Any]:
+    payload = state.get("recovery", {}) or {}
+    return payload if isinstance(payload, dict) else {}
+
+
+def real_files(root: Path) -> list[Path]:
+    if not root.exists():
+        return []
+    return sorted([path for path in root.rglob("*") if path.is_file() and path.name != ".gitkeep"])
+
+
+def markdown_section(text: str, heading: str) -> str:
+    pattern = rf"^##\s+{re.escape(heading)}\s*$([\s\S]*?)(?=^##\s+|\Z)"
+    match = re.search(pattern, text, flags=re.MULTILINE)
+    return match.group(1).strip() if match else ""
+
+
+def task_ids_in_text(text: str) -> list[str]:
+    return sorted(set(re.findall(r"\bT-\d+\b", text)), key=task_number)
+
+
+def result_status_value(result_path: Path) -> str:
+    text = read_text_if_exists(result_path, encoding="utf-8", errors="ignore")
+    if not text:
+        return ""
+    section = markdown_section(text, "Status")
+    if not section:
+        return ""
+    match = re.search(r"^\s*-\s*(.+?)\s*$", section, flags=re.MULTILINE)
+    return match.group(1).strip().lower() if match else ""
+
+
+def salvage_evidence(task_id: str, state: dict[str, Any]) -> list[str]:
+    evidence: list[str] = []
+    result_status = result_status_value(task_result_path(task_id, state))
+    if result_status and result_status not in {"queued", "draft"}:
+        evidence.append(f"result-status:{result_status}")
+
+    review_count = len(real_files(task_reviews_root(task_id, state)))
+    if review_count > 0:
+        evidence.append(f"review-artifacts:{review_count}")
+
+    log_count = len(real_files(task_logs_root(task_id, state)))
+    if log_count > 0:
+        evidence.append(f"log-artifacts:{log_count}")
+
+    return evidence
+
+
+def next_task_id(states: dict[str, dict[str, Any]]) -> str:
+    next_number = max([task_number(task_id) for task_id in states] + [0]) + 1
+    return f"T-{next_number:03d}"
+
+
+def recovery_linked_task_id(task_id: str, state: dict[str, Any], states: dict[str, dict[str, Any]]) -> str:
+    recovery = recovery_metadata(state)
+    linked = str(recovery.get("linkedRecoveryTaskId") or "").strip()
+    if linked and linked in states:
+        return linked
+    for candidate_task_id, candidate_state in states.items():
+        candidate_recovery = recovery_metadata(candidate_state)
+        if str(candidate_recovery.get("originalTaskId") or "").strip() == task_id:
+            return candidate_task_id
+    return ""
+
+
+def discover_legacy_recovery_task_id(task_id: str, state: dict[str, Any], states: dict[str, dict[str, Any]]) -> str:
+    if state.get("status") != "blocked" or str(state.get("phase") or "") != "interrupted-awaiting-recovery":
+        return ""
+
+    candidate_ids: set[str] = set()
+    for blocker in state.get("blockers", []) or []:
+        summary = blocker.get("summary") if isinstance(blocker, dict) else blocker
+        if summary:
+            candidate_ids.update(task_ids_in_text(str(summary)))
+    notes_text = read_text_if_exists(task_recovery_notes_path(task_id, state), encoding="utf-8", errors="ignore")
+    candidate_ids.update(task_ids_in_text(notes_text))
+    candidate_ids.discard(task_id)
+
+    matched: list[str] = []
+    for candidate_id in sorted(candidate_ids, key=task_number):
+        candidate_state = states.get(candidate_id)
+        if candidate_state is None:
+            continue
+        spec_text = read_text_if_exists(task_spec_path(candidate_id), encoding="utf-8", errors="ignore")
+        title_text = str(candidate_state.get("title") or "")
+        matched_signals = 0
+        if task_id in spec_text:
+            matched_signals += 1
+        if "recover" in title_text.lower():
+            matched_signals += 1
+        if str(candidate_state.get("cwd") or "") == str(state.get("cwd") or ""):
+            matched_signals += 1
+        if matched_signals >= 2:
+            matched.append(candidate_id)
+    return matched[0] if len(matched) == 1 else ""
+
+
+def find_existing_recovery_task_id(task_id: str, state: dict[str, Any], states: dict[str, dict[str, Any]]) -> tuple[str, str]:
+    linked = recovery_linked_task_id(task_id, state, states)
+    if linked:
+        return linked, "metadata"
+    legacy = discover_legacy_recovery_task_id(task_id, state, states)
+    if legacy:
+        return legacy, "legacy"
+    return "", ""
+
+
+def sync_recovery_metadata(
+    *,
+    original_task_id: str,
+    original_state: dict[str, Any],
+    recovery_task_id: str,
+    recovery_state: dict[str, Any],
+    source: str,
+    timestamp: str,
+) -> None:
+    dedupe_key = recovery_dedupe_key(original_task_id)
+
+    original_existing = recovery_metadata(original_state)
+    recovery_existing = recovery_metadata(recovery_state)
+    generated_at = (
+        str(original_existing.get("generatedAt") or "").strip()
+        or str(recovery_existing.get("generatedAt") or "").strip()
+        or timestamp
+    )
+    generated_by = (
+        str(original_existing.get("generatedBy") or "").strip()
+        or str(recovery_existing.get("generatedBy") or "").strip()
+        or source
+    )
+
+    original_state["recovery"] = {
+        "kind": "interrupted-original",
+        "dedupeKey": dedupe_key,
+        "linkedRecoveryTaskId": recovery_task_id,
+        "generatedAt": generated_at,
+        "generatedBy": generated_by,
+        "lastSyncedAt": timestamp,
+    }
+    recovery_state["recovery"] = {
+        "kind": "recovery-handoff",
+        "dedupeKey": dedupe_key,
+        "originalTaskId": original_task_id,
+        "generatedAt": generated_at,
+        "generatedBy": generated_by,
+        "lastSyncedAt": timestamp,
+    }
+
+
+def update_recovery_ledger_entry(
+    ledger: dict[str, Any],
+    *,
+    original_task_id: str,
+    recovery_task_id: str,
+    source: str,
+    timestamp: str,
+    original_state: dict[str, Any],
+) -> None:
+    ledger = ensure_recovery_ledger_shape(ledger)
+    handoffs = ledger.setdefault("recoveryHandoffs", {})
+    handoffs[original_task_id] = {
+        "recoveryTaskId": recovery_task_id,
+        "dedupeKey": recovery_dedupe_key(original_task_id),
+        "source": source,
+        "updatedAt": timestamp,
+        "originalStatus": str(original_state.get("status") or ""),
+        "originalPhase": str(original_state.get("phase") or ""),
+    }
+
+
+def interrupted_blocker_summary(recovery_task_id: str) -> str:
+    return (
+        "Interrupted by stale or expired automation ownership after landed work. "
+        f"Recover through {recovery_task_id} instead of reopening the stale original task."
+    )
+
+
+def blocker_mentions_recovery(state: dict[str, Any], recovery_task_id: str) -> bool:
+    for blocker in state.get("blockers", []) or []:
+        summary = blocker.get("summary") if isinstance(blocker, dict) else blocker
+        if recovery_task_id in str(summary or ""):
+            return True
+    return False
+
+
+def original_recovery_state_needs_repair(state: dict[str, Any], recovery_task_id: str) -> bool:
+    if state.get("status") != "blocked":
+        return True
+    if str(state.get("phase") or "") != "interrupted-awaiting-recovery":
+        return True
+    return not blocker_mentions_recovery(state, recovery_task_id)
+
+
+def recovery_ledger_entry_needs_repair(ledger: dict[str, Any], original_task_id: str, recovery_task_id: str) -> bool:
+    handoffs = (ledger.get("recoveryHandoffs") or {}) if isinstance(ledger.get("recoveryHandoffs"), dict) else {}
+    entry = handoffs.get(original_task_id)
+    if not isinstance(entry, dict):
+        return True
+    if str(entry.get("recoveryTaskId") or "") != recovery_task_id:
+        return True
+    if str(entry.get("dedupeKey") or "") != recovery_dedupe_key(original_task_id):
+        return True
+    return False
+
+
+def recovery_handoff_summary(
+    *,
+    task_id: str,
+    state: dict[str, Any],
+    states: dict[str, dict[str, Any]],
+    now: datetime,
+) -> dict[str, Any]:
+    task_group, task_issues = classify_task(state, now)
+    existing_recovery_task_id, existing_recovery_source = find_existing_recovery_task_id(task_id, state, states)
+    evidence = salvage_evidence(task_id, state)
+    eligible_for_generation = (
+        task_class(state) == "meaningful"
+        and state.get("status") == "in_progress"
+        and task_group == "reclaimable"
+        and bool(evidence)
+    )
+    return {
+        "taskId": task_id,
+        "taskClass": task_class(state),
+        "status": str(state.get("status") or ""),
+        "phase": str(state.get("phase") or ""),
+        "taskGroup": task_group,
+        "issues": task_issues,
+        "salvageEvidence": evidence,
+        "eligibleForGeneration": eligible_for_generation,
+        "dedupeKey": recovery_dedupe_key(task_id),
+        "existingRecoveryTaskId": existing_recovery_task_id,
+        "existingRecoverySource": existing_recovery_source,
+    }
+
+
+def generated_recovery_title(original_task_id: str, original_state: dict[str, Any]) -> str:
+    return f"Recovery closeout for interrupted {original_task_id}: {str(original_state.get('title') or original_task_id)}"
+
+
+def generated_recovery_state(task_id: str, original_task_id: str, original_state: dict[str, Any], timestamp: str) -> dict[str, Any]:
+    return {
+        "taskId": task_id,
+        "title": generated_recovery_title(original_task_id, original_state),
+        "status": "queued",
+        "phase": "queued-for-desktop-codex",
+        "repoRoot": str(original_state.get("repoRoot") or CANONICAL_REPO_ROOT),
+        "cwd": str(original_state.get("cwd") or CANONICAL_REPO_ROOT),
+        "session": {
+            "owner": "",
+            "sessionId": "",
+            "label": "",
+        },
+        "execution": {
+            "attempt": 0,
+            "claimedAt": "",
+            "lastHeartbeatAt": "",
+            "leaseDurationMinutes": int((original_state.get("execution", {}) or {}).get("leaseDurationMinutes") or DEFAULT_LEASE_MINUTES),
+            "leaseExpiresAt": "",
+            "reclaimReason": "",
+        },
+        "locks": {
+            "write": list(((original_state.get("locks", {}) or {}).get("write", []) or [])),
+            "read": list(((original_state.get("locks", {}) or {}).get("read", []) or [])),
+            "blockedBy": list(((original_state.get("locks", {}) or {}).get("blockedBy", []) or [])),
+        },
+        "truthClassification": {
+            "target": str(((original_state.get("truthClassification", {}) or {}).get("target") or "planning")),
+        },
+        "blockers": [],
+        "artifacts": {
+            "result": f".agent\\tasks\\{task_id}\\result.md",
+            "recoveryNotes": f".agent\\tasks\\{task_id}\\recovery-notes.md",
+            "reviews": f".agent\\tasks\\{task_id}\\reviews\\",
+            "logs": f".agent\\tasks\\{task_id}\\logs\\",
+            "requiredForDone": [
+                f".agent\\tasks\\{task_id}\\logs\\recovery-closeout.md",
+                f".agent\\tasks\\{task_id}\\result.md",
+            ],
+        },
+        "lastUpdated": timestamp,
+        "automation": {
+            **((original_state.get("automation", {}) or {}).copy()),
+            "runner": "desktop-codex",
+            "mode": "single-task",
+            "taskClass": task_class(original_state) or "meaningful",
+            "proofTask": False,
+        },
+    }
+
+
+def generated_recovery_read_first_lines(original_task_id: str, original_state: dict[str, Any]) -> list[str]:
+    lines = [
+        "- `AGENTS.md`",
+        "- `.agent/README.md`",
+        "- `.agent/QUEUE_START.md`",
+        "- `.agent/AUTOMATION.md`",
+        f"- `.agent/tasks/{original_task_id}/spec.md`",
+        f"- `.agent/tasks/{original_task_id}/state.json`",
+    ]
+    recovery_notes_path = task_recovery_notes_path(original_task_id, original_state)
+    if recovery_notes_path.exists():
+        lines.append(f"- `{to_repo_relative(recovery_notes_path).replace('\\', '/')}`")
+    result_path = task_result_path(original_task_id, original_state)
+    if result_path.exists():
+        lines.append(f"- `{to_repo_relative(result_path).replace('\\', '/')}`")
+    for log_path in real_files(task_logs_root(original_task_id, original_state))[:4]:
+        lines.append(f"- `{to_repo_relative(log_path).replace('\\', '/')}`")
+    return lines
+
+
+def generated_recovery_spec_text(task_id: str, original_task_id: str, original_state: dict[str, Any]) -> str:
+    original_spec_text = read_text_if_exists(task_spec_path(original_task_id), encoding="utf-8", errors="ignore")
+    review_section = markdown_section(original_spec_text, "Mandatory 3-review-gate workflow")
+    checks_section = markdown_section(original_spec_text, "Required checks")
+    definition_section = markdown_section(original_spec_text, "Definition of done")
+    blocker_section = markdown_section(original_spec_text, "Blocker rule")
+
+    if not review_section:
+        review_section = (
+            "Use exactly 4 Codex subagent review roles in every gate.\n\n"
+            "Gate 1 before edits, Gate 2 after the main working pass, Gate 3 before done. "
+            "All 3 gates require unanimous approval from all 4 subagents."
+        )
+    if not checks_section:
+        checks_section = (
+            f"- rerun the original task checks from `.agent/tasks/{original_task_id}/spec.md`\n"
+            "- confirm the recovery task does not widen write scope beyond the original task contract"
+        )
+    if not definition_section:
+        definition_section = (
+            "- the interrupted original task remains historical truth\n"
+            "- the recovery task owns the missing closeout work\n"
+            "- all required review gates pass with unanimous approval"
+        )
+    if not blocker_section:
+        blocker_section = (
+            "- do not restart the full task from scratch just because the original worker stalled\n"
+            "- only report a blocker if bounded recovery or validation attempts cannot safely finish the closeout"
+        )
+
+    read_first = "\n".join(generated_recovery_read_first_lines(original_task_id, original_state))
+    return (
+        f"# Task Spec: {task_id}\n\n"
+        "## Title\n"
+        f"{generated_recovery_title(original_task_id, original_state)}\n\n"
+        "## Objective\n"
+        f"Recover interrupted meaningful task `{original_task_id}` by auditing already-landed work, rerunning the original task checks, "
+        "making only bounded repairs if needed, and finishing the missing review/result closeout in a fresh task.\n\n"
+        "## Repo / Working Surface\n"
+        f"- canonical repo root: `{str(original_state.get('repoRoot') or CANONICAL_REPO_ROOT)}`\n"
+        f"- working cwd for implementation: `{str(original_state.get('cwd') or CANONICAL_REPO_ROOT)}`\n\n"
+        "## Read first\n"
+        f"{read_first}\n\n"
+        "## Task type\n"
+        "- recovery closeout\n"
+        "- queue-generated recovery handoff\n"
+        "- interrupted meaningful-task salvage\n\n"
+        "## Scope\n"
+        "### Allowed write scopes\n"
+        f"- `.agent/tasks/{task_id}/**`\n"
+        f"- original task `{original_task_id}` keeps its declared non-task-folder write scope from `.agent/tasks/{original_task_id}/spec.md`\n\n"
+        "### Allowed read scopes\n"
+        f"- `.agent/tasks/{original_task_id}/**`\n"
+        "- only the original task's declared read scope beyond that\n\n"
+        "### Must not touch\n"
+        f"- any path outside the original task `{original_task_id}` contract plus `.agent/tasks/{task_id}/**`\n"
+        "- unrelated app/product/content lanes\n\n"
+        "## Source-of-truth notes\n"
+        f"- `{original_task_id}` remains the original interruption history and should not be reopened as the active task.\n"
+        "- `state.json` recovery metadata is the authoritative original/recovery link; queue-index and the desktop recovery ledger are supporting surfaces.\n"
+        "- Preserve already-landed work when the original checks still pass.\n\n"
+        "## Required outputs\n"
+        "Create or update these files:\n"
+        f"- `.agent/tasks/{task_id}/recovery-notes.md`\n"
+        f"- `.agent/tasks/{task_id}/result.md`\n"
+        f"- `.agent/tasks/{task_id}/logs/recovery-closeout.md`\n"
+        f"- exactly 4 review artifacts under `.agent/tasks/{task_id}/reviews/` for each required gate\n\n"
+        "## Concrete requirements\n"
+        f"- use `{original_task_id}` as the preserved interruption source of truth\n"
+        "- rerun the original task's required checks before deciding whether repair is needed\n"
+        "- prefer bounded repair over restart when validation exposes a concrete issue\n"
+        "- finish the review/result layer in this new task folder instead of backfilling the original task\n\n"
+        "## Mandatory 3-review-gate workflow\n"
+        f"{review_section}\n\n"
+        "## Required checks\n"
+        f"{checks_section}\n\n"
+        "## Definition of done\n"
+        f"{definition_section}\n\n"
+        "## Blocker rule\n"
+        f"{blocker_section}\n\n"
+        "## Required result contract\n"
+        "Before stopping, write `result.md` using the repo template shape.\n"
+        "For this meaningful 3-gate task, `result.md` should exist before the final gate and remain `in_review` until final consensus is complete.\n"
+        "The result must include a compact `Process feedback` section focused on the automation/process itself.\n"
+    )
+
+
+def generated_recovery_notes_text(
+    *,
+    task_id: str,
+    original_task_id: str,
+    original_state: dict[str, Any],
+    states: dict[str, dict[str, Any]],
+    now: datetime,
+) -> str:
+    summary = recovery_handoff_summary(task_id=original_task_id, state=original_state, states=states, now=now)
+    evidence_lines = summary["salvageEvidence"] or ["no durable salvage evidence recorded"]
+    blockers = original_state.get("blockers", []) or []
+    blocker_lines = []
+    for blocker in blockers[:4]:
+        summary_text = blocker.get("summary") if isinstance(blocker, dict) else blocker
+        if summary_text:
+            blocker_lines.append(f"- {summary_text}")
+    if not blocker_lines:
+        blocker_lines = ["- none recorded at generation time"]
+    return (
+        f"# Recovery Handoff Notes: {task_id}\n\n"
+        f"- Generated from original task `{original_task_id}` on `{iso_timestamp(now)}`.\n"
+        f"- Original status at generation: `{str(original_state.get('status') or '')}` / `{str(original_state.get('phase') or '')}`.\n"
+        f"- Original cwd: `{str(original_state.get('cwd') or CANONICAL_REPO_ROOT)}`.\n"
+        f"- Dedupe key: `{recovery_dedupe_key(original_task_id)}`.\n\n"
+        "## Salvage evidence\n"
+        + "\n".join(f"- {line}" for line in evidence_lines)
+        + "\n\n## Existing blockers on the original task\n"
+        + "\n".join(blocker_lines)
+        + "\n\n## Recovery expectations\n"
+        + f"- Reuse `.agent/tasks/{original_task_id}/spec.md` as the domain contract.\n"
+        + "- Preserve already-landed work when the original checks still pass.\n"
+        + "- Complete missing review/result closeout in this fresh task instead of reopening the original task directly.\n"
+    )
 def latest_gate_dir(reviews_root: Path, gate_number: int) -> Path | None:
     candidates = sorted(reviews_root.glob(f"gate-{gate_number:02d}-pass-*"))
     return candidates[-1] if candidates else None
@@ -1888,6 +2399,311 @@ def command_finish(args: argparse.Namespace) -> int:
         return 0
 
 
+def command_recovery_handoff(args: argparse.Namespace) -> int:
+    with queue_mutation_lock(timeout_seconds=args.lock_timeout_seconds):
+        warnings: list[dict[str, Any]] = []
+        now = now_local()
+        states = load_all_states()
+
+        current = states.get(args.task_id)
+        if current is None:
+            output = {
+                "status": "blocked",
+                "reason": "task-not-found",
+                "taskId": args.task_id,
+            }
+            maybe_add_warnings(output, warnings)
+            print(json.dumps(output, indent=2))
+            return 6
+
+        summary = recovery_handoff_summary(task_id=args.task_id, state=current, states=states, now=now)
+        existing_recovery_task_id = str(summary.get("existingRecoveryTaskId") or "")
+        existing_recovery_source = str(summary.get("existingRecoverySource") or "")
+        dedupe_key = str(summary.get("dedupeKey") or "")
+
+        if existing_recovery_task_id:
+            recovery_state = states[existing_recovery_task_id]
+            ledger = load_recovery_ledger()
+            metadata_present = (
+                str(recovery_metadata(current).get("linkedRecoveryTaskId") or "").strip() == existing_recovery_task_id
+                and str(recovery_metadata(recovery_state).get("originalTaskId") or "").strip() == args.task_id
+            )
+            original_needs_repair = original_recovery_state_needs_repair(current, existing_recovery_task_id)
+            ledger_needs_repair = recovery_ledger_entry_needs_repair(ledger, args.task_id, existing_recovery_task_id)
+            metadata_needs_repair = not metadata_present
+            write_mode_action = "repair_existing_recovery_link" if (
+                metadata_needs_repair or original_needs_repair or ledger_needs_repair
+            ) else "no_change"
+
+            if args.dry_run:
+                best_effort_append_event(
+                    warnings,
+                    "recovery-handoff-dry-run",
+                    taskId=args.task_id,
+                    result="already-recovered",
+                    recoveryTaskId=existing_recovery_task_id,
+                    source=existing_recovery_source,
+                    dedupeKey=dedupe_key,
+                    writeModeAction=write_mode_action,
+                )
+                output = {
+                    "status": "ok",
+                    "result": "already_recovered",
+                    "taskId": args.task_id,
+                    "recoveryTaskId": existing_recovery_task_id,
+                    "recoverySource": existing_recovery_source,
+                    "dedupeKey": dedupe_key,
+                    "wouldMutate": write_mode_action != "no_change",
+                    "writeModeAction": write_mode_action,
+                    "metadataNeedsRepair": metadata_needs_repair,
+                    "originalNeedsRepair": original_needs_repair,
+                    "ledgerNeedsRepair": ledger_needs_repair,
+                    "summary": summary,
+                }
+                maybe_add_warnings(output, warnings)
+                print(json.dumps(output, indent=2))
+                return 0
+
+            if write_mode_action == "no_change":
+                best_effort_append_event(
+                    warnings,
+                    "recovery-handoff-noop",
+                    taskId=args.task_id,
+                    recoveryTaskId=existing_recovery_task_id,
+                    source=existing_recovery_source,
+                    dedupeKey=dedupe_key,
+                )
+                output = {
+                    "status": "ok",
+                    "result": "already_recovered",
+                    "taskId": args.task_id,
+                    "recoveryTaskId": existing_recovery_task_id,
+                    "recoverySource": existing_recovery_source,
+                    "dedupeKey": dedupe_key,
+                    "wouldMutate": False,
+                    "writeModeAction": write_mode_action,
+                    "summary": summary,
+                }
+                maybe_add_warnings(output, warnings)
+                print(json.dumps(output, indent=2))
+                return 0
+
+            timestamp = iso_timestamp(now)
+            state_repairs_needed = metadata_needs_repair or original_needs_repair
+            if state_repairs_needed:
+                sync_recovery_metadata(
+                    original_task_id=args.task_id,
+                    original_state=current,
+                    recovery_task_id=existing_recovery_task_id,
+                    recovery_state=recovery_state,
+                    source="queue-tool-recovery-handoff",
+                    timestamp=timestamp,
+                )
+                if original_needs_repair:
+                    current["status"] = "blocked"
+                    current["phase"] = "interrupted-awaiting-recovery"
+                    current["blockers"] = [{"summary": interrupted_blocker_summary(existing_recovery_task_id)}]
+                current["lastUpdated"] = timestamp
+                recovery_state["lastUpdated"] = timestamp
+                try:
+                    write_json_atomic(task_state_path(args.task_id), current)
+                    write_json_atomic(task_state_path(existing_recovery_task_id), recovery_state)
+                except OSError as error:
+                    return queue_state_write_retry_output(
+                        warnings=warnings,
+                        operation="recovery-handoff-repair-existing",
+                        task_ids=[args.task_id, existing_recovery_task_id],
+                        error=error,
+                    )
+                states[args.task_id] = current
+                states[existing_recovery_task_id] = recovery_state
+
+            update_recovery_ledger_entry(
+                ledger,
+                original_task_id=args.task_id,
+                recovery_task_id=existing_recovery_task_id,
+                source="metadata" if existing_recovery_source == "metadata" else "legacy-backfill",
+                timestamp=timestamp,
+                original_state=current,
+            )
+            try:
+                persist_recovery_ledger(ledger)
+            except OSError as error:
+                return queue_state_write_retry_output(
+                    warnings=warnings,
+                    operation="recovery-handoff-ledger-repair-existing",
+                    task_ids=[args.task_id, existing_recovery_task_id],
+                    error=error,
+                )
+            index = best_effort_write_index(states, now_local(), warnings)
+            best_effort_append_event(
+                warnings,
+                "recovery-handoff-repaired-existing",
+                taskId=args.task_id,
+                recoveryTaskId=existing_recovery_task_id,
+                source=existing_recovery_source or "legacy",
+                dedupeKey=dedupe_key,
+                metadataNeedsRepair=metadata_needs_repair,
+                originalNeedsRepair=original_needs_repair,
+                ledgerNeedsRepair=ledger_needs_repair,
+                indexStats=index["stats"],
+            )
+            output = {
+                "status": "ok",
+                "result": "repaired_existing_recovery",
+                "taskId": args.task_id,
+                "recoveryTaskId": existing_recovery_task_id,
+                "recoverySource": existing_recovery_source or "legacy",
+                "dedupeKey": dedupe_key,
+                "wouldMutate": True,
+                "writeModeAction": write_mode_action,
+                "metadataNeedsRepair": metadata_needs_repair,
+                "originalNeedsRepair": original_needs_repair,
+                "ledgerNeedsRepair": ledger_needs_repair,
+                "summary": summary,
+                "indexStats": index["stats"],
+            }
+            maybe_add_warnings(output, warnings)
+            print(json.dumps(output, indent=2))
+            return 0
+
+        if not bool(summary.get("eligibleForGeneration")):
+            best_effort_append_event(
+                warnings,
+                "recovery-handoff-ineligible",
+                taskId=args.task_id,
+                summary=summary,
+                dryRun=args.dry_run,
+            )
+            output = {
+                "status": "ok",
+                "result": "ineligible",
+                "taskId": args.task_id,
+                "wouldMutate": False,
+                "summary": summary,
+            }
+            maybe_add_warnings(output, warnings)
+            print(json.dumps(output, indent=2))
+            return 0
+
+        proposed_task_id = next_task_id(states)
+        if args.dry_run:
+            best_effort_append_event(
+                warnings,
+                "recovery-handoff-dry-run",
+                taskId=args.task_id,
+                result="would-create",
+                recoveryTaskId=proposed_task_id,
+                dedupeKey=dedupe_key,
+                summary=summary,
+            )
+            output = {
+                "status": "ok",
+                "result": "would_create",
+                "taskId": args.task_id,
+                "recoveryTaskId": proposed_task_id,
+                "dedupeKey": dedupe_key,
+                "wouldMutate": True,
+                "summary": summary,
+            }
+            maybe_add_warnings(output, warnings)
+            print(json.dumps(output, indent=2))
+            return 0
+
+        timestamp = iso_timestamp(now)
+        recovery_state = generated_recovery_state(proposed_task_id, args.task_id, current, timestamp)
+        sync_recovery_metadata(
+            original_task_id=args.task_id,
+            original_state=current,
+            recovery_task_id=proposed_task_id,
+            recovery_state=recovery_state,
+            source="queue-tool-recovery-handoff",
+            timestamp=timestamp,
+        )
+        recovery_spec = generated_recovery_spec_text(proposed_task_id, args.task_id, current)
+        recovery_notes = generated_recovery_notes_text(
+            task_id=proposed_task_id,
+            original_task_id=args.task_id,
+            original_state=current,
+            states=states,
+            now=now,
+        )
+
+        try:
+            write_text_atomic(task_spec_path(proposed_task_id), recovery_spec)
+            write_text_atomic(task_recovery_notes_path(proposed_task_id, recovery_state), recovery_notes)
+            write_json_atomic(task_state_path(proposed_task_id), recovery_state)
+        except OSError as error:
+            return queue_state_write_retry_output(
+                warnings=warnings,
+                operation="recovery-handoff-create-task",
+                task_ids=[proposed_task_id],
+                error=error,
+            )
+
+        current["status"] = "blocked"
+        current["phase"] = "interrupted-awaiting-recovery"
+        blocker_summary = interrupted_blocker_summary(proposed_task_id)
+        current["blockers"] = [{"summary": blocker_summary}]
+        current["lastUpdated"] = timestamp
+
+        try:
+            write_json_atomic(task_state_path(args.task_id), current)
+        except OSError as error:
+            return queue_state_write_retry_output(
+                warnings=warnings,
+                operation="recovery-handoff-block-original",
+                task_ids=[args.task_id, proposed_task_id],
+                error=error,
+            )
+
+        states[args.task_id] = current
+        states[proposed_task_id] = recovery_state
+
+        ledger = load_recovery_ledger()
+        update_recovery_ledger_entry(
+            ledger,
+            original_task_id=args.task_id,
+            recovery_task_id=proposed_task_id,
+            source="generated",
+            timestamp=timestamp,
+            original_state=current,
+        )
+        try:
+            persist_recovery_ledger(ledger)
+        except OSError as error:
+            return queue_state_write_retry_output(
+                warnings=warnings,
+                operation="recovery-handoff-ledger-create",
+                task_ids=[args.task_id, proposed_task_id],
+                error=error,
+            )
+
+        index = best_effort_write_index(states, now_local(), warnings)
+        best_effort_append_event(
+            warnings,
+            "recovery-handoff-created",
+            taskId=args.task_id,
+            recoveryTaskId=proposed_task_id,
+            dedupeKey=dedupe_key,
+            summary=summary,
+            indexStats=index["stats"],
+        )
+        output = {
+            "status": "ok",
+            "result": "created",
+            "taskId": args.task_id,
+            "recoveryTaskId": proposed_task_id,
+            "dedupeKey": dedupe_key,
+            "wouldMutate": True,
+            "summary": summary,
+            "indexStats": index["stats"],
+        }
+        maybe_add_warnings(output, warnings)
+        print(json.dumps(output, indent=2))
+        return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="SpeakLocal repo-local queue helper")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -1906,6 +2722,12 @@ def build_parser() -> argparse.ArgumentParser:
     desktop_recover_parser.add_argument("--write-ledger", action="store_true")
     desktop_recover_parser.add_argument("--lock-timeout-seconds", type=int, default=DEFAULT_LOCK_TIMEOUT_SECONDS)
     desktop_recover_parser.set_defaults(func=command_desktop_recover)
+
+    recovery_parser = subparsers.add_parser("recovery-handoff", help="Inspect or generate a recovery handoff for an interrupted meaningful task")
+    recovery_parser.add_argument("--task-id", required=True)
+    recovery_parser.add_argument("--dry-run", action="store_true")
+    recovery_parser.add_argument("--lock-timeout-seconds", type=int, default=DEFAULT_LOCK_TIMEOUT_SECONDS)
+    recovery_parser.set_defaults(func=command_recovery_handoff)
 
     claim_parser = subparsers.add_parser("claim-next", help="Repair, rebuild, then claim the next eligible task")
     claim_parser.add_argument("--owner", default=OWNER_DEFAULT)

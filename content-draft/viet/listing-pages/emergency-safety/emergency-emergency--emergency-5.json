@@ -1,0 +1,149 @@
+{
+  "id": "viet-phrase-emergency-5",
+  "familyID": "emergency-emergency",
+  "phraseID": "emergency-5",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Cứu tôi với!",
+  "englishTitle": "Help!",
+  "pronunciation": "koo toy voy",
+  "summary": "A focused guide to using Cứu tôi với! as a nearby form of Đây là trường hợp khẩn cấp.",
+  "iconName": "cross.circle.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "emergency-safety"
+  ],
+  "audioKey": "emergency-5",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Cứu tôi với! is useful when \"Help!\" fits better than the parent phrase. Use this when you need immediate attention in a real emergency.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "emergency-5-piece-1",
+          "vietnamese": "Cứu",
+          "english": "rescue / help",
+          "audioKey": "breakdown-authored-cuu-981c314329"
+        },
+        {
+          "id": "emergency-5-piece-2",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "emergency-5-piece-3",
+          "vietnamese": "với",
+          "english": "please / with",
+          "audioKey": "breakdown-authored-voi-25e5621456"
+        },
+        {
+          "id": "emergency-5-full",
+          "vietnamese": "Cứu tôi với!",
+          "english": "Help!",
+          "audioKey": "emergency-5"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need immediate attention in a real emergency. Return to Đây là trường hợp khẩn cấp when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "emergency-emergency",
+          "vietnamese": "Đây là trường hợp khẩn cấp",
+          "english": "This is an emergency",
+          "pronunciation": "day la troong hop khun kup",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-emergency",
+          "audioKey": "emergency-emergency"
+        },
+        {
+          "id": "emergency-1",
+          "vietnamese": "Gọi công an",
+          "english": "Call the police",
+          "pronunciation": "goy kong an",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-police",
+          "audioKey": "emergency-1"
+        },
+        {
+          "id": "emergency-2",
+          "vietnamese": "Gọi xe cứu thương",
+          "english": "Call an ambulance",
+          "pronunciation": "goy seh koo-ah thu-ong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-ambulance",
+          "audioKey": "emergency-2"
+        },
+        {
+          "id": "emergency-3",
+          "vietnamese": "Tôi mất hộ chiếu",
+          "english": "I lost my passport",
+          "pronunciation": "toy mut hoh chee-u",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-passport",
+          "audioKey": "emergency-3"
+        },
+        {
+          "id": "emergency-4",
+          "vietnamese": "Tôi cảm thấy không an toàn",
+          "english": "I feel unsafe",
+          "pronunciation": "toy kahm thai khong an toan",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-not-safe",
+          "audioKey": "emergency-4"
+        },
+        {
+          "id": "emergency-hospital",
+          "vietnamese": "Bệnh viện gần nhất ở đâu?",
+          "english": "Where is the nearest hospital?",
+          "pronunciation": "beng vyen gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-hospital",
+          "audioKey": "emergency-hospital"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "emergency-5",
+      "vietnamese": "Cứu tôi với!",
+      "english": "Help!",
+      "pronunciation": "koo toy voy",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "emergency-5"
+    }
+  ]
+}

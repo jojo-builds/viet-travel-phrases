@@ -1,0 +1,63 @@
+{
+  "taskId": "T-150",
+  "title": "Liquid Glass answer-page fidelity recovery closeout and remaining review-gate completion",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "5abaaced-9acc-4f0e-b132-b05ef7a9c602",
+    "label": "T-150-manual-recovery-closeout"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T11:15:53.6145393-05:00",
+    "lastHeartbeatAt": "2026-04-23T11:29:02.8977379-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T13:29:02.9015909-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ios_family_shared_ui"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-150\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-150\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-150\\reviews\\",
+    "logs": ".agent\\tasks\\T-150\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\components\\preview\\PhraseProductPrototype.tsx",
+      ".agent\\tasks\\T-150\\logs\\liquid-glass-fidelity-recovery-closeout.md",
+      ".agent\\tasks\\T-150\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T11:29:02.8977379-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "recovery": {
+    "kind": "recovery-handoff",
+    "dedupeKey": "interrupted-recovery:T-148",
+    "originalTaskId": "T-148",
+    "generatedAt": "2026-04-23T11:09:36.5851761-05:00",
+    "generatedBy": "manual-orchestrator-recovery",
+    "lastSyncedAt": "2026-04-23T11:09:36.5851761-05:00"
+  }
+}

@@ -1,0 +1,909 @@
+{
+  "generatedAt": "2026-04-27T21:31:21.146Z",
+  "source": "../../../native-ios/Resources/viet-phrase-catalog.json",
+  "tierOneFamilyCount": 150,
+  "resourceMainPageCount": 148,
+  "childPageCount": 15,
+  "inventory": [
+    {
+      "familyID": "polite-hello",
+      "pageID": "viet-polite-hello",
+      "coverage": "root",
+      "title": "Xin chào"
+    },
+    {
+      "familyID": "polite-thank-you",
+      "pageID": "viet-thank-you",
+      "coverage": "authored-resource",
+      "title": "Cảm ơn"
+    },
+    {
+      "familyID": "polite-acknowledge",
+      "pageID": "viet-family-polite-acknowledge",
+      "coverage": "authored-resource",
+      "title": "Dạ"
+    },
+    {
+      "familyID": "polite-no-thanks",
+      "pageID": "viet-family-polite-no-thanks",
+      "coverage": "authored-resource",
+      "title": "Không, cảm ơn"
+    },
+    {
+      "familyID": "polite-excuse-me",
+      "pageID": "viet-excuse-sorry",
+      "coverage": "authored-resource",
+      "title": "Xin lỗi"
+    },
+    {
+      "familyID": "polite-its-okay",
+      "pageID": "viet-family-polite-its-okay",
+      "coverage": "authored-resource",
+      "title": "Không sao đâu"
+    },
+    {
+      "familyID": "polite-goodbye",
+      "pageID": "viet-goodbye",
+      "coverage": "authored-resource",
+      "title": "Tạm biệt"
+    },
+    {
+      "familyID": "repair-understand",
+      "pageID": "viet-family-repair-understand",
+      "coverage": "authored-resource",
+      "title": "Tôi không hiểu"
+    },
+    {
+      "familyID": "repair-slower",
+      "pageID": "viet-family-repair-slower",
+      "coverage": "authored-resource",
+      "title": "Nói chậm chút được không?"
+    },
+    {
+      "familyID": "repair-repeat",
+      "pageID": "viet-family-repair-repeat",
+      "coverage": "authored-resource",
+      "title": "Làm ơn nói lại"
+    },
+    {
+      "familyID": "repair-write-down",
+      "pageID": "viet-family-repair-write-down",
+      "coverage": "authored-resource",
+      "title": "Viết xuống giúp tôi"
+    },
+    {
+      "familyID": "repair-meaning",
+      "pageID": "viet-family-repair-meaning",
+      "coverage": "manual-swift",
+      "title": "Cái đó nghĩa là gì?"
+    },
+    {
+      "familyID": "repair-number",
+      "pageID": "viet-family-repair-number",
+      "coverage": "authored-resource",
+      "title": "Làm ơn nói lại số đó"
+    },
+    {
+      "familyID": "repair-english-help",
+      "pageID": "viet-family-repair-english-help",
+      "coverage": "authored-resource",
+      "title": "Anh/chị nói tiếng Anh không?"
+    },
+    {
+      "familyID": "transport-destination",
+      "pageID": "viet-family-transport-destination",
+      "coverage": "authored-resource",
+      "title": "Cho tôi tới đây"
+    },
+    {
+      "familyID": "transport-main-destination",
+      "pageID": "viet-family-transport-main-destination",
+      "coverage": "authored-resource",
+      "title": "Đi quận 1"
+    },
+    {
+      "familyID": "transport-stop-here",
+      "pageID": "viet-family-transport-stop-here",
+      "coverage": "authored-resource",
+      "title": "Dừng ở đây được rồi"
+    },
+    {
+      "familyID": "transport-route",
+      "pageID": "viet-family-transport-route",
+      "coverage": "authored-resource",
+      "title": "Đi đường này đi"
+    },
+    {
+      "familyID": "transport-aircon",
+      "pageID": "viet-family-transport-aircon",
+      "coverage": "authored-resource",
+      "title": "Mở máy lạnh giúp tôi"
+    },
+    {
+      "familyID": "transport-wait",
+      "pageID": "viet-family-transport-wait",
+      "coverage": "authored-resource",
+      "title": "Chờ tôi năm phút"
+    },
+    {
+      "familyID": "transport-cash",
+      "pageID": "viet-family-transport-cash",
+      "coverage": "authored-resource",
+      "title": "Tôi trả bằng tiền mặt"
+    },
+    {
+      "familyID": "transport-fare",
+      "pageID": "viet-family-transport-fare",
+      "coverage": "authored-resource",
+      "title": "Tiền xe bao nhiêu?"
+    },
+    {
+      "familyID": "transport-meter",
+      "pageID": "viet-family-transport-meter",
+      "coverage": "authored-resource",
+      "title": "Làm ơn bật đồng hồ giúp tôi"
+    },
+    {
+      "familyID": "transport-lost",
+      "pageID": "viet-family-transport-lost",
+      "coverage": "authored-resource",
+      "title": "Tôi nghĩ chúng ta bị lạc rồi"
+    },
+    {
+      "familyID": "hotel-reservation",
+      "pageID": "viet-family-hotel-reservation",
+      "coverage": "authored-resource",
+      "title": "Tôi có đặt phòng"
+    },
+    {
+      "familyID": "hotel-check-in",
+      "pageID": "viet-family-hotel-check-in",
+      "coverage": "authored-resource",
+      "title": "Cho tôi nhận phòng"
+    },
+    {
+      "familyID": "hotel-checkout-time",
+      "pageID": "viet-family-hotel-checkout-time",
+      "coverage": "authored-resource",
+      "title": "Mấy giờ trả phòng?"
+    },
+    {
+      "familyID": "hotel-checkout",
+      "pageID": "viet-family-hotel-checkout",
+      "coverage": "authored-resource",
+      "title": "Cho tôi trả phòng"
+    },
+    {
+      "familyID": "hotel-room-hot",
+      "pageID": "viet-family-hotel-room-hot",
+      "coverage": "authored-resource",
+      "title": "Phòng này nóng quá"
+    },
+    {
+      "familyID": "hotel-aircon-broken",
+      "pageID": "viet-family-hotel-aircon-broken",
+      "coverage": "authored-resource",
+      "title": "Máy lạnh không chạy"
+    },
+    {
+      "familyID": "hotel-more-supplies",
+      "pageID": "viet-family-hotel-more-supplies",
+      "coverage": "authored-resource",
+      "title": "Cho tôi thêm khăn"
+    },
+    {
+      "familyID": "hotel-luggage",
+      "pageID": "viet-family-hotel-luggage",
+      "coverage": "authored-resource",
+      "title": "Giữ hành lý giúp tôi"
+    },
+    {
+      "familyID": "food-coffee-milk",
+      "pageID": "viet-family-food-coffee-milk",
+      "coverage": "authored-resource",
+      "title": "Cho tôi một cà phê sữa đá"
+    },
+    {
+      "familyID": "food-coffee-black",
+      "pageID": "viet-family-food-coffee-black",
+      "coverage": "authored-resource",
+      "title": "Cho tôi cà phê đen đá"
+    },
+    {
+      "familyID": "food-coffee-bac-xiu",
+      "pageID": "viet-family-food-coffee-bac-xiu",
+      "coverage": "authored-resource",
+      "title": "Cho tôi bạc xỉu đá"
+    },
+    {
+      "familyID": "food-less-ice",
+      "pageID": "viet-family-food-less-ice",
+      "coverage": "authored-resource",
+      "title": "Ít đá thôi"
+    },
+    {
+      "familyID": "food-no-sugar",
+      "pageID": "viet-family-food-no-sugar",
+      "coverage": "authored-resource",
+      "title": "Không đường nhé"
+    },
+    {
+      "familyID": "food-to-go",
+      "pageID": "viet-family-food-to-go",
+      "coverage": "authored-resource",
+      "title": "Mang đi"
+    },
+    {
+      "familyID": "food-pay-now",
+      "pageID": "viet-family-food-pay-now",
+      "coverage": "authored-resource",
+      "title": "Tính tiền giúp tôi"
+    },
+    {
+      "familyID": "food-need-table",
+      "pageID": "viet-family-food-need-table",
+      "coverage": "authored-resource",
+      "title": "Cho tôi bàn cho hai người nhé"
+    },
+    {
+      "familyID": "food-menu",
+      "pageID": "viet-family-food-menu",
+      "coverage": "authored-resource",
+      "title": "Cho tôi xem thực đơn được không?"
+    },
+    {
+      "familyID": "food-one-portion",
+      "pageID": "viet-family-food-one-portion",
+      "coverage": "authored-resource",
+      "title": "Cho tôi một phần"
+    },
+    {
+      "familyID": "food-this-bowl",
+      "pageID": "viet-family-food-this-bowl",
+      "coverage": "authored-resource",
+      "title": "Cho tôi tô này"
+    },
+    {
+      "familyID": "food-not-spicy",
+      "pageID": "viet-family-food-not-spicy",
+      "coverage": "authored-resource",
+      "title": "Không cay nhé"
+    },
+    {
+      "familyID": "food-more-herbs",
+      "pageID": "viet-family-food-more-herbs",
+      "coverage": "authored-resource",
+      "title": "Cho thêm rau"
+    },
+    {
+      "familyID": "food-bottled-water",
+      "pageID": "viet-family-food-bottled-water",
+      "coverage": "authored-resource",
+      "title": "Có nước suối không?"
+    },
+    {
+      "familyID": "food-utensils",
+      "pageID": "viet-family-food-utensils",
+      "coverage": "authored-resource",
+      "title": "Cho tôi muỗng với đũa"
+    },
+    {
+      "familyID": "food-pack-to-go",
+      "pageID": "viet-family-food-pack-to-go",
+      "coverage": "authored-resource",
+      "title": "Gói mang về"
+    },
+    {
+      "familyID": "food-vegetarian",
+      "pageID": "viet-family-food-vegetarian",
+      "coverage": "authored-resource",
+      "title": "Tôi ăn chay"
+    },
+    {
+      "familyID": "food-peanut-allergy",
+      "pageID": "viet-family-food-peanut-allergy",
+      "coverage": "authored-resource",
+      "title": "Tôi bị dị ứng đậu phộng"
+    },
+    {
+      "familyID": "money-how-much",
+      "pageID": "viet-family-money-how-much",
+      "coverage": "authored-resource",
+      "title": "Cái này bao nhiêu?"
+    },
+    {
+      "familyID": "money-per-kilo",
+      "pageID": "viet-family-money-per-kilo",
+      "coverage": "authored-resource",
+      "title": "Bao nhiêu một ký?"
+    },
+    {
+      "familyID": "money-too-expensive",
+      "pageID": "viet-family-money-too-expensive",
+      "coverage": "authored-resource",
+      "title": "Mắc quá"
+    },
+    {
+      "familyID": "money-lower-price",
+      "pageID": "viet-family-money-lower-price",
+      "coverage": "authored-resource",
+      "title": "Bớt chút được không?"
+    },
+    {
+      "familyID": "money-final-price",
+      "pageID": "viet-family-money-final-price",
+      "coverage": "authored-resource",
+      "title": "Giá cuối bao nhiêu?"
+    },
+    {
+      "familyID": "money-another-one",
+      "pageID": "viet-family-money-another-one",
+      "coverage": "authored-resource",
+      "title": "Cho tôi xem cái khác"
+    },
+    {
+      "familyID": "money-take-this",
+      "pageID": "viet-family-money-take-this",
+      "coverage": "authored-resource",
+      "title": "Tôi lấy cái này"
+    },
+    {
+      "familyID": "money-find-atm",
+      "pageID": "viet-family-money-find-atm",
+      "coverage": "authored-resource",
+      "title": "ATM gần nhất ở đâu?"
+    },
+    {
+      "familyID": "directions-how-to-get",
+      "pageID": "viet-family-directions-how-to-get",
+      "coverage": "authored-resource",
+      "title": "Cho hỏi, đi tới đó thế nào?"
+    },
+    {
+      "familyID": "directions-near",
+      "pageID": "viet-family-directions-near",
+      "coverage": "authored-resource",
+      "title": "Ở gần đây không?"
+    },
+    {
+      "familyID": "directions-how-long",
+      "pageID": "viet-family-directions-how-long",
+      "coverage": "authored-resource",
+      "title": "Đi bộ mất bao lâu?"
+    },
+    {
+      "familyID": "directions-turn-left",
+      "pageID": "viet-family-directions-turn-left",
+      "coverage": "authored-resource",
+      "title": "Rẽ trái ở đâu?"
+    },
+    {
+      "familyID": "directions-turn-right",
+      "pageID": "viet-family-directions-turn-right",
+      "coverage": "authored-resource",
+      "title": "Tôi rẽ phải đúng không?"
+    },
+    {
+      "familyID": "directions-go-straight",
+      "pageID": "viet-family-directions-go-straight",
+      "coverage": "authored-resource",
+      "title": "Tôi đi thẳng phải không?"
+    },
+    {
+      "familyID": "directions-understand-now",
+      "pageID": "viet-family-directions-understand-now",
+      "coverage": "authored-resource",
+      "title": "Cảm ơn, tôi hiểu rồi"
+    },
+    {
+      "familyID": "airport-immigration",
+      "pageID": "viet-family-airport-immigration",
+      "coverage": "authored-resource",
+      "title": "Nhập cảnh ở đâu?"
+    },
+    {
+      "familyID": "airport-baggage",
+      "pageID": "viet-family-airport-baggage",
+      "coverage": "authored-resource",
+      "title": "Lấy hành lý ở đâu?"
+    },
+    {
+      "familyID": "airport-sim",
+      "pageID": "viet-family-airport-sim",
+      "coverage": "authored-resource",
+      "title": "Mua SIM ở đâu?"
+    },
+    {
+      "familyID": "airport-pickup",
+      "pageID": "viet-family-airport-pickup",
+      "coverage": "authored-resource",
+      "title": "Khu đón ở đâu?"
+    },
+    {
+      "familyID": "airport-bag-missing",
+      "pageID": "viet-family-airport-bag-missing",
+      "coverage": "authored-resource",
+      "title": "Hành lý của tôi chưa tới"
+    },
+    {
+      "familyID": "health-doctor",
+      "pageID": "viet-family-health-doctor",
+      "coverage": "authored-resource",
+      "title": "Tôi cần bác sĩ"
+    },
+    {
+      "familyID": "health-pharmacy",
+      "pageID": "viet-family-health-pharmacy",
+      "coverage": "authored-resource",
+      "title": "Nhà thuốc gần nhất ở đâu?"
+    },
+    {
+      "familyID": "health-headache",
+      "pageID": "viet-family-health-headache",
+      "coverage": "authored-resource",
+      "title": "Tôi bị đau đầu"
+    },
+    {
+      "familyID": "health-stomach",
+      "pageID": "viet-family-health-stomach",
+      "coverage": "authored-resource",
+      "title": "Tôi đau bụng"
+    },
+    {
+      "familyID": "health-motion-sickness",
+      "pageID": "viet-family-health-motion-sickness",
+      "coverage": "authored-resource",
+      "title": "Có thuốc say xe không?"
+    },
+    {
+      "familyID": "health-allergy",
+      "pageID": "viet-family-health-allergy",
+      "coverage": "authored-resource",
+      "title": "Tôi bị dị ứng cái này"
+    },
+    {
+      "familyID": "health-diarrhea",
+      "pageID": "viet-family-health-diarrhea",
+      "coverage": "authored-resource",
+      "title": "Tôi cần thuốc tiêu chảy"
+    },
+    {
+      "familyID": "help-lost",
+      "pageID": "viet-family-help-lost",
+      "coverage": "authored-resource",
+      "title": "Tôi bị lạc đường"
+    },
+    {
+      "familyID": "help-left-something",
+      "pageID": "viet-family-help-left-something",
+      "coverage": "authored-resource",
+      "title": "Tôi quên đồ rồi"
+    },
+    {
+      "familyID": "help-need-help",
+      "pageID": "viet-family-help-need-help",
+      "coverage": "authored-resource",
+      "title": "Giúp tôi với"
+    },
+    {
+      "familyID": "help-call-hotel",
+      "pageID": "viet-family-help-call-hotel",
+      "coverage": "authored-resource",
+      "title": "Gọi khách sạn giúp tôi"
+    },
+    {
+      "familyID": "help-manager",
+      "pageID": "viet-family-help-manager",
+      "coverage": "authored-resource",
+      "title": "Tôi cần quản lý"
+    },
+    {
+      "familyID": "time-what-time",
+      "pageID": "viet-family-time-what-time",
+      "coverage": "authored-resource",
+      "title": "Mấy giờ?"
+    },
+    {
+      "familyID": "time-today",
+      "pageID": "viet-family-time-today",
+      "coverage": "authored-resource",
+      "title": "Hôm nay"
+    },
+    {
+      "familyID": "time-tomorrow-morning",
+      "pageID": "viet-family-time-tomorrow-morning",
+      "coverage": "authored-resource",
+      "title": "Sáng mai"
+    },
+    {
+      "familyID": "time-have-booking",
+      "pageID": "viet-family-time-have-booking",
+      "coverage": "authored-resource",
+      "title": "Tôi có đặt chỗ"
+    },
+    {
+      "familyID": "time-open",
+      "pageID": "viet-family-time-open",
+      "coverage": "authored-resource",
+      "title": "Mấy giờ mở cửa?"
+    },
+    {
+      "familyID": "shopping-size",
+      "pageID": "viet-family-shopping-size",
+      "coverage": "authored-resource",
+      "title": "Tôi muốn cỡ này"
+    },
+    {
+      "familyID": "shopping-color",
+      "pageID": "viet-family-shopping-color",
+      "coverage": "authored-resource",
+      "title": "Có màu khác không?"
+    },
+    {
+      "familyID": "shopping-try-on",
+      "pageID": "viet-family-shopping-try-on",
+      "coverage": "authored-resource",
+      "title": "Tôi thử cái này được không?"
+    },
+    {
+      "familyID": "shopping-just-looking",
+      "pageID": "viet-family-shopping-just-looking",
+      "coverage": "authored-resource",
+      "title": "Tôi chỉ xem thôi"
+    },
+    {
+      "familyID": "shopping-pay-where",
+      "pageID": "viet-family-shopping-pay-where",
+      "coverage": "authored-resource",
+      "title": "Trả ở đâu?"
+    },
+    {
+      "familyID": "phone-wifi-password",
+      "pageID": "viet-family-phone-wifi-password",
+      "coverage": "authored-resource",
+      "title": "Mật khẩu Wi-Fi là gì?"
+    },
+    {
+      "familyID": "phone-sim",
+      "pageID": "viet-family-phone-sim",
+      "coverage": "authored-resource",
+      "title": "Có bán SIM không?"
+    },
+    {
+      "familyID": "phone-battery-dead",
+      "pageID": "viet-family-phone-battery-dead",
+      "coverage": "authored-resource",
+      "title": "Điện thoại tôi hết pin rồi"
+    },
+    {
+      "familyID": "phone-charger",
+      "pageID": "viet-family-phone-charger",
+      "coverage": "authored-resource",
+      "title": "Có sạc không?"
+    },
+    {
+      "familyID": "phone-charge-here",
+      "pageID": "viet-family-phone-charge-here",
+      "coverage": "authored-resource",
+      "title": "Tôi sạc điện thoại ở đây được không?"
+    },
+    {
+      "familyID": "bathroom-where",
+      "pageID": "viet-family-bathroom-where",
+      "coverage": "authored-resource",
+      "title": "Nhà vệ sinh ở đâu?"
+    },
+    {
+      "familyID": "bathroom-paper",
+      "pageID": "viet-family-bathroom-paper",
+      "coverage": "authored-resource",
+      "title": "Có giấy vệ sinh không?"
+    },
+    {
+      "familyID": "bathroom-use",
+      "pageID": "viet-family-bathroom-use",
+      "coverage": "authored-resource",
+      "title": "Tôi dùng nhà vệ sinh được không?"
+    },
+    {
+      "familyID": "bathroom-soap",
+      "pageID": "viet-family-bathroom-soap",
+      "coverage": "authored-resource",
+      "title": "Có xà phòng không?"
+    },
+    {
+      "familyID": "bathroom-wash-hands",
+      "pageID": "viet-family-bathroom-wash-hands",
+      "coverage": "authored-resource",
+      "title": "Tôi rửa tay ở đây được không?"
+    },
+    {
+      "familyID": "bathroom-water",
+      "pageID": "viet-family-bathroom-water",
+      "coverage": "authored-resource",
+      "title": "Tôi cần nước"
+    },
+    {
+      "familyID": "emergency-police",
+      "pageID": "viet-family-emergency-police",
+      "coverage": "authored-resource",
+      "title": "Gọi công an"
+    },
+    {
+      "familyID": "emergency-ambulance",
+      "pageID": "viet-family-emergency-ambulance",
+      "coverage": "authored-resource",
+      "title": "Gọi xe cứu thương"
+    },
+    {
+      "familyID": "emergency-passport",
+      "pageID": "viet-family-emergency-passport",
+      "coverage": "authored-resource",
+      "title": "Tôi mất hộ chiếu"
+    },
+    {
+      "familyID": "emergency-not-safe",
+      "pageID": "viet-family-emergency-not-safe",
+      "coverage": "authored-resource",
+      "title": "Tôi cảm thấy không an toàn"
+    },
+    {
+      "familyID": "emergency-emergency",
+      "pageID": "viet-family-emergency-emergency",
+      "coverage": "authored-resource",
+      "title": "Đây là trường hợp khẩn cấp"
+    },
+    {
+      "familyID": "emergency-hospital",
+      "pageID": "viet-family-emergency-hospital",
+      "coverage": "authored-resource",
+      "title": "Bệnh viện gần nhất ở đâu?"
+    },
+    {
+      "familyID": "social-from-us",
+      "pageID": "viet-family-social-from-us",
+      "coverage": "authored-resource",
+      "title": "Tôi đến từ Mỹ"
+    },
+    {
+      "familyID": "social-from-uk",
+      "pageID": "viet-family-social-from-uk",
+      "coverage": "authored-resource",
+      "title": "Tôi từ Anh"
+    },
+    {
+      "familyID": "social-first-time",
+      "pageID": "viet-family-social-first-time",
+      "coverage": "authored-resource",
+      "title": "Đây là lần đầu của tôi"
+    },
+    {
+      "familyID": "social-like-vietnam",
+      "pageID": "viet-family-social-like-vietnam",
+      "coverage": "authored-resource",
+      "title": "Tôi thích Việt Nam"
+    },
+    {
+      "familyID": "social-food-good",
+      "pageID": "viet-family-social-food-good",
+      "coverage": "authored-resource",
+      "title": "Đồ ăn ngon quá"
+    },
+    {
+      "familyID": "social-weather-hot",
+      "pageID": "viet-family-social-weather-hot",
+      "coverage": "authored-resource",
+      "title": "Thời tiết nóng quá"
+    },
+    {
+      "familyID": "social-how-are-you",
+      "pageID": "viet-how-are-you",
+      "coverage": "authored-resource",
+      "title": "Bạn khỏe không?"
+    },
+    {
+      "familyID": "sight-ticket",
+      "pageID": "viet-family-sight-ticket",
+      "coverage": "authored-resource",
+      "title": "Vé bao nhiêu?"
+    },
+    {
+      "familyID": "sight-start",
+      "pageID": "viet-family-sight-start",
+      "coverage": "authored-resource",
+      "title": "Bắt đầu ở đâu?"
+    },
+    {
+      "familyID": "sight-photos",
+      "pageID": "viet-family-sight-photos",
+      "coverage": "authored-resource",
+      "title": "Tôi chụp hình ở đây được không?"
+    },
+    {
+      "familyID": "sight-close",
+      "pageID": "viet-family-sight-close",
+      "coverage": "authored-resource",
+      "title": "Mấy giờ đóng cửa?"
+    },
+    {
+      "familyID": "sight-meeting-point",
+      "pageID": "viet-family-sight-meeting-point",
+      "coverage": "authored-resource",
+      "title": "Điểm gặp ở đâu?"
+    },
+    {
+      "familyID": "service-water",
+      "pageID": "viet-family-service-water",
+      "coverage": "authored-resource",
+      "title": "Cho tôi chai nước"
+    },
+    {
+      "familyID": "service-bag",
+      "pageID": "viet-family-service-bag",
+      "coverage": "authored-resource",
+      "title": "Có túi không?"
+    },
+    {
+      "familyID": "service-tissues",
+      "pageID": "viet-family-service-tissues",
+      "coverage": "authored-resource",
+      "title": "Cho tôi khăn giấy"
+    },
+    {
+      "familyID": "service-sunscreen",
+      "pageID": "viet-family-service-sunscreen",
+      "coverage": "authored-resource",
+      "title": "Ở đâu có kem chống nắng?"
+    },
+    {
+      "familyID": "service-open-this",
+      "pageID": "viet-family-service-open-this",
+      "coverage": "authored-resource",
+      "title": "Mở cái này giúp tôi"
+    },
+    {
+      "familyID": "service-card",
+      "pageID": "viet-family-service-card",
+      "coverage": "authored-resource",
+      "title": "Tôi quẹt thẻ được không?"
+    },
+    {
+      "familyID": "service-receipt",
+      "pageID": "viet-family-service-receipt",
+      "coverage": "authored-resource",
+      "title": "Cho tôi hóa đơn"
+    },
+    {
+      "familyID": "v500-poli-basi-yes",
+      "pageID": "viet-family-v500-poli-basi-yes",
+      "coverage": "authored-resource",
+      "title": "Đúng"
+    },
+    {
+      "familyID": "v500-unde-repa-please-say-it-slowly",
+      "pageID": "viet-family-v500-unde-repa-please-say-it-slowly",
+      "coverage": "authored-resource",
+      "title": "Hãy nói từ từ nhé"
+    },
+    {
+      "familyID": "v500-hote-acco-the-door-does-not-lock",
+      "pageID": "viet-family-v500-hote-acco-the-door-does-not-lock",
+      "coverage": "authored-resource",
+      "title": "Cửa không khóa"
+    },
+    {
+      "familyID": "v500-mone-numb-pric-the-atm-kept-my-card",
+      "pageID": "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
+      "coverage": "authored-resource",
+      "title": "ATM đã giữ thẻ của tôi"
+    },
+    {
+      "familyID": "v500-dire-navi-where-is-the-nearest-restroom",
+      "pageID": "viet-family-v500-dire-navi-where-is-the-nearest-restroom",
+      "coverage": "authored-resource",
+      "title": "Nhà vệ sinh gần nhất ở đâu?"
+    },
+    {
+      "familyID": "v500-airp-bord-arri-here-is-my-visa",
+      "pageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+      "coverage": "authored-resource",
+      "title": "Đây là thị thực của tôi"
+    },
+    {
+      "familyID": "v500-airp-bord-arri-where-is-the-atm",
+      "pageID": "viet-family-v500-airp-bord-arri-where-is-the-atm",
+      "coverage": "authored-resource",
+      "title": "ATM ở đâu?"
+    },
+    {
+      "familyID": "v500-airp-bord-arri-here-is-my-passport",
+      "pageID": "viet-family-v500-airp-bord-arri-here-is-my-passport",
+      "coverage": "authored-resource",
+      "title": "Đây là hộ chiếu của tôi"
+    },
+    {
+      "familyID": "v500-heal-phar-i-feel-dizzy",
+      "pageID": "viet-family-v500-heal-phar-i-feel-dizzy",
+      "coverage": "authored-resource",
+      "title": "Tôi cảm thấy chóng mặt"
+    },
+    {
+      "familyID": "v500-prob-help-i-need-help-now",
+      "pageID": "viet-family-v500-prob-help-i-need-help-now",
+      "coverage": "authored-resource",
+      "title": "Tôi cần giúp đỡ bây giờ"
+    },
+    {
+      "familyID": "v500-time-date-book-is-there-a-wait",
+      "pageID": "viet-family-v500-time-date-book-is-there-a-wait",
+      "coverage": "authored-resource",
+      "title": "Có chờ đợi không?"
+    },
+    {
+      "familyID": "v500-time-date-book-one-ticket-please",
+      "pageID": "viet-family-v500-time-date-book-one-ticket-please",
+      "coverage": "authored-resource",
+      "title": "Xin một vé"
+    },
+    {
+      "familyID": "v500-shop-how-much-is-this-item",
+      "pageID": "viet-family-v500-shop-how-much-is-this-item",
+      "coverage": "authored-resource",
+      "title": "Mặt hàng này giá bao nhiêu?"
+    },
+    {
+      "familyID": "v500-shop-can-you-lower-the-price",
+      "pageID": "viet-family-v500-shop-can-you-lower-the-price",
+      "coverage": "authored-resource",
+      "title": "Giảm giá chút được không?"
+    },
+    {
+      "familyID": "v500-phon-inte-powe-my-map-is-not-working",
+      "pageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
+      "coverage": "authored-resource",
+      "title": "Bản đồ của tôi không hoạt động"
+    },
+    {
+      "familyID": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "pageID": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "coverage": "authored-resource",
+      "title": "Tôi có thể mua SIM ở đâu?"
+    },
+    {
+      "familyID": "v500-phon-inte-powe-i-need-an-esim",
+      "pageID": "viet-family-v500-phon-inte-powe-i-need-an-esim",
+      "coverage": "authored-resource",
+      "title": "Tôi cần một eSIM"
+    },
+    {
+      "familyID": "v500-emer-safe-i-am-injured",
+      "pageID": "viet-family-v500-emer-safe-i-am-injured",
+      "coverage": "authored-resource",
+      "title": "tôi bị thương"
+    },
+    {
+      "familyID": "v500-emer-safe-i-cannot-move",
+      "pageID": "viet-family-v500-emer-safe-i-cannot-move",
+      "coverage": "authored-resource",
+      "title": "Tôi không thể di chuyển"
+    },
+    {
+      "familyID": "v500-emer-safe-do-not-touch-me",
+      "pageID": "viet-family-v500-emer-safe-do-not-touch-me",
+      "coverage": "authored-resource",
+      "title": "Đừng chạm vào tôi"
+    },
+    {
+      "familyID": "v500-sigh-acti-i-have-a-tour-booking",
+      "pageID": "viet-family-v500-sigh-acti-i-have-a-tour-booking",
+      "coverage": "authored-resource",
+      "title": "Tôi có đặt tour"
+    },
+    {
+      "familyID": "v500-loca-serv-ever-task-where-can-i-buy-water",
+      "pageID": "viet-family-v500-loca-serv-ever-task-where-can-i-buy-water",
+      "coverage": "authored-resource",
+      "title": "Tôi có thể mua nước ở đâu?"
+    }
+  ]
+}

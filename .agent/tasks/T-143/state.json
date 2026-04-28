@@ -1,0 +1,55 @@
+{
+  "taskId": "T-143",
+  "title": "Desktop Codex automation self-recovery handoff generator for interrupted meaningful tasks",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "t143-20260423t030830-05",
+    "label": "codex-desktop-t143-recovery"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T03:08:30.0839663-05:00",
+    "lastHeartbeatAt": "2026-04-23T03:54:27.1611257-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T03:54:27.1611257-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "queue_tooling"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "planning"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-143\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-143\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-143\\reviews\\",
+    "logs": ".agent\\tasks\\T-143\\logs\\",
+    "requiredForDone": [
+      ".agent\\queue_tool.py",
+      ".agent\\tasks\\T-143\\logs\\self-recovery-handoff-notes.md",
+      ".agent\\tasks\\T-143\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T03:54:27.1611257-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 7,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

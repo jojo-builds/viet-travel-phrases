@@ -1,0 +1,189 @@
+{
+  "id": "viet-family-service-card",
+  "familyID": "service-card",
+  "phraseID": "store-6",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Tôi quẹt thẻ được không?",
+  "englishTitle": "Can I pay by card?",
+  "pronunciation": "toy quet teh dook khong",
+  "summary": "Different ways to say \"Can I pay by card?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "building.2.fill",
+  "tintName": "teal",
+  "categoryIDs": [
+    "local-services-everyday-tasks"
+  ],
+  "audioKey": "store-6",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this before checkout if you are not sure cards are accepted. This helps when you do not want to reach the register and stall out. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "store-6-piece-1",
+          "vietnamese": "Tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "store-6-piece-2",
+          "vietnamese": "quẹt",
+          "english": "i",
+          "audioKey": "breakdown-authored-quet-f98989a914"
+        },
+        {
+          "id": "store-6-piece-3",
+          "vietnamese": "thẻ",
+          "english": "pay",
+          "audioKey": "breakdown-hotel-8-first"
+        },
+        {
+          "id": "store-6-piece-4",
+          "vietnamese": "được không?",
+          "english": "is it possible?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+        },
+        {
+          "id": "store-6-full",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "audioKey": "store-6"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi quẹt thẻ được không? is the safest default for \"Can I pay by card?\". Use this before checkout if you are not sure cards are accepted. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "store-6",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "pronunciation": "toy quet teh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "store-6"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this before checkout if you are not sure cards are accepted. Use it in buying small items, receipts, bags, and everyday errands when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to the item or show a photo when you can. It avoids guessing from pronunciation alone.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "store-1",
+          "vietnamese": "Cho tôi chai nước",
+          "english": "A bottle of water please",
+          "pronunciation": "cho toy chai nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-water",
+          "audioKey": "store-1"
+        },
+        {
+          "id": "store-2",
+          "vietnamese": "Có túi không?",
+          "english": "Do you have a bag?",
+          "pronunciation": "koh too-ee khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-bag",
+          "audioKey": "store-2"
+        },
+        {
+          "id": "store-3",
+          "vietnamese": "Cho tôi khăn giấy",
+          "english": "Tissues please",
+          "pronunciation": "cho toy khan zai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-tissues",
+          "audioKey": "store-3"
+        },
+        {
+          "id": "store-4",
+          "vietnamese": "Ở đâu có kem chống nắng?",
+          "english": "Where is the sunscreen?",
+          "pronunciation": "uh dow koh kem chong nang",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-sunscreen",
+          "audioKey": "store-4"
+        },
+        {
+          "id": "store-5",
+          "vietnamese": "Mở cái này giúp tôi",
+          "english": "Please open this for me",
+          "pronunciation": "muh gai nai zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-open-this",
+          "audioKey": "store-5"
+        },
+        {
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
+        },
+        {
+          "id": "v500-loca-serv-ever-task-where-can-i-buy-water",
+          "vietnamese": "Tôi có thể mua nước ở đâu?",
+          "english": "Where can I buy water?",
+          "pronunciation": "Toi co the mua nuoc o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-loca-serv-ever-task-where-can-i-buy-water",
+          "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "store-6",
+      "vietnamese": "Tôi quẹt thẻ được không?",
+      "english": "Can I pay by card?",
+      "pronunciation": "toy quet teh dook khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "store-6"
+    }
+  ]
+}

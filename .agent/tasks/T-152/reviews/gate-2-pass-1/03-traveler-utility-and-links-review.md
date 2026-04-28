@@ -1,0 +1,13 @@
+The hub set is materially broader and much less textbook overall, and most likely-reply / repair / next-step rails do feel more traveler-realistic. I’m blocking because a visible slice of the new “nearby useful” support linking still reads like support-pool density fill rather than believable traveler continuation, which weakens the claim that the pass materially reduces dead ends in a meaningful way.
+
+Findings:
+- Several new `crossClassExit` links resolve technically but not meaningfully: `viet-service-water` and `viet-directions-right-route` jump to `service-copy-docs`, `money-find-atm`, and `phone-charge-here`, and multiple emergency/medical hubs jump to `help-left-something`. Those exits feel arbitrary for the live moment and make the hubs look graph-expanded rather than traveler-guided.
+
+Evidence:
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-sample-v1.json`: `viet-rel-service-water` crossClassExit targets `food-bottled-water`, `service-copy-docs`, `money-find-atm`, and `phone-charge-here`; only the first feels naturally nearby-useful for “A bottle of water please.”
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-sample-v1.json`: `viet-rel-directions-right-route` crossClassExit targets `transport-destination`, `service-copy-docs`, `money-find-atm`, and `phone-charge-here`; the last three do not read like believable follow-ons from “Is this the right route?”
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-sample-v1.json`: `viet-rel-emergency-manager-now`, `viet-rel-emergency-call-help`, `viet-rel-emergency-get-away`, `viet-rel-emergency-police`, `health-doctor`, `health-allergy`, and `viet-rel-emergency-wallet-stolen` all include `help-left-something` as a cross-class exit.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\phrase-source.csv`: `problems-4 | help-left-something | I left something behind` carries support markers for those emergency hubs, so the markers resolve cleanly, but the target is not meaningfully aligned with active safety/medical escalation.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\phrase-source.csv`: `service-copy-docs`, `airport-4 | money-find-atm`, and `phone-5 | phone-charge-here` all carry `answer-page-sample=viet-service-water:support:crossClassExit` and/or `answer-page-sample=viet-directions-right-route:support:crossClassExit`, confirming the issue is in authored support targeting rather than a missing-row bug.
+
+Approval: BLOCK

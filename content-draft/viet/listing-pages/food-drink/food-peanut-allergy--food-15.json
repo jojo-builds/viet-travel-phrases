@@ -1,0 +1,179 @@
+{
+  "id": "viet-phrase-food-15",
+  "familyID": "food-peanut-allergy",
+  "phraseID": "food-15",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Món này có trứng hay đậu phộng không?",
+  "englishTitle": "Does this have egg or peanuts?",
+  "pronunciation": "mon nai koh choong hai dow fohng khong",
+  "summary": "A focused guide to using Món này có trứng hay đậu phộng không? as a nearby form of Tôi bị dị ứng đậu phộng.",
+  "iconName": "fork.knife",
+  "tintName": "green",
+  "categoryIDs": [
+    "food-drink"
+  ],
+  "audioKey": "food-15",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Món này có trứng hay đậu phộng không? is useful when \"Does this have egg or peanuts?\" fits better than the parent phrase. Use this after the allergy warning when you need to check the ingredients directly.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "food-15-piece-1",
+          "vietnamese": "Món",
+          "english": "dish",
+          "audioKey": "breakdown-food-premium-too-spicy-now-first"
+        },
+        {
+          "id": "food-15-piece-2",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "food-15-piece-3",
+          "vietnamese": "có",
+          "english": "have / yes",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "food-15-piece-4",
+          "vietnamese": "trứng",
+          "english": "egg",
+          "audioKey": "breakdown-authored-trung-7e4461a3f9"
+        },
+        {
+          "id": "food-15-piece-5",
+          "vietnamese": "hay",
+          "english": "or",
+          "audioKey": "breakdown-authored-hay-ebddd6b268"
+        },
+        {
+          "id": "food-15-piece-6",
+          "vietnamese": "đậu",
+          "english": "bean / peanut",
+          "audioKey": "breakdown-authored-dau-9b24b3d631"
+        },
+        {
+          "id": "food-15-piece-7",
+          "vietnamese": "phộng",
+          "english": "room",
+          "audioKey": "breakdown-authored-phong-a47787ffce"
+        },
+        {
+          "id": "food-15-piece-8",
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "food-15-full",
+          "vietnamese": "Món này có trứng hay đậu phộng không?",
+          "english": "Does this have egg or peanuts?",
+          "audioKey": "food-15"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this after the allergy warning when you need to check the ingredients directly. Return to Tôi bị dị ứng đậu phộng when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "food-peanut-allergy",
+          "vietnamese": "Tôi bị dị ứng đậu phộng",
+          "english": "I am allergic to peanuts",
+          "pronunciation": "toy bee zee oong dow fohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-peanut-allergy",
+          "audioKey": "food-peanut-allergy"
+        },
+        {
+          "id": "coffee-1",
+          "vietnamese": "Cho tôi một cà phê sữa đá",
+          "english": "One iced milk coffee please",
+          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-coffee-milk",
+          "audioKey": "coffee-1"
+        },
+        {
+          "id": "coffee-2",
+          "vietnamese": "Cho tôi cà phê đen đá",
+          "english": "I’d like an iced black coffee",
+          "pronunciation": "cho toy ka feh den dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-coffee-black",
+          "audioKey": "coffee-2"
+        },
+        {
+          "id": "coffee-3",
+          "vietnamese": "Cho tôi bạc xỉu đá",
+          "english": "I’d like an iced bạc xỉu",
+          "pronunciation": "cho toy bahk see-u dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-coffee-bac-xiu",
+          "audioKey": "coffee-3"
+        },
+        {
+          "id": "coffee-4",
+          "vietnamese": "Ít đá thôi",
+          "english": "Just a little ice",
+          "pronunciation": "eet dah toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-less-ice",
+          "audioKey": "coffee-4"
+        },
+        {
+          "id": "coffee-5",
+          "vietnamese": "Không đường nhé",
+          "english": "No sugar please",
+          "pronunciation": "khong doong nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-no-sugar",
+          "audioKey": "coffee-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "food-15",
+      "vietnamese": "Món này có trứng hay đậu phộng không?",
+      "english": "Does this have egg or peanuts?",
+      "pronunciation": "mon nai koh choong hai dow fohng khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "food-15"
+    }
+  ]
+}

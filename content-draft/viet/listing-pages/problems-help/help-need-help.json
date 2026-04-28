@@ -1,0 +1,181 @@
+{
+  "id": "viet-family-help-need-help",
+  "familyID": "help-need-help",
+  "phraseID": "help-need-help-direct",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Giúp tôi với",
+  "englishTitle": "I need help",
+  "pronunciation": "zoop toy voy",
+  "summary": "Different ways to say \"I need help\" in Vietnam, with the safe phrase, useful variants, and nearby next steps.",
+  "iconName": "exclamationmark.triangle.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "problems-help"
+  ],
+  "audioKey": "help-need-help-direct",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you need immediate practical help and want the shortest direct version. When the trip is messy, start with the help you need in plain words. Use the nearby forms below when tone, setting, or politeness changes.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "help-need-help-direct-piece-1",
+          "vietnamese": "Giúp tôi",
+          "english": "help me",
+          "audioKey": "breakdown-authored-giup-toi-38e527ca39"
+        },
+        {
+          "id": "help-need-help-direct-piece-2",
+          "vietnamese": "với",
+          "english": "please / with",
+          "audioKey": "breakdown-authored-voi-25e5621456"
+        },
+        {
+          "id": "help-need-help-direct-full",
+          "vietnamese": "Giúp tôi với",
+          "english": "I need help",
+          "audioKey": "help-need-help-direct"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Giúp tôi với is the safest default for \"I need help\". Use this when you need immediate practical help and want the shortest direct version. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "help-need-help-direct",
+          "vietnamese": "Giúp tôi với",
+          "english": "I need help",
+          "pronunciation": "zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "help-need-help-direct"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "natural-variations",
+      "title": "Natural variations",
+      "body": "This nearby form changes the tone or setting. Use it when the note under the row matches the moment.",
+      "phrases": [
+        {
+          "id": "help-1",
+          "vietnamese": "Anh/chị giúp tôi với",
+          "english": "Can you help me?",
+          "pronunciation": "anh chee zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-1",
+          "audioKey": "help-1"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Help phrases work when they name the problem and the next person or action you need.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need immediate practical help and want the shortest direct version. Use it in lost items, help, managers, and recovery moments when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Start with the simplest phrase, then show the item, place, receipt, or photo connected to the problem.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "problems-1",
+          "vietnamese": "Tôi bị lạc đường",
+          "english": "I’m lost",
+          "pronunciation": "toy bee lahk doong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-lost",
+          "audioKey": "problems-1"
+        },
+        {
+          "id": "problems-4",
+          "vietnamese": "Tôi quên đồ rồi",
+          "english": "I left something behind",
+          "pronunciation": "toy gwen doh roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-left-something",
+          "audioKey": "problems-4"
+        },
+        {
+          "id": "help-2",
+          "vietnamese": "Gọi khách sạn giúp tôi",
+          "english": "Please call the hotel for me",
+          "pronunciation": "goy khak san zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-call-hotel",
+          "audioKey": "help-2"
+        },
+        {
+          "id": "help-3",
+          "vietnamese": "Tôi cần quản lý",
+          "english": "I need the manager",
+          "pronunciation": "toy gun kwan lee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-manager",
+          "audioKey": "help-3"
+        },
+        {
+          "id": "v500-prob-help-i-need-help-now",
+          "vietnamese": "Tôi cần giúp đỡ bây giờ",
+          "english": "I need help now",
+          "pronunciation": "Toi can giup do bay gio",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-v500-prob-help-i-need-help-now",
+          "audioKey": "v500-prob-help-i-need-help-now"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "help-need-help-direct",
+      "vietnamese": "Giúp tôi với",
+      "english": "I need help",
+      "pronunciation": "zoop toy voy",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "help-need-help-direct"
+    }
+  ]
+}

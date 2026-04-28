@@ -1,0 +1,67 @@
+{
+  "taskId": "T-140",
+  "title": "Indonesian substantial prep-lane expansion and future runtime-handoff packet",
+  "status": "blocked",
+  "phase": "interrupted-awaiting-recovery",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\indonesian-expansion-pack",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-desktop-automation-T-140-20260422T060245561-0500",
+    "label": "desktop-codex-T-140-20260422-060245"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-22T06:02:45.5612664-05:00",
+    "lastHeartbeatAt": "2026-04-22T11:55:09.7883945-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-22T13:55:09.7883945-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "indonesian_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    "Interrupted by Codex desktop loading-model / reauthentication instability after Gate 2 and before Gate 3 closeout completed. Recover through T-142 instead of redoing the Indonesian pass."
+  ],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-140\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-140\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-140\\reviews\\",
+    "logs": ".agent\\tasks\\T-140\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\indonesian-expansion-pack\\content-draft\\indonesian\\phrase-source.csv",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\indonesian-expansion-pack\\content-draft\\indonesian\\first-wave-priority.csv",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\indonesian-expansion-pack\\content-draft\\indonesian\\source-notes.md",
+      ".agent\\tasks\\T-140\\logs\\indonesian-expansion-notes.md",
+      ".agent\\tasks\\T-140\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T03:30:06.137836-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 6,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "recovery": {
+    "kind": "interrupted-original",
+    "dedupeKey": "interrupted-recovery:T-140",
+    "linkedRecoveryTaskId": "T-142",
+    "generatedAt": "2026-04-23T03:30:06.137836-05:00",
+    "generatedBy": "queue-tool-legacy-backfill",
+    "lastSyncedAt": "2026-04-23T03:30:06.137836-05:00"
+  }
+}

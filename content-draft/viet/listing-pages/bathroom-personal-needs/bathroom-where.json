@@ -1,0 +1,157 @@
+{
+  "id": "viet-family-bathroom-where",
+  "familyID": "bathroom-where",
+  "phraseID": "bath-1",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Nhà vệ sinh ở đâu?",
+  "englishTitle": "Where is the bathroom?",
+  "pronunciation": "nya veh sinh uh dow",
+  "summary": "Different ways to say \"Where is the bathroom?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "person.fill",
+  "tintName": "teal",
+  "categoryIDs": [
+    "bathroom-personal-needs"
+  ],
+  "audioKey": "bath-1",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you need the restroom immediately. This is a direct survival phrase and should stay short. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
+      "breakdown": [
+        {
+          "id": "bath-1-piece-1",
+          "vietnamese": "Nhà vệ sinh",
+          "english": "bathroom",
+          "audioKey": "breakdown-bathroom-where-subject"
+        },
+        {
+          "id": "bath-1-piece-2",
+          "vietnamese": "ở đâu?",
+          "english": "where?",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "bath-1-full",
+          "vietnamese": "Nhà vệ sinh ở đâu?",
+          "english": "Where is the bathroom?",
+          "audioKey": "bath-1"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Nhà vệ sinh ở đâu? is the safest default for \"Where is the bathroom?\". Use this when you need the restroom immediately. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "bath-1",
+          "vietnamese": "Nhà vệ sinh ở đâu?",
+          "english": "Where is the bathroom?",
+          "pronunciation": "nya veh sinh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "bath-1"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need the restroom immediately. Use it in bathrooms, soap, paper, water, and basic personal needs when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Some places may not have paper or soap available. Asking early avoids an awkward surprise.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Ask directly and follow gestures. People may simply point you toward the right place.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "bath-2",
+          "vietnamese": "Có giấy vệ sinh không?",
+          "english": "Do you have toilet paper?",
+          "pronunciation": "koh zai veh sinh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-paper",
+          "audioKey": "bath-2"
+        },
+        {
+          "id": "bathroom-use",
+          "vietnamese": "Tôi dùng nhà vệ sinh được không?",
+          "english": "Can I use the bathroom?",
+          "pronunciation": "toy zoong nya veh sinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-use",
+          "audioKey": "bathroom-use"
+        },
+        {
+          "id": "bath-3",
+          "vietnamese": "Có xà phòng không?",
+          "english": "Do you have soap?",
+          "pronunciation": "koh sa fong khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-soap",
+          "audioKey": "bath-3"
+        },
+        {
+          "id": "bath-4",
+          "vietnamese": "Tôi rửa tay ở đây được không?",
+          "english": "Can I wash my hands here?",
+          "pronunciation": "toy zoo-ah tai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-wash-hands",
+          "audioKey": "bath-4"
+        },
+        {
+          "id": "bath-5",
+          "vietnamese": "Tôi cần nước",
+          "english": "I need water",
+          "pronunciation": "toy gun nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-water",
+          "audioKey": "bath-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "bath-1",
+      "vietnamese": "Nhà vệ sinh ở đâu?",
+      "english": "Where is the bathroom?",
+      "pronunciation": "nya veh sinh uh dow",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "bath-1"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "id": "viet-family-bathroom-paper",
+  "familyID": "bathroom-paper",
+  "phraseID": "bath-2",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Có giấy vệ sinh không?",
+  "englishTitle": "Do you have toilet paper?",
+  "pronunciation": "koh zai veh sinh khong",
+  "summary": "Different ways to say \"Do you have toilet paper?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "person.fill",
+  "tintName": "teal",
+  "categoryIDs": [
+    "bathroom-personal-needs"
+  ],
+  "audioKey": "bath-2",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when the restroom is missing toilet paper. This is the most common bathroom follow-up after finding the room. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "bath-2-piece-1",
+          "vietnamese": "Có",
+          "english": "have / yes",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "bath-2-piece-2",
+          "vietnamese": "giấy",
+          "english": "you",
+          "audioKey": "breakdown-v900-emer-safe-i-need-a-temporary-travel-document-piece-3"
+        },
+        {
+          "id": "bath-2-piece-3",
+          "vietnamese": "vệ",
+          "english": "ticket",
+          "audioKey": "breakdown-authored-ve-5592bb10cb"
+        },
+        {
+          "id": "bath-2-piece-4",
+          "vietnamese": "sinh",
+          "english": "hygiene",
+          "audioKey": "breakdown-authored-sinh-688cfd5ead"
+        },
+        {
+          "id": "bath-2-piece-5",
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "bath-2-full",
+          "vietnamese": "Có giấy vệ sinh không?",
+          "english": "Do you have toilet paper?",
+          "audioKey": "bath-2"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Có giấy vệ sinh không? is the safest default for \"Do you have toilet paper?\". Use this when the restroom is missing toilet paper. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "bath-2",
+          "vietnamese": "Có giấy vệ sinh không?",
+          "english": "Do you have toilet paper?",
+          "pronunciation": "koh zai veh sinh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "bath-2"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when the restroom is missing toilet paper. Use it in bathrooms, soap, paper, water, and basic personal needs when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Some places may not have paper or soap available. Asking early avoids an awkward surprise.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Ask directly and follow gestures. People may simply point you toward the right place.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "bath-1",
+          "vietnamese": "Nhà vệ sinh ở đâu?",
+          "english": "Where is the bathroom?",
+          "pronunciation": "nya veh sinh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-where",
+          "audioKey": "bath-1"
+        },
+        {
+          "id": "bathroom-use",
+          "vietnamese": "Tôi dùng nhà vệ sinh được không?",
+          "english": "Can I use the bathroom?",
+          "pronunciation": "toy zoong nya veh sinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-use",
+          "audioKey": "bathroom-use"
+        },
+        {
+          "id": "bath-3",
+          "vietnamese": "Có xà phòng không?",
+          "english": "Do you have soap?",
+          "pronunciation": "koh sa fong khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-soap",
+          "audioKey": "bath-3"
+        },
+        {
+          "id": "bath-4",
+          "vietnamese": "Tôi rửa tay ở đây được không?",
+          "english": "Can I wash my hands here?",
+          "pronunciation": "toy zoo-ah tai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-wash-hands",
+          "audioKey": "bath-4"
+        },
+        {
+          "id": "bath-5",
+          "vietnamese": "Tôi cần nước",
+          "english": "I need water",
+          "pronunciation": "toy gun nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-water",
+          "audioKey": "bath-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "bath-2",
+      "vietnamese": "Có giấy vệ sinh không?",
+      "english": "Do you have toilet paper?",
+      "pronunciation": "koh zai veh sinh khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "bath-2"
+    }
+  ]
+}

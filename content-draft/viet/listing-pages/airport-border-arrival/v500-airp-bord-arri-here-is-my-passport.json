@@ -1,0 +1,203 @@
+{
+  "id": "viet-family-v500-airp-bord-arri-here-is-my-passport",
+  "familyID": "v500-airp-bord-arri-here-is-my-passport",
+  "phraseID": "v500-airp-bord-arri-here-is-my-passport",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Đây là hộ chiếu của tôi",
+  "englishTitle": "Here is my passport",
+  "pronunciation": "Day la ho chieu cua toi",
+  "summary": "Different ways to say \"Here is my passport\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "airplane.arrival",
+  "tintName": "blue",
+  "categoryIDs": [
+    "airport-border-arrival"
+  ],
+  "audioKey": "v500-airp-bord-arri-here-is-my-passport",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use this when you are showing a document or item. The phrase points to it, names it, then marks it as yours.",
+      "breakdown": [
+        {
+          "id": "v500-airp-bord-arri-here-is-my-passport-piece-1",
+          "vietnamese": "Đây",
+          "english": "here / this",
+          "audioKey": "breakdown-transport-1-first"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-passport-piece-2",
+          "vietnamese": "là",
+          "english": "is",
+          "audioKey": "breakdown-v900-tran-how-much-is-the-rental-per-day-piece-5"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-passport-piece-3",
+          "vietnamese": "hộ chiếu",
+          "english": "passport",
+          "audioKey": "breakdown-v500-airp-bord-arri-here-is-my-passport-piece-3"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-passport-piece-4",
+          "vietnamese": "của tôi",
+          "english": "my / mine",
+          "audioKey": "breakdown-smalltalk-3-piece-4"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-passport-full",
+          "vietnamese": "Đây là hộ chiếu của tôi",
+          "english": "Here is my passport",
+          "audioKey": "v500-airp-bord-arri-here-is-my-passport"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Đây là hộ chiếu của tôi is the safest default for \"Here is my passport\". Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "v500-airp-bord-arri-here-is-my-passport",
+          "vietnamese": "Đây là hộ chiếu của tôi",
+          "english": "Here is my passport",
+          "pronunciation": "Day la ho chieu cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v500-airp-bord-arri-here-is-my-passport"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Airport phrases help staff route you to the next counter or service without a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Use it in arrival, immigration, baggage, SIM cards, pickup, and airport services when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Keep your passport, baggage tag, or booking screen visible while you ask.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "airport-1",
+          "vietnamese": "Nhập cảnh ở đâu?",
+          "english": "Where is immigration?",
+          "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-immigration",
+          "audioKey": "airport-1"
+        },
+        {
+          "id": "airport-2",
+          "vietnamese": "Lấy hành lý ở đâu?",
+          "english": "Where is baggage claim?",
+          "pronunciation": "lay han lee uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-baggage",
+          "audioKey": "airport-2"
+        },
+        {
+          "id": "airport-3",
+          "vietnamese": "Mua SIM ở đâu?",
+          "english": "Where can I buy a SIM card?",
+          "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-sim",
+          "audioKey": "airport-3"
+        },
+        {
+          "id": "airport-5",
+          "vietnamese": "Khu đón ở đâu?",
+          "english": "Where is the pickup area?",
+          "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-pickup",
+          "audioKey": "airport-5"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "airport-6",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive",
+          "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-bag-missing",
+          "audioKey": "airport-6"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        },
+        {
+          "id": "v500-airp-bord-arri-where-is-the-atm",
+          "vietnamese": "ATM ở đâu?",
+          "english": "Where is the ATM?",
+          "pronunciation": "ATM o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-airp-bord-arri-where-is-the-atm",
+          "audioKey": "v500-airp-bord-arri-where-is-the-atm"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-airp-bord-arri-here-is-my-passport",
+      "vietnamese": "Đây là hộ chiếu của tôi",
+      "english": "Here is my passport",
+      "pronunciation": "Day la ho chieu cua toi",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v500-airp-bord-arri-here-is-my-passport"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-21T14:11:28.607387-05:00",
+  "updatedAt": "2026-04-23T11:12:19.177067-05:00",
   "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -30,6 +30,20 @@
       }
     ],
     "queued": [
+      {
+        "taskId": "T-154",
+        "title": "Viet flagship phrase-cluster harvest, retained-row promotion, and answer-page deepening packet",
+        "state": ".agent\\tasks\\T-154\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "viet_relation_model"
+      },
+      {
+        "taskId": "T-155",
+        "title": "Tagalog answer-page expansion pack 2 and flagship listing-hub deepening packet",
+        "state": ".agent\\tasks\\T-155\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_relation_model"
+      },
       {
         "taskId": "T-129",
         "title": "Desktop Codex automation pilot, Viet live-audio orphan disposition and parity packet",
@@ -76,6 +90,13 @@
     "in_progress": [],
     "blocked": [
       {
+        "taskId": "T-148",
+        "title": "SpeakLocal V2 Liquid Glass answer-page visual fidelity pass toward approved mockup",
+        "state": ".agent\\tasks\\T-148\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "ios_family_shared_ui"
+      },
+      {
         "taskId": "T-073",
         "title": "Desktop Codex automation pilot, shared search normalization audit and bounded family-shell fix pass",
         "state": ".agent\\tasks\\T-073\\state.json",
@@ -83,11 +104,32 @@
         "writeLock": ".agent/tasks/T-073/**"
       },
       {
+        "taskId": "T-149",
+        "title": "Viet answer-page expansion pack 2 with supporting phrase growth and deeper traveler copy",
+        "state": ".agent\\tasks\\T-149\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "viet_relation_model"
+      },
+      {
         "taskId": "T-099",
         "title": "Desktop Codex automation pilot, controlled Viet audio follow-up batch and seam ledger update",
         "state": ".agent\\tasks\\T-099\\state.json",
         "selectionOrder": 5,
         "writeLock": "shared_audio_pipeline"
+      },
+      {
+        "taskId": "T-139",
+        "title": "Tagalog v2 substantial expansion packet and relation-ready phrase-hub growth pass",
+        "state": ".agent\\tasks\\T-139\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_relation_model"
+      },
+      {
+        "taskId": "T-140",
+        "title": "Indonesian substantial prep-lane expansion and future runtime-handoff packet",
+        "state": ".agent\\tasks\\T-140\\state.json",
+        "selectionOrder": 6,
+        "writeLock": "indonesian_prep_lane"
       }
     ],
     "draft": [
@@ -100,6 +142,111 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-152",
+        "title": "Viet flagship answer-hub deepening, phrase-class expansion, and cross-link growth packet",
+        "state": ".agent\\tasks\\T-152\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "viet_relation_model"
+      },
+      {
+        "taskId": "T-153",
+        "title": "Tagalog answer-page sidecar bootstrap and first substantial listing-hub enrichment packet",
+        "state": ".agent\\tasks\\T-153\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_relation_model"
+      },
+      {
+        "taskId": "T-151",
+        "title": "Viet answer-page expansion pack 2 recovery rerun and clean review-gate completion",
+        "state": ".agent\\tasks\\T-151\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "viet_relation_model"
+      },
+      {
+        "taskId": "T-150",
+        "title": "Liquid Glass answer-page fidelity recovery closeout and remaining review-gate completion",
+        "state": ".agent\\tasks\\T-150\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "ios_family_shared_ui"
+      },
+      {
+        "taskId": "T-147",
+        "title": "Viet answer-page runtime consumer and data-driven listing-page integration",
+        "state": ".agent\\tasks\\T-147\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "ios_family_shared_ui"
+      },
+      {
+        "taskId": "T-145",
+        "title": "Viet modular answer-page content model and high-value phrase-hub enrichment packet",
+        "state": ".agent\\tasks\\T-145\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "viet_relation_model"
+      },
+      {
+        "taskId": "T-146",
+        "title": "SpeakLocal V2 answer-page visual board refresh and current-state review upgrade",
+        "state": ".agent\\tasks\\T-146\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "visual_review_board"
+      },
+      {
+        "taskId": "T-144",
+        "title": "SpeakLocal V2 AI-shaped listing page implementation and connected phrase-answer workflow",
+        "state": ".agent\\tasks\\T-144\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "ios_family_shared_ui"
+      },
+      {
+        "taskId": "T-143",
+        "title": "Desktop Codex automation self-recovery handoff generator for interrupted meaningful tasks",
+        "state": ".agent\\tasks\\T-143\\state.json",
+        "selectionOrder": 7,
+        "writeLock": "queue_tooling"
+      },
+      {
+        "taskId": "T-142",
+        "title": "Indonesian prep-lane recovery closeout and final review-gate completion packet",
+        "state": ".agent\\tasks\\T-142\\state.json",
+        "selectionOrder": 6,
+        "writeLock": "indonesian_prep_lane"
+      },
+      {
+        "taskId": "T-141",
+        "title": "Tagalog substantial expansion recovery closeout and review-gate completion packet",
+        "state": ".agent\\tasks\\T-141\\state.json",
+        "selectionOrder": 5,
+        "writeLock": "tagalog_relation_model"
+      },
+      {
+        "taskId": "T-138",
+        "title": "SpeakLocal V2 visual screen board and refreshable screenshot contact-sheet workflow",
+        "state": ".agent\\tasks\\T-138\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "visual_review_board"
+      },
+      {
+        "taskId": "T-137",
+        "title": "SpeakLocal V2 grouped listing-card system and lighter lower-section layout for the phrase product page",
+        "state": ".agent\\tasks\\T-137\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "ios_family_shared_ui"
+      },
+      {
+        "taskId": "T-136",
+        "title": "Viet batch 1 expansion, high-friction relation-ready row pack on the dedicated content branch",
+        "state": ".agent\\tasks\\T-136\\state.json",
+        "selectionOrder": 4,
+        "writeLock": "viet_relation_model"
+      },
+      {
+        "taskId": "T-135",
+        "title": "SpeakLocal V2 search page, App Store-style dedicated search flow and Liquid Glass shell integration",
+        "state": ".agent\\tasks\\T-135\\state.json",
+        "selectionOrder": 3,
+        "writeLock": "ios_family_shared_ui"
+      },
       {
         "taskId": "T-127",
         "title": "Desktop Codex automation pilot, Viet country-route trust-panel parity and app-depth honesty packet",
@@ -447,12 +594,12 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 6,
+    "queuedCount": 8,
     "reclaimableCount": 2,
     "inProgressCount": 0,
-    "blockedCount": 2,
+    "blockedCount": 6,
     "draftCount": 1,
-    "recentlyCompletedCount": 49
+    "recentlyCompletedCount": 60
   },
   "notes": [
     "This index is intentionally small and selection-focused.",

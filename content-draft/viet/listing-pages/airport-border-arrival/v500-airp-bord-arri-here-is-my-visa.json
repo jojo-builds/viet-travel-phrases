@@ -1,0 +1,203 @@
+{
+  "id": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+  "familyID": "v500-airp-bord-arri-here-is-my-visa",
+  "phraseID": "v500-airp-bord-arri-here-is-my-visa",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Đây là thị thực của tôi",
+  "englishTitle": "Here is my visa",
+  "pronunciation": "Day la thi thuc cua toi",
+  "summary": "Different ways to say \"Here is my visa\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "airplane.arrival",
+  "tintName": "blue",
+  "categoryIDs": [
+    "airport-border-arrival"
+  ],
+  "audioKey": "v500-airp-bord-arri-here-is-my-visa",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you are handing over a printed visa, e-visa, phone screenshot, or document folder. It tells staff exactly what the document is and that it belongs to you.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use this when you are showing a document or item. The phrase points to it, names it, then marks it as yours.",
+      "breakdown": [
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa-piece-1",
+          "vietnamese": "Đây",
+          "english": "here / this",
+          "audioKey": "breakdown-transport-1-first"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa-piece-2",
+          "vietnamese": "là",
+          "english": "is",
+          "audioKey": "breakdown-v900-tran-how-much-is-the-rental-per-day-piece-5"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa-piece-3",
+          "vietnamese": "thị thực",
+          "english": "visa",
+          "audioKey": "breakdown-v500-airp-bord-arri-here-is-my-visa-piece-3"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa-piece-4",
+          "vietnamese": "của tôi",
+          "english": "my / mine",
+          "audioKey": "breakdown-smalltalk-3-piece-4"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa-full",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Đây là thị thực của tôi is clear and formal enough for document checks. It works best while the visa is already visible in your hand or on your phone.",
+      "phrases": [
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Airport phrases help staff route you to the next counter or service without a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it at immigration, airline check-in, visa-on-arrival counters, or any desk where staff ask for visa proof.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If the visa is on your phone, make sure the screen is bright and unlocked before you start. Staff may need the passport and visa together.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Keep the passport open nearby. The fastest handoff is usually passport plus visa, not a long explanation.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "airport-1",
+          "vietnamese": "Nhập cảnh ở đâu?",
+          "english": "Where is immigration?",
+          "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-immigration",
+          "audioKey": "airport-1"
+        },
+        {
+          "id": "airport-2",
+          "vietnamese": "Lấy hành lý ở đâu?",
+          "english": "Where is baggage claim?",
+          "pronunciation": "lay han lee uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-baggage",
+          "audioKey": "airport-2"
+        },
+        {
+          "id": "airport-3",
+          "vietnamese": "Mua SIM ở đâu?",
+          "english": "Where can I buy a SIM card?",
+          "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-sim",
+          "audioKey": "airport-3"
+        },
+        {
+          "id": "airport-5",
+          "vietnamese": "Khu đón ở đâu?",
+          "english": "Where is the pickup area?",
+          "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-pickup",
+          "audioKey": "airport-5"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "airport-6",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive",
+          "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-bag-missing",
+          "audioKey": "airport-6"
+        },
+        {
+          "id": "v500-airp-bord-arri-where-is-the-atm",
+          "vietnamese": "ATM ở đâu?",
+          "english": "Where is the ATM?",
+          "pronunciation": "ATM o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-airp-bord-arri-where-is-the-atm",
+          "audioKey": "v500-airp-bord-arri-where-is-the-atm"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-passport",
+          "vietnamese": "Đây là hộ chiếu của tôi",
+          "english": "Here is my passport",
+          "pronunciation": "Day la ho chieu cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-airp-bord-arri-here-is-my-passport",
+          "audioKey": "v500-airp-bord-arri-here-is-my-passport"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-airp-bord-arri-here-is-my-visa",
+      "vietnamese": "Đây là thị thực của tôi",
+      "english": "Here is my visa",
+      "pronunciation": "Day la thi thuc cua toi",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+    }
+  ]
+}

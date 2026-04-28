@@ -1,0 +1,57 @@
+{
+  "taskId": "T-155",
+  "title": "Tagalog answer-page expansion pack 2 and flagship listing-hub deepening packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\tagalog-v2-expansion",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "8eff9c85-0260-47bb-9f93-15c9bd0d6072",
+    "label": "desktop-T-155-8eff9c85"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T18:52:31.5670278-05:00",
+    "lastHeartbeatAt": "2026-04-23T19:44:52.2090792-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T21:44:52.2090792-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "tagalog_relation_model"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-155\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-155\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-155\\reviews\\",
+    "logs": ".agent\\tasks\\T-155\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\tagalog-v2-expansion\\content-draft\\tagalog\\answer-page-sample-v1.json",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\tagalog-v2-expansion\\content-draft\\tagalog\\phrase-source.csv",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\tagalog-v2-expansion\\content-draft\\tagalog\\relation-sample-v1.json",
+      ".agent\\tasks\\T-155\\logs\\tagalog-answer-page-expansion-pack-2-notes.md",
+      ".agent\\tasks\\T-155\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T19:44:52.2090792-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 5,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

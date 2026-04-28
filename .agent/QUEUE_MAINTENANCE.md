@@ -8,6 +8,7 @@ Use this file for the heavier maintenance and queue top-up pass.
 - keep the queued backlog at a minimum depth of `6` meaningful non-overlapping tasks
 - seed only tasks that are useful, substantial enough for the 3-gate review contract, and safe against current active locks
 - handle the heavier strategic/top-up work that should not happen in every hourly repair cycle
+- generate or backfill bounded recovery handoffs for interrupted meaningful tasks when landed work is worth salvaging
 
 ## Lean read order
 Read only what is needed, in this order.
@@ -45,6 +46,16 @@ Treat `queue-index.json` as a rebuildable fast-selection aid, not a fragile patc
 4. After rewriting, treat the file as settled for the rest of the run unless a newly seeded task requires one final full rewrite.
 
 Prefer a single full-file rewrite over brittle exact-text edits.
+
+## Interrupted meaningful-task recovery handoff rule
+Use the explicit recovery-handoff surface when a meaningful task has stale or expired ownership and already-landed work should be salvaged through a fresh closeout task instead of reopening the stale original task.
+
+1. Start with `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 recovery-handoff --task-id T-xxx --dry-run`.
+2. Treat `would_create` as the signal that the task is eligible for a new recovery handoff packet.
+3. Treat `already_recovered` as the signal that an existing recovery task already owns the closeout; write mode may still backfill machine-readable recovery metadata onto that original/recovery pair.
+4. Keep `repair` cheap and non-seeding; do not hide recovery-task creation inside ordinary repair.
+5. Keep `desktop-recover` focused on Codex desktop start/restart only; it must not author recovery task packets.
+6. In write mode, the original task becomes blocked interrupted history and the recovery task becomes the only active follow-up.
 
 ## Hourly maintenance contract
 1. Repair queue drift first. If `queue-index.json` disagrees with `state.json`, trust `state.json`.

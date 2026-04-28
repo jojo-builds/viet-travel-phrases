@@ -120,6 +120,11 @@ See also:
 - For SpeakLocal, current likely pattern is:
   - global search should stay highly accessible and may become a bottom/tab-bar-led or floating control in the broader browsing experience
   - phrase-detail search can remain in the top shell when that is clearer and calmer
+- Current preferred phrase-detail experiment:
+  - floating Liquid Glass back button on the top layer
+  - bottom-right Liquid Glass search trigger that expands into a full search capsule
+  - bottom utility controls shrink away while search expands
+  - phrase content remains on a clean white/light-gray layer beneath that moving glass chrome
 - Motion should feel fluid and relationship-based:
   - taps should expand from the touched element when possible
   - controls should feel like they live on one floating plane

@@ -1,0 +1,5 @@
+Approval: BLOCK
+Findings:
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-authoring-notes.md:30-37` now repeats the T-154 promotion block twice. That is authoring drift in a touched safety note, and the rerun logic in `E:\AI\SpeakLocal-App-Family\.agent\tasks\T-154\apply_flagship_cluster_pass.py:2145-2158` explains it: the regex rewrites the T-152 section but does not consume an existing top-level T-154 block, so corrective reruns can duplicate prose.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\docs\PHRASE_RELATIONSHIP_MODEL.md:121-122` repeats the same legacy-anchor cap rule twice. The write path in `E:\AI\SpeakLocal-App-Family\.agent\tasks\T-154\apply_flagship_cluster_pass.py:2211-2213` appends that caution on replacement without an idempotence guard, so this pass introduced additional doc drift even though the bathroom ledger fix itself is now present and stayed within the allowed write scope.
+Gate recommendation: Hold Gate 2 for this role until the duplicated note/model text is removed and the T-154 authoring script writes those safety docs idempotently.

@@ -1,0 +1,161 @@
+{
+  "id": "viet-phrase-repair-english-help-self-limit",
+  "familyID": "repair-english-help",
+  "phraseID": "repair-english-help-self-limit",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Xin lỗi, tôi không nói tiếng Việt",
+  "englishTitle": "Sorry, I don’t speak Vietnamese",
+  "pronunciation": "sin loy toy khong noy tyeng vyet",
+  "summary": "A focused guide to using Xin lỗi, tôi không nói tiếng Việt as a nearby form of Anh/chị nói tiếng Anh không?.",
+  "iconName": "questionmark.bubble.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "understanding-repair"
+  ],
+  "audioKey": "repair-english-help-self-limit",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Xin lỗi, tôi không nói tiếng Việt is useful when \"Sorry, I don’t speak Vietnamese\" fits better than the parent phrase. Use this after the first phrase when you need to explain the language problem clearly.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "repair-english-help-self-limit-piece-1",
+          "vietnamese": "Xin lỗi,",
+          "english": "excuse me / sorry",
+          "audioKey": "breakdown-authored-xin-loi-f08350a24d"
+        },
+        {
+          "id": "repair-english-help-self-limit-piece-2",
+          "vietnamese": "tôi không",
+          "english": "I do not",
+          "audioKey": "breakdown-authored-toi-khong-d857f6f7a6"
+        },
+        {
+          "id": "repair-english-help-self-limit-piece-3",
+          "vietnamese": "nói",
+          "english": "speak / say",
+          "audioKey": "breakdown-problems-3-first"
+        },
+        {
+          "id": "repair-english-help-self-limit-piece-4",
+          "vietnamese": "tiếng",
+          "english": "speak",
+          "audioKey": "breakdown-authored-tieng-cdab7036ce"
+        },
+        {
+          "id": "repair-english-help-self-limit-piece-5",
+          "vietnamese": "Việt",
+          "english": "write",
+          "audioKey": "breakdown-smalltalk-4-piece-3"
+        },
+        {
+          "id": "repair-english-help-self-limit-full",
+          "vietnamese": "Xin lỗi, tôi không nói tiếng Việt",
+          "english": "Sorry, I don’t speak Vietnamese",
+          "audioKey": "repair-english-help-self-limit"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this after the first phrase when you need to explain the language problem clearly. Return to Anh/chị nói tiếng Anh không? when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "repair-english-help",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
+          "english": "Do you speak English?",
+          "pronunciation": "anh chee noy tyeng anh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-english-help",
+          "audioKey": "repair-english-help"
+        },
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        },
+        {
+          "id": "repair-2",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "pronunciation": "vee-et zoong zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-write-down",
+          "audioKey": "repair-2"
+        },
+        {
+          "id": "repair-3",
+          "vietnamese": "Cái đó nghĩa là gì?",
+          "english": "What does that mean?",
+          "pronunciation": "gai doh ngee-ah lah zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-meaning",
+          "audioKey": "repair-3"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "repair-english-help-self-limit",
+      "vietnamese": "Xin lỗi, tôi không nói tiếng Việt",
+      "english": "Sorry, I don’t speak Vietnamese",
+      "pronunciation": "sin loy toy khong noy tyeng vyet",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "repair-english-help-self-limit"
+    }
+  ]
+}

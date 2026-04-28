@@ -1,0 +1,39 @@
+SpeakLocal Content And Audio Workflow Summary
+
+Files written:
+- C:\Users\Administrator\.openclaw\workspace\projects\SPEAKLOCAL-CONTENT-AND-AUDIO-WORKFLOW.md
+- C:\Users\Administrator\.openclaw\workspace\projects\SPEAKLOCAL-CONTENT-AND-AUDIO-WORKFLOW-SUMMARY.txt
+
+Workflow summary:
+- Scope: content/audio/reuse lane only. Release-proof, StoreKit, App Store Connect, and live device-proof work stay in `docs/operations/*`.
+- Truth surfaces stay separated: planning truth -> prep truth -> repo truth -> website/release-validation truth, with the lane board used only for orchestration.
+- Phase sequence: phrase architecture, phrase inventory, English cleanup, repo reconciliation, translation/backfill, batch prep, audio generation, audio QA, app integration, website export/reuse, device validation, release-confidence check.
+- Default split: Jay owns judgment and approvals, ChatGPT is the default large-output drafting tool, and Codex is the default reconciliation/integration/validation tool.
+- Free vs paid rule: free is the survival spine, paid is the follow-up/recovery layer, and weak paid candidates should move to free before they are dropped.
+- Batch sizing rule: use advisory defaults, not rigid contracts, and do not split intent families unless there is no workable alternative.
+- Runtime graduation rule: do not promote a new language lane into runtime until translation, pronunciation, honest audio posture, localized search/presentation handling, and a validation plan are in place.
+- Website reuse rule: export only approved starter/default-first slices through the website-safe export seam, never by reading app runtime internals directly.
+
+Recommended long-term home:
+- Hybrid approach.
+- Canonical home should be a workspace ops/process document.
+- The repo should keep a short pointer or mirror in `E:\AI\SpeakLocal-App-Family\docs\`.
+- A dedicated skill should come later, after one more real lane proves the workflow.
+
+Immediate operating-process updates to make:
+- Add a short reference from `C:\Users\Administrator\.openclaw\workspace\projects\README.md` or the workspace process area so this becomes normal intake guidance.
+- Add a compact repo-facing pointer doc in SpeakLocal docs after one more real lane proves the blueprint holds.
+- Update the family skill or add a narrow workflow skill after the next successful proving lane.
+- Point `E:\AI\SpeakLocal-App-Family\docs\LANGUAGE_PREP_WORKFLOW.md` to this blueprint for runtime-graduation, translation, audio-posture, and review-gate expectations.
+
+Maintenance/update loop in plain language:
+- Use the workflow when a lane starts and before major prompts, translation runs, audio batches, or website-reuse work.
+- Move outputs from planning truth into prep truth, then into repo truth, then into validation truth without mixing the surfaces.
+- If a reusable lesson changes phases, sequencing, batching, gates, artifact rules, tool split, reuse seams, or release lessons, update the workflow before closing the task.
+- After updating the canonical workflow, update the repo pointer or mirror and the affected lane or release doc in the same task.
+
+Lean subagent review confirmation:
+- Reviewed through lean subagent review before finalization.
+- Reviewer angles: process realism, reuse across languages, overengineering risk, and truth surfaces/maintenance.
+- First review pass blocked the initial draft and drove revisions.
+- Second review pass returned PASS across all four reviewer angles.

@@ -1,0 +1,62 @@
+{
+  "taskId": "T-142",
+  "title": "Indonesian prep-lane recovery closeout and final review-gate completion packet",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\indonesian-expansion-pack",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "t142-20260423T022824-codex",
+    "label": "codex-desktop-t142-022824"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T02:28:24-05:00",
+    "lastHeartbeatAt": "2026-04-23T02:49:05-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T04:49:05-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "indonesian_prep_lane"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-142\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-142\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-142\\reviews\\",
+    "logs": ".agent\\tasks\\T-142\\logs\\",
+    "requiredForDone": [
+      ".agent\\tasks\\T-142\\logs\\indonesian-recovery-closeout.md",
+      ".agent\\tasks\\T-142\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T03:30:06.137836-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 6,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "recovery": {
+    "kind": "recovery-handoff",
+    "dedupeKey": "interrupted-recovery:T-140",
+    "originalTaskId": "T-140",
+    "generatedAt": "2026-04-23T03:30:06.137836-05:00",
+    "generatedBy": "queue-tool-legacy-backfill",
+    "lastSyncedAt": "2026-04-23T03:30:06.137836-05:00"
+  }
+}

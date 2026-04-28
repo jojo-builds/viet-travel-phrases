@@ -1,0 +1,6 @@
+# Gate 3 Pass 1: Hub Expansion Review
+Approval: APPROVE
+- The final set clears the hub-expansion target with `58` answer-page hubs across `8` phrase classes and `8` module mixes, and the hub spread covers all required traveler-friction lanes with real flagship topics in transport, directions, hotel, money, food, repair, greetings, and urgent help.
+- The deepening story looks real, not inflated: `45` packet primaries are promoted from `first-wave-priority.csv`, while `13` retained legacy hubs remain in the sample and now carry `5`-`7` module stacks under the newer mix contract, which is enough to satisfy the requirement to materially deepen at least `10` existing hubs.
+- Scope stays bounded and additive. `relation-sample-v1.json` has `80` clusters total but only `58` answer-page-ready hubs, so the worker expanded the core library without pretending the whole broader relation graph is equally promoted.
+- I do not see an obvious count/story mismatch: the answer-page family set exactly matches the relation-sidecar answer-page-ready set, the `58` hubs resolve cleanly as `45` selected packet primaries plus `13` legacy hubs, and `phrase-source.csv` carries `103` answer-page-marked rows via its note-level handoff markers.

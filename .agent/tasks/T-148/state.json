@@ -1,0 +1,65 @@
+{
+  "taskId": "T-148",
+  "title": "SpeakLocal V2 Liquid Glass answer-page visual fidelity pass toward approved mockup",
+  "status": "blocked",
+  "phase": "interrupted-awaiting-recovery",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-manual-t148-bc865b38-8b17-4200-898f-38fdc5527e22",
+    "label": "manual-T-148-fidelity-pass"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T10:21:30-05:00",
+    "lastHeartbeatAt": "2026-04-23T11:05:00-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T13:05:00-05:00",
+    "reclaimReason": "manual-codex-desktop-restart-loading-model"
+  },
+  "locks": {
+    "write": [
+      "ios_family_shared_ui"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [
+    "Interrupted by Codex desktop loading-model instability after the main fidelity implementation and validation pass but before Gate 2 and Gate 3 closeout completed. Recover through T-150 instead of reopening the stale original task."
+  ],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-148\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-148\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-148\\reviews\\",
+    "logs": ".agent\\tasks\\T-148\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\components\\preview\\PhraseProductPrototype.tsx",
+      ".agent\\tasks\\T-148\\logs\\liquid-glass-fidelity-pass-notes.md",
+      ".agent\\tasks\\T-148\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T11:09:36.5851761-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "recovery": {
+    "kind": "interrupted-original",
+    "dedupeKey": "interrupted-recovery:T-148",
+    "linkedRecoveryTaskId": "T-150",
+    "generatedAt": "2026-04-23T11:09:36.5851761-05:00",
+    "generatedBy": "manual-orchestrator-recovery",
+    "lastSyncedAt": "2026-04-23T11:09:36.5851761-05:00"
+  }
+}

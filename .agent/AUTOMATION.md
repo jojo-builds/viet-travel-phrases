@@ -30,3 +30,13 @@ Use this file when the automation prompt says to process the next repo-local que
 - If no candidate can be claimed, stop honestly and report why.
 - If the runtime cannot satisfy the required 3-gate / 4-subagent / unanimous review contract for meaningful tasks, stop honestly instead of downgrading.
 - Process one task only, then stop.
+
+## Interruption recovery
+- If the Codex desktop app shows `loading model`, reauthentication, or obvious worker-session drift during a meaningful task, prefer app restart plus a fresh worker thread over trying to nurse the old thread back to health.
+- If meaningful artifacts already landed before the interruption, do not restart the domain work from scratch by default. Create or use a recovery task that:
+  - audits the interrupted task's current truth
+  - reruns only the missing validations and review gates
+  - leaves the original interrupted task as historical truth
+- For repo-local queue tooling, inspect first with `powershell -NoProfile -File .agent\Invoke-SpeakLocalQueueTool.ps1 recovery-handoff --task-id T-xxx --dry-run`.
+- Use write-mode `recovery-handoff` only when the interrupted task is meaningful, stale, and has landed work worth salvaging; keep `repair` non-seeding and keep `desktop-recover` limited to app start/restart plus recovery-ledger updates.
+- Recovery tasks should be explicit about whether they are allowed to repair worktree files or only close out the interrupted artifact set.

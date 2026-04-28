@@ -1,0 +1,207 @@
+{
+  "id": "viet-family-hotel-reservation",
+  "familyID": "hotel-reservation",
+  "phraseID": "hotel-1",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Tôi có đặt phòng",
+  "englishTitle": "I have a reservation",
+  "pronunciation": "toy koh dat fong",
+  "summary": "Different ways to say \"I have a reservation\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "bed.double.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "hotel-accommodation"
+  ],
+  "audioKey": "hotel-1",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this at the desk when you have already booked. At check-in, reservation first is usually the fastest path. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "hotel-1-piece-1",
+          "vietnamese": "Tôi có",
+          "english": "I have",
+          "audioKey": "breakdown-authored-toi-co-054b2152b4"
+        },
+        {
+          "id": "hotel-1-piece-2",
+          "vietnamese": "đặt",
+          "english": "book / reserve",
+          "audioKey": "breakdown-v900-hote-acco-the-reservation-is-under-this-name-first"
+        },
+        {
+          "id": "hotel-1-piece-3",
+          "vietnamese": "phòng",
+          "english": "room",
+          "audioKey": "breakdown-hotel-4-first"
+        },
+        {
+          "id": "hotel-1-full",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "audioKey": "hotel-1"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi có đặt phòng is the safest default for \"I have a reservation\". Use this at the desk when you have already booked. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "hotel-1"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this at the desk when you have already booked. Use it in front desk, room, check-in, and hotel-service moments when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Pair the phrase with a booking screen, key card, room number, or photo of the problem.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-check-in",
+          "audioKey": "hotel-2"
+        },
+        {
+          "id": "hotel-3",
+          "vietnamese": "Mấy giờ trả phòng?",
+          "english": "What time is check-out?",
+          "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-checkout-time",
+          "audioKey": "hotel-3"
+        },
+        {
+          "id": "hotel-checkout",
+          "vietnamese": "Cho tôi trả phòng",
+          "english": "I’d like to check out",
+          "pronunciation": "cho toy tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-checkout",
+          "audioKey": "hotel-checkout"
+        },
+        {
+          "id": "hotel-4",
+          "vietnamese": "Phòng này nóng quá",
+          "english": "This room is too hot",
+          "pronunciation": "fong nai nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-room-hot",
+          "audioKey": "hotel-4"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "hotel-5",
+          "vietnamese": "Máy lạnh không chạy",
+          "english": "The air conditioner isn’t working",
+          "pronunciation": "mai lanh khong chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-aircon-broken",
+          "audioKey": "hotel-5"
+        },
+        {
+          "id": "hotel-6",
+          "vietnamese": "Cho tôi thêm khăn",
+          "english": "More towels please",
+          "pronunciation": "cho toy them khan",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-more-supplies",
+          "audioKey": "hotel-6"
+        },
+        {
+          "id": "hotel-7",
+          "vietnamese": "Giữ hành lý giúp tôi",
+          "english": "Please hold my luggage",
+          "pronunciation": "zoo han lee zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-luggage",
+          "audioKey": "hotel-7"
+        },
+        {
+          "id": "v500-hote-acco-the-door-does-not-lock",
+          "vietnamese": "Cửa không khóa",
+          "english": "The door does not lock",
+          "pronunciation": "Cua khong khoa",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-v500-hote-acco-the-door-does-not-lock",
+          "audioKey": "v500-hote-acco-the-door-does-not-lock"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "hotel-1",
+      "vietnamese": "Tôi có đặt phòng",
+      "english": "I have a reservation",
+      "pronunciation": "toy koh dat fong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "hotel-1"
+    }
+  ]
+}

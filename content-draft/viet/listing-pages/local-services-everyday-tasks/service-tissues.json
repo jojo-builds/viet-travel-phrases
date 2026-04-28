@@ -1,0 +1,183 @@
+{
+  "id": "viet-family-service-tissues",
+  "familyID": "service-tissues",
+  "phraseID": "store-3",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Cho tôi khăn giấy",
+  "englishTitle": "Tissues please",
+  "pronunciation": "cho toy khan zai",
+  "summary": "Different ways to say \"Tissues please\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "building.2.fill",
+  "tintName": "teal",
+  "categoryIDs": [
+    "local-services-everyday-tasks"
+  ],
+  "audioKey": "store-3",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you need tissues at a store or counter. This stays practical and day-to-day, not fancy. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "store-3-piece-1",
+          "vietnamese": "Cho tôi",
+          "english": "can I have",
+          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
+        },
+        {
+          "id": "store-3-piece-2",
+          "vietnamese": "khăn",
+          "english": "please",
+          "audioKey": "breakdown-authored-khan-2f6c7b4aaf"
+        },
+        {
+          "id": "store-3-piece-3",
+          "vietnamese": "giấy",
+          "english": "tissues please",
+          "audioKey": "breakdown-v900-emer-safe-i-need-a-temporary-travel-document-piece-3"
+        },
+        {
+          "id": "store-3-full",
+          "vietnamese": "Cho tôi khăn giấy",
+          "english": "Tissues please",
+          "audioKey": "store-3"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Cho tôi khăn giấy is the safest default for \"Tissues please\". Use this when you need tissues at a store or counter. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "store-3",
+          "vietnamese": "Cho tôi khăn giấy",
+          "english": "Tissues please",
+          "pronunciation": "cho toy khan zai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "store-3"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need tissues at a store or counter. Use it in buying small items, receipts, bags, and everyday errands when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to the item or show a photo when you can. It avoids guessing from pronunciation alone.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "store-1",
+          "vietnamese": "Cho tôi chai nước",
+          "english": "A bottle of water please",
+          "pronunciation": "cho toy chai nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-water",
+          "audioKey": "store-1"
+        },
+        {
+          "id": "store-2",
+          "vietnamese": "Có túi không?",
+          "english": "Do you have a bag?",
+          "pronunciation": "koh too-ee khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-bag",
+          "audioKey": "store-2"
+        },
+        {
+          "id": "store-4",
+          "vietnamese": "Ở đâu có kem chống nắng?",
+          "english": "Where is the sunscreen?",
+          "pronunciation": "uh dow koh kem chong nang",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-sunscreen",
+          "audioKey": "store-4"
+        },
+        {
+          "id": "store-5",
+          "vietnamese": "Mở cái này giúp tôi",
+          "english": "Please open this for me",
+          "pronunciation": "muh gai nai zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-open-this",
+          "audioKey": "store-5"
+        },
+        {
+          "id": "store-6",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "pronunciation": "toy quet teh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-card",
+          "audioKey": "store-6"
+        },
+        {
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
+        },
+        {
+          "id": "v500-loca-serv-ever-task-where-can-i-buy-water",
+          "vietnamese": "Tôi có thể mua nước ở đâu?",
+          "english": "Where can I buy water?",
+          "pronunciation": "Toi co the mua nuoc o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-loca-serv-ever-task-where-can-i-buy-water",
+          "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "store-3",
+      "vietnamese": "Cho tôi khăn giấy",
+      "english": "Tissues please",
+      "pronunciation": "cho toy khan zai",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "store-3"
+    }
+  ]
+}

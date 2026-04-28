@@ -1,0 +1,143 @@
+{
+  "id": "viet-phrase-health-1",
+  "familyID": "health-pharmacy",
+  "phraseID": "health-1",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Nhà thuốc ở đâu?",
+  "englishTitle": "Where is the pharmacy?",
+  "pronunciation": "nya thoo-ok uh dow",
+  "summary": "A focused guide to using Nhà thuốc ở đâu? as a nearby form of Nhà thuốc gần nhất ở đâu?.",
+  "iconName": "cross.case.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "health-pharmacy"
+  ],
+  "audioKey": "health-1",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Nhà thuốc ở đâu? is useful when \"Where is the pharmacy?\" fits better than the parent phrase. Use this when you need a pharmacy and a simple direct wording is enough.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
+      "breakdown": [
+        {
+          "id": "health-1-piece-1",
+          "vietnamese": "Nhà thuốc",
+          "english": "pharmacy",
+          "audioKey": "breakdown-authored-nha-thuoc-0ff922e96f"
+        },
+        {
+          "id": "health-1-piece-2",
+          "vietnamese": "ở đâu?",
+          "english": "where?",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "health-1-full",
+          "vietnamese": "Nhà thuốc ở đâu?",
+          "english": "Where is the pharmacy?",
+          "audioKey": "health-1"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need a pharmacy and a simple direct wording is enough. Return to Nhà thuốc gần nhất ở đâu? when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Do not soften urgent medical needs too much. Clear and direct is safer.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "health-pharmacy-clearer",
+          "vietnamese": "Nhà thuốc gần nhất ở đâu?",
+          "english": "Where is the nearest pharmacy?",
+          "pronunciation": "nya thoo-ok gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-pharmacy",
+          "audioKey": "health-pharmacy-clearer"
+        },
+        {
+          "id": "problems-6",
+          "vietnamese": "Tôi cần bác sĩ",
+          "english": "I need a doctor",
+          "pronunciation": "toy gun bak see",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-doctor",
+          "audioKey": "problems-6"
+        },
+        {
+          "id": "health-2",
+          "vietnamese": "Tôi bị đau đầu",
+          "english": "I have a headache",
+          "pronunciation": "toy bee dow dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-headache",
+          "audioKey": "health-2"
+        },
+        {
+          "id": "health-3",
+          "vietnamese": "Tôi đau bụng",
+          "english": "My stomach hurts",
+          "pronunciation": "toy dow boong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-stomach",
+          "audioKey": "health-3"
+        },
+        {
+          "id": "health-4",
+          "vietnamese": "Có thuốc say xe không?",
+          "english": "Do you have motion sickness medicine?",
+          "pronunciation": "koh thoo-ok sai seh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-motion-sickness",
+          "audioKey": "health-4"
+        },
+        {
+          "id": "health-5",
+          "vietnamese": "Tôi bị dị ứng cái này",
+          "english": "I am allergic to this",
+          "pronunciation": "toy bee zee oong gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-allergy",
+          "audioKey": "health-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "health-1",
+      "vietnamese": "Nhà thuốc ở đâu?",
+      "english": "Where is the pharmacy?",
+      "pronunciation": "nya thoo-ok uh dow",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "health-1"
+    }
+  ]
+}

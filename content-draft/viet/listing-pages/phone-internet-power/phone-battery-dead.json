@@ -1,0 +1,195 @@
+{
+  "id": "viet-family-phone-battery-dead",
+  "familyID": "phone-battery-dead",
+  "phraseID": "phone-3",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Điện thoại tôi hết pin rồi",
+  "englishTitle": "My phone battery is dead",
+  "pronunciation": "dyen thoai toy het pin roy",
+  "summary": "Different ways to say \"My phone battery is dead\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "wifi",
+  "tintName": "blue",
+  "categoryIDs": [
+    "phone-internet-power"
+  ],
+  "audioKey": "phone-3",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this before asking for a charger or outlet. This is the short version of a common travel problem. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "phone-3-piece-1",
+          "vietnamese": "Điện thoại",
+          "english": "phone",
+          "audioKey": "breakdown-authored-dien-thoai-bad3a61e57"
+        },
+        {
+          "id": "phone-3-piece-2",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "phone-3-piece-3",
+          "vietnamese": "hết",
+          "english": "battery",
+          "audioKey": "breakdown-authored-het-6a8751044e"
+        },
+        {
+          "id": "phone-3-piece-4",
+          "vietnamese": "pin",
+          "english": "battery",
+          "audioKey": "breakdown-authored-pin-d145a2a905"
+        },
+        {
+          "id": "phone-3-piece-5",
+          "vietnamese": "rồi",
+          "english": "dead",
+          "audioKey": "breakdown-authored-roi-081cfe9299"
+        },
+        {
+          "id": "phone-3-full",
+          "vietnamese": "Điện thoại tôi hết pin rồi",
+          "english": "My phone battery is dead",
+          "audioKey": "phone-3"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Điện thoại tôi hết pin rồi is the safest default for \"My phone battery is dead\". Use this before asking for a charger or outlet. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "phone-3",
+          "vietnamese": "Điện thoại tôi hết pin rồi",
+          "english": "My phone battery is dead",
+          "pronunciation": "dyen thoai toy het pin roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "phone-3"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this before asking for a charger or outlet. Use it in Wi-Fi, SIM, battery, charging, maps, and phone setup when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Do not hand over your unlocked phone unless you trust the situation. Show the screen first.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Show the phone screen while you speak. A visible error message often explains the problem faster than more words.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "phone-1",
+          "vietnamese": "Mật khẩu Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "mat khau wai-fai la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-wifi-password",
+          "audioKey": "phone-1"
+        },
+        {
+          "id": "phone-2",
+          "vietnamese": "Có bán SIM không?",
+          "english": "Do you sell SIM cards?",
+          "pronunciation": "koh ban sim khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-sim",
+          "audioKey": "phone-2"
+        },
+        {
+          "id": "phone-4",
+          "vietnamese": "Có sạc không?",
+          "english": "Do you have a charger?",
+          "pronunciation": "koh sahk khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-charger",
+          "audioKey": "phone-4"
+        },
+        {
+          "id": "phone-5",
+          "vietnamese": "Tôi sạc điện thoại ở đây được không?",
+          "english": "Can I charge my phone here?",
+          "pronunciation": "toy sahk dyen thoai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-charge-here",
+          "audioKey": "phone-5"
+        },
+        {
+          "id": "v500-phon-inte-powe-my-map-is-not-working",
+          "vietnamese": "Bản đồ của tôi không hoạt động",
+          "english": "My map is not working",
+          "pronunciation": "Ban do cua toi khong hoat dong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
+          "audioKey": "v500-phon-inte-powe-my-map-is-not-working"
+        },
+        {
+          "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "vietnamese": "Tôi có thể mua SIM ở đâu?",
+          "english": "Where can I get a local SIM card?",
+          "pronunciation": "toy koh theh moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87"
+        },
+        {
+          "id": "v500-phon-inte-powe-i-need-an-esim",
+          "vietnamese": "Tôi cần một eSIM",
+          "english": "I need an eSIM",
+          "pronunciation": "Toi can mot eSIM",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-i-need-an-esim",
+          "audioKey": "v500-phon-inte-powe-i-need-an-esim"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "phone-3",
+      "vietnamese": "Điện thoại tôi hết pin rồi",
+      "english": "My phone battery is dead",
+      "pronunciation": "dyen thoai toy het pin roy",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "phone-3"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "viet-family-v500-unde-repa-please-say-it-slowly",
+  "familyID": "v500-unde-repa-please-say-it-slowly",
+  "phraseID": "v500-unde-repa-please-say-it-slowly",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Hãy nói từ từ nhé",
+  "englishTitle": "Please say it slowly",
+  "pronunciation": "Hay noi tu tu nhe",
+  "summary": "Different ways to say \"Please say it slowly\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "questionmark.bubble.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "understanding-repair"
+  ],
+  "audioKey": "v500-unde-repa-please-say-it-slowly",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when the conversation is stuck and you need a clearer next step fast. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "v500-unde-repa-please-say-it-slowly-piece-1",
+          "vietnamese": "Hãy",
+          "english": "or",
+          "audioKey": "breakdown-money-premium-write-total-first"
+        },
+        {
+          "id": "v500-unde-repa-please-say-it-slowly-piece-2",
+          "vietnamese": "nói",
+          "english": "speak / say",
+          "audioKey": "breakdown-problems-3-first"
+        },
+        {
+          "id": "v500-unde-repa-please-say-it-slowly-piece-3",
+          "vietnamese": "từ",
+          "english": "it",
+          "audioKey": "breakdown-authored-tu-c826c3782d"
+        },
+        {
+          "id": "v500-unde-repa-please-say-it-slowly-piece-4",
+          "vietnamese": "từ",
+          "english": "slowly",
+          "audioKey": "breakdown-authored-tu-c826c3782d"
+        },
+        {
+          "id": "v500-unde-repa-please-say-it-slowly-piece-5",
+          "vietnamese": "nhé",
+          "english": "please say it slowly",
+          "audioKey": "breakdown-food-need-table-piece-7"
+        },
+        {
+          "id": "v500-unde-repa-please-say-it-slowly-full",
+          "vietnamese": "Hãy nói từ từ nhé",
+          "english": "Please say it slowly",
+          "audioKey": "v500-unde-repa-please-say-it-slowly"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Hãy nói từ từ nhé is the safest default for \"Please say it slowly\". Use this when the conversation is stuck and you need a clearer next step fast. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "v500-unde-repa-please-say-it-slowly",
+          "vietnamese": "Hãy nói từ từ nhé",
+          "english": "Please say it slowly",
+          "pronunciation": "Hay noi tu tu nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v500-unde-repa-please-say-it-slowly"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when the conversation is stuck and you need a clearer next step fast. It helps in moments when Vietnamese stops making sense, especially when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "If speaking does not work, move quickly to writing, pointing, or showing the exact word on your phone.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        },
+        {
+          "id": "repair-2",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "pronunciation": "vee-et zoong zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-write-down",
+          "audioKey": "repair-2"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "repair-3",
+          "vietnamese": "Cái đó nghĩa là gì?",
+          "english": "What does that mean?",
+          "pronunciation": "gai doh ngee-ah lah zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-meaning",
+          "audioKey": "repair-3"
+        },
+        {
+          "id": "repair-6",
+          "vietnamese": "Làm ơn nói lại số đó",
+          "english": "Please say the number again",
+          "pronunciation": "lahm uhn noy lie soh doh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-number",
+          "audioKey": "repair-6"
+        },
+        {
+          "id": "repair-english-help",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
+          "english": "Do you speak English?",
+          "pronunciation": "anh chee noy tyeng anh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-english-help",
+          "audioKey": "repair-english-help"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-unde-repa-please-say-it-slowly",
+      "vietnamese": "Hãy nói từ từ nhé",
+      "english": "Please say it slowly",
+      "pronunciation": "Hay noi tu tu nhe",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v500-unde-repa-please-say-it-slowly"
+    }
+  ]
+}

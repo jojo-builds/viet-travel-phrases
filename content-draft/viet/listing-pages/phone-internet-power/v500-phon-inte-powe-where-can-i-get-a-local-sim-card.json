@@ -1,0 +1,183 @@
+{
+  "id": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+  "familyID": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+  "phraseID": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Tôi có thể mua SIM ở đâu?",
+  "englishTitle": "Where can I get a local SIM card?",
+  "pronunciation": "toy koh theh moo-ah sim uh dow",
+  "summary": "Different ways to say \"Where can I get a local SIM card?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "wifi",
+  "tintName": "blue",
+  "categoryIDs": [
+    "phone-internet-power"
+  ],
+  "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you land, lose data, or need a local mobile plan. In real travel speech, asking where to buy a SIM is clearer than a literal 'local SIM card' sentence.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
+      "breakdown": [
+        {
+          "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card-piece-1",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "audioKey": "breakdown-authored-toi-co-the-c42da3d159"
+        },
+        {
+          "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card-piece-2",
+          "vietnamese": "mua SIM",
+          "english": "buy a SIM",
+          "audioKey": "breakdown-airport-sim-subject"
+        },
+        {
+          "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card-piece-3",
+          "vietnamese": "ở đâu?",
+          "english": "where?",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card-full",
+          "vietnamese": "Tôi có thể mua SIM ở đâu?",
+          "english": "Where can I get a local SIM card?",
+          "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi có thể mua SIM ở đâu? is polite and easy to understand. You can also shorten it to Mua SIM ở đâu? when pointing at a phone kiosk.",
+      "phrases": [
+        {
+          "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "vietnamese": "Tôi có thể mua SIM ở đâu?",
+          "english": "Where can I get a local SIM card?",
+          "pronunciation": "toy koh theh moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it at airports, convenience stores, phone shops, hotel desks, or tourist counters when you need mobile data before moving on.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Ask to see the data amount and expiration date before paying. A SIM plan can sound clear in speech but still be different on the printed package.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Show your phone and say SIM. Staff usually understand the goal quickly once they see the screen or SIM tray.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "phone-1",
+          "vietnamese": "Mật khẩu Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "mat khau wai-fai la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-wifi-password",
+          "audioKey": "phone-1"
+        },
+        {
+          "id": "phone-2",
+          "vietnamese": "Có bán SIM không?",
+          "english": "Do you sell SIM cards?",
+          "pronunciation": "koh ban sim khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-sim",
+          "audioKey": "phone-2"
+        },
+        {
+          "id": "phone-3",
+          "vietnamese": "Điện thoại tôi hết pin rồi",
+          "english": "My phone battery is dead",
+          "pronunciation": "dyen thoai toy het pin roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-battery-dead",
+          "audioKey": "phone-3"
+        },
+        {
+          "id": "phone-4",
+          "vietnamese": "Có sạc không?",
+          "english": "Do you have a charger?",
+          "pronunciation": "koh sahk khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-charger",
+          "audioKey": "phone-4"
+        },
+        {
+          "id": "phone-5",
+          "vietnamese": "Tôi sạc điện thoại ở đây được không?",
+          "english": "Can I charge my phone here?",
+          "pronunciation": "toy sahk dyen thoai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-charge-here",
+          "audioKey": "phone-5"
+        },
+        {
+          "id": "v500-phon-inte-powe-my-map-is-not-working",
+          "vietnamese": "Bản đồ của tôi không hoạt động",
+          "english": "My map is not working",
+          "pronunciation": "Ban do cua toi khong hoat dong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
+          "audioKey": "v500-phon-inte-powe-my-map-is-not-working"
+        },
+        {
+          "id": "v500-phon-inte-powe-i-need-an-esim",
+          "vietnamese": "Tôi cần một eSIM",
+          "english": "I need an eSIM",
+          "pronunciation": "Toi can mot eSIM",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-i-need-an-esim",
+          "audioKey": "v500-phon-inte-powe-i-need-an-esim"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "vietnamese": "Tôi có thể mua SIM ở đâu?",
+      "english": "Where can I get a local SIM card?",
+      "pronunciation": "toy koh theh moo-ah sim uh dow",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87"
+    }
+  ]
+}

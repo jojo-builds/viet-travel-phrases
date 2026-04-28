@@ -1,0 +1,195 @@
+{
+  "id": "viet-family-service-sunscreen",
+  "familyID": "service-sunscreen",
+  "phraseID": "store-4",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Ở đâu có kem chống nắng?",
+  "englishTitle": "Where is the sunscreen?",
+  "pronunciation": "uh dow koh kem chong nang",
+  "summary": "Different ways to say \"Where is the sunscreen?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "building.2.fill",
+  "tintName": "teal",
+  "categoryIDs": [
+    "local-services-everyday-tasks"
+  ],
+  "audioKey": "store-4",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you need the exact aisle or shelf, not general help. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "store-4-piece-1",
+          "vietnamese": "Ở đâu",
+          "english": "where?",
+          "audioKey": "breakdown-authored-o-dau-ca439c525d"
+        },
+        {
+          "id": "store-4-piece-2",
+          "vietnamese": "có",
+          "english": "have / yes",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "store-4-piece-3",
+          "vietnamese": "kem",
+          "english": "the",
+          "audioKey": "breakdown-authored-kem-9788976da9"
+        },
+        {
+          "id": "store-4-piece-4",
+          "vietnamese": "chống",
+          "english": "sunscreen",
+          "audioKey": "breakdown-v900-heal-phar-i-need-mosquito-repellent-piece-4"
+        },
+        {
+          "id": "store-4-piece-5",
+          "vietnamese": "nắng",
+          "english": "where is the sunscreen?",
+          "audioKey": "breakdown-authored-nang-b82b96e096"
+        },
+        {
+          "id": "store-4-full",
+          "vietnamese": "Ở đâu có kem chống nắng?",
+          "english": "Where is the sunscreen?",
+          "audioKey": "store-4"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Ở đâu có kem chống nắng? is the safest default for \"Where is the sunscreen?\". Use this when you need the exact aisle or shelf, not general help. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "store-4",
+          "vietnamese": "Ở đâu có kem chống nắng?",
+          "english": "Where is the sunscreen?",
+          "pronunciation": "uh dow koh kem chong nang",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "store-4"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need the exact aisle or shelf, not general help. Use it in buying small items, receipts, bags, and everyday errands when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to the item or show a photo when you can. It avoids guessing from pronunciation alone.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "store-1",
+          "vietnamese": "Cho tôi chai nước",
+          "english": "A bottle of water please",
+          "pronunciation": "cho toy chai nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-water",
+          "audioKey": "store-1"
+        },
+        {
+          "id": "store-2",
+          "vietnamese": "Có túi không?",
+          "english": "Do you have a bag?",
+          "pronunciation": "koh too-ee khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-bag",
+          "audioKey": "store-2"
+        },
+        {
+          "id": "store-3",
+          "vietnamese": "Cho tôi khăn giấy",
+          "english": "Tissues please",
+          "pronunciation": "cho toy khan zai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-tissues",
+          "audioKey": "store-3"
+        },
+        {
+          "id": "store-5",
+          "vietnamese": "Mở cái này giúp tôi",
+          "english": "Please open this for me",
+          "pronunciation": "muh gai nai zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-open-this",
+          "audioKey": "store-5"
+        },
+        {
+          "id": "store-6",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "pronunciation": "toy quet teh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-card",
+          "audioKey": "store-6"
+        },
+        {
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
+        },
+        {
+          "id": "v500-loca-serv-ever-task-where-can-i-buy-water",
+          "vietnamese": "Tôi có thể mua nước ở đâu?",
+          "english": "Where can I buy water?",
+          "pronunciation": "Toi co the mua nuoc o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-loca-serv-ever-task-where-can-i-buy-water",
+          "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "store-4",
+      "vietnamese": "Ở đâu có kem chống nắng?",
+      "english": "Where is the sunscreen?",
+      "pronunciation": "uh dow koh kem chong nang",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "store-4"
+    }
+  ]
+}

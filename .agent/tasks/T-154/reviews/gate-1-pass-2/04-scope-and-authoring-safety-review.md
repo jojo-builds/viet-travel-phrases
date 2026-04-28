@@ -1,0 +1,15 @@
+1. The revised plan remains safe and additive. It stays within the spec’s existing write fence, preserves `phrase-source.csv` as wording truth with sidecars only adding relation and answer-page structure, keeps the stricter no-duplication posture for hub promotion work, and still honors the marker-density guardrail by steering new support traces away from already saturated legacy anchors. The proposed count change from `99/80/19` to `102/83/19` is also framed correctly as a bounded-sample truth change that would require lockstep doc updates rather than silent drift.
+
+2. Findings: none
+
+3. Evidence:
+- `E:\AI\SpeakLocal-App-Family\.agent\tasks\T-154\spec.md:36-45` limits writes to T-154 artifacts plus the listed Viet draft files, with mirrored docs allowed only if branch truth changes.
+- `E:\AI\SpeakLocal-App-Family\.agent\tasks\T-154\reviews\gate-1-pass-1\04-scope-and-authoring-safety-review.md:1-15` set the prior approval basis around the same write fence, additive sidecar model, marker-density guardrail, and lockstep count updates.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-sample-v1.json:6-21` defines the current bounded sample as additive, with `99` clusters and relation-only supporting clusters that may deepen the graph without increasing answer-page hub count unless explicitly promoted.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\answer-page-sample-v1.json:6-30` records the current `80` hubs, keeps phrase wording in `phrase-source.csv`, and explicitly says new support markers should be spread onto lower-density adjacent rows.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\source-notes.md:14-17` records the current `99/80/19` bounded-sample posture, and `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\source-notes.md:35-40` reiterates CSV wording ownership, the `6+` marker guardrail, and the no-duplication rule for answer-page sidecars.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-authoring-notes.md:37-43` assigns ownership cleanly across CSV and sidecars, while `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\relation-authoring-notes.md:98-99,117-118` forbids duplicated wording truth and keeps the saturated-row guardrail active.
+- `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\README.md:36-42` mirrors the current bounded-sample counts and additive sidecar framing, so any move to `102/83/19` would need corresponding README/source-notes/relation-authoring-notes updates to stay aligned.
+- I inspected the current CSV sample state in `E:\AI\SpeakLocal-App-Family-worktrees\viet-1000-row-expansion\content-draft\viet\phrase-source.csv`; the existing review record’s saturated-row examples remain the relevant safety concern (`repair-2`, `taxi-1`, `problems-2`), which is consistent with the revised plan’s commitment to avoid adding new support markers onto legacy high-density anchors.
+
+Approval: APPROVE

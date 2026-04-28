@@ -1,0 +1,219 @@
+{
+  "id": "viet-family-emergency-not-safe",
+  "familyID": "emergency-not-safe",
+  "phraseID": "emergency-4",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Tôi cảm thấy không an toàn",
+  "englishTitle": "I feel unsafe",
+  "pronunciation": "toy kahm thai khong an toan",
+  "summary": "Different ways to say \"I feel unsafe\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "cross.circle.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "emergency-safety"
+  ],
+  "audioKey": "emergency-4",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when the situation feels unsafe and you need help quickly. This is a short high-signal safety phrase for stressful moments. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "emergency-4-piece-1",
+          "vietnamese": "Tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "emergency-4-piece-2",
+          "vietnamese": "cảm thấy",
+          "english": "feel",
+          "audioKey": "breakdown-authored-cam-thay-8ff4ed8cf3"
+        },
+        {
+          "id": "emergency-4-piece-3",
+          "vietnamese": "không",
+          "english": "not / no",
+          "audioKey": "breakdown-polite-6-first"
+        },
+        {
+          "id": "emergency-4-piece-4",
+          "vietnamese": "an",
+          "english": "i feel unsafe",
+          "audioKey": "breakdown-v900-emer-safe-i-am-safe-now-piece-5"
+        },
+        {
+          "id": "emergency-4-piece-5",
+          "vietnamese": "toàn",
+          "english": "i feel unsafe",
+          "audioKey": "breakdown-v900-emer-safe-i-am-safe-now-piece-6"
+        },
+        {
+          "id": "emergency-4-full",
+          "vietnamese": "Tôi cảm thấy không an toàn",
+          "english": "I feel unsafe",
+          "audioKey": "emergency-4"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi cảm thấy không an toàn is the safest default for \"I feel unsafe\". Use this when the situation feels unsafe and you need help quickly. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "emergency-4",
+          "vietnamese": "Tôi cảm thấy không an toàn",
+          "english": "I feel unsafe",
+          "pronunciation": "toy kahm thai khong an toan",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "emergency-4"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Emergency phrases put the urgent need first so help can move faster.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when the situation feels unsafe and you need help quickly. Use it in police, ambulance, hospitals, passports, and immediate safety when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Use the phrase clearly, then show your location, passport copy, injury, or emergency contact.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "emergency-1",
+          "vietnamese": "Gọi công an",
+          "english": "Call the police",
+          "pronunciation": "goy kong an",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-police",
+          "audioKey": "emergency-1"
+        },
+        {
+          "id": "emergency-2",
+          "vietnamese": "Gọi xe cứu thương",
+          "english": "Call an ambulance",
+          "pronunciation": "goy seh koo-ah thu-ong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-ambulance",
+          "audioKey": "emergency-2"
+        },
+        {
+          "id": "emergency-3",
+          "vietnamese": "Tôi mất hộ chiếu",
+          "english": "I lost my passport",
+          "pronunciation": "toy mut hoh chee-u",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-passport",
+          "audioKey": "emergency-3"
+        },
+        {
+          "id": "emergency-emergency",
+          "vietnamese": "Đây là trường hợp khẩn cấp",
+          "english": "This is an emergency",
+          "pronunciation": "day la troong hop khun kup",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-emergency",
+          "audioKey": "emergency-emergency"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "emergency-hospital",
+          "vietnamese": "Bệnh viện gần nhất ở đâu?",
+          "english": "Where is the nearest hospital?",
+          "pronunciation": "beng vyen gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-hospital",
+          "audioKey": "emergency-hospital"
+        },
+        {
+          "id": "v500-emer-safe-i-am-injured",
+          "vietnamese": "tôi bị thương",
+          "english": "I am injured",
+          "pronunciation": "toi bi thuong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-v500-emer-safe-i-am-injured",
+          "audioKey": "v500-emer-safe-i-am-injured"
+        },
+        {
+          "id": "v500-emer-safe-i-cannot-move",
+          "vietnamese": "Tôi không thể di chuyển",
+          "english": "I cannot move",
+          "pronunciation": "Toi khong the di chuyen",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-v500-emer-safe-i-cannot-move",
+          "audioKey": "v500-emer-safe-i-cannot-move"
+        },
+        {
+          "id": "v500-emer-safe-do-not-touch-me",
+          "vietnamese": "Đừng chạm vào tôi",
+          "english": "Do not touch me",
+          "pronunciation": "Dung cham vao toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-v500-emer-safe-do-not-touch-me",
+          "audioKey": "v500-emer-safe-do-not-touch-me"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "emergency-4",
+      "vietnamese": "Tôi cảm thấy không an toàn",
+      "english": "I feel unsafe",
+      "pronunciation": "toy kahm thai khong an toan",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "emergency-4"
+    }
+  ]
+}

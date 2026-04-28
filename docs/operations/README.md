@@ -14,9 +14,10 @@ Read in this order:
 1. `APP_STATUS.md`
 2. `CURRENT_BLOCKERS.md`
 3. `TESTING_RUNBOOK.md`
-4. `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the exact next Viet operator checklist
-5. `LATEST_VALIDATION.md`
-6. `VARIANT_MATRIX.md`
+4. `NATIVE_MAC_CUTOVER.md` when the question touches Mac provisioning, Codex carryover, or the native SwiftUI/Xcode transition
+5. `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the exact next Viet operator checklist
+6. `LATEST_VALIDATION.md`
+7. `VARIANT_MATRIX.md`
 
 ## File ownership
 
@@ -26,6 +27,8 @@ Read in this order:
   - compact cross-variant comparison only
 - `TESTING_RUNBOOK.md`
   - repo-owned build/test sequence, lane split, and repo sync targets
+- `NATIVE_MAC_CUTOVER.md`
+  - native Mac provisioning, Codex continuity, and the staged transition from the current Windows/Expo lane into the native SwiftUI/Xcode lane
 - `VIET_TESTFLIGHT_EXECUTION_PACKET.md`
   - single ordered operator checklist for the next Viet preview/TestFlight/App Store Connect/device-proof lane
 - `LATEST_VALIDATION.md`

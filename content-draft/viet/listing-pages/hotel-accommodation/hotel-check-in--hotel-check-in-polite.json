@@ -1,0 +1,149 @@
+{
+  "id": "viet-phrase-hotel-check-in-polite",
+  "familyID": "hotel-check-in",
+  "phraseID": "hotel-check-in-polite",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Cho tôi nhận phòng nhé",
+  "englishTitle": "I’d like to check in, please",
+  "pronunciation": "cho toy nyun fong nhe",
+  "summary": "A focused guide to using Cho tôi nhận phòng nhé as a nearby form of Cho tôi nhận phòng.",
+  "iconName": "bed.double.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "hotel-accommodation"
+  ],
+  "audioKey": "hotel-check-in-polite",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Cho tôi nhận phòng nhé is useful when \"I’d like to check in, please\" fits better than the parent phrase. Use this when you want the request to sound softer at the desk.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "hotel-check-in-polite-piece-1",
+          "vietnamese": "Cho tôi",
+          "english": "can I have",
+          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
+        },
+        {
+          "id": "hotel-check-in-polite-piece-2",
+          "vietnamese": "nhận phòng",
+          "english": "check in",
+          "audioKey": "breakdown-authored-nhan-phong-2c8d3eb3c0"
+        },
+        {
+          "id": "hotel-check-in-polite-piece-3",
+          "vietnamese": "nhé",
+          "english": "to",
+          "audioKey": "breakdown-food-need-table-piece-7"
+        },
+        {
+          "id": "hotel-check-in-polite-full",
+          "vietnamese": "Cho tôi nhận phòng nhé",
+          "english": "I’d like to check in, please",
+          "audioKey": "hotel-check-in-polite"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you want the request to sound softer at the desk. Return to Cho tôi nhận phòng when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-check-in",
+          "audioKey": "hotel-2"
+        },
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-reservation",
+          "audioKey": "hotel-1"
+        },
+        {
+          "id": "hotel-3",
+          "vietnamese": "Mấy giờ trả phòng?",
+          "english": "What time is check-out?",
+          "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-checkout-time",
+          "audioKey": "hotel-3"
+        },
+        {
+          "id": "hotel-checkout",
+          "vietnamese": "Cho tôi trả phòng",
+          "english": "I’d like to check out",
+          "pronunciation": "cho toy tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-checkout",
+          "audioKey": "hotel-checkout"
+        },
+        {
+          "id": "hotel-4",
+          "vietnamese": "Phòng này nóng quá",
+          "english": "This room is too hot",
+          "pronunciation": "fong nai nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-room-hot",
+          "audioKey": "hotel-4"
+        },
+        {
+          "id": "hotel-5",
+          "vietnamese": "Máy lạnh không chạy",
+          "english": "The air conditioner isn’t working",
+          "pronunciation": "mai lanh khong chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-aircon-broken",
+          "audioKey": "hotel-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "hotel-check-in-polite",
+      "vietnamese": "Cho tôi nhận phòng nhé",
+      "english": "I’d like to check in, please",
+      "pronunciation": "cho toy nyun fong nhe",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "hotel-check-in-polite"
+    }
+  ]
+}

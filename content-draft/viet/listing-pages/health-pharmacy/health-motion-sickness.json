@@ -1,0 +1,203 @@
+{
+  "id": "viet-family-health-motion-sickness",
+  "familyID": "health-motion-sickness",
+  "phraseID": "health-4",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Có thuốc say xe không?",
+  "englishTitle": "Do you have motion sickness medicine?",
+  "pronunciation": "koh thoo-ok sai seh khong",
+  "summary": "Different ways to say \"Do you have motion sickness medicine?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "cross.case.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "health-pharmacy"
+  ],
+  "audioKey": "health-4",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when travel motion is the problem and you want the medicine, not a doctor. Useful for buses, ferries, and mountain travel. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "health-4-piece-1",
+          "vietnamese": "Có",
+          "english": "have / yes",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "health-4-piece-2",
+          "vietnamese": "thuốc",
+          "english": "medicine",
+          "audioKey": "breakdown-v900-heal-phar-i-need-mosquito-repellent-piece-3"
+        },
+        {
+          "id": "health-4-piece-3",
+          "vietnamese": "say xe",
+          "english": "motion sickness",
+          "audioKey": "breakdown-authored-say-xe-b7d705f395"
+        },
+        {
+          "id": "health-4-piece-4",
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "health-4-full",
+          "vietnamese": "Có thuốc say xe không?",
+          "english": "Do you have motion sickness medicine?",
+          "audioKey": "health-4"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Có thuốc say xe không? is the safest default for \"Do you have motion sickness medicine?\". Use this when travel motion is the problem and you want the medicine, not a doctor. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "health-4",
+          "vietnamese": "Có thuốc say xe không?",
+          "english": "Do you have motion sickness medicine?",
+          "pronunciation": "koh thoo-ok sai seh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "health-4"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when travel motion is the problem and you want the medicine, not a doctor. Use it in doctors, pharmacies, symptoms, and medication when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Do not soften urgent medical needs too much. Clear and direct is safer.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Show the symptom, medication, or affected area when possible. It gives the helper something concrete.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "problems-6",
+          "vietnamese": "Tôi cần bác sĩ",
+          "english": "I need a doctor",
+          "pronunciation": "toy gun bak see",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-doctor",
+          "audioKey": "problems-6"
+        },
+        {
+          "id": "health-pharmacy-clearer",
+          "vietnamese": "Nhà thuốc gần nhất ở đâu?",
+          "english": "Where is the nearest pharmacy?",
+          "pronunciation": "nya thoo-ok gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-pharmacy",
+          "audioKey": "health-pharmacy-clearer"
+        },
+        {
+          "id": "health-2",
+          "vietnamese": "Tôi bị đau đầu",
+          "english": "I have a headache",
+          "pronunciation": "toy bee dow dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-headache",
+          "audioKey": "health-2"
+        },
+        {
+          "id": "health-3",
+          "vietnamese": "Tôi đau bụng",
+          "english": "My stomach hurts",
+          "pronunciation": "toy dow boong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-stomach",
+          "audioKey": "health-3"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "health-5",
+          "vietnamese": "Tôi bị dị ứng cái này",
+          "english": "I am allergic to this",
+          "pronunciation": "toy bee zee oong gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-allergy",
+          "audioKey": "health-5"
+        },
+        {
+          "id": "health-6",
+          "vietnamese": "Tôi cần thuốc tiêu chảy",
+          "english": "I need something for diarrhea",
+          "pronunciation": "toy gun thoo-ok tyew chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-health-diarrhea",
+          "audioKey": "health-6"
+        },
+        {
+          "id": "v500-heal-phar-i-feel-dizzy",
+          "vietnamese": "Tôi cảm thấy chóng mặt",
+          "english": "I feel dizzy",
+          "pronunciation": "toy gahm thay chong mat",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-v500-heal-phar-i-feel-dizzy",
+          "audioKey": "v500-heal-phar-i-feel-dizzy"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "health-4",
+      "vietnamese": "Có thuốc say xe không?",
+      "english": "Do you have motion sickness medicine?",
+      "pronunciation": "koh thoo-ok sai seh khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "health-4"
+    }
+  ]
+}

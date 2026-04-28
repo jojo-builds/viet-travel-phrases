@@ -33,10 +33,12 @@ A healthy quiet hour should usually end here.
 - helper-backed queue repair
 - narrow intake for newly completed or newly blocked tasks
 - narrow lane-board repair when task truth materially changed
+- optional read-only `recovery-handoff --dry-run` inspection for one explicitly targeted interrupted meaningful task when queue self-heal/debugging needs it
 
 ## Forbidden actions
 - no backlog seeding
 - no strategic next-task authoring
+- no write-mode `recovery-handoff` generation during ordinary cheap repair
 - no broad doc rereads
 - no manual patching of `queue-index.json` when the helper can rewrite it
 - no direct `py .agent\queue_tool.py ...` launch from recurring repair; use the wrapper

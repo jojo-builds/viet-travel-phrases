@@ -1,0 +1,197 @@
+{
+  "id": "viet-family-directions-go-straight",
+  "familyID": "directions-go-straight",
+  "phraseID": "directions-6",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Tôi đi thẳng phải không?",
+  "englishTitle": "Should I go straight?",
+  "pronunciation": "toy dee thang fai khong",
+  "summary": "Different ways to say \"Should I go straight?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "location.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "directions-navigation"
+  ],
+  "audioKey": "directions-6",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you want to confirm that you should keep going straight. This is one of the safest route check phrases. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "directions-6-piece-1",
+          "vietnamese": "Tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "directions-6-piece-2",
+          "vietnamese": "đi thẳng",
+          "english": "go straight",
+          "audioKey": "breakdown-v500-tran-please-go-straight-rest"
+        },
+        {
+          "id": "directions-6-piece-3",
+          "vietnamese": "phải không?",
+          "english": "is that right?",
+          "audioKey": "breakdown-authored-phai-khong-5fe2a5276e"
+        },
+        {
+          "id": "directions-6-full",
+          "vietnamese": "Tôi đi thẳng phải không?",
+          "english": "Should I go straight?",
+          "audioKey": "directions-6"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi đi thẳng phải không? is the safest default for \"Should I go straight?\". Use this when you want to confirm that you should keep going straight. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "directions-6",
+          "vietnamese": "Tôi đi thẳng phải không?",
+          "english": "Should I go straight?",
+          "pronunciation": "toy dee thang fai khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "directions-6"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Direction phrases turn a vague travel problem into a specific next step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you want to confirm that you should keep going straight. Use it in finding places, turns, distance, and walking directions when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If the answer is long, ask them to point or type it. Street directions can be hard to catch by ear.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Show the map or address first, then ask the phrase. The answer is easier to understand when both of you see the same place.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "directions-1",
+          "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+          "english": "Excuse me, how do I get there?",
+          "pronunciation": "cho hoy dee toy doh theh nao",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-directions-how-to-get",
+          "audioKey": "directions-1"
+        },
+        {
+          "id": "directions-2",
+          "vietnamese": "Ở gần đây không?",
+          "english": "Is it near here?",
+          "pronunciation": "uh gun day khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-directions-near",
+          "audioKey": "directions-2"
+        },
+        {
+          "id": "directions-3",
+          "vietnamese": "Đi bộ mất bao lâu?",
+          "english": "How long does it take on foot?",
+          "pronunciation": "dee boh mut bao low",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-directions-how-long",
+          "audioKey": "directions-3"
+        },
+        {
+          "id": "directions-4",
+          "vietnamese": "Rẽ trái ở đâu?",
+          "english": "Where do I turn left?",
+          "pronunciation": "reh chai uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-directions-turn-left",
+          "audioKey": "directions-4"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "directions-5",
+          "vietnamese": "Tôi rẽ phải đúng không?",
+          "english": "Should I turn right?",
+          "pronunciation": "toy reh fai zoong khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-directions-turn-right",
+          "audioKey": "directions-5"
+        },
+        {
+          "id": "directions-7",
+          "vietnamese": "Cảm ơn, tôi hiểu rồi",
+          "english": "Thanks, I understand now",
+          "pronunciation": "kahm uhn toy hyew roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-directions-understand-now",
+          "audioKey": "directions-7"
+        },
+        {
+          "id": "v500-dire-navi-where-is-the-nearest-restroom",
+          "vietnamese": "Nhà vệ sinh gần nhất ở đâu?",
+          "english": "Where is the nearest restroom?",
+          "pronunciation": "Nha ve sinh gan nhat o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-dire-navi-where-is-the-nearest-restroom",
+          "audioKey": "v500-dire-navi-where-is-the-nearest-restroom"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "directions-6",
+      "vietnamese": "Tôi đi thẳng phải không?",
+      "english": "Should I go straight?",
+      "pronunciation": "toy dee thang fai khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "directions-6"
+    }
+  ]
+}

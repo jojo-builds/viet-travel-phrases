@@ -1,0 +1,155 @@
+{
+  "id": "viet-phrase-money-how-much-common",
+  "familyID": "money-how-much",
+  "phraseID": "money-how-much-common",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Cái này nhiêu tiền?",
+  "englishTitle": "How much is this?",
+  "pronunciation": "gai nai nyew tyen",
+  "summary": "A focused guide to using Cái này nhiêu tiền? as a nearby form of Cái này bao nhiêu?.",
+  "iconName": "creditcard.fill",
+  "tintName": "green",
+  "categoryIDs": [
+    "money-numbers-prices"
+  ],
+  "audioKey": "money-how-much-common",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Cái này nhiêu tiền? is useful when \"How much is this?\" fits better than the parent phrase. Use this as a common spoken alternative when you hear price asked more casually.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "money-how-much-common-piece-1",
+          "vietnamese": "Cái",
+          "english": "how",
+          "audioKey": "breakdown-repair-3-first"
+        },
+        {
+          "id": "money-how-much-common-piece-2",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "money-how-much-common-piece-3",
+          "vietnamese": "nhiêu",
+          "english": "many / much",
+          "audioKey": "breakdown-price-2-piece-2"
+        },
+        {
+          "id": "money-how-much-common-piece-4",
+          "vietnamese": "tiền",
+          "english": "money",
+          "audioKey": "breakdown-transport-fare-first"
+        },
+        {
+          "id": "money-how-much-common-full",
+          "vietnamese": "Cái này nhiêu tiền?",
+          "english": "How much is this?",
+          "audioKey": "money-how-much-common"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this as a common spoken alternative when you hear price asked more casually. Return to Cái này bao nhiêu? when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-how-much",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "price-2",
+          "vietnamese": "Bao nhiêu một ký?",
+          "english": "How much per kilo?",
+          "pronunciation": "bao nyew mot kee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-per-kilo",
+          "audioKey": "price-2"
+        },
+        {
+          "id": "price-3",
+          "vietnamese": "Mắc quá",
+          "english": "Too expensive",
+          "pronunciation": "mak gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-too-expensive",
+          "audioKey": "price-3"
+        },
+        {
+          "id": "price-4",
+          "vietnamese": "Bớt chút được không?",
+          "english": "Can you lower it a little?",
+          "pronunciation": "but choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-lower-price",
+          "audioKey": "price-4"
+        },
+        {
+          "id": "price-5",
+          "vietnamese": "Giá cuối bao nhiêu?",
+          "english": "What’s your final price?",
+          "pronunciation": "za gooy bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-final-price",
+          "audioKey": "price-5"
+        },
+        {
+          "id": "price-6",
+          "vietnamese": "Cho tôi xem cái khác",
+          "english": "Show me another one",
+          "pronunciation": "cho toy sem gai khak",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-another-one",
+          "audioKey": "price-6"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "money-how-much-common",
+      "vietnamese": "Cái này nhiêu tiền?",
+      "english": "How much is this?",
+      "pronunciation": "gai nai nyew tyen",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "money-how-much-common"
+    }
+  ]
+}

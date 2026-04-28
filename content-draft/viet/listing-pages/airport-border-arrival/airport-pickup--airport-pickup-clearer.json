@@ -1,0 +1,161 @@
+{
+  "id": "viet-phrase-airport-pickup-clearer",
+  "familyID": "airport-pickup",
+  "phraseID": "airport-pickup-clearer",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Tôi gặp tài xế ở đâu?",
+  "englishTitle": "Where do I meet the driver?",
+  "pronunciation": "toy gap tai seh uh dow",
+  "summary": "A focused guide to using Tôi gặp tài xế ở đâu? as a nearby form of Khu đón ở đâu?.",
+  "iconName": "airplane.arrival",
+  "tintName": "blue",
+  "categoryIDs": [
+    "airport-border-arrival"
+  ],
+  "audioKey": "airport-pickup-clearer",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi gặp tài xế ở đâu? is useful when \"Where do I meet the driver?\" fits better than the parent phrase. Use this when you already know it is a driver handoff, not a general pickup zone.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
+      "breakdown": [
+        {
+          "id": "airport-pickup-clearer-piece-1",
+          "vietnamese": "Tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "airport-pickup-clearer-piece-2",
+          "vietnamese": "gặp",
+          "english": "place",
+          "audioKey": "breakdown-v900-time-date-book-great-see-you-then-piece-3"
+        },
+        {
+          "id": "airport-pickup-clearer-piece-3",
+          "vietnamese": "tài",
+          "english": "place",
+          "audioKey": "breakdown-v500-airp-bord-arri-my-driver-canceled-first"
+        },
+        {
+          "id": "airport-pickup-clearer-piece-4",
+          "vietnamese": "xế",
+          "english": "vehicle",
+          "audioKey": "breakdown-authored-xe-6c2eb6f528"
+        },
+        {
+          "id": "airport-pickup-clearer-piece-5",
+          "vietnamese": "ở đâu?",
+          "english": "where?",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "airport-pickup-clearer-full",
+          "vietnamese": "Tôi gặp tài xế ở đâu?",
+          "english": "Where do I meet the driver?",
+          "audioKey": "airport-pickup-clearer"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you already know it is a driver handoff, not a general pickup zone. Return to Khu đón ở đâu? when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "airport-5",
+          "vietnamese": "Khu đón ở đâu?",
+          "english": "Where is the pickup area?",
+          "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-pickup",
+          "audioKey": "airport-5"
+        },
+        {
+          "id": "airport-1",
+          "vietnamese": "Nhập cảnh ở đâu?",
+          "english": "Where is immigration?",
+          "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-immigration",
+          "audioKey": "airport-1"
+        },
+        {
+          "id": "airport-2",
+          "vietnamese": "Lấy hành lý ở đâu?",
+          "english": "Where is baggage claim?",
+          "pronunciation": "lay han lee uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-baggage",
+          "audioKey": "airport-2"
+        },
+        {
+          "id": "airport-3",
+          "vietnamese": "Mua SIM ở đâu?",
+          "english": "Where can I buy a SIM card?",
+          "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-sim",
+          "audioKey": "airport-3"
+        },
+        {
+          "id": "airport-6",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive",
+          "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-bag-missing",
+          "audioKey": "airport-6"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "airport-pickup-clearer",
+      "vietnamese": "Tôi gặp tài xế ở đâu?",
+      "english": "Where do I meet the driver?",
+      "pronunciation": "toy gap tai seh uh dow",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "airport-pickup-clearer"
+    }
+  ]
+}

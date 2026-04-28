@@ -1,0 +1,57 @@
+{
+  "taskId": "T-138",
+  "title": "SpeakLocal V2 visual screen board and refreshable screenshot contact-sheet workflow",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\visual-screen-board\\app",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "t138-20260422T054018-visual-board",
+    "label": "codex-manual-t138"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-22T05:40:18.4454183-05:00",
+    "lastHeartbeatAt": "2026-04-22T06:47:58.1726901-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-22T08:48:06.9652936-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "visual_review_board"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-138\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-138\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-138\\reviews\\",
+    "logs": ".agent\\tasks\\T-138\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\visual-screen-board\\app\\scripts\\generate-design-board.ts",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\visual-screen-board\\app\\artifacts\\design-boards\\latest\\",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\visual-screen-board\\app\\docs\\app-preview-wireframes.md",
+      ".agent\\tasks\\T-138\\logs\\design-board-workflow-notes.md",
+      ".agent\\tasks\\T-138\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-22T06:47:58.1726901-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

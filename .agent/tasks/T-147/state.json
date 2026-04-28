@@ -1,0 +1,55 @@
+{
+  "taskId": "T-147",
+  "title": "Viet answer-page runtime consumer and data-driven listing-page integration",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "d51730ca-7f6a-43e9-896c-ed1a885651d2",
+    "label": "manual-T-147"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T08:18:45.5556618-05:00",
+    "lastHeartbeatAt": "2026-04-23T10:05:53.4904213-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T12:05:53.4904213-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ios_family_shared_ui"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-147\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-147\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-147\\reviews\\",
+    "logs": ".agent\\tasks\\T-147\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\components\\preview\\PhraseProductPrototype.tsx",
+      ".agent\\tasks\\T-147\\logs\\viet-answer-page-consumer-notes.md",
+      ".agent\\tasks\\T-147\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T10:05:53.4904213-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

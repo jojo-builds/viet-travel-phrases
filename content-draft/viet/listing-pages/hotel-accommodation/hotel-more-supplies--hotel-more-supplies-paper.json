@@ -1,0 +1,167 @@
+{
+  "id": "viet-phrase-hotel-more-supplies-paper",
+  "familyID": "hotel-more-supplies",
+  "phraseID": "hotel-more-supplies-paper",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Cho tôi thêm giấy vệ sinh được không?",
+  "englishTitle": "Can I have more toilet paper?",
+  "pronunciation": "cho toy them zai veh sinh dook khong",
+  "summary": "A focused guide to using Cho tôi thêm giấy vệ sinh được không? as a nearby form of Cho tôi thêm khăn.",
+  "iconName": "bed.double.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "hotel-accommodation"
+  ],
+  "audioKey": "hotel-more-supplies-paper",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Cho tôi thêm giấy vệ sinh được không? is useful when \"Can I have more toilet paper?\" fits better than the parent phrase. Use this when the room needs more toilet paper rather than more towels.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "hotel-more-supplies-paper-piece-1",
+          "vietnamese": "Cho tôi",
+          "english": "can I have",
+          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
+        },
+        {
+          "id": "hotel-more-supplies-paper-piece-2",
+          "vietnamese": "thêm",
+          "english": "i",
+          "audioKey": "breakdown-v900-hote-acco-how-much-is-one-extra-night-first"
+        },
+        {
+          "id": "hotel-more-supplies-paper-piece-3",
+          "vietnamese": "giấy",
+          "english": "have",
+          "audioKey": "breakdown-v900-emer-safe-i-need-a-temporary-travel-document-piece-3"
+        },
+        {
+          "id": "hotel-more-supplies-paper-piece-4",
+          "vietnamese": "vệ",
+          "english": "ticket",
+          "audioKey": "breakdown-authored-ve-5592bb10cb"
+        },
+        {
+          "id": "hotel-more-supplies-paper-piece-5",
+          "vietnamese": "sinh",
+          "english": "hygiene",
+          "audioKey": "breakdown-authored-sinh-688cfd5ead"
+        },
+        {
+          "id": "hotel-more-supplies-paper-piece-6",
+          "vietnamese": "được không?",
+          "english": "is it possible?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+        },
+        {
+          "id": "hotel-more-supplies-paper-full",
+          "vietnamese": "Cho tôi thêm giấy vệ sinh được không?",
+          "english": "Can I have more toilet paper?",
+          "audioKey": "hotel-more-supplies-paper"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when the room needs more toilet paper rather than more towels. Return to Cho tôi thêm khăn when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "hotel-6",
+          "vietnamese": "Cho tôi thêm khăn",
+          "english": "More towels please",
+          "pronunciation": "cho toy them khan",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-more-supplies",
+          "audioKey": "hotel-6"
+        },
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-reservation",
+          "audioKey": "hotel-1"
+        },
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-check-in",
+          "audioKey": "hotel-2"
+        },
+        {
+          "id": "hotel-3",
+          "vietnamese": "Mấy giờ trả phòng?",
+          "english": "What time is check-out?",
+          "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-checkout-time",
+          "audioKey": "hotel-3"
+        },
+        {
+          "id": "hotel-checkout",
+          "vietnamese": "Cho tôi trả phòng",
+          "english": "I’d like to check out",
+          "pronunciation": "cho toy tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-checkout",
+          "audioKey": "hotel-checkout"
+        },
+        {
+          "id": "hotel-4",
+          "vietnamese": "Phòng này nóng quá",
+          "english": "This room is too hot",
+          "pronunciation": "fong nai nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-room-hot",
+          "audioKey": "hotel-4"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "hotel-more-supplies-paper",
+      "vietnamese": "Cho tôi thêm giấy vệ sinh được không?",
+      "english": "Can I have more toilet paper?",
+      "pronunciation": "cho toy them zai veh sinh dook khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "hotel-more-supplies-paper"
+    }
+  ]
+}

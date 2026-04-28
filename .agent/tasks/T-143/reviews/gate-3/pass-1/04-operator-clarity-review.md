@@ -1,0 +1,12 @@
+# Gate 3 Pass 1: Operator Clarity Review
+## Summary
+The operator-facing model is now clear and consistent. The docs keep `repair`, `desktop-recover`, and `recovery-handoff` separated, and they consistently tell operators to start with `recovery-handoff --dry-run` for interrupted meaningful-task salvage ([README](/E:/AI/SpeakLocal-App-Family/.agent/README.md:20), [QUEUE_REPAIR](/E:/AI/SpeakLocal-App-Family/.agent/QUEUE_REPAIR.md:32), [QUEUE_MAINTENANCE](/E:/AI/SpeakLocal-App-Family/.agent/QUEUE_MAINTENANCE.md:50), [AUTOMATION](/E:/AI/SpeakLocal-App-Family/.agent/AUTOMATION.md:34)). The CLI behavior matches that story: the summary logic exposes salvage evidence and eligibility, and `already_recovered` dry-runs now surface `wouldMutate`, `writeModeAction`, and repair flags so write mode is no longer surprising ([queue_tool.py](/E:/AI/SpeakLocal-App-Family/.agent/queue_tool.py:1023), [queue_tool.py](/E:/AI/SpeakLocal-App-Family/.agent/queue_tool.py:2438), [self-recovery-handoff-notes.md](/E:/AI/SpeakLocal-App-Family/.agent/tasks/T-143/logs/self-recovery-handoff-notes.md:9)). The supplied runtime facts line up with that contract: `T-125` is still a clear `would_create` candidate, while `T-139` and `T-140` now converge to clean `already_recovered` / `no_change` behavior, with the ledger only mirroring those links for visibility ([desktop-app-recovery.json](/E:/AI/SpeakLocal-App-Family/.agent/coordination/desktop-app-recovery.json:32), [README](/E:/AI/SpeakLocal-App-Family/.agent/README.md:22)).
+
+## Key Risks
+- No blocking operator-clarity risk remains in the reviewed set.
+- Minor residual only: [QUEUE_MAINTENANCE](/E:/AI/SpeakLocal-App-Family/.agent/QUEUE_MAINTENANCE.md:55) still describes existing-pair write mode mainly as metadata backfill, while the implementation can also repair interrupted-history and ledger linkage ([queue_tool.py](/E:/AI/SpeakLocal-App-Family/.agent/queue_tool.py:2494), [queue_tool.py](/E:/AI/SpeakLocal-App-Family/.agent/queue_tool.py:2521)). Because dry-run exposes those repair flags and the known `T-139`/`T-140` facts now show full `no_change`, this is not enough to block closeout.
+
+## Recommendation
+From operator clarity and docs/CLI behavior perspectives, this task is safe to finalize as `done` once Gate 3 is unanimous and the parent worker performs the normal final `result.md` / `state.json` transition ([AUTOMATION](/E:/AI/SpeakLocal-App-Family/.agent/AUTOMATION.md:24), [result.md](/E:/AI/SpeakLocal-App-Family/.agent/tasks/T-143/result.md:4)).
+
+Approval: APPROVE

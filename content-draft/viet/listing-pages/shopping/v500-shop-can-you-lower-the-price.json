@@ -1,0 +1,173 @@
+{
+  "id": "viet-family-v500-shop-can-you-lower-the-price",
+  "familyID": "v500-shop-can-you-lower-the-price",
+  "phraseID": "v500-shop-can-you-lower-the-price",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Giảm giá chút được không?",
+  "englishTitle": "Can you lower the price?",
+  "pronunciation": "zam zah choot dook khong",
+  "summary": "Different ways to say \"Can you lower the price?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "bag.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "shopping"
+  ],
+  "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this in markets or flexible-price shops, not at fixed-price counters. Giảm giá chút được không? asks for a small discount without using the peer-like bạn.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "v500-shop-can-you-lower-the-price-piece-1",
+          "vietnamese": "Giảm giá",
+          "english": "lower the price",
+          "audioKey": "breakdown-authored-giam-gia-dc1ca2512b"
+        },
+        {
+          "id": "v500-shop-can-you-lower-the-price-piece-2",
+          "vietnamese": "chút",
+          "english": "a little",
+          "audioKey": "breakdown-v500-unde-repa-i-understand-a-little-piece-4"
+        },
+        {
+          "id": "v500-shop-can-you-lower-the-price-piece-3",
+          "vietnamese": "được không?",
+          "english": "is it possible?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+        },
+        {
+          "id": "v500-shop-can-you-lower-the-price-full",
+          "vietnamese": "Giảm giá chút được không?",
+          "english": "Can you lower the price?",
+          "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Giảm giá chút được không? is the cleaner discount question here. It keeps the ask light and lets the seller say yes, no, or counteroffer.",
+      "phrases": [
+        {
+          "id": "v500-shop-can-you-lower-the-price",
+          "vietnamese": "Giảm giá chút được không?",
+          "english": "Can you lower the price?",
+          "pronunciation": "zam zah choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it after you know the price and still want to buy if the seller can lower it a little.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Keep your tone friendly. In Vietnam, bargaining can be playful in markets but awkward in fixed-price stores.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to the item, smile, and pause. The pause gives the seller room to answer without pressure.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "shop-1",
+          "vietnamese": "Tôi muốn cỡ này",
+          "english": "I want this size",
+          "pronunciation": "toy moo-on guh nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-size",
+          "audioKey": "shop-1"
+        },
+        {
+          "id": "shop-2",
+          "vietnamese": "Có màu khác không?",
+          "english": "Do you have another color?",
+          "pronunciation": "koh mau khak khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-color",
+          "audioKey": "shop-2"
+        },
+        {
+          "id": "shop-3",
+          "vietnamese": "Tôi thử cái này được không?",
+          "english": "Can I try this on?",
+          "pronunciation": "toy thoo gai nai dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-try-on",
+          "audioKey": "shop-3"
+        },
+        {
+          "id": "shop-4",
+          "vietnamese": "Tôi chỉ xem thôi",
+          "english": "I’m just looking",
+          "pronunciation": "toy chee sem toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-just-looking",
+          "audioKey": "shop-4"
+        },
+        {
+          "id": "shop-5",
+          "vietnamese": "Trả ở đâu?",
+          "english": "Where do I pay?",
+          "pronunciation": "tra uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-pay-where",
+          "audioKey": "shop-5"
+        },
+        {
+          "id": "v500-shop-how-much-is-this-item",
+          "vietnamese": "Mặt hàng này giá bao nhiêu?",
+          "english": "How much is this item?",
+          "pronunciation": "Mat hang nay gia bao nhieu",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-v500-shop-how-much-is-this-item",
+          "audioKey": "v500-shop-how-much-is-this-item"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-shop-can-you-lower-the-price",
+      "vietnamese": "Giảm giá chút được không?",
+      "english": "Can you lower the price?",
+      "pronunciation": "zam zah choot dook khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
+    }
+  ]
+}

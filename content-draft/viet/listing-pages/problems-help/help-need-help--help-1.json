@@ -1,0 +1,149 @@
+{
+  "id": "viet-phrase-help-1",
+  "familyID": "help-need-help",
+  "phraseID": "help-1",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Anh/chị giúp tôi với",
+  "englishTitle": "Can you help me?",
+  "pronunciation": "anh chee zoop toy voy",
+  "summary": "A focused guide to using Anh/chị giúp tôi với as a nearby form of Giúp tôi với.",
+  "iconName": "exclamationmark.triangle.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "problems-help"
+  ],
+  "audioKey": "help-1",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Anh/chị giúp tôi với is useful when \"Can you help me?\" fits better than the parent phrase. Use this when you want the help request phrased as a direct question.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "help-1-piece-1",
+          "vietnamese": "Anh/chị",
+          "english": "you (polite)",
+          "audioKey": "breakdown-repair-english-help-first"
+        },
+        {
+          "id": "help-1-piece-2",
+          "vietnamese": "giúp tôi",
+          "english": "help me",
+          "audioKey": "breakdown-authored-giup-toi-38e527ca39"
+        },
+        {
+          "id": "help-1-piece-3",
+          "vietnamese": "với",
+          "english": "please / with",
+          "audioKey": "breakdown-authored-voi-25e5621456"
+        },
+        {
+          "id": "help-1-full",
+          "vietnamese": "Anh/chị giúp tôi với",
+          "english": "Can you help me?",
+          "audioKey": "help-1"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you want the help request phrased as a direct question. Return to Giúp tôi với when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "help-need-help-direct",
+          "vietnamese": "Giúp tôi với",
+          "english": "I need help",
+          "pronunciation": "zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-need-help",
+          "audioKey": "help-need-help-direct"
+        },
+        {
+          "id": "problems-1",
+          "vietnamese": "Tôi bị lạc đường",
+          "english": "I’m lost",
+          "pronunciation": "toy bee lahk doong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-lost",
+          "audioKey": "problems-1"
+        },
+        {
+          "id": "problems-4",
+          "vietnamese": "Tôi quên đồ rồi",
+          "english": "I left something behind",
+          "pronunciation": "toy gwen doh roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-left-something",
+          "audioKey": "problems-4"
+        },
+        {
+          "id": "help-2",
+          "vietnamese": "Gọi khách sạn giúp tôi",
+          "english": "Please call the hotel for me",
+          "pronunciation": "goy khak san zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-call-hotel",
+          "audioKey": "help-2"
+        },
+        {
+          "id": "help-3",
+          "vietnamese": "Tôi cần quản lý",
+          "english": "I need the manager",
+          "pronunciation": "toy gun kwan lee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-manager",
+          "audioKey": "help-3"
+        },
+        {
+          "id": "v500-prob-help-i-need-help-now",
+          "vietnamese": "Tôi cần giúp đỡ bây giờ",
+          "english": "I need help now",
+          "pronunciation": "Toi can giup do bay gio",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-v500-prob-help-i-need-help-now",
+          "audioKey": "v500-prob-help-i-need-help-now"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "help-1",
+      "vietnamese": "Anh/chị giúp tôi với",
+      "english": "Can you help me?",
+      "pronunciation": "anh chee zoop toy voy",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "help-1"
+    }
+  ]
+}

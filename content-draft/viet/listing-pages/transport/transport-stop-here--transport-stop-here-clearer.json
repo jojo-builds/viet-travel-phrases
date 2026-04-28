@@ -1,0 +1,155 @@
+{
+  "id": "viet-phrase-transport-stop-here-clearer",
+  "familyID": "transport-stop-here",
+  "phraseID": "transport-stop-here-clearer",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Cho tôi xuống ngay đây",
+  "englishTitle": "Please stop right here",
+  "pronunciation": "cho toy zoong ngay day",
+  "summary": "A focused guide to using Cho tôi xuống ngay đây as a nearby form of Dừng ở đây được rồi.",
+  "iconName": "car.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "transport"
+  ],
+  "audioKey": "transport-stop-here-clearer",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Cho tôi xuống ngay đây is useful when \"Please stop right here\" fits better than the parent phrase. Use this when the driver seems likely to roll past the stop.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "transport-stop-here-clearer-piece-1",
+          "vietnamese": "Cho tôi",
+          "english": "can I have",
+          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
+        },
+        {
+          "id": "transport-stop-here-clearer-piece-2",
+          "vietnamese": "xuống",
+          "english": "down",
+          "audioKey": "breakdown-authored-xuong-8272d5a25c"
+        },
+        {
+          "id": "transport-stop-here-clearer-piece-3",
+          "vietnamese": "ngay",
+          "english": "right",
+          "audioKey": "breakdown-authored-ngay-27a5da243f"
+        },
+        {
+          "id": "transport-stop-here-clearer-piece-4",
+          "vietnamese": "đây",
+          "english": "here / this",
+          "audioKey": "breakdown-transport-1-first"
+        },
+        {
+          "id": "transport-stop-here-clearer-full",
+          "vietnamese": "Cho tôi xuống ngay đây",
+          "english": "Please stop right here",
+          "audioKey": "transport-stop-here-clearer"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when the driver seems likely to roll past the stop. Return to Dừng ở đây được rồi when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-stop-here",
+          "audioKey": "taxi-3"
+        },
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-destination",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-main-destination",
+          "audioKey": "taxi-2"
+        },
+        {
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-route",
+          "audioKey": "taxi-4"
+        },
+        {
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-aircon",
+          "audioKey": "taxi-5"
+        },
+        {
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-wait",
+          "audioKey": "taxi-6"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "transport-stop-here-clearer",
+      "vietnamese": "Cho tôi xuống ngay đây",
+      "english": "Please stop right here",
+      "pronunciation": "cho toy zoong ngay day",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "transport-stop-here-clearer"
+    }
+  ]
+}

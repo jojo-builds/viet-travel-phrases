@@ -1,0 +1,241 @@
+{
+  "id": "viet-family-food-to-go",
+  "familyID": "food-to-go",
+  "phraseID": "coffee-6",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Mang đi",
+  "englishTitle": "To go",
+  "pronunciation": "mang dee",
+  "summary": "Different ways to say \"To go\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "fork.knife",
+  "tintName": "green",
+  "categoryIDs": [
+    "food-drink"
+  ],
+  "audioKey": "coffee-6",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Say this when you want takeaway instead of staying. This keeps the order atomic and easy to recognize. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "coffee-6-piece-1",
+          "vietnamese": "Mang",
+          "english": "to",
+          "audioKey": "breakdown-coffee-6-first"
+        },
+        {
+          "id": "coffee-6-piece-2",
+          "vietnamese": "đi",
+          "english": "go",
+          "audioKey": "breakdown-coffee-6-rest"
+        },
+        {
+          "id": "coffee-6-full",
+          "vietnamese": "Mang đi",
+          "english": "To go",
+          "audioKey": "coffee-6"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Mang đi is the safest default for \"To go\". Say this when you want takeaway instead of staying. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "coffee-6",
+          "vietnamese": "Mang đi",
+          "english": "To go",
+          "pronunciation": "mang dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "coffee-6"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Say this when you want takeaway instead of staying. Use it in ordering, adjusting dishes, and checking ingredients when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to the dish or ingredient while speaking. It helps when tone marks or dish names are hard to pronounce.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "coffee-1",
+          "vietnamese": "Cho tôi một cà phê sữa đá",
+          "english": "One iced milk coffee please",
+          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-coffee-milk",
+          "audioKey": "coffee-1"
+        },
+        {
+          "id": "coffee-2",
+          "vietnamese": "Cho tôi cà phê đen đá",
+          "english": "I’d like an iced black coffee",
+          "pronunciation": "cho toy ka feh den dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-coffee-black",
+          "audioKey": "coffee-2"
+        },
+        {
+          "id": "coffee-3",
+          "vietnamese": "Cho tôi bạc xỉu đá",
+          "english": "I’d like an iced bạc xỉu",
+          "pronunciation": "cho toy bahk see-u dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-coffee-bac-xiu",
+          "audioKey": "coffee-3"
+        },
+        {
+          "id": "coffee-4",
+          "vietnamese": "Ít đá thôi",
+          "english": "Just a little ice",
+          "pronunciation": "eet dah toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-less-ice",
+          "audioKey": "coffee-4"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "coffee-5",
+          "vietnamese": "Không đường nhé",
+          "english": "No sugar please",
+          "pronunciation": "khong doong nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-no-sugar",
+          "audioKey": "coffee-5"
+        },
+        {
+          "id": "coffee-7",
+          "vietnamese": "Tính tiền giúp tôi",
+          "english": "Please let me pay",
+          "pronunciation": "ting tyen zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-pay-now",
+          "audioKey": "coffee-7"
+        },
+        {
+          "id": "food-need-table",
+          "vietnamese": "Cho tôi bàn cho hai người nhé",
+          "english": "A table for two, please",
+          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-need-table",
+          "audioKey": "food-need-table"
+        },
+        {
+          "id": "food-menu",
+          "vietnamese": "Cho tôi xem thực đơn được không?",
+          "english": "Can I see the menu?",
+          "pronunciation": "cho toy sem thook dun dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-menu",
+          "audioKey": "food-menu"
+        },
+        {
+          "id": "food-1",
+          "vietnamese": "Cho tôi một phần",
+          "english": "One portion please",
+          "pronunciation": "cho toy mot fun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-one-portion",
+          "audioKey": "food-1"
+        },
+        {
+          "id": "food-2",
+          "vietnamese": "Cho tôi tô này",
+          "english": "I’ll take this bowl",
+          "pronunciation": "cho toy toh nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-this-bowl",
+          "audioKey": "food-2"
+        },
+        {
+          "id": "food-3",
+          "vietnamese": "Không cay nhé",
+          "english": "Not spicy please",
+          "pronunciation": "khong kai nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-not-spicy",
+          "audioKey": "food-3"
+        },
+        {
+          "id": "food-4",
+          "vietnamese": "Cho thêm rau",
+          "english": "More herbs please",
+          "pronunciation": "cho them zow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-more-herbs",
+          "audioKey": "food-4"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "coffee-6",
+      "vietnamese": "Mang đi",
+      "english": "To go",
+      "pronunciation": "mang dee",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "coffee-6"
+    }
+  ]
+}

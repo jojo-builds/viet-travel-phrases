@@ -1,0 +1,57 @@
+{
+  "taskId": "T-137",
+  "title": "SpeakLocal V2 grouped listing-card system and lighter lower-section layout for the phrase product page",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "codex-t137-20260422t053258-5f9c",
+    "label": "manual-t137-grouped-listing-cards"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-22T05:32:58.2300084-05:00",
+    "lastHeartbeatAt": "2026-04-22T05:46:29.5000402-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-22T07:46:29.5000402-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "ios_family_shared_ui"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-137\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-137\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-137\\reviews\\",
+    "logs": ".agent\\tasks\\T-137\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\components\\preview\\PhraseProductPrototype.tsx",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\components\\preview\\previewContent.ts",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\liquid-glass-native\\app\\docs\\phrase-page-blueprint.md",
+      ".agent\\tasks\\T-137\\logs\\grouped-listing-cards-notes.md",
+      ".agent\\tasks\\T-137\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-22T05:46:29.5000402-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 3,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

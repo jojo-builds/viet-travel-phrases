@@ -1,0 +1,183 @@
+{
+  "id": "viet-family-phone-charger",
+  "familyID": "phone-charger",
+  "phraseID": "phone-4",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Có sạc không?",
+  "englishTitle": "Do you have a charger?",
+  "pronunciation": "koh sahk khong",
+  "summary": "Different ways to say \"Do you have a charger?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "wifi",
+  "tintName": "blue",
+  "categoryIDs": [
+    "phone-internet-power"
+  ],
+  "audioKey": "phone-4",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you need any charger before you explain more detail. This is the quickest recovery phrase when the battery problem can be fixed nearby. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "phone-4-piece-1",
+          "vietnamese": "Có",
+          "english": "have / yes",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "phone-4-piece-2",
+          "vietnamese": "sạc",
+          "english": "charge",
+          "audioKey": "breakdown-v500-phon-inte-powe-i-need-a-charging-cable-piece-5"
+        },
+        {
+          "id": "phone-4-piece-3",
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "phone-4-full",
+          "vietnamese": "Có sạc không?",
+          "english": "Do you have a charger?",
+          "audioKey": "phone-4"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Có sạc không? is the safest default for \"Do you have a charger?\". Use this when you need any charger before you explain more detail. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "phone-4",
+          "vietnamese": "Có sạc không?",
+          "english": "Do you have a charger?",
+          "pronunciation": "koh sahk khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "phone-4"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need any charger before you explain more detail. Use it in Wi-Fi, SIM, battery, charging, maps, and phone setup when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Do not hand over your unlocked phone unless you trust the situation. Show the screen first.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Show the phone screen while you speak. A visible error message often explains the problem faster than more words.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "phone-1",
+          "vietnamese": "Mật khẩu Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "mat khau wai-fai la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-wifi-password",
+          "audioKey": "phone-1"
+        },
+        {
+          "id": "phone-2",
+          "vietnamese": "Có bán SIM không?",
+          "english": "Do you sell SIM cards?",
+          "pronunciation": "koh ban sim khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-sim",
+          "audioKey": "phone-2"
+        },
+        {
+          "id": "phone-3",
+          "vietnamese": "Điện thoại tôi hết pin rồi",
+          "english": "My phone battery is dead",
+          "pronunciation": "dyen thoai toy het pin roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-battery-dead",
+          "audioKey": "phone-3"
+        },
+        {
+          "id": "phone-5",
+          "vietnamese": "Tôi sạc điện thoại ở đây được không?",
+          "english": "Can I charge my phone here?",
+          "pronunciation": "toy sahk dyen thoai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-charge-here",
+          "audioKey": "phone-5"
+        },
+        {
+          "id": "v500-phon-inte-powe-my-map-is-not-working",
+          "vietnamese": "Bản đồ của tôi không hoạt động",
+          "english": "My map is not working",
+          "pronunciation": "Ban do cua toi khong hoat dong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
+          "audioKey": "v500-phon-inte-powe-my-map-is-not-working"
+        },
+        {
+          "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "vietnamese": "Tôi có thể mua SIM ở đâu?",
+          "english": "Where can I get a local SIM card?",
+          "pronunciation": "toy koh theh moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87"
+        },
+        {
+          "id": "v500-phon-inte-powe-i-need-an-esim",
+          "vietnamese": "Tôi cần một eSIM",
+          "english": "I need an eSIM",
+          "pronunciation": "Toi can mot eSIM",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-i-need-an-esim",
+          "audioKey": "v500-phon-inte-powe-i-need-an-esim"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "phone-4",
+      "vietnamese": "Có sạc không?",
+      "english": "Do you have a charger?",
+      "pronunciation": "koh sahk khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "phone-4"
+    }
+  ]
+}

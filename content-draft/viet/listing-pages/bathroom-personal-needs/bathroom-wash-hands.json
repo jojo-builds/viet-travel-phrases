@@ -1,0 +1,181 @@
+{
+  "id": "viet-family-bathroom-wash-hands",
+  "familyID": "bathroom-wash-hands",
+  "phraseID": "bath-4",
+  "tierRole": "tier1",
+  "depth": "baseline",
+  "title": "Tôi rửa tay ở đây được không?",
+  "englishTitle": "Can I wash my hands here?",
+  "pronunciation": "toy zoo-ah tai uh day dook khong",
+  "summary": "Different ways to say \"Can I wash my hands here?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "person.fill",
+  "tintName": "teal",
+  "categoryIDs": [
+    "bathroom-personal-needs"
+  ],
+  "audioKey": "bath-4",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Use this when you only need a sink or hand-washing spot. Useful in markets, food areas, and roadside stops. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "bath-4-piece-1",
+          "vietnamese": "Tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "bath-4-piece-2",
+          "vietnamese": "rửa",
+          "english": "i",
+          "audioKey": "breakdown-authored-rua-ac068417b7"
+        },
+        {
+          "id": "bath-4-piece-3",
+          "vietnamese": "tay",
+          "english": "wash",
+          "audioKey": "breakdown-authored-tay-32014f7f8e"
+        },
+        {
+          "id": "bath-4-piece-4",
+          "vietnamese": "ở",
+          "english": "at / in",
+          "audioKey": "breakdown-directions-2-first"
+        },
+        {
+          "id": "bath-4-piece-5",
+          "vietnamese": "đây",
+          "english": "here / this",
+          "audioKey": "breakdown-transport-1-first"
+        },
+        {
+          "id": "bath-4-piece-6",
+          "vietnamese": "được không?",
+          "english": "is it possible?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+        },
+        {
+          "id": "bath-4-full",
+          "vietnamese": "Tôi rửa tay ở đây được không?",
+          "english": "Can I wash my hands here?",
+          "audioKey": "bath-4"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi rửa tay ở đây được không? is the safest default for \"Can I wash my hands here?\". Use this when you only need a sink or hand-washing spot. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "bath-4",
+          "vietnamese": "Tôi rửa tay ở đây được không?",
+          "english": "Can I wash my hands here?",
+          "pronunciation": "toy zoo-ah tai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "bath-4"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you only need a sink or hand-washing spot. Use it in bathrooms, soap, paper, water, and basic personal needs when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Some places may not have paper or soap available. Asking early avoids an awkward surprise.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Ask directly and follow gestures. People may simply point you toward the right place.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "bath-1",
+          "vietnamese": "Nhà vệ sinh ở đâu?",
+          "english": "Where is the bathroom?",
+          "pronunciation": "nya veh sinh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-where",
+          "audioKey": "bath-1"
+        },
+        {
+          "id": "bath-2",
+          "vietnamese": "Có giấy vệ sinh không?",
+          "english": "Do you have toilet paper?",
+          "pronunciation": "koh zai veh sinh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-paper",
+          "audioKey": "bath-2"
+        },
+        {
+          "id": "bathroom-use",
+          "vietnamese": "Tôi dùng nhà vệ sinh được không?",
+          "english": "Can I use the bathroom?",
+          "pronunciation": "toy zoong nya veh sinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-use",
+          "audioKey": "bathroom-use"
+        },
+        {
+          "id": "bath-3",
+          "vietnamese": "Có xà phòng không?",
+          "english": "Do you have soap?",
+          "pronunciation": "koh sa fong khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-soap",
+          "audioKey": "bath-3"
+        },
+        {
+          "id": "bath-5",
+          "vietnamese": "Tôi cần nước",
+          "english": "I need water",
+          "pronunciation": "toy gun nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-water",
+          "audioKey": "bath-5"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "bath-4",
+      "vietnamese": "Tôi rửa tay ở đây được không?",
+      "english": "Can I wash my hands here?",
+      "pronunciation": "toy zoo-ah tai uh day dook khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "bath-4"
+    }
+  ]
+}

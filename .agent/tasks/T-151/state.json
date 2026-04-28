@@ -1,0 +1,64 @@
+{
+  "taskId": "T-151",
+  "title": "Viet answer-page expansion pack 2 recovery rerun and clean review-gate completion",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "manual-T-151-71c5c500-25ab-4c94-a833-1d657636f93d",
+    "label": "Manual T-151 recovery rerun"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-23T11:16:47.0656695-05:00",
+    "lastHeartbeatAt": "2026-04-23T14:58:40.6160662-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-23T16:58:40.6160662-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "viet_relation_model"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-151\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-151\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-151\\reviews\\",
+    "logs": ".agent\\tasks\\T-151\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion\\content-draft\\viet\\answer-page-sample-v1.json",
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion\\content-draft\\viet\\phrase-source.csv",
+      ".agent\\tasks\\T-151\\logs\\viet-answer-page-expansion-pack-2-recovery-rerun.md",
+      ".agent\\tasks\\T-151\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-23T14:58:40.6160662-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  },
+  "recovery": {
+    "kind": "recovery-handoff",
+    "dedupeKey": "interrupted-recovery:T-149",
+    "originalTaskId": "T-149",
+    "generatedAt": "2026-04-23T11:09:36.5851761-05:00",
+    "generatedBy": "manual-orchestrator-recovery",
+    "lastSyncedAt": "2026-04-23T11:09:36.5851761-05:00"
+  }
+}

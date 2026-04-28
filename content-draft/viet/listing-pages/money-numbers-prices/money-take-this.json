@@ -1,0 +1,213 @@
+{
+  "id": "viet-family-money-take-this",
+  "familyID": "money-take-this",
+  "phraseID": "price-7",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Tôi lấy cái này",
+  "englishTitle": "I’ll take this one",
+  "pronunciation": "toy lay gai nai",
+  "summary": "Different ways to say \"I’ll take this one\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "iconName": "creditcard.fill",
+  "tintName": "green",
+  "categoryIDs": [
+    "money-numbers-prices"
+  ],
+  "audioKey": "price-7",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Say this once you agree on the item and price. This closes the shopping moment quickly. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "price-7-piece-1",
+          "vietnamese": "Tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "price-7-piece-2",
+          "vietnamese": "lấy",
+          "english": "claim / collect",
+          "audioKey": "breakdown-v500-poli-basi-sorry-first"
+        },
+        {
+          "id": "price-7-piece-3",
+          "vietnamese": "cái",
+          "english": "this",
+          "audioKey": "breakdown-repair-3-first"
+        },
+        {
+          "id": "price-7-piece-4",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "price-7-full",
+          "vietnamese": "Tôi lấy cái này",
+          "english": "I’ll take this one",
+          "audioKey": "price-7"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi lấy cái này is the safest default for \"I’ll take this one\". Say this once you agree on the item and price. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "phrases": [
+        {
+          "id": "price-7",
+          "vietnamese": "Tôi lấy cái này",
+          "english": "I’ll take this one",
+          "pronunciation": "toy lay gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "price-7"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "why-it-matters",
+      "title": "Why it matters",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Say this once you agree on the item and price. Use it in prices, quantities, payment, and ATM moments when one clear sentence will work better than a long explanation.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "If the answer is a number, ask them to type it or show it on a calculator.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "phrases": [
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-how-much",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "price-2",
+          "vietnamese": "Bao nhiêu một ký?",
+          "english": "How much per kilo?",
+          "pronunciation": "bao nyew mot kee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-per-kilo",
+          "audioKey": "price-2"
+        },
+        {
+          "id": "price-3",
+          "vietnamese": "Mắc quá",
+          "english": "Too expensive",
+          "pronunciation": "mak gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-too-expensive",
+          "audioKey": "price-3"
+        },
+        {
+          "id": "price-4",
+          "vietnamese": "Bớt chút được không?",
+          "english": "Can you lower it a little?",
+          "pronunciation": "but choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-lower-price",
+          "audioKey": "price-4"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "price-5",
+          "vietnamese": "Giá cuối bao nhiêu?",
+          "english": "What’s your final price?",
+          "pronunciation": "za gooy bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-final-price",
+          "audioKey": "price-5"
+        },
+        {
+          "id": "price-6",
+          "vietnamese": "Cho tôi xem cái khác",
+          "english": "Show me another one",
+          "pronunciation": "cho toy sem gai khak",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-another-one",
+          "audioKey": "price-6"
+        },
+        {
+          "id": "airport-4",
+          "vietnamese": "ATM gần nhất ở đâu?",
+          "english": "Where is the nearest ATM?",
+          "pronunciation": "ay-tee-em gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-find-atm",
+          "audioKey": "airport-4"
+        },
+        {
+          "id": "v500-mone-numb-pric-the-atm-kept-my-card",
+          "vietnamese": "ATM đã giữ thẻ của tôi",
+          "english": "The ATM kept my card",
+          "pronunciation": "ATM da giu the cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
+          "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "price-7",
+      "vietnamese": "Tôi lấy cái này",
+      "english": "I’ll take this one",
+      "pronunciation": "toy lay gai nai",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "price-7"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "id": "viet-phrase-repair-number-amount",
+  "familyID": "repair-number",
+  "phraseID": "repair-number-amount",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Anh/chị vừa nói bao nhiêu?",
+  "englishTitle": "How much did you say?",
+  "pronunciation": "anh chee voo-ah noy bao nyew",
+  "summary": "A focused guide to using Anh/chị vừa nói bao nhiêu? as a nearby form of Làm ơn nói lại số đó.",
+  "iconName": "questionmark.bubble.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "understanding-repair"
+  ],
+  "audioKey": "repair-number-amount",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Anh/chị vừa nói bao nhiêu? is useful when \"How much did you say?\" fits better than the parent phrase. Use this when the missed number was the fare, total, room number, or amount.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "breakdown": [
+        {
+          "id": "repair-number-amount-piece-1",
+          "vietnamese": "Anh/chị",
+          "english": "you (polite)",
+          "audioKey": "breakdown-repair-english-help-first"
+        },
+        {
+          "id": "repair-number-amount-piece-2",
+          "vietnamese": "vừa",
+          "english": "much",
+          "audioKey": "breakdown-authored-vua-0467562c66"
+        },
+        {
+          "id": "repair-number-amount-piece-3",
+          "vietnamese": "nói",
+          "english": "speak / say",
+          "audioKey": "breakdown-problems-3-first"
+        },
+        {
+          "id": "repair-number-amount-piece-4",
+          "vietnamese": "bao nhiêu",
+          "english": "how much",
+          "audioKey": "breakdown-authored-bao-nhieu-415a7b69fa"
+        },
+        {
+          "id": "repair-number-amount-full",
+          "vietnamese": "Anh/chị vừa nói bao nhiêu?",
+          "english": "How much did you say?",
+          "audioKey": "repair-number-amount"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when the missed number was the fare, total, room number, or amount. Return to Làm ơn nói lại số đó when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "repair-6",
+          "vietnamese": "Làm ơn nói lại số đó",
+          "english": "Please say the number again",
+          "pronunciation": "lahm uhn noy lie soh doh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-number",
+          "audioKey": "repair-6"
+        },
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        },
+        {
+          "id": "repair-2",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "pronunciation": "vee-et zoong zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-write-down",
+          "audioKey": "repair-2"
+        },
+        {
+          "id": "repair-3",
+          "vietnamese": "Cái đó nghĩa là gì?",
+          "english": "What does that mean?",
+          "pronunciation": "gai doh ngee-ah lah zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-meaning",
+          "audioKey": "repair-3"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "repair-number-amount",
+      "vietnamese": "Anh/chị vừa nói bao nhiêu?",
+      "english": "How much did you say?",
+      "pronunciation": "anh chee voo-ah noy bao nyew",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "repair-number-amount"
+    }
+  ]
+}

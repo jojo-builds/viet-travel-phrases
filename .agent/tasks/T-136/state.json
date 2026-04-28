@@ -1,0 +1,55 @@
+{
+  "taskId": "T-136",
+  "title": "Viet batch 1 expansion, high-friction relation-ready row pack on the dedicated content branch",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "E:\\AI\\SpeakLocal-App-Family",
+  "cwd": "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "t136-20260422t042225-9c4d",
+    "label": "manual-t136-content"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-22T04:22:25.2450924-05:00",
+    "lastHeartbeatAt": "2026-04-22T04:55:01.1971213-05:00",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-22T06:55:01.1971213-05:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "viet_relation_model"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent\\tasks\\T-136\\result.md",
+    "recoveryNotes": ".agent\\tasks\\T-136\\recovery-notes.md",
+    "reviews": ".agent\\tasks\\T-136\\reviews\\",
+    "logs": ".agent\\tasks\\T-136\\logs\\",
+    "requiredForDone": [
+      "E:\\AI\\SpeakLocal-App-Family-worktrees\\viet-1000-row-expansion\\content-draft\\viet\\phrase-source.csv",
+      ".agent\\tasks\\T-136\\logs\\viet-batch-1-expansion-notes.md",
+      ".agent\\tasks\\T-136\\result.md"
+    ]
+  },
+  "lastUpdated": "2026-04-22T04:55:01.1971213-05:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "selectionOrder": 4,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}

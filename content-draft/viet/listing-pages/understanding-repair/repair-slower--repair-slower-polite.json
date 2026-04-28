@@ -1,0 +1,155 @@
+{
+  "id": "viet-phrase-repair-slower-polite",
+  "familyID": "repair-slower",
+  "phraseID": "repair-slower-polite",
+  "tierRole": "child",
+  "depth": "baseline",
+  "title": "Nói chậm giúp tôi được không?",
+  "englishTitle": "Could you speak a little slower, please?",
+  "pronunciation": "noy chuhm zoop toy dook khong",
+  "summary": "A focused guide to using Nói chậm giúp tôi được không? as a nearby form of Nói chậm chút được không?.",
+  "iconName": "questionmark.bubble.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "understanding-repair"
+  ],
+  "audioKey": "repair-slower-polite",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Nói chậm giúp tôi được không? is useful when \"Could you speak a little slower, please?\" fits better than the parent phrase. Use this when you need the same request to sound softer.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern turns the phrase into a yes-or-no question. Keep the main need together so the question stays natural.",
+      "breakdown": [
+        {
+          "id": "repair-slower-polite-piece-1",
+          "vietnamese": "Nói",
+          "english": "speak / say",
+          "audioKey": "breakdown-problems-3-first"
+        },
+        {
+          "id": "repair-slower-polite-piece-2",
+          "vietnamese": "chậm",
+          "english": "slow",
+          "audioKey": "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-5"
+        },
+        {
+          "id": "repair-slower-polite-piece-3",
+          "vietnamese": "giúp tôi",
+          "english": "help me",
+          "audioKey": "breakdown-authored-giup-toi-38e527ca39"
+        },
+        {
+          "id": "repair-slower-polite-piece-4",
+          "vietnamese": "được không?",
+          "english": "is it possible?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+        },
+        {
+          "id": "repair-slower-polite-full",
+          "vietnamese": "Nói chậm giúp tôi được không?",
+          "english": "Could you speak a little slower, please?",
+          "audioKey": "repair-slower-polite"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you need the same request to sound softer. Return to Nói chậm chút được không? when you need the simpler default version.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "watch-out",
+      "title": "Watch out",
+      "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
+      "presentation": "warning-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Nearby phrases keep the conversation moving after this one.",
+      "phrases": [
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        },
+        {
+          "id": "repair-2",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "pronunciation": "vee-et zoong zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-write-down",
+          "audioKey": "repair-2"
+        },
+        {
+          "id": "repair-3",
+          "vietnamese": "Cái đó nghĩa là gì?",
+          "english": "What does that mean?",
+          "pronunciation": "gai doh ngee-ah lah zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-meaning",
+          "audioKey": "repair-3"
+        },
+        {
+          "id": "repair-6",
+          "vietnamese": "Làm ơn nói lại số đó",
+          "english": "Please say the number again",
+          "pronunciation": "lahm uhn noy lie soh doh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-number",
+          "audioKey": "repair-6"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "repair-slower-polite",
+      "vietnamese": "Nói chậm giúp tôi được không?",
+      "english": "Could you speak a little slower, please?",
+      "pronunciation": "noy chuhm zoop toy dook khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "repair-slower-polite"
+    }
+  ]
+}

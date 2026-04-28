@@ -1,0 +1,4 @@
+- Recommended annotated tag target: `35293a4` (`ios-v1.0.0-build2-accepted-candidate`)
+- Recommended savepoint approach for the dirty tree: create a named stash including untracked files before cleanup, for example `post-acceptance-audit-2026-04-11`
+- Recommended branch to begin v1.1 work: `v1.1-prep`
+- First concrete task to do next: create the annotated tag on `35293a4`, then make the dirty-tree savepoint
