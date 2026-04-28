@@ -1,21 +1,21 @@
 {
   "taskId": "T-156",
   "title": "Mac queue smoke test and manual worker handoff",
-  "status": "queued",
-  "phase": "queued-for-desktop-codex",
+  "status": "done",
+  "phase": "completed",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "session": {
-    "owner": "",
-    "sessionId": "",
-    "label": ""
+    "owner": "codex-manual-worker",
+    "sessionId": "codex-manual-T-156-20260428T173841+0700",
+    "label": "manual-T-156-queue-smoke"
   },
   "execution": {
-    "attempt": 0,
-    "claimedAt": "",
-    "lastHeartbeatAt": "",
+    "attempt": 1,
+    "claimedAt": "2026-04-28T17:38:41+07:00",
+    "lastHeartbeatAt": "2026-04-28T17:39:16+07:00",
     "leaseDurationMinutes": 60,
-    "leaseExpiresAt": "",
+    "leaseExpiresAt": "2026-04-28T18:38:41+07:00",
     "reclaimReason": ""
   },
   "locks": {
@@ -39,7 +39,7 @@
       ".agent/tasks/T-156/state.json"
     ]
   },
-  "lastUpdated": "2026-04-28T16:12:00+07:00",
+  "lastUpdated": "2026-04-28T17:39:16+07:00",
   "automation": {
     "runner": "manual-codex",
     "mode": "single-task",
