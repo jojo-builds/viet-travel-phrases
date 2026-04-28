@@ -1,0 +1,61 @@
+{
+  "taskId": "T-168",
+  "title": "Wire Viet SQLite phrase graph into native app and repair fixture tests",
+  "status": "queued",
+  "phase": "queued-for-desktop-codex",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family-native-sqlite",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "",
+    "label": ""
+  },
+  "execution": {
+    "attempt": 0,
+    "claimedAt": "",
+    "lastHeartbeatAt": "",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 180,
+    "leaseExpiresAt": "",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "native_ios_sqlite_runtime_read_path",
+      "native_ios_fixture_test_truth",
+      "agent_task_T-168"
+    ],
+    "read": [],
+    "blockedBy": []
+  },
+  "truthClassification": {
+    "target": "live"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-168/result.md",
+    "recoveryNotes": ".agent/tasks/T-168/recovery-notes.md",
+    "reviews": ".agent/tasks/T-168/reviews/",
+    "logs": ".agent/tasks/T-168/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-168/result.md",
+      ".agent/tasks/T-168/state.json",
+      "native-ios/App/Models/VietSQLiteLanguagePackRepository.swift",
+      "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite"
+    ]
+  },
+  "lastUpdated": "2026-04-29T06:40:41+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "90-240",
+    "runtimeReviewPathProven": true,
+    "selectionOrder": 17,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}
