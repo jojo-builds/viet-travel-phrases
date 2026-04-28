@@ -14,6 +14,8 @@ First version decisions:
 
 - Keep practice fully offline and deterministic from bundled content. No runtime AI, network prompt generation, accounts, leagues, public leaderboards, hearts, or punitive lives.
 - Start with compact native sessions that rehearse the exact phrase graph users are already browsing: authored listing pages, phrase rows, pronunciation audio, breakdown tokens, and category context.
+- Practice is phrase-sourced. From any phrase listing page, the user can add that phrase to a local practice pool, then practice those chosen phrases by quiz mode, category, source page, saved/recent, or missed status.
+- Every generated practice prompt must have a selected source phrase, row, or breakdown token as the correct answer. Multiple-choice distractors fill the other slots from graph-nearby phrases; the practiced phrase is never just decorative context.
 - MVP modes are `Listen And Choose`, `Situation Pick`, `Pronoun Coach`, `Practice This Page`, and `Review Missed`.
 - MVP active recall is deliberate but bounded: users must retrieve meaning, use-case, social role, or next action before seeing feedback. Hold full phrase-construction `Build It` for the first post-MVP iteration unless a follow-up deck/audio generator task proves token sequencing and token audio are release-clean.
 - Use a `Practice` destination from home/quick access plus contextual `Practice this` actions on listing pages. Wait on a permanent fourth bottom-chrome item until simulator/device proof says it improves navigation instead of crowding the app shell.
@@ -30,9 +32,52 @@ The practice area should help users rehearse:
 - phrases by category, such as hotel, airport, money, food, health, and transport;
 - social/pronoun choices, especially `anh`, `chị`, `em`, `ông`, `bà`, `chú`, `cô`, and `bạn`;
 - one listing page or phrase family they just read;
+- the exact phrase pages they intentionally added to practice;
 - saved, recent, or missed phrases;
 - listening recognition with bundled audio;
 - short real-world situations rather than abstract translation drills.
+
+## Phrase-sourced practice pool
+
+The core practice model is user intent first: if someone taps `Add to practice` on a phrase page, that phrase becomes part of their local practice pool. Later, the Practice area lets them choose how to rehearse the phrases they selected.
+
+Required user flows:
+
+- From a phrase listing page, add the hero phrase to practice.
+- From row-level phrase surfaces, add that specific phrase row when it has canonical phrase identity.
+- From a listing page, optionally start `Practice this page`, which uses the hero phrase plus high-value rows and breakdown tokens from that page.
+- From the Practice area, view a manage screen for selected phrases and remove items without hunting back through the app.
+- From any phrase page already in the pool, remove it or see that it is already selected.
+
+Practice entry options should be mode-first but source-aware:
+
+- choose a mode such as `Listen And Choose`, `Situation Pick`, `Pronoun Coach`, or `Review Missed`;
+- choose a source such as `My practice phrases`, `This page`, `Saved`, `Recent`, `Category`, or `Pronouns`;
+- let the app build a short session from the intersection.
+
+This avoids generic quizzes that only test travel common sense. A prompt should always rehearse something the user selected, saved, missed, recently opened, or intentionally started from a listing page.
+
+### Correct-answer anchoring
+
+For every practice prompt, the correct answer must be anchored to one of:
+
+- `sourcePhraseID`;
+- `sourcePageID` plus a hero phrase;
+- `sourcePhraseRowID`;
+- `sourceBreakdownTokenID`;
+- a future canonical relation target such as a reply, pronoun variant, or nearby phrase.
+
+For multiple choice, the correct answer should be placed in a randomized answer slot. The other options are distractors, not arbitrary filler.
+
+Distractor rules:
+
+- Prefer same scenario/category, same relationship family, same intent type, or same phrase shape.
+- Avoid choices that are too easy because their English translation gives the answer away before the user listens or thinks.
+- Avoid unsafe ambiguity in health, emergency, payment, police, and safety contexts.
+- Do not use unresolved aliases, missing audio, or phrases without canonical page identity.
+- Keep distractors explainable: feedback should say why the correct phrase fits and why a tempting nearby phrase is different.
+
+Conceptually, every phrase should be practice-capable. That does not mean hand-writing a separate quiz file for every phrase. The durable model should store generated practice templates keyed by canonical phrase/page IDs, then use local user-selected phrase IDs to assemble sessions.
 
 ## Research signals
 
@@ -415,12 +460,15 @@ Suggested JSON concepts:
 - `PracticeSkillTag`
 - `PracticeSource`
 - `PracticeSensitivity`
+- `PracticePoolSelection`
+- `PracticeDistractorSet`
 
 Prompt fields should include:
 
 - stable `id`;
 - `mode`;
 - `language`;
+- `targetPhraseID`;
 - `sourcePageID`;
 - `sourceFamilyID`;
 - `sourcePhraseID`;
@@ -428,6 +476,7 @@ Prompt fields should include:
 - optional `sourcePhraseRowID`;
 - optional `sourceBreakdownTokenID`;
 - `scenarioID`;
+- `selectionEligibility`, such as `my-practice`, `this-page`, `saved`, `recent`, `missed`, `category`, or `pronoun`;
 - `questionText`;
 - optional `audioKey`;
 - `options`;
@@ -437,6 +486,29 @@ Prompt fields should include:
 - `sensitivity`;
 - `requiresAudio`;
 - `generatorVersion`.
+
+Each option should include:
+
+- stable `id`;
+- optional `phraseID`;
+- display Vietnamese text;
+- optional pronunciation/audio key;
+- optional English shown only after selection when the prompt mode needs active recall;
+- `isCorrect`.
+
+For SQLite, the bundled read model should be able to represent:
+
+- generated practice items keyed to canonical phrase/page IDs;
+- generated option/distractor sets;
+- phrase-to-practice-mode eligibility;
+- audio usage for prompt and option playback.
+
+Mutable local user data should stay outside the bundled read-only SQLite file:
+
+- selected practice phrase IDs;
+- removed/hidden phrase IDs;
+- practiced/missed/due state;
+- last selected quiz modes and filters.
 
 Suggested skill tags:
 
@@ -451,6 +523,8 @@ Suggested skill tags:
 
 Local device state can stay simple:
 
+- selected practice phrase IDs;
+- selected practice page IDs if the user adds a full page/deck later;
 - prompt ID;
 - practiced count;
 - correct count;
@@ -472,8 +546,11 @@ A follow-up practice-generator task should produce a deterministic generator tha
 - reads the generated Viet phrase catalog;
 - reads authored listing pages;
 - reads the authored audio audit;
+- reads canonical phrase IDs and phrase-page aliases from the SQLite phrase graph once that path is available;
 - builds an authored-page ID set and validates every practice source/related target against it;
 - builds per-page section, phrase-row, and breakdown-token ID sets from authored listing-page sections;
+- emits practice prompts keyed by `targetPhraseID` so user-selected phrases can drive session construction;
+- emits distractor pools that can fill answer slots around a selected target phrase;
 - emits practice decks and a practice-specific audio audit;
 - creates stable IDs from canonical page/family/phrase IDs;
 - skips prompts that cannot be made safe and explainable;
@@ -484,10 +561,12 @@ A follow-up practice-generator task should produce a deterministic generator tha
 Prompt generation quality rules:
 
 - Every prompt needs a source pointer back to authored content truth.
+- Every prompt needs a target phrase, row, relation, or breakdown token that can be the correct answer when a user selected that phrase for practice.
 - Every source page, source section, source family, source phrase, phrase-row anchor, breakdown-token anchor, and related page pointer must resolve before it appears in practice output.
 - Practice explanations may summarize authored page teaching, but they must not invent new phrase-page facts. If a prompt needs a nuance that is not anchored to an authored section, skip the prompt or add that authored content in a separate content task first.
 - Every prompt with audio must have a resolved audio key.
 - Distractors should be plausible enough to teach, not random.
+- Distractors should come from graph-nearby candidates whenever possible: same category, same pronoun/relationship family, same intent, same phrase shape, or same source page.
 - Emergency/safety/health distractors require extra caution.
 - Pronoun prompts require explicit authored evidence.
 - Prompt explanations should be short, concrete, and traveler-facing.
