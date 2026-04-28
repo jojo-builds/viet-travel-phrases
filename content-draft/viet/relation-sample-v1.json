@@ -222,7 +222,7 @@
         {
           "relationType": "repair_for",
           "targetFamilyId": "repair-understand",
-          "reason": "If the driver explains too much too quickly, a direct understanding repair is safer than guessing."
+          "reason": "If the driver explains too much too quickly, a direct clarification phrase is safer than guessing."
         }
       ]
     },
@@ -1011,7 +1011,7 @@
           "kind": "repair-branch",
           "familyId": "repair-understand",
           "phraseId": "problems-2",
-          "note": "If the staff explains settings or timing too quickly, understanding repair is the first safe branch."
+          "note": "If the staff explains settings or timing too quickly, a clarification phrase is the first safe branch."
         },
         {
           "kind": "repair-branch",
@@ -1226,7 +1226,7 @@
         {
           "relationType": "see_also",
           "targetFamilyId": "money-how-much",
-          "reason": "Price and total conversations are one of the main places where this repair phrase gets used."
+          "reason": "Price and total conversations are one of the main places where this clarifying phrase gets used."
         },
         {
           "relationType": "see_also",
@@ -1264,7 +1264,7 @@
         {
           "relationType": "see_also",
           "targetFamilyId": "repair-understand",
-          "reason": "English-help requests usually appear after the broader understanding-repair family is already in play."
+          "reason": "English-help requests usually appear after the broader clarification-help family is already in play."
         },
         {
           "relationType": "next_step_after",

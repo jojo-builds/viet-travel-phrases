@@ -20,7 +20,7 @@ export const vietPresentation: AppPresentationConfig = {
     quickPhrasesTitle: 'Say this now',
     quickPhrasesSubtitle: 'Short safe starter phrases for the moments that go sideways fastest.',
     scenariosTitle: 'High-stress situations',
-    scenariosSubtitle: 'Arrival, transport, money, food, pharmacy, emergencies, SIM/internet, and misunderstanding repair should be one tap away.',
+    scenariosSubtitle: 'Arrival, transport, money, food, pharmacy, emergencies, SIM/internet, and clarification help should be one tap away.',
     libraryTitle: 'All travel situations',
     librarySubtitle: 'Free covers all 18 situations. Full Trip Pack adds deeper follow-up help inside the same places.',
     quickPhraseIds: ['airport-5', 'taxi-1', 'price-1', 'food-3', 'health-1', 'phone-2', 'problems-2'],

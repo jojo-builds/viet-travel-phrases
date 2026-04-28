@@ -4,7 +4,7 @@
     "tierOneFamilyCount": 150,
     "resourceMainPageCount": 148,
     "childPageCount": 15,
-    "generatedAt": "2026-04-28T22:21:48.552Z"
+    "generatedAt": "2026-04-28T22:54:20.884Z"
   },
   "pages": [
     {
@@ -600,7 +600,7 @@
         {
           "id": "at-glance",
           "title": "At a glance",
-          "body": "Xin lỗi answers the traveler question \"Excuse me / sorry\" in small service and first-contact moments. This helps you get attention, pass by someone, or apologize for a small mistake. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
+          "body": "Xin lỗi answers the traveler question \"Excuse me / sorry\" in small service and first-contact moments. This helps you get attention, pass by someone, or apologize for a small mistake. This is the safe all-purpose phrase for passing by, starting a question, or apologizing lightly. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
           "presentation": "plain-text"
         },
         {
@@ -2861,7 +2861,7 @@
         {
           "id": "at-glance",
           "title": "At a glance",
-          "body": "Dừng ở đây được rồi answers the traveler question \"You can stop here\" in rides, routes, pickup points, and stops. This is for when you want the driver to stop at the current spot. Its job is keeping the useful noun or action in the center of the phrase. The forms below show how tone, setting, or politeness changes the best choice.",
+          "body": "Dừng ở đây được rồi answers the traveler question \"You can stop here\" in rides, routes, pickup points, and stops. This is for when you want the driver to stop at the current spot. This is the safe phrase for the last turn or final stop. Its job is keeping the useful noun or action in the center of the phrase. The forms below show how tone, setting, or politeness changes the best choice.",
           "presentation": "plain-text"
         },
         {
@@ -4918,7 +4918,7 @@
         {
           "id": "at-glance",
           "title": "At a glance",
-          "body": "Cho tôi nhận phòng answers the traveler question \"I’d like to check in\" in front desk, room, check-in, and hotel-service moments. This is for when you are ready to begin check-in. Its job is keeping the useful noun or action in the center of the phrase. The forms below show how tone, setting, or politeness changes the best choice.",
+          "body": "Cho tôi nhận phòng answers the traveler question \"I’d like to check in\" in front desk, room, check-in, and hotel-service moments. This is for when you are ready to begin check-in. This is the default phrase when the reservation exists and you need the next step. Its job is keeping the useful noun or action in the center of the phrase. The forms below show how tone, setting, or politeness changes the best choice.",
           "presentation": "plain-text"
         },
         {
@@ -10218,7 +10218,7 @@
         {
           "id": "at-glance",
           "title": "At a glance",
-          "body": "Gói mang về answers the traveler question \"Pack it to go\" in ordering, adjusting dishes, and checking ingredients. Say this when you want takeaway from a stall or restaurant. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
+          "body": "Gói mang về answers the traveler question \"Pack it to go\" in ordering, adjusting dishes, and checking ingredients. Say this when you want takeaway from a stall or restaurant. This is the default restaurant exit phrase when you still want the food. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
           "presentation": "plain-text"
         },
         {
@@ -13718,7 +13718,7 @@
         {
           "id": "at-glance",
           "title": "At a glance",
-          "body": "Tôi đi thẳng phải không? answers the traveler question \"Should I go straight\" in finding places, turns, distance, and walking directions. This is for when you want to confirm that you should keep going straight. This is one of the clearest ways to check the route before you keep walking. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
+          "body": "Tôi đi thẳng phải không? answers the traveler question \"Should I go straight\" in finding places, turns, distance, and walking directions. This is for when you want to confirm that you should keep going straight. This is one of the safest route check phrases. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
           "presentation": "plain-text"
         },
         {
@@ -17523,7 +17523,7 @@
         {
           "id": "at-glance",
           "title": "At a glance",
-          "body": "Mấy giờ? answers the traveler question \"What time\" in times, dates, tickets, waits, and bookings. This is for when you already both know what the event is and you just need the time. Its job is giving the other person a simple anchor rather than a long explanation. Expect a short reply, a smile, a time, or a light follow-up question; then use Explore next if the reply creates another small task.",
+          "body": "Mấy giờ? answers the traveler question \"What time\" in times, dates, tickets, waits, and bookings. This is for when you already both know what the event is and you just need the time. This is the safest time question because the thing itself can be pointed to or named separately. Its job is giving the other person a simple anchor rather than a long explanation. Expect a short reply, a smile, a time, or a light follow-up question; then use Explore next if the reply creates another small task.",
           "presentation": "plain-text"
         },
         {

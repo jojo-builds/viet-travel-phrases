@@ -14791,7 +14791,7 @@ const scenarios: AppScenario[] = [
         "id": "repair-slower",
         "scenarioId": "understanding-repair",
         "title": "Speak slower",
-        "summary": "This is the default repair phrase when the problem is speed, not meaning.",
+        "summary": "Use this when the problem is speed, not meaning.",
         "accessTier": "starter",
         "primaryPhraseId": "problems-3",
         "phraseIds": [
@@ -20622,7 +20622,7 @@ const scenarios: AppScenario[] = [
         "id": "directions-turn-right",
         "scenarioId": "directions-navigation",
         "title": "Turn right?",
-        "summary": "This is a good repair phrase when you think you heard the turn but want confirmation.",
+        "summary": "Use this when you think you heard the turn but want confirmation.",
         "accessTier": "starter",
         "primaryPhraseId": "directions-5",
         "phraseIds": [

@@ -28,7 +28,7 @@ export const vietPremiumConfig: AppPremiumConfig = {
     'Buy once. No subscription.',
     'Free already covers 150 starter phrase groups across all 18 travel situations.',
     'Full Trip Pack adds 750 deeper follow-up and recovery groups in those same situations.',
-    'High-stress help goes deeper in arrival, transport, money, food, pharmacy, emergencies, SIM/internet, and misunderstanding repair.',
+    'High-stress help goes deeper in arrival, transport, money, food, pharmacy, emergencies, SIM/internet, and clarification help.',
     'All 919 current Viet lines include audio.',
   ],
   categories: [
@@ -266,7 +266,7 @@ export const vietPremiumConfig: AppPremiumConfig = {
   plannedSectionBody: 'These situations are planned next, but they are not part of the live app yet.',
   scenarioPreviewTitle: 'More in Full Trip Pack',
   scenarioPreviewBody:
-    'Free covers the basics in this situation. Full Trip Pack adds the follow-up and repair phrases that usually come next.',
+    'Free covers the basics in this situation. Full Trip Pack adds the follow-up and clarifying phrases that usually come next.',
   includedBadgeLabel: 'Free',
   premiumOnlyBadgeLabel: 'Full Trip Pack',
   liveNowBadgeLabel: 'Open',

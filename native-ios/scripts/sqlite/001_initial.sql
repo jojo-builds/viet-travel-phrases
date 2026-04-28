@@ -23,6 +23,7 @@ CREATE TABLE phrase (
   id TEXT PRIMARY KEY,
   language_pack_id TEXT NOT NULL REFERENCES language_pack(id),
   canonical_phrase_key TEXT NOT NULL,
+  canonical_phrase_id TEXT NOT NULL REFERENCES phrase(id) DEFERRABLE INITIALLY DEFERRED,
   target_text TEXT NOT NULL,
   normalized_target_text TEXT NOT NULL,
   accentless_target_text TEXT NOT NULL,
@@ -248,6 +249,7 @@ CREATE TABLE practice_item (
 );
 
 CREATE INDEX idx_phrase_family_key ON phrase(language_pack_id, canonical_phrase_key);
+CREATE INDEX idx_phrase_canonical_phrase ON phrase(canonical_phrase_id);
 CREATE INDEX idx_phrase_page_phrase ON phrase_page(phrase_id);
 CREATE INDEX idx_page_alias_canonical ON page_alias(canonical_page_id);
 CREATE INDEX idx_phrase_cluster_source_family ON phrase_cluster(source_family_id);
