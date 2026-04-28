@@ -7,7 +7,7 @@
   "title": "Viết xuống giúp tôi",
   "englishTitle": "Please write it down",
   "pronunciation": "vee-et zoong zoop toy",
-  "summary": "Different ways to say \"Please write it down\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "summary": "Different ways to say \"Please write it down\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -24,7 +24,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
           "id": "repair-2-piece-1",
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Viết xuống giúp tôi is the safest default for asking someone to write it down. It keeps the request polite and specific without needing to explain what you missed.",
+      "body": "Viết xuống giúp tôi is the clearest version to start with when you need someone to write it down. It keeps the request polite and specific without needing to explain what you missed.",
       "phrases": [
         {
           "id": "repair-2",
@@ -92,7 +92,7 @@
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
       "phrases": [
         {
           "id": "problems-2",

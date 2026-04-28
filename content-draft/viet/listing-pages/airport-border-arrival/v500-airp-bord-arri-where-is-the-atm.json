@@ -7,7 +7,7 @@
   "title": "ATM ở đâu?",
   "englishTitle": "Where is the ATM?",
   "pronunciation": "ATM o dau",
-  "summary": "Different ways to say \"Where is the ATM?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "summary": "Different ways to say \"Where is the ATM?\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "ATM ở đâu? is the safest default for \"Where is the ATM?\". Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "body": "ATM ở đâu? is the version to learn first for \"Where is the ATM?\". Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. If the person hesitates, show the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-where-is-the-atm",
@@ -92,7 +92,7 @@
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
       "phrases": [
         {
           "id": "airport-1",

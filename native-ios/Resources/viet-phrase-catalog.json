@@ -170,7 +170,7 @@
       "pageID": "viet-family-polite-excuse-me",
       "scenarioID": "polite-basics",
       "familyTitle": "Excuse me / sorry",
-      "summary": "This is the safe all-purpose phrase for passing by, starting a question, or apologizing lightly.",
+      "summary": "Use this for passing by, starting a question, or apologizing lightly.",
       "primaryPhraseID": "polite-5",
       "accessTier": "starter",
       "phraseIDs": [
@@ -354,7 +354,7 @@
       "pageID": "viet-family-transport-stop-here",
       "scenarioID": "transport",
       "familyTitle": "Stop here",
-      "summary": "This is the safe phrase for the last turn or final stop.",
+      "summary": "Use this for the last turn, curbside drop-off, or final stop.",
       "primaryPhraseID": "taxi-3",
       "accessTier": "starter",
       "phraseIDs": [
@@ -487,7 +487,7 @@
       "pageID": "viet-family-hotel-check-in",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Check in",
-      "summary": "This is the default phrase when the reservation exists and you need the next step.",
+      "summary": "Use this when the reservation exists and you need the next step.",
       "primaryPhraseID": "hotel-2",
       "accessTier": "starter",
       "phraseIDs": [
@@ -790,7 +790,7 @@
       "pageID": "viet-family-food-pack-to-go",
       "scenarioID": "food-drink",
       "familyTitle": "Pack it to go",
-      "summary": "This is the default restaurant exit phrase when you still want the food.",
+      "summary": "Use this at a restaurant or stall when you still want the food, just packed to leave.",
       "primaryPhraseID": "food-7",
       "accessTier": "starter",
       "phraseIDs": [
@@ -1032,7 +1032,7 @@
       "pageID": "viet-family-directions-go-straight",
       "scenarioID": "directions-navigation",
       "familyTitle": "Go straight?",
-      "summary": "This is one of the safest route check phrases.",
+      "summary": "This is one of the clearest ways to check the route before you keep walking.",
       "primaryPhraseID": "directions-6",
       "accessTier": "starter",
       "phraseIDs": [
@@ -1323,7 +1323,7 @@
       "pageID": "viet-family-time-what-time",
       "scenarioID": "time-dates-booking",
       "familyTitle": "What time?",
-      "summary": "This is the safest time question because the thing itself can be pointed to or named separately.",
+      "summary": "Use this when the event or place is already clear and you only need the time.",
       "primaryPhraseID": "time-1",
       "accessTier": "starter",
       "phraseIDs": [
@@ -2044,7 +2044,7 @@
       "id": "repair-type-phone",
       "pageID": "viet-family-repair-type-phone",
       "scenarioID": "understanding-repair",
-      "familyTitle": "Move the repair to their phone",
+      "familyTitle": "Ask them to type it",
       "summary": "Typing often rescues names, addresses, and booking details faster than repeating them out loud.",
       "primaryPhraseID": "repair-premium-type-phone",
       "accessTier": "premium",
@@ -2348,7 +2348,7 @@
       "pageID": "viet-family-food-without-this-ingredient",
       "scenarioID": "food-drink",
       "familyTitle": "Remove a specific ingredient",
-      "summary": "Point-and-remove phrasing is more believable premium value than generic dietary theory because it fixes the actual plate in front of you.",
+      "summary": "Point-and-remove phrasing helps when the exact ingredient is already on the plate in front of you.",
       "primaryPhraseID": "food-premium-without-this-ingredient",
       "accessTier": "premium",
       "phraseIDs": [
@@ -2528,7 +2528,7 @@
       "pageID": "viet-family-emergency-tourist-police",
       "scenarioID": "emergency-safety",
       "familyTitle": "Ask for the tourist police",
-      "summary": "Tourist police is a more actionable escalation target than generic emergency language when the issue is theft, scam, or document trouble.",
+      "summary": "Ask for tourist police when the issue is theft, a scam, or document trouble.",
       "primaryPhraseID": "emergency-premium-tourist-police",
       "accessTier": "premium",
       "phraseIDs": [
@@ -10207,8 +10207,8 @@
       "id": "v900-phon-inte-powe-how-long-will-the-repair-take",
       "pageID": "viet-family-v900-phon-inte-powe-how-long-will-the-repair-take",
       "scenarioID": "phone-internet-power",
-      "familyTitle": "How long will the repair take",
-      "summary": "Ask this when you need how long will the repair take.",
+      "familyTitle": "How long will the fix take",
+      "summary": "Ask this when you need a clear estimate for how long the fix will take.",
       "primaryPhraseID": "v900-phon-inte-powe-how-long-will-the-repair-take",
       "accessTier": "premium",
       "phraseIDs": [
@@ -10927,8 +10927,8 @@
       "id": "v900-loca-serv-ever-task-where-can-i-repair-my-bag",
       "pageID": "viet-family-v900-loca-serv-ever-task-where-can-i-repair-my-bag",
       "scenarioID": "local-services-everyday-tasks",
-      "familyTitle": "Where can I repair my bag",
-      "summary": "Ask this when you need where can i repair my bag.",
+      "familyTitle": "Where can I get my bag fixed",
+      "summary": "Ask this when you need a nearby shop that can fix a bag, zipper, or strap.",
       "primaryPhraseID": "v900-loca-serv-ever-task-where-can-i-repair-my-bag",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29605,7 +29605,7 @@
       "familyID": "v900-phon-inte-powe-how-long-will-the-repair-take",
       "scenarioID": "phone-internet-power",
       "audioKey": "v900-phon-inte-powe-how-long-will-the-repair-take",
-      "englishText": "How long will the repair take?",
+      "englishText": "How long will the fix take?",
       "targetText": "Việc sửa chữa sẽ mất bao lâu?",
       "canonicalTargetText": "Việc sửa chữa sẽ mất bao lâu?",
       "pronunciation": "Viec sua chua se mat bao lau",
@@ -29614,6 +29614,8 @@
       "context": "Use this when your signal, SIM, battery, Wi-Fi, or app flow stops working the way you need.",
       "youMayHear": "",
       "searchAliases": [
+        "how long will the fix take?",
+        "how long will the fix take",
         "how long will the repair take?",
         "how long will the repair take"
       ],
@@ -30905,7 +30907,7 @@
       "familyID": "v900-loca-serv-ever-task-where-can-i-repair-my-bag",
       "scenarioID": "local-services-everyday-tasks",
       "audioKey": "v900-loca-serv-ever-task-where-can-i-repair-my-bag",
-      "englishText": "Where can I repair my bag?",
+      "englishText": "Where can I get my bag fixed?",
       "targetText": "Tôi có thể sửa túi ở đâu?",
       "canonicalTargetText": "Tôi có thể sửa túi ở đâu?",
       "pronunciation": "Toi co the sua tui o dau",
@@ -30914,8 +30916,9 @@
       "context": "Use this for errands, printing, laundry, basic supplies, and other practical tasks that keep the trip moving.",
       "youMayHear": "",
       "searchAliases": [
-        "where can i repair my bag?",
-        "where can i repair my bag"
+        "where can i get my bag fixed?",
+        "where can i get my bag fixed",
+        "bag repair"
       ],
       "warningNoteType": "",
       "audioStatus": "ready",

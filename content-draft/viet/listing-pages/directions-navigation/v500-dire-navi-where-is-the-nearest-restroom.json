@@ -7,7 +7,7 @@
   "title": "Nhà vệ sinh gần nhất ở đâu?",
   "englishTitle": "Where is the nearest restroom?",
   "pronunciation": "Nha ve sinh gan nhat o dau",
-  "summary": "Different ways to say \"Where is the nearest restroom?\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "summary": "Different ways to say \"Where is the nearest restroom?\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "body": "Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Nhà vệ sinh gần nhất ở đâu? is the safest default for \"Where is the nearest restroom?\". Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "body": "Nhà vệ sinh gần nhất ở đâu? is the version to learn first for \"Where is the nearest restroom?\". Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. If the person hesitates, show the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "v500-dire-navi-where-is-the-nearest-restroom",
@@ -98,7 +98,7 @@
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
       "phrases": [
         {
           "id": "directions-1",

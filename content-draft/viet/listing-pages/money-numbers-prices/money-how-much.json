@@ -7,7 +7,7 @@
   "title": "Cái này bao nhiêu?",
   "englishTitle": "How much is this?",
   "pronunciation": "gai nai bao nyew",
-  "summary": "Different ways to say \"How much is this?\" in Vietnam, with the safe phrase, useful variants, and nearby next steps.",
+  "summary": "Different ways to say \"How much is this?\" in Vietnam, with the phrase to start with, useful forms, and related next steps.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this while pointing at an item. Point at the thing first, then say the phrase. Use the nearby forms below when tone, setting, or politeness changes.",
+      "body": "Use this while pointing at an item. Use the other forms below when tone, setting, or politeness changes.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
           "id": "price-1-piece-1",
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cái này bao nhiêu? is the safest default for \"How much is this?\". Use this while pointing at an item. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "body": "Cái này bao nhiêu? is the version to learn first for \"How much is this?\". Use this while pointing at an item. If the person hesitates, show the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "price-1",
@@ -74,7 +74,7 @@
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This nearby form changes the tone or setting. Use it when the note under the row matches the moment.",
+      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
       "phrases": [
         {
           "id": "money-how-much-common",

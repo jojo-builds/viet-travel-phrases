@@ -223,7 +223,7 @@ enum AuthoredVietListingPages {
             PhraseDetailSection(
                 id: "pronoun-swap",
                 title: "Pronoun swap",
-                body: "When you are asking about what a person said, Vietnamese often sounds warmer if you use the right relationship word instead of generic bạn. Keep your tone light so the question sounds curious, not confrontational.",
+                body: "When you are asking about what a person said, Vietnamese often sounds warmer if you use the right relationship word instead of the all-purpose bạn. Keep your tone light so the question sounds curious, not confrontational.",
                 phrases: repairMeaningPronounSwaps,
                 presentation: .phraseList
             ),

@@ -7,7 +7,7 @@
   "title": "Giúp tôi với",
   "englishTitle": "I need help",
   "pronunciation": "zoop toy voy",
-  "summary": "Different ways to say \"I need help\" in Vietnam, with the safe phrase, useful variants, and nearby next steps.",
+  "summary": "Different ways to say \"I need help\" in Vietnam, with the phrase to start with, useful forms, and related next steps.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you need immediate practical help and want the shortest direct version. When the trip is messy, start with the help you need in plain words. Use the nearby forms below when tone, setting, or politeness changes.",
+      "body": "Use this when you need immediate practical help and want the shortest direct version. When the trip is messy, start with the help you need in plain words. Use the other forms below when tone, setting, or politeness changes.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
           "id": "help-need-help-direct-piece-1",
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Giúp tôi với is the safest default for \"I need help\". Use this when you need immediate practical help and want the shortest direct version. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "body": "Giúp tôi với is the version to learn first for \"I need help\". Use this when you need immediate practical help and want the shortest direct version. If the person hesitates, show the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "help-need-help-direct",
@@ -68,7 +68,7 @@
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This nearby form changes the tone or setting. Use it when the note under the row matches the moment.",
+      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
       "phrases": [
         {
           "id": "help-1",

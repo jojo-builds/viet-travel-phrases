@@ -7,7 +7,7 @@
   "title": "Mang đi",
   "englishTitle": "To go",
   "pronunciation": "mang dee",
-  "summary": "Different ways to say \"To go\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "summary": "Different ways to say \"To go\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say this when you want takeaway instead of staying. This keeps the order atomic and easy to recognize. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "body": "Say this when you want takeaway instead of staying. This keeps the order atomic and easy to recognize. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
           "id": "coffee-6-piece-1",
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Mang đi is the safest default for \"To go\". Say this when you want takeaway instead of staying. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "body": "Mang đi is the version to learn first for \"To go\". Say this when you want takeaway instead of staying. If the person hesitates, show the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "coffee-6",
@@ -92,7 +92,7 @@
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
       "phrases": [
         {
           "id": "coffee-1",

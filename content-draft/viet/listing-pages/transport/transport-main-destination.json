@@ -7,7 +7,7 @@
   "title": "Đi quận 1",
   "englishTitle": "Go to District 1",
   "pronunciation": "dee gwan mot",
-  "summary": "Different ways to say \"Go to District 1\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "summary": "Different ways to say \"Go to District 1\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this for a simple destination inside the city. Use the place name when it is shorter than a full address. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "body": "Use this for a simple destination inside the city. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
           "id": "taxi-2-piece-1",
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Đi quận 1 is the safest default for \"Go to District 1\". Use this for a simple destination inside the city. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "body": "Đi quận 1 is the version to learn first for \"Go to District 1\". Use this for a simple destination inside the city. If the person hesitates, show the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "taxi-2",
@@ -98,7 +98,7 @@
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
       "phrases": [
         {
           "id": "taxi-1",

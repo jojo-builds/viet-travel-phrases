@@ -7,7 +7,7 @@
   "title": "Cho tôi nhận phòng",
   "englishTitle": "I’d like to check in",
   "pronunciation": "cho toy nyun fong",
-  "summary": "Different ways to say \"I’d like to check in\" in Vietnam, with the safe phrase, useful variants, and nearby next steps.",
+  "summary": "Different ways to say \"I’d like to check in\" in Vietnam, with the phrase to start with, useful forms, and related next steps.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you are ready to begin check-in. This is the default phrase when the reservation exists and you need the next step. Use the nearby forms below when tone, setting, or politeness changes.",
+      "body": "Use this when you are ready to begin check-in. Use the other forms below when tone, setting, or politeness changes.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
           "id": "hotel-2-piece-1",
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Cho tôi nhận phòng is the safest default for \"I’d like to check in\". Use this when you are ready to begin check-in. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "body": "Cho tôi nhận phòng is the version to learn first for \"I’d like to check in\". Use this when you are ready to begin check-in. If the person hesitates, show the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "hotel-2",
@@ -68,7 +68,7 @@
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This nearby form changes the tone or setting. Use it when the note under the row matches the moment.",
+      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
       "phrases": [
         {
           "id": "hotel-check-in-polite",

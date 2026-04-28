@@ -576,7 +576,7 @@ extension PhrasePage {
         englishTitle: "Hello",
         pronunciation: "sin chow",
         intentSummary: "Hello (universal greeting)",
-        atGlance: "For travelers, Xin chào is the safest hello. In everyday Vietnamese, greetings often depend on age, gender, and relationship, so the next step is learning when to use chào plus a relationship word.",
+        atGlance: "For travelers, Xin chào is the most dependable hello. In everyday Vietnamese, greetings often depend on age, gender, and relationship, so the next step is learning when to use chào plus a relationship word.",
         quickSay: [
             PhraseOption(
                 id: "polite-1",
@@ -1146,7 +1146,7 @@ extension PhraseDetailPage {
         relationshipWord: "ông",
         relationshipMeaning: "grandfather / elderly man",
         fullMeaning: "hello, elderly man",
-        whenToUse: "Use Chào ông when greeting an elderly man in a family, neighborhood, market, hotel, or service setting. Dạ, chào ông is the safest respectful upgrade.",
+        whenToUse: "Use Chào ông when greeting an elderly man in a family, neighborhood, market, hotel, or service setting. Dạ, chào ông is the more respectful upgrade.",
         localTip: "For a man who is older but not elderly, Chào chú usually sounds more natural. For someone only slightly older, Chào anh is warmer and less distant."
     )
 
@@ -1537,7 +1537,7 @@ extension PhraseDetailPage {
         iconName: "hand.raised.fill",
         tintName: .blue,
         sections: [
-            PhraseDetailSection(id: "why", title: "Why it matters", body: "Xin lỗi can mean sorry or excuse me, so it is one of the safest ways for travelers to reset a small social moment."),
+            PhraseDetailSection(id: "why", title: "Why it matters", body: "Xin lỗi can mean sorry or excuse me, so it is one of the easiest ways for travelers to reset a small social moment."),
             PhraseDetailSection(id: "use", title: "Use it when", body: "Use it before asking a question, when squeezing past someone, or after a small mistake."),
         ],
         examples: [

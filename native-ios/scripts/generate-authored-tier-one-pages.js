@@ -92,7 +92,7 @@ const familyCopyOverrides = {
   "repair-write-down": {
     summary: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
     atGlance: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech. Use this when you need the other person to give you something you can read, save, or show again.",
-    standard: "Viết xuống giúp tôi is the safest default for asking someone to write it down. It keeps the request polite and specific without needing to explain what you missed.",
+    standard: "Viết xuống giúp tôi is the clearest version to start with when you need someone to write it down. It keeps the request polite and specific without needing to explain what you missed.",
     when: "Use it for hotel addresses, pickup points, prices, room numbers, names, or any detail you need to keep after the conversation ends.",
     watch: "Do not make it sound like a demand. A calm tone keeps the request cooperative, especially if the person already repeated themselves once.",
     tip: "Hand over your phone with a blank note open if paper is not nearby. The phrase plus the blank screen usually makes the request obvious.",
@@ -142,7 +142,7 @@ const familyCopyOverrides = {
     atGlance: "Bạn khỏe không? is friendly, but it is not the only way to check in. With older people or service staff, Vietnamese often sounds warmer when you swap bạn for anh, chị, cô, chú, ông, or bà.",
     standard: "Bạn khỏe không? works best with peers, friends, classmates, or someone whose age relationship feels close to yours.",
     when: "Use it after Xin chào or Chào bạn, not as the very first sentence to a stranger in a rushed service moment.",
-    watch: "With an older man or woman, Anh khỏe không? or Chị khỏe không? can sound more natural than generic bạn.",
+    watch: "With an older man or woman, Anh khỏe không? or Chị khỏe không? can sound more natural than the all-purpose bạn.",
     tip: "If you are unsure, keep it simple and friendly. A smile and the right relationship word often matter more than a perfect sentence.",
   },
   "v500-airp-bord-arri-here-is-my-visa": {
@@ -517,6 +517,10 @@ function weakSummary(summary) {
   return /when you need|need to explain that|use this when you need/i.test(summary ?? "");
 }
 
+function instructionLikeSentence(text) {
+  return /^(use|ask|say|add|show|point|keep)\b/i.test((text ?? "").trim());
+}
+
 function atGlanceText(family, primaryPhrase) {
   const copy = scenarioCopy(family.scenarioID);
   const override = familyOverride(family);
@@ -525,10 +529,11 @@ function atGlanceText(family, primaryPhrase) {
   const lead = primaryPhrase.context
     ? sentence(primaryPhrase.context)
     : `${primaryPhrase.targetText} gives you a compact way to say "${primaryPhrase.englishText}" in ${copy.moment}.`;
-  const usefulSummary = override.summary ?? (weakSummary(family.summary) ? "" : sentence(family.summary));
+  const summaryCandidate = override.summary ?? (weakSummary(family.summary) ? "" : sentence(family.summary));
+  const usefulSummary = primaryPhrase.context && instructionLikeSentence(summaryCandidate) ? "" : summaryCandidate;
   const nextStep = (family.phraseIDs ?? []).length > 1
-    ? "Use the nearby forms below when tone, setting, or politeness changes."
-    : "Start with the full phrase, then use the nearby rows when the conversation needs one more step.";
+    ? "Use the other forms below when tone, setting, or politeness changes."
+    : "Learn the full phrase first; the related phrases below help when the exchange moves one step further.";
 
   return [
     lead,
@@ -542,9 +547,9 @@ function standardText(family, primaryPhrase) {
   if (override.standard) return override.standard;
 
   return [
-    `${primaryPhrase.targetText} is the safest default for "${primaryPhrase.englishText}".`,
+    `${primaryPhrase.targetText} is the version to learn first for "${primaryPhrase.englishText}".`,
     primaryPhrase.context ? sentence(primaryPhrase.context) : "It is short enough to say in a real travel moment.",
-    "Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+    "If the person hesitates, show the place, object, or screen that gives the phrase context.",
   ].join(" ");
 }
 
@@ -988,13 +993,13 @@ function breakdownLeadIn(phrase) {
     return "This pattern points to something first, then names it. It is useful when a document, item, or screen is already visible.";
   }
 
-  return "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.";
+  return "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.";
 }
 
 function variantBody(variants) {
   return variants.length === 1
-    ? "This nearby form changes the tone or setting. Use it when the note under the row matches the moment."
-    : "These nearby forms are not decoration. Each one changes the tone, setting, or next action, so choose the row that matches the person in front of you.";
+    ? "This form changes the tone or setting. Use it when the note under the phrase matches the moment."
+    : "Each form changes the tone, setting, or next action. Choose the one that matches the person in front of you.";
 }
 
 function naturalVariationSection(family, variantOptions) {
@@ -1019,7 +1024,7 @@ function nearbyPhraseSection(family, excludingPageIDs) {
   return {
     id: "nearby-phrases",
     title: "Useful nearby phrases",
-    body: "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+    body: "These are the next phrases a traveler is likely to need when this moment keeps moving.",
     phrases: relatedOptions,
   };
 }
@@ -1065,7 +1070,7 @@ function childPageForVariant(family, variantPhrase, primaryPhrase) {
     title: variantPhrase.targetText,
     englishTitle: variantPhrase.englishText,
     pronunciation: variantPhrase.pronunciation,
-    summary: `A focused guide to using ${variantPhrase.targetText} as a nearby form of ${primaryPhrase.targetText}.`,
+    summary: `A focused guide to when ${variantPhrase.targetText} sounds more natural than ${primaryPhrase.targetText}.`,
     iconName: scenario?.symbolName ?? "text.bubble.fill",
     tintName: tintForScenario(family.scenarioID),
     categoryIDs: categoryIDsForPage(pageID, family),
@@ -1074,7 +1079,7 @@ function childPageForVariant(family, variantPhrase, primaryPhrase) {
       {
         id: "at-glance",
         title: "At a glance",
-        body: `${variantPhrase.targetText} is useful when "${variantPhrase.englishText}" fits better than the parent phrase. ${sentence(variantPhrase.context || family.summary)}`
+        body: `${variantPhrase.targetText} is useful when "${variantPhrase.englishText}" needs a slightly different tone or setting. ${sentence(variantPhrase.context || family.summary)}`
       },
       {
         id: "breakdown",
@@ -1085,7 +1090,7 @@ function childPageForVariant(family, variantPhrase, primaryPhrase) {
       {
         id: "when-to-use",
         title: "When to use it",
-        body: `${sentence(variantPhrase.context || family.summary)} Return to ${primaryPhrase.targetText} when you need the simpler default version.`,
+        body: `${sentence(variantPhrase.context || family.summary)} Use ${primaryPhrase.targetText} when you want the shorter, more basic version.`,
       },
       {
         id: "watch-out",
@@ -1251,8 +1256,8 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     englishTitle: primaryPhrase.englishText,
     pronunciation: primaryPhrase.pronunciation,
     summary: variantOptions.length > 0
-      ? `Different ways to say "${primaryPhrase.englishText}" in Vietnam, with the safe phrase, useful variants, and nearby next steps.`
-      : `Different ways to say "${primaryPhrase.englishText}" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.`,
+      ? `Different ways to say "${primaryPhrase.englishText}" in Vietnam, with the phrase to start with, useful forms, and related next steps.`
+      : `Different ways to say "${primaryPhrase.englishText}" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.`,
     iconName: scenario?.symbolName ?? "text.bubble.fill",
     tintName: tintForScenario(family.scenarioID),
     categoryIDs: categoryIDsForPage(pageID, family),

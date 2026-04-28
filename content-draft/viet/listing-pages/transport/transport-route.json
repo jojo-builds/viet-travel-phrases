@@ -7,7 +7,7 @@
   "title": "Đi đường này đi",
   "englishTitle": "Go this way",
   "pronunciation": "dee doong nai dee",
-  "summary": "Different ways to say \"Go this way\" in Vietnam, with the safe phrase, reusable pieces, and nearby next steps.",
+  "summary": "Different ways to say \"Go this way\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this if you need to guide the driver. Start with the full phrase, then use the nearby rows when the conversation needs one more step.",
+      "body": "Use this if you need to guide the driver. Learn the full phrase first; the related phrases below help when the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use the cards to hear the phrase in pieces, then listen to the full version so the rhythm stays connected.",
+      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
           "id": "taxi-4-piece-1",
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Đi đường này đi is the safest default for \"Go this way\". Use this if you need to guide the driver. Say it slowly, then point, show your phone, or hold up the item if the other person needs more context.",
+      "body": "Đi đường này đi is the version to learn first for \"Go this way\". Use this if you need to guide the driver. If the person hesitates, show the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -104,7 +104,7 @@
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are not the same sentence, but they are the next phrases a traveler is likely to need as this moment keeps moving.",
+      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
       "phrases": [
         {
           "id": "taxi-1",
