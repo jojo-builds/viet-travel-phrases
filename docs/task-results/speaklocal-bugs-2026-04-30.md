@@ -127,7 +127,7 @@ Reviewer gate:
 
 ## Bug 8 - Compound/two-phrase reasoning audit
 
-Commit: pending
+Commit: c357934
 
 Changes:
 - Added `docs/content-audits/viet-compound-phrase-rows-2026-04-30.md` with a row-by-row reasoning audit for every suspicious slash, `and/or`, dual-pronoun, `và`, or `hoặc` canonical row.
@@ -142,3 +142,18 @@ Validation:
 
 Reviewer gate:
 - APPROVED. Copy/learning flow review and technical/canonical review both approve the flagged-case report and the validator now blocks unreviewed future suspicious rows.
+
+## Bug 9 - Breakdown carousel affordance
+
+Commit: pending
+
+Changes:
+- Added `BreakdownLayout` constants for breakdown-card width, separator width, and trailing peek behavior.
+- Narrowed non-final breakdown cards and added extra trailing inset only for multi-card breakdowns so the next card is visibly discoverable.
+- Kept single-token breakdown strips on the clean, non-overflowing inset.
+
+Validation:
+- `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'id=91BDCCB0-0728-40AB-8150-B6DCB96BE799' -only-testing:SpeakLocalNativeTests/AppChromeTests/testBreakdownCarouselKeepsMultiCardPeekWithoutSingleCardOverflow` passed.
+
+Reviewer gate:
+- APPROVED. Layout constants now enforce a multi-card peek while preserving single-card breakdown behavior; simulator screenshot capture is deferred to the final screenshot sweep after the remaining UI fixes.

@@ -20,6 +20,24 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBreakdownCarouselKeepsMultiCardPeekWithoutSingleCardOverflow() {
+        XCTAssertGreaterThan(
+            BreakdownLayout.trailingPadding(tokenCount: 3),
+            BreakdownLayout.trailingPadding(tokenCount: 1)
+        )
+        XCTAssertEqual(BreakdownLayout.trailingPadding(tokenCount: 1), BreakdownLayout.singleCardTrailingPadding)
+
+        let longLeadingCardWidth = BreakdownLayout.cardWidth(longestTextCount: 80, index: 0, tokenCount: 3)
+        let longFinalCardWidth = BreakdownLayout.cardWidth(longestTextCount: 80, index: 2, tokenCount: 3)
+
+        XCTAssertEqual(longLeadingCardWidth, BreakdownLayout.nonFinalMaximumWidth)
+        XCTAssertEqual(longFinalCardWidth, BreakdownLayout.finalMaximumWidth)
+        XCTAssertLessThan(
+            BreakdownLayout.nonFinalMaximumWidth,
+            BreakdownLayout.finalMaximumWidth
+        )
+    }
+
     func testDetailRowsAllowReadableSubtitles() {
         XCTAssertGreaterThanOrEqual(DetailPhraseRowLayout.secondaryLineLimit, 2)
     }

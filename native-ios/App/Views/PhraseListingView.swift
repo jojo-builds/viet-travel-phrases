@@ -742,7 +742,7 @@ struct BreakdownView: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 9) {
+            HStack(spacing: BreakdownLayout.cardSpacing) {
                 ForEach(Array(tokens.enumerated()), id: \.element.id) { index, token in
                     BreakdownTokenCard(
                         token: token,
@@ -753,11 +753,12 @@ struct BreakdownView: View {
                         Text(separator)
                             .font(.title.weight(.semibold))
                             .foregroundStyle(.secondary)
-                            .frame(width: 28)
+                            .frame(width: BreakdownLayout.separatorWidth)
                     }
                 }
             }
-            .padding(.horizontal, 2)
+            .padding(.leading, BreakdownLayout.horizontalPadding)
+            .padding(.trailing, BreakdownLayout.trailingPadding(tokenCount: tokens.count))
             .padding(.vertical, 2)
         }
         .scrollClipDisabled()
@@ -772,14 +773,37 @@ struct BreakdownView: View {
     }
 
     private func tokenWidth(for token: BreakdownToken, index: Int) -> CGFloat {
-        let longestTextCount = max(token.vietnamese.count, token.english.count)
+        BreakdownLayout.cardWidth(
+            longestTextCount: max(token.vietnamese.count, token.english.count),
+            index: index,
+            tokenCount: tokens.count
+        )
+    }
+}
+
+enum BreakdownLayout {
+    static let cardSpacing: CGFloat = 9
+    static let separatorWidth: CGFloat = 28
+    static let horizontalPadding: CGFloat = 2
+    static let multiCardPeekPadding: CGFloat = 48
+    static let singleCardTrailingPadding: CGFloat = 2
+    static let nonFinalMinimumWidth: CGFloat = 138
+    static let nonFinalMaximumWidth: CGFloat = 188
+    static let finalMinimumWidth: CGFloat = 188
+    static let finalMaximumWidth: CGFloat = 252
+
+    static func trailingPadding(tokenCount: Int) -> CGFloat {
+        tokenCount > 1 ? multiCardPeekPadding : singleCardTrailingPadding
+    }
+
+    static func cardWidth(longestTextCount: Int, index: Int, tokenCount: Int) -> CGFloat {
         let baseWidth = CGFloat(longestTextCount) * 7 + 58
 
-        if index == tokens.count - 1 {
-            return min(max(baseWidth, 188), 270)
+        if index == tokenCount - 1 {
+            return min(max(baseWidth, finalMinimumWidth), finalMaximumWidth)
         }
 
-        return min(max(baseWidth, 138), 210)
+        return min(max(baseWidth, nonFinalMinimumWidth), nonFinalMaximumWidth)
     }
 }
 
