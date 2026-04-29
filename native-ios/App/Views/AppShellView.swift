@@ -1542,6 +1542,7 @@ enum HomeLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 28
     static let cardCornerRadius: CGFloat = 22
+    static let situationRowMinHeight: CGFloat = 104
     static let bottomChromeContentClearance: CGFloat = 176
 }
 
@@ -1863,6 +1864,7 @@ private struct HomeSituationGroupRow: View {
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
 
                 Image(systemName: "chevron.right")
@@ -1870,9 +1872,15 @@ private struct HomeSituationGroupRow: View {
                     .foregroundStyle(.tertiary)
             }
             .padding(14)
+            .frame(
+                maxWidth: .infinity,
+                minHeight: HomeLayout.situationRowMinHeight,
+                alignment: .leading
+            )
             .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)
+        .frame(maxWidth: .infinity)
     }
 }
 
