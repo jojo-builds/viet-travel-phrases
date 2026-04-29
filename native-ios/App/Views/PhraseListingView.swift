@@ -183,7 +183,7 @@ struct PhraseArticleTemplateView: View {
                     .lineLimit(page.id == PhrasePage.xinChao.id ? 1 : 2)
                     .minimumScaleFactor(0.62)
 
-                Text(page.summary)
+                Text(page.englishTitle)
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .lineLimit(2)

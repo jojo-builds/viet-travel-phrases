@@ -205,6 +205,18 @@ function main() {
 
   assertZero(sqliteValue(`
     SELECT count(*)
+    FROM phrase_page
+    WHERE lower(english_title) LIKE '%different ways%'
+       OR lower(english_title) LIKE '%with the phrase%'
+       OR lower(english_title) LIKE '%notes below%'
+       OR lower(english_title) LIKE '%can follow a greeting%'
+       OR lower(english_title) LIKE '%movement check%'
+       OR lower(english_title) LIKE '%main thing you need%'
+       OR lower(english_title) LIKE '%main idea you need%';
+  `), "hero English subtitles with internal or explanatory wording");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
     FROM phrase_page pp
     WHERE NOT EXISTS (
       SELECT 1
