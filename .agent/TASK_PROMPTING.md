@@ -24,6 +24,22 @@ Default daily workflow:
 orchestrator brain-dump intake -> lightweight docs/task-cards/TASK-*.md -> exact project folder for Jojo -> tiny prompt into pinned specialist thread -> worker commits/result -> orchestrator folds result back
 ```
 
+Default project and branch:
+
+```text
+/Users/jojolim/Developer/products/speaklocal/app-family on main
+```
+
+Use the pinned specialist threads as lanes over the shared trunk:
+
+- `Native UI / Simulator`
+- `Content + Listing Pages`
+- `SQLite / Data Runtime`
+- `Practice / Quiz`
+- `Research / Product Strategy`
+
+Do not create a new branch, worktree, or Codex project folder for routine task-card work. Branches and worktrees are exceptions for risky runtime changes, throwaway experiments, overlapping write scopes, release/signing work, or work that should not disturb the main simulator lane. If a worker uses a branch/worktree, the task card must name the merge-back condition and the orchestrator should fold it back or park it immediately after completion.
+
 Use full `.agent/tasks/T-xxx` only for risky shared-runtime work, active queue recovery, collision-prone work needing claim state, or already-running tasks. Do not use full queue packets for routine handoffs.
 
 ## Compact Goal Card Rule

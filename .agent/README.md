@@ -29,6 +29,8 @@ This folder is the repo-local task surface for Codex queue work.
 ## Current Operating Mode: No Automation
 - As of 2026-04-29, Codex Desktop automations are paused for SpeakLocal work. Do not create or rely on automation runs unless Jojo explicitly re-enables that workflow.
 - The normal workflow is pinned specialist threads plus lightweight task cards under `docs/task-cards/`.
+- Default every pinned specialist thread to `/Users/jojolim/Developer/products/speaklocal/app-family` on `main`. Treat threads as conversation lanes, not as permanent side branches or permanent worktrees.
+- Use branches/worktrees only for risky native runtime changes, throwaway experiments, overlapping write scopes, release/signing work, or work that should not disturb the main simulator lane. Merge or park them promptly when the worker finishes.
 - Full `.agent/tasks/T-xxx` queue packets remain available only for risky shared-runtime work, already-running queue tasks, recovery/claim-state needs, or explicit queue/automation experiments.
 - For routine handoff, the orchestrator must tell Jojo the exact Codex project folder to open, then provide a tiny prompt that points to the task card.
 
@@ -45,7 +47,7 @@ This folder is the repo-local task surface for Codex queue work.
 Copy-paste shape for a normal pinned-thread worker:
 
 ```text
-Open /absolute/project-or-worktree/path.
+Open /Users/jojolim/Developer/products/speaklocal/app-family.
 Execute docs/task-cards/TASK-XXX.md.
 Commit when done and write the requested result.
 ```

@@ -25,6 +25,9 @@ For repo-local queue automation runs, do this instead:
 
 Rules:
 - This is the canonical implementation home for the SpeakLocal app family.
+- Default pinned Codex specialist threads should all open `/Users/jojolim/Developer/products/speaklocal/app-family` and work from `main`.
+- Treat pinned threads such as `Native UI / Simulator`, `Content + Listing Pages`, `SQLite / Data Runtime`, `Practice / Quiz`, and `Research / Product Strategy` as conversation/work lanes, not permanent branches or permanent worktrees.
+- Use a separate branch/worktree only for risky native runtime changes, long throwaway experiments, overlapping write scopes, release/signing work, or work that should not disturb the main simulator lane. Fold completed branch/worktree work back into `main` or park it promptly.
 - Current Mac session roots:
   - native iOS app work: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
   - full repo, content, docs, generators, and migration work: `/Users/jojolim/Developer/products/speaklocal/app-family`
