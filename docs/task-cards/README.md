@@ -77,6 +77,11 @@ Every research artifact must include a `Folded Into` section naming the decision
 task cards, docs, prototypes, or code that changed because of the research. If
 nothing was folded in yet, it must say what is waiting and who owns the next move.
 
+Use `docs/research/TOOLBOX.md` to decide whether the worker should also produce a
+local browser preview, screenshots, Figma board, Google Doc, or imported ChatGPT
+report. Jojo should not have to dig through raw data files to understand research
+or visual design output.
+
 ## Peer Review Default
 
 Meaningful task cards should ask for one focused read-only peer reviewer near the end. The reviewer checks Task Done, boundaries, validation, and obvious missed issues.

@@ -26,6 +26,16 @@ Worker tasks should also write a short result file under `docs/task-results/` wh
 they are assigned through a task card. The result is the closeout; the research
 artifact is the source of truth people can read later.
 
+## Tool Selection
+
+Use `docs/research/TOOLBOX.md` when deciding whether a task belongs in Codex,
+ChatGPT/Deep Research, image generation, Browser Use, Google Docs, or Figma.
+
+The orchestrator should pick the best review surface for Jojo. Markdown is fine
+for source truth, but visual/design work should also produce screenshots, a local
+browser preview, a Figma board, or imported image assets when that makes review
+easier.
+
 ## Current Research Anchors
 
 - Homepage strategy: `docs/design/homepage-research/README.md`
