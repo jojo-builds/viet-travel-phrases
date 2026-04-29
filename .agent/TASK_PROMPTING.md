@@ -30,6 +30,10 @@ Use full `.agent/tasks/T-xxx` only for risky shared-runtime work, active queue r
 
 Orchestrator-created worker specs should be compact by default. The worker is GPT-5.5 too; do not spend orchestration time spelling out an implementation path the worker can reason through from the goal.
 
+Lightweight task cards are not small-task cards. They can represent substantial 1-4 hour work packets when the outcome, lane, and boundaries are clear. Their purpose is to remove ceremony, not reduce ambition.
+
+The orchestrator creates leverage by routing, prioritizing, protecting boundaries, and synthesizing worker results. It should avoid broad file-reading and implementation discovery that a specialist worker will immediately repeat.
+
 If the local Codex skill `speaklocal-task-cards` is available, use it before creating or editing SpeakLocal task cards, queue specs, or worker prompts.
 
 Default shape:

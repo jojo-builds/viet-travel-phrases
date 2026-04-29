@@ -11,6 +11,18 @@ Use:
 - lightweight task cards here for normal worker handoffs;
 - full `.agent/tasks/T-xxx` queue packets only for risky shared-runtime work, recovery/claim-state needs, or already-running queue tasks.
 
+Lightweight means low ceremony, not low ambition. A card here can be an hour-plus task. The point is that the worker gets a clear outcome and safe boundaries without the orchestrator doing the implementation thinking first.
+
+The orchestrator should route and synthesize:
+
+- decide the lane/thread;
+- write a sharp Task Done;
+- name the exact project folder;
+- protect write scope;
+- fold the completed result back into the roadmap.
+
+The orchestrator should not read every implementation file before assignment unless that is needed to route safely.
+
 ## Card Shape
 
 Keep cards short and goal-driven:
