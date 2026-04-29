@@ -1,10 +1,12 @@
 {
   "metadata": {
     "source": "../content-draft/viet/listing-pages",
+    "fullUniverseSource": "../content-draft/viet/full-listing-pages",
     "tierOneFamilyCount": 150,
     "resourceMainPageCount": 149,
     "childPageCount": 15,
-    "generatedAt": "2026-04-29T11:47:14.472Z"
+    "fullUniversePageCount": 15,
+    "generatedAt": "2026-04-29T15:22:45.986Z"
   },
   "pages": [
     {
@@ -506,6 +508,16 @@
               "tintName": "red",
               "detailPageID": "viet-family-v500-poli-basi-yes",
               "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
             }
           ],
           "presentation": "phrase-list"
@@ -683,6 +695,16 @@
               "tintName": "red",
               "detailPageID": "viet-family-v500-poli-basi-yes",
               "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
             }
           ],
           "presentation": "phrase-list"
@@ -872,6 +894,16 @@
               "tintName": "red",
               "detailPageID": "viet-family-v500-poli-basi-yes",
               "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
             }
           ],
           "presentation": "phrase-list"
@@ -1061,6 +1093,16 @@
               "tintName": "red",
               "detailPageID": "viet-family-v500-poli-basi-yes",
               "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
             }
           ],
           "presentation": "phrase-list"
@@ -1250,6 +1292,16 @@
               "tintName": "red",
               "detailPageID": "viet-family-v500-poli-basi-yes",
               "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
             }
           ],
           "presentation": "phrase-list"
@@ -1439,6 +1491,16 @@
               "tintName": "red",
               "detailPageID": "viet-family-v500-poli-basi-yes",
               "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
             }
           ],
           "presentation": "phrase-list"
@@ -23251,6 +23313,26 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you",
               "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -23436,6 +23518,26 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you",
               "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -23633,6 +23735,26 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you",
               "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -23824,6 +23946,26 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you",
               "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -24015,6 +24157,26 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you",
               "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -24206,6 +24368,26 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you",
               "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -24430,6 +24612,26 @@
               "tintName": "green",
               "detailPageID": "viet-family-social-weather-hot",
               "audioKey": "smalltalk-6"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -26871,6 +27073,16 @@
               "tintName": "red",
               "detailPageID": "viet-goodbye",
               "audioKey": "polite-7"
+            },
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
             }
           ],
           "presentation": "phrase-list"
@@ -33522,6 +33734,2562 @@
           "tintName": "red",
           "detailPageID": null,
           "audioKey": "emergency-5"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-alo",
+      "familyID": "hello-alo",
+      "phraseID": "hello-alo",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Alô",
+      "englishTitle": "Hello on the phone",
+      "pronunciation": "ah lo",
+      "summary": "The phone hello for starting or answering a call.",
+      "iconName": "phone.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-alo",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Alô is the hello you use on the phone. It is useful for hotel calls, drivers, delivery, tour guides, and anyone calling to confirm a pickup or booking. It does not replace Xin chào in person; it belongs to the phone moment.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Alô when you answer or when you need to check whether the other person can hear you.",
+          "phrases": [
+            {
+              "id": "hello-alo",
+              "vietnamese": "Alô",
+              "english": "Hello on the phone",
+              "pronunciation": "ah lo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-alo"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "This is a borrowed phone word, so the key is knowing the situation, not translating it piece by piece.",
+          "breakdown": [
+            {
+              "id": "phone-context",
+              "vietnamese": "điện thoại",
+              "english": "phone context",
+              "audioKey": null
+            },
+            {
+              "id": "alo-full",
+              "vietnamese": "Alô",
+              "english": "hello, can you hear me?",
+              "audioKey": "audio-phrase-alo"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Natural phone follow-ups",
+          "body": "After Alô, the next useful phrase is usually about hearing clearly or confirming identity.",
+          "phrases": [
+            {
+              "id": "repair-1",
+              "vietnamese": "Làm ơn nói lại",
+              "english": "Please say that again",
+              "pronunciation": "lahm uhn noy lie",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-repeat",
+              "audioKey": "repair-1"
+            },
+            {
+              "id": "problems-3",
+              "vietnamese": "Nói chậm chút được không?",
+              "english": "Can you speak a little slower?",
+              "pronunciation": "noy chuhm choot dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-slower",
+              "audioKey": "problems-3"
+            },
+            {
+              "id": "hello-da-chao-anh-chi",
+              "vietnamese": "Dạ, chào anh/chị",
+              "english": "Hello, sir or ma'am",
+              "pronunciation": "yah chow anh chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-da-chao-anh-chi",
+              "audioKey": "audio-phrase-da-chao-anh-chi"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when answering calls, calling a hotel desk, speaking with a driver, or responding to a guide who calls before pickup.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "On the phone, a short Alô is enough to open the channel. If the call becomes confusing, move quickly to a slow-speech or repeat phrase instead of guessing.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These keep a phone call from getting stuck.",
+          "phrases": [
+            {
+              "id": "phone-wifi-common",
+              "vietnamese": "Mật khẩu Wi-Fi là gì?",
+              "english": "What is the Wi-Fi password?",
+              "pronunciation": "mat khau wifi la zee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-phone-wifi",
+              "audioKey": "phone-1"
+            },
+            {
+              "id": "directions-2",
+              "vietnamese": "Ở gần đây không?",
+              "english": "Is it near here?",
+              "pronunciation": "uh gun day khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-directions-near",
+              "audioKey": "directions-2"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-alo",
+          "vietnamese": "Alô",
+          "english": "Hello on the phone",
+          "pronunciation": "ah lo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-alo"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao-anh",
+      "familyID": "hello-chao-anh",
+      "phraseID": "hello-chao-anh",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào anh",
+      "englishTitle": "Hello to an older man",
+      "pronunciation": "chow anh",
+      "summary": "A warm greeting for a slightly older man or adult male helper.",
+      "iconName": "person.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-viet-hello-anh-full",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào anh is one of the most useful local-feeling greetings for travelers. Use it for a man who seems older than you, a driver, guide, shop worker, hotel staff member, or friendly helper when anh feels respectful and warm.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Chào anh when the person is male and older or socially senior enough that bạn would feel too flat.",
+          "phrases": [
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "breakdown-viet-hello-anh-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The relationship word carries the warmth.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "anh",
+              "vietnamese": "anh",
+              "english": "older brother / older man",
+              "audioKey": "breakdown-viet-hello-anh-relationship"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào anh",
+              "english": "hello to an older man",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "pronoun-swap",
+          "title": "Relationship swaps",
+          "body": "Change the relationship word when the person changes.",
+          "phrases": [
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            },
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-hello-chao-chu",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            },
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao-ban",
+              "audioKey": "audio-phrase-chao-ban"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it at a hotel desk, with a male driver, at a cafe counter, with a male guide, or with a man who is just a bit older than you. It is often warmer than Xin chào once the relationship is clear.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Anh does not literally mean the person is your brother here. It marks age relationship and respect, which is why the greeting can sound more natural than a universal you.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help you keep the same respectful tone.",
+          "phrases": [
+            {
+              "id": "hello-da-chao-anh-chi",
+              "vietnamese": "Dạ, chào anh/chị",
+              "english": "Hello, sir or ma'am",
+              "pronunciation": "yah chow anh chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-da-chao-anh-chi",
+              "audioKey": "audio-phrase-da-chao-anh-chi"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "polite-5",
+              "vietnamese": "Xin lỗi",
+              "english": "Excuse me / sorry",
+              "pronunciation": "sin loy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-excuse-sorry",
+              "audioKey": "polite-5"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao-anh",
+          "vietnamese": "Chào anh",
+          "english": "Hello to an older man",
+          "pronunciation": "chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-anh-full"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao-ba",
+      "familyID": "hello-chao-ba",
+      "phraseID": "hello-chao-ba",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào bà",
+      "englishTitle": "Hello to an elderly woman",
+      "pronunciation": "chow bah",
+      "summary": "A respectful hello for a grandmother-age woman.",
+      "iconName": "person.fill",
+      "tintName": "purple",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-viet-hello-ba-full",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào bà is a respectful greeting for an elderly woman or grandmother-age local. It is useful in family-run shops, homes, markets, guesthouses, and neighborhood moments where age respect matters.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Chào bà when the person is an elderly woman and you want your first line to be warm and respectful.",
+          "phrases": [
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": null,
+              "audioKey": "breakdown-viet-hello-ba-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The greeting changes because the person changes.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "ba",
+              "vietnamese": "bà",
+              "english": "grandmother / elderly woman",
+              "audioKey": "breakdown-viet-hello-ba-relationship"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào bà",
+              "english": "hello to an elderly woman",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "pronoun-swap",
+          "title": "Respectful swaps",
+          "body": "Vietnamese greetings sound more local when the relationship word fits.",
+          "phrases": [
+            {
+              "id": "hello-chao-ong",
+              "vietnamese": "Chào ông",
+              "english": "Hello to an elderly man",
+              "pronunciation": "chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "indigo",
+              "detailPageID": "viet-hello-chao-ong",
+              "audioKey": "breakdown-viet-hello-ong-full"
+            },
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            },
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when entering a small shop run by an elderly woman, greeting someone at a homestay, asking a grandmother-age local for help, or meeting an older family member of a Vietnamese friend.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bà carries respect. If the woman is older than you but not elderly, Chào cô or Chào chị may fit better.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These greetings help you adjust the relationship word.",
+          "phrases": [
+            {
+              "id": "hello-chao-ong",
+              "vietnamese": "Chào ông",
+              "english": "Hello to an elderly man",
+              "pronunciation": "chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "indigo",
+              "detailPageID": "viet-hello-chao-ong",
+              "audioKey": "breakdown-viet-hello-ong-full"
+            },
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            },
+            {
+              "id": "polite-5",
+              "vietnamese": "Xin lỗi",
+              "english": "Excuse me / sorry",
+              "pronunciation": "sin loy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-excuse-sorry",
+              "audioKey": "polite-5"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao-ba",
+          "vietnamese": "Chào bà",
+          "english": "Hello to an elderly woman",
+          "pronunciation": "chow bah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-ba-full"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao-ban",
+      "familyID": "hello-chao-ban",
+      "phraseID": "hello-chao-ban",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào bạn",
+      "englishTitle": "Hi there / hello friend",
+      "pronunciation": "chow ban",
+      "summary": "A friendly neutral greeting for peers and warm casual help.",
+      "iconName": "hand.wave.fill",
+      "tintName": "orange",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-chao-ban",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào bạn is the friendly version of hello when bạn fits the relationship. It works with peers, friendly helpers, classmates, younger adults near your age, or someone whose role feels casual rather than formal. If the person is clearly older or in a service role, Chào anh or Chào chị may sound warmer.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use Chào bạn when you want a warm but simple hello and do not need to show extra age-based respect.",
+          "phrases": [
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-chao-ban"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The greeting is short, but bạn changes the relationship it creates.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "ban",
+              "vietnamese": "bạn",
+              "english": "you / friend / peer",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào bạn",
+              "english": "hello to you / hi friend",
+              "audioKey": "audio-phrase-chao-ban"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Natural variations",
+          "body": "Switch the last word when the relationship is clearer.",
+          "phrases": [
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            },
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it with a friendly guide, a peer at a class or tour, a casual local helper, or someone who has already made the exchange feel relaxed. In a formal service moment, start with Xin chào or Dạ, chào anh/chị.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bạn is useful, but it is not a perfect universal you. Vietnamese often prefers relationship words, so Chào bạn is best when you truly want a friendly neutral tone.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "After a friendly hello, these are natural next moves.",
+          "phrases": [
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao-ban",
+          "vietnamese": "Chào bạn",
+          "english": "Hi there / hello friend",
+          "pronunciation": "chow ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-chao-ban"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao-chi",
+      "familyID": "hello-chao-chi",
+      "phraseID": "hello-chao-chi",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào chị",
+      "englishTitle": "Hello to an older woman",
+      "pronunciation": "chow chee",
+      "summary": "A warm greeting for a slightly older woman or adult female helper.",
+      "iconName": "person.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-viet-hello-chi-full",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào chị is the greeting to reach for with a woman who seems older than you or socially senior in the moment. It works with hotel staff, shop workers, guides, cafe staff, and friendly helpers when chị feels warmer than bạn.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Chào chị when the person is female and older or senior enough that you want the greeting to carry respect.",
+          "phrases": [
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "breakdown-viet-hello-chi-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "Chị gives the greeting its relationship meaning.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "chi",
+              "vietnamese": "chị",
+              "english": "older sister / older woman",
+              "audioKey": "breakdown-viet-hello-chi-relationship"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào chị",
+              "english": "hello to an older woman",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "pronoun-swap",
+          "title": "Relationship swaps",
+          "body": "Use the matching greeting when the person changes.",
+          "phrases": [
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            },
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            },
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao-ban",
+              "audioKey": "audio-phrase-chao-ban"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it with an older female staff member, guide, driver, shop worker, or local helper. It is especially good when you want the first line to sound warm rather than generic.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chị is a relationship word, not just a dictionary pronoun. When it fits, it makes the whole greeting sound more socially aware.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These phrases often follow the same respectful opening.",
+          "phrases": [
+            {
+              "id": "hello-da-chao-anh-chi",
+              "vietnamese": "Dạ, chào anh/chị",
+              "english": "Hello, sir or ma'am",
+              "pronunciation": "yah chow anh chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-da-chao-anh-chi",
+              "audioKey": "audio-phrase-da-chao-anh-chi"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao-chi",
+          "vietnamese": "Chào chị",
+          "english": "Hello to an older woman",
+          "pronunciation": "chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-chi-full"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao-chu",
+      "familyID": "hello-chao-chu",
+      "phraseID": "hello-chao-chu",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào chú",
+      "englishTitle": "Hello to an uncle-age man",
+      "pronunciation": "chow choo",
+      "summary": "A respectful hello for an older man who feels uncle-age rather than elderly.",
+      "iconName": "person.fill",
+      "tintName": "teal",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-viet-hello-chu-full",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào chú is for an older man who feels uncle-age: older than you, but not grandfather-age. It is common in neighborhood, shop, homestay, driver, and family contexts where a plain bạn would feel too neutral.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Chào chú when the man is clearly older than you and chú feels respectful without being too formal.",
+          "phrases": [
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": null,
+              "audioKey": "breakdown-viet-hello-chu-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The greeting works because chú sets the age relationship.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "chu",
+              "vietnamese": "chú",
+              "english": "uncle / older man",
+              "audioKey": "breakdown-viet-hello-chu-relationship"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào chú",
+              "english": "hello to an uncle-age man",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "pronoun-swap",
+          "title": "Relationship swaps",
+          "body": "Use these nearby greetings when the age relationship is different.",
+          "phrases": [
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            },
+            {
+              "id": "hello-chao-ong",
+              "vietnamese": "Chào ông",
+              "english": "Hello to an elderly man",
+              "pronunciation": "chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "indigo",
+              "detailPageID": "viet-hello-chao-ong",
+              "audioKey": "breakdown-viet-hello-ong-full"
+            },
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it with an older male shop owner, taxi driver, homestay host, neighborhood helper, or someone who feels closer to an uncle than to an older brother.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chú is friendly and respectful. If the man is only slightly older, anh may sound more natural; if he is elderly, ông is the clearer respectful choice.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help you choose the closest greeting in the same family.",
+          "phrases": [
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            },
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao-chu",
+          "vietnamese": "Chào chú",
+          "english": "Hello to an uncle-age man",
+          "pronunciation": "chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-chu-full"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao-co",
+      "familyID": "hello-chao-co",
+      "phraseID": "hello-chao-co",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào cô",
+      "englishTitle": "Hello to an aunt-age woman",
+      "pronunciation": "chow koh",
+      "summary": "A respectful hello for an aunt-age woman, teacher, shop owner, or older helper.",
+      "iconName": "person.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-viet-hello-co-full",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào cô is for an older woman who feels aunt-age: older than you, but not grandmother-age. Travelers hear it in shops, classes, homestays, neighborhood places, and polite service moments.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Chào cô when the woman is clearly older than you and cô gives the greeting a respectful local feel.",
+          "phrases": [
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "breakdown-viet-hello-co-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "Cô is the social cue that makes the phrase specific.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "co",
+              "vietnamese": "cô",
+              "english": "aunt / older woman / teacher",
+              "audioKey": "breakdown-viet-hello-co-relationship"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào cô",
+              "english": "hello to an aunt-age woman",
+              "audioKey": "breakdown-viet-hello-co-full"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "pronoun-swap",
+          "title": "Relationship swaps",
+          "body": "Use these when the person or age relationship changes.",
+          "phrases": [
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-hello-chao-chu",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            },
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-hello-chao-ba",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            },
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it with an older female shop owner, teacher, homestay host, neighborhood helper, or woman who feels closer to aunt-age than sister-age.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cô can also mean teacher or aunt. In greetings, it works as a respectful relationship word, so the phrase sounds more tuned to the person than a universal hello.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These keep the same greeting lesson moving.",
+          "phrases": [
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-hello-chao-chu",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            },
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            },
+            {
+              "id": "polite-5",
+              "vietnamese": "Xin lỗi",
+              "english": "Excuse me / sorry",
+              "pronunciation": "sin loy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-excuse-sorry",
+              "audioKey": "polite-5"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao-co",
+          "vietnamese": "Chào cô",
+          "english": "Hello to an aunt-age woman",
+          "pronunciation": "chow koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-co-full"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao-em",
+      "familyID": "hello-chao-em",
+      "phraseID": "hello-chao-em",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào em",
+      "englishTitle": "Hello to a younger person",
+      "pronunciation": "chow em",
+      "summary": "A friendly hello for someone younger when the age relationship is clear.",
+      "iconName": "person.fill",
+      "tintName": "mint",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-viet-hello-em-full",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào em is a warm greeting for someone younger than you, such as a younger staff member, student, younger guide assistant, or friendly helper. It sounds natural only when the age relationship is clear enough that em feels kind rather than presumptive.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Chào em when the other person is younger and the setting already feels relaxed.",
+          "phrases": [
+            {
+              "id": "hello-chao-em",
+              "vietnamese": "Chào em",
+              "english": "Hello to a younger person",
+              "pronunciation": "chow em",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "mint",
+              "detailPageID": null,
+              "audioKey": "breakdown-viet-hello-em-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The last word names the social relationship.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "em",
+              "vietnamese": "em",
+              "english": "younger sibling / younger person",
+              "audioKey": "breakdown-viet-hello-em-relationship"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào em",
+              "english": "hello to a younger person",
+              "audioKey": "breakdown-viet-hello-em-full"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "pronoun-swap",
+          "title": "Relationship swaps",
+          "body": "If the age relationship changes, swap the greeting instead of forcing em.",
+          "phrases": [
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao-ban",
+              "audioKey": "audio-phrase-chao-ban"
+            },
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            },
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it in friendly everyday exchanges where the person is clearly younger: a younger cafe worker, a student helper, a younger person at a homestay, or someone helping you with directions in a relaxed setting.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "If you are unsure about age, Chào bạn is the safer friendly choice. Em is useful because it can sound warm, but the warmth comes from choosing it in the right relationship moment.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help you keep a friendly greeting going.",
+          "phrases": [
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao-em",
+          "vietnamese": "Chào em",
+          "english": "Hello to a younger person",
+          "pronunciation": "chow em",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "mint",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-em-full"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao-ong",
+      "familyID": "hello-chao-ong",
+      "phraseID": "hello-chao-ong",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào ông",
+      "englishTitle": "Hello to an elderly man",
+      "pronunciation": "chow ohng",
+      "summary": "A respectful hello for a grandfather-age man.",
+      "iconName": "person.fill",
+      "tintName": "indigo",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-viet-hello-ong-full",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào ông is a respectful greeting for an elderly man or a grandfather-age local. It gives the hello more care than a plain Xin chào when the person is clearly much older.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Chào ông when the person is an elderly man and you want the greeting to show respect immediately.",
+          "phrases": [
+            {
+              "id": "hello-chao-ong",
+              "vietnamese": "Chào ông",
+              "english": "Hello to an elderly man",
+              "pronunciation": "chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "indigo",
+              "detailPageID": null,
+              "audioKey": "breakdown-viet-hello-ong-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The greeting is short, but the relationship word matters.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "ong",
+              "vietnamese": "ông",
+              "english": "grandfather / elderly man",
+              "audioKey": "breakdown-viet-hello-ong-relationship"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào ông",
+              "english": "hello to an elderly man",
+              "audioKey": "breakdown-viet-hello-ong-full"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "pronoun-swap",
+          "title": "Respectful swaps",
+          "body": "Choose the relationship word that matches the person in front of you.",
+          "phrases": [
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-hello-chao-ba",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            },
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-hello-chao-chu",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            },
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it in homes, markets, neighborhood shops, temples, small cafes, or family-run places when you greet an elderly man respectfully.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Ông is respectful and socially distant in a good way. If the man is older but not elderly, Chào chú or Chào anh may feel more natural.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These nearby greetings help you choose the right level of respect.",
+          "phrases": [
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-hello-chao-ba",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            },
+            {
+              "id": "hello-da-chao-anh-chi",
+              "vietnamese": "Dạ, chào anh/chị",
+              "english": "Hello, sir or ma'am",
+              "pronunciation": "yah chow anh chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-da-chao-anh-chi",
+              "audioKey": "audio-phrase-da-chao-anh-chi"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao-ong",
+          "vietnamese": "Chào ông",
+          "english": "Hello to an elderly man",
+          "pronunciation": "chow ohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "indigo",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-ong-full"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-chao",
+      "familyID": "hello-chao",
+      "phraseID": "hello-chao",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào",
+      "englishTitle": "Hi / hello",
+      "pronunciation": "chow",
+      "summary": "A relaxed hello once the moment already feels clear.",
+      "iconName": "hand.wave.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-chao",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào is the plain greeting inside Xin chào. Use it when the moment is relaxed, the other person already feels socially clear, or you are adding a relationship word such as anh, chị, em, cô, or chú. If you are unsure, keep Xin chào as the safer first move.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Chào when a simple hi is enough. It is short and friendly, but it relies more on context than Xin chào.",
+          "phrases": [
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "breakdown-chao"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "This is one word, but it becomes more useful when you notice what can come after it.",
+          "breakdown": [
+            {
+              "id": "chao-meaning",
+              "vietnamese": "chào",
+              "english": "greet / say hello",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "chao-full",
+              "vietnamese": "Chào",
+              "english": "hi / hello",
+              "audioKey": "breakdown-chao"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Natural variations",
+          "body": "These are the main ways Chào becomes more specific.",
+          "phrases": [
+            {
+              "id": "polite-1",
+              "vietnamese": "Xin chào",
+              "english": "Hello, safely polite",
+              "pronunciation": "sin chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-polite-hello",
+              "audioKey": "polite-1"
+            },
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao-ban",
+              "audioKey": "audio-phrase-chao-ban"
+            },
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use Chào with people you already know, casual service moments where the mood is friendly, or as the base before a relationship word. Use Xin chào when you are entering a new shop, approaching a desk, or unsure how formal to be.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chào is not rude by itself; it is just lighter. Vietnamese often adds warmth through the word after Chào, so learning the relationship forms matters more than forcing one greeting everywhere.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these when the hello needs to become more precise.",
+          "phrases": [
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            },
+            {
+              "id": "hello-chao-em",
+              "vietnamese": "Chào em",
+              "english": "Hello to a younger person",
+              "pronunciation": "chow em",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-hello-chao-em",
+              "audioKey": "breakdown-viet-hello-em-full"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-chao",
+          "vietnamese": "Chào",
+          "english": "Hi / hello",
+          "pronunciation": "chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-chao"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-da-chao-anh-chi",
+      "familyID": "hello-da-chao-anh-chi",
+      "phraseID": "hello-da-chao-anh-chi",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Dạ, chào anh/chị",
+      "englishTitle": "Hello, sir or ma'am",
+      "pronunciation": "yah chow anh chee",
+      "summary": "A respectful opener for adult staff when you want one safe service greeting.",
+      "iconName": "hand.wave.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-da-chao-anh-chi",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Dạ, chào anh/chị is a useful service greeting because it avoids choosing between anh and chị too early. Use it when you are approaching a desk, cafe counter, clinic, hotel, or tour office and want the first second to feel respectful.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Start with this when the person is an adult and you want a polite greeting before your request.",
+          "phrases": [
+            {
+              "id": "hello-da-chao-anh-chi",
+              "vietnamese": "Dạ, chào anh/chị",
+              "english": "Hello, sir or ma'am",
+              "pronunciation": "yah chow anh chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-da-chao-anh-chi"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The first word softens the greeting, then anh/chị covers adult male or female staff.",
+          "breakdown": [
+            {
+              "id": "da",
+              "vietnamese": "Dạ",
+              "english": "respectful softener",
+              "audioKey": null
+            },
+            {
+              "id": "chao",
+              "vietnamese": "chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "anh-chi",
+              "vietnamese": "anh/chị",
+              "english": "adult man / adult woman",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Dạ, chào anh/chị",
+              "english": "respectful hello to adult staff",
+              "audioKey": "audio-phrase-da-chao-anh-chi"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Natural variations",
+          "body": "Use the individual form when the relationship is clear.",
+          "phrases": [
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            },
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            },
+            {
+              "id": "polite-1",
+              "vietnamese": "Xin chào",
+              "english": "Hello, safely polite",
+              "pronunciation": "sin chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-polite-hello",
+              "audioKey": "polite-1"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it before asking hotel staff for help, ordering at a counter, checking in with a guide, or starting a practical request with someone adult. It is especially useful when you do not want to guess the exact relationship word.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Dạ adds a respectful shape without making the phrase long. It is a small word, but it can make the first line sound calmer and more locally aware.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These are the requests that often come right after a respectful opener.",
+          "phrases": [
+            {
+              "id": "polite-5",
+              "vietnamese": "Xin lỗi",
+              "english": "Excuse me / sorry",
+              "pronunciation": "sin loy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-excuse-sorry",
+              "audioKey": "polite-5"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "problems-2",
+              "vietnamese": "Tôi không hiểu",
+              "english": "I don't understand",
+              "pronunciation": "toy khom hee-ew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-understand",
+              "audioKey": "problems-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-da-chao-anh-chi",
+          "vietnamese": "Dạ, chào anh/chị",
+          "english": "Hello, sir or ma'am",
+          "pronunciation": "yah chow anh chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-anh-chi"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-good-afternoon",
+      "familyID": "hello-good-afternoon",
+      "phraseID": "hello-good-afternoon",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào buổi chiều",
+      "englishTitle": "Good afternoon",
+      "pronunciation": "chow boo ee chee ew",
+      "summary": "A gentle afternoon greeting for shops, classes, desks, and cafes.",
+      "iconName": "sun.max.fill",
+      "tintName": "purple",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-chao-buoi-chieu",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào buổi chiều gives a warm afternoon shape to hello. It is useful when you enter a shop, cafe, class, front desk, or tour office and the interaction is calm enough for a friendly greeting.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use it when the afternoon timing is obvious and you want the greeting to feel a little more personal.",
+          "phrases": [
+            {
+              "id": "hello-good-afternoon",
+              "vietnamese": "Chào buổi chiều",
+              "english": "Good afternoon",
+              "pronunciation": "chow boo ee chee ew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-chao-buoi-chieu"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The greeting names the afternoon after the hello.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "buoi-chieu",
+              "vietnamese": "buổi chiều",
+              "english": "afternoon",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào buổi chiều",
+              "english": "good afternoon",
+              "audioKey": "audio-phrase-chao-buoi-chieu"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Natural variations",
+          "body": "Use these when another greeting fits the moment better.",
+          "phrases": [
+            {
+              "id": "hello-good-morning",
+              "vietnamese": "Chào buổi sáng",
+              "english": "Good morning",
+              "pronunciation": "chow boo ee sahng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-good-morning",
+              "audioKey": "audio-phrase-chao-buoi-sang"
+            },
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            },
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when arriving in the afternoon, greeting staff before a question, meeting someone after lunch, or softening the first line of a service interaction.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "A time greeting can sound warm, but relationship words still matter. Chào anh or Chào chị may feel more natural if the person is clearly older than you.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these after the greeting when the conversation continues.",
+          "phrases": [
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+            },
+            {
+              "id": "polite-5",
+              "vietnamese": "Xin lỗi",
+              "english": "Excuse me / sorry",
+              "pronunciation": "sin loy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-excuse-sorry",
+              "audioKey": "polite-5"
+            },
+            {
+              "id": "polite-7",
+              "vietnamese": "Tạm biệt",
+              "english": "Goodbye",
+              "pronunciation": "tahm bee et",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-goodbye",
+              "audioKey": "polite-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-good-afternoon",
+          "vietnamese": "Chào buổi chiều",
+          "english": "Good afternoon",
+          "pronunciation": "chow boo ee chee ew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-chao-buoi-chieu"
+        }
+      ]
+    },
+    {
+      "id": "viet-hello-good-morning",
+      "familyID": "hello-good-morning",
+      "phraseID": "hello-good-morning",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Chào buổi sáng",
+      "englishTitle": "Good morning",
+      "pronunciation": "chow boo ee sahng",
+      "summary": "A warm morning greeting for starts, check-ins, cafes, and tours.",
+      "iconName": "sunrise.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-chao-buoi-sang",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Chào buổi sáng is useful when the day is just starting and you want the greeting to feel warmer than a plain hello. It fits hotel breakfasts, cafes, morning tours, classes, and front-desk moments.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use it as a friendly good morning when the setting has enough space for a greeting before the practical request.",
+          "phrases": [
+            {
+              "id": "hello-good-morning",
+              "vietnamese": "Chào buổi sáng",
+              "english": "Good morning",
+              "pronunciation": "chow boo ee sahng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-chao-buoi-sang"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The phrase keeps the greeting first, then names the morning.",
+          "breakdown": [
+            {
+              "id": "chao",
+              "vietnamese": "Chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "buoi-sang",
+              "vietnamese": "buổi sáng",
+              "english": "morning",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Chào buổi sáng",
+              "english": "good morning",
+              "audioKey": "audio-phrase-chao-buoi-sang"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Natural variations",
+          "body": "Switch to these when the time or relationship matters more than the morning itself.",
+          "phrases": [
+            {
+              "id": "hello-good-afternoon",
+              "vietnamese": "Chào buổi chiều",
+              "english": "Good afternoon",
+              "pronunciation": "chow boo ee chee ew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-hello-good-afternoon",
+              "audioKey": "audio-phrase-chao-buoi-chieu"
+            },
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao-ban",
+              "audioKey": "audio-phrase-chao-ban"
+            },
+            {
+              "id": "polite-1",
+              "vietnamese": "Xin chào",
+              "english": "Hello, safely polite",
+              "pronunciation": "sin chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-polite-hello",
+              "audioKey": "polite-1"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it before a morning order, when meeting a guide early, at breakfast, or when greeting hotel staff before asking a question.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Time-of-day greetings are pleasant but optional. If you are rushing or unsure, Xin chào is still the most dependable greeting.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Morning greetings often lead into these practical phrases.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "May I see the menu?",
+              "pronunciation": "cho toy xem thuc don duoc khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "hello-good-morning",
+          "vietnamese": "Chào buổi sáng",
+          "english": "Good morning",
+          "pronunciation": "chow boo ee sahng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-chao-buoi-sang"
+        }
+      ]
+    },
+    {
+      "id": "viet-smalltalk-di-dau-day",
+      "familyID": "smalltalk-di-dau-day",
+      "phraseID": "smalltalk-di-dau-day",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Đi đâu đấy?",
+      "englishTitle": "Where are you going?",
+      "pronunciation": "dee dow day",
+      "summary": "A friendly movement check that can follow a greeting.",
+      "iconName": "message.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "small-talk",
+        "greetings"
+      ],
+      "audioKey": "audio-phrase-di-dau-day",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Đi đâu đấy? literally asks where someone is going, but in friendly everyday speech it can work like light small talk after hello. Use it with someone familiar enough for a casual check-in, not as a serious route question to a rushed stranger.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Đi đâu đấy? when the conversation already has a friendly tone and the person is visibly heading somewhere.",
+          "phrases": [
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-di-dau-day"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The phrase is short, but đấy makes it feel conversational.",
+          "breakdown": [
+            {
+              "id": "di",
+              "vietnamese": "Đi",
+              "english": "go",
+              "audioKey": null
+            },
+            {
+              "id": "dau",
+              "vietnamese": "đâu",
+              "english": "where",
+              "audioKey": null
+            },
+            {
+              "id": "day",
+              "vietnamese": "đấy?",
+              "english": "there / conversational softener",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "where are you going?",
+              "audioKey": "audio-phrase-di-dau-day"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Natural greeting chain",
+          "body": "This line usually belongs after a greeting, not before one.",
+          "phrases": [
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao-ban",
+              "audioKey": "audio-phrase-chao-ban"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it with a familiar guide, classmate, host, neighbor, or friendly helper after you have already greeted each other. It fits best when the person is walking out, leaving the desk, or heading toward a visible next place.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Because it can sound personal, keep it for friendly contexts. If you truly need directions from a stranger, ask a direction phrase instead.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These pages help you choose between small talk and practical directions.",
+          "phrases": [
+            {
+              "id": "directions-1",
+              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+              "english": "Excuse me, how do I get there?",
+              "pronunciation": "cho hoy dee toy doh theh nao",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-directions-how-to-get",
+              "audioKey": "directions-1"
+            },
+            {
+              "id": "hello-chao",
+              "vietnamese": "Chào",
+              "english": "Hi / hello",
+              "pronunciation": "chow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "smalltalk-di-dau-day",
+          "vietnamese": "Đi đâu đấy?",
+          "english": "Where are you going?",
+          "pronunciation": "dee dow day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-di-dau-day"
+        }
+      ]
+    },
+    {
+      "id": "viet-smalltalk-nice-to-meet-you",
+      "familyID": "smalltalk-nice-to-meet-you",
+      "phraseID": "smalltalk-nice-to-meet-you",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Rất vui được gặp bạn",
+      "englishTitle": "Nice to meet you",
+      "pronunciation": "zuht voo ee duhk gap ban",
+      "summary": "A warm first-meeting line after names or introductions.",
+      "iconName": "person.2.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "small-talk",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-rat-vui-duoc-gap-ban",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Rất vui được gặp bạn is the friendly line for meeting someone for the first time. It works after names, introductions, a guide handoff, a class, a homestay welcome, or a helpful local exchange that becomes personal enough for warmth.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Rất vui được gặp bạn after the greeting and introduction, not as the first word at a counter.",
+          "phrases": [
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The sentence says you are very happy to get to meet the person.",
+          "breakdown": [
+            {
+              "id": "rat-vui",
+              "vietnamese": "Rất vui",
+              "english": "very happy / pleased",
+              "audioKey": null
+            },
+            {
+              "id": "duoc-gap",
+              "vietnamese": "được gặp",
+              "english": "to get to meet",
+              "audioKey": null
+            },
+            {
+              "id": "ban",
+              "vietnamese": "bạn",
+              "english": "you / friend",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "nice to meet you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Natural introduction chain",
+          "body": "This line usually comes after a hello and before a thank-you or goodbye.",
+          "phrases": [
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao-ban",
+              "audioKey": "audio-phrase-chao-ban"
+            },
+            {
+              "id": "smalltalk-1",
+              "vietnamese": "Tôi đến từ Mỹ",
+              "english": "I’m from the United States",
+              "pronunciation": "toy den too mee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-us",
+              "audioKey": "smalltalk-1"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it after someone introduces themselves, after meeting a guide or host, at a language exchange, in a class, or when a helpful local interaction turns into a friendly introduction.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bạn makes the phrase peer-friendly. With a clearly older person, the same idea can become more local when the relationship word changes, but this version is a safe first page for travelers.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help you start and close the same friendly exchange.",
+          "phrases": [
+            {
+              "id": "hello-chao-ban",
+              "vietnamese": "Chào bạn",
+              "english": "Hi there / hello friend",
+              "pronunciation": "chow ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-hello-chao-ban",
+              "audioKey": "audio-phrase-chao-ban"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "polite-7",
+              "vietnamese": "Tạm biệt",
+              "english": "Goodbye",
+              "pronunciation": "tahm bee-et",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-goodbye",
+              "audioKey": "polite-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "smalltalk-nice-to-meet-you",
+          "vietnamese": "Rất vui được gặp bạn",
+          "english": "Nice to meet you",
+          "pronunciation": "zuht voo ee duhk gap ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
         }
       ]
     }

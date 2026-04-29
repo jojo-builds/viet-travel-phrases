@@ -171,6 +171,26 @@
           "tintName": "green",
           "detailPageID": "viet-how-are-you",
           "audioKey": "smalltalk-7"
+        },
+        {
+          "id": "smalltalk-di-dau-day",
+          "vietnamese": "Đi đâu đấy?",
+          "english": "Where are you going?",
+          "pronunciation": "dee dow day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-smalltalk-di-dau-day",
+          "audioKey": "audio-phrase-di-dau-day"
+        },
+        {
+          "id": "smalltalk-nice-to-meet-you",
+          "vietnamese": "Rất vui được gặp bạn",
+          "english": "Nice to meet you",
+          "pronunciation": "zuht voo ee duhk gap ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-smalltalk-nice-to-meet-you",
+          "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
         }
       ],
       "presentation": "phrase-list"

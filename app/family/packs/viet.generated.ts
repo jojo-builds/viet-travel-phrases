@@ -27298,6 +27298,149 @@ const scenarios: AppScenario[] = [
         "phraseIds": [
           "v900-poli-basi-can-i-sit-here"
         ]
+      },
+      {
+        "id": "hello-chao",
+        "scenarioId": "polite-basics",
+        "title": "Chào",
+        "summary": "A relaxed hello for familiar or low-pressure moments after the traveler understands Xin chào.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao",
+        "phraseIds": [
+          "hello-chao"
+        ]
+      },
+      {
+        "id": "hello-chao-ban",
+        "scenarioId": "polite-basics",
+        "title": "Chào bạn",
+        "summary": "A friendly peer-safe greeting that naturally grows out of the Xin chào relationship-word lesson.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao-ban",
+        "phraseIds": [
+          "hello-chao-ban"
+        ]
+      },
+      {
+        "id": "hello-da-chao-anh-chi",
+        "scenarioId": "polite-basics",
+        "title": "Dạ, chào anh/chị",
+        "summary": "A respectful service greeting when the traveler wants one polite opener for adult staff.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-da-chao-anh-chi",
+        "phraseIds": [
+          "hello-da-chao-anh-chi"
+        ]
+      },
+      {
+        "id": "hello-alo",
+        "scenarioId": "polite-basics",
+        "title": "Alô",
+        "summary": "The phone hello travelers hear and use before confirming who is speaking.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-alo",
+        "phraseIds": [
+          "hello-alo"
+        ]
+      },
+      {
+        "id": "hello-good-morning",
+        "scenarioId": "polite-basics",
+        "title": "Chào buổi sáng",
+        "summary": "A time-of-day greeting for hotel, cafe, class, or tour mornings.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-good-morning",
+        "phraseIds": [
+          "hello-good-morning"
+        ]
+      },
+      {
+        "id": "hello-good-afternoon",
+        "scenarioId": "polite-basics",
+        "title": "Chào buổi chiều",
+        "summary": "A gentle afternoon greeting for entering a shop, class, cafe, or front desk moment.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-good-afternoon",
+        "phraseIds": [
+          "hello-good-afternoon"
+        ]
+      },
+      {
+        "id": "hello-chao-anh",
+        "scenarioId": "polite-basics",
+        "title": "Chào anh",
+        "summary": "A warm greeting for an older man, adult male staff member, driver, guide, or friendly helper.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao-anh",
+        "phraseIds": [
+          "hello-chao-anh"
+        ]
+      },
+      {
+        "id": "hello-chao-chi",
+        "scenarioId": "polite-basics",
+        "title": "Chào chị",
+        "summary": "A warm greeting for an older woman, adult female staff member, guide, or friendly helper.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao-chi",
+        "phraseIds": [
+          "hello-chao-chi"
+        ]
+      },
+      {
+        "id": "hello-chao-em",
+        "scenarioId": "polite-basics",
+        "title": "Chào em",
+        "summary": "A friendly greeting for someone younger when the relationship is relaxed and clear.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao-em",
+        "phraseIds": [
+          "hello-chao-em"
+        ]
+      },
+      {
+        "id": "hello-chao-ong",
+        "scenarioId": "polite-basics",
+        "title": "Chào ông",
+        "summary": "A respectful greeting for an elderly man or grandfather-age local.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao-ong",
+        "phraseIds": [
+          "hello-chao-ong"
+        ]
+      },
+      {
+        "id": "hello-chao-ba",
+        "scenarioId": "polite-basics",
+        "title": "Chào bà",
+        "summary": "A respectful greeting for an elderly woman or grandmother-age local.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao-ba",
+        "phraseIds": [
+          "hello-chao-ba"
+        ]
+      },
+      {
+        "id": "hello-chao-chu",
+        "scenarioId": "polite-basics",
+        "title": "Chào chú",
+        "summary": "A respectful greeting for an uncle-age man, often older than the traveler but not elderly.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao-chu",
+        "phraseIds": [
+          "hello-chao-chu"
+        ]
+      },
+      {
+        "id": "hello-chao-co",
+        "scenarioId": "polite-basics",
+        "title": "Chào cô",
+        "summary": "A respectful greeting for an aunt-age woman, teacher, shop owner, or older female helper.",
+        "accessTier": "starter",
+        "primaryPhraseId": "hello-chao-co",
+        "phraseIds": [
+          "hello-chao-co"
+        ]
       }
     ],
     "phrases": [
@@ -27740,6 +27883,302 @@ const scenarios: AppScenario[] = [
         "variantLabel": "Say this first",
         "audioStatus": "ready",
         "emoji": "🙏"
+      },
+      {
+        "id": "hello-chao",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào",
+        "canonicalTargetText": "Chào",
+        "pronunciation": "chow",
+        "sourceText": "Hi / hello",
+        "audioKey": "breakdown-chao",
+        "accessTier": "starter",
+        "context": "Use this when the moment is friendly, casual, or already socially clear enough that Xin is not needed.",
+        "usageNote": "Use this when the moment is friendly, casual, or already socially clear enough that Xin is not needed.",
+        "searchAliases": [
+          "chào",
+          "chao",
+          "hi",
+          "hello casual"
+        ],
+        "intentFamilyId": "hello-chao",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-chao-ban",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào bạn",
+        "canonicalTargetText": "Chào bạn",
+        "pronunciation": "chow ban",
+        "sourceText": "Hi there / hello friend",
+        "audioKey": "audio-phrase-chao-ban",
+        "accessTier": "starter",
+        "context": "Use this with a peer, friendly local helper, classmate, guide, or someone whose age relationship feels neutral and comfortable.",
+        "usageNote": "Use this with a peer, friendly local helper, classmate, guide, or someone whose age relationship feels neutral and comfortable.",
+        "searchAliases": [
+          "chào bạn",
+          "chao ban",
+          "hello friend",
+          "hi there"
+        ],
+        "intentFamilyId": "hello-chao-ban",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-da-chao-anh-chi",
+        "scenarioId": "polite-basics",
+        "targetText": "Dạ, chào anh/chị",
+        "canonicalTargetText": "Dạ, chào anh/chị",
+        "pronunciation": "yah chow anh chee",
+        "sourceText": "Hello, sir or ma'am",
+        "audioKey": "audio-phrase-da-chao-anh-chi",
+        "accessTier": "starter",
+        "context": "Use this at a counter, hotel desk, clinic, cafe, or tour desk when the person is an adult and you want a warm respectful opener.",
+        "usageNote": "Use this at a counter, hotel desk, clinic, cafe, or tour desk when the person is an adult and you want a warm respectful opener.",
+        "searchAliases": [
+          "dạ chào anh chị",
+          "da chao anh chi",
+          "hello sir maam",
+          "polite hello staff"
+        ],
+        "intentFamilyId": "hello-da-chao-anh-chi",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-alo",
+        "scenarioId": "polite-basics",
+        "targetText": "Alô",
+        "canonicalTargetText": "Alô",
+        "pronunciation": "ah lo",
+        "sourceText": "Hello on the phone",
+        "audioKey": "audio-phrase-alo",
+        "accessTier": "starter",
+        "context": "Use this when answering a call, starting a phone conversation, or checking whether the other person can hear you.",
+        "usageNote": "Use this when answering a call, starting a phone conversation, or checking whether the other person can hear you.",
+        "searchAliases": [
+          "alô",
+          "alo",
+          "phone hello",
+          "hello phone"
+        ],
+        "intentFamilyId": "hello-alo",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "☎️"
+      },
+      {
+        "id": "hello-good-morning",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào buổi sáng",
+        "canonicalTargetText": "Chào buổi sáng",
+        "pronunciation": "chow boo ee sahng",
+        "sourceText": "Good morning",
+        "audioKey": "audio-phrase-chao-buoi-sang",
+        "accessTier": "starter",
+        "context": "Use this in the morning when the setting has enough space for a warmer greeting than a bare hello.",
+        "usageNote": "Use this in the morning when the setting has enough space for a warmer greeting than a bare hello.",
+        "searchAliases": [
+          "chào buổi sáng",
+          "chao buoi sang",
+          "good morning"
+        ],
+        "intentFamilyId": "hello-good-morning",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-good-afternoon",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào buổi chiều",
+        "canonicalTargetText": "Chào buổi chiều",
+        "pronunciation": "chow boo ee chee ew",
+        "sourceText": "Good afternoon",
+        "audioKey": "audio-phrase-chao-buoi-chieu",
+        "accessTier": "starter",
+        "context": "Use this in the afternoon when you want the greeting to feel warm and slightly more specific than Xin chào.",
+        "usageNote": "Use this in the afternoon when you want the greeting to feel warm and slightly more specific than Xin chào.",
+        "searchAliases": [
+          "chào buổi chiều",
+          "chao buoi chieu",
+          "good afternoon"
+        ],
+        "intentFamilyId": "hello-good-afternoon",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-chao-anh",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào anh",
+        "canonicalTargetText": "Chào anh",
+        "pronunciation": "chow anh",
+        "sourceText": "Hello to an older man",
+        "audioKey": "breakdown-viet-hello-anh-full",
+        "accessTier": "starter",
+        "context": "Use this when the man is older than you, slightly senior, or in a service role where anh sounds warmer than bạn.",
+        "usageNote": "Use this when the man is older than you, slightly senior, or in a service role where anh sounds warmer than bạn.",
+        "searchAliases": [
+          "chào anh",
+          "chao anh",
+          "hello older man",
+          "hello brother"
+        ],
+        "intentFamilyId": "hello-chao-anh",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-chao-chi",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào chị",
+        "canonicalTargetText": "Chào chị",
+        "pronunciation": "chow chee",
+        "sourceText": "Hello to an older woman",
+        "audioKey": "breakdown-viet-hello-chi-full",
+        "accessTier": "starter",
+        "context": "Use this when the woman is older than you, slightly senior, or in a service role where chị sounds warmer than bạn.",
+        "usageNote": "Use this when the woman is older than you, slightly senior, or in a service role where chị sounds warmer than bạn.",
+        "searchAliases": [
+          "chào chị",
+          "chao chi",
+          "hello older woman",
+          "hello sister"
+        ],
+        "intentFamilyId": "hello-chao-chi",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-chao-em",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào em",
+        "canonicalTargetText": "Chào em",
+        "pronunciation": "chow em",
+        "sourceText": "Hello to a younger person",
+        "audioKey": "breakdown-viet-hello-em-full",
+        "accessTier": "starter",
+        "context": "Use this with a younger staff member, student, or younger friendly helper when em is clearly appropriate.",
+        "usageNote": "Use this with a younger staff member, student, or younger friendly helper when em is clearly appropriate.",
+        "searchAliases": [
+          "chào em",
+          "chao em",
+          "hello younger person"
+        ],
+        "intentFamilyId": "hello-chao-em",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-chao-ong",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào ông",
+        "canonicalTargetText": "Chào ông",
+        "pronunciation": "chow ohng",
+        "sourceText": "Hello to an elderly man",
+        "audioKey": "breakdown-viet-hello-ong-full",
+        "accessTier": "starter",
+        "context": "Use this for an elderly man when you want the greeting to show clear respect and social distance.",
+        "usageNote": "Use this for an elderly man when you want the greeting to show clear respect and social distance.",
+        "searchAliases": [
+          "chào ông",
+          "chao ong",
+          "hello elderly man",
+          "hello grandfather"
+        ],
+        "intentFamilyId": "hello-chao-ong",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-chao-ba",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào bà",
+        "canonicalTargetText": "Chào bà",
+        "pronunciation": "chow bah",
+        "sourceText": "Hello to an elderly woman",
+        "audioKey": "breakdown-viet-hello-ba-full",
+        "accessTier": "starter",
+        "context": "Use this for an elderly woman when you want the greeting to show clear respect and social distance.",
+        "usageNote": "Use this for an elderly woman when you want the greeting to show clear respect and social distance.",
+        "searchAliases": [
+          "chào bà",
+          "chao ba",
+          "hello elderly woman",
+          "hello grandmother"
+        ],
+        "intentFamilyId": "hello-chao-ba",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-chao-chu",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào chú",
+        "canonicalTargetText": "Chào chú",
+        "pronunciation": "chow choo",
+        "sourceText": "Hello to an uncle-age man",
+        "audioKey": "breakdown-viet-hello-chu-full",
+        "accessTier": "starter",
+        "context": "Use this for an older man who feels more uncle-age than grandfather-age, especially in neighborhood, shop, or homestay moments.",
+        "usageNote": "Use this for an older man who feels more uncle-age than grandfather-age, especially in neighborhood, shop, or homestay moments.",
+        "searchAliases": [
+          "chào chú",
+          "chao chu",
+          "hello uncle",
+          "hello older man"
+        ],
+        "intentFamilyId": "hello-chao-chu",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "hello-chao-co",
+        "scenarioId": "polite-basics",
+        "targetText": "Chào cô",
+        "canonicalTargetText": "Chào cô",
+        "pronunciation": "chow koh",
+        "sourceText": "Hello to an aunt-age woman",
+        "audioKey": "breakdown-viet-hello-co-full",
+        "accessTier": "starter",
+        "context": "Use this for an older woman who feels more aunt-age than grandmother-age, especially in shops, markets, homes, or class settings.",
+        "usageNote": "Use this for an older woman who feels more aunt-age than grandmother-age, especially in shops, markets, homes, or class settings.",
+        "searchAliases": [
+          "chào cô",
+          "chao co",
+          "hello aunt",
+          "hello older woman"
+        ],
+        "intentFamilyId": "hello-chao-co",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
       }
     ]
   },
@@ -27935,6 +28374,28 @@ const scenarios: AppScenario[] = [
         "primaryPhraseId": "v500-soci-smal-talk-no-thank-you-im-not-interested",
         "phraseIds": [
           "v500-soci-smal-talk-no-thank-you-im-not-interested"
+        ]
+      },
+      {
+        "id": "smalltalk-di-dau-day",
+        "scenarioId": "social-small-talk",
+        "title": "Đi đâu đấy?",
+        "summary": "A friendly movement check that can follow hello when the exchange has room for small talk.",
+        "accessTier": "starter",
+        "primaryPhraseId": "smalltalk-di-dau-day",
+        "phraseIds": [
+          "smalltalk-di-dau-day"
+        ]
+      },
+      {
+        "id": "smalltalk-nice-to-meet-you",
+        "scenarioId": "social-small-talk",
+        "title": "Rất vui được gặp bạn",
+        "summary": "A friendly first-meeting phrase after names, introductions, guides, classes, or local help.",
+        "accessTier": "starter",
+        "primaryPhraseId": "smalltalk-nice-to-meet-you",
+        "phraseIds": [
+          "smalltalk-nice-to-meet-you"
         ]
       }
     ],
@@ -28283,6 +28744,50 @@ const scenarios: AppScenario[] = [
           "no thank you i m not interested"
         ],
         "intentFamilyId": "v500-soci-smal-talk-no-thank-you-im-not-interested",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "💬"
+      },
+      {
+        "id": "smalltalk-di-dau-day",
+        "scenarioId": "social-small-talk",
+        "targetText": "Đi đâu đấy?",
+        "canonicalTargetText": "Đi đâu đấy?",
+        "pronunciation": "dee dow day",
+        "sourceText": "Where are you going?",
+        "audioKey": "audio-phrase-di-dau-day",
+        "accessTier": "starter",
+        "context": "Use this as friendly small talk after a greeting with someone familiar enough for a light check-in.",
+        "usageNote": "Use this as friendly small talk after a greeting with someone familiar enough for a light check-in.",
+        "searchAliases": [
+          "đi đâu đấy",
+          "di dau day",
+          "where are you going"
+        ],
+        "intentFamilyId": "smalltalk-di-dau-day",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "💬"
+      },
+      {
+        "id": "smalltalk-nice-to-meet-you",
+        "scenarioId": "social-small-talk",
+        "targetText": "Rất vui được gặp bạn",
+        "canonicalTargetText": "Rất vui được gặp bạn",
+        "pronunciation": "zuht voo ee duhk gap ban",
+        "sourceText": "Nice to meet you",
+        "audioKey": "audio-phrase-rat-vui-duoc-gap-ban",
+        "accessTier": "starter",
+        "context": "Use this after an introduction or first friendly exchange when the conversation has become personal enough for a warm closing line.",
+        "usageNote": "Use this after an introduction or first friendly exchange when the conversation has become personal enough for a warm closing line.",
+        "searchAliases": [
+          "rất vui được gặp bạn",
+          "rat vui duoc gap ban",
+          "nice to meet you"
+        ],
+        "intentFamilyId": "smalltalk-nice-to-meet-you",
         "variantRole": "say-first",
         "variantLabel": "Say this first",
         "audioStatus": "ready",

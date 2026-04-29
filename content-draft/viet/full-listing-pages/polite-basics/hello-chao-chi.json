@@ -1,0 +1,25 @@
+{
+  "id": "viet-hello-chao-chi",
+  "familyID": "hello-chao-chi",
+  "phraseID": "hello-chao-chi",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Chào chị",
+  "englishTitle": "Hello to an older woman",
+  "pronunciation": "chow chee",
+  "summary": "A warm greeting for a slightly older woman or adult female helper.",
+  "iconName": "person.fill",
+  "tintName": "red",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "breakdown-viet-hello-chi-full",
+  "sections": [
+    {"id": "at-glance", "title": "At a glance", "body": "Chào chị is the greeting to reach for with a woman who seems older than you or socially senior in the moment. It works with hotel staff, shop workers, guides, cafe staff, and friendly helpers when chị feels warmer than bạn."},
+    {"id": "standard-way", "title": "The standard way", "body": "Say Chào chị when the person is female and older or senior enough that you want the greeting to carry respect.", "phrases": [{"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "breakdown-viet-hello-chi-full"}]},
+    {"id": "breakdown", "title": "Break it down", "body": "Chị gives the greeting its relationship meaning.", "breakdown": [{"id": "chao", "vietnamese": "Chào", "english": "hello / greet", "audioKey": "breakdown-chao"}, {"id": "chi", "vietnamese": "chị", "english": "older sister / older woman", "audioKey": "breakdown-viet-hello-chi-relationship"}, {"id": "full", "vietnamese": "Chào chị", "english": "hello to an older woman", "audioKey": "breakdown-viet-hello-chi-full"}]},
+    {"id": "pronoun-swap", "title": "Relationship swaps", "body": "Use the matching greeting when the person changes.", "phrases": [{"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-anh", "audioKey": "breakdown-viet-hello-anh-full"}, {"id": "hello-chao-co", "vietnamese": "Chào cô", "english": "Hello to an aunt-age woman", "pronunciation": "chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-co", "audioKey": "breakdown-viet-hello-co-full"}, {"id": "hello-chao-ban", "vietnamese": "Chào bạn", "english": "Hi there / hello friend", "pronunciation": "chow ban", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-hello-chao-ban", "audioKey": "audio-phrase-chao-ban"}]},
+    {"id": "when-to-use", "title": "When to use it", "body": "Use it with an older female staff member, guide, driver, shop worker, or local helper. It is especially good when you want the first line to sound warm rather than generic."},
+    {"id": "good-to-know", "title": "Good to know", "body": "Chị is a relationship word, not just a dictionary pronoun. When it fits, it makes the whole greeting sound more socially aware."},
+    {"id": "explore-next", "title": "Explore next", "body": "These phrases often follow the same respectful opening.", "phrases": [{"id": "hello-da-chao-anh-chi", "vietnamese": "Dạ, chào anh/chị", "english": "Hello, sir or ma'am", "pronunciation": "yah chow anh chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-da-chao-anh-chi", "audioKey": "audio-phrase-da-chao-anh-chi"}, {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}, {"id": "smalltalk-7", "vietnamese": "Bạn khỏe không?", "english": "How are you?", "pronunciation": "ban khoe khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-how-are-you", "audioKey": "smalltalk-7"}]}
+  ],
+  "examples": [{"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "breakdown-viet-hello-chi-full"}]
+}

@@ -1,8 +1,8 @@
 {
   "metadata": {
     "source": "../../content-draft/viet/phrase-source.csv",
-    "phraseCount": 919,
-    "familyCount": 900,
+    "phraseCount": 934,
+    "familyCount": 915,
     "scenarioCount": 18
   },
   "scenarios": [
@@ -10933,6 +10933,186 @@
       "accessTier": "premium",
       "phraseIDs": [
         "v900-loca-serv-ever-task-where-can-i-repair-my-bag"
+      ]
+    },
+    {
+      "id": "hello-chao",
+      "pageID": "viet-family-hello-chao",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào",
+      "summary": "A relaxed hello for familiar or low-pressure moments after the traveler understands Xin chào.",
+      "primaryPhraseID": "hello-chao",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao"
+      ]
+    },
+    {
+      "id": "hello-chao-ban",
+      "pageID": "viet-family-hello-chao-ban",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào bạn",
+      "summary": "A friendly peer-safe greeting that naturally grows out of the Xin chào relationship-word lesson.",
+      "primaryPhraseID": "hello-chao-ban",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao-ban"
+      ]
+    },
+    {
+      "id": "hello-da-chao-anh-chi",
+      "pageID": "viet-family-hello-da-chao-anh-chi",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Dạ, chào anh/chị",
+      "summary": "A respectful service greeting when the traveler wants one polite opener for adult staff.",
+      "primaryPhraseID": "hello-da-chao-anh-chi",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-da-chao-anh-chi"
+      ]
+    },
+    {
+      "id": "hello-alo",
+      "pageID": "viet-family-hello-alo",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Alô",
+      "summary": "The phone hello travelers hear and use before confirming who is speaking.",
+      "primaryPhraseID": "hello-alo",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-alo"
+      ]
+    },
+    {
+      "id": "hello-good-morning",
+      "pageID": "viet-family-hello-good-morning",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào buổi sáng",
+      "summary": "A time-of-day greeting for hotel, cafe, class, or tour mornings.",
+      "primaryPhraseID": "hello-good-morning",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-good-morning"
+      ]
+    },
+    {
+      "id": "hello-good-afternoon",
+      "pageID": "viet-family-hello-good-afternoon",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào buổi chiều",
+      "summary": "A gentle afternoon greeting for entering a shop, class, cafe, or front desk moment.",
+      "primaryPhraseID": "hello-good-afternoon",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-good-afternoon"
+      ]
+    },
+    {
+      "id": "hello-chao-anh",
+      "pageID": "viet-family-hello-chao-anh",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào anh",
+      "summary": "A warm greeting for an older man, adult male staff member, driver, guide, or friendly helper.",
+      "primaryPhraseID": "hello-chao-anh",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao-anh"
+      ]
+    },
+    {
+      "id": "hello-chao-chi",
+      "pageID": "viet-family-hello-chao-chi",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào chị",
+      "summary": "A warm greeting for an older woman, adult female staff member, guide, or friendly helper.",
+      "primaryPhraseID": "hello-chao-chi",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao-chi"
+      ]
+    },
+    {
+      "id": "hello-chao-em",
+      "pageID": "viet-family-hello-chao-em",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào em",
+      "summary": "A friendly greeting for someone younger when the relationship is relaxed and clear.",
+      "primaryPhraseID": "hello-chao-em",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao-em"
+      ]
+    },
+    {
+      "id": "hello-chao-ong",
+      "pageID": "viet-family-hello-chao-ong",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào ông",
+      "summary": "A respectful greeting for an elderly man or grandfather-age local.",
+      "primaryPhraseID": "hello-chao-ong",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao-ong"
+      ]
+    },
+    {
+      "id": "hello-chao-ba",
+      "pageID": "viet-family-hello-chao-ba",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào bà",
+      "summary": "A respectful greeting for an elderly woman or grandmother-age local.",
+      "primaryPhraseID": "hello-chao-ba",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao-ba"
+      ]
+    },
+    {
+      "id": "hello-chao-chu",
+      "pageID": "viet-family-hello-chao-chu",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào chú",
+      "summary": "A respectful greeting for an uncle-age man, often older than the traveler but not elderly.",
+      "primaryPhraseID": "hello-chao-chu",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao-chu"
+      ]
+    },
+    {
+      "id": "hello-chao-co",
+      "pageID": "viet-family-hello-chao-co",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Chào cô",
+      "summary": "A respectful greeting for an aunt-age woman, teacher, shop owner, or older female helper.",
+      "primaryPhraseID": "hello-chao-co",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "hello-chao-co"
+      ]
+    },
+    {
+      "id": "smalltalk-di-dau-day",
+      "pageID": "viet-family-smalltalk-di-dau-day",
+      "scenarioID": "social-small-talk",
+      "familyTitle": "Đi đâu đấy?",
+      "summary": "A friendly movement check that can follow hello when the exchange has room for small talk.",
+      "primaryPhraseID": "smalltalk-di-dau-day",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "smalltalk-di-dau-day"
+      ]
+    },
+    {
+      "id": "smalltalk-nice-to-meet-you",
+      "pageID": "viet-family-smalltalk-nice-to-meet-you",
+      "scenarioID": "social-small-talk",
+      "familyTitle": "Rất vui được gặp bạn",
+      "summary": "A friendly first-meeting phrase after names, introductions, guides, classes, or local help.",
+      "primaryPhraseID": "smalltalk-nice-to-meet-you",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "smalltalk-nice-to-meet-you"
       ]
     }
   ],
@@ -30921,6 +31101,361 @@
       "audioStatus": "ready",
       "emoji": "🏪",
       "notes": "cleanup import: Daily Practical Needs / Repairs, Tailoring & Practical Services / keep_as_is; selected as 900 premium fill"
+    },
+    {
+      "id": "hello-chao",
+      "familyID": "hello-chao",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-chao",
+      "englishText": "Hi / hello",
+      "targetText": "Chào",
+      "canonicalTargetText": "Chào",
+      "pronunciation": "chow",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when the moment is friendly, casual, or already socially clear enough that Xin is not needed.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào",
+        "chao",
+        "hi",
+        "hello casual"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=casual form taught in quick-say section"
+    },
+    {
+      "id": "hello-chao-ban",
+      "familyID": "hello-chao-ban",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-chao-ban",
+      "englishText": "Hi there / hello friend",
+      "targetText": "Chào bạn",
+      "canonicalTargetText": "Chào bạn",
+      "pronunciation": "chow ban",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this with a peer, friendly local helper, classmate, guide, or someone whose age relationship feels neutral and comfortable.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào bạn",
+        "chao ban",
+        "hello friend",
+        "hi there"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=friend/peer greeting taught in situational greetings"
+    },
+    {
+      "id": "hello-da-chao-anh-chi",
+      "familyID": "hello-da-chao-anh-chi",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-da-chao-anh-chi",
+      "englishText": "Hello, sir or ma'am",
+      "targetText": "Dạ, chào anh/chị",
+      "canonicalTargetText": "Dạ, chào anh/chị",
+      "pronunciation": "yah chow anh chee",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this at a counter, hotel desk, clinic, cafe, or tour desk when the person is an adult and you want a warm respectful opener.",
+      "youMayHear": "",
+      "searchAliases": [
+        "dạ chào anh chị",
+        "da chao anh chi",
+        "hello sir maam",
+        "polite hello staff"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=respectful adult/staff greeting taught in situational greetings"
+    },
+    {
+      "id": "hello-alo",
+      "familyID": "hello-alo",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-alo",
+      "englishText": "Hello on the phone",
+      "targetText": "Alô",
+      "canonicalTargetText": "Alô",
+      "pronunciation": "ah lo",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when answering a call, starting a phone conversation, or checking whether the other person can hear you.",
+      "youMayHear": "",
+      "searchAliases": [
+        "alô",
+        "alo",
+        "phone hello",
+        "hello phone"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "☎️",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=phone-specific greeting taught in situational greetings"
+    },
+    {
+      "id": "hello-good-morning",
+      "familyID": "hello-good-morning",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-chao-buoi-sang",
+      "englishText": "Good morning",
+      "targetText": "Chào buổi sáng",
+      "canonicalTargetText": "Chào buổi sáng",
+      "pronunciation": "chow boo ee sahng",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this in the morning when the setting has enough space for a warmer greeting than a bare hello.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào buổi sáng",
+        "chao buoi sang",
+        "good morning"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=time-of-day greeting taught in situational greetings"
+    },
+    {
+      "id": "hello-good-afternoon",
+      "familyID": "hello-good-afternoon",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-chao-buoi-chieu",
+      "englishText": "Good afternoon",
+      "targetText": "Chào buổi chiều",
+      "canonicalTargetText": "Chào buổi chiều",
+      "pronunciation": "chow boo ee chee ew",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this in the afternoon when you want the greeting to feel warm and slightly more specific than Xin chào.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào buổi chiều",
+        "chao buoi chieu",
+        "good afternoon"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=time-of-day greeting taught in situational greetings"
+    },
+    {
+      "id": "hello-chao-anh",
+      "familyID": "hello-chao-anh",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-viet-hello-anh-full",
+      "englishText": "Hello to an older man",
+      "targetText": "Chào anh",
+      "canonicalTargetText": "Chào anh",
+      "pronunciation": "chow anh",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when the man is older than you, slightly senior, or in a service role where anh sounds warmer than bạn.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào anh",
+        "chao anh",
+        "hello older man",
+        "hello brother"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=relationship greeting taught in local greetings section"
+    },
+    {
+      "id": "hello-chao-chi",
+      "familyID": "hello-chao-chi",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-viet-hello-chi-full",
+      "englishText": "Hello to an older woman",
+      "targetText": "Chào chị",
+      "canonicalTargetText": "Chào chị",
+      "pronunciation": "chow chee",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when the woman is older than you, slightly senior, or in a service role where chị sounds warmer than bạn.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào chị",
+        "chao chi",
+        "hello older woman",
+        "hello sister"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=relationship greeting taught in local greetings section"
+    },
+    {
+      "id": "hello-chao-em",
+      "familyID": "hello-chao-em",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-viet-hello-em-full",
+      "englishText": "Hello to a younger person",
+      "targetText": "Chào em",
+      "canonicalTargetText": "Chào em",
+      "pronunciation": "chow em",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this with a younger staff member, student, or younger friendly helper when em is clearly appropriate.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào em",
+        "chao em",
+        "hello younger person"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=relationship greeting taught in local greetings section"
+    },
+    {
+      "id": "hello-chao-ong",
+      "familyID": "hello-chao-ong",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-viet-hello-ong-full",
+      "englishText": "Hello to an elderly man",
+      "targetText": "Chào ông",
+      "canonicalTargetText": "Chào ông",
+      "pronunciation": "chow ohng",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this for an elderly man when you want the greeting to show clear respect and social distance.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào ông",
+        "chao ong",
+        "hello elderly man",
+        "hello grandfather"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=elder relationship greeting taught in local greetings section"
+    },
+    {
+      "id": "hello-chao-ba",
+      "familyID": "hello-chao-ba",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-viet-hello-ba-full",
+      "englishText": "Hello to an elderly woman",
+      "targetText": "Chào bà",
+      "canonicalTargetText": "Chào bà",
+      "pronunciation": "chow bah",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this for an elderly woman when you want the greeting to show clear respect and social distance.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào bà",
+        "chao ba",
+        "hello elderly woman",
+        "hello grandmother"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=elder relationship greeting taught in local greetings section"
+    },
+    {
+      "id": "hello-chao-chu",
+      "familyID": "hello-chao-chu",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-viet-hello-chu-full",
+      "englishText": "Hello to an uncle-age man",
+      "targetText": "Chào chú",
+      "canonicalTargetText": "Chào chú",
+      "pronunciation": "chow choo",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this for an older man who feels more uncle-age than grandfather-age, especially in neighborhood, shop, or homestay moments.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào chú",
+        "chao chu",
+        "hello uncle",
+        "hello older man"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=older-adult relationship greeting taught in local greetings section"
+    },
+    {
+      "id": "hello-chao-co",
+      "familyID": "hello-chao-co",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-viet-hello-co-full",
+      "englishText": "Hello to an aunt-age woman",
+      "targetText": "Chào cô",
+      "canonicalTargetText": "Chào cô",
+      "pronunciation": "chow koh",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this for an older woman who feels more aunt-age than grandmother-age, especially in shops, markets, homes, or class settings.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chào cô",
+        "chao co",
+        "hello aunt",
+        "hello older woman"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=older-adult relationship greeting taught in local greetings section"
+    },
+    {
+      "id": "smalltalk-di-dau-day",
+      "familyID": "smalltalk-di-dau-day",
+      "scenarioID": "social-small-talk",
+      "audioKey": "audio-phrase-di-dau-day",
+      "englishText": "Where are you going?",
+      "targetText": "Đi đâu đấy?",
+      "canonicalTargetText": "Đi đâu đấy?",
+      "pronunciation": "dee dow day",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this as friendly small talk after a greeting with someone familiar enough for a light check-in.",
+      "youMayHear": "",
+      "searchAliases": [
+        "đi đâu đấy",
+        "di dau day",
+        "where are you going"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "💬",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=common greeting follow-up taught after Xin chào"
+    },
+    {
+      "id": "smalltalk-nice-to-meet-you",
+      "familyID": "smalltalk-nice-to-meet-you",
+      "scenarioID": "social-small-talk",
+      "audioKey": "audio-phrase-rat-vui-duoc-gap-ban",
+      "englishText": "Nice to meet you",
+      "targetText": "Rất vui được gặp bạn",
+      "canonicalTargetText": "Rất vui được gặp bạn",
+      "pronunciation": "zuht voo ee duhk gap ban",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this after an introduction or first friendly exchange when the conversation has become personal enough for a warm closing line.",
+      "youMayHear": "",
+      "searchAliases": [
+        "rất vui được gặp bạn",
+        "rat vui duoc gap ban",
+        "nice to meet you"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "💬",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=common greeting follow-up taught after Xin chào"
     }
   ]
 }

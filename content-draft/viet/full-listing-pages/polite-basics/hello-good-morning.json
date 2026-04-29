@@ -1,0 +1,25 @@
+{
+  "id": "viet-hello-good-morning",
+  "familyID": "hello-good-morning",
+  "phraseID": "hello-good-morning",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Chào buổi sáng",
+  "englishTitle": "Good morning",
+  "pronunciation": "chow boo ee sahng",
+  "summary": "A warm morning greeting for starts, check-ins, cafes, and tours.",
+  "iconName": "sunrise.fill",
+  "tintName": "blue",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "audio-phrase-chao-buoi-sang",
+  "sections": [
+    {"id": "at-glance", "title": "At a glance", "body": "Chào buổi sáng is useful when the day is just starting and you want the greeting to feel warmer than a plain hello. It fits hotel breakfasts, cafes, morning tours, classes, and front-desk moments."},
+    {"id": "standard-way", "title": "The standard way", "body": "Use it as a friendly good morning when the setting has enough space for a greeting before the practical request.", "phrases": [{"id": "hello-good-morning", "vietnamese": "Chào buổi sáng", "english": "Good morning", "pronunciation": "chow boo ee sahng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "audio-phrase-chao-buoi-sang"}]},
+    {"id": "breakdown", "title": "Break it down", "body": "The phrase keeps the greeting first, then names the morning.", "breakdown": [{"id": "chao", "vietnamese": "Chào", "english": "hello / greet", "audioKey": "breakdown-chao"}, {"id": "buoi-sang", "vietnamese": "buổi sáng", "english": "morning", "audioKey": null}, {"id": "full", "vietnamese": "Chào buổi sáng", "english": "good morning", "audioKey": "audio-phrase-chao-buoi-sang"}]},
+    {"id": "natural-variations", "title": "Natural variations", "body": "Switch to these when the time or relationship matters more than the morning itself.", "phrases": [{"id": "hello-good-afternoon", "vietnamese": "Chào buổi chiều", "english": "Good afternoon", "pronunciation": "chow boo ee chee ew", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": "viet-hello-good-afternoon", "audioKey": "audio-phrase-chao-buoi-chieu"}, {"id": "hello-chao-ban", "vietnamese": "Chào bạn", "english": "Hi there / hello friend", "pronunciation": "chow ban", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-hello-chao-ban", "audioKey": "audio-phrase-chao-ban"}, {"id": "polite-1", "vietnamese": "Xin chào", "english": "Hello, safely polite", "pronunciation": "sin chow", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-polite-hello", "audioKey": "polite-1"}]},
+    {"id": "when-to-use", "title": "When to use it", "body": "Use it before a morning order, when meeting a guide early, at breakfast, or when greeting hotel staff before asking a question."},
+    {"id": "good-to-know", "title": "Good to know", "body": "Time-of-day greetings are pleasant but optional. If you are rushing or unsure, Xin chào is still the most dependable greeting."},
+    {"id": "explore-next", "title": "Explore next", "body": "Morning greetings often lead into these practical phrases.", "phrases": [{"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}, {"id": "food-menu", "vietnamese": "Cho tôi xem thực đơn được không?", "english": "May I see the menu?", "pronunciation": "cho toy xem thuc don duoc khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-food-menu", "audioKey": "food-menu"}, {"id": "smalltalk-7", "vietnamese": "Bạn khỏe không?", "english": "How are you?", "pronunciation": "ban khoe khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-how-are-you", "audioKey": "smalltalk-7"}]}
+  ],
+  "examples": [{"id": "hello-good-morning", "vietnamese": "Chào buổi sáng", "english": "Good morning", "pronunciation": "chow boo ee sahng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "audio-phrase-chao-buoi-sang"}]
+}

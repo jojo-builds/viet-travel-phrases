@@ -1,0 +1,74 @@
+{
+  "id": "viet-hello-da-chao-anh-chi",
+  "familyID": "hello-da-chao-anh-chi",
+  "phraseID": "hello-da-chao-anh-chi",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Dạ, chào anh/chị",
+  "englishTitle": "Hello, sir or ma'am",
+  "pronunciation": "yah chow anh chee",
+  "summary": "A respectful opener for adult staff when you want one safe service greeting.",
+  "iconName": "hand.wave.fill",
+  "tintName": "red",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "audio-phrase-da-chao-anh-chi",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Dạ, chào anh/chị is a useful service greeting because it avoids choosing between anh and chị too early. Use it when you are approaching a desk, cafe counter, clinic, hotel, or tour office and want the first second to feel respectful."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Start with this when the person is an adult and you want a polite greeting before your request.",
+      "phrases": [
+        {"id": "hello-da-chao-anh-chi", "vietnamese": "Dạ, chào anh/chị", "english": "Hello, sir or ma'am", "pronunciation": "yah chow anh chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "audio-phrase-da-chao-anh-chi"}
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "The first word softens the greeting, then anh/chị covers adult male or female staff.",
+      "breakdown": [
+        {"id": "da", "vietnamese": "Dạ", "english": "respectful softener", "audioKey": null},
+        {"id": "chao", "vietnamese": "chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
+        {"id": "anh-chi", "vietnamese": "anh/chị", "english": "adult man / adult woman", "audioKey": null},
+        {"id": "full", "vietnamese": "Dạ, chào anh/chị", "english": "respectful hello to adult staff", "audioKey": "audio-phrase-da-chao-anh-chi"}
+      ]
+    },
+    {
+      "id": "natural-variations",
+      "title": "Natural variations",
+      "body": "Use the individual form when the relationship is clear.",
+      "phrases": [
+        {"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-anh", "audioKey": "breakdown-viet-hello-anh-full"},
+        {"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-chi", "audioKey": "breakdown-viet-hello-chi-full"},
+        {"id": "polite-1", "vietnamese": "Xin chào", "english": "Hello, safely polite", "pronunciation": "sin chow", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-polite-hello", "audioKey": "polite-1"}
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it before asking hotel staff for help, ordering at a counter, checking in with a guide, or starting a practical request with someone adult. It is especially useful when you do not want to guess the exact relationship word."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Dạ adds a respectful shape without making the phrase long. It is a small word, but it can make the first line sound calmer and more locally aware."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "These are the requests that often come right after a respectful opener.",
+      "phrases": [
+        {"id": "polite-5", "vietnamese": "Xin lỗi", "english": "Excuse me / sorry", "pronunciation": "sin loy", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-excuse-sorry", "audioKey": "polite-5"},
+        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"},
+        {"id": "problems-2", "vietnamese": "Tôi không hiểu", "english": "I don't understand", "pronunciation": "toy khom hee-ew", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-repair-understand", "audioKey": "problems-2"}
+      ]
+    }
+  ],
+  "examples": [
+    {"id": "hello-da-chao-anh-chi", "vietnamese": "Dạ, chào anh/chị", "english": "Hello, sir or ma'am", "pronunciation": "yah chow anh chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "audio-phrase-da-chao-anh-chi"}
+  ]
+}

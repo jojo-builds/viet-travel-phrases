@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:19d002a57a14a5fb",
-    "generatedAt": "source-hash:19d002a57a14a5fb"
+    "contentVersion": "viet-sqlite-fixture:358c444536ea271d",
+    "generatedAt": "source-hash:358c444536ea271d"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "3aa394e1c8baa8905d8f8d81dd87e8d935f43d3a97cadb91d2e98b97145d8697"
+      "sha256": "c20ef72068f8e8bfa6f05901eebe1e021ff2f665dc578995f99dcdc099760b77"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "71af53b0f1b054ff67b9df5b3798d72d9f81ad795a2758e581986c5ca60ab538"
+      "sha256": "6c939faf7baff889c530027b9047e8a7fd059d00bd4c74c013ebb1e32e35c788"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "6461009cb1c6583e72e4fcc359852acc50dcbb09bd66556b66618e9555368d1c",
+    "databaseSha256": "38fc4273bd8987392ead33435e27df619203c867282271a3b4d68604bb82bdd7",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -50,49 +50,49 @@
       "ok": true
     },
     "clusters": {
-      "expected": 900,
-      "actual": 900,
+      "expected": 915,
+      "actual": 915,
       "ok": true
     },
     "phrases": {
-      "expected": 919,
-      "actual": 919,
+      "expected": 934,
+      "actual": 934,
       "ok": true
     },
     "canonicalPhrasePages": {
-      "expected": 911,
-      "actual": 911,
+      "expected": 926,
+      "actual": 926,
       "ok": true
     },
     "authoredPagesOrAliases": {
-      "expected": 164,
-      "actual": 164,
+      "expected": 179,
+      "actual": 179,
       "ok": true
     }
   },
   "generatedCounts": {
     "languagePacks": 1,
     "scenarios": 18,
-    "clusters": 900,
-    "clusterMembers": 919,
-    "phrases": 919,
-    "pages": 911,
-    "aliases": 928,
-    "pageCategories": 917,
-    "sections": 6013,
-    "sectionItems": 10312,
-    "breakdownTokens": 5996,
-    "relations": 3440,
-    "searchDocuments": 919,
+    "clusters": 915,
+    "clusterMembers": 934,
+    "phrases": 934,
+    "pages": 926,
+    "aliases": 959,
+    "pageCategories": 949,
+    "sections": 6118,
+    "sectionItems": 10490,
+    "breakdownTokens": 6042,
+    "relations": 3557,
+    "searchDocuments": 934,
     "audioAssets": 3756,
-    "audioUsages": 3167,
+    "audioUsages": 3357,
     "audioTextDedupeRows": 2343,
     "missingAudioAuditRows": 0
   },
   "validation": {
     "integrityCheck": "ok",
     "foreignKeyCheckRows": 0,
-    "ftsRowCount": 919,
+    "ftsRowCount": 934,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
     "brokenRelationCount": 0,
@@ -223,9 +223,9 @@
     ]
   },
   "canonicalIdentity": {
-    "canonicalPageCount": 911,
-    "sourcePhraseRowCount": 919,
-    "phrasesResolvedToCanonicalPages": 919,
+    "canonicalPageCount": 926,
+    "sourcePhraseRowCount": 934,
+    "phrasesResolvedToCanonicalPages": 934,
     "duplicateNormalizedTargetTextGroupCount": 6,
     "resolvedDuplicateNormalizedTargetTextGroups": [
       {
@@ -310,7 +310,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 3440,
+    "relationCount": 3557,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -326,7 +326,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 884
+        "count": 950
       },
       {
         "relationType": "same_need_alt_context",
@@ -334,7 +334,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 2518
+        "count": 2569
       }
     ]
   },
@@ -342,7 +342,7 @@
     "manifestEntries": 3756,
     "uniqueNormalizedSpokenTextCount": 2343,
     "assets": 3756,
-    "usages": 3167,
+    "usages": 3357,
     "missingAudioAuditRows": 0,
     "missingAudioAuditSample": []
   },

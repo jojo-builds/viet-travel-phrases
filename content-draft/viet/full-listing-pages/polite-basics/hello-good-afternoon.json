@@ -1,0 +1,25 @@
+{
+  "id": "viet-hello-good-afternoon",
+  "familyID": "hello-good-afternoon",
+  "phraseID": "hello-good-afternoon",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Chào buổi chiều",
+  "englishTitle": "Good afternoon",
+  "pronunciation": "chow boo ee chee ew",
+  "summary": "A gentle afternoon greeting for shops, classes, desks, and cafes.",
+  "iconName": "sun.max.fill",
+  "tintName": "purple",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "audio-phrase-chao-buoi-chieu",
+  "sections": [
+    {"id": "at-glance", "title": "At a glance", "body": "Chào buổi chiều gives a warm afternoon shape to hello. It is useful when you enter a shop, cafe, class, front desk, or tour office and the interaction is calm enough for a friendly greeting."},
+    {"id": "standard-way", "title": "The standard way", "body": "Use it when the afternoon timing is obvious and you want the greeting to feel a little more personal.", "phrases": [{"id": "hello-good-afternoon", "vietnamese": "Chào buổi chiều", "english": "Good afternoon", "pronunciation": "chow boo ee chee ew", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": null, "audioKey": "audio-phrase-chao-buoi-chieu"}]},
+    {"id": "breakdown", "title": "Break it down", "body": "The greeting names the afternoon after the hello.", "breakdown": [{"id": "chao", "vietnamese": "Chào", "english": "hello / greet", "audioKey": "breakdown-chao"}, {"id": "buoi-chieu", "vietnamese": "buổi chiều", "english": "afternoon", "audioKey": null}, {"id": "full", "vietnamese": "Chào buổi chiều", "english": "good afternoon", "audioKey": "audio-phrase-chao-buoi-chieu"}]},
+    {"id": "natural-variations", "title": "Natural variations", "body": "Use these when another greeting fits the moment better.", "phrases": [{"id": "hello-good-morning", "vietnamese": "Chào buổi sáng", "english": "Good morning", "pronunciation": "chow boo ee sahng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-good-morning", "audioKey": "audio-phrase-chao-buoi-sang"}, {"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-anh", "audioKey": "breakdown-viet-hello-anh-full"}, {"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-chi", "audioKey": "breakdown-viet-hello-chi-full"}]},
+    {"id": "when-to-use", "title": "When to use it", "body": "Use it when arriving in the afternoon, greeting staff before a question, meeting someone after lunch, or softening the first line of a service interaction."},
+    {"id": "good-to-know", "title": "Good to know", "body": "A time greeting can sound warm, but relationship words still matter. Chào anh or Chào chị may feel more natural if the person is clearly older than you."},
+    {"id": "explore-next", "title": "Explore next", "body": "Use these after the greeting when the conversation continues.", "phrases": [{"id": "smalltalk-nice-to-meet-you", "vietnamese": "Rất vui được gặp bạn", "english": "Nice to meet you", "pronunciation": "zuht voo ee duhk gap ban", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-smalltalk-nice-to-meet-you", "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"}, {"id": "polite-5", "vietnamese": "Xin lỗi", "english": "Excuse me / sorry", "pronunciation": "sin loy", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-excuse-sorry", "audioKey": "polite-5"}, {"id": "polite-7", "vietnamese": "Tạm biệt", "english": "Goodbye", "pronunciation": "tahm bee et", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": "viet-goodbye", "audioKey": "polite-7"}]}
+  ],
+  "examples": [{"id": "hello-good-afternoon", "vietnamese": "Chào buổi chiều", "english": "Good afternoon", "pronunciation": "chow boo ee chee ew", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": null, "audioKey": "audio-phrase-chao-buoi-chieu"}]
+}

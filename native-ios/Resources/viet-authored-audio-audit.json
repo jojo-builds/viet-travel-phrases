@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generatedAt": "2026-04-29T11:47:14.472Z",
+    "generatedAt": "2026-04-29T15:22:45.986Z",
     "tierOneFamilyCount": 150,
-    "requiredAudioCount": 468,
+    "requiredAudioCount": 477,
     "missingAudioCount": 0
   },
   "required": [
@@ -236,6 +236,14 @@
       "kind": "phrase",
       "audioKey": "v500-poli-basi-yes",
       "text": "Đúng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "breakdown-chao",
+      "text": "Chào",
       "resolved": true
     },
     {
@@ -3748,6 +3756,70 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-cuu-981c314329",
       "text": "Cứu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-hello-chao-anh",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-anh-relationship",
+      "text": "anh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-hello-chao-ba",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-ba-relationship",
+      "text": "bà",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-hello-chao-chi",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-chi-relationship",
+      "text": "chị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-hello-chao-chu",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-chu-relationship",
+      "text": "chú",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-hello-chao-co",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-co-relationship",
+      "text": "cô",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-hello-chao-em",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-em-relationship",
+      "text": "em",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-hello-chao-ong",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-ong-relationship",
+      "text": "ông",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-hello-chao",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-chao",
+      "text": "chào",
       "resolved": true
     }
   ],

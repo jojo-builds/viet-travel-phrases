@@ -1,0 +1,25 @@
+{
+  "id": "viet-hello-chao-anh",
+  "familyID": "hello-chao-anh",
+  "phraseID": "hello-chao-anh",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Chào anh",
+  "englishTitle": "Hello to an older man",
+  "pronunciation": "chow anh",
+  "summary": "A warm greeting for a slightly older man or adult male helper.",
+  "iconName": "person.fill",
+  "tintName": "blue",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "breakdown-viet-hello-anh-full",
+  "sections": [
+    {"id": "at-glance", "title": "At a glance", "body": "Chào anh is one of the most useful local-feeling greetings for travelers. Use it for a man who seems older than you, a driver, guide, shop worker, hotel staff member, or friendly helper when anh feels respectful and warm."},
+    {"id": "standard-way", "title": "The standard way", "body": "Say Chào anh when the person is male and older or socially senior enough that bạn would feel too flat.", "phrases": [{"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "breakdown-viet-hello-anh-full"}]},
+    {"id": "breakdown", "title": "Break it down", "body": "The relationship word carries the warmth.", "breakdown": [{"id": "chao", "vietnamese": "Chào", "english": "hello / greet", "audioKey": "breakdown-chao"}, {"id": "anh", "vietnamese": "anh", "english": "older brother / older man", "audioKey": "breakdown-viet-hello-anh-relationship"}, {"id": "full", "vietnamese": "Chào anh", "english": "hello to an older man", "audioKey": "breakdown-viet-hello-anh-full"}]},
+    {"id": "pronoun-swap", "title": "Relationship swaps", "body": "Change the relationship word when the person changes.", "phrases": [{"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-chi", "audioKey": "breakdown-viet-hello-chi-full"}, {"id": "hello-chao-chu", "vietnamese": "Chào chú", "english": "Hello to an uncle-age man", "pronunciation": "chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "teal", "detailPageID": "viet-hello-chao-chu", "audioKey": "breakdown-viet-hello-chu-full"}, {"id": "hello-chao-ban", "vietnamese": "Chào bạn", "english": "Hi there / hello friend", "pronunciation": "chow ban", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-hello-chao-ban", "audioKey": "audio-phrase-chao-ban"}]},
+    {"id": "when-to-use", "title": "When to use it", "body": "Use it at a hotel desk, with a male driver, at a cafe counter, with a male guide, or with a man who is just a bit older than you. It is often warmer than Xin chào once the relationship is clear."},
+    {"id": "good-to-know", "title": "Good to know", "body": "Anh does not literally mean the person is your brother here. It marks age relationship and respect, which is why the greeting can sound more natural than a universal you."},
+    {"id": "explore-next", "title": "Explore next", "body": "These help you keep the same respectful tone.", "phrases": [{"id": "hello-da-chao-anh-chi", "vietnamese": "Dạ, chào anh/chị", "english": "Hello, sir or ma'am", "pronunciation": "yah chow anh chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-da-chao-anh-chi", "audioKey": "audio-phrase-da-chao-anh-chi"}, {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}, {"id": "polite-5", "vietnamese": "Xin lỗi", "english": "Excuse me / sorry", "pronunciation": "sin loy", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-excuse-sorry", "audioKey": "polite-5"}]}
+  ],
+  "examples": [{"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "breakdown-viet-hello-anh-full"}]
+}

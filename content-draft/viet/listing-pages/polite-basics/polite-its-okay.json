@@ -169,6 +169,16 @@
           "tintName": "red",
           "detailPageID": "viet-family-v500-poli-basi-yes",
           "audioKey": "v500-poli-basi-yes"
+        },
+        {
+          "id": "hello-chao",
+          "vietnamese": "Chào",
+          "english": "Hi / hello",
+          "pronunciation": "chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao",
+          "audioKey": "breakdown-chao"
         }
       ],
       "presentation": "phrase-list"

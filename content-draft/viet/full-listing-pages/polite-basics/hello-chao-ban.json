@@ -1,0 +1,73 @@
+{
+  "id": "viet-hello-chao-ban",
+  "familyID": "hello-chao-ban",
+  "phraseID": "hello-chao-ban",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Chào bạn",
+  "englishTitle": "Hi there / hello friend",
+  "pronunciation": "chow ban",
+  "summary": "A friendly neutral greeting for peers and warm casual help.",
+  "iconName": "hand.wave.fill",
+  "tintName": "orange",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "audio-phrase-chao-ban",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Chào bạn is the friendly version of hello when bạn fits the relationship. It works with peers, friendly helpers, classmates, younger adults near your age, or someone whose role feels casual rather than formal. If the person is clearly older or in a service role, Chào anh or Chào chị may sound warmer."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Use Chào bạn when you want a warm but simple hello and do not need to show extra age-based respect.",
+      "phrases": [
+        {"id": "hello-chao-ban", "vietnamese": "Chào bạn", "english": "Hi there / hello friend", "pronunciation": "chow ban", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": null, "audioKey": "audio-phrase-chao-ban"}
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "The greeting is short, but bạn changes the relationship it creates.",
+      "breakdown": [
+        {"id": "chao", "vietnamese": "Chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
+        {"id": "ban", "vietnamese": "bạn", "english": "you / friend / peer", "audioKey": null},
+        {"id": "full", "vietnamese": "Chào bạn", "english": "hello to you / hi friend", "audioKey": "audio-phrase-chao-ban"}
+      ]
+    },
+    {
+      "id": "natural-variations",
+      "title": "Natural variations",
+      "body": "Switch the last word when the relationship is clearer.",
+      "phrases": [
+        {"id": "hello-chao", "vietnamese": "Chào", "english": "Hi / hello", "pronunciation": "chow", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao", "audioKey": "breakdown-chao"},
+        {"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-anh", "audioKey": "breakdown-viet-hello-anh-full"},
+        {"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-chi", "audioKey": "breakdown-viet-hello-chi-full"}
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it with a friendly guide, a peer at a class or tour, a casual local helper, or someone who has already made the exchange feel relaxed. In a formal service moment, start with Xin chào or Dạ, chào anh/chị."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Bạn is useful, but it is not a perfect universal you. Vietnamese often prefers relationship words, so Chào bạn is best when you truly want a friendly neutral tone."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "After a friendly hello, these are natural next moves.",
+      "phrases": [
+        {"id": "smalltalk-7", "vietnamese": "Bạn khỏe không?", "english": "How are you?", "pronunciation": "ban khoe khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-how-are-you", "audioKey": "smalltalk-7"},
+        {"id": "smalltalk-nice-to-meet-you", "vietnamese": "Rất vui được gặp bạn", "english": "Nice to meet you", "pronunciation": "zuht voo ee duhk gap ban", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-smalltalk-nice-to-meet-you", "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"},
+        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}
+      ]
+    }
+  ],
+  "examples": [
+    {"id": "hello-chao-ban", "vietnamese": "Chào bạn", "english": "Hi there / hello friend", "pronunciation": "chow ban", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": null, "audioKey": "audio-phrase-chao-ban"}
+  ]
+}

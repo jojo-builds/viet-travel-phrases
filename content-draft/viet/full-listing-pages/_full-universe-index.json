@@ -1,0 +1,25 @@
+{
+  "taskID": "TASK-VIET-2000-FULL-LISTING-PAGES-001",
+  "status": "checkpoint",
+  "sourcePolicy": "AI-authored page-by-page; scripts validate and package only",
+  "authoredPageCount": 15,
+  "originalSourcePhraseCount": 919,
+  "newPhraseRowsInCheckpoint": 15,
+  "pages": [
+    {"pageID": "viet-hello-chao", "phraseID": "hello-chao", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-chao-ban", "phraseID": "hello-chao-ban", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-da-chao-anh-chi", "phraseID": "hello-da-chao-anh-chi", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-alo", "phraseID": "hello-alo", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-good-morning", "phraseID": "hello-good-morning", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-good-afternoon", "phraseID": "hello-good-afternoon", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-chao-anh", "phraseID": "hello-chao-anh", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-chao-chi", "phraseID": "hello-chao-chi", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-chao-em", "phraseID": "hello-chao-em", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-chao-ong", "phraseID": "hello-chao-ong", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-chao-ba", "phraseID": "hello-chao-ba", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-chao-chu", "phraseID": "hello-chao-chu", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-hello-chao-co", "phraseID": "hello-chao-co", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-smalltalk-di-dau-day", "phraseID": "smalltalk-di-dau-day", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-smalltalk-nice-to-meet-you", "phraseID": "smalltalk-nice-to-meet-you", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"}
+  ]
+}

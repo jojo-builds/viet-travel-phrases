@@ -1,0 +1,73 @@
+{
+  "id": "viet-hello-chao-chu",
+  "familyID": "hello-chao-chu",
+  "phraseID": "hello-chao-chu",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Chào chú",
+  "englishTitle": "Hello to an uncle-age man",
+  "pronunciation": "chow choo",
+  "summary": "A respectful hello for an older man who feels uncle-age rather than elderly.",
+  "iconName": "person.fill",
+  "tintName": "teal",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "breakdown-viet-hello-chu-full",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Chào chú is for an older man who feels uncle-age: older than you, but not grandfather-age. It is common in neighborhood, shop, homestay, driver, and family contexts where a plain bạn would feel too neutral."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Say Chào chú when the man is clearly older than you and chú feels respectful without being too formal.",
+      "phrases": [
+        {"id": "hello-chao-chu", "vietnamese": "Chào chú", "english": "Hello to an uncle-age man", "pronunciation": "chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "teal", "detailPageID": null, "audioKey": "breakdown-viet-hello-chu-full"}
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "The greeting works because chú sets the age relationship.",
+      "breakdown": [
+        {"id": "chao", "vietnamese": "Chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
+        {"id": "chu", "vietnamese": "chú", "english": "uncle / older man", "audioKey": "breakdown-viet-hello-chu-relationship"},
+        {"id": "full", "vietnamese": "Chào chú", "english": "hello to an uncle-age man", "audioKey": "breakdown-viet-hello-chu-full"}
+      ]
+    },
+    {
+      "id": "pronoun-swap",
+      "title": "Relationship swaps",
+      "body": "Use these nearby greetings when the age relationship is different.",
+      "phrases": [
+        {"id": "hello-chao-co", "vietnamese": "Chào cô", "english": "Hello to an aunt-age woman", "pronunciation": "chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-co", "audioKey": "breakdown-viet-hello-co-full"},
+        {"id": "hello-chao-ong", "vietnamese": "Chào ông", "english": "Hello to an elderly man", "pronunciation": "chow ohng", "symbolName": "speaker.wave.2.fill", "tintName": "indigo", "detailPageID": "viet-hello-chao-ong", "audioKey": "breakdown-viet-hello-ong-full"},
+        {"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-anh", "audioKey": "breakdown-viet-hello-anh-full"}
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it with an older male shop owner, taxi driver, homestay host, neighborhood helper, or someone who feels closer to an uncle than to an older brother."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Chú is friendly and respectful. If the man is only slightly older, anh may sound more natural; if he is elderly, ông is the clearer respectful choice."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "These help you choose the closest greeting in the same family.",
+      "phrases": [
+        {"id": "hello-chao-co", "vietnamese": "Chào cô", "english": "Hello to an aunt-age woman", "pronunciation": "chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-co", "audioKey": "breakdown-viet-hello-co-full"},
+        {"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-anh", "audioKey": "breakdown-viet-hello-anh-full"},
+        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}
+      ]
+    }
+  ],
+  "examples": [
+    {"id": "hello-chao-chu", "vietnamese": "Chào chú", "english": "Hello to an uncle-age man", "pronunciation": "chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "teal", "detailPageID": null, "audioKey": "breakdown-viet-hello-chu-full"}
+  ]
+}

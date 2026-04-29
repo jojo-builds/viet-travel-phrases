@@ -1,85 +1,90 @@
 # Viet 2000 Full Listing Pages Audit 001
 
 Date: 2026-04-29
-Status: BLOCKED before content expansion
+Status: Authored checkpoint, not Task Done
 
 ## Summary
 
-This audit blocks `TASK-VIET-2000-FULL-LISTING-PAGES-001` under the revised page-by-page authored plan.
+This checkpoint creates the durable authored-source lane for full-universe Viet listing pages and promotes the first natural page-by-page expansion from the existing `Xin chào` article.
 
-The current repo can verify the existing Viet universe, but it does not yet contain the required authored source for a 2,911-page canonical listing graph:
+- Source phrase rows after checkpoint: `934`.
+- Canonical SQLite phrase pages after checkpoint: `926`.
+- Net-new canonical pages in this checkpoint: `15`.
+- Required final canonical page count: `2,911`.
+- Remaining net-new pages needed for Task Done: `1,985`.
+- Full-universe authored source pages: `15`.
+- Full-universe rationale records: `15`.
+- Missing audio queue rows: `0`.
+- Exact existing audio reused in native resources and app assets: `15`.
 
-- Source phrase rows: `919`.
-- Canonical SQLite phrase pages: `911`.
-- Authored page rows in the SQLite fixture: `164`.
-- Lower-depth SQLite page statuses remaining: `818`.
-- Current Tier 1 authored audit: `150` strong pages, `0` thin/awkward/placeholder/over-templated/negative/missing-link pages.
-- Missing audio rows in the current SQLite fixture: `0`.
+The task is not complete. This is a safe production checkpoint that proves the authored-source lane, rationale ledger, canonical link handling, exact-audio reuse path, and validators before larger page-by-page authoring continues.
 
-The requested task requires at least `2,000` net-new, page-by-page authored canonical pages. Producing those pages through a bulk phrase/content generator would violate the accepted plan and Jojo's explicit direction. No bulk-generated content was committed.
+## Authored Source Lane
 
-## Evidence
+- Source directory: `content-draft/viet/full-listing-pages/`
+- Index: `content-draft/viet/full-listing-pages/_full-universe-index.json`
+- Rationale ledger: `content-draft/viet/full-listing-pages/_ai-authoring-rationale.jsonl`
+- Source validator: `native-ios/scripts/validate-viet-full-universe-authoring.js`
+- Missing audio queue: `docs/audio-queues/viet-missing-audio-TASK-VIET-2000-FULL-LISTING-PAGES-001.csv`
 
-Current validation commands run:
+Scripts in this checkpoint only inventory, validate, package, and audit authored content. Phrase rows, page copy, variants, nearby links, and rationale records were written in source files.
+
+## Checkpoint Page Audit
+
+| Page ID | Phrase | Source lesson | Article contract | Breakdown | Links | Duplicate check | Audio |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `viet-hello-chao` | Chào | `Xin chào` casual form | pass | pass | pass | pass | exact reused |
+| `viet-hello-chao-ban` | Chào bạn | peer greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-da-chao-anh-chi` | Dạ, chào anh/chị | respectful staff greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-alo` | Alô | phone greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-good-morning` | Chào buổi sáng | morning greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-good-afternoon` | Chào buổi chiều | afternoon greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-chao-anh` | Chào anh | older-man greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-chao-chi` | Chào chị | older-woman greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-chao-em` | Chào em | younger-person greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-chao-ong` | Chào ông | elderly-man greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-chao-ba` | Chào bà | elderly-woman greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-chao-chu` | Chào chú | uncle-age greeting | pass | pass | pass | pass | exact reused |
+| `viet-hello-chao-co` | Chào cô | aunt-age greeting | pass | pass | pass | pass | exact reused |
+| `viet-smalltalk-di-dau-day` | Đi đâu đấy? | greeting follow-up | pass | pass | pass | pass | exact reused |
+| `viet-smalltalk-nice-to-meet-you` | Rất vui được gặp bạn | first-meeting line | pass | pass | pass | pass | exact reused |
+
+## Validation Evidence
+
+Commands run for this checkpoint:
 
 ```bash
+node --check native-ios/scripts/generate-authored-tier-one-pages.js
+node --check native-ios/scripts/validate-viet-full-universe-authoring.js
+node native-ios/scripts/validate-viet-full-universe-authoring.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
 node native-ios/scripts/validate-tier-one-listing-pages.js
+(cd app && npm exec --package=tsx -- tsx scripts/build-family-pack.ts --variant viet)
+(cd app && npm exec --package=tsx -- tsx scripts/generate-audio-registry.ts --variant viet)
+node native-ios/scripts/generate-viet-sqlite-fixture.js
 node native-ios/scripts/validate-viet-sqlite-fixture.js
 node --test native-ios/scripts/generate-viet-sqlite-fixture.test.js
 (cd app && npm exec --package=tsx -- tsx scripts/validate-family-variants.ts)
 ```
 
-Key validation output:
+Key results:
 
-- Tier 1 validator: `strong: 150`, all failure categories `0`.
-- SQLite validator: `sourcePhrases: 919`, `canonicalPages: 911`, `resolvedPhrases: 919`, `missingAudioAuditRows: 0`, `bannedFileMatches: 0`.
-- SQLite generator test: `pass 1`, `fail 0`.
+- Full-universe source validator: `15` task phrase rows, `15` authored pages, `15` rationale records.
+- Tier 1 validator: `150` strong pages, `0` failure rows.
+- Authored-page audio audit: `477` required rows, `0` missing.
+- SQLite validator: `934` source phrases, `926` canonical pages, `934` resolved phrases, `0` missing audio rows, `0` banned wording matches.
+- SQLite generator test: `1` pass, `0` fail.
 - Family variant validation: passed.
 
-Read-only SQLite count:
+## Review Gate
 
-```text
-phrase_page count: 911
-lower-depth statuses: 818
-authored pages: 164
-```
+The review gate is not approved for final Task Done because only the first natural expansion set has been authored.
 
-## Natural Expansion Candidates Found
+- First-time traveler UX: pass for the 15 checkpoint pages; final approval waits for the whole page universe.
+- Copy and learning flow: pass for the 15 checkpoint pages; final approval waits for the whole page universe.
+- Technical efficiency: pass for the checkpoint lane; final approval waits for the complete canonical graph, screenshots, and final audit.
 
-The `Xin chào` article already demonstrates the correct page-first expansion pattern. It naturally teaches the following phrases, and exact audio already exists, but these phrases are not yet canonical rows in `content-draft/viet/phrase-source.csv`:
+## Remaining Work
 
-| Phrase | Exact audio key | In phrase source |
-| --- | --- | --- |
-| Chào bạn | `audio-phrase-chao-ban` | no |
-| Dạ, chào anh/chị | `audio-phrase-da-chao-anh-chi` | no |
-| Alô | `audio-phrase-alo` | no |
-| Chào buổi sáng | `audio-phrase-chao-buoi-sang` | no |
-| Chào buổi chiều | `audio-phrase-chao-buoi-chieu` | no |
-| Chào anh | `breakdown-viet-hello-anh-full` | no |
-| Chào chị | `breakdown-viet-hello-chi-full` | no |
-| Chào em | `breakdown-viet-hello-em-full` | no |
-| Chào ông | `breakdown-viet-hello-ong-full` | no |
-| Chào bà | `breakdown-viet-hello-ba-full` | no |
-| Chào chú | `breakdown-viet-hello-chu-full` | no |
-| Chào cô | `breakdown-viet-hello-co-full` | no |
-| Đi đâu đấy? | `audio-phrase-di-dau-day` | no |
-| Rất vui được gặp bạn | `audio-phrase-rat-vui-duoc-gap-ban` | no |
-
-These are good first page-by-page candidates for the next authoring pass because they were discovered by reading the existing flagship page, not by generating a phrase list first.
-
-## Blocker
-
-The current authored-page generator owns only the Tier 1 authored surface and rewrites `content-draft/viet/listing-pages/**` from generator code. Editing generated listing-page JSON directly would not be durable. Appending thousands of phrase rows without writing and validating their pages would create the exact low-quality content problem this task is meant to avoid.
-
-The largest safe subset for this run is therefore a blocked audit/result artifact with verified current counts and a concrete first set of natural page-first candidates. No content expansion was committed because no subset could be promoted without either generated prose, orphan canonical rows, or non-durable hand-edited generated resources.
-
-## Required Next Step
-
-Before attempting the 2,000-page authored expansion again, create the durable authored-source contract for full-universe pages:
-
-- a source directory that is never overwritten by the Tier 1 generator;
-- an AI-authored rationale record for every page;
-- a validator that rejects any phrase row without an authored page and rationale;
-- an assembler that packages those authored pages into native/app/SQLite resources without generating content.
-
-Then author the first page-by-page batch from the `Xin chào` expansion candidates above.
+Continue page-by-page from the existing source rows. The next recommended batch is the `Cảm ơn` page family, because it naturally expands into thank-you intensity, replies, gratitude to specific people, and polite closing lines.

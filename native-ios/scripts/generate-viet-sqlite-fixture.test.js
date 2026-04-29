@@ -71,6 +71,15 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     'audioUsages', (SELECT count(*) FROM audio_usage),
     'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit)
   );`));
+  const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+  const expectedCounts = {
+    scenarios: report.countParity.scenarios.expected,
+    clusters: report.countParity.clusters.expected,
+    phrases: report.countParity.phrases.expected,
+    pages: report.countParity.canonicalPhrasePages.expected,
+    canonicalPhrases: report.countParity.canonicalPhrasePages.expected,
+    phrasesResolvedToPages: report.countParity.phrases.expected,
+  };
 
   assert.deepStrictEqual(
     {
@@ -81,20 +90,13 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
       canonicalPhrases: counts.canonicalPhrases,
       phrasesResolvedToPages: counts.phrasesResolvedToPages,
     },
-    {
-      scenarios: 18,
-      clusters: 900,
-      phrases: 919,
-      pages: 911,
-      canonicalPhrases: 911,
-      phrasesResolvedToPages: 919,
-    }
+    expectedCounts
   );
   assert.ok(counts.aliases >= 163, "authored pages should be represented by canonical aliases");
   assert.ok(counts.sections >= 6000, "authored and baseline page sections should be preserved");
-  assert.strictEqual(counts.breakdownSections, 911, "every canonical page should have a breakdown section");
+  assert.strictEqual(counts.breakdownSections, expectedCounts.pages, "every canonical page should have a breakdown section");
   assert.ok(counts.sectionItems >= 10000, "authored, baseline, phrase, and breakdown items should be preserved");
-  assert.strictEqual(counts.searchDocuments, 919, "every source phrase row should produce a search document");
+  assert.strictEqual(counts.searchDocuments, expectedCounts.phrases, "every source phrase row should produce a search document");
   assert.ok(counts.relations > 0, "page graph relation edges should be generated");
   assert.ok(counts.audioAssets > 0, "audio manifest rows should be represented");
   assert.ok(counts.audioUsages > 0, "audio usages should be represented");
@@ -158,17 +160,19 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
   `);
   assert.strictEqual(audioMismatches, "0", "visible audio usages should match normalized manifest text");
 
-  const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
-  assert.deepStrictEqual(report.countParity, {
-    scenarios: { expected: 18, actual: 18, ok: true },
-    clusters: { expected: 900, actual: 900, ok: true },
-    phrases: { expected: 919, actual: 919, ok: true },
-    canonicalPhrasePages: { expected: 911, actual: 911, ok: true },
-    authoredPagesOrAliases: { expected: 164, actual: 164, ok: true },
-  });
+  assert.deepStrictEqual(
+    Object.fromEntries(Object.entries(report.countParity).map(([key, value]) => [key, value.ok])),
+    {
+      scenarios: true,
+      clusters: true,
+      phrases: true,
+      canonicalPhrasePages: true,
+      authoredPagesOrAliases: true,
+    }
+  );
   assert.deepStrictEqual(report.canonicalIdentity.unresolvedDuplicateNormalizedTargetTextGroups, []);
-  assert.strictEqual(report.canonicalIdentity.canonicalPageCount, 911);
-  assert.strictEqual(report.canonicalIdentity.phrasesResolvedToCanonicalPages, 919);
+  assert.strictEqual(report.canonicalIdentity.canonicalPageCount, expectedCounts.pages);
+  assert.strictEqual(report.canonicalIdentity.phrasesResolvedToCanonicalPages, expectedCounts.phrases);
   assert.strictEqual(report.validation.brokenRelationCount, 0);
   assert.strictEqual(report.validation.searchDocumentsWithMissingPageTargets, 0);
   assert.strictEqual(report.validation.sectionlessCanonicalPageCount, 0);

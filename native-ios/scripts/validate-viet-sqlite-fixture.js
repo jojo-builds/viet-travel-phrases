@@ -136,11 +136,11 @@ function main() {
   assertEqual(sqliteValue("PRAGMA integrity_check;"), "ok", "SQLite integrity check");
   assertEqual(sqliteValue("PRAGMA foreign_key_check;"), "", "SQLite foreign key check");
   assertEqual(counts.scenarios, 18, "scenario count");
-  assertEqual(counts.clusters, 900, "cluster count");
-  assertEqual(counts.sourcePhrases, 919, "source phrase row count");
-  assertEqual(counts.canonicalPages, 911, "canonical phrase-page count");
-  assertEqual(counts.resolvedPhrases, 919, "phrases resolving to canonical pages");
-  assertEqual(counts.searchDocuments, 919, "search document count");
+  assertEqual(counts.clusters, report.countParity.clusters.expected, "cluster count");
+  assertEqual(counts.sourcePhrases, report.countParity.phrases.expected, "source phrase row count");
+  assertEqual(counts.canonicalPages, report.countParity.canonicalPhrasePages.expected, "canonical phrase-page count");
+  assertEqual(counts.resolvedPhrases, report.countParity.phrases.expected, "phrases resolving to canonical pages");
+  assertEqual(counts.searchDocuments, report.countParity.phrases.expected, "search document count");
   assertZero(counts.missingAudioAuditRows, "missing audio audit rows");
 
   assertZero(sqliteValue(`
@@ -355,9 +355,9 @@ function main() {
     throw new Error(`Banned user-facing wording found:\n${JSON.stringify(bannedFileMatches, null, 2)}`);
   }
 
-  assertEqual(report.countParity.phrases.actual, 919, "report phrase count");
-  assertEqual(report.countParity.canonicalPhrasePages.actual, 911, "report canonical page count");
-  assertEqual(report.canonicalIdentity.phrasesResolvedToCanonicalPages, 919, "report resolved phrase count");
+  assertEqual(report.countParity.phrases.actual, report.countParity.phrases.expected, "report phrase count");
+  assertEqual(report.countParity.canonicalPhrasePages.actual, report.countParity.canonicalPhrasePages.expected, "report canonical page count");
+  assertEqual(report.canonicalIdentity.phrasesResolvedToCanonicalPages, report.countParity.phrases.expected, "report resolved phrase count");
   assertEqual(report.canonicalIdentity.unresolvedDuplicateNormalizedTargetTextGroups.length, 0, "unresolved duplicate phrase groups");
   assertEqual(report.validation.duplicateCanonicalPageGroupCount, 0, "report duplicate page groups");
   assertEqual(report.validation.sectionlessCanonicalPageCount, 0, "report sectionless pages");

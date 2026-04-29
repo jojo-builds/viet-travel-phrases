@@ -1,84 +1,89 @@
 # TASK-VIET-2000-FULL-LISTING-PAGES-001 Result
 
 Date: 2026-04-29
-Status: BLOCKED
-Audit commit hash: `cc386e7`
+Status: Authored checkpoint, not Task Done
+Checkpoint commit hash: pending
 
 ## Outcome
 
-The task is blocked under the accepted page-by-page authored plan.
+Created the durable full-universe authored-source lane and committed the first page-by-page authored expansion from the `Xin chào` lesson.
 
-I did not create or commit bulk-generated phrase/page content. The previous generator-style approach produced awkward copy, and the revised plan explicitly requires every page to be read, reasoned about, designed, and written individually.
+This is not the final task closeout. The current checkpoint adds `15` net-new canonical pages; Task Done still requires at least `2,000` net-new pages and final review approval across the whole graph.
 
 ## Counts
 
-- Final canonical page count: `911`.
-- Required canonical page count: `2,911`.
-- Final phrase row count: `919`.
-- Net-new canonical pages created in this blocked run: `0`.
-- Pages upgraded in this blocked run: `0`.
-- Current authored SQLite pages: `164`.
-- Current lower-depth SQLite page statuses remaining: `818`.
-- Duplicate/banned-word validation: current validators pass.
-- Missing audio queue: not created; current SQLite fixture reports `0` missing audio rows.
+- Final canonical page count in this checkpoint: `926`.
+- Required final canonical page count: `2,911`.
+- Final phrase row count in this checkpoint: `934`.
+- Net-new canonical pages in this checkpoint: `15`.
+- Remaining net-new pages needed: `1,985`.
+- Pages upgraded into the full-universe lane: `15`.
+- Duplicate canonical Vietnamese page groups: `0`.
+- Broken link count in validators: `0`.
+- Missing audio queue count: `0`.
+- Missing audio queue path: `docs/audio-queues/viet-missing-audio-TASK-VIET-2000-FULL-LISTING-PAGES-001.csv`.
 
-## Audit
+## Artifacts
 
-- Audit path: `docs/content-audits/viet-2000-full-listing-pages-001.md`.
-- The audit records current counts, validation evidence, and the first natural page-first expansion candidates found by reading the existing `Xin chào` page.
+- Audit: `docs/content-audits/viet-2000-full-listing-pages-001.md`
+- Full-universe index: `content-draft/viet/full-listing-pages/_full-universe-index.json`
+- Authoring rationale: `content-draft/viet/full-listing-pages/_ai-authoring-rationale.jsonl`
+- Source validator: `native-ios/scripts/validate-viet-full-universe-authoring.js`
 
-## Validation Run
+## Validation
+
+Passed:
 
 ```bash
+node --check native-ios/scripts/generate-authored-tier-one-pages.js
+node --check native-ios/scripts/validate-viet-full-universe-authoring.js
+node native-ios/scripts/validate-viet-full-universe-authoring.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
 node native-ios/scripts/validate-tier-one-listing-pages.js
+(cd app && npm exec --package=tsx -- tsx scripts/build-family-pack.ts --variant viet)
+(cd app && npm exec --package=tsx -- tsx scripts/generate-audio-registry.ts --variant viet)
+node native-ios/scripts/generate-viet-sqlite-fixture.js
 node native-ios/scripts/validate-viet-sqlite-fixture.js
 node --test native-ios/scripts/generate-viet-sqlite-fixture.test.js
 (cd app && npm exec --package=tsx -- tsx scripts/validate-family-variants.ts)
 ```
 
-Results:
+Pending before final Task Done:
 
-- Tier 1 listing validator passed: `150` strong, all failure buckets `0`.
-- SQLite fixture validator passed: `919` source phrases, `911` canonical pages, `0` missing audio rows, `0` banned file matches.
-- SQLite generator test passed: `1` test passed, `0` failed.
-- Family variant validation passed.
+- Final screenshots for representative old and new pages.
+- Native simulator build proof for the final resource set.
+- Three-angle final review approval for all canonical pages.
+
+## Audio
+
+No audio was generated.
+
+All `15` checkpoint phrases reuse exact existing native audio. Those exact files were also copied into app assets under the expected audio keys so the app pack remains playable instead of marking these rows unavailable.
 
 ## Review Gate
 
-The three-angle review gate is not approved because Task Done is not met.
+Checkpoint review:
 
-- First-time traveler UX: BLOCK. The current graph has only `911` canonical pages and does not yet make every natural phrase row from flagship pages canonical.
-- Copy and learning flow: BLOCK. Full page-by-page authorship for the 919 originals and 2,000+ natural child pages has not been completed.
-- Technical efficiency: BLOCK. The current Tier 1 generator rewrites `content-draft/viet/listing-pages/**`; a separate durable full-universe authored source path is needed before large-scale page-by-page authoring can be safely packaged.
+- First-time traveler UX: pass for the 15 pages in this checkpoint.
+- Copy and learning flow: pass for the 15 pages in this checkpoint.
+- Technical efficiency: pass for the authored-source lane and generated resources in this checkpoint.
 
-## Blocker Evidence
+Final review:
 
-The existing `Xin chào` page shows the intended natural expansion behavior. It already teaches `Chào bạn`, `Chào anh`, `Chào chị`, `Chào em`, `Chào ông`, `Chào bà`, `Chào chú`, `Chào cô`, `Đi đâu đấy?`, and `Rất vui được gặp bạn`.
-
-Those phrases have exact bundled audio keys, but they are not canonical rows in `content-draft/viet/phrase-source.csv`. Promoting them correctly requires adding canonical phrase rows, authored pages, rationale records, canonical links, and validation together.
+- Not approved yet. The full task still needs `1,985` more net-new canonical pages and complete audit/review proof.
 
 ## Files Changed
 
-- `docs/content-audits/viet-2000-full-listing-pages-001.md`
-- `docs/task-results/TASK-VIET-2000-FULL-LISTING-PAGES-001.md`
+- Authored source pages and rationale under `content-draft/viet/full-listing-pages/`.
+- Source phrase rows in `content-draft/viet/phrase-source.csv`.
+- Generator and validator scripts under `native-ios/scripts/`.
+- Generated native/app resources.
+- Reused app audio assets copied from existing native audio.
+- Audit, queue, and result artifacts.
 
-No audio files were generated. No `native-ios/App/**` files were changed.
+No `native-ios/App/**` files were changed.
 
-## Recommended Next Task
+## Recommended Next Batch
 
-Create the durable full-universe authored-source contract first, then author the first page-by-page batch from the `Xin chào` natural expansion candidates.
-
-The first batch should promote only phrases that already emerged from the flagship article and already have exact audio, starting with:
-
-- `Chào bạn`
-- `Chào anh`
-- `Chào chị`
-- `Chào em`
-- `Chào ông`
-- `Chào bà`
-- `Chào chú`
-- `Chào cô`
-- `Đi đâu đấy?`
-- `Rất vui được gặp bạn`
-
-Each promoted phrase should include a full authored page and a rationale record before it is allowed into generated resources.
+Continue with the `Cảm ơn` lesson family and author natural expansions such as thank-you intensity, replies, gratitude to a specific helper, and polite closeout lines, promoting each only after its page and rationale are written.

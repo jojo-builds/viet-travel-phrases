@@ -11,6 +11,7 @@ const audioManifestPath = path.join(root, "Resources", "viet-audio-manifest.json
 const outputPath = path.join(root, "Resources", "viet-authored-listing-pages.json");
 const auditPath = path.join(root, "Resources", "viet-authored-audio-audit.json");
 const sourceRoot = path.join(familyRoot, "content-draft", "viet", "listing-pages");
+const fullUniverseSourceRoot = path.join(familyRoot, "content-draft", "viet", "full-listing-pages");
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const audioManifest = JSON.parse(fs.readFileSync(audioManifestPath, "utf8"));
@@ -1625,6 +1626,30 @@ function removeGeneratedSources() {
   fs.mkdirSync(sourceRoot, { recursive: true });
 }
 
+function walkJSONFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  const files = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...walkJSONFiles(fullPath));
+    } else if (entry.isFile() && entry.name.endsWith(".json") && !entry.name.startsWith("_")) {
+      files.push(fullPath);
+    }
+  }
+  return files.sort((a, b) => a.localeCompare(b));
+}
+
+function loadFullUniversePages() {
+  return walkJSONFiles(fullUniverseSourceRoot).map((filePath) => {
+    const page = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return {
+      ...page,
+      sections: withSectionPresentations(page.sections ?? []),
+    };
+  });
+}
+
 function collectAudioAudit(pages) {
   const required = [];
   const missing = [];
@@ -1670,9 +1695,16 @@ function collectAudioAudit(pages) {
 function main() {
   removeGeneratedSources();
 
+  const fullUniversePages = loadFullUniversePages();
+  for (const page of fullUniversePages) {
+    designedFamilyPageIDs[page.familyID] = page.id;
+  }
+  const fullUniversePhraseIDs = new Set(fullUniversePages.map((page) => page.phraseID));
   const starterFamilies = catalog.families.filter((family) => {
     const primaryPhrase = phraseByID.get(family.primaryPhraseID);
-    return family.accessTier === "starter" && primaryPhrase?.variantRole === "say-first";
+    return family.accessTier === "starter"
+      && primaryPhrase?.variantRole === "say-first"
+      && !fullUniversePhraseIDs.has(family.primaryPhraseID);
   });
 
   const childPageIDsByPhraseID = new Map();
@@ -1723,14 +1755,16 @@ function main() {
     inventory,
   }, null, 2)}\n`);
 
-  const allPages = [...pages, ...childPages];
+  const allPages = [...pages, ...childPages, ...fullUniversePages];
   const audioAudit = collectAudioAudit(allPages);
   const bundle = {
     metadata: {
       source: path.relative(root, sourceRoot),
+      fullUniverseSource: path.relative(root, fullUniverseSourceRoot),
       tierOneFamilyCount: starterFamilies.length,
       resourceMainPageCount: pages.length,
       childPageCount: childPages.length,
+      fullUniversePageCount: fullUniversePages.length,
       generatedAt: new Date().toISOString(),
     },
     pages: allPages,
@@ -1751,6 +1785,7 @@ function main() {
   console.log(`Tier 1 families: ${starterFamilies.length}`);
   console.log(`Authored resource main pages: ${pages.length}`);
   console.log(`Child pages: ${childPages.length}`);
+  console.log(`Full-universe authored pages: ${fullUniversePages.length}`);
   console.log(`Missing assigned audio: ${audioAudit.missing.length}`);
   console.log(`Wrote ${path.relative(process.cwd(), outputPath)}`);
 }
