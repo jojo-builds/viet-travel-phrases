@@ -8,8 +8,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThan(AppChromeLayout.dockVerticalPadding, 5)
         XCTAssertLessThan(AppChromeLayout.searchIslandSize, 64)
         XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
-        XCTAssertGreaterThan(AppChromeLayout.bottomSeparationHeight, AppChromeLayout.searchIslandSize)
-        XCTAssertGreaterThan(AppChromeLayout.topSeparationHeight, 80)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomSeparationHeight, 150)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.topSeparationHeight, 160)
     }
 
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {

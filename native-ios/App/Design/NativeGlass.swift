@@ -116,8 +116,8 @@ enum AppChromeLayout {
     static let bottomSpacing: CGFloat = 8
     static let bottomPadding: CGFloat = -10
     static let bottomOffset: CGFloat = 10
-    static let bottomSeparationHeight: CGFloat = 150
-    static let topSeparationHeight: CGFloat = 118
+    static let bottomSeparationHeight: CGFloat = 155
+    static let topSeparationHeight: CGFloat = 170
     static let dockItemSpacing: CGFloat = 12
     static let dockHorizontalPadding: CGFloat = 12
     static let dockVerticalPadding: CGFloat = 3
@@ -138,20 +138,32 @@ struct ChromeSeparationGradient: View {
 
     var body: some View {
         LinearGradient(
-            colors: gradientColors,
-            startPoint: edge == .bottom ? .top : .bottom,
-            endPoint: edge == .bottom ? .bottom : .top
+            gradient: Gradient(stops: gradientStops),
+            startPoint: .top,
+            endPoint: .bottom
         )
         .frame(height: edge == .bottom ? AppChromeLayout.bottomSeparationHeight : AppChromeLayout.topSeparationHeight)
+        .ignoresSafeArea(edges: edge == .bottom ? .bottom : .top)
         .allowsHitTesting(false)
     }
 
-    private var gradientColors: [Color] {
-        [
-            Color(.systemBackground).opacity(0),
-            Color(.systemBackground).opacity(0.72),
-            Color(.systemBackground).opacity(0.94),
-        ]
+    private var gradientStops: [Gradient.Stop] {
+        switch edge {
+        case .bottom:
+            return [
+                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.24),
+                .init(color: Color(.systemBackground).opacity(0.78), location: 0.68),
+                .init(color: Color(.systemBackground), location: 1),
+            ]
+        case .top:
+            return [
+                .init(color: Color(.systemBackground).opacity(0.98), location: 0),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.82), location: 0.34),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.28), location: 0.72),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
+            ]
+        }
     }
 }
 
