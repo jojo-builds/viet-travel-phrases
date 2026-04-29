@@ -1,22 +1,22 @@
 {
   "taskId": "T-168",
   "title": "Wire Viet SQLite phrase graph into native app and repair fixture tests",
-  "status": "queued",
-  "phase": "queued-for-desktop-codex",
+  "status": "done",
+  "phase": "completed",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family-native-sqlite",
   "session": {
     "owner": "codex-desktop-automation",
-    "sessionId": "",
-    "label": ""
+    "sessionId": "1A5EE877-7282-4486-A351-07F7FF9A3164",
+    "label": "manual-t-168-native-sqlite"
   },
   "execution": {
-    "attempt": 0,
-    "claimedAt": "",
-    "lastHeartbeatAt": "",
+    "attempt": 1,
+    "claimedAt": "2026-04-29T07:04:08+07:00",
+    "lastHeartbeatAt": "2026-04-29T08:15:20.485554+07:00",
     "heartbeatEveryMinutes": 10,
-    "leaseDurationMinutes": 180,
-    "leaseExpiresAt": "",
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-29T08:15:20.485554+07:00",
     "reclaimReason": ""
   },
   "locks": {
@@ -44,7 +44,7 @@
       "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite"
     ]
   },
-  "lastUpdated": "2026-04-29T06:40:41+07:00",
+  "lastUpdated": "2026-04-29T08:15:20.485554+07:00",
   "automation": {
     "runner": "desktop-codex",
     "mode": "single-task",

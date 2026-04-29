@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T06:50:34.615100+07:00",
-  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "updatedAt": "2026-04-29T08:15:20.500303+07:00",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family-native-sqlite",
   "selectionPolicy": {
     "preferredGroups": [
       "reclaimable",
@@ -14,15 +14,7 @@
   },
   "groups": {
     "reclaimable": [],
-    "queued": [
-      {
-        "taskId": "T-168",
-        "title": "Wire Viet SQLite phrase graph into native app and repair fixture tests",
-        "state": ".agent\\tasks\\T-168\\state.json",
-        "selectionOrder": 17,
-        "writeLock": "native_ios_sqlite_runtime_read_path"
-      }
-    ],
+    "queued": [],
     "in_progress": [],
     "blocked": [
       {
@@ -148,6 +140,13 @@
       }
     ],
     "recently_completed": [
+      {
+        "taskId": "T-168",
+        "title": "Wire Viet SQLite phrase graph into native app and repair fixture tests",
+        "state": ".agent\\tasks\\T-168\\state.json",
+        "selectionOrder": 17,
+        "writeLock": "native_ios_sqlite_runtime_read_path"
+      },
       {
         "taskId": "T-167",
         "title": "Implement Native Home V1 And Local User Intent State",
@@ -684,12 +683,12 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 1,
+    "queuedCount": 0,
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 76
+    "recentlyCompletedCount": 77
   },
   "notes": [
     "This index is intentionally small and selection-focused.",
