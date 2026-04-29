@@ -18,6 +18,8 @@ Practice should reward real communication readiness:
 
 Avoid naked XP loops, public leaderboards, punitive lives, streak anxiety, and quiz questions that can be answered without Vietnamese.
 
+The current browser prototype is useful for quick interaction proof, but it is visually busy and does not prove native feel. Prefer native-ready simplification and Liquid Glass direction over adding more web-prototype complexity.
+
 ## Worker Judgment
 
 Use GPT-5.5 judgment. Think like a product designer and native iOS designer. Keep the reward loop small enough for the first native MVP, but specific enough that implementation workers know what to build.
@@ -28,7 +30,8 @@ Use GPT-5.5 judgment. Think like a product designer and native iOS designer. Kee
 - Define mascot usage rules: where the chameleon appears, where it should stay absent or subdued, and how it adapts for Vietnam.
 - Define completion, missed-answer, and return-to-practice moments.
 - Define how saved/practice-selected phrases influence rewards and suggested practice.
-- Update the browser prototype or create native-ready mock screenshots if that is the fastest useful artifact.
+- Create native-ready mock screenshots or update the browser prototype only if it helps compare simpler directions quickly.
+- Reduce visual busyness: fewer stacked panels, clearer prompt hierarchy, calmer progress, and a more native glass treatment.
 - Produce a short implementation handoff for the `Practice / Quiz` lane.
 
 ## Boundaries
@@ -42,7 +45,8 @@ Use GPT-5.5 judgment. Think like a product designer and native iOS designer. Kee
 ## Validation
 
 - Test the prototype or mock flow locally if one is produced.
-- Use one read-only peer reviewer focused on whether the reward/mascot loop supports language learning instead of distracting from it.
+- Capture screenshots of the proposed reward/mascot flow.
+- Use one read-only peer reviewer focused on screenshots plus behavior: whether the reward/mascot loop supports language learning, whether the visual design is too busy, and whether it is native/Liquid Glass-ready.
 - Run `git diff --check`.
 
 ## Result Contract

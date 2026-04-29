@@ -12,9 +12,13 @@ Practice also needs a warm SpeakLocal identity. Jojo's mascot direction is a cha
 
 Run this only after the SQLite/data runtime lane is stable enough that practice can consume the canonical graph without duplicating its own mini data model.
 
+The browser prototype is only a scratchpad. The real product proof is native SwiftUI in the simulator, using the same chrome, Liquid Glass language, app navigation, phrase data, audio behavior, and saved/practice state as the rest of the app.
+
 ## Worker Judgment
 
 Use GPT-5.5 judgment. Design the smallest native MVP that proves the product loop and can scale later. Prefer durable data contracts and local state over hardcoded demo-only screens.
+
+If the current browser prototype feels busy, do not port that busyness. Simplify the native UI aggressively: one clear prompt, one clear action area, calmer feedback, fewer decorative panels, and Liquid Glass surfaces that feel native rather than web-card-heavy.
 
 ## Required Outcome
 
@@ -25,6 +29,8 @@ Use GPT-5.5 judgment. Design the smallest native MVP that proves the product loo
 - Store local progress enough to show missed/review candidates.
 - Add a light reward/progress loop that celebrates useful practice without becoming the point of the app.
 - Add mascot integration hooks and at least one visible mascot-ready moment if final mascot art is available; otherwise create a clean placeholder contract for future art.
+- Lean on native Liquid Glass UI and simplify the visual hierarchy compared with the current browser prototype.
+- Capture simulator screenshots of the worker's own implementation before peer review.
 
 ## Boundaries
 
@@ -39,7 +45,8 @@ Use GPT-5.5 judgment. Design the smallest native MVP that proves the product loo
 - Run native tests covering practice item generation and local practice state.
 - Build and launch the app.
 - Simulator-test add-to-practice from a listing page, practice session flow, answer feedback, and remove/review behavior.
-- Use one read-only peer reviewer focused on whether the quiz tests real Vietnamese phrase knowledge and whether local practice state is coherent.
+- Capture screenshots of the key native Practice states before review.
+- Use one read-only peer reviewer focused on screenshots plus behavior: whether the quiz tests real Vietnamese phrase knowledge, whether local practice state is coherent, whether the UI is too busy, and whether the result feels native/Liquid Glass enough.
 - Run `git diff --check`.
 
 ## Result Contract
