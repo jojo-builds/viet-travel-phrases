@@ -6,6 +6,15 @@ Status: implementation-ready planning source of truth
 
 Alignment note: `T-160` is now the SQLite phrase-graph architecture task, not the practice deck generator. Any remaining practice generator, practice audio audit, skipped-candidate report, simulator proof, or device proof work belongs to follow-up queue tasks.
 
+T-169 package note: the first Practice Core contract, Viet sample deck, deterministic generator, and browser prototype now live outside native runtime wiring:
+
+- contract and native handoff: `docs/practice/VIET_PRACTICE_CORE_PLAN.md`
+- generated sample deck: `content-draft/viet/practice/practice-deck.sample.json`
+- clickable prototype: `prototypes/practice-quiz/index.html`
+- generator and validation: `scripts/practice/generate-viet-practice-deck.js`
+
+This package is prepared for later T-167/T-168 integration. It intentionally does not add native app resources, SwiftUI screens, SQLite tables, or runtime practice state in this task.
+
 ## Decision snapshot
 
 SpeakLocal practice should be a traveler rehearsal layer, not a generic course game.
