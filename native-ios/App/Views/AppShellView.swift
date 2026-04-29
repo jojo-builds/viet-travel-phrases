@@ -5,6 +5,7 @@ struct AppShellView: View {
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var searchQuery = ""
     @StateObject private var intentStore = LocalUserIntentStore()
+    @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
 
     init(initialRoute: AppRoute = AppShellView.initialRoute) {
@@ -130,6 +131,13 @@ struct AppShellView: View {
                         .padding(.top, 6)
                         .offset(y: -24)
                         .zIndex(400)
+                }
+            }
+            .onChange(of: navigation.isSearchPresented) { _, isPresented in
+                if isPresented {
+                    focusSearchField()
+                } else {
+                    isSearchFieldFocused = false
                 }
             }
         }
@@ -354,6 +362,7 @@ struct AppShellView: View {
                     .font(.body.weight(.semibold))
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
+                    .focused($isSearchFieldFocused)
 
                 if !searchQuery.isEmpty {
                     Button {
@@ -519,12 +528,14 @@ struct AppShellView: View {
             navigation.openHome()
         }
         searchQuery = ""
+        isSearchFieldFocused = false
     }
 
     private func openSaved() {
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSaved()
         }
+        isSearchFieldFocused = false
     }
 
     private func goBack() {
@@ -543,10 +554,18 @@ struct AppShellView: View {
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSearch()
         }
+        focusSearchField()
     }
 
     private func closeSearch() {
+        isSearchFieldFocused = false
         goBack()
+    }
+
+    private func focusSearchField() {
+        DispatchQueue.main.async {
+            isSearchFieldFocused = true
+        }
     }
 
     private func cancelInteractiveDrag() {

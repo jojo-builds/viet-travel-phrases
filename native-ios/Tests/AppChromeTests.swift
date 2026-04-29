@@ -194,6 +194,29 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.homeScrollToTopTrigger, 1)
     }
 
+    func testRepeatedDetailSearchHomeSearchFlowDoesNotTrapBackNavigation() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openDetail("viet-hello-anh")
+        navigation.openSearch()
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertEqual(navigation.backPreviewRoute, .detailPage("viet-phrase-hello-chao-anh"))
+
+        navigation.openHome()
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertTrue(navigation.detailPath.isEmpty)
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
+
+        navigation.openSearch()
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertEqual(navigation.backPreviewRoute, .home)
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertTrue(navigation.detailPath.isEmpty)
+        XCTAssertEqual(navigation.forwardStack, [.search])
+    }
+
     func testBackPreviewRouteUsesActualBackDestination() {
         var navigation = AppShellNavigationState()
 
