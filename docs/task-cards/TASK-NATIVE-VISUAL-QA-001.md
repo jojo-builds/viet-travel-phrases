@@ -2,11 +2,11 @@
 
 ## Task Done
 
-The current `main` native app has a fresh iPhone 17 Pro simulator QA pass covering the core SpeakLocal flow, with either committed low-risk UI fixes or a clear prioritized bug report for anything that should not be fixed inside this pass.
+The current `main` native app has a fresh iPhone 17 Pro simulator QA pass covering the core SpeakLocal flow from a first-time traveler perspective, with screenshots and either committed low-risk fixes or a clear prioritized bug report for anything that should not be fixed inside this pass.
 
 ## Context
 
-Main is now the clean trunk. SQLite/runtime work may run separately, so this task should avoid broad data/runtime changes. Jojo wants native iOS/Liquid Glass feel, static glass chrome, smooth page navigation, no clipping, no stale generated-looking copy on visible surfaces, and simulator-ready proof after changes.
+Main is now the clean trunk. SQLite/runtime work may run separately, so this task should avoid broad data/runtime changes. Jojo wants native iOS/Liquid Glass feel, static glass chrome, smooth page navigation, no clipping, no placeholders, no robotic copy, no stale generated-looking copy on visible surfaces, and simulator-ready proof before the app comes back to him for manual visual testing.
 
 ## Worker Judgment
 
@@ -19,6 +19,7 @@ Use GPT-5.5 judgment. Inspect the app, run it, test the flows a real user would 
 - Fix only low-risk native UI issues that are clearly in this lane.
 - Leave data/runtime/schema/content-generation changes to the SQLite or Content lanes.
 - Capture proof screenshots for the key flows.
+- Act like a first-time traveler and flag anything that feels confusing, unfinished, too busy, robotic, or visually distracting.
 - Write a concise result report.
 
 ## Boundaries
@@ -35,6 +36,7 @@ Use GPT-5.5 judgment. Inspect the app, run it, test the flows a real user would 
 - Capture screenshots for the tested flows.
 - Run focused tests for any code changed.
 - Use one read-only peer reviewer focused on whether the visible QA pass missed obvious native UX, navigation, clipping, or chrome issues.
+- Search visible app copy/resources for placeholder/internal wording when relevant.
 - Run `git diff --check`.
 
 ## Result Contract

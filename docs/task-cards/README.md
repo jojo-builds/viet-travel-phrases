@@ -28,6 +28,7 @@ Recommended pinned lanes:
 - `Content + Listing Pages`
 - `SQLite / Data Runtime`
 - `Practice / Quiz`
+- `Tester / QA`
 - `Research / Product Strategy`
 
 Archive or unpin old worker threads that were tied to deleted side folders such as `app-family-native-sqlite`, `app-family-practice-core`, or `app-family-content-data`. If their chat history is useful, keep them archived as history, but start replacement lanes from `app-family` on `main`.
@@ -70,6 +71,19 @@ Important ideas should not require Jojo to ask "what about this?" later.
 Meaningful task cards should ask for one focused read-only peer reviewer near the end. The reviewer checks Task Done, boundaries, validation, and obvious missed issues.
 
 Use two reviewers at most when the task has two truly different risk surfaces. Use three-gate review only for rare high-risk work such as release/signing, broad runtime migrations, destructive cleanup, or cross-lane changes. Docs-only or orchestration-only edits can use a self-review checklist instead.
+
+## Pre-Jojo Visual QA Gate
+
+Before Jojo is asked to visually test a user-facing change, send it through `Tester / QA` when practical.
+
+The tester should act like a first-time traveler, not a developer:
+
+- inspect screenshots and simulator/browser behavior;
+- look for placeholder text, internal labels, robotic copy, awkward wording, clipped text, overcrowded UI, broken audio affordances, and confusing navigation;
+- try to break the changed flow;
+- report what must be fixed before Jojo spends attention on manual visual testing.
+
+This gate should stay lightweight: one tester pass with screenshots is enough unless the feature is high-risk.
 
 ## Card Shape
 

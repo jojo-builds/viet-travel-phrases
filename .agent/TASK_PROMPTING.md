@@ -36,6 +36,7 @@ Use the pinned specialist threads as lanes over the shared trunk:
 - `Content + Listing Pages`
 - `SQLite / Data Runtime`
 - `Practice / Quiz`
+- `Tester / QA`
 - `Research / Product Strategy`
 
 Do not create a new branch, worktree, or Codex project folder for routine task-card work. Branches and worktrees are exceptions for risky runtime changes, throwaway experiments, overlapping write scopes, release/signing work, or work that should not disturb the main simulator lane. If a worker uses a branch/worktree, the task card must name the merge-back condition and the orchestrator should fold it back or park it immediately after completion.
@@ -195,6 +196,8 @@ Default review budget:
 - two reviewers at most when there are clearly separate risk surfaces;
 - three-gate or larger review processes only for rare high-risk work such as release/signing, broad runtime migrations, destructive cleanup, or tasks affecting multiple app lanes at once;
 - docs-only or orchestration-only edits may use a self-review checklist instead of spawning a reviewer.
+
+Before Jojo is asked to visually test a user-facing change, prefer a lightweight `Tester / QA` pass. The tester should use screenshots and, when practical, simulator/browser interaction to catch placeholder text, internal labels, robotic copy, awkward wording, visual clutter, clipping, broken audio affordances, and confusing navigation. This is a product/user QA gate, not another implementation lane.
 
 The task spec should define reviewer lanes by outcome risk, not generic titles. Examples:
 
