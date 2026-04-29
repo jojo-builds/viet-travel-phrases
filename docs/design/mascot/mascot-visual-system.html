@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SpeakLocal Chameleon Mascot Visual System</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #14251f;
+        --muted: #5f6d67;
+        --soft: #f4f6f3;
+        --paper: #fffefa;
+        --line: rgba(20, 37, 31, 0.12);
+        --jade: #72b8a5;
+        --jade-deep: #2f8f76;
+        --glass: rgba(255, 255, 255, 0.72);
+        --lotus: #b8423e;
+        --gold: #d8a83d;
+        --ceramic: #477c9b;
+        --shadow: 0 22px 60px rgba(31, 46, 40, 0.16);
+        --font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, #f7f8f4 0%, #eef5f0 42%, #f8f2e8 100%);
+        color: var(--ink);
+        font-family: var(--font);
+        letter-spacing: 0;
+      }
+
+      .page {
+        width: min(1440px, 100%);
+        margin: 0 auto;
+        padding: 42px 34px 64px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.72fr);
+        gap: 34px;
+        align-items: end;
+        min-height: 320px;
+        padding: 24px 8px 38px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        font-size: clamp(44px, 6vw, 84px);
+        line-height: 0.94;
+        font-weight: 760;
+      }
+
+      h2 {
+        font-size: 30px;
+        line-height: 1.05;
+        font-weight: 740;
+      }
+
+      h3 {
+        font-size: 17px;
+        line-height: 1.2;
+        font-weight: 740;
+      }
+
+      .lead {
+        max-width: 670px;
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.48;
+      }
+
+      .hero-note {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.55);
+        box-shadow: var(--shadow);
+        padding: 24px;
+      }
+
+      .hero-note strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #315d51;
+      }
+
+      .hero-note p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.52;
+      }
+
+      .section {
+        margin-top: 26px;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: end;
+        margin-bottom: 18px;
+      }
+
+      .section-head p {
+        max-width: 560px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.46;
+      }
+
+      .progression {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .specimen {
+        min-height: 360px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.58);
+        box-shadow: 0 14px 42px rgba(31, 46, 40, 0.09);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+      }
+
+      .specimen-stage {
+        color: #6a756f;
+        font-size: 12px;
+        font-weight: 760;
+        text-transform: uppercase;
+      }
+
+      .specimen-copy {
+        margin-top: 16px;
+      }
+
+      .specimen-copy p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .mascot-wrap {
+        display: grid;
+        place-items: center;
+        min-height: 190px;
+      }
+
+      .mascot {
+        --body: #8eb987;
+        --body2: #c8d8b4;
+        --belly: #f2e6c9;
+        --accent: #7d8e6f;
+        --scale: rgba(255, 255, 255, 0.42);
+        position: relative;
+        width: 190px;
+        height: 148px;
+        transform: translateZ(0);
+      }
+
+      .mascot.small {
+        width: 76px;
+        height: 62px;
+      }
+
+      .mascot.tiny {
+        width: 48px;
+        height: 40px;
+      }
+
+      .mascot .body {
+        position: absolute;
+        width: 118px;
+        height: 74px;
+        left: 42px;
+        top: 45px;
+        border-radius: 58% 46% 46% 56%;
+        background:
+          radial-gradient(circle at 24% 38%, var(--scale) 0 7px, transparent 8px),
+          radial-gradient(circle at 48% 32%, var(--scale) 0 5px, transparent 6px),
+          linear-gradient(135deg, var(--body), var(--body2));
+        box-shadow:
+          inset 0 -12px 22px rgba(38, 77, 65, 0.18),
+          0 12px 24px rgba(27, 58, 50, 0.16);
+      }
+
+      .mascot .belly {
+        position: absolute;
+        width: 68px;
+        height: 27px;
+        left: 64px;
+        top: 84px;
+        border-radius: 50%;
+        background: var(--belly);
+        opacity: 0.92;
+      }
+
+      .mascot .head {
+        position: absolute;
+        width: 62px;
+        height: 58px;
+        left: 122px;
+        top: 32px;
+        border-radius: 55% 48% 48% 58%;
+        background: linear-gradient(135deg, var(--body), var(--body2));
+        box-shadow: inset 0 -8px 16px rgba(38, 77, 65, 0.18);
+      }
+
+      .mascot .eye {
+        position: absolute;
+        width: 23px;
+        height: 23px;
+        left: 151px;
+        top: 39px;
+        border: 3px solid rgba(31, 46, 40, 0.16);
+        border-radius: 999px;
+        background: #fff9e8;
+      }
+
+      .mascot .eye::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        left: 8px;
+        top: 8px;
+        border-radius: 50%;
+        background: #1c2b25;
+      }
+
+      .mascot .tail {
+        position: absolute;
+        width: 58px;
+        height: 58px;
+        left: 8px;
+        top: 58px;
+        border: 13px solid var(--body);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        transform: rotate(-44deg);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+      }
+
+      .mascot .leg {
+        position: absolute;
+        width: 38px;
+        height: 13px;
+        border-radius: 999px;
+        background: #6d9277;
+        left: 78px;
+        top: 112px;
+        transform: rotate(-10deg);
+      }
+
+      .mascot .leg.back {
+        left: 44px;
+        top: 108px;
+        opacity: 0.78;
+      }
+
+      .mascot .satchel {
+        position: absolute;
+        width: 23px;
+        height: 19px;
+        left: 103px;
+        top: 75px;
+        border: 2px solid rgba(40, 55, 45, 0.14);
+        border-radius: 6px 6px 9px 9px;
+        background: #b98651;
+      }
+
+      .mascot .satchel::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        left: -22px;
+        top: -10px;
+        border-radius: 999px;
+        background: rgba(69, 88, 75, 0.28);
+        transform: rotate(34deg);
+      }
+
+      .mascot .motif {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .mascot .motif::before,
+      .mascot .motif::after {
+        content: "";
+        position: absolute;
+        opacity: 0;
+      }
+
+      .mascot.viet-early {
+        --body: #72b8a5;
+        --body2: #cce8da;
+        --accent: #2f8f76;
+      }
+
+      .mascot.viet-early .motif::before {
+        opacity: 1;
+        width: 44px;
+        height: 16px;
+        left: 78px;
+        top: 58px;
+        border-top: 3px solid rgba(255, 255, 255, 0.72);
+        border-radius: 50%;
+      }
+
+      .mascot.viet-mid {
+        --body: #4eaa8f;
+        --body2: #c0e2d3;
+        --scale: rgba(244, 249, 240, 0.58);
+      }
+
+      .mascot.viet-mid .satchel,
+      .mascot.viet-done .satchel {
+        background: linear-gradient(135deg, var(--lotus), #d1a23e);
+      }
+
+      .mascot.viet-mid .motif::before {
+        opacity: 1;
+        width: 58px;
+        height: 34px;
+        left: 72px;
+        top: 54px;
+        border-top: 3px solid rgba(71, 124, 155, 0.65);
+        border-bottom: 3px solid rgba(71, 124, 155, 0.34);
+        border-radius: 50%;
+      }
+
+      .mascot.viet-mid .motif::after {
+        opacity: 1;
+        width: 24px;
+        height: 24px;
+        left: 136px;
+        top: 82px;
+        background:
+          radial-gradient(circle at 50% 8%, transparent 0 5px, rgba(184, 66, 62, 0.84) 6px 8px, transparent 9px),
+          radial-gradient(circle at 34% 60%, rgba(184, 66, 62, 0.74) 0 7px, transparent 8px),
+          radial-gradient(circle at 66% 60%, rgba(184, 66, 62, 0.74) 0 7px, transparent 8px);
+      }
+
+      .mascot.viet-done {
+        --body: #2f8f76;
+        --body2: #aedeca;
+        --scale: rgba(255, 255, 255, 0.62);
+      }
+
+      .mascot.viet-done::after {
+        content: "";
+        position: absolute;
+        width: 128px;
+        height: 128px;
+        left: 37px;
+        top: 10px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(216, 168, 61, 0.24), transparent 68%);
+        z-index: -1;
+      }
+
+      .mascot.viet-done .motif::before {
+        opacity: 1;
+        width: 62px;
+        height: 34px;
+        left: 70px;
+        top: 54px;
+        background:
+          repeating-linear-gradient(120deg, transparent 0 9px, rgba(71, 124, 155, 0.58) 10px 13px),
+          linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18));
+        border-radius: 50%;
+      }
+
+      .mascot.viet-done .motif::after {
+        opacity: 1;
+        width: 20px;
+        height: 32px;
+        left: 139px;
+        top: 80px;
+        border-radius: 999px 999px 10px 10px;
+        background: linear-gradient(180deg, rgba(216, 168, 61, 0.95), rgba(184, 66, 62, 0.78));
+      }
+
+      .mascot.absent {
+        opacity: 0.34;
+        filter: grayscale(0.35);
+      }
+
+      .mascot.absent::before {
+        content: "";
+        position: absolute;
+        width: 160px;
+        height: 2px;
+        left: 16px;
+        top: 72px;
+        background: rgba(80, 72, 65, 0.28);
+        transform: rotate(-18deg);
+      }
+
+      .mascot.small .body {
+        width: 48px;
+        height: 30px;
+        left: 16px;
+        top: 19px;
+      }
+
+      .mascot.small .belly {
+        width: 28px;
+        height: 11px;
+        left: 26px;
+        top: 35px;
+      }
+
+      .mascot.small .head {
+        width: 25px;
+        height: 24px;
+        left: 50px;
+        top: 13px;
+      }
+
+      .mascot.small .eye {
+        width: 10px;
+        height: 10px;
+        left: 62px;
+        top: 16px;
+        border-width: 1px;
+      }
+
+      .mascot.small .eye::after {
+        width: 4px;
+        height: 4px;
+        left: 3px;
+        top: 3px;
+      }
+
+      .mascot.small .tail {
+        width: 24px;
+        height: 24px;
+        left: 3px;
+        top: 25px;
+        border-width: 6px;
+      }
+
+      .mascot.small .leg {
+        width: 15px;
+        height: 6px;
+        left: 31px;
+        top: 47px;
+      }
+
+      .mascot.small .leg.back {
+        left: 18px;
+        top: 45px;
+      }
+
+      .mascot.small .satchel {
+        width: 9px;
+        height: 8px;
+        left: 42px;
+        top: 31px;
+        border-radius: 3px;
+        border-width: 1px;
+      }
+
+      .mascot.small .satchel::before {
+        width: 14px;
+        height: 1px;
+        left: -9px;
+        top: -4px;
+      }
+
+      .phone-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(230px, 1fr));
+        gap: 16px;
+        align-items: start;
+      }
+
+      .phone-shot {
+        display: grid;
+        gap: 10px;
+      }
+
+      .phone-title {
+        min-height: 44px;
+        color: #4f5f58;
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .phone {
+        width: 100%;
+        max-width: 286px;
+        aspect-ratio: 390 / 844;
+        margin: 0 auto;
+        padding: 12px;
+        border-radius: 44px;
+        background: #17231f;
+        box-shadow: var(--shadow);
+      }
+
+      .screen {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 34px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.38), transparent 22%),
+          linear-gradient(180deg, #eef5f0 0%, #f9f6ed 100%);
+      }
+
+      .screen::before {
+        content: "";
+        position: absolute;
+        width: 116px;
+        height: 28px;
+        left: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+        border-radius: 999px;
+        background: #17231f;
+        z-index: 5;
+      }
+
+      .screen-content {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        padding: 56px 18px 96px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #496058;
+        font-size: 12px;
+        font-weight: 720;
+      }
+
+      .glass {
+        border: 1px solid rgba(255, 255, 255, 0.68);
+        background: rgba(255, 255, 255, 0.68);
+        box-shadow: 0 12px 28px rgba(28, 56, 48, 0.11);
+        backdrop-filter: blur(16px);
+      }
+
+      .route-card {
+        border-radius: 28px;
+        padding: 14px;
+      }
+
+      .route-card h2 {
+        font-size: 25px;
+      }
+
+      .route-card p,
+      .quiz-card p,
+      .feedback-card p,
+      .listing-card p {
+        margin-top: 6px;
+        color: #64736d;
+        font-size: 12px;
+        line-height: 1.32;
+      }
+
+      .companion-row {
+        display: grid;
+        grid-template-columns: 76px 1fr;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .mini-route {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+        color: #315d51;
+        font-size: 11px;
+        font-weight: 760;
+      }
+
+      .route-line {
+        flex: 1;
+        height: 7px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--jade-deep) 0 62%, rgba(49, 93, 81, 0.12) 62%);
+      }
+
+      .deck-list {
+        display: grid;
+        gap: 7px;
+      }
+
+      .deck-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        align-items: center;
+        border-radius: 18px;
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(20, 37, 31, 0.07);
+      }
+
+      .deck-row strong {
+        font-size: 13px;
+      }
+
+      .deck-row span {
+        display: block;
+        margin-top: 2px;
+        color: #6b7872;
+        font-size: 10px;
+      }
+
+      .pill {
+        padding: 6px 8px;
+        border-radius: 999px;
+        color: #315d51;
+        background: rgba(114, 184, 165, 0.17);
+        font-size: 10px;
+        font-weight: 780;
+        white-space: nowrap;
+      }
+
+      .prompt-strip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 7px 10px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.56);
+        color: #53655e;
+        font-size: 11px;
+        font-weight: 760;
+      }
+
+      .quiz-card,
+      .feedback-card,
+      .completion-card,
+      .listing-card {
+        border-radius: 28px;
+        padding: 14px;
+      }
+
+      .quiz-card h2,
+      .feedback-card h2,
+      .completion-card h2 {
+        font-size: 22px;
+      }
+
+      .speaker {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        margin-top: 14px;
+        border-radius: 50%;
+        background: #bd3f3b;
+        color: #fff8ed;
+        font-size: 22px;
+        font-weight: 780;
+      }
+
+      .answers {
+        display: grid;
+        gap: 7px;
+      }
+
+      .answer {
+        min-height: 48px;
+        padding: 10px 12px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(20, 37, 31, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .answer strong {
+        color: #162b24;
+        font-size: 15px;
+        line-height: 1.12;
+      }
+
+      .answer span {
+        margin-top: 4px;
+        color: #65746d;
+        font-size: 10px;
+      }
+
+      .answer.selected {
+        border-color: rgba(47, 143, 118, 0.42);
+        background: rgba(230, 245, 237, 0.92);
+      }
+
+      .answer.review {
+        border-color: rgba(216, 168, 61, 0.5);
+        background: rgba(255, 248, 229, 0.86);
+      }
+
+      .feedback-card .correct {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 18px;
+        background: #fff7df;
+        border: 1px solid rgba(216, 168, 61, 0.38);
+      }
+
+      .feedback-card .correct strong {
+        font-size: 18px;
+      }
+
+      .quiet-status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+        color: #686a5b;
+        font-size: 11px;
+        font-weight: 760;
+      }
+
+      .quiet-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .reward-mark {
+        display: grid;
+        place-items: center;
+        margin: 8px auto 0;
+        width: 104px;
+        height: 104px;
+        border-radius: 36px;
+        background:
+          radial-gradient(circle at 50% 30%, rgba(216, 168, 61, 0.28), transparent 56%),
+          rgba(255, 255, 255, 0.64);
+        border: 1px solid rgba(255, 255, 255, 0.68);
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .stat {
+        padding: 8px 8px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.72);
+        text-align: center;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 16px;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 3px;
+        color: #65746d;
+        font-size: 8px;
+        font-weight: 720;
+      }
+
+      .action-row {
+        display: grid;
+        gap: 7px;
+        margin-top: auto;
+      }
+
+      .action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 38px;
+        border-radius: 18px;
+        font-size: 12px;
+        font-weight: 780;
+      }
+
+      .action.primary {
+        background: #b8423e;
+        color: #fff8ed;
+      }
+
+      .action.secondary {
+        background: rgba(255, 255, 255, 0.7);
+        color: #315d51;
+        border: 1px solid rgba(20, 37, 31, 0.08);
+      }
+
+      .listing-hero {
+        min-height: 148px;
+        margin: -16px -16px 0;
+        padding: 52px 16px 14px;
+        border-radius: 28px 28px 22px 22px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(238, 245, 240, 0.88)),
+          linear-gradient(135deg, #4d9a8a, #e2bc67 62%, #b8423e);
+      }
+
+      .listing-hero h2 {
+        color: #fffefa;
+        text-shadow: 0 1px 12px rgba(20, 37, 31, 0.3);
+        font-size: 32px;
+      }
+
+      .listing-hero p {
+        color: #fffefa;
+        text-shadow: 0 1px 10px rgba(20, 37, 31, 0.24);
+      }
+
+      .practice-entry {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(20, 37, 31, 0.08);
+      }
+
+      .practice-entry strong {
+        font-size: 12px;
+      }
+
+      .practice-entry span {
+        display: block;
+        margin-top: 3px;
+        color: #64736d;
+        font-size: 10px;
+        line-height: 1.32;
+      }
+
+      .plus {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #2f8f76;
+        color: white;
+        font-size: 23px;
+        line-height: 1;
+      }
+
+      .dock {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 15px;
+        display: grid;
+        grid-template-columns: 1fr 56px 1fr 1fr;
+        gap: 8px;
+        align-items: center;
+        z-index: 3;
+      }
+
+      .dock-item,
+      .search-island {
+        min-height: 44px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        box-shadow: 0 10px 24px rgba(28, 56, 48, 0.12);
+        display: grid;
+        place-items: center;
+        color: #53635d;
+        font-size: 10px;
+        font-weight: 780;
+      }
+
+      .search-island {
+        min-height: 56px;
+        color: #af3f3b;
+        font-size: 20px;
+      }
+
+      .rules {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .rule {
+        min-height: 190px;
+        padding: 20px;
+        border-radius: 26px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.58);
+      }
+
+      .rule p {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .palette {
+        display: flex;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .swatch {
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
+        border: 1px solid rgba(20, 37, 31, 0.1);
+      }
+
+      @media (max-width: 1160px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .progression {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .phone-grid {
+          grid-template-columns: repeat(2, minmax(230px, 1fr));
+        }
+
+        .rules {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .page {
+          padding: 28px 16px 46px;
+        }
+
+        .progression,
+        .phone-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head {
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page capture-board">
+      <section class="hero">
+        <div>
+          <h1>SpeakLocal Chameleon Mascot Visual System</h1>
+          <p class="lead">A calm travel companion that gradually picks up Vietnam motifs through real phrase practice. The mascot supports readiness; it never becomes the product, the score, or a costume.</p>
+        </div>
+        <aside class="hero-note">
+          <strong>Design stance</strong>
+          <p>Keep the base silhouette constant, use jade and sea-glass as the main adaptation cue, reserve red and gold for small travel details, and remove or mute the mascot for sensitive phrase contexts.</p>
+        </aside>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Mascot Progression</h2>
+          <p>Five states for art direction and native asset planning: neutral traveler, early Vietnam tint, mid-progress motif, completion motif, and the serious-context absence rule.</p>
+        </div>
+        <div class="progression">
+          <article class="specimen">
+            <div>
+              <div class="specimen-stage">Base</div>
+              <div class="mascot-wrap">
+                <div class="mascot" aria-hidden="true">
+                  <span class="tail"></span><span class="body"></span><span class="belly"></span><span class="head"></span><span class="eye"></span><span class="leg back"></span><span class="leg"></span><span class="satchel"></span><span class="motif"></span>
+                </div>
+              </div>
+            </div>
+            <div class="specimen-copy">
+              <h3>Neutral chameleon traveler</h3>
+              <p>Sage body, cream underside, small satchel. Reads as helpful and adult, not as a game mascot.</p>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div>
+              <div class="specimen-stage">Early Vietnam</div>
+              <div class="mascot-wrap">
+                <div class="mascot viet-early" aria-hidden="true">
+                  <span class="tail"></span><span class="body"></span><span class="belly"></span><span class="head"></span><span class="eye"></span><span class="leg back"></span><span class="leg"></span><span class="satchel"></span><span class="motif"></span>
+                </div>
+              </div>
+            </div>
+            <div class="specimen-copy">
+              <h3>Jade route tint</h3>
+              <p>Sea-glass body tint after a short source-anchored route. No badge, XP, confetti, or victory pose.</p>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div>
+              <div class="specimen-stage">Mid-progress</div>
+              <div class="mascot-wrap">
+                <div class="mascot viet-mid" aria-hidden="true">
+                  <span class="tail"></span><span class="body"></span><span class="belly"></span><span class="head"></span><span class="eye"></span><span class="leg back"></span><span class="leg"></span><span class="satchel"></span><span class="motif"></span>
+                </div>
+              </div>
+            </div>
+            <div class="specimen-copy">
+              <h3>Ceramic and lotus hints</h3>
+              <p>Small scale pattern and travel-patch color. The silhouette stays familiar while details deepen.</p>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div>
+              <div class="specimen-stage">Completion</div>
+              <div class="mascot-wrap">
+                <div class="mascot viet-done" aria-hidden="true">
+                  <span class="tail"></span><span class="body"></span><span class="belly"></span><span class="head"></span><span class="eye"></span><span class="leg back"></span><span class="leg"></span><span class="satchel"></span><span class="motif"></span>
+                </div>
+              </div>
+            </div>
+            <div class="specimen-copy">
+              <h3>Lantern-warm route mark</h3>
+              <p>Completion gets warm light and refined motif density, not a costume, fireworks, or loud mascot takeover.</p>
+            </div>
+          </article>
+
+          <article class="specimen">
+            <div>
+              <div class="specimen-stage">Sensitive</div>
+              <div class="mascot-wrap">
+                <div class="mascot absent" aria-hidden="true">
+                  <span class="tail"></span><span class="body"></span><span class="belly"></span><span class="head"></span><span class="eye"></span><span class="leg back"></span><span class="leg"></span><span class="satchel"></span><span class="motif"></span>
+                </div>
+              </div>
+            </div>
+            <div class="specimen-copy">
+              <h3>No mascot or neutral mark</h3>
+              <p>Medical, police, harassment, safety, and high-stress prompts should privilege phrase clarity over warmth.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Native Flow Composites</h2>
+          <p>These are not SwiftUI implementation files. They are compact product-direction composites that show scale, placement, restraint, and how the mascot fits the current glass-chrome app rhythm.</p>
+        </div>
+
+        <div class="phone-grid">
+          <article class="phone-shot capture-hub">
+            <div class="phone-title">Practice hub: companion near route choice, not in bottom chrome.</div>
+            <div class="phone">
+              <div class="screen">
+                <div class="screen-content">
+                  <div class="topbar"><span>SpeakLocal</span><span>Vietnam</span></div>
+                  <section class="route-card glass">
+                    <h2>Practice</h2>
+                    <p>Short rehearsal from phrases you saved and opened.</p>
+                    <div class="companion-row">
+                      <div class="mascot small viet-early" aria-hidden="true">
+                        <span class="tail"></span><span class="body"></span><span class="belly"></span><span class="head"></span><span class="eye"></span><span class="leg back"></span><span class="leg"></span><span class="satchel"></span><span class="motif"></span>
+                      </div>
+                      <div>
+                        <h3>Hotel desk route</h3>
+                        <p>3 ready prompts across 2 pages unlock a jade tint.</p>
+                      </div>
+                    </div>
+                    <div class="mini-route"><span class="route-line"></span><span>2 of 5</span></div>
+                  </section>
+                  <div class="deck-list">
+                    <div class="deck-row"><div><strong>My practice phrases</strong><span>Hotel and greeting phrases</span></div><span class="pill">5 prompts</span></div>
+                  </div>
+                </div>
+                <div class="dock"><div class="dock-item">Home</div><div class="search-island">⌕</div><div class="dock-item">Browse</div><div class="dock-item">Saved</div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phone-shot capture-prompt">
+            <div class="phone-title">Normal prompt: mascot becomes a small route signal beside progress.</div>
+            <div class="phone">
+              <div class="screen">
+                <div class="screen-content">
+                  <div class="topbar"><span>2 / 5</span><span>Hotel desk</span></div>
+                  <div class="prompt-strip"><span>Listen and choose</span><span>Jade route +1</span></div>
+                  <section class="quiz-card glass">
+                    <h2>You booked a room.</h2>
+                    <p>Choose the Vietnamese phrase.</p>
+                    <div class="speaker">♪</div>
+                  </section>
+                  <div class="answers">
+                    <div class="answer"><strong>Tôi có đặt phòng</strong></div>
+                    <div class="answer"><strong>Cho tôi xem phòng</strong></div>
+                    <div class="answer"><strong>Tôi muốn trả tiền</strong></div>
+                  </div>
+                </div>
+                <div class="dock"><div class="dock-item">Home</div><div class="search-island">⌕</div><div class="dock-item">Browse</div><div class="dock-item">Saved</div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phone-shot capture-review">
+            <div class="phone-title">Missed/review feedback: no cheerful character, no failure language.</div>
+            <div class="phone">
+              <div class="screen">
+                <div class="screen-content">
+                  <div class="topbar"><span>Review</span><span>1 saved</span></div>
+                  <section class="feedback-card glass">
+                    <h2>Saved for calm review</h2>
+                    <p>This stays in your local review route for later.</p>
+                    <div class="correct">
+                      <strong>Tôi có đặt phòng</strong>
+                      <p>Use this when you already booked and need the desk to find your reservation.</p>
+                    </div>
+                    <div class="quiet-status"><span class="quiet-dot"></span><span>0 ready prompts / 1 review prompt</span></div>
+                  </section>
+                  <div class="answers">
+                    <div class="answer review"><strong>Open source page</strong><span>Return to the hotel desk phrase explanation.</span></div>
+                  </div>
+                </div>
+                <div class="dock"><div class="dock-item">Home</div><div class="search-island">⌕</div><div class="dock-item">Browse</div><div class="dock-item">Saved</div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phone-shot capture-completion">
+            <div class="phone-title">Completion: reward moment names readiness, route, and next action.</div>
+            <div class="phone">
+              <div class="screen">
+                <div class="screen-content">
+                  <div class="topbar"><span>Complete</span><span>Private</span></div>
+                  <section class="completion-card glass">
+                    <h2>Vietnam route updated</h2>
+                    <p>Jade route mark unlocked for Hotel desk.</p>
+                    <div class="reward-mark">
+                      <div class="mascot small viet-done" aria-hidden="true">
+                        <span class="tail"></span><span class="body"></span><span class="belly"></span><span class="head"></span><span class="eye"></span><span class="leg back"></span><span class="leg"></span><span class="satchel"></span><span class="motif"></span>
+                      </div>
+                    </div>
+                    <div class="stat-row">
+                      <div class="stat"><strong>3</strong><span>READY</span></div>
+                      <div class="stat"><strong>2</strong><span>PAGES</span></div>
+                      <div class="stat"><strong>1</strong><span>REVIEW</span></div>
+                    </div>
+                  </section>
+                  <div class="action-row">
+                    <div class="action primary">Review this route</div>
+                    <div class="action secondary">Open Hotel desk page</div>
+                  </div>
+                </div>
+                <div class="dock"><div class="dock-item">Home</div><div class="search-island">⌕</div><div class="dock-item">Browse</div><div class="dock-item">Saved</div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phone-shot capture-listing">
+            <div class="phone-title">Listing page entry: Add to practice is useful without crowding reading.</div>
+            <div class="phone">
+              <div class="screen">
+                <div class="screen-content">
+                  <div class="topbar"><span>Back</span><span>Search</span></div>
+                  <section class="listing-card glass">
+                    <div class="listing-hero">
+                      <h2>Xin chào</h2>
+                      <p>Different ways to say hello in Vietnam.</p>
+                    </div>
+                    <div class="practice-entry">
+                      <div>
+                        <strong>Add to practice</strong>
+                        <span>Rehearse this page later from your local pool.</span>
+                      </div>
+                      <div class="plus">+</div>
+                    </div>
+                    <p>Practice stays near phrase action. Mascot waits for Practice and completion.</p>
+                  </section>
+                  <div class="deck-list">
+                    <div class="deck-row"><div><strong>Say it first</strong><span>Xin chào</span></div><span class="pill">Audio</span></div>
+                  </div>
+                </div>
+                <div class="dock"><div class="dock-item">Home</div><div class="search-island">⌕</div><div class="dock-item">Browse</div><div class="dock-item">Saved</div></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Native Translation Rules</h2>
+          <p>The mascot should map into SwiftUI as a small asset family with state-driven variants, not as a new navigation model.</p>
+        </div>
+        <div class="rules">
+          <article class="rule">
+            <h3>Keep</h3>
+            <p>Stable silhouette, quiet route marks, local readiness language, phrase-page source links, and a native glass surface rhythm.</p>
+            <div class="palette">
+              <span class="swatch" style="background:#72b8a5"></span>
+              <span class="swatch" style="background:#f2e6c9"></span>
+              <span class="swatch" style="background:#b8423e"></span>
+              <span class="swatch" style="background:#d8a83d"></span>
+            </div>
+          </article>
+          <article class="rule">
+            <h3>Avoid</h3>
+            <p>No flag body paint, costume hats, coins, XP, streak pressure, leaderboards, childish triumph poses, or mascot in bottom/search chrome.</p>
+            <div class="palette">
+              <span class="swatch" style="background:#eef5f0"></span>
+              <span class="swatch" style="background:#477c9b"></span>
+              <span class="swatch" style="background:#8eb987"></span>
+              <span class="swatch" style="background:#fffefa"></span>
+            </div>
+          </article>
+          <article class="rule">
+            <h3>Subdue</h3>
+            <p>Emergency, medical, safety, police, harassment, and high-stress prompts should hide the mascot or reduce it to a neutral progress mark.</p>
+            <div class="palette">
+              <span class="swatch" style="background:#d8d9d1"></span>
+              <span class="swatch" style="background:#fff7df"></span>
+              <span class="swatch" style="background:#64736d"></span>
+              <span class="swatch" style="background:#f4f6f3"></span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
