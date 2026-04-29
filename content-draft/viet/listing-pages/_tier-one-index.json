@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-29T15:22:45.985Z",
+  "generatedAt": "2026-04-29T15:32:14.038Z",
   "source": "../../../native-ios/Resources/viet-phrase-catalog.json",
   "tierOneFamilyCount": 150,
-  "resourceMainPageCount": 149,
-  "childPageCount": 15,
+  "resourceMainPageCount": 147,
+  "childPageCount": 14,
   "inventory": [
     {
       "familyID": "polite-hello",
@@ -25,7 +25,7 @@
     },
     {
       "familyID": "polite-no-thanks",
-      "pageID": "viet-family-polite-no-thanks",
+      "pageID": "viet-thanks-khong-cam-on",
       "coverage": "authored-resource",
       "title": "Không, cảm ơn"
     },
@@ -391,7 +391,7 @@
     },
     {
       "familyID": "directions-understand-now",
-      "pageID": "viet-family-directions-understand-now",
+      "pageID": "viet-thanks-cam-on-toi-hieu-roi",
       "coverage": "authored-resource",
       "title": "Cảm ơn, tôi hiểu rồi"
     },

@@ -1,0 +1,25 @@
+{
+  "id": "viet-thanks-khong-cam-on",
+  "familyID": "polite-no-thanks",
+  "phraseID": "polite-4",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Không, cảm ơn",
+  "englishTitle": "No, thank you",
+  "pronunciation": "khong kahm uhn",
+  "summary": "A polite refusal for vendors, offers, and small service choices.",
+  "iconName": "hand.raised.fill",
+  "tintName": "green",
+  "categoryIDs": ["polite-basics", "gratitude"],
+  "audioKey": "polite-4",
+  "sections": [
+    {"id": "at-glance", "title": "At a glance", "body": "Không, cảm ơn is the clean travel phrase for refusing without sounding abrupt. It is useful with vendors, extra bags, taxi offers, refills, menu suggestions, and anything you do not want but want to decline kindly."},
+    {"id": "standard-way", "title": "The standard way", "body": "Say Không, cảm ơn when the answer is no but you want the interaction to stay friendly.", "phrases": [{"id": "polite-4", "vietnamese": "Không, cảm ơn", "english": "No, thank you", "pronunciation": "khong kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "polite-4"}]},
+    {"id": "breakdown", "title": "Break it down", "body": "The thank-you softens the refusal.", "breakdown": [{"id": "khong", "vietnamese": "Không", "english": "no", "audioKey": null}, {"id": "cam-on", "vietnamese": "cảm ơn", "english": "thank you", "audioKey": "polite-2"}, {"id": "full", "vietnamese": "Không, cảm ơn", "english": "no, thank you", "audioKey": "polite-4"}]},
+    {"id": "natural-variations", "title": "Nearby refusals", "body": "Use these when the refusal needs more context.", "phrases": [{"id": "v500-mone-numb-pric-no-thanks-maybe-later", "vietnamese": "Không, cảm ơn, có thể để sau", "english": "No thanks, maybe later", "pronunciation": "Khong cam on co the de sau", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-v500-mone-numb-pric-no-thanks-maybe-later", "audioKey": "v500-mone-numb-pric-no-thanks-maybe-later"}, {"id": "v500-soci-smal-talk-no-thank-you-im-not-interested", "vietnamese": "Không, cảm ơn, tôi không quan tâm", "english": "No thank you, I’m not interested", "pronunciation": "Khong cam on toi khong quan tam", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-v500-soci-smal-talk-no-thank-you-im-not-interested", "audioKey": "v500-soci-smal-talk-no-thank-you-im-not-interested"}, {"id": "v900-shop-no-thank-you-ill-look-around-first", "vietnamese": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước", "english": "No thank you, I’ll look around first", "pronunciation": "Khong cam on toi se xem xet xung quanh truoc", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-v900-shop-no-thank-you-ill-look-around-first", "audioKey": "v900-shop-no-thank-you-ill-look-around-first"}]},
+    {"id": "when-to-use", "title": "When to use it", "body": "Use it when declining a product, a ride, a refill, a table offer, a menu suggestion, or a street approach. Say it once clearly and keep moving if the moment is brief."},
+    {"id": "good-to-know", "title": "Good to know", "body": "The phrase is polite because it combines a clear no with gratitude. You do not need to explain unless the situation truly needs a reason."},
+    {"id": "explore-next", "title": "Explore next", "body": "These help after a refusal or a simple polite exchange.", "phrases": [{"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}, {"id": "v900-poli-basi-no-problem", "vietnamese": "Không có gì", "english": "No problem", "pronunciation": "khong co gi", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thanks-khong-co-gi", "audioKey": "v900-poli-basi-no-problem"}, {"id": "polite-7", "vietnamese": "Tạm biệt", "english": "Goodbye", "pronunciation": "tahm bee-et", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": "viet-goodbye", "audioKey": "polite-7"}]}
+  ],
+  "examples": [{"id": "polite-4", "vietnamese": "Không, cảm ơn", "english": "No, thank you", "pronunciation": "khong kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "polite-4"}]
+}

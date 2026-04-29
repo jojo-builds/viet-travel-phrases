@@ -12,11 +12,13 @@ const outputPath = path.join(root, "Resources", "viet-authored-listing-pages.jso
 const auditPath = path.join(root, "Resources", "viet-authored-audio-audit.json");
 const sourceRoot = path.join(familyRoot, "content-draft", "viet", "listing-pages");
 const fullUniverseSourceRoot = path.join(familyRoot, "content-draft", "viet", "full-listing-pages");
+const fullUniverseTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const audioManifest = JSON.parse(fs.readFileSync(audioManifestPath, "utf8"));
 
 const phraseByID = new Map(catalog.phrases.map((phrase) => [phrase.id, phrase]));
+const familyByID = new Map(catalog.families.map((family) => [family.id, family]));
 const scenarioByID = new Map(catalog.scenarios.map((scenario) => [scenario.id, scenario]));
 const familiesByScenarioID = new Map();
 
@@ -1696,15 +1698,22 @@ function main() {
   removeGeneratedSources();
 
   const fullUniversePages = loadFullUniversePages();
+  const fullUniversePageIDByPhraseID = new Map(fullUniversePages.map((page) => [page.phraseID, page.id]));
+  const taskFullUniversePhraseIDs = new Set(fullUniversePages
+    .filter((page) => phraseByID.get(page.phraseID)?.notes?.includes(`task=${fullUniverseTaskID}`))
+    .map((page) => page.phraseID));
   for (const page of fullUniversePages) {
-    designedFamilyPageIDs[page.familyID] = page.id;
+    const family = familyByID.get(page.familyID);
+    if (family?.primaryPhraseID === page.phraseID) {
+      designedFamilyPageIDs[page.familyID] = page.id;
+    }
   }
   const fullUniversePhraseIDs = new Set(fullUniversePages.map((page) => page.phraseID));
   const starterFamilies = catalog.families.filter((family) => {
     const primaryPhrase = phraseByID.get(family.primaryPhraseID);
     return family.accessTier === "starter"
       && primaryPhrase?.variantRole === "say-first"
-      && !fullUniversePhraseIDs.has(family.primaryPhraseID);
+      && !taskFullUniversePhraseIDs.has(family.primaryPhraseID);
   });
 
   const childPageIDsByPhraseID = new Map();
@@ -1712,7 +1721,10 @@ function main() {
     for (const phraseID of family.phraseIDs ?? []) {
       const phrase = phraseByID.get(phraseID);
       if (phrase && phrase.variantRole !== "say-first") {
-        childPageIDsByPhraseID.set(phrase.id, `viet-phrase-${phrase.id}`);
+        childPageIDsByPhraseID.set(
+          phrase.id,
+          fullUniversePageIDByPhraseID.get(phrase.id) ?? `viet-phrase-${phrase.id}`
+        );
       }
     }
   }
@@ -1733,13 +1745,14 @@ function main() {
     fs.mkdirSync(scenarioDir, { recursive: true });
     fs.writeFileSync(path.join(scenarioDir, `${family.id}.json`), `${JSON.stringify(page, null, 2)}\n`);
 
-    if (!manuallyAuthoredPageIDs.has(page.id)) {
+    if (!manuallyAuthoredPageIDs.has(page.id) && !fullUniversePhraseIDs.has(family.primaryPhraseID)) {
       pages.push(page);
     }
 
     for (const phraseID of family.phraseIDs ?? []) {
       const phrase = phraseByID.get(phraseID);
       if (!phrase || phrase.variantRole === "say-first") continue;
+      if (fullUniversePhraseIDs.has(phrase.id)) continue;
       const childPage = childPageForVariant(family, phrase, primaryPhrase);
       childPages.push(childPage);
       fs.writeFileSync(path.join(scenarioDir, `${family.id}--${phrase.id}.json`), `${JSON.stringify(childPage, null, 2)}\n`);

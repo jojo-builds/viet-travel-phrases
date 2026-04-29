@@ -12,8 +12,8 @@ This checkpoint creates the durable authored-source lane for full-universe Viet 
 - Net-new canonical pages in this checkpoint: `15`.
 - Required final canonical page count: `2,911`.
 - Remaining net-new pages needed for Task Done: `1,985`.
-- Full-universe authored source pages: `15`.
-- Full-universe rationale records: `15`.
+- Full-universe authored source pages: `20`.
+- Full-universe rationale records: `20`.
 - Missing audio queue rows: `0`.
 - Exact existing audio reused in native resources and app assets: `15`.
 
@@ -48,6 +48,11 @@ Scripts in this checkpoint only inventory, validate, package, and audit authored
 | `viet-hello-chao-co` | Chào cô | aunt-age greeting | pass | pass | pass | pass | exact reused |
 | `viet-smalltalk-di-dau-day` | Đi đâu đấy? | greeting follow-up | pass | pass | pass | pass | exact reused |
 | `viet-smalltalk-nice-to-meet-you` | Rất vui được gặp bạn | first-meeting line | pass | pass | pass | pass | exact reused |
+| `viet-thanks-cam-on-nhieu` | Cảm ơn nhiều | stronger gratitude | pass | pass | pass | pass | exact reused |
+| `viet-thanks-khong-co-gi` | Không có gì | thank-you reply | pass | pass | pass | pass | exact reused |
+| `viet-thanks-cam-on-toi-hieu-roi` | Cảm ơn, tôi hiểu rồi | directions closeout | pass | pass | pass | pass | exact reused |
+| `viet-thanks-cam-on-ban-da-hieu` | Cảm ơn bạn đã hiểu | patient clarification thanks | pass | pass | pass | pass | exact reused |
+| `viet-thanks-khong-cam-on` | Không, cảm ơn | polite refusal | pass | pass | pass | pass | exact reused |
 
 ## Validation Evidence
 
@@ -70,9 +75,9 @@ node --test native-ios/scripts/generate-viet-sqlite-fixture.test.js
 
 Key results:
 
-- Full-universe source validator: `15` task phrase rows, `15` authored pages, `15` rationale records.
+- Full-universe source validator: `15` task phrase rows, `20` authored pages, `20` rationale records.
 - Tier 1 validator: `150` strong pages, `0` failure rows.
-- Authored-page audio audit: `477` required rows, `0` missing.
+- Authored-page audio audit: `481` required rows, `0` missing.
 - SQLite validator: `934` source phrases, `926` canonical pages, `934` resolved phrases, `0` missing audio rows, `0` banned wording matches.
 - SQLite generator test: `1` pass, `0` fail.
 - Family variant validation: passed.
@@ -81,8 +86,8 @@ Key results:
 
 The review gate is not approved for final Task Done because only the first natural expansion set has been authored.
 
-- First-time traveler UX: pass for the 15 checkpoint pages; final approval waits for the whole page universe.
-- Copy and learning flow: pass for the 15 checkpoint pages; final approval waits for the whole page universe.
+- First-time traveler UX: pass for the 20 checkpoint pages; final approval waits for the whole page universe.
+- Copy and learning flow: pass for the 20 checkpoint pages; final approval waits for the whole page universe.
 - Technical efficiency: pass for the checkpoint lane; final approval waits for the complete canonical graph, screenshots, and final audit.
 
 ## Remaining Work

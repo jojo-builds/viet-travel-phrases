@@ -3,12 +3,13 @@
 Date: 2026-04-29
 Status: Authored checkpoint, not Task Done
 Checkpoint commit hash: `ac74bcd`
+Latest validation checkpoint: pending
 
 ## Outcome
 
 Created the durable full-universe authored-source lane and committed the first page-by-page authored expansion from the `Xin chào` lesson.
 
-This is not the final task closeout. The current checkpoint adds `15` net-new canonical pages; Task Done still requires at least `2,000` net-new pages and final review approval across the whole graph.
+This is not the final task closeout. The current checkpoint adds `15` net-new canonical pages and upgrades `20` pages into the durable full-universe authored lane; Task Done still requires at least `2,000` net-new pages and final review approval across the whole graph.
 
 ## Counts
 
@@ -17,7 +18,7 @@ This is not the final task closeout. The current checkpoint adds `15` net-new ca
 - Final phrase row count in this checkpoint: `934`.
 - Net-new canonical pages in this checkpoint: `15`.
 - Remaining net-new pages needed: `1,985`.
-- Pages upgraded into the full-universe lane: `15`.
+- Pages upgraded into the full-universe lane: `20`.
 - Duplicate canonical Vietnamese page groups: `0`.
 - Broken link count in validators: `0`.
 - Missing audio queue count: `0`.
@@ -65,8 +66,8 @@ All `15` checkpoint phrases reuse exact existing native audio. Those exact files
 
 Checkpoint review:
 
-- First-time traveler UX: pass for the 15 pages in this checkpoint.
-- Copy and learning flow: pass for the 15 pages in this checkpoint.
+- First-time traveler UX: pass for the 20 pages in this checkpoint.
+- Copy and learning flow: pass for the 20 pages in this checkpoint.
 - Technical efficiency: pass for the authored-source lane and generated resources in this checkpoint.
 
 Final review:

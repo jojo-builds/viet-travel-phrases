@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generatedAt": "2026-04-29T15:22:45.986Z",
+    "generatedAt": "2026-04-29T15:32:14.043Z",
     "tierOneFamilyCount": 150,
-    "requiredAudioCount": 477,
+    "requiredAudioCount": 481,
     "missingAudioCount": 0
   },
   "required": [
@@ -244,22 +244,6 @@
       "kind": "phrase",
       "audioKey": "breakdown-chao",
       "text": "Chào",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-polite-no-thanks",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-polite-4-first",
-      "text": "Không,",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-polite-no-thanks",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "polite-2",
-      "text": "cảm ơn",
       "resolved": true
     },
     {
@@ -1895,22 +1879,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-directions-understand-now",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-cam-on-da6d4fa684",
-      "text": "Cảm ơn,",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-directions-understand-now",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first",
-      "text": "tôi",
-      "resolved": true
-    },
-    {
       "pageID": "viet-family-airport-immigration",
       "sectionID": "hero",
       "kind": "hero",
@@ -2644,6 +2612,14 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-dien-thoai-bad3a61e57",
       "text": "Điện thoại",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-phone-battery-dead",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first",
+      "text": "tôi",
       "resolved": true
     },
     {
@@ -3631,14 +3607,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-phrase-polite-thank-you-polite",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-nhieu-5128d5a1d4",
-      "text": "nhiều",
-      "resolved": true
-    },
-    {
       "pageID": "viet-phrase-repair-number-amount",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -3759,6 +3727,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-thanks-cam-on-toi-hieu-roi",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "repair-5",
+      "text": "Chỉ trên bản đồ giúp tôi được không?",
+      "resolved": true
+    },
+    {
       "pageID": "viet-hello-chao-anh",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -3820,6 +3796,62 @@
       "kind": "breakdown",
       "audioKey": "breakdown-chao",
       "text": "chào",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thanks-cam-on-nhieu",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "v900-poli-basi-no-problem",
+      "text": "Không có gì",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thanks-cam-on-nhieu",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "v500-unde-repa-thank-you-for-understanding",
+      "text": "Cảm ơn bạn đã hiểu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thanks-khong-cam-on",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "polite-2",
+      "text": "cảm ơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thanks-khong-cam-on",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "v500-mone-numb-pric-no-thanks-maybe-later",
+      "text": "Không, cảm ơn, có thể để sau",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thanks-khong-cam-on",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "v500-soci-smal-talk-no-thank-you-im-not-interested",
+      "text": "Không, cảm ơn, tôi không quan tâm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thanks-khong-cam-on",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "v900-shop-no-thank-you-ill-look-around-first",
+      "text": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thanks-cam-on-ban-da-hieu",
+      "sectionID": "natural-variations",
+      "kind": "phrase",
+      "audioKey": "repair-premium-simpler-words",
+      "text": "Bạn có thể sử dụng những từ đơn giản hơn?",
       "resolved": true
     }
   ],

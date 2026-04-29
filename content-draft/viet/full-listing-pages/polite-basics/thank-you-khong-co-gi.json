@@ -1,0 +1,25 @@
+{
+  "id": "viet-thanks-khong-co-gi",
+  "familyID": "v900-poli-basi-no-problem",
+  "phraseID": "v900-poli-basi-no-problem",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Không có gì",
+  "englishTitle": "No problem",
+  "pronunciation": "khong co gi",
+  "summary": "A friendly reply when someone thanks you.",
+  "iconName": "hand.thumbsup.fill",
+  "tintName": "green",
+  "categoryIDs": ["gratitude", "polite-basics"],
+  "audioKey": "v900-poli-basi-no-problem",
+  "sections": [
+    {"id": "at-glance", "title": "At a glance", "body": "Không có gì is the reply to a thank-you: no problem, it is nothing, you are welcome. It is useful when a hotel worker, driver, classmate, or local thanks you for waiting, moving, paying, or being flexible."},
+    {"id": "standard-way", "title": "The standard way", "body": "Say Không có gì when you want to put the other person at ease after they thank you.", "phrases": [{"id": "v900-poli-basi-no-problem", "vietnamese": "Không có gì", "english": "No problem", "pronunciation": "khong co gi", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "v900-poli-basi-no-problem"}]},
+    {"id": "breakdown", "title": "Break it down", "body": "The phrase literally says there is not anything to worry about.", "breakdown": [{"id": "khong", "vietnamese": "Không", "english": "no / not", "audioKey": null}, {"id": "co-gi", "vietnamese": "có gì", "english": "anything / something", "audioKey": null}, {"id": "full", "vietnamese": "Không có gì", "english": "no problem", "audioKey": "v900-poli-basi-no-problem"}]},
+    {"id": "natural-variations", "title": "Thank-you pair", "body": "This phrase answers gratitude; these are the lines it most often pairs with.", "phrases": [{"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}, {"id": "polite-thank-you-polite", "vietnamese": "Cảm ơn nhiều", "english": "Thank you very much", "pronunciation": "kahm uhn nyew", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thanks-cam-on-nhieu", "audioKey": "polite-thank-you-polite"}, {"id": "polite-6", "vietnamese": "Không sao đâu", "english": "It’s okay", "pronunciation": "khong sao doh", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-polite-its-okay", "audioKey": "polite-6"}]},
+    {"id": "when-to-use", "title": "When to use it", "body": "Use it after someone thanks you for a small accommodation, apology, delay, or favor. It keeps the moment light and tells them there is no problem."},
+    {"id": "good-to-know", "title": "Good to know", "body": "Không có gì is a response, not the thank-you itself. If you are the one receiving help, start with Cảm ơn or Cảm ơn nhiều instead."},
+    {"id": "explore-next", "title": "Explore next", "body": "These nearby pages help you choose the right polite reply.", "phrases": [{"id": "polite-6", "vietnamese": "Không sao đâu", "english": "It’s okay", "pronunciation": "khong sao doh", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-polite-its-okay", "audioKey": "polite-6"}, {"id": "polite-3", "vietnamese": "Dạ", "english": "Yes / polite acknowledgment", "pronunciation": "yah", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-polite-acknowledge", "audioKey": "polite-3"}, {"id": "polite-7", "vietnamese": "Tạm biệt", "english": "Goodbye", "pronunciation": "tahm bee-et", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": "viet-goodbye", "audioKey": "polite-7"}]}
+  ],
+  "examples": [{"id": "v900-poli-basi-no-problem", "vietnamese": "Không có gì", "english": "No problem", "pronunciation": "khong co gi", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "v900-poli-basi-no-problem"}]
+}

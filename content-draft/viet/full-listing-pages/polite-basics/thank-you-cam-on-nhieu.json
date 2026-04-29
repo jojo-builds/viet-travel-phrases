@@ -1,0 +1,25 @@
+{
+  "id": "viet-thanks-cam-on-nhieu",
+  "familyID": "polite-thank-you",
+  "phraseID": "polite-thank-you-polite",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Cảm ơn nhiều",
+  "englishTitle": "Thank you very much",
+  "pronunciation": "kahm uhn nyew",
+  "summary": "A warmer thank-you when someone went out of their way for you.",
+  "iconName": "heart.fill",
+  "tintName": "green",
+  "categoryIDs": ["gratitude", "polite-basics"],
+  "audioKey": "polite-thank-you-polite",
+  "sections": [
+    {"id": "at-glance", "title": "At a glance", "body": "Cảm ơn nhiều is the easy way to make thank you feel stronger without becoming formal or dramatic. Use it when someone carries a bag, gives patient directions, waits for you, fixes a small problem, or does more than the minimum."},
+    {"id": "standard-way", "title": "The standard way", "body": "Say Cảm ơn nhiều when plain Cảm ơn feels a little too small for the help you received.", "phrases": [{"id": "polite-thank-you-polite", "vietnamese": "Cảm ơn nhiều", "english": "Thank you very much", "pronunciation": "kahm uhn nyew", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "polite-thank-you-polite"}]},
+    {"id": "breakdown", "title": "Break it down", "body": "The last word turns the thank-you up a notch.", "breakdown": [{"id": "cam-on", "vietnamese": "Cảm ơn", "english": "thank you", "audioKey": "polite-2"}, {"id": "nhieu", "vietnamese": "nhiều", "english": "much / a lot", "audioKey": null}, {"id": "full", "vietnamese": "Cảm ơn nhiều", "english": "thank you very much", "audioKey": "polite-thank-you-polite"}]},
+    {"id": "natural-variations", "title": "Nearby thank-yous", "body": "Choose the version that matches how much help you received.", "phrases": [{"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}, {"id": "v900-poli-basi-no-problem", "vietnamese": "Không có gì", "english": "No problem", "pronunciation": "khong co gi", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thanks-khong-co-gi", "audioKey": "v900-poli-basi-no-problem"}, {"id": "v500-unde-repa-thank-you-for-understanding", "vietnamese": "Cảm ơn bạn đã hiểu", "english": "Thank you for understanding", "pronunciation": "cam on ban da hieu", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-thanks-cam-on-ban-da-hieu", "audioKey": "v500-unde-repa-thank-you-for-understanding"}]},
+    {"id": "when-to-use", "title": "When to use it", "body": "Use it after patient help, extra effort, a favor, a ride adjustment, a staff member checking something twice, or a local explaining something slowly."},
+    {"id": "good-to-know", "title": "Good to know", "body": "Nhiều makes the phrase warmer, but the short sentence still feels natural. A calm voice and a smile usually carry the gratitude better than adding more words."},
+    {"id": "explore-next", "title": "Explore next", "body": "These help you respond after gratitude.", "phrases": [{"id": "v900-poli-basi-no-problem", "vietnamese": "Không có gì", "english": "No problem", "pronunciation": "khong co gi", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thanks-khong-co-gi", "audioKey": "v900-poli-basi-no-problem"}, {"id": "directions-7", "vietnamese": "Cảm ơn, tôi hiểu rồi", "english": "Thanks, I understand now", "pronunciation": "kahm uhn toy hyew roy", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-thanks-cam-on-toi-hieu-roi", "audioKey": "directions-7"}, {"id": "polite-7", "vietnamese": "Tạm biệt", "english": "Goodbye", "pronunciation": "tahm bee-et", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": "viet-goodbye", "audioKey": "polite-7"}]}
+  ],
+  "examples": [{"id": "polite-thank-you-polite", "vietnamese": "Cảm ơn nhiều", "english": "Thank you very much", "pronunciation": "kahm uhn nyew", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "polite-thank-you-polite"}]
+}

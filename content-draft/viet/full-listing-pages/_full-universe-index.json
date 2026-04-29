@@ -2,7 +2,7 @@
   "taskID": "TASK-VIET-2000-FULL-LISTING-PAGES-001",
   "status": "checkpoint",
   "sourcePolicy": "AI-authored page-by-page; scripts validate and package only",
-  "authoredPageCount": 15,
+  "authoredPageCount": 20,
   "originalSourcePhraseCount": 919,
   "newPhraseRowsInCheckpoint": 15,
   "pages": [
@@ -20,6 +20,11 @@
     {"pageID": "viet-hello-chao-chu", "phraseID": "hello-chao-chu", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
     {"pageID": "viet-hello-chao-co", "phraseID": "hello-chao-co", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
     {"pageID": "viet-smalltalk-di-dau-day", "phraseID": "smalltalk-di-dau-day", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
-    {"pageID": "viet-smalltalk-nice-to-meet-you", "phraseID": "smalltalk-nice-to-meet-you", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"}
+    {"pageID": "viet-smalltalk-nice-to-meet-you", "phraseID": "smalltalk-nice-to-meet-you", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-thanks-cam-on-nhieu", "phraseID": "polite-thank-you-polite", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-thanks-khong-co-gi", "phraseID": "v900-poli-basi-no-problem", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-thanks-cam-on-toi-hieu-roi", "phraseID": "directions-7", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-thanks-cam-on-ban-da-hieu", "phraseID": "v500-unde-repa-thank-you-for-understanding", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-thanks-khong-cam-on", "phraseID": "polite-4", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"}
   ]
 }

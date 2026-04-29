@@ -3,10 +3,10 @@
     "source": "../content-draft/viet/listing-pages",
     "fullUniverseSource": "../content-draft/viet/full-listing-pages",
     "tierOneFamilyCount": 150,
-    "resourceMainPageCount": 149,
-    "childPageCount": 15,
-    "fullUniversePageCount": 15,
-    "generatedAt": "2026-04-29T15:22:45.986Z"
+    "resourceMainPageCount": 147,
+    "childPageCount": 14,
+    "fullUniversePageCount": 20,
+    "generatedAt": "2026-04-29T15:32:14.043Z"
   },
   "pages": [
     {
@@ -398,7 +398,7 @@
               "pronunciation": "kahm uhn nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-phrase-polite-thank-you-polite",
+              "detailPageID": "viet-thanks-cam-on-nhieu",
               "audioKey": "polite-thank-you-polite"
             }
           ],
@@ -466,7 +466,7 @@
               "pronunciation": "khong kahm uhn",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-no-thanks",
+              "detailPageID": "viet-thanks-khong-cam-on",
               "audioKey": "polite-4"
             },
             {
@@ -653,7 +653,7 @@
               "pronunciation": "khong kahm uhn",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-no-thanks",
+              "detailPageID": "viet-thanks-khong-cam-on",
               "audioKey": "polite-4"
             },
             {
@@ -720,205 +720,6 @@
           "tintName": "red",
           "detailPageID": null,
           "audioKey": "polite-3"
-        }
-      ]
-    },
-    {
-      "id": "viet-family-polite-no-thanks",
-      "familyID": "polite-no-thanks",
-      "phraseID": "polite-4",
-      "tierRole": "tier1",
-      "depth": "baseline",
-      "title": "Không, cảm ơn",
-      "englishTitle": "No, thank you",
-      "pronunciation": "khong kahm uhn",
-      "summary": "Different ways to say \"No, thank you\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
-      "iconName": "hand.wave.fill",
-      "tintName": "red",
-      "categoryIDs": [
-        "polite-basics"
-      ],
-      "audioKey": "polite-4",
-      "sections": [
-        {
-          "id": "at-glance",
-          "title": "At a glance",
-          "body": "Không, cảm ơn answers the traveler question \"No, thank you\" in small service and first-contact moments. This helps you decline offers from vendors or service staff politely. Short refusal plus thanks is safer than just saying no. Its job is stating the limit before the order or interaction moves too far. Expect a confirmation, a substitute, or a question about what is allowed; then use Explore next if the reply creates another small task.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "breakdown",
-          "title": "Break it down",
-          "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-          "breakdown": [
-            {
-              "id": "polite-4-piece-1",
-              "vietnamese": "Không,",
-              "english": "not / no",
-              "audioKey": "breakdown-polite-4-first"
-            },
-            {
-              "id": "polite-4-piece-2",
-              "vietnamese": "cảm ơn",
-              "english": "thank you",
-              "audioKey": "polite-2"
-            },
-            {
-              "id": "polite-4-full",
-              "vietnamese": "Không, cảm ơn",
-              "english": "No, thank you",
-              "audioKey": "polite-4"
-            }
-          ],
-          "presentation": "breakdown-strip"
-        },
-        {
-          "id": "standard-way",
-          "title": "The standard way",
-          "body": "Start with Không, cảm ơn when \"No, thank you\" is the main thing you need understood. This helps you decline offers from vendors or service staff politely. It gives the other person room to answer with a confirmation, a substitute, or a question about what is allowed. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
-          "phrases": [
-            {
-              "id": "polite-4",
-              "vietnamese": "Không, cảm ơn",
-              "english": "No, thank you",
-              "pronunciation": "khong kahm uhn",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": null,
-              "audioKey": "polite-4"
-            }
-          ],
-          "presentation": "phrase-list"
-        },
-        {
-          "id": "why-it-matters",
-          "title": "Why it matters",
-          "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"No, thank you\", the useful move is stating the limit before the order or interaction moves too far. Confirm visually when the detail affects safety, health, or the final order.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "traveler-insight",
-          "title": "Traveler insight",
-          "body": "In Polite Basics, locals often answer with a confirmation, a substitute, or a question about what is allowed rather than a long explanation. That makes Không, cảm ơn strongest when you say it once, pause, and let the other person show the next step. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "when-to-use",
-          "title": "When to use it",
-          "body": "This helps you decline offers from vendors or service staff politely. It fits small service and first-contact moments, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Good to know",
-          "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "local-tip",
-          "title": "Local tip",
-          "body": "A small smile and a calm pace matter. These short phrases are often enough to make a service moment feel warmer.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
-          "phrases": [
-            {
-              "id": "polite-1",
-              "vietnamese": "Xin chào",
-              "english": "Hello",
-              "pronunciation": "sin chow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-polite-hello",
-              "audioKey": "polite-1"
-            },
-            {
-              "id": "polite-2",
-              "vietnamese": "Cảm ơn",
-              "english": "Thank you",
-              "pronunciation": "kahm uhn",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-thank-you",
-              "audioKey": "polite-2"
-            },
-            {
-              "id": "polite-3",
-              "vietnamese": "Dạ",
-              "english": "Yes / polite acknowledgment",
-              "pronunciation": "yah",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-polite-acknowledge",
-              "audioKey": "polite-3"
-            },
-            {
-              "id": "polite-5",
-              "vietnamese": "Xin lỗi",
-              "english": "Excuse me / sorry",
-              "pronunciation": "sin loy",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-excuse-sorry",
-              "audioKey": "polite-5"
-            },
-            {
-              "id": "polite-6",
-              "vietnamese": "Không sao đâu",
-              "english": "It’s okay",
-              "pronunciation": "khong sao doh",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-polite-its-okay",
-              "audioKey": "polite-6"
-            },
-            {
-              "id": "polite-7",
-              "vietnamese": "Tạm biệt",
-              "english": "Goodbye",
-              "pronunciation": "tahm bee-et",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-goodbye",
-              "audioKey": "polite-7"
-            },
-            {
-              "id": "v500-poli-basi-yes",
-              "vietnamese": "Đúng",
-              "english": "Yes",
-              "pronunciation": "Dung",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-v500-poli-basi-yes",
-              "audioKey": "v500-poli-basi-yes"
-            },
-            {
-              "id": "hello-chao",
-              "vietnamese": "Chào",
-              "english": "Hi / hello",
-              "pronunciation": "chow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-hello-chao",
-              "audioKey": "breakdown-chao"
-            }
-          ],
-          "presentation": "phrase-list"
-        }
-      ],
-      "examples": [
-        {
-          "id": "polite-4",
-          "vietnamese": "Không, cảm ơn",
-          "english": "No, thank you",
-          "pronunciation": "khong kahm uhn",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": null,
-          "audioKey": "polite-4"
         }
       ]
     },
@@ -1061,7 +862,7 @@
               "pronunciation": "khong kahm uhn",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-no-thanks",
+              "detailPageID": "viet-thanks-khong-cam-on",
               "audioKey": "polite-4"
             },
             {
@@ -1260,7 +1061,7 @@
               "pronunciation": "khong kahm uhn",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-no-thanks",
+              "detailPageID": "viet-thanks-khong-cam-on",
               "audioKey": "polite-4"
             },
             {
@@ -1459,7 +1260,7 @@
               "pronunciation": "khong kahm uhn",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-no-thanks",
+              "detailPageID": "viet-thanks-khong-cam-on",
               "audioKey": "polite-4"
             },
             {
@@ -13228,7 +13029,7 @@
               "pronunciation": "kahm uhn toy hyew roy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "blue",
-              "detailPageID": "viet-family-directions-understand-now",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
               "audioKey": "directions-7"
             },
             {
@@ -13437,7 +13238,7 @@
               "pronunciation": "kahm uhn toy hyew roy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "blue",
-              "detailPageID": "viet-family-directions-understand-now",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
               "audioKey": "directions-7"
             },
             {
@@ -13640,7 +13441,7 @@
               "pronunciation": "kahm uhn toy hyew roy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "blue",
-              "detailPageID": "viet-family-directions-understand-now",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
               "audioKey": "directions-7"
             },
             {
@@ -13837,7 +13638,7 @@
               "pronunciation": "kahm uhn toy hyew roy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "blue",
-              "detailPageID": "viet-family-directions-understand-now",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
               "audioKey": "directions-7"
             },
             {
@@ -14040,7 +13841,7 @@
               "pronunciation": "kahm uhn toy hyew roy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "blue",
-              "detailPageID": "viet-family-directions-understand-now",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
               "audioKey": "directions-7"
             },
             {
@@ -14243,7 +14044,7 @@
               "pronunciation": "kahm uhn toy hyew roy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "blue",
-              "detailPageID": "viet-family-directions-understand-now",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
               "audioKey": "directions-7"
             },
             {
@@ -14270,215 +14071,6 @@
           "tintName": "blue",
           "detailPageID": null,
           "audioKey": "directions-6"
-        }
-      ]
-    },
-    {
-      "id": "viet-family-directions-understand-now",
-      "familyID": "directions-understand-now",
-      "phraseID": "directions-7",
-      "tierRole": "tier1",
-      "depth": "deep",
-      "title": "Cảm ơn, tôi hiểu rồi",
-      "englishTitle": "Thanks, I understand now",
-      "pronunciation": "kahm uhn toy hyew roy",
-      "summary": "Different ways to say \"Thanks, I understand now\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
-      "iconName": "location.fill",
-      "tintName": "blue",
-      "categoryIDs": [
-        "directions-navigation"
-      ],
-      "audioKey": "directions-7",
-      "sections": [
-        {
-          "id": "at-glance",
-          "title": "At a glance",
-          "body": "Cảm ơn, tôi hiểu rồi answers the traveler question \"Thanks, I understand now\" in finding places, turns, distance, and walking directions. This is for when the directions finally make sense and you are ready to move. This is useful when the other person kept helping and you want to end the exchange cleanly. Its job is making the next practical step easy for the other person to choose. Expect a clear reply, a pointed detail, or a simple follow-up; then use Explore next if the reply creates another small task.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "breakdown",
-          "title": "Break it down",
-          "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-          "breakdown": [
-            {
-              "id": "directions-7-piece-1",
-              "vietnamese": "Cảm ơn,",
-              "english": "thank you",
-              "audioKey": "breakdown-authored-cam-on-da6d4fa684"
-            },
-            {
-              "id": "directions-7-piece-2",
-              "vietnamese": "tôi",
-              "english": "I / me",
-              "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
-            },
-            {
-              "id": "directions-7-piece-3",
-              "vietnamese": "hiểu",
-              "english": "specific detail",
-              "audioKey": "breakdown-v500-unde-repa-i-understand-a-little-piece-2"
-            },
-            {
-              "id": "directions-7-piece-4",
-              "vietnamese": "rồi",
-              "english": "already / enough",
-              "audioKey": "breakdown-authored-roi-081cfe9299"
-            },
-            {
-              "id": "directions-7-full",
-              "vietnamese": "Cảm ơn, tôi hiểu rồi",
-              "english": "Thanks, I understand now",
-              "audioKey": "directions-7"
-            }
-          ],
-          "presentation": "breakdown-strip"
-        },
-        {
-          "id": "standard-way",
-          "title": "The standard way",
-          "body": "Start with Cảm ơn, tôi hiểu rồi when \"Thanks, I understand now\" is the main thing you need understood. This is for when the directions finally make sense and you are ready to move. It gives the other person room to answer with a clear reply, a pointed detail, or a simple follow-up. Show the map, address, or destination while you say it so the answer has a clear anchor.",
-          "phrases": [
-            {
-              "id": "directions-7",
-              "vietnamese": "Cảm ơn, tôi hiểu rồi",
-              "english": "Thanks, I understand now",
-              "pronunciation": "kahm uhn toy hyew roy",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "blue",
-              "detailPageID": null,
-              "audioKey": "directions-7"
-            }
-          ],
-          "presentation": "phrase-list"
-        },
-        {
-          "id": "why-it-matters",
-          "title": "Why it matters",
-          "body": "Direction phrases turn a vague travel problem into a specific next step. For \"Thanks, I understand now\", the useful move is making the next practical step easy for the other person to choose. Use the related phrases below if the exchange moves one step further.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "traveler-insight",
-          "title": "Traveler insight",
-          "body": "In Directions & Navigation, locals often answer with a clear reply, a pointed detail, or a simple follow-up rather than a long explanation. That makes Cảm ơn, tôi hiểu rồi strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "when-to-use",
-          "title": "When to use it",
-          "body": "This is for when the directions finally make sense and you are ready to move. It fits finding places, turns, distance, and walking directions, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Good to know",
-          "body": "If the answer is long, ask them to point or type it. Street directions can be hard to catch by ear.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "local-tip",
-          "title": "Local tip",
-          "body": "Show the map or address first, then ask the phrase. The answer is easier to understand when both of you see the same place.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "nearby-phrases",
-          "title": "Useful nearby phrases",
-          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
-          "phrases": [
-            {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "blue",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
-            },
-            {
-              "id": "directions-2",
-              "vietnamese": "Ở gần đây không?",
-              "english": "Is it near here?",
-              "pronunciation": "uh gun day khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "blue",
-              "detailPageID": "viet-family-directions-near",
-              "audioKey": "directions-2"
-            },
-            {
-              "id": "directions-3",
-              "vietnamese": "Đi bộ mất bao lâu?",
-              "english": "How long does it take on foot?",
-              "pronunciation": "dee boh mut bao low",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "blue",
-              "detailPageID": "viet-family-directions-how-long",
-              "audioKey": "directions-3"
-            },
-            {
-              "id": "directions-4",
-              "vietnamese": "Rẽ trái ở đâu?",
-              "english": "Where do I turn left?",
-              "pronunciation": "reh chai uh dow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "blue",
-              "detailPageID": "viet-family-directions-turn-left",
-              "audioKey": "directions-4"
-            }
-          ],
-          "presentation": "horizontal-phrase-cards"
-        },
-        {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
-          "phrases": [
-            {
-              "id": "directions-5",
-              "vietnamese": "Tôi rẽ phải đúng không?",
-              "english": "Should I turn right?",
-              "pronunciation": "toy reh fai zoong khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "blue",
-              "detailPageID": "viet-family-directions-turn-right",
-              "audioKey": "directions-5"
-            },
-            {
-              "id": "directions-6",
-              "vietnamese": "Tôi đi thẳng phải không?",
-              "english": "Should I go straight?",
-              "pronunciation": "toy dee thang fai khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "blue",
-              "detailPageID": "viet-family-directions-go-straight",
-              "audioKey": "directions-6"
-            },
-            {
-              "id": "v500-dire-navi-where-is-the-nearest-restroom",
-              "vietnamese": "Nhà vệ sinh gần nhất ở đâu?",
-              "english": "Where is the nearest restroom?",
-              "pronunciation": "Nha ve sinh gan nhat o dau",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "blue",
-              "detailPageID": "viet-family-v500-dire-navi-where-is-the-nearest-restroom",
-              "audioKey": "v500-dire-navi-where-is-the-nearest-restroom"
-            }
-          ],
-          "presentation": "phrase-list"
-        }
-      ],
-      "examples": [
-        {
-          "id": "directions-7",
-          "vietnamese": "Cảm ơn, tôi hiểu rồi",
-          "english": "Thanks, I understand now",
-          "pronunciation": "kahm uhn toy hyew roy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": null,
-          "audioKey": "directions-7"
         }
       ]
     },
@@ -27041,7 +26633,7 @@
               "pronunciation": "khong kahm uhn",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-no-thanks",
+              "detailPageID": "viet-thanks-khong-cam-on",
               "audioKey": "polite-4"
             },
             {
@@ -27931,7 +27523,7 @@
               "pronunciation": "kahm uhn toy hyew roy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "blue",
-              "detailPageID": "viet-family-directions-understand-now",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
               "audioKey": "directions-7"
             }
           ],
@@ -31329,155 +30921,6 @@
       ]
     },
     {
-      "id": "viet-phrase-polite-thank-you-polite",
-      "familyID": "polite-thank-you",
-      "phraseID": "polite-thank-you-polite",
-      "tierRole": "child",
-      "depth": "baseline",
-      "title": "Cảm ơn nhiều",
-      "englishTitle": "Thank you very much",
-      "pronunciation": "kahm uhn nyew",
-      "summary": "A focused guide to when Cảm ơn nhiều sounds more natural than Cảm ơn.",
-      "iconName": "hand.wave.fill",
-      "tintName": "red",
-      "categoryIDs": [
-        "polite-basics"
-      ],
-      "audioKey": "polite-thank-you-polite",
-      "sections": [
-        {
-          "id": "at-glance",
-          "title": "At a glance",
-          "body": "Cảm ơn nhiều is useful when \"Thank you very much\" needs a slightly different tone or setting. Use this when someone went out of their way for you.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "breakdown",
-          "title": "Break it down",
-          "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-          "breakdown": [
-            {
-              "id": "polite-thank-you-polite-piece-1",
-              "vietnamese": "Cảm ơn",
-              "english": "thank you",
-              "audioKey": "polite-2"
-            },
-            {
-              "id": "polite-thank-you-polite-piece-2",
-              "vietnamese": "nhiều",
-              "english": "much / many",
-              "audioKey": "breakdown-authored-nhieu-5128d5a1d4"
-            },
-            {
-              "id": "polite-thank-you-polite-full",
-              "vietnamese": "Cảm ơn nhiều",
-              "english": "Thank you very much",
-              "audioKey": "polite-thank-you-polite"
-            }
-          ],
-          "presentation": "breakdown-strip"
-        },
-        {
-          "id": "when-to-use",
-          "title": "When to use it",
-          "body": "This is for when someone went out of their way for you. Use Cảm ơn when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "traveler-insight",
-          "title": "Traveler insight",
-          "body": "In Polite Basics, locals often answer with a short reply, a smile, a time, or a light follow-up question rather than a long explanation. That makes Cảm ơn nhiều strongest when you say it once, pause, and let the other person show the next step. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Good to know",
-          "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Nearby phrases keep the conversation moving after this one.",
-          "phrases": [
-            {
-              "id": "polite-2",
-              "vietnamese": "Cảm ơn",
-              "english": "Thank you",
-              "pronunciation": "kahm uhn",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-thank-you",
-              "audioKey": "polite-2"
-            },
-            {
-              "id": "polite-1",
-              "vietnamese": "Xin chào",
-              "english": "Hello",
-              "pronunciation": "sin chow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-polite-hello",
-              "audioKey": "polite-1"
-            },
-            {
-              "id": "polite-3",
-              "vietnamese": "Dạ",
-              "english": "Yes / polite acknowledgment",
-              "pronunciation": "yah",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-polite-acknowledge",
-              "audioKey": "polite-3"
-            },
-            {
-              "id": "polite-4",
-              "vietnamese": "Không, cảm ơn",
-              "english": "No, thank you",
-              "pronunciation": "khong kahm uhn",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-polite-no-thanks",
-              "audioKey": "polite-4"
-            },
-            {
-              "id": "polite-5",
-              "vietnamese": "Xin lỗi",
-              "english": "Excuse me / sorry",
-              "pronunciation": "sin loy",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-excuse-sorry",
-              "audioKey": "polite-5"
-            },
-            {
-              "id": "polite-6",
-              "vietnamese": "Không sao đâu",
-              "english": "It’s okay",
-              "pronunciation": "khong sao doh",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-polite-its-okay",
-              "audioKey": "polite-6"
-            }
-          ],
-          "presentation": "phrase-list"
-        }
-      ],
-      "examples": [
-        {
-          "id": "polite-thank-you-polite",
-          "vietnamese": "Cảm ơn nhiều",
-          "english": "Thank you very much",
-          "pronunciation": "kahm uhn nyew",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": null,
-          "audioKey": "polite-thank-you-polite"
-        }
-      ]
-    },
-    {
       "id": "viet-phrase-repair-slower-polite",
       "familyID": "repair-slower",
       "phraseID": "repair-slower-polite",
@@ -33738,6 +33181,182 @@
       ]
     },
     {
+      "id": "viet-thanks-cam-on-toi-hieu-roi",
+      "familyID": "directions-understand-now",
+      "phraseID": "directions-7",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Cảm ơn, tôi hiểu rồi",
+      "englishTitle": "Thanks, I understand now",
+      "pronunciation": "kahm uhn toy hyew roy",
+      "summary": "A clean way to end a directions explanation once it makes sense.",
+      "iconName": "checkmark.circle.fill",
+      "tintName": "orange",
+      "categoryIDs": [
+        "directions-navigation",
+        "gratitude"
+      ],
+      "audioKey": "directions-7",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Cảm ơn, tôi hiểu rồi tells the helper that the directions finally make sense and you are ready to move. It is useful after someone repeats a route, points on a map, writes an address, or explains a stop.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say this when you want to thank the person and close the explanation kindly.",
+          "phrases": [
+            {
+              "id": "directions-7",
+              "vietnamese": "Cảm ơn, tôi hiểu rồi",
+              "english": "Thanks, I understand now",
+              "pronunciation": "kahm uhn toy hyew roy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": null,
+              "audioKey": "directions-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The sentence combines gratitude with a clear status update.",
+          "breakdown": [
+            {
+              "id": "cam-on",
+              "vietnamese": "Cảm ơn",
+              "english": "thank you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "toi-hieu",
+              "vietnamese": "tôi hiểu",
+              "english": "I understand",
+              "audioKey": null
+            },
+            {
+              "id": "roi",
+              "vietnamese": "rồi",
+              "english": "now / already",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Cảm ơn, tôi hiểu rồi",
+              "english": "thanks, I understand now",
+              "audioKey": "directions-7"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "If you still need help",
+          "body": "Use these before closing the exchange if the route is not clear yet.",
+          "phrases": [
+            {
+              "id": "directions-1",
+              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+              "english": "Excuse me, how do I get there?",
+              "pronunciation": "cho hoy dee toy doh theh nao",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-directions-how-to-get",
+              "audioKey": "directions-1"
+            },
+            {
+              "id": "repair-1",
+              "vietnamese": "Làm ơn nói lại",
+              "english": "Please say that again",
+              "pronunciation": "lahm uhn noy lie",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-repeat",
+              "audioKey": "repair-1"
+            },
+            {
+              "id": "repair-5",
+              "vietnamese": "Chỉ trên bản đồ giúp tôi được không?",
+              "english": "Can you show me on the map?",
+              "pronunciation": "chee tren ban do zoop toy duoc khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-map",
+              "audioKey": "repair-5"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it after you understand the turn, stop, pickup point, counter, or walking route. It is especially helpful when the other person has spent time explaining.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "This phrase closes the loop. Say it only when you really are ready; if not, ask for a repeat or a map gesture first.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help before and after the directions moment.",
+          "phrases": [
+            {
+              "id": "polite-thank-you-polite",
+              "vietnamese": "Cảm ơn nhiều",
+              "english": "Thank you very much",
+              "pronunciation": "kahm uhn nyew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thanks-cam-on-nhieu",
+              "audioKey": "polite-thank-you-polite"
+            },
+            {
+              "id": "directions-2",
+              "vietnamese": "Ở gần đây không?",
+              "english": "Is it near here?",
+              "pronunciation": "uh gun day khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-directions-near",
+              "audioKey": "directions-2"
+            },
+            {
+              "id": "polite-7",
+              "vietnamese": "Tạm biệt",
+              "english": "Goodbye",
+              "pronunciation": "tahm bee-et",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-goodbye",
+              "audioKey": "polite-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "directions-7",
+          "vietnamese": "Cảm ơn, tôi hiểu rồi",
+          "english": "Thanks, I understand now",
+          "pronunciation": "kahm uhn toy hyew roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "directions-7"
+        }
+      ]
+    },
+    {
       "id": "viet-hello-alo",
       "familyID": "hello-alo",
       "phraseID": "hello-alo",
@@ -35942,6 +35561,516 @@
       ]
     },
     {
+      "id": "viet-thanks-cam-on-nhieu",
+      "familyID": "polite-thank-you",
+      "phraseID": "polite-thank-you-polite",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Cảm ơn nhiều",
+      "englishTitle": "Thank you very much",
+      "pronunciation": "kahm uhn nyew",
+      "summary": "A warmer thank-you when someone went out of their way for you.",
+      "iconName": "heart.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "gratitude",
+        "polite-basics"
+      ],
+      "audioKey": "polite-thank-you-polite",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Cảm ơn nhiều is the easy way to make thank you feel stronger without becoming formal or dramatic. Use it when someone carries a bag, gives patient directions, waits for you, fixes a small problem, or does more than the minimum.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Cảm ơn nhiều when plain Cảm ơn feels a little too small for the help you received.",
+          "phrases": [
+            {
+              "id": "polite-thank-you-polite",
+              "vietnamese": "Cảm ơn nhiều",
+              "english": "Thank you very much",
+              "pronunciation": "kahm uhn nyew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "polite-thank-you-polite"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The last word turns the thank-you up a notch.",
+          "breakdown": [
+            {
+              "id": "cam-on",
+              "vietnamese": "Cảm ơn",
+              "english": "thank you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "nhieu",
+              "vietnamese": "nhiều",
+              "english": "much / a lot",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Cảm ơn nhiều",
+              "english": "thank you very much",
+              "audioKey": "polite-thank-you-polite"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Nearby thank-yous",
+          "body": "Choose the version that matches how much help you received.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "v900-poli-basi-no-problem",
+              "vietnamese": "Không có gì",
+              "english": "No problem",
+              "pronunciation": "khong co gi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thanks-khong-co-gi",
+              "audioKey": "v900-poli-basi-no-problem"
+            },
+            {
+              "id": "v500-unde-repa-thank-you-for-understanding",
+              "vietnamese": "Cảm ơn bạn đã hiểu",
+              "english": "Thank you for understanding",
+              "pronunciation": "cam on ban da hieu",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-thanks-cam-on-ban-da-hieu",
+              "audioKey": "v500-unde-repa-thank-you-for-understanding"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it after patient help, extra effort, a favor, a ride adjustment, a staff member checking something twice, or a local explaining something slowly.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Nhiều makes the phrase warmer, but the short sentence still feels natural. A calm voice and a smile usually carry the gratitude better than adding more words.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help you respond after gratitude.",
+          "phrases": [
+            {
+              "id": "v900-poli-basi-no-problem",
+              "vietnamese": "Không có gì",
+              "english": "No problem",
+              "pronunciation": "khong co gi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thanks-khong-co-gi",
+              "audioKey": "v900-poli-basi-no-problem"
+            },
+            {
+              "id": "directions-7",
+              "vietnamese": "Cảm ơn, tôi hiểu rồi",
+              "english": "Thanks, I understand now",
+              "pronunciation": "kahm uhn toy hyew roy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
+              "audioKey": "directions-7"
+            },
+            {
+              "id": "polite-7",
+              "vietnamese": "Tạm biệt",
+              "english": "Goodbye",
+              "pronunciation": "tahm bee-et",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-goodbye",
+              "audioKey": "polite-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "polite-thank-you-polite",
+          "vietnamese": "Cảm ơn nhiều",
+          "english": "Thank you very much",
+          "pronunciation": "kahm uhn nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "polite-thank-you-polite"
+        }
+      ]
+    },
+    {
+      "id": "viet-thanks-khong-cam-on",
+      "familyID": "polite-no-thanks",
+      "phraseID": "polite-4",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Không, cảm ơn",
+      "englishTitle": "No, thank you",
+      "pronunciation": "khong kahm uhn",
+      "summary": "A polite refusal for vendors, offers, and small service choices.",
+      "iconName": "hand.raised.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "polite-basics",
+        "gratitude"
+      ],
+      "audioKey": "polite-4",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Không, cảm ơn is the clean travel phrase for refusing without sounding abrupt. It is useful with vendors, extra bags, taxi offers, refills, menu suggestions, and anything you do not want but want to decline kindly.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Không, cảm ơn when the answer is no but you want the interaction to stay friendly.",
+          "phrases": [
+            {
+              "id": "polite-4",
+              "vietnamese": "Không, cảm ơn",
+              "english": "No, thank you",
+              "pronunciation": "khong kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "polite-4"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The thank-you softens the refusal.",
+          "breakdown": [
+            {
+              "id": "khong",
+              "vietnamese": "Không",
+              "english": "no",
+              "audioKey": null
+            },
+            {
+              "id": "cam-on",
+              "vietnamese": "cảm ơn",
+              "english": "thank you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Không, cảm ơn",
+              "english": "no, thank you",
+              "audioKey": "polite-4"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Nearby refusals",
+          "body": "Use these when the refusal needs more context.",
+          "phrases": [
+            {
+              "id": "v500-mone-numb-pric-no-thanks-maybe-later",
+              "vietnamese": "Không, cảm ơn, có thể để sau",
+              "english": "No thanks, maybe later",
+              "pronunciation": "Khong cam on co the de sau",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-v500-mone-numb-pric-no-thanks-maybe-later",
+              "audioKey": "v500-mone-numb-pric-no-thanks-maybe-later"
+            },
+            {
+              "id": "v500-soci-smal-talk-no-thank-you-im-not-interested",
+              "vietnamese": "Không, cảm ơn, tôi không quan tâm",
+              "english": "No thank you, I’m not interested",
+              "pronunciation": "Khong cam on toi khong quan tam",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-v500-soci-smal-talk-no-thank-you-im-not-interested",
+              "audioKey": "v500-soci-smal-talk-no-thank-you-im-not-interested"
+            },
+            {
+              "id": "v900-shop-no-thank-you-ill-look-around-first",
+              "vietnamese": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước",
+              "english": "No thank you, I’ll look around first",
+              "pronunciation": "Khong cam on toi se xem xet xung quanh truoc",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-v900-shop-no-thank-you-ill-look-around-first",
+              "audioKey": "v900-shop-no-thank-you-ill-look-around-first"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when declining a product, a ride, a refill, a table offer, a menu suggestion, or a street approach. Say it once clearly and keep moving if the moment is brief.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The phrase is polite because it combines a clear no with gratitude. You do not need to explain unless the situation truly needs a reason.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help after a refusal or a simple polite exchange.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "v900-poli-basi-no-problem",
+              "vietnamese": "Không có gì",
+              "english": "No problem",
+              "pronunciation": "khong co gi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thanks-khong-co-gi",
+              "audioKey": "v900-poli-basi-no-problem"
+            },
+            {
+              "id": "polite-7",
+              "vietnamese": "Tạm biệt",
+              "english": "Goodbye",
+              "pronunciation": "tahm bee-et",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-goodbye",
+              "audioKey": "polite-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "polite-4",
+          "vietnamese": "Không, cảm ơn",
+          "english": "No, thank you",
+          "pronunciation": "khong kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "polite-4"
+        }
+      ]
+    },
+    {
+      "id": "viet-thanks-khong-co-gi",
+      "familyID": "v900-poli-basi-no-problem",
+      "phraseID": "v900-poli-basi-no-problem",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Không có gì",
+      "englishTitle": "No problem",
+      "pronunciation": "khong co gi",
+      "summary": "A friendly reply when someone thanks you.",
+      "iconName": "hand.thumbsup.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "gratitude",
+        "polite-basics"
+      ],
+      "audioKey": "v900-poli-basi-no-problem",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Không có gì is the reply to a thank-you: no problem, it is nothing, you are welcome. It is useful when a hotel worker, driver, classmate, or local thanks you for waiting, moving, paying, or being flexible.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Không có gì when you want to put the other person at ease after they thank you.",
+          "phrases": [
+            {
+              "id": "v900-poli-basi-no-problem",
+              "vietnamese": "Không có gì",
+              "english": "No problem",
+              "pronunciation": "khong co gi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "v900-poli-basi-no-problem"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The phrase literally says there is not anything to worry about.",
+          "breakdown": [
+            {
+              "id": "khong",
+              "vietnamese": "Không",
+              "english": "no / not",
+              "audioKey": null
+            },
+            {
+              "id": "co-gi",
+              "vietnamese": "có gì",
+              "english": "anything / something",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Không có gì",
+              "english": "no problem",
+              "audioKey": "v900-poli-basi-no-problem"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Thank-you pair",
+          "body": "This phrase answers gratitude; these are the lines it most often pairs with.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "polite-thank-you-polite",
+              "vietnamese": "Cảm ơn nhiều",
+              "english": "Thank you very much",
+              "pronunciation": "kahm uhn nyew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thanks-cam-on-nhieu",
+              "audioKey": "polite-thank-you-polite"
+            },
+            {
+              "id": "polite-6",
+              "vietnamese": "Không sao đâu",
+              "english": "It’s okay",
+              "pronunciation": "khong sao doh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-polite-its-okay",
+              "audioKey": "polite-6"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it after someone thanks you for a small accommodation, apology, delay, or favor. It keeps the moment light and tells them there is no problem.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Không có gì is a response, not the thank-you itself. If you are the one receiving help, start with Cảm ơn or Cảm ơn nhiều instead.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These nearby pages help you choose the right polite reply.",
+          "phrases": [
+            {
+              "id": "polite-6",
+              "vietnamese": "Không sao đâu",
+              "english": "It’s okay",
+              "pronunciation": "khong sao doh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-polite-its-okay",
+              "audioKey": "polite-6"
+            },
+            {
+              "id": "polite-3",
+              "vietnamese": "Dạ",
+              "english": "Yes / polite acknowledgment",
+              "pronunciation": "yah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-polite-acknowledge",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "polite-7",
+              "vietnamese": "Tạm biệt",
+              "english": "Goodbye",
+              "pronunciation": "tahm bee-et",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-goodbye",
+              "audioKey": "polite-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "v900-poli-basi-no-problem",
+          "vietnamese": "Không có gì",
+          "english": "No problem",
+          "pronunciation": "khong co gi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "v900-poli-basi-no-problem"
+        }
+      ]
+    },
+    {
       "id": "viet-smalltalk-di-dau-day",
       "familyID": "smalltalk-di-dau-day",
       "phraseID": "smalltalk-di-dau-day",
@@ -36290,6 +36419,182 @@
           "tintName": "green",
           "detailPageID": null,
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+        }
+      ]
+    },
+    {
+      "id": "viet-thanks-cam-on-ban-da-hieu",
+      "familyID": "v500-unde-repa-thank-you-for-understanding",
+      "phraseID": "v500-unde-repa-thank-you-for-understanding",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Cảm ơn bạn đã hiểu",
+      "englishTitle": "Thank you for understanding",
+      "pronunciation": "cam on ban da hieu",
+      "summary": "A warmer thank-you after a confusing or patient exchange.",
+      "iconName": "text.bubble.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "gratitude",
+        "understanding-repair"
+      ],
+      "audioKey": "v500-unde-repa-thank-you-for-understanding",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Cảm ơn bạn đã hiểu is for moments when the other person stayed patient while you explained, repeated, used translation, or corrected a misunderstanding. It thanks them for understanding, not just for a service.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say this after the problem is clear and the other person has accepted your explanation.",
+          "phrases": [
+            {
+              "id": "v500-unde-repa-thank-you-for-understanding",
+              "vietnamese": "Cảm ơn bạn đã hiểu",
+              "english": "Thank you for understanding",
+              "pronunciation": "cam on ban da hieu",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "v500-unde-repa-thank-you-for-understanding"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The phrase adds the person and the reason for your thanks.",
+          "breakdown": [
+            {
+              "id": "cam-on",
+              "vietnamese": "Cảm ơn",
+              "english": "thank you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "ban",
+              "vietnamese": "bạn",
+              "english": "you / friend",
+              "audioKey": null
+            },
+            {
+              "id": "da-hieu",
+              "vietnamese": "đã hiểu",
+              "english": "understood",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Cảm ơn bạn đã hiểu",
+              "english": "thank you for understanding",
+              "audioKey": "v500-unde-repa-thank-you-for-understanding"
+            }
+          ],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "natural-variations",
+          "title": "Before this thank-you",
+          "body": "These are often the phrases that make this closing line useful.",
+          "phrases": [
+            {
+              "id": "problems-2",
+              "vietnamese": "Tôi không hiểu",
+              "english": "I don't understand",
+              "pronunciation": "toy khom hee-ew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-understand",
+              "audioKey": "problems-2"
+            },
+            {
+              "id": "repair-premium-simpler-words",
+              "vietnamese": "Bạn có thể sử dụng những từ đơn giản hơn?",
+              "english": "Can you use simpler words?",
+              "pronunciation": "ban co the su dung nhung tu don gian hon",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-simpler-words",
+              "audioKey": "repair-premium-simpler-words"
+            },
+            {
+              "id": "repair-1",
+              "vietnamese": "Làm ơn nói lại",
+              "english": "Please say that again",
+              "pronunciation": "lahm uhn noy lie",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-repeat",
+              "audioKey": "repair-1"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it after a language mix-up, a patient explanation, a translated message, or a situation where the other person adjusted to your limited Vietnamese.",
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "This phrase is warmer than plain Cảm ơn because it names what you appreciate. It is a good closing line after a difficult interaction becomes cooperative.",
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help you move through and close the same kind of interaction.",
+          "phrases": [
+            {
+              "id": "directions-7",
+              "vietnamese": "Cảm ơn, tôi hiểu rồi",
+              "english": "Thanks, I understand now",
+              "pronunciation": "kahm uhn toy hyew roy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
+              "audioKey": "directions-7"
+            },
+            {
+              "id": "polite-thank-you-polite",
+              "vietnamese": "Cảm ơn nhiều",
+              "english": "Thank you very much",
+              "pronunciation": "kahm uhn nyew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thanks-cam-on-nhieu",
+              "audioKey": "polite-thank-you-polite"
+            },
+            {
+              "id": "polite-7",
+              "vietnamese": "Tạm biệt",
+              "english": "Goodbye",
+              "pronunciation": "tahm bee-et",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-goodbye",
+              "audioKey": "polite-7"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "v500-unde-repa-thank-you-for-understanding",
+          "vietnamese": "Cảm ơn bạn đã hiểu",
+          "english": "Thank you for understanding",
+          "pronunciation": "cam on ban da hieu",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v500-unde-repa-thank-you-for-understanding"
         }
       ]
     }

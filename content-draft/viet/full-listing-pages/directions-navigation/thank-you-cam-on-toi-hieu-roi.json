@@ -1,0 +1,25 @@
+{
+  "id": "viet-thanks-cam-on-toi-hieu-roi",
+  "familyID": "directions-understand-now",
+  "phraseID": "directions-7",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Cảm ơn, tôi hiểu rồi",
+  "englishTitle": "Thanks, I understand now",
+  "pronunciation": "kahm uhn toy hyew roy",
+  "summary": "A clean way to end a directions explanation once it makes sense.",
+  "iconName": "checkmark.circle.fill",
+  "tintName": "orange",
+  "categoryIDs": ["directions-navigation", "gratitude"],
+  "audioKey": "directions-7",
+  "sections": [
+    {"id": "at-glance", "title": "At a glance", "body": "Cảm ơn, tôi hiểu rồi tells the helper that the directions finally make sense and you are ready to move. It is useful after someone repeats a route, points on a map, writes an address, or explains a stop."},
+    {"id": "standard-way", "title": "The standard way", "body": "Say this when you want to thank the person and close the explanation kindly.", "phrases": [{"id": "directions-7", "vietnamese": "Cảm ơn, tôi hiểu rồi", "english": "Thanks, I understand now", "pronunciation": "kahm uhn toy hyew roy", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": null, "audioKey": "directions-7"}]},
+    {"id": "breakdown", "title": "Break it down", "body": "The sentence combines gratitude with a clear status update.", "breakdown": [{"id": "cam-on", "vietnamese": "Cảm ơn", "english": "thank you", "audioKey": "polite-2"}, {"id": "toi-hieu", "vietnamese": "tôi hiểu", "english": "I understand", "audioKey": null}, {"id": "roi", "vietnamese": "rồi", "english": "now / already", "audioKey": null}, {"id": "full", "vietnamese": "Cảm ơn, tôi hiểu rồi", "english": "thanks, I understand now", "audioKey": "directions-7"}]},
+    {"id": "natural-variations", "title": "If you still need help", "body": "Use these before closing the exchange if the route is not clear yet.", "phrases": [{"id": "directions-1", "vietnamese": "Cho hỏi, đi tới đó thế nào?", "english": "Excuse me, how do I get there?", "pronunciation": "cho hoy dee toy doh theh nao", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-family-directions-how-to-get", "audioKey": "directions-1"}, {"id": "repair-1", "vietnamese": "Làm ơn nói lại", "english": "Please say that again", "pronunciation": "lahm uhn noy lie", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-repair-repeat", "audioKey": "repair-1"}, {"id": "repair-5", "vietnamese": "Chỉ trên bản đồ giúp tôi được không?", "english": "Can you show me on the map?", "pronunciation": "chee tren ban do zoop toy duoc khong", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-repair-map", "audioKey": "repair-5"}]},
+    {"id": "when-to-use", "title": "When to use it", "body": "Use it after you understand the turn, stop, pickup point, counter, or walking route. It is especially helpful when the other person has spent time explaining."},
+    {"id": "good-to-know", "title": "Good to know", "body": "This phrase closes the loop. Say it only when you really are ready; if not, ask for a repeat or a map gesture first."},
+    {"id": "explore-next", "title": "Explore next", "body": "These help before and after the directions moment.", "phrases": [{"id": "polite-thank-you-polite", "vietnamese": "Cảm ơn nhiều", "english": "Thank you very much", "pronunciation": "kahm uhn nyew", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thanks-cam-on-nhieu", "audioKey": "polite-thank-you-polite"}, {"id": "directions-2", "vietnamese": "Ở gần đây không?", "english": "Is it near here?", "pronunciation": "uh gun day khong", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-family-directions-near", "audioKey": "directions-2"}, {"id": "polite-7", "vietnamese": "Tạm biệt", "english": "Goodbye", "pronunciation": "tahm bee-et", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": "viet-goodbye", "audioKey": "polite-7"}]}
+  ],
+  "examples": [{"id": "directions-7", "vietnamese": "Cảm ơn, tôi hiểu rồi", "english": "Thanks, I understand now", "pronunciation": "kahm uhn toy hyew roy", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": null, "audioKey": "directions-7"}]
+}
