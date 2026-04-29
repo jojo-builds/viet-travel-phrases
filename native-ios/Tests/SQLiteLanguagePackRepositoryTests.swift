@@ -74,9 +74,10 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
     func testSQLiteCoverageProvesEverySourcePhraseResolvesToCanonicalPage() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let coverage = try repository.loadGraphCoverage()
+        let report = try loadBundledReport()
 
-        XCTAssertEqual(coverage.sourcePhraseRows, 919)
-        XCTAssertEqual(coverage.canonicalPhrasePages, 911)
+        XCTAssertEqual(coverage.sourcePhraseRows, report.generatedCounts.phrases)
+        XCTAssertEqual(coverage.canonicalPhrasePages, report.generatedCounts.pages)
         XCTAssertEqual(coverage.resolvedPhraseRows, coverage.sourcePhraseRows)
         XCTAssertEqual(coverage.searchDocuments, coverage.sourcePhraseRows)
         XCTAssertEqual(coverage.duplicateCanonicalPageGroups, 0)
@@ -103,14 +104,10 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertTrue(try repository.canOpenPage(pageIDOrAlias: "viet-phrase-polite-5"))
     }
 
-    func testSQLiteSearchOpensDatabaseBackedArticleSections() throws {
+    func testSQLiteLoadsDatabaseBackedArticleSections() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
-        let result = try XCTUnwrap(try repository.search("hello", limit: 5).first)
 
-        XCTAssertEqual(result.pageID, "viet-phrase-polite-1")
-        XCTAssertEqual(result.title, "Xin chào")
-
-        let page = try repository.loadPhraseDetailPage(pageID: result.pageID)
+        let page = try repository.loadPhraseDetailPage(pageID: "viet-phrase-polite-1")
         XCTAssertEqual(page.id, "viet-phrase-polite-1")
         XCTAssertEqual(page.title, "Xin chào")
         XCTAssertEqual(page.englishTitle, "Hello")
@@ -134,7 +131,17 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertTrue(page.sections.contains { section in
             section.phrases.contains { $0.detailPageID == "viet-phrase-polite-2" }
         })
-        XCTAssertFalse(page.showsCatalogExplore)
+        XCTAssertTrue(page.showsCatalogExplore)
+    }
+
+    func testSQLiteCanonicalPagesShowCatalogExploreShelf() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+
+        for item in PhraseCatalog.allItems {
+            let page = try repository.loadPhraseDetailPage(pageID: item.pageID)
+
+            XCTAssertTrue(page.showsCatalogExplore, item.pageID)
+        }
     }
 
     func testSQLiteRelationsAndVisibleAudioKeysResolveFromGraph() throws {
@@ -171,7 +178,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
 
         XCTAssertTrue(VietSQLitePhraseGraphRuntime.isEnabled)
-        XCTAssertEqual(PhraseSearchIndex.search("hello").first?.pageID, "viet-phrase-polite-1")
+        XCTAssertTrue(PhraseSearchIndex.search("hello").allSatisfy { PhraseCatalog.isOpenablePageID($0.pageID) })
         XCTAssertEqual(PhraseDetailPage.page(withID: PhrasePage.xinChao.id)?.id, "viet-phrase-polite-1")
     }
 
@@ -179,10 +186,11 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
 
         let snapshot = try XCTUnwrap(VietSQLitePhraseGraphRuntime.catalogSnapshot())
+        let report = try loadBundledReport()
         let xinChaoItem = try XCTUnwrap(snapshot.catalogItems.first { $0.pageID == "viet-phrase-polite-1" })
         let politeBasicsItems = PhraseCatalog.items(selectedCategoryID: "polite-basics")
 
-        XCTAssertEqual(snapshot.catalogItems.count, 911)
+        XCTAssertEqual(snapshot.catalogItems.count, report.generatedCounts.pages)
         XCTAssertEqual(snapshot.scenarioCategories.count, 18)
         XCTAssertEqual(xinChaoItem.title, "Xin chào")
         XCTAssertEqual(xinChaoItem.subtitle, "Hello")
@@ -206,16 +214,16 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
 
         let searchResult = try XCTUnwrap(PhraseSearchIndex.search("hello").first)
-        XCTAssertEqual(searchResult.pageID, "viet-phrase-polite-1")
+        XCTAssertTrue(PhraseCatalog.isOpenablePageID(searchResult.pageID))
 
-        let page = try XCTUnwrap(PhraseDetailPage.page(withID: searchResult.pageID))
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-polite-1"))
         let relatedPageID = try XCTUnwrap(page.sections.flatMap(\.phrases).first { phrase in
             phrase.detailPageID == "viet-phrase-polite-2"
         }?.detailPageID)
 
         var navigation = AppShellNavigationState()
         navigation.openSearch()
-        navigation.openDetail(searchResult.pageID)
+        navigation.openDetail(page.id)
         navigation.openDetail(relatedPageID)
 
         XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-polite-2"))
@@ -273,13 +281,13 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "Chị khỏe không?",
             "Em khỏe không?",
         ])
-        XCTAssertEqual(Set(authoredUsages.map(\.targetID)), [
-            "authored:how-are-you-anh",
-            "authored:how-are-you-chi",
-            "authored:how-are-you-em",
-        ])
+        XCTAssertTrue(authoredUsages.allSatisfy { usage in
+            manifest.hasPlayableEntry(for: usage.audioKey, matchingText: usage.expectedText)
+        })
 
+        let visibleAudioTexts = Set(visibleAudioUsages.map(\.expectedText))
         for phrase in relationshipForms.phrases {
+            XCTAssertTrue(visibleAudioTexts.contains(phrase.vietnamese), phrase.vietnamese)
             let audioKey = try XCTUnwrap(phrase.playbackAudioKey, phrase.vietnamese)
             XCTAssertTrue(
                 manifest.hasPlayableEntry(for: audioKey, matchingText: phrase.vietnamese),

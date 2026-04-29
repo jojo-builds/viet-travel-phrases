@@ -535,7 +535,7 @@ final class VietSQLiteLanguagePackRepository {
                 sections: try loadSections(forPageID: pageID),
                 examples: [],
                 audioKey: audioKey,
-                showsCatalogExplore: false
+                showsCatalogExplore: true
             )
         }
     }
