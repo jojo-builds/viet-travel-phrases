@@ -3,7 +3,7 @@
   "familyID": "food-not-spicy",
   "phraseID": "food-not-spicy-clearer",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Ít cay thôi",
   "englishTitle": "Less spicy, please",
   "pronunciation": "eet kai thoy",
@@ -46,6 +46,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Ít cay thôi is the phrase to practice on this page. Use it when \"Less spicy, please\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "food-not-spicy-clearer",
+          "vietnamese": "Ít cay thôi",
+          "english": "Less spicy, please",
+          "pronunciation": "eet kai thoy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "audio-authored-it-cay-thoi-05b8e258a2"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

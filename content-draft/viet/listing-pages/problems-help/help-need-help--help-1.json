@@ -3,7 +3,7 @@
   "familyID": "help-need-help",
   "phraseID": "help-1",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Anh/chị giúp tôi với",
   "englishTitle": "Can you help me?",
   "pronunciation": "anh chee zoop toy voy",
@@ -52,6 +52,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Anh/chị giúp tôi với is the phrase to practice on this page. Use it when \"Can you help me?\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "help-1",
+          "vietnamese": "Anh/chị giúp tôi với",
+          "english": "Can you help me?",
+          "pronunciation": "anh chee zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "help-1"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

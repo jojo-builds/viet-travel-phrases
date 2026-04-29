@@ -305,6 +305,85 @@ function main() {
     throw new Error(`canonical pages with 3+ consecutive text-only sections: ${textOnlySectionRunCount}\n${sample}`);
   }
 
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page
+    WHERE completeness_status != 'deep';
+  `), "canonical pages not marked as full-depth article pages");
+
+  const incompleteArticleContractCount = Number(sqliteValue(`
+    WITH page_contract AS (
+      SELECT
+        pp.id AS page_id,
+        MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
+        MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
+        MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
+        MAX(CASE WHEN ps.section_key = 'relationship-words' THEN 1 ELSE 0 END) AS has_relationship_words,
+        MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
+        MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
+        MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
+        SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
+        SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
+      FROM phrase_page pp
+      JOIN page_section ps ON ps.page_id = pp.id
+      LEFT JOIN page_section_item psi ON psi.section_id = ps.id
+      GROUP BY pp.id
+    )
+    SELECT count(*)
+    FROM page_contract
+    WHERE page_id != 'viet-phrase-polite-1'
+      AND (
+        has_at_glance = 0
+        OR has_quick_or_standard = 0
+        OR has_breakdown = 0
+        OR has_relationship_words = 0
+        OR has_when_to_use = 0
+        OR has_good_to_know = 0
+        OR has_related_links = 0
+        OR article_phrase_rows = 0
+        OR breakdown_rows = 0
+      );
+  `));
+  if (incompleteArticleContractCount !== 0) {
+    const sample = sqliteValue(`
+      WITH page_contract AS (
+        SELECT
+          pp.id AS page_id,
+          pp.title AS page_title,
+          MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
+          MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
+          MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
+          MAX(CASE WHEN ps.section_key = 'relationship-words' THEN 1 ELSE 0 END) AS has_relationship_words,
+          MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
+          MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
+          MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
+          SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
+          SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
+        FROM phrase_page pp
+        JOIN page_section ps ON ps.page_id = pp.id
+        LEFT JOIN page_section_item psi ON psi.section_id = ps.id
+        GROUP BY pp.id
+      )
+      SELECT page_id || ': ' || page_title
+      FROM page_contract
+      WHERE page_id != 'viet-phrase-polite-1'
+        AND (
+          has_at_glance = 0
+          OR has_quick_or_standard = 0
+          OR has_breakdown = 0
+          OR has_relationship_words = 0
+          OR has_when_to_use = 0
+          OR has_good_to_know = 0
+          OR has_related_links = 0
+          OR article_phrase_rows = 0
+          OR breakdown_rows = 0
+        )
+      ORDER BY page_id
+      LIMIT 20;
+    `);
+    throw new Error(`canonical pages missing the full listing-page contract: ${incompleteArticleContractCount}\n${sample}`);
+  }
+
   assertZero(
     sqliteValue("SELECT count(*) FROM page_section_item WHERE item_kind = 'authored_phrase';"),
     "visible authored phrase rows without canonical phrase pages"
@@ -562,6 +641,8 @@ function main() {
   assertEqual(report.validation.missingRelationshipWordsSectionCount, 0, "report missing relationship-word shelf count");
   assertEqual(report.validation.badRelationshipWordsSectionCount, 0, "report incomplete relationship-word shelf count");
   assertEqual(report.validation.textOnlySectionRunCount, 0, "report text-only section run count");
+  assertEqual(report.validation.nonDeepCompletenessStatusCount, 0, "report non-full-depth page status count");
+  assertEqual(report.validation.incompleteArticleContractCount, 0, "report incomplete article contract count");
   assertEqual(report.validation.brokenRelationCount, 0, "report broken relation count");
   assertEqual(report.validation.searchDocumentsWithMissingPageTargets, 0, "report search target count");
   assertEqual(report.validation.pageEnglishTitlePhraseTextMismatchCount, 0, "report page English title mismatch count");

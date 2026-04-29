@@ -3,7 +3,7 @@
   "familyID": "transport-stop-here",
   "phraseID": "transport-stop-here-clearer",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Cho tôi xuống ngay đây",
   "englishTitle": "Please stop right here",
   "pronunciation": "cho toy zoong ngay day",
@@ -58,6 +58,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Cho tôi xuống ngay đây is the phrase to practice on this page. Use it when \"Please stop right here\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "transport-stop-here-clearer",
+          "vietnamese": "Cho tôi xuống ngay đây",
+          "english": "Please stop right here",
+          "pronunciation": "cho toy zoong ngay day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "transport-stop-here-clearer"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

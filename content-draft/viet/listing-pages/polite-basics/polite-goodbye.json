@@ -3,7 +3,7 @@
   "familyID": "polite-goodbye",
   "phraseID": "polite-7",
   "tierRole": "tier1",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Tạm biệt",
   "englishTitle": "Goodbye",
   "pronunciation": "tahm bee-et",
@@ -192,9 +192,9 @@
       "presentation": "phrase-list"
     },
     {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
       "phrases": [
         {
           "id": "hello-da-chao-anh-chi",
@@ -235,7 +235,15 @@
           "tintName": "red",
           "detailPageID": "viet-hello-good-afternoon",
           "audioKey": "audio-phrase-chao-buoi-chieu"
-        },
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
         {
           "id": "hello-chao-anh",
           "vietnamese": "Chào anh",
@@ -275,6 +283,46 @@
           "tintName": "red",
           "detailPageID": "viet-hello-chao-ong",
           "audioKey": "breakdown-viet-hello-ong-full"
+        },
+        {
+          "id": "hello-chao-ba",
+          "vietnamese": "Chào bà",
+          "english": "Hello to an elderly woman",
+          "pronunciation": "chow bah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-ba",
+          "audioKey": "breakdown-viet-hello-ba-full"
+        },
+        {
+          "id": "hello-chao-chu",
+          "vietnamese": "Chào chú",
+          "english": "Hello to an uncle-age man",
+          "pronunciation": "chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-chu",
+          "audioKey": "breakdown-viet-hello-chu-full"
+        },
+        {
+          "id": "hello-chao-co",
+          "vietnamese": "Chào cô",
+          "english": "Hello to an aunt-age woman",
+          "pronunciation": "chow koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-co",
+          "audioKey": "breakdown-viet-hello-co-full"
+        },
+        {
+          "id": "acknowledge-co",
+          "vietnamese": "Có",
+          "english": "Yes / there is",
+          "pronunciation": "koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-acknowledge-co",
+          "audioKey": "breakdown-food-5-first"
         }
       ],
       "presentation": "phrase-list"

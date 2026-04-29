@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-04-29T18:52:55.242Z",
+    "generatedAt": "2026-04-29T19:09:52.227Z",
     "tierOneFamilyCount": 150,
     "requiredAudioCount": 490,
     "missingAudioCount": 0
@@ -252,6 +252,14 @@
       "kind": "breakdown",
       "audioKey": "breakdown-polite-5-rest",
       "text": "lỗi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-excuse-sorry",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "breakdown-food-5-first",
+      "text": "Có",
       "resolved": true
     },
     {
@@ -1396,14 +1404,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-rau-0b99694876",
       "text": "rau",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-bottled-water",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-food-5-first",
-      "text": "Có",
       "resolved": true
     },
     {
@@ -3040,7 +3040,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
       "text": "Chị khỏe không?",
@@ -3048,7 +3048,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "audio-phrase-em-khoe-khong",
       "text": "Em khỏe không?",

@@ -3,7 +3,7 @@
   "familyID": "health-pharmacy",
   "phraseID": "health-1",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Nhà thuốc ở đâu?",
   "englishTitle": "Where is the pharmacy?",
   "pronunciation": "nya thoo-ok uh dow",
@@ -46,6 +46,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Nhà thuốc ở đâu? is the phrase to practice on this page. Use it when \"Where is the pharmacy?\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "health-1",
+          "vietnamese": "Nhà thuốc ở đâu?",
+          "english": "Where is the pharmacy?",
+          "pronunciation": "nya thoo-ok uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "health-1"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

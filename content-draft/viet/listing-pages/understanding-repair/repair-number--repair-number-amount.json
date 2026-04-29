@@ -3,7 +3,7 @@
   "familyID": "repair-number",
   "phraseID": "repair-number-amount",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Anh/chị vừa nói bao nhiêu?",
   "englishTitle": "How much did you say?",
   "pronunciation": "anh chee voo-ah noy bao nyew",
@@ -58,6 +58,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Anh/chị vừa nói bao nhiêu? is the phrase to practice on this page. Use it when \"How much did you say?\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "repair-number-amount",
+          "vietnamese": "Anh/chị vừa nói bao nhiêu?",
+          "english": "How much did you say?",
+          "pronunciation": "anh chee voo-ah noy bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "repair-number-amount"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

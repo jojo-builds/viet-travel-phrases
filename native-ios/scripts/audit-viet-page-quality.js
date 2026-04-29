@@ -92,12 +92,38 @@ const overTemplatePatterns = [
 function articleIssues(page) {
   const issues = [];
   const text = `${page.summary ?? ""} ${page.section_text ?? ""}`;
+  const sectionKeys = new Set(String(page.section_keys ?? "").split(" / ").filter(Boolean));
 
   if (Number(page.section_count) === 0) {
     issues.push("missing article sections");
   }
   if (Number(page.section_count) < 5 && page.id !== "viet-phrase-polite-1") {
     issues.push("too few article sections");
+  }
+  if (page.completeness_status !== "deep") {
+    issues.push(`not marked full-depth: ${page.completeness_status}`);
+  }
+  if (page.id !== "viet-phrase-polite-1") {
+    const hasQuickOrStandard = sectionKeys.has("quick-say") || sectionKeys.has("standard-way");
+    const hasRelated = sectionKeys.has("nearby-phrases") || sectionKeys.has("explore-next");
+    const requiredSections = [
+      ["at-glance", sectionKeys.has("at-glance")],
+      ["quick-say or standard-way", hasQuickOrStandard],
+      ["breakdown", sectionKeys.has("breakdown")],
+      ["relationship-words", sectionKeys.has("relationship-words")],
+      ["when-to-use", sectionKeys.has("when-to-use")],
+      ["good-to-know", sectionKeys.has("good-to-know")],
+      ["nearby-phrases or explore-next", hasRelated],
+    ];
+    const missingSections = requiredSections
+      .filter(([, present]) => !present)
+      .map(([label]) => label);
+    if (missingSections.length > 0) {
+      issues.push(`missing full article sections: ${missingSections.join(", ")}`);
+    }
+    if (Number(page.article_phrase_row_count) === 0) {
+      issues.push("missing phrase-row learning opportunities");
+    }
   }
   for (const pattern of overTemplatePatterns) {
     if (pattern.test(text)) {
@@ -130,6 +156,14 @@ function main() {
         )
       ) AS section_keys,
       (SELECT count(*) FROM page_section ps WHERE ps.page_id = pp.id) AS section_count,
+      (
+        SELECT count(*)
+        FROM page_section ps
+        JOIN page_section_item psi ON psi.section_id = ps.id
+        WHERE ps.page_id = pp.id
+          AND psi.item_kind = 'phrase'
+          AND ps.section_key != 'relationship-words'
+      ) AS article_phrase_row_count,
       (
         SELECT group_concat(ps.title || ' ' || ps.body, ' ')
         FROM page_section ps
@@ -164,8 +198,7 @@ function main() {
 
   function articleStatusLabel(page, hasArticleSections) {
     if (!hasArticleSections) return "missing article";
-    if (page.completeness_status === "deep") return "deep article";
-    return "complete article";
+    return "deep article";
   }
 
   const auditedRows = pages.map((page) => {

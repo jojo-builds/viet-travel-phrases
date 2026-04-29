@@ -3,7 +3,7 @@
   "familyID": "emergency-emergency",
   "phraseID": "emergency-5",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Cứu tôi với!",
   "englishTitle": "Help!",
   "pronunciation": "koo toy voy",
@@ -52,6 +52,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Cứu tôi với! is the phrase to practice on this page. Use it when \"Help!\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "emergency-5",
+          "vietnamese": "Cứu tôi với!",
+          "english": "Help!",
+          "pronunciation": "koo toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "emergency-5"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

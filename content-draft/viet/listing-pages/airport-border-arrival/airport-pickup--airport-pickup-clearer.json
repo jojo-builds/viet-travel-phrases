@@ -3,7 +3,7 @@
   "familyID": "airport-pickup",
   "phraseID": "airport-pickup-clearer",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Tôi gặp tài xế ở đâu?",
   "englishTitle": "Where do I meet the driver?",
   "pronunciation": "toy gap tai seh uh dow",
@@ -64,6 +64,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Tôi gặp tài xế ở đâu? is the phrase to practice on this page. Use it when \"Where do I meet the driver?\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "airport-pickup-clearer",
+          "vietnamese": "Tôi gặp tài xế ở đâu?",
+          "english": "Where do I meet the driver?",
+          "pronunciation": "toy gap tai seh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "airport-pickup-clearer"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

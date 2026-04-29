@@ -3,7 +3,7 @@
   "familyID": "hotel-more-supplies",
   "phraseID": "hotel-more-supplies-paper",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Cho tôi thêm giấy vệ sinh được không?",
   "englishTitle": "Can I have more toilet paper?",
   "pronunciation": "cho toy them zai veh sinh dook khong",
@@ -70,6 +70,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Cho tôi thêm giấy vệ sinh được không? is the phrase to practice on this page. Use it when \"Can I have more toilet paper?\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "hotel-more-supplies-paper",
+          "vietnamese": "Cho tôi thêm giấy vệ sinh được không?",
+          "english": "Can I have more toilet paper?",
+          "pronunciation": "cho toy them zai veh sinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "hotel-more-supplies-paper"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

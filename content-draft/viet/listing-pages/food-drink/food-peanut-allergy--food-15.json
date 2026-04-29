@@ -3,7 +3,7 @@
   "familyID": "food-peanut-allergy",
   "phraseID": "food-15",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Món này có trứng hay đậu phộng không?",
   "englishTitle": "Does this have egg or peanuts?",
   "pronunciation": "mon nai koh choong hai dow fohng khong",
@@ -82,6 +82,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Món này có trứng hay đậu phộng không? is the phrase to practice on this page. Use it when \"Does this have egg or peanuts?\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "food-15",
+          "vietnamese": "Món này có trứng hay đậu phộng không?",
+          "english": "Does this have egg or peanuts?",
+          "pronunciation": "mon nai koh choong hai dow fohng khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "food-15"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

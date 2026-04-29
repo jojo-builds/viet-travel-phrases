@@ -3,7 +3,7 @@
   "familyID": "repair-slower",
   "phraseID": "repair-slower-polite",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Nói chậm giúp tôi được không?",
   "englishTitle": "Could you speak a little slower, please?",
   "pronunciation": "noy chuhm zoop toy dook khong",
@@ -58,6 +58,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Nói chậm giúp tôi được không? is the phrase to practice on this page. Use it when \"Could you speak a little slower, please?\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "repair-slower-polite",
+          "vietnamese": "Nói chậm giúp tôi được không?",
+          "english": "Could you speak a little slower, please?",
+          "pronunciation": "noy chuhm zoop toy dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "repair-slower-polite"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

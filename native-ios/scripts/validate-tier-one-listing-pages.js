@@ -205,6 +205,9 @@ function classifyPage(page, pageIDSet) {
   if (missingSections.length > 0) {
     issues.push(`missing sections: ${missingSections.join(", ")}`);
   }
+  if (page.depth !== "deep") {
+    issues.push(`not marked full-depth: ${page.depth}`);
+  }
 
   issues.push(...breakdownQualityIssues(page));
   issues.push(...textOnlySectionRunIssues(page));

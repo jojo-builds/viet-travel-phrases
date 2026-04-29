@@ -6,7 +6,7 @@
     "resourceMainPageCount": 144,
     "childPageCount": 14,
     "fullUniversePageCount": 35,
-    "generatedAt": "2026-04-29T18:52:55.242Z"
+    "generatedAt": "2026-04-29T19:09:52.227Z"
   },
   "pages": [
     {
@@ -324,7 +324,7 @@
       "familyID": "polite-thank-you",
       "phraseID": "polite-2",
       "tierRole": "tier1",
-      "depth": "support",
+      "depth": "deep",
       "title": "Cảm ơn",
       "englishTitle": "Thank you",
       "pronunciation": "kahm uhn",
@@ -637,7 +637,7 @@
       "familyID": "polite-excuse-me",
       "phraseID": "polite-5",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Xin lỗi",
       "englishTitle": "Excuse me / sorry",
       "pronunciation": "sin loy",
@@ -826,9 +826,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "hello-da-chao-anh-chi",
@@ -869,7 +869,15 @@
               "tintName": "red",
               "detailPageID": "viet-hello-good-afternoon",
               "audioKey": "audio-phrase-chao-buoi-chieu"
-            },
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
             {
               "id": "hello-chao-anh",
               "vietnamese": "Chào anh",
@@ -909,6 +917,46 @@
               "tintName": "red",
               "detailPageID": "viet-hello-chao-ong",
               "audioKey": "breakdown-viet-hello-ong-full"
+            },
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-ba",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            },
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chu",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            },
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            },
+            {
+              "id": "acknowledge-co",
+              "vietnamese": "Có",
+              "english": "Yes / there is",
+              "pronunciation": "koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-co",
+              "audioKey": "breakdown-food-5-first"
             }
           ],
           "presentation": "phrase-list"
@@ -932,7 +980,7 @@
       "familyID": "polite-its-okay",
       "phraseID": "polite-6",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Không sao đâu",
       "englishTitle": "It’s okay",
       "pronunciation": "khong sao doh",
@@ -1121,9 +1169,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "hello-da-chao-anh-chi",
@@ -1164,7 +1212,15 @@
               "tintName": "red",
               "detailPageID": "viet-hello-good-afternoon",
               "audioKey": "audio-phrase-chao-buoi-chieu"
-            },
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
             {
               "id": "hello-chao-anh",
               "vietnamese": "Chào anh",
@@ -1204,6 +1260,46 @@
               "tintName": "red",
               "detailPageID": "viet-hello-chao-ong",
               "audioKey": "breakdown-viet-hello-ong-full"
+            },
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-ba",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            },
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chu",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            },
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            },
+            {
+              "id": "acknowledge-co",
+              "vietnamese": "Có",
+              "english": "Yes / there is",
+              "pronunciation": "koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-co",
+              "audioKey": "breakdown-food-5-first"
             }
           ],
           "presentation": "phrase-list"
@@ -1227,7 +1323,7 @@
       "familyID": "polite-goodbye",
       "phraseID": "polite-7",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tạm biệt",
       "englishTitle": "Goodbye",
       "pronunciation": "tahm bee-et",
@@ -1416,9 +1512,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "hello-da-chao-anh-chi",
@@ -1459,7 +1555,15 @@
               "tintName": "red",
               "detailPageID": "viet-hello-good-afternoon",
               "audioKey": "audio-phrase-chao-buoi-chieu"
-            },
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
             {
               "id": "hello-chao-anh",
               "vietnamese": "Chào anh",
@@ -1499,6 +1603,46 @@
               "tintName": "red",
               "detailPageID": "viet-hello-chao-ong",
               "audioKey": "breakdown-viet-hello-ong-full"
+            },
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-ba",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            },
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chu",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            },
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            },
+            {
+              "id": "acknowledge-co",
+              "vietnamese": "Có",
+              "english": "Yes / there is",
+              "pronunciation": "koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-co",
+              "audioKey": "breakdown-food-5-first"
             }
           ],
           "presentation": "phrase-list"
@@ -22791,7 +22935,7 @@
       "familyID": "time-what-time",
       "phraseID": "time-1",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Mấy giờ?",
       "englishTitle": "What time?",
       "pronunciation": "may zyuh",
@@ -23046,7 +23190,7 @@
       "familyID": "time-today",
       "phraseID": "time-2",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Hôm nay",
       "englishTitle": "Today",
       "pronunciation": "hom nai",
@@ -23301,7 +23445,7 @@
       "familyID": "time-tomorrow-morning",
       "phraseID": "time-3",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Sáng mai",
       "englishTitle": "Tomorrow morning",
       "pronunciation": "sahng mai",
@@ -23556,7 +23700,7 @@
       "familyID": "time-have-booking",
       "phraseID": "time-4",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi có đặt chỗ",
       "englishTitle": "I have a booking",
       "pronunciation": "toy koh dat choh",
@@ -23817,7 +23961,7 @@
       "familyID": "time-open",
       "phraseID": "time-5",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Mấy giờ mở cửa?",
       "englishTitle": "What time does it open?",
       "pronunciation": "may zyuh muh koo-ah",
@@ -24084,7 +24228,7 @@
       "familyID": "shopping-size",
       "phraseID": "shop-1",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi muốn cỡ này",
       "englishTitle": "I want this size",
       "pronunciation": "toy moo-on guh nai",
@@ -24345,7 +24489,7 @@
       "familyID": "shopping-color",
       "phraseID": "shop-2",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Có màu khác không?",
       "englishTitle": "Do you have another color?",
       "pronunciation": "koh mau khak khong",
@@ -24612,7 +24756,7 @@
       "familyID": "shopping-try-on",
       "phraseID": "shop-3",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi thử cái này được không?",
       "englishTitle": "Can I try this on?",
       "pronunciation": "toy thoo gai nai dook khong",
@@ -24885,7 +25029,7 @@
       "familyID": "shopping-just-looking",
       "phraseID": "shop-4",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi chỉ xem thôi",
       "englishTitle": "I’m just looking",
       "pronunciation": "toy chee sem toy",
@@ -25152,7 +25296,7 @@
       "familyID": "shopping-pay-where",
       "phraseID": "shop-5",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Trả ở đâu?",
       "englishTitle": "Where do I pay?",
       "pronunciation": "tra uh dow",
@@ -25407,7 +25551,7 @@
       "familyID": "phone-wifi-password",
       "phraseID": "phone-1",
       "tierRole": "tier1",
-      "depth": "support",
+      "depth": "deep",
       "title": "Mật khẩu Wi-Fi là gì?",
       "englishTitle": "What is the Wi-Fi password?",
       "pronunciation": "mat khau wai-fai la zee",
@@ -25702,7 +25846,7 @@
       "familyID": "phone-sim",
       "phraseID": "phone-2",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Có bán SIM không?",
       "englishTitle": "Do you sell SIM cards?",
       "pronunciation": "koh ban sim khong",
@@ -25979,7 +26123,7 @@
       "familyID": "phone-battery-dead",
       "phraseID": "phone-3",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Điện thoại tôi hết pin rồi",
       "englishTitle": "My phone battery is dead",
       "pronunciation": "dyen thoai toy het pin roy",
@@ -26262,7 +26406,7 @@
       "familyID": "phone-charger",
       "phraseID": "phone-4",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Có sạc không?",
       "englishTitle": "Do you have a charger?",
       "pronunciation": "koh sahk khong",
@@ -26533,7 +26677,7 @@
       "familyID": "phone-charge-here",
       "phraseID": "phone-5",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi sạc điện thoại ở đây được không?",
       "englishTitle": "Can I charge my phone here?",
       "pronunciation": "toy sahk dyen thoai uh day dook khong",
@@ -26822,7 +26966,7 @@
       "familyID": "bathroom-where",
       "phraseID": "bath-1",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Nhà vệ sinh ở đâu?",
       "englishTitle": "Where is the bathroom?",
       "pronunciation": "nya veh sinh uh dow",
@@ -27057,7 +27201,7 @@
       "familyID": "bathroom-paper",
       "phraseID": "bath-2",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Có giấy vệ sinh không?",
       "englishTitle": "Do you have toilet paper?",
       "pronunciation": "koh zai veh sinh khong",
@@ -27310,7 +27454,7 @@
       "familyID": "bathroom-use",
       "phraseID": "bathroom-use",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi dùng nhà vệ sinh được không?",
       "englishTitle": "Can I use the bathroom?",
       "pronunciation": "toy zoong nya veh sinh dook khong",
@@ -27557,7 +27701,7 @@
       "familyID": "bathroom-soap",
       "phraseID": "bath-3",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Có xà phòng không?",
       "englishTitle": "Do you have soap?",
       "pronunciation": "koh sa fong khong",
@@ -27804,7 +27948,7 @@
       "familyID": "bathroom-wash-hands",
       "phraseID": "bath-4",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi rửa tay ở đây được không?",
       "englishTitle": "Can I wash my hands here?",
       "pronunciation": "toy zoo-ah tai uh day dook khong",
@@ -28063,7 +28207,7 @@
       "familyID": "bathroom-water",
       "phraseID": "bath-5",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi cần nước",
       "englishTitle": "I need water",
       "pronunciation": "toy gun nook",
@@ -30074,7 +30218,7 @@
       "familyID": "social-from-us",
       "phraseID": "smalltalk-1",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi đến từ Mỹ",
       "englishTitle": "I’m from the United States",
       "pronunciation": "toy den too mee",
@@ -30275,9 +30419,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "how-are-you-chi",
@@ -30298,6 +30442,94 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you-em",
               "audioKey": "audio-phrase-em-khoe-khong"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
+            {
+              "id": "smalltalk-2",
+              "vietnamese": "Tôi từ Anh",
+              "english": "I’m from England",
+              "pronunciation": "toy too anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-uk",
+              "audioKey": "smalltalk-2"
+            },
+            {
+              "id": "smalltalk-3",
+              "vietnamese": "Đây là lần đầu của tôi",
+              "english": "This is my first time",
+              "pronunciation": "day la lun dow koo-ah toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-first-time",
+              "audioKey": "smalltalk-3"
+            },
+            {
+              "id": "smalltalk-4",
+              "vietnamese": "Tôi thích Việt Nam",
+              "english": "I like Vietnam",
+              "pronunciation": "toy thik vyet nam",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-like-vietnam",
+              "audioKey": "smalltalk-4"
+            },
+            {
+              "id": "smalltalk-5",
+              "vietnamese": "Đồ ăn ngon quá",
+              "english": "The food is so good",
+              "pronunciation": "doh an ngon gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-food-good",
+              "audioKey": "smalltalk-5"
+            },
+            {
+              "id": "smalltalk-6",
+              "vietnamese": "Thời tiết nóng quá",
+              "english": "The weather is so hot",
+              "pronunciation": "thoy tyet nong gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-weather-hot",
+              "audioKey": "smalltalk-6"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -30321,7 +30553,7 @@
       "familyID": "social-from-uk",
       "phraseID": "smalltalk-2",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi từ Anh",
       "englishTitle": "I’m from England",
       "pronunciation": "toy too anh",
@@ -30516,9 +30748,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "how-are-you-chi",
@@ -30539,6 +30771,94 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you-em",
               "audioKey": "audio-phrase-em-khoe-khong"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
+            {
+              "id": "smalltalk-1",
+              "vietnamese": "Tôi đến từ Mỹ",
+              "english": "I’m from the United States",
+              "pronunciation": "toy den too mee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-us",
+              "audioKey": "smalltalk-1"
+            },
+            {
+              "id": "smalltalk-3",
+              "vietnamese": "Đây là lần đầu của tôi",
+              "english": "This is my first time",
+              "pronunciation": "day la lun dow koo-ah toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-first-time",
+              "audioKey": "smalltalk-3"
+            },
+            {
+              "id": "smalltalk-4",
+              "vietnamese": "Tôi thích Việt Nam",
+              "english": "I like Vietnam",
+              "pronunciation": "toy thik vyet nam",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-like-vietnam",
+              "audioKey": "smalltalk-4"
+            },
+            {
+              "id": "smalltalk-5",
+              "vietnamese": "Đồ ăn ngon quá",
+              "english": "The food is so good",
+              "pronunciation": "doh an ngon gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-food-good",
+              "audioKey": "smalltalk-5"
+            },
+            {
+              "id": "smalltalk-6",
+              "vietnamese": "Thời tiết nóng quá",
+              "english": "The weather is so hot",
+              "pronunciation": "thoy tyet nong gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-weather-hot",
+              "audioKey": "smalltalk-6"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -30562,7 +30882,7 @@
       "familyID": "social-first-time",
       "phraseID": "smalltalk-3",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Đây là lần đầu của tôi",
       "englishTitle": "This is my first time",
       "pronunciation": "day la lun dow koo-ah toy",
@@ -30769,9 +31089,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "how-are-you-chi",
@@ -30792,6 +31112,94 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you-em",
               "audioKey": "audio-phrase-em-khoe-khong"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
+            {
+              "id": "smalltalk-1",
+              "vietnamese": "Tôi đến từ Mỹ",
+              "english": "I’m from the United States",
+              "pronunciation": "toy den too mee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-us",
+              "audioKey": "smalltalk-1"
+            },
+            {
+              "id": "smalltalk-2",
+              "vietnamese": "Tôi từ Anh",
+              "english": "I’m from England",
+              "pronunciation": "toy too anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-uk",
+              "audioKey": "smalltalk-2"
+            },
+            {
+              "id": "smalltalk-4",
+              "vietnamese": "Tôi thích Việt Nam",
+              "english": "I like Vietnam",
+              "pronunciation": "toy thik vyet nam",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-like-vietnam",
+              "audioKey": "smalltalk-4"
+            },
+            {
+              "id": "smalltalk-5",
+              "vietnamese": "Đồ ăn ngon quá",
+              "english": "The food is so good",
+              "pronunciation": "doh an ngon gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-food-good",
+              "audioKey": "smalltalk-5"
+            },
+            {
+              "id": "smalltalk-6",
+              "vietnamese": "Thời tiết nóng quá",
+              "english": "The weather is so hot",
+              "pronunciation": "thoy tyet nong gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-weather-hot",
+              "audioKey": "smalltalk-6"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -30815,7 +31223,7 @@
       "familyID": "social-like-vietnam",
       "phraseID": "smalltalk-4",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi thích Việt Nam",
       "englishTitle": "I like Vietnam",
       "pronunciation": "toy thik vyet nam",
@@ -31016,9 +31424,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "how-are-you-chi",
@@ -31039,6 +31447,94 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you-em",
               "audioKey": "audio-phrase-em-khoe-khong"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
+            {
+              "id": "smalltalk-1",
+              "vietnamese": "Tôi đến từ Mỹ",
+              "english": "I’m from the United States",
+              "pronunciation": "toy den too mee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-us",
+              "audioKey": "smalltalk-1"
+            },
+            {
+              "id": "smalltalk-2",
+              "vietnamese": "Tôi từ Anh",
+              "english": "I’m from England",
+              "pronunciation": "toy too anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-uk",
+              "audioKey": "smalltalk-2"
+            },
+            {
+              "id": "smalltalk-3",
+              "vietnamese": "Đây là lần đầu của tôi",
+              "english": "This is my first time",
+              "pronunciation": "day la lun dow koo-ah toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-first-time",
+              "audioKey": "smalltalk-3"
+            },
+            {
+              "id": "smalltalk-5",
+              "vietnamese": "Đồ ăn ngon quá",
+              "english": "The food is so good",
+              "pronunciation": "doh an ngon gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-food-good",
+              "audioKey": "smalltalk-5"
+            },
+            {
+              "id": "smalltalk-6",
+              "vietnamese": "Thời tiết nóng quá",
+              "english": "The weather is so hot",
+              "pronunciation": "thoy tyet nong gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-weather-hot",
+              "audioKey": "smalltalk-6"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -31062,7 +31558,7 @@
       "familyID": "social-food-good",
       "phraseID": "smalltalk-5",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Đồ ăn ngon quá",
       "englishTitle": "The food is so good",
       "pronunciation": "doh an ngon gwah",
@@ -31263,9 +31759,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "how-are-you-chi",
@@ -31286,6 +31782,94 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you-em",
               "audioKey": "audio-phrase-em-khoe-khong"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
+            {
+              "id": "smalltalk-1",
+              "vietnamese": "Tôi đến từ Mỹ",
+              "english": "I’m from the United States",
+              "pronunciation": "toy den too mee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-us",
+              "audioKey": "smalltalk-1"
+            },
+            {
+              "id": "smalltalk-2",
+              "vietnamese": "Tôi từ Anh",
+              "english": "I’m from England",
+              "pronunciation": "toy too anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-uk",
+              "audioKey": "smalltalk-2"
+            },
+            {
+              "id": "smalltalk-3",
+              "vietnamese": "Đây là lần đầu của tôi",
+              "english": "This is my first time",
+              "pronunciation": "day la lun dow koo-ah toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-first-time",
+              "audioKey": "smalltalk-3"
+            },
+            {
+              "id": "smalltalk-4",
+              "vietnamese": "Tôi thích Việt Nam",
+              "english": "I like Vietnam",
+              "pronunciation": "toy thik vyet nam",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-like-vietnam",
+              "audioKey": "smalltalk-4"
+            },
+            {
+              "id": "smalltalk-6",
+              "vietnamese": "Thời tiết nóng quá",
+              "english": "The weather is so hot",
+              "pronunciation": "thoy tyet nong gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-weather-hot",
+              "audioKey": "smalltalk-6"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -31309,7 +31893,7 @@
       "familyID": "social-weather-hot",
       "phraseID": "smalltalk-6",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Thời tiết nóng quá",
       "englishTitle": "The weather is so hot",
       "pronunciation": "thoy tyet nong gwah",
@@ -31510,9 +32094,9 @@
           "presentation": "phrase-list"
         },
         {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
+          "id": "nearby-phrases",
+          "title": "Useful nearby phrases",
+          "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
           "phrases": [
             {
               "id": "how-are-you-chi",
@@ -31533,6 +32117,94 @@
               "tintName": "green",
               "detailPageID": "viet-how-are-you-em",
               "audioKey": "audio-phrase-em-khoe-khong"
+            }
+          ],
+          "presentation": "horizontal-phrase-cards"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Use these next when the conversation moves one step forward.",
+          "phrases": [
+            {
+              "id": "smalltalk-1",
+              "vietnamese": "Tôi đến từ Mỹ",
+              "english": "I’m from the United States",
+              "pronunciation": "toy den too mee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-us",
+              "audioKey": "smalltalk-1"
+            },
+            {
+              "id": "smalltalk-2",
+              "vietnamese": "Tôi từ Anh",
+              "english": "I’m from England",
+              "pronunciation": "toy too anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-from-uk",
+              "audioKey": "smalltalk-2"
+            },
+            {
+              "id": "smalltalk-3",
+              "vietnamese": "Đây là lần đầu của tôi",
+              "english": "This is my first time",
+              "pronunciation": "day la lun dow koo-ah toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-first-time",
+              "audioKey": "smalltalk-3"
+            },
+            {
+              "id": "smalltalk-4",
+              "vietnamese": "Tôi thích Việt Nam",
+              "english": "I like Vietnam",
+              "pronunciation": "toy thik vyet nam",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-like-vietnam",
+              "audioKey": "smalltalk-4"
+            },
+            {
+              "id": "smalltalk-5",
+              "vietnamese": "Đồ ăn ngon quá",
+              "english": "The food is so good",
+              "pronunciation": "doh an ngon gwah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-social-food-good",
+              "audioKey": "smalltalk-5"
+            },
+            {
+              "id": "smalltalk-7",
+              "vietnamese": "Bạn khỏe không?",
+              "english": "How are you?",
+              "pronunciation": "ban khoe khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-how-are-you",
+              "audioKey": "smalltalk-7"
+            },
+            {
+              "id": "smalltalk-di-dau-day",
+              "vietnamese": "Đi đâu đấy?",
+              "english": "Where are you going?",
+              "pronunciation": "dee dow day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-di-dau-day",
+              "audioKey": "audio-phrase-di-dau-day"
+            },
+            {
+              "id": "smalltalk-nice-to-meet-you",
+              "vietnamese": "Rất vui được gặp bạn",
+              "english": "Nice to meet you",
+              "pronunciation": "zuht voo ee duhk gap ban",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-smalltalk-nice-to-meet-you",
+              "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
           "presentation": "phrase-list"
@@ -31556,7 +32228,7 @@
       "familyID": "sight-ticket",
       "phraseID": "sight-1",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Vé bao nhiêu?",
       "englishTitle": "How much is the ticket?",
       "pronunciation": "veh bao nyew",
@@ -31791,7 +32463,7 @@
       "familyID": "sight-start",
       "phraseID": "sight-2",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Bắt đầu ở đâu?",
       "englishTitle": "Where do we start?",
       "pronunciation": "bat dow uh dow",
@@ -32032,7 +32704,7 @@
       "familyID": "sight-photos",
       "phraseID": "sight-3",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi chụp hình ở đây được không?",
       "englishTitle": "Can I take photos here?",
       "pronunciation": "toy choop hinh uh day dook khong",
@@ -32291,7 +32963,7 @@
       "familyID": "sight-close",
       "phraseID": "sight-4",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Mấy giờ đóng cửa?",
       "englishTitle": "What time does it close?",
       "pronunciation": "may zyuh dong koo-ah",
@@ -32538,7 +33210,7 @@
       "familyID": "sight-meeting-point",
       "phraseID": "sight-5",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Điểm gặp ở đâu?",
       "englishTitle": "Where is the meeting point?",
       "pronunciation": "deeym gap uh dow",
@@ -32779,7 +33451,7 @@
       "familyID": "service-water",
       "phraseID": "store-1",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Cho tôi chai nước",
       "englishTitle": "A bottle of water please",
       "pronunciation": "cho toy chai nook",
@@ -33050,7 +33722,7 @@
       "familyID": "service-bag",
       "phraseID": "store-2",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Có túi không?",
       "englishTitle": "Do you have a bag?",
       "pronunciation": "koh too-ee khong",
@@ -33321,7 +33993,7 @@
       "familyID": "service-tissues",
       "phraseID": "store-3",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Cho tôi khăn giấy",
       "englishTitle": "Tissues please",
       "pronunciation": "cho toy khan zai",
@@ -33586,7 +34258,7 @@
       "familyID": "service-sunscreen",
       "phraseID": "store-4",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Ở đâu có kem chống nắng?",
       "englishTitle": "Where is the sunscreen?",
       "pronunciation": "uh dow koh kem chong nang",
@@ -33857,7 +34529,7 @@
       "familyID": "service-open-this",
       "phraseID": "store-5",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Mở cái này giúp tôi",
       "englishTitle": "Please open this for me",
       "pronunciation": "muh gai nai zoop toy",
@@ -34134,7 +34806,7 @@
       "familyID": "service-card",
       "phraseID": "store-6",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi quẹt thẻ được không?",
       "englishTitle": "Can I pay by card?",
       "pronunciation": "toy quet teh dook khong",
@@ -34411,7 +35083,7 @@
       "familyID": "service-receipt",
       "phraseID": "store-7",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Cho tôi hóa đơn",
       "englishTitle": "Please give me the receipt",
       "pronunciation": "cho toy hwa dun",
@@ -37167,7 +37839,7 @@
       "familyID": "v500-time-date-book-is-there-a-wait",
       "phraseID": "v500-time-date-book-is-there-a-wait",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Có chờ đợi không?",
       "englishTitle": "Is there a wait?",
       "pronunciation": "Co cho doi khong",
@@ -37434,7 +38106,7 @@
       "familyID": "v500-time-date-book-one-ticket-please",
       "phraseID": "v500-time-date-book-one-ticket-please",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Xin một vé",
       "englishTitle": "One ticket, please",
       "pronunciation": "Xin mot ve",
@@ -37695,7 +38367,7 @@
       "familyID": "v500-shop-how-much-is-this-item",
       "phraseID": "v500-shop-how-much-is-this-item",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Mặt hàng này giá bao nhiêu?",
       "englishTitle": "How much is this item?",
       "pronunciation": "Mat hang nay gia bao nhieu",
@@ -37968,7 +38640,7 @@
       "familyID": "v500-shop-can-you-lower-the-price",
       "phraseID": "v500-shop-can-you-lower-the-price",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Giảm giá chút được không?",
       "englishTitle": "Can you lower the price?",
       "pronunciation": "zam zah choot dook khong",
@@ -38229,7 +38901,7 @@
       "familyID": "v500-phon-inte-powe-my-map-is-not-working",
       "phraseID": "v500-phon-inte-powe-my-map-is-not-working",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Bản đồ của tôi không hoạt động",
       "englishTitle": "My map is not working",
       "pronunciation": "Ban do cua toi khong hoat dong",
@@ -38512,7 +39184,7 @@
       "familyID": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
       "phraseID": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi có thể mua SIM ở đâu?",
       "englishTitle": "Where can I get a local SIM card?",
       "pronunciation": "toy koh theh moo-ah sim uh dow",
@@ -38783,7 +39455,7 @@
       "familyID": "v500-phon-inte-powe-i-need-an-esim",
       "phraseID": "v500-phon-inte-powe-i-need-an-esim",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi cần một eSIM",
       "englishTitle": "I need an eSIM",
       "pronunciation": "Toi can mot eSIM",
@@ -39927,7 +40599,7 @@
       "familyID": "v500-sigh-acti-i-have-a-tour-booking",
       "phraseID": "v500-sigh-acti-i-have-a-tour-booking",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi có đặt tour",
       "englishTitle": "I have a tour booking",
       "pronunciation": "toy koh dat tour",
@@ -40162,7 +40834,7 @@
       "familyID": "v500-loca-serv-ever-task-where-can-i-buy-water",
       "phraseID": "v500-loca-serv-ever-task-where-can-i-buy-water",
       "tierRole": "tier1",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi có thể mua nước ở đâu?",
       "englishTitle": "Where can I buy water?",
       "pronunciation": "Toi co the mua nuoc o dau",
@@ -40439,7 +41111,7 @@
       "familyID": "repair-slower",
       "phraseID": "repair-slower-polite",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Nói chậm giúp tôi được không?",
       "englishTitle": "Could you speak a little slower, please?",
       "pronunciation": "noy chuhm zoop toy dook khong",
@@ -40494,6 +41166,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Nói chậm giúp tôi được không? is the phrase to practice on this page. Use it when \"Could you speak a little slower, please?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "repair-slower-polite",
+              "vietnamese": "Nói chậm giúp tôi được không?",
+              "english": "Could you speak a little slower, please?",
+              "pronunciation": "noy chuhm zoop toy dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "repair-slower-polite"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -40632,7 +41322,7 @@
       "familyID": "repair-number",
       "phraseID": "repair-number-amount",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Anh/chị vừa nói bao nhiêu?",
       "englishTitle": "How much did you say?",
       "pronunciation": "anh chee voo-ah noy bao nyew",
@@ -40687,6 +41377,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Anh/chị vừa nói bao nhiêu? is the phrase to practice on this page. Use it when \"How much did you say?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "repair-number-amount",
+              "vietnamese": "Anh/chị vừa nói bao nhiêu?",
+              "english": "How much did you say?",
+              "pronunciation": "anh chee voo-ah noy bao nyew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "repair-number-amount"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -40825,7 +41533,7 @@
       "familyID": "repair-english-help",
       "phraseID": "repair-english-help-self-limit",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Xin lỗi, tôi không nói tiếng Việt",
       "englishTitle": "Sorry, I don’t speak Vietnamese",
       "pronunciation": "sin loy toy khong noy tyeng vyet",
@@ -40886,6 +41594,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Xin lỗi, tôi không nói tiếng Việt is the phrase to practice on this page. Use it when \"Sorry, I don’t speak Vietnamese\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "repair-english-help-self-limit",
+              "vietnamese": "Xin lỗi, tôi không nói tiếng Việt",
+              "english": "Sorry, I don’t speak Vietnamese",
+              "pronunciation": "sin loy toy khong noy tyeng vyet",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "repair-english-help-self-limit"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -41024,7 +41750,7 @@
       "familyID": "transport-stop-here",
       "phraseID": "transport-stop-here-clearer",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Cho tôi xuống ngay đây",
       "englishTitle": "Please stop right here",
       "pronunciation": "cho toy zoong ngay day",
@@ -41079,6 +41805,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Cho tôi xuống ngay đây is the phrase to practice on this page. Use it when \"Please stop right here\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "transport-stop-here-clearer",
+              "vietnamese": "Cho tôi xuống ngay đây",
+              "english": "Please stop right here",
+              "pronunciation": "cho toy zoong ngay day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": null,
+              "audioKey": "transport-stop-here-clearer"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -41217,7 +41961,7 @@
       "familyID": "hotel-check-in",
       "phraseID": "hotel-check-in-polite",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Cho tôi nhận phòng nhé",
       "englishTitle": "I’d like to check in, please",
       "pronunciation": "cho toy nyun fong nhe",
@@ -41266,6 +42010,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Cho tôi nhận phòng nhé is the phrase to practice on this page. Use it when \"I’d like to check in, please\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "hotel-check-in-polite",
+              "vietnamese": "Cho tôi nhận phòng nhé",
+              "english": "I’d like to check in, please",
+              "pronunciation": "cho toy nyun fong nhe",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": null,
+              "audioKey": "hotel-check-in-polite"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -41404,7 +42166,7 @@
       "familyID": "hotel-more-supplies",
       "phraseID": "hotel-more-supplies-paper",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Cho tôi thêm giấy vệ sinh được không?",
       "englishTitle": "Can I have more toilet paper?",
       "pronunciation": "cho toy them zai veh sinh dook khong",
@@ -41471,6 +42233,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Cho tôi thêm giấy vệ sinh được không? is the phrase to practice on this page. Use it when \"Can I have more toilet paper?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "hotel-more-supplies-paper",
+              "vietnamese": "Cho tôi thêm giấy vệ sinh được không?",
+              "english": "Can I have more toilet paper?",
+              "pronunciation": "cho toy them zai veh sinh dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": null,
+              "audioKey": "hotel-more-supplies-paper"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -41609,7 +42389,7 @@
       "familyID": "food-not-spicy",
       "phraseID": "food-not-spicy-clearer",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Ít cay thôi",
       "englishTitle": "Less spicy, please",
       "pronunciation": "eet kai thoy",
@@ -41652,6 +42432,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Ít cay thôi is the phrase to practice on this page. Use it when \"Less spicy, please\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "food-not-spicy-clearer",
+              "vietnamese": "Ít cay thôi",
+              "english": "Less spicy, please",
+              "pronunciation": "eet kai thoy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "audio-authored-it-cay-thoi-05b8e258a2"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -41790,7 +42588,7 @@
       "familyID": "food-peanut-allergy",
       "phraseID": "food-15",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Món này có trứng hay đậu phộng không?",
       "englishTitle": "Does this have egg or peanuts?",
       "pronunciation": "mon nai koh choong hai dow fohng khong",
@@ -41869,6 +42667,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Món này có trứng hay đậu phộng không? is the phrase to practice on this page. Use it when \"Does this have egg or peanuts?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "food-15",
+              "vietnamese": "Món này có trứng hay đậu phộng không?",
+              "english": "Does this have egg or peanuts?",
+              "pronunciation": "mon nai koh choong hai dow fohng khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "food-15"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -42007,7 +42823,7 @@
       "familyID": "money-how-much",
       "phraseID": "money-how-much-common",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Cái này nhiêu tiền?",
       "englishTitle": "How much is this?",
       "pronunciation": "gai nai nyew tyen",
@@ -42062,6 +42878,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Cái này nhiêu tiền? is the phrase to practice on this page. Use it when \"How much is this?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "money-how-much-common",
+              "vietnamese": "Cái này nhiêu tiền?",
+              "english": "How much is this?",
+              "pronunciation": "gai nai nyew tyen",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "money-how-much-common"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -42200,7 +43034,7 @@
       "familyID": "airport-pickup",
       "phraseID": "airport-pickup-clearer",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Tôi gặp tài xế ở đâu?",
       "englishTitle": "Where do I meet the driver?",
       "pronunciation": "toy gap tai seh uh dow",
@@ -42261,6 +43095,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Tôi gặp tài xế ở đâu? is the phrase to practice on this page. Use it when \"Where do I meet the driver?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "airport-pickup-clearer",
+              "vietnamese": "Tôi gặp tài xế ở đâu?",
+              "english": "Where do I meet the driver?",
+              "pronunciation": "toy gap tai seh uh dow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "airport-pickup-clearer"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -42399,7 +43251,7 @@
       "familyID": "health-pharmacy",
       "phraseID": "health-1",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Nhà thuốc ở đâu?",
       "englishTitle": "Where is the pharmacy?",
       "pronunciation": "nya thoo-ok uh dow",
@@ -42442,6 +43294,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Nhà thuốc ở đâu? is the phrase to practice on this page. Use it when \"Where is the pharmacy?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "health-1",
+              "vietnamese": "Nhà thuốc ở đâu?",
+              "english": "Where is the pharmacy?",
+              "pronunciation": "nya thoo-ok uh dow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "health-1"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -42580,7 +43450,7 @@
       "familyID": "help-need-help",
       "phraseID": "help-1",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Anh/chị giúp tôi với",
       "englishTitle": "Can you help me?",
       "pronunciation": "anh chee zoop toy voy",
@@ -42629,6 +43499,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Anh/chị giúp tôi với is the phrase to practice on this page. Use it when \"Can you help me?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "help-1",
+              "vietnamese": "Anh/chị giúp tôi với",
+              "english": "Can you help me?",
+              "pronunciation": "anh chee zoop toy voy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": null,
+              "audioKey": "help-1"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -42767,7 +43655,7 @@
       "familyID": "phone-wifi-password",
       "phraseID": "phone-wifi-common",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Pass Wi-Fi là gì?",
       "englishTitle": "What is the Wi-Fi password?",
       "pronunciation": "pas wai-fai la zee",
@@ -42822,6 +43710,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Pass Wi-Fi là gì? is the phrase to practice on this page. Use it when \"What is the Wi-Fi password?\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "phone-wifi-common",
+              "vietnamese": "Pass Wi-Fi là gì?",
+              "english": "What is the Wi-Fi password?",
+              "pronunciation": "pas wai-fai la zee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "phone-wifi-common"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",
@@ -42960,7 +43866,7 @@
       "familyID": "emergency-emergency",
       "phraseID": "emergency-5",
       "tierRole": "child",
-      "depth": "baseline",
+      "depth": "deep",
       "title": "Cứu tôi với!",
       "englishTitle": "Help!",
       "pronunciation": "koo toy voy",
@@ -43009,6 +43915,24 @@
             }
           ],
           "presentation": "breakdown-strip"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Cứu tôi với! is the phrase to practice on this page. Use it when \"Help!\" is the exact tone or situation you want.",
+          "phrases": [
+            {
+              "id": "emergency-5",
+              "vietnamese": "Cứu tôi với!",
+              "english": "Help!",
+              "pronunciation": "koo toy voy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "emergency-5"
+            }
+          ],
+          "presentation": "phrase-list"
         },
         {
           "id": "when-to-use",

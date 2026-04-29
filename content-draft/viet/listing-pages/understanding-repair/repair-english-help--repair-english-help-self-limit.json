@@ -3,7 +3,7 @@
   "familyID": "repair-english-help",
   "phraseID": "repair-english-help-self-limit",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Xin lỗi, tôi không nói tiếng Việt",
   "englishTitle": "Sorry, I don’t speak Vietnamese",
   "pronunciation": "sin loy toy khong noy tyeng vyet",
@@ -64,6 +64,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Xin lỗi, tôi không nói tiếng Việt is the phrase to practice on this page. Use it when \"Sorry, I don’t speak Vietnamese\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "repair-english-help-self-limit",
+          "vietnamese": "Xin lỗi, tôi không nói tiếng Việt",
+          "english": "Sorry, I don’t speak Vietnamese",
+          "pronunciation": "sin loy toy khong noy tyeng vyet",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "repair-english-help-self-limit"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

@@ -512,28 +512,7 @@ function scenarioCopy(scenarioID) {
 }
 
 function phraseDepth(family, primaryPhrase) {
-  const deepScenarios = new Set([
-    "understanding-repair",
-    "transport",
-    "directions-navigation",
-    "money-numbers-prices",
-    "health-pharmacy",
-    "emergency-safety",
-    "hotel-accommodation",
-    "food-drink",
-    "airport-border-arrival",
-    "problems-help",
-  ]);
-
-  if (deepScenarios.has(family.scenarioID)) {
-    return "deep";
-  }
-
-  if ((family.phraseIDs ?? []).length > 1 || primaryPhrase.warningNoteType) {
-    return "support";
-  }
-
-  return "baseline";
+  return "deep";
 }
 
 function sentence(text) {
@@ -1470,7 +1449,7 @@ function childPageForVariant(family, variantPhrase, primaryPhrase) {
     familyID: family.id,
     phraseID: variantPhrase.id,
     tierRole: "child",
-    depth: "baseline",
+    depth: "deep",
     title: variantPhrase.targetText,
     englishTitle: variantPhrase.englishText,
     pronunciation: variantPhrase.pronunciation,
@@ -1490,6 +1469,12 @@ function childPageForVariant(family, variantPhrase, primaryPhrase) {
         title: "Break it down",
         body: breakdownLeadIn(variantPhrase),
         breakdown: breakdownTokens(variantPhrase),
+      },
+      {
+        id: "standard-way",
+        title: "The standard way",
+        body: `${variantPhrase.targetText} is the phrase to practice on this page. Use it when "${variantPhrase.englishText}" is the exact tone or situation you want.`,
+        phrases: [phraseOption(variantPhrase, null, tintForScenario(family.scenarioID))],
       },
       {
         id: "when-to-use",

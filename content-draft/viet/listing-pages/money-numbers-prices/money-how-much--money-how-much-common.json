@@ -3,7 +3,7 @@
   "familyID": "money-how-much",
   "phraseID": "money-how-much-common",
   "tierRole": "child",
-  "depth": "baseline",
+  "depth": "deep",
   "title": "Cái này nhiêu tiền?",
   "englishTitle": "How much is this?",
   "pronunciation": "gai nai nyew tyen",
@@ -58,6 +58,24 @@
         }
       ],
       "presentation": "breakdown-strip"
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Cái này nhiêu tiền? is the phrase to practice on this page. Use it when \"How much is this?\" is the exact tone or situation you want.",
+      "phrases": [
+        {
+          "id": "money-how-much-common",
+          "vietnamese": "Cái này nhiêu tiền?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai nyew tyen",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "money-how-much-common"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",

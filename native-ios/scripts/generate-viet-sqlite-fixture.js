@@ -363,7 +363,7 @@ function main() {
       english_text: phrase.englishText,
       pronunciation: phrase.pronunciation,
       access_tier: phrase.accessTier,
-      completeness_status: authoredPage?.depth ?? ((family?.phraseIDs ?? []).length > 1 ? "support" : "baseline"),
+      completeness_status: "deep",
       audio_status: phrase.audioStatus || "unknown",
       source_path: relative(catalogPath),
       source_row_id: phrase.id,
@@ -386,7 +386,7 @@ function main() {
       icon_name: authoredPage?.iconName ?? scenario?.symbolName ?? "text.bubble.fill",
       tint_name: authoredPage?.tintName ?? scenario?.tintName ?? "gray",
       page_renderer: "article-listing",
-      completeness_status: authoredPage?.depth ?? ((family?.phraseIDs ?? []).length > 1 ? "support" : "baseline"),
+      completeness_status: "deep",
       is_authored: authoredPage ? 1 : 0,
     };
   });
@@ -1586,6 +1586,47 @@ function main() {
     HAVING count(*) >= 3
     ORDER BY page_id;
   `).split("\n").filter(Boolean);
+  const nonDeepCompletenessStatusRows = sqliteQuery(`
+    SELECT id || ': ' || completeness_status
+    FROM phrase_page
+    WHERE completeness_status != 'deep'
+    ORDER BY id;
+  `).split("\n").filter(Boolean);
+  const incompleteArticleContractRows = sqliteQuery(`
+    WITH page_contract AS (
+      SELECT
+        pp.id AS page_id,
+        pp.title AS page_title,
+        MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
+        MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
+        MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
+        MAX(CASE WHEN ps.section_key = 'relationship-words' THEN 1 ELSE 0 END) AS has_relationship_words,
+        MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
+        MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
+        MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
+        SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
+        SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
+      FROM phrase_page pp
+      JOIN page_section ps ON ps.page_id = pp.id
+      LEFT JOIN page_section_item psi ON psi.section_id = ps.id
+      GROUP BY pp.id
+    )
+    SELECT page_id || ': ' || page_title
+    FROM page_contract
+    WHERE page_id != 'viet-phrase-polite-1'
+      AND (
+        has_at_glance = 0
+        OR has_quick_or_standard = 0
+        OR has_breakdown = 0
+        OR has_relationship_words = 0
+        OR has_when_to_use = 0
+        OR has_good_to_know = 0
+        OR has_related_links = 0
+        OR article_phrase_rows = 0
+        OR breakdown_rows = 0
+      )
+    ORDER BY page_id;
+  `).split("\n").filter(Boolean);
   const brokenRelationCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM phrase_relation r
@@ -1769,6 +1810,10 @@ function main() {
       badRelationshipWordsSectionCount,
       textOnlySectionRunCount: textOnlySectionRunRows.length,
       textOnlySectionRunSample: textOnlySectionRunRows.slice(0, 20),
+      nonDeepCompletenessStatusCount: nonDeepCompletenessStatusRows.length,
+      nonDeepCompletenessStatusSample: nonDeepCompletenessStatusRows.slice(0, 20),
+      incompleteArticleContractCount: incompleteArticleContractRows.length,
+      incompleteArticleContractSample: incompleteArticleContractRows.slice(0, 20),
       brokenRelationCount,
       relationSourceIndexPresent,
       relationLookupUsesSourceIndex,
