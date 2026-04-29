@@ -168,7 +168,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         }
     }
 
-    func testSQLiteCanonicalPagesShowFullRelationshipWordShelf() throws {
+    func testSQLiteRelationshipWordShelfIsContextual() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let expectedVietnamese = [
             "Chào anh",
@@ -180,17 +180,23 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "Chào cô",
         ]
 
-        for item in PhraseCatalog.allItems {
-            let page = try repository.loadPhraseDetailPage(pageID: item.pageID)
-            let section = try XCTUnwrap(page.sections.first { $0.id == "relationship-words" }, item.pageID)
+        for pageID in ["viet-phrase-polite-1", "viet-phrase-hello-chao", "viet-phrase-hello-chao-anh"] {
+            let page = try repository.loadPhraseDetailPage(pageID: pageID)
+            let section = try XCTUnwrap(page.sections.first { $0.id == "relationship-words" }, pageID)
 
-            XCTAssertEqual(section.title, "Relationship words", item.pageID)
-            XCTAssertEqual(section.presentation, .relationshipShelf, item.pageID)
-            XCTAssertEqual(section.phrases.map(\.vietnamese), expectedVietnamese, item.pageID)
+            XCTAssertEqual(section.title, "Relationship words", pageID)
+            XCTAssertEqual(section.presentation, .relationshipShelf, pageID)
+            XCTAssertEqual(section.phrases.map(\.vietnamese), expectedVietnamese, pageID)
             XCTAssertTrue(section.phrases.allSatisfy { phrase in
                 phrase.detailPageID?.hasPrefix("viet-phrase-") == true
-            }, item.pageID)
+            }, pageID)
         }
+
+        let fromUnitedStatesPage = try repository.loadPhraseDetailPage(pageID: "viet-phrase-smalltalk-1")
+        XCTAssertFalse(
+            fromUnitedStatesPage.sections.contains { $0.id == "relationship-words" },
+            "Tôi đến từ Mỹ should not get a greeting relationship shelf"
+        )
     }
 
     func testSQLiteRelationsAndVisibleAudioKeysResolveFromGraph() throws {

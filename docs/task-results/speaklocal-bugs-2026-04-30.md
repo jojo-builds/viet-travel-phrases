@@ -73,7 +73,7 @@ Reviewer gate:
 
 ## Bug 5 - Restore bottom category shelves on all canonical pages
 
-Commit: pending
+Commit: be5b16a
 
 Changes:
 - Restored the post-article catalog shelf as a clearly separate `Browse more` section below authored page content.
@@ -86,3 +86,22 @@ Validation:
 
 Reviewer gate:
 - APPROVED. The bottom catalog shelf is now distinct from authored `Explore next`, uses the existing three-row horizontal shelf behavior, and is available for all sampled canonical SQLite pages without self-row repeats.
+
+## Bug 6 - Relationship/pronoun shelf scope
+
+Commit: pending
+
+Changes:
+- Replaced global `relationship-words` injection with a phrase-sensitive eligibility rule for greeting, relationship-word, and pronoun-sensitive pages.
+- Updated generator and validator reporting to fail if eligible pages miss the shelf or ineligible pages receive it.
+- Regenerated the Viet SQLite fixture/report and updated the native repository test from global shelf coverage to contextual shelf coverage.
+
+Validation:
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js` completed with 18 scenarios, 927 clusters, 946 phrases, and 938 pages.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed with 0 missing eligible shelves, 0 unexpected ineligible shelves, 0 bad relationship shelves, and 0 banned wording matches.
+- `node --test native-ios/scripts/generate-viet-sqlite-fixture.test.js` passed.
+- `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'id=91BDCCB0-0728-40AB-8150-B6DCB96BE799' -only-testing:SpeakLocalNativeTests/SQLiteLanguagePackRepositoryTests/testSQLiteRelationshipWordShelfIsContextual` passed.
+- SQL proof: 38 canonical pages have relationship shelves; `Xin chào` and `Chào` have the shelf; `Tôi đến từ Mỹ` does not.
+
+Reviewer gate:
+- APPROVED. Relationship/pronoun shelves are now contextual: they remain on greeting and relationship-word pages, and they no longer appear on unrelated pages such as `Tôi đến từ Mỹ`.

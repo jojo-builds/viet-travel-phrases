@@ -147,6 +147,16 @@ function assertZero(actual, message) {
   assertEqual(Number(actual), 0, message);
 }
 
+function assertTrue(condition, message) {
+  if (!condition) {
+    throw new Error(message);
+  }
+}
+
+function sqlQuote(value) {
+  return `'${String(value).replace(/'/g, "''")}'`;
+}
+
 function sqliteList(sql) {
   const value = sqliteValue(sql);
   return value ? value.split("|") : [];
@@ -215,16 +225,39 @@ function main() {
        OR lower(english_title) LIKE '%main idea you need%';
   `), "hero English subtitles with internal or explanatory wording");
 
+  const relationshipWordsEligiblePageIDs = report.validation.relationshipWordsEligiblePageIDs ?? [];
+  const relationshipWordsEligiblePageIDSQL = relationshipWordsEligiblePageIDs.length > 0
+    ? relationshipWordsEligiblePageIDs.map(sqlQuote).join(",")
+    : "'__none__'";
+  assertTrue(
+    relationshipWordsEligiblePageIDs.includes("viet-phrase-polite-1")
+      && relationshipWordsEligiblePageIDs.includes("viet-phrase-hello-chao")
+      && relationshipWordsEligiblePageIDs.includes("viet-phrase-hello-chao-anh"),
+    "relationship-word eligibility missing expected greeting pages"
+  );
+  assertTrue(
+    !relationshipWordsEligiblePageIDs.includes("viet-phrase-smalltalk-1"),
+    "relationship-word eligibility should not include Tôi đến từ Mỹ"
+  );
+
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM phrase_page pp
-    WHERE NOT EXISTS (
+    WHERE pp.id IN (${relationshipWordsEligiblePageIDSQL})
+      AND NOT EXISTS (
       SELECT 1
       FROM page_section ps
       WHERE ps.page_id = pp.id
         AND ps.section_key = 'relationship-words'
     );
-  `), "canonical pages without relationship-word shelf");
+  `), "eligible canonical pages without relationship-word shelf");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    WHERE ps.section_key = 'relationship-words'
+      AND ps.page_id NOT IN (${relationshipWordsEligiblePageIDSQL});
+  `), "ineligible canonical pages with relationship-word shelf");
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -330,7 +363,6 @@ function main() {
         MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
         MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
         MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-        MAX(CASE WHEN ps.section_key = 'relationship-words' THEN 1 ELSE 0 END) AS has_relationship_words,
         MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
         MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
         MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
@@ -348,7 +380,6 @@ function main() {
         has_at_glance = 0
         OR has_quick_or_standard = 0
         OR has_breakdown = 0
-        OR has_relationship_words = 0
         OR has_when_to_use = 0
         OR has_good_to_know = 0
         OR has_related_links = 0
@@ -365,7 +396,6 @@ function main() {
           MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
           MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
           MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-          MAX(CASE WHEN ps.section_key = 'relationship-words' THEN 1 ELSE 0 END) AS has_relationship_words,
           MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
           MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
           MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
@@ -383,7 +413,6 @@ function main() {
           has_at_glance = 0
           OR has_quick_or_standard = 0
           OR has_breakdown = 0
-          OR has_relationship_words = 0
           OR has_when_to_use = 0
           OR has_good_to_know = 0
           OR has_related_links = 0
@@ -682,6 +711,7 @@ function main() {
   assertEqual(report.validation.duplicateCanonicalPageGroupCount, 0, "report duplicate page groups");
   assertEqual(report.validation.sectionlessCanonicalPageCount, 0, "report sectionless pages");
   assertEqual(report.validation.missingRelationshipWordsSectionCount, 0, "report missing relationship-word shelf count");
+  assertEqual(report.validation.unexpectedRelationshipWordsSectionCount, 0, "report unexpected relationship-word shelf count");
   assertEqual(report.validation.badRelationshipWordsSectionCount, 0, "report incomplete relationship-word shelf count");
   assertEqual(report.validation.textOnlySectionRunCount, 0, "report text-only section run count");
   assertEqual(report.validation.nonDeepCompletenessStatusCount, 0, "report non-full-depth page status count");

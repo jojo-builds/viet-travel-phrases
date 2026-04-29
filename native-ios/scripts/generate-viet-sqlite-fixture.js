@@ -27,6 +27,8 @@ const relationshipWordPhraseIDs = [
   "hello-chao-chu",
   "hello-chao-co",
 ];
+const relationshipWordTokens = new Set(["anh", "chị", "em", "ông", "bà", "chú", "cô"]);
+const greetingCategoryIDs = new Set(["greetings", "polite-basics"]);
 const legacyNativePageAliases = [
   { aliasID: "viet-hello-anh", phraseID: "hello-chao-anh" },
   { aliasID: "viet-hello-chi", phraseID: "hello-chao-chi" },
@@ -421,6 +423,35 @@ function main() {
 
   function scenarioTitle(scenarioID) {
     return scenarioByID.get(scenarioID)?.title ?? "Vietnam travel";
+  }
+
+  function vietnameseWordTokens(value) {
+    return Array.from(String(value ?? "").toLowerCase().matchAll(/\p{L}+/gu), (match) => match[0]);
+  }
+
+  function shouldShowRelationshipWordsSection(phrase, authoredPage = null) {
+    if (!phrase) return false;
+    if (relationshipWordPhraseIDs.includes(phrase.id)) return true;
+
+    const targetTokens = vietnameseWordTokens(phrase.targetText);
+    if (targetTokens.some((token) => relationshipWordTokens.has(token))) return true;
+
+    const accentlessTarget = accentlessText(phrase.targetText);
+    if (accentlessTarget.split(/\s+/).includes("chao")) return true;
+
+    const englishSignal = normalizeText([
+      phrase.englishText,
+      phrase.context,
+      ...(phrase.searchAliases ?? []),
+      authoredPage?.summary,
+      ...(authoredPage?.sections ?? []).flatMap((section) => [section.title, section.body]),
+    ].filter(Boolean).join(" "));
+
+    const authoredCategories = new Set(authoredPage?.categoryIDs ?? []);
+    const isGreetingCategory = greetingCategoryIDs.has(phrase.scenarioID)
+      || Array.from(authoredCategories).some((categoryID) => greetingCategoryIDs.has(categoryID));
+
+    return isGreetingCategory && /\b(hello|hi|greeting|greet)\b/.test(englishSignal);
   }
 
   function baselineContextBody(phrase, family) {
@@ -1067,11 +1098,14 @@ function main() {
       }
     }
 
-    addRelationshipWordsSection({
-      pageID: canonicalPageID,
-      sortOrder: relationshipWordsSortOrder,
-      sourcePath: authoredSourcePath,
-    });
+    const phrase = phraseByID.get(page.phraseID);
+    if (shouldShowRelationshipWordsSection(phrase, page)) {
+      addRelationshipWordsSection({
+        pageID: canonicalPageID,
+        sortOrder: relationshipWordsSortOrder,
+        sourcePath: authoredSourcePath,
+      });
+    }
   }
 
   for (const pageRow of pageRows) {
@@ -1119,11 +1153,13 @@ function main() {
     });
     addBreakdownSectionItems(breakdownSectionID, phrase, relative(catalogPath));
 
-    addRelationshipWordsSection({
-      pageID: pageRow.id,
-      sortOrder: 3,
-      sourcePath: relative(catalogPath),
-    });
+    if (shouldShowRelationshipWordsSection(phrase)) {
+      addRelationshipWordsSection({
+        pageID: pageRow.id,
+        sortOrder: 3,
+        sourcePath: relative(catalogPath),
+      });
+    }
 
     const nearbyPhrases = scenarioNeighborPhrases(phrase);
     const teachingPhrases = nearbyPhrases.length > 0 ? nearbyPhrases.slice(0, 3) : [phrase];
@@ -1530,6 +1566,16 @@ function main() {
     FROM phrase_page pp
     WHERE NOT EXISTS (SELECT 1 FROM page_section ps WHERE ps.page_id = pp.id);
   `));
+  const relationshipWordsEligiblePageIDs = pageRows
+    .filter((row) => shouldShowRelationshipWordsSection(
+      phraseByID.get(row.phrase_id),
+      authoredPageByPhraseID.get(row.phrase_id)
+    ))
+    .map((row) => row.id)
+    .sort();
+  const relationshipWordsEligiblePageIDSQL = relationshipWordsEligiblePageIDs.length > 0
+    ? relationshipWordsEligiblePageIDs.map((id) => `'${id.replace(/'/g, "''")}'`).join(",")
+    : "'__none__'";
   const relationshipWordListSQL = relationshipWordPhrases
     .map((phrase) => phrase.targetText)
     .join("|")
@@ -1537,13 +1583,42 @@ function main() {
   const missingRelationshipWordsSectionCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM phrase_page pp
-    WHERE NOT EXISTS (
+    WHERE pp.id IN (${relationshipWordsEligiblePageIDSQL})
+      AND NOT EXISTS (
       SELECT 1
       FROM page_section ps
       WHERE ps.page_id = pp.id
         AND ps.section_key = '${relationshipWordSectionKey}'
     );
   `));
+  const unexpectedRelationshipWordsSectionCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM page_section ps
+    WHERE ps.section_key = '${relationshipWordSectionKey}'
+      AND ps.page_id NOT IN (${relationshipWordsEligiblePageIDSQL});
+  `));
+  const relationshipWordsMissingSample = sqliteQuery(`
+    SELECT pp.id || ': ' || pp.title
+    FROM phrase_page pp
+    WHERE pp.id IN (${relationshipWordsEligiblePageIDSQL})
+      AND NOT EXISTS (
+        SELECT 1
+        FROM page_section ps
+        WHERE ps.page_id = pp.id
+          AND ps.section_key = '${relationshipWordSectionKey}'
+      )
+    ORDER BY pp.id
+    LIMIT 20;
+  `).split("\n").filter(Boolean);
+  const relationshipWordsUnexpectedSample = sqliteQuery(`
+    SELECT ps.page_id || ': ' || pp.title
+    FROM page_section ps
+    JOIN phrase_page pp ON pp.id = ps.page_id
+    WHERE ps.section_key = '${relationshipWordSectionKey}'
+      AND ps.page_id NOT IN (${relationshipWordsEligiblePageIDSQL})
+    ORDER BY ps.page_id
+    LIMIT 20;
+  `).split("\n").filter(Boolean);
   const badRelationshipWordsSectionCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM page_section ps
@@ -1609,7 +1684,6 @@ function main() {
         MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
         MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
         MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-        MAX(CASE WHEN ps.section_key = 'relationship-words' THEN 1 ELSE 0 END) AS has_relationship_words,
         MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
         MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
         MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
@@ -1627,7 +1701,6 @@ function main() {
         has_at_glance = 0
         OR has_quick_or_standard = 0
         OR has_breakdown = 0
-        OR has_relationship_words = 0
         OR has_when_to_use = 0
         OR has_good_to_know = 0
         OR has_related_links = 0
@@ -1815,7 +1888,12 @@ function main() {
       ftsRowCount: Number(sqliteQuery("SELECT count(*) FROM search_document_fts;")),
       duplicateCanonicalPageGroupCount,
       sectionlessCanonicalPageCount,
+      relationshipWordsEligiblePageCount: relationshipWordsEligiblePageIDs.length,
+      relationshipWordsEligiblePageIDs,
       missingRelationshipWordsSectionCount,
+      unexpectedRelationshipWordsSectionCount,
+      relationshipWordsMissingSample,
+      relationshipWordsUnexpectedSample,
       badRelationshipWordsSectionCount,
       textOnlySectionRunCount: textOnlySectionRunRows.length,
       textOnlySectionRunSample: textOnlySectionRunRows.slice(0, 20),
