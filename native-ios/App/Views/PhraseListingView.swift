@@ -304,6 +304,8 @@ private struct ArticleSectionView: View {
         switch section.presentation {
         case .breakdownStrip:
             breakdownSection
+        case .relationshipShelf:
+            relationshipShelfSection
         case .horizontalPhraseCards:
             horizontalCardsSection
         case .phraseList:
@@ -327,6 +329,14 @@ private struct ArticleSectionView: View {
         }
     }
 
+    private var relationshipPhraseGroups: [[PhraseOption]] {
+        section.phrases.chunked(into: ExploreCatalogLayout.itemsPerGroup)
+    }
+
+    private var relationshipShelfHeight: CGFloat {
+        ExploreCatalogLayout.groupHeight(for: Swift.min(section.phrases.count, ExploreCatalogLayout.itemsPerGroup))
+    }
+
     private var plainTextSection: some View {
         SectionBlock(title: section.title) {
             Text(section.body)
@@ -334,6 +344,38 @@ private struct ArticleSectionView: View {
                 .foregroundStyle(.secondary)
                 .lineSpacing(3)
                 .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private var relationshipShelfSection: some View {
+        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+            if section.phrases.isEmpty {
+                Text(section.body)
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                GeometryReader { proxy in
+                    let groupWidth = max(260, min(326, proxy.size.width - 42))
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: ExploreCatalogLayout.groupSpacing) {
+                            ForEach(Array(relationshipPhraseGroups.enumerated()), id: \.offset) { _, group in
+                                RelationshipPhraseGroupCard(
+                                    phrases: group,
+                                    width: groupWidth,
+                                    onOpenDetail: onOpenDetail
+                                )
+                            }
+                        }
+                        .scrollTargetLayout()
+                    }
+                    .scrollTargetBehavior(.viewAligned)
+                    .scrollClipDisabled()
+                }
+                .frame(height: relationshipShelfHeight)
+            }
         }
     }
 
@@ -929,6 +971,34 @@ private struct ExploreCatalogGroupCard: View {
                     .frame(height: ExploreCatalogLayout.rowHeight)
 
                 if item.id != items.last?.id {
+                    Divider().padding(.leading, 70)
+                }
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, ExploreCatalogLayout.groupVerticalPadding)
+        .frame(width: width, height: cardHeight, alignment: .top)
+        .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius)
+    }
+}
+
+private struct RelationshipPhraseGroupCard: View {
+    let phrases: [PhraseOption]
+    let width: CGFloat
+    let onOpenDetail: (String) -> Void
+
+    private var cardHeight: CGFloat {
+        ExploreCatalogLayout.groupHeight(for: phrases.count)
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ForEach(phrases) { phrase in
+                LocalGreetingRow(phrase: phrase, onOpenDetail: onOpenDetail)
+                    .frame(height: ExploreCatalogLayout.rowHeight)
+
+                if phrase.id != phrases.last?.id {
                     Divider().padding(.leading, 70)
                 }
             }

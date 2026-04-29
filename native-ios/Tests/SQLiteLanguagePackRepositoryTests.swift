@@ -116,6 +116,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "at-glance",
             "quick-say",
             "breakdown",
+            "relationship-words",
             "situational-greetings",
             "local-greetings",
             "common-follow-ups",
@@ -141,6 +142,31 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             let page = try repository.loadPhraseDetailPage(pageID: item.pageID)
 
             XCTAssertTrue(page.showsCatalogExplore, item.pageID)
+        }
+    }
+
+    func testSQLiteCanonicalPagesShowFullRelationshipWordShelf() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+        let expectedVietnamese = [
+            "Chào anh",
+            "Chào chị",
+            "Chào em",
+            "Chào ông",
+            "Chào bà",
+            "Chào chú",
+            "Chào cô",
+        ]
+
+        for item in PhraseCatalog.allItems {
+            let page = try repository.loadPhraseDetailPage(pageID: item.pageID)
+            let section = try XCTUnwrap(page.sections.first { $0.id == "relationship-words" }, item.pageID)
+
+            XCTAssertEqual(section.title, "Relationship words", item.pageID)
+            XCTAssertEqual(section.presentation, .relationshipShelf, item.pageID)
+            XCTAssertEqual(section.phrases.map(\.vietnamese), expectedVietnamese, item.pageID)
+            XCTAssertTrue(section.phrases.allSatisfy { phrase in
+                phrase.detailPageID?.hasPrefix("viet-phrase-") == true
+            }, item.pageID)
         }
     }
 

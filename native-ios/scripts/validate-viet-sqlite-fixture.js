@@ -31,6 +31,17 @@ const bannedPatterns = [
   /watch-out/i,
 ];
 
+const relationshipWordVietnamese = [
+  "Chào anh",
+  "Chào chị",
+  "Chào em",
+  "Chào ông",
+  "Chào bà",
+  "Chào chú",
+  "Chào cô",
+];
+const relationshipWordListSQL = relationshipWordVietnamese.join("|").replace(/'/g, "''");
+
 const requiredLegacyNativePageAliases = [
   ["viet-polite-hello", "viet-phrase-polite-1"],
   ["viet-family-polite-hello", "viet-phrase-polite-1"],
@@ -182,6 +193,36 @@ function main() {
     WHERE NOT EXISTS (SELECT 1 FROM page_section ps WHERE ps.page_id = pp.id);
   `), "sectionless canonical phrase pages");
 
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page pp
+    WHERE NOT EXISTS (
+      SELECT 1
+      FROM page_section ps
+      WHERE ps.page_id = pp.id
+        AND ps.section_key = 'relationship-words'
+    );
+  `), "canonical pages without relationship-word shelf");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    WHERE ps.section_key = 'relationship-words'
+      AND (
+        (SELECT count(*) FROM page_section_item psi WHERE psi.section_id = ps.id AND psi.item_kind = 'phrase') != ${relationshipWordVietnamese.length}
+        OR (
+          SELECT group_concat(title_override, '|')
+          FROM (
+            SELECT psi.title_override
+            FROM page_section_item psi
+            WHERE psi.section_id = ps.id
+              AND psi.item_kind = 'phrase'
+            ORDER BY psi.sort_order
+          )
+        ) != '${relationshipWordListSQL}'
+      );
+  `), "relationship-word shelves without the full canonical greeting set");
+
   assertZero(
     sqliteValue("SELECT count(*) FROM page_section_item WHERE item_kind = 'authored_phrase';"),
     "visible authored phrase rows without canonical phrase pages"
@@ -259,6 +300,7 @@ function main() {
       "at-glance",
       "quick-say",
       "breakdown",
+      "relationship-words",
       "situational-greetings",
       "local-greetings",
       "common-follow-ups",
@@ -431,6 +473,8 @@ function main() {
   assertEqual(report.canonicalIdentity.unresolvedDuplicateNormalizedTargetTextGroups.length, 0, "unresolved duplicate phrase groups");
   assertEqual(report.validation.duplicateCanonicalPageGroupCount, 0, "report duplicate page groups");
   assertEqual(report.validation.sectionlessCanonicalPageCount, 0, "report sectionless pages");
+  assertEqual(report.validation.missingRelationshipWordsSectionCount, 0, "report missing relationship-word shelf count");
+  assertEqual(report.validation.badRelationshipWordsSectionCount, 0, "report incomplete relationship-word shelf count");
   assertEqual(report.validation.brokenRelationCount, 0, "report broken relation count");
   assertEqual(report.validation.searchDocumentsWithMissingPageTargets, 0, "report search target count");
   assertEqual(report.validation.pageEnglishTitlePhraseTextMismatchCount, 0, "report page English title mismatch count");

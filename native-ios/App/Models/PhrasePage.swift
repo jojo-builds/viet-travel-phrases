@@ -141,11 +141,16 @@ enum SectionPresentation: String, Decodable, Equatable {
     case plainText = "plain-text"
     case phraseList = "phrase-list"
     case horizontalPhraseCards = "horizontal-phrase-cards"
+    case relationshipShelf = "relationship-shelf"
     case breakdownStrip = "breakdown-strip"
     case tipCallout = "tip-callout"
     case warningCallout = "warning-callout"
 
     func resolved(sectionID: String, hasPhrases: Bool, hasBreakdown: Bool) -> SectionPresentation {
+        if hasPhrases, Self.relationshipShelfSectionIDs.contains(sectionID) {
+            return .relationshipShelf
+        }
+
         guard self == .automatic else {
             return self
         }
@@ -169,6 +174,14 @@ enum SectionPresentation: String, Decodable, Equatable {
             return hasPhrases ? .phraseList : .plainText
         }
     }
+
+    private static let relationshipShelfSectionIDs: Set<String> = [
+        "relationship-words",
+        "local-greetings",
+        "pronoun-swap",
+        "relationship-forms",
+        "relationship-swaps",
+    ]
 }
 
 struct PhraseDetailSection: Identifiable, Equatable {

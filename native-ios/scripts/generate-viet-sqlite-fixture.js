@@ -17,6 +17,16 @@ const databasePath = path.join(outputDir, "speaklocal-viet.sqlite");
 const reportPath = path.join(outputDir, "speaklocal-viet-report.json");
 
 const languagePackID = "viet";
+const relationshipWordSectionKey = "relationship-words";
+const relationshipWordPhraseIDs = [
+  "hello-chao-anh",
+  "hello-chao-chi",
+  "hello-chao-em",
+  "hello-chao-ong",
+  "hello-chao-ba",
+  "hello-chao-chu",
+  "hello-chao-co",
+];
 const legacyNativePageAliases = [
   { aliasID: "viet-hello-anh", phraseID: "hello-chao-anh" },
   { aliasID: "viet-hello-chi", phraseID: "hello-chao-chi" },
@@ -153,6 +163,13 @@ function main() {
   const scenarioByID = new Map(catalog.scenarios.map((scenario) => [scenario.id, scenario]));
   const familyByID = new Map(catalog.families.map((family) => [family.id, family]));
   const phraseByID = new Map(catalog.phrases.map((phrase) => [phrase.id, phrase]));
+  const relationshipWordPhrases = relationshipWordPhraseIDs.map((phraseID) => {
+    const phrase = phraseByID.get(phraseID);
+    if (!phrase) {
+      throw new Error(`Missing required relationship-word phrase ${phraseID}`);
+    }
+    return phrase;
+  });
   const authoredPages = authoredBundle.pages ?? [];
   const authoredPageByID = new Map(authoredPages.map((page) => [page.id, page]));
   const authoredPageByPhraseID = new Map();
@@ -905,6 +922,27 @@ function main() {
     });
   }
 
+  function addRelationshipWordsSection({ pageID, sortOrder, sourcePath }) {
+    const sectionID = addSection({
+      pageID,
+      sectionKey: relationshipWordSectionKey,
+      title: "Relationship words",
+      body: "Vietnamese often uses a relationship word where English uses one all-purpose you. Use these when the person's age or role is clear; if you are unsure, keep the main phrase simple and friendly.",
+      presentation: "relationship-shelf",
+      sortOrder,
+      sourcePath,
+    });
+
+    relationshipWordPhrases.forEach((phrase, index) => {
+      addPhraseSectionItem({
+        sectionID,
+        phrase,
+        sortOrder: index,
+        note: canonicalPageIDForPhrase(phrase.id),
+      });
+    });
+  }
+
   function addPageRelation({ sourcePhraseID, targetPhraseID, relationType, reason, displayLabel, sortOrder, sourcePath }) {
     const sourcePageID = canonicalPageIDForPhrase(sourcePhraseID);
     const targetPageID = canonicalPageIDForPhrase(targetPhraseID);
@@ -930,13 +968,16 @@ function main() {
   for (const page of authoredPages) {
     const canonicalPageID = canonicalPageIDForPhrase(page.phraseID);
     if (!canonicalPageID) continue;
+    const authoredSourcePath = relative(authoredPagesPath);
+    const relationshipWordsSortOrder = 3;
 
     for (const [index, categoryID] of (page.categoryIDs ?? []).entries()) {
-      addPageCategory(canonicalPageID, categoryID, index, relative(authoredPagesPath));
+      addPageCategory(canonicalPageID, categoryID, index, authoredSourcePath);
     }
 
     for (const [sectionIndex, section] of (page.sections ?? []).entries()) {
       const sectionID = `${canonicalPageID}:${section.id}`;
+      const sortOrder = sectionIndex >= relationshipWordsSortOrder ? sectionIndex + 1 : sectionIndex;
       usedSectionIDs.add(sectionID);
       sectionRows.push({
         id: sectionID,
@@ -945,8 +986,8 @@ function main() {
         title: section.title,
         body: section.body ?? "",
         presentation: section.presentation ?? "plain-text",
-        sort_order: sectionIndex,
-        source_path: relative(authoredPagesPath),
+        sort_order: sortOrder,
+        source_path: authoredSourcePath,
       });
 
       let itemIndex = 0;
@@ -971,7 +1012,7 @@ function main() {
             reason: `Authored ${section.title ?? section.id} row links these phrase pages.`,
             displayLabel: section.title ?? "Related",
             sortOrder: itemIndex,
-            sourcePath: relative(authoredPagesPath),
+            sourcePath: authoredSourcePath,
           });
         }
         itemIndex += 1;
@@ -1000,6 +1041,12 @@ function main() {
         itemIndex += 1;
       }
     }
+
+    addRelationshipWordsSection({
+      pageID: canonicalPageID,
+      sortOrder: relationshipWordsSortOrder,
+      sourcePath: authoredSourcePath,
+    });
   }
 
   for (const pageRow of pageRows) {
@@ -1047,13 +1094,19 @@ function main() {
     });
     addBreakdownSectionItems(breakdownSectionID, phrase, relative(catalogPath));
 
+    addRelationshipWordsSection({
+      pageID: pageRow.id,
+      sortOrder: 3,
+      sourcePath: relative(catalogPath),
+    });
+
     addSection({
       pageID: pageRow.id,
       sectionKey: "when-to-use",
       title: "When to use it",
       body: baselineContextBody(phrase, family),
       presentation: "plain-text",
-      sortOrder: 3,
+      sortOrder: 4,
       sourcePath: relative(catalogPath),
     });
 
@@ -1064,7 +1117,7 @@ function main() {
         title: "What you may hear",
         body: sentence(phrase.youMayHear),
         presentation: "plain-text",
-        sortOrder: 4,
+        sortOrder: 5,
         sourcePath: relative(catalogPath),
       });
     }
@@ -1075,7 +1128,7 @@ function main() {
       title: "Good to know",
       body: `Say it once, then give the other person the place, item, screen, or document that makes the request clear.`,
       presentation: "tip-callout",
-      sortOrder: 5,
+      sortOrder: 6,
       sourcePath: relative(catalogPath),
     });
 
@@ -1088,7 +1141,7 @@ function main() {
         ? `These nearby ${scenario?.title ?? "travel"} phrases help if the answer creates one more step.`
         : `This phrase is ready as a standalone ${scenario?.title ?? "travel"} page.`,
       presentation: "phrase-list",
-      sortOrder: 6,
+      sortOrder: 7,
       sourcePath: relative(catalogPath),
     });
     nearbyPhrases.forEach((nearbyPhrase, index) => {
@@ -1443,6 +1496,38 @@ function main() {
     FROM phrase_page pp
     WHERE NOT EXISTS (SELECT 1 FROM page_section ps WHERE ps.page_id = pp.id);
   `));
+  const relationshipWordListSQL = relationshipWordPhrases
+    .map((phrase) => phrase.targetText)
+    .join("|")
+    .replace(/'/g, "''");
+  const missingRelationshipWordsSectionCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM phrase_page pp
+    WHERE NOT EXISTS (
+      SELECT 1
+      FROM page_section ps
+      WHERE ps.page_id = pp.id
+        AND ps.section_key = '${relationshipWordSectionKey}'
+    );
+  `));
+  const badRelationshipWordsSectionCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM page_section ps
+    WHERE ps.section_key = '${relationshipWordSectionKey}'
+      AND (
+        (SELECT count(*) FROM page_section_item psi WHERE psi.section_id = ps.id AND psi.item_kind = 'phrase') != ${relationshipWordPhrases.length}
+        OR (
+          SELECT group_concat(title_override, '|')
+          FROM (
+            SELECT psi.title_override
+            FROM page_section_item psi
+            WHERE psi.section_id = ps.id
+              AND psi.item_kind = 'phrase'
+            ORDER BY psi.sort_order
+          )
+        ) != '${relationshipWordListSQL}'
+      );
+  `));
   const brokenRelationCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM phrase_relation r
@@ -1621,6 +1706,8 @@ function main() {
       ftsRowCount: Number(sqliteQuery("SELECT count(*) FROM search_document_fts;")),
       duplicateCanonicalPageGroupCount,
       sectionlessCanonicalPageCount,
+      missingRelationshipWordsSectionCount,
+      badRelationshipWordsSectionCount,
       brokenRelationCount,
       relationSourceIndexPresent,
       relationLookupUsesSourceIndex,

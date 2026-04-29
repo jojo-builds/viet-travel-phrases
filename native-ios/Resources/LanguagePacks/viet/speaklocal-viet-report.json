@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "b4c27312b127418cc18a605519261e40c7a7f44a38d4a43e267c32d06dc9f013",
+    "databaseSha256": "880eca90d3cf5465797416f7b794963851330c9d69d18a3b0cd0d4819273f09b",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -79,8 +79,8 @@
     "pages": 938,
     "aliases": 1007,
     "pageCategories": 978,
-    "sections": 6193,
-    "sectionItems": 10605,
+    "sections": 7131,
+    "sectionItems": 17171,
     "breakdownTokens": 6077,
     "relations": 3642,
     "searchDocuments": 946,
@@ -95,6 +95,8 @@
     "ftsRowCount": 946,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
+    "missingRelationshipWordsSectionCount": 0,
+    "badRelationshipWordsSectionCount": 0,
     "brokenRelationCount": 0,
     "relationSourceIndexPresent": true,
     "relationLookupUsesSourceIndex": true,
