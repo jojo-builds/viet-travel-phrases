@@ -854,9 +854,13 @@ struct ExploreCatalogSection: View {
     let onOpenDetail: (String) -> Void
 
     private var sections: [PhraseCatalogSection] {
+        Self.sections(forPageID: currentPageID)
+    }
+
+    static func sections(forPageID pageID: String) -> [PhraseCatalogSection] {
         PhraseCatalog.browseSections(
-            defaultCategoryID: PhraseCatalog.defaultCategoryID(forPageID: currentPageID),
-            excludingPageID: currentPageID
+            defaultCategoryID: PhraseCatalog.defaultCategoryID(forPageID: pageID),
+            excludingPageID: pageID
         )
     }
 
@@ -864,9 +868,13 @@ struct ExploreCatalogSection: View {
         if sections.isEmpty {
             ExploreCatalogEmptyState()
         } else {
-            LazyVStack(alignment: .leading, spacing: ExploreCatalogLayout.sectionSpacing) {
-                ForEach(sections) { section in
-                    ExploreCatalogCategoryShelf(section: section, onOpenDetail: onOpenDetail)
+            VStack(alignment: .leading, spacing: 12) {
+                SectionHeader(title: "Browse more")
+
+                LazyVStack(alignment: .leading, spacing: ExploreCatalogLayout.sectionSpacing) {
+                    ForEach(sections) { section in
+                        ExploreCatalogCategoryShelf(section: section, onOpenDetail: onOpenDetail)
+                    }
                 }
             }
         }

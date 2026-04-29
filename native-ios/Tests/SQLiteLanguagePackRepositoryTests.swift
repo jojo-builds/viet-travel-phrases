@@ -160,6 +160,11 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             let page = try repository.loadPhraseDetailPage(pageID: item.pageID)
 
             XCTAssertTrue(page.showsCatalogExplore, item.pageID)
+            let sections = ExploreCatalogSection.sections(forPageID: item.pageID)
+            XCTAssertFalse(sections.isEmpty, item.pageID)
+            XCTAssertTrue(sections.allSatisfy { section in
+                section.items.allSatisfy { $0.pageID != item.pageID }
+            }, item.pageID)
         }
     }
 

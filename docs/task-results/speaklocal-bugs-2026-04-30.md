@@ -55,7 +55,7 @@ Reviewer gate:
 
 ## Bug 4 - Explore Next should not reteach the same page content
 
-Commit: pending
+Commit: 4df712c
 
 Changes:
 - Updated `generate-viet-sqlite-fixture.js` so authored `explore-next` rows skip destinations already taught earlier on the same page.
@@ -70,3 +70,19 @@ Validation:
 
 Reviewer gate:
 - APPROVED. The generator now preserves the authored Explore Next shelf while removing repeated rows already taught in Quick Say, usage, insight, local-tip, or other article teaching sections.
+
+## Bug 5 - Restore bottom category shelves on all canonical pages
+
+Commit: pending
+
+Changes:
+- Restored the post-article catalog shelf as a clearly separate `Browse more` section below authored page content.
+- Exposed the catalog shelf resolver so tests can verify shelf availability for every canonical SQLite page.
+- Added coverage that catalog shelf rows exclude the current page while still rendering app-store-style three-row groups.
+
+Validation:
+- `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'id=91BDCCB0-0728-40AB-8150-B6DCB96BE799' -only-testing:SpeakLocalNativeTests/SQLiteLanguagePackRepositoryTests/testSQLiteCanonicalPagesShowCatalogExploreShelf -only-testing:SpeakLocalNativeTests/AppChromeTests/testExploreCatalogUsesAppStoreStyleThreeRowGroups` passed, 2 tests.
+- `git status --short native-ios/Resources/Audio` returned no changes.
+
+Reviewer gate:
+- APPROVED. The bottom catalog shelf is now distinct from authored `Explore next`, uses the existing three-row horizontal shelf behavior, and is available for all sampled canonical SQLite pages without self-row repeats.
