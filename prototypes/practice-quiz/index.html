@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal Practice Core Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell" aria-live="polite">
+    <section class="phone" aria-label="SpeakLocal Practice prototype">
+      <div class="masthead" aria-hidden="true"></div>
+      <div class="topbar">
+        <button class="icon-button" id="backButton" type="button" aria-label="Back">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="progress-pill" id="progressPill">Practice</div>
+      </div>
+
+      <section class="view view-hub" id="hubView">
+        <div class="hero">
+          <h1>Practice</h1>
+          <p id="deckCount">Loading phrase decks...</p>
+        </div>
+        <div class="flow-list" id="flowList"></div>
+      </section>
+
+      <section class="view view-session" id="sessionView" hidden>
+        <div class="session-heading">
+          <p id="flowLabel"></p>
+          <h2 id="promptTitle"></h2>
+        </div>
+        <article class="prompt-panel">
+          <div class="prompt-type" id="questionType"></div>
+          <button class="audio-button" id="audioButton" type="button" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5-.5a5 5 0 010 7M19 6a8 8 0 010 12"/></svg>
+            <span>Play audio</span>
+          </button>
+          <p class="prompt-text" id="promptText"></p>
+          <div class="source-line" id="sourceLine"></div>
+        </article>
+
+        <div class="answer-area" id="answerArea"></div>
+        <div class="feedback" id="feedback" hidden></div>
+
+        <div class="session-actions">
+          <button class="secondary" id="sourceButton" type="button">Source page</button>
+          <button class="primary" id="nextButton" type="button">Check</button>
+        </div>
+      </section>
+
+      <section class="view view-complete" id="completeView" hidden>
+        <div class="complete-panel">
+          <p id="completeLabel"></p>
+          <h2 id="completeTitle"></h2>
+          <div class="stats">
+            <div><strong id="correctCount">0</strong><span>Ready</span></div>
+            <div><strong id="missedCount">0</strong><span>Review</span></div>
+          </div>
+          <button class="primary wide" id="keepGoingButton" type="button">Keep going</button>
+          <button class="secondary wide" id="chooseFlowButton" type="button">Choose another flow</button>
+        </div>
+      </section>
+
+      <nav class="dock" aria-label="Prototype navigation">
+        <button type="button" class="dock-item is-active">Home</button>
+        <button type="button" class="dock-item">Browse</button>
+        <button type="button" class="dock-item">Saved</button>
+        <button type="button" class="dock-item">Practice</button>
+      </nav>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -133,6 +133,7 @@
 - Native Home V1 is the default launch route. `Xin chào` remains the flagship listing page reachable from Home, Browse, search, and relationship shelves rather than standing in as the whole home screen.
 - Saved phrases, practice-selected phrases, recently opened pages, practiced prompts, and missed items are local private user-state signals. They should personalize Home, Explore, category rows, and Practice through deterministic offline ranking while the bundled phrase graph remains read-only.
 - `Add to practice` should be available from phrase pages and eligible phrase rows once local practice-pool state exists. The selected phrase/row/token remains the correct-answer target for generated practice prompts; graph-nearby phrases are distractors or recommendations, not replacement targets.
+- The first Viet Practice Core package lives in `docs/practice/VIET_PRACTICE_CORE_PLAN.md`, `content-draft/viet/practice/practice-deck.sample.json`, `scripts/practice/generate-viet-practice-deck.js`, and `prototypes/practice-quiz/`. It is a prepared offline contract/prototype for later T-167/T-168 native integration, not current native runtime wiring.
 
 ## Current live Viet boundary decisions
 

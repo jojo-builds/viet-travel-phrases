@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T08:15:20.500303+07:00",
+  "updatedAt": "2026-04-29T14:28:47.176231+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family-native-sqlite",
   "selectionPolicy": {
     "preferredGroups": [
@@ -146,6 +146,13 @@
         "state": ".agent\\tasks\\T-168\\state.json",
         "selectionOrder": 17,
         "writeLock": "native_ios_sqlite_runtime_read_path"
+      },
+      {
+        "taskId": "T-169",
+        "title": "Design and generate Viet Practice Core decks with browser prototype",
+        "state": ".agent\\tasks\\T-169\\state.json",
+        "selectionOrder": 18,
+        "writeLock": "practice_quiz_core_data_contract"
       },
       {
         "taskId": "T-167",
@@ -688,7 +695,7 @@
     "inProgressCount": 0,
     "blockedCount": 15,
     "draftCount": 2,
-    "recentlyCompletedCount": 77
+    "recentlyCompletedCount": 78
   },
   "notes": [
     "This index is intentionally small and selection-focused.",

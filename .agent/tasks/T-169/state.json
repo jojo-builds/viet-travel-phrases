@@ -1,0 +1,63 @@
+{
+  "taskId": "T-169",
+  "title": "Design and generate Viet Practice Core decks with browser prototype",
+  "status": "done",
+  "phase": "completed",
+  "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "cwd": "/Users/jojolim/Developer/products/speaklocal/app-family-practice-core",
+  "session": {
+    "owner": "codex-desktop-automation",
+    "sessionId": "85E0A687-7CFB-46DE-B95D-E28BF0CEF498",
+    "label": "manual-T-169-practice-core"
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedAt": "2026-04-29T07:22:12+07:00",
+    "lastHeartbeatAt": "2026-04-29T07:56:56+07:00",
+    "heartbeatEveryMinutes": 10,
+    "leaseDurationMinutes": 120,
+    "leaseExpiresAt": "2026-04-29T09:56:56+07:00",
+    "reclaimReason": ""
+  },
+  "locks": {
+    "write": [
+      "practice_quiz_core_data_contract",
+      "practice_quiz_browser_prototype",
+      "agent_task_T-169"
+    ],
+    "read": [],
+    "blockedBy": [
+      "native_ios_sqlite_runtime_read_path"
+    ]
+  },
+  "truthClassification": {
+    "target": "prepared-next"
+  },
+  "blockers": [],
+  "artifacts": {
+    "result": ".agent/tasks/T-169/result.md",
+    "recoveryNotes": ".agent/tasks/T-169/recovery-notes.md",
+    "reviews": ".agent/tasks/T-169/reviews/",
+    "logs": ".agent/tasks/T-169/logs/",
+    "requiredForDone": [
+      ".agent/tasks/T-169/result.md",
+      "docs/practice/VIET_PRACTICE_CORE_PLAN.md",
+      "content-draft/viet/practice/practice-deck.sample.json",
+      "prototypes/practice-quiz/index.html"
+    ]
+  },
+  "lastUpdated": "2026-04-29T07:56:56+07:00",
+  "automation": {
+    "runner": "desktop-codex",
+    "mode": "single-task",
+    "taskClass": "meaningful",
+    "proofTask": false,
+    "expectedRunMinutes": "90-240",
+    "runtimeReviewPathProven": true,
+    "selectionOrder": 18,
+    "reviewersRequired": 4,
+    "reviewGatesRequired": 3,
+    "reviewGateConsensusRequired": 4,
+    "reviewGateLoop": "all-4-subagents-must-agree-before-advance"
+  }
+}
