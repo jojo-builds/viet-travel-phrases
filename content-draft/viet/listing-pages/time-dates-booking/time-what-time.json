@@ -75,13 +75,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Time, Dates & Booking, locals often answer with a short reply, a smile, a time, or a light follow-up question rather than a long explanation. That makes Mấy giờ? strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "time-2",
+          "vietnamese": "Hôm nay",
+          "english": "Today",
+          "pronunciation": "hom nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-time-today",
+          "audioKey": "time-2"
+        },
+        {
+          "id": "time-3",
+          "vietnamese": "Sáng mai",
+          "english": "Tomorrow morning",
+          "pronunciation": "sahng mai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-time-tomorrow-morning",
+          "audioKey": "time-3"
+        },
+        {
+          "id": "time-4",
+          "vietnamese": "Tôi có đặt chỗ",
+          "english": "I have a booking",
+          "pronunciation": "toy koh dat choh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-time-have-booking",
+          "audioKey": "time-4"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "This is for when you already both know what the event is and you just need the time. It fits times, dates, tickets, waits, and bookings, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "time-5",
+          "vietnamese": "Mấy giờ mở cửa?",
+          "english": "What time does it open?",
+          "pronunciation": "may zyuh muh koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-time-open",
+          "audioKey": "time-5"
+        },
+        {
+          "id": "v500-time-date-book-is-there-a-wait",
+          "vietnamese": "Có chờ đợi không?",
+          "english": "Is there a wait?",
+          "pronunciation": "Co cho doi khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-time-date-book-is-there-a-wait",
+          "audioKey": "v500-time-date-book-is-there-a-wait"
+        },
+        {
+          "id": "v500-time-date-book-one-ticket-please",
+          "vietnamese": "Xin một vé",
+          "english": "One ticket, please",
+          "pronunciation": "Xin mot ve",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+          "audioKey": "v500-time-date-book-one-ticket-please"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -93,7 +157,19 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Confirm the answer visually on a phone, ticket, or calendar when the exact time matters.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "time-1",
+          "vietnamese": "Mấy giờ?",
+          "english": "What time?",
+          "pronunciation": "may zyuh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "time-1"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "explore-next",

@@ -99,13 +99,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Phone, Internet & Power, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Tôi sạc điện thoại ở đây được không? strongest when you say it once, pause, and let the other person show the next step. Show the phone screen or error message first so the problem is visible before you add more words.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "phone-1",
+          "vietnamese": "Mật khẩu Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "mat khau wai-fai la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-wifi-password",
+          "audioKey": "phone-1"
+        },
+        {
+          "id": "phone-2",
+          "vietnamese": "Có bán SIM không?",
+          "english": "Do you sell SIM cards?",
+          "pronunciation": "koh ban sim khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-sim",
+          "audioKey": "phone-2"
+        },
+        {
+          "id": "phone-3",
+          "vietnamese": "Điện thoại tôi hết pin rồi",
+          "english": "My phone battery is dead",
+          "pronunciation": "dyen thoai toy het pin roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-battery-dead",
+          "audioKey": "phone-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "This is for when the place has power and you need permission or a spot to charge. It fits Wi-Fi, SIM, battery, charging, maps, and phone setup, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "phone-4",
+          "vietnamese": "Có sạc không?",
+          "english": "Do you have a charger?",
+          "pronunciation": "koh sahk khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-charger",
+          "audioKey": "phone-4"
+        },
+        {
+          "id": "v500-phon-inte-powe-my-map-is-not-working",
+          "vietnamese": "Bản đồ của tôi không hoạt động",
+          "english": "My map is not working",
+          "pronunciation": "Ban do cua toi khong hoat dong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
+          "audioKey": "v500-phon-inte-powe-my-map-is-not-working"
+        },
+        {
+          "id": "v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "vietnamese": "Tôi có thể mua SIM ở đâu?",
+          "english": "Where can I get a local SIM card?",
+          "pronunciation": "toy koh theh moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+          "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -117,7 +181,19 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Show the phone screen while you speak. A visible error message often explains the problem faster than more words.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "v500-phon-inte-powe-i-need-an-esim",
+          "vietnamese": "Tôi cần một eSIM",
+          "english": "I need an eSIM",
+          "pronunciation": "Toi can mot eSIM",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-phon-inte-powe-i-need-an-esim",
+          "audioKey": "v500-phon-inte-powe-i-need-an-esim"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "explore-next",

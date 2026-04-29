@@ -69,7 +69,39 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Transport, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Cho tôi xuống ngay đây strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-stop-here",
+          "audioKey": "taxi-3"
+        },
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-destination",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-main-destination",
+          "audioKey": "taxi-2"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",

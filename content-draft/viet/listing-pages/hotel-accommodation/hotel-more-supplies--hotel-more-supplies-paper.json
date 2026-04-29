@@ -81,7 +81,39 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Hotel Accommodation, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Cho tôi thêm giấy vệ sinh được không? strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "hotel-6",
+          "vietnamese": "Cho tôi thêm khăn",
+          "english": "More towels please",
+          "pronunciation": "cho toy them khan",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-more-supplies",
+          "audioKey": "hotel-6"
+        },
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-reservation",
+          "audioKey": "hotel-1"
+        },
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-check-in",
+          "audioKey": "hotel-2"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",

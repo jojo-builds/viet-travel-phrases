@@ -93,7 +93,39 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Food & Drink, locals often answer with a clear reply, a pointed detail, or a simple follow-up rather than a long explanation. That makes Món này có trứng hay đậu phộng không? strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "food-peanut-allergy",
+          "vietnamese": "Tôi bị dị ứng đậu phộng",
+          "english": "I am allergic to peanuts",
+          "pronunciation": "toy bee zee oong dow fohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-peanut-allergy",
+          "audioKey": "food-peanut-allergy"
+        },
+        {
+          "id": "coffee-1",
+          "vietnamese": "Cho tôi một cà phê sữa đá",
+          "english": "One iced milk coffee please",
+          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-coffee-milk",
+          "audioKey": "coffee-1"
+        },
+        {
+          "id": "coffee-2",
+          "vietnamese": "Cho tôi cà phê đen đá",
+          "english": "I’d like an iced black coffee",
+          "pronunciation": "cho toy ka feh den dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-coffee-black",
+          "audioKey": "coffee-2"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",

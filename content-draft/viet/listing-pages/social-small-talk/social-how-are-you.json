@@ -82,7 +82,39 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Social Small Talk, locals often answer with a short reply, a smile, a time, or a light follow-up question rather than a long explanation. That makes Bạn khỏe không? strongest when you say it once, pause, and let the other person show the next step. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "smalltalk-1",
+          "vietnamese": "Tôi đến từ Mỹ",
+          "english": "I’m from the United States",
+          "pronunciation": "toy den too mee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-social-from-us",
+          "audioKey": "smalltalk-1"
+        },
+        {
+          "id": "smalltalk-2",
+          "vietnamese": "Tôi từ Anh",
+          "english": "I’m from England",
+          "pronunciation": "toy too anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-social-from-uk",
+          "audioKey": "smalltalk-2"
+        },
+        {
+          "id": "smalltalk-3",
+          "vietnamese": "Đây là lần đầu của tôi",
+          "english": "This is my first time",
+          "pronunciation": "day la lun dow koo-ah toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-social-first-time",
+          "audioKey": "smalltalk-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "relationship-forms",
@@ -126,55 +158,7 @@
       "id": "when-to-use",
       "title": "When to use it",
       "body": "Use it after Xin chào or Chào bạn, not as the very first sentence to a stranger in a rushed service moment.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "With an older man or woman, Anh khỏe không? or Chị khỏe không? can sound more natural than the all-purpose bạn.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "local-tip",
-      "title": "Local tip",
-      "body": "If you are unsure, keep it simple and friendly. A smile and the right relationship word often matter more than a perfect sentence.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
       "phrases": [
-        {
-          "id": "smalltalk-1",
-          "vietnamese": "Tôi đến từ Mỹ",
-          "english": "I’m from the United States",
-          "pronunciation": "toy den too mee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-social-from-us",
-          "audioKey": "smalltalk-1"
-        },
-        {
-          "id": "smalltalk-2",
-          "vietnamese": "Tôi từ Anh",
-          "english": "I’m from England",
-          "pronunciation": "toy too anh",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-social-from-uk",
-          "audioKey": "smalltalk-2"
-        },
-        {
-          "id": "smalltalk-3",
-          "vietnamese": "Đây là lần đầu của tôi",
-          "english": "This is my first time",
-          "pronunciation": "day la lun dow koo-ah toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-social-first-time",
-          "audioKey": "smalltalk-3"
-        },
         {
           "id": "smalltalk-4",
           "vietnamese": "Tôi thích Việt Nam",
@@ -204,7 +188,21 @@
           "tintName": "green",
           "detailPageID": "viet-family-social-weather-hot",
           "audioKey": "smalltalk-6"
-        },
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "With an older man or woman, Anh khỏe không? or Chị khỏe không? can sound more natural than the all-purpose bạn.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "If you are unsure, keep it simple and friendly. A smile and the right relationship word often matter more than a perfect sentence.",
+      "phrases": [
         {
           "id": "smalltalk-di-dau-day",
           "vietnamese": "Đi đâu đấy?",
@@ -224,6 +222,44 @@
           "tintName": "green",
           "detailPageID": "viet-smalltalk-nice-to-meet-you",
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+        },
+        {
+          "id": "how-are-you-anh",
+          "vietnamese": "Anh khỏe không?",
+          "english": "How are you, older man?",
+          "pronunciation": "anh khweh khom",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you-anh",
+          "audioKey": "audio-authored-anh-khoe-khong-942769853d"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "how-are-you-chi",
+          "vietnamese": "Chị khỏe không?",
+          "english": "How are you, older woman?",
+          "pronunciation": "chee khweh khom",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you-chi",
+          "audioKey": "audio-authored-chi-khoe-khong-1483c77058"
+        },
+        {
+          "id": "how-are-you-em",
+          "vietnamese": "Em khỏe không?",
+          "english": "How are you, younger person?",
+          "pronunciation": "em khweh khom",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you-em",
+          "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
       "presentation": "phrase-list"

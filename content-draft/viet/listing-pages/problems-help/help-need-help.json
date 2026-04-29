@@ -93,13 +93,67 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Problems & Help, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Giúp tôi với strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "problems-1",
+          "vietnamese": "Tôi bị lạc đường",
+          "english": "I’m lost",
+          "pronunciation": "toy bee lahk doong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-lost",
+          "audioKey": "problems-1"
+        },
+        {
+          "id": "problems-4",
+          "vietnamese": "Tôi quên đồ rồi",
+          "english": "I left something behind",
+          "pronunciation": "toy gwen doh roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-left-something",
+          "audioKey": "problems-4"
+        },
+        {
+          "id": "help-2",
+          "vietnamese": "Gọi khách sạn giúp tôi",
+          "english": "Please call the hotel for me",
+          "pronunciation": "goy khak san zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-call-hotel",
+          "audioKey": "help-2"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "This is for when you need immediate practical help and want the shortest direct version. It fits lost items, help, managers, and recovery moments, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "help-3",
+          "vietnamese": "Tôi cần quản lý",
+          "english": "I need the manager",
+          "pronunciation": "toy gun kwan lee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-manager",
+          "audioKey": "help-3"
+        },
+        {
+          "id": "v500-prob-help-i-need-help-now",
+          "vietnamese": "Tôi cần giúp đỡ bây giờ",
+          "english": "I need help now",
+          "pronunciation": "Toi can giup do bay gio",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-v500-prob-help-i-need-help-now",
+          "audioKey": "v500-prob-help-i-need-help-now"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -111,7 +165,19 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Start with the simplest phrase, then show the item, place, receipt, or photo connected to the problem.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "help-need-help-direct",
+          "vietnamese": "Giúp tôi với",
+          "english": "I need help",
+          "pronunciation": "zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "help-need-help-direct"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "explore-next",

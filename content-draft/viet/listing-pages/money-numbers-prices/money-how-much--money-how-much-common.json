@@ -69,7 +69,39 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Money, Numbers & Prices, locals often answer with a number, typed amount, calculator screen, or direct yes/no about payment rather than a long explanation. That makes Cái này nhiêu tiền? strongest when you say it once, pause, and let the other person show the next step. Point to the place, object, or screen that gives the phrase context.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-how-much",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "price-2",
+          "vietnamese": "Bao nhiêu một ký?",
+          "english": "How much per kilo?",
+          "pronunciation": "bao nyew mot kee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-per-kilo",
+          "audioKey": "price-2"
+        },
+        {
+          "id": "price-3",
+          "vietnamese": "Mắc quá",
+          "english": "Too expensive",
+          "pronunciation": "mak gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-too-expensive",
+          "audioKey": "price-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",

@@ -233,6 +233,78 @@ function main() {
       );
   `), "relationship-word shelves without the full canonical greeting set");
 
+  const textOnlySectionRunCount = Number(sqliteValue(`
+    WITH section_flags AS (
+      SELECT
+        pp.id AS page_id,
+        ps.id AS section_id,
+        ps.sort_order,
+        CASE WHEN EXISTS (
+          SELECT 1
+          FROM page_section_item psi
+          WHERE psi.section_id = ps.id
+            AND psi.item_kind IN ('phrase', 'authored_phrase', 'breakdown_token')
+        ) THEN 0 ELSE 1 END AS text_only
+      FROM phrase_page pp
+      JOIN page_section ps ON ps.page_id = pp.id
+    ),
+    runs AS (
+      SELECT
+        section_flags.*,
+        SUM(CASE WHEN text_only = 0 THEN 1 ELSE 0 END) OVER (
+          PARTITION BY page_id
+          ORDER BY sort_order
+          ROWS UNBOUNDED PRECEDING
+        ) AS run_group
+      FROM section_flags
+    )
+    SELECT count(*)
+    FROM (
+      SELECT page_id, run_group
+      FROM runs
+      WHERE text_only = 1
+      GROUP BY page_id, run_group
+      HAVING count(*) >= 3
+    );
+  `));
+  if (textOnlySectionRunCount !== 0) {
+    const sample = sqliteValue(`
+      WITH section_flags AS (
+        SELECT
+          pp.id AS page_id,
+          pp.title AS page_title,
+          ps.title AS section_title,
+          ps.sort_order,
+          CASE WHEN EXISTS (
+            SELECT 1
+            FROM page_section_item psi
+            WHERE psi.section_id = ps.id
+              AND psi.item_kind IN ('phrase', 'authored_phrase', 'breakdown_token')
+          ) THEN 0 ELSE 1 END AS text_only
+        FROM phrase_page pp
+        JOIN page_section ps ON ps.page_id = pp.id
+      ),
+      runs AS (
+        SELECT
+          section_flags.*,
+          SUM(CASE WHEN text_only = 0 THEN 1 ELSE 0 END) OVER (
+            PARTITION BY page_id
+            ORDER BY sort_order
+            ROWS UNBOUNDED PRECEDING
+          ) AS run_group
+        FROM section_flags
+      )
+      SELECT page_id || ': ' || group_concat(section_title, ' | ')
+      FROM runs
+      WHERE text_only = 1
+      GROUP BY page_id, run_group
+      HAVING count(*) >= 3
+      ORDER BY page_id
+      LIMIT 20;
+    `);
+    throw new Error(`canonical pages with 3+ consecutive text-only sections: ${textOnlySectionRunCount}\n${sample}`);
+  }
+
   assertZero(
     sqliteValue("SELECT count(*) FROM page_section_item WHERE item_kind = 'authored_phrase';"),
     "visible authored phrase rows without canonical phrase pages"
@@ -489,6 +561,7 @@ function main() {
   assertEqual(report.validation.sectionlessCanonicalPageCount, 0, "report sectionless pages");
   assertEqual(report.validation.missingRelationshipWordsSectionCount, 0, "report missing relationship-word shelf count");
   assertEqual(report.validation.badRelationshipWordsSectionCount, 0, "report incomplete relationship-word shelf count");
+  assertEqual(report.validation.textOnlySectionRunCount, 0, "report text-only section run count");
   assertEqual(report.validation.brokenRelationCount, 0, "report broken relation count");
   assertEqual(report.validation.searchDocumentsWithMissingPageTargets, 0, "report search target count");
   assertEqual(report.validation.pageEnglishTitlePhraseTextMismatchCount, 0, "report page English title mismatch count");

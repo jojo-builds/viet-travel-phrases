@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-04-29T18:31:39.578Z",
+    "generatedAt": "2026-04-29T18:52:55.242Z",
     "tierOneFamilyCount": 150,
     "requiredAudioCount": 490,
     "missingAudioCount": 0
@@ -208,7 +208,7 @@
     },
     {
       "pageID": "viet-thank-you",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "polite-3",
       "text": "Dạ",
@@ -216,7 +216,7 @@
     },
     {
       "pageID": "viet-thank-you",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "polite-4",
       "text": "Không, cảm ơn",
@@ -224,7 +224,7 @@
     },
     {
       "pageID": "viet-thank-you",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "polite-6",
       "text": "Không sao đâu",
@@ -232,7 +232,7 @@
     },
     {
       "pageID": "viet-thank-you",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-poli-basi-yes",
       "text": "Đúng",
@@ -240,7 +240,7 @@
     },
     {
       "pageID": "viet-thank-you",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "breakdown-chao",
       "text": "Chào",
@@ -296,7 +296,7 @@
     },
     {
       "pageID": "viet-family-repair-understand",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "problems-3",
       "text": "Nói chậm chút được không?",
@@ -304,7 +304,7 @@
     },
     {
       "pageID": "viet-family-repair-understand",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "repair-1",
       "text": "Làm ơn nói lại",
@@ -312,7 +312,7 @@
     },
     {
       "pageID": "viet-family-repair-understand",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "repair-2",
       "text": "Viết xuống giúp tôi",
@@ -320,7 +320,7 @@
     },
     {
       "pageID": "viet-family-repair-understand",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "repair-3",
       "text": "Cái đó nghĩa là gì?",
@@ -328,7 +328,7 @@
     },
     {
       "pageID": "viet-family-repair-understand",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "repair-6",
       "text": "Làm ơn nói lại số đó",
@@ -336,7 +336,7 @@
     },
     {
       "pageID": "viet-family-repair-understand",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "repair-english-help",
       "text": "Anh/chị nói tiếng Anh không?",
@@ -344,7 +344,7 @@
     },
     {
       "pageID": "viet-family-repair-understand",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-unde-repa-please-say-it-slowly",
       "text": "Hãy nói từ từ nhé",
@@ -520,7 +520,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "taxi-2",
       "text": "Đi quận 1",
@@ -528,7 +528,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "taxi-3",
       "text": "Dừng ở đây được rồi",
@@ -536,7 +536,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "taxi-4",
       "text": "Đi đường này đi",
@@ -544,7 +544,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "taxi-5",
       "text": "Mở máy lạnh giúp tôi",
@@ -552,7 +552,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "taxi-6",
       "text": "Chờ tôi năm phút",
@@ -560,7 +560,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "taxi-7",
       "text": "Tôi trả bằng tiền mặt",
@@ -568,7 +568,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "transport-fare",
       "text": "Tiền xe bao nhiêu?",
@@ -576,7 +576,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "transport-meter",
       "text": "Làm ơn bật đồng hồ giúp tôi",
@@ -584,7 +584,7 @@
     },
     {
       "pageID": "viet-family-transport-destination",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "transport-lost",
       "text": "Tôi nghĩ chúng ta bị lạc rồi",
@@ -856,7 +856,7 @@
     },
     {
       "pageID": "viet-family-hotel-reservation",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "hotel-2",
       "text": "Cho tôi nhận phòng",
@@ -864,7 +864,7 @@
     },
     {
       "pageID": "viet-family-hotel-reservation",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "hotel-3",
       "text": "Mấy giờ trả phòng?",
@@ -872,7 +872,7 @@
     },
     {
       "pageID": "viet-family-hotel-reservation",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "hotel-checkout",
       "text": "Cho tôi trả phòng",
@@ -880,7 +880,7 @@
     },
     {
       "pageID": "viet-family-hotel-reservation",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "hotel-4",
       "text": "Phòng này nóng quá",
@@ -888,7 +888,7 @@
     },
     {
       "pageID": "viet-family-hotel-reservation",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "hotel-5",
       "text": "Máy lạnh không chạy",
@@ -896,7 +896,7 @@
     },
     {
       "pageID": "viet-family-hotel-reservation",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "hotel-6",
       "text": "Cho tôi thêm khăn",
@@ -904,7 +904,7 @@
     },
     {
       "pageID": "viet-family-hotel-reservation",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "hotel-7",
       "text": "Giữ hành lý giúp tôi",
@@ -912,7 +912,7 @@
     },
     {
       "pageID": "viet-family-hotel-reservation",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-hote-acco-the-door-does-not-lock",
       "text": "Cửa không khóa",
@@ -1080,7 +1080,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "coffee-2",
       "text": "Cho tôi cà phê đen đá",
@@ -1088,7 +1088,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "coffee-3",
       "text": "Cho tôi bạc xỉu đá",
@@ -1096,7 +1096,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "coffee-4",
       "text": "Ít đá thôi",
@@ -1104,7 +1104,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "coffee-5",
       "text": "Không đường nhé",
@@ -1112,7 +1112,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "coffee-6",
       "text": "Mang đi",
@@ -1120,7 +1120,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "coffee-7",
       "text": "Tính tiền giúp tôi",
@@ -1128,7 +1128,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "food-need-table",
       "text": "Cho tôi bàn cho hai người nhé",
@@ -1136,7 +1136,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "food-menu",
       "text": "Cho tôi xem thực đơn được không?",
@@ -1144,7 +1144,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "food-1",
       "text": "Cho tôi một phần",
@@ -1152,7 +1152,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "food-2",
       "text": "Cho tôi tô này",
@@ -1160,7 +1160,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "food-3",
       "text": "Không cay nhé",
@@ -1168,10 +1168,50 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "food-4",
       "text": "Cho thêm rau",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "nearby-phrases",
+      "kind": "phrase",
+      "audioKey": "food-5",
+      "text": "Có nước suối không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-6",
+      "text": "Cho tôi muỗng với đũa",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-7",
+      "text": "Gói mang về",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-vegetarian",
+      "text": "Tôi ăn chay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "food-peanut-allergy",
+      "text": "Tôi bị dị ứng đậu phộng",
       "resolved": true
     },
     {
@@ -1360,14 +1400,6 @@
     },
     {
       "pageID": "viet-family-food-bottled-water",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "food-5",
-      "text": "Có nước suối không?",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-bottled-water",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-food-5-first",
@@ -1380,14 +1412,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-nuoc-suoi-69c78e2722",
       "text": "nước suối",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-utensils",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "food-6",
-      "text": "Cho tôi muỗng với đũa",
       "resolved": true
     },
     {
@@ -1416,14 +1440,6 @@
     },
     {
       "pageID": "viet-family-food-pack-to-go",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "food-7",
-      "text": "Gói mang về",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-pack-to-go",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-food-7-first",
@@ -1448,14 +1464,6 @@
     },
     {
       "pageID": "viet-family-food-vegetarian",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "food-vegetarian",
-      "text": "Tôi ăn chay",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-vegetarian",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-v900-food-drin-i-do-not-eat-seafood-piece-3",
@@ -1468,14 +1476,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-chay-78f4254ec2",
       "text": "chay",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-peanut-allergy",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "food-peanut-allergy",
-      "text": "Tôi bị dị ứng đậu phộng",
       "resolved": true
     },
     {
@@ -1552,7 +1552,7 @@
     },
     {
       "pageID": "viet-family-money-how-much",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "price-2",
       "text": "Bao nhiêu một ký?",
@@ -1560,7 +1560,7 @@
     },
     {
       "pageID": "viet-family-money-how-much",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "price-3",
       "text": "Mắc quá",
@@ -1568,7 +1568,7 @@
     },
     {
       "pageID": "viet-family-money-how-much",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "price-4",
       "text": "Bớt chút được không?",
@@ -1576,7 +1576,7 @@
     },
     {
       "pageID": "viet-family-money-how-much",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "price-5",
       "text": "Giá cuối bao nhiêu?",
@@ -1584,7 +1584,7 @@
     },
     {
       "pageID": "viet-family-money-how-much",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "price-6",
       "text": "Cho tôi xem cái khác",
@@ -1592,7 +1592,7 @@
     },
     {
       "pageID": "viet-family-money-how-much",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "price-7",
       "text": "Tôi lấy cái này",
@@ -1600,7 +1600,7 @@
     },
     {
       "pageID": "viet-family-money-how-much",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "airport-4",
       "text": "ATM gần nhất ở đâu?",
@@ -1608,7 +1608,7 @@
     },
     {
       "pageID": "viet-family-money-how-much",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card",
       "text": "ATM đã giữ thẻ của tôi",
@@ -1744,7 +1744,7 @@
     },
     {
       "pageID": "viet-family-directions-how-to-get",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "directions-2",
       "text": "Ở gần đây không?",
@@ -1752,7 +1752,7 @@
     },
     {
       "pageID": "viet-family-directions-how-to-get",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "directions-3",
       "text": "Đi bộ mất bao lâu?",
@@ -1760,7 +1760,7 @@
     },
     {
       "pageID": "viet-family-directions-how-to-get",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "directions-4",
       "text": "Rẽ trái ở đâu?",
@@ -1768,7 +1768,7 @@
     },
     {
       "pageID": "viet-family-directions-how-to-get",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "directions-5",
       "text": "Tôi rẽ phải đúng không?",
@@ -1776,7 +1776,7 @@
     },
     {
       "pageID": "viet-family-directions-how-to-get",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "directions-6",
       "text": "Tôi đi thẳng phải không?",
@@ -1784,7 +1784,7 @@
     },
     {
       "pageID": "viet-family-directions-how-to-get",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "directions-7",
       "text": "Cảm ơn, tôi hiểu rồi",
@@ -1792,7 +1792,7 @@
     },
     {
       "pageID": "viet-family-directions-how-to-get",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-dire-navi-where-is-the-nearest-restroom",
       "text": "Nhà vệ sinh gần nhất ở đâu?",
@@ -1896,7 +1896,7 @@
     },
     {
       "pageID": "viet-family-airport-immigration",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "airport-2",
       "text": "Lấy hành lý ở đâu?",
@@ -1904,7 +1904,7 @@
     },
     {
       "pageID": "viet-family-airport-immigration",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "airport-3",
       "text": "Mua SIM ở đâu?",
@@ -1912,7 +1912,7 @@
     },
     {
       "pageID": "viet-family-airport-immigration",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "airport-5",
       "text": "Khu đón ở đâu?",
@@ -1920,7 +1920,7 @@
     },
     {
       "pageID": "viet-family-airport-immigration",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "airport-6",
       "text": "Hành lý của tôi chưa tới",
@@ -1928,7 +1928,7 @@
     },
     {
       "pageID": "viet-family-airport-immigration",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "v500-airp-bord-arri-here-is-my-visa",
       "text": "Đây là thị thực của tôi",
@@ -1936,7 +1936,7 @@
     },
     {
       "pageID": "viet-family-airport-immigration",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "v500-airp-bord-arri-where-is-the-atm",
       "text": "ATM ở đâu?",
@@ -1944,7 +1944,7 @@
     },
     {
       "pageID": "viet-family-airport-immigration",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-airp-bord-arri-here-is-my-passport",
       "text": "Đây là hộ chiếu của tôi",
@@ -2032,7 +2032,7 @@
     },
     {
       "pageID": "viet-family-health-doctor",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "health-pharmacy-clearer",
       "text": "Nhà thuốc gần nhất ở đâu?",
@@ -2040,7 +2040,7 @@
     },
     {
       "pageID": "viet-family-health-doctor",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "health-2",
       "text": "Tôi bị đau đầu",
@@ -2048,7 +2048,7 @@
     },
     {
       "pageID": "viet-family-health-doctor",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "health-3",
       "text": "Tôi đau bụng",
@@ -2056,7 +2056,7 @@
     },
     {
       "pageID": "viet-family-health-doctor",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "health-4",
       "text": "Có thuốc say xe không?",
@@ -2064,7 +2064,7 @@
     },
     {
       "pageID": "viet-family-health-doctor",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "health-5",
       "text": "Tôi bị dị ứng cái này",
@@ -2072,7 +2072,7 @@
     },
     {
       "pageID": "viet-family-health-doctor",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "health-6",
       "text": "Tôi cần thuốc tiêu chảy",
@@ -2080,7 +2080,7 @@
     },
     {
       "pageID": "viet-family-health-doctor",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-heal-phar-i-feel-dizzy",
       "text": "Tôi cảm thấy chóng mặt",
@@ -2168,7 +2168,7 @@
     },
     {
       "pageID": "viet-family-help-lost",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "problems-4",
       "text": "Tôi quên đồ rồi",
@@ -2176,7 +2176,7 @@
     },
     {
       "pageID": "viet-family-help-lost",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "help-need-help-direct",
       "text": "Giúp tôi với",
@@ -2184,7 +2184,7 @@
     },
     {
       "pageID": "viet-family-help-lost",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "help-2",
       "text": "Gọi khách sạn giúp tôi",
@@ -2192,7 +2192,7 @@
     },
     {
       "pageID": "viet-family-help-lost",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "help-3",
       "text": "Tôi cần quản lý",
@@ -2200,7 +2200,7 @@
     },
     {
       "pageID": "viet-family-help-lost",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "v500-prob-help-i-need-help-now",
       "text": "Tôi cần giúp đỡ bây giờ",
@@ -2280,7 +2280,7 @@
     },
     {
       "pageID": "viet-family-time-what-time",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "time-2",
       "text": "Hôm nay",
@@ -2288,7 +2288,7 @@
     },
     {
       "pageID": "viet-family-time-what-time",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "time-3",
       "text": "Sáng mai",
@@ -2296,7 +2296,7 @@
     },
     {
       "pageID": "viet-family-time-what-time",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "time-4",
       "text": "Tôi có đặt chỗ",
@@ -2304,7 +2304,7 @@
     },
     {
       "pageID": "viet-family-time-what-time",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "time-5",
       "text": "Mấy giờ mở cửa?",
@@ -2312,7 +2312,7 @@
     },
     {
       "pageID": "viet-family-time-what-time",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "v500-time-date-book-is-there-a-wait",
       "text": "Có chờ đợi không?",
@@ -2320,7 +2320,7 @@
     },
     {
       "pageID": "viet-family-time-what-time",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "v500-time-date-book-one-ticket-please",
       "text": "Xin một vé",
@@ -2408,7 +2408,7 @@
     },
     {
       "pageID": "viet-family-shopping-size",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "shop-2",
       "text": "Có màu khác không?",
@@ -2416,7 +2416,7 @@
     },
     {
       "pageID": "viet-family-shopping-size",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "shop-3",
       "text": "Tôi thử cái này được không?",
@@ -2424,7 +2424,7 @@
     },
     {
       "pageID": "viet-family-shopping-size",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "shop-4",
       "text": "Tôi chỉ xem thôi",
@@ -2432,7 +2432,7 @@
     },
     {
       "pageID": "viet-family-shopping-size",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "shop-5",
       "text": "Trả ở đâu?",
@@ -2440,7 +2440,7 @@
     },
     {
       "pageID": "viet-family-shopping-size",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "v500-shop-how-much-is-this-item",
       "text": "Mặt hàng này giá bao nhiêu?",
@@ -2448,7 +2448,7 @@
     },
     {
       "pageID": "viet-family-shopping-size",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f",
       "text": "Giảm giá chút được không?",
@@ -2536,7 +2536,7 @@
     },
     {
       "pageID": "viet-family-phone-wifi-password",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "phone-2",
       "text": "Có bán SIM không?",
@@ -2544,7 +2544,7 @@
     },
     {
       "pageID": "viet-family-phone-wifi-password",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "phone-3",
       "text": "Điện thoại tôi hết pin rồi",
@@ -2552,7 +2552,7 @@
     },
     {
       "pageID": "viet-family-phone-wifi-password",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "phone-4",
       "text": "Có sạc không?",
@@ -2560,7 +2560,7 @@
     },
     {
       "pageID": "viet-family-phone-wifi-password",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "phone-5",
       "text": "Tôi sạc điện thoại ở đây được không?",
@@ -2568,7 +2568,7 @@
     },
     {
       "pageID": "viet-family-phone-wifi-password",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "v500-phon-inte-powe-my-map-is-not-working",
       "text": "Bản đồ của tôi không hoạt động",
@@ -2576,7 +2576,7 @@
     },
     {
       "pageID": "viet-family-phone-wifi-password",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87",
       "text": "Tôi có thể mua SIM ở đâu?",
@@ -2584,7 +2584,7 @@
     },
     {
       "pageID": "viet-family-phone-wifi-password",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-phon-inte-powe-i-need-an-esim",
       "text": "Tôi cần một eSIM",
@@ -2680,7 +2680,7 @@
     },
     {
       "pageID": "viet-family-bathroom-where",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "bath-2",
       "text": "Có giấy vệ sinh không?",
@@ -2688,7 +2688,7 @@
     },
     {
       "pageID": "viet-family-bathroom-where",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "bathroom-use",
       "text": "Tôi dùng nhà vệ sinh được không?",
@@ -2696,7 +2696,7 @@
     },
     {
       "pageID": "viet-family-bathroom-where",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "bath-3",
       "text": "Có xà phòng không?",
@@ -2704,7 +2704,7 @@
     },
     {
       "pageID": "viet-family-bathroom-where",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "bath-4",
       "text": "Tôi rửa tay ở đây được không?",
@@ -2712,7 +2712,7 @@
     },
     {
       "pageID": "viet-family-bathroom-where",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "bath-5",
       "text": "Tôi cần nước",
@@ -2816,7 +2816,7 @@
     },
     {
       "pageID": "viet-family-emergency-police",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "emergency-2",
       "text": "Gọi xe cứu thương",
@@ -2824,7 +2824,7 @@
     },
     {
       "pageID": "viet-family-emergency-police",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "emergency-3",
       "text": "Tôi mất hộ chiếu",
@@ -2832,7 +2832,7 @@
     },
     {
       "pageID": "viet-family-emergency-police",
-      "sectionID": "nearby-phrases",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "emergency-4",
       "text": "Tôi cảm thấy không an toàn",
@@ -2840,7 +2840,7 @@
     },
     {
       "pageID": "viet-family-emergency-police",
-      "sectionID": "nearby-phrases",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "emergency-emergency",
       "text": "Đây là trường hợp khẩn cấp",
@@ -2848,7 +2848,7 @@
     },
     {
       "pageID": "viet-family-emergency-police",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "emergency-hospital",
       "text": "Bệnh viện gần nhất ở đâu?",
@@ -2856,7 +2856,7 @@
     },
     {
       "pageID": "viet-family-emergency-police",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "v500-emer-safe-i-am-injured",
       "text": "tôi bị thương",
@@ -2864,7 +2864,7 @@
     },
     {
       "pageID": "viet-family-emergency-police",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-emer-safe-i-cannot-move",
       "text": "Tôi không thể di chuyển",
@@ -2872,7 +2872,7 @@
     },
     {
       "pageID": "viet-family-emergency-police",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-emer-safe-do-not-touch-me",
       "text": "Đừng chạm vào tôi",
@@ -2992,7 +2992,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "smalltalk-2",
       "text": "Tôi từ Anh",
@@ -3000,7 +3000,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "smalltalk-3",
       "text": "Đây là lần đầu của tôi",
@@ -3008,7 +3008,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "smalltalk-4",
       "text": "Tôi thích Việt Nam",
@@ -3016,7 +3016,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "smalltalk-5",
       "text": "Đồ ăn ngon quá",
@@ -3024,10 +3024,34 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "smalltalk-6",
       "text": "Thời tiết nóng quá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "local-tip",
+      "kind": "phrase",
+      "audioKey": "audio-authored-anh-khoe-khong-942769853d",
+      "text": "Anh khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
+      "text": "Chị khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-social-from-us",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-em-khoe-khong",
+      "text": "Em khỏe không?",
       "resolved": true
     },
     {
@@ -3120,7 +3144,7 @@
     },
     {
       "pageID": "viet-family-sight-ticket",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "sight-2",
       "text": "Bắt đầu ở đâu?",
@@ -3128,7 +3152,7 @@
     },
     {
       "pageID": "viet-family-sight-ticket",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "sight-3",
       "text": "Tôi chụp hình ở đây được không?",
@@ -3136,7 +3160,7 @@
     },
     {
       "pageID": "viet-family-sight-ticket",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "sight-4",
       "text": "Mấy giờ đóng cửa?",
@@ -3144,7 +3168,7 @@
     },
     {
       "pageID": "viet-family-sight-ticket",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "sight-5",
       "text": "Điểm gặp ở đâu?",
@@ -3152,7 +3176,7 @@
     },
     {
       "pageID": "viet-family-sight-ticket",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af",
       "text": "Tôi có đặt tour",
@@ -3224,7 +3248,7 @@
     },
     {
       "pageID": "viet-family-service-water",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "store-2",
       "text": "Có túi không?",
@@ -3232,7 +3256,7 @@
     },
     {
       "pageID": "viet-family-service-water",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "store-3",
       "text": "Cho tôi khăn giấy",
@@ -3240,7 +3264,7 @@
     },
     {
       "pageID": "viet-family-service-water",
-      "sectionID": "explore-next",
+      "sectionID": "traveler-insight",
       "kind": "phrase",
       "audioKey": "store-4",
       "text": "Ở đâu có kem chống nắng?",
@@ -3248,7 +3272,7 @@
     },
     {
       "pageID": "viet-family-service-water",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "store-5",
       "text": "Mở cái này giúp tôi",
@@ -3256,7 +3280,7 @@
     },
     {
       "pageID": "viet-family-service-water",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "store-6",
       "text": "Tôi quẹt thẻ được không?",
@@ -3264,7 +3288,7 @@
     },
     {
       "pageID": "viet-family-service-water",
-      "sectionID": "explore-next",
+      "sectionID": "when-to-use",
       "kind": "phrase",
       "audioKey": "store-7",
       "text": "Cho tôi hóa đơn",
@@ -3272,7 +3296,7 @@
     },
     {
       "pageID": "viet-family-service-water",
-      "sectionID": "explore-next",
+      "sectionID": "local-tip",
       "kind": "phrase",
       "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water",
       "text": "Tôi có thể mua nước ở đâu?",
@@ -3880,34 +3904,10 @@
     },
     {
       "pageID": "viet-how-are-you-anh",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-anh-khoe-khong-942769853d",
-      "text": "Anh khỏe không?",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-how-are-you-anh",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-authored-khoe-172d93f8d9",
       "text": "khỏe",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-how-are-you-anh",
-      "sectionID": "relationship-forms",
-      "kind": "phrase",
-      "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
-      "text": "Chị khỏe không?",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-how-are-you-anh",
-      "sectionID": "relationship-forms",
-      "kind": "phrase",
-      "audioKey": "audio-phrase-em-khoe-khong",
-      "text": "Em khỏe không?",
       "resolved": true
     },
     {

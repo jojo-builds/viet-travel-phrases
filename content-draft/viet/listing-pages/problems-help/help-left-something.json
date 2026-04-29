@@ -87,13 +87,67 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Problems & Help, locals often answer with a request to see the item, a direction to another desk, or a practical next step rather than a long explanation. That makes Tôi quên đồ rồi strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "problems-1",
+          "vietnamese": "Tôi bị lạc đường",
+          "english": "I’m lost",
+          "pronunciation": "toy bee lahk doong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-lost",
+          "audioKey": "problems-1"
+        },
+        {
+          "id": "help-need-help-direct",
+          "vietnamese": "Giúp tôi với",
+          "english": "I need help",
+          "pronunciation": "zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-need-help",
+          "audioKey": "help-need-help-direct"
+        },
+        {
+          "id": "help-2",
+          "vietnamese": "Gọi khách sạn giúp tôi",
+          "english": "Please call the hotel for me",
+          "pronunciation": "goy khak san zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-call-hotel",
+          "audioKey": "help-2"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "Say this if you forgot an item in a car, room, or café. It fits lost items, help, managers, and recovery moments, especially when the next step is a request to see the item, a direction to another desk, or a practical next step. Show the document, photo, room number, receipt, or screen connected to the problem.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "help-3",
+          "vietnamese": "Tôi cần quản lý",
+          "english": "I need the manager",
+          "pronunciation": "toy gun kwan lee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-manager",
+          "audioKey": "help-3"
+        },
+        {
+          "id": "v500-prob-help-i-need-help-now",
+          "vietnamese": "Tôi cần giúp đỡ bây giờ",
+          "english": "I need help now",
+          "pronunciation": "Toi can giup do bay gio",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-v500-prob-help-i-need-help-now",
+          "audioKey": "v500-prob-help-i-need-help-now"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -105,12 +159,24 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Start with the simplest phrase, then show the item, place, receipt, or photo connected to the problem.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "problems-4",
+          "vietnamese": "Tôi quên đồ rồi",
+          "english": "I left something behind",
+          "pronunciation": "toy gwen doh roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "problems-4"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
       "phrases": [
         {
           "id": "problems-1",
@@ -151,15 +217,7 @@
           "tintName": "orange",
           "detailPageID": "viet-family-help-manager",
           "audioKey": "help-3"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
-      "phrases": [
+        },
         {
           "id": "v500-prob-help-i-need-help-now",
           "vietnamese": "Tôi cần giúp đỡ bây giờ",

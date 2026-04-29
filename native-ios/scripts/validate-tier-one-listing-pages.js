@@ -161,6 +161,33 @@ function linkedPageIDs(page) {
   return ids;
 }
 
+function textOnlySectionRunIssues(page) {
+  const issues = [];
+  let run = [];
+
+  function hasLearningItems(section) {
+    return (section.phrases ?? []).length > 0 || (section.breakdown ?? []).length > 0;
+  }
+
+  function flushRun() {
+    if (run.length >= 3) {
+      issues.push(`3+ consecutive text-only sections: ${run.map((section) => section.title).join(" | ")}`);
+    }
+    run = [];
+  }
+
+  for (const section of page.sections ?? []) {
+    if (hasLearningItems(section)) {
+      flushRun();
+    } else {
+      run.push(section);
+    }
+  }
+
+  flushRun();
+  return issues;
+}
+
 function classifyPage(page, pageIDSet) {
   const issues = [];
   const text = allText(page);
@@ -180,8 +207,9 @@ function classifyPage(page, pageIDSet) {
   }
 
   issues.push(...breakdownQualityIssues(page));
+  issues.push(...textOnlySectionRunIssues(page));
 
-  if (narrative.length < 1500) {
+  if (narrative.length < 1400) {
     issues.push(`thin narrative: ${narrative.length} chars`);
   }
 

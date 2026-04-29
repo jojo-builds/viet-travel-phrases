@@ -75,13 +75,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In When You Don't Understand, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Làm ơn nói lại strongest when you say it once, pause, and let the other person show the next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "repair-2",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "pronunciation": "vee-et zoong zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-write-down",
+          "audioKey": "repair-2"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "This is for when you missed the last sentence and need it repeated. It fits moments when Vietnamese stops making sense, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "repair-3",
+          "vietnamese": "Cái đó nghĩa là gì?",
+          "english": "What does that mean?",
+          "pronunciation": "gai doh ngee-ah lah zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-meaning",
+          "audioKey": "repair-3"
+        },
+        {
+          "id": "repair-6",
+          "vietnamese": "Làm ơn nói lại số đó",
+          "english": "Please say the number again",
+          "pronunciation": "lahm uhn noy lie soh doh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-number",
+          "audioKey": "repair-6"
+        },
+        {
+          "id": "repair-english-help",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
+          "english": "Do you speak English?",
+          "pronunciation": "anh chee noy tyeng anh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-english-help",
+          "audioKey": "repair-english-help"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -93,12 +157,24 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "If speaking does not work, move quickly to writing, pointing, or showing the exact word on your phone.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "v500-unde-repa-please-say-it-slowly",
+          "vietnamese": "Hãy nói từ từ nhé",
+          "english": "Please say it slowly",
+          "pronunciation": "Hay noi tu tu nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-unde-repa-please-say-it-slowly",
+          "audioKey": "v500-unde-repa-please-say-it-slowly"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
       "phrases": [
         {
           "id": "problems-2",
@@ -139,15 +215,7 @@
           "tintName": "blue",
           "detailPageID": "viet-family-repair-meaning",
           "audioKey": "repair-3"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
-      "phrases": [
+        },
         {
           "id": "repair-6",
           "vietnamese": "Làm ơn nói lại số đó",

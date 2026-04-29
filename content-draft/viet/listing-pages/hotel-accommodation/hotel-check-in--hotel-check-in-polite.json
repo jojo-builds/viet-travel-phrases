@@ -63,7 +63,39 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Hotel Accommodation, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Cho tôi nhận phòng nhé strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-check-in",
+          "audioKey": "hotel-2"
+        },
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-reservation",
+          "audioKey": "hotel-1"
+        },
+        {
+          "id": "hotel-3",
+          "vietnamese": "Mấy giờ trả phòng?",
+          "english": "What time is check-out?",
+          "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-hotel-checkout-time",
+          "audioKey": "hotel-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",

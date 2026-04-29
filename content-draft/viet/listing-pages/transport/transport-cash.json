@@ -81,13 +81,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Transport, locals often answer with a clear reply, a pointed detail, or a simple follow-up rather than a long explanation. That makes Tôi trả bằng tiền mặt strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-destination",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-main-destination",
+          "audioKey": "taxi-2"
+        },
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-stop-here",
+          "audioKey": "taxi-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "This is for when payment method needs to be clear. It fits rides, routes, pickup points, and stops, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-route",
+          "audioKey": "taxi-4"
+        },
+        {
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-aircon",
+          "audioKey": "taxi-5"
+        },
+        {
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-wait",
+          "audioKey": "taxi-6"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -99,12 +163,44 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Show the location on your phone while you say the phrase. The visual context reduces mistakes.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "transport-fare",
+          "vietnamese": "Tiền xe bao nhiêu?",
+          "english": "How much is the fare?",
+          "pronunciation": "tyen seh bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-fare",
+          "audioKey": "transport-fare"
+        },
+        {
+          "id": "transport-meter",
+          "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+          "english": "Please use the meter",
+          "pronunciation": "lahm uhn but dong ho zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-meter",
+          "audioKey": "transport-meter"
+        },
+        {
+          "id": "transport-lost",
+          "vietnamese": "Tôi nghĩ chúng ta bị lạc rồi",
+          "english": "I think we are lost",
+          "pronunciation": "toy ngee choong ta bee lahk roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-lost",
+          "audioKey": "transport-lost"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -145,15 +241,7 @@
           "tintName": "orange",
           "detailPageID": "viet-family-transport-route",
           "audioKey": "taxi-4"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
-      "phrases": [
+        },
         {
           "id": "taxi-5",
           "vietnamese": "Mở máy lạnh giúp tôi",
@@ -193,16 +281,6 @@
           "tintName": "orange",
           "detailPageID": "viet-family-transport-meter",
           "audioKey": "transport-meter"
-        },
-        {
-          "id": "transport-lost",
-          "vietnamese": "Tôi nghĩ chúng ta bị lạc rồi",
-          "english": "I think we are lost",
-          "pronunciation": "toy ngee choong ta bee lahk roy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-transport-lost",
-          "audioKey": "transport-lost"
         }
       ],
       "presentation": "phrase-list"

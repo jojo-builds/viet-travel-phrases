@@ -75,30 +75,6 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Polite Basics, locals often answer with a confirmation, a substitute, or a question about what is allowed rather than a long explanation. That makes Không, cảm ơn strongest when you say it once, pause, and let the other person show the next step. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This helps you decline offers from vendors or service staff politely. It fits small service and first-contact moments, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "local-tip",
-      "title": "Local tip",
-      "body": "A small smile and a calm pace matter. These short phrases are often enough to make a service moment feel warmer.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
       "phrases": [
         {
           "id": "polite-1",
@@ -129,7 +105,15 @@
           "tintName": "red",
           "detailPageID": "viet-acknowledge-da",
           "audioKey": "polite-3"
-        },
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "This helps you decline offers from vendors or service staff politely. It fits small service and first-contact moments, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
+      "phrases": [
         {
           "id": "polite-5",
           "vietnamese": "Xin lỗi",
@@ -159,7 +143,21 @@
           "tintName": "red",
           "detailPageID": "viet-goodbye",
           "audioKey": "polite-7"
-        },
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "A small smile and a calm pace matter. These short phrases are often enough to make a service moment feel warmer.",
+      "phrases": [
         {
           "id": "v500-poli-basi-yes",
           "vietnamese": "Đúng",
@@ -179,6 +177,104 @@
           "tintName": "red",
           "detailPageID": "viet-hello-chao",
           "audioKey": "breakdown-chao"
+        },
+        {
+          "id": "hello-chao-ban",
+          "vietnamese": "Chào bạn",
+          "english": "Hi there / hello friend",
+          "pronunciation": "chow ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-ban",
+          "audioKey": "audio-phrase-chao-ban"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "hello-da-chao-anh-chi",
+          "vietnamese": "Dạ, chào anh/chị",
+          "english": "Hello, sir or ma'am",
+          "pronunciation": "yah chow anh chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-da-chao-anh-chi",
+          "audioKey": "audio-phrase-da-chao-anh-chi"
+        },
+        {
+          "id": "hello-alo",
+          "vietnamese": "Alô",
+          "english": "Hello on the phone",
+          "pronunciation": "ah lo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-alo",
+          "audioKey": "audio-phrase-alo"
+        },
+        {
+          "id": "hello-good-morning",
+          "vietnamese": "Chào buổi sáng",
+          "english": "Good morning",
+          "pronunciation": "chow boo ee sahng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-good-morning",
+          "audioKey": "audio-phrase-chao-buoi-sang"
+        },
+        {
+          "id": "hello-good-afternoon",
+          "vietnamese": "Chào buổi chiều",
+          "english": "Good afternoon",
+          "pronunciation": "chow boo ee chee ew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-good-afternoon",
+          "audioKey": "audio-phrase-chao-buoi-chieu"
+        },
+        {
+          "id": "hello-chao-anh",
+          "vietnamese": "Chào anh",
+          "english": "Hello to an older man",
+          "pronunciation": "chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-anh",
+          "audioKey": "breakdown-viet-hello-anh-full"
+        },
+        {
+          "id": "hello-chao-chi",
+          "vietnamese": "Chào chị",
+          "english": "Hello to an older woman",
+          "pronunciation": "chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-chi",
+          "audioKey": "breakdown-viet-hello-chi-full"
+        },
+        {
+          "id": "hello-chao-em",
+          "vietnamese": "Chào em",
+          "english": "Hello to a younger person",
+          "pronunciation": "chow em",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-em",
+          "audioKey": "breakdown-viet-hello-em-full"
+        },
+        {
+          "id": "hello-chao-ong",
+          "vietnamese": "Chào ông",
+          "english": "Hello to an elderly man",
+          "pronunciation": "chow ohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-ong",
+          "audioKey": "breakdown-viet-hello-ong-full"
         }
       ],
       "presentation": "phrase-list"

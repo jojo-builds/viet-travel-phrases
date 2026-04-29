@@ -81,13 +81,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Airport Border Arrival, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Lấy hành lý ở đâu? strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "airport-1",
+          "vietnamese": "Nhập cảnh ở đâu?",
+          "english": "Where is immigration?",
+          "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-immigration",
+          "audioKey": "airport-1"
+        },
+        {
+          "id": "airport-3",
+          "vietnamese": "Mua SIM ở đâu?",
+          "english": "Where can I buy a SIM card?",
+          "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-sim",
+          "audioKey": "airport-3"
+        },
+        {
+          "id": "airport-5",
+          "vietnamese": "Khu đón ở đâu?",
+          "english": "Where is the pickup area?",
+          "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-pickup",
+          "audioKey": "airport-5"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "Use this after passport control when you need the bag carousel. It fits arrival, immigration, baggage, SIM cards, pickup, and airport services, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "airport-6",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive",
+          "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-airport-bag-missing",
+          "audioKey": "airport-6"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        },
+        {
+          "id": "v500-airp-bord-arri-where-is-the-atm",
+          "vietnamese": "ATM ở đâu?",
+          "english": "Where is the ATM?",
+          "pronunciation": "ATM o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-airp-bord-arri-where-is-the-atm",
+          "audioKey": "v500-airp-bord-arri-where-is-the-atm"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -99,12 +163,24 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Keep your passport, baggage tag, or booking screen visible while you ask.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "v500-airp-bord-arri-here-is-my-passport",
+          "vietnamese": "Đây là hộ chiếu của tôi",
+          "english": "Here is my passport",
+          "pronunciation": "Day la ho chieu cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-airp-bord-arri-here-is-my-passport",
+          "audioKey": "v500-airp-bord-arri-here-is-my-passport"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
       "phrases": [
         {
           "id": "airport-1",
@@ -145,15 +221,7 @@
           "tintName": "blue",
           "detailPageID": "viet-family-airport-bag-missing",
           "audioKey": "airport-6"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
-      "phrases": [
+        },
         {
           "id": "v500-airp-bord-arri-here-is-my-visa",
           "vietnamese": "Đây là thị thực của tôi",

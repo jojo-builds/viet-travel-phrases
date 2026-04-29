@@ -81,30 +81,6 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Food & Drink, locals often answer with a clear reply, a pointed detail, or a simple follow-up rather than a long explanation. That makes Gói mang về strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "Say this when you want takeaway from a stall or restaurant. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "local-tip",
-      "title": "Local tip",
-      "body": "Point to the dish or ingredient while speaking. It helps when tone marks or dish names are hard to pronounce.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -135,7 +111,15 @@
           "tintName": "green",
           "detailPageID": "viet-family-food-coffee-bac-xiu",
           "audioKey": "coffee-3"
-        },
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Say this when you want takeaway from a stall or restaurant. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "phrases": [
         {
           "id": "coffee-4",
           "vietnamese": "Ít đá thôi",
@@ -145,15 +129,7 @@
           "tintName": "green",
           "detailPageID": "viet-family-food-less-ice",
           "audioKey": "coffee-4"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
-      "phrases": [
+        },
         {
           "id": "coffee-5",
           "vietnamese": "Không đường nhé",
@@ -173,7 +149,21 @@
           "tintName": "green",
           "detailPageID": "viet-family-food-to-go",
           "audioKey": "coffee-6"
-        },
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to the dish or ingredient while speaking. It helps when tone marks or dish names are hard to pronounce.",
+      "phrases": [
         {
           "id": "coffee-7",
           "vietnamese": "Tính tiền giúp tôi",
@@ -203,7 +193,15 @@
           "tintName": "green",
           "detailPageID": "viet-family-food-menu",
           "audioKey": "food-menu"
-        },
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "nearby-phrases",
+      "title": "Useful nearby phrases",
+      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "phrases": [
         {
           "id": "food-1",
           "vietnamese": "Cho tôi một phần",
@@ -233,6 +231,64 @@
           "tintName": "green",
           "detailPageID": "viet-family-food-not-spicy",
           "audioKey": "food-3"
+        },
+        {
+          "id": "food-4",
+          "vietnamese": "Cho thêm rau",
+          "english": "More herbs please",
+          "pronunciation": "cho them zow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-more-herbs",
+          "audioKey": "food-4"
+        }
+      ],
+      "presentation": "horizontal-phrase-cards"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "food-5",
+          "vietnamese": "Có nước suối không?",
+          "english": "Do you have bottled water?",
+          "pronunciation": "koh nook soy khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-bottled-water",
+          "audioKey": "food-5"
+        },
+        {
+          "id": "food-6",
+          "vietnamese": "Cho tôi muỗng với đũa",
+          "english": "A spoon and chopsticks please",
+          "pronunciation": "cho toy moong voy doo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-utensils",
+          "audioKey": "food-6"
+        },
+        {
+          "id": "food-vegetarian",
+          "vietnamese": "Tôi ăn chay",
+          "english": "I am vegetarian",
+          "pronunciation": "toy an chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-vegetarian",
+          "audioKey": "food-vegetarian"
+        },
+        {
+          "id": "food-peanut-allergy",
+          "vietnamese": "Tôi bị dị ứng đậu phộng",
+          "english": "I am allergic to peanuts",
+          "pronunciation": "toy bee zee oong dow fohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-peanut-allergy",
+          "audioKey": "food-peanut-allergy"
         }
       ],
       "presentation": "phrase-list"

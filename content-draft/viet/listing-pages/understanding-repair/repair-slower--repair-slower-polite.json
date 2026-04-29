@@ -69,7 +69,39 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In When You Don't Understand, locals often answer with a clear reply, a pointed detail, or a simple follow-up rather than a long explanation. That makes Nói chậm giúp tôi được không? strongest when you say it once, pause, and let the other person show the next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",

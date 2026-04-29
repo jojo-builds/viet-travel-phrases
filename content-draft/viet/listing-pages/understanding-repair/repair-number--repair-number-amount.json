@@ -69,7 +69,39 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In When You Don't Understand, locals often answer with a number, typed amount, calculator screen, or direct yes/no about payment rather than a long explanation. That makes Anh/chị vừa nói bao nhiêu? strongest when you say it once, pause, and let the other person show the next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "repair-6",
+          "vietnamese": "Làm ơn nói lại số đó",
+          "english": "Please say the number again",
+          "pronunciation": "lahm uhn noy lie soh doh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-number",
+          "audioKey": "repair-6"
+        },
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",

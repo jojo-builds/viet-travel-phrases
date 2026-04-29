@@ -81,13 +81,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Money, Numbers & Prices, locals often answer with a clear reply, a pointed detail, or a simple follow-up rather than a long explanation. That makes Bớt chút được không? strongest when you say it once, pause, and let the other person show the next step. Point to the place, object, or screen that gives the phrase context.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-how-much",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "price-2",
+          "vietnamese": "Bao nhiêu một ký?",
+          "english": "How much per kilo?",
+          "pronunciation": "bao nyew mot kee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-per-kilo",
+          "audioKey": "price-2"
+        },
+        {
+          "id": "price-3",
+          "vietnamese": "Mắc quá",
+          "english": "Too expensive",
+          "pronunciation": "mak gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-too-expensive",
+          "audioKey": "price-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "Use it after hearing the price, while still holding or pointing at the item. It is best for one specific item, one ride price, or one quoted number you want softened.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "price-5",
+          "vietnamese": "Giá cuối bao nhiêu?",
+          "english": "What’s your final price?",
+          "pronunciation": "za gooy bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-final-price",
+          "audioKey": "price-5"
+        },
+        {
+          "id": "price-6",
+          "vietnamese": "Cho tôi xem cái khác",
+          "english": "Show me another one",
+          "pronunciation": "cho toy sem gai khak",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-another-one",
+          "audioKey": "price-6"
+        },
+        {
+          "id": "price-7",
+          "vietnamese": "Tôi lấy cái này",
+          "english": "I’ll take this one",
+          "pronunciation": "toy lay gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-take-this",
+          "audioKey": "price-7"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -99,12 +163,34 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "If the answer is a number, ask them to type it on a calculator so you do not mishear the final price.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "airport-4",
+          "vietnamese": "ATM gần nhất ở đâu?",
+          "english": "Where is the nearest ATM?",
+          "pronunciation": "ay-tee-em gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-money-find-atm",
+          "audioKey": "airport-4"
+        },
+        {
+          "id": "v500-mone-numb-pric-the-atm-kept-my-card",
+          "vietnamese": "ATM đã giữ thẻ của tôi",
+          "english": "The ATM kept my card",
+          "pronunciation": "ATM da giu the cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
+          "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
       "phrases": [
         {
           "id": "price-1",
@@ -145,15 +231,7 @@
           "tintName": "green",
           "detailPageID": "viet-family-money-final-price",
           "audioKey": "price-5"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
-      "phrases": [
+        },
         {
           "id": "price-6",
           "vietnamese": "Cho tôi xem cái khác",

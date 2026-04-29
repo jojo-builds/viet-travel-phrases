@@ -4,8 +4,8 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:05bc55981b0af728",
-    "generatedAt": "source-hash:05bc55981b0af728"
+    "contentVersion": "viet-sqlite-fixture:7ee9cbc26100ad18",
+    "generatedAt": "source-hash:7ee9cbc26100ad18"
   },
   "sourceInputs": {
     "catalog": {
@@ -14,7 +14,7 @@
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "a37c4a1a2be1bee175cecde133ce60f84e87c67aacdad08da0e618d997a4134d"
+      "sha256": "106059efebb2d8231d8b6d0a142595f7044bbd71183e2ef99fa8be5b3d13e6f6"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "9b353190eecd1948fad4f90caee52574b525f3f9f233c22a3824bb1fa63edae7",
+    "databaseSha256": "7b7fc3df448ae7d9ff25763924be03d6f0afdaceb98b6a52878a1b43d7922568",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -79,13 +79,13 @@
     "pages": 938,
     "aliases": 1007,
     "pageCategories": 978,
-    "sections": 7131,
-    "sectionItems": 17171,
+    "sections": 7069,
+    "sectionItems": 20376,
     "breakdownTokens": 6077,
-    "relations": 3642,
+    "relations": 4629,
     "searchDocuments": 946,
     "audioAssets": 3756,
-    "audioUsages": 3498,
+    "audioUsages": 4517,
     "audioTextDedupeRows": 2343,
     "missingAudioAuditRows": 0
   },
@@ -97,6 +97,8 @@
     "sectionlessCanonicalPageCount": 0,
     "missingRelationshipWordsSectionCount": 0,
     "badRelationshipWordsSectionCount": 0,
+    "textOnlySectionRunCount": 0,
+    "textOnlySectionRunSample": [],
     "brokenRelationCount": 0,
     "relationSourceIndexPresent": true,
     "relationLookupUsesSourceIndex": true,
@@ -208,7 +210,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 3642,
+    "relationCount": 4629,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -224,7 +226,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 969
+        "count": 1108
       },
       {
         "relationType": "same_need_alt_context",
@@ -232,7 +234,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 2635
+        "count": 3483
       }
     ]
   },
@@ -240,7 +242,7 @@
     "manifestEntries": 3756,
     "uniqueNormalizedSpokenTextCount": 2343,
     "assets": 3756,
-    "usages": 3498,
+    "usages": 4517,
     "missingAudioAuditRows": 0,
     "missingAudioAuditSample": []
   },

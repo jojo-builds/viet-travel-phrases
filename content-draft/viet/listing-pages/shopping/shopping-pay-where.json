@@ -75,13 +75,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Shopping, locals often answer with a point, short direction, nearby option, or counter name rather than a long explanation. That makes Trả ở đâu? strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "shop-1",
+          "vietnamese": "Tôi muốn cỡ này",
+          "english": "I want this size",
+          "pronunciation": "toy moo-on guh nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-size",
+          "audioKey": "shop-1"
+        },
+        {
+          "id": "shop-2",
+          "vietnamese": "Có màu khác không?",
+          "english": "Do you have another color?",
+          "pronunciation": "koh mau khak khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-color",
+          "audioKey": "shop-2"
+        },
+        {
+          "id": "shop-3",
+          "vietnamese": "Tôi thử cái này được không?",
+          "english": "Can I try this on?",
+          "pronunciation": "toy thoo gai nai dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-try-on",
+          "audioKey": "shop-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "This is for when you have the item and need the payment point. It fits sizes, colors, trying things on, and payment, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or a place name, ask them to show it on your phone.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "shop-4",
+          "vietnamese": "Tôi chỉ xem thôi",
+          "english": "I’m just looking",
+          "pronunciation": "toy chee sem toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-shopping-just-looking",
+          "audioKey": "shop-4"
+        },
+        {
+          "id": "v500-shop-how-much-is-this-item",
+          "vietnamese": "Mặt hàng này giá bao nhiêu?",
+          "english": "How much is this item?",
+          "pronunciation": "Mat hang nay gia bao nhieu",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-v500-shop-how-much-is-this-item",
+          "audioKey": "v500-shop-how-much-is-this-item"
+        },
+        {
+          "id": "v500-shop-can-you-lower-the-price",
+          "vietnamese": "Giảm giá chút được không?",
+          "english": "Can you lower the price?",
+          "pronunciation": "zam zah choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-v500-shop-can-you-lower-the-price",
+          "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -93,7 +157,19 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Hold or point to the item as you speak. The phrase lands faster when the object is obvious.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "shop-5",
+          "vietnamese": "Trả ở đâu?",
+          "english": "Where do I pay?",
+          "pronunciation": "tra uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "shop-5"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "explore-next",

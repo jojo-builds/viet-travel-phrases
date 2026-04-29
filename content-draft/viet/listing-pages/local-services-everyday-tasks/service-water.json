@@ -81,13 +81,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Local Services & Everyday Tasks, locals often answer with a clear reply, a pointed detail, or a simple follow-up rather than a long explanation. That makes Cho tôi chai nước strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "store-2",
+          "vietnamese": "Có túi không?",
+          "english": "Do you have a bag?",
+          "pronunciation": "koh too-ee khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-bag",
+          "audioKey": "store-2"
+        },
+        {
+          "id": "store-3",
+          "vietnamese": "Cho tôi khăn giấy",
+          "english": "Tissues please",
+          "pronunciation": "cho toy khan zai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-tissues",
+          "audioKey": "store-3"
+        },
+        {
+          "id": "store-4",
+          "vietnamese": "Ở đâu có kem chống nắng?",
+          "english": "Where is the sunscreen?",
+          "pronunciation": "uh dow koh kem chong nang",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-sunscreen",
+          "audioKey": "store-4"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "Use this for a fast convenience-store water stop. It fits buying small items, receipts, bags, and everyday errands, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "store-5",
+          "vietnamese": "Mở cái này giúp tôi",
+          "english": "Please open this for me",
+          "pronunciation": "muh gai nai zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-open-this",
+          "audioKey": "store-5"
+        },
+        {
+          "id": "store-6",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "pronunciation": "toy quet teh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-card",
+          "audioKey": "store-6"
+        },
+        {
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -99,7 +163,19 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Point to the item or show a photo when you can. It avoids guessing from pronunciation alone.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "v500-loca-serv-ever-task-where-can-i-buy-water",
+          "vietnamese": "Tôi có thể mua nước ở đâu?",
+          "english": "Where can I buy water?",
+          "pronunciation": "Toi co the mua nuoc o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-v500-loca-serv-ever-task-where-can-i-buy-water",
+          "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "explore-next",

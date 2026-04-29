@@ -111,13 +111,77 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Emergency & Safety, locals often answer with a request to see the item, a direction to another desk, or a practical next step rather than a long explanation. That makes Đây là trường hợp khẩn cấp strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "emergency-1",
+          "vietnamese": "Gọi công an",
+          "english": "Call the police",
+          "pronunciation": "goy kong an",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-police",
+          "audioKey": "emergency-1"
+        },
+        {
+          "id": "emergency-2",
+          "vietnamese": "Gọi xe cứu thương",
+          "english": "Call an ambulance",
+          "pronunciation": "goy seh koo-ah thu-ong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-ambulance",
+          "audioKey": "emergency-2"
+        },
+        {
+          "id": "emergency-3",
+          "vietnamese": "Tôi mất hộ chiếu",
+          "english": "I lost my passport",
+          "pronunciation": "toy mut hoh chee-u",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-passport",
+          "audioKey": "emergency-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "This is for when the first thing people need to know is that the situation is urgent. It fits police, ambulance, hospitals, passports, and immediate safety, especially when the next step is a request to see the item, a direction to another desk, or a practical next step. Show the document, photo, room number, receipt, or screen connected to the problem.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "emergency-4",
+          "vietnamese": "Tôi cảm thấy không an toàn",
+          "english": "I feel unsafe",
+          "pronunciation": "toy kahm thai khong an toan",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-not-safe",
+          "audioKey": "emergency-4"
+        },
+        {
+          "id": "emergency-hospital",
+          "vietnamese": "Bệnh viện gần nhất ở đâu?",
+          "english": "Where is the nearest hospital?",
+          "pronunciation": "beng vyen gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-hospital",
+          "audioKey": "emergency-hospital"
+        },
+        {
+          "id": "v500-emer-safe-i-am-injured",
+          "vietnamese": "tôi bị thương",
+          "english": "I am injured",
+          "pronunciation": "toi bi thuong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-v500-emer-safe-i-am-injured",
+          "audioKey": "v500-emer-safe-i-am-injured"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -129,7 +193,29 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Use the phrase clearly, then show your location, passport copy, injury, or emergency contact.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "v500-emer-safe-i-cannot-move",
+          "vietnamese": "Tôi không thể di chuyển",
+          "english": "I cannot move",
+          "pronunciation": "Toi khong the di chuyen",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-v500-emer-safe-i-cannot-move",
+          "audioKey": "v500-emer-safe-i-cannot-move"
+        },
+        {
+          "id": "v500-emer-safe-do-not-touch-me",
+          "vietnamese": "Đừng chạm vào tôi",
+          "english": "Do not touch me",
+          "pronunciation": "Dung cham vao toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-v500-emer-safe-do-not-touch-me",
+          "audioKey": "v500-emer-safe-do-not-touch-me"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "explore-next",

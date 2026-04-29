@@ -87,30 +87,6 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Social Small Talk, locals often answer with a short reply, a smile, a time, or a light follow-up question rather than a long explanation. That makes Thời tiết nóng quá strongest when you say it once, pause, and let the other person show the next step. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This is for casual conversation during hot days or long walks. It fits friendly introductions and light local conversation, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "local-tip",
-      "title": "Local tip",
-      "body": "Keep it light. A friendly question after the phrase often feels more natural than a long introduction.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -141,7 +117,15 @@
           "tintName": "green",
           "detailPageID": "viet-family-social-first-time",
           "audioKey": "smalltalk-3"
-        },
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "This is for casual conversation during hot days or long walks. It fits friendly introductions and light local conversation, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
+      "phrases": [
         {
           "id": "smalltalk-4",
           "vietnamese": "Tôi thích Việt Nam",
@@ -171,7 +155,21 @@
           "tintName": "green",
           "detailPageID": "viet-how-are-you",
           "audioKey": "smalltalk-7"
-        },
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Keep it light. A friendly question after the phrase often feels more natural than a long introduction.",
+      "phrases": [
         {
           "id": "smalltalk-di-dau-day",
           "vietnamese": "Đi đâu đấy?",
@@ -191,6 +189,44 @@
           "tintName": "green",
           "detailPageID": "viet-smalltalk-nice-to-meet-you",
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+        },
+        {
+          "id": "how-are-you-anh",
+          "vietnamese": "Anh khỏe không?",
+          "english": "How are you, older man?",
+          "pronunciation": "anh khweh khom",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you-anh",
+          "audioKey": "audio-authored-anh-khoe-khong-942769853d"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "how-are-you-chi",
+          "vietnamese": "Chị khỏe không?",
+          "english": "How are you, older woman?",
+          "pronunciation": "chee khweh khom",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you-chi",
+          "audioKey": "audio-authored-chi-khoe-khong-1483c77058"
+        },
+        {
+          "id": "how-are-you-em",
+          "vietnamese": "Em khỏe không?",
+          "english": "How are you, younger person?",
+          "pronunciation": "em khweh khom",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you-em",
+          "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
       "presentation": "phrase-list"

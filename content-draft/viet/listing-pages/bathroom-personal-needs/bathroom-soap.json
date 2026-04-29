@@ -87,13 +87,67 @@
       "id": "traveler-insight",
       "title": "Traveler insight",
       "body": "In Bathroom & Personal Needs, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Có xà phòng không? strongest when you say it once, pause, and let the other person show the next step. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "bath-1",
+          "vietnamese": "Nhà vệ sinh ở đâu?",
+          "english": "Where is the bathroom?",
+          "pronunciation": "nya veh sinh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-where",
+          "audioKey": "bath-1"
+        },
+        {
+          "id": "bath-2",
+          "vietnamese": "Có giấy vệ sinh không?",
+          "english": "Do you have toilet paper?",
+          "pronunciation": "koh zai veh sinh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-paper",
+          "audioKey": "bath-2"
+        },
+        {
+          "id": "bathroom-use",
+          "vietnamese": "Tôi dùng nhà vệ sinh được không?",
+          "english": "Can I use the bathroom?",
+          "pronunciation": "toy zoong nya veh sinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-use",
+          "audioKey": "bathroom-use"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
       "body": "This is for when the sink area is missing soap. It fits bathrooms, soap, paper, water, and basic personal needs, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
-      "presentation": "plain-text"
+      "phrases": [
+        {
+          "id": "bath-4",
+          "vietnamese": "Tôi rửa tay ở đây được không?",
+          "english": "Can I wash my hands here?",
+          "pronunciation": "toy zoo-ah tai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-wash-hands",
+          "audioKey": "bath-4"
+        },
+        {
+          "id": "bath-5",
+          "vietnamese": "Tôi cần nước",
+          "english": "I need water",
+          "pronunciation": "toy gun nook",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-family-bathroom-water",
+          "audioKey": "bath-5"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "good-to-know",
@@ -105,7 +159,19 @@
       "id": "local-tip",
       "title": "Local tip",
       "body": "Ask directly and follow gestures. People may simply point you toward the right place.",
-      "presentation": "tip-callout"
+      "phrases": [
+        {
+          "id": "bath-3",
+          "vietnamese": "Có xà phòng không?",
+          "english": "Do you have soap?",
+          "pronunciation": "koh sa fong khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "bath-3"
+        }
+      ],
+      "presentation": "phrase-list"
     },
     {
       "id": "explore-next",

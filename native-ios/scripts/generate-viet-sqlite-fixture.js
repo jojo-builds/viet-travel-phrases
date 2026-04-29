@@ -1116,14 +1116,24 @@ function main() {
       sourcePath: relative(catalogPath),
     });
 
-    addSection({
+    const nearbyPhrases = scenarioNeighborPhrases(phrase);
+    const teachingPhrases = nearbyPhrases.length > 0 ? nearbyPhrases.slice(0, 3) : [phrase];
+    const whenToUseSectionID = addSection({
       pageID: pageRow.id,
       sectionKey: "when-to-use",
       title: "When to use it",
       body: baselineContextBody(phrase, family),
-      presentation: "plain-text",
+      presentation: "phrase-list",
       sortOrder: 4,
       sourcePath: relative(catalogPath),
+    });
+    teachingPhrases.forEach((teachingPhrase, index) => {
+      addPhraseSectionItem({
+        sectionID: whenToUseSectionID,
+        phrase: teachingPhrase,
+        sortOrder: index,
+        note: canonicalPageIDForPhrase(teachingPhrase.id),
+      });
     });
 
     if (phrase.youMayHear) {
@@ -1148,7 +1158,6 @@ function main() {
       sourcePath: relative(catalogPath),
     });
 
-    const nearbyPhrases = scenarioNeighborPhrases(phrase);
     const nearbySectionID = addSection({
       pageID: pageRow.id,
       sectionKey: "nearby-phrases",
@@ -1544,6 +1553,39 @@ function main() {
         ) != '${relationshipWordListSQL}'
       );
   `));
+  const textOnlySectionRunRows = sqliteQuery(`
+    WITH section_flags AS (
+      SELECT
+        pp.id AS page_id,
+        pp.title AS page_title,
+        ps.title AS section_title,
+        ps.sort_order,
+        CASE WHEN EXISTS (
+          SELECT 1
+          FROM page_section_item psi
+          WHERE psi.section_id = ps.id
+            AND psi.item_kind IN ('phrase', 'authored_phrase', 'breakdown_token')
+        ) THEN 0 ELSE 1 END AS text_only
+      FROM phrase_page pp
+      JOIN page_section ps ON ps.page_id = pp.id
+    ),
+    runs AS (
+      SELECT
+        section_flags.*,
+        SUM(CASE WHEN text_only = 0 THEN 1 ELSE 0 END) OVER (
+          PARTITION BY page_id
+          ORDER BY sort_order
+          ROWS UNBOUNDED PRECEDING
+        ) AS run_group
+      FROM section_flags
+    )
+    SELECT page_id || ': ' || group_concat(section_title, ' | ')
+    FROM runs
+    WHERE text_only = 1
+    GROUP BY page_id, run_group
+    HAVING count(*) >= 3
+    ORDER BY page_id;
+  `).split("\n").filter(Boolean);
   const brokenRelationCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM phrase_relation r
@@ -1725,6 +1767,8 @@ function main() {
       sectionlessCanonicalPageCount,
       missingRelationshipWordsSectionCount,
       badRelationshipWordsSectionCount,
+      textOnlySectionRunCount: textOnlySectionRunRows.length,
+      textOnlySectionRunSample: textOnlySectionRunRows.slice(0, 20),
       brokenRelationCount,
       relationSourceIndexPresent,
       relationLookupUsesSourceIndex,

@@ -1295,6 +1295,38 @@ function nearbyPhraseSection(family, excludingPageIDs) {
   };
 }
 
+function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 3) {
+  const exclusions = linkedPageIDs(sections);
+  if (currentPageID) {
+    exclusions.add(currentPageID);
+  }
+
+  const relatedOptions = exploreOptions(family, limit, exclusions);
+  if (relatedOptions.length > 0) {
+    return relatedOptions;
+  }
+
+  return [phraseOption(primaryPhrase, null, tintForScenario(family.scenarioID))];
+}
+
+function exploreNextPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 8) {
+  const excludedOptions = exploreOptions(family, limit, linkedPageIDs(sections));
+  if (excludedOptions.length > 0) {
+    return excludedOptions;
+  }
+
+  const relaxedExclusions = new Set();
+  if (currentPageID) {
+    relaxedExclusions.add(currentPageID);
+  }
+  const relaxedOptions = exploreOptions(family, limit, relaxedExclusions);
+  if (relaxedOptions.length > 0) {
+    return relaxedOptions;
+  }
+
+  return [phraseOption(primaryPhrase, null, tintForScenario(family.scenarioID))];
+}
+
 function linkedPageIDs(sections) {
   const ids = new Set();
   for (const section of sections) {
@@ -1427,6 +1459,12 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
 function childPageForVariant(family, variantPhrase, primaryPhrase) {
   const pageID = `viet-phrase-${variantPhrase.id}`;
   const scenario = scenarioByID.get(family.scenarioID);
+  const primaryPageID = canonicalPageID(family);
+  const travelerInsightPhrases = [
+    phraseOption(primaryPhrase, primaryPageID, tintForScenario(family.scenarioID)),
+    ...exploreOptions(family, 2, new Set([pageID, primaryPageID])),
+  ];
+
   return {
     id: pageID,
     familyID: family.id,
@@ -1462,6 +1500,7 @@ function childPageForVariant(family, variantPhrase, primaryPhrase) {
         id: "traveler-insight",
         title: "Traveler insight",
         body: travelerInsightText(family, variantPhrase),
+        phrases: travelerInsightPhrases,
       },
       {
         id: "good-to-know",
@@ -1506,7 +1545,7 @@ function sectionPresentation(section) {
       return "tip-callout";
     case "local-tip":
     case "traveler-tip":
-      return "tip-callout";
+      return (section.phrases ?? []).length > 0 ? "phrase-list" : "tip-callout";
     default:
       return (section.phrases ?? []).length > 0 ? "phrase-list" : "plain-text";
   }
@@ -1571,6 +1610,7 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     id: "traveler-insight",
     title: "Traveler insight",
     body: travelerInsightText(family, primaryPhrase),
+    phrases: teachingPhraseOptions(family, sections, pageID, primaryPhrase, 3),
   });
 
   if (family.id === "social-how-are-you") {
@@ -1586,23 +1626,25 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     });
   }
 
-  sections.push(
-    {
-      id: "when-to-use",
-      title: "When to use it",
-      body: usageText(family, primaryPhrase),
-    },
-    {
-      id: "good-to-know",
-      title: "Good to know",
-      body: watchOutText(family, primaryPhrase),
-    },
-    {
-      id: "local-tip",
-      title: "Local tip",
-      body: localTipText(family, primaryPhrase),
-    }
-  );
+  sections.push({
+    id: "when-to-use",
+    title: "When to use it",
+    body: usageText(family, primaryPhrase),
+    phrases: teachingPhraseOptions(family, sections, pageID, primaryPhrase, 3),
+  });
+
+  sections.push({
+    id: "good-to-know",
+    title: "Good to know",
+    body: watchOutText(family, primaryPhrase),
+  });
+
+  sections.push({
+    id: "local-tip",
+    title: "Local tip",
+    body: localTipText(family, primaryPhrase),
+    phrases: teachingPhraseOptions(family, sections, pageID, primaryPhrase, 3),
+  });
 
   if (depth === "deep" && variantOptions.length === 0) {
     const nearbySection = nearbyPhraseSection(family, linkedPageIDs(sections));
@@ -1623,7 +1665,7 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     id: "explore-next",
     title: "Explore next",
     body: "Use these next when the conversation moves one step forward.",
-    phrases: exploreOptions(family, 8, linkedPageIDs(sections)),
+    phrases: exploreNextPhraseOptions(family, sections, pageID, primaryPhrase, 8),
   });
 
   return {
