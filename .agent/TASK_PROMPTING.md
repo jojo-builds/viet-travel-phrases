@@ -2,7 +2,7 @@
 
 Last updated: 2026-04-29
 
-This is the source of truth for how orchestrator-created `.agent/tasks/T-xxx/spec.md` files should be written for GPT-5.5-powered Codex workers.
+This is the source of truth for how orchestrator-created SpeakLocal task cards and, when truly needed, `.agent/tasks/T-xxx/spec.md` files should be written for GPT-5.5-powered Codex workers.
 
 Official references checked on 2026-04-28:
 
@@ -14,11 +14,23 @@ Official references checked on 2026-04-28:
 
 Write task specs as outcome contracts, not step-by-step scripts.
 
+## Current Handoff Mode
+
+Automation is paused. Do not create automation-based handoffs unless Jojo explicitly asks to resume that workflow.
+
+Default daily workflow:
+
+```text
+orchestrator brain-dump intake -> lightweight docs/task-cards/TASK-*.md -> exact project folder for Jojo -> tiny prompt into pinned specialist thread -> worker commits/result -> orchestrator folds result back
+```
+
+Use full `.agent/tasks/T-xxx` only for risky shared-runtime work, active queue recovery, collision-prone work needing claim state, or already-running tasks. Do not use full queue packets for routine handoffs.
+
 ## Compact Goal Card Rule
 
 Orchestrator-created worker specs should be compact by default. The worker is GPT-5.5 too; do not spend orchestration time spelling out an implementation path the worker can reason through from the goal.
 
-If the local Codex skill `speaklocal-task-cards` is available, use it before creating or editing SpeakLocal queue task specs or worker prompts.
+If the local Codex skill `speaklocal-task-cards` is available, use it before creating or editing SpeakLocal task cards, queue specs, or worker prompts.
 
 Default shape:
 

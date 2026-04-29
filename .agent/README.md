@@ -26,17 +26,31 @@ This folder is the repo-local task surface for Codex queue work.
 - Put hard requirements, write scopes, validation, and stopping conditions in the task file.
 - Leave implementation path choices to the worker unless the sequence is a real safety requirement.
 
+## Current Operating Mode: No Automation
+- As of 2026-04-29, Codex Desktop automations are paused for SpeakLocal work. Do not create or rely on automation runs unless Jojo explicitly re-enables that workflow.
+- The normal workflow is pinned specialist threads plus lightweight task cards under `docs/task-cards/`.
+- Full `.agent/tasks/T-xxx` queue packets remain available only for risky shared-runtime work, already-running queue tasks, recovery/claim-state needs, or explicit queue/automation experiments.
+- For routine handoff, the orchestrator must tell Jojo the exact Codex project folder to open, then provide a tiny prompt that points to the task card.
+
 ## Pinned orchestrator behavior
 - The pinned Codex thread is primarily an orchestrator, not the default worker.
 - Its normal job is to absorb Jojo's brain dumps, shape them into task packets, update source-of-truth docs, keep queue state clean, and stay available for the next idea.
-- Long research, implementation, simulator/device proof, multi-file content work, audio generation, and broad audits should normally become `.agent/tasks/T-xxx` work for fresh worker sessions.
+- Long research, implementation, simulator/device proof, multi-file content work, audio generation, and broad audits should normally become lightweight `docs/task-cards/*.md` work for pinned specialist threads. Use `.agent/tasks/T-xxx` only when the full queue machinery is truly needed.
 - Keep direct orchestrator edits small and queue/source-of-truth oriented unless Jojo explicitly asks this thread to execute the task itself.
 - A good handoff prompt should be short: identify the repo and task ID, then let the task files carry the real specification.
 - When a worker finishes, the orchestrator should read that task's `result.md` and changed source-of-truth docs, then report back to Jojo with a completion digest: what changed, what we learned, what decisions are now locked in, what remains risky, and the recommended next tasks.
 - Worker completion is not "done" from the orchestrator perspective until the outcome is folded into the roadmap/source truth or explicitly parked.
 - Store durable completion digests under `.agent/orchestrator/digests/T-xxx.md` so future sessions can recover the strategic meaning without rereading every worker artifact.
 
-Copy-paste shape for a manual worker:
+Copy-paste shape for a normal pinned-thread worker:
+
+```text
+Open /absolute/project-or-worktree/path.
+Execute docs/task-cards/TASK-XXX.md.
+Commit when done and write the requested result.
+```
+
+Copy-paste shape for an explicit full-queue worker only:
 
 ```text
 Open /Users/jojolim/Developer/products/speaklocal/app-family and process queue task T-XXX.
@@ -63,6 +77,7 @@ Process only T-XXX, commit or block it, and stop.
 - One worker run still processes one task. Parallelism comes from multiple workers or automation cards claiming different non-overlapping tasks.
 
 ## Desktop queue rule
+- Current status: paused for routine work. This section is retained for explicit queue/recovery work only.
 - Prefer helper-backed claiming with `SPEAKLOCAL_REVIEW_RUNTIME=subagents python3 .agent/queue_tool.py claim-next ...` when the worker lane can call reviewer subagents; this enforces active write-lock conflicts before claim.
 - Prompt-only desktop fallback runs may claim and finish by patching the chosen task's `state.json` directly with exact context and then re-reading to confirm ownership.
 - Treat a direct patch as an optimistic compare-and-swap claim: if the patch no longer applies, the re-read session id is not yours, or the candidate's write locks conflict with an active `in_progress` task, move to the next eligible task.
