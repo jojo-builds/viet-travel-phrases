@@ -21,7 +21,7 @@ Required Outcome
 - Produce a short result note explaining whether SQLite is ready to become default now, and if not, what exact blocker remains.
 
 Boundaries
-- Work in `/Users/jojolim/Developer/products/speaklocal/app-family-native-sqlite`.
+- Work in `/Users/jojolim/Developer/products/speaklocal/app-family` on `main`.
 - Own the SQLite/runtime/test/docs lane.
 - Do not redesign listing-page visuals.
 - Do not generate ElevenLabs audio.
