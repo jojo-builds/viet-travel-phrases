@@ -1,7 +1,7 @@
 # Melo Bucket List Concepts
 
 Status: locked next-step concept packet for Speak Local / Speak Local Vietnam
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
 ## Local Review
 
@@ -46,11 +46,24 @@ For Speak Local Vietnam:
 
 Use the flat-brand Melo direction:
 
-- stable silhouette, face, eye shape, smile, and curled tail
+- stable silhouette, face, eye shape, smile, and corrected inward-curled tail
+- tail must attach at the rear, taper continuously, and curl forward under the belly as an open C or hook
+- tail must not read as a wheel, tire, target, bullseye, button, ring, snail shell, or separate circular disc
 - no plush, fuzzy, clay, realistic, or 3D toy treatment
 - no hats, costumes, flags, badges, coins, trophies, XP, confetti, or leaderboard framing
 - small emotional states in Practice
 - more dramatic visual state only for meaningful bucket-list completion moments
+
+## Native Visual Fit
+
+Any app screenshot or native handoff comp must use the Speak Local Liquid Glass system:
+
+- photo masthead fading into clean white reading space when the surface needs travel context
+- top profile/admin glass button on root Practice surfaces
+- top-left Liquid Glass back button on map, city detail, and quiz screens
+- pinned translucent bottom toolbar and raised search island
+- red audio/action controls, jade progress, and white readable cards
+- no generic black phone frames or web-dashboard styling
 
 ## Required Melo Base Sheet
 
@@ -66,6 +79,11 @@ After that, use the locked base as the reference for every future prompt or comm
 
 ## Design Concepts
 
+- `assets/melo-base-sheet-tail-corrected.png`
+- `assets/melo-tail-construction-v2.png`
+- `assets/liquid-glass-bucket-list-v2.png`
+- `assets/liquid-glass-quiz-states.png`
+- `assets/melo-animation-storyboard.png`
 - `assets/melo-base-sheet.png`
 - `assets/bucket-list-map-concept.png`
 - `assets/practice-quiz-melo-concept.png`
@@ -74,12 +92,15 @@ After that, use the locked base as the reference for every future prompt or comm
 
 The next packet should turn these into native handoff specs:
 
-- `MascotState`: hidden, idle, listening, correct, gentleCorrection, bucketListUpdated, rest
+- `MascotState`: hidden, idle, listening, checking, selected, correct, gentleCorrection, bucketListUpdated, rest
 - `MeloProgressionStage`: base, firstPhrases, cityRhythm, travelerConfidence, streetReady, countryAttuned, fullyUnlocked
 - `BucketListScope`: country, city, practiceSet
 - `BucketListStatus`: locked, inProgress, completed, savedForLater
 - `BucketListStamp`: country, city, completion date, progression stage, mascot asset key
 - `MascotAssetKey`: `melo/<countryLayer>/<state>/<stage>/<view>`
 - `MascotCanvas`: transparent PNG/WebP, square canvas, stable baseline anchor, no cropped tail
+- `MeloTailRule`: attached rear base, tapered open inward curl, clear gap, no wheel/bullseye/ring/disc silhouette
+- `ChromeRequirement`: Liquid Glass top/back/profile controls and pinned bottom/search chrome in every app screenshot and native handoff comp
+- `AnimationRig`: Rive or Lottie-style vector layers, 12-24 frame micro-loops, stable bottom-center anchor, reduced-motion fallback
 
 The phrase/street-name content can arrive from the content side later. The UI should consume that content rather than invent it.

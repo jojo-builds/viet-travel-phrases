@@ -1,7 +1,7 @@
 # Speak Local Chameleon Mascot Visual System
 
 Status: design direction and visual review surface for `TASK-MASCOT-VISUAL-SYSTEM-001`
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
 ## Review Surface
 
@@ -42,7 +42,7 @@ Then open `http://127.0.0.1:8787/docs/design/mascot/mascot-visual-system.html`.
 
 The mascot is a chameleon traveler that gradually picks up local motif details as the user rehearses real Vietnamese phrase knowledge. It should feel like a calm companion for an offline travel phrasebook, not a course-game avatar.
 
-The base character keeps a stable silhouette: sage body, cream underside, rounded chameleon eye, curled tail, and a small travel satchel. Vietnam adaptation starts with a restrained jade or sea-glass body tint. Mid-progress can add ceramic-scale hints, a small red/gold travel patch, or a soft lotus cue. Completion can add lantern warmth and a slightly richer motif density. The mascot should never become a flag, costume, badge, prize token, or progress economy.
+The base character keeps a stable silhouette: sage body, cream underside, rounded chameleon eye, corrected open inward tail, and a small travel satchel. The tail must attach at the rear, taper continuously, and curl forward under the belly as an open C or hook. It must not read as a wheel, tire, target, bullseye, button, ring, snail shell, or separate circular disc. Vietnam adaptation starts with a restrained jade or sea-glass body tint. Mid-progress can add ceramic-scale hints, a small red/gold travel patch, or a soft lotus cue. Completion can add lantern warmth and a slightly richer motif density. The mascot should never become a flag, costume, badge, prize token, or progress economy.
 
 ## Keep
 
@@ -75,6 +75,7 @@ Later native work should treat this as an asset and placement contract, not a co
 - Keep mascot views out of `AppChromeLayout` bottom/search chrome.
 - Use SF typography and existing `NativeGlass` surfaces; do not carry the web mock's exact CSS sizing or phone frame literally into SwiftUI.
 - Keep progress state local and keyed to source-anchored practice events, not app opens or streaks.
+- Future app comps must include Speak Local's Liquid Glass profile/admin button, back button where navigation exists, pinned bottom toolbar, and raised search island. Do not present generic phone-frame screenshots as app direction.
 
 ## Visual Decisions
 
@@ -83,6 +84,7 @@ Later native work should treat this as an asset and placement contract, not a co
 - Missed feedback should use no mascot by default. It should say the item was saved for calm review.
 - Completion can show a small reward reveal, but the copy should be "Vietnam Bucket List updated" and "Jade Bucket List Stamp unlocked" rather than "Level up."
 - Listing pages can show `Add to practice` without adding the mascot. The page remains a reading and audio surface.
+- Quiz surfaces can show Melo listening, checking, correct, and gentle-correction states near progress or feedback. Melo should never sit inside answer hit targets or bottom chrome.
 
 ## Context Sent Outside Codex
 

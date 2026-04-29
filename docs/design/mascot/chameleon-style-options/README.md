@@ -1,7 +1,7 @@
 # Chameleon Style Options
 
 Status: locked Speak Local chameleon direction, with Vietnam as the first country implementation
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
 ## Local Review
 
@@ -78,6 +78,7 @@ The first progression pass was directionally correct but too quiet for bucket-li
 - bucket-list completion should be visibly different at thumbnail size
 - drama comes from color saturation, pattern coverage, posture confidence, and a soft travel glow
 - the base silhouette, face, eye shape, smile, and tail stay stable
+- the tail must attach at the rear, taper, and curl inward under the belly as an open C or hook; avoid wheel, target, ring, or separate disc tails
 - the final state reads as local attunement, not costume or flag paint
 
 The locked production stages are:
