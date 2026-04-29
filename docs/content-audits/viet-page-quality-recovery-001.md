@@ -160,7 +160,7 @@ Date: 2026-04-29
 | 134 | `viet-phrase-money-premium-total-wrong` | Tổng số này là sai. | This total is wrong. | catalog-built article | complete article | pass (6 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
 | 135 | `viet-phrase-money-premium-what-fee` | Khoản phí này dùng để làm gì? | What is this fee for? | catalog-built article | complete article | pass (8 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
 | 136 | `viet-phrase-money-premium-write-total` | Hãy viết tổng số ra. | Please write the total down. | catalog-built article | complete article | pass (6 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
-| 137 | `viet-phrase-phone-1` | Mật khẩu Wi-Fi là gì? | What is the Wi-Fi password? | authored article | complete article | pass (5 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
+| 137 | `viet-phrase-phone-1` | Mật khẩu Wi-Fi là gì? | What is the Wi-Fi password? | authored article | complete article | pass (5 cards) | canonical; 2 alias(es) | ready; visible audio audit clean | PASS |
 | 138 | `viet-phrase-phone-2` | Có bán SIM không? | Do you sell SIM cards? | authored article | complete article | pass (4 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
 | 139 | `viet-phrase-phone-3` | Điện thoại tôi hết pin rồi | My phone battery is dead | authored article | complete article | pass (6 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
 | 140 | `viet-phrase-phone-4` | Có sạc không? | Do you have a charger? | authored article | complete article | pass (4 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
@@ -173,7 +173,7 @@ Date: 2026-04-29
 | 147 | `viet-phrase-phone-premium-no-signal` | Không có tín hiệu ở đây. | There is no signal here. | catalog-built article | complete article | pass (7 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
 | 148 | `viet-phrase-phone-premium-otp-not-arriving` | Mã xác minh không đến. | The verification code is not arriving. | catalog-built article | complete article | pass (6 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
 | 149 | `viet-phrase-phone-premium-password-not-working` | Mật khẩu Wi-Fi không hoạt động. | The Wi-Fi password is not working. | catalog-built article | complete article | pass (5 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
-| 150 | `viet-phrase-phone-wifi-common` | Pass Wi-Fi là gì? | What is the Wi-Fi password? | authored article | complete article | pass (5 cards) | canonical; 2 alias(es) | ready; visible audio audit clean | PASS |
+| 150 | `viet-phrase-phone-wifi-common` | Pass Wi-Fi là gì? | What is the Wi-Fi password? | authored article | complete article | pass (5 cards) | canonical; 1 alias(es) | ready; visible audio audit clean | PASS |
 | 151 | `viet-phrase-polite-1` | Xin chào | Hello | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; visible audio audit clean | PASS |
 | 152 | `viet-phrase-polite-2` | Cảm ơn | Thank you | authored article | complete article | pass (3 cards) | canonical; 2 alias(es) | ready; visible audio audit clean | PASS |
 | 153 | `viet-phrase-polite-3` | Dạ | Yes / polite acknowledgment | authored article | deep article | pass (1 cards) | canonical; 2 alias(es) | ready; visible audio audit clean | PASS |

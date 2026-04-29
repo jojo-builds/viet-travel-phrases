@@ -60,7 +60,7 @@
       "title": "Explore next",
       "body": "These keep a phone call from getting stuck.",
       "phrases": [
-        {"id": "phone-wifi-common", "vietnamese": "Mật khẩu Wi-Fi là gì?", "english": "What is the Wi-Fi password?", "pronunciation": "mat khau wifi la zee", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-phone-wifi", "audioKey": "phone-1"},
+        {"id": "phone-1", "vietnamese": "Mật khẩu Wi-Fi là gì?", "english": "What is the Wi-Fi password?", "pronunciation": "mat khau wifi la zee", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-phone-wifi", "audioKey": "phone-1"},
         {"id": "directions-2", "vietnamese": "Ở gần đây không?", "english": "Is it near here?", "pronunciation": "uh gun day khong", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-family-directions-near", "audioKey": "directions-2"},
         {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}
       ]

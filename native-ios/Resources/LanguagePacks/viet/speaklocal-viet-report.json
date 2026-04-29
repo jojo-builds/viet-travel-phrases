@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:216ee9ab8d6678a3",
-    "generatedAt": "source-hash:216ee9ab8d6678a3"
+    "contentVersion": "viet-sqlite-fixture:d331b977721ba9ee",
+    "generatedAt": "source-hash:d331b977721ba9ee"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "a1f517d4d79c701e436ca679c5be4eaff0da156ebea7c74bdf1b8ae20707a6e8"
+      "sha256": "331240a7e2a048cd800bf49fd39eb680e3b5b9d4ede72604104f27917edcaa69"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "88509d4f7ab08ca6b6dc05a1c654bbdad1899cc1f284ea2f3864d05c38c59b52"
+      "sha256": "d6979a0c82490acd783b767e62743dedc007c56ba5aaedf4ad206fe1cc64f44c"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "290124f6da3bf619b79618d0366d30d480068e4655a87ad2ab36fa4c4dd358fa",
+    "databaseSha256": "348e2a7f4865ae7525a7c1dbe77326bdf2267324e72be0d8157a3bdede8b7f2a",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -101,6 +101,8 @@
     "searchDocumentsWithMissingPageTargets": 0,
     "authoredPhraseSectionItemCount": 0,
     "phraseSectionRouteMismatchCount": 0,
+    "visiblePhraseTextMismatchCount": 0,
+    "pageTitlePhraseTextMismatchCount": 0,
     "audioUsageMismatchCount": 0,
     "badBreakdownGlossCount": 0,
     "badBreakdownGlossSample": [],

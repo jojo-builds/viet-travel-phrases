@@ -120,6 +120,10 @@ function hasPhraseTeachingSection(page) {
   );
 }
 
+function wordCount(value) {
+  return String(value ?? "").trim().split(/\s+/).filter(Boolean).length;
+}
+
 function main() {
   assert(fs.existsSync(fullUniverseRoot), `Missing full-universe authoring root: ${relative(fullUniverseRoot)}`);
   assert(fs.existsSync(indexPath), `Missing full-universe index: ${relative(indexPath)}`);
@@ -162,7 +166,7 @@ function main() {
     assert(hasPhraseTeachingSection(page), `${relative(filePath)} missing variants/replies/nearby phrase teaching section`);
 
     const breakdown = (page.sections ?? []).find((section) => section.id === "breakdown")?.breakdown ?? [];
-    assert(breakdown.length >= 2, `${relative(filePath)} needs a meaningful multi-card breakdown`);
+    assert(breakdown.length >= (wordCount(page.title) === 1 ? 1 : 2), `${relative(filePath)} needs a meaningful breakdown`);
     assert(normalize(breakdown[breakdown.length - 1]?.vietnamese) === normalize(page.title), `${relative(filePath)} final breakdown card must be the full phrase`);
 
     for (const pattern of bannedPatterns) {

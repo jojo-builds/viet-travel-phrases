@@ -1490,6 +1490,20 @@ function main() {
       AND psi.note != ''
       AND psi.note != pp.id;
   `));
+  const visiblePhraseTextMismatchCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM page_section_item psi
+    JOIN phrase p ON p.id = psi.target_id
+    WHERE psi.item_kind = 'phrase'
+      AND psi.title_override IS NOT NULL
+      AND lower(trim(psi.title_override)) != lower(trim(p.target_text));
+  `));
+  const pageTitlePhraseTextMismatchCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM phrase_page pp
+    JOIN phrase p ON p.id = pp.phrase_id
+    WHERE lower(trim(pp.title)) != lower(trim(p.target_text));
+  `));
   const audioUsageMismatchCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM audio_usage au
@@ -1607,6 +1621,8 @@ function main() {
       searchDocumentsWithMissingPageTargets,
       authoredPhraseSectionItemCount,
       phraseSectionRouteMismatchCount,
+      visiblePhraseTextMismatchCount,
+      pageTitlePhraseTextMismatchCount,
       audioUsageMismatchCount,
       badBreakdownGlossCount: badBreakdownGlossRows.length,
       badBreakdownGlossSample: badBreakdownGlossRows.slice(0, 20),

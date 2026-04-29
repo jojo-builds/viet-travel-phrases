@@ -199,6 +199,22 @@ function main() {
       AND psi.note != pp.id;
   `), "phrase section rows whose stored note route is not the target canonical page");
 
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section_item psi
+    JOIN phrase p ON p.id = psi.target_id
+    WHERE psi.item_kind = 'phrase'
+      AND psi.title_override IS NOT NULL
+      AND lower(trim(psi.title_override)) != lower(trim(p.target_text));
+  `), "visible phrase rows whose text differs from the linked canonical phrase");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page pp
+    JOIN phrase p ON p.id = pp.phrase_id
+    WHERE lower(trim(pp.title)) != lower(trim(p.target_text));
+  `), "canonical phrase pages whose title differs from their canonical phrase text");
+
   assertEqual(
     sqliteValue("SELECT canonical_page_id FROM page_alias WHERE alias_id = 'viet-polite-hello';"),
     "viet-phrase-polite-1",
