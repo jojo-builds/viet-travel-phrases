@@ -110,9 +110,24 @@ final class LocalUserIntentStore: ObservableObject {
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
-        recentPages = Self.load([RecentPhrasePage].self, key: Key.recentPages, defaults: defaults) ?? []
-        savedPageIDs = Self.load([String].self, key: Key.savedPageIDs, defaults: defaults) ?? []
-        practicePageIDs = Self.load([String].self, key: Key.practicePageIDs, defaults: defaults) ?? []
+
+        let loadedRecentPages = Self.load([RecentPhrasePage].self, key: Key.recentPages, defaults: defaults) ?? []
+        let loadedSavedPageIDs = Self.load([String].self, key: Key.savedPageIDs, defaults: defaults) ?? []
+        let loadedPracticePageIDs = Self.load([String].self, key: Key.practicePageIDs, defaults: defaults) ?? []
+
+        recentPages = Self.canonicalizedRecentPages(loadedRecentPages)
+        savedPageIDs = Self.canonicalizedPageIDs(loadedSavedPageIDs)
+        practicePageIDs = Self.canonicalizedPageIDs(loadedPracticePageIDs)
+
+        if recentPages != loadedRecentPages {
+            persist(recentPages, key: Key.recentPages)
+        }
+        if savedPageIDs != loadedSavedPageIDs {
+            persist(savedPageIDs, key: Key.savedPageIDs)
+        }
+        if practicePageIDs != loadedPracticePageIDs {
+            persist(practicePageIDs, key: Key.practicePageIDs)
+        }
     }
 
     var recentPageIDs: [String] {
@@ -124,13 +139,15 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     func recordOpenedPage(_ pageID: String, source: UserIntentSource) {
-        guard PhraseCatalog.isOpenablePageID(pageID) else {
+        guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
             return
         }
 
-        var pages = recentPages.filter { $0.pageID != pageID }
+        var pages = recentPages.filter { page in
+            Self.canonicalPageID(forOpenablePageID: page.pageID) != canonicalPageID
+        }
         pages.insert(
-            RecentPhrasePage(pageID: pageID, openedAt: Date(), source: source),
+            RecentPhrasePage(pageID: canonicalPageID, openedAt: Date(), source: source),
             at: 0
         )
         recentPages = Array(pages.prefix(Self.maxRecentPages))
@@ -138,11 +155,11 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     func isPageSaved(_ pageID: String) -> Bool {
-        savedPageIDs.contains(pageID)
+        containsCanonicalID(savedPageIDs, pageID: pageID)
     }
 
     func isPageInPractice(_ pageID: String) -> Bool {
-        practicePageIDs.contains(pageID)
+        containsCanonicalID(practicePageIDs, pageID: pageID)
     }
 
     func toggleSavedPage(_ pageID: String) {
@@ -156,15 +173,19 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     private func toggledCanonicalIDs(_ ids: [String], pageID: String) -> [String] {
-        guard PhraseCatalog.isOpenablePageID(pageID) else {
+        guard let canonicalPageID = Self.canonicalPageID(forOpenablePageID: pageID) else {
             return ids
         }
 
-        if ids.contains(pageID) {
-            return ids.filter { $0 != pageID }
+        let filteredIDs = ids.filter { id in
+            Self.canonicalPageID(forOpenablePageID: id) != canonicalPageID
         }
 
-        return [pageID] + ids
+        if filteredIDs.count != ids.count {
+            return filteredIDs
+        }
+
+        return [canonicalPageID] + Self.canonicalizedPageIDs(ids)
     }
 
     private func persist<T: Encodable>(_ value: T, key: String) {
@@ -181,6 +202,62 @@ final class LocalUserIntentStore: ObservableObject {
         }
 
         return try? JSONDecoder().decode(type, from: data)
+    }
+
+    private func containsCanonicalID(_ ids: [String], pageID: String) -> Bool {
+        guard let canonicalPageID = Self.canonicalPageID(forOpenablePageID: pageID) else {
+            return false
+        }
+
+        return ids.contains { id in
+            Self.canonicalPageID(forOpenablePageID: id) == canonicalPageID
+        }
+    }
+
+    private static func canonicalizedRecentPages(_ pages: [RecentPhrasePage]) -> [RecentPhrasePage] {
+        var seenPageIDs = Set<String>()
+        var canonicalPages: [RecentPhrasePage] = []
+
+        for page in pages {
+            guard let canonicalPageID = canonicalPageID(forOpenablePageID: page.pageID) else {
+                continue
+            }
+            guard seenPageIDs.insert(canonicalPageID).inserted else {
+                continue
+            }
+
+            canonicalPages.append(
+                RecentPhrasePage(
+                    pageID: canonicalPageID,
+                    openedAt: page.openedAt,
+                    source: page.source
+                )
+            )
+        }
+
+        return Array(canonicalPages.prefix(maxRecentPages))
+    }
+
+    private static func canonicalizedPageIDs(_ pageIDs: [String]) -> [String] {
+        var seenPageIDs = Set<String>()
+        var canonicalPageIDs: [String] = []
+
+        for pageID in pageIDs {
+            guard let canonicalPageID = canonicalPageID(forOpenablePageID: pageID) else {
+                continue
+            }
+            guard seenPageIDs.insert(canonicalPageID).inserted else {
+                continue
+            }
+
+            canonicalPageIDs.append(canonicalPageID)
+        }
+
+        return canonicalPageIDs
+    }
+
+    private static func canonicalPageID(forOpenablePageID pageID: String) -> String? {
+        PhraseCatalog.canonicalPageID(forOpenablePageID: pageID)
     }
 
     private static let maxRecentPages = 12

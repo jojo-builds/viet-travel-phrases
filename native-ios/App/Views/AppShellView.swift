@@ -564,11 +564,11 @@ struct AppShellView: View {
         }
 
         let pageID = arguments[arguments.index(after: flagIndex)]
-        guard PhraseCatalog.isOpenablePageID(pageID) else {
+        guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
             return arguments.contains("--search") ? .search : .home
         }
 
-        return .detailPage(pageID)
+        return .detailPage(canonicalPageID)
     }
 
     private static var initialRoute: AppRoute {
@@ -600,7 +600,7 @@ struct AppShellNavigationState: Equatable {
             rootRoute = .saved
         case .detailPage(let detailPageID):
             rootRoute = .home
-            detailPath = [detailPageID]
+            detailPath = [PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) ?? detailPageID]
         case .search:
             rootRoute = .home
             isSearchPresented = true
@@ -682,7 +682,9 @@ struct AppShellNavigationState: Equatable {
     }
 
     mutating func openDetail(_ id: String) {
-        if id == PhrasePage.xinChao.id {
+        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+
+        if id == PhrasePage.xinChao.id && canonicalPageID == PhrasePage.xinChao.id {
             guard currentRoute != .phrasePage else {
                 rootScrollToTopTrigger += 1
                 return
@@ -696,17 +698,17 @@ struct AppShellNavigationState: Equatable {
             return
         }
 
-        guard PhraseCatalog.isOpenablePageID(id) else {
+        guard let canonicalPageID else {
             return
         }
 
-        guard detailPath.last != id else {
+        guard detailPath.last != canonicalPageID else {
             return
         }
 
         isSearchPresented = false
         forwardStack.removeAll()
-        detailPath.append(id)
+        detailPath.append(canonicalPageID)
         detailScrollToTopTrigger += 1
     }
 
@@ -792,14 +794,14 @@ struct AppShellNavigationState: Equatable {
             rootRoute = .saved
             savedScrollToTopTrigger += 1
         case .detailPage(let detailPageID):
-            guard PhraseCatalog.isOpenablePageID(detailPageID) else {
+            guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) else {
                 return
             }
 
             isSearchPresented = false
 
-            if detailPath.last != detailPageID {
-                detailPath.append(detailPageID)
+            if detailPath.last != canonicalPageID {
+                detailPath.append(canonicalPageID)
                 detailScrollToTopTrigger += 1
             }
         case .search:

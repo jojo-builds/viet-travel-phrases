@@ -1,4 +1,3 @@
-#if DEBUG
 import Foundation
 import SQLite3
 
@@ -167,6 +166,19 @@ final class VietSQLiteLanguagePackRepository {
 
     func count(_ table: VietSQLiteLanguagePackTable) throws -> Int {
         try intValue("SELECT count(*) FROM \(table.rawValue);")
+    }
+
+    func hasIndex(named name: String) throws -> Bool {
+        let sql = """
+        SELECT count(*)
+        FROM sqlite_master
+        WHERE type = 'index'
+          AND name = ?;
+        """
+
+        return try intValue(sql) { statement in
+            try self.bindText(name, to: 1, in: statement, sql: sql)
+        } > 0
     }
 
     func loadSanitySnapshot(previewPhraseID: String = "polite-1") throws -> VietSQLiteLanguagePackSanitySnapshot {
@@ -471,6 +483,35 @@ final class VietSQLiteLanguagePackRepository {
                 tintName: tint,
                 detailPageID: Self.stringColumn(statement, index: 1)
             )
+        }
+    }
+
+    func relatedPagesLookupPlan(forPageID pageID: String, limit: Int = 8) throws -> [String] {
+        let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        let sql = """
+        EXPLAIN QUERY PLAN
+        SELECT
+          r.id,
+          pp.id,
+          pp.title,
+          pp.english_title,
+          COALESCE(NULLIF(r.display_label, ''), r.relation_type),
+          pp.icon_name,
+          pp.tint_name
+        FROM phrase_relation r
+        JOIN phrase_page pp ON pp.id = r.target_id
+        WHERE r.source_kind = 'phrase_page'
+          AND r.target_kind = 'phrase_page'
+          AND r.source_id = ?
+        ORDER BY r.sort_order, r.relation_type, pp.title
+        LIMIT ?;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
+            try self.bindInt(limit, to: 2, in: statement, sql: sql)
+        }) { statement in
+            Self.stringColumn(statement, index: 3)
         }
     }
 
@@ -826,8 +867,22 @@ enum VietSQLitePhraseGraphRuntime {
     static let environmentVariable = "SPEAKLOCAL_USE_SQLITE_GRAPH"
 
     static var isEnabled: Bool {
-        ProcessInfo.processInfo.arguments.contains(launchArgument)
+#if DEBUG
+        if let isEnabledOverride {
+            return isEnabledOverride
+        }
+#endif
+
+        return ProcessInfo.processInfo.arguments.contains(launchArgument)
             || ProcessInfo.processInfo.environment[environmentVariable] == "1"
+    }
+
+    static func canonicalPageID(for pageIDOrAlias: String) -> String? {
+        guard isEnabled, let repository = repository() else {
+            return nil
+        }
+
+        return try? repository.canonicalPageID(forPageIDOrAlias: pageIDOrAlias)
     }
 
     static func search(_ query: String, limit: Int = 8) -> [PhraseSearchResult]? {
@@ -864,7 +919,20 @@ enum VietSQLitePhraseGraphRuntime {
     }
 
     private static var cachedRepository: VietSQLiteLanguagePackRepository?
+
+#if DEBUG
+    static func setEnabledForTesting(_ enabled: Bool) {
+        isEnabledOverride = enabled
+        cachedRepository = nil
+    }
+
+    static func resetTestingOverrides() {
+        isEnabledOverride = nil
+        cachedRepository = nil
+    }
+
+    private static var isEnabledOverride: Bool?
+#endif
 }
 
 private let sqliteTransient = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
-#endif

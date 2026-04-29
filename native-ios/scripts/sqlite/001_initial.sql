@@ -255,5 +255,7 @@ CREATE INDEX idx_page_alias_canonical ON page_alias(canonical_page_id);
 CREATE INDEX idx_phrase_cluster_source_family ON phrase_cluster(source_family_id);
 CREATE INDEX idx_page_section_page ON page_section(page_id, sort_order);
 CREATE INDEX idx_page_section_item_section ON page_section_item(section_id, sort_order);
+CREATE INDEX idx_phrase_relation_source ON phrase_relation(source_kind, source_id, sort_order);
+CREATE INDEX idx_phrase_relation_target ON phrase_relation(target_kind, target_id);
 CREATE INDEX idx_audio_usage_target ON audio_usage(target_kind, target_id);
 CREATE INDEX idx_search_document_target ON search_document(target_kind, target_id);

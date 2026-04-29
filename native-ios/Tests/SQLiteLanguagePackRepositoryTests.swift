@@ -3,6 +3,21 @@ import XCTest
 
 #if DEBUG
 final class SQLiteLanguagePackRepositoryTests: XCTestCase {
+    private var suiteName: String?
+    private var defaults: UserDefaults?
+
+    override func tearDown() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        if let suiteName {
+            defaults?.removePersistentDomain(forName: suiteName)
+        }
+        defaults = nil
+        suiteName = nil
+
+        super.tearDown()
+    }
+
     func testBundledVietSQLiteFixtureIsFindableReadOnlyAndHealthy() throws {
         let url = try XCTUnwrap(VietSQLiteLanguagePackRepository.bundledDatabaseURL())
 
@@ -123,6 +138,75 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         }
     }
 
+    func testSQLiteRelationLookupUsesSourceIndexForLargerGraphs() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+
+        XCTAssertTrue(try repository.hasIndex(named: "idx_phrase_relation_source"))
+        XCTAssertTrue(
+            try repository.relatedPagesLookupPlan(forPageID: "viet-phrase-polite-1").contains { detail in
+                detail.contains("idx_phrase_relation_source")
+            }
+        )
+    }
+
+    func testSQLiteRuntimeDrivesSearchDetailRelatedAndHistoryRoute() throws {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+
+        let searchResult = try XCTUnwrap(PhraseSearchIndex.search("hello").first)
+        XCTAssertEqual(searchResult.pageID, "viet-phrase-polite-1")
+
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: searchResult.pageID))
+        let relatedPageID = try XCTUnwrap(page.sections.flatMap(\.phrases).first { phrase in
+            phrase.detailPageID == "viet-phrase-polite-2"
+        }?.detailPageID)
+
+        var navigation = AppShellNavigationState()
+        navigation.openSearch()
+        navigation.openDetail(searchResult.pageID)
+        navigation.openDetail(relatedPageID)
+
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-polite-2"))
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-polite-1"))
+        XCTAssertEqual(navigation.forwardPreviewRoute, .detailPage("viet-phrase-polite-2"))
+
+        navigation.goForward()
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-polite-2"))
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
+
+        var rootNavigation = AppShellNavigationState()
+        rootNavigation.openDetail(PhrasePage.xinChao.id)
+        XCTAssertEqual(rootNavigation.currentRoute, .detailPage("viet-phrase-polite-1"))
+    }
+
+    func testSQLiteAliasesAreStoredAsCanonicalIDsForLocalState() throws {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        let defaults = makeIsolatedDefaults()
+        let encoder = JSONEncoder()
+        let aliasRecentPages = [
+            RecentPhrasePage(pageID: "viet-excuse-sorry", openedAt: Date(timeIntervalSince1970: 2), source: .search),
+            RecentPhrasePage(pageID: "viet-phrase-polite-5", openedAt: Date(timeIntervalSince1970: 1), source: .article),
+        ]
+        defaults.set(try encoder.encode(aliasRecentPages), forKey: "SpeakLocal.LocalIntent.recentPages.v1")
+        defaults.set(try encoder.encode(["viet-excuse-sorry"]), forKey: "SpeakLocal.LocalIntent.savedPageIDs.v1")
+        defaults.set(try encoder.encode(["viet-excuse-sorry"]), forKey: "SpeakLocal.LocalIntent.practicePageIDs.v1")
+
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        XCTAssertEqual(store.recentPageIDs, ["viet-phrase-polite-5"])
+        XCTAssertEqual(store.savedPageIDs, ["viet-phrase-polite-5"])
+        XCTAssertEqual(store.practicePageIDs, ["viet-phrase-polite-5"])
+        XCTAssertTrue(store.isPageSaved("viet-excuse-sorry"))
+        XCTAssertTrue(store.isPageInPractice("viet-excuse-sorry"))
+
+        store.toggleSavedPage("viet-phrase-polite-5")
+        store.togglePracticePage("viet-phrase-polite-5")
+
+        XCTAssertTrue(store.savedPageIDs.isEmpty)
+        XCTAssertTrue(store.practicePageIDs.isEmpty)
+    }
+
     func testSQLiteAuthoredPhraseRowsKeepVisibleAudioKeys() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let page = try repository.loadPhraseDetailPage(pageID: "viet-phrase-smalltalk-7")
@@ -167,6 +251,15 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         let data = try Data(contentsOf: url)
 
         return try JSONDecoder().decode(VietSQLiteFixtureReport.self, from: data)
+    }
+
+    private func makeIsolatedDefaults() -> UserDefaults {
+        let suiteName = "SQLiteLanguagePackRepositoryTests.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suiteName)!
+        defaults.removePersistentDomain(forName: suiteName)
+        self.suiteName = suiteName
+        self.defaults = defaults
+        return defaults
     }
 }
 

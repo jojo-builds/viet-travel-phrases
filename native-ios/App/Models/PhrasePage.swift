@@ -365,15 +365,25 @@ enum PhraseCatalog {
     }
 
     static func isOpenablePageID(_ pageID: String) -> Bool {
-#if DEBUG
         if VietSQLitePhraseGraphRuntime.canOpenPage(pageID) {
             return true
         }
-#endif
 
         return pageID == PhrasePage.xinChao.id
             || PhraseDetailPage.hasAuthoredPage(withID: pageID)
             || GeneratedVietContent.hasDetailPage(withID: pageID)
+    }
+
+    static func canonicalPageID(forOpenablePageID pageID: String) -> String? {
+        if let sqliteCanonicalPageID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pageID) {
+            return sqliteCanonicalPageID
+        }
+
+        guard isOpenablePageID(pageID) else {
+            return nil
+        }
+
+        return pageID
     }
 
     static var allItems: [PhraseCatalogItem] {
@@ -684,11 +694,9 @@ extension PhrasePage {
 
 enum PhraseSearchIndex {
     static func search(_ query: String) -> [PhraseSearchResult] {
-#if DEBUG
         if let sqliteResults = VietSQLitePhraseGraphRuntime.search(query) {
             return sqliteResults
         }
-#endif
 
         let normalizedQuery = normalize(query)
         guard !normalizedQuery.isEmpty else {
@@ -953,11 +961,9 @@ extension PhraseDetailPage {
     }
 
     static func page(withID id: String) -> PhraseDetailPage? {
-#if DEBUG
         if let sqlitePage = VietSQLitePhraseGraphRuntime.detailPage(withID: id) {
             return sqlitePage
         }
-#endif
 
         return pagesByID[id] ?? GeneratedVietContent.detailPage(withID: id)
     }

@@ -4,8 +4,8 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:6a30528007c8379d",
-    "generatedAt": "source-hash:6a30528007c8379d"
+    "contentVersion": "viet-sqlite-fixture:f3316b37339a53d2",
+    "generatedAt": "source-hash:f3316b37339a53d2"
   },
   "sourceInputs": {
     "catalog": {
@@ -26,14 +26,14 @@
     },
     "schema": {
       "path": "native-ios/scripts/sqlite/001_initial.sql",
-      "sha256": "2448ef3d2a0c9c3cbdf61ea47702b2c4b4fe5bfc0a3f005e7d6649dc656f586c"
+      "sha256": "497ad83493f03517d1640c0ded9d2f126ee329bc9263f5e56d7498184b908ed5"
     }
   },
   "outputs": {
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "756307e28c76989c80814c1a5b62433d15c6bf441ade5fe46594a639a5a86679",
+    "databaseSha256": "e7b9837ce6764027f396ca9382d19fd01b4d5fd40957bbc6c865d8eb1fcddf06",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -96,6 +96,8 @@
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
     "brokenRelationCount": 0,
+    "relationSourceIndexPresent": true,
+    "relationLookupUsesSourceIndex": true,
     "searchDocumentsWithMissingPageTargets": 0,
     "audioUsageMismatchCount": 0,
     "bannedUserFacingMatchCount": 0,
@@ -281,8 +283,8 @@
     ]
   },
   "notes": [
-    "The native Swift runtime still reads the existing root-level JSON resources.",
-    "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet for migration proof only.",
+    "The native Swift runtime still reads the existing root-level JSON resources by default.",
+    "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet and can be selected by runtime feature flag while default promotion remains gated.",
     "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
     "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",
     "The relation table is populated from authored page links, generated category neighbors, and same-cluster variants.",

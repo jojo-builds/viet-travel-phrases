@@ -163,6 +163,28 @@ function main() {
        OR NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = r.target_id);
   `), "broken phrase-page relation edges");
 
+  assertEqual(sqliteValue(`
+    SELECT count(*)
+    FROM sqlite_master
+    WHERE type = 'index'
+      AND name = 'idx_phrase_relation_source';
+  `), "1", "relation source lookup index");
+
+  const relationLookupPlan = sqliteValue(`
+    EXPLAIN QUERY PLAN
+    SELECT r.id
+    FROM phrase_relation r
+    JOIN phrase_page pp ON pp.id = r.target_id
+    WHERE r.source_kind = 'phrase_page'
+      AND r.target_kind = 'phrase_page'
+      AND r.source_id = 'viet-phrase-polite-1'
+    ORDER BY r.sort_order, r.relation_type, pp.title
+    LIMIT 8;
+  `);
+  if (!relationLookupPlan.includes("idx_phrase_relation_source")) {
+    throw new Error(`Relation lookup does not use idx_phrase_relation_source:\n${relationLookupPlan}`);
+  }
+
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM search_document sd

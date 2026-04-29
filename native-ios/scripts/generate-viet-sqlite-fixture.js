@@ -941,6 +941,24 @@ function main() {
        OR NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = r.source_id)
        OR NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = r.target_id);
   `));
+  const relationSourceIndexPresent = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM sqlite_master
+    WHERE type = 'index'
+      AND name = 'idx_phrase_relation_source';
+  `)) === 1;
+  const relationLookupPlan = sqliteQuery(`
+    EXPLAIN QUERY PLAN
+    SELECT r.id
+    FROM phrase_relation r
+    JOIN phrase_page pp ON pp.id = r.target_id
+    WHERE r.source_kind = 'phrase_page'
+      AND r.target_kind = 'phrase_page'
+      AND r.source_id = 'viet-phrase-polite-1'
+    ORDER BY r.sort_order, r.relation_type, pp.title
+    LIMIT 8;
+  `);
+  const relationLookupUsesSourceIndex = relationLookupPlan.includes("idx_phrase_relation_source");
   const searchDocumentsWithMissingPageTargets = Number(sqliteQuery(`
     SELECT count(*)
     FROM search_document sd
@@ -1039,6 +1057,8 @@ function main() {
       duplicateCanonicalPageGroupCount,
       sectionlessCanonicalPageCount,
       brokenRelationCount,
+      relationSourceIndexPresent,
+      relationLookupUsesSourceIndex,
       searchDocumentsWithMissingPageTargets,
       audioUsageMismatchCount,
       bannedUserFacingMatchCount: bannedUserFacingMatches.length,
@@ -1081,8 +1101,8 @@ function main() {
       authoredCategoryIDs: Array.from(categoryIDs).sort(),
     },
     notes: [
-      "The native Swift runtime still reads the existing root-level JSON resources.",
-      "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet for migration proof only.",
+      "The native Swift runtime still reads the existing root-level JSON resources by default.",
+      "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet and can be selected by runtime feature flag while default promotion remains gated.",
       "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
       "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",
       "The relation table is populated from authored page links, generated category neighbors, and same-cluster variants.",
