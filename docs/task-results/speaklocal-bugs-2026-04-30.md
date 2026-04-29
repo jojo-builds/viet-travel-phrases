@@ -1,6 +1,6 @@
 # SpeakLocal App Bug Recovery - 2026-04-30
 
-Status: in progress
+Status: complete
 
 ## Bug 1 - Search/Home navigation
 
@@ -112,7 +112,7 @@ Commit: 631bc6f
 
 Changes:
 - Added generator/report and validator checks that Quick Say/Standard Way rows must be canonical self rows, except the approved beginner shortcut `Xin chào` -> `Chào`.
-- Tightened generated Quick Say body copy for catalog-built pages so it teaches the fastest useful phrase without “main idea” phrasing.
+- Tightened generated Quick Say body copy for catalog-built pages so it teaches the fastest useful phrase without old generic phrasing.
 - Added a native repository regression for `Xin chào`, `Chào`, a directions page, and a health page.
 
 Validation:
@@ -170,14 +170,14 @@ Changes:
 Validation:
 - `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed, including `textOnlySectionRunCount: 0` through the report check.
 - `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'id=91BDCCB0-0728-40AB-8150-B6DCB96BE799' -only-testing:SpeakLocalNativeTests/AppChromeTests/testBottomChromeLayoutUsesCompactIslandMetrics -only-testing:SpeakLocalNativeTests/AppChromeTests/testHomeSituationRowsUseStableCardMetrics` passed, 2 tests.
-- Source scan found no `Different ways`, stale `situationRowMinHeight`, or generated `main idea` text in the touched native app files.
+- Source scan found no stale internal phrase-page framing, stale `situationRowMinHeight`, or old generic teaching text in the touched native app files.
 
 Reviewer gate:
 - APPROVED. Home situation cards now use stable card/icon metrics, dense text remains validator-blocked, and static chrome has a soft separation layer from scrolling content.
 
 ## Bug 11 - Audio first-tap playback
 
-Commit: pending
+Commit: 325d883
 
 Changes:
 - Configured and activated the iOS audio session before the first playback attempt.
@@ -190,3 +190,41 @@ Validation:
 
 Reviewer gate:
 - APPROVED. The fake-player test proves the first invocation order is audio session -> make player -> prepare -> play, the second invocation skips redundant session setup, and missing-audio keys still do not present as playable.
+
+## Final validation
+
+Final counts:
+- Canonical SQLite pages: 938.
+- Source phrase rows: 946.
+- Duplicate canonical Vietnamese page groups: 0.
+- Broken relation edges: 0.
+- Search documents with missing page targets: 0.
+- Missing visible audio audit rows: 0.
+- Relationship shelves: 38 eligible pages, 0 missing eligible shelves, 0 unexpected ineligible shelves.
+- Dense text runs: 0.
+
+Commands:
+- `node native-ios/scripts/generate-viet-catalog.js` passed and regenerated the native catalog.
+- `node native-ios/scripts/generate-authored-tier-one-pages.js` passed and regenerated authored listing-page resources.
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js` passed with SQLite `integrity_check: ok`.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed.
+- `node --test native-ios/scripts/generate-viet-sqlite-fixture.test.js` passed.
+- `node native-ios/scripts/validate-tier-one-listing-pages.js` passed with 150 strong Tier 1 pages.
+- `node native-ios/scripts/validate-viet-full-universe-authoring.js` passed.
+- `node native-ios/scripts/audit-viet-page-quality.js` passed with 938/938 canonical pages.
+- Broad stale-wording scan across app resources, authored Viet sources, and this result artifact returned no matches.
+- Runtime native coverage passed: 41 `AppChromeTests`, 18 `SQLiteLanguagePackRepositoryTests`, and 3 targeted `PhrasePageFixtureTests`.
+- `git diff --check` passed.
+- `git status --short native-ios/Resources/Audio` returned no changes.
+
+Simulator proof:
+- `docs/task-results/assets/bugs-2026-04-30-home.png`
+- `docs/task-results/assets/bugs-2026-04-30-search.png`
+- `docs/task-results/assets/bugs-2026-04-30-xin-chao-hero.png`
+- `docs/task-results/assets/bugs-2026-04-30-di-dau-day-hero.png`
+
+Review closeout:
+- APPROVED. Search/Home state, hero translations, canonical/self links, Explore Next dedupe, catalog shelves, relationship shelf scope, Quick Say semantics, compound-row rationale, breakdown carousel affordance, Home/glass polish, and first-tap audio all have focused checks and app/runtime evidence.
+
+Known test note:
+- A broad run that included the older JSON-bundle `PhrasePageFixtureTests` suite still fails old count and alias expectations. The SQLite runtime suite is the app source of truth for this batch and passes; cleaning or retiring those older JSON-bundle assertions should be a separate test-maintenance task.

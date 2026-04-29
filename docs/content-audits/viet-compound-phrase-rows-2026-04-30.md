@@ -25,5 +25,5 @@ Result: 14 suspicious canonical rows reviewed. Each remains a single canonical p
 | `viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white` | Vui lòng in nó bằng màu đen và trắng | Please print it in black and white | Keep unified | “Black and white” is a single print setting. |
 
 Reviewer gate:
-- Copy/learning flow: APPROVED. The rows are not AI filler or accidental combined lessons; each phrase has one learner intent.
+- Copy/learning flow: APPROVED. The rows are intentional lessons, not accidental combined lessons; each phrase has one learner intent.
 - Technical/canonical: APPROVED. The reviewed set is now validator-allowlisted, so any future suspicious slash/and-or/dual-pronoun canonical row must be reviewed before validation passes.

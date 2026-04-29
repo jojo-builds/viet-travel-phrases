@@ -89,10 +89,11 @@ const overTemplatePatterns = [
   /question marker/i,
 ];
 
-function articleIssues(page) {
+function articleIssues(page, relationshipWordsEligiblePageIDs) {
   const issues = [];
   const text = `${page.summary ?? ""} ${page.section_text ?? ""}`;
   const sectionKeys = new Set(String(page.section_keys ?? "").split(" / ").filter(Boolean));
+  const shouldHaveRelationshipWords = relationshipWordsEligiblePageIDs.has(page.id);
 
   if (Number(page.section_count) === 0) {
     issues.push("missing article sections");
@@ -110,11 +111,15 @@ function articleIssues(page) {
       ["at-glance", sectionKeys.has("at-glance")],
       ["quick-say or standard-way", hasQuickOrStandard],
       ["breakdown", sectionKeys.has("breakdown")],
-      ["relationship-words", sectionKeys.has("relationship-words")],
       ["when-to-use", sectionKeys.has("when-to-use")],
       ["good-to-know", sectionKeys.has("good-to-know")],
       ["nearby-phrases or explore-next", hasRelated],
     ];
+    if (shouldHaveRelationshipWords) {
+      requiredSections.push(["relationship-words", sectionKeys.has("relationship-words")]);
+    } else if (sectionKeys.has("relationship-words")) {
+      issues.push("unexpected relationship-words section");
+    }
     const missingSections = requiredSections
       .filter(([, present]) => !present)
       .map(([label]) => label);
@@ -136,6 +141,7 @@ function articleIssues(page) {
 
 function main() {
   const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+  const relationshipWordsEligiblePageIDs = new Set(report.validation.relationshipWordsEligiblePageIDs ?? []);
   const pages = sqliteJSON(`
     SELECT
       pp.id,
@@ -203,7 +209,7 @@ function main() {
 
   const auditedRows = pages.map((page) => {
     const tokens = breakdownByPageID.get(page.id) ?? [];
-    const issues = [...articleIssues(page), ...breakdownIssues(page, tokens)];
+    const issues = [...articleIssues(page, relationshipWordsEligiblePageIDs), ...breakdownIssues(page, tokens)];
     const hasArticleSections = Number(page.section_count) > 0;
     const hasBreakdown = tokens.length > 0;
     const passed = hasArticleSections && hasBreakdown && issues.length === 0;
@@ -229,7 +235,7 @@ function main() {
   const lines = [
     "# Viet Page Quality Recovery Audit 001",
     "",
-    "Date: 2026-04-29",
+    "Date: 2026-04-30",
     "",
     "## Summary",
     "",
