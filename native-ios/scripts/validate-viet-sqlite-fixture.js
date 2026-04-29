@@ -31,6 +31,28 @@ const bannedPatterns = [
   /watch-out/i,
 ];
 
+const requiredLegacyNativePageAliases = [
+  ["viet-polite-hello", "viet-phrase-polite-1"],
+  ["viet-family-polite-hello", "viet-phrase-polite-1"],
+  ["viet-hello-anh", "viet-phrase-hello-chao-anh"],
+  ["viet-hello-chi", "viet-phrase-hello-chao-chi"],
+  ["viet-hello-em", "viet-phrase-hello-chao-em"],
+  ["viet-hello-ong", "viet-phrase-hello-chao-ong"],
+  ["viet-hello-ba", "viet-phrase-hello-chao-ba"],
+  ["viet-hello-chu", "viet-phrase-hello-chao-chu"],
+  ["viet-hello-co", "viet-phrase-hello-chao-co"],
+  ["viet-respectful-hello", "viet-phrase-hello-da-chao-anh-chi"],
+  ["viet-phone-hello", "viet-phrase-hello-alo"],
+  ["viet-where-going", "viet-phrase-smalltalk-di-dau-day"],
+  ["viet-nice-to-meet-you", "viet-phrase-smalltalk-nice-to-meet-you"],
+  ["viet-hello-anh-way-respectful", "viet-phrase-acknowledge-da-chao-anh"],
+  ["viet-hello-chi-way-respectful", "viet-phrase-acknowledge-da-chao-chi"],
+  ["viet-hello-ong-way-respectful", "viet-phrase-acknowledge-da-chao-ong"],
+  ["viet-hello-ba-way-respectful", "viet-phrase-acknowledge-da-chao-ba"],
+  ["viet-hello-chu-way-respectful", "viet-phrase-acknowledge-da-chao-chu"],
+  ["viet-hello-co-way-respectful", "viet-phrase-acknowledge-da-chao-co"],
+];
+
 function run(command, args, options = {}) {
   const result = spawnSync(command, args, {
     cwd: repoRoot,
@@ -175,6 +197,14 @@ function main() {
     "Hello (universal greeting)",
     "Xin chào flagship summary"
   );
+  for (const [aliasID, canonicalPageID] of requiredLegacyNativePageAliases) {
+    const sqlAliasID = `'${aliasID.replace(/'/g, "''")}'`;
+    assertEqual(
+      sqliteValue(`SELECT canonical_page_id FROM page_alias WHERE alias_id = ${sqlAliasID};`),
+      canonicalPageID,
+      `legacy native page alias ${aliasID}`
+    );
+  }
   assertEqual(
     sqliteList(`
       SELECT group_concat(section_key, '|')

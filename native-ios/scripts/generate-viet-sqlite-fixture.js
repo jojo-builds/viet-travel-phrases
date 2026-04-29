@@ -17,6 +17,25 @@ const databasePath = path.join(outputDir, "speaklocal-viet.sqlite");
 const reportPath = path.join(outputDir, "speaklocal-viet-report.json");
 
 const languagePackID = "viet";
+const legacyNativePageAliases = [
+  { aliasID: "viet-hello-anh", phraseID: "hello-chao-anh" },
+  { aliasID: "viet-hello-chi", phraseID: "hello-chao-chi" },
+  { aliasID: "viet-hello-em", phraseID: "hello-chao-em" },
+  { aliasID: "viet-hello-ong", phraseID: "hello-chao-ong" },
+  { aliasID: "viet-hello-ba", phraseID: "hello-chao-ba" },
+  { aliasID: "viet-hello-chu", phraseID: "hello-chao-chu" },
+  { aliasID: "viet-hello-co", phraseID: "hello-chao-co" },
+  { aliasID: "viet-respectful-hello", phraseID: "hello-da-chao-anh-chi" },
+  { aliasID: "viet-phone-hello", phraseID: "hello-alo" },
+  { aliasID: "viet-where-going", phraseID: "smalltalk-di-dau-day" },
+  { aliasID: "viet-nice-to-meet-you", phraseID: "smalltalk-nice-to-meet-you" },
+  { aliasID: "viet-hello-anh-way-respectful", phraseID: "acknowledge-da-chao-anh" },
+  { aliasID: "viet-hello-chi-way-respectful", phraseID: "acknowledge-da-chao-chi" },
+  { aliasID: "viet-hello-ong-way-respectful", phraseID: "acknowledge-da-chao-ong" },
+  { aliasID: "viet-hello-ba-way-respectful", phraseID: "acknowledge-da-chao-ba" },
+  { aliasID: "viet-hello-chu-way-respectful", phraseID: "acknowledge-da-chao-chu" },
+  { aliasID: "viet-hello-co-way-respectful", phraseID: "acknowledge-da-chao-co" },
+];
 const sourcePaths = {
   catalog: catalogPath,
   authoredPages: authoredPagesPath,
@@ -241,6 +260,15 @@ function main() {
     if (sourcePageID !== canonicalPageID) {
       addAlias(sourcePageID, canonicalPageID, "duplicate-phrase-page", relative(catalogPath));
     }
+  }
+
+  for (const { aliasID, phraseID } of legacyNativePageAliases) {
+    addAlias(
+      aliasID,
+      canonicalPageIDForPhrase(phraseID),
+      "legacy-native-page",
+      "native-ios/App/Models/PhrasePage.swift"
+    );
   }
 
   for (const page of authoredPages) {
@@ -1231,6 +1259,7 @@ function main() {
       page?.id,
       ...Array.from(aliases.values())
         .filter((alias) => alias.canonical_page_id === canonicalPageIDForPhrase(phrase.id))
+        .filter((alias) => alias.alias_kind !== "legacy-native-page")
         .map((alias) => alias.alias_id),
     ]
       .filter(Boolean)
