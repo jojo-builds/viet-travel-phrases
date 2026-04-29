@@ -33,6 +33,7 @@ Validation
 - Run focused native tests for SQLite/search/navigation/local-state behavior.
 - Run a native build.
 - If practical, launch one simulator flow with SQLite enabled and capture proof.
+- Use one read-only peer reviewer focused on SQLite readiness, canonical graph integrity, and route/audio/local-state risks. Use a second reviewer only if the first review exposes a separate native UI risk.
 - Run `git diff --check`.
 
 Result Contract
@@ -43,4 +44,5 @@ Write `docs/task-results/TASK-SQLITE-PROMOTION-001.md` with:
 - whether SQLite is now default-ready
 - remaining blockers, if any
 - validation commands and outcomes
+- peer review outcome
 - simulator proof path, if captured

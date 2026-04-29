@@ -54,6 +54,12 @@ The orchestrator should route and synthesize:
 
 The orchestrator should not read every implementation file before assignment unless that is needed to route safely.
 
+## Peer Review Default
+
+Meaningful task cards should ask for one focused read-only peer reviewer near the end. The reviewer checks Task Done, boundaries, validation, and obvious missed issues.
+
+Use two reviewers at most when the task has two truly different risk surfaces. Use three-gate review only for rare high-risk work such as release/signing, broad runtime migrations, destructive cleanup, or cross-lane changes. Docs-only or orchestration-only edits can use a self-review checklist instead.
+
 ## Card Shape
 
 Keep cards short and goal-driven:

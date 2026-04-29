@@ -37,6 +37,7 @@ Use GPT-5.5 judgment. Do not stop at an audit if you can safely implement. Balan
 - Run full phrase/page/link/copy validator or add one if missing.
 - Run generated resource checks if resources changed.
 - Search for banned/internal user-facing terms.
+- Use one read-only peer reviewer focused on content quality and canonical graph/link/audio integrity. Use a second reviewer only if the first review surfaces a distinct technical generator risk.
 - Run `git diff --check`.
 
 ## Result Contract
@@ -50,5 +51,6 @@ Write `docs/task-results/TASK-CONTENT-FULL-VIET-PAGES-001.md` with:
 - quality classification before/after;
 - duplicate/link/audio validation counts;
 - validation commands and outcomes;
+- peer review outcome;
 - remaining path to all pages;
 - recommended next task.

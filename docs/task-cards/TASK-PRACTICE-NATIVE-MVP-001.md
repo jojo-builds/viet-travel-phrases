@@ -36,6 +36,7 @@ Use GPT-5.5 judgment. Design the smallest native MVP that proves the product loo
 - Run native tests covering practice item generation and local practice state.
 - Build and launch the app.
 - Simulator-test add-to-practice from a listing page, practice session flow, answer feedback, and remove/review behavior.
+- Use one read-only peer reviewer focused on whether the quiz tests real Vietnamese phrase knowledge and whether local practice state is coherent.
 - Run `git diff --check`.
 
 ## Result Contract
@@ -48,5 +49,6 @@ Write `docs/task-results/TASK-PRACTICE-NATIVE-MVP-001.md` with:
 - data sources used;
 - simulator proof screenshots;
 - validation commands and outcomes;
+- peer review outcome;
 - known product/design decisions still needed;
 - recommended next task.

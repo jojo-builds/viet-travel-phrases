@@ -34,6 +34,7 @@ Use GPT-5.5 judgment. Inspect the app, run it, test the flows a real user would 
 - Launch on iPhone 17 Pro simulator.
 - Capture screenshots for the tested flows.
 - Run focused tests for any code changed.
+- Use one read-only peer reviewer focused on whether the visible QA pass missed obvious native UX, navigation, clipping, or chrome issues.
 - Run `git diff --check`.
 
 ## Result Contract
@@ -47,4 +48,5 @@ Write `docs/task-results/TASK-NATIVE-VISUAL-QA-001.md` with:
 - fixes made;
 - remaining bugs ranked P0/P1/P2;
 - validation commands and outcomes;
+- peer review outcome;
 - recommended next task.

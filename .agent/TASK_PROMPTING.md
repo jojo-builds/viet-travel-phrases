@@ -181,13 +181,20 @@ Do not ask a worker to load every broad doc or every skill just in case.
 - Do not bury the actual outcome inside long context.
 - Do not ask for tiny conservative batches when the task is supposed to occupy a meaningful worker session.
 - Do not let a task weaken its own validation with phrases like "if possible" when the check is required.
-- Do not let meaningful tasks skip review gates.
+- Do not let meaningful tasks skip a lightweight peer review unless the task is docs-only or orchestration-only.
 - Do not let reviewer subagents edit files; they return judgment only.
 - Do not request or store hidden reasoning traces. Store decisions, evidence, and tradeoffs.
 
 ## Subagent Review Standard
 
-Meaningful tasks should use read-only reviewer subagents after implementation and before finalization.
+Meaningful tasks should use read-only reviewer subagents after implementation and before finalization, but the default is intentionally light.
+
+Default review budget:
+
+- one focused peer reviewer for most implementation, content, data, or simulator tasks;
+- two reviewers at most when there are clearly separate risk surfaces;
+- three-gate or larger review processes only for rare high-risk work such as release/signing, broad runtime migrations, destructive cleanup, or tasks affecting multiple app lanes at once;
+- docs-only or orchestration-only edits may use a self-review checklist instead of spawning a reviewer.
 
 The task spec should define reviewer lanes by outcome risk, not generic titles. Examples:
 
@@ -212,7 +219,7 @@ Blocking findings:
 - ...
 ```
 
-The parent worker writes review artifacts under the task folder, resolves blockers, repeats the gate if needed, and closes harvested reviewer agents.
+The parent worker writes review notes into the result artifact, resolves blockers, and repeats review only when the reviewer blocks on something material. Avoid repeated review loops for low-risk polish.
 
 ## Parallel Work Standard
 
