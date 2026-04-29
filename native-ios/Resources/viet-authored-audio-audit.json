@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generatedAt": "2026-04-29T16:01:44.436Z",
+    "generatedAt": "2026-04-29T17:07:40.706Z",
     "tierOneFamilyCount": 150,
-    "requiredAudioCount": 492,
+    "requiredAudioCount": 490,
     "missingAudioCount": 0
   },
   "required": [
@@ -3756,22 +3756,6 @@
       "kind": "phrase",
       "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first",
       "text": "Được",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-acknowledge-da",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "polite-3",
-      "text": "dạ",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-acknowledge-dung",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "v500-poli-basi-yes",
-      "text": "đúng",
       "resolved": true
     },
     {

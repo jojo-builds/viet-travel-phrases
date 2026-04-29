@@ -191,6 +191,13 @@ function main() {
     }
   }
 
+  const canonicalPhraseIDByNormalizedTargetText = new Map(
+    normalizedPhraseGroups.map(([normalizedTargetText, phrases]) => [
+      normalizedTargetText,
+      canonicalPhraseIDByPhraseID.get(phrases[0].id),
+    ])
+  );
+
   const canonicalPhraseIDs = new Set(canonicalPhraseIDByPhraseID.values());
   const duplicateNormalizedTargetGroups = normalizedPhraseGroups
     .filter(([, phrases]) => phrases.length > 1)
@@ -225,6 +232,12 @@ function main() {
   function canonicalPageIDForPhrase(phraseID) {
     const canonicalPhraseID = canonicalPhraseIDForPhrase(phraseID);
     return canonicalPhraseID ? sourcePageIDForPhrase(canonicalPhraseID) : null;
+  }
+
+  function resolvedCatalogPhraseIDForAuthoredPhrase(phrase) {
+    if (phraseByID.has(phrase.id)) return phrase.id;
+    const normalizedVietnamese = normalizeText(phrase.vietnamese);
+    return canonicalPhraseIDByNormalizedTargetText.get(normalizedVietnamese) ?? null;
   }
 
   function addAlias(aliasID, canonicalPageID, aliasKind, sourcePath) {
@@ -284,17 +297,19 @@ function main() {
     for (const categoryID of page.categoryIDs ?? []) categoryIDs.add(categoryID);
     for (const section of page.sections ?? []) {
       for (const phrase of section.phrases ?? []) {
-        if (!phraseByID.has(phrase.id)) {
+        const resolvedPhraseID = resolvedCatalogPhraseIDForAuthoredPhrase(phrase);
+        if (!resolvedPhraseID) {
           authoredPhraseItemsNotInCatalog.push({
             pageID: page.id,
             sectionID: section.id,
             phraseID: phrase.id,
+            vietnamese: phrase.vietnamese ?? null,
             detailPageID: phrase.detailPageID ?? null,
           });
           continue;
         }
         if (phrase.detailPageID) {
-          addAlias(phrase.detailPageID, canonicalPageIDForPhrase(phrase.id), "section-detail-ref", relative(authoredPagesPath));
+          addAlias(phrase.detailPageID, canonicalPageIDForPhrase(resolvedPhraseID), "section-detail-ref", relative(authoredPagesPath));
         }
       }
     }
@@ -303,11 +318,13 @@ function main() {
   for (const page of authoredPages) {
     for (const section of page.sections ?? []) {
       for (const phrase of section.phrases ?? []) {
-        if (phrase.detailPageID && !canonicalPhraseIDForPhrase(phrase.id) && !aliases.has(phrase.detailPageID)) {
+        const resolvedPhraseID = resolvedCatalogPhraseIDForAuthoredPhrase(phrase);
+        if (phrase.detailPageID && !resolvedPhraseID && !aliases.has(phrase.detailPageID)) {
           unresolvedDetailPageRefs.push({
             pageID: page.id,
             sectionID: section.id,
             phraseID: phrase.id,
+            vietnamese: phrase.vietnamese ?? null,
             detailPageID: phrase.detailPageID,
           });
         }
@@ -934,21 +951,22 @@ function main() {
 
       let itemIndex = 0;
       for (const phrase of section.phrases ?? []) {
-        const targetID = phraseByID.has(phrase.id) ? phrase.id : `authored:${phrase.id}`;
+        const resolvedPhraseID = resolvedCatalogPhraseIDForAuthoredPhrase(phrase);
+        const targetID = resolvedPhraseID ?? `authored:${phrase.id}`;
         sectionItemRows.push({
           id: `${sectionID}:phrase:${itemIndex}:${stableID([phrase.id, phrase.vietnamese, phrase.english])}`,
           section_id: sectionID,
-          item_kind: phraseByID.has(phrase.id) ? "phrase" : "authored_phrase",
+          item_kind: resolvedPhraseID ? "phrase" : "authored_phrase",
           target_id: targetID,
           title_override: phrase.vietnamese ?? null,
           subtitle_override: phrase.english ?? null,
-          note: phrase.detailPageID ?? null,
+          note: resolvedPhraseID ? canonicalPageIDForPhrase(resolvedPhraseID) : (phrase.detailPageID ?? null),
           sort_order: itemIndex,
         });
-        if (phraseByID.has(phrase.id) && phrase.detailPageID) {
+        if (resolvedPhraseID) {
           addPageRelation({
             sourcePhraseID: page.phraseID,
-            targetPhraseID: phrase.id,
+            targetPhraseID: resolvedPhraseID,
             relationType: section.id === "explore-next" ? "next_step_after" : "see_also",
             reason: `Authored ${section.title ?? section.id} row links these phrase pages.`,
             displayLabel: section.title ?? "Related",
@@ -1211,10 +1229,11 @@ function main() {
     for (const section of page.sections ?? []) {
       const sectionID = `${canonicalPageID}:${section.id}`;
       for (const phrase of section.phrases ?? []) {
+        const resolvedPhraseID = resolvedCatalogPhraseIDForAuthoredPhrase(phrase);
         addAudioUsage({
           usageKind: "authored-section-phrase",
-          targetKind: phraseByID.has(phrase.id) ? "phrase" : "authored_phrase",
-          targetID: phraseByID.has(phrase.id) ? phrase.id : `authored:${phrase.id}`,
+          targetKind: resolvedPhraseID ? "phrase" : "authored_phrase",
+          targetID: resolvedPhraseID ?? `authored:${phrase.id}`,
           expectedText: phrase.vietnamese,
           audioKey: phrase.audioKey,
           isPrimary: 0,
@@ -1456,6 +1475,21 @@ function main() {
     WHERE sd.target_kind = 'phrase_page'
       AND NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = sd.target_id);
   `));
+  const authoredPhraseSectionItemCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM page_section_item
+    WHERE item_kind = 'authored_phrase';
+  `));
+  const phraseSectionRouteMismatchCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM page_section_item psi
+    JOIN phrase p ON p.id = psi.target_id
+    LEFT JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+    WHERE psi.item_kind = 'phrase'
+      AND psi.note IS NOT NULL
+      AND psi.note != ''
+      AND psi.note != pp.id;
+  `));
   const audioUsageMismatchCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM audio_usage au
@@ -1571,6 +1605,8 @@ function main() {
       relationSourceIndexPresent,
       relationLookupUsesSourceIndex,
       searchDocumentsWithMissingPageTargets,
+      authoredPhraseSectionItemCount,
+      phraseSectionRouteMismatchCount,
       audioUsageMismatchCount,
       badBreakdownGlossCount: badBreakdownGlossRows.length,
       badBreakdownGlossSample: badBreakdownGlossRows.slice(0, 20),

@@ -182,6 +182,23 @@ function main() {
     WHERE NOT EXISTS (SELECT 1 FROM page_section ps WHERE ps.page_id = pp.id);
   `), "sectionless canonical phrase pages");
 
+  assertZero(
+    sqliteValue("SELECT count(*) FROM page_section_item WHERE item_kind = 'authored_phrase';"),
+    "visible authored phrase rows without canonical phrase pages"
+  );
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section_item psi
+    JOIN page_section ps ON ps.id = psi.section_id
+    JOIN phrase p ON p.id = psi.target_id
+    LEFT JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+    WHERE psi.item_kind = 'phrase'
+      AND psi.note IS NOT NULL
+      AND psi.note != ''
+      AND psi.note != pp.id;
+  `), "phrase section rows whose stored note route is not the target canonical page");
+
   assertEqual(
     sqliteValue("SELECT canonical_page_id FROM page_alias WHERE alias_id = 'viet-polite-hello';"),
     "viet-phrase-polite-1",

@@ -6,7 +6,7 @@
     "resourceMainPageCount": 144,
     "childPageCount": 14,
     "fullUniversePageCount": 35,
-    "generatedAt": "2026-04-29T16:01:44.436Z"
+    "generatedAt": "2026-04-29T17:07:40.706Z"
   },
   "pages": [
     {
@@ -32791,14 +32791,8 @@
           "breakdown": [
             {
               "id": "co-meaning",
-              "vietnamese": "có",
-              "english": "yes / have / there is",
-              "audioKey": "breakdown-food-5-first"
-            },
-            {
-              "id": "full",
               "vietnamese": "Có",
-              "english": "yes, it exists / yes, available",
+              "english": "yes / have / there is; available in this moment",
               "audioKey": "breakdown-food-5-first"
             }
           ],
@@ -34038,14 +34032,8 @@
           "breakdown": [
             {
               "id": "softener",
-              "vietnamese": "dạ",
-              "english": "respectful softener before an answer",
-              "audioKey": "polite-3"
-            },
-            {
-              "id": "full",
               "vietnamese": "Dạ",
-              "english": "polite yes / I hear you",
+              "english": "respectful yes / I hear you / softens the answer",
               "audioKey": "polite-3"
             }
           ],
@@ -34215,14 +34203,8 @@
           "breakdown": [
             {
               "id": "dung-meaning",
-              "vietnamese": "đúng",
-              "english": "right / correct",
-              "audioKey": "v500-poli-basi-yes"
-            },
-            {
-              "id": "full",
               "vietnamese": "Đúng",
-              "english": "yes, that is correct",
+              "english": "right / correct; yes, that is correct",
               "audioKey": "v500-poli-basi-yes"
             }
           ],
@@ -34382,14 +34364,8 @@
           "breakdown": [
             {
               "id": "duoc-meaning",
-              "vietnamese": "được",
-              "english": "can / okay / possible",
-              "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
-            },
-            {
-              "id": "full",
               "vietnamese": "Được",
-              "english": "okay, that works",
+              "english": "can / okay / possible; that works",
               "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
             }
           ],
@@ -34549,14 +34525,8 @@
           "breakdown": [
             {
               "id": "khong-meaning",
-              "vietnamese": "không",
-              "english": "no / not",
-              "audioKey": "breakdown-polite-6-first"
-            },
-            {
-              "id": "full",
               "vietnamese": "Không",
-              "english": "no",
+              "english": "no / not; the clear negative answer",
               "audioKey": "breakdown-polite-6-first"
             }
           ],
@@ -36277,14 +36247,8 @@
           "breakdown": [
             {
               "id": "chao-meaning",
-              "vietnamese": "chào",
-              "english": "greet / say hello",
-              "audioKey": "breakdown-chao"
-            },
-            {
-              "id": "chao-full",
               "vietnamese": "Chào",
-              "english": "hi / hello",
+              "english": "greet / say hello; hi / hello",
               "audioKey": "breakdown-chao"
             }
           ],

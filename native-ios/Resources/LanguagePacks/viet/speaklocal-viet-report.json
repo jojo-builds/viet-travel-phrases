@@ -4,8 +4,8 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:044831956eb0feb2",
-    "generatedAt": "source-hash:044831956eb0feb2"
+    "contentVersion": "viet-sqlite-fixture:216ee9ab8d6678a3",
+    "generatedAt": "source-hash:216ee9ab8d6678a3"
   },
   "sourceInputs": {
     "catalog": {
@@ -14,7 +14,7 @@
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "cb76b5ede7e1c5af9c3cd7b74bf9d2ceafc8d7beea1fd41740114be672d5d0dc"
+      "sha256": "88509d4f7ab08ca6b6dc05a1c654bbdad1899cc1f284ea2f3864d05c38c59b52"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "7f62ce3f70602c169aa7eb87ca652850ef5e154bdca2f1755b469894c0fd5e29",
+    "databaseSha256": "290124f6da3bf619b79618d0366d30d480068e4655a87ad2ab36fa4c4dd358fa",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -80,12 +80,12 @@
     "aliases": 1007,
     "pageCategories": 978,
     "sections": 6193,
-    "sectionItems": 10611,
-    "breakdownTokens": 6083,
-    "relations": 3627,
+    "sectionItems": 10605,
+    "breakdownTokens": 6077,
+    "relations": 3642,
     "searchDocuments": 946,
     "audioAssets": 3756,
-    "audioUsages": 3504,
+    "audioUsages": 3498,
     "audioTextDedupeRows": 2343,
     "missingAudioAuditRows": 0
   },
@@ -99,6 +99,8 @@
     "relationSourceIndexPresent": true,
     "relationLookupUsesSourceIndex": true,
     "searchDocumentsWithMissingPageTargets": 0,
+    "authoredPhraseSectionItemCount": 0,
+    "phraseSectionRouteMismatchCount": 0,
     "audioUsageMismatchCount": 0,
     "badBreakdownGlossCount": 0,
     "badBreakdownGlossSample": [],
@@ -110,99 +112,8 @@
     "detailPageIDs": [],
     "authoredPagePhraseIDMissingCount": 0,
     "authoredPagePhraseIDMissing": [],
-    "authoredPhraseItemsNotInCatalogCount": 15,
-    "authoredPhraseItemsNotInCatalog": [
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "quick-say",
-        "phraseID": "xin-chao-casual-chao",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "situational-greetings",
-        "phraseID": "xin-chao-friend",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "situational-greetings",
-        "phraseID": "xin-chao-formal",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "situational-greetings",
-        "phraseID": "xin-chao-phone",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "situational-greetings",
-        "phraseID": "xin-chao-morning",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "situational-greetings",
-        "phraseID": "xin-chao-afternoon",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "local-greetings",
-        "phraseID": "xin-chao-anh",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "local-greetings",
-        "phraseID": "xin-chao-chi",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "local-greetings",
-        "phraseID": "xin-chao-em",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "local-greetings",
-        "phraseID": "xin-chao-ong",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "local-greetings",
-        "phraseID": "xin-chao-ba",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "local-greetings",
-        "phraseID": "xin-chao-chu",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "local-greetings",
-        "phraseID": "xin-chao-co",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "common-follow-ups",
-        "phraseID": "xin-chao-where-going",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-polite-hello",
-        "sectionID": "common-follow-ups",
-        "phraseID": "xin-chao-nice-meet",
-        "detailPageID": null
-      }
-    ]
+    "authoredPhraseItemsNotInCatalogCount": 0,
+    "authoredPhraseItemsNotInCatalog": []
   },
   "canonicalIdentity": {
     "canonicalPageCount": 938,
@@ -292,7 +203,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 3627,
+    "relationCount": 3642,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -316,7 +227,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 2620
+        "count": 2635
       }
     ]
   },
@@ -324,7 +235,7 @@
     "manifestEntries": 3756,
     "uniqueNormalizedSpokenTextCount": 2343,
     "assets": 3756,
-    "usages": 3504,
+    "usages": 3498,
     "missingAudioAuditRows": 0,
     "missingAudioAuditSample": []
   },

@@ -161,6 +161,12 @@ function main() {
     breakdownByPageID.set(row.page_id, rows);
   }
 
+  function articleStatusLabel(page, hasArticleSections) {
+    if (!hasArticleSections) return "missing article";
+    if (page.completeness_status === "deep") return "deep article";
+    return "complete article";
+  }
+
   const auditedRows = pages.map((page) => {
     const tokens = breakdownByPageID.get(page.id) ?? [];
     const issues = [...articleIssues(page), ...breakdownIssues(page, tokens)];
@@ -172,19 +178,19 @@ function main() {
       ...page,
       token_count: tokens.length,
       breakdown_status: issues.length === 0 ? "pass" : issues.join("; "),
-      article_status: hasArticleSections ? `${page.completeness_status} article` : "missing article",
+      article_status: articleStatusLabel(page, hasArticleSections),
       canonical_status: `canonical; ${page.alias_count} alias(es)`,
       audio_status: report.audio.missingAudioAuditRows === 0
         ? `${page.audio_status}; visible audio audit clean`
         : `${page.audio_status}; missing-audio rows present`,
-      source_type: page.is_authored ? "authored article" : "generated baseline article",
+      source_type: page.is_authored ? "authored article" : "catalog-built article",
       pass_fail: passed ? "PASS" : "FAIL",
     };
   });
 
   const passCount = auditedRows.filter((row) => row.pass_fail === "PASS").length;
   const authoredCount = auditedRows.filter((row) => row.is_authored).length;
-  const baselineCount = auditedRows.length - authoredCount;
+  const catalogBuiltCount = auditedRows.length - authoredCount;
 
   const lines = [
     "# Viet Page Quality Recovery Audit 001",
@@ -197,7 +203,7 @@ function main() {
     `- Source phrase rows: ${report.generatedCounts.phrases}.`,
     `- Audit-pass pages: ${passCount}.`,
     `- Authored article pages: ${authoredCount}.`,
-    `- Generated baseline article pages: ${baselineCount}.`,
+    `- Catalog-built article pages: ${catalogBuiltCount}.`,
     `- Duplicate canonical Vietnamese page groups: ${report.validation.duplicateCanonicalPageGroupCount}.`,
     `- Broken relations/search targets: ${report.validation.brokenRelationCount} broken relation edges, ${report.validation.searchDocumentsWithMissingPageTargets} missing search targets.`,
     `- Missing visible audio audit rows: ${report.audio.missingAudioAuditRows}.`,
@@ -206,7 +212,7 @@ function main() {
     "",
     "- `viet-polite-hello` and `viet-family-polite-hello` now alias to canonical `viet-phrase-polite-1`.",
     "- `viet-phrase-polite-1` now carries the flagship Xin chào article rhythm in the generated SQLite page sections.",
-    "- Baseline generated canonical pages now receive `At a glance`, `Quick say`, `Break it down`, `When to use it`, `Good to know`, and nearby phrase sections.",
+    "- Catalog-built canonical pages now receive `At a glance`, `Quick say`, `Break it down`, `When to use it`, `Good to know`, and nearby phrase sections.",
     "- The bad `Không sao đâu` breakdown now teaches `Không sao` plus softening `đâu` before the full phrase.",
     "",
     "## One-By-One Canonical Page Audit",
@@ -238,7 +244,7 @@ function main() {
     canonicalPages: auditedRows.length,
     passCount,
     authoredCount,
-    baselineCount,
+    catalogBuiltCount,
   }, null, 2));
 
   if (passCount !== auditedRows.length) {
