@@ -991,6 +991,8 @@ function main() {
       addPageCategory(canonicalPageID, categoryID, index, authoredSourcePath);
     }
 
+    const seenAuthoredDestinations = new Set();
+
     for (const [sectionIndex, section] of (page.sections ?? []).entries()) {
       const sectionID = `${canonicalPageID}:${section.id}`;
       const sortOrder = sectionIndex >= relationshipWordsSortOrder ? sectionIndex + 1 : sectionIndex;
@@ -1010,6 +1012,10 @@ function main() {
       for (const phrase of section.phrases ?? []) {
         const resolvedPhraseID = resolvedCatalogPhraseIDForAuthoredPhrase(phrase);
         const targetID = resolvedPhraseID ?? `authored:${phrase.id}`;
+        const destinationPageID = resolvedPhraseID ? canonicalPageIDForPhrase(resolvedPhraseID) : (phrase.detailPageID ?? null);
+        if (section.id === "explore-next" && destinationPageID && seenAuthoredDestinations.has(destinationPageID)) {
+          continue;
+        }
         sectionItemRows.push({
           id: `${sectionID}:phrase:${itemIndex}:${stableID([phrase.id, phrase.vietnamese, phrase.english])}`,
           section_id: sectionID,
@@ -1017,9 +1023,12 @@ function main() {
           target_id: targetID,
           title_override: phrase.vietnamese ?? null,
           subtitle_override: phrase.english ?? null,
-          note: resolvedPhraseID ? canonicalPageIDForPhrase(resolvedPhraseID) : (phrase.detailPageID ?? null),
+          note: destinationPageID,
           sort_order: itemIndex,
         });
+        if (destinationPageID) {
+          seenAuthoredDestinations.add(destinationPageID);
+        }
         if (resolvedPhraseID) {
           addPageRelation({
             sourcePhraseID: page.phraseID,

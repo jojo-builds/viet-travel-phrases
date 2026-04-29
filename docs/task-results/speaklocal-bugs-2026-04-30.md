@@ -37,7 +37,7 @@ Reviewer gate:
 
 ## Bug 3 - Canonical link and duplicate-row audit
 
-Commit: pending
+Commit: fad7871
 
 Changes:
 - Updated native navigation tests to expect canonical detail page IDs instead of stale legacy aliases.
@@ -52,3 +52,21 @@ Validation:
 
 Reviewer gate:
 - APPROVED. Runtime tests now assert canonical route identity, legacy aliases still resolve, broken phrase-row destinations are validator-blocked, and self links are suppressed by `PhraseRowNavigation`.
+
+## Bug 4 - Explore Next should not reteach the same page content
+
+Commit: pending
+
+Changes:
+- Updated `generate-viet-sqlite-fixture.js` so authored `explore-next` rows skip destinations already taught earlier on the same page.
+- Added a SQLite validator guard that fails when `Explore next` repeats a non-relationship phrase row already shown on the same page.
+- Regenerated the Viet SQLite fixture and report.
+
+Validation:
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js` completed and wrote the Viet SQLite fixture/report.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed with 938 canonical pages, 3,794 relations, and 0 missing-audio audit rows.
+- `node --test native-ios/scripts/generate-viet-sqlite-fixture.test.js` passed.
+- SQL proof: Explore Next repeats of previously taught page rows dropped to 0; Explore Next still has 249 useful phrase rows.
+
+Reviewer gate:
+- APPROVED. The generator now preserves the authored Explore Next shelf while removing repeated rows already taught in Quick Say, usage, insight, local-tip, or other article teaching sections.

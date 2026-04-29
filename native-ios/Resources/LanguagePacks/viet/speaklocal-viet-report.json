@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "6b6bde29b9d8313053feb8bfdd5b591eb97435abf35e7245ddf8e416de877b42",
+    "databaseSha256": "650093279141211ca60bed0135c25e060aaf308aa016f80c779092541e0c2537",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -80,9 +80,9 @@
     "aliases": 1007,
     "pageCategories": 978,
     "sections": 7092,
-    "sectionItems": 20450,
+    "sectionItems": 19555,
     "breakdownTokens": 6077,
-    "relations": 4689,
+    "relations": 3794,
     "searchDocuments": 946,
     "audioAssets": 3756,
     "audioUsages": 4591,
@@ -214,7 +214,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 4689,
+    "relationCount": 3794,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -230,7 +230,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 1144
+        "count": 249
       },
       {
         "relationType": "same_need_alt_context",

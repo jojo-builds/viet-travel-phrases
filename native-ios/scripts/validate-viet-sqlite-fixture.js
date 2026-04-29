@@ -594,6 +594,28 @@ function main() {
       AND COALESCE(psi.note, '') != pp.id;
   `), "phrase rows without exact canonical destination notes");
 
+  assertZero(sqliteValue(`
+    WITH taught_rows AS (
+      SELECT ps.page_id, psi.target_id
+      FROM page_section ps
+      JOIN page_section_item psi ON psi.section_id = ps.id
+      WHERE psi.item_kind = 'phrase'
+        AND ps.section_key NOT IN ('relationship-words', 'explore-next')
+    ),
+    explore_rows AS (
+      SELECT ps.page_id, psi.target_id
+      FROM page_section ps
+      JOIN page_section_item psi ON psi.section_id = ps.id
+      WHERE psi.item_kind = 'phrase'
+        AND ps.section_key = 'explore-next'
+    )
+    SELECT count(*)
+    FROM explore_rows er
+    JOIN taught_rows tr
+      ON tr.page_id = er.page_id
+     AND tr.target_id = er.target_id;
+  `), "Explore next rows that repeat phrases already taught on the page");
+
   assertEqual(sqliteValue(`
     SELECT count(*)
     FROM sqlite_master
