@@ -22,6 +22,18 @@
           <h1>Practice</h1>
           <p id="deckCount">Loading phrase decks...</p>
         </div>
+        <section class="reward-card" aria-label="Practice readiness route">
+          <div class="mascot-avatar mascot-vietnam" aria-hidden="true">
+            <span class="mascot-eye"></span>
+            <span class="mascot-pack"></span>
+            <span class="mascot-tail"></span>
+          </div>
+          <div>
+            <p class="eyebrow">Vietnam route</p>
+            <h2>Build phrases you can actually use</h2>
+            <p id="rewardSummary">Ready marks unlock as real source phrases move from review to ready.</p>
+          </div>
+        </section>
         <div class="flow-list" id="flowList"></div>
       </section>
 
@@ -29,6 +41,10 @@
         <div class="session-heading">
           <p id="flowLabel"></p>
           <h2 id="promptTitle"></h2>
+        </div>
+        <div class="readiness-strip" aria-label="Readiness progress">
+          <span id="routeMeterLabel">0 ready prompts / 0 review</span>
+          <span class="route-meter"><span id="routeMeterFill"></span></span>
         </div>
         <article class="prompt-panel">
           <div class="prompt-type" id="questionType"></div>
@@ -39,6 +55,7 @@
           <p class="prompt-text" id="promptText"></p>
           <div class="source-line" id="sourceLine"></div>
         </article>
+        <div class="mascot-note" id="mascotNote" hidden></div>
 
         <div class="answer-area" id="answerArea"></div>
         <div class="feedback" id="feedback" hidden></div>
@@ -54,9 +71,10 @@
           <p id="completeLabel"></p>
           <h2 id="completeTitle"></h2>
           <div class="stats">
-            <div><strong id="correctCount">0</strong><span>Ready</span></div>
-            <div><strong id="missedCount">0</strong><span>Review</span></div>
+            <div><strong id="correctCount">0</strong><span>Ready prompts</span></div>
+            <div><strong id="missedCount">0</strong><span>Review prompts</span></div>
           </div>
+          <div class="reward-unlock" id="rewardUnlock"></div>
           <button class="primary wide" id="keepGoingButton" type="button">Keep going</button>
           <button class="secondary wide" id="chooseFlowButton" type="button">Choose another flow</button>
         </div>
@@ -73,4 +91,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-

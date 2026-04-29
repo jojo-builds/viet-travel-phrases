@@ -134,6 +134,7 @@
 - Saved phrases, practice-selected phrases, recently opened pages, practiced prompts, and missed items are local private user-state signals. They should personalize Home, Explore, category rows, and Practice through deterministic offline ranking while the bundled phrase graph remains read-only.
 - `Add to practice` should be available from phrase pages and eligible phrase rows once local practice-pool state exists. The selected phrase/row/token remains the correct-answer target for generated practice prompts; graph-nearby phrases are distractors or recommendations, not replacement targets.
 - The first Viet Practice Core package lives in `docs/practice/VIET_PRACTICE_CORE_PLAN.md`, `content-draft/viet/practice/practice-deck.sample.json`, `scripts/practice/generate-viet-practice-deck.js`, and `prototypes/practice-quiz/`. It is a prepared offline contract/prototype for later T-167/T-168 native integration, not current native runtime wiring.
+- The first Practice reward/mascot contract lives in `docs/practice/VIET_PRACTICE_REWARD_MASCOT_HANDOFF.md`: rewards are local ready/review route marks tied to source-anchored phrase practice, and the chameleon appears only as a restrained Practice companion gated by sensitivity and `mascotEligible` signals.
 
 ## Current live Viet boundary decisions
 

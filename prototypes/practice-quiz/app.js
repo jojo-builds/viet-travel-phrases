@@ -9,6 +9,9 @@ const state = {
   checked: false,
   correct: 0,
   missed: 0,
+  readyPromptIDs: new Set(),
+  readyPhraseIDs: new Set(),
+  reviewPhraseIDs: new Set(),
 };
 
 const els = {
@@ -18,13 +21,17 @@ const els = {
   sessionView: document.querySelector("#sessionView"),
   completeView: document.querySelector("#completeView"),
   deckCount: document.querySelector("#deckCount"),
+  rewardSummary: document.querySelector("#rewardSummary"),
   flowList: document.querySelector("#flowList"),
   flowLabel: document.querySelector("#flowLabel"),
   promptTitle: document.querySelector("#promptTitle"),
+  routeMeterLabel: document.querySelector("#routeMeterLabel"),
+  routeMeterFill: document.querySelector("#routeMeterFill"),
   questionType: document.querySelector("#questionType"),
   audioButton: document.querySelector("#audioButton"),
   promptText: document.querySelector("#promptText"),
   sourceLine: document.querySelector("#sourceLine"),
+  mascotNote: document.querySelector("#mascotNote"),
   answerArea: document.querySelector("#answerArea"),
   feedback: document.querySelector("#feedback"),
   sourceButton: document.querySelector("#sourceButton"),
@@ -33,6 +40,7 @@ const els = {
   completeTitle: document.querySelector("#completeTitle"),
   correctCount: document.querySelector("#correctCount"),
   missedCount: document.querySelector("#missedCount"),
+  rewardUnlock: document.querySelector("#rewardUnlock"),
   keepGoingButton: document.querySelector("#keepGoingButton"),
   chooseFlowButton: document.querySelector("#chooseFlowButton"),
 };
@@ -69,6 +77,8 @@ function renderHub() {
   setView("hub");
   els.progressPill.textContent = "Practice";
   els.deckCount.textContent = `${state.deck.metadata.itemCount} real phrase prompts from ${state.deck.metadata.scenarioCount} scenarios`;
+  const mascotEligibleCount = state.deck.items.filter((item) => item.tags && item.tags.mascotEligible).length;
+  els.rewardSummary.textContent = `${mascotEligibleCount} gentle moments can show the Vietnam travel companion; sensitive prompts stay focused on the phrase.`;
   els.flowList.innerHTML = "";
 
   for (const flow of state.deck.practiceFlows) {
@@ -96,6 +106,9 @@ function startFlow(flowID) {
   state.checked = false;
   state.correct = 0;
   state.missed = 0;
+  state.readyPromptIDs = new Set();
+  state.readyPhraseIDs = new Set();
+  state.reviewPhraseIDs = new Set();
   renderItem();
 }
 
@@ -117,6 +130,8 @@ function renderItem() {
   els.sourceLine.textContent = `${item.source.pageEnglishTitle} · ${item.source.scenarioTitle}`;
   els.nextButton.textContent = item.questionType === "phrase_chunk_rebuild" ? "Check" : "Check";
   els.nextButton.disabled = false;
+  updateReadinessStrip();
+  renderMascotNote(item);
   els.sourceButton.onclick = () => showSourceFeedback(item);
 
   if (item.prompt.audioKey) {
@@ -132,6 +147,29 @@ function renderItem() {
   } else {
     renderChoiceAnswers(item);
   }
+}
+
+function updateReadinessStrip() {
+  const total = Math.max(state.flowItems.length, 1);
+  const readyPromptCount = state.readyPromptIDs.size;
+  const readyCount = state.readyPhraseIDs.size;
+  const reviewCount = state.reviewPhraseIDs.size;
+  const percent = Math.min(100, Math.round((readyPromptCount / total) * 100));
+  els.routeMeterLabel.textContent = `${readyPromptCount} ready prompts / ${reviewCount} review`;
+  els.routeMeterFill.style.width = `${percent}%`;
+}
+
+function renderMascotNote(item) {
+  const shouldShow = item.tags && item.tags.mascotEligible && item.tags.sensitivity !== "sensitive";
+  els.mascotNote.hidden = !shouldShow;
+  if (!shouldShow) {
+    els.mascotNote.innerHTML = "";
+    return;
+  }
+  els.mascotNote.innerHTML = `
+    <span class="mini-mascot" aria-hidden="true"></span>
+    <span>Route mark available for this source phrase.</span>
+  `;
 }
 
 function renderChoiceAnswers(item) {
@@ -228,8 +266,7 @@ function checkChoice(item) {
   if (!state.selectedOptionID) return;
   state.checked = true;
   const isCorrect = state.selectedOptionID === item.correctOptionID;
-  if (isCorrect) state.correct += 1;
-  else state.missed += 1;
+  recordResult(item, isCorrect);
   for (const button of els.answerArea.querySelectorAll(".answer-button")) {
     const option = item.options.find((entry) => entry.id === button.dataset.optionID);
     const secondary = button.querySelector("span");
@@ -263,16 +300,29 @@ function checkChunks(item) {
   if (!actual) return;
   state.checked = true;
   const isCorrect = actual === expected;
-  if (isCorrect) state.correct += 1;
-  else state.missed += 1;
+  recordResult(item, isCorrect);
   showFeedback(item, isCorrect);
+}
+
+function recordResult(item, isCorrect) {
+  if (isCorrect) {
+    state.correct += 1;
+    state.readyPromptIDs.add(item.id);
+    state.readyPhraseIDs.add(item.source.phraseID);
+    state.reviewPhraseIDs.delete(item.source.phraseID);
+  } else {
+    state.missed += 1;
+    state.reviewPhraseIDs.add(item.source.phraseID);
+  }
+  updateReadinessStrip();
 }
 
 function showFeedback(item, isCorrect) {
   els.feedback.hidden = false;
   els.feedback.innerHTML = `
-    <strong>${isCorrect ? "Ready" : "Review this one"}</strong>
+    <strong>${isCorrect ? "Ready mark added" : "Saved for calm review"}</strong>
     <p>${item.feedback.correct} ${item.feedback.contrast}</p>
+    <p>${isCorrect ? "This source phrase counts toward the Vietnam route mark." : "No penalty. It will come back before new prompts."}</p>
     <p>${item.feedback.source}</p>
   `;
   els.nextButton.textContent = state.index === state.flowItems.length - 1 ? "Finish" : "Next";
@@ -298,9 +348,23 @@ function renderComplete() {
   setView("complete");
   els.progressPill.textContent = "Session";
   els.completeLabel.textContent = state.flow.title;
-  els.completeTitle.textContent = "Practice session ready for native handoff";
+  els.completeTitle.textContent = "Vietnam route updated";
   els.correctCount.textContent = String(state.correct);
   els.missedCount.textContent = String(state.missed);
+  const unlocked = state.readyPromptIDs.size >= Math.min(3, state.flowItems.length) && state.readyPhraseIDs.size >= Math.min(2, state.flowItems.length);
+  els.rewardUnlock.innerHTML = `
+    <div class="mascot-avatar mascot-vietnam small" aria-hidden="true">
+      <span class="mascot-eye"></span>
+      <span class="mascot-pack"></span>
+      <span class="mascot-tail"></span>
+    </div>
+    <div>
+      <strong>${unlocked ? "Jade route mark unlocked" : "Route mark still in progress"}</strong>
+      <p>${unlocked ? `${state.readyPromptIDs.size} source-anchored prompts reached ready across ${state.readyPhraseIDs.size} phrase pages.` : "Review missed prompts to finish this route without losing progress."}</p>
+    </div>
+  `;
+  els.keepGoingButton.textContent = state.missed ? "Review this route" : "Practice this route again";
+  els.chooseFlowButton.textContent = "Choose another route";
 }
 
 function stableSortKey(input) {
