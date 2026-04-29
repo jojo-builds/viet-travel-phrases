@@ -108,7 +108,7 @@ Reviewer gate:
 
 ## Bug 7 - Quick Say semantics
 
-Commit: pending
+Commit: 631bc6f
 
 Changes:
 - Added generator/report and validator checks that Quick Say/Standard Way rows must be canonical self rows, except the approved beginner shortcut `Xin chào` -> `Chào`.
@@ -124,3 +124,21 @@ Validation:
 
 Reviewer gate:
 - APPROVED. Quick Say now defaults to the page’s canonical phrase; `Xin chào` keeps the authored `Chào` beginner shortcut; sampled greeting, direction, health, and catalog-built pages resolve cleanly.
+
+## Bug 8 - Compound/two-phrase reasoning audit
+
+Commit: pending
+
+Changes:
+- Added `docs/content-audits/viet-compound-phrase-rows-2026-04-30.md` with a row-by-row reasoning audit for every suspicious slash, `and/or`, dual-pronoun, `và`, or `hoặc` canonical row.
+- Added a validator allowlist for the reviewed compound set so future suspicious canonical rows fail until they are reviewed.
+- No canonical page IDs changed, no duplicate pages were created, and no audio was generated.
+
+Validation:
+- SQL inventory flagged 14 suspicious canonical rows.
+- Reasoned audit approved all 14 as single learner-intent pages or reviewed relationship-choice notation; no split was required in this batch.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed.
+- SQL proof: unreviewed suspicious compound rows = 0.
+
+Reviewer gate:
+- APPROVED. Copy/learning flow review and technical/canonical review both approve the flagged-case report and the validator now blocks unreviewed future suspicious rows.

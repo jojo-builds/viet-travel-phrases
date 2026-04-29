@@ -74,6 +74,23 @@ const requiredLegacyNativePageAliases = [
   ["viet-hello-co-way-respectful", "viet-phrase-acknowledge-da-chao-co"],
 ];
 
+const reviewedCompoundPhrasePageIDs = [
+  "viet-phrase-acknowledge-co",
+  "viet-phrase-acknowledge-duoc",
+  "viet-phrase-hello-chao",
+  "viet-phrase-hello-chao-ban",
+  "viet-phrase-hello-da-chao-anh-chi",
+  "viet-phrase-help-1",
+  "viet-phrase-polite-3",
+  "viet-phrase-polite-5",
+  "viet-phrase-repair-4",
+  "viet-phrase-repair-english-help",
+  "viet-phrase-repair-number-amount",
+  "viet-phrase-v900-dire-navi-can-you-call-this-place-and-ask-for-directions",
+  "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
+  "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",
+];
+
 function run(command, args, options = {}) {
   const result = spawnSync(command, args, {
     cwd: repoRoot,
@@ -306,6 +323,21 @@ function main() {
       AND psi.note = 'viet-phrase-hello-chao'
       AND psi.title_override = 'Chào';
   `)), 1, "approved Xin chào beginner shortcut row");
+
+  const reviewedCompoundPhrasePageIDSQL = reviewedCompoundPhrasePageIDs.map(sqlQuote).join(",");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page pp
+    WHERE (
+        pp.title LIKE '%/%'
+        OR pp.english_title LIKE '%/%'
+        OR lower(pp.english_title) LIKE '% and/or %'
+        OR pp.title LIKE '% và %'
+        OR pp.title LIKE '% hoặc %'
+        OR pp.title LIKE '%anh/chị%'
+      )
+      AND pp.id NOT IN (${reviewedCompoundPhrasePageIDSQL});
+  `), "unreviewed suspicious compound/two-phrase canonical rows");
 
   const textOnlySectionRunCount = Number(sqliteValue(`
     WITH section_flags AS (
