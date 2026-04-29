@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:27c5f274d080fabf",
-    "generatedAt": "source-hash:27c5f274d080fabf"
+    "contentVersion": "viet-sqlite-fixture:6a30528007c8379d",
+    "generatedAt": "source-hash:6a30528007c8379d"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "4d700de8102f8513038723612f25acdcf8b52b3140d31e4c609f71d510b6576e"
+      "sha256": "4f5953fcd728dc557e988205f0b2ad90d6798412b110af30123f5d89137e3e96"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "735bb3cfdd5002d940cec1a4e57d15736482a75920dc10ce71503255bd678725"
+      "sha256": "20b30d836fddfd7ed1b6f25a490dba68ed4347ceee3d89e729843498733f25d5"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -26,14 +26,14 @@
     },
     "schema": {
       "path": "native-ios/scripts/sqlite/001_initial.sql",
-      "sha256": "ee3a6f42c73e9af1a16606316b9bf097451aadf059617b9da83b4416e88be906"
+      "sha256": "2448ef3d2a0c9c3cbdf61ea47702b2c4b4fe5bfc0a3f005e7d6649dc656f586c"
     }
   },
   "outputs": {
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "b2b396d0a937a521f1162b2911d8e4bde56fffd885f9e860e84ca05eb7e1f689",
+    "databaseSha256": "756307e28c76989c80814c1a5b62433d15c6bf441ade5fe46594a639a5a86679",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -59,6 +59,11 @@
       "actual": 919,
       "ok": true
     },
+    "canonicalPhrasePages": {
+      "expected": 911,
+      "actual": 911,
+      "ok": true
+    },
     "authoredPagesOrAliases": {
       "expected": 163,
       "actual": 163,
@@ -71,12 +76,13 @@
     "clusters": 900,
     "clusterMembers": 919,
     "phrases": 919,
-    "pages": 919,
-    "aliases": 920,
-    "pageCategories": 164,
-    "sections": 1523,
-    "sectionItems": 2083,
+    "pages": 911,
+    "aliases": 928,
+    "pageCategories": 916,
+    "sections": 4515,
+    "sectionItems": 5019,
     "breakdownTokens": 720,
+    "relations": 3438,
     "searchDocuments": 919,
     "audioAssets": 3756,
     "audioUsages": 3165,
@@ -86,7 +92,14 @@
   "validation": {
     "integrityCheck": "ok",
     "foreignKeyCheckRows": 0,
-    "ftsRowCount": 919
+    "ftsRowCount": 919,
+    "duplicateCanonicalPageGroupCount": 0,
+    "sectionlessCanonicalPageCount": 0,
+    "brokenRelationCount": 0,
+    "searchDocumentsWithMissingPageTargets": 0,
+    "audioUsageMismatchCount": 0,
+    "bannedUserFacingMatchCount": 0,
+    "bannedUserFacingMatches": []
   },
   "unresolvedReferences": {
     "detailPageIDCount": 0,
@@ -115,56 +128,121 @@
       }
     ]
   },
-  "canonicalIdentityWarnings": {
+  "canonicalIdentity": {
+    "canonicalPageCount": 911,
+    "sourcePhraseRowCount": 919,
+    "phrasesResolvedToCanonicalPages": 919,
     "duplicateNormalizedTargetTextGroupCount": 6,
-    "duplicateNormalizedTargetTextGroups": [
+    "resolvedDuplicateNormalizedTargetTextGroups": [
       {
         "normalizedTargetText": "đặt chỗ dưới tên này",
+        "canonicalPhraseID": "v900-hote-acco-the-reservation-is-under-this-name",
+        "canonicalPageID": "viet-phrase-v900-hote-acco-the-reservation-is-under-this-name",
         "phraseIDs": [
           "v900-hote-acco-the-reservation-is-under-this-name",
+          "v900-time-date-book-the-booking-is-under-this-name"
+        ],
+        "aliasedPhraseIDs": [
           "v900-time-date-book-the-booking-is-under-this-name"
         ]
       },
       {
         "normalizedTargetText": "không sao đâu",
+        "canonicalPhraseID": "polite-6",
+        "canonicalPageID": "viet-phrase-polite-6",
         "phraseIDs": [
           "polite-6",
+          "v500-poli-basi-thats-okay",
+          "v900-poli-basi-thats-fine"
+        ],
+        "aliasedPhraseIDs": [
           "v500-poli-basi-thats-okay",
           "v900-poli-basi-thats-fine"
         ]
       },
       {
         "normalizedTargetText": "nhà vệ sinh ở đâu?",
+        "canonicalPhraseID": "bath-1",
+        "canonicalPageID": "viet-phrase-bath-1",
         "phraseIDs": [
           "bath-1",
+          "v500-airp-bord-arri-where-are-the-restrooms",
+          "v500-bath-pers-need-where-is-the-toilet"
+        ],
+        "aliasedPhraseIDs": [
           "v500-airp-bord-arri-where-are-the-restrooms",
           "v500-bath-pers-need-where-is-the-toilet"
         ]
       },
       {
         "normalizedTargetText": "tôi có thể mua vé ở đâu?",
+        "canonicalPhraseID": "v500-sigh-acti-where-can-i-buy-tickets",
+        "canonicalPageID": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
         "phraseIDs": [
           "v500-sigh-acti-where-can-i-buy-tickets",
+          "v900-tran-where-can-i-buy-a-ticket"
+        ],
+        "aliasedPhraseIDs": [
           "v900-tran-where-can-i-buy-a-ticket"
         ]
       },
       {
         "normalizedTargetText": "tôi gặp tài xế ở đâu?",
+        "canonicalPhraseID": "airport-pickup-clearer",
+        "canonicalPageID": "viet-phrase-airport-pickup-clearer",
         "phraseIDs": [
           "airport-pickup-clearer",
+          "v500-airp-bord-arri-where-do-i-meet-the-driver"
+        ],
+        "aliasedPhraseIDs": [
           "v500-airp-bord-arri-where-do-i-meet-the-driver"
         ]
       },
       {
         "normalizedTargetText": "xin lỗi",
+        "canonicalPhraseID": "polite-5",
+        "canonicalPageID": "viet-phrase-polite-5",
         "phraseIDs": [
           "polite-5",
+          "v500-poli-basi-excuse-me"
+        ],
+        "aliasedPhraseIDs": [
           "v500-poli-basi-excuse-me"
         ]
       }
     ],
+    "unresolvedDuplicateNormalizedTargetTextGroups": [],
     "aliasConflictCount": 0,
     "aliasConflicts": []
+  },
+  "graph": {
+    "relationCount": 3438,
+    "relationTypes": [
+      {
+        "relationType": "also_common_with",
+        "count": 11
+      },
+      {
+        "relationType": "clearer_than",
+        "count": 5
+      },
+      {
+        "relationType": "more_polite_than",
+        "count": 3
+      },
+      {
+        "relationType": "next_step_after",
+        "count": 881
+      },
+      {
+        "relationType": "same_need_alt_context",
+        "count": 19
+      },
+      {
+        "relationType": "see_also",
+        "count": 2519
+      }
+    ]
   },
   "audio": {
     "manifestEntries": 3756,
@@ -205,7 +283,9 @@
   "notes": [
     "The native Swift runtime still reads the existing root-level JSON resources.",
     "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet for migration proof only.",
-    "All phrase rows receive canonical phrase_page rows; legacy family, authored page, and section detail IDs are represented as page_alias rows.",
-    "The initial relation and practice tables are schema-ready but intentionally unpopulated in this fixture step."
+    "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
+    "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",
+    "The relation table is populated from authored page links, generated category neighbors, and same-cluster variants.",
+    "Practice tables remain schema-ready but intentionally unpopulated in this fixture step."
   ]
 }

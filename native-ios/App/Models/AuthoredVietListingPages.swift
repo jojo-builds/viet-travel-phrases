@@ -234,10 +234,10 @@ enum AuthoredVietListingPages {
                 presentation: .plainText
             ),
             PhraseDetailSection(
-                id: "watch-out",
-                title: "Watch out",
-                body: "Ý bạn là gì? can sound defensive if it is said sharply, because it asks about the person's point or intent. Nghĩa là sao? is more casual, and Cho hỏi, cái này nghĩa là gì ạ? is softer with strangers, staff, or older adults.",
-                presentation: .warningCallout
+                id: "good-to-know",
+                title: "Good to know",
+                body: "Ý bạn là gì? works best with a curious tone because it asks about the person's point or intent. Nghĩa là sao? is more casual, and Cho hỏi, cái này nghĩa là gì ạ? is softer with strangers, staff, or older adults.",
+                presentation: .tipCallout
             ),
             PhraseDetailSection(
                 id: "local-tip",

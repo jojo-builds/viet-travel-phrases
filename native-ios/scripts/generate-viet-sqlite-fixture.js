@@ -144,7 +144,50 @@ function main() {
     }
   }
 
-  const canonicalPageIDs = new Map(catalog.phrases.map((phrase) => [phrase.id, `viet-phrase-${phrase.id}`]));
+  const phraseOrderByID = new Map(catalog.phrases.map((phrase, index) => [phrase.id, index]));
+  const normalizedPhraseGroups = Array.from(countBy(catalog.phrases, (phrase) => normalizeText(phrase.targetText)).entries())
+    .sort(([a], [b]) => a.localeCompare(b));
+  const canonicalPhraseIDByPhraseID = new Map();
+
+  function phraseCanonicalSort(a, b) {
+    const aHasAuthoredPage = authoredPageByPhraseID.has(a.id) ? 0 : 1;
+    const bHasAuthoredPage = authoredPageByPhraseID.has(b.id) ? 0 : 1;
+    if (aHasAuthoredPage !== bHasAuthoredPage) return aHasAuthoredPage - bHasAuthoredPage;
+
+    const aIsSayFirst = a.variantRole === "say-first" ? 0 : 1;
+    const bIsSayFirst = b.variantRole === "say-first" ? 0 : 1;
+    if (aIsSayFirst !== bIsSayFirst) return aIsSayFirst - bIsSayFirst;
+
+    const aIsStarter = a.accessTier === "starter" ? 0 : 1;
+    const bIsStarter = b.accessTier === "starter" ? 0 : 1;
+    if (aIsStarter !== bIsStarter) return aIsStarter - bIsStarter;
+
+    return (phraseOrderByID.get(a.id) ?? 0) - (phraseOrderByID.get(b.id) ?? 0);
+  }
+
+  for (const [, phrases] of normalizedPhraseGroups) {
+    const canonicalPhrase = [...phrases].sort(phraseCanonicalSort)[0];
+    for (const phrase of phrases) {
+      canonicalPhraseIDByPhraseID.set(phrase.id, canonicalPhrase.id);
+    }
+  }
+
+  const canonicalPhraseIDs = new Set(canonicalPhraseIDByPhraseID.values());
+  const duplicateNormalizedTargetGroups = normalizedPhraseGroups
+    .filter(([, phrases]) => phrases.length > 1)
+    .map(([normalizedTargetText, phrases]) => {
+      const sortedPhraseIDs = phrases.map((phrase) => phrase.id).sort();
+      const canonicalPhraseID = canonicalPhraseIDByPhraseID.get(phrases[0].id);
+      return {
+        normalizedTargetText,
+        canonicalPhraseID,
+        canonicalPageID: `viet-phrase-${canonicalPhraseID}`,
+        phraseIDs: sortedPhraseIDs,
+        aliasedPhraseIDs: sortedPhraseIDs.filter((phraseID) => phraseID !== canonicalPhraseID),
+      };
+    })
+    .sort((a, b) => a.normalizedTargetText.localeCompare(b.normalizedTargetText));
+
   const aliases = new Map();
   const aliasConflicts = [];
   const unresolvedDetailPageRefs = [];
@@ -152,8 +195,17 @@ function main() {
   const authoredPagePhraseIDMissing = [];
   const categoryIDs = new Set();
 
+  function sourcePageIDForPhrase(phraseID) {
+    return `viet-phrase-${phraseID}`;
+  }
+
+  function canonicalPhraseIDForPhrase(phraseID) {
+    return canonicalPhraseIDByPhraseID.get(phraseID) ?? null;
+  }
+
   function canonicalPageIDForPhrase(phraseID) {
-    return canonicalPageIDs.get(phraseID) ?? null;
+    const canonicalPhraseID = canonicalPhraseIDForPhrase(phraseID);
+    return canonicalPhraseID ? sourcePageIDForPhrase(canonicalPhraseID) : null;
   }
 
   function addAlias(aliasID, canonicalPageID, aliasKind, sourcePath) {
@@ -181,6 +233,14 @@ function main() {
 
   for (const family of catalog.families) {
     addAlias(family.pageID, canonicalPageIDForPhrase(family.primaryPhraseID), "source-family-page", relative(catalogPath));
+  }
+
+  for (const phrase of catalog.phrases) {
+    const sourcePageID = sourcePageIDForPhrase(phrase.id);
+    const canonicalPageID = canonicalPageIDForPhrase(phrase.id);
+    if (sourcePageID !== canonicalPageID) {
+      addAlias(sourcePageID, canonicalPageID, "duplicate-phrase-page", relative(catalogPath));
+    }
   }
 
   for (const page of authoredPages) {
@@ -215,7 +275,7 @@ function main() {
   for (const page of authoredPages) {
     for (const section of page.sections ?? []) {
       for (const phrase of section.phrases ?? []) {
-        if (phrase.detailPageID && !canonicalPageIDs.has(phrase.id) && !aliases.has(phrase.detailPageID)) {
+        if (phrase.detailPageID && !canonicalPhraseIDForPhrase(phrase.id) && !aliases.has(phrase.detailPageID)) {
           unresolvedDetailPageRefs.push({
             pageID: page.id,
             sectionID: section.id,
@@ -234,6 +294,7 @@ function main() {
       id: phrase.id,
       language_pack_id: languagePackID,
       canonical_phrase_key: phrase.id,
+      canonical_phrase_id: canonicalPhraseIDForPhrase(phrase.id),
       target_text: phrase.targetText,
       normalized_target_text: normalizeText(phrase.targetText),
       accentless_target_text: accentlessText(phrase.targetText),
@@ -248,7 +309,8 @@ function main() {
     };
   });
 
-  const pageRows = catalog.phrases.map((phrase) => {
+  const canonicalPhrases = catalog.phrases.filter((phrase) => canonicalPhraseIDs.has(phrase.id));
+  const pageRows = canonicalPhrases.map((phrase) => {
     const authoredPage = authoredPageByPhraseID.get(phrase.id);
     const family = familyByID.get(phrase.familyID);
     const scenario = scenarioByID.get(phrase.scenarioID);
@@ -271,19 +333,124 @@ function main() {
   const sectionItemRows = [];
   const breakdownRows = [];
   const pageCategoryRows = [];
+  const relationRows = [];
   const usedSectionIDs = new Set();
+  const pageCategoryKeys = new Set();
+  const relationKeys = new Set();
+
+  function addPageCategory(pageID, categoryID, sortOrder, sourcePath) {
+    if (!pageID || !categoryID) return;
+    const key = `${pageID}\u0000${categoryID}`;
+    if (pageCategoryKeys.has(key)) return;
+    pageCategoryKeys.add(key);
+    pageCategoryRows.push({
+      page_id: pageID,
+      category_id: categoryID,
+      sort_order: sortOrder,
+      source_path: sourcePath,
+    });
+  }
+
+  function sentence(value) {
+    const text = String(value ?? "").trim();
+    if (!text) return "";
+    return /[.!?]$/.test(text) ? text : `${text}.`;
+  }
+
+  function scenarioTitle(scenarioID) {
+    return scenarioByID.get(scenarioID)?.title ?? "Vietnam travel";
+  }
+
+  function baselineContextBody(phrase, family) {
+    const context = sentence(phrase.context);
+    if (context) return context;
+    const summary = sentence(family?.summary);
+    if (summary) return summary;
+    return `${phrase.targetText} is the phrase to keep ready for "${phrase.englishText}" in ${scenarioTitle(phrase.scenarioID)}.`;
+  }
+
+  function scenarioNeighborPhrases(phrase) {
+    const family = familyByID.get(phrase.familyID);
+    const familyPhraseIDs = (family?.phraseIDs ?? []).filter((phraseID) => phraseID !== phrase.id);
+    const scenarioFamilies = catalog.families.filter((candidate) => candidate.scenarioID === phrase.scenarioID);
+    const familyIndex = scenarioFamilies.findIndex((candidate) => candidate.id === phrase.familyID);
+    const neighborFamilyPhraseIDs = [
+      scenarioFamilies[familyIndex - 1]?.primaryPhraseID,
+      scenarioFamilies[familyIndex + 1]?.primaryPhraseID,
+      scenarioFamilies[familyIndex + 2]?.primaryPhraseID,
+    ].filter(Boolean);
+    const seen = new Set();
+    return [...familyPhraseIDs, ...neighborFamilyPhraseIDs]
+      .filter((phraseID) => {
+        const targetPhrase = phraseByID.get(phraseID);
+        const canonicalPageID = canonicalPageIDForPhrase(phraseID);
+        if (!targetPhrase || !canonicalPageID || canonicalPageID === canonicalPageIDForPhrase(phrase.id)) return false;
+        if (seen.has(canonicalPageID)) return false;
+        seen.add(canonicalPageID);
+        return true;
+      })
+      .slice(0, 3)
+      .map((phraseID) => phraseByID.get(phraseID));
+  }
+
+  function addSection({ pageID, sectionKey, title, body, presentation, sortOrder, sourcePath }) {
+    const sectionID = `${pageID}:${sectionKey}`;
+    if (usedSectionIDs.has(sectionID)) return sectionID;
+    usedSectionIDs.add(sectionID);
+    sectionRows.push({
+      id: sectionID,
+      page_id: pageID,
+      section_key: sectionKey,
+      title,
+      body: body ?? "",
+      presentation: presentation ?? "plain-text",
+      sort_order: sortOrder,
+      source_path: sourcePath,
+    });
+    return sectionID;
+  }
+
+  function addPhraseSectionItem({ sectionID, phrase, itemKind = "phrase", sortOrder, note = null }) {
+    sectionItemRows.push({
+      id: `${sectionID}:${itemKind}:${sortOrder}:${stableID([phrase.id, phrase.targetText, phrase.englishText, note])}`,
+      section_id: sectionID,
+      item_kind: itemKind,
+      target_id: phrase.id,
+      title_override: phrase.targetText,
+      subtitle_override: phrase.englishText,
+      note,
+      sort_order: sortOrder,
+    });
+  }
+
+  function addPageRelation({ sourcePhraseID, targetPhraseID, relationType, reason, displayLabel, sortOrder, sourcePath }) {
+    const sourcePageID = canonicalPageIDForPhrase(sourcePhraseID);
+    const targetPageID = canonicalPageIDForPhrase(targetPhraseID);
+    if (!sourcePageID || !targetPageID || sourcePageID === targetPageID) return;
+    const key = `${sourcePageID}\u0000${targetPageID}\u0000${relationType}`;
+    if (relationKeys.has(key)) return;
+    relationKeys.add(key);
+    relationRows.push({
+      id: `relation:${stableID([sourcePageID, targetPageID, relationType])}`,
+      language_pack_id: languagePackID,
+      source_kind: "phrase_page",
+      source_id: sourcePageID,
+      target_kind: "phrase_page",
+      target_id: targetPageID,
+      relation_type: relationType,
+      reason,
+      display_label: displayLabel,
+      sort_order: sortOrder,
+      source_path: sourcePath,
+    });
+  }
 
   for (const page of authoredPages) {
     const canonicalPageID = canonicalPageIDForPhrase(page.phraseID);
     if (!canonicalPageID) continue;
 
     for (const [index, categoryID] of (page.categoryIDs ?? []).entries()) {
-      pageCategoryRows.push({
-        page_id: canonicalPageID,
-        category_id: categoryID,
-        sort_order: index,
-        source_path: relative(authoredPagesPath),
-      });
+      addPageCategory(canonicalPageID, categoryID, index, relative(authoredPagesPath));
     }
 
     for (const [sectionIndex, section] of (page.sections ?? []).entries()) {
@@ -313,6 +480,17 @@ function main() {
           note: phrase.detailPageID ?? null,
           sort_order: itemIndex,
         });
+        if (phraseByID.has(phrase.id) && phrase.detailPageID) {
+          addPageRelation({
+            sourcePhraseID: page.phraseID,
+            targetPhraseID: phrase.id,
+            relationType: section.id === "explore-next" ? "next_step_after" : "see_also",
+            reason: `Authored ${section.title ?? section.id} row links these phrase pages.`,
+            displayLabel: section.title ?? "Related",
+            sortOrder: itemIndex,
+            sourcePath: relative(authoredPagesPath),
+          });
+        }
         itemIndex += 1;
       }
 
@@ -338,6 +516,127 @@ function main() {
         });
         itemIndex += 1;
       }
+    }
+  }
+
+  for (const pageRow of pageRows) {
+    const phrase = phraseByID.get(pageRow.phrase_id);
+    if (!phrase) continue;
+    const family = familyByID.get(phrase.familyID);
+    const scenario = scenarioByID.get(phrase.scenarioID);
+    addPageCategory(pageRow.id, phrase.scenarioID, 0, relative(catalogPath));
+    if (pageRow.is_authored) continue;
+
+    const quickSaySectionID = addSection({
+      pageID: pageRow.id,
+      sectionKey: "quick-say",
+      title: "Quick say",
+      body: `${phrase.targetText} is the phrase to start with for "${phrase.englishText}" in ${scenario?.title ?? "Vietnam travel"}.`,
+      presentation: "phrase-list",
+      sortOrder: 0,
+      sourcePath: relative(catalogPath),
+    });
+    addPhraseSectionItem({
+      sectionID: quickSaySectionID,
+      phrase,
+      sortOrder: 0,
+      note: pageRow.id,
+    });
+
+    addSection({
+      pageID: pageRow.id,
+      sectionKey: "when-to-use",
+      title: "When to use it",
+      body: baselineContextBody(phrase, family),
+      presentation: "plain-text",
+      sortOrder: 1,
+      sourcePath: relative(catalogPath),
+    });
+
+    if (phrase.youMayHear) {
+      addSection({
+        pageID: pageRow.id,
+        sectionKey: "what-you-may-hear",
+        title: "What you may hear",
+        body: sentence(phrase.youMayHear),
+        presentation: "plain-text",
+        sortOrder: 2,
+        sourcePath: relative(catalogPath),
+      });
+    }
+
+    addSection({
+      pageID: pageRow.id,
+      sectionKey: "good-to-know",
+      title: "Good to know",
+      body: `Say it once, then give the other person the place, item, screen, or document that makes the request clear.`,
+      presentation: "tip-callout",
+      sortOrder: 3,
+      sourcePath: relative(catalogPath),
+    });
+
+    const nearbyPhrases = scenarioNeighborPhrases(phrase);
+    const nearbySectionID = addSection({
+      pageID: pageRow.id,
+      sectionKey: "nearby-phrases",
+      title: "Nearby phrases",
+      body: nearbyPhrases.length > 0
+        ? `These ${scenario?.title ?? "travel"} phrases are likely to sit near this moment.`
+        : `This phrase is ready as a standalone ${scenario?.title ?? "travel"} page.`,
+      presentation: "phrase-list",
+      sortOrder: 4,
+      sourcePath: relative(catalogPath),
+    });
+    nearbyPhrases.forEach((nearbyPhrase, index) => {
+      addPhraseSectionItem({
+        sectionID: nearbySectionID,
+        phrase: nearbyPhrase,
+        sortOrder: index,
+        note: canonicalPageIDForPhrase(nearbyPhrase.id),
+      });
+      addPageRelation({
+        sourcePhraseID: phrase.id,
+        targetPhraseID: nearbyPhrase.id,
+        relationType: "see_also",
+        reason: "Generated from neighboring phrases in the same travel category.",
+        displayLabel: "Nearby phrases",
+        sortOrder: index,
+        sourcePath: relative(catalogPath),
+      });
+    });
+  }
+
+  for (const family of catalog.families) {
+    const primaryPhraseID = family.primaryPhraseID;
+    for (const [index, phraseID] of (family.phraseIDs ?? []).entries()) {
+      if (phraseID === primaryPhraseID) continue;
+      const phrase = phraseByID.get(phraseID);
+      const role = phrase?.variantRole ?? "also-common";
+      const relationType = role === "clearer"
+        ? "clearer_than"
+        : role === "more-polite"
+          ? "more_polite_than"
+          : role === "also-common"
+            ? "also_common_with"
+            : "same_need_alt_context";
+      addPageRelation({
+        sourcePhraseID: primaryPhraseID,
+        targetPhraseID: phraseID,
+        relationType,
+        reason: `Same phrase cluster variant with role ${role}.`,
+        displayLabel: "Natural choice",
+        sortOrder: index,
+        sourcePath: relative(catalogPath),
+      });
+      addPageRelation({
+        sourcePhraseID: phraseID,
+        targetPhraseID: primaryPhraseID,
+        relationType: "same_need_alt_context",
+        reason: "Variant points back to the main phrase in the same travel need.",
+        displayLabel: "Main phrase",
+        sortOrder: index,
+        sourcePath: relative(catalogPath),
+      });
     }
   }
 
@@ -476,7 +775,7 @@ function main() {
       .join(" ");
     return {
       rowid: index + 1,
-      id: `search:${canonicalPageIDForPhrase(phrase.id)}`,
+      id: `search:${phrase.id}`,
       language_pack_id: languagePackID,
       target_kind: "phrase_page",
       target_id: canonicalPageIDForPhrase(phrase.id),
@@ -492,14 +791,6 @@ function main() {
       is_canonical_page: 1,
     };
   });
-
-  const duplicateNormalizedTargetGroups = Array.from(countBy(catalog.phrases, (phrase) => normalizeText(phrase.targetText)).entries())
-    .filter(([, phrases]) => phrases.length > 1)
-    .map(([normalizedTargetText, phrases]) => ({
-      normalizedTargetText,
-      phraseIDs: phrases.map((phrase) => phrase.id).sort(),
-    }))
-    .sort((a, b) => a.normalizedTargetText.localeCompare(b.normalizedTargetText));
 
   const tableInserts = [
     insertRows("language_pack", ["id", "app_id", "language_code", "display_name", "content_version", "generated_at"], [{
@@ -519,7 +810,7 @@ function main() {
       tint_name: scenario.tintName,
       sort_order: index,
     }))),
-    insertRows("phrase", ["id", "language_pack_id", "canonical_phrase_key", "target_text", "normalized_target_text", "accentless_target_text", "english_text", "pronunciation", "access_tier", "completeness_status", "audio_status", "source_path", "source_row_id", "sense_key"], phraseRows),
+    insertRows("phrase", ["id", "language_pack_id", "canonical_phrase_key", "canonical_phrase_id", "target_text", "normalized_target_text", "accentless_target_text", "english_text", "pronunciation", "access_tier", "completeness_status", "audio_status", "source_path", "source_row_id", "sense_key"], phraseRows),
     insertRows("phrase_page", ["id", "language_pack_id", "phrase_id", "title", "english_title", "summary", "icon_name", "tint_name", "page_renderer", "completeness_status", "is_authored"], pageRows),
     insertRows("page_alias", ["alias_id", "canonical_page_id", "alias_kind", "source_path"], sortByID(Array.from(aliases.values()).map((alias) => ({ id: alias.alias_id, ...alias })))),
     insertRows("phrase_cluster", ["id", "language_pack_id", "cluster_kind", "title", "summary", "primary_phrase_id", "source_family_id", "source_path"], catalog.families.map((family) => ({
@@ -557,6 +848,7 @@ function main() {
     insertRows("page_section", ["id", "page_id", "section_key", "title", "body", "presentation", "sort_order", "source_path"], sectionRows),
     insertRows("breakdown_token", ["id", "phrase_id", "token_text", "normalized_token_text", "english_gloss", "sort_order"], breakdownRows),
     insertRows("page_section_item", ["id", "section_id", "item_kind", "target_id", "title_override", "subtitle_override", "note", "sort_order"], sectionItemRows),
+    insertRows("phrase_relation", ["id", "language_pack_id", "source_kind", "source_id", "target_kind", "target_id", "relation_type", "reason", "display_label", "sort_order", "source_path"], sortByID(relationRows)),
     insertRows("audio_asset", ["id", "language_pack_id", "file_name", "voice_id", "duration_ms", "normalized_spoken_text", "source_manifest_key"], audioAssetRows),
     insertRows("audio_usage", ["id", "audio_asset_id", "usage_kind", "target_kind", "target_id", "expected_text", "normalized_expected_text", "is_primary", "source_path"], audioUsageRows),
     insertRows("audio_text_dedupe", ["language_pack_id", "normalized_text", "preferred_audio_asset_id", "duplicate_count"], audioTextDedupeRows),
@@ -602,6 +894,7 @@ function main() {
     'sections', (SELECT count(*) FROM page_section),
     'sectionItems', (SELECT count(*) FROM page_section_item),
     'breakdownTokens', (SELECT count(*) FROM breakdown_token),
+    'relations', (SELECT count(*) FROM phrase_relation),
     'searchDocuments', (SELECT count(*) FROM search_document),
     'audioAssets', (SELECT count(*) FROM audio_asset),
     'audioUsages', (SELECT count(*) FROM audio_usage),
@@ -613,6 +906,87 @@ function main() {
     const canonicalPageID = canonicalPageIDForPhrase(page.phraseID);
     return canonicalPageID === page.id || aliases.has(page.id);
   }).length;
+  const expectedCanonicalPhrasePages = 911;
+  const unresolvedDuplicateNormalizedTargetTextGroups = duplicateNormalizedTargetGroups.filter((group) =>
+    group.aliasedPhraseIDs.some((phraseID) => {
+      const alias = aliases.get(sourcePageIDForPhrase(phraseID));
+      return !alias || alias.canonical_page_id !== group.canonicalPageID;
+    })
+  );
+  const duplicateCanonicalPageGroupCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM (
+      SELECT p.normalized_target_text
+      FROM phrase_page pp
+      JOIN phrase p ON p.id = pp.phrase_id
+      GROUP BY p.normalized_target_text
+      HAVING count(*) > 1
+    );
+  `));
+  const phrasesResolvedToCanonicalPages = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM phrase p
+    JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id;
+  `));
+  const sectionlessCanonicalPageCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM phrase_page pp
+    WHERE NOT EXISTS (SELECT 1 FROM page_section ps WHERE ps.page_id = pp.id);
+  `));
+  const brokenRelationCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM phrase_relation r
+    WHERE r.source_kind != 'phrase_page'
+       OR r.target_kind != 'phrase_page'
+       OR NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = r.source_id)
+       OR NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = r.target_id);
+  `));
+  const searchDocumentsWithMissingPageTargets = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM search_document sd
+    WHERE sd.target_kind = 'phrase_page'
+      AND NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = sd.target_id);
+  `));
+  const audioUsageMismatchCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM audio_usage au
+    JOIN audio_asset aa ON aa.id = au.audio_asset_id
+    WHERE au.normalized_expected_text != aa.normalized_spoken_text;
+  `));
+  const bannedUserFacingPatterns = [
+    /Watch out/i,
+    /repair phrase/i,
+    /Understanding Repair/i,
+    /question marker/i,
+    /warning-callout/i,
+    /watch-out/i,
+  ];
+  const bannedUserFacingMatches = [];
+
+  function scanBannedUserFacing(scope, id, value) {
+    const text = String(value ?? "");
+    if (!text) return;
+    for (const pattern of bannedUserFacingPatterns) {
+      if (pattern.test(text)) {
+        bannedUserFacingMatches.push({ scope, id, pattern: String(pattern) });
+      }
+    }
+  }
+
+  for (const row of pageRows) {
+    scanBannedUserFacing("phrase_page.title", row.id, row.title);
+    scanBannedUserFacing("phrase_page.english_title", row.id, row.english_title);
+    scanBannedUserFacing("phrase_page.summary", row.id, row.summary);
+  }
+  for (const row of sectionRows) {
+    scanBannedUserFacing("page_section.title", row.id, row.title);
+    scanBannedUserFacing("page_section.body", row.id, row.body);
+    scanBannedUserFacing("page_section.presentation", row.id, row.presentation);
+  }
+  for (const row of sectionItemRows) {
+    scanBannedUserFacing("page_section_item.title_override", row.id, row.title_override);
+    scanBannedUserFacing("page_section_item.subtitle_override", row.id, row.subtitle_override);
+  }
 
   const report = {
     version: 1,
@@ -650,6 +1024,11 @@ function main() {
       scenarios: { expected: 18, actual: catalog.scenarios.length, ok: catalog.scenarios.length === 18 },
       clusters: { expected: 900, actual: catalog.families.length, ok: catalog.families.length === 900 },
       phrases: { expected: 919, actual: catalog.phrases.length, ok: catalog.phrases.length === 919 },
+      canonicalPhrasePages: {
+        expected: expectedCanonicalPhrasePages,
+        actual: pageRows.length,
+        ok: pageRows.length === expectedCanonicalPhrasePages,
+      },
       authoredPagesOrAliases: { expected: 163, actual: authoredPagesOrAliases, ok: authoredPagesOrAliases === 163 },
     },
     generatedCounts,
@@ -657,6 +1036,13 @@ function main() {
       integrityCheck,
       foreignKeyCheckRows: foreignKeyRows ? foreignKeyRows.split("\n").length : 0,
       ftsRowCount: Number(sqliteQuery("SELECT count(*) FROM search_document_fts;")),
+      duplicateCanonicalPageGroupCount,
+      sectionlessCanonicalPageCount,
+      brokenRelationCount,
+      searchDocumentsWithMissingPageTargets,
+      audioUsageMismatchCount,
+      bannedUserFacingMatchCount: bannedUserFacingMatches.length,
+      bannedUserFacingMatches,
     },
     unresolvedReferences: {
       detailPageIDCount: unresolvedDetailPageRefs.length,
@@ -666,11 +1052,21 @@ function main() {
       authoredPhraseItemsNotInCatalogCount: authoredPhraseItemsNotInCatalog.length,
       authoredPhraseItemsNotInCatalog,
     },
-    canonicalIdentityWarnings: {
+    canonicalIdentity: {
+      canonicalPageCount: pageRows.length,
+      sourcePhraseRowCount: phraseRows.length,
+      phrasesResolvedToCanonicalPages,
       duplicateNormalizedTargetTextGroupCount: duplicateNormalizedTargetGroups.length,
-      duplicateNormalizedTargetTextGroups: duplicateNormalizedTargetGroups,
+      resolvedDuplicateNormalizedTargetTextGroups: duplicateNormalizedTargetGroups,
+      unresolvedDuplicateNormalizedTargetTextGroups,
       aliasConflictCount: aliasConflicts.length,
       aliasConflicts,
+    },
+    graph: {
+      relationCount: relationRows.length,
+      relationTypes: Array.from(countBy(relationRows, (row) => row.relation_type).entries())
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([relationType, rows]) => ({ relationType, count: rows.length })),
     },
     audio: {
       manifestEntries: Object.keys(audioManifest).length,
@@ -687,8 +1083,10 @@ function main() {
     notes: [
       "The native Swift runtime still reads the existing root-level JSON resources.",
       "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet for migration proof only.",
-      "All phrase rows receive canonical phrase_page rows; legacy family, authored page, and section detail IDs are represented as page_alias rows.",
-      "The initial relation and practice tables are schema-ready but intentionally unpopulated in this fixture step.",
+      "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
+      "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",
+      "The relation table is populated from authored page links, generated category neighbors, and same-cluster variants.",
+      "Practice tables remain schema-ready but intentionally unpopulated in this fixture step.",
     ],
   };
 

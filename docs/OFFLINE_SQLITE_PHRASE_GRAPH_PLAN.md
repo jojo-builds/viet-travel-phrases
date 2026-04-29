@@ -162,6 +162,7 @@ CREATE TABLE phrase (
   id TEXT PRIMARY KEY,
   language_pack_id TEXT NOT NULL REFERENCES language_pack(id),
   canonical_phrase_key TEXT NOT NULL,
+  canonical_phrase_id TEXT NOT NULL REFERENCES phrase(id) DEFERRABLE INITIALLY DEFERRED,
   target_text TEXT NOT NULL,
   normalized_target_text TEXT NOT NULL,
   accentless_target_text TEXT NOT NULL,
@@ -523,6 +524,8 @@ Do not use negative `Watch out` framing in user-facing app copy. If an internal 
 ### Stage 1: Generate A SQLite Fixture Beside JSON
 
 Implementation note: T-163 created the first deterministic Viet fixture generator at `native-ios/scripts/generate-viet-sqlite-fixture.js`, the schema migration at `native-ios/scripts/sqlite/001_initial.sql`, and the generated outputs at `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite` plus `speaklocal-viet-report.json`. T-165 then added XcodeGen resource wiring so `Resources/LanguagePacks/` is copied as a folder resource and added a debug-only Swift read path that opens the Viet fixture read-only from `Bundle.main`. The app runtime still reads the root-level JSON resources.
+
+Implementation note: the content-data universe pass on `2026-04-29` upgraded the fixture from one page per source row to canonical page resolution. The current generator keeps `919` source phrase rows, resolves them through `phrase.canonical_phrase_id` to `911` canonical `phrase_page` rows, aliases the `6` exact normalized duplicate Vietnamese groups, creates baseline/support sections for every canonical page, and populates `3,438` phrase-page relation edges from authored links, same-cluster variants, and generated category neighbors. `native-ios/scripts/validate-viet-sqlite-fixture.js` is now the direct validator for duplicate pages, broken graph links, sectionless pages, search targets, visible audio mismatches, and banned user-facing wording in generated/source listing JSON.
 
 - Add a build-time script, probably under `native-ios/scripts/`, that reads the same source inputs as the JSON generators.
 - Emit `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite` as a fixture, but do not ship it as the active runtime source yet.

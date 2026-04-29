@@ -96,6 +96,7 @@ struct PhraseDetailPage: Identifiable, Equatable {
     let sections: [PhraseDetailSection]
     let examples: [PhraseOption]
     var audioKey: String? = nil
+    var showsCatalogExplore: Bool = true
 
     var playbackAudioKey: String? {
         let manifest = AudioAssetManifest.main
@@ -160,8 +161,8 @@ enum SectionPresentation: String, Decodable, Equatable {
             return hasPhrases ? .phraseList : .plainText
         case "natural-variations", "nearby-phrases", "situational-use", "common-situations":
             return hasPhrases ? .horizontalPhraseCards : .plainText
-        case "watch-out":
-            return .warningCallout
+        case "watch-out", "good-to-know":
+            return .tipCallout
         case "local-tip", "traveler-tip", "cultural-note":
             return .tipCallout
         default:
@@ -364,7 +365,13 @@ enum PhraseCatalog {
     }
 
     static func isOpenablePageID(_ pageID: String) -> Bool {
-        pageID == PhrasePage.xinChao.id
+#if DEBUG
+        if VietSQLitePhraseGraphRuntime.canOpenPage(pageID) {
+            return true
+        }
+#endif
+
+        return pageID == PhrasePage.xinChao.id
             || PhraseDetailPage.hasAuthoredPage(withID: pageID)
             || GeneratedVietContent.hasDetailPage(withID: pageID)
     }
@@ -677,6 +684,12 @@ extension PhrasePage {
 
 enum PhraseSearchIndex {
     static func search(_ query: String) -> [PhraseSearchResult] {
+#if DEBUG
+        if let sqliteResults = VietSQLitePhraseGraphRuntime.search(query) {
+            return sqliteResults
+        }
+#endif
+
         let normalizedQuery = normalize(query)
         guard !normalizedQuery.isEmpty else {
             return []
@@ -940,7 +953,13 @@ extension PhraseDetailPage {
     }
 
     static func page(withID id: String) -> PhraseDetailPage? {
-        pagesByID[id] ?? GeneratedVietContent.detailPage(withID: id)
+#if DEBUG
+        if let sqlitePage = VietSQLitePhraseGraphRuntime.detailPage(withID: id) {
+            return sqlitePage
+        }
+#endif
+
+        return pagesByID[id] ?? GeneratedVietContent.detailPage(withID: id)
     }
 
     static func hasAuthoredPage(withID id: String) -> Bool {
@@ -958,7 +977,8 @@ extension PhraseDetailPage {
             iconName: iconName,
             tintName: tintName,
             playbackAudioKey: playbackAudioKey,
-            sections: sections.map(\.articleSection)
+            sections: sections.map(\.articleSection),
+            showsCatalogExplore: showsCatalogExplore
         )
     }
 
@@ -1346,7 +1366,7 @@ extension PhraseDetailPage {
         sections: [
             PhraseDetailSection(id: "why", title: "Why it matters", body: "Dạ softens the greeting and shows respect. Anh and chị choose the relationship word for an adult man or woman."),
             PhraseDetailSection(id: "use", title: "Use it when", body: "Use this at a hotel desk, shop counter, restaurant, homestay, or with someone helping you."),
-            PhraseDetailSection(id: "watch", title: "Watch out", body: "If you are unsure whether to use anh or chị, Xin chào is still safe. This phrase is for when you want to sound a little more natural."),
+            PhraseDetailSection(id: "good-to-know", title: "Good to know", body: "If you are unsure whether to use anh or chị, Xin chào is still safe. This phrase is for when you want to sound a little more natural."),
         ],
         examples: [
             PhraseOption(id: "respect-anh", vietnamese: "Dạ, chào anh", english: "Hello, sir / older brother", pronunciation: "yah chow anh", symbolName: "speaker.wave.2.fill", tintName: .red, detailPageID: nil),

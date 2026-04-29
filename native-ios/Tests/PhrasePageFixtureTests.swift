@@ -165,7 +165,7 @@ final class PhrasePageFixtureTests: XCTestCase {
             "Natural variations",
             "Pronoun swap",
             "When to use it",
-            "Watch out",
+            "Good to know",
             "Local tip",
             "Explore next",
         ])
@@ -206,8 +206,10 @@ final class PhrasePageFixtureTests: XCTestCase {
             "Softer, to someone younger: what does this mean?",
         ])
 
-        let watchOut = try XCTUnwrap(page.sections.first { $0.id == "watch-out" })
-        XCTAssertTrue(watchOut.body.contains("defensive"))
+        let goodToKnow = try XCTUnwrap(page.sections.first { $0.id == "good-to-know" })
+        XCTAssertEqual(goodToKnow.presentation, .tipCallout)
+        XCTAssertTrue(goodToKnow.body.contains("curious tone"))
+        XCTAssertFalse(page.sections.contains { $0.id == "watch-out" || $0.title == "Watch out" })
 
         XCTAssertEqual(PhraseSearchIndex.search("what does that mean").first?.pageID, page.id)
     }
@@ -386,9 +388,11 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertEqual(sectionsByID["breakdown"]?.presentation, .breakdownStrip)
         XCTAssertEqual(sectionsByID["standard-way"]?.presentation, .phraseList)
         XCTAssertEqual(sectionsByID["nearby-phrases"]?.presentation, .horizontalPhraseCards)
-        XCTAssertEqual(sectionsByID["watch-out"]?.presentation, .warningCallout)
+        XCTAssertEqual(sectionsByID["good-to-know"]?.presentation, .tipCallout)
         XCTAssertEqual(sectionsByID["local-tip"]?.presentation, .tipCallout)
         XCTAssertEqual(sectionsByID["standard-way"]?.title, "Quick say")
+        XCTAssertNil(sectionsByID["watch-out"])
+        XCTAssertFalse(sectionsByID.values.contains { $0.presentation == .warningCallout })
     }
 
     func testTierOneArticleVisibleAudioKeysResolve() throws {
@@ -450,7 +454,6 @@ final class PhrasePageFixtureTests: XCTestCase {
             "horizontal-phrase-cards",
             "breakdown-strip",
             "tip-callout",
-            "warning-callout",
         ])
 
         for page in pages {
@@ -460,6 +463,9 @@ final class PhrasePageFixtureTests: XCTestCase {
             for section in sections {
                 let presentation = try XCTUnwrap(section["presentation"] as? String, pageID)
                 XCTAssertTrue(allowedPresentations.contains(presentation), "\(pageID): \(presentation)")
+                XCTAssertNotEqual(section["id"] as? String, "watch-out", pageID)
+                XCTAssertNotEqual(section["title"] as? String, "Watch out", pageID)
+                XCTAssertNotEqual(presentation, "warning-callout", pageID)
             }
         }
     }
@@ -467,13 +473,14 @@ final class PhrasePageFixtureTests: XCTestCase {
     func testTierOneGeneratedPagesUseExpandedListingPattern() throws {
         let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-write-down"))
 
-        XCTAssertEqual(page.sections.prefix(7).map(\.title), [
+        XCTAssertEqual(page.sections.prefix(8).map(\.title), [
             "At a glance",
             "Break it down",
             "The standard way",
             "Why it matters",
+            "Traveler insight",
             "When to use it",
-            "Watch out",
+            "Good to know",
             "Local tip",
         ])
         XCTAssertEqual(page.sections.last?.title, "Explore next")
@@ -500,8 +507,15 @@ final class PhrasePageFixtureTests: XCTestCase {
             XCTAssertTrue(sectionIDs.contains("at-glance"), pageID)
             XCTAssertTrue(sectionIDs.contains("breakdown"), pageID)
             XCTAssertTrue(sectionIDs.contains("when-to-use"), pageID)
-            XCTAssertTrue(sectionIDs.contains("watch-out"), pageID)
-            XCTAssertTrue(sectionIDs.contains("traveler-tip") || sectionIDs.contains("local-tip"), pageID)
+            XCTAssertTrue(
+                sectionIDs.contains("good-to-know")
+                    || sectionIDs.contains("traveler-insight")
+                    || sectionIDs.contains("traveler-tip")
+                    || sectionIDs.contains("local-tip"),
+                pageID
+            )
+            XCTAssertFalse(sectionIDs.contains("watch-out"), pageID)
+            XCTAssertFalse(page.sections.contains { $0.title == "Watch out" || $0.presentation == .warningCallout }, pageID)
             XCTAssertTrue(sectionIDs.contains("explore-next"), pageID)
             XCTAssertGreaterThanOrEqual(sectionIDs.count, 6, pageID)
         }

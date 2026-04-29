@@ -40,6 +40,27 @@ struct VietSQLiteLanguagePackSanitySnapshot: Equatable {
     let preview: VietSQLitePhrasePreview
 }
 
+struct VietSQLitePhraseGraphCoverage: Equatable {
+    let sourcePhraseRows: Int
+    let canonicalPhrasePages: Int
+    let resolvedPhraseRows: Int
+    let searchDocuments: Int
+    let relationEdges: Int
+    let duplicateCanonicalPageGroups: Int
+    let brokenRelationEdges: Int
+    let searchDocumentsWithMissingPageTargets: Int
+    let audioUsageMismatches: Int
+    let missingAudioAuditRows: Int
+}
+
+struct VietSQLiteVisibleAudioUsage: Equatable {
+    let usageKind: String
+    let targetKind: String
+    let targetID: String
+    let audioKey: String
+    let expectedText: String
+}
+
 enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
     case missingBundledFixture(subdirectory: String)
     case openFailed(path: String, message: String)
@@ -49,6 +70,8 @@ enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
     case bindFailed(sql: String, message: String)
     case emptyResult(sql: String)
     case missingPreviewPhrase(id: String)
+    case missingCanonicalPage(id: String)
+    case missingPhrase(id: String)
 
     var errorDescription: String? {
         switch self {
@@ -68,6 +91,10 @@ enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
             return "SQLite query returned no rows: \(sql)"
         case .missingPreviewPhrase(let id):
             return "SQLite preview phrase is missing: \(id)"
+        case .missingCanonicalPage(let id):
+            return "SQLite canonical phrase page is missing: \(id)"
+        case .missingPhrase(let id):
+            return "SQLite phrase is missing: \(id)"
         }
     }
 }
@@ -182,12 +209,7 @@ final class VietSQLiteLanguagePackRepository {
         """
 
         return try withPreparedStatement(sql) { statement in
-            guard sqlite3_bind_text(statement, 1, phraseID, -1, sqliteTransient) == SQLITE_OK else {
-                throw VietSQLiteLanguagePackRepositoryError.bindFailed(
-                    sql: sql,
-                    message: errorMessage()
-                )
-            }
+            try self.bindText(phraseID, to: 1, in: statement, sql: sql)
 
             guard sqlite3_step(statement) == SQLITE_ROW else {
                 throw VietSQLiteLanguagePackRepositoryError.missingPreviewPhrase(id: phraseID)
@@ -229,8 +251,406 @@ final class VietSQLiteLanguagePackRepository {
         }
     }
 
-    private func stringValue(_ sql: String) throws -> String {
+    func loadGraphCoverage() throws -> VietSQLitePhraseGraphCoverage {
+        VietSQLitePhraseGraphCoverage(
+            sourcePhraseRows: try count(.phrase),
+            canonicalPhrasePages: try count(.phrasePage),
+            resolvedPhraseRows: try intValue("""
+                SELECT count(*)
+                FROM phrase p
+                JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id;
+                """),
+            searchDocuments: try count(.searchDocument),
+            relationEdges: try intValue("SELECT count(*) FROM phrase_relation;"),
+            duplicateCanonicalPageGroups: try intValue("""
+                SELECT count(*)
+                FROM (
+                  SELECT p.normalized_target_text
+                  FROM phrase_page pp
+                  JOIN phrase p ON p.id = pp.phrase_id
+                  GROUP BY p.normalized_target_text
+                  HAVING count(*) > 1
+                );
+                """),
+            brokenRelationEdges: try intValue("""
+                SELECT count(*)
+                FROM phrase_relation r
+                WHERE r.source_kind != 'phrase_page'
+                   OR r.target_kind != 'phrase_page'
+                   OR NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = r.source_id)
+                   OR NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = r.target_id);
+                """),
+            searchDocumentsWithMissingPageTargets: try intValue("""
+                SELECT count(*)
+                FROM search_document sd
+                WHERE sd.target_kind = 'phrase_page'
+                  AND NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = sd.target_id);
+                """),
+            audioUsageMismatches: try intValue("""
+                SELECT count(*)
+                FROM audio_usage au
+                JOIN audio_asset aa ON aa.id = au.audio_asset_id
+                WHERE au.normalized_expected_text != aa.normalized_spoken_text;
+                """),
+            missingAudioAuditRows: try intValue("SELECT count(*) FROM missing_audio_audit;")
+        )
+    }
+
+    func canonicalPageID(forPhraseID phraseID: String) throws -> String {
+        let sql = """
+        SELECT pp.id
+        FROM phrase p
+        JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+        WHERE p.id = ?
+        LIMIT 1;
+        """
+
+        do {
+            return try stringValue(sql) { statement in
+                try self.bindText(phraseID, to: 1, in: statement, sql: sql)
+            }
+        } catch VietSQLiteLanguagePackRepositoryError.emptyResult {
+            throw VietSQLiteLanguagePackRepositoryError.missingPhrase(id: phraseID)
+        }
+    }
+
+    func canonicalPageID(forPageIDOrAlias pageIDOrAlias: String) throws -> String {
+        let sql = """
+        SELECT id
+        FROM phrase_page
+        WHERE id = ?
+        UNION ALL
+        SELECT canonical_page_id
+        FROM page_alias
+        WHERE alias_id = ?
+        LIMIT 1;
+        """
+
+        do {
+            return try stringValue(sql) { statement in
+                try self.bindText(pageIDOrAlias, to: 1, in: statement, sql: sql)
+                try self.bindText(pageIDOrAlias, to: 2, in: statement, sql: sql)
+            }
+        } catch VietSQLiteLanguagePackRepositoryError.emptyResult {
+            throw VietSQLiteLanguagePackRepositoryError.missingCanonicalPage(id: pageIDOrAlias)
+        }
+    }
+
+    func canOpenPage(pageIDOrAlias: String) throws -> Bool {
+        (try? canonicalPageID(forPageIDOrAlias: pageIDOrAlias)) != nil
+    }
+
+    func search(_ query: String, limit: Int = 8) throws -> [PhraseSearchResult] {
+        let ftsQuery = Self.ftsQuery(for: query)
+        guard !ftsQuery.isEmpty else {
+            return []
+        }
+
+        let sql = """
+        SELECT
+          sd.target_id,
+          pp.title,
+          pp.english_title,
+          (sd.priority_tier * 1000.0) - bm25(search_document_fts) AS search_rank
+        FROM search_document_fts
+        JOIN search_document sd ON sd.rowid = search_document_fts.rowid
+        JOIN phrase_page pp ON pp.id = sd.target_id
+        WHERE search_document_fts MATCH ?
+          AND sd.target_kind = 'phrase_page'
+        ORDER BY search_rank DESC, pp.title COLLATE NOCASE ASC
+        LIMIT ?;
+        """
+
+        let rawResults = try rows(sql, bind: { statement in
+            try self.bindText(ftsQuery, to: 1, in: statement, sql: sql)
+            try self.bindInt(limit * 4, to: 2, in: statement, sql: sql)
+        }) { statement in
+            PhraseSearchResult(
+                pageID: Self.stringColumn(statement, index: 0),
+                title: Self.stringColumn(statement, index: 1),
+                subtitle: Self.stringColumn(statement, index: 2)
+            )
+        }
+
+        var seenPageIDs = Set<String>()
+        return rawResults.filter { result in
+            seenPageIDs.insert(result.pageID).inserted
+        }
+        .prefix(limit)
+        .map { $0 }
+    }
+
+    func loadPhraseDetailPage(pageID: String) throws -> PhraseDetailPage {
+        let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        let sql = """
+        SELECT
+          pp.id,
+          p.id,
+          pp.title,
+          pp.english_title,
+          p.pronunciation,
+          pp.summary,
+          pp.icon_name,
+          pp.tint_name,
+          aa.source_manifest_key
+        FROM phrase_page pp
+        JOIN phrase p ON p.id = pp.phrase_id
+        LEFT JOIN audio_usage au
+          ON au.target_kind = 'phrase'
+         AND au.target_id = p.id
+         AND au.is_primary = 1
+        LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        WHERE pp.id = ?
+        LIMIT 1;
+        """
+
+        return try withPreparedStatement(sql) { statement in
+            try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
+
+            guard sqlite3_step(statement) == SQLITE_ROW else {
+                throw VietSQLiteLanguagePackRepositoryError.missingCanonicalPage(id: pageID)
+            }
+
+            let pageID = Self.stringColumn(statement, index: 0)
+            let phraseID = Self.stringColumn(statement, index: 1)
+            let title = Self.stringColumn(statement, index: 2)
+            let englishTitle = Self.stringColumn(statement, index: 3)
+            let pronunciation = Self.stringColumn(statement, index: 4)
+            let summary = Self.stringColumn(statement, index: 5)
+            let iconName = Self.stringColumn(statement, index: 6)
+            let tintName = AccentTint(rawValue: Self.stringColumn(statement, index: 7)) ?? .gray
+            let audioKey = Self.optionalStringColumn(statement, index: 8) ?? phraseID
+
+            return PhraseDetailPage(
+                id: pageID,
+                title: title,
+                englishTitle: englishTitle,
+                pronunciation: pronunciation,
+                summary: summary,
+                iconName: iconName,
+                tintName: tintName,
+                sections: try loadSections(forPageID: pageID),
+                examples: [],
+                audioKey: audioKey,
+                showsCatalogExplore: false
+            )
+        }
+    }
+
+    func relatedPages(forPageID pageID: String, limit: Int = 8) throws -> [PhraseLink] {
+        let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        let sql = """
+        SELECT
+          r.id,
+          pp.id,
+          pp.title,
+          pp.english_title,
+          COALESCE(NULLIF(r.display_label, ''), r.relation_type),
+          pp.icon_name,
+          pp.tint_name
+        FROM phrase_relation r
+        JOIN phrase_page pp ON pp.id = r.target_id
+        WHERE r.source_kind = 'phrase_page'
+          AND r.target_kind = 'phrase_page'
+          AND r.source_id = ?
+        ORDER BY r.sort_order, r.relation_type, pp.title
+        LIMIT ?;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
+            try self.bindInt(limit, to: 2, in: statement, sql: sql)
+        }) { statement in
+            let tint = AccentTint(rawValue: Self.stringColumn(statement, index: 6)) ?? .gray
+            return PhraseLink(
+                id: Self.stringColumn(statement, index: 0),
+                vietnamese: Self.stringColumn(statement, index: 2),
+                english: Self.stringColumn(statement, index: 3),
+                relation: Self.stringColumn(statement, index: 4),
+                symbolName: Self.stringColumn(statement, index: 5),
+                tintName: tint,
+                detailPageID: Self.stringColumn(statement, index: 1)
+            )
+        }
+    }
+
+    func visibleAudioUsages(forPageID pageID: String) throws -> [VietSQLiteVisibleAudioUsage] {
+        let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        let sql = """
+        WITH section_items AS (
+          SELECT psi.item_kind, psi.target_id
+          FROM page_section ps
+          JOIN page_section_item psi ON psi.section_id = ps.id
+          WHERE ps.page_id = ?
+        ),
+        page_phrase AS (
+          SELECT p.id
+          FROM phrase_page pp
+          JOIN phrase p ON p.id = pp.phrase_id
+          WHERE pp.id = ?
+        )
+        SELECT DISTINCT
+          au.usage_kind,
+          au.target_kind,
+          au.target_id,
+          aa.source_manifest_key,
+          au.expected_text
+        FROM audio_usage au
+        JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        WHERE (
+          au.target_kind = 'phrase'
+          AND au.target_id IN (
+            SELECT id FROM page_phrase
+            UNION
+            SELECT target_id FROM section_items WHERE item_kind = 'phrase'
+          )
+        )
+        OR (
+          au.target_kind = 'authored_phrase'
+          AND au.target_id IN (
+            SELECT target_id FROM section_items WHERE item_kind = 'authored_phrase'
+          )
+        )
+        OR (
+          au.target_kind = 'breakdown_token'
+          AND au.target_id IN (
+            SELECT target_id FROM section_items WHERE item_kind = 'breakdown_token'
+          )
+        )
+        ORDER BY au.usage_kind, au.target_kind, au.target_id;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
+            try self.bindText(canonicalPageID, to: 2, in: statement, sql: sql)
+        }) { statement in
+            VietSQLiteVisibleAudioUsage(
+                usageKind: Self.stringColumn(statement, index: 0),
+                targetKind: Self.stringColumn(statement, index: 1),
+                targetID: Self.stringColumn(statement, index: 2),
+                audioKey: Self.stringColumn(statement, index: 3),
+                expectedText: Self.stringColumn(statement, index: 4)
+            )
+        }
+    }
+
+    private func loadSections(forPageID pageID: String) throws -> [PhraseDetailSection] {
+        let sql = """
+        SELECT id, section_key, title, body, presentation
+        FROM page_section
+        WHERE page_id = ?
+        ORDER BY sort_order;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(pageID, to: 1, in: statement, sql: sql)
+        }) { statement in
+            let sectionID = Self.stringColumn(statement, index: 0)
+            let sectionKey = Self.stringColumn(statement, index: 1)
+            let presentation = Self.sectionPresentation(Self.stringColumn(statement, index: 4))
+
+            return PhraseDetailSection(
+                id: sectionKey,
+                title: Self.stringColumn(statement, index: 2),
+                body: Self.stringColumn(statement, index: 3),
+                phrases: try loadPhraseOptions(forSectionID: sectionID),
+                breakdown: try loadBreakdownTokens(forSectionID: sectionID),
+                presentation: presentation
+            )
+        }
+    }
+
+    private func loadPhraseOptions(forSectionID sectionID: String) throws -> [PhraseOption] {
+        let sql = """
+        SELECT
+          psi.id,
+          psi.item_kind,
+          psi.target_id,
+          COALESCE(NULLIF(psi.title_override, ''), p.target_text, ''),
+          COALESCE(NULLIF(psi.subtitle_override, ''), p.english_text, ''),
+          COALESCE(p.pronunciation, ''),
+          COALESCE(pp.icon_name, 'speaker.wave.2.fill'),
+          COALESCE(pp.tint_name, 'red'),
+          pp.id,
+          aa.source_manifest_key
+        FROM page_section_item psi
+        LEFT JOIN phrase p ON p.id = psi.target_id
+        LEFT JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+        LEFT JOIN audio_usage au
+          ON (
+            psi.item_kind = 'phrase'
+            AND au.target_kind = 'phrase'
+            AND au.target_id = p.id
+            AND au.is_primary = 1
+          )
+          OR (
+            psi.item_kind = 'authored_phrase'
+            AND au.target_kind = 'authored_phrase'
+            AND au.target_id = psi.target_id
+          )
+        LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        WHERE psi.section_id = ?
+          AND psi.item_kind IN ('phrase', 'authored_phrase')
+        ORDER BY psi.sort_order;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(sectionID, to: 1, in: statement, sql: sql)
+        }) { statement in
+            let itemKind = Self.stringColumn(statement, index: 1)
+            let targetID = Self.stringColumn(statement, index: 2)
+            let detailPageID = itemKind == "phrase" ? Self.optionalStringColumn(statement, index: 8) : nil
+            let tint = AccentTint(rawValue: Self.stringColumn(statement, index: 7)) ?? .red
+
+            return PhraseOption(
+                id: targetID.isEmpty ? Self.stringColumn(statement, index: 0) : targetID,
+                vietnamese: Self.stringColumn(statement, index: 3),
+                english: Self.stringColumn(statement, index: 4),
+                pronunciation: Self.stringColumn(statement, index: 5),
+                symbolName: Self.stringColumn(statement, index: 6),
+                tintName: tint,
+                detailPageID: detailPageID,
+                audioKey: Self.optionalStringColumn(statement, index: 9)
+            )
+        }
+    }
+
+    private func loadBreakdownTokens(forSectionID sectionID: String) throws -> [BreakdownToken] {
+        let sql = """
+        SELECT
+          bt.id,
+          bt.token_text,
+          bt.english_gloss,
+          aa.source_manifest_key
+        FROM page_section_item psi
+        JOIN breakdown_token bt ON bt.id = psi.target_id
+        LEFT JOIN audio_usage au
+          ON au.target_kind = 'breakdown_token'
+         AND au.target_id = bt.id
+        LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        WHERE psi.section_id = ?
+          AND psi.item_kind = 'breakdown_token'
+        ORDER BY psi.sort_order;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(sectionID, to: 1, in: statement, sql: sql)
+        }) { statement in
+            BreakdownToken(
+                id: Self.stringColumn(statement, index: 0),
+                vietnamese: Self.stringColumn(statement, index: 1),
+                english: Self.stringColumn(statement, index: 2),
+                audioKey: Self.optionalStringColumn(statement, index: 3)
+            )
+        }
+    }
+
+    private func stringValue(
+        _ sql: String,
+        bind: ((OpaquePointer) throws -> Void)? = nil
+    ) throws -> String {
         try withPreparedStatement(sql) { statement in
+            try bind?(statement)
             let result = sqlite3_step(statement)
             guard result == SQLITE_ROW else {
                 if result == SQLITE_DONE {
@@ -247,8 +667,12 @@ final class VietSQLiteLanguagePackRepository {
         }
     }
 
-    private func intValue(_ sql: String) throws -> Int {
+    private func intValue(
+        _ sql: String,
+        bind: ((OpaquePointer) throws -> Void)? = nil
+    ) throws -> Int {
         try withPreparedStatement(sql) { statement in
+            try bind?(statement)
             let result = sqlite3_step(statement)
             guard result == SQLITE_ROW else {
                 if result == SQLITE_DONE {
@@ -262,6 +686,31 @@ final class VietSQLiteLanguagePackRepository {
             }
 
             return Int(sqlite3_column_int64(statement, 0))
+        }
+    }
+
+    private func rows<Value>(
+        _ sql: String,
+        bind: ((OpaquePointer) throws -> Void)? = nil,
+        map: (OpaquePointer) throws -> Value
+    ) throws -> [Value] {
+        try withPreparedStatement(sql) { statement in
+            try bind?(statement)
+
+            var values: [Value] = []
+            while true {
+                let result = sqlite3_step(statement)
+                if result == SQLITE_ROW {
+                    values.append(try map(statement))
+                } else if result == SQLITE_DONE {
+                    return values
+                } else {
+                    throw VietSQLiteLanguagePackRepositoryError.stepFailed(
+                        sql: sql,
+                        message: errorMessage()
+                    )
+                }
+            }
         }
     }
 
@@ -291,6 +740,34 @@ final class VietSQLiteLanguagePackRepository {
         return try body(statement)
     }
 
+    private func bindText(
+        _ value: String,
+        to index: Int32,
+        in statement: OpaquePointer,
+        sql: String
+    ) throws {
+        guard sqlite3_bind_text(statement, index, value, -1, sqliteTransient) == SQLITE_OK else {
+            throw VietSQLiteLanguagePackRepositoryError.bindFailed(
+                sql: sql,
+                message: errorMessage()
+            )
+        }
+    }
+
+    private func bindInt(
+        _ value: Int,
+        to index: Int32,
+        in statement: OpaquePointer,
+        sql: String
+    ) throws {
+        guard sqlite3_bind_int64(statement, index, sqlite3_int64(value)) == SQLITE_OK else {
+            throw VietSQLiteLanguagePackRepositoryError.bindFailed(
+                sql: sql,
+                message: errorMessage()
+            )
+        }
+    }
+
     private func errorMessage() -> String {
         guard let database else {
             return "database handle is closed"
@@ -310,6 +787,83 @@ final class VietSQLiteLanguagePackRepository {
 
         return String(cString: text)
     }
+
+    private static func optionalStringColumn(_ statement: OpaquePointer, index: Int32) -> String? {
+        guard sqlite3_column_type(statement, index) != SQLITE_NULL else {
+            return nil
+        }
+
+        let value = stringColumn(statement, index: index)
+        return value.isEmpty ? nil : value
+    }
+
+    private static func sectionPresentation(_ value: String) -> SectionPresentation {
+        if value == "warning-callout" {
+            return .tipCallout
+        }
+
+        return SectionPresentation(rawValue: value) ?? .plainText
+    }
+
+    private static func ftsQuery(for query: String) -> String {
+        let folded = query
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+            .lowercased()
+
+        return folded.unicodeScalars
+            .map { scalar in
+                CharacterSet.alphanumerics.contains(scalar) ? String(scalar) : " "
+            }
+            .joined()
+            .split(separator: " ")
+            .map { "\($0)*" }
+            .joined(separator: " ")
+    }
+}
+
+enum VietSQLitePhraseGraphRuntime {
+    static let launchArgument = "--use-sqlite-phrase-graph"
+    static let environmentVariable = "SPEAKLOCAL_USE_SQLITE_GRAPH"
+
+    static var isEnabled: Bool {
+        ProcessInfo.processInfo.arguments.contains(launchArgument)
+            || ProcessInfo.processInfo.environment[environmentVariable] == "1"
+    }
+
+    static func search(_ query: String, limit: Int = 8) -> [PhraseSearchResult]? {
+        guard isEnabled, let repository = repository() else {
+            return nil
+        }
+
+        return try? repository.search(query, limit: limit)
+    }
+
+    static func detailPage(withID pageID: String) -> PhraseDetailPage? {
+        guard isEnabled, let repository = repository() else {
+            return nil
+        }
+
+        return try? repository.loadPhraseDetailPage(pageID: pageID)
+    }
+
+    static func canOpenPage(_ pageID: String) -> Bool {
+        guard isEnabled, let repository = repository() else {
+            return false
+        }
+
+        return ((try? repository.canOpenPage(pageIDOrAlias: pageID)) ?? false)
+    }
+
+    private static func repository() -> VietSQLiteLanguagePackRepository? {
+        if let cachedRepository {
+            return cachedRepository
+        }
+
+        cachedRepository = try? VietSQLiteLanguagePackRepository.bundled()
+        return cachedRepository
+    }
+
+    private static var cachedRepository: VietSQLiteLanguagePackRepository?
 }
 
 private let sqliteTransient = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
