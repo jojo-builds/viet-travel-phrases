@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speak Local Melo Practice Flow Image Storyboards</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #12231b;
+        --muted: #65726d;
+        --paper: #fffdfa;
+        --soft: #f6f4ed;
+        --line: rgba(18, 35, 27, 0.13);
+        --glass: rgba(255, 255, 255, 0.78);
+        --red: #ff3038;
+        --jade: #2f8d72;
+        --shadow: 0 20px 56px rgba(18, 35, 27, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, var(--paper), var(--soft));
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        width: min(1480px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 44px 0 72px;
+      }
+
+      h1 {
+        max-width: 1040px;
+        margin: 0;
+        font-size: clamp(42px, 7vw, 90px);
+        line-height: 0.94;
+        font-weight: 820;
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        font-size: clamp(24px, 3vw, 38px);
+        line-height: 1;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .lead {
+        max-width: 920px;
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.5;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 26px 0 34px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--glass);
+        box-shadow: 0 10px 26px rgba(18, 35, 27, 0.06);
+        color: var(--muted);
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .pill strong {
+        color: var(--ink);
+      }
+
+      .note-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 34px;
+      }
+
+      .note {
+        min-height: 112px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.74);
+        box-shadow: 0 12px 34px rgba(18, 35, 27, 0.07);
+        padding: 16px;
+      }
+
+      .note b {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .note span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.42;
+      }
+
+      .sheet {
+        margin-top: 28px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .sheet-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 22px 16px;
+      }
+
+      .sheet-head p {
+        max-width: 680px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .sheet img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: white;
+      }
+
+      .tag {
+        flex: 0 0 auto;
+        border-radius: 999px;
+        background: rgba(47, 141, 114, 0.12);
+        color: var(--jade);
+        padding: 8px 12px;
+        font-size: 12px;
+        font-weight: 760;
+      }
+
+      .tail-rule {
+        margin-top: 34px;
+        border-left: 4px solid var(--red);
+        padding: 4px 0 4px 16px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      @media (max-width: 920px) {
+        .note-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .sheet-head {
+          display: block;
+        }
+
+        .tag {
+          display: inline-block;
+          margin-top: 12px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        main {
+          width: min(100% - 20px, 1480px);
+          padding-top: 28px;
+        }
+
+        .note-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sheet {
+          border-radius: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Melo Practice Flow Image Storyboards</h1>
+      <p class="lead">
+        Image-only design sheets for the Speak Local Vietnam Practice experience.
+        These are rendered visual references for review and future illustration/native handoff, not a functional prototype.
+      </p>
+
+      <div class="pill-row" aria-label="Storyboard constraints">
+        <span class="pill"><strong>Format:</strong> raster images only</span>
+        <span class="pill"><strong>Chrome:</strong> Liquid Glass app shell</span>
+        <span class="pill"><strong>Mascot:</strong> flat-brand Melo</span>
+        <span class="pill"><strong>Tail:</strong> inward curl, never wheel</span>
+        <span class="pill"><strong>Progression:</strong> dramatic unlock states</span>
+      </div>
+
+      <section class="note-grid" aria-label="Design notes">
+        <div class="note">
+          <b>Visual Role</b>
+          <span>Melo supports practice without taking over answer targets, bottom chrome, or dense review rows.</span>
+        </div>
+        <div class="note">
+          <b>Practice Model</b>
+          <span>Bucket List stays travel-friendly and city-selectable. The flow avoids forcing a fixed city sequence.</span>
+        </div>
+        <div class="note">
+          <b>Native Shell</b>
+          <span>Use the Speak Local Vietnam glass nav, raised Search island, back/profile buttons, red accents, and white content surfaces.</span>
+        </div>
+        <div class="note">
+          <b>Content Boundary</b>
+          <span>Vietnamese phrases, street names, and city-specific copy are placeholders until content production supplies final material.</span>
+        </div>
+      </section>
+
+      <section class="sheet">
+        <div class="sheet-head">
+          <div>
+            <h2>Practice Flow Overview</h2>
+            <p>Eight-screen storyboard from Practice home through city detail, quiz states, feedback, and completion.</p>
+          </div>
+          <span class="tag">Full flow</span>
+        </div>
+        <img src="assets/practice-flow-overview.png" alt="Eight-screen image storyboard for the Speak Local Vietnam Practice flow with Melo." />
+      </section>
+
+      <section class="sheet">
+        <div class="sheet-head">
+          <div>
+            <h2>Practice Mode Screens</h2>
+            <p>Mode-level image concepts for phrase practice, street signs, tone marks, taxi destination rehearsal, speak aloud, and saved review.</p>
+          </div>
+          <span class="tag">Mode set</span>
+        </div>
+        <img src="assets/practice-mode-screens.png" alt="Six-screen image storyboard showing Speak Local Vietnam practice mode screens." />
+      </section>
+
+      <section class="sheet">
+        <div class="sheet-head">
+          <div>
+            <h2>Melo Progression And Unlock</h2>
+            <p>More dramatic seven-stage Melo progression plus the Hanoi Bucket List completion moment and next-city map state.</p>
+          </div>
+          <span class="tag">Unlock system</span>
+        </div>
+        <img src="assets/melo-progression-unlock.png" alt="Melo seven-stage progression and Bucket List unlock image storyboard." />
+      </section>
+
+      <section class="sheet">
+        <div class="sheet-head">
+          <div>
+            <h2>Animation Reference</h2>
+            <p>Existing animation board kept as the pose reference for idle, listening, checking, correct, correction, and Bucket List update states.</p>
+          </div>
+          <span class="tag">Pose reference</span>
+        </div>
+        <img src="../melo-bucket-list-concepts/assets/melo-animation-storyboard.png" alt="Melo animation pose reference sheet." />
+      </section>
+
+      <p class="tail-rule">
+        Tail lock: Melo's tail should attach naturally to the rear base, taper into an open inward curl toward the belly, and avoid any wheel, ring, bullseye, disk, or detached spiral silhouette in every future prompt and commissioned illustration.
+      </p>
+    </main>
+  </body>
+</html>

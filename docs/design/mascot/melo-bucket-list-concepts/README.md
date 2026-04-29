@@ -88,6 +88,10 @@ After that, use the locked base as the reference for every future prompt or comm
 - `assets/bucket-list-map-concept.png`
 - `assets/practice-quiz-melo-concept.png`
 
+Related flow board:
+
+- `../practice-flow-storyboard/index.html`
+
 ## Next Implementation Design Packet
 
 The next packet should turn these into native handoff specs:

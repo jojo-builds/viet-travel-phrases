@@ -7,6 +7,7 @@ Last updated: 2026-04-30
 
 - Local board: `docs/design/mascot/mascot-visual-system.html`
 - Locked Melo board: `docs/design/mascot/melo-bucket-list-concepts/index.html`
+- Practice flow storyboard: `docs/design/mascot/practice-flow-storyboard/index.html`
 - Full board capture: `docs/design/mascot/assets/mascot-visual-system-board.png`
 - App-flow composites:
   - `docs/design/mascot/assets/practice-hub-with-mascot.png`
