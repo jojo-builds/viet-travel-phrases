@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "348e2a7f4865ae7525a7c1dbe77326bdf2267324e72be0d8157a3bdede8b7f2a",
+    "databaseSha256": "b4c27312b127418cc18a605519261e40c7a7f44a38d4a43e267c32d06dc9f013",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -103,6 +103,7 @@
     "phraseSectionRouteMismatchCount": 0,
     "visiblePhraseTextMismatchCount": 0,
     "pageTitlePhraseTextMismatchCount": 0,
+    "pageEnglishTitlePhraseTextMismatchCount": 0,
     "audioUsageMismatchCount": 0,
     "badBreakdownGlossCount": 0,
     "badBreakdownGlossSample": [],

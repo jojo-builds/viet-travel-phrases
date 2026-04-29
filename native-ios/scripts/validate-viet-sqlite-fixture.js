@@ -215,6 +215,13 @@ function main() {
     WHERE lower(trim(pp.title)) != lower(trim(p.target_text));
   `), "canonical phrase pages whose title differs from their canonical phrase text");
 
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page pp
+    JOIN phrase p ON p.id = pp.phrase_id
+    WHERE lower(trim(pp.english_title)) != lower(trim(p.english_text));
+  `), "canonical phrase pages whose English title differs from their canonical English phrase");
+
   assertEqual(
     sqliteValue("SELECT canonical_page_id FROM page_alias WHERE alias_id = 'viet-polite-hello';"),
     "viet-phrase-polite-1",
@@ -426,6 +433,7 @@ function main() {
   assertEqual(report.validation.sectionlessCanonicalPageCount, 0, "report sectionless pages");
   assertEqual(report.validation.brokenRelationCount, 0, "report broken relation count");
   assertEqual(report.validation.searchDocumentsWithMissingPageTargets, 0, "report search target count");
+  assertEqual(report.validation.pageEnglishTitlePhraseTextMismatchCount, 0, "report page English title mismatch count");
   assertEqual(report.validation.audioUsageMismatchCount, 0, "report audio mismatch count");
   assertEqual(report.validation.badBreakdownGlossCount, 0, "report bad breakdown gloss count");
   assertEqual(report.validation.bannedUserFacingMatchCount, 0, "report banned wording count");

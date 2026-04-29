@@ -364,7 +364,7 @@ function main() {
       language_pack_id: languagePackID,
       phrase_id: phrase.id,
       title: authoredPage?.title ?? phrase.targetText,
-      english_title: authoredPage?.englishTitle ?? phrase.englishText,
+      english_title: phrase.englishText,
       summary: pageSummaryForPhrase(phrase, authoredPage, family),
       icon_name: authoredPage?.iconName ?? scenario?.symbolName ?? "text.bubble.fill",
       tint_name: authoredPage?.tintName ?? scenario?.tintName ?? "gray",
@@ -1504,6 +1504,12 @@ function main() {
     JOIN phrase p ON p.id = pp.phrase_id
     WHERE lower(trim(pp.title)) != lower(trim(p.target_text));
   `));
+  const pageEnglishTitlePhraseTextMismatchCount = Number(sqliteQuery(`
+    SELECT count(*)
+    FROM phrase_page pp
+    JOIN phrase p ON p.id = pp.phrase_id
+    WHERE lower(trim(pp.english_title)) != lower(trim(p.english_text));
+  `));
   const audioUsageMismatchCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM audio_usage au
@@ -1623,6 +1629,7 @@ function main() {
       phraseSectionRouteMismatchCount,
       visiblePhraseTextMismatchCount,
       pageTitlePhraseTextMismatchCount,
+      pageEnglishTitlePhraseTextMismatchCount,
       audioUsageMismatchCount,
       badBreakdownGlossCount: badBreakdownGlossRows.length,
       badBreakdownGlossSample: badBreakdownGlossRows.slice(0, 20),
