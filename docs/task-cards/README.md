@@ -66,6 +66,17 @@ When Jojo gives a speech-to-text brain dump, the orchestrator should route it in
 
 Important ideas should not require Jojo to ask "what about this?" later.
 
+## Research Output Rule
+
+Research is not done if it only lives in chat context. A research worker must write a
+human-readable artifact in `docs/research/`, `docs/design/`, `docs/practice/`, or
+another clear product-doc folder, then write a short receipt in `docs/task-results/`
+when assigned through a task card.
+
+Every research artifact must include a `Folded Into` section naming the decisions,
+task cards, docs, prototypes, or code that changed because of the research. If
+nothing was folded in yet, it must say what is waiting and who owns the next move.
+
 ## Peer Review Default
 
 Meaningful task cards should ask for one focused read-only peer reviewer near the end. The reviewer checks Task Done, boundaries, validation, and obvious missed issues.
