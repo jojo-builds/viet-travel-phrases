@@ -78,8 +78,15 @@ final class AppChromeTests: XCTestCase {
 
     func testDetailLaunchArgumentTakesPriorityOverSearchShortcut() {
         XCTAssertEqual(
-            AppShellView.initialRoute(for: ["SpeakLocalNative", "--search", "--detail-page", "viet-hello-anh"]),
-            .detailPage("viet-hello-anh")
+            AppShellView.initialRoute(for: ["SpeakLocalNative", "--search", "--detail-page", "viet-phrase-hello-chao-anh"]),
+            .detailPage("viet-phrase-hello-chao-anh")
+        )
+    }
+
+    func testDetailLaunchArgumentCanonicalizesLegacyAlias() {
+        XCTAssertEqual(
+            AppShellView.initialRoute(for: ["SpeakLocalNative", "--detail-page", "viet-hello-anh"]),
+            .detailPage("viet-phrase-hello-chao-anh")
         )
     }
 
@@ -105,6 +112,22 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseRowNavigationSuppressesCanonicalSelfLinks() {
+        XCTAssertNil(
+            PhraseRowNavigation.destinationPageID(
+                for: "viet-hello-anh",
+                currentPageID: "viet-phrase-hello-chao-anh"
+            )
+        )
+        XCTAssertEqual(
+            PhraseRowNavigation.destinationPageID(
+                for: "viet-phrase-hello-chao-chi",
+                currentPageID: "viet-phrase-hello-chao-anh"
+            ),
+            "viet-phrase-hello-chao-chi"
+        )
+    }
+
     func testDetailPageChromeMatchesPhrasePageChrome() {
         let chrome = AppChrome(route: .detailPage("viet-local-greetings"))
 
@@ -116,24 +139,24 @@ final class AppChromeTests: XCTestCase {
     func testForwardDetailNavigationRequestsTopScroll() {
         var navigation = AppShellNavigationState()
 
-        navigation.openDetail("viet-hello-anh")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
 
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh"])
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 1)
 
-        navigation.openDetail("viet-hello-chi")
+        navigation.openDetail("viet-phrase-hello-chao-chi")
 
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh", "viet-hello-chi"])
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh", "viet-phrase-hello-chao-chi"])
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 2)
     }
 
     func testOpeningRootFromCatalogUsesSQLiteCanonicalDetailRoute() {
-        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
 
         navigation.openDetail(PhrasePage.xinChao.id)
 
         XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-polite-1"))
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh", "viet-phrase-polite-1"])
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh", "viet-phrase-polite-1"])
         XCTAssertEqual(navigation.rootScrollToTopTrigger, 0)
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 1)
     }
@@ -141,15 +164,15 @@ final class AppChromeTests: XCTestCase {
     func testHomeOpensDetailAndBackReturnsHome() {
         var navigation = AppShellNavigationState()
 
-        navigation.openDetail("viet-hello-anh")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
 
-        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-hello-anh"))
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh"])
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-hello-chao-anh"))
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
 
         navigation.goBack()
 
         XCTAssertEqual(navigation.currentRoute, .home)
-        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-hello-anh")])
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-hello-chao-anh")])
     }
 
     func testOpeningPhraseRootFromHomeCanReturnHomeFromSQLiteCanonicalDetail() {
@@ -182,7 +205,7 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testOpeningHomeFromSearchClearsHistoryToHome() {
-        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
         navigation.openSearch()
 
         navigation.openHome()
@@ -197,7 +220,7 @@ final class AppChromeTests: XCTestCase {
     func testRepeatedDetailSearchHomeSearchFlowDoesNotTrapBackNavigation() {
         var navigation = AppShellNavigationState()
 
-        navigation.openDetail("viet-hello-anh")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
         navigation.openSearch()
         XCTAssertEqual(navigation.currentRoute, .search)
         XCTAssertEqual(navigation.backPreviewRoute, .detailPage("viet-phrase-hello-chao-anh"))
@@ -225,18 +248,18 @@ final class AppChromeTests: XCTestCase {
         navigation.openSaved()
         XCTAssertEqual(navigation.backPreviewRoute, .home)
 
-        navigation.openDetail("viet-hello-anh")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
         XCTAssertEqual(navigation.backPreviewRoute, .saved)
 
-        navigation.openDetail("viet-hello-chi")
-        XCTAssertEqual(navigation.backPreviewRoute, .detailPage("viet-hello-anh"))
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+        XCTAssertEqual(navigation.backPreviewRoute, .detailPage("viet-phrase-hello-chao-anh"))
     }
 
     func testSearchBackPreviewUsesRouteBelowSearch() {
-        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
         navigation.openSearch()
 
-        XCTAssertEqual(navigation.backPreviewRoute, .detailPage("viet-hello-anh"))
+        XCTAssertEqual(navigation.backPreviewRoute, .detailPage("viet-phrase-hello-chao-anh"))
 
         var homeSearchNavigation = AppShellNavigationState()
         homeSearchNavigation.openSearch()
@@ -245,18 +268,18 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testDuplicateCurrentDetailDoesNotRequestTopScroll() {
-        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
 
-        navigation.openDetail("viet-hello-anh")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
 
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh"])
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 0)
     }
 
     func testEdgeSwipeBackPopsOneDetailPage() {
         var navigation = AppShellNavigationState()
-        navigation.openDetail("viet-hello-anh")
-        navigation.openDetail("viet-hello-chi")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+        navigation.openDetail("viet-phrase-hello-chao-chi")
 
         let handled = navigation.handleBackSwipe(
             startX: 18,
@@ -264,21 +287,21 @@ final class AppChromeTests: XCTestCase {
         )
 
         XCTAssertTrue(handled)
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh"])
-        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-hello-chi")])
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-hello-chao-chi")])
     }
 
     func testBackSwipeIgnoresNonBackGestures() {
-        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
 
         XCTAssertFalse(navigation.handleBackSwipe(startX: 80, translation: CGSize(width: 120, height: 0)))
         XCTAssertFalse(navigation.handleBackSwipe(startX: 18, translation: CGSize(width: -120, height: 0)))
         XCTAssertFalse(navigation.handleBackSwipe(startX: 18, translation: CGSize(width: 120, height: 96)))
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh"])
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
     }
 
     func testBackSwipeClosesSearchBeforePoppingDetailPage() {
-        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
         navigation.isSearchPresented = true
 
         let handled = navigation.handleBackSwipe(
@@ -288,7 +311,7 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertTrue(handled)
         XCTAssertFalse(navigation.isSearchPresented)
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh"])
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
         XCTAssertEqual(navigation.forwardStack, [.search])
     }
 
@@ -299,79 +322,79 @@ final class AppChromeTests: XCTestCase {
 
     func testForwardStackRestoresAPoppedDetailPage() {
         var navigation = AppShellNavigationState()
-        navigation.openDetail("viet-hello-anh")
-        navigation.openDetail("viet-hello-chi")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+        navigation.openDetail("viet-phrase-hello-chao-chi")
 
         navigation.goBack()
 
-        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-hello-anh"))
-        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-hello-chi")])
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-hello-chao-anh"))
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-hello-chao-chi")])
 
         navigation.goForward()
 
-        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-hello-chi"))
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-hello-chao-chi"))
         XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
     func testOpeningANewDetailAfterBackClearsForwardStack() {
         var navigation = AppShellNavigationState()
-        navigation.openDetail("viet-hello-anh")
-        navigation.openDetail("viet-hello-chi")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+        navigation.openDetail("viet-phrase-hello-chao-chi")
         navigation.goBack()
 
-        navigation.openDetail("viet-hello-em")
+        navigation.openDetail("viet-phrase-hello-chao-em")
 
-        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh", "viet-hello-em"])
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh", "viet-phrase-hello-chao-em"])
         XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
     func testRenderedDetailPagesKeepOnlyActiveAndImmediateBackPage() {
         var navigation = AppShellNavigationState()
-        navigation.openDetail("viet-hello-anh")
-        navigation.openDetail("viet-hello-chi")
-        navigation.openDetail("viet-hello-em")
-        navigation.openDetail("viet-hello-ba")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+        navigation.openDetail("viet-phrase-hello-chao-em")
+        navigation.openDetail("viet-phrase-hello-chao-ba")
 
         XCTAssertEqual(navigation.detailPath, [
-            "viet-hello-anh",
-            "viet-hello-chi",
-            "viet-hello-em",
-            "viet-hello-ba",
+            "viet-phrase-hello-chao-anh",
+            "viet-phrase-hello-chao-chi",
+            "viet-phrase-hello-chao-em",
+            "viet-phrase-hello-chao-ba",
         ])
         XCTAssertEqual(navigation.renderedDetailPageIDs, [
-            "viet-hello-em",
-            "viet-hello-ba",
+            "viet-phrase-hello-chao-em",
+            "viet-phrase-hello-chao-ba",
         ])
 
         navigation.goBack()
 
         XCTAssertEqual(navigation.renderedDetailPageIDs, [
-            "viet-hello-chi",
-            "viet-hello-em",
+            "viet-phrase-hello-chao-chi",
+            "viet-phrase-hello-chao-em",
         ])
-        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-hello-ba")])
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-hello-chao-ba")])
     }
 
     func testRenderedDetailPagesKeepVisitIdentityForRevisitedPhrase() {
         var navigation = AppShellNavigationState()
-        navigation.openDetail("viet-hello-anh")
-        navigation.openDetail("viet-hello-chi")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+        navigation.openDetail("viet-phrase-hello-chao-chi")
 
         let originalRenderedPages = navigation.renderedDetailPages
 
-        navigation.openDetail("viet-hello-anh")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
 
         XCTAssertEqual(navigation.detailPath, [
-            "viet-hello-anh",
-            "viet-hello-chi",
-            "viet-hello-anh",
+            "viet-phrase-hello-chao-anh",
+            "viet-phrase-hello-chao-chi",
+            "viet-phrase-hello-chao-anh",
         ])
         XCTAssertEqual(navigation.renderedDetailPageIDs, [
-            "viet-hello-chi",
-            "viet-hello-anh",
+            "viet-phrase-hello-chao-chi",
+            "viet-phrase-hello-chao-anh",
         ])
         XCTAssertNotEqual(originalRenderedPages.first?.id, navigation.renderedDetailPages.first?.id)
-        XCTAssertEqual(navigation.renderedDetailPages.last?.id, "2-viet-hello-anh")
+        XCTAssertEqual(navigation.renderedDetailPages.last?.id, "2-viet-phrase-hello-chao-anh")
     }
 
     func testSearchBackCanBeForwardedLikeBrowserHistory() {
@@ -414,7 +437,7 @@ final class AppChromeTests: XCTestCase {
 
     func testForwardSwipeRestoresForwardRoute() {
         var navigation = AppShellNavigationState()
-        navigation.openDetail("viet-hello-anh")
+        navigation.openDetail("viet-phrase-hello-chao-anh")
         navigation.goBack()
 
         let handled = navigation.handleForwardSwipe(
@@ -422,7 +445,7 @@ final class AppChromeTests: XCTestCase {
         )
 
         XCTAssertTrue(handled)
-        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-hello-anh"))
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-hello-chao-anh"))
         XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
@@ -494,12 +517,12 @@ final class LocalUserIntentStoreTests: XCTestCase {
     func testRecentPagesUseCanonicalIDsAndMoveReopenedPageToFront() {
         let store = LocalUserIntentStore(defaults: defaults)
 
-        store.recordOpenedPage("viet-hello-anh", source: .home)
+        store.recordOpenedPage("viet-phrase-hello-chao-anh", source: .home)
         store.recordOpenedPage("viet-thank-you", source: .search)
-        store.recordOpenedPage("viet-hello-anh", source: .article)
+        store.recordOpenedPage("viet-phrase-hello-chao-anh", source: .article)
         store.recordOpenedPage("missing-page", source: .article)
 
-        XCTAssertEqual(store.recentPageIDs, ["viet-hello-anh", "viet-phrase-polite-2"])
+        XCTAssertEqual(store.recentPageIDs, ["viet-phrase-hello-chao-anh", "viet-phrase-polite-2"])
         XCTAssertEqual(store.recentPages.first?.source, .article)
     }
 

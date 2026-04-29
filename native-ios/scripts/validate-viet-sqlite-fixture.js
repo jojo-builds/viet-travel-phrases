@@ -585,6 +585,15 @@ function main() {
        OR NOT EXISTS (SELECT 1 FROM phrase_page pp WHERE pp.id = r.target_id);
   `), "broken phrase-page relation edges");
 
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section_item psi
+    JOIN phrase p ON p.id = psi.target_id
+    JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+    WHERE psi.item_kind = 'phrase'
+      AND COALESCE(psi.note, '') != pp.id;
+  `), "phrase rows without exact canonical destination notes");
+
   assertEqual(sqliteValue(`
     SELECT count(*)
     FROM sqlite_master

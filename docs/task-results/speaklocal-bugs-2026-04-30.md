@@ -21,7 +21,7 @@ Reviewer gate:
 
 ## Bug 2 - Hero subtitle must be the English phrase
 
-Commit: pending
+Commit: 5c288ff
 
 Changes:
 - Changed listing article hero subtitles from `page.summary` to `page.englishTitle`.
@@ -34,3 +34,21 @@ Validation:
 
 Reviewer gate:
 - APPROVED. The visible hero subtitle now comes from the English phrase field, while article teaching copy remains below the hero.
+
+## Bug 3 - Canonical link and duplicate-row audit
+
+Commit: pending
+
+Changes:
+- Updated native navigation tests to expect canonical detail page IDs instead of stale legacy aliases.
+- Added a launch-argument regression proving a legacy alias opens its canonical page.
+- Added a phrase-row navigation regression proving current-page/self rows do not show a navigable destination.
+- Extended the SQLite validator so every phrase section row must carry the exact canonical page destination note for its phrase.
+
+Validation:
+- `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'id=91BDCCB0-0728-40AB-8150-B6DCB96BE799' -only-testing:SpeakLocalNativeTests/AppChromeTests` passed, 39 tests.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed.
+- SQL proof: phrase rows without exact canonical destination notes = 0; duplicate canonical normalized groups = 0.
+
+Reviewer gate:
+- APPROVED. Runtime tests now assert canonical route identity, legacy aliases still resolve, broken phrase-row destinations are validator-blocked, and self links are suppressed by `PhraseRowNavigation`.
