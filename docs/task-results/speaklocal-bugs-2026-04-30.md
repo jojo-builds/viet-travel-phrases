@@ -160,7 +160,7 @@ Reviewer gate:
 
 ## Bug 10 - Dense text and homepage/glass polish
 
-Commit: pending
+Commit: 1d09e88
 
 Changes:
 - Kept the SQLite dense-text validator active and re-ran it after UI changes.
@@ -174,3 +174,19 @@ Validation:
 
 Reviewer gate:
 - APPROVED. Home situation cards now use stable card/icon metrics, dense text remains validator-blocked, and static chrome has a soft separation layer from scrolling content.
+
+## Bug 11 - Audio first-tap playback
+
+Commit: pending
+
+Changes:
+- Configured and activated the iOS audio session before the first playback attempt.
+- Prepared the player before calling `play()` and kept the active player retained after the first tap.
+- Added an injectable player/session path so first-tap ordering is covered by a native test.
+- Kept missing audio disabled/no-op; no audio files were generated or modified.
+
+Validation:
+- `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'id=91BDCCB0-0728-40AB-8150-B6DCB96BE799' -only-testing:SpeakLocalNativeTests/PhrasePageFixtureTests/testAudioPlaybackServiceConfiguresSessionBeforeFirstPlayback -only-testing:SpeakLocalNativeTests/PhrasePageFixtureTests/testSpeakerButtonOnlyTreatsBundledAudioAsPlayable` passed, 2 tests.
+
+Reviewer gate:
+- APPROVED. The fake-player test proves the first invocation order is audio session -> make player -> prepare -> play, the second invocation skips redundant session setup, and missing-audio keys still do not present as playable.

@@ -1093,6 +1093,37 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertFalse(AudioSpeakerButton.isPlayableAudioKey("missing-audio-key"))
     }
 
+    func testAudioPlaybackServiceConfiguresSessionBeforeFirstPlayback() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        var events: [String] = []
+        var createdPlayer: RecordingAudioPlayer?
+
+        let service = AudioPlaybackService(
+            manifest: manifest,
+            configureAudioSession: {
+                events.append("session")
+            },
+            makePlayer: { _ in
+                events.append("make-player")
+                let player = RecordingAudioPlayer { event in
+                    events.append(event)
+                }
+                createdPlayer = player
+                return player
+            }
+        )
+
+        XCTAssertTrue(service.play(audioKey: "polite-1", rate: 0.75))
+        XCTAssertEqual(events, ["session", "make-player", "prepare", "play"])
+        XCTAssertEqual(createdPlayer?.enableRate, true)
+        XCTAssertEqual(createdPlayer?.rate ?? 0, 0.75, accuracy: 0.001)
+
+        events.removeAll()
+
+        XCTAssertTrue(service.play(audioKey: "polite-1"))
+        XCTAssertEqual(events, ["make-player", "prepare", "play"])
+    }
+
     func testAllResolvedPhraseOptionAudioKeysPointToBundledFiles() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let rootOptions = PhrasePage.xinChao.quickSay
@@ -1147,5 +1178,26 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
 
         XCTAssertTrue(missingContexts.isEmpty, missingContexts.joined(separator: "\n"))
+    }
+}
+
+private final class RecordingAudioPlayer: AudioPlayable {
+    var enableRate = false
+    var rate: Float = 1.0
+
+    private let record: (String) -> Void
+
+    init(record: @escaping (String) -> Void) {
+        self.record = record
+    }
+
+    func prepareToPlay() -> Bool {
+        record("prepare")
+        return true
+    }
+
+    func play() -> Bool {
+        record("play")
+        return true
     }
 }

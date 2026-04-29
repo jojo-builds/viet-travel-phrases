@@ -86,33 +86,74 @@ struct AudioAssetManifest {
     }
 }
 
+protocol AudioPlayable: AnyObject {
+    var enableRate: Bool { get set }
+    var rate: Float { get set }
+
+    @discardableResult
+    func prepareToPlay() -> Bool
+
+    @discardableResult
+    func play() -> Bool
+}
+
+extension AVAudioPlayer: AudioPlayable {}
+
 final class AudioPlaybackService {
     static let shared = AudioPlaybackService()
 
     private let manifest: AudioAssetManifest?
-    private var player: AVAudioPlayer?
+    private let configureAudioSession: () throws -> Void
+    private let makePlayer: (URL) throws -> AudioPlayable
+    private var player: AudioPlayable?
+    private var hasConfiguredAudioSession = false
 
-    init(manifest: AudioAssetManifest? = .main) {
+    init(
+        manifest: AudioAssetManifest? = .main,
+        configureAudioSession: @escaping () throws -> Void = {
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playback, mode: .default, options: [])
+            try session.setActive(true)
+        },
+        makePlayer: @escaping (URL) throws -> AudioPlayable = { url in
+            try AVAudioPlayer(contentsOf: url)
+        }
+    ) {
         self.manifest = manifest
+        self.configureAudioSession = configureAudioSession
+        self.makePlayer = makePlayer
     }
 
-    func play(audioKey: String?, rate: Double = 1.0) {
+    @discardableResult
+    func play(audioKey: String?, rate: Double = 1.0) -> Bool {
         guard
             let url = manifest?.url(for: audioKey),
             FileManager.default.fileExists(atPath: url.path)
         else {
-            return
+            return false
         }
 
         do {
-            let player = try AVAudioPlayer(contentsOf: url)
+            try configureAudioSessionIfNeeded()
+            let player = try makePlayer(url)
             player.enableRate = true
             player.rate = Float(rate)
             player.prepareToPlay()
-            player.play()
+            let didStart = player.play()
             self.player = player
+            return didStart
         } catch {
             assertionFailure("Unable to play audio \(url.lastPathComponent): \(error)")
+            return false
         }
+    }
+
+    private func configureAudioSessionIfNeeded() throws {
+        guard !hasConfiguredAudioSession else {
+            return
+        }
+
+        try configureAudioSession()
+        hasConfiguredAudioSession = true
     }
 }
