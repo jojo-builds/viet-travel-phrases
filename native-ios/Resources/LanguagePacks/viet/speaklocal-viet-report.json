@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:26a10e3e4b8dd768",
-    "generatedAt": "source-hash:26a10e3e4b8dd768"
+    "contentVersion": "viet-sqlite-fixture:dc31537169c35429",
+    "generatedAt": "source-hash:dc31537169c35429"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "c20ef72068f8e8bfa6f05901eebe1e021ff2f665dc578995f99dcdc099760b77"
+      "sha256": "4a160186dc0f039ee757078d5645ce03020e3b3287c1813b02dbc0cd501585c3"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "051c653dc1872aba4c48fbe43f0723623fae4659622101306a86fdffba79ed30"
+      "sha256": "ecbf4795c5f0780ae20339d682e405b14a17e4948d328919745d118d32b9e272"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "937b594a5be31a837aaf973b7349bd19f0dac93331b82aa27f6ea491a0b9e398",
+    "databaseSha256": "6091fc56c47534af3151aa2c43380360f3e8f53cde18eeb12a6c4b7f75df8f2d",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -50,49 +50,49 @@
       "ok": true
     },
     "clusters": {
-      "expected": 915,
-      "actual": 915,
+      "expected": 924,
+      "actual": 924,
       "ok": true
     },
     "phrases": {
-      "expected": 934,
-      "actual": 934,
+      "expected": 943,
+      "actual": 943,
       "ok": true
     },
     "canonicalPhrasePages": {
-      "expected": 926,
-      "actual": 926,
+      "expected": 935,
+      "actual": 935,
       "ok": true
     },
     "authoredPagesOrAliases": {
-      "expected": 181,
-      "actual": 181,
+      "expected": 190,
+      "actual": 190,
       "ok": true
     }
   },
   "generatedCounts": {
     "languagePacks": 1,
     "scenarios": 18,
-    "clusters": 915,
-    "clusterMembers": 934,
-    "phrases": 934,
-    "pages": 926,
-    "aliases": 964,
-    "pageCategories": 954,
-    "sections": 6116,
-    "sectionItems": 10491,
-    "breakdownTokens": 6039,
-    "relations": 3560,
-    "searchDocuments": 934,
+    "clusters": 924,
+    "clusterMembers": 943,
+    "phrases": 943,
+    "pages": 935,
+    "aliases": 984,
+    "pageCategories": 969,
+    "sections": 6175,
+    "sectionItems": 10583,
+    "breakdownTokens": 6071,
+    "relations": 3611,
+    "searchDocuments": 943,
     "audioAssets": 3756,
-    "audioUsages": 3369,
+    "audioUsages": 3473,
     "audioTextDedupeRows": 2343,
     "missingAudioAuditRows": 0
   },
   "validation": {
     "integrityCheck": "ok",
     "foreignKeyCheckRows": 0,
-    "ftsRowCount": 934,
+    "ftsRowCount": 943,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
     "brokenRelationCount": 0,
@@ -223,9 +223,9 @@
     ]
   },
   "canonicalIdentity": {
-    "canonicalPageCount": 926,
-    "sourcePhraseRowCount": 934,
-    "phrasesResolvedToCanonicalPages": 934,
+    "canonicalPageCount": 935,
+    "sourcePhraseRowCount": 943,
+    "phrasesResolvedToCanonicalPages": 943,
     "duplicateNormalizedTargetTextGroupCount": 6,
     "resolvedDuplicateNormalizedTargetTextGroups": [
       {
@@ -310,7 +310,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 3560,
+    "relationCount": 3611,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -326,7 +326,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 948
+        "count": 965
       },
       {
         "relationType": "same_need_alt_context",
@@ -334,7 +334,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 2574
+        "count": 2608
       }
     ]
   },
@@ -342,7 +342,7 @@
     "manifestEntries": 3756,
     "uniqueNormalizedSpokenTextCount": 2343,
     "assets": 3756,
-    "usages": 3369,
+    "usages": 3473,
     "missingAudioAuditRows": 0,
     "missingAudioAuditSample": []
   },
@@ -375,7 +375,7 @@
     ]
   },
   "notes": [
-    "The native Swift runtime uses the bundled SQLite phrase graph by default unless explicitly disabled for fallback/testing.",
+    "The native Swift runtime uses the bundled SQLite phrase graph by default unless explicitly disabled for JSON resource testing.",
     "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet and remains reproducible from catalog, authored page, and audio manifest inputs.",
     "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
     "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",

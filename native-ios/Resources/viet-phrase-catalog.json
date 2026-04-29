@@ -1,8 +1,8 @@
 {
   "metadata": {
     "source": "../../content-draft/viet/phrase-source.csv",
-    "phraseCount": 934,
-    "familyCount": 915,
+    "phraseCount": 943,
+    "familyCount": 924,
     "scenarioCount": 18
   },
   "scenarios": [
@@ -2324,7 +2324,7 @@
       "pageID": "viet-family-food-has-peanuts",
       "scenarioID": "food-drink",
       "familyTitle": "Check for peanuts directly",
-      "summary": "Peanut risk needs a fast ingredient question of its own because the free allergy baseline is broader than the real moment at the table.",
+      "summary": "Peanut risk needs a fast ingredient question of its own because the general allergy phrase is broader than the real moment at the table.",
       "primaryPhraseID": "food-premium-has-peanuts",
       "accessTier": "premium",
       "phraseIDs": [
@@ -2456,7 +2456,7 @@
       "pageID": "viet-family-phone-activate-sim",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Ask for help activating the SIM",
-      "summary": "SIM purchase is the free baseline; activation help is the premium recovery step when setup gets stuck.",
+      "summary": "SIM purchase gets you to the counter; activation help is the premium recovery step when setup gets stuck.",
       "primaryPhraseID": "phone-premium-activate-sim",
       "accessTier": "premium",
       "phraseIDs": [
@@ -2468,7 +2468,7 @@
       "pageID": "viet-family-help-translate-for-me",
       "scenarioID": "problems-help",
       "familyTitle": "Ask someone to translate for you",
-      "summary": "Human translation support is premium-value recovery because it rescues the interaction when your phrase alone is no longer enough.",
+      "summary": "Human translation help is premium-value recovery because it rescues the interaction when your phrase alone is no longer enough.",
       "primaryPhraseID": "help-premium-translate-for-me",
       "accessTier": "premium",
       "phraseIDs": [
@@ -11114,6 +11114,114 @@
       "phraseIDs": [
         "smalltalk-nice-to-meet-you"
       ]
+    },
+    {
+      "id": "acknowledge-co",
+      "pageID": "viet-family-acknowledge-co",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Có",
+      "summary": "A short yes for yes/no questions about availability, presence, or permission.",
+      "primaryPhraseID": "acknowledge-co",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-co"
+      ]
+    },
+    {
+      "id": "acknowledge-khong",
+      "pageID": "viet-family-acknowledge-khong",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Không",
+      "summary": "A short no for clear yes/no answers before adding a softer phrase if needed.",
+      "primaryPhraseID": "acknowledge-khong",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-khong"
+      ]
+    },
+    {
+      "id": "acknowledge-duoc",
+      "pageID": "viet-family-acknowledge-duoc",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Được",
+      "summary": "A compact okay when a plan, option, or suggestion works for you.",
+      "primaryPhraseID": "acknowledge-duoc",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-duoc"
+      ]
+    },
+    {
+      "id": "acknowledge-da-chao-anh",
+      "pageID": "viet-family-acknowledge-da-chao-anh",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Dạ, chào anh",
+      "summary": "A respectful hello to an older man or adult male staff member.",
+      "primaryPhraseID": "acknowledge-da-chao-anh",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-da-chao-anh"
+      ]
+    },
+    {
+      "id": "acknowledge-da-chao-chi",
+      "pageID": "viet-family-acknowledge-da-chao-chi",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Dạ, chào chị",
+      "summary": "A respectful hello to an older woman or adult female staff member.",
+      "primaryPhraseID": "acknowledge-da-chao-chi",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-da-chao-chi"
+      ]
+    },
+    {
+      "id": "acknowledge-da-chao-co",
+      "pageID": "viet-family-acknowledge-da-chao-co",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Dạ, chào cô",
+      "summary": "A respectful hello to an aunt-age woman, teacher, shop owner, or older helper.",
+      "primaryPhraseID": "acknowledge-da-chao-co",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-da-chao-co"
+      ]
+    },
+    {
+      "id": "acknowledge-da-chao-chu",
+      "pageID": "viet-family-acknowledge-da-chao-chu",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Dạ, chào chú",
+      "summary": "A respectful hello to an uncle-age man, older male helper, or neighborhood adult.",
+      "primaryPhraseID": "acknowledge-da-chao-chu",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-da-chao-chu"
+      ]
+    },
+    {
+      "id": "acknowledge-da-chao-ong",
+      "pageID": "viet-family-acknowledge-da-chao-ong",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Dạ, chào ông",
+      "summary": "A respectful hello to an elderly man or grandfather-age local.",
+      "primaryPhraseID": "acknowledge-da-chao-ong",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-da-chao-ong"
+      ]
+    },
+    {
+      "id": "acknowledge-da-chao-ba",
+      "pageID": "viet-family-acknowledge-da-chao-ba",
+      "scenarioID": "polite-basics",
+      "familyTitle": "Dạ, chào bà",
+      "summary": "A respectful hello to an elderly woman or grandmother-age local.",
+      "primaryPhraseID": "acknowledge-da-chao-ba",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "acknowledge-da-chao-ba"
+      ]
     }
   ],
   "phrases": [
@@ -15848,7 +15956,7 @@
       "pronunciation": "Ban co the di cung toi duoc khong",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this when you need support going to the police desk, embassy, hospital, counter, or another stressful next stop.",
+      "context": "Use this when you need someone to go with you to the police desk, embassy, hospital, counter, or another stressful next stop.",
       "youMayHear": "",
       "searchAliases": [
         "come with me",
@@ -31456,6 +31564,215 @@
       "audioStatus": "ready",
       "emoji": "💬",
       "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-1; derived_from_page_id=viet-polite-hello; expansion_reason=common greeting follow-up taught after Xin chào"
+    },
+    {
+      "id": "acknowledge-co",
+      "familyID": "acknowledge-co",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-food-5-first",
+      "englishText": "Yes / there is",
+      "targetText": "Có",
+      "canonicalTargetText": "Có",
+      "pronunciation": "koh",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when someone asks a yes/no question and the answer is simply yes, especially about whether something exists or is available.",
+      "youMayHear": "",
+      "searchAliases": [
+        "có",
+        "co",
+        "yes",
+        "there is"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "🙂",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ page needs the plain yes answer that travelers hear after polite acknowledgment"
+    },
+    {
+      "id": "acknowledge-khong",
+      "familyID": "acknowledge-khong",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-polite-6-first",
+      "englishText": "No",
+      "targetText": "Không",
+      "canonicalTargetText": "Không",
+      "pronunciation": "khong",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when the answer is no and the moment is simple enough that a short clear answer is better than extra explanation.",
+      "youMayHear": "",
+      "searchAliases": [
+        "không",
+        "khong",
+        "no"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "🙂",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ page distinguishes polite acknowledgment from the plain no answer"
+    },
+    {
+      "id": "acknowledge-duoc",
+      "familyID": "acknowledge-duoc",
+      "scenarioID": "polite-basics",
+      "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first",
+      "englishText": "Okay / that works",
+      "targetText": "Được",
+      "canonicalTargetText": "Được",
+      "pronunciation": "duhk",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when you accept a suggestion, agree to a simple plan, or want to say that an option works.",
+      "youMayHear": "",
+      "searchAliases": [
+        "được",
+        "duoc",
+        "okay",
+        "that works"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "🙂",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ page needs the practical okay/works answer separate from yes/no"
+    },
+    {
+      "id": "acknowledge-da-chao-anh",
+      "familyID": "acknowledge-da-chao-anh",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-da-chao-anh",
+      "englishText": "Respectful hello to an older man",
+      "targetText": "Dạ, chào anh",
+      "canonicalTargetText": "Dạ, chào anh",
+      "pronunciation": "yah chow anh",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this at a counter, hotel desk, cafe, taxi, tour desk, or clinic when the man is older or in a service role.",
+      "youMayHear": "",
+      "searchAliases": [
+        "dạ chào anh",
+        "da chao anh",
+        "respectful hello older man"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ lesson naturally expands into respectful adult greetings with exact relationship words"
+    },
+    {
+      "id": "acknowledge-da-chao-chi",
+      "familyID": "acknowledge-da-chao-chi",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-da-chao-chi",
+      "englishText": "Respectful hello to an older woman",
+      "targetText": "Dạ, chào chị",
+      "canonicalTargetText": "Dạ, chào chị",
+      "pronunciation": "yah chow chee",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this at a counter, hotel desk, cafe, shop, tour desk, or clinic when the woman is older or in a service role.",
+      "youMayHear": "",
+      "searchAliases": [
+        "dạ chào chị",
+        "da chao chi",
+        "respectful hello older woman"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ lesson naturally expands into respectful adult greetings with exact relationship words"
+    },
+    {
+      "id": "acknowledge-da-chao-co",
+      "familyID": "acknowledge-da-chao-co",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-da-chao-co",
+      "englishText": "Respectful hello to an aunt-age woman",
+      "targetText": "Dạ, chào cô",
+      "canonicalTargetText": "Dạ, chào cô",
+      "pronunciation": "yah chow koh",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this for an older woman who feels more aunt-age than older-sister age, especially in shops, homes, classrooms, or neighborhood moments.",
+      "youMayHear": "",
+      "searchAliases": [
+        "dạ chào cô",
+        "da chao co",
+        "respectful hello aunt"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ lesson naturally expands into respectful aunt-age greetings"
+    },
+    {
+      "id": "acknowledge-da-chao-chu",
+      "familyID": "acknowledge-da-chao-chu",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-da-chao-chu",
+      "englishText": "Respectful hello to an uncle-age man",
+      "targetText": "Dạ, chào chú",
+      "canonicalTargetText": "Dạ, chào chú",
+      "pronunciation": "yah chow choo",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this for an older man who feels more uncle-age than older-brother age, especially in shops, homestays, taxis, and local service moments.",
+      "youMayHear": "",
+      "searchAliases": [
+        "dạ chào chú",
+        "da chao chu",
+        "respectful hello uncle"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ lesson naturally expands into respectful uncle-age greetings"
+    },
+    {
+      "id": "acknowledge-da-chao-ong",
+      "familyID": "acknowledge-da-chao-ong",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-da-chao-ong",
+      "englishText": "Respectful hello to an elderly man",
+      "targetText": "Dạ, chào ông",
+      "canonicalTargetText": "Dạ, chào ông",
+      "pronunciation": "yah chow ohng",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when greeting an elderly man and you want the first word to carry clear respect.",
+      "youMayHear": "",
+      "searchAliases": [
+        "dạ chào ông",
+        "da chao ong",
+        "respectful hello elderly man"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ lesson naturally expands into respectful elder greetings"
+    },
+    {
+      "id": "acknowledge-da-chao-ba",
+      "familyID": "acknowledge-da-chao-ba",
+      "scenarioID": "polite-basics",
+      "audioKey": "audio-phrase-da-chao-ba",
+      "englishText": "Respectful hello to an elderly woman",
+      "targetText": "Dạ, chào bà",
+      "canonicalTargetText": "Dạ, chào bà",
+      "pronunciation": "yah chow bah",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this when greeting an elderly woman and you want the first word to carry clear respect.",
+      "youMayHear": "",
+      "searchAliases": [
+        "dạ chào bà",
+        "da chao ba",
+        "respectful hello elderly woman"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "👋",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ lesson naturally expands into respectful elder greetings"
     }
   ]
 }

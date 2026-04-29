@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-04-29T15:32:14.038Z",
+  "generatedAt": "2026-04-29T15:54:05.226Z",
   "source": "../../../native-ios/Resources/viet-phrase-catalog.json",
   "tierOneFamilyCount": 150,
-  "resourceMainPageCount": 147,
+  "resourceMainPageCount": 145,
   "childPageCount": 14,
   "inventory": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "familyID": "polite-acknowledge",
-      "pageID": "viet-family-polite-acknowledge",
+      "pageID": "viet-acknowledge-da",
       "coverage": "authored-resource",
       "title": "Dạ"
     },
@@ -775,7 +775,7 @@
     },
     {
       "familyID": "v500-poli-basi-yes",
-      "pageID": "viet-family-v500-poli-basi-yes",
+      "pageID": "viet-acknowledge-dung",
       "coverage": "authored-resource",
       "title": "Đúng"
     },

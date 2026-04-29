@@ -7014,7 +7014,7 @@ const scenarios: AppScenario[] = [
         "id": "food-has-peanuts",
         "scenarioId": "food-drink",
         "title": "Check for peanuts directly",
-        "summary": "Peanut risk needs a fast ingredient question of its own because the free allergy baseline is broader than the real moment at the table.",
+        "summary": "Peanut risk needs a fast ingredient question of its own because the general allergy phrase is broader than the real moment at the table.",
         "accessTier": "premium",
         "primaryPhraseId": "food-premium-has-peanuts",
         "phraseIds": [
@@ -13376,7 +13376,7 @@ const scenarios: AppScenario[] = [
         "id": "phone-activate-sim",
         "scenarioId": "phone-internet-power",
         "title": "Ask for help activating the SIM",
-        "summary": "SIM purchase is the free baseline; activation help is the premium recovery step when setup gets stuck.",
+        "summary": "SIM purchase gets you to the counter; activation help is the premium recovery step when setup gets stuck.",
         "accessTier": "premium",
         "primaryPhraseId": "phone-premium-activate-sim",
         "phraseIds": [
@@ -16712,7 +16712,7 @@ const scenarios: AppScenario[] = [
         "id": "help-translate-for-me",
         "scenarioId": "problems-help",
         "title": "Ask someone to translate for you",
-        "summary": "Human translation support is premium-value recovery because it rescues the interaction when your phrase alone is no longer enough.",
+        "summary": "Human translation help is premium-value recovery because it rescues the interaction when your phrase alone is no longer enough.",
         "accessTier": "premium",
         "primaryPhraseId": "help-premium-translate-for-me",
         "phraseIds": [
@@ -17347,8 +17347,8 @@ const scenarios: AppScenario[] = [
         "sourceText": "Can you come with me?",
         "audioKey": "help-premium-come-with-me",
         "accessTier": "premium",
-        "context": "Use this when you need support going to the police desk, embassy, hospital, counter, or another stressful next stop.",
-        "usageNote": "Use this when you need support going to the police desk, embassy, hospital, counter, or another stressful next stop.",
+        "context": "Use this when you need someone to go with you to the police desk, embassy, hospital, counter, or another stressful next stop.",
+        "usageNote": "Use this when you need someone to go with you to the police desk, embassy, hospital, counter, or another stressful next stop.",
         "searchAliases": [
           "come with me",
           "can you come with me",
@@ -27441,6 +27441,105 @@ const scenarios: AppScenario[] = [
         "phraseIds": [
           "hello-chao-co"
         ]
+      },
+      {
+        "id": "acknowledge-co",
+        "scenarioId": "polite-basics",
+        "title": "Có",
+        "summary": "A short yes for yes/no questions about availability, presence, or permission.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-co",
+        "phraseIds": [
+          "acknowledge-co"
+        ]
+      },
+      {
+        "id": "acknowledge-khong",
+        "scenarioId": "polite-basics",
+        "title": "Không",
+        "summary": "A short no for clear yes/no answers before adding a softer phrase if needed.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-khong",
+        "phraseIds": [
+          "acknowledge-khong"
+        ]
+      },
+      {
+        "id": "acknowledge-duoc",
+        "scenarioId": "polite-basics",
+        "title": "Được",
+        "summary": "A compact okay when a plan, option, or suggestion works for you.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-duoc",
+        "phraseIds": [
+          "acknowledge-duoc"
+        ]
+      },
+      {
+        "id": "acknowledge-da-chao-anh",
+        "scenarioId": "polite-basics",
+        "title": "Dạ, chào anh",
+        "summary": "A respectful hello to an older man or adult male staff member.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-da-chao-anh",
+        "phraseIds": [
+          "acknowledge-da-chao-anh"
+        ]
+      },
+      {
+        "id": "acknowledge-da-chao-chi",
+        "scenarioId": "polite-basics",
+        "title": "Dạ, chào chị",
+        "summary": "A respectful hello to an older woman or adult female staff member.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-da-chao-chi",
+        "phraseIds": [
+          "acknowledge-da-chao-chi"
+        ]
+      },
+      {
+        "id": "acknowledge-da-chao-co",
+        "scenarioId": "polite-basics",
+        "title": "Dạ, chào cô",
+        "summary": "A respectful hello to an aunt-age woman, teacher, shop owner, or older helper.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-da-chao-co",
+        "phraseIds": [
+          "acknowledge-da-chao-co"
+        ]
+      },
+      {
+        "id": "acknowledge-da-chao-chu",
+        "scenarioId": "polite-basics",
+        "title": "Dạ, chào chú",
+        "summary": "A respectful hello to an uncle-age man, older male helper, or neighborhood adult.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-da-chao-chu",
+        "phraseIds": [
+          "acknowledge-da-chao-chu"
+        ]
+      },
+      {
+        "id": "acknowledge-da-chao-ong",
+        "scenarioId": "polite-basics",
+        "title": "Dạ, chào ông",
+        "summary": "A respectful hello to an elderly man or grandfather-age local.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-da-chao-ong",
+        "phraseIds": [
+          "acknowledge-da-chao-ong"
+        ]
+      },
+      {
+        "id": "acknowledge-da-chao-ba",
+        "scenarioId": "polite-basics",
+        "title": "Dạ, chào bà",
+        "summary": "A respectful hello to an elderly woman or grandmother-age local.",
+        "accessTier": "starter",
+        "primaryPhraseId": "acknowledge-da-chao-ba",
+        "phraseIds": [
+          "acknowledge-da-chao-ba"
+        ]
       }
     ],
     "phrases": [
@@ -28175,6 +28274,206 @@ const scenarios: AppScenario[] = [
           "hello older woman"
         ],
         "intentFamilyId": "hello-chao-co",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "acknowledge-co",
+        "scenarioId": "polite-basics",
+        "targetText": "Có",
+        "canonicalTargetText": "Có",
+        "pronunciation": "koh",
+        "sourceText": "Yes / there is",
+        "audioKey": "breakdown-food-5-first",
+        "accessTier": "starter",
+        "context": "Use this when someone asks a yes/no question and the answer is simply yes, especially about whether something exists or is available.",
+        "usageNote": "Use this when someone asks a yes/no question and the answer is simply yes, especially about whether something exists or is available.",
+        "searchAliases": [
+          "có",
+          "co",
+          "yes",
+          "there is"
+        ],
+        "intentFamilyId": "acknowledge-co",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "🙂"
+      },
+      {
+        "id": "acknowledge-khong",
+        "scenarioId": "polite-basics",
+        "targetText": "Không",
+        "canonicalTargetText": "Không",
+        "pronunciation": "khong",
+        "sourceText": "No",
+        "audioKey": "breakdown-polite-6-first",
+        "accessTier": "starter",
+        "context": "Use this when the answer is no and the moment is simple enough that a short clear answer is better than extra explanation.",
+        "usageNote": "Use this when the answer is no and the moment is simple enough that a short clear answer is better than extra explanation.",
+        "searchAliases": [
+          "không",
+          "khong",
+          "no"
+        ],
+        "intentFamilyId": "acknowledge-khong",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "🙂"
+      },
+      {
+        "id": "acknowledge-duoc",
+        "scenarioId": "polite-basics",
+        "targetText": "Được",
+        "canonicalTargetText": "Được",
+        "pronunciation": "duhk",
+        "sourceText": "Okay / that works",
+        "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first",
+        "accessTier": "starter",
+        "context": "Use this when you accept a suggestion, agree to a simple plan, or want to say that an option works.",
+        "usageNote": "Use this when you accept a suggestion, agree to a simple plan, or want to say that an option works.",
+        "searchAliases": [
+          "được",
+          "duoc",
+          "okay",
+          "that works"
+        ],
+        "intentFamilyId": "acknowledge-duoc",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "🙂"
+      },
+      {
+        "id": "acknowledge-da-chao-anh",
+        "scenarioId": "polite-basics",
+        "targetText": "Dạ, chào anh",
+        "canonicalTargetText": "Dạ, chào anh",
+        "pronunciation": "yah chow anh",
+        "sourceText": "Respectful hello to an older man",
+        "audioKey": "audio-phrase-da-chao-anh",
+        "accessTier": "starter",
+        "context": "Use this at a counter, hotel desk, cafe, taxi, tour desk, or clinic when the man is older or in a service role.",
+        "usageNote": "Use this at a counter, hotel desk, cafe, taxi, tour desk, or clinic when the man is older or in a service role.",
+        "searchAliases": [
+          "dạ chào anh",
+          "da chao anh",
+          "respectful hello older man"
+        ],
+        "intentFamilyId": "acknowledge-da-chao-anh",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "acknowledge-da-chao-chi",
+        "scenarioId": "polite-basics",
+        "targetText": "Dạ, chào chị",
+        "canonicalTargetText": "Dạ, chào chị",
+        "pronunciation": "yah chow chee",
+        "sourceText": "Respectful hello to an older woman",
+        "audioKey": "audio-phrase-da-chao-chi",
+        "accessTier": "starter",
+        "context": "Use this at a counter, hotel desk, cafe, shop, tour desk, or clinic when the woman is older or in a service role.",
+        "usageNote": "Use this at a counter, hotel desk, cafe, shop, tour desk, or clinic when the woman is older or in a service role.",
+        "searchAliases": [
+          "dạ chào chị",
+          "da chao chi",
+          "respectful hello older woman"
+        ],
+        "intentFamilyId": "acknowledge-da-chao-chi",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "acknowledge-da-chao-co",
+        "scenarioId": "polite-basics",
+        "targetText": "Dạ, chào cô",
+        "canonicalTargetText": "Dạ, chào cô",
+        "pronunciation": "yah chow koh",
+        "sourceText": "Respectful hello to an aunt-age woman",
+        "audioKey": "audio-phrase-da-chao-co",
+        "accessTier": "starter",
+        "context": "Use this for an older woman who feels more aunt-age than older-sister age, especially in shops, homes, classrooms, or neighborhood moments.",
+        "usageNote": "Use this for an older woman who feels more aunt-age than older-sister age, especially in shops, homes, classrooms, or neighborhood moments.",
+        "searchAliases": [
+          "dạ chào cô",
+          "da chao co",
+          "respectful hello aunt"
+        ],
+        "intentFamilyId": "acknowledge-da-chao-co",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "acknowledge-da-chao-chu",
+        "scenarioId": "polite-basics",
+        "targetText": "Dạ, chào chú",
+        "canonicalTargetText": "Dạ, chào chú",
+        "pronunciation": "yah chow choo",
+        "sourceText": "Respectful hello to an uncle-age man",
+        "audioKey": "audio-phrase-da-chao-chu",
+        "accessTier": "starter",
+        "context": "Use this for an older man who feels more uncle-age than older-brother age, especially in shops, homestays, taxis, and local service moments.",
+        "usageNote": "Use this for an older man who feels more uncle-age than older-brother age, especially in shops, homestays, taxis, and local service moments.",
+        "searchAliases": [
+          "dạ chào chú",
+          "da chao chu",
+          "respectful hello uncle"
+        ],
+        "intentFamilyId": "acknowledge-da-chao-chu",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "acknowledge-da-chao-ong",
+        "scenarioId": "polite-basics",
+        "targetText": "Dạ, chào ông",
+        "canonicalTargetText": "Dạ, chào ông",
+        "pronunciation": "yah chow ohng",
+        "sourceText": "Respectful hello to an elderly man",
+        "audioKey": "audio-phrase-da-chao-ong",
+        "accessTier": "starter",
+        "context": "Use this when greeting an elderly man and you want the first word to carry clear respect.",
+        "usageNote": "Use this when greeting an elderly man and you want the first word to carry clear respect.",
+        "searchAliases": [
+          "dạ chào ông",
+          "da chao ong",
+          "respectful hello elderly man"
+        ],
+        "intentFamilyId": "acknowledge-da-chao-ong",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "👋"
+      },
+      {
+        "id": "acknowledge-da-chao-ba",
+        "scenarioId": "polite-basics",
+        "targetText": "Dạ, chào bà",
+        "canonicalTargetText": "Dạ, chào bà",
+        "pronunciation": "yah chow bah",
+        "sourceText": "Respectful hello to an elderly woman",
+        "audioKey": "audio-phrase-da-chao-ba",
+        "accessTier": "starter",
+        "context": "Use this when greeting an elderly woman and you want the first word to carry clear respect.",
+        "usageNote": "Use this when greeting an elderly woman and you want the first word to carry clear respect.",
+        "searchAliases": [
+          "dạ chào bà",
+          "da chao ba",
+          "respectful hello elderly woman"
+        ],
+        "intentFamilyId": "acknowledge-da-chao-ba",
         "variantRole": "say-first",
         "variantLabel": "Say this first",
         "audioStatus": "ready",

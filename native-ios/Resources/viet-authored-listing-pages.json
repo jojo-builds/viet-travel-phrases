@@ -3,10 +3,10 @@
     "source": "../content-draft/viet/listing-pages",
     "fullUniverseSource": "../content-draft/viet/full-listing-pages",
     "tierOneFamilyCount": 150,
-    "resourceMainPageCount": 147,
+    "resourceMainPageCount": 145,
     "childPageCount": 14,
-    "fullUniversePageCount": 20,
-    "generatedAt": "2026-04-29T15:32:14.043Z"
+    "fullUniversePageCount": 31,
+    "generatedAt": "2026-04-29T15:54:05.229Z"
   },
   "pages": [
     {
@@ -456,7 +456,7 @@
               "pronunciation": "yah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-acknowledge",
+              "detailPageID": "viet-acknowledge-da",
               "audioKey": "polite-3"
             },
             {
@@ -506,7 +506,7 @@
               "pronunciation": "Dung",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-v500-poli-basi-yes",
+              "detailPageID": "viet-acknowledge-dung",
               "audioKey": "v500-poli-basi-yes"
             },
             {
@@ -533,193 +533,6 @@
           "tintName": "red",
           "detailPageID": null,
           "audioKey": "polite-2"
-        }
-      ]
-    },
-    {
-      "id": "viet-family-polite-acknowledge",
-      "familyID": "polite-acknowledge",
-      "phraseID": "polite-3",
-      "tierRole": "tier1",
-      "depth": "baseline",
-      "title": "Dạ",
-      "englishTitle": "Yes / polite acknowledgment",
-      "pronunciation": "yah",
-      "summary": "Different ways to say \"Yes / polite acknowledgment\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
-      "iconName": "hand.wave.fill",
-      "tintName": "red",
-      "categoryIDs": [
-        "polite-basics"
-      ],
-      "audioKey": "polite-3",
-      "sections": [
-        {
-          "id": "at-glance",
-          "title": "At a glance",
-          "body": "Dạ answers the traveler question \"Yes / polite acknowledgment\" in small service and first-contact moments. Use this as a soft respectful acknowledgment when someone speaks to you first. This helps you respond respectfully even before you know the full answer. Its job is giving the other person a simple anchor rather than a long explanation. Expect a short reply, a smile, a time, or a light follow-up question; then use Explore next if the reply creates another small task.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "breakdown",
-          "title": "Break it down",
-          "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-          "breakdown": [
-            {
-              "id": "polite-3-full",
-              "vietnamese": "Dạ",
-              "english": "Yes / polite acknowledgment",
-              "audioKey": "polite-3"
-            }
-          ],
-          "presentation": "breakdown-strip"
-        },
-        {
-          "id": "standard-way",
-          "title": "The standard way",
-          "body": "Start with Dạ when \"Yes / polite acknowledgment\" is the main thing you need understood. Use this as a soft respectful acknowledgment when someone speaks to you first. It gives the other person room to answer with a short reply, a smile, a time, or a light follow-up question. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
-          "phrases": [
-            {
-              "id": "polite-3",
-              "vietnamese": "Dạ",
-              "english": "Yes / polite acknowledgment",
-              "pronunciation": "yah",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": null,
-              "audioKey": "polite-3"
-            }
-          ],
-          "presentation": "phrase-list"
-        },
-        {
-          "id": "why-it-matters",
-          "title": "Why it matters",
-          "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"Yes / polite acknowledgment\", the useful move is giving the other person a simple anchor rather than a long explanation. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "traveler-insight",
-          "title": "Traveler insight",
-          "body": "In Polite Basics, locals often answer with a short reply, a smile, a time, or a light follow-up question rather than a long explanation. That makes Dạ strongest when you say it once, pause, and let the other person show the next step. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "when-to-use",
-          "title": "When to use it",
-          "body": "Use this as a soft respectful acknowledgment when someone speaks to you first. It fits small service and first-contact moments, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Good to know",
-          "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "local-tip",
-          "title": "Local tip",
-          "body": "A small smile and a calm pace matter. These short phrases are often enough to make a service moment feel warmer.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
-          "phrases": [
-            {
-              "id": "polite-1",
-              "vietnamese": "Xin chào",
-              "english": "Hello",
-              "pronunciation": "sin chow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-polite-hello",
-              "audioKey": "polite-1"
-            },
-            {
-              "id": "polite-2",
-              "vietnamese": "Cảm ơn",
-              "english": "Thank you",
-              "pronunciation": "kahm uhn",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-thank-you",
-              "audioKey": "polite-2"
-            },
-            {
-              "id": "polite-4",
-              "vietnamese": "Không, cảm ơn",
-              "english": "No, thank you",
-              "pronunciation": "khong kahm uhn",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-thanks-khong-cam-on",
-              "audioKey": "polite-4"
-            },
-            {
-              "id": "polite-5",
-              "vietnamese": "Xin lỗi",
-              "english": "Excuse me / sorry",
-              "pronunciation": "sin loy",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-excuse-sorry",
-              "audioKey": "polite-5"
-            },
-            {
-              "id": "polite-6",
-              "vietnamese": "Không sao đâu",
-              "english": "It’s okay",
-              "pronunciation": "khong sao doh",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-polite-its-okay",
-              "audioKey": "polite-6"
-            },
-            {
-              "id": "polite-7",
-              "vietnamese": "Tạm biệt",
-              "english": "Goodbye",
-              "pronunciation": "tahm bee-et",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-goodbye",
-              "audioKey": "polite-7"
-            },
-            {
-              "id": "v500-poli-basi-yes",
-              "vietnamese": "Đúng",
-              "english": "Yes",
-              "pronunciation": "Dung",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-v500-poli-basi-yes",
-              "audioKey": "v500-poli-basi-yes"
-            },
-            {
-              "id": "hello-chao",
-              "vietnamese": "Chào",
-              "english": "Hi / hello",
-              "pronunciation": "chow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-hello-chao",
-              "audioKey": "breakdown-chao"
-            }
-          ],
-          "presentation": "phrase-list"
-        }
-      ],
-      "examples": [
-        {
-          "id": "polite-3",
-          "vietnamese": "Dạ",
-          "english": "Yes / polite acknowledgment",
-          "pronunciation": "yah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": null,
-          "audioKey": "polite-3"
         }
       ]
     },
@@ -852,7 +665,7 @@
               "pronunciation": "yah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-acknowledge",
+              "detailPageID": "viet-acknowledge-da",
               "audioKey": "polite-3"
             },
             {
@@ -892,7 +705,7 @@
               "pronunciation": "Dung",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-v500-poli-basi-yes",
+              "detailPageID": "viet-acknowledge-dung",
               "audioKey": "v500-poli-basi-yes"
             },
             {
@@ -1051,7 +864,7 @@
               "pronunciation": "yah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-acknowledge",
+              "detailPageID": "viet-acknowledge-da",
               "audioKey": "polite-3"
             },
             {
@@ -1091,7 +904,7 @@
               "pronunciation": "Dung",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-v500-poli-basi-yes",
+              "detailPageID": "viet-acknowledge-dung",
               "audioKey": "v500-poli-basi-yes"
             },
             {
@@ -1250,7 +1063,7 @@
               "pronunciation": "yah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-polite-acknowledge",
+              "detailPageID": "viet-acknowledge-da",
               "audioKey": "polite-3"
             },
             {
@@ -1290,7 +1103,7 @@
               "pronunciation": "Dung",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "red",
-              "detailPageID": "viet-family-v500-poli-basi-yes",
+              "detailPageID": "viet-acknowledge-dung",
               "audioKey": "v500-poli-basi-yes"
             },
             {
@@ -26507,193 +26320,6 @@
       ]
     },
     {
-      "id": "viet-family-v500-poli-basi-yes",
-      "familyID": "v500-poli-basi-yes",
-      "phraseID": "v500-poli-basi-yes",
-      "tierRole": "tier1",
-      "depth": "baseline",
-      "title": "Đúng",
-      "englishTitle": "Yes",
-      "pronunciation": "Dung",
-      "summary": "Different ways to say \"Yes\" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.",
-      "iconName": "hand.wave.fill",
-      "tintName": "red",
-      "categoryIDs": [
-        "polite-basics"
-      ],
-      "audioKey": "v500-poli-basi-yes",
-      "sections": [
-        {
-          "id": "at-glance",
-          "title": "At a glance",
-          "body": "Đúng answers the traveler question \"Yes\" in small service and first-contact moments. This is for short everyday travel exchanges when you want to stay polite without overexplaining. Its job is giving the other person a simple anchor rather than a long explanation. Expect a short reply, a smile, a time, or a light follow-up question; then use Explore next if the reply creates another small task.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "breakdown",
-          "title": "Break it down",
-          "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-          "breakdown": [
-            {
-              "id": "v500-poli-basi-yes-full",
-              "vietnamese": "Đúng",
-              "english": "Yes",
-              "audioKey": "v500-poli-basi-yes"
-            }
-          ],
-          "presentation": "breakdown-strip"
-        },
-        {
-          "id": "standard-way",
-          "title": "The standard way",
-          "body": "Start with Đúng when \"Yes\" is the main thing you need understood. This is for short everyday travel exchanges when you want to stay polite without overexplaining. It gives the other person room to answer with a short reply, a smile, a time, or a light follow-up question. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
-          "phrases": [
-            {
-              "id": "v500-poli-basi-yes",
-              "vietnamese": "Đúng",
-              "english": "Yes",
-              "pronunciation": "Dung",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": null,
-              "audioKey": "v500-poli-basi-yes"
-            }
-          ],
-          "presentation": "phrase-list"
-        },
-        {
-          "id": "why-it-matters",
-          "title": "Why it matters",
-          "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"Yes\", the useful move is giving the other person a simple anchor rather than a long explanation. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "traveler-insight",
-          "title": "Traveler insight",
-          "body": "In Polite Basics, locals often answer with a short reply, a smile, a time, or a light follow-up question rather than a long explanation. That makes Đúng strongest when you say it once, pause, and let the other person show the next step. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "when-to-use",
-          "title": "When to use it",
-          "body": "This is for short everyday travel exchanges when you want to stay polite without overexplaining. It fits small service and first-contact moments, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Good to know",
-          "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "local-tip",
-          "title": "Local tip",
-          "body": "A small smile and a calm pace matter. These short phrases are often enough to make a service moment feel warmer.",
-          "presentation": "tip-callout"
-        },
-        {
-          "id": "explore-next",
-          "title": "Explore next",
-          "body": "Use these next when the conversation moves one step forward.",
-          "phrases": [
-            {
-              "id": "polite-1",
-              "vietnamese": "Xin chào",
-              "english": "Hello",
-              "pronunciation": "sin chow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-polite-hello",
-              "audioKey": "polite-1"
-            },
-            {
-              "id": "polite-2",
-              "vietnamese": "Cảm ơn",
-              "english": "Thank you",
-              "pronunciation": "kahm uhn",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-thank-you",
-              "audioKey": "polite-2"
-            },
-            {
-              "id": "polite-3",
-              "vietnamese": "Dạ",
-              "english": "Yes / polite acknowledgment",
-              "pronunciation": "yah",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-polite-acknowledge",
-              "audioKey": "polite-3"
-            },
-            {
-              "id": "polite-4",
-              "vietnamese": "Không, cảm ơn",
-              "english": "No, thank you",
-              "pronunciation": "khong kahm uhn",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-thanks-khong-cam-on",
-              "audioKey": "polite-4"
-            },
-            {
-              "id": "polite-5",
-              "vietnamese": "Xin lỗi",
-              "english": "Excuse me / sorry",
-              "pronunciation": "sin loy",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-excuse-sorry",
-              "audioKey": "polite-5"
-            },
-            {
-              "id": "polite-6",
-              "vietnamese": "Không sao đâu",
-              "english": "It’s okay",
-              "pronunciation": "khong sao doh",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-family-polite-its-okay",
-              "audioKey": "polite-6"
-            },
-            {
-              "id": "polite-7",
-              "vietnamese": "Tạm biệt",
-              "english": "Goodbye",
-              "pronunciation": "tahm bee-et",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-goodbye",
-              "audioKey": "polite-7"
-            },
-            {
-              "id": "hello-chao",
-              "vietnamese": "Chào",
-              "english": "Hi / hello",
-              "pronunciation": "chow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "red",
-              "detailPageID": "viet-hello-chao",
-              "audioKey": "breakdown-chao"
-            }
-          ],
-          "presentation": "phrase-list"
-        }
-      ],
-      "examples": [
-        {
-          "id": "v500-poli-basi-yes",
-          "vietnamese": "Đúng",
-          "english": "Yes",
-          "pronunciation": "Dung",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": null,
-          "audioKey": "v500-poli-basi-yes"
-        }
-      ]
-    },
-    {
       "id": "viet-family-v500-unde-repa-please-say-it-slowly",
       "familyID": "v500-unde-repa-please-say-it-slowly",
       "phraseID": "v500-unde-repa-please-say-it-slowly",
@@ -33202,6 +32828,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Cảm ơn, tôi hiểu rồi tells the helper that the directions finally make sense and you are ready to move. It is useful after someone repeats a route, points on a map, writes an address, or explains a stop.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -33252,6 +32879,7 @@
               "audioKey": "directions-7"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -33296,12 +32924,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it after you understand the turn, stop, pickup point, counter, or walking route. It is especially helpful when the other person has spent time explaining.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "This phrase closes the loop. Say it only when you really are ready; if not, ask for a repeat or a map gesture first.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -33357,6 +32987,1931 @@
       ]
     },
     {
+      "id": "viet-acknowledge-co",
+      "familyID": "acknowledge-co",
+      "phraseID": "acknowledge-co",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Có",
+      "englishTitle": "Yes / there is",
+      "pronunciation": "koh",
+      "summary": "Different ways to say Có in Vietnam start with the yes you use for availability and existence.",
+      "iconName": "checkmark.circle.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-food-5-first",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Có is the yes you hear when the question is about whether something exists, is available, or is possible in the moment. It answers questions like whether there is bottled water, a table, a room, a bathroom, a charger, or a SIM card. Use Dạ before it when you want the answer to sound softer.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use Có when the simple answer is yes and the question is about availability, presence, or permission.",
+          "phrases": [
+            {
+              "id": "acknowledge-co",
+              "vietnamese": "Có",
+              "english": "Yes / there is",
+              "pronunciation": "koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "breakdown-food-5-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The same word can mean yes, have, or there is, depending on the question.",
+          "breakdown": [
+            {
+              "id": "co-meaning",
+              "vietnamese": "có",
+              "english": "yes / have / there is",
+              "audioKey": "breakdown-food-5-first"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Có",
+              "english": "yes, it exists / yes, available",
+              "audioKey": "breakdown-food-5-first"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "answer-contrast",
+          "title": "Answer contrast",
+          "body": "These short answers are close, but each one solves a different listening problem.",
+          "phrases": [
+            {
+              "id": "polite-3",
+              "vietnamese": "Dạ",
+              "english": "Polite acknowledgment",
+              "pronunciation": "yah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-da",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "v500-poli-basi-yes",
+              "vietnamese": "Đúng",
+              "english": "Yes / correct",
+              "pronunciation": "doong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-acknowledge-dung",
+              "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "acknowledge-khong",
+              "vietnamese": "Không",
+              "english": "No",
+              "pronunciation": "khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-khong",
+              "audioKey": "breakdown-polite-6-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it after yes/no questions at counters, cafes, shops, hotels, transport desks, and attractions. It is especially useful when someone asks whether you have a booking, whether an item is available, or whether a service is possible.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Dạ có is a warmer full answer for many service moments. Có alone is fine when the moment is fast and the person only needs the answer.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These phrases often come before or after a yes answer.",
+          "phrases": [
+            {
+              "id": "hotel-1",
+              "vietnamese": "Tôi có đặt phòng",
+              "english": "I have a reservation",
+              "pronunciation": "toy koh dat fong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-hotel-reservation",
+              "audioKey": "hotel-1"
+            },
+            {
+              "id": "food-5",
+              "vietnamese": "Có nước suối không?",
+              "english": "Do you have bottled water?",
+              "pronunciation": "koh nook soy khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-bottled-water",
+              "audioKey": "food-5"
+            },
+            {
+              "id": "phone-4",
+              "vietnamese": "Có sạc không?",
+              "english": "Do you have a charger?",
+              "pronunciation": "koh sak khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-family-phone-charger",
+              "audioKey": "phone-4"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-co",
+          "vietnamese": "Có",
+          "english": "Yes / there is",
+          "pronunciation": "koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "breakdown-food-5-first"
+        }
+      ]
+    },
+    {
+      "id": "viet-da-chao-anh",
+      "familyID": "acknowledge-da-chao-anh",
+      "phraseID": "acknowledge-da-chao-anh",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Dạ, chào anh",
+      "englishTitle": "Respectful hello to an older man",
+      "pronunciation": "yah chow anh",
+      "summary": "Different ways to say Dạ, chào anh in Vietnam begin with adding respect before the older-man greeting.",
+      "iconName": "hand.wave.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-da-chao-anh",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Dạ, chào anh is warmer and more respectful than Chào anh alone. Use it for an older man, adult male staff member, driver, guide, shop helper, or hotel worker when you want the first second of the exchange to feel polite.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say it as one smooth greeting at the start of a counter, ride, hotel, cafe, or help moment.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-anh",
+              "vietnamese": "Dạ, chào anh",
+              "english": "Respectful hello to an older man",
+              "pronunciation": "yah chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-da-chao-anh"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "Dạ softens the greeting, while anh chooses the relationship.",
+          "breakdown": [
+            {
+              "id": "da",
+              "vietnamese": "Dạ",
+              "english": "respectful softener",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "chao",
+              "vietnamese": "chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "anh",
+              "vietnamese": "anh",
+              "english": "older man / older brother role",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Dạ, chào anh",
+              "english": "respectful hello to an older man",
+              "audioKey": "audio-phrase-da-chao-anh"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "relationship-swaps",
+          "title": "Relationship swaps",
+          "body": "Keep Dạ, chào and change the relationship word when the person changes.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-chi",
+              "vietnamese": "Dạ, chào chị",
+              "english": "Respectful hello to an older woman",
+              "pronunciation": "yah chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-da-chao-chi",
+              "audioKey": "audio-phrase-da-chao-chi"
+            },
+            {
+              "id": "acknowledge-da-chao-chu",
+              "vietnamese": "Dạ, chào chú",
+              "english": "Respectful hello to an uncle-age man",
+              "pronunciation": "yah chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-da-chao-chu",
+              "audioKey": "audio-phrase-da-chao-chu"
+            },
+            {
+              "id": "hello-chao-anh",
+              "vietnamese": "Chào anh",
+              "english": "Hello to an older man",
+              "pronunciation": "chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-anh",
+              "audioKey": "breakdown-viet-hello-anh-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when greeting a male hotel clerk, driver, vendor, guide, clinic worker, security guard, or local helper who seems older than you or socially senior in the moment.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "If you are unsure between anh and chú, anh is often safer for a not-elderly adult man. Move to chú when the person clearly feels uncle-age.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "After this greeting, these phrases keep the service moment moving.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "repair-english-help",
+              "vietnamese": "Anh/chị nói tiếng Anh không?",
+              "english": "Do you speak English?",
+              "pronunciation": "anh chee noy tyeng anh khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-english-help",
+              "audioKey": "repair-english-help"
+            },
+            {
+              "id": "repair-1",
+              "vietnamese": "Làm ơn nói lại",
+              "english": "Please say that again",
+              "pronunciation": "lahm uhn noy lie",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-repair-repeat",
+              "audioKey": "repair-1"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-da-chao-anh",
+          "vietnamese": "Dạ, chào anh",
+          "english": "Respectful hello to an older man",
+          "pronunciation": "yah chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-anh"
+        }
+      ]
+    },
+    {
+      "id": "viet-da-chao-ba",
+      "familyID": "acknowledge-da-chao-ba",
+      "phraseID": "acknowledge-da-chao-ba",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Dạ, chào bà",
+      "englishTitle": "Respectful hello to an elderly woman",
+      "pronunciation": "yah chow bah",
+      "summary": "Different ways to say Dạ, chào bà in Vietnam show respect for an elderly woman.",
+      "iconName": "hand.wave.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-da-chao-ba",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Dạ, chào bà is the respectful greeting for an elderly woman or grandmother-age local. It is a useful phrase in homes, neighborhood shops, markets, temples, family restaurants, and calm local encounters where respect matters.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use it when bà clearly fits better than chị or cô.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-ba",
+              "vietnamese": "Dạ, chào bà",
+              "english": "Respectful hello to an elderly woman",
+              "pronunciation": "yah chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-da-chao-ba"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The greeting is simple, but bà makes the respect clear.",
+          "breakdown": [
+            {
+              "id": "da",
+              "vietnamese": "Dạ",
+              "english": "respectful softener",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "chao",
+              "vietnamese": "chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "ba",
+              "vietnamese": "bà",
+              "english": "elderly woman / grandmother role",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Dạ, chào bà",
+              "english": "respectful hello to an elderly woman",
+              "audioKey": "audio-phrase-da-chao-ba"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "relationship-swaps",
+          "title": "Relationship swaps",
+          "body": "These help you move between older-woman and elderly-woman greetings.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-ong",
+              "vietnamese": "Dạ, chào ông",
+              "english": "Respectful hello to an elderly man",
+              "pronunciation": "yah chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-da-chao-ong",
+              "audioKey": "audio-phrase-da-chao-ong"
+            },
+            {
+              "id": "acknowledge-da-chao-co",
+              "vietnamese": "Dạ, chào cô",
+              "english": "Respectful hello to an aunt-age woman",
+              "pronunciation": "yah chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-da-chao-co",
+              "audioKey": "audio-phrase-da-chao-co"
+            },
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-ba",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when greeting an elderly woman at a home, shop, market, neighborhood place, family restaurant, clinic, or temple.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bà is respectful when the person is clearly elderly. For an older but not elderly woman, cô or chị is usually a warmer fit.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These are gentle next steps after the greeting.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "polite-3",
+              "vietnamese": "Dạ",
+              "english": "Yes / polite acknowledgment",
+              "pronunciation": "yah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-da",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "hello-chao-ba",
+              "vietnamese": "Chào bà",
+              "english": "Hello to an elderly woman",
+              "pronunciation": "chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-ba",
+              "audioKey": "breakdown-viet-hello-ba-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-da-chao-ba",
+          "vietnamese": "Dạ, chào bà",
+          "english": "Respectful hello to an elderly woman",
+          "pronunciation": "yah chow bah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-ba"
+        }
+      ]
+    },
+    {
+      "id": "viet-da-chao-chi",
+      "familyID": "acknowledge-da-chao-chi",
+      "phraseID": "acknowledge-da-chao-chi",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Dạ, chào chị",
+      "englishTitle": "Respectful hello to an older woman",
+      "pronunciation": "yah chow chee",
+      "summary": "Different ways to say Dạ, chào chị in Vietnam teach the respectful older-woman greeting.",
+      "iconName": "hand.wave.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-da-chao-chi",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Dạ, chào chị is the respectful greeting for an older woman or adult female staff member. It is useful at cafes, hotels, shops, clinics, classes, tour desks, and anywhere the first word should show care.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use it when chị fits the person better than bạn, cô, or bà.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-chi",
+              "vietnamese": "Dạ, chào chị",
+              "english": "Respectful hello to an older woman",
+              "pronunciation": "yah chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-da-chao-chi"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "Dạ adds respect; chị picks the older-woman relationship.",
+          "breakdown": [
+            {
+              "id": "da",
+              "vietnamese": "Dạ",
+              "english": "respectful softener",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "chao",
+              "vietnamese": "chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "chi",
+              "vietnamese": "chị",
+              "english": "older woman / older sister role",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Dạ, chào chị",
+              "english": "respectful hello to an older woman",
+              "audioKey": "audio-phrase-da-chao-chi"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "relationship-swaps",
+          "title": "Relationship swaps",
+          "body": "These keep the same respectful shape while changing who you are greeting.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-anh",
+              "vietnamese": "Dạ, chào anh",
+              "english": "Respectful hello to an older man",
+              "pronunciation": "yah chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-da-chao-anh",
+              "audioKey": "audio-phrase-da-chao-anh"
+            },
+            {
+              "id": "acknowledge-da-chao-co",
+              "vietnamese": "Dạ, chào cô",
+              "english": "Respectful hello to an aunt-age woman",
+              "pronunciation": "yah chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-da-chao-co",
+              "audioKey": "audio-phrase-da-chao-co"
+            },
+            {
+              "id": "hello-chao-chi",
+              "vietnamese": "Chào chị",
+              "english": "Hello to an older woman",
+              "pronunciation": "chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-chi",
+              "audioKey": "breakdown-viet-hello-chi-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it for an older female server, desk agent, shop owner, guide, nurse, teacher, or local helper when a warm respectful opener fits the moment.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chị often sounds warmer than bạn for an adult woman who seems older than you. If she is clearly aunt-age, Dạ, chào cô may fit better.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These phrases often follow a respectful greeting.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "repair-english-help",
+              "vietnamese": "Anh/chị nói tiếng Anh không?",
+              "english": "Do you speak English?",
+              "pronunciation": "anh chee noy tyeng anh khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-repair-english-help",
+              "audioKey": "repair-english-help"
+            },
+            {
+              "id": "polite-3",
+              "vietnamese": "Dạ",
+              "english": "Yes / polite acknowledgment",
+              "pronunciation": "yah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-da",
+              "audioKey": "polite-3"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-da-chao-chi",
+          "vietnamese": "Dạ, chào chị",
+          "english": "Respectful hello to an older woman",
+          "pronunciation": "yah chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-chi"
+        }
+      ]
+    },
+    {
+      "id": "viet-da-chao-chu",
+      "familyID": "acknowledge-da-chao-chu",
+      "phraseID": "acknowledge-da-chao-chu",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Dạ, chào chú",
+      "englishTitle": "Respectful hello to an uncle-age man",
+      "pronunciation": "yah chow choo",
+      "summary": "Different ways to say Dạ, chào chú in Vietnam place the greeting between anh and ông.",
+      "iconName": "hand.wave.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-da-chao-chu",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Dạ, chào chú is a respectful hello for an uncle-age man. It is useful when anh feels too young and ông feels too old, especially with drivers, shop owners, homestay hosts, neighborhood helpers, or older service staff.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use it when the person is clearly older than a brother-age man but not elderly.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-chu",
+              "vietnamese": "Dạ, chào chú",
+              "english": "Respectful hello to an uncle-age man",
+              "pronunciation": "yah chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-da-chao-chu"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "Chú tells the listener that you are choosing a respectful middle-age relationship word.",
+          "breakdown": [
+            {
+              "id": "da",
+              "vietnamese": "Dạ",
+              "english": "respectful softener",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "chao",
+              "vietnamese": "chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "chu",
+              "vietnamese": "chú",
+              "english": "uncle-age man",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Dạ, chào chú",
+              "english": "respectful hello to an uncle-age man",
+              "audioKey": "audio-phrase-da-chao-chu"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "relationship-swaps",
+          "title": "Relationship swaps",
+          "body": "These help you choose the right male greeting by age.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-anh",
+              "vietnamese": "Dạ, chào anh",
+              "english": "Respectful hello to an older man",
+              "pronunciation": "yah chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-da-chao-anh",
+              "audioKey": "audio-phrase-da-chao-anh"
+            },
+            {
+              "id": "acknowledge-da-chao-ong",
+              "vietnamese": "Dạ, chào ông",
+              "english": "Respectful hello to an elderly man",
+              "pronunciation": "yah chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-da-chao-ong",
+              "audioKey": "audio-phrase-da-chao-ong"
+            },
+            {
+              "id": "hello-chao-chu",
+              "vietnamese": "Chào chú",
+              "english": "Hello to an uncle-age man",
+              "pronunciation": "chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-chu",
+              "audioKey": "breakdown-viet-hello-chu-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it with an older male driver, food stall owner, family-run hotel host, market seller, repair worker, or local helper when a respectful uncle-age greeting feels right.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chú is friendly and respectful when the age fit is clear. If the person feels only slightly older, Dạ, chào anh may be more natural.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help after a respectful greeting with an older man.",
+          "phrases": [
+            {
+              "id": "taxi-1",
+              "vietnamese": "Cho tôi tới đây",
+              "english": "Take me here",
+              "pronunciation": "cho toy toy day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-destination",
+              "audioKey": "taxi-1"
+            },
+            {
+              "id": "price-1",
+              "vietnamese": "Cái này bao nhiêu?",
+              "english": "How much is this?",
+              "pronunciation": "gai nai bao nyew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "yellow",
+              "detailPageID": "viet-family-money-how-much",
+              "audioKey": "price-1"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-da-chao-chu",
+          "vietnamese": "Dạ, chào chú",
+          "english": "Respectful hello to an uncle-age man",
+          "pronunciation": "yah chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-chu"
+        }
+      ]
+    },
+    {
+      "id": "viet-da-chao-co",
+      "familyID": "acknowledge-da-chao-co",
+      "phraseID": "acknowledge-da-chao-co",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Dạ, chào cô",
+      "englishTitle": "Respectful hello to an aunt-age woman",
+      "pronunciation": "yah chow koh",
+      "summary": "Different ways to say Dạ, chào cô in Vietnam teach the respectful greeting for an aunt-age woman.",
+      "iconName": "hand.wave.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-da-chao-co",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Dạ, chào cô is a respectful hello for an older woman who feels aunt-age, a teacher, a shop owner, a homestay host, or a helpful older local. It feels warmer than a generic hello because it recognizes the relationship.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use it when cô sounds more natural than chị, especially if the person is clearly older than an older-sister role.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-co",
+              "vietnamese": "Dạ, chào cô",
+              "english": "Respectful hello to an aunt-age woman",
+              "pronunciation": "yah chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-da-chao-co"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The final word is the relationship choice that makes the phrase feel local.",
+          "breakdown": [
+            {
+              "id": "da",
+              "vietnamese": "Dạ",
+              "english": "respectful softener",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "chao",
+              "vietnamese": "chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "co",
+              "vietnamese": "cô",
+              "english": "aunt-age woman / teacher-like role",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Dạ, chào cô",
+              "english": "respectful hello to an aunt-age woman",
+              "audioKey": "audio-phrase-da-chao-co"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "relationship-swaps",
+          "title": "Relationship swaps",
+          "body": "Move up or down the age ladder with these nearby forms.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-chi",
+              "vietnamese": "Dạ, chào chị",
+              "english": "Respectful hello to an older woman",
+              "pronunciation": "yah chow chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-da-chao-chi",
+              "audioKey": "audio-phrase-da-chao-chi"
+            },
+            {
+              "id": "acknowledge-da-chao-ba",
+              "vietnamese": "Dạ, chào bà",
+              "english": "Respectful hello to an elderly woman",
+              "pronunciation": "yah chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-da-chao-ba",
+              "audioKey": "audio-phrase-da-chao-ba"
+            },
+            {
+              "id": "hello-chao-co",
+              "vietnamese": "Chào cô",
+              "english": "Hello to an aunt-age woman",
+              "pronunciation": "chow koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-chao-co",
+              "audioKey": "breakdown-viet-hello-co-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it with an aunt-age woman at a shop, market stall, family-run hotel, food stand, class, clinic desk, or neighborhood setting.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cô can also be used for teachers or women in a teacher-like role. That makes this phrase useful beyond literal family age.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These phrases help once the greeting opens the conversation.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "acknowledge-duoc",
+              "vietnamese": "Được",
+              "english": "Okay / that works",
+              "pronunciation": "duhk",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-acknowledge-duoc",
+              "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-da-chao-co",
+          "vietnamese": "Dạ, chào cô",
+          "english": "Respectful hello to an aunt-age woman",
+          "pronunciation": "yah chow koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-co"
+        }
+      ]
+    },
+    {
+      "id": "viet-da-chao-ong",
+      "familyID": "acknowledge-da-chao-ong",
+      "phraseID": "acknowledge-da-chao-ong",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Dạ, chào ông",
+      "englishTitle": "Respectful hello to an elderly man",
+      "pronunciation": "yah chow ohng",
+      "summary": "Different ways to say Dạ, chào ông in Vietnam show respect for an elderly man.",
+      "iconName": "hand.wave.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "greetings",
+        "polite-basics"
+      ],
+      "audioKey": "audio-phrase-da-chao-ong",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Dạ, chào ông is the respectful greeting for an elderly man or grandfather-age local. It is useful in homes, neighborhoods, markets, temples, family-run shops, and any moment where age respect is the main signal.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use it when ông clearly fits better than anh or chú.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-ong",
+              "vietnamese": "Dạ, chào ông",
+              "english": "Respectful hello to an elderly man",
+              "pronunciation": "yah chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "audio-phrase-da-chao-ong"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The phrase combines respect, greeting, and the elderly-man relationship word.",
+          "breakdown": [
+            {
+              "id": "da",
+              "vietnamese": "Dạ",
+              "english": "respectful softener",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "chao",
+              "vietnamese": "chào",
+              "english": "hello / greet",
+              "audioKey": "breakdown-chao"
+            },
+            {
+              "id": "ong",
+              "vietnamese": "ông",
+              "english": "elderly man / grandfather role",
+              "audioKey": null
+            },
+            {
+              "id": "full",
+              "vietnamese": "Dạ, chào ông",
+              "english": "respectful hello to an elderly man",
+              "audioKey": "audio-phrase-da-chao-ong"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "relationship-swaps",
+          "title": "Relationship swaps",
+          "body": "These forms move between elderly and middle-age relationship words.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-ba",
+              "vietnamese": "Dạ, chào bà",
+              "english": "Respectful hello to an elderly woman",
+              "pronunciation": "yah chow bah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-da-chao-ba",
+              "audioKey": "audio-phrase-da-chao-ba"
+            },
+            {
+              "id": "acknowledge-da-chao-chu",
+              "vietnamese": "Dạ, chào chú",
+              "english": "Respectful hello to an uncle-age man",
+              "pronunciation": "yah chow choo",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-da-chao-chu",
+              "audioKey": "audio-phrase-da-chao-chu"
+            },
+            {
+              "id": "hello-chao-ong",
+              "vietnamese": "Chào ông",
+              "english": "Hello to an elderly man",
+              "pronunciation": "chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-ong",
+              "audioKey": "breakdown-viet-hello-ong-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when greeting an elderly man at a home, family business, market stall, neighborhood shop, temple, or local gathering.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Ông is respectful when the person is clearly elderly. For a not-elderly older man, chú or anh usually feels better.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These keep the respectful exchange simple.",
+          "phrases": [
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "polite-3",
+              "vietnamese": "Dạ",
+              "english": "Yes / polite acknowledgment",
+              "pronunciation": "yah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-da",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "hello-chao-ong",
+              "vietnamese": "Chào ông",
+              "english": "Hello to an elderly man",
+              "pronunciation": "chow ohng",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-hello-chao-ong",
+              "audioKey": "breakdown-viet-hello-ong-full"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-da-chao-ong",
+          "vietnamese": "Dạ, chào ông",
+          "english": "Respectful hello to an elderly man",
+          "pronunciation": "yah chow ohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-ong"
+        }
+      ]
+    },
+    {
+      "id": "viet-acknowledge-da",
+      "familyID": "polite-acknowledge",
+      "phraseID": "polite-3",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Dạ",
+      "englishTitle": "Yes / polite acknowledgment",
+      "pronunciation": "yah",
+      "summary": "Different ways to say Dạ in Vietnam start with hearing it as respect, not just yes.",
+      "iconName": "hand.wave.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "polite-basics"
+      ],
+      "audioKey": "polite-3",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Dạ is one of the most useful small words in Vietnamese. It can answer yes, show that you heard someone, soften the start of a sentence, or make a short reply sound respectful. Travelers should learn it as a polite response marker first, then choose Có, Không, Được, or Đúng when the answer itself needs to be clear.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use Dạ when someone older, staff, a driver, or a local helper speaks to you and you want to answer politely before the main information.",
+          "phrases": [
+            {
+              "id": "polite-3",
+              "vietnamese": "Dạ",
+              "english": "Yes / polite acknowledgment",
+              "pronunciation": "yah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "polite-3"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The whole word is short, so the useful lesson is what it does in the conversation.",
+          "breakdown": [
+            {
+              "id": "softener",
+              "vietnamese": "dạ",
+              "english": "respectful softener before an answer",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Dạ",
+              "english": "polite yes / I hear you",
+              "audioKey": "polite-3"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "answer-choices",
+          "title": "Answer choices",
+          "body": "Dạ can come before an answer, but these words carry the answer itself.",
+          "phrases": [
+            {
+              "id": "acknowledge-co",
+              "vietnamese": "Có",
+              "english": "Yes / there is",
+              "pronunciation": "koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-acknowledge-co",
+              "audioKey": "breakdown-food-5-first"
+            },
+            {
+              "id": "acknowledge-khong",
+              "vietnamese": "Không",
+              "english": "No",
+              "pronunciation": "khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-khong",
+              "audioKey": "breakdown-polite-6-first"
+            },
+            {
+              "id": "acknowledge-duoc",
+              "vietnamese": "Được",
+              "english": "Okay / that works",
+              "pronunciation": "duhk",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-acknowledge-duoc",
+              "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+            },
+            {
+              "id": "v500-poli-basi-yes",
+              "vietnamese": "Đúng",
+              "english": "Yes / correct",
+              "pronunciation": "doong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-acknowledge-dung",
+              "audioKey": "v500-poli-basi-yes"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when a staff member asks a question, when an older person speaks first, when you are confirming that you heard instructions, or when you want to sound gentle before a short request. It works beautifully before Chào anh, Cảm ơn, or a yes/no answer.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Dạ does not replace every yes. If the person needs a clear answer, say Dạ first if you want, then add Có, Không, Được, or Đúng.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These are natural next steps after a polite acknowledgment.",
+          "phrases": [
+            {
+              "id": "acknowledge-da-chao-anh",
+              "vietnamese": "Dạ, chào anh",
+              "english": "Respectful hello to an older man",
+              "pronunciation": "yah chow anh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-da-chao-anh",
+              "audioKey": "audio-phrase-da-chao-anh"
+            },
+            {
+              "id": "hello-da-chao-anh-chi",
+              "vietnamese": "Dạ, chào anh/chị",
+              "english": "Hello, sir or ma'am",
+              "pronunciation": "yah chow anh chee",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-hello-da-chao-anh-chi",
+              "audioKey": "audio-phrase-da-chao-anh-chi"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "polite-3",
+          "vietnamese": "Dạ",
+          "english": "Yes / polite acknowledgment",
+          "pronunciation": "yah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "polite-3"
+        }
+      ]
+    },
+    {
+      "id": "viet-acknowledge-dung",
+      "familyID": "v500-poli-basi-yes",
+      "phraseID": "v500-poli-basi-yes",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Đúng",
+      "englishTitle": "Yes / correct",
+      "pronunciation": "doong",
+      "summary": "Different ways to say Đúng in Vietnam focus on confirming that something is correct.",
+      "iconName": "checkmark.circle.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "polite-basics"
+      ],
+      "audioKey": "v500-poli-basi-yes",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Đúng means yes in the sense of correct or right. Use it when someone checks a name, room number, pickup place, price, order, or direction and you want to confirm they have it right. It is different from Có, which often answers whether something exists or is available.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Say Đúng when the other person is checking a fact and you want a short confirmation.",
+          "phrases": [
+            {
+              "id": "v500-poli-basi-yes",
+              "vietnamese": "Đúng",
+              "english": "Yes / correct",
+              "pronunciation": "doong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": null,
+              "audioKey": "v500-poli-basi-yes"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The word points to correctness, not just agreement.",
+          "breakdown": [
+            {
+              "id": "dung-meaning",
+              "vietnamese": "đúng",
+              "english": "right / correct",
+              "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Đúng",
+              "english": "yes, that is correct",
+              "audioKey": "v500-poli-basi-yes"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "nearby-answers",
+          "title": "Nearby answers",
+          "body": "Choose the answer by the kind of question you heard.",
+          "phrases": [
+            {
+              "id": "polite-3",
+              "vietnamese": "Dạ",
+              "english": "Yes / polite acknowledgment",
+              "pronunciation": "yah",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-da",
+              "audioKey": "polite-3"
+            },
+            {
+              "id": "acknowledge-co",
+              "vietnamese": "Có",
+              "english": "Yes / there is",
+              "pronunciation": "koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-acknowledge-co",
+              "audioKey": "breakdown-food-5-first"
+            },
+            {
+              "id": "acknowledge-duoc",
+              "vietnamese": "Được",
+              "english": "Okay / that works",
+              "pronunciation": "duhk",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-acknowledge-duoc",
+              "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when staff point to your booking name, a driver repeats the destination, a cashier confirms the item, or someone asks whether a detail is correct.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For extra politeness, Dạ đúng is natural in many adult service moments, but Đúng by itself is still clear when the exchange is quick.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help after confirming a detail.",
+          "phrases": [
+            {
+              "id": "directions-7",
+              "vietnamese": "Cảm ơn, tôi hiểu rồi",
+              "english": "Thanks, I understand now",
+              "pronunciation": "kahm uhn toy hyew roy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
+              "audioKey": "directions-7"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            },
+            {
+              "id": "acknowledge-khong",
+              "vietnamese": "Không",
+              "english": "No",
+              "pronunciation": "khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-khong",
+              "audioKey": "breakdown-polite-6-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "v500-poli-basi-yes",
+          "vietnamese": "Đúng",
+          "english": "Yes / correct",
+          "pronunciation": "doong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "v500-poli-basi-yes"
+        }
+      ]
+    },
+    {
+      "id": "viet-acknowledge-duoc",
+      "familyID": "acknowledge-duoc",
+      "phraseID": "acknowledge-duoc",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Được",
+      "englishTitle": "Okay / that works",
+      "pronunciation": "duhk",
+      "summary": "Different ways to say Được in Vietnam start with accepting a suggestion or saying an option works.",
+      "iconName": "checkmark.circle.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Được is the compact okay when a plan works, a suggested option is acceptable, or someone asks whether something is possible. It is not just yes; it often means can, okay, allowed, or that works in context.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use Được when you want to accept a practical option without adding a long sentence.",
+          "phrases": [
+            {
+              "id": "acknowledge-duoc",
+              "vietnamese": "Được",
+              "english": "Okay / that works",
+              "pronunciation": "duhk",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": null,
+              "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "Think of it as permission, possibility, and acceptance packed into one short word.",
+          "breakdown": [
+            {
+              "id": "duoc-meaning",
+              "vietnamese": "được",
+              "english": "can / okay / possible",
+              "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Được",
+              "english": "okay, that works",
+              "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "nearby-answers",
+          "title": "Nearby answers",
+          "body": "Use these when the answer is yes, correct, or no instead of accepted.",
+          "phrases": [
+            {
+              "id": "acknowledge-co",
+              "vietnamese": "Có",
+              "english": "Yes / there is",
+              "pronunciation": "koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-acknowledge-co",
+              "audioKey": "breakdown-food-5-first"
+            },
+            {
+              "id": "v500-poli-basi-yes",
+              "vietnamese": "Đúng",
+              "english": "Yes / correct",
+              "pronunciation": "doong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-acknowledge-dung",
+              "audioKey": "v500-poli-basi-yes"
+            },
+            {
+              "id": "acknowledge-khong",
+              "vietnamese": "Không",
+              "english": "No",
+              "pronunciation": "khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": "viet-acknowledge-khong",
+              "audioKey": "breakdown-polite-6-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it when a driver suggests a drop-off spot, a staff member offers an option, a seller asks whether a size works, or someone checks whether a plan is okay.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Dạ được is a warmer version in respectful moments, but Được alone is useful when the exchange is moving quickly.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These are common next moves after accepting an option.",
+          "phrases": [
+            {
+              "id": "v500-shop-okay-ill-take-it",
+              "vietnamese": "Được rồi, tôi sẽ lấy nó",
+              "english": "Okay, I'll take it",
+              "pronunciation": "duoc roi toi se lay no",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-family-v500-shop-okay-ill-take-it",
+              "audioKey": "v500-shop-okay-ill-take-it"
+            },
+            {
+              "id": "v500-unde-repa-okay-now-i-understand",
+              "vietnamese": "Được rồi, bây giờ tôi đã hiểu",
+              "english": "Okay, now I understand",
+              "pronunciation": "duoc roi bay gio toi da hieu",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-v500-unde-repa-okay-now-i-understand",
+              "audioKey": "v500-unde-repa-okay-now-i-understand"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-duoc",
+          "vietnamese": "Được",
+          "english": "Okay / that works",
+          "pronunciation": "duhk",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+        }
+      ]
+    },
+    {
+      "id": "viet-acknowledge-khong",
+      "familyID": "acknowledge-khong",
+      "phraseID": "acknowledge-khong",
+      "tierRole": "full-universe",
+      "depth": "deep",
+      "title": "Không",
+      "englishTitle": "No",
+      "pronunciation": "khong",
+      "summary": "Different ways to say Không in Vietnam start with a clear no, then add warmth when needed.",
+      "iconName": "xmark.circle.fill",
+      "tintName": "red",
+      "categoryIDs": [
+        "polite-basics"
+      ],
+      "audioKey": "breakdown-polite-6-first",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Không is the simple no. It is useful because many traveler moments need a clear answer before politeness or explanation. If you are declining an offer, Không, cảm ơn is warmer. If you are answering a direct yes/no question, Không can be enough.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "standard-way",
+          "title": "The standard way",
+          "body": "Use Không when the answer is no and the other person needs clarity more than extra explanation.",
+          "phrases": [
+            {
+              "id": "acknowledge-khong",
+              "vietnamese": "Không",
+              "english": "No",
+              "pronunciation": "khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "red",
+              "detailPageID": null,
+              "audioKey": "breakdown-polite-6-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "breakdown",
+          "title": "Break it down",
+          "body": "The word is also the no/not piece inside many longer phrases.",
+          "breakdown": [
+            {
+              "id": "khong-meaning",
+              "vietnamese": "không",
+              "english": "no / not",
+              "audioKey": "breakdown-polite-6-first"
+            },
+            {
+              "id": "full",
+              "vietnamese": "Không",
+              "english": "no",
+              "audioKey": "breakdown-polite-6-first"
+            }
+          ],
+          "phrases": [],
+          "presentation": "breakdown-strip"
+        },
+        {
+          "id": "softer-no",
+          "title": "Softer no",
+          "body": "When the no is a refusal, add the phrase that keeps the moment friendly.",
+          "phrases": [
+            {
+              "id": "polite-4",
+              "vietnamese": "Không, cảm ơn",
+              "english": "No, thank you",
+              "pronunciation": "khong kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thanks-khong-cam-on",
+              "audioKey": "polite-4"
+            },
+            {
+              "id": "polite-6",
+              "vietnamese": "Không sao đâu",
+              "english": "It's okay",
+              "pronunciation": "khong sao doh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-family-polite-its-okay",
+              "audioKey": "polite-6"
+            },
+            {
+              "id": "acknowledge-co",
+              "vietnamese": "Có",
+              "english": "Yes / there is",
+              "pronunciation": "koh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-acknowledge-co",
+              "audioKey": "breakdown-food-5-first"
+            }
+          ],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "when-to-use",
+          "title": "When to use it",
+          "body": "Use it to answer a direct question, correct a mistaken assumption, say an item is not yours, or decline when the other person is waiting for a clear yes/no answer.",
+          "phrases": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "A bare Không can sound abrupt if you are turning down a person. Add cảm ơn when the person offered you something or helped you.",
+          "phrases": [],
+          "presentation": "tip-callout"
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "These help you keep the no friendly or reassuring.",
+          "phrases": [
+            {
+              "id": "polite-4",
+              "vietnamese": "Không, cảm ơn",
+              "english": "No, thank you",
+              "pronunciation": "khong kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thanks-khong-cam-on",
+              "audioKey": "polite-4"
+            },
+            {
+              "id": "v500-mone-numb-pric-no-thanks-maybe-later",
+              "vietnamese": "Không, cảm ơn, có thể để sau",
+              "english": "No thanks, maybe later",
+              "pronunciation": "khong cam on co the de sau",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-family-v500-mone-numb-pric-no-thanks-maybe-later",
+              "audioKey": "v500-mone-numb-pric-no-thanks-maybe-later"
+            },
+            {
+              "id": "polite-2",
+              "vietnamese": "Cảm ơn",
+              "english": "Thank you",
+              "pronunciation": "kahm uhn",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-thank-you",
+              "audioKey": "polite-2"
+            }
+          ],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "acknowledge-khong",
+          "vietnamese": "Không",
+          "english": "No",
+          "pronunciation": "khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-polite-6-first"
+        }
+      ]
+    },
+    {
       "id": "viet-hello-alo",
       "familyID": "hello-alo",
       "phraseID": "hello-alo",
@@ -33378,6 +34933,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Alô is the hello you use on the phone. It is useful for hotel calls, drivers, delivery, tour guides, and anyone calling to confirm a pickup or booking. It does not replace Xin chào in person; it belongs to the phone moment.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -33416,6 +34972,7 @@
               "audioKey": "audio-phrase-alo"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -33460,12 +35017,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it when answering calls, calling a hotel desk, speaking with a driver, or responding to a guide who calls before pickup.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "On the phone, a short Alô is enough to open the channel. If the call becomes confusing, move quickly to a slow-speech or repeat phrase instead of guessing.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -33542,6 +35101,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào anh is one of the most useful local-feeling greetings for travelers. Use it for a man who seems older than you, a driver, guide, shop worker, hotel staff member, or friendly helper when anh feels respectful and warm.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -33586,6 +35146,7 @@
               "audioKey": "breakdown-viet-hello-anh-full"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -33630,12 +35191,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it at a hotel desk, with a male driver, at a cafe counter, with a male guide, or with a man who is just a bit older than you. It is often warmer than Xin chào once the relationship is clear.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Anh does not literally mean the person is your brother here. It marks age relationship and respect, which is why the greeting can sound more natural than a universal you.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -33712,6 +35275,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào bà is a respectful greeting for an elderly woman or grandmother-age local. It is useful in family-run shops, homes, markets, guesthouses, and neighborhood moments where age respect matters.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -33756,6 +35320,7 @@
               "audioKey": "breakdown-viet-hello-ba-full"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -33800,12 +35365,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it when entering a small shop run by an elderly woman, greeting someone at a homestay, asking a grandmother-age local for help, or meeting an older family member of a Vietnamese friend.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Bà carries respect. If the woman is older than you but not elderly, Chào cô or Chào chị may fit better.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -33882,6 +35449,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào bạn is the friendly version of hello when bạn fits the relationship. It works with peers, friendly helpers, classmates, younger adults near your age, or someone whose role feels casual rather than formal. If the person is clearly older or in a service role, Chào anh or Chào chị may sound warmer.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -33926,6 +35494,7 @@
               "audioKey": "audio-phrase-chao-ban"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -33970,12 +35539,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it with a friendly guide, a peer at a class or tour, a casual local helper, or someone who has already made the exchange feel relaxed. In a formal service moment, start with Xin chào or Dạ, chào anh/chị.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Bạn is useful, but it is not a perfect universal you. Vietnamese often prefers relationship words, so Chào bạn is best when you truly want a friendly neutral tone.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -34052,6 +35623,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào chị is the greeting to reach for with a woman who seems older than you or socially senior in the moment. It works with hotel staff, shop workers, guides, cafe staff, and friendly helpers when chị feels warmer than bạn.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -34096,6 +35668,7 @@
               "audioKey": "breakdown-viet-hello-chi-full"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -34140,12 +35713,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it with an older female staff member, guide, driver, shop worker, or local helper. It is especially good when you want the first line to sound warm rather than generic.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Chị is a relationship word, not just a dictionary pronoun. When it fits, it makes the whole greeting sound more socially aware.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -34222,6 +35797,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào chú is for an older man who feels uncle-age: older than you, but not grandfather-age. It is common in neighborhood, shop, homestay, driver, and family contexts where a plain bạn would feel too neutral.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -34266,6 +35842,7 @@
               "audioKey": "breakdown-viet-hello-chu-full"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -34310,12 +35887,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it with an older male shop owner, taxi driver, homestay host, neighborhood helper, or someone who feels closer to an uncle than to an older brother.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Chú is friendly and respectful. If the man is only slightly older, anh may sound more natural; if he is elderly, ông is the clearer respectful choice.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -34392,6 +35971,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào cô is for an older woman who feels aunt-age: older than you, but not grandmother-age. Travelers hear it in shops, classes, homestays, neighborhood places, and polite service moments.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -34436,6 +36016,7 @@
               "audioKey": "breakdown-viet-hello-co-full"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -34480,12 +36061,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it with an older female shop owner, teacher, homestay host, neighborhood helper, or woman who feels closer to aunt-age than sister-age.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Cô can also mean teacher or aunt. In greetings, it works as a respectful relationship word, so the phrase sounds more tuned to the person than a universal hello.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -34562,6 +36145,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào em is a warm greeting for someone younger than you, such as a younger staff member, student, younger guide assistant, or friendly helper. It sounds natural only when the age relationship is clear enough that em feels kind rather than presumptive.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -34606,6 +36190,7 @@
               "audioKey": "breakdown-viet-hello-em-full"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -34650,12 +36235,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it in friendly everyday exchanges where the person is clearly younger: a younger cafe worker, a student helper, a younger person at a homestay, or someone helping you with directions in a relaxed setting.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "If you are unsure about age, Chào bạn is the safer friendly choice. Em is useful because it can sound warm, but the warmth comes from choosing it in the right relationship moment.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -34732,6 +36319,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào ông is a respectful greeting for an elderly man or a grandfather-age local. It gives the hello more care than a plain Xin chào when the person is clearly much older.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -34776,6 +36364,7 @@
               "audioKey": "breakdown-viet-hello-ong-full"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -34820,12 +36409,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it in homes, markets, neighborhood shops, temples, small cafes, or family-run places when you greet an elderly man respectfully.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Ông is respectful and socially distant in a good way. If the man is older but not elderly, Chào chú or Chào anh may feel more natural.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -34902,6 +36493,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào is the plain greeting inside Xin chào. Use it when the moment is relaxed, the other person already feels socially clear, or you are adding a relationship word such as anh, chị, em, cô, or chú. If you are unsure, keep Xin chào as the safer first move.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -34940,6 +36532,7 @@
               "audioKey": "breakdown-chao"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -34984,12 +36577,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use Chào with people you already know, casual service moments where the mood is friendly, or as the base before a relationship word. Use Xin chào when you are entering a new shop, approaching a desk, or unsure how formal to be.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Chào is not rude by itself; it is just lighter. Vietnamese often adds warmth through the word after Chào, so learning the relationship forms matters more than forcing one greeting everywhere.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -35066,6 +36661,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Dạ, chào anh/chị is a useful service greeting because it avoids choosing between anh and chị too early. Use it when you are approaching a desk, cafe counter, clinic, hotel, or tour office and want the first second to feel respectful.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -35116,6 +36712,7 @@
               "audioKey": "audio-phrase-da-chao-anh-chi"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -35160,12 +36757,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it before asking hotel staff for help, ordering at a counter, checking in with a guide, or starting a practical request with someone adult. It is especially useful when you do not want to guess the exact relationship word.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Dạ adds a respectful shape without making the phrase long. It is a small word, but it can make the first line sound calmer and more locally aware.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -35242,6 +36841,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào buổi chiều gives a warm afternoon shape to hello. It is useful when you enter a shop, cafe, class, front desk, or tour office and the interaction is calm enough for a friendly greeting.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -35286,6 +36886,7 @@
               "audioKey": "audio-phrase-chao-buoi-chieu"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -35330,12 +36931,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it when arriving in the afternoon, greeting staff before a question, meeting someone after lunch, or softening the first line of a service interaction.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "A time greeting can sound warm, but relationship words still matter. Chào anh or Chào chị may feel more natural if the person is clearly older than you.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -35412,6 +37015,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Chào buổi sáng is useful when the day is just starting and you want the greeting to feel warmer than a plain hello. It fits hotel breakfasts, cafes, morning tours, classes, and front-desk moments.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -35456,6 +37060,7 @@
               "audioKey": "audio-phrase-chao-buoi-sang"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -35500,12 +37105,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it before a morning order, when meeting a guide early, at breakfast, or when greeting hotel staff before asking a question.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Time-of-day greetings are pleasant but optional. If you are rushing or unsure, Xin chào is still the most dependable greeting.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -35582,6 +37189,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Cảm ơn nhiều is the easy way to make thank you feel stronger without becoming formal or dramatic. Use it when someone carries a bag, gives patient directions, waits for you, fixes a small problem, or does more than the minimum.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -35626,6 +37234,7 @@
               "audioKey": "polite-thank-you-polite"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -35670,12 +37279,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it after patient help, extra effort, a favor, a ride adjustment, a staff member checking something twice, or a local explaining something slowly.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Nhiều makes the phrase warmer, but the short sentence still feels natural. A calm voice and a smile usually carry the gratitude better than adding more words.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -35752,6 +37363,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Không, cảm ơn is the clean travel phrase for refusing without sounding abrupt. It is useful with vendors, extra bags, taxi offers, refills, menu suggestions, and anything you do not want but want to decline kindly.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -35796,6 +37408,7 @@
               "audioKey": "polite-4"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -35840,12 +37453,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it when declining a product, a ride, a refill, a table offer, a menu suggestion, or a street approach. Say it once clearly and keep moving if the moment is brief.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "The phrase is polite because it combines a clear no with gratitude. You do not need to explain unless the situation truly needs a reason.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -35922,6 +37537,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Không có gì is the reply to a thank-you: no problem, it is nothing, you are welcome. It is useful when a hotel worker, driver, classmate, or local thanks you for waiting, moving, paying, or being flexible.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -35966,6 +37582,7 @@
               "audioKey": "v900-poli-basi-no-problem"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -36010,12 +37627,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it after someone thanks you for a small accommodation, apology, delay, or favor. It keeps the moment light and tells them there is no problem.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Không có gì is a response, not the thank-you itself. If you are the one receiving help, start with Cảm ơn or Cảm ơn nhiều instead.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -36092,6 +37711,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Đi đâu đấy? literally asks where someone is going, but in friendly everyday speech it can work like light small talk after hello. Use it with someone familiar enough for a casual check-in, not as a serious route question to a rushed stranger.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -36142,6 +37762,7 @@
               "audioKey": "audio-phrase-di-dau-day"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -36186,12 +37807,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it with a familiar guide, classmate, host, neighbor, or friendly helper after you have already greeted each other. It fits best when the person is walking out, leaving the desk, or heading toward a visible next place.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Because it can sound personal, keep it for friendly contexts. If you truly need directions from a stranger, ask a direction phrase instead.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -36268,6 +37891,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Rất vui được gặp bạn is the friendly line for meeting someone for the first time. It works after names, introductions, a guide handoff, a class, a homestay welcome, or a helpful local exchange that becomes personal enough for warmth.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -36318,6 +37942,7 @@
               "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -36362,12 +37987,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it after someone introduces themselves, after meeting a guide or host, at a language exchange, in a class, or when a helpful local interaction turns into a friendly introduction.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "Bạn makes the phrase peer-friendly. With a clearly older person, the same idea can become more local when the relationship word changes, but this version is a safe first page for travelers.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {
@@ -36444,6 +38071,7 @@
           "id": "at-glance",
           "title": "At a glance",
           "body": "Cảm ơn bạn đã hiểu is for moments when the other person stayed patient while you explained, repeated, used translation, or corrected a misunderstanding. It thanks them for understanding, not just for a service.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
@@ -36494,6 +38122,7 @@
               "audioKey": "v500-unde-repa-thank-you-for-understanding"
             }
           ],
+          "phrases": [],
           "presentation": "breakdown-strip"
         },
         {
@@ -36538,12 +38167,14 @@
           "id": "when-to-use",
           "title": "When to use it",
           "body": "Use it after a language mix-up, a patient explanation, a translated message, or a situation where the other person adjusted to your limited Vietnamese.",
+          "phrases": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "This phrase is warmer than plain Cảm ơn because it names what you appreciate. It is a good closing line after a difficult interaction becomes cooperative.",
+          "phrases": [],
           "presentation": "tip-callout"
         },
         {

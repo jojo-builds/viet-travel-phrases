@@ -432,6 +432,16 @@ function authoredBreakdownAudioKey(text) {
   return exactAudioKey(text, null);
 }
 
+function hasExactAudio(text, audioKey) {
+  if (!audioKey) return false;
+  const entry = audioManifest[audioKey];
+  return Boolean(entry && normalizeAudioText(entry.text) === normalizeAudioText(text));
+}
+
+function speakerSymbolName(text, audioKey) {
+  return hasExactAudio(text, audioKey) ? "speaker.wave.2.fill" : "speaker.slash.fill";
+}
+
 function slug(value) {
   return value
     .normalize("NFD")
@@ -456,28 +466,30 @@ function canonicalPageID(family) {
 }
 
 function phraseOption(phrase, detailPageID = null, tintName = null) {
+  const audioKey = authoredPhraseAudioKey(phrase.targetText, phrase.audioKey);
   return {
     id: phrase.id,
     vietnamese: phrase.targetText,
     english: phrase.englishText,
     pronunciation: phrase.pronunciation,
-    symbolName: "speaker.wave.2.fill",
+    symbolName: speakerSymbolName(phrase.targetText, audioKey),
     tintName: tintName ?? tintForScenario(phrase.scenarioID),
     detailPageID,
-    audioKey: authoredPhraseAudioKey(phrase.targetText, phrase.audioKey),
+    audioKey,
   };
 }
 
 function manualPhraseOption(id, vietnamese, english, pronunciation, tintName, detailPageID = null) {
+  const audioKey = authoredPhraseAudioKey(vietnamese, null);
   return {
     id,
     vietnamese,
     english,
     pronunciation,
-    symbolName: "speaker.wave.2.fill",
+    symbolName: speakerSymbolName(vietnamese, audioKey),
     tintName,
     detailPageID,
-    audioKey: authoredPhraseAudioKey(vietnamese, null),
+    audioKey,
   };
 }
 
@@ -1647,7 +1659,17 @@ function loadFullUniversePages() {
     const page = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return {
       ...page,
-      sections: withSectionPresentations(page.sections ?? []),
+      sections: withSectionPresentations((page.sections ?? []).map((section) => ({
+        ...section,
+        phrases: (section.phrases ?? []).map((phrase) => ({
+          ...phrase,
+          symbolName: speakerSymbolName(phrase.vietnamese, phrase.audioKey),
+        })),
+      }))),
+      examples: (page.examples ?? []).map((phrase) => ({
+        ...phrase,
+        symbolName: speakerSymbolName(phrase.vietnamese, phrase.audioKey),
+      })),
     };
   });
 }

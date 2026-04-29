@@ -2,9 +2,9 @@
   "taskID": "TASK-VIET-2000-FULL-LISTING-PAGES-001",
   "status": "checkpoint",
   "sourcePolicy": "AI-authored page-by-page; scripts validate and package only",
-  "authoredPageCount": 20,
+  "authoredPageCount": 31,
   "originalSourcePhraseCount": 919,
-  "newPhraseRowsInCheckpoint": 15,
+  "newPhraseRowsInCheckpoint": 24,
   "pages": [
     {"pageID": "viet-hello-chao", "phraseID": "hello-chao", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
     {"pageID": "viet-hello-chao-ban", "phraseID": "hello-chao-ban", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
@@ -25,6 +25,17 @@
     {"pageID": "viet-thanks-khong-co-gi", "phraseID": "v900-poli-basi-no-problem", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"},
     {"pageID": "viet-thanks-cam-on-toi-hieu-roi", "phraseID": "directions-7", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"},
     {"pageID": "viet-thanks-cam-on-ban-da-hieu", "phraseID": "v500-unde-repa-thank-you-for-understanding", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"},
-    {"pageID": "viet-thanks-khong-cam-on", "phraseID": "polite-4", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"}
+    {"pageID": "viet-thanks-khong-cam-on", "phraseID": "polite-4", "sourcePageID": "viet-thank-you", "sourcePhraseID": "polite-2", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-acknowledge-da", "phraseID": "polite-3", "sourcePageID": "viet-family-polite-acknowledge", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-acknowledge-dung", "phraseID": "v500-poli-basi-yes", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-acknowledge-co", "phraseID": "acknowledge-co", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-acknowledge-khong", "phraseID": "acknowledge-khong", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-acknowledge-duoc", "phraseID": "acknowledge-duoc", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-da-chao-anh", "phraseID": "acknowledge-da-chao-anh", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-da-chao-chi", "phraseID": "acknowledge-da-chao-chi", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-da-chao-co", "phraseID": "acknowledge-da-chao-co", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-da-chao-chu", "phraseID": "acknowledge-da-chao-chu", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-da-chao-ong", "phraseID": "acknowledge-da-chao-ong", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-da-chao-ba", "phraseID": "acknowledge-da-chao-ba", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"}
   ]
 }

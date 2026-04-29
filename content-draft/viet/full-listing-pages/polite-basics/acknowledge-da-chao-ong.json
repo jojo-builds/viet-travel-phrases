@@ -1,0 +1,74 @@
+{
+  "id": "viet-da-chao-ong",
+  "familyID": "acknowledge-da-chao-ong",
+  "phraseID": "acknowledge-da-chao-ong",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Dạ, chào ông",
+  "englishTitle": "Respectful hello to an elderly man",
+  "pronunciation": "yah chow ohng",
+  "summary": "Different ways to say Dạ, chào ông in Vietnam show respect for an elderly man.",
+  "iconName": "hand.wave.fill",
+  "tintName": "blue",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "audio-phrase-da-chao-ong",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Dạ, chào ông is the respectful greeting for an elderly man or grandfather-age local. It is useful in homes, neighborhoods, markets, temples, family-run shops, and any moment where age respect is the main signal."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Use it when ông clearly fits better than anh or chú.",
+      "phrases": [
+        {"id": "acknowledge-da-chao-ong", "vietnamese": "Dạ, chào ông", "english": "Respectful hello to an elderly man", "pronunciation": "yah chow ohng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "audio-phrase-da-chao-ong"}
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "The phrase combines respect, greeting, and the elderly-man relationship word.",
+      "breakdown": [
+        {"id": "da", "vietnamese": "Dạ", "english": "respectful softener", "audioKey": "polite-3"},
+        {"id": "chao", "vietnamese": "chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
+        {"id": "ong", "vietnamese": "ông", "english": "elderly man / grandfather role", "audioKey": null},
+        {"id": "full", "vietnamese": "Dạ, chào ông", "english": "respectful hello to an elderly man", "audioKey": "audio-phrase-da-chao-ong"}
+      ]
+    },
+    {
+      "id": "relationship-swaps",
+      "title": "Relationship swaps",
+      "body": "These forms move between elderly and middle-age relationship words.",
+      "phrases": [
+        {"id": "acknowledge-da-chao-ba", "vietnamese": "Dạ, chào bà", "english": "Respectful hello to an elderly woman", "pronunciation": "yah chow bah", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-da-chao-ba", "audioKey": "audio-phrase-da-chao-ba"},
+        {"id": "acknowledge-da-chao-chu", "vietnamese": "Dạ, chào chú", "english": "Respectful hello to an uncle-age man", "pronunciation": "yah chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-da-chao-chu", "audioKey": "audio-phrase-da-chao-chu"},
+        {"id": "hello-chao-ong", "vietnamese": "Chào ông", "english": "Hello to an elderly man", "pronunciation": "chow ohng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-ong", "audioKey": "breakdown-viet-hello-ong-full"}
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it when greeting an elderly man at a home, family business, market stall, neighborhood shop, temple, or local gathering."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Ông is respectful when the person is clearly elderly. For a not-elderly older man, chú or anh usually feels better."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "These keep the respectful exchange simple.",
+      "phrases": [
+        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"},
+        {"id": "polite-3", "vietnamese": "Dạ", "english": "Yes / polite acknowledgment", "pronunciation": "yah", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-acknowledge-da", "audioKey": "polite-3"},
+        {"id": "hello-chao-ong", "vietnamese": "Chào ông", "english": "Hello to an elderly man", "pronunciation": "chow ohng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-ong", "audioKey": "breakdown-viet-hello-ong-full"}
+      ]
+    }
+  ],
+  "examples": [
+    {"id": "acknowledge-da-chao-ong", "vietnamese": "Dạ, chào ông", "english": "Respectful hello to an elderly man", "pronunciation": "yah chow ohng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "audio-phrase-da-chao-ong"}
+  ]
+}

@@ -1585,7 +1585,7 @@ function main() {
       authoredCategoryIDs: Array.from(categoryIDs).sort(),
     },
     notes: [
-      "The native Swift runtime uses the bundled SQLite phrase graph by default unless explicitly disabled for fallback/testing.",
+      "The native Swift runtime uses the bundled SQLite phrase graph by default unless explicitly disabled for JSON resource testing.",
       "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet and remains reproducible from catalog, authored page, and audio manifest inputs.",
       "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
       "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",

@@ -1,0 +1,74 @@
+{
+  "id": "viet-da-chao-co",
+  "familyID": "acknowledge-da-chao-co",
+  "phraseID": "acknowledge-da-chao-co",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Dạ, chào cô",
+  "englishTitle": "Respectful hello to an aunt-age woman",
+  "pronunciation": "yah chow koh",
+  "summary": "Different ways to say Dạ, chào cô in Vietnam teach the respectful greeting for an aunt-age woman.",
+  "iconName": "hand.wave.fill",
+  "tintName": "red",
+  "categoryIDs": ["greetings", "polite-basics"],
+  "audioKey": "audio-phrase-da-chao-co",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Dạ, chào cô is a respectful hello for an older woman who feels aunt-age, a teacher, a shop owner, a homestay host, or a helpful older local. It feels warmer than a generic hello because it recognizes the relationship."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Use it when cô sounds more natural than chị, especially if the person is clearly older than an older-sister role.",
+      "phrases": [
+        {"id": "acknowledge-da-chao-co", "vietnamese": "Dạ, chào cô", "english": "Respectful hello to an aunt-age woman", "pronunciation": "yah chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "audio-phrase-da-chao-co"}
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "The final word is the relationship choice that makes the phrase feel local.",
+      "breakdown": [
+        {"id": "da", "vietnamese": "Dạ", "english": "respectful softener", "audioKey": "polite-3"},
+        {"id": "chao", "vietnamese": "chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
+        {"id": "co", "vietnamese": "cô", "english": "aunt-age woman / teacher-like role", "audioKey": null},
+        {"id": "full", "vietnamese": "Dạ, chào cô", "english": "respectful hello to an aunt-age woman", "audioKey": "audio-phrase-da-chao-co"}
+      ]
+    },
+    {
+      "id": "relationship-swaps",
+      "title": "Relationship swaps",
+      "body": "Move up or down the age ladder with these nearby forms.",
+      "phrases": [
+        {"id": "acknowledge-da-chao-chi", "vietnamese": "Dạ, chào chị", "english": "Respectful hello to an older woman", "pronunciation": "yah chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-da-chao-chi", "audioKey": "audio-phrase-da-chao-chi"},
+        {"id": "acknowledge-da-chao-ba", "vietnamese": "Dạ, chào bà", "english": "Respectful hello to an elderly woman", "pronunciation": "yah chow bah", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-da-chao-ba", "audioKey": "audio-phrase-da-chao-ba"},
+        {"id": "hello-chao-co", "vietnamese": "Chào cô", "english": "Hello to an aunt-age woman", "pronunciation": "chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-co", "audioKey": "breakdown-viet-hello-co-full"}
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it with an aunt-age woman at a shop, market stall, family-run hotel, food stand, class, clinic desk, or neighborhood setting."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Cô can also be used for teachers or women in a teacher-like role. That makes this phrase useful beyond literal family age."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "These phrases help once the greeting opens the conversation.",
+      "phrases": [
+        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"},
+        {"id": "food-menu", "vietnamese": "Cho tôi xem thực đơn được không?", "english": "Can I see the menu?", "pronunciation": "cho toy sem thook dun dook khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-food-menu", "audioKey": "food-menu"},
+        {"id": "acknowledge-duoc", "vietnamese": "Được", "english": "Okay / that works", "pronunciation": "duhk", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-acknowledge-duoc", "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"}
+      ]
+    }
+  ],
+  "examples": [
+    {"id": "acknowledge-da-chao-co", "vietnamese": "Dạ, chào cô", "english": "Respectful hello to an aunt-age woman", "pronunciation": "yah chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "audio-phrase-da-chao-co"}
+  ]
+}

@@ -172,6 +172,14 @@ function main() {
     if (page.audioKey && audioTextByKey.has(page.audioKey)) {
       assert(audioTextByKey.get(page.audioKey) === normalize(page.title), `${relative(filePath)} hero audio does not match title`);
     }
+
+    for (const section of page.sections ?? []) {
+      for (const phrase of section.phrases ?? []) {
+        const hasExactAudio = phrase.audioKey && audioTextByKey.get(phrase.audioKey) === normalize(phrase.vietnamese);
+        const expectedSymbol = hasExactAudio ? "speaker.wave.2.fill" : "speaker.slash.fill";
+        assert(phrase.symbolName === expectedSymbol, `${relative(filePath)} ${section.id} phrase ${phrase.id} should use ${expectedSymbol}`);
+      }
+    }
   }
 
   const rationaleByPageID = new Map(rationaleRows.map((row) => [row.pageID, row]));

@@ -1,0 +1,72 @@
+{
+  "id": "viet-acknowledge-khong",
+  "familyID": "acknowledge-khong",
+  "phraseID": "acknowledge-khong",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Không",
+  "englishTitle": "No",
+  "pronunciation": "khong",
+  "summary": "Different ways to say Không in Vietnam start with a clear no, then add warmth when needed.",
+  "iconName": "xmark.circle.fill",
+  "tintName": "red",
+  "categoryIDs": ["polite-basics"],
+  "audioKey": "breakdown-polite-6-first",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Không is the simple no. It is useful because many traveler moments need a clear answer before politeness or explanation. If you are declining an offer, Không, cảm ơn is warmer. If you are answering a direct yes/no question, Không can be enough."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Use Không when the answer is no and the other person needs clarity more than extra explanation.",
+      "phrases": [
+        {"id": "acknowledge-khong", "vietnamese": "Không", "english": "No", "pronunciation": "khong", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "breakdown-polite-6-first"}
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "The word is also the no/not piece inside many longer phrases.",
+      "breakdown": [
+        {"id": "khong-meaning", "vietnamese": "không", "english": "no / not", "audioKey": "breakdown-polite-6-first"},
+        {"id": "full", "vietnamese": "Không", "english": "no", "audioKey": "breakdown-polite-6-first"}
+      ]
+    },
+    {
+      "id": "softer-no",
+      "title": "Softer no",
+      "body": "When the no is a refusal, add the phrase that keeps the moment friendly.",
+      "phrases": [
+        {"id": "polite-4", "vietnamese": "Không, cảm ơn", "english": "No, thank you", "pronunciation": "khong kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thanks-khong-cam-on", "audioKey": "polite-4"},
+        {"id": "polite-6", "vietnamese": "Không sao đâu", "english": "It's okay", "pronunciation": "khong sao doh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-polite-its-okay", "audioKey": "polite-6"},
+        {"id": "acknowledge-co", "vietnamese": "Có", "english": "Yes / there is", "pronunciation": "koh", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-acknowledge-co", "audioKey": "breakdown-food-5-first"}
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it to answer a direct question, correct a mistaken assumption, say an item is not yours, or decline when the other person is waiting for a clear yes/no answer."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "A bare Không can sound abrupt if you are turning down a person. Add cảm ơn when the person offered you something or helped you."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "These help you keep the no friendly or reassuring.",
+      "phrases": [
+        {"id": "polite-4", "vietnamese": "Không, cảm ơn", "english": "No, thank you", "pronunciation": "khong kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thanks-khong-cam-on", "audioKey": "polite-4"},
+        {"id": "v500-mone-numb-pric-no-thanks-maybe-later", "vietnamese": "Không, cảm ơn, có thể để sau", "english": "No thanks, maybe later", "pronunciation": "khong cam on co the de sau", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": "viet-family-v500-mone-numb-pric-no-thanks-maybe-later", "audioKey": "v500-mone-numb-pric-no-thanks-maybe-later"},
+        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}
+      ]
+    }
+  ],
+  "examples": [
+    {"id": "acknowledge-khong", "vietnamese": "Không", "english": "No", "pronunciation": "khong", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "breakdown-polite-6-first"}
+  ]
+}

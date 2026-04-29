@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generatedAt": "2026-04-29T15:32:14.043Z",
+    "generatedAt": "2026-04-29T15:54:05.229Z",
     "tierOneFamilyCount": 150,
-    "requiredAudioCount": 481,
+    "requiredAudioCount": 492,
     "missingAudioCount": 0
   },
   "required": [
@@ -3735,6 +3735,110 @@
       "resolved": true
     },
     {
+      "pageID": "viet-da-chao-anh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-phrase-da-chao-anh",
+      "text": "Dạ, chào anh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-da-chao-anh",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-chao",
+      "text": "chào",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-da-chao-anh",
+      "sectionID": "relationship-swaps",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-da-chao-chi",
+      "text": "Dạ, chào chị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-da-chao-anh",
+      "sectionID": "relationship-swaps",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-da-chao-chu",
+      "text": "Dạ, chào chú",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-da-chao-ba",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-phrase-da-chao-ba",
+      "text": "Dạ, chào bà",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-da-chao-ba",
+      "sectionID": "relationship-swaps",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-da-chao-ong",
+      "text": "Dạ, chào ông",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-da-chao-ba",
+      "sectionID": "relationship-swaps",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-da-chao-co",
+      "text": "Dạ, chào cô",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-da-chao-co",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first",
+      "text": "Được",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-acknowledge-da",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "polite-3",
+      "text": "dạ",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-acknowledge-dung",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "v500-poli-basi-yes",
+      "text": "đúng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-acknowledge-duoc",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-shop-okay-ill-take-it",
+      "text": "Được rồi, tôi sẽ lấy nó",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-acknowledge-duoc",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-unde-repa-okay-now-i-understand",
+      "text": "Được rồi, bây giờ tôi đã hiểu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-acknowledge-khong",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "v500-mone-numb-pric-no-thanks-maybe-later",
+      "text": "Không, cảm ơn, có thể để sau",
+      "resolved": true
+    },
+    {
       "pageID": "viet-hello-chao-anh",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -3791,14 +3895,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-hello-chao",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-chao",
-      "text": "chào",
-      "resolved": true
-    },
-    {
       "pageID": "viet-thanks-cam-on-nhieu",
       "sectionID": "natural-variations",
       "kind": "phrase",
@@ -3820,14 +3916,6 @@
       "kind": "breakdown",
       "audioKey": "polite-2",
       "text": "cảm ơn",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-thanks-khong-cam-on",
-      "sectionID": "natural-variations",
-      "kind": "phrase",
-      "audioKey": "v500-mone-numb-pric-no-thanks-maybe-later",
-      "text": "Không, cảm ơn, có thể để sau",
       "resolved": true
     },
     {
