@@ -116,6 +116,8 @@ enum AppChromeLayout {
     static let bottomSpacing: CGFloat = 8
     static let bottomPadding: CGFloat = -10
     static let bottomOffset: CGFloat = 10
+    static let bottomSeparationHeight: CGFloat = 150
+    static let topSeparationHeight: CGFloat = 118
     static let dockItemSpacing: CGFloat = 12
     static let dockHorizontalPadding: CGFloat = 12
     static let dockVerticalPadding: CGFloat = 3
@@ -124,6 +126,33 @@ enum AppChromeLayout {
     static let searchIslandCornerRadius: CGFloat = 29
     static let searchFieldHeight: CGFloat = 58
     static let searchFieldHorizontalPadding: CGFloat = 14
+}
+
+enum ChromeSeparationEdge {
+    case top
+    case bottom
+}
+
+struct ChromeSeparationGradient: View {
+    let edge: ChromeSeparationEdge
+
+    var body: some View {
+        LinearGradient(
+            colors: gradientColors,
+            startPoint: edge == .bottom ? .top : .bottom,
+            endPoint: edge == .bottom ? .bottom : .top
+        )
+        .frame(height: edge == .bottom ? AppChromeLayout.bottomSeparationHeight : AppChromeLayout.topSeparationHeight)
+        .allowsHitTesting(false)
+    }
+
+    private var gradientColors: [Color] {
+        [
+            Color(.systemBackground).opacity(0),
+            Color(.systemBackground).opacity(0.72),
+            Color(.systemBackground).opacity(0.94),
+        ]
+    }
 }
 
 enum SearchPageLayout {

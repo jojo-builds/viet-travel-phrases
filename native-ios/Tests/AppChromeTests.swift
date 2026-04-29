@@ -8,6 +8,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThan(AppChromeLayout.dockVerticalPadding, 5)
         XCTAssertLessThan(AppChromeLayout.searchIslandSize, 64)
         XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
+        XCTAssertGreaterThan(AppChromeLayout.bottomSeparationHeight, AppChromeLayout.searchIslandSize)
+        XCTAssertGreaterThan(AppChromeLayout.topSeparationHeight, 80)
     }
 
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
@@ -46,6 +48,12 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(ExploreCatalogLayout.rowSubtitleLineLimit, 2)
         XCTAssertGreaterThanOrEqual(ExploreCatalogLayout.rowHeight, 82)
         XCTAssertGreaterThanOrEqual(SearchResultRowLayout.subtitleLineLimit, 2)
+    }
+
+    func testHomeSituationRowsUseStableCardMetrics() {
+        XCTAssertEqual(HomeLayout.situationRowHeight, 104)
+        XCTAssertEqual(HomeLayout.situationIconSize, 46)
+        XCTAssertLessThan(HomeLayout.situationIconSize, HomeLayout.situationRowHeight)
     }
 
     func testPhrasePageChromeUsesSeparateSearchIsland() {

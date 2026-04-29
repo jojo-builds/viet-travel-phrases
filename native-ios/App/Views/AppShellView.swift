@@ -109,11 +109,21 @@ struct AppShellView: View {
             .simultaneousGesture(backSwipeGesture(width: pageWidth))
             .simultaneousGesture(forwardSwipeGesture(width: pageWidth))
             .overlay(alignment: .bottom) {
+                ChromeSeparationGradient(edge: .bottom)
+                    .zIndex(360)
+            }
+            .overlay(alignment: .bottom) {
                 staticBottomChrome
                     .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
                     .padding(.bottom, AppChromeLayout.bottomPadding)
                     .offset(y: AppChromeLayout.bottomOffset)
                     .zIndex(380)
+            }
+            .overlay(alignment: .top) {
+                if showsStaticBackButton {
+                    ChromeSeparationGradient(edge: .top)
+                        .zIndex(360)
+                }
             }
             .overlay(alignment: .topLeading) {
                 if showsStaticBackButton {
@@ -1576,7 +1586,8 @@ enum HomeLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 28
     static let cardCornerRadius: CGFloat = 22
-    static let situationRowMinHeight: CGFloat = 104
+    static let situationRowHeight: CGFloat = 104
+    static let situationIconSize: CGFloat = 46
     static let relationshipRowsPerGroup = 3
     static let relationshipGroupSpacing: CGFloat = 12
     static let relationshipRowHeight: CGFloat = 86
@@ -1892,7 +1903,7 @@ private struct HomeSituationGroupRow: View {
                 Image(systemName: group.symbolName)
                     .font(.headline.weight(.semibold))
                     .foregroundStyle(group.tintName.color)
-                    .frame(width: 46, height: 46)
+                    .frame(width: HomeLayout.situationIconSize, height: HomeLayout.situationIconSize)
                     .nativeGlass(cornerRadius: 23, interactive: true)
 
                 VStack(alignment: .leading, spacing: 4) {
@@ -1917,7 +1928,8 @@ private struct HomeSituationGroupRow: View {
             .padding(14)
             .frame(
                 maxWidth: .infinity,
-                minHeight: HomeLayout.situationRowMinHeight,
+                minHeight: HomeLayout.situationRowHeight,
+                maxHeight: HomeLayout.situationRowHeight,
                 alignment: .leading
             )
             .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)

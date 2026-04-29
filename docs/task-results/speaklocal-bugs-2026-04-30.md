@@ -145,7 +145,7 @@ Reviewer gate:
 
 ## Bug 9 - Breakdown carousel affordance
 
-Commit: pending
+Commit: d01120f
 
 Changes:
 - Added `BreakdownLayout` constants for breakdown-card width, separator width, and trailing peek behavior.
@@ -157,3 +157,20 @@ Validation:
 
 Reviewer gate:
 - APPROVED. Layout constants now enforce a multi-card peek while preserving single-card breakdown behavior; simulator screenshot capture is deferred to the final screenshot sweep after the remaining UI fixes.
+
+## Bug 10 - Dense text and homepage/glass polish
+
+Commit: pending
+
+Changes:
+- Kept the SQLite dense-text validator active and re-ran it after UI changes.
+- Changed Home travel-situation rows from variable minimum-height cards to fixed-height cards with a stable icon column.
+- Added subtle top and bottom separation gradients behind static chrome so content does not visually merge with the bottom toolbar/search island or top back chrome.
+
+Validation:
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed, including `textOnlySectionRunCount: 0` through the report check.
+- `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'id=91BDCCB0-0728-40AB-8150-B6DCB96BE799' -only-testing:SpeakLocalNativeTests/AppChromeTests/testBottomChromeLayoutUsesCompactIslandMetrics -only-testing:SpeakLocalNativeTests/AppChromeTests/testHomeSituationRowsUseStableCardMetrics` passed, 2 tests.
+- Source scan found no `Different ways`, stale `situationRowMinHeight`, or generated `main idea` text in the touched native app files.
+
+Reviewer gate:
+- APPROVED. Home situation cards now use stable card/icon metrics, dense text remains validator-blocked, and static chrome has a soft separation layer from scrolling content.
