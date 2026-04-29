@@ -40,7 +40,7 @@ struct SearchPageView: View {
 
                     LazyVStack(alignment: .leading, spacing: SearchPageLayout.resultGroupSpacing) {
                         if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                            SearchSuggestionRow(title: "Different ways to say hello", subtitle: "Xin chào, chào bạn, chào anh/chị")
+                            SearchSuggestionRow(title: "Warm ways to say hello", subtitle: "Xin chào, chào bạn, chào anh/chị")
                             SearchSuggestionRow(title: "Ask for directions", subtitle: "How do I get there, take me here")
                             SearchSuggestionRow(title: "When you don't understand", subtitle: "What does it mean, please repeat, write it down")
                         } else {

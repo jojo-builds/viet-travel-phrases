@@ -432,10 +432,26 @@ function main() {
   }
 
   function pageSummaryForPhrase(phrase, authoredPage, family) {
-    if (authoredPage?.summary) return authoredPage.summary;
+    if (authoredPage?.summary && !internalAuthoringSummary(authoredPage.summary)) return authoredPage.summary;
     const summary = sentence(family?.summary);
-    if (summary && !/^use this when\b/i.test(summary)) return summary;
-    return `Different ways to say "${phrase.englishText}" in Vietnam, starting with ${phrase.targetText} and the pieces to recognize.`;
+    if (summary && !/^use this when\b/i.test(summary) && !internalAuthoringSummary(summary)) return summary;
+    return travelerFacingSummary(phrase);
+  }
+
+  function internalAuthoringSummary(value) {
+    return /\bDifferent ways\b/i.test(String(value ?? ""));
+  }
+
+  function travelerFacingSummary(phrase) {
+    const english = String(phrase.englishText ?? "").trim();
+    const target = String(phrase.targetText ?? "").trim();
+    if (english.endsWith("?")) {
+      return `Ask "${english}" with ${target}, then use the notes below to understand likely replies and next steps.`;
+    }
+    if (/^(hello|hi|goodbye|thank|thanks|sorry|excuse me|yes|no|okay|it.?s okay)\b/i.test(english)) {
+      return `Start with ${target} for "${english}", then use the notes below to choose the warmer local form.`;
+    }
+    return `Say "${english}" with ${target}, then use the notes below to adjust tone and next steps.`;
   }
 
   function scenarioNeighborPhrases(phrase) {
@@ -1620,6 +1636,7 @@ function main() {
     /Watch out/i,
     /repair phrase/i,
     /Understanding Repair/i,
+    /\bDifferent ways\b/i,
     /question marker/i,
     /key word/i,
     /warning-callout/i,

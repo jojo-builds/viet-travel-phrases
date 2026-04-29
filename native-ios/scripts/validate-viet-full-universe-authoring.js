@@ -15,6 +15,7 @@ const bannedPatterns = [
   /Watch out/i,
   /repair phrase/i,
   /Understanding Repair/i,
+  /\bDifferent ways\b/i,
   /question marker/i,
   /\bbaseline\b/i,
   /\bsupport\b/i,

@@ -545,6 +545,18 @@ function weakSummary(summary) {
   return /when you need|need to explain that|use this when you need/i.test(summary ?? "");
 }
 
+function travelerFacingSummary(phrase) {
+  const english = String(phrase.englishText ?? "").trim();
+  const target = String(phrase.targetText ?? "").trim();
+  if (english.endsWith("?")) {
+    return `Ask "${english}" with ${target}, then use the notes below to understand likely replies and next steps.`;
+  }
+  if (/^(hello|hi|goodbye|thank|thanks|sorry|excuse me|yes|no|okay|it.?s okay)\b/i.test(english)) {
+    return `Start with ${target} for "${english}", then use the notes below to choose the warmer local form.`;
+  }
+  return `Say "${english}" with ${target}, then use the notes below to adjust tone and next steps.`;
+}
+
 function instructionLikeSentence(text) {
   return /^(use|ask|say|add|show|point|keep)\b/i.test((text ?? "").trim());
 }
@@ -1623,9 +1635,7 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     title: primaryPhrase.targetText,
     englishTitle: primaryPhrase.englishText,
     pronunciation: primaryPhrase.pronunciation,
-    summary: variantOptions.length > 0
-      ? `Different ways to say "${primaryPhrase.englishText}" in Vietnam, with the phrase to start with, useful forms, and related next steps.`
-      : `Different ways to say "${primaryPhrase.englishText}" in Vietnam, with the phrase to start with, reusable pieces, and related next steps.`,
+    summary: travelerFacingSummary(primaryPhrase),
     iconName: scenario?.symbolName ?? "text.bubble.fill",
     tintName: tintForScenario(family.scenarioID),
     categoryIDs: categoryIDsForPage(pageID, family),

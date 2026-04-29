@@ -85,6 +85,7 @@ const overTemplatePatterns = [
   /nearby phrases are likely to sit near this moment/i,
   /phrase works because it is specific enough/i,
   /Use this when one key word/i,
+  /\bDifferent ways\b/i,
   /question marker/i,
 ];
 

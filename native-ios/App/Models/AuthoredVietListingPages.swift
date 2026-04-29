@@ -156,7 +156,7 @@ enum AuthoredVietListingPages {
         title: "Cái đó nghĩa là gì?",
         englishTitle: "What does that mean?",
         pronunciation: "gai doh ngee-ah lah zee",
-        summary: "Different ways to ask what something means in Vietnam, from a simple word check to a polite clarification.",
+        summary: "Ask what something means in Vietnam, from a simple word check to a polite clarification.",
         iconName: "questionmark.bubble.fill",
         tintName: .blue,
         sections: [

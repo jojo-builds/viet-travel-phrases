@@ -17,14 +17,24 @@ const expoVietPackPath = path.join(repoRoot, "app", "family", "packs", "viet.gen
 const expoVietPresentationPath = path.join(repoRoot, "app", "family", "presentation", "viet.ts");
 const expoVietPremiumPath = path.join(repoRoot, "app", "family", "presentation", "vietPremium.ts");
 const listingPagesRoot = path.join(repoRoot, "content-draft", "viet", "listing-pages");
+const fullListingPagesRoot = path.join(repoRoot, "content-draft", "viet", "full-listing-pages");
 const sitePreviewDataRoot = path.join(repoRoot, "site", "data", "phrase-previews");
 const sitePublicPreviewDataRoot = path.join(repoRoot, "site", "public", "data", "phrase-previews");
 const siteRoot = path.join(repoRoot, "site");
+const appUserFacingSourcePaths = [
+  path.join(nativeRoot, "App", "Models", "AuthoredVietListingPages.swift"),
+  path.join(nativeRoot, "App", "Models", "PhrasePage.swift"),
+  path.join(nativeRoot, "App", "Views", "AppShellView.swift"),
+  path.join(nativeRoot, "App", "Views", "PhraseDetailView.swift"),
+  path.join(nativeRoot, "App", "Views", "PhraseListingView.swift"),
+  path.join(nativeRoot, "App", "Views", "SearchPageView.swift"),
+];
 
 const bannedPatterns = [
   /Watch out/i,
   /repair phrase/i,
   /Understanding Repair/i,
+  /\bDifferent ways\b/i,
   /question marker/i,
   /key word/i,
   /warning-callout/i,
@@ -114,11 +124,11 @@ function walkFiles(dir, predicate) {
   return files;
 }
 
-function scanBannedFiles(files) {
+function scanBannedFiles(files, patterns = bannedPatterns) {
   const matches = [];
   for (const filePath of files) {
     const text = fs.readFileSync(filePath, "utf8");
-    for (const pattern of bannedPatterns) {
+    for (const pattern of patterns) {
       if (pattern.test(text)) {
         matches.push({ path: relative(filePath), pattern: String(pattern) });
       }
@@ -458,11 +468,15 @@ function main() {
     expoVietPresentationPath,
     expoVietPremiumPath,
     ...walkJSONFiles(listingPagesRoot),
+    ...walkJSONFiles(fullListingPagesRoot),
     ...walkJSONFiles(sitePreviewDataRoot),
     ...walkJSONFiles(sitePublicPreviewDataRoot),
     ...walkFiles(siteRoot, (filePath) => filePath.endsWith(".html")),
   ];
-  const bannedFileMatches = scanBannedFiles(bannedScanFiles);
+  const bannedFileMatches = [
+    ...scanBannedFiles(bannedScanFiles),
+    ...scanBannedFiles(appUserFacingSourcePaths, [/\bDifferent ways\b/i]),
+  ];
   if (bannedFileMatches.length > 0) {
     throw new Error(`Banned user-facing wording found:\n${JSON.stringify(bannedFileMatches, null, 2)}`);
   }
