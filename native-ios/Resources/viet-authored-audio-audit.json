@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-04-29T15:54:05.229Z",
+    "generatedAt": "2026-04-29T16:01:44.436Z",
     "tierOneFamilyCount": 150,
     "requiredAudioCount": 492,
     "missingAudioCount": 0
@@ -3103,46 +3103,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-how-are-you",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-smalltalk-7-first",
-      "text": "Bạn",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-how-are-you",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-khoe-172d93f8d9",
-      "text": "khỏe",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-how-are-you",
-      "sectionID": "relationship-forms",
-      "kind": "phrase",
-      "audioKey": "audio-authored-anh-khoe-khong-942769853d",
-      "text": "Anh khỏe không?",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-how-are-you",
-      "sectionID": "relationship-forms",
-      "kind": "phrase",
-      "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
-      "text": "Chị khỏe không?",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-how-are-you",
-      "sectionID": "relationship-forms",
-      "kind": "phrase",
-      "audioKey": "audio-phrase-em-khoe-khong",
-      "text": "Em khỏe không?",
-      "resolved": true
-    },
-    {
       "pageID": "viet-family-sight-ticket",
       "sectionID": "hero",
       "kind": "hero",
@@ -3932,6 +3892,46 @@
       "kind": "phrase",
       "audioKey": "v900-shop-no-thank-you-ill-look-around-first",
       "text": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you-anh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-anh-khoe-khong-942769853d",
+      "text": "Anh khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you-anh",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-khoe-172d93f8d9",
+      "text": "khỏe",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you-anh",
+      "sectionID": "relationship-forms",
+      "kind": "phrase",
+      "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
+      "text": "Chị khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you-anh",
+      "sectionID": "relationship-forms",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-em-khoe-khong",
+      "text": "Em khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-how-are-you",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-smalltalk-7-first",
+      "text": "Bạn",
       "resolved": true
     },
     {

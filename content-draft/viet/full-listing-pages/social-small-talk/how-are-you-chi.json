@@ -1,0 +1,74 @@
+{
+  "id": "viet-how-are-you-chi",
+  "familyID": "how-are-you-chi",
+  "phraseID": "how-are-you-chi",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Chị khỏe không?",
+  "englishTitle": "How are you, older woman?",
+  "pronunciation": "chee khweh khom",
+  "summary": "Different ways to say Chị khỏe không? in Vietnam use the older-woman relationship word.",
+  "iconName": "bubble.left.and.bubble.right.fill",
+  "tintName": "red",
+  "categoryIDs": ["small-talk", "greetings"],
+  "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Chị khỏe không? is the friendly how are you for an older woman, adult female helper, guide, teacher, or staff member. It sounds more local than using bạn when the woman is clearly older or socially senior."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Use this after Dạ, chào chị or Chào chị when the greeting has opened into a friendly exchange.",
+      "phrases": [
+        {"id": "how-are-you-chi", "vietnamese": "Chị khỏe không?", "english": "How are you, older woman?", "pronunciation": "chee khweh khom", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "audio-authored-chi-khoe-khong-1483c77058"}
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "The question pattern is familiar; chị tells the listener who the question is for.",
+      "breakdown": [
+        {"id": "chi", "vietnamese": "Chị", "english": "older woman / older sister role", "audioKey": null},
+        {"id": "khoe", "vietnamese": "khỏe", "english": "healthy / well", "audioKey": "breakdown-authored-khoe-172d93f8d9"},
+        {"id": "khong", "vietnamese": "không?", "english": "yes/no question ending", "audioKey": "breakdown-bath-6-piece-6"},
+        {"id": "full", "vietnamese": "Chị khỏe không?", "english": "how are you, older woman?", "audioKey": "audio-authored-chi-khoe-khong-1483c77058"}
+      ]
+    },
+    {
+      "id": "relationship-forms",
+      "title": "Relationship forms",
+      "body": "Change the first word when the person changes.",
+      "phrases": [
+        {"id": "smalltalk-7", "vietnamese": "Bạn khỏe không?", "english": "How are you?", "pronunciation": "ban khoe khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-how-are-you", "audioKey": "smalltalk-7"},
+        {"id": "how-are-you-anh", "vietnamese": "Anh khỏe không?", "english": "How are you, older man?", "pronunciation": "anh khweh khom", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-how-are-you-anh", "audioKey": "audio-authored-anh-khoe-khong-942769853d"},
+        {"id": "how-are-you-em", "vietnamese": "Em khỏe không?", "english": "How are you, younger person?", "pronunciation": "em khweh khom", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-how-are-you-em", "audioKey": "audio-phrase-em-khoe-khong"}
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it with an older woman at a cafe, shop, hotel desk, class, tour, homestay, or local help moment when the exchange is warm enough for a check-in."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Chị often lands warmly for a woman who is older than you but not aunt-age. For a clearly older woman, cô may fit better in greetings."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "These phrases often come before or after this check-in.",
+      "phrases": [
+        {"id": "acknowledge-da-chao-chi", "vietnamese": "Dạ, chào chị", "english": "Respectful hello to an older woman", "pronunciation": "yah chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-da-chao-chi", "audioKey": "audio-phrase-da-chao-chi"},
+        {"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-chi", "audioKey": "breakdown-viet-hello-chi-full"},
+        {"id": "smalltalk-nice-to-meet-you", "vietnamese": "Rất vui được gặp bạn", "english": "Nice to meet you", "pronunciation": "zuht voo ee duhk gap ban", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-smalltalk-nice-to-meet-you", "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"}
+      ]
+    }
+  ],
+  "examples": [
+    {"id": "how-are-you-chi", "vietnamese": "Chị khỏe không?", "english": "How are you, older woman?", "pronunciation": "chee khweh khom", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "audio-authored-chi-khoe-khong-1483c77058"}
+  ]
+}

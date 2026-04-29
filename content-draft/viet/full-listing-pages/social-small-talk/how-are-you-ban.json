@@ -1,0 +1,74 @@
+{
+  "id": "viet-how-are-you",
+  "familyID": "social-how-are-you",
+  "phraseID": "smalltalk-7",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Bạn khỏe không?",
+  "englishTitle": "How are you?",
+  "pronunciation": "ban khoe khong",
+  "summary": "Different ways to say Bạn khỏe không? in Vietnam start with choosing the right relationship word.",
+  "iconName": "bubble.left.and.bubble.right.fill",
+  "tintName": "green",
+  "categoryIDs": ["small-talk", "greetings"],
+  "audioKey": "smalltalk-7",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Bạn khỏe không? is the friendly peer version of how are you. It works after a greeting when the person feels close to your age, casual, or friendly enough for bạn. With older or younger people, Vietnamese often sounds warmer when you swap bạn for anh, chị, or em."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Use Bạn khỏe không? with peers, friendly guides, classmates, younger adults near your age, or someone who has already made the exchange casual.",
+      "phrases": [
+        {"id": "smalltalk-7", "vietnamese": "Bạn khỏe không?", "english": "How are you?", "pronunciation": "ban khoe khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "smalltalk-7"}
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "The pattern stays the same while the first word changes by relationship.",
+      "breakdown": [
+        {"id": "ban", "vietnamese": "Bạn", "english": "you / friend / peer", "audioKey": "breakdown-smalltalk-7-first"},
+        {"id": "khoe", "vietnamese": "khỏe", "english": "healthy / well", "audioKey": "breakdown-authored-khoe-172d93f8d9"},
+        {"id": "khong", "vietnamese": "không?", "english": "yes/no question ending", "audioKey": "breakdown-bath-6-piece-6"},
+        {"id": "full", "vietnamese": "Bạn khỏe không?", "english": "how are you?", "audioKey": "smalltalk-7"}
+      ]
+    },
+    {
+      "id": "relationship-forms",
+      "title": "Relationship forms",
+      "body": "Swap the first word when the person is clearly older or younger.",
+      "phrases": [
+        {"id": "how-are-you-anh", "vietnamese": "Anh khỏe không?", "english": "How are you, older man?", "pronunciation": "anh khweh khom", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-how-are-you-anh", "audioKey": "audio-authored-anh-khoe-khong-942769853d"},
+        {"id": "how-are-you-chi", "vietnamese": "Chị khỏe không?", "english": "How are you, older woman?", "pronunciation": "chee khweh khom", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-how-are-you-chi", "audioKey": "audio-authored-chi-khoe-khong-1483c77058"},
+        {"id": "how-are-you-em", "vietnamese": "Em khỏe không?", "english": "How are you, younger person?", "pronunciation": "em khweh khom", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-how-are-you-em", "audioKey": "audio-phrase-em-khoe-khong"}
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use it after Xin chào, Chào bạn, a first introduction, a class, a tour meetup, or a friendly repeated interaction. It is less natural as the very first sentence to a rushed stranger."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "In Vietnamese, the relationship word is part of the warmth. Getting bạn, anh, chị, or em close enough often matters more than adding extra words."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "After a friendly check-in, these keep the conversation easy.",
+      "phrases": [
+        {"id": "smalltalk-nice-to-meet-you", "vietnamese": "Rất vui được gặp bạn", "english": "Nice to meet you", "pronunciation": "zuht voo ee duhk gap ban", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-smalltalk-nice-to-meet-you", "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"},
+        {"id": "smalltalk-4", "vietnamese": "Tôi thích Việt Nam", "english": "I like Vietnam", "pronunciation": "toy thik vyet nam", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-family-social-like-vietnam", "audioKey": "smalltalk-4"},
+        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}
+      ]
+    }
+  ],
+  "examples": [
+    {"id": "smalltalk-7", "vietnamese": "Bạn khỏe không?", "english": "How are you?", "pronunciation": "ban khoe khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "smalltalk-7"}
+  ]
+}

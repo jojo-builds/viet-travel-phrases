@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:dc31537169c35429",
-    "generatedAt": "source-hash:dc31537169c35429"
+    "contentVersion": "viet-sqlite-fixture:044831956eb0feb2",
+    "generatedAt": "source-hash:044831956eb0feb2"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "4a160186dc0f039ee757078d5645ce03020e3b3287c1813b02dbc0cd501585c3"
+      "sha256": "a1f517d4d79c701e436ca679c5be4eaff0da156ebea7c74bdf1b8ae20707a6e8"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "ecbf4795c5f0780ae20339d682e405b14a17e4948d328919745d118d32b9e272"
+      "sha256": "cb76b5ede7e1c5af9c3cd7b74bf9d2ceafc8d7beea1fd41740114be672d5d0dc"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "6091fc56c47534af3151aa2c43380360f3e8f53cde18eeb12a6c4b7f75df8f2d",
+    "databaseSha256": "76c2112fd5bffc731996b4e5647703ad51980edfcbd637d8b4dc7acc9334fa2f",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -50,49 +50,49 @@
       "ok": true
     },
     "clusters": {
-      "expected": 924,
-      "actual": 924,
+      "expected": 927,
+      "actual": 927,
       "ok": true
     },
     "phrases": {
-      "expected": 943,
-      "actual": 943,
+      "expected": 946,
+      "actual": 946,
       "ok": true
     },
     "canonicalPhrasePages": {
-      "expected": 935,
-      "actual": 935,
+      "expected": 938,
+      "actual": 938,
       "ok": true
     },
     "authoredPagesOrAliases": {
-      "expected": 190,
-      "actual": 190,
+      "expected": 193,
+      "actual": 193,
       "ok": true
     }
   },
   "generatedCounts": {
     "languagePacks": 1,
     "scenarios": 18,
-    "clusters": 924,
-    "clusterMembers": 943,
-    "phrases": 943,
-    "pages": 935,
-    "aliases": 984,
-    "pageCategories": 969,
-    "sections": 6175,
-    "sectionItems": 10583,
-    "breakdownTokens": 6071,
-    "relations": 3611,
-    "searchDocuments": 943,
+    "clusters": 927,
+    "clusterMembers": 946,
+    "phrases": 946,
+    "pages": 938,
+    "aliases": 990,
+    "pageCategories": 978,
+    "sections": 6193,
+    "sectionItems": 10611,
+    "breakdownTokens": 6083,
+    "relations": 3627,
+    "searchDocuments": 946,
     "audioAssets": 3756,
-    "audioUsages": 3473,
+    "audioUsages": 3504,
     "audioTextDedupeRows": 2343,
     "missingAudioAuditRows": 0
   },
   "validation": {
     "integrityCheck": "ok",
     "foreignKeyCheckRows": 0,
-    "ftsRowCount": 943,
+    "ftsRowCount": 946,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
     "brokenRelationCount": 0,
@@ -110,7 +110,7 @@
     "detailPageIDs": [],
     "authoredPagePhraseIDMissingCount": 0,
     "authoredPagePhraseIDMissing": [],
-    "authoredPhraseItemsNotInCatalogCount": 18,
+    "authoredPhraseItemsNotInCatalogCount": 15,
     "authoredPhraseItemsNotInCatalog": [
       {
         "pageID": "viet-polite-hello",
@@ -201,31 +201,13 @@
         "sectionID": "common-follow-ups",
         "phraseID": "xin-chao-nice-meet",
         "detailPageID": null
-      },
-      {
-        "pageID": "viet-how-are-you",
-        "sectionID": "relationship-forms",
-        "phraseID": "how-are-you-anh",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-how-are-you",
-        "sectionID": "relationship-forms",
-        "phraseID": "how-are-you-chi",
-        "detailPageID": null
-      },
-      {
-        "pageID": "viet-how-are-you",
-        "sectionID": "relationship-forms",
-        "phraseID": "how-are-you-em",
-        "detailPageID": null
       }
     ]
   },
   "canonicalIdentity": {
-    "canonicalPageCount": 935,
-    "sourcePhraseRowCount": 943,
-    "phrasesResolvedToCanonicalPages": 943,
+    "canonicalPageCount": 938,
+    "sourcePhraseRowCount": 946,
+    "phrasesResolvedToCanonicalPages": 946,
     "duplicateNormalizedTargetTextGroupCount": 6,
     "resolvedDuplicateNormalizedTargetTextGroups": [
       {
@@ -310,7 +292,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 3611,
+    "relationCount": 3627,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -326,7 +308,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 965
+        "count": 969
       },
       {
         "relationType": "same_need_alt_context",
@@ -334,7 +316,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 2608
+        "count": 2620
       }
     ]
   },
@@ -342,7 +324,7 @@
     "manifestEntries": 3756,
     "uniqueNormalizedSpokenTextCount": 2343,
     "assets": 3756,
-    "usages": 3473,
+    "usages": 3504,
     "missingAudioAuditRows": 0,
     "missingAudioAuditSample": []
   },

@@ -28696,6 +28696,39 @@ const scenarios: AppScenario[] = [
         "phraseIds": [
           "smalltalk-nice-to-meet-you"
         ]
+      },
+      {
+        "id": "how-are-you-anh",
+        "scenarioId": "social-small-talk",
+        "title": "Anh khỏe không?",
+        "summary": "A warmer how-are-you for an older man or adult male helper after a friendly greeting.",
+        "accessTier": "starter",
+        "primaryPhraseId": "how-are-you-anh",
+        "phraseIds": [
+          "how-are-you-anh"
+        ]
+      },
+      {
+        "id": "how-are-you-chi",
+        "scenarioId": "social-small-talk",
+        "title": "Chị khỏe không?",
+        "summary": "A warmer how-are-you for an older woman or adult female helper after a friendly greeting.",
+        "accessTier": "starter",
+        "primaryPhraseId": "how-are-you-chi",
+        "phraseIds": [
+          "how-are-you-chi"
+        ]
+      },
+      {
+        "id": "how-are-you-em",
+        "scenarioId": "social-small-talk",
+        "title": "Em khỏe không?",
+        "summary": "A friendly how-are-you for someone younger when the relationship is relaxed and clear.",
+        "accessTier": "starter",
+        "primaryPhraseId": "how-are-you-em",
+        "phraseIds": [
+          "how-are-you-em"
+        ]
       }
     ],
     "phrases": [
@@ -29087,6 +29120,72 @@ const scenarios: AppScenario[] = [
           "nice to meet you"
         ],
         "intentFamilyId": "smalltalk-nice-to-meet-you",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "💬"
+      },
+      {
+        "id": "how-are-you-anh",
+        "scenarioId": "social-small-talk",
+        "targetText": "Anh khỏe không?",
+        "canonicalTargetText": "Anh khỏe không?",
+        "pronunciation": "anh khweh khom",
+        "sourceText": "How are you, older man?",
+        "audioKey": "audio-authored-anh-khoe-khong-942769853d",
+        "accessTier": "starter",
+        "context": "Use this after greeting an older man, driver, guide, shop helper, or adult male staff member when the moment has room for a friendly check-in.",
+        "usageNote": "Use this after greeting an older man, driver, guide, shop helper, or adult male staff member when the moment has room for a friendly check-in.",
+        "searchAliases": [
+          "anh khỏe không",
+          "anh khoe khong",
+          "how are you older man"
+        ],
+        "intentFamilyId": "how-are-you-anh",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "💬"
+      },
+      {
+        "id": "how-are-you-chi",
+        "scenarioId": "social-small-talk",
+        "targetText": "Chị khỏe không?",
+        "canonicalTargetText": "Chị khỏe không?",
+        "pronunciation": "chee khweh khom",
+        "sourceText": "How are you, older woman?",
+        "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
+        "accessTier": "starter",
+        "context": "Use this after greeting an older woman, guide, shop helper, teacher, or adult female staff member when the moment has room for a friendly check-in.",
+        "usageNote": "Use this after greeting an older woman, guide, shop helper, teacher, or adult female staff member when the moment has room for a friendly check-in.",
+        "searchAliases": [
+          "chị khỏe không",
+          "chi khoe khong",
+          "how are you older woman"
+        ],
+        "intentFamilyId": "how-are-you-chi",
+        "variantRole": "say-first",
+        "variantLabel": "Say this first",
+        "audioStatus": "ready",
+        "emoji": "💬"
+      },
+      {
+        "id": "how-are-you-em",
+        "scenarioId": "social-small-talk",
+        "targetText": "Em khỏe không?",
+        "canonicalTargetText": "Em khỏe không?",
+        "pronunciation": "em khweh khom",
+        "sourceText": "How are you, younger person?",
+        "audioKey": "audio-phrase-em-khoe-khong",
+        "accessTier": "starter",
+        "context": "Use this after greeting a younger person when em is clearly appropriate and the exchange feels friendly rather than formal.",
+        "usageNote": "Use this after greeting a younger person when em is clearly appropriate and the exchange feels friendly rather than formal.",
+        "searchAliases": [
+          "em khỏe không",
+          "em khoe khong",
+          "how are you younger person"
+        ],
+        "intentFamilyId": "how-are-you-em",
         "variantRole": "say-first",
         "variantLabel": "Say this first",
         "audioStatus": "ready",

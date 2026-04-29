@@ -2,9 +2,9 @@
   "taskID": "TASK-VIET-2000-FULL-LISTING-PAGES-001",
   "status": "checkpoint",
   "sourcePolicy": "AI-authored page-by-page; scripts validate and package only",
-  "authoredPageCount": 31,
+  "authoredPageCount": 35,
   "originalSourcePhraseCount": 919,
-  "newPhraseRowsInCheckpoint": 24,
+  "newPhraseRowsInCheckpoint": 27,
   "pages": [
     {"pageID": "viet-hello-chao", "phraseID": "hello-chao", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
     {"pageID": "viet-hello-chao-ban", "phraseID": "hello-chao-ban", "sourcePageID": "viet-polite-hello", "sourcePhraseID": "polite-1", "status": "ai_authored_read_designed_written"},
@@ -36,6 +36,10 @@
     {"pageID": "viet-da-chao-co", "phraseID": "acknowledge-da-chao-co", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
     {"pageID": "viet-da-chao-chu", "phraseID": "acknowledge-da-chao-chu", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
     {"pageID": "viet-da-chao-ong", "phraseID": "acknowledge-da-chao-ong", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
-    {"pageID": "viet-da-chao-ba", "phraseID": "acknowledge-da-chao-ba", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"}
+    {"pageID": "viet-da-chao-ba", "phraseID": "acknowledge-da-chao-ba", "sourcePageID": "viet-acknowledge-da", "sourcePhraseID": "polite-3", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-how-are-you", "phraseID": "smalltalk-7", "sourcePageID": "viet-how-are-you", "sourcePhraseID": "smalltalk-7", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-how-are-you-anh", "phraseID": "how-are-you-anh", "sourcePageID": "viet-how-are-you", "sourcePhraseID": "smalltalk-7", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-how-are-you-chi", "phraseID": "how-are-you-chi", "sourcePageID": "viet-how-are-you", "sourcePhraseID": "smalltalk-7", "status": "ai_authored_read_designed_written"},
+    {"pageID": "viet-how-are-you-em", "phraseID": "how-are-you-em", "sourcePageID": "viet-how-are-you", "sourcePhraseID": "smalltalk-7", "status": "ai_authored_read_designed_written"}
   ]
 }

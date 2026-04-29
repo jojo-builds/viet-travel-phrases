@@ -3,22 +3,22 @@
 Date: 2026-04-29
 Status: Authored checkpoint, not Task Done
 Checkpoint commit hash: `ac74bcd`
-Latest validation checkpoint: `fed1ec6`
+Latest validation checkpoint: pending how-are-you batch commit
 
 ## Outcome
 
-Created the durable full-universe authored-source lane and continued page-by-page authored expansion through the `Xin chào`, `Cảm ơn`, and `Dạ` lessons.
+Created the durable full-universe authored-source lane and continued page-by-page authored expansion through the `Xin chào`, `Cảm ơn`, `Dạ`, and `Bạn khỏe không?` lessons.
 
-This is not the final task closeout. The current checkpoint adds `24` net-new canonical pages and upgrades `31` pages into the durable full-universe authored lane; Task Done still requires at least `2,000` net-new pages and final review approval across the whole graph.
+This is not the final task closeout. The current checkpoint adds `27` net-new canonical pages and upgrades `35` pages into the durable full-universe authored lane; Task Done still requires at least `2,000` net-new pages and final review approval across the whole graph.
 
 ## Counts
 
-- Final canonical page count in this checkpoint: `935`.
+- Final canonical page count in this checkpoint: `938`.
 - Required final canonical page count: `2,911`.
-- Final phrase row count in this checkpoint: `943`.
-- Net-new canonical pages in this checkpoint: `24`.
-- Remaining net-new pages needed: `1,976`.
-- Pages upgraded into the full-universe lane: `31`.
+- Final phrase row count in this checkpoint: `946`.
+- Net-new canonical pages in this checkpoint: `27`.
+- Remaining net-new pages needed: `1,973`.
+- Pages upgraded into the full-universe lane: `35`.
 - Duplicate canonical Vietnamese page groups: `0`.
 - Broken link count in validators: `0`.
 - Missing audio queue count: `0`.
@@ -60,7 +60,7 @@ Pending before final Task Done:
 
 No audio was generated.
 
-All `24` checkpoint phrases reuse exact existing native audio. Those exact files were also copied into app assets under the expected audio keys so the app pack remains playable instead of marking these rows unavailable.
+All `27` checkpoint phrases reuse exact existing native audio. Those exact files were also copied into app assets under the expected audio keys so the app pack remains playable instead of marking these rows unavailable.
 
 The authored listing generator now resolves speaker icons from exact audio availability. Playable rows keep `speaker.wave.2.fill`; future authored rows without exact audio are packaged with `speaker.slash.fill` and must remain queued instead of pretending to be playable.
 
@@ -68,13 +68,13 @@ The authored listing generator now resolves speaker icons from exact audio avail
 
 Checkpoint review:
 
-- First-time traveler UX: pass for the 31 pages in this checkpoint.
-- Copy and learning flow: pass for the 31 pages in this checkpoint.
+- First-time traveler UX: pass for the 35 pages in this checkpoint.
+- Copy and learning flow: pass for the 35 pages in this checkpoint.
 - Technical efficiency: pass for the authored-source lane and generated resources in this checkpoint.
 
 Final review:
 
-- Not approved yet. The full task still needs `1,976` more net-new canonical pages and complete audit/review proof.
+- Not approved yet. The full task still needs `1,973` more net-new canonical pages and complete audit/review proof.
 
 ## Files Changed
 
@@ -89,4 +89,4 @@ No `native-ios/App/**` files were changed.
 
 ## Recommended Next Batch
 
-Continue with the `Xin lỗi` lesson family and author natural expansions such as excuse-me, apology, passing-through, attention-getting, and small-mistake recovery lines, promoting each only after its page and rationale are written.
+Continue by either adding the missing-audio queue path for the `Xin lỗi` lesson family or by authoring the next exact-audio relationship batch. Quality remains higher than speed.

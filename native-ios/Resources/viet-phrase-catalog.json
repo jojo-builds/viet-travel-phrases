@@ -1,8 +1,8 @@
 {
   "metadata": {
     "source": "../../content-draft/viet/phrase-source.csv",
-    "phraseCount": 943,
-    "familyCount": 924,
+    "phraseCount": 946,
+    "familyCount": 927,
     "scenarioCount": 18
   },
   "scenarios": [
@@ -11221,6 +11221,42 @@
       "accessTier": "starter",
       "phraseIDs": [
         "acknowledge-da-chao-ba"
+      ]
+    },
+    {
+      "id": "how-are-you-anh",
+      "pageID": "viet-family-how-are-you-anh",
+      "scenarioID": "social-small-talk",
+      "familyTitle": "Anh khỏe không?",
+      "summary": "A warmer how-are-you for an older man or adult male helper after a friendly greeting.",
+      "primaryPhraseID": "how-are-you-anh",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "how-are-you-anh"
+      ]
+    },
+    {
+      "id": "how-are-you-chi",
+      "pageID": "viet-family-how-are-you-chi",
+      "scenarioID": "social-small-talk",
+      "familyTitle": "Chị khỏe không?",
+      "summary": "A warmer how-are-you for an older woman or adult female helper after a friendly greeting.",
+      "primaryPhraseID": "how-are-you-chi",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "how-are-you-chi"
+      ]
+    },
+    {
+      "id": "how-are-you-em",
+      "pageID": "viet-family-how-are-you-em",
+      "scenarioID": "social-small-talk",
+      "familyTitle": "Em khỏe không?",
+      "summary": "A friendly how-are-you for someone younger when the relationship is relaxed and clear.",
+      "primaryPhraseID": "how-are-you-em",
+      "accessTier": "starter",
+      "phraseIDs": [
+        "how-are-you-em"
       ]
     }
   ],
@@ -31773,6 +31809,75 @@
       "audioStatus": "ready",
       "emoji": "👋",
       "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=polite-3; derived_from_page_id=viet-acknowledge-da; expansion_reason=Dạ lesson naturally expands into respectful elder greetings"
+    },
+    {
+      "id": "how-are-you-anh",
+      "familyID": "how-are-you-anh",
+      "scenarioID": "social-small-talk",
+      "audioKey": "audio-authored-anh-khoe-khong-942769853d",
+      "englishText": "How are you, older man?",
+      "targetText": "Anh khỏe không?",
+      "canonicalTargetText": "Anh khỏe không?",
+      "pronunciation": "anh khweh khom",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this after greeting an older man, driver, guide, shop helper, or adult male staff member when the moment has room for a friendly check-in.",
+      "youMayHear": "",
+      "searchAliases": [
+        "anh khỏe không",
+        "anh khoe khong",
+        "how are you older man"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "💬",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=smalltalk-7; derived_from_page_id=viet-how-are-you; expansion_reason=relationship-form small talk taught directly on the Bạn khỏe không page"
+    },
+    {
+      "id": "how-are-you-chi",
+      "familyID": "how-are-you-chi",
+      "scenarioID": "social-small-talk",
+      "audioKey": "audio-authored-chi-khoe-khong-1483c77058",
+      "englishText": "How are you, older woman?",
+      "targetText": "Chị khỏe không?",
+      "canonicalTargetText": "Chị khỏe không?",
+      "pronunciation": "chee khweh khom",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this after greeting an older woman, guide, shop helper, teacher, or adult female staff member when the moment has room for a friendly check-in.",
+      "youMayHear": "",
+      "searchAliases": [
+        "chị khỏe không",
+        "chi khoe khong",
+        "how are you older woman"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "💬",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=smalltalk-7; derived_from_page_id=viet-how-are-you; expansion_reason=relationship-form small talk taught directly on the Bạn khỏe không page"
+    },
+    {
+      "id": "how-are-you-em",
+      "familyID": "how-are-you-em",
+      "scenarioID": "social-small-talk",
+      "audioKey": "audio-phrase-em-khoe-khong",
+      "englishText": "How are you, younger person?",
+      "targetText": "Em khỏe không?",
+      "canonicalTargetText": "Em khỏe không?",
+      "pronunciation": "em khweh khom",
+      "accessTier": "starter",
+      "variantRole": "say-first",
+      "context": "Use this after greeting a younger person when em is clearly appropriate and the exchange feels friendly rather than formal.",
+      "youMayHear": "",
+      "searchAliases": [
+        "em khỏe không",
+        "em khoe khong",
+        "how are you younger person"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "ready",
+      "emoji": "💬",
+      "notes": "task=TASK-VIET-2000-FULL-LISTING-PAGES-001; ai-authored page-derived expansion; derived_from_phrase_id=smalltalk-7; derived_from_page_id=viet-how-are-you; expansion_reason=relationship-form small talk taught directly on the Bạn khỏe không page"
     }
   ]
 }

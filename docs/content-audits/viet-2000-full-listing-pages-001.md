@@ -5,17 +5,17 @@ Status: Authored checkpoint, not Task Done
 
 ## Summary
 
-This checkpoint continues the durable authored-source lane for full-universe Viet listing pages and promotes natural page-by-page expansions from the existing `Xin chào`, `Cảm ơn`, and `Dạ` lessons.
+This checkpoint continues the durable authored-source lane for full-universe Viet listing pages and promotes natural page-by-page expansions from the existing `Xin chào`, `Cảm ơn`, `Dạ`, and `Bạn khỏe không?` lessons.
 
-- Source phrase rows after checkpoint: `943`.
-- Canonical SQLite phrase pages after checkpoint: `935`.
-- Net-new canonical pages in this checkpoint: `24`.
+- Source phrase rows after checkpoint: `946`.
+- Canonical SQLite phrase pages after checkpoint: `938`.
+- Net-new canonical pages in this checkpoint: `27`.
 - Required final canonical page count: `2,911`.
-- Remaining net-new pages needed for Task Done: `1,976`.
-- Full-universe authored source pages: `31`.
-- Full-universe rationale records: `31`.
+- Remaining net-new pages needed for Task Done: `1,973`.
+- Full-universe authored source pages: `35`.
+- Full-universe rationale records: `35`.
 - Missing audio queue rows: `0`.
-- Exact existing audio reused in native resources and app assets: `24`.
+- Exact existing audio reused in native resources and app assets: `27`.
 
 The task is not complete. This is a safe production checkpoint that proves the authored-source lane, rationale ledger, canonical link handling, exact-audio reuse path, and validators before larger page-by-page authoring continues.
 
@@ -64,6 +64,10 @@ Scripts in this checkpoint only inventory, validate, package, and audit authored
 | `viet-da-chao-chu` | Dạ, chào chú | respectful uncle-age greeting | pass | pass | pass | pass | exact reused |
 | `viet-da-chao-ong` | Dạ, chào ông | respectful elderly-man greeting | pass | pass | pass | pass | exact reused |
 | `viet-da-chao-ba` | Dạ, chào bà | respectful elderly-woman greeting | pass | pass | pass | pass | exact reused |
+| `viet-how-are-you` | Bạn khỏe không? | peer check-in | pass | pass | pass | pass | exact reused |
+| `viet-how-are-you-anh` | Anh khỏe không? | older-man check-in | pass | pass | pass | pass | exact reused |
+| `viet-how-are-you-chi` | Chị khỏe không? | older-woman check-in | pass | pass | pass | pass | exact reused |
+| `viet-how-are-you-em` | Em khỏe không? | younger-person check-in | pass | pass | pass | pass | exact reused |
 
 ## Validation Evidence
 
@@ -86,21 +90,21 @@ node --test native-ios/scripts/generate-viet-sqlite-fixture.test.js
 
 Key results:
 
-- Full-universe source validator: `24` task phrase rows, `31` authored pages, `31` rationale records.
+- Full-universe source validator: `27` task phrase rows, `35` authored pages, `35` rationale records.
 - Tier 1 validator: `150` strong pages, `0` failure rows.
 - Authored-page audio audit: `492` required rows, `0` missing.
-- SQLite validator: `943` source phrases, `935` canonical pages, `943` resolved phrases, `0` missing audio rows, `0` banned wording matches.
+- SQLite validator: `946` source phrases, `938` canonical pages, `946` resolved phrases, `0` missing audio rows, `0` banned wording matches.
 - SQLite generator test: `1` pass, `0` fail.
 - Family variant validation: passed.
 
 ## Review Gate
 
-The review gate is not approved for final Task Done because only the first three natural expansion sets have been authored.
+The review gate is not approved for final Task Done because only the first four natural expansion sets have been authored.
 
-- First-time traveler UX: pass for the 31 checkpoint pages; final approval waits for the whole page universe.
-- Copy and learning flow: pass for the 31 checkpoint pages; final approval waits for the whole page universe.
+- First-time traveler UX: pass for the 35 checkpoint pages; final approval waits for the whole page universe.
+- Copy and learning flow: pass for the 35 checkpoint pages; final approval waits for the whole page universe.
 - Technical efficiency: pass for the checkpoint lane; final approval waits for the complete canonical graph, screenshots, and final audit.
 
 ## Remaining Work
 
-Continue page-by-page from the existing source rows. The next recommended batch is the `Xin lỗi` page family, because it naturally expands into excuse-me, apology, passing-through, attention-getting, and small-mistake recovery pages.
+Continue page-by-page from the existing source rows. The next recommended batch should either add the missing-audio queue path for `Xin lỗi` natural expansions or continue exact-audio relationship batches where available.
