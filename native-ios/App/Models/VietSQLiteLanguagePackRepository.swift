@@ -60,6 +60,11 @@ struct VietSQLiteVisibleAudioUsage: Equatable {
     let expectedText: String
 }
 
+struct VietSQLitePhraseCatalogSnapshot: Equatable {
+    let scenarioCategories: [PhraseCategory]
+    let catalogItems: [PhraseCatalogItem]
+}
+
 enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
     case missingBundledFixture(subdirectory: String)
     case openFailed(path: String, message: String)
@@ -259,6 +264,92 @@ final class VietSQLiteLanguagePackRepository {
                     title: title,
                     subtitle: englishTitle
                 )
+            )
+        }
+    }
+
+    func loadCatalogSnapshot() throws -> VietSQLitePhraseCatalogSnapshot {
+        VietSQLitePhraseCatalogSnapshot(
+            scenarioCategories: try loadScenarioCategories(),
+            catalogItems: try loadCatalogItems()
+        )
+    }
+
+    func loadScenarioCategories() throws -> [PhraseCategory] {
+        let sql = """
+        SELECT id, title, symbol_name, tint_name
+        FROM scenario
+        ORDER BY sort_order, title COLLATE NOCASE;
+        """
+
+        return try rows(sql) { statement in
+            PhraseCategory(
+                id: Self.stringColumn(statement, index: 0),
+                title: Self.stringColumn(statement, index: 1),
+                symbolName: Self.stringColumn(statement, index: 2),
+                tintName: AccentTint(rawValue: Self.stringColumn(statement, index: 3)) ?? .gray
+            )
+        }
+    }
+
+    func loadCatalogItems() throws -> [PhraseCatalogItem] {
+        let sql = """
+        SELECT
+          pp.id,
+          pp.title,
+          pp.english_title,
+          pp.icon_name,
+          pp.tint_name,
+          COALESCE(aa.source_manifest_key, p.id),
+          COALESCE(
+            (
+              SELECT group_concat(category_id, '|')
+              FROM (
+                SELECT pc.category_id
+                FROM page_category pc
+                WHERE pc.page_id = pp.id
+                ORDER BY pc.sort_order, pc.category_id
+              )
+            ),
+            (
+              SELECT group_concat(scenario_id, '|')
+              FROM (
+                SELECT ps.scenario_id
+                FROM phrase_scenario ps
+                WHERE ps.phrase_id = p.id
+                ORDER BY ps.sort_order, ps.scenario_id
+              )
+            ),
+            'greetings'
+          ) AS category_ids,
+          COALESCE(
+            (SELECT MIN(pc.sort_order) FROM page_category pc WHERE pc.page_id = pp.id),
+            9999
+          ) AS category_sort
+        FROM phrase_page pp
+        JOIN phrase p ON p.id = pp.phrase_id
+        LEFT JOIN audio_usage au
+          ON au.target_kind = 'phrase'
+         AND au.target_id = p.id
+         AND au.is_primary = 1
+        LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        ORDER BY category_sort, pp.title COLLATE NOCASE, pp.id;
+        """
+
+        return try rows(sql) { statement in
+            let tint = AccentTint(rawValue: Self.stringColumn(statement, index: 4)) ?? .gray
+            let categoryIDs = Self.stringColumn(statement, index: 6)
+                .split(separator: "|")
+                .map(String.init)
+
+            return PhraseCatalogItem(
+                pageID: Self.stringColumn(statement, index: 0),
+                title: Self.stringColumn(statement, index: 1),
+                subtitle: Self.stringColumn(statement, index: 2),
+                categoryIDs: categoryIDs.isEmpty ? ["greetings"] : categoryIDs,
+                symbolName: Self.stringColumn(statement, index: 3),
+                tintName: tint,
+                audioKey: Self.optionalStringColumn(statement, index: 5)
             )
         }
     }
@@ -865,6 +956,8 @@ final class VietSQLiteLanguagePackRepository {
 enum VietSQLitePhraseGraphRuntime {
     static let launchArgument = "--use-sqlite-phrase-graph"
     static let environmentVariable = "SPEAKLOCAL_USE_SQLITE_GRAPH"
+    static let disabledLaunchArgument = "--disable-sqlite-phrase-graph"
+    static let disabledEnvironmentVariable = "SPEAKLOCAL_DISABLE_SQLITE_GRAPH"
 
     static var isEnabled: Bool {
 #if DEBUG
@@ -873,8 +966,20 @@ enum VietSQLitePhraseGraphRuntime {
         }
 #endif
 
-        return ProcessInfo.processInfo.arguments.contains(launchArgument)
-            || ProcessInfo.processInfo.environment[environmentVariable] == "1"
+        if ProcessInfo.processInfo.arguments.contains(disabledLaunchArgument)
+            || ProcessInfo.processInfo.environment[disabledEnvironmentVariable] == "1" {
+            return false
+        }
+
+        return true
+    }
+
+    static func catalogSnapshot() -> VietSQLitePhraseCatalogSnapshot? {
+        guard isEnabled, let repository = repository() else {
+            return nil
+        }
+
+        return try? repository.loadCatalogSnapshot()
     }
 
     static func canonicalPageID(for pageIDOrAlias: String) -> String? {
@@ -924,11 +1029,13 @@ enum VietSQLitePhraseGraphRuntime {
     static func setEnabledForTesting(_ enabled: Bool) {
         isEnabledOverride = enabled
         cachedRepository = nil
+        PhraseCatalog.resetCacheForTesting()
     }
 
     static func resetTestingOverrides() {
         isEnabledOverride = nil
         cachedRepository = nil
+        PhraseCatalog.resetCacheForTesting()
     }
 
     private static var isEnabledOverride: Bool?

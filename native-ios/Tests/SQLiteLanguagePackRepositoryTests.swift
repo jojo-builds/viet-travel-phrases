@@ -149,6 +149,41 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         )
     }
 
+    func testSQLiteRuntimeIsNormalDefaultWithoutLaunchFlag() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        XCTAssertTrue(VietSQLitePhraseGraphRuntime.isEnabled)
+        XCTAssertEqual(PhraseSearchIndex.search("hello").first?.pageID, "viet-phrase-polite-1")
+        XCTAssertEqual(PhraseDetailPage.page(withID: PhrasePage.xinChao.id)?.id, "viet-phrase-polite-1")
+    }
+
+    func testSQLiteCatalogSnapshotBacksDefaultHomeAndBrowseSurfaces() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        let snapshot = try XCTUnwrap(VietSQLitePhraseGraphRuntime.catalogSnapshot())
+        let xinChaoItem = try XCTUnwrap(snapshot.catalogItems.first { $0.pageID == "viet-phrase-polite-1" })
+        let politeBasicsItems = PhraseCatalog.items(selectedCategoryID: "polite-basics")
+
+        XCTAssertEqual(snapshot.catalogItems.count, 911)
+        XCTAssertEqual(snapshot.scenarioCategories.count, 18)
+        XCTAssertEqual(xinChaoItem.title, "Xin chào")
+        XCTAssertEqual(xinChaoItem.subtitle, "Hello")
+        XCTAssertEqual(PhraseCatalog.category(withID: "polite-basics")?.title, "Polite Basics")
+        XCTAssertEqual(PhraseCatalog.defaultCategoryID(forPageID: PhrasePage.xinChao.id), "polite-basics")
+        XCTAssertTrue(politeBasicsItems.contains { $0.pageID == "viet-phrase-polite-1" })
+        XCTAssertFalse(PhraseCatalog.allItems.contains { $0.pageID == PhrasePage.xinChao.id })
+    }
+
+    func testDefaultRuntimeCanonicalizesLegacyHomeIDsIntoSQLiteCatalogPages() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        XCTAssertEqual(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-thank-you"), "viet-phrase-polite-2")
+        XCTAssertEqual(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-family-repair-understand"), "viet-phrase-problems-2")
+        XCTAssertEqual(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-family-bathroom-where"), "viet-phrase-bath-1")
+        XCTAssertEqual(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-family-health-doctor"), "viet-phrase-problems-6")
+        XCTAssertTrue(PhraseCatalog.allItems.contains { $0.pageID == "viet-phrase-problems-2" })
+    }
+
     func testSQLiteRuntimeDrivesSearchDetailRelatedAndHistoryRoute() throws {
         VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
 

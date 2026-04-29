@@ -1556,6 +1556,17 @@ private struct HomePhraseItem: Identifiable, Equatable {
     var id: String { pageID }
 
     static func resolve(pageID: String) -> HomePhraseItem? {
+        if let item = PhraseCatalog.catalogItem(forOpenablePageID: pageID) {
+            return HomePhraseItem(
+                pageID: item.pageID,
+                title: item.title,
+                subtitle: item.subtitle,
+                symbolName: item.symbolName,
+                tintName: item.tintName,
+                audioKey: item.playbackAudioKey
+            )
+        }
+
         if pageID == PhrasePage.xinChao.id {
             return HomePhraseItem(
                 pageID: PhrasePage.xinChao.id,

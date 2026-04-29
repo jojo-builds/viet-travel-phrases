@@ -127,15 +127,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 2)
     }
 
-    func testOpeningRootFromCatalogClearsDetailsAndRequestsRootTopScroll() {
+    func testOpeningRootFromCatalogUsesSQLiteCanonicalDetailRoute() {
         var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-hello-anh"))
 
         navigation.openDetail(PhrasePage.xinChao.id)
 
-        XCTAssertEqual(navigation.currentRoute, .phrasePage)
-        XCTAssertTrue(navigation.detailPath.isEmpty)
-        XCTAssertEqual(navigation.rootScrollToTopTrigger, 1)
-        XCTAssertEqual(navigation.detailScrollToTopTrigger, 0)
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-polite-1"))
+        XCTAssertEqual(navigation.detailPath, ["viet-hello-anh", "viet-phrase-polite-1"])
+        XCTAssertEqual(navigation.rootScrollToTopTrigger, 0)
+        XCTAssertEqual(navigation.detailScrollToTopTrigger, 1)
     }
 
     func testHomeOpensDetailAndBackReturnsHome() {
@@ -152,18 +152,18 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-hello-anh")])
     }
 
-    func testOpeningPhraseRootFromHomeCanReturnHome() {
+    func testOpeningPhraseRootFromHomeCanReturnHomeFromSQLiteCanonicalDetail() {
         var navigation = AppShellNavigationState()
 
         navigation.openDetail(PhrasePage.xinChao.id)
 
-        XCTAssertEqual(navigation.currentRoute, .phrasePage)
-        XCTAssertTrue(navigation.detailPath.isEmpty)
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-polite-1"))
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-polite-1"])
 
         navigation.goBack()
 
         XCTAssertEqual(navigation.currentRoute, .home)
-        XCTAssertEqual(navigation.forwardStack, [.phrasePage])
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-polite-1")])
     }
 
     func testOpeningSavedRouteCanReturnHome() {
@@ -373,19 +373,19 @@ final class AppChromeTests: XCTestCase {
         navigation.openDetail("viet-family-repair-meaning")
 
         XCTAssertFalse(navigation.isSearchPresented)
-        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-family-repair-meaning"))
-        XCTAssertEqual(navigation.detailPath, ["viet-family-repair-meaning"])
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-repair-3"))
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-repair-3"])
         XCTAssertTrue(navigation.forwardStack.isEmpty)
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 1)
 
         navigation.goBack()
 
         XCTAssertEqual(navigation.currentRoute, .home)
-        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-family-repair-meaning")])
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-repair-3")])
 
         navigation.goForward()
 
-        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-family-repair-meaning"))
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-repair-3"))
         XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
@@ -476,7 +476,7 @@ final class LocalUserIntentStoreTests: XCTestCase {
         store.recordOpenedPage("viet-hello-anh", source: .article)
         store.recordOpenedPage("missing-page", source: .article)
 
-        XCTAssertEqual(store.recentPageIDs, ["viet-hello-anh", "viet-thank-you"])
+        XCTAssertEqual(store.recentPageIDs, ["viet-hello-anh", "viet-phrase-polite-2"])
         XCTAssertEqual(store.recentPages.first?.source, .article)
     }
 
@@ -488,8 +488,8 @@ final class LocalUserIntentStoreTests: XCTestCase {
 
         let restoredStore = LocalUserIntentStore(defaults: defaults)
 
-        XCTAssertEqual(restoredStore.savedPageIDs, ["viet-family-repair-understand"])
-        XCTAssertEqual(restoredStore.practicePageIDs, ["viet-family-repair-understand"])
+        XCTAssertEqual(restoredStore.savedPageIDs, ["viet-phrase-problems-2"])
+        XCTAssertEqual(restoredStore.practicePageIDs, ["viet-phrase-problems-2"])
         XCTAssertTrue(restoredStore.hasReturningUserState)
     }
 }

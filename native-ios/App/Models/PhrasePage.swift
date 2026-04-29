@@ -327,11 +327,15 @@ enum PhraseCatalog {
             return selectedItems
         }
 
-        return selectedItems.filter { $0.pageID != excludingPageID }
+        let canonicalExcludedPageID = canonicalPageID(forOpenablePageID: excludingPageID) ?? excludingPageID
+        return selectedItems.filter { item in
+            item.pageID != canonicalExcludedPageID
+        }
     }
 
     static func defaultCategoryID(forPageID pageID: String) -> String {
-        cache.defaultCategoryIDByPageID[pageID] ?? "greetings"
+        let canonicalPageID = canonicalPageID(forOpenablePageID: pageID) ?? pageID
+        return cache.defaultCategoryIDByPageID[canonicalPageID] ?? "greetings"
     }
 
     static func browseCategories(defaultCategoryID: String) -> [PhraseCategory] {
@@ -390,20 +394,34 @@ enum PhraseCatalog {
         cache.allItems
     }
 
-    private static let cache = Cache()
+    static func catalogItem(forOpenablePageID pageID: String) -> PhraseCatalogItem? {
+        let canonicalPageID = canonicalPageID(forOpenablePageID: pageID) ?? pageID
+        return cache.itemsByPageID[canonicalPageID]
+    }
+
+    private static var cache = Cache()
+
+#if DEBUG
+    static func resetCacheForTesting() {
+        cache = Cache()
+    }
+#endif
 
     private struct Cache {
         let categories: [PhraseCategory]
         let categoriesByID: [String: PhraseCategory]
         let allItems: [PhraseCatalogItem]
+        let itemsByPageID: [String: PhraseCatalogItem]
         let itemsByCategoryID: [String: [PhraseCatalogItem]]
         let defaultCategoryIDByPageID: [String: String]
 
         init() {
-            let categories = baseCategories + GeneratedVietContent.scenarioCategories
+            let sqliteSnapshot = VietSQLitePhraseGraphRuntime.catalogSnapshot()
+            let scenarioCategories = sqliteSnapshot?.scenarioCategories ?? GeneratedVietContent.scenarioCategories
+            let categories = baseCategories + scenarioCategories
             let categoriesByID = Dictionary(uniqueKeysWithValues: categories.map { ($0.id, $0) })
 
-            let allItems = Self.makeAllItems()
+            let allItems = sqliteSnapshot?.catalogItems ?? Self.makeJSONFallbackItems()
             var itemsByCategoryID: [String: [PhraseCatalogItem]] = [:]
 
             for item in allItems {
@@ -415,11 +433,12 @@ enum PhraseCatalog {
             self.categories = categories
             self.categoriesByID = categoriesByID
             self.allItems = allItems
+            self.itemsByPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.pageID, $0) })
             self.itemsByCategoryID = itemsByCategoryID
             self.defaultCategoryIDByPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.pageID, $0.categoryID) })
         }
 
-        private static func makeAllItems() -> [PhraseCatalogItem] {
+        private static func makeJSONFallbackItems() -> [PhraseCatalogItem] {
             let designedItems = [rootItem] + PhraseDetailPage.all.map(catalogItem)
             let designedPageIDs = Set(designedItems.map(\.pageID))
 

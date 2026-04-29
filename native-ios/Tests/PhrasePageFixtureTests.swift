@@ -2,6 +2,16 @@ import XCTest
 @testable import SpeakLocalNative
 
 final class PhrasePageFixtureTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(false)
+    }
+
+    override func tearDown() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        super.tearDown()
+    }
+
     private let expectedLocalGreetingWays: [String: [String]] = [
         "viet-hello-anh": ["Chào anh", "Xin chào anh", "Dạ, chào anh", "Anh ơi!", "Anh đi đâu đấy?", "Anh ăn cơm chưa?"],
         "viet-hello-chi": ["Chào chị", "Xin chào chị", "Dạ, chào chị", "Chị ơi!", "Chị đi đâu đấy?", "Chị ăn cơm chưa?"],
