@@ -278,6 +278,35 @@ function main() {
       );
   `), "relationship-word shelves without the full canonical greeting set");
 
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page pp
+    JOIN page_section ps ON ps.page_id = pp.id
+    JOIN page_section_item psi ON psi.section_id = ps.id
+    WHERE ps.section_key IN ('quick-say', 'standard-way')
+      AND psi.item_kind = 'phrase'
+      AND NOT (
+        (psi.note = pp.id AND psi.title_override = pp.title)
+        OR (
+          pp.id = 'viet-phrase-polite-1'
+          AND psi.note = 'viet-phrase-hello-chao'
+          AND psi.title_override = 'Chào'
+        )
+      );
+  `), "Quick Say/Standard Way rows that are neither canonical self rows nor approved beginner shortcuts");
+
+  assertEqual(Number(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page pp
+    JOIN page_section ps ON ps.page_id = pp.id
+    JOIN page_section_item psi ON psi.section_id = ps.id
+    WHERE pp.id = 'viet-phrase-polite-1'
+      AND ps.section_key = 'quick-say'
+      AND psi.item_kind = 'phrase'
+      AND psi.note = 'viet-phrase-hello-chao'
+      AND psi.title_override = 'Chào';
+  `)), 1, "approved Xin chào beginner shortcut row");
+
   const textOnlySectionRunCount = Number(sqliteValue(`
     WITH section_flags AS (
       SELECT
@@ -713,6 +742,7 @@ function main() {
   assertEqual(report.validation.missingRelationshipWordsSectionCount, 0, "report missing relationship-word shelf count");
   assertEqual(report.validation.unexpectedRelationshipWordsSectionCount, 0, "report unexpected relationship-word shelf count");
   assertEqual(report.validation.badRelationshipWordsSectionCount, 0, "report incomplete relationship-word shelf count");
+  assertEqual(report.validation.badQuickSayTeachingRowCount, 0, "report bad Quick Say teaching row count");
   assertEqual(report.validation.textOnlySectionRunCount, 0, "report text-only section run count");
   assertEqual(report.validation.nonDeepCompletenessStatusCount, 0, "report non-full-depth page status count");
   assertEqual(report.validation.incompleteArticleContractCount, 0, "report incomplete article contract count");

@@ -199,6 +199,24 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         )
     }
 
+    func testSQLiteQuickSayRowsUseCanonicalPhraseOrApprovedBeginnerShortcut() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+
+        let xinChao = try repository.loadPhraseDetailPage(pageID: "viet-phrase-polite-1")
+        let xinChaoQuickSay = try XCTUnwrap(xinChao.sections.first { $0.id == "quick-say" })
+        XCTAssertEqual(xinChaoQuickSay.phrases.map(\.vietnamese), ["Xin chào", "Chào"])
+        XCTAssertEqual(xinChaoQuickSay.phrases.map { $0.detailPageID ?? "" }, ["viet-phrase-polite-1", "viet-phrase-hello-chao"])
+
+        for pageID in ["viet-phrase-hello-chao", "viet-phrase-directions-2", "viet-phrase-health-1"] {
+            let page = try repository.loadPhraseDetailPage(pageID: pageID)
+            let teachingSection = try XCTUnwrap(page.sections.first { $0.id == "quick-say" || $0.id == "standard-way" }, pageID)
+            let firstPhrase = try XCTUnwrap(teachingSection.phrases.first, pageID)
+
+            XCTAssertEqual(firstPhrase.vietnamese, page.title, pageID)
+            XCTAssertEqual(firstPhrase.detailPageID, page.id, pageID)
+        }
+    }
+
     func testSQLiteRelationsAndVisibleAudioKeysResolveFromGraph() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let related = try repository.relatedPages(forPageID: "viet-phrase-polite-1", limit: 6)

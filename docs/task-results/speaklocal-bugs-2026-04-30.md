@@ -89,7 +89,7 @@ Reviewer gate:
 
 ## Bug 6 - Relationship/pronoun shelf scope
 
-Commit: pending
+Commit: a9b02fa
 
 Changes:
 - Replaced global `relationship-words` injection with a phrase-sensitive eligibility rule for greeting, relationship-word, and pronoun-sensitive pages.
@@ -105,3 +105,22 @@ Validation:
 
 Reviewer gate:
 - APPROVED. Relationship/pronoun shelves are now contextual: they remain on greeting and relationship-word pages, and they no longer appear on unrelated pages such as `Tôi đến từ Mỹ`.
+
+## Bug 7 - Quick Say semantics
+
+Commit: pending
+
+Changes:
+- Added generator/report and validator checks that Quick Say/Standard Way rows must be canonical self rows, except the approved beginner shortcut `Xin chào` -> `Chào`.
+- Tightened generated Quick Say body copy for catalog-built pages so it teaches the fastest useful phrase without “main idea” phrasing.
+- Added a native repository regression for `Xin chào`, `Chào`, a directions page, and a health page.
+
+Validation:
+- SQL audit found 939 Quick Say/Standard Way phrase rows and 0 rows outside the canonical-self-or-approved-shortcut rule.
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js` completed with 18 scenarios, 927 clusters, 946 phrases, and 938 pages.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed with `badQuickSayTeachingRowCount: 0`.
+- `node --test native-ios/scripts/generate-viet-sqlite-fixture.test.js` passed.
+- `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'id=91BDCCB0-0728-40AB-8150-B6DCB96BE799' -only-testing:SpeakLocalNativeTests/SQLiteLanguagePackRepositoryTests/testSQLiteQuickSayRowsUseCanonicalPhraseOrApprovedBeginnerShortcut` passed.
+
+Reviewer gate:
+- APPROVED. Quick Say now defaults to the page’s canonical phrase; `Xin chào` keeps the authored `Chào` beginner shortcut; sampled greeting, direction, health, and catalog-built pages resolve cleanly.

@@ -1130,7 +1130,7 @@ function main() {
       pageID: pageRow.id,
       sectionKey: "quick-say",
       title: "Quick say",
-      body: `Start with ${phrase.targetText} when "${phrase.englishText}" is the main idea you need to get across.`,
+      body: `Use ${phrase.targetText} first when you need to say "${phrase.englishText}" clearly. Keep it short, then point, show the screen, or wait for the answer before adding more words.`,
       presentation: "phrase-list",
       sortOrder: 1,
       sourcePath: relative(catalogPath),
@@ -1637,6 +1637,23 @@ function main() {
         ) != '${relationshipWordListSQL}'
       );
   `));
+  const badQuickSayTeachingRows = sqliteQuery(`
+    SELECT pp.id || ': ' || ps.section_key || ' -> ' || COALESCE(psi.title_override, '') || ' / ' || COALESCE(psi.note, '')
+    FROM phrase_page pp
+    JOIN page_section ps ON ps.page_id = pp.id
+    JOIN page_section_item psi ON psi.section_id = ps.id
+    WHERE ps.section_key IN ('quick-say', 'standard-way')
+      AND psi.item_kind = 'phrase'
+      AND NOT (
+        (psi.note = pp.id AND psi.title_override = pp.title)
+        OR (
+          pp.id = 'viet-phrase-polite-1'
+          AND psi.note = 'viet-phrase-hello-chao'
+          AND psi.title_override = 'Chào'
+        )
+      )
+    ORDER BY pp.id, ps.sort_order, psi.sort_order;
+  `).split("\n").filter(Boolean);
   const textOnlySectionRunRows = sqliteQuery(`
     WITH section_flags AS (
       SELECT
@@ -1895,6 +1912,8 @@ function main() {
       relationshipWordsMissingSample,
       relationshipWordsUnexpectedSample,
       badRelationshipWordsSectionCount,
+      badQuickSayTeachingRowCount: badQuickSayTeachingRows.length,
+      badQuickSayTeachingRowSample: badQuickSayTeachingRows.slice(0, 20),
       textOnlySectionRunCount: textOnlySectionRunRows.length,
       textOnlySectionRunSample: textOnlySectionRunRows.slice(0, 20),
       nonDeepCompletenessStatusCount: nonDeepCompletenessStatusRows.length,
