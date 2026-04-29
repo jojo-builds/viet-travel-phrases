@@ -1,4 +1,4 @@
-# SpeakLocal Chameleon Mascot Visual System
+# Speak Local Chameleon Mascot Visual System
 
 Status: design direction and visual review surface for `TASK-MASCOT-VISUAL-SYSTEM-001`
 Last updated: 2026-04-29
@@ -6,12 +6,13 @@ Last updated: 2026-04-29
 ## Review Surface
 
 - Local board: `docs/design/mascot/mascot-visual-system.html`
+- Locked Melo board: `docs/design/mascot/melo-bucket-list-concepts/index.html`
 - Full board capture: `docs/design/mascot/assets/mascot-visual-system-board.png`
 - App-flow composites:
   - `docs/design/mascot/assets/practice-hub-with-mascot.png`
   - `docs/design/mascot/assets/normal-prompt-mascot-progress.png`
   - `docs/design/mascot/assets/missed-review-no-mascot.png`
-  - `docs/design/mascot/assets/completion-route-mark.png`
+  - `docs/design/mascot/assets/completion-bucket-list-stamp.png`
   - `docs/design/mascot/assets/listing-add-to-practice-entry.png`
 - Prompt packet: `docs/design/mascot/prompt-packet.md`
 
@@ -48,8 +49,8 @@ The base character keeps a stable silhouette: sage body, cream underside, rounde
 - Stable base silhouette across every destination.
 - Jade and sea-glass as the main Vietnam progression cue.
 - Small red/gold accents on travel details only.
-- Ceramic, lotus, lantern, and travel-route hints as subtle motif layers.
-- Completion language tied to phrase readiness, source pages, and route marks.
+- Ceramic, lotus, lantern, and travel-memory hints as subtle motif layers.
+- Completion language tied to phrase readiness, source pages, and Bucket List Stamps.
 - Mascot placement in Practice hub, optional eligible standard prompts, calm empty states, and completion.
 
 ## Avoid
@@ -77,10 +78,10 @@ Later native work should treat this as an asset and placement contract, not a co
 
 ## Visual Decisions
 
-- The Practice hub can show the largest mascot treatment, but still as one compact companion row next to a route card.
+- The Practice hub can show the largest mascot treatment, but still as one compact companion row next to a bucket-list card.
 - Normal prompts should use a tiny mascot/progress mark only when the prompt is standard-sensitivity and layout has room.
 - Missed feedback should use no mascot by default. It should say the item was saved for calm review.
-- Completion can show a small reward reveal, but the copy should be "Vietnam route updated" and "Jade route mark unlocked" rather than "Level up."
+- Completion can show a small reward reveal, but the copy should be "Vietnam Bucket List updated" and "Jade Bucket List Stamp unlocked" rather than "Level up."
 - Listing pages can show `Add to practice` without adding the mascot. The page remains a reading and audio surface.
 
 ## Context Sent Outside Codex

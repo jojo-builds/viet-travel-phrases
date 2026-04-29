@@ -1,6 +1,6 @@
 # Chameleon Style Options
 
-Status: locked Speak Global chameleon direction, with Vietnam as the first country-route implementation
+Status: locked Speak Local chameleon direction, with Vietnam as the first country implementation
 Last updated: 2026-04-29
 
 ## Local Review
@@ -17,22 +17,22 @@ Open:
 http://127.0.0.1:8787/docs/design/mascot/chameleon-style-options/index.html
 ```
 
-## Global Brand Principle
+## Shared Brand Principle
 
-Melo is the Speak Global mascot, not a Vietnam mascot.
+Melo is the Speak Local mascot, not a Vietnam mascot.
 
-The chameleon travels country to country to learn different languages. The base character name, silhouette, face, and personality must stay stable across Vietnam, Japan, the Philippines, Italy, and future language packs. Each country can add its own route colors, motifs, city routes, and pronunciation challenges, but those are unlock layers rather than the mascot's identity.
+The chameleon travels country to country to learn different languages. The base character name, silhouette, face, and personality must stay stable across Vietnam, Japan, the Philippines, Italy, and future language packs. Each country can add its own colors, motifs, city bucket-list entries, and pronunciation challenges, but those are unlock layers rather than the mascot's identity.
 
-Core naming should therefore be global:
+Core naming should stay cross-country:
 
 - Mascot: **Melo**
-- Global progress unit: **Route Mark** or **Passport Mark**
-- Global route surface: **Passport Map**
-- Country layer example: **Vietnam Route**
-- City layer example: **Hanoi Route**
+- Travel progress unit: **Bucket List Stamp**
+- Travel progress surface: **Bucket List Map**
+- Country layer example: **Vietnam Bucket List**
+- City layer example: **Hanoi Bucket List**
 - Vietnamese lesson term: **dấu** for tone marks, inside pronunciation lessons only
 
-Do not use a Vietnamese word as the permanent mascot name or global progress unit.
+Do not use a Vietnamese word as the permanent mascot name or travel progress unit.
 
 ## Why This Pass Exists
 
@@ -54,8 +54,8 @@ The videos' mascot prompts differed from our first prompts in five important way
 
 - Keep the chameleon as the product metaphor: the user practices, the chameleon becomes more locally attuned.
 - Make the character app-native: flatter, graphic, readable at small sizes, easy to animate.
-- Treat country-route progression as pattern/color growth, not costume or flag paint. Vietnam is the first route layer.
-- Use the mascot only where it helps: Practice hub, empty Practice, route updates, and tiny progress marks.
+- Treat country progression as pattern/color growth, not costume or flag paint. Vietnam is the first country layer.
+- Use the mascot only where it helps: Practice hub, empty Practice, bucket-list updates, and tiny Bucket List Stamps.
 - Keep phrase reading, search, bottom chrome, and sensitive contexts mostly mascot-free.
 
 ## Locked Direction
@@ -64,36 +64,37 @@ The selected direction is:
 
 1. **Mascot name:** Melo
 2. **Mascot style:** Flat Brand Chameleon
-3. **Progression language:** six-stage country-route camouflage
-4. **Route product model:** country routes, city routes, and street-name pronunciation drills
-5. **Progress surface:** Passport Map showing where Melo has been and where Melo still needs to go
+3. **Progression language:** neutral base plus six shared country unlock stages
+4. **Bucket List product model:** country bucket lists, city bucket lists, and street-name pronunciation drills
+5. **Progress surface:** Bucket List Map showing where Melo has been and where Melo still needs to go
 
 Keep **Soft 2.5D Chameleon** only as a backup if the flat mascot later feels too cold.
 
 ## Unlock Scale
 
-The first progression pass was directionally correct but too quiet for route unlocks. The updated rule is:
+The first progression pass was directionally correct but too quiet for bucket-list unlocks. The updated rule is:
 
 - early progress should be subtle, so the mascot does not distract from Practice
-- route completion should be visibly different at thumbnail size
-- drama comes from color saturation, pattern coverage, posture confidence, and a soft route glow
+- bucket-list completion should be visibly different at thumbnail size
+- drama comes from color saturation, pattern coverage, posture confidence, and a soft travel glow
 - the base silhouette, face, eye shape, smile, and tail stay stable
 - the final state reads as local attunement, not costume or flag paint
 
-The locked six stages are:
+The locked production stages are:
 
 1. Base
 2. First phrases
-3. Local rhythm
+3. City rhythm
 4. Traveler confidence
-5. Vietnam attuned
-6. Fully unlocked
+5. Street ready
+6. Vietnam attuned
+7. Fully unlocked
 
-## Route And Street-Name Practice
+## Bucket List And Street-Name Practice
 
-The route system should become more place-aware while staying global. At the global level, users unlock country routes. Inside each country, they unlock city routes and optional street-name packs.
+The Bucket List system should become more place-aware while staying cross-country. At the top level, users add or complete country bucket lists. Inside each country, they complete city bucket lists and optional street-name packs.
 
-Vietnam practice can include city routes and street-name packs so travelers learn names they will actually see on maps, signs, receipts, and ride-hailing screens.
+Vietnam practice can include city bucket lists and street-name packs so travelers learn names they will actually see on maps, signs, receipts, and ride-hailing screens.
 
 Recommended practice formats:
 
@@ -105,14 +106,14 @@ Recommended practice formats:
 
 Recommended progression surface:
 
-- Passport Map with visited, in-progress, and locked country/city route nodes
-- completed city route preserves the fully unlocked Melo state
-- in-progress route shows partial coloration
-- locked route shows the neutral silhouette
+- Bucket List Map with visited, in-progress, and locked country/city nodes
+- completed city bucket list preserves the fully unlocked Melo state
+- in-progress city bucket list shows partial coloration
+- locked city bucket list shows the neutral silhouette
 
 ## Name Research
 
-The strongest permanent mascot name is **Melo** because it is global.
+The strongest permanent mascot name is **Melo** because it travels well across countries.
 
 Rationale:
 
@@ -122,7 +123,7 @@ Rationale:
 - travels across future languages better than a Vietnam-only name
 - avoids making Vietnamese diacritics part of the character name itself
 
-Vietnamese terms are still useful inside the Vietnam route, but they should not name the global mascot or global progress unit:
+Vietnamese terms are still useful inside the Vietnam Bucket List, but they should not name the shared mascot or travel progress unit:
 
 - **tắc kè hoa** is the Vietnamese word for chameleon.
 - **dấu** works well for tone-mark practice and pronunciation lessons.
@@ -132,10 +133,10 @@ Vietnamese terms are still useful inside the Vietnam route, but they should not 
 Recommended naming system:
 
 - Mascot: **Melo**
-- Global unlock/progress unit: **Route Mark** or **Passport Mark**
-- Global progress surface: **Passport Map**
+- Unlock/progress unit: **Bucket List Stamp**
+- Progress surface: **Bucket List Map**
 - Vietnam-specific lesson term: **dấu** for tone marks
-- Vietnam route completion example: **Melo completed the Hanoi Route**
+- Vietnam bucket-list completion example: **Melo completed the Hanoi Bucket List**
 
 ## Assets
 
@@ -151,24 +152,24 @@ Recommended naming system:
 Create a locked Melo base sheet:
 
 - front, three-quarter, side, tiny icon size
-- idle, listening, correct, gentle correction, route updated
-- base plus six global progression stages
-- Vietnam route layer as the first concrete country variant
+- idle, listening, correct, gentle correction, bucket list updated
+- neutral base plus six shared unlock stages
+- Vietnam country layer as the first concrete country variant
 - transparent PNG/WebP export with consistent canvas and anchor point
 
 After that, use the locked base as the reference for every future prompt or commissioned illustration.
 
 ## Next Product Step
 
-Create a global route practice design packet:
+Create a Bucket List practice design packet:
 
-- Passport Map structure for country and city routes
-- Vietnam city route structure as the first implementation
+- Bucket List Map structure for country and city bucket-list entries
+- Vietnam city bucket-list structure as the first implementation
 - street-name content model
 - proper-noun audio queue requirements
 - quiz state types for pronunciation and tone marks
 - map UI states for visited, in-progress, locked, and completed
-- static asset handoff for Melo route states
+- static asset handoff for Melo bucket-list states
 
 ## Research References
 

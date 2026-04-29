@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speak Local Melo Bucket List Concepts</title>
+    <style>
+      :root {
+        --ink: #14231c;
+        --muted: #65736c;
+        --paper: #fbfaf6;
+        --line: rgba(20, 35, 28, 0.12);
+        --jade: #2f8a72;
+        --red: #ff333d;
+        --cream: #fffdf8;
+        --gold: #d6aa53;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 42px 22px 72px;
+      }
+
+      h1 {
+        max-width: 1080px;
+        margin: 0;
+        font-size: clamp(42px, 7vw, 86px);
+        line-height: 0.95;
+        font-weight: 780;
+      }
+
+      .lead {
+        max-width: 900px;
+        margin: 20px 0 0;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.48;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 26px 0 36px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: white;
+        padding: 9px 13px;
+        color: var(--muted);
+        font-size: 13px;
+        box-shadow: 0 8px 24px rgba(20, 35, 28, 0.05);
+      }
+
+      .summary,
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin: 0 0 34px;
+      }
+
+      .note,
+      .copy,
+      .option {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: white;
+        box-shadow: 0 16px 42px rgba(20, 35, 28, 0.07);
+      }
+
+      .note,
+      .copy,
+      .option {
+        padding: 18px;
+      }
+
+      .note strong,
+      .option strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .note p,
+      .option p,
+      .copy p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.46;
+      }
+
+      .copy p + p {
+        margin-top: 14px;
+      }
+
+      .copy h2 {
+        margin: 0 0 12px;
+        font-size: 24px;
+      }
+
+      .section-title {
+        margin: 46px 0 16px;
+        font-size: 28px;
+      }
+
+      .feature {
+        display: grid;
+        grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
+        gap: 18px;
+        align-items: stretch;
+        margin-bottom: 18px;
+      }
+
+      figure {
+        margin: 0;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: white;
+        overflow: hidden;
+        box-shadow: 0 14px 44px rgba(20, 35, 28, 0.08);
+      }
+
+      figure img {
+        display: block;
+        width: 100%;
+        background: #f6f5ef;
+        object-fit: contain;
+      }
+
+      .wide-img {
+        aspect-ratio: 16 / 10;
+      }
+
+      figcaption {
+        min-height: 92px;
+        padding: 16px;
+      }
+
+      figcaption strong {
+        display: block;
+        font-size: 17px;
+      }
+
+      figcaption span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.36;
+      }
+
+      .dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-right: 7px;
+        border-radius: 50%;
+        background: var(--jade);
+      }
+
+      .dot.gold {
+        background: var(--gold);
+      }
+
+      .dot.red {
+        background: var(--red);
+      }
+
+      @media (max-width: 980px) {
+        .summary,
+        .feature,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        main {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Melo Bucket List Concepts</h1>
+      <p class="lead">A locked next-step concept packet for Speak Local and Speak Local Vietnam. Melo is the shared chameleon mascot, the travel progress model is Bucket List, and Vietnam city/street-name practice becomes the first concrete country implementation.</p>
+
+      <div class="pill-row" aria-label="Locked decisions">
+        <span class="pill">Brand: Speak Local</span>
+        <span class="pill">App: Speak Local Vietnam</span>
+        <span class="pill">Mascot: Melo</span>
+        <span class="pill">Progress: Bucket List</span>
+        <span class="pill">Surface: Bucket List Map</span>
+        <span class="pill">Content arrives from content side</span>
+      </div>
+
+      <section class="summary" aria-label="Core decisions">
+        <article class="note">
+          <strong><span class="dot"></span>Shared Character</strong>
+          <p>Melo travels country to country. Vietnam colors are a layer, not the character identity.</p>
+        </article>
+        <article class="note">
+          <strong><span class="dot gold"></span>Traveler Model</strong>
+          <p>Bucket List feels more natural than path language because users can care about a country, city, or situation.</p>
+        </article>
+        <article class="note">
+          <strong><span class="dot red"></span>Practice Role</strong>
+          <p>Melo reacts to practice moments, but phrase content, audio, and corrections remain primary.</p>
+        </article>
+      </section>
+
+      <section class="feature">
+        <figure>
+          <img class="wide-img" src="assets/melo-base-sheet.png" alt="Melo flat-brand chameleon base sheet with views, states, and progression stages" />
+          <figcaption><strong>Melo base sheet</strong><span>Base views, tiny icon direction, practice states, and neutral-base-plus-six country unlock progression. This is the final art brief shape before transparent production assets.</span></figcaption>
+        </figure>
+        <article class="copy">
+          <h2>Locked Art Step</h2>
+          <p>Create a production Melo sheet with front, three-quarter, side, and tiny icon sizes; idle, listening, correct, gentle correction, bucket list updated, and rest states; plus a neutral base and six shared unlock stages.</p>
+          <p>The production export should use transparent PNG/WebP assets with consistent canvas and anchor point so SwiftUI can swap states without layout jumps.</p>
+        </article>
+      </section>
+
+      <section class="feature">
+        <figure>
+          <img class="wide-img" src="assets/bucket-list-map-concept.png" alt="Speak Local Vietnam Bucket List Map iOS concept screens" />
+          <figcaption><strong>Bucket List Map</strong><span>Home entry, Vietnam map, and city detail. The visual language is travel planning plus language progress, not a fixed path.</span></figcaption>
+        </figure>
+        <article class="copy">
+          <h2>Map Concept</h2>
+          <p>The Bucket List Map should show what Melo has practiced and what the user still wants to learn. It can support country, city, and practice-set scopes without implying everyone must follow the same sequence.</p>
+          <p>Completed items earn a Bucket List Stamp. In-progress items show partial Melo color. Locked or unstarted items keep the neutral silhouette.</p>
+        </article>
+      </section>
+
+      <section class="feature">
+        <figure>
+          <img class="wide-img" src="assets/practice-quiz-melo-concept.png" alt="Speak Local Vietnam Practice quiz screens with Melo states" />
+          <figcaption><strong>Practice quiz integration</strong><span>Melo appears as a small listening/correct/gentle-correction layer. The quiz remains audio-first and phrase-first.</span></figcaption>
+        </figure>
+        <article class="copy">
+          <h2>Practice Behavior</h2>
+          <p>Melo should live near the progress strip or feedback card, never inside answer choice hit targets. Correct answers can add a tiny color patch or stamp shimmer. Gentle corrections should feel calm and useful.</p>
+          <p>Sensitive, emergency, medical, or safety contexts should hide Melo or reduce the mascot to a neutral mark.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">Native Handoff Model</h2>
+      <section class="grid">
+        <article class="option">
+          <strong>MascotState</strong>
+          <p>hidden, idle, listening, correct, gentleCorrection, bucketListUpdated, rest.</p>
+        </article>
+        <article class="option">
+          <strong>MeloProgressionStage</strong>
+          <p>base, firstPhrases, cityRhythm, travelerConfidence, streetReady, countryAttuned, fullyUnlocked.</p>
+        </article>
+        <article class="option">
+          <strong>BucketListScope</strong>
+          <p>country, city, practiceSet. Street-name packs can attach to city or saved-practice scopes.</p>
+        </article>
+        <article class="option">
+          <strong>BucketListStatus</strong>
+          <p>locked, inProgress, completed, savedForLater.</p>
+        </article>
+        <article class="option">
+          <strong>BucketListStamp</strong>
+          <p>country, city, completion date, progression stage, mascot asset key.</p>
+        </article>
+        <article class="option">
+          <strong>Content Boundary</strong>
+          <p>Content team supplies phrase pages, street-name pages, and audio rows. The app consumes them.</p>
+        </article>
+        <article class="option">
+          <strong>MascotAssetKey</strong>
+          <p>melo/&lt;countryLayer&gt;/&lt;state&gt;/&lt;stage&gt;/&lt;view&gt;, with square transparent PNG/WebP assets and a stable baseline anchor.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
