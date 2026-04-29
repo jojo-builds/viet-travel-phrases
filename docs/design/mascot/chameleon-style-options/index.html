@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speak Global Chameleon Style Options</title>
+    <style>
+      :root {
+        --ink: #14231c;
+        --muted: #65736c;
+        --paper: #fbfaf6;
+        --line: rgba(20, 35, 28, 0.12);
+        --jade: #2f8a72;
+        --red: #ff333d;
+        --cream: #fffdf8;
+        --gold: #d6aa53;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 42px 22px 72px;
+      }
+
+      h1 {
+        max-width: 1000px;
+        margin: 0;
+        font-size: clamp(42px, 7vw, 86px);
+        line-height: 0.95;
+        font-weight: 780;
+      }
+
+      .lead {
+        max-width: 880px;
+        margin: 20px 0 0;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.48;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 26px 0 36px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: white;
+        padding: 9px 13px;
+        color: var(--muted);
+        font-size: 13px;
+        box-shadow: 0 8px 24px rgba(20, 35, 28, 0.05);
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin: 0 0 42px;
+      }
+
+      .note,
+      .copy,
+      .option {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: white;
+        box-shadow: 0 16px 42px rgba(20, 35, 28, 0.07);
+      }
+
+      .note {
+        padding: 18px;
+      }
+
+      .note strong,
+      .option strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .note p,
+      .option p,
+      .copy p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.46;
+      }
+
+      .section-title {
+        margin: 46px 0 16px;
+        font-size: 28px;
+      }
+
+      .feature {
+        display: grid;
+        grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+        gap: 18px;
+        align-items: stretch;
+        margin-bottom: 18px;
+      }
+
+      figure {
+        margin: 0;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: white;
+        overflow: hidden;
+        box-shadow: 0 14px 44px rgba(20, 35, 28, 0.08);
+      }
+
+      figure img {
+        display: block;
+        width: 100%;
+        background: #f6f5ef;
+        object-fit: contain;
+      }
+
+      .wide-img {
+        aspect-ratio: 16 / 8.6;
+      }
+
+      .phone-img {
+        aspect-ratio: 16 / 10;
+      }
+
+      figcaption {
+        min-height: 92px;
+        padding: 16px;
+      }
+
+      figcaption strong {
+        display: block;
+        font-size: 17px;
+      }
+
+      figcaption span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.36;
+      }
+
+      .copy {
+        padding: 22px;
+      }
+
+      .copy h2 {
+        margin: 0 0 12px;
+        font-size: 24px;
+      }
+
+      .copy p + p {
+        margin-top: 14px;
+      }
+
+      .option-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .unlock-rules {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .option {
+        padding: 18px;
+      }
+
+      .option small {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 12px;
+        color: var(--jade);
+        font-weight: 720;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--jade);
+      }
+
+      .dot.red {
+        background: var(--red);
+      }
+
+      .dot.gold {
+        background: var(--gold);
+      }
+
+      .verdict {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      a {
+        color: var(--red);
+      }
+
+      @media (max-width: 980px) {
+        .summary,
+        .feature,
+        .option-grid,
+        .unlock-rules,
+        .verdict {
+          grid-template-columns: 1fr;
+        }
+
+        main {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Chameleon Style Options</h1>
+      <p class="lead">A Speak Global mascot direction for the traveling chameleon: one app-native character who goes to different countries to learn different languages. This Vietnamese iOS pass shows one country route, but the name and base identity stay global.</p>
+
+      <div class="pill-row" aria-label="Reference constraints">
+        <span class="pill">Chameleon only</span>
+        <span class="pill">App mascot, not plush doll</span>
+        <span class="pill">Global mascot</span>
+        <span class="pill">Country routes through color</span>
+        <span class="pill">Phrase-first UI</span>
+        <span class="pill">Motion-ready states</span>
+        <span class="pill">Working name: Melo</span>
+      </div>
+
+      <section class="summary" aria-label="Key correction">
+        <article class="note">
+          <strong>Locked style</strong>
+          <p>Flat-brand chameleon is the primary mascot direction. Soft 2.5D is backup only.</p>
+        </article>
+        <article class="note">
+          <strong>Locked progression</strong>
+          <p>Six stages: base, first phrases, local rhythm, traveler confidence, Vietnam attuned, fully unlocked.</p>
+        </article>
+        <article class="note">
+          <strong>Locked product role</strong>
+          <p>Country and city routes, street-name pronunciation practice, route map memory, and restrained unlock moments.</p>
+        </article>
+      </section>
+
+      <section class="feature">
+        <article class="copy">
+          <h2>Global Brand Correction</h2>
+          <p>Melo is not a Vietnam mascot. Melo is the Speak Global chameleon who travels country to country and becomes locally attuned through language practice. Vietnam is the current route pack, not the character's identity.</p>
+          <p>Each country can change Melo's color, pattern, and route marks. The base silhouette, name, face, and personality stay consistent so the mascot can work for Japan, the Philippines, Italy, and future language packs.</p>
+        </article>
+        <article class="copy">
+          <h2>Naming Rule</h2>
+          <p>The mascot name must be language-neutral. Country-specific words can appear inside route names, lessons, unlock marks, and pronunciation drills, but never as the permanent mascot name.</p>
+          <p>Use global terms for the core system: Melo, Route Marks, Country Routes, City Routes, and Passport Map. Use Vietnamese terms only inside the Vietnamese route content.</p>
+        </article>
+      </section>
+
+      <section class="feature">
+        <figure>
+          <img class="wide-img" src="assets/chameleon-style-six-options.png" alt="Six chameleon app mascot style options" />
+          <figcaption><strong>Six style routes</strong><span>Flat brand mascot, soft 2.5D app icon, editorial paper-cut, sticker energy, minimal tiny-UI mark, and route-camouflage progression.</span></figcaption>
+        </figure>
+        <article class="copy">
+          <h2>The Prompt Difference</h2>
+          <p>The videos do not start with a huge final-art prompt. They start with a base character or reference style, change one thing at a time, and reset when the image drifts. They also design the mascot for use cases: empty states, onboarding, widgets, feedback, and animation loops.</p>
+          <p>Our earlier prompt was too production-heavy: premium 3D, non-scary, not childish, travel companion, Vietnam motifs, and many avoid rules all at once. That pushed the generator toward a safe plush object. This pass asks first for clear app-mascot shape language, then adds progression and app context.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">Chameleon Progression</h2>
+      <section class="feature">
+        <figure>
+          <img class="wide-img" src="assets/chameleon-flat-progression.png" alt="Flat vector chameleon Vietnam learning progression" />
+          <figcaption><strong>Flat brand progression</strong><span>Best app-native direction. Easy to read at small sizes, easiest to animate, and least likely to feel like a plush toy.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="wide-img" src="assets/chameleon-soft-2-5d-progression.png" alt="Soft 2.5D chameleon Vietnam learning progression" />
+          <figcaption><strong>Soft 2.5D progression</strong><span>Warmer and more premium, but should be used carefully so the character does not become too doll-like.</span></figcaption>
+        </figure>
+      </section>
+
+      <h2 class="section-title">Dramatic Unlock Ladder</h2>
+      <section class="feature">
+        <figure>
+          <img class="wide-img" src="assets/flat-brand-dramatic-unlock-ladder.png" alt="Flat brand chameleon dramatic Vietnam unlock ladder" />
+          <figcaption><strong>Make the final tiers feel earned</strong><span>The first two steps can stay quiet. The last two should show a visible jump through pattern coverage, richer color, posture confidence, and a soft route glow.</span></figcaption>
+        </figure>
+        <article class="copy">
+          <h2>The Unlock Rule</h2>
+          <p>Progress should not be a costume. It should be the same chameleon becoming more fluent in the route: color spreads, ceramic-blue river shapes appear, lotus-red details become clearer, and warm-gold route lines connect into a full camouflage pattern.</p>
+          <p>To make unlocks feel dramatic enough, the app should reserve the biggest visual change for route completion. Partial progress can be subtle; completion should be obviously different even at thumbnail size.</p>
+        </article>
+      </section>
+
+      <section class="unlock-rules" aria-label="Unlock progression rules">
+        <article class="option">
+          <small><span class="dot"></span> 1</small>
+          <strong>Color</strong>
+          <p>Sage and cream become jade, teal, ceramic blue, lotus red, and warm gold.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot"></span> 2</small>
+          <strong>Coverage</strong>
+          <p>Pattern grows from tiny patches to full-body route camouflage.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot gold"></span> 3</small>
+          <strong>Posture</strong>
+          <p>The chameleon becomes more confident, but the base silhouette stays locked.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot gold"></span> 4</small>
+          <strong>Glow</strong>
+          <p>A soft lantern-like route aura appears only for high-value unlock moments.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot red"></span> 5</small>
+          <strong>Restraint</strong>
+          <p>No flags, hats, costumes, XP, coins, trophies, or confetti.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">Inside The App</h2>
+      <section class="feature">
+        <figure>
+          <img class="phone-img" src="assets/chameleon-in-app-context.png" alt="SpeakLocal iOS screens with chameleon integrated into Practice and route update" />
+          <figcaption><strong>In-app placement</strong><span>The chameleon belongs in Practice hub, tiny progress marks, and route-update moments. Phrase content remains primary.</span></figcaption>
+        </figure>
+        <article class="copy">
+          <h2>How The Learning Story Works</h2>
+          <p>The base chameleon starts neutral: sage, cream, calm, friendly. As the user practices a country's phrases, Melo gains that route's color language. For Vietnam, that means jade/sea-glass shifts, ceramic-blue patches, lotus-red details, and warm-gold route lines. For Japan, the Philippines, Italy, or later packs, the route layer changes.</p>
+          <p>The app should lock one base silhouette before producing all future states. That prevents drift and makes animation possible: idle, listening, correct, gentle correction, route updated, and quiet rest.</p>
+        </article>
+      </section>
+
+      <section class="feature">
+        <figure>
+          <img class="phone-img" src="assets/flat-brand-unlock-in-app.png" alt="SpeakLocal iOS unlock moment with flat brand chameleon progression" />
+          <figcaption><strong>Unlock moment in product</strong><span>Use the dramatic state for route completion and collection views. Keep everyday Practice calmer so the unlock keeps its power.</span></figcaption>
+        </figure>
+        <article class="copy">
+          <h2>Where To Use Drama</h2>
+          <p>The unlock should be a moment, not a permanent noise level. Practice cards can show base and partial states. The completion modal can show the vivid fully attuned chameleon. The route collection can preserve that progress as a small trophy-like memory without using trophies.</p>
+          <p>This follows the transcript lesson: make feedback human and intentional, but keep the mascot tied to real product states instead of sprinkling character art everywhere.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">City Routes And Street Names</h2>
+      <section class="feature">
+        <article class="copy">
+          <h2>Map View</h2>
+          <p>The route collection should become a simple passport-style map of where Melo has practiced and where Melo still needs to go. At the global level, countries are route packs. Inside the Vietnam pack, cities can own route nodes: Hanoi, Hue, Hoi An, Da Nang, Nha Trang, Ho Chi Minh City, and later smaller local areas.</p>
+          <p>Completed country/city routes preserve the fully unlocked chameleon as a memory. In-progress routes show partial coloration. Locked routes show the neutral silhouette.</p>
+        </article>
+        <article class="copy">
+          <h2>Street-Name Practice</h2>
+          <p>Add a route type for proper nouns: street names, districts, landmarks, and common taxi/grab destinations. This is a real traveler pain point because tone marks and diacritics change pronunciation.</p>
+          <p>Practice formats: listen and choose the street name, repair missing tone marks, match a street sign to audio, and say a taxi phrase using the destination.</p>
+        </article>
+      </section>
+
+      <section class="option-grid" aria-label="Street name practice examples">
+        <article class="option">
+          <small><span class="dot"></span> Hanoi</small>
+          <strong>Old Quarter Names</strong>
+          <p>Short drills for names a traveler sees repeatedly on signs, maps, and ride-hailing destinations.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot"></span> Hue / Hoi An</small>
+          <strong>Historic Routes</strong>
+          <p>Proper-name drills can sit beside cultural routes without turning the app into trivia.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot red"></span> Saigon</small>
+          <strong>Street Pronunciation</strong>
+          <p>Examples like Nguyen Hue and Bui Vien need audio-first practice because the written form alone is not enough.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">Mascot Name</h2>
+      <section class="feature">
+        <article class="copy">
+          <h2>Recommended: Melo</h2>
+          <p>Melo is the best locked name for the chameleon because it is short, easy to say, language-neutral, and quietly connected to chameleon and melody. It works as the same character across Vietnam, Japan, the Philippines, Italy, and future routes.</p>
+          <p>Vietnamese meaning belongs in Vietnamese content. Melo can earn Vietnam Route Marks, Japan Route Marks, Italy Route Marks, and so on, but the character name stays stable.</p>
+        </article>
+        <article class="copy">
+          <h2>Use Route Marks Globally</h2>
+          <p>The permanent progress term should be Route Mark or Passport Mark, not a Vietnamese word. That keeps the system global while still letting each country add local flavor.</p>
+          <p>For Vietnam specifically, dấu remains useful inside tone-mark lessons and pronunciation explanations. It should not be the global unlock unit.</p>
+        </article>
+      </section>
+
+      <section class="option-grid" aria-label="Mascot name options">
+        <article class="option">
+          <small><span class="dot"></span> Pick</small>
+          <strong>Melo</strong>
+          <p>Global, friendly, pronounceable, and not locked to one country. Best default.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot gold"></span> Feature term</small>
+          <strong>Dấu</strong>
+          <p>Great inside Vietnamese tone-mark lessons. Too Vietnam-specific for the global progress system.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot gold"></span> Local nickname</small>
+          <strong>Đốm</strong>
+          <p>Means spot/speckle, good for the chameleon's pattern language. Diacritics make it less global.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot"></span> Backup</small>
+          <strong>Kiko</strong>
+          <p>Cute and app-like, with a soft echo of tắc kè, but more generic and brand-crowded.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot"></span> Too local</small>
+          <strong>Hoa</strong>
+          <p>Connects to tắc kè hoa and lotus/flower motifs, but feels Vietnam-specific for a traveling mascot.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot red"></span> Avoid</small>
+          <strong>Chào</strong>
+          <p>On-brand as a phrase, but confusing as a character name because it already means hello.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">Locked Next Steps</h2>
+      <section class="option-grid" aria-label="Next implementation steps">
+        <article class="option">
+          <small><span class="dot"></span> Step 1</small>
+          <strong>Base Sheet</strong>
+          <p>Create the locked Melo flat-brand sheet: front, three-quarter, side, tiny icon, and six progression stages.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot"></span> Step 2</small>
+          <strong>Practice States</strong>
+          <p>Define idle, listening, correct, gentle correction, route updated, hidden, and street-name challenge states.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot gold"></span> Step 3</small>
+          <strong>Global Route Model</strong>
+          <p>Add route metadata for country, city, street-name pack, completion state, and mascot unlock stage.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot gold"></span> Step 4</small>
+          <strong>Street Audio Queue</strong>
+          <p>Build pronunciation source rows for selected city streets and require audio before speaker icons appear.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot red"></span> Step 5</small>
+          <strong>Map Prototype</strong>
+          <p>Prototype the route collection map with visited, in-progress, and locked chameleon states.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot"></span> Step 6</small>
+          <strong>Implementation Gate</strong>
+          <p>Only integrate static assets after the base sheet is locked; animation comes after state naming is stable.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">Options And Tradeoffs</h2>
+      <section class="option-grid" aria-label="Style pros and cons">
+        <article class="option">
+          <small><span class="dot"></span> Recommended</small>
+          <strong>Flat Brand Chameleon</strong>
+          <p>Most app-like, most animation-friendly, and easiest to keep consistent across tiny progress marks and full cards. Risk: can feel too simple unless the expression is charming.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot gold"></span> Warm Backup</small>
+          <strong>Soft 2.5D Chameleon</strong>
+          <p>Feels warmer and more premium than flat vector. Risk: can slide back into plush doll territory if material and lighting become the whole personality.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot red"></span> High Personality</small>
+          <strong>Sticker Chameleon</strong>
+          <p>Very memorable and expressive, great for empty states and onboarding. Risk: it can make SpeakLocal feel more like a kids' game than a calm travel phrasebook.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot"></span> Editorial</small>
+          <strong>Paper-Cut Chameleon</strong>
+          <p>Feels refined and less toy-like. Risk: harder to animate and may look more like article art than a recurring character.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot"></span> Utility</small>
+          <strong>Minimal Mark</strong>
+          <p>Best for bottom-level UI marks and progress strips. Risk: not expressive enough to build attachment by itself.</p>
+        </article>
+        <article class="option">
+          <small><span class="dot gold"></span> Progress Layer</small>
+          <strong>Route Camouflage</strong>
+          <p>Best as the unlock language layered onto the chosen base. Risk: too much pattern can feel busy or culturally literal.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">Verdict</h2>
+      <section class="verdict">
+        <article class="copy">
+          <h2>Locked</h2>
+          <p>The mascot direction is Melo, the flat-brand Speak Global chameleon. The progression is six staged route-camouflage unlocks, with each country adding its own color layer while the base character stays stable.</p>
+        </article>
+        <article class="copy">
+          <h2>Next Build Target</h2>
+          <p>The next design packet should be a production base sheet plus a global route model, with Vietnam city and street-name pronunciation as the first concrete implementation.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
