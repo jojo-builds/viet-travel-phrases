@@ -54,6 +54,17 @@ The orchestrator should route and synthesize:
 
 The orchestrator should not read every implementation file before assignment unless that is needed to route safely.
 
+## Brain Dump Intake
+
+When Jojo gives a speech-to-text brain dump, the orchestrator should route it into durable work:
+
+- lock decisions into the relevant source-of-truth doc;
+- turn actionable work into a task card;
+- prepare a tiny prompt for the right pinned lane when the task is ready;
+- hold blocked ideas explicitly instead of relying on chat memory.
+
+Important ideas should not require Jojo to ask "what about this?" later.
+
 ## Peer Review Default
 
 Meaningful task cards should ask for one focused read-only peer reviewer near the end. The reviewer checks Task Done, boundaries, validation, and obvious missed issues.
