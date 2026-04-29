@@ -14,6 +14,26 @@ Official references checked on 2026-04-28:
 
 Write task specs as outcome contracts, not step-by-step scripts.
 
+## Compact Goal Card Rule
+
+Orchestrator-created worker specs should be compact by default. The worker is GPT-5.5 too; do not spend orchestration time spelling out an implementation path the worker can reason through from the goal.
+
+If the local Codex skill `speaklocal-task-cards` is available, use it before creating or editing SpeakLocal queue task specs or worker prompts.
+
+Default shape:
+
+```text
+Task Done
+Context
+Worker Judgment
+Required Outcome
+Boundaries
+Validation
+Result Contract
+```
+
+Only add detailed step sequences when order is a real safety requirement, such as task claiming, migration ordering, or protected release/signing steps. Prefer a sharp goal, clear file boundaries, and a concrete done definition over long prescriptions.
+
 ## Pinned Orchestrator Rule
 
 The pinned Codex thread is the orchestration lane. Its default job is to keep Jojo's ideas moving, shape work into queue-ready tasks, preserve source-of-truth decisions, and keep the repo/queue clean.
@@ -58,7 +78,7 @@ Then the worker should use GPT-5.5 reasoning to choose the implementation path.
 
 ## Default Spec Shape
 
-Every real worker task should make these sections concrete:
+Every real worker task should make these sections concrete, preferably in the compact goal-card shape above:
 
 ```text
 Outcome

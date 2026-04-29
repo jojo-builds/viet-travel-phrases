@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T06:50:34.615100+07:00",
+  "updatedAt": "2026-04-29T07:15:28.134720+07:00",
   "repoRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
   "selectionPolicy": {
     "preferredGroups": [
@@ -21,6 +21,13 @@
         "state": ".agent\\tasks\\T-168\\state.json",
         "selectionOrder": 17,
         "writeLock": "native_ios_sqlite_runtime_read_path"
+      },
+      {
+        "taskId": "T-169",
+        "title": "Design and generate Viet Practice Core decks with browser prototype",
+        "state": ".agent\\tasks\\T-169\\state.json",
+        "selectionOrder": 18,
+        "writeLock": "practice_quiz_core_data_contract"
       }
     ],
     "in_progress": [],
@@ -684,7 +691,7 @@
     "completed_archive_hint": "Archive older completed tasks out of the hot queue path before this surface grows into high hundreds or thousands."
   },
   "stats": {
-    "queuedCount": 1,
+    "queuedCount": 2,
     "reclaimableCount": 0,
     "inProgressCount": 0,
     "blockedCount": 15,
