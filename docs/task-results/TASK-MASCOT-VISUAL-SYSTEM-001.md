@@ -6,7 +6,9 @@ done
 
 ## Commit Hash
 
-Recorded in the worker final reply after commit creation. Git commit hashes are derived from the committed file contents, so this committed result file cannot contain its own final hash without changing that hash.
+Task artifact commit: `46903b728d1b49673f71c3ed7f88325d7296754a`
+
+This hash contains the visual board, PNG captures, prompt packet, and initial result receipt. A small follow-up receipt commit records this hash in the result file because Git commit hashes are derived from committed file contents and a commit cannot contain its own final hash without changing that hash.
 
 ## Visual Artifact Paths
 
@@ -62,7 +64,7 @@ PASS with closeout notes addressed.
 
 Read-only reviewer found that the visual/art-direction work passes: the chameleon direction is restrained, native-app appropriate, and SpeakLocal-aligned; sensitive contexts are handled well by hiding or subduing the mascot; and Jojo has a clear review surface through the README, full board PNG, individual phone captures, and prompt packet.
 
-The reviewer flagged two result-contract closeout issues: the peer-review outcome was still pending, and the commit-hash field needed final handling. This file now records the peer review outcome and explains why the actual final Git hash is reported in the worker final reply after commit creation.
+The reviewer flagged two result-contract closeout issues: the peer-review outcome was still pending, and the commit-hash field needed final handling. This file now records the peer review outcome and the concrete task artifact commit hash.
 
 ## Recommended Next Task
 
