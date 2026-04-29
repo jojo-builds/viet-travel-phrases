@@ -44,25 +44,21 @@ struct PhraseDetailView: View {
 
     @ViewBuilder
     var body: some View {
-        if PhraseDetailPage.hasAuthoredPage(withID: page.id) {
-            PhraseArticleTemplateView(
-                page: page.articleTemplate,
-                chromeRoute: .detailPage(page.id),
-                scrollToTopTrigger: scrollToTopTrigger,
-                chromeNamespace: chromeNamespace,
-                isSearchActive: isSearchActive,
-                showsChrome: showsChrome,
-                isSaved: isSaved,
-                isInPractice: isInPractice,
-                onBackTapped: onBackTapped,
-                onSearchTapped: onSearchTapped,
-                onToggleSaved: onToggleSaved,
-                onTogglePractice: onTogglePractice,
-                onDetailTapped: onDetailTapped
-            )
-        } else {
-            legacyBody
-        }
+        PhraseArticleTemplateView(
+            page: page.articleTemplate,
+            chromeRoute: .detailPage(page.id),
+            scrollToTopTrigger: scrollToTopTrigger,
+            chromeNamespace: chromeNamespace,
+            isSearchActive: isSearchActive,
+            showsChrome: showsChrome,
+            isSaved: isSaved,
+            isInPractice: isInPractice,
+            onBackTapped: onBackTapped,
+            onSearchTapped: onSearchTapped,
+            onToggleSaved: onToggleSaved,
+            onTogglePractice: onTogglePractice,
+            onDetailTapped: onDetailTapped
+        )
     }
 
     private var legacyBody: some View {

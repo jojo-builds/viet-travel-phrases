@@ -35,25 +35,19 @@
         {
           "id": "v500-unde-repa-please-say-it-slowly-piece-2",
           "vietnamese": "nói",
-          "english": "speak / say",
+          "english": "say / speak",
           "audioKey": "breakdown-problems-3-first"
         },
         {
           "id": "v500-unde-repa-please-say-it-slowly-piece-3",
-          "vietnamese": "từ",
-          "english": "it",
-          "audioKey": "breakdown-authored-tu-c826c3782d"
+          "vietnamese": "từ từ",
+          "english": "slowly",
+          "audioKey": null
         },
         {
           "id": "v500-unde-repa-please-say-it-slowly-piece-4",
-          "vietnamese": "từ",
-          "english": "slowly",
-          "audioKey": "breakdown-authored-tu-c826c3782d"
-        },
-        {
-          "id": "v500-unde-repa-please-say-it-slowly-piece-5",
           "vietnamese": "nhé",
-          "english": "please say it slowly",
+          "english": "soft polite ending",
           "audioKey": "breakdown-food-need-table-piece-7"
         },
         {
@@ -68,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Hãy nói từ từ nhé when \"Please say it slowly\" is the main thing you need understood. This is for when the conversation is stuck and you need a clearer next step fast. The phrase works because it is specific enough to invite a confirmation, a handoff, a price, or a follow-up question. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "Start with Hãy nói từ từ nhé when \"Please say it slowly\" is the main thing you need understood. This is for when the conversation is stuck and you need a clearer next step fast. It gives the other person room to answer with a confirmation, a handoff, a price, or a follow-up question. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "v500-unde-repa-please-say-it-slowly",

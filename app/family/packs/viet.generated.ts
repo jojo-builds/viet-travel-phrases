@@ -14825,7 +14825,7 @@ const scenarios: AppScenario[] = [
         "id": "repair-meaning",
         "scenarioId": "understanding-repair",
         "title": "What does that mean?",
-        "summary": "Use this when one key word blocks the whole moment.",
+        "summary": "Use this when one word or phrase blocks the whole moment.",
         "accessTier": "starter",
         "primaryPhraseId": "repair-3",
         "phraseIds": [

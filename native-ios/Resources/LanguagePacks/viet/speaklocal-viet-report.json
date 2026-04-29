@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:f3316b37339a53d2",
-    "generatedAt": "source-hash:f3316b37339a53d2"
+    "contentVersion": "viet-sqlite-fixture:19d002a57a14a5fb",
+    "generatedAt": "source-hash:19d002a57a14a5fb"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "4f5953fcd728dc557e988205f0b2ad90d6798412b110af30123f5d89137e3e96"
+      "sha256": "3aa394e1c8baa8905d8f8d81dd87e8d935f43d3a97cadb91d2e98b97145d8697"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "20b30d836fddfd7ed1b6f25a490dba68ed4347ceee3d89e729843498733f25d5"
+      "sha256": "71af53b0f1b054ff67b9df5b3798d72d9f81ad795a2758e581986c5ca60ab538"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "e7b9837ce6764027f396ca9382d19fd01b4d5fd40957bbc6c865d8eb1fcddf06",
+    "databaseSha256": "6461009cb1c6583e72e4fcc359852acc50dcbb09bd66556b66618e9555368d1c",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -65,8 +65,8 @@
       "ok": true
     },
     "authoredPagesOrAliases": {
-      "expected": 163,
-      "actual": 163,
+      "expected": 164,
+      "actual": 164,
       "ok": true
     }
   },
@@ -78,14 +78,14 @@
     "phrases": 919,
     "pages": 911,
     "aliases": 928,
-    "pageCategories": 916,
-    "sections": 4515,
-    "sectionItems": 5019,
-    "breakdownTokens": 720,
-    "relations": 3438,
+    "pageCategories": 917,
+    "sections": 6013,
+    "sectionItems": 10312,
+    "breakdownTokens": 5996,
+    "relations": 3440,
     "searchDocuments": 919,
     "audioAssets": 3756,
-    "audioUsages": 3165,
+    "audioUsages": 3167,
     "audioTextDedupeRows": 2343,
     "missingAudioAuditRows": 0
   },
@@ -100,6 +100,8 @@
     "relationLookupUsesSourceIndex": true,
     "searchDocumentsWithMissingPageTargets": 0,
     "audioUsageMismatchCount": 0,
+    "badBreakdownGlossCount": 0,
+    "badBreakdownGlossSample": [],
     "bannedUserFacingMatchCount": 0,
     "bannedUserFacingMatches": []
   },
@@ -108,8 +110,98 @@
     "detailPageIDs": [],
     "authoredPagePhraseIDMissingCount": 0,
     "authoredPagePhraseIDMissing": [],
-    "authoredPhraseItemsNotInCatalogCount": 3,
+    "authoredPhraseItemsNotInCatalogCount": 18,
     "authoredPhraseItemsNotInCatalog": [
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "quick-say",
+        "phraseID": "xin-chao-casual-chao",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "situational-greetings",
+        "phraseID": "xin-chao-friend",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "situational-greetings",
+        "phraseID": "xin-chao-formal",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "situational-greetings",
+        "phraseID": "xin-chao-phone",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "situational-greetings",
+        "phraseID": "xin-chao-morning",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "situational-greetings",
+        "phraseID": "xin-chao-afternoon",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "local-greetings",
+        "phraseID": "xin-chao-anh",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "local-greetings",
+        "phraseID": "xin-chao-chi",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "local-greetings",
+        "phraseID": "xin-chao-em",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "local-greetings",
+        "phraseID": "xin-chao-ong",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "local-greetings",
+        "phraseID": "xin-chao-ba",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "local-greetings",
+        "phraseID": "xin-chao-chu",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "local-greetings",
+        "phraseID": "xin-chao-co",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "common-follow-ups",
+        "phraseID": "xin-chao-where-going",
+        "detailPageID": null
+      },
+      {
+        "pageID": "viet-polite-hello",
+        "sectionID": "common-follow-ups",
+        "phraseID": "xin-chao-nice-meet",
+        "detailPageID": null
+      },
       {
         "pageID": "viet-how-are-you",
         "sectionID": "relationship-forms",
@@ -218,7 +310,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 3438,
+    "relationCount": 3440,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -234,7 +326,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 881
+        "count": 884
       },
       {
         "relationType": "same_need_alt_context",
@@ -242,7 +334,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 2519
+        "count": 2518
       }
     ]
   },
@@ -250,7 +342,7 @@
     "manifestEntries": 3756,
     "uniqueNormalizedSpokenTextCount": 2343,
     "assets": 3756,
-    "usages": 3165,
+    "usages": 3167,
     "missingAudioAuditRows": 0,
     "missingAudioAuditSample": []
   },
@@ -283,8 +375,8 @@
     ]
   },
   "notes": [
-    "The native Swift runtime still reads the existing root-level JSON resources by default.",
-    "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet and can be selected by runtime feature flag while default promotion remains gated.",
+    "The native Swift runtime uses the bundled SQLite phrase graph by default unless explicitly disabled for fallback/testing.",
+    "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet and remains reproducible from catalog, authored page, and audio manifest inputs.",
     "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
     "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",
     "The relation table is populated from authored page links, generated category neighbors, and same-cluster variants.",

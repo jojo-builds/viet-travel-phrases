@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-28T22:54:20.882Z",
+  "generatedAt": "2026-04-29T11:47:14.470Z",
   "source": "../../../native-ios/Resources/viet-phrase-catalog.json",
   "tierOneFamilyCount": 150,
-  "resourceMainPageCount": 148,
+  "resourceMainPageCount": 149,
   "childPageCount": 15,
   "inventory": [
     {
       "familyID": "polite-hello",
       "pageID": "viet-polite-hello",
-      "coverage": "root",
+      "coverage": "authored-resource",
       "title": "Xin chào"
     },
     {

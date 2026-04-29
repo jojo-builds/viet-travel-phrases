@@ -42,6 +42,7 @@ const manuallyAuthoredPageIDs = new Set([
 const rootPageID = "viet-polite-hello";
 
 const pageCategoryOverrides = {
+  "viet-polite-hello": ["greetings", "polite-basics"],
   "viet-thank-you": ["gratitude"],
   "viet-excuse-sorry": ["repair"],
   "viet-goodbye": ["goodbyes"],
@@ -425,7 +426,7 @@ function authoredPhraseAudioKey(text, preferredKey) {
 }
 
 function authoredBreakdownAudioKey(text) {
-  return authoredAudioKey("breakdown-authored", text);
+  return exactAudioKey(text, null);
 }
 
 function slug(value) {
@@ -477,6 +478,15 @@ function manualPhraseOption(id, vietnamese, english, pronunciation, tintName, de
   };
 }
 
+function catalogPhraseOption(phraseID, detailPageID = null, tintName = null) {
+  const phrase = phraseByID.get(phraseID);
+  if (!phrase) {
+    throw new Error(`Missing catalog phrase ${phraseID}`);
+  }
+
+  return phraseOption(phrase, detailPageID, tintName ?? tintForScenario(phrase.scenarioID));
+}
+
 function scenarioCopy(scenarioID) {
   return scenarioGuidance[scenarioID] ?? {
     moment: "the travel moment in front of you",
@@ -526,6 +536,7 @@ function instructionLikeSentence(text) {
 
 function cleanEnglishIntent(englishText) {
   return englishText
+    .replace(/[’‘]/g, "'")
     .replace(/[?!]+$/g, "")
     .replace(/\s+/g, " ")
     .trim();
@@ -611,10 +622,19 @@ function intentTeaching(primaryPhrase) {
     };
   }
 
+  if (/^(excuse me|sorry|can you speak|do you speak|i don't understand|i do not understand|what does that mean)\b/.test(english)) {
+    return {
+      moment: "keeping a confusing exchange cooperative and easy to repair",
+      strategy: "asking for one clear help action before adding more words",
+      response: "a slower repeat, a pointed explanation, or a switch to writing",
+      followUp: "If the first reply is still unclear, move to showing, writing, or pointing.",
+    };
+  }
+
   return {
     moment: "turning the travel need into one clear sentence",
-    strategy: "keeping the useful noun or action in the center of the phrase",
-    response: "a short answer, gesture, or practical next step",
+    strategy: "making the next practical step easy for the other person to choose",
+    response: "a clear reply, a pointed detail, or a simple follow-up",
     followUp: "Use the related phrases below if the exchange moves one step further.",
   };
 }
@@ -685,7 +705,7 @@ function standardText(family, primaryPhrase) {
   return [
     `Start with ${primaryPhrase.targetText} when "${intent}" is the main thing you need understood.`,
     situation || `It keeps the focus on ${teaching.moment}.`,
-    `The phrase works because it is specific enough to invite ${teaching.response}.`,
+    `It gives the other person room to answer with ${teaching.response}.`,
     contextCueText(family),
   ].join(" ");
 }
@@ -798,10 +818,10 @@ const preferredBreakdownChunks = new Set([
   "khach san",
   "khong duong",
   "khong sao",
-  "khong sao dau",
   "it cay",
   "khu don",
   "lam on",
+  "lac duong",
   "may lanh",
   "mat khau",
   "mua sim",
@@ -813,6 +833,12 @@ const preferredBreakdownChunks = new Set([
   "noi lai",
   "nuoc suoi",
   "o dau",
+  "di chuyen",
+  "dung o day",
+  "hoat dong",
+  "kem chong nang",
+  "khan giay",
+  "khong an toan",
   "re phai",
   "re trai",
   "say xe",
@@ -837,6 +863,8 @@ const preferredBreakdownChunks = new Set([
   "truong hop",
   "viet xuong",
   "yen tinh",
+  "tu tu",
+  "xe cuu thuong",
   "xin chao",
   "xin loi",
   "xin vui long",
@@ -875,7 +903,7 @@ const breakdownMeanings = new Map(Object.entries({
   "khong": "not / no",
   "khong duong": "no sugar",
   "khong sao": "it is okay",
-  "khong sao dau": "it is okay",
+  "dau": "soft reassurance",
   "phai": "right / must",
   "dung": "correct",
   "sai": "wrong",
@@ -884,6 +912,7 @@ const breakdownMeanings = new Map(Object.entries({
   "den": "to / arrive",
   "di": "go",
   "di bo": "walk",
+  "di chuyen": "move",
   "di thang": "go straight",
   "de": "to / for",
   "de nhan phong": "for check-in",
@@ -938,6 +967,8 @@ const breakdownMeanings = new Map(Object.entries({
   "it cay": "less spicy",
   "khoe": "healthy / well",
   "khu don": "pickup area",
+  "lac": "lost",
+  "lac duong": "lost on the route",
   "lam on": "please",
   "may lanh": "air conditioning",
   "mat khau": "password",
@@ -951,6 +982,18 @@ const breakdownMeanings = new Map(Object.entries({
   "phong yen tinh": "quiet room",
   "re phai": "turn right",
   "re trai": "turn left",
+  "an toan": "safe",
+  "cuu thuong": "ambulance",
+  "dung o day": "stop here",
+  "hoat dong": "working",
+  "kem chong nang": "sunscreen",
+  "khan giay": "tissues",
+  "khong an toan": "unsafe",
+  "nhe": "soft polite ending",
+  "nhé": "soft polite ending",
+  "noi": "say / speak",
+  "roi": "already / enough",
+  "rồi": "already / enough",
   "say xe": "motion sickness",
   "thuc don": "menu",
   "thit bo": "beef",
@@ -961,26 +1004,50 @@ const breakdownMeanings = new Map(Object.entries({
   "tra phong": "check out",
   "truong hop": "case / situation",
   "khan cap": "emergency",
+  "thuong": "injury / medical help",
+  "tu tu": "slowly",
+  "xe cuu thuong": "ambulance",
   "viet": "write",
   "viet xuong": "write down",
   "xuong": "down",
   "yen tinh": "quiet",
 }));
 
-function englishFallbackChunk(englishText, index) {
-  const words = englishText
-    .replace(/[?!.,]+/g, "")
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((word) => word.toLowerCase());
+const exactBreakdownPieces = new Map(Object.entries({
+  "cam on": [
+    { vietnamese: "Cảm", english: "feel / receive" },
+    { vietnamese: "ơn", english: "kindness / favor" },
+  ],
+  "xin loi": [
+    { vietnamese: "Xin", english: "please / ask" },
+    { vietnamese: "lỗi", english: "mistake / fault" },
+  ],
+  "tam biet": [
+    { vietnamese: "Tạm", english: "for now" },
+    { vietnamese: "biệt", english: "separate / goodbye" },
+  ],
+  "khong sao": [
+    { vietnamese: "Không", english: "no / not" },
+    { vietnamese: "sao", english: "problem / why" },
+  ],
+  "khong sao dau": [
+    { vietnamese: "Không sao", english: "it is okay" },
+    { vietnamese: "đâu", english: "soft reassurance" },
+  ],
+}));
 
-  return words[index] ?? englishText.toLowerCase();
+function fallbackBreakdownMeaning(vietnamese) {
+  if (/^\d+$/.test(normalizedVietnameseKey(vietnamese))) return vietnamese;
+  if (/^[A-ZĐ][\p{L}\p{M}'-]+(?:\s+[A-ZĐ][\p{L}\p{M}'-]+)*$/u.test(vietnamese)) {
+    return "name or place detail";
+  }
+  return "specific detail";
 }
 
-function breakdownMeaning(vietnamese, fallback) {
+function breakdownMeaning(vietnamese) {
   const normalized = normalizedVietnameseKey(vietnamese);
   if (/^\d+$/.test(normalized)) return vietnamese;
-  return breakdownMeanings.get(normalized) ?? glossary.get(vietnamese.toLowerCase()) ?? fallback;
+  return breakdownMeanings.get(normalized) ?? glossary.get(vietnamese.toLowerCase()) ?? fallbackBreakdownMeaning(vietnamese);
 }
 
 function chunkVietnamesePhrase(phrase) {
@@ -1041,9 +1108,9 @@ function semanticBreakdownPieces(targetText, englishText) {
 
   const corePieces = chunkVietnamesePhrase(workingTarget)
     .filter(Boolean)
-    .map((chunk, index) => ({
+    .map((chunk) => ({
       vietnamese: chunk,
-      english: breakdownMeaning(chunk, englishFallbackChunk(englishText, index)),
+      english: breakdownMeaning(chunk),
     }));
 
   return [...corePieces, ...suffixPieces];
@@ -1096,6 +1163,10 @@ function placeNameFromWhereQuestion(englishText) {
 function splitVietnamesePieces(targetText, englishText) {
   const normalizedTargetText = targetText.normalize("NFC");
   const normalizedEnglishText = englishText.normalize("NFC");
+  const exactPieces = exactBreakdownPieces.get(normalizedVietnameseKey(normalizedTargetText));
+  if (exactPieces) {
+    return exactPieces;
+  }
 
   if (normalizedTargetText.endsWith(" ở đâu?")) {
     const subject = normalizedTargetText.slice(0, -" ở đâu?".length).trim();
@@ -1110,6 +1181,15 @@ function splitVietnamesePieces(targetText, englishText) {
 }
 
 function breakdownTokens(phrase) {
+  if (phrase.targetText.split(/\s+/).filter(Boolean).length === 1) {
+    return [{
+      id: `${phrase.id}-full`,
+      vietnamese: phrase.targetText,
+      english: phrase.englishText,
+      audioKey: authoredPhraseAudioKey(phrase.targetText, phrase.audioKey),
+    }];
+  }
+
   const pieces = splitVietnamesePieces(phrase.targetText, phrase.englishText)
     .map((piece, index) => ({
       id: `${phrase.id}-piece-${index + 1}`,
@@ -1217,6 +1297,106 @@ function exploreOptions(family, limit = 8, excludingPageIDs = new Set()) {
   });
 }
 
+function xinChaoFlagshipPage(family, primaryPhrase) {
+  const pageID = canonicalPageID(family);
+
+  return {
+    id: pageID,
+    familyID: family.id,
+    phraseID: primaryPhrase.id,
+    tierRole: "tier1",
+    depth: "deep",
+    title: "Xin chào",
+    englishTitle: "Hello",
+    pronunciation: "sin chow",
+    summary: "Hello (universal greeting)",
+    iconName: "star.fill",
+    tintName: "red",
+    categoryIDs: categoryIDsForPage(pageID, family),
+    audioKey: authoredPhraseAudioKey(primaryPhrase.targetText, primaryPhrase.audioKey),
+    sections: withSectionPresentations([
+      {
+        id: "at-glance",
+        title: "At a glance",
+        body: "For travelers, Xin chào is the most dependable hello. It is polite, short, and safe when you walk into a shop, step up to a hotel desk, meet a guide, or start a simple request. In everyday Vietnamese, greetings often depend on age, gender, and relationship, so the next step is learning when to use chào plus a relationship word. If you are unsure, Xin chào lets you begin warmly without guessing the other person's role.",
+      },
+      {
+        id: "quick-say",
+        title: "Quick say",
+        body: "Use Xin chào when you want one safe greeting. Use Chào when the moment is relaxed and the person already feels familiar.",
+        phrases: [
+          phraseOption(primaryPhrase, null, "red"),
+          manualPhraseOption("xin-chao-casual-chao", "Chào", "Hi / hello (casual)", "chow", "orange"),
+        ],
+      },
+      {
+        id: "breakdown",
+        title: "Break it down",
+        body: "Xin gives the greeting a polite shape, chào carries the hello, and the full phrase is the safest default when you do not know the relationship word yet.",
+        breakdown: [
+          { id: "xin", vietnamese: "Xin", english: "polite opening", audioKey: authoredBreakdownAudioKey("Xin") },
+          { id: "chao", vietnamese: "chào", english: "greet / hello", audioKey: authoredBreakdownAudioKey("chào") },
+          { id: "full", vietnamese: "Xin chào", english: "polite hello", audioKey: authoredPhraseAudioKey(primaryPhrase.targetText, primaryPhrase.audioKey) },
+        ],
+      },
+      {
+        id: "situational-greetings",
+        title: "Situational greetings",
+        body: "Use these when the setting is more specific: a friend, a respectful adult, a phone call, or a time-of-day greeting.",
+        presentation: "horizontal-phrase-cards",
+        phrases: [
+          manualPhraseOption("xin-chao-friend", "Chào bạn", "Hi, friend", "chow ban", "orange"),
+          manualPhraseOption("xin-chao-formal", "Dạ, chào anh/chị", "Hello, formal and respectful", "yah chow anh chee", "red"),
+          manualPhraseOption("xin-chao-phone", "Alô", "Hello on the phone", "ah-lo", "green"),
+          manualPhraseOption("xin-chao-morning", "Chào buổi sáng", "Good morning", "chow boo-ee sahng", "blue"),
+          manualPhraseOption("xin-chao-afternoon", "Chào buổi chiều", "Good afternoon", "chow boo-ee chee-ew", "purple"),
+        ],
+      },
+      {
+        id: "local-greetings",
+        title: "How locals actually greet",
+        body: "This is the most local pattern. Pick the relationship word when the person's role is clear; stay with Xin chào when you are unsure. These words are not just family labels. In Vietnam they also show respect, age relationship, and social distance, which is why a greeting can sound warmer when the relationship word fits.",
+        phrases: [
+          manualPhraseOption("xin-chao-anh", "Chào anh", "Hello, older brother / slightly older man", "chow anh", "blue"),
+          manualPhraseOption("xin-chao-chi", "Chào chị", "Hello, older sister / slightly older woman", "chow chee", "red"),
+          manualPhraseOption("xin-chao-em", "Chào em", "Hello, younger sibling / someone younger", "chow em", "green"),
+          manualPhraseOption("xin-chao-ong", "Chào ông", "Hello, grandfather / elderly man", "chow ohm", "purple"),
+          manualPhraseOption("xin-chao-ba", "Chào bà", "Hello, grandmother / elderly woman", "chow bah", "red"),
+          manualPhraseOption("xin-chao-chu", "Chào chú", "Hello, uncle / older man", "chow choo", "teal"),
+          manualPhraseOption("xin-chao-co", "Chào cô", "Hello, aunt / older woman", "chow koh", "red"),
+        ],
+      },
+      {
+        id: "common-follow-ups",
+        title: "Common follow-ups",
+        body: "After hello, small talk often checks health, movement, or the social moment. Use these when the exchange has room to continue.",
+        phrases: [
+          catalogPhraseOption("smalltalk-7", "viet-how-are-you", "red"),
+          manualPhraseOption("xin-chao-where-going", "Đi đâu đấy?", "Where are you going?", "dee dow day", "red"),
+          manualPhraseOption("xin-chao-nice-meet", "Rất vui được gặp bạn", "Nice to meet you", "zuht voo-ee duhk gap ban", "red"),
+        ],
+      },
+      {
+        id: "cultural-note",
+        title: "Cultural note",
+        body: "Vietnamese greetings carry relationship information. Learning the pattern matters more than memorizing one perfect hello. You do not need to guess perfectly as a visitor; a calm Xin chào is accepted almost everywhere. As you get more comfortable, adding anh, chị, em, cô, chú, ông, or bà makes the greeting feel less like a phrasebook line and more like a real local opening.",
+        presentation: "tip-callout",
+      },
+      {
+        id: "explore-next",
+        title: "Explore next",
+        body: "Use these next when the conversation moves one step forward.",
+        phrases: [
+          catalogPhraseOption("polite-2", "viet-thank-you", "green"),
+          catalogPhraseOption("polite-5", "viet-excuse-sorry", "blue"),
+          catalogPhraseOption("polite-7", "viet-goodbye", "purple"),
+        ],
+      },
+    ]),
+    examples: [phraseOption(primaryPhrase, null, "red")],
+  };
+}
+
 function childPageForVariant(family, variantPhrase, primaryPhrase) {
   const pageID = `viet-phrase-${variantPhrase.id}`;
   const scenario = scenarioByID.get(family.scenarioID);
@@ -1314,6 +1494,10 @@ function withSectionPresentations(sections) {
 
 function pageForFamily(family, childPageIDsByPhraseID) {
   const primaryPhrase = phraseByID.get(family.primaryPhraseID);
+  if (family.id === "polite-hello") {
+    return xinChaoFlagshipPage(family, primaryPhrase);
+  }
+
   const scenario = scenarioByID.get(family.scenarioID);
   const phrases = (family.phraseIDs ?? []).map((id) => phraseByID.get(id)).filter(Boolean);
   const variants = phrases.filter((phrase) => phrase.id !== primaryPhrase.id);
@@ -1448,6 +1632,10 @@ function collectAudioAudit(pages) {
 
   function addAudio(ref) {
     if (!ref.audioKey) {
+      if (ref.kind === "breakdown") {
+        return;
+      }
+
       const record = { ...ref, resolved: false };
       required.push(record);
       missing.push(record);
@@ -1504,11 +1692,6 @@ function main() {
   for (const family of starterFamilies) {
     const primaryPhrase = phraseByID.get(family.primaryPhraseID);
     const pageID = canonicalPageID(family);
-
-    if (pageID === rootPageID) {
-      inventory.push({ familyID: family.id, pageID, coverage: "root", title: primaryPhrase.targetText });
-      continue;
-    }
 
     const page = pageForFamily(family, childPageIDsByPhraseID);
     const coverage = manuallyAuthoredPageIDs.has(page.id) ? "manual-swift" : "authored-resource";

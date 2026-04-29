@@ -320,7 +320,7 @@ function main() {
       phrase_id: phrase.id,
       title: authoredPage?.title ?? phrase.targetText,
       english_title: authoredPage?.englishTitle ?? phrase.englishText,
-      summary: authoredPage?.summary ?? family?.summary ?? phrase.context ?? phrase.englishText,
+      summary: pageSummaryForPhrase(phrase, authoredPage, family),
       icon_name: authoredPage?.iconName ?? scenario?.symbolName ?? "text.bubble.fill",
       tint_name: authoredPage?.tintName ?? scenario?.tintName ?? "gray",
       page_renderer: "article-listing",
@@ -369,6 +369,13 @@ function main() {
     return `${phrase.targetText} is the phrase to keep ready for "${phrase.englishText}" in ${scenarioTitle(phrase.scenarioID)}.`;
   }
 
+  function pageSummaryForPhrase(phrase, authoredPage, family) {
+    if (authoredPage?.summary) return authoredPage.summary;
+    const summary = sentence(family?.summary);
+    if (summary && !/^use this when\b/i.test(summary)) return summary;
+    return `Different ways to say "${phrase.englishText}" in Vietnam, starting with ${phrase.targetText} and the pieces to recognize.`;
+  }
+
   function scenarioNeighborPhrases(phrase) {
     const family = familyByID.get(phrase.familyID);
     const familyPhraseIDs = (family?.phraseIDs ?? []).filter((phraseID) => phraseID !== phrase.id);
@@ -391,6 +398,436 @@ function main() {
       })
       .slice(0, 3)
       .map((phraseID) => phraseByID.get(phraseID));
+  }
+
+  function normalizedVietnameseKey(value) {
+    return accentlessText(value)
+      .replace(/[^a-z0-9/]+/g, " ")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+
+  const preferredBreakdownChunks = new Set([
+    "anh/chi",
+    "anh chi",
+    "bac si",
+    "bao lau",
+    "bao nhieu",
+    "buu dien",
+    "ca phe",
+    "ca phe den",
+    "ca phe sua",
+    "cam thay",
+    "cam on",
+    "cho hoi",
+    "cho toi",
+    "co ban",
+    "co the",
+    "cua toi",
+    "dat tour",
+    "da xay ra",
+    "di bo",
+    "di thang",
+    "dien thoai",
+    "duoc khong",
+    "gan nhat",
+    "giam gia",
+    "giup toi",
+    "hanh ly",
+    "ho chieu",
+    "it cay",
+    "khach san",
+    "khong duong",
+    "khong sao",
+    "khu don",
+    "lam on",
+    "lac duong",
+    "may lanh",
+    "mat khau",
+    "mua sim",
+    "nha thuoc",
+    "nha ve sinh",
+    "nhan phong",
+    "nhap canh",
+    "noi lai",
+    "nuoc suoi",
+    "o dau",
+    "phong yen tinh",
+    "ung dung",
+    "cho biet",
+    "trinh dieu khien",
+    "co o day",
+    "tim thay",
+    "di chuyen",
+    "dung o day",
+    "hoat dong",
+    "kem chong nang",
+    "khan giay",
+    "khong an toan",
+    "re phai",
+    "re trai",
+    "say xe",
+    "the hanh ly",
+    "thi thuc",
+    "tien mat",
+    "tieng anh",
+    "toi bi",
+    "toi can",
+    "toi co",
+    "toi co the",
+    "toi khong",
+    "toi muon",
+    "toi tra",
+    "tra phong",
+    "truong hop",
+    "viet xuong",
+    "yen tinh",
+    "tu tu",
+    "xe cuu thuong",
+    "xin chao",
+    "xin loi",
+  ]);
+
+  const breakdownMeanings = new Map(Object.entries({
+    "anh/chi": "you (polite)",
+    "anh chi": "you (polite)",
+    "bac si": "doctor",
+    "bao lau": "how long",
+    "bao nhieu": "how much",
+    "bot": "reduce / lower",
+    "buu dien": "post office",
+    "ca phe": "coffee",
+    "ca phe den": "black coffee",
+    "ca phe sua": "milk coffee",
+    "cam thay": "feel",
+    "cho hoi": "excuse me / may I ask",
+    "cho toi": "can I have",
+    "cho": "give / let",
+    "cho biet": "says / tells",
+    "co": "have / yes",
+    "co ban": "do you sell",
+    "co the": "can",
+    "cong an": "police",
+    "cua toi": "my / mine",
+    "can": "need",
+    "dat tour": "booked a tour",
+    "day": "here / this",
+    "dia chi": "address",
+    "di": "go",
+    "di bo": "walk",
+    "di chuyen": "move",
+    "di thang": "go straight",
+    "dien thoai": "phone",
+    "dung": "correct",
+    "duoc khong": "is it possible?",
+    "gan nhat": "nearest",
+    "gia": "price",
+    "giam gia": "lower the price",
+    "giup toi": "help me",
+    "hanh ly": "baggage",
+    "ho chieu": "passport",
+    "it cay": "less spicy",
+    "khach san": "hotel",
+    "khong": "not / no",
+    "khong duong": "no sugar",
+    "khong sao": "it is okay",
+    "khu don": "pickup area",
+    "lac": "lost",
+    "lac duong": "lost on the route",
+    "la": "is",
+    "lam on": "please",
+    "lien he": "contact",
+    "may lanh": "air conditioning",
+    "mat khau": "password",
+    "mua": "buy",
+    "mua sim": "buy a SIM",
+    "nha thuoc": "pharmacy",
+    "nha ve sinh": "bathroom",
+    "nhan phong": "check in",
+    "nhap canh": "immigration",
+    "noi lai": "say again",
+    "nuoc suoi": "bottled water",
+    "o dau": "where?",
+    "o day": "here",
+    "phong": "room",
+    "phong yen tinh": "quiet room",
+    "an toan": "safe",
+    "cuu thuong": "ambulance",
+    "dung o day": "stop here",
+    "hoat dong": "working",
+    "kem chong nang": "sunscreen",
+    "khan giay": "tissues",
+    "khong an toan": "unsafe",
+    "nhe": "soft polite ending",
+    "nhé": "soft polite ending",
+    "noi": "say / speak",
+    "re phai": "turn right",
+    "re trai": "turn left",
+    "roi": "already / enough",
+    "rồi": "already / enough",
+    "say xe": "motion sickness",
+    "sim": "SIM card",
+    "tam": "for now",
+    "the hanh ly": "baggage tag",
+    "thi thuc": "visa",
+    "tien mat": "cash",
+    "tieng anh": "English",
+    "toi": "I / me",
+    "toi bi": "I have / got",
+    "toi can": "I need",
+    "toi co": "I have",
+    "toi co the": "can I",
+    "toi khong": "I do not",
+    "toi muon": "I want",
+    "toi tra": "I pay",
+    "the": "can / able to",
+    "trinh dieu khien": "driver",
+    "tra phong": "check out",
+    "truong hop": "case / situation",
+    "ung dung": "app",
+    "co o day": "is here",
+    "thuong": "injury / medical help",
+    "tu tu": "slowly",
+    "ve": "ticket",
+    "xe cuu thuong": "ambulance",
+    "tim thay": "find",
+    "nhung": "but",
+    "chung": "them",
+    "viet xuong": "write down",
+    "yen tinh": "quiet",
+    "xin": "please / ask",
+    "xin chao": "hello",
+    "xin loi": "excuse me / sorry",
+    "dau": "soft reassurance",
+  }));
+
+  const exactBreakdownPieces = new Map(Object.entries({
+    "cam on": [
+      { vietnamese: "Cảm", english: "feel / receive" },
+      { vietnamese: "ơn", english: "kindness / favor" },
+    ],
+    "xin loi": [
+      { vietnamese: "Xin", english: "please / ask" },
+      { vietnamese: "lỗi", english: "mistake / fault" },
+    ],
+    "tam biet": [
+      { vietnamese: "Tạm", english: "for now" },
+      { vietnamese: "biệt", english: "separate / goodbye" },
+    ],
+    "khong sao": [
+      { vietnamese: "Không", english: "no / not" },
+      { vietnamese: "sao", english: "problem / why" },
+    ],
+    "khong sao dau": [
+      { vietnamese: "Không sao", english: "it is okay" },
+      { vietnamese: "đâu", english: "soft reassurance" },
+    ],
+  }));
+
+  function fallbackBreakdownMeaning(vietnamese) {
+    if (/^\d+$/.test(normalizedVietnameseKey(vietnamese))) return vietnamese;
+    if (/^[A-ZĐ][\p{L}\p{M}'-]+(?:\s+[A-ZĐ][\p{L}\p{M}'-]+)*$/u.test(vietnamese)) {
+      return "name or place detail";
+    }
+    return "specific detail";
+  }
+
+  function breakdownMeaning(vietnamese) {
+    const normalized = normalizedVietnameseKey(vietnamese);
+    if (/^\d+$/.test(normalized)) return vietnamese;
+    return breakdownMeanings.get(normalized) ?? fallbackBreakdownMeaning(vietnamese);
+  }
+
+  function chunkVietnamesePhrase(phrase) {
+    const words = phrase.split(/\s+/).filter(Boolean);
+    const chunks = [];
+
+    while (words.length > 0) {
+      const maxCandidateLength = Math.min(3, words.length);
+      let matchedChunk = null;
+
+      for (let length = maxCandidateLength; length >= 2; length -= 1) {
+        const candidate = words.slice(0, length).join(" ");
+        if (preferredBreakdownChunks.has(normalizedVietnameseKey(candidate))) {
+          matchedChunk = candidate;
+          break;
+        }
+      }
+
+      if (matchedChunk) {
+        chunks.push(matchedChunk);
+        words.splice(0, matchedChunk.split(/\s+/).length);
+      } else {
+        chunks.push(words.shift());
+      }
+    }
+
+    return chunks;
+  }
+
+  function semanticBreakdownPieces(targetText, englishText) {
+    const terminal = targetText.match(/[?!.,]+$/)?.[0] ?? "";
+    let workingTarget = targetText.replace(/[?!.,]+$/g, "").trim();
+    const suffixPieces = [];
+    const suffixes = [
+      ["được không", "is it possible?"],
+      ["đúng không", "right?"],
+      ["phải không", "is that right?"],
+      ["không", "asks yes or no"],
+    ];
+
+    for (const [vietnamese, english] of suffixes) {
+      if (!normalizedVietnameseKey(workingTarget).endsWith(normalizedVietnameseKey(vietnamese))) continue;
+      const suffixWithSpace = ` ${vietnamese}`;
+      const index = workingTarget.toLowerCase().lastIndexOf(suffixWithSpace);
+      if (index >= 0) {
+        workingTarget = workingTarget.slice(0, index).trim();
+        suffixPieces.push({ vietnamese: vietnamese + (terminal === "?" ? "?" : ""), english });
+        break;
+      }
+    }
+
+    const corePieces = chunkVietnamesePhrase(workingTarget)
+      .filter(Boolean)
+      .map((chunk) => ({
+        vietnamese: chunk,
+        english: breakdownMeaning(chunk),
+      }));
+
+    return [...corePieces, ...suffixPieces];
+  }
+
+  function showingItemLabel(englishText, ownsItem) {
+    const prefixes = ownsItem
+      ? ["Here is my", "This is my", "Here is the", "This is the", "Here is", "This is"]
+      : ["Here is", "This is", "It is"];
+
+    for (const prefix of prefixes) {
+      if (String(englishText).toLowerCase().startsWith(prefix.toLowerCase())) {
+        return String(englishText).slice(prefix.length).replace(/[ .?!]+$/g, "").trim().toLowerCase();
+      }
+    }
+    return String(englishText ?? "").toLowerCase();
+  }
+
+  function splitVietnamesePieces(targetText, englishText) {
+    const normalizedTargetText = String(targetText ?? "").normalize("NFC");
+    const exactPieces = exactBreakdownPieces.get(normalizedVietnameseKey(normalizedTargetText));
+    if (exactPieces) return exactPieces;
+
+    if (normalizedTargetText.endsWith(" ở đâu?")) {
+      const subject = normalizedTargetText.slice(0, -" ở đâu?".length).trim();
+      const match = String(englishText ?? "").match(/^where\s+(?:is|are|can i buy)\s+(.+?)\??$/i);
+      return [
+        ...semanticBreakdownPieces(subject, match ? match[1].trim().toLowerCase() : "place"),
+        { vietnamese: "ở đâu?", english: "where?" },
+      ];
+    }
+
+    if (normalizedTargetText.startsWith("Đây là ") && normalizedTargetText.endsWith(" của tôi")) {
+      const itemText = normalizedTargetText
+        .slice("Đây là ".length, normalizedTargetText.length - " của tôi".length)
+        .trim();
+      return [
+        { vietnamese: "Đây", english: "here / this" },
+        { vietnamese: "là", english: "is" },
+        ...semanticBreakdownPieces(itemText, showingItemLabel(englishText, true)),
+        { vietnamese: "của tôi", english: "my / mine" },
+      ];
+    }
+
+    if (normalizedTargetText.startsWith("Đây là ")) {
+      const itemText = normalizedTargetText.slice("Đây là ".length).trim();
+      return [
+        { vietnamese: "Đây", english: "here / this" },
+        { vietnamese: "là", english: "is" },
+        ...semanticBreakdownPieces(itemText, showingItemLabel(englishText, false)),
+      ];
+    }
+
+    return semanticBreakdownPieces(normalizedTargetText, englishText);
+  }
+
+  function generatedBreakdownPieces(phrase) {
+    const pieces = splitVietnamesePieces(phrase.targetText, phrase.englishText)
+      .filter((piece) => piece.vietnamese && piece.english);
+    const titleKey = normalizedVietnameseKey(phrase.targetText);
+    const titleWordCount = phrase.targetText.split(/\s+/).filter(Boolean).length;
+
+    if (
+      titleWordCount > 1 &&
+      pieces.length === 1 &&
+      normalizedVietnameseKey(pieces[0].vietnamese) === titleKey
+    ) {
+      return phrase.targetText
+        .replace(/[?!.,]+$/g, "")
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((word) => ({
+          vietnamese: word,
+          english: breakdownMeaning(word),
+        }));
+    }
+
+    return pieces;
+  }
+
+  function generatedBreakdownLeadIn(phrase) {
+    const wordCount = phrase.targetText.split(/\s+/).filter(Boolean).length;
+    if (wordCount === 1) {
+      return "This is a compact one-word phrase, so the whole word is the reusable piece to recognize and say clearly.";
+    }
+    if (phrase.targetText.endsWith(" ở đâu?")) {
+      return "This pattern asks where a place or service is. Keep the place first, then use ở đâu for where.";
+    }
+    if (phrase.targetText.includes("không")) {
+      return "This pattern asks for a yes-or-no answer or sets a clear limit. Keep the main need together so it sounds natural.";
+    }
+    return "Use these cards to see the useful pieces first, then the full phrase as the version to say out loud.";
+  }
+
+  function addBreakdownSectionItems(sectionID, phrase, sourcePath) {
+    const pieces = generatedBreakdownPieces(phrase);
+    const wordCount = phrase.targetText.split(/\s+/).filter(Boolean).length;
+    const tokens = wordCount === 1
+      ? [{
+        id: `${sectionID}:breakdown:full`,
+        vietnamese: phrase.targetText,
+        english: phrase.englishText,
+      }]
+      : [
+        ...pieces.map((piece, index) => ({
+          id: `${sectionID}:breakdown:piece-${index + 1}`,
+          vietnamese: piece.vietnamese,
+          english: piece.english,
+        })),
+        {
+          id: `${sectionID}:breakdown:full`,
+          vietnamese: phrase.targetText,
+          english: phrase.englishText,
+        },
+      ];
+
+    tokens.forEach((token, index) => {
+      breakdownRows.push({
+        id: token.id,
+        phrase_id: phrase.id,
+        token_text: token.vietnamese,
+        normalized_token_text: normalizeText(token.vietnamese),
+        english_gloss: token.english,
+        sort_order: index,
+      });
+      sectionItemRows.push({
+        id: `${sectionID}:breakdown:${index}:${stableID([token.vietnamese, token.english])}`,
+        section_id: sectionID,
+        item_kind: "breakdown_token",
+        target_id: token.id,
+        title_override: token.vietnamese,
+        subtitle_override: token.english,
+        note: null,
+        sort_order: index,
+      });
+    });
   }
 
   function addSection({ pageID, sectionKey, title, body, presentation, sortOrder, sourcePath }) {
@@ -527,13 +964,23 @@ function main() {
     addPageCategory(pageRow.id, phrase.scenarioID, 0, relative(catalogPath));
     if (pageRow.is_authored) continue;
 
+    addSection({
+      pageID: pageRow.id,
+      sectionKey: "at-glance",
+      title: "At a glance",
+      body: `Use ${phrase.targetText} for "${phrase.englishText}" in ${scenario?.title ?? "Vietnam travel"}. The full phrase comes first, and the breakdown below shows the reusable pieces a traveler is most likely to recognize again.`,
+      presentation: "plain-text",
+      sortOrder: 0,
+      sourcePath: relative(catalogPath),
+    });
+
     const quickSaySectionID = addSection({
       pageID: pageRow.id,
       sectionKey: "quick-say",
       title: "Quick say",
-      body: `${phrase.targetText} is the phrase to start with for "${phrase.englishText}" in ${scenario?.title ?? "Vietnam travel"}.`,
+      body: `Start with ${phrase.targetText} when "${phrase.englishText}" is the main idea you need to get across.`,
       presentation: "phrase-list",
-      sortOrder: 0,
+      sortOrder: 1,
       sourcePath: relative(catalogPath),
     });
     addPhraseSectionItem({
@@ -543,13 +990,24 @@ function main() {
       note: pageRow.id,
     });
 
+    const breakdownSectionID = addSection({
+      pageID: pageRow.id,
+      sectionKey: "breakdown",
+      title: "Break it down",
+      body: generatedBreakdownLeadIn(phrase),
+      presentation: "breakdown-strip",
+      sortOrder: 2,
+      sourcePath: relative(catalogPath),
+    });
+    addBreakdownSectionItems(breakdownSectionID, phrase, relative(catalogPath));
+
     addSection({
       pageID: pageRow.id,
       sectionKey: "when-to-use",
       title: "When to use it",
       body: baselineContextBody(phrase, family),
       presentation: "plain-text",
-      sortOrder: 1,
+      sortOrder: 3,
       sourcePath: relative(catalogPath),
     });
 
@@ -560,7 +1018,7 @@ function main() {
         title: "What you may hear",
         body: sentence(phrase.youMayHear),
         presentation: "plain-text",
-        sortOrder: 2,
+        sortOrder: 4,
         sourcePath: relative(catalogPath),
       });
     }
@@ -571,7 +1029,7 @@ function main() {
       title: "Good to know",
       body: `Say it once, then give the other person the place, item, screen, or document that makes the request clear.`,
       presentation: "tip-callout",
-      sortOrder: 3,
+      sortOrder: 5,
       sourcePath: relative(catalogPath),
     });
 
@@ -581,10 +1039,10 @@ function main() {
       sectionKey: "nearby-phrases",
       title: "Nearby phrases",
       body: nearbyPhrases.length > 0
-        ? `These ${scenario?.title ?? "travel"} phrases are likely to sit near this moment.`
+        ? `These nearby ${scenario?.title ?? "travel"} phrases help if the answer creates one more step.`
         : `This phrase is ready as a standalone ${scenario?.title ?? "travel"} page.`,
       presentation: "phrase-list",
-      sortOrder: 4,
+      sortOrder: 6,
       sourcePath: relative(catalogPath),
     });
     nearbyPhrases.forEach((nearbyPhrase, index) => {
@@ -736,6 +1194,10 @@ function main() {
         });
       }
       for (const token of section.breakdown ?? []) {
+        if (!token.audioKey) {
+          continue;
+        }
+
         const tokenID = `${sectionID}:breakdown:${token.id}`;
         addAudioUsage({
           usageKind: "authored-breakdown-token",
@@ -971,11 +1433,27 @@ function main() {
     JOIN audio_asset aa ON aa.id = au.audio_asset_id
     WHERE au.normalized_expected_text != aa.normalized_spoken_text;
   `));
+  const badBreakdownGlossRows = sqliteQuery(`
+    SELECT pp.id || ': ' || bt.token_text || ' = ' || bt.english_gloss
+    FROM page_section ps
+    JOIN phrase_page pp ON pp.id = ps.page_id
+    JOIN page_section_item psi ON psi.section_id = ps.id AND psi.item_kind = 'breakdown_token'
+    JOIN breakdown_token bt ON bt.id = psi.target_id
+    WHERE ps.section_key = 'breakdown'
+      AND psi.sort_order < (
+        SELECT max(psi2.sort_order)
+        FROM page_section_item psi2
+        WHERE psi2.section_id = ps.id
+          AND psi2.item_kind = 'breakdown_token'
+      )
+      AND lower(bt.english_gloss) = lower(pp.english_title);
+  `).split("\n").filter(Boolean);
   const bannedUserFacingPatterns = [
     /Watch out/i,
     /repair phrase/i,
     /Understanding Repair/i,
     /question marker/i,
+    /key word/i,
     /warning-callout/i,
     /watch-out/i,
   ];
@@ -1047,7 +1525,11 @@ function main() {
         actual: pageRows.length,
         ok: pageRows.length === expectedCanonicalPhrasePages,
       },
-      authoredPagesOrAliases: { expected: 163, actual: authoredPagesOrAliases, ok: authoredPagesOrAliases === 163 },
+      authoredPagesOrAliases: {
+        expected: authoredPages.length,
+        actual: authoredPagesOrAliases,
+        ok: authoredPagesOrAliases === authoredPages.length,
+      },
     },
     generatedCounts,
     validation: {
@@ -1061,6 +1543,8 @@ function main() {
       relationLookupUsesSourceIndex,
       searchDocumentsWithMissingPageTargets,
       audioUsageMismatchCount,
+      badBreakdownGlossCount: badBreakdownGlossRows.length,
+      badBreakdownGlossSample: badBreakdownGlossRows.slice(0, 20),
       bannedUserFacingMatchCount: bannedUserFacingMatches.length,
       bannedUserFacingMatches,
     },
@@ -1101,8 +1585,8 @@ function main() {
       authoredCategoryIDs: Array.from(categoryIDs).sort(),
     },
     notes: [
-      "The native Swift runtime still reads the existing root-level JSON resources by default.",
-      "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet and can be selected by runtime feature flag while default promotion remains gated.",
+      "The native Swift runtime uses the bundled SQLite phrase graph by default unless explicitly disabled for fallback/testing.",
+      "SQLite is generated as a bundled fixture under Resources/LanguagePacks/viet and remains reproducible from catalog, authored page, and audio manifest inputs.",
       "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
       "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",
       "The relation table is populated from authored page links, generated category neighbors, and same-cluster variants.",

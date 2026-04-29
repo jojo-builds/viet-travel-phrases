@@ -421,7 +421,7 @@ enum PhraseCatalog {
             let categories = baseCategories + scenarioCategories
             let categoriesByID = Dictionary(uniqueKeysWithValues: categories.map { ($0.id, $0) })
 
-            let allItems = sqliteSnapshot?.catalogItems ?? Self.makeJSONFallbackItems()
+            let allItems = Self.uniqueItems(sqliteSnapshot?.catalogItems ?? Self.makeJSONFallbackItems())
             var itemsByCategoryID: [String: [PhraseCatalogItem]] = [:]
 
             for item in allItems {
@@ -443,6 +443,13 @@ enum PhraseCatalog {
             let designedPageIDs = Set(designedItems.map(\.pageID))
 
             return designedItems + GeneratedVietContent.catalogItems(excludingPageIDs: designedPageIDs)
+        }
+
+        private static func uniqueItems(_ items: [PhraseCatalogItem]) -> [PhraseCatalogItem] {
+            var seen = Set<String>()
+            return items.filter { item in
+                seen.insert(item.pageID).inserted
+            }
         }
     }
 

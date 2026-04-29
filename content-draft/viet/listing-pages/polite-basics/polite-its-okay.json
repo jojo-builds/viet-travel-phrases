@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Không sao đâu answers the traveler question \"It’s okay\" in small service and first-contact moments. Say this when someone apologizes and you want to reassure them. Its job is keeping the useful noun or action in the center of the phrase. Expect a short answer, gesture, or practical next step; then use Explore next if the reply creates another small task.",
+      "body": "Không sao đâu answers the traveler question \"It's okay\" in small service and first-contact moments. Say this when someone apologizes and you want to reassure them. Its job is giving the other person a simple anchor rather than a long explanation. Expect a short reply, a smile, a time, or a light follow-up question; then use Explore next if the reply creates another small task.",
       "presentation": "plain-text"
     },
     {
@@ -28,9 +28,15 @@
       "breakdown": [
         {
           "id": "polite-6-piece-1",
-          "vietnamese": "Không sao đâu",
+          "vietnamese": "Không sao",
           "english": "it is okay",
-          "audioKey": "polite-6"
+          "audioKey": null
+        },
+        {
+          "id": "polite-6-piece-2",
+          "vietnamese": "đâu",
+          "english": "soft reassurance",
+          "audioKey": null
         },
         {
           "id": "polite-6-full",
@@ -44,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Không sao đâu when \"It’s okay\" is the main thing you need understood. Say this when someone apologizes and you want to reassure them. The phrase works because it is specific enough to invite a short answer, gesture, or practical next step. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "Start with Không sao đâu when \"It's okay\" is the main thing you need understood. Say this when someone apologizes and you want to reassure them. It gives the other person room to answer with a short reply, a smile, a time, or a light follow-up question. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
       "phrases": [
         {
           "id": "polite-6",
@@ -62,19 +68,19 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"It’s okay\", the useful move is keeping the useful noun or action in the center of the phrase. Use the related phrases below if the exchange moves one step further.",
+      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"It's okay\", the useful move is giving the other person a simple anchor rather than a long explanation. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Polite Basics, locals often answer with a short answer, gesture, or practical next step rather than a long explanation. That makes Không sao đâu strongest when you say it once, pause, and let the other person show the next step. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "In Polite Basics, locals often answer with a short reply, a smile, a time, or a light follow-up question rather than a long explanation. That makes Không sao đâu strongest when you say it once, pause, and let the other person show the next step. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
       "presentation": "plain-text"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Say this when someone apologizes and you want to reassure them. It fits small service and first-contact moments, especially when the next step is a short answer, gesture, or practical next step. Use the related phrases below if the exchange moves one step further.",
+      "body": "Say this when someone apologizes and you want to reassure them. It fits small service and first-contact moments, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
       "presentation": "plain-text"
     },
     {

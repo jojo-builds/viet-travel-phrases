@@ -63,6 +63,7 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     ),
     'aliases', (SELECT count(*) FROM page_alias),
     'sections', (SELECT count(*) FROM page_section),
+    'breakdownSections', (SELECT count(*) FROM page_section WHERE section_key = 'breakdown'),
     'sectionItems', (SELECT count(*) FROM page_section_item),
     'searchDocuments', (SELECT count(*) FROM search_document),
     'relations', (SELECT count(*) FROM phrase_relation),
@@ -90,8 +91,9 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     }
   );
   assert.ok(counts.aliases >= 163, "authored pages should be represented by canonical aliases");
-  assert.ok(counts.sections >= 3800, "authored and baseline page sections should be preserved");
-  assert.ok(counts.sectionItems >= 3800, "authored, baseline, phrase, and breakdown items should be preserved");
+  assert.ok(counts.sections >= 6000, "authored and baseline page sections should be preserved");
+  assert.strictEqual(counts.breakdownSections, 911, "every canonical page should have a breakdown section");
+  assert.ok(counts.sectionItems >= 10000, "authored, baseline, phrase, and breakdown items should be preserved");
   assert.strictEqual(counts.searchDocuments, 919, "every source phrase row should produce a search document");
   assert.ok(counts.relations > 0, "page graph relation edges should be generated");
   assert.ok(counts.audioAssets > 0, "audio manifest rows should be represented");
@@ -118,6 +120,17 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     );
   `);
   assert.strictEqual(sectionlessPages, "0", "every canonical phrase page should have renderable sections");
+
+  assert.strictEqual(
+    sqliteValue("SELECT canonical_page_id FROM page_alias WHERE alias_id = 'viet-polite-hello';"),
+    "viet-phrase-polite-1",
+    "legacy hello page should alias to canonical SQLite page"
+  );
+  assert.strictEqual(
+    sqliteValue("SELECT summary FROM phrase_page WHERE id = 'viet-phrase-polite-1';"),
+    "Hello (universal greeting)",
+    "SQLite hello page should carry flagship summary"
+  );
 
   const brokenRelations = sqliteValue(`
     SELECT count(*)
@@ -151,7 +164,7 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     clusters: { expected: 900, actual: 900, ok: true },
     phrases: { expected: 919, actual: 919, ok: true },
     canonicalPhrasePages: { expected: 911, actual: 911, ok: true },
-    authoredPagesOrAliases: { expected: 163, actual: 163, ok: true },
+    authoredPagesOrAliases: { expected: 164, actual: 164, ok: true },
   });
   assert.deepStrictEqual(report.canonicalIdentity.unresolvedDuplicateNormalizedTargetTextGroups, []);
   assert.strictEqual(report.canonicalIdentity.canonicalPageCount, 911);

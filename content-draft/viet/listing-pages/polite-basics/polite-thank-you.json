@@ -28,9 +28,15 @@
       "breakdown": [
         {
           "id": "polite-2-piece-1",
-          "vietnamese": "Cảm ơn",
-          "english": "thank you",
-          "audioKey": "polite-2"
+          "vietnamese": "Cảm",
+          "english": "feel / receive",
+          "audioKey": "breakdown-polite-2-first"
+        },
+        {
+          "id": "polite-2-piece-2",
+          "vietnamese": "ơn",
+          "english": "kindness / favor",
+          "audioKey": "breakdown-polite-2-rest"
         },
         {
           "id": "polite-2-full",
@@ -44,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Cảm ơn when \"Thank you\" is the main thing you need understood. Say this anytime someone helps you, serves you, or gives directions. The phrase works because it is specific enough to invite a short reply, a smile, a time, or a light follow-up question. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "Start with Cảm ơn when \"Thank you\" is the main thing you need understood. Say this anytime someone helps you, serves you, or gives directions. It gives the other person room to answer with a short reply, a smile, a time, or a light follow-up question. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
       "phrases": [
         {
           "id": "polite-2",

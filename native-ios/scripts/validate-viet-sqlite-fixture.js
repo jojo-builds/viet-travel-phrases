@@ -26,6 +26,7 @@ const bannedPatterns = [
   /repair phrase/i,
   /Understanding Repair/i,
   /question marker/i,
+  /key word/i,
   /warning-callout/i,
   /watch-out/i,
 ];
@@ -103,6 +104,11 @@ function assertZero(actual, message) {
   assertEqual(Number(actual), 0, message);
 }
 
+function sqliteList(sql) {
+  const value = sqliteValue(sql);
+  return value ? value.split("|") : [];
+}
+
 function main() {
   if (!fs.existsSync(databasePath)) {
     throw new Error(`Missing SQLite fixture: ${relative(databasePath)}`);
@@ -153,6 +159,137 @@ function main() {
     FROM phrase_page pp
     WHERE NOT EXISTS (SELECT 1 FROM page_section ps WHERE ps.page_id = pp.id);
   `), "sectionless canonical phrase pages");
+
+  assertEqual(
+    sqliteValue("SELECT canonical_page_id FROM page_alias WHERE alias_id = 'viet-polite-hello';"),
+    "viet-phrase-polite-1",
+    "legacy Xin chào page alias"
+  );
+  assertEqual(
+    sqliteValue("SELECT canonical_page_id FROM page_alias WHERE alias_id = 'viet-family-polite-hello';"),
+    "viet-phrase-polite-1",
+    "family Xin chào page alias"
+  );
+  assertEqual(
+    sqliteValue("SELECT summary FROM phrase_page WHERE id = 'viet-phrase-polite-1';"),
+    "Hello (universal greeting)",
+    "Xin chào flagship summary"
+  );
+  assertEqual(
+    sqliteList(`
+      SELECT group_concat(section_key, '|')
+      FROM (
+        SELECT section_key
+        FROM page_section
+        WHERE page_id = 'viet-phrase-polite-1'
+        ORDER BY sort_order
+      );
+    `).join("|"),
+    [
+      "at-glance",
+      "quick-say",
+      "breakdown",
+      "situational-greetings",
+      "local-greetings",
+      "common-follow-ups",
+      "cultural-note",
+      "explore-next",
+    ].join("|"),
+    "Xin chào flagship section order"
+  );
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page pp
+    WHERE NOT EXISTS (
+      SELECT 1
+      FROM page_section ps
+      WHERE ps.page_id = pp.id
+        AND ps.section_key = 'breakdown'
+    );
+  `), "canonical pages without breakdown section");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    WHERE ps.section_key = 'breakdown'
+      AND NOT EXISTS (
+        SELECT 1
+        FROM page_section_item psi
+        WHERE psi.section_id = ps.id
+          AND psi.item_kind = 'breakdown_token'
+      );
+  `), "empty breakdown sections");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM (
+      SELECT pp.id, pp.title, count(bt.id) AS token_count
+      FROM phrase_page pp
+      JOIN phrase p ON p.id = pp.phrase_id
+      JOIN page_section ps ON ps.page_id = pp.id AND ps.section_key = 'breakdown'
+      JOIN page_section_item psi ON psi.section_id = ps.id AND psi.item_kind = 'breakdown_token'
+      JOIN breakdown_token bt ON bt.id = psi.target_id
+      GROUP BY pp.id, pp.title
+      HAVING pp.title LIKE '% %'
+         AND token_count = 1
+    );
+  `), "multiword pages with only one breakdown token");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN phrase_page pp ON pp.id = ps.page_id
+    JOIN page_section_item psi ON psi.section_id = ps.id AND psi.item_kind = 'breakdown_token'
+    JOIN breakdown_token bt ON bt.id = psi.target_id
+    WHERE ps.section_key = 'breakdown'
+      AND psi.sort_order < (
+        SELECT max(psi2.sort_order)
+        FROM page_section_item psi2
+        WHERE psi2.section_id = ps.id
+          AND psi2.item_kind = 'breakdown_token'
+      )
+      AND bt.token_text = pp.title;
+  `), "non-final breakdown tokens duplicating the full phrase");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN phrase_page pp ON pp.id = ps.page_id
+    JOIN page_section_item psi ON psi.section_id = ps.id AND psi.item_kind = 'breakdown_token'
+    JOIN breakdown_token bt ON bt.id = psi.target_id
+    WHERE ps.section_key = 'breakdown'
+      AND psi.sort_order = (
+        SELECT max(psi2.sort_order)
+        FROM page_section_item psi2
+        WHERE psi2.section_id = ps.id
+          AND psi2.item_kind = 'breakdown_token'
+      )
+      AND bt.token_text != pp.title;
+  `), "breakdowns whose final token is not the full phrase");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM breakdown_token
+    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'question marker')
+       OR lower(english_gloss) LIKE '%question marker%';
+  `), "internal breakdown labels");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN phrase_page pp ON pp.id = ps.page_id
+    JOIN page_section_item psi ON psi.section_id = ps.id AND psi.item_kind = 'breakdown_token'
+    JOIN breakdown_token bt ON bt.id = psi.target_id
+    WHERE ps.section_key = 'breakdown'
+      AND psi.sort_order < (
+        SELECT max(psi2.sort_order)
+        FROM page_section_item psi2
+        WHERE psi2.section_id = ps.id
+          AND psi2.item_kind = 'breakdown_token'
+      )
+      AND lower(bt.english_gloss) = lower(pp.english_title);
+  `), "non-final breakdown glosses that repeat the whole English title");
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -227,6 +364,7 @@ function main() {
   assertEqual(report.validation.brokenRelationCount, 0, "report broken relation count");
   assertEqual(report.validation.searchDocumentsWithMissingPageTargets, 0, "report search target count");
   assertEqual(report.validation.audioUsageMismatchCount, 0, "report audio mismatch count");
+  assertEqual(report.validation.badBreakdownGlossCount, 0, "report bad breakdown gloss count");
   assertEqual(report.validation.bannedUserFacingMatchCount, 0, "report banned wording count");
 
   console.log(JSON.stringify({

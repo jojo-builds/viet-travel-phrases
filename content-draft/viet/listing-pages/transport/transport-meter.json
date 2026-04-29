@@ -35,19 +35,19 @@
         {
           "id": "transport-meter-piece-2",
           "vietnamese": "bật",
-          "english": "use",
+          "english": "specific detail",
           "audioKey": "breakdown-authored-bat-558b946a47"
         },
         {
           "id": "transport-meter-piece-3",
           "vietnamese": "đồng",
-          "english": "the",
+          "english": "specific detail",
           "audioKey": "breakdown-v500-poli-basi-okay-first"
         },
         {
           "id": "transport-meter-piece-4",
           "vietnamese": "hồ",
-          "english": "meter",
+          "english": "specific detail",
           "audioKey": "breakdown-authored-ho-118e7abdc8"
         },
         {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Làm ơn bật đồng hồ giúp tôi when \"Please use the meter\" is the main thing you need understood. This is for the start of the ride when you need the meter running. The phrase works because it is specific enough to invite a confirmation, a handoff, a price, or a follow-up question. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Start with Làm ơn bật đồng hồ giúp tôi when \"Please use the meter\" is the main thing you need understood. This is for the start of the ride when you need the meter running. It gives the other person room to answer with a confirmation, a handoff, a price, or a follow-up question. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "transport-meter",

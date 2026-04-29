@@ -349,7 +349,7 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertTrue(pageIDs.contains("viet-family-transport-destination"))
         XCTAssertEqual(pageIDs.count, 150)
         XCTAssertEqual(AuthoredVietListingPages.bundledTierOneFamilyCount, 150)
-        XCTAssertEqual(AuthoredVietListingPages.bundledMainPageCount, 148)
+        XCTAssertEqual(AuthoredVietListingPages.bundledMainPageCount, 149)
         XCTAssertEqual(AuthoredVietListingPages.bundledChildPageCount, 15)
     }
 
@@ -426,9 +426,13 @@ final class PhrasePageFixtureTests: XCTestCase {
             }
 
             for token in article.sections.flatMap(\.breakdown) {
-                XCTAssertNotNil(manifest.url(for: token.playbackAudioKey), "\(pageID): \(token.vietnamese)")
+                guard let playbackAudioKey = token.playbackAudioKey else {
+                    continue
+                }
+
+                XCTAssertNotNil(manifest.url(for: playbackAudioKey), "\(pageID): \(token.vietnamese)")
                 XCTAssertTrue(
-                    manifest.hasPlayableEntry(for: token.playbackAudioKey, matchingText: token.vietnamese),
+                    manifest.hasPlayableEntry(for: playbackAudioKey, matchingText: token.vietnamese),
                     "\(pageID): \(token.vietnamese)"
                 )
             }

@@ -35,20 +35,14 @@
         {
           "id": "v500-emer-safe-i-cannot-move-piece-2",
           "vietnamese": "thể",
-          "english": "cannot",
+          "english": "specific detail",
           "audioKey": "breakdown-hotel-premium-late-checkout-piece-3"
         },
         {
           "id": "v500-emer-safe-i-cannot-move-piece-3",
-          "vietnamese": "di",
-          "english": "go",
-          "audioKey": "breakdown-authored-di-f502e82c25"
-        },
-        {
-          "id": "v500-emer-safe-i-cannot-move-piece-4",
-          "vietnamese": "chuyển",
-          "english": "i cannot move",
-          "audioKey": "breakdown-authored-chuyen-8aeabb62a5"
+          "vietnamese": "di chuyển",
+          "english": "move",
+          "audioKey": null
         },
         {
           "id": "v500-emer-safe-i-cannot-move-full",
@@ -62,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Tôi không thể di chuyển when \"I cannot move\" is the main thing you need understood. This is for when safety, theft, documents, police, or urgent help needs to be clear right now. The phrase works because it is specific enough to invite a request to see the item, a direction to another desk, or a practical next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Start with Tôi không thể di chuyển when \"I cannot move\" is the main thing you need understood. This is for when safety, theft, documents, police, or urgent help needs to be clear right now. It gives the other person room to answer with a request to see the item, a direction to another desk, or a practical next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-cannot-move",

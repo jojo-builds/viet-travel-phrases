@@ -40,21 +40,9 @@
         },
         {
           "id": "store-4-piece-3",
-          "vietnamese": "kem",
-          "english": "the",
-          "audioKey": "breakdown-authored-kem-9788976da9"
-        },
-        {
-          "id": "store-4-piece-4",
-          "vietnamese": "chống",
+          "vietnamese": "kem chống nắng",
           "english": "sunscreen",
-          "audioKey": "breakdown-v900-heal-phar-i-need-mosquito-repellent-piece-4"
-        },
-        {
-          "id": "store-4-piece-5",
-          "vietnamese": "nắng",
-          "english": "where is the sunscreen?",
-          "audioKey": "breakdown-authored-nang-b82b96e096"
+          "audioKey": null
         },
         {
           "id": "store-4-full",
@@ -68,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Ở đâu có kem chống nắng? when \"Where is the sunscreen\" is the main thing you need understood. This is for when you need the exact aisle or shelf, not general help. The phrase works because it is specific enough to invite a point, short direction, nearby option, or counter name. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Start with Ở đâu có kem chống nắng? when \"Where is the sunscreen\" is the main thing you need understood. This is for when you need the exact aisle or shelf, not general help. It gives the other person room to answer with a point, short direction, nearby option, or counter name. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "store-4",

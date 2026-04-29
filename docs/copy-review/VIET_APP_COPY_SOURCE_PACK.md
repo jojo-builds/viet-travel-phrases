@@ -315,10 +315,10 @@ This is a documentation-only extraction of a historical Viet app copy snapshot f
 - Card highlights: `"I do not understand"`, `"speak slower"`, `"say it again"`, `"write it down"`
 - Visible situation headings:
   - `[Free live] Say that you do not understand | Summary: Lead with this before you ask for a repeat or a simpler version. | Primary English card: "I don't understand"`
-  - `[Free live] Ask for slower speech | Summary: This is the default repair phrase when the problem is speed, not meaning. | Primary English card: "Can you speak a little slower?"`
+  - `[Free live] Ask for slower speech | Summary: Use this when the problem is speed, not meaning. | Primary English card: "Can you speak a little slower?"`
   - `[Free live] Ask for a repeat | Summary: Use this when you missed the sentence and want the same words again. | Primary English card: "Please say that again"`
   - `[Free live] Ask to see it written | Summary: Written text often rescues numbers, names, and addresses faster than more speech. | Primary English card: "Please write it down"`
-  - `[Free live] Ask what a word means | Summary: Use this when one key word blocks the whole moment. | Primary English card: "What does that mean?"`
+  - `[Free live] Ask what a word means | Summary: Use this when one word or phrase blocks the whole moment. | Primary English card: "What does that mean?"`
   - `[Unlock-only live] Clarify the exact thing they mean | Summary: This helps when there are two prices, doors, stops, or choices in play. | Primary English card: "Which one do you mean?"`
   - `[Unlock-only live] Move the repair to the map or screen | Summary: Screens often solve travel confusion faster than more spoken detail. | Primary English card: "Can you show me on the map?"`
   - `[Unlock-only live] Recover when the number was the real problem | Summary: This is useful for room numbers, gates, prices, and bus numbers. | Primary English card: "Please say the number again"`
@@ -410,7 +410,7 @@ This is a documentation-only extraction of a historical Viet app copy snapshot f
   - `[Free live] Check whether it is nearby | Summary: This helps you decide whether to walk or change plans. | Primary English card: "Is it near here?"`
   - `[Free live] Ask how long on foot | Summary: This keeps the answer concrete instead of vague. | Primary English card: "How long on foot?"`
   - `[Free live] Ask where to turn left | Summary: Take the route one turn at a time. | Primary English card: "Where do I turn left?"`
-  - `[Free live] Confirm the right turn | Summary: This is a good repair phrase when you think you heard the turn but want confirmation. | Primary English card: "Turn right, correct?"`
+  - `[Free live] Confirm the right turn | Summary: Use this when you think you heard the turn but want confirmation. | Primary English card: "Turn right, correct?"`
   - `[Free live] Confirm that you should keep going straight | Summary: This is one of the safest route check phrases. | Primary English card: "Go straight?"`
   - `[Free live] Close the directions exchange | Summary: This is useful when the other person kept helping and you want to end the exchange cleanly. | Primary English card: "Thanks, I understand now"`
   - `[Unlock-only live] Ask for the pickup point | Summary: This is a practical route phrase once the trip is deeper than just walking. | Primary English card: "Where is the pickup point?"`

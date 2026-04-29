@@ -1,0 +1,310 @@
+{
+  "id": "viet-polite-hello",
+  "familyID": "polite-hello",
+  "phraseID": "polite-1",
+  "tierRole": "tier1",
+  "depth": "deep",
+  "title": "Xin chào",
+  "englishTitle": "Hello",
+  "pronunciation": "sin chow",
+  "summary": "Hello (universal greeting)",
+  "iconName": "star.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "greetings",
+    "polite-basics"
+  ],
+  "audioKey": "polite-1",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "For travelers, Xin chào is the most dependable hello. It is polite, short, and safe when you walk into a shop, step up to a hotel desk, meet a guide, or start a simple request. In everyday Vietnamese, greetings often depend on age, gender, and relationship, so the next step is learning when to use chào plus a relationship word. If you are unsure, Xin chào lets you begin warmly without guessing the other person's role.",
+      "presentation": "plain-text"
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use Xin chào when you want one safe greeting. Use Chào when the moment is relaxed and the person already feels familiar.",
+      "phrases": [
+        {
+          "id": "polite-1",
+          "vietnamese": "Xin chào",
+          "english": "Hello",
+          "pronunciation": "sin chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "polite-1"
+        },
+        {
+          "id": "xin-chao-casual-chao",
+          "vietnamese": "Chào",
+          "english": "Hi / hello (casual)",
+          "pronunciation": "chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "breakdown-polite-1-rest"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Xin gives the greeting a polite shape, chào carries the hello, and the full phrase is the safest default when you do not know the relationship word yet.",
+      "breakdown": [
+        {
+          "id": "xin",
+          "vietnamese": "Xin",
+          "english": "polite opening",
+          "audioKey": "breakdown-xin"
+        },
+        {
+          "id": "chao",
+          "vietnamese": "chào",
+          "english": "greet / hello",
+          "audioKey": "breakdown-polite-1-rest"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Xin chào",
+          "english": "polite hello",
+          "audioKey": "polite-1"
+        }
+      ],
+      "presentation": "breakdown-strip"
+    },
+    {
+      "id": "situational-greetings",
+      "title": "Situational greetings",
+      "body": "Use these when the setting is more specific: a friend, a respectful adult, a phone call, or a time-of-day greeting.",
+      "presentation": "horizontal-phrase-cards",
+      "phrases": [
+        {
+          "id": "xin-chao-friend",
+          "vietnamese": "Chào bạn",
+          "english": "Hi, friend",
+          "pronunciation": "chow ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-chao-ban"
+        },
+        {
+          "id": "xin-chao-formal",
+          "vietnamese": "Dạ, chào anh/chị",
+          "english": "Hello, formal and respectful",
+          "pronunciation": "yah chow anh chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-anh-chi"
+        },
+        {
+          "id": "xin-chao-phone",
+          "vietnamese": "Alô",
+          "english": "Hello on the phone",
+          "pronunciation": "ah-lo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-alo"
+        },
+        {
+          "id": "xin-chao-morning",
+          "vietnamese": "Chào buổi sáng",
+          "english": "Good morning",
+          "pronunciation": "chow boo-ee sahng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-chao-buoi-sang"
+        },
+        {
+          "id": "xin-chao-afternoon",
+          "vietnamese": "Chào buổi chiều",
+          "english": "Good afternoon",
+          "pronunciation": "chow boo-ee chee-ew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-chao-buoi-chieu"
+        }
+      ]
+    },
+    {
+      "id": "local-greetings",
+      "title": "How locals actually greet",
+      "body": "This is the most local pattern. Pick the relationship word when the person's role is clear; stay with Xin chào when you are unsure. These words are not just family labels. In Vietnam they also show respect, age relationship, and social distance, which is why a greeting can sound warmer when the relationship word fits.",
+      "phrases": [
+        {
+          "id": "xin-chao-anh",
+          "vietnamese": "Chào anh",
+          "english": "Hello, older brother / slightly older man",
+          "pronunciation": "chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-anh-full"
+        },
+        {
+          "id": "xin-chao-chi",
+          "vietnamese": "Chào chị",
+          "english": "Hello, older sister / slightly older woman",
+          "pronunciation": "chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-chi-full"
+        },
+        {
+          "id": "xin-chao-em",
+          "vietnamese": "Chào em",
+          "english": "Hello, younger sibling / someone younger",
+          "pronunciation": "chow em",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-em-full"
+        },
+        {
+          "id": "xin-chao-ong",
+          "vietnamese": "Chào ông",
+          "english": "Hello, grandfather / elderly man",
+          "pronunciation": "chow ohm",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-ong-full"
+        },
+        {
+          "id": "xin-chao-ba",
+          "vietnamese": "Chào bà",
+          "english": "Hello, grandmother / elderly woman",
+          "pronunciation": "chow bah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-ba-full"
+        },
+        {
+          "id": "xin-chao-chu",
+          "vietnamese": "Chào chú",
+          "english": "Hello, uncle / older man",
+          "pronunciation": "chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-chu-full"
+        },
+        {
+          "id": "xin-chao-co",
+          "vietnamese": "Chào cô",
+          "english": "Hello, aunt / older woman",
+          "pronunciation": "chow koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-co-full"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "common-follow-ups",
+      "title": "Common follow-ups",
+      "body": "After hello, small talk often checks health, movement, or the social moment. Use these when the exchange has room to continue.",
+      "phrases": [
+        {
+          "id": "smalltalk-7",
+          "vietnamese": "Bạn khỏe không?",
+          "english": "How are you?",
+          "pronunciation": "ban khoe khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-how-are-you",
+          "audioKey": "smalltalk-7"
+        },
+        {
+          "id": "xin-chao-where-going",
+          "vietnamese": "Đi đâu đấy?",
+          "english": "Where are you going?",
+          "pronunciation": "dee dow day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-di-dau-day"
+        },
+        {
+          "id": "xin-chao-nice-meet",
+          "vietnamese": "Rất vui được gặp bạn",
+          "english": "Nice to meet you",
+          "pronunciation": "zuht voo-ee duhk gap ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+        }
+      ],
+      "presentation": "phrase-list"
+    },
+    {
+      "id": "cultural-note",
+      "title": "Cultural note",
+      "body": "Vietnamese greetings carry relationship information. Learning the pattern matters more than memorizing one perfect hello. You do not need to guess perfectly as a visitor; a calm Xin chào is accepted almost everywhere. As you get more comfortable, adding anh, chị, em, cô, chú, ông, or bà makes the greeting feel less like a phrasebook line and more like a real local opening.",
+      "presentation": "tip-callout"
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use these next when the conversation moves one step forward.",
+      "phrases": [
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        },
+        {
+          "id": "polite-5",
+          "vietnamese": "Xin lỗi",
+          "english": "Excuse me / sorry",
+          "pronunciation": "sin loy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-excuse-sorry",
+          "audioKey": "polite-5"
+        },
+        {
+          "id": "polite-7",
+          "vietnamese": "Tạm biệt",
+          "english": "Goodbye",
+          "pronunciation": "tahm bee-et",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-goodbye",
+          "audioKey": "polite-7"
+        }
+      ],
+      "presentation": "phrase-list"
+    }
+  ],
+  "examples": [
+    {
+      "id": "polite-1",
+      "vietnamese": "Xin chào",
+      "english": "Hello",
+      "pronunciation": "sin chow",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "polite-1"
+    }
+  ]
+}

@@ -29,13 +29,13 @@
         {
           "id": "v500-shop-how-much-is-this-item-piece-1",
           "vietnamese": "Mặt",
-          "english": "how",
+          "english": "name or place detail",
           "audioKey": "breakdown-v500-shop-how-much-is-this-item-first"
         },
         {
           "id": "v500-shop-how-much-is-this-item-piece-2",
           "vietnamese": "hàng",
-          "english": "much",
+          "english": "specific detail",
           "audioKey": "breakdown-v500-loca-serv-ever-task-one-item-is-missing-piece-3"
         },
         {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Mặt hàng này giá bao nhiêu? when \"How much is this item\" is the main thing you need understood. Use this while comparing items, checking fit, or fixing a purchase problem at the counter. The phrase works because it is specific enough to invite a number, typed amount, calculator screen, or direct yes/no about payment. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Start with Mặt hàng này giá bao nhiêu? when \"How much is this item\" is the main thing you need understood. Use this while comparing items, checking fit, or fixing a purchase problem at the counter. It gives the other person room to answer with a number, typed amount, calculator screen, or direct yes/no about payment. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "v500-shop-how-much-is-this-item",

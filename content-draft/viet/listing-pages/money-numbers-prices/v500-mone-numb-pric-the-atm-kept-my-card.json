@@ -29,25 +29,25 @@
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-1",
           "vietnamese": "ATM",
-          "english": "the",
+          "english": "name or place detail",
           "audioKey": "breakdown-v500-mone-numb-pric-the-atm-kept-my-card-first"
         },
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-2",
           "vietnamese": "đã",
-          "english": "atm",
+          "english": "specific detail",
           "audioKey": "breakdown-v500-emer-safe-there-has-been-an-accident-first"
         },
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-3",
           "vietnamese": "giữ",
-          "english": "kept",
+          "english": "specific detail",
           "audioKey": "breakdown-hotel-7-first"
         },
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-4",
           "vietnamese": "thẻ",
-          "english": "my",
+          "english": "specific detail",
           "audioKey": "breakdown-hotel-8-first"
         },
         {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with ATM đã giữ thẻ của tôi when \"The ATM kept my card\" is the main thing you need understood. This is for when you need the number, total, fee, or payment detail to be clear before it gets worse. The phrase works because it is specific enough to invite a number, typed amount, calculator screen, or direct yes/no about payment. Point to the place, object, or screen that gives the phrase context.",
+      "body": "Start with ATM đã giữ thẻ của tôi when \"The ATM kept my card\" is the main thing you need understood. This is for when you need the number, total, fee, or payment detail to be clear before it gets worse. It gives the other person room to answer with a number, typed amount, calculator screen, or direct yes/no about payment. Point to the place, object, or screen that gives the phrase context.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card",

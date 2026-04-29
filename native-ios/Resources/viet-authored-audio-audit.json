@@ -1,17 +1,201 @@
 {
   "metadata": {
-    "generatedAt": "2026-04-28T22:54:20.884Z",
+    "generatedAt": "2026-04-29T11:47:14.472Z",
     "tierOneFamilyCount": 150,
-    "requiredAudioCount": 458,
+    "requiredAudioCount": 468,
     "missingAudioCount": 0
   },
   "required": [
     {
-      "pageID": "viet-thank-you",
+      "pageID": "viet-polite-hello",
       "sectionID": "hero",
       "kind": "hero",
+      "audioKey": "polite-1",
+      "text": "Xin chào",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "quick-say",
+      "kind": "phrase",
+      "audioKey": "breakdown-polite-1-rest",
+      "text": "Chào",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-xin",
+      "text": "Xin",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-1-rest",
+      "text": "chào",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "situational-greetings",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-chao-ban",
+      "text": "Chào bạn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "situational-greetings",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-da-chao-anh-chi",
+      "text": "Dạ, chào anh/chị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "situational-greetings",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-alo",
+      "text": "Alô",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "situational-greetings",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-chao-buoi-sang",
+      "text": "Chào buổi sáng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "situational-greetings",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-chao-buoi-chieu",
+      "text": "Chào buổi chiều",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "local-greetings",
+      "kind": "phrase",
+      "audioKey": "breakdown-viet-hello-anh-full",
+      "text": "Chào anh",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "local-greetings",
+      "kind": "phrase",
+      "audioKey": "breakdown-viet-hello-chi-full",
+      "text": "Chào chị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "local-greetings",
+      "kind": "phrase",
+      "audioKey": "breakdown-viet-hello-em-full",
+      "text": "Chào em",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "local-greetings",
+      "kind": "phrase",
+      "audioKey": "breakdown-viet-hello-ong-full",
+      "text": "Chào ông",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "local-greetings",
+      "kind": "phrase",
+      "audioKey": "breakdown-viet-hello-ba-full",
+      "text": "Chào bà",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "local-greetings",
+      "kind": "phrase",
+      "audioKey": "breakdown-viet-hello-chu-full",
+      "text": "Chào chú",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "local-greetings",
+      "kind": "phrase",
+      "audioKey": "breakdown-viet-hello-co-full",
+      "text": "Chào cô",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "common-follow-ups",
+      "kind": "phrase",
+      "audioKey": "smalltalk-7",
+      "text": "Bạn khỏe không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "common-follow-ups",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-di-dau-day",
+      "text": "Đi đâu đấy?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "common-follow-ups",
+      "kind": "phrase",
+      "audioKey": "audio-phrase-rat-vui-duoc-gap-ban",
+      "text": "Rất vui được gặp bạn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "explore-next",
+      "kind": "phrase",
       "audioKey": "polite-2",
       "text": "Cảm ơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "polite-5",
+      "text": "Xin lỗi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-polite-hello",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "polite-7",
+      "text": "Tạm biệt",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-2-first",
+      "text": "Cảm",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-thank-you",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-2-rest",
+      "text": "ơn",
       "resolved": true
     },
     {
@@ -20,14 +204,6 @@
       "kind": "phrase",
       "audioKey": "polite-thank-you-polite",
       "text": "Cảm ơn nhiều",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-thank-you",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "polite-1",
-      "text": "Xin chào",
       "resolved": true
     },
     {
@@ -50,24 +226,8 @@
       "pageID": "viet-thank-you",
       "sectionID": "explore-next",
       "kind": "phrase",
-      "audioKey": "polite-5",
-      "text": "Xin lỗi",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-thank-you",
-      "sectionID": "explore-next",
-      "kind": "phrase",
       "audioKey": "polite-6",
       "text": "Không sao đâu",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-thank-you",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "polite-7",
-      "text": "Tạm biệt",
       "resolved": true
     },
     {
@@ -92,6 +252,14 @@
       "kind": "breakdown",
       "audioKey": "polite-2",
       "text": "cảm ơn",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-excuse-sorry",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-polite-5-rest",
+      "text": "lỗi",
       "resolved": true
     },
     {
@@ -452,22 +620,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-taxi-2-piece-3",
       "text": "1",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-transport-stop-here",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-taxi-3-first",
-      "text": "Dừng",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-transport-stop-here",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-directions-2-first",
-      "text": "ở",
       "resolved": true
     },
     {
@@ -2519,6 +2671,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-phone-charge-here",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-directions-2-first",
+      "text": "ở",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-bathroom-where",
       "sectionID": "hero",
       "kind": "hero",
@@ -2738,16 +2898,8 @@
       "pageID": "viet-family-emergency-ambulance",
       "sectionID": "breakdown",
       "kind": "breakdown",
-      "audioKey": "breakdown-authored-cuu-981c314329",
-      "text": "cứu",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-emergency-ambulance",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-thuong-5c76da3bd9",
-      "text": "thương",
+      "audioKey": "breakdown-emergency-2-rest",
+      "text": "xe cứu thương",
       "resolved": true
     },
     {
@@ -2764,14 +2916,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-cam-thay-8ff4ed8cf3",
       "text": "cảm thấy",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-emergency-not-safe",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v900-emer-safe-i-am-safe-now-piece-6",
-      "text": "toàn",
       "resolved": true
     },
     {
@@ -2900,14 +3044,6 @@
       "kind": "phrase",
       "audioKey": "smalltalk-6",
       "text": "Thời tiết nóng quá",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "smalltalk-7",
-      "text": "Bạn khỏe không?",
       "resolved": true
     },
     {
@@ -3223,30 +3359,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-service-sunscreen",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-kem-9788976da9",
-      "text": "kem",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-service-sunscreen",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v900-heal-phar-i-need-mosquito-repellent-piece-4",
-      "text": "chống",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-service-sunscreen",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-nang-b82b96e096",
-      "text": "nắng",
-      "resolved": true
-    },
-    {
       "pageID": "viet-family-service-card",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -3378,14 +3490,6 @@
       "pageID": "viet-family-v500-time-date-book-one-ticket-please",
       "sectionID": "breakdown",
       "kind": "breakdown",
-      "audioKey": "breakdown-xin",
-      "text": "Xin",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-v500-time-date-book-one-ticket-please",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
       "audioKey": "breakdown-sight-1-first",
       "text": "vé",
       "resolved": true
@@ -3431,22 +3535,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-hoat-5d8338b06c",
-      "text": "hoạt",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-v500-phon-inte-powe-my-map-is-not-working",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-dong-5d0ad963d2",
-      "text": "động",
-      "resolved": true
-    },
-    {
       "pageID": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -3479,27 +3567,19 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-v500-emer-safe-i-am-injured",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-thuong-5c76da3bd9",
+      "text": "thương",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-v500-emer-safe-i-cannot-move",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-hotel-premium-late-checkout-piece-3",
       "text": "thể",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-v500-emer-safe-i-cannot-move",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-di-f502e82c25",
-      "text": "di",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-v500-emer-safe-i-cannot-move",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-chuyen-8aeabb62a5",
-      "text": "chuyển",
       "resolved": true
     },
     {

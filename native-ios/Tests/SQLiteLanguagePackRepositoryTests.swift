@@ -90,6 +90,8 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
 
         XCTAssertEqual(try repository.canonicalPageID(forPageIDOrAlias: "viet-excuse-sorry"), "viet-phrase-polite-5")
+        XCTAssertEqual(try repository.canonicalPageID(forPageIDOrAlias: "viet-polite-hello"), "viet-phrase-polite-1")
+        XCTAssertEqual(try repository.canonicalPageID(forPageIDOrAlias: "viet-family-polite-hello"), "viet-phrase-polite-1")
         XCTAssertEqual(try repository.canonicalPageID(forPhraseID: "v500-poli-basi-excuse-me"), "viet-phrase-polite-5")
         XCTAssertEqual(try repository.canonicalPageID(forPhraseID: "polite-5"), "viet-phrase-polite-5")
         XCTAssertTrue(try repository.canOpenPage(pageIDOrAlias: "viet-phrase-polite-5"))
@@ -106,13 +108,23 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(page.id, "viet-phrase-polite-1")
         XCTAssertEqual(page.title, "Xin chào")
         XCTAssertEqual(page.englishTitle, "Hello")
+        XCTAssertEqual(page.summary, "Hello (universal greeting)")
         XCTAssertEqual(page.sections.map(\.id), [
+            "at-glance",
             "quick-say",
-            "when-to-use",
-            "good-to-know",
-            "nearby-phrases",
+            "breakdown",
+            "situational-greetings",
+            "local-greetings",
+            "common-follow-ups",
+            "cultural-note",
+            "explore-next",
         ])
-        XCTAssertEqual(page.sections.first { $0.id == "good-to-know" }?.presentation, .tipCallout)
+        XCTAssertEqual(page.sections.first { $0.id == "cultural-note" }?.presentation, .tipCallout)
+        XCTAssertEqual(page.sections.first { $0.id == "breakdown" }?.breakdown.map(\.vietnamese), [
+            "Xin",
+            "chào",
+            "Xin chào",
+        ])
         XCTAssertTrue(page.sections.contains { section in
             section.phrases.contains { $0.detailPageID == "viet-phrase-polite-2" }
         })
@@ -169,7 +181,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(xinChaoItem.title, "Xin chào")
         XCTAssertEqual(xinChaoItem.subtitle, "Hello")
         XCTAssertEqual(PhraseCatalog.category(withID: "polite-basics")?.title, "Polite Basics")
-        XCTAssertEqual(PhraseCatalog.defaultCategoryID(forPageID: PhrasePage.xinChao.id), "polite-basics")
+        XCTAssertEqual(PhraseCatalog.defaultCategoryID(forPageID: PhrasePage.xinChao.id), "greetings")
         XCTAssertTrue(politeBasicsItems.contains { $0.pageID == "viet-phrase-polite-1" })
         XCTAssertFalse(PhraseCatalog.allItems.contains { $0.pageID == PhrasePage.xinChao.id })
     }
