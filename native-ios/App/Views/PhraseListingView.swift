@@ -122,7 +122,11 @@ struct PhraseArticleTemplateView: View {
 
                         LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
                             ForEach(visibleSections) { section in
-                                ArticleSectionView(section: section, onOpenDetail: onDetailTapped)
+                                ArticleSectionView(
+                                    section: section,
+                                    currentPageID: page.id,
+                                    onOpenDetail: onDetailTapped
+                                )
                             }
 
                             if page.showsCatalogExplore {
@@ -298,6 +302,7 @@ struct PhraseArticleTemplateView: View {
 
 private struct ArticleSectionView: View {
     let section: PhraseArticleSection
+    let currentPageID: String
     let onOpenDetail: (String) -> Void
 
     var body: some View {
@@ -365,6 +370,7 @@ private struct ArticleSectionView: View {
                                 RelationshipPhraseGroupCard(
                                     phrases: group,
                                     width: groupWidth,
+                                    currentPageID: currentPageID,
                                     onOpenDetail: onOpenDetail
                                 )
                             }
@@ -390,7 +396,11 @@ private struct ArticleSectionView: View {
             } else {
                 VStack(spacing: 0) {
                     ForEach(section.phrases) { phrase in
-                        LocalGreetingRow(phrase: phrase, onOpenDetail: onOpenDetail)
+                        LocalGreetingRow(
+                            phrase: phrase,
+                            currentPageID: currentPageID,
+                            onOpenDetail: onOpenDetail
+                        )
 
                         if phrase.id != section.phrases.last?.id {
                             Divider().padding(.leading, 70)
@@ -415,7 +425,11 @@ private struct ArticleSectionView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
                         ForEach(section.phrases) { phrase in
-                            SituationCard(phrase: phrase, onOpenDetail: onOpenDetail)
+                            SituationCard(
+                                phrase: phrase,
+                                currentPageID: currentPageID,
+                                onOpenDetail: onOpenDetail
+                            )
                         }
                     }
                     .padding(.horizontal, 2)
@@ -614,7 +628,12 @@ private struct PhraseRow: View {
 
 private struct SituationCard: View {
     let phrase: PhraseOption
+    let currentPageID: String
     let onOpenDetail: (String) -> Void
+
+    private var destinationPageID: String? {
+        PhraseRowNavigation.destinationPageID(for: phrase.detailPageID, currentPageID: currentPageID)
+    }
 
     var body: some View {
         VStack(spacing: 10) {
@@ -623,7 +642,7 @@ private struct SituationCard: View {
             HStack(spacing: 10) {
                 AudioSpeakerButton(tint: phrase.tintName, size: 42, audioKey: phrase.playbackAudioKey)
 
-                if phrase.detailPageID != nil {
+                if destinationPageID != nil {
                     Image(systemName: "chevron.right")
                         .font(.caption.weight(.bold))
                         .foregroundStyle(.tertiary)
@@ -633,7 +652,7 @@ private struct SituationCard: View {
         }
         .contentShape(Rectangle())
         .onTapGesture {
-            if let detailPageID = phrase.detailPageID {
+            if let detailPageID = destinationPageID {
                 onOpenDetail(detailPageID)
             }
         }
@@ -674,7 +693,12 @@ private struct SituationCard: View {
 
 private struct LocalGreetingRow: View {
     let phrase: PhraseOption
+    let currentPageID: String
     let onOpenDetail: (String) -> Void
+
+    private var destinationPageID: String? {
+        PhraseRowNavigation.destinationPageID(for: phrase.detailPageID, currentPageID: currentPageID)
+    }
 
     var body: some View {
         HStack(spacing: 12) {
@@ -696,7 +720,7 @@ private struct LocalGreetingRow: View {
 
             Spacer()
 
-            if phrase.detailPageID != nil {
+            if destinationPageID != nil {
                 Image(systemName: "chevron.right")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.tertiary)
@@ -704,7 +728,7 @@ private struct LocalGreetingRow: View {
         }
         .contentShape(Rectangle())
         .onTapGesture {
-            if let detailPageID = phrase.detailPageID {
+            if let detailPageID = destinationPageID {
                 onOpenDetail(detailPageID)
             }
         }
@@ -986,6 +1010,7 @@ private struct ExploreCatalogGroupCard: View {
 private struct RelationshipPhraseGroupCard: View {
     let phrases: [PhraseOption]
     let width: CGFloat
+    let currentPageID: String
     let onOpenDetail: (String) -> Void
 
     private var cardHeight: CGFloat {
@@ -995,7 +1020,11 @@ private struct RelationshipPhraseGroupCard: View {
     var body: some View {
         VStack(spacing: 0) {
             ForEach(phrases) { phrase in
-                LocalGreetingRow(phrase: phrase, onOpenDetail: onOpenDetail)
+                LocalGreetingRow(
+                    phrase: phrase,
+                    currentPageID: currentPageID,
+                    onOpenDetail: onOpenDetail
+                )
                     .frame(height: ExploreCatalogLayout.rowHeight)
 
                 if phrase.id != phrases.last?.id {
@@ -1008,6 +1037,18 @@ private struct RelationshipPhraseGroupCard: View {
         .padding(.vertical, ExploreCatalogLayout.groupVerticalPadding)
         .frame(width: width, height: cardHeight, alignment: .top)
         .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius)
+    }
+}
+
+enum PhraseRowNavigation {
+    static func destinationPageID(for detailPageID: String?, currentPageID: String) -> String? {
+        guard let detailPageID else {
+            return nil
+        }
+
+        let canonicalDestination = PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) ?? detailPageID
+        let canonicalCurrent = PhraseCatalog.canonicalPageID(forOpenablePageID: currentPageID) ?? currentPageID
+        return canonicalDestination == canonicalCurrent ? nil : detailPageID
     }
 }
 

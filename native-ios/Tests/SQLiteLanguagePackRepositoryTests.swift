@@ -71,6 +71,24 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(PhrasePage.xinChao.title, "Xin chào")
     }
 
+    func testPhraseRowsDoNotNavigateToCurrentCanonicalPage() {
+        XCTAssertNil(PhraseRowNavigation.destinationPageID(
+            for: "viet-phrase-directions-2",
+            currentPageID: "viet-phrase-directions-2"
+        ))
+        XCTAssertNil(PhraseRowNavigation.destinationPageID(
+            for: "viet-polite-hello",
+            currentPageID: "viet-phrase-polite-1"
+        ))
+        XCTAssertEqual(
+            PhraseRowNavigation.destinationPageID(
+                for: "viet-phrase-polite-2",
+                currentPageID: "viet-phrase-polite-1"
+            ),
+            "viet-phrase-polite-2"
+        )
+    }
+
     func testSQLiteCoverageProvesEverySourcePhraseResolvesToCanonicalPage() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let coverage = try repository.loadGraphCoverage()
