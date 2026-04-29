@@ -55,6 +55,19 @@ The orchestrator should route and synthesize:
 
 The orchestrator should not read every implementation file before assignment unless that is needed to route safely.
 
+## Worker Planning Dialogue
+
+Broad/product-sensitive task cards can start with a short planning exchange in the pinned worker thread before implementation.
+
+For those tasks, the worker should:
+
+- read the task card;
+- ask Jojo clarifying questions before locking the plan;
+- show a compact plan or approach for Jojo to steer;
+- record any accepted steering, scope changes, or plan changes in the task result, amended task card, or another named source-of-truth doc before final closeout.
+
+The task card is the starting contract. The final result must reflect the live worker-thread conversation, so the orchestrator can fold in what actually happened instead of expecting stale details from the original card.
+
 ## Brain Dump Intake
 
 When Jojo gives a speech-to-text brain dump, the orchestrator should route it into durable work:
@@ -128,6 +141,16 @@ Example:
 ```text
 Open /Users/jojolim/Developer/products/speaklocal/app-family.
 Execute docs/task-cards/TASK-PRACTICE-CORE-001.md.
+Commit when done and write the requested result.
+```
+
+For broad tasks that Jojo wants to steer before implementation:
+
+```text
+Open /Users/jojolim/Developer/products/speaklocal/app-family.
+Execute docs/task-cards/TASK-PRACTICE-CORE-001.md.
+Before implementing, ask me any clarifying questions needed and show me the plan.
+If I steer the plan, write the accepted changes into the task result or task card.
 Commit when done and write the requested result.
 ```
 

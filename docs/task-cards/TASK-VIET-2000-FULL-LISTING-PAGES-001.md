@@ -48,6 +48,8 @@ Current repo facts from recent audits may be stale but useful starting points: t
 
 Use GPT-5.5 reasoning to reach Task Done. Do not ask for a smaller batch. Do not stop at an audit. Do not make a tiny repair. Do not preserve a thin-page tier for user-visible phrases.
 
+Before locking the implementation plan, ask Jojo any clarifying questions needed about scope, copy depth, recursion, review expectations, or what should count as a real new phrase page. Show Jojo a compact plan for approval/steering. If Jojo changes the plan in the worker thread, record the accepted change in the result artifact or amend this task card before final closeout.
+
 You may decide the best implementation path after inspecting the repo. The likely durable path is to upgrade the Viet content sources, generators, validators, SQLite fixture/resource generation, and authored resources together so the app runtime, search, browse, and listing pages agree.
 
 Write good traveler-facing copy. Avoid mechanical page filling. Each page should answer the learner's likely question: "Different ways to say [English intent] in Vietnam." The copy should feel like a concise AI-style answer written into an offline app, not a database row expanded with filler.
@@ -152,4 +154,5 @@ Write `docs/task-results/TASK-VIET-2000-FULL-LISTING-PAGES-001.md` with:
 - validator/test commands and outcomes;
 - screenshot paths;
 - peer review outcomes for first-time traveler UX, copy quality/learning flow, and technical efficiency;
+- accepted Jojo steers or plan changes made during the worker-thread planning conversation;
 - any blocker that prevents reaching at least `2,000` full pages.
