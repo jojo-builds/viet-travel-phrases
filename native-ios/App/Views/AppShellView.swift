@@ -1372,26 +1372,41 @@ struct HomeView: View {
         .padding(.horizontal, HomeLayout.horizontalPadding)
     }
 
+    private var relationshipPhraseGroups: [[PhraseOption]] {
+        PhrasePage.xinChao.localGreetings.chunked(into: HomeLayout.relationshipRowsPerGroup)
+    }
+
     private var relationshipShelf: some View {
-        HomeShelf(title: "Who are you speaking to?", subtitle: "Vietnamese greetings change warmly by relationship") {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(PhrasePage.xinChao.localGreetings) { phrase in
-                        HomeRelationshipCard(phrase: phrase, onOpenDetail: onOpenDetail)
+        HomeShelf(title: "Who are you speaking to?", subtitle: "Pick a warmer hello by age or relationship") {
+            GeometryReader { proxy in
+                let groupWidth = max(260, min(326, proxy.size.width - 42))
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: HomeLayout.relationshipGroupSpacing) {
+                        ForEach(Array(relationshipPhraseGroups.enumerated()), id: \.offset) { _, group in
+                            HomeRelationshipGroupCard(
+                                phrases: group,
+                                width: groupWidth,
+                                onOpenDetail: onOpenDetail
+                            )
+                        }
                     }
+                    .scrollTargetLayout()
                 }
-                .padding(.horizontal, 2)
-                .padding(.bottom, 2)
+                .scrollTargetBehavior(.viewAligned)
+                .scrollClipDisabled()
             }
-            .scrollClipDisabled()
+            .frame(height: HomeLayout.relationshipGroupHeight(
+                for: min(PhrasePage.xinChao.localGreetings.count, HomeLayout.relationshipRowsPerGroup)
+            ))
         }
         .padding(.horizontal, HomeLayout.horizontalPadding)
     }
 
     private var featuredPagesShelf: some View {
         HomeHorizontalPhraseShelf(
-            title: "Different ways to say it",
-            subtitle: "Authored phrase pages with local usage notes",
+            title: "Useful phrase pages",
+            subtitle: "Open full pages with audio and local usage notes",
             items: HomeContent.featuredItems,
             onOpenDetail: onOpenDetail
         )
@@ -1413,7 +1428,7 @@ struct HomeView: View {
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
 
-                    Text("Open the catalog and keep exploring with search, audio, and page links")
+                    Text("Search, browse, save, and practice.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
@@ -1543,7 +1558,16 @@ enum HomeLayout {
     static let sectionSpacing: CGFloat = 28
     static let cardCornerRadius: CGFloat = 22
     static let situationRowMinHeight: CGFloat = 104
+    static let relationshipRowsPerGroup = 3
+    static let relationshipGroupSpacing: CGFloat = 12
+    static let relationshipRowHeight: CGFloat = 86
+    static let relationshipGroupVerticalPadding: CGFloat = 8
     static let bottomChromeContentClearance: CGFloat = 176
+
+    static func relationshipGroupHeight(for itemCount: Int) -> CGFloat {
+        let visibleRows = max(1, min(itemCount, relationshipRowsPerGroup))
+        return (relationshipRowHeight * CGFloat(visibleRows)) + (relationshipGroupVerticalPadding * 2)
+    }
 }
 
 private struct HomePhraseItem: Identifiable, Equatable {
@@ -1884,7 +1908,35 @@ private struct HomeSituationGroupRow: View {
     }
 }
 
-private struct HomeRelationshipCard: View {
+private struct HomeRelationshipGroupCard: View {
+    let phrases: [PhraseOption]
+    let width: CGFloat
+    let onOpenDetail: (String) -> Void
+
+    private var cardHeight: CGFloat {
+        HomeLayout.relationshipGroupHeight(for: phrases.count)
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ForEach(phrases) { phrase in
+                HomeRelationshipRow(phrase: phrase, onOpenDetail: onOpenDetail)
+                    .frame(height: HomeLayout.relationshipRowHeight)
+
+                if phrase.id != phrases.last?.id {
+                    Divider().padding(.leading, 72)
+                }
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, HomeLayout.relationshipGroupVerticalPadding)
+        .frame(width: width, height: cardHeight, alignment: .top)
+        .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
+    }
+}
+
+private struct HomeRelationshipRow: View {
     let phrase: PhraseOption
     let onOpenDetail: (String) -> Void
 
@@ -1894,41 +1946,51 @@ private struct HomeRelationshipCard: View {
                 onOpenDetail(detailPageID)
             }
         } label: {
-            VStack(alignment: .leading, spacing: 11) {
+            HStack(spacing: 12) {
                 Image(systemName: phrase.symbolName)
-                    .font(.title3.weight(.semibold))
+                    .font(.headline.weight(.semibold))
                     .foregroundStyle(phrase.tintName.color)
-                    .frame(width: 42, height: 42)
-                    .nativeGlass(cornerRadius: 21)
+                    .frame(width: 46, height: 46)
+                    .nativeGlass(cornerRadius: 23, interactive: true)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(phrase.vietnamese)
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
-                        .lineLimit(2)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.74)
 
                     Text(phrase.english)
-                        .font(.caption)
+                        .font(.subheadline)
                         .foregroundStyle(.secondary)
-                        .lineLimit(3)
+                        .lineLimit(2)
                         .fixedSize(horizontal: false, vertical: true)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .layoutPriority(1)
 
-                Spacer(minLength: 0)
+                AudioSpeakerButton(tint: phrase.tintName, size: 34, audioKey: phrase.playbackAudioKey)
 
-                HStack {
-                    AudioSpeakerButton(tint: phrase.tintName, size: 34, audioKey: phrase.playbackAudioKey)
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                }
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.tertiary)
             }
-            .padding(14)
-            .frame(width: 140, height: 178, alignment: .topLeading)
-            .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
+            .padding(.horizontal, 14)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+    }
+}
+
+private extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        guard size > 0 else {
+            return []
+        }
+
+        return stride(from: 0, to: count, by: size).map { startIndex in
+            Array(self[startIndex..<Swift.min(startIndex + size, count)])
+        }
     }
 }
 
