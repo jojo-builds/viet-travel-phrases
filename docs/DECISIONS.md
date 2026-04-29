@@ -133,8 +133,12 @@
 - Native Home V1 is the default launch route. `Xin chào` remains the flagship listing page reachable from Home, Browse, search, and relationship shelves rather than standing in as the whole home screen.
 - Saved phrases, practice-selected phrases, recently opened pages, practiced prompts, and missed items are local private user-state signals. They should personalize Home, Explore, category rows, and Practice through deterministic offline ranking while the bundled phrase graph remains read-only.
 - `Add to practice` should be available from phrase pages and eligible phrase rows once local practice-pool state exists. The selected phrase/row/token remains the correct-answer target for generated practice prompts; graph-nearby phrases are distractors or recommendations, not replacement targets.
+- Onboarding may include a short phrase-based placement check that sets a local editable level (`beginner`, `intermediate`, or `advanced`). This should personalize rankings/defaults without locking content, shaming the user, or sending data off device.
+- Mutable user preferences and progress, including onboarding level, saved IDs, practice IDs, missed prompts, and route marks, belong in local private app state rather than the read-only bundled phrase graph.
 - The first Viet Practice Core package lives in `docs/practice/VIET_PRACTICE_CORE_PLAN.md`, `content-draft/viet/practice/practice-deck.sample.json`, `scripts/practice/generate-viet-practice-deck.js`, and `prototypes/practice-quiz/`. It is a prepared offline contract/prototype for later T-167/T-168 native integration, not current native runtime wiring.
 - The first Practice reward/mascot contract lives in `docs/practice/VIET_PRACTICE_REWARD_MASCOT_HANDOFF.md`: rewards are local ready/review route marks tied to source-anchored phrase practice, and the chameleon appears only as a restrained Practice companion gated by sensitivity and `mascotEligible` signals.
+- The first mascot visual board from `TASK-MASCOT-VISUAL-SYSTEM-001` is rejected for implementation. It may remain as rough process history, but future mascot direction must be production-ready generated raster imagery and app-like native screen comps before SwiftUI implementation.
+- Mascot visual tasks should use Codex image generation first and should block rather than substitute HTML/CSS/SVG doodles when the requested output is production-ready image concepts.
 
 ## Current live Viet boundary decisions
 

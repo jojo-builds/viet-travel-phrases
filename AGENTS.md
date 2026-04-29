@@ -58,6 +58,7 @@ Rules:
 - Runtime copy must stay offline. No runtime AI calls are part of the product direction.
 - Speaker icons imply playable bundled audio or an explicit missing-audio queue item. Reuse exact normalized audio before generating new ElevenLabs audio.
 - Native design direction:
+  - Read `docs/design/NATIVE_VISUAL_REFERENCE.md` before native visual design, mascot, onboarding, Practice UI, generated screen comps, or screenshot review work.
   - `Xin chào` is the flagship visual/content pattern for listing pages.
   - Use native SwiftUI/Liquid Glass-style chrome, restrained Vietnam accents, and readable white content areas over distracting hero imagery.
   - Back/search/bottom chrome stays visually static while page content animates beneath it.
