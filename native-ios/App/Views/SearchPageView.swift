@@ -202,14 +202,18 @@ private struct SearchResultRow: View {
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.tertiary)
             }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(.white.opacity(0.68), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(Color.black.opacity(0.05), lineWidth: 1)
+            }
         }
         .buttonStyle(.plain)
-        .padding(14)
-        .background(.white.opacity(0.68), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .stroke(Color.black.opacity(0.05), lineWidth: 1)
-        }
+        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("SearchResult.\(result.pageID)")
     }
 }
 
