@@ -16492,14 +16492,16 @@
         "placeID": "danang-son-tra",
         "sourceBreakdownTokenIDs": [
           "city-danang-go-son-tra-chunk-1",
-          "city-danang-go-son-tra-chunk-2"
+          "city-danang-go-son-tra-chunk-2",
+          "city-danang-go-son-tra-chunk-3"
         ]
       },
       "answer": {
         "phraseID": "city-danang-go-son-tra",
         "breakdownTokenIDs": [
           "city-danang-go-son-tra-chunk-1",
-          "city-danang-go-son-tra-chunk-2"
+          "city-danang-go-son-tra-chunk-2",
+          "city-danang-go-son-tra-chunk-3"
         ],
         "correctSequence": [
           {
@@ -16509,7 +16511,12 @@
           },
           {
             "id": "city-danang-go-son-tra-chunk-2",
-            "vietnamese": "bán đảo Sơn Trà",
+            "vietnamese": "bán đảo",
+            "audioKey": ""
+          },
+          {
+            "id": "city-danang-go-son-tra-chunk-3",
+            "vietnamese": "Sơn Trà",
             "audioKey": ""
           }
         ],
