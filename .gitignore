@@ -35,4 +35,9 @@
 # Python/local scratch
 __pycache__/
 *.py[cod]
+/.DS_Store
+.DS_Store
+/.venv/
+.venv/
+/tmp/
 /.tmp_*
