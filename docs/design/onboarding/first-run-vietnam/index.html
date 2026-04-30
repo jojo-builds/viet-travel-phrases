@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SpeakLocal Vietnam Onboarding Storyboards</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #102019;
+        --muted: #69746f;
+        --paper: #fffdfa;
+        --soft: #f5f2eb;
+        --line: rgba(16, 32, 25, 0.13);
+        --glass: rgba(255, 255, 255, 0.78);
+        --red: #ff3038;
+        --jade: #2f8d72;
+        --gold: #d6a145;
+        --shadow: 0 20px 58px rgba(16, 32, 25, 0.11);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, rgba(255, 253, 250, 0.96), rgba(245, 242, 235, 0.98)),
+          radial-gradient(circle at 84% 6%, rgba(47, 141, 114, 0.1), transparent 30%);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        width: min(1480px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 44px 0 72px;
+      }
+
+      h1 {
+        max-width: 1040px;
+        margin: 0;
+        font-size: clamp(42px, 7vw, 88px);
+        line-height: 0.95;
+        font-weight: 820;
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        font-size: clamp(24px, 3vw, 38px);
+        line-height: 1.03;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .lead {
+        max-width: 920px;
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.5;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 26px 0 34px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--glass);
+        box-shadow: 0 10px 26px rgba(16, 32, 25, 0.06);
+        color: var(--muted);
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .pill strong {
+        color: var(--ink);
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 34px;
+      }
+
+      .note,
+      .screen-note,
+      .sheet {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 12px 34px rgba(16, 32, 25, 0.07);
+      }
+
+      .note {
+        min-height: 118px;
+        border-radius: 18px;
+        padding: 16px;
+      }
+
+      .note b {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .note span,
+      .screen-note p,
+      .sheet-head p,
+      .tradeoffs li {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .sheet {
+        margin-top: 28px;
+        border-radius: 24px;
+        overflow: hidden;
+      }
+
+      .sheet-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 22px 16px;
+      }
+
+      .sheet-head p {
+        max-width: 720px;
+      }
+
+      .tag {
+        flex: 0 0 auto;
+        border-radius: 999px;
+        background: rgba(47, 141, 114, 0.12);
+        color: var(--jade);
+        padding: 8px 12px;
+        font-size: 12px;
+        font-weight: 760;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: white;
+      }
+
+      .notes-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.48);
+      }
+
+      .screen-note {
+        border-radius: 16px;
+        padding: 14px;
+      }
+
+      .screen-note .number {
+        display: inline-grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        margin-bottom: 10px;
+        border-radius: 999px;
+        background: var(--jade);
+        color: white;
+        font-size: 13px;
+        font-weight: 760;
+      }
+
+      .tradeoffs {
+        margin: 34px 0 0;
+        border-left: 4px solid var(--red);
+        padding: 4px 0 4px 18px;
+      }
+
+      .tradeoffs ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+      }
+
+      @media (max-width: 1020px) {
+        .summary-grid,
+        .notes-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        main {
+          width: min(100% - 20px, 1480px);
+          padding-top: 28px;
+        }
+
+        .summary-grid,
+        .notes-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sheet-head {
+          display: block;
+        }
+
+        .tag {
+          display: inline-block;
+          margin-top: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>SpeakLocal Vietnam Onboarding Storyboards</h1>
+      <p class="lead">
+        High-fidelity image-only first-run concepts for welcome, personalization,
+        phrase placement, prepared Home preview, and the 7-day trial moment.
+      </p>
+
+      <div class="pill-row" aria-label="Design constraints">
+        <span class="pill"><strong>Format:</strong> raster screenshots</span>
+        <span class="pill"><strong>Style:</strong> native Liquid Glass</span>
+        <span class="pill"><strong>Flow:</strong> value before paywall</span>
+        <span class="pill"><strong>Melo:</strong> subtle companion</span>
+        <span class="pill"><strong>Content:</strong> phrase-based, not trivia</span>
+      </div>
+
+      <section class="summary-grid" aria-label="Design summary">
+        <div class="note">
+          <b>Core Promise</b>
+          <span>Onboarding frames the app as a Vietnam phrase map that works offline in real travel moments.</span>
+        </div>
+        <div class="note">
+          <b>Personalization</b>
+          <span>Destination and interests tune the starting point without hiding the rest of the phrase library.</span>
+        </div>
+        <div class="note">
+          <b>Placement</b>
+          <span>The quick check is positive and optional, using a real Vietnamese phrase with audio.</span>
+        </div>
+        <div class="note">
+          <b>Paywall Timing</b>
+          <span>The user sees a prepared Hanoi preview before the trial ask, so the value is concrete.</span>
+        </div>
+      </section>
+
+      <section class="sheet">
+        <div class="sheet-head">
+          <div>
+            <h2>Main 8-Screen Flow</h2>
+            <p>Complete first-run path from promise through personalization, quick phrase check, preview, and 7-day trial.</p>
+          </div>
+          <span class="tag">Recommended</span>
+        </div>
+        <img src="assets/onboarding-flow-main.png" alt="Eight-screen high-fidelity SpeakLocal Vietnam onboarding storyboard." />
+        <div class="notes-grid">
+          <div class="screen-note">
+            <span class="number">1</span>
+            <h3>Welcome</h3>
+            <p>Establishes the phrase map promise with a calm Vietnam visual and a single Start action.</p>
+          </div>
+          <div class="screen-note">
+            <span class="number">2</span>
+            <h3>Destination</h3>
+            <p>Personalizes the first city while reassuring travelers that every phrase remains available.</p>
+          </div>
+          <div class="screen-note">
+            <span class="number">3</span>
+            <h3>Interests</h3>
+            <p>Lets users pick practical help areas without turning onboarding into a long survey.</p>
+          </div>
+          <div class="screen-note">
+            <span class="number">4</span>
+            <h3>Quick Check Intro</h3>
+            <p>Frames placement as pacing help and keeps the skip path visible.</p>
+          </div>
+          <div class="screen-note">
+            <span class="number">5</span>
+            <h3>Phrase Question</h3>
+            <p>Uses audio and a real Vietnamese phrase so it already feels like learning.</p>
+          </div>
+          <div class="screen-note">
+            <span class="number">6</span>
+            <h3>Level Result</h3>
+            <p>Shows Beginner, Intermediate, and Advanced as adjustable starting points.</p>
+          </div>
+          <div class="screen-note">
+            <span class="number">7</span>
+            <h3>Prepared Preview</h3>
+            <p>Shows the app has prepared useful Hanoi content before the trial screen appears.</p>
+          </div>
+          <div class="screen-note">
+            <span class="number">8</span>
+            <h3>Trial</h3>
+            <p>Keeps the 7-day trial classy and native, with Continue limited preview as the secondary path.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet">
+        <div class="sheet-head">
+          <div>
+            <h2>Compact Alternate</h2>
+            <p>A five-screen version that reduces setup friction by combining destination setup and trimming the level-result step.</p>
+          </div>
+          <span class="tag">Shorter option</span>
+        </div>
+        <img src="assets/onboarding-compact-alternate.png" alt="Five-screen compact SpeakLocal Vietnam onboarding alternate." />
+      </section>
+
+      <section class="sheet">
+        <div class="sheet-head">
+          <div>
+            <h2>Melo Placement Options</h2>
+            <p>Three ways to handle the chameleon: product-first with no mascot, subtle helper, or travel companion in the prepared preview.</p>
+          </div>
+          <span class="tag">Mascot options</span>
+        </div>
+        <img src="assets/melo-onboarding-placement-options.png" alt="Three mascot usage options for SpeakLocal Vietnam onboarding." />
+      </section>
+
+      <section class="tradeoffs">
+        <h2>Report Notes</h2>
+        <ul>
+          <li>The main 8-screen flow is the stronger product story because it earns the trial ask with a prepared preview.</li>
+          <li>The compact alternate is better if first-run completion rate becomes the top concern, but it explains less.</li>
+          <li>Melo works best on interests and preview screens. It should stay off the paywall or remain tiny.</li>
+          <li>The placement check must stay phrase-based, audio-led, and skippable so it feels helpful rather than evaluative.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
