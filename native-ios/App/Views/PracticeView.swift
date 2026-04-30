@@ -4,6 +4,7 @@ struct PracticeView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
     @StateObject private var progressStore: LocalPracticeProgressStore
 
+    let initialMode: PracticeMode?
     let scrollToTopTrigger: Int
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
@@ -11,15 +12,18 @@ struct PracticeView: View {
     @State private var deckState = PracticeDeckLoadState.loading
     @State private var activeSession: PracticeSession?
     @State private var completionSummary: PracticeCompletionSummary?
+    @State private var didStartInitialMode = false
 
     init(
         intentStore: LocalUserIntentStore,
+        initialMode: PracticeMode? = nil,
         scrollToTopTrigger: Int = 0,
         progressStore: LocalPracticeProgressStore = LocalPracticeProgressStore(),
         onOpenDetail: @escaping (String) -> Void,
         onBrowseTapped: @escaping () -> Void
     ) {
         self.intentStore = intentStore
+        self.initialMode = initialMode
         self.scrollToTopTrigger = scrollToTopTrigger
         self.onOpenDetail = onOpenDetail
         self.onBrowseTapped = onBrowseTapped
@@ -78,6 +82,7 @@ struct PracticeView: View {
         }
         .task {
             reloadDeck()
+            startInitialModeIfNeeded()
         }
         .onChange(of: intentStore.practicePageIDs) { _, _ in
             reloadDeck()
@@ -102,6 +107,15 @@ struct PracticeView: View {
 
         activeSession = PracticeSession(mode: mode, prompts: prompts)
         completionSummary = nil
+    }
+
+    private func startInitialModeIfNeeded() {
+        guard !didStartInitialMode, let initialMode else {
+            return
+        }
+
+        didStartInitialMode = true
+        startSession(initialMode)
     }
 
     private func selectOption(_ option: PracticeAnswerOption) {
@@ -158,6 +172,7 @@ struct PracticeView: View {
                     progressStore: progressStore
                 )
             )
+            startInitialModeIfNeeded()
         } catch {
             deckState = .failed(error.localizedDescription)
         }
@@ -179,20 +194,35 @@ private enum PracticeDeckLoadState {
 }
 
 struct PracticeDeckSnapshot {
-    let bucketPrompts: [PracticePrompt]
+    let cityPrompts: [PracticeMode: [PracticePrompt]]
     let savedPrompts: [PracticePrompt]
     let missedPrompts: [PracticePrompt]
-    let bucketReadyCount: Int
-    let bucketMissedCount: Int
-    let hanoiSeedCount: Int
+    let cityReadyCounts: [PracticeMode: Int]
+    let cityMissedCounts: [PracticeMode: Int]
+    let citySeedCounts: [PracticeMode: Int]
+
+    var bucketPrompts: [PracticePrompt] {
+        cityPrompts[.hanoiBucketList] ?? []
+    }
+
+    var bucketReadyCount: Int {
+        cityReadyCounts[.hanoiBucketList] ?? 0
+    }
+
+    var bucketMissedCount: Int {
+        cityMissedCounts[.hanoiBucketList] ?? 0
+    }
+
+    var hanoiSeedCount: Int {
+        citySeedCounts[.hanoiBucketList] ?? 0
+    }
 
     func prompts(for mode: PracticeMode) -> [PracticePrompt] {
-        switch mode {
-        case .hanoiBucketList:
-            return bucketPrompts
-        case .savedReview:
+        if mode.isCityMode {
+            return cityPrompts[mode] ?? []
+        } else if mode == .savedReview {
             return savedPrompts
-        case .missedReview:
+        } else {
             return missedPrompts
         }
     }
@@ -209,7 +239,15 @@ struct PracticeDeckSnapshot {
                 pageIDs: practicePageIDs,
                 limit: max(24, practicePageIDs.count)
             )
-        let hanoiCandidates = try repository.loadPracticeCandidates(cityID: "hanoi", limit: 24)
+        let cityCandidates = try Dictionary(uniqueKeysWithValues: PracticeMode.cityModes.map { mode in
+            (
+                mode,
+                try repository.loadPracticeCandidates(
+                    cityID: mode.cityID,
+                    limit: 24
+                )
+            )
+        })
         let audioStarterCandidates = try repository.loadPracticeCandidates(requiringAudio: true, limit: 24)
         let savedCandidates = savedPageIDs.isEmpty
             ? []
@@ -220,17 +258,22 @@ struct PracticeDeckSnapshot {
         let generalCandidates = try repository.loadPracticeCandidates(limit: 120)
         let explicitPageIDSet = Set(explicitCandidates.map(\.pageID))
         let savedOnlyPageIDSet = Set(savedCandidates.map(\.pageID)).subtracting(explicitPageIDSet)
-        let bucketCandidates = uniqueCandidates(explicitCandidates + hanoiCandidates + audioStarterCandidates)
-            .filter { candidate in
-                explicitPageIDSet.contains(candidate.pageID) || !savedOnlyPageIDSet.contains(candidate.pageID)
-            }
-        let distractors = uniqueCandidates(bucketCandidates + savedCandidates + generalCandidates)
-        let bucketPrompts = PracticePromptGenerator.prompts(
-            mode: .hanoiBucketList,
-            candidates: bucketCandidates,
-            distractors: distractors,
-            limit: 8
-        )
+        let allCityCandidates = uniqueCandidates(PracticeMode.cityModes.flatMap { cityCandidates[$0] ?? [] })
+        let distractors = uniqueCandidates(explicitCandidates + allCityCandidates + audioStarterCandidates + savedCandidates + generalCandidates)
+        let cityPrompts = Dictionary(uniqueKeysWithValues: PracticeMode.cityModes.map { mode in
+            let candidates = uniqueCandidates((cityCandidates[mode] ?? []) + explicitCandidates)
+                .filter { candidate in
+                    explicitPageIDSet.contains(candidate.pageID) || !savedOnlyPageIDSet.contains(candidate.pageID)
+                }
+            let prompts = PracticePromptGenerator.prompts(
+                mode: mode,
+                candidates: candidates,
+                distractors: distractors,
+                limit: 8
+            )
+
+            return (mode, prompts)
+        })
         let savedPrompts = PracticePromptGenerator.prompts(
             mode: .savedReview,
             candidates: savedCandidates,
@@ -251,12 +294,18 @@ struct PracticeDeckSnapshot {
             .map { $0 }
 
         return PracticeDeckSnapshot(
-            bucketPrompts: bucketPrompts,
+            cityPrompts: cityPrompts,
             savedPrompts: savedPrompts,
             missedPrompts: missedPrompts,
-            bucketReadyCount: progressStore.readyCount(in: bucketPrompts.map(\.id)),
-            bucketMissedCount: progressStore.missedCount(in: bucketPrompts.map(\.id)),
-            hanoiSeedCount: hanoiCandidates.count
+            cityReadyCounts: Dictionary(uniqueKeysWithValues: PracticeMode.cityModes.map { mode in
+                (mode, progressStore.readyCount(in: (cityPrompts[mode] ?? []).map(\.id)))
+            }),
+            cityMissedCounts: Dictionary(uniqueKeysWithValues: PracticeMode.cityModes.map { mode in
+                (mode, progressStore.missedCount(in: (cityPrompts[mode] ?? []).map(\.id)))
+            }),
+            citySeedCounts: Dictionary(uniqueKeysWithValues: PracticeMode.cityModes.map { mode in
+                (mode, cityCandidates[mode]?.count ?? 0)
+            })
         )
     }
 
@@ -316,14 +365,19 @@ private struct PracticeHubSurface: View {
             case .failed(let message):
                 PracticeErrorCard(message: message, onRetry: onRetry)
             case .loaded(let deck):
-                PracticeBucketListCard(
-                    promptCount: deck.bucketPrompts.count,
-                    readyCount: deck.bucketReadyCount,
-                    reviewCount: deck.bucketMissedCount,
-                    hanoiSeedCount: deck.hanoiSeedCount,
-                    explicitPracticeCount: explicitPracticeCount,
-                    onStart: { onStart(.hanoiBucketList) }
-                )
+                VStack(spacing: 12) {
+                    ForEach(PracticeMode.cityModes) { mode in
+                        PracticeCityModeCard(
+                            mode: mode,
+                            promptCount: deck.prompts(for: mode).count,
+                            readyCount: deck.cityReadyCounts[mode] ?? 0,
+                            reviewCount: deck.cityMissedCounts[mode] ?? 0,
+                            seedCount: deck.citySeedCounts[mode] ?? 0,
+                            explicitPracticeCount: explicitPracticeCount,
+                            onStart: { onStart(mode) }
+                        )
+                    }
+                }
 
                 PracticeReviewModeRow(
                     mode: .savedReview,
@@ -361,13 +415,13 @@ private struct PracticeHeader: View {
                     .foregroundStyle(.secondary)
             }
 
-            Text("Build your Hanoi bucket list")
+            Text("Practice by city")
                 .font(.system(size: 40, weight: .black, design: .serif))
                 .foregroundStyle(.primary)
                 .lineLimit(2)
                 .minimumScaleFactor(0.74)
 
-            Text("Short offline drills from real phrase pages, with saved and missed review kept separate.")
+            Text("Short offline drills from real city phrase pages, with saved and missed review kept separate.")
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(.secondary)
                 .lineLimit(3)
@@ -376,25 +430,26 @@ private struct PracticeHeader: View {
     }
 }
 
-private struct PracticeBucketListCard: View {
+private struct PracticeCityModeCard: View {
+    let mode: PracticeMode
     let promptCount: Int
     let readyCount: Int
     let reviewCount: Int
-    let hanoiSeedCount: Int
+    let seedCount: Int
     let explicitPracticeCount: Int
     let onStart: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top, spacing: 14) {
-                PracticeIcon(symbolName: "mappin.and.ellipse", tint: .red)
+                PracticeIcon(symbolName: symbolName, tint: tint)
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Hanoi Bucket List")
+                    Text(mode.title)
                         .font(.title2.weight(.black))
                         .foregroundStyle(.primary)
 
-                    Text("Practice useful Vietnamese for Hanoi landmarks, arrivals, food, and phrases you added yourself.")
+                    Text(mode.subtitle)
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.secondary)
                         .lineLimit(3)
@@ -409,7 +464,7 @@ private struct PracticeBucketListCard: View {
                 PracticeMetricPill(title: "Added", value: "\(explicitPracticeCount)")
             }
 
-            Text("\(hanoiSeedCount) Hanoi-sourced phrases seed the MVP when your own practice pool is empty.")
+            Text("\(seedCount) \(mode.cityShortName ?? "city")-sourced phrases seed this practice path.")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
 
@@ -427,7 +482,41 @@ private struct PracticeBucketListCard: View {
         }
         .padding(18)
         .phraseListCard(cornerRadius: 24, strokeOpacity: 0.05)
-        .accessibilityIdentifier("Practice.HanoiBucketList")
+        .accessibilityIdentifier("Practice.City.\(mode.rawValue)")
+    }
+
+    private var symbolName: String {
+        switch mode {
+        case .hcmcCity:
+            return "tram.fill"
+        case .hanoiBucketList:
+            return "leaf.fill"
+        case .danangCity:
+            return "water.waves"
+        case .hoianCity:
+            return "sparkles"
+        case .hueCity:
+            return "building.columns.fill"
+        case .savedReview, .missedReview:
+            return "mappin.and.ellipse"
+        }
+    }
+
+    private var tint: AccentTint {
+        switch mode {
+        case .hcmcCity:
+            return .red
+        case .hanoiBucketList:
+            return .green
+        case .danangCity:
+            return .blue
+        case .hoianCity:
+            return .orange
+        case .hueCity:
+            return .purple
+        case .savedReview, .missedReview:
+            return .red
+        }
     }
 }
 
@@ -477,9 +566,11 @@ private struct PracticeReviewModeRow: View {
     }
 
     private var subtitle: String {
-        switch mode {
-        case .hanoiBucketList:
+        if mode.isCityMode {
             return mode.subtitle
+        }
+
+        switch mode {
         case .savedReview:
             return contextCount == 0
                 ? "Save phrase pages first, then review them here."
@@ -488,6 +579,8 @@ private struct PracticeReviewModeRow: View {
             return count == 0
                 ? "Missed prompts will collect here after a session."
                 : "Revisit \(count) prompt\(count == 1 ? "" : "s") without pressure."
+        case .hcmcCity, .hanoiBucketList, .danangCity, .hoianCity, .hueCity:
+            return mode.subtitle
         }
     }
 }

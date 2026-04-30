@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PhraseDetailView: View {
     let page: PhraseDetailPage
+    let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
@@ -16,6 +17,7 @@ struct PhraseDetailView: View {
 
     init(
         page: PhraseDetailPage,
+        initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
@@ -29,6 +31,7 @@ struct PhraseDetailView: View {
         onDetailTapped: @escaping (String) -> Void
     ) {
         self.page = page
+        self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
@@ -47,6 +50,7 @@ struct PhraseDetailView: View {
         PhraseArticleTemplateView(
             page: page.articleTemplate,
             chromeRoute: .detailPage(page.id),
+            initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
@@ -371,6 +375,24 @@ private struct DetailExampleRow: View {
         HStack(alignment: .center, spacing: 12) {
             AudioSpeakerButton(tint: phrase.tintName, audioKey: phrase.playbackAudioKey)
 
+            if let detailPageID = phrase.detailPageID, onOpenDetail != nil {
+                Button {
+                    onOpenDetail?(detailPageID)
+                } label: {
+                    rowContent(showsChevron: true)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            } else {
+                rowContent(showsChevron: false)
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 11)
+    }
+
+    private func rowContent(showsChevron: Bool) -> some View {
+        HStack(alignment: .center, spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
                     .font(.headline.weight(.bold))
@@ -389,22 +411,12 @@ private struct DetailExampleRow: View {
 
             Spacer()
 
-            if phrase.detailPageID != nil && onOpenDetail != nil {
+            if showsChevron {
                 Image(systemName: "chevron.right")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.tertiary)
             }
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            guard let detailPageID = phrase.detailPageID else {
-                return
-            }
-
-            onOpenDetail?(detailPageID)
-        }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 11)
     }
 }
 

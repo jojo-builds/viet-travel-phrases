@@ -109,7 +109,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(coverage.searchDocumentsWithMissingPageTargets, 0)
         XCTAssertEqual(coverage.audioUsageMismatches, 0)
         XCTAssertEqual(coverage.missingAudioAuditRows, report.audio.missingAudioAuditRows)
-        XCTAssertEqual(report.audio.plannedMissingAudioAuditRows, 125)
+        XCTAssertEqual(report.audio.plannedMissingAudioAuditRows, 750)
         XCTAssertEqual(report.audio.releaseBlockingMissingAudioAuditRows, 0)
     }
 

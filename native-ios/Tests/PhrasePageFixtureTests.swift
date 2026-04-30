@@ -658,9 +658,9 @@ final class PhrasePageFixtureTests: XCTestCase {
         let missing = try XCTUnwrap(audit["missing"] as? [[String: Any]])
 
         XCTAssertEqual(metadata["tierOneFamilyCount"] as? Int, 150)
-        XCTAssertEqual(metadata["cityLibraryPageCount"] as? Int, 125)
-        XCTAssertEqual(metadata["cityMissingAudioQueueCount"] as? Int, 125)
-        XCTAssertEqual(metadata["missingAudioCount"] as? Int, 125)
+        XCTAssertEqual(metadata["cityLibraryPageCount"] as? Int, 750)
+        XCTAssertEqual(metadata["cityMissingAudioQueueCount"] as? Int, 749)
+        XCTAssertEqual(metadata["missingAudioCount"] as? Int, 749)
         XCTAssertTrue(missing.allSatisfy { ($0["pageID"] as? String)?.hasPrefix("viet-family-city-") == true })
     }
 
@@ -737,9 +737,9 @@ final class PhrasePageFixtureTests: XCTestCase {
         let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
 
         XCTAssertEqual(catalog.metadata.basePhraseCount, 946)
-        XCTAssertEqual(catalog.metadata.cityPhraseCount, 125)
-        XCTAssertEqual(catalog.metadata.phraseCount, 1071)
-        XCTAssertEqual(catalog.families.count, 1052)
+        XCTAssertEqual(catalog.metadata.cityPhraseCount, 750)
+        XCTAssertEqual(catalog.metadata.phraseCount, 1696)
+        XCTAssertEqual(catalog.families.count, 1677)
         XCTAssertEqual(catalog.scenarios.count, 19)
         XCTAssertEqual(catalog.scenario(withID: "airport-border-arrival")?.title, "Airport Border Arrival")
         XCTAssertEqual(catalog.scenario(withID: "city-guides")?.title, "City Guides")

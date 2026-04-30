@@ -433,8 +433,10 @@ function buildListeningItems(phrases, pagesByFamily, allPhrases) {
   });
 }
 
-function buildEnglishToVietnameseItems(phrases, pagesByFamily, allPhrases) {
-  return takeBalancedByScenario(phrases.slice(10), 10).map((phrase) => {
+function buildEnglishToVietnameseItems(phrases, pagesByFamily, allPhrases, options = {}) {
+  const offset = options.offset ?? 10;
+  const count = options.count ?? 10;
+  return takeBalancedByScenario(phrases.slice(offset), count).map((phrase) => {
     const page = pagesByFamily.get(phrase.familyID);
     const id = `viet-practice-en-vi-${phrase.id}`;
     const choice = makeChoiceOptions(id, phrase, makeDistractors(phrase, allPhrases, 3), "vietnamese");
@@ -465,8 +467,10 @@ function buildEnglishToVietnameseItems(phrases, pagesByFamily, allPhrases) {
   });
 }
 
-function buildVietnameseToEnglishItems(phrases, pagesByFamily, allPhrases) {
-  return takeBalancedByScenario(phrases.slice(20), 10).map((phrase) => {
+function buildVietnameseToEnglishItems(phrases, pagesByFamily, allPhrases, options = {}) {
+  const offset = options.offset ?? 20;
+  const count = options.count ?? 10;
+  return takeBalancedByScenario(phrases.slice(offset), count).map((phrase) => {
     const page = pagesByFamily.get(phrase.familyID);
     const id = `viet-practice-vi-en-${phrase.id}`;
     const choice = makeChoiceOptions(id, phrase, makeDistractors(phrase, allPhrases, 3), "english");
@@ -497,8 +501,10 @@ function buildVietnameseToEnglishItems(phrases, pagesByFamily, allPhrases) {
   });
 }
 
-function buildSituationItems(phrases, pagesByFamily, allPhrases) {
-  return takeBalancedByScenario(phrases.slice(30), 10).map((phrase) => {
+function buildSituationItems(phrases, pagesByFamily, allPhrases, options = {}) {
+  const offset = options.offset ?? 30;
+  const count = options.count ?? 10;
+  return takeBalancedByScenario(phrases.slice(offset), count).map((phrase) => {
     const page = pagesByFamily.get(phrase.familyID);
     const id = `viet-practice-situation-${phrase.id}`;
     const choice = makeChoiceOptions(id, phrase, makeDistractors(phrase, allPhrases, 3), "vietnamese");
@@ -574,7 +580,8 @@ function buildPronounItems(phrases, pagesByFamily, allPhrases) {
   });
 }
 
-function buildChunkItems(phrases, pagesByFamily) {
+function buildChunkItems(phrases, pagesByFamily, options = {}) {
+  const count = options.count ?? 10;
   const candidates = phrases
     .map((phrase) => {
       const page = pagesByFamily.get(phrase.familyID);
@@ -584,7 +591,7 @@ function buildChunkItems(phrases, pagesByFamily) {
     .filter((entry) => entry.tokens.length >= 2)
     .sort((a, b) => a.phrase.id.localeCompare(b.phrase.id));
 
-  return takeBalancedByScenario(candidates.map((entry) => entry.phrase), 10).map((phrase) => {
+  return takeBalancedByScenario(candidates.map((entry) => entry.phrase), count).map((phrase) => {
     const page = pagesByFamily.get(phrase.familyID);
     const { section, tokens } = usableBreakdownTokensForPhrase(page, phrase);
     const id = `viet-practice-chunks-${phrase.id}`;
@@ -699,6 +706,33 @@ function buildPracticeFlows(items) {
     return Array.from(new Set(ids.filter(Boolean))).slice(0, limit);
   }
 
+  function balancedCityGuideIDs(limit) {
+    const cityOrder = ["hcmc", "hanoi", "danang", "hoian", "hue"];
+    const byCity = new Map(cityOrder.map((cityID) => [cityID, []]));
+    for (const item of cityGuideItems) {
+      const cityID = item.tags.cityID;
+      if (!byCity.has(cityID)) continue;
+      byCity.get(cityID).push(item.id);
+    }
+
+    const ids = [];
+    let index = 0;
+    while (ids.length < limit) {
+      let added = false;
+      for (const cityID of cityOrder) {
+        const cityItems = byCity.get(cityID) || [];
+        if (cityItems[index]) {
+          ids.push(cityItems[index]);
+          added = true;
+          if (ids.length >= limit) break;
+        }
+      }
+      if (!added) break;
+      index += 1;
+    }
+    return uniqueIDs(ids, limit);
+  }
+
   const starter = uniqueIDs(
     [
       firstIDForType("listening_choice"),
@@ -758,7 +792,7 @@ function buildPracticeFlows(items) {
       title: "City first trip",
       source: "city-guides",
       summary: "Beginner-heavy city phrases for places, streets, markets, food stops, and route checks.",
-      itemIDs: uniqueIDs(cityGuideItems.map((item) => item.id), 12),
+      itemIDs: balancedCityGuideIDs(15),
       defaultSessionLength: 5,
       entryPoints: ["practice", "city", "onboarding"],
     },
@@ -809,10 +843,10 @@ function buildPracticeCore({ repoRoot }) {
     ...buildPronounItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
     ...buildChunkItems(eligiblePhrases, pagesByFamily),
     ...buildNaturalChoiceItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
-    ...buildEnglishToVietnameseItems(cityPhrases, pagesByFamily, cityPhrases),
-    ...buildVietnameseToEnglishItems(cityPhrases, pagesByFamily, cityPhrases),
-    ...buildSituationItems(cityPhrases, pagesByFamily, cityPhrases),
-    ...buildChunkItems(cityPhrases, pagesByFamily),
+    ...buildEnglishToVietnameseItems(cityPhrases, pagesByFamily, cityPhrases, { count: cityPhrases.length, offset: 0 }),
+    ...buildVietnameseToEnglishItems(cityPhrases, pagesByFamily, cityPhrases, { count: cityPhrases.length, offset: 0 }),
+    ...buildSituationItems(cityPhrases, pagesByFamily, cityPhrases, { count: cityPhrases.length, offset: 0 }),
+    ...buildChunkItems(cityPhrases, pagesByFamily, { count: cityPhrases.length }),
   ];
 
   const items = uniqueBy(allItems, (item) => item.id);
@@ -1021,11 +1055,18 @@ function validatePracticeCore(practiceCore, options = {}) {
     errors.push("missing city-first-trip practice flow");
   }
   const cityItems = (practiceCore.items || []).filter((item) => item.source?.scenarioID === "city-guides");
-  if (cityItems.length < 20) {
-    errors.push(`expected at least 20 city-guides practice items, found ${cityItems.length}`);
+  const cityIDs = new Set(cityItems.map((item) => item.tags?.cityID).filter(Boolean));
+  for (const cityID of ["hcmc", "hanoi", "danang", "hoian", "hue"]) {
+    if (!cityIDs.has(cityID)) {
+      errors.push(`city-guides practice items missing ${cityID}`);
+    }
   }
-  if ((practiceCore.metadata?.cityLibraryPageCount ?? 0) < 125) {
-    errors.push(`expected at least 125 city library pages, found ${practiceCore.metadata?.cityLibraryPageCount ?? 0}`);
+  const cityLibraryPageCount = practiceCore.metadata?.cityLibraryPageCount ?? 0;
+  if (cityItems.length < cityLibraryPageCount) {
+    errors.push(`expected at least one city-guides practice item per city library page, found ${cityItems.length} items for ${cityLibraryPageCount} pages`);
+  }
+  if (cityLibraryPageCount < 750) {
+    errors.push(`expected at least 750 city library pages, found ${cityLibraryPageCount}`);
   }
 
   return { errors, warnings: [] };

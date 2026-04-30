@@ -1,7 +1,13 @@
 import SwiftUI
 
+enum PhraseArticleInitialScrollTarget: String {
+    case firstBreakdown = "first-breakdown"
+    case catalogExplore = "catalog-explore"
+}
+
 struct PhraseListingView: View {
     let page: PhrasePage
+    let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
@@ -16,6 +22,7 @@ struct PhraseListingView: View {
 
     init(
         page: PhrasePage,
+        initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
@@ -29,6 +36,7 @@ struct PhraseListingView: View {
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
+        self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
@@ -46,6 +54,7 @@ struct PhraseListingView: View {
         PhraseArticleTemplateView(
             page: page.articleTemplate,
             chromeRoute: .phrasePage,
+            initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
@@ -64,6 +73,7 @@ struct PhraseListingView: View {
 struct PhraseArticleTemplateView: View {
     let page: PhraseArticlePage
     let chromeRoute: AppRoute
+    let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
@@ -75,10 +85,12 @@ struct PhraseArticleTemplateView: View {
     var onToggleSaved: (() -> Void)? = nil
     var onTogglePractice: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
+    @State private var didApplyInitialScrollTarget = false
 
     init(
         page: PhraseArticlePage,
         chromeRoute: AppRoute,
+        initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
@@ -93,6 +105,7 @@ struct PhraseArticleTemplateView: View {
     ) {
         self.page = page
         self.chromeRoute = chromeRoute
+        self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
@@ -127,6 +140,7 @@ struct PhraseArticleTemplateView: View {
                                     currentPageID: page.id,
                                     onOpenDetail: onDetailTapped
                                 )
+                                .id(section.id)
                             }
 
                             if page.showsCatalogExplore {
@@ -134,6 +148,7 @@ struct PhraseArticleTemplateView: View {
                                     currentPageID: page.id,
                                     onOpenDetail: onDetailTapped
                                 )
+                                .id(Self.catalogExploreID)
                             }
                         }
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
@@ -143,6 +158,9 @@ struct PhraseArticleTemplateView: View {
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                }
+                .task {
+                    await applyInitialScrollTargetIfNeeded(scrollProxy)
                 }
             }
             .ignoresSafeArea(edges: .top)
@@ -222,11 +240,39 @@ struct PhraseArticleTemplateView: View {
     }
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"
+    private static let catalogExploreID = "PhraseArticleTemplateViewCatalogExplore"
 
     private var visibleSections: [PhraseArticleSection] {
         page.sections.filter { section in
             !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty
         }
+    }
+
+    @MainActor
+    private func applyInitialScrollTargetIfNeeded(_ scrollProxy: ScrollViewProxy) async {
+        guard !didApplyInitialScrollTarget, let initialScrollTarget else {
+            return
+        }
+
+        let scrollID: String?
+        let anchor: UnitPoint
+
+        switch initialScrollTarget {
+        case .firstBreakdown:
+            scrollID = visibleSections.first { !$0.breakdown.isEmpty }?.id
+            anchor = .center
+        case .catalogExplore:
+            scrollID = page.showsCatalogExplore ? Self.catalogExploreID : visibleSections.last?.id
+            anchor = .top
+        }
+
+        guard let scrollID else {
+            return
+        }
+
+        didApplyInitialScrollTarget = true
+        try? await Task.sleep(nanoseconds: 900_000_000)
+        scrollProxy.scrollTo(scrollID, anchor: anchor)
     }
 
     @ViewBuilder
@@ -596,6 +642,24 @@ private struct PhraseRow: View {
         HStack(spacing: 12) {
             AudioSpeakerButton(tint: phrase.tintName, audioKey: phrase.playbackAudioKey)
 
+            if let detailPageID = phrase.detailPageID {
+                Button {
+                    onOpenDetail(detailPageID)
+                } label: {
+                    rowContent(showsChevron: true)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            } else {
+                rowContent(showsChevron: false)
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 9)
+    }
+
+    private func rowContent(showsChevron: Bool) -> some View {
+        HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
                     .font(.headline.weight(.bold))
@@ -609,20 +673,12 @@ private struct PhraseRow: View {
 
             Spacer()
 
-            if phrase.detailPageID != nil {
+            if showsChevron {
                 Image(systemName: "chevron.right")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.tertiary)
             }
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            if let detailPageID = phrase.detailPageID {
-                onOpenDetail(detailPageID)
-            }
-        }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 9)
     }
 }
 
@@ -637,23 +693,33 @@ private struct SituationCard: View {
 
     var body: some View {
         VStack(spacing: 10) {
-            cardSummary
+            if let destinationPageID {
+                Button {
+                    onOpenDetail(destinationPageID)
+                } label: {
+                    cardSummary
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            } else {
+                cardSummary
+            }
 
             HStack(spacing: 10) {
                 AudioSpeakerButton(tint: phrase.tintName, size: 42, audioKey: phrase.playbackAudioKey)
 
-                if destinationPageID != nil {
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                        .frame(width: 24, height: 42)
+                if let destinationPageID {
+                    Button {
+                        onOpenDetail(destinationPageID)
+                    } label: {
+                        Image(systemName: "chevron.right")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(.tertiary)
+                            .frame(width: 24, height: 42)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
                 }
-            }
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            if let detailPageID = destinationPageID {
-                onOpenDetail(detailPageID)
             }
         }
         .padding(.horizontal, 10)
@@ -704,6 +770,24 @@ private struct LocalGreetingRow: View {
         HStack(spacing: 12) {
             AudioSpeakerButton(tint: phrase.tintName, audioKey: phrase.playbackAudioKey)
 
+            if let destinationPageID {
+                Button {
+                    onOpenDetail(destinationPageID)
+                } label: {
+                    rowContent(showsChevron: true)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            } else {
+                rowContent(showsChevron: false)
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 9)
+    }
+
+    private func rowContent(showsChevron: Bool) -> some View {
+        HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
                     .font(.headline.weight(.bold))
@@ -720,20 +804,12 @@ private struct LocalGreetingRow: View {
 
             Spacer()
 
-            if destinationPageID != nil {
+            if showsChevron {
                 Image(systemName: "chevron.right")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.tertiary)
             }
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            if let detailPageID = destinationPageID {
-                onOpenDetail(detailPageID)
-            }
-        }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 9)
     }
 }
 
@@ -1000,7 +1076,7 @@ private struct ExploreCatalogCategoryShelf: View {
         case "gratitude":
             return "Thanks, apologies, and warm closers"
         case "repair":
-            return "Recover when the conversation gets stuck"
+            return "Keep the conversation moving with simple helper phrases"
         case "understanding-repair":
             return "Ask what it means, slow things down, or get it written"
         case "goodbyes":
@@ -1146,7 +1222,7 @@ private struct ExploreCatalogRow: View {
 
 private struct ExploreCatalogEmptyState: View {
     var body: some View {
-        Text("More phrases for this category are being shaped.")
+        Text("More phrases will appear here as this collection grows.")
             .font(.subheadline.weight(.semibold))
             .foregroundStyle(.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)

@@ -49,6 +49,50 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertEqual(prompt.source.placeID, candidate.source.placeID)
     }
 
+    func testCityPracticeFiltersCoverExpandedCityLibrary() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+        let expectedCityIDs = ["hcmc", "hanoi", "danang", "hoian", "hue"]
+
+        for cityID in expectedCityIDs {
+            let candidates = try repository.loadPracticeCandidates(cityID: cityID, limit: 180)
+
+            XCTAssertEqual(candidates.count, 150, cityID)
+            XCTAssertTrue(candidates.allSatisfy { $0.source.cityID == cityID }, cityID)
+            XCTAssertTrue(candidates.allSatisfy { $0.source.citySubcategoryID != nil }, cityID)
+            XCTAssertTrue(candidates.allSatisfy { $0.source.placeID != nil }, cityID)
+        }
+    }
+
+    func testSnapshotCityModesStartFromCitySpecificPrompts() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+        let snapshot = try PracticeDeckSnapshot.load(
+            practicePageIDs: ["viet-phrase-hello-alo"],
+            savedPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+
+        for mode in PracticeMode.cityModes {
+            let prompts = snapshot.prompts(for: mode)
+            let cityID = try XCTUnwrap(mode.cityID)
+            let candidates = try repository.loadPracticeCandidates(cityID: cityID, limit: 180)
+            let cityVietnamese = Set(candidates.map(\.vietnamese))
+            let cityEnglish = Set(candidates.map(\.english))
+
+            XCTAssertEqual(prompts.count, 8, mode.rawValue)
+            XCTAssertTrue(prompts.allSatisfy { $0.source.cityID == cityID }, mode.rawValue)
+            XCTAssertTrue(prompts.allSatisfy { prompt in
+                switch prompt.kind {
+                case .englishToVietnamese, .listenAndPick:
+                    return prompt.options.allSatisfy { cityVietnamese.contains($0.text) }
+                case .vietnameseToEnglish:
+                    return prompt.options.allSatisfy { cityEnglish.contains($0.text) }
+                case .missingToken:
+                    return true
+                }
+            }, mode.rawValue)
+        }
+    }
+
     func testVietnameseToEnglishOptionsDoNotExposeVietnameseAnswerSubtitles() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let candidates = try repository.loadPracticeCandidates(cityID: "hanoi", limit: 12)

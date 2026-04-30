@@ -47,8 +47,8 @@ struct PlaybackDockView: View {
     var isSaved = false
     var onToggleSaved: (() -> Void)? = nil
 
-    @State private var selectedSpeed = "1.0x"
-    private let speeds = ["0.5x", "0.75x", "1.0x"]
+    @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
+    private let speeds = AudioPlaybackPreference.speeds
 
     var body: some View {
         ZStack {
@@ -147,18 +147,13 @@ struct PlaybackDockView: View {
     }
 
     private var selectedRate: Double {
-        switch selectedSpeed {
-        case "0.5x":
-            return 0.5
-        case "0.75x":
-            return 0.75
-        default:
-            return 1.0
-        }
+        AudioPlaybackPreference.rate(for: selectedSpeed)
     }
 
     private var speedSegmentedControl: some View {
-        HStack(spacing: 0) {
+        let currentSpeed = AudioPlaybackPreference.normalizedSpeed(selectedSpeed)
+
+        return HStack(spacing: 0) {
             ForEach(speeds.indices, id: \.self) { index in
                 let speed = speeds[index]
 
@@ -168,11 +163,11 @@ struct PlaybackDockView: View {
                     VStack(spacing: 3) {
                         Text(speed)
                             .font(.system(size: 14, weight: .bold))
-                            .foregroundStyle(selectedSpeed == speed ? .red : .primary)
+                            .foregroundStyle(currentSpeed == speed ? .red : .primary)
                             .frame(height: 29)
 
                         Capsule(style: .continuous)
-                            .fill(selectedSpeed == speed ? Color.red : Color.clear)
+                            .fill(currentSpeed == speed ? Color.red : Color.clear)
                             .frame(width: 22, height: 4)
                     }
                     .frame(width: 48, height: 42)
@@ -200,6 +195,27 @@ struct PlaybackDockView: View {
                 .stroke(.white.opacity(0.66), lineWidth: 1)
         }
         .nativeGlass(cornerRadius: 26, interactive: true)
+    }
+}
+
+enum AudioPlaybackPreference {
+    static let speedKey = "SpeakLocal.audio.playbackSpeed"
+    static let defaultSpeed = "1.0x"
+    static let speeds = ["0.5x", "0.75x", "1.0x"]
+
+    static func normalizedSpeed(_ speed: String) -> String {
+        speeds.contains(speed) ? speed : defaultSpeed
+    }
+
+    static func rate(for speed: String) -> Double {
+        switch normalizedSpeed(speed) {
+        case "0.5x":
+            return 0.5
+        case "0.75x":
+            return 0.75
+        default:
+            return 1.0
+        }
     }
 }
 

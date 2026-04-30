@@ -1,16 +1,36 @@
 import Foundation
 
 enum PracticeMode: String, CaseIterable, Codable, Equatable, Identifiable {
+    case hcmcCity
     case hanoiBucketList
+    case danangCity
+    case hoianCity
+    case hueCity
     case savedReview
     case missedReview
 
     var id: String { rawValue }
 
+    static let cityModes: [PracticeMode] = [
+        .hcmcCity,
+        .hanoiBucketList,
+        .danangCity,
+        .hoianCity,
+        .hueCity,
+    ]
+
     var title: String {
         switch self {
+        case .hcmcCity:
+            return "Saigon First Loop"
         case .hanoiBucketList:
             return "Hanoi Bucket List"
+        case .danangCity:
+            return "Da Nang Coast Loop"
+        case .hoianCity:
+            return "Hoi An Old Town Loop"
+        case .hueCity:
+            return "Hue Heritage Loop"
         case .savedReview:
             return "Saved Review"
         case .missedReview:
@@ -20,13 +40,59 @@ enum PracticeMode: String, CaseIterable, Codable, Equatable, Identifiable {
 
     var subtitle: String {
         switch self {
+        case .hcmcCity:
+            return "Short phrases for District 1, markets, cafes, arrivals, and Saigon landmarks."
         case .hanoiBucketList:
             return "Vietnamese-first phrases for your first Hanoi loop."
+        case .danangCity:
+            return "Beach, bridge, airport, market, and mountain phrases for Da Nang."
+        case .hoianCity:
+            return "Old Town, beaches, markets, cafes, and route phrases for Hoi An."
+        case .hueCity:
+            return "Citadel, river, tomb, food, and heritage-route phrases for Hue."
         case .savedReview:
             return "Practice saved pages without mixing them into the bucket list."
         case .missedReview:
             return "Calmly revisit prompts that need another pass."
         }
+    }
+
+    var cityID: String? {
+        switch self {
+        case .hcmcCity:
+            return "hcmc"
+        case .hanoiBucketList:
+            return "hanoi"
+        case .danangCity:
+            return "danang"
+        case .hoianCity:
+            return "hoian"
+        case .hueCity:
+            return "hue"
+        case .savedReview, .missedReview:
+            return nil
+        }
+    }
+
+    var cityShortName: String? {
+        switch self {
+        case .hcmcCity:
+            return "Saigon"
+        case .hanoiBucketList:
+            return "Hanoi"
+        case .danangCity:
+            return "Da Nang"
+        case .hoianCity:
+            return "Hoi An"
+        case .hueCity:
+            return "Hue"
+        case .savedReview, .missedReview:
+            return nil
+        }
+    }
+
+    var isCityMode: Bool {
+        cityID != nil
     }
 }
 
@@ -508,6 +574,29 @@ enum PracticePromptGenerator {
     private static func distractorRank(_ candidate: PracticeCandidate, for source: PracticeCandidate) -> Int {
         if candidate.source.placeID != nil && candidate.source.placeID == source.source.placeID {
             return 0
+        }
+
+        if let sourceCityID = source.source.cityID {
+            if candidate.source.cityID == sourceCityID
+                && candidate.source.citySubcategoryID != nil
+                && candidate.source.citySubcategoryID == source.source.citySubcategoryID {
+                return 1
+            }
+
+            if candidate.source.cityID == sourceCityID {
+                return 2
+            }
+
+            if candidate.source.citySubcategoryID != nil
+                && candidate.source.citySubcategoryID == source.source.citySubcategoryID {
+                return 3
+            }
+
+            if !Set(candidate.categoryIDs).isDisjoint(with: Set(source.categoryIDs)) {
+                return 4
+            }
+
+            return 5
         }
 
         if candidate.source.citySubcategoryID != nil

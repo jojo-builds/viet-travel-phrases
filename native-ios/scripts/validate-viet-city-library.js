@@ -8,6 +8,7 @@ const repoRoot = path.resolve(nativeRoot, "..");
 const sourcePath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
+const audioAuditPath = path.join(nativeRoot, "Resources", "viet-authored-audio-audit.json");
 const audioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-city-library-v1-missing-audio.csv");
 
 const expectedCities = new Set(["hcmc", "hanoi", "danang", "hoian", "hue"]);
@@ -21,6 +22,10 @@ const expectedSubcategories = new Set([
 ]);
 const difficultyValues = new Set(["beginner", "intermediate", "advanced"]);
 const bannedSourcePhrases = /\b(top|best|#1|number one|must-visit|must visit)\b/i;
+const expectedApprovedPageCount = 750;
+const expectedPagesPerCity = 150;
+const minimumSubcategoryPagesPerCity = 8;
+const minimumPlacePagesPerCity = 25;
 
 function readJSON(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -89,6 +94,7 @@ function main() {
   const library = readJSON(sourcePath);
   const catalog = readJSON(catalogPath);
   const authoredPages = readJSON(authoredPagesPath);
+  const audioAudit = readJSON(audioAuditPath);
   const cities = new Map((library.cities ?? []).map((city) => [city.id, city]));
   const places = new Map((library.places ?? []).map((place) => [place.id, place]));
   const subcategories = new Map((library.subcategories ?? []).map((subcategory) => [subcategory.id, subcategory]));
@@ -112,15 +118,20 @@ function main() {
   }
 
   const pagesByCity = countBy(pages, (page) => page.cityID);
+  assert(pages.length >= expectedApprovedPageCount, `expected at least ${expectedApprovedPageCount} approved pages, found ${pages.length}`);
   for (const cityID of expectedCities) {
     const count = pagesByCity.get(cityID) ?? 0;
-    assert(count >= 25 && count <= 35, `${cityID} must have 25-35 approved pages, found ${count}`);
-    const citySubcategories = new Set(pages.filter((page) => page.cityID === cityID).map((page) => page.subcategoryID));
+    assert(count >= expectedPagesPerCity, `${cityID} must have at least ${expectedPagesPerCity} approved pages, found ${count}`);
+    const cityPages = pages.filter((page) => page.cityID === cityID);
     for (const subcategoryID of expectedSubcategories) {
-      assert(citySubcategories.has(subcategoryID), `${cityID} has no page in ${subcategoryID}`);
+      const subcategoryCount = cityPages.filter((page) => page.subcategoryID === subcategoryID).length;
+      assert(
+        subcategoryCount >= minimumSubcategoryPagesPerCity,
+        `${cityID} needs at least ${minimumSubcategoryPagesPerCity} pages in ${subcategoryID}, found ${subcategoryCount}`
+      );
     }
-    const cityPlacePages = pages.filter((page) => page.cityID === cityID && page.kind === "place");
-    assert(cityPlacePages.length >= 5, `${cityID} should have at least 5 place-only pages`);
+    const cityPlacePages = cityPages.filter((page) => page.kind === "place");
+    assert(cityPlacePages.length >= minimumPlacePagesPerCity, `${cityID} should have at least ${minimumPlacePagesPerCity} place-only pages`);
   }
 
   const difficultyCounts = Object.fromEntries(countBy(pages, (page) => page.difficulty).entries());
@@ -179,7 +190,7 @@ function main() {
     assert(catalogPhrase.scenarioID === "city-guides", `${page.id} catalog scenario is not city-guides`);
     assert(catalogPhrase.cityID === page.cityID, `${page.id} catalog city metadata mismatch`);
     assert(catalogPhrase.difficulty === page.difficulty, `${page.id} catalog difficulty mismatch`);
-    assert(catalogPhrase.audioStatus === "planned", `${page.id} catalog audio status must be planned`);
+    assert(catalogPhrase.audioStatus === "planned", `${page.id} catalog audio status must be planned until city audio is recorded`);
 
     const authoredPageID = `viet-family-${page.id}`;
     const authoredPage = authoredCityPagesByID.get(authoredPageID);
@@ -227,8 +238,13 @@ function main() {
     }
   }
 
+  const cityMissingAudio = (audioAudit.missing ?? []).filter((entry) => String(entry.pageID ?? "").startsWith("viet-family-city-"));
   const queueRows = csvDataRowCount(audioQueuePath);
-  assert(queueRows === pages.length, `missing-audio queue should have one row per city page, found ${queueRows}`);
+  assert(queueRows === cityMissingAudio.length, `missing-audio queue should match unresolved city audio, found ${queueRows} queue rows for ${cityMissingAudio.length} missing rows`);
+  assert(
+    cityMissingAudio.length <= pages.length,
+    `city missing-audio queue should not exceed city pages, got ${cityMissingAudio.length} missing rows for ${pages.length} pages`
+  );
 
   console.log(`City library OK: ${pages.length} pages, ${difficultyCounts.beginner ?? 0} beginner, ${difficultyCounts.intermediate ?? 0} intermediate, ${difficultyCounts.advanced ?? 0} advanced`);
 }

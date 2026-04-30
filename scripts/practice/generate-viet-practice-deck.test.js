@@ -105,12 +105,28 @@ for (const id of ["starter-essentials", "hotel-desk", "food-counter", "pronoun-c
 }
 
 const cityItems = practiceCore.items.filter((item) => item.source.scenarioID === "city-guides");
-assert.ok(cityItems.length >= 20, "city-guides practice items should be present");
+assert.ok(cityItems.length >= practiceCore.metadata.cityLibraryPageCount, "city-guides practice items should cover the city library");
+const cityIDs = new Set(cityItems.map((item) => item.tags.cityID));
+for (const cityID of ["hcmc", "hanoi", "danang", "hoian", "hue"]) {
+  assert.ok(cityIDs.has(cityID), `city-guides practice items should include ${cityID}`);
+}
 for (const item of cityItems) {
   assert.ok(item.tags.cityID, `${item.id} should carry cityID`);
   assert.ok(item.tags.citySubcategoryID, `${item.id} should carry city subcategory`);
   assert.ok(item.tags.difficulty, `${item.id} should carry difficulty`);
   assert.equal(item.requiresAudio, false, `${item.id} should not require planned city audio`);
+}
+
+const cityFirstTrip = practiceCore.practiceFlows.find((flow) => flow.id === "city-first-trip");
+assert.ok(cityFirstTrip, "city-first-trip flow should be present");
+const cityFirstTripCities = new Set(
+  cityFirstTrip.itemIDs
+    .map((itemID) => practiceCore.items.find((item) => item.id === itemID))
+    .filter(Boolean)
+    .map((item) => item.tags.cityID),
+);
+for (const cityID of ["hcmc", "hanoi", "danang", "hoian", "hue"]) {
+  assert.ok(cityFirstTripCities.has(cityID), `city-first-trip flow should include ${cityID}`);
 }
 
 assert.ok(

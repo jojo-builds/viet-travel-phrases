@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:03c53630d59506c1",
-    "generatedAt": "source-hash:03c53630d59506c1"
+    "contentVersion": "viet-sqlite-fixture:b066d011ba0b8888",
+    "generatedAt": "source-hash:b066d011ba0b8888"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "c8bf3343839d2ebb4ca131666cc35358d3daea59aca126a37a7714f3f08a7e99"
+      "sha256": "f17652787c504a3c70c80efe1ff5dbc537e864141ed1f9140dbb1aedc50352fe"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "3c2cc6c083f7e9909a569794821dbcaf5d3d6b734294403c90d702efa7da482d"
+      "sha256": "8ae04c53a280eeaab66db05b943f781f34557c463ba3603a3f7954b8e50f89ff"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -22,7 +22,7 @@
     },
     "xcodeProject": {
       "path": "native-ios/project.yml",
-      "sha256": "4d057eea428a4625ac58197fbb41dcf95bb3efb1e1512702f1f9338b0de20e23"
+      "sha256": "c360e9b2f68c341d0ec06f6c0c08eca03a4960c863c679ecb1f2ee8bd58a471d"
     },
     "schema": {
       "path": "native-ios/scripts/sqlite/001_initial.sql",
@@ -30,14 +30,14 @@
     },
     "cityLibrary": {
       "path": "content-draft/viet/city-library/v1.json",
-      "sha256": "9cc86c739454c511d055e4a99b732f93feb60e40e5e42fe7cff4a6089a4616fe"
+      "sha256": "45088dda9ec983284b91c5054834f8f5bb65d4af8af6d76ae63537837e0b8f0c"
     }
   },
   "outputs": {
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "ab786b3ef3ad8584502c9a174bb174fdce6cee274a82313aace01a144c0b181d",
+    "databaseSha256": "65c2520e06493dba2fc54128fb4ae1b7bd4664cb407cf609fbd41650dbc990b5",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -54,52 +54,52 @@
       "ok": true
     },
     "clusters": {
-      "expected": 1052,
-      "actual": 1052,
+      "expected": 1677,
+      "actual": 1677,
       "ok": true
     },
     "phrases": {
-      "expected": 1071,
-      "actual": 1071,
+      "expected": 1696,
+      "actual": 1696,
       "ok": true
     },
     "canonicalPhrasePages": {
-      "expected": 1063,
-      "actual": 1063,
+      "expected": 1688,
+      "actual": 1688,
       "ok": true
     },
     "authoredPagesOrAliases": {
-      "expected": 318,
-      "actual": 318,
+      "expected": 943,
+      "actual": 943,
       "ok": true
     }
   },
   "generatedCounts": {
     "languagePacks": 1,
     "scenarios": 19,
-    "clusters": 1052,
-    "clusterMembers": 1071,
-    "phrases": 1071,
-    "pages": 1063,
-    "aliases": 1132,
-    "pageCategories": 1603,
-    "sections": 6911,
-    "sectionItems": 13021,
-    "breakdownTokens": 6544,
-    "relations": 4434,
-    "searchDocuments": 1071,
+    "clusters": 1677,
+    "clusterMembers": 1696,
+    "phrases": 1696,
+    "pages": 1688,
+    "aliases": 1757,
+    "pageCategories": 4728,
+    "sections": 11294,
+    "sectionItems": 19107,
+    "breakdownTokens": 8832,
+    "relations": 7551,
+    "searchDocuments": 1696,
     "audioAssets": 3756,
-    "audioUsages": 4714,
+    "audioUsages": 5245,
     "audioTextDedupeRows": 2343,
-    "missingAudioAuditRows": 125
+    "missingAudioAuditRows": 750
   },
   "validation": {
     "integrityCheck": "ok",
     "foreignKeyCheckRows": 0,
-    "ftsRowCount": 1071,
+    "ftsRowCount": 1696,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
-    "relationshipWordsEligiblePageCount": 40,
+    "relationshipWordsEligiblePageCount": 48,
     "relationshipWordsEligiblePageIDs": [
       "viet-phrase-acknowledge-da-chao-anh",
       "viet-phrase-acknowledge-da-chao-ba",
@@ -107,8 +107,16 @@
       "viet-phrase-acknowledge-da-chao-chu",
       "viet-phrase-acknowledge-da-chao-co",
       "viet-phrase-acknowledge-da-chao-ong",
+      "viet-phrase-city-danang-atm-ba-na-hills",
+      "viet-phrase-city-danang-eat-near-ba-na-hills",
+      "viet-phrase-city-danang-go-ba-na-hills",
+      "viet-phrase-city-danang-place-ba-na-hills",
+      "viet-phrase-city-danang-stop-ba-na-hills",
+      "viet-phrase-city-danang-where-ba-na-hills",
       "viet-phrase-city-hcmc-go-notre-dame",
       "viet-phrase-city-hcmc-place-notre-dame",
+      "viet-phrase-city-hcmc-stop-notre-dame",
+      "viet-phrase-city-hcmc-where-notre-dame",
       "viet-phrase-hello-alo",
       "viet-phrase-hello-chao",
       "viet-phrase-hello-chao-anh",
@@ -173,10 +181,10 @@
     "badBreakdownGlossSample": [],
     "bannedUserFacingMatchCount": 0,
     "bannedUserFacingMatches": [],
-    "cityLibraryPageCount": 125,
+    "cityLibraryPageCount": 750,
     "cityCount": 5,
-    "cityPlaceCount": 57,
-    "cityTagCount": 125
+    "cityPlaceCount": 150,
+    "cityTagCount": 750
   },
   "unresolvedReferences": {
     "detailPageIDCount": 0,
@@ -187,9 +195,9 @@
     "authoredPhraseItemsNotInCatalog": []
   },
   "canonicalIdentity": {
-    "canonicalPageCount": 1063,
-    "sourcePhraseRowCount": 1071,
-    "phrasesResolvedToCanonicalPages": 1071,
+    "canonicalPageCount": 1688,
+    "sourcePhraseRowCount": 1696,
+    "phrasesResolvedToCanonicalPages": 1696,
     "duplicateNormalizedTargetTextGroupCount": 6,
     "resolvedDuplicateNormalizedTargetTextGroups": [
       {
@@ -274,7 +282,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 4434,
+    "relationCount": 7551,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -290,7 +298,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 440
+        "count": 1150
       },
       {
         "relationType": "same_need_alt_context",
@@ -298,7 +306,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 3956
+        "count": 6363
       }
     ]
   },
@@ -306,290 +314,290 @@
     "manifestEntries": 3756,
     "uniqueNormalizedSpokenTextCount": 2343,
     "assets": 3756,
-    "usages": 4714,
-    "missingAudioAuditRows": 125,
-    "plannedMissingAudioAuditRows": 125,
+    "usages": 5245,
+    "missingAudioAuditRows": 750,
+    "plannedMissingAudioAuditRows": 750,
     "releaseBlockingMissingAudioAuditRows": 0,
     "missingAudioAuditSample": [
       {
-        "id": "missing-audio:planned-city:75b77be87846837c",
+        "id": "missing-audio:planned-city:a80b9b12c97ab056",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-place-ben-thanh-market",
-        "expected_text": "Chợ Bến Thành",
-        "normalized_expected_text": "chợ bến thành",
+        "target_id": "city-danang-atm-airport",
+        "expected_text": "Có ATM gần Sân bay Đà Nẵng không?",
+        "normalized_expected_text": "có atm gần sân bay đà nẵng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:484d6d4761f140e9",
+        "id": "missing-audio:planned-city:3de567d93df8332d",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-place-nguyen-hue",
-        "expected_text": "Phố đi bộ Nguyễn Huệ",
-        "normalized_expected_text": "phố đi bộ nguyễn huệ",
+        "target_id": "city-danang-atm-apec-park",
+        "expected_text": "Có ATM gần Công viên APEC không?",
+        "normalized_expected_text": "có atm gần công viên apec không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:820ba48e28fed77a",
+        "id": "missing-audio:planned-city:ea8bc6e861734338",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-place-independence-palace",
-        "expected_text": "Dinh Độc Lập",
-        "normalized_expected_text": "dinh độc lập",
+        "target_id": "city-danang-atm-asia-park",
+        "expected_text": "Có ATM gần Công viên Châu Á không?",
+        "normalized_expected_text": "có atm gần công viên châu á không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:417d1bf0a6666531",
+        "id": "missing-audio:planned-city:42468374472522fb",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-place-notre-dame",
-        "expected_text": "Nhà thờ Đức Bà Sài Gòn",
-        "normalized_expected_text": "nhà thờ đức bà sài gòn",
+        "target_id": "city-danang-atm-ba-na-hills",
+        "expected_text": "Có ATM gần Bà Nà Hills không?",
+        "normalized_expected_text": "có atm gần bà nà hills không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:e2ae5a46ae6aad57",
+        "id": "missing-audio:planned-city:e99af4e6ed3415e9",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-place-post-office",
-        "expected_text": "Bưu điện Thành phố",
-        "normalized_expected_text": "bưu điện thành phố",
+        "target_id": "city-danang-atm-bach-dang-street",
+        "expected_text": "Có ATM gần Đường Bạch Đằng không?",
+        "normalized_expected_text": "có atm gần đường bạch đằng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:e941f245d36849fb",
+        "id": "missing-audio:planned-city:d95380be641aafe2",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-go-ben-thanh",
-        "expected_text": "Đi chợ Bến Thành",
-        "normalized_expected_text": "đi chợ bến thành",
+        "target_id": "city-danang-atm-ban-co-peak",
+        "expected_text": "Có ATM gần Đỉnh Bàn Cờ không?",
+        "normalized_expected_text": "có atm gần đỉnh bàn cờ không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:0ba00b78c7b576d4",
+        "id": "missing-audio:planned-city:8cd800e2b265ee3f",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-where-ben-thanh",
-        "expected_text": "Chợ Bến Thành ở đâu?",
-        "normalized_expected_text": "chợ bến thành ở đâu?",
+        "target_id": "city-danang-atm-cathedral",
+        "expected_text": "Có ATM gần Nhà thờ Con Gà Đà Nẵng không?",
+        "normalized_expected_text": "có atm gần nhà thờ con gà đà nẵng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:b30352d60cc24cf0",
+        "id": "missing-audio:planned-city:111eb6836787fde5",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-stop-nguyen-hue",
-        "expected_text": "Dừng ở phố đi bộ Nguyễn Huệ",
-        "normalized_expected_text": "dừng ở phố đi bộ nguyễn huệ",
+        "target_id": "city-danang-atm-cham-museum",
+        "expected_text": "Có ATM gần Bảo tàng Điêu khắc Chăm không?",
+        "normalized_expected_text": "có atm gần bảo tàng điêu khắc chăm không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:ce935c120907ca47",
+        "id": "missing-audio:planned-city:764b6155e5c22492",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-near-nguyen-hue",
-        "expected_text": "Phố đi bộ Nguyễn Huệ gần đây không?",
-        "normalized_expected_text": "phố đi bộ nguyễn huệ gần đây không?",
+        "target_id": "city-danang-atm-con-market",
+        "expected_text": "Có ATM gần Chợ Cồn không?",
+        "normalized_expected_text": "có atm gần chợ cồn không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:8a823e553b876f34",
+        "id": "missing-audio:planned-city:093b893cf1f4799f",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-ticket-independence-palace",
-        "expected_text": "Một vé vào Dinh Độc Lập",
-        "normalized_expected_text": "một vé vào dinh độc lập",
+        "target_id": "city-danang-atm-dragon-bridge",
+        "expected_text": "Có ATM gần cầu Rồng không?",
+        "normalized_expected_text": "có atm gần cầu rồng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:31bc51bc1881182f",
+        "id": "missing-audio:planned-city:266fce97b25506d6",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-go-notre-dame",
-        "expected_text": "Đi Nhà thờ Đức Bà Sài Gòn",
-        "normalized_expected_text": "đi nhà thờ đức bà sài gòn",
+        "target_id": "city-danang-atm-golden-bridge",
+        "expected_text": "Có ATM gần Cầu Vàng không?",
+        "normalized_expected_text": "có atm gần cầu vàng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:2356a3ce0043acf2",
+        "id": "missing-audio:planned-city:6d67f52835b5221a",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-where-post-office",
-        "expected_text": "Bưu điện Thành phố ở đâu?",
-        "normalized_expected_text": "bưu điện thành phố ở đâu?",
+        "target_id": "city-danang-atm-han-market",
+        "expected_text": "Có ATM gần Chợ Hàn không?",
+        "normalized_expected_text": "có atm gần chợ hàn không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:21bc7c1fb209c736",
+        "id": "missing-audio:planned-city:bca12dc3c184002a",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-get-off-district-1",
-        "expected_text": "Cho tôi xuống ở Quận 1",
-        "normalized_expected_text": "cho tôi xuống ở quận 1",
+        "target_id": "city-danang-atm-han-river",
+        "expected_text": "Có ATM gần Sông Hàn không?",
+        "normalized_expected_text": "có atm gần sông hàn không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:494a982329a79a7d",
+        "id": "missing-audio:planned-city:f8876c196e5ef6ba",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-near-district-1",
-        "expected_text": "Quận 1 gần đây không?",
-        "normalized_expected_text": "quận 1 gần đây không?",
+        "target_id": "city-danang-atm-helio-night-market",
+        "expected_text": "Có ATM gần Chợ đêm Helio không?",
+        "normalized_expected_text": "có atm gần chợ đêm helio không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:6edef81f3e788d1a",
+        "id": "missing-audio:planned-city:14f59039f44a6b73",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-pharmacy-ben-thanh",
-        "expected_text": "Có nhà thuốc gần chợ Bến Thành không?",
-        "normalized_expected_text": "có nhà thuốc gần chợ bến thành không?",
+        "target_id": "city-danang-atm-linh-ung-pagoda",
+        "expected_text": "Có ATM gần Chùa Linh Ứng không?",
+        "normalized_expected_text": "có atm gần chùa linh ứng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:ffd798936bc45045",
+        "id": "missing-audio:planned-city:a1feb27d5406fe82",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-atm-nguyen-hue",
-        "expected_text": "Có ATM gần phố đi bộ Nguyễn Huệ không?",
-        "normalized_expected_text": "có atm gần phố đi bộ nguyễn huệ không?",
+        "target_id": "city-danang-bach-dang-route",
+        "expected_text": "Đi đường Bạch Đằng",
+        "normalized_expected_text": "đi đường bạch đằng",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:3b67dbb55d7bcf3d",
+        "id": "missing-audio:planned-city:0f87489de0c77ea5",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-want-independence-palace",
-        "expected_text": "Tôi muốn đến Dinh Độc Lập",
-        "normalized_expected_text": "tôi muốn đến dinh độc lập",
+        "target_id": "city-danang-eat-near-apec-park",
+        "expected_text": "Ăn gần Công viên APEC",
+        "normalized_expected_text": "ăn gần công viên apec",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:f557a4f079f559ec",
+        "id": "missing-audio:planned-city:1eefb3912250356f",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-dong-khoi-route",
-        "expected_text": "Đi đường Đồng Khởi được không?",
-        "normalized_expected_text": "đi đường đồng khởi được không?",
+        "target_id": "city-danang-eat-near-asia-park",
+        "expected_text": "Ăn gần Công viên Châu Á",
+        "normalized_expected_text": "ăn gần công viên châu á",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:0234f82a53d011fd",
+        "id": "missing-audio:planned-city:00aab1735323c8dc",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-binh-tay-far",
-        "expected_text": "Chợ Bình Tây xa không?",
-        "normalized_expected_text": "chợ bình tây xa không?",
+        "target_id": "city-danang-eat-near-ba-na-hills",
+        "expected_text": "Ăn gần Bà Nà Hills",
+        "normalized_expected_text": "ăn gần bà nà hills",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       },
       {
-        "id": "missing-audio:planned-city:5cd64c4e21a23e2b",
+        "id": "missing-audio:planned-city:403773227918538e",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-hcmc-to-post-office",
-        "expected_text": "Cho tôi đến Bưu điện Thành phố",
-        "normalized_expected_text": "cho tôi đến bưu điện thành phố",
+        "target_id": "city-danang-eat-near-bach-dang-street",
+        "expected_text": "Ăn gần Đường Bạch Đằng",
+        "normalized_expected_text": "ăn gần đường bạch đằng",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-city-library-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:03c53630d59506c1"
+        "created_at": "source-hash:b066d011ba0b8888"
       }
     ]
   },

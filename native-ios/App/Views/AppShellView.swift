@@ -7,9 +7,17 @@ struct AppShellView: View {
     @StateObject private var intentStore = LocalUserIntentStore()
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
+    private let launchPracticeMode: PracticeMode?
+    private let launchDetailScrollTarget: PhraseArticleInitialScrollTarget?
 
-    init(initialRoute: AppRoute = AppShellView.initialRoute) {
+    init(
+        initialRoute: AppRoute = AppShellView.initialRoute,
+        initialPracticeMode: PracticeMode? = AppShellView.initialPracticeMode,
+        initialDetailScrollTarget: PhraseArticleInitialScrollTarget? = AppShellView.initialDetailScrollTarget
+    ) {
         _navigation = State(initialValue: AppShellNavigationState(initialRoute: initialRoute))
+        self.launchPracticeMode = initialPracticeMode
+        self.launchDetailScrollTarget = initialDetailScrollTarget
     }
 
     var body: some View {
@@ -56,6 +64,7 @@ struct AppShellView: View {
 
                 PracticeView(
                     intentStore: intentStore,
+                    initialMode: launchPracticeMode,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
                     onOpenDetail: openDetailFromPractice,
                     onBrowseTapped: openBrowseAll
@@ -174,12 +183,32 @@ struct AppShellView: View {
     @ViewBuilder
     private func detailPageStack(width: CGFloat) -> some View {
         ForEach(Array(navigation.renderedDetailPages.enumerated()), id: \.element.id) { index, renderedPage in
-            if let detailPage = PhraseDetailPage.page(withID: renderedPage.pageID) {
-                let route = AppRoute.detailPage(renderedPage.pageID)
-                let isActive = route == navigation.currentRoute
+            let route = AppRoute.detailPage(renderedPage.pageID)
+            let isActive = route == navigation.currentRoute
 
+            if Self.shouldRenderDesignedXinChaoPage(for: renderedPage.pageID) {
+                xinChaoListingView(
+                    routePageID: renderedPage.pageID,
+                    initialScrollTarget: launchDetailScrollTarget,
+                    scrollToTopTrigger: isActive ? navigation.detailScrollToTopTrigger : 0,
+                    onBackTapped: goBack
+                )
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .accessibilityHidden(!isActive || navigation.isSearchPresented)
+                .transition(AppPageTransition.slideFromTrailing)
+                .zIndex(Double(index + 10))
+                .navigationPageMotion(
+                    route: route,
+                    currentRoute: navigation.currentRoute,
+                    backPreviewRoute: navigation.backPreviewRoute,
+                    forwardPreviewRoute: navigation.forwardPreviewRoute,
+                    drag: interactiveDrag,
+                    width: width
+                )
+            } else if let detailPage = PhraseDetailPage.page(withID: renderedPage.pageID) {
                 PhraseDetailView(
                     page: detailPage,
+                    initialScrollTarget: launchDetailScrollTarget,
                     scrollToTopTrigger: isActive ? navigation.detailScrollToTopTrigger : 0,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
@@ -269,7 +298,13 @@ struct AppShellView: View {
                 onDetailTapped: openDetail
             )
         case .detailPage(let detailPageID):
-            if let detailPage = PhraseDetailPage.page(withID: detailPageID) {
+            if Self.shouldRenderDesignedXinChaoPage(for: detailPageID) {
+                xinChaoListingView(
+                    routePageID: detailPageID,
+                    scrollToTopTrigger: 0,
+                    onBackTapped: goBack
+                )
+            } else if let detailPage = PhraseDetailPage.page(withID: detailPageID) {
                 PhraseDetailView(
                     page: detailPage,
                     scrollToTopTrigger: 0,
@@ -294,6 +329,37 @@ struct AppShellView: View {
                 onOpenDetail: openDetailFromSearch
             )
         }
+    }
+
+    @ViewBuilder
+    private func xinChaoListingView(
+        routePageID: String,
+        initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
+        scrollToTopTrigger: Int,
+        onBackTapped: @escaping () -> Void
+    ) -> some View {
+        PhraseListingView(
+            page: .xinChao,
+            initialScrollTarget: initialScrollTarget,
+            scrollToTopTrigger: scrollToTopTrigger,
+            chromeNamespace: chromeNamespace,
+            isSearchActive: navigation.isSearchPresented,
+            showsChrome: false,
+            isSaved: intentStore.isPageSaved(routePageID),
+            isInPractice: intentStore.isPageInPractice(routePageID),
+            onBackTapped: onBackTapped,
+            onSearchTapped: openSearch,
+            onToggleSaved: { intentStore.toggleSavedPage(routePageID) },
+            onTogglePractice: { intentStore.togglePracticePage(routePageID) },
+            onDetailTapped: openDetail
+        )
+    }
+
+    static func shouldRenderDesignedXinChaoPage(for pageID: String) -> Bool {
+        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
+        let canonicalXinChaoID = PhraseCatalog.canonicalPageID(forOpenablePageID: PhrasePage.xinChao.id) ?? PhrasePage.xinChao.id
+
+        return pageID == PhrasePage.xinChao.id || canonicalPageID == canonicalXinChaoID
     }
 
     private var isPreviewingForwardPage: Bool {
@@ -638,11 +704,47 @@ struct AppShellView: View {
     }
 
     private static func shortcutRoute(for arguments: [String]) -> AppRoute {
-        if arguments.contains("--practice") {
+        if arguments.contains("--practice") || initialPracticeMode(for: arguments) != nil {
             return .practice
         }
 
         return arguments.contains("--search") ? .search : .home
+    }
+
+    static func initialPracticeMode(for arguments: [String]) -> PracticeMode? {
+        guard
+            let flagIndex = arguments.firstIndex(of: "--practice-mode"),
+            arguments.indices.contains(arguments.index(after: flagIndex))
+        else {
+            return nil
+        }
+
+        let rawMode = arguments[arguments.index(after: flagIndex)]
+        guard let mode = PracticeMode(rawValue: rawMode), mode.isCityMode else {
+            return nil
+        }
+
+        return mode
+    }
+
+    private static var initialPracticeMode: PracticeMode? {
+        initialPracticeMode(for: ProcessInfo.processInfo.arguments)
+    }
+
+    static func initialDetailScrollTarget(for arguments: [String]) -> PhraseArticleInitialScrollTarget? {
+        guard
+            let flagIndex = arguments.firstIndex(of: "--detail-scroll"),
+            arguments.indices.contains(arguments.index(after: flagIndex))
+        else {
+            return nil
+        }
+
+        let rawTarget = arguments[arguments.index(after: flagIndex)]
+        return PhraseArticleInitialScrollTarget(rawValue: rawTarget)
+    }
+
+    private static var initialDetailScrollTarget: PhraseArticleInitialScrollTarget? {
+        initialDetailScrollTarget(for: ProcessInfo.processInfo.arguments)
     }
 
     private static var initialRoute: AppRoute {

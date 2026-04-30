@@ -96,6 +96,20 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(chrome.searchPresentation, .expandedField)
     }
 
+    func testPlaybackSpeedPreferenceMapsToGlobalRates() {
+        XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.5x"), 0.5, accuracy: 0.001)
+        XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.75x"), 0.75, accuracy: 0.001)
+        XCTAssertEqual(AudioPlaybackPreference.rate(for: "1.0x"), 1.0, accuracy: 0.001)
+        XCTAssertEqual(AudioPlaybackPreference.rate(for: "stale-value"), 1.0, accuracy: 0.001)
+        XCTAssertEqual(AudioPlaybackPreference.normalizedSpeed("stale-value"), AudioPlaybackPreference.defaultSpeed)
+    }
+
+    func testSQLiteCanonicalXinChaoRouteUsesDesignedRootArticle() {
+        XCTAssertTrue(AppShellView.shouldRenderDesignedXinChaoPage(for: PhrasePage.xinChao.id))
+        XCTAssertTrue(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-polite-1"))
+        XCTAssertFalse(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-hello-chao-anh"))
+    }
+
     func testSearchLaunchArgumentOpensSearchPage() {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--search"]),
@@ -107,6 +121,24 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--practice"]),
             .practice
+        )
+    }
+
+    func testPracticeModeLaunchArgumentOpensRequestedCityPath() {
+        let arguments = ["SpeakLocalNative", "--practice-mode", PracticeMode.hueCity.rawValue]
+
+        XCTAssertEqual(AppShellView.initialRoute(for: arguments), .practice)
+        XCTAssertEqual(AppShellView.initialPracticeMode(for: arguments), .hueCity)
+    }
+
+    func testDetailScrollLaunchArgumentParsesArticleTarget() {
+        XCTAssertEqual(
+            AppShellView.initialDetailScrollTarget(for: ["SpeakLocalNative", "--detail-scroll", "catalog-explore"]),
+            .catalogExplore
+        )
+        XCTAssertEqual(
+            AppShellView.initialDetailScrollTarget(for: ["SpeakLocalNative", "--detail-scroll", "first-breakdown"]),
+            .firstBreakdown
         )
     }
 
