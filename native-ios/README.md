@@ -36,6 +36,21 @@ Build from this folder:
 xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build
 ```
 
+For local physical-device testing, keep personal signing out of repo files. Pass the developer team only as a local command-line override:
+
+```sh
+xcodebuild -project SpeakLocalNative.xcodeproj \
+  -scheme SpeakLocalNative \
+  -destination 'id=<DEVICE_ID>' \
+  -configuration Debug \
+  -allowProvisioningUpdates \
+  DEVELOPMENT_TEAM=<LOCAL_TEAM_ID> \
+  CODE_SIGN_STYLE=Automatic \
+  build
+```
+
+Do not add `DEVELOPMENT_TEAM`, provisioning profile IDs, certificate fingerprints, or phone-specific signing details to `project.yml` or the generated `.xcodeproj`.
+
 Run tests from this folder:
 
 ```sh

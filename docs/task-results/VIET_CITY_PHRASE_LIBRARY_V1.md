@@ -43,7 +43,7 @@ Commit: reported in the closing thread after commit creation.
   - `viet-authored-listing-pages.json`
   - `viet-authored-audio-audit.json`
 - The app runtime is SQLite-first/SQLite-only for the Viet phrase graph. The JSON files remain repo-local generator intermediates for building the SQLite pack and audits, but are excluded from the app bundle.
-- The native project is configured for automatic device signing with team `F7MH7N9445` so Xcode and `xcodebuild` can build the phone target without hand-editing the generated project.
+- Physical-device testing uses local signing from the developer's Mac or explicit command-line signing overrides. Personal Apple Team IDs must not be stored in the repo-visible generated project.
 - SQLite now includes city tables and tags for city, subcategory, place, and difficulty filtering.
 - Practice Core sample deck now includes city-guides items and a `city-first-trip` flow.
 - Missing city audio is planned and visible as unavailable. No audio files were generated.
@@ -110,7 +110,7 @@ Bundle proof:
 - Legacy JSON bundle hit count: 0.
 - Built app size: 93M. Bundled SQLite pack size: 20M.
 - Physical device detected: `Alex's iPhone 16 Pro Max` (`00008140-000955D00188801C`).
-- Physical device build succeeded with Apple development team `F7MH7N9445` and provisioning profile `iOS Team Provisioning Profile: *`.
+- Physical device build succeeded with local Apple development signing and provisioning configured on the Mac.
 - Physical device install succeeded for bundle ID `app.speaklocal.vietnam.native`.
 - Physical device launch succeeded via `xcrun devicectl device process launch`.
 

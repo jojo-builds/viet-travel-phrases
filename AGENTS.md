@@ -49,6 +49,7 @@ Rules:
 - `app/family/appRegistry.js` owns runtime/build app identity truth.
 - `app/family/*` owns shared runtime truth.
 - `native-ios/project.yml` is the reproducible XcodeGen source for the native project.
+- Do not commit personal Apple signing settings. `native-ios/project.yml` and `native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` must not contain Jojo's personal `DEVELOPMENT_TEAM`, provisioning profile IDs, certificate fingerprints, or phone-specific signing details. For local physical-device testing, pass signing values as command-line `xcodebuild` overrides or use local Xcode user state only.
 - `native-ios/Resources/viet-phrase-catalog.json`, `native-ios/Resources/viet-authored-listing-pages.json`, and `native-ios/Resources/viet-audio-manifest.json` are generated native resources; regenerate them from source instead of hand-editing them unless doing a narrow emergency inspection. Do not move them into `LanguagePacks/viet/` until loaders, generators, XcodeGen, and tests are updated together.
 - `native-ios/scripts/generate-viet-catalog.js` generates the native phrase catalog from repo content.
 - `native-ios/scripts/generate-authored-tier-one-pages.js` generates the authored Tier 1 listing-page resource and audio audit from `content-draft/viet/listing-pages/**`.
