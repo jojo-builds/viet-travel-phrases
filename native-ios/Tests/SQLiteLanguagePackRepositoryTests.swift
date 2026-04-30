@@ -136,7 +136,6 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "breakdown",
             "relationship-words",
             "situational-greetings",
-            "local-greetings",
             "common-follow-ups",
             "cultural-note",
             "explore-next",
@@ -180,7 +179,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "Chào cô",
         ]
 
-        for pageID in ["viet-phrase-polite-1", "viet-phrase-hello-chao", "viet-phrase-hello-chao-anh"] {
+        for pageID in ["viet-phrase-polite-1", "viet-phrase-hello-chao"] {
             let page = try repository.loadPhraseDetailPage(pageID: pageID)
             let section = try XCTUnwrap(page.sections.first { $0.id == "relationship-words" }, pageID)
 
@@ -191,6 +190,11 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
                 phrase.detailPageID?.hasPrefix("viet-phrase-") == true
             }, pageID)
         }
+
+        let chaoAnhPage = try repository.loadPhraseDetailPage(pageID: "viet-phrase-hello-chao-anh")
+        let chaoAnhShelf = try XCTUnwrap(chaoAnhPage.sections.first { $0.id == "relationship-words" })
+        XCTAssertFalse(chaoAnhShelf.phrases.contains { $0.vietnamese == "Chào anh" })
+        XCTAssertEqual(chaoAnhShelf.phrases.map(\.vietnamese), Array(expectedVietnamese.dropFirst()))
 
         let fromUnitedStatesPage = try repository.loadPhraseDetailPage(pageID: "viet-phrase-smalltalk-1")
         XCTAssertFalse(

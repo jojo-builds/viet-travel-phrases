@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:e315fe59d9114cd1",
-    "generatedAt": "source-hash:e315fe59d9114cd1"
+    "contentVersion": "viet-sqlite-fixture:d7e6142904c9da47",
+    "generatedAt": "source-hash:d7e6142904c9da47"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "8bfce59f93715009010aa09f3ce5c7256b3fbf363494e375a46ab6a69d7c3017"
+      "sha256": "3a691310d71ec8a1204913024aab829efe77f131e1c8ce558a75ef53d1a7e691"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "7eb9b06428ae56f84a34a9a9a52915ae6bcf706093ca79c0e9400896445d96db"
+      "sha256": "c9e69f511e09235edadda3e8f96bce1c47acec8f84e5068920335ea7b7e193eb"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -33,7 +33,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "369db24701522377ebb457cef241c07a6f1983f1a9e3737115badde6c92c3aa0",
+    "databaseSha256": "034ec51209af325a95f8aea23149d4d799205e583b503b9a6e2bea8b4bbe7e1f",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -79,10 +79,10 @@
     "pages": 938,
     "aliases": 1007,
     "pageCategories": 978,
-    "sections": 6192,
-    "sectionItems": 13255,
+    "sections": 6034,
+    "sectionItems": 11781,
     "breakdownTokens": 6077,
-    "relations": 3794,
+    "relations": 3800,
     "searchDocuments": 946,
     "audioAssets": 3756,
     "audioUsages": 4591,
@@ -143,6 +143,10 @@
     "badRelationshipWordsSectionCount": 0,
     "badQuickSayTeachingRowCount": 0,
     "badQuickSayTeachingRowSample": [],
+    "repeatedVisiblePhraseRowCount": 0,
+    "repeatedVisiblePhraseRowSample": [],
+    "repeatedVisiblePhraseTextRowCount": 0,
+    "repeatedVisiblePhraseTextRowSample": [],
     "textOnlySectionRunCount": 0,
     "textOnlySectionRunSample": [],
     "nonDeepCompletenessStatusCount": 0,
@@ -260,7 +264,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 3794,
+    "relationCount": 3800,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -276,7 +280,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 249
+        "count": 244
       },
       {
         "relationType": "same_need_alt_context",
@@ -284,7 +288,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 3507
+        "count": 3518
       }
     ]
   },

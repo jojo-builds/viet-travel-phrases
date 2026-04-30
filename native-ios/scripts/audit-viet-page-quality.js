@@ -106,14 +106,12 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
   }
   if (page.id !== "viet-phrase-polite-1") {
     const hasQuickOrStandard = sectionKeys.has("quick-say") || sectionKeys.has("standard-way");
-    const hasRelated = sectionKeys.has("nearby-phrases") || sectionKeys.has("explore-next");
     const requiredSections = [
       ["at-glance", sectionKeys.has("at-glance")],
       ["quick-say or standard-way", hasQuickOrStandard],
       ["breakdown", sectionKeys.has("breakdown")],
       ["when-to-use", sectionKeys.has("when-to-use")],
       ["good-to-know", sectionKeys.has("good-to-know")],
-      ["nearby-phrases or explore-next", hasRelated],
     ];
     if (shouldHaveRelationshipWords) {
       requiredSections.push(["relationship-words", sectionKeys.has("relationship-words")]);

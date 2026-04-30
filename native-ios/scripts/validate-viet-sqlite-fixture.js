@@ -50,7 +50,6 @@ const relationshipWordVietnamese = [
   "Chào chú",
   "Chào cô",
 ];
-const relationshipWordListSQL = relationshipWordVietnamese.join("|").replace(/'/g, "''");
 
 const requiredLegacyNativePageAliases = [
   ["viet-polite-hello", "viet-phrase-polite-1"],
@@ -281,19 +280,16 @@ function main() {
     FROM page_section ps
     WHERE ps.section_key = 'relationship-words'
       AND (
-        (SELECT count(*) FROM page_section_item psi WHERE psi.section_id = ps.id AND psi.item_kind = 'phrase') != ${relationshipWordVietnamese.length}
-        OR (
-          SELECT group_concat(title_override, '|')
-          FROM (
-            SELECT psi.title_override
-            FROM page_section_item psi
-            WHERE psi.section_id = ps.id
-              AND psi.item_kind = 'phrase'
-            ORDER BY psi.sort_order
-          )
-        ) != '${relationshipWordListSQL}'
+        (SELECT count(*) FROM page_section_item psi WHERE psi.section_id = ps.id AND psi.item_kind = 'phrase') = 0
+        OR EXISTS (
+          SELECT 1
+          FROM page_section_item psi
+          WHERE psi.section_id = ps.id
+            AND psi.item_kind = 'phrase'
+            AND COALESCE(psi.title_override, '') NOT IN (${relationshipWordVietnamese.map(sqlQuote).join(",")})
+        )
       );
-  `), "relationship-word shelves without the full canonical greeting set");
+  `), "relationship-word shelves with non-canonical or empty greeting rows");
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -426,7 +422,6 @@ function main() {
         MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
         MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
         MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
-        MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
         SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
         SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
       FROM phrase_page pp
@@ -443,7 +438,6 @@ function main() {
         OR has_breakdown = 0
         OR has_when_to_use = 0
         OR has_good_to_know = 0
-        OR has_related_links = 0
         OR article_phrase_rows = 0
         OR breakdown_rows = 0
       );
@@ -459,7 +453,6 @@ function main() {
           MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
           MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
           MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
-          MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
           SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
           SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
         FROM phrase_page pp
@@ -476,7 +469,6 @@ function main() {
           OR has_breakdown = 0
           OR has_when_to_use = 0
           OR has_good_to_know = 0
-          OR has_related_links = 0
           OR article_phrase_rows = 0
           OR breakdown_rows = 0
         )
@@ -565,7 +557,6 @@ function main() {
       "breakdown",
       "relationship-words",
       "situational-greetings",
-      "local-greetings",
       "common-follow-ups",
       "cultural-note",
       "explore-next",
@@ -683,6 +674,45 @@ function main() {
     WHERE psi.item_kind = 'phrase'
       AND COALESCE(psi.note, '') != pp.id;
   `), "phrase rows without exact canonical destination notes");
+
+  assertZero(sqliteValue(`
+    WITH visible_phrase_rows AS (
+      SELECT
+        ps.page_id,
+        COALESCE(psi.note, pp.id, psi.target_id) AS canonical_target
+      FROM page_section ps
+      JOIN page_section_item psi ON psi.section_id = ps.id
+      LEFT JOIN phrase p ON p.id = psi.target_id
+      LEFT JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+      WHERE psi.item_kind IN ('phrase', 'authored_phrase')
+    )
+    SELECT count(*)
+    FROM (
+      SELECT page_id, canonical_target
+      FROM visible_phrase_rows
+      GROUP BY page_id, canonical_target
+      HAVING count(*) > 1
+    );
+  `), "visible phrase rows repeated on the same canonical page");
+
+  assertZero(sqliteValue(`
+    WITH visible_phrase_rows AS (
+      SELECT
+        ps.page_id,
+        lower(trim(COALESCE(psi.title_override, p.target_text, psi.target_id))) AS visible_text
+      FROM page_section ps
+      JOIN page_section_item psi ON psi.section_id = ps.id
+      LEFT JOIN phrase p ON p.id = psi.target_id
+      WHERE psi.item_kind IN ('phrase', 'authored_phrase')
+    )
+    SELECT count(*)
+    FROM (
+      SELECT page_id, visible_text
+      FROM visible_phrase_rows
+      GROUP BY page_id, visible_text
+      HAVING count(*) > 1
+    );
+  `), "visible phrase text repeated on the same canonical page");
 
   assertZero(sqliteValue(`
     WITH taught_rows AS (

@@ -1361,7 +1361,7 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       {
         id: "quick-say",
         title: "Quick say",
-        body: "Use Xin chào when you want one safe greeting. Use Chào when the moment is relaxed and the person already feels familiar.",
+        body: "Use Xin chào when you want one safe greeting. Use Chào in relaxed moments, especially with someone you already know or when you add a relationship word.",
         phrases: [
           phraseOption(primaryPhrase, null, "red"),
           manualPhraseOption("xin-chao-casual-chao", "Chào", "Hi / hello (casual)", "chow", "orange"),

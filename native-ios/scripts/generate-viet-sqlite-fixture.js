@@ -401,6 +401,30 @@ function main() {
   const usedSectionIDs = new Set();
   const pageCategoryKeys = new Set();
   const relationKeys = new Set();
+  const pagePhraseTargetKeys = new Map();
+
+  function phraseTargetKey(pageID, targetID, note = null) {
+    if (note) return note;
+    if (targetID && phraseByID.has(targetID)) return canonicalPageIDForPhrase(targetID) ?? targetID;
+    return targetID ? `${pageID}:${targetID}` : null;
+  }
+
+  function hasPagePhraseTarget(pageID, targetID, note = null) {
+    const key = phraseTargetKey(pageID, targetID, note);
+    return key ? (pagePhraseTargetKeys.get(pageID)?.has(key) ?? false) : false;
+  }
+
+  function claimPagePhraseTarget(pageID, targetID, note = null) {
+    const key = phraseTargetKey(pageID, targetID, note);
+    if (!key) return true;
+    if (!pagePhraseTargetKeys.has(pageID)) {
+      pagePhraseTargetKeys.set(pageID, new Set());
+    }
+    const pageKeys = pagePhraseTargetKeys.get(pageID);
+    if (pageKeys.has(key)) return false;
+    pageKeys.add(key);
+    return true;
+  }
 
   function addPageCategory(pageID, categoryID, sortOrder, sourcePath) {
     if (!pageID || !categoryID) return;
@@ -485,18 +509,21 @@ function main() {
     return `Say "${english}" with ${target}, then use the notes below to adjust tone and next steps.`;
   }
 
-  function scenarioNeighborPhrases(phrase) {
+  function scenarioNeighborPhrases(phrase, limit = 3) {
     const family = familyByID.get(phrase.familyID);
     const familyPhraseIDs = (family?.phraseIDs ?? []).filter((phraseID) => phraseID !== phrase.id);
     const scenarioFamilies = catalog.families.filter((candidate) => candidate.scenarioID === phrase.scenarioID);
     const familyIndex = scenarioFamilies.findIndex((candidate) => candidate.id === phrase.familyID);
-    const neighborFamilyPhraseIDs = [
-      scenarioFamilies[familyIndex - 1]?.primaryPhraseID,
-      scenarioFamilies[familyIndex + 1]?.primaryPhraseID,
-      scenarioFamilies[familyIndex + 2]?.primaryPhraseID,
-    ].filter(Boolean);
+    const neighborFamilyPhraseIDs = [];
+    for (let offset = 1; offset <= Math.max(limit + 2, 5); offset += 1) {
+      neighborFamilyPhraseIDs.push(
+        scenarioFamilies[familyIndex + offset]?.primaryPhraseID,
+        scenarioFamilies[familyIndex - offset]?.primaryPhraseID
+      );
+    }
     const seen = new Set();
     return [...familyPhraseIDs, ...neighborFamilyPhraseIDs]
+      .filter(Boolean)
       .filter((phraseID) => {
         const targetPhrase = phraseByID.get(phraseID);
         const canonicalPageID = canonicalPageIDForPhrase(phraseID);
@@ -505,7 +532,7 @@ function main() {
         seen.add(canonicalPageID);
         return true;
       })
-      .slice(0, 3)
+      .slice(0, limit)
       .map((phraseID) => phraseByID.get(phraseID));
   }
 
@@ -957,6 +984,10 @@ function main() {
   }
 
   function addPhraseSectionItem({ sectionID, phrase, itemKind = "phrase", sortOrder, note = null }) {
+    const pageID = sectionID.slice(0, sectionID.lastIndexOf(":"));
+    if (itemKind === "phrase" && !claimPagePhraseTarget(pageID, phrase.id, note)) {
+      return false;
+    }
     sectionItemRows.push({
       id: `${sectionID}:${itemKind}:${sortOrder}:${stableID([phrase.id, phrase.targetText, phrase.englishText, note])}`,
       section_id: sectionID,
@@ -967,9 +998,15 @@ function main() {
       note,
       sort_order: sortOrder,
     });
+    return true;
   }
 
   function addRelationshipWordsSection({ pageID, sortOrder, sourcePath }) {
+    const newRelationshipPhrases = relationshipWordPhrases.filter((phrase) => (
+      !hasPagePhraseTarget(pageID, phrase.id, canonicalPageIDForPhrase(phrase.id))
+    ));
+    if (newRelationshipPhrases.length === 0) return false;
+
     const sectionID = addSection({
       pageID,
       sectionKey: relationshipWordSectionKey,
@@ -980,7 +1017,7 @@ function main() {
       sourcePath,
     });
 
-    relationshipWordPhrases.forEach((phrase, index) => {
+    newRelationshipPhrases.forEach((phrase, index) => {
       addPhraseSectionItem({
         sectionID,
         phrase,
@@ -988,6 +1025,7 @@ function main() {
         note: canonicalPageIDForPhrase(phrase.id),
       });
     });
+    return true;
   }
 
   function addPageRelation({ sourcePhraseID, targetPhraseID, relationType, reason, displayLabel, sortOrder, sourcePath }) {
@@ -1017,14 +1055,27 @@ function main() {
     if (!canonicalPageID) continue;
     const authoredSourcePath = relative(authoredPagesPath);
     const relationshipWordsSortOrder = 3;
+    const phrase = phraseByID.get(page.phraseID);
 
     for (const [index, categoryID] of (page.categoryIDs ?? []).entries()) {
       addPageCategory(canonicalPageID, categoryID, index, authoredSourcePath);
     }
 
     const seenAuthoredDestinations = new Set();
+    let relationshipWordsInserted = false;
+    const maybeAddRelationshipWordsSection = () => {
+      if (relationshipWordsInserted || !shouldShowRelationshipWordsSection(phrase, page)) return;
+      relationshipWordsInserted = addRelationshipWordsSection({
+        pageID: canonicalPageID,
+        sortOrder: relationshipWordsSortOrder,
+        sourcePath: authoredSourcePath,
+      }) === true;
+    };
 
     for (const [sectionIndex, section] of (page.sections ?? []).entries()) {
+      if (sectionIndex >= relationshipWordsSortOrder) {
+        maybeAddRelationshipWordsSection();
+      }
       const sectionID = `${canonicalPageID}:${section.id}`;
       const sortOrder = sectionIndex >= relationshipWordsSortOrder ? sectionIndex + 1 : sectionIndex;
       usedSectionIDs.add(sectionID);
@@ -1044,7 +1095,10 @@ function main() {
         const resolvedPhraseID = resolvedCatalogPhraseIDForAuthoredPhrase(phrase);
         const targetID = resolvedPhraseID ?? `authored:${phrase.id}`;
         const destinationPageID = resolvedPhraseID ? canonicalPageIDForPhrase(resolvedPhraseID) : (phrase.detailPageID ?? null);
-        if (section.id === "explore-next" && destinationPageID && seenAuthoredDestinations.has(destinationPageID)) {
+        if (
+          (section.id === "explore-next" && destinationPageID && seenAuthoredDestinations.has(destinationPageID))
+          || !claimPagePhraseTarget(canonicalPageID, targetID, destinationPageID)
+        ) {
           continue;
         }
         sectionItemRows.push({
@@ -1098,14 +1152,7 @@ function main() {
       }
     }
 
-    const phrase = phraseByID.get(page.phraseID);
-    if (shouldShowRelationshipWordsSection(phrase, page)) {
-      addRelationshipWordsSection({
-        pageID: canonicalPageID,
-        sortOrder: relationshipWordsSortOrder,
-        sourcePath: authoredSourcePath,
-      });
-    }
+    maybeAddRelationshipWordsSection();
   }
 
   for (const pageRow of pageRows) {
@@ -1161,8 +1208,9 @@ function main() {
       });
     }
 
-    const nearbyPhrases = scenarioNeighborPhrases(phrase);
-    const teachingPhrases = nearbyPhrases.length > 0 ? nearbyPhrases.slice(0, 3) : [phrase];
+    const relatedPhrases = scenarioNeighborPhrases(phrase, 6);
+    const teachingPhrases = relatedPhrases.length > 0 ? relatedPhrases.slice(0, 1) : [];
+    const nearbyPhrases = relatedPhrases.slice(teachingPhrases.length, teachingPhrases.length + 3);
     const whenToUseSectionID = addSection({
       pageID: pageRow.id,
       sectionKey: "when-to-use",
@@ -1215,12 +1263,13 @@ function main() {
       sourcePath: relative(catalogPath),
     });
     nearbyPhrases.forEach((nearbyPhrase, index) => {
-      addPhraseSectionItem({
+      const added = addPhraseSectionItem({
         sectionID: nearbySectionID,
         phrase: nearbyPhrase,
         sortOrder: index,
         note: canonicalPageIDForPhrase(nearbyPhrase.id),
       });
+      if (!added) return;
       addPageRelation({
         sourcePhraseID: phrase.id,
         targetPhraseID: nearbyPhrase.id,
@@ -1425,6 +1474,12 @@ function main() {
     };
   });
 
+  const sectionIDsWithItems = new Set(sectionItemRows.map((item) => item.section_id));
+  const renderedSectionRows = sectionRows.filter((section) => (
+    sectionIDsWithItems.has(section.id)
+    || !["phrase-list", "relationship-shelf"].includes(section.presentation)
+  ));
+
   const tableInserts = [
     insertRows("language_pack", ["id", "app_id", "language_code", "display_name", "content_version", "generated_at"], [{
       id: languagePackID,
@@ -1478,7 +1533,7 @@ function main() {
       relevance: "primary",
     }))),
     insertRows("page_category", ["page_id", "category_id", "sort_order", "source_path"], pageCategoryRows),
-    insertRows("page_section", ["id", "page_id", "section_key", "title", "body", "presentation", "sort_order", "source_path"], sectionRows),
+    insertRows("page_section", ["id", "page_id", "section_key", "title", "body", "presentation", "sort_order", "source_path"], renderedSectionRows),
     insertRows("breakdown_token", ["id", "phrase_id", "token_text", "normalized_token_text", "english_gloss", "sort_order"], breakdownRows),
     insertRows("page_section_item", ["id", "section_id", "item_kind", "target_id", "title_override", "subtitle_override", "note", "sort_order"], sectionItemRows),
     insertRows("phrase_relation", ["id", "language_pack_id", "source_kind", "source_id", "target_kind", "target_id", "relation_type", "reason", "display_label", "sort_order", "source_path"], sortByID(relationRows)),
@@ -1576,10 +1631,6 @@ function main() {
   const relationshipWordsEligiblePageIDSQL = relationshipWordsEligiblePageIDs.length > 0
     ? relationshipWordsEligiblePageIDs.map((id) => `'${id.replace(/'/g, "''")}'`).join(",")
     : "'__none__'";
-  const relationshipWordListSQL = relationshipWordPhrases
-    .map((phrase) => phrase.targetText)
-    .join("|")
-    .replace(/'/g, "''");
   const missingRelationshipWordsSectionCount = Number(sqliteQuery(`
     SELECT count(*)
     FROM phrase_page pp
@@ -1624,17 +1675,14 @@ function main() {
     FROM page_section ps
     WHERE ps.section_key = '${relationshipWordSectionKey}'
       AND (
-        (SELECT count(*) FROM page_section_item psi WHERE psi.section_id = ps.id AND psi.item_kind = 'phrase') != ${relationshipWordPhrases.length}
-        OR (
-          SELECT group_concat(title_override, '|')
-          FROM (
-            SELECT psi.title_override
-            FROM page_section_item psi
-            WHERE psi.section_id = ps.id
-              AND psi.item_kind = 'phrase'
-            ORDER BY psi.sort_order
-          )
-        ) != '${relationshipWordListSQL}'
+        (SELECT count(*) FROM page_section_item psi WHERE psi.section_id = ps.id AND psi.item_kind = 'phrase') = 0
+        OR EXISTS (
+          SELECT 1
+          FROM page_section_item psi
+          WHERE psi.section_id = ps.id
+            AND psi.item_kind = 'phrase'
+            AND COALESCE(psi.title_override, '') NOT IN (${relationshipWordPhrases.map((phrase) => `'${phrase.targetText.replace(/'/g, "''")}'`).join(",")})
+        )
       );
   `));
   const badQuickSayTeachingRows = sqliteQuery(`
@@ -1687,6 +1735,41 @@ function main() {
     HAVING count(*) >= 3
     ORDER BY page_id;
   `).split("\n").filter(Boolean);
+  const repeatedVisiblePhraseRows = sqliteQuery(`
+    WITH visible_phrase_rows AS (
+      SELECT
+        ps.page_id,
+        COALESCE(psi.note, pp.id, psi.target_id) AS canonical_target,
+        ps.section_key
+      FROM page_section ps
+      JOIN page_section_item psi ON psi.section_id = ps.id
+      LEFT JOIN phrase p ON p.id = psi.target_id
+      LEFT JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+      WHERE psi.item_kind IN ('phrase', 'authored_phrase')
+    )
+    SELECT page_id || ': ' || canonical_target || ' in ' || group_concat(section_key, ' | ')
+    FROM visible_phrase_rows
+    GROUP BY page_id, canonical_target
+    HAVING count(*) > 1
+    ORDER BY page_id, canonical_target;
+  `).split("\n").filter(Boolean);
+  const repeatedVisiblePhraseTextRows = sqliteQuery(`
+    WITH visible_phrase_rows AS (
+      SELECT
+        ps.page_id,
+        lower(trim(COALESCE(psi.title_override, p.target_text, psi.target_id))) AS visible_text,
+        ps.section_key
+      FROM page_section ps
+      JOIN page_section_item psi ON psi.section_id = ps.id
+      LEFT JOIN phrase p ON p.id = psi.target_id
+      WHERE psi.item_kind IN ('phrase', 'authored_phrase')
+    )
+    SELECT page_id || ': ' || visible_text || ' in ' || group_concat(section_key, ' | ')
+    FROM visible_phrase_rows
+    GROUP BY page_id, visible_text
+    HAVING count(*) > 1
+    ORDER BY page_id, visible_text;
+  `).split("\n").filter(Boolean);
   const nonDeepCompletenessStatusRows = sqliteQuery(`
     SELECT id || ': ' || completeness_status
     FROM phrase_page
@@ -1703,7 +1786,6 @@ function main() {
         MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
         MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
         MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
-        MAX(CASE WHEN ps.section_key IN ('nearby-phrases', 'explore-next') THEN 1 ELSE 0 END) AS has_related_links,
         SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
         SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
       FROM phrase_page pp
@@ -1720,7 +1802,6 @@ function main() {
         OR has_breakdown = 0
         OR has_when_to_use = 0
         OR has_good_to_know = 0
-        OR has_related_links = 0
         OR article_phrase_rows = 0
         OR breakdown_rows = 0
       )
@@ -1841,7 +1922,7 @@ function main() {
     scanBannedUserFacing("phrase_page.english_title", row.id, row.english_title);
     scanBannedUserFacing("phrase_page.summary", row.id, row.summary);
   }
-  for (const row of sectionRows) {
+  for (const row of renderedSectionRows) {
     scanBannedUserFacing("page_section.title", row.id, row.title);
     scanBannedUserFacing("page_section.body", row.id, row.body);
     scanBannedUserFacing("page_section.presentation", row.id, row.presentation);
@@ -1914,6 +1995,10 @@ function main() {
       badRelationshipWordsSectionCount,
       badQuickSayTeachingRowCount: badQuickSayTeachingRows.length,
       badQuickSayTeachingRowSample: badQuickSayTeachingRows.slice(0, 20),
+      repeatedVisiblePhraseRowCount: repeatedVisiblePhraseRows.length,
+      repeatedVisiblePhraseRowSample: repeatedVisiblePhraseRows.slice(0, 20),
+      repeatedVisiblePhraseTextRowCount: repeatedVisiblePhraseTextRows.length,
+      repeatedVisiblePhraseTextRowSample: repeatedVisiblePhraseTextRows.slice(0, 20),
       textOnlySectionRunCount: textOnlySectionRunRows.length,
       textOnlySectionRunSample: textOnlySectionRunRows.slice(0, 20),
       nonDeepCompletenessStatusCount: nonDeepCompletenessStatusRows.length,
