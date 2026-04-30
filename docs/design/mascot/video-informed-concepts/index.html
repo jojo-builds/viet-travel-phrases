@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SpeakLocal Video-Informed Mascot Concepts</title>
+    <style>
+      :root {
+        --ink: #14231c;
+        --muted: #65736c;
+        --paper: #fbfaf6;
+        --line: rgba(20, 35, 28, 0.12);
+        --jade: #2f8a72;
+        --red: #ff333d;
+        --cream: #fffdf8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 42px 22px 70px;
+      }
+
+      h1 {
+        max-width: 980px;
+        margin: 0;
+        font-size: clamp(42px, 7vw, 86px);
+        line-height: 0.95;
+        font-weight: 780;
+      }
+
+      .lead {
+        max-width: 820px;
+        margin: 20px 0 0;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.48;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin: 34px 0 42px;
+      }
+
+      .note {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: white;
+        padding: 18px;
+        box-shadow: 0 16px 42px rgba(20, 35, 28, 0.07);
+      }
+
+      .note strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .note p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.42;
+      }
+
+      .section-title {
+        margin: 46px 0 16px;
+        font-size: 28px;
+      }
+
+      .feature {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+        gap: 18px;
+        align-items: stretch;
+        margin-bottom: 18px;
+      }
+
+      figure {
+        margin: 0;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: white;
+        overflow: hidden;
+        box-shadow: 0 14px 44px rgba(20, 35, 28, 0.08);
+      }
+
+      figure img {
+        display: block;
+        width: 100%;
+        background: #f6f5ef;
+        object-fit: contain;
+      }
+
+      .hero-img {
+        aspect-ratio: 16 / 10;
+      }
+
+      .phone-img {
+        max-height: 780px;
+        aspect-ratio: 853 / 1844;
+      }
+
+      .square-img {
+        aspect-ratio: 1 / 1;
+      }
+
+      figcaption {
+        min-height: 96px;
+        padding: 16px;
+      }
+
+      figcaption strong {
+        display: block;
+        font-size: 17px;
+      }
+
+      figcaption span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.36;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .animals {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .copy {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--cream);
+        padding: 22px;
+      }
+
+      .copy h2 {
+        margin: 0 0 12px;
+        font-size: 24px;
+      }
+
+      .copy p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        line-height: 1.48;
+      }
+
+      a {
+        color: var(--red);
+      }
+
+      @media (max-width: 980px) {
+        .summary,
+        .feature,
+        .grid,
+        .animals {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Video-Informed Mascot Concepts</h1>
+      <p class="lead">A second-pass mascot board after transcribing the four referenced videos. The direction shifts from static mascot art toward a small emotional feedback system for Practice: softer chameleon, clear motion states, careful empty/completion moments, and alternate species only as comparison.</p>
+
+      <section class="summary" aria-label="Design takeaways">
+        <article class="note">
+          <strong>Keep</strong>
+          <p>Soft chameleon, color-change progress metaphor, tiny route details, app-like Practice integration.</p>
+        </article>
+        <article class="note">
+          <strong>Change</strong>
+          <p>Make the mascot less reptile-realistic and more plush, with reusable emotion states before animation.</p>
+        </article>
+        <article class="note">
+          <strong>Avoid</strong>
+          <p>Costumes, XP/streak pressure, big reward panels, bottom-chrome mascot placement, sensitive-context mascots.</p>
+        </article>
+      </section>
+
+      <section class="feature">
+        <figure>
+          <img class="hero-img" src="assets/chameleon-vietnam-progression-lineup.png" alt="Soft chameleon progression lineup" />
+          <figcaption><strong>Recommended core progression</strong><span>Keep the chameleon. Progress should show as local color/material attunement, not costume or game reward.</span></figcaption>
+        </figure>
+        <article class="copy">
+          <h2>The Big Shift</h2>
+          <p>The videos argue that mascots work when they become a recognizable emotional layer, not when they are decorative. For SpeakLocal, that means the chameleon should react quietly to practice moments and make empty/completion states memorable.</p>
+          <p>The mascot should be motion-ready: same canvas, same scale, stable silhouette, and a small state set that can later become SwiftUI animations.</p>
+        </article>
+      </section>
+
+      <h2 class="section-title">Chameleon System</h2>
+      <section class="grid" aria-label="Chameleon direction">
+        <figure>
+          <img class="square-img" src="assets/soft-chameleon-base.png" alt="Soft plush chameleon base mascot" />
+          <figcaption><strong>Soft base mascot</strong><span>Less scary than a lizard, still clearly a chameleon through tail and color-change patches.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="hero-img" src="assets/chameleon-emotion-motion-sheet.png" alt="Chameleon emotion and motion state sheet" />
+          <figcaption><strong>Emotion/motion sheet</strong><span>Idle, listening, correct, gentle correction, route update, and rest states before animation work.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="hero-img" src="assets/alternate-species-comparison.png" alt="Alternate mascot species comparison board" />
+          <figcaption><strong>Species comparison</strong><span>Alternates are useful for taste, but the chameleon remains the best product metaphor.</span></figcaption>
+        </figure>
+      </section>
+
+      <h2 class="section-title">Native App Use</h2>
+      <section class="grid" aria-label="Native app screen comps">
+        <figure>
+          <img class="phone-img" src="assets/screen-empty-practice-guide.png" alt="SpeakLocal empty Practice guide screen comp" />
+          <figcaption><strong>Empty Practice state</strong><span>Best new use case: mascot gives warmth and a next action when there is nothing to practice yet.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="phone-img" src="assets/screen-practice-hub-progression.png" alt="SpeakLocal Practice hub progression screen comp" />
+          <figcaption><strong>Practice hub route card</strong><span>Small supportive companion beside source-linked practice progress, not a game map.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="phone-img" src="assets/screen-route-updated.png" alt="SpeakLocal route updated completion screen comp" />
+          <figcaption><strong>Route updated</strong><span>Completion should feel private and useful: route improved, source pages available, no XP or trophy energy.</span></figcaption>
+        </figure>
+      </section>
+
+      <h2 class="section-title">Animal Alternatives</h2>
+      <section class="grid animals" aria-label="Alternate animals">
+        <figure>
+          <img class="square-img" src="assets/alternate-house-gecko.png" alt="Soft house gecko mascot alternative" />
+          <figcaption><strong>House gecko</strong><span>Best backup if lizard fear remains high. Friendly, nimble, but weaker color-change metaphor.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="square-img" src="assets/alternate-pangolin.png" alt="Soft pangolin mascot alternative" />
+          <figcaption><strong>Pangolin</strong><span>Gentle and distinctive. Harder to animate expressively and less directly tied to language progress.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="square-img" src="assets/alternate-water-buffalo.png" alt="Young water buffalo mascot alternative" />
+          <figcaption><strong>Water buffalo</strong><span>Culturally warm and steady, but too heavy for tiny Practice micro-reactions.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="square-img" src="assets/alternate-douc-monkey.png" alt="Small douc-inspired monkey mascot alternative" />
+          <figcaption><strong>Douc-inspired monkey</strong><span>Expressive and lively, but higher risk of making the app feel childish or too animated.</span></figcaption>
+        </figure>
+      </section>
+
+      <p class="lead">Read the full notes in <a href="README.md">README.md</a>. Full local working transcripts are under <code>tmp/mascot-youtube-research/transcripts/full/</code>.</p>
+    </main>
+  </body>
+</html>
