@@ -59,7 +59,7 @@ final class AppChromeTests: XCTestCase {
     func testPhrasePageChromeUsesSeparateSearchIsland() {
         let chrome = AppChrome(route: .phrasePage)
 
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved])
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
         XCTAssertEqual(chrome.selectedDockItem, .browse)
         XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
@@ -67,7 +67,7 @@ final class AppChromeTests: XCTestCase {
     func testHomeChromeUsesHomeSelectedDockWithSearchIsland() {
         let chrome = AppChrome(route: .home)
 
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved])
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
         XCTAssertEqual(chrome.selectedDockItem, .home)
         XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
@@ -75,8 +75,16 @@ final class AppChromeTests: XCTestCase {
     func testSavedChromeUsesSavedSelectedDockWithSearchIsland() {
         let chrome = AppChrome(route: .saved)
 
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved])
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
         XCTAssertEqual(chrome.selectedDockItem, .saved)
+        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
+    }
+
+    func testPracticeChromeUsesPracticeSelectedDockWithSearchIsland() {
+        let chrome = AppChrome(route: .practice)
+
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
+        XCTAssertEqual(chrome.selectedDockItem, .practice)
         XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
 
@@ -92,6 +100,13 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--search"]),
             .search
+        )
+    }
+
+    func testPracticeLaunchArgumentOpensPracticePage() {
+        XCTAssertEqual(
+            AppShellView.initialRoute(for: ["SpeakLocalNative", "--practice"]),
+            .practice
         )
     }
 
@@ -157,7 +172,7 @@ final class AppChromeTests: XCTestCase {
     func testDetailPageChromeMatchesPhrasePageChrome() {
         let chrome = AppChrome(route: .detailPage("viet-local-greetings"))
 
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved])
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
         XCTAssertEqual(chrome.selectedDockItem, .browse)
         XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
@@ -228,6 +243,21 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(navigation.currentRoute, .home)
         XCTAssertEqual(navigation.forwardStack, [.saved])
+    }
+
+    func testOpeningPracticeRouteCanReturnHome() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openPractice()
+
+        XCTAssertEqual(navigation.currentRoute, .practice)
+        XCTAssertTrue(navigation.detailPath.isEmpty)
+        XCTAssertEqual(navigation.practiceScrollToTopTrigger, 1)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.practice])
     }
 
     func testOpeningHomeFromSearchClearsHistoryToHome() {
@@ -563,5 +593,14 @@ final class LocalUserIntentStoreTests: XCTestCase {
         XCTAssertEqual(restoredStore.savedPageIDs, ["viet-phrase-problems-2"])
         XCTAssertEqual(restoredStore.practicePageIDs, ["viet-phrase-problems-2"])
         XCTAssertTrue(restoredStore.hasReturningUserState)
+    }
+
+    func testSavedPagesDoNotAutomaticallyEnterPracticePool() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.toggleSavedPage("viet-family-repair-understand")
+
+        XCTAssertEqual(store.savedPageIDs, ["viet-phrase-problems-2"])
+        XCTAssertTrue(store.practicePageIDs.isEmpty)
     }
 }

@@ -5,6 +5,7 @@ enum AppRoute: Equatable {
     case home
     case phrasePage
     case saved
+    case practice
     case detailPage(String)
     case search
 }
@@ -13,6 +14,7 @@ enum DockItemKind: Equatable, Hashable {
     case home
     case browse
     case saved
+    case practice
 
     var symbolName: String {
         switch self {
@@ -22,6 +24,8 @@ enum DockItemKind: Equatable, Hashable {
             return "square.grid.2x2"
         case .saved:
             return "heart"
+        case .practice:
+            return "text.bubble.fill"
         }
     }
 
@@ -33,6 +37,8 @@ enum DockItemKind: Equatable, Hashable {
             return "Browse"
         case .saved:
             return "Saved"
+        case .practice:
+            return "Practice"
         }
     }
 }
@@ -47,8 +53,8 @@ struct AppChrome: Equatable {
 
     var primaryDockItems: [DockItemKind] {
         switch route {
-        case .home, .phrasePage, .saved, .detailPage:
-            return [.home, .browse, .saved]
+        case .home, .phrasePage, .saved, .practice, .detailPage:
+            return [.home, .browse, .saved, .practice]
         case .search:
             return [.home]
         }
@@ -62,12 +68,14 @@ struct AppChrome: Equatable {
             return .browse
         case .saved:
             return .saved
+        case .practice:
+            return .practice
         }
     }
 
     var searchPresentation: SearchPresentation {
         switch route {
-        case .home, .phrasePage, .saved, .detailPage:
+        case .home, .phrasePage, .saved, .practice, .detailPage:
             return .collapsedIsland
         case .search:
             return .expandedField
@@ -82,6 +90,7 @@ enum UserIntentSource: String, Codable, Equatable {
     case search
     case article
     case browse
+    case practice
     case launch
 }
 

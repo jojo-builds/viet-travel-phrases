@@ -54,6 +54,23 @@ struct AppShellView: View {
                     width: pageWidth
                 )
 
+                PracticeView(
+                    intentStore: intentStore,
+                    scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
+                    onOpenDetail: openDetailFromPractice,
+                    onBrowseTapped: openBrowseAll
+                )
+                .allowsHitTesting(navigation.currentRoute == .practice && !isPreviewingForwardPage)
+                .accessibilityHidden(navigation.currentRoute != .practice)
+                .navigationPageMotion(
+                    route: .practice,
+                    currentRoute: navigation.currentRoute,
+                    backPreviewRoute: navigation.backPreviewRoute,
+                    forwardPreviewRoute: navigation.forwardPreviewRoute,
+                    drag: interactiveDrag,
+                    width: pageWidth
+                )
+
                 PhraseListingView(
                     page: .xinChao,
                     scrollToTopTrigger: navigation.rootScrollToTopTrigger,
@@ -227,6 +244,13 @@ struct AppShellView: View {
                 intentStore: intentStore,
                 scrollToTopTrigger: 0,
                 onOpenDetail: openDetailFromSaved,
+                onBrowseTapped: openBrowseAll
+            )
+        case .practice:
+            PracticeView(
+                intentStore: intentStore,
+                scrollToTopTrigger: 0,
+                onOpenDetail: openDetailFromPractice,
                 onBrowseTapped: openBrowseAll
             )
         case .phrasePage:
@@ -507,6 +531,10 @@ struct AppShellView: View {
         openDetail(id, source: .home)
     }
 
+    private func openDetailFromPractice(_ id: String) {
+        openDetail(id, source: .practice)
+    }
+
     private func openDetail(_ id: String, source: UserIntentSource) {
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openDetail(id)
@@ -530,6 +558,8 @@ struct AppShellView: View {
             openBrowseAll()
         case .saved:
             openSaved()
+        case .practice:
+            openPractice()
         }
     }
 
@@ -544,6 +574,13 @@ struct AppShellView: View {
     private func openSaved() {
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSaved()
+        }
+        isSearchFieldFocused = false
+    }
+
+    private func openPractice() {
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.openPractice()
         }
         isSearchFieldFocused = false
     }
@@ -589,15 +626,23 @@ struct AppShellView: View {
             let flagIndex = arguments.firstIndex(of: "--detail-page"),
             arguments.indices.contains(arguments.index(after: flagIndex))
         else {
-            return arguments.contains("--search") ? .search : .home
+            return shortcutRoute(for: arguments)
         }
 
         let pageID = arguments[arguments.index(after: flagIndex)]
         guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
-            return arguments.contains("--search") ? .search : .home
+            return shortcutRoute(for: arguments)
         }
 
         return .detailPage(canonicalPageID)
+    }
+
+    private static func shortcutRoute(for arguments: [String]) -> AppRoute {
+        if arguments.contains("--practice") {
+            return .practice
+        }
+
+        return arguments.contains("--search") ? .search : .home
     }
 
     private static var initialRoute: AppRoute {
@@ -613,6 +658,7 @@ struct AppShellNavigationState: Equatable {
     var homeScrollToTopTrigger = 0
     var rootScrollToTopTrigger = 0
     var savedScrollToTopTrigger = 0
+    var practiceScrollToTopTrigger = 0
     var detailScrollToTopTrigger = 0
 
     init(initialRoute: AppRoute = .home) {
@@ -627,6 +673,8 @@ struct AppShellNavigationState: Equatable {
             rootRoute = .phrasePage
         case .saved:
             rootRoute = .saved
+        case .practice:
+            rootRoute = .practice
         case .detailPage(let detailPageID):
             rootRoute = .home
             detailPath = [PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) ?? detailPageID]
@@ -665,7 +713,7 @@ struct AppShellNavigationState: Equatable {
             return .detailPage(detailPath[detailPath.count - 2])
         }
 
-        if rootRoute == .phrasePage || rootRoute == .saved {
+        if rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice {
             return .home
         }
 
@@ -707,7 +755,7 @@ struct AppShellNavigationState: Equatable {
     }
 
     var canNavigateBackWithSwipe: Bool {
-        isSearchPresented || !detailPath.isEmpty || rootRoute == .phrasePage || rootRoute == .saved
+        isSearchPresented || !detailPath.isEmpty || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice
     }
 
     mutating func openDetail(_ id: String) {
@@ -767,6 +815,19 @@ struct AppShellNavigationState: Equatable {
         savedScrollToTopTrigger += 1
     }
 
+    mutating func openPractice() {
+        guard currentRoute != .practice else {
+            practiceScrollToTopTrigger += 1
+            return
+        }
+
+        rootRoute = .practice
+        detailPath.removeAll()
+        isSearchPresented = false
+        forwardStack.removeAll()
+        practiceScrollToTopTrigger += 1
+    }
+
     mutating func openSearch() {
         guard !isSearchPresented else {
             return
@@ -792,6 +853,11 @@ struct AppShellNavigationState: Equatable {
             if rootRoute == .saved {
                 rootRoute = .home
                 forwardStack.append(.saved)
+                homeScrollToTopTrigger += 1
+            }
+            if rootRoute == .practice {
+                rootRoute = .home
+                forwardStack.append(.practice)
                 homeScrollToTopTrigger += 1
             }
             return
@@ -822,6 +888,11 @@ struct AppShellNavigationState: Equatable {
             detailPath.removeAll()
             rootRoute = .saved
             savedScrollToTopTrigger += 1
+        case .practice:
+            isSearchPresented = false
+            detailPath.removeAll()
+            rootRoute = .practice
+            practiceScrollToTopTrigger += 1
         case .detailPage(let detailPageID):
             guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) else {
                 return

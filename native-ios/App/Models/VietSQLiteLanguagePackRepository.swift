@@ -354,6 +354,165 @@ final class VietSQLiteLanguagePackRepository {
         }
     }
 
+    func loadPracticeCandidates(
+        pageIDs: [String]? = nil,
+        cityID: String? = nil,
+        requiringAudio: Bool = false,
+        limit: Int = 80
+    ) throws -> [PracticeCandidate] {
+        var seenCanonicalPageIDs = Set<String>()
+        let requestedPageIDs = pageIDs ?? []
+        let canonicalPageIDs = requestedPageIDs.compactMap { pageID -> String? in
+            guard let canonicalPageID = try? self.canonicalPageID(forPageIDOrAlias: pageID) else {
+                return nil
+            }
+
+            guard seenCanonicalPageIDs.insert(canonicalPageID).inserted else {
+                return nil
+            }
+
+            return canonicalPageID
+        }
+
+        if pageIDs != nil && canonicalPageIDs.isEmpty {
+            return []
+        }
+
+        var filters: [String] = []
+        if !canonicalPageIDs.isEmpty {
+            let placeholders = Array(repeating: "?", count: canonicalPageIDs.count).joined(separator: ", ")
+            filters.append("pp.id IN (\(placeholders))")
+        }
+        if cityID != nil {
+            filters.append("pct.city_id = ?")
+        }
+        if requiringAudio {
+            filters.append("aa.source_manifest_key IS NOT NULL")
+        }
+
+        let whereClause = filters.isEmpty ? "" : "WHERE \(filters.joined(separator: " AND "))"
+        let effectiveLimit = max(limit, canonicalPageIDs.count)
+        let sql = """
+        SELECT
+          p.id,
+          pp.id,
+          pp.title,
+          pp.english_title,
+          p.pronunciation,
+          pp.icon_name,
+          pp.tint_name,
+          aa.source_manifest_key,
+          COALESCE(
+            (
+              SELECT group_concat(category_id, '|')
+              FROM (
+                SELECT pc.category_id
+                FROM page_category pc
+                WHERE pc.page_id = pp.id
+                ORDER BY pc.sort_order, pc.category_id
+              )
+            ),
+            (
+              SELECT group_concat(scenario_id, '|')
+              FROM (
+                SELECT ps.scenario_id
+                FROM phrase_scenario ps
+                WHERE ps.phrase_id = p.id
+                ORDER BY ps.sort_order, ps.scenario_id
+              )
+            ),
+            'greetings'
+          ) AS category_ids,
+          pct.city_id,
+          c.title,
+          pct.subcategory_id,
+          cs.title,
+          pct.place_id,
+          COALESCE(NULLIF(cp.english_name, ''), NULLIF(cp.vietnamese_name, ''))
+        FROM phrase_page pp
+        JOIN phrase p ON p.id = pp.phrase_id
+        LEFT JOIN audio_usage au
+          ON au.target_kind = 'phrase'
+         AND au.target_id = p.id
+         AND au.is_primary = 1
+        LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        LEFT JOIN phrase_city_tag pct ON pct.phrase_id = p.id
+        LEFT JOIN city c ON c.id = pct.city_id
+        LEFT JOIN city_subcategory cs ON cs.id = pct.subcategory_id
+        LEFT JOIN city_place cp ON cp.id = pct.place_id
+        \(whereClause)
+        ORDER BY
+          CASE WHEN pct.city_id = 'hanoi' THEN 0 ELSE 1 END,
+          CASE WHEN aa.source_manifest_key IS NOT NULL THEN 0 ELSE 1 END,
+          COALESCE(
+            (SELECT MIN(pc.sort_order) FROM page_category pc WHERE pc.page_id = pp.id),
+            9999
+          ),
+          pp.title COLLATE NOCASE,
+          pp.id
+        LIMIT ?;
+        """
+
+        let candidates = try rows(sql, bind: { statement in
+            var index: Int32 = 1
+
+            for pageID in canonicalPageIDs {
+                try self.bindText(pageID, to: index, in: statement, sql: sql)
+                index += 1
+            }
+
+            if let cityID {
+                try self.bindText(cityID, to: index, in: statement, sql: sql)
+                index += 1
+            }
+
+            try self.bindInt(effectiveLimit, to: index, in: statement, sql: sql)
+        }) { statement in
+            let phraseID = Self.stringColumn(statement, index: 0)
+            let pageID = Self.stringColumn(statement, index: 1)
+            let tint = AccentTint(rawValue: Self.stringColumn(statement, index: 6)) ?? .gray
+            let categoryIDs = Self.stringColumn(statement, index: 8)
+                .split(separator: "|")
+                .map(String.init)
+            let source = PracticeSourceMetadata(
+                phraseID: phraseID,
+                pageID: pageID,
+                cityID: Self.optionalStringColumn(statement, index: 9),
+                cityName: Self.optionalStringColumn(statement, index: 10),
+                citySubcategoryID: Self.optionalStringColumn(statement, index: 11),
+                citySubcategoryTitle: Self.optionalStringColumn(statement, index: 12),
+                placeID: Self.optionalStringColumn(statement, index: 13),
+                placeName: Self.optionalStringColumn(statement, index: 14)
+            )
+
+            return PracticeCandidate(
+                phraseID: phraseID,
+                pageID: pageID,
+                vietnamese: Self.stringColumn(statement, index: 2),
+                english: Self.stringColumn(statement, index: 3),
+                pronunciation: Self.stringColumn(statement, index: 4),
+                categoryIDs: categoryIDs.isEmpty ? ["greetings"] : categoryIDs,
+                symbolName: Self.stringColumn(statement, index: 5),
+                tintName: tint,
+                audioKey: Self.optionalStringColumn(statement, index: 7),
+                breakdownTokens: try loadPracticeBreakdownTokens(forPageID: pageID),
+                source: source
+            )
+        }
+
+        guard !canonicalPageIDs.isEmpty else {
+            return candidates
+        }
+
+        let requestedOrder = Dictionary(uniqueKeysWithValues: canonicalPageIDs.enumerated().map { index, pageID in
+            (pageID, index)
+        })
+
+        return candidates.sorted { lhs, rhs in
+            requestedOrder[lhs.pageID, default: Int.max] < requestedOrder[rhs.pageID, default: Int.max]
+        }
+    }
+
     func loadGraphCoverage() throws -> VietSQLitePhraseGraphCoverage {
         VietSQLitePhraseGraphCoverage(
             sourcePhraseRows: try count(.phrase),
@@ -766,6 +925,37 @@ final class VietSQLiteLanguagePackRepository {
 
         return try rows(sql, bind: { statement in
             try self.bindText(sectionID, to: 1, in: statement, sql: sql)
+        }) { statement in
+            BreakdownToken(
+                id: Self.stringColumn(statement, index: 0),
+                vietnamese: Self.stringColumn(statement, index: 1),
+                english: Self.stringColumn(statement, index: 2),
+                audioKey: Self.optionalStringColumn(statement, index: 3)
+            )
+        }
+    }
+
+    private func loadPracticeBreakdownTokens(forPageID pageID: String) throws -> [BreakdownToken] {
+        let sql = """
+        SELECT
+          bt.id,
+          bt.token_text,
+          bt.english_gloss,
+          aa.source_manifest_key
+        FROM page_section ps
+        JOIN page_section_item psi ON psi.section_id = ps.id
+        JOIN breakdown_token bt ON bt.id = psi.target_id
+        LEFT JOIN audio_usage au
+          ON au.target_kind = 'breakdown_token'
+         AND au.target_id = bt.id
+        LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        WHERE ps.page_id = ?
+          AND psi.item_kind = 'breakdown_token'
+        ORDER BY ps.sort_order, psi.sort_order;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(pageID, to: 1, in: statement, sql: sql)
         }) { statement in
             BreakdownToken(
                 id: Self.stringColumn(statement, index: 0),
