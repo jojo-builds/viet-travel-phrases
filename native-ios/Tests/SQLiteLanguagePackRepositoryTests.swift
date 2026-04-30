@@ -30,6 +30,13 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(try repository.integrityCheck(), "ok")
     }
 
+    func testVietRuntimeDoesNotBundleLegacyJSONFallbackResources() {
+        XCTAssertNotNil(VietSQLiteLanguagePackRepository.bundledDatabaseURL())
+        XCTAssertNil(Bundle.main.url(forResource: "viet-phrase-catalog", withExtension: "json"))
+        XCTAssertNil(Bundle.main.url(forResource: "viet-authored-listing-pages", withExtension: "json"))
+        XCTAssertNil(Bundle.main.url(forResource: "viet-authored-audio-audit", withExtension: "json"))
+    }
+
     func testSQLiteSanityCountsMatchGeneratedReport() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let snapshot = try repository.loadSanitySnapshot()
@@ -67,7 +74,6 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(preview.searchResult.pageID, preview.pageID)
         XCTAssertEqual(preview.searchResult.title, preview.title)
 
-        XCTAssertNotNil(GeneratedVietContent.catalog)
         XCTAssertEqual(PhrasePage.xinChao.title, "Xin chào")
     }
 
@@ -102,7 +108,9 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(coverage.brokenRelationEdges, 0)
         XCTAssertEqual(coverage.searchDocumentsWithMissingPageTargets, 0)
         XCTAssertEqual(coverage.audioUsageMismatches, 0)
-        XCTAssertEqual(coverage.missingAudioAuditRows, 0)
+        XCTAssertEqual(coverage.missingAudioAuditRows, report.audio.missingAudioAuditRows)
+        XCTAssertEqual(report.audio.plannedMissingAudioAuditRows, 125)
+        XCTAssertEqual(report.audio.releaseBlockingMissingAudioAuditRows, 0)
     }
 
     func testSQLiteCanonicalLookupResolvesAliasesAndDuplicatePhraseRows() throws {
@@ -268,7 +276,8 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         let politeBasicsItems = PhraseCatalog.items(selectedCategoryID: "polite-basics")
 
         XCTAssertEqual(snapshot.catalogItems.count, report.generatedCounts.pages)
-        XCTAssertEqual(snapshot.scenarioCategories.count, 18)
+        XCTAssertEqual(snapshot.scenarioCategories.count, report.generatedCounts.scenarios)
+        XCTAssertNotNil(snapshot.scenarioCategories.first { $0.id == "city-guides" })
         XCTAssertEqual(xinChaoItem.title, "Xin chào")
         XCTAssertEqual(xinChaoItem.subtitle, "Hello")
         XCTAssertEqual(PhraseCatalog.category(withID: "polite-basics")?.title, "Polite Basics")
@@ -405,6 +414,7 @@ private struct VietSQLiteFixtureReport: Decodable {
     let bundlePackaging: BundlePackaging
     let generatedCounts: GeneratedCounts
     let validation: Validation
+    let audio: Audio
 
     struct BundlePackaging: Decodable {
         let isIncludedInXcodeResources: Bool
@@ -422,6 +432,12 @@ private struct VietSQLiteFixtureReport: Decodable {
 
     struct Validation: Decodable {
         let integrityCheck: String
+    }
+
+    struct Audio: Decodable {
+        let missingAudioAuditRows: Int
+        let plannedMissingAudioAuditRows: Int
+        let releaseBlockingMissingAudioAuditRows: Int
     }
 }
 #endif

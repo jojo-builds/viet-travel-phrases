@@ -25,10 +25,7 @@
 		AE8BE3879C05C9EC7BA1F804 /* AudioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16251C7B60B5DAA58A148B9 /* AudioControls.swift */; };
 		B34399CF6C5B98FB4862E2E9 /* PhraseListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C570403C2E33918DCE587ED /* PhraseListingView.swift */; };
 		B4BB1FA3BE7357CB5035A731 /* PhrasePageFixtureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */; };
-		B6D206ADF0EE288783D8CAD9 /* viet-authored-audio-audit.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CA4CCC52A4DA7FD6AD5490 /* viet-authored-audio-audit.json */; };
-		BDEF4C9D76C1888D12F3D195 /* viet-authored-listing-pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C57227E47AA382AB3CBE502 /* viet-authored-listing-pages.json */; };
 		C4CCD078FF1A029730CCD5FD /* PhraseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */; };
-		CCD6C25405A027CE9B26C2F8 /* viet-phrase-catalog.json in Resources */ = {isa = PBXBuildFile; fileRef = 123BAB8DDA1FF3C999381CF0 /* viet-phrase-catalog.json */; };
 		EA5ADDE73A6232C5884B736C /* AuthoredVietListingPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */; };
 		F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */; };
 /* End PBXBuildFile section */
@@ -46,11 +43,9 @@
 /* Begin PBXFileReference section */
 		094EBCA2A1C2908334452B3A /* AppChromeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChromeTests.swift; sourceTree = "<group>"; };
 		0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthoredVietListingPages.swift; sourceTree = "<group>"; };
-		123BAB8DDA1FF3C999381CF0 /* viet-phrase-catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-phrase-catalog.json"; sourceTree = "<group>"; };
 		152EC4AC0563F01164AC24D5 /* SearchPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageView.swift; sourceTree = "<group>"; };
 		18EA78216F5959BDB34B09C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E92E39F9AC9626410FF3CDC /* AppChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChrome.swift; sourceTree = "<group>"; };
-		21CA4CCC52A4DA7FD6AD5490 /* viet-authored-audio-audit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-authored-audio-audit.json"; sourceTree = "<group>"; };
 		2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeakLocalNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C98DE73722F896A42D9AEC1 /* NativeGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeGlass.swift; sourceTree = "<group>"; };
 		488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -61,7 +56,6 @@
 		65875EEA097A552AA1510358 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
 		75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePageFixtureTests.swift; sourceTree = "<group>"; };
 		7C570403C2E33918DCE587ED /* PhraseListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListingView.swift; sourceTree = "<group>"; };
-		7C57227E47AA382AB3CBE502 /* viet-authored-listing-pages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-authored-listing-pages.json"; sourceTree = "<group>"; };
 		81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLocalNativeApp.swift; sourceTree = "<group>"; };
 		8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSQLiteLanguagePackRepository.swift; sourceTree = "<group>"; };
 		A83272548030E59BD55C69E3 /* LanguagePacks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LanguagePacks; path = Resources/LanguagePacks; sourceTree = SOURCE_ROOT; };
@@ -122,9 +116,6 @@
 			children = (
 				4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */,
 				54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */,
-				21CA4CCC52A4DA7FD6AD5490 /* viet-authored-audio-audit.json */,
-				7C57227E47AA382AB3CBE502 /* viet-authored-listing-pages.json */,
-				123BAB8DDA1FF3C999381CF0 /* viet-phrase-catalog.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -233,6 +224,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					A289ABEF6B01CCE24F76E15A = {
+						DevelopmentTeam = F7MH7N9445;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = D8AB6CAE52C779BDD52D0F9E /* Build configuration list for PBXProject "SpeakLocalNative" */;
@@ -264,9 +259,6 @@
 				5E445B4FD180B59D157E434D /* Audio in Resources */,
 				38B893276AD8652F98766E0F /* LanguagePacks in Resources */,
 				F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */,
-				B6D206ADF0EE288783D8CAD9 /* viet-authored-audio-audit.json in Resources */,
-				BDEF4C9D76C1888D12F3D195 /* viet-authored-listing-pages.json in Resources */,
-				CCD6C25405A027CE9B26C2F8 /* viet-phrase-catalog.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +312,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7MH7N9445;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -338,6 +332,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7MH7N9445;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -12,6 +12,8 @@ const outputPath = path.join(root, "Resources", "viet-authored-listing-pages.jso
 const auditPath = path.join(root, "Resources", "viet-authored-audio-audit.json");
 const sourceRoot = path.join(familyRoot, "content-draft", "viet", "listing-pages");
 const fullUniverseSourceRoot = path.join(familyRoot, "content-draft", "viet", "full-listing-pages");
+const cityLibraryPath = path.join(familyRoot, "content-draft", "viet", "city-library", "v1.json");
+const cityMissingAudioQueuePath = path.join(familyRoot, "docs", "audio-queues", "viet-city-library-v1-missing-audio.csv");
 const fullUniverseTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
@@ -465,6 +467,10 @@ function canonicalPageID(family) {
   return designedFamilyPageIDs[family.id] ?? family.pageID;
 }
 
+function canonicalDetailPageID(pageID) {
+  return pageID ?? null;
+}
+
 function phraseOption(phrase, detailPageID = null, tintName = null) {
   const audioKey = authoredPhraseAudioKey(phrase.targetText, phrase.audioKey);
   return {
@@ -474,7 +480,7 @@ function phraseOption(phrase, detailPageID = null, tintName = null) {
     pronunciation: phrase.pronunciation,
     symbolName: speakerSymbolName(phrase.targetText, audioKey),
     tintName: tintName ?? tintForScenario(phrase.scenarioID),
-    detailPageID,
+    detailPageID: canonicalDetailPageID(detailPageID),
     audioKey,
   };
 }
@@ -488,7 +494,7 @@ function manualPhraseOption(id, vietnamese, english, pronunciation, tintName, de
     pronunciation,
     symbolName: speakerSymbolName(vietnamese, audioKey),
     tintName,
-    detailPageID,
+    detailPageID: canonicalDetailPageID(detailPageID),
     audioKey,
   };
 }
@@ -1701,14 +1707,433 @@ function loadFullUniversePages() {
         phrases: (section.phrases ?? []).map((phrase) => ({
           ...phrase,
           symbolName: speakerSymbolName(phrase.vietnamese, phrase.audioKey),
+          detailPageID: canonicalDetailPageID(phrase.detailPageID),
         })),
       }))),
       examples: (page.examples ?? []).map((phrase) => ({
         ...phrase,
         symbolName: speakerSymbolName(phrase.vietnamese, phrase.audioKey),
+        detailPageID: canonicalDetailPageID(phrase.detailPageID),
       })),
     };
   });
+}
+
+function loadFullUniversePhraseIDs() {
+  return new Set(walkJSONFiles(fullUniverseSourceRoot).map((filePath) => {
+    const page = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return page.phraseID;
+  }).filter(Boolean));
+}
+
+function loadCityLibrary() {
+  if (!fs.existsSync(cityLibraryPath)) {
+    return null;
+  }
+  return JSON.parse(fs.readFileSync(cityLibraryPath, "utf8"));
+}
+
+function canonicalCityDetailPageID(phraseID) {
+  return cityPageID(phraseID);
+}
+
+function cityPageID(phraseID) {
+  return `viet-family-${phraseID}`;
+}
+
+function cityLibraryPhraseOption(pageRecord, detailPageID = null) {
+  const phrase = phraseByID.get(pageRecord.id);
+  if (!phrase) {
+    throw new Error(`Missing city library phrase in catalog: ${pageRecord.id}`);
+  }
+  return phraseOption(phrase, detailPageID, "teal");
+}
+
+function cityChunk(vietnamese, english, id = null) {
+  return { id, vietnamese, english };
+}
+
+function isCompactCityChunk(vietnamese) {
+  return vietnamese.split(/\s+/).filter(Boolean).length <= 3 && vietnamese.length <= 24;
+}
+
+function splitProperNameChunk(vietnamese, english) {
+  const words = vietnamese.split(/\s+/).filter(Boolean);
+  if (words.length <= 3 && vietnamese.length <= 24) {
+    return [cityChunk(vietnamese, english)];
+  }
+
+  if (words.length <= 5) {
+    return [
+      cityChunk(words.slice(0, 2).join(" "), "first name part"),
+      cityChunk(words.slice(2).join(" "), "second name part"),
+    ].filter((chunk) => chunk.vietnamese);
+  }
+
+  return [
+    cityChunk(words.slice(0, 2).join(" "), "first name part"),
+    cityChunk(words.slice(2, 4).join(" "), "middle name part"),
+    cityChunk(words.slice(4).join(" "), "final name part"),
+  ].filter((chunk) => chunk.vietnamese);
+}
+
+function splitLongCityChunk(chunk) {
+  const vietnamese = Array.isArray(chunk) ? chunk[0] : chunk.vietnamese;
+  const english = Array.isArray(chunk) ? chunk[1] : chunk.english;
+  if (isCompactCityChunk(vietnamese)) {
+    return [cityChunk(vietnamese, english, Array.isArray(chunk) ? null : chunk.id)];
+  }
+
+  const matchers = [
+    [/^(gần)\s+(.+)$/iu, [["$1", "near"], ["$2", english]]],
+    [/^(ở)\s+(.+)$/iu, [["$1", "at"], ["$2", english]]],
+    [/^(phố đi bộ)\s+(.+)$/iu, [["$1", "walking street"], ["$2", "street name"]]],
+    [/^(đường)\s+(.+)$/iu, [["$1", "street"], ["$2", "street name"]]],
+    [/^(phố cổ)\s+(.+)$/iu, [["$1", "old town / old quarter"], ["$2", "place name"]]],
+    [/^(chợ đêm)\s+(.+)$/iu, [["$1", "night market"], ["$2", "place name"]]],
+    [/^(chợ)\s+(.+)$/iu, [["$1", "market"], ["$2", "market name"]]],
+    [/^(hồ)\s+(.+)$/iu, [["$1", "lake"], ["$2", "lake name"]]],
+    [/^(biển)\s+(.+)$/iu, [["$1", "beach"], ["$2", "beach name"]]],
+    [/^(sân bay)\s+(.+)$/iu, [["$1", "airport"], ["$2", "airport name"]]],
+    [/^(bán đảo)\s+(.+)$/iu, [["$1", "peninsula"], ["$2", "place name"]]],
+  ];
+
+  for (const [pattern, pieces] of matchers) {
+    const match = vietnamese.match(pattern);
+    if (!match) continue;
+    return pieces.flatMap(([template, label]) => {
+      const value = template.replace(/\$(\d+)/g, (_, index) => match[Number(index)] ?? "").trim();
+      return splitLongCityChunk(cityChunk(value, label));
+    });
+  }
+
+  const exactSplits = {
+    "Bưu điện Thành phố": [
+      ["Bưu điện", "post office"],
+      ["Thành phố", "city"],
+    ],
+    "Nhà thờ Đức Bà Sài Gòn": [
+      ["Nhà thờ", "cathedral / church"],
+      ["Đức Bà", "Notre-Dame"],
+      ["Sài Gòn", "Saigon"],
+    ],
+    "Múa rối Thăng Long": [
+      ["Múa rối", "water puppets"],
+      ["Thăng Long", "Thang Long"],
+    ],
+    "Tôi có đặt bàn": [
+      ["Tôi có", "I have"],
+      ["đặt bàn", "a reservation"],
+    ],
+  };
+
+  if (exactSplits[vietnamese]) {
+    return exactSplits[vietnamese].map(([target, meaning]) => cityChunk(target, meaning));
+  }
+
+  return splitProperNameChunk(vietnamese, english);
+}
+
+function cityBreakdownTokens(pageRecord) {
+  const chunks = [...(pageRecord.chunks ?? [])];
+  const lastChunk = chunks[chunks.length - 1];
+  const lastVietnamese = Array.isArray(lastChunk) ? lastChunk?.[0] : lastChunk?.vietnamese;
+  const hasFinalChunk = normalizeAudioText(lastVietnamese ?? "") === normalizeAudioText(pageRecord.targetText);
+  const finalChunk = hasFinalChunk
+    ? chunks[chunks.length - 1]
+    : { id: `${pageRecord.id}-full`, vietnamese: pageRecord.targetText, english: "full phrase" };
+  const teachingChunks = hasFinalChunk ? chunks.slice(0, -1) : chunks;
+  const compactChunks = teachingChunks.flatMap(splitLongCityChunk);
+  compactChunks.push(finalChunk);
+
+  return compactChunks.map((chunk, index) => {
+    const vietnamese = Array.isArray(chunk) ? chunk[0] : chunk.vietnamese;
+    const english = Array.isArray(chunk) ? chunk[1] : chunk.english;
+    return {
+      id: Array.isArray(chunk) ? `${pageRecord.id}-chunk-${index + 1}` : (chunk.id ?? `${pageRecord.id}-chunk-${index + 1}`),
+      vietnamese,
+      english,
+      audioKey: authoredBreakdownAudioKey(vietnamese),
+    };
+  });
+}
+
+function linkedCityPhraseOptions(records, count = 4) {
+  return records
+    .slice(0, count)
+    .map((record) => cityLibraryPhraseOption(record, canonicalCityDetailPageID(record.id)));
+}
+
+function findRelatedCityRecords(pageRecord, pageRecords, placePageByPlaceID) {
+  const samePlace = pageRecords
+    .filter((candidate) => candidate.id !== pageRecord.id && candidate.placeID === pageRecord.placeID)
+    .sort((a, b) => {
+      const placeFirst = a.kind === "place" ? -1 : b.kind === "place" ? 1 : 0;
+      return placeFirst || a.id.localeCompare(b.id);
+    });
+  const sameSubcategory = pageRecords
+    .filter((candidate) => (
+      candidate.id !== pageRecord.id
+      && candidate.cityID === pageRecord.cityID
+      && candidate.subcategoryID === pageRecord.subcategoryID
+      && candidate.placeID !== pageRecord.placeID
+    ))
+    .sort((a, b) => a.id.localeCompare(b.id));
+  const sameCityBeginner = pageRecords
+    .filter((candidate) => (
+      candidate.id !== pageRecord.id
+      && candidate.cityID === pageRecord.cityID
+      && candidate.difficulty === "beginner"
+      && candidate.subcategoryID !== pageRecord.subcategoryID
+    ))
+    .sort((a, b) => a.id.localeCompare(b.id));
+  const related = [...samePlace, ...sameSubcategory, ...sameCityBeginner];
+  const seen = new Set();
+  const unique = [];
+  for (const candidate of related) {
+    if (seen.has(candidate.id)) continue;
+    seen.add(candidate.id);
+    unique.push(candidate);
+  }
+
+  if (pageRecord.kind !== "place") {
+    const placePage = placePageByPlaceID.get(pageRecord.placeID);
+    if (placePage && placePage.id !== pageRecord.id && !seen.has(placePage.id)) {
+      unique.unshift(placePage);
+    }
+  }
+
+  return unique;
+}
+
+function cityPlaceBrief(city, place, pageRecord) {
+  return `${place.vietnameseName} is a ${place.kind} in ${city.shortTitle}. ${pageRecord.context}`;
+}
+
+function normalizedCityAnchorNames(city) {
+  return [city.vietnameseName, city.shortTitle, city.title]
+    .map((value) => normalizeAudioText(value ?? ""))
+    .filter(Boolean);
+}
+
+function cityPhraseContainsPlace(pageRecord, place) {
+  const target = normalizeAudioText(pageRecord.targetText);
+  const english = normalizeAudioText(pageRecord.englishText);
+  return [place.vietnameseName, place.englishName]
+    .map((value) => normalizeAudioText(value ?? ""))
+    .filter((value) => value.length >= 3)
+    .some((value) => target.includes(value) || english.includes(value));
+}
+
+function cityPhraseAnchorName(pageRecord, city, place) {
+  if (cityPhraseContainsPlace(pageRecord, place)) {
+    return place.vietnameseName;
+  }
+  const target = normalizeAudioText(pageRecord.targetText);
+  const english = normalizeAudioText(pageRecord.englishText);
+  const containsCity = normalizedCityAnchorNames(city).some((value) => target.includes(value) || english.includes(value));
+  return containsCity ? city.shortTitle : place.vietnameseName;
+}
+
+function cityWhenToUseBody(pageRecord, city, place) {
+  if (pageRecord.kind === "place") {
+    return `Use this page before you visit ${city.shortTitle}, while checking a map, or when you want to recognize ${place.vietnameseName} in a longer answer.`;
+  }
+
+  const anchorName = cityPhraseAnchorName(pageRecord, city, place);
+
+  switch (pageRecord.subcategoryID) {
+    case "arrivals-routes":
+      return `Use it when a ride, walk, or drop-off is already about ${anchorName}. Show the map pin first, say the phrase once, then let the other person answer with a route, stop, or time.`;
+    case "landmarks-attractions":
+      return `Use it at a hotel desk, ticket counter, ride pickup, or street corner when ${anchorName} is the place you are trying to reach or recognize.`;
+    case "neighborhoods-streets":
+      return `Use it when an address, meetup point, or walking route mentions ${anchorName}. Street and neighborhood names are easier when the anchor stays visible on your map.`;
+    case "food-coffee":
+      return `Use it when the food stop, cafe, dish, or reservation is the real goal. Keep ${anchorName} visible so staff can point you to the right counter, table, or street.`;
+    case "shopping-markets":
+      return `Use it when shopping plans, market entrances, or souvenir errands revolve around ${anchorName}. The phrase should lead to a point, price area, entrance, or quick direction.`;
+    case "practical-help-near-places":
+      return `Use it when you need practical help near ${anchorName}, not a citywide search. The anchor narrows the answer to something you can walk to or show on the map.`;
+    default:
+      return `Use it when ${anchorName} is the city anchor and you need a short, practical next step in ${city.shortTitle}.`;
+  }
+}
+
+function cityPageForRecord(pageRecord, context) {
+  const { cityByID, placeByID, pageRecords, placePageByPlaceID } = context;
+  const city = cityByID.get(pageRecord.cityID);
+  const place = placeByID.get(pageRecord.placeID);
+  const phrase = phraseByID.get(pageRecord.id);
+  if (!city || !place || !phrase) {
+    throw new Error(`Cannot build city page ${pageRecord.id}; missing city/place/catalog phrase`);
+  }
+
+  const relatedRecords = findRelatedCityRecords(pageRecord, pageRecords, placePageByPlaceID);
+  const placePage = placePageByPlaceID.get(pageRecord.placeID);
+  const placePhraseRows = pageRecord.kind === "place"
+    ? relatedRecords.filter((record) => record.kind === "phrase")
+    : (placePage ? [placePage] : []);
+  const selfOption = cityLibraryPhraseOption(pageRecord, null);
+  const quickBody = pageRecord.kind === "place"
+    ? "Practice the place name by itself first. It helps when you point to a map, confirm a ride, or hear a local say the landmark quickly."
+    : `Start with ${pageRecord.targetText} when "${pageRecord.englishText}" is the immediate thing you need to say in ${city.shortTitle}.`;
+
+  const sections = [
+    {
+      id: "at-glance",
+      title: "At a glance",
+      body: pageRecord.context,
+    },
+    {
+      id: "quick-say",
+      title: "Quick say",
+      body: quickBody,
+      phrases: [selfOption],
+    },
+    {
+      id: "breakdown",
+      title: "Break it down",
+      body: pageRecord.kind === "place"
+        ? `Listen for the reusable place words inside ${pageRecord.targetText}.`
+        : `These pieces make the sentence useful beyond this one ${city.shortTitle} stop.`,
+      breakdown: cityBreakdownTokens(pageRecord),
+    },
+    {
+      id: pageRecord.kind === "place" ? "place-brief" : "place-anchor",
+      title: pageRecord.kind === "place" ? "Place brief" : "Place anchor",
+      body: pageRecord.kind === "place"
+        ? cityPlaceBrief(city, place, pageRecord)
+        : `${cityPhraseAnchorName(pageRecord, city, place)} is the city anchor inside this phrase. Learn the anchor on its own, then use it inside the full sentence when the route, food stop, or errand is real.`,
+      phrases: linkedCityPhraseOptions(placePhraseRows, pageRecord.kind === "place" ? 3 : 1),
+    },
+    {
+      id: "when-to-use",
+      title: "When to use it",
+      body: cityWhenToUseBody(pageRecord, city, place),
+      phrases: pageRecord.kind === "place"
+        ? []
+        : linkedCityPhraseOptions(relatedRecords.filter((record) => record.kind === "phrase"), 3),
+    },
+    {
+      id: "good-to-know",
+      title: "Good to know",
+      body: pageRecord.tip,
+    },
+    {
+      id: "explore-next",
+      title: "Explore next",
+      body: `Stay inside ${city.shortTitle} with these nearby or next-step pages.`,
+      phrases: linkedCityPhraseOptions(relatedRecords, 5),
+    },
+  ];
+
+  return {
+    id: cityPageID(pageRecord.id),
+    familyID: pageRecord.id,
+    phraseID: pageRecord.id,
+    tierRole: "city-v1",
+    depth: "deep",
+    title: pageRecord.targetText,
+    englishTitle: pageRecord.englishText,
+    pronunciation: pageRecord.pronunciation,
+    summary: pageRecord.englishText,
+    iconName: pageRecord.kind === "place" ? "mappin.and.ellipse" : "map.fill",
+    tintName: "teal",
+    categoryIDs: [
+      "city-guides",
+      pageRecord.cityID,
+      pageRecord.subcategoryID,
+      pageRecord.difficulty,
+      pageRecord.kind === "place" ? "actual-landmarks" : "city-phrases",
+    ],
+    audioKey: authoredPhraseAudioKey(pageRecord.targetText, phrase.audioKey),
+    cityMetadata: {
+      cityID: pageRecord.cityID,
+      cityName: city.title,
+      subcategoryID: pageRecord.subcategoryID,
+      difficulty: pageRecord.difficulty,
+      kind: pageRecord.kind,
+      placeID: pageRecord.placeID,
+      placeName: place.englishName,
+      sourceIDs: pageRecord.sourceIDs ?? [],
+      rationale: pageRecord.rationale,
+    },
+    sections: withSectionPresentations(sections),
+    examples: [selfOption],
+  };
+}
+
+function loadCityLibraryPages() {
+  const library = loadCityLibrary();
+  if (!library) {
+    return [];
+  }
+  const cityByID = new Map((library.cities ?? []).map((city) => [city.id, city]));
+  const placeByID = new Map((library.places ?? []).map((place) => [place.id, place]));
+  const pageRecords = (library.pages ?? [])
+    .filter((page) => page.status === "approved")
+    .sort((a, b) => a.id.localeCompare(b.id));
+  const placePageByPlaceID = new Map(
+    pageRecords
+      .filter((page) => page.kind === "place")
+      .map((page) => [page.placeID, page])
+  );
+  return pageRecords.map((pageRecord) => cityPageForRecord(pageRecord, {
+    cityByID,
+    placeByID,
+    pageRecords,
+    placePageByPlaceID,
+  }));
+}
+
+function writeCityMissingAudioQueue(audioAudit) {
+  const cityMissing = audioAudit.missing.filter((entry) => String(entry.pageID ?? "").startsWith("viet-family-city-"));
+  if (cityMissing.length === 0) {
+    return { count: 0, path: cityMissingAudioQueuePath };
+  }
+
+  const groups = new Map();
+  for (const entry of cityMissing) {
+    const normalized = normalizeAudioText(entry.text);
+    if (!groups.has(normalized)) {
+      groups.set(normalized, {
+        text: entry.text,
+        normalized,
+        usageCount: 0,
+        suggestedAudioKey: entry.audioKey ?? authoredPhraseAudioKey(entry.text, null),
+        pageIDs: new Set(),
+        sectionIDs: new Set(),
+        kinds: new Set(),
+      });
+    }
+    const group = groups.get(normalized);
+    group.usageCount += 1;
+    group.pageIDs.add(entry.pageID);
+    group.sectionIDs.add(entry.sectionID);
+    group.kinds.add(entry.kind);
+  }
+
+  const rows = [
+    ["normalized_text", "expected_text", "usage_count", "suggested_audio_key", "source_page_ids", "source_sections", "surface_types"],
+    ...Array.from(groups.values())
+      .sort((a, b) => a.normalized.localeCompare(b.normalized))
+      .map((group) => [
+        group.normalized,
+        group.text,
+        String(group.usageCount),
+        group.suggestedAudioKey,
+        Array.from(group.pageIDs).sort().join("|"),
+        Array.from(group.sectionIDs).sort().join("|"),
+        Array.from(group.kinds).sort().join("|"),
+      ]),
+  ];
+  const csv = rows
+    .map((row) => row.map((value) => `"${String(value ?? "").replace(/"/g, "\"\"")}"`).join(","))
+    .join("\n") + "\n";
+  fs.mkdirSync(path.dirname(cityMissingAudioQueuePath), { recursive: true });
+  fs.writeFileSync(cityMissingAudioQueuePath, csv);
+  return { count: groups.size, path: cityMissingAudioQueuePath };
 }
 
 function collectAudioAudit(pages) {
@@ -1757,17 +2182,17 @@ function main() {
   removeGeneratedSources();
 
   const fullUniversePages = loadFullUniversePages();
+  const fullUniversePhraseIDs = loadFullUniversePhraseIDs();
+  const cityLibraryPages = loadCityLibraryPages();
   const fullUniversePageIDByPhraseID = new Map(fullUniversePages.map((page) => [page.phraseID, page.id]));
-  const taskFullUniversePhraseIDs = new Set(fullUniversePages
-    .filter((page) => phraseByID.get(page.phraseID)?.notes?.includes(`task=${fullUniverseTaskID}`))
-    .map((page) => page.phraseID));
+  const taskFullUniversePhraseIDs = new Set([...fullUniversePhraseIDs]
+    .filter((phraseID) => phraseByID.get(phraseID)?.notes?.includes(`task=${fullUniverseTaskID}`)));
   for (const page of fullUniversePages) {
     const family = familyByID.get(page.familyID);
     if (family?.primaryPhraseID === page.phraseID) {
       designedFamilyPageIDs[page.familyID] = page.id;
     }
   }
-  const fullUniversePhraseIDs = new Set(fullUniversePages.map((page) => page.phraseID));
   const starterFamilies = catalog.families.filter((family) => {
     const primaryPhrase = phraseByID.get(family.primaryPhraseID);
     return family.accessTier === "starter"
@@ -1827,16 +2252,21 @@ function main() {
     inventory,
   }, null, 2)}\n`);
 
-  const allPages = [...pages, ...childPages, ...fullUniversePages];
+  const allPages = [...pages, ...childPages, ...fullUniversePages, ...cityLibraryPages];
   const audioAudit = collectAudioAudit(allPages);
+  const cityMissingAudioQueue = writeCityMissingAudioQueue(audioAudit);
   const bundle = {
     metadata: {
       source: path.relative(root, sourceRoot),
       fullUniverseSource: path.relative(root, fullUniverseSourceRoot),
+      cityLibrarySource: fs.existsSync(cityLibraryPath) ? path.relative(root, cityLibraryPath) : null,
       tierOneFamilyCount: starterFamilies.length,
       resourceMainPageCount: pages.length,
       childPageCount: childPages.length,
       fullUniversePageCount: fullUniversePages.length,
+      cityLibraryPageCount: cityLibraryPages.length,
+      cityMissingAudioQueue: path.relative(root, cityMissingAudioQueue.path),
+      cityMissingAudioQueueCount: cityMissingAudioQueue.count,
       generatedAt: new Date().toISOString(),
     },
     pages: allPages,
@@ -1847,6 +2277,9 @@ function main() {
     metadata: {
       generatedAt: bundle.metadata.generatedAt,
       tierOneFamilyCount: starterFamilies.length,
+      cityLibraryPageCount: cityLibraryPages.length,
+      cityMissingAudioQueue: path.relative(root, cityMissingAudioQueue.path),
+      cityMissingAudioQueueCount: cityMissingAudioQueue.count,
       requiredAudioCount: audioAudit.required.length,
       missingAudioCount: audioAudit.missing.length,
     },
@@ -1858,6 +2291,8 @@ function main() {
   console.log(`Authored resource main pages: ${pages.length}`);
   console.log(`Child pages: ${childPages.length}`);
   console.log(`Full-universe authored pages: ${fullUniversePages.length}`);
+  console.log(`City library pages: ${cityLibraryPages.length}`);
+  console.log(`City missing audio queue rows: ${cityMissingAudioQueue.count}`);
   console.log(`Missing assigned audio: ${audioAudit.missing.length}`);
   console.log(`Wrote ${path.relative(process.cwd(), outputPath)}`);
 }

@@ -652,14 +652,16 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
-    func testAuthoredAudioAuditHasNoMissingAssignedAudio() throws {
+    func testAuthoredAudioAuditOnlyHasPlannedCityMissingAudio() throws {
         let audit = try authoredAudioAudit()
         let metadata = try XCTUnwrap(audit["metadata"] as? [String: Any])
         let missing = try XCTUnwrap(audit["missing"] as? [[String: Any]])
 
         XCTAssertEqual(metadata["tierOneFamilyCount"] as? Int, 150)
-        XCTAssertEqual(metadata["missingAudioCount"] as? Int, 0)
-        XCTAssertTrue(missing.isEmpty)
+        XCTAssertEqual(metadata["cityLibraryPageCount"] as? Int, 125)
+        XCTAssertEqual(metadata["cityMissingAudioQueueCount"] as? Int, 125)
+        XCTAssertEqual(metadata["missingAudioCount"] as? Int, 125)
+        XCTAssertTrue(missing.allSatisfy { ($0["pageID"] as? String)?.hasPrefix("viet-family-city-") == true })
     }
 
     func testExploreCatalogBrowseSectionsStartWithCurrentCategory() {
@@ -734,10 +736,13 @@ final class PhrasePageFixtureTests: XCTestCase {
     func testGeneratedVietContentBundleLoadsApprovedFamilies() throws {
         let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
 
-        XCTAssertEqual(catalog.metadata.phraseCount, 919)
-        XCTAssertEqual(catalog.families.count, 900)
-        XCTAssertEqual(catalog.scenarios.count, 18)
+        XCTAssertEqual(catalog.metadata.basePhraseCount, 946)
+        XCTAssertEqual(catalog.metadata.cityPhraseCount, 125)
+        XCTAssertEqual(catalog.metadata.phraseCount, 1071)
+        XCTAssertEqual(catalog.families.count, 1052)
+        XCTAssertEqual(catalog.scenarios.count, 19)
         XCTAssertEqual(catalog.scenario(withID: "airport-border-arrival")?.title, "Airport Border Arrival")
+        XCTAssertEqual(catalog.scenario(withID: "city-guides")?.title, "City Guides")
 
         let airport = try XCTUnwrap(catalog.family(withPageID: "viet-family-airport-immigration"))
         XCTAssertEqual(airport.id, "airport-immigration")
@@ -1027,9 +1032,12 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertTrue(PhraseCatalog.isOpenablePageID("viet-family-airport-immigration"))
     }
 
-    func testExploreCatalogItemsExposePlayableAudio() throws {
+    func testExploreCatalogItemsExposePlayableOrPlannedCityAudio() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let missingAudioItems = PhraseCatalog.allItems.compactMap { item -> String? in
+            if item.categoryIDs.contains("city-guides") {
+                return item.playbackAudioKey == nil ? nil : "\(item.pageID): planned city audio should not expose a playable key"
+            }
             guard let audioKey = item.playbackAudioKey, manifest.url(for: audioKey) != nil else {
                 return "\(item.pageID): \(item.title)"
             }
@@ -1170,6 +1178,10 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
 
         let missingContexts = optionsByContext.compactMap { context, option -> String? in
+            if context.hasPrefix("viet-family-city-"), option.playbackAudioKey == nil {
+                return nil
+            }
+
             guard let audioKey = option.playbackAudioKey, manifest.url(for: audioKey) != nil else {
                 return context
             }

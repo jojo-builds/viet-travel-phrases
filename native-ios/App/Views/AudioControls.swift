@@ -9,7 +9,7 @@ struct AudioSpeakerButton: View {
         playableAudioKey(audioKey) != nil
     }
 
-    private static func playableAudioKey(_ audioKey: String?) -> String? {
+    static func playableAudioKey(_ audioKey: String?) -> String? {
         guard
             let audioKey,
             AudioAssetManifest.main?.url(for: audioKey) != nil
@@ -20,20 +20,25 @@ struct AudioSpeakerButton: View {
         return audioKey
     }
 
-    @ViewBuilder
+    private var resolvedAudioKey: String? {
+        Self.playableAudioKey(audioKey)
+    }
+
     var body: some View {
-        if let playableAudioKey = Self.playableAudioKey(audioKey) {
-            Button {
-                AudioPlaybackService.shared.play(audioKey: playableAudioKey)
-            } label: {
-                Image(systemName: "speaker.wave.2.fill")
-                    .font(.system(size: size * 0.36, weight: .semibold))
-                    .foregroundStyle(tint.audioColor)
-                    .frame(width: size, height: size)
+        Button {
+            if let resolvedAudioKey {
+                AudioPlaybackService.shared.play(audioKey: resolvedAudioKey)
             }
-            .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: size / 2, interactive: true)
+        } label: {
+            Image(systemName: resolvedAudioKey == nil ? "speaker.slash.fill" : "speaker.wave.2.fill")
+                .font(.system(size: size * 0.36, weight: .semibold))
+                .foregroundStyle(resolvedAudioKey == nil ? Color.secondary.opacity(0.72) : tint.audioColor)
+                .frame(width: size, height: size)
         }
+        .buttonStyle(.plain)
+        .disabled(resolvedAudioKey == nil)
+        .nativeGlass(cornerRadius: size / 2, interactive: resolvedAudioKey != nil)
+        .accessibilityLabel(resolvedAudioKey == nil ? "Audio not available yet" : "Play audio")
     }
 }
 
@@ -98,9 +103,15 @@ struct PlaybackDockView: View {
         .accessibilityLabel(isSaved ? "Unsave phrase page" : "Save phrase page")
     }
 
+    private var playableAudioKey: String? {
+        AudioSpeakerButton.playableAudioKey(audioKey)
+    }
+
     private var raisedPlayButton: some View {
         Button {
-            AudioPlaybackService.shared.play(audioKey: audioKey, rate: selectedRate)
+            if let playableAudioKey {
+                AudioPlaybackService.shared.play(audioKey: playableAudioKey, rate: selectedRate)
+            }
         } label: {
             ZStack {
                 Circle()
@@ -121,16 +132,18 @@ struct PlaybackDockView: View {
                     }
                     .shadow(color: .black.opacity(0.08), radius: 15, x: 0, y: 10)
 
-                Image(systemName: "play.fill")
+                Image(systemName: playableAudioKey == nil ? "speaker.slash.fill" : "play.fill")
                     .font(.system(size: 29, weight: .bold))
-                    .foregroundStyle(.red)
-                    .offset(x: 3)
+                    .foregroundStyle(playableAudioKey == nil ? Color.secondary.opacity(0.72) : Color.red)
+                    .offset(x: playableAudioKey == nil ? 0 : 3)
             }
             .frame(width: 96, height: 96)
             .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .nativeGlass(cornerRadius: 48, tint: .white, interactive: true)
+        .disabled(playableAudioKey == nil)
+        .nativeGlass(cornerRadius: 48, tint: .white, interactive: playableAudioKey != nil)
+        .accessibilityLabel(playableAudioKey == nil ? "Audio not available yet" : "Play phrase audio")
     }
 
     private var selectedRate: Double {

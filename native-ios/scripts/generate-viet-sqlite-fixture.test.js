@@ -69,7 +69,10 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     'relations', (SELECT count(*) FROM phrase_relation),
     'audioAssets', (SELECT count(*) FROM audio_asset),
     'audioUsages', (SELECT count(*) FROM audio_usage),
-    'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit)
+    'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit),
+    'releaseBlockingMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE release_blocking = 1),
+    'plannedMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE severity = 'planned' AND release_blocking = 0),
+    'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag)
   );`));
   const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
   const expectedCounts = {
@@ -100,7 +103,9 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
   assert.ok(counts.relations > 0, "page graph relation edges should be generated");
   assert.ok(counts.audioAssets > 0, "audio manifest rows should be represented");
   assert.ok(counts.audioUsages > 0, "audio usages should be represented");
-  assert.strictEqual(counts.missingAudioAuditRows, 0, "current renderable rows should resolve audio");
+  assert.strictEqual(counts.releaseBlockingMissingAudioAuditRows, 0, "current renderable rows should not have release-blocking missing audio");
+  assert.strictEqual(counts.missingAudioAuditRows, counts.plannedMissingAudioAuditRows, "missing audio should be planned city-library audio only");
+  assert.strictEqual(counts.cityPhraseTags, counts.plannedMissingAudioAuditRows, "each planned city phrase should have a city tag and missing-audio queue row");
 
   const duplicateCanonicalPages = sqliteValue(`
     SELECT count(*)

@@ -388,7 +388,6 @@ enum PhraseCatalog {
 
         return pageID == PhrasePage.xinChao.id
             || PhraseDetailPage.hasAuthoredPage(withID: pageID)
-            || GeneratedVietContent.hasDetailPage(withID: pageID)
     }
 
     static func canonicalPageID(forOpenablePageID pageID: String) -> String? {
@@ -430,11 +429,11 @@ enum PhraseCatalog {
 
         init() {
             let sqliteSnapshot = VietSQLitePhraseGraphRuntime.catalogSnapshot()
-            let scenarioCategories = sqliteSnapshot?.scenarioCategories ?? GeneratedVietContent.scenarioCategories
+            let scenarioCategories = sqliteSnapshot?.scenarioCategories ?? []
             let categories = baseCategories + scenarioCategories
             let categoriesByID = Dictionary(uniqueKeysWithValues: categories.map { ($0.id, $0) })
 
-            let allItems = Self.uniqueItems(sqliteSnapshot?.catalogItems ?? Self.makeJSONFallbackItems())
+            let allItems = Self.uniqueItems(sqliteSnapshot?.catalogItems ?? Self.makeStaticFallbackItems())
             var itemsByCategoryID: [String: [PhraseCatalogItem]] = [:]
 
             for item in allItems {
@@ -451,11 +450,8 @@ enum PhraseCatalog {
             self.defaultCategoryIDByPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.pageID, $0.categoryID) })
         }
 
-        private static func makeJSONFallbackItems() -> [PhraseCatalogItem] {
-            let designedItems = [rootItem] + PhraseDetailPage.all.map(catalogItem)
-            let designedPageIDs = Set(designedItems.map(\.pageID))
-
-            return designedItems + GeneratedVietContent.catalogItems(excludingPageIDs: designedPageIDs)
+        private static func makeStaticFallbackItems() -> [PhraseCatalogItem] {
+            [rootItem] + PhraseDetailPage.all.map(catalogItem)
         }
 
         private static func uniqueItems(_ items: [PhraseCatalogItem]) -> [PhraseCatalogItem] {
@@ -798,12 +794,9 @@ enum PhraseSearchIndex {
                 )
             }
 
-        let generatedResults = GeneratedVietContent.search(query)
-            .map { (result: $0.result, score: $0.score) }
-
         var bestByPageID: [String: (result: PhraseSearchResult, score: Int)] = [:]
 
-        for scoredResult in rootResults + designedResults + generatedResults {
+        for scoredResult in rootResults + designedResults {
             let currentScore = bestByPageID[scoredResult.result.pageID]?.score ?? Int.min
             if scoredResult.score > currentScore {
                 bestByPageID[scoredResult.result.pageID] = scoredResult
@@ -836,9 +829,7 @@ enum PhraseSearchIndex {
     ]
 
     private static func searchPriority(for page: PhraseDetailPage) -> SearchPriorityTier {
-        GeneratedVietContent.tierOnePageIDs.contains(page.id) || tierOneDesignedPageIDs.contains(page.id)
-            ? .tier1
-            : .supporting
+        tierOneDesignedPageIDs.contains(page.id) ? .tier1 : .supporting
     }
 
     private static func score(
@@ -959,7 +950,7 @@ enum PhraseSearchIndex {
 }
 
 extension PhraseDetailPage {
-    static let all: [PhraseDetailPage] = uniquePages(AuthoredVietListingPages.all + basePages + localGreetingWayPages)
+    static let all: [PhraseDetailPage] = uniquePages(basePages + localGreetingWayPages)
 
     private static let pagesByID: [String: PhraseDetailPage] = Dictionary(
         uniqueKeysWithValues: all.map { ($0.id, $0) }
@@ -1004,7 +995,7 @@ extension PhraseDetailPage {
             return sqlitePage
         }
 
-        return pagesByID[id] ?? GeneratedVietContent.detailPage(withID: id)
+        return pagesByID[id]
     }
 
     static func hasAuthoredPage(withID id: String) -> Bool {

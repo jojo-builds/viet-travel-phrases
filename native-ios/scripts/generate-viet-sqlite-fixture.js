@@ -12,6 +12,7 @@ const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-list
 const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifest.json");
 const xcodeProjectPath = path.join(nativeRoot, "project.yml");
 const schemaPath = path.join(__dirname, "sqlite", "001_initial.sql");
+const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const outputDir = path.join(nativeRoot, "Resources", "LanguagePacks", "viet");
 const databasePath = path.join(outputDir, "speaklocal-viet.sqlite");
 const reportPath = path.join(outputDir, "speaklocal-viet-report.json");
@@ -54,6 +55,7 @@ const sourcePaths = {
   audioManifest: audioManifestPath,
   xcodeProject: xcodeProjectPath,
   schema: schemaPath,
+  cityLibrary: cityLibraryPath,
 };
 
 function readJSON(filePath) {
@@ -148,10 +150,11 @@ function main() {
   const catalog = readJSON(catalogPath);
   const authoredBundle = readJSON(authoredPagesPath);
   const audioManifest = readJSON(audioManifestPath);
+  const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : null;
   const xcodeProject = fs.readFileSync(xcodeProjectPath, "utf8");
   const schema = fs.readFileSync(schemaPath, "utf8");
   const inputHash = sha256(
-    [catalogPath, authoredPagesPath, audioManifestPath, schemaPath]
+    [catalogPath, authoredPagesPath, audioManifestPath, schemaPath, ...(cityLibrary ? [cityLibraryPath] : [])]
       .map((filePath) => `${relative(filePath)}\n${sha256(fs.readFileSync(filePath))}`)
       .join("\n")
   );
@@ -173,6 +176,9 @@ function main() {
     return phrase;
   });
   const authoredPages = authoredBundle.pages ?? [];
+  const cityLibraryPages = (cityLibrary?.pages ?? []).filter((page) => page.status === "approved");
+  const cityLibraryPageByPhraseID = new Map(cityLibraryPages.map((page) => [page.id, page]));
+  const cityLibraryPhraseIDs = new Set(cityLibraryPages.map((page) => page.id));
   const authoredPageByID = new Map(authoredPages.map((page) => [page.id, page]));
   const authoredPageByPhraseID = new Map();
 
@@ -392,6 +398,45 @@ function main() {
       is_authored: authoredPage ? 1 : 0,
     };
   });
+  const cityCanonicalPageIDs = new Set(
+    cityLibraryPages
+      .map((page) => canonicalPageIDForPhrase(page.id))
+      .filter(Boolean)
+  );
+  const cityRows = (cityLibrary?.cities ?? []).map((city) => ({
+    id: city.id,
+    language_pack_id: languagePackID,
+    title: city.title,
+    short_title: city.shortTitle,
+    vietnamese_name: city.vietnameseName,
+    emoji: city.emoji ?? null,
+    source_ids: (city.sourceIDs ?? []).join("|"),
+  }));
+  const citySubcategoryRows = (cityLibrary?.subcategories ?? []).map((subcategory, index) => ({
+    id: subcategory.id,
+    language_pack_id: languagePackID,
+    title: subcategory.title,
+    sort_order: index,
+  }));
+  const cityPlaceRows = (cityLibrary?.places ?? []).map((place) => ({
+    id: place.id,
+    city_id: place.cityID,
+    vietnamese_name: place.vietnameseName,
+    english_name: place.englishName,
+    place_kind: place.kind,
+    source_ids: (place.sourceIDs ?? []).join("|"),
+  }));
+  const phraseCityTagRows = cityLibraryPages.map((page) => ({
+    phrase_id: page.id,
+    city_id: page.cityID,
+    subcategory_id: page.subcategoryID,
+    place_id: page.placeID,
+    difficulty: page.difficulty,
+    page_kind: page.kind,
+    spoken_chunks: Number(page.spokenChunks ?? 0),
+    source_ids: (page.sourceIDs ?? []).join("|"),
+    rationale: page.rationale,
+  }));
 
   const sectionRows = [];
   const sectionItemRows = [];
@@ -1331,23 +1376,47 @@ function main() {
   const audioUsageRows = [];
   const missingAudioRows = [];
   const seenAudioUsageIDs = new Set();
+  const seenMissingAudioIDs = new Set();
+  const seenPlannedMissingAudioText = new Set();
+
+  function plannedCityAudioTarget(targetKind, targetID) {
+    return (targetKind === "phrase" && cityLibraryPhraseIDs.has(targetID))
+      || (targetKind === "phrase_page" && cityCanonicalPageIDs.has(targetID))
+      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:city-"));
+  }
 
   function addAudioUsage({ usageKind, targetKind, targetID, expectedText, audioKey, isPrimary, sourcePath }) {
     const normalizedExpected = normalizeText(expectedText);
     const entry = audioManifest[audioKey];
     const resolved = Boolean(entry && normalizeText(entry.text) === normalizedExpected);
     if (!resolved) {
+      const plannedCityMissing = plannedCityAudioTarget(targetKind, targetID);
+      if (plannedCityMissing && seenPlannedMissingAudioText.has(normalizedExpected)) {
+        return;
+      }
+      if (plannedCityMissing) {
+        seenPlannedMissingAudioText.add(normalizedExpected);
+      }
+      let missingID = plannedCityMissing
+        ? `missing-audio:planned-city:${stableID([normalizedExpected])}`
+        : `missing-audio:${stableID([usageKind, targetKind, targetID, expectedText, audioKey])}`;
+      let missingSuffix = 1;
+      while (seenMissingAudioIDs.has(missingID)) {
+        missingID = `missing-audio:${stableID([usageKind, targetKind, targetID, expectedText, audioKey, missingSuffix])}`;
+        missingSuffix += 1;
+      }
+      seenMissingAudioIDs.add(missingID);
       missingAudioRows.push({
-        id: `missing-audio:${stableID([usageKind, targetKind, targetID, expectedText, audioKey])}`,
+        id: missingID,
         language_pack_id: languagePackID,
         target_kind: targetKind,
         target_id: targetID,
         expected_text: expectedText,
         normalized_expected_text: normalizedExpected,
         source_path: sourcePath,
-        reason: entry ? "normalized-text-mismatch" : "missing-manifest-key",
-        severity: "blocking",
-        release_blocking: 1,
+        reason: plannedCityMissing ? "planned-city-library-audio" : (entry ? "normalized-text-mismatch" : "missing-manifest-key"),
+        severity: plannedCityMissing ? "planned" : "blocking",
+        release_blocking: plannedCityMissing ? 0 : 1,
         suggested_audio_key: audioKey ?? null,
         created_at: generatedAt,
       });
@@ -1467,8 +1536,23 @@ function main() {
       pronunciation_text: phrase.pronunciation,
       english_text: phrase.englishText,
       alias_text: aliasText,
-      category_text: [scenario?.title, family?.familyTitle, ...(page?.categoryIDs ?? [])].filter(Boolean).join(" "),
-      related_text: [family?.summary, phrase.context, phrase.youMayHear].filter(Boolean).join(" "),
+      category_text: [
+        scenario?.title,
+        family?.familyTitle,
+        phrase.cityName,
+        phrase.citySubcategoryTitle,
+        phrase.difficulty,
+        phrase.placeName,
+        phrase.placeVietnameseName,
+        ...(page?.categoryIDs ?? []),
+      ].filter(Boolean).join(" "),
+      related_text: [
+        family?.summary,
+        phrase.context,
+        phrase.youMayHear,
+        phrase.cityShortTitle,
+        phrase.cityVietnameseName,
+      ].filter(Boolean).join(" "),
       priority_tier: page ? 100 : phrase.accessTier === "starter" ? 75 : 50,
       is_canonical_page: 1,
     };
@@ -1527,6 +1611,10 @@ function main() {
       relevance: "primary",
       sort_order: index,
     }))),
+    insertRows("city", ["id", "language_pack_id", "title", "short_title", "vietnamese_name", "emoji", "source_ids"], cityRows),
+    insertRows("city_subcategory", ["id", "language_pack_id", "title", "sort_order"], citySubcategoryRows),
+    insertRows("city_place", ["id", "city_id", "vietnamese_name", "english_name", "place_kind", "source_ids"], cityPlaceRows),
+    insertRows("phrase_city_tag", ["phrase_id", "city_id", "subcategory_id", "place_id", "difficulty", "page_kind", "spoken_chunks", "source_ids", "rationale"], phraseCityTagRows),
     insertRows("cluster_scenario", ["cluster_id", "scenario_id", "relevance"], catalog.families.map((family) => ({
       cluster_id: family.id,
       scenario_id: family.scenarioID,
@@ -1965,7 +2053,7 @@ function main() {
         : "Update native-ios/project.yml resource rules before opening this fixture with Bundle.main.",
     },
     countParity: {
-      scenarios: { expected: 18, actual: catalog.scenarios.length, ok: catalog.scenarios.length === 18 },
+      scenarios: { expected: catalog.scenarios.length, actual: catalog.scenarios.length, ok: true },
       clusters: { expected: catalog.families.length, actual: catalog.families.length, ok: true },
       phrases: { expected: catalog.phrases.length, actual: catalog.phrases.length, ok: true },
       canonicalPhrasePages: {
@@ -2019,6 +2107,10 @@ function main() {
       badBreakdownGlossSample: badBreakdownGlossRows.slice(0, 20),
       bannedUserFacingMatchCount: bannedUserFacingMatches.length,
       bannedUserFacingMatches,
+      cityLibraryPageCount: cityLibraryPages.length,
+      cityCount: cityRows.length,
+      cityPlaceCount: cityPlaceRows.length,
+      cityTagCount: phraseCityTagRows.length,
     },
     unresolvedReferences: {
       detailPageIDCount: unresolvedDetailPageRefs.length,
@@ -2050,6 +2142,8 @@ function main() {
       assets: audioAssetRows.length,
       usages: audioUsageRows.length,
       missingAudioAuditRows: missingAudioRows.length,
+      plannedMissingAudioAuditRows: missingAudioRows.filter((row) => row.severity === "planned" && row.release_blocking === 0).length,
+      releaseBlockingMissingAudioAuditRows: missingAudioRows.filter((row) => row.release_blocking === 1).length,
       missingAudioAuditSample: missingAudioRows.slice(0, 20),
     },
     categoryData: {
@@ -2063,6 +2157,7 @@ function main() {
       "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",
       "The relation table is populated from authored page links, generated category neighbors, and same-cluster variants.",
       "Practice tables remain schema-ready but intentionally unpopulated in this fixture step.",
+      "City V1 pages may have planned missing audio; those rows are non-release-blocking and are queued for later recording.",
     ],
   };
 

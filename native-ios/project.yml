@@ -20,6 +20,9 @@ targets:
         excludes:
           - Audio
           - LanguagePacks
+          - viet-authored-audio-audit.json
+          - viet-authored-listing-pages.json
+          - viet-phrase-catalog.json
       - path: Resources/Audio
         type: folder
         buildPhase: resources
@@ -31,6 +34,8 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: app.speaklocal.vietnam.native
+        DEVELOPMENT_TEAM: F7MH7N9445
+        CODE_SIGN_STYLE: Automatic
         TARGETED_DEVICE_FAMILY: "1"
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
     info:

@@ -100,8 +100,17 @@ for (const item of practiceCore.items) {
 }
 
 const flowIDs = new Set(practiceCore.practiceFlows.map((flow) => flow.id));
-for (const id of ["starter-essentials", "hotel-desk", "food-counter", "pronoun-coach", "review-missed"]) {
+for (const id of ["starter-essentials", "hotel-desk", "food-counter", "pronoun-coach", "city-first-trip"]) {
   assert.ok(flowIDs.has(id), `missing prototype flow ${id}`);
+}
+
+const cityItems = practiceCore.items.filter((item) => item.source.scenarioID === "city-guides");
+assert.ok(cityItems.length >= 20, "city-guides practice items should be present");
+for (const item of cityItems) {
+  assert.ok(item.tags.cityID, `${item.id} should carry cityID`);
+  assert.ok(item.tags.citySubcategoryID, `${item.id} should carry city subcategory`);
+  assert.ok(item.tags.difficulty, `${item.id} should carry difficulty`);
+  assert.equal(item.requiresAudio, false, `${item.id} should not require planned city audio`);
 }
 
 assert.ok(
