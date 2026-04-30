@@ -72,6 +72,7 @@ const SCENARIO_TITLES = {
   "time-dates-booking": "Time and booking",
   transport: "Transport",
   "understanding-repair": "Understanding repair",
+  "city-guides": "City guides",
 };
 
 const SENSITIVE_SCENARIOS = new Set([
@@ -83,6 +84,7 @@ const SENSITIVE_SCENARIOS = new Set([
 
 const SOURCE_FILES = {
   phraseSourceCSV: "content-draft/viet/phrase-source.csv",
+  cityLibrary: "content-draft/viet/city-library/v1.json",
   nativeCatalog: "native-ios/Resources/viet-phrase-catalog.json",
   authoredPages: "native-ios/Resources/viet-authored-listing-pages.json",
   authoredAudioAudit: "native-ios/Resources/viet-authored-audio-audit.json",
@@ -316,6 +318,11 @@ function sourceForPhrase(phrase, page, questionType, sectionID = "", extra = {})
     sourcePath: `${SOURCE_FILES.authoredPages}#${page.id}`,
     sectionID: sectionID || sectionIDForPhrase(page, phrase),
     phraseRowID: phrase.id,
+    cityID: phrase.cityID || "",
+    cityName: phrase.cityName || "",
+    citySubcategoryID: phrase.citySubcategoryID || "",
+    difficulty: phrase.difficulty || "",
+    placeID: phrase.placeID || "",
     ...extra,
   };
 }
@@ -325,6 +332,12 @@ function tagsForPhrase(phrase, page, type, extra = {}) {
     categoryIDs: page.categoryIDs && page.categoryIDs.length ? page.categoryIDs : [phrase.scenarioID],
     scenarioID: phrase.scenarioID,
     situationTags: [phrase.scenarioID, phrase.familyID],
+    cityID: phrase.cityID || "",
+    cityName: phrase.cityName || "",
+    citySubcategoryID: phrase.citySubcategoryID || "",
+    difficulty: phrase.difficulty || "standard",
+    placeID: phrase.placeID || "",
+    placeName: phrase.placeName || "",
     pronounCues: [],
     skillTags: QUESTION_TYPE_BY_ID.get(type).skillTags,
     sensitivity: SENSITIVE_SCENARIOS.has(phrase.scenarioID) ? "sensitive" : "standard",
@@ -671,6 +684,8 @@ function buildNaturalChoiceItems(phrases, pagesByFamily, allPhrases) {
 function buildPracticeFlows(items) {
   const byScenario = groupBy(items, (item) => item.source.scenarioID);
   const byType = groupBy(items, (item) => item.questionType);
+  const cityGuideItems = (byScenario.get("city-guides") || [])
+    .filter((item) => item.tags.difficulty === "beginner" || item.tags.difficulty === "intermediate");
 
   function idsForScenario(scenarioID, limit) {
     return (byScenario.get(scenarioID) || []).slice(0, limit).map((item) => item.id);
@@ -739,19 +754,13 @@ function buildPracticeFlows(items) {
       entryPoints: ["practice", "source-page"],
     },
     {
-      id: "review-missed",
-      title: "Review missed",
-      source: "local-progress",
-      summary: "A due-first demo flow using item progress fields that stay local later.",
-      itemIDs: [
-        ...(byScenario.get("money-numbers-prices") || []),
-        ...(byScenario.get("health-pharmacy") || []),
-        ...(byScenario.get("emergency-safety") || []),
-      ]
-        .slice(0, 10)
-        .map((item) => item.id),
+      id: "city-first-trip",
+      title: "City first trip",
+      source: "city-guides",
+      summary: "Beginner-heavy city phrases for places, streets, markets, food stops, and route checks.",
+      itemIDs: uniqueIDs(cityGuideItems.map((item) => item.id), 12),
       defaultSessionLength: 5,
-      entryPoints: ["practice", "completion"],
+      entryPoints: ["practice", "city", "onboarding"],
     },
   ];
 }
@@ -760,8 +769,10 @@ function buildPracticeCore({ repoRoot }) {
   const catalog = readJSON(repoRoot, SOURCE_FILES.nativeCatalog);
   const authoredPages = readJSON(repoRoot, SOURCE_FILES.authoredPages);
   const audioAudit = readJSON(repoRoot, SOURCE_FILES.authoredAudioAudit);
+  const cityLibrary = readJSON(repoRoot, SOURCE_FILES.cityLibrary);
   const phraseSourceText = fs.readFileSync(path.join(repoRoot, SOURCE_FILES.phraseSourceCSV), "utf8");
   const phraseSourceRowCount = phraseSourceText.split(/\r?\n/).filter(Boolean).length - 1;
+  const cityLibraryPageCount = (cityLibrary.pages || []).filter((page) => page.status === "approved").length;
   const resolvedAudioKeys = new Set((audioAudit.required || []).filter((entry) => entry.resolved).map((entry) => entry.audioKey));
   const pagesByFamily = new Map();
 
@@ -780,6 +791,15 @@ function buildPracticeCore({ repoRoot }) {
       const scenarioCompare = a.scenarioID.localeCompare(b.scenarioID);
       return scenarioCompare || a.id.localeCompare(b.id);
     });
+  const cityPhrases = (catalog.phrases || [])
+    .filter((phrase) => phrase.scenarioID === "city-guides")
+    .filter((phrase) => phrase.targetText && phrase.englishText)
+    .filter((phrase) => pagesByFamily.has(phrase.familyID))
+    .sort((a, b) => {
+      const difficultyOrder = { beginner: 0, intermediate: 1, advanced: 2 };
+      const difficultyCompare = (difficultyOrder[a.difficulty] ?? 9) - (difficultyOrder[b.difficulty] ?? 9);
+      return difficultyCompare || String(a.cityID).localeCompare(String(b.cityID)) || a.id.localeCompare(b.id);
+    });
 
   const allItems = [
     ...buildListeningItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
@@ -789,6 +809,10 @@ function buildPracticeCore({ repoRoot }) {
     ...buildPronounItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
     ...buildChunkItems(eligiblePhrases, pagesByFamily),
     ...buildNaturalChoiceItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
+    ...buildEnglishToVietnameseItems(cityPhrases, pagesByFamily, cityPhrases),
+    ...buildVietnameseToEnglishItems(cityPhrases, pagesByFamily, cityPhrases),
+    ...buildSituationItems(cityPhrases, pagesByFamily, cityPhrases),
+    ...buildChunkItems(cityPhrases, pagesByFamily),
   ];
 
   const items = uniqueBy(allItems, (item) => item.id);
@@ -811,6 +835,8 @@ function buildPracticeCore({ repoRoot }) {
       questionTypeCount: questionTypeIDs.length,
       flowCount: 5,
       phraseSourceRowCount,
+      cityLibraryPageCount,
+      cityPracticePhraseCount: cityPhrases.length,
       offlineOnly: true,
       runtimeAI: false,
       nativeRuntimeTouched: false,
@@ -940,6 +966,14 @@ function validatePracticeCore(practiceCore, options = {}) {
     if (!item.tags || !Array.isArray(item.tags.categoryIDs) || !Array.isArray(item.tags.skillTags)) {
       errors.push(`${item.id} missing tags`);
     }
+    if (item.source && item.source.scenarioID === "city-guides") {
+      if (!item.source.cityID || !item.tags.cityID || !item.tags.citySubcategoryID || !item.tags.difficulty || !item.tags.placeID) {
+        errors.push(`${item.id} city-guides item missing city/subcategory/difficulty/place tags`);
+      }
+      if (item.questionType === "listening_choice" || item.requiresAudio === true) {
+        errors.push(`${item.id} city-guides item must not require audio until city audio is recorded`);
+      }
+    }
     for (const field of ["seenCount", "correctStreak", "missedCount", "lastSeenAt", "nextDueAt", "lastResult", "sourceDeckID"]) {
       if (!item.progress || !Object.prototype.hasOwnProperty.call(item.progress, field)) {
         errors.push(`${item.id} missing progress.${field}`);
@@ -982,6 +1016,16 @@ function validatePracticeCore(practiceCore, options = {}) {
 
   if ((practiceCore.practiceFlows || []).length < 3 || (practiceCore.practiceFlows || []).length > 5) {
     errors.push(`expected 3-5 practice flows, found ${(practiceCore.practiceFlows || []).length}`);
+  }
+  if (!practiceCore.practiceFlows?.some((flow) => flow.id === "city-first-trip")) {
+    errors.push("missing city-first-trip practice flow");
+  }
+  const cityItems = (practiceCore.items || []).filter((item) => item.source?.scenarioID === "city-guides");
+  if (cityItems.length < 20) {
+    errors.push(`expected at least 20 city-guides practice items, found ${cityItems.length}`);
+  }
+  if ((practiceCore.metadata?.cityLibraryPageCount ?? 0) < 125) {
+    errors.push(`expected at least 125 city library pages, found ${practiceCore.metadata?.cityLibraryPageCount ?? 0}`);
   }
 
   return { errors, warnings: [] };

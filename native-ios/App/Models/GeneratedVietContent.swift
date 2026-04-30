@@ -35,6 +35,8 @@ struct GeneratedVietCatalog: Decodable {
 struct GeneratedVietCatalogMetadata: Decodable {
     let source: String
     let phraseCount: Int
+    let basePhraseCount: Int
+    let cityPhraseCount: Int
     let familyCount: Int
     let scenarioCount: Int
 }

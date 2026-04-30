@@ -10,6 +10,7 @@ const databasePath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet",
 const reportPath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet-report.json");
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
+const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const phraseSourcePath = path.join(repoRoot, "content-draft", "viet", "phrase-source.csv");
 const relationSamplePath = path.join(repoRoot, "content-draft", "viet", "relation-sample-v1.json");
 const websitePreviewPath = path.join(repoRoot, "content-draft", "viet", "website-preview.json");
@@ -200,18 +201,30 @@ function main() {
     ),
     'searchDocuments', (SELECT count(*) FROM search_document),
     'relations', (SELECT count(*) FROM phrase_relation),
-    'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit)
+    'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit),
+    'releaseBlockingMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE release_blocking = 1),
+    'plannedMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE severity = 'planned' AND release_blocking = 0),
+    'cities', (SELECT count(*) FROM city),
+    'cityPlaces', (SELECT count(*) FROM city_place),
+    'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag)
   );`));
+  const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : { cities: [], places: [], pages: [] };
+  const cityLibraryPages = (cityLibrary.pages ?? []).filter((page) => page.status === "approved");
 
   assertEqual(sqliteValue("PRAGMA integrity_check;"), "ok", "SQLite integrity check");
   assertEqual(sqliteValue("PRAGMA foreign_key_check;"), "", "SQLite foreign key check");
-  assertEqual(counts.scenarios, 18, "scenario count");
+  assertEqual(counts.scenarios, report.countParity.scenarios.expected, "scenario count");
   assertEqual(counts.clusters, report.countParity.clusters.expected, "cluster count");
   assertEqual(counts.sourcePhrases, report.countParity.phrases.expected, "source phrase row count");
   assertEqual(counts.canonicalPages, report.countParity.canonicalPhrasePages.expected, "canonical phrase-page count");
   assertEqual(counts.resolvedPhrases, report.countParity.phrases.expected, "phrases resolving to canonical pages");
   assertEqual(counts.searchDocuments, report.countParity.phrases.expected, "search document count");
-  assertZero(counts.missingAudioAuditRows, "missing audio audit rows");
+  assertZero(counts.releaseBlockingMissingAudioAuditRows, "release-blocking missing audio audit rows");
+  assertEqual(counts.plannedMissingAudioAuditRows, cityLibraryPages.length, "planned city-library missing audio rows");
+  assertEqual(counts.missingAudioAuditRows, cityLibraryPages.length, "missing audio audit rows should be city planned only");
+  assertEqual(counts.cities, (cityLibrary.cities ?? []).length, "city table count");
+  assertEqual(counts.cityPlaces, (cityLibrary.places ?? []).length, "city place table count");
+  assertEqual(counts.cityPhraseTags, cityLibraryPages.length, "city phrase tag count");
 
   assertZero(sqliteValue(`
     SELECT count(*)

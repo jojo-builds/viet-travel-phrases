@@ -87,6 +87,44 @@ CREATE TABLE phrase_scenario (
   PRIMARY KEY(phrase_id, scenario_id)
 );
 
+CREATE TABLE city (
+  id TEXT PRIMARY KEY,
+  language_pack_id TEXT NOT NULL REFERENCES language_pack(id),
+  title TEXT NOT NULL,
+  short_title TEXT NOT NULL,
+  vietnamese_name TEXT NOT NULL,
+  emoji TEXT,
+  source_ids TEXT NOT NULL
+);
+
+CREATE TABLE city_subcategory (
+  id TEXT PRIMARY KEY,
+  language_pack_id TEXT NOT NULL REFERENCES language_pack(id),
+  title TEXT NOT NULL,
+  sort_order INTEGER NOT NULL
+);
+
+CREATE TABLE city_place (
+  id TEXT PRIMARY KEY,
+  city_id TEXT NOT NULL REFERENCES city(id),
+  vietnamese_name TEXT NOT NULL,
+  english_name TEXT NOT NULL,
+  place_kind TEXT NOT NULL,
+  source_ids TEXT NOT NULL
+);
+
+CREATE TABLE phrase_city_tag (
+  phrase_id TEXT PRIMARY KEY REFERENCES phrase(id),
+  city_id TEXT NOT NULL REFERENCES city(id),
+  subcategory_id TEXT NOT NULL REFERENCES city_subcategory(id),
+  place_id TEXT NOT NULL REFERENCES city_place(id),
+  difficulty TEXT NOT NULL,
+  page_kind TEXT NOT NULL,
+  spoken_chunks INTEGER NOT NULL,
+  source_ids TEXT NOT NULL,
+  rationale TEXT NOT NULL
+);
+
 CREATE TABLE cluster_scenario (
   cluster_id TEXT NOT NULL REFERENCES phrase_cluster(id),
   scenario_id TEXT NOT NULL REFERENCES scenario(id),
@@ -250,6 +288,8 @@ CREATE TABLE practice_item (
 
 CREATE INDEX idx_phrase_family_key ON phrase(language_pack_id, canonical_phrase_key);
 CREATE INDEX idx_phrase_canonical_phrase ON phrase(canonical_phrase_id);
+CREATE INDEX idx_phrase_city_tag_city ON phrase_city_tag(city_id, subcategory_id, difficulty);
+CREATE INDEX idx_city_place_city ON city_place(city_id);
 CREATE INDEX idx_phrase_page_phrase ON phrase_page(phrase_id);
 CREATE INDEX idx_page_alias_canonical ON page_alias(canonical_page_id);
 CREATE INDEX idx_phrase_cluster_source_family ON phrase_cluster(source_family_id);

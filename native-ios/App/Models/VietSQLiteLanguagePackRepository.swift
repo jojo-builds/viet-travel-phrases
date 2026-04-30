@@ -300,7 +300,7 @@ final class VietSQLiteLanguagePackRepository {
           pp.english_title,
           pp.icon_name,
           pp.tint_name,
-          COALESCE(aa.source_manifest_key, p.id),
+          aa.source_manifest_key,
           COALESCE(
             (
               SELECT group_concat(category_id, '|')
@@ -515,14 +515,13 @@ final class VietSQLiteLanguagePackRepository {
             }
 
             let pageID = Self.stringColumn(statement, index: 0)
-            let phraseID = Self.stringColumn(statement, index: 1)
             let title = Self.stringColumn(statement, index: 2)
             let englishTitle = Self.stringColumn(statement, index: 3)
             let pronunciation = Self.stringColumn(statement, index: 4)
             let summary = Self.stringColumn(statement, index: 5)
             let iconName = Self.stringColumn(statement, index: 6)
             let tintName = AccentTint(rawValue: Self.stringColumn(statement, index: 7)) ?? .gray
-            let audioKey = Self.optionalStringColumn(statement, index: 8) ?? phraseID
+            let audioKey = Self.optionalStringColumn(statement, index: 8)
 
             return PhraseDetailPage(
                 id: pageID,
