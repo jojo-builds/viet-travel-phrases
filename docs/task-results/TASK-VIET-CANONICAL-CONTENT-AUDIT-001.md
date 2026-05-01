@@ -2,7 +2,8 @@
 
 Status: blocked after largest safe validated subset. The runtime graph and structural content contract are repaired, but the stricter page-level human-quality audit still identifies pages that need authored repair before this can honestly be called complete.
 
-Commit hash: pending final commit; the exact commit hash is recorded in the thread receipt.
+Implementation commit: `64fba44f86fbf0904c6786a3613782ea26a754c5`.
+Final closeout commit: pending final commit; the exact final hash is recorded in the thread receipt.
 
 ## Accepted Jojo Steers
 
@@ -73,6 +74,15 @@ Passed:
 - broad banned/internal wording scan for hard-banned phrases
 - `git diff --check`
 
+Blocked / not passing:
+
+- `xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination id=91BDCCB0-0728-40AB-8150-B6DCB96BE799` failed with exit code 65.
+- The app builds and starts tests, but the suite still has stale native expectations outside this content-audit repair:
+  - 38 `PhrasePageFixtureTests` failures mostly unwrap nil legacy generated JSON/catalog fixtures after the SQLite-first and JSON-fallback removal work.
+  - 2 `SQLiteLanguagePackRepositoryTests` failures from expected counts/section order that now need updating for 2,100 planned missing-audio rows and the added Xin chào `when-to-use` / `good-to-know` sections.
+  - 2 `BackSwipeUITests` failures where UI assertions still expect old greeting subtitles/navigation state.
+- I did not repair native test files in this pass because the safe content-audit subset avoided `native-ios/App/**` and the remaining native test update is a separate runtime/test-maintenance task.
+
 Proof:
 
 - `native-ios/App/**` changed files: 0
@@ -94,3 +104,7 @@ Scope:
 - Replace repeated practice prose such as `short practice phrase`, `keeps the sentence direct`, and `built for quick recognition`.
 - Review and improve the 241 weak breakdown labels.
 - Promote or author durable source records for the 744 catalog-built pages, or explicitly accept a lighter long-tail standard for that lane.
+
+Additional test-maintenance task:
+
+- Update native fixture/UI tests for SQLite-only runtime expectations after JSON fallback removal, the expanded planned-audio queue, and the richer Xin chào section contract.
