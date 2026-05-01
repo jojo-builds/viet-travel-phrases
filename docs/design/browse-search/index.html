@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal Browse/Search Visual Design Packet</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f1ec;
+      --ink: #17221d;
+      --muted: #6d7470;
+      --line: rgba(23, 34, 29, 0.12);
+      --card: rgba(255, 255, 255, 0.78);
+      --red: #ff343d;
+      --green: #237762;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Helvetica, Arial, sans-serif;
+    }
+
+    main {
+      width: min(1420px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 44px 0 64px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      max-width: 640px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      backdrop-filter: blur(18px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.64);
+      box-shadow: 0 18px 46px rgba(23, 34, 29, 0.10);
+      backdrop-filter: blur(22px);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    }
+
+    figcaption {
+      min-height: 92px;
+      padding: 14px 4px 2px;
+    }
+
+    figcaption strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    figcaption span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.38;
+    }
+
+    .references {
+      margin-top: 40px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .references h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+    }
+
+    .refs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .refs a {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .refs a span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      header {
+        grid-template-columns: 1fr;
+      }
+
+      .grid,
+      .refs {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        width: min(720px, calc(100% - 28px));
+        padding-top: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Browse / Search</h1>
+        <p class="summary">High-fidelity screenshot-style concepts for the two discovery surfaces. Browse is for deliberate exploration; Search is useful before typing and only shows the keyboard after the field is tapped.</p>
+      </div>
+      <div class="badge">No Melo on utility surfaces</div>
+    </header>
+
+    <section class="grid" aria-label="Browse and Search concept screens">
+      <figure>
+        <img src="assets/browse-default-situations.png" alt="Browse default page with situation cards first">
+        <figcaption>
+          <strong>1. Browse Default</strong>
+          <span>Situations lead. City chips and start-here shelves support exploration without hiding the rest of the catalog.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/browse-scrolled-state.png" alt="Browse scrolled state with phrase families and city shelves">
+        <figcaption>
+          <strong>2. Browse Scrolled</strong>
+          <span>Phrase families, city entry points, and practice-informed shelves appear after the situation layer.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/search-default-no-keyboard.png" alt="Search default page with suggestions and no keyboard">
+        <figcaption>
+          <strong>3. Search Default</strong>
+          <span>Tapping Search opens a useful page without forcing the keyboard. Suggestions provide no-typing paths.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/search-focused-keyboard.png" alt="Search focused state with iOS keyboard">
+        <figcaption>
+          <strong>4. Search Focused</strong>
+          <span>The keyboard appears only after field focus. Suggestions compress around the active field.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/search-results-hotel.png" alt="Search results page for hotel query">
+        <figcaption>
+          <strong>5. Search Results</strong>
+          <span>Results mix exact phrase rows, situations, and related queries so intent can branch naturally.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/search-empty-recovery.png" alt="Search no exact match recovery page">
+        <figcaption>
+          <strong>6. Empty Recovery</strong>
+          <span>No exact match is not a dead end. The surface routes to nearby phrases, situations, and chips.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="references" aria-label="Simulator chrome reference shots">
+      <h2>Simulator Chrome References</h2>
+      <div class="refs">
+        <a href="../reference-shots/2026-05-01/native-home-chrome.png">Home chrome<span>Current iPhone 17 Pro simulator capture</span></a>
+        <a href="../reference-shots/2026-05-01/native-browse-chrome.png">Browse-selected chrome<span>Current bottom admin spacing and selected state</span></a>
+        <a href="../reference-shots/2026-05-01/native-search-expanded-chrome.png">Search expanded chrome<span>Current expanded Search field reference</span></a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -13,6 +13,9 @@ Use these as the current visual baseline:
 | Native Home | `docs/task-results/assets/TASK-SQLITE-DEFAULT-RUNTIME-001/home-normal-launch.png` |
 | Native Browse | `docs/task-results/assets/TASK-SQLITE-DEFAULT-RUNTIME-001/browse-normal-launch.png` |
 | Native Search | `docs/task-results/assets/TASK-SQLITE-DEFAULT-RUNTIME-001/search-normal-launch.png` |
+| Current Home/admin chrome, iPhone 17 Pro simulator, 2026-05-01 | `docs/design/reference-shots/2026-05-01/native-home-chrome.png` |
+| Current Browse-selected admin chrome, iPhone 17 Pro simulator, 2026-05-01 | `docs/design/reference-shots/2026-05-01/native-browse-chrome.png` |
+| Current Search-expanded chrome, iPhone 17 Pro simulator, 2026-05-01 | `docs/design/reference-shots/2026-05-01/native-search-expanded-chrome.png` |
 | Phrase listing/article page | `docs/task-results/assets/TASK-SQLITE-DEFAULT-RUNTIME-001/detail-alias-normal-launch.png` |
 | SQLite alias launch proof | `docs/task-results/TASK-SQLITE-PROMOTION-001-sqlite-alias-launch.png` |
 
