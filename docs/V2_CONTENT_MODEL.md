@@ -197,6 +197,7 @@ Viet:
 - `content-draft/viet/relation-authoring-notes.md`
 - `content-draft/viet/listing-pages/_tier-one-index.json` for the current computed 150-page Tier 1 inventory
 - `content-draft/viet/listing-pages/<scenario>/<family-id>.json` for authored offline Tier 1 listing-page articles
+- `content-draft/viet/practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/` for the approved practice-first live expansion lane and its page records/rationale
 - `content-draft/viet/premium-expansion/` for future lane scaffolds and promoted-live historical manifests
 - `content-draft/viet/website-preview.json` for article-module selection and ordering only
 
@@ -224,6 +225,7 @@ Generated runtime output:
 - `native-ios/Resources/viet-authored-listing-pages.json`
 - `native-ios/Resources/viet-audio-manifest.json`
 - `native-ios/Resources/viet-authored-audio-audit.json`
+- `docs/audio-queues/viet-planned-missing-audio.csv`
 
 Native generation scripts:
 

@@ -49,6 +49,12 @@ const QUESTION_TYPES = [
     answerSurface: "vietnamese_phrase",
     skillTags: ["naturalness", "variant-choice"],
   },
+  {
+    id: "likely_reply_choice",
+    label: "Likely reply",
+    answerSurface: "vietnamese_phrase",
+    skillTags: ["likely-reply", "conversation-flow"],
+  },
 ];
 
 const QUESTION_TYPE_BY_ID = new Map(QUESTION_TYPES.map((type) => [type.id, type]));
@@ -71,7 +77,7 @@ const SCENARIO_TITLES = {
   "social-small-talk": "Social small talk",
   "time-dates-booking": "Time and booking",
   transport: "Transport",
-  "understanding-repair": "Understanding repair",
+  "understanding-repair": "Getting unstuck",
   "city-guides": "City guides",
 };
 
@@ -85,6 +91,7 @@ const SENSITIVE_SCENARIOS = new Set([
 const SOURCE_FILES = {
   phraseSourceCSV: "content-draft/viet/phrase-source.csv",
   cityLibrary: "content-draft/viet/city-library/v1.json",
+  practiceExpansion: "content-draft/viet/practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/manifest.json",
   nativeCatalog: "native-ios/Resources/viet-phrase-catalog.json",
   authoredPages: "native-ios/Resources/viet-authored-listing-pages.json",
   authoredAudioAudit: "native-ios/Resources/viet-authored-audio-audit.json",
@@ -97,6 +104,29 @@ const OUTPUT_PATHS = [
 
 function readJSON(repoRoot, relativePath) {
   return JSON.parse(fs.readFileSync(path.join(repoRoot, relativePath), "utf8"));
+}
+
+function loadPracticeExpansionRecords(repoRoot) {
+  const manifestPath = path.join(repoRoot, SOURCE_FILES.practiceExpansion);
+  if (!fs.existsSync(manifestPath)) {
+    return [];
+  }
+
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  const root = path.dirname(manifestPath);
+  return (manifest.sourceShards || [])
+    .flatMap((relativePath) => {
+      const shard = JSON.parse(fs.readFileSync(path.join(root, relativePath), "utf8"));
+      return (shard.pages || []).map((page) => ({
+        ...page,
+        sourceShard: relativePath,
+      }));
+    })
+    .filter((page) => page.status === "approved");
+}
+
+function practiceExpansionRecordMap(records) {
+  return new Map(records.map((record) => [record.phraseID, record]));
 }
 
 function stableHash(input) {
@@ -323,6 +353,8 @@ function sourceForPhrase(phrase, page, questionType, sectionID = "", extra = {})
     citySubcategoryID: phrase.citySubcategoryID || "",
     difficulty: phrase.difficulty || "",
     placeID: phrase.placeID || "",
+    expansionFamily: phrase.practiceExpansion?.expansionFamily || "",
+    practiceBuckets: phrase.practiceExpansion?.practiceBuckets || [],
     ...extra,
   };
 }
@@ -338,6 +370,8 @@ function tagsForPhrase(phrase, page, type, extra = {}) {
     difficulty: phrase.difficulty || "standard",
     placeID: phrase.placeID || "",
     placeName: phrase.placeName || "",
+    expansionFamily: phrase.practiceExpansion?.expansionFamily || "",
+    practiceBuckets: phrase.practiceExpansion?.practiceBuckets || [],
     pronounCues: [],
     skillTags: QUESTION_TYPE_BY_ID.get(type).skillTags,
     sensitivity: SENSITIVE_SCENARIOS.has(phrase.scenarioID) ? "sensitive" : "standard",
@@ -688,6 +722,45 @@ function buildNaturalChoiceItems(phrases, pagesByFamily, allPhrases) {
   });
 }
 
+function buildLikelyReplyItems(phrases, pagesByFamily, allPhrases) {
+  const candidates = phrases
+    .filter((phrase) => (phrase.practiceExpansion?.practiceBuckets || []).includes("likely-reply"))
+    .sort(sortByID);
+
+  return takeBalancedByScenario(candidates, 80).map((phrase) => {
+    const page = pagesByFamily.get(phrase.familyID);
+    const id = `viet-practice-reply-${phrase.id}`;
+    const choice = makeChoiceOptions(id, phrase, makeDistractors(phrase, allPhrases, 3), "vietnamese");
+    const cue = phrase.practiceExpansion?.replyCue || phrase.context;
+
+    return baseItem({
+      id,
+      questionType: "likely_reply_choice",
+      phrase,
+      page,
+      prompt: {
+        kind: "likely-reply",
+        text: `In this exchange, what Vietnamese phrase is the likely reply or next move? ${cue}`,
+        situation: cue,
+      },
+      source: sourceForPhrase(phrase, page, "likely_reply_choice"),
+      answer: {
+        phraseID: phrase.id,
+        optionID: choice.correctOptionID,
+        vietnamese: phrase.targetText,
+        english: phrase.englishText,
+        audioKey: phrase.audioKey,
+      },
+      options: choice.options,
+      distractors: choice.distractors,
+      feedback: feedbackForPhrase(phrase, page, "likely_reply_choice", {
+        contrast: "This prompt practices what a traveler may hear back or say next, anchored to an authored phrase page.",
+      }),
+      tags: tagsForPhrase(phrase, page, "likely_reply_choice"),
+    });
+  });
+}
+
 function buildPracticeFlows(items) {
   const byScenario = groupBy(items, (item) => item.source.scenarioID);
   const byType = groupBy(items, (item) => item.questionType);
@@ -804,6 +877,8 @@ function buildPracticeCore({ repoRoot }) {
   const authoredPages = readJSON(repoRoot, SOURCE_FILES.authoredPages);
   const audioAudit = readJSON(repoRoot, SOURCE_FILES.authoredAudioAudit);
   const cityLibrary = readJSON(repoRoot, SOURCE_FILES.cityLibrary);
+  const practiceExpansionRecords = loadPracticeExpansionRecords(repoRoot);
+  const practiceExpansionByPhraseID = practiceExpansionRecordMap(practiceExpansionRecords);
   const phraseSourceText = fs.readFileSync(path.join(repoRoot, SOURCE_FILES.phraseSourceCSV), "utf8");
   const phraseSourceRowCount = phraseSourceText.split(/\r?\n/).filter(Boolean).length - 1;
   const cityLibraryPageCount = (cityLibrary.pages || []).filter((page) => page.status === "approved").length;
@@ -816,7 +891,12 @@ function buildPracticeCore({ repoRoot }) {
     }
   }
 
-  const eligiblePhrases = (catalog.phrases || [])
+  const catalogPhrases = (catalog.phrases || []).map((phrase) => {
+    const practiceExpansion = practiceExpansionByPhraseID.get(phrase.id);
+    return practiceExpansion ? { ...phrase, practiceExpansion } : phrase;
+  });
+
+  const eligiblePhrases = catalogPhrases
     .filter((phrase) => phrase.audioStatus === "ready")
     .filter((phrase) => phrase.targetText && phrase.englishText)
     .filter((phrase) => pagesByFamily.has(phrase.familyID))
@@ -825,7 +905,7 @@ function buildPracticeCore({ repoRoot }) {
       const scenarioCompare = a.scenarioID.localeCompare(b.scenarioID);
       return scenarioCompare || a.id.localeCompare(b.id);
     });
-  const cityPhrases = (catalog.phrases || [])
+  const cityPhrases = catalogPhrases
     .filter((phrase) => phrase.scenarioID === "city-guides")
     .filter((phrase) => phrase.targetText && phrase.englishText)
     .filter((phrase) => pagesByFamily.has(phrase.familyID))
@@ -833,6 +913,16 @@ function buildPracticeCore({ repoRoot }) {
       const difficultyOrder = { beginner: 0, intermediate: 1, advanced: 2 };
       const difficultyCompare = (difficultyOrder[a.difficulty] ?? 9) - (difficultyOrder[b.difficulty] ?? 9);
       return difficultyCompare || String(a.cityID).localeCompare(String(b.cityID)) || a.id.localeCompare(b.id);
+    });
+  const practiceExpansionPhrases = catalogPhrases
+    .filter((phrase) => practiceExpansionByPhraseID.has(phrase.id))
+    .filter((phrase) => phrase.targetText && phrase.englishText)
+    .filter((phrase) => pagesByFamily.has(phrase.familyID))
+    .sort((a, b) => {
+      const aRecord = practiceExpansionByPhraseID.get(a.id);
+      const bRecord = practiceExpansionByPhraseID.get(b.id);
+      const familyCompare = String(aRecord?.expansionFamily ?? "").localeCompare(String(bRecord?.expansionFamily ?? ""));
+      return familyCompare || a.id.localeCompare(b.id);
     });
 
   const allItems = [
@@ -847,6 +937,11 @@ function buildPracticeCore({ repoRoot }) {
     ...buildVietnameseToEnglishItems(cityPhrases, pagesByFamily, cityPhrases, { count: cityPhrases.length, offset: 0 }),
     ...buildSituationItems(cityPhrases, pagesByFamily, cityPhrases, { count: cityPhrases.length, offset: 0 }),
     ...buildChunkItems(cityPhrases, pagesByFamily, { count: cityPhrases.length }),
+    ...buildEnglishToVietnameseItems(practiceExpansionPhrases, pagesByFamily, practiceExpansionPhrases, { count: practiceExpansionPhrases.length, offset: 0 }),
+    ...buildVietnameseToEnglishItems(practiceExpansionPhrases, pagesByFamily, practiceExpansionPhrases, { count: practiceExpansionPhrases.length, offset: 0 }),
+    ...buildSituationItems(practiceExpansionPhrases, pagesByFamily, practiceExpansionPhrases, { count: practiceExpansionPhrases.length, offset: 0 }),
+    ...buildChunkItems(practiceExpansionPhrases, pagesByFamily, { count: practiceExpansionPhrases.length }),
+    ...buildLikelyReplyItems(practiceExpansionPhrases, pagesByFamily, practiceExpansionPhrases),
   ];
 
   const items = uniqueBy(allItems, (item) => item.id);
@@ -871,6 +966,8 @@ function buildPracticeCore({ repoRoot }) {
       phraseSourceRowCount,
       cityLibraryPageCount,
       cityPracticePhraseCount: cityPhrases.length,
+      practiceExpansionPageCount: practiceExpansionRecords.length,
+      practiceExpansionPracticePhraseCount: practiceExpansionPhrases.length,
       offlineOnly: true,
       runtimeAI: false,
       nativeRuntimeTouched: false,
@@ -1067,6 +1164,14 @@ function validatePracticeCore(practiceCore, options = {}) {
   }
   if (cityLibraryPageCount < 750) {
     errors.push(`expected at least 750 city library pages, found ${cityLibraryPageCount}`);
+  }
+  const practiceExpansionPageCount = practiceCore.metadata?.practiceExpansionPageCount ?? 0;
+  const practiceExpansionItems = (practiceCore.items || []).filter((item) => item.source?.practiceBuckets?.length > 0);
+  if (practiceExpansionPageCount > 0 && practiceExpansionPageCount < 1250) {
+    errors.push(`expected at least 1250 practice expansion pages, found ${practiceExpansionPageCount}`);
+  }
+  if (practiceExpansionPageCount > 0 && practiceExpansionItems.length < practiceExpansionPageCount) {
+    errors.push(`expected at least one practice item per practice expansion page, found ${practiceExpansionItems.length} items for ${practiceExpansionPageCount} pages`);
   }
 
   return { errors, warnings: [] };

@@ -13,7 +13,8 @@ const auditPath = path.join(root, "Resources", "viet-authored-audio-audit.json")
 const sourceRoot = path.join(familyRoot, "content-draft", "viet", "listing-pages");
 const fullUniverseSourceRoot = path.join(familyRoot, "content-draft", "viet", "full-listing-pages");
 const cityLibraryPath = path.join(familyRoot, "content-draft", "viet", "city-library", "v1.json");
-const cityMissingAudioQueuePath = path.join(familyRoot, "docs", "audio-queues", "viet-city-library-v1-missing-audio.csv");
+const practiceExpansionRoot = path.join(familyRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
+const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 const fullUniverseTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
@@ -2087,53 +2088,200 @@ function loadCityLibraryPages() {
   }));
 }
 
-function writeCityMissingAudioQueue(audioAudit) {
-  const cityMissing = audioAudit.missing.filter((entry) => String(entry.pageID ?? "").startsWith("viet-family-city-"));
-  if (cityMissing.length === 0) {
-    return { count: 0, path: cityMissingAudioQueuePath };
+function loadPracticeExpansionManifest() {
+  if (!fs.existsSync(practiceExpansionManifestPath)) {
+    return null;
+  }
+  return JSON.parse(fs.readFileSync(practiceExpansionManifestPath, "utf8"));
+}
+
+function loadPracticeExpansionRecords() {
+  const manifest = loadPracticeExpansionManifest();
+  if (!manifest) {
+    return [];
   }
 
-  const groups = new Map();
-  for (const entry of cityMissing) {
-    const normalized = normalizeAudioText(entry.text);
-    if (!groups.has(normalized)) {
-      groups.set(normalized, {
-        text: entry.text,
-        normalized,
-        usageCount: 0,
-        suggestedAudioKey: entry.audioKey ?? authoredPhraseAudioKey(entry.text, null),
-        pageIDs: new Set(),
-        sectionIDs: new Set(),
-        kinds: new Set(),
-      });
-    }
-    const group = groups.get(normalized);
-    group.usageCount += 1;
-    group.pageIDs.add(entry.pageID);
-    group.sectionIDs.add(entry.sectionID);
-    group.kinds.add(entry.kind);
+  const shards = manifest.sourceShards ?? [];
+  return shards.flatMap((relativePath) => {
+    const shardPath = path.join(practiceExpansionRoot, relativePath);
+    const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
+    return (shard.pages ?? []).map((page) => ({
+      ...page,
+      sourceShard: relativePath,
+    }));
+  })
+    .filter((page) => page.status === "approved")
+    .sort((a, b) => a.id.localeCompare(b.id));
+}
+
+function practiceExpansionPageID(record) {
+  return `viet-family-${record.phraseID}`;
+}
+
+function practiceExpansionPhraseOption(record, detailPageID = null) {
+  const phrase = phraseByID.get(record.phraseID);
+  if (!phrase) {
+    throw new Error(`Missing practice expansion phrase in catalog: ${record.phraseID}`);
+  }
+  return phraseOption(phrase, detailPageID, record.tintName ?? tintForScenario(record.scenarioID));
+}
+
+function practiceExpansionBreakdownTokens(record) {
+  const chunks = [...(record.chunks ?? [])];
+  const finalMatches = chunks.length > 0
+    && normalizeAudioText(chunks[chunks.length - 1].vietnamese) === normalizeAudioText(record.targetText);
+  if (!finalMatches) {
+    chunks.push({
+      id: `${record.id}-full`,
+      vietnamese: record.targetText,
+      english: "full phrase",
+    });
   }
 
-  const rows = [
-    ["normalized_text", "expected_text", "usage_count", "suggested_audio_key", "source_page_ids", "source_sections", "surface_types"],
-    ...Array.from(groups.values())
-      .sort((a, b) => a.normalized.localeCompare(b.normalized))
-      .map((group) => [
-        group.normalized,
-        group.text,
-        String(group.usageCount),
-        group.suggestedAudioKey,
-        Array.from(group.pageIDs).sort().join("|"),
-        Array.from(group.sectionIDs).sort().join("|"),
-        Array.from(group.kinds).sort().join("|"),
-      ]),
+  return chunks.map((chunk, index) => ({
+    id: chunk.id ?? `${record.id}-chunk-${index + 1}`,
+    vietnamese: chunk.vietnamese,
+    english: chunk.english,
+    audioKey: authoredBreakdownAudioKey(chunk.vietnamese),
+  }));
+}
+
+function findPracticeExpansionRelatedRecords(record, pageRecords) {
+  const relatedIDs = new Set(record.relatedPhraseIDs ?? []);
+  const explicit = pageRecords.filter((candidate) => relatedIDs.has(candidate.phraseID));
+  const sameFamily = pageRecords.filter((candidate) => (
+    candidate.phraseID !== record.phraseID
+    && candidate.expansionFamily === record.expansionFamily
+  ));
+  const sameScenario = pageRecords.filter((candidate) => (
+    candidate.phraseID !== record.phraseID
+    && candidate.scenarioID === record.scenarioID
+    && candidate.expansionFamily !== record.expansionFamily
+  ));
+  const buckets = new Set(record.practiceBuckets ?? []);
+  const sharedBucket = pageRecords.filter((candidate) => (
+    candidate.phraseID !== record.phraseID
+    && (candidate.practiceBuckets ?? []).some((bucket) => buckets.has(bucket))
+  ));
+
+  const seen = new Set();
+  return [...explicit, ...sameFamily, ...sameScenario, ...sharedBucket]
+    .filter((candidate) => {
+      if (seen.has(candidate.phraseID)) return false;
+      seen.add(candidate.phraseID);
+      return true;
+    });
+}
+
+function practiceExpansionOptions(records, count = 4) {
+  return records.slice(0, count).map((record) =>
+    practiceExpansionPhraseOption(record, practiceExpansionPageID(record))
+  );
+}
+
+function practiceExpansionPageForRecord(record, context) {
+  const phrase = phraseByID.get(record.phraseID);
+  if (!phrase) {
+    throw new Error(`Cannot build practice expansion page ${record.id}; missing catalog phrase ${record.phraseID}`);
+  }
+
+  const related = findPracticeExpansionRelatedRecords(record, context.pageRecords);
+  const comparisonRecords = related.filter((candidate) => candidate.expansionFamily === record.expansionFamily);
+  const nextStepRecords = related.filter((candidate) => candidate.expansionFamily !== record.expansionFamily);
+  const selfOption = practiceExpansionPhraseOption(record, null);
+  const comparisonOptions = practiceExpansionOptions(comparisonRecords, 3);
+  const nextStepOptions = practiceExpansionOptions(nextStepRecords.length ? nextStepRecords : related, 3);
+  const taughtPageIDs = new Set([
+    practiceExpansionPageID(record),
+    ...comparisonOptions.map((option) => option.detailPageID).filter(Boolean),
+    ...nextStepOptions.map((option) => option.detailPageID).filter(Boolean),
+  ]);
+  const exploreOptions = practiceExpansionOptions(
+    related.filter((candidate) => !taughtPageIDs.has(practiceExpansionPageID(candidate))),
+    6
+  );
+
+  const sections = [
+    {
+      id: "at-glance",
+      title: "At a glance",
+      body: record.atGlance,
+    },
+    {
+      id: "quick-say",
+      title: "Quick say",
+      body: record.quickSay,
+      phrases: [selfOption],
+    },
+    {
+      id: "breakdown",
+      title: "Break it down",
+      body: record.breakdownBody,
+      breakdown: practiceExpansionBreakdownTokens(record),
+    },
+    {
+      id: "practice-pairs",
+      title: "Practice the contrast",
+      body: record.practicePairBody,
+      phrases: comparisonOptions.length ? comparisonOptions : nextStepOptions,
+    },
+    {
+      id: "when-to-use",
+      title: "When to use it",
+      body: record.whenToUse,
+      phrases: nextStepOptions,
+    },
+    {
+      id: "good-to-know",
+      title: "Good to know",
+      body: record.goodToKnow,
+    },
+    {
+      id: "explore-next",
+      title: "Explore next",
+      body: record.exploreNextBody,
+      phrases: exploreOptions.length ? exploreOptions : nextStepOptions,
+    },
   ];
-  const csv = rows
-    .map((row) => row.map((value) => `"${String(value ?? "").replace(/"/g, "\"\"")}"`).join(","))
-    .join("\n") + "\n";
-  fs.mkdirSync(path.dirname(cityMissingAudioQueuePath), { recursive: true });
-  fs.writeFileSync(cityMissingAudioQueuePath, csv);
-  return { count: groups.size, path: cityMissingAudioQueuePath };
+
+  return {
+    id: practiceExpansionPageID(record),
+    familyID: record.familyID,
+    phraseID: record.phraseID,
+    tierRole: "practice-expansion",
+    depth: "deep",
+    title: record.targetText,
+    englishTitle: record.englishText,
+    pronunciation: record.pronunciation,
+    summary: record.englishText,
+    iconName: record.iconName ?? symbolForScenario(record.scenarioID),
+    tintName: record.tintName ?? tintForScenario(record.scenarioID),
+    categoryIDs: Array.from(new Set([
+      record.scenarioID,
+      ...(record.categoryIDs ?? []),
+      ...(record.practiceBuckets ?? []).map((bucket) => `practice-${bucket}`),
+      `difficulty-${record.difficulty}`,
+    ])),
+    audioKey: authoredPhraseAudioKey(record.targetText, phrase.audioKey),
+    practiceMetadata: {
+      taskID: record.taskID,
+      expansionFamily: record.expansionFamily,
+      difficulty: record.difficulty,
+      practiceBuckets: record.practiceBuckets ?? [],
+      rationale: record.rationale,
+      sourceShard: record.sourceShard,
+    },
+    sections: withSectionPresentations(sections),
+    examples: [selfOption],
+  };
+}
+
+function loadPracticeExpansionPages() {
+  const pageRecords = loadPracticeExpansionRecords();
+  if (pageRecords.length === 0) {
+    return [];
+  }
+  return pageRecords.map((record) => practiceExpansionPageForRecord(record, { pageRecords }));
 }
 
 function collectAudioAudit(pages) {
@@ -2184,6 +2332,7 @@ function main() {
   const fullUniversePages = loadFullUniversePages();
   const fullUniversePhraseIDs = loadFullUniversePhraseIDs();
   const cityLibraryPages = loadCityLibraryPages();
+  const practiceExpansionPages = loadPracticeExpansionPages();
   const fullUniversePageIDByPhraseID = new Map(fullUniversePages.map((page) => [page.phraseID, page.id]));
   const taskFullUniversePhraseIDs = new Set([...fullUniversePhraseIDs]
     .filter((phraseID) => phraseByID.get(phraseID)?.notes?.includes(`task=${fullUniverseTaskID}`)));
@@ -2252,21 +2401,20 @@ function main() {
     inventory,
   }, null, 2)}\n`);
 
-  const allPages = [...pages, ...childPages, ...fullUniversePages, ...cityLibraryPages];
+  const allPages = [...pages, ...childPages, ...fullUniversePages, ...cityLibraryPages, ...practiceExpansionPages];
   const audioAudit = collectAudioAudit(allPages);
-  const cityMissingAudioQueue = writeCityMissingAudioQueue(audioAudit);
   const bundle = {
     metadata: {
       source: path.relative(root, sourceRoot),
       fullUniverseSource: path.relative(root, fullUniverseSourceRoot),
       cityLibrarySource: fs.existsSync(cityLibraryPath) ? path.relative(root, cityLibraryPath) : null,
+      practiceExpansionSource: fs.existsSync(practiceExpansionManifestPath) ? path.relative(root, practiceExpansionRoot) : null,
       tierOneFamilyCount: starterFamilies.length,
       resourceMainPageCount: pages.length,
       childPageCount: childPages.length,
       fullUniversePageCount: fullUniversePages.length,
       cityLibraryPageCount: cityLibraryPages.length,
-      cityMissingAudioQueue: path.relative(root, cityMissingAudioQueue.path),
-      cityMissingAudioQueueCount: cityMissingAudioQueue.count,
+      practiceExpansionPageCount: practiceExpansionPages.length,
       generatedAt: new Date().toISOString(),
     },
     pages: allPages,
@@ -2278,8 +2426,7 @@ function main() {
       generatedAt: bundle.metadata.generatedAt,
       tierOneFamilyCount: starterFamilies.length,
       cityLibraryPageCount: cityLibraryPages.length,
-      cityMissingAudioQueue: path.relative(root, cityMissingAudioQueue.path),
-      cityMissingAudioQueueCount: cityMissingAudioQueue.count,
+      practiceExpansionPageCount: practiceExpansionPages.length,
       requiredAudioCount: audioAudit.required.length,
       missingAudioCount: audioAudit.missing.length,
     },
@@ -2292,7 +2439,7 @@ function main() {
   console.log(`Child pages: ${childPages.length}`);
   console.log(`Full-universe authored pages: ${fullUniversePages.length}`);
   console.log(`City library pages: ${cityLibraryPages.length}`);
-  console.log(`City missing audio queue rows: ${cityMissingAudioQueue.count}`);
+  console.log(`Practice expansion pages: ${practiceExpansionPages.length}`);
   console.log(`Missing assigned audio: ${audioAudit.missing.length}`);
   console.log(`Wrote ${path.relative(process.cwd(), outputPath)}`);
 }

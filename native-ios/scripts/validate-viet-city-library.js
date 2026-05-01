@@ -9,7 +9,7 @@ const sourcePath = path.join(repoRoot, "content-draft", "viet", "city-library", 
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
 const audioAuditPath = path.join(nativeRoot, "Resources", "viet-authored-audio-audit.json");
-const audioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-city-library-v1-missing-audio.csv");
+const audioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 
 const expectedCities = new Set(["hcmc", "hanoi", "danang", "hoian", "hue"]);
 const expectedSubcategories = new Set([
@@ -240,7 +240,7 @@ function main() {
 
   const cityMissingAudio = (audioAudit.missing ?? []).filter((entry) => String(entry.pageID ?? "").startsWith("viet-family-city-"));
   const queueRows = csvDataRowCount(audioQueuePath);
-  assert(queueRows === cityMissingAudio.length, `missing-audio queue should match unresolved city audio, found ${queueRows} queue rows for ${cityMissingAudio.length} missing rows`);
+  assert(queueRows >= cityMissingAudio.length, `planned missing-audio queue should cover unresolved city audio, found ${queueRows} queue rows for ${cityMissingAudio.length} city missing rows`);
   assert(
     cityMissingAudio.length <= pages.length,
     `city missing-audio queue should not exceed city pages, got ${cityMissingAudio.length} missing rows for ${pages.length} pages`

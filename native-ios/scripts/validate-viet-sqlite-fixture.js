@@ -11,6 +11,7 @@ const reportPath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
+const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 const phraseSourcePath = path.join(repoRoot, "content-draft", "viet", "phrase-source.csv");
 const relationSamplePath = path.join(repoRoot, "content-draft", "viet", "relation-sample-v1.json");
 const websitePreviewPath = path.join(repoRoot, "content-draft", "viet", "website-preview.json");
@@ -179,6 +180,15 @@ function sqliteList(sql) {
   return value ? value.split("|") : [];
 }
 
+function csvRowCount(filePath) {
+  if (!fs.existsSync(filePath)) return 0;
+  return fs.readFileSync(filePath, "utf8")
+    .split(/\r?\n/)
+    .filter(Boolean)
+    .slice(1)
+    .length;
+}
+
 function main() {
   if (!fs.existsSync(databasePath)) {
     throw new Error(`Missing SQLite fixture: ${relative(databasePath)}`);
@@ -219,8 +229,14 @@ function main() {
   assertEqual(counts.resolvedPhrases, report.countParity.phrases.expected, "phrases resolving to canonical pages");
   assertEqual(counts.searchDocuments, report.countParity.phrases.expected, "search document count");
   assertZero(counts.releaseBlockingMissingAudioAuditRows, "release-blocking missing audio audit rows");
-  assertEqual(counts.plannedMissingAudioAuditRows, cityLibraryPages.length, "planned city-library missing audio rows");
-  assertEqual(counts.missingAudioAuditRows, cityLibraryPages.length, "missing audio audit rows should be city planned only");
+  const plannedAudioSourcePhraseCount = Number(sqliteValue("SELECT count(*) FROM phrase WHERE audio_status = 'planned';"));
+  const plannedAudioQueueRows = csvRowCount(plannedMissingAudioQueuePath);
+  assertTrue(plannedAudioQueueRows > 0, `planned missing-audio queue is empty or missing: ${relative(plannedMissingAudioQueuePath)}`);
+  assertEqual(counts.plannedMissingAudioAuditRows, counts.missingAudioAuditRows, "missing audio audit rows should all be planned");
+  assertEqual(counts.releaseBlockingMissingAudioAuditRows, 0, "release-blocking missing audio audit rows");
+  assertEqual(counts.plannedMissingAudioAuditRows, plannedAudioQueueRows, "planned missing audio queue rows");
+  assertTrue(counts.plannedMissingAudioAuditRows <= plannedAudioSourcePhraseCount, "planned missing audio rows must be deduped by normalized expected text");
+  assertTrue(plannedAudioSourcePhraseCount >= cityLibraryPages.length, "planned source phrases should include at least the city-library pages");
   assertEqual(counts.cities, (cityLibrary.cities ?? []).length, "city table count");
   assertEqual(counts.cityPlaces, (cityLibrary.places ?? []).length, "city place table count");
   assertEqual(counts.cityPhraseTags, cityLibraryPages.length, "city phrase tag count");

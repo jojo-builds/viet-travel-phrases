@@ -13,6 +13,7 @@ const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifes
 const xcodeProjectPath = path.join(nativeRoot, "project.yml");
 const schemaPath = path.join(__dirname, "sqlite", "001_initial.sql");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
+const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 const outputDir = path.join(nativeRoot, "Resources", "LanguagePacks", "viet");
 const databasePath = path.join(outputDir, "speaklocal-viet.sqlite");
 const reportPath = path.join(outputDir, "speaklocal-viet-report.json");
@@ -92,6 +93,76 @@ function stableID(parts) {
 
 function relative(filePath) {
   return path.relative(repoRoot, filePath).replaceAll(path.sep, "/");
+}
+
+function csvCell(value) {
+  return `"${String(value ?? "").replace(/"/g, "\"\"")}"`;
+}
+
+function writePlannedMissingAudioQueue(missingAudioRows) {
+  const rows = [
+    [
+      "normalized_text",
+      "expected_text",
+      "usage_count",
+      "suggested_audio_key",
+      "target_kinds",
+      "target_ids",
+      "source_paths",
+      "severity",
+      "release_blocking",
+      "reasons",
+    ],
+  ];
+  const groups = new Map();
+
+  for (const row of missingAudioRows) {
+    const normalized = row.normalized_expected_text;
+    if (!groups.has(normalized)) {
+      groups.set(normalized, {
+        expectedText: row.expected_text,
+        normalized,
+        usageCount: 0,
+        suggestedAudioKey: row.suggested_audio_key ?? "",
+        targetKinds: new Set(),
+        targetIDs: new Set(),
+        sourcePaths: new Set(),
+        severities: new Set(),
+        releaseBlocking: 0,
+        reasons: new Set(),
+      });
+    }
+    const group = groups.get(normalized);
+    group.usageCount += 1;
+    group.targetKinds.add(row.target_kind);
+    group.targetIDs.add(row.target_id);
+    group.sourcePaths.add(row.source_path);
+    group.severities.add(row.severity);
+    group.releaseBlocking = Math.max(group.releaseBlocking, Number(row.release_blocking ?? 0));
+    group.reasons.add(row.reason);
+    if (!group.suggestedAudioKey && row.suggested_audio_key) {
+      group.suggestedAudioKey = row.suggested_audio_key;
+    }
+  }
+
+  rows.push(...Array.from(groups.values())
+    .sort((a, b) => a.normalized.localeCompare(b.normalized))
+    .map((group) => [
+      group.normalized,
+      group.expectedText,
+      String(group.usageCount),
+      group.suggestedAudioKey,
+      Array.from(group.targetKinds).sort().join("|"),
+      Array.from(group.targetIDs).sort().join("|"),
+      Array.from(group.sourcePaths).sort().join("|"),
+      Array.from(group.severities).sort().join("|"),
+      String(group.releaseBlocking),
+      Array.from(group.reasons).sort().join("|"),
+    ]));
+
+  fs.mkdirSync(path.dirname(plannedMissingAudioQueuePath), { recursive: true });
+  fs.writeFileSync(plannedMissingAudioQueuePath, `${rows.map((row) => row.map(csvCell).join(",")).join("\n")}\n`);
+  return groups.size;
 }
 
 function sqlValue(value) {
@@ -401,6 +472,16 @@ function main() {
   const cityCanonicalPageIDs = new Set(
     cityLibraryPages
       .map((page) => canonicalPageIDForPhrase(page.id))
+      .filter(Boolean)
+  );
+  const plannedAudioPhraseIDs = new Set(
+    catalog.phrases
+      .filter((phrase) => phrase.audioStatus === "planned")
+      .map((phrase) => phrase.id)
+  );
+  const plannedAudioCanonicalPageIDs = new Set(
+    Array.from(plannedAudioPhraseIDs)
+      .map((phraseID) => canonicalPageIDForPhrase(phraseID))
       .filter(Boolean)
   );
   const cityRows = (cityLibrary?.cities ?? []).map((city) => ({
@@ -1379,10 +1460,11 @@ function main() {
   const seenMissingAudioIDs = new Set();
   const seenPlannedMissingAudioText = new Set();
 
-  function plannedCityAudioTarget(targetKind, targetID) {
-    return (targetKind === "phrase" && cityLibraryPhraseIDs.has(targetID))
-      || (targetKind === "phrase_page" && cityCanonicalPageIDs.has(targetID))
-      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:city-"));
+  function plannedAudioTarget(targetKind, targetID) {
+    return (targetKind === "phrase" && plannedAudioPhraseIDs.has(targetID))
+      || (targetKind === "phrase_page" && plannedAudioCanonicalPageIDs.has(targetID))
+      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:city-"))
+      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:viet-practice-expansion-"));
   }
 
   function addAudioUsage({ usageKind, targetKind, targetID, expectedText, audioKey, isPrimary, sourcePath }) {
@@ -1390,15 +1472,15 @@ function main() {
     const entry = audioManifest[audioKey];
     const resolved = Boolean(entry && normalizeText(entry.text) === normalizedExpected);
     if (!resolved) {
-      const plannedCityMissing = plannedCityAudioTarget(targetKind, targetID);
-      if (plannedCityMissing && seenPlannedMissingAudioText.has(normalizedExpected)) {
+      const plannedMissing = plannedAudioTarget(targetKind, targetID);
+      if (plannedMissing && seenPlannedMissingAudioText.has(normalizedExpected)) {
         return;
       }
-      if (plannedCityMissing) {
+      if (plannedMissing) {
         seenPlannedMissingAudioText.add(normalizedExpected);
       }
-      let missingID = plannedCityMissing
-        ? `missing-audio:planned-city:${stableID([normalizedExpected])}`
+      let missingID = plannedMissing
+        ? `missing-audio:planned:${stableID([normalizedExpected])}`
         : `missing-audio:${stableID([usageKind, targetKind, targetID, expectedText, audioKey])}`;
       let missingSuffix = 1;
       while (seenMissingAudioIDs.has(missingID)) {
@@ -1414,9 +1496,9 @@ function main() {
         expected_text: expectedText,
         normalized_expected_text: normalizedExpected,
         source_path: sourcePath,
-        reason: plannedCityMissing ? "planned-city-library-audio" : (entry ? "normalized-text-mismatch" : "missing-manifest-key"),
-        severity: plannedCityMissing ? "planned" : "blocking",
-        release_blocking: plannedCityMissing ? 0 : 1,
+        reason: plannedMissing ? "planned-authored-audio" : (entry ? "normalized-text-mismatch" : "missing-manifest-key"),
+        severity: plannedMissing ? "planned" : "blocking",
+        release_blocking: plannedMissing ? 0 : 1,
         suggested_audio_key: audioKey ?? null,
         created_at: generatedAt,
       });
@@ -2020,6 +2102,8 @@ function main() {
     scanBannedUserFacing("page_section_item.subtitle_override", row.id, row.subtitle_override);
   }
 
+  const plannedMissingAudioQueueRows = writePlannedMissingAudioQueue(missingAudioRows);
+
   const report = {
     version: 1,
     languagePack: {
@@ -2144,6 +2228,8 @@ function main() {
       missingAudioAuditRows: missingAudioRows.length,
       plannedMissingAudioAuditRows: missingAudioRows.filter((row) => row.severity === "planned" && row.release_blocking === 0).length,
       releaseBlockingMissingAudioAuditRows: missingAudioRows.filter((row) => row.release_blocking === 1).length,
+      plannedMissingAudioQueue: relative(plannedMissingAudioQueuePath),
+      plannedMissingAudioQueueRows,
       missingAudioAuditSample: missingAudioRows.slice(0, 20),
     },
     categoryData: {

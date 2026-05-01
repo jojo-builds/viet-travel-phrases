@@ -104,8 +104,10 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
   assert.ok(counts.audioAssets > 0, "audio manifest rows should be represented");
   assert.ok(counts.audioUsages > 0, "audio usages should be represented");
   assert.strictEqual(counts.releaseBlockingMissingAudioAuditRows, 0, "current renderable rows should not have release-blocking missing audio");
-  assert.strictEqual(counts.missingAudioAuditRows, counts.plannedMissingAudioAuditRows, "missing audio should be planned city-library audio only");
-  assert.strictEqual(counts.cityPhraseTags, counts.plannedMissingAudioAuditRows, "each planned city phrase should have a city tag and missing-audio queue row");
+  assert.strictEqual(counts.missingAudioAuditRows, counts.plannedMissingAudioAuditRows, "missing audio should be planned authored audio only");
+  const plannedSourcePhrases = Number(sqliteValue("SELECT count(*) FROM phrase WHERE audio_status = 'planned';"));
+  assert.ok(counts.plannedMissingAudioAuditRows <= plannedSourcePhrases, "planned missing audio should be deduped by normalized expected text");
+  assert.strictEqual(counts.cityPhraseTags, 750, "city phrase tags should remain tied to the curated city library");
 
   const duplicateCanonicalPages = sqliteValue(`
     SELECT count(*)
