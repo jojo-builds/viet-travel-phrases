@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal Category Page System</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f1ec;
+      --ink: #17221d;
+      --muted: #6d7470;
+      --line: rgba(23, 34, 29, 0.12);
+      --card: rgba(255, 255, 255, 0.78);
+      --red: #ff343d;
+      --green: #237762;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Helvetica, Arial, sans-serif;
+    }
+
+    main {
+      width: min(1420px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 44px 0 64px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      max-width: 720px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      backdrop-filter: blur(18px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.64);
+      box-shadow: 0 18px 46px rgba(23, 34, 29, 0.10);
+      backdrop-filter: blur(22px);
+    }
+
+    figure.wide {
+      grid-column: 1 / -1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    }
+
+    .wide img {
+      max-height: 1400px;
+      object-fit: contain;
+    }
+
+    figcaption {
+      min-height: 92px;
+      padding: 14px 4px 2px;
+    }
+
+    figcaption strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    figcaption span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.38;
+    }
+
+    .notes {
+      margin-top: 40px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .notes h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+    }
+
+    .notes ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 980px) {
+      header,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        width: min(720px, calc(100% - 28px));
+        padding-top: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Category Pages</h1>
+        <p class="summary">High-fidelity visual storyboards for Browse-owned category and city collection pages. These screens use the approved SpeakLocal Vietnam app style and preserve the locked bottom admin/search chrome.</p>
+      </div>
+      <div class="badge">Browse opens collections</div>
+    </header>
+
+    <section class="grid" aria-label="Category page concept screens">
+      <figure>
+        <img src="assets/hanoi-city-hub.png" alt="Hanoi city hub category page screenshot">
+        <figcaption>
+          <strong>1. Hanoi City Hub</strong>
+          <span>A city hub that starts from first-day traveler needs and makes street-name practice visible without hiding other city phrases.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/airport-category.png" alt="Airport category page screenshot">
+        <figcaption>
+          <strong>2. Airport Category</strong>
+          <span>Airport is grouped into arrival, immigration, baggage, and transport, with Practice Airport placed after starter phrases.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/food-category.png" alt="Food category page screenshot">
+        <figcaption>
+          <strong>3. Food Category</strong>
+          <span>Food shows ordering, allergies, payment, and drinks as approachable subcategories for first-time travelers.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/hotel-category.png" alt="Hotel category page screenshot">
+        <figcaption>
+          <strong>4. Hotel Category</strong>
+          <span>Hotel keeps common desk phrases together and shows saved/practice context inside the Browse-owned surface.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/generic-category-template.png" alt="Generic category template screenshot">
+        <figcaption>
+          <strong>5. Generic Template</strong>
+          <span>Reusable template using Shopping as the concrete example: hero promise, subcategory rail, starter group, practice module, and lower shelves.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/search-category-result.png" alt="Search showing a category result card screenshot">
+        <figcaption>
+          <strong>6. Search Category Result</strong>
+          <span>Search can recommend a category, but the result card hands off to Browse instead of becoming the category page.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="wide">
+        <img src="assets/category-page-system-contact-sheet.png" alt="Contact sheet of all category page system screens">
+        <figcaption>
+          <strong>Contact Sheet</strong>
+          <span>The complete storyboard set in one overview for implementation handoff and product review.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="notes">
+      <h2>Implementation Notes</h2>
+      <ul>
+        <li>Browse cards should push category or city collection routes, not prefilled Search.</li>
+        <li>Search should add category result cards that open the Browse collection route.</li>
+        <li>Individual phrase rows still open canonical phrase pages.</li>
+        <li>Practice this category belongs after the starter phrase group.</li>
+        <li>Phrase text is illustrative; canonical content should come from the content system.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
