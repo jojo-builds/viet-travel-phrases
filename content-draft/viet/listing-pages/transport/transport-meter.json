@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm ơn bật đồng hồ giúp tôi answers the traveler question \"Please use the meter\" in rides, routes, pickup points, and stops. This is for the start of the ride when you need the meter running. This helps keep the ride price grounded. Its job is putting the need first and leaving room for the helper to confirm the detail. Expect a confirmation, a handoff, a price, or a follow-up question; then use Explore next if the reply creates another small task.",
+      "body": "For travelers, Làm ơn bật đồng hồ giúp tôi is the phrase to keep ready for \"Please use the meter\" in rides, routes, pickup points, and stops. This is for the start of the ride when you need the meter running. This helps keep the ride price grounded. It works best when you focus on putting the need first and leaving room for the helper to confirm the detail. After you say it, listen for a confirmation, a handoff, a price, or a follow-up question; the next rows help you keep the exchange moving.",
       "presentation": "plain-text"
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Làm ơn bật đồng hồ giúp tôi when \"Please use the meter\" is the main thing you need understood. This is for the start of the ride when you need the meter running. It gives the other person room to answer with a confirmation, a handoff, a price, or a follow-up question. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Start with Làm ơn bật đồng hồ giúp tôi for \"Please use the meter\" when you need the listener to catch the point quickly. This is for the start of the ride when you need the meter running. Pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Show the map, address, or destination while you say it so the answer has a clear anchor.",
       "phrases": [
         {
           "id": "transport-meter",

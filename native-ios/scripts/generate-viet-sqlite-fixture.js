@@ -662,6 +662,29 @@ function main() {
       .map((phraseID) => phraseByID.get(phraseID));
   }
 
+  function broaderFallbackPhrases(phrase, limit = 12) {
+    const currentPageID = canonicalPageIDForPhrase(phrase.id);
+    const preferredScenarioIDs = [
+      phrase.scenarioID,
+      "directions-navigation",
+      "polite-basics",
+      "problems-help",
+      "money-numbers-prices",
+      "phone-internet-power",
+    ];
+    const seen = new Set([currentPageID]);
+    return catalog.phrases
+      .filter((candidate) => canonicalPhraseIDs.has(candidate.id))
+      .filter((candidate) => preferredScenarioIDs.includes(candidate.scenarioID))
+      .filter((candidate) => {
+        const pageID = canonicalPageIDForPhrase(candidate.id);
+        if (!pageID || seen.has(pageID)) return false;
+        seen.add(pageID);
+        return true;
+      })
+      .slice(0, limit);
+  }
+
   function normalizedVietnameseKey(value) {
     return accentlessText(value)
       .replace(/[^a-z0-9/]+/g, " ")
@@ -1278,6 +1301,35 @@ function main() {
       }
     }
 
+    const exploreSectionID = `${canonicalPageID}:explore-next`;
+    if (usedSectionIDs.has(exploreSectionID) && !sectionItemRows.some((item) => item.section_id === exploreSectionID)) {
+      const fallbackPhrases = [
+        ...scenarioNeighborPhrases(phrase, 8),
+        ...broaderFallbackPhrases(phrase, 16),
+      ];
+      for (const [index, fallbackPhrase] of fallbackPhrases.entries()) {
+        const added = addPhraseSectionItem({
+          sectionID: exploreSectionID,
+          phrase: fallbackPhrase,
+          sortOrder: index,
+          note: canonicalPageIDForPhrase(fallbackPhrase.id),
+        });
+        if (!added) continue;
+        addPageRelation({
+          sourcePhraseID: page.phraseID,
+          targetPhraseID: fallbackPhrase.id,
+          relationType: "next_step_after",
+          reason: "Fallback Explore next row from neighboring phrases in the same travel category.",
+          displayLabel: "Explore next",
+          sortOrder: index,
+          sourcePath: authoredSourcePath,
+        });
+        if (sectionItemRows.filter((item) => item.section_id === exploreSectionID).length >= 3) {
+          break;
+        }
+      }
+    }
+
     maybeAddRelationshipWordsSection();
   }
 
@@ -1379,8 +1431,8 @@ function main() {
 
     const nearbySectionID = addSection({
       pageID: pageRow.id,
-      sectionKey: "nearby-phrases",
-      title: "Nearby phrases",
+      sectionKey: "explore-next",
+      title: "Explore next",
       body: nearbyPhrases.length > 0
         ? `These nearby ${scenario?.title ?? "travel"} phrases help if the answer creates one more step.`
         : `This phrase is ready as a standalone ${scenario?.title ?? "travel"} page.`,

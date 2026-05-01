@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi một phần answers the traveler question \"One portion please\" in ordering, adjusting dishes, and checking ingredients. Use this for a simple food order while pointing. Start with the quantity before you add customizations. Its job is putting the need first and leaving room for the helper to confirm the detail. Expect a confirmation, a handoff, a price, or a follow-up question; then use Explore next if the reply creates another small task.",
+      "body": "For travelers, Cho tôi một phần is the phrase to keep ready for \"One portion please\" in ordering, adjusting dishes, and checking ingredients. Use this for a simple food order while pointing. Start with the quantity before you add customizations. It works best when you focus on putting the need first and leaving room for the helper to confirm the detail. After you say it, listen for a confirmation, a handoff, a price, or a follow-up question; the next rows help you keep the exchange moving.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Cho tôi một phần when \"One portion please\" is the main thing you need understood. Use this for a simple food order while pointing. It gives the other person room to answer with a confirmation, a handoff, a price, or a follow-up question. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Start with Cho tôi một phần for \"One portion please\" when you need the listener to catch the point quickly. Use this for a simple food order while pointing. Pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
       "phrases": [
         {
           "id": "food-1",

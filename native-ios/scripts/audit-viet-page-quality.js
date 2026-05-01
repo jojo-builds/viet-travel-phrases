@@ -82,6 +82,7 @@ const overTemplatePatterns = [
   /keeping the useful noun or action/i,
   /short answer, gesture, or practical next step/i,
   /direct phrase for/i,
+  /answers the traveler question/i,
   /nearby phrases are likely to sit near this moment/i,
   /phrase works because it is specific enough/i,
   /Use this when one key word/i,

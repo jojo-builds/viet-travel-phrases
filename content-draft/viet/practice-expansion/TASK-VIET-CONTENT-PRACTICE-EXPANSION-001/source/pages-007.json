@@ -4787,7 +4787,7 @@
         "call a taxi",
         "gọi taxi"
       ],
-      "context": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "context": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -4865,7 +4865,7 @@
         "call a ride-share car",
         "gọi xe công nghệ"
       ],
-      "context": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "context": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -4943,7 +4943,7 @@
         "show me the way",
         "chỉ đường"
       ],
-      "context": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5021,7 +5021,7 @@
         "write the address",
         "viết địa chỉ"
       ],
-      "context": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5099,7 +5099,7 @@
         "read this number",
         "đọc số này"
       ],
-      "context": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "context": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5177,7 +5177,7 @@
         "enter this code",
         "nhập mã này"
       ],
-      "context": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5255,7 +5255,7 @@
         "call this number",
         "gọi số này"
       ],
-      "context": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5333,7 +5333,7 @@
         "take a photo for me",
         "chụp ảnh giúp tôi"
       ],
-      "context": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5411,7 +5411,7 @@
         "exchange money",
         "đổi tiền"
       ],
-      "context": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "context": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5489,7 +5489,7 @@
         "print this ticket",
         "in vé này"
       ],
-      "context": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "context": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5567,7 +5567,7 @@
         "scan the QR code",
         "scan mã QR"
       ],
-      "context": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "context": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5645,7 +5645,7 @@
         "check my reservation",
         "kiểm tra đặt phòng"
       ],
-      "context": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5723,7 +5723,7 @@
         "check the ticket",
         "kiểm tra vé"
       ],
-      "context": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5801,7 +5801,7 @@
         "find my luggage",
         "tìm hành lý"
       ],
-      "context": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5879,7 +5879,7 @@
         "open the room door",
         "mở cửa phòng"
       ],
-      "context": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -5957,7 +5957,7 @@
         "fix the Wi-Fi",
         "sửa Wi-Fi"
       ],
-      "context": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6035,7 +6035,7 @@
         "charge my phone",
         "sạc điện thoại"
       ],
-      "context": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6113,7 +6113,7 @@
         "change rooms",
         "đổi phòng"
       ],
-      "context": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6191,7 +6191,7 @@
         "call a manager",
         "gọi quản lý"
       ],
-      "context": "Use this in getting help moments when call a manager is the main thing you need understood.",
+      "context": "Use this in getting help moments when call a manager is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6269,7 +6269,7 @@
         "translate this sentence",
         "dịch câu này"
       ],
-      "context": "Use this in getting unstuck moments when translate this sentence is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when translate this sentence is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6349,7 +6349,7 @@
         "speak slower",
         "nói chậm lại"
       ],
-      "context": "Use this in getting unstuck moments when speak more slowly is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when speak more slowly is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6429,7 +6429,7 @@
         "say it one more time",
         "nói lại lần nữa"
       ],
-      "context": "Use this in getting unstuck moments when say it one more time is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when say it one more time is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6507,7 +6507,7 @@
         "take me to the hospital",
         "đưa tôi đến bệnh viện"
       ],
-      "context": "Use this in urgent help moments when take me to the hospital is the main thing you need understood.",
+      "context": "Use this in urgent help moments when take me to the hospital is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6585,7 +6585,7 @@
         "call a doctor",
         "gọi bác sĩ"
       ],
-      "context": "Use this in health and pharmacy moments when call a doctor is the main thing you need understood.",
+      "context": "Use this in health and pharmacy moments when call a doctor is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6663,7 +6663,7 @@
         "call the police",
         "gọi cảnh sát"
       ],
-      "context": "Use this in urgent help moments when call the police is the main thing you need understood.",
+      "context": "Use this in urgent help moments when call the police is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6741,7 +6741,7 @@
         "find a pharmacy",
         "tìm nhà thuốc"
       ],
-      "context": "Use this in health and pharmacy moments when find a pharmacy is the main thing you need understood.",
+      "context": "Use this in health and pharmacy moments when find a pharmacy is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6819,7 +6819,7 @@
         "change this dish",
         "đổi món này"
       ],
-      "context": "Use this in food and drink moments when change this dish is the main thing you need understood.",
+      "context": "Use this in food and drink moments when change this dish is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6897,7 +6897,7 @@
         "remake this dish",
         "làm lại món này"
       ],
-      "context": "Use this in food and drink moments when remake this dish is the main thing you need understood.",
+      "context": "Use this in food and drink moments when remake this dish is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -6975,7 +6975,7 @@
         "pack this food to go",
         "đóng gói món này"
       ],
-      "context": "Use this in food and drink moments when pack this food to go is the main thing you need understood.",
+      "context": "Use this in food and drink moments when pack this food to go is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7053,7 +7053,7 @@
         "hold this table",
         "giữ bàn này"
       ],
-      "context": "Use this in food and drink moments when hold this table is the main thing you need understood.",
+      "context": "Use this in food and drink moments when hold this table is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7131,7 +7131,7 @@
         "book a table tonight",
         "đặt bàn tối nay"
       ],
-      "context": "Use this in food and drink moments when book a table tonight is the main thing you need understood.",
+      "context": "Use this in food and drink moments when book a table tonight is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7209,7 +7209,7 @@
         "book a tour tomorrow",
         "đặt tour ngày mai"
       ],
-      "context": "Use this in sightseeing moments when book a tour tomorrow is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when book a tour tomorrow is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7287,7 +7287,7 @@
         "buy entrance tickets",
         "mua vé vào cửa"
       ],
-      "context": "Use this in booking and schedule moments when buy entrance tickets is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when buy entrance tickets is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7365,7 +7365,7 @@
         "find the pickup point",
         "tìm điểm đón"
       ],
-      "context": "Use this in transport moments when find the pickup point is the main thing you need understood.",
+      "context": "Use this in transport moments when find the pickup point is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7443,7 +7443,7 @@
         "check the opening time",
         "kiểm tra giờ mở cửa"
       ],
-      "context": "Use this in booking and schedule moments when check the opening time is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the opening time is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7521,7 +7521,7 @@
         "check the closing time",
         "kiểm tra giờ đóng cửa"
       ],
-      "context": "Use this in booking and schedule moments when check the closing time is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the closing time is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7599,7 +7599,7 @@
         "store my luggage",
         "gửi hành lý"
       ],
-      "context": "Use this in airport and arrival moments when store my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when store my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7677,7 +7677,7 @@
         "send a postcard",
         "gửi bưu thiếp"
       ],
-      "context": "Use this in local service moments when send a postcard is the main thing you need understood.",
+      "context": "Use this in local service moments when send a postcard is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7755,7 +7755,7 @@
         "pack this item",
         "đóng gói đồ này"
       ],
-      "context": "Use this in shopping moments when pack this item is the main thing you need understood.",
+      "context": "Use this in shopping moments when pack this item is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7833,7 +7833,7 @@
         "check the size",
         "kiểm tra kích cỡ"
       ],
-      "context": "Use this in shopping moments when check the size is the main thing you need understood.",
+      "context": "Use this in shopping moments when check the size is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7911,7 +7911,7 @@
         "change to another size",
         "đổi size khác"
       ],
-      "context": "Use this in shopping moments when change to another size is the main thing you need understood.",
+      "context": "Use this in shopping moments when change to another size is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -7989,7 +7989,7 @@
         "find another color",
         "tìm màu khác"
       ],
-      "context": "Use this in shopping moments when find another color is the main thing you need understood.",
+      "context": "Use this in shopping moments when find another color is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8067,7 +8067,7 @@
         "write the price here",
         "ghi giá ra đây"
       ],
-      "context": "Use this in money and price moments when write the price here is the main thing you need understood.",
+      "context": "Use this in money and price moments when write the price here is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8145,7 +8145,7 @@
         "give me a receipt",
         "cho tôi hóa đơn"
       ],
-      "context": "Use this in money and price moments when getting the receipt is the main thing you need understood.",
+      "context": "Use this in money and price moments when getting the receipt is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8218,7 +8218,7 @@
         "split the bill",
         "chia hóa đơn"
       ],
-      "context": "Use this in money and price moments when split the bill is the main thing you need understood.",
+      "context": "Use this in money and price moments when split the bill is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8296,7 +8296,7 @@
         "confirm the address",
         "xác nhận địa chỉ"
       ],
-      "context": "Use this in directions and navigation moments when confirm the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when confirm the address is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8374,7 +8374,7 @@
         "confirm the pickup time",
         "xác nhận giờ đón"
       ],
-      "context": "Use this in transport moments when confirm the pickup time is the main thing you need understood.",
+      "context": "Use this in transport moments when confirm the pickup time is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8452,7 +8452,7 @@
         "confirm the gate",
         "xác nhận cổng ra"
       ],
-      "context": "Use this in airport and arrival moments when confirm the gate is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when confirm the gate is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8530,7 +8530,7 @@
         "confirm the room number",
         "xác nhận số phòng"
       ],
-      "context": "Use this in hotel and accommodation moments when confirm the room number is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when confirm the room number is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8608,7 +8608,7 @@
         "confirm the phone number",
         "xác nhận số điện thoại"
       ],
-      "context": "Use this in phone and internet moments when confirm the phone number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when confirm the phone number is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8686,7 +8686,7 @@
         "remove this item from the bill",
         "xóa món này khỏi hóa đơn"
       ],
-      "context": "Use this in money and price moments when remove this item from the bill is the main thing you need understood.",
+      "context": "Use this in money and price moments when remove this item from the bill is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8764,7 +8764,7 @@
         "report a lost passport",
         "báo mất hộ chiếu"
       ],
-      "context": "Use this in urgent help moments when report a lost passport is the main thing you need understood.",
+      "context": "Use this in urgent help moments when report a lost passport is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8842,7 +8842,7 @@
         "report a lost wallet",
         "báo mất ví"
       ],
-      "context": "Use this in urgent help moments when report a lost wallet is the main thing you need understood.",
+      "context": "Use this in urgent help moments when report a lost wallet is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8920,7 +8920,7 @@
         "find a medical station",
         "tìm trạm y tế"
       ],
-      "context": "Use this in health and pharmacy moments when find a medical station is the main thing you need understood.",
+      "context": "Use this in health and pharmacy moments when find a medical station is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -8998,7 +8998,7 @@
         "call an interpreter",
         "gọi phiên dịch"
       ],
-      "context": "Use this in getting help moments when call an interpreter is the main thing you need understood.",
+      "context": "Use this in getting help moments when call an interpreter is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9078,7 +9078,7 @@
         "speak in English",
         "nói bằng tiếng Anh"
       ],
-      "context": "Use this in getting unstuck moments when speak in english is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when speak in english is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9156,7 +9156,7 @@
         "write it in Vietnamese",
         "viết bằng tiếng Việt"
       ],
-      "context": "Use this in getting unstuck moments when write it in vietnamese is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when write it in vietnamese is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9234,7 +9234,7 @@
         "point it out on the map",
         "chỉ trên bản đồ"
       ],
-      "context": "Use this in directions and navigation moments when the map point is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when the map point is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9314,7 +9314,7 @@
         "stop here",
         "dừng ở đây"
       ],
-      "context": "Use this in transport moments when stop here is the main thing you need understood.",
+      "context": "Use this in transport moments when stop here is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9392,7 +9392,7 @@
         "wait for me a moment",
         "đợi tôi một chút"
       ],
-      "context": "Use this in transport moments when wait a moment is the main thing you need understood.",
+      "context": "Use this in transport moments when wait a moment is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9465,7 +9465,7 @@
         "take me back to the hotel",
         "đưa tôi về khách sạn"
       ],
-      "context": "Use this in transport moments when take me back to the hotel is the main thing you need understood.",
+      "context": "Use this in transport moments when take me back to the hotel is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9543,7 +9543,7 @@
         "check this route",
         "kiểm tra đường này"
       ],
-      "context": "Use this in directions and navigation moments when check this route is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when check this route is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9621,7 +9621,7 @@
         "avoid the highway",
         "tránh đường cao tốc"
       ],
-      "context": "Use this in transport moments when avoid the highway is the main thing you need understood.",
+      "context": "Use this in transport moments when avoid the highway is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9699,7 +9699,7 @@
         "turn on the meter",
         "bật đồng hồ tính tiền"
       ],
-      "context": "Use this in transport moments when turn on the meter is the main thing you need understood.",
+      "context": "Use this in transport moments when turn on the meter is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9777,7 +9777,7 @@
         "switch to cash",
         "đổi sang tiền mặt"
       ],
-      "context": "Use this in money and price moments when switch to cash is the main thing you need understood.",
+      "context": "Use this in money and price moments when switch to cash is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9855,7 +9855,7 @@
         "switch to card",
         "đổi sang thẻ"
       ],
-      "context": "Use this in money and price moments when switch to card is the main thing you need understood.",
+      "context": "Use this in money and price moments when switch to card is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -9933,7 +9933,7 @@
         "send me the location",
         "gửi vị trí cho tôi"
       ],
-      "context": "Use this in phone and internet moments when send me the location is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when send me the location is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10006,7 +10006,7 @@
         "connect to Wi-Fi",
         "kết nối Wi-Fi"
       ],
-      "context": "Use this in phone and internet moments when connect to wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when connect to wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10084,7 +10084,7 @@
         "check this SIM",
         "kiểm tra SIM này"
       ],
-      "context": "Use this in phone and internet moments when check this sim is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when check this sim is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10162,7 +10162,7 @@
         "activate the eSIM",
         "kích hoạt eSIM"
       ],
-      "context": "Use this in phone and internet moments when activate the esim is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when activate the esim is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10240,7 +10240,7 @@
         "unlock the door",
         "mở khóa cửa"
       ],
-      "context": "Use this in hotel and accommodation moments when unlock the door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when unlock the door is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10318,7 +10318,7 @@
         "call housekeeping",
         "gọi dọn phòng"
       ],
-      "context": "Use this in hotel and accommodation moments when call housekeeping is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when call housekeeping is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10396,7 +10396,7 @@
         "bring extra towels",
         "mang thêm khăn"
       ],
-      "context": "Use this in hotel and accommodation moments when bring extra towels is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when bring extra towels is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10474,7 +10474,7 @@
         "bring extra water",
         "mang thêm nước"
       ],
-      "context": "Use this in hotel and accommodation moments when bring extra water is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when bring extra water is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10552,7 +10552,7 @@
         "confirm the tour booking",
         "xác nhận đặt tour"
       ],
-      "context": "Use this in sightseeing moments when confirm the tour booking is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when confirm the tour booking is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10630,7 +10630,7 @@
         "change the tour date",
         "đổi ngày đặt tour"
       ],
-      "context": "Use this in sightseeing moments when change the tour date is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when change the tour date is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10708,7 +10708,7 @@
         "cancel the tour booking",
         "hủy đặt tour"
       ],
-      "context": "Use this in sightseeing moments when cancel the tour booking is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when cancel the tour booking is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10786,7 +10786,7 @@
         "give me the receipt",
         "đưa tôi biên lai"
       ],
-      "context": "Use this in money and price moments when getting the receipt is the main thing you need understood.",
+      "context": "Use this in money and price moments when getting the receipt is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10859,7 +10859,7 @@
         "check the total again",
         "kiểm tra lại tổng tiền"
       ],
-      "context": "Use this in money and price moments when check the total again is the main thing you need understood.",
+      "context": "Use this in money and price moments when check the total again is what you need the listener to catch.",
       "youMayHear": "",
       "replyCue": "",
       "chunks": [
@@ -10957,7 +10957,7 @@
         }
       ],
       "atGlance": "Không đậu phộng is a short practice phrase for no peanuts in food and drink moments. It keeps the sentence direct while still giving the listener a clear action.",
-      "quickSay": "Use the phrase as written when peanuts is the main thing you need understood. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
+      "quickSay": "Use the phrase as written when peanuts is what you need the listener to catch. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
       "breakdownBody": "The reusable pieces make this useful beyond one memorized line. Practice the small chunks first, then rebuild the full phrase for active recall.",
       "practicePairBody": "These nearby phrases make good practice contrasts because they share the same travel setting but ask for a different next step.",
       "whenToUse": "Use it in food and drink moments when the exchange should move quickly. Keep your phone, ticket, item, or destination visible so the answer can be short and practical.",
@@ -11035,7 +11035,7 @@
         }
       ],
       "atGlance": "Có đậu phộng không? is a short practice phrase for does it have peanuts in food and drink moments. It keeps the sentence direct while still giving the listener a clear action.",
-      "quickSay": "Use the phrase as written when peanuts is the main thing you need understood. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
+      "quickSay": "Use the phrase as written when peanuts is what you need the listener to catch. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
       "breakdownBody": "The reusable pieces make this useful beyond one memorized line. Practice the small chunks first, then rebuild the full phrase for active recall.",
       "practicePairBody": "These nearby phrases make good practice contrasts because they share the same travel setting but ask for a different next step.",
       "whenToUse": "Use it in food and drink moments when the exchange should move quickly. Keep your phone, ticket, item, or destination visible so the answer can be short and practical.",
@@ -11112,7 +11112,7 @@
         }
       ],
       "atGlance": "Ít đậu phộng thôi is a short practice phrase for just a little peanuts in food and drink moments. It keeps the sentence direct while still giving the listener a clear action.",
-      "quickSay": "Use the phrase as written when peanuts is the main thing you need understood. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
+      "quickSay": "Use the phrase as written when peanuts is what you need the listener to catch. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
       "breakdownBody": "The reusable pieces make this useful beyond one memorized line. Practice the small chunks first, then rebuild the full phrase for active recall.",
       "practicePairBody": "These nearby phrases make good practice contrasts because they share the same travel setting but ask for a different next step.",
       "whenToUse": "Use it in food and drink moments when the exchange should move quickly. Keep your phone, ticket, item, or destination visible so the answer can be short and practical.",
@@ -11184,7 +11184,7 @@
         }
       ],
       "atGlance": "Không hành is a short practice phrase for no onion in food and drink moments. It keeps the sentence direct while still giving the listener a clear action.",
-      "quickSay": "Use the phrase as written when onion is the main thing you need understood. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
+      "quickSay": "Use the phrase as written when onion is what you need the listener to catch. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
       "breakdownBody": "The reusable pieces make this useful beyond one memorized line. Practice the small chunks first, then rebuild the full phrase for active recall.",
       "practicePairBody": "These nearby phrases make good practice contrasts because they share the same travel setting but ask for a different next step.",
       "whenToUse": "Use it in food and drink moments when the exchange should move quickly. Keep your phone, ticket, item, or destination visible so the answer can be short and practical.",
@@ -11262,7 +11262,7 @@
         }
       ],
       "atGlance": "Có hành không? is a short practice phrase for does it have onion in food and drink moments. It keeps the sentence direct while still giving the listener a clear action.",
-      "quickSay": "Use the phrase as written when onion is the main thing you need understood. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
+      "quickSay": "Use the phrase as written when onion is what you need the listener to catch. Say it once, then point to the item, map, ticket, or screen that gives the other person context.",
       "breakdownBody": "The reusable pieces make this useful beyond one memorized line. Practice the small chunks first, then rebuild the full phrase for active recall.",
       "practicePairBody": "These nearby phrases make good practice contrasts because they share the same travel setting but ask for a different next step.",
       "whenToUse": "Use it in food and drink moments when the exchange should move quickly. Keep your phone, ticket, item, or destination visible so the answer can be short and practical.",

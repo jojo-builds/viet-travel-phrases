@@ -274,7 +274,7 @@ const scenarioGuidance = {
   },
   "local-services-everyday-tasks": {
     moment: "buying small items, receipts, bags, and everyday errands",
-    why: "Everyday service phrases keep small tasks smooth without needing a full conversation.",
+    why: "Everyday service phrases keep quick errands smooth without needing a full conversation.",
     tip: "Point to the item or show a photo when you can. It avoids guessing from pronunciation alone.",
     watch: "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
   },
@@ -663,14 +663,14 @@ function atGlanceText(family, primaryPhrase) {
   const summaryCandidate = override.summary ?? (weakSummary(family.summary) ? "" : sentence(family.summary));
   const usefulSummary = primaryPhrase.context && instructionLikeSentence(summaryCandidate) ? "" : summaryCandidate;
   const variantCue = (family.phraseIDs ?? []).length > 1
-    ? "The forms below show how tone, setting, or politeness changes the best choice."
-    : `Expect ${teaching.response}; then use Explore next if the reply creates another small task.`;
+    ? "The forms below help you choose the version that fits the person, setting, or level of politeness."
+    : `After you say it, listen for ${teaching.response}; the next rows help you keep the exchange moving.`;
 
   return [
-    `${primaryPhrase.targetText} answers the traveler question "${intent}" in ${copy.moment}.`,
+    `For travelers, ${primaryPhrase.targetText} is the phrase to keep ready for "${intent}" in ${copy.moment}.`,
     situation,
     usefulSummary,
-    `Its job is ${teaching.strategy}.`,
+    `It works best when you focus on ${teaching.strategy}.`,
     variantCue,
   ].filter(Boolean).join(" ");
 }
@@ -716,9 +716,9 @@ function standardText(family, primaryPhrase) {
   const intent = cleanEnglishIntent(primaryPhrase.englishText);
   const situation = contextAsSituation(primaryPhrase.context, family.summary);
   return [
-    `Start with ${primaryPhrase.targetText} when "${intent}" is the main thing you need understood.`,
+    `Start with ${primaryPhrase.targetText} for "${intent}" when you need the listener to catch the point quickly.`,
     situation || `It keeps the focus on ${teaching.moment}.`,
-    `It gives the other person room to answer with ${teaching.response}.`,
+    `Pause after the phrase so the other person can answer with ${teaching.response}.`,
     contextCueText(family),
   ].join(" ");
 }
@@ -1385,6 +1385,12 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
         ],
       },
       {
+        id: "when-to-use",
+        title: "When to use it",
+        body: "Use Xin chào for first contact: entering a shop, approaching a front desk, meeting a guide, or starting a polite request with someone whose relationship word you do not know yet. Once the setting feels relaxed, Chào plus the right relationship word can sound warmer.",
+        presentation: "plain-text",
+      },
+      {
         id: "situational-greetings",
         title: "Situational greetings",
         body: "Use these when the setting is more specific: a friend, a respectful adult, a phone call, or a time-of-day greeting.",
@@ -1425,6 +1431,12 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
         id: "cultural-note",
         title: "Cultural note",
         body: "Vietnamese greetings carry relationship information. Learning the pattern matters more than memorizing one perfect hello. You do not need to guess perfectly as a visitor; a calm Xin chào is accepted almost everywhere. As you get more comfortable, adding anh, chị, em, cô, chú, ông, or bà makes the greeting feel less like a phrasebook line and more like a real local opening.",
+        presentation: "tip-callout",
+      },
+      {
+        id: "good-to-know",
+        title: "Good to know",
+        body: "If you are unsure which relationship word fits, do not freeze. Start with Xin chào, smile, and let the rest of the sentence carry the practical need. People will usually understand that you are being respectful while still learning the local greeting pattern.",
         presentation: "tip-callout",
       },
       {

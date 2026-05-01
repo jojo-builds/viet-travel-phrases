@@ -1,0 +1,51 @@
+{
+  "taskID": "TASK-VIET-CANONICAL-CONTENT-AUDIT-001",
+  "generatedAt": "2026-05-01T05:24:55.983Z",
+  "databasePath": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
+  "canonicalPageCount": 3038,
+  "sourcePhraseCount": 3046,
+  "duplicateCanonicalGroups": 0,
+  "missingAudioRows": 2100,
+  "releaseBlockingMissingAudioRows": 0,
+  "sqliteReportGeneratedCounts": {
+    "languagePacks": 1,
+    "scenarios": 19,
+    "clusters": 3027,
+    "clusterMembers": 3046,
+    "phrases": 3046,
+    "pages": 3038,
+    "aliases": 3107,
+    "pageCategories": 15104,
+    "sections": 20974,
+    "sectionItems": 42736,
+    "breakdownTokens": 13799,
+    "relations": 24114,
+    "searchDocuments": 3046,
+    "audioAssets": 3756,
+    "audioUsages": 7555,
+    "audioTextDedupeRows": 2343,
+    "missingAudioAuditRows": 2100
+  },
+  "verdictCounts": {
+    "NEEDS_AUTHORED_REPAIR": 1350,
+    "NEEDS_REVIEW": 744,
+    "PASS": 944
+  },
+  "sourceLaneCounts": {
+    "catalog-built": 744,
+    "child": 14,
+    "city-v1": 750,
+    "full-universe": 35,
+    "practice-expansion": 1350,
+    "tier1": 145
+  },
+  "issueCounts": {
+    "catalog_built_no_authored_source": 744,
+    "pattern_heavy_copy": 1350,
+    "weak_breakdown_label": 241
+  },
+  "severityCounts": {
+    "needs_authored_repair": 1350,
+    "needs_authored_review": 985
+  }
+}

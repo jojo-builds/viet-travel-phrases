@@ -22865,7 +22865,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-taxi-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a taxi?",
-      "summary": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-goi-taxi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22877,7 +22877,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a ride-share car?",
-      "summary": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22889,7 +22889,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-chi-duong-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you show me the way?",
-      "summary": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-chi-duong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22901,7 +22901,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-viet-dia-chi-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you help me write the address?",
-      "summary": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-viet-dia-chi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22913,7 +22913,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doc-so-nay-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me read this number?",
-      "summary": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "summary": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doc-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22925,7 +22925,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-nhap-ma-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me enter this code?",
-      "summary": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-nhap-ma-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22937,7 +22937,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-so-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me call this number?",
-      "summary": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-goi-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22949,7 +22949,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-chup-anh-giup-toi-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you take a photo for me?",
-      "summary": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-chup-anh-giup-toi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22961,7 +22961,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-tien-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me exchange money?",
-      "summary": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "summary": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doi-tien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22973,7 +22973,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-in-ve-nay-duoc-khong",
       "scenarioID": "local-services-everyday-tasks",
       "familyTitle": "Can you help me print this ticket?",
-      "summary": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "summary": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-in-ve-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22985,7 +22985,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-scan-ma-qr-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me scan the QR code?",
-      "summary": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "summary": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-scan-ma-qr-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -22997,7 +22997,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me check my reservation?",
-      "summary": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23009,7 +23009,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-ve-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me check the ticket?",
-      "summary": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kiem-tra-ve-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23021,7 +23021,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong",
       "scenarioID": "airport-border-arrival",
       "familyTitle": "Can you help me find my luggage?",
-      "summary": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "summary": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23033,7 +23033,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-mo-cua-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me open the room door?",
-      "summary": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-mo-cua-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23045,7 +23045,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-sua-wi-fi-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me fix the Wi-Fi?",
-      "summary": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-sua-wi-fi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23057,7 +23057,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-sac-dien-thoai-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me charge my phone?",
-      "summary": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-sac-dien-thoai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23069,7 +23069,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me change rooms?",
-      "summary": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doi-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23081,7 +23081,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-quan-ly-duoc-khong",
       "scenarioID": "problems-help",
       "familyTitle": "Can you help me call a manager?",
-      "summary": "Use this in getting help moments when call a manager is the main thing you need understood.",
+      "summary": "Use this in getting help moments when call a manager is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-goi-quan-ly-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23093,7 +23093,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dich-cau-nay-duoc-khong",
       "scenarioID": "understanding-repair",
       "familyTitle": "Can you help me translate this sentence?",
-      "summary": "Use this in getting unstuck moments when translate this sentence is the main thing you need understood.",
+      "summary": "Use this in getting unstuck moments when translate this sentence is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dich-cau-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23105,7 +23105,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-noi-cham-lai-duoc-khong",
       "scenarioID": "understanding-repair",
       "familyTitle": "Can you speak more slowly?",
-      "summary": "Use this in getting unstuck moments when speak more slowly is the main thing you need understood.",
+      "summary": "Use this in getting unstuck moments when speak more slowly is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-noi-cham-lai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23117,7 +23117,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
       "scenarioID": "understanding-repair",
       "familyTitle": "Can you say it one more time?",
-      "summary": "Use this in getting unstuck moments when say it one more time is the main thing you need understood.",
+      "summary": "Use this in getting unstuck moments when say it one more time is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23129,7 +23129,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dua-toi-den-benh-vien-duoc-khong",
       "scenarioID": "emergency-safety",
       "familyTitle": "Can you take me to the hospital?",
-      "summary": "Use this in urgent help moments when take me to the hospital is the main thing you need understood.",
+      "summary": "Use this in urgent help moments when take me to the hospital is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dua-toi-den-benh-vien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23141,7 +23141,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-bac-si-duoc-khong",
       "scenarioID": "health-pharmacy",
       "familyTitle": "Can you help me call a doctor?",
-      "summary": "Use this in health and pharmacy moments when call a doctor is the main thing you need understood.",
+      "summary": "Use this in health and pharmacy moments when call a doctor is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-goi-bac-si-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23153,7 +23153,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-canh-sat-duoc-khong",
       "scenarioID": "emergency-safety",
       "familyTitle": "Can you help me call the police?",
-      "summary": "Use this in urgent help moments when call the police is the main thing you need understood.",
+      "summary": "Use this in urgent help moments when call the police is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-goi-canh-sat-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23165,7 +23165,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-tim-nha-thuoc-duoc-khong",
       "scenarioID": "health-pharmacy",
       "familyTitle": "Can you help me find a pharmacy?",
-      "summary": "Use this in health and pharmacy moments when find a pharmacy is the main thing you need understood.",
+      "summary": "Use this in health and pharmacy moments when find a pharmacy is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-tim-nha-thuoc-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23177,7 +23177,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-mon-nay-duoc-khong",
       "scenarioID": "food-drink",
       "familyTitle": "Can you help me change this dish?",
-      "summary": "Use this in food and drink moments when change this dish is the main thing you need understood.",
+      "summary": "Use this in food and drink moments when change this dish is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doi-mon-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23189,7 +23189,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-lam-lai-mon-nay-duoc-khong",
       "scenarioID": "food-drink",
       "familyTitle": "Can you help me remake this dish?",
-      "summary": "Use this in food and drink moments when remake this dish is the main thing you need understood.",
+      "summary": "Use this in food and drink moments when remake this dish is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-lam-lai-mon-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23201,7 +23201,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dong-goi-mon-nay-duoc-khong",
       "scenarioID": "food-drink",
       "familyTitle": "Can you help me pack this food to go?",
-      "summary": "Use this in food and drink moments when pack this food to go is the main thing you need understood.",
+      "summary": "Use this in food and drink moments when pack this food to go is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dong-goi-mon-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23213,7 +23213,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-giu-ban-nay-duoc-khong",
       "scenarioID": "food-drink",
       "familyTitle": "Can you help me hold this table?",
-      "summary": "Use this in food and drink moments when hold this table is the main thing you need understood.",
+      "summary": "Use this in food and drink moments when hold this table is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-giu-ban-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23225,7 +23225,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dat-ban-toi-nay-duoc-khong",
       "scenarioID": "food-drink",
       "familyTitle": "Can you help me book a table tonight?",
-      "summary": "Use this in food and drink moments when book a table tonight is the main thing you need understood.",
+      "summary": "Use this in food and drink moments when book a table tonight is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dat-ban-toi-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23237,7 +23237,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dat-tour-ngay-mai-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you help me book a tour tomorrow?",
-      "summary": "Use this in sightseeing moments when book a tour tomorrow is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when book a tour tomorrow is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dat-tour-ngay-mai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23249,7 +23249,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-mua-ve-vao-cua-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me buy entrance tickets?",
-      "summary": "Use this in booking and schedule moments when buy entrance tickets is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when buy entrance tickets is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-mua-ve-vao-cua-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23261,7 +23261,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me find the pickup point?",
-      "summary": "Use this in transport moments when find the pickup point is the main thing you need understood.",
+      "summary": "Use this in transport moments when find the pickup point is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23273,7 +23273,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-gio-mo-cua-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me check the opening time?",
-      "summary": "Use this in booking and schedule moments when check the opening time is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when check the opening time is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kiem-tra-gio-mo-cua-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23285,7 +23285,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-gio-dong-cua-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me check the closing time?",
-      "summary": "Use this in booking and schedule moments when check the closing time is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when check the closing time is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kiem-tra-gio-dong-cua-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23297,7 +23297,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-gui-hanh-ly-duoc-khong",
       "scenarioID": "airport-border-arrival",
       "familyTitle": "Can you help me store my luggage?",
-      "summary": "Use this in airport and arrival moments when store my luggage is the main thing you need understood.",
+      "summary": "Use this in airport and arrival moments when store my luggage is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-gui-hanh-ly-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23309,7 +23309,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-gui-buu-thiep-duoc-khong",
       "scenarioID": "local-services-everyday-tasks",
       "familyTitle": "Can you help me send a postcard?",
-      "summary": "Use this in local service moments when send a postcard is the main thing you need understood.",
+      "summary": "Use this in local service moments when send a postcard is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-gui-buu-thiep-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23321,7 +23321,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dong-goi-do-nay-duoc-khong",
       "scenarioID": "shopping",
       "familyTitle": "Can you help me pack this item?",
-      "summary": "Use this in shopping moments when pack this item is the main thing you need understood.",
+      "summary": "Use this in shopping moments when pack this item is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dong-goi-do-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23333,7 +23333,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-kich-co-duoc-khong",
       "scenarioID": "shopping",
       "familyTitle": "Can you help me check the size?",
-      "summary": "Use this in shopping moments when check the size is the main thing you need understood.",
+      "summary": "Use this in shopping moments when check the size is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kiem-tra-kich-co-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23345,7 +23345,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-size-khac-duoc-khong",
       "scenarioID": "shopping",
       "familyTitle": "Can you help me change to another size?",
-      "summary": "Use this in shopping moments when change to another size is the main thing you need understood.",
+      "summary": "Use this in shopping moments when change to another size is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doi-size-khac-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23357,7 +23357,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-tim-mau-khac-duoc-khong",
       "scenarioID": "shopping",
       "familyTitle": "Can you help me find another color?",
-      "summary": "Use this in shopping moments when find another color is the main thing you need understood.",
+      "summary": "Use this in shopping moments when find another color is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-tim-mau-khac-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23369,7 +23369,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-ghi-gia-ra-day-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me write the price here?",
-      "summary": "Use this in money and price moments when write the price here is the main thing you need understood.",
+      "summary": "Use this in money and price moments when write the price here is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-ghi-gia-ra-day-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23381,7 +23381,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-cho-toi-hoa-don-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can I have the receipt?",
-      "summary": "Use this in money and price moments when getting the receipt is the main thing you need understood.",
+      "summary": "Use this in money and price moments when getting the receipt is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-cho-toi-hoa-don-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23393,7 +23393,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-chia-hoa-don-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me split the bill?",
-      "summary": "Use this in money and price moments when split the bill is the main thing you need understood.",
+      "summary": "Use this in money and price moments when split the bill is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-chia-hoa-don-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23405,7 +23405,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-dia-chi-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you help me confirm the address?",
-      "summary": "Use this in directions and navigation moments when confirm the address is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when confirm the address is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-xac-nhan-dia-chi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23417,7 +23417,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-gio-don-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me confirm the pickup time?",
-      "summary": "Use this in transport moments when confirm the pickup time is the main thing you need understood.",
+      "summary": "Use this in transport moments when confirm the pickup time is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-xac-nhan-gio-don-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23429,7 +23429,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-cong-ra-duoc-khong",
       "scenarioID": "airport-border-arrival",
       "familyTitle": "Can you help me confirm the gate?",
-      "summary": "Use this in airport and arrival moments when confirm the gate is the main thing you need understood.",
+      "summary": "Use this in airport and arrival moments when confirm the gate is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-xac-nhan-cong-ra-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23441,7 +23441,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-so-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me confirm the room number?",
-      "summary": "Use this in hotel and accommodation moments when confirm the room number is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when confirm the room number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-xac-nhan-so-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23453,7 +23453,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-so-dien-thoai-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me confirm the phone number?",
-      "summary": "Use this in phone and internet moments when confirm the phone number is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when confirm the phone number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-xac-nhan-so-dien-thoai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23465,7 +23465,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-xoa-mon-nay-khoi-hoa-don-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me remove this item from the bill?",
-      "summary": "Use this in money and price moments when remove this item from the bill is the main thing you need understood.",
+      "summary": "Use this in money and price moments when remove this item from the bill is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-xoa-mon-nay-khoi-hoa-don-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23477,7 +23477,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-bao-mat-ho-chieu-duoc-khong",
       "scenarioID": "emergency-safety",
       "familyTitle": "Can you help me report a lost passport?",
-      "summary": "Use this in urgent help moments when report a lost passport is the main thing you need understood.",
+      "summary": "Use this in urgent help moments when report a lost passport is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-bao-mat-ho-chieu-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23489,7 +23489,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-bao-mat-vi-duoc-khong",
       "scenarioID": "emergency-safety",
       "familyTitle": "Can you help me report a lost wallet?",
-      "summary": "Use this in urgent help moments when report a lost wallet is the main thing you need understood.",
+      "summary": "Use this in urgent help moments when report a lost wallet is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-bao-mat-vi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23501,7 +23501,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-tim-tram-y-te-duoc-khong",
       "scenarioID": "health-pharmacy",
       "familyTitle": "Can you help me find a medical station?",
-      "summary": "Use this in health and pharmacy moments when find a medical station is the main thing you need understood.",
+      "summary": "Use this in health and pharmacy moments when find a medical station is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-tim-tram-y-te-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23513,7 +23513,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-phien-dich-duoc-khong",
       "scenarioID": "problems-help",
       "familyTitle": "Can you help me call an interpreter?",
-      "summary": "Use this in getting help moments when call an interpreter is the main thing you need understood.",
+      "summary": "Use this in getting help moments when call an interpreter is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-goi-phien-dich-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23525,7 +23525,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-noi-bang-tieng-anh-duoc-khong",
       "scenarioID": "understanding-repair",
       "familyTitle": "Can you speak in English?",
-      "summary": "Use this in getting unstuck moments when speak in english is the main thing you need understood.",
+      "summary": "Use this in getting unstuck moments when speak in english is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-noi-bang-tieng-anh-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23537,7 +23537,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-viet-bang-tieng-viet-duoc-khong",
       "scenarioID": "understanding-repair",
       "familyTitle": "Can you help me write it in Vietnamese?",
-      "summary": "Use this in getting unstuck moments when write it in vietnamese is the main thing you need understood.",
+      "summary": "Use this in getting unstuck moments when write it in vietnamese is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-viet-bang-tieng-viet-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23549,7 +23549,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-chi-tren-ban-do-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you point it out on the map?",
-      "summary": "Use this in directions and navigation moments when the map point is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when the map point is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-chi-tren-ban-do-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23561,7 +23561,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dung-o-day-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you stop here?",
-      "summary": "Use this in transport moments when stop here is the main thing you need understood.",
+      "summary": "Use this in transport moments when stop here is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dung-o-day-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23573,7 +23573,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-toi-mot-chut-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you wait a moment?",
-      "summary": "Use this in transport moments when wait a moment is the main thing you need understood.",
+      "summary": "Use this in transport moments when wait a moment is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doi-toi-mot-chut-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23585,7 +23585,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dua-toi-ve-khach-san-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you take me back to the hotel?",
-      "summary": "Use this in transport moments when take me back to the hotel is the main thing you need understood.",
+      "summary": "Use this in transport moments when take me back to the hotel is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dua-toi-ve-khach-san-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23597,7 +23597,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-duong-nay-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you help me check this route?",
-      "summary": "Use this in directions and navigation moments when check this route is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when check this route is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kiem-tra-duong-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23609,7 +23609,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-tranh-duong-cao-toc-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me avoid the highway?",
-      "summary": "Use this in transport moments when avoid the highway is the main thing you need understood.",
+      "summary": "Use this in transport moments when avoid the highway is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-tranh-duong-cao-toc-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23621,7 +23621,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me turn on the meter?",
-      "summary": "Use this in transport moments when turn on the meter is the main thing you need understood.",
+      "summary": "Use this in transport moments when turn on the meter is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23633,7 +23633,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-sang-tien-mat-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me switch to cash?",
-      "summary": "Use this in money and price moments when switch to cash is the main thing you need understood.",
+      "summary": "Use this in money and price moments when switch to cash is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doi-sang-tien-mat-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23645,7 +23645,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-sang-the-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me switch to card?",
-      "summary": "Use this in money and price moments when switch to card is the main thing you need understood.",
+      "summary": "Use this in money and price moments when switch to card is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doi-sang-the-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23657,7 +23657,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-gui-vi-tri-cho-toi-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you send me the location?",
-      "summary": "Use this in phone and internet moments when send me the location is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when send me the location is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-gui-vi-tri-cho-toi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23669,7 +23669,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-ket-noi-wi-fi-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me connect to Wi-Fi?",
-      "summary": "Use this in phone and internet moments when connect to wi-fi is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when connect to wi-fi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-ket-noi-wi-fi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23681,7 +23681,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-sim-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me check this SIM?",
-      "summary": "Use this in phone and internet moments when check this sim is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when check this sim is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kiem-tra-sim-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23693,7 +23693,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kich-hoat-esim-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me activate the eSIM?",
-      "summary": "Use this in phone and internet moments when activate the esim is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when activate the esim is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kich-hoat-esim-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23705,7 +23705,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-mo-khoa-cua-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me unlock the door?",
-      "summary": "Use this in hotel and accommodation moments when unlock the door is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when unlock the door is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-mo-khoa-cua-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23717,7 +23717,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-don-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me call housekeeping?",
-      "summary": "Use this in hotel and accommodation moments when call housekeeping is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when call housekeeping is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-goi-don-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23729,7 +23729,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-mang-them-khan-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me bring extra towels?",
-      "summary": "Use this in hotel and accommodation moments when bring extra towels is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when bring extra towels is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-mang-them-khan-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23741,7 +23741,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-mang-them-nuoc-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me bring extra water?",
-      "summary": "Use this in hotel and accommodation moments when bring extra water is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when bring extra water is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-mang-them-nuoc-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23753,7 +23753,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-dat-tour-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you help me confirm the tour booking?",
-      "summary": "Use this in sightseeing moments when confirm the tour booking is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when confirm the tour booking is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-xac-nhan-dat-tour-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23765,7 +23765,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-ngay-dat-tour-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you help me change the tour date?",
-      "summary": "Use this in sightseeing moments when change the tour date is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when change the tour date is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-doi-ngay-dat-tour-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23777,7 +23777,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-huy-dat-tour-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you help me cancel the tour booking?",
-      "summary": "Use this in sightseeing moments when cancel the tour booking is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when cancel the tour booking is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-huy-dat-tour-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23789,7 +23789,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dua-toi-bien-lai-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can I have the receipt?",
-      "summary": "Use this in money and price moments when getting the receipt is the main thing you need understood.",
+      "summary": "Use this in money and price moments when getting the receipt is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-dua-toi-bien-lai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -23801,7 +23801,7 @@
       "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-lai-tong-tien-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me check the total again?",
-      "summary": "Use this in money and price moments when check the total again is the main thing you need understood.",
+      "summary": "Use this in money and price moments when check the total again is what you need the listener to catch.",
       "primaryPhraseID": "vpe-help-action-anh-chi-giup-toi-kiem-tra-lai-tong-tien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25769,7 +25769,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-goi-taxi-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a taxi?",
-      "summary": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-goi-taxi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25781,7 +25781,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a ride-share car?",
-      "summary": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25793,7 +25793,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-chi-duong-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you show me the way?",
-      "summary": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-chi-duong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25805,7 +25805,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-viet-dia-chi-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you help me write the address?",
-      "summary": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-viet-dia-chi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25817,7 +25817,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-doc-so-nay-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me read this number?",
-      "summary": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "summary": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-doc-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25829,7 +25829,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-nhap-ma-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me enter this code?",
-      "summary": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-nhap-ma-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25841,7 +25841,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-goi-so-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me call this number?",
-      "summary": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-goi-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25853,7 +25853,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-chup-anh-giup-toi-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you take a photo for me?",
-      "summary": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-chup-anh-giup-toi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25865,7 +25865,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-doi-tien-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me exchange money?",
-      "summary": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "summary": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-doi-tien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25877,7 +25877,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-in-ve-nay-duoc-khong",
       "scenarioID": "local-services-everyday-tasks",
       "familyTitle": "Can you help me print this ticket?",
-      "summary": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "summary": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-in-ve-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25889,7 +25889,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-scan-ma-qr-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me scan the QR code?",
-      "summary": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "summary": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-scan-ma-qr-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25901,7 +25901,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me check my reservation?",
-      "summary": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25913,7 +25913,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-kiem-tra-ve-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me check the ticket?",
-      "summary": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-kiem-tra-ve-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25925,7 +25925,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-tim-hanh-ly-duoc-khong",
       "scenarioID": "airport-border-arrival",
       "familyTitle": "Can you help me find my luggage?",
-      "summary": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "summary": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-tim-hanh-ly-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25937,7 +25937,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-mo-cua-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me open the room door?",
-      "summary": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-mo-cua-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25949,7 +25949,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-sua-wi-fi-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me fix the Wi-Fi?",
-      "summary": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-sua-wi-fi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25961,7 +25961,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-sac-dien-thoai-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me charge my phone?",
-      "summary": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-sac-dien-thoai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25973,7 +25973,7 @@
       "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-doi-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me change rooms?",
-      "summary": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-anh-giup-toi-doi-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25985,7 +25985,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-goi-taxi-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a taxi?",
-      "summary": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-goi-taxi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -25997,7 +25997,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a ride-share car?",
-      "summary": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26009,7 +26009,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-chi-duong-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you show me the way?",
-      "summary": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-chi-duong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26021,7 +26021,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-viet-dia-chi-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you help me write the address?",
-      "summary": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-viet-dia-chi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26033,7 +26033,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-doc-so-nay-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me read this number?",
-      "summary": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "summary": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-doc-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26045,7 +26045,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-nhap-ma-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me enter this code?",
-      "summary": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-nhap-ma-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26057,7 +26057,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-goi-so-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me call this number?",
-      "summary": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-goi-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26069,7 +26069,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-chup-anh-giup-toi-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you take a photo for me?",
-      "summary": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-chup-anh-giup-toi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26081,7 +26081,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-doi-tien-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me exchange money?",
-      "summary": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "summary": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-doi-tien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26093,7 +26093,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-in-ve-nay-duoc-khong",
       "scenarioID": "local-services-everyday-tasks",
       "familyTitle": "Can you help me print this ticket?",
-      "summary": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "summary": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-in-ve-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26105,7 +26105,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-scan-ma-qr-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me scan the QR code?",
-      "summary": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "summary": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-scan-ma-qr-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26117,7 +26117,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me check my reservation?",
-      "summary": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26129,7 +26129,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-kiem-tra-ve-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me check the ticket?",
-      "summary": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-kiem-tra-ve-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26141,7 +26141,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-tim-hanh-ly-duoc-khong",
       "scenarioID": "airport-border-arrival",
       "familyTitle": "Can you help me find my luggage?",
-      "summary": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "summary": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-tim-hanh-ly-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26153,7 +26153,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-mo-cua-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me open the room door?",
-      "summary": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-mo-cua-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26165,7 +26165,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-sua-wi-fi-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me fix the Wi-Fi?",
-      "summary": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-sua-wi-fi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26177,7 +26177,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-sac-dien-thoai-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me charge my phone?",
-      "summary": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-sac-dien-thoai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26189,7 +26189,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me change rooms?",
-      "summary": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26201,7 +26201,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-goi-taxi-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a taxi?",
-      "summary": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-goi-taxi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26213,7 +26213,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a ride-share car?",
-      "summary": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26225,7 +26225,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-chi-duong-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you show me the way?",
-      "summary": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-chi-duong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26237,7 +26237,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-viet-dia-chi-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you help me write the address?",
-      "summary": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-viet-dia-chi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26249,7 +26249,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-doc-so-nay-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me read this number?",
-      "summary": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "summary": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-doc-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26261,7 +26261,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-nhap-ma-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me enter this code?",
-      "summary": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-nhap-ma-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26273,7 +26273,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-goi-so-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me call this number?",
-      "summary": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-goi-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26285,7 +26285,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-chup-anh-giup-toi-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you take a photo for me?",
-      "summary": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-chup-anh-giup-toi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26297,7 +26297,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-doi-tien-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me exchange money?",
-      "summary": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "summary": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-doi-tien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26309,7 +26309,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-in-ve-nay-duoc-khong",
       "scenarioID": "local-services-everyday-tasks",
       "familyTitle": "Can you help me print this ticket?",
-      "summary": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "summary": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-in-ve-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26321,7 +26321,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-scan-ma-qr-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me scan the QR code?",
-      "summary": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "summary": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-scan-ma-qr-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26333,7 +26333,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me check my reservation?",
-      "summary": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26345,7 +26345,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-kiem-tra-ve-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me check the ticket?",
-      "summary": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-kiem-tra-ve-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26357,7 +26357,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-tim-hanh-ly-duoc-khong",
       "scenarioID": "airport-border-arrival",
       "familyTitle": "Can you help me find my luggage?",
-      "summary": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "summary": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-tim-hanh-ly-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26369,7 +26369,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-mo-cua-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me open the room door?",
-      "summary": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-mo-cua-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26381,7 +26381,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-sua-wi-fi-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me fix the Wi-Fi?",
-      "summary": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-sua-wi-fi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26393,7 +26393,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-sac-dien-thoai-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me charge my phone?",
-      "summary": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-sac-dien-thoai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26405,7 +26405,7 @@
       "pageID": "viet-family-vpe-pronoun-help-co-giup-toi-doi-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me change rooms?",
-      "summary": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-co-giup-toi-doi-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26417,7 +26417,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-goi-taxi-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a taxi?",
-      "summary": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-goi-taxi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26429,7 +26429,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a ride-share car?",
-      "summary": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26441,7 +26441,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-chi-duong-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you show me the way?",
-      "summary": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-chi-duong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26453,7 +26453,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-viet-dia-chi-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you help me write the address?",
-      "summary": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-viet-dia-chi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26465,7 +26465,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-doc-so-nay-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me read this number?",
-      "summary": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "summary": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-doc-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26477,7 +26477,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-nhap-ma-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me enter this code?",
-      "summary": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-nhap-ma-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26489,7 +26489,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-goi-so-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me call this number?",
-      "summary": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-goi-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26501,7 +26501,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-chup-anh-giup-toi-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you take a photo for me?",
-      "summary": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-chup-anh-giup-toi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26513,7 +26513,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-doi-tien-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me exchange money?",
-      "summary": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "summary": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-doi-tien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26525,7 +26525,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-in-ve-nay-duoc-khong",
       "scenarioID": "local-services-everyday-tasks",
       "familyTitle": "Can you help me print this ticket?",
-      "summary": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "summary": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-in-ve-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26537,7 +26537,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-scan-ma-qr-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me scan the QR code?",
-      "summary": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "summary": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-scan-ma-qr-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26549,7 +26549,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me check my reservation?",
-      "summary": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26561,7 +26561,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-kiem-tra-ve-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me check the ticket?",
-      "summary": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-kiem-tra-ve-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26573,7 +26573,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-tim-hanh-ly-duoc-khong",
       "scenarioID": "airport-border-arrival",
       "familyTitle": "Can you help me find my luggage?",
-      "summary": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "summary": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-tim-hanh-ly-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26585,7 +26585,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-mo-cua-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me open the room door?",
-      "summary": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-mo-cua-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26597,7 +26597,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-sua-wi-fi-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me fix the Wi-Fi?",
-      "summary": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-sua-wi-fi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26609,7 +26609,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-sac-dien-thoai-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me charge my phone?",
-      "summary": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-sac-dien-thoai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26621,7 +26621,7 @@
       "pageID": "viet-family-vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me change rooms?",
-      "summary": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26633,7 +26633,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-goi-taxi-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a taxi?",
-      "summary": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-goi-taxi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26645,7 +26645,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "scenarioID": "transport",
       "familyTitle": "Can you help me call a ride-share car?",
-      "summary": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "summary": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-goi-xe-cong-nghe-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26657,7 +26657,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-chi-duong-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you show me the way?",
-      "summary": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-chi-duong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26669,7 +26669,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-viet-dia-chi-duoc-khong",
       "scenarioID": "directions-navigation",
       "familyTitle": "Can you help me write the address?",
-      "summary": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "summary": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-viet-dia-chi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26681,7 +26681,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-doc-so-nay-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me read this number?",
-      "summary": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "summary": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-doc-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26693,7 +26693,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-nhap-ma-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me enter this code?",
-      "summary": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-nhap-ma-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26705,7 +26705,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-goi-so-nay-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me call this number?",
-      "summary": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-goi-so-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26717,7 +26717,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-chup-anh-giup-toi-duoc-khong",
       "scenarioID": "sightseeing-activities",
       "familyTitle": "Can you take a photo for me?",
-      "summary": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "summary": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-chup-anh-giup-toi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26729,7 +26729,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-doi-tien-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me exchange money?",
-      "summary": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "summary": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-doi-tien-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26741,7 +26741,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-in-ve-nay-duoc-khong",
       "scenarioID": "local-services-everyday-tasks",
       "familyTitle": "Can you help me print this ticket?",
-      "summary": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "summary": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-in-ve-nay-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26753,7 +26753,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-scan-ma-qr-duoc-khong",
       "scenarioID": "money-numbers-prices",
       "familyTitle": "Can you help me scan the QR code?",
-      "summary": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "summary": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-scan-ma-qr-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26765,7 +26765,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me check my reservation?",
-      "summary": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-kiem-tra-dat-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26777,7 +26777,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-kiem-tra-ve-duoc-khong",
       "scenarioID": "time-dates-booking",
       "familyTitle": "Can you help me check the ticket?",
-      "summary": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "summary": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-kiem-tra-ve-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26789,7 +26789,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-tim-hanh-ly-duoc-khong",
       "scenarioID": "airport-border-arrival",
       "familyTitle": "Can you help me find my luggage?",
-      "summary": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "summary": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-tim-hanh-ly-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26801,7 +26801,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-mo-cua-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me open the room door?",
-      "summary": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-mo-cua-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26813,7 +26813,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-sua-wi-fi-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me fix the Wi-Fi?",
-      "summary": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-sua-wi-fi-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26825,7 +26825,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-sac-dien-thoai-duoc-khong",
       "scenarioID": "phone-internet-power",
       "familyTitle": "Can you help me charge my phone?",
-      "summary": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "summary": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-sac-dien-thoai-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -26837,7 +26837,7 @@
       "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-doi-phong-duoc-khong",
       "scenarioID": "hotel-accommodation",
       "familyTitle": "Can you help me change rooms?",
-      "summary": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "summary": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "primaryPhraseID": "vpe-pronoun-help-em-giup-toi-doi-phong-duoc-khong",
       "accessTier": "premium",
       "phraseIDs": [
@@ -105124,7 +105124,7 @@
       "pronunciation": "giup toi goi taxi duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "context": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a taxi?",
@@ -105161,7 +105161,7 @@
       "pronunciation": "giup toi goi xe cong nghe duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "context": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a ride-share car?",
@@ -105198,7 +105198,7 @@
       "pronunciation": "giup toi chi duong duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you show me the way?",
@@ -105235,7 +105235,7 @@
       "pronunciation": "giup toi viet dia chi duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me write the address?",
@@ -105272,7 +105272,7 @@
       "pronunciation": "giup toi doc so nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "context": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me read this number?",
@@ -105309,7 +105309,7 @@
       "pronunciation": "giup toi nhap ma nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me enter this code?",
@@ -105346,7 +105346,7 @@
       "pronunciation": "giup toi goi so nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call this number?",
@@ -105383,7 +105383,7 @@
       "pronunciation": "giup toi chup anh giup toi duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you take a photo for me?",
@@ -105420,7 +105420,7 @@
       "pronunciation": "giup toi doi tien duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "context": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me exchange money?",
@@ -105457,7 +105457,7 @@
       "pronunciation": "giup toi in ve nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "context": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me print this ticket?",
@@ -105494,7 +105494,7 @@
       "pronunciation": "giup toi scan ma qr duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "context": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me scan the QR code?",
@@ -105531,7 +105531,7 @@
       "pronunciation": "giup toi kiem tra dat phong duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check my reservation?",
@@ -105568,7 +105568,7 @@
       "pronunciation": "giup toi kiem tra ve duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the ticket?",
@@ -105605,7 +105605,7 @@
       "pronunciation": "giup toi tim hanh ly duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find my luggage?",
@@ -105642,7 +105642,7 @@
       "pronunciation": "giup toi mo cua phong duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me open the room door?",
@@ -105679,7 +105679,7 @@
       "pronunciation": "giup toi sua wi-fi duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me fix the Wi-Fi?",
@@ -105716,7 +105716,7 @@
       "pronunciation": "giup toi sac dien thoai duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me charge my phone?",
@@ -105753,7 +105753,7 @@
       "pronunciation": "giup toi doi phong duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change rooms?",
@@ -105790,7 +105790,7 @@
       "pronunciation": "giup toi goi quan ly duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in getting help moments when call a manager is the main thing you need understood.",
+      "context": "Use this in getting help moments when call a manager is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a manager?",
@@ -105827,7 +105827,7 @@
       "pronunciation": "giup toi dich cau nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in getting unstuck moments when translate this sentence is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when translate this sentence is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me translate this sentence?",
@@ -105864,7 +105864,7 @@
       "pronunciation": "giup toi noi cham lai duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in getting unstuck moments when speak more slowly is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when speak more slowly is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you speak more slowly?",
@@ -105903,7 +105903,7 @@
       "pronunciation": "giup toi noi lai lan nua duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in getting unstuck moments when say it one more time is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when say it one more time is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you say it one more time?",
@@ -105942,7 +105942,7 @@
       "pronunciation": "giup toi dua toi den benh vien duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in urgent help moments when take me to the hospital is the main thing you need understood.",
+      "context": "Use this in urgent help moments when take me to the hospital is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you take me to the hospital?",
@@ -105979,7 +105979,7 @@
       "pronunciation": "giup toi goi bac si duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in health and pharmacy moments when call a doctor is the main thing you need understood.",
+      "context": "Use this in health and pharmacy moments when call a doctor is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a doctor?",
@@ -106016,7 +106016,7 @@
       "pronunciation": "giup toi goi canh sat duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in urgent help moments when call the police is the main thing you need understood.",
+      "context": "Use this in urgent help moments when call the police is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call the police?",
@@ -106053,7 +106053,7 @@
       "pronunciation": "giup toi tim nha thuoc duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in health and pharmacy moments when find a pharmacy is the main thing you need understood.",
+      "context": "Use this in health and pharmacy moments when find a pharmacy is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find a pharmacy?",
@@ -106090,7 +106090,7 @@
       "pronunciation": "giup toi doi mon nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in food and drink moments when change this dish is the main thing you need understood.",
+      "context": "Use this in food and drink moments when change this dish is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change this dish?",
@@ -106127,7 +106127,7 @@
       "pronunciation": "giup toi lam lai mon nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in food and drink moments when remake this dish is the main thing you need understood.",
+      "context": "Use this in food and drink moments when remake this dish is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me remake this dish?",
@@ -106164,7 +106164,7 @@
       "pronunciation": "giup toi dong goi mon nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in food and drink moments when pack this food to go is the main thing you need understood.",
+      "context": "Use this in food and drink moments when pack this food to go is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me pack this food to go?",
@@ -106201,7 +106201,7 @@
       "pronunciation": "giup toi giu ban nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in food and drink moments when hold this table is the main thing you need understood.",
+      "context": "Use this in food and drink moments when hold this table is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me hold this table?",
@@ -106238,7 +106238,7 @@
       "pronunciation": "giup toi dat ban toi nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in food and drink moments when book a table tonight is the main thing you need understood.",
+      "context": "Use this in food and drink moments when book a table tonight is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me book a table tonight?",
@@ -106275,7 +106275,7 @@
       "pronunciation": "giup toi dat tour ngay mai duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when book a tour tomorrow is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when book a tour tomorrow is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me book a tour tomorrow?",
@@ -106312,7 +106312,7 @@
       "pronunciation": "giup toi mua ve vao cua duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when buy entrance tickets is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when buy entrance tickets is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me buy entrance tickets?",
@@ -106349,7 +106349,7 @@
       "pronunciation": "giup toi tim diem don duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when find the pickup point is the main thing you need understood.",
+      "context": "Use this in transport moments when find the pickup point is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find the pickup point?",
@@ -106386,7 +106386,7 @@
       "pronunciation": "giup toi kiem tra gio mo cua duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when check the opening time is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the opening time is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the opening time?",
@@ -106423,7 +106423,7 @@
       "pronunciation": "giup toi kiem tra gio dong cua duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when check the closing time is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the closing time is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the closing time?",
@@ -106460,7 +106460,7 @@
       "pronunciation": "giup toi gui hanh ly duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in airport and arrival moments when store my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when store my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me store my luggage?",
@@ -106497,7 +106497,7 @@
       "pronunciation": "giup toi gui buu thiep duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in local service moments when send a postcard is the main thing you need understood.",
+      "context": "Use this in local service moments when send a postcard is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me send a postcard?",
@@ -106534,7 +106534,7 @@
       "pronunciation": "giup toi dong goi do nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in shopping moments when pack this item is the main thing you need understood.",
+      "context": "Use this in shopping moments when pack this item is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me pack this item?",
@@ -106571,7 +106571,7 @@
       "pronunciation": "giup toi kiem tra kich co duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in shopping moments when check the size is the main thing you need understood.",
+      "context": "Use this in shopping moments when check the size is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the size?",
@@ -106608,7 +106608,7 @@
       "pronunciation": "giup toi doi size khac duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in shopping moments when change to another size is the main thing you need understood.",
+      "context": "Use this in shopping moments when change to another size is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change to another size?",
@@ -106645,7 +106645,7 @@
       "pronunciation": "giup toi tim mau khac duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in shopping moments when find another color is the main thing you need understood.",
+      "context": "Use this in shopping moments when find another color is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find another color?",
@@ -106682,7 +106682,7 @@
       "pronunciation": "giup toi ghi gia ra day duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when write the price here is the main thing you need understood.",
+      "context": "Use this in money and price moments when write the price here is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me write the price here?",
@@ -106719,7 +106719,7 @@
       "pronunciation": "giup toi cho toi hoa don duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when getting the receipt is the main thing you need understood.",
+      "context": "Use this in money and price moments when getting the receipt is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can I have the receipt?",
@@ -106756,7 +106756,7 @@
       "pronunciation": "giup toi chia hoa don duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when split the bill is the main thing you need understood.",
+      "context": "Use this in money and price moments when split the bill is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me split the bill?",
@@ -106793,7 +106793,7 @@
       "pronunciation": "giup toi xac nhan dia chi duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when confirm the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when confirm the address is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me confirm the address?",
@@ -106830,7 +106830,7 @@
       "pronunciation": "giup toi xac nhan gio don duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when confirm the pickup time is the main thing you need understood.",
+      "context": "Use this in transport moments when confirm the pickup time is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me confirm the pickup time?",
@@ -106867,7 +106867,7 @@
       "pronunciation": "giup toi xac nhan cong ra duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in airport and arrival moments when confirm the gate is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when confirm the gate is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me confirm the gate?",
@@ -106904,7 +106904,7 @@
       "pronunciation": "giup toi xac nhan so phong duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when confirm the room number is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when confirm the room number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me confirm the room number?",
@@ -106941,7 +106941,7 @@
       "pronunciation": "giup toi xac nhan so dien thoai duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when confirm the phone number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when confirm the phone number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me confirm the phone number?",
@@ -106978,7 +106978,7 @@
       "pronunciation": "giup toi xoa mon nay khoi hoa don duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when remove this item from the bill is the main thing you need understood.",
+      "context": "Use this in money and price moments when remove this item from the bill is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me remove this item from the bill?",
@@ -107015,7 +107015,7 @@
       "pronunciation": "giup toi bao mat ho chieu duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in urgent help moments when report a lost passport is the main thing you need understood.",
+      "context": "Use this in urgent help moments when report a lost passport is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me report a lost passport?",
@@ -107052,7 +107052,7 @@
       "pronunciation": "giup toi bao mat vi duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in urgent help moments when report a lost wallet is the main thing you need understood.",
+      "context": "Use this in urgent help moments when report a lost wallet is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me report a lost wallet?",
@@ -107089,7 +107089,7 @@
       "pronunciation": "giup toi tim tram y te duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in health and pharmacy moments when find a medical station is the main thing you need understood.",
+      "context": "Use this in health and pharmacy moments when find a medical station is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find a medical station?",
@@ -107126,7 +107126,7 @@
       "pronunciation": "giup toi goi phien dich duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in getting help moments when call an interpreter is the main thing you need understood.",
+      "context": "Use this in getting help moments when call an interpreter is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call an interpreter?",
@@ -107163,7 +107163,7 @@
       "pronunciation": "giup toi noi bang tieng anh duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in getting unstuck moments when speak in english is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when speak in english is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you speak in English?",
@@ -107202,7 +107202,7 @@
       "pronunciation": "giup toi viet bang tieng viet duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in getting unstuck moments when write it in vietnamese is the main thing you need understood.",
+      "context": "Use this in getting unstuck moments when write it in vietnamese is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me write it in Vietnamese?",
@@ -107239,7 +107239,7 @@
       "pronunciation": "chi giup toi tren ban do duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when the map point is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when the map point is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you point it out on the map?",
@@ -107276,7 +107276,7 @@
       "pronunciation": "giup toi dung o day duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when stop here is the main thing you need understood.",
+      "context": "Use this in transport moments when stop here is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you stop here?",
@@ -107315,7 +107315,7 @@
       "pronunciation": "giup toi doi toi mot chut duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when wait a moment is the main thing you need understood.",
+      "context": "Use this in transport moments when wait a moment is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you wait a moment?",
@@ -107352,7 +107352,7 @@
       "pronunciation": "giup toi dua toi ve khach san duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when take me back to the hotel is the main thing you need understood.",
+      "context": "Use this in transport moments when take me back to the hotel is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you take me back to the hotel?",
@@ -107389,7 +107389,7 @@
       "pronunciation": "giup toi kiem tra duong nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when check this route is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when check this route is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check this route?",
@@ -107426,7 +107426,7 @@
       "pronunciation": "giup toi tranh duong cao toc duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when avoid the highway is the main thing you need understood.",
+      "context": "Use this in transport moments when avoid the highway is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me avoid the highway?",
@@ -107463,7 +107463,7 @@
       "pronunciation": "giup toi bat dong ho tinh tien duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when turn on the meter is the main thing you need understood.",
+      "context": "Use this in transport moments when turn on the meter is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me turn on the meter?",
@@ -107500,7 +107500,7 @@
       "pronunciation": "giup toi doi sang tien mat duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when switch to cash is the main thing you need understood.",
+      "context": "Use this in money and price moments when switch to cash is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me switch to cash?",
@@ -107537,7 +107537,7 @@
       "pronunciation": "giup toi doi sang the duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when switch to card is the main thing you need understood.",
+      "context": "Use this in money and price moments when switch to card is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me switch to card?",
@@ -107574,7 +107574,7 @@
       "pronunciation": "giup toi gui vi tri cho toi duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when send me the location is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when send me the location is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you send me the location?",
@@ -107611,7 +107611,7 @@
       "pronunciation": "giup toi ket noi wi-fi duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when connect to wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when connect to wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me connect to Wi-Fi?",
@@ -107648,7 +107648,7 @@
       "pronunciation": "giup toi kiem tra sim nay duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when check this sim is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when check this sim is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check this SIM?",
@@ -107685,7 +107685,7 @@
       "pronunciation": "giup toi kich hoat esim duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when activate the esim is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when activate the esim is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me activate the eSIM?",
@@ -107722,7 +107722,7 @@
       "pronunciation": "giup toi mo khoa cua duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when unlock the door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when unlock the door is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me unlock the door?",
@@ -107759,7 +107759,7 @@
       "pronunciation": "giup toi goi don phong duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when call housekeeping is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when call housekeeping is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call housekeeping?",
@@ -107796,7 +107796,7 @@
       "pronunciation": "giup toi mang them khan duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when bring extra towels is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when bring extra towels is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me bring extra towels?",
@@ -107833,7 +107833,7 @@
       "pronunciation": "giup toi mang them nuoc duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when bring extra water is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when bring extra water is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me bring extra water?",
@@ -107870,7 +107870,7 @@
       "pronunciation": "giup toi xac nhan dat tour duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when confirm the tour booking is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when confirm the tour booking is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me confirm the tour booking?",
@@ -107907,7 +107907,7 @@
       "pronunciation": "giup toi doi ngay dat tour duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when change the tour date is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when change the tour date is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change the tour date?",
@@ -107944,7 +107944,7 @@
       "pronunciation": "giup toi huy dat tour duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when cancel the tour booking is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when cancel the tour booking is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me cancel the tour booking?",
@@ -107981,7 +107981,7 @@
       "pronunciation": "giup toi dua toi bien lai duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when getting the receipt is the main thing you need understood.",
+      "context": "Use this in money and price moments when getting the receipt is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can I have the receipt?",
@@ -108018,7 +108018,7 @@
       "pronunciation": "giup toi kiem tra lai tong tien duoc khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when check the total again is the main thing you need understood.",
+      "context": "Use this in money and price moments when check the total again is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the total again?",
@@ -113988,7 +113988,7 @@
       "pronunciation": "anh giup toy goi taxi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "context": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a taxi?",
@@ -114024,7 +114024,7 @@
       "pronunciation": "anh giup toy goi xe kohng nghe duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "context": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a ride-share car?",
@@ -114060,7 +114060,7 @@
       "pronunciation": "anh giup toy chi duong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you show me the way?",
@@ -114096,7 +114096,7 @@
       "pronunciation": "anh giup toy viet dia chi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me write the address?",
@@ -114132,7 +114132,7 @@
       "pronunciation": "anh giup toy doc so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "context": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me read this number?",
@@ -114168,7 +114168,7 @@
       "pronunciation": "anh giup toy nhap ma nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me enter this code?",
@@ -114204,7 +114204,7 @@
       "pronunciation": "anh giup toy goi so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call this number?",
@@ -114240,7 +114240,7 @@
       "pronunciation": "anh giup toy chup anh giup toy duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you take a photo for me?",
@@ -114276,7 +114276,7 @@
       "pronunciation": "anh giup toy doi tien duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "context": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me exchange money?",
@@ -114312,7 +114312,7 @@
       "pronunciation": "anh giup toy in ve nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "context": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me print this ticket?",
@@ -114348,7 +114348,7 @@
       "pronunciation": "anh giup toy scan ma qr duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "context": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me scan the QR code?",
@@ -114384,7 +114384,7 @@
       "pronunciation": "anh giup toy kiem tra dat phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check my reservation?",
@@ -114420,7 +114420,7 @@
       "pronunciation": "anh giup toy kiem tra ve duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the ticket?",
@@ -114456,7 +114456,7 @@
       "pronunciation": "anh giup toy tim hanh ly duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find my luggage?",
@@ -114492,7 +114492,7 @@
       "pronunciation": "anh giup toy muh cua phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me open the room door?",
@@ -114528,7 +114528,7 @@
       "pronunciation": "anh giup toy sua wi-fi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me fix the Wi-Fi?",
@@ -114564,7 +114564,7 @@
       "pronunciation": "anh giup toy sac dien thoai duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me charge my phone?",
@@ -114600,7 +114600,7 @@
       "pronunciation": "anh giup toy doi phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change rooms?",
@@ -114636,7 +114636,7 @@
       "pronunciation": "chee giup toy goi taxi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "context": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a taxi?",
@@ -114672,7 +114672,7 @@
       "pronunciation": "chee giup toy goi xe kohng nghe duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "context": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a ride-share car?",
@@ -114708,7 +114708,7 @@
       "pronunciation": "chee giup toy chi duong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you show me the way?",
@@ -114744,7 +114744,7 @@
       "pronunciation": "chee giup toy viet dia chi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me write the address?",
@@ -114780,7 +114780,7 @@
       "pronunciation": "chee giup toy doc so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "context": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me read this number?",
@@ -114816,7 +114816,7 @@
       "pronunciation": "chee giup toy nhap ma nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me enter this code?",
@@ -114852,7 +114852,7 @@
       "pronunciation": "chee giup toy goi so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call this number?",
@@ -114888,7 +114888,7 @@
       "pronunciation": "chee giup toy chup anh giup toy duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you take a photo for me?",
@@ -114924,7 +114924,7 @@
       "pronunciation": "chee giup toy doi tien duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "context": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me exchange money?",
@@ -114960,7 +114960,7 @@
       "pronunciation": "chee giup toy in ve nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "context": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me print this ticket?",
@@ -114996,7 +114996,7 @@
       "pronunciation": "chee giup toy scan ma qr duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "context": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me scan the QR code?",
@@ -115032,7 +115032,7 @@
       "pronunciation": "chee giup toy kiem tra dat phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check my reservation?",
@@ -115068,7 +115068,7 @@
       "pronunciation": "chee giup toy kiem tra ve duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the ticket?",
@@ -115104,7 +115104,7 @@
       "pronunciation": "chee giup toy tim hanh ly duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find my luggage?",
@@ -115140,7 +115140,7 @@
       "pronunciation": "chee giup toy muh cua phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me open the room door?",
@@ -115176,7 +115176,7 @@
       "pronunciation": "chee giup toy sua wi-fi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me fix the Wi-Fi?",
@@ -115212,7 +115212,7 @@
       "pronunciation": "chee giup toy sac dien thoai duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me charge my phone?",
@@ -115248,7 +115248,7 @@
       "pronunciation": "chee giup toy doi phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change rooms?",
@@ -115284,7 +115284,7 @@
       "pronunciation": "koh giup toy goi taxi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "context": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a taxi?",
@@ -115320,7 +115320,7 @@
       "pronunciation": "koh giup toy goi xe kohng nghe duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "context": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a ride-share car?",
@@ -115356,7 +115356,7 @@
       "pronunciation": "koh giup toy chi duong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you show me the way?",
@@ -115392,7 +115392,7 @@
       "pronunciation": "koh giup toy viet dia chi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me write the address?",
@@ -115428,7 +115428,7 @@
       "pronunciation": "koh giup toy doc so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "context": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me read this number?",
@@ -115464,7 +115464,7 @@
       "pronunciation": "koh giup toy nhap ma nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me enter this code?",
@@ -115500,7 +115500,7 @@
       "pronunciation": "koh giup toy goi so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call this number?",
@@ -115536,7 +115536,7 @@
       "pronunciation": "koh giup toy chup anh giup toy duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you take a photo for me?",
@@ -115572,7 +115572,7 @@
       "pronunciation": "koh giup toy doi tien duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "context": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me exchange money?",
@@ -115608,7 +115608,7 @@
       "pronunciation": "koh giup toy in ve nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "context": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me print this ticket?",
@@ -115644,7 +115644,7 @@
       "pronunciation": "koh giup toy scan ma qr duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "context": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me scan the QR code?",
@@ -115680,7 +115680,7 @@
       "pronunciation": "koh giup toy kiem tra dat phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check my reservation?",
@@ -115716,7 +115716,7 @@
       "pronunciation": "koh giup toy kiem tra ve duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the ticket?",
@@ -115752,7 +115752,7 @@
       "pronunciation": "koh giup toy tim hanh ly duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find my luggage?",
@@ -115788,7 +115788,7 @@
       "pronunciation": "koh giup toy muh cua phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me open the room door?",
@@ -115824,7 +115824,7 @@
       "pronunciation": "koh giup toy sua wi-fi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me fix the Wi-Fi?",
@@ -115860,7 +115860,7 @@
       "pronunciation": "koh giup toy sac dien thoai duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me charge my phone?",
@@ -115896,7 +115896,7 @@
       "pronunciation": "koh giup toy doi phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change rooms?",
@@ -115932,7 +115932,7 @@
       "pronunciation": "choo giup toy goi taxi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "context": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a taxi?",
@@ -115968,7 +115968,7 @@
       "pronunciation": "choo giup toy goi xe kohng nghe duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "context": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a ride-share car?",
@@ -116004,7 +116004,7 @@
       "pronunciation": "choo giup toy chi duong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you show me the way?",
@@ -116040,7 +116040,7 @@
       "pronunciation": "choo giup toy viet dia chi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me write the address?",
@@ -116076,7 +116076,7 @@
       "pronunciation": "choo giup toy doc so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "context": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me read this number?",
@@ -116112,7 +116112,7 @@
       "pronunciation": "choo giup toy nhap ma nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me enter this code?",
@@ -116148,7 +116148,7 @@
       "pronunciation": "choo giup toy goi so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call this number?",
@@ -116184,7 +116184,7 @@
       "pronunciation": "choo giup toy chup anh giup toy duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you take a photo for me?",
@@ -116220,7 +116220,7 @@
       "pronunciation": "choo giup toy doi tien duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "context": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me exchange money?",
@@ -116256,7 +116256,7 @@
       "pronunciation": "choo giup toy in ve nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "context": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me print this ticket?",
@@ -116292,7 +116292,7 @@
       "pronunciation": "choo giup toy scan ma qr duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "context": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me scan the QR code?",
@@ -116328,7 +116328,7 @@
       "pronunciation": "choo giup toy kiem tra dat phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check my reservation?",
@@ -116364,7 +116364,7 @@
       "pronunciation": "choo giup toy kiem tra ve duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the ticket?",
@@ -116400,7 +116400,7 @@
       "pronunciation": "choo giup toy tim hanh ly duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find my luggage?",
@@ -116436,7 +116436,7 @@
       "pronunciation": "choo giup toy muh cua phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me open the room door?",
@@ -116472,7 +116472,7 @@
       "pronunciation": "choo giup toy sua wi-fi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me fix the Wi-Fi?",
@@ -116508,7 +116508,7 @@
       "pronunciation": "choo giup toy sac dien thoai duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me charge my phone?",
@@ -116544,7 +116544,7 @@
       "pronunciation": "choo giup toy doi phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change rooms?",
@@ -116580,7 +116580,7 @@
       "pronunciation": "em giup toy goi taxi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a taxi is the main thing you need understood.",
+      "context": "Use this in transport moments when call a taxi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a taxi?",
@@ -116616,7 +116616,7 @@
       "pronunciation": "em giup toy goi xe kohng nghe duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in transport moments when call a ride-share car is the main thing you need understood.",
+      "context": "Use this in transport moments when call a ride-share car is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call a ride-share car?",
@@ -116652,7 +116652,7 @@
       "pronunciation": "em giup toy chi duong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when show me the way is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when show me the way is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you show me the way?",
@@ -116688,7 +116688,7 @@
       "pronunciation": "em giup toy viet dia chi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in directions and navigation moments when write the address is the main thing you need understood.",
+      "context": "Use this in directions and navigation moments when write the address is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me write the address?",
@@ -116724,7 +116724,7 @@
       "pronunciation": "em giup toy doc so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when read this number is the main thing you need understood.",
+      "context": "Use this in money and price moments when read this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me read this number?",
@@ -116760,7 +116760,7 @@
       "pronunciation": "em giup toy nhap ma nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when enter this code is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when enter this code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me enter this code?",
@@ -116796,7 +116796,7 @@
       "pronunciation": "em giup toy goi so nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when call this number is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when call this number is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me call this number?",
@@ -116832,7 +116832,7 @@
       "pronunciation": "em giup toy chup anh giup toy duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in sightseeing moments when take a photo for me is the main thing you need understood.",
+      "context": "Use this in sightseeing moments when take a photo for me is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you take a photo for me?",
@@ -116868,7 +116868,7 @@
       "pronunciation": "em giup toy doi tien duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when exchange money is the main thing you need understood.",
+      "context": "Use this in money and price moments when exchange money is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me exchange money?",
@@ -116904,7 +116904,7 @@
       "pronunciation": "em giup toy in ve nay duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in local service moments when print this ticket is the main thing you need understood.",
+      "context": "Use this in local service moments when print this ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me print this ticket?",
@@ -116940,7 +116940,7 @@
       "pronunciation": "em giup toy scan ma qr duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in money and price moments when scan the qr code is the main thing you need understood.",
+      "context": "Use this in money and price moments when scan the qr code is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me scan the QR code?",
@@ -116976,7 +116976,7 @@
       "pronunciation": "em giup toy kiem tra dat phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when check my reservation is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when check my reservation is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check my reservation?",
@@ -117012,7 +117012,7 @@
       "pronunciation": "em giup toy kiem tra ve duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in booking and schedule moments when check the ticket is the main thing you need understood.",
+      "context": "Use this in booking and schedule moments when check the ticket is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me check the ticket?",
@@ -117048,7 +117048,7 @@
       "pronunciation": "em giup toy tim hanh ly duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in airport and arrival moments when find my luggage is the main thing you need understood.",
+      "context": "Use this in airport and arrival moments when find my luggage is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me find my luggage?",
@@ -117084,7 +117084,7 @@
       "pronunciation": "em giup toy muh cua phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when open the room door is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when open the room door is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me open the room door?",
@@ -117120,7 +117120,7 @@
       "pronunciation": "em giup toy sua wi-fi duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when fix the wi-fi is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when fix the wi-fi is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me fix the Wi-Fi?",
@@ -117156,7 +117156,7 @@
       "pronunciation": "em giup toy sac dien thoai duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in phone and internet moments when charge my phone is the main thing you need understood.",
+      "context": "Use this in phone and internet moments when charge my phone is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me charge my phone?",
@@ -117192,7 +117192,7 @@
       "pronunciation": "em giup toy doi phong duhk khong?",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this in hotel and accommodation moments when change rooms is the main thing you need understood.",
+      "context": "Use this in hotel and accommodation moments when change rooms is what you need the listener to catch.",
       "youMayHear": "",
       "searchAliases": [
         "Can you help me change rooms?",
