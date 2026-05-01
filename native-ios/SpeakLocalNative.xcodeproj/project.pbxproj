@@ -20,10 +20,13 @@
 		5E445B4FD180B59D157E434D /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = C29EA500445CB089DEEDA380 /* Audio */; };
 		63A9110E76FE4649A20494AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */; };
 		65627E82017E546AA617DB0D /* BrowseSearchDestinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB33D2DD6D5436415A66F6 /* BrowseSearchDestinations.swift */; };
+		73D1A2BB8E7BF70AA804E6C3 /* melo-completion-lantern.png in Resources */ = {isa = PBXBuildFile; fileRef = B797C57C03E4824D2C7F7365 /* melo-completion-lantern.png */; };
 		74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */; };
 		88192A7C638E2A96E565F2D5 /* NativeGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C98DE73722F896A42D9AEC1 /* NativeGlass.swift */; };
+		8FEBF7C823049C53B0312B20 /* melo-base-traveler.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B9449DF7FBCB9AFC51C3131 /* melo-base-traveler.png */; };
 		90ECDFDBCC9D88406892F37F /* PracticeNativeMVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4E79814EEDFC2BC7F2750 /* PracticeNativeMVPTests.swift */; };
 		9578844B965CC6CF7688AC98 /* GeneratedVietContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */; };
+		9B6D21678818414B65F9EE60 /* melo-early-vietnam-jade.png in Resources */ = {isa = PBXBuildFile; fileRef = 984D2A43AF3229BAB3B464DA /* melo-early-vietnam-jade.png */; };
 		A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152EC4AC0563F01164AC24D5 /* SearchPageView.swift */; };
 		A7D9EAC643A14747CC53B62E /* PhrasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */; };
 		AB89E8F8F43D17804FA07FF9 /* AdminChromeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */; };
@@ -79,9 +82,12 @@
 		7C570403C2E33918DCE587ED /* PhraseListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListingView.swift; sourceTree = "<group>"; };
 		81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLocalNativeApp.swift; sourceTree = "<group>"; };
 		8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSQLiteLanguagePackRepository.swift; sourceTree = "<group>"; };
+		984D2A43AF3229BAB3B464DA /* melo-early-vietnam-jade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "melo-early-vietnam-jade.png"; sourceTree = "<group>"; };
+		9B9449DF7FBCB9AFC51C3131 /* melo-base-traveler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "melo-base-traveler.png"; sourceTree = "<group>"; };
 		9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeUITests.swift; sourceTree = "<group>"; };
 		A83272548030E59BD55C69E3 /* LanguagePacks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LanguagePacks; path = Resources/LanguagePacks; sourceTree = SOURCE_ROOT; };
 		B16251C7B60B5DAA58A148B9 /* AudioControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControls.swift; sourceTree = "<group>"; };
+		B797C57C03E4824D2C7F7365 /* melo-completion-lantern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "melo-completion-lantern.png"; sourceTree = "<group>"; };
 		B883D25427177530402A1885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C29EA500445CB089DEEDA380 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Audio; path = Resources/Audio; sourceTree = SOURCE_ROOT; };
 		C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAssetManifest.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 			children = (
 				4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */,
 				54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */,
+				CFD03D17E5D5812DBBF00CA9 /* Mascot */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -170,6 +177,16 @@
 				9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */,
 			);
 			path = UITests;
+			sourceTree = "<group>";
+		};
+		CFD03D17E5D5812DBBF00CA9 /* Mascot */ = {
+			isa = PBXGroup;
+			children = (
+				9B9449DF7FBCB9AFC51C3131 /* melo-base-traveler.png */,
+				B797C57C03E4824D2C7F7365 /* melo-completion-lantern.png */,
+				984D2A43AF3229BAB3B464DA /* melo-early-vietnam-jade.png */,
+			);
+			path = Mascot;
 			sourceTree = "<group>";
 		};
 		D0850BDEA197B6FB6F8181F1 /* Frameworks */ = {
@@ -322,6 +339,9 @@
 				63A9110E76FE4649A20494AC /* Assets.xcassets in Resources */,
 				5E445B4FD180B59D157E434D /* Audio in Resources */,
 				38B893276AD8652F98766E0F /* LanguagePacks in Resources */,
+				8FEBF7C823049C53B0312B20 /* melo-base-traveler.png in Resources */,
+				73D1A2BB8E7BF70AA804E6C3 /* melo-completion-lantern.png in Resources */,
+				9B6D21678818414B65F9EE60 /* melo-early-vietnam-jade.png in Resources */,
 				F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -112,6 +112,27 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertFalse(prompt.options.contains { $0.subtitle == prompt.promptText })
     }
 
+    func testPlacementPromptsStayPhraseLearningFocused() throws {
+        let snapshot = try PracticeDeckSnapshot.load(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let phraseLearningKinds: [PracticePromptKind] = [.listenAndPick, .englishToVietnamese, .vietnameseToEnglish]
+
+        XCTAssertEqual(snapshot.placementPrompts.count, 3)
+        XCTAssertTrue(snapshot.placementPrompts.allSatisfy { prompt in
+            phraseLearningKinds.contains(prompt.kind)
+                && prompt.source.pageID.hasPrefix("viet-phrase-")
+                && prompt.source.cityID == "hanoi"
+                && prompt.options.contains(where: \.isCorrect)
+        })
+        XCTAssertFalse(snapshot.placementPrompts.contains { prompt in
+            prompt.instruction.localizedCaseInsensitiveContains("where would you")
+                || prompt.instruction.localizedCaseInsensitiveContains("travel trivia")
+        })
+    }
+
     func testSavedReviewStaysSeparateFromExplicitPracticePool() throws {
         let store = isolatedProgressStore()
 

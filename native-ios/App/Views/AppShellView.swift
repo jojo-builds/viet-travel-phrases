@@ -10,12 +10,14 @@ struct AppShellView: View {
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
     private let launchPracticeMode: PracticeMode?
+    private let launchPracticeEntryContext: PracticeEntryContext
     private let launchDetailScrollTarget: PhraseArticleInitialScrollTarget?
     private let launchSearchShouldFocus: Bool
 
     init(
         initialRoute: AppRoute = AppShellView.initialRoute,
         initialPracticeMode: PracticeMode? = AppShellView.initialPracticeMode,
+        initialPracticeEntryContext: PracticeEntryContext = AppShellView.initialPracticeEntryContext,
         initialDetailScrollTarget: PhraseArticleInitialScrollTarget? = AppShellView.initialDetailScrollTarget,
         initialSearchQuery: String = AppShellView.initialSearchQuery,
         initialSearchShouldFocus: Bool = AppShellView.initialSearchShouldFocus
@@ -23,6 +25,7 @@ struct AppShellView: View {
         _navigation = State(initialValue: AppShellNavigationState(initialRoute: initialRoute))
         _searchQuery = State(initialValue: initialSearchQuery)
         self.launchPracticeMode = initialPracticeMode
+        self.launchPracticeEntryContext = initialPracticeEntryContext
         self.launchDetailScrollTarget = initialDetailScrollTarget
         self.launchSearchShouldFocus = initialSearchShouldFocus
     }
@@ -92,6 +95,7 @@ struct AppShellView: View {
                 PracticeView(
                     intentStore: intentStore,
                     initialMode: launchPracticeMode,
+                    entryContext: launchPracticeEntryContext,
                     isActive: navigation.currentRoute == .practice,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
                     onOpenDetail: openDetailFromPractice,
@@ -847,7 +851,9 @@ struct AppShellView: View {
             return .browse
         }
 
-        if arguments.contains("--practice") || initialPracticeMode(for: arguments) != nil {
+        if arguments.contains("--practice")
+            || arguments.contains("--practice-placement")
+            || initialPracticeMode(for: arguments) != nil {
             return .practice
         }
 
@@ -870,8 +876,16 @@ struct AppShellView: View {
         return mode
     }
 
+    static func initialPracticeEntryContext(for arguments: [String]) -> PracticeEntryContext {
+        arguments.contains("--practice-placement") ? .placement : .standard
+    }
+
     private static var initialPracticeMode: PracticeMode? {
         initialPracticeMode(for: ProcessInfo.processInfo.arguments)
+    }
+
+    private static var initialPracticeEntryContext: PracticeEntryContext {
+        initialPracticeEntryContext(for: ProcessInfo.processInfo.arguments)
     }
 
     static func initialDetailScrollTarget(for arguments: [String]) -> PhraseArticleInitialScrollTarget? {

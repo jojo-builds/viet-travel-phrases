@@ -96,6 +96,11 @@ enum PracticeMode: String, CaseIterable, Codable, Equatable, Identifiable {
     }
 }
 
+enum PracticeEntryContext: String, Codable, Equatable {
+    case standard
+    case placement
+}
+
 enum PracticePromptKind: String, CaseIterable, Codable, Equatable {
     case listenAndPick
     case englishToVietnamese
@@ -339,6 +344,38 @@ enum PracticePromptGenerator {
         PracticePromptKind.allCases.compactMap { kind in
             makePrompt(mode: mode, kind: kind, candidate: candidate, distractors: distractors)
         }
+    }
+
+    static func placementPrompts(
+        candidates: [PracticeCandidate],
+        distractors: [PracticeCandidate],
+        limit: Int = 3
+    ) -> [PracticePrompt] {
+        let promptCandidates = uniqueCandidates(candidates)
+        let distractorPool = uniqueCandidates(distractors + candidates)
+        var generated: [PracticePrompt] = []
+
+        for (index, candidate) in promptCandidates.enumerated() {
+            let preferredKinds = rotatedPlacementKinds(startingAt: index)
+            guard let prompt = preferredKinds.compactMap({ kind in
+                makePrompt(
+                    mode: .hanoiBucketList,
+                    kind: kind,
+                    candidate: candidate,
+                    distractors: distractorPool
+                )
+            }).first else {
+                continue
+            }
+
+            generated.append(prompt)
+
+            if generated.count >= limit {
+                break
+            }
+        }
+
+        return generated
     }
 
     static func stablePromptID(
@@ -673,6 +710,12 @@ enum PracticePromptGenerator {
 
     private static func rotatedKinds(startingAt index: Int) -> [PracticePromptKind] {
         let kinds = PracticePromptKind.allCases
+        let start = index % kinds.count
+        return Array(kinds[start...]) + Array(kinds[..<start])
+    }
+
+    private static func rotatedPlacementKinds(startingAt index: Int) -> [PracticePromptKind] {
+        let kinds: [PracticePromptKind] = [.listenAndPick, .englishToVietnamese, .vietnameseToEnglish]
         let start = index % kinds.count
         return Array(kinds[start...]) + Array(kinds[..<start])
     }

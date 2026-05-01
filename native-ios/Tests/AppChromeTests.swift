@@ -155,6 +155,14 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AppShellView.initialPracticeMode(for: arguments), .hueCity)
     }
 
+    func testPracticePlacementLaunchArgumentOpensPlacementContext() {
+        let arguments = ["SpeakLocalNative", "--practice-placement"]
+
+        XCTAssertEqual(AppShellView.initialRoute(for: arguments), .practice)
+        XCTAssertEqual(AppShellView.initialPracticeEntryContext(for: arguments), .placement)
+        XCTAssertNil(AppShellView.initialPracticeMode(for: arguments))
+    }
+
     func testDetailScrollLaunchArgumentParsesArticleTarget() {
         XCTAssertEqual(
             AppShellView.initialDetailScrollTarget(for: ["SpeakLocalNative", "--detail-scroll", "catalog-explore"]),

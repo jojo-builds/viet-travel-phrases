@@ -1,10 +1,12 @@
 import SwiftUI
+import UIKit
 
 struct PracticeView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
     @StateObject private var progressStore: LocalPracticeProgressStore
 
     let initialMode: PracticeMode?
+    let entryContext: PracticeEntryContext
     let isActive: Bool
     let scrollToTopTrigger: Int
     var onOpenDetail: (String) -> Void
@@ -14,10 +16,12 @@ struct PracticeView: View {
     @State private var activeSession: PracticeSession?
     @State private var completionSummary: PracticeCompletionSummary?
     @State private var didStartInitialMode = false
+    @State private var deckLoadGeneration = 0
 
     init(
         intentStore: LocalUserIntentStore,
         initialMode: PracticeMode? = nil,
+        entryContext: PracticeEntryContext = .standard,
         isActive: Bool = true,
         scrollToTopTrigger: Int = 0,
         progressStore: LocalPracticeProgressStore = LocalPracticeProgressStore(),
@@ -26,6 +30,7 @@ struct PracticeView: View {
     ) {
         self.intentStore = intentStore
         self.initialMode = initialMode
+        self.entryContext = entryContext
         self.isActive = isActive
         self.scrollToTopTrigger = scrollToTopTrigger
         self.onOpenDetail = onOpenDetail
@@ -68,7 +73,7 @@ struct PracticeView: View {
                                 deckState: deckState,
                                 explicitPracticeCount: intentStore.practicePageIDs.count,
                                 savedPageCount: intentStore.savedPageIDs.count,
-                                onStart: startSession,
+                                onStart: { mode in startSession(mode) },
                                 onBrowseTapped: onBrowseTapped,
                                 onRetry: reloadDeck
                             )
@@ -113,26 +118,43 @@ struct PracticeView: View {
 
     private static let scrollTopID = "PracticeViewTop"
 
-    private func startSession(_ mode: PracticeMode) {
+    private func startSession(_ mode: PracticeMode, context: PracticeEntryContext = .standard) {
         guard let deck = deckState.snapshot else {
             return
         }
 
-        let prompts = deck.prompts(for: mode)
+        let prompts = context == .placement ? deck.placementPrompts : deck.prompts(for: mode)
         guard !prompts.isEmpty else {
             return
         }
 
-        activeSession = PracticeSession(mode: mode, prompts: prompts)
+        activeSession = PracticeSession(mode: mode, prompts: prompts, context: context)
         completionSummary = nil
     }
 
-    private func startInitialModeIfNeeded() {
-        guard !didStartInitialMode, let initialMode else {
+    private func scheduleInitialModeStartIfNeeded() {
+        guard !didStartInitialMode else {
             return
         }
 
         didStartInitialMode = true
+
+        Task { @MainActor in
+            await Task.yield()
+            startInitialMode()
+        }
+    }
+
+    private func startInitialMode() {
+        if entryContext == .placement {
+            startSession(.hanoiBucketList, context: .placement)
+            return
+        }
+
+        guard let initialMode else {
+            return
+        }
+
         startSession(initialMode)
     }
 
@@ -156,6 +178,7 @@ struct PracticeView: View {
         if session.isOnLastPrompt {
             completionSummary = PracticeCompletionSummary(
                 mode: session.mode,
+                context: session.context,
                 practicedCount: session.prompts.count,
                 correctCount: session.correctCount,
                 missedCount: session.missedCount,
@@ -190,17 +213,41 @@ struct PracticeView: View {
     }
 
     private func reloadDeck() {
-        do {
-            deckState = .loaded(
-                try PracticeDeckSnapshot.load(
-                    practicePageIDs: intentStore.practicePageIDs,
-                    savedPageIDs: intentStore.savedPageIDs,
-                    progressStore: progressStore
+        deckLoadGeneration += 1
+        let loadGeneration = deckLoadGeneration
+        let practicePageIDs = intentStore.practicePageIDs
+        let savedPageIDs = intentStore.savedPageIDs
+        let readyPromptIDs = progressStore.readyPromptIDs
+        let missedPromptIDs = progressStore.missedPromptIDs
+
+        deckState = .loading
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let snapshot = try PracticeDeckSnapshot.load(
+                    practicePageIDs: practicePageIDs,
+                    savedPageIDs: savedPageIDs,
+                    readyPromptIDs: readyPromptIDs,
+                    missedPromptIDs: missedPromptIDs
                 )
-            )
-            startInitialModeIfNeeded()
-        } catch {
-            deckState = .failed(error.localizedDescription)
+
+                DispatchQueue.main.async {
+                    guard deckLoadGeneration == loadGeneration else {
+                        return
+                    }
+
+                    deckState = .loaded(snapshot)
+                    scheduleInitialModeStartIfNeeded()
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    guard deckLoadGeneration == loadGeneration else {
+                        return
+                    }
+
+                    deckState = .failed(error.localizedDescription)
+                }
+            }
         }
     }
 }
@@ -221,6 +268,7 @@ private enum PracticeDeckLoadState {
 
 struct PracticeDeckSnapshot {
     let cityPrompts: [PracticeMode: [PracticePrompt]]
+    let placementPrompts: [PracticePrompt]
     let savedPrompts: [PracticePrompt]
     let missedPrompts: [PracticePrompt]
     let cityReadyCounts: [PracticeMode: Int]
@@ -257,6 +305,20 @@ struct PracticeDeckSnapshot {
         practicePageIDs: [String],
         savedPageIDs: [String],
         progressStore: LocalPracticeProgressStore
+    ) throws -> PracticeDeckSnapshot {
+        try load(
+            practicePageIDs: practicePageIDs,
+            savedPageIDs: savedPageIDs,
+            readyPromptIDs: progressStore.readyPromptIDs,
+            missedPromptIDs: progressStore.missedPromptIDs
+        )
+    }
+
+    static func load(
+        practicePageIDs: [String],
+        savedPageIDs: [String],
+        readyPromptIDs: Set<String>,
+        missedPromptIDs: Set<String>
     ) throws -> PracticeDeckSnapshot {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let explicitCandidates = practicePageIDs.isEmpty
@@ -300,13 +362,17 @@ struct PracticeDeckSnapshot {
 
             return (mode, prompts)
         })
+        let placementPrompts = PracticePromptGenerator.placementPrompts(
+            candidates: uniqueCandidates((cityCandidates[.hanoiBucketList] ?? []) + audioStarterCandidates),
+            distractors: distractors,
+            limit: 3
+        )
         let savedPrompts = PracticePromptGenerator.prompts(
             mode: .savedReview,
             candidates: savedCandidates,
             distractors: distractors,
             limit: 8
         )
-        let missedIDs = progressStore.missedPromptIDs
         let missedPrompts = distractors
             .flatMap { candidate in
                 PracticePromptGenerator.promptVariants(
@@ -315,19 +381,20 @@ struct PracticeDeckSnapshot {
                     distractors: distractors
                 )
             }
-            .filter { missedIDs.contains($0.id) }
+            .filter { missedPromptIDs.contains($0.id) }
             .prefix(8)
             .map { $0 }
 
         return PracticeDeckSnapshot(
             cityPrompts: cityPrompts,
+            placementPrompts: placementPrompts,
             savedPrompts: savedPrompts,
             missedPrompts: missedPrompts,
             cityReadyCounts: Dictionary(uniqueKeysWithValues: PracticeMode.cityModes.map { mode in
-                (mode, progressStore.readyCount(in: (cityPrompts[mode] ?? []).map(\.id)))
+                (mode, Self.countReadyPrompts((cityPrompts[mode] ?? []).map(\.id), readyPromptIDs: readyPromptIDs))
             }),
             cityMissedCounts: Dictionary(uniqueKeysWithValues: PracticeMode.cityModes.map { mode in
-                (mode, progressStore.missedCount(in: (cityPrompts[mode] ?? []).map(\.id)))
+                (mode, Self.countMissedPrompts((cityPrompts[mode] ?? []).map(\.id), missedPromptIDs: missedPromptIDs))
             }),
             citySeedCounts: Dictionary(uniqueKeysWithValues: PracticeMode.cityModes.map { mode in
                 (mode, cityCandidates[mode]?.count ?? 0)
@@ -342,11 +409,20 @@ struct PracticeDeckSnapshot {
             seenPageIDs.insert(candidate.pageID).inserted
         }
     }
+
+    private static func countReadyPrompts(_ promptIDs: [String], readyPromptIDs: Set<String>) -> Int {
+        promptIDs.filter { readyPromptIDs.contains($0) }.count
+    }
+
+    private static func countMissedPrompts(_ promptIDs: [String], missedPromptIDs: Set<String>) -> Int {
+        promptIDs.filter { missedPromptIDs.contains($0) }.count
+    }
 }
 
 private struct PracticeSession: Equatable {
     let mode: PracticeMode
     let prompts: [PracticePrompt]
+    let context: PracticeEntryContext
     var currentIndex = 0
     var selectedOptionID: String?
     var correctCount = 0
@@ -367,6 +443,7 @@ private struct PracticeSession: Equatable {
 
 private struct PracticeCompletionSummary: Equatable {
     let mode: PracticeMode
+    let context: PracticeEntryContext
     let practicedCount: Int
     let correctCount: Int
     let missedCount: Int
@@ -391,19 +468,20 @@ private struct PracticeHubSurface: View {
             case .failed(let message):
                 PracticeErrorCard(message: message, onRetry: onRetry)
             case .loaded(let deck):
-                VStack(spacing: 12) {
-                    ForEach(PracticeMode.cityModes) { mode in
-                        PracticeCityModeCard(
-                            mode: mode,
-                            promptCount: deck.prompts(for: mode).count,
-                            readyCount: deck.cityReadyCounts[mode] ?? 0,
-                            reviewCount: deck.cityMissedCounts[mode] ?? 0,
-                            seedCount: deck.citySeedCounts[mode] ?? 0,
-                            explicitPracticeCount: explicitPracticeCount,
-                            onStart: { onStart(mode) }
-                        )
-                    }
-                }
+                PracticeCityModeCard(
+                    mode: .hanoiBucketList,
+                    promptCount: deck.prompts(for: .hanoiBucketList).count,
+                    readyCount: deck.cityReadyCounts[.hanoiBucketList] ?? 0,
+                    reviewCount: deck.cityMissedCounts[.hanoiBucketList] ?? 0,
+                    seedCount: deck.citySeedCounts[.hanoiBucketList] ?? 0,
+                    explicitPracticeCount: explicitPracticeCount,
+                    onStart: { onStart(.hanoiBucketList) }
+                )
+
+                PracticeCityPathStrip(
+                    deck: deck,
+                    onStart: onStart
+                )
 
                 PracticeReviewModeRow(
                     mode: .savedReview,
@@ -422,7 +500,6 @@ private struct PracticeHubSurface: View {
                 )
 
                 PracticeBrowseCard(onBrowseTapped: onBrowseTapped)
-                PracticeMeloHookCard()
             }
         }
     }
@@ -430,28 +507,34 @@ private struct PracticeHubSurface: View {
 
 private struct PracticeHeader: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 8) {
-                Image(systemName: "text.bubble.fill")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.red)
+        HStack(alignment: .top, spacing: 14) {
+            VStack(alignment: .leading, spacing: 9) {
+                HStack(spacing: 8) {
+                    Image(systemName: "text.bubble.fill")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.red)
 
-                Text("PRACTICE")
-                    .font(.caption.weight(.semibold))
+                    Text("PRACTICE")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                Text("Rehearse one useful phrase")
+                    .font(.system(size: 34, weight: .black, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.74)
+
+                Text("Start with Hanoi, review saved pages separately, and let missed prompts come back calmly.")
+                    .font(.subheadline.weight(.semibold))
                     .foregroundStyle(.secondary)
+                    .lineLimit(3)
+                    .fixedSize(horizontal: false, vertical: true)
             }
+            .layoutPriority(1)
 
-            Text("Practice by city")
-                .font(.system(size: 40, weight: .black, design: .serif))
-                .foregroundStyle(.primary)
-                .lineLimit(2)
-                .minimumScaleFactor(0.74)
-
-            Text("Short offline drills from real city phrase pages, with saved and missed review kept separate.")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .lineLimit(3)
-                .fixedSize(horizontal: false, vertical: true)
+            MeloCompanionMark(stage: .base, size: 70)
+                .padding(.top, 8)
         }
     }
 }
@@ -490,7 +573,7 @@ private struct PracticeCityModeCard: View {
                 PracticeMetricPill(title: "Added", value: "\(explicitPracticeCount)")
             }
 
-            Text("\(seedCount) \(mode.cityShortName ?? "city")-sourced phrases seed this practice path.")
+            Text("\(seedCount) real \(mode.cityShortName ?? "city") phrases seed this path. Added phrase pages stay first.")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
 
@@ -509,6 +592,114 @@ private struct PracticeCityModeCard: View {
         .padding(18)
         .phraseListCard(cornerRadius: 24, strokeOpacity: 0.05)
         .accessibilityIdentifier("Practice.City.\(mode.rawValue)")
+    }
+
+    private var symbolName: String {
+        switch mode {
+        case .hcmcCity:
+            return "tram.fill"
+        case .hanoiBucketList:
+            return "leaf.fill"
+        case .danangCity:
+            return "water.waves"
+        case .hoianCity:
+            return "sparkles"
+        case .hueCity:
+            return "building.columns.fill"
+        case .savedReview, .missedReview:
+            return "mappin.and.ellipse"
+        }
+    }
+
+    private var tint: AccentTint {
+        switch mode {
+        case .hcmcCity:
+            return .red
+        case .hanoiBucketList:
+            return .green
+        case .danangCity:
+            return .blue
+        case .hoianCity:
+            return .orange
+        case .hueCity:
+            return .purple
+        case .savedReview, .missedReview:
+            return .red
+        }
+    }
+}
+
+private struct PracticeCityPathStrip: View {
+    let deck: PracticeDeckSnapshot
+    let onStart: (PracticeMode) -> Void
+
+    private var secondaryModes: [PracticeMode] {
+        PracticeMode.cityModes.filter { $0 != .hanoiBucketList }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Other city paths")
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(.secondary)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(secondaryModes) { mode in
+                        PracticeCityPathChip(
+                            mode: mode,
+                            promptCount: deck.prompts(for: mode).count,
+                            readyCount: deck.cityReadyCounts[mode] ?? 0,
+                            onStart: { onStart(mode) }
+                        )
+                    }
+                }
+                .padding(.vertical, 1)
+            }
+        }
+    }
+}
+
+private struct PracticeCityPathChip: View {
+    let mode: PracticeMode
+    let promptCount: Int
+    let readyCount: Int
+    let onStart: () -> Void
+
+    var body: some View {
+        Button(action: onStart) {
+            VStack(alignment: .leading, spacing: 8) {
+                HStack(spacing: 8) {
+                    PracticeIcon(symbolName: symbolName, tint: tint, size: 34)
+
+                    Text(mode.cityShortName ?? mode.title)
+                        .font(.subheadline.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                }
+
+                Text("\(promptCount) prompts")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+
+                if readyCount > 0 {
+                    Text("\(readyCount) ready")
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(tint.color)
+                }
+            }
+            .frame(width: 138, alignment: .leading)
+            .padding(12)
+            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(Color.black.opacity(0.05), lineWidth: 1)
+            }
+        }
+        .buttonStyle(.plain)
+        .disabled(promptCount == 0)
+        .opacity(promptCount == 0 ? 0.56 : 1)
+        .accessibilityIdentifier("Practice.CityPath.\(mode.rawValue)")
     }
 
     private var symbolName: String {
@@ -642,28 +833,6 @@ private struct PracticeBrowseCard: View {
     }
 }
 
-private struct PracticeMeloHookCard: View {
-    var body: some View {
-        HStack(alignment: .center, spacing: 14) {
-            MeloPlaceholderMark()
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Melo readiness")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.primary)
-
-                Text("Answer a prompt correctly twice and Melo can mark it ready. Final mascot art plugs into this hook later.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(3)
-            }
-            .layoutPriority(1)
-        }
-        .padding(14)
-        .phraseListCard(cornerRadius: 22)
-    }
-}
-
 private struct PracticeSessionSurface: View {
     let session: PracticeSession
     let prompt: PracticePrompt
@@ -677,12 +846,12 @@ private struct PracticeSessionSurface: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(prompt.mode.title)
+                Text(session.context == .placement ? "PLACEMENT" : prompt.mode.title)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
 
-                Text(prompt.kind.title)
-                    .font(.system(size: 34, weight: .black, design: .serif))
+                Text(session.context == .placement ? "Phrase pace check" : prompt.kind.title)
+                    .font(.system(size: 34, weight: .black, design: .rounded))
                     .foregroundStyle(.primary)
                     .lineLimit(2)
                     .minimumScaleFactor(0.78)
@@ -921,12 +1090,12 @@ private struct PracticeCompletionSurface: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(summary.mode.title)
+                Text(summary.context == .placement ? "PLACEMENT" : summary.mode.title)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
 
-                Text("Bucket List updated")
-                    .font(.system(size: 38, weight: .black, design: .serif))
+                Text(summary.context == .placement ? "Placement check complete" : "Bucket List updated")
+                    .font(.system(size: 36, weight: .black, design: .rounded))
                     .foregroundStyle(.primary)
                     .lineLimit(2)
                     .minimumScaleFactor(0.74)
@@ -934,10 +1103,10 @@ private struct PracticeCompletionSurface: View {
 
             VStack(alignment: .leading, spacing: 16) {
                 HStack(spacing: 14) {
-                    MeloPlaceholderMark()
+                    MeloCompanionMark(stage: summary.context == .placement ? .base : .completion, size: 78)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Melo saved the useful bits")
+                        Text(summary.context == .placement ? "Melo found your starting pace" : "Melo saved the useful bits")
                             .font(.title3.weight(.black))
                             .foregroundStyle(.primary)
 
@@ -994,6 +1163,10 @@ private struct PracticeCompletionSurface: View {
     }
 
     private var rewardCopy: String {
+        if summary.context == .placement {
+            return "This short check uses real Vietnamese phrases so onboarding can pace Practice without hiding the phrasebook."
+        }
+
         if summary.readyCount > 0 {
             return "A phrase reached ready status. The mascot hook can later show Melo picking up a small Vietnam accent."
         }
@@ -1048,13 +1221,14 @@ private struct PracticeErrorCard: View {
 private struct PracticeIcon: View {
     let symbolName: String
     let tint: AccentTint
+    var size: CGFloat = 46
 
     var body: some View {
         Image(systemName: symbolName)
             .font(.headline.weight(.semibold))
             .foregroundStyle(tint.color)
-            .frame(width: 46, height: 46)
-            .nativeGlass(cornerRadius: 23, tint: tint.color, interactive: true)
+            .frame(width: size, height: size)
+            .nativeGlass(cornerRadius: size / 2, tint: tint.color, interactive: true)
     }
 }
 
@@ -1080,28 +1254,84 @@ private struct PracticeMetricPill: View {
     }
 }
 
-private struct MeloPlaceholderMark: View {
+private enum MeloCompanionStage {
+    case base
+    case jade
+    case completion
+
+    var imageName: String {
+        switch self {
+        case .base:
+            return "melo-base-traveler"
+        case .jade:
+            return "melo-early-vietnam-jade"
+        case .completion:
+            return "melo-completion-lantern"
+        }
+    }
+}
+
+private struct MeloCompanionMark: View {
+    let stage: MeloCompanionStage
+    var size: CGFloat = 58
+
     var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color(red: 0.96, green: 0.14, blue: 0.16).opacity(0.14))
+        ZStack(alignment: .bottomTrailing) {
+            MeloBundleImage(imageName: stage.imageName, size: size)
 
             Circle()
-                .stroke(Color.red.opacity(0.34), lineWidth: 1)
+                .fill(Color.yellow)
+                .frame(width: max(size * 0.13, 7), height: max(size * 0.13, 7))
+                .overlay {
+                    Circle()
+                        .stroke(Color.red.opacity(0.28), lineWidth: 1)
+                }
+        }
+        .frame(width: size, height: size)
+        .nativeGlass(cornerRadius: size / 2, tint: Color.red, interactive: false)
+        .accessibilityLabel("Melo companion")
+    }
+}
 
-            VStack(spacing: 0) {
-                Text("M")
-                    .font(.system(size: 24, weight: .black, design: .rounded))
-                    .foregroundStyle(.red)
+private struct MeloBundleImage: View {
+    let imageName: String
+    let size: CGFloat
 
-                Circle()
-                    .fill(Color.yellow)
-                    .frame(width: 7, height: 7)
+    var body: some View {
+        Group {
+            if let image = Self.image(named: imageName) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                fallbackMark
             }
         }
-        .frame(width: 54, height: 54)
-        .nativeGlass(cornerRadius: 27, tint: Color.red, interactive: false)
-        .accessibilityLabel("Melo placeholder")
+        .frame(width: size, height: size)
+        .clipShape(Circle())
+        .overlay {
+            Circle()
+                .stroke(.white.opacity(0.72), lineWidth: 1)
+        }
+    }
+
+    private var fallbackMark: some View {
+        ZStack {
+            Circle()
+                .fill(Color.red.opacity(0.12))
+
+            Text("M")
+                .font(.system(size: max(size * 0.42, 20), weight: .black, design: .rounded))
+                .foregroundStyle(.red)
+        }
+    }
+
+    private static func image(named imageName: String) -> UIImage? {
+        guard let url = Bundle.main.url(forResource: imageName, withExtension: "png") else {
+            return nil
+        }
+
+        return UIImage(contentsOfFile: url.path)
     }
 }
 
