@@ -10,6 +10,7 @@
 		034037B7D97D6400BEC8F0E8 /* AppChromeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094EBCA2A1C2908334452B3A /* AppChromeTests.swift */; };
 		05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */; };
 		0705C583B1734184937E5F87 /* AppChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92E39F9AC9626410FF3CDC /* AppChrome.swift */; };
+		26351589E274CA9E560ABD21 /* BackSwipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */; };
 		347FD2205654329BE96CC306 /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEEF420BD953C06190A6E3 /* PracticeView.swift */; };
 		36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */; };
 		38B893276AD8652F98766E0F /* LanguagePacks in Resources */ = {isa = PBXBuildFile; fileRef = A83272548030E59BD55C69E3 /* LanguagePacks */; };
@@ -24,6 +25,7 @@
 		9578844B965CC6CF7688AC98 /* GeneratedVietContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */; };
 		A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152EC4AC0563F01164AC24D5 /* SearchPageView.swift */; };
 		A7D9EAC643A14747CC53B62E /* PhrasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */; };
+		AB89E8F8F43D17804FA07FF9 /* AdminChromeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */; };
 		AE8BE3879C05C9EC7BA1F804 /* AudioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16251C7B60B5DAA58A148B9 /* AudioControls.swift */; };
 		B2652114653119239ABAB769 /* PracticeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ABDE2FD3A5A1E1C7458759 /* PracticeModels.swift */; };
 		B34399CF6C5B98FB4862E2E9 /* PhraseListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C570403C2E33918DCE587ED /* PhraseListingView.swift */; };
@@ -34,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6B55C71ADDAE7DE008AE3510 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E2A391DE39F01EF4C76D761 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A289ABEF6B01CCE24F76E15A;
+			remoteInfo = SpeakLocalNative;
+		};
 		94B8C742E663D07C8007E7BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9E2A391DE39F01EF4C76D761 /* Project object */;
@@ -52,11 +61,13 @@
 		1E92E39F9AC9626410FF3CDC /* AppChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChrome.swift; sourceTree = "<group>"; };
 		2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeakLocalNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C98DE73722F896A42D9AEC1 /* NativeGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeGlass.swift; sourceTree = "<group>"; };
+		46355A6E6495F7453685F1A4 /* SpeakLocalNativeUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SpeakLocalNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDetailView.swift; sourceTree = "<group>"; };
 		4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-audio-manifest.json"; sourceTree = "<group>"; };
 		5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteLanguagePackRepositoryTests.swift; sourceTree = "<group>"; };
+		63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackSwipeUITests.swift; sourceTree = "<group>"; };
 		65875EEA097A552AA1510358 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
 		75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePageFixtureTests.swift; sourceTree = "<group>"; };
 		7C570403C2E33918DCE587ED /* PhraseListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListingView.swift; sourceTree = "<group>"; };
@@ -64,9 +75,11 @@
 		8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSQLiteLanguagePackRepository.swift; sourceTree = "<group>"; };
 		A83272548030E59BD55C69E3 /* LanguagePacks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LanguagePacks; path = Resources/LanguagePacks; sourceTree = SOURCE_ROOT; };
 		B16251C7B60B5DAA58A148B9 /* AudioControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControls.swift; sourceTree = "<group>"; };
+		B883D25427177530402A1885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C29EA500445CB089DEEDA380 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Audio; path = Resources/Audio; sourceTree = SOURCE_ROOT; };
 		C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAssetManifest.swift; sourceTree = "<group>"; };
 		CAFC680CFAC8603E5527F4D7 /* SpeakLocalNativeTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SpeakLocalNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminChromeUITests.swift; sourceTree = "<group>"; };
 		D34BE92DD2418521F1F8A962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePage.swift; sourceTree = "<group>"; };
 		F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedVietContent.swift; sourceTree = "<group>"; };
@@ -133,8 +146,19 @@
 			children = (
 				2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */,
 				CAFC680CFAC8603E5527F4D7 /* SpeakLocalNativeTests.xctest */,
+				46355A6E6495F7453685F1A4 /* SpeakLocalNativeUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ADB74DDA3B5F5534E80B4570 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */,
+				63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */,
+				B883D25427177530402A1885 /* Info.plist */,
+			);
+			path = UITests;
 			sourceTree = "<group>";
 		};
 		D0850BDEA197B6FB6F8181F1 /* Frameworks */ = {
@@ -179,6 +203,7 @@
 				E0F2C96854957777ACE8C283 /* App */,
 				7EEA46CD4D18A7F1A968A922 /* Resources */,
 				0B6DE062040ABE1399548B98 /* Tests */,
+				ADB74DDA3B5F5534E80B4570 /* UITests */,
 				D0850BDEA197B6FB6F8181F1 /* Frameworks */,
 				983DA75FA56A7C126D4A3996 /* Products */,
 			);
@@ -224,6 +249,24 @@
 			productReference = 2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C3C676B2F7E843DCFF71474C /* SpeakLocalNativeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F3D371A8FD190363EE5FDEC /* Build configuration list for PBXNativeTarget "SpeakLocalNativeUITests" */;
+			buildPhases = (
+				4D276D2AF9B60CCEC0F00CB1 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5C8D1DA344495337C7B38B1 /* PBXTargetDependency */,
+			);
+			name = SpeakLocalNativeUITests;
+			packageProductDependencies = (
+			);
+			productName = SpeakLocalNativeUITests;
+			productReference = 46355A6E6495F7453685F1A4 /* SpeakLocalNativeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -233,6 +276,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					C3C676B2F7E843DCFF71474C = {
+						TestTargetID = A289ABEF6B01CCE24F76E15A;
+					};
 				};
 			};
 			buildConfigurationList = D8AB6CAE52C779BDD52D0F9E /* Build configuration list for PBXProject "SpeakLocalNative" */;
@@ -251,6 +297,7 @@
 			targets = (
 				A289ABEF6B01CCE24F76E15A /* SpeakLocalNative */,
 				30C6AFA43216C358A8E84EE9 /* SpeakLocalNativeTests */,
+				C3C676B2F7E843DCFF71474C /* SpeakLocalNativeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,6 +325,15 @@
 				B4BB1FA3BE7357CB5035A731 /* PhrasePageFixtureTests.swift in Sources */,
 				90ECDFDBCC9D88406892F37F /* PracticeNativeMVPTests.swift in Sources */,
 				05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D276D2AF9B60CCEC0F00CB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB89E8F8F43D17804FA07FF9 /* AdminChromeUITests.swift in Sources */,
+				26351589E274CA9E560ABD21 /* BackSwipeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +367,11 @@
 			target = A289ABEF6B01CCE24F76E15A /* SpeakLocalNative */;
 			targetProxy = 94B8C742E663D07C8007E7BF /* PBXContainerItemProxy */;
 		};
+		E5C8D1DA344495337C7B38B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A289ABEF6B01CCE24F76E15A /* SpeakLocalNative */;
+			targetProxy = 6B55C71ADDAE7DE008AE3510 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -332,6 +393,24 @@
 			};
 			name = Debug;
 		};
+		3D55A60BCB53544CB8D8F7C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.speaklocal.vietnam.native.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpeakLocalNative;
+			};
+			name = Debug;
+		};
 		618E4F34050F09FC19D5759D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -347,6 +426,24 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.speaklocal.vietnam.native;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9013B4B74C768D49E2647606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.speaklocal.vietnam.native.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpeakLocalNative;
 			};
 			name = Release;
 		};
@@ -517,6 +614,15 @@
 			buildConfigurations = (
 				D154C6DCDF4B3A393291E531 /* Debug */,
 				FFE7DFDAD229D98D3F5FF994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3F3D371A8FD190363EE5FDEC /* Build configuration list for PBXNativeTarget "SpeakLocalNativeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D55A60BCB53544CB8D8F7C8 /* Debug */,
+				9013B4B74C768D49E2647606 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -4,6 +4,7 @@ struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var searchQuery = ""
+    @State private var searchFocusRequestID = 0
     @StateObject private var intentStore = LocalUserIntentStore()
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
@@ -173,7 +174,7 @@ struct AppShellView: View {
                 if isPresented {
                     focusSearchField()
                 } else {
-                    isSearchFieldFocused = false
+                    cancelSearchFocus()
                 }
             }
         }
@@ -432,11 +433,14 @@ struct AppShellView: View {
                     .font(.title2.weight(.medium))
                     .foregroundStyle(.primary)
                     .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                    .contentShape(Circle())
             }
             .buttonStyle(.plain)
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
             .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
+            .accessibilityLabel("Search")
+            .accessibilityIdentifier("AppChrome.SearchButton")
         }
     }
 
@@ -449,9 +453,13 @@ struct AppShellView: View {
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(.red)
                     .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                    .contentShape(Circle())
             }
             .buttonStyle(.plain)
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .zIndex(2)
+            .accessibilityLabel("Home")
+            .accessibilityIdentifier("AppChrome.SearchHomeButton")
 
             HStack(spacing: 10) {
                 Image(systemName: "magnifyingglass")
@@ -463,6 +471,7 @@ struct AppShellView: View {
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .focused($isSearchFieldFocused)
+                    .accessibilityIdentifier("AppChrome.SearchField")
 
                 if !searchQuery.isEmpty {
                     Button {
@@ -481,6 +490,7 @@ struct AppShellView: View {
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
             .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
+            .zIndex(1)
         }
     }
 
@@ -602,6 +612,7 @@ struct AppShellView: View {
     }
 
     private func openDetail(_ id: String, source: UserIntentSource) {
+        cancelInteractiveChromeState()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openDetail(id)
         }
@@ -630,55 +641,78 @@ struct AppShellView: View {
     }
 
     private func openHome() {
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openHome()
         }
         searchQuery = ""
-        isSearchFieldFocused = false
     }
 
     private func openSaved() {
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSaved()
         }
-        isSearchFieldFocused = false
     }
 
     private func openPractice() {
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openPractice()
         }
-        isSearchFieldFocused = false
     }
 
     private func goBack() {
+        cancelInteractiveChromeState()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
     }
 
     private func goForward() {
+        cancelInteractiveChromeState()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goForward()
         }
     }
 
     private func openSearch() {
+        cancelInteractiveChromeState()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSearch()
         }
-        focusSearchField()
     }
 
     private func closeSearch() {
-        isSearchFieldFocused = false
+        cancelSearchFocus()
         goBack()
     }
 
     private func focusSearchField() {
-        DispatchQueue.main.async {
+        searchFocusRequestID += 1
+        let requestID = searchFocusRequestID
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 220_000_000)
+
+            guard requestID == searchFocusRequestID, navigation.isSearchPresented else {
+                return
+            }
+
             isSearchFieldFocused = true
         }
+    }
+
+    private func cancelSearchFocus() {
+        searchFocusRequestID += 1
+        isSearchFieldFocused = false
+    }
+
+    private func cancelInteractiveChromeState() {
+        interactiveDrag = nil
     }
 
     private func cancelInteractiveDrag() {

@@ -60,12 +60,30 @@ targets:
       path: Tests/Info.plist
       properties:
         CFBundleDisplayName: SpeakLocalNativeTests
+  SpeakLocalNativeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: UITests
+    dependencies:
+      - target: SpeakLocalNative
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.speaklocal.vietnam.native.uitests
+        TEST_TARGET_NAME: SpeakLocalNative
+    info:
+      path: UITests/Info.plist
+      properties:
+        CFBundleDisplayName: SpeakLocalNativeUITests
 schemes:
   SpeakLocalNative:
     build:
       targets:
         SpeakLocalNative: all
         SpeakLocalNativeTests: [test]
+        SpeakLocalNativeUITests: [test]
     test:
       targets:
         - name: SpeakLocalNativeTests
+        - name: SpeakLocalNativeUITests

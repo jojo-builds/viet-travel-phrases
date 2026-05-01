@@ -35,6 +35,20 @@
                ReferencedContainer = "container:SpeakLocalNative.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C3C676B2F7E843DCFF71474C"
+               BuildableName = "SpeakLocalNativeUITests.xctest"
+               BlueprintName = "SpeakLocalNativeUITests"
+               ReferencedContainer = "container:SpeakLocalNative.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -61,6 +75,17 @@
                BlueprintIdentifier = "30C6AFA43216C358A8E84EE9"
                BuildableName = "SpeakLocalNativeTests.xctest"
                BlueprintName = "SpeakLocalNativeTests"
+               ReferencedContainer = "container:SpeakLocalNative.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C3C676B2F7E843DCFF71474C"
+               BuildableName = "SpeakLocalNativeUITests.xctest"
+               BlueprintName = "SpeakLocalNativeUITests"
                ReferencedContainer = "container:SpeakLocalNative.xcodeproj">
             </BuildableReference>
          </TestableReference>
