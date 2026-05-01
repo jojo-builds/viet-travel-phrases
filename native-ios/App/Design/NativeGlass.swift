@@ -96,6 +96,7 @@ enum PhrasePageStyle {
     static let pageBackground = Color(red: 0.96, green: 0.97, blue: 0.98)
     static let heroImageName = "HeroVietnamMasthead"
     static let heroImageHeight: CGFloat = 276
+    static let heroImageVerticalOffset: CGFloat = -112
     static let heroTextTopPadding: CGFloat = 28
     static let heroTextBottomPadding: CGFloat = 12
     static let heroPlayerTopSpacing: CGFloat = 18
@@ -208,7 +209,7 @@ struct HeroMastheadImage: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
-                .offset(y: -72)
+                .offset(y: PhrasePageStyle.heroImageVerticalOffset)
                 .clipped()
                 .overlay(alignment: .bottom) {
                     LinearGradient(
