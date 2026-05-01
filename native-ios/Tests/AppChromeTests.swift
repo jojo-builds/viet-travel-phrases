@@ -72,6 +72,14 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
 
+    func testBrowseChromeUsesBrowseSelectedDockWithSearchIsland() {
+        let chrome = AppChrome(route: .browse)
+
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
+        XCTAssertEqual(chrome.selectedDockItem, .browse)
+        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
+    }
+
     func testSavedChromeUsesSavedSelectedDockWithSearchIsland() {
         let chrome = AppChrome(route: .saved)
 
@@ -115,6 +123,22 @@ final class AppChromeTests: XCTestCase {
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--search"]),
             .search
         )
+    }
+
+    func testBrowseLaunchArgumentOpensBrowsePage() {
+        XCTAssertEqual(
+            AppShellView.initialRoute(for: ["SpeakLocalNative", "--browse"]),
+            .browse
+        )
+    }
+
+    func testSearchQueryLaunchArgumentOpensSearchWithoutImplicitFocus() {
+        let arguments = ["SpeakLocalNative", "--search-query", "hotel"]
+
+        XCTAssertEqual(AppShellView.initialRoute(for: arguments), .search)
+        XCTAssertEqual(AppShellView.initialSearchQuery(for: arguments), "hotel")
+        XCTAssertFalse(AppShellView.initialSearchShouldFocus(for: arguments))
+        XCTAssertTrue(AppShellView.initialSearchShouldFocus(for: arguments + ["--search-focused"]))
     }
 
     func testPracticeLaunchArgumentOpensPracticePage() {
@@ -275,6 +299,28 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(navigation.currentRoute, .home)
         XCTAssertEqual(navigation.forwardStack, [.saved])
+    }
+
+    func testOpeningBrowseRouteCanReturnHomeAndForwardAgain() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openBrowse()
+
+        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertTrue(navigation.detailPath.isEmpty)
+        XCTAssertEqual(navigation.browseScrollToTopTrigger, 1)
+        XCTAssertEqual(navigation.backPreviewRoute, .home)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.browse])
+
+        navigation.goForward()
+
+        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertEqual(navigation.browseScrollToTopTrigger, 2)
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
     func testOpeningPracticeRouteCanReturnHome() {
@@ -521,6 +567,18 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-repair-3"))
         XCTAssertTrue(navigation.forwardStack.isEmpty)
+    }
+
+    func testBrowseSearchDestinationsResolveToCanonicalPages() {
+        guard let hotel = BrowseSearchDestinations.situations.first(where: { $0.id == "hotel" }) else {
+            XCTFail("Expected hotel Browse destination")
+            return
+        }
+
+        XCTAssertNotNil(hotel.openablePageID)
+        XCTAssertTrue(BrowseSearchDestinations.situations.allSatisfy { $0.openablePageID != nil })
+        XCTAssertFalse(BrowseSearchDestinations.cityShortcuts.isEmpty)
+        XCTAssertFalse(BrowseSearchDestinations.suggestedNeeds.isEmpty)
     }
 
     func testForwardSwipeRestoresForwardRoute() {

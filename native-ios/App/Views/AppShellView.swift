@@ -3,22 +3,28 @@ import SwiftUI
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
-    @State private var searchQuery = ""
+    @State private var searchQuery: String
     @State private var searchFocusRequestID = 0
+    @State private var didApplyLaunchSearchFocus = false
     @StateObject private var intentStore = LocalUserIntentStore()
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
     private let launchPracticeMode: PracticeMode?
     private let launchDetailScrollTarget: PhraseArticleInitialScrollTarget?
+    private let launchSearchShouldFocus: Bool
 
     init(
         initialRoute: AppRoute = AppShellView.initialRoute,
         initialPracticeMode: PracticeMode? = AppShellView.initialPracticeMode,
-        initialDetailScrollTarget: PhraseArticleInitialScrollTarget? = AppShellView.initialDetailScrollTarget
+        initialDetailScrollTarget: PhraseArticleInitialScrollTarget? = AppShellView.initialDetailScrollTarget,
+        initialSearchQuery: String = AppShellView.initialSearchQuery,
+        initialSearchShouldFocus: Bool = AppShellView.initialSearchShouldFocus
     ) {
         _navigation = State(initialValue: AppShellNavigationState(initialRoute: initialRoute))
+        _searchQuery = State(initialValue: initialSearchQuery)
         self.launchPracticeMode = initialPracticeMode
         self.launchDetailScrollTarget = initialDetailScrollTarget
+        self.launchSearchShouldFocus = initialSearchShouldFocus
     }
 
     var body: some View {
@@ -39,6 +45,26 @@ struct AppShellView: View {
                 .accessibilityHidden(navigation.currentRoute != .home)
                 .navigationPageMotion(
                     route: .home,
+                    currentRoute: navigation.currentRoute,
+                    backPreviewRoute: navigation.backPreviewRoute,
+                    forwardPreviewRoute: navigation.forwardPreviewRoute,
+                    drag: interactiveDrag,
+                    width: pageWidth
+                )
+
+                BrowsePageView(
+                    intentStore: intentStore,
+                    scrollToTopTrigger: navigation.browseScrollToTopTrigger,
+                    onOpenDetail: openDetailFromBrowse,
+                    onSearchTapped: openSearch,
+                    onSearchQuery: openSearchQuery,
+                    onSavedTapped: openSaved,
+                    onPracticeTapped: openPractice
+                )
+                .allowsHitTesting(navigation.currentRoute == .browse && !isPreviewingForwardPage)
+                .accessibilityHidden(navigation.currentRoute != .browse)
+                .navigationPageMotion(
+                    route: .browse,
                     currentRoute: navigation.currentRoute,
                     backPreviewRoute: navigation.backPreviewRoute,
                     forwardPreviewRoute: navigation.forwardPreviewRoute,
@@ -112,10 +138,13 @@ struct AppShellView: View {
                 if navigation.isSearchPresented {
                     SearchPageView(
                         query: $searchQuery,
+                        isFieldFocused: isSearchFieldFocused,
                         chromeNamespace: chromeNamespace,
                         showsChrome: false,
                         onClose: closeSearch,
-                        onOpenDetail: openDetailFromSearch
+                        onOpenDetail: openDetailFromSearch,
+                        onSearchQuery: openSearchQuery,
+                        onBrowseTapped: openBrowse
                     )
                     .transition(AppPageTransition.searchMorph)
                     .zIndex(200)
@@ -171,10 +200,11 @@ struct AppShellView: View {
                         .zIndex(400)
                 }
             }
+            .onAppear {
+                applyLaunchSearchFocusIfNeeded()
+            }
             .onChange(of: navigation.isSearchPresented) { _, isPresented in
-                if isPresented {
-                    focusSearchField()
-                } else {
+                if !isPresented {
                     cancelSearchFocus()
                 }
             }
@@ -270,6 +300,16 @@ struct AppShellView: View {
                 onOpenDetail: openDetailFromHome,
                 onBrowseAllTapped: openBrowseAll
             )
+        case .browse:
+            BrowsePageView(
+                intentStore: intentStore,
+                scrollToTopTrigger: 0,
+                onOpenDetail: openDetailFromBrowse,
+                onSearchTapped: openSearch,
+                onSearchQuery: openSearchQuery,
+                onSavedTapped: openSaved,
+                onPracticeTapped: openPractice
+            )
         case .saved:
             SavedPagesView(
                 intentStore: intentStore,
@@ -326,10 +366,13 @@ struct AppShellView: View {
         case .search:
             SearchPageView(
                 query: $searchQuery,
+                isFieldFocused: isSearchFieldFocused,
                 chromeNamespace: chromeNamespace,
                 showsChrome: false,
                 onClose: closeSearch,
-                onOpenDetail: openDetailFromSearch
+                onOpenDetail: openDetailFromSearch,
+                onSearchQuery: openSearchQuery,
+                onBrowseTapped: openBrowse
             )
         }
     }
@@ -370,7 +413,7 @@ struct AppShellView: View {
     }
 
     private var showsStaticBackButton: Bool {
-        navigation.currentRoute != .home && navigation.currentRoute != .search
+        navigation.currentRoute != .home && navigation.currentRoute != .browse && navigation.currentRoute != .search
     }
 
     private var staticBackButton: some View {
@@ -422,6 +465,7 @@ struct AppShellView: View {
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel(item.title)
+                    .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
                 }
             }
             .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
@@ -493,6 +537,20 @@ struct AppShellView: View {
             .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
             .zIndex(1)
+
+            if isSearchFieldFocused {
+                Button {
+                    cancelSearchFocus()
+                } label: {
+                    Text("Cancel")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(.red)
+                        .frame(height: AppChromeLayout.searchFieldHeight)
+                        .padding(.horizontal, 4)
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("AppChrome.SearchCancelButton")
+            }
         }
     }
 
@@ -605,6 +663,10 @@ struct AppShellView: View {
         openDetail(id, source: .home)
     }
 
+    private func openDetailFromBrowse(_ id: String) {
+        openDetail(id, source: .browse)
+    }
+
     private func openDetailFromSaved(_ id: String) {
         openDetail(id, source: .home)
     }
@@ -626,7 +688,7 @@ struct AppShellView: View {
     }
 
     private func openBrowseAll() {
-        openDetail(PhrasePage.xinChao.id, source: .browse)
+        openBrowse()
     }
 
     private func performDockAction(_ item: DockItemKind) {
@@ -634,7 +696,7 @@ struct AppShellView: View {
         case .home:
             openHome()
         case .browse:
-            openBrowseAll()
+            openBrowse()
         case .saved:
             openSaved()
         case .practice:
@@ -649,6 +711,14 @@ struct AppShellView: View {
             navigation.openHome()
         }
         searchQuery = ""
+    }
+
+    private func openBrowse() {
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.openBrowse()
+        }
     }
 
     private func openSaved() {
@@ -682,9 +752,29 @@ struct AppShellView: View {
     }
 
     private func openSearch() {
+        openSearch(prefilledQuery: nil, focusField: false)
+    }
+
+    private func openSearchQuery(_ query: String) {
+        openSearch(prefilledQuery: query, focusField: false)
+    }
+
+    private func openSearch(prefilledQuery: String?, focusField: Bool) {
         cancelInteractiveChromeState()
+        if let prefilledQuery {
+            searchQuery = prefilledQuery
+        }
+
+        if !focusField {
+            cancelSearchFocus()
+        }
+
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSearch()
+        }
+
+        if focusField {
+            focusSearchField()
         }
     }
 
@@ -706,6 +796,19 @@ struct AppShellView: View {
 
             isSearchFieldFocused = true
         }
+    }
+
+    private func applyLaunchSearchFocusIfNeeded() {
+        guard !didApplyLaunchSearchFocus else {
+            return
+        }
+        didApplyLaunchSearchFocus = true
+
+        guard launchSearchShouldFocus, navigation.isSearchPresented else {
+            return
+        }
+
+        focusSearchField()
     }
 
     private func cancelSearchFocus() {
@@ -740,11 +843,15 @@ struct AppShellView: View {
     }
 
     private static func shortcutRoute(for arguments: [String]) -> AppRoute {
+        if arguments.contains("--browse") {
+            return .browse
+        }
+
         if arguments.contains("--practice") || initialPracticeMode(for: arguments) != nil {
             return .practice
         }
 
-        return arguments.contains("--search") ? .search : .home
+        return arguments.contains("--search") || initialSearchQuery(for: arguments) != nil ? .search : .home
     }
 
     static func initialPracticeMode(for arguments: [String]) -> PracticeMode? {
@@ -783,6 +890,30 @@ struct AppShellView: View {
         initialDetailScrollTarget(for: ProcessInfo.processInfo.arguments)
     }
 
+    static func initialSearchQuery(for arguments: [String]) -> String? {
+        guard
+            let flagIndex = arguments.firstIndex(of: "--search-query"),
+            arguments.indices.contains(arguments.index(after: flagIndex))
+        else {
+            return nil
+        }
+
+        let query = arguments[arguments.index(after: flagIndex)].trimmingCharacters(in: .whitespacesAndNewlines)
+        return query.isEmpty ? nil : query
+    }
+
+    private static var initialSearchQuery: String {
+        initialSearchQuery(for: ProcessInfo.processInfo.arguments) ?? ""
+    }
+
+    static func initialSearchShouldFocus(for arguments: [String]) -> Bool {
+        arguments.contains("--search-focused")
+    }
+
+    private static var initialSearchShouldFocus: Bool {
+        initialSearchShouldFocus(for: ProcessInfo.processInfo.arguments)
+    }
+
     private static var initialRoute: AppRoute {
         initialRoute(for: ProcessInfo.processInfo.arguments)
     }
@@ -794,6 +925,7 @@ struct AppShellNavigationState: Equatable {
     var isSearchPresented: Bool
     var forwardStack: [AppRoute] = []
     var homeScrollToTopTrigger = 0
+    var browseScrollToTopTrigger = 0
     var rootScrollToTopTrigger = 0
     var savedScrollToTopTrigger = 0
     var practiceScrollToTopTrigger = 0
@@ -807,6 +939,8 @@ struct AppShellNavigationState: Equatable {
         switch initialRoute {
         case .home:
             rootRoute = .home
+        case .browse:
+            rootRoute = .browse
         case .phrasePage:
             rootRoute = .phrasePage
         case .saved:
@@ -851,7 +985,7 @@ struct AppShellNavigationState: Equatable {
             return .detailPage(detailPath[detailPath.count - 2])
         }
 
-        if rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice {
+        if rootRoute == .browse || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice {
             return .home
         }
 
@@ -893,7 +1027,7 @@ struct AppShellNavigationState: Equatable {
     }
 
     var canNavigateBackWithSwipe: Bool {
-        isSearchPresented || !detailPath.isEmpty || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice
+        isSearchPresented || !detailPath.isEmpty || rootRoute == .browse || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice
     }
 
     mutating func openDetail(_ id: String) {
@@ -940,6 +1074,19 @@ struct AppShellNavigationState: Equatable {
         homeScrollToTopTrigger += 1
     }
 
+    mutating func openBrowse() {
+        guard currentRoute != .browse else {
+            browseScrollToTopTrigger += 1
+            return
+        }
+
+        rootRoute = .browse
+        detailPath.removeAll()
+        isSearchPresented = false
+        forwardStack.removeAll()
+        browseScrollToTopTrigger += 1
+    }
+
     mutating func openSaved() {
         guard currentRoute != .saved else {
             savedScrollToTopTrigger += 1
@@ -983,6 +1130,11 @@ struct AppShellNavigationState: Equatable {
         }
 
         guard !detailPath.isEmpty else {
+            if rootRoute == .browse {
+                rootRoute = .home
+                forwardStack.append(.browse)
+                homeScrollToTopTrigger += 1
+            }
             if rootRoute == .phrasePage {
                 rootRoute = .home
                 forwardStack.append(.phrasePage)
@@ -1016,6 +1168,11 @@ struct AppShellNavigationState: Equatable {
             detailPath.removeAll()
             rootRoute = .home
             homeScrollToTopTrigger += 1
+        case .browse:
+            isSearchPresented = false
+            detailPath.removeAll()
+            rootRoute = .browse
+            browseScrollToTopTrigger += 1
         case .phrasePage:
             isSearchPresented = false
             detailPath.removeAll()

@@ -3,6 +3,7 @@ import Foundation
 
 enum AppRoute: Equatable {
     case home
+    case browse
     case phrasePage
     case saved
     case practice
@@ -53,7 +54,7 @@ struct AppChrome: Equatable {
 
     var primaryDockItems: [DockItemKind] {
         switch route {
-        case .home, .phrasePage, .saved, .practice, .detailPage:
+        case .home, .browse, .phrasePage, .saved, .practice, .detailPage:
             return [.home, .browse, .saved, .practice]
         case .search:
             return [.home]
@@ -64,7 +65,7 @@ struct AppChrome: Equatable {
         switch route {
         case .home, .search:
             return .home
-        case .phrasePage, .detailPage:
+        case .browse, .phrasePage, .detailPage:
             return .browse
         case .saved:
             return .saved
@@ -75,7 +76,7 @@ struct AppChrome: Equatable {
 
     var searchPresentation: SearchPresentation {
         switch route {
-        case .home, .phrasePage, .saved, .practice, .detailPage:
+        case .home, .browse, .phrasePage, .saved, .practice, .detailPage:
             return .collapsedIsland
         case .search:
             return .expandedField
