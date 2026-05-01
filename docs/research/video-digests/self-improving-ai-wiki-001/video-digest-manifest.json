@@ -1,0 +1,78 @@
+{
+  "url": "https://youtu.be/nilNHl4uZcU?si=k-KNWfw7IiB1Dvwb",
+  "slug": "self-improving-ai-wiki-001",
+  "output_dir": "docs/research/video-digests/self-improving-ai-wiki-001",
+  "work_dir": "/var/folders/z4/rl0d7cg94zvfy4b0_zytwc7c0000gn/T/speaklocal-video-digests/self-improving-ai-wiki-001",
+  "metadata": {
+    "title": "Build Your Own Self Improving AI Wiki in 11 Minutes (Free Skill)",
+    "id": "nilNHl4uZcU",
+    "webpage_url": "https://www.youtube.com/watch?v=nilNHl4uZcU",
+    "channel": "Brad | AI & Automation",
+    "duration": 668,
+    "upload_date": "20260415",
+    "view_count": 5615,
+    "info_json_retained": false
+  },
+  "dependencies": {
+    "yt-dlp": "2026.03.17",
+    "ffmpeg": "ffmpeg version 8.1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe": "ffprobe version 8.1 Copyright (c) 2007-2026 the FFmpeg developers"
+  },
+  "caption_source": "docs/research/video-digests/self-improving-ai-wiki-001/sources/source.en-orig.vtt",
+  "transcript": {
+    "transcript_vtt": "docs/research/video-digests/self-improving-ai-wiki-001/transcript.vtt",
+    "transcript_json": "docs/research/video-digests/self-improving-ai-wiki-001/transcript.json",
+    "transcript_md": "docs/research/video-digests/self-improving-ai-wiki-001/transcript.md",
+    "segment_count": 349
+  },
+  "frames": {
+    "duration_seconds": 667.714,
+    "frames": [
+      {
+        "path": "docs/research/video-digests/self-improving-ai-wiki-001/frames/frame_01_00-00-20.jpg",
+        "timestamp": "00:00:20",
+        "seconds": 20.0
+      },
+      {
+        "path": "docs/research/video-digests/self-improving-ai-wiki-001/frames/frame_02_00-01-49.jpg",
+        "timestamp": "00:01:49",
+        "seconds": 109.673
+      },
+      {
+        "path": "docs/research/video-digests/self-improving-ai-wiki-001/frames/frame_03_00-03-19.jpg",
+        "timestamp": "00:03:19",
+        "seconds": 199.347
+      },
+      {
+        "path": "docs/research/video-digests/self-improving-ai-wiki-001/frames/frame_04_00-04-49.jpg",
+        "timestamp": "00:04:49",
+        "seconds": 289.02
+      },
+      {
+        "path": "docs/research/video-digests/self-improving-ai-wiki-001/frames/frame_05_00-06-18.jpg",
+        "timestamp": "00:06:18",
+        "seconds": 378.694
+      },
+      {
+        "path": "docs/research/video-digests/self-improving-ai-wiki-001/frames/frame_06_00-07-48.jpg",
+        "timestamp": "00:07:48",
+        "seconds": 468.367
+      },
+      {
+        "path": "docs/research/video-digests/self-improving-ai-wiki-001/frames/frame_07_00-09-18.jpg",
+        "timestamp": "00:09:18",
+        "seconds": 558.041
+      },
+      {
+        "path": "docs/research/video-digests/self-improving-ai-wiki-001/frames/frame_08_00-10-47.jpg",
+        "timestamp": "00:10:47",
+        "seconds": 647.714
+      }
+    ],
+    "contact_sheet": "docs/research/video-digests/self-improving-ai-wiki-001/contact-sheet.jpg"
+  },
+  "openai_transcription": {
+    "status": "skipped",
+    "reason": "captions_found"
+  }
+}

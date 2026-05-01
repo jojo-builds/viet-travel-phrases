@@ -132,6 +132,127 @@ Fallbacks:
 - Treated review aggregators and SEO review posts as weak support, not primary evidence.
 - Did not use ChatGPT/Deep Research because the task could be handled with public web sources and repo-local synthesis without sending private repo context out.
 
+## Video Digest Notes
+
+### Strategy From Self-Improving AI Wiki 001
+
+The useful repeatable idea is not the Claude-specific stack from the test video.
+It is the boundary between human taste and automated fetching:
+
+- Jojo or the lane chooses trusted sources.
+- Local tooling fetches public captions, metadata, and frames.
+- OpenAI transcription is a fallback only when captions are missing.
+- Codex turns raw artifacts into a report with fold-in options.
+- The lane notes record tool limits and next-time shortcuts.
+
+Keep video artifacts under:
+
+```text
+docs/research/video-digests/<topic-slug>/
+```
+
+The stable artifact set is:
+
+- `README.md`: Jojo-readable digest and fold-in options.
+- `metadata.json`: durable public video metadata.
+- `transcript.vtt`, `transcript.json`, `transcript.md`: caption/transcript evidence.
+- `frames/*.jpg`: selected timestamped frames.
+- `contact-sheet.jpg`: quick visual review surface.
+- `video-digest-manifest.json`: tool/dependency/provenance record.
+
+Do not commit downloaded video files, extracted audio, or raw `yt-dlp` info JSON
+with volatile format URLs.
+
+### Video Dependency Checks
+
+Before a video pass, check:
+
+```text
+yt-dlp --version
+ffmpeg -version
+ffprobe -version
+env | rg '^OPENAI'
+```
+
+If `yt-dlp`, `ffmpeg`, or `ffprobe` are missing on Jojo's Mac, Homebrew install
+worked in this pilot:
+
+```text
+brew install yt-dlp ffmpeg
+```
+
+That install is environment setup, not a repo dependency. The repo helper still
+exits clearly if the commands are missing.
+
+### Caption, Transcript, And OpenAI Fallbacks
+
+Use captions first. Captions are fast, public, and avoid unnecessary model cost.
+
+If captions are missing:
+
+- do not use WhisperFlow or other paid third-party transcription tools;
+- use `--allow-openai-transcribe` only when `OPENAI_API_KEY` is present and the
+  source is appropriate to send to OpenAI;
+- prefer `gpt-4o-mini-transcribe` for ordinary fallback transcription;
+- record the fallback status in `video-digest-manifest.json`;
+- if audio exceeds the API upload limit, block or add chunking in a separate
+  tooling task instead of hiding the failure.
+
+YouTube auto-captions often use rolling cues that duplicate previous text. The
+helper handles this by keeping the newest caption line and skipping tiny rollover
+cues. If transcripts look repetitive, fix the parser before writing the report.
+
+### Frame Strategy
+
+Use sparse frames for the first pass. Eight frames were enough for the 11-minute
+test video because the task was strategic, not a frame-perfect UI audit.
+
+Rerun with a focused window or add `--start` / `--end` support later when:
+
+- the user asks what happened at a specific moment;
+- on-screen code, UI, or charts drive the conclusion;
+- a competitor app demo needs close inspection.
+
+For podcast-style videos, transcript-only may be enough. For tool demos, app
+walkthroughs, and competitor onboarding videos, keep frames and a contact sheet.
+
+### Next-Time Video Loop V1
+
+```text
+1. Confirm the video is public and appropriate to process.
+2. Run scripts/research-video-digest.py URL --slug <slug>.
+3. Inspect transcript.md for caption quality.
+4. Inspect contact-sheet.jpg and any critical frames.
+5. Write README.md using the R&D report shape.
+6. Capture tool limits and fallback status in this notes file when new.
+7. Run one focused read-only review.
+8. Commit only helper/report/artifact/note paths.
+```
+
+### Skill Seed: `speaklocal-video-digest`
+
+Create this only after Jojo approves a follow-up skill task. This pilot produced
+enough evidence to define a first skill, but one more video would make the skill
+less overfit to YouTube auto-captions.
+
+Candidate trigger description:
+
+```yaml
+name: speaklocal-video-digest
+description: Use when digesting public videos for SpeakLocal research into transcript, frame, source, report, and fold-in artifacts.
+```
+
+Candidate core behavior:
+
+- Read `docs/research/R_AND_D_LANE.md` and this notes file first.
+- Use `scripts/research-video-digest.py` for extraction.
+- Prefer captions; use OpenAI transcription only as explicit fallback.
+- Inspect frames when visuals affect the conclusion.
+- Save reports under `docs/research/video-digests/<topic-slug>/README.md`.
+- Update this notes file when new limitations or shortcuts appear.
+- Stop at fold-in options unless Jojo explicitly authorizes task cards, source
+  registry updates, or implementation work.
+
 ## Repeated Mistakes To Avoid
 
 - Do not start with market-size reports. They are useful only after the product question is clear.
@@ -140,6 +261,8 @@ Fallbacks:
 - Do not let recommendations live only in chat. Put them in the report and result receipt.
 - Do not create task cards during a research pass unless Jojo explicitly authorizes it.
 - Do not use "research says" when the evidence is actually one Reddit post.
+- Do not treat video titles or descriptions as enough evidence. Pull captions
+  and frames before making recommendations from a video.
 
 ## Next-Time Faster Checklist
 

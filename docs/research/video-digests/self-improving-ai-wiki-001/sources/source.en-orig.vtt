@@ -1,0 +1,2792 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.470 align:start position:0%
+ 
+Andre<00:00:00.320><c> Karpathy's</c><00:00:01.000><c> LLM</c><00:00:01.280><c> Wiki</c><00:00:01.640><c> is</c><00:00:01.880><c> a</c><00:00:02.000><c> great</c>
+
+00:00:02.470 --> 00:00:02.480 align:start position:0%
+Andre Karpathy's LLM Wiki is a great
+ 
+
+00:00:02.480 --> 00:00:04.510 align:start position:0%
+Andre Karpathy's LLM Wiki is a great
+idea<00:00:02.960><c> with</c><00:00:03.280><c> one</c><00:00:03.520><c> problem.</c><00:00:04.040><c> You</c><00:00:04.160><c> have</c><00:00:04.320><c> to</c>
+
+00:00:04.510 --> 00:00:04.520 align:start position:0%
+idea with one problem. You have to
+ 
+
+00:00:04.520 --> 00:00:06.310 align:start position:0%
+idea with one problem. You have to
+remember<00:00:05.200><c> to</c><00:00:05.400><c> update</c><00:00:05.800><c> it.</c><00:00:05.840><c> The</c><00:00:05.920><c> moment</c><00:00:06.240><c> you</c>
+
+00:00:06.310 --> 00:00:06.320 align:start position:0%
+remember to update it. The moment you
+ 
+
+00:00:06.320 --> 00:00:08.710 align:start position:0%
+remember to update it. The moment you
+stop<00:00:06.600><c> manually</c><00:00:07.160><c> feeding</c><00:00:07.520><c> it</c><00:00:07.640><c> new</c><00:00:07.840><c> context,</c><00:00:08.560><c> it</c>
+
+00:00:08.710 --> 00:00:08.720 align:start position:0%
+stop manually feeding it new context, it
+ 
+
+00:00:08.720 --> 00:00:11.110 align:start position:0%
+stop manually feeding it new context, it
+stops<00:00:09.000><c> knowing</c><00:00:09.480><c> anything</c><00:00:10.240><c> and</c><00:00:10.400><c> your</c><00:00:10.560><c> new</c><00:00:10.800><c> Wiki</c>
+
+00:00:11.110 --> 00:00:11.120 align:start position:0%
+stops knowing anything and your new Wiki
+ 
+
+00:00:11.120 --> 00:00:13.590 align:start position:0%
+stops knowing anything and your new Wiki
+becomes<00:00:11.680><c> basically</c><00:00:12.480><c> useless.</c><00:00:13.080><c> So,</c><00:00:13.200><c> I</c><00:00:13.280><c> gave</c><00:00:13.520><c> it</c>
+
+00:00:13.590 --> 00:00:13.600 align:start position:0%
+becomes basically useless. So, I gave it
+ 
+
+00:00:13.600 --> 00:00:15.390 align:start position:0%
+becomes basically useless. So, I gave it
+the<00:00:13.720><c> ability</c><00:00:14.040><c> to</c><00:00:14.160><c> grow</c><00:00:14.360><c> new</c><00:00:14.640><c> context</c>
+
+00:00:15.390 --> 00:00:15.400 align:start position:0%
+the ability to grow new context
+ 
+
+00:00:15.400 --> 00:00:17.390 align:start position:0%
+the ability to grow new context
+automatically.<00:00:16.080><c> Now,</c><00:00:16.280><c> it</c><00:00:16.360><c> watches</c><00:00:16.760><c> every</c><00:00:17.160><c> app</c>
+
+00:00:17.390 --> 00:00:17.400 align:start position:0%
+automatically. Now, it watches every app
+ 
+
+00:00:17.400 --> 00:00:19.550 align:start position:0%
+automatically. Now, it watches every app
+that<00:00:17.560><c> I</c><00:00:17.640><c> care</c><00:00:17.840><c> about,</c><00:00:18.240><c> pulls</c><00:00:18.520><c> in</c><00:00:18.680><c> new</c><00:00:18.920><c> context</c>
+
+00:00:19.550 --> 00:00:19.560 align:start position:0%
+that I care about, pulls in new context
+ 
+
+00:00:19.560 --> 00:00:21.430 align:start position:0%
+that I care about, pulls in new context
+on<00:00:19.720><c> its</c><00:00:19.960><c> own,</c><00:00:20.360><c> and</c><00:00:20.520><c> grows</c><00:00:20.800><c> the</c><00:00:20.880><c> Wiki</c><00:00:21.120><c> without</c>
+
+00:00:21.430 --> 00:00:21.440 align:start position:0%
+on its own, and grows the Wiki without
+ 
+
+00:00:21.440 --> 00:00:23.110 align:start position:0%
+on its own, and grows the Wiki without
+me<00:00:21.680><c> ever</c><00:00:22.040><c> touching</c><00:00:22.400><c> it.</c><00:00:22.480><c> And</c><00:00:22.600><c> it's</c><00:00:22.720><c> saving</c><00:00:23.000><c> me</c>
+
+00:00:23.110 --> 00:00:23.120 align:start position:0%
+me ever touching it. And it's saving me
+ 
+
+00:00:23.120 --> 00:00:25.190 align:start position:0%
+me ever touching it. And it's saving me
+more<00:00:23.440><c> time</c><00:00:23.720><c> than</c><00:00:23.840><c> ever</c><00:00:24.200><c> because</c><00:00:24.400><c> it's</c><00:00:24.640><c> always</c>
+
+00:00:25.190 --> 00:00:25.200 align:start position:0%
+more time than ever because it's always
+ 
+
+00:00:25.200 --> 00:00:26.630 align:start position:0%
+more time than ever because it's always
+up<00:00:25.400><c> to</c><00:00:25.520><c> date.</c><00:00:25.760><c> Right</c><00:00:25.960><c> now,</c><00:00:26.240><c> I'm</c><00:00:26.320><c> going</c><00:00:26.440><c> to</c><00:00:26.520><c> show</c>
+
+00:00:26.630 --> 00:00:26.640 align:start position:0%
+up to date. Right now, I'm going to show
+ 
+
+00:00:26.640 --> 00:00:28.670 align:start position:0%
+up to date. Right now, I'm going to show
+you<00:00:26.800><c> exactly</c><00:00:27.480><c> how</c><00:00:27.640><c> I</c><00:00:27.720><c> built</c><00:00:27.960><c> this,</c><00:00:28.320><c> how</c><00:00:28.440><c> to</c><00:00:28.520><c> set</c>
+
+00:00:28.670 --> 00:00:28.680 align:start position:0%
+you exactly how I built this, how to set
+ 
+
+00:00:28.680 --> 00:00:30.550 align:start position:0%
+you exactly how I built this, how to set
+it<00:00:28.760><c> up</c><00:00:28.880><c> for</c><00:00:29.000><c> yourself,</c><00:00:29.800><c> and</c><00:00:29.800><c> how</c><00:00:30.000><c> to</c><00:00:30.120><c> deploy</c>
+
+00:00:30.550 --> 00:00:30.560 align:start position:0%
+it up for yourself, and how to deploy
+ 
+
+00:00:30.560 --> 00:00:33.390 align:start position:0%
+it up for yourself, and how to deploy
+24/7<00:00:31.440><c> context</c><00:00:31.920><c> farmers</c><00:00:32.360><c> that</c><00:00:32.480><c> are</c><00:00:32.599><c> constantly</c>
+
+00:00:33.390 --> 00:00:33.400 align:start position:0%
+24/7 context farmers that are constantly
+ 
+
+00:00:33.400 --> 00:00:35.390 align:start position:0%
+24/7 context farmers that are constantly
+mining<00:00:33.800><c> your</c><00:00:34.080><c> apps</c><00:00:34.360><c> for</c><00:00:34.480><c> data,</c><00:00:34.840><c> all</c><00:00:35.080><c> within</c>
+
+00:00:35.390 --> 00:00:35.400 align:start position:0%
+mining your apps for data, all within
+ 
+
+00:00:35.400 --> 00:00:37.390 align:start position:0%
+mining your apps for data, all within
+Claude<00:00:35.640><c> Code.</c><00:00:35.880><c> Plus,</c><00:00:36.280><c> I'm</c><00:00:36.400><c> giving</c><00:00:36.640><c> you</c><00:00:36.880><c> a</c><00:00:37.000><c> Wiki</c>
+
+00:00:37.390 --> 00:00:37.400 align:start position:0%
+Claude Code. Plus, I'm giving you a Wiki
+ 
+
+00:00:37.400 --> 00:00:39.630 align:start position:0%
+Claude Code. Plus, I'm giving you a Wiki
+Builder<00:00:37.720><c> skill</c><00:00:38.160><c> that</c><00:00:38.280><c> does</c><00:00:38.480><c> the</c><00:00:38.560><c> entire</c><00:00:39.200><c> setup</c>
+
+00:00:39.630 --> 00:00:39.640 align:start position:0%
+Builder skill that does the entire setup
+ 
+
+00:00:39.640 --> 00:00:41.510 align:start position:0%
+Builder skill that does the entire setup
+for<00:00:39.880><c> you.</c><00:00:40.160><c> I've</c><00:00:40.280><c> set</c><00:00:40.480><c> this</c><00:00:40.680><c> demo</c><00:00:41.080><c> up</c><00:00:41.280><c> with</c><00:00:41.440><c> a</c>
+
+00:00:41.510 --> 00:00:41.520 align:start position:0%
+for you. I've set this demo up with a
+ 
+
+00:00:41.520 --> 00:00:43.630 align:start position:0%
+for you. I've set this demo up with a
+Karpathy<00:00:42.000><c> Wiki</c><00:00:42.320><c> to</c><00:00:42.440><c> keep</c><00:00:42.640><c> track</c><00:00:42.880><c> of</c><00:00:43.080><c> all</c><00:00:43.360><c> of</c><00:00:43.480><c> my</c>
+
+00:00:43.630 --> 00:00:43.640 align:start position:0%
+Karpathy Wiki to keep track of all of my
+ 
+
+00:00:43.640 --> 00:00:45.350 align:start position:0%
+Karpathy Wiki to keep track of all of my
+favorite<00:00:44.080><c> AI</c><00:00:44.320><c> content</c><00:00:44.720><c> creators,</c><00:00:45.160><c> what</c>
+
+00:00:45.350 --> 00:00:45.360 align:start position:0%
+favorite AI content creators, what
+ 
+
+00:00:45.360 --> 00:00:47.110 align:start position:0%
+favorite AI content creators, what
+they're<00:00:45.520><c> posting,</c><00:00:46.080><c> and</c><00:00:46.280><c> what's</c><00:00:46.680><c> getting</c>
+
+00:00:47.110 --> 00:00:47.120 align:start position:0%
+they're posting, and what's getting
+ 
+
+00:00:47.120 --> 00:00:49.430 align:start position:0%
+they're posting, and what's getting
+results.<00:00:47.560><c> Every</c><00:00:48.000><c> creator</c><00:00:48.560><c> I</c><00:00:48.680><c> track</c><00:00:49.080><c> has</c><00:00:49.240><c> their</c>
+
+00:00:49.430 --> 00:00:49.440 align:start position:0%
+results. Every creator I track has their
+ 
+
+00:00:49.440 --> 00:00:51.150 align:start position:0%
+results. Every creator I track has their
+own<00:00:49.560><c> page</c><00:00:50.000><c> with</c><00:00:50.160><c> what</c><00:00:50.320><c> they</c><00:00:50.480><c> cover.</c><00:00:50.920><c> There's</c><00:00:51.080><c> a</c>
+
+00:00:51.150 --> 00:00:51.160 align:start position:0%
+own page with what they cover. There's a
+ 
+
+00:00:51.160 --> 00:00:53.670 align:start position:0%
+own page with what they cover. There's a
+summary<00:00:51.760><c> for</c><00:00:52.000><c> all</c><00:00:52.200><c> their</c><00:00:52.360><c> reoccurring</c><00:00:53.000><c> ideas</c>
+
+00:00:53.670 --> 00:00:53.680 align:start position:0%
+summary for all their reoccurring ideas
+ 
+
+00:00:53.680 --> 00:00:55.590 align:start position:0%
+summary for all their reoccurring ideas
+and<00:00:53.920><c> what</c><00:00:54.080><c> they</c><00:00:54.200><c> like</c><00:00:54.440><c> to</c><00:00:54.520><c> cover.</c><00:00:55.200><c> I'm</c><00:00:55.360><c> even</c>
+
+00:00:55.590 --> 00:00:55.600 align:start position:0%
+and what they like to cover. I'm even
+ 
+
+00:00:55.600 --> 00:00:57.430 align:start position:0%
+and what they like to cover. I'm even
+getting<00:00:56.040><c> all</c><00:00:56.480><c> of</c><00:00:56.600><c> their</c><00:00:56.760><c> generated</c>
+
+00:00:57.430 --> 00:00:57.440 align:start position:0%
+getting all of their generated
+ 
+
+00:00:57.440 --> 00:00:59.790 align:start position:0%
+getting all of their generated
+thumbnails<00:00:58.040><c> and</c><00:00:58.200><c> transcripts</c><00:00:59.000><c> automatically</c>
+
+00:00:59.790 --> 00:00:59.800 align:start position:0%
+thumbnails and transcripts automatically
+ 
+
+00:00:59.800 --> 00:01:01.550 align:start position:0%
+thumbnails and transcripts automatically
+in<00:00:59.960><c> the</c><00:01:00.040><c> raw</c><00:01:00.240><c> folder.</c><00:01:00.680><c> I</c><00:01:00.760><c> haven't</c><00:01:01.120><c> made</c><00:01:01.440><c> a</c>
+
+00:01:01.550 --> 00:01:01.560 align:start position:0%
+in the raw folder. I haven't made a
+ 
+
+00:01:01.560 --> 00:01:04.189 align:start position:0%
+in the raw folder. I haven't made a
+single<00:01:02.400><c> one</c><00:01:02.640><c> of</c><00:01:02.720><c> these.</c><00:01:03.000><c> Each</c><00:01:03.240><c> creator</c><00:01:03.640><c> page</c>
+
+00:01:04.189 --> 00:01:04.199 align:start position:0%
+single one of these. Each creator page
+ 
+
+00:01:04.199 --> 00:01:06.190 align:start position:0%
+single one of these. Each creator page
+updates<00:01:04.800><c> itself</c><00:01:05.519><c> when</c><00:01:05.640><c> they</c><00:01:05.760><c> drop</c><00:01:06.000><c> a</c><00:01:06.040><c> new</c>
+
+00:01:06.190 --> 00:01:06.200 align:start position:0%
+updates itself when they drop a new
+ 
+
+00:01:06.200 --> 00:01:08.590 align:start position:0%
+updates itself when they drop a new
+video.<00:01:06.920><c> And</c><00:01:07.120><c> at</c><00:01:07.240><c> a</c><00:01:07.320><c> drop</c><00:01:07.560><c> of</c><00:01:07.640><c> a</c><00:01:07.680><c> dime,</c><00:01:08.200><c> I</c><00:01:08.320><c> can</c><00:01:08.440><c> go</c>
+
+00:01:08.590 --> 00:01:08.600 align:start position:0%
+video. And at a drop of a dime, I can go
+ 
+
+00:01:08.600 --> 00:01:10.390 align:start position:0%
+video. And at a drop of a dime, I can go
+to<00:01:08.720><c> the</c><00:01:08.800><c> graph</c><00:01:09.240><c> page</c><00:01:09.680><c> and</c><00:01:09.840><c> search</c><00:01:10.160><c> for</c>
+
+00:01:10.390 --> 00:01:10.400 align:start position:0%
+to the graph page and search for
+ 
+
+00:01:10.400 --> 00:01:12.670 align:start position:0%
+to the graph page and search for
+anything,<00:01:11.280><c> whether</c><00:01:11.520><c> that's</c><00:01:11.760><c> N8N,</c><00:01:12.360><c> Claude</c>
+
+00:01:12.670 --> 00:01:12.680 align:start position:0%
+anything, whether that's N8N, Claude
+ 
+
+00:01:12.680 --> 00:01:14.750 align:start position:0%
+anything, whether that's N8N, Claude
+Code,<00:01:13.200><c> or</c><00:01:13.400><c> absolutely</c><00:01:14.080><c> anything.</c><00:01:14.560><c> Each</c>
+
+00:01:14.750 --> 00:01:14.760 align:start position:0%
+Code, or absolutely anything. Each
+ 
+
+00:01:14.760 --> 00:01:17.190 align:start position:0%
+Code, or absolutely anything. Each
+creator<00:01:15.160><c> page</c><00:01:15.600><c> updates</c><00:01:16.120><c> itself</c><00:01:16.840><c> whenever</c><00:01:17.160><c> a</c>
+
+00:01:17.190 --> 00:01:17.200 align:start position:0%
+creator page updates itself whenever a
+ 
+
+00:01:17.200 --> 00:01:19.350 align:start position:0%
+creator page updates itself whenever a
+new<00:01:17.400><c> video</c><00:01:17.760><c> drops.</c><00:01:18.240><c> The</c><00:01:18.360><c> context</c><00:01:18.800><c> farmer</c><00:01:19.120><c> goes</c>
+
+00:01:19.350 --> 00:01:19.360 align:start position:0%
+new video drops. The context farmer goes
+ 
+
+00:01:19.360 --> 00:01:21.190 align:start position:0%
+new video drops. The context farmer goes
+out<00:01:19.560><c> and</c><00:01:19.720><c> grabs</c><00:01:20.160><c> the</c><00:01:20.280><c> transcript</c><00:01:21.000><c> and</c><00:01:21.120><c> the</c>
+
+00:01:21.190 --> 00:01:21.200 align:start position:0%
+out and grabs the transcript and the
+ 
+
+00:01:21.200 --> 00:01:23.510 align:start position:0%
+out and grabs the transcript and the
+thumbnail,<00:01:22.000><c> brings</c><00:01:22.280><c> it</c><00:01:22.400><c> in,</c><00:01:22.680><c> and</c><00:01:22.840><c> ingests</c><00:01:23.320><c> it</c>
+
+00:01:23.510 --> 00:01:23.520 align:start position:0%
+thumbnail, brings it in, and ingests it
+ 
+
+00:01:23.520 --> 00:01:25.310 align:start position:0%
+thumbnail, brings it in, and ingests it
+into<00:01:23.840><c> the</c><00:01:23.920><c> knowledge</c><00:01:24.280><c> lab.</c><00:01:24.640><c> Over</c><00:01:24.840><c> time,</c><00:01:25.200><c> the</c>
+
+00:01:25.310 --> 00:01:25.320 align:start position:0%
+into the knowledge lab. Over time, the
+ 
+
+00:01:25.320 --> 00:01:26.950 align:start position:0%
+into the knowledge lab. Over time, the
+Wiki<00:01:25.560><c> gets</c><00:01:25.800><c> richer</c><00:01:26.200><c> and</c><00:01:26.400><c> richer,</c><00:01:26.760><c> and</c><00:01:26.880><c> the</c>
+
+00:01:26.950 --> 00:01:26.960 align:start position:0%
+Wiki gets richer and richer, and the
+ 
+
+00:01:26.960 --> 00:01:28.590 align:start position:0%
+Wiki gets richer and richer, and the
+interconnected<00:01:27.480><c> layers</c><00:01:27.720><c> get</c><00:01:27.920><c> stronger</c><00:01:28.440><c> and</c>
+
+00:01:28.590 --> 00:01:28.600 align:start position:0%
+interconnected layers get stronger and
+ 
+
+00:01:28.600 --> 00:01:30.630 align:start position:0%
+interconnected layers get stronger and
+stronger.<00:01:28.960><c> And</c><00:01:29.040><c> because</c><00:01:29.320><c> it's</c><00:01:29.560><c> all</c><00:01:30.000><c> markdown</c>
+
+00:01:30.630 --> 00:01:30.640 align:start position:0%
+stronger. And because it's all markdown
+ 
+
+00:01:30.640 --> 00:01:32.830 align:start position:0%
+stronger. And because it's all markdown
+in<00:01:30.760><c> Obsidian,</c><00:01:31.320><c> I</c><00:01:31.400><c> can</c><00:01:31.520><c> drop</c><00:01:31.720><c> this</c><00:01:31.920><c> into</c><00:01:32.440><c> any</c>
+
+00:01:32.830 --> 00:01:32.840 align:start position:0%
+in Obsidian, I can drop this into any
+ 
+
+00:01:32.840 --> 00:01:34.590 align:start position:0%
+in Obsidian, I can drop this into any
+Claude<00:01:33.160><c> Code</c><00:01:33.360><c> session</c><00:01:33.800><c> and</c><00:01:33.960><c> have</c><00:01:34.160><c> full</c>
+
+00:01:34.590 --> 00:01:34.600 align:start position:0%
+Claude Code session and have full
+ 
+
+00:01:34.600 --> 00:01:36.430 align:start position:0%
+Claude Code session and have full
+context<00:01:35.240><c> whenever</c><00:01:35.560><c> I'm</c><00:01:35.680><c> doing</c><00:01:35.920><c> my</c><00:01:36.040><c> content</c>
+
+00:01:36.430 --> 00:01:36.440 align:start position:0%
+context whenever I'm doing my content
+ 
+
+00:01:36.440 --> 00:01:38.230 align:start position:0%
+context whenever I'm doing my content
+planning.<00:01:36.800><c> This</c><00:01:37.000><c> Wiki</c><00:01:37.240><c> grows</c><00:01:37.600><c> totally</c>
+
+00:01:38.230 --> 00:01:38.240 align:start position:0%
+planning. This Wiki grows totally
+ 
+
+00:01:38.240 --> 00:01:40.230 align:start position:0%
+planning. This Wiki grows totally
+automatically.<00:01:39.040><c> Every</c><00:01:39.400><c> day,</c><00:01:39.760><c> context</c>
+
+00:01:40.230 --> 00:01:40.240 align:start position:0%
+automatically. Every day, context
+ 
+
+00:01:40.240 --> 00:01:42.150 align:start position:0%
+automatically. Every day, context
+farming<00:01:40.560><c> sub</c><00:01:40.840><c> agents</c><00:01:41.160><c> are</c><00:01:41.320><c> adding</c><00:01:41.560><c> in</c><00:01:41.760><c> more</c>
+
+00:01:42.150 --> 00:01:42.160 align:start position:0%
+farming sub agents are adding in more
+ 
+
+00:01:42.160 --> 00:01:44.310 align:start position:0%
+farming sub agents are adding in more
+and<00:01:42.320><c> more</c><00:01:42.520><c> videos,</c><00:01:43.040><c> more</c><00:01:43.320><c> relationships,</c><00:01:44.120><c> and</c>
+
+00:01:44.310 --> 00:01:44.320 align:start position:0%
+and more videos, more relationships, and
+ 
+
+00:01:44.320 --> 00:01:46.030 align:start position:0%
+and more videos, more relationships, and
+more<00:01:44.520><c> knowledge.</c><00:01:44.960><c> And</c><00:01:45.120><c> all</c><00:01:45.280><c> of</c><00:01:45.400><c> this</c><00:01:45.640><c> feeds</c>
+
+00:01:46.030 --> 00:01:46.040 align:start position:0%
+more knowledge. And all of this feeds
+ 
+
+00:01:46.040 --> 00:01:47.870 align:start position:0%
+more knowledge. And all of this feeds
+into<00:01:46.240><c> the</c><00:01:46.320><c> content</c><00:01:46.760><c> decisions</c><00:01:47.320><c> I</c><00:01:47.400><c> make.</c><00:01:47.720><c> This</c>
+
+00:01:47.870 --> 00:01:47.880 align:start position:0%
+into the content decisions I make. This
+ 
+
+00:01:47.880 --> 00:01:49.670 align:start position:0%
+into the content decisions I make. This
+is<00:01:48.000><c> the</c><00:01:48.120><c> type</c><00:01:48.360><c> of</c><00:01:48.520><c> leverage</c><00:01:48.920><c> you</c><00:01:49.040><c> can</c><00:01:49.200><c> get</c><00:01:49.480><c> when</c>
+
+00:01:49.670 --> 00:01:49.680 align:start position:0%
+is the type of leverage you can get when
+ 
+
+00:01:49.680 --> 00:01:51.670 align:start position:0%
+is the type of leverage you can get when
+you<00:01:49.800><c> remove</c><00:01:50.240><c> human</c><00:01:50.640><c> ingestion</c><00:01:51.400><c> as</c><00:01:51.600><c> the</c>
+
+00:01:51.670 --> 00:01:51.680 align:start position:0%
+you remove human ingestion as the
+ 
+
+00:01:51.680 --> 00:01:53.350 align:start position:0%
+you remove human ingestion as the
+bottleneck<00:01:52.200><c> to</c><00:01:52.320><c> your</c><00:01:52.480><c> context</c><00:01:52.920><c> layer.</c><00:01:53.200><c> This</c>
+
+00:01:53.350 --> 00:01:53.360 align:start position:0%
+bottleneck to your context layer. This
+ 
+
+00:01:53.360 --> 00:01:55.550 align:start position:0%
+bottleneck to your context layer. This
+Wiki<00:01:53.600><c> grows</c><00:01:53.920><c> totally</c><00:01:54.680><c> automatically.</c><00:01:55.440><c> So,</c><00:01:55.520><c> a</c>
+
+00:01:55.550 --> 00:01:55.560 align:start position:0%
+Wiki grows totally automatically. So, a
+ 
+
+00:01:55.560 --> 00:01:57.230 align:start position:0%
+Wiki grows totally automatically. So, a
+quick<00:01:55.840><c> recap</c><00:01:56.240><c> if</c><00:01:56.360><c> you</c><00:01:56.480><c> haven't</c><00:01:56.840><c> seen</c><00:01:57.080><c> one</c><00:01:57.200><c> of</c>
+
+00:01:57.230 --> 00:01:57.240 align:start position:0%
+quick recap if you haven't seen one of
+ 
+
+00:01:57.240 --> 00:01:59.470 align:start position:0%
+quick recap if you haven't seen one of
+these<00:01:57.440><c> Karpathy</c><00:01:57.960><c> Wiki</c><00:01:58.280><c> set</c><00:01:58.520><c> up.</c><00:01:58.840><c> It's</c><00:01:59.040><c> just</c>
+
+00:01:59.470 --> 00:01:59.480 align:start position:0%
+these Karpathy Wiki set up. It's just
+ 
+
+00:01:59.480 --> 00:02:01.870 align:start position:0%
+these Karpathy Wiki set up. It's just
+two<00:01:59.840><c> folders,</c><00:02:00.480><c> a</c><00:02:00.600><c> raw</c><00:02:00.960><c> folder</c><00:02:01.400><c> and</c><00:02:01.600><c> a</c><00:02:01.640><c> Wiki</c>
+
+00:02:01.870 --> 00:02:01.880 align:start position:0%
+two folders, a raw folder and a Wiki
+ 
+
+00:02:01.880 --> 00:02:03.950 align:start position:0%
+two folders, a raw folder and a Wiki
+folder.<00:02:02.320><c> You</c><00:02:02.440><c> drop</c><00:02:02.680><c> sources</c><00:02:03.280><c> into</c><00:02:03.640><c> the</c><00:02:03.760><c> raw</c>
+
+00:02:03.950 --> 00:02:03.960 align:start position:0%
+folder. You drop sources into the raw
+ 
+
+00:02:03.960 --> 00:02:06.750 align:start position:0%
+folder. You drop sources into the raw
+folder,<00:02:04.520><c> and</c><00:02:04.640><c> the</c><00:02:04.760><c> LLM</c><00:02:05.400><c> ingests</c><00:02:06.120><c> those</c><00:02:06.600><c> and</c>
+
+00:02:06.750 --> 00:02:06.760 align:start position:0%
+folder, and the LLM ingests those and
+ 
+
+00:02:06.760 --> 00:02:09.230 align:start position:0%
+folder, and the LLM ingests those and
+builds<00:02:07.120><c> out</c><00:02:07.360><c> Wiki</c><00:02:07.720><c> pages</c><00:02:08.280><c> inside</c><00:02:08.759><c> of</c><00:02:08.840><c> the</c><00:02:08.960><c> Wiki</c>
+
+00:02:09.230 --> 00:02:09.240 align:start position:0%
+builds out Wiki pages inside of the Wiki
+ 
+
+00:02:09.240 --> 00:02:10.790 align:start position:0%
+builds out Wiki pages inside of the Wiki
+folder.<00:02:09.560><c> Inside</c><00:02:09.880><c> of</c><00:02:09.920><c> the</c><00:02:10.039><c> Wiki</c><00:02:10.320><c> folder,</c><00:02:10.640><c> you</c>
+
+00:02:10.790 --> 00:02:10.800 align:start position:0%
+folder. Inside of the Wiki folder, you
+ 
+
+00:02:10.800 --> 00:02:13.270 align:start position:0%
+folder. Inside of the Wiki folder, you
+also<00:02:11.080><c> have</c><00:02:11.280><c> an</c><00:02:11.440><c> index</c><00:02:12.160><c> and</c><00:02:12.280><c> a</c><00:02:12.360><c> log.</c><00:02:12.720><c> The</c><00:02:12.840><c> index</c>
+
+00:02:13.270 --> 00:02:13.280 align:start position:0%
+also have an index and a log. The index
+ 
+
+00:02:13.280 --> 00:02:14.990 align:start position:0%
+also have an index and a log. The index
+keeps<00:02:13.560><c> track</c><00:02:13.800><c> of</c><00:02:13.960><c> all</c><00:02:14.120><c> of</c><00:02:14.240><c> the</c><00:02:14.320><c> relationships</c>
+
+00:02:14.990 --> 00:02:15.000 align:start position:0%
+keeps track of all of the relationships
+ 
+
+00:02:15.000 --> 00:02:17.310 align:start position:0%
+keeps track of all of the relationships
+between<00:02:15.320><c> all</c><00:02:15.440><c> of</c><00:02:15.560><c> the</c><00:02:15.640><c> files,</c><00:02:16.520><c> and</c><00:02:16.840><c> the</c><00:02:16.960><c> log</c>
+
+00:02:17.310 --> 00:02:17.320 align:start position:0%
+between all of the files, and the log
+ 
+
+00:02:17.320 --> 00:02:19.590 align:start position:0%
+between all of the files, and the log
+keeps<00:02:17.600><c> track</c><00:02:17.960><c> of</c><00:02:18.120><c> the</c><00:02:18.320><c> updates</c><00:02:18.840><c> that</c><00:02:19.040><c> the</c><00:02:19.120><c> LLM</c>
+
+00:02:19.590 --> 00:02:19.600 align:start position:0%
+keeps track of the updates that the LLM
+ 
+
+00:02:19.600 --> 00:02:21.750 align:start position:0%
+keeps track of the updates that the LLM
+makes.<00:02:20.160><c> So,</c><00:02:20.280><c> I've</c><00:02:20.400><c> got</c><00:02:20.520><c> a</c><00:02:20.560><c> totally</c><00:02:21.080><c> fresh</c><00:02:21.440><c> Wiki</c>
+
+00:02:21.750 --> 00:02:21.760 align:start position:0%
+makes. So, I've got a totally fresh Wiki
+ 
+
+00:02:21.760 --> 00:02:23.590 align:start position:0%
+makes. So, I've got a totally fresh Wiki
+here.<00:02:22.040><c> It's</c><00:02:22.200><c> completely</c><00:02:22.800><c> empty.</c><00:02:23.240><c> And</c><00:02:23.360><c> instead</c>
+
+00:02:23.590 --> 00:02:23.600 align:start position:0%
+here. It's completely empty. And instead
+ 
+
+00:02:23.600 --> 00:02:25.870 align:start position:0%
+here. It's completely empty. And instead
+of<00:02:23.720><c> manually</c><00:02:24.200><c> dropping</c><00:02:24.600><c> in</c><00:02:24.720><c> files</c><00:02:25.120><c> into</c><00:02:25.320><c> raw,</c>
+
+00:02:25.870 --> 00:02:25.880 align:start position:0%
+of manually dropping in files into raw,
+ 
+
+00:02:25.880 --> 00:02:27.230 align:start position:0%
+of manually dropping in files into raw,
+I'm<00:02:26.000><c> going</c><00:02:26.120><c> to</c><00:02:26.200><c> set</c><00:02:26.320><c> up</c><00:02:26.440><c> what</c><00:02:26.560><c> I'm</c><00:02:26.720><c> calling</c><00:02:27.120><c> a</c>
+
+00:02:27.230 --> 00:02:27.240 align:start position:0%
+I'm going to set up what I'm calling a
+ 
+
+00:02:27.240 --> 00:02:29.390 align:start position:0%
+I'm going to set up what I'm calling a
+context<00:02:27.800><c> farmer,</c><00:02:28.280><c> an</c><00:02:28.520><c> AI</c><00:02:28.840><c> agent</c><00:02:29.240><c> that</c>
+
+00:02:29.390 --> 00:02:29.400 align:start position:0%
+context farmer, an AI agent that
+ 
+
+00:02:29.400 --> 00:02:31.710 align:start position:0%
+context farmer, an AI agent that
+connects<00:02:29.800><c> to</c><00:02:30.040><c> source</c><00:02:30.480><c> through</c><00:02:30.720><c> MCP,</c><00:02:31.440><c> in</c><00:02:31.560><c> this</c>
+
+00:02:31.710 --> 00:02:31.720 align:start position:0%
+connects to source through MCP, in this
+ 
+
+00:02:31.720 --> 00:02:33.910 align:start position:0%
+connects to source through MCP, in this
+case<00:02:32.080><c> Appify,</c><00:02:32.720><c> and</c><00:02:32.920><c> does</c><00:02:33.200><c> the</c><00:02:33.320><c> fetching</c><00:02:33.760><c> for</c>
+
+00:02:33.910 --> 00:02:33.920 align:start position:0%
+case Appify, and does the fetching for
+ 
+
+00:02:33.920 --> 00:02:35.230 align:start position:0%
+case Appify, and does the fetching for
+me.<00:02:34.280><c> And</c><00:02:34.400><c> we're</c><00:02:34.520><c> going</c><00:02:34.640><c> to</c><00:02:34.680><c> start</c><00:02:35.040><c> with</c>
+
+00:02:35.230 --> 00:02:35.240 align:start position:0%
+me. And we're going to start with
+ 
+
+00:02:35.240 --> 00:02:36.830 align:start position:0%
+me. And we're going to start with
+YouTube.<00:02:35.680><c> So,</c><00:02:35.760><c> I've</c><00:02:35.840><c> already</c><00:02:36.000><c> got</c><00:02:36.160><c> my</c><00:02:36.320><c> context</c>
+
+00:02:36.830 --> 00:02:36.840 align:start position:0%
+YouTube. So, I've already got my context
+ 
+
+00:02:36.840 --> 00:02:39.310 align:start position:0%
+YouTube. So, I've already got my context
+farmer<00:02:37.200><c> inside</c><00:02:37.560><c> of</c><00:02:37.680><c> Claude</c><00:02:38.160><c> Code</c><00:02:38.640><c> Cloud.</c><00:02:39.120><c> And</c>
+
+00:02:39.310 --> 00:02:39.320 align:start position:0%
+farmer inside of Claude Code Cloud. And
+ 
+
+00:02:39.320 --> 00:02:41.830 align:start position:0%
+farmer inside of Claude Code Cloud. And
+every<00:02:39.640><c> day</c><00:02:39.960><c> at</c><00:02:40.200><c> 6:00</c><00:02:40.520><c> a.m.,</c><00:02:41.000><c> it</c><00:02:41.160><c> goes</c><00:02:41.440><c> out</c><00:02:41.680><c> and</c>
+
+00:02:41.830 --> 00:02:41.840 align:start position:0%
+every day at 6:00 a.m., it goes out and
+ 
+
+00:02:41.840 --> 00:02:43.710 align:start position:0%
+every day at 6:00 a.m., it goes out and
+scrapes<00:02:42.520><c> all</c><00:02:42.800><c> of</c><00:02:42.880><c> the</c><00:02:43.000><c> channels</c><00:02:43.440><c> that</c><00:02:43.600><c> I'm</c>
+
+00:02:43.710 --> 00:02:43.720 align:start position:0%
+scrapes all of the channels that I'm
+ 
+
+00:02:43.720 --> 00:02:45.870 align:start position:0%
+scrapes all of the channels that I'm
+interested<00:02:44.240><c> in,</c><00:02:44.720><c> finds</c><00:02:45.080><c> what</c><00:02:45.320><c> videos</c><00:02:45.680><c> they've</c>
+
+00:02:45.870 --> 00:02:45.880 align:start position:0%
+interested in, finds what videos they've
+ 
+
+00:02:45.880 --> 00:02:48.110 align:start position:0%
+interested in, finds what videos they've
+posted,<00:02:46.560><c> pulls</c><00:02:46.880><c> their</c><00:02:47.040><c> transcripts,</c><00:02:47.840><c> gets</c>
+
+00:02:48.110 --> 00:02:48.120 align:start position:0%
+posted, pulls their transcripts, gets
+ 
+
+00:02:48.120 --> 00:02:50.230 align:start position:0%
+posted, pulls their transcripts, gets
+their<00:02:48.280><c> thumbnails</c><00:02:48.920><c> and</c><00:02:49.120><c> their</c><00:02:49.280><c> stats,</c><00:02:50.000><c> and</c>
+
+00:02:50.230 --> 00:02:50.240 align:start position:0%
+their thumbnails and their stats, and
+ 
+
+00:02:50.240 --> 00:02:52.230 align:start position:0%
+their thumbnails and their stats, and
+adds<00:02:50.480><c> it</c><00:02:50.560><c> into</c><00:02:50.760><c> my</c><00:02:50.960><c> raw</c><00:02:51.240><c> folder,</c><00:02:51.680><c> all</c><00:02:51.920><c> without</c>
+
+00:02:52.230 --> 00:02:52.240 align:start position:0%
+adds it into my raw folder, all without
+ 
+
+00:02:52.240 --> 00:02:54.310 align:start position:0%
+adds it into my raw folder, all without
+me<00:02:52.400><c> having</c><00:02:52.760><c> to</c><00:02:52.920><c> do</c><00:02:53.280><c> anything.</c><00:02:53.840><c> So,</c><00:02:53.960><c> let's</c><00:02:54.160><c> run</c>
+
+00:02:54.310 --> 00:02:54.320 align:start position:0%
+me having to do anything. So, let's run
+ 
+
+00:02:54.320 --> 00:02:56.150 align:start position:0%
+me having to do anything. So, let's run
+it<00:02:54.440><c> now.</c><00:02:54.760><c> It's</c><00:02:54.960><c> going</c><00:02:55.280><c> out</c><00:02:55.560><c> and</c><00:02:55.720><c> using</c><00:02:56.040><c> a</c>
+
+00:02:56.150 --> 00:02:56.160 align:start position:0%
+it now. It's going out and using a
+ 
+
+00:02:56.160 --> 00:02:57.950 align:start position:0%
+it now. It's going out and using a
+YouTube<00:02:56.680><c> scraper</c><00:02:57.120><c> to</c><00:02:57.240><c> find</c><00:02:57.520><c> all</c><00:02:57.760><c> of</c><00:02:57.840><c> the</c>
+
+00:02:57.950 --> 00:02:57.960 align:start position:0%
+YouTube scraper to find all of the
+ 
+
+00:02:57.960 --> 00:03:00.470 align:start position:0%
+YouTube scraper to find all of the
+recent<00:02:58.320><c> videos</c><00:02:58.880><c> since</c><00:02:59.120><c> it</c><00:02:59.280><c> last</c><00:02:59.680><c> ran</c><00:03:00.320><c> and</c>
+
+00:03:00.470 --> 00:03:00.480 align:start position:0%
+recent videos since it last ran and
+ 
+
+00:03:00.480 --> 00:03:03.710 align:start position:0%
+recent videos since it last ran and
+pulling<00:03:00.800><c> them</c><00:03:01.160><c> into</c><00:03:01.680><c> my</c><00:03:02.040><c> Karpathy</c><00:03:02.840><c> Wiki.</c><00:03:03.520><c> From</c>
+
+00:03:03.710 --> 00:03:03.720 align:start position:0%
+pulling them into my Karpathy Wiki. From
+ 
+
+00:03:03.720 --> 00:03:05.190 align:start position:0%
+pulling them into my Karpathy Wiki. From
+there,<00:03:03.960><c> it's</c><00:03:04.120><c> adding</c><00:03:04.360><c> it</c><00:03:04.560><c> into</c><00:03:04.840><c> the</c><00:03:04.960><c> raw</c>
+
+00:03:05.190 --> 00:03:05.200 align:start position:0%
+there, it's adding it into the raw
+ 
+
+00:03:05.200 --> 00:03:07.390 align:start position:0%
+there, it's adding it into the raw
+folder,<00:03:05.840><c> and</c><00:03:06.000><c> then</c><00:03:06.240><c> it</c><00:03:06.360><c> will</c><00:03:06.520><c> ingest</c><00:03:07.080><c> them</c>
+
+00:03:07.390 --> 00:03:07.400 align:start position:0%
+folder, and then it will ingest them
+ 
+
+00:03:07.400 --> 00:03:09.790 align:start position:0%
+folder, and then it will ingest them
+into<00:03:07.760><c> each</c><00:03:08.000><c> of</c><00:03:08.080><c> the</c><00:03:08.240><c> interlinked</c><00:03:09.000><c> context</c>
+
+00:03:09.790 --> 00:03:09.800 align:start position:0%
+into each of the interlinked context
+ 
+
+00:03:09.800 --> 00:03:11.230 align:start position:0%
+into each of the interlinked context
+documents.<00:03:10.480><c> And</c><00:03:10.560><c> there</c><00:03:10.680><c> we</c><00:03:10.800><c> go.</c><00:03:10.960><c> It</c><00:03:11.040><c> looks</c>
+
+00:03:11.230 --> 00:03:11.240 align:start position:0%
+documents. And there we go. It looks
+ 
+
+00:03:11.240 --> 00:03:12.990 align:start position:0%
+documents. And there we go. It looks
+like<00:03:11.360><c> there's</c><00:03:11.480><c> been</c><00:03:11.720><c> two</c><00:03:11.960><c> new</c><00:03:12.160><c> videos</c><00:03:12.560><c> posted</c>
+
+00:03:12.990 --> 00:03:13.000 align:start position:0%
+like there's been two new videos posted
+ 
+
+00:03:13.000 --> 00:03:14.710 align:start position:0%
+like there's been two new videos posted
+today,<00:03:13.600><c> and</c><00:03:13.680><c> it's</c><00:03:13.840><c> pulling</c><00:03:14.120><c> those</c><00:03:14.360><c> into</c><00:03:14.640><c> the</c>
+
+00:03:14.710 --> 00:03:14.720 align:start position:0%
+today, and it's pulling those into the
+ 
+
+00:03:14.720 --> 00:03:16.510 align:start position:0%
+today, and it's pulling those into the
+raw<00:03:14.920><c> folder</c><00:03:15.240><c> now.</c><00:03:15.600><c> Now,</c><00:03:15.840><c> watch</c><00:03:16.000><c> what</c><00:03:16.120><c> happens.</c>
+
+00:03:16.510 --> 00:03:16.520 align:start position:0%
+raw folder now. Now, watch what happens.
+ 
+
+00:03:16.520 --> 00:03:18.670 align:start position:0%
+raw folder now. Now, watch what happens.
+The<00:03:16.600><c> context</c><00:03:17.080><c> farmer</c><00:03:17.440><c> is</c><00:03:17.560><c> about</c><00:03:17.840><c> to</c><00:03:18.000><c> go</c><00:03:18.240><c> in</c><00:03:18.560><c> and</c>
+
+00:03:18.670 --> 00:03:18.680 align:start position:0%
+The context farmer is about to go in and
+ 
+
+00:03:18.680 --> 00:03:20.750 align:start position:0%
+The context farmer is about to go in and
+create<00:03:19.120><c> the</c><00:03:19.240><c> interlinked</c><00:03:19.800><c> pages,</c><00:03:20.280><c> assigning</c>
+
+00:03:20.750 --> 00:03:20.760 align:start position:0%
+create the interlinked pages, assigning
+ 
+
+00:03:20.760 --> 00:03:22.470 align:start position:0%
+create the interlinked pages, assigning
+each<00:03:20.960><c> of</c><00:03:21.040><c> the</c><00:03:21.080><c> new</c><00:03:21.240><c> videos</c><00:03:21.720><c> to</c><00:03:21.880><c> the</c><00:03:22.000><c> creator</c>
+
+00:03:22.470 --> 00:03:22.480 align:start position:0%
+each of the new videos to the creator
+ 
+
+00:03:22.480 --> 00:03:24.310 align:start position:0%
+each of the new videos to the creator
+that<00:03:22.680><c> posted</c><00:03:23.080><c> them,</c><00:03:23.360><c> updating</c><00:03:23.800><c> the</c><00:03:23.920><c> index</c>
+
+00:03:24.310 --> 00:03:24.320 align:start position:0%
+that posted them, updating the index
+ 
+
+00:03:24.320 --> 00:03:26.590 align:start position:0%
+that posted them, updating the index
+file<00:03:24.680><c> and</c><00:03:24.880><c> the</c><00:03:24.960><c> log</c><00:03:25.200><c> file,</c><00:03:25.640><c> and</c><00:03:25.880><c> automatically</c>
+
+00:03:26.590 --> 00:03:26.600 align:start position:0%
+file and the log file, and automatically
+ 
+
+00:03:26.600 --> 00:03:28.630 align:start position:0%
+file and the log file, and automatically
+growing<00:03:27.000><c> the</c><00:03:27.080><c> Wiki</c><00:03:27.600><c> so</c><00:03:27.760><c> I</c><00:03:27.800><c> know</c><00:03:28.000><c> more</c><00:03:28.320><c> and</c><00:03:28.440><c> more</c>
+
+00:03:28.630 --> 00:03:28.640 align:start position:0%
+growing the Wiki so I know more and more
+ 
+
+00:03:28.640 --> 00:03:30.310 align:start position:0%
+growing the Wiki so I know more and more
+about<00:03:28.880><c> what</c><00:03:29.040><c> content</c><00:03:29.360><c> is</c><00:03:29.480><c> being</c><00:03:29.680><c> posted</c><00:03:30.120><c> about</c>
+
+00:03:30.310 --> 00:03:30.320 align:start position:0%
+about what content is being posted about
+ 
+
+00:03:30.320 --> 00:03:31.990 align:start position:0%
+about what content is being posted about
+AI<00:03:30.600><c> on</c><00:03:30.760><c> YouTube.</c><00:03:31.160><c> So,</c><00:03:31.240><c> now</c><00:03:31.400><c> the</c><00:03:31.520><c> LLM</c><00:03:31.880><c> is</c>
+
+00:03:31.990 --> 00:03:32.000 align:start position:0%
+AI on YouTube. So, now the LLM is
+ 
+
+00:03:32.000 --> 00:03:33.590 align:start position:0%
+AI on YouTube. So, now the LLM is
+reading<00:03:32.280><c> through</c><00:03:32.560><c> all</c><00:03:32.760><c> of</c><00:03:32.840><c> the</c><00:03:32.920><c> transcripts</c>
+
+00:03:33.590 --> 00:03:33.600 align:start position:0%
+reading through all of the transcripts
+ 
+
+00:03:33.600 --> 00:03:35.270 align:start position:0%
+reading through all of the transcripts
+and<00:03:33.720><c> the</c><00:03:33.840><c> thumbnails</c><00:03:34.400><c> and</c><00:03:34.600><c> building</c><00:03:35.040><c> out</c>
+
+00:03:35.270 --> 00:03:35.280 align:start position:0%
+and the thumbnails and building out
+ 
+
+00:03:35.280 --> 00:03:38.030 align:start position:0%
+and the thumbnails and building out
+pages<00:03:35.920><c> inside</c><00:03:36.640><c> of</c><00:03:36.800><c> my</c><00:03:36.920><c> Obsidian</c><00:03:37.400><c> Wiki.</c><00:03:37.840><c> It's</c>
+
+00:03:38.030 --> 00:03:38.040 align:start position:0%
+pages inside of my Obsidian Wiki. It's
+ 
+
+00:03:38.040 --> 00:03:39.590 align:start position:0%
+pages inside of my Obsidian Wiki. It's
+pushing<00:03:38.360><c> the</c><00:03:38.480><c> updates</c><00:03:38.880><c> to</c><00:03:39.000><c> GitHub</c><00:03:39.360><c> because</c>
+
+00:03:39.590 --> 00:03:39.600 align:start position:0%
+pushing the updates to GitHub because
+ 
+
+00:03:39.600 --> 00:03:41.750 align:start position:0%
+pushing the updates to GitHub because
+this<00:03:39.760><c> is</c><00:03:39.920><c> a</c><00:03:40.040><c> cloud</c><00:03:40.600><c> context</c><00:03:41.040><c> scraper,</c><00:03:41.480><c> and</c><00:03:41.640><c> my</c>
+
+00:03:41.750 --> 00:03:41.760 align:start position:0%
+this is a cloud context scraper, and my
+ 
+
+00:03:41.760 --> 00:03:43.310 align:start position:0%
+this is a cloud context scraper, and my
+Obsidian<00:03:42.080><c> will</c><00:03:42.280><c> automatically</c><00:03:42.880><c> pull</c><00:03:43.120><c> those</c>
+
+00:03:43.310 --> 00:03:43.320 align:start position:0%
+Obsidian will automatically pull those
+ 
+
+00:03:43.320 --> 00:03:45.470 align:start position:0%
+Obsidian will automatically pull those
+updates<00:03:43.720><c> to</c><00:03:43.840><c> my</c><00:03:44.000><c> local</c><00:03:44.320><c> machine</c><00:03:44.840><c> so</c><00:03:45.000><c> I</c><00:03:45.080><c> can</c><00:03:45.280><c> use</c>
+
+00:03:45.470 --> 00:03:45.480 align:start position:0%
+updates to my local machine so I can use
+ 
+
+00:03:45.480 --> 00:03:47.110 align:start position:0%
+updates to my local machine so I can use
+them<00:03:45.640><c> with</c><00:03:45.800><c> Claude</c><00:03:46.080><c> Code.</c><00:03:46.480><c> So,</c><00:03:46.600><c> Claude</c><00:03:46.960><c> has</c>
+
+00:03:47.110 --> 00:03:47.120 align:start position:0%
+them with Claude Code. So, Claude has
+ 
+
+00:03:47.120 --> 00:03:49.310 align:start position:0%
+them with Claude Code. So, Claude has
+created<00:03:47.600><c> two</c><00:03:47.880><c> new</c><00:03:48.080><c> video</c><00:03:48.400><c> pages,</c><00:03:48.880><c> one</c><00:03:49.120><c> for</c><00:03:49.240><c> a</c>
+
+00:03:49.310 --> 00:03:49.320 align:start position:0%
+created two new video pages, one for a
+ 
+
+00:03:49.320 --> 00:03:51.430 align:start position:0%
+created two new video pages, one for a
+video<00:03:49.960><c> by</c><00:03:50.120><c> Nate</c><00:03:50.480><c> Herck</c><00:03:50.760><c> and</c><00:03:50.880><c> another</c><00:03:51.120><c> one</c><00:03:51.280><c> from</c>
+
+00:03:51.430 --> 00:03:51.440 align:start position:0%
+video by Nate Herck and another one from
+ 
+
+00:03:51.440 --> 00:03:53.150 align:start position:0%
+video by Nate Herck and another one from
+Nate<00:03:51.720><c> B.</c><00:03:51.880><c> Jones.</c><00:03:52.280><c> And</c><00:03:52.360><c> now</c><00:03:52.480><c> that</c><00:03:52.600><c> the</c><00:03:52.680><c> context</c>
+
+00:03:53.150 --> 00:03:53.160 align:start position:0%
+Nate B. Jones. And now that the context
+ 
+
+00:03:53.160 --> 00:03:54.870 align:start position:0%
+Nate B. Jones. And now that the context
+farmers<00:03:53.480><c> have</c><00:03:53.680><c> made</c><00:03:53.840><c> the</c><00:03:53.960><c> changes</c><00:03:54.360><c> inside</c><00:03:54.760><c> of</c>
+
+00:03:54.870 --> 00:03:54.880 align:start position:0%
+farmers have made the changes inside of
+ 
+
+00:03:54.880 --> 00:03:57.070 align:start position:0%
+farmers have made the changes inside of
+GitHub,<00:03:55.360><c> the</c><00:03:55.440><c> Obsidian</c><00:03:56.080><c> Git</c><00:03:56.360><c> plugin</c><00:03:56.840><c> is</c>
+
+00:03:57.070 --> 00:03:57.080 align:start position:0%
+GitHub, the Obsidian Git plugin is
+ 
+
+00:03:57.080 --> 00:03:59.030 align:start position:0%
+GitHub, the Obsidian Git plugin is
+automatically<00:03:57.760><c> pulling</c><00:03:58.160><c> those</c><00:03:58.360><c> changes</c><00:03:58.800><c> down</c>
+
+00:03:59.030 --> 00:03:59.040 align:start position:0%
+automatically pulling those changes down
+ 
+
+00:03:59.040 --> 00:04:00.750 align:start position:0%
+automatically pulling those changes down
+to<00:03:59.120><c> my</c><00:03:59.280><c> local</c><00:03:59.560><c> machine.</c><00:04:00.160><c> I</c><00:04:00.240><c> can</c><00:04:00.400><c> go</c><00:04:00.560><c> to</c><00:04:00.680><c> the</c>
+
+00:04:00.750 --> 00:04:00.760 align:start position:0%
+to my local machine. I can go to the
+ 
+
+00:04:00.760 --> 00:04:03.430 align:start position:0%
+to my local machine. I can go to the
+Nate<00:04:01.080><c> Herck</c><00:04:01.400><c> page</c><00:04:01.760><c> inside</c><00:04:02.160><c> of</c><00:04:02.240><c> Obsidian,</c><00:04:03.200><c> go</c>
+
+00:04:03.430 --> 00:04:03.440 align:start position:0%
+Nate Herck page inside of Obsidian, go
+ 
+
+00:04:03.440 --> 00:04:05.390 align:start position:0%
+Nate Herck page inside of Obsidian, go
+scroll<00:04:03.840><c> down,</c><00:04:04.320><c> that</c><00:04:04.440><c> his</c><00:04:04.560><c> most</c><00:04:04.880><c> recent</c><00:04:05.120><c> video</c>
+
+00:04:05.390 --> 00:04:05.400 align:start position:0%
+scroll down, that his most recent video
+ 
+
+00:04:05.400 --> 00:04:07.150 align:start position:0%
+scroll down, that his most recent video
+has<00:04:05.560><c> been</c><00:04:05.840><c> automatically</c><00:04:06.600><c> linked.</c><00:04:06.960><c> I</c><00:04:07.000><c> can</c>
+
+00:04:07.150 --> 00:04:07.160 align:start position:0%
+has been automatically linked. I can
+ 
+
+00:04:07.160 --> 00:04:09.030 align:start position:0%
+has been automatically linked. I can
+even<00:04:07.360><c> click</c><00:04:07.640><c> through</c><00:04:07.920><c> to</c><00:04:08.000><c> that</c><00:04:08.280><c> and</c><00:04:08.480><c> see</c><00:04:08.760><c> all</c>
+
+00:04:09.030 --> 00:04:09.040 align:start position:0%
+even click through to that and see all
+ 
+
+00:04:09.040 --> 00:04:10.990 align:start position:0%
+even click through to that and see all
+of<00:04:09.120><c> the</c><00:04:09.240><c> details</c><00:04:09.920><c> about</c><00:04:10.200><c> his</c><00:04:10.360><c> plugin</c><00:04:10.720><c> video</c>
+
+00:04:10.990 --> 00:04:11.000 align:start position:0%
+of the details about his plugin video
+ 
+
+00:04:11.000 --> 00:04:13.070 align:start position:0%
+of the details about his plugin video
+that<00:04:11.120><c> he</c><00:04:11.240><c> just</c><00:04:11.720><c> posted.</c><00:04:12.200><c> I</c><00:04:12.240><c> can</c><00:04:12.360><c> even</c><00:04:12.560><c> go</c><00:04:12.720><c> to</c><00:04:12.840><c> my</c>
+
+00:04:13.070 --> 00:04:13.080 align:start position:0%
+that he just posted. I can even go to my
+ 
+
+00:04:13.080 --> 00:04:15.070 align:start position:0%
+that he just posted. I can even go to my
+graph<00:04:13.720><c> page,</c><00:04:14.040><c> and</c><00:04:14.160><c> now</c><00:04:14.360><c> these</c><00:04:14.600><c> nodes</c><00:04:14.880><c> are</c>
+
+00:04:15.070 --> 00:04:15.080 align:start position:0%
+graph page, and now these nodes are
+ 
+
+00:04:15.080 --> 00:04:16.830 align:start position:0%
+graph page, and now these nodes are
+automatically<00:04:15.760><c> connected.</c><00:04:16.359><c> And</c><00:04:16.480><c> here's</c><00:04:16.720><c> the</c>
+
+00:04:16.830 --> 00:04:16.840 align:start position:0%
+automatically connected. And here's the
+ 
+
+00:04:16.840 --> 00:04:18.590 align:start position:0%
+automatically connected. And here's the
+really<00:04:17.120><c> important</c><00:04:17.560><c> part.</c><00:04:17.959><c> Tomorrow,</c><00:04:18.440><c> when</c>
+
+00:04:18.590 --> 00:04:18.600 align:start position:0%
+really important part. Tomorrow, when
+ 
+
+00:04:18.600 --> 00:04:20.229 align:start position:0%
+really important part. Tomorrow, when
+the<00:04:18.680><c> farmer</c><00:04:19.000><c> runs</c><00:04:19.239><c> again</c><00:04:19.720><c> and</c><00:04:19.840><c> pulls</c><00:04:20.079><c> new</c>
+
+00:04:20.229 --> 00:04:20.239 align:start position:0%
+the farmer runs again and pulls new
+ 
+
+00:04:20.239 --> 00:04:22.670 align:start position:0%
+the farmer runs again and pulls new
+videos,<00:04:20.880><c> the</c><00:04:21.000><c> Wiki</c><00:04:21.280><c> doesn't</c><00:04:21.600><c> start</c><00:04:21.920><c> over.</c><00:04:22.480><c> It</c>
+
+00:04:22.670 --> 00:04:22.680 align:start position:0%
+videos, the Wiki doesn't start over. It
+ 
+
+00:04:22.680 --> 00:04:24.590 align:start position:0%
+videos, the Wiki doesn't start over. It
+updates.<00:04:23.440><c> If</c><00:04:23.560><c> someone</c><00:04:23.840><c> drops</c><00:04:24.120><c> a</c><00:04:24.200><c> follow-up</c>
+
+00:04:24.590 --> 00:04:24.600 align:start position:0%
+updates. If someone drops a follow-up
+ 
+
+00:04:24.600 --> 00:04:26.590 align:start position:0%
+updates. If someone drops a follow-up
+video<00:04:24.920><c> on</c><00:04:25.040><c> that</c><00:04:25.200><c> topic,</c><00:04:25.880><c> that</c><00:04:26.120><c> page</c><00:04:26.360><c> gets</c>
+
+00:04:26.590 --> 00:04:26.600 align:start position:0%
+video on that topic, that page gets
+ 
+
+00:04:26.600 --> 00:04:28.470 align:start position:0%
+video on that topic, that page gets
+richer.<00:04:27.080><c> New</c><00:04:27.320><c> connections</c><00:04:27.880><c> form</c><00:04:28.240><c> and</c><00:04:28.400><c> the</c>
+
+00:04:28.470 --> 00:04:28.480 align:start position:0%
+richer. New connections form and the
+ 
+
+00:04:28.480 --> 00:04:30.190 align:start position:0%
+richer. New connections form and the
+whole<00:04:28.760><c> thing</c><00:04:29.040><c> compounds</c><00:04:29.560><c> over</c><00:04:29.720><c> time.</c><00:04:30.160><c> I'll</c>
+
+00:04:30.190 --> 00:04:30.200 align:start position:0%
+whole thing compounds over time. I'll
+ 
+
+00:04:30.200 --> 00:04:32.350 align:start position:0%
+whole thing compounds over time. I'll
+even<00:04:30.440><c> show</c><00:04:30.680><c> you</c><00:04:30.840><c> how</c><00:04:31.080><c> powerful</c><00:04:31.640><c> this</c><00:04:31.840><c> is</c><00:04:32.080><c> when</c>
+
+00:04:32.350 --> 00:04:32.360 align:start position:0%
+even show you how powerful this is when
+ 
+
+00:04:32.360 --> 00:04:33.990 align:start position:0%
+even show you how powerful this is when
+you<00:04:32.480><c> pair</c><00:04:32.680><c> the</c><00:04:32.800><c> Wiki</c><00:04:33.080><c> with</c><00:04:33.280><c> Claude</c><00:04:33.560><c> Code.</c><00:04:33.960><c> I</c>
+
+00:04:33.990 --> 00:04:34.000 align:start position:0%
+you pair the Wiki with Claude Code. I
+ 
+
+00:04:34.000 --> 00:04:35.790 align:start position:0%
+you pair the Wiki with Claude Code. I
+have<00:04:34.200><c> the</c><00:04:34.280><c> Wiki</c><00:04:34.640><c> open</c><00:04:34.840><c> up</c><00:04:34.960><c> in</c><00:04:35.040><c> my</c><00:04:35.160><c> Claude</c><00:04:35.480><c> Code,</c>
+
+00:04:35.790 --> 00:04:35.800 align:start position:0%
+have the Wiki open up in my Claude Code,
+ 
+
+00:04:35.800 --> 00:04:37.270 align:start position:0%
+have the Wiki open up in my Claude Code,
+and<00:04:35.920><c> I'm</c><00:04:36.040><c> going</c><00:04:36.160><c> to</c><00:04:36.280><c> ask</c><00:04:36.640><c> it,</c><00:04:36.880><c> "What</c><00:04:37.000><c> was</c><00:04:37.160><c> the</c>
+
+00:04:37.270 --> 00:04:37.280 align:start position:0%
+and I'm going to ask it, "What was the
+ 
+
+00:04:37.280 --> 00:04:39.150 align:start position:0%
+and I'm going to ask it, "What was the
+most<00:04:37.600><c> recent</c><00:04:37.920><c> videos</c><00:04:38.360><c> that</c><00:04:38.480><c> were</c><00:04:38.600><c> posted</c><00:04:39.000><c> by</c>
+
+00:04:39.150 --> 00:04:39.160 align:start position:0%
+most recent videos that were posted by
+ 
+
+00:04:39.160 --> 00:04:40.870 align:start position:0%
+most recent videos that were posted by
+Nate<00:04:39.480><c> Herck,</c><00:04:39.920><c> and</c><00:04:40.080><c> what</c><00:04:40.280><c> topics</c><00:04:40.640><c> did</c><00:04:40.760><c> it</c>
+
+00:04:40.870 --> 00:04:40.880 align:start position:0%
+Nate Herck, and what topics did it
+ 
+
+00:04:40.880 --> 00:04:42.830 align:start position:0%
+Nate Herck, and what topics did it
+cover?<00:04:41.600><c> Has</c><00:04:41.720><c> this</c><00:04:41.880><c> topic</c><00:04:42.160><c> been</c><00:04:42.360><c> covered</c><00:04:42.640><c> by</c>
+
+00:04:42.830 --> 00:04:42.840 align:start position:0%
+cover? Has this topic been covered by
+ 
+
+00:04:42.840 --> 00:04:45.350 align:start position:0%
+cover? Has this topic been covered by
+anyone<00:04:43.280><c> else</c><00:04:43.920><c> inside</c><00:04:44.400><c> of</c><00:04:44.520><c> your</c><00:04:44.680><c> Wiki?"</c><00:04:45.120><c> I</c><00:04:45.160><c> can</c>
+
+00:04:45.350 --> 00:04:45.360 align:start position:0%
+anyone else inside of your Wiki?" I can
+ 
+
+00:04:45.360 --> 00:04:47.870 align:start position:0%
+anyone else inside of your Wiki?" I can
+ask<00:04:45.760><c> ad</c><00:04:45.920><c> hoc</c><00:04:46.120><c> queries</c><00:04:46.640><c> of</c><00:04:46.840><c> this</c><00:04:47.000><c> context</c><00:04:47.520><c> layer</c>
+
+00:04:47.870 --> 00:04:47.880 align:start position:0%
+ask ad hoc queries of this context layer
+ 
+
+00:04:47.880 --> 00:04:50.750 align:start position:0%
+ask ad hoc queries of this context layer
+at<00:04:48.160><c> any</c><00:04:48.440><c> time.</c><00:04:49.200><c> This</c><00:04:49.360><c> is</c><00:04:49.600><c> so</c><00:04:50.000><c> important</c><00:04:50.480><c> for</c><00:04:50.600><c> me</c>
+
+00:04:50.750 --> 00:04:50.760 align:start position:0%
+at any time. This is so important for me
+ 
+
+00:04:50.760 --> 00:04:52.150 align:start position:0%
+at any time. This is so important for me
+when<00:04:50.920><c> I'm</c><00:04:51.000><c> doing</c><00:04:51.240><c> my</c><00:04:51.360><c> content</c><00:04:51.720><c> research</c>
+
+00:04:52.150 --> 00:04:52.160 align:start position:0%
+when I'm doing my content research
+ 
+
+00:04:52.160 --> 00:04:53.710 align:start position:0%
+when I'm doing my content research
+because<00:04:52.400><c> that</c><00:04:52.560><c> way</c><00:04:52.760><c> I</c><00:04:52.880><c> can</c><00:04:53.040><c> see</c><00:04:53.320><c> what's</c>
+
+00:04:53.710 --> 00:04:53.720 align:start position:0%
+because that way I can see what's
+ 
+
+00:04:53.720 --> 00:04:55.470 align:start position:0%
+because that way I can see what's
+already<00:04:54.000><c> being</c><00:04:54.240><c> covered,</c><00:04:54.880><c> how</c><00:04:55.120><c> people</c><00:04:55.400><c> are</c>
+
+00:04:55.470 --> 00:04:55.480 align:start position:0%
+already being covered, how people are
+ 
+
+00:04:55.480 --> 00:04:57.350 align:start position:0%
+already being covered, how people are
+talking<00:04:55.840><c> about</c><00:04:56.080><c> certain</c><00:04:56.360><c> features,</c><00:04:57.000><c> and</c><00:04:57.160><c> all</c>
+
+00:04:57.350 --> 00:04:57.360 align:start position:0%
+talking about certain features, and all
+ 
+
+00:04:57.360 --> 00:04:59.950 align:start position:0%
+talking about certain features, and all
+of<00:04:57.440><c> this</c><00:04:57.680><c> feeds</c><00:04:58.000><c> into</c><00:04:58.280><c> my</c><00:04:58.880><c> content.</c><00:04:59.400><c> And</c><00:04:59.520><c> I</c><00:04:59.640><c> can</c>
+
+00:04:59.950 --> 00:04:59.960 align:start position:0%
+of this feeds into my content. And I can
+ 
+
+00:04:59.960 --> 00:05:01.790 align:start position:0%
+of this feeds into my content. And I can
+see<00:05:00.120><c> that</c><00:05:00.320><c> Nate</c><00:05:00.600><c> Herck</c><00:05:00.800><c> posted</c><00:05:01.200><c> a</c><00:05:01.240><c> video</c><00:05:01.520><c> about</c>
+
+00:05:01.790 --> 00:05:01.800 align:start position:0%
+see that Nate Herck posted a video about
+ 
+
+00:05:01.800 --> 00:05:03.950 align:start position:0%
+see that Nate Herck posted a video about
+a<00:05:01.840><c> new</c><00:05:02.080><c> Claude</c><00:05:02.360><c> plugin</c><00:05:02.760><c> called</c><00:05:03.160><c> Superpowers.</c>
+
+00:05:03.950 --> 00:05:03.960 align:start position:0%
+a new Claude plugin called Superpowers.
+ 
+
+00:05:03.960 --> 00:05:05.670 align:start position:0%
+a new Claude plugin called Superpowers.
+I<00:05:04.040><c> can</c><00:05:04.160><c> see</c><00:05:04.400><c> all</c><00:05:04.640><c> of</c><00:05:04.720><c> the</c><00:05:04.920><c> other</c><00:05:05.120><c> videos</c><00:05:05.520><c> from</c>
+
+00:05:05.670 --> 00:05:05.680 align:start position:0%
+I can see all of the other videos from
+ 
+
+00:05:05.680 --> 00:05:07.030 align:start position:0%
+I can see all of the other videos from
+the<00:05:05.760><c> creators</c><00:05:06.200><c> that</c><00:05:06.320><c> I'm</c><00:05:06.440><c> tracking</c><00:05:06.880><c> that</c>
+
+00:05:07.030 --> 00:05:07.040 align:start position:0%
+the creators that I'm tracking that
+ 
+
+00:05:07.040 --> 00:05:09.230 align:start position:0%
+the creators that I'm tracking that
+reference<00:05:07.600><c> similar</c><00:05:08.080><c> types</c><00:05:08.520><c> of</c><00:05:08.640><c> content,</c><00:05:09.120><c> and</c>
+
+00:05:09.230 --> 00:05:09.240 align:start position:0%
+reference similar types of content, and
+ 
+
+00:05:09.240 --> 00:05:10.950 align:start position:0%
+reference similar types of content, and
+I<00:05:09.320><c> can</c><00:05:09.440><c> get</c><00:05:09.560><c> that</c><00:05:09.840><c> all</c><00:05:10.320><c> at</c><00:05:10.440><c> the</c><00:05:10.560><c> touch</c><00:05:10.800><c> of</c><00:05:10.920><c> a</c>
+
+00:05:10.950 --> 00:05:10.960 align:start position:0%
+I can get that all at the touch of a
+ 
+
+00:05:10.960 --> 00:05:13.030 align:start position:0%
+I can get that all at the touch of a
+button<00:05:11.360><c> inside</c><00:05:11.800><c> of</c><00:05:11.920><c> Claude</c><00:05:12.200><c> Code.</c><00:05:12.640><c> I</c><00:05:12.720><c> can</c><00:05:12.840><c> even</c>
+
+00:05:13.030 --> 00:05:13.040 align:start position:0%
+button inside of Claude Code. I can even
+ 
+
+00:05:13.040 --> 00:05:14.910 align:start position:0%
+button inside of Claude Code. I can even
+ask<00:05:13.280><c> it</c><00:05:13.360><c> about</c><00:05:13.600><c> new</c><00:05:13.800><c> topics</c><00:05:14.320><c> like</c><00:05:14.520><c> Claude</c>
+
+00:05:14.910 --> 00:05:14.920 align:start position:0%
+ask it about new topics like Claude
+ 
+
+00:05:14.920 --> 00:05:16.550 align:start position:0%
+ask it about new topics like Claude
+managed<00:05:15.360><c> agents,</c><00:05:15.760><c> which</c><00:05:15.920><c> was</c><00:05:16.040><c> just</c><00:05:16.200><c> recently</c>
+
+00:05:16.550 --> 00:05:16.560 align:start position:0%
+managed agents, which was just recently
+ 
+
+00:05:16.560 --> 00:05:18.350 align:start position:0%
+managed agents, which was just recently
+released.<00:05:17.160><c> What</c><00:05:17.280><c> are</c><00:05:17.360><c> people</c><00:05:17.640><c> saying</c><00:05:18.000><c> about</c>
+
+00:05:18.350 --> 00:05:18.360 align:start position:0%
+released. What are people saying about
+ 
+
+00:05:18.360 --> 00:05:20.310 align:start position:0%
+released. What are people saying about
+Claude<00:05:18.840><c> managed</c><00:05:19.400><c> agents?</c><00:05:19.920><c> And</c><00:05:20.000><c> just</c><00:05:20.160><c> like</c>
+
+00:05:20.310 --> 00:05:20.320 align:start position:0%
+Claude managed agents? And just like
+ 
+
+00:05:20.320 --> 00:05:22.070 align:start position:0%
+Claude managed agents? And just like
+that,<00:05:20.600><c> I</c><00:05:20.640><c> can</c><00:05:20.800><c> get</c><00:05:20.920><c> the</c><00:05:21.040><c> two</c><00:05:21.280><c> perspectives</c><00:05:21.960><c> of</c>
+
+00:05:22.070 --> 00:05:22.080 align:start position:0%
+that, I can get the two perspectives of
+ 
+
+00:05:22.080 --> 00:05:23.270 align:start position:0%
+that, I can get the two perspectives of
+videos<00:05:22.400><c> that</c><00:05:22.480><c> have</c><00:05:22.560><c> been</c><00:05:22.720><c> posted</c><00:05:23.080><c> about</c>
+
+00:05:23.270 --> 00:05:23.280 align:start position:0%
+videos that have been posted about
+ 
+
+00:05:23.280 --> 00:05:25.070 align:start position:0%
+videos that have been posted about
+managed<00:05:23.600><c> agents,</c><00:05:24.000><c> one</c><00:05:24.240><c> by</c><00:05:24.400><c> Nate</c><00:05:24.680><c> Herck</c><00:05:24.960><c> and</c>
+
+00:05:25.070 --> 00:05:25.080 align:start position:0%
+managed agents, one by Nate Herck and
+ 
+
+00:05:25.080 --> 00:05:26.670 align:start position:0%
+managed agents, one by Nate Herck and
+another<00:05:25.320><c> one</c><00:05:25.480><c> by</c><00:05:25.680><c> Nick.</c><00:05:26.120><c> And</c><00:05:26.240><c> Claude's</c>
+
+00:05:26.670 --> 00:05:26.680 align:start position:0%
+another one by Nick. And Claude's
+ 
+
+00:05:26.680 --> 00:05:28.830 align:start position:0%
+another one by Nick. And Claude's
+already<00:05:27.120><c> analyzing</c><00:05:27.800><c> how</c><00:05:28.080><c> each</c><00:05:28.240><c> creator</c><00:05:28.680><c> is</c>
+
+00:05:28.830 --> 00:05:28.840 align:start position:0%
+already analyzing how each creator is
+ 
+
+00:05:28.840 --> 00:05:30.390 align:start position:0%
+already analyzing how each creator is
+covering<00:05:29.200><c> the</c><00:05:29.280><c> topic</c><00:05:29.640><c> and</c><00:05:29.800><c> where</c><00:05:30.080><c> the</c><00:05:30.120><c> gaps</c>
+
+00:05:30.390 --> 00:05:30.400 align:start position:0%
+covering the topic and where the gaps
+ 
+
+00:05:30.400 --> 00:05:31.670 align:start position:0%
+covering the topic and where the gaps
+might<00:05:30.600><c> be.</c><00:05:30.840><c> So,</c><00:05:30.920><c> that's</c><00:05:31.120><c> what</c><00:05:31.200><c> I'm</c><00:05:31.320><c> calling</c>
+
+00:05:31.670 --> 00:05:31.680 align:start position:0%
+might be. So, that's what I'm calling
+ 
+
+00:05:31.680 --> 00:05:33.430 align:start position:0%
+might be. So, that's what I'm calling
+context<00:05:32.200><c> farming.</c><00:05:32.680><c> And</c><00:05:32.800><c> here's</c><00:05:33.080><c> the</c><00:05:33.200><c> key</c>
+
+00:05:33.430 --> 00:05:33.440 align:start position:0%
+context farming. And here's the key
+ 
+
+00:05:33.440 --> 00:05:34.990 align:start position:0%
+context farming. And here's the key
+insights<00:05:33.960><c> that</c><00:05:34.120><c> makes</c><00:05:34.360><c> this</c><00:05:34.600><c> work.</c>
+
+00:05:34.990 --> 00:05:35.000 align:start position:0%
+insights that makes this work.
+ 
+
+00:05:35.000 --> 00:05:37.190 align:start position:0%
+insights that makes this work.
+Karpathy's<00:05:35.560><c> whole</c><00:05:35.880><c> thing</c><00:05:36.280><c> is</c><00:05:36.400><c> that</c><00:05:36.560><c> LLMs</c><00:05:37.040><c> have</c>
+
+00:05:37.190 --> 00:05:37.200 align:start position:0%
+Karpathy's whole thing is that LLMs have
+ 
+
+00:05:37.200 --> 00:05:38.990 align:start position:0%
+Karpathy's whole thing is that LLMs have
+bad<00:05:37.480><c> taste.</c><00:05:37.760><c> They</c><00:05:37.920><c> can't</c><00:05:38.320><c> tell</c><00:05:38.560><c> you</c><00:05:38.760><c> what's</c>
+
+00:05:38.990 --> 00:05:39.000 align:start position:0%
+bad taste. They can't tell you what's
+ 
+
+00:05:39.000 --> 00:05:40.750 align:start position:0%
+bad taste. They can't tell you what's
+worth<00:05:39.280><c> reading.</c><00:05:39.720><c> And</c><00:05:39.840><c> he's</c><00:05:40.040><c> right.</c><00:05:40.360><c> You</c><00:05:40.440><c> don't</c>
+
+00:05:40.750 --> 00:05:40.760 align:start position:0%
+worth reading. And he's right. You don't
+ 
+
+00:05:40.760 --> 00:05:42.430 align:start position:0%
+worth reading. And he's right. You don't
+want<00:05:40.920><c> an</c><00:05:41.040><c> AI</c><00:05:41.400><c> randomly</c><00:05:41.920><c> scraping</c><00:05:42.360><c> the</c>
+
+00:05:42.430 --> 00:05:42.440 align:start position:0%
+want an AI randomly scraping the
+ 
+
+00:05:42.440 --> 00:05:44.190 align:start position:0%
+want an AI randomly scraping the
+internet<00:05:42.880><c> and</c><00:05:43.000><c> dumping</c><00:05:43.320><c> garbage</c><00:05:43.840><c> into</c><00:05:44.080><c> your</c>
+
+00:05:44.190 --> 00:05:44.200 align:start position:0%
+internet and dumping garbage into your
+ 
+
+00:05:44.200 --> 00:05:45.710 align:start position:0%
+internet and dumping garbage into your
+knowledge<00:05:44.520><c> base.</c><00:05:44.880><c> That's</c><00:05:45.080><c> how</c><00:05:45.200><c> you</c><00:05:45.360><c> end</c><00:05:45.560><c> up</c>
+
+00:05:45.710 --> 00:05:45.720 align:start position:0%
+knowledge base. That's how you end up
+ 
+
+00:05:45.720 --> 00:05:47.190 align:start position:0%
+knowledge base. That's how you end up
+with<00:05:45.840><c> a</c><00:05:45.880><c> Wiki</c><00:05:46.120><c> full</c><00:05:46.280><c> of</c><00:05:46.400><c> noise.</c><00:05:46.880><c> But</c><00:05:47.000><c> there's</c><00:05:47.160><c> a</c>
+
+00:05:47.190 --> 00:05:47.200 align:start position:0%
+with a Wiki full of noise. But there's a
+ 
+
+00:05:47.200 --> 00:05:49.030 align:start position:0%
+with a Wiki full of noise. But there's a
+difference<00:05:47.560><c> between</c><00:05:47.880><c> selecting</c><00:05:48.400><c> sources</c><00:05:48.880><c> and</c>
+
+00:05:49.030 --> 00:05:49.040 align:start position:0%
+difference between selecting sources and
+ 
+
+00:05:49.040 --> 00:05:51.070 align:start position:0%
+difference between selecting sources and
+fetching<00:05:49.400><c> them.</c><00:05:49.680><c> Selecting</c><00:05:50.360><c> is</c><00:05:50.600><c> the</c><00:05:50.720><c> taste</c>
+
+00:05:51.070 --> 00:05:51.080 align:start position:0%
+fetching them. Selecting is the taste
+ 
+
+00:05:51.080 --> 00:05:52.870 align:start position:0%
+fetching them. Selecting is the taste
+part,<00:05:51.400><c> the</c><00:05:51.480><c> human</c><00:05:51.800><c> job.</c><00:05:52.080><c> You</c><00:05:52.160><c> decide,</c><00:05:52.680><c> "I</c>
+
+00:05:52.870 --> 00:05:52.880 align:start position:0%
+part, the human job. You decide, "I
+ 
+
+00:05:52.880 --> 00:05:54.950 align:start position:0%
+part, the human job. You decide, "I
+trust<00:05:53.280><c> this</c><00:05:53.520><c> YouTube</c><00:05:53.880><c> channel</c><00:05:54.280><c> or</c><00:05:54.400><c> this</c><00:05:54.640><c> Slack</c>
+
+00:05:54.950 --> 00:05:54.960 align:start position:0%
+trust this YouTube channel or this Slack
+ 
+
+00:05:54.960 --> 00:05:56.790 align:start position:0%
+trust this YouTube channel or this Slack
+workspace<00:05:55.480><c> matters."</c><00:05:55.960><c> That's</c><00:05:56.200><c> the</c><00:05:56.320><c> judgment</c>
+
+00:05:56.790 --> 00:05:56.800 align:start position:0%
+workspace matters." That's the judgment
+ 
+
+00:05:56.800 --> 00:05:59.150 align:start position:0%
+workspace matters." That's the judgment
+and<00:05:56.920><c> curation,</c><00:05:57.600><c> and</c><00:05:57.760><c> you</c><00:05:57.920><c> only</c><00:05:58.240><c> do</c><00:05:58.480><c> that</c><00:05:58.680><c> once.</c>
+
+00:05:59.150 --> 00:05:59.160 align:start position:0%
+and curation, and you only do that once.
+ 
+
+00:05:59.160 --> 00:06:00.910 align:start position:0%
+and curation, and you only do that once.
+But<00:05:59.360><c> once</c><00:05:59.600><c> you've</c><00:05:59.760><c> made</c><00:06:00.040><c> that</c><00:06:00.240><c> call,</c>
+
+00:06:00.910 --> 00:06:00.920 align:start position:0%
+But once you've made that call,
+ 
+
+00:06:00.920 --> 00:06:02.790 align:start position:0%
+But once you've made that call,
+everything<00:06:01.360><c> after</c><00:06:01.720><c> is</c><00:06:01.840><c> just</c><00:06:02.080><c> fetching.</c><00:06:02.600><c> It's</c>
+
+00:06:02.790 --> 00:06:02.800 align:start position:0%
+everything after is just fetching. It's
+ 
+
+00:06:02.800 --> 00:06:04.350 align:start position:0%
+everything after is just fetching. It's
+pulling<00:06:03.040><c> the</c><00:06:03.120><c> latest</c><00:06:03.440><c> video,</c><00:06:03.920><c> grabbing</c><00:06:04.280><c> the</c>
+
+00:06:04.350 --> 00:06:04.360 align:start position:0%
+pulling the latest video, grabbing the
+ 
+
+00:06:04.360 --> 00:06:06.350 align:start position:0%
+pulling the latest video, grabbing the
+transcript,<00:06:05.160><c> checking</c><00:06:05.520><c> new</c><00:06:05.680><c> messages,</c><00:06:06.200><c> and</c>
+
+00:06:06.350 --> 00:06:06.360 align:start position:0%
+transcript, checking new messages, and
+ 
+
+00:06:06.360 --> 00:06:08.230 align:start position:0%
+transcript, checking new messages, and
+that's<00:06:06.640><c> not</c><00:06:06.920><c> taste.</c><00:06:07.360><c> That's</c><00:06:07.560><c> a</c><00:06:07.600><c> cron</c><00:06:07.920><c> job.</c><00:06:08.120><c> And</c>
+
+00:06:08.230 --> 00:06:08.240 align:start position:0%
+that's not taste. That's a cron job. And
+ 
+
+00:06:08.240 --> 00:06:10.110 align:start position:0%
+that's not taste. That's a cron job. And
+that's<00:06:08.440><c> what</c><00:06:08.600><c> context</c><00:06:09.120><c> farmers</c><00:06:09.480><c> handle.</c><00:06:09.960><c> So,</c>
+
+00:06:10.110 --> 00:06:10.120 align:start position:0%
+that's what context farmers handle. So,
+ 
+
+00:06:10.120 --> 00:06:11.670 align:start position:0%
+that's what context farmers handle. So,
+you<00:06:10.320><c> keep</c><00:06:10.560><c> the</c><00:06:10.680><c> human</c><00:06:11.000><c> creation</c><00:06:11.560><c> that</c>
+
+00:06:11.670 --> 00:06:11.680 align:start position:0%
+you keep the human creation that
+ 
+
+00:06:11.680 --> 00:06:13.350 align:start position:0%
+you keep the human creation that
+Karpathy's<00:06:12.160><c> right</c><00:06:12.360><c> about,</c><00:06:12.760><c> but</c><00:06:12.880><c> you</c><00:06:13.000><c> stop</c>
+
+00:06:13.350 --> 00:06:13.360 align:start position:0%
+Karpathy's right about, but you stop
+ 
+
+00:06:13.360 --> 00:06:15.310 align:start position:0%
+Karpathy's right about, but you stop
+doing<00:06:13.680><c> the</c><00:06:13.760><c> manual</c><00:06:14.200><c> grunt</c><00:06:14.520><c> work</c><00:06:14.720><c> that</c><00:06:14.880><c> kills</c>
+
+00:06:15.310 --> 00:06:15.320 align:start position:0%
+doing the manual grunt work that kills
+ 
+
+00:06:15.320 --> 00:06:17.350 align:start position:0%
+doing the manual grunt work that kills
+every<00:06:15.600><c> Wiki.</c><00:06:16.000><c> Anything</c><00:06:16.600><c> with</c><00:06:16.720><c> an</c><00:06:16.840><c> MCP</c>
+
+00:06:17.350 --> 00:06:17.360 align:start position:0%
+every Wiki. Anything with an MCP
+ 
+
+00:06:17.360 --> 00:06:18.910 align:start position:0%
+every Wiki. Anything with an MCP
+connector<00:06:17.800><c> can</c><00:06:18.000><c> become</c><00:06:18.280><c> a</c><00:06:18.320><c> source,</c><00:06:18.720><c> whether</c>
+
+00:06:18.910 --> 00:06:18.920 align:start position:0%
+connector can become a source, whether
+ 
+
+00:06:18.920 --> 00:06:21.150 align:start position:0%
+connector can become a source, whether
+that's<00:06:19.160><c> Slack,</c><00:06:19.800><c> Fireflies,</c><00:06:20.600><c> YouTube,</c>
+
+00:06:21.150 --> 00:06:21.160 align:start position:0%
+that's Slack, Fireflies, YouTube,
+ 
+
+00:06:21.160 --> 00:06:22.670 align:start position:0%
+that's Slack, Fireflies, YouTube,
+Notion,<00:06:21.640><c> or</c><00:06:21.760><c> whatever.</c><00:06:22.240><c> You</c><00:06:22.400><c> pick</c><00:06:22.600><c> the</c>
+
+00:06:22.670 --> 00:06:22.680 align:start position:0%
+Notion, or whatever. You pick the
+ 
+
+00:06:22.680 --> 00:06:24.830 align:start position:0%
+Notion, or whatever. You pick the
+sources,<00:06:23.320><c> set</c><00:06:23.520><c> up</c><00:06:23.640><c> a</c><00:06:23.680><c> farmer</c><00:06:24.080><c> for</c><00:06:24.320><c> each</c><00:06:24.560><c> one,</c>
+
+00:06:24.830 --> 00:06:24.840 align:start position:0%
+sources, set up a farmer for each one,
+ 
+
+00:06:24.840 --> 00:06:26.830 align:start position:0%
+sources, set up a farmer for each one,
+and<00:06:25.000><c> schedule</c><00:06:25.440><c> it,</c><00:06:25.560><c> and</c><00:06:25.680><c> the</c><00:06:25.760><c> Wiki</c><00:06:26.080><c> just</c><00:06:26.360><c> stays</c>
+
+00:06:26.830 --> 00:06:26.840 align:start position:0%
+and schedule it, and the Wiki just stays
+ 
+
+00:06:26.840 --> 00:06:28.870 align:start position:0%
+and schedule it, and the Wiki just stays
+fed.<00:06:27.360><c> So,</c><00:06:27.480><c> that's</c><00:06:27.720><c> AI</c><00:06:27.960><c> YouTube,</c><00:06:28.480><c> but</c><00:06:28.600><c> here's</c>
+
+00:06:28.870 --> 00:06:28.880 align:start position:0%
+fed. So, that's AI YouTube, but here's
+ 
+
+00:06:28.880 --> 00:06:29.830 align:start position:0%
+fed. So, that's AI YouTube, but here's
+where<00:06:29.000><c> it's</c><00:06:29.160><c> actually</c><00:06:29.560><c> going</c><00:06:29.680><c> to</c><00:06:29.720><c> get</c>
+
+00:06:29.830 --> 00:06:29.840 align:start position:0%
+where it's actually going to get
+ 
+
+00:06:29.840 --> 00:06:31.550 align:start position:0%
+where it's actually going to get
+interesting.<00:06:30.400><c> This</c><00:06:30.560><c> pattern</c><00:06:31.040><c> works</c><00:06:31.400><c> for</c>
+
+00:06:31.550 --> 00:06:31.560 align:start position:0%
+interesting. This pattern works for
+ 
+
+00:06:31.560 --> 00:06:33.550 align:start position:0%
+interesting. This pattern works for
+literally<00:06:32.280><c> anything</c><00:06:32.680><c> that</c><00:06:32.800><c> has</c><00:06:32.960><c> an</c><00:06:33.040><c> MCP</c>
+
+00:06:33.550 --> 00:06:33.560 align:start position:0%
+literally anything that has an MCP
+ 
+
+00:06:33.560 --> 00:06:34.910 align:start position:0%
+literally anything that has an MCP
+connector.<00:06:33.960><c> For</c><00:06:34.120><c> instance,</c><00:06:34.520><c> business</c>
+
+00:06:34.910 --> 00:06:34.920 align:start position:0%
+connector. For instance, business
+ 
+
+00:06:34.920 --> 00:06:37.230 align:start position:0%
+connector. For instance, business
+context.<00:06:35.600><c> I</c><00:06:35.720><c> set</c><00:06:35.960><c> up</c><00:06:36.080><c> a</c><00:06:36.160><c> farmer</c><00:06:36.600><c> on</c><00:06:36.720><c> my</c><00:06:36.880><c> Slack</c>
+
+00:06:37.230 --> 00:06:37.240 align:start position:0%
+context. I set up a farmer on my Slack
+ 
+
+00:06:37.240 --> 00:06:39.030 align:start position:0%
+context. I set up a farmer on my Slack
+channels<00:06:37.760><c> and</c><00:06:37.920><c> my</c><00:06:38.120><c> Fireflies</c><00:06:38.760><c> meeting</c>
+
+00:06:39.030 --> 00:06:39.040 align:start position:0%
+channels and my Fireflies meeting
+ 
+
+00:06:39.040 --> 00:06:40.750 align:start position:0%
+channels and my Fireflies meeting
+transcripts,<00:06:39.760><c> and</c><00:06:39.880><c> now</c><00:06:40.120><c> the</c><00:06:40.240><c> Wiki</c><00:06:40.520><c> just</c>
+
+00:06:40.750 --> 00:06:40.760 align:start position:0%
+transcripts, and now the Wiki just
+ 
+
+00:06:40.760 --> 00:06:42.470 align:start position:0%
+transcripts, and now the Wiki just
+briefs<00:06:41.080><c> me.</c><00:06:41.240><c> Customer</c><00:06:41.600><c> renewals,</c><00:06:42.120><c> project</c>
+
+00:06:42.470 --> 00:06:42.480 align:start position:0%
+briefs me. Customer renewals, project
+ 
+
+00:06:42.480 --> 00:06:44.350 align:start position:0%
+briefs me. Customer renewals, project
+status,<00:06:42.800><c> decisions</c><00:06:43.400><c> that</c><00:06:43.560><c> got</c><00:06:43.800><c> made</c><00:06:44.200><c> in</c>
+
+00:06:44.350 --> 00:06:44.360 align:start position:0%
+status, decisions that got made in
+ 
+
+00:06:44.360 --> 00:06:46.310 align:start position:0%
+status, decisions that got made in
+meetings<00:06:44.720><c> that</c><00:06:44.960><c> I</c><00:06:45.080><c> wasn't</c><00:06:45.360><c> even</c><00:06:45.640><c> on.</c><00:06:45.960><c> I</c><00:06:46.080><c> walked</c>
+
+00:06:46.310 --> 00:06:46.320 align:start position:0%
+meetings that I wasn't even on. I walked
+ 
+
+00:06:46.320 --> 00:06:48.110 align:start position:0%
+meetings that I wasn't even on. I walked
+into<00:06:46.480><c> a</c><00:06:46.560><c> customer</c><00:06:46.960><c> call</c><00:06:47.200><c> the</c><00:06:47.320><c> other</c><00:06:47.480><c> day</c><00:06:47.720><c> fully</c>
+
+00:06:48.110 --> 00:06:48.120 align:start position:0%
+into a customer call the other day fully
+ 
+
+00:06:48.120 --> 00:06:50.030 align:start position:0%
+into a customer call the other day fully
+prepared,<00:06:48.720><c> and</c><00:06:48.840><c> I</c><00:06:48.880><c> hadn't</c><00:06:49.200><c> read</c><00:06:49.400><c> a</c><00:06:49.480><c> single</c>
+
+00:06:50.030 --> 00:06:50.040 align:start position:0%
+prepared, and I hadn't read a single
+ 
+
+00:06:50.040 --> 00:06:51.630 align:start position:0%
+prepared, and I hadn't read a single
+Slack<00:06:50.400><c> message.</c><00:06:50.840><c> If</c><00:06:50.960><c> you</c><00:06:51.120><c> want</c><00:06:51.240><c> to</c><00:06:51.320><c> see</c><00:06:51.520><c> how</c>
+
+00:06:51.630 --> 00:06:51.640 align:start position:0%
+Slack message. If you want to see how
+ 
+
+00:06:51.640 --> 00:06:53.510 align:start position:0%
+Slack message. If you want to see how
+that<00:06:51.840><c> whole</c><00:06:52.080><c> thing</c><00:06:52.320><c> works</c><00:06:52.680><c> step</c><00:06:52.960><c> by</c><00:06:53.120><c> step,</c><00:06:53.480><c> I</c>
+
+00:06:53.510 --> 00:06:53.520 align:start position:0%
+that whole thing works step by step, I
+ 
+
+00:06:53.520 --> 00:06:54.950 align:start position:0%
+that whole thing works step by step, I
+actually<00:06:53.800><c> did</c><00:06:53.920><c> a</c><00:06:53.960><c> full</c><00:06:54.240><c> video</c><00:06:54.560><c> on</c><00:06:54.720><c> it,</c><00:06:54.880><c> and</c>
+
+00:06:54.950 --> 00:06:54.960 align:start position:0%
+actually did a full video on it, and
+ 
+
+00:06:54.960 --> 00:06:57.070 align:start position:0%
+actually did a full video on it, and
+I'll<00:06:55.080><c> link</c><00:06:55.280><c> it</c><00:06:55.400><c> here.</c><00:06:55.760><c> Or</c><00:06:55.960><c> even</c><00:06:56.240><c> research.</c><00:06:56.920><c> You</c>
+
+00:06:57.070 --> 00:06:57.080 align:start position:0%
+I'll link it here. Or even research. You
+ 
+
+00:06:57.080 --> 00:06:58.630 align:start position:0%
+I'll link it here. Or even research. You
+could<00:06:57.280><c> set</c><00:06:57.440><c> up</c><00:06:57.560><c> a</c><00:06:57.600><c> farmer</c><00:06:58.000><c> that</c><00:06:58.160><c> scrapes</c><00:06:58.520><c> for</c>
+
+00:06:58.630 --> 00:06:58.640 align:start position:0%
+could set up a farmer that scrapes for
+ 
+
+00:06:58.640 --> 00:07:00.350 align:start position:0%
+could set up a farmer that scrapes for
+new<00:06:58.840><c> papers</c><00:06:59.320><c> in</c><00:06:59.440><c> whatever</c><00:06:59.760><c> field</c><00:07:00.160><c> you're</c><00:07:00.240><c> in.</c>
+
+00:07:00.350 --> 00:07:00.360 align:start position:0%
+new papers in whatever field you're in.
+ 
+
+00:07:00.360 --> 00:07:02.310 align:start position:0%
+new papers in whatever field you're in.
+Claude<00:07:00.720><c> reads</c><00:07:00.960><c> them,</c><00:07:01.280><c> builds</c><00:07:01.560><c> concept</c><00:07:01.920><c> pages,</c>
+
+00:07:02.310 --> 00:07:02.320 align:start position:0%
+Claude reads them, builds concept pages,
+ 
+
+00:07:02.320 --> 00:07:03.830 align:start position:0%
+Claude reads them, builds concept pages,
+and<00:07:02.480><c> tracks</c><00:07:02.760><c> who's</c><00:07:02.960><c> publishing</c><00:07:03.440><c> what.</c><00:07:03.720><c> And</c>
+
+00:07:03.830 --> 00:07:03.840 align:start position:0%
+and tracks who's publishing what. And
+ 
+
+00:07:03.840 --> 00:07:05.630 align:start position:0%
+and tracks who's publishing what. And
+it'll<00:07:04.040><c> even</c><00:07:04.320><c> flag</c><00:07:04.800><c> when</c><00:07:04.960><c> new</c><00:07:05.120><c> findings</c>
+
+00:07:05.630 --> 00:07:05.640 align:start position:0%
+it'll even flag when new findings
+ 
+
+00:07:05.640 --> 00:07:07.430 align:start position:0%
+it'll even flag when new findings
+contradict<00:07:06.120><c> stuff</c><00:07:06.400><c> that's</c><00:07:06.640><c> already</c><00:07:07.120><c> in</c><00:07:07.360><c> the</c>
+
+00:07:07.430 --> 00:07:07.440 align:start position:0%
+contradict stuff that's already in the
+ 
+
+00:07:07.440 --> 00:07:09.590 align:start position:0%
+contradict stuff that's already in the
+Wiki.<00:07:07.760><c> Or</c><00:07:07.880><c> how</c><00:07:08.000><c> about</c><00:07:08.240><c> competitive</c><00:07:08.880><c> analysis?</c>
+
+00:07:09.590 --> 00:07:09.600 align:start position:0%
+Wiki. Or how about competitive analysis?
+ 
+
+00:07:09.600 --> 00:07:11.670 align:start position:0%
+Wiki. Or how about competitive analysis?
+Farmers<00:07:10.120><c> on</c><00:07:10.240><c> your</c><00:07:10.360><c> competitors'</c><00:07:11.160><c> blogs,</c>
+
+00:07:11.670 --> 00:07:11.680 align:start position:0%
+Farmers on your competitors' blogs,
+ 
+
+00:07:11.680 --> 00:07:13.270 align:start position:0%
+Farmers on your competitors' blogs,
+their<00:07:11.880><c> social</c><00:07:12.240><c> accounts,</c><00:07:12.720><c> and</c><00:07:12.880><c> their</c><00:07:13.040><c> job</c>
+
+00:07:13.270 --> 00:07:13.280 align:start position:0%
+their social accounts, and their job
+ 
+
+00:07:13.280 --> 00:07:15.030 align:start position:0%
+their social accounts, and their job
+posting.<00:07:13.760><c> You</c><00:07:13.920><c> end</c><00:07:14.120><c> up</c><00:07:14.280><c> with</c><00:07:14.400><c> a</c><00:07:14.440><c> Wiki</c><00:07:14.720><c> that's</c>
+
+00:07:15.030 --> 00:07:15.040 align:start position:0%
+posting. You end up with a Wiki that's
+ 
+
+00:07:15.040 --> 00:07:16.790 align:start position:0%
+posting. You end up with a Wiki that's
+just<00:07:15.480><c> tracking</c><00:07:15.880><c> their</c><00:07:16.000><c> moves</c><00:07:16.320><c> for</c><00:07:16.520><c> you.</c><00:07:16.680><c> The</c>
+
+00:07:16.790 --> 00:07:16.800 align:start position:0%
+just tracking their moves for you. The
+ 
+
+00:07:16.800 --> 00:07:19.230 align:start position:0%
+just tracking their moves for you. The
+pattern<00:07:17.240><c> is</c><00:07:17.520><c> always</c><00:07:18.040><c> the</c><00:07:18.160><c> same</c><00:07:18.480><c> though.</c><00:07:18.800><c> Okay.</c>
+
+00:07:19.230 --> 00:07:19.240 align:start position:0%
+pattern is always the same though. Okay.
+ 
+
+00:07:19.240 --> 00:07:20.710 align:start position:0%
+pattern is always the same though. Okay.
+So,<00:07:19.400><c> one</c><00:07:19.560><c> thing</c><00:07:19.760><c> you're</c><00:07:19.880><c> probably</c><00:07:20.280><c> thinking</c>
+
+00:07:20.710 --> 00:07:20.720 align:start position:0%
+So, one thing you're probably thinking
+ 
+
+00:07:20.720 --> 00:07:22.190 align:start position:0%
+So, one thing you're probably thinking
+is<00:07:20.840><c> that</c><00:07:20.920><c> if</c><00:07:21.040><c> your</c><00:07:21.200><c> farmer</c><00:07:21.600><c> is</c><00:07:21.800><c> running</c><00:07:22.080><c> on</c>
+
+00:07:22.190 --> 00:07:22.200 align:start position:0%
+is that if your farmer is running on
+ 
+
+00:07:22.200 --> 00:07:23.870 align:start position:0%
+is that if your farmer is running on
+your<00:07:22.320><c> laptop,</c><00:07:22.840><c> then</c><00:07:22.960><c> your</c><00:07:23.080><c> laptop</c><00:07:23.440><c> has</c><00:07:23.640><c> to</c><00:07:23.760><c> be</c>
+
+00:07:23.870 --> 00:07:23.880 align:start position:0%
+your laptop, then your laptop has to be
+ 
+
+00:07:23.880 --> 00:07:25.990 align:start position:0%
+your laptop, then your laptop has to be
+open,<00:07:24.160><c> right?</c><00:07:24.600><c> And</c><00:07:24.760><c> yeah,</c><00:07:25.160><c> that</c><00:07:25.400><c> does</c><00:07:25.760><c> work.</c>
+
+00:07:25.990 --> 00:07:26.000 align:start position:0%
+open, right? And yeah, that does work.
+ 
+
+00:07:26.000 --> 00:07:26.950 align:start position:0%
+open, right? And yeah, that does work.
+But<00:07:26.080><c> if</c><00:07:26.160><c> you</c><00:07:26.280><c> want</c><00:07:26.400><c> to</c><00:07:26.480><c> get</c><00:07:26.600><c> this</c><00:07:26.720><c> thing</c>
+
+00:07:26.950 --> 00:07:26.960 align:start position:0%
+But if you want to get this thing
+ 
+
+00:07:26.960 --> 00:07:28.750 align:start position:0%
+But if you want to get this thing
+running<00:07:27.280><c> while</c><00:07:27.520><c> you</c><00:07:27.640><c> sleep,</c><00:07:28.200><c> you</c><00:07:28.320><c> need</c>
+
+00:07:28.750 --> 00:07:28.760 align:start position:0%
+running while you sleep, you need
+ 
+
+00:07:28.760 --> 00:07:30.830 align:start position:0%
+running while you sleep, you need
+somewhere<00:07:29.480><c> for</c><00:07:29.720><c> your</c><00:07:30.000><c> context</c><00:07:30.440><c> layer</c><00:07:30.680><c> to</c>
+
+00:07:30.830 --> 00:07:30.840 align:start position:0%
+somewhere for your context layer to
+ 
+
+00:07:30.840 --> 00:07:32.590 align:start position:0%
+somewhere for your context layer to
+live.<00:07:31.120><c> And</c><00:07:31.200><c> that's</c><00:07:31.440><c> where</c><00:07:31.600><c> GitHub</c><00:07:32.000><c> comes</c><00:07:32.240><c> in.</c>
+
+00:07:32.590 --> 00:07:32.600 align:start position:0%
+live. And that's where GitHub comes in.
+ 
+
+00:07:32.600 --> 00:07:35.470 align:start position:0%
+live. And that's where GitHub comes in.
+The<00:07:32.720><c> Wiki</c><00:07:33.000><c> lives</c><00:07:33.280><c> in</c><00:07:33.400><c> a</c><00:07:33.480><c> private</c><00:07:34.120><c> GitHub</c><00:07:34.520><c> repo.</c>
+
+00:07:35.470 --> 00:07:35.480 align:start position:0%
+The Wiki lives in a private GitHub repo.
+ 
+
+00:07:35.480 --> 00:07:37.710 align:start position:0%
+The Wiki lives in a private GitHub repo.
+Claude<00:07:35.760><c> hooks</c><00:07:36.160><c> auto</c><00:07:36.440><c> commit</c><00:07:36.880><c> and</c><00:07:37.080><c> auto</c><00:07:37.320><c> push</c>
+
+00:07:37.710 --> 00:07:37.720 align:start position:0%
+Claude hooks auto commit and auto push
+ 
+
+00:07:37.720 --> 00:07:40.030 align:start position:0%
+Claude hooks auto commit and auto push
+every<00:07:38.000><c> time</c><00:07:38.400><c> a</c><00:07:38.480><c> farmer</c><00:07:38.960><c> drops</c><00:07:39.280><c> new</c><00:07:39.440><c> files</c><00:07:39.800><c> into</c>
+
+00:07:40.030 --> 00:07:40.040 align:start position:0%
+every time a farmer drops new files into
+ 
+
+00:07:40.040 --> 00:07:41.710 align:start position:0%
+every time a farmer drops new files into
+raw.<00:07:40.360><c> So,</c><00:07:40.440><c> the</c><00:07:40.520><c> Wiki</c><00:07:40.800><c> is</c><00:07:41.040><c> always</c><00:07:41.400><c> synced</c><00:07:41.640><c> to</c>
+
+00:07:41.710 --> 00:07:41.720 align:start position:0%
+raw. So, the Wiki is always synced to
+ 
+
+00:07:41.720 --> 00:07:43.990 align:start position:0%
+raw. So, the Wiki is always synced to
+the<00:07:41.800><c> cloud,</c><00:07:42.360><c> and</c><00:07:42.600><c> anyone</c><00:07:42.960><c> you</c><00:07:43.080><c> give</c><00:07:43.320><c> access</c><00:07:43.760><c> to</c>
+
+00:07:43.990 --> 00:07:44.000 align:start position:0%
+the cloud, and anyone you give access to
+ 
+
+00:07:44.000 --> 00:07:45.710 align:start position:0%
+the cloud, and anyone you give access to
+can<00:07:44.160><c> pull</c><00:07:44.360><c> from</c><00:07:44.560><c> it.</c><00:07:44.720><c> So,</c><00:07:44.840><c> it's</c><00:07:45.000><c> not</c><00:07:45.160><c> just</c><00:07:45.400><c> your</c>
+
+00:07:45.710 --> 00:07:45.720 align:start position:0%
+can pull from it. So, it's not just your
+ 
+
+00:07:45.720 --> 00:07:47.310 align:start position:0%
+can pull from it. So, it's not just your
+Wiki<00:07:46.000><c> anymore,</c><00:07:46.560><c> it's</c><00:07:46.800><c> everyone</c><00:07:47.120><c> in</c><00:07:47.200><c> your</c>
+
+00:07:47.310 --> 00:07:47.320 align:start position:0%
+Wiki anymore, it's everyone in your
+ 
+
+00:07:47.320 --> 00:07:48.630 align:start position:0%
+Wiki anymore, it's everyone in your
+organization's<00:07:48.000><c> Wiki.</c><00:07:48.280><c> And</c><00:07:48.400><c> then</c><00:07:48.520><c> for</c>
+
+00:07:48.630 --> 00:07:48.640 align:start position:0%
+organization's Wiki. And then for
+ 
+
+00:07:48.640 --> 00:07:50.870 align:start position:0%
+organization's Wiki. And then for
+scheduling,<00:07:49.320><c> Claude</c><00:07:49.680><c> Code</c><00:07:50.000><c> has</c><00:07:50.280><c> built-in</c>
+
+00:07:50.870 --> 00:07:50.880 align:start position:0%
+scheduling, Claude Code has built-in
+ 
+
+00:07:50.880 --> 00:07:53.150 align:start position:0%
+scheduling, Claude Code has built-in
+scheduled<00:07:51.560><c> agents.</c><00:07:52.120><c> You</c><00:07:52.240><c> can</c><00:07:52.400><c> set</c><00:07:52.560><c> a</c><00:07:52.600><c> time,</c>
+
+00:07:53.150 --> 00:07:53.160 align:start position:0%
+scheduled agents. You can set a time,
+ 
+
+00:07:53.160 --> 00:07:54.990 align:start position:0%
+scheduled agents. You can set a time,
+give<00:07:53.360><c> it</c><00:07:53.440><c> the</c><00:07:53.560><c> farm</c><00:07:53.880><c> prompt,</c><00:07:54.320><c> and</c><00:07:54.400><c> it</c><00:07:54.520><c> runs</c><00:07:54.760><c> on</c>
+
+00:07:54.990 --> 00:07:55.000 align:start position:0%
+give it the farm prompt, and it runs on
+ 
+
+00:07:55.000 --> 00:07:56.750 align:start position:0%
+give it the farm prompt, and it runs on
+Anthropic's<00:07:55.560><c> infrastructure.</c><00:07:56.240><c> It</c><00:07:56.360><c> clones</c>
+
+00:07:56.750 --> 00:07:56.760 align:start position:0%
+Anthropic's infrastructure. It clones
+ 
+
+00:07:56.760 --> 00:07:59.310 align:start position:0%
+Anthropic's infrastructure. It clones
+your<00:07:56.920><c> repo,</c><00:07:57.640><c> runs</c><00:07:58.000><c> the</c><00:07:58.080><c> farmer</c><00:07:58.440><c> using</c><00:07:58.720><c> an</c><00:07:58.800><c> MCP</c>
+
+00:07:59.310 --> 00:07:59.320 align:start position:0%
+your repo, runs the farmer using an MCP
+ 
+
+00:07:59.320 --> 00:08:01.310 align:start position:0%
+your repo, runs the farmer using an MCP
+connection,<00:07:59.800><c> and</c><00:08:00.000><c> commits</c><00:08:00.520><c> the</c><00:08:00.640><c> new</c><00:08:00.840><c> sources</c>
+
+00:08:01.310 --> 00:08:01.320 align:start position:0%
+connection, and commits the new sources
+ 
+
+00:08:01.320 --> 00:08:03.670 align:start position:0%
+connection, and commits the new sources
+and<00:08:01.480><c> pushes,</c><00:08:02.280><c> all</c><00:08:02.680><c> in</c><00:08:02.800><c> the</c><00:08:02.880><c> cloud.</c><00:08:03.400><c> So,</c><00:08:03.480><c> here's</c>
+
+00:08:03.670 --> 00:08:03.680 align:start position:0%
+and pushes, all in the cloud. So, here's
+ 
+
+00:08:03.680 --> 00:08:05.390 align:start position:0%
+and pushes, all in the cloud. So, here's
+my<00:08:03.840><c> setup.</c><00:08:04.400><c> I</c><00:08:04.400><c> have</c><00:08:04.480><c> my</c><00:08:04.640><c> YouTube</c><00:08:05.080><c> farmer</c>
+
+00:08:05.390 --> 00:08:05.400 align:start position:0%
+my setup. I have my YouTube farmer
+ 
+
+00:08:05.400 --> 00:08:07.510 align:start position:0%
+my setup. I have my YouTube farmer
+running<00:08:05.640><c> at</c><00:08:05.800><c> 6:00</c><00:08:06.120><c> a.m.</c><00:08:06.520><c> every</c><00:08:06.800><c> day.</c><00:08:07.280><c> I</c><00:08:07.320><c> have</c>
+
+00:08:07.510 --> 00:08:07.520 align:start position:0%
+running at 6:00 a.m. every day. I have
+ 
+
+00:08:07.520 --> 00:08:09.590 align:start position:0%
+running at 6:00 a.m. every day. I have
+my<00:08:07.640><c> Slack</c><00:08:08.080><c> farmer</c><00:08:08.440><c> running</c><00:08:08.640><c> at</c><00:08:08.760><c> 6:30</c><00:08:09.360><c> and</c><00:08:09.480><c> the</c>
+
+00:08:09.590 --> 00:08:09.600 align:start position:0%
+my Slack farmer running at 6:30 and the
+ 
+
+00:08:09.600 --> 00:08:11.830 align:start position:0%
+my Slack farmer running at 6:30 and the
+Fireflies<00:08:10.280><c> farmer</c><00:08:10.680><c> running</c><00:08:11.040><c> at</c><00:08:11.240><c> 7:00.</c><00:08:11.640><c> That's</c>
+
+00:08:11.830 --> 00:08:11.840 align:start position:0%
+Fireflies farmer running at 7:00. That's
+ 
+
+00:08:11.840 --> 00:08:13.670 align:start position:0%
+Fireflies farmer running at 7:00. That's
+why<00:08:12.080><c> every</c><00:08:12.360><c> morning</c><00:08:12.680><c> when</c><00:08:12.800><c> I</c><00:08:12.840><c> log</c><00:08:13.080><c> in,</c><00:08:13.360><c> I</c><00:08:13.440><c> have</c>
+
+00:08:13.670 --> 00:08:13.680 align:start position:0%
+why every morning when I log in, I have
+ 
+
+00:08:13.680 --> 00:08:15.790 align:start position:0%
+why every morning when I log in, I have
+new<00:08:14.000><c> context</c><00:08:14.560><c> sitting</c><00:08:14.800><c> in</c><00:08:14.960><c> raw</c><00:08:15.360><c> ready</c><00:08:15.640><c> to</c>
+
+00:08:15.790 --> 00:08:15.800 align:start position:0%
+new context sitting in raw ready to
+ 
+
+00:08:15.800 --> 00:08:17.430 align:start position:0%
+new context sitting in raw ready to
+digest.<00:08:16.360><c> And</c><00:08:16.440><c> it</c><00:08:16.560><c> doesn't</c><00:08:16.920><c> matter</c><00:08:17.200><c> if</c><00:08:17.320><c> my</c>
+
+00:08:17.430 --> 00:08:17.440 align:start position:0%
+digest. And it doesn't matter if my
+ 
+
+00:08:17.440 --> 00:08:19.390 align:start position:0%
+digest. And it doesn't matter if my
+laptop<00:08:17.920><c> was</c><00:08:18.040><c> overnight.</c><00:08:18.560><c> My</c><00:08:18.680><c> context</c><00:08:19.200><c> layer</c>
+
+00:08:19.390 --> 00:08:19.400 align:start position:0%
+laptop was overnight. My context layer
+ 
+
+00:08:19.400 --> 00:08:21.390 align:start position:0%
+laptop was overnight. My context layer
+just<00:08:19.640><c> keeps</c><00:08:19.840><c> getting</c><00:08:20.200><c> smarter</c><00:08:20.720><c> and</c><00:08:20.880><c> smarter</c>
+
+00:08:21.390 --> 00:08:21.400 align:start position:0%
+just keeps getting smarter and smarter
+ 
+
+00:08:21.400 --> 00:08:23.230 align:start position:0%
+just keeps getting smarter and smarter
+every<00:08:21.640><c> time</c><00:08:21.960><c> it</c><00:08:22.080><c> runs.</c><00:08:22.600><c> Now,</c><00:08:22.800><c> if</c><00:08:22.920><c> you've</c><00:08:23.040><c> got</c>
+
+00:08:23.230 --> 00:08:23.240 align:start position:0%
+every time it runs. Now, if you've got
+ 
+
+00:08:23.240 --> 00:08:25.510 align:start position:0%
+every time it runs. Now, if you've got
+farmers<00:08:23.520><c> that</c><00:08:23.680><c> use</c><00:08:23.920><c> local</c><00:08:24.400><c> tools</c><00:08:24.800><c> like</c><00:08:25.280><c> any</c>
+
+00:08:25.510 --> 00:08:25.520 align:start position:0%
+farmers that use local tools like any
+ 
+
+00:08:25.520 --> 00:08:27.550 align:start position:0%
+farmers that use local tools like any
+type<00:08:25.760><c> of</c><00:08:25.880><c> CLI</c><00:08:26.400><c> or</c><00:08:26.480><c> custom</c><00:08:26.840><c> pet</c><00:08:27.000><c> scripts,</c><00:08:27.480><c> you</c>
+
+00:08:27.550 --> 00:08:27.560 align:start position:0%
+type of CLI or custom pet scripts, you
+ 
+
+00:08:27.560 --> 00:08:29.110 align:start position:0%
+type of CLI or custom pet scripts, you
+can<00:08:27.720><c> schedule</c><00:08:28.080><c> them</c><00:08:28.240><c> from</c><00:08:28.440><c> Claude</c><00:08:28.800><c> Code</c>
+
+00:08:29.110 --> 00:08:29.120 align:start position:0%
+can schedule them from Claude Code
+ 
+
+00:08:29.120 --> 00:08:30.950 align:start position:0%
+can schedule them from Claude Code
+desktop<00:08:29.600><c> as</c><00:08:29.760><c> well.</c><00:08:30.160><c> You</c><00:08:30.200><c> just</c><00:08:30.360><c> need</c><00:08:30.480><c> to</c><00:08:30.600><c> go</c><00:08:30.800><c> to</c>
+
+00:08:30.950 --> 00:08:30.960 align:start position:0%
+desktop as well. You just need to go to
+ 
+
+00:08:30.960 --> 00:08:33.270 align:start position:0%
+desktop as well. You just need to go to
+the<00:08:31.120><c> new</c><00:08:31.560><c> local</c><00:08:31.960><c> task</c><00:08:32.360><c> button,</c><00:08:32.760><c> and</c><00:08:32.880><c> that</c><00:08:33.039><c> task</c>
+
+00:08:33.270 --> 00:08:33.280 align:start position:0%
+the new local task button, and that task
+ 
+
+00:08:33.280 --> 00:08:35.149 align:start position:0%
+the new local task button, and that task
+will<00:08:33.400><c> now</c><00:08:33.599><c> run</c><00:08:33.880><c> on</c><00:08:34.080><c> your</c><00:08:34.320><c> machine.</c><00:08:34.880><c> The</c><00:08:35.000><c> only</c>
+
+00:08:35.149 --> 00:08:35.159 align:start position:0%
+will now run on your machine. The only
+ 
+
+00:08:35.159 --> 00:08:36.909 align:start position:0%
+will now run on your machine. The only
+caveat<00:08:35.640><c> is</c><00:08:35.760><c> that</c><00:08:35.880><c> your</c><00:08:36.039><c> laptop</c><00:08:36.440><c> needs</c><00:08:36.680><c> to</c><00:08:36.760><c> be</c>
+
+00:08:36.909 --> 00:08:36.919 align:start position:0%
+caveat is that your laptop needs to be
+ 
+
+00:08:36.919 --> 00:08:38.550 align:start position:0%
+caveat is that your laptop needs to be
+on<00:08:37.200><c> for</c><00:08:37.320><c> them</c><00:08:37.440><c> to</c><00:08:37.560><c> run.</c><00:08:37.960><c> Just</c><00:08:38.159><c> think</c><00:08:38.360><c> about</c>
+
+00:08:38.550 --> 00:08:38.560 align:start position:0%
+on for them to run. Just think about
+ 
+
+00:08:38.560 --> 00:08:40.070 align:start position:0%
+on for them to run. Just think about
+this<00:08:38.719><c> for</c><00:08:38.840><c> a</c><00:08:38.880><c> second.</c><00:08:39.280><c> If</c><00:08:39.440><c> you</c><00:08:39.520><c> have</c><00:08:39.640><c> a</c><00:08:39.719><c> Wiki</c>
+
+00:08:40.070 --> 00:08:40.080 align:start position:0%
+this for a second. If you have a Wiki
+ 
+
+00:08:40.080 --> 00:08:41.750 align:start position:0%
+this for a second. If you have a Wiki
+that<00:08:40.200><c> tracks</c><00:08:40.560><c> everything</c><00:08:41.039><c> happening</c><00:08:41.479><c> in</c><00:08:41.640><c> your</c>
+
+00:08:41.750 --> 00:08:41.760 align:start position:0%
+that tracks everything happening in your
+ 
+
+00:08:41.760 --> 00:08:43.510 align:start position:0%
+that tracks everything happening in your
+industry,<00:08:42.360><c> and</c><00:08:42.479><c> another</c><00:08:42.800><c> one</c><00:08:43.039><c> tracking</c><00:08:43.400><c> your</c>
+
+00:08:43.510 --> 00:08:43.520 align:start position:0%
+industry, and another one tracking your
+ 
+
+00:08:43.520 --> 00:08:44.910 align:start position:0%
+industry, and another one tracking your
+competitors,<00:08:44.200><c> you</c><00:08:44.280><c> might</c><00:08:44.400><c> even</c><00:08:44.560><c> have</c><00:08:44.720><c> one</c>
+
+00:08:44.910 --> 00:08:44.920 align:start position:0%
+competitors, you might even have one
+ 
+
+00:08:44.920 --> 00:08:46.430 align:start position:0%
+competitors, you might even have one
+tracking<00:08:45.280><c> your</c><00:08:45.400><c> customers.</c><00:08:45.960><c> You</c><00:08:46.040><c> begin</c><00:08:46.320><c> to</c>
+
+00:08:46.430 --> 00:08:46.440 align:start position:0%
+tracking your customers. You begin to
+ 
+
+00:08:46.440 --> 00:08:48.590 align:start position:0%
+tracking your customers. You begin to
+have<00:08:46.640><c> a</c><00:08:46.760><c> fully</c><00:08:47.320><c> enriched</c><00:08:47.800><c> context</c><00:08:48.320><c> layer</c>
+
+00:08:48.590 --> 00:08:48.600 align:start position:0%
+have a fully enriched context layer
+ 
+
+00:08:48.600 --> 00:08:50.470 align:start position:0%
+have a fully enriched context layer
+across<00:08:49.120><c> everything</c><00:08:49.800><c> that</c><00:08:49.960><c> you're</c><00:08:50.080><c> interested</c>
+
+00:08:50.470 --> 00:08:50.480 align:start position:0%
+across everything that you're interested
+ 
+
+00:08:50.480 --> 00:08:51.990 align:start position:0%
+across everything that you're interested
+in.<00:08:50.600><c> And</c><00:08:50.800><c> all</c><00:08:51.000><c> of</c><00:08:51.080><c> them</c><00:08:51.240><c> are</c><00:08:51.360><c> running</c><00:08:51.720><c> without</c>
+
+00:08:51.990 --> 00:08:52.000 align:start position:0%
+in. And all of them are running without
+ 
+
+00:08:52.000 --> 00:08:54.110 align:start position:0%
+in. And all of them are running without
+you<00:08:52.120><c> touching</c><00:08:52.600><c> everything.</c><00:08:53.080><c> Every</c><00:08:53.520><c> MCP</c>
+
+00:08:54.110 --> 00:08:54.120 align:start position:0%
+you touching everything. Every MCP
+ 
+
+00:08:54.120 --> 00:08:55.830 align:start position:0%
+you touching everything. Every MCP
+connector<00:08:54.640><c> and</c><00:08:54.840><c> every</c><00:08:55.120><c> app</c><00:08:55.400><c> becomes</c><00:08:55.760><c> a</c>
+
+00:08:55.830 --> 00:08:55.840 align:start position:0%
+connector and every app becomes a
+ 
+
+00:08:55.840 --> 00:08:57.790 align:start position:0%
+connector and every app becomes a
+potential<00:08:56.400><c> source</c><00:08:56.720><c> for</c><00:08:56.840><c> context,</c><00:08:57.480><c> and</c><00:08:57.600><c> there</c>
+
+00:08:57.790 --> 00:08:57.800 align:start position:0%
+potential source for context, and there
+ 
+
+00:08:57.800 --> 00:08:59.590 align:start position:0%
+potential source for context, and there
+are<00:08:58.080><c> hundreds</c><00:08:58.560><c> of</c><00:08:58.640><c> them</c><00:08:58.960><c> in</c><00:08:59.040><c> the</c><00:08:59.120><c> connectors</c>
+
+00:08:59.590 --> 00:08:59.600 align:start position:0%
+are hundreds of them in the connectors
+ 
+
+00:08:59.600 --> 00:09:01.110 align:start position:0%
+are hundreds of them in the connectors
+tab<00:09:00.000><c> inside</c><00:09:00.240><c> of</c><00:09:00.320><c> Claude.</c><00:09:00.720><c> Okay.</c><00:09:00.840><c> So,</c><00:09:00.960><c> if</c><00:09:01.080><c> you</c>
+
+00:09:01.110 --> 00:09:01.120 align:start position:0%
+tab inside of Claude. Okay. So, if you
+ 
+
+00:09:01.120 --> 00:09:02.390 align:start position:0%
+tab inside of Claude. Okay. So, if you
+want<00:09:01.240><c> to</c><00:09:01.320><c> set</c><00:09:01.440><c> this</c><00:09:01.560><c> up</c><00:09:01.680><c> for</c><00:09:01.760><c> yourself,</c><00:09:02.360><c> I</c>
+
+00:09:02.390 --> 00:09:02.400 align:start position:0%
+want to set this up for yourself, I
+ 
+
+00:09:02.400 --> 00:09:04.390 align:start position:0%
+want to set this up for yourself, I
+actually<00:09:02.760><c> built</c><00:09:03.000><c> a</c><00:09:03.080><c> Claude</c><00:09:03.520><c> Code</c><00:09:03.840><c> skill</c><00:09:04.240><c> that</c>
+
+00:09:04.390 --> 00:09:04.400 align:start position:0%
+actually built a Claude Code skill that
+ 
+
+00:09:04.400 --> 00:09:05.910 align:start position:0%
+actually built a Claude Code skill that
+does<00:09:04.560><c> the</c><00:09:04.640><c> whole</c><00:09:05.000><c> thing</c><00:09:05.320><c> for</c><00:09:05.600><c> you,</c><00:09:05.760><c> and</c><00:09:05.840><c> the</c>
+
+00:09:05.910 --> 00:09:05.920 align:start position:0%
+does the whole thing for you, and the
+ 
+
+00:09:05.920 --> 00:09:07.470 align:start position:0%
+does the whole thing for you, and the
+link's<00:09:06.120><c> in</c><00:09:06.200><c> the</c><00:09:06.240><c> description.</c><00:09:06.800><c> It's</c><00:09:07.040><c> totally</c>
+
+00:09:07.470 --> 00:09:07.480 align:start position:0%
+link's in the description. It's totally
+ 
+
+00:09:07.480 --> 00:09:09.310 align:start position:0%
+link's in the description. It's totally
+free.<00:09:07.840><c> All</c><00:09:08.000><c> you</c><00:09:08.040><c> have</c><00:09:08.160><c> to</c><00:09:08.240><c> do</c><00:09:08.440><c> is</c><00:09:08.560><c> just</c><00:09:08.760><c> install</c>
+
+00:09:09.310 --> 00:09:09.320 align:start position:0%
+free. All you have to do is just install
+ 
+
+00:09:09.320 --> 00:09:11.550 align:start position:0%
+free. All you have to do is just install
+the<00:09:09.400><c> skill</c><00:09:09.960><c> into</c><00:09:10.160><c> your</c><00:09:10.320><c> dot</c><00:09:10.640><c> Claude</c><00:09:11.000><c> folder</c>
+
+00:09:11.550 --> 00:09:11.560 align:start position:0%
+the skill into your dot Claude folder
+ 
+
+00:09:11.560 --> 00:09:13.310 align:start position:0%
+the skill into your dot Claude folder
+inside<00:09:12.000><c> of</c><00:09:12.080><c> your</c><00:09:12.240><c> repo.</c><00:09:12.680><c> You</c><00:09:12.800><c> tell</c><00:09:13.040><c> it</c><00:09:13.160><c> what</c>
+
+00:09:13.310 --> 00:09:13.320 align:start position:0%
+inside of your repo. You tell it what
+ 
+
+00:09:13.320 --> 00:09:14.990 align:start position:0%
+inside of your repo. You tell it what
+you<00:09:13.440><c> want,</c><00:09:13.840><c> and</c><00:09:13.960><c> Claude</c><00:09:14.200><c> will</c><00:09:14.320><c> actually</c><00:09:14.640><c> build</c>
+
+00:09:14.990 --> 00:09:15.000 align:start position:0%
+you want, and Claude will actually build
+ 
+
+00:09:15.000 --> 00:09:16.550 align:start position:0%
+you want, and Claude will actually build
+out<00:09:15.160><c> the</c><00:09:15.280><c> Wiki</c><00:09:15.680><c> custom</c><00:09:16.240><c> for</c><00:09:16.360><c> your</c>
+
+00:09:16.550 --> 00:09:16.560 align:start position:0%
+out the Wiki custom for your
+ 
+
+00:09:16.560 --> 00:09:18.510 align:start position:0%
+out the Wiki custom for your
+requirements,<00:09:17.240><c> whatever</c><00:09:17.560><c> you</c><00:09:17.720><c> need.</c><00:09:18.320><c> It'll</c>
+
+00:09:18.510 --> 00:09:18.520 align:start position:0%
+requirements, whatever you need. It'll
+ 
+
+00:09:18.520 --> 00:09:20.110 align:start position:0%
+requirements, whatever you need. It'll
+ask<00:09:18.760><c> a</c><00:09:18.800><c> few</c><00:09:19.000><c> questions,</c><00:09:19.600><c> figure</c><00:09:19.920><c> out</c><00:09:20.040><c> the</c>
+
+00:09:20.110 --> 00:09:20.120 align:start position:0%
+ask a few questions, figure out the
+ 
+
+00:09:20.120 --> 00:09:22.390 align:start position:0%
+ask a few questions, figure out the
+right<00:09:20.360><c> sources,</c><00:09:21.320><c> and</c><00:09:21.480><c> all</c><00:09:21.680><c> of</c><00:09:21.760><c> that</c><00:09:22.000><c> goes</c><00:09:22.200><c> into</c>
+
+00:09:22.390 --> 00:09:22.400 align:start position:0%
+right sources, and all of that goes into
+ 
+
+00:09:22.400 --> 00:09:24.270 align:start position:0%
+right sources, and all of that goes into
+your<00:09:22.520><c> Karpathy</c><00:09:22.960><c> Wiki.</c><00:09:23.400><c> It</c><00:09:23.520><c> even</c><00:09:23.760><c> builds</c><00:09:24.160><c> the</c>
+
+00:09:24.270 --> 00:09:24.280 align:start position:0%
+your Karpathy Wiki. It even builds the
+ 
+
+00:09:24.280 --> 00:09:26.190 align:start position:0%
+your Karpathy Wiki. It even builds the
+context<00:09:24.800><c> farmers</c><00:09:25.160><c> for</c><00:09:25.360><c> each</c><00:09:25.520><c> source</c><00:09:26.000><c> and</c>
+
+00:09:26.190 --> 00:09:26.200 align:start position:0%
+context farmers for each source and
+ 
+
+00:09:26.200 --> 00:09:27.710 align:start position:0%
+context farmers for each source and
+wires<00:09:26.520><c> them</c><00:09:26.680><c> up</c><00:09:26.800><c> for</c><00:09:26.920><c> scheduling.</c><00:09:27.480><c> You</c><00:09:27.560><c> don't</c>
+
+00:09:27.710 --> 00:09:27.720 align:start position:0%
+wires them up for scheduling. You don't
+ 
+
+00:09:27.720 --> 00:09:29.710 align:start position:0%
+wires them up for scheduling. You don't
+have<00:09:27.840><c> to</c><00:09:27.920><c> do</c><00:09:28.200><c> any</c><00:09:28.480><c> of</c><00:09:28.600><c> it</c><00:09:28.800><c> yourself.</c><00:09:29.400><c> I'd</c><00:09:29.480><c> also</c>
+
+00:09:29.710 --> 00:09:29.720 align:start position:0%
+have to do any of it yourself. I'd also
+ 
+
+00:09:29.720 --> 00:09:31.870 align:start position:0%
+have to do any of it yourself. I'd also
+recommend<00:09:30.240><c> opening</c><00:09:30.560><c> up</c><00:09:30.680><c> the</c><00:09:30.800><c> Wiki</c><00:09:31.200><c> inside</c><00:09:31.760><c> of</c>
+
+00:09:31.870 --> 00:09:31.880 align:start position:0%
+recommend opening up the Wiki inside of
+ 
+
+00:09:31.880 --> 00:09:33.670 align:start position:0%
+recommend opening up the Wiki inside of
+Obsidian.<00:09:32.520><c> It's</c><00:09:32.640><c> optional,</c><00:09:33.120><c> but</c><00:09:33.320><c> honestly,</c>
+
+00:09:33.670 --> 00:09:33.680 align:start position:0%
+Obsidian. It's optional, but honestly,
+ 
+
+00:09:33.680 --> 00:09:35.310 align:start position:0%
+Obsidian. It's optional, but honestly,
+the<00:09:33.800><c> graph</c><00:09:34.160><c> view</c><00:09:34.440><c> and</c><00:09:34.560><c> the</c><00:09:34.640><c> backlinks</c><00:09:35.160><c> are</c>
+
+00:09:35.310 --> 00:09:35.320 align:start position:0%
+the graph view and the backlinks are
+ 
+
+00:09:35.320 --> 00:09:37.270 align:start position:0%
+the graph view and the backlinks are
+totally<00:09:36.000><c> worth</c><00:09:36.280><c> it.</c><00:09:36.560><c> And</c><00:09:36.680><c> then,</c><00:09:37.000><c> you've</c><00:09:37.120><c> got</c><00:09:37.240><c> a</c>
+
+00:09:37.270 --> 00:09:37.280 align:start position:0%
+totally worth it. And then, you've got a
+ 
+
+00:09:37.280 --> 00:09:38.830 align:start position:0%
+totally worth it. And then, you've got a
+choice.<00:09:37.920><c> You</c><00:09:38.000><c> can</c><00:09:38.160><c> run</c><00:09:38.360><c> your</c><00:09:38.480><c> farmers</c>
+
+00:09:38.830 --> 00:09:38.840 align:start position:0%
+choice. You can run your farmers
+ 
+
+00:09:38.840 --> 00:09:40.390 align:start position:0%
+choice. You can run your farmers
+locally,<00:09:39.400><c> which</c><00:09:39.600><c> is</c><00:09:39.760><c> fine</c><00:09:40.040><c> for</c><00:09:40.160><c> getting</c>
+
+00:09:40.390 --> 00:09:40.400 align:start position:0%
+locally, which is fine for getting
+ 
+
+00:09:40.400 --> 00:09:42.710 align:start position:0%
+locally, which is fine for getting
+started,<00:09:40.960><c> or</c><00:09:41.120><c> you</c><00:09:41.200><c> can</c><00:09:41.400><c> schedule</c><00:09:41.960><c> them</c><00:09:42.120><c> to</c><00:09:42.320><c> run</c>
+
+00:09:42.710 --> 00:09:42.720 align:start position:0%
+started, or you can schedule them to run
+ 
+
+00:09:42.720 --> 00:09:44.630 align:start position:0%
+started, or you can schedule them to run
+as<00:09:42.920><c> always-on</c><00:09:43.640><c> in</c><00:09:43.800><c> the</c><00:09:43.880><c> cloud.</c><00:09:44.280><c> The</c><00:09:44.360><c> skill</c>
+
+00:09:44.630 --> 00:09:44.640 align:start position:0%
+as always-on in the cloud. The skill
+ 
+
+00:09:44.640 --> 00:09:46.270 align:start position:0%
+as always-on in the cloud. The skill
+walks<00:09:44.880><c> you</c><00:09:44.960><c> through</c><00:09:45.280><c> either</c><00:09:45.520><c> path.</c><00:09:45.960><c> I</c><00:09:46.040><c> want</c><00:09:46.200><c> to</c>
+
+00:09:46.270 --> 00:09:46.280 align:start position:0%
+walks you through either path. I want to
+ 
+
+00:09:46.280 --> 00:09:48.590 align:start position:0%
+walks you through either path. I want to
+build<00:09:46.480><c> a</c><00:09:46.520><c> Wiki</c><00:09:46.840><c> for</c><00:09:46.960><c> keeping</c><00:09:47.320><c> track</c><00:09:47.560><c> of</c><00:09:47.800><c> all</c><00:09:48.400><c> of</c>
+
+00:09:48.590 --> 00:09:48.600 align:start position:0%
+build a Wiki for keeping track of all of
+ 
+
+00:09:48.600 --> 00:09:51.390 align:start position:0%
+build a Wiki for keeping track of all of
+my<00:09:48.760><c> favorite</c><00:09:49.200><c> creators</c><00:09:49.840><c> on</c><00:09:50.080><c> YouTube.</c><00:09:51.000><c> I</c><00:09:51.120><c> want</c>
+
+00:09:51.390 --> 00:09:51.400 align:start position:0%
+my favorite creators on YouTube. I want
+ 
+
+00:09:51.400 --> 00:09:53.390 align:start position:0%
+my favorite creators on YouTube. I want
+to<00:09:51.800><c> provide</c><00:09:52.160><c> you</c><00:09:52.280><c> a</c><00:09:52.360><c> few</c><00:09:52.560><c> channels,</c><00:09:53.120><c> and</c><00:09:53.240><c> then</c>
+
+00:09:53.390 --> 00:09:53.400 align:start position:0%
+to provide you a few channels, and then
+ 
+
+00:09:53.400 --> 00:09:55.110 align:start position:0%
+to provide you a few channels, and then
+from<00:09:53.560><c> there,</c><00:09:54.000><c> you'll</c><00:09:54.160><c> set</c><00:09:54.320><c> up</c><00:09:54.480><c> a</c><00:09:54.520><c> context</c>
+
+00:09:55.110 --> 00:09:55.120 align:start position:0%
+from there, you'll set up a context
+ 
+
+00:09:55.120 --> 00:09:57.430 align:start position:0%
+from there, you'll set up a context
+farmer,<00:09:55.480><c> which</c><00:09:55.760><c> will</c><00:09:56.400><c> go</c><00:09:56.560><c> and</c><00:09:56.720><c> find</c><00:09:57.200><c> those</c>
+
+00:09:57.430 --> 00:09:57.440 align:start position:0%
+farmer, which will go and find those
+ 
+
+00:09:57.440 --> 00:09:59.870 align:start position:0%
+farmer, which will go and find those
+YouTube<00:09:57.800><c> channels</c><00:09:58.720><c> new</c><00:09:58.920><c> videos</c><00:09:59.320><c> every</c><00:09:59.560><c> single</c>
+
+00:09:59.870 --> 00:09:59.880 align:start position:0%
+YouTube channels new videos every single
+ 
+
+00:09:59.880 --> 00:10:01.790 align:start position:0%
+YouTube channels new videos every single
+day<00:10:00.240><c> and</c><00:10:00.360><c> then</c><00:10:00.480><c> fold</c><00:10:00.760><c> them</c><00:10:00.960><c> into</c><00:10:01.240><c> the</c><00:10:01.320><c> wiki</c><00:10:01.640><c> as</c>
+
+00:10:01.790 --> 00:10:01.800 align:start position:0%
+day and then fold them into the wiki as
+ 
+
+00:10:01.800 --> 00:10:03.030 align:start position:0%
+day and then fold them into the wiki as
+well.
+
+00:10:03.030 --> 00:10:03.040 align:start position:0%
+well.
+ 
+
+00:10:03.040 --> 00:10:04.790 align:start position:0%
+well.
+I<00:10:03.080><c> want</c><00:10:03.200><c> to</c><00:10:03.280><c> use</c><00:10:03.560><c> Appify</c><00:10:04.120><c> for</c><00:10:04.280><c> the</c><00:10:04.360><c> context</c>
+
+00:10:04.790 --> 00:10:04.800 align:start position:0%
+I want to use Appify for the context
+ 
+
+00:10:04.800 --> 00:10:06.110 align:start position:0%
+I want to use Appify for the context
+farmer.<00:10:05.160><c> The</c><00:10:05.240><c> skill</c><00:10:05.480><c> is</c><00:10:05.600><c> trained</c><00:10:05.960><c> on</c>
+
+00:10:06.110 --> 00:10:06.120 align:start position:0%
+farmer. The skill is trained on
+ 
+
+00:10:06.120 --> 00:10:08.550 align:start position:0%
+farmer. The skill is trained on
+Kapathy's<00:10:06.680><c> LLM</c><00:10:07.120><c> wiki</c><00:10:07.360><c> framework</c><00:10:08.320><c> and</c><00:10:08.440><c> it</c>
+
+00:10:08.550 --> 00:10:08.560 align:start position:0%
+Kapathy's LLM wiki framework and it
+ 
+
+00:10:08.560 --> 00:10:09.950 align:start position:0%
+Kapathy's LLM wiki framework and it
+talks<00:10:08.800><c> you</c><00:10:08.880><c> through</c><00:10:09.160><c> everything</c><00:10:09.680><c> that</c><00:10:09.840><c> you</c>
+
+00:10:09.950 --> 00:10:09.960 align:start position:0%
+talks you through everything that you
+ 
+
+00:10:09.960 --> 00:10:11.510 align:start position:0%
+talks you through everything that you
+need<00:10:10.240><c> to</c><00:10:10.320><c> get</c><00:10:10.520><c> started.</c><00:10:10.960><c> You</c><00:10:11.040><c> can</c><00:10:11.160><c> select</c><00:10:11.440><c> the</c>
+
+00:10:11.510 --> 00:10:11.520 align:start position:0%
+need to get started. You can select the
+ 
+
+00:10:11.520 --> 00:10:13.190 align:start position:0%
+need to get started. You can select the
+full<00:10:11.800><c> build,</c><00:10:12.160><c> the</c><00:10:12.240><c> wiki</c><00:10:12.520><c> and</c><00:10:12.640><c> farmers,</c><00:10:13.080><c> or</c>
+
+00:10:13.190 --> 00:10:13.200 align:start position:0%
+full build, the wiki and farmers, or
+ 
+
+00:10:13.200 --> 00:10:15.190 align:start position:0%
+full build, the wiki and farmers, or
+just<00:10:13.680><c> the</c><00:10:13.760><c> wiki.</c><00:10:14.240><c> I</c><00:10:14.360><c> always</c><00:10:14.600><c> go</c><00:10:14.760><c> for</c><00:10:14.840><c> the</c><00:10:14.960><c> full</c>
+
+00:10:15.190 --> 00:10:15.200 align:start position:0%
+just the wiki. I always go for the full
+ 
+
+00:10:15.200 --> 00:10:16.590 align:start position:0%
+just the wiki. I always go for the full
+build<00:10:15.520><c> because</c><00:10:15.760><c> that</c><00:10:15.880><c> way</c><00:10:16.080><c> I</c><00:10:16.160><c> can</c><00:10:16.280><c> set</c><00:10:16.440><c> up</c><00:10:16.480><c> my</c>
+
+00:10:16.590 --> 00:10:16.600 align:start position:0%
+build because that way I can set up my
+ 
+
+00:10:16.600 --> 00:10:18.590 align:start position:0%
+build because that way I can set up my
+context<00:10:17.040><c> farmers</c><00:10:17.320><c> to</c><00:10:17.440><c> run</c><00:10:17.720><c> in</c><00:10:17.880><c> the</c><00:10:17.960><c> cloud.</c><00:10:18.480><c> And</c>
+
+00:10:18.590 --> 00:10:18.600 align:start position:0%
+context farmers to run in the cloud. And
+ 
+
+00:10:18.600 --> 00:10:19.990 align:start position:0%
+context farmers to run in the cloud. And
+then<00:10:18.720><c> you've</c><00:10:18.840><c> got</c><00:10:18.960><c> a</c><00:10:19.000><c> choice.</c><00:10:19.640><c> You</c><00:10:19.760><c> can</c><00:10:19.880><c> run</c>
+
+00:10:19.990 --> 00:10:20.000 align:start position:0%
+then you've got a choice. You can run
+ 
+
+00:10:20.000 --> 00:10:21.550 align:start position:0%
+then you've got a choice. You can run
+the<00:10:20.080><c> farmers</c><00:10:20.440><c> locally,</c><00:10:20.920><c> which</c><00:10:21.120><c> is</c><00:10:21.240><c> fine</c><00:10:21.440><c> for</c>
+
+00:10:21.550 --> 00:10:21.560 align:start position:0%
+the farmers locally, which is fine for
+ 
+
+00:10:21.560 --> 00:10:23.270 align:start position:0%
+the farmers locally, which is fine for
+getting<00:10:21.800><c> started,</c><00:10:22.360><c> or</c><00:10:22.520><c> you</c><00:10:22.600><c> can</c><00:10:22.760><c> schedule</c>
+
+00:10:23.270 --> 00:10:23.280 align:start position:0%
+getting started, or you can schedule
+ 
+
+00:10:23.280 --> 00:10:25.470 align:start position:0%
+getting started, or you can schedule
+them<00:10:23.440><c> to</c><00:10:23.560><c> run</c><00:10:23.960><c> always</c><00:10:24.400><c> on</c><00:10:24.640><c> in</c><00:10:24.760><c> the</c><00:10:24.840><c> cloud.</c><00:10:25.360><c> The</c>
+
+00:10:25.470 --> 00:10:25.480 align:start position:0%
+them to run always on in the cloud. The
+ 
+
+00:10:25.480 --> 00:10:27.590 align:start position:0%
+them to run always on in the cloud. The
+skill<00:10:25.800><c> walks</c><00:10:26.040><c> you</c><00:10:26.160><c> through</c><00:10:26.680><c> either</c><00:10:26.960><c> path.</c><00:10:27.480><c> And</c>
+
+00:10:27.590 --> 00:10:27.600 align:start position:0%
+skill walks you through either path. And
+ 
+
+00:10:27.600 --> 00:10:29.190 align:start position:0%
+skill walks you through either path. And
+then<00:10:27.800><c> just</c><00:10:28.000><c> let</c><00:10:28.120><c> it</c><00:10:28.200><c> run.</c><00:10:28.600><c> Every</c><00:10:28.840><c> day</c><00:10:29.080><c> your</c>
+
+00:10:29.190 --> 00:10:29.200 align:start position:0%
+then just let it run. Every day your
+ 
+
+00:10:29.200 --> 00:10:30.830 align:start position:0%
+then just let it run. Every day your
+farmer<00:10:29.480><c> pulls</c><00:10:29.720><c> new</c><00:10:29.880><c> context,</c><00:10:30.480><c> the</c><00:10:30.600><c> wiki</c>
+
+00:10:30.830 --> 00:10:30.840 align:start position:0%
+farmer pulls new context, the wiki
+ 
+
+00:10:30.840 --> 00:10:32.630 align:start position:0%
+farmer pulls new context, the wiki
+ingest<00:10:31.240><c> it,</c><00:10:31.440><c> and</c><00:10:31.560><c> pages</c><00:10:31.960><c> compound.</c><00:10:32.520><c> You</c>
+
+00:10:32.630 --> 00:10:32.640 align:start position:0%
+ingest it, and pages compound. You
+ 
+
+00:10:32.640 --> 00:10:35.230 align:start position:0%
+ingest it, and pages compound. You
+literally<00:10:33.160><c> wake</c><00:10:33.480><c> up</c><00:10:33.680><c> smarter.</c><00:10:34.400><c> Pick</c><00:10:34.560><c> a</c><00:10:34.640><c> topic,</c>
+
+00:10:35.230 --> 00:10:35.240 align:start position:0%
+literally wake up smarter. Pick a topic,
+ 
+
+00:10:35.240 --> 00:10:37.830 align:start position:0%
+literally wake up smarter. Pick a topic,
+connect<00:10:35.640><c> a</c><00:10:35.720><c> source</c><00:10:36.040><c> of</c><00:10:36.160><c> truth</c><00:10:36.560><c> with</c><00:10:36.760><c> an</c><00:10:36.840><c> MCP,</c>
+
+00:10:37.830 --> 00:10:37.840 align:start position:0%
+connect a source of truth with an MCP,
+ 
+
+00:10:37.840 --> 00:10:39.910 align:start position:0%
+connect a source of truth with an MCP,
+and<00:10:38.040><c> schedule</c><00:10:38.600><c> a</c><00:10:38.680><c> farmer</c><00:10:39.240><c> and</c><00:10:39.440><c> the</c><00:10:39.520><c> wiki</c>
+
+00:10:39.910 --> 00:10:39.920 align:start position:0%
+and schedule a farmer and the wiki
+ 
+
+00:10:39.920 --> 00:10:41.670 align:start position:0%
+and schedule a farmer and the wiki
+handles<00:10:40.360><c> the</c><00:10:40.440><c> rest.</c><00:10:40.880><c> This</c><00:10:41.040><c> was</c><00:10:41.160><c> a</c><00:10:41.200><c> super</c><00:10:41.480><c> quick</c>
+
+00:10:41.670 --> 00:10:41.680 align:start position:0%
+handles the rest. This was a super quick
+ 
+
+00:10:41.680 --> 00:10:43.270 align:start position:0%
+handles the rest. This was a super quick
+setup<00:10:41.960><c> guide,</c><00:10:42.160><c> but</c><00:10:42.280><c> if</c><00:10:42.400><c> you</c><00:10:42.520><c> want</c><00:10:42.680><c> a</c><00:10:42.800><c> full</c>
+
+00:10:43.270 --> 00:10:43.280 align:start position:0%
+setup guide, but if you want a full
+ 
+
+00:10:43.280 --> 00:10:45.110 align:start position:0%
+setup guide, but if you want a full
+breakdown,<00:10:43.800><c> there's</c><00:10:43.960><c> a</c><00:10:44.000><c> setup</c><00:10:44.360><c> guide</c><00:10:44.760><c> linked</c>
+
+00:10:45.110 --> 00:10:45.120 align:start position:0%
+breakdown, there's a setup guide linked
+ 
+
+00:10:45.120 --> 00:10:46.670 align:start position:0%
+breakdown, there's a setup guide linked
+at<00:10:45.200><c> the</c><00:10:45.280><c> description</c><00:10:45.840><c> below,</c><00:10:46.160><c> as</c><00:10:46.360><c> well</c><00:10:46.480><c> as</c><00:10:46.600><c> a</c>
+
+00:10:46.670 --> 00:10:46.680 align:start position:0%
+at the description below, as well as a
+ 
+
+00:10:46.680 --> 00:10:48.190 align:start position:0%
+at the description below, as well as a
+video<00:10:47.120><c> linked</c><00:10:47.400><c> here</c><00:10:47.560><c> that</c><00:10:47.760><c> walks</c><00:10:47.960><c> through</c><00:10:48.080><c> it</c>
+
+00:10:48.190 --> 00:10:48.200 align:start position:0%
+video linked here that walks through it
+ 
+
+00:10:48.200 --> 00:10:49.750 align:start position:0%
+video linked here that walks through it
+in<00:10:48.320><c> a</c><00:10:48.360><c> little</c><00:10:48.640><c> bit</c><00:10:48.800><c> more</c><00:10:49.040><c> detail.</c><00:10:49.440><c> If</c><00:10:49.520><c> you</c><00:10:49.600><c> want</c>
+
+00:10:49.750 --> 00:10:49.760 align:start position:0%
+in a little bit more detail. If you want
+ 
+
+00:10:49.760 --> 00:10:51.430 align:start position:0%
+in a little bit more detail. If you want
+help<00:10:49.920><c> deploying</c><00:10:50.440><c> this</c><00:10:50.640><c> for</c><00:10:50.720><c> your</c><00:10:50.880><c> business,</c><00:10:51.360><c> I</c>
+
+00:10:51.430 --> 00:10:51.440 align:start position:0%
+help deploying this for your business, I
+ 
+
+00:10:51.440 --> 00:10:53.310 align:start position:0%
+help deploying this for your business, I
+do<00:10:51.720><c> AI</c><00:10:52.000><c> strategy</c><00:10:52.400><c> sessions</c><00:10:52.840><c> where</c><00:10:52.960><c> I</c><00:10:53.000><c> map</c><00:10:53.200><c> the</c>
+
+00:10:53.310 --> 00:10:53.320 align:start position:0%
+do AI strategy sessions where I map the
+ 
+
+00:10:53.320 --> 00:10:54.790 align:start position:0%
+do AI strategy sessions where I map the
+whole<00:10:53.600><c> thing</c><00:10:53.840><c> to</c><00:10:53.960><c> your</c><00:10:54.120><c> stack.</c><00:10:54.440><c> Links</c><00:10:54.680><c> in</c><00:10:54.760><c> the</c>
+
+00:10:54.790 --> 00:10:54.800 align:start position:0%
+whole thing to your stack. Links in the
+ 
+
+00:10:54.800 --> 00:10:56.390 align:start position:0%
+whole thing to your stack. Links in the
+description<00:10:55.240><c> below.</c><00:10:55.640><c> I'm</c><00:10:55.760><c> also</c><00:10:56.000><c> building</c><00:10:56.320><c> a</c>
+
+00:10:56.390 --> 00:10:56.400 align:start position:0%
+description below. I'm also building a
+ 
+
+00:10:56.400 --> 00:10:58.510 align:start position:0%
+description below. I'm also building a
+marketplace<00:10:57.120><c> for</c><00:10:57.280><c> verified</c><00:10:57.960><c> Claude</c><00:10:58.280><c> code</c>
+
+00:10:58.510 --> 00:10:58.520 align:start position:0%
+marketplace for verified Claude code
+ 
+
+00:10:58.520 --> 00:11:01.150 align:start position:0%
+marketplace for verified Claude code
+skills.<00:10:59.080><c> Production-ready,</c><00:11:00.360><c> vetted</c><00:11:00.640><c> by</c><00:11:00.800><c> real</c>
+
+00:11:01.150 --> 00:11:01.160 align:start position:0%
+skills. Production-ready, vetted by real
+ 
+
+00:11:01.160 --> 00:11:02.950 align:start position:0%
+skills. Production-ready, vetted by real
+domain<00:11:01.600><c> experts.</c><00:11:02.160><c> And</c><00:11:02.240><c> if</c><00:11:02.320><c> you</c><00:11:02.400><c> want</c><00:11:02.600><c> early</c>
+
+00:11:02.950 --> 00:11:02.960 align:start position:0%
+domain experts. And if you want early
+ 
+
+00:11:02.960 --> 00:11:04.630 align:start position:0%
+domain experts. And if you want early
+access,<00:11:03.520><c> the</c><00:11:03.640><c> waitlist</c><00:11:04.120><c> link</c><00:11:04.400><c> is</c><00:11:04.520><c> in</c><00:11:04.600><c> the</c>
+
+00:11:04.630 --> 00:11:04.640 align:start position:0%
+access, the waitlist link is in the
+ 
+
+00:11:04.640 --> 00:11:06.750 align:start position:0%
+access, the waitlist link is in the
+description<00:11:05.160><c> below.</c><00:11:05.880><c> Again,</c><00:11:06.400><c> thanks</c><00:11:06.680><c> for</c>
+
+00:11:06.750 --> 00:11:06.760 align:start position:0%
+description below. Again, thanks for
+ 
+
+00:11:06.760 --> 00:11:09.240 align:start position:0%
+description below. Again, thanks for
+watching.
+

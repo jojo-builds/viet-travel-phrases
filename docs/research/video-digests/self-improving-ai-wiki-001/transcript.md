@@ -1,0 +1,353 @@
+# Transcript
+
+Source captions: `source.en-orig.vtt`
+
+- [00:00:00] Andre Karpathy's LLM Wiki is a great
+- [00:00:02] idea with one problem. You have to
+- [00:00:04] remember to update it. The moment you
+- [00:00:06] stop manually feeding it new context, it
+- [00:00:08] stops knowing anything and your new Wiki
+- [00:00:11] becomes basically useless. So, I gave it
+- [00:00:13] the ability to grow new context
+- [00:00:15] automatically. Now, it watches every app
+- [00:00:17] that I care about, pulls in new context
+- [00:00:19] on its own, and grows the Wiki without
+- [00:00:21] me ever touching it. And it's saving me
+- [00:00:23] more time than ever because it's always
+- [00:00:25] up to date. Right now, I'm going to show
+- [00:00:26] you exactly how I built this, how to set
+- [00:00:28] it up for yourself, and how to deploy
+- [00:00:30] 24/7 context farmers that are constantly
+- [00:00:33] mining your apps for data, all within
+- [00:00:35] Claude Code. Plus, I'm giving you a Wiki
+- [00:00:37] Builder skill that does the entire setup
+- [00:00:39] for you. I've set this demo up with a
+- [00:00:41] Karpathy Wiki to keep track of all of my
+- [00:00:43] favorite AI content creators, what
+- [00:00:45] they're posting, and what's getting
+- [00:00:47] results. Every creator I track has their
+- [00:00:49] own page with what they cover. There's a
+- [00:00:51] summary for all their reoccurring ideas
+- [00:00:53] and what they like to cover. I'm even
+- [00:00:55] getting all of their generated
+- [00:00:57] thumbnails and transcripts automatically
+- [00:00:59] in the raw folder. I haven't made a
+- [00:01:01] single one of these. Each creator page
+- [00:01:04] updates itself when they drop a new
+- [00:01:06] video. And at a drop of a dime, I can go
+- [00:01:08] to the graph page and search for
+- [00:01:10] anything, whether that's N8N, Claude
+- [00:01:12] Code, or absolutely anything. Each
+- [00:01:14] creator page updates itself whenever a
+- [00:01:17] new video drops. The context farmer goes
+- [00:01:19] out and grabs the transcript and the
+- [00:01:21] thumbnail, brings it in, and ingests it
+- [00:01:23] into the knowledge lab. Over time, the
+- [00:01:25] Wiki gets richer and richer, and the
+- [00:01:26] interconnected layers get stronger and
+- [00:01:28] stronger. And because it's all markdown
+- [00:01:30] in Obsidian, I can drop this into any
+- [00:01:32] Claude Code session and have full
+- [00:01:34] context whenever I'm doing my content
+- [00:01:36] planning. This Wiki grows totally
+- [00:01:38] automatically. Every day, context
+- [00:01:40] farming sub agents are adding in more
+- [00:01:42] and more videos, more relationships, and
+- [00:01:44] more knowledge. And all of this feeds
+- [00:01:46] into the content decisions I make. This
+- [00:01:47] is the type of leverage you can get when
+- [00:01:49] you remove human ingestion as the
+- [00:01:51] bottleneck to your context layer. This
+- [00:01:53] Wiki grows totally automatically. So, a
+- [00:01:55] quick recap if you haven't seen one of
+- [00:01:57] these Karpathy Wiki set up. It's just
+- [00:01:59] two folders, a raw folder and a Wiki
+- [00:02:01] folder. You drop sources into the raw
+- [00:02:03] folder, and the LLM ingests those and
+- [00:02:06] builds out Wiki pages inside of the Wiki
+- [00:02:09] folder. Inside of the Wiki folder, you
+- [00:02:10] also have an index and a log. The index
+- [00:02:13] keeps track of all of the relationships
+- [00:02:15] between all of the files, and the log
+- [00:02:17] keeps track of the updates that the LLM
+- [00:02:19] makes. So, I've got a totally fresh Wiki
+- [00:02:21] here. It's completely empty. And instead
+- [00:02:23] of manually dropping in files into raw,
+- [00:02:25] I'm going to set up what I'm calling a
+- [00:02:27] context farmer, an AI agent that
+- [00:02:29] connects to source through MCP, in this
+- [00:02:31] case Appify, and does the fetching for
+- [00:02:33] me. And we're going to start with
+- [00:02:35] YouTube. So, I've already got my context
+- [00:02:36] farmer inside of Claude Code Cloud. And
+- [00:02:39] every day at 6:00 a.m., it goes out and
+- [00:02:41] scrapes all of the channels that I'm
+- [00:02:43] interested in, finds what videos they've
+- [00:02:45] posted, pulls their transcripts, gets
+- [00:02:48] their thumbnails and their stats, and
+- [00:02:50] adds it into my raw folder, all without
+- [00:02:52] me having to do anything. So, let's run
+- [00:02:54] it now. It's going out and using a
+- [00:02:56] YouTube scraper to find all of the
+- [00:02:57] recent videos since it last ran and
+- [00:03:00] pulling them into my Karpathy Wiki. From
+- [00:03:03] there, it's adding it into the raw
+- [00:03:05] folder, and then it will ingest them
+- [00:03:07] into each of the interlinked context
+- [00:03:09] documents. And there we go. It looks
+- [00:03:11] like there's been two new videos posted
+- [00:03:13] today, and it's pulling those into the
+- [00:03:14] raw folder now. Now, watch what happens.
+- [00:03:16] The context farmer is about to go in and
+- [00:03:18] create the interlinked pages, assigning
+- [00:03:20] each of the new videos to the creator
+- [00:03:22] that posted them, updating the index
+- [00:03:24] file and the log file, and automatically
+- [00:03:26] growing the Wiki so I know more and more
+- [00:03:28] about what content is being posted about
+- [00:03:30] AI on YouTube. So, now the LLM is
+- [00:03:32] reading through all of the transcripts
+- [00:03:33] and the thumbnails and building out
+- [00:03:35] pages inside of my Obsidian Wiki. It's
+- [00:03:38] pushing the updates to GitHub because
+- [00:03:39] this is a cloud context scraper, and my
+- [00:03:41] Obsidian will automatically pull those
+- [00:03:43] updates to my local machine so I can use
+- [00:03:45] them with Claude Code. So, Claude has
+- [00:03:47] created two new video pages, one for a
+- [00:03:49] video by Nate Herck and another one from
+- [00:03:51] Nate B. Jones. And now that the context
+- [00:03:53] farmers have made the changes inside of
+- [00:03:54] GitHub, the Obsidian Git plugin is
+- [00:03:57] automatically pulling those changes down
+- [00:03:59] to my local machine. I can go to the
+- [00:04:00] Nate Herck page inside of Obsidian, go
+- [00:04:03] scroll down, that his most recent video
+- [00:04:05] has been automatically linked. I can
+- [00:04:07] even click through to that and see all
+- [00:04:09] of the details about his plugin video
+- [00:04:11] that he just posted. I can even go to my
+- [00:04:13] graph page, and now these nodes are
+- [00:04:15] automatically connected. And here's the
+- [00:04:16] really important part. Tomorrow, when
+- [00:04:18] the farmer runs again and pulls new
+- [00:04:20] videos, the Wiki doesn't start over. It
+- [00:04:22] updates. If someone drops a follow-up
+- [00:04:24] video on that topic, that page gets
+- [00:04:26] richer. New connections form and the
+- [00:04:28] whole thing compounds over time. I'll
+- [00:04:30] even show you how powerful this is when
+- [00:04:32] you pair the Wiki with Claude Code. I
+- [00:04:34] have the Wiki open up in my Claude Code,
+- [00:04:35] and I'm going to ask it, "What was the
+- [00:04:37] most recent videos that were posted by
+- [00:04:39] Nate Herck, and what topics did it
+- [00:04:40] cover? Has this topic been covered by
+- [00:04:42] anyone else inside of your Wiki?" I can
+- [00:04:45] ask ad hoc queries of this context layer
+- [00:04:47] at any time. This is so important for me
+- [00:04:50] when I'm doing my content research
+- [00:04:52] because that way I can see what's
+- [00:04:53] already being covered, how people are
+- [00:04:55] talking about certain features, and all
+- [00:04:57] of this feeds into my content. And I can
+- [00:04:59] see that Nate Herck posted a video about
+- [00:05:01] a new Claude plugin called Superpowers.
+- [00:05:03] I can see all of the other videos from
+- [00:05:05] the creators that I'm tracking that
+- [00:05:07] reference similar types of content, and
+- [00:05:09] I can get that all at the touch of a
+- [00:05:10] button inside of Claude Code. I can even
+- [00:05:13] ask it about new topics like Claude
+- [00:05:14] managed agents, which was just recently
+- [00:05:16] released. What are people saying about
+- [00:05:18] Claude managed agents? And just like
+- [00:05:20] that, I can get the two perspectives of
+- [00:05:22] videos that have been posted about
+- [00:05:23] managed agents, one by Nate Herck and
+- [00:05:25] another one by Nick. And Claude's
+- [00:05:26] already analyzing how each creator is
+- [00:05:28] covering the topic and where the gaps
+- [00:05:30] might be. So, that's what I'm calling
+- [00:05:31] context farming. And here's the key
+- [00:05:33] insights that makes this work.
+- [00:05:35] Karpathy's whole thing is that LLMs have
+- [00:05:37] bad taste. They can't tell you what's
+- [00:05:39] worth reading. And he's right. You don't
+- [00:05:40] want an AI randomly scraping the
+- [00:05:42] internet and dumping garbage into your
+- [00:05:44] knowledge base. That's how you end up
+- [00:05:45] with a Wiki full of noise. But there's a
+- [00:05:47] difference between selecting sources and
+- [00:05:49] fetching them. Selecting is the taste
+- [00:05:51] part, the human job. You decide, "I
+- [00:05:52] trust this YouTube channel or this Slack
+- [00:05:54] workspace matters." That's the judgment
+- [00:05:56] and curation, and you only do that once.
+- [00:05:59] But once you've made that call,
+- [00:06:00] everything after is just fetching. It's
+- [00:06:02] pulling the latest video, grabbing the
+- [00:06:04] transcript, checking new messages, and
+- [00:06:06] that's not taste. That's a cron job. And
+- [00:06:08] that's what context farmers handle. So,
+- [00:06:10] you keep the human creation that
+- [00:06:11] Karpathy's right about, but you stop
+- [00:06:13] doing the manual grunt work that kills
+- [00:06:15] every Wiki. Anything with an MCP
+- [00:06:17] connector can become a source, whether
+- [00:06:18] that's Slack, Fireflies, YouTube,
+- [00:06:21] Notion, or whatever. You pick the
+- [00:06:22] sources, set up a farmer for each one,
+- [00:06:24] and schedule it, and the Wiki just stays
+- [00:06:26] fed. So, that's AI YouTube, but here's
+- [00:06:28] where it's actually going to get
+- [00:06:29] interesting. This pattern works for
+- [00:06:31] literally anything that has an MCP
+- [00:06:33] connector. For instance, business
+- [00:06:34] context. I set up a farmer on my Slack
+- [00:06:37] channels and my Fireflies meeting
+- [00:06:39] transcripts, and now the Wiki just
+- [00:06:40] briefs me. Customer renewals, project
+- [00:06:42] status, decisions that got made in
+- [00:06:44] meetings that I wasn't even on. I walked
+- [00:06:46] into a customer call the other day fully
+- [00:06:48] prepared, and I hadn't read a single
+- [00:06:50] Slack message. If you want to see how
+- [00:06:51] that whole thing works step by step, I
+- [00:06:53] actually did a full video on it, and
+- [00:06:54] I'll link it here. Or even research. You
+- [00:06:57] could set up a farmer that scrapes for
+- [00:06:58] new papers in whatever field you're in.
+- [00:07:00] Claude reads them, builds concept pages,
+- [00:07:02] and tracks who's publishing what. And
+- [00:07:03] it'll even flag when new findings
+- [00:07:05] contradict stuff that's already in the
+- [00:07:07] Wiki. Or how about competitive analysis?
+- [00:07:09] Farmers on your competitors' blogs,
+- [00:07:11] their social accounts, and their job
+- [00:07:13] posting. You end up with a Wiki that's
+- [00:07:15] just tracking their moves for you. The
+- [00:07:16] pattern is always the same though. Okay.
+- [00:07:19] So, one thing you're probably thinking
+- [00:07:20] is that if your farmer is running on
+- [00:07:22] your laptop, then your laptop has to be
+- [00:07:23] open, right? And yeah, that does work.
+- [00:07:26] But if you want to get this thing
+- [00:07:26] running while you sleep, you need
+- [00:07:28] somewhere for your context layer to
+- [00:07:30] live. And that's where GitHub comes in.
+- [00:07:32] The Wiki lives in a private GitHub repo.
+- [00:07:35] Claude hooks auto commit and auto push
+- [00:07:37] every time a farmer drops new files into
+- [00:07:40] raw. So, the Wiki is always synced to
+- [00:07:41] the cloud, and anyone you give access to
+- [00:07:44] can pull from it. So, it's not just your
+- [00:07:45] Wiki anymore, it's everyone in your
+- [00:07:47] organization's Wiki. And then for
+- [00:07:48] scheduling, Claude Code has built-in
+- [00:07:50] scheduled agents. You can set a time,
+- [00:07:53] give it the farm prompt, and it runs on
+- [00:07:55] Anthropic's infrastructure. It clones
+- [00:07:56] your repo, runs the farmer using an MCP
+- [00:07:59] connection, and commits the new sources
+- [00:08:01] and pushes, all in the cloud. So, here's
+- [00:08:03] my setup. I have my YouTube farmer
+- [00:08:05] running at 6:00 a.m. every day. I have
+- [00:08:07] my Slack farmer running at 6:30 and the
+- [00:08:09] Fireflies farmer running at 7:00. That's
+- [00:08:11] why every morning when I log in, I have
+- [00:08:13] new context sitting in raw ready to
+- [00:08:15] digest. And it doesn't matter if my
+- [00:08:17] laptop was overnight. My context layer
+- [00:08:19] just keeps getting smarter and smarter
+- [00:08:21] every time it runs. Now, if you've got
+- [00:08:23] farmers that use local tools like any
+- [00:08:25] type of CLI or custom pet scripts, you
+- [00:08:27] can schedule them from Claude Code
+- [00:08:29] desktop as well. You just need to go to
+- [00:08:30] the new local task button, and that task
+- [00:08:33] will now run on your machine. The only
+- [00:08:35] caveat is that your laptop needs to be
+- [00:08:36] on for them to run. Just think about
+- [00:08:38] this for a second. If you have a Wiki
+- [00:08:40] that tracks everything happening in your
+- [00:08:41] industry, and another one tracking your
+- [00:08:43] competitors, you might even have one
+- [00:08:44] tracking your customers. You begin to
+- [00:08:46] have a fully enriched context layer
+- [00:08:48] across everything that you're interested
+- [00:08:50] in. And all of them are running without
+- [00:08:52] you touching everything. Every MCP
+- [00:08:54] connector and every app becomes a
+- [00:08:55] potential source for context, and there
+- [00:08:57] are hundreds of them in the connectors
+- [00:08:59] tab inside of Claude. Okay. So, if you
+- [00:09:01] want to set this up for yourself, I
+- [00:09:02] actually built a Claude Code skill that
+- [00:09:04] does the whole thing for you, and the
+- [00:09:05] link's in the description. It's totally
+- [00:09:07] free. All you have to do is just install
+- [00:09:09] the skill into your dot Claude folder
+- [00:09:11] inside of your repo. You tell it what
+- [00:09:13] you want, and Claude will actually build
+- [00:09:15] out the Wiki custom for your
+- [00:09:16] requirements, whatever you need. It'll
+- [00:09:18] ask a few questions, figure out the
+- [00:09:20] right sources, and all of that goes into
+- [00:09:22] your Karpathy Wiki. It even builds the
+- [00:09:24] context farmers for each source and
+- [00:09:26] wires them up for scheduling. You don't
+- [00:09:27] have to do any of it yourself. I'd also
+- [00:09:29] recommend opening up the Wiki inside of
+- [00:09:31] Obsidian. It's optional, but honestly,
+- [00:09:33] the graph view and the backlinks are
+- [00:09:35] totally worth it. And then, you've got a
+- [00:09:37] choice. You can run your farmers
+- [00:09:38] locally, which is fine for getting
+- [00:09:40] started, or you can schedule them to run
+- [00:09:42] as always-on in the cloud. The skill
+- [00:09:44] walks you through either path. I want to
+- [00:09:46] build a Wiki for keeping track of all of
+- [00:09:48] my favorite creators on YouTube. I want
+- [00:09:51] to provide you a few channels, and then
+- [00:09:53] from there, you'll set up a context
+- [00:09:55] farmer, which will go and find those
+- [00:09:57] YouTube channels new videos every single
+- [00:09:59] day and then fold them into the wiki as
+- [00:10:01] well.
+- [00:10:03] I want to use Appify for the context
+- [00:10:04] farmer. The skill is trained on
+- [00:10:06] Kapathy's LLM wiki framework and it
+- [00:10:08] talks you through everything that you
+- [00:10:09] need to get started. You can select the
+- [00:10:11] full build, the wiki and farmers, or
+- [00:10:13] just the wiki. I always go for the full
+- [00:10:15] build because that way I can set up my
+- [00:10:16] context farmers to run in the cloud. And
+- [00:10:18] then you've got a choice. You can run
+- [00:10:20] the farmers locally, which is fine for
+- [00:10:21] getting started, or you can schedule
+- [00:10:23] them to run always on in the cloud. The
+- [00:10:25] skill walks you through either path. And
+- [00:10:27] then just let it run. Every day your
+- [00:10:29] farmer pulls new context, the wiki
+- [00:10:30] ingest it, and pages compound. You
+- [00:10:32] literally wake up smarter. Pick a topic,
+- [00:10:35] connect a source of truth with an MCP,
+- [00:10:37] and schedule a farmer and the wiki
+- [00:10:39] handles the rest. This was a super quick
+- [00:10:41] setup guide, but if you want a full
+- [00:10:43] breakdown, there's a setup guide linked
+- [00:10:45] at the description below, as well as a
+- [00:10:46] video linked here that walks through it
+- [00:10:48] in a little bit more detail. If you want
+- [00:10:49] help deploying this for your business, I
+- [00:10:51] do AI strategy sessions where I map the
+- [00:10:53] whole thing to your stack. Links in the
+- [00:10:54] description below. I'm also building a
+- [00:10:56] marketplace for verified Claude code
+- [00:10:58] skills. Production-ready, vetted by real
+- [00:11:01] domain experts. And if you want early
+- [00:11:02] access, the waitlist link is in the
+- [00:11:04] description below. Again, thanks for
+- [00:11:06] watching.

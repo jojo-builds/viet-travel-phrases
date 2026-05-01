@@ -1,0 +1,1747 @@
+[
+  {
+    "start": "00:00:00.000",
+    "end": "00:00:02.470",
+    "text": "Andre Karpathy's LLM Wiki is a great"
+  },
+  {
+    "start": "00:00:02.480",
+    "end": "00:00:04.510",
+    "text": "idea with one problem. You have to"
+  },
+  {
+    "start": "00:00:04.520",
+    "end": "00:00:06.310",
+    "text": "remember to update it. The moment you"
+  },
+  {
+    "start": "00:00:06.320",
+    "end": "00:00:08.710",
+    "text": "stop manually feeding it new context, it"
+  },
+  {
+    "start": "00:00:08.720",
+    "end": "00:00:11.110",
+    "text": "stops knowing anything and your new Wiki"
+  },
+  {
+    "start": "00:00:11.120",
+    "end": "00:00:13.590",
+    "text": "becomes basically useless. So, I gave it"
+  },
+  {
+    "start": "00:00:13.600",
+    "end": "00:00:15.390",
+    "text": "the ability to grow new context"
+  },
+  {
+    "start": "00:00:15.400",
+    "end": "00:00:17.390",
+    "text": "automatically. Now, it watches every app"
+  },
+  {
+    "start": "00:00:17.400",
+    "end": "00:00:19.550",
+    "text": "that I care about, pulls in new context"
+  },
+  {
+    "start": "00:00:19.560",
+    "end": "00:00:21.430",
+    "text": "on its own, and grows the Wiki without"
+  },
+  {
+    "start": "00:00:21.440",
+    "end": "00:00:23.110",
+    "text": "me ever touching it. And it's saving me"
+  },
+  {
+    "start": "00:00:23.120",
+    "end": "00:00:25.190",
+    "text": "more time than ever because it's always"
+  },
+  {
+    "start": "00:00:25.200",
+    "end": "00:00:26.630",
+    "text": "up to date. Right now, I'm going to show"
+  },
+  {
+    "start": "00:00:26.640",
+    "end": "00:00:28.670",
+    "text": "you exactly how I built this, how to set"
+  },
+  {
+    "start": "00:00:28.680",
+    "end": "00:00:30.550",
+    "text": "it up for yourself, and how to deploy"
+  },
+  {
+    "start": "00:00:30.560",
+    "end": "00:00:33.390",
+    "text": "24/7 context farmers that are constantly"
+  },
+  {
+    "start": "00:00:33.400",
+    "end": "00:00:35.390",
+    "text": "mining your apps for data, all within"
+  },
+  {
+    "start": "00:00:35.400",
+    "end": "00:00:37.390",
+    "text": "Claude Code. Plus, I'm giving you a Wiki"
+  },
+  {
+    "start": "00:00:37.400",
+    "end": "00:00:39.630",
+    "text": "Builder skill that does the entire setup"
+  },
+  {
+    "start": "00:00:39.640",
+    "end": "00:00:41.510",
+    "text": "for you. I've set this demo up with a"
+  },
+  {
+    "start": "00:00:41.520",
+    "end": "00:00:43.630",
+    "text": "Karpathy Wiki to keep track of all of my"
+  },
+  {
+    "start": "00:00:43.640",
+    "end": "00:00:45.350",
+    "text": "favorite AI content creators, what"
+  },
+  {
+    "start": "00:00:45.360",
+    "end": "00:00:47.110",
+    "text": "they're posting, and what's getting"
+  },
+  {
+    "start": "00:00:47.120",
+    "end": "00:00:49.430",
+    "text": "results. Every creator I track has their"
+  },
+  {
+    "start": "00:00:49.440",
+    "end": "00:00:51.150",
+    "text": "own page with what they cover. There's a"
+  },
+  {
+    "start": "00:00:51.160",
+    "end": "00:00:53.670",
+    "text": "summary for all their reoccurring ideas"
+  },
+  {
+    "start": "00:00:53.680",
+    "end": "00:00:55.590",
+    "text": "and what they like to cover. I'm even"
+  },
+  {
+    "start": "00:00:55.600",
+    "end": "00:00:57.430",
+    "text": "getting all of their generated"
+  },
+  {
+    "start": "00:00:57.440",
+    "end": "00:00:59.790",
+    "text": "thumbnails and transcripts automatically"
+  },
+  {
+    "start": "00:00:59.800",
+    "end": "00:01:01.550",
+    "text": "in the raw folder. I haven't made a"
+  },
+  {
+    "start": "00:01:01.560",
+    "end": "00:01:04.189",
+    "text": "single one of these. Each creator page"
+  },
+  {
+    "start": "00:01:04.199",
+    "end": "00:01:06.190",
+    "text": "updates itself when they drop a new"
+  },
+  {
+    "start": "00:01:06.200",
+    "end": "00:01:08.590",
+    "text": "video. And at a drop of a dime, I can go"
+  },
+  {
+    "start": "00:01:08.600",
+    "end": "00:01:10.390",
+    "text": "to the graph page and search for"
+  },
+  {
+    "start": "00:01:10.400",
+    "end": "00:01:12.670",
+    "text": "anything, whether that's N8N, Claude"
+  },
+  {
+    "start": "00:01:12.680",
+    "end": "00:01:14.750",
+    "text": "Code, or absolutely anything. Each"
+  },
+  {
+    "start": "00:01:14.760",
+    "end": "00:01:17.190",
+    "text": "creator page updates itself whenever a"
+  },
+  {
+    "start": "00:01:17.200",
+    "end": "00:01:19.350",
+    "text": "new video drops. The context farmer goes"
+  },
+  {
+    "start": "00:01:19.360",
+    "end": "00:01:21.190",
+    "text": "out and grabs the transcript and the"
+  },
+  {
+    "start": "00:01:21.200",
+    "end": "00:01:23.510",
+    "text": "thumbnail, brings it in, and ingests it"
+  },
+  {
+    "start": "00:01:23.520",
+    "end": "00:01:25.310",
+    "text": "into the knowledge lab. Over time, the"
+  },
+  {
+    "start": "00:01:25.320",
+    "end": "00:01:26.950",
+    "text": "Wiki gets richer and richer, and the"
+  },
+  {
+    "start": "00:01:26.960",
+    "end": "00:01:28.590",
+    "text": "interconnected layers get stronger and"
+  },
+  {
+    "start": "00:01:28.600",
+    "end": "00:01:30.630",
+    "text": "stronger. And because it's all markdown"
+  },
+  {
+    "start": "00:01:30.640",
+    "end": "00:01:32.830",
+    "text": "in Obsidian, I can drop this into any"
+  },
+  {
+    "start": "00:01:32.840",
+    "end": "00:01:34.590",
+    "text": "Claude Code session and have full"
+  },
+  {
+    "start": "00:01:34.600",
+    "end": "00:01:36.430",
+    "text": "context whenever I'm doing my content"
+  },
+  {
+    "start": "00:01:36.440",
+    "end": "00:01:38.230",
+    "text": "planning. This Wiki grows totally"
+  },
+  {
+    "start": "00:01:38.240",
+    "end": "00:01:40.230",
+    "text": "automatically. Every day, context"
+  },
+  {
+    "start": "00:01:40.240",
+    "end": "00:01:42.150",
+    "text": "farming sub agents are adding in more"
+  },
+  {
+    "start": "00:01:42.160",
+    "end": "00:01:44.310",
+    "text": "and more videos, more relationships, and"
+  },
+  {
+    "start": "00:01:44.320",
+    "end": "00:01:46.030",
+    "text": "more knowledge. And all of this feeds"
+  },
+  {
+    "start": "00:01:46.040",
+    "end": "00:01:47.870",
+    "text": "into the content decisions I make. This"
+  },
+  {
+    "start": "00:01:47.880",
+    "end": "00:01:49.670",
+    "text": "is the type of leverage you can get when"
+  },
+  {
+    "start": "00:01:49.680",
+    "end": "00:01:51.670",
+    "text": "you remove human ingestion as the"
+  },
+  {
+    "start": "00:01:51.680",
+    "end": "00:01:53.350",
+    "text": "bottleneck to your context layer. This"
+  },
+  {
+    "start": "00:01:53.360",
+    "end": "00:01:55.550",
+    "text": "Wiki grows totally automatically. So, a"
+  },
+  {
+    "start": "00:01:55.560",
+    "end": "00:01:57.230",
+    "text": "quick recap if you haven't seen one of"
+  },
+  {
+    "start": "00:01:57.240",
+    "end": "00:01:59.470",
+    "text": "these Karpathy Wiki set up. It's just"
+  },
+  {
+    "start": "00:01:59.480",
+    "end": "00:02:01.870",
+    "text": "two folders, a raw folder and a Wiki"
+  },
+  {
+    "start": "00:02:01.880",
+    "end": "00:02:03.950",
+    "text": "folder. You drop sources into the raw"
+  },
+  {
+    "start": "00:02:03.960",
+    "end": "00:02:06.750",
+    "text": "folder, and the LLM ingests those and"
+  },
+  {
+    "start": "00:02:06.760",
+    "end": "00:02:09.230",
+    "text": "builds out Wiki pages inside of the Wiki"
+  },
+  {
+    "start": "00:02:09.240",
+    "end": "00:02:10.790",
+    "text": "folder. Inside of the Wiki folder, you"
+  },
+  {
+    "start": "00:02:10.800",
+    "end": "00:02:13.270",
+    "text": "also have an index and a log. The index"
+  },
+  {
+    "start": "00:02:13.280",
+    "end": "00:02:14.990",
+    "text": "keeps track of all of the relationships"
+  },
+  {
+    "start": "00:02:15.000",
+    "end": "00:02:17.310",
+    "text": "between all of the files, and the log"
+  },
+  {
+    "start": "00:02:17.320",
+    "end": "00:02:19.590",
+    "text": "keeps track of the updates that the LLM"
+  },
+  {
+    "start": "00:02:19.600",
+    "end": "00:02:21.750",
+    "text": "makes. So, I've got a totally fresh Wiki"
+  },
+  {
+    "start": "00:02:21.760",
+    "end": "00:02:23.590",
+    "text": "here. It's completely empty. And instead"
+  },
+  {
+    "start": "00:02:23.600",
+    "end": "00:02:25.870",
+    "text": "of manually dropping in files into raw,"
+  },
+  {
+    "start": "00:02:25.880",
+    "end": "00:02:27.230",
+    "text": "I'm going to set up what I'm calling a"
+  },
+  {
+    "start": "00:02:27.240",
+    "end": "00:02:29.390",
+    "text": "context farmer, an AI agent that"
+  },
+  {
+    "start": "00:02:29.400",
+    "end": "00:02:31.710",
+    "text": "connects to source through MCP, in this"
+  },
+  {
+    "start": "00:02:31.720",
+    "end": "00:02:33.910",
+    "text": "case Appify, and does the fetching for"
+  },
+  {
+    "start": "00:02:33.920",
+    "end": "00:02:35.230",
+    "text": "me. And we're going to start with"
+  },
+  {
+    "start": "00:02:35.240",
+    "end": "00:02:36.830",
+    "text": "YouTube. So, I've already got my context"
+  },
+  {
+    "start": "00:02:36.840",
+    "end": "00:02:39.310",
+    "text": "farmer inside of Claude Code Cloud. And"
+  },
+  {
+    "start": "00:02:39.320",
+    "end": "00:02:41.830",
+    "text": "every day at 6:00 a.m., it goes out and"
+  },
+  {
+    "start": "00:02:41.840",
+    "end": "00:02:43.710",
+    "text": "scrapes all of the channels that I'm"
+  },
+  {
+    "start": "00:02:43.720",
+    "end": "00:02:45.870",
+    "text": "interested in, finds what videos they've"
+  },
+  {
+    "start": "00:02:45.880",
+    "end": "00:02:48.110",
+    "text": "posted, pulls their transcripts, gets"
+  },
+  {
+    "start": "00:02:48.120",
+    "end": "00:02:50.230",
+    "text": "their thumbnails and their stats, and"
+  },
+  {
+    "start": "00:02:50.240",
+    "end": "00:02:52.230",
+    "text": "adds it into my raw folder, all without"
+  },
+  {
+    "start": "00:02:52.240",
+    "end": "00:02:54.310",
+    "text": "me having to do anything. So, let's run"
+  },
+  {
+    "start": "00:02:54.320",
+    "end": "00:02:56.150",
+    "text": "it now. It's going out and using a"
+  },
+  {
+    "start": "00:02:56.160",
+    "end": "00:02:57.950",
+    "text": "YouTube scraper to find all of the"
+  },
+  {
+    "start": "00:02:57.960",
+    "end": "00:03:00.470",
+    "text": "recent videos since it last ran and"
+  },
+  {
+    "start": "00:03:00.480",
+    "end": "00:03:03.710",
+    "text": "pulling them into my Karpathy Wiki. From"
+  },
+  {
+    "start": "00:03:03.720",
+    "end": "00:03:05.190",
+    "text": "there, it's adding it into the raw"
+  },
+  {
+    "start": "00:03:05.200",
+    "end": "00:03:07.390",
+    "text": "folder, and then it will ingest them"
+  },
+  {
+    "start": "00:03:07.400",
+    "end": "00:03:09.790",
+    "text": "into each of the interlinked context"
+  },
+  {
+    "start": "00:03:09.800",
+    "end": "00:03:11.230",
+    "text": "documents. And there we go. It looks"
+  },
+  {
+    "start": "00:03:11.240",
+    "end": "00:03:12.990",
+    "text": "like there's been two new videos posted"
+  },
+  {
+    "start": "00:03:13.000",
+    "end": "00:03:14.710",
+    "text": "today, and it's pulling those into the"
+  },
+  {
+    "start": "00:03:14.720",
+    "end": "00:03:16.510",
+    "text": "raw folder now. Now, watch what happens."
+  },
+  {
+    "start": "00:03:16.520",
+    "end": "00:03:18.670",
+    "text": "The context farmer is about to go in and"
+  },
+  {
+    "start": "00:03:18.680",
+    "end": "00:03:20.750",
+    "text": "create the interlinked pages, assigning"
+  },
+  {
+    "start": "00:03:20.760",
+    "end": "00:03:22.470",
+    "text": "each of the new videos to the creator"
+  },
+  {
+    "start": "00:03:22.480",
+    "end": "00:03:24.310",
+    "text": "that posted them, updating the index"
+  },
+  {
+    "start": "00:03:24.320",
+    "end": "00:03:26.590",
+    "text": "file and the log file, and automatically"
+  },
+  {
+    "start": "00:03:26.600",
+    "end": "00:03:28.630",
+    "text": "growing the Wiki so I know more and more"
+  },
+  {
+    "start": "00:03:28.640",
+    "end": "00:03:30.310",
+    "text": "about what content is being posted about"
+  },
+  {
+    "start": "00:03:30.320",
+    "end": "00:03:31.990",
+    "text": "AI on YouTube. So, now the LLM is"
+  },
+  {
+    "start": "00:03:32.000",
+    "end": "00:03:33.590",
+    "text": "reading through all of the transcripts"
+  },
+  {
+    "start": "00:03:33.600",
+    "end": "00:03:35.270",
+    "text": "and the thumbnails and building out"
+  },
+  {
+    "start": "00:03:35.280",
+    "end": "00:03:38.030",
+    "text": "pages inside of my Obsidian Wiki. It's"
+  },
+  {
+    "start": "00:03:38.040",
+    "end": "00:03:39.590",
+    "text": "pushing the updates to GitHub because"
+  },
+  {
+    "start": "00:03:39.600",
+    "end": "00:03:41.750",
+    "text": "this is a cloud context scraper, and my"
+  },
+  {
+    "start": "00:03:41.760",
+    "end": "00:03:43.310",
+    "text": "Obsidian will automatically pull those"
+  },
+  {
+    "start": "00:03:43.320",
+    "end": "00:03:45.470",
+    "text": "updates to my local machine so I can use"
+  },
+  {
+    "start": "00:03:45.480",
+    "end": "00:03:47.110",
+    "text": "them with Claude Code. So, Claude has"
+  },
+  {
+    "start": "00:03:47.120",
+    "end": "00:03:49.310",
+    "text": "created two new video pages, one for a"
+  },
+  {
+    "start": "00:03:49.320",
+    "end": "00:03:51.430",
+    "text": "video by Nate Herck and another one from"
+  },
+  {
+    "start": "00:03:51.440",
+    "end": "00:03:53.150",
+    "text": "Nate B. Jones. And now that the context"
+  },
+  {
+    "start": "00:03:53.160",
+    "end": "00:03:54.870",
+    "text": "farmers have made the changes inside of"
+  },
+  {
+    "start": "00:03:54.880",
+    "end": "00:03:57.070",
+    "text": "GitHub, the Obsidian Git plugin is"
+  },
+  {
+    "start": "00:03:57.080",
+    "end": "00:03:59.030",
+    "text": "automatically pulling those changes down"
+  },
+  {
+    "start": "00:03:59.040",
+    "end": "00:04:00.750",
+    "text": "to my local machine. I can go to the"
+  },
+  {
+    "start": "00:04:00.760",
+    "end": "00:04:03.430",
+    "text": "Nate Herck page inside of Obsidian, go"
+  },
+  {
+    "start": "00:04:03.440",
+    "end": "00:04:05.390",
+    "text": "scroll down, that his most recent video"
+  },
+  {
+    "start": "00:04:05.400",
+    "end": "00:04:07.150",
+    "text": "has been automatically linked. I can"
+  },
+  {
+    "start": "00:04:07.160",
+    "end": "00:04:09.030",
+    "text": "even click through to that and see all"
+  },
+  {
+    "start": "00:04:09.040",
+    "end": "00:04:10.990",
+    "text": "of the details about his plugin video"
+  },
+  {
+    "start": "00:04:11.000",
+    "end": "00:04:13.070",
+    "text": "that he just posted. I can even go to my"
+  },
+  {
+    "start": "00:04:13.080",
+    "end": "00:04:15.070",
+    "text": "graph page, and now these nodes are"
+  },
+  {
+    "start": "00:04:15.080",
+    "end": "00:04:16.830",
+    "text": "automatically connected. And here's the"
+  },
+  {
+    "start": "00:04:16.840",
+    "end": "00:04:18.590",
+    "text": "really important part. Tomorrow, when"
+  },
+  {
+    "start": "00:04:18.600",
+    "end": "00:04:20.229",
+    "text": "the farmer runs again and pulls new"
+  },
+  {
+    "start": "00:04:20.239",
+    "end": "00:04:22.670",
+    "text": "videos, the Wiki doesn't start over. It"
+  },
+  {
+    "start": "00:04:22.680",
+    "end": "00:04:24.590",
+    "text": "updates. If someone drops a follow-up"
+  },
+  {
+    "start": "00:04:24.600",
+    "end": "00:04:26.590",
+    "text": "video on that topic, that page gets"
+  },
+  {
+    "start": "00:04:26.600",
+    "end": "00:04:28.470",
+    "text": "richer. New connections form and the"
+  },
+  {
+    "start": "00:04:28.480",
+    "end": "00:04:30.190",
+    "text": "whole thing compounds over time. I'll"
+  },
+  {
+    "start": "00:04:30.200",
+    "end": "00:04:32.350",
+    "text": "even show you how powerful this is when"
+  },
+  {
+    "start": "00:04:32.360",
+    "end": "00:04:33.990",
+    "text": "you pair the Wiki with Claude Code. I"
+  },
+  {
+    "start": "00:04:34.000",
+    "end": "00:04:35.790",
+    "text": "have the Wiki open up in my Claude Code,"
+  },
+  {
+    "start": "00:04:35.800",
+    "end": "00:04:37.270",
+    "text": "and I'm going to ask it, \"What was the"
+  },
+  {
+    "start": "00:04:37.280",
+    "end": "00:04:39.150",
+    "text": "most recent videos that were posted by"
+  },
+  {
+    "start": "00:04:39.160",
+    "end": "00:04:40.870",
+    "text": "Nate Herck, and what topics did it"
+  },
+  {
+    "start": "00:04:40.880",
+    "end": "00:04:42.830",
+    "text": "cover? Has this topic been covered by"
+  },
+  {
+    "start": "00:04:42.840",
+    "end": "00:04:45.350",
+    "text": "anyone else inside of your Wiki?\" I can"
+  },
+  {
+    "start": "00:04:45.360",
+    "end": "00:04:47.870",
+    "text": "ask ad hoc queries of this context layer"
+  },
+  {
+    "start": "00:04:47.880",
+    "end": "00:04:50.750",
+    "text": "at any time. This is so important for me"
+  },
+  {
+    "start": "00:04:50.760",
+    "end": "00:04:52.150",
+    "text": "when I'm doing my content research"
+  },
+  {
+    "start": "00:04:52.160",
+    "end": "00:04:53.710",
+    "text": "because that way I can see what's"
+  },
+  {
+    "start": "00:04:53.720",
+    "end": "00:04:55.470",
+    "text": "already being covered, how people are"
+  },
+  {
+    "start": "00:04:55.480",
+    "end": "00:04:57.350",
+    "text": "talking about certain features, and all"
+  },
+  {
+    "start": "00:04:57.360",
+    "end": "00:04:59.950",
+    "text": "of this feeds into my content. And I can"
+  },
+  {
+    "start": "00:04:59.960",
+    "end": "00:05:01.790",
+    "text": "see that Nate Herck posted a video about"
+  },
+  {
+    "start": "00:05:01.800",
+    "end": "00:05:03.950",
+    "text": "a new Claude plugin called Superpowers."
+  },
+  {
+    "start": "00:05:03.960",
+    "end": "00:05:05.670",
+    "text": "I can see all of the other videos from"
+  },
+  {
+    "start": "00:05:05.680",
+    "end": "00:05:07.030",
+    "text": "the creators that I'm tracking that"
+  },
+  {
+    "start": "00:05:07.040",
+    "end": "00:05:09.230",
+    "text": "reference similar types of content, and"
+  },
+  {
+    "start": "00:05:09.240",
+    "end": "00:05:10.950",
+    "text": "I can get that all at the touch of a"
+  },
+  {
+    "start": "00:05:10.960",
+    "end": "00:05:13.030",
+    "text": "button inside of Claude Code. I can even"
+  },
+  {
+    "start": "00:05:13.040",
+    "end": "00:05:14.910",
+    "text": "ask it about new topics like Claude"
+  },
+  {
+    "start": "00:05:14.920",
+    "end": "00:05:16.550",
+    "text": "managed agents, which was just recently"
+  },
+  {
+    "start": "00:05:16.560",
+    "end": "00:05:18.350",
+    "text": "released. What are people saying about"
+  },
+  {
+    "start": "00:05:18.360",
+    "end": "00:05:20.310",
+    "text": "Claude managed agents? And just like"
+  },
+  {
+    "start": "00:05:20.320",
+    "end": "00:05:22.070",
+    "text": "that, I can get the two perspectives of"
+  },
+  {
+    "start": "00:05:22.080",
+    "end": "00:05:23.270",
+    "text": "videos that have been posted about"
+  },
+  {
+    "start": "00:05:23.280",
+    "end": "00:05:25.070",
+    "text": "managed agents, one by Nate Herck and"
+  },
+  {
+    "start": "00:05:25.080",
+    "end": "00:05:26.670",
+    "text": "another one by Nick. And Claude's"
+  },
+  {
+    "start": "00:05:26.680",
+    "end": "00:05:28.830",
+    "text": "already analyzing how each creator is"
+  },
+  {
+    "start": "00:05:28.840",
+    "end": "00:05:30.390",
+    "text": "covering the topic and where the gaps"
+  },
+  {
+    "start": "00:05:30.400",
+    "end": "00:05:31.670",
+    "text": "might be. So, that's what I'm calling"
+  },
+  {
+    "start": "00:05:31.680",
+    "end": "00:05:33.430",
+    "text": "context farming. And here's the key"
+  },
+  {
+    "start": "00:05:33.440",
+    "end": "00:05:34.990",
+    "text": "insights that makes this work."
+  },
+  {
+    "start": "00:05:35.000",
+    "end": "00:05:37.190",
+    "text": "Karpathy's whole thing is that LLMs have"
+  },
+  {
+    "start": "00:05:37.200",
+    "end": "00:05:38.990",
+    "text": "bad taste. They can't tell you what's"
+  },
+  {
+    "start": "00:05:39.000",
+    "end": "00:05:40.750",
+    "text": "worth reading. And he's right. You don't"
+  },
+  {
+    "start": "00:05:40.760",
+    "end": "00:05:42.430",
+    "text": "want an AI randomly scraping the"
+  },
+  {
+    "start": "00:05:42.440",
+    "end": "00:05:44.190",
+    "text": "internet and dumping garbage into your"
+  },
+  {
+    "start": "00:05:44.200",
+    "end": "00:05:45.710",
+    "text": "knowledge base. That's how you end up"
+  },
+  {
+    "start": "00:05:45.720",
+    "end": "00:05:47.190",
+    "text": "with a Wiki full of noise. But there's a"
+  },
+  {
+    "start": "00:05:47.200",
+    "end": "00:05:49.030",
+    "text": "difference between selecting sources and"
+  },
+  {
+    "start": "00:05:49.040",
+    "end": "00:05:51.070",
+    "text": "fetching them. Selecting is the taste"
+  },
+  {
+    "start": "00:05:51.080",
+    "end": "00:05:52.870",
+    "text": "part, the human job. You decide, \"I"
+  },
+  {
+    "start": "00:05:52.880",
+    "end": "00:05:54.950",
+    "text": "trust this YouTube channel or this Slack"
+  },
+  {
+    "start": "00:05:54.960",
+    "end": "00:05:56.790",
+    "text": "workspace matters.\" That's the judgment"
+  },
+  {
+    "start": "00:05:56.800",
+    "end": "00:05:59.150",
+    "text": "and curation, and you only do that once."
+  },
+  {
+    "start": "00:05:59.160",
+    "end": "00:06:00.910",
+    "text": "But once you've made that call,"
+  },
+  {
+    "start": "00:06:00.920",
+    "end": "00:06:02.790",
+    "text": "everything after is just fetching. It's"
+  },
+  {
+    "start": "00:06:02.800",
+    "end": "00:06:04.350",
+    "text": "pulling the latest video, grabbing the"
+  },
+  {
+    "start": "00:06:04.360",
+    "end": "00:06:06.350",
+    "text": "transcript, checking new messages, and"
+  },
+  {
+    "start": "00:06:06.360",
+    "end": "00:06:08.230",
+    "text": "that's not taste. That's a cron job. And"
+  },
+  {
+    "start": "00:06:08.240",
+    "end": "00:06:10.110",
+    "text": "that's what context farmers handle. So,"
+  },
+  {
+    "start": "00:06:10.120",
+    "end": "00:06:11.670",
+    "text": "you keep the human creation that"
+  },
+  {
+    "start": "00:06:11.680",
+    "end": "00:06:13.350",
+    "text": "Karpathy's right about, but you stop"
+  },
+  {
+    "start": "00:06:13.360",
+    "end": "00:06:15.310",
+    "text": "doing the manual grunt work that kills"
+  },
+  {
+    "start": "00:06:15.320",
+    "end": "00:06:17.350",
+    "text": "every Wiki. Anything with an MCP"
+  },
+  {
+    "start": "00:06:17.360",
+    "end": "00:06:18.910",
+    "text": "connector can become a source, whether"
+  },
+  {
+    "start": "00:06:18.920",
+    "end": "00:06:21.150",
+    "text": "that's Slack, Fireflies, YouTube,"
+  },
+  {
+    "start": "00:06:21.160",
+    "end": "00:06:22.670",
+    "text": "Notion, or whatever. You pick the"
+  },
+  {
+    "start": "00:06:22.680",
+    "end": "00:06:24.830",
+    "text": "sources, set up a farmer for each one,"
+  },
+  {
+    "start": "00:06:24.840",
+    "end": "00:06:26.830",
+    "text": "and schedule it, and the Wiki just stays"
+  },
+  {
+    "start": "00:06:26.840",
+    "end": "00:06:28.870",
+    "text": "fed. So, that's AI YouTube, but here's"
+  },
+  {
+    "start": "00:06:28.880",
+    "end": "00:06:29.830",
+    "text": "where it's actually going to get"
+  },
+  {
+    "start": "00:06:29.840",
+    "end": "00:06:31.550",
+    "text": "interesting. This pattern works for"
+  },
+  {
+    "start": "00:06:31.560",
+    "end": "00:06:33.550",
+    "text": "literally anything that has an MCP"
+  },
+  {
+    "start": "00:06:33.560",
+    "end": "00:06:34.910",
+    "text": "connector. For instance, business"
+  },
+  {
+    "start": "00:06:34.920",
+    "end": "00:06:37.230",
+    "text": "context. I set up a farmer on my Slack"
+  },
+  {
+    "start": "00:06:37.240",
+    "end": "00:06:39.030",
+    "text": "channels and my Fireflies meeting"
+  },
+  {
+    "start": "00:06:39.040",
+    "end": "00:06:40.750",
+    "text": "transcripts, and now the Wiki just"
+  },
+  {
+    "start": "00:06:40.760",
+    "end": "00:06:42.470",
+    "text": "briefs me. Customer renewals, project"
+  },
+  {
+    "start": "00:06:42.480",
+    "end": "00:06:44.350",
+    "text": "status, decisions that got made in"
+  },
+  {
+    "start": "00:06:44.360",
+    "end": "00:06:46.310",
+    "text": "meetings that I wasn't even on. I walked"
+  },
+  {
+    "start": "00:06:46.320",
+    "end": "00:06:48.110",
+    "text": "into a customer call the other day fully"
+  },
+  {
+    "start": "00:06:48.120",
+    "end": "00:06:50.030",
+    "text": "prepared, and I hadn't read a single"
+  },
+  {
+    "start": "00:06:50.040",
+    "end": "00:06:51.630",
+    "text": "Slack message. If you want to see how"
+  },
+  {
+    "start": "00:06:51.640",
+    "end": "00:06:53.510",
+    "text": "that whole thing works step by step, I"
+  },
+  {
+    "start": "00:06:53.520",
+    "end": "00:06:54.950",
+    "text": "actually did a full video on it, and"
+  },
+  {
+    "start": "00:06:54.960",
+    "end": "00:06:57.070",
+    "text": "I'll link it here. Or even research. You"
+  },
+  {
+    "start": "00:06:57.080",
+    "end": "00:06:58.630",
+    "text": "could set up a farmer that scrapes for"
+  },
+  {
+    "start": "00:06:58.640",
+    "end": "00:07:00.350",
+    "text": "new papers in whatever field you're in."
+  },
+  {
+    "start": "00:07:00.360",
+    "end": "00:07:02.310",
+    "text": "Claude reads them, builds concept pages,"
+  },
+  {
+    "start": "00:07:02.320",
+    "end": "00:07:03.830",
+    "text": "and tracks who's publishing what. And"
+  },
+  {
+    "start": "00:07:03.840",
+    "end": "00:07:05.630",
+    "text": "it'll even flag when new findings"
+  },
+  {
+    "start": "00:07:05.640",
+    "end": "00:07:07.430",
+    "text": "contradict stuff that's already in the"
+  },
+  {
+    "start": "00:07:07.440",
+    "end": "00:07:09.590",
+    "text": "Wiki. Or how about competitive analysis?"
+  },
+  {
+    "start": "00:07:09.600",
+    "end": "00:07:11.670",
+    "text": "Farmers on your competitors' blogs,"
+  },
+  {
+    "start": "00:07:11.680",
+    "end": "00:07:13.270",
+    "text": "their social accounts, and their job"
+  },
+  {
+    "start": "00:07:13.280",
+    "end": "00:07:15.030",
+    "text": "posting. You end up with a Wiki that's"
+  },
+  {
+    "start": "00:07:15.040",
+    "end": "00:07:16.790",
+    "text": "just tracking their moves for you. The"
+  },
+  {
+    "start": "00:07:16.800",
+    "end": "00:07:19.230",
+    "text": "pattern is always the same though. Okay."
+  },
+  {
+    "start": "00:07:19.240",
+    "end": "00:07:20.710",
+    "text": "So, one thing you're probably thinking"
+  },
+  {
+    "start": "00:07:20.720",
+    "end": "00:07:22.190",
+    "text": "is that if your farmer is running on"
+  },
+  {
+    "start": "00:07:22.200",
+    "end": "00:07:23.870",
+    "text": "your laptop, then your laptop has to be"
+  },
+  {
+    "start": "00:07:23.880",
+    "end": "00:07:25.990",
+    "text": "open, right? And yeah, that does work."
+  },
+  {
+    "start": "00:07:26.000",
+    "end": "00:07:26.950",
+    "text": "But if you want to get this thing"
+  },
+  {
+    "start": "00:07:26.960",
+    "end": "00:07:28.750",
+    "text": "running while you sleep, you need"
+  },
+  {
+    "start": "00:07:28.760",
+    "end": "00:07:30.830",
+    "text": "somewhere for your context layer to"
+  },
+  {
+    "start": "00:07:30.840",
+    "end": "00:07:32.590",
+    "text": "live. And that's where GitHub comes in."
+  },
+  {
+    "start": "00:07:32.600",
+    "end": "00:07:35.470",
+    "text": "The Wiki lives in a private GitHub repo."
+  },
+  {
+    "start": "00:07:35.480",
+    "end": "00:07:37.710",
+    "text": "Claude hooks auto commit and auto push"
+  },
+  {
+    "start": "00:07:37.720",
+    "end": "00:07:40.030",
+    "text": "every time a farmer drops new files into"
+  },
+  {
+    "start": "00:07:40.040",
+    "end": "00:07:41.710",
+    "text": "raw. So, the Wiki is always synced to"
+  },
+  {
+    "start": "00:07:41.720",
+    "end": "00:07:43.990",
+    "text": "the cloud, and anyone you give access to"
+  },
+  {
+    "start": "00:07:44.000",
+    "end": "00:07:45.710",
+    "text": "can pull from it. So, it's not just your"
+  },
+  {
+    "start": "00:07:45.720",
+    "end": "00:07:47.310",
+    "text": "Wiki anymore, it's everyone in your"
+  },
+  {
+    "start": "00:07:47.320",
+    "end": "00:07:48.630",
+    "text": "organization's Wiki. And then for"
+  },
+  {
+    "start": "00:07:48.640",
+    "end": "00:07:50.870",
+    "text": "scheduling, Claude Code has built-in"
+  },
+  {
+    "start": "00:07:50.880",
+    "end": "00:07:53.150",
+    "text": "scheduled agents. You can set a time,"
+  },
+  {
+    "start": "00:07:53.160",
+    "end": "00:07:54.990",
+    "text": "give it the farm prompt, and it runs on"
+  },
+  {
+    "start": "00:07:55.000",
+    "end": "00:07:56.750",
+    "text": "Anthropic's infrastructure. It clones"
+  },
+  {
+    "start": "00:07:56.760",
+    "end": "00:07:59.310",
+    "text": "your repo, runs the farmer using an MCP"
+  },
+  {
+    "start": "00:07:59.320",
+    "end": "00:08:01.310",
+    "text": "connection, and commits the new sources"
+  },
+  {
+    "start": "00:08:01.320",
+    "end": "00:08:03.670",
+    "text": "and pushes, all in the cloud. So, here's"
+  },
+  {
+    "start": "00:08:03.680",
+    "end": "00:08:05.390",
+    "text": "my setup. I have my YouTube farmer"
+  },
+  {
+    "start": "00:08:05.400",
+    "end": "00:08:07.510",
+    "text": "running at 6:00 a.m. every day. I have"
+  },
+  {
+    "start": "00:08:07.520",
+    "end": "00:08:09.590",
+    "text": "my Slack farmer running at 6:30 and the"
+  },
+  {
+    "start": "00:08:09.600",
+    "end": "00:08:11.830",
+    "text": "Fireflies farmer running at 7:00. That's"
+  },
+  {
+    "start": "00:08:11.840",
+    "end": "00:08:13.670",
+    "text": "why every morning when I log in, I have"
+  },
+  {
+    "start": "00:08:13.680",
+    "end": "00:08:15.790",
+    "text": "new context sitting in raw ready to"
+  },
+  {
+    "start": "00:08:15.800",
+    "end": "00:08:17.430",
+    "text": "digest. And it doesn't matter if my"
+  },
+  {
+    "start": "00:08:17.440",
+    "end": "00:08:19.390",
+    "text": "laptop was overnight. My context layer"
+  },
+  {
+    "start": "00:08:19.400",
+    "end": "00:08:21.390",
+    "text": "just keeps getting smarter and smarter"
+  },
+  {
+    "start": "00:08:21.400",
+    "end": "00:08:23.230",
+    "text": "every time it runs. Now, if you've got"
+  },
+  {
+    "start": "00:08:23.240",
+    "end": "00:08:25.510",
+    "text": "farmers that use local tools like any"
+  },
+  {
+    "start": "00:08:25.520",
+    "end": "00:08:27.550",
+    "text": "type of CLI or custom pet scripts, you"
+  },
+  {
+    "start": "00:08:27.560",
+    "end": "00:08:29.110",
+    "text": "can schedule them from Claude Code"
+  },
+  {
+    "start": "00:08:29.120",
+    "end": "00:08:30.950",
+    "text": "desktop as well. You just need to go to"
+  },
+  {
+    "start": "00:08:30.960",
+    "end": "00:08:33.270",
+    "text": "the new local task button, and that task"
+  },
+  {
+    "start": "00:08:33.280",
+    "end": "00:08:35.149",
+    "text": "will now run on your machine. The only"
+  },
+  {
+    "start": "00:08:35.159",
+    "end": "00:08:36.909",
+    "text": "caveat is that your laptop needs to be"
+  },
+  {
+    "start": "00:08:36.919",
+    "end": "00:08:38.550",
+    "text": "on for them to run. Just think about"
+  },
+  {
+    "start": "00:08:38.560",
+    "end": "00:08:40.070",
+    "text": "this for a second. If you have a Wiki"
+  },
+  {
+    "start": "00:08:40.080",
+    "end": "00:08:41.750",
+    "text": "that tracks everything happening in your"
+  },
+  {
+    "start": "00:08:41.760",
+    "end": "00:08:43.510",
+    "text": "industry, and another one tracking your"
+  },
+  {
+    "start": "00:08:43.520",
+    "end": "00:08:44.910",
+    "text": "competitors, you might even have one"
+  },
+  {
+    "start": "00:08:44.920",
+    "end": "00:08:46.430",
+    "text": "tracking your customers. You begin to"
+  },
+  {
+    "start": "00:08:46.440",
+    "end": "00:08:48.590",
+    "text": "have a fully enriched context layer"
+  },
+  {
+    "start": "00:08:48.600",
+    "end": "00:08:50.470",
+    "text": "across everything that you're interested"
+  },
+  {
+    "start": "00:08:50.480",
+    "end": "00:08:51.990",
+    "text": "in. And all of them are running without"
+  },
+  {
+    "start": "00:08:52.000",
+    "end": "00:08:54.110",
+    "text": "you touching everything. Every MCP"
+  },
+  {
+    "start": "00:08:54.120",
+    "end": "00:08:55.830",
+    "text": "connector and every app becomes a"
+  },
+  {
+    "start": "00:08:55.840",
+    "end": "00:08:57.790",
+    "text": "potential source for context, and there"
+  },
+  {
+    "start": "00:08:57.800",
+    "end": "00:08:59.590",
+    "text": "are hundreds of them in the connectors"
+  },
+  {
+    "start": "00:08:59.600",
+    "end": "00:09:01.110",
+    "text": "tab inside of Claude. Okay. So, if you"
+  },
+  {
+    "start": "00:09:01.120",
+    "end": "00:09:02.390",
+    "text": "want to set this up for yourself, I"
+  },
+  {
+    "start": "00:09:02.400",
+    "end": "00:09:04.390",
+    "text": "actually built a Claude Code skill that"
+  },
+  {
+    "start": "00:09:04.400",
+    "end": "00:09:05.910",
+    "text": "does the whole thing for you, and the"
+  },
+  {
+    "start": "00:09:05.920",
+    "end": "00:09:07.470",
+    "text": "link's in the description. It's totally"
+  },
+  {
+    "start": "00:09:07.480",
+    "end": "00:09:09.310",
+    "text": "free. All you have to do is just install"
+  },
+  {
+    "start": "00:09:09.320",
+    "end": "00:09:11.550",
+    "text": "the skill into your dot Claude folder"
+  },
+  {
+    "start": "00:09:11.560",
+    "end": "00:09:13.310",
+    "text": "inside of your repo. You tell it what"
+  },
+  {
+    "start": "00:09:13.320",
+    "end": "00:09:14.990",
+    "text": "you want, and Claude will actually build"
+  },
+  {
+    "start": "00:09:15.000",
+    "end": "00:09:16.550",
+    "text": "out the Wiki custom for your"
+  },
+  {
+    "start": "00:09:16.560",
+    "end": "00:09:18.510",
+    "text": "requirements, whatever you need. It'll"
+  },
+  {
+    "start": "00:09:18.520",
+    "end": "00:09:20.110",
+    "text": "ask a few questions, figure out the"
+  },
+  {
+    "start": "00:09:20.120",
+    "end": "00:09:22.390",
+    "text": "right sources, and all of that goes into"
+  },
+  {
+    "start": "00:09:22.400",
+    "end": "00:09:24.270",
+    "text": "your Karpathy Wiki. It even builds the"
+  },
+  {
+    "start": "00:09:24.280",
+    "end": "00:09:26.190",
+    "text": "context farmers for each source and"
+  },
+  {
+    "start": "00:09:26.200",
+    "end": "00:09:27.710",
+    "text": "wires them up for scheduling. You don't"
+  },
+  {
+    "start": "00:09:27.720",
+    "end": "00:09:29.710",
+    "text": "have to do any of it yourself. I'd also"
+  },
+  {
+    "start": "00:09:29.720",
+    "end": "00:09:31.870",
+    "text": "recommend opening up the Wiki inside of"
+  },
+  {
+    "start": "00:09:31.880",
+    "end": "00:09:33.670",
+    "text": "Obsidian. It's optional, but honestly,"
+  },
+  {
+    "start": "00:09:33.680",
+    "end": "00:09:35.310",
+    "text": "the graph view and the backlinks are"
+  },
+  {
+    "start": "00:09:35.320",
+    "end": "00:09:37.270",
+    "text": "totally worth it. And then, you've got a"
+  },
+  {
+    "start": "00:09:37.280",
+    "end": "00:09:38.830",
+    "text": "choice. You can run your farmers"
+  },
+  {
+    "start": "00:09:38.840",
+    "end": "00:09:40.390",
+    "text": "locally, which is fine for getting"
+  },
+  {
+    "start": "00:09:40.400",
+    "end": "00:09:42.710",
+    "text": "started, or you can schedule them to run"
+  },
+  {
+    "start": "00:09:42.720",
+    "end": "00:09:44.630",
+    "text": "as always-on in the cloud. The skill"
+  },
+  {
+    "start": "00:09:44.640",
+    "end": "00:09:46.270",
+    "text": "walks you through either path. I want to"
+  },
+  {
+    "start": "00:09:46.280",
+    "end": "00:09:48.590",
+    "text": "build a Wiki for keeping track of all of"
+  },
+  {
+    "start": "00:09:48.600",
+    "end": "00:09:51.390",
+    "text": "my favorite creators on YouTube. I want"
+  },
+  {
+    "start": "00:09:51.400",
+    "end": "00:09:53.390",
+    "text": "to provide you a few channels, and then"
+  },
+  {
+    "start": "00:09:53.400",
+    "end": "00:09:55.110",
+    "text": "from there, you'll set up a context"
+  },
+  {
+    "start": "00:09:55.120",
+    "end": "00:09:57.430",
+    "text": "farmer, which will go and find those"
+  },
+  {
+    "start": "00:09:57.440",
+    "end": "00:09:59.870",
+    "text": "YouTube channels new videos every single"
+  },
+  {
+    "start": "00:09:59.880",
+    "end": "00:10:01.790",
+    "text": "day and then fold them into the wiki as"
+  },
+  {
+    "start": "00:10:01.800",
+    "end": "00:10:03.030",
+    "text": "well."
+  },
+  {
+    "start": "00:10:03.040",
+    "end": "00:10:04.790",
+    "text": "I want to use Appify for the context"
+  },
+  {
+    "start": "00:10:04.800",
+    "end": "00:10:06.110",
+    "text": "farmer. The skill is trained on"
+  },
+  {
+    "start": "00:10:06.120",
+    "end": "00:10:08.550",
+    "text": "Kapathy's LLM wiki framework and it"
+  },
+  {
+    "start": "00:10:08.560",
+    "end": "00:10:09.950",
+    "text": "talks you through everything that you"
+  },
+  {
+    "start": "00:10:09.960",
+    "end": "00:10:11.510",
+    "text": "need to get started. You can select the"
+  },
+  {
+    "start": "00:10:11.520",
+    "end": "00:10:13.190",
+    "text": "full build, the wiki and farmers, or"
+  },
+  {
+    "start": "00:10:13.200",
+    "end": "00:10:15.190",
+    "text": "just the wiki. I always go for the full"
+  },
+  {
+    "start": "00:10:15.200",
+    "end": "00:10:16.590",
+    "text": "build because that way I can set up my"
+  },
+  {
+    "start": "00:10:16.600",
+    "end": "00:10:18.590",
+    "text": "context farmers to run in the cloud. And"
+  },
+  {
+    "start": "00:10:18.600",
+    "end": "00:10:19.990",
+    "text": "then you've got a choice. You can run"
+  },
+  {
+    "start": "00:10:20.000",
+    "end": "00:10:21.550",
+    "text": "the farmers locally, which is fine for"
+  },
+  {
+    "start": "00:10:21.560",
+    "end": "00:10:23.270",
+    "text": "getting started, or you can schedule"
+  },
+  {
+    "start": "00:10:23.280",
+    "end": "00:10:25.470",
+    "text": "them to run always on in the cloud. The"
+  },
+  {
+    "start": "00:10:25.480",
+    "end": "00:10:27.590",
+    "text": "skill walks you through either path. And"
+  },
+  {
+    "start": "00:10:27.600",
+    "end": "00:10:29.190",
+    "text": "then just let it run. Every day your"
+  },
+  {
+    "start": "00:10:29.200",
+    "end": "00:10:30.830",
+    "text": "farmer pulls new context, the wiki"
+  },
+  {
+    "start": "00:10:30.840",
+    "end": "00:10:32.630",
+    "text": "ingest it, and pages compound. You"
+  },
+  {
+    "start": "00:10:32.640",
+    "end": "00:10:35.230",
+    "text": "literally wake up smarter. Pick a topic,"
+  },
+  {
+    "start": "00:10:35.240",
+    "end": "00:10:37.830",
+    "text": "connect a source of truth with an MCP,"
+  },
+  {
+    "start": "00:10:37.840",
+    "end": "00:10:39.910",
+    "text": "and schedule a farmer and the wiki"
+  },
+  {
+    "start": "00:10:39.920",
+    "end": "00:10:41.670",
+    "text": "handles the rest. This was a super quick"
+  },
+  {
+    "start": "00:10:41.680",
+    "end": "00:10:43.270",
+    "text": "setup guide, but if you want a full"
+  },
+  {
+    "start": "00:10:43.280",
+    "end": "00:10:45.110",
+    "text": "breakdown, there's a setup guide linked"
+  },
+  {
+    "start": "00:10:45.120",
+    "end": "00:10:46.670",
+    "text": "at the description below, as well as a"
+  },
+  {
+    "start": "00:10:46.680",
+    "end": "00:10:48.190",
+    "text": "video linked here that walks through it"
+  },
+  {
+    "start": "00:10:48.200",
+    "end": "00:10:49.750",
+    "text": "in a little bit more detail. If you want"
+  },
+  {
+    "start": "00:10:49.760",
+    "end": "00:10:51.430",
+    "text": "help deploying this for your business, I"
+  },
+  {
+    "start": "00:10:51.440",
+    "end": "00:10:53.310",
+    "text": "do AI strategy sessions where I map the"
+  },
+  {
+    "start": "00:10:53.320",
+    "end": "00:10:54.790",
+    "text": "whole thing to your stack. Links in the"
+  },
+  {
+    "start": "00:10:54.800",
+    "end": "00:10:56.390",
+    "text": "description below. I'm also building a"
+  },
+  {
+    "start": "00:10:56.400",
+    "end": "00:10:58.510",
+    "text": "marketplace for verified Claude code"
+  },
+  {
+    "start": "00:10:58.520",
+    "end": "00:11:01.150",
+    "text": "skills. Production-ready, vetted by real"
+  },
+  {
+    "start": "00:11:01.160",
+    "end": "00:11:02.950",
+    "text": "domain experts. And if you want early"
+  },
+  {
+    "start": "00:11:02.960",
+    "end": "00:11:04.630",
+    "text": "access, the waitlist link is in the"
+  },
+  {
+    "start": "00:11:04.640",
+    "end": "00:11:06.750",
+    "text": "description below. Again, thanks for"
+  },
+  {
+    "start": "00:11:06.760",
+    "end": "00:11:09.240",
+    "text": "watching."
+  }
+]
