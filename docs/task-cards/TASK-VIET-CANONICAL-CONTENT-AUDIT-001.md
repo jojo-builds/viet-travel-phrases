@@ -31,6 +31,19 @@ Jojo's standard for all phrase pages:
 - generated copy should not quietly degrade accepted flagship pages such as
   `Xin chào`.
 
+Critical content stance:
+
+- the generator is allowed to compile authored/reasoned content into app
+  resources, SQLite, and practice decks;
+- the generator must not be treated as the creative author of final
+  user-facing page copy;
+- broad template or fallback patterns are audit failures, even if they pass
+  structural validators;
+- when a page is flagged as pattern-heavy or generic, repair the source with
+  phrase-specific, traveler-forward reasoning whenever safe;
+- do not mark a page as passing merely because a generator can produce a
+  grammatically complete page.
+
 Source truth to preserve:
 
 - `docs/V2_CONTENT_MODEL.md`
@@ -56,6 +69,11 @@ Jojo review. The goal is not to rewrite everything for the sake of rewriting; th
 goal is to catch pages that feel thin, incoherent, generic, awkward, robotic,
 wrongly ordered, not travel-forward, not beginner-friendly, or not useful as a
 learning page.
+
+Treat "AI reasoning" and "generated slop" as different things. AI-assisted
+authoring is acceptable when the worker reasons through the page, writes
+phrase-specific copy into durable source data, and preserves a page-level audit
+record. Template fallback copy is not acceptable as the final quality bar.
 
 Per-page reasoning should be saved as structured artifacts, not pasted into one
 huge Markdown wall. A JSONL or CSV audit table is appropriate if it includes
@@ -102,6 +120,12 @@ Safe repairs may include:
   better option obvious;
 - fixing duplicate canonical collisions in source data when the intended
   canonical page is clear.
+
+When broad pattern-heavy copy is found, do not only patch the generator pattern.
+Use the generator fix to prevent future drift, then rewrite the affected
+user-facing source pages where the correct traveler-friendly meaning is clear.
+If the correct page-specific rewrite is uncertain, save the proposed rewrite and
+reason in the remaining-review list instead of shipping a shallow fallback.
 
 Do not treat validator pass as proof of content quality. The worker must read and
 reason about the page content itself.
