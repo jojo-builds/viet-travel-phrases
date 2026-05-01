@@ -210,7 +210,6 @@ struct HeroMastheadImage: View {
                 .scaledToFill()
                 .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
                 .offset(y: PhrasePageStyle.heroImageVerticalOffset)
-                .clipped()
                 .overlay(alignment: .bottom) {
                     LinearGradient(
                         colors: [
