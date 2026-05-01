@@ -41,7 +41,7 @@
         {
           "id": "food-1-piece-3",
           "vietnamese": "phần",
-          "english": "specific detail",
+          "english": "portion",
           "audioKey": "breakdown-food-1-piece-4"
         },
         {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Cho tôi một phần for \"One portion please\" when you need the listener to catch the point quickly. Use this for a simple food order while pointing. Pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Use Cho tôi một phần as your first sentence for \"One portion please\". Use this for a simple food order while pointing. Leave a short pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "food-1",
@@ -74,13 +74,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"One portion please\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"One portion please\", Cho tôi một phần helps by putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Cho tôi một phần strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "In Food & Drink, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Cho tôi một phần once, pause, and watch for the reply before adding another sentence. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-1",

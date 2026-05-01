@@ -29,7 +29,7 @@
         {
           "id": "help-2-piece-1",
           "vietnamese": "Gọi",
-          "english": "name or place detail",
+          "english": "call",
           "audioKey": "breakdown-hotel-9-first"
         },
         {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Gọi khách sạn giúp tôi for \"Please call the hotel for me\" when you need the listener to catch the point quickly. This is for when you need local help contacting your hotel fast. Pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Use Gọi khách sạn giúp tôi as your first sentence for \"Please call the hotel for me\". This is for when you need local help contacting your hotel fast. Leave a short pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "help-2",
@@ -74,13 +74,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. For \"Please call the hotel for me\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Help phrases work when they name the problem and the next person or action you need. For \"Please call the hotel for me\", Gọi khách sạn giúp tôi helps by putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Problems & Help, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Gọi khách sạn giúp tôi strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "In Problems & Help, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Gọi khách sạn giúp tôi once, pause, and watch for the reply before adding another sentence. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-1",

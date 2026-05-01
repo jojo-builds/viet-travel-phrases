@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-v500-time-date-book-where-is-the-line",
+  "familyID": "v500-time-date-book-where-is-the-line",
+  "phraseID": "v500-time-date-book-where-is-the-line",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Đường dây ở đâu?",
+  "englishTitle": "Where is the line?",
+  "pronunciation": "Duong day o dau",
+  "summary": "Where is the line?",
+  "iconName": "calendar",
+  "tintName": "teal",
+  "categoryIDs": [
+    "time-dates-booking",
+    "v500-time-date-book-where-is-the-line",
+    "premium"
+  ],
+  "audioKey": "v500-time-date-book-where-is-the-line",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Đường dây ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names line in a compact way, so a local can point, give a landmark, or send you to the right counter."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Keep it short: Đường dây ở đâu?. Show your booking screen, ticket, calendar, time, line, or confirmation message, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "phrases": [
+        {
+          "id": "v500-time-date-book-where-is-the-line",
+          "vietnamese": "Đường dây ở đâu?",
+          "english": "Where is the line?",
+          "pronunciation": "Duong day o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "v500-time-date-book-where-is-the-line"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Đường dây",
+          "english": "names what you are looking for",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "ở đâu",
+          "english": "asks where",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Đường dây ở đâu?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Where is the line? to another time, date, or booking need.",
+      "phrases": [
+        {
+          "id": "time-1",
+          "vietnamese": "Mấy giờ?",
+          "english": "What time?",
+          "pronunciation": "may zyuh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-1",
+          "audioKey": "time-1"
+        },
+        {
+          "id": "time-2",
+          "vietnamese": "Hôm nay",
+          "english": "Today",
+          "pronunciation": "hom nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-2",
+          "audioKey": "time-2"
+        },
+        {
+          "id": "time-3",
+          "vietnamese": "Sáng mai",
+          "english": "Tomorrow morning",
+          "pronunciation": "sahng mai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-3",
+          "audioKey": "time-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you are already in the general area but need the final direction. It fits ticket desk, hotel desk, tour meeting point, station, or reservation conversation, especially when line can be pointed to on a map, sign, booking, or nearby landmark."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Đường dây ở đâu?.",
+      "phrases": [
+        {
+          "id": "time-4",
+          "vietnamese": "Tôi có đặt chỗ",
+          "english": "I have a booking",
+          "pronunciation": "toy koh dat choh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-4",
+          "audioKey": "time-4"
+        },
+        {
+          "id": "time-5",
+          "vietnamese": "Mấy giờ mở cửa?",
+          "english": "What time does it open?",
+          "pronunciation": "may zyuh muh koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-5",
+          "audioKey": "time-5"
+        },
+        {
+          "id": "time-6",
+          "vietnamese": "Dời lại muộn hơn được không?",
+          "english": "Can we move it later?",
+          "pronunciation": "zoy lie moon hun dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-6",
+          "audioKey": "time-6"
+        },
+        {
+          "id": "time-7",
+          "vietnamese": "Mấy giờ bắt đầu lên máy bay?",
+          "english": "What time does boarding start?",
+          "pronunciation": "may zyuh bat dow len mai bai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-7",
+          "audioKey": "time-7"
+        },
+        {
+          "id": "v500-time-date-book-is-there-a-wait",
+          "vietnamese": "Có chờ đợi không?",
+          "english": "Is there a wait?",
+          "pronunciation": "Co cho doi khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-v500-time-date-book-is-there-a-wait",
+          "audioKey": "v500-time-date-book-is-there-a-wait"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-time-date-book-where-is-the-line",
+      "vietnamese": "Đường dây ở đâu?",
+      "english": "Where is the line?",
+      "pronunciation": "Duong day o dau",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "v500-time-date-book-where-is-the-line"
+    }
+  ]
+}

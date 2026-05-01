@@ -35,19 +35,19 @@
         {
           "id": "hotel-more-supplies-paper-piece-2",
           "vietnamese": "thêm",
-          "english": "specific detail",
+          "english": "more / add",
           "audioKey": "breakdown-v900-hote-acco-how-much-is-one-extra-night-first"
         },
         {
           "id": "hotel-more-supplies-paper-piece-3",
           "vietnamese": "giấy",
-          "english": "specific detail",
+          "english": "paper",
           "audioKey": "breakdown-v900-emer-safe-i-need-a-temporary-travel-document-piece-3"
         },
         {
           "id": "hotel-more-supplies-paper-piece-4",
           "vietnamese": "vệ",
-          "english": "ticket",
+          "english": "clean / sanitary",
           "audioKey": "breakdown-authored-ve-5592bb10cb"
         },
         {
@@ -98,7 +98,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, locals often answer with a yes/no answer, a gesture toward the item, or a short alternative rather than a long explanation. That makes Cho tôi thêm giấy vệ sinh được không? strongest when you say it once, pause, and let the other person show the next step. Show the booking, ticket, room number, or time on your phone when the exact detail matters.",
+      "body": "In Hotel Accommodation, the reply often comes as a yes/no answer, a gesture toward the item, or a short alternative. Say Cho tôi thêm giấy vệ sinh được không? once, pause, and watch for the reply before adding another sentence. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
       "phrases": [
         {
           "id": "hotel-6",

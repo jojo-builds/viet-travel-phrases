@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-v900-time-date-book-great-see-you-then",
+  "familyID": "v900-time-date-book-great-see-you-then",
+  "phraseID": "v900-time-date-book-great-see-you-then",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Tuyệt vời, gặp bạn sau nhé",
+  "englishTitle": "Great, see you then",
+  "pronunciation": "Tuyet voi gap ban sau nhe",
+  "summary": "Great, see you then",
+  "iconName": "calendar",
+  "tintName": "teal",
+  "categoryIDs": [
+    "time-dates-booking",
+    "v900-time-date-book-great-see-you-then",
+    "premium"
+  ],
+  "audioKey": "v900-time-date-book-great-see-you-then",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tuyệt vời, gặp bạn sau nhé is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when Great, see you then is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Tuyệt vời, gặp bạn sau nhé. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v900-time-date-book-great-see-you-then",
+          "vietnamese": "Tuyệt vời, gặp bạn sau nhé",
+          "english": "Great, see you then",
+          "pronunciation": "Tuyet voi gap ban sau nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "v900-time-date-book-great-see-you-then"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tuyệt vời, gặp",
+          "english": "starts the phrase",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "bạn sau nhé",
+          "english": "finishes Great, see you then",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Tuyệt vời, gặp bạn sau nhé",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Great, see you then to another time, date, or booking need.",
+      "phrases": [
+        {
+          "id": "time-1",
+          "vietnamese": "Mấy giờ?",
+          "english": "What time?",
+          "pronunciation": "may zyuh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-1",
+          "audioKey": "time-1"
+        },
+        {
+          "id": "time-2",
+          "vietnamese": "Hôm nay",
+          "english": "Today",
+          "pronunciation": "hom nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-2",
+          "audioKey": "time-2"
+        },
+        {
+          "id": "time-3",
+          "vietnamese": "Sáng mai",
+          "english": "Tomorrow morning",
+          "pronunciation": "sahng mai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-3",
+          "audioKey": "time-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real time, date, or booking exchange when great, see you then is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tuyệt vời, gặp bạn sau nhé.",
+      "phrases": [
+        {
+          "id": "time-4",
+          "vietnamese": "Tôi có đặt chỗ",
+          "english": "I have a booking",
+          "pronunciation": "toy koh dat choh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-4",
+          "audioKey": "time-4"
+        },
+        {
+          "id": "time-5",
+          "vietnamese": "Mấy giờ mở cửa?",
+          "english": "What time does it open?",
+          "pronunciation": "may zyuh muh koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-5",
+          "audioKey": "time-5"
+        },
+        {
+          "id": "time-6",
+          "vietnamese": "Dời lại muộn hơn được không?",
+          "english": "Can we move it later?",
+          "pronunciation": "zoy lie moon hun dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-6",
+          "audioKey": "time-6"
+        },
+        {
+          "id": "time-7",
+          "vietnamese": "Mấy giờ bắt đầu lên máy bay?",
+          "english": "What time does boarding start?",
+          "pronunciation": "may zyuh bat dow len mai bai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-7",
+          "audioKey": "time-7"
+        },
+        {
+          "id": "v500-time-date-book-is-there-a-wait",
+          "vietnamese": "Có chờ đợi không?",
+          "english": "Is there a wait?",
+          "pronunciation": "Co cho doi khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-v500-time-date-book-is-there-a-wait",
+          "audioKey": "v500-time-date-book-is-there-a-wait"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-time-date-book-great-see-you-then",
+      "vietnamese": "Tuyệt vời, gặp bạn sau nhé",
+      "english": "Great, see you then",
+      "pronunciation": "Tuyet voi gap ban sau nhe",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "v900-time-date-book-great-see-you-then"
+    }
+  ]
+}

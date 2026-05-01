@@ -1505,6 +1505,12 @@ function main() {
       normalized_spoken_text: normalizeText(entry.text),
       source_manifest_key: key,
     }));
+  const audioAssetIDByNormalizedText = new Map();
+  for (const row of audioAssetRows) {
+    if (!audioAssetIDByNormalizedText.has(row.normalized_spoken_text)) {
+      audioAssetIDByNormalizedText.set(row.normalized_spoken_text, row.id);
+    }
+  }
 
   const audioUsageRows = [];
   const missingAudioRows = [];
@@ -1521,8 +1527,17 @@ function main() {
 
   function addAudioUsage({ usageKind, targetKind, targetID, expectedText, audioKey, isPrimary, sourcePath }) {
     const normalizedExpected = normalizeText(expectedText);
-    const entry = audioManifest[audioKey];
-    const resolved = Boolean(entry && normalizeText(entry.text) === normalizedExpected);
+    let effectiveAudioKey = audioKey;
+    let entry = audioManifest[effectiveAudioKey];
+    let resolved = Boolean(entry && normalizeText(entry.text) === normalizedExpected);
+    if (!resolved) {
+      const exactReusableAudioKey = audioAssetIDByNormalizedText.get(normalizedExpected);
+      if (exactReusableAudioKey) {
+        effectiveAudioKey = exactReusableAudioKey;
+        entry = audioManifest[effectiveAudioKey];
+        resolved = Boolean(entry && normalizeText(entry.text) === normalizedExpected);
+      }
+    }
     if (!resolved) {
       const plannedMissing = plannedAudioTarget(targetKind, targetID);
       if (plannedMissing && seenPlannedMissingAudioText.has(normalizedExpected)) {
@@ -1566,7 +1581,7 @@ function main() {
     seenAudioUsageIDs.add(id);
     audioUsageRows.push({
       id,
-      audio_asset_id: audioKey,
+      audio_asset_id: effectiveAudioKey,
       usage_kind: usageKind,
       target_kind: targetKind,
       target_id: targetID,

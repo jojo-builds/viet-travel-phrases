@@ -29,25 +29,25 @@
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-1",
           "vietnamese": "ATM",
-          "english": "name or place detail",
+          "english": "ATM",
           "audioKey": "breakdown-v500-mone-numb-pric-the-atm-kept-my-card-first"
         },
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-2",
           "vietnamese": "đã",
-          "english": "specific detail",
+          "english": "already / past marker",
           "audioKey": "breakdown-v500-emer-safe-there-has-been-an-accident-first"
         },
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-3",
           "vietnamese": "giữ",
-          "english": "specific detail",
+          "english": "keep / hold",
           "audioKey": "breakdown-hotel-7-first"
         },
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-4",
           "vietnamese": "thẻ",
-          "english": "specific detail",
+          "english": "card",
           "audioKey": "breakdown-hotel-8-first"
         },
         {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with ATM đã giữ thẻ của tôi for \"The ATM kept my card\" when you need the listener to catch the point quickly. This is for when you need the number, total, fee, or payment detail to be clear before it gets worse. Pause after the phrase so the other person can answer with a number, typed amount, calculator screen, or direct yes/no about payment. Point to the place, object, or screen that gives the phrase context.",
+      "body": "Use ATM đã giữ thẻ của tôi as your first sentence for \"The ATM kept my card\". This is for when you need the number, total, fee, or payment detail to be clear before it gets worse. Leave a short pause after the phrase so the other person can answer with a number, typed amount, calculator screen, or direct yes/no about payment. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card",
@@ -86,13 +86,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"The ATM kept my card\", the useful move is making the price or amount the center of the exchange. Repeat or show the number before paying if the amount matters.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"The ATM kept my card\", ATM đã giữ thẻ của tôi helps by making the price or amount the center of the exchange. Repeat or show the number before paying if the amount matters.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Money, Numbers & Prices, locals often answer with a number, typed amount, calculator screen, or direct yes/no about payment rather than a long explanation. That makes ATM đã giữ thẻ của tôi strongest when you say it once, pause, and let the other person show the next step. Point to the place, object, or screen that gives the phrase context.",
+      "body": "In Money, Numbers & Prices, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say ATM đã giữ thẻ của tôi once, pause, and watch for the reply before adding another sentence. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-1",

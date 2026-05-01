@@ -43,6 +43,39 @@ const patternHeavyCopy = [
   { id: "stay_same_travel_lane", pattern: /Stay in the same travel lane/i },
   { id: "generic_context_object", pattern: /phone, ticket, item, or destination/i },
   { id: "small_task_generic", pattern: /small task/i },
+  { id: "helps_you_handle", pattern: /helps you handle/i },
+  { id: "keep_phrase_tied", pattern: /keep the phrase tied to/i },
+  { id: "show_thing_connected", pattern: /show the thing connected to/i },
+  { id: "show_generic_need", pattern: /Show the document, symptom, location, or item connected to the need/i },
+  { id: "generic_connected_need", pattern: /document, symptom, location, or item connected to the need/i },
+  { id: "generic_doc_symptom_place_item", pattern: /putting the exact document, symptom, place, or item into the first sentence/i },
+  { id: "generic_proof_photo_map", pattern: /Keep the related proof, photo, room number, receipt, or map location visible/i },
+  { id: "generic_document_handoff", pattern: /request for the document, a staff handoff, or a clear next action/i },
+  { id: "generic_document_problem_place", pattern: /specific document, problem, or place/i },
+  { id: "generic_most_useful_proof", pattern: /most useful proof, photo, room number, receipt, or map location/i },
+  { id: "generic_see_detail_handoff", pattern: /request to see the detail, a staff handoff, or a clear next step/i },
+  { id: "generic_not_working", pattern: /naming what is not working/i },
+  { id: "generic_replacement_room_visit", pattern: /replacement offer, a room visit/i },
+  { id: "generic_screen_room_broken_part", pattern: /Show the screen, room item, or broken part/i },
+  { id: "you_may_hear_you_ask", pattern: /You may hear You ask/i },
+  { id: "item_in_your_hand", pattern: /item in your hand/i },
+  { id: "listener_catch_point", pattern: /listener to catch the point quickly/i },
+  { id: "long_explanation", pattern: /rather than a long explanation/i },
+  { id: "show_next_step", pattern: /let the other person show the next step/i },
+  { id: "simple_anchor", pattern: /simple anchor/i },
+  { id: "concrete_item_problem", pattern: /concrete item or problem/i },
+  { id: "document_photo_problem", pattern: /document, photo, room number, receipt, or screen connected/i },
+  { id: "request_see_item_desk", pattern: /request to see the item, a direction to another desk/i },
+  { id: "short_practical_clue", pattern: /as a short practical clue/i },
+  { id: "generic_booking_ticket_room_time", pattern: /booking, ticket, room number, or time on your phone/i },
+  { id: "generic_place_object_screen", pattern: /place, object, or screen that gives the phrase context/i },
+  { id: "generic_item_menu_photo", pattern: /item, menu line, or photo so the person can connect/i },
+  { id: "practice_practical_thing", pattern: /practical thing you need someone to understand first/i },
+  { id: "practice_practical_need_first", pattern: /names the practical need first/i },
+  { id: "practice_long_explanation", pattern: /without turning it into a long explanation/i },
+  { id: "practice_anchor_word", pattern: /anchor word/i },
+  { id: "listener_catch_help", pattern: /what you need the listener to catch/i },
+  { id: "works_because_it", pattern: /works because it/i },
 ];
 
 const weakBreakdownPatterns = [
@@ -52,6 +85,13 @@ const weakBreakdownPatterns = [
   { id: "generic_action", pattern: /^action$/i },
   { id: "question_ending", pattern: /^question ending$/i },
   { id: "place_service", pattern: /^place \/ service$/i },
+  { id: "main_phrase_piece", pattern: /^main phrase piece$/i },
+  { id: "extra_detail", pattern: /^extra detail$/i },
+  { id: "main_place_or_thing", pattern: /^the main place or thing$/i },
+  { id: "specific_detail", pattern: /^specific detail$/i },
+  { id: "name_or_place_detail", pattern: /^name or place detail$/i },
+  { id: "soft_reassurance", pattern: /^soft reassurance$/i },
+  { id: "context_word", pattern: /^context word$/i },
 ];
 
 function run(command, args) {
@@ -472,6 +512,21 @@ function main() {
     duplicateCanonicalGroups,
     missingAudioRows: Number(sqliteValue("SELECT count(*) FROM missing_audio_audit;")),
     releaseBlockingMissingAudioRows: Number(sqliteValue("SELECT count(*) FROM missing_audio_audit WHERE release_blocking = 1;")),
+    missingAudioRowsWithExactReusableAssets: Number(sqliteValue(`
+      SELECT count(*)
+      FROM missing_audio_audit ma
+      JOIN audio_asset aa
+        ON aa.language_pack_id = ma.language_pack_id
+       AND aa.normalized_spoken_text = ma.normalized_expected_text;
+    `)),
+    missingAudioRowsWithExactTargetUsages: Number(sqliteValue(`
+      SELECT count(*)
+      FROM missing_audio_audit ma
+      JOIN audio_usage au
+        ON au.target_kind = ma.target_kind
+       AND au.target_id = ma.target_id
+       AND au.normalized_expected_text = ma.normalized_expected_text;
+    `)),
     sqliteReportGeneratedCounts: sqliteReport?.generatedCounts ?? null,
     verdictCounts: Object.fromEntries([...verdictCounts.entries()].sort()),
     sourceLaneCounts: Object.fromEntries([...laneCounts.entries()].sort()),
@@ -565,6 +620,8 @@ function main() {
     `- Duplicate normalized canonical Vietnamese groups: ${summary.duplicateCanonicalGroups}`,
     `- Missing audio queue rows: ${summary.missingAudioRows}`,
     `- Release-blocking missing audio rows: ${summary.releaseBlockingMissingAudioRows}`,
+    `- Missing audio rows with exact reusable assets: ${summary.missingAudioRowsWithExactReusableAssets}`,
+    `- Missing audio rows with exact target usages: ${summary.missingAudioRowsWithExactTargetUsages}`,
     "",
     "## Verdict Counts",
     "",
@@ -606,8 +663,13 @@ function main() {
 
   console.log(JSON.stringify(summary, null, 2));
 
-  if (process.argv.includes("--check") && duplicateCanonicalGroups > 0) {
-    process.exitCode = 1;
+  if (process.argv.includes("--check")) {
+    const nonPassRows = auditRows.filter((row) => row.verdict !== "PASS");
+    const releaseBlockingAudio = summary.releaseBlockingMissingAudioRows;
+    const reusableAudioQueued = summary.missingAudioRowsWithExactReusableAssets + summary.missingAudioRowsWithExactTargetUsages;
+    if (duplicateCanonicalGroups > 0 || releaseBlockingAudio > 0 || reusableAudioQueued > 0 || nonPassRows.length > 0) {
+      process.exitCode = 1;
+    }
   }
 }
 

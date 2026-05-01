@@ -29,7 +29,7 @@
         {
           "id": "money-how-much-common-piece-1",
           "vietnamese": "Cái",
-          "english": "name or place detail",
+          "english": "item / classifier",
           "audioKey": "breakdown-repair-3-first"
         },
         {
@@ -47,7 +47,7 @@
         {
           "id": "money-how-much-common-piece-4",
           "vietnamese": "tiền",
-          "english": "money",
+          "english": "money / price",
           "audioKey": "breakdown-transport-fare-first"
         },
         {
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Money, Numbers & Prices, locals often answer with a number, typed amount, calculator screen, or direct yes/no about payment rather than a long explanation. That makes Cái này nhiêu tiền? strongest when you say it once, pause, and let the other person show the next step. Point to the place, object, or screen that gives the phrase context.",
+      "body": "In Money, Numbers & Prices, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say Cái này nhiêu tiền? once, pause, and watch for the reply before adding another sentence. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-1",

@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-transport-premium-luggage-trunk",
+  "familyID": "transport-luggage-trunk",
+  "phraseID": "transport-premium-luggage-trunk",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Hành lý của tôi ở trong cốp xe.",
+  "englishTitle": "My luggage is in the trunk.",
+  "pronunciation": "Hanh ly cua toi o trong cop xe",
+  "summary": "My luggage is in the trunk.",
+  "iconName": "car.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "transport",
+    "transport-luggage-trunk",
+    "premium"
+  ],
+  "audioKey": "transport-premium-luggage-trunk",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Hành lý của tôi ở trong cốp xe. names the problem so staff or a helpful local can act on it. Use it when My luggage is in the trunk is the clearest way to explain what changed, went missing, or needs attention."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Hành lý của tôi ở trong cốp xe. calmly and show the proof if you have it: map, destination, ride screen, ticket, vehicle, or pickup point. After that, let the other person ask one follow-up or point you to the right next step.",
+      "phrases": [
+        {
+          "id": "transport-premium-luggage-trunk",
+          "vietnamese": "Hành lý của tôi ở trong cốp xe.",
+          "english": "My luggage is in the trunk.",
+          "pronunciation": "Hanh ly cua toi o trong cop xe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "transport-premium-luggage-trunk"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Hành lý của",
+          "english": "names the situation",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "tôi ở trong",
+          "english": "My luggage is in the trunk detail",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "cốp xe",
+          "english": "finishes My luggage is in the trunk",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Hành lý của tôi ở trong cốp xe.",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from My luggage is in the trunk. to another transport need.",
+      "phrases": [
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-1",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-2",
+          "audioKey": "taxi-2"
+        },
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-3",
+          "audioKey": "taxi-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Hành lý của tôi ở trong cốp xe..",
+      "phrases": [
+        {
+          "id": "transport-stop-here-clearer",
+          "vietnamese": "Cho tôi xuống ngay đây",
+          "english": "Please stop right here",
+          "pronunciation": "cho toy zoong ngay day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-transport-stop-here-clearer",
+          "audioKey": "transport-stop-here-clearer"
+        },
+        {
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-4",
+          "audioKey": "taxi-4"
+        },
+        {
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-5",
+          "audioKey": "taxi-5"
+        },
+        {
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-6",
+          "audioKey": "taxi-6"
+        },
+        {
+          "id": "taxi-7",
+          "vietnamese": "Tôi trả bằng tiền mặt",
+          "english": "I’ll pay cash",
+          "pronunciation": "toy tra bang tyen mat",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-7",
+          "audioKey": "taxi-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "transport-premium-luggage-trunk",
+      "vietnamese": "Hành lý của tôi ở trong cốp xe.",
+      "english": "My luggage is in the trunk.",
+      "pronunciation": "Hanh ly cua toi o trong cop xe",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "transport-premium-luggage-trunk"
+    }
+  ]
+}

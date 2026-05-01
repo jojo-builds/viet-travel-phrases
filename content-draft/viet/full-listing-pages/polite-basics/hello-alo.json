@@ -10,29 +10,51 @@
   "summary": "The phone hello for starting or answering a call.",
   "iconName": "phone.fill",
   "tintName": "green",
-  "categoryIDs": ["greetings", "polite-basics"],
+  "categoryIDs": [
+    "greetings",
+    "polite-basics"
+  ],
   "audioKey": "audio-phrase-alo",
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Alô is the hello you use on the phone. It is useful for hotel calls, drivers, delivery, tour guides, and anyone calling to confirm a pickup or booking. It does not replace Xin chào in person; it belongs to the phone moment."
+      "body": "Alô is a practical polite basics phrase for keeping one travel detail clear. Use it when Hello on the phone is the next detail to solve and a short answer would move the exchange forward."
     },
     {
       "id": "standard-way",
       "title": "The standard way",
       "body": "Say Alô when you answer or when you need to check whether the other person can hear you.",
       "phrases": [
-        {"id": "hello-alo", "vietnamese": "Alô", "english": "Hello on the phone", "pronunciation": "ah lo", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "audio-phrase-alo"}
+        {
+          "id": "hello-alo",
+          "vietnamese": "Alô",
+          "english": "Hello on the phone",
+          "pronunciation": "ah lo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-alo"
+        }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This is a borrowed phone word, so the key is knowing the situation, not translating it piece by piece.",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
       "breakdown": [
-        {"id": "phone-context", "vietnamese": "điện thoại", "english": "phone context", "audioKey": null},
-        {"id": "alo-full", "vietnamese": "Alô", "english": "hello, can you hear me?", "audioKey": "audio-phrase-alo"}
+        {
+          "id": "chunk-1",
+          "vietnamese": "điện thoại",
+          "english": "go / move",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "Alô",
+          "english": "full phrase",
+          "audioKey": "audio-phrase-alo"
+        }
       ]
     },
     {
@@ -40,33 +62,96 @@
       "title": "Natural phone follow-ups",
       "body": "After Alô, the next useful phrase is usually about hearing clearly or confirming identity.",
       "phrases": [
-        {"id": "repair-1", "vietnamese": "Làm ơn nói lại", "english": "Please say that again", "pronunciation": "lahm uhn noy lie", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-repair-repeat", "audioKey": "repair-1"},
-        {"id": "problems-3", "vietnamese": "Nói chậm chút được không?", "english": "Can you speak a little slower?", "pronunciation": "noy chuhm choot dook khong", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-repair-slower", "audioKey": "problems-3"},
-        {"id": "hello-da-chao-anh-chi", "vietnamese": "Dạ, chào anh/chị", "english": "Hello, sir or ma'am", "pronunciation": "yah chow anh chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-da-chao-anh-chi", "audioKey": "audio-phrase-da-chao-anh-chi"}
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-slower",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "hello-da-chao-anh-chi",
+          "vietnamese": "Dạ, chào anh/chị",
+          "english": "Hello, sir or ma'am",
+          "pronunciation": "yah chow anh chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-da-chao-anh-chi",
+          "audioKey": "audio-phrase-da-chao-anh-chi"
+        }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when answering calls, calling a hotel desk, speaking with a driver, or responding to a guide who calls before pickup."
+      "body": "Use this in a real polite basics exchange when hello on the phone is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "On the phone, a short Alô is enough to open the channel. If the call becomes confusing, move quickly to a slow-speech or repeat phrase instead of guessing."
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "These keep a phone call from getting stuck.",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Alô.",
       "phrases": [
-        {"id": "phone-1", "vietnamese": "Mật khẩu Wi-Fi là gì?", "english": "What is the Wi-Fi password?", "pronunciation": "mat khau wifi la zee", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-phone-wifi", "audioKey": "phone-1"},
-        {"id": "directions-2", "vietnamese": "Ở gần đây không?", "english": "Is it near here?", "pronunciation": "uh gun day khong", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-family-directions-near", "audioKey": "directions-2"},
-        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}
+        {
+          "id": "phone-1",
+          "vietnamese": "Mật khẩu Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "mat khau wifi la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-phone-wifi",
+          "audioKey": "phone-1"
+        },
+        {
+          "id": "directions-2",
+          "vietnamese": "Ở gần đây không?",
+          "english": "Is it near here?",
+          "pronunciation": "uh gun day khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-directions-near",
+          "audioKey": "directions-2"
+        },
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        }
       ]
     }
   ],
   "examples": [
-    {"id": "hello-alo", "vietnamese": "Alô", "english": "Hello on the phone", "pronunciation": "ah lo", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "audio-phrase-alo"}
+    {
+      "id": "hello-alo",
+      "vietnamese": "Alô",
+      "english": "Hello on the phone",
+      "pronunciation": "ah lo",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "audio-phrase-alo"
+    }
   ]
 }

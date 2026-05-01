@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v900-tran-which-bus-goes-to-the-city-center",
+  "familyID": "v900-tran-which-bus-goes-to-the-city-center",
+  "phraseID": "v900-tran-which-bus-goes-to-the-city-center",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Xe buýt nào đi vào trung tâm thành phố?",
+  "englishTitle": "Which bus goes to the city center?",
+  "pronunciation": "Xe buyt nao di vao trung tam thanh pho",
+  "summary": "Which bus goes to the city center?",
+  "iconName": "car.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "transport",
+    "v900-tran-which-bus-goes-to-the-city-center",
+    "premium"
+  ],
+  "audioKey": "v900-tran-which-bus-goes-to-the-city-center",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Xe buýt nào đi vào trung tâm thành phố? helps you choose the right option when several lines, gates, counters, sizes, or routes look similar. It asks for Which bus goes to the city center without making the other person explain everything at once."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Xe buýt nào đi vào trung tâm thành phố? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "phrases": [
+        {
+          "id": "v900-tran-which-bus-goes-to-the-city-center",
+          "vietnamese": "Xe buýt nào đi vào trung tâm thành phố?",
+          "english": "Which bus goes to the city center?",
+          "pronunciation": "Xe buyt nao di vao trung tam thanh pho",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "v900-tran-which-bus-goes-to-the-city-center"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Xe buýt nào",
+          "english": "sets up the question",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "đi vào trung",
+          "english": "go / move",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "tâm thành phố",
+          "english": "finishes Which bus goes to the city center",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Xe buýt nào đi vào trung tâm thành phố?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Which bus goes to the city center? to another transport need.",
+      "phrases": [
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-1",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-2",
+          "audioKey": "taxi-2"
+        },
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-3",
+          "audioKey": "taxi-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real transport exchange when which bus goes to the city center is the detail you need resolved. The likely reply is a choice, counter, gate, line, or direction, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Xe buýt nào đi vào trung tâm thành phố?.",
+      "phrases": [
+        {
+          "id": "transport-stop-here-clearer",
+          "vietnamese": "Cho tôi xuống ngay đây",
+          "english": "Please stop right here",
+          "pronunciation": "cho toy zoong ngay day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-transport-stop-here-clearer",
+          "audioKey": "transport-stop-here-clearer"
+        },
+        {
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-4",
+          "audioKey": "taxi-4"
+        },
+        {
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-5",
+          "audioKey": "taxi-5"
+        },
+        {
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-6",
+          "audioKey": "taxi-6"
+        },
+        {
+          "id": "taxi-7",
+          "vietnamese": "Tôi trả bằng tiền mặt",
+          "english": "I’ll pay cash",
+          "pronunciation": "toy tra bang tyen mat",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-7",
+          "audioKey": "taxi-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-tran-which-bus-goes-to-the-city-center",
+      "vietnamese": "Xe buýt nào đi vào trung tâm thành phố?",
+      "english": "Which bus goes to the city center?",
+      "pronunciation": "Xe buyt nao di vao trung tam thanh pho",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "v900-tran-which-bus-goes-to-the-city-center"
+    }
+  ]
+}

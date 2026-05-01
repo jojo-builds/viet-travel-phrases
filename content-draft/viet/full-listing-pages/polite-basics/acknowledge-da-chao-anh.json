@@ -10,31 +10,63 @@
   "summary": "Use Dạ, chào anh when you want a respectful hello for a slightly older man.",
   "iconName": "hand.wave.fill",
   "tintName": "blue",
-  "categoryIDs": ["greetings", "polite-basics"],
+  "categoryIDs": [
+    "greetings",
+    "polite-basics"
+  ],
   "audioKey": "audio-phrase-da-chao-anh",
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dạ, chào anh is warmer and more respectful than Chào anh alone. Use it for an older man, adult male staff member, driver, guide, shop helper, or hotel worker when you want the first second of the exchange to feel polite."
+      "body": "Dạ, chào anh is a practical polite basics phrase for keeping one travel detail clear. Use it when Respectful hello to an older man is the next detail to solve and a short answer would move the exchange forward."
     },
     {
       "id": "standard-way",
       "title": "The standard way",
       "body": "Say it as one smooth greeting at the start of a counter, ride, hotel, cafe, or help moment.",
       "phrases": [
-        {"id": "acknowledge-da-chao-anh", "vietnamese": "Dạ, chào anh", "english": "Respectful hello to an older man", "pronunciation": "yah chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "audio-phrase-da-chao-anh"}
+        {
+          "id": "acknowledge-da-chao-anh",
+          "vietnamese": "Dạ, chào anh",
+          "english": "Respectful hello to an older man",
+          "pronunciation": "yah chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-anh"
+        }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Dạ softens the greeting, while anh chooses the relationship.",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
       "breakdown": [
-        {"id": "da", "vietnamese": "Dạ", "english": "respectful softener", "audioKey": "polite-3"},
-        {"id": "chao", "vietnamese": "chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
-        {"id": "anh", "vietnamese": "anh", "english": "older man / older brother role", "audioKey": null},
-        {"id": "full", "vietnamese": "Dạ, chào anh", "english": "respectful hello to an older man", "audioKey": "audio-phrase-da-chao-anh"}
+        {
+          "id": "chunk-1",
+          "vietnamese": "Dạ",
+          "english": "starts the phrase",
+          "audioKey": "polite-3"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "chào",
+          "english": "Respectful hello to an older man detail",
+          "audioKey": "breakdown-chao"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "anh",
+          "english": "finishes Respectful hello to an older man",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Dạ, chào anh",
+          "english": "full phrase",
+          "audioKey": "audio-phrase-da-chao-anh"
+        }
       ]
     },
     {
@@ -42,33 +74,96 @@
       "title": "Relationship swaps",
       "body": "Keep Dạ, chào and change the relationship word when the person changes.",
       "phrases": [
-        {"id": "acknowledge-da-chao-chi", "vietnamese": "Dạ, chào chị", "english": "Respectful hello to an older woman", "pronunciation": "yah chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-da-chao-chi", "audioKey": "audio-phrase-da-chao-chi"},
-        {"id": "acknowledge-da-chao-chu", "vietnamese": "Dạ, chào chú", "english": "Respectful hello to an uncle-age man", "pronunciation": "yah chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-da-chao-chu", "audioKey": "audio-phrase-da-chao-chu"},
-        {"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-anh", "audioKey": "breakdown-viet-hello-anh-full"}
+        {
+          "id": "acknowledge-da-chao-chi",
+          "vietnamese": "Dạ, chào chị",
+          "english": "Respectful hello to an older woman",
+          "pronunciation": "yah chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-da-chao-chi",
+          "audioKey": "audio-phrase-da-chao-chi"
+        },
+        {
+          "id": "acknowledge-da-chao-chu",
+          "vietnamese": "Dạ, chào chú",
+          "english": "Respectful hello to an uncle-age man",
+          "pronunciation": "yah chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-da-chao-chu",
+          "audioKey": "audio-phrase-da-chao-chu"
+        },
+        {
+          "id": "hello-chao-anh",
+          "vietnamese": "Chào anh",
+          "english": "Hello to an older man",
+          "pronunciation": "chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-hello-chao-anh",
+          "audioKey": "breakdown-viet-hello-anh-full"
+        }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when greeting a male hotel clerk, driver, vendor, guide, clinic worker, security guard, or local helper who seems older than you or socially senior in the moment."
+      "body": "Use this in a real polite basics exchange when respectful hello to an older man is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "If you are unsure between anh and chú, anh is often safer for a not-elderly adult man. Move to chú when the person clearly feels uncle-age."
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "After this greeting, these phrases keep the service moment moving.",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Dạ, chào anh.",
       "phrases": [
-        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"},
-        {"id": "repair-english-help", "vietnamese": "Anh/chị nói tiếng Anh không?", "english": "Do you speak English?", "pronunciation": "anh chee noy tyeng anh khong", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-family-repair-english-help", "audioKey": "repair-english-help"},
-        {"id": "repair-1", "vietnamese": "Làm ơn nói lại", "english": "Please say that again", "pronunciation": "lahm uhn noy lie", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-family-repair-repeat", "audioKey": "repair-1"}
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        },
+        {
+          "id": "repair-english-help",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
+          "english": "Do you speak English?",
+          "pronunciation": "anh chee noy tyeng anh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-english-help",
+          "audioKey": "repair-english-help"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        }
       ]
     }
   ],
   "examples": [
-    {"id": "acknowledge-da-chao-anh", "vietnamese": "Dạ, chào anh", "english": "Respectful hello to an older man", "pronunciation": "yah chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "audio-phrase-da-chao-anh"}
+    {
+      "id": "acknowledge-da-chao-anh",
+      "vietnamese": "Dạ, chào anh",
+      "english": "Respectful hello to an older man",
+      "pronunciation": "yah chow anh",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "audio-phrase-da-chao-anh"
+    }
   ]
 }

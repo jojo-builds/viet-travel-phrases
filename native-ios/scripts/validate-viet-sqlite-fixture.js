@@ -38,6 +38,42 @@ const bannedPatterns = [
   /Understanding Repair/i,
   /\bDifferent ways\b/i,
   /answers the traveler question/i,
+  /helps you handle/i,
+  /keep the phrase tied to/i,
+  /show the thing connected to/i,
+  /Show the document, symptom, location, or item connected to the need/i,
+  /document, symptom, location, or item connected to the need/i,
+  /putting the exact document, symptom, place, or item into the first sentence/i,
+  /Keep the related proof, photo, room number, receipt, or map location visible/i,
+  /request for the document, a staff handoff, or a clear next action/i,
+  /specific document, problem, or place/i,
+  /most useful proof, photo, room number, receipt, or map location/i,
+  /request to see the detail, a staff handoff, or a clear next step/i,
+  /naming what is not working/i,
+  /replacement offer, a room visit/i,
+  /Show the screen, room item, or broken part/i,
+  /You may hear You ask/i,
+  /item in your hand/i,
+  /listener to catch the point quickly/i,
+  /rather than a long explanation/i,
+  /let the other person show the next step/i,
+  /simple anchor/i,
+  /concrete item or problem/i,
+  /document, photo, room number, receipt, or screen connected/i,
+  /request to see the item, a direction to another desk/i,
+  /as a short practical clue/i,
+  /booking, ticket, room number, or time on your phone/i,
+  /place, object, or screen that gives the phrase context/i,
+  /item, menu line, or photo so the person can connect/i,
+  /practical thing you need someone to understand first/i,
+  /names the practical need first/i,
+  /without turning it into a long explanation/i,
+  /anchor word/i,
+  /what you need the listener to catch/i,
+  /works because it/i,
+  /specific detail/i,
+  /name or place detail/i,
+  /soft reassurance/i,
   /question marker/i,
   /key word/i,
   /warning-callout/i,
@@ -669,7 +705,7 @@ function main() {
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM breakdown_token
-    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'question marker')
+    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'question marker', 'main phrase piece', 'extra detail', 'the main place or thing')
        OR lower(english_gloss) LIKE '%question marker%';
   `), "internal breakdown labels");
 
@@ -803,6 +839,23 @@ function main() {
     JOIN audio_asset aa ON aa.id = au.audio_asset_id
     WHERE au.normalized_expected_text != aa.normalized_spoken_text;
   `), "audio usage text mismatches");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM missing_audio_audit ma
+    JOIN audio_asset aa
+      ON aa.language_pack_id = ma.language_pack_id
+     AND aa.normalized_spoken_text = ma.normalized_expected_text;
+  `), "missing audio rows with exact reusable audio assets");
+
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM missing_audio_audit ma
+    JOIN audio_usage au
+      ON au.target_kind = ma.target_kind
+     AND au.target_id = ma.target_id
+     AND au.normalized_expected_text = ma.normalized_expected_text;
+  `), "missing audio rows with exact target audio usages");
 
   const bannedScanFiles = [
     catalogPath,

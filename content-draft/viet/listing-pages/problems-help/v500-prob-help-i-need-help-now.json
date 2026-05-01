@@ -41,13 +41,13 @@
         {
           "id": "v500-prob-help-i-need-help-now-piece-3",
           "vietnamese": "đỡ",
-          "english": "specific detail",
+          "english": "help / ease",
           "audioKey": "breakdown-v500-prob-help-i-need-help-now-piece-4"
         },
         {
           "id": "v500-prob-help-i-need-help-now-piece-4",
           "vietnamese": "bây",
-          "english": "specific detail",
+          "english": "now word",
           "audioKey": "breakdown-v500-dire-navi-is-it-open-now-first"
         },
         {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Tôi cần giúp đỡ bây giờ for \"I need help now\" when you need the listener to catch the point quickly. This is for when the trip is off track and you need another person to help solve the practical problem. Pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Use Tôi cần giúp đỡ bây giờ as your first sentence for \"I need help now\". This is for when the trip is off track and you need another person to help solve the practical problem. Leave a short pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "v500-prob-help-i-need-help-now",
@@ -86,13 +86,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. For \"I need help now\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Help phrases work when they name the problem and the next person or action you need. For \"I need help now\", Tôi cần giúp đỡ bây giờ helps by putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Problems & Help, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Tôi cần giúp đỡ bây giờ strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "In Problems & Help, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Tôi cần giúp đỡ bây giờ once, pause, and watch for the reply before adding another sentence. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-1",

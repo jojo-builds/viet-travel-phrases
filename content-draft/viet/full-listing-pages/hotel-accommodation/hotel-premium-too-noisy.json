@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-hotel-premium-too-noisy",
+  "familyID": "hotel-too-noisy",
+  "phraseID": "hotel-premium-too-noisy",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Căn phòng quá ồn ào.",
+  "englishTitle": "The room is too noisy.",
+  "pronunciation": "Can phong qua on ao",
+  "summary": "The room is too noisy.",
+  "iconName": "bed.double.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "hotel-accommodation",
+    "hotel-too-noisy",
+    "premium"
+  ],
+  "audioKey": "hotel-premium-too-noisy",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Căn phòng quá ồn ào. is a practical hotel or stay phrase for keeping one travel detail clear. Use it when room is too noisy is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Căn phòng quá ồn ào.. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "hotel-premium-too-noisy",
+          "vietnamese": "Căn phòng quá ồn ào.",
+          "english": "The room is too noisy.",
+          "pronunciation": "Can phong qua on ao",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "hotel-premium-too-noisy"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Căn phòng quá",
+          "english": "starts the phrase",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "ồn ào",
+          "english": "finishes room is too noisy",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Căn phòng quá ồn ào.",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from The room is too noisy. to another hotel or stay need.",
+      "phrases": [
+        {
+          "id": "v500-hote-acco-the-room-is-too-noisy",
+          "vietnamese": "Tôi không thể ngủ được vì quá ồn ào",
+          "english": "I cannot sleep because it is too noisy",
+          "pronunciation": "Toi khong the ngu duoc vi qua on ao",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v500-hote-acco-the-room-is-too-noisy",
+          "audioKey": "v500-hote-acco-the-room-is-too-noisy"
+        },
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-1",
+          "audioKey": "hotel-1"
+        },
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-2",
+          "audioKey": "hotel-2"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real hotel or stay exchange when room is too noisy is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Căn phòng quá ồn ào..",
+      "phrases": [
+        {
+          "id": "hotel-check-in-polite",
+          "vietnamese": "Cho tôi nhận phòng nhé",
+          "english": "I’d like to check in, please",
+          "pronunciation": "cho toy nyun fong nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-check-in-polite",
+          "audioKey": "hotel-check-in-polite"
+        },
+        {
+          "id": "hotel-3",
+          "vietnamese": "Mấy giờ trả phòng?",
+          "english": "What time is check-out?",
+          "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-3",
+          "audioKey": "hotel-3"
+        },
+        {
+          "id": "hotel-quiet-room",
+          "vietnamese": "Cho tôi phòng yên tĩnh được không?",
+          "english": "Can I have a quiet room?",
+          "pronunciation": "cho toy fong yen tinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-quiet-room",
+          "audioKey": "hotel-quiet-room"
+        },
+        {
+          "id": "hotel-checkout",
+          "vietnamese": "Cho tôi trả phòng",
+          "english": "I’d like to check out",
+          "pronunciation": "cho toy tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-checkout",
+          "audioKey": "hotel-checkout"
+        },
+        {
+          "id": "hotel-4",
+          "vietnamese": "Phòng này nóng quá",
+          "english": "This room is too hot",
+          "pronunciation": "fong nai nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-4",
+          "audioKey": "hotel-4"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "hotel-premium-too-noisy",
+      "vietnamese": "Căn phòng quá ồn ào.",
+      "english": "The room is too noisy.",
+      "pronunciation": "Can phong qua on ao",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "hotel-premium-too-noisy"
+    }
+  ]
+}

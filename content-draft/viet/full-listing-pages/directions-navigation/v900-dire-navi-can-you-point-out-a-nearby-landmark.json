@@ -1,0 +1,202 @@
+{
+  "id": "viet-phrase-v900-dire-navi-can-you-point-out-a-nearby-landmark",
+  "familyID": "v900-dire-navi-can-you-point-out-a-nearby-landmark",
+  "phraseID": "v900-dire-navi-can-you-point-out-a-nearby-landmark",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Bạn có thể chỉ ra một điểm mốc gần đó không?",
+  "englishTitle": "Can you point out a nearby landmark?",
+  "pronunciation": "Ban co the chi ra mot diem moc gan do khong",
+  "summary": "Can you point out a nearby landmark?",
+  "iconName": "location.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "directions-navigation",
+    "v900-dire-navi-can-you-point-out-a-nearby-landmark",
+    "premium"
+  ],
+  "audioKey": "v900-dire-navi-can-you-point-out-a-nearby-landmark",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Bạn có thể chỉ ra một điểm mốc gần đó không? asks someone to do one helpful action for you. Use it for point out a nearby landmark when pointing, showing your phone, or giving a document will make the request easy to understand."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Bạn có thể chỉ ra một điểm mốc gần đó không? once, then make the task visible with your map, address, ride screen, sign, or nearby landmark. The phrase is doing one job: getting a clear answer about point out a nearby landmark.",
+      "phrases": [
+        {
+          "id": "v900-dire-navi-can-you-point-out-a-nearby-landmark",
+          "vietnamese": "Bạn có thể chỉ ra một điểm mốc gần đó không?",
+          "english": "Can you point out a nearby landmark?",
+          "pronunciation": "Ban co the chi ra mot diem moc gan do khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v900-dire-navi-can-you-point-out-a-nearby-landmark"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Bạn có thể",
+          "english": "can you",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "chỉ ra một",
+          "english": "point out a nearby landmark detail",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "điểm mốc gần",
+          "english": "go / move",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "đó",
+          "english": "that one / that",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "không",
+          "english": "yes/no ending",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "Bạn có thể chỉ ra một điểm mốc gần đó không?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Can you point out a nearby landmark? to another directions need.",
+      "phrases": [
+        {
+          "id": "directions-1",
+          "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+          "english": "Excuse me, how do I get there?",
+          "pronunciation": "cho hoy dee toy doh theh nao",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-directions-1",
+          "audioKey": "directions-1"
+        },
+        {
+          "id": "directions-2",
+          "vietnamese": "Ở gần đây không?",
+          "english": "Is it near here?",
+          "pronunciation": "uh gun day khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-directions-2",
+          "audioKey": "directions-2"
+        },
+        {
+          "id": "directions-3",
+          "vietnamese": "Đi bộ mất bao lâu?",
+          "english": "How long does it take on foot?",
+          "pronunciation": "dee boh mut bao low",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-directions-3",
+          "audioKey": "directions-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real directions exchange when point out a nearby landmark is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể chỉ ra một điểm mốc gần đó không?.",
+      "phrases": [
+        {
+          "id": "directions-4",
+          "vietnamese": "Rẽ trái ở đâu?",
+          "english": "Where do I turn left?",
+          "pronunciation": "reh chai uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-directions-4",
+          "audioKey": "directions-4"
+        },
+        {
+          "id": "directions-5",
+          "vietnamese": "Tôi rẽ phải đúng không?",
+          "english": "Should I turn right?",
+          "pronunciation": "toy reh fai zoong khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-directions-5",
+          "audioKey": "directions-5"
+        },
+        {
+          "id": "directions-6",
+          "vietnamese": "Tôi đi thẳng phải không?",
+          "english": "Should I go straight?",
+          "pronunciation": "toy dee thang fai khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-directions-6",
+          "audioKey": "directions-6"
+        },
+        {
+          "id": "directions-7",
+          "vietnamese": "Cảm ơn, tôi hiểu rồi",
+          "english": "Thanks, I understand now",
+          "pronunciation": "kahm uhn toy hyew roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-directions-7",
+          "audioKey": "directions-7"
+        },
+        {
+          "id": "directions-8",
+          "vietnamese": "Điểm đón ở đâu?",
+          "english": "Where is the pickup point?",
+          "pronunciation": "deeym don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-directions-8",
+          "audioKey": "directions-8"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-dire-navi-can-you-point-out-a-nearby-landmark",
+      "vietnamese": "Bạn có thể chỉ ra một điểm mốc gần đó không?",
+      "english": "Can you point out a nearby landmark?",
+      "pronunciation": "Ban co the chi ra mot diem moc gan do khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v900-dire-navi-can-you-point-out-a-nearby-landmark"
+    }
+  ]
+}

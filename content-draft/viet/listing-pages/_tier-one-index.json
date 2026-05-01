@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-01T05:24:18.970Z",
+  "generatedAt": "2026-05-01T12:01:46.455Z",
   "source": "../../../native-ios/Resources/viet-phrase-catalog.json",
   "tierOneFamilyCount": 150,
-  "resourceMainPageCount": 144,
+  "resourceMainPageCount": 145,
   "childPageCount": 14,
   "inventory": [
     {
@@ -74,7 +74,7 @@
     {
       "familyID": "repair-meaning",
       "pageID": "viet-family-repair-meaning",
-      "coverage": "manual-swift",
+      "coverage": "authored-resource",
       "title": "Cái đó nghĩa là gì?"
     },
     {

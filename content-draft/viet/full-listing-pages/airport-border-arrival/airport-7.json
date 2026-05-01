@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-airport-7",
+  "familyID": "airport-domestic-terminal",
+  "phraseID": "airport-7",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Nhà ga nội địa ở đâu?",
+  "englishTitle": "Where is the domestic terminal?",
+  "pronunciation": "nya ga noy dee-ah uh dow",
+  "summary": "Where is the domestic terminal?",
+  "iconName": "airplane.arrival",
+  "tintName": "blue",
+  "categoryIDs": [
+    "airport-border-arrival",
+    "airport-domestic-terminal",
+    "premium"
+  ],
+  "audioKey": "airport-7",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Nhà ga nội địa ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names domestic terminal in a compact way, so a local can point, give a landmark, or send you to the right counter."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Keep it short: Nhà ga nội địa ở đâu?. Show your passport, booking, baggage tag, map, or pickup screen, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "phrases": [
+        {
+          "id": "airport-7",
+          "vietnamese": "Nhà ga nội địa ở đâu?",
+          "english": "Where is the domestic terminal?",
+          "pronunciation": "nya ga noy dee-ah uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "airport-7"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Nhà ga nội",
+          "english": "names what you are looking for",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "địa",
+          "english": "domestic terminal detail",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "ở đâu",
+          "english": "asks where",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Nhà ga nội địa ở đâu?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Where is the domestic terminal? to another airport arrival need.",
+      "phrases": [
+        {
+          "id": "airport-1",
+          "vietnamese": "Nhập cảnh ở đâu?",
+          "english": "Where is immigration?",
+          "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-1",
+          "audioKey": "airport-1"
+        },
+        {
+          "id": "airport-2",
+          "vietnamese": "Lấy hành lý ở đâu?",
+          "english": "Where is baggage claim?",
+          "pronunciation": "lay han lee uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-2",
+          "audioKey": "airport-2"
+        },
+        {
+          "id": "airport-3",
+          "vietnamese": "Mua SIM ở đâu?",
+          "english": "Where can I buy a SIM card?",
+          "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-3",
+          "audioKey": "airport-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when domestic terminal can be pointed to on a map, sign, booking, or nearby landmark."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Nhà ga nội địa ở đâu?.",
+      "phrases": [
+        {
+          "id": "airport-5",
+          "vietnamese": "Khu đón ở đâu?",
+          "english": "Where is the pickup area?",
+          "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-5",
+          "audioKey": "airport-5"
+        },
+        {
+          "id": "airport-pickup-clearer",
+          "vietnamese": "Tôi gặp tài xế ở đâu?",
+          "english": "Where do I meet the driver?",
+          "pronunciation": "toy gap tai seh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-pickup-clearer",
+          "audioKey": "airport-pickup-clearer"
+        },
+        {
+          "id": "airport-6",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive",
+          "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-6",
+          "audioKey": "airport-6"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        },
+        {
+          "id": "v500-airp-bord-arri-where-is-the-atm",
+          "vietnamese": "ATM ở đâu?",
+          "english": "Where is the ATM?",
+          "pronunciation": "ATM o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
+          "audioKey": "v500-airp-bord-arri-where-is-the-atm"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "airport-7",
+      "vietnamese": "Nhà ga nội địa ở đâu?",
+      "english": "Where is the domestic terminal?",
+      "pronunciation": "nya ga noy dee-ah uh dow",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "airport-7"
+    }
+  ]
+}

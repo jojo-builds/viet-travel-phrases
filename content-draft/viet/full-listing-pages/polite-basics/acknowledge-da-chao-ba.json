@@ -10,31 +10,63 @@
   "summary": "Use Dạ, chào bà when you want a warm, respectful hello for an elderly woman.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
-  "categoryIDs": ["greetings", "polite-basics"],
+  "categoryIDs": [
+    "greetings",
+    "polite-basics"
+  ],
   "audioKey": "audio-phrase-da-chao-ba",
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dạ, chào bà is the respectful greeting for an elderly woman or grandmother-age local. It is a useful phrase in homes, neighborhood shops, markets, temples, family restaurants, and calm local encounters where respect matters."
+      "body": "Dạ, chào bà is a practical polite basics phrase for keeping one travel detail clear. Use it when Respectful hello to an elderly woman is the next detail to solve and a short answer would move the exchange forward."
     },
     {
       "id": "standard-way",
       "title": "The standard way",
       "body": "Use it when bà clearly fits better than chị or cô.",
       "phrases": [
-        {"id": "acknowledge-da-chao-ba", "vietnamese": "Dạ, chào bà", "english": "Respectful hello to an elderly woman", "pronunciation": "yah chow bah", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "audio-phrase-da-chao-ba"}
+        {
+          "id": "acknowledge-da-chao-ba",
+          "vietnamese": "Dạ, chào bà",
+          "english": "Respectful hello to an elderly woman",
+          "pronunciation": "yah chow bah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-ba"
+        }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "The greeting is simple, but bà makes the respect clear.",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
       "breakdown": [
-        {"id": "da", "vietnamese": "Dạ", "english": "respectful softener", "audioKey": "polite-3"},
-        {"id": "chao", "vietnamese": "chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
-        {"id": "ba", "vietnamese": "bà", "english": "elderly woman / grandmother role", "audioKey": null},
-        {"id": "full", "vietnamese": "Dạ, chào bà", "english": "respectful hello to an elderly woman", "audioKey": "audio-phrase-da-chao-ba"}
+        {
+          "id": "chunk-1",
+          "vietnamese": "Dạ",
+          "english": "starts the phrase",
+          "audioKey": "polite-3"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "chào",
+          "english": "Respectful hello to an elderly woman detail",
+          "audioKey": "breakdown-chao"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "bà",
+          "english": "finishes Respectful hello to an elderly woman",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Dạ, chào bà",
+          "english": "full phrase",
+          "audioKey": "audio-phrase-da-chao-ba"
+        }
       ]
     },
     {
@@ -42,33 +74,96 @@
       "title": "Relationship swaps",
       "body": "These help you move between older-woman and elderly-woman greetings.",
       "phrases": [
-        {"id": "acknowledge-da-chao-ong", "vietnamese": "Dạ, chào ông", "english": "Respectful hello to an elderly man", "pronunciation": "yah chow ohng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-da-chao-ong", "audioKey": "audio-phrase-da-chao-ong"},
-        {"id": "acknowledge-da-chao-co", "vietnamese": "Dạ, chào cô", "english": "Respectful hello to an aunt-age woman", "pronunciation": "yah chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-da-chao-co", "audioKey": "audio-phrase-da-chao-co"},
-        {"id": "hello-chao-ba", "vietnamese": "Chào bà", "english": "Hello to an elderly woman", "pronunciation": "chow bah", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-ba", "audioKey": "breakdown-viet-hello-ba-full"}
+        {
+          "id": "acknowledge-da-chao-ong",
+          "vietnamese": "Dạ, chào ông",
+          "english": "Respectful hello to an elderly man",
+          "pronunciation": "yah chow ohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-da-chao-ong",
+          "audioKey": "audio-phrase-da-chao-ong"
+        },
+        {
+          "id": "acknowledge-da-chao-co",
+          "vietnamese": "Dạ, chào cô",
+          "english": "Respectful hello to an aunt-age woman",
+          "pronunciation": "yah chow koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-da-chao-co",
+          "audioKey": "audio-phrase-da-chao-co"
+        },
+        {
+          "id": "hello-chao-ba",
+          "vietnamese": "Chào bà",
+          "english": "Hello to an elderly woman",
+          "pronunciation": "chow bah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-ba",
+          "audioKey": "breakdown-viet-hello-ba-full"
+        }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when greeting an elderly woman at a home, shop, market, neighborhood place, family restaurant, clinic, or temple."
+      "body": "Use this in a real polite basics exchange when respectful hello to an elderly woman is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Bà is respectful when the person is clearly elderly. For an older but not elderly woman, cô or chị is usually a warmer fit."
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "These are gentle next steps after the greeting.",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Dạ, chào bà.",
       "phrases": [
-        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"},
-        {"id": "polite-3", "vietnamese": "Dạ", "english": "Yes / polite acknowledgment", "pronunciation": "yah", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-acknowledge-da", "audioKey": "polite-3"},
-        {"id": "hello-chao-ba", "vietnamese": "Chào bà", "english": "Hello to an elderly woman", "pronunciation": "chow bah", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-ba", "audioKey": "breakdown-viet-hello-ba-full"}
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        },
+        {
+          "id": "polite-3",
+          "vietnamese": "Dạ",
+          "english": "Yes / polite acknowledgment",
+          "pronunciation": "yah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-acknowledge-da",
+          "audioKey": "polite-3"
+        },
+        {
+          "id": "hello-chao-ba",
+          "vietnamese": "Chào bà",
+          "english": "Hello to an elderly woman",
+          "pronunciation": "chow bah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-ba",
+          "audioKey": "breakdown-viet-hello-ba-full"
+        }
       ]
     }
   ],
   "examples": [
-    {"id": "acknowledge-da-chao-ba", "vietnamese": "Dạ, chào bà", "english": "Respectful hello to an elderly woman", "pronunciation": "yah chow bah", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "audio-phrase-da-chao-ba"}
+    {
+      "id": "acknowledge-da-chao-ba",
+      "vietnamese": "Dạ, chào bà",
+      "english": "Respectful hello to an elderly woman",
+      "pronunciation": "yah chow bah",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "audio-phrase-da-chao-ba"
+    }
   ]
 }

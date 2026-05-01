@@ -10,30 +10,57 @@
   "summary": "A respectful hello for an aunt-age woman, teacher, shop owner, or older helper.",
   "iconName": "person.fill",
   "tintName": "red",
-  "categoryIDs": ["greetings", "polite-basics"],
+  "categoryIDs": [
+    "greetings",
+    "polite-basics"
+  ],
   "audioKey": "breakdown-viet-hello-co-full",
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chào cô is for an older woman who feels aunt-age: older than you, but not grandmother-age. Travelers hear it in shops, classes, homestays, neighborhood places, and polite service moments."
+      "body": "Chào cô is a practical polite basics phrase for keeping one travel detail clear. Use it when Hello to an aunt-age woman is the next detail to solve and a short answer would move the exchange forward."
     },
     {
       "id": "standard-way",
       "title": "The standard way",
       "body": "Say Chào cô when the woman is clearly older than you and cô gives the greeting a respectful local feel.",
       "phrases": [
-        {"id": "hello-chao-co", "vietnamese": "Chào cô", "english": "Hello to an aunt-age woman", "pronunciation": "chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "breakdown-viet-hello-co-full"}
+        {
+          "id": "hello-chao-co",
+          "vietnamese": "Chào cô",
+          "english": "Hello to an aunt-age woman",
+          "pronunciation": "chow koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-viet-hello-co-full"
+        }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Cô is the social cue that makes the phrase specific.",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
       "breakdown": [
-        {"id": "chao", "vietnamese": "Chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
-        {"id": "co", "vietnamese": "cô", "english": "aunt / older woman / teacher", "audioKey": "breakdown-viet-hello-co-relationship"},
-        {"id": "full", "vietnamese": "Chào cô", "english": "hello to an aunt-age woman", "audioKey": "breakdown-viet-hello-co-full"}
+        {
+          "id": "chunk-1",
+          "vietnamese": "Chào",
+          "english": "starts the phrase",
+          "audioKey": "breakdown-chao"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "cô",
+          "english": "finishes Hello to an aunt-age woman",
+          "audioKey": "breakdown-viet-hello-co-relationship"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Chào cô",
+          "english": "full phrase",
+          "audioKey": "breakdown-viet-hello-co-full"
+        }
       ]
     },
     {
@@ -41,33 +68,96 @@
       "title": "Relationship swaps",
       "body": "Use these when the person or age relationship changes.",
       "phrases": [
-        {"id": "hello-chao-chu", "vietnamese": "Chào chú", "english": "Hello to an uncle-age man", "pronunciation": "chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "teal", "detailPageID": "viet-hello-chao-chu", "audioKey": "breakdown-viet-hello-chu-full"},
-        {"id": "hello-chao-ba", "vietnamese": "Chào bà", "english": "Hello to an elderly woman", "pronunciation": "chow bah", "symbolName": "speaker.wave.2.fill", "tintName": "purple", "detailPageID": "viet-hello-chao-ba", "audioKey": "breakdown-viet-hello-ba-full"},
-        {"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-chi", "audioKey": "breakdown-viet-hello-chi-full"}
+        {
+          "id": "hello-chao-chu",
+          "vietnamese": "Chào chú",
+          "english": "Hello to an uncle-age man",
+          "pronunciation": "chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-hello-chao-chu",
+          "audioKey": "breakdown-viet-hello-chu-full"
+        },
+        {
+          "id": "hello-chao-ba",
+          "vietnamese": "Chào bà",
+          "english": "Hello to an elderly woman",
+          "pronunciation": "chow bah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-hello-chao-ba",
+          "audioKey": "breakdown-viet-hello-ba-full"
+        },
+        {
+          "id": "hello-chao-chi",
+          "vietnamese": "Chào chị",
+          "english": "Hello to an older woman",
+          "pronunciation": "chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-chi",
+          "audioKey": "breakdown-viet-hello-chi-full"
+        }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it with an older female shop owner, teacher, homestay host, neighborhood helper, or woman who feels closer to aunt-age than sister-age."
+      "body": "Use this in a real polite basics exchange when hello to an aunt-age woman is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Cô can also mean teacher or aunt. In greetings, it works as a respectful relationship word, so the phrase sounds more tuned to the person than a universal hello."
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "These keep the same greeting lesson moving.",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Chào cô.",
       "phrases": [
-        {"id": "hello-chao-chu", "vietnamese": "Chào chú", "english": "Hello to an uncle-age man", "pronunciation": "chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "teal", "detailPageID": "viet-hello-chao-chu", "audioKey": "breakdown-viet-hello-chu-full"},
-        {"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-chi", "audioKey": "breakdown-viet-hello-chi-full"},
-        {"id": "polite-5", "vietnamese": "Xin lỗi", "english": "Excuse me / sorry", "pronunciation": "sin loy", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-excuse-sorry", "audioKey": "polite-5"}
+        {
+          "id": "hello-chao-chu",
+          "vietnamese": "Chào chú",
+          "english": "Hello to an uncle-age man",
+          "pronunciation": "chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-hello-chao-chu",
+          "audioKey": "breakdown-viet-hello-chu-full"
+        },
+        {
+          "id": "hello-chao-chi",
+          "vietnamese": "Chào chị",
+          "english": "Hello to an older woman",
+          "pronunciation": "chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-chi",
+          "audioKey": "breakdown-viet-hello-chi-full"
+        },
+        {
+          "id": "polite-5",
+          "vietnamese": "Xin lỗi",
+          "english": "Excuse me / sorry",
+          "pronunciation": "sin loy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-excuse-sorry",
+          "audioKey": "polite-5"
+        }
       ]
     }
   ],
   "examples": [
-    {"id": "hello-chao-co", "vietnamese": "Chào cô", "english": "Hello to an aunt-age woman", "pronunciation": "chow koh", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "breakdown-viet-hello-co-full"}
+    {
+      "id": "hello-chao-co",
+      "vietnamese": "Chào cô",
+      "english": "Hello to an aunt-age woman",
+      "pronunciation": "chow koh",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "breakdown-viet-hello-co-full"
+    }
   ]
 }

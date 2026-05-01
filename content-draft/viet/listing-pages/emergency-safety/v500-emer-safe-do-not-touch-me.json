@@ -35,13 +35,13 @@
         {
           "id": "v500-emer-safe-do-not-touch-me-piece-2",
           "vietnamese": "chạm",
-          "english": "specific detail",
+          "english": "touch",
           "audioKey": "breakdown-authored-cham-1e86c7e059"
         },
         {
           "id": "v500-emer-safe-do-not-touch-me-piece-3",
           "vietnamese": "vào",
-          "english": "specific detail",
+          "english": "into / touch target",
           "audioKey": "breakdown-v900-tran-the-entrance-is-on-the-other-side-piece-2"
         },
         {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Đừng chạm vào tôi for \"Do not touch me\" when you need the listener to catch the point quickly. This is for when safety, theft, documents, police, or urgent help needs to be clear right now. Pause after the phrase so the other person can answer with a confirmation, a substitute, or a question about what is allowed. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "Use Đừng chạm vào tôi as your first sentence for \"Do not touch me\". This is for when safety, theft, documents, police, or urgent help needs to be clear right now. Leave a short pause after the phrase so the other person can answer with a confirmation, a substitute, or a question about what is allowed. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
       "phrases": [
         {
           "id": "v500-emer-safe-do-not-touch-me",
@@ -80,13 +80,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. For \"Do not touch me\", the useful move is stating the limit before the order or interaction moves too far. Confirm visually when the detail affects safety, health, or the final order.",
+      "body": "Emergency phrases put the urgent need first so help can move faster. For \"Do not touch me\", Đừng chạm vào tôi helps by stating the limit before the order or interaction moves too far. Confirm visually when the detail affects safety, health, or the final order.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Emergency & Safety, locals often answer with a confirmation, a substitute, or a question about what is allowed rather than a long explanation. That makes Đừng chạm vào tôi strongest when you say it once, pause, and let the other person show the next step. Show the document, symptom, location, or item connected to the need so helpers can act faster.",
+      "body": "In Emergency & Safety, the reply often comes as a confirmation, a substitute, or a question about what is allowed. Say Đừng chạm vào tôi once, pause, and watch for the reply before adding another sentence. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
       "phrases": [
         {
           "id": "emergency-1",

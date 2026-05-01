@@ -41,9 +41,7 @@ const designedFamilyPageIDs = {
   "social-how-are-you": "viet-how-are-you",
 };
 
-const manuallyAuthoredPageIDs = new Set([
-  "viet-family-repair-meaning",
-]);
+const manuallyAuthoredPageIDs = new Set();
 
 const rootPageID = "viet-polite-hello";
 
@@ -135,7 +133,7 @@ const familyCopyOverrides = {
     atGlance: "Bớt chút được không? is the compact local-feeling way to ask for a little lower price. It is useful in markets, informal stalls, or flexible-price moments where the seller expects some back-and-forth.",
     standard: "Bớt chút được không? literally asks whether they can reduce it a little. It is shorter and more natural than a full textbook sentence, and chút keeps the request modest instead of confrontational.",
     when: "Use it after hearing the price, while still holding or pointing at the item. It is best for one specific item, one ride price, or one quoted number you want softened.",
-    why: "The phrase works because it asks for a small adjustment, not a fight over value. Sellers can answer with a smaller number, a smile, or a firm final price while the exchange stays friendly.",
+    why: "The phrase asks for a small adjustment, not a fight over value. Sellers can answer with a smaller number, a smile, or a firm final price while the exchange stays friendly.",
     watch: "Use it where prices are flexible, such as markets or informal stalls. At fixed-price counters, confirm the posted price instead.",
     tip: "If the answer is a number, ask them to type it on a calculator so you do not mishear the final price.",
   },
@@ -297,6 +295,7 @@ const glossary = new Map(Object.entries({
   "bạn": "you / friend",
   "giúp": "help",
   "với": "please / with",
+  "hãy": "please / soft command",
   "làm": "do / make",
   "ơn": "favor / thanks",
   "ở": "at / in",
@@ -394,6 +393,89 @@ const glossary = new Map(Object.entries({
   "bán": "sell",
   "rẻ": "cheap",
   "hơn": "more / than",
+  "hiểu": "understand",
+  "cái": "item / classifier",
+  "quận": "district",
+  "năm": "five",
+  "phút": "minutes",
+  "bằng": "by / with",
+  "bật": "turn on",
+  "đồng": "dong / currency",
+  "hồ": "meter / clock",
+  "nghĩ": "think",
+  "chúng": "we",
+  "ta": "we",
+  "bị": "got / passive marker",
+  "nóng": "hot",
+  "quá": "too / very",
+  "chạy": "run / work",
+  "thêm": "more / add",
+  "khăn": "towel",
+  "giữ": "keep / hold",
+  "bạc": "part of bạc xỉu coffee",
+  "xỉu": "part of bạc xỉu coffee",
+  "mang": "bring / carry",
+  "tính": "calculate / bill",
+  "người": "person",
+  "phần": "portion",
+  "tô": "bowl",
+  "rau": "greens / herbs",
+  "muỗng": "spoon",
+  "đũa": "chopsticks",
+  "gói": "wrap / pack",
+  "ứng": "react / allergy",
+  "ký": "kilo",
+  "mắc": "expensive",
+  "cuối": "final / last",
+  "khác": "different / another",
+  "atm": "ATM",
+  "thế": "like that / way",
+  "nào": "which / how",
+  "mất": "lose / takes",
+  "chưa": "not yet",
+  "tiêu": "digest / diarrhea word",
+  "chảy": "flow / diarrhea word",
+  "quên": "forget",
+  "gọi": "call",
+  "quản": "manage",
+  "sáng": "morning",
+  "chỉ": "only / point",
+  "giấy": "paper",
+  "xà": "soap word",
+  "rửa": "wash",
+  "tay": "hand",
+  "an": "public security word",
+  "khẩn": "urgent",
+  "từ": "from / word",
+  "mỹ": "the United States",
+  "lần": "time / occasion",
+  "thích": "like",
+  "nam": "Vietnam word / south",
+  "hết": "out / finished",
+  "ngon": "delicious",
+  "thời": "time / weather word",
+  "tiết": "weather word",
+  "chụp": "take a photo",
+  "hình": "photo",
+  "gặp": "meet",
+  "chai": "bottle",
+  "quẹt": "swipe",
+  "thẻ": "card",
+  "khóa": "lock",
+  "đã": "already / past marker",
+  "đỡ": "help / ease",
+  "bây": "now word",
+  "đợi": "wait",
+  "hàng": "item / goods",
+  "esim": "eSIM",
+  "thể": "can / able",
+  "chạm": "touch",
+  "vào": "into / touch target",
+  "vừa": "just / recently",
+  "tiếng": "language / sound",
+  "ngay": "right away",
+  "tài": "driver word",
+  "xế": "driver word",
   "được": "can / okay",
 }));
 
@@ -608,12 +690,111 @@ function intentTeaching(primaryPhrase) {
     };
   }
 
+  if (/^(today|tomorrow|morning|what time|goodbye|yes|thank you|it'?s okay|how are you|i like|i'm from|i am from|this is my first|the food|the weather)\b/.test(english)) {
+    return {
+      moment: "keeping a short social or scheduling exchange warm and easy to answer",
+      strategy: "using a short friendly phrase that invites a clear reply",
+      response: "a short reply, a smile, a time, or a light follow-up question",
+      followUp: "Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+    };
+  }
+
+  if (/^i have\b.*\b(booking|reservation|tour)\b/.test(english)) {
+    return {
+      moment: "helping staff find a booking, ticket, room, or tour record quickly",
+      strategy: "putting the booking first so staff can look it up before you explain more",
+      response: "a name check, booking-code request, counter direction, or short wait",
+      followUp: "Keep the booking name, code, room number, or ticket visible until staff find the record.",
+    };
+  }
+
+  if (/^i have\b.*\b(headache|stomach|stomachache|diarrhea|allergy|pain|injury)\b/.test(english) || /^i am injured\b/.test(english)) {
+    return {
+      moment: "explaining a symptom clearly enough for pharmacy, clinic, or hotel staff to help",
+      strategy: "naming the symptom first before you add timing or background",
+      response: "a question about symptoms, medicine, a doctor, or where the pain is",
+      followUp: "Point to the affected area or show the medicine name if that makes the need clearer.",
+    };
+  }
+
+  if (/^(here is|this is my)\b.*\b(passport|visa|baggage tag)\b/.test(english)) {
+    return {
+      moment: "showing the document staff need at the next checkpoint",
+      strategy: "pairing the document with a short phrase so staff know what you are handing over",
+      response: "a quick check, a stamp, a counter direction, or a request for one more document",
+      followUp: "Keep the document open to the photo page or relevant line while staff check it.",
+    };
+  }
+
+  if (/^this is an emergency\b/.test(english)) {
+    return {
+      moment: "making urgency clear before the details get complicated",
+      strategy: "naming the emergency first so helpers switch into action mode",
+      response: "a question about what happened, a call for help, or an instruction to wait nearby",
+      followUp: "After they understand it is urgent, add the location, person, or injury detail they ask for.",
+    };
+  }
+
+  if (/^(i lost|i left)\b/.test(english) || /\bmissing\b|\bbehind\b|\bkept my card\b/.test(english)) {
+    return {
+      moment: "recovering a lost item, card, document, or bag before the trail goes cold",
+      strategy: "saying what went missing before you add where or when it happened",
+      response: "a question about the last place, a room or ride check, or a staff handoff",
+      followUp: "Have the receipt, room number, ride detail, or last location ready if they ask.",
+    };
+  }
+
+  if (/\b(bag did not arrive|baggage did not arrive|bag is missing|baggage is missing)\b/.test(english)) {
+    return {
+      moment: "getting airport staff to start a baggage check instead of sending you onward",
+      strategy: "saying the bag problem first so staff know to check the carousel or baggage desk",
+      response: "a baggage-tag request, counter direction, form, or update on where to wait",
+      followUp: "Keep the baggage tag, flight number, and pickup carousel in view while staff check.",
+    };
+  }
+
+  if (/\b(map|phone|sim|wi-?fi|wifi|battery|app|screen)\b.*\b(not working|broken)\b/.test(english) || /\bnot working\b.*\b(map|phone|sim|wi-?fi|wifi|battery|app|screen)\b/.test(english)) {
+    return {
+      moment: "getting help with a phone, map, signal, battery, or app problem",
+      strategy: "showing the screen issue before adding a long explanation",
+      response: "a look at the screen, a reset suggestion, or directions to a SIM or Wi-Fi help spot",
+      followUp: "Keep the phone open to the error, map, or settings page while you ask.",
+    };
+  }
+
+  if (/\b(air conditioner|door|lock|room)\b.*\b(not working|does not|isn't|broken|hot)\b/.test(english) || /\b(the room is hot|the door does not lock)\b/.test(english)) {
+    return {
+      moment: "getting hotel staff to understand the room issue quickly",
+      strategy: "naming the room problem first so staff can send help or offer a fix",
+      response: "a room-number check, maintenance visit, new key, or room-change option",
+      followUp: "Have the room number ready and show the item if staff need to inspect it.",
+    };
+  }
+
+  if (/\bnot working\b|\bbroken\b/.test(english) || /^(my .*not|my .*is not|the .*does not|the .*isn't)\b/.test(english)) {
+    return {
+      moment: "showing a broken room item, phone issue, card problem, or app problem clearly",
+      strategy: "naming what is not working before you explain more",
+      response: "a check, a replacement offer, a room visit, or a request to show the issue",
+      followUp: "Show the screen, room item, or broken part if seeing it will save time.",
+    };
+  }
+
+  if (/^(i cannot|i can't)\b/.test(english)) {
+    return {
+      moment: "telling someone your body or movement limit before they ask you to continue",
+      strategy: "stating the limit first so helpers do not move too fast",
+      response: "a safety check, a question about pain, or help moving you to a safer spot",
+      followUp: "Point to what hurts or where you need to stay still if words are not enough.",
+    };
+  }
+
   if (/^(i have|here is|this is|i left|i lost|my .*not|my .*is not|the .*does not|the .*isn't|i cannot|i can't)\b/.test(english) || /\bmissing\b|\bnot working\b|\bbroken\b|\bkept my card\b|\bbehind\b/.test(english)) {
     return {
       moment: "showing a document, reporting a problem, or explaining what went wrong",
-      strategy: "naming the concrete item or problem first so staff can choose the next action",
-      response: "a request to see the item, a direction to another desk, or a practical next step",
-      followUp: "Show the document, photo, room number, receipt, or screen connected to the problem.",
+      strategy: "starting with the main problem before adding background",
+      response: "a quick check, a staff handoff, or a next instruction",
+      followUp: "Show the relevant screen, paper, room number, or location only if it helps them act.",
     };
   }
 
@@ -623,15 +804,6 @@ function intentTeaching(primaryPhrase) {
       strategy: "stating the limit before the order or interaction moves too far",
       response: "a confirmation, a substitute, or a question about what is allowed",
       followUp: "Confirm visually when the detail affects safety, health, or the final order.",
-    };
-  }
-
-  if (/^(today|tomorrow|morning|what time|goodbye|yes|thank you|it'?s okay|how are you|i like|i'm from|i am from|this is my first|the food|the weather)\b/.test(english)) {
-    return {
-      moment: "keeping a short social or scheduling exchange warm and easy to answer",
-      strategy: "giving the other person a simple anchor rather than a long explanation",
-      response: "a short reply, a smile, a time, or a light follow-up question",
-      followUp: "Let the other person lead the next sentence; these phrases work best with a relaxed pause.",
     };
   }
 
@@ -679,22 +851,24 @@ function contextCueText(family) {
   switch (family.scenarioID) {
     case "transport":
     case "directions-navigation":
-      return "Show the map, address, or destination while you say it so the answer has a clear anchor.";
+      return "Keep the map, address, or destination visible while you speak so the reply points to the same place.";
     case "hotel-accommodation":
     case "time-dates-booking":
     case "sightseeing-activities":
-      return "Show the booking, ticket, room number, or time on your phone when the exact detail matters.";
+      return "Keep the booking, ticket, room number, or time visible when the exact detail matters.";
     case "food-drink":
     case "shopping":
     case "local-services-everyday-tasks":
-      return "Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.";
+      return "Point to the actual item, menu line, size, or photo while you say it.";
     case "phone-internet-power":
       return "Show the phone screen or error message first so the problem is visible before you add more words.";
     case "airport-border-arrival":
+      return "Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.";
     case "emergency-safety":
     case "health-pharmacy":
+      return "Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.";
     case "problems-help":
-      return "Show the document, symptom, location, or item connected to the need so helpers can act faster.";
+      return "Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.";
     case "bathroom-personal-needs":
       return "Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.";
     case "polite-basics":
@@ -704,7 +878,7 @@ function contextCueText(family) {
     case "understanding-repair":
       return "If speech still does not land, move to writing, pointing, or showing the exact word on your phone.";
     default:
-      return "Point to the place, object, or screen that gives the phrase context.";
+      return "Keep the relevant place, object, or screen visible while you speak.";
   }
 }
 
@@ -716,9 +890,9 @@ function standardText(family, primaryPhrase) {
   const intent = cleanEnglishIntent(primaryPhrase.englishText);
   const situation = contextAsSituation(primaryPhrase.context, family.summary);
   return [
-    `Start with ${primaryPhrase.targetText} for "${intent}" when you need the listener to catch the point quickly.`,
+    `Use ${primaryPhrase.targetText} as your first sentence for "${intent}".`,
     situation || `It keeps the focus on ${teaching.moment}.`,
-    `Pause after the phrase so the other person can answer with ${teaching.response}.`,
+    `Leave a short pause after the phrase so the other person can answer with ${teaching.response}.`,
     contextCueText(family),
   ].join(" ");
 }
@@ -767,7 +941,7 @@ function whyItMattersText(family, primaryPhrase) {
   const teaching = intentTeaching(primaryPhrase);
   return [
     scenarioCopy(family.scenarioID).why,
-    `For "${cleanEnglishIntent(primaryPhrase.englishText)}", the useful move is ${teaching.strategy}.`,
+    `For "${cleanEnglishIntent(primaryPhrase.englishText)}", ${primaryPhrase.targetText} helps by ${teaching.strategy}.`,
     teaching.followUp,
   ].join(" ");
 }
@@ -777,8 +951,8 @@ function travelerInsightText(family, primaryPhrase) {
   const scenario = scenarioByID.get(family.scenarioID);
   const categoryName = scenario?.title ?? "this situation";
   return [
-    `In ${categoryName}, locals often answer with ${teaching.response} rather than a long explanation.`,
-    `That makes ${primaryPhrase.targetText} strongest when you say it once, pause, and let the other person show the next step.`,
+    `In ${categoryName}, the reply often comes as ${teaching.response}.`,
+    `Say ${primaryPhrase.targetText} once, pause, and watch for the reply before adding another sentence.`,
     contextCueText(family),
   ].join(" ");
 }
@@ -916,7 +1090,7 @@ const breakdownMeanings = new Map(Object.entries({
   "khong": "not / no",
   "khong duong": "no sugar",
   "khong sao": "it is okay",
-  "dau": "soft reassurance",
+  "dau": "where / reassurance particle",
   "phai": "right / must",
   "dung": "correct",
   "sai": "wrong",
@@ -959,6 +1133,7 @@ const breakdownMeanings = new Map(Object.entries({
   "cho toi": "can I have",
   "mot": "one",
   "hai": "two",
+  "hãy": "please / soft command",
   "hay": "or",
   "bac si": "doctor",
   "buu dien": "post office",
@@ -1045,22 +1220,23 @@ const exactBreakdownPieces = new Map(Object.entries({
   ],
   "khong sao dau": [
     { vietnamese: "Không sao", english: "it is okay" },
-    { vietnamese: "đâu", english: "soft reassurance" },
+    { vietnamese: "đâu", english: "adds reassurance" },
   ],
 }));
 
 function fallbackBreakdownMeaning(vietnamese) {
   if (/^\d+$/.test(normalizedVietnameseKey(vietnamese))) return vietnamese;
   if (/^[A-ZĐ][\p{L}\p{M}'-]+(?:\s+[A-ZĐ][\p{L}\p{M}'-]+)*$/u.test(vietnamese)) {
-    return "name or place detail";
+    return "proper name or place";
   }
-  return "specific detail";
+  return "context word";
 }
 
 function breakdownMeaning(vietnamese) {
+  const exact = vietnamese.normalize("NFC").toLowerCase();
   const normalized = normalizedVietnameseKey(vietnamese);
   if (/^\d+$/.test(normalized)) return vietnamese;
-  return breakdownMeanings.get(normalized) ?? glossary.get(vietnamese.toLowerCase()) ?? fallbackBreakdownMeaning(vietnamese);
+  return glossary.get(exact) ?? breakdownMeanings.get(normalized) ?? fallbackBreakdownMeaning(vietnamese);
 }
 
 function chunkVietnamesePhrase(phrase) {

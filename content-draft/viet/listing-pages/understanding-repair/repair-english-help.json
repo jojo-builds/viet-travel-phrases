@@ -35,7 +35,7 @@
         {
           "id": "repair-english-help-piece-2",
           "vietnamese": "nói",
-          "english": "say / speak",
+          "english": "speak / say",
           "audioKey": "breakdown-problems-3-first"
         },
         {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Anh/chị nói tiếng Anh không? for \"Do you speak English\" when you need the listener to catch the point quickly. This is for when you need to know whether English is an option. Pause after the phrase so the other person can answer with a slower repeat, a pointed explanation, or a switch to writing. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "Use Anh/chị nói tiếng Anh không? as your first sentence for \"Do you speak English\". This is for when you need to know whether English is an option. Leave a short pause after the phrase so the other person can answer with a slower repeat, a pointed explanation, or a switch to writing. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "repair-english-help",
@@ -98,13 +98,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"Do you speak English\", the useful move is asking for one clear help action before adding more words. If the first reply is still unclear, move to showing, writing, or pointing.",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"Do you speak English\", Anh/chị nói tiếng Anh không? helps by asking for one clear help action before adding more words. If the first reply is still unclear, move to showing, writing, or pointing.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In When You Don't Understand, locals often answer with a slower repeat, a pointed explanation, or a switch to writing rather than a long explanation. That makes Anh/chị nói tiếng Anh không? strongest when you say it once, pause, and let the other person show the next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "In When You Don't Understand, the reply often comes as a slower repeat, a pointed explanation, or a switch to writing. Say Anh/chị nói tiếng Anh không? once, pause, and watch for the reply before adding another sentence. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "problems-2",

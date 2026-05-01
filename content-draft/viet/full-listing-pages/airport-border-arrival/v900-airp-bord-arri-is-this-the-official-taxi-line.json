@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v900-airp-bord-arri-is-this-the-official-taxi-line",
+  "familyID": "v900-airp-bord-arri-is-this-the-official-taxi-line",
+  "phraseID": "v900-airp-bord-arri-is-this-the-official-taxi-line",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Đây có phải là tuyến taxi chính thức?",
+  "englishTitle": "Is this the official taxi line?",
+  "pronunciation": "Day co phai la tuyen taxi chinh thuc",
+  "summary": "Is this the official taxi line?",
+  "iconName": "airplane.arrival",
+  "tintName": "blue",
+  "categoryIDs": [
+    "airport-border-arrival",
+    "v900-airp-bord-arri-is-this-the-official-taxi-line",
+    "premium"
+  ],
+  "audioKey": "v900-airp-bord-arri-is-this-the-official-taxi-line",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Đây có phải là tuyến taxi chính thức? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this the official taxi line is right."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use Đây có phải là tuyến taxi chính thức? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "phrases": [
+        {
+          "id": "v900-airp-bord-arri-is-this-the-official-taxi-line",
+          "vietnamese": "Đây có phải là tuyến taxi chính thức?",
+          "english": "Is this the official taxi line?",
+          "pronunciation": "Day co phai la tuyen taxi chinh thuc",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v900-airp-bord-arri-is-this-the-official-taxi-line"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Đây có phải",
+          "english": "sets up the question",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "là tuyến taxi",
+          "english": "Is this the official taxi line detail",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "chính thức",
+          "english": "finishes Is this the official taxi line",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Đây có phải là tuyến taxi chính thức?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Is this the official taxi line? to another airport arrival need.",
+      "phrases": [
+        {
+          "id": "airport-1",
+          "vietnamese": "Nhập cảnh ở đâu?",
+          "english": "Where is immigration?",
+          "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-1",
+          "audioKey": "airport-1"
+        },
+        {
+          "id": "airport-2",
+          "vietnamese": "Lấy hành lý ở đâu?",
+          "english": "Where is baggage claim?",
+          "pronunciation": "lay han lee uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-2",
+          "audioKey": "airport-2"
+        },
+        {
+          "id": "airport-3",
+          "vietnamese": "Mua SIM ở đâu?",
+          "english": "Where can I buy a SIM card?",
+          "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-3",
+          "audioKey": "airport-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Airport staff and drivers are used to short, practical questions. Keep the document or phone screen visible so they can answer quickly."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Đây có phải là tuyến taxi chính thức?.",
+      "phrases": [
+        {
+          "id": "airport-5",
+          "vietnamese": "Khu đón ở đâu?",
+          "english": "Where is the pickup area?",
+          "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-5",
+          "audioKey": "airport-5"
+        },
+        {
+          "id": "airport-pickup-clearer",
+          "vietnamese": "Tôi gặp tài xế ở đâu?",
+          "english": "Where do I meet the driver?",
+          "pronunciation": "toy gap tai seh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-pickup-clearer",
+          "audioKey": "airport-pickup-clearer"
+        },
+        {
+          "id": "airport-6",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive",
+          "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-6",
+          "audioKey": "airport-6"
+        },
+        {
+          "id": "airport-7",
+          "vietnamese": "Nhà ga nội địa ở đâu?",
+          "english": "Where is the domestic terminal?",
+          "pronunciation": "nya ga noy dee-ah uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-7",
+          "audioKey": "airport-7"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-airp-bord-arri-is-this-the-official-taxi-line",
+      "vietnamese": "Đây có phải là tuyến taxi chính thức?",
+      "english": "Is this the official taxi line?",
+      "pronunciation": "Day co phai la tuyen taxi chinh thuc",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v900-airp-bord-arri-is-this-the-official-taxi-line"
+    }
+  ]
+}

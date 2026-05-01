@@ -27,7 +27,7 @@ Current posture:
 - existing bundled audio is preserved where legacy phrases already had assets
 - `listing-pages/_tier-one-index.json` pins the current computed Tier 1 inventory at 150 pages
 - `listing-pages/<scenario>/<family-id>.json` contains authored offline article copy for native Tier 1 listing pages
-- native phrase-page copy should follow the installed `speaklocal-listing-pages` skill: thoughtful "Different ways to say [phrase] in Vietnam" pages with concrete variants, tone/context guidance, positively framed good-to-know/local/travel notes, canonical links, and no generic filler
+- native phrase-page copy should follow the installed `speaklocal-listing-pages` skill: thoughtful offline phrase articles with concrete variants, tone/context guidance, positively framed good-to-know/local/travel notes, canonical links, and no generic filler
 - `practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/` is the approved live source lane for the May 2026 practice-first graph expansion. Its manifest points to sharded page records, rationale JSONL, and inventory audit artifacts; `phrase-source.csv` remains the canonical row truth for the same approved phrases.
 
 Current relation-ready handoff:

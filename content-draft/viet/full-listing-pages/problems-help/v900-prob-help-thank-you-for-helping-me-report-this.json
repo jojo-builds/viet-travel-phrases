@@ -1,0 +1,196 @@
+{
+  "id": "viet-phrase-v900-prob-help-thank-you-for-helping-me-report-this",
+  "familyID": "v900-prob-help-thank-you-for-helping-me-report-this",
+  "phraseID": "v900-prob-help-thank-you-for-helping-me-report-this",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Cảm ơn bạn đã giúp tôi báo cáo điều này",
+  "englishTitle": "Thank you for helping me report this",
+  "pronunciation": "Cam on ban da giup toi bao cao dieu nay",
+  "summary": "Thank you for helping me report this",
+  "iconName": "exclamationmark.triangle.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "problems-help",
+    "v900-prob-help-thank-you-for-helping-me-report-this",
+    "premium"
+  ],
+  "audioKey": "v900-prob-help-thank-you-for-helping-me-report-this",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Cảm ơn bạn đã giúp tôi báo cáo điều này closes a helpful exchange warmly. It is short enough for a beginner and works after directions, service help, a purchase, or a small kindness."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Cảm ơn bạn đã giúp tôi báo cáo điều này. Keep the situation visible, pause after the phrase, and let the other person answer with a smile, acknowledgment, or short reply.",
+      "phrases": [
+        {
+          "id": "v900-prob-help-thank-you-for-helping-me-report-this",
+          "vietnamese": "Cảm ơn bạn đã giúp tôi báo cáo điều này",
+          "english": "Thank you for helping me report this",
+          "pronunciation": "Cam on ban da giup toi bao cao dieu nay",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "v900-prob-help-thank-you-for-helping-me-report-this"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Cảm ơn bạn",
+          "english": "thank you",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "đã giúp tôi",
+          "english": "help me",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "báo cáo điều",
+          "english": "go / move",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "này",
+          "english": "this one / this",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "Cảm ơn bạn đã giúp tôi báo cáo điều này",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Thank you for helping me report this to another problem-solving need.",
+      "phrases": [
+        {
+          "id": "problems-1",
+          "vietnamese": "Tôi bị lạc đường",
+          "english": "I’m lost",
+          "pronunciation": "toy bee lahk doong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-problems-1",
+          "audioKey": "problems-1"
+        },
+        {
+          "id": "problems-4",
+          "vietnamese": "Tôi quên đồ rồi",
+          "english": "I left something behind",
+          "pronunciation": "toy gwen doh roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-problems-4",
+          "audioKey": "problems-4"
+        },
+        {
+          "id": "help-1",
+          "vietnamese": "Anh/chị giúp tôi với",
+          "english": "Can you help me?",
+          "pronunciation": "anh chee zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-1",
+          "audioKey": "help-1"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real problem-solving exchange when thank you for helping me report this is the detail you need resolved. The likely reply is a smile, acknowledgment, or short reply, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Name one problem at a time. If the answer is fast, switch to a repeat or write-it-down phrase."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Cảm ơn bạn đã giúp tôi báo cáo điều này.",
+      "phrases": [
+        {
+          "id": "help-need-help-direct",
+          "vietnamese": "Giúp tôi với",
+          "english": "I need help",
+          "pronunciation": "zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-need-help-direct",
+          "audioKey": "help-need-help-direct"
+        },
+        {
+          "id": "help-2",
+          "vietnamese": "Gọi khách sạn giúp tôi",
+          "english": "Please call the hotel for me",
+          "pronunciation": "goy khak san zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-2",
+          "audioKey": "help-2"
+        },
+        {
+          "id": "help-3",
+          "vietnamese": "Tôi cần quản lý",
+          "english": "I need the manager",
+          "pronunciation": "toy gun kwan lee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-3",
+          "audioKey": "help-3"
+        },
+        {
+          "id": "help-4",
+          "vietnamese": "Tôi bị tính tiền hai lần",
+          "english": "I was charged twice",
+          "pronunciation": "toy bee ting tyen hai lun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-4",
+          "audioKey": "help-4"
+        },
+        {
+          "id": "help-5",
+          "vietnamese": "Tôi cần làm biên bản",
+          "english": "I need to file a report",
+          "pronunciation": "toy gun lahm byeen ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-5",
+          "audioKey": "help-5"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-prob-help-thank-you-for-helping-me-report-this",
+      "vietnamese": "Cảm ơn bạn đã giúp tôi báo cáo điều này",
+      "english": "Thank you for helping me report this",
+      "pronunciation": "Cam on ban da giup toi bao cao dieu nay",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "v900-prob-help-thank-you-for-helping-me-report-this"
+    }
+  ]
+}

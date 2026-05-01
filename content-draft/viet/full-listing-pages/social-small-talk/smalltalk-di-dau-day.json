@@ -10,31 +10,63 @@
   "summary": "Where are you going?",
   "iconName": "message.fill",
   "tintName": "green",
-  "categoryIDs": ["small-talk", "greetings"],
+  "categoryIDs": [
+    "small-talk",
+    "greetings"
+  ],
   "audioKey": "audio-phrase-di-dau-day",
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đi đâu đấy? literally asks where someone is going, but in friendly everyday speech it can work like light small talk after hello. Use it with someone familiar enough for a casual check-in, not as a serious route question to a rushed stranger."
+      "body": "Đi đâu đấy? is a practical polite basics phrase for keeping one travel detail clear. Use it when Where are you going is the next detail to solve and a short answer would move the exchange forward."
     },
     {
       "id": "standard-way",
       "title": "The standard way",
       "body": "Say Đi đâu đấy? when the conversation already has a friendly tone and the person is visibly heading somewhere.",
       "phrases": [
-        {"id": "smalltalk-di-dau-day", "vietnamese": "Đi đâu đấy?", "english": "Where are you going?", "pronunciation": "dee dow day", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "audio-phrase-di-dau-day"}
+        {
+          "id": "smalltalk-di-dau-day",
+          "vietnamese": "Đi đâu đấy?",
+          "english": "Where are you going?",
+          "pronunciation": "dee dow day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-di-dau-day"
+        }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "The phrase is short, but đấy makes it feel conversational.",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
       "breakdown": [
-        {"id": "di", "vietnamese": "Đi", "english": "go", "audioKey": null},
-        {"id": "dau", "vietnamese": "đâu", "english": "where", "audioKey": null},
-        {"id": "day", "vietnamese": "đấy?", "english": "there / conversational softener", "audioKey": null},
-        {"id": "full", "vietnamese": "Đi đâu đấy?", "english": "where are you going?", "audioKey": "audio-phrase-di-dau-day"}
+        {
+          "id": "chunk-1",
+          "vietnamese": "Đi",
+          "english": "go / move",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "đâu",
+          "english": "Where are you going detail",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "đấy?",
+          "english": "finishes Where are you going",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Đi đâu đấy?",
+          "english": "full phrase",
+          "audioKey": "audio-phrase-di-dau-day"
+        }
       ]
     },
     {
@@ -42,33 +74,96 @@
       "title": "Natural greeting chain",
       "body": "This line usually belongs after a greeting, not before one.",
       "phrases": [
-        {"id": "hello-chao-ban", "vietnamese": "Chào bạn", "english": "Hi there / hello friend", "pronunciation": "chow ban", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-hello-chao-ban", "audioKey": "audio-phrase-chao-ban"},
-        {"id": "smalltalk-7", "vietnamese": "Bạn khỏe không?", "english": "How are you?", "pronunciation": "ban khoe khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-how-are-you", "audioKey": "smalltalk-7"},
-        {"id": "smalltalk-nice-to-meet-you", "vietnamese": "Rất vui được gặp bạn", "english": "Nice to meet you", "pronunciation": "zuht voo ee duhk gap ban", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-smalltalk-nice-to-meet-you", "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"}
+        {
+          "id": "hello-chao-ban",
+          "vietnamese": "Chào bạn",
+          "english": "Hi there / hello friend",
+          "pronunciation": "chow ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-hello-chao-ban",
+          "audioKey": "audio-phrase-chao-ban"
+        },
+        {
+          "id": "smalltalk-7",
+          "vietnamese": "Bạn khỏe không?",
+          "english": "How are you?",
+          "pronunciation": "ban khoe khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you",
+          "audioKey": "smalltalk-7"
+        },
+        {
+          "id": "smalltalk-nice-to-meet-you",
+          "vietnamese": "Rất vui được gặp bạn",
+          "english": "Nice to meet you",
+          "pronunciation": "zuht voo ee duhk gap ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-smalltalk-nice-to-meet-you",
+          "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+        }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it with a familiar guide, classmate, host, neighbor, or friendly helper after you have already greeted each other. It fits best when the person is walking out, leaving the desk, or heading toward a visible next place."
+      "body": "Use this in a real polite basics exchange when where are you going is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Because it can sound personal, keep it for friendly contexts. If you truly need directions from a stranger, ask a direction phrase instead."
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "These pages help you choose between small talk and practical directions.",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Đi đâu đấy?.",
       "phrases": [
-        {"id": "directions-1", "vietnamese": "Cho hỏi, đi tới đó thế nào?", "english": "Excuse me, how do I get there?", "pronunciation": "cho hoy dee toy doh theh nao", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-family-directions-how-to-get", "audioKey": "directions-1"},
-        {"id": "hello-chao", "vietnamese": "Chào", "english": "Hi / hello", "pronunciation": "chow", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-hello-chao", "audioKey": "breakdown-chao"},
-        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}
+        {
+          "id": "directions-1",
+          "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+          "english": "Excuse me, how do I get there?",
+          "pronunciation": "cho hoy dee toy doh theh nao",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-directions-how-to-get",
+          "audioKey": "directions-1"
+        },
+        {
+          "id": "hello-chao",
+          "vietnamese": "Chào",
+          "english": "Hi / hello",
+          "pronunciation": "chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-hello-chao",
+          "audioKey": "breakdown-chao"
+        },
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        }
       ]
     }
   ],
   "examples": [
-    {"id": "smalltalk-di-dau-day", "vietnamese": "Đi đâu đấy?", "english": "Where are you going?", "pronunciation": "dee dow day", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": null, "audioKey": "audio-phrase-di-dau-day"}
+    {
+      "id": "smalltalk-di-dau-day",
+      "vietnamese": "Đi đâu đấy?",
+      "english": "Where are you going?",
+      "pronunciation": "dee dow day",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "audio-phrase-di-dau-day"
+    }
   ]
 }

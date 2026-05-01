@@ -29,7 +29,7 @@
         {
           "id": "transport-fare-piece-1",
           "vietnamese": "Tiền",
-          "english": "money",
+          "english": "money / price",
           "audioKey": "breakdown-transport-fare-first"
         },
         {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Tiền xe bao nhiêu? for \"How much is the fare\" when you need the listener to catch the point quickly. This comes before or during the ride when you need the fare clearly. Pause after the phrase so the other person can answer with a number, typed amount, calculator screen, or direct yes/no about payment. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Use Tiền xe bao nhiêu? as your first sentence for \"How much is the fare\". This comes before or during the ride when you need the fare clearly. Leave a short pause after the phrase so the other person can answer with a number, typed amount, calculator screen, or direct yes/no about payment. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
       "phrases": [
         {
           "id": "transport-fare",
@@ -74,13 +74,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"How much is the fare\", the useful move is making the price or amount the center of the exchange. Repeat or show the number before paying if the amount matters.",
+      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"How much is the fare\", Tiền xe bao nhiêu? helps by making the price or amount the center of the exchange. Repeat or show the number before paying if the amount matters.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, locals often answer with a number, typed amount, calculator screen, or direct yes/no about payment rather than a long explanation. That makes Tiền xe bao nhiêu? strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "In Transport, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say Tiền xe bao nhiêu? once, pause, and watch for the reply before adding another sentence. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
       "phrases": [
         {
           "id": "taxi-1",

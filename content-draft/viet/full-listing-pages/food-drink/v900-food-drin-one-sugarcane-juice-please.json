@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-v900-food-drin-one-sugarcane-juice-please",
+  "familyID": "v900-food-drin-one-sugarcane-juice-please",
+  "phraseID": "v900-food-drin-one-sugarcane-juice-please",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Xin cho một ly nước mía",
+  "englishTitle": "One sugarcane juice, please",
+  "pronunciation": "Xin cho mot ly nuoc mia",
+  "summary": "One sugarcane juice, please",
+  "iconName": "fork.knife",
+  "tintName": "green",
+  "categoryIDs": [
+    "food-drink",
+    "v900-food-drin-one-sugarcane-juice-please",
+    "premium"
+  ],
+  "audioKey": "v900-food-drin-one-sugarcane-juice-please",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Xin cho một ly nước mía is a practical food or drink phrase for keeping one travel detail clear. Use it when One sugarcane juice, please is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Xin cho một ly nước mía. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-one-sugarcane-juice-please",
+          "vietnamese": "Xin cho một ly nước mía",
+          "english": "One sugarcane juice, please",
+          "pronunciation": "Xin cho mot ly nuoc mia",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "v900-food-drin-one-sugarcane-juice-please"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Xin cho một",
+          "english": "starts the phrase",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "ly nước mía",
+          "english": "finishes One sugarcane juice, please",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Xin cho một ly nước mía",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from One sugarcane juice, please to another food or drink need.",
+      "phrases": [
+        {
+          "id": "coffee-1",
+          "vietnamese": "Cho tôi một cà phê sữa đá",
+          "english": "One iced milk coffee please",
+          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-1",
+          "audioKey": "coffee-1"
+        },
+        {
+          "id": "coffee-2",
+          "vietnamese": "Cho tôi cà phê đen đá",
+          "english": "I’d like an iced black coffee",
+          "pronunciation": "cho toy ka feh den dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-2",
+          "audioKey": "coffee-2"
+        },
+        {
+          "id": "coffee-3",
+          "vietnamese": "Cho tôi bạc xỉu đá",
+          "english": "I’d like an iced bạc xỉu",
+          "pronunciation": "cho toy bahk see-u dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-3",
+          "audioKey": "coffee-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real food or drink exchange when one sugarcane juice, please is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Xin cho một ly nước mía.",
+      "phrases": [
+        {
+          "id": "coffee-4",
+          "vietnamese": "Ít đá thôi",
+          "english": "Just a little ice",
+          "pronunciation": "eet dah toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-4",
+          "audioKey": "coffee-4"
+        },
+        {
+          "id": "coffee-5",
+          "vietnamese": "Không đường nhé",
+          "english": "No sugar please",
+          "pronunciation": "khong doong nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-5",
+          "audioKey": "coffee-5"
+        },
+        {
+          "id": "coffee-6",
+          "vietnamese": "Mang đi",
+          "english": "To go",
+          "pronunciation": "mang dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-6",
+          "audioKey": "coffee-6"
+        },
+        {
+          "id": "coffee-7",
+          "vietnamese": "Tính tiền giúp tôi",
+          "english": "Please let me pay",
+          "pronunciation": "ting tyen zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-7",
+          "audioKey": "coffee-7"
+        },
+        {
+          "id": "food-need-table",
+          "vietnamese": "Cho tôi bàn cho hai người nhé",
+          "english": "A table for two, please",
+          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-need-table",
+          "audioKey": "food-need-table"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-food-drin-one-sugarcane-juice-please",
+      "vietnamese": "Xin cho một ly nước mía",
+      "english": "One sugarcane juice, please",
+      "pronunciation": "Xin cho mot ly nuoc mia",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "v900-food-drin-one-sugarcane-juice-please"
+    }
+  ]
+}

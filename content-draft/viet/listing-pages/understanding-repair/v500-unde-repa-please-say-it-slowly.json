@@ -29,13 +29,13 @@
         {
           "id": "v500-unde-repa-please-say-it-slowly-piece-1",
           "vietnamese": "Hãy",
-          "english": "or",
+          "english": "please / soft command",
           "audioKey": "breakdown-money-premium-write-total-first"
         },
         {
           "id": "v500-unde-repa-please-say-it-slowly-piece-2",
           "vietnamese": "nói",
-          "english": "say / speak",
+          "english": "speak / say",
           "audioKey": "breakdown-problems-3-first"
         },
         {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Hãy nói từ từ nhé for \"Please say it slowly\" when you need the listener to catch the point quickly. This is for when the conversation is stuck and you need a clearer next step fast. Pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "Use Hãy nói từ từ nhé as your first sentence for \"Please say it slowly\". This is for when the conversation is stuck and you need a clearer next step fast. Leave a short pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "v500-unde-repa-please-say-it-slowly",
@@ -80,13 +80,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"Please say it slowly\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"Please say it slowly\", Hãy nói từ từ nhé helps by putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In When You Don't Understand, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Hãy nói từ từ nhé strongest when you say it once, pause, and let the other person show the next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "In When You Don't Understand, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Hãy nói từ từ nhé once, pause, and watch for the reply before adding another sentence. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "problems-2",

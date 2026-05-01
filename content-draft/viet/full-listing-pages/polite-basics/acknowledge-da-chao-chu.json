@@ -10,31 +10,63 @@
   "summary": "Use Dạ, chào chú when the man feels older than anh but not elderly enough for ông.",
   "iconName": "hand.wave.fill",
   "tintName": "blue",
-  "categoryIDs": ["greetings", "polite-basics"],
+  "categoryIDs": [
+    "greetings",
+    "polite-basics"
+  ],
   "audioKey": "audio-phrase-da-chao-chu",
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dạ, chào chú is a respectful hello for an uncle-age man. It is useful when anh feels too young and ông feels too old, especially with drivers, shop owners, homestay hosts, neighborhood helpers, or older service staff."
+      "body": "Dạ, chào chú is a practical polite basics phrase for keeping one travel detail clear. Use it when Respectful hello to an uncle-age man is the next detail to solve and a short answer would move the exchange forward."
     },
     {
       "id": "standard-way",
       "title": "The standard way",
       "body": "Use it when the person is clearly older than a brother-age man but not elderly.",
       "phrases": [
-        {"id": "acknowledge-da-chao-chu", "vietnamese": "Dạ, chào chú", "english": "Respectful hello to an uncle-age man", "pronunciation": "yah chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "audio-phrase-da-chao-chu"}
+        {
+          "id": "acknowledge-da-chao-chu",
+          "vietnamese": "Dạ, chào chú",
+          "english": "Respectful hello to an uncle-age man",
+          "pronunciation": "yah chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-da-chao-chu"
+        }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Chú tells the listener that you are choosing a respectful middle-age relationship word.",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
       "breakdown": [
-        {"id": "da", "vietnamese": "Dạ", "english": "respectful softener", "audioKey": "polite-3"},
-        {"id": "chao", "vietnamese": "chào", "english": "hello / greet", "audioKey": "breakdown-chao"},
-        {"id": "chu", "vietnamese": "chú", "english": "uncle-age man", "audioKey": null},
-        {"id": "full", "vietnamese": "Dạ, chào chú", "english": "respectful hello to an uncle-age man", "audioKey": "audio-phrase-da-chao-chu"}
+        {
+          "id": "chunk-1",
+          "vietnamese": "Dạ",
+          "english": "starts the phrase",
+          "audioKey": "polite-3"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "chào",
+          "english": "Respectful hello to an uncle-age man detail",
+          "audioKey": "breakdown-chao"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "chú",
+          "english": "finishes Respectful hello to an uncle-age man",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Dạ, chào chú",
+          "english": "full phrase",
+          "audioKey": "audio-phrase-da-chao-chu"
+        }
       ]
     },
     {
@@ -42,33 +74,96 @@
       "title": "Relationship swaps",
       "body": "These help you choose the right male greeting by age.",
       "phrases": [
-        {"id": "acknowledge-da-chao-anh", "vietnamese": "Dạ, chào anh", "english": "Respectful hello to an older man", "pronunciation": "yah chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-da-chao-anh", "audioKey": "audio-phrase-da-chao-anh"},
-        {"id": "acknowledge-da-chao-ong", "vietnamese": "Dạ, chào ông", "english": "Respectful hello to an elderly man", "pronunciation": "yah chow ohng", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-da-chao-ong", "audioKey": "audio-phrase-da-chao-ong"},
-        {"id": "hello-chao-chu", "vietnamese": "Chào chú", "english": "Hello to an uncle-age man", "pronunciation": "chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-chu", "audioKey": "breakdown-viet-hello-chu-full"}
+        {
+          "id": "acknowledge-da-chao-anh",
+          "vietnamese": "Dạ, chào anh",
+          "english": "Respectful hello to an older man",
+          "pronunciation": "yah chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-da-chao-anh",
+          "audioKey": "audio-phrase-da-chao-anh"
+        },
+        {
+          "id": "acknowledge-da-chao-ong",
+          "vietnamese": "Dạ, chào ông",
+          "english": "Respectful hello to an elderly man",
+          "pronunciation": "yah chow ohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-da-chao-ong",
+          "audioKey": "audio-phrase-da-chao-ong"
+        },
+        {
+          "id": "hello-chao-chu",
+          "vietnamese": "Chào chú",
+          "english": "Hello to an uncle-age man",
+          "pronunciation": "chow choo",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-hello-chao-chu",
+          "audioKey": "breakdown-viet-hello-chu-full"
+        }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it with an older male driver, food stall owner, family-run hotel host, market seller, repair worker, or local helper when a respectful uncle-age greeting feels right."
+      "body": "Use this in a real polite basics exchange when respectful hello to an uncle-age man is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Chú is friendly and respectful when the age fit is clear. If the person feels only slightly older, Dạ, chào anh may be more natural."
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "These help after a respectful greeting with an older man.",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Dạ, chào chú.",
       "phrases": [
-        {"id": "taxi-1", "vietnamese": "Cho tôi tới đây", "english": "Take me here", "pronunciation": "cho toy toy day", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-family-transport-destination", "audioKey": "taxi-1"},
-        {"id": "price-1", "vietnamese": "Cái này bao nhiêu?", "english": "How much is this?", "pronunciation": "gai nai bao nyew", "symbolName": "speaker.wave.2.fill", "tintName": "yellow", "detailPageID": "viet-family-money-how-much", "audioKey": "price-1"},
-        {"id": "polite-2", "vietnamese": "Cảm ơn", "english": "Thank you", "pronunciation": "kahm uhn", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-thank-you", "audioKey": "polite-2"}
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-destination",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "yellow",
+          "detailPageID": "viet-family-money-how-much",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        }
       ]
     }
   ],
   "examples": [
-    {"id": "acknowledge-da-chao-chu", "vietnamese": "Dạ, chào chú", "english": "Respectful hello to an uncle-age man", "pronunciation": "yah chow choo", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": null, "audioKey": "audio-phrase-da-chao-chu"}
+    {
+      "id": "acknowledge-da-chao-chu",
+      "vietnamese": "Dạ, chào chú",
+      "english": "Respectful hello to an uncle-age man",
+      "pronunciation": "yah chow choo",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "audio-phrase-da-chao-chu"
+    }
   ]
 }

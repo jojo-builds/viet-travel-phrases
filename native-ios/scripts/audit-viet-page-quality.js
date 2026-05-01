@@ -68,6 +68,10 @@ function breakdownIssues(page, tokens) {
     "action",
     "place / service",
     "question marker",
+    "specific detail",
+    "name or place detail",
+    "soft reassurance",
+    "context word",
   ].includes(label) || label.includes("question marker"))) {
     issues.push("internal breakdown label");
   }
@@ -88,6 +92,21 @@ const overTemplatePatterns = [
   /Use this when one key word/i,
   /\bDifferent ways\b/i,
   /question marker/i,
+  /practical thing you need someone to understand first/i,
+  /names the practical need first/i,
+  /without turning it into a long explanation/i,
+  /anchor word/i,
+  /what you need the listener to catch/i,
+  /works because it/i,
+  /putting the exact document, symptom, place, or item into the first sentence/i,
+  /Keep the related proof, photo, room number, receipt, or map location visible/i,
+  /request for the document, a staff handoff, or a clear next action/i,
+  /specific document, problem, or place/i,
+  /most useful proof, photo, room number, receipt, or map location/i,
+  /request to see the detail, a staff handoff, or a clear next step/i,
+  /naming what is not working/i,
+  /replacement offer, a room visit/i,
+  /Show the screen, room item, or broken part/i,
 ];
 
 function articleIssues(page, relationshipWordsEligiblePageIDs) {

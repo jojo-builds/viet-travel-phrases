@@ -29,7 +29,7 @@
         {
           "id": "repair-3-piece-1",
           "vietnamese": "Cái",
-          "english": "name or place detail",
+          "english": "item / classifier",
           "audioKey": "breakdown-repair-3-first"
         },
         {
@@ -47,7 +47,7 @@
         {
           "id": "repair-3-piece-4",
           "vietnamese": "là",
-          "english": "is",
+          "english": "is / means",
           "audioKey": "breakdown-v900-tran-how-much-is-the-rental-per-day-piece-5"
         },
         {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Cái đó nghĩa là gì? for \"What does that mean\" when you need the listener to catch the point quickly. This is for when one word or phrase is blocking your understanding. Pause after the phrase so the other person can answer with a slower repeat, a pointed explanation, or a switch to writing. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "Use Cái đó nghĩa là gì? as your first sentence for \"What does that mean\". This is for when one word or phrase is blocking your understanding. Leave a short pause after the phrase so the other person can answer with a slower repeat, a pointed explanation, or a switch to writing. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "repair-3",
@@ -86,13 +86,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"What does that mean\", the useful move is asking for one clear help action before adding more words. If the first reply is still unclear, move to showing, writing, or pointing.",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"What does that mean\", Cái đó nghĩa là gì? helps by asking for one clear help action before adding more words. If the first reply is still unclear, move to showing, writing, or pointing.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In When You Don't Understand, locals often answer with a slower repeat, a pointed explanation, or a switch to writing rather than a long explanation. That makes Cái đó nghĩa là gì? strongest when you say it once, pause, and let the other person show the next step. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "In When You Don't Understand, the reply often comes as a slower repeat, a pointed explanation, or a switch to writing. Say Cái đó nghĩa là gì? once, pause, and watch for the reply before adding another sentence. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
       "phrases": [
         {
           "id": "problems-2",

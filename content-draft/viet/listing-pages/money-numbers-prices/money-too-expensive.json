@@ -29,13 +29,13 @@
         {
           "id": "price-3-piece-1",
           "vietnamese": "Mắc",
-          "english": "name or place detail",
+          "english": "expensive",
           "audioKey": "breakdown-price-3-first"
         },
         {
           "id": "price-3-piece-2",
           "vietnamese": "quá",
-          "english": "specific detail",
+          "english": "too / very",
           "audioKey": "breakdown-price-3-rest"
         },
         {
@@ -50,7 +50,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Mắc quá for \"Too expensive\" when you need the listener to catch the point quickly. Say this lightly when reacting to a high price. Pause after the phrase so the other person can answer with a clear reply, a pointed detail, or a simple follow-up. Point to the place, object, or screen that gives the phrase context.",
+      "body": "Use Mắc quá as your first sentence for \"Too expensive\". Say this lightly when reacting to a high price. Leave a short pause after the phrase so the other person can answer with a clear reply, a pointed detail, or a simple follow-up. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-3",
@@ -68,13 +68,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"Too expensive\", the useful move is making the next practical step easy for the other person to choose. Use the related phrases below if the exchange moves one step further.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"Too expensive\", Mắc quá helps by making the next practical step easy for the other person to choose. Use the related phrases below if the exchange moves one step further.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Money, Numbers & Prices, locals often answer with a clear reply, a pointed detail, or a simple follow-up rather than a long explanation. That makes Mắc quá strongest when you say it once, pause, and let the other person show the next step. Point to the place, object, or screen that gives the phrase context.",
+      "body": "In Money, Numbers & Prices, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Mắc quá once, pause, and watch for the reply before adding another sentence. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-1",

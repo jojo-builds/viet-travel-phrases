@@ -35,13 +35,13 @@
         {
           "id": "food-need-table-piece-2",
           "vietnamese": "bàn",
-          "english": "you",
+          "english": "table",
           "audioKey": "breakdown-food-need-table-piece-3"
         },
         {
           "id": "food-need-table-piece-3",
           "vietnamese": "cho",
-          "english": "for",
+          "english": "give / let",
           "audioKey": "breakdown-taxi-1-first"
         },
         {
@@ -53,7 +53,7 @@
         {
           "id": "food-need-table-piece-5",
           "vietnamese": "người",
-          "english": "specific detail",
+          "english": "person",
           "audioKey": "breakdown-v900-tran-the-driver-left-without-me-first"
         },
         {
@@ -74,7 +74,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Cho tôi bàn cho hai người nhé for \"A table for two, please\" when you need the listener to catch the point quickly. This is for when the first need is getting seated. Pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Use Cho tôi bàn cho hai người nhé as your first sentence for \"A table for two, please\". This is for when the first need is getting seated. Leave a short pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "food-need-table",
@@ -92,13 +92,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"A table for two, please\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"A table for two, please\", Cho tôi bàn cho hai người nhé helps by putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Cho tôi bàn cho hai người nhé strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "In Food & Drink, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Cho tôi bàn cho hai người nhé once, pause, and watch for the reply before adding another sentence. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-1",

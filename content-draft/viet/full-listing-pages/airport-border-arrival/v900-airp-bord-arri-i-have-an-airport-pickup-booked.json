@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+  "familyID": "v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+  "phraseID": "v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Tôi đã đặt dịch vụ đón tại sân bay",
+  "englishTitle": "I have an airport pickup booked",
+  "pronunciation": "Toi da dat dich vu don tai san bay",
+  "summary": "I have an airport pickup booked",
+  "iconName": "airplane.arrival",
+  "tintName": "blue",
+  "categoryIDs": [
+    "airport-border-arrival",
+    "v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+    "premium"
+  ],
+  "audioKey": "v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi đã đặt dịch vụ đón tại sân bay is a practical airport arrival phrase for keeping one travel detail clear. Use it when I have an airport pickup booked is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Tôi đã đặt dịch vụ đón tại sân bay. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+          "vietnamese": "Tôi đã đặt dịch vụ đón tại sân bay",
+          "english": "I have an airport pickup booked",
+          "pronunciation": "Toi da dat dich vu don tai san bay",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v900-airp-bord-arri-i-have-an-airport-pickup-booked"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi đã đặt",
+          "english": "starts the phrase",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "dịch vụ đón",
+          "english": "I have an airport pickup booked detail",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "tại sân bay",
+          "english": "finishes I have an airport pickup booked",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Tôi đã đặt dịch vụ đón tại sân bay",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from I have an airport pickup booked to another airport arrival need.",
+      "phrases": [
+        {
+          "id": "airport-1",
+          "vietnamese": "Nhập cảnh ở đâu?",
+          "english": "Where is immigration?",
+          "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-1",
+          "audioKey": "airport-1"
+        },
+        {
+          "id": "airport-2",
+          "vietnamese": "Lấy hành lý ở đâu?",
+          "english": "Where is baggage claim?",
+          "pronunciation": "lay han lee uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-2",
+          "audioKey": "airport-2"
+        },
+        {
+          "id": "airport-3",
+          "vietnamese": "Mua SIM ở đâu?",
+          "english": "Where can I buy a SIM card?",
+          "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-3",
+          "audioKey": "airport-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real airport arrival exchange when i have an airport pickup booked is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Airport staff and drivers are used to short, practical questions. Keep the document or phone screen visible so they can answer quickly."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã đặt dịch vụ đón tại sân bay.",
+      "phrases": [
+        {
+          "id": "airport-5",
+          "vietnamese": "Khu đón ở đâu?",
+          "english": "Where is the pickup area?",
+          "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-5",
+          "audioKey": "airport-5"
+        },
+        {
+          "id": "airport-pickup-clearer",
+          "vietnamese": "Tôi gặp tài xế ở đâu?",
+          "english": "Where do I meet the driver?",
+          "pronunciation": "toy gap tai seh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-pickup-clearer",
+          "audioKey": "airport-pickup-clearer"
+        },
+        {
+          "id": "airport-6",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive",
+          "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-6",
+          "audioKey": "airport-6"
+        },
+        {
+          "id": "airport-7",
+          "vietnamese": "Nhà ga nội địa ở đâu?",
+          "english": "Where is the domestic terminal?",
+          "pronunciation": "nya ga noy dee-ah uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-7",
+          "audioKey": "airport-7"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+      "vietnamese": "Tôi đã đặt dịch vụ đón tại sân bay",
+      "english": "I have an airport pickup booked",
+      "pronunciation": "Toi da dat dich vu don tai san bay",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v900-airp-bord-arri-i-have-an-airport-pickup-booked"
+    }
+  ]
+}

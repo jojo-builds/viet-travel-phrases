@@ -10,28 +10,45 @@
   "summary": "A relaxed hello for familiar or clearly casual moments.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
-  "categoryIDs": ["greetings", "polite-basics"],
+  "categoryIDs": [
+    "greetings",
+    "polite-basics"
+  ],
   "audioKey": "breakdown-chao",
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chào is the plain greeting inside Xin chào. Use it in relaxed moments, with someone you already know, or when you are adding a relationship word such as anh, chị, em, cô, or chú. If you are unsure, keep Xin chào as the safer first move."
+      "body": "Chào is a practical polite basics phrase for keeping one travel detail clear. Use it when Hi / hello is the next detail to solve and a short answer would move the exchange forward."
     },
     {
       "id": "standard-way",
       "title": "The standard way",
       "body": "Say Chào when a simple hi is enough. It is short and friendly, but it relies more on context than Xin chào.",
       "phrases": [
-        {"id": "hello-chao", "vietnamese": "Chào", "english": "Hi / hello", "pronunciation": "chow", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "breakdown-chao"}
+        {
+          "id": "hello-chao",
+          "vietnamese": "Chào",
+          "english": "Hi / hello",
+          "pronunciation": "chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "breakdown-chao"
+        }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This is one word, but it becomes more useful when you notice what can come after it.",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
       "breakdown": [
-        {"id": "chao-meaning", "vietnamese": "Chào", "english": "greet / say hello; hi / hello", "audioKey": "breakdown-chao"}
+        {
+          "id": "chunk-1",
+          "vietnamese": "Chào",
+          "english": "full phrase",
+          "audioKey": "breakdown-chao"
+        }
       ]
     },
     {
@@ -39,33 +56,96 @@
       "title": "Natural variations",
       "body": "These are the main ways Chào becomes more specific.",
       "phrases": [
-        {"id": "polite-1", "vietnamese": "Xin chào", "english": "Hello, safely polite", "pronunciation": "sin chow", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-polite-hello", "audioKey": "polite-1"},
-        {"id": "hello-chao-ban", "vietnamese": "Chào bạn", "english": "Hi there / hello friend", "pronunciation": "chow ban", "symbolName": "speaker.wave.2.fill", "tintName": "orange", "detailPageID": "viet-hello-chao-ban", "audioKey": "audio-phrase-chao-ban"},
-        {"id": "hello-chao-anh", "vietnamese": "Chào anh", "english": "Hello to an older man", "pronunciation": "chow anh", "symbolName": "speaker.wave.2.fill", "tintName": "blue", "detailPageID": "viet-hello-chao-anh", "audioKey": "breakdown-viet-hello-anh-full"}
+        {
+          "id": "polite-1",
+          "vietnamese": "Xin chào",
+          "english": "Hello, safely polite",
+          "pronunciation": "sin chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-polite-hello",
+          "audioKey": "polite-1"
+        },
+        {
+          "id": "hello-chao-ban",
+          "vietnamese": "Chào bạn",
+          "english": "Hi there / hello friend",
+          "pronunciation": "chow ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-hello-chao-ban",
+          "audioKey": "audio-phrase-chao-ban"
+        },
+        {
+          "id": "hello-chao-anh",
+          "vietnamese": "Chào anh",
+          "english": "Hello to an older man",
+          "pronunciation": "chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-hello-chao-anh",
+          "audioKey": "breakdown-viet-hello-anh-full"
+        }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use Chào with people you already know, casual service moments where the mood is friendly, or as the base before a relationship word. Use Xin chào when you are entering a new shop, approaching a desk, or unsure how formal to be."
+      "body": "Use this in a real polite basics exchange when hi / hello is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Chào is not rude by itself; it is just lighter. Vietnamese often adds warmth through the word after Chào, so learning the relationship forms matters more than forcing one greeting everywhere."
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these when the hello needs to become more precise.",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Chào.",
       "phrases": [
-        {"id": "hello-chao-chi", "vietnamese": "Chào chị", "english": "Hello to an older woman", "pronunciation": "chow chee", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": "viet-hello-chao-chi", "audioKey": "breakdown-viet-hello-chi-full"},
-        {"id": "hello-chao-em", "vietnamese": "Chào em", "english": "Hello to a younger person", "pronunciation": "chow em", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-hello-chao-em", "audioKey": "breakdown-viet-hello-em-full"},
-        {"id": "smalltalk-7", "vietnamese": "Bạn khỏe không?", "english": "How are you?", "pronunciation": "ban khoe khong", "symbolName": "speaker.wave.2.fill", "tintName": "green", "detailPageID": "viet-how-are-you", "audioKey": "smalltalk-7"}
+        {
+          "id": "hello-chao-chi",
+          "vietnamese": "Chào chị",
+          "english": "Hello to an older woman",
+          "pronunciation": "chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-chi",
+          "audioKey": "breakdown-viet-hello-chi-full"
+        },
+        {
+          "id": "hello-chao-em",
+          "vietnamese": "Chào em",
+          "english": "Hello to a younger person",
+          "pronunciation": "chow em",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-hello-chao-em",
+          "audioKey": "breakdown-viet-hello-em-full"
+        },
+        {
+          "id": "smalltalk-7",
+          "vietnamese": "Bạn khỏe không?",
+          "english": "How are you?",
+          "pronunciation": "ban khoe khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you",
+          "audioKey": "smalltalk-7"
+        }
       ]
     }
   ],
   "examples": [
-    {"id": "hello-chao", "vietnamese": "Chào", "english": "Hi / hello", "pronunciation": "chow", "symbolName": "speaker.wave.2.fill", "tintName": "red", "detailPageID": null, "audioKey": "breakdown-chao"}
+    {
+      "id": "hello-chao",
+      "vietnamese": "Chào",
+      "english": "Hi / hello",
+      "pronunciation": "chow",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "breakdown-chao"
+    }
   ]
 }

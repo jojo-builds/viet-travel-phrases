@@ -1,0 +1,196 @@
+{
+  "id": "viet-phrase-v900-airp-bord-arri-can-you-help-me-track-my-bag",
+  "familyID": "v900-airp-bord-arri-can-you-help-me-track-my-bag",
+  "phraseID": "v900-airp-bord-arri-can-you-help-me-track-my-bag",
+  "tierRole": "full-universe",
+  "depth": "deep",
+  "title": "Bạn có thể giúp tôi theo dõi túi của tôi?",
+  "englishTitle": "Can you help me track my bag?",
+  "pronunciation": "Ban co the giup toi theo doi tui cua toi",
+  "summary": "Can you help me track my bag?",
+  "iconName": "airplane.arrival",
+  "tintName": "blue",
+  "categoryIDs": [
+    "airport-border-arrival",
+    "v900-airp-bord-arri-can-you-help-me-track-my-bag",
+    "premium"
+  ],
+  "audioKey": "v900-airp-bord-arri-can-you-help-me-track-my-bag",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Bạn có thể giúp tôi theo dõi túi của tôi? is a friendly way to ask for help with track my bag. It gives the other person a clear job and keeps the conversation focused on the next practical step."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Bạn có thể giúp tôi theo dõi túi của tôi? once, then make the task visible with your passport, booking, baggage tag, map, or pickup screen. The phrase is doing one job: getting a clear answer about track my bag.",
+      "phrases": [
+        {
+          "id": "v900-airp-bord-arri-can-you-help-me-track-my-bag",
+          "vietnamese": "Bạn có thể giúp tôi theo dõi túi của tôi?",
+          "english": "Can you help me track my bag?",
+          "pronunciation": "Ban co the giup toi theo doi tui cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v900-airp-bord-arri-can-you-help-me-track-my-bag"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Bạn có thể",
+          "english": "can you",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "giúp tôi theo",
+          "english": "help me",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "dõi túi",
+          "english": "track my bag detail",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "của tôi",
+          "english": "my / mine",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "Bạn có thể giúp tôi theo dõi túi của tôi?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Can you help me track my bag? to another airport arrival need.",
+      "phrases": [
+        {
+          "id": "airport-1",
+          "vietnamese": "Nhập cảnh ở đâu?",
+          "english": "Where is immigration?",
+          "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-1",
+          "audioKey": "airport-1"
+        },
+        {
+          "id": "airport-2",
+          "vietnamese": "Lấy hành lý ở đâu?",
+          "english": "Where is baggage claim?",
+          "pronunciation": "lay han lee uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-2",
+          "audioKey": "airport-2"
+        },
+        {
+          "id": "airport-3",
+          "vietnamese": "Mua SIM ở đâu?",
+          "english": "Where can I buy a SIM card?",
+          "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-3",
+          "audioKey": "airport-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real airport arrival exchange when track my bag is the detail you need resolved. The likely reply is help, a question back, or a practical next step, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể giúp tôi theo dõi túi của tôi?.",
+      "phrases": [
+        {
+          "id": "airport-5",
+          "vietnamese": "Khu đón ở đâu?",
+          "english": "Where is the pickup area?",
+          "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-5",
+          "audioKey": "airport-5"
+        },
+        {
+          "id": "airport-pickup-clearer",
+          "vietnamese": "Tôi gặp tài xế ở đâu?",
+          "english": "Where do I meet the driver?",
+          "pronunciation": "toy gap tai seh uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-pickup-clearer",
+          "audioKey": "airport-pickup-clearer"
+        },
+        {
+          "id": "airport-6",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive",
+          "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-6",
+          "audioKey": "airport-6"
+        },
+        {
+          "id": "airport-7",
+          "vietnamese": "Nhà ga nội địa ở đâu?",
+          "english": "Where is the domestic terminal?",
+          "pronunciation": "nya ga noy dee-ah uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-airport-7",
+          "audioKey": "airport-7"
+        },
+        {
+          "id": "v500-airp-bord-arri-here-is-my-visa",
+          "vietnamese": "Đây là thị thực của tôi",
+          "english": "Here is my visa",
+          "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
+          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-airp-bord-arri-can-you-help-me-track-my-bag",
+      "vietnamese": "Bạn có thể giúp tôi theo dõi túi của tôi?",
+      "english": "Can you help me track my bag?",
+      "pronunciation": "Ban co the giup toi theo doi tui cua toi",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v900-airp-bord-arri-can-you-help-me-track-my-bag"
+    }
+  ]
+}

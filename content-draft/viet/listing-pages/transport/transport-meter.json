@@ -35,19 +35,19 @@
         {
           "id": "transport-meter-piece-2",
           "vietnamese": "bật",
-          "english": "specific detail",
+          "english": "turn on",
           "audioKey": "breakdown-authored-bat-558b946a47"
         },
         {
           "id": "transport-meter-piece-3",
           "vietnamese": "đồng",
-          "english": "specific detail",
+          "english": "dong / currency",
           "audioKey": "breakdown-v500-poli-basi-okay-first"
         },
         {
           "id": "transport-meter-piece-4",
           "vietnamese": "hồ",
-          "english": "specific detail",
+          "english": "meter / clock",
           "audioKey": "breakdown-authored-ho-118e7abdc8"
         },
         {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Làm ơn bật đồng hồ giúp tôi for \"Please use the meter\" when you need the listener to catch the point quickly. This is for the start of the ride when you need the meter running. Pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "Use Làm ơn bật đồng hồ giúp tôi as your first sentence for \"Please use the meter\". This is for the start of the ride when you need the meter running. Leave a short pause after the phrase so the other person can answer with a confirmation, a handoff, a price, or a follow-up question. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
       "phrases": [
         {
           "id": "transport-meter",
@@ -86,13 +86,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Please use the meter\", the useful move is putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Please use the meter\", Làm ơn bật đồng hồ giúp tôi helps by putting the need first and leaving room for the helper to confirm the detail. Pause after the phrase so the person can confirm before you add more words.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, locals often answer with a confirmation, a handoff, a price, or a follow-up question rather than a long explanation. That makes Làm ơn bật đồng hồ giúp tôi strongest when you say it once, pause, and let the other person show the next step. Show the map, address, or destination while you say it so the answer has a clear anchor.",
+      "body": "In Transport, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Làm ơn bật đồng hồ giúp tôi once, pause, and watch for the reply before adding another sentence. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
       "phrases": [
         {
           "id": "taxi-1",

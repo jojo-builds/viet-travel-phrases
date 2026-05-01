@@ -29,13 +29,13 @@
         {
           "id": "v500-shop-how-much-is-this-item-piece-1",
           "vietnamese": "Mặt",
-          "english": "name or place detail",
+          "english": "proper name or place",
           "audioKey": "breakdown-v500-shop-how-much-is-this-item-first"
         },
         {
           "id": "v500-shop-how-much-is-this-item-piece-2",
           "vietnamese": "hàng",
-          "english": "specific detail",
+          "english": "item / goods",
           "audioKey": "breakdown-v500-loca-serv-ever-task-one-item-is-missing-piece-3"
         },
         {
@@ -68,7 +68,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Start with Mặt hàng này giá bao nhiêu? for \"How much is this item\" when you need the listener to catch the point quickly. Use this while comparing items, checking fit, or fixing a purchase problem at the counter. Pause after the phrase so the other person can answer with a number, typed amount, calculator screen, or direct yes/no about payment. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "Use Mặt hàng này giá bao nhiêu? as your first sentence for \"How much is this item\". Use this while comparing items, checking fit, or fixing a purchase problem at the counter. Leave a short pause after the phrase so the other person can answer with a number, typed amount, calculator screen, or direct yes/no about payment. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "v500-shop-how-much-is-this-item",
@@ -86,13 +86,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. For \"How much is this item\", the useful move is making the price or amount the center of the exchange. Repeat or show the number before paying if the amount matters.",
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. For \"How much is this item\", Mặt hàng này giá bao nhiêu? helps by making the price or amount the center of the exchange. Repeat or show the number before paying if the amount matters.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Shopping, locals often answer with a number, typed amount, calculator screen, or direct yes/no about payment rather than a long explanation. That makes Mặt hàng này giá bao nhiêu? strongest when you say it once, pause, and let the other person show the next step. Point to the item, menu line, or photo so the person can connect the phrase to the exact thing you mean.",
+      "body": "In Shopping, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say Mặt hàng này giá bao nhiêu? once, pause, and watch for the reply before adding another sentence. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "shop-1",
