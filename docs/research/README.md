@@ -2,6 +2,13 @@
 
 Research work is only complete when it leaves a reusable artifact in the repo.
 
+## Standing R&D Lane
+
+Use `docs/research/R_AND_D_LANE.md` for the pinned `Research / Product Strategy`
+thread. That lane owns hard external research, competitor review synthesis,
+audience pain-point discovery, UX/product strategy research, and folding findings
+back into source-truth docs or task cards.
+
 ## Required Shape
 
 Each research task should write a human-readable Markdown file under `docs/research/`,

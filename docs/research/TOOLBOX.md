@@ -29,6 +29,12 @@ Best for:
 - validating generated data;
 - committing implementation and result files.
 
+For market and audience research, Codex should use current web sources and save
+source links, research dates, and confidence levels in the report. Reddit, X,
+forums, YouTube comments, App Store reviews, and travel/language communities are
+useful only when the evidence is traceable and public. Do not bypass gated,
+private, paywalled, or rate-limited content.
+
 ### ChatGPT / Deep Research
 
 Use ChatGPT when the task benefits from a broad external research report, polished
