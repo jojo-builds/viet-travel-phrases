@@ -22,10 +22,16 @@ The artifact must include:
 - product recommendations;
 - what should not be done;
 - open questions;
+- a `Fold-In Options` section separating adopt now, create task card, hold, reject, and needs Jojo decision;
 - a `Folded Into` section naming docs, task cards, code, prototypes, or decisions updated from the research.
 
 If research creates screenshots, prototypes, or downloaded reports, link them from the
 Markdown file. Do not leave useful findings only in a Codex thread.
+
+Research should normally stop at the fold-in decision point unless the assignment
+explicitly authorizes updates. The report should make the next decision obvious:
+what we should adopt, what needs a worker task, what should wait, and what should
+be rejected.
 
 ## Result Receipt
 

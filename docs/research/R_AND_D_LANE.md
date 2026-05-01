@@ -49,6 +49,10 @@ If assigned through a task card, also write the short closeout receipt under:
 docs/task-results/<TASK-ID>.md
 ```
 
+Every research pass must end with a fold-in review packet. The R&D lane should
+make it easy for Jojo and the orchestrator to decide what to adopt, what to
+reject, and what needs more work.
+
 ## Evidence Quality
 
 Use current external sources when researching market, competitor, or audience
@@ -110,12 +114,52 @@ Decision this should inform:
 
 ## Open Questions
 
+## Fold-In Options
+
 ## Folded Into
 ```
 
 The `Folded Into` section is mandatory. It must name the docs, decisions, task
 cards, prototypes, or code changes that now reflect the research. If nothing was
 folded in yet, say what is waiting and which lane should own it.
+
+The `Fold-In Options` section is also mandatory. It should be written before any
+product change happens and should separate:
+
+- adopt now;
+- create a task card;
+- hold for later;
+- reject;
+- needs Jojo decision.
+
+This is the review surface for deciding what to do with the research.
+
+## Fold-In Review Loop
+
+The R&D lane does not silently turn research into product direction.
+
+The normal loop is:
+
+1. Research the question with current, traceable sources.
+2. Save a readable report and any screenshots, source tables, prompt packets, or
+   imported reports.
+3. Write a `Fold-In Options` section that says what could change in SpeakLocal.
+4. Run the required peer review when the task is meaningful.
+5. Write a short task-result receipt with artifact links and the recommended
+   next move.
+6. Stop and let Jojo/orchestrator decide what to fold in, unless the original
+   assignment explicitly authorized a specific doc/task-card update.
+
+After Jojo/orchestrator decides, the fold-in can happen in one of three ways:
+
+- R&D updates source-truth docs or creates task cards if the assignment allows it.
+- The orchestrator creates/reroutes task cards to another pinned lane.
+- The research is marked as held/rejected with the reason preserved in the
+  report.
+
+Do not bury important recommendations only in the final chat message. Put them
+in the report and receipt so they are recoverable after context compaction or
+thread archival.
 
 ## Tool Use
 
@@ -158,6 +202,11 @@ For each meaningful opportunity, decide whether it becomes:
 
 Research should propose tasks. It should not edit production app code unless the
 assignment explicitly asks for implementation.
+
+When proposing downstream work, include a tiny handoff prompt target such as
+`Native UI / Simulator`, `Content + Listing Pages`, `SQLite / Data Runtime`,
+`Practice / Quiz`, or `Tester / QA`. The prompt can be drafted, but it should not
+be treated as approved until Jojo/orchestrator chooses to run it.
 
 ## Peer Review
 
