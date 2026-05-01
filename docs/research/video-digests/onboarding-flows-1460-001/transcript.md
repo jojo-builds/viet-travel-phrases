@@ -1,0 +1,259 @@
+# Transcript
+
+Source captions: `source.en-orig.vtt`
+
+- [00:00:00] I've studied over a thousand onboarding
+- [00:00:02] flows to find out what makes good
+- [00:00:05] onboarding and do we even need one. A
+- [00:00:08] lot of what I've read says keep it
+- [00:00:10] short, but based on what I found, the
+- [00:00:13] average app has 25 onboarding screens.
+- [00:00:16] The longest categories are finance,
+- [00:00:18] [music] health, and fitness and
+- [00:00:20] education. Seven out of 10 of these
+- [00:00:23] longest apps are actually finance apps
+- [00:00:25] [music] as well. Some of the apps with
+- [00:00:27] the longest onboarding flows are also
+- [00:00:30] one of the most successful ones. When we
+- [00:00:32] look at apps with the shortest
+- [00:00:34] onboarding flows, three of them are AI
+- [00:00:37] products. So maybe keeping our
+- [00:00:40] onboarding flows short was never the
+- [00:00:43] point. The best onboarding seem to
+- [00:00:45] follow this pattern. [music] You sign
+- [00:00:47] up, you set up your account, you hit the
+- [00:00:49] aha moment. That's where you actually
+- [00:00:51] feel the product's value. For Airbnb,
+- [00:00:54] it's making your first booking. For
+- [00:00:56] Netflix, it's finding and watching a
+- [00:00:58] show. For Mobin, it's finding a screen
+- [00:01:01] or an animation that you love and saving
+- [00:01:03] it to your collection. So, what are
+- [00:01:06] these apps actually doing? The best
+- [00:01:08] onboarding screens I've kept seeing had
+- [00:01:10] one thing in common. They're not listing
+- [00:01:13] features. They're selling the outcome.
+- [00:01:15] Timo does this really simply. [music]
+- [00:01:17] Their welcome screen is just showing the
+- [00:01:19] product in action on both their mobile
+- [00:01:21] app and desktop.
+- [00:01:23] Front Butts does this with animation.
+- [00:01:26] The moment you open the app, you get a
+- [00:01:28] feel for what it does without reading a
+- [00:01:30] single word. And Alma [music]
+- [00:01:32] goes one step further. It lets you try
+- [00:01:34] the core experience before you sign up.
+- [00:01:37] I rarely see apps with AI features who
+- [00:01:40] lets you try it out before signing up an
+- [00:01:42] account. [music]
+- [00:01:43] And sometimes it could just be a copy
+- [00:01:45] tweak like Superhum. They turn a boring
+- [00:01:47] signup screen into a pitch with logos on
+- [00:01:50] the side as social proof. Some apps skip
+- [00:01:53] the pitch entirely and just feel human.
+- [00:01:56] This is an app called One year. So in
+- [00:01:58] their onboarding flow, they included a
+- [00:02:00] founders note which had [music] a
+- [00:02:02] handwritten signature and a handdrawn
+- [00:02:04] flower in it. It's pretty cute. And
+- [00:02:07] Tinder [music]
+- [00:02:08] acknowledge when your birthday is around
+- [00:02:10] the corner. Airbnb. Well, this one's not
+- [00:02:12] even in the onboarding flow, but when
+- [00:02:15] you successfully list your first space,
+- [00:02:17] they show you a video from their CEO.
+- [00:02:20] It's a founders's touch at the aha
+- [00:02:23] moment. As for Base Camp, they put a
+- [00:02:26] personal note from the CEO after you've
+- [00:02:28] created an account. It feels like the
+- [00:02:31] product was made with intention. And one
+- [00:02:33] of the best onboarding flows add
+- [00:02:34] personalization into the flow and they
+- [00:02:37] make it worth your time. 23% of apps
+- [00:02:40] personalize during onboarding. With AI
+- [00:02:42] apps at only 7%. It seems like AI tools
+- [00:02:46] don't ask questions about your users up
+- [00:02:48] front. They let the product learn from
+- [00:02:50] us instead. Looking at tight on
+- [00:02:53] boarding, it's short and sweet. You just
+- [00:02:55] download the app, answer two questions,
+- [00:02:57] watch it, customize your
+- [00:02:59] recommendations,
+- [00:03:00] and it'll prompt you to sign up. That's
+- [00:03:02] it. Very simple. Headspace found out
+- [00:03:05] that their users come to their app with
+- [00:03:07] more than one pain point to solve. So,
+- [00:03:09] instead of asking users to pick just one
+- [00:03:11] goal that they want to achieve [music]
+- [00:03:12] with Headspace, they let them pick more
+- [00:03:15] than one. It sounded like a very simple
+- [00:03:17] tweak, but it led to 10% increase in
+- [00:03:19] free trial conversion. There are also
+- [00:03:22] other apps that allow multi-intent
+- [00:03:24] queries. [music]
+- [00:03:26] Focus Flight lets you choose your map
+- [00:03:28] style during onboarding. It makes the
+- [00:03:31] app [music] feel like yours before you
+- [00:03:34] even started using it. Sometimes [music]
+- [00:03:36] it can be even simpler than that. Dollar
+- [00:03:38] Shave Club tweaked the quiz copy to be
+- [00:03:41] more conversational. This alone led to
+- [00:03:44] 5% increase in subscriptions. Some apps
+- [00:03:47] don't just collect answers during the
+- [00:03:49] quiz. They actually show you what those
+- [00:03:52] answers unlocked. So in endos on
+- [00:03:54] boarding, you answer six questions and
+- [00:03:57] then they show you this. You haven't
+- [00:03:59] even used the product yet, but it
+- [00:04:00] already feels like it's going to [music]
+- [00:04:02] work. Bite pal does the same thing.
+- [00:04:05] After the quiz, they build your personal
+- [00:04:07] plan and then tell you exactly when
+- [00:04:09] you'll hit your goal.
+- [00:04:12] Brilliant [music] shows you courses that
+- [00:04:14] are personalized to your responses. As
+- [00:04:17] soon as you finish your onboarding flow,
+- [00:04:19] your homepage is already populated with
+- [00:04:21] only the content that you want to see.
+- [00:04:24] Here's another one by speak a language
+- [00:04:26] learning app. It asks you what language
+- [00:04:28] you like to learn and your goals. Then
+- [00:04:31] in one simple screen, it tells you in
+- [00:04:33] two months you'll be able to communicate
+- [00:04:35] while traveling in France. There's a
+- [00:04:38] simple graph showing that speaking helps
+- [00:04:40] you reach your goals faster than
+- [00:04:41] reading. [music] The steps before this
+- [00:04:43] screen already had you speaking instead
+- [00:04:45] of typing. So out of 900 plus apps and
+- [00:04:49] websites, 22% [music] of them throws a
+- [00:04:52] payw wall during onboarding. Some apps
+- [00:04:54] also pair personalization with a payw
+- [00:04:57] wall. Beside pairs a quiz with a
+- [00:05:00] one-time offer to drive urgency.
+- [00:05:04] Timo does the same with a full page of
+- [00:05:07] social proof before showing the payw
+- [00:05:08] wall and focus flight makes the payw
+- [00:05:11] wall itself fun. The one-time offer,
+- [00:05:14] it's shaped like a flight ticket and
+- [00:05:15] your phone vibrates as it gets printed
+- [00:05:17] out. It's a payw wall that actually
+- [00:05:19] feels delightful. As for Grammarly,
+- [00:05:22] based on your quiz answers, they
+- [00:05:24] recommend tailored pricing plans. This
+- [00:05:26] alone led to almost a 20% increase in
+- [00:05:29] plan upgrades. Okay, some of these
+- [00:05:32] onboarding flows are really long, yet
+- [00:05:34] they don't feel like it. The onboarding
+- [00:05:36] flows that I really love tend to make
+- [00:05:39] onboarding flows feel short. Out of 986
+- [00:05:43] apps, Dualingo has one of the longest
+- [00:05:45] onboarding flows. And if we zoom in, it
+- [00:05:48] goes like this. You get started, choose
+- [00:05:51] the language that you want to learn. It
+- [00:05:52] learns about you. You start your first
+- [00:05:54] lesson, get the satisfaction of
+- [00:05:56] completing it, and then you create an
+- [00:05:59] account. By that point, you've already
+- [00:06:01] gone through 60 screens before you even
+- [00:06:04] sign up. And the crazy part is it
+- [00:06:06] doesn't even feel long. Okay, so Bumps
+- [00:06:08] onboarding flow is creative. Even the
+- [00:06:10] loading states are wild. There's always
+- [00:06:13] something going on throughout the
+- [00:06:14] onboarding flow. Smooth animations on
+- [00:06:16] things like verification that rarely
+- [00:06:18] [music] get special treatment. It adds
+- [00:06:21] fun. It doesn't feel like you're going
+- [00:06:23] through a boring onboarding flow. Bipal
+- [00:06:27] has 61 screens. The onboarding was a lot
+- [00:06:29] of fun. It has really amazing
+- [00:06:31] animations. The raccoon is quite lovable
+- [00:06:33] and you even get to name your virtual
+- [00:06:36] pet raccoon. Throughout the onboarding,
+- [00:06:38] they emphasize the value like your
+- [00:06:40] personal plan is ready and you'll lose
+- [00:06:42] weight by an exact date and then bam, a
+- [00:06:44] payw wall. All right, so another pattern
+- [00:06:46] I noticed some apps don't frontload all
+- [00:06:49] the education to you. Cake Equity is a
+- [00:06:52] great example. They're dealing with dry
+- [00:06:54] concepts like company equity investing
+- [00:06:56] schedules and turns it into something
+- [00:06:58] approachable with copy that reassures
+- [00:07:00] users from time to time and tool tips
+- [00:07:02] that explain the impact of each step
+- [00:07:05] [music] so that users feel like
+- [00:07:06] someone's guiding them along the way.
+- [00:07:08] Even something as small as a password
+- [00:07:09] field that checks off requirements in
+- [00:07:11] real times as you type removes a reason
+- [00:07:13] to get stuck. Maybe it's a progress
+- [00:07:15] indicator. Maybe it's microcopy. None of
+- [00:07:18] this is flashy, but it makes the
+- [00:07:20] experience feel effortless. T-do apps
+- [00:07:22] does this really well, too. Instead of
+- [00:07:25] giving users a blank empty state, they
+- [00:07:28] show you something like this with no
+- [00:07:30] guided tours, no popups, just a little
+- [00:07:33] nudge in the right place. And when Mural
+- [00:07:36] replaced pop-ups and banners with a
+- [00:07:38] clear six-step checklist, it drove a 10%
+- [00:07:41] relative increase in one week retention.
+- [00:07:43] Checklist stick around even after the
+- [00:07:45] user dismisses the initial flow. If you
+- [00:07:48] go on Mobin and do an AI search for
+- [00:07:50] onboarding checklist, you will find more
+- [00:07:53] ideas like this.
+- [00:07:55] Another pattern that I kept seeing is a
+- [00:07:57] lot of apps show a custom screen before
+- [00:08:00] the notification pop-up. Apparently, it
+- [00:08:02] improves accept rates significantly.
+- [00:08:04] Here's an example by Brilliant. I'll
+- [00:08:06] remind you to learn so it becomes a
+- [00:08:08] long-term habit. Cool. Center takes it
+- [00:08:11] one step further. It also teases you the
+- [00:08:13] notification that you'll receive if you
+- [00:08:16] allow it. This might explain why web
+- [00:08:18] onboarding is 21% shorter than iOS.
+- [00:08:21] Mobile just has more permission and payw
+- [00:08:24] wall screens baked in. Okay, this one
+- [00:08:26] surprised me. House split their signup
+- [00:08:29] form into multiple screens and they see
+- [00:08:31] a 15% increase in conversions. Maybe the
+- [00:08:35] friction we add in one place removes
+- [00:08:38] friction in another. Culture plays a
+- [00:08:40] role here as well. Users in eastern
+- [00:08:42] markets tend to be more comfortable with
+- [00:08:45] informationheavy interfaces. So what
+- [00:08:47] feels like clutter to one audience feels
+- [00:08:49] efficient to another, which is partly
+- [00:08:51] why we can't just copy what worked. And
+- [00:08:53] I don't think there's one right or wrong
+- [00:08:54] way to design an onboarding flow that's
+- [00:08:57] bestin-class. The ones that stuck with
+- [00:08:59] me didn't feel like onboarding. What I
+- [00:09:02] saw in common in these apps is that they
+- [00:09:04] brought users to value quickly.
+- [00:09:07] Sometimes it's adding delight to a very
+- [00:09:10] long onboarding flow. Sometimes it's
+- [00:09:12] letting users personalize their app
+- [00:09:14] experience for themselves and sometimes
+- [00:09:16] it's getting out of the way. So, do we
+- [00:09:19] even need on boarding? Bobin is a place
+- [00:09:23] to find design inspiration. The product
+- [00:09:25] speaks for itself. Same with AI chat
+- [00:09:28] apps. The first prompt is where users
+- [00:09:31] find value. For products like these,
+- [00:09:33] maybe the best experience [music] is
+- [00:09:35] just to let users get in fast and not
+- [00:09:38] have an onboarding experience that gets
+- [00:09:41] in their way. Maybe it all boils down to
+- [00:09:44] the product. We had so much fun diving
+- [00:09:46] into the data. And did you know that
+- [00:09:48] onboarding flows are the second most
+- [00:09:50] search on Mobin? For the next video, I
+- [00:09:53] have a feeling that we're going to dive
+- [00:09:55] really deep into dashboards and see what
+- [00:09:57] the data tells us. So stick around,
+- [00:09:59] subscribe if this vibes with you.
