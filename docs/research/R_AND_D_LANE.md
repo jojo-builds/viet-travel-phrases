@@ -25,6 +25,30 @@ The R&D lane should answer questions like:
   competitors?
 - What should we build, avoid, test, or research next?
 
+## Operating Plan
+
+Run the lane as evidence-to-decision work:
+
+- Start each assignment by naming the research question, the decision it should
+  inform, the intended audience, and the source mix.
+- Use live external research for market, Reddit/X/forum, competitor-review, UX,
+  and feature questions. Use only public content, cite source links, and include
+  the research date because market evidence ages.
+- Separate strong repeated patterns from weak signals, especially for anecdotes,
+  social posts, forum comments, and app-store reviews.
+- Compare every recommendation against SpeakLocal's product direction: calm,
+  offline-first, fast, native, traveler-focused, and low-complexity.
+- Save completed work in the repo before calling it done. Research belongs in
+  `docs/research/<topic-slug>/README.md`; design-heavy research may also use
+  `docs/design/<topic-slug>/`; task-card assignments also need
+  `docs/task-results/<TASK-ID>.md`.
+- End meaningful passes with a focused read-only peer review, fold-in options,
+  and tiny handoff prompts for the lane that should own any downstream task:
+  `Native UI / Simulator`, `Content + Listing Pages`, `SQLite / Data Runtime`,
+  `Practice / Quiz`, or `Tester / QA`.
+- Stop at fold-in recommendations unless the assignment explicitly authorizes a
+  source-truth doc update, task-card creation, or implementation work.
+
 ## Research Standard
 
 Research is not done when it is only in chat.
