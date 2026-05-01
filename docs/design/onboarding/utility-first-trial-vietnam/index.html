@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal Utility-First Onboarding</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f2ed;
+      --ink: #17211d;
+      --muted: #6b7370;
+      --line: rgba(23, 33, 29, 0.12);
+      --card: rgba(255, 255, 255, 0.76);
+      --red: #ff2f3a;
+      --green: #237762;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fffdfa 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Helvetica, Arial, sans-serif;
+    }
+
+    main {
+      width: min(1500px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 44px 0 72px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 88px);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 750;
+      white-space: nowrap;
+      backdrop-filter: blur(18px);
+    }
+
+    section { margin-top: 36px; }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .contact {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.68);
+      box-shadow: 0 18px 48px rgba(23, 33, 29, 0.10);
+      backdrop-filter: blur(22px);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      background: #fff;
+    }
+
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    figure {
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 18px 46px rgba(23, 33, 29, 0.10);
+      backdrop-filter: blur(22px);
+    }
+
+    figcaption {
+      min-height: 84px;
+      padding: 14px 4px 0;
+    }
+
+    figcaption strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    figcaption span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.38;
+    }
+
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .note {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.70);
+      color: var(--muted);
+      line-height: 1.42;
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    @media (max-width: 980px) {
+      main { width: min(720px, calc(100% - 28px)); padding-top: 28px; }
+      header { grid-template-columns: 1fr; }
+      .screens, .notes { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Utility-First Trial Onboarding</h1>
+        <p class="summary">High-fidelity screenshot-style concepts for first-run SpeakLocal Vietnam. The recommended flow proves traveler value first: hear and save one useful phrase before setup and before the 7-day trial ask.</p>
+      </div>
+      <div class="badge">No free-tier CTA</div>
+    </header>
+
+    <section aria-label="Recommended flow contact sheet">
+      <h2>Recommended 6-Screen Flow</h2>
+      <div class="contact">
+        <img src="assets/recommended-flow-contact-sheet.png" alt="Recommended utility-first onboarding contact sheet">
+      </div>
+    </section>
+
+    <section class="screens" aria-label="Recommended flow individual screens">
+      <figure>
+        <img src="assets/recommended-01-arrival-phrase.png" alt="Arrival phrase value onboarding screen">
+        <figcaption><strong>1. Arrival Phrase Value</strong><span>Lead with a real hotel-desk phrase and bundled audio, not a feature tour.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/recommended-02-hear-save.png" alt="Hear and save phrase onboarding screen">
+        <figcaption><strong>2. Hear And Save</strong><span>Shows offline audio and saved phrase value before personalization.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/recommended-03-trip-focus.png" alt="Trip focus onboarding screen">
+        <figcaption><strong>3. Trip Focus</strong><span>Destination and situations are lightweight because the value is already clear.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/recommended-04-tiny-check.png" alt="Tiny phrase check onboarding screen">
+        <figcaption><strong>4. Tiny Phrase Check</strong><span>Real Vietnamese phrase recognition, skippable with a Beginner default.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/recommended-05-personalized-preview.png" alt="Personalized preview onboarding screen">
+        <figcaption><strong>5. Personalized Preview</strong><span>Shows the payoff from saved phrase, destination, situations, and level.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/recommended-06-trial-paywall.png" alt="7-day trial paywall screen">
+        <figcaption><strong>6. 7-Day Trial</strong><span>Paid ask comes after value, with no free-tier or limited-preview CTA.</span></figcaption>
+      </figure>
+    </section>
+
+    <section aria-label="Compact alternate contact sheet">
+      <h2>Compact Alternate</h2>
+      <div class="contact">
+        <img src="assets/compact-flow-contact-sheet.png" alt="Compact onboarding alternate contact sheet">
+      </div>
+    </section>
+
+    <section class="screens" aria-label="Compact alternate individual screens">
+      <figure>
+        <img src="assets/compact-01-phrase-first.png" alt="Compact phrase-first welcome screen">
+        <figcaption><strong>A1. Phrase First Welcome</strong><span>Welcome, starter phrase, audio, and city focus in one screen.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/compact-02-trip-setup.png" alt="Compact trip setup screen">
+        <figcaption><strong>A2. Trip Setup</strong><span>Combines destination and situation setup into one quick step.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/compact-03-preview-check.png" alt="Compact preview with optional check screen">
+        <figcaption><strong>A3. Preview With Check</strong><span>Prepared value plus optional phrase check before the trial screen.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/compact-04-trial-paywall.png" alt="Compact 7-day trial paywall screen">
+        <figcaption><strong>A4. 7-Day Trial</strong><span>Same trial model as recommended flow: primary trial CTA and legal/restore links only.</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="notes" aria-label="Design notes">
+      <div class="note"><strong>First value</strong> The user hears and saves a real phrase before the app asks for setup or payment.</div>
+      <div class="note"><strong>Personalization</strong> Setup questions are kept only because they visibly change the personalized preview.</div>
+      <div class="note"><strong>Melo</strong> Melo is small and supportive on setup or preview moments, never on controls or the paywall.</div>
+    </section>
+  </main>
+</body>
+</html>
