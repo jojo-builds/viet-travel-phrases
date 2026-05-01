@@ -5,6 +5,7 @@ struct PracticeView: View {
     @StateObject private var progressStore: LocalPracticeProgressStore
 
     let initialMode: PracticeMode?
+    let isActive: Bool
     let scrollToTopTrigger: Int
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
@@ -17,6 +18,7 @@ struct PracticeView: View {
     init(
         intentStore: LocalUserIntentStore,
         initialMode: PracticeMode? = nil,
+        isActive: Bool = true,
         scrollToTopTrigger: Int = 0,
         progressStore: LocalPracticeProgressStore = LocalPracticeProgressStore(),
         onOpenDetail: @escaping (String) -> Void,
@@ -24,6 +26,7 @@ struct PracticeView: View {
     ) {
         self.intentStore = intentStore
         self.initialMode = initialMode
+        self.isActive = isActive
         self.scrollToTopTrigger = scrollToTopTrigger
         self.onOpenDetail = onOpenDetail
         self.onBrowseTapped = onBrowseTapped
@@ -79,16 +82,31 @@ struct PracticeView: View {
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
             }
+
+            if let activeSession, activeSession.selectedOptionID != nil {
+                PracticeFloatingContinueButton(
+                    title: activeSession.isOnLastPrompt ? "Finish" : "Next",
+                    onContinue: continueSession
+                )
+                .padding(.horizontal, PracticeLayout.horizontalPadding)
+                .padding(.bottom, PracticeLayout.floatingContinueBottomPadding)
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .zIndex(90)
+            }
         }
         .task {
-            reloadDeck()
-            startInitialModeIfNeeded()
+            reloadDeckIfActive()
+        }
+        .onChange(of: isActive) { _, active in
+            if active {
+                reloadDeck()
+            }
         }
         .onChange(of: intentStore.practicePageIDs) { _, _ in
-            reloadDeck()
+            reloadDeckIfActive()
         }
         .onChange(of: intentStore.savedPageIDs) { _, _ in
-            reloadDeck()
+            reloadDeckIfActive()
         }
         .accessibilityIdentifier("PracticeView")
     }
@@ -160,6 +178,14 @@ struct PracticeView: View {
 
     private func togglePracticePage(_ pageID: String) {
         intentStore.togglePracticePage(pageID)
+        reloadDeck()
+    }
+
+    private func reloadDeckIfActive() {
+        guard isActive else {
+            return
+        }
+
         reloadDeck()
     }
 
@@ -713,8 +739,7 @@ private struct PracticeSessionSurface: View {
                         selectedOption: selectedOption,
                         isInPracticePool: isInPracticePool,
                         onOpenSource: onOpenSource,
-                        onTogglePractice: onTogglePractice,
-                        onContinue: onContinue
+                        onTogglePractice: onTogglePractice
                     )
                 }
             }
@@ -764,6 +789,7 @@ private struct PracticeAnswerOptionButton: View {
         }
         .buttonStyle(.plain)
         .disabled(hasAnswered)
+        .accessibilityIdentifier(option.isCorrect ? "Practice.Option.Correct" : "Practice.Option.Wrong")
     }
 
     private var symbolName: String {
@@ -821,7 +847,6 @@ private struct PracticeFeedbackCard: View {
     let isInPracticePool: Bool
     let onOpenSource: () -> Void
     let onTogglePractice: () -> Void
-    let onContinue: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -857,16 +882,6 @@ private struct PracticeFeedbackCard: View {
                     .accessibilityLabel("Remove from practice")
                 }
             }
-
-            Button(action: onContinue) {
-                Label("Next", systemImage: "arrow.right")
-                    .font(.headline.weight(.bold))
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 48)
-            }
-            .buttonStyle(.plain)
-            .foregroundStyle(.white)
-            .background(Color.red, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
         }
         .padding(14)
         .background(.white.opacity(0.55), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
@@ -874,6 +889,26 @@ private struct PracticeFeedbackCard: View {
 
     private var title: String {
         selectedOption.isCorrect ? "Nice. Keep that phrase close." : "Good catch. This one will come back."
+    }
+}
+
+private struct PracticeFloatingContinueButton: View {
+    let title: String
+    let onContinue: () -> Void
+
+    var body: some View {
+        Button(action: onContinue) {
+            Label(title, systemImage: "arrow.right")
+                .font(.headline.weight(.bold))
+                .frame(maxWidth: .infinity)
+                .frame(height: 52)
+                .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(.white)
+        .background(Color.red, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .shadow(color: .red.opacity(0.22), radius: 18, x: 0, y: 8)
+        .accessibilityIdentifier("Practice.ContinueButton")
     }
 }
 
@@ -1072,6 +1107,7 @@ private struct MeloPlaceholderMark: View {
 
 private enum PracticeLayout {
     static let horizontalPadding: CGFloat = 20
+    static let floatingContinueBottomPadding: CGFloat = 92
 }
 
 #Preview {

@@ -66,6 +66,7 @@ struct AppShellView: View {
                 PracticeView(
                     intentStore: intentStore,
                     initialMode: launchPracticeMode,
+                    isActive: navigation.currentRoute == .practice,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
                     onOpenDetail: openDetailFromPractice,
                     onBrowseTapped: openBrowseAll
@@ -279,6 +280,7 @@ struct AppShellView: View {
         case .practice:
             PracticeView(
                 intentStore: intentStore,
+                isActive: false,
                 scrollToTopTrigger: 0,
                 onOpenDetail: openDetailFromPractice,
                 onBrowseTapped: openBrowseAll

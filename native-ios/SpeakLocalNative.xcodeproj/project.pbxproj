@@ -31,6 +31,7 @@
 		B34399CF6C5B98FB4862E2E9 /* PhraseListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C570403C2E33918DCE587ED /* PhraseListingView.swift */; };
 		B4BB1FA3BE7357CB5035A731 /* PhrasePageFixtureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */; };
 		C4CCD078FF1A029730CCD5FD /* PhraseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */; };
+		CDFA70A16B6D74B02494DCA7 /* PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */; };
 		EA5ADDE73A6232C5884B736C /* AuthoredVietListingPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */; };
 		F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		7C570403C2E33918DCE587ED /* PhraseListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListingView.swift; sourceTree = "<group>"; };
 		81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLocalNativeApp.swift; sourceTree = "<group>"; };
 		8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSQLiteLanguagePackRepository.swift; sourceTree = "<group>"; };
+		9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeUITests.swift; sourceTree = "<group>"; };
 		A83272548030E59BD55C69E3 /* LanguagePacks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LanguagePacks; path = Resources/LanguagePacks; sourceTree = SOURCE_ROOT; };
 		B16251C7B60B5DAA58A148B9 /* AudioControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControls.swift; sourceTree = "<group>"; };
 		B883D25427177530402A1885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */,
 				63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */,
 				B883D25427177530402A1885 /* Info.plist */,
+				9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				AB89E8F8F43D17804FA07FF9 /* AdminChromeUITests.swift in Sources */,
 				26351589E274CA9E560ABD21 /* BackSwipeUITests.swift in Sources */,
+				CDFA70A16B6D74B02494DCA7 /* PracticeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
