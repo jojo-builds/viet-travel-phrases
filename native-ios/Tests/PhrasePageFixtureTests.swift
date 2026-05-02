@@ -1129,7 +1129,33 @@ final class PhrasePageFixtureTests: XCTestCase {
         events.removeAll()
 
         XCTAssertTrue(service.play(audioKey: "polite-1"))
-        XCTAssertEqual(events, ["make-player", "prepare", "play"])
+        XCTAssertEqual(events, ["stop", "make-player", "prepare", "play"])
+    }
+
+    func testAudioPlaybackServiceReusesPlayerForRepeatedSameClipTaps() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        var makePlayerCount = 0
+        var playCount = 0
+
+        let service = AudioPlaybackService(
+            manifest: manifest,
+            configureAudioSession: {},
+            makePlayer: { _ in
+                makePlayerCount += 1
+                return RecordingAudioPlayer { event in
+                    if event == "play" {
+                        playCount += 1
+                    }
+                }
+            }
+        )
+
+        for _ in 0..<10 {
+            XCTAssertTrue(service.play(audioKey: "polite-1"))
+        }
+
+        XCTAssertEqual(makePlayerCount, 1)
+        XCTAssertEqual(playCount, 10)
     }
 
     func testAllResolvedPhraseOptionAudioKeysPointToBundledFiles() throws {
@@ -1196,6 +1222,11 @@ final class PhrasePageFixtureTests: XCTestCase {
 private final class RecordingAudioPlayer: AudioPlayable {
     var enableRate = false
     var rate: Float = 1.0
+    var currentTime: TimeInterval = 0 {
+        didSet {
+            record("seek-\(Int(currentTime))")
+        }
+    }
 
     private let record: (String) -> Void
 
@@ -1206,6 +1237,10 @@ private final class RecordingAudioPlayer: AudioPlayable {
     func prepareToPlay() -> Bool {
         record("prepare")
         return true
+    }
+
+    func stop() {
+        record("stop")
     }
 
     func play() -> Bool {

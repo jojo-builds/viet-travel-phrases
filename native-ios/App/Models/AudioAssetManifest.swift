@@ -100,6 +100,9 @@ struct AudioAssetManifest {
 protocol AudioPlayable: AnyObject {
     var enableRate: Bool { get set }
     var rate: Float { get set }
+    var currentTime: TimeInterval { get set }
+
+    func stop()
 
     @discardableResult
     func prepareToPlay() -> Bool
@@ -117,6 +120,8 @@ final class AudioPlaybackService {
     private let configureAudioSession: () throws -> Void
     private let makePlayer: (URL) throws -> AudioPlayable
     private var player: AudioPlayable?
+    private var playerURL: URL?
+    private var playerRate: Float?
     private var hasConfiguredAudioSession = false
 
     init(
@@ -146,12 +151,21 @@ final class AudioPlaybackService {
 
         do {
             try configureAudioSessionIfNeeded()
+            let requestedRate = Float(rate)
+
+            if let player, playerURL == url, playerRate == requestedRate {
+                return replay(player, rate: requestedRate)
+            }
+
+            player?.stop()
             let player = try makePlayer(url)
             player.enableRate = true
-            player.rate = Float(rate)
+            player.rate = requestedRate
             player.prepareToPlay()
             let didStart = player.play()
             self.player = player
+            playerURL = url
+            playerRate = requestedRate
             return didStart
         } catch {
             assertionFailure("Unable to play audio \(url.lastPathComponent): \(error)")
@@ -166,5 +180,14 @@ final class AudioPlaybackService {
 
         try configureAudioSession()
         hasConfiguredAudioSession = true
+    }
+
+    private func replay(_ player: AudioPlayable, rate: Float) -> Bool {
+        player.stop()
+        player.currentTime = 0
+        player.enableRate = true
+        player.rate = rate
+        player.prepareToPlay()
+        return player.play()
     }
 }
