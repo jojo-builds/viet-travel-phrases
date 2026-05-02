@@ -86,6 +86,21 @@ extension View {
             self
         }
     }
+
+    @ViewBuilder
+    func chromeIconMorph(_ id: String, namespace: Namespace.ID?, isSource: Bool) -> some View {
+        if let namespace {
+            matchedGeometryEffect(
+                id: id,
+                in: namespace,
+                properties: .position,
+                anchor: .center,
+                isSource: isSource
+            )
+        } else {
+            self
+        }
+    }
 }
 
 enum AppChromeMorphID {

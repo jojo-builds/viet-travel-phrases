@@ -3,6 +3,7 @@ import SwiftUI
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
+    @State private var interactiveDragResolutionID = 0
     @State private var searchQuery: String
     @State private var searchFocusRequestID = 0
     @State private var didApplyLaunchSearchFocus = false
@@ -565,8 +566,6 @@ struct AppShellView: View {
         .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
         .padding(.vertical, AppChromeLayout.dockVerticalPadding)
         .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
-        .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
-        .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
         .zIndex(2)
     }
 
@@ -598,12 +597,10 @@ struct AppShellView: View {
                 .foregroundStyle(.red)
                 .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
                 .contentShape(Circle())
-                .chromeMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: navigation.isSearchPresented)
+                .chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: false)
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-        .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
-        .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
         .accessibilityLabel(kind.title)
         .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
         .zIndex(2)
@@ -702,13 +699,15 @@ struct AppShellView: View {
                 return
             }
 
-            interactiveDrag = AppInteractiveNavigationDrag(
-                direction: .back,
-                translation: AppInteractiveNavigationGesture.clampedBackTranslation(
-                    value.translation.width,
+            updateInteractiveDrag(
+                AppInteractiveNavigationDrag(
+                    direction: .back,
+                    translation: AppInteractiveNavigationGesture.clampedBackTranslation(
+                        value.translation.width,
+                        width: width
+                    ),
                     width: width
-                ),
-                width: width
+                )
             )
         }
         .onEnded { value in
@@ -719,8 +718,7 @@ struct AppShellView: View {
             )
 
             if shouldNavigateBack {
-                goBack()
-                interactiveDrag = nil
+                commitInteractiveSwipe(direction: .back, width: width)
             } else {
                 cancelInteractiveDrag()
             }
@@ -743,13 +741,15 @@ struct AppShellView: View {
                 return
             }
 
-            interactiveDrag = AppInteractiveNavigationDrag(
-                direction: .forward,
-                translation: AppInteractiveNavigationGesture.clampedForwardTranslation(
-                    value.translation.width,
+            updateInteractiveDrag(
+                AppInteractiveNavigationDrag(
+                    direction: .forward,
+                    translation: AppInteractiveNavigationGesture.clampedForwardTranslation(
+                        value.translation.width,
+                        width: width
+                    ),
                     width: width
-                ),
-                width: width
+                )
             )
         }
         .onEnded { value in
@@ -760,8 +760,7 @@ struct AppShellView: View {
             )
 
             if shouldNavigateForward {
-                goForward()
-                interactiveDrag = nil
+                commitInteractiveSwipe(direction: .forward, width: width)
             } else {
                 cancelInteractiveDrag()
             }
@@ -963,13 +962,79 @@ struct AppShellView: View {
     }
 
     private func cancelInteractiveChromeState() {
+        interactiveDragResolutionID += 1
         interactiveDrag = nil
     }
 
     private func cancelInteractiveDrag() {
-        withAnimation(.interactiveSpring(response: 0.26, dampingFraction: 0.88)) {
-            interactiveDrag = nil
+        guard let drag = interactiveDrag else {
+            return
         }
+
+        interactiveDragResolutionID += 1
+        let requestID = interactiveDragResolutionID
+        withAnimation(.interactiveSpring(response: 0.24, dampingFraction: 0.9)) {
+            interactiveDrag = AppInteractiveNavigationDrag(
+                direction: drag.direction,
+                translation: AppInteractiveNavigationGesture.cancellationTranslation,
+                width: drag.width
+            )
+        }
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 180_000_000)
+            guard requestID == interactiveDragResolutionID else {
+                return
+            }
+
+            withoutRouteAnimation {
+                interactiveDrag = nil
+            }
+        }
+    }
+
+    private func updateInteractiveDrag(_ drag: AppInteractiveNavigationDrag) {
+        interactiveDragResolutionID += 1
+        interactiveDrag = drag
+    }
+
+    private func commitInteractiveSwipe(direction: AppInteractiveNavigationDirection, width: CGFloat) {
+        guard let drag = interactiveDrag, drag.direction == direction else {
+            return
+        }
+
+        interactiveDragResolutionID += 1
+        let requestID = interactiveDragResolutionID
+        withAnimation(.easeOut(duration: 0.16)) {
+            interactiveDrag = AppInteractiveNavigationDrag(
+                direction: direction,
+                translation: AppInteractiveNavigationGesture.completionTranslation(for: direction, width: width),
+                width: drag.width
+            )
+        }
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 160_000_000)
+            guard requestID == interactiveDragResolutionID else {
+                return
+            }
+
+            withoutRouteAnimation {
+                switch direction {
+                case .back:
+                    navigation.goBack()
+                case .forward:
+                    navigation.goForward()
+                }
+                interactiveDrag = nil
+            }
+        }
+    }
+
+    private func withoutRouteAnimation(_ updates: () -> Void) {
+        var transaction = Transaction(animation: nil)
+        transaction.disablesAnimations = true
+        withTransaction(transaction, updates)
     }
 
     static func initialRoute(for arguments: [String]) -> AppRoute {
@@ -1696,6 +1761,84 @@ enum AppInteractiveNavigationGesture {
             return min(max(abs(translation) / usableWidth, 0), 1)
         }
     }
+
+    static func completionTranslation(
+        for direction: AppInteractiveNavigationDirection,
+        width: CGFloat
+    ) -> CGFloat {
+        switch direction {
+        case .back:
+            return max(width, 1)
+        case .forward:
+            return -max(width, 1)
+        }
+    }
+
+    static var cancellationTranslation: CGFloat {
+        0
+    }
+}
+
+struct AppInteractiveNavigationPresentation: Equatable {
+    let horizontalOffset: CGFloat
+    let opacity: Double
+    let scale: CGFloat
+    let brightness: Double
+    let shadowOpacity: Double
+    let shadowXOffset: CGFloat
+
+    static func presentation(
+        route: AppRoute,
+        currentRoute: AppRoute,
+        backPreviewRoute: AppRoute?,
+        forwardPreviewRoute: AppRoute?,
+        drag: AppInteractiveNavigationDrag?,
+        width: CGFloat
+    ) -> AppInteractiveNavigationPresentation {
+        let isCurrentRoute = route == currentRoute
+        guard let drag else {
+            return AppInteractiveNavigationPresentation(
+                horizontalOffset: 0,
+                opacity: isCurrentRoute ? 1 : 0,
+                scale: 1,
+                brightness: 0,
+                shadowOpacity: 0,
+                shadowXOffset: 0
+            )
+        }
+
+        let progress = drag.progress
+        let isForwardPreviewRoute = route == forwardPreviewRoute && drag.direction == .forward
+        let isBackPreviewRoute = route == backPreviewRoute && drag.direction == .back
+
+        switch drag.direction {
+        case .back:
+            return AppInteractiveNavigationPresentation(
+                horizontalOffset: isCurrentRoute ? drag.translation : 0,
+                opacity: (isCurrentRoute || isBackPreviewRoute) ? 1 : 0,
+                scale: 1,
+                brightness: isCurrentRoute ? 0 : -Double(0.035 * (1 - progress)),
+                shadowOpacity: isCurrentRoute ? Double(0.16 * progress) : 0,
+                shadowXOffset: -8
+            )
+        case .forward:
+            let horizontalOffset: CGFloat
+            if isForwardPreviewRoute {
+                horizontalOffset = max(0, width + drag.translation)
+            } else {
+                horizontalOffset = isCurrentRoute ? drag.translation * 0.18 : 0
+            }
+
+            return AppInteractiveNavigationPresentation(
+                horizontalOffset: horizontalOffset,
+                opacity: (isCurrentRoute || isForwardPreviewRoute) ? 1 : 0,
+                scale: 1,
+                brightness: isCurrentRoute ? -Double(0.035 * progress) : 0,
+                shadowOpacity: (isCurrentRoute || isForwardPreviewRoute) ? Double(0.16 * progress) : 0,
+                shadowXOffset: isForwardPreviewRoute ? -8 : 6
+            )
+        }
+    }
 }
 
 enum AppPageTransition {
@@ -1718,15 +1861,26 @@ private struct AppShellDockItem: View {
 
     var body: some View {
         VStack(spacing: 3) {
-            Image(systemName: kind.symbolName)
-                .font(.system(size: 18, weight: .semibold))
-                .chromeMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: isMorphSource)
+            icon
 
             Text(kind.title)
                 .font(.caption2.weight(.semibold))
         }
         .foregroundStyle(selected ? .red : .secondary)
         .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
+        .contentShape(Rectangle())
+    }
+
+    @ViewBuilder
+    private var icon: some View {
+        let image = Image(systemName: kind.symbolName)
+            .font(.system(size: 18, weight: .semibold))
+
+        if isMorphSource {
+            image.chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: true)
+        } else {
+            image
+        }
     }
 }
 
@@ -1740,109 +1894,31 @@ private struct NavigationPageMotion: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .offset(x: horizontalOffset)
-            .opacity(pageOpacity)
-            .scaleEffect(pageScale)
-            .brightness(pageBrightness)
+            .offset(x: presentation.horizontalOffset)
+            .opacity(presentation.opacity)
+            .scaleEffect(presentation.scale)
+            .brightness(presentation.brightness)
             .shadow(
-                color: .black.opacity(shadowOpacity),
+                color: .black.opacity(presentation.shadowOpacity),
                 radius: 22 * progress,
-                x: shadowXOffset,
+                x: presentation.shadowXOffset,
                 y: 0
             )
-    }
-
-    private var isCurrentRoute: Bool {
-        route == currentRoute
-    }
-
-    private var isForwardPreviewRoute: Bool {
-        route == forwardPreviewRoute && drag?.direction == .forward
-    }
-
-    private var isBackPreviewRoute: Bool {
-        route == backPreviewRoute && drag?.direction == .back
     }
 
     private var progress: CGFloat {
         drag?.progress ?? 0
     }
 
-    private var horizontalOffset: CGFloat {
-        guard let drag else {
-            return 0
-        }
-
-        switch drag.direction {
-        case .back:
-            return isCurrentRoute ? drag.translation : 0
-        case .forward:
-            if isForwardPreviewRoute {
-                return max(0, width + drag.translation)
-            }
-
-            return isCurrentRoute ? drag.translation * 0.18 : 0
-        }
-    }
-
-    private var pageOpacity: Double {
-        guard let drag else {
-            return isCurrentRoute ? 1 : 0
-        }
-
-        switch drag.direction {
-        case .back:
-            return (isCurrentRoute || isBackPreviewRoute) ? 1 : 0
-        case .forward:
-            return (isCurrentRoute || isForwardPreviewRoute) ? 1 : 0
-        }
-    }
-
-    private var pageScale: CGFloat {
-        guard let drag else {
-            return 1
-        }
-
-        switch drag.direction {
-        case .back:
-            return isCurrentRoute ? 1 : 0.985 + (0.015 * progress)
-        case .forward:
-            return isCurrentRoute ? 1 - (0.012 * progress) : 1
-        }
-    }
-
-    private var pageBrightness: Double {
-        guard let drag else {
-            return 0
-        }
-
-        switch drag.direction {
-        case .back:
-            return isCurrentRoute ? 0 : -Double(0.035 * (1 - progress))
-        case .forward:
-            return isCurrentRoute ? -Double(0.035 * progress) : 0
-        }
-    }
-
-    private var shadowOpacity: Double {
-        guard drag != nil else {
-            return 0
-        }
-
-        return (isCurrentRoute || isForwardPreviewRoute) ? Double(0.16 * progress) : 0
-    }
-
-    private var shadowXOffset: CGFloat {
-        guard let drag else {
-            return 0
-        }
-
-        switch drag.direction {
-        case .back:
-            return -8
-        case .forward:
-            return isForwardPreviewRoute ? -8 : 6
-        }
+    private var presentation: AppInteractiveNavigationPresentation {
+        AppInteractiveNavigationPresentation.presentation(
+            route: route,
+            currentRoute: currentRoute,
+            backPreviewRoute: backPreviewRoute,
+            forwardPreviewRoute: forwardPreviewRoute,
+            drag: drag,
+            width: width
+        )
     }
 }
 

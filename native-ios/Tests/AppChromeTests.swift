@@ -124,16 +124,42 @@ final class AppChromeTests: XCTestCase {
 
     func testSearchOriginIconTracksRouteBelowSearch() {
         var navigation = AppShellNavigationState()
+
+        navigation.openSearch()
+        XCTAssertEqual(navigation.searchOriginDockItem, .home)
+
+        navigation.goBack()
         navigation.openBrowse()
         navigation.openSearch()
 
         XCTAssertEqual(navigation.searchOriginDockItem, .browse)
 
         navigation.goBack()
+        navigation.openBrowseCollection(.category("hotel"))
+        navigation.openSearch()
+
+        XCTAssertEqual(navigation.searchOriginDockItem, .browse)
+
+        navigation.goBack()
+        navigation.openSaved()
+        navigation.openSearch()
+
+        XCTAssertEqual(navigation.searchOriginDockItem, .saved)
+
+        navigation.goBack()
         navigation.openPractice()
         navigation.openSearch()
 
         XCTAssertEqual(navigation.searchOriginDockItem, .practice)
+    }
+
+    func testDetailSearchOriginUsesBrowseDockItem() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+        navigation.openSearch()
+
+        XCTAssertEqual(navigation.searchOriginDockItem, .browse)
     }
 
     func testPlaybackSpeedPreferenceMapsToGlobalRates() {
@@ -744,6 +770,74 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(
             AppInteractiveNavigationGesture.progress(for: 600, direction: .back, width: 400),
             1,
+            accuracy: 0.001
+        )
+    }
+
+    func testInteractivePresentationKeepsBackLayersVerticallyLocked() {
+        let drag = AppInteractiveNavigationDrag(direction: .back, translation: 120, width: 400)
+        let currentPresentation = AppInteractiveNavigationPresentation.presentation(
+            route: .detailPage("viet-phrase-hello-chao-chi"),
+            currentRoute: .detailPage("viet-phrase-hello-chao-chi"),
+            backPreviewRoute: .detailPage("viet-phrase-hello-chao-anh"),
+            forwardPreviewRoute: nil,
+            drag: drag,
+            width: 400
+        )
+        let backPresentation = AppInteractiveNavigationPresentation.presentation(
+            route: .detailPage("viet-phrase-hello-chao-anh"),
+            currentRoute: .detailPage("viet-phrase-hello-chao-chi"),
+            backPreviewRoute: .detailPage("viet-phrase-hello-chao-anh"),
+            forwardPreviewRoute: nil,
+            drag: drag,
+            width: 400
+        )
+
+        XCTAssertEqual(currentPresentation.scale, 1, accuracy: 0.001)
+        XCTAssertEqual(backPresentation.scale, 1, accuracy: 0.001)
+        XCTAssertEqual(currentPresentation.horizontalOffset, 120, accuracy: 0.001)
+        XCTAssertEqual(backPresentation.horizontalOffset, 0, accuracy: 0.001)
+    }
+
+    func testInteractivePresentationKeepsForwardLayersVerticallyLocked() {
+        let drag = AppInteractiveNavigationDrag(direction: .forward, translation: -120, width: 400)
+        let currentPresentation = AppInteractiveNavigationPresentation.presentation(
+            route: .detailPage("viet-phrase-hello-chao-anh"),
+            currentRoute: .detailPage("viet-phrase-hello-chao-anh"),
+            backPreviewRoute: .home,
+            forwardPreviewRoute: .detailPage("viet-phrase-hello-chao-chi"),
+            drag: drag,
+            width: 400
+        )
+        let forwardPresentation = AppInteractiveNavigationPresentation.presentation(
+            route: .detailPage("viet-phrase-hello-chao-chi"),
+            currentRoute: .detailPage("viet-phrase-hello-chao-anh"),
+            backPreviewRoute: .home,
+            forwardPreviewRoute: .detailPage("viet-phrase-hello-chao-chi"),
+            drag: drag,
+            width: 400
+        )
+
+        XCTAssertEqual(currentPresentation.scale, 1, accuracy: 0.001)
+        XCTAssertEqual(forwardPresentation.scale, 1, accuracy: 0.001)
+        XCTAssertEqual(currentPresentation.horizontalOffset, -21.6, accuracy: 0.001)
+        XCTAssertEqual(forwardPresentation.horizontalOffset, 280, accuracy: 0.001)
+    }
+
+    func testInteractiveNavigationCompletionTargetsAreDeterministic() {
+        XCTAssertEqual(
+            AppInteractiveNavigationGesture.completionTranslation(for: .back, width: 400),
+            400,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            AppInteractiveNavigationGesture.completionTranslation(for: .forward, width: 400),
+            -400,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            AppInteractiveNavigationGesture.cancellationTranslation,
+            0,
             accuracy: 0.001
         )
     }
