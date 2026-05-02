@@ -556,17 +556,6 @@ struct AppShellView: View {
                 .autocorrectionDisabled()
                 .focused($isSearchFieldFocused)
                 .accessibilityIdentifier("AppChrome.SearchField")
-
-            if !searchQuery.isEmpty {
-                Button {
-                    searchQuery = ""
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.title3)
-                        .foregroundStyle(.secondary)
-                }
-                .buttonStyle(.plain)
-            }
         }
         .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
         .frame(height: AppChromeLayout.searchFieldHeight)
@@ -579,7 +568,7 @@ struct AppShellView: View {
 
     private var searchDismissKeyboardButton: some View {
         Button {
-            cancelSearchFocus()
+            clearFocusedSearch()
         } label: {
             Image(systemName: "xmark")
                 .font(.title2.weight(.semibold))
@@ -589,7 +578,7 @@ struct AppShellView: View {
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-        .accessibilityLabel("Dismiss keyboard")
+        .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
         .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
     }
 
@@ -853,6 +842,11 @@ struct AppShellView: View {
     private func cancelSearchFocus() {
         searchFocusRequestID += 1
         isSearchFieldFocused = false
+    }
+
+    private func clearFocusedSearch() {
+        searchQuery = ""
+        cancelSearchFocus()
     }
 
     private func cancelInteractiveChromeState() {

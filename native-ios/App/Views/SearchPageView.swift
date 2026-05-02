@@ -391,17 +391,6 @@ struct SearchPageView: View {
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .focused($localSearchFieldFocused)
-
-                if !query.isEmpty {
-                    Button {
-                        query = ""
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.title3)
-                            .foregroundStyle(.secondary)
-                    }
-                    .buttonStyle(.plain)
-                }
             }
             .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
             .frame(height: AppChromeLayout.searchFieldHeight)
