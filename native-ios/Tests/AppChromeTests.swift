@@ -495,6 +495,16 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(AppForwardSwipeGesturePolicy.edgeStartWidth, 44)
     }
 
+    func testEdgeSwipeCapturePoliciesTrackHorizontalMovementOnly() {
+        XCTAssertTrue(AppBackSwipeGesturePolicy.canTrackBackSwipe(translation: CGSize(width: 96, height: 8)))
+        XCTAssertTrue(AppForwardSwipeGesturePolicy.canTrackForwardSwipe(translation: CGSize(width: -96, height: 8)))
+
+        XCTAssertFalse(AppBackSwipeGesturePolicy.canTrackBackSwipe(translation: CGSize(width: 96, height: 88)))
+        XCTAssertFalse(AppForwardSwipeGesturePolicy.canTrackForwardSwipe(translation: CGSize(width: -96, height: 88)))
+        XCTAssertFalse(AppBackSwipeGesturePolicy.canTrackBackSwipe(translation: CGSize(width: 48, height: 64)))
+        XCTAssertFalse(AppForwardSwipeGesturePolicy.canTrackForwardSwipe(translation: CGSize(width: -48, height: 64)))
+    }
+
     func testForwardStackRestoresAPoppedDetailPage() {
         var navigation = AppShellNavigationState()
         navigation.openDetail("viet-phrase-hello-chao-anh")

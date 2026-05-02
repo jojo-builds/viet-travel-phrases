@@ -175,8 +175,12 @@ struct AppShellView: View {
             .animation(.snappy(duration: 0.34), value: navigation.browseCollectionPath)
             .animation(.snappy(duration: 0.34), value: navigation.isSearchPresented)
             .animation(.snappy(duration: 0.24), value: navigation.forwardStack)
-            .simultaneousGesture(backSwipeGesture(width: pageWidth))
-            .simultaneousGesture(forwardSwipeGesture(width: pageWidth))
+            .overlay(alignment: .leading) {
+                backSwipeCaptureEdge(width: pageWidth)
+            }
+            .overlay(alignment: .trailing) {
+                forwardSwipeCaptureEdge(width: pageWidth)
+            }
             .overlay(alignment: .bottom) {
                 ChromeSeparationGradient(edge: .bottom)
                     .zIndex(360)
@@ -656,6 +660,30 @@ struct AppShellView: View {
         .accessibilityLabel("Go forward")
     }
 
+    @ViewBuilder
+    private func backSwipeCaptureEdge(width: CGFloat) -> some View {
+        if navigation.canNavigateBackWithSwipe {
+            Rectangle()
+                .fill(.clear)
+                .frame(width: AppBackSwipeGesturePolicy.edgeStartWidth)
+                .contentShape(Rectangle())
+                .gesture(backSwipeGesture(width: width))
+                .accessibilityHidden(true)
+        }
+    }
+
+    @ViewBuilder
+    private func forwardSwipeCaptureEdge(width: CGFloat) -> some View {
+        if navigation.canGoForward {
+            Rectangle()
+                .fill(.clear)
+                .frame(width: AppForwardSwipeGesturePolicy.edgeStartWidth)
+                .contentShape(Rectangle())
+                .gesture(forwardSwipeGesture(width: width))
+                .accessibilityHidden(true)
+        }
+    }
+
     private func backSwipeGesture(width: CGFloat) -> some Gesture {
         DragGesture(
             minimumDistance: AppBackSwipeGesturePolicy.minimumDistance,
@@ -664,11 +692,11 @@ struct AppShellView: View {
         .onChanged { value in
             guard
                 navigation.canNavigateBackWithSwipe,
-                AppBackSwipeGesturePolicy.canTrackBackSwipe(
-                    startX: value.startLocation.x,
-                    translation: value.translation
-                )
+                AppBackSwipeGesturePolicy.canTrackBackSwipe(translation: value.translation)
             else {
+                if interactiveDrag?.direction == .back {
+                    interactiveDrag = nil
+                }
                 return
             }
 
@@ -683,7 +711,6 @@ struct AppShellView: View {
         }
         .onEnded { value in
             let shouldNavigateBack = navigation.canNavigateBackWithSwipe && AppBackSwipeGesturePolicy.shouldCommitBackSwipe(
-                startX: value.startLocation.x,
                 translation: value.translation,
                 predictedEndTranslation: value.predictedEndTranslation,
                 width: width
@@ -706,12 +733,11 @@ struct AppShellView: View {
         .onChanged { value in
             guard
                 navigation.canGoForward,
-                AppForwardSwipeGesturePolicy.canTrackForwardSwipe(
-                    startX: value.startLocation.x,
-                    containerWidth: width,
-                    translation: value.translation
-                )
+                AppForwardSwipeGesturePolicy.canTrackForwardSwipe(translation: value.translation)
             else {
+                if interactiveDrag?.direction == .forward {
+                    interactiveDrag = nil
+                }
                 return
             }
 
@@ -726,8 +752,6 @@ struct AppShellView: View {
         }
         .onEnded { value in
             let shouldNavigateForward = navigation.canGoForward && AppForwardSwipeGesturePolicy.shouldCommitForwardSwipe(
-                startX: value.startLocation.x,
-                containerWidth: width,
                 translation: value.translation,
                 predictedEndTranslation: value.predictedEndTranslation,
                 width: width
@@ -1500,6 +1524,10 @@ enum AppBackSwipeGesturePolicy {
             return false
         }
 
+        return canTrackBackSwipe(translation: translation)
+    }
+
+    static func canTrackBackSwipe(translation: CGSize) -> Bool {
         guard translation.width > 0 else {
             return false
         }
@@ -1518,6 +1546,19 @@ enum AppBackSwipeGesturePolicy {
         width: CGFloat
     ) -> Bool {
         guard canTrackBackSwipe(startX: startX, translation: translation) else {
+            return false
+        }
+
+        let distanceThreshold = min(maximumCommitDistance, width * commitProgress)
+        return translation.width >= distanceThreshold || predictedEndTranslation.width >= distanceThreshold * 1.2
+    }
+
+    static func shouldCommitBackSwipe(
+        translation: CGSize,
+        predictedEndTranslation: CGSize,
+        width: CGFloat
+    ) -> Bool {
+        guard canTrackBackSwipe(translation: translation) else {
             return false
         }
 
