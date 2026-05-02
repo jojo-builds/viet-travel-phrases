@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SpeakLocal Vietnam Homepage Visual Refresh V1</title>
+  <title>SpeakLocal Vietnam Homepage Visual Refresh V2</title>
   <style>
     :root {
       color-scheme: light;
@@ -111,16 +111,16 @@
 <body>
   <main>
     <section class="hero">
-      <h1>Homepage Visual Refresh V1</h1>
-      <p>Native-style storyboard packet for SpeakLocal Vietnam. The recommendation is a Hybrid Utility Home: immediate phrases and Search first, image-led category/city discovery below, and returning-user shelves only after real local state exists.</p>
+      <h1>Homepage Visual Refresh V2</h1>
+      <p>Native-style storyboard packet for SpeakLocal Vietnam, revised from Jojo browser notes. The recommendation is a Cleaner Hybrid Utility Home: immediate phrases and Search first, image-led category/city discovery below, no implied-action labels, and returning-user shelves only after real local state exists.</p>
       <div class="recommendation">
-        <strong>Recommended direction:</strong> Direction 1 structure + Direction 2 image cards below essentials + Direction 3 modules only after saved, recent, or practice state exists.
+        <strong>Recommended direction:</strong> Direction 1 structure + Direction 2 image cards below essentials + Direction 3 modules only after saved, recent, or practice state exists. Cards should not explain actions already implied by speaker, chevron, image, or tab chrome.
       </div>
       <div class="pillrow">
         <span class="pill">Docs-only</span>
         <span class="pill">Native comps</span>
         <span class="pill">No Swift edits</span>
-        <span class="pill">No mascot-led Home</span>
+        <span class="pill">No implied labels</span>
       </div>
     </section>
 
@@ -128,11 +128,11 @@
     <div class="grid">
       <figure>
         <img src="assets/homepage-refresh-contact-sheet.png" alt="Homepage refresh recommendation contact sheet">
-        <figcaption>Contact sheet summarizing the recommended Hybrid Utility Home and the locked homepage rules.</figcaption>
+        <figcaption>Contact sheet summarizing the recommended Cleaner Hybrid Utility Home and the locked homepage rules.</figcaption>
       </figure>
       <figure>
         <img src="assets/current-issue-resolution.png" alt="Current homepage issue and redesign rule">
-        <figcaption>Current issue versus redesign rule for phrase-card audio and navigation hierarchy.</figcaption>
+        <figcaption>Cleanup rule for phrase-card audio, navigation hierarchy, and unnecessary card labels.</figcaption>
       </figure>
     </div>
 
@@ -140,7 +140,7 @@
     <div class="grid">
       <figure>
         <img src="assets/direction-1-conservative-native-refresh.png" alt="Direction 1 conservative native refresh storyboard">
-        <figcaption>Direction 1 keeps the current Home section logic and cleans card hierarchy, spacing, and audio/navigation affordances.</figcaption>
+        <figcaption>Direction 1 keeps the current Home section logic and removes labels that duplicate card, audio, or chevron behavior.</figcaption>
       </figure>
       <figure>
         <img src="assets/direction-2-image-led-travel-gateway.png" alt="Direction 2 image-led travel gateway storyboard">
@@ -166,7 +166,7 @@
     </div>
 
     <h2>Implementation Notes</h2>
-    <p>Phrase text and chevrons open canonical phrase pages. One red speaker button plays bundled audio. Image cards open Browse collection pages, not Search results. Keep the Home/admin dock and Search island stable while content scrolls underneath.</p>
+    <p>Phrase text and chevrons open canonical phrase pages. One red speaker button plays bundled audio. Image cards open Browse collection pages, not Search results. Avoid action/type tags inside cards unless the word adds meaning the title and subtitle cannot carry. Keep the Home/admin dock and Search island stable while content scrolls underneath.</p>
     <p>Supporting docs: <a href="README.md">README</a>, <a href="prompt-packet.md">prompt packet</a>, and <a href="peer-review.md">peer review</a>.</p>
   </main>
 </body>

@@ -2,12 +2,15 @@
 
 This packet was produced as native-style composed mockups using current SpeakLocal screenshots, existing asset-catalog imagery, and local raster composition. These instructions are the reusable design prompt for future iterations or commissioned visuals.
 
+V2 update: Jojo's browser notes are now a hard prompt constraint. Do not add labels that merely name implied actions or object types. Speaker means audio. Chevron/card means navigation. Image plus title means a collection card.
+
 ## Source-Of-Truth Inputs
 
 - Read `docs/design/NATIVE_VISUAL_REFERENCE.md` first.
 - Use the locked 2026-05-01 Home/admin/search chrome references as the visual baseline.
 - Use existing native imagery from `native-ios/Resources/Assets.xcassets`.
 - Match the current SpeakLocal Vietnam feel: native iOS, Liquid Glass, large serif page title, soft white content surfaces, restrained Vietnam red/green/gold accents.
+- Use the live Home masthead/hero treatment as the first reference for any top-of-Home comp. Avoid a straight visible image cutoff; the image should fade naturally into clean content.
 
 ## Product Direction
 
@@ -30,6 +33,7 @@ Recommended first-launch hierarchy:
 - Use red only for primary actions and audio.
 - Use real or hyper-real category/city imagery, not abstract illustration.
 - Do not make Melo prominent on Home.
+- Do not label cards with implied action/type text such as `open`, `page`, `play`, `city`, or `category`.
 
 ## Phrase Card Rule
 
@@ -37,18 +41,18 @@ One phrase card must have one clear audio affordance and one clear navigation af
 
 - Red speaker button: plays bundled audio.
 - Card body/title plus chevron: opens the canonical phrase page.
-- Small label chip: category/status only, not a control.
+- No implied-action or object-type chips. Only add a small context label if it carries useful meaning the title/subtitle cannot carry.
 - Avoid placing a decorative icon next to the real speaker button.
 
 ## Direction Prompts
 
 ### Conservative Native Refresh
 
-Create a high-fidelity iPhone Home storyboard for SpeakLocal Vietnam. Keep the existing section logic, but clean the card hierarchy, spacing, and icon usage. Show top of Home, mid-page travel situations, and lower Home with bottom chrome. Phrase cards should have a small label chip, one red audio button, title/subtitle text, and a chevron.
+Create a high-fidelity iPhone Home storyboard for SpeakLocal Vietnam. Keep the existing section logic, but clean the card hierarchy, spacing, and icon usage. Show top of Home, mid-page travel situations, and lower Home with bottom chrome. Phrase cards should have one red audio button, title/subtitle text, and a chevron. Do not add implied-action labels.
 
 ### Image-Led Travel Gateway
 
-Create a high-fidelity iPhone Home storyboard where real image cards help users choose Hanoi, Hotel, Airport, Food, and Shopping Browse collections. The first viewport still has Search and useful phrases nearby. Image cards navigate to Browse collection pages; phrase cards remain the only cards with audio buttons.
+Create a high-fidelity iPhone Home storyboard where real image cards help users choose Hanoi, Hotel, Airport, Food, and Shopping Browse collections. The first viewport still has Search and useful phrases nearby. Image cards navigate to Browse collection pages; phrase cards remain the only cards with audio buttons. Image cards use title, subtitle, image, and chevron only.
 
 ### Personalized Utility Home
 
