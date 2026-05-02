@@ -5,6 +5,7 @@ struct BrowsePageView: View {
 
     let scrollToTopTrigger: Int
     var onOpenDetail: (String) -> Void
+    var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onSearchTapped: () -> Void
     var onSearchQuery: (String) -> Void
     var onSavedTapped: () -> Void
@@ -105,7 +106,7 @@ struct BrowsePageView: View {
                 HStack(spacing: 10) {
                     ForEach(BrowseSearchDestinations.cityShortcuts) { city in
                         BrowseCityChip(city: city) {
-                            onSearchQuery(city.query)
+                            onOpenCollection(city.collectionRoute)
                         }
                     }
                 }
@@ -189,7 +190,7 @@ struct BrowsePageView: View {
                 HStack(spacing: 10) {
                     ForEach(BrowseSearchDestinations.cityShortcuts.filter { $0.id != "all-vietnam" }) { city in
                         BrowseCityCard(city: city) {
-                            onSearchQuery(city.query)
+                            onOpenCollection(city.collectionRoute)
                         }
                     }
                 }
@@ -279,11 +280,7 @@ struct BrowsePageView: View {
     }
 
     private func open(destination: BrowseDestination) {
-        if let pageID = destination.openablePageID {
-            onOpenDetail(pageID)
-        } else {
-            onSearchQuery(destination.sampleQuery)
-        }
+        onOpenCollection(destination.collectionRoute)
     }
 }
 
@@ -591,6 +588,7 @@ private struct BrowseNextShelfRow: View {
         intentStore: LocalUserIntentStore(defaults: .standard),
         scrollToTopTrigger: 0,
         onOpenDetail: { _ in },
+        onOpenCollection: { _ in },
         onSearchTapped: {},
         onSearchQuery: { _ in },
         onSavedTapped: {},

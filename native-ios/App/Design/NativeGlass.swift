@@ -210,16 +210,19 @@ extension View {
 }
 
 struct HeroMastheadImage: View {
+    var imageName: String = PhrasePageStyle.heroImageName
+    var verticalOffset: CGFloat = PhrasePageStyle.heroImageVerticalOffset
+
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .bottom) {
                 PhrasePageStyle.pageBackground
 
-                Image(PhrasePageStyle.heroImageName)
+                Image(imageName)
                     .resizable()
                     .scaledToFill()
                     .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
-                    .offset(y: PhrasePageStyle.heroImageVerticalOffset)
+                    .offset(y: verticalOffset)
                     .clipped()
                     .mask {
                         LinearGradient(

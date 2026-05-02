@@ -10,6 +10,7 @@ struct SearchPageView: View {
     let showsChrome: Bool
     let onClose: () -> Void
     var onOpenDetail: (String) -> Void = { _ in }
+    var onOpenCollection: (BrowseCollectionRoute) -> Void = { _ in }
     var onSearchQuery: (String) -> Void = { _ in }
     var onBrowseTapped: () -> Void = {}
 
@@ -20,6 +21,7 @@ struct SearchPageView: View {
         showsChrome: Bool = true,
         onClose: @escaping () -> Void,
         onOpenDetail: @escaping (String) -> Void = { _ in },
+        onOpenCollection: @escaping (BrowseCollectionRoute) -> Void = { _ in },
         onSearchQuery: @escaping (String) -> Void = { _ in },
         onBrowseTapped: @escaping () -> Void = {}
     ) {
@@ -29,6 +31,7 @@ struct SearchPageView: View {
         self.showsChrome = showsChrome
         self.onClose = onClose
         self.onOpenDetail = onOpenDetail
+        self.onOpenCollection = onOpenCollection
         self.onSearchQuery = onSearchQuery
         self.onBrowseTapped = onBrowseTapped
     }
@@ -84,8 +87,8 @@ struct SearchPageView: View {
         BrowseSearchDestinations.searchResults(for: trimmedQuery, limit: 8)
     }
 
-    private var situationResults: [BrowseDestination] {
-        BrowseSearchDestinations.matchingSituations(for: trimmedQuery)
+    private var collectionResults: [BrowseSearchCollectionMatch] {
+        BrowseSearchDestinations.matchingCollections(for: trimmedQuery)
     }
 
     private var cityResults: [BrowseCityShortcut] {
@@ -93,7 +96,7 @@ struct SearchPageView: View {
     }
 
     private var hasResults: Bool {
-        !phraseResults.isEmpty || !situationResults.isEmpty || !cityResults.isEmpty
+        !collectionResults.isEmpty || !phraseResults.isEmpty || !cityResults.isEmpty
     }
 
     private var headerTitle: String {
@@ -200,6 +203,16 @@ struct SearchPageView: View {
         VStack(alignment: .leading, spacing: 24) {
             resultFilters
 
+            if selectedFilter.includesCategories, !collectionResults.isEmpty {
+                SearchSection(title: "Best match") {
+                    LazyVStack(spacing: 12) {
+                        ForEach(collectionResults.prefix(3)) { match in
+                            SearchCollectionCard(match: match, onOpenCollection: onOpenCollection)
+                        }
+                    }
+                }
+            }
+
             if selectedFilter.includesPhrases, !phraseResults.isEmpty {
                 SearchSection(title: "Best matches") {
                     LazyVStack(spacing: 10) {
@@ -209,26 +222,6 @@ struct SearchPageView: View {
                     }
                     .padding(14)
                     .phraseListCard(cornerRadius: 24)
-                }
-            }
-
-            if selectedFilter.includesSituations, !situationResults.isEmpty {
-                SearchSection(title: "Situations") {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 12) {
-                            ForEach(situationResults.prefix(4)) { destination in
-                                SearchSituationCard(destination: destination) {
-                                    if let pageID = destination.openablePageID {
-                                        onOpenDetail(pageID)
-                                    } else {
-                                        onSearchQuery(destination.sampleQuery)
-                                    }
-                                }
-                            }
-                        }
-                        .padding(.bottom, 2)
-                    }
-                    .scrollClipDisabled()
                 }
             }
 
@@ -286,13 +279,13 @@ struct SearchPageView: View {
 
     private func cityShortcutRow(cities: [BrowseCityShortcut]) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                ForEach(cities) { city in
-                    SearchCityCard(city: city) {
-                        onSearchQuery(city.query)
+                HStack(spacing: 10) {
+                    ForEach(cities) { city in
+                        SearchCityCard(city: city) {
+                            onOpenCollection(city.collectionRoute)
+                        }
                     }
                 }
-            }
             .padding(.bottom, 2)
         }
         .scrollClipDisabled()
@@ -405,7 +398,7 @@ struct SearchPageView: View {
 private enum SearchResultFilter: CaseIterable, Identifiable {
     case all
     case phrases
-    case situations
+    case categories
     case cities
 
     var id: String { title }
@@ -416,8 +409,8 @@ private enum SearchResultFilter: CaseIterable, Identifiable {
             return "All"
         case .phrases:
             return "Phrases"
-        case .situations:
-            return "Situations"
+        case .categories:
+            return "Categories"
         case .cities:
             return "Cities"
         }
@@ -429,7 +422,7 @@ private enum SearchResultFilter: CaseIterable, Identifiable {
             return "square.grid.2x2"
         case .phrases:
             return "ellipsis.bubble"
-        case .situations:
+        case .categories:
             return "signpost.right"
         case .cities:
             return "building.2"
@@ -437,7 +430,7 @@ private enum SearchResultFilter: CaseIterable, Identifiable {
     }
 
     var includesPhrases: Bool { self == .all || self == .phrases }
-    var includesSituations: Bool { self == .all || self == .situations }
+    var includesCategories: Bool { self == .all || self == .categories }
     var includesCities: Bool { self == .all || self == .cities }
 }
 
@@ -550,6 +543,81 @@ private struct SearchPhraseRow: View {
         .buttonStyle(.plain)
         .accessibilityElement(children: .combine)
         .accessibilityIdentifier("SearchResult.\(item.pageID)")
+    }
+}
+
+private struct SearchCollectionCard: View {
+    let match: BrowseSearchCollectionMatch
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    var body: some View {
+        let descriptor = match.descriptor
+
+        Button {
+            onOpenCollection(descriptor.route)
+        } label: {
+            HStack(spacing: 14) {
+                Image(descriptor.mastheadImageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 96, height: 104)
+                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .overlay(alignment: .topLeading) {
+                        Text(labelText(for: descriptor.route))
+                            .font(.caption2.weight(.black))
+                            .foregroundStyle(descriptor.tintName.color)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 5)
+                            .background(.white.opacity(0.86), in: Capsule())
+                            .padding(8)
+                    }
+
+                VStack(alignment: .leading, spacing: 7) {
+                    Text("Browse collection")
+                        .font(.caption2.weight(.black))
+                        .foregroundStyle(descriptor.tintName.color)
+                        .textCase(.uppercase)
+
+                    Text(descriptor.title)
+                        .font(.title3.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
+
+                    Text(descriptor.subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(3)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    HStack(spacing: 8) {
+                        Text("Open in Browse")
+                            .font(.caption.weight(.black))
+                        Image(systemName: "chevron.right")
+                            .font(.caption2.weight(.black))
+                    }
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 12)
+                    .frame(height: 32)
+                    .background(Color.red, in: Capsule())
+                }
+                .layoutPriority(1)
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .phraseListCard(cornerRadius: 24)
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("Search.Collection.\(descriptor.route.id)")
+    }
+
+    private func labelText(for route: BrowseCollectionRoute) -> String {
+        switch route {
+        case .category:
+            return "Category"
+        case .city:
+            return "City"
+        }
     }
 }
 

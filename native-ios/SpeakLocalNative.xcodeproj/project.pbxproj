@@ -27,6 +27,7 @@
 		90ECDFDBCC9D88406892F37F /* PracticeNativeMVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4E79814EEDFC2BC7F2750 /* PracticeNativeMVPTests.swift */; };
 		9578844B965CC6CF7688AC98 /* GeneratedVietContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */; };
 		9B6D21678818414B65F9EE60 /* melo-early-vietnam-jade.png in Resources */ = {isa = PBXBuildFile; fileRef = 984D2A43AF3229BAB3B464DA /* melo-early-vietnam-jade.png */; };
+		A04D20496F71BA0A1DE68782 /* BrowseCollectionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4A25A462F949B68607A96 /* BrowseCollectionPageView.swift */; };
 		A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152EC4AC0563F01164AC24D5 /* SearchPageView.swift */; };
 		A7D9EAC643A14747CC53B62E /* PhrasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */; };
 		AB89E8F8F43D17804FA07FF9 /* AdminChromeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */; };
@@ -81,6 +82,7 @@
 		75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePageFixtureTests.swift; sourceTree = "<group>"; };
 		7C570403C2E33918DCE587ED /* PhraseListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListingView.swift; sourceTree = "<group>"; };
 		81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLocalNativeApp.swift; sourceTree = "<group>"; };
+		89A4A25A462F949B68607A96 /* BrowseCollectionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionPageView.swift; sourceTree = "<group>"; };
 		8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSQLiteLanguagePackRepository.swift; sourceTree = "<group>"; };
 		984D2A43AF3229BAB3B464DA /* melo-early-vietnam-jade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "melo-early-vietnam-jade.png"; sourceTree = "<group>"; };
 		9B9449DF7FBCB9AFC51C3131 /* melo-base-traveler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "melo-base-traveler.png"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				65875EEA097A552AA1510358 /* AppShellView.swift */,
 				B16251C7B60B5DAA58A148B9 /* AudioControls.swift */,
+				89A4A25A462F949B68607A96 /* BrowseCollectionPageView.swift */,
 				EC4864105E47882DA1C4AC75 /* BrowsePageView.swift */,
 				4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */,
 				7C570403C2E33918DCE587ED /* PhraseListingView.swift */,
@@ -380,6 +383,7 @@
 				532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */,
 				AE8BE3879C05C9EC7BA1F804 /* AudioControls.swift in Sources */,
 				EA5ADDE73A6232C5884B736C /* AuthoredVietListingPages.swift in Sources */,
+				A04D20496F71BA0A1DE68782 /* BrowseCollectionPageView.swift in Sources */,
 				E4D0111388419D5C846F75DA /* BrowsePageView.swift in Sources */,
 				65627E82017E546AA617DB0D /* BrowseSearchDestinations.swift in Sources */,
 				9578844B965CC6CF7688AC98 /* GeneratedVietContent.swift in Sources */,

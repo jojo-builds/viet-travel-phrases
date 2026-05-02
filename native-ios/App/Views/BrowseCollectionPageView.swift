@@ -1,0 +1,372 @@
+import SwiftUI
+
+struct BrowseCollectionPageView: View {
+    let descriptor: BrowseCollectionDescriptor
+    let scrollToTopTrigger: Int
+    var onOpenDetail: (String) -> Void
+    var onOpenCollection: (BrowseCollectionRoute) -> Void
+    var onPractice: (BrowseCollectionPracticeAction) -> Void
+
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            PhrasePageStyle.pageBackground
+                .ignoresSafeArea()
+
+            ScrollViewReader { scrollProxy in
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
+                        BrowseCollectionHeader(descriptor: descriptor)
+                            .id(Self.scrollTopID)
+
+                        BrowseCollectionSubcategoryRail(subcategories: descriptor.subcategories)
+
+                        BrowseCollectionStarterSection(
+                            title: descriptor.starterTitle,
+                            items: descriptor.starterItems,
+                            onOpenDetail: onOpenDetail
+                        )
+                        .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+
+                        BrowseCollectionPracticeCard(
+                            descriptor: descriptor,
+                            onPractice: { onPractice(descriptor.practiceAction) }
+                        )
+                        .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+
+                        BrowseCollectionExploreSection(
+                            shelves: descriptor.exploreShelves,
+                            onOpenDetail: onOpenDetail,
+                            onOpenCollection: onOpenCollection
+                        )
+                    }
+                    .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
+                }
+                .onChange(of: scrollToTopTrigger) { _, _ in
+                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                }
+            }
+            .ignoresSafeArea(edges: .top)
+        }
+        .accessibilityIdentifier("BrowseCollection.\(descriptor.route.id)")
+    }
+
+    private static let scrollTopID = "BrowseCollectionTop"
+}
+
+private enum BrowseCollectionLayout {
+    static let horizontalPadding: CGFloat = 20
+    static let sectionSpacing: CGFloat = 24
+    static let bottomChromeContentClearance: CGFloat = 184
+}
+
+private struct BrowseCollectionHeader: View {
+    let descriptor: BrowseCollectionDescriptor
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HeroMastheadImage(imageName: descriptor.mastheadImageName, verticalOffset: 0)
+
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(spacing: 8) {
+                    ZStack {
+                        Circle().fill(Color.red)
+                        Image(systemName: "star.fill")
+                            .font(.system(size: 8, weight: .bold))
+                            .foregroundStyle(.yellow)
+                    }
+                    .frame(width: 22, height: 22)
+
+                    Text(descriptor.eyebrow)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                Text(descriptor.title)
+                    .font(.system(size: 46, weight: .black, design: .serif))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.64)
+                    .accessibilityIdentifier("BrowseCollection.Title.\(descriptor.route.id)")
+
+                Text(descriptor.subtitle)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            .padding(.top, 16)
+        }
+    }
+}
+
+private struct BrowseCollectionSubcategoryRail: View {
+    let subcategories: [BrowseCollectionSubcategory]
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: 10) {
+                ForEach(subcategories) { subcategory in
+                    BrowseCollectionSubcategoryCard(subcategory: subcategory)
+                }
+            }
+            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            .padding(.bottom, 2)
+        }
+        .scrollClipDisabled()
+    }
+}
+
+private struct BrowseCollectionSubcategoryCard: View {
+    let subcategory: BrowseCollectionSubcategory
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Image(systemName: subcategory.symbolName)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(subcategory.tintName.color)
+                .frame(width: 48, height: 48)
+                .nativeGlass(cornerRadius: 18, tint: subcategory.tintName.color.opacity(0.14), interactive: true)
+
+            Text(subcategory.title)
+                .font(.subheadline.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.78)
+
+            Text("\(subcategory.phraseCount) phrase\(subcategory.phraseCount == 1 ? "" : "s")")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+        }
+        .padding(12)
+        .frame(width: 120, height: 136, alignment: .topLeading)
+        .phraseListCard(cornerRadius: 20)
+    }
+}
+
+private struct BrowseCollectionStarterSection: View {
+    let title: String
+    let items: [BrowseSearchPhraseItem]
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        BrowseCollectionSection(title: title, actionTitle: "View all") {
+            LazyVStack(spacing: 0) {
+                ForEach(items) { item in
+                    BrowseCollectionPhraseRow(item: item, onOpenDetail: onOpenDetail)
+
+                    if item.id != items.last?.id {
+                        Divider().padding(.leading, 70)
+                    }
+                }
+            }
+            .padding(.vertical, 8)
+            .phraseListCard(cornerRadius: 24)
+        }
+    }
+}
+
+private struct BrowseCollectionPracticeCard: View {
+    let descriptor: BrowseCollectionDescriptor
+    let onPractice: () -> Void
+
+    var body: some View {
+        Button(action: onPractice) {
+            HStack(spacing: 14) {
+                Image(systemName: "waveform")
+                    .font(.title3.weight(.bold))
+                    .foregroundStyle(.white)
+                    .frame(width: 58, height: 58)
+                    .background(Color.red, in: Circle())
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(descriptor.practiceTitle)
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
+
+                    Text(descriptor.practiceSubtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                }
+                .layoutPriority(1)
+
+                Text("Start")
+                    .font(.caption.weight(.black))
+                    .foregroundStyle(.red)
+                    .padding(.horizontal, 14)
+                    .frame(height: 38)
+                    .nativeGlass(cornerRadius: 19, interactive: true)
+            }
+            .padding(14)
+            .phraseListCard(cornerRadius: 24)
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("BrowseCollection.Practice.\(descriptor.route.id)")
+    }
+}
+
+private struct BrowseCollectionExploreSection: View {
+    let shelves: [BrowseCollectionShelf]
+    let onOpenDetail: (String) -> Void
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    var body: some View {
+        LazyVStack(alignment: .leading, spacing: 22) {
+            ForEach(shelves) { shelf in
+                BrowseCollectionShelfView(shelf: shelf, onOpenDetail: onOpenDetail)
+            }
+        }
+        .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+    }
+}
+
+private struct BrowseCollectionShelfView: View {
+    let shelf: BrowseCollectionShelf
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        BrowseCollectionSection(title: shelf.title, actionTitle: "Browse") {
+            GeometryReader { proxy in
+                let groupWidth = max(274, min(338, proxy.size.width - 42))
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 12) {
+                        ForEach(Array(shelf.itemGroups.enumerated()), id: \.offset) { _, group in
+                            BrowseCollectionPhraseGroupCard(
+                                items: group,
+                                width: groupWidth,
+                                onOpenDetail: onOpenDetail
+                            )
+                        }
+                    }
+                    .scrollTargetLayout()
+                }
+                .scrollTargetBehavior(.viewAligned)
+                .scrollClipDisabled()
+            }
+            .frame(height: BrowseCollectionPhraseGroupCard.groupHeight)
+        }
+    }
+}
+
+private struct BrowseCollectionSection<Content: View>: View {
+    let title: String
+    let actionTitle: String
+    let content: Content
+
+    init(title: String, actionTitle: String, @ViewBuilder content: () -> Content) {
+        self.title = title
+        self.actionTitle = actionTitle
+        self.content = content()
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text(title)
+                    .font(.title3.weight(.black))
+                    .foregroundStyle(.primary)
+
+                Spacer()
+
+                Text(actionTitle)
+                    .font(.caption.weight(.black))
+                    .foregroundStyle(.red)
+            }
+
+            content
+        }
+    }
+}
+
+private struct BrowseCollectionPhraseGroupCard: View {
+    let items: [BrowseSearchPhraseItem]
+    let width: CGFloat
+    let onOpenDetail: (String) -> Void
+
+    static let rowHeight: CGFloat = 86
+    static let verticalPadding: CGFloat = 8
+    static let groupHeight: CGFloat = (rowHeight * 3) + (verticalPadding * 2)
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ForEach(items) { item in
+                BrowseCollectionPhraseRow(item: item, onOpenDetail: onOpenDetail)
+                    .frame(height: Self.rowHeight)
+
+                if item.id != items.last?.id {
+                    Divider().padding(.leading, 70)
+                }
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, Self.verticalPadding)
+        .frame(width: width, height: Self.groupHeight, alignment: .top)
+        .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius)
+    }
+}
+
+private struct BrowseCollectionPhraseRow: View {
+    let item: BrowseSearchPhraseItem
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        HStack(spacing: 0) {
+            AudioSpeakerButton(tint: item.tintName, size: 44, audioKey: item.audioKey)
+                .padding(.leading, 14)
+                .padding(.trailing, 12)
+
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                HStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.title)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
+
+                        Text(item.subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.78)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .layoutPriority(1)
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.tertiary)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 8)
+            .padding(.trailing, 14)
+            .accessibilityIdentifier("BrowseCollection.Row.\(item.pageID)")
+        }
+        .frame(minHeight: 76)
+    }
+}
+
+#Preview {
+    if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")) {
+        BrowseCollectionPageView(
+            descriptor: descriptor,
+            scrollToTopTrigger: 0,
+            onOpenDetail: { _ in },
+            onOpenCollection: { _ in },
+            onPractice: { _ in }
+        )
+    }
+}

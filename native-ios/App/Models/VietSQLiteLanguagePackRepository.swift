@@ -545,6 +545,73 @@ final class VietSQLiteLanguagePackRepository {
         }
     }
 
+    func loadBrowseCityCollectionItems(cityID: String, limit: Int = 120) throws -> [BrowseCityCollectionItem] {
+        let sql = """
+        SELECT
+          pp.id,
+          pp.title,
+          pp.english_title,
+          pp.icon_name,
+          pp.tint_name,
+          aa.source_manifest_key,
+          COALESCE(
+            (
+              SELECT group_concat(category_id, '|')
+              FROM (
+                SELECT pc.category_id
+                FROM page_category pc
+                WHERE pc.page_id = pp.id
+                ORDER BY pc.sort_order, pc.category_id
+              )
+            ),
+            'city-guides'
+          ) AS category_ids,
+          pct.city_id,
+          c.title,
+          pct.subcategory_id,
+          cs.title
+        FROM phrase_city_tag pct
+        JOIN phrase p ON p.id = pct.phrase_id
+        JOIN phrase_page pp ON pp.phrase_id = p.id
+        JOIN city c ON c.id = pct.city_id
+        JOIN city_subcategory cs ON cs.id = pct.subcategory_id
+        LEFT JOIN audio_usage au
+          ON au.target_kind = 'phrase'
+         AND au.target_id = p.id
+         AND au.is_primary = 1
+        LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        WHERE pct.city_id = ?
+        ORDER BY
+          cs.sort_order,
+          pp.title COLLATE NOCASE,
+          pp.id
+        LIMIT ?;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(cityID, to: 1, in: statement, sql: sql)
+            try self.bindInt(limit, to: 2, in: statement, sql: sql)
+        }) { statement in
+            let categoryIDs = Self.stringColumn(statement, index: 6)
+                .split(separator: "|")
+                .map(String.init)
+
+            return BrowseCityCollectionItem(
+                pageID: Self.stringColumn(statement, index: 0),
+                title: Self.stringColumn(statement, index: 1),
+                subtitle: Self.stringColumn(statement, index: 2),
+                categoryIDs: categoryIDs.isEmpty ? ["city-guides"] : categoryIDs,
+                symbolName: Self.stringColumn(statement, index: 3),
+                tintName: AccentTint(rawValue: Self.stringColumn(statement, index: 4)) ?? .gray,
+                audioKey: Self.optionalStringColumn(statement, index: 5),
+                cityID: Self.stringColumn(statement, index: 7),
+                cityName: Self.stringColumn(statement, index: 8),
+                subcategoryID: Self.stringColumn(statement, index: 9),
+                subcategoryTitle: Self.stringColumn(statement, index: 10)
+            )
+        }
+    }
+
     func loadGraphCoverage() throws -> VietSQLitePhraseGraphCoverage {
         VietSQLitePhraseGraphCoverage(
             sourcePhraseRows: try count(.phrase),

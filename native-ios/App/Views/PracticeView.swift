@@ -7,6 +7,7 @@ struct PracticeView: View {
 
     let initialMode: PracticeMode?
     let entryContext: PracticeEntryContext
+    let startRequest: PracticeStartRequest?
     let isActive: Bool
     let scrollToTopTrigger: Int
     var onOpenDetail: (String) -> Void
@@ -16,12 +17,14 @@ struct PracticeView: View {
     @State private var activeSession: PracticeSession?
     @State private var completionSummary: PracticeCompletionSummary?
     @State private var didStartInitialMode = false
+    @State private var handledStartRequestID: Int?
     @State private var deckLoadGeneration = 0
 
     init(
         intentStore: LocalUserIntentStore,
         initialMode: PracticeMode? = nil,
         entryContext: PracticeEntryContext = .standard,
+        startRequest: PracticeStartRequest? = nil,
         isActive: Bool = true,
         scrollToTopTrigger: Int = 0,
         progressStore: LocalPracticeProgressStore = LocalPracticeProgressStore(),
@@ -31,6 +34,7 @@ struct PracticeView: View {
         self.intentStore = intentStore
         self.initialMode = initialMode
         self.entryContext = entryContext
+        self.startRequest = startRequest
         self.isActive = isActive
         self.scrollToTopTrigger = scrollToTopTrigger
         self.onOpenDetail = onOpenDetail
@@ -108,9 +112,13 @@ struct PracticeView: View {
         .onChange(of: isActive) { _, active in
             if active {
                 reloadDeck()
+                startRequestedModeIfReady()
             } else {
                 prewarmDeck()
             }
+        }
+        .onChange(of: startRequest) { _, _ in
+            startRequestedModeIfReady()
         }
         .onChange(of: intentStore.practicePageIDs) { _, _ in
             reloadOrPrewarmDeck()
@@ -161,6 +169,20 @@ struct PracticeView: View {
         }
 
         startSession(initialMode)
+    }
+
+    private func startRequestedModeIfReady() {
+        guard
+            let startRequest,
+            handledStartRequestID != startRequest.id,
+            isActive,
+            deckState.snapshot != nil
+        else {
+            return
+        }
+
+        handledStartRequestID = startRequest.id
+        startSession(startRequest.mode)
     }
 
     private func selectOption(_ option: PracticeAnswerOption) {
@@ -243,6 +265,7 @@ struct PracticeView: View {
         if let snapshot = PracticeDeckSnapshot.cachedSnapshot(for: cacheKey) {
             deckState = .loaded(snapshot)
             scheduleInitialModeStartIfNeeded()
+            startRequestedModeIfReady()
             return
         }
 
@@ -267,6 +290,7 @@ struct PracticeView: View {
                     deckState = .loaded(snapshot)
                     PracticeDeckSnapshot.storeCachedSnapshot(snapshot, for: cacheKey)
                     scheduleInitialModeStartIfNeeded()
+                    startRequestedModeIfReady()
                 }
             } catch {
                 DispatchQueue.main.async {

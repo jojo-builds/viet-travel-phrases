@@ -80,6 +80,14 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
 
+    func testBrowseCollectionChromeUsesBrowseSelectedDockWithSearchIsland() {
+        let chrome = AppChrome(route: .browseCollection(.category("hotel")))
+
+        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
+        XCTAssertEqual(chrome.selectedDockItem, .browse)
+        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
+    }
+
     func testSavedChromeUsesSavedSelectedDockWithSearchIsland() {
         let chrome = AppChrome(route: .saved)
 
@@ -143,6 +151,17 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--browse"]),
             .browse
+        )
+    }
+
+    func testBrowseCollectionLaunchArgumentsOpenCollectionPages() {
+        XCTAssertEqual(
+            AppShellView.initialRoute(for: ["SpeakLocalNative", "--browse-category", "hotel"]),
+            .browseCollection(.category("hotel"))
+        )
+        XCTAssertEqual(
+            AppShellView.initialRoute(for: ["SpeakLocalNative", "--browse-city", "hanoi"]),
+            .browseCollection(.city("hanoi"))
         )
     }
 
@@ -591,6 +610,29 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
+    func testOpeningBrowseCollectionFromSearchClosesSearchAndKeepsBrowseHistory() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openBrowse()
+        navigation.openSearch()
+        navigation.openBrowseCollection(.category("hotel"))
+
+        XCTAssertFalse(navigation.isSearchPresented)
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertEqual(navigation.browseCollectionPath, [.category("hotel")])
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
+
+        navigation.goForward()
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
+    }
+
     func testBrowseSearchDestinationsResolveToCanonicalPages() {
         guard let hotel = BrowseSearchDestinations.situations.first(where: { $0.id == "hotel" }) else {
             XCTFail("Expected hotel Browse destination")
@@ -601,6 +643,40 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(BrowseSearchDestinations.situations.allSatisfy { $0.openablePageID != nil })
         XCTAssertFalse(BrowseSearchDestinations.cityShortcuts.isEmpty)
         XCTAssertFalse(BrowseSearchDestinations.suggestedNeeds.isEmpty)
+    }
+
+    func testBrowseSearchDestinationsUseCanonicalCityIDs() {
+        XCTAssertNotNil(BrowseSearchDestinations.cityShortcuts.first { $0.id == "hcmc" })
+        XCTAssertNotNil(BrowseSearchDestinations.cityShortcuts.first { $0.id == "danang" })
+        XCTAssertNotNil(BrowseSearchDestinations.cityShortcuts.first { $0.id == "hoian" })
+        XCTAssertFalse(BrowseSearchDestinations.cityShortcuts.contains { $0.id == "ho-chi-minh-city" })
+        XCTAssertFalse(BrowseSearchDestinations.cityShortcuts.contains { $0.id == "da-nang" })
+        XCTAssertFalse(BrowseSearchDestinations.cityShortcuts.contains { $0.id == "hoi-an" })
+    }
+
+    func testBrowseCollectionDescriptorsExposeStarterRowsAndPracticePolicy() {
+        let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
+        let hanoi = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hanoi")))
+
+        XCTAssertEqual(hotel.route, .category("hotel"))
+        XCTAssertEqual(hotel.title, "Hotel")
+        XCTAssertFalse(hotel.subcategories.isEmpty)
+        XCTAssertFalse(hotel.starterItems.isEmpty)
+        XCTAssertEqual(hotel.practiceAction, .addStarterPages(hotel.starterItems.map(\.pageID)))
+        XCTAssertTrue(hotel.mastheadImageName.hasPrefix("BrowseCollection"))
+
+        XCTAssertEqual(hanoi.route, .city("hanoi"))
+        XCTAssertEqual(hanoi.practiceAction, .practiceMode(.hanoiBucketList))
+        XCTAssertFalse(hanoi.subcategories.isEmpty)
+        XCTAssertFalse(hanoi.starterItems.isEmpty)
+    }
+
+    func testSearchStrongMatchesReturnBrowseCollectionsBeforePhraseRows() {
+        let hotelCollections = BrowseSearchDestinations.matchingCollections(for: "hotel")
+        let hanoiCollections = BrowseSearchDestinations.matchingCollections(for: "hanoi")
+
+        XCTAssertEqual(hotelCollections.first?.route, .category("hotel"))
+        XCTAssertEqual(hanoiCollections.first?.route, .city("hanoi"))
     }
 
     func testForwardSwipeRestoresForwardRoute() {
@@ -714,5 +790,18 @@ final class LocalUserIntentStoreTests: XCTestCase {
 
         XCTAssertEqual(store.savedPageIDs, ["viet-phrase-problems-2"])
         XCTAssertTrue(store.practicePageIDs.isEmpty)
+    }
+
+    func testCategoryPracticeAddsCanonicalStarterPagesWithoutDuplicates() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.togglePracticePage("viet-thank-you")
+        store.addPracticePages([
+            "viet-family-repair-understand",
+            "missing-page",
+            "viet-family-repair-understand",
+        ])
+
+        XCTAssertEqual(store.practicePageIDs, ["viet-phrase-problems-2", "viet-phrase-polite-2"])
     }
 }

@@ -4,6 +4,7 @@ import Foundation
 enum AppRoute: Equatable {
     case home
     case browse
+    case browseCollection(BrowseCollectionRoute)
     case phrasePage
     case saved
     case practice
@@ -54,7 +55,7 @@ struct AppChrome: Equatable {
 
     var primaryDockItems: [DockItemKind] {
         switch route {
-        case .home, .browse, .phrasePage, .saved, .practice, .detailPage:
+        case .home, .browse, .browseCollection, .phrasePage, .saved, .practice, .detailPage:
             return [.home, .browse, .saved, .practice]
         case .search:
             return [.home]
@@ -65,7 +66,7 @@ struct AppChrome: Equatable {
         switch route {
         case .home, .search:
             return .home
-        case .browse, .phrasePage, .detailPage:
+        case .browse, .browseCollection, .phrasePage, .detailPage:
             return .browse
         case .saved:
             return .saved
@@ -76,7 +77,7 @@ struct AppChrome: Equatable {
 
     var searchPresentation: SearchPresentation {
         switch route {
-        case .home, .browse, .phrasePage, .saved, .practice, .detailPage:
+        case .home, .browse, .browseCollection, .phrasePage, .saved, .practice, .detailPage:
             return .collapsedIsland
         case .search:
             return .expandedField
@@ -179,6 +180,20 @@ final class LocalUserIntentStore: ObservableObject {
 
     func togglePracticePage(_ pageID: String) {
         practicePageIDs = toggledCanonicalIDs(practicePageIDs, pageID: pageID)
+        persist(practicePageIDs, key: Key.practicePageIDs)
+    }
+
+    func addPracticePages(_ pageIDs: [String]) {
+        var seen = Set<String>()
+        let existing = Self.canonicalizedPageIDs(practicePageIDs)
+        let added = pageIDs.compactMap { pageID in
+            Self.canonicalPageID(forOpenablePageID: pageID)
+        }
+        let merged = (added + existing).filter { pageID in
+            seen.insert(pageID).inserted
+        }
+
+        practicePageIDs = merged
         persist(practicePageIDs, key: Key.practicePageIDs)
     }
 

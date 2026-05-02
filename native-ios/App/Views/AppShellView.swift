@@ -6,6 +6,8 @@ struct AppShellView: View {
     @State private var searchQuery: String
     @State private var searchFocusRequestID = 0
     @State private var didApplyLaunchSearchFocus = false
+    @State private var practiceStartRequestID = 0
+    @State private var requestedPracticeMode: PracticeMode?
     @StateObject private var intentStore = LocalUserIntentStore()
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
@@ -59,6 +61,7 @@ struct AppShellView: View {
                     intentStore: intentStore,
                     scrollToTopTrigger: navigation.browseScrollToTopTrigger,
                     onOpenDetail: openDetailFromBrowse,
+                    onOpenCollection: openBrowseCollection,
                     onSearchTapped: openSearch,
                     onSearchQuery: openSearchQuery,
                     onSavedTapped: openSaved,
@@ -96,6 +99,7 @@ struct AppShellView: View {
                     intentStore: intentStore,
                     initialMode: launchPracticeMode,
                     entryContext: launchPracticeEntryContext,
+                    startRequest: practiceStartRequest,
                     isActive: navigation.currentRoute == .practice,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
                     onOpenDetail: openDetailFromPractice,
@@ -137,6 +141,8 @@ struct AppShellView: View {
                     width: pageWidth
                 )
 
+                browseCollectionPageStack(width: pageWidth)
+
                 detailPageStack(width: pageWidth)
 
                 if navigation.isSearchPresented {
@@ -147,6 +153,7 @@ struct AppShellView: View {
                         showsChrome: false,
                         onClose: closeSearch,
                         onOpenDetail: openDetailFromSearch,
+                        onOpenCollection: openBrowseCollectionFromSearch,
                         onSearchQuery: openSearchQuery,
                         onBrowseTapped: openBrowse
                     )
@@ -165,6 +172,7 @@ struct AppShellView: View {
                 forwardPreviewPage(width: pageWidth)
             }
             .animation(.snappy(duration: 0.34), value: navigation.detailPath)
+            .animation(.snappy(duration: 0.34), value: navigation.browseCollectionPath)
             .animation(.snappy(duration: 0.34), value: navigation.isSearchPresented)
             .animation(.snappy(duration: 0.24), value: navigation.forwardStack)
             .simultaneousGesture(backSwipeGesture(width: pageWidth))
@@ -212,6 +220,44 @@ struct AppShellView: View {
             }
         }
         .preferredColorScheme(.light)
+    }
+
+    private var practiceStartRequest: PracticeStartRequest? {
+        guard let requestedPracticeMode else {
+            return nil
+        }
+
+        return PracticeStartRequest(id: practiceStartRequestID, mode: requestedPracticeMode)
+    }
+
+    @ViewBuilder
+    private func browseCollectionPageStack(width: CGFloat) -> some View {
+        ForEach(Array(navigation.renderedBrowseCollections.enumerated()), id: \.element.id) { index, renderedCollection in
+            let route = AppRoute.browseCollection(renderedCollection.route)
+            let isActive = route == navigation.currentRoute
+
+            if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
+                BrowseCollectionPageView(
+                    descriptor: descriptor,
+                    scrollToTopTrigger: isActive ? navigation.browseCollectionScrollToTopTrigger : 0,
+                    onOpenDetail: openDetailFromBrowse,
+                    onOpenCollection: openBrowseCollection,
+                    onPractice: openPractice
+                )
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .accessibilityHidden(!isActive || navigation.isSearchPresented)
+                .transition(AppPageTransition.slideFromTrailing)
+                .zIndex(Double(index + 6))
+                .navigationPageMotion(
+                    route: route,
+                    currentRoute: navigation.currentRoute,
+                    backPreviewRoute: navigation.backPreviewRoute,
+                    forwardPreviewRoute: navigation.forwardPreviewRoute,
+                    drag: interactiveDrag,
+                    width: width
+                )
+            }
+        }
     }
 
     @ViewBuilder
@@ -307,11 +353,22 @@ struct AppShellView: View {
                 intentStore: intentStore,
                 scrollToTopTrigger: 0,
                 onOpenDetail: openDetailFromBrowse,
+                onOpenCollection: openBrowseCollection,
                 onSearchTapped: openSearch,
                 onSearchQuery: openSearchQuery,
                 onSavedTapped: openSaved,
                 onPracticeTapped: openPractice
             )
+        case .browseCollection(let collectionRoute):
+            if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
+                BrowseCollectionPageView(
+                    descriptor: descriptor,
+                    scrollToTopTrigger: 0,
+                    onOpenDetail: openDetailFromBrowse,
+                    onOpenCollection: openBrowseCollection,
+                    onPractice: openPractice
+                )
+            }
         case .saved:
             SavedPagesView(
                 intentStore: intentStore,
@@ -322,6 +379,7 @@ struct AppShellView: View {
         case .practice:
             PracticeView(
                 intentStore: intentStore,
+                startRequest: practiceStartRequest,
                 isActive: false,
                 scrollToTopTrigger: 0,
                 onOpenDetail: openDetailFromPractice,
@@ -373,6 +431,7 @@ struct AppShellView: View {
                 showsChrome: false,
                 onClose: closeSearch,
                 onOpenDetail: openDetailFromSearch,
+                onOpenCollection: openBrowseCollectionFromSearch,
                 onSearchQuery: openSearchQuery,
                 onBrowseTapped: openBrowse
             )
@@ -715,6 +774,18 @@ struct AppShellView: View {
         openDetail(id, source: .search)
     }
 
+    private func openBrowseCollection(_ route: BrowseCollectionRoute) {
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.openBrowseCollection(route)
+        }
+    }
+
+    private func openBrowseCollectionFromSearch(_ route: BrowseCollectionRoute) {
+        openBrowseCollection(route)
+    }
+
     private func openBrowseAll() {
         openBrowse()
     }
@@ -763,6 +834,19 @@ struct AppShellView: View {
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openPractice()
         }
+    }
+
+    private func openPractice(_ action: BrowseCollectionPracticeAction) {
+        switch action {
+        case .addStarterPages(let pageIDs):
+            intentStore.addPracticePages(pageIDs)
+            requestedPracticeMode = nil
+        case .practiceMode(let mode):
+            practiceStartRequestID += 1
+            requestedPracticeMode = mode
+        }
+
+        openPractice()
     }
 
     private func goBack() {
@@ -876,6 +960,10 @@ struct AppShellView: View {
     }
 
     private static func shortcutRoute(for arguments: [String]) -> AppRoute {
+        if let route = initialBrowseCollectionRoute(for: arguments) {
+            return .browseCollection(route)
+        }
+
         if arguments.contains("--browse") {
             return .browse
         }
@@ -887,6 +975,24 @@ struct AppShellView: View {
         }
 
         return arguments.contains("--search") || initialSearchQuery(for: arguments) != nil ? .search : .home
+    }
+
+    static func initialBrowseCollectionRoute(for arguments: [String]) -> BrowseCollectionRoute? {
+        if
+            let flagIndex = arguments.firstIndex(of: "--browse-category"),
+            arguments.indices.contains(arguments.index(after: flagIndex)) {
+            let id = arguments[arguments.index(after: flagIndex)].trimmingCharacters(in: .whitespacesAndNewlines)
+            return id.isEmpty ? nil : .category(id)
+        }
+
+        if
+            let flagIndex = arguments.firstIndex(of: "--browse-city"),
+            arguments.indices.contains(arguments.index(after: flagIndex)) {
+            let id = arguments[arguments.index(after: flagIndex)].trimmingCharacters(in: .whitespacesAndNewlines)
+            return id.isEmpty ? nil : .city(id)
+        }
+
+        return nil
     }
 
     static func initialPracticeMode(for arguments: [String]) -> PracticeMode? {
@@ -964,6 +1070,7 @@ struct AppShellView: View {
 
 struct AppShellNavigationState: Equatable {
     var rootRoute: AppRoute
+    var browseCollectionPath: [BrowseCollectionRoute]
     var detailPath: [String]
     var isSearchPresented: Bool
     var forwardStack: [AppRoute] = []
@@ -972,10 +1079,12 @@ struct AppShellNavigationState: Equatable {
     var rootScrollToTopTrigger = 0
     var savedScrollToTopTrigger = 0
     var practiceScrollToTopTrigger = 0
+    var browseCollectionScrollToTopTrigger = 0
     var detailScrollToTopTrigger = 0
 
     init(initialRoute: AppRoute = .home) {
         rootRoute = .home
+        browseCollectionPath = []
         detailPath = []
         isSearchPresented = false
 
@@ -984,6 +1093,9 @@ struct AppShellNavigationState: Equatable {
             rootRoute = .home
         case .browse:
             rootRoute = .browse
+        case .browseCollection(let route):
+            rootRoute = .browse
+            browseCollectionPath = [route]
         case .phrasePage:
             rootRoute = .phrasePage
         case .saved:
@@ -1008,6 +1120,10 @@ struct AppShellNavigationState: Equatable {
             return .detailPage(detailPageID)
         }
 
+        if let collectionRoute = browseCollectionPath.last {
+            return .browseCollection(collectionRoute)
+        }
+
         return rootRoute
     }
 
@@ -1022,10 +1138,22 @@ struct AppShellNavigationState: Equatable {
 
         if !detailPath.isEmpty {
             guard detailPath.count > 1 else {
+                if let collectionRoute = browseCollectionPath.last {
+                    return .browseCollection(collectionRoute)
+                }
+
                 return rootRoute
             }
 
             return .detailPage(detailPath[detailPath.count - 2])
+        }
+
+        if !browseCollectionPath.isEmpty {
+            guard browseCollectionPath.count > 1 else {
+                return .browse
+            }
+
+            return .browseCollection(browseCollectionPath[browseCollectionPath.count - 2])
         }
 
         if rootRoute == .browse || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice {
@@ -1046,6 +1174,10 @@ struct AppShellNavigationState: Equatable {
     private var routeBelowSearch: AppRoute {
         if let detailPageID = detailPath.last {
             return .detailPage(detailPageID)
+        }
+
+        if let collectionRoute = browseCollectionPath.last {
+            return .browseCollection(collectionRoute)
         }
 
         return rootRoute
@@ -1073,8 +1205,18 @@ struct AppShellNavigationState: Equatable {
         renderedDetailPages.map(\.pageID)
     }
 
+    var renderedBrowseCollections: [RenderedBrowseCollection] {
+        let lowerBound = max(browseCollectionPath.count - 2, 0)
+
+        return browseCollectionPath.enumerated()
+            .filter { offset, _ in offset >= lowerBound }
+            .map { offset, route in
+                RenderedBrowseCollection(stackIndex: offset, route: route)
+            }
+    }
+
     var canNavigateBackWithSwipe: Bool {
-        isSearchPresented || !detailPath.isEmpty || rootRoute == .browse || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice
+        isSearchPresented || !detailPath.isEmpty || !browseCollectionPath.isEmpty || rootRoute == .browse || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice
     }
 
     mutating func openDetail(_ id: String) {
@@ -1087,6 +1229,7 @@ struct AppShellNavigationState: Equatable {
             }
 
             detailPath.removeAll()
+            browseCollectionPath.removeAll()
             isSearchPresented = false
             rootRoute = .phrasePage
             forwardStack.removeAll()
@@ -1115,6 +1258,7 @@ struct AppShellNavigationState: Equatable {
         }
 
         rootRoute = .home
+        browseCollectionPath.removeAll()
         detailPath.removeAll()
         isSearchPresented = false
         forwardStack.removeAll()
@@ -1128,6 +1272,7 @@ struct AppShellNavigationState: Equatable {
         }
 
         rootRoute = .browse
+        browseCollectionPath.removeAll()
         detailPath.removeAll()
         isSearchPresented = false
         forwardStack.removeAll()
@@ -1141,6 +1286,7 @@ struct AppShellNavigationState: Equatable {
         }
 
         rootRoute = .saved
+        browseCollectionPath.removeAll()
         detailPath.removeAll()
         isSearchPresented = false
         forwardStack.removeAll()
@@ -1154,6 +1300,7 @@ struct AppShellNavigationState: Equatable {
         }
 
         rootRoute = .practice
+        browseCollectionPath.removeAll()
         detailPath.removeAll()
         isSearchPresented = false
         forwardStack.removeAll()
@@ -1169,6 +1316,24 @@ struct AppShellNavigationState: Equatable {
         forwardStack.removeAll()
     }
 
+    mutating func openBrowseCollection(_ route: BrowseCollectionRoute) {
+        guard currentRoute != .browseCollection(route) else {
+            browseCollectionScrollToTopTrigger += 1
+            isSearchPresented = false
+            return
+        }
+
+        rootRoute = .browse
+        detailPath.removeAll()
+        isSearchPresented = false
+        forwardStack.removeAll()
+
+        if browseCollectionPath.last != route {
+            browseCollectionPath.append(route)
+        }
+        browseCollectionScrollToTopTrigger += 1
+    }
+
     mutating func goBack() {
         if isSearchPresented {
             isSearchPresented = false
@@ -1177,6 +1342,16 @@ struct AppShellNavigationState: Equatable {
         }
 
         guard !detailPath.isEmpty else {
+            if let currentCollection = browseCollectionPath.popLast() {
+                forwardStack.append(.browseCollection(currentCollection))
+                if browseCollectionPath.isEmpty {
+                    browseScrollToTopTrigger += 1
+                } else {
+                    browseCollectionScrollToTopTrigger += 1
+                }
+                return
+            }
+
             if rootRoute == .browse {
                 rootRoute = .home
                 forwardStack.append(.browse)
@@ -1212,26 +1387,40 @@ struct AppShellNavigationState: Equatable {
         switch route {
         case .home:
             isSearchPresented = false
+            browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .home
             homeScrollToTopTrigger += 1
         case .browse:
             isSearchPresented = false
+            browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .browse
             browseScrollToTopTrigger += 1
+        case .browseCollection(let route):
+            isSearchPresented = false
+            detailPath.removeAll()
+            rootRoute = .browse
+
+            if browseCollectionPath.last != route {
+                browseCollectionPath.append(route)
+                browseCollectionScrollToTopTrigger += 1
+            }
         case .phrasePage:
             isSearchPresented = false
+            browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .phrasePage
             rootScrollToTopTrigger += 1
         case .saved:
             isSearchPresented = false
+            browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .saved
             savedScrollToTopTrigger += 1
         case .practice:
             isSearchPresented = false
+            browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .practice
             practiceScrollToTopTrigger += 1
@@ -1287,6 +1476,15 @@ struct RenderedDetailPage: Identifiable, Equatable {
 
     var id: String {
         "\(stackIndex)-\(pageID)"
+    }
+}
+
+struct RenderedBrowseCollection: Identifiable, Equatable {
+    let stackIndex: Int
+    let route: BrowseCollectionRoute
+
+    var id: String {
+        "\(stackIndex)-\(route.id)"
     }
 }
 

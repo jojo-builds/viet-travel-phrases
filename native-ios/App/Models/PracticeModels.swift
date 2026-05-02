@@ -101,6 +101,11 @@ enum PracticeEntryContext: String, Codable, Equatable {
     case placement
 }
 
+struct PracticeStartRequest: Equatable {
+    let id: Int
+    let mode: PracticeMode
+}
+
 enum PracticePromptKind: String, CaseIterable, Codable, Equatable {
     case listenAndPick
     case englishToVietnamese
