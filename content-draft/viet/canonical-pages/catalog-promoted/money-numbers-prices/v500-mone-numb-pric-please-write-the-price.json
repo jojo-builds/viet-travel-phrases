@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-v500-mone-numb-pric-please-write-the-price",
+  "familyID": "v500-mone-numb-pric-please-write-the-price",
+  "phraseID": "v500-mone-numb-pric-please-write-the-price",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Hãy viết giá",
+  "englishTitle": "Please write the price",
+  "pronunciation": "Hay viet gia",
+  "summary": "Please write the price",
+  "iconName": "creditcard.fill",
+  "tintName": "green",
+  "categoryIDs": [
+    "money-numbers-prices",
+    "v500-mone-numb-pric-please-write-the-price",
+    "premium"
+  ],
+  "audioKey": "v500-mone-numb-pric-please-write-the-price",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Hãy viết giá is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on write the price, so the answer can be a number, calculator screen, or typed price."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Ask Hãy viết giá before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "phrases": [
+        {
+          "id": "v500-mone-numb-pric-please-write-the-price",
+          "vietnamese": "Hãy viết giá",
+          "english": "Please write the price",
+          "pronunciation": "Hay viet gia",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "v500-mone-numb-pric-please-write-the-price"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Hãy viết",
+          "english": "please do",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "giá",
+          "english": "price",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Hãy viết giá",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Please write the price to another money or price need.",
+      "phrases": [
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-1",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "money-how-much-common",
+          "vietnamese": "Cái này nhiêu tiền?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai nyew tyen",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-money-how-much-common",
+          "audioKey": "money-how-much-common"
+        },
+        {
+          "id": "price-2",
+          "vietnamese": "Bao nhiêu một ký?",
+          "english": "How much per kilo?",
+          "pronunciation": "bao nyew mot kee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-2",
+          "audioKey": "price-2"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy viết giá.",
+      "phrases": [
+        {
+          "id": "price-3",
+          "vietnamese": "Mắc quá",
+          "english": "Too expensive",
+          "pronunciation": "mak gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-3",
+          "audioKey": "price-3"
+        },
+        {
+          "id": "price-4",
+          "vietnamese": "Bớt chút được không?",
+          "english": "Can you lower it a little?",
+          "pronunciation": "but choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-4",
+          "audioKey": "price-4"
+        },
+        {
+          "id": "price-5",
+          "vietnamese": "Giá cuối bao nhiêu?",
+          "english": "What’s your final price?",
+          "pronunciation": "za gooy bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-5",
+          "audioKey": "price-5"
+        },
+        {
+          "id": "price-6",
+          "vietnamese": "Cho tôi xem cái khác",
+          "english": "Show me another one",
+          "pronunciation": "cho toy sem gai khak",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-6",
+          "audioKey": "price-6"
+        },
+        {
+          "id": "price-7",
+          "vietnamese": "Tôi lấy cái này",
+          "english": "I’ll take this one",
+          "pronunciation": "toy lay gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-7",
+          "audioKey": "price-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-mone-numb-pric-please-write-the-price",
+      "vietnamese": "Hãy viết giá",
+      "english": "Please write the price",
+      "pronunciation": "Hay viet gia",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "v500-mone-numb-pric-please-write-the-price"
+    }
+  ]
+}

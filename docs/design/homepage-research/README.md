@@ -287,8 +287,8 @@ Job:
 Data source:
 
 - `native-ios/Resources/viet-authored-listing-pages.json`
-- `content-draft/viet/listing-pages/**`
-- Tier 1 index at `content-draft/viet/listing-pages/_tier-one-index.json`
+- `content-draft/viet/canonical-pages/**`
+- Tier 1 source-origin index at `content-draft/viet/canonical-pages/tier-one/_tier-one-index.json`
 
 Recommended V1 feature examples:
 

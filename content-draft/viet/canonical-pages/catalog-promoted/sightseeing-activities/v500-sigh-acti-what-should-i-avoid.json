@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-v500-sigh-acti-what-should-i-avoid",
+  "familyID": "v500-sigh-acti-what-should-i-avoid",
+  "phraseID": "v500-sigh-acti-what-should-i-avoid",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi nên tránh những gì?",
+  "englishTitle": "What should I avoid?",
+  "pronunciation": "Toi nen tranh nhung gi",
+  "summary": "What should I avoid?",
+  "iconName": "camera.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "sightseeing-activities",
+    "v500-sigh-acti-what-should-i-avoid",
+    "premium"
+  ],
+  "audioKey": "v500-sigh-acti-what-should-i-avoid",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi nên tránh những gì? is a practical sightseeing or activities phrase for keeping one travel detail clear. Use it when What should I avoid is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Tôi nên tránh những gì?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v500-sigh-acti-what-should-i-avoid",
+          "vietnamese": "Tôi nên tránh những gì?",
+          "english": "What should I avoid?",
+          "pronunciation": "Toi nen tranh nhung gi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "v500-sigh-acti-what-should-i-avoid"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi nên tránh",
+          "english": "pay",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "những gì",
+          "english": "what should I avoid",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Tôi nên tránh những gì?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from What should I avoid? to another sightseeing or activities need.",
+      "phrases": [
+        {
+          "id": "sight-1",
+          "vietnamese": "Vé bao nhiêu?",
+          "english": "How much is the ticket?",
+          "pronunciation": "veh bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-1",
+          "audioKey": "sight-1"
+        },
+        {
+          "id": "sight-2",
+          "vietnamese": "Bắt đầu ở đâu?",
+          "english": "Where do we start?",
+          "pronunciation": "bat dow uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-2",
+          "audioKey": "sight-2"
+        },
+        {
+          "id": "sight-3",
+          "vietnamese": "Tôi chụp hình ở đây được không?",
+          "english": "Can I take photos here?",
+          "pronunciation": "toy choop hinh uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-3",
+          "audioKey": "sight-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real sightseeing or activities exchange when what should I avoid is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "At attractions, names and times are the useful anchors. Keep the ticket or booking visible so the answer can be checked."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi nên tránh những gì?.",
+      "phrases": [
+        {
+          "id": "sight-4",
+          "vietnamese": "Mấy giờ đóng cửa?",
+          "english": "What time does it close?",
+          "pronunciation": "may zyuh dong koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-4",
+          "audioKey": "sight-4"
+        },
+        {
+          "id": "sight-5",
+          "vietnamese": "Điểm gặp ở đâu?",
+          "english": "Where is the meeting point?",
+          "pronunciation": "deeym gap uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-5",
+          "audioKey": "sight-5"
+        },
+        {
+          "id": "sight-6",
+          "vietnamese": "Tôi cần đặt trước không?",
+          "english": "Do I need to book in advance?",
+          "pronunciation": "toy gun dat chooc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-6",
+          "audioKey": "sight-6"
+        },
+        {
+          "id": "v500-sigh-acti-i-have-a-tour-booking",
+          "vietnamese": "Tôi có đặt tour",
+          "english": "I have a tour booking",
+          "pronunciation": "toy koh dat tour",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v500-sigh-acti-i-have-a-tour-booking",
+          "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
+        },
+        {
+          "id": "v500-sigh-acti-where-is-the-entrance",
+          "vietnamese": "Lối vào ở đâu?",
+          "english": "Where is the entrance?",
+          "pronunciation": "Loi vao o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v500-sigh-acti-where-is-the-entrance",
+          "audioKey": "v500-sigh-acti-where-is-the-entrance"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-sigh-acti-what-should-i-avoid",
+      "vietnamese": "Tôi nên tránh những gì?",
+      "english": "What should I avoid?",
+      "pronunciation": "Toi nen tranh nhung gi",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "v500-sigh-acti-what-should-i-avoid"
+    }
+  ]
+}

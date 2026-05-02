@@ -195,8 +195,8 @@ Viet:
 - `content-draft/viet/phrase-source.csv`
 - `content-draft/viet/relation-sample-v1.json`
 - `content-draft/viet/relation-authoring-notes.md`
-- `content-draft/viet/listing-pages/_tier-one-index.json` for the current computed 150-page Tier 1 inventory
-- `content-draft/viet/listing-pages/<scenario>/<family-id>.json` for authored offline Tier 1 listing-page articles
+- `content-draft/viet/canonical-pages/tier-one/_tier-one-index.json` for the current computed Tier 1 source-origin inventory
+- `content-draft/viet/canonical-pages/<lane>/<scenario>/<page-id>.json` for authored offline canonical phrase-page articles
 - `content-draft/viet/practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/` for the approved practice-first live expansion lane and its page records/rationale
 - `content-draft/viet/premium-expansion/` for future lane scaffolds and promoted-live historical manifests
 - `content-draft/viet/website-preview.json` for article-module selection and ordering only
@@ -204,6 +204,7 @@ Viet:
 Viet Tier 1 listing-page quality standard:
 
 - Use the installed `speaklocal-listing-pages` skill for authoring and review.
+- Treat source lanes as provenance only. `tier-one`, `catalog-promoted`, city, and practice-expansion pages all compile into one full-depth canonical phrase graph.
 - Pages should feel like thoughtful offline answers to "Different ways to say [phrase] in Vietnam."
 - Each page should carry phrase-specific explanation, useful variants, tone/register guidance, positively framed local/cultural/travel notes, canonical links, and audio-backed rows.
 - Avoid visible internal terms such as `repair` when they are not traveler-friendly; for example, use "When You Don't Understand" in UI copy instead of "Understanding Repair."

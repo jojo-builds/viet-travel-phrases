@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v500-mone-numb-pric-i-need-smaller-bills",
+  "familyID": "v500-mone-numb-pric-i-need-smaller-bills",
+  "phraseID": "v500-mone-numb-pric-i-need-smaller-bills",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi cần hóa đơn nhỏ hơn",
+  "englishTitle": "I need smaller bills",
+  "pronunciation": "Toi can hoa don nho hon",
+  "summary": "I need smaller bills",
+  "iconName": "creditcard.fill",
+  "tintName": "green",
+  "categoryIDs": [
+    "money-numbers-prices",
+    "v500-mone-numb-pric-i-need-smaller-bills",
+    "premium"
+  ],
+  "audioKey": "v500-mone-numb-pric-i-need-smaller-bills",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi cần hóa đơn nhỏ hơn is the short line for naming what you need next. It works best when smaller bills is visible on your phone, ticket, note, shelf, or in the situation around you."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Tôi cần hóa đơn nhỏ hơn with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "phrases": [
+        {
+          "id": "v500-mone-numb-pric-i-need-smaller-bills",
+          "vietnamese": "Tôi cần hóa đơn nhỏ hơn",
+          "english": "I need smaller bills",
+          "pronunciation": "Toi can hoa don nho hon",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "v500-mone-numb-pric-i-need-smaller-bills"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi cần",
+          "english": "I need",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "hóa đơn nhỏ",
+          "english": "bill",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "hơn",
+          "english": "can we go somewhere cooler",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Tôi cần hóa đơn nhỏ hơn",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from I need smaller bills to another money or price need.",
+      "phrases": [
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-1",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "money-how-much-common",
+          "vietnamese": "Cái này nhiêu tiền?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai nyew tyen",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-money-how-much-common",
+          "audioKey": "money-how-much-common"
+        },
+        {
+          "id": "price-2",
+          "vietnamese": "Bao nhiêu một ký?",
+          "english": "How much per kilo?",
+          "pronunciation": "bao nyew mot kee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-2",
+          "audioKey": "price-2"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real money or price exchange when smaller bills is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần hóa đơn nhỏ hơn.",
+      "phrases": [
+        {
+          "id": "price-3",
+          "vietnamese": "Mắc quá",
+          "english": "Too expensive",
+          "pronunciation": "mak gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-3",
+          "audioKey": "price-3"
+        },
+        {
+          "id": "price-4",
+          "vietnamese": "Bớt chút được không?",
+          "english": "Can you lower it a little?",
+          "pronunciation": "but choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-4",
+          "audioKey": "price-4"
+        },
+        {
+          "id": "price-5",
+          "vietnamese": "Giá cuối bao nhiêu?",
+          "english": "What’s your final price?",
+          "pronunciation": "za gooy bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-5",
+          "audioKey": "price-5"
+        },
+        {
+          "id": "price-6",
+          "vietnamese": "Cho tôi xem cái khác",
+          "english": "Show me another one",
+          "pronunciation": "cho toy sem gai khak",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-6",
+          "audioKey": "price-6"
+        },
+        {
+          "id": "price-7",
+          "vietnamese": "Tôi lấy cái này",
+          "english": "I’ll take this one",
+          "pronunciation": "toy lay gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-7",
+          "audioKey": "price-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-mone-numb-pric-i-need-smaller-bills",
+      "vietnamese": "Tôi cần hóa đơn nhỏ hơn",
+      "english": "I need smaller bills",
+      "pronunciation": "Toi can hoa don nho hon",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "v500-mone-numb-pric-i-need-smaller-bills"
+    }
+  ]
+}

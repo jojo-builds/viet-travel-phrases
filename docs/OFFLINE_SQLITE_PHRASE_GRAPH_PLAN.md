@@ -9,7 +9,7 @@ Scope: offline phrase graph, canonical phrase pages, search, audio mapping, and 
 
 Move SpeakLocal toward a build-time generated, bundled SQLite database for each language pack. The database should be the native app's offline read model for phrase pages, phrase clusters, search, audio usages, and practice deck seeds.
 
-The source of truth stays authored and reviewable in repo files such as `content-draft/viet/phrase-source.csv`, `content-draft/viet/listing-pages/**`, relation sidecars, and future language-pack source folders. SQLite is not the authoring surface. It is the compiled offline runtime artifact, similar to how the current native JSON resources are generated today.
+The source of truth stays authored and reviewable in repo files such as `content-draft/viet/phrase-source.csv`, `content-draft/viet/canonical-pages/**`, relation sidecars, and future language-pack source folders. SQLite is not the authoring surface. It is the compiled offline runtime artifact, similar to how the current native JSON resources are generated today.
 
 The core model should be:
 
@@ -31,7 +31,7 @@ The current live Viet native resources are still JSON files under `native-ios/Re
 | Surface | Current count / size | Current job |
 | --- | ---: | --- |
 | `viet-phrase-catalog.json` | `900` families, `919` phrase rows, `18` scenarios, `1.29 MB` | Generated catalog/search/browse fallback truth |
-| `viet-authored-listing-pages.json` | `163` rich pages, `1.27 MB` | Generated article/listing pages for Tier 1 plus child pages |
+| `viet-authored-listing-pages.json` | generated canonical page bundle | Generated authored phrase pages from canonical source lanes |
 | `viet-audio-manifest.json` | `3,756` manifest entries, `0.56 MB` | Audio key to file/text lookup |
 | `native-ios/Resources/Audio/` | `2,427` files, about `65 MB` | Bundled offline MP3 assets |
 

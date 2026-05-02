@@ -1,0 +1,196 @@
+{
+  "id": "viet-phrase-v900-prob-help-i-need-a-police-report-for-insurance",
+  "familyID": "v900-prob-help-i-need-a-police-report-for-insurance",
+  "phraseID": "v900-prob-help-i-need-a-police-report-for-insurance",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi cần báo cáo của cảnh sát về bảo hiểm",
+  "englishTitle": "I need a police report for insurance",
+  "pronunciation": "Toi can bao cao cua canh sat ve bao hiem",
+  "summary": "I need a police report for insurance",
+  "iconName": "exclamationmark.triangle.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "problems-help",
+    "v900-prob-help-i-need-a-police-report-for-insurance",
+    "premium"
+  ],
+  "audioKey": "v900-prob-help-i-need-a-police-report-for-insurance",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi cần báo cáo của cảnh sát về bảo hiểm is the short line for naming what you need next. It works best when police report for insurance is visible on your phone, ticket, note, shelf, or in the situation around you."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Tôi cần báo cáo của cảnh sát về bảo hiểm with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "phrases": [
+        {
+          "id": "v900-prob-help-i-need-a-police-report-for-insurance",
+          "vietnamese": "Tôi cần báo cáo của cảnh sát về bảo hiểm",
+          "english": "I need a police report for insurance",
+          "pronunciation": "Toi can bao cao cua canh sat ve bao hiem",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "v900-prob-help-i-need-a-police-report-for-insurance"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi cần",
+          "english": "I need",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "báo cáo của",
+          "english": "report",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "cảnh sát về",
+          "english": "ticket",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "bảo hiểm",
+          "english": "insurance",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "Tôi cần báo cáo của cảnh sát về bảo hiểm",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from I need a police report for insurance to another problem-solving need.",
+      "phrases": [
+        {
+          "id": "problems-1",
+          "vietnamese": "Tôi bị lạc đường",
+          "english": "I’m lost",
+          "pronunciation": "toy bee lahk doong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-problems-1",
+          "audioKey": "problems-1"
+        },
+        {
+          "id": "problems-4",
+          "vietnamese": "Tôi quên đồ rồi",
+          "english": "I left something behind",
+          "pronunciation": "toy gwen doh roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-problems-4",
+          "audioKey": "problems-4"
+        },
+        {
+          "id": "help-1",
+          "vietnamese": "Anh/chị giúp tôi với",
+          "english": "Can you help me?",
+          "pronunciation": "anh chee zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-1",
+          "audioKey": "help-1"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real problem-solving exchange when police report for insurance is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Name one problem at a time. If the answer is fast, switch to a repeat or write-it-down phrase."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần báo cáo của cảnh sát về bảo hiểm.",
+      "phrases": [
+        {
+          "id": "help-need-help-direct",
+          "vietnamese": "Giúp tôi với",
+          "english": "I need help",
+          "pronunciation": "zoop toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-need-help-direct",
+          "audioKey": "help-need-help-direct"
+        },
+        {
+          "id": "help-2",
+          "vietnamese": "Gọi khách sạn giúp tôi",
+          "english": "Please call the hotel for me",
+          "pronunciation": "goy khak san zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-2",
+          "audioKey": "help-2"
+        },
+        {
+          "id": "help-3",
+          "vietnamese": "Tôi cần quản lý",
+          "english": "I need the manager",
+          "pronunciation": "toy gun kwan lee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-3",
+          "audioKey": "help-3"
+        },
+        {
+          "id": "help-4",
+          "vietnamese": "Tôi bị tính tiền hai lần",
+          "english": "I was charged twice",
+          "pronunciation": "toy bee ting tyen hai lun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-4",
+          "audioKey": "help-4"
+        },
+        {
+          "id": "help-5",
+          "vietnamese": "Tôi cần làm biên bản",
+          "english": "I need to file a report",
+          "pronunciation": "toy gun lahm byeen ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-5",
+          "audioKey": "help-5"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-prob-help-i-need-a-police-report-for-insurance",
+      "vietnamese": "Tôi cần báo cáo của cảnh sát về bảo hiểm",
+      "english": "I need a police report for insurance",
+      "pronunciation": "Toi can bao cao cua canh sat ve bao hiem",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "v900-prob-help-i-need-a-police-report-for-insurance"
+    }
+  ]
+}

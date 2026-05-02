@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v900-time-date-book-how-many-people-are-ahead-of-me",
+  "familyID": "v900-time-date-book-how-many-people-are-ahead-of-me",
+  "phraseID": "v900-time-date-book-how-many-people-are-ahead-of-me",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Có bao nhiêu người đang ở phía trước tôi?",
+  "englishTitle": "How many people are ahead of me?",
+  "pronunciation": "Co bao nhieu nguoi dang o phia truoc toi",
+  "summary": "How many people are ahead of me?",
+  "iconName": "calendar",
+  "tintName": "teal",
+  "categoryIDs": [
+    "time-dates-booking",
+    "v900-time-date-book-how-many-people-are-ahead-of-me",
+    "premium"
+  ],
+  "audioKey": "v900-time-date-book-how-many-people-are-ahead-of-me",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Có bao nhiêu người đang ở phía trước tôi? is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when How many people are ahead of me is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Có bao nhiêu người đang ở phía trước tôi?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v900-time-date-book-how-many-people-are-ahead-of-me",
+          "vietnamese": "Có bao nhiêu người đang ở phía trước tôi?",
+          "english": "How many people are ahead of me?",
+          "pronunciation": "Co bao nhieu nguoi dang o phia truoc toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "v900-time-date-book-how-many-people-are-ahead-of-me"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Có bao nhiêu",
+          "english": "asks how much",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "người đang ở",
+          "english": "how many people are ahead of me",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "phía trước tôi",
+          "english": "fee",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Có bao nhiêu người đang ở phía trước tôi?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from How many people are ahead of me? to another time, date, or booking need.",
+      "phrases": [
+        {
+          "id": "time-1",
+          "vietnamese": "Mấy giờ?",
+          "english": "What time?",
+          "pronunciation": "may zyuh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-1",
+          "audioKey": "time-1"
+        },
+        {
+          "id": "time-2",
+          "vietnamese": "Hôm nay",
+          "english": "Today",
+          "pronunciation": "hom nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-2",
+          "audioKey": "time-2"
+        },
+        {
+          "id": "time-3",
+          "vietnamese": "Sáng mai",
+          "english": "Tomorrow morning",
+          "pronunciation": "sahng mai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-3",
+          "audioKey": "time-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real time, date, or booking exchange when how many people are ahead of me is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Có bao nhiêu người đang ở phía trước tôi?.",
+      "phrases": [
+        {
+          "id": "time-4",
+          "vietnamese": "Tôi có đặt chỗ",
+          "english": "I have a booking",
+          "pronunciation": "toy koh dat choh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-4",
+          "audioKey": "time-4"
+        },
+        {
+          "id": "time-5",
+          "vietnamese": "Mấy giờ mở cửa?",
+          "english": "What time does it open?",
+          "pronunciation": "may zyuh muh koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-5",
+          "audioKey": "time-5"
+        },
+        {
+          "id": "time-6",
+          "vietnamese": "Dời lại muộn hơn được không?",
+          "english": "Can we move it later?",
+          "pronunciation": "zoy lie moon hun dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-6",
+          "audioKey": "time-6"
+        },
+        {
+          "id": "time-7",
+          "vietnamese": "Mấy giờ bắt đầu lên máy bay?",
+          "english": "What time does boarding start?",
+          "pronunciation": "may zyuh bat dow len mai bai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-time-7",
+          "audioKey": "time-7"
+        },
+        {
+          "id": "v500-time-date-book-is-there-a-wait",
+          "vietnamese": "Có chờ đợi không?",
+          "english": "Is there a wait?",
+          "pronunciation": "Co cho doi khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "teal",
+          "detailPageID": "viet-phrase-v500-time-date-book-is-there-a-wait",
+          "audioKey": "v500-time-date-book-is-there-a-wait"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-time-date-book-how-many-people-are-ahead-of-me",
+      "vietnamese": "Có bao nhiêu người đang ở phía trước tôi?",
+      "english": "How many people are ahead of me?",
+      "pronunciation": "Co bao nhieu nguoi dang o phia truoc toi",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "teal",
+      "detailPageID": null,
+      "audioKey": "v900-time-date-book-how-many-people-are-ahead-of-me"
+    }
+  ]
+}

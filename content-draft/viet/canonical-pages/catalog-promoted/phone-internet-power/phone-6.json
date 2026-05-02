@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-phone-6",
+  "familyID": "phone-data-topup",
+  "phraseID": "phone-6",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi cần nạp thêm dữ liệu",
+  "englishTitle": "I need a data top-up",
+  "pronunciation": "toy gun nap them yoo lee-ew",
+  "summary": "I need a data top-up",
+  "iconName": "wifi",
+  "tintName": "blue",
+  "categoryIDs": [
+    "phone-internet-power",
+    "phone-data-topup",
+    "premium"
+  ],
+  "audioKey": "phone-6",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi cần nạp thêm dữ liệu is the short line for naming what you need next. It works best when data top-up is visible on your phone, ticket, note, shelf, or in the situation around you."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Tôi cần nạp thêm dữ liệu with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "phrases": [
+        {
+          "id": "phone-6",
+          "vietnamese": "Tôi cần nạp thêm dữ liệu",
+          "english": "I need a data top-up",
+          "pronunciation": "toy gun nap them yoo lee-ew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "phone-6"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi cần",
+          "english": "I need",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "nạp thêm dữ liệu",
+          "english": "data top-up",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Tôi cần nạp thêm dữ liệu",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from I need a data top-up to another phone, internet, or power need.",
+      "phrases": [
+        {
+          "id": "phone-1",
+          "vietnamese": "Mật khẩu Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "mat khau wai-fai la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-1",
+          "audioKey": "phone-1"
+        },
+        {
+          "id": "phone-wifi-common",
+          "vietnamese": "Pass Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "pas wai-fai la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-wifi-common",
+          "audioKey": "phone-wifi-common"
+        },
+        {
+          "id": "phone-2",
+          "vietnamese": "Có bán SIM không?",
+          "english": "Do you sell SIM cards?",
+          "pronunciation": "koh ban sim khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-2",
+          "audioKey": "phone-2"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real phone, internet, or power exchange when data top-up is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần nạp thêm dữ liệu.",
+      "phrases": [
+        {
+          "id": "phone-3",
+          "vietnamese": "Điện thoại tôi hết pin rồi",
+          "english": "My phone battery is dead",
+          "pronunciation": "dyen thoai toy het pin roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-3",
+          "audioKey": "phone-3"
+        },
+        {
+          "id": "phone-4",
+          "vietnamese": "Có sạc không?",
+          "english": "Do you have a charger?",
+          "pronunciation": "koh sahk khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-4",
+          "audioKey": "phone-4"
+        },
+        {
+          "id": "phone-5",
+          "vietnamese": "Tôi sạc điện thoại ở đây được không?",
+          "english": "Can I charge my phone here?",
+          "pronunciation": "toy sahk dyen thoai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-5",
+          "audioKey": "phone-5"
+        },
+        {
+          "id": "phone-7",
+          "vietnamese": "eSIM của tôi không hoạt động",
+          "english": "My eSIM is not working",
+          "pronunciation": "ee-sim koo-ah toy khong hwat dohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-7",
+          "audioKey": "phone-7"
+        },
+        {
+          "id": "phone-premium-otp-not-arriving",
+          "vietnamese": "Mã xác minh không đến.",
+          "english": "The verification code is not arriving.",
+          "pronunciation": "Ma xac minh khong den",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-premium-otp-not-arriving",
+          "audioKey": "phone-premium-otp-not-arriving"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "phone-6",
+      "vietnamese": "Tôi cần nạp thêm dữ liệu",
+      "english": "I need a data top-up",
+      "pronunciation": "toy gun nap them yoo lee-ew",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "phone-6"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v900-hote-acco-is-this-room-available-tonight",
+  "familyID": "v900-hote-acco-is-this-room-available-tonight",
+  "phraseID": "v900-hote-acco-is-this-room-available-tonight",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Phòng này có trống tối nay không?",
+  "englishTitle": "Is this room available tonight?",
+  "pronunciation": "Phong nay co trong toi nay khong",
+  "summary": "Is this room available tonight?",
+  "iconName": "bed.double.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "hotel-accommodation",
+    "v900-hote-acco-is-this-room-available-tonight",
+    "premium"
+  ],
+  "audioKey": "v900-hote-acco-is-this-room-available-tonight",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Phòng này có trống tối nay không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this room available tonight is right."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use Phòng này có trống tối nay không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "phrases": [
+        {
+          "id": "v900-hote-acco-is-this-room-available-tonight",
+          "vietnamese": "Phòng này có trống tối nay không?",
+          "english": "Is this room available tonight?",
+          "pronunciation": "Phong nay co trong toi nay khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "v900-hote-acco-is-this-room-available-tonight"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Phòng này có",
+          "english": "room",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "trống tối nay",
+          "english": "is this room available tonight",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "không",
+          "english": "no / not",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Phòng này có trống tối nay không?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Is this room available tonight? to another hotel or stay need.",
+      "phrases": [
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-1",
+          "audioKey": "hotel-1"
+        },
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-2",
+          "audioKey": "hotel-2"
+        },
+        {
+          "id": "hotel-check-in-polite",
+          "vietnamese": "Cho tôi nhận phòng nhé",
+          "english": "I’d like to check in, please",
+          "pronunciation": "cho toy nyun fong nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-check-in-polite",
+          "audioKey": "hotel-check-in-polite"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Phòng này có trống tối nay không?.",
+      "phrases": [
+        {
+          "id": "hotel-3",
+          "vietnamese": "Mấy giờ trả phòng?",
+          "english": "What time is check-out?",
+          "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-3",
+          "audioKey": "hotel-3"
+        },
+        {
+          "id": "hotel-quiet-room",
+          "vietnamese": "Cho tôi phòng yên tĩnh được không?",
+          "english": "Can I have a quiet room?",
+          "pronunciation": "cho toy fong yen tinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-quiet-room",
+          "audioKey": "hotel-quiet-room"
+        },
+        {
+          "id": "hotel-checkout",
+          "vietnamese": "Cho tôi trả phòng",
+          "english": "I’d like to check out",
+          "pronunciation": "cho toy tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-checkout",
+          "audioKey": "hotel-checkout"
+        },
+        {
+          "id": "hotel-4",
+          "vietnamese": "Phòng này nóng quá",
+          "english": "This room is too hot",
+          "pronunciation": "fong nai nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-4",
+          "audioKey": "hotel-4"
+        },
+        {
+          "id": "hotel-5",
+          "vietnamese": "Máy lạnh không chạy",
+          "english": "The air conditioner isn’t working",
+          "pronunciation": "mai lanh khong chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-5",
+          "audioKey": "hotel-5"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-hote-acco-is-this-room-available-tonight",
+      "vietnamese": "Phòng này có trống tối nay không?",
+      "english": "Is this room available tonight?",
+      "pronunciation": "Phong nay co trong toi nay khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "v900-hote-acco-is-this-room-available-tonight"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "viet-acknowledge-duoc",
+  "familyID": "acknowledge-duoc",
+  "phraseID": "acknowledge-duoc",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Được",
+  "englishTitle": "Okay / that works",
+  "pronunciation": "duhk",
+  "summary": "Use Được when you want to accept a suggestion or say an option works.",
+  "iconName": "checkmark.circle.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "polite-basics"
+  ],
+  "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Được is a practical polite basics phrase for keeping one travel detail clear. Use it when Okay / that works is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Use Được when you want to accept a practical option without adding a long sentence.",
+      "phrases": [
+        {
+          "id": "acknowledge-duoc",
+          "vietnamese": "Được",
+          "english": "Okay / that works",
+          "pronunciation": "duhk",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Được",
+          "english": "full phrase",
+          "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+        }
+      ]
+    },
+    {
+      "id": "nearby-answers",
+      "title": "Nearby answers",
+      "body": "Use these when the answer is yes, correct, or no instead of accepted.",
+      "phrases": [
+        {
+          "id": "acknowledge-co",
+          "vietnamese": "Có",
+          "english": "Yes / there is",
+          "pronunciation": "koh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-acknowledge-co",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "v500-poli-basi-yes",
+          "vietnamese": "Đúng",
+          "english": "Yes / correct",
+          "pronunciation": "doong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-acknowledge-dung",
+          "audioKey": "v500-poli-basi-yes"
+        },
+        {
+          "id": "acknowledge-khong",
+          "vietnamese": "Không",
+          "english": "No",
+          "pronunciation": "khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-acknowledge-khong",
+          "audioKey": "breakdown-polite-6-first"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real polite basics exchange when okay / that works is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Được.",
+      "phrases": [
+        {
+          "id": "v500-shop-okay-ill-take-it",
+          "vietnamese": "Được rồi, tôi sẽ lấy nó",
+          "english": "Okay, I'll take it",
+          "pronunciation": "duoc roi toi se lay no",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-family-v500-shop-okay-ill-take-it",
+          "audioKey": "v500-shop-okay-ill-take-it"
+        },
+        {
+          "id": "v500-unde-repa-okay-now-i-understand",
+          "vietnamese": "Được rồi, bây giờ tôi đã hiểu",
+          "english": "Okay, now I understand",
+          "pronunciation": "duoc roi bay gio toi da hieu",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-v500-unde-repa-okay-now-i-understand",
+          "audioKey": "v500-unde-repa-okay-now-i-understand"
+        },
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "acknowledge-duoc",
+      "vietnamese": "Được",
+      "english": "Okay / that works",
+      "pronunciation": "duhk",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+    }
+  ]
+}

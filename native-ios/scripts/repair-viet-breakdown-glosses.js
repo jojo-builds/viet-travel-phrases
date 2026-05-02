@@ -5,8 +5,8 @@ const path = require("path");
 
 const nativeRoot = path.resolve(__dirname, "..");
 const repoRoot = path.resolve(nativeRoot, "..");
-const listingPagesRoot = path.join(repoRoot, "content-draft", "viet", "listing-pages");
-const fullListingPagesRoot = path.join(repoRoot, "content-draft", "viet", "full-listing-pages");
+const tierOnePagesRoot = path.join(repoRoot, "content-draft", "viet", "canonical-pages", "tier-one");
+const catalogPromotedPagesRoot = path.join(repoRoot, "content-draft", "viet", "canonical-pages", "catalog-promoted");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const authoredResourcePath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
 const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifest.json");
@@ -892,8 +892,8 @@ function practiceSourceFiles() {
 
 function allSourceFiles() {
   return [
-    ...collectJSONFiles(listingPagesRoot),
-    ...collectJSONFiles(fullListingPagesRoot),
+    ...collectJSONFiles(tierOnePagesRoot),
+    ...collectJSONFiles(catalogPromotedPagesRoot),
     cityLibraryPath,
     ...practiceSourceFiles(),
     authoredResourcePath,

@@ -1,0 +1,196 @@
+{
+  "id": "viet-phrase-v500-phon-inte-powe-can-you-activate-it-for-me",
+  "familyID": "v500-phon-inte-powe-can-you-activate-it-for-me",
+  "phraseID": "v500-phon-inte-powe-can-you-activate-it-for-me",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Bạn có thể kích hoạt nó cho tôi được không?",
+  "englishTitle": "Can you activate it for me?",
+  "pronunciation": "Ban co the kich hoat no cho toi duoc khong",
+  "summary": "Can you activate it for me?",
+  "iconName": "wifi",
+  "tintName": "blue",
+  "categoryIDs": [
+    "phone-internet-power",
+    "v500-phon-inte-powe-can-you-activate-it-for-me",
+    "premium"
+  ],
+  "audioKey": "v500-phon-inte-powe-can-you-activate-it-for-me",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Bạn có thể kích hoạt nó cho tôi được không? asks someone to do one helpful action for you. Use it for activate it for me when pointing, showing your phone, or giving a document will make the request easy to understand."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Bạn có thể kích hoạt nó cho tôi được không? once, then make the task visible with your phone screen, charger, SIM card, Wi-Fi screen, or outlet. The phrase is doing one job: getting a clear answer about activate it for me.",
+      "phrases": [
+        {
+          "id": "v500-phon-inte-powe-can-you-activate-it-for-me",
+          "vietnamese": "Bạn có thể kích hoạt nó cho tôi được không?",
+          "english": "Can you activate it for me?",
+          "pronunciation": "Ban co the kich hoat no cho toi duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v500-phon-inte-powe-can-you-activate-it-for-me"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Bạn có thể",
+          "english": "can you",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "kích hoạt nó",
+          "english": "it for me",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "cho tôi",
+          "english": "for me / please",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "được không",
+          "english": "is it possible?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "Bạn có thể kích hoạt nó cho tôi được không?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Can you activate it for me? to another phone, internet, or power need.",
+      "phrases": [
+        {
+          "id": "phone-1",
+          "vietnamese": "Mật khẩu Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "mat khau wai-fai la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-1",
+          "audioKey": "phone-1"
+        },
+        {
+          "id": "phone-wifi-common",
+          "vietnamese": "Pass Wi-Fi là gì?",
+          "english": "What is the Wi-Fi password?",
+          "pronunciation": "pas wai-fai la zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-wifi-common",
+          "audioKey": "phone-wifi-common"
+        },
+        {
+          "id": "phone-2",
+          "vietnamese": "Có bán SIM không?",
+          "english": "Do you sell SIM cards?",
+          "pronunciation": "koh ban sim khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-2",
+          "audioKey": "phone-2"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real phone, internet, or power exchange when activate it for me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể kích hoạt nó cho tôi được không?.",
+      "phrases": [
+        {
+          "id": "phone-3",
+          "vietnamese": "Điện thoại tôi hết pin rồi",
+          "english": "My phone battery is dead",
+          "pronunciation": "dyen thoai toy het pin roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-3",
+          "audioKey": "phone-3"
+        },
+        {
+          "id": "phone-4",
+          "vietnamese": "Có sạc không?",
+          "english": "Do you have a charger?",
+          "pronunciation": "koh sahk khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-4",
+          "audioKey": "phone-4"
+        },
+        {
+          "id": "phone-5",
+          "vietnamese": "Tôi sạc điện thoại ở đây được không?",
+          "english": "Can I charge my phone here?",
+          "pronunciation": "toy sahk dyen thoai uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-5",
+          "audioKey": "phone-5"
+        },
+        {
+          "id": "phone-6",
+          "vietnamese": "Tôi cần nạp thêm dữ liệu",
+          "english": "I need a data top-up",
+          "pronunciation": "toy gun nap them yoo lee-ew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-6",
+          "audioKey": "phone-6"
+        },
+        {
+          "id": "phone-7",
+          "vietnamese": "eSIM của tôi không hoạt động",
+          "english": "My eSIM is not working",
+          "pronunciation": "ee-sim koo-ah toy khong hwat dohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-phone-7",
+          "audioKey": "phone-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-phon-inte-powe-can-you-activate-it-for-me",
+      "vietnamese": "Bạn có thể kích hoạt nó cho tôi được không?",
+      "english": "Can you activate it for me?",
+      "pronunciation": "Ban co the kich hoat no cho toi duoc khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v500-phon-inte-powe-can-you-activate-it-for-me"
+    }
+  ]
+}

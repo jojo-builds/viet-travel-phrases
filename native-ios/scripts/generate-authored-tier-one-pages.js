@@ -11,12 +11,13 @@ const catalogPath = path.join(root, "Resources", "viet-phrase-catalog.json");
 const audioManifestPath = path.join(root, "Resources", "viet-audio-manifest.json");
 const outputPath = path.join(root, "Resources", "viet-authored-listing-pages.json");
 const auditPath = path.join(root, "Resources", "viet-authored-audio-audit.json");
-const sourceRoot = path.join(familyRoot, "content-draft", "viet", "listing-pages");
-const fullUniverseSourceRoot = path.join(familyRoot, "content-draft", "viet", "full-listing-pages");
+const canonicalPagesRoot = path.join(familyRoot, "content-draft", "viet", "canonical-pages");
+const sourceRoot = path.join(canonicalPagesRoot, "tier-one");
+const catalogPromotedSourceRoot = path.join(canonicalPagesRoot, "catalog-promoted");
 const cityLibraryPath = path.join(familyRoot, "content-draft", "viet", "city-library", "v1.json");
 const practiceExpansionRoot = path.join(familyRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
 const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest.json");
-const fullUniverseTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
+const catalogPromotedTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
 const breakdownRepairScriptPath = path.join(root, "scripts", "repair-viet-breakdown-glosses.js");
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
@@ -1911,8 +1912,8 @@ function walkJSONFiles(dir) {
   return files.sort((a, b) => a.localeCompare(b));
 }
 
-function loadFullUniversePages() {
-  return walkJSONFiles(fullUniverseSourceRoot).map((filePath) => {
+function loadCatalogPromotedPages() {
+  return walkJSONFiles(catalogPromotedSourceRoot).map((filePath) => {
     const page = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return {
       ...page,
@@ -1933,8 +1934,8 @@ function loadFullUniversePages() {
   });
 }
 
-function loadFullUniversePhraseIDs() {
-  return new Set(walkJSONFiles(fullUniverseSourceRoot).map((filePath) => {
+function loadCatalogPromotedPhraseIDs() {
+  return new Set(walkJSONFiles(catalogPromotedSourceRoot).map((filePath) => {
     const page = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return page.phraseID;
   }).filter(Boolean));
@@ -2553,14 +2554,14 @@ function runBreakdownGlossRepair() {
 function main() {
   removeGeneratedSources();
 
-  const fullUniversePages = loadFullUniversePages();
-  const fullUniversePhraseIDs = loadFullUniversePhraseIDs();
+  const catalogPromotedPages = loadCatalogPromotedPages();
+  const catalogPromotedPhraseIDs = loadCatalogPromotedPhraseIDs();
   const cityLibraryPages = loadCityLibraryPages();
   const practiceExpansionPages = loadPracticeExpansionPages();
-  const fullUniversePageIDByPhraseID = new Map(fullUniversePages.map((page) => [page.phraseID, page.id]));
-  const taskFullUniversePhraseIDs = new Set([...fullUniversePhraseIDs]
-    .filter((phraseID) => phraseByID.get(phraseID)?.notes?.includes(`task=${fullUniverseTaskID}`)));
-  for (const page of fullUniversePages) {
+  const catalogPromotedPageIDByPhraseID = new Map(catalogPromotedPages.map((page) => [page.phraseID, page.id]));
+  const taskCatalogPromotedPhraseIDs = new Set([...catalogPromotedPhraseIDs]
+    .filter((phraseID) => phraseByID.get(phraseID)?.notes?.includes(`task=${catalogPromotedTaskID}`)));
+  for (const page of catalogPromotedPages) {
     const family = familyByID.get(page.familyID);
     if (family?.primaryPhraseID === page.phraseID) {
       designedFamilyPageIDs[page.familyID] = page.id;
@@ -2570,7 +2571,7 @@ function main() {
     const primaryPhrase = phraseByID.get(family.primaryPhraseID);
     return family.accessTier === "starter"
       && primaryPhrase?.variantRole === "say-first"
-      && !taskFullUniversePhraseIDs.has(family.primaryPhraseID);
+      && !taskCatalogPromotedPhraseIDs.has(family.primaryPhraseID);
   });
 
   const childPageIDsByPhraseID = new Map();
@@ -2580,7 +2581,7 @@ function main() {
       if (phrase && phrase.variantRole !== "say-first") {
         childPageIDsByPhraseID.set(
           phrase.id,
-          fullUniversePageIDByPhraseID.get(phrase.id) ?? `viet-phrase-${phrase.id}`
+          catalogPromotedPageIDByPhraseID.get(phrase.id) ?? `viet-phrase-${phrase.id}`
         );
       }
     }
@@ -2602,14 +2603,14 @@ function main() {
     fs.mkdirSync(scenarioDir, { recursive: true });
     fs.writeFileSync(path.join(scenarioDir, `${family.id}.json`), `${JSON.stringify(page, null, 2)}\n`);
 
-    if (!manuallyAuthoredPageIDs.has(page.id) && !fullUniversePhraseIDs.has(family.primaryPhraseID)) {
+    if (!manuallyAuthoredPageIDs.has(page.id) && !catalogPromotedPhraseIDs.has(family.primaryPhraseID)) {
       pages.push(page);
     }
 
     for (const phraseID of family.phraseIDs ?? []) {
       const phrase = phraseByID.get(phraseID);
       if (!phrase || phrase.variantRole === "say-first") continue;
-      if (fullUniversePhraseIDs.has(phrase.id)) continue;
+      if (catalogPromotedPhraseIDs.has(phrase.id)) continue;
       const childPage = childPageForVariant(family, phrase, primaryPhrase);
       childPages.push(childPage);
       fs.writeFileSync(path.join(scenarioDir, `${family.id}--${phrase.id}.json`), `${JSON.stringify(childPage, null, 2)}\n`);
@@ -2625,18 +2626,18 @@ function main() {
     inventory,
   }, null, 2)}\n`);
 
-  const allPages = [...pages, ...childPages, ...fullUniversePages, ...cityLibraryPages, ...practiceExpansionPages];
+  const allPages = [...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...practiceExpansionPages];
   const audioAudit = collectAudioAudit(allPages);
   const bundle = {
     metadata: {
       source: path.relative(root, sourceRoot),
-      fullUniverseSource: path.relative(root, fullUniverseSourceRoot),
+      catalogPromotedSource: path.relative(root, catalogPromotedSourceRoot),
       cityLibrarySource: fs.existsSync(cityLibraryPath) ? path.relative(root, cityLibraryPath) : null,
       practiceExpansionSource: fs.existsSync(practiceExpansionManifestPath) ? path.relative(root, practiceExpansionRoot) : null,
       tierOneFamilyCount: starterFamilies.length,
       resourceMainPageCount: pages.length,
       childPageCount: childPages.length,
-      fullUniversePageCount: fullUniversePages.length,
+      catalogPromotedPageCount: catalogPromotedPages.length,
       cityLibraryPageCount: cityLibraryPages.length,
       practiceExpansionPageCount: practiceExpansionPages.length,
       generatedAt: new Date().toISOString(),
@@ -2677,7 +2678,7 @@ function main() {
   console.log(`Tier 1 families: ${starterFamilies.length}`);
   console.log(`Authored resource main pages: ${pages.length}`);
   console.log(`Child pages: ${childPages.length}`);
-  console.log(`Full-universe authored pages: ${fullUniversePages.length}`);
+  console.log(`Catalog-promoted authored pages: ${catalogPromotedPages.length}`);
   console.log(`City library pages: ${cityLibraryPages.length}`);
   console.log(`Practice expansion pages: ${practiceExpansionPages.length}`);
   console.log(`Missing assigned audio: ${finalAudioAudit.missing.length}`);

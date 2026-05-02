@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-emergency-premium-police-station",
+  "familyID": "emergency-police-station",
+  "phraseID": "emergency-premium-police-station",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Làm ơn đưa tôi đến đồn cảnh sát.",
+  "englishTitle": "Please take me to the police station.",
+  "pronunciation": "Lam on dua toi den don canh sat",
+  "summary": "Please take me to the police station.",
+  "iconName": "cross.circle.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "emergency-safety",
+    "emergency-police-station",
+    "premium"
+  ],
+  "audioKey": "emergency-premium-police-station",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Làm ơn đưa tôi đến đồn cảnh sát. is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when take me to the police station is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Làm ơn đưa tôi đến đồn cảnh sát.. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "phrases": [
+        {
+          "id": "emergency-premium-police-station",
+          "vietnamese": "Làm ơn đưa tôi đến đồn cảnh sát.",
+          "english": "Please take me to the police station.",
+          "pronunciation": "Lam on dua toi den don canh sat",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "emergency-premium-police-station"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Làm ơn",
+          "english": "please",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "đưa tôi đến",
+          "english": "to / arrive at",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "đồn cảnh sát",
+          "english": "the police station",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Làm ơn đưa tôi đến đồn cảnh sát.",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Please take me to the police station. to another safety or urgent-help need.",
+      "phrases": [
+        {
+          "id": "emergency-1",
+          "vietnamese": "Gọi công an",
+          "english": "Call the police",
+          "pronunciation": "goy kong an",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-emergency-1",
+          "audioKey": "emergency-1"
+        },
+        {
+          "id": "emergency-2",
+          "vietnamese": "Gọi xe cứu thương",
+          "english": "Call an ambulance",
+          "pronunciation": "goy seh koo-ah thu-ong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-emergency-2",
+          "audioKey": "emergency-2"
+        },
+        {
+          "id": "emergency-3",
+          "vietnamese": "Tôi mất hộ chiếu",
+          "english": "I lost my passport",
+          "pronunciation": "toy mut hoh chee-u",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-emergency-3",
+          "audioKey": "emergency-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real safety or urgent-help exchange when take me to the police station is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Làm ơn đưa tôi đến đồn cảnh sát..",
+      "phrases": [
+        {
+          "id": "emergency-4",
+          "vietnamese": "Tôi cảm thấy không an toàn",
+          "english": "I feel unsafe",
+          "pronunciation": "toy kahm thai khong an toan",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-emergency-4",
+          "audioKey": "emergency-4"
+        },
+        {
+          "id": "emergency-emergency",
+          "vietnamese": "Đây là trường hợp khẩn cấp",
+          "english": "This is an emergency",
+          "pronunciation": "day la troong hop khun kup",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-emergency-emergency",
+          "audioKey": "emergency-emergency"
+        },
+        {
+          "id": "emergency-5",
+          "vietnamese": "Cứu tôi với!",
+          "english": "Help!",
+          "pronunciation": "koo toy voy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-emergency-5",
+          "audioKey": "emergency-5"
+        },
+        {
+          "id": "emergency-hospital",
+          "vietnamese": "Bệnh viện gần nhất ở đâu?",
+          "english": "Where is the nearest hospital?",
+          "pronunciation": "beng vyen gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-emergency-hospital",
+          "audioKey": "emergency-hospital"
+        },
+        {
+          "id": "emergency-6",
+          "vietnamese": "Túi của tôi bị lấy mất",
+          "english": "My bag was stolen",
+          "pronunciation": "too-ee koo-ah toy bee lay mut",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-emergency-6",
+          "audioKey": "emergency-6"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "emergency-premium-police-station",
+      "vietnamese": "Làm ơn đưa tôi đến đồn cảnh sát.",
+      "english": "Please take me to the police station.",
+      "pronunciation": "Lam on dua toi den don canh sat",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "emergency-premium-police-station"
+    }
+  ]
+}

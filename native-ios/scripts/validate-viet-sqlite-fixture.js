@@ -18,8 +18,8 @@ const websitePreviewPath = path.join(repoRoot, "content-draft", "viet", "website
 const expoVietPackPath = path.join(repoRoot, "app", "family", "packs", "viet.generated.ts");
 const expoVietPresentationPath = path.join(repoRoot, "app", "family", "presentation", "viet.ts");
 const expoVietPremiumPath = path.join(repoRoot, "app", "family", "presentation", "vietPremium.ts");
-const listingPagesRoot = path.join(repoRoot, "content-draft", "viet", "listing-pages");
-const fullListingPagesRoot = path.join(repoRoot, "content-draft", "viet", "full-listing-pages");
+const tierOnePagesRoot = path.join(repoRoot, "content-draft", "viet", "canonical-pages", "tier-one");
+const catalogPromotedPagesRoot = path.join(repoRoot, "content-draft", "viet", "canonical-pages", "catalog-promoted");
 const sitePreviewDataRoot = path.join(repoRoot, "site", "data", "phrase-previews");
 const sitePublicPreviewDataRoot = path.join(repoRoot, "site", "public", "data", "phrase-previews");
 const siteRoot = path.join(repoRoot, "site");
@@ -541,7 +541,7 @@ function main() {
       ORDER BY page_id
       LIMIT 20;
     `);
-    throw new Error(`canonical pages missing the full listing-page contract: ${incompleteArticleContractCount}\n${sample}`);
+    throw new Error(`canonical pages missing the full phrase-page contract: ${incompleteArticleContractCount}\n${sample}`);
   }
 
   assertZero(
@@ -866,8 +866,8 @@ function main() {
     expoVietPackPath,
     expoVietPresentationPath,
     expoVietPremiumPath,
-    ...walkJSONFiles(listingPagesRoot),
-    ...walkJSONFiles(fullListingPagesRoot),
+    ...walkJSONFiles(tierOnePagesRoot),
+    ...walkJSONFiles(catalogPromotedPagesRoot),
     ...walkJSONFiles(sitePreviewDataRoot),
     ...walkJSONFiles(sitePublicPreviewDataRoot),
     ...walkFiles(siteRoot, (filePath) => filePath.endsWith(".html")),

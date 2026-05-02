@@ -1,0 +1,196 @@
+{
+  "id": "viet-phrase-v900-tran-can-i-see-the-rental-agreement",
+  "familyID": "v900-tran-can-i-see-the-rental-agreement",
+  "phraseID": "v900-tran-can-i-see-the-rental-agreement",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi có thể xem hợp đồng thuê được không?",
+  "englishTitle": "Can I see the rental agreement?",
+  "pronunciation": "Toi co the xem hop dong thue duoc khong",
+  "summary": "Can I see the rental agreement?",
+  "iconName": "car.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "transport",
+    "v900-tran-can-i-see-the-rental-agreement",
+    "premium"
+  ],
+  "audioKey": "v900-tran-can-i-see-the-rental-agreement",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi có thể xem hợp đồng thuê được không? is for asking permission before you act. It is useful when see the rental agreement depends on local rules, staff approval, or the right way to use a space or service."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Tôi có thể xem hợp đồng thuê được không? once, then make the task visible with your map, destination, ride screen, ticket, vehicle, or pickup point. The phrase is doing one job: getting a clear answer about see the rental agreement.",
+      "phrases": [
+        {
+          "id": "v900-tran-can-i-see-the-rental-agreement",
+          "vietnamese": "Tôi có thể xem hợp đồng thuê được không?",
+          "english": "Can I see the rental agreement?",
+          "pronunciation": "Toi co the xem hop dong thue duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "v900-tran-can-i-see-the-rental-agreement"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi có",
+          "english": "I have",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "thể xem hợp",
+          "english": "show / see",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "đồng thuê",
+          "english": "see the rental agreement",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "được không",
+          "english": "is it possible?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "Tôi có thể xem hợp đồng thuê được không?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Can I see the rental agreement? to another transport need.",
+      "phrases": [
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-1",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-2",
+          "audioKey": "taxi-2"
+        },
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-3",
+          "audioKey": "taxi-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real transport exchange when see the rental agreement is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể xem hợp đồng thuê được không?.",
+      "phrases": [
+        {
+          "id": "transport-stop-here-clearer",
+          "vietnamese": "Cho tôi xuống ngay đây",
+          "english": "Please stop right here",
+          "pronunciation": "cho toy zoong ngay day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-transport-stop-here-clearer",
+          "audioKey": "transport-stop-here-clearer"
+        },
+        {
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-4",
+          "audioKey": "taxi-4"
+        },
+        {
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-5",
+          "audioKey": "taxi-5"
+        },
+        {
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-6",
+          "audioKey": "taxi-6"
+        },
+        {
+          "id": "taxi-7",
+          "vietnamese": "Tôi trả bằng tiền mặt",
+          "english": "I’ll pay cash",
+          "pronunciation": "toy tra bang tyen mat",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-7",
+          "audioKey": "taxi-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-tran-can-i-see-the-rental-agreement",
+      "vietnamese": "Tôi có thể xem hợp đồng thuê được không?",
+      "english": "Can I see the rental agreement?",
+      "pronunciation": "Toi co the xem hop dong thue duoc khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "v900-tran-can-i-see-the-rental-agreement"
+    }
+  ]
+}

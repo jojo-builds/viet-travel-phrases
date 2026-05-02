@@ -1,0 +1,169 @@
+{
+  "id": "viet-thanks-cam-on-ban-da-hieu",
+  "familyID": "v500-unde-repa-thank-you-for-understanding",
+  "phraseID": "v500-unde-repa-thank-you-for-understanding",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Cảm ơn bạn đã hiểu",
+  "englishTitle": "Thank you for understanding",
+  "pronunciation": "cam on ban da hieu",
+  "summary": "A warmer thank-you after a confusing or patient exchange.",
+  "iconName": "text.bubble.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "gratitude",
+    "understanding-repair"
+  ],
+  "audioKey": "v500-unde-repa-thank-you-for-understanding",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Cảm ơn bạn đã hiểu closes a helpful exchange warmly. It is short enough for a beginner and works after directions, service help, a purchase, or a small kindness."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Say this after the problem is clear and the other person has accepted your explanation.",
+      "phrases": [
+        {
+          "id": "v500-unde-repa-thank-you-for-understanding",
+          "vietnamese": "Cảm ơn bạn đã hiểu",
+          "english": "Thank you for understanding",
+          "pronunciation": "cam on ban da hieu",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v500-unde-repa-thank-you-for-understanding"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Cảm ơn",
+          "english": "thank you",
+          "audioKey": "polite-2"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "bạn",
+          "english": "you",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "đã hiểu",
+          "english": "understood",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Cảm ơn bạn đã hiểu",
+          "english": "full phrase",
+          "audioKey": "v500-unde-repa-thank-you-for-understanding"
+        }
+      ]
+    },
+    {
+      "id": "natural-variations",
+      "title": "Before this thank-you",
+      "body": "These are often the phrases that make this closing line useful.",
+      "phrases": [
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don't understand",
+          "pronunciation": "toy khom hee-ew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-understand",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "repair-premium-simpler-words",
+          "vietnamese": "Bạn có thể sử dụng những từ đơn giản hơn?",
+          "english": "Can you use simpler words?",
+          "pronunciation": "ban co the su dung nhung tu don gian hon",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-simpler-words",
+          "audioKey": "repair-premium-simpler-words"
+        },
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-family-repair-repeat",
+          "audioKey": "repair-1"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real polite basics exchange when thank you for understanding is the detail you need resolved. The likely reply is a smile, acknowledgment, or short reply, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Cảm ơn bạn đã hiểu.",
+      "phrases": [
+        {
+          "id": "directions-7",
+          "vietnamese": "Cảm ơn, tôi hiểu rồi",
+          "english": "Thanks, I understand now",
+          "pronunciation": "kahm uhn toy hyew roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-thanks-cam-on-toi-hieu-roi",
+          "audioKey": "directions-7"
+        },
+        {
+          "id": "polite-thank-you-polite",
+          "vietnamese": "Cảm ơn nhiều",
+          "english": "Thank you very much",
+          "pronunciation": "kahm uhn nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thanks-cam-on-nhieu",
+          "audioKey": "polite-thank-you-polite"
+        },
+        {
+          "id": "polite-7",
+          "vietnamese": "Tạm biệt",
+          "english": "Goodbye",
+          "pronunciation": "tahm bee-et",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-goodbye",
+          "audioKey": "polite-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-unde-repa-thank-you-for-understanding",
+      "vietnamese": "Cảm ơn bạn đã hiểu",
+      "english": "Thank you for understanding",
+      "pronunciation": "cam on ban da hieu",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v500-unde-repa-thank-you-for-understanding"
+    }
+  ]
+}

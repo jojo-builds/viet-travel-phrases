@@ -7,7 +7,7 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 
 1. Continue the native SwiftUI/Xcode app in `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`; this is now the active ship-facing app lane on the Mac.
 2. Keep the shared repo authoritative and portable so the native client reads correct product truth instead of rebuilding logic from scratch.
-3. Finish and keep improving the 150 Tier 1 Viet listing pages as authored offline "Different ways to say [phrase] in Vietnam" article pages using `content-draft/viet/listing-pages/**` and the `speaklocal-listing-pages` skill.
+3. Finish and keep improving Viet canonical phrase pages as authored offline "Different ways to say [phrase] in Vietnam" article pages using `content-draft/viet/canonical-pages/**` and the `speaklocal-listing-pages` skill.
 4. Treat destination-app completeness as a phrase-graph problem: save the real alternate phrasings, relation branches, likely replies, and adjacent next-step phrases for major traveler intents instead of stopping at one visible phrase per page.
 5. Keep audio attached to that phrase graph. Speaker icons imply bundled audio or an explicit missing-audio audit item; reuse exact normalized audio before generating new ElevenLabs assets.
 6. Add the pre-live Practice/Quiz lane as a native offline rehearsal layer, not a generic game shell. `docs/PRACTICE_QUIZ_PRELIVE_PLAN.md` is the current planning source for the first implementation sequence: offline deck generation, native Practice surfaces, listing-page `Practice this`, local missed review, practice audio audit, simulator/device proof, and follow-up mascot integration.

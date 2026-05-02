@@ -17,7 +17,7 @@ Use the root when the task is about docs, content authoring, resource generation
 - The app target is `SpeakLocalNative`.
 - The project is generated from `project.yml`.
 - The flagship flow is the Liquid Glass-style `Xin chào` listing page plus canonical deeper phrase pages, search, audio, and back/forward navigation.
-- The 150 Tier 1 Vietnam listing pages are authored offline article pages sourced from `../content-draft/viet/listing-pages/**`.
+- Viet canonical phrase pages are authored offline article pages sourced from `../content-draft/viet/canonical-pages/**`.
 - Runtime phrase content stays bundled/offline.
 - App-variant planning config lives in `Config/apps/*.json`.
 - `Resources/LanguagePacks/<language>/` is reserved for the future per-language bundle layout. Current Viet resources still load from root-level `Resources/*.json` and `Resources/Audio/`.
@@ -76,7 +76,7 @@ After visible UI changes, launch the app in the iOS simulator for Jojo to test.
 - `App/Models/AuthoredVietListingPages.swift` - authored listing-page resource loader
 - `App/Models/AudioAssetManifest.swift` - audio manifest and playback lookup
 - `Resources/viet-phrase-catalog.json` - generated native phrase catalog
-- `Resources/viet-authored-listing-pages.json` - generated authored Tier 1 listing pages
+- `Resources/viet-authored-listing-pages.json` - generated authored canonical phrase pages
 - `Resources/viet-audio-manifest.json` - generated audio manifest
 - `Resources/viet-authored-audio-audit.json` - generated authored-page audio audit
 - `Resources/LanguagePacks/` - reserved target folder for future per-language native resource bundles
@@ -89,13 +89,13 @@ Run native catalog generation from this folder:
 node scripts/generate-viet-catalog.js
 ```
 
-Run authored Tier 1 listing-page generation from this folder:
+Run authored canonical phrase-page generation from this folder:
 
 ```sh
 node scripts/generate-authored-tier-one-pages.js
 ```
 
-Use the authored source under `../content-draft/viet/listing-pages/**` for content edits; avoid hand-editing generated native JSON.
+Use the authored source under `../content-draft/viet/canonical-pages/**` for content edits; avoid hand-editing generated native JSON.
 
 ## Product Direction
 

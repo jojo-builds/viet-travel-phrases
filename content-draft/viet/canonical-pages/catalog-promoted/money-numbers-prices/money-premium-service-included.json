@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-money-premium-service-included",
+  "familyID": "money-service-included",
+  "phraseID": "money-premium-service-included",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Dịch vụ đã được bao gồm chưa?",
+  "englishTitle": "Is service already included?",
+  "pronunciation": "Dich vu da duoc bao gom chua",
+  "summary": "Is service already included?",
+  "iconName": "creditcard.fill",
+  "tintName": "green",
+  "categoryIDs": [
+    "money-numbers-prices",
+    "money-service-included",
+    "premium"
+  ],
+  "audioKey": "money-premium-service-included",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Dịch vụ đã được bao gồm chưa? is a practical money or price phrase for keeping one travel detail clear. Use it when Is service already included is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Dịch vụ đã được bao gồm chưa?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "money-premium-service-included",
+          "vietnamese": "Dịch vụ đã được bao gồm chưa?",
+          "english": "Is service already included?",
+          "pronunciation": "Dich vu da duoc bao gom chua",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "money-premium-service-included"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Dịch vụ đã",
+          "english": "service already",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "được bao gồm",
+          "english": "is service already included",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "chưa",
+          "english": "pagoda",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Dịch vụ đã được bao gồm chưa?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Is service already included? to another money or price need.",
+      "phrases": [
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-1",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "money-how-much-common",
+          "vietnamese": "Cái này nhiêu tiền?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai nyew tyen",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-money-how-much-common",
+          "audioKey": "money-how-much-common"
+        },
+        {
+          "id": "price-2",
+          "vietnamese": "Bao nhiêu một ký?",
+          "english": "How much per kilo?",
+          "pronunciation": "bao nyew mot kee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-2",
+          "audioKey": "price-2"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real money or price exchange when is service already included is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Dịch vụ đã được bao gồm chưa?.",
+      "phrases": [
+        {
+          "id": "price-3",
+          "vietnamese": "Mắc quá",
+          "english": "Too expensive",
+          "pronunciation": "mak gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-3",
+          "audioKey": "price-3"
+        },
+        {
+          "id": "price-4",
+          "vietnamese": "Bớt chút được không?",
+          "english": "Can you lower it a little?",
+          "pronunciation": "but choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-4",
+          "audioKey": "price-4"
+        },
+        {
+          "id": "price-5",
+          "vietnamese": "Giá cuối bao nhiêu?",
+          "english": "What’s your final price?",
+          "pronunciation": "za gooy bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-5",
+          "audioKey": "price-5"
+        },
+        {
+          "id": "price-6",
+          "vietnamese": "Cho tôi xem cái khác",
+          "english": "Show me another one",
+          "pronunciation": "cho toy sem gai khak",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-6",
+          "audioKey": "price-6"
+        },
+        {
+          "id": "price-7",
+          "vietnamese": "Tôi lấy cái này",
+          "english": "I’ll take this one",
+          "pronunciation": "toy lay gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-7",
+          "audioKey": "price-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "money-premium-service-included",
+      "vietnamese": "Dịch vụ đã được bao gồm chưa?",
+      "english": "Is service already included?",
+      "pronunciation": "Dich vu da duoc bao gom chua",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "money-premium-service-included"
+    }
+  ]
+}

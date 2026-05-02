@@ -21,7 +21,7 @@ Known source truth:
 - `docs/design/NATIVE_VISUAL_REFERENCE.md` contains accepted live native screenshots and visual rules.
 - `docs/DECISIONS.md` says `Xin chào` is the flagship visual/content rhythm and every phrase page should resolve through one canonical page identity.
 - `docs/OFFLINE_SQLITE_PHRASE_GRAPH_PLAN.md` describes the intended SQLite phrase-page graph and the current `900` family / `919` row / `911` canonical page shape.
-- `content-draft/viet/listing-pages/**` is the authored source for Tier 1 pages.
+- `content-draft/viet/canonical-pages/**` is the authored source for canonical Viet phrase pages.
 - `native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite` is now the default runtime graph source.
 - `native-ios/scripts/generate-viet-sqlite-fixture.js`, `native-ios/scripts/validate-viet-sqlite-fixture.js`, and `native-ios/scripts/generate-authored-tier-one-pages.js` are the likely durable places for generator/validator fixes.
 

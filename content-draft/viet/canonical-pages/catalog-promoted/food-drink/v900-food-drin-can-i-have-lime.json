@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v900-food-drin-can-i-have-lime",
+  "familyID": "v900-food-drin-can-i-have-lime",
+  "phraseID": "v900-food-drin-can-i-have-lime",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi có thể có vôi không?",
+  "englishTitle": "Can I have lime?",
+  "pronunciation": "Toi co the co voi khong",
+  "summary": "Can I have lime?",
+  "iconName": "fork.knife",
+  "tintName": "green",
+  "categoryIDs": [
+    "food-drink",
+    "v900-food-drin-can-i-have-lime",
+    "premium"
+  ],
+  "audioKey": "v900-food-drin-can-i-have-lime",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi có thể có vôi không? is for asking permission before you act. It is useful when have lime depends on local rules, staff approval, or the right way to use a space or service."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Tôi có thể có vôi không? once, then make the task visible with your menu line, food photo, counter item, or order screen. The phrase is doing one job: getting a clear answer about have lime.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-can-i-have-lime",
+          "vietnamese": "Tôi có thể có vôi không?",
+          "english": "Can I have lime?",
+          "pronunciation": "Toi co the co voi khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "v900-food-drin-can-i-have-lime"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi có",
+          "english": "I have",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "thể có vôi",
+          "english": "lime",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "không",
+          "english": "no / not",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Tôi có thể có vôi không?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Can I have lime? to another food or drink need.",
+      "phrases": [
+        {
+          "id": "coffee-1",
+          "vietnamese": "Cho tôi một cà phê sữa đá",
+          "english": "One iced milk coffee please",
+          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-1",
+          "audioKey": "coffee-1"
+        },
+        {
+          "id": "coffee-2",
+          "vietnamese": "Cho tôi cà phê đen đá",
+          "english": "I’d like an iced black coffee",
+          "pronunciation": "cho toy ka feh den dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-2",
+          "audioKey": "coffee-2"
+        },
+        {
+          "id": "coffee-3",
+          "vietnamese": "Cho tôi bạc xỉu đá",
+          "english": "I’d like an iced bạc xỉu",
+          "pronunciation": "cho toy bahk see-u dah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-3",
+          "audioKey": "coffee-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real food or drink exchange when have lime is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể có vôi không?.",
+      "phrases": [
+        {
+          "id": "coffee-4",
+          "vietnamese": "Ít đá thôi",
+          "english": "Just a little ice",
+          "pronunciation": "eet dah toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-4",
+          "audioKey": "coffee-4"
+        },
+        {
+          "id": "coffee-5",
+          "vietnamese": "Không đường nhé",
+          "english": "No sugar please",
+          "pronunciation": "khong doong nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-5",
+          "audioKey": "coffee-5"
+        },
+        {
+          "id": "coffee-6",
+          "vietnamese": "Mang đi",
+          "english": "To go",
+          "pronunciation": "mang dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-6",
+          "audioKey": "coffee-6"
+        },
+        {
+          "id": "coffee-7",
+          "vietnamese": "Tính tiền giúp tôi",
+          "english": "Please let me pay",
+          "pronunciation": "ting tyen zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-coffee-7",
+          "audioKey": "coffee-7"
+        },
+        {
+          "id": "food-need-table",
+          "vietnamese": "Cho tôi bàn cho hai người nhé",
+          "english": "A table for two, please",
+          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-need-table",
+          "audioKey": "food-need-table"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-food-drin-can-i-have-lime",
+      "vietnamese": "Tôi có thể có vôi không?",
+      "english": "Can I have lime?",
+      "pronunciation": "Toi co the co voi khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "v900-food-drin-can-i-have-lime"
+    }
+  ]
+}

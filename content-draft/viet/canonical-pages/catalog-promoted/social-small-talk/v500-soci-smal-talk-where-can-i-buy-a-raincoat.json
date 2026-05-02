@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v500-soci-smal-talk-where-can-i-buy-a-raincoat",
+  "familyID": "v500-soci-smal-talk-where-can-i-buy-a-raincoat",
+  "phraseID": "v500-soci-smal-talk-where-can-i-buy-a-raincoat",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi có thể mua áo mưa ở đâu?",
+  "englishTitle": "Where can I buy a raincoat?",
+  "pronunciation": "Toi co the mua ao mua o dau",
+  "summary": "Where can I buy a raincoat?",
+  "iconName": "bubble.left.and.bubble.right.fill",
+  "tintName": "green",
+  "categoryIDs": [
+    "social-small-talk",
+    "v500-soci-smal-talk-where-can-i-buy-a-raincoat",
+    "premium"
+  ],
+  "audioKey": "v500-soci-smal-talk-where-can-i-buy-a-raincoat",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi có thể mua áo mưa ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names buy a raincoat in a compact way, so a local can point, give a landmark, or send you to the right counter."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Keep it short: Tôi có thể mua áo mưa ở đâu?. Show your your smile, greeting gesture, or the shared situation around you, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "phrases": [
+        {
+          "id": "v500-soci-smal-talk-where-can-i-buy-a-raincoat",
+          "vietnamese": "Tôi có thể mua áo mưa ở đâu?",
+          "english": "Where can I buy a raincoat?",
+          "pronunciation": "Toi co the mua ao mua o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "v500-soci-smal-talk-where-can-i-buy-a-raincoat"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi có",
+          "english": "I have",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "thể mua áo mưa",
+          "english": "buy",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "ở đâu",
+          "english": "where?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Tôi có thể mua áo mưa ở đâu?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Where can I buy a raincoat? to another social small talk need.",
+      "phrases": [
+        {
+          "id": "smalltalk-1",
+          "vietnamese": "Tôi đến từ Mỹ",
+          "english": "I’m from the United States",
+          "pronunciation": "toy den too mee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-smalltalk-1",
+          "audioKey": "smalltalk-1"
+        },
+        {
+          "id": "smalltalk-2",
+          "vietnamese": "Tôi từ Anh",
+          "english": "I’m from England",
+          "pronunciation": "toy too anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-smalltalk-2",
+          "audioKey": "smalltalk-2"
+        },
+        {
+          "id": "smalltalk-3",
+          "vietnamese": "Đây là lần đầu của tôi",
+          "english": "This is my first time",
+          "pronunciation": "day la lun dow koo-ah toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-smalltalk-3",
+          "audioKey": "smalltalk-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you are already in the general area but need the final direction. It fits friendly greeting, casual check-in, or light conversation with someone nearby, especially when buy a raincoat can be pointed to on a map, sign, booking, or nearby landmark."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể mua áo mưa ở đâu?.",
+      "phrases": [
+        {
+          "id": "smalltalk-4",
+          "vietnamese": "Tôi thích Việt Nam",
+          "english": "I like Vietnam",
+          "pronunciation": "toy thik vyet nam",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-smalltalk-4",
+          "audioKey": "smalltalk-4"
+        },
+        {
+          "id": "smalltalk-5",
+          "vietnamese": "Đồ ăn ngon quá",
+          "english": "The food is so good",
+          "pronunciation": "doh an ngon gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-smalltalk-5",
+          "audioKey": "smalltalk-5"
+        },
+        {
+          "id": "smalltalk-6",
+          "vietnamese": "Thời tiết nóng quá",
+          "english": "The weather is so hot",
+          "pronunciation": "thoy tyet nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-smalltalk-6",
+          "audioKey": "smalltalk-6"
+        },
+        {
+          "id": "smalltalk-7",
+          "vietnamese": "Bạn khỏe không?",
+          "english": "How are you?",
+          "pronunciation": "ban khoe khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-smalltalk-7",
+          "audioKey": "smalltalk-7"
+        },
+        {
+          "id": "social-8",
+          "vietnamese": "Bạn ở đây bao lâu?",
+          "english": "How long are you staying?",
+          "pronunciation": "ban uh day bao low",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-social-8",
+          "audioKey": "social-8"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-soci-smal-talk-where-can-i-buy-a-raincoat",
+      "vietnamese": "Tôi có thể mua áo mưa ở đâu?",
+      "english": "Where can I buy a raincoat?",
+      "pronunciation": "Toi co the mua ao mua o dau",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "v500-soci-smal-talk-where-can-i-buy-a-raincoat"
+    }
+  ]
+}

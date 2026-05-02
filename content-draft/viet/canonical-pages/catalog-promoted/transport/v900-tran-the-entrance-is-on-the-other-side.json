@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v900-tran-the-entrance-is-on-the-other-side",
+  "familyID": "v900-tran-the-entrance-is-on-the-other-side",
+  "phraseID": "v900-tran-the-entrance-is-on-the-other-side",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Lối vào nằm ở phía bên kia",
+  "englishTitle": "The entrance is on the other side",
+  "pronunciation": "Loi vao nam o phia ben kia",
+  "summary": "The entrance is on the other side",
+  "iconName": "car.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "transport",
+    "v900-tran-the-entrance-is-on-the-other-side",
+    "premium"
+  ],
+  "audioKey": "v900-tran-the-entrance-is-on-the-other-side",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Lối vào nằm ở phía bên kia is a practical transport phrase for keeping one travel detail clear. Use it when entrance is on the other side is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Lối vào nằm ở phía bên kia. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v900-tran-the-entrance-is-on-the-other-side",
+          "vietnamese": "Lối vào nằm ở phía bên kia",
+          "english": "The entrance is on the other side",
+          "pronunciation": "Loi vao nam o phia ben kia",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "v900-tran-the-entrance-is-on-the-other-side"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Lối vào nằm",
+          "english": "the entrance is",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "ở phía bên",
+          "english": "fee",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "kia",
+          "english": "entrance is on the other side",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Lối vào nằm ở phía bên kia",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from The entrance is on the other side to another transport need.",
+      "phrases": [
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-1",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-2",
+          "audioKey": "taxi-2"
+        },
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-3",
+          "audioKey": "taxi-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real transport exchange when entrance is on the other side is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Lối vào nằm ở phía bên kia.",
+      "phrases": [
+        {
+          "id": "transport-stop-here-clearer",
+          "vietnamese": "Cho tôi xuống ngay đây",
+          "english": "Please stop right here",
+          "pronunciation": "cho toy zoong ngay day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-transport-stop-here-clearer",
+          "audioKey": "transport-stop-here-clearer"
+        },
+        {
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-4",
+          "audioKey": "taxi-4"
+        },
+        {
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-5",
+          "audioKey": "taxi-5"
+        },
+        {
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-6",
+          "audioKey": "taxi-6"
+        },
+        {
+          "id": "taxi-7",
+          "vietnamese": "Tôi trả bằng tiền mặt",
+          "english": "I’ll pay cash",
+          "pronunciation": "toy tra bang tyen mat",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-taxi-7",
+          "audioKey": "taxi-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-tran-the-entrance-is-on-the-other-side",
+      "vietnamese": "Lối vào nằm ở phía bên kia",
+      "english": "The entrance is on the other side",
+      "pronunciation": "Loi vao nam o phia ben kia",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "v900-tran-the-entrance-is-on-the-other-side"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
+  "familyID": "v500-sigh-acti-where-can-i-buy-tickets",
+  "phraseID": "v500-sigh-acti-where-can-i-buy-tickets",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi có thể mua vé ở đâu?",
+  "englishTitle": "Where can I buy tickets?",
+  "pronunciation": "Toi co the mua ve o dau",
+  "summary": "Where can I buy tickets?",
+  "iconName": "camera.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "sightseeing-activities",
+    "v500-sigh-acti-where-can-i-buy-tickets",
+    "premium"
+  ],
+  "audioKey": "v500-sigh-acti-where-can-i-buy-tickets",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi có thể mua vé ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names buy tickets in a compact way, so a local can point, give a landmark, or send you to the right counter."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Keep it short: Tôi có thể mua vé ở đâu?. Show your ticket, map, attraction name, booking screen, or meeting point sign, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "phrases": [
+        {
+          "id": "v500-sigh-acti-where-can-i-buy-tickets",
+          "vietnamese": "Tôi có thể mua vé ở đâu?",
+          "english": "Where can I buy tickets?",
+          "pronunciation": "Toi co the mua ve o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "v500-sigh-acti-where-can-i-buy-tickets"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi có",
+          "english": "I have",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "thể mua vé",
+          "english": "buy",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "ở đâu",
+          "english": "where?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Tôi có thể mua vé ở đâu?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Where can I buy tickets? to another sightseeing or activities need.",
+      "phrases": [
+        {
+          "id": "sight-1",
+          "vietnamese": "Vé bao nhiêu?",
+          "english": "How much is the ticket?",
+          "pronunciation": "veh bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-1",
+          "audioKey": "sight-1"
+        },
+        {
+          "id": "sight-2",
+          "vietnamese": "Bắt đầu ở đâu?",
+          "english": "Where do we start?",
+          "pronunciation": "bat dow uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-2",
+          "audioKey": "sight-2"
+        },
+        {
+          "id": "sight-3",
+          "vietnamese": "Tôi chụp hình ở đây được không?",
+          "english": "Can I take photos here?",
+          "pronunciation": "toy choop hinh uh day dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-3",
+          "audioKey": "sight-3"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you are already in the general area but need the final direction. It fits museum, tour desk, attraction entrance, ticket counter, or meeting point, especially when buy tickets can be pointed to on a map, sign, booking, or nearby landmark."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể mua vé ở đâu?.",
+      "phrases": [
+        {
+          "id": "sight-4",
+          "vietnamese": "Mấy giờ đóng cửa?",
+          "english": "What time does it close?",
+          "pronunciation": "may zyuh dong koo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-4",
+          "audioKey": "sight-4"
+        },
+        {
+          "id": "sight-5",
+          "vietnamese": "Điểm gặp ở đâu?",
+          "english": "Where is the meeting point?",
+          "pronunciation": "deeym gap uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-5",
+          "audioKey": "sight-5"
+        },
+        {
+          "id": "sight-6",
+          "vietnamese": "Tôi cần đặt trước không?",
+          "english": "Do I need to book in advance?",
+          "pronunciation": "toy gun dat chooc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-sight-6",
+          "audioKey": "sight-6"
+        },
+        {
+          "id": "v500-sigh-acti-i-have-a-tour-booking",
+          "vietnamese": "Tôi có đặt tour",
+          "english": "I have a tour booking",
+          "pronunciation": "toy koh dat tour",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v500-sigh-acti-i-have-a-tour-booking",
+          "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
+        },
+        {
+          "id": "v500-sigh-acti-where-is-the-entrance",
+          "vietnamese": "Lối vào ở đâu?",
+          "english": "Where is the entrance?",
+          "pronunciation": "Loi vao o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v500-sigh-acti-where-is-the-entrance",
+          "audioKey": "v500-sigh-acti-where-is-the-entrance"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-sigh-acti-where-can-i-buy-tickets",
+      "vietnamese": "Tôi có thể mua vé ở đâu?",
+      "english": "Where can I buy tickets?",
+      "pronunciation": "Toi co the mua ve o dau",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "v500-sigh-acti-where-can-i-buy-tickets"
+    }
+  ]
+}

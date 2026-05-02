@@ -1,0 +1,196 @@
+{
+  "id": "viet-phrase-v500-mone-numb-pric-can-i-try-another-card",
+  "familyID": "v500-mone-numb-pric-can-i-try-another-card",
+  "phraseID": "v500-mone-numb-pric-can-i-try-another-card",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi có thể thử thẻ khác được không?",
+  "englishTitle": "Can I try another card?",
+  "pronunciation": "Toi co the thu the khac duoc khong",
+  "summary": "Can I try another card?",
+  "iconName": "creditcard.fill",
+  "tintName": "green",
+  "categoryIDs": [
+    "money-numbers-prices",
+    "v500-mone-numb-pric-can-i-try-another-card",
+    "premium"
+  ],
+  "audioKey": "v500-mone-numb-pric-can-i-try-another-card",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi có thể thử thẻ khác được không? is for asking permission before you act. It is useful when try another card depends on local rules, staff approval, or the right way to use a space or service."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Say Tôi có thể thử thẻ khác được không? once, then make the task visible with your item, menu line, bill, calculator, ticket, or ride screen. The phrase is doing one job: getting a clear answer about try another card.",
+      "phrases": [
+        {
+          "id": "v500-mone-numb-pric-can-i-try-another-card",
+          "vietnamese": "Tôi có thể thử thẻ khác được không?",
+          "english": "Can I try another card?",
+          "pronunciation": "Toi co the thu the khac duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": null,
+          "audioKey": "v500-mone-numb-pric-can-i-try-another-card"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi có",
+          "english": "I have",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "thể thử thẻ",
+          "english": "try another card",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "khác",
+          "english": "different / another",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "được không",
+          "english": "is it possible?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "Tôi có thể thử thẻ khác được không?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Can I try another card? to another money or price need.",
+      "phrases": [
+        {
+          "id": "price-1",
+          "vietnamese": "Cái này bao nhiêu?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-1",
+          "audioKey": "price-1"
+        },
+        {
+          "id": "money-how-much-common",
+          "vietnamese": "Cái này nhiêu tiền?",
+          "english": "How much is this?",
+          "pronunciation": "gai nai nyew tyen",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-money-how-much-common",
+          "audioKey": "money-how-much-common"
+        },
+        {
+          "id": "price-2",
+          "vietnamese": "Bao nhiêu một ký?",
+          "english": "How much per kilo?",
+          "pronunciation": "bao nyew mot kee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-2",
+          "audioKey": "price-2"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real money or price exchange when try another card is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể thử thẻ khác được không?.",
+      "phrases": [
+        {
+          "id": "price-3",
+          "vietnamese": "Mắc quá",
+          "english": "Too expensive",
+          "pronunciation": "mak gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-3",
+          "audioKey": "price-3"
+        },
+        {
+          "id": "price-4",
+          "vietnamese": "Bớt chút được không?",
+          "english": "Can you lower it a little?",
+          "pronunciation": "but choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-4",
+          "audioKey": "price-4"
+        },
+        {
+          "id": "price-5",
+          "vietnamese": "Giá cuối bao nhiêu?",
+          "english": "What’s your final price?",
+          "pronunciation": "za gooy bao nyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-5",
+          "audioKey": "price-5"
+        },
+        {
+          "id": "price-6",
+          "vietnamese": "Cho tôi xem cái khác",
+          "english": "Show me another one",
+          "pronunciation": "cho toy sem gai khak",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-6",
+          "audioKey": "price-6"
+        },
+        {
+          "id": "price-7",
+          "vietnamese": "Tôi lấy cái này",
+          "english": "I’ll take this one",
+          "pronunciation": "toy lay gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-7",
+          "audioKey": "price-7"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-mone-numb-pric-can-i-try-another-card",
+      "vietnamese": "Tôi có thể thử thẻ khác được không?",
+      "english": "Can I try another card?",
+      "pronunciation": "Toi co the thu the khac duoc khong",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "green",
+      "detailPageID": null,
+      "audioKey": "v500-mone-numb-pric-can-i-try-another-card"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # Viet Canonical Content Audit 001
 
 Task: `TASK-VIET-CANONICAL-CONTENT-AUDIT-001`
-Generated: 2026-05-02T15:00:46.114Z
+Generated: 2026-05-02T17:36:11.166Z
 
 ## Summary
 
@@ -23,9 +23,9 @@ Generated: 2026-05-02T15:00:46.114Z
 
 | Source lane | Pages |
 | --- | ---: |
+| catalog-promoted | 779 |
 | child | 14 |
 | city-v1 | 750 |
-| full-universe | 779 |
 | practice-expansion | 1350 |
 | tier1 | 145 |
 

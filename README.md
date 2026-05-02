@@ -44,9 +44,9 @@ Current reality summary:
 - The native app is generated from `native-ios/project.yml` and runs as `SpeakLocalNative`.
 - Native app-variant planning config now lives in `native-ios/Config/apps/*.json`.
 - The long-term native resource target is `native-ios/Resources/LanguagePacks/<language>/`, but current live Viet resources still remain at `native-ios/Resources/*.json` and `native-ios/Resources/Audio/` until a coordinated loader/generator migration.
-- The current flagship native flow is the Liquid Glass-style `Xin chào` listing page plus canonical deeper phrase pages, search, back/forward navigation, bottom chrome, bundled audio, and authored Tier 1 listing pages.
-- Authored Tier 1 listing-page content lives in `content-draft/viet/listing-pages/**` and is bundled into `native-ios/Resources/viet-authored-listing-pages.json`.
-- Listing pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" answer pages, not generic generated filler.
+- The current flagship native flow is the Liquid Glass-style `Xin chào` listing page plus canonical deeper phrase pages, search, back/forward navigation, bottom chrome, bundled audio, and authored canonical phrase pages.
+- Authored Viet canonical phrase pages live under `content-draft/viet/canonical-pages/**` and are bundled into `native-ios/Resources/viet-authored-listing-pages.json`.
+- Phrase pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" answer pages, not generic generated filler. Lane names such as `tier-one` and `catalog-promoted` describe source origin only; all visible phrase pages should be full-depth canonical pages.
 - Viet remains the only live App Store app today.
 - Tagalog remains a locally validated second-app candidate, not a released app.
 - The existing Expo app under `app/` remains a bridge/reference lane and still contains useful live-app/premium/content work, but it is not the final native UX target.

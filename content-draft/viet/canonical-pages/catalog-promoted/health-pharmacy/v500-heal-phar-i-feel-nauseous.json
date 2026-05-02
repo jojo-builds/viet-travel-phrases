@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-v500-heal-phar-i-feel-nauseous",
+  "familyID": "v500-heal-phar-i-feel-nauseous",
+  "phraseID": "v500-heal-phar-i-feel-nauseous",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "tôi cảm thấy buồn nôn",
+  "englishTitle": "I feel nauseous",
+  "pronunciation": "toi cam thay buon non",
+  "summary": "I feel nauseous",
+  "iconName": "cross.case.fill",
+  "tintName": "red",
+  "categoryIDs": [
+    "health-pharmacy",
+    "v500-heal-phar-i-feel-nauseous",
+    "premium"
+  ],
+  "audioKey": "v500-heal-phar-i-feel-nauseous",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "tôi cảm thấy buồn nôn is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when I feel nauseous is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: tôi cảm thấy buồn nôn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v500-heal-phar-i-feel-nauseous",
+          "vietnamese": "tôi cảm thấy buồn nôn",
+          "english": "I feel nauseous",
+          "pronunciation": "toi cam thay buon non",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": null,
+          "audioKey": "v500-heal-phar-i-feel-nauseous"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "tôi cảm thấy",
+          "english": "I feel",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "buồn nôn",
+          "english": "nauseous",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "tôi cảm thấy buồn nôn",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from I feel nauseous to another pharmacy or health need.",
+      "phrases": [
+        {
+          "id": "problems-6",
+          "vietnamese": "Tôi cần bác sĩ",
+          "english": "I need a doctor",
+          "pronunciation": "toy gun bak see",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-problems-6",
+          "audioKey": "problems-6"
+        },
+        {
+          "id": "health-1",
+          "vietnamese": "Nhà thuốc ở đâu?",
+          "english": "Where is the pharmacy?",
+          "pronunciation": "nya thoo-ok uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-health-1",
+          "audioKey": "health-1"
+        },
+        {
+          "id": "health-pharmacy-clearer",
+          "vietnamese": "Nhà thuốc gần nhất ở đâu?",
+          "english": "Where is the nearest pharmacy?",
+          "pronunciation": "nya thoo-ok gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-health-pharmacy-clearer",
+          "audioKey": "health-pharmacy-clearer"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real pharmacy or health exchange when i feel nauseous is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after tôi cảm thấy buồn nôn.",
+      "phrases": [
+        {
+          "id": "health-2",
+          "vietnamese": "Tôi bị đau đầu",
+          "english": "I have a headache",
+          "pronunciation": "toy bee dow dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-health-2",
+          "audioKey": "health-2"
+        },
+        {
+          "id": "health-3",
+          "vietnamese": "Tôi đau bụng",
+          "english": "My stomach hurts",
+          "pronunciation": "toy dow boong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-health-3",
+          "audioKey": "health-3"
+        },
+        {
+          "id": "health-4",
+          "vietnamese": "Có thuốc say xe không?",
+          "english": "Do you have motion sickness medicine?",
+          "pronunciation": "koh thoo-ok sai seh khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-health-4",
+          "audioKey": "health-4"
+        },
+        {
+          "id": "health-5",
+          "vietnamese": "Tôi bị dị ứng cái này",
+          "english": "I am allergic to this",
+          "pronunciation": "toy bee zee oong gai nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-health-5",
+          "audioKey": "health-5"
+        },
+        {
+          "id": "health-6",
+          "vietnamese": "Tôi cần thuốc tiêu chảy",
+          "english": "I need something for diarrhea",
+          "pronunciation": "toy gun thoo-ok tyew chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-health-6",
+          "audioKey": "health-6"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-heal-phar-i-feel-nauseous",
+      "vietnamese": "tôi cảm thấy buồn nôn",
+      "english": "I feel nauseous",
+      "pronunciation": "toi cam thay buon non",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "red",
+      "detailPageID": null,
+      "audioKey": "v500-heal-phar-i-feel-nauseous"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v500-unde-repa-sorry-i-dont-speak-vietnamese",
+  "familyID": "v500-unde-repa-sorry-i-dont-speak-vietnamese",
+  "phraseID": "v500-unde-repa-sorry-i-dont-speak-vietnamese",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Xin lỗi, tôi không nói được tiếng Việt",
+  "englishTitle": "Sorry, I don’t speak Vietnamese",
+  "pronunciation": "Xin loi toi khong noi duoc tieng Viet",
+  "summary": "Sorry, I don’t speak Vietnamese",
+  "iconName": "questionmark.bubble.fill",
+  "tintName": "blue",
+  "categoryIDs": [
+    "understanding-repair",
+    "v500-unde-repa-sorry-i-dont-speak-vietnamese",
+    "premium"
+  ],
+  "audioKey": "v500-unde-repa-sorry-i-dont-speak-vietnamese",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Xin lỗi, tôi không nói được tiếng Việt is a practical understanding check phrase for keeping one travel detail clear. Use it when Sorry, I don’t speak Vietnamese is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: Xin lỗi, tôi không nói được tiếng Việt. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v500-unde-repa-sorry-i-dont-speak-vietnamese",
+          "vietnamese": "Xin lỗi, tôi không nói được tiếng Việt",
+          "english": "Sorry, I don’t speak Vietnamese",
+          "pronunciation": "Xin loi toi khong noi duoc tieng Viet",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": null,
+          "audioKey": "v500-unde-repa-sorry-i-dont-speak-vietnamese"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Xin lỗi, tôi",
+          "english": "please / ask",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "không nói được",
+          "english": "yes/no question",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "tiếng Việt",
+          "english": "Vietnamese",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Xin lỗi, tôi không nói được tiếng Việt",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Sorry, I don’t speak Vietnamese to another understanding check need.",
+      "phrases": [
+        {
+          "id": "problems-2",
+          "vietnamese": "Tôi không hiểu",
+          "english": "I don’t understand",
+          "pronunciation": "toy khong hyew",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-problems-2",
+          "audioKey": "problems-2"
+        },
+        {
+          "id": "problems-3",
+          "vietnamese": "Nói chậm chút được không?",
+          "english": "Can you speak a little slower?",
+          "pronunciation": "noy chuhm choot dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-problems-3",
+          "audioKey": "problems-3"
+        },
+        {
+          "id": "repair-slower-polite",
+          "vietnamese": "Nói chậm giúp tôi được không?",
+          "english": "Could you speak a little slower, please?",
+          "pronunciation": "noy chuhm zoop toy dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-repair-slower-polite",
+          "audioKey": "repair-slower-polite"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real understanding check exchange when sorry, I don’t speak Vietnamese is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Xin lỗi, tôi không nói được tiếng Việt.",
+      "phrases": [
+        {
+          "id": "repair-1",
+          "vietnamese": "Làm ơn nói lại",
+          "english": "Please say that again",
+          "pronunciation": "lahm uhn noy lie",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-repair-1",
+          "audioKey": "repair-1"
+        },
+        {
+          "id": "repair-2",
+          "vietnamese": "Viết xuống giúp tôi",
+          "english": "Please write it down",
+          "pronunciation": "vee-et zoong zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-repair-2",
+          "audioKey": "repair-2"
+        },
+        {
+          "id": "repair-3",
+          "vietnamese": "Cái đó nghĩa là gì?",
+          "english": "What does that mean?",
+          "pronunciation": "gai doh ngee-ah lah zee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-repair-3",
+          "audioKey": "repair-3"
+        },
+        {
+          "id": "repair-4",
+          "vietnamese": "Ý anh/chị là cái nào?",
+          "english": "Which one do you mean?",
+          "pronunciation": "ee anh chee lah gai now",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-repair-4",
+          "audioKey": "repair-4"
+        },
+        {
+          "id": "repair-show-me",
+          "vietnamese": "Chỉ cho tôi được không?",
+          "english": "Can you show me?",
+          "pronunciation": "chee cho toy dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-repair-show-me",
+          "audioKey": "repair-show-me"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-unde-repa-sorry-i-dont-speak-vietnamese",
+      "vietnamese": "Xin lỗi, tôi không nói được tiếng Việt",
+      "english": "Sorry, I don’t speak Vietnamese",
+      "pronunciation": "Xin loi toi khong noi duoc tieng Viet",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "blue",
+      "detailPageID": null,
+      "audioKey": "v500-unde-repa-sorry-i-dont-speak-vietnamese"
+    }
+  ]
+}

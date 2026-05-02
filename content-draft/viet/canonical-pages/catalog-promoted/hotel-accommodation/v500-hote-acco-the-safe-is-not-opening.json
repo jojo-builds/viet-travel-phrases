@@ -1,0 +1,184 @@
+{
+  "id": "viet-phrase-v500-hote-acco-the-safe-is-not-opening",
+  "familyID": "v500-hote-acco-the-safe-is-not-opening",
+  "phraseID": "v500-hote-acco-the-safe-is-not-opening",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "két sắt không mở được",
+  "englishTitle": "The safe is not opening",
+  "pronunciation": "ket sat khong mo duoc",
+  "summary": "The safe is not opening",
+  "iconName": "bed.double.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "hotel-accommodation",
+    "v500-hote-acco-the-safe-is-not-opening",
+    "premium"
+  ],
+  "audioKey": "v500-hote-acco-the-safe-is-not-opening",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "két sắt không mở được is a practical hotel or stay phrase for keeping one travel detail clear. Use it when safe is not opening is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Use the complete line: két sắt không mở được. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "phrases": [
+        {
+          "id": "v500-hote-acco-the-safe-is-not-opening",
+          "vietnamese": "két sắt không mở được",
+          "english": "The safe is not opening",
+          "pronunciation": "ket sat khong mo duoc",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "v500-hote-acco-the-safe-is-not-opening"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "két sắt không",
+          "english": "yes/no question",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "mở được",
+          "english": "safe is not opening",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "két sắt không mở được",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from The safe is not opening to another hotel or stay need.",
+      "phrases": [
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-1",
+          "audioKey": "hotel-1"
+        },
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-2",
+          "audioKey": "hotel-2"
+        },
+        {
+          "id": "hotel-check-in-polite",
+          "vietnamese": "Cho tôi nhận phòng nhé",
+          "english": "I’d like to check in, please",
+          "pronunciation": "cho toy nyun fong nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-check-in-polite",
+          "audioKey": "hotel-check-in-polite"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real hotel or stay exchange when safe is not opening is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after két sắt không mở được.",
+      "phrases": [
+        {
+          "id": "hotel-3",
+          "vietnamese": "Mấy giờ trả phòng?",
+          "english": "What time is check-out?",
+          "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-3",
+          "audioKey": "hotel-3"
+        },
+        {
+          "id": "hotel-quiet-room",
+          "vietnamese": "Cho tôi phòng yên tĩnh được không?",
+          "english": "Can I have a quiet room?",
+          "pronunciation": "cho toy fong yen tinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-quiet-room",
+          "audioKey": "hotel-quiet-room"
+        },
+        {
+          "id": "hotel-checkout",
+          "vietnamese": "Cho tôi trả phòng",
+          "english": "I’d like to check out",
+          "pronunciation": "cho toy tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-checkout",
+          "audioKey": "hotel-checkout"
+        },
+        {
+          "id": "hotel-4",
+          "vietnamese": "Phòng này nóng quá",
+          "english": "This room is too hot",
+          "pronunciation": "fong nai nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-4",
+          "audioKey": "hotel-4"
+        },
+        {
+          "id": "hotel-5",
+          "vietnamese": "Máy lạnh không chạy",
+          "english": "The air conditioner isn’t working",
+          "pronunciation": "mai lanh khong chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-5",
+          "audioKey": "hotel-5"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v500-hote-acco-the-safe-is-not-opening",
+      "vietnamese": "két sắt không mở được",
+      "english": "The safe is not opening",
+      "pronunciation": "ket sat khong mo duoc",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "v500-hote-acco-the-safe-is-not-opening"
+    }
+  ]
+}

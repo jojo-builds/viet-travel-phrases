@@ -1,0 +1,163 @@
+{
+  "id": "viet-hello-chao-ban",
+  "familyID": "hello-chao-ban",
+  "phraseID": "hello-chao-ban",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Chào bạn",
+  "englishTitle": "Hi there / hello friend",
+  "pronunciation": "chow ban",
+  "summary": "A friendly neutral greeting for peers and warm casual help.",
+  "iconName": "hand.wave.fill",
+  "tintName": "orange",
+  "categoryIDs": [
+    "greetings",
+    "polite-basics"
+  ],
+  "audioKey": "audio-phrase-chao-ban",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Chào bạn is a practical polite basics phrase for keeping one travel detail clear. Use it when Hi there / hello friend is the next detail to solve and a short answer would move the exchange forward."
+    },
+    {
+      "id": "standard-way",
+      "title": "The standard way",
+      "body": "Use Chào bạn when you want a warm but simple hello and do not need to show extra age-based respect.",
+      "phrases": [
+        {
+          "id": "hello-chao-ban",
+          "vietnamese": "Chào bạn",
+          "english": "Hi there / hello friend",
+          "pronunciation": "chow ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": null,
+          "audioKey": "audio-phrase-chao-ban"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Chào",
+          "english": "greet / hello",
+          "audioKey": "breakdown-chao"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "bạn",
+          "english": "you",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "Chào bạn",
+          "english": "full phrase",
+          "audioKey": "audio-phrase-chao-ban"
+        }
+      ]
+    },
+    {
+      "id": "natural-variations",
+      "title": "Natural variations",
+      "body": "Switch the last word when the relationship is clearer.",
+      "phrases": [
+        {
+          "id": "hello-chao",
+          "vietnamese": "Chào",
+          "english": "Hi / hello",
+          "pronunciation": "chow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao",
+          "audioKey": "breakdown-chao"
+        },
+        {
+          "id": "hello-chao-anh",
+          "vietnamese": "Chào anh",
+          "english": "Hello to an older man",
+          "pronunciation": "chow anh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-hello-chao-anh",
+          "audioKey": "breakdown-viet-hello-anh-full"
+        },
+        {
+          "id": "hello-chao-chi",
+          "vietnamese": "Chào chị",
+          "english": "Hello to an older woman",
+          "pronunciation": "chow chee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-hello-chao-chi",
+          "audioKey": "breakdown-viet-hello-chi-full"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this in a real polite basics exchange when hi there / hello friend is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Chào bạn.",
+      "phrases": [
+        {
+          "id": "smalltalk-7",
+          "vietnamese": "Bạn khỏe không?",
+          "english": "How are you?",
+          "pronunciation": "ban khoe khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-how-are-you",
+          "audioKey": "smalltalk-7"
+        },
+        {
+          "id": "smalltalk-nice-to-meet-you",
+          "vietnamese": "Rất vui được gặp bạn",
+          "english": "Nice to meet you",
+          "pronunciation": "zuht voo ee duhk gap ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-smalltalk-nice-to-meet-you",
+          "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+        },
+        {
+          "id": "polite-2",
+          "vietnamese": "Cảm ơn",
+          "english": "Thank you",
+          "pronunciation": "kahm uhn",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-thank-you",
+          "audioKey": "polite-2"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "hello-chao-ban",
+      "vietnamese": "Chào bạn",
+      "english": "Hi there / hello friend",
+      "pronunciation": "chow ban",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "orange",
+      "detailPageID": null,
+      "audioKey": "audio-phrase-chao-ban"
+    }
+  ]
+}

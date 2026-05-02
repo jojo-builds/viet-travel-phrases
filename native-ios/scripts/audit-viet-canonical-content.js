@@ -178,8 +178,8 @@ function walkFiles(dir, predicate) {
 function sourceIndex() {
   const index = new Map();
   const roots = [
-    path.join(repoRoot, "content-draft", "viet", "listing-pages"),
-    path.join(repoRoot, "content-draft", "viet", "full-listing-pages"),
+    path.join(repoRoot, "content-draft", "viet", "canonical-pages", "tier-one"),
+    path.join(repoRoot, "content-draft", "viet", "canonical-pages", "catalog-promoted"),
   ];
   for (const root of roots) {
     for (const filePath of walkFiles(root, (candidate) => candidate.endsWith(".json"))) {
@@ -238,8 +238,8 @@ function sourceLane(page, authored, sourcePath) {
   if (tierRole) return tierRole;
   if (sourcePath.includes("city-library")) return "city-library";
   if (sourcePath.includes("practice-expansion")) return "practice-expansion";
-  if (sourcePath.includes("full-listing-pages")) return "full-universe";
-  if (sourcePath.includes("listing-pages")) return "tier1";
+  if (sourcePath.includes("canonical-pages/catalog-promoted")) return "catalog-promoted";
+  if (sourcePath.includes("canonical-pages/tier-one")) return "tier1";
   if (Number(page.is_authored) === 0) return "catalog-built";
   return "authored-unknown";
 }

@@ -1,0 +1,190 @@
+{
+  "id": "viet-phrase-v900-hote-acco-where-can-i-pick-up-my-luggage",
+  "familyID": "v900-hote-acco-where-can-i-pick-up-my-luggage",
+  "phraseID": "v900-hote-acco-where-can-i-pick-up-my-luggage",
+  "tierRole": "catalog-promoted",
+  "depth": "deep",
+  "title": "Tôi có thể nhận hành lý của mình ở đâu?",
+  "englishTitle": "Where can I pick up my luggage?",
+  "pronunciation": "Toi co the nhan hanh ly cua minh o dau",
+  "summary": "Where can I pick up my luggage?",
+  "iconName": "bed.double.fill",
+  "tintName": "purple",
+  "categoryIDs": [
+    "hotel-accommodation",
+    "v900-hote-acco-where-can-i-pick-up-my-luggage",
+    "premium"
+  ],
+  "audioKey": "v900-hote-acco-where-can-i-pick-up-my-luggage",
+  "sections": [
+    {
+      "id": "at-glance",
+      "title": "At a glance",
+      "body": "Tôi có thể nhận hành lý của mình ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names pick up my luggage in a compact way, so a local can point, give a landmark, or send you to the right counter."
+    },
+    {
+      "id": "quick-say",
+      "title": "Quick say",
+      "body": "Keep it short: Tôi có thể nhận hành lý của mình ở đâu?. Show your booking screen, room key, address, room number, or photo of the issue, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "phrases": [
+        {
+          "id": "v900-hote-acco-where-can-i-pick-up-my-luggage",
+          "vietnamese": "Tôi có thể nhận hành lý của mình ở đâu?",
+          "english": "Where can I pick up my luggage?",
+          "pronunciation": "Toi co the nhan hanh ly cua minh o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": null,
+          "audioKey": "v900-hote-acco-where-can-i-pick-up-my-luggage"
+        }
+      ]
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Tôi có",
+          "english": "I have",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "thể nhận hành lý của mình",
+          "english": "pick up my luggage",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "ở đâu",
+          "english": "where?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Tôi có thể nhận hành lý của mình ở đâu?",
+          "english": "full phrase",
+          "audioKey": null
+        }
+      ]
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use these nearby pages when the conversation shifts from Where can I pick up my luggage? to another hotel or stay need.",
+      "phrases": [
+        {
+          "id": "hotel-1",
+          "vietnamese": "Tôi có đặt phòng",
+          "english": "I have a reservation",
+          "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-1",
+          "audioKey": "hotel-1"
+        },
+        {
+          "id": "hotel-2",
+          "vietnamese": "Cho tôi nhận phòng",
+          "english": "I’d like to check in",
+          "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-2",
+          "audioKey": "hotel-2"
+        },
+        {
+          "id": "hotel-check-in-polite",
+          "vietnamese": "Cho tôi nhận phòng nhé",
+          "english": "I’d like to check in, please",
+          "pronunciation": "cho toy nyun fong nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-check-in-polite",
+          "audioKey": "hotel-check-in-polite"
+        }
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this when you are already in the general area but need the final direction. It fits front desk, lobby, room, elevator, or booking conversation, especially when pick up my luggage can be pointed to on a map, sign, booking, or nearby landmark."
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể nhận hành lý của mình ở đâu?.",
+      "phrases": [
+        {
+          "id": "hotel-3",
+          "vietnamese": "Mấy giờ trả phòng?",
+          "english": "What time is check-out?",
+          "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-3",
+          "audioKey": "hotel-3"
+        },
+        {
+          "id": "hotel-quiet-room",
+          "vietnamese": "Cho tôi phòng yên tĩnh được không?",
+          "english": "Can I have a quiet room?",
+          "pronunciation": "cho toy fong yen tinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-quiet-room",
+          "audioKey": "hotel-quiet-room"
+        },
+        {
+          "id": "hotel-checkout",
+          "vietnamese": "Cho tôi trả phòng",
+          "english": "I’d like to check out",
+          "pronunciation": "cho toy tra fong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-checkout",
+          "audioKey": "hotel-checkout"
+        },
+        {
+          "id": "hotel-4",
+          "vietnamese": "Phòng này nóng quá",
+          "english": "This room is too hot",
+          "pronunciation": "fong nai nong gwah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-4",
+          "audioKey": "hotel-4"
+        },
+        {
+          "id": "hotel-5",
+          "vietnamese": "Máy lạnh không chạy",
+          "english": "The air conditioner isn’t working",
+          "pronunciation": "mai lanh khong chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-5",
+          "audioKey": "hotel-5"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "v900-hote-acco-where-can-i-pick-up-my-luggage",
+      "vietnamese": "Tôi có thể nhận hành lý của mình ở đâu?",
+      "english": "Where can I pick up my luggage?",
+      "pronunciation": "Toi co the nhan hanh ly cua minh o dau",
+      "symbolName": "speaker.wave.2.fill",
+      "tintName": "purple",
+      "detailPageID": null,
+      "audioKey": "v900-hote-acco-where-can-i-pick-up-my-luggage"
+    }
+  ]
+}

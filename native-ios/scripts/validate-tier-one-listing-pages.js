@@ -5,7 +5,7 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const familyRoot = path.resolve(root, "..");
-const sourceRoot = path.join(familyRoot, "content-draft", "viet", "listing-pages");
+const sourceRoot = path.join(familyRoot, "content-draft", "viet", "canonical-pages", "tier-one");
 const indexPath = path.join(sourceRoot, "_tier-one-index.json");
 const authoredResourcePath = path.join(root, "Resources", "viet-authored-listing-pages.json");
 
