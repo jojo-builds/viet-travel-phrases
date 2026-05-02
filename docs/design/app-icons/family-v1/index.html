@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal App Icon Family v2</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f4ee;
+      --ink: #151f1a;
+      --muted: #66706b;
+      --line: rgba(21, 31, 26, 0.14);
+      --card: rgba(255, 255, 255, 0.72);
+      --red: #ef2330;
+      --jade: #237762;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Helvetica, Arial, sans-serif;
+    }
+
+    main {
+      width: min(1440px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 44px 0 72px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 7vw, 92px);
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      max-width: 800px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 9px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--jade);
+      font-weight: 800;
+      backdrop-filter: blur(18px);
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.62);
+      box-shadow: 0 18px 46px rgba(21, 31, 26, 0.10);
+    }
+
+    figure.wide {
+      grid-column: 1 / -1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      background: #fff;
+    }
+
+    .icon-strip {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .icon-card {
+      margin: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.70);
+      box-shadow: 0 14px 34px rgba(21, 31, 26, 0.08);
+    }
+
+    .icon-card img {
+      border-radius: 20px;
+    }
+
+    figcaption {
+      padding: 14px 4px 2px;
+    }
+
+    figcaption strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    figcaption span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .notes {
+      margin-top: 36px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.60);
+    }
+
+    .notes h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+
+    .notes ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 980px) {
+      header,
+      .grid,
+      .icon-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>App Icon Family</h1>
+        <p class="summary">V2 high-fidelity icon concepts for SpeakLocal Vietnam and the future country-app family. The recommended direction uses a stable Melo route-loop mark that can change country layers without becoming a flag sticker.</p>
+      </div>
+      <div class="badge">Lead: Melo Hybrid</div>
+    </header>
+
+    <section class="icon-strip" aria-label="Individual Vietnam icon directions">
+      <figure class="icon-card"><img src="assets/icons/01-brand-travel.png" alt="Brand Travel Mark icon"><figcaption><strong>1. Brand Travel</strong><span>Conservative fallback.</span></figcaption></figure>
+      <figure class="icon-card"><img src="assets/icons/02-country-motif.png" alt="Country Motif icon"><figcaption><strong>2. Motif</strong><span>Premium but seal-like.</span></figcaption></figure>
+      <figure class="icon-card"><img src="assets/icons/03-audio-phrase.png" alt="Audio Phrase Utility icon"><figcaption><strong>3. Audio</strong><span>Clear utility.</span></figcaption></figure>
+      <figure class="icon-card"><img src="assets/icons/04-landmark.png" alt="Landmark Memory icon"><figcaption><strong>4. Landmark</strong><span>Travel-specific.</span></figcaption></figure>
+      <figure class="icon-card"><img src="assets/icons/05-melo-hybrid.png" alt="Melo Hybrid icon"><figcaption><strong>5. Melo Hybrid</strong><span>Recommended.</span></figcaption></figure>
+      <figure class="icon-card"><img src="assets/icons/06-mascot-forward.png" alt="Mascot Forward icon"><figcaption><strong>6. Mascot</strong><span>Test only.</span></figcaption></figure>
+    </section>
+
+    <section class="grid" aria-label="Icon family review sheets">
+      <figure class="wide">
+        <img src="assets/vietnam-directions-contact-sheet.png" alt="Contact sheet showing six Vietnam app icon directions">
+        <figcaption>
+          <strong>Vietnam Direction Set</strong>
+          <span>Six rendered icon routes, from no-mascot utility marks to full mascot. Direction 5 has the best balance of recognizability and premium restraint.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="wide">
+        <img src="assets/family-system-expanded-sheet.png" alt="Expanded app icon family system with base, Vietnam, Philippines, Italy, Germany, and Japan variants">
+        <figcaption>
+          <strong>Expanded Country Family</strong>
+          <span>Base SpeakLocal mark plus Vietnam, Philippines, Italy, Germany, and Japan. The base silhouette stays constant while the country layer changes.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/home-screen-mock.png" alt="iPhone Home Screen mock showing strongest icon candidates">
+        <figcaption>
+          <strong>Home Screen Context</strong>
+          <span>Checks how the strongest candidates stand out among other apps on a crowded iPhone screen.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/app-store-header-mock.png" alt="App Store product page header mock with recommended icon">
+        <figcaption>
+          <strong>App Store Context</strong>
+          <span>Shows the recommended Melo Hybrid icon beside SpeakLocal Vietnam positioning and trial/utility benefits.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="wide">
+        <img src="assets/small-size-legibility-sheet.png" alt="Small-size legibility sheet for the six icon directions">
+        <figcaption>
+          <strong>Small-Size Legibility</strong>
+          <span>Each direction reduced across review sizes. Final production should simplify tiny route dots and eye detail before App Store export.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="notes">
+      <h2>Implementation Notes</h2>
+      <ul>
+        <li>Recommended launch candidate: Direction 5, Melo Hybrid Route Loop.</li>
+        <li>Keep Direction 1 as the no-mascot fallback for App Store testing.</li>
+        <li>Do not ship Direction 6 without testing; it risks mascot-first positioning.</li>
+        <li>Future country apps should inherit the base mark and swap only palette, route dot, and local motif layer.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
