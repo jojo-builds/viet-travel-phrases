@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal Speaker Icon Family V3</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #13231c;
+      --muted: #52625d;
+      --paper: #f7f2e9;
+      --card: #fffdf8;
+      --line: #eadfd0;
+      --red: #dc1917;
+      --jade: #174637;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    }
+    main {
+      width: min(1500px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 46px 0 80px;
+    }
+    header { margin-bottom: 28px; }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.45;
+      max-width: 980px;
+    }
+    section {
+      margin-top: 24px;
+      background: rgba(255, 253, 248, .78);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 60px rgba(40, 35, 27, .08);
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(234, 223, 208, .72);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: #fff0ee;
+      color: #8a1e16;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,.6);
+    }
+    .note strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 18px;
+    }
+    .note span {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    @media (max-width: 900px) {
+      main { width: min(100% - 24px, 1500px); padding-top: 26px; }
+      .grid, .notes { grid-template-columns: 1fr; }
+      section { padding: 14px; border-radius: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="tag">Speaker mark v3</div>
+      <h1>SpeakLocal Icon Family With Speaker Audio</h1>
+      <p>This replaces the previous waveform badge with a red speaker cue that matches the app’s phrase playback buttons. The icon now reads more like an offline audio phrasebook while keeping the same country-family system.</p>
+    </header>
+
+    <section>
+      <h2>Country Family</h2>
+      <p>The foreground stays SpeakLocal: phrase card, glass speaker, red speaker glyph, and jade saved/progress. Only the country layer changes.</p>
+      <img src="assets/speaker-country-family-glass.png" alt="SpeakLocal speaker icon family across countries">
+    </section>
+
+    <section>
+      <h2>Audio Mark Swap</h2>
+      <p>The glass speaker is the most app-faithful version. The red-disc speaker is included only as a small-size alternate.</p>
+      <img src="assets/speaker-treatment-vietnam-comparison.png" alt="Vietnam icon comparison showing waveform, glass speaker, and red-disc speaker">
+    </section>
+
+    <section>
+      <h2>Vietnam Context</h2>
+      <p>The strongest decision pair is A Glass versus B Glass. B keeps Melo in the system without making the app feel mascot-first.</p>
+      <img src="assets/speaker-home-context-vietnam.png" alt="Vietnam speaker icon candidates in context">
+    </section>
+
+    <section>
+      <h2>Small-Size Check</h2>
+      <p>The speaker still reads at small sizes, but final vector cleanup should simplify the card lines and country details.</p>
+      <img src="assets/speaker-small-size-vietnam-candidates.png" alt="Small-size speaker icon candidates">
+    </section>
+
+    <section>
+      <h2>Annotated Sheets</h2>
+      <div class="grid">
+        <img src="assets/option-a-speaker-glass.png" alt="Option A speaker glass country family">
+        <img src="assets/option-b-speaker-glass.png" alt="Option B speaker glass with Melo tail country family">
+        <img src="assets/option-d-speaker-glass.png" alt="Option D minimal speaker country family">
+      </div>
+    </section>
+
+    <section>
+      <h2>Design Read</h2>
+      <div class="notes">
+        <div class="note"><strong>A Glass</strong><span>Most faithful to the app. Clear phrasebook/audio message.</span></div>
+        <div class="note"><strong>B Glass</strong><span>Best long-term brand-family candidate if Melo stays in the icon system.</span></div>
+        <div class="note"><strong>B Red Alt</strong><span>More legible at tiny sizes, but less native to the current glass speaker control.</span></div>
+      </div>
+    </section>
+
+    <footer>
+      Visual direction only. Final app icons should be rebuilt as clean 1024px/vector masters and checked against iOS tinted icons, dark appearance, and App Store product-page contexts.
+    </footer>
+  </main>
+</body>
+</html>
