@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal Website Speaker Icon Family V4</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #13231c;
+      --muted: #52625d;
+      --paper: #f7f2e9;
+      --line: #eadfd0;
+      --red: #dc1917;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    }
+    main {
+      width: min(1500px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 46px 0 80px;
+    }
+    header { margin-bottom: 28px; }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.45;
+      max-width: 980px;
+    }
+    section {
+      margin-top: 24px;
+      background: rgba(255, 253, 248, .78);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 60px rgba(40, 35, 27, .08);
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(234, 223, 208, .72);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: #fff0ee;
+      color: #8a1e16;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,.6);
+    }
+    .note strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 18px;
+    }
+    .note span {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    @media (max-width: 900px) {
+      main { width: min(100% - 24px, 1500px); padding-top: 26px; }
+      .grid, .notes { grid-template-columns: 1fr; }
+      section { padding: 14px; border-radius: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="tag">Website speaker v4</div>
+      <h1>SpeakLocal Icon Family With Website Speaker</h1>
+      <p>This pass swaps the red waveform circle for a website-style volume-high speaker mark, closer to the phrase audio button already used in the product.</p>
+    </header>
+
+    <section>
+      <h2>Country Family</h2>
+      <p>The shared icon system stays fixed while Vietnam, Philippines, Italy, Germany, and Japan swap the country layer behind the phrase card.</p>
+      <img src="assets/website-speaker-country-family.png" alt="SpeakLocal website speaker icon family across countries">
+    </section>
+
+    <section>
+      <h2>Treatment Comparison</h2>
+      <p>The subtle version is closest to the app and website audio button. The solid version is included as a legibility fallback.</p>
+      <img src="assets/website-speaker-treatment-vietnam-comparison.png" alt="Website speaker treatment comparison for Vietnam icons">
+    </section>
+
+    <section>
+      <h2>Vietnam Context</h2>
+      <p>A Subtle and B Subtle are the real decision pair. B keeps Melo as a small tail cue without turning the icon into a mascot badge.</p>
+      <img src="assets/website-speaker-home-context-vietnam.png" alt="Vietnam website speaker icon candidates in context">
+    </section>
+
+    <section>
+      <h2>Small-Size Check</h2>
+      <p>The final icon should simplify card detail and sharpen the speaker glyph. This sheet shows the current concept at compressed sizes.</p>
+      <img src="assets/website-speaker-small-size-vietnam.png" alt="Small-size check for website speaker candidates">
+    </section>
+
+    <section>
+      <h2>Annotated Sheets</h2>
+      <div class="grid">
+        <img src="assets/option-a-website-speaker-subtle.png" alt="Option A website speaker country family">
+        <img src="assets/option-b-website-speaker-subtle.png" alt="Option B Melo tail website speaker country family">
+        <img src="assets/option-d-website-speaker-subtle.png" alt="Option D minimal website speaker country family">
+      </div>
+    </section>
+
+    <section>
+      <h2>Design Read</h2>
+      <div class="notes">
+        <div class="note"><strong>A Subtle</strong><span>Most product-faithful. Reads like a phrasebook audio card.</span></div>
+        <div class="note"><strong>B Subtle</strong><span>Best family candidate if Melo should stay in the icon system.</span></div>
+        <div class="note"><strong>B Solid</strong><span>More legible, but the red block starts to dominate again.</span></div>
+        <div class="note"><strong>B Glyph</strong><span>Cleaner, but less obviously tappable or audio-button-like.</span></div>
+      </div>
+    </section>
+
+    <footer>
+      Visual direction only. Final App Store art should be rebuilt as clean 1024px/vector masters and checked against iOS tinted icons, dark appearance, and App Store contexts.
+    </footer>
+  </main>
+</body>
+</html>
