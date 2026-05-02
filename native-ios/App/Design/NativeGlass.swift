@@ -89,7 +89,12 @@ extension View {
 }
 
 enum AppChromeMorphID {
+    static let dock = "app.chrome.dock"
     static let search = "app.chrome.search"
+
+    static func dockItem(_ item: DockItemKind) -> String {
+        "app.chrome.dock.\(item.title)"
+    }
 }
 
 enum PhrasePageStyle {
@@ -97,6 +102,7 @@ enum PhrasePageStyle {
     static let heroImageName = "HeroVietnamMasthead"
     static let heroImageHeight: CGFloat = 276
     static let heroImageVerticalOffset: CGFloat = -112
+    static let heroImageFadeHeight: CGFloat = 104
     static let heroTextTopPadding: CGFloat = 28
     static let heroTextBottomPadding: CGFloat = 12
     static let heroPlayerTopSpacing: CGFloat = 18
@@ -117,7 +123,7 @@ enum AppChromeLayout {
     static let bottomSpacing: CGFloat = 8
     static let bottomPadding: CGFloat = -10
     static let bottomOffset: CGFloat = 10
-    static let bottomSeparationHeight: CGFloat = 155
+    static let bottomSeparationHeight: CGFloat = 240
     static let topSeparationHeight: CGFloat = 170
     static let dockItemSpacing: CGFloat = 12
     static let dockHorizontalPadding: CGFloat = 12
@@ -153,8 +159,9 @@ struct ChromeSeparationGradient: View {
         case .bottom:
             return [
                 .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.24),
-                .init(color: Color(.systemBackground).opacity(0.78), location: 0.68),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.18), location: 0.14),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.64), location: 0.42),
+                .init(color: Color(.systemBackground).opacity(0.94), location: 0.72),
                 .init(color: Color(.systemBackground), location: 1),
             ]
         case .top:
@@ -205,24 +212,55 @@ extension View {
 struct HeroMastheadImage: View {
     var body: some View {
         GeometryReader { proxy in
-            Image(PhrasePageStyle.heroImageName)
-                .resizable()
-                .scaledToFill()
-                .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
-                .offset(y: PhrasePageStyle.heroImageVerticalOffset)
-                .overlay(alignment: .bottom) {
+            ZStack(alignment: .bottom) {
+                PhrasePageStyle.pageBackground
+
+                Image(PhrasePageStyle.heroImageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
+                    .offset(y: PhrasePageStyle.heroImageVerticalOffset)
+                    .clipped()
+                    .mask {
+                        LinearGradient(
+                            stops: [
+                                .init(color: .black, location: 0),
+                                .init(color: .black, location: 0.74),
+                                .init(color: .black.opacity(0.9), location: 0.84),
+                                .init(color: .black.opacity(0.34), location: 0.95),
+                                .init(color: .clear, location: 1),
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    }
+
+                LinearGradient(
+                    stops: [
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0.38),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0.14), location: 0.62),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0.68), location: 0.88),
+                        .init(color: PhrasePageStyle.pageBackground, location: 1),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: PhrasePageStyle.heroImageFadeHeight)
+            }
+            .overlay(alignment: .bottom) {
                     LinearGradient(
                         colors: [
                             .clear,
-                            PhrasePageStyle.pageBackground.opacity(0.72),
                             PhrasePageStyle.pageBackground,
                         ],
                         startPoint: .top,
                         endPoint: .bottom
                     )
-                    .frame(height: 42)
-                }
+                    .frame(height: 18)
+            }
         }
         .frame(height: PhrasePageStyle.heroImageHeight)
+        .clipped()
     }
 }

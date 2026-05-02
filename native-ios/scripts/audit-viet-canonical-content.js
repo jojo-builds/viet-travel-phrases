@@ -90,6 +90,10 @@ const weakBreakdownPatterns = [
   { id: "main_place_or_thing", pattern: /^the main place or thing$/i },
   { id: "specific_detail", pattern: /^specific detail$/i },
   { id: "name_or_place_detail", pattern: /^name or place detail$/i },
+  { id: "first_name_part", pattern: /^first name part$/i },
+  { id: "second_name_part", pattern: /^second name part$/i },
+  { id: "middle_name_part", pattern: /^middle name part$/i },
+  { id: "final_name_part", pattern: /^final name part$/i },
   { id: "soft_reassurance", pattern: /^soft reassurance$/i },
   { id: "context_word", pattern: /^context word$/i },
 ];

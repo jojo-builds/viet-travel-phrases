@@ -51,6 +51,8 @@ xcodebuild -project SpeakLocalNative.xcodeproj \
 
 Do not add `DEVELOPMENT_TEAM`, provisioning profile IDs, certificate fingerprints, or phone-specific signing details to `project.yml` or the generated `.xcodeproj`.
 
+Physical-device testing can be wired or wireless after the iPhone is paired with Xcode and available on the local network. Use `../docs/operations/IOS_DEVICE_BUILDING.md` for the safe device-build checklist before reporting phone proof.
+
 Run tests from this folder:
 
 ```sh

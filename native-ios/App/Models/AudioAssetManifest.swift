@@ -10,11 +10,37 @@ struct AudioAssetManifest {
     static let main = load(bundle: .main)
 
     private let entries: [String: AudioAssetManifestEntry]
-    private let bundle: Bundle
+    private let playableURLs: [String: URL]
+    private let audioKeysByNormalizedText: [String: [String]]
 
     init(entries: [String: AudioAssetManifestEntry], bundle: Bundle = .main) {
         self.entries = entries
-        self.bundle = bundle
+
+        var resolvedURLs: [String: URL] = [:]
+        var textKeys: [String: [String]] = [:]
+
+        for (key, entry) in entries {
+            guard
+                let url = bundle.url(forResource: entry.fileName, withExtension: nil, subdirectory: "Audio")
+                    ?? bundle.url(forResource: entry.fileName, withExtension: nil)
+            else {
+                continue
+            }
+
+            resolvedURLs[key] = url
+            textKeys[Self.normalizedAudioText(entry.text), default: []].append(key)
+        }
+
+        playableURLs = resolvedURLs
+        audioKeysByNormalizedText = textKeys.mapValues { keys in
+            keys.sorted { left, right in
+                if left.count != right.count {
+                    return left.count < right.count
+                }
+
+                return left < right
+            }
+        }
     }
 
     func entry(for audioKey: String?) -> AudioAssetManifestEntry? {
@@ -26,30 +52,15 @@ struct AudioAssetManifest {
     }
 
     func url(for audioKey: String?) -> URL? {
-        guard let fileName = entry(for: audioKey)?.fileName else {
+        guard let audioKey else {
             return nil
         }
 
-        return bundle.url(forResource: fileName, withExtension: nil, subdirectory: "Audio")
-            ?? bundle.url(forResource: fileName, withExtension: nil)
+        return playableURLs[audioKey]
     }
 
     func audioKey(forExactText text: String) -> String? {
-        let normalizedText = Self.normalizedAudioText(text)
-
-        return entries
-            .filter { key, entry in
-                Self.normalizedAudioText(entry.text) == normalizedText && url(for: key) != nil
-            }
-            .map(\.key)
-            .sorted { left, right in
-                if left.count != right.count {
-                    return left.count < right.count
-                }
-
-                return left < right
-            }
-            .first
+        audioKeysByNormalizedText[Self.normalizedAudioText(text)]?.first
     }
 
     func hasPlayableEntry(for audioKey: String?, matchingText text: String) -> Bool {

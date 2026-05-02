@@ -65,6 +65,35 @@ struct VietSQLitePhraseCatalogSnapshot: Equatable {
     let catalogItems: [PhraseCatalogItem]
 }
 
+private struct VietSQLitePracticeCandidateRow {
+    let phraseID: String
+    let pageID: String
+    let vietnamese: String
+    let english: String
+    let pronunciation: String
+    let categoryIDs: [String]
+    let symbolName: String
+    let tintName: AccentTint
+    let audioKey: String?
+    let source: PracticeSourceMetadata
+
+    func candidate(breakdownTokens: [BreakdownToken]) -> PracticeCandidate {
+        PracticeCandidate(
+            phraseID: phraseID,
+            pageID: pageID,
+            vietnamese: vietnamese,
+            english: english,
+            pronunciation: pronunciation,
+            categoryIDs: categoryIDs,
+            symbolName: symbolName,
+            tintName: tintName,
+            audioKey: audioKey,
+            breakdownTokens: breakdownTokens,
+            source: source
+        )
+    }
+}
+
 enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
     case missingBundledFixture(subdirectory: String)
     case openFailed(path: String, message: String)
@@ -453,7 +482,7 @@ final class VietSQLiteLanguagePackRepository {
         LIMIT ?;
         """
 
-        let candidates = try rows(sql, bind: { statement in
+        let candidateRows = try rows(sql, bind: { statement in
             var index: Int32 = 1
 
             for pageID in canonicalPageIDs {
@@ -485,7 +514,7 @@ final class VietSQLiteLanguagePackRepository {
                 placeName: Self.optionalStringColumn(statement, index: 14)
             )
 
-            return PracticeCandidate(
+            return VietSQLitePracticeCandidateRow(
                 phraseID: phraseID,
                 pageID: pageID,
                 vietnamese: Self.stringColumn(statement, index: 2),
@@ -495,9 +524,12 @@ final class VietSQLiteLanguagePackRepository {
                 symbolName: Self.stringColumn(statement, index: 5),
                 tintName: tint,
                 audioKey: Self.optionalStringColumn(statement, index: 7),
-                breakdownTokens: try loadPracticeBreakdownTokens(forPageID: pageID),
                 source: source
             )
+        }
+        let breakdownTokensByPageID = try loadPracticeBreakdownTokens(forPageIDs: candidateRows.map(\.pageID))
+        let candidates = candidateRows.map { row in
+            row.candidate(breakdownTokens: breakdownTokensByPageID[row.pageID] ?? [])
         }
 
         guard !canonicalPageIDs.isEmpty else {
@@ -963,6 +995,53 @@ final class VietSQLiteLanguagePackRepository {
                 english: Self.stringColumn(statement, index: 2),
                 audioKey: Self.optionalStringColumn(statement, index: 3)
             )
+        }
+    }
+
+    private func loadPracticeBreakdownTokens(forPageIDs pageIDs: [String]) throws -> [String: [BreakdownToken]] {
+        guard !pageIDs.isEmpty else {
+            return [:]
+        }
+
+        let uniquePageIDs = Array(Set(pageIDs)).sorted()
+        let placeholders = Array(repeating: "?", count: uniquePageIDs.count).joined(separator: ", ")
+        let sql = """
+        SELECT
+          ps.page_id,
+          bt.id,
+          bt.token_text,
+          bt.english_gloss,
+          aa.source_manifest_key
+        FROM page_section ps
+        JOIN page_section_item psi ON psi.section_id = ps.id
+        JOIN breakdown_token bt ON bt.id = psi.target_id
+        LEFT JOIN audio_usage au
+          ON au.target_kind = 'breakdown_token'
+         AND au.target_id = bt.id
+        LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        WHERE ps.page_id IN (\(placeholders))
+          AND psi.item_kind = 'breakdown_token'
+        ORDER BY ps.page_id, ps.sort_order, psi.sort_order;
+        """
+
+        let rows = try rows(sql, bind: { statement in
+            for (offset, pageID) in uniquePageIDs.enumerated() {
+                try self.bindText(pageID, to: Int32(offset + 1), in: statement, sql: sql)
+            }
+        }) { statement in
+            (
+                pageID: Self.stringColumn(statement, index: 0),
+                token: BreakdownToken(
+                    id: Self.stringColumn(statement, index: 1),
+                    vietnamese: Self.stringColumn(statement, index: 2),
+                    english: Self.stringColumn(statement, index: 3),
+                    audioKey: Self.optionalStringColumn(statement, index: 4)
+                )
+            )
+        }
+
+        return rows.reduce(into: [String: [BreakdownToken]]()) { result, row in
+            result[row.pageID, default: []].append(row.token)
         }
     }
 

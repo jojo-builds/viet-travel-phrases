@@ -315,7 +315,7 @@ enum PracticePromptGenerator {
 
         for (index, candidate) in promptCandidates.enumerated() {
             let preferredKinds = rotatedKinds(startingAt: index)
-            guard let prompt = preferredKinds.compactMap({ kind in
+            guard let prompt = preferredKinds.lazy.compactMap({ kind in
                 makePrompt(
                     mode: mode,
                     kind: kind,
@@ -346,6 +346,46 @@ enum PracticePromptGenerator {
         }
     }
 
+    static func missedPrompts(
+        candidates: [PracticeCandidate],
+        distractors: [PracticeCandidate],
+        missedPromptIDs: Set<String>,
+        limit: Int = 8
+    ) -> [PracticePrompt] {
+        guard !missedPromptIDs.isEmpty else {
+            return []
+        }
+
+        let promptCandidates = uniqueCandidates(candidates)
+        let distractorPool = uniqueCandidates(distractors + candidates)
+        var prompts: [PracticePrompt] = []
+
+        for candidate in promptCandidates {
+            for kind in PracticePromptKind.allCases {
+                guard missedPromptIDsMightContain(kind: kind, candidate: candidate, promptIDs: missedPromptIDs) else {
+                    continue
+                }
+
+                guard let prompt = makePrompt(
+                    mode: .missedReview,
+                    kind: kind,
+                    candidate: candidate,
+                    distractors: distractorPool
+                ), missedPromptIDs.contains(prompt.id) else {
+                    continue
+                }
+
+                prompts.append(prompt)
+
+                if prompts.count >= limit {
+                    return prompts
+                }
+            }
+        }
+
+        return prompts
+    }
+
     static func placementPrompts(
         candidates: [PracticeCandidate],
         distractors: [PracticeCandidate],
@@ -357,7 +397,7 @@ enum PracticePromptGenerator {
 
         for (index, candidate) in promptCandidates.enumerated() {
             let preferredKinds = rotatedPlacementKinds(startingAt: index)
-            guard let prompt = preferredKinds.compactMap({ kind in
+            guard let prompt = preferredKinds.lazy.compactMap({ kind in
                 makePrompt(
                     mode: .hanoiBucketList,
                     kind: kind,
@@ -535,6 +575,24 @@ enum PracticePromptGenerator {
             .prefix(3)
 
         return stableOptionOrder([correct] + Array(wrongOptions), seed: seed)
+    }
+
+    private static func missedPromptIDsMightContain(
+        kind: PracticePromptKind,
+        candidate: PracticeCandidate,
+        promptIDs: Set<String>
+    ) -> Bool {
+        if kind == .missingToken {
+            let prefix = [
+                "practice",
+                kind.rawValue,
+                candidate.pageID,
+            ].joined(separator: ":") + ":"
+
+            return promptIDs.contains { $0.hasPrefix(prefix) }
+        }
+
+        return promptIDs.contains(stablePromptID(kind: kind, candidate: candidate))
     }
 
     private static func meaningOptionSubtitle(for candidate: PracticeCandidate) -> String {

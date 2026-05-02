@@ -6,6 +6,7 @@ Use this folder for exact live operational truth about the current app family wh
 - authoritative repo and compatibility path
 - Viet vs Tagalog current variant status
 - exact run/test commands
+- safe physical iPhone build/install rules
 - latest validation snapshot
 - current blockers to dual-variant testing
 
@@ -15,9 +16,10 @@ Read in this order:
 2. `CURRENT_BLOCKERS.md`
 3. `TESTING_RUNBOOK.md`
 4. `NATIVE_MAC_CUTOVER.md` when the question touches Mac status, Codex carryover, or the native SwiftUI/Xcode transition
-5. `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the exact next Viet operator checklist
-6. `LATEST_VALIDATION.md`
-7. `VARIANT_MATRIX.md`
+5. `IOS_DEVICE_BUILDING.md` when the question touches wired or wireless physical iPhone builds
+6. `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the exact next Viet operator checklist
+7. `LATEST_VALIDATION.md`
+8. `VARIANT_MATRIX.md`
 
 ## File ownership
 
@@ -29,6 +31,8 @@ Read in this order:
   - repo-owned build/test sequence, lane split, and repo sync targets
 - `NATIVE_MAC_CUTOVER.md`
   - native Mac status, Codex continuity, and the transition from the legacy Windows/Expo lane into the native SwiftUI/Xcode lane
+- `IOS_DEVICE_BUILDING.md`
+  - safe local physical iPhone build/install rules, including wireless Xcode installs and signing hygiene
 - `VIET_TESTFLIGHT_EXECUTION_PACKET.md`
   - single ordered operator checklist for the next Viet preview/TestFlight/App Store Connect/device-proof lane
 - `LATEST_VALIDATION.md`
@@ -43,8 +47,9 @@ Read in this order:
 1. Open `APP_STATUS.md` to confirm the live repo snapshot, latest installable artifact, and the current pending gates.
 2. Check `CURRENT_BLOCKERS.md` to see which gates are still open before starting a new build/test pass.
 3. Use `TESTING_RUNBOOK.md` for the repo-owned sequence and post-run sync targets.
-4. Use `VIET_TESTFLIGHT_EXECUTION_PACKET.md` as the single ordered checklist for the next real operator pass.
-5. Use `LATEST_VALIDATION.md` only to see what evidence already exists and what still had not been proven at the time of the last validation snapshot.
+4. Use `IOS_DEVICE_BUILDING.md` for safe physical iPhone build/install rules.
+5. Use `VIET_TESTFLIGHT_EXECUTION_PACKET.md` as the single ordered checklist for the next real operator pass.
+6. Use `LATEST_VALIDATION.md` only to see what evidence already exists and what still had not been proven at the time of the last validation snapshot.
 
 Authority notes:
 

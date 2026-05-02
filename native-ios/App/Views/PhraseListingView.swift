@@ -127,11 +127,8 @@ struct PhraseArticleTemplateView: View {
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(spacing: 0) {
-                        Color.clear
-                            .frame(height: 0)
-                            .id(Self.scrollTopID)
-
                         hero
+                            .id(Self.scrollTopID)
 
                         LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
                             ForEach(visibleSections) { section in

@@ -46,38 +46,37 @@ struct PracticeView: View {
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading, spacing: 18) {
-                        Color.clear
-                            .frame(height: 0)
-                            .id(Self.scrollTopID)
-
-                        if let activeSession, let currentPrompt = activeSession.currentPrompt {
-                            PracticeSessionSurface(
-                                session: activeSession,
-                                prompt: currentPrompt,
-                                selectedOptionID: activeSession.selectedOptionID,
-                                isInPracticePool: intentStore.isPageInPractice(currentPrompt.source.pageID),
-                                onSelectOption: selectOption,
-                                onContinue: continueSession,
-                                onOpenSource: { onOpenDetail(currentPrompt.source.pageID) },
-                                onTogglePractice: { togglePracticePage(currentPrompt.source.pageID) }
-                            )
-                        } else if let completionSummary {
-                            PracticeCompletionSurface(
-                                summary: completionSummary,
-                                onContinue: clearCompletion,
-                                onMissedReview: { startSession(.missedReview) },
-                                onBrowseTapped: onBrowseTapped
-                            )
-                        } else {
-                            PracticeHubSurface(
-                                deckState: deckState,
-                                explicitPracticeCount: intentStore.practicePageIDs.count,
-                                savedPageCount: intentStore.savedPageIDs.count,
-                                onStart: { mode in startSession(mode) },
-                                onBrowseTapped: onBrowseTapped,
-                                onRetry: reloadDeck
-                            )
+                        Group {
+                            if let activeSession, let currentPrompt = activeSession.currentPrompt {
+                                PracticeSessionSurface(
+                                    session: activeSession,
+                                    prompt: currentPrompt,
+                                    selectedOptionID: activeSession.selectedOptionID,
+                                    isInPracticePool: intentStore.isPageInPractice(currentPrompt.source.pageID),
+                                    onSelectOption: selectOption,
+                                    onContinue: continueSession,
+                                    onOpenSource: { onOpenDetail(currentPrompt.source.pageID) },
+                                    onTogglePractice: { togglePracticePage(currentPrompt.source.pageID) }
+                                )
+                            } else if let completionSummary {
+                                PracticeCompletionSurface(
+                                    summary: completionSummary,
+                                    onContinue: clearCompletion,
+                                    onMissedReview: { startSession(.missedReview) },
+                                    onBrowseTapped: onBrowseTapped
+                                )
+                            } else {
+                                PracticeHubSurface(
+                                    deckState: deckState,
+                                    explicitPracticeCount: intentStore.practicePageIDs.count,
+                                    savedPageCount: intentStore.savedPageIDs.count,
+                                    onStart: { mode in startSession(mode) },
+                                    onBrowseTapped: onBrowseTapped,
+                                    onRetry: reloadDeck
+                                )
+                            }
                         }
+                        .id(Self.scrollTopID)
                     }
                     .padding(.horizontal, PracticeLayout.horizontalPadding)
                     .padding(.top, 76)
@@ -100,18 +99,24 @@ struct PracticeView: View {
             }
         }
         .task {
-            reloadDeckIfActive()
+            if isActive {
+                reloadDeck()
+            } else {
+                prewarmDeck()
+            }
         }
         .onChange(of: isActive) { _, active in
             if active {
                 reloadDeck()
+            } else {
+                prewarmDeck()
             }
         }
         .onChange(of: intentStore.practicePageIDs) { _, _ in
-            reloadDeckIfActive()
+            reloadOrPrewarmDeck()
         }
         .onChange(of: intentStore.savedPageIDs) { _, _ in
-            reloadDeckIfActive()
+            reloadOrPrewarmDeck()
         }
         .accessibilityIdentifier("PracticeView")
     }
@@ -204,12 +209,21 @@ struct PracticeView: View {
         reloadDeck()
     }
 
-    private func reloadDeckIfActive() {
-        guard isActive else {
-            return
+    private func reloadOrPrewarmDeck() {
+        if isActive {
+            reloadDeck()
+        } else {
+            prewarmDeck()
         }
+    }
 
-        reloadDeck()
+    private func prewarmDeck() {
+        PracticeDeckSnapshot.prewarm(
+            practicePageIDs: intentStore.practicePageIDs,
+            savedPageIDs: intentStore.savedPageIDs,
+            readyPromptIDs: progressStore.readyPromptIDs,
+            missedPromptIDs: progressStore.missedPromptIDs
+        )
     }
 
     private func reloadDeck() {
@@ -219,8 +233,22 @@ struct PracticeView: View {
         let savedPageIDs = intentStore.savedPageIDs
         let readyPromptIDs = progressStore.readyPromptIDs
         let missedPromptIDs = progressStore.missedPromptIDs
+        let cacheKey = PracticeDeckSnapshot.cacheKey(
+            practicePageIDs: practicePageIDs,
+            savedPageIDs: savedPageIDs,
+            readyPromptIDs: readyPromptIDs,
+            missedPromptIDs: missedPromptIDs
+        )
 
-        deckState = .loading
+        if let snapshot = PracticeDeckSnapshot.cachedSnapshot(for: cacheKey) {
+            deckState = .loaded(snapshot)
+            scheduleInitialModeStartIfNeeded()
+            return
+        }
+
+        if deckState.snapshot == nil {
+            deckState = .loading
+        }
 
         DispatchQueue.global(qos: .userInitiated).async {
             do {
@@ -237,6 +265,7 @@ struct PracticeView: View {
                     }
 
                     deckState = .loaded(snapshot)
+                    PracticeDeckSnapshot.storeCachedSnapshot(snapshot, for: cacheKey)
                     scheduleInitialModeStartIfNeeded()
                 }
             } catch {
@@ -249,6 +278,55 @@ struct PracticeView: View {
                 }
             }
         }
+    }
+}
+
+fileprivate struct PracticeDeckCacheKey: Hashable {
+    let practicePageIDs: [String]
+    let savedPageIDs: [String]
+    let readyPromptIDs: [String]
+    let missedPromptIDs: [String]
+}
+
+fileprivate enum PracticeDeckSnapshotCache {
+    private static let lock = NSLock()
+    private static var snapshots: [PracticeDeckCacheKey: PracticeDeckSnapshot] = [:]
+    private static var inFlightKeys = Set<PracticeDeckCacheKey>()
+
+    static func snapshot(for key: PracticeDeckCacheKey) -> PracticeDeckSnapshot? {
+        lock.lock()
+        defer { lock.unlock() }
+        return snapshots[key]
+    }
+
+    static func beginLoading(_ key: PracticeDeckCacheKey) -> Bool {
+        lock.lock()
+        defer { lock.unlock() }
+
+        guard snapshots[key] == nil, !inFlightKeys.contains(key) else {
+            return false
+        }
+
+        inFlightKeys.insert(key)
+        return true
+    }
+
+    static func store(_ snapshot: PracticeDeckSnapshot, for key: PracticeDeckCacheKey) {
+        lock.lock()
+        defer { lock.unlock() }
+
+        snapshots[key] = snapshot
+        inFlightKeys.remove(key)
+
+        if snapshots.count > 4, let oldestKey = snapshots.keys.first {
+            snapshots.removeValue(forKey: oldestKey)
+        }
+    }
+
+    static func finishLoading(_ key: PracticeDeckCacheKey) {
+        lock.lock()
+        defer { lock.unlock() }
+        inFlightKeys.remove(key)
     }
 }
 
@@ -373,17 +451,12 @@ struct PracticeDeckSnapshot {
             distractors: distractors,
             limit: 8
         )
-        let missedPrompts = distractors
-            .flatMap { candidate in
-                PracticePromptGenerator.promptVariants(
-                    mode: .missedReview,
-                    candidate: candidate,
-                    distractors: distractors
-                )
-            }
-            .filter { missedPromptIDs.contains($0.id) }
-            .prefix(8)
-            .map { $0 }
+        let missedPrompts = PracticePromptGenerator.missedPrompts(
+            candidates: distractors,
+            distractors: distractors,
+            missedPromptIDs: missedPromptIDs,
+            limit: 8
+        )
 
         return PracticeDeckSnapshot(
             cityPrompts: cityPrompts,
@@ -400,6 +473,60 @@ struct PracticeDeckSnapshot {
                 (mode, cityCandidates[mode]?.count ?? 0)
             })
         )
+    }
+
+    fileprivate static func cacheKey(
+        practicePageIDs: [String],
+        savedPageIDs: [String],
+        readyPromptIDs: Set<String>,
+        missedPromptIDs: Set<String>
+    ) -> PracticeDeckCacheKey {
+        PracticeDeckCacheKey(
+            practicePageIDs: practicePageIDs,
+            savedPageIDs: savedPageIDs,
+            readyPromptIDs: readyPromptIDs.sorted(),
+            missedPromptIDs: missedPromptIDs.sorted()
+        )
+    }
+
+    fileprivate static func cachedSnapshot(for key: PracticeDeckCacheKey) -> PracticeDeckSnapshot? {
+        PracticeDeckSnapshotCache.snapshot(for: key)
+    }
+
+    fileprivate static func storeCachedSnapshot(_ snapshot: PracticeDeckSnapshot, for key: PracticeDeckCacheKey) {
+        PracticeDeckSnapshotCache.store(snapshot, for: key)
+    }
+
+    fileprivate static func prewarm(
+        practicePageIDs: [String],
+        savedPageIDs: [String],
+        readyPromptIDs: Set<String>,
+        missedPromptIDs: Set<String>
+    ) {
+        let key = cacheKey(
+            practicePageIDs: practicePageIDs,
+            savedPageIDs: savedPageIDs,
+            readyPromptIDs: readyPromptIDs,
+            missedPromptIDs: missedPromptIDs
+        )
+
+        guard PracticeDeckSnapshotCache.beginLoading(key) else {
+            return
+        }
+
+        DispatchQueue.global(qos: .utility).async {
+            do {
+                let snapshot = try load(
+                    practicePageIDs: practicePageIDs,
+                    savedPageIDs: savedPageIDs,
+                    readyPromptIDs: readyPromptIDs,
+                    missedPromptIDs: missedPromptIDs
+                )
+                PracticeDeckSnapshotCache.store(snapshot, for: key)
+            } catch {
+                PracticeDeckSnapshotCache.finishLoading(key)
+            }
+        }
     }
 
     private static func uniqueCandidates(_ candidates: [PracticeCandidate]) -> [PracticeCandidate] {

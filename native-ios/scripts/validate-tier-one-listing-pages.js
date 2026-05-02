@@ -62,6 +62,10 @@ const bannedBreakdownLabels = [
   /^word$/i,
   /^action$/i,
   /^place \/ service$/i,
+  /^first name part$/i,
+  /^second name part$/i,
+  /^middle name part$/i,
+  /^final name part$/i,
 ];
 
 function readJSON(filePath) {

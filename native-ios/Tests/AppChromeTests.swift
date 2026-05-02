@@ -104,6 +104,20 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(chrome.searchPresentation, .expandedField)
     }
 
+    func testSearchOriginIconTracksRouteBelowSearch() {
+        var navigation = AppShellNavigationState()
+        navigation.openBrowse()
+        navigation.openSearch()
+
+        XCTAssertEqual(navigation.searchOriginDockItem, .browse)
+
+        navigation.goBack()
+        navigation.openPractice()
+        navigation.openSearch()
+
+        XCTAssertEqual(navigation.searchOriginDockItem, .practice)
+    }
+
     func testPlaybackSpeedPreferenceMapsToGlobalRates() {
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.5x"), 0.5, accuracy: 0.001)
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.75x"), 0.75, accuracy: 0.001)

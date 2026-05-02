@@ -18,11 +18,8 @@ struct BrowsePageView: View {
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading, spacing: BrowsePageLayout.sectionSpacing) {
-                        Color.clear
-                            .frame(height: 0)
-                            .id(Self.scrollTopID)
-
                         header
+                            .id(Self.scrollTopID)
 
                         situationGrid
                             .padding(.horizontal, BrowsePageLayout.horizontalPadding)

@@ -87,9 +87,9 @@ Passed:
 - `node native-ios/scripts/validate-viet-full-universe-authoring.js`
 - Focused native tests: 25 tests, 0 failures
 - `xcodebuild build -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO`
-- `xcodebuild build -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS,id=00008140-000955D00188801C' -allowProvisioningUpdates -allowProvisioningDeviceRegistration`
-- `xcrun devicectl device install app --device 00008140-000955D00188801C .../SpeakLocalNative.app`
-- `xcrun devicectl device process launch --device 00008140-000955D00188801C app.speaklocal.vietnam.native --terminate-existing --activate`
+- `xcodebuild build -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS,id=<LOCAL_DEVICE_ID>' -allowProvisioningUpdates -allowProvisioningDeviceRegistration`
+- `xcrun devicectl device install app --device <LOCAL_DEVICE_ID> .../SpeakLocalNative.app`
+- `xcrun devicectl device process launch --device <LOCAL_DEVICE_ID> app.speaklocal.vietnam.native --terminate-existing --activate`
 
 SQLite validation proof:
 
@@ -109,7 +109,7 @@ Bundle proof:
 - The iPhoneOS build app does not contain `viet-phrase-catalog.json`, `viet-authored-listing-pages.json`, or `viet-authored-audio-audit.json`.
 - Legacy JSON bundle hit count: 0.
 - Built app size: 93M. Bundled SQLite pack size: 20M.
-- Physical device detected: `Alex's iPhone 16 Pro Max` (`00008140-000955D00188801C`).
+- Physical device detected: local paired iPhone.
 - Physical device build succeeded with local Apple development signing and provisioning configured on the Mac.
 - Physical device install succeeded for bundle ID `app.speaklocal.vietnam.native`.
 - Physical device launch succeeded via `xcrun devicectl device process launch`.

@@ -70,6 +70,10 @@ function breakdownIssues(page, tokens) {
     "question marker",
     "specific detail",
     "name or place detail",
+    "first name part",
+    "second name part",
+    "middle name part",
+    "final name part",
     "soft reassurance",
     "context word",
   ].includes(label) || label.includes("question marker"))) {

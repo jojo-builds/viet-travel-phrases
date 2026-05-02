@@ -176,15 +176,13 @@ struct AppShellView: View {
             .overlay(alignment: .bottom) {
                 staticBottomChrome
                     .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
-                    .padding(.bottom, AppChromeLayout.bottomPadding)
-                    .offset(y: AppChromeLayout.bottomOffset)
+                    .padding(.bottom, bottomChromePadding)
+                    .offset(y: bottomChromeOffset)
                     .zIndex(380)
             }
             .overlay(alignment: .top) {
-                if showsStaticBackButton {
-                    ChromeSeparationGradient(edge: .top)
-                        .zIndex(360)
-                }
+                ChromeSeparationGradient(edge: .top)
+                    .zIndex(360)
             }
             .overlay(alignment: .topLeading) {
                 if showsStaticBackButton {
@@ -420,6 +418,14 @@ struct AppShellView: View {
         navigation.currentRoute != .home && navigation.currentRoute != .browse && navigation.currentRoute != .search
     }
 
+    private var bottomChromePadding: CGFloat {
+        isSearchFieldFocused ? 12 : AppChromeLayout.bottomPadding
+    }
+
+    private var bottomChromeOffset: CGFloat {
+        isSearchFieldFocused ? 0 : AppChromeLayout.bottomOffset
+    }
+
     private var staticBackButton: some View {
         Button {
             goBack()
@@ -448,114 +454,143 @@ struct AppShellView: View {
 
     @ViewBuilder
     private var staticBottomChromeContent: some View {
-        if navigation.currentRoute == .search {
-            searchBottomChromeContent
-        } else {
-            collapsedBottomChromeContent
-        }
-    }
-
-    @ViewBuilder
-    private var collapsedBottomChromeContent: some View {
+        let isSearchRoute = navigation.currentRoute == .search
+        let isKeyboardSearch = isSearchRoute && isSearchFieldFocused
         let chrome = AppChrome(route: navigation.currentRoute)
 
         HStack(spacing: AppChromeLayout.bottomSpacing) {
-            HStack(spacing: AppChromeLayout.dockItemSpacing) {
-                ForEach(chrome.primaryDockItems, id: \.self) { item in
-                    Button {
-                        performDockAction(item)
-                    } label: {
-                        AppShellDockItem(kind: item, selected: item == chrome.selectedDockItem)
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel(item.title)
-                    .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
+            if isSearchRoute {
+                if !isKeyboardSearch {
+                    searchOriginButton(kind: navigation.searchOriginDockItem)
                 }
+            } else {
+                dockCluster(chrome: chrome)
             }
-            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
-            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
-            .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
 
-            Button {
-                openSearch()
-            } label: {
-                Image(systemName: "magnifyingglass")
-                    .font(.title2.weight(.medium))
-                    .foregroundStyle(.primary)
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                    .contentShape(Circle())
+            if isSearchRoute {
+                searchFieldCluster(isKeyboardSearch: isKeyboardSearch)
+            } else {
+                collapsedSearchButton
             }
-            .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
-            .accessibilityLabel("Search")
-            .accessibilityIdentifier("AppChrome.SearchButton")
+
+            if isKeyboardSearch {
+                searchDismissKeyboardButton
+            }
         }
+        .animation(.snappy(duration: 0.34), value: isSearchRoute)
+        .animation(.snappy(duration: 0.34), value: isSearchFieldFocused)
     }
 
-    private var searchBottomChromeContent: some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            Button {
-                openHome()
-            } label: {
-                Image(systemName: "house.fill")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.red)
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                    .contentShape(Circle())
-            }
-            .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .zIndex(2)
-            .accessibilityLabel("Home")
-            .accessibilityIdentifier("AppChrome.SearchHomeButton")
-
-            HStack(spacing: 10) {
-                Image(systemName: "magnifyingglass")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.secondary)
-
-                TextField("Search Vietnamese phrases", text: $searchQuery)
-                    .font(.body.weight(.semibold))
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .focused($isSearchFieldFocused)
-                    .accessibilityIdentifier("AppChrome.SearchField")
-
-                if !searchQuery.isEmpty {
-                    Button {
-                        searchQuery = ""
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.title3)
-                            .foregroundStyle(.secondary)
-                    }
-                    .buttonStyle(.plain)
-                }
-            }
-            .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
-            .frame(height: AppChromeLayout.searchFieldHeight)
-            .frame(maxWidth: .infinity)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
-            .zIndex(1)
-
-            if isSearchFieldFocused {
+    private func dockCluster(chrome: AppChrome) -> some View {
+        HStack(spacing: AppChromeLayout.dockItemSpacing) {
+            ForEach(chrome.primaryDockItems, id: \.self) { item in
                 Button {
-                    cancelSearchFocus()
+                    performDockAction(item)
                 } label: {
-                    Text("Cancel")
-                        .font(.body.weight(.semibold))
-                        .foregroundStyle(.red)
-                        .frame(height: AppChromeLayout.searchFieldHeight)
-                        .padding(.horizontal, 4)
+                    AppShellDockItem(
+                        kind: item,
+                        selected: item == chrome.selectedDockItem,
+                        chromeNamespace: chromeNamespace,
+                        isMorphSource: item == chrome.selectedDockItem && !navigation.isSearchPresented
+                    )
                 }
                 .buttonStyle(.plain)
-                .accessibilityIdentifier("AppChrome.SearchCancelButton")
+                .accessibilityLabel(item.title)
+                .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
             }
         }
+        .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
+        .padding(.vertical, AppChromeLayout.dockVerticalPadding)
+        .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
+        .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
+        .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
+        .zIndex(2)
+    }
+
+    private var collapsedSearchButton: some View {
+        Button {
+            openSearch()
+        } label: {
+            Image(systemName: "magnifyingglass")
+                .font(.title2.weight(.medium))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
+        .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
+        .accessibilityLabel("Search")
+        .accessibilityIdentifier("AppChrome.SearchButton")
+        .zIndex(1)
+    }
+
+    private func searchOriginButton(kind: DockItemKind) -> some View {
+        Button {
+            performDockAction(kind)
+        } label: {
+            Image(systemName: kind.symbolName)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.red)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(Circle())
+                .chromeMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: navigation.isSearchPresented)
+        }
+        .buttonStyle(.plain)
+        .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .accessibilityLabel(kind.title)
+        .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
+        .zIndex(2)
+    }
+
+    private func searchFieldCluster(isKeyboardSearch: Bool) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: "magnifyingglass")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+
+            TextField("Search Vietnamese phrases", text: $searchQuery)
+                .font(.body.weight(.semibold))
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .focused($isSearchFieldFocused)
+                .accessibilityIdentifier("AppChrome.SearchField")
+
+            if !searchQuery.isEmpty {
+                Button {
+                    searchQuery = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.title3)
+                        .foregroundStyle(.secondary)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
+        .frame(height: AppChromeLayout.searchFieldHeight)
+        .frame(maxWidth: .infinity)
+        .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
+        .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
+        .zIndex(1)
+    }
+
+    private var searchDismissKeyboardButton: some View {
+        Button {
+            cancelSearchFocus()
+        } label: {
+            Image(systemName: "xmark")
+                .font(.title2.weight(.semibold))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .accessibilityLabel("Dismiss keyboard")
+        .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
     }
 
     private var forwardButton: some View {
@@ -1006,6 +1041,10 @@ struct AppShellNavigationState: Equatable {
         return nil
     }
 
+    var searchOriginDockItem: DockItemKind {
+        AppChrome(route: routeBelowSearch).selectedDockItem
+    }
+
     var canGoForward: Bool {
         forwardPreviewRoute != nil
     }
@@ -1436,11 +1475,14 @@ enum AppPageTransition {
 private struct AppShellDockItem: View {
     let kind: DockItemKind
     let selected: Bool
+    var chromeNamespace: Namespace.ID?
+    var isMorphSource = false
 
     var body: some View {
         VStack(spacing: 3) {
             Image(systemName: kind.symbolName)
                 .font(.system(size: 18, weight: .semibold))
+                .chromeMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: isMorphSource)
 
             Text(kind.title)
                 .font(.caption2.weight(.semibold))
@@ -1626,11 +1668,8 @@ struct HomeView: View {
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
-                        Color.clear
-                            .frame(height: 0)
-                            .id(Self.scrollTopID)
-
                         header
+                            .id(Self.scrollTopID)
 
                         searchEntry
                             .padding(.horizontal, HomeLayout.horizontalPadding)
@@ -1882,10 +1921,6 @@ struct SavedPagesView: View {
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading, spacing: 18) {
-                        Color.clear
-                            .frame(height: 0)
-                            .id(Self.scrollTopID)
-
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Saved")
                                 .font(.system(size: 42, weight: .black, design: .serif))
@@ -1900,6 +1935,7 @@ struct SavedPagesView: View {
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                         .padding(.top, 76)
+                        .id(Self.scrollTopID)
 
                         if savedItems.isEmpty {
                             savedEmptyState

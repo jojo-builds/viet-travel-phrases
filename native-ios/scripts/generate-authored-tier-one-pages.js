@@ -1947,23 +1947,7 @@ function isCompactCityChunk(vietnamese) {
 }
 
 function splitProperNameChunk(vietnamese, english) {
-  const words = vietnamese.split(/\s+/).filter(Boolean);
-  if (words.length <= 3 && vietnamese.length <= 24) {
-    return [cityChunk(vietnamese, english)];
-  }
-
-  if (words.length <= 5) {
-    return [
-      cityChunk(words.slice(0, 2).join(" "), "first name part"),
-      cityChunk(words.slice(2).join(" "), "second name part"),
-    ].filter((chunk) => chunk.vietnamese);
-  }
-
-  return [
-    cityChunk(words.slice(0, 2).join(" "), "first name part"),
-    cityChunk(words.slice(2, 4).join(" "), "middle name part"),
-    cityChunk(words.slice(4).join(" "), "final name part"),
-  ].filter((chunk) => chunk.vietnamese);
+  return [cityChunk(vietnamese, english || "place name")];
 }
 
 function splitLongCityChunk(chunk) {
