@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal Vietnam Homepage Visual Refresh V1</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f6;
+      --ink: #111816;
+      --muted: #7c8286;
+      --line: #dde3e0;
+      --card: rgba(255, 255, 255, 0.82);
+      --green: #258667;
+      --red: #ff3641;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+    }
+    h1, h2 {
+      font-family: "New York", Georgia, serif;
+      letter-spacing: 0;
+      margin: 0;
+    }
+    h1 { font-size: clamp(42px, 6vw, 82px); line-height: 0.95; }
+    h2 { font-size: clamp(32px, 4vw, 54px); line-height: 1.02; margin-top: 56px; }
+    p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 860px;
+    }
+    .hero {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: 0 24px 80px rgba(15, 23, 21, 0.08);
+    }
+    .recommendation {
+      margin-top: 28px;
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid #abd9c9;
+      background: #e8f5f0;
+    }
+    .recommendation strong { color: var(--green); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 24px;
+    }
+    figure {
+      margin: 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 18px 60px rgba(15, 23, 21, 0.07);
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      background: #fff;
+    }
+    figcaption {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .screens figure { padding: 12px; border-radius: 22px; }
+    .screens img { border-radius: 18px; }
+    .pillrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: #fff;
+      color: #4e5558;
+      font-size: 14px;
+    }
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>Homepage Visual Refresh V1</h1>
+      <p>Native-style storyboard packet for SpeakLocal Vietnam. The recommendation is a Hybrid Utility Home: immediate phrases and Search first, image-led category/city discovery below, and returning-user shelves only after real local state exists.</p>
+      <div class="recommendation">
+        <strong>Recommended direction:</strong> Direction 1 structure + Direction 2 image cards below essentials + Direction 3 modules only after saved, recent, or practice state exists.
+      </div>
+      <div class="pillrow">
+        <span class="pill">Docs-only</span>
+        <span class="pill">Native comps</span>
+        <span class="pill">No Swift edits</span>
+        <span class="pill">No mascot-led Home</span>
+      </div>
+    </section>
+
+    <h2>Recommendation</h2>
+    <div class="grid">
+      <figure>
+        <img src="assets/homepage-refresh-contact-sheet.png" alt="Homepage refresh recommendation contact sheet">
+        <figcaption>Contact sheet summarizing the recommended Hybrid Utility Home and the locked homepage rules.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/current-issue-resolution.png" alt="Current homepage issue and redesign rule">
+        <figcaption>Current issue versus redesign rule for phrase-card audio and navigation hierarchy.</figcaption>
+      </figure>
+    </div>
+
+    <h2>Three Directions</h2>
+    <div class="grid">
+      <figure>
+        <img src="assets/direction-1-conservative-native-refresh.png" alt="Direction 1 conservative native refresh storyboard">
+        <figcaption>Direction 1 keeps the current Home section logic and cleans card hierarchy, spacing, and audio/navigation affordances.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/direction-2-image-led-travel-gateway.png" alt="Direction 2 image-led travel gateway storyboard">
+        <figcaption>Direction 2 adds real Hanoi/category image cards as Browse collection entry points while preserving immediate phrase utility.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/direction-3-personalized-utility-home.png" alt="Direction 3 personalized utility home storyboard">
+        <figcaption>Direction 3 shows returning-user modules that appear only after real saved, recent, or practice state exists.</figcaption>
+      </figure>
+    </div>
+
+    <h2>Full-Size Screen Comps</h2>
+    <div class="screens">
+      <figure><img src="assets/screens/direction-1-top.png" alt="Direction 1 top of Home"><figcaption>Direction 1, top of Home</figcaption></figure>
+      <figure><img src="assets/screens/direction-1-mid.png" alt="Direction 1 mid Home"><figcaption>Direction 1, mid page</figcaption></figure>
+      <figure><img src="assets/screens/direction-1-bottom.png" alt="Direction 1 lower Home"><figcaption>Direction 1, lower Home</figcaption></figure>
+      <figure><img src="assets/screens/direction-2-top.png" alt="Direction 2 top of Home"><figcaption>Direction 2, top of Home</figcaption></figure>
+      <figure><img src="assets/screens/direction-2-mid.png" alt="Direction 2 mid Home"><figcaption>Direction 2, mid page</figcaption></figure>
+      <figure><img src="assets/screens/direction-2-bottom.png" alt="Direction 2 lower Home"><figcaption>Direction 2, lower Home</figcaption></figure>
+      <figure><img src="assets/screens/direction-3-top.png" alt="Direction 3 top of Home"><figcaption>Direction 3, top of Home</figcaption></figure>
+      <figure><img src="assets/screens/direction-3-mid.png" alt="Direction 3 mid Home"><figcaption>Direction 3, mid page</figcaption></figure>
+      <figure><img src="assets/screens/direction-3-bottom.png" alt="Direction 3 lower Home"><figcaption>Direction 3, lower Home</figcaption></figure>
+    </div>
+
+    <h2>Implementation Notes</h2>
+    <p>Phrase text and chevrons open canonical phrase pages. One red speaker button plays bundled audio. Image cards open Browse collection pages, not Search results. Keep the Home/admin dock and Search island stable while content scrolls underneath.</p>
+    <p>Supporting docs: <a href="README.md">README</a>, <a href="prompt-packet.md">prompt packet</a>, and <a href="peer-review.md">peer review</a>.</p>
+  </main>
+</body>
+</html>
