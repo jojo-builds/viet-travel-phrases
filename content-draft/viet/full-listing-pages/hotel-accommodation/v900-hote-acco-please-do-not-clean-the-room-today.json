@@ -47,19 +47,19 @@
         {
           "id": "chunk-1",
           "vietnamese": "Xin vui lòng",
-          "english": "starts the phrase",
+          "english": "please",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "không dọn phòng",
-          "english": "do not clean the room today detail",
+          "english": "yes/no question",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "ngày hôm nay",
-          "english": "finishes do not clean the room today",
+          "english": "join today",
           "audioKey": null
         },
         {

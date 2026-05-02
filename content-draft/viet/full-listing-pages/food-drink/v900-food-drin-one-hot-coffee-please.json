@@ -52,18 +52,12 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho một ly",
-          "english": "One hot coffee, please detail",
+          "vietnamese": "cho một ly cà phê nóng",
+          "english": "hot coffee",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cà phê nóng",
-          "english": "finishes One hot coffee, please",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Làm ơn cho một ly cà phê nóng",
           "english": "full phrase",
           "audioKey": null

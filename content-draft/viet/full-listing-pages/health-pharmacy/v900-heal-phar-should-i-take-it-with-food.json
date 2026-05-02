@@ -47,35 +47,29 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi có",
-          "english": "starts the phrase",
+          "english": "I have",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nên dùng nó",
-          "english": "Should I take it with food detail",
+          "vietnamese": "nên dùng nó cùng với thức",
+          "english": "should I take it with food",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cùng với thức",
-          "english": "Should I take it with food detail",
+          "vietnamese": "ăn",
+          "english": "public security word",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "ăn",
-          "english": "Should I take it with food detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
           "vietnamese": "Tôi có nên dùng nó cùng với thức ăn không?",
           "english": "full phrase",
           "audioKey": null

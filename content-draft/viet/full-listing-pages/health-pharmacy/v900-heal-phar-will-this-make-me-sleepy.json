@@ -52,24 +52,18 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "làm tôi buồn",
-          "english": "Will this make me sleepy detail",
+          "vietnamese": "làm tôi buồn ngủ",
+          "english": "will this make me sleepy",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "ngủ",
-          "english": "Will this make me sleepy detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Điều này có làm tôi buồn ngủ không?",
           "english": "full phrase",
           "audioKey": null

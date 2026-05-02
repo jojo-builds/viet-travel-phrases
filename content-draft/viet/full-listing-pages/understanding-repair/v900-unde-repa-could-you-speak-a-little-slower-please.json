@@ -52,24 +52,18 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nói chậm lại",
-          "english": "speak a little slower, please detail",
+          "vietnamese": "nói chậm lại một chút",
+          "english": "speak a little slower, please",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "một chút",
-          "english": "speak a little slower, please detail",
+          "vietnamese": "được không",
+          "english": "is it possible?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "asks if it is possible",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Bạn có thể nói chậm lại một chút được không?",
           "english": "full phrase",
           "audioKey": null

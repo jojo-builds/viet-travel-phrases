@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const crypto = require("crypto");
+const { execFileSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
@@ -16,6 +17,7 @@ const cityLibraryPath = path.join(familyRoot, "content-draft", "viet", "city-lib
 const practiceExpansionRoot = path.join(familyRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
 const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 const fullUniverseTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
+const breakdownRepairScriptPath = path.join(root, "scripts", "repair-viet-breakdown-glosses.js");
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const audioManifest = JSON.parse(fs.readFileSync(audioManifestPath, "utf8"));
@@ -404,7 +406,7 @@ const glossary = new Map(Object.entries({
   "hồ": "meter / clock",
   "nghĩ": "think",
   "chúng": "we",
-  "ta": "we",
+  "ta": "part of chúng ta",
   "bị": "got / passive marker",
   "nóng": "hot",
   "quá": "too / very",
@@ -412,8 +414,8 @@ const glossary = new Map(Object.entries({
   "thêm": "more / add",
   "khăn": "towel",
   "giữ": "keep / hold",
-  "bạc": "part of bạc xỉu coffee",
-  "xỉu": "part of bạc xỉu coffee",
+  "bạc": "sweet milk",
+  "xỉu": "coffee style",
   "mang": "bring / carry",
   "tính": "calculate / bill",
   "người": "person",
@@ -474,8 +476,8 @@ const glossary = new Map(Object.entries({
   "vừa": "just / recently",
   "tiếng": "language / sound",
   "ngay": "right away",
-  "tài": "driver word",
-  "xế": "driver word",
+  "tài": "driver",
+  "xế": "driver",
   "được": "can / okay",
 }));
 
@@ -973,8 +975,12 @@ const preferredBreakdownChunks = new Set([
   "anh/chi",
   "anh chi",
   "bac si",
+  "bac xiu",
   "bao lau",
   "bao nhieu",
+  "bat dau",
+  "bien nhan bao hiem",
+  "bao cao y te",
   "buu dien",
   "ca phe",
   "ca phe den",
@@ -993,6 +999,7 @@ const preferredBreakdownChunks = new Set([
   "dia diem moi",
   "dat tour",
   "da xay ra",
+  "diem gap",
   "di bo",
   "di thang",
   "dien thoai",
@@ -1003,6 +1010,7 @@ const preferredBreakdownChunks = new Set([
   "hanh ly",
   "ho chieu",
   "khach san",
+  "khan cap",
   "khong duong",
   "khong sao",
   "it cay",
@@ -1011,6 +1019,7 @@ const preferredBreakdownChunks = new Set([
   "lac duong",
   "may lanh",
   "mat khau",
+  "mat hang",
   "mua sim",
   "giam gia",
   "nha thuoc",
@@ -1030,6 +1039,7 @@ const preferredBreakdownChunks = new Set([
   "re trai",
   "say xe",
   "the hanh ly",
+  "tai xe",
   "the sim",
   "thi thuc",
   "chong mat",
@@ -1047,7 +1057,9 @@ const preferredBreakdownChunks = new Set([
   "toi muon",
   "toi tra",
   "tra phong",
+  "truoc khi di ngu",
   "truong hop",
+  "ung dung dich thuat",
   "viet xuong",
   "yen tinh",
   "tu tu",
@@ -1117,6 +1129,11 @@ const breakdownMeanings = new Map(Object.entries({
   "gia": "price",
   "bao nhieu": "how much",
   "bao lau": "how long",
+  "bac xiu": "sweet milk coffee",
+  "bao cao y te": "medical report",
+  "bat": "start",
+  "bat dau": "begin / start",
+  "bien nhan bao hiem": "receipt for insurance",
   "bot": "reduce / lower",
   "chut": "a little",
   "giup": "help",
@@ -1147,6 +1164,8 @@ const breakdownMeanings = new Map(Object.entries({
   "dat": "book / reserve",
   "dat tour": "booked a tour",
   "dien thoai": "phone",
+  "diem": "point",
+  "diem gap": "meeting point",
   "duoc khong": "is it possible?",
   "giam": "reduce",
   "giam gia": "lower the price",
@@ -1160,6 +1179,7 @@ const breakdownMeanings = new Map(Object.entries({
   "lam on": "please",
   "may lanh": "air conditioning",
   "mat khau": "password",
+  "mat hang": "item",
   "nha thuoc": "pharmacy",
   "nha ve sinh": "bathroom",
   "nhan phong": "check in",
@@ -1168,6 +1188,7 @@ const breakdownMeanings = new Map(Object.entries({
   "nuoc suoi": "bottled water",
   "phong": "room",
   "phong yen tinh": "quiet room",
+  "pass": "password",
   "re phai": "turn right",
   "re trai": "turn left",
   "an toan": "safe",
@@ -1189,11 +1210,15 @@ const breakdownMeanings = new Map(Object.entries({
   "thit lon": "pork",
   "tieng anh": "English",
   "thoi": "only / just",
+  "tai xe": "driver",
   "tra phong": "check out",
+  "truoc khi di ngu": "before bed",
   "truong hop": "case / situation",
-  "khan cap": "emergency",
+  "khan cap": "urgent / emergency",
   "thuong": "injury / medical help",
+  "ung dung dich thuat": "translation app",
   "tu tu": "slowly",
+  "wi fi": "Wi-Fi",
   "xe cuu thuong": "ambulance",
   "viet": "write",
   "viet xuong": "write down",
@@ -1227,9 +1252,9 @@ const exactBreakdownPieces = new Map(Object.entries({
 function fallbackBreakdownMeaning(vietnamese) {
   if (/^\d+$/.test(normalizedVietnameseKey(vietnamese))) return vietnamese;
   if (/^[A-ZĐ][\p{L}\p{M}'-]+(?:\s+[A-ZĐ][\p{L}\p{M}'-]+)*$/u.test(vietnamese)) {
-    return "proper name or place";
+    return "local name";
   }
-  return "context word";
+  return "meaning to keep";
 }
 
 function breakdownMeaning(vietnamese) {
@@ -1947,7 +1972,23 @@ function isCompactCityChunk(vietnamese) {
 }
 
 function splitProperNameChunk(vietnamese, english) {
-  return [cityChunk(vietnamese, english || "place name")];
+  return [cityChunk(vietnamese, english || "local place")];
+}
+
+function cityGeneratedLabel(label, english) {
+  if (!label) return cleanLabelForCityChunk(english);
+  if (/^(street|place|market|lake|beach|airport) name$/i.test(label)) {
+    return cleanLabelForCityChunk(english);
+  }
+  return label;
+}
+
+function cleanLabelForCityChunk(english) {
+  const text = String(english ?? "").trim();
+  if (!text || /^(proper name|place name|street name|market name|name starter|phrase piece)$/i.test(text)) {
+    return "local place";
+  }
+  return text;
 }
 
 function splitLongCityChunk(chunk) {
@@ -1976,7 +2017,7 @@ function splitLongCityChunk(chunk) {
     if (!match) continue;
     return pieces.flatMap(([template, label]) => {
       const value = template.replace(/\$(\d+)/g, (_, index) => match[Number(index)] ?? "").trim();
-      return splitLongCityChunk(cityChunk(value, label));
+      return splitLongCityChunk(cityChunk(value, cityGeneratedLabel(label, english)));
     });
   }
 
@@ -2498,6 +2539,17 @@ function collectAudioAudit(pages) {
   return { required, missing };
 }
 
+function runBreakdownGlossRepair() {
+  if (!fs.existsSync(breakdownRepairScriptPath)) {
+    return false;
+  }
+  execFileSync(process.execPath, [breakdownRepairScriptPath], {
+    cwd: familyRoot,
+    stdio: "inherit",
+  });
+  return true;
+}
+
 function main() {
   removeGeneratedSources();
 
@@ -2606,13 +2658,32 @@ function main() {
     missing: audioAudit.missing,
   }, null, 2)}\n`);
 
+  const repairedBreakdowns = runBreakdownGlossRepair();
+  const finalBundle = JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  const finalAudioAudit = collectAudioAudit(finalBundle.pages ?? []);
+  fs.writeFileSync(auditPath, `${JSON.stringify({
+    metadata: {
+      generatedAt: finalBundle.metadata?.generatedAt ?? bundle.metadata.generatedAt,
+      tierOneFamilyCount: starterFamilies.length,
+      cityLibraryPageCount: cityLibraryPages.length,
+      practiceExpansionPageCount: practiceExpansionPages.length,
+      requiredAudioCount: finalAudioAudit.required.length,
+      missingAudioCount: finalAudioAudit.missing.length,
+    },
+    required: finalAudioAudit.required,
+    missing: finalAudioAudit.missing,
+  }, null, 2)}\n`);
+
   console.log(`Tier 1 families: ${starterFamilies.length}`);
   console.log(`Authored resource main pages: ${pages.length}`);
   console.log(`Child pages: ${childPages.length}`);
   console.log(`Full-universe authored pages: ${fullUniversePages.length}`);
   console.log(`City library pages: ${cityLibraryPages.length}`);
   console.log(`Practice expansion pages: ${practiceExpansionPages.length}`);
-  console.log(`Missing assigned audio: ${audioAudit.missing.length}`);
+  console.log(`Missing assigned audio: ${finalAudioAudit.missing.length}`);
+  if (repairedBreakdowns) {
+    console.log("Repaired breakdown captions after generation");
+  }
   console.log(`Wrote ${path.relative(process.cwd(), outputPath)}`);
 }
 

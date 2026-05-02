@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Đây không phải",
-          "english": "starts the phrase",
+          "english": "yes/no question",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là nơi tôi",
-          "english": "This is not the place I meant detail",
+          "vietnamese": "là nơi tôi muốn nói",
+          "english": "the place I meant",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "muốn nói",
-          "english": "finishes This is not the place I meant",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Đây không phải là nơi tôi muốn nói",
           "english": "full phrase",
           "audioKey": null

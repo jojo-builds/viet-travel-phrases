@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Ứng dụng hiển",
-          "english": "starts the phrase",
+          "english": "app",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thị một tuyến",
-          "english": "app shows a different route detail",
+          "vietnamese": "thị một tuyến đường khác",
+          "english": "app shows a different route",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đường khác",
-          "english": "finishes app shows a different route",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Ứng dụng hiển thị một tuyến đường khác",
           "english": "full phrase",
           "audioKey": null

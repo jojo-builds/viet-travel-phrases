@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đã tìm",
-          "english": "starts the phrase",
+          "english": "I already / I did",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thấy nó, cảm",
-          "english": "I found it, thank you detail",
+          "vietnamese": "thấy nó, cảm ơn bạn",
+          "english": "found it, thank you",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "ơn bạn",
-          "english": "finishes I found it, thank you",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Tôi đã tìm thấy nó, cảm ơn bạn",
           "english": "full phrase",
           "audioKey": null

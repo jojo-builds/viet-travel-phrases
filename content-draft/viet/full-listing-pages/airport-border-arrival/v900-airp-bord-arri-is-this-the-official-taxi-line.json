@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Đây có phải",
-          "english": "sets up the question",
+          "english": "immigration line",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là tuyến taxi",
-          "english": "Is this the official taxi line detail",
+          "vietnamese": "là tuyến taxi chính thức",
+          "english": "is this the official taxi line",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "chính thức",
-          "english": "finishes Is this the official taxi line",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Đây có phải là tuyến taxi chính thức?",
           "english": "full phrase",
           "audioKey": null

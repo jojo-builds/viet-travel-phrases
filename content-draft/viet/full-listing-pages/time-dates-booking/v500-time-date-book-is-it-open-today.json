@@ -46,24 +46,18 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hôm nay có",
-          "english": "sets up the question",
+          "vietnamese": "Hôm nay có mở cửa",
+          "english": "open today",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "mở cửa",
-          "english": "Is it open today detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Hôm nay có mở cửa không?",
           "english": "full phrase",
           "audioKey": null

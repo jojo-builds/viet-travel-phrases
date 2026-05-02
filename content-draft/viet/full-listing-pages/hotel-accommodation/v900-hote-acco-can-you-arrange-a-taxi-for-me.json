@@ -52,30 +52,24 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "sắp xếp một",
-          "english": "arrange a taxi for me detail",
+          "vietnamese": "sắp xếp một chiếc taxi cho",
+          "english": "a taxi for me",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "chiếc taxi cho",
-          "english": "arrange a taxi for me detail",
+          "vietnamese": "tôi",
+          "english": "I / me",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "tôi",
-          "english": "arrange a taxi for me detail",
+          "vietnamese": "được không",
+          "english": "is it possible?",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "được không",
-          "english": "asks if it is possible",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
           "vietnamese": "Bạn có thể sắp xếp một chiếc taxi cho tôi được không?",
           "english": "full phrase",
           "audioKey": null

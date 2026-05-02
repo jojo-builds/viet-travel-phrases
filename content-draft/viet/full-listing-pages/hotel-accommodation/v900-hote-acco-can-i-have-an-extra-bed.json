@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi có",
-          "english": "sets up the request",
+          "english": "I have",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể có một",
-          "english": "have an extra bed detail",
+          "vietnamese": "thể có một giường phụ",
+          "english": "an extra bed",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "giường phụ",
-          "english": "have an extra bed detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi có thể có một giường phụ không?",
           "english": "full phrase",
           "audioKey": null

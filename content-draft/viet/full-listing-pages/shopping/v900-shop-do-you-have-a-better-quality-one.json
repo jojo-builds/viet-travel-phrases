@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có cái",
-          "english": "starts the phrase",
+          "english": "do you have this",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nào chất lượng",
-          "english": "Do you have a better quality one detail",
+          "vietnamese": "nào chất lượng hơn",
+          "english": "a better quality one",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hơn",
-          "english": "Do you have a better quality one detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Bạn có cái nào chất lượng hơn không?",
           "english": "full phrase",
           "audioKey": null

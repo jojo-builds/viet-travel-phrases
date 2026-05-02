@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Đây có phải",
-          "english": "sets up the question",
+          "english": "street",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là đường phố",
-          "english": "Is this the correct street detail",
+          "vietnamese": "là đường phố chính xác",
+          "english": "is this the correct street",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "chính xác",
-          "english": "Is this the correct street detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Đây có phải là đường phố chính xác không?",
           "english": "full phrase",
           "audioKey": null

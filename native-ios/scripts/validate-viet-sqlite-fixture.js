@@ -705,7 +705,7 @@ function main() {
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM breakdown_token
-    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'question marker', 'main phrase piece', 'extra detail', 'the main place or thing', 'first name part', 'second name part', 'middle name part', 'final name part')
+    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'question marker', 'main phrase piece', 'extra detail', 'the main place or thing', 'first name part', 'second name part', 'middle name part', 'final name part', 'driver word', 'phrase piece')
        OR lower(english_gloss) LIKE '%question marker%';
   `), "internal breakdown labels");
 
@@ -898,6 +898,7 @@ function main() {
   assertEqual(report.validation.pageEnglishTitlePhraseTextMismatchCount, 0, "report page English title mismatch count");
   assertEqual(report.validation.audioUsageMismatchCount, 0, "report audio mismatch count");
   assertEqual(report.validation.badBreakdownGlossCount, 0, "report bad breakdown gloss count");
+  assertEqual(report.validation.duplicateBreakdownGlossCount, 0, "report duplicate breakdown gloss count");
   assertEqual(report.validation.bannedUserFacingMatchCount, 0, "report banned wording count");
 
   console.log(JSON.stringify({

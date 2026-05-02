@@ -52,24 +52,18 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "bao gồm bảo",
-          "english": "Does the rental include insurance detail",
+          "vietnamese": "bao gồm bảo hiểm",
+          "english": "does the rental include insurance",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hiểm",
-          "english": "Does the rental include insurance detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Giá thuê có bao gồm bảo hiểm không?",
           "english": "full phrase",
           "audioKey": null

@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi có",
-          "english": "sets up the request",
+          "english": "I have",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ăn súp",
-          "english": "have soup on the side detail",
+          "vietnamese": "thể ăn súp bên cạnh",
+          "english": "soup on the side",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bên cạnh",
-          "english": "have soup on the side detail",
+          "vietnamese": "được không",
+          "english": "is it possible?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "asks if it is possible",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi có thể ăn súp bên cạnh được không?",
           "english": "full phrase",
           "audioKey": null

@@ -52,24 +52,18 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đưa tôi vào",
-          "english": "put me on the waiting list detail",
+          "vietnamese": "đưa tôi vào danh sách chờ",
+          "english": "put me on the waiting list",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "danh sách chờ",
-          "english": "put me on the waiting list detail",
+          "vietnamese": "được không",
+          "english": "is it possible?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "asks if it is possible",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Bạn có thể đưa tôi vào danh sách chờ được không?",
           "english": "full phrase",
           "audioKey": null

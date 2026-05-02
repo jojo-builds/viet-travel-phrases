@@ -40,18 +40,12 @@
         },
         {
           "id": "airport-pickup-clearer-piece-3",
-          "vietnamese": "tài",
-          "english": "driver word",
-          "audioKey": "breakdown-v500-airp-bord-arri-my-driver-canceled-first"
+          "vietnamese": "tài xế",
+          "english": "driver",
+          "audioKey": null
         },
         {
           "id": "airport-pickup-clearer-piece-4",
-          "vietnamese": "xế",
-          "english": "driver word",
-          "audioKey": "breakdown-authored-xe-6c2eb6f528"
-        },
-        {
-          "id": "airport-pickup-clearer-piece-5",
           "vietnamese": "ở đâu?",
           "english": "where?",
           "audioKey": "breakdown-where"
@@ -59,7 +53,7 @@
         {
           "id": "airport-pickup-clearer-full",
           "vietnamese": "Tôi gặp tài xế ở đâu?",
-          "english": "Where do I meet the driver?",
+          "english": "full phrase",
           "audioKey": "airport-pickup-clearer"
         }
       ],

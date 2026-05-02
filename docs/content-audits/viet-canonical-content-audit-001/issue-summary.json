@@ -1,6 +1,6 @@
 {
   "taskID": "TASK-VIET-CANONICAL-CONTENT-AUDIT-001",
-  "generatedAt": "2026-05-02T06:33:29.513Z",
+  "generatedAt": "2026-05-02T15:00:46.114Z",
   "databasePath": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
   "canonicalPageCount": 3038,
   "sourcePhraseCount": 3046,
@@ -19,12 +19,12 @@
     "aliases": 3970,
     "pageCategories": 16592,
     "sections": 21721,
-    "sectionItems": 43281,
-    "breakdownTokens": 11369,
+    "sectionItems": 43166,
+    "breakdownTokens": 11254,
     "relations": 27834,
     "searchDocuments": 3046,
     "audioAssets": 3756,
-    "audioUsages": 15022,
+    "audioUsages": 14989,
     "audioTextDedupeRows": 2343,
     "missingAudioAuditRows": 2094
   },

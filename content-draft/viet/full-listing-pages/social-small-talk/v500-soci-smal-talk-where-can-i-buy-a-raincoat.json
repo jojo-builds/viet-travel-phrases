@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi có",
-          "english": "names what you are looking for",
+          "english": "I have",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể mua áo",
+          "vietnamese": "thể mua áo mưa",
           "english": "buy",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "mưa",
-          "english": "buy a raincoat detail",
+          "vietnamese": "ở đâu",
+          "english": "where?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "ở đâu",
-          "english": "asks where",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi có thể mua áo mưa ở đâu?",
           "english": "full phrase",
           "audioKey": null

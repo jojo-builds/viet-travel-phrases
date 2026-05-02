@@ -46,20 +46,14 @@
         },
         {
           "id": "emergency-emergency-piece-4",
-          "vietnamese": "khẩn",
-          "english": "urgent",
-          "audioKey": "breakdown-authored-khan-7988841eb5"
-        },
-        {
-          "id": "emergency-emergency-piece-5",
-          "vietnamese": "cấp",
-          "english": "urgent",
-          "audioKey": "breakdown-authored-cap-2f1dbad871"
+          "vietnamese": "khẩn cấp",
+          "english": "urgent / emergency",
+          "audioKey": null
         },
         {
           "id": "emergency-emergency-full",
           "vietnamese": "Đây là trường hợp khẩn cấp",
-          "english": "This is an emergency",
+          "english": "full phrase",
           "audioKey": "emergency-emergency"
         }
       ],

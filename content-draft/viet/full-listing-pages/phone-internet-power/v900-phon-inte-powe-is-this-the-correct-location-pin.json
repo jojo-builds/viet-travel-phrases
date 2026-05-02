@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Đây có phải",
-          "english": "sets up the question",
+          "english": "location pin",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là pin vị",
-          "english": "Is this the correct location pin detail",
+          "vietnamese": "là pin vị trí chính xác",
+          "english": "is this the correct location pin",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "trí chính xác",
-          "english": "Is this the correct location pin detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Đây có phải là pin vị trí chính xác không?",
           "english": "full phrase",
           "audioKey": null

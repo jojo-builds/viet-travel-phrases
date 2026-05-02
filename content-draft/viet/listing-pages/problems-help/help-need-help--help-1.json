@@ -29,7 +29,7 @@
         {
           "id": "help-1-piece-1",
           "vietnamese": "Anh/chị",
-          "english": "you (polite)",
+          "english": "sir or ma'am",
           "audioKey": "breakdown-repair-english-help-first"
         },
         {
@@ -41,13 +41,13 @@
         {
           "id": "help-1-piece-3",
           "vietnamese": "với",
-          "english": "please / with",
+          "english": "with / to",
           "audioKey": "breakdown-authored-voi-25e5621456"
         },
         {
           "id": "help-1-full",
           "vietnamese": "Anh/chị giúp tôi với",
-          "english": "Can you help me?",
+          "english": "full phrase",
           "audioKey": "help-1"
         }
       ],

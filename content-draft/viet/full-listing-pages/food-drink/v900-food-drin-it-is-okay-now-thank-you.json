@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Bây giờ thì",
-          "english": "starts the phrase",
+          "english": "now it is",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ổn rồi, cảm",
-          "english": "It is okay now, thank you detail",
+          "vietnamese": "ổn rồi, cảm ơn bạn",
+          "english": "okay now, thank you",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "ơn bạn",
-          "english": "finishes It is okay now, thank you",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Bây giờ thì ổn rồi, cảm ơn bạn",
           "english": "full phrase",
           "audioKey": null

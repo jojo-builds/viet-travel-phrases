@@ -52,24 +52,18 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thịt lợn, thịt",
-          "english": "Is this pork, beef, or chicken detail",
+          "vietnamese": "thịt lợn, thịt bò hay thịt",
+          "english": "meat",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bò hay thịt",
-          "english": "Is this pork, beef, or chicken detail",
+          "vietnamese": "gà",
+          "english": "is this pork, beef, or chicken",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "gà",
-          "english": "finishes Is this pork, beef, or chicken",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
           "english": "full phrase",
           "audioKey": null

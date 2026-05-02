@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi có",
-          "english": "names what you are looking for",
+          "english": "I have",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể nhận hành",
-          "english": "pick up my luggage detail",
+          "vietnamese": "thể nhận hành lý của mình",
+          "english": "pick up my luggage",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "lý của mình",
-          "english": "pick up my luggage detail",
+          "vietnamese": "ở đâu",
+          "english": "where?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "ở đâu",
-          "english": "asks where",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi có thể nhận hành lý của mình ở đâu?",
           "english": "full phrase",
           "audioKey": null

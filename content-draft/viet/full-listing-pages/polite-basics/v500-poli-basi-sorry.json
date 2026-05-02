@@ -47,20 +47,18 @@
         {
           "id": "chunk-1",
           "vietnamese": "Lấy làm",
-          "english": "starts the phrase",
-          "audioKey": null
+          "english": "feel regret"
         },
         {
           "id": "chunk-2",
           "vietnamese": "tiếc",
-          "english": "finishes Sorry",
-          "audioKey": null
+          "english": "regret / apology"
         },
         {
           "id": "chunk-3",
           "vietnamese": "Lấy làm tiếc",
           "english": "full phrase",
-          "audioKey": null
+          "audioKey": "v500-poli-basi-sorry"
         }
       ]
     },

@@ -28,18 +28,12 @@
       "breakdown": [
         {
           "id": "sight-2-piece-1",
-          "vietnamese": "Bắt",
-          "english": "proper name or place",
-          "audioKey": "breakdown-time-7-piece-3"
+          "vietnamese": "Bắt đầu",
+          "english": "begin / start",
+          "audioKey": "breakdown-sight-start-subject"
         },
         {
           "id": "sight-2-piece-2",
-          "vietnamese": "đầu",
-          "english": "head",
-          "audioKey": "breakdown-time-7-piece-4"
-        },
-        {
-          "id": "sight-2-piece-3",
           "vietnamese": "ở đâu?",
           "english": "where?",
           "audioKey": "breakdown-where"
@@ -47,7 +41,7 @@
         {
           "id": "sight-2-full",
           "vietnamese": "Bắt đầu ở đâu?",
-          "english": "Where do we start?",
+          "english": "full phrase",
           "audioKey": "sight-2"
         }
       ],

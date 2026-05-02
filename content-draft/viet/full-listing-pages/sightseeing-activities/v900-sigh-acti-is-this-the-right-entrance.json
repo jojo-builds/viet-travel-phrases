@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Đây có phải",
-          "english": "sets up the question",
+          "english": "entrance",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là lối vào",
-          "english": "Is this the right entrance detail",
+          "vietnamese": "là lối vào bên phải",
+          "english": "is this the right entrance",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bên phải",
-          "english": "Is this the right entrance detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Đây có phải là lối vào bên phải không?",
           "english": "full phrase",
           "audioKey": null

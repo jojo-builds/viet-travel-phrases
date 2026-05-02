@@ -29,31 +29,25 @@
         {
           "id": "coffee-3-piece-1",
           "vietnamese": "Cho tôi",
-          "english": "can I have",
+          "english": "for me / please",
           "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
         },
         {
           "id": "coffee-3-piece-2",
-          "vietnamese": "bạc",
-          "english": "part of bạc xỉu coffee",
-          "audioKey": "breakdown-authored-bac-8a73542df7"
+          "vietnamese": "bạc xỉu",
+          "english": "sweet milk coffee",
+          "audioKey": null
         },
         {
           "id": "coffee-3-piece-3",
-          "vietnamese": "xỉu",
-          "english": "part of bạc xỉu coffee",
-          "audioKey": "breakdown-authored-xiu-d6fdbab10c"
-        },
-        {
-          "id": "coffee-3-piece-4",
           "vietnamese": "đá",
-          "english": "ice",
+          "english": "ice / iced",
           "audioKey": "breakdown-coffee-1-piece-7"
         },
         {
           "id": "coffee-3-full",
           "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
+          "english": "full phrase",
           "audioKey": "coffee-3"
         }
       ],

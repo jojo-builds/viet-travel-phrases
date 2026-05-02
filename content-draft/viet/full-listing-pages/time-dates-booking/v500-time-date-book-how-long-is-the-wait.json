@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Thời gian chờ",
-          "english": "sets up the question",
+          "english": "price",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đợi là bao",
-          "english": "How long is the wait detail",
+          "vietnamese": "đợi là bao lâu",
+          "english": "how long is the wait",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "lâu",
-          "english": "finishes How long is the wait",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Thời gian chờ đợi là bao lâu?",
           "english": "full phrase",
           "audioKey": null

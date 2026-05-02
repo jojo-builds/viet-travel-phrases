@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cảm thấy",
-          "english": "starts the phrase",
+          "english": "I feel",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "không an toàn,",
-          "english": "I feel unsafe, please stop detail",
+          "english": "not safe",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "xin hãy dừng",
-          "english": "I feel unsafe, please stop detail",
+          "vietnamese": "xin hãy dừng lại",
+          "english": "please / ask",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "lại",
-          "english": "finishes I feel unsafe, please stop",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi cảm thấy không an toàn, xin hãy dừng lại",
           "english": "full phrase",
           "audioKey": null

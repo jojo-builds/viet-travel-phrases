@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đang cố",
-          "english": "starts the phrase",
+          "english": "I already / I did",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "gắng nhưng không",
-          "english": "I’m trying, but I don’t know the right... detail",
+          "english": "yes/no question",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "biết dùng từ",
-          "english": "I’m trying, but I don’t know the right... detail",
+          "vietnamese": "biết dùng từ thích hợp",
+          "english": "i’m trying, but I don’t know the right",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "thích hợp",
-          "english": "finishes I’m trying, but I don’t know the right...",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi đang cố gắng nhưng không biết dùng từ thích hợp",
           "english": "full phrase",
           "audioKey": null

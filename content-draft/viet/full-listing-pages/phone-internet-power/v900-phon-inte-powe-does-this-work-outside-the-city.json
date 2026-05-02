@@ -47,35 +47,29 @@
         {
           "id": "chunk-1",
           "vietnamese": "Cái này",
-          "english": "this one / this",
+          "english": "this one",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "có hoạt động",
-          "english": "Does this work outside the city detail",
+          "english": "does it work?",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bên ngoài thành",
-          "english": "Does this work outside the city detail",
+          "vietnamese": "bên ngoài thành phố",
+          "english": "does this work outside the city",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "phố",
-          "english": "Does this work outside the city detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
           "vietnamese": "Cái này có hoạt động bên ngoài thành phố không?",
           "english": "full phrase",
           "audioKey": null

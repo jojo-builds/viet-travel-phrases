@@ -79,6 +79,19 @@ const patternHeavyCopy = [
 ];
 
 const weakBreakdownPatterns = [
+  { id: "trailing_detail", pattern: /\bdetail$/i },
+  { id: "starts_phrase", pattern: /^starts?\s+(?:the\s+)?phrase\b/i },
+  { id: "finishes_phrase", pattern: /^finishes?\b/i },
+  { id: "sets_up_phrase", pattern: /^sets up\b/i },
+  { id: "part_of_reply", pattern: /^part of\b/i },
+  { id: "proper_name", pattern: /^proper name\b/i },
+  { id: "place_name", pattern: /^place name$/i },
+  { id: "name_starter", pattern: /^name starter$/i },
+  { id: "street_name", pattern: /^street name$/i },
+  { id: "market_name", pattern: /^market name$/i },
+  { id: "driver_word", pattern: /^driver word$/i },
+  { id: "phrase_piece", pattern: /^phrase piece$/i },
+  { id: "names_generic", pattern: /^names\b/i },
   { id: "key_word", pattern: /^key word$/i },
   { id: "phrase_ending", pattern: /^phrase ending$/i },
   { id: "generic_word", pattern: /^word$/i },
@@ -96,6 +109,8 @@ const weakBreakdownPatterns = [
   { id: "final_name_part", pattern: /^final name part$/i },
   { id: "soft_reassurance", pattern: /^soft reassurance$/i },
   { id: "context_word", pattern: /^context word$/i },
+  { id: "meaning_to_keep", pattern: /^meaning to keep$/i },
+  { id: "meaningful_phrase_part", pattern: /^meaningful phrase part$/i },
 ];
 
 function run(command, args) {
@@ -233,6 +248,20 @@ function hasInteractiveContent(section) {
   return Number(section.phrase_item_count) > 0 || Number(section.breakdown_item_count) > 0;
 }
 
+function duplicateNonFinalBreakdownLabels(breakdownRows) {
+  if (breakdownRows.length < 3) return [];
+  const maxOrder = Math.max(...breakdownRows.map((row) => Number(row.sort_order)));
+  const labelRows = new Map();
+  for (const row of breakdownRows) {
+    if (Number(row.sort_order) >= maxOrder) continue;
+    const label = normalize(row.english_gloss);
+    if (!label) continue;
+    if (!labelRows.has(label)) labelRows.set(label, []);
+    labelRows.get(label).push(row);
+  }
+  return [...labelRows.values()].filter((rows) => rows.length > 1);
+}
+
 function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourcePath) {
   const issues = [];
   const fullText = [
@@ -273,6 +302,14 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
       .map((row) => `${row.token_text}: ${row.english_gloss}`);
     if (weakTokens.length > 0) {
       issues.push(issue("weak_breakdown_label", "needs_authored_review", `Weak or internal breakdown labels: ${weakTokens.slice(0, 4).join("; ")}`));
+    }
+    const duplicateLabels = duplicateNonFinalBreakdownLabels(breakdownRows);
+    if (duplicateLabels.length > 0) {
+      issues.push(issue(
+        "duplicate_breakdown_label",
+        "needs_authored_review",
+        `Repeated non-final breakdown labels: ${duplicateLabels.slice(0, 3).map((rows) => `${rows[0].english_gloss} (${rows.map((row) => row.token_text).join(" + ")})`).join("; ")}`
+      ));
     }
     if (breakdownRows.length === 1 && String(page.title).split(/\s+/).filter(Boolean).length > 1) {
       issues.push(issue("single_card_multiword_breakdown", "needs_authored_review", "Multiword phrase has only one breakdown card."));

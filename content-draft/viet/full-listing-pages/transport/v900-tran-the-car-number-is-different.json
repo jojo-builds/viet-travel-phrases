@@ -46,21 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Số xe khác",
-          "english": "starts the phrase",
-          "audioKey": null
+          "vietnamese": "Số xe",
+          "english": "car number"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hẳn",
-          "english": "finishes car number is different",
-          "audioKey": null
+          "vietnamese": "khác hẳn",
+          "english": "different"
         },
         {
           "id": "chunk-3",
           "vietnamese": "Số xe khác hẳn",
           "english": "full phrase",
-          "audioKey": null
+          "audioKey": "v900-tran-the-car-number-is-different"
         }
       ]
     },

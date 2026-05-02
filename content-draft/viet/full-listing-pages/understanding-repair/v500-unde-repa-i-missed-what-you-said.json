@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đã bỏ",
-          "english": "starts the phrase",
+          "english": "I already / I did",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lỡ những gì",
-          "english": "I missed what you said detail",
+          "vietnamese": "lỡ những gì bạn nói",
+          "english": "missed what you said",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bạn nói",
-          "english": "finishes I missed what you said",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Tôi đã bỏ lỡ những gì bạn nói",
           "english": "full phrase",
           "audioKey": null

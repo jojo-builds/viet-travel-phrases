@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Đây có phải",
-          "english": "sets up the question",
+          "english": "immigration line",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là đường nhập",
-          "english": "Is this the correct immigration line detail",
+          "vietnamese": "là đường nhập cư chính xác",
+          "english": "is this the correct immigration line",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cư chính xác",
-          "english": "Is this the correct immigration line detail",
+          "vietnamese": "không",
+          "english": "no / not",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "yes/no ending",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Đây có phải là đường nhập cư chính xác không?",
           "english": "full phrase",
           "audioKey": null

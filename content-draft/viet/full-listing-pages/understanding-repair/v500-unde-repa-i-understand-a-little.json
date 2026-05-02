@@ -46,21 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi hiểu một",
-          "english": "starts the phrase",
-          "audioKey": null
+          "vietnamese": "Tôi hiểu",
+          "english": "I understand"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "chút",
-          "english": "finishes I understand a little",
-          "audioKey": null
+          "vietnamese": "một chút",
+          "english": "a little"
         },
         {
           "id": "chunk-3",
           "vietnamese": "Tôi hiểu một chút",
           "english": "full phrase",
-          "audioKey": null
+          "audioKey": "v500-unde-repa-i-understand-a-little"
         }
       ]
     },

@@ -28,30 +28,24 @@
       "breakdown": [
         {
           "id": "v500-shop-how-much-is-this-item-piece-1",
-          "vietnamese": "Mặt",
-          "english": "proper name or place",
-          "audioKey": "breakdown-v500-shop-how-much-is-this-item-first"
+          "vietnamese": "Mặt hàng",
+          "english": "item",
+          "audioKey": null
         },
         {
           "id": "v500-shop-how-much-is-this-item-piece-2",
-          "vietnamese": "hàng",
-          "english": "item / goods",
-          "audioKey": "breakdown-v500-loca-serv-ever-task-one-item-is-missing-piece-3"
-        },
-        {
-          "id": "v500-shop-how-much-is-this-item-piece-3",
           "vietnamese": "này",
           "english": "this",
           "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
         },
         {
-          "id": "v500-shop-how-much-is-this-item-piece-4",
+          "id": "v500-shop-how-much-is-this-item-piece-3",
           "vietnamese": "giá",
           "english": "price",
           "audioKey": "breakdown-price-5-first"
         },
         {
-          "id": "v500-shop-how-much-is-this-item-piece-5",
+          "id": "v500-shop-how-much-is-this-item-piece-4",
           "vietnamese": "bao nhiêu",
           "english": "how much",
           "audioKey": "breakdown-authored-bao-nhieu-415a7b69fa"
@@ -59,7 +53,7 @@
         {
           "id": "v500-shop-how-much-is-this-item-full",
           "vietnamese": "Mặt hàng này giá bao nhiêu?",
-          "english": "How much is this item?",
+          "english": "full phrase",
           "audioKey": "v500-shop-how-much-is-this-item"
         }
       ],

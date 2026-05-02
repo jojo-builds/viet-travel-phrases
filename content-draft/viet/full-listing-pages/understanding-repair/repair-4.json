@@ -46,21 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Ý anh/chị là",
-          "english": "sets up the question",
-          "audioKey": null
+          "vietnamese": "Ý anh/chị",
+          "english": "your meaning"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cái nào",
-          "english": "finishes Which one do you mean",
-          "audioKey": null
+          "vietnamese": "là cái nào",
+          "english": "is which one?"
         },
         {
           "id": "chunk-3",
           "vietnamese": "Ý anh/chị là cái nào?",
           "english": "full phrase",
-          "audioKey": null
+          "audioKey": "repair-4"
         }
       ]
     },

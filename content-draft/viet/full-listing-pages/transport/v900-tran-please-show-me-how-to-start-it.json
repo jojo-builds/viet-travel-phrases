@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Hãy chỉ cho",
-          "english": "starts the phrase",
+          "english": "please do",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi cách bắt",
-          "english": "show me how to start it detail",
+          "vietnamese": "tôi cách bắt đầu nó",
+          "english": "how to start it",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đầu nó",
-          "english": "finishes show me how to start it",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Hãy chỉ cho tôi cách bắt đầu nó",
           "english": "full phrase",
           "audioKey": null

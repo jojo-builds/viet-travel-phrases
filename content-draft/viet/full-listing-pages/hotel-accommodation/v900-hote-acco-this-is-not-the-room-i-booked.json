@@ -47,19 +47,19 @@
         {
           "id": "chunk-1",
           "vietnamese": "Đây không phải",
-          "english": "starts the phrase",
+          "english": "yes/no question",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "là phòng tôi",
-          "english": "This is not the room I booked detail",
+          "english": "room",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "đã đặt",
-          "english": "finishes This is not the room I booked",
+          "english": "book / reserve",
           "audioKey": null
         },
         {

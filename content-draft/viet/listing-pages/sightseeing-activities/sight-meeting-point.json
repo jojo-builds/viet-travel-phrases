@@ -28,18 +28,12 @@
       "breakdown": [
         {
           "id": "sight-5-piece-1",
-          "vietnamese": "Điểm",
-          "english": "proper name or place",
-          "audioKey": "breakdown-v900-dire-navi-can-you-point-out-a-nearby-landmark-piece-7"
+          "vietnamese": "Điểm gặp",
+          "english": "meeting point",
+          "audioKey": "breakdown-sight-meeting-point-subject"
         },
         {
           "id": "sight-5-piece-2",
-          "vietnamese": "gặp",
-          "english": "meet",
-          "audioKey": "breakdown-v900-time-date-book-great-see-you-then-piece-3"
-        },
-        {
-          "id": "sight-5-piece-3",
           "vietnamese": "ở đâu?",
           "english": "where?",
           "audioKey": "breakdown-where"
@@ -47,7 +41,7 @@
         {
           "id": "sight-5-full",
           "vietnamese": "Điểm gặp ở đâu?",
-          "english": "Where is the meeting point?",
+          "english": "full phrase",
           "audioKey": "sight-5"
         }
       ],

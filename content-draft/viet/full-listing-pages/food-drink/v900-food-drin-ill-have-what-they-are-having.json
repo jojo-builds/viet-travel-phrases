@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi sẽ có",
-          "english": "starts the phrase",
+          "english": "I will",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "những gì họ",
-          "english": "I’ll have what they are having detail",
+          "vietnamese": "những gì họ đang có",
+          "english": "what they are having",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đang có",
-          "english": "finishes I’ll have what they are having",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Tôi sẽ có những gì họ đang có",
           "english": "full phrase",
           "audioKey": null

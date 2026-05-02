@@ -46,21 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Nơi nào ít",
-          "english": "names what you are looking for",
-          "audioKey": null
+          "vietnamese": "Nơi nào",
+          "english": "which place"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đông đúc hơn",
-          "english": "finishes less crowded",
-          "audioKey": null
+          "vietnamese": "ít đông đúc hơn",
+          "english": "less crowded"
         },
         {
           "id": "chunk-3",
           "vietnamese": "Nơi nào ít đông đúc hơn?",
           "english": "full phrase",
-          "audioKey": null
+          "audioKey": "v900-sigh-acti-where-is-less-crowded"
         }
       ]
     },

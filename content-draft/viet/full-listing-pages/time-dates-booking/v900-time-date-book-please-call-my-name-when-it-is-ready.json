@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Hãy gọi tên",
-          "english": "starts the phrase",
+          "english": "call",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi khi nó",
-          "english": "call my name when it is ready detail",
+          "vietnamese": "tôi khi nó sẵn sàng",
+          "english": "call my name when it is ready",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "sẵn sàng",
-          "english": "finishes call my name when it is ready",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Hãy gọi tên tôi khi nó sẵn sàng",
           "english": "full phrase",
           "audioKey": null

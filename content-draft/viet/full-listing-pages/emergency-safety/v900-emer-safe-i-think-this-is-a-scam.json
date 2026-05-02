@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi nghĩ đây",
-          "english": "starts the phrase",
+          "english": "I think",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là một trò",
-          "english": "I think this is a scam detail",
+          "vietnamese": "là một trò lừa đảo",
+          "english": "a scam",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "lừa đảo",
-          "english": "finishes I think this is a scam",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Tôi nghĩ đây là một trò lừa đảo",
           "english": "full phrase",
           "audioKey": null

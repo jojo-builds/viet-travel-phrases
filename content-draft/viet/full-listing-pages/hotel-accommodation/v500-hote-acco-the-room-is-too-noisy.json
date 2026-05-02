@@ -47,29 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi không",
-          "english": "I do not / cannot",
+          "english": "I do not",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ngủ được",
-          "english": "I cannot sleep because it is too noisy detail",
+          "vietnamese": "thể ngủ được vì quá ồn ào",
+          "english": "too noisy to sleep",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "vì quá ồn",
-          "english": "I cannot sleep because it is too noisy detail",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
-          "vietnamese": "ào",
-          "english": "finishes I cannot sleep because it is too noisy",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi không thể ngủ được vì quá ồn ào",
           "english": "full phrase",
           "audioKey": null

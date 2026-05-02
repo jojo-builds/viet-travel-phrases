@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi không",
-          "english": "I do not / cannot",
+          "english": "I do not",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ăn món",
-          "english": "I cannot eat this because of an allergy detail",
+          "vietnamese": "thể ăn món này vì bị",
+          "english": "cannot eat this because",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "này vì bị",
-          "english": "I cannot eat this because of an allergy detail",
+          "vietnamese": "dị ứng",
+          "english": "go",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "dị ứng",
-          "english": "finishes I cannot eat this because of an allergy",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi không thể ăn món này vì bị dị ứng",
           "english": "full phrase",
           "audioKey": null

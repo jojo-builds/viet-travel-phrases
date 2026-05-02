@@ -40,15 +40,8 @@
         },
         {
           "id": "transport-lost-piece-3",
-          "vietnamese": "chúng",
-          "english": "we",
-          "audioKey": "breakdown-money-premium-split-payment-first"
-        },
-        {
-          "id": "transport-lost-piece-4",
-          "vietnamese": "ta",
-          "english": "we",
-          "audioKey": "breakdown-authored-ta-00a6ba21da"
+          "vietnamese": "chúng ta",
+          "english": "we"
         },
         {
           "id": "transport-lost-piece-5",
@@ -71,7 +64,7 @@
         {
           "id": "transport-lost-full",
           "vietnamese": "Tôi nghĩ chúng ta bị lạc rồi",
-          "english": "I think we are lost",
+          "english": "full phrase",
           "audioKey": "transport-lost"
         }
       ],

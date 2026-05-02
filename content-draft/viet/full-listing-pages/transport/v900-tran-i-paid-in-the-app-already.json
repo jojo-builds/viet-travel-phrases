@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đã thanh",
-          "english": "starts the phrase",
+          "english": "I already / I did",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "toán trong ứng",
-          "english": "I paid in the app already detail",
+          "vietnamese": "toán trong ứng dụng rồi",
+          "english": "paid in the app already",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "dụng rồi",
-          "english": "finishes I paid in the app already",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Tôi đã thanh toán trong ứng dụng rồi",
           "english": "full phrase",
           "audioKey": null

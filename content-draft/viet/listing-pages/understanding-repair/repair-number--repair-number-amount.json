@@ -29,7 +29,7 @@
         {
           "id": "repair-number-amount-piece-1",
           "vietnamese": "Anh/chị",
-          "english": "you (polite)",
+          "english": "sir or ma'am",
           "audioKey": "breakdown-repair-english-help-first"
         },
         {
@@ -41,7 +41,7 @@
         {
           "id": "repair-number-amount-piece-3",
           "vietnamese": "nói",
-          "english": "speak / say",
+          "english": "say / speak",
           "audioKey": "breakdown-problems-3-first"
         },
         {
@@ -53,7 +53,7 @@
         {
           "id": "repair-number-amount-full",
           "vietnamese": "Anh/chị vừa nói bao nhiêu?",
-          "english": "How much did you say?",
+          "english": "full phrase",
           "audioKey": "repair-number-amount"
         }
       ],

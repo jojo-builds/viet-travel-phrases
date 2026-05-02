@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "starts the phrase",
+          "english": "I have / got",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ngộ độc thực",
-          "english": "I have food poisoning detail",
+          "vietnamese": "ngộ độc thực phẩm",
+          "english": "food poisoning",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "phẩm",
-          "english": "finishes I have food poisoning",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Tôi bị ngộ độc thực phẩm",
           "english": "full phrase",
           "audioKey": null

@@ -29,25 +29,18 @@
         {
           "id": "taxi-6-piece-1",
           "vietnamese": "Chờ tôi",
-          "english": "can I have",
+          "english": "for me / please",
           "audioKey": "breakdown-authored-cho-toi-588928baee"
         },
         {
           "id": "taxi-6-piece-2",
-          "vietnamese": "năm",
-          "english": "five",
-          "audioKey": "breakdown-taxi-6-piece-3"
-        },
-        {
-          "id": "taxi-6-piece-3",
-          "vietnamese": "phút",
-          "english": "minutes",
-          "audioKey": "breakdown-taxi-6-piece-4"
+          "vietnamese": "năm phút",
+          "english": "five minutes"
         },
         {
           "id": "taxi-6-full",
           "vietnamese": "Chờ tôi năm phút",
-          "english": "Wait for me five minutes",
+          "english": "full phrase",
           "audioKey": "taxi-6"
         }
       ],

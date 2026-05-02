@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Đó có phải",
-          "english": "sets up the question",
+          "english": "is that",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là tổng số",
-          "english": "Is that the final total detail",
+          "vietnamese": "là tổng số cuối cùng",
+          "english": "is that the final total",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cuối cùng",
-          "english": "finishes Is that the final total",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Đó có phải là tổng số cuối cùng?",
           "english": "full phrase",
           "audioKey": null

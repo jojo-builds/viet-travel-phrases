@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Xin vui lòng",
-          "english": "starts the phrase",
+          "english": "please",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho nước sốt",
-          "english": "Sauce on the side, please detail",
+          "vietnamese": "cho nước sốt vào bên cạnh",
+          "english": "sauce on the side",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "vào bên cạnh",
-          "english": "finishes Sauce on the side, please",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Xin vui lòng cho nước sốt vào bên cạnh",
           "english": "full phrase",
           "audioKey": null

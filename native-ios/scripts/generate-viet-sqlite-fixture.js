@@ -2130,7 +2130,83 @@ function main() {
         WHERE psi2.section_id = ps.id
           AND psi2.item_kind = 'breakdown_token'
       )
-      AND lower(bt.english_gloss) = lower(pp.english_title);
+      AND (
+        lower(bt.english_gloss) = lower(pp.english_title)
+        OR lower(bt.english_gloss) LIKE '% detail'
+        OR lower(bt.english_gloss) LIKE 'starts phrase%'
+        OR lower(bt.english_gloss) LIKE 'start phrase%'
+        OR lower(bt.english_gloss) LIKE 'finish%'
+        OR lower(bt.english_gloss) LIKE 'sets up%'
+        OR lower(bt.english_gloss) LIKE 'part of%'
+        OR lower(bt.english_gloss) LIKE 'proper name%'
+        OR lower(bt.english_gloss) LIKE 'names %'
+        OR lower(bt.english_gloss) IN (
+          'place name',
+          'name starter',
+          'street name',
+          'market name',
+          'driver word',
+          'phrase piece',
+          'key word',
+          'phrase ending',
+          'word',
+          'action',
+          'question ending',
+          'place / service',
+          'main phrase piece',
+          'extra detail',
+          'the main place or thing',
+          'specific detail',
+          'name or place detail',
+          'first name part',
+          'second name part',
+          'middle name part',
+          'final name part',
+          'soft reassurance',
+          'context word',
+          'meaningful phrase part',
+          'meaning to keep'
+        )
+      );
+  `).split("\n").filter(Boolean);
+  const duplicateBreakdownGlossRows = sqliteQuery(`
+    WITH rows AS (
+      SELECT
+        pp.id AS page_id,
+        ps.id AS section_id,
+        bt.token_text,
+        bt.english_gloss,
+        lower(trim(bt.english_gloss)) AS normalized_gloss,
+        psi.sort_order,
+        (
+          SELECT max(psi2.sort_order)
+          FROM page_section_item psi2
+          WHERE psi2.section_id = ps.id
+            AND psi2.item_kind = 'breakdown_token'
+        ) AS max_sort_order
+      FROM page_section ps
+      JOIN phrase_page pp ON pp.id = ps.page_id
+      JOIN page_section_item psi ON psi.section_id = ps.id AND psi.item_kind = 'breakdown_token'
+      JOIN breakdown_token bt ON bt.id = psi.target_id
+      WHERE ps.section_key = 'breakdown'
+    ),
+    duplicates AS (
+      SELECT page_id, section_id, normalized_gloss
+      FROM rows
+      WHERE sort_order < max_sort_order
+        AND normalized_gloss != ''
+      GROUP BY page_id, section_id, normalized_gloss
+      HAVING count(*) > 1
+    )
+    SELECT rows.page_id || ': ' || rows.english_gloss || ' = ' || group_concat(rows.token_text, ' + ')
+    FROM rows
+    JOIN duplicates
+      ON duplicates.page_id = rows.page_id
+     AND duplicates.section_id = rows.section_id
+     AND duplicates.normalized_gloss = rows.normalized_gloss
+    WHERE rows.sort_order < rows.max_sort_order
+    GROUP BY rows.page_id, rows.section_id, rows.normalized_gloss
+    ORDER BY rows.page_id, rows.section_id, rows.normalized_gloss;
   `).split("\n").filter(Boolean);
   const bannedUserFacingPatterns = [
     /Watch out/i,
@@ -2256,6 +2332,8 @@ function main() {
       audioUsageMismatchCount,
       badBreakdownGlossCount: badBreakdownGlossRows.length,
       badBreakdownGlossSample: badBreakdownGlossRows.slice(0, 20),
+      duplicateBreakdownGlossCount: duplicateBreakdownGlossRows.length,
+      duplicateBreakdownGlossSample: duplicateBreakdownGlossRows.slice(0, 20),
       bannedUserFacingMatchCount: bannedUserFacingMatches.length,
       bannedUserFacingMatches,
       cityLibraryPageCount: cityLibraryPages.length,

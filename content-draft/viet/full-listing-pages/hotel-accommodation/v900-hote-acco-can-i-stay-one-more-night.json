@@ -47,35 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi có",
-          "english": "sets up the request",
+          "english": "I have",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ở lại",
-          "english": "stay one more night detail",
+          "vietnamese": "thể ở lại thêm một đêm nữa",
+          "english": "stay one more night",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "thêm một đêm",
-          "english": "stay one more night detail",
+          "vietnamese": "được không",
+          "english": "is it possible?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "nữa",
-          "english": "stay one more night detail",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
-          "vietnamese": "được không",
-          "english": "asks if it is possible",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
           "vietnamese": "Tôi có thể ở lại thêm một đêm nữa được không?",
           "english": "full phrase",
           "audioKey": null

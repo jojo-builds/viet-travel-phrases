@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Cái này",
-          "english": "this one / this",
+          "english": "this one",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đã được nấu",
-          "english": "Is this cooked detail",
+          "vietnamese": "đã được nấu chín chưa",
+          "english": "is this cooked",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "chín chưa",
-          "english": "finishes Is this cooked",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Cái này đã được nấu chín chưa?",
           "english": "full phrase",
           "audioKey": null

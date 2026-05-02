@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi không",
-          "english": "I do not / cannot",
+          "english": "I do not",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể tìm thấy",
-          "english": "I cannot find the tour guide detail",
+          "vietnamese": "thể tìm thấy hướng dẫn viên",
+          "english": "cannot find the guide",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hướng dẫn viên",
-          "english": "I cannot find the tour guide detail",
+          "vietnamese": "du lịch",
+          "english": "meet the tour group",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "du lịch",
-          "english": "finishes I cannot find the tour guide",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi không thể tìm thấy hướng dẫn viên du lịch",
           "english": "full phrase",
           "audioKey": null

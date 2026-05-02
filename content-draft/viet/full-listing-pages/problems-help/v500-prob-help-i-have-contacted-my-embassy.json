@@ -47,29 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đã liên",
-          "english": "starts the phrase",
+          "english": "I already / I did",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lạc với đại",
-          "english": "I have contacted my embassy detail",
+          "vietnamese": "lạc với đại sứ quán",
+          "english": "contacted the embassy",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "sứ quán",
-          "english": "I have contacted my embassy detail",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "của tôi",
           "english": "my / mine",
           "audioKey": null
         },
         {
-          "id": "chunk-5",
+          "id": "chunk-4",
           "vietnamese": "Tôi đã liên lạc với đại sứ quán của tôi",
           "english": "full phrase",
           "audioKey": null

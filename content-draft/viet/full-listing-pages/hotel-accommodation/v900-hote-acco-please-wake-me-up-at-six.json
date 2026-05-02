@@ -47,23 +47,17 @@
         {
           "id": "chunk-1",
           "vietnamese": "Hãy đánh thức",
-          "english": "starts the phrase",
+          "english": "please do",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi lúc sáu",
-          "english": "wake me up at six detail",
+          "vietnamese": "tôi lúc sáu giờ nhé",
+          "english": "wake me up at six",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "giờ nhé",
-          "english": "finishes wake me up at six",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Hãy đánh thức tôi lúc sáu giờ nhé",
           "english": "full phrase",
           "audioKey": null
