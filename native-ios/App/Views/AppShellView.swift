@@ -173,7 +173,7 @@ struct AppShellView: View {
             }
             .animation(.snappy(duration: 0.34), value: navigation.detailPath)
             .animation(.snappy(duration: 0.34), value: navigation.browseCollectionPath)
-            .animation(.snappy(duration: 0.34), value: navigation.isSearchPresented)
+            .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: navigation.isSearchPresented)
             .animation(.snappy(duration: 0.24), value: navigation.forwardStack)
             .overlay(alignment: .leading) {
                 backSwipeCaptureEdge(width: pageWidth)
@@ -540,7 +540,7 @@ struct AppShellView: View {
                 searchDismissKeyboardButton
             }
         }
-        .animation(.snappy(duration: 0.34), value: isSearchRoute)
+        .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
         .animation(.snappy(duration: 0.34), value: isSearchFieldFocused)
     }
 
@@ -602,6 +602,8 @@ struct AppShellView: View {
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
+        .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
         .accessibilityLabel(kind.title)
         .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
         .zIndex(2)
@@ -905,7 +907,7 @@ struct AppShellView: View {
             cancelSearchFocus()
         }
 
-        withAnimation(.snappy(duration: 0.34)) {
+        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
             navigation.openSearch()
         }
 
@@ -916,7 +918,10 @@ struct AppShellView: View {
 
     private func closeSearch() {
         cancelSearchFocus()
-        goBack()
+        cancelInteractiveChromeState()
+        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
+            navigation.goBack()
+        }
     }
 
     private func focusSearchField() {
@@ -1721,7 +1726,7 @@ private struct AppShellDockItem: View {
                 .font(.caption2.weight(.semibold))
         }
         .foregroundStyle(selected ? .red : .secondary)
-        .frame(width: 52, height: 50)
+        .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
     }
 }
 

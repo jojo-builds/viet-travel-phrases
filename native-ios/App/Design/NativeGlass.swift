@@ -126,13 +126,16 @@ enum AppChromeLayout {
     static let bottomSeparationHeight: CGFloat = 240
     static let topSeparationHeight: CGFloat = 170
     static let dockItemSpacing: CGFloat = 12
+    static let dockItemWidth: CGFloat = 52
+    static let dockItemHeight: CGFloat = 50
     static let dockHorizontalPadding: CGFloat = 12
-    static let dockVerticalPadding: CGFloat = 3
-    static let dockCornerRadius: CGFloat = 30
+    static let dockVerticalPadding: CGFloat = 4
+    static let dockCornerRadius: CGFloat = 29
     static let searchIslandSize: CGFloat = 58
     static let searchIslandCornerRadius: CGFloat = 29
     static let searchFieldHeight: CGFloat = 58
     static let searchFieldHorizontalPadding: CGFloat = 14
+    static let searchMorphDuration = 0.39
 }
 
 enum ChromeSeparationEdge {
