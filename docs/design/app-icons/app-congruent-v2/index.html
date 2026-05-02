@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal App-Congruent Icon Family V2</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #13231c;
+      --muted: #52625d;
+      --paper: #f7f2e9;
+      --card: #fffdf8;
+      --line: #eadfd0;
+      --red: #dc1917;
+      --jade: #174637;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    }
+    main {
+      width: min(1500px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 46px 0 80px;
+    }
+    header {
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(38px, 5vw, 72px);
+      letter-spacing: 0;
+      line-height: .95;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.45;
+      max-width: 940px;
+    }
+    section {
+      margin-top: 24px;
+      background: rgba(255, 253, 248, .78);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 60px rgba(40, 35, 27, .08);
+    }
+    h2 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: 0;
+      line-height: 1.1;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: #fff0ee;
+      color: #8a1e16;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(234, 223, 208, .72);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,.6);
+    }
+    .note strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 18px;
+    }
+    .note span {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    @media (max-width: 900px) {
+      main { width: min(100% - 24px, 1500px); padding-top: 26px; }
+      .grid, .notes { grid-template-columns: 1fr; }
+      section { padding: 14px; border-radius: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="tag">App-congruent v2</div>
+      <h1>SpeakLocal Icon Family Options</h1>
+      <p>This pass keeps the icon closer to the app itself: phrase cards, red audio, jade saved/progress cues, and country travel layers. Melo appears only as a restrained tail/progress cue in one option.</p>
+    </header>
+
+    <section>
+      <h2>Country Family Comparison</h2>
+      <p>The foreground is the SpeakLocal system. The country-specific layer changes behind it for Vietnam, Philippines, Italy, Germany, and Japan.</p>
+      <img src="assets/country-family-comparison.png" alt="SpeakLocal app icon family options across countries">
+    </section>
+
+    <section>
+      <h2>Vietnam Candidates In Context</h2>
+      <p>These are the four Vietnam launch candidates shown together so the icon can be judged as something that lives beside the app, not just as isolated artwork.</p>
+      <img src="assets/home-screen-vietnam-candidate-context.png" alt="Vietnam icon candidates in a Home Screen-style context">
+    </section>
+
+    <section>
+      <h2>Small-Size Check</h2>
+      <p>Generated imagery still needs final vector cleanup. This sheet shows which ideas survive when the icon gets compressed.</p>
+      <img src="assets/small-size-vietnam-candidates.png" alt="Small-size comparison for Vietnam icon candidates">
+    </section>
+
+    <section>
+      <h2>Annotated Options</h2>
+      <div class="grid">
+        <img src="assets/option-a-phrase-card-audio.png" alt="Option A phrase card and audio button icon family">
+        <img src="assets/option-b-phrase-card-melo-tail.png" alt="Option B phrase card and Melo tail icon family">
+        <img src="assets/option-c-offline-map-pin.png" alt="Option C offline map pin and audio phrase icon family">
+        <img src="assets/option-d-minimal-audio-route.png" alt="Option D minimal audio and country route icon family">
+      </div>
+    </section>
+
+    <section>
+      <h2>Design Read</h2>
+      <div class="notes">
+        <div class="note"><strong>Option A</strong><span>Safest app fit. It reads as SpeakLocal's actual phrase/audio utility.</span></div>
+        <div class="note"><strong>Option B</strong><span>Best Melo system. The mascot becomes a brand cue, not the whole app.</span></div>
+        <div class="note"><strong>Option C</strong><span>Useful travel signal, but map pins can become generic quickly.</span></div>
+        <div class="note"><strong>Option D</strong><span>Cleanest tiny icon. Use it to simplify A or B before final art.</span></div>
+      </div>
+    </section>
+
+    <footer>
+      Generated as visual direction only. Final App Store art should be rebuilt as cleaned 1024px/vector masters and checked against iOS tint, dark appearance, and small-size contexts.
+    </footer>
+  </main>
+</body>
+</html>
