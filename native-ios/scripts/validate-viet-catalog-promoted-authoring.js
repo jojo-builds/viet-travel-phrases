@@ -175,6 +175,8 @@ function main() {
     const breakdown = (page.sections ?? []).find((section) => section.id === "breakdown")?.breakdown ?? [];
     assert(breakdown.length >= (wordCount(page.title) === 1 ? 1 : 2), `${relative(filePath)} needs a meaningful breakdown`);
     assert(normalize(breakdown[breakdown.length - 1]?.vietnamese) === normalize(page.title), `${relative(filePath)} final breakdown card must be the full phrase`);
+    assert(!breakdown.some((token) => normalize(token.english) === "full phrase"), `${relative(filePath)} has placeholder breakdown label: full phrase`);
+    assert(!breakdown.some((token) => normalize(token.english) === "phrase meaning"), `${relative(filePath)} has fallback breakdown label: phrase meaning`);
 
     for (const pattern of bannedPatterns) {
       assert(!pattern.test(pageText(page)), `${relative(filePath)} contains banned/internal wording: ${pattern}`);

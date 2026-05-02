@@ -54,7 +54,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "chỗ đậu taxi ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the taxi stand"
         }
       ],
       "atGlance": "chỗ đậu taxi ở đâu? turns the taxi stand into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -132,7 +132,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "chỗ đậu taxi gần đây không?",
-          "english": "full phrase"
+          "english": "Is the taxi stand nearby"
         }
       ],
       "atGlance": "chỗ đậu taxi gần đây không? turns the taxi stand into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -210,7 +210,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến chỗ đậu taxi",
-          "english": "full phrase"
+          "english": "Please take me to the taxi stand"
         }
       ],
       "atGlance": "Cho tôi đến chỗ đậu taxi puts the taxi stand into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -288,7 +288,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở chỗ đậu taxi",
-          "english": "full phrase"
+          "english": "Stop at the taxi stand"
         }
       ],
       "atGlance": "Dừng ở chỗ đậu taxi puts the taxi stand into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -361,7 +361,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "bãi đậu xe ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the parking lot"
         }
       ],
       "atGlance": "bãi đậu xe ở đâu? turns the parking lot into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -439,7 +439,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "bãi đậu xe gần đây không?",
-          "english": "full phrase"
+          "english": "Is the parking lot nearby"
         }
       ],
       "atGlance": "bãi đậu xe gần đây không? turns the parking lot into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -517,7 +517,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến bãi đậu xe",
-          "english": "full phrase"
+          "english": "Please take me to the parking lot"
         }
       ],
       "atGlance": "Cho tôi đến bãi đậu xe puts the parking lot into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -595,7 +595,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở bãi đậu xe",
-          "english": "full phrase"
+          "english": "Stop at the parking lot"
         }
       ],
       "atGlance": "Dừng ở bãi đậu xe puts the parking lot into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -668,7 +668,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "điểm bán SIM ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the SIM-card counter"
         }
       ],
       "atGlance": "điểm bán SIM ở đâu? turns the SIM-card counter into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -746,7 +746,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "điểm bán SIM gần đây không?",
-          "english": "full phrase"
+          "english": "Is the SIM-card counter nearby"
         }
       ],
       "atGlance": "điểm bán SIM gần đây không? turns the SIM-card counter into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -824,7 +824,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến điểm bán SIM",
-          "english": "full phrase"
+          "english": "Please take me to the SIM-card counter"
         }
       ],
       "atGlance": "Cho tôi đến điểm bán SIM puts the SIM-card counter into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -902,7 +902,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở điểm bán SIM",
-          "english": "full phrase"
+          "english": "Stop at the SIM-card counter"
         }
       ],
       "atGlance": "Dừng ở điểm bán SIM puts the SIM-card counter into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -975,7 +975,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "văn phòng du lịch ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the tourist office"
         }
       ],
       "atGlance": "văn phòng du lịch ở đâu? turns the tourist office into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1053,7 +1053,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "văn phòng du lịch gần đây không?",
-          "english": "full phrase"
+          "english": "Is the tourist office nearby"
         }
       ],
       "atGlance": "văn phòng du lịch gần đây không? turns the tourist office into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1131,7 +1131,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến văn phòng du lịch",
-          "english": "full phrase"
+          "english": "Please take me to the tourist office"
         }
       ],
       "atGlance": "Cho tôi đến văn phòng du lịch puts the tourist office into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1209,7 +1209,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở văn phòng du lịch",
-          "english": "full phrase"
+          "english": "Stop at the tourist office"
         }
       ],
       "atGlance": "Dừng ở văn phòng du lịch puts the tourist office into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1282,7 +1282,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "bến phà ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the ferry pier"
         }
       ],
       "atGlance": "bến phà ở đâu? turns the ferry pier into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1360,7 +1360,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "bến phà gần đây không?",
-          "english": "full phrase"
+          "english": "Is the ferry pier nearby"
         }
       ],
       "atGlance": "bến phà gần đây không? turns the ferry pier into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1438,7 +1438,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến bến phà",
-          "english": "full phrase"
+          "english": "Please take me to the ferry pier"
         }
       ],
       "atGlance": "Cho tôi đến bến phà puts the ferry pier into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1516,7 +1516,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở bến phà",
-          "english": "full phrase"
+          "english": "Stop at the ferry pier"
         }
       ],
       "atGlance": "Dừng ở bến phà puts the ferry pier into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1589,7 +1589,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "trạm xăng ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the gas station"
         }
       ],
       "atGlance": "trạm xăng ở đâu? turns the gas station into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1667,7 +1667,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "trạm xăng gần đây không?",
-          "english": "full phrase"
+          "english": "Is the gas station nearby"
         }
       ],
       "atGlance": "trạm xăng gần đây không? turns the gas station into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1745,7 +1745,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến trạm xăng",
-          "english": "full phrase"
+          "english": "Please take me to the gas station"
         }
       ],
       "atGlance": "Cho tôi đến trạm xăng puts the gas station into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1823,7 +1823,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở trạm xăng",
-          "english": "full phrase"
+          "english": "Stop at the gas station"
         }
       ],
       "atGlance": "Dừng ở trạm xăng puts the gas station into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1896,7 +1896,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "khu ẩm thực ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the food court"
         }
       ],
       "atGlance": "khu ẩm thực ở đâu? turns the food court into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1974,7 +1974,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "khu ẩm thực gần đây không?",
-          "english": "full phrase"
+          "english": "Is the food court nearby"
         }
       ],
       "atGlance": "khu ẩm thực gần đây không? turns the food court into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -2052,7 +2052,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến khu ẩm thực",
-          "english": "full phrase"
+          "english": "Please take me to the food court"
         }
       ],
       "atGlance": "Cho tôi đến khu ẩm thực puts the food court into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -2130,7 +2130,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở khu ẩm thực",
-          "english": "full phrase"
+          "english": "Stop at the food court"
         }
       ],
       "atGlance": "Dừng ở khu ẩm thực puts the food court into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -2203,7 +2203,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "quầy thanh toán ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the checkout counter"
         }
       ],
       "atGlance": "quầy thanh toán ở đâu? turns the checkout counter into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -2281,7 +2281,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "quầy thanh toán gần đây không?",
-          "english": "full phrase"
+          "english": "Is the checkout counter nearby"
         }
       ],
       "atGlance": "quầy thanh toán gần đây không? turns the checkout counter into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -2359,7 +2359,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến quầy thanh toán",
-          "english": "full phrase"
+          "english": "Please take me to the checkout counter"
         }
       ],
       "atGlance": "Cho tôi đến quầy thanh toán puts the checkout counter into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -2437,7 +2437,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở quầy thanh toán",
-          "english": "full phrase"
+          "english": "Stop at the checkout counter"
         }
       ],
       "atGlance": "Dừng ở quầy thanh toán puts the checkout counter into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -2510,7 +2510,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "phòng thay đồ ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the fitting room"
         }
       ],
       "atGlance": "phòng thay đồ ở đâu? turns the fitting room into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -2588,7 +2588,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "phòng thay đồ gần đây không?",
-          "english": "full phrase"
+          "english": "Is the fitting room nearby"
         }
       ],
       "atGlance": "phòng thay đồ gần đây không? turns the fitting room into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -2666,7 +2666,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến phòng thay đồ",
-          "english": "full phrase"
+          "english": "Please take me to the fitting room"
         }
       ],
       "atGlance": "Cho tôi đến phòng thay đồ puts the fitting room into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -2744,7 +2744,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở phòng thay đồ",
-          "english": "full phrase"
+          "english": "Stop at the fitting room"
         }
       ],
       "atGlance": "Dừng ở phòng thay đồ puts the fitting room into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -2817,7 +2817,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "cửa hàng điện thoại ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the phone shop"
         }
       ],
       "atGlance": "cửa hàng điện thoại ở đâu? turns the phone shop into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -2895,7 +2895,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "cửa hàng điện thoại gần đây không?",
-          "english": "full phrase"
+          "english": "Is the phone shop nearby"
         }
       ],
       "atGlance": "cửa hàng điện thoại gần đây không? turns the phone shop into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -2973,7 +2973,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến cửa hàng điện thoại",
-          "english": "full phrase"
+          "english": "Please take me to the phone shop"
         }
       ],
       "atGlance": "Cho tôi đến cửa hàng điện thoại puts the phone shop into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -3051,7 +3051,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở cửa hàng điện thoại",
-          "english": "full phrase"
+          "english": "Stop at the phone shop"
         }
       ],
       "atGlance": "Dừng ở cửa hàng điện thoại puts the phone shop into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -3124,7 +3124,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "thùng rác ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a trash bin"
         }
       ],
       "atGlance": "thùng rác ở đâu? turns a trash bin into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -3202,7 +3202,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "thùng rác gần đây không?",
-          "english": "full phrase"
+          "english": "Is a trash bin nearby"
         }
       ],
       "atGlance": "thùng rác gần đây không? turns a trash bin into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -3280,7 +3280,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến thùng rác",
-          "english": "full phrase"
+          "english": "Please take me to a trash bin"
         }
       ],
       "atGlance": "Cho tôi đến thùng rác puts a trash bin into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -3358,7 +3358,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở thùng rác",
-          "english": "full phrase"
+          "english": "Stop at a trash bin"
         }
       ],
       "atGlance": "Dừng ở thùng rác puts a trash bin into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -3431,7 +3431,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "vòi nước ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a water tap"
         }
       ],
       "atGlance": "vòi nước ở đâu? turns a water tap into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -3509,7 +3509,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "vòi nước gần đây không?",
-          "english": "full phrase"
+          "english": "Is a water tap nearby"
         }
       ],
       "atGlance": "vòi nước gần đây không? turns a water tap into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -3587,7 +3587,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến vòi nước",
-          "english": "full phrase"
+          "english": "Please take me to a water tap"
         }
       ],
       "atGlance": "Cho tôi đến vòi nước puts a water tap into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -3665,7 +3665,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở vòi nước",
-          "english": "full phrase"
+          "english": "Stop at a water tap"
         }
       ],
       "atGlance": "Dừng ở vòi nước puts a water tap into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -3738,7 +3738,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "chỗ ngồi ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a seat"
         }
       ],
       "atGlance": "chỗ ngồi ở đâu? turns a seat into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -3816,7 +3816,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "chỗ ngồi gần đây không?",
-          "english": "full phrase"
+          "english": "Is a seat nearby"
         }
       ],
       "atGlance": "chỗ ngồi gần đây không? turns a seat into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -3894,7 +3894,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến chỗ ngồi",
-          "english": "full phrase"
+          "english": "Please take me to a seat"
         }
       ],
       "atGlance": "Cho tôi đến chỗ ngồi puts a seat into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -3972,7 +3972,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở chỗ ngồi",
-          "english": "full phrase"
+          "english": "Stop at a seat"
         }
       ],
       "atGlance": "Dừng ở chỗ ngồi puts a seat into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -4045,7 +4045,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "lối sang đường ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a crosswalk"
         }
       ],
       "atGlance": "lối sang đường ở đâu? turns a crosswalk into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -4123,7 +4123,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "lối sang đường gần đây không?",
-          "english": "full phrase"
+          "english": "Is a crosswalk nearby"
         }
       ],
       "atGlance": "lối sang đường gần đây không? turns a crosswalk into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -4201,7 +4201,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến lối sang đường",
-          "english": "full phrase"
+          "english": "Please take me to a crosswalk"
         }
       ],
       "atGlance": "Cho tôi đến lối sang đường puts a crosswalk into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -4279,7 +4279,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở lối sang đường",
-          "english": "full phrase"
+          "english": "Stop at a crosswalk"
         }
       ],
       "atGlance": "Dừng ở lối sang đường puts a crosswalk into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -4352,7 +4352,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "đường chính ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the main road"
         }
       ],
       "atGlance": "đường chính ở đâu? turns the main road into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -4430,7 +4430,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "đường chính gần đây không?",
-          "english": "full phrase"
+          "english": "Is the main road nearby"
         }
       ],
       "atGlance": "đường chính gần đây không? turns the main road into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -4508,7 +4508,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến đường chính",
-          "english": "full phrase"
+          "english": "Please take me to the main road"
         }
       ],
       "atGlance": "Cho tôi đến đường chính puts the main road into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -4586,7 +4586,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở đường chính",
-          "english": "full phrase"
+          "english": "Stop at the main road"
         }
       ],
       "atGlance": "Dừng ở đường chính puts the main road into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -4659,7 +4659,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "phố cổ ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the old town"
         }
       ],
       "atGlance": "phố cổ ở đâu? turns the old town into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -4737,7 +4737,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "phố cổ gần đây không?",
-          "english": "full phrase"
+          "english": "Is the old town nearby"
         }
       ],
       "atGlance": "phố cổ gần đây không? turns the old town into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -4815,7 +4815,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến phố cổ",
-          "english": "full phrase"
+          "english": "Please take me to the old town"
         }
       ],
       "atGlance": "Cho tôi đến phố cổ puts the old town into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -4893,7 +4893,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở phố cổ",
-          "english": "full phrase"
+          "english": "Stop at the old town"
         }
       ],
       "atGlance": "Dừng ở phố cổ puts the old town into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -4966,7 +4966,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "cầu ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the bridge"
         }
       ],
       "atGlance": "cầu ở đâu? turns the bridge into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -5044,7 +5044,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "cầu gần đây không?",
-          "english": "full phrase"
+          "english": "Is the bridge nearby"
         }
       ],
       "atGlance": "cầu gần đây không? turns the bridge into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -5122,7 +5122,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến cầu",
-          "english": "full phrase"
+          "english": "Please take me to the bridge"
         }
       ],
       "atGlance": "Cho tôi đến cầu puts the bridge into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -5200,7 +5200,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở cầu",
-          "english": "full phrase"
+          "english": "Stop at the bridge"
         }
       ],
       "atGlance": "Dừng ở cầu puts the bridge into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -5273,7 +5273,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "hồ ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the lake"
         }
       ],
       "atGlance": "hồ ở đâu? turns the lake into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -5351,7 +5351,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "hồ gần đây không?",
-          "english": "full phrase"
+          "english": "Is the lake nearby"
         }
       ],
       "atGlance": "hồ gần đây không? turns the lake into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -5429,7 +5429,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến hồ",
-          "english": "full phrase"
+          "english": "Please take me to the lake"
         }
       ],
       "atGlance": "Cho tôi đến hồ puts the lake into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -5507,7 +5507,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở hồ",
-          "english": "full phrase"
+          "english": "Stop at the lake"
         }
       ],
       "atGlance": "Dừng ở hồ puts the lake into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -5580,7 +5580,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "sông ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the river"
         }
       ],
       "atGlance": "sông ở đâu? turns the river into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -5658,7 +5658,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "sông gần đây không?",
-          "english": "full phrase"
+          "english": "Is the river nearby"
         }
       ],
       "atGlance": "sông gần đây không? turns the river into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -5736,7 +5736,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến sông",
-          "english": "full phrase"
+          "english": "Please take me to the river"
         }
       ],
       "atGlance": "Cho tôi đến sông puts the river into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -5814,7 +5814,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở sông",
-          "english": "full phrase"
+          "english": "Stop at the river"
         }
       ],
       "atGlance": "Dừng ở sông puts the river into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -5887,7 +5887,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "công viên ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the park"
         }
       ],
       "atGlance": "công viên ở đâu? turns the park into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -5965,7 +5965,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "công viên gần đây không?",
-          "english": "full phrase"
+          "english": "Is the park nearby"
         }
       ],
       "atGlance": "công viên gần đây không? turns the park into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -6043,7 +6043,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến công viên",
-          "english": "full phrase"
+          "english": "Please take me to the park"
         }
       ],
       "atGlance": "Cho tôi đến công viên puts the park into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -6121,7 +6121,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở công viên",
-          "english": "full phrase"
+          "english": "Stop at the park"
         }
       ],
       "atGlance": "Dừng ở công viên puts the park into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -6194,7 +6194,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "tiệm giặt ủi ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a laundry shop"
         }
       ],
       "atGlance": "tiệm giặt ủi ở đâu? turns a laundry shop into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -6272,7 +6272,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "tiệm giặt ủi gần đây không?",
-          "english": "full phrase"
+          "english": "Is a laundry shop nearby"
         }
       ],
       "atGlance": "tiệm giặt ủi gần đây không? turns a laundry shop into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -6350,7 +6350,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến tiệm giặt ủi",
-          "english": "full phrase"
+          "english": "Please take me to a laundry shop"
         }
       ],
       "atGlance": "Cho tôi đến tiệm giặt ủi puts a laundry shop into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -6428,7 +6428,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở tiệm giặt ủi",
-          "english": "full phrase"
+          "english": "Stop at a laundry shop"
         }
       ],
       "atGlance": "Dừng ở tiệm giặt ủi puts a laundry shop into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -6501,7 +6501,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "hiệu kính thuốc ở đâu?",
-          "english": "full phrase"
+          "english": "Where is an optical shop"
         }
       ],
       "atGlance": "hiệu kính thuốc ở đâu? turns an optical shop into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -6579,7 +6579,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "hiệu kính thuốc gần đây không?",
-          "english": "full phrase"
+          "english": "Is an optical shop nearby"
         }
       ],
       "atGlance": "hiệu kính thuốc gần đây không? turns an optical shop into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -6657,7 +6657,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến hiệu kính thuốc",
-          "english": "full phrase"
+          "english": "Please take me to an optical shop"
         }
       ],
       "atGlance": "Cho tôi đến hiệu kính thuốc puts an optical shop into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -6735,7 +6735,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở hiệu kính thuốc",
-          "english": "full phrase"
+          "english": "Stop at an optical shop"
         }
       ],
       "atGlance": "Dừng ở hiệu kính thuốc puts an optical shop into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -6808,7 +6808,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "tiệm cắt tóc ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a hair salon"
         }
       ],
       "atGlance": "tiệm cắt tóc ở đâu? turns a hair salon into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -6886,7 +6886,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "tiệm cắt tóc gần đây không?",
-          "english": "full phrase"
+          "english": "Is a hair salon nearby"
         }
       ],
       "atGlance": "tiệm cắt tóc gần đây không? turns a hair salon into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -6964,7 +6964,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến tiệm cắt tóc",
-          "english": "full phrase"
+          "english": "Please take me to a hair salon"
         }
       ],
       "atGlance": "Cho tôi đến tiệm cắt tóc puts a hair salon into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -7042,7 +7042,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở tiệm cắt tóc",
-          "english": "full phrase"
+          "english": "Stop at a hair salon"
         }
       ],
       "atGlance": "Dừng ở tiệm cắt tóc puts a hair salon into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -7115,7 +7115,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "quầy an ninh ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the security desk"
         }
       ],
       "atGlance": "quầy an ninh ở đâu? turns the security desk into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -7193,7 +7193,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "quầy an ninh gần đây không?",
-          "english": "full phrase"
+          "english": "Is the security desk nearby"
         }
       ],
       "atGlance": "quầy an ninh gần đây không? turns the security desk into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -7271,7 +7271,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến quầy an ninh",
-          "english": "full phrase"
+          "english": "Please take me to the security desk"
         }
       ],
       "atGlance": "Cho tôi đến quầy an ninh puts the security desk into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -7349,7 +7349,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở quầy an ninh",
-          "english": "full phrase"
+          "english": "Stop at the security desk"
         }
       ],
       "atGlance": "Dừng ở quầy an ninh puts the security desk into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -7422,7 +7422,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "phòng chờ ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the waiting room"
         }
       ],
       "atGlance": "phòng chờ ở đâu? turns the waiting room into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -7500,7 +7500,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "phòng chờ gần đây không?",
-          "english": "full phrase"
+          "english": "Is the waiting room nearby"
         }
       ],
       "atGlance": "phòng chờ gần đây không? turns the waiting room into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -7578,7 +7578,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến phòng chờ",
-          "english": "full phrase"
+          "english": "Please take me to the waiting room"
         }
       ],
       "atGlance": "Cho tôi đến phòng chờ puts the waiting room into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -7656,7 +7656,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở phòng chờ",
-          "english": "full phrase"
+          "english": "Stop at the waiting room"
         }
       ],
       "atGlance": "Dừng ở phòng chờ puts the waiting room into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -7734,7 +7734,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "khu vực hút thuốc gần đây không?",
-          "english": "full phrase"
+          "english": "Is the smoking area nearby"
         }
       ],
       "atGlance": "khu vực hút thuốc gần đây không? turns the smoking area into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -7812,7 +7812,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến khu vực hút thuốc",
-          "english": "full phrase"
+          "english": "Please take me to the smoking area"
         }
       ],
       "atGlance": "Cho tôi đến khu vực hút thuốc puts the smoking area into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -7890,7 +7890,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở khu vực hút thuốc",
-          "english": "full phrase"
+          "english": "Stop at the smoking area"
         }
       ],
       "atGlance": "Dừng ở khu vực hút thuốc puts the smoking area into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -7963,7 +7963,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "bãi gửi xe máy ở đâu?",
-          "english": "full phrase"
+          "english": "Where is motorbike parking"
         }
       ],
       "atGlance": "bãi gửi xe máy ở đâu? turns motorbike parking into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -8041,7 +8041,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "bãi gửi xe máy gần đây không?",
-          "english": "full phrase"
+          "english": "Is motorbike parking nearby"
         }
       ],
       "atGlance": "bãi gửi xe máy gần đây không? turns motorbike parking into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -8119,7 +8119,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến bãi gửi xe máy",
-          "english": "full phrase"
+          "english": "Please take me to motorbike parking"
         }
       ],
       "atGlance": "Cho tôi đến bãi gửi xe máy puts motorbike parking into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -8197,7 +8197,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở bãi gửi xe máy",
-          "english": "full phrase"
+          "english": "Stop at motorbike parking"
         }
       ],
       "atGlance": "Dừng ở bãi gửi xe máy puts motorbike parking into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -8270,7 +8270,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "trạm y tế ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a medical station"
         }
       ],
       "atGlance": "trạm y tế ở đâu? turns a medical station into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -8348,7 +8348,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "trạm y tế gần đây không?",
-          "english": "full phrase"
+          "english": "Is a medical station nearby"
         }
       ],
       "atGlance": "trạm y tế gần đây không? turns a medical station into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -8426,7 +8426,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến trạm y tế",
-          "english": "full phrase"
+          "english": "Please take me to a medical station"
         }
       ],
       "atGlance": "Cho tôi đến trạm y tế puts a medical station into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -8504,7 +8504,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở trạm y tế",
-          "english": "full phrase"
+          "english": "Stop at a medical station"
         }
       ],
       "atGlance": "Dừng ở trạm y tế puts a medical station into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -8577,7 +8577,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "phòng cầu nguyện ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a prayer room"
         }
       ],
       "atGlance": "phòng cầu nguyện ở đâu? turns a prayer room into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -8655,7 +8655,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "phòng cầu nguyện gần đây không?",
-          "english": "full phrase"
+          "english": "Is a prayer room nearby"
         }
       ],
       "atGlance": "phòng cầu nguyện gần đây không? turns a prayer room into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -8733,7 +8733,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến phòng cầu nguyện",
-          "english": "full phrase"
+          "english": "Please take me to a prayer room"
         }
       ],
       "atGlance": "Cho tôi đến phòng cầu nguyện puts a prayer room into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -8811,7 +8811,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở phòng cầu nguyện",
-          "english": "full phrase"
+          "english": "Stop at a prayer room"
         }
       ],
       "atGlance": "Dừng ở phòng cầu nguyện puts a prayer room into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -8884,7 +8884,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "cửa khởi hành ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the departure door"
         }
       ],
       "atGlance": "cửa khởi hành ở đâu? turns the departure door into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -8962,7 +8962,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "cửa khởi hành gần đây không?",
-          "english": "full phrase"
+          "english": "Is the departure door nearby"
         }
       ],
       "atGlance": "cửa khởi hành gần đây không? turns the departure door into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -9040,7 +9040,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến cửa khởi hành",
-          "english": "full phrase"
+          "english": "Please take me to the departure door"
         }
       ],
       "atGlance": "Cho tôi đến cửa khởi hành puts the departure door into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -9118,7 +9118,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở cửa khởi hành",
-          "english": "full phrase"
+          "english": "Stop at the departure door"
         }
       ],
       "atGlance": "Dừng ở cửa khởi hành puts the departure door into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -9191,7 +9191,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "quầy hoàn thuế ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the tax-refund counter"
         }
       ],
       "atGlance": "quầy hoàn thuế ở đâu? turns the tax-refund counter into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -9269,7 +9269,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "quầy hoàn thuế gần đây không?",
-          "english": "full phrase"
+          "english": "Is the tax-refund counter nearby"
         }
       ],
       "atGlance": "quầy hoàn thuế gần đây không? turns the tax-refund counter into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -9347,7 +9347,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến quầy hoàn thuế",
-          "english": "full phrase"
+          "english": "Please take me to the tax-refund counter"
         }
       ],
       "atGlance": "Cho tôi đến quầy hoàn thuế puts the tax-refund counter into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -9425,7 +9425,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở quầy hoàn thuế",
-          "english": "full phrase"
+          "english": "Stop at the tax-refund counter"
         }
       ],
       "atGlance": "Dừng ở quầy hoàn thuế puts the tax-refund counter into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -9498,7 +9498,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "khu kiểm tra an ninh ở đâu?",
-          "english": "full phrase"
+          "english": "Where is security screening"
         }
       ],
       "atGlance": "khu kiểm tra an ninh ở đâu? turns security screening into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -9576,7 +9576,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "khu kiểm tra an ninh gần đây không?",
-          "english": "full phrase"
+          "english": "Is security screening nearby"
         }
       ],
       "atGlance": "khu kiểm tra an ninh gần đây không? turns security screening into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -9654,7 +9654,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến khu kiểm tra an ninh",
-          "english": "full phrase"
+          "english": "Please take me to security screening"
         }
       ],
       "atGlance": "Cho tôi đến khu kiểm tra an ninh puts security screening into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -9732,7 +9732,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở khu kiểm tra an ninh",
-          "english": "full phrase"
+          "english": "Stop at security screening"
         }
       ],
       "atGlance": "Dừng ở khu kiểm tra an ninh puts security screening into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -9805,7 +9805,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "đường một chiều ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a one-way street"
         }
       ],
       "atGlance": "đường một chiều ở đâu? turns a one-way street into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -9883,7 +9883,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "đường một chiều gần đây không?",
-          "english": "full phrase"
+          "english": "Is a one-way street nearby"
         }
       ],
       "atGlance": "đường một chiều gần đây không? turns a one-way street into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -9961,7 +9961,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến đường một chiều",
-          "english": "full phrase"
+          "english": "Please take me to a one-way street"
         }
       ],
       "atGlance": "Cho tôi đến đường một chiều puts a one-way street into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -10039,7 +10039,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở đường một chiều",
-          "english": "full phrase"
+          "english": "Stop at a one-way street"
         }
       ],
       "atGlance": "Dừng ở đường một chiều puts a one-way street into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -10112,7 +10112,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "ngã tư ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the intersection"
         }
       ],
       "atGlance": "ngã tư ở đâu? turns the intersection into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -10190,7 +10190,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "ngã tư gần đây không?",
-          "english": "full phrase"
+          "english": "Is the intersection nearby"
         }
       ],
       "atGlance": "ngã tư gần đây không? turns the intersection into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -10268,7 +10268,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến ngã tư",
-          "english": "full phrase"
+          "english": "Please take me to the intersection"
         }
       ],
       "atGlance": "Cho tôi đến ngã tư puts the intersection into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -10346,7 +10346,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở ngã tư",
-          "english": "full phrase"
+          "english": "Stop at the intersection"
         }
       ],
       "atGlance": "Dừng ở ngã tư puts the intersection into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -10419,7 +10419,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "hẻm này ở đâu?",
-          "english": "full phrase"
+          "english": "Where is this alley"
         }
       ],
       "atGlance": "hẻm này ở đâu? turns this alley into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -10497,7 +10497,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "hẻm này gần đây không?",
-          "english": "full phrase"
+          "english": "Is this alley nearby"
         }
       ],
       "atGlance": "hẻm này gần đây không? turns this alley into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -10575,7 +10575,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến hẻm này",
-          "english": "full phrase"
+          "english": "Please take me to this alley"
         }
       ],
       "atGlance": "Cho tôi đến hẻm này puts this alley into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -10653,7 +10653,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở hẻm này",
-          "english": "full phrase"
+          "english": "Stop at this alley"
         }
       ],
       "atGlance": "Dừng ở hẻm này puts this alley into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -10726,7 +10726,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "bàn hướng dẫn ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the help desk"
         }
       ],
       "atGlance": "bàn hướng dẫn ở đâu? turns the help desk into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -10804,7 +10804,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "bàn hướng dẫn gần đây không?",
-          "english": "full phrase"
+          "english": "Is the help desk nearby"
         }
       ],
       "atGlance": "bàn hướng dẫn gần đây không? turns the help desk into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -10882,7 +10882,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến bàn hướng dẫn",
-          "english": "full phrase"
+          "english": "Please take me to the help desk"
         }
       ],
       "atGlance": "Cho tôi đến bàn hướng dẫn puts the help desk into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -10960,7 +10960,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở bàn hướng dẫn",
-          "english": "full phrase"
+          "english": "Stop at the help desk"
         }
       ],
       "atGlance": "Dừng ở bàn hướng dẫn puts the help desk into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -11033,7 +11033,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "quầy giữ đồ ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the bag check"
         }
       ],
       "atGlance": "quầy giữ đồ ở đâu? turns the bag check into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -11111,7 +11111,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "quầy giữ đồ gần đây không?",
-          "english": "full phrase"
+          "english": "Is the bag check nearby"
         }
       ],
       "atGlance": "quầy giữ đồ gần đây không? turns the bag check into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -11189,7 +11189,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến quầy giữ đồ",
-          "english": "full phrase"
+          "english": "Please take me to the bag check"
         }
       ],
       "atGlance": "Cho tôi đến quầy giữ đồ puts the bag check into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -11267,7 +11267,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở quầy giữ đồ",
-          "english": "full phrase"
+          "english": "Stop at the bag check"
         }
       ],
       "atGlance": "Dừng ở quầy giữ đồ puts the bag check into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -11340,7 +11340,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "phòng y tế ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the medical room"
         }
       ],
       "atGlance": "phòng y tế ở đâu? turns the medical room into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -11418,7 +11418,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "phòng y tế gần đây không?",
-          "english": "full phrase"
+          "english": "Is the medical room nearby"
         }
       ],
       "atGlance": "phòng y tế gần đây không? turns the medical room into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -11496,7 +11496,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến phòng y tế",
-          "english": "full phrase"
+          "english": "Please take me to the medical room"
         }
       ],
       "atGlance": "Cho tôi đến phòng y tế puts the medical room into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",

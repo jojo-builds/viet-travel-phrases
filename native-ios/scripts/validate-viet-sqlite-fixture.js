@@ -705,7 +705,7 @@ function main() {
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM breakdown_token
-    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'question marker', 'main phrase piece', 'extra detail', 'the main place or thing', 'first name part', 'second name part', 'middle name part', 'final name part', 'driver word', 'phrase piece')
+    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'question marker', 'main phrase piece', 'extra detail', 'the main place or thing', 'first name part', 'second name part', 'middle name part', 'final name part', 'driver word', 'phrase piece', 'full phrase', 'phrase meaning')
        OR lower(english_gloss) LIKE '%question marker%';
   `), "internal breakdown labels");
 

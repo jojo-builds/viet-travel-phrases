@@ -938,6 +938,11 @@ function englishTitleForPage(page) {
   return page.englishTitle ?? page.englishText ?? page.summary ?? "";
 }
 
+function fullPhraseGloss(page) {
+  const gloss = cleanEnglish(englishTitleForPage(page));
+  return gloss || "phrase meaning";
+}
+
 function tokenVietnamese(token) {
   return Array.isArray(token) ? token[0] : token.vietnamese;
 }
@@ -1010,7 +1015,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   if (key === "toi hieu mot chut") {
     const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
       ?? exactAudioKeyForText(title);
-    const full = { id: "chunk-3", vietnamese: title, english: "full phrase" };
+    const full = { id: "chunk-3", vietnamese: title, english: fullPhraseGloss(page) };
     if (fullAudioKey) full.audioKey = fullAudioKey;
     return [
       { id: "chunk-1", vietnamese: "Tôi hiểu", english: "I understand" },
@@ -1021,7 +1026,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   if (key === "dua ho chieu ra") {
     const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
       ?? exactAudioKeyForText(title);
-    const full = { id: "chunk-4", vietnamese: title, english: "full phrase" };
+    const full = { id: "chunk-4", vietnamese: title, english: fullPhraseGloss(page) };
     if (fullAudioKey) full.audioKey = fullAudioKey;
     return [
       { id: "chunk-1", vietnamese: "Đưa", english: "show / hand" },
@@ -1033,7 +1038,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   if (key === "mat khoang nam phut") {
     const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
       ?? exactAudioKeyForText(title);
-    const full = { id: "chunk-4", vietnamese: title, english: "full phrase" };
+    const full = { id: "chunk-4", vietnamese: title, english: fullPhraseGloss(page) };
     if (fullAudioKey) full.audioKey = fullAudioKey;
     return [
       { id: "chunk-1", vietnamese: "Mất", english: "takes" },
@@ -1045,7 +1050,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   if (key === "lay lam tiec") {
     const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
       ?? exactAudioKeyForText(title);
-    const full = { id: "chunk-3", vietnamese: title, english: "full phrase" };
+    const full = { id: "chunk-3", vietnamese: title, english: fullPhraseGloss(page) };
     if (fullAudioKey) full.audioKey = fullAudioKey;
     return [
       { id: "chunk-1", vietnamese: "Lấy làm", english: "feel regret" },
@@ -1056,7 +1061,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   if (key === "so xe khac han") {
     const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
       ?? exactAudioKeyForText(title);
-    const full = { id: "chunk-3", vietnamese: title, english: "full phrase" };
+    const full = { id: "chunk-3", vietnamese: title, english: fullPhraseGloss(page) };
     if (fullAudioKey) full.audioKey = fullAudioKey;
     return [
       { id: "chunk-1", vietnamese: "Số xe", english: "car number" },
@@ -1067,7 +1072,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   if (key === "y anh/chi la cai nao") {
     const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
       ?? exactAudioKeyForText(title);
-    const full = { id: "chunk-3", vietnamese: title, english: "full phrase" };
+    const full = { id: "chunk-3", vietnamese: title, english: fullPhraseGloss(page) };
     if (fullAudioKey) full.audioKey = fullAudioKey;
     return [
       { id: "chunk-1", vietnamese: "Ý anh/chị", english: "your meaning" },
@@ -1078,7 +1083,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   if (key === "noi nao it dong duc hon") {
     const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
       ?? exactAudioKeyForText(title);
-    const full = { id: "chunk-3", vietnamese: title, english: "full phrase" };
+    const full = { id: "chunk-3", vietnamese: title, english: fullPhraseGloss(page) };
     if (fullAudioKey) full.audioKey = fullAudioKey;
     return [
       { id: "chunk-1", vietnamese: "Nơi nào", english: "which place" },
@@ -1091,7 +1096,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
     ?? exactAudioKeyForText(title);
   const sideText = key === "re trai" ? "trái" : "phải";
   const sideGloss = key === "re trai" ? "left" : "right";
-  const full = { id: "chunk-3", vietnamese: title, english: "full phrase" };
+  const full = { id: "chunk-3", vietnamese: title, english: fullPhraseGloss(page) };
   if (fullAudioKey) full.audioKey = fullAudioKey;
   return [
     { id: "chunk-1", vietnamese: "Rẽ", english: "turn" },
@@ -1131,8 +1136,9 @@ function repairBreakdown(page, section, glossary, stats) {
     const english = tokenEnglish(token);
     const isFullPhrase = isFullPhraseToken(page, token);
     if (isFullPhrase) {
-      if (english !== "full phrase") {
-        setTokenEnglish(token, "full phrase");
+      const replacement = fullPhraseGloss(page);
+      if (english !== replacement) {
+        setTokenEnglish(token, replacement);
         changed = true;
         stats.repaired += 1;
       }

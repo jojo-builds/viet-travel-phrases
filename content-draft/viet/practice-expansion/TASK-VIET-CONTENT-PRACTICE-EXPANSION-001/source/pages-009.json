@@ -61,7 +61,7 @@
         {
           "id": "chunk-5",
           "vietnamese": "Phòng chưa sẵn sàng",
-          "english": "full phrase"
+          "english": "The room is not ready yet"
         }
       ],
       "atGlance": "Phòng chưa sẵn sàng is a phrase to recognize, not just a phrase to say. It helps you catch a local reply and decide whether to follow a point, confirm a number, or ask for one more repeat.",
@@ -136,7 +136,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có phòng khác",
-          "english": "full phrase"
+          "english": "There is another room"
         }
       ],
       "atGlance": "Có phòng khác is a phrase to recognize, not just a phrase to say. It helps you catch a local reply and decide whether to follow a point, confirm a number, or ask for one more repeat.",
@@ -216,7 +216,7 @@
         {
           "id": "chunk-5",
           "vietnamese": "Lễ tân sẽ giúp",
-          "english": "full phrase"
+          "english": "The front desk will help"
         }
       ],
       "atGlance": "Lễ tân sẽ giúp is a phrase to recognize, not just a phrase to say. It helps you catch a local reply and decide whether to follow a point, confirm a number, or ask for one more repeat.",
@@ -296,7 +296,7 @@
         {
           "id": "chunk-5",
           "vietnamese": "Bàn này còn trống",
-          "english": "full phrase"
+          "english": "This table is available"
         }
       ],
       "atGlance": "Bàn này còn trống is a phrase to recognize, not just a phrase to say. It helps you catch a local reply and decide whether to follow a point, confirm a number, or ask for one more repeat.",
@@ -371,7 +371,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Món này cay",
-          "english": "full phrase"
+          "english": "This dish is spicy"
         }
       ],
       "atGlance": "Món này cay is a phrase to recognize, not just a phrase to say. It helps you catch a local reply and decide whether to follow a point, confirm a number, or ask for one more repeat.",
@@ -451,7 +451,7 @@
         {
           "id": "chunk-5",
           "vietnamese": "Không có đậu phộng",
-          "english": "full phrase"
+          "english": "There are no peanuts"
         }
       ],
       "atGlance": "Không có đậu phộng is a phrase to recognize, not just a phrase to say. It helps you catch a local reply and decide whether to follow a point, confirm a number, or ask for one more repeat.",
@@ -526,7 +526,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có thịt heo",
-          "english": "full phrase"
+          "english": "It has pork"
         }
       ],
       "atGlance": "Có thịt heo is a phrase to recognize, not just a phrase to say. It helps you catch a local reply and decide whether to follow a point, confirm a number, or ask for one more repeat.",
@@ -606,7 +606,7 @@
         {
           "id": "chunk-5",
           "vietnamese": "Tính tiền ở quầy",
-          "english": "full phrase"
+          "english": "Pay at the counter"
         }
       ],
       "atGlance": "Tính tiền ở quầy is a phrase to recognize, not just a phrase to say. It helps you catch a local reply and decide whether to follow a point, confirm a number, or ask for one more repeat.",
@@ -684,7 +684,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi gọi taxi được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a taxi"
         }
       ],
       "atGlance": "Anh giúp tôi gọi taxi được không? is a short service phrase for Can you help me call a taxi. Use this when call a taxi is the help you need right now and you want the request to stay polite.",
@@ -762,7 +762,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi gọi xe công nghệ được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a ride-share car"
         }
       ],
       "atGlance": "Anh giúp tôi gọi xe công nghệ được không? is a short service phrase for Can you help me call a ride-share car. Use this when call a ride-share car is the help you need right now and you want the request to stay polite.",
@@ -840,7 +840,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi chỉ đường được không?",
-          "english": "full phrase"
+          "english": "Can you show me the way"
         }
       ],
       "atGlance": "Anh giúp tôi chỉ đường được không? is a short service phrase for Can you show me the way. Use this when can you show me the way is the help you need right now and you want the request to stay polite.",
@@ -918,7 +918,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi viết địa chỉ được không?",
-          "english": "full phrase"
+          "english": "Can you help me write the address"
         }
       ],
       "atGlance": "Anh giúp tôi viết địa chỉ được không? is a short service phrase for Can you help me write the address. Use this when write the address is the help you need right now and you want the request to stay polite.",
@@ -996,7 +996,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi đọc số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me read this number"
         }
       ],
       "atGlance": "Anh giúp tôi đọc số này được không? is a short service phrase for Can you help me read this number. Use this when read this number is the help you need right now and you want the request to stay polite.",
@@ -1074,7 +1074,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi nhập mã này được không?",
-          "english": "full phrase"
+          "english": "Can you help me enter this code"
         }
       ],
       "atGlance": "Anh giúp tôi nhập mã này được không? is a short service phrase for Can you help me enter this code. Use this when enter this code is the help you need right now and you want the request to stay polite.",
@@ -1152,7 +1152,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi gọi số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me call this number"
         }
       ],
       "atGlance": "Anh giúp tôi gọi số này được không? is a short service phrase for Can you help me call this number. Use this when call this number is the help you need right now and you want the request to stay polite.",
@@ -1230,7 +1230,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh chụp ảnh giúp tôi được không?",
-          "english": "full phrase"
+          "english": "Can you take a photo for me"
         }
       ],
       "atGlance": "Anh chụp ảnh giúp tôi được không? is a short service phrase for Can you take a photo for me. Use this when can you take a photo for me is the help you need right now and you want the request to stay polite.",
@@ -1308,7 +1308,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi đổi tiền được không?",
-          "english": "full phrase"
+          "english": "Can you help me exchange money"
         }
       ],
       "atGlance": "Anh giúp tôi đổi tiền được không? is a short service phrase for Can you help me exchange money. Use this when exchange money is the help you need right now and you want the request to stay polite.",
@@ -1386,7 +1386,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi in vé này được không?",
-          "english": "full phrase"
+          "english": "Can you help me print this ticket"
         }
       ],
       "atGlance": "Anh giúp tôi in vé này được không? is a short service phrase for Can you help me print this ticket. Use this when print this ticket is the help you need right now and you want the request to stay polite.",
@@ -1464,7 +1464,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi scan mã QR được không?",
-          "english": "full phrase"
+          "english": "Can you help me scan the QR code"
         }
       ],
       "atGlance": "Anh giúp tôi scan mã QR được không? is a short service phrase for Can you help me scan the QR code. Use this when scan the QR code is the help you need right now and you want the request to stay polite.",
@@ -1542,7 +1542,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi kiểm tra đặt phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me check my reservation"
         }
       ],
       "atGlance": "Anh giúp tôi kiểm tra đặt phòng được không? is a short service phrase for Can you help me check my reservation. Use this when check my reservation is the help you need right now and you want the request to stay polite.",
@@ -1620,7 +1620,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi kiểm tra vé được không?",
-          "english": "full phrase"
+          "english": "Can you help me check the ticket"
         }
       ],
       "atGlance": "Anh giúp tôi kiểm tra vé được không? is a short service phrase for Can you help me check the ticket. Use this when check the ticket is the help you need right now and you want the request to stay polite.",
@@ -1698,7 +1698,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi tìm hành lý được không?",
-          "english": "full phrase"
+          "english": "Can you help me find my luggage"
         }
       ],
       "atGlance": "Anh giúp tôi tìm hành lý được không? is a short service phrase for Can you help me find my luggage. Use this when find my luggage is the help you need right now and you want the request to stay polite.",
@@ -1776,7 +1776,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi mở cửa phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me open the room door"
         }
       ],
       "atGlance": "Anh giúp tôi mở cửa phòng được không? is a short service phrase for Can you help me open the room door. Use this when open the room door is the help you need right now and you want the request to stay polite.",
@@ -1854,7 +1854,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi sửa Wi-Fi được không?",
-          "english": "full phrase"
+          "english": "Can you help me fix the Wi-Fi"
         }
       ],
       "atGlance": "Anh giúp tôi sửa Wi-Fi được không? is a short service phrase for Can you help me fix the Wi-Fi. Use this when fix the Wi-Fi is the help you need right now and you want the request to stay polite.",
@@ -1932,7 +1932,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi sạc điện thoại được không?",
-          "english": "full phrase"
+          "english": "Can you help me charge my phone"
         }
       ],
       "atGlance": "Anh giúp tôi sạc điện thoại được không? is a short service phrase for Can you help me charge my phone. Use this when charge my phone is the help you need right now and you want the request to stay polite.",
@@ -2010,7 +2010,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Anh giúp tôi đổi phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me change rooms"
         }
       ],
       "atGlance": "Anh giúp tôi đổi phòng được không? is a short service phrase for Can you help me change rooms. Use this when change rooms is the help you need right now and you want the request to stay polite.",
@@ -2088,7 +2088,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi gọi taxi được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a taxi"
         }
       ],
       "atGlance": "Chị giúp tôi gọi taxi được không? is a short service phrase for Can you help me call a taxi. Use this when call a taxi is the help you need right now and you want the request to stay polite.",
@@ -2166,7 +2166,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi gọi xe công nghệ được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a ride-share car"
         }
       ],
       "atGlance": "Chị giúp tôi gọi xe công nghệ được không? is a short service phrase for Can you help me call a ride-share car. Use this when call a ride-share car is the help you need right now and you want the request to stay polite.",
@@ -2244,7 +2244,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi chỉ đường được không?",
-          "english": "full phrase"
+          "english": "Can you show me the way"
         }
       ],
       "atGlance": "Chị giúp tôi chỉ đường được không? is a short service phrase for Can you show me the way. Use this when can you show me the way is the help you need right now and you want the request to stay polite.",
@@ -2322,7 +2322,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi viết địa chỉ được không?",
-          "english": "full phrase"
+          "english": "Can you help me write the address"
         }
       ],
       "atGlance": "Chị giúp tôi viết địa chỉ được không? is a short service phrase for Can you help me write the address. Use this when write the address is the help you need right now and you want the request to stay polite.",
@@ -2400,7 +2400,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi đọc số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me read this number"
         }
       ],
       "atGlance": "Chị giúp tôi đọc số này được không? is a short service phrase for Can you help me read this number. Use this when read this number is the help you need right now and you want the request to stay polite.",
@@ -2478,7 +2478,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi nhập mã này được không?",
-          "english": "full phrase"
+          "english": "Can you help me enter this code"
         }
       ],
       "atGlance": "Chị giúp tôi nhập mã này được không? is a short service phrase for Can you help me enter this code. Use this when enter this code is the help you need right now and you want the request to stay polite.",
@@ -2556,7 +2556,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi gọi số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me call this number"
         }
       ],
       "atGlance": "Chị giúp tôi gọi số này được không? is a short service phrase for Can you help me call this number. Use this when call this number is the help you need right now and you want the request to stay polite.",
@@ -2634,7 +2634,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị chụp ảnh giúp tôi được không?",
-          "english": "full phrase"
+          "english": "Can you take a photo for me"
         }
       ],
       "atGlance": "Chị chụp ảnh giúp tôi được không? is a short service phrase for Can you take a photo for me. Use this when can you take a photo for me is the help you need right now and you want the request to stay polite.",
@@ -2712,7 +2712,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi đổi tiền được không?",
-          "english": "full phrase"
+          "english": "Can you help me exchange money"
         }
       ],
       "atGlance": "Chị giúp tôi đổi tiền được không? is a short service phrase for Can you help me exchange money. Use this when exchange money is the help you need right now and you want the request to stay polite.",
@@ -2790,7 +2790,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi in vé này được không?",
-          "english": "full phrase"
+          "english": "Can you help me print this ticket"
         }
       ],
       "atGlance": "Chị giúp tôi in vé này được không? is a short service phrase for Can you help me print this ticket. Use this when print this ticket is the help you need right now and you want the request to stay polite.",
@@ -2868,7 +2868,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi scan mã QR được không?",
-          "english": "full phrase"
+          "english": "Can you help me scan the QR code"
         }
       ],
       "atGlance": "Chị giúp tôi scan mã QR được không? is a short service phrase for Can you help me scan the QR code. Use this when scan the QR code is the help you need right now and you want the request to stay polite.",
@@ -2946,7 +2946,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi kiểm tra đặt phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me check my reservation"
         }
       ],
       "atGlance": "Chị giúp tôi kiểm tra đặt phòng được không? is a short service phrase for Can you help me check my reservation. Use this when check my reservation is the help you need right now and you want the request to stay polite.",
@@ -3024,7 +3024,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi kiểm tra vé được không?",
-          "english": "full phrase"
+          "english": "Can you help me check the ticket"
         }
       ],
       "atGlance": "Chị giúp tôi kiểm tra vé được không? is a short service phrase for Can you help me check the ticket. Use this when check the ticket is the help you need right now and you want the request to stay polite.",
@@ -3102,7 +3102,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi tìm hành lý được không?",
-          "english": "full phrase"
+          "english": "Can you help me find my luggage"
         }
       ],
       "atGlance": "Chị giúp tôi tìm hành lý được không? is a short service phrase for Can you help me find my luggage. Use this when find my luggage is the help you need right now and you want the request to stay polite.",
@@ -3180,7 +3180,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi mở cửa phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me open the room door"
         }
       ],
       "atGlance": "Chị giúp tôi mở cửa phòng được không? is a short service phrase for Can you help me open the room door. Use this when open the room door is the help you need right now and you want the request to stay polite.",
@@ -3258,7 +3258,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi sửa Wi-Fi được không?",
-          "english": "full phrase"
+          "english": "Can you help me fix the Wi-Fi"
         }
       ],
       "atGlance": "Chị giúp tôi sửa Wi-Fi được không? is a short service phrase for Can you help me fix the Wi-Fi. Use this when fix the Wi-Fi is the help you need right now and you want the request to stay polite.",
@@ -3336,7 +3336,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi sạc điện thoại được không?",
-          "english": "full phrase"
+          "english": "Can you help me charge my phone"
         }
       ],
       "atGlance": "Chị giúp tôi sạc điện thoại được không? is a short service phrase for Can you help me charge my phone. Use this when charge my phone is the help you need right now and you want the request to stay polite.",
@@ -3414,7 +3414,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chị giúp tôi đổi phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me change rooms"
         }
       ],
       "atGlance": "Chị giúp tôi đổi phòng được không? is a short service phrase for Can you help me change rooms. Use this when change rooms is the help you need right now and you want the request to stay polite.",
@@ -3492,7 +3492,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi gọi taxi được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a taxi"
         }
       ],
       "atGlance": "Cô giúp tôi gọi taxi được không? is a short service phrase for Can you help me call a taxi. Use this when call a taxi is the help you need right now and you want the request to stay polite.",
@@ -3570,7 +3570,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi gọi xe công nghệ được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a ride-share car"
         }
       ],
       "atGlance": "Cô giúp tôi gọi xe công nghệ được không? is a short service phrase for Can you help me call a ride-share car. Use this when call a ride-share car is the help you need right now and you want the request to stay polite.",
@@ -3648,7 +3648,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi chỉ đường được không?",
-          "english": "full phrase"
+          "english": "Can you show me the way"
         }
       ],
       "atGlance": "Cô giúp tôi chỉ đường được không? is a short service phrase for Can you show me the way. Use this when can you show me the way is the help you need right now and you want the request to stay polite.",
@@ -3726,7 +3726,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi viết địa chỉ được không?",
-          "english": "full phrase"
+          "english": "Can you help me write the address"
         }
       ],
       "atGlance": "Cô giúp tôi viết địa chỉ được không? is a short service phrase for Can you help me write the address. Use this when write the address is the help you need right now and you want the request to stay polite.",
@@ -3804,7 +3804,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi đọc số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me read this number"
         }
       ],
       "atGlance": "Cô giúp tôi đọc số này được không? is a short service phrase for Can you help me read this number. Use this when read this number is the help you need right now and you want the request to stay polite.",
@@ -3882,7 +3882,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi nhập mã này được không?",
-          "english": "full phrase"
+          "english": "Can you help me enter this code"
         }
       ],
       "atGlance": "Cô giúp tôi nhập mã này được không? is a short service phrase for Can you help me enter this code. Use this when enter this code is the help you need right now and you want the request to stay polite.",
@@ -3960,7 +3960,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi gọi số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me call this number"
         }
       ],
       "atGlance": "Cô giúp tôi gọi số này được không? is a short service phrase for Can you help me call this number. Use this when call this number is the help you need right now and you want the request to stay polite.",
@@ -4038,7 +4038,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô chụp ảnh giúp tôi được không?",
-          "english": "full phrase"
+          "english": "Can you take a photo for me"
         }
       ],
       "atGlance": "Cô chụp ảnh giúp tôi được không? is a short service phrase for Can you take a photo for me. Use this when can you take a photo for me is the help you need right now and you want the request to stay polite.",
@@ -4116,7 +4116,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi đổi tiền được không?",
-          "english": "full phrase"
+          "english": "Can you help me exchange money"
         }
       ],
       "atGlance": "Cô giúp tôi đổi tiền được không? is a short service phrase for Can you help me exchange money. Use this when exchange money is the help you need right now and you want the request to stay polite.",
@@ -4194,7 +4194,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi in vé này được không?",
-          "english": "full phrase"
+          "english": "Can you help me print this ticket"
         }
       ],
       "atGlance": "Cô giúp tôi in vé này được không? is a short service phrase for Can you help me print this ticket. Use this when print this ticket is the help you need right now and you want the request to stay polite.",
@@ -4272,7 +4272,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi scan mã QR được không?",
-          "english": "full phrase"
+          "english": "Can you help me scan the QR code"
         }
       ],
       "atGlance": "Cô giúp tôi scan mã QR được không? is a short service phrase for Can you help me scan the QR code. Use this when scan the QR code is the help you need right now and you want the request to stay polite.",
@@ -4350,7 +4350,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi kiểm tra đặt phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me check my reservation"
         }
       ],
       "atGlance": "Cô giúp tôi kiểm tra đặt phòng được không? is a short service phrase for Can you help me check my reservation. Use this when check my reservation is the help you need right now and you want the request to stay polite.",
@@ -4428,7 +4428,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi kiểm tra vé được không?",
-          "english": "full phrase"
+          "english": "Can you help me check the ticket"
         }
       ],
       "atGlance": "Cô giúp tôi kiểm tra vé được không? is a short service phrase for Can you help me check the ticket. Use this when check the ticket is the help you need right now and you want the request to stay polite.",
@@ -4506,7 +4506,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi tìm hành lý được không?",
-          "english": "full phrase"
+          "english": "Can you help me find my luggage"
         }
       ],
       "atGlance": "Cô giúp tôi tìm hành lý được không? is a short service phrase for Can you help me find my luggage. Use this when find my luggage is the help you need right now and you want the request to stay polite.",
@@ -4584,7 +4584,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi mở cửa phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me open the room door"
         }
       ],
       "atGlance": "Cô giúp tôi mở cửa phòng được không? is a short service phrase for Can you help me open the room door. Use this when open the room door is the help you need right now and you want the request to stay polite.",
@@ -4662,7 +4662,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi sửa Wi-Fi được không?",
-          "english": "full phrase"
+          "english": "Can you help me fix the Wi-Fi"
         }
       ],
       "atGlance": "Cô giúp tôi sửa Wi-Fi được không? is a short service phrase for Can you help me fix the Wi-Fi. Use this when fix the Wi-Fi is the help you need right now and you want the request to stay polite.",
@@ -4740,7 +4740,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi sạc điện thoại được không?",
-          "english": "full phrase"
+          "english": "Can you help me charge my phone"
         }
       ],
       "atGlance": "Cô giúp tôi sạc điện thoại được không? is a short service phrase for Can you help me charge my phone. Use this when charge my phone is the help you need right now and you want the request to stay polite.",
@@ -4818,7 +4818,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cô giúp tôi đổi phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me change rooms"
         }
       ],
       "atGlance": "Cô giúp tôi đổi phòng được không? is a short service phrase for Can you help me change rooms. Use this when change rooms is the help you need right now and you want the request to stay polite.",
@@ -4896,7 +4896,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi gọi taxi được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a taxi"
         }
       ],
       "atGlance": "Chú giúp tôi gọi taxi được không? is a short service phrase for Can you help me call a taxi. Use this when call a taxi is the help you need right now and you want the request to stay polite.",
@@ -4974,7 +4974,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi gọi xe công nghệ được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a ride-share car"
         }
       ],
       "atGlance": "Chú giúp tôi gọi xe công nghệ được không? is a short service phrase for Can you help me call a ride-share car. Use this when call a ride-share car is the help you need right now and you want the request to stay polite.",
@@ -5052,7 +5052,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi chỉ đường được không?",
-          "english": "full phrase"
+          "english": "Can you show me the way"
         }
       ],
       "atGlance": "Chú giúp tôi chỉ đường được không? is a short service phrase for Can you show me the way. Use this when can you show me the way is the help you need right now and you want the request to stay polite.",
@@ -5130,7 +5130,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi viết địa chỉ được không?",
-          "english": "full phrase"
+          "english": "Can you help me write the address"
         }
       ],
       "atGlance": "Chú giúp tôi viết địa chỉ được không? is a short service phrase for Can you help me write the address. Use this when write the address is the help you need right now and you want the request to stay polite.",
@@ -5208,7 +5208,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi đọc số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me read this number"
         }
       ],
       "atGlance": "Chú giúp tôi đọc số này được không? is a short service phrase for Can you help me read this number. Use this when read this number is the help you need right now and you want the request to stay polite.",
@@ -5286,7 +5286,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi nhập mã này được không?",
-          "english": "full phrase"
+          "english": "Can you help me enter this code"
         }
       ],
       "atGlance": "Chú giúp tôi nhập mã này được không? is a short service phrase for Can you help me enter this code. Use this when enter this code is the help you need right now and you want the request to stay polite.",
@@ -5364,7 +5364,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi gọi số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me call this number"
         }
       ],
       "atGlance": "Chú giúp tôi gọi số này được không? is a short service phrase for Can you help me call this number. Use this when call this number is the help you need right now and you want the request to stay polite.",
@@ -5442,7 +5442,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú chụp ảnh giúp tôi được không?",
-          "english": "full phrase"
+          "english": "Can you take a photo for me"
         }
       ],
       "atGlance": "Chú chụp ảnh giúp tôi được không? is a short service phrase for Can you take a photo for me. Use this when can you take a photo for me is the help you need right now and you want the request to stay polite.",
@@ -5520,7 +5520,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi đổi tiền được không?",
-          "english": "full phrase"
+          "english": "Can you help me exchange money"
         }
       ],
       "atGlance": "Chú giúp tôi đổi tiền được không? is a short service phrase for Can you help me exchange money. Use this when exchange money is the help you need right now and you want the request to stay polite.",
@@ -5598,7 +5598,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi in vé này được không?",
-          "english": "full phrase"
+          "english": "Can you help me print this ticket"
         }
       ],
       "atGlance": "Chú giúp tôi in vé này được không? is a short service phrase for Can you help me print this ticket. Use this when print this ticket is the help you need right now and you want the request to stay polite.",
@@ -5676,7 +5676,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi scan mã QR được không?",
-          "english": "full phrase"
+          "english": "Can you help me scan the QR code"
         }
       ],
       "atGlance": "Chú giúp tôi scan mã QR được không? is a short service phrase for Can you help me scan the QR code. Use this when scan the QR code is the help you need right now and you want the request to stay polite.",
@@ -5754,7 +5754,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi kiểm tra đặt phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me check my reservation"
         }
       ],
       "atGlance": "Chú giúp tôi kiểm tra đặt phòng được không? is a short service phrase for Can you help me check my reservation. Use this when check my reservation is the help you need right now and you want the request to stay polite.",
@@ -5832,7 +5832,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi kiểm tra vé được không?",
-          "english": "full phrase"
+          "english": "Can you help me check the ticket"
         }
       ],
       "atGlance": "Chú giúp tôi kiểm tra vé được không? is a short service phrase for Can you help me check the ticket. Use this when check the ticket is the help you need right now and you want the request to stay polite.",
@@ -5910,7 +5910,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi tìm hành lý được không?",
-          "english": "full phrase"
+          "english": "Can you help me find my luggage"
         }
       ],
       "atGlance": "Chú giúp tôi tìm hành lý được không? is a short service phrase for Can you help me find my luggage. Use this when find my luggage is the help you need right now and you want the request to stay polite.",
@@ -5988,7 +5988,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi mở cửa phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me open the room door"
         }
       ],
       "atGlance": "Chú giúp tôi mở cửa phòng được không? is a short service phrase for Can you help me open the room door. Use this when open the room door is the help you need right now and you want the request to stay polite.",
@@ -6066,7 +6066,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi sửa Wi-Fi được không?",
-          "english": "full phrase"
+          "english": "Can you help me fix the Wi-Fi"
         }
       ],
       "atGlance": "Chú giúp tôi sửa Wi-Fi được không? is a short service phrase for Can you help me fix the Wi-Fi. Use this when fix the Wi-Fi is the help you need right now and you want the request to stay polite.",
@@ -6144,7 +6144,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi sạc điện thoại được không?",
-          "english": "full phrase"
+          "english": "Can you help me charge my phone"
         }
       ],
       "atGlance": "Chú giúp tôi sạc điện thoại được không? is a short service phrase for Can you help me charge my phone. Use this when charge my phone is the help you need right now and you want the request to stay polite.",
@@ -6222,7 +6222,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Chú giúp tôi đổi phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me change rooms"
         }
       ],
       "atGlance": "Chú giúp tôi đổi phòng được không? is a short service phrase for Can you help me change rooms. Use this when change rooms is the help you need right now and you want the request to stay polite.",
@@ -6300,7 +6300,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi gọi taxi được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a taxi"
         }
       ],
       "atGlance": "Em giúp tôi gọi taxi được không? is a short service phrase for Can you help me call a taxi. Use this when call a taxi is the help you need right now and you want the request to stay polite.",
@@ -6378,7 +6378,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi gọi xe công nghệ được không?",
-          "english": "full phrase"
+          "english": "Can you help me call a ride-share car"
         }
       ],
       "atGlance": "Em giúp tôi gọi xe công nghệ được không? is a short service phrase for Can you help me call a ride-share car. Use this when call a ride-share car is the help you need right now and you want the request to stay polite.",
@@ -6456,7 +6456,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi chỉ đường được không?",
-          "english": "full phrase"
+          "english": "Can you show me the way"
         }
       ],
       "atGlance": "Em giúp tôi chỉ đường được không? is a short service phrase for Can you show me the way. Use this when can you show me the way is the help you need right now and you want the request to stay polite.",
@@ -6534,7 +6534,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi viết địa chỉ được không?",
-          "english": "full phrase"
+          "english": "Can you help me write the address"
         }
       ],
       "atGlance": "Em giúp tôi viết địa chỉ được không? is a short service phrase for Can you help me write the address. Use this when write the address is the help you need right now and you want the request to stay polite.",
@@ -6612,7 +6612,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi đọc số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me read this number"
         }
       ],
       "atGlance": "Em giúp tôi đọc số này được không? is a short service phrase for Can you help me read this number. Use this when read this number is the help you need right now and you want the request to stay polite.",
@@ -6690,7 +6690,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi nhập mã này được không?",
-          "english": "full phrase"
+          "english": "Can you help me enter this code"
         }
       ],
       "atGlance": "Em giúp tôi nhập mã này được không? is a short service phrase for Can you help me enter this code. Use this when enter this code is the help you need right now and you want the request to stay polite.",
@@ -6768,7 +6768,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi gọi số này được không?",
-          "english": "full phrase"
+          "english": "Can you help me call this number"
         }
       ],
       "atGlance": "Em giúp tôi gọi số này được không? is a short service phrase for Can you help me call this number. Use this when call this number is the help you need right now and you want the request to stay polite.",
@@ -6846,7 +6846,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em chụp ảnh giúp tôi được không?",
-          "english": "full phrase"
+          "english": "Can you take a photo for me"
         }
       ],
       "atGlance": "Em chụp ảnh giúp tôi được không? is a short service phrase for Can you take a photo for me. Use this when can you take a photo for me is the help you need right now and you want the request to stay polite.",
@@ -6924,7 +6924,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi đổi tiền được không?",
-          "english": "full phrase"
+          "english": "Can you help me exchange money"
         }
       ],
       "atGlance": "Em giúp tôi đổi tiền được không? is a short service phrase for Can you help me exchange money. Use this when exchange money is the help you need right now and you want the request to stay polite.",
@@ -7002,7 +7002,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi in vé này được không?",
-          "english": "full phrase"
+          "english": "Can you help me print this ticket"
         }
       ],
       "atGlance": "Em giúp tôi in vé này được không? is a short service phrase for Can you help me print this ticket. Use this when print this ticket is the help you need right now and you want the request to stay polite.",
@@ -7080,7 +7080,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi scan mã QR được không?",
-          "english": "full phrase"
+          "english": "Can you help me scan the QR code"
         }
       ],
       "atGlance": "Em giúp tôi scan mã QR được không? is a short service phrase for Can you help me scan the QR code. Use this when scan the QR code is the help you need right now and you want the request to stay polite.",
@@ -7158,7 +7158,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi kiểm tra đặt phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me check my reservation"
         }
       ],
       "atGlance": "Em giúp tôi kiểm tra đặt phòng được không? is a short service phrase for Can you help me check my reservation. Use this when check my reservation is the help you need right now and you want the request to stay polite.",
@@ -7236,7 +7236,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi kiểm tra vé được không?",
-          "english": "full phrase"
+          "english": "Can you help me check the ticket"
         }
       ],
       "atGlance": "Em giúp tôi kiểm tra vé được không? is a short service phrase for Can you help me check the ticket. Use this when check the ticket is the help you need right now and you want the request to stay polite.",
@@ -7314,7 +7314,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi tìm hành lý được không?",
-          "english": "full phrase"
+          "english": "Can you help me find my luggage"
         }
       ],
       "atGlance": "Em giúp tôi tìm hành lý được không? is a short service phrase for Can you help me find my luggage. Use this when find my luggage is the help you need right now and you want the request to stay polite.",
@@ -7392,7 +7392,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi mở cửa phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me open the room door"
         }
       ],
       "atGlance": "Em giúp tôi mở cửa phòng được không? is a short service phrase for Can you help me open the room door. Use this when open the room door is the help you need right now and you want the request to stay polite.",
@@ -7470,7 +7470,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi sửa Wi-Fi được không?",
-          "english": "full phrase"
+          "english": "Can you help me fix the Wi-Fi"
         }
       ],
       "atGlance": "Em giúp tôi sửa Wi-Fi được không? is a short service phrase for Can you help me fix the Wi-Fi. Use this when fix the Wi-Fi is the help you need right now and you want the request to stay polite.",
@@ -7548,7 +7548,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi sạc điện thoại được không?",
-          "english": "full phrase"
+          "english": "Can you help me charge my phone"
         }
       ],
       "atGlance": "Em giúp tôi sạc điện thoại được không? is a short service phrase for Can you help me charge my phone. Use this when charge my phone is the help you need right now and you want the request to stay polite.",
@@ -7626,7 +7626,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Em giúp tôi đổi phòng được không?",
-          "english": "full phrase"
+          "english": "Can you help me change rooms"
         }
       ],
       "atGlance": "Em giúp tôi đổi phòng được không? is a short service phrase for Can you help me change rooms. Use this when change rooms is the help you need right now and you want the request to stay polite.",
@@ -7699,7 +7699,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi nước suối",
-          "english": "full phrase"
+          "english": "Respectfully, please give me bottled water"
         }
       ],
       "atGlance": "Dạ, cho tôi nước suối is a short service phrase for please give me bottled water. Use this when you want the request for bottled water to sound a little softer at a service counter.",
@@ -7772,7 +7772,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi nước lọc",
-          "english": "full phrase"
+          "english": "Respectfully, please give me filtered water"
         }
       ],
       "atGlance": "Dạ, cho tôi nước lọc is a short service phrase for please give me filtered water. Use this when you want the request for filtered water to sound a little softer at a service counter.",
@@ -7845,7 +7845,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi nước nóng",
-          "english": "full phrase"
+          "english": "Respectfully, please give me hot water"
         }
       ],
       "atGlance": "Dạ, cho tôi nước nóng is a short service phrase for please give me hot water. Use this when you want the request for hot water to sound a little softer at a service counter.",
@@ -7918,7 +7918,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi đá",
-          "english": "full phrase"
+          "english": "Respectfully, please give me ice"
         }
       ],
       "atGlance": "Dạ, cho tôi đá is a short service phrase for please give me ice. Use this when you want the request for ice to sound a little softer at a service counter.",
@@ -7991,7 +7991,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi khăn giấy",
-          "english": "full phrase"
+          "english": "Respectfully, please give me tissues"
         }
       ],
       "atGlance": "Dạ, cho tôi khăn giấy is a short service phrase for please give me tissues. Use this when you want the request for tissues to sound a little softer at a service counter.",
@@ -8064,7 +8064,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi giấy vệ sinh",
-          "english": "full phrase"
+          "english": "Respectfully, please give me toilet paper"
         }
       ],
       "atGlance": "Dạ, cho tôi giấy vệ sinh is a short service phrase for please give me toilet paper. Use this when you want the request for toilet paper to sound a little softer at a service counter.",
@@ -8137,7 +8137,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi xà phòng",
-          "english": "full phrase"
+          "english": "Respectfully, please give me soap"
         }
       ],
       "atGlance": "Dạ, cho tôi xà phòng is a short service phrase for please give me soap. Use this when you want the request for soap to sound a little softer at a service counter.",
@@ -8210,7 +8210,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi kem chống nắng",
-          "english": "full phrase"
+          "english": "Respectfully, please give me sunscreen"
         }
       ],
       "atGlance": "Dạ, cho tôi kem chống nắng is a short service phrase for please give me sunscreen. Use this when you want the request for sunscreen to sound a little softer at a service counter.",
@@ -8283,7 +8283,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi thuốc đau đầu",
-          "english": "full phrase"
+          "english": "Respectfully, please give me headache medicine"
         }
       ],
       "atGlance": "Dạ, cho tôi thuốc đau đầu is a short service phrase for please give me headache medicine. Use this when you want the request for headache medicine to sound a little softer at a service counter.",
@@ -8356,7 +8356,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi thuốc đau bụng",
-          "english": "full phrase"
+          "english": "Respectfully, please give me stomach medicine"
         }
       ],
       "atGlance": "Dạ, cho tôi thuốc đau bụng is a short service phrase for please give me stomach medicine. Use this when you want the request for stomach medicine to sound a little softer at a service counter.",
@@ -8429,7 +8429,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi thuốc say xe",
-          "english": "full phrase"
+          "english": "Respectfully, please give me motion-sickness medicine"
         }
       ],
       "atGlance": "Dạ, cho tôi thuốc say xe is a short service phrase for please give me motion-sickness medicine. Use this when you want the request for motion-sickness medicine to sound a little softer at a service counter.",
@@ -8502,7 +8502,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi băng cá nhân",
-          "english": "full phrase"
+          "english": "Respectfully, please give me bandages"
         }
       ],
       "atGlance": "Dạ, cho tôi băng cá nhân is a short service phrase for please give me bandages. Use this when you want the request for bandages to sound a little softer at a service counter.",
@@ -8575,7 +8575,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi khẩu trang",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a face mask"
         }
       ],
       "atGlance": "Dạ, cho tôi khẩu trang is a short service phrase for please give me a face mask. Use this when you want the request for a face mask to sound a little softer at a service counter.",
@@ -8648,7 +8648,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi sạc điện thoại",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a phone charger"
         }
       ],
       "atGlance": "Dạ, cho tôi sạc điện thoại is a short service phrase for please give me a phone charger. Use this when you want the request for a phone charger to sound a little softer at a service counter.",
@@ -8721,7 +8721,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi dây sạc",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a charging cable"
         }
       ],
       "atGlance": "Dạ, cho tôi dây sạc is a short service phrase for please give me a charging cable. Use this when you want the request for a charging cable to sound a little softer at a service counter.",
@@ -8794,7 +8794,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi pin dự phòng",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a power bank"
         }
       ],
       "atGlance": "Dạ, cho tôi pin dự phòng is a short service phrase for please give me a power bank. Use this when you want the request for a power bank to sound a little softer at a service counter.",
@@ -8867,7 +8867,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi thẻ SIM",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a SIM card"
         }
       ],
       "atGlance": "Dạ, cho tôi thẻ SIM is a short service phrase for please give me a SIM card. Use this when you want the request for a SIM card to sound a little softer at a service counter.",
@@ -8940,7 +8940,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi gói data",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a data package"
         }
       ],
       "atGlance": "Dạ, cho tôi gói data is a short service phrase for please give me a data package. Use this when you want the request for a data package to sound a little softer at a service counter.",
@@ -9012,7 +9012,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi Wi-Fi",
-          "english": "full phrase"
+          "english": "Respectfully, please give me Wi-Fi"
         }
       ],
       "atGlance": "Dạ, cho tôi Wi-Fi is a short service phrase for please give me Wi-Fi. Use this when you want the request for wi-Fi to sound a little softer at a service counter.",
@@ -9085,7 +9085,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi mật khẩu Wi-Fi",
-          "english": "full phrase"
+          "english": "Respectfully, please give me the Wi-Fi password"
         }
       ],
       "atGlance": "Dạ, cho tôi mật khẩu Wi-Fi is a short service phrase for please give me the Wi-Fi password. Use this when you want the request for the Wi-Fi password to sound a little softer at a service counter.",
@@ -9158,7 +9158,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi bản đồ giấy",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a paper map"
         }
       ],
       "atGlance": "Dạ, cho tôi bản đồ giấy is a short service phrase for please give me a paper map. Use this when you want the request for a paper map to sound a little softer at a service counter.",
@@ -9231,7 +9231,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi hóa đơn",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a receipt"
         }
       ],
       "atGlance": "Dạ, cho tôi hóa đơn is a short service phrase for please give me a receipt. Use this when you want the request for a receipt to sound a little softer at a service counter.",
@@ -9304,7 +9304,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi túi nilon",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a plastic bag"
         }
       ],
       "atGlance": "Dạ, cho tôi túi nilon is a short service phrase for please give me a plastic bag. Use this when you want the request for a plastic bag to sound a little softer at a service counter.",
@@ -9377,7 +9377,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi túi giấy",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a paper bag"
         }
       ],
       "atGlance": "Dạ, cho tôi túi giấy is a short service phrase for please give me a paper bag. Use this when you want the request for a paper bag to sound a little softer at a service counter.",
@@ -9450,7 +9450,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi thìa",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a spoon"
         }
       ],
       "atGlance": "Dạ, cho tôi thìa is a short service phrase for please give me a spoon. Use this when you want the request for a spoon to sound a little softer at a service counter.",
@@ -9523,7 +9523,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi đũa",
-          "english": "full phrase"
+          "english": "Respectfully, please give me chopsticks"
         }
       ],
       "atGlance": "Dạ, cho tôi đũa is a short service phrase for please give me chopsticks. Use this when you want the request for chopsticks to sound a little softer at a service counter.",
@@ -9596,7 +9596,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi ống hút",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a straw"
         }
       ],
       "atGlance": "Dạ, cho tôi ống hút is a short service phrase for please give me a straw. Use this when you want the request for a straw to sound a little softer at a service counter.",
@@ -9669,7 +9669,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi thực đơn tiếng Anh",
-          "english": "full phrase"
+          "english": "Respectfully, please give me an English menu"
         }
       ],
       "atGlance": "Dạ, cho tôi thực đơn tiếng Anh is a short service phrase for please give me an English menu. Use this when you want the request for an English menu to sound a little softer at a service counter.",
@@ -9742,7 +9742,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi cà phê sữa đá",
-          "english": "full phrase"
+          "english": "Respectfully, please give me iced milk coffee"
         }
       ],
       "atGlance": "Dạ, cho tôi cà phê sữa đá is a short service phrase for please give me iced milk coffee. Use this when you want the request for iced milk coffee to sound a little softer at a service counter.",
@@ -9815,7 +9815,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi cà phê đen",
-          "english": "full phrase"
+          "english": "Respectfully, please give me black coffee"
         }
       ],
       "atGlance": "Dạ, cho tôi cà phê đen is a short service phrase for please give me black coffee. Use this when you want the request for black coffee to sound a little softer at a service counter.",
@@ -9888,7 +9888,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi trà đá",
-          "english": "full phrase"
+          "english": "Respectfully, please give me iced tea"
         }
       ],
       "atGlance": "Dạ, cho tôi trà đá is a short service phrase for please give me iced tea. Use this when you want the request for iced tea to sound a little softer at a service counter.",
@@ -9961,7 +9961,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi cơm trắng",
-          "english": "full phrase"
+          "english": "Respectfully, please give me plain rice"
         }
       ],
       "atGlance": "Dạ, cho tôi cơm trắng is a short service phrase for please give me plain rice. Use this when you want the request for plain rice to sound a little softer at a service counter.",
@@ -10034,7 +10034,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi nước mắm",
-          "english": "full phrase"
+          "english": "Respectfully, please give me fish sauce"
         }
       ],
       "atGlance": "Dạ, cho tôi nước mắm is a short service phrase for please give me fish sauce. Use this when you want the request for fish sauce to sound a little softer at a service counter.",
@@ -10107,7 +10107,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi tương ớt",
-          "english": "full phrase"
+          "english": "Respectfully, please give me chili sauce"
         }
       ],
       "atGlance": "Dạ, cho tôi tương ớt is a short service phrase for please give me chili sauce. Use this when you want the request for chili sauce to sound a little softer at a service counter.",
@@ -10180,7 +10180,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi rau sống",
-          "english": "full phrase"
+          "english": "Respectfully, please give me fresh herbs"
         }
       ],
       "atGlance": "Dạ, cho tôi rau sống is a short service phrase for please give me fresh herbs. Use this when you want the request for fresh herbs to sound a little softer at a service counter.",
@@ -10253,7 +10253,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi đồ chay",
-          "english": "full phrase"
+          "english": "Respectfully, please give me vegetarian food"
         }
       ],
       "atGlance": "Dạ, cho tôi đồ chay is a short service phrase for please give me vegetarian food. Use this when you want the request for vegetarian food to sound a little softer at a service counter.",
@@ -10326,7 +10326,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi vé một chiều",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a one-way ticket"
         }
       ],
       "atGlance": "Dạ, cho tôi vé một chiều is a short service phrase for please give me a one-way ticket. Use this when you want the request for a one-way ticket to sound a little softer at a service counter.",
@@ -10399,7 +10399,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi vé khứ hồi",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a return ticket"
         }
       ],
       "atGlance": "Dạ, cho tôi vé khứ hồi is a short service phrase for please give me a return ticket. Use this when you want the request for a return ticket to sound a little softer at a service counter.",
@@ -10472,7 +10472,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi vé người lớn",
-          "english": "full phrase"
+          "english": "Respectfully, please give me an adult ticket"
         }
       ],
       "atGlance": "Dạ, cho tôi vé người lớn is a short service phrase for please give me an adult ticket. Use this when you want the request for an adult ticket to sound a little softer at a service counter.",
@@ -10545,7 +10545,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi vé trẻ em",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a child ticket"
         }
       ],
       "atGlance": "Dạ, cho tôi vé trẻ em is a short service phrase for please give me a child ticket. Use this when you want the request for a child ticket to sound a little softer at a service counter.",
@@ -10618,7 +10618,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi phòng đơn",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a single room"
         }
       ],
       "atGlance": "Dạ, cho tôi phòng đơn is a short service phrase for please give me a single room. Use this when you want the request for a single room to sound a little softer at a service counter.",
@@ -10691,7 +10691,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi phòng đôi",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a double room"
         }
       ],
       "atGlance": "Dạ, cho tôi phòng đôi is a short service phrase for please give me a double room. Use this when you want the request for a double room to sound a little softer at a service counter.",
@@ -10764,7 +10764,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi khăn tắm",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a bath towel"
         }
       ],
       "atGlance": "Dạ, cho tôi khăn tắm is a short service phrase for please give me a bath towel. Use this when you want the request for a bath towel to sound a little softer at a service counter.",
@@ -10837,7 +10837,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi chìa khóa phòng",
-          "english": "full phrase"
+          "english": "Respectfully, please give me the room key"
         }
       ],
       "atGlance": "Dạ, cho tôi chìa khóa phòng is a short service phrase for please give me the room key. Use this when you want the request for the room key to sound a little softer at a service counter.",
@@ -10910,7 +10910,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Dạ, cho tôi máy sấy tóc",
-          "english": "full phrase"
+          "english": "Respectfully, please give me a hair dryer"
         }
       ],
       "atGlance": "Dạ, cho tôi máy sấy tóc is a short service phrase for please give me a hair dryer. Use this when you want the request for a hair dryer to sound a little softer at a service counter.",
@@ -10983,7 +10983,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Làm ơn cho tôi nước suối",
-          "english": "full phrase"
+          "english": "Please give me bottled water"
         }
       ],
       "atGlance": "Làm ơn cho tôi nước suối is a short service phrase for Please give me bottled water. Use this when you want the request for bottled water to sound a little softer at a service counter.",
@@ -11056,7 +11056,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Làm ơn cho tôi nước lọc",
-          "english": "full phrase"
+          "english": "Please give me filtered water"
         }
       ],
       "atGlance": "Làm ơn cho tôi nước lọc is a short service phrase for Please give me filtered water. Use this when you want the request for filtered water to sound a little softer at a service counter.",
@@ -11129,7 +11129,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Làm ơn cho tôi nước nóng",
-          "english": "full phrase"
+          "english": "Please give me hot water"
         }
       ],
       "atGlance": "Làm ơn cho tôi nước nóng is a short service phrase for Please give me hot water. Use this when you want the request for hot water to sound a little softer at a service counter.",
@@ -11202,7 +11202,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Làm ơn cho tôi đá",
-          "english": "full phrase"
+          "english": "Please give me ice"
         }
       ],
       "atGlance": "Làm ơn cho tôi đá is a short service phrase for Please give me ice. Use this when you want the request for ice to sound a little softer at a service counter.",
@@ -11275,7 +11275,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Làm ơn cho tôi khăn giấy",
-          "english": "full phrase"
+          "english": "Please give me tissues"
         }
       ],
       "atGlance": "Làm ơn cho tôi khăn giấy is a short service phrase for Please give me tissues. Use this when you want the request for tissues to sound a little softer at a service counter.",
@@ -11348,7 +11348,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Làm ơn cho tôi giấy vệ sinh",
-          "english": "full phrase"
+          "english": "Please give me toilet paper"
         }
       ],
       "atGlance": "Làm ơn cho tôi giấy vệ sinh is a short service phrase for Please give me toilet paper. Use this when you want the request for toilet paper to sound a little softer at a service counter.",
@@ -11421,7 +11421,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Làm ơn cho tôi xà phòng",
-          "english": "full phrase"
+          "english": "Please give me soap"
         }
       ],
       "atGlance": "Làm ơn cho tôi xà phòng is a short service phrase for Please give me soap. Use this when you want the request for soap to sound a little softer at a service counter.",

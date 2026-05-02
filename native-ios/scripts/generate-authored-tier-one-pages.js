@@ -2056,7 +2056,7 @@ function cityBreakdownTokens(pageRecord) {
   const hasFinalChunk = normalizeAudioText(lastVietnamese ?? "") === normalizeAudioText(pageRecord.targetText);
   const finalChunk = hasFinalChunk
     ? chunks[chunks.length - 1]
-    : { id: `${pageRecord.id}-full`, vietnamese: pageRecord.targetText, english: "full phrase" };
+    : { id: `${pageRecord.id}-full`, vietnamese: pageRecord.targetText, english: pageRecord.englishText };
   const teachingChunks = hasFinalChunk ? chunks.slice(0, -1) : chunks;
   const compactChunks = teachingChunks.flatMap(splitLongCityChunk);
   compactChunks.push(finalChunk);
@@ -2348,7 +2348,7 @@ function practiceExpansionBreakdownTokens(record) {
     chunks.push({
       id: `${record.id}-full`,
       vietnamese: record.targetText,
-      english: "full phrase",
+      english: record.englishText,
     });
   }
 

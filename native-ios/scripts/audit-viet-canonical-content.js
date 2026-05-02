@@ -111,6 +111,8 @@ const weakBreakdownPatterns = [
   { id: "context_word", pattern: /^context word$/i },
   { id: "meaning_to_keep", pattern: /^meaning to keep$/i },
   { id: "meaningful_phrase_part", pattern: /^meaningful phrase part$/i },
+  { id: "full_phrase_visible_label", pattern: /^full phrase$/i },
+  { id: "phrase_meaning_fallback", pattern: /^phrase meaning$/i },
 ];
 
 function run(command, args) {

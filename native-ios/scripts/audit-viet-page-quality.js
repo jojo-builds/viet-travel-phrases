@@ -76,6 +76,8 @@ function breakdownIssues(page, tokens) {
     "final name part",
     "soft reassurance",
     "context word",
+    "full phrase",
+    "phrase meaning",
   ].includes(label) || label.includes("question marker"))) {
     issues.push("internal breakdown label");
   }

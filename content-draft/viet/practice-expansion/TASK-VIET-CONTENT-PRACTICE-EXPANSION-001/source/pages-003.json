@@ -59,7 +59,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở phòng y tế",
-          "english": "full phrase"
+          "english": "Stop at the medical room"
         }
       ],
       "atGlance": "Dừng ở phòng y tế puts the medical room into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -132,7 +132,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "máy in ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a printer"
         }
       ],
       "atGlance": "máy in ở đâu? turns a printer into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -210,7 +210,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "máy in gần đây không?",
-          "english": "full phrase"
+          "english": "Is a printer nearby"
         }
       ],
       "atGlance": "máy in gần đây không? turns a printer into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -288,7 +288,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến máy in",
-          "english": "full phrase"
+          "english": "Please take me to a printer"
         }
       ],
       "atGlance": "Cho tôi đến máy in puts a printer into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -366,7 +366,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở máy in",
-          "english": "full phrase"
+          "english": "Stop at a printer"
         }
       ],
       "atGlance": "Dừng ở máy in puts a printer into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -439,7 +439,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "máy photocopy ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a copier"
         }
       ],
       "atGlance": "máy photocopy ở đâu? turns a copier into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -517,7 +517,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "máy photocopy gần đây không?",
-          "english": "full phrase"
+          "english": "Is a copier nearby"
         }
       ],
       "atGlance": "máy photocopy gần đây không? turns a copier into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -595,7 +595,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến máy photocopy",
-          "english": "full phrase"
+          "english": "Please take me to a copier"
         }
       ],
       "atGlance": "Cho tôi đến máy photocopy puts a copier into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -673,7 +673,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở máy photocopy",
-          "english": "full phrase"
+          "english": "Stop at a copier"
         }
       ],
       "atGlance": "Dừng ở máy photocopy puts a copier into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -746,7 +746,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "cây nước nóng ở đâu?",
-          "english": "full phrase"
+          "english": "Where is a hot-water dispenser"
         }
       ],
       "atGlance": "cây nước nóng ở đâu? turns a hot-water dispenser into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -824,7 +824,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "cây nước nóng gần đây không?",
-          "english": "full phrase"
+          "english": "Is a hot-water dispenser nearby"
         }
       ],
       "atGlance": "cây nước nóng gần đây không? turns a hot-water dispenser into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -902,7 +902,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến cây nước nóng",
-          "english": "full phrase"
+          "english": "Please take me to a hot-water dispenser"
         }
       ],
       "atGlance": "Cho tôi đến cây nước nóng puts a hot-water dispenser into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -980,7 +980,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở cây nước nóng",
-          "english": "full phrase"
+          "english": "Stop at a hot-water dispenser"
         }
       ],
       "atGlance": "Dừng ở cây nước nóng puts a hot-water dispenser into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1053,7 +1053,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "quầy đặt tour ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the tour desk"
         }
       ],
       "atGlance": "quầy đặt tour ở đâu? turns the tour desk into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1131,7 +1131,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "quầy đặt tour gần đây không?",
-          "english": "full phrase"
+          "english": "Is the tour desk nearby"
         }
       ],
       "atGlance": "quầy đặt tour gần đây không? turns the tour desk into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1209,7 +1209,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến quầy đặt tour",
-          "english": "full phrase"
+          "english": "Please take me to the tour desk"
         }
       ],
       "atGlance": "Cho tôi đến quầy đặt tour puts the tour desk into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1287,7 +1287,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở quầy đặt tour",
-          "english": "full phrase"
+          "english": "Stop at the tour desk"
         }
       ],
       "atGlance": "Dừng ở quầy đặt tour puts the tour desk into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1360,7 +1360,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "điểm hẹn ở đâu?",
-          "english": "full phrase"
+          "english": "Where is the meeting point"
         }
       ],
       "atGlance": "điểm hẹn ở đâu? turns the meeting point into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1438,7 +1438,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "điểm hẹn gần đây không?",
-          "english": "full phrase"
+          "english": "Is the meeting point nearby"
         }
       ],
       "atGlance": "điểm hẹn gần đây không? turns the meeting point into a place-finding question. It is useful when you can show the map or nearby landmark and need a short answer you can act on.",
@@ -1516,7 +1516,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Cho tôi đến điểm hẹn",
-          "english": "full phrase"
+          "english": "Please take me to the meeting point"
         }
       ],
       "atGlance": "Cho tôi đến điểm hẹn puts the meeting point into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1594,7 +1594,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Dừng ở điểm hẹn",
-          "english": "full phrase"
+          "english": "Stop at the meeting point"
         }
       ],
       "atGlance": "Dừng ở điểm hẹn puts the meeting point into a ride or route sentence. It helps the driver or helper confirm the destination, stop, or next turn before you keep moving.",
@@ -1671,7 +1671,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần nước suối",
-          "english": "full phrase"
+          "english": "I need bottled water"
         }
       ],
       "atGlance": "Tôi cần nước suối is the direct beginner phrase for asking for bottled water. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -1748,7 +1748,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua nước suối",
-          "english": "full phrase"
+          "english": "I want to buy bottled water"
         }
       ],
       "atGlance": "Tôi muốn mua nước suối is a buying phrase for bottled water. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -1821,7 +1821,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "nước suối bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is bottled water"
         }
       ],
       "atGlance": "nước suối bao nhiêu tiền? is the price-check phrase for bottled water. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -1898,7 +1898,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần nước lọc",
-          "english": "full phrase"
+          "english": "I need filtered water"
         }
       ],
       "atGlance": "Tôi cần nước lọc is the direct beginner phrase for asking for filtered water. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -1976,7 +1976,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có nước lọc không?",
-          "english": "full phrase"
+          "english": "Do you have filtered water"
         }
       ],
       "atGlance": "Có nước lọc không? checks availability for filtered water. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -2053,7 +2053,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua nước lọc",
-          "english": "full phrase"
+          "english": "I want to buy filtered water"
         }
       ],
       "atGlance": "Tôi muốn mua nước lọc is a buying phrase for filtered water. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -2126,7 +2126,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "nước lọc bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is filtered water"
         }
       ],
       "atGlance": "nước lọc bao nhiêu tiền? is the price-check phrase for filtered water. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -2203,7 +2203,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần nước nóng",
-          "english": "full phrase"
+          "english": "I need hot water"
         }
       ],
       "atGlance": "Tôi cần nước nóng is the direct beginner phrase for asking for hot water. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -2281,7 +2281,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có nước nóng không?",
-          "english": "full phrase"
+          "english": "Do you have hot water"
         }
       ],
       "atGlance": "Có nước nóng không? checks availability for hot water. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -2358,7 +2358,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua nước nóng",
-          "english": "full phrase"
+          "english": "I want to buy hot water"
         }
       ],
       "atGlance": "Tôi muốn mua nước nóng is a buying phrase for hot water. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -2431,7 +2431,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "nước nóng bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is hot water"
         }
       ],
       "atGlance": "nước nóng bao nhiêu tiền? is the price-check phrase for hot water. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -2508,7 +2508,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần đá",
-          "english": "full phrase"
+          "english": "I need ice"
         }
       ],
       "atGlance": "Tôi cần đá is the direct beginner phrase for asking for ice. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -2586,7 +2586,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có đá không?",
-          "english": "full phrase"
+          "english": "Do you have ice"
         }
       ],
       "atGlance": "Có đá không? checks availability for ice. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -2663,7 +2663,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua đá",
-          "english": "full phrase"
+          "english": "I want to buy ice"
         }
       ],
       "atGlance": "Tôi muốn mua đá is a buying phrase for ice. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -2736,7 +2736,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "đá bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is ice"
         }
       ],
       "atGlance": "đá bao nhiêu tiền? is the price-check phrase for ice. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -2814,7 +2814,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có khăn giấy không?",
-          "english": "full phrase"
+          "english": "Do you have tissues"
         }
       ],
       "atGlance": "Có khăn giấy không? checks availability for tissues. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -2891,7 +2891,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua khăn giấy",
-          "english": "full phrase"
+          "english": "I want to buy tissues"
         }
       ],
       "atGlance": "Tôi muốn mua khăn giấy is a buying phrase for tissues. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -2964,7 +2964,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "khăn giấy bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is tissues"
         }
       ],
       "atGlance": "khăn giấy bao nhiêu tiền? is the price-check phrase for tissues. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -3041,7 +3041,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần giấy vệ sinh",
-          "english": "full phrase"
+          "english": "I need toilet paper"
         }
       ],
       "atGlance": "Tôi cần giấy vệ sinh is the direct beginner phrase for asking for toilet paper. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -3118,7 +3118,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua giấy vệ sinh",
-          "english": "full phrase"
+          "english": "I want to buy toilet paper"
         }
       ],
       "atGlance": "Tôi muốn mua giấy vệ sinh is a buying phrase for toilet paper. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -3191,7 +3191,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "giấy vệ sinh bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is toilet paper"
         }
       ],
       "atGlance": "giấy vệ sinh bao nhiêu tiền? is the price-check phrase for toilet paper. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -3268,7 +3268,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần xà phòng",
-          "english": "full phrase"
+          "english": "I need soap"
         }
       ],
       "atGlance": "Tôi cần xà phòng is the direct beginner phrase for asking for soap. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -3345,7 +3345,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua xà phòng",
-          "english": "full phrase"
+          "english": "I want to buy soap"
         }
       ],
       "atGlance": "Tôi muốn mua xà phòng is a buying phrase for soap. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -3418,7 +3418,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "xà phòng bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is soap"
         }
       ],
       "atGlance": "xà phòng bao nhiêu tiền? is the price-check phrase for soap. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -3496,7 +3496,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có kem chống nắng không?",
-          "english": "full phrase"
+          "english": "Do you have sunscreen"
         }
       ],
       "atGlance": "Có kem chống nắng không? checks availability for sunscreen. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -3573,7 +3573,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua kem chống nắng",
-          "english": "full phrase"
+          "english": "I want to buy sunscreen"
         }
       ],
       "atGlance": "Tôi muốn mua kem chống nắng is a buying phrase for sunscreen. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -3646,7 +3646,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "kem chống nắng bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is sunscreen"
         }
       ],
       "atGlance": "kem chống nắng bao nhiêu tiền? is the price-check phrase for sunscreen. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -3723,7 +3723,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần thuốc đau đầu",
-          "english": "full phrase"
+          "english": "I need headache medicine"
         }
       ],
       "atGlance": "Tôi cần thuốc đau đầu is the direct beginner phrase for asking for headache medicine. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -3801,7 +3801,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có thuốc đau đầu không?",
-          "english": "full phrase"
+          "english": "Do you have headache medicine"
         }
       ],
       "atGlance": "Có thuốc đau đầu không? checks availability for headache medicine. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -3878,7 +3878,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua thuốc đau đầu",
-          "english": "full phrase"
+          "english": "I want to buy headache medicine"
         }
       ],
       "atGlance": "Tôi muốn mua thuốc đau đầu is a buying phrase for headache medicine. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -3951,7 +3951,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "thuốc đau đầu bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is headache medicine"
         }
       ],
       "atGlance": "thuốc đau đầu bao nhiêu tiền? is the price-check phrase for headache medicine. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -4028,7 +4028,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần thuốc đau bụng",
-          "english": "full phrase"
+          "english": "I need stomach medicine"
         }
       ],
       "atGlance": "Tôi cần thuốc đau bụng is the direct beginner phrase for asking for stomach medicine. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -4106,7 +4106,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có thuốc đau bụng không?",
-          "english": "full phrase"
+          "english": "Do you have stomach medicine"
         }
       ],
       "atGlance": "Có thuốc đau bụng không? checks availability for stomach medicine. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -4183,7 +4183,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua thuốc đau bụng",
-          "english": "full phrase"
+          "english": "I want to buy stomach medicine"
         }
       ],
       "atGlance": "Tôi muốn mua thuốc đau bụng is a buying phrase for stomach medicine. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -4256,7 +4256,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "thuốc đau bụng bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is stomach medicine"
         }
       ],
       "atGlance": "thuốc đau bụng bao nhiêu tiền? is the price-check phrase for stomach medicine. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -4333,7 +4333,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần thuốc say xe",
-          "english": "full phrase"
+          "english": "I need motion-sickness medicine"
         }
       ],
       "atGlance": "Tôi cần thuốc say xe is the direct beginner phrase for asking for motion-sickness medicine. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -4410,7 +4410,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua thuốc say xe",
-          "english": "full phrase"
+          "english": "I want to buy motion-sickness medicine"
         }
       ],
       "atGlance": "Tôi muốn mua thuốc say xe is a buying phrase for motion-sickness medicine. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -4483,7 +4483,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "thuốc say xe bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is motion-sickness medicine"
         }
       ],
       "atGlance": "thuốc say xe bao nhiêu tiền? is the price-check phrase for motion-sickness medicine. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -4560,7 +4560,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần băng cá nhân",
-          "english": "full phrase"
+          "english": "I need bandages"
         }
       ],
       "atGlance": "Tôi cần băng cá nhân is the direct beginner phrase for asking for bandages. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -4638,7 +4638,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có băng cá nhân không?",
-          "english": "full phrase"
+          "english": "Do you have bandages"
         }
       ],
       "atGlance": "Có băng cá nhân không? checks availability for bandages. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -4715,7 +4715,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua băng cá nhân",
-          "english": "full phrase"
+          "english": "I want to buy bandages"
         }
       ],
       "atGlance": "Tôi muốn mua băng cá nhân is a buying phrase for bandages. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -4788,7 +4788,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "băng cá nhân bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is bandages"
         }
       ],
       "atGlance": "băng cá nhân bao nhiêu tiền? is the price-check phrase for bandages. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -4865,7 +4865,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần khẩu trang",
-          "english": "full phrase"
+          "english": "I need a face mask"
         }
       ],
       "atGlance": "Tôi cần khẩu trang is the direct beginner phrase for asking for a face mask. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -4943,7 +4943,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có khẩu trang không?",
-          "english": "full phrase"
+          "english": "Do you have a face mask"
         }
       ],
       "atGlance": "Có khẩu trang không? checks availability for a face mask. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -5020,7 +5020,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua khẩu trang",
-          "english": "full phrase"
+          "english": "I want to buy a face mask"
         }
       ],
       "atGlance": "Tôi muốn mua khẩu trang is a buying phrase for a face mask. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -5093,7 +5093,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "khẩu trang bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a face mask"
         }
       ],
       "atGlance": "khẩu trang bao nhiêu tiền? is the price-check phrase for a face mask. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -5170,7 +5170,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần sạc điện thoại",
-          "english": "full phrase"
+          "english": "I need a phone charger"
         }
       ],
       "atGlance": "Tôi cần sạc điện thoại is the direct beginner phrase for asking for a phone charger. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -5248,7 +5248,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có sạc điện thoại không?",
-          "english": "full phrase"
+          "english": "Do you have a phone charger"
         }
       ],
       "atGlance": "Có sạc điện thoại không? checks availability for a phone charger. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -5325,7 +5325,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua sạc điện thoại",
-          "english": "full phrase"
+          "english": "I want to buy a phone charger"
         }
       ],
       "atGlance": "Tôi muốn mua sạc điện thoại is a buying phrase for a phone charger. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -5398,7 +5398,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "sạc điện thoại bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a phone charger"
         }
       ],
       "atGlance": "sạc điện thoại bao nhiêu tiền? is the price-check phrase for a phone charger. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -5475,7 +5475,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần dây sạc",
-          "english": "full phrase"
+          "english": "I need a charging cable"
         }
       ],
       "atGlance": "Tôi cần dây sạc is the direct beginner phrase for asking for a charging cable. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -5553,7 +5553,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có dây sạc không?",
-          "english": "full phrase"
+          "english": "Do you have a charging cable"
         }
       ],
       "atGlance": "Có dây sạc không? checks availability for a charging cable. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -5630,7 +5630,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua dây sạc",
-          "english": "full phrase"
+          "english": "I want to buy a charging cable"
         }
       ],
       "atGlance": "Tôi muốn mua dây sạc is a buying phrase for a charging cable. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -5703,7 +5703,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "dây sạc bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a charging cable"
         }
       ],
       "atGlance": "dây sạc bao nhiêu tiền? is the price-check phrase for a charging cable. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -5780,7 +5780,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần pin dự phòng",
-          "english": "full phrase"
+          "english": "I need a power bank"
         }
       ],
       "atGlance": "Tôi cần pin dự phòng is the direct beginner phrase for asking for a power bank. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -5858,7 +5858,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có pin dự phòng không?",
-          "english": "full phrase"
+          "english": "Do you have a power bank"
         }
       ],
       "atGlance": "Có pin dự phòng không? checks availability for a power bank. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -5935,7 +5935,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua pin dự phòng",
-          "english": "full phrase"
+          "english": "I want to buy a power bank"
         }
       ],
       "atGlance": "Tôi muốn mua pin dự phòng is a buying phrase for a power bank. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -6008,7 +6008,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "pin dự phòng bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a power bank"
         }
       ],
       "atGlance": "pin dự phòng bao nhiêu tiền? is the price-check phrase for a power bank. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -6085,7 +6085,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần thẻ SIM",
-          "english": "full phrase"
+          "english": "I need a SIM card"
         }
       ],
       "atGlance": "Tôi cần thẻ SIM is the direct beginner phrase for asking for a SIM card. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -6163,7 +6163,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có thẻ SIM không?",
-          "english": "full phrase"
+          "english": "Do you have a SIM card"
         }
       ],
       "atGlance": "Có thẻ SIM không? checks availability for a SIM card. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -6240,7 +6240,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua thẻ SIM",
-          "english": "full phrase"
+          "english": "I want to buy a SIM card"
         }
       ],
       "atGlance": "Tôi muốn mua thẻ SIM is a buying phrase for a SIM card. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -6313,7 +6313,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "thẻ SIM bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a SIM card"
         }
       ],
       "atGlance": "thẻ SIM bao nhiêu tiền? is the price-check phrase for a SIM card. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -6390,7 +6390,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần gói data",
-          "english": "full phrase"
+          "english": "I need a data package"
         }
       ],
       "atGlance": "Tôi cần gói data is the direct beginner phrase for asking for a data package. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -6468,7 +6468,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có gói data không?",
-          "english": "full phrase"
+          "english": "Do you have a data package"
         }
       ],
       "atGlance": "Có gói data không? checks availability for a data package. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -6545,7 +6545,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua gói data",
-          "english": "full phrase"
+          "english": "I want to buy a data package"
         }
       ],
       "atGlance": "Tôi muốn mua gói data is a buying phrase for a data package. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -6618,7 +6618,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "gói data bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a data package"
         }
       ],
       "atGlance": "gói data bao nhiêu tiền? is the price-check phrase for a data package. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -6694,7 +6694,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần Wi-Fi",
-          "english": "full phrase"
+          "english": "I need Wi-Fi"
         }
       ],
       "atGlance": "Tôi cần Wi-Fi is the direct beginner phrase for asking for wi-Fi. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -6771,7 +6771,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có Wi-Fi không?",
-          "english": "full phrase"
+          "english": "Do you have Wi-Fi"
         }
       ],
       "atGlance": "Có Wi-Fi không? checks availability for wi-Fi. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -6847,7 +6847,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua Wi-Fi",
-          "english": "full phrase"
+          "english": "I want to buy Wi-Fi"
         }
       ],
       "atGlance": "Tôi muốn mua Wi-Fi is a buying phrase for wi-Fi. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -6919,7 +6919,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "Wi-Fi bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is Wi-Fi"
         }
       ],
       "atGlance": "Wi-Fi bao nhiêu tiền? is the price-check phrase for wi-Fi. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -6996,7 +6996,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần mật khẩu Wi-Fi",
-          "english": "full phrase"
+          "english": "I need the Wi-Fi password"
         }
       ],
       "atGlance": "Tôi cần mật khẩu Wi-Fi is the direct beginner phrase for asking for the Wi-Fi password. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -7074,7 +7074,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có mật khẩu Wi-Fi không?",
-          "english": "full phrase"
+          "english": "Do you have the Wi-Fi password"
         }
       ],
       "atGlance": "Có mật khẩu Wi-Fi không? checks availability for the Wi-Fi password. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -7151,7 +7151,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua mật khẩu Wi-Fi",
-          "english": "full phrase"
+          "english": "I want to buy the Wi-Fi password"
         }
       ],
       "atGlance": "Tôi muốn mua mật khẩu Wi-Fi is a buying phrase for the Wi-Fi password. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -7224,7 +7224,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "mật khẩu Wi-Fi bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is the Wi-Fi password"
         }
       ],
       "atGlance": "mật khẩu Wi-Fi bao nhiêu tiền? is the price-check phrase for the Wi-Fi password. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -7301,7 +7301,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần bản đồ giấy",
-          "english": "full phrase"
+          "english": "I need a paper map"
         }
       ],
       "atGlance": "Tôi cần bản đồ giấy is the direct beginner phrase for asking for a paper map. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -7379,7 +7379,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có bản đồ giấy không?",
-          "english": "full phrase"
+          "english": "Do you have a paper map"
         }
       ],
       "atGlance": "Có bản đồ giấy không? checks availability for a paper map. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -7456,7 +7456,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua bản đồ giấy",
-          "english": "full phrase"
+          "english": "I want to buy a paper map"
         }
       ],
       "atGlance": "Tôi muốn mua bản đồ giấy is a buying phrase for a paper map. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -7529,7 +7529,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "bản đồ giấy bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a paper map"
         }
       ],
       "atGlance": "bản đồ giấy bao nhiêu tiền? is the price-check phrase for a paper map. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -7606,7 +7606,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần hóa đơn",
-          "english": "full phrase"
+          "english": "I need a receipt"
         }
       ],
       "atGlance": "Tôi cần hóa đơn is the direct beginner phrase for asking for a receipt. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -7684,7 +7684,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có hóa đơn không?",
-          "english": "full phrase"
+          "english": "Do you have a receipt"
         }
       ],
       "atGlance": "Có hóa đơn không? checks availability for a receipt. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -7761,7 +7761,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua hóa đơn",
-          "english": "full phrase"
+          "english": "I want to buy a receipt"
         }
       ],
       "atGlance": "Tôi muốn mua hóa đơn is a buying phrase for a receipt. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -7834,7 +7834,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "hóa đơn bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a receipt"
         }
       ],
       "atGlance": "hóa đơn bao nhiêu tiền? is the price-check phrase for a receipt. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -7911,7 +7911,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần túi nilon",
-          "english": "full phrase"
+          "english": "I need a plastic bag"
         }
       ],
       "atGlance": "Tôi cần túi nilon is the direct beginner phrase for asking for a plastic bag. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -7989,7 +7989,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có túi nilon không?",
-          "english": "full phrase"
+          "english": "Do you have a plastic bag"
         }
       ],
       "atGlance": "Có túi nilon không? checks availability for a plastic bag. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -8066,7 +8066,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua túi nilon",
-          "english": "full phrase"
+          "english": "I want to buy a plastic bag"
         }
       ],
       "atGlance": "Tôi muốn mua túi nilon is a buying phrase for a plastic bag. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -8139,7 +8139,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "túi nilon bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a plastic bag"
         }
       ],
       "atGlance": "túi nilon bao nhiêu tiền? is the price-check phrase for a plastic bag. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -8216,7 +8216,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần túi giấy",
-          "english": "full phrase"
+          "english": "I need a paper bag"
         }
       ],
       "atGlance": "Tôi cần túi giấy is the direct beginner phrase for asking for a paper bag. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -8294,7 +8294,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có túi giấy không?",
-          "english": "full phrase"
+          "english": "Do you have a paper bag"
         }
       ],
       "atGlance": "Có túi giấy không? checks availability for a paper bag. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -8371,7 +8371,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua túi giấy",
-          "english": "full phrase"
+          "english": "I want to buy a paper bag"
         }
       ],
       "atGlance": "Tôi muốn mua túi giấy is a buying phrase for a paper bag. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -8444,7 +8444,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "túi giấy bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a paper bag"
         }
       ],
       "atGlance": "túi giấy bao nhiêu tiền? is the price-check phrase for a paper bag. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -8521,7 +8521,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần thìa",
-          "english": "full phrase"
+          "english": "I need a spoon"
         }
       ],
       "atGlance": "Tôi cần thìa is the direct beginner phrase for asking for a spoon. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -8599,7 +8599,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có thìa không?",
-          "english": "full phrase"
+          "english": "Do you have a spoon"
         }
       ],
       "atGlance": "Có thìa không? checks availability for a spoon. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -8676,7 +8676,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua thìa",
-          "english": "full phrase"
+          "english": "I want to buy a spoon"
         }
       ],
       "atGlance": "Tôi muốn mua thìa is a buying phrase for a spoon. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -8749,7 +8749,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "thìa bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a spoon"
         }
       ],
       "atGlance": "thìa bao nhiêu tiền? is the price-check phrase for a spoon. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -8826,7 +8826,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần đũa",
-          "english": "full phrase"
+          "english": "I need chopsticks"
         }
       ],
       "atGlance": "Tôi cần đũa is the direct beginner phrase for asking for chopsticks. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -8904,7 +8904,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có đũa không?",
-          "english": "full phrase"
+          "english": "Do you have chopsticks"
         }
       ],
       "atGlance": "Có đũa không? checks availability for chopsticks. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -8981,7 +8981,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua đũa",
-          "english": "full phrase"
+          "english": "I want to buy chopsticks"
         }
       ],
       "atGlance": "Tôi muốn mua đũa is a buying phrase for chopsticks. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -9054,7 +9054,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "đũa bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is chopsticks"
         }
       ],
       "atGlance": "đũa bao nhiêu tiền? is the price-check phrase for chopsticks. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -9131,7 +9131,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần ống hút",
-          "english": "full phrase"
+          "english": "I need a straw"
         }
       ],
       "atGlance": "Tôi cần ống hút is the direct beginner phrase for asking for a straw. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -9209,7 +9209,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có ống hút không?",
-          "english": "full phrase"
+          "english": "Do you have a straw"
         }
       ],
       "atGlance": "Có ống hút không? checks availability for a straw. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -9286,7 +9286,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua ống hút",
-          "english": "full phrase"
+          "english": "I want to buy a straw"
         }
       ],
       "atGlance": "Tôi muốn mua ống hút is a buying phrase for a straw. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -9359,7 +9359,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "ống hút bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is a straw"
         }
       ],
       "atGlance": "ống hút bao nhiêu tiền? is the price-check phrase for a straw. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -9436,7 +9436,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần thực đơn tiếng Anh",
-          "english": "full phrase"
+          "english": "I need an English menu"
         }
       ],
       "atGlance": "Tôi cần thực đơn tiếng Anh is the direct beginner phrase for asking for an English menu. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -9514,7 +9514,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có thực đơn tiếng Anh không?",
-          "english": "full phrase"
+          "english": "Do you have an English menu"
         }
       ],
       "atGlance": "Có thực đơn tiếng Anh không? checks availability for an English menu. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -9591,7 +9591,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua thực đơn tiếng Anh",
-          "english": "full phrase"
+          "english": "I want to buy an English menu"
         }
       ],
       "atGlance": "Tôi muốn mua thực đơn tiếng Anh is a buying phrase for an English menu. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -9664,7 +9664,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "thực đơn tiếng Anh bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is an English menu"
         }
       ],
       "atGlance": "thực đơn tiếng Anh bao nhiêu tiền? is the price-check phrase for an English menu. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -9741,7 +9741,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần cà phê sữa đá",
-          "english": "full phrase"
+          "english": "I need iced milk coffee"
         }
       ],
       "atGlance": "Tôi cần cà phê sữa đá is the direct beginner phrase for asking for iced milk coffee. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -9819,7 +9819,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có cà phê sữa đá không?",
-          "english": "full phrase"
+          "english": "Do you have iced milk coffee"
         }
       ],
       "atGlance": "Có cà phê sữa đá không? checks availability for iced milk coffee. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -9896,7 +9896,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua cà phê sữa đá",
-          "english": "full phrase"
+          "english": "I want to buy iced milk coffee"
         }
       ],
       "atGlance": "Tôi muốn mua cà phê sữa đá is a buying phrase for iced milk coffee. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -9969,7 +9969,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "cà phê sữa đá bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is iced milk coffee"
         }
       ],
       "atGlance": "cà phê sữa đá bao nhiêu tiền? is the price-check phrase for iced milk coffee. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -10046,7 +10046,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần cà phê đen",
-          "english": "full phrase"
+          "english": "I need black coffee"
         }
       ],
       "atGlance": "Tôi cần cà phê đen is the direct beginner phrase for asking for black coffee. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -10124,7 +10124,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có cà phê đen không?",
-          "english": "full phrase"
+          "english": "Do you have black coffee"
         }
       ],
       "atGlance": "Có cà phê đen không? checks availability for black coffee. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -10201,7 +10201,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua cà phê đen",
-          "english": "full phrase"
+          "english": "I want to buy black coffee"
         }
       ],
       "atGlance": "Tôi muốn mua cà phê đen is a buying phrase for black coffee. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -10274,7 +10274,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "cà phê đen bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is black coffee"
         }
       ],
       "atGlance": "cà phê đen bao nhiêu tiền? is the price-check phrase for black coffee. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -10351,7 +10351,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần trà đá",
-          "english": "full phrase"
+          "english": "I need iced tea"
         }
       ],
       "atGlance": "Tôi cần trà đá is the direct beginner phrase for asking for iced tea. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -10429,7 +10429,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có trà đá không?",
-          "english": "full phrase"
+          "english": "Do you have iced tea"
         }
       ],
       "atGlance": "Có trà đá không? checks availability for iced tea. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -10506,7 +10506,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua trà đá",
-          "english": "full phrase"
+          "english": "I want to buy iced tea"
         }
       ],
       "atGlance": "Tôi muốn mua trà đá is a buying phrase for iced tea. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -10579,7 +10579,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "trà đá bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is iced tea"
         }
       ],
       "atGlance": "trà đá bao nhiêu tiền? is the price-check phrase for iced tea. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -10656,7 +10656,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần cơm trắng",
-          "english": "full phrase"
+          "english": "I need plain rice"
         }
       ],
       "atGlance": "Tôi cần cơm trắng is the direct beginner phrase for asking for plain rice. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -10734,7 +10734,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có cơm trắng không?",
-          "english": "full phrase"
+          "english": "Do you have plain rice"
         }
       ],
       "atGlance": "Có cơm trắng không? checks availability for plain rice. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -10811,7 +10811,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua cơm trắng",
-          "english": "full phrase"
+          "english": "I want to buy plain rice"
         }
       ],
       "atGlance": "Tôi muốn mua cơm trắng is a buying phrase for plain rice. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -10884,7 +10884,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "cơm trắng bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is plain rice"
         }
       ],
       "atGlance": "cơm trắng bao nhiêu tiền? is the price-check phrase for plain rice. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -10961,7 +10961,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần nước mắm",
-          "english": "full phrase"
+          "english": "I need fish sauce"
         }
       ],
       "atGlance": "Tôi cần nước mắm is the direct beginner phrase for asking for fish sauce. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -11039,7 +11039,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có nước mắm không?",
-          "english": "full phrase"
+          "english": "Do you have fish sauce"
         }
       ],
       "atGlance": "Có nước mắm không? checks availability for fish sauce. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -11116,7 +11116,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua nước mắm",
-          "english": "full phrase"
+          "english": "I want to buy fish sauce"
         }
       ],
       "atGlance": "Tôi muốn mua nước mắm is a buying phrase for fish sauce. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
@@ -11189,7 +11189,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "nước mắm bao nhiêu tiền?",
-          "english": "full phrase"
+          "english": "How much is fish sauce"
         }
       ],
       "atGlance": "nước mắm bao nhiêu tiền? is the price-check phrase for fish sauce. It is best before you pay, bargain, or choose quantity because the next useful reply is usually a number.",
@@ -11266,7 +11266,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi cần tương ớt",
-          "english": "full phrase"
+          "english": "I need chili sauce"
         }
       ],
       "atGlance": "Tôi cần tương ớt is the direct beginner phrase for asking for chili sauce. It works when the item, screen, or note is visible and you need help finding or getting it.",
@@ -11344,7 +11344,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Có tương ớt không?",
-          "english": "full phrase"
+          "english": "Do you have chili sauce"
         }
       ],
       "atGlance": "Có tương ớt không? checks availability for chili sauce. It is useful when pointing is not enough and you need a yes, no, or nearby substitute.",
@@ -11421,7 +11421,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "Tôi muốn mua tương ớt",
-          "english": "full phrase"
+          "english": "I want to buy chili sauce"
         }
       ],
       "atGlance": "Tôi muốn mua tương ớt is a buying phrase for chili sauce. Use it when the item is visible and you want the exchange to move toward price, quantity, or checkout.",
