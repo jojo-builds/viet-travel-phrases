@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "speaklocal.viet.editorial-export.v1",
+  "taskID": "TASK-VIET-EDITORIAL-EXPORT-001",
+  "generatedAt": "2026-05-03T05:24:11.424Z",
+  "databasePath": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
+  "authoredPagesPath": "native-ios/Resources/viet-authored-listing-pages.json",
+  "outputRoot": "docs/editorial-exports/viet-canonical-pages/latest",
+  "rowCounts": {
+    "pages": 3038,
+    "sections": 21883,
+    "breakdowns": 11254,
+    "phraseRows": 32013,
+    "relationships": 27949,
+    "flaggedPages": 0
+  },
+  "pageKindCounts": {
+    "phrase": 2889,
+    "place": 134,
+    "restaurant": 13,
+    "dish": 2
+  },
+  "sourceLaneCounts": {
+    "catalog-promoted": 779,
+    "tier1": 145,
+    "child": 14,
+    "city-v1": 750,
+    "practice-expansion": 1350
+  },
+  "files": [
+    "pages.csv",
+    "sections.csv",
+    "breakdowns.csv",
+    "phrase-rows.csv",
+    "relationships.csv",
+    "import-contract.md",
+    "import-contract.json",
+    "manifest.json",
+    "README.md"
+  ],
+  "reviewerColumns": [
+    "proposed_*",
+    "reviewer_notes",
+    "review_status",
+    "import_approval",
+    "approved_by",
+    "approved_at"
+  ]
+}
