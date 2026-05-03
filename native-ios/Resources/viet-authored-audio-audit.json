@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-03T02:30:53.604Z",
+    "generatedAt": "2026-05-03T07:25:39.753Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 750,
     "practiceExpansionPageCount": 1350,
-    "requiredAudioCount": 3376,
+    "requiredAudioCount": 3373,
     "missingAudioCount": 2094
   },
   "required": [
@@ -2670,30 +2670,6 @@
       "kind": "phrase",
       "audioKey": "bath-5",
       "text": "Tôi cần nước",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-bathroom-paper",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v900-emer-safe-i-need-a-temporary-travel-document-piece-3",
-      "text": "giấy",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-bathroom-paper",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-ve-5592bb10cb",
-      "text": "vệ",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-bathroom-paper",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-sinh-688cfd5ead",
-      "text": "sinh",
       "resolved": true
     },
     {
@@ -7354,6 +7330,14 @@
     },
     {
       "pageID": "viet-da-chao-co",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-viet-hello-co-relationship",
+      "text": "cô",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-da-chao-co",
       "sectionID": "explore-next",
       "kind": "phrase",
       "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first",
@@ -7406,14 +7390,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-viet-hello-chu-relationship",
       "text": "chú",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-hello-chao-co",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-viet-hello-co-relationship",
-      "text": "cô",
       "resolved": true
     },
     {

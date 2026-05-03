@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "speaklocal.viet.editorial-approval-overlay.v1",
+  "taskID": "TASK-VIET-EDITORIAL-PILOT-IMPORT-001",
+  "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+  "approvedBy": "Jojo",
+  "approvedAt": "2026-05-03",
+  "approvalNote": "P0 fixes only. Import only the highest-risk correctness rows that fix wrong breakdowns or objectively incorrect teaching. Defer restaurant/place/street rewrites until their linked phrase rows and canonical pages are safe.",
+  "approvalValue": "APPROVED_FOR_IMPORT",
+  "approvals": [
+    {
+      "patch_id": "EP-017",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "approvedScope": [
+        "summary",
+        "section_copy",
+        "breakdown_labels"
+      ],
+      "sectionBodyOverrides": {
+        "at-glance": "Use Dạ, chào cô when greeting an aunt-age woman politely. It is warmer and more natural than a textbook Xin chào in many everyday settings.",
+        "standard-way": "Dạ, chào cô is the respectful greeting to start with when cô fits the person better than chị, but bà would feel too old.",
+        "breakdown": "Dạ is the polite opener. Chào means hello or greet. Cô is an aunt-age woman or respectful female address, not have or yes.",
+        "relationship-swaps": "Nearby forms help you move up or down the age ladder: Dạ, chào chị for an older-sister-age woman, and Dạ, chào bà for an elderly woman.",
+        "when-to-use": "Use it with shop staff, hotel staff, cafe staff, or older women when cô feels age-appropriate.",
+        "good-to-know": "If you are unsure, a warm Dạ plus a smile is safer than overthinking every relationship word.",
+        "explore-next": "Go next to greetings and polite phrases that help you continue after Dạ, chào cô."
+      },
+      "summaryOverride": "A respectful greeting for an aunt-age woman; use it when cô fits better than chị but bà would feel too old.",
+      "breakdownTokens": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Dạ",
+          "english": "polite opener"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "chào",
+          "english": "hello / greet"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "cô",
+          "english": "aunt-age woman / respectful female address"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Dạ, chào cô",
+          "english": "Respectful hello to an aunt-age woman"
+        }
+      ]
+    },
+    {
+      "patch_id": "EP-018",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "approvedScope": [
+        "summary",
+        "section_copy",
+        "breakdown_labels"
+      ],
+      "sectionBodyOverrides": {
+        "at-glance": "Use this at baggage claim when your bag has not appeared. Show your baggage tag immediately after saying it so staff can match the phrase to the real item. The useful move is naming the missing bag first, before you try to explain the flight, carousel, or timing.",
+        "breakdown": "Hành lý means baggage. Của tôi means my. Chưa means not yet. Tới means arrived or reached.",
+        "standard-way": "Use Hành lý của tôi chưa tới as your first sentence at the carousel or baggage desk. Pause after it so staff can ask for the baggage tag, flight number, passport, or the counter you should visit. If you have the tag in your hand, point to it right after the phrase.",
+        "why-it-matters": "This phrase names the bag problem before you start explaining. That helps airport staff move straight to the baggage tag, flight details, or next counter. It is more useful than a broad lost-bag sentence when the bag may simply be delayed, still on another carousel, or waiting for a staff handoff.",
+        "traveler-insight": "Staff may answer with a baggage-tag request, a counter direction, a form, or an update on where to wait. Keep your tag visible while you listen, and be ready to show the flight number if they ask. The next useful phrase is usually a document handoff, not another explanation.",
+        "when-to-use": "Use it after waiting at the carousel and before starting a long explanation. The phrase is strongest when the missing bag and the baggage tag are both easy to see. It also works at an airline baggage counter if staff have already moved you away from the carousel.",
+        "good-to-know": "Keep the baggage tag visible. This turns the phrase into an actionable request.",
+        "local-tip": "If the answer is fast, use Làm ơn nói lại for please say that again. Then point to the tag or the form so the repeat is tied to the detail you need.",
+        "explore-next": "Use these next when staff ask for a document, a baggage tag, or a counter follow-up."
+      },
+      "summaryOverride": "A baggage-claim problem phrase for when your bag has not appeared and staff need the baggage tag, flight number, or counter handoff.",
+      "breakdownTokens": [
+        {
+          "id": "airport-6-piece-1",
+          "vietnamese": "Hành lý",
+          "english": "baggage"
+        },
+        {
+          "id": "airport-6-piece-2",
+          "vietnamese": "của tôi",
+          "english": "my"
+        },
+        {
+          "id": "airport-6-piece-3",
+          "vietnamese": "chưa",
+          "english": "not yet"
+        },
+        {
+          "id": "airport-6-piece-4",
+          "vietnamese": "tới",
+          "english": "arrived / reached"
+        },
+        {
+          "id": "airport-6-full",
+          "vietnamese": "Hành lý của tôi chưa tới",
+          "english": "My bag did not arrive"
+        }
+      ]
+    },
+    {
+      "patch_id": "EP-019",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "approvedScope": [
+        "summary",
+        "section_copy",
+        "breakdown_labels"
+      ],
+      "sectionBodyOverrides": {
+        "at-glance": "Use this when the restroom is missing toilet paper or you need to ask before going in. It is a quick practical question, so the best delivery is direct, calm, and paired with a small gesture toward the stall, sink area, or paper holder.",
+        "breakdown": "Learn Có ... không? as the yes-or-no question frame, and keep giấy vệ sinh together as toilet paper.",
+        "standard-way": "Use Có giấy vệ sinh không? as the direct question for do you have toilet paper. Ask once, pause, and follow the answer or gesture. The phrase is short enough for a market, cafe, gas station, or small local restroom where a long explanation would feel clumsy.",
+        "why-it-matters": "This question is practical and quick. Keeping giấy vệ sinh together prevents the phrase from turning into misleading word cards. A traveler does not need to analyze each syllable here; the useful unit is the item you are asking for.",
+        "traveler-insight": "The answer may be yes, no, a gesture toward the paper, or a short alternative. Follow pointing first, then ask again only if the next step is unclear. If the person points outside the restroom, they may be showing you where paper is kept rather than answering with a full sentence.",
+        "when-to-use": "Use it before or after finding the bathroom if paper is missing. It is especially useful before you go in, because many places answer with a gesture or hand you the item directly.",
+        "good-to-know": "For travelers, giấy vệ sinh should be learned as toilet paper, not split into separate unrelated words. That keeps the phrase practical and avoids false word-by-word meanings.",
+        "local-tip": "Ask directly and follow gestures. People may simply point you toward the paper, hand you some, or show another place to get it. A quick cảm ơn after the handoff keeps the exchange warm.",
+        "explore-next": "Use these next when you need the bathroom, soap, water, or a nearby practical follow-up."
+      },
+      "summaryOverride": "A bathroom follow-up phrase for asking for toilet paper directly and getting a yes/no answer, item, or gesture.",
+      "breakdownTokens": [
+        {
+          "id": "bath-2-question-frame",
+          "vietnamese": "Có ... không?",
+          "english": "do you have / is there?"
+        },
+        {
+          "id": "bath-2-paper",
+          "vietnamese": "giấy vệ sinh",
+          "english": "toilet paper"
+        },
+        {
+          "id": "bath-2-full",
+          "vietnamese": "Có giấy vệ sinh không?",
+          "english": "Do you have toilet paper?"
+        }
+      ]
+    }
+  ]
+}

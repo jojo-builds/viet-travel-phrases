@@ -19,6 +19,7 @@ const practiceExpansionRoot = path.join(familyRoot, "content-draft", "viet", "pr
 const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 const catalogPromotedTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
 const breakdownRepairScriptPath = path.join(root, "scripts", "repair-viet-breakdown-glosses.js");
+const editorialPilotImportScriptPath = path.join(root, "scripts", "import-viet-editorial-pilot.js");
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const audioManifest = JSON.parse(fs.readFileSync(audioManifestPath, "utf8"));
@@ -444,6 +445,7 @@ const glossary = new Map(Object.entries({
   "sáng": "morning",
   "chỉ": "only / point",
   "giấy": "paper",
+  "giấy vệ sinh": "toilet paper",
   "xà": "soap word",
   "rửa": "wash",
   "tay": "hand",
@@ -1023,6 +1025,7 @@ const preferredBreakdownChunks = new Set([
   "mat hang",
   "mua sim",
   "giam gia",
+  "giay ve sinh",
   "nha thuoc",
   "nha ve sinh",
   "nhan phong",
@@ -1128,6 +1131,7 @@ const breakdownMeanings = new Map(Object.entries({
   "tien": "money",
   "tien mat": "cash",
   "gia": "price",
+  "giay ve sinh": "toilet paper",
   "bao nhieu": "how much",
   "bao lau": "how long",
   "bac xiu": "sweet milk coffee",
@@ -1228,6 +1232,10 @@ const breakdownMeanings = new Map(Object.entries({
 }));
 
 const exactBreakdownPieces = new Map(Object.entries({
+  "co giay ve sinh khong": [
+    { vietnamese: "Có ... không?", english: "do you have / is there?" },
+    { vietnamese: "giấy vệ sinh", english: "toilet paper" },
+  ],
   "cam on": [
     { vietnamese: "Cảm", english: "feel / receive" },
     { vietnamese: "ơn", english: "kindness / favor" },
@@ -2879,6 +2887,17 @@ function runBreakdownGlossRepair() {
   return true;
 }
 
+function runEditorialPilotImport() {
+  if (!fs.existsSync(editorialPilotImportScriptPath)) {
+    return false;
+  }
+  execFileSync(process.execPath, [editorialPilotImportScriptPath, "--apply"], {
+    cwd: familyRoot,
+    stdio: "inherit",
+  });
+  return true;
+}
+
 function main() {
   removeGeneratedSources();
 
@@ -2988,6 +3007,7 @@ function main() {
   }, null, 2)}\n`);
 
   const repairedBreakdowns = runBreakdownGlossRepair();
+  const importedEditorialPilot = runEditorialPilotImport();
   const finalBundle = JSON.parse(fs.readFileSync(outputPath, "utf8"));
   const finalAudioAudit = collectAudioAudit(finalBundle.pages ?? []);
   fs.writeFileSync(auditPath, `${JSON.stringify({
@@ -3012,6 +3032,9 @@ function main() {
   console.log(`Missing assigned audio: ${finalAudioAudit.missing.length}`);
   if (repairedBreakdowns) {
     console.log("Repaired breakdown captions after generation");
+  }
+  if (importedEditorialPilot) {
+    console.log("Applied approved editorial pilot imports");
   }
   console.log(`Wrote ${path.relative(process.cwd(), outputPath)}`);
 }

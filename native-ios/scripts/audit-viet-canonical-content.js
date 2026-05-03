@@ -115,6 +115,29 @@ const weakBreakdownPatterns = [
   { id: "phrase_meaning_fallback", pattern: /^phrase meaning$/i },
 ];
 
+const protectedBreakdownContextRules = [
+  {
+    token: "cô",
+    expected: "aunt-age woman / respectful female address",
+    forbidden: [/have\s*\/\s*yes/i],
+  },
+  {
+    token: "chưa",
+    expected: "not yet",
+    forbidden: [/pagoda/i],
+  },
+  {
+    token: "vệ",
+    expected: "hygiene as part of giấy vệ sinh; prefer the full chunk giấy vệ sinh",
+    forbidden: [/ticket/i],
+  },
+  {
+    token: "giấy vệ sinh",
+    expected: "toilet paper",
+    forbidden: [/ticket/i, /document/i],
+  },
+];
+
 function run(command, args) {
   const result = spawnSync(command, args, {
     cwd: repoRoot,
@@ -264,6 +287,29 @@ function duplicateNonFinalBreakdownLabels(breakdownRows) {
   return [...labelRows.values()].filter((rows) => rows.length > 1);
 }
 
+function wrongBreakdownContextIssues(page, breakdownRows) {
+  const issues = [];
+  for (const row of breakdownRows) {
+    const token = String(row.token_text ?? "").trim().toLowerCase();
+    const gloss = String(row.english_gloss ?? "");
+    for (const rule of protectedBreakdownContextRules) {
+      if (token !== rule.token) continue;
+      if (rule.forbidden.some((pattern) => pattern.test(gloss))) {
+        issues.push(`${row.token_text} -> ${row.english_gloss}; expected ${rule.expected}`);
+      }
+    }
+  }
+
+  if (
+    String(page.title ?? "").trim().toLowerCase() === "có giấy vệ sinh không?"
+    && !breakdownRows.some((row) => String(row.token_text ?? "").trim().toLowerCase() === "giấy vệ sinh")
+  ) {
+    issues.push("Có giấy vệ sinh không? must teach giấy vệ sinh as one toilet-paper chunk");
+  }
+
+  return issues;
+}
+
 function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourcePath) {
   const issues = [];
   const fullText = [
@@ -315,6 +361,10 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
     }
     if (breakdownRows.length === 1 && String(page.title).split(/\s+/).filter(Boolean).length > 1) {
       issues.push(issue("single_card_multiword_breakdown", "needs_authored_review", "Multiword phrase has only one breakdown card."));
+    }
+    const wrongBreakdownIssues = wrongBreakdownContextIssues(page, breakdownRows);
+    if (wrongBreakdownIssues.length > 0) {
+      issues.push(issue("wrong_breakdown_dictionary_context", "blocker", wrongBreakdownIssues.join("; ")));
     }
   }
 

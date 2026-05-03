@@ -7,7 +7,7 @@
   "title": "Hành lý của tôi chưa tới",
   "englishTitle": "My bag did not arrive",
   "pronunciation": "han lee koo-ah toy choo toy",
-  "summary": "Say \"My bag did not arrive\" with Hành lý của tôi chưa tới, then use the notes below to adjust tone and next steps.",
+  "summary": "A baggage-claim problem phrase for when your bag has not appeared and staff need the baggage tag, flight number, or counter handoff.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,13 +18,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "For travelers, Hành lý của tôi chưa tới is the phrase to keep ready for \"My bag did not arrive\" in arrival, immigration, baggage, SIM cards, pickup, and airport services. This is for when your bag did not appear on the carousel. It works best when you focus on saying the bag problem first so staff know to check the carousel or baggage desk. After you say it, listen for a baggage-tag request, counter direction, form, or update on where to wait; the next rows help you keep the exchange moving.",
+      "body": "Use this at baggage claim when your bag has not appeared. Show your baggage tag immediately after saying it so staff can match the phrase to the real item. The useful move is naming the missing bag first, before you try to explain the flight, carousel, or timing.",
       "presentation": "plain-text"
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Hành lý means baggage. Của tôi means my. Chưa means not yet. Tới means arrived or reached.",
       "breakdown": [
         {
           "id": "airport-6-piece-1",
@@ -35,19 +35,19 @@
         {
           "id": "airport-6-piece-2",
           "vietnamese": "của tôi",
-          "english": "my / mine",
+          "english": "my",
           "audioKey": "breakdown-smalltalk-3-piece-4"
         },
         {
           "id": "airport-6-piece-3",
           "vietnamese": "chưa",
-          "english": "pagoda",
+          "english": "not yet",
           "audioKey": "breakdown-v900-food-drin-this-is-undercooked-piece-3"
         },
         {
           "id": "airport-6-piece-4",
           "vietnamese": "tới",
-          "english": "arrive / reach",
+          "english": "arrived / reached",
           "audioKey": "breakdown-v900-hote-acco-can-you-book-a-car-to-the-airport-piece-6"
         },
         {
@@ -62,7 +62,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Hành lý của tôi chưa tới as your first sentence for \"My bag did not arrive\". This is for when your bag did not appear on the carousel. Leave a short pause after the phrase so the other person can answer with a baggage-tag request, counter direction, form, or update on where to wait. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.",
+      "body": "Use Hành lý của tôi chưa tới as your first sentence at the carousel or baggage desk. Pause after it so staff can ask for the baggage tag, flight number, passport, or the counter you should visit. If you have the tag in your hand, point to it right after the phrase.",
       "phrases": [
         {
           "id": "airport-6",
@@ -80,13 +80,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Airport phrases help staff route you to the next counter or service without a long explanation. For \"My bag did not arrive\", Hành lý của tôi chưa tới helps by saying the bag problem first so staff know to check the carousel or baggage desk. Keep the baggage tag, flight number, and pickup carousel in view while staff check.",
+      "body": "This phrase names the bag problem before you start explaining. That helps airport staff move straight to the baggage tag, flight details, or next counter. It is more useful than a broad lost-bag sentence when the bag may simply be delayed, still on another carousel, or waiting for a staff handoff.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Airport Border Arrival, the reply often comes as a baggage-tag request, counter direction, form, or update on where to wait. Say Hành lý của tôi chưa tới once, pause, and watch for the reply before adding another sentence. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.",
+      "body": "Staff may answer with a baggage-tag request, a counter direction, a form, or an update on where to wait. Keep your tag visible while you listen, and be ready to show the flight number if they ask. The next useful phrase is usually a document handoff, not another explanation.",
       "phrases": [
         {
           "id": "airport-1",
@@ -124,7 +124,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when your bag did not appear on the carousel. It fits arrival, immigration, baggage, SIM cards, pickup, and airport services, especially when the next step is a baggage-tag request, counter direction, form, or update on where to wait. Keep the baggage tag, flight number, and pickup carousel in view while staff check.",
+      "body": "Use it after waiting at the carousel and before starting a long explanation. The phrase is strongest when the missing bag and the baggage tag are both easy to see. It also works at an airline baggage counter if staff have already moved you away from the carousel.",
       "phrases": [
         {
           "id": "airport-5",
@@ -162,13 +162,13 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.",
+      "body": "Keep the baggage tag visible. This turns the phrase into an actionable request.",
       "presentation": "tip-callout"
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Keep your passport, baggage tag, or booking screen visible while you ask.",
+      "body": "If the answer is fast, use Làm ơn nói lại for please say that again. Then point to the tag or the form so the repeat is tied to the detail you need.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-here-is-my-passport",
@@ -186,7 +186,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these next when staff ask for a document, a baggage tag, or a counter follow-up.",
       "phrases": [
         {
           "id": "airport-1",

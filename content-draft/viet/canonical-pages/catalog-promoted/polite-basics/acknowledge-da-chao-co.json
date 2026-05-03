@@ -7,7 +7,7 @@
   "title": "Dạ, chào cô",
   "englishTitle": "Respectful hello to an aunt-age woman",
   "pronunciation": "yah chow koh",
-  "summary": "Use Dạ, chào cô when the woman feels older than chị but not elderly enough for bà.",
+  "summary": "A respectful greeting for an aunt-age woman; use it when cô fits better than chị but bà would feel too old.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -19,12 +19,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dạ, chào cô is a practical polite basics phrase for keeping one travel detail clear. Use it when Respectful hello to an aunt-age woman is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use Dạ, chào cô when greeting an aunt-age woman politely. It is warmer and more natural than a textbook Xin chào in many everyday settings."
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use it when cô sounds more natural than chị, especially if the person is clearly older than an older-sister role.",
+      "body": "Dạ, chào cô is the respectful greeting to start with when cô fits the person better than chị, but bà would feel too old.",
       "phrases": [
         {
           "id": "acknowledge-da-chao-co",
@@ -41,25 +41,25 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Dạ is the polite opener. Chào means hello or greet. Cô is an aunt-age woman or respectful female address, not have or yes.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Dạ",
-          "english": "respectful opener",
+          "english": "polite opener",
           "audioKey": "polite-3"
         },
         {
           "id": "chunk-2",
           "vietnamese": "chào",
-          "english": "greet / hello",
-          "audioKey": "breakdown-chao"
+          "english": "hello / greet",
+          "audioKey": "breakdown-polite-1-rest"
         },
         {
           "id": "chunk-3",
           "vietnamese": "cô",
-          "english": "have / yes",
-          "audioKey": null
+          "english": "aunt-age woman / respectful female address",
+          "audioKey": "breakdown-viet-hello-co-relationship"
         },
         {
           "id": "chunk-4",
@@ -72,7 +72,7 @@
     {
       "id": "relationship-swaps",
       "title": "Relationship swaps",
-      "body": "Move up or down the age ladder with these nearby forms.",
+      "body": "Nearby forms help you move up or down the age ladder: Dạ, chào chị for an older-sister-age woman, and Dạ, chào bà for an elderly woman.",
       "phrases": [
         {
           "id": "acknowledge-da-chao-chi",
@@ -109,17 +109,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real polite basics exchange when respectful hello to an aunt-age woman is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Use it with shop staff, hotel staff, cafe staff, or older women when cô feels age-appropriate."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+      "body": "If you are unsure, a warm Dạ plus a smile is safer than overthinking every relationship word."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Dạ, chào cô.",
+      "body": "Go next to greetings and polite phrases that help you continue after Dạ, chào cô.",
       "phrases": [
         {
           "id": "polite-2",

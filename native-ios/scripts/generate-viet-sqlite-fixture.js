@@ -729,6 +729,7 @@ function main() {
     "giup toi",
     "hanh ly",
     "ho chieu",
+    "giay ve sinh",
     "it cay",
     "khach san",
     "khong duong",
@@ -816,6 +817,7 @@ function main() {
     "duoc khong": "is it possible?",
     "gan nhat": "nearest",
     "gia": "price",
+    "giay ve sinh": "toilet paper",
     "giam gia": "lower the price",
     "giup toi": "help me",
     "hanh ly": "baggage",
@@ -927,6 +929,14 @@ function main() {
   }
 
   function breakdownMeaning(vietnamese) {
+    const raw = String(vietnamese ?? "").trim().toLowerCase();
+    if (raw === "có") return "have / yes";
+    if (raw === "cô") return "aunt-age woman / respectful female address";
+    if (raw === "chưa") return "not yet";
+    if (raw === "chùa") return "pagoda";
+    if (raw === "vé") return "ticket";
+    if (raw === "vệ") return "hygiene";
+    if (raw === "giấy vệ sinh") return "toilet paper";
     const normalized = normalizedVietnameseKey(vietnamese);
     if (/^\d+$/.test(normalized)) return vietnamese;
     return breakdownMeanings.get(normalized) ?? fallbackBreakdownMeaning(vietnamese);

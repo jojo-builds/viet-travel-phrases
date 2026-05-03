@@ -136,6 +136,7 @@ const exactGlosses = new Map(Object.entries({
   "gia": "price",
   "giam gia": "discount / lower price",
   "giay": "paper / document",
+  "giay ve sinh": "toilet paper",
   "giay thong hanh": "travel document",
   "giup": "help",
   "giup toi": "help me",
@@ -528,18 +529,31 @@ function normalize(value) {
     .replace(/\s+/g, " ");
 }
 
+function audioTextKey(value) {
+  return String(value ?? "").normalize("NFC").replace(/\s+/g, " ").trim().toLowerCase();
+}
+
 let exactAudioKeysByText = null;
 function exactAudioKeyForText(text) {
   if (exactAudioKeysByText === null) {
-    exactAudioKeysByText = new Map();
+    exactAudioKeysByText = { exact: new Map(), normalized: new Map() };
     if (fs.existsSync(audioManifestPath)) {
       const manifest = JSON.parse(fs.readFileSync(audioManifestPath, "utf8"));
       for (const [audioKey, entry] of Object.entries(manifest)) {
-        if (entry?.text) exactAudioKeysByText.set(normalize(entry.text), audioKey);
+        if (!entry?.text) continue;
+        const exact = audioTextKey(entry.text);
+        if (exact && !exactAudioKeysByText.exact.has(exact)) {
+          exactAudioKeysByText.exact.set(exact, audioKey);
+        }
+        const normalized = normalize(entry.text);
+        if (normalized && !exactAudioKeysByText.normalized.has(normalized)) {
+          exactAudioKeysByText.normalized.set(normalized, audioKey);
+        }
       }
     }
   }
-  return exactAudioKeysByText.get(normalize(text));
+  return exactAudioKeysByText.exact.get(audioTextKey(text))
+    ?? exactAudioKeysByText.normalized.get(normalize(text));
 }
 
 function weakGloss(value) {
@@ -579,6 +593,13 @@ function stripDetail(value) {
 
 function fallbackFromVietnamese(vietnamese) {
   const raw = String(vietnamese ?? "").trim().toLowerCase();
+  if (raw === "có") return "have / yes";
+  if (raw === "cô") return "aunt-age woman / respectful female address";
+  if (raw === "chưa") return "not yet";
+  if (raw === "chùa") return "pagoda";
+  if (raw === "vé") return "ticket";
+  if (raw === "vệ") return "hygiene";
+  if (raw === "giấy vệ sinh") return "toilet paper";
   if (raw === "đá") return "ice / iced";
   if (raw === "đã") return "already";
   if (raw === "dạ") return "respectful opener";

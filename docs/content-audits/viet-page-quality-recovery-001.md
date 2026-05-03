@@ -42,7 +42,7 @@ Date: 2026-04-30
 | 16 | `viet-phrase-airport-7` | Nhà ga nội địa ở đâu? | Where is the domestic terminal? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 17 | `viet-phrase-airport-pickup-clearer` | Tôi gặp tài xế ở đâu? | Where do I meet the driver? | authored article | deep article | pass (5 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 18 | `viet-phrase-bath-1` | Nhà vệ sinh ở đâu? | Where is the bathroom? | authored article | deep article | pass (3 cards) | canonical; 6 alias(es) | ready; missing-audio rows present | PASS |
-| 19 | `viet-phrase-bath-2` | Có giấy vệ sinh không? | Do you have toilet paper? | authored article | deep article | pass (6 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 19 | `viet-phrase-bath-2` | Có giấy vệ sinh không? | Do you have toilet paper? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 20 | `viet-phrase-bath-3` | Có xà phòng không? | Do you have soap? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 21 | `viet-phrase-bath-4` | Tôi rửa tay ở đây được không? | Can I wash my hands here? | authored article | deep article | pass (7 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 22 | `viet-phrase-bath-5` | Tôi cần nước | I need water | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
@@ -892,7 +892,7 @@ Date: 2026-04-30
 | 866 | `viet-phrase-hotel-9` | Gọi taxi giúp tôi được không? | Can you call a taxi for me? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 867 | `viet-phrase-hotel-check-in-polite` | Cho tôi nhận phòng nhé | I’d like to check in, please | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 868 | `viet-phrase-hotel-checkout` | Cho tôi trả phòng | I’d like to check out | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 869 | `viet-phrase-hotel-more-supplies-paper` | Cho tôi thêm giấy vệ sinh được không? | Can I have more toilet paper? | authored article | deep article | pass (7 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 869 | `viet-phrase-hotel-more-supplies-paper` | Cho tôi thêm giấy vệ sinh được không? | Can I have more toilet paper? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 870 | `viet-phrase-hotel-premium-booking-wrong` | Tôi nghĩ có vấn đề với việc đặt phòng của tôi. | I think there is a problem with my booking. | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 871 | `viet-phrase-hotel-premium-different-room` | Tôi đã đặt một phòng khác. | I booked a different room. | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 872 | `viet-phrase-hotel-premium-late-checkout` | Tôi có thể trả phòng sau được không? | Can I check out later? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
