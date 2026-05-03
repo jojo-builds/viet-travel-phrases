@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "speaklocal.viet.editorial-approval-overlay.v1",
+  "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+  "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+  "approvedBy": "Jojo",
+  "approvedAt": "2026-05-03",
+  "approvalNote": "Jojo approved the 13 rows marked ready by TASK-VIET-EDITORIAL-MODEL-SUPPORT-001. This approval excludes EP-003, EP-012, EP-014, and EP-015. Import through source-owned records, preserve canonical IDs and Vietnamese titles, do not generate audio, and do not edit native UI.",
+  "approvalValue": "APPROVED_FOR_IMPORT",
+  "copyPolicy": "Use pilot-proposed copy, with explicit traveler-facing cleanup overrides where the staging copy used internal review wording.",
+  "approvals": [
+    {
+      "patch_id": "EP-001",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "sectionBodyOverrides": {
+        "quick-say": "Start with the useful sentence: Dạ, cho tôi một phần bún chả. — One portion of bun cha, please.",
+        "good-to-know": "Keep this page durable and action-based. Use the name, order, bill, and ride-back phrases; check current restaurant details separately if needed."
+      }
+    },
+    {
+      "patch_id": "EP-002",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"]
+    },
+    {
+      "patch_id": "EP-004",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "breakdownTokens": [
+        {
+          "id": "city-hue-place-bun-bo-city-editorial-1",
+          "vietnamese": "Bún bò",
+          "english": "beef noodle part of the dish name"
+        },
+        {
+          "id": "city-hue-place-bun-bo-city-editorial-2",
+          "vietnamese": "Huế",
+          "english": "Hue style / city name in the dish"
+        },
+        {
+          "id": "city-hue-place-bun-bo-city-editorial-3",
+          "vietnamese": "Bún bò Huế",
+          "english": "Bun bo Hue"
+        }
+      ],
+      "sectionBodyOverrides": {
+        "how-to-order": "Strong first sentence: Dạ, cho tôi một tô bún bò Huế. Add Không cay quá nhé if the user is worried about heat."
+      }
+    },
+    {
+      "patch_id": "EP-005",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "breakdownTokens": [
+        {
+          "id": "city-danang-place-ba-na-hills-editorial-1",
+          "vietnamese": "Bà Nà",
+          "english": "name recognition for the attraction"
+        },
+        {
+          "id": "city-danang-place-ba-na-hills-editorial-2",
+          "vietnamese": "Hills",
+          "english": "English word in the attraction name"
+        },
+        {
+          "id": "city-danang-place-ba-na-hills-editorial-3",
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills"
+        }
+      ],
+      "sectionBodyOverrides": {
+        "good-to-know": "Keep the page focused on durable next steps: tickets, cable car, photos, food and drinks, and return pickup. Check changing visit details on the official screen or counter."
+      }
+    },
+    {
+      "patch_id": "EP-006",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "sectionBodyOverrides": {
+        "place-brief": "Landmark page: this is a small navigation and photo flow, centered on reaching the bridge, asking for a photo, and keeping the pickup point clear."
+      }
+    },
+    {
+      "patch_id": "EP-007",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "breakdownTokens": [
+        {
+          "id": "city-danang-place-marble-mountains-editorial-1",
+          "vietnamese": "Ngũ Hành",
+          "english": "name recognition for the attraction"
+        },
+        {
+          "id": "city-danang-place-marble-mountains-editorial-2",
+          "vietnamese": "Sơn",
+          "english": "mountain word in the name"
+        },
+        {
+          "id": "city-danang-place-marble-mountains-editorial-3",
+          "vietnamese": "Ngũ Hành Sơn",
+          "english": "Marble Mountains"
+        }
+      ],
+      "sectionBodyOverrides": {
+        "good-to-know": "Keep changing visit details on official signs or counters. This page focuses on durable language: ticket, entrance, caves or stairs, driver wait, and return ride."
+      }
+    },
+    {
+      "patch_id": "EP-008",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"]
+    },
+    {
+      "patch_id": "EP-009",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "breakdownTokens": [
+        {
+          "id": "city-danang-place-bach-dang-street-editorial-1",
+          "vietnamese": "Đường",
+          "english": "street"
+        },
+        {
+          "id": "city-danang-place-bach-dang-street-editorial-2",
+          "vietnamese": "Bạch Đằng",
+          "english": "street name to keep together"
+        },
+        {
+          "id": "city-danang-place-bach-dang-street-editorial-3",
+          "vietnamese": "Đường Bạch Đằng",
+          "english": "Bach Dang Street"
+        }
+      ]
+    },
+    {
+      "patch_id": "EP-010",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "breakdownTokens": [
+        {
+          "id": "city-danang-place-nguyen-van-linh-street-editorial-1",
+          "vietnamese": "Đường",
+          "english": "street"
+        },
+        {
+          "id": "city-danang-place-nguyen-van-linh-street-editorial-2",
+          "vietnamese": "Nguyễn Văn Linh",
+          "english": "street name to keep together"
+        },
+        {
+          "id": "city-danang-place-nguyen-van-linh-street-editorial-3",
+          "vietnamese": "Đường Nguyễn Văn Linh",
+          "english": "Nguyen Van Linh Street"
+        }
+      ]
+    },
+    {
+      "patch_id": "EP-011",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "breakdownTokens": [
+        {
+          "id": "city-danang-place-vo-nguyen-giap-street-editorial-1",
+          "vietnamese": "Đường",
+          "english": "street"
+        },
+        {
+          "id": "city-danang-place-vo-nguyen-giap-street-editorial-2",
+          "vietnamese": "Võ Nguyên Giáp",
+          "english": "street name to keep together"
+        },
+        {
+          "id": "city-danang-place-vo-nguyen-giap-street-editorial-3",
+          "vietnamese": "Đường Võ Nguyên Giáp",
+          "english": "Vo Nguyen Giap Street"
+        }
+      ],
+      "sectionBodyOverrides": {
+        "good-to-know": "Street pages are most useful when the Vietnamese name is easy to show and hear: play the street name first, then play the full driver sentence."
+      }
+    },
+    {
+      "patch_id": "EP-013",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "breakdownTokens": [
+        {
+          "id": "city-danang-where-ba-na-hills-editorial-1",
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills attraction name"
+        },
+        {
+          "id": "city-danang-where-ba-na-hills-editorial-2",
+          "vietnamese": "ở đâu?",
+          "english": "where?"
+        },
+        {
+          "id": "city-danang-where-ba-na-hills-editorial-3",
+          "vietnamese": "Bà Nà Hills ở đâu?",
+          "english": "Where is Ba Na Hills?"
+        }
+      ]
+    },
+    {
+      "patch_id": "EP-016",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "breakdownTokens": [
+        {
+          "id": "city-danang-near-nguyen-van-linh-street-editorial-1",
+          "vietnamese": "Đường Nguyễn Văn Linh",
+          "english": "Nguyen Van Linh Street"
+        },
+        {
+          "id": "city-danang-near-nguyen-van-linh-street-editorial-2",
+          "vietnamese": "gần đây không?",
+          "english": "near here?"
+        },
+        {
+          "id": "city-danang-near-nguyen-van-linh-street-editorial-3",
+          "vietnamese": "Đường Nguyễn Văn Linh gần đây không?",
+          "english": "Is Nguyen Van Linh Street near here?"
+        }
+      ]
+    },
+    {
+      "patch_id": "EP-020",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "pilot-proposed",
+      "approvedScope": ["summary", "section_copy", "breakdown_labels", "visible_rows", "category_tags"],
+      "sectionBodyOverrides": {
+        "at-glance": "Use Dạ, chào anh when greeting a man who seems older than you but not elderly. In many everyday moments, this sounds warmer than a plain Xin chào."
+      }
+    }
+  ]
+}

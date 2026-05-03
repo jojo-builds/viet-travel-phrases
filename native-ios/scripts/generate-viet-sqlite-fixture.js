@@ -31,6 +31,14 @@ const relationshipWordPhraseIDs = [
 ];
 const relationshipWordTokens = new Set(["anh", "chị", "em", "ông", "bà", "chú", "cô"]);
 const greetingCategoryIDs = new Set(["greetings", "polite-basics"]);
+const approvedQuickSayShortcutPairs = [
+  ["viet-phrase-city-danang-place-ba-na-hills", "viet-phrase-ves-two-tickets-ba-na-hills"],
+  ["viet-phrase-city-danang-place-marble-mountains", "viet-phrase-city-danang-ticket-marble-mountains"],
+  ["viet-phrase-city-danang-place-son-tra", "viet-phrase-city-danang-go-son-tra"],
+  ["viet-phrase-city-hanoi-place-bun-cha-huong-lien", "viet-phrase-ves-order-bun-cha-portion"],
+  ["viet-phrase-city-hanoi-place-pho-bat-dan", "viet-phrase-ves-order-pho-bowl"],
+  ["viet-phrase-city-hue-place-bun-bo-city", "viet-phrase-ves-order-bun-bo-hue-bowl"],
+];
 const legacyNativePageAliases = [
   { aliasID: "viet-hello-anh", phraseID: "hello-chao-anh" },
   { aliasID: "viet-hello-chi", phraseID: "hello-chao-chi" },
@@ -1230,7 +1238,7 @@ function main() {
     }
 
     const seenAuthoredDestinations = new Set();
-    let relationshipWordsInserted = false;
+    let relationshipWordsInserted = (page.sections ?? []).some((section) => section.id === relationshipWordSectionKey);
     const maybeAddRelationshipWordsSection = () => {
       if (relationshipWordsInserted || !shouldShowRelationshipWordsSection(phrase, page)) return;
       relationshipWordsInserted = addRelationshipWordsSection({
@@ -1954,6 +1962,9 @@ function main() {
           pp.id = 'viet-phrase-polite-1'
           AND psi.note = 'viet-phrase-hello-chao'
           AND psi.title_override = 'Chào'
+        )
+        OR (
+          pp.id || '>' || psi.note IN (${approvedQuickSayShortcutPairs.map(([sourceID, targetID]) => `'${sourceID}>${targetID}'`).join(",")})
         )
       )
     ORDER BY pp.id, ps.sort_order, psi.sort_order;

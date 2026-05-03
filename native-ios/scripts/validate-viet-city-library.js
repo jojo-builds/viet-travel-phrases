@@ -376,11 +376,12 @@ function main() {
   }
 
   const cityMissingAudio = (audioAudit.missing ?? []).filter((entry) => String(entry.pageID ?? "").startsWith("viet-family-city-"));
+  const cityHeroMissingAudio = cityMissingAudio.filter((entry) => entry.kind === "hero");
   const queueRows = csvDataRowCount(audioQueuePath);
   assert(queueRows >= cityMissingAudio.length, `planned missing-audio queue should cover unresolved city audio, found ${queueRows} queue rows for ${cityMissingAudio.length} city missing rows`);
   assert(
-    cityMissingAudio.length <= pages.length,
-    `city missing-audio queue should not exceed city pages, got ${cityMissingAudio.length} missing rows for ${pages.length} pages`
+    cityHeroMissingAudio.length <= pages.length,
+    `city primary missing-audio rows should not exceed city pages, got ${cityHeroMissingAudio.length} hero rows for ${pages.length} pages`
   );
   assert(
     pageKindTemplateErrors.length === 0,

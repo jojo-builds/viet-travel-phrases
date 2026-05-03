@@ -2231,6 +2231,64 @@ function linkedCityPhraseOptions(records, count = 4) {
     .map((record) => cityLibraryPhraseOption(record, canonicalCityDetailPageID(record.id)));
 }
 
+function editorialCityPhraseOption(phraseID, currentPhraseID, tintName = "teal") {
+  const phrase = phraseByID.get(phraseID);
+  if (!phrase) {
+    throw new Error(`Missing editorial city phrase option ${phraseID}`);
+  }
+  const family = familyByID.get(phrase.familyID);
+  const detailPageID = phraseID === currentPhraseID ? null : (family ? canonicalPageID(family) : null);
+  return phraseOption(phrase, detailPageID, tintName);
+}
+
+function editorialCityBreakdownTokens(tokens) {
+  return (tokens ?? []).map((token, index) => ({
+    id: token.id ?? `editorial-chunk-${index + 1}`,
+    vietnamese: token.vietnamese,
+    english: token.english,
+    audioKey: authoredBreakdownAudioKey(token.vietnamese),
+  }));
+}
+
+function applyCityEditorialImport(sections, pageRecord) {
+  const editorialImport = pageRecord.editorialImport;
+  if (!editorialImport?.sections?.length) {
+    return sections;
+  }
+
+  const nextSections = sections.map((section) => ({ ...section }));
+  const insertBeforeIndex = () => {
+    const goodToKnowIndex = nextSections.findIndex((section) => section.id === "good-to-know");
+    return goodToKnowIndex === -1 ? nextSections.length : goodToKnowIndex;
+  };
+
+  for (const editorialSection of editorialImport.sections) {
+    const next = {
+      id: editorialSection.id,
+      title: editorialSection.title,
+      body: editorialSection.body,
+    };
+    if (editorialSection.phraseIDs?.length) {
+      next.phrases = editorialSection.phraseIDs.map((phraseID) => editorialCityPhraseOption(phraseID, pageRecord.id));
+    }
+    if (editorialSection.id === "breakdown") {
+      next.breakdown = editorialCityBreakdownTokens(editorialSection.breakdownTokens);
+    }
+
+    const existingIndex = nextSections.findIndex((section) => section.id === editorialSection.id);
+    if (existingIndex >= 0) {
+      nextSections[existingIndex] = {
+        ...nextSections[existingIndex],
+        ...next,
+      };
+    } else {
+      nextSections.splice(insertBeforeIndex(), 0, next);
+    }
+  }
+
+  return nextSections;
+}
+
 function findRelatedCityRecords(pageRecord, pageRecords, placePageByPlaceID) {
   const samePlace = pageRecords
     .filter((candidate) => candidate.id !== pageRecord.id && candidate.placeID === pageRecord.placeID)
@@ -2570,6 +2628,9 @@ function cityPageForRecord(pageRecord, context) {
     }
   );
 
+  const authoredSections = applyCityEditorialImport(sections, pageRecord);
+  const editorialCategoryIDs = pageRecord.editorialImport?.categoryIDs ?? [];
+
   return {
     id: cityPageID(pageRecord.id),
     familyID: pageRecord.id,
@@ -2579,12 +2640,12 @@ function cityPageForRecord(pageRecord, context) {
     title: pageRecord.targetText,
     englishTitle: pageRecord.englishText,
     pronunciation: pageRecord.pronunciation,
-    summary: pageRecord.englishText,
+    summary: pageRecord.editorialImport?.summary ?? pageRecord.englishText,
     iconName: pageKind === "restaurant" ? "fork.knife"
       : pageKind === "dish" ? "takeoutbag.and.cup.and.straw.fill"
         : pageRecord.kind === "place" ? "mappin.and.ellipse" : "map.fill",
     tintName: pageKind === "restaurant" ? "green" : pageKind === "dish" ? "orange" : "teal",
-    categoryIDs: [
+    categoryIDs: Array.from(new Set([
       "city-guides",
       pageRecord.cityID,
       pageRecord.subcategoryID,
@@ -2596,7 +2657,8 @@ function cityPageForRecord(pageRecord, context) {
       pageKind === "phrase" ? "city-phrases" : null,
       pageKind === "restaurant" ? "restaurants" : null,
       pageKind === "dish" ? "local-dishes" : null,
-    ].filter(Boolean),
+      ...editorialCategoryIDs,
+    ].filter(Boolean))),
     audioKey: authoredPhraseAudioKey(pageRecord.targetText, phrase.audioKey),
     cityMetadata: {
       cityID: pageRecord.cityID,
@@ -2611,8 +2673,9 @@ function cityPageForRecord(pageRecord, context) {
       placeName: place.englishName,
       sourceIDs: pageRecord.sourceIDs ?? [],
       rationale: pageRecord.rationale,
+      editorialImportPatchID: pageRecord.editorialImport?.patchID ?? null,
     },
-    sections: withSectionPresentations(sections),
+    sections: withSectionPresentations(authoredSections),
     examples: [selfOption],
   };
 }

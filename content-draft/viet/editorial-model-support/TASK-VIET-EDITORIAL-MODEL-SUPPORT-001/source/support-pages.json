@@ -460,7 +460,7 @@
       "whenToUse": "Use it when buying or collecting tickets for a Ba Na Hills visit. Do not use it for prices, hours, or policy details.",
       "goodToKnow": "This page only teaches the durable ticket request. Check current ticket details with the official counter or booking screen.",
       "exploreNextBody": "Go next to cable car, photo, taxi return, and address-check phrases.",
-      "rationale": "Required by EP-005 with stable sourced Ba Na Hills journey context and no volatile facts.",
+      "rationale": "Required by EP-005 with stable sourced Ba Na Hills journey context and no time-sensitive claims.",
       "relatedPhraseIDs": ["ves-where-cable-car", "ves-take-photo-for-me", "ves-call-taxi-for-me", "ves-is-this-address-correct"],
       "explorePhraseIDs": ["ves-where-cable-car", "ves-take-photo-for-me", "ves-call-taxi-for-me", "city-danang-where-ba-na-hills"]
     },
@@ -626,7 +626,7 @@
       "whenToUse": "Use it before attractions with entrances, stairs, caves, pagodas, or large grounds where the pickup point matters.",
       "goodToKnow": "Do not rely on memory alone. Save the location on your map or take a photo of the meeting point.",
       "exploreNextBody": "Go next to entrance, return taxi, and time-to-return pages.",
-      "rationale": "Required by EP-007 as stable visitor-flow support for Marble Mountains without importing volatile policy facts.",
+      "rationale": "Required by EP-007 as stable visitor-flow support for Marble Mountains without importing time-sensitive policy claims.",
       "relatedPhraseIDs": ["v500-sigh-acti-where-is-the-entrance", "ves-call-taxi-for-me", "ves-what-time-come-back", "repair-5"],
       "explorePhraseIDs": ["v500-sigh-acti-where-is-the-entrance", "ves-what-time-come-back", "ves-call-taxi-for-me", "repair-5"]
     },

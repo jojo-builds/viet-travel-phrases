@@ -182,7 +182,7 @@ function loadCityLibraryRecords() {
       const familyTitle = page.familyTitle ?? (pageKind !== "phrase"
         ? `${place.englishName} pronunciation`
         : page.englishText);
-      const familySummary = page.summary ?? page.context;
+      const familySummary = page.editorialImport?.summary ?? page.summary ?? page.context;
       const searchAliases = normalizeCitySearchAliases({ city, place, page });
       const notes = [
         "city-library-v1",
@@ -194,6 +194,7 @@ function loadCityLibraryRecords() {
         `placeKind=${placeKind}`,
         contentRole ? `contentRole=${contentRole}` : "",
         `place=${page.placeID}`,
+        page.editorialImport?.patchID ? `editorialImport=${page.editorialImport.patchID}` : "",
       ].filter(Boolean).join("; ");
 
       return {
@@ -209,7 +210,7 @@ function loadCityLibraryRecords() {
         pronunciation: page.pronunciation,
         access_tier: page.accessTier ?? accessTier,
         variant_role: "say-first",
-        context: page.context,
+        context: page.editorialImport?.summary ?? page.context,
         you_may_hear: page.youMayHear ?? "",
         search_aliases: Array.from(new Set(searchAliases)).join("|"),
         warning_note_type: "",

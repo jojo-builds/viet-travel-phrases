@@ -130,6 +130,15 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",
 ];
 
+const approvedQuickSayShortcutPairs = [
+  ["viet-phrase-city-danang-place-ba-na-hills", "viet-phrase-ves-two-tickets-ba-na-hills"],
+  ["viet-phrase-city-danang-place-marble-mountains", "viet-phrase-city-danang-ticket-marble-mountains"],
+  ["viet-phrase-city-danang-place-son-tra", "viet-phrase-city-danang-go-son-tra"],
+  ["viet-phrase-city-hanoi-place-bun-cha-huong-lien", "viet-phrase-ves-order-bun-cha-portion"],
+  ["viet-phrase-city-hanoi-place-pho-bat-dan", "viet-phrase-ves-order-pho-bowl"],
+  ["viet-phrase-city-hue-place-bun-bo-city", "viet-phrase-ves-order-bun-bo-hue-bowl"],
+];
+
 function run(command, args, options = {}) {
   const result = spawnSync(command, args, {
     cwd: repoRoot,
@@ -400,6 +409,9 @@ function main() {
           pp.id = 'viet-phrase-polite-1'
           AND psi.note = 'viet-phrase-hello-chao'
           AND psi.title_override = 'Chào'
+        )
+        OR (
+          pp.id || '>' || psi.note IN (${approvedQuickSayShortcutPairs.map(([sourceID, targetID]) => sqlQuote(`${sourceID}>${targetID}`)).join(",")})
         )
       );
   `), "Quick Say/Standard Way rows that are neither canonical self rows nor approved beginner shortcuts");

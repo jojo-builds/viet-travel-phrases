@@ -4162,7 +4162,110 @@
       ],
       "status": "approved",
       "pageKind": "phrase",
-      "placeKind": "street"
+      "placeKind": "street",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-016",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A street-distance check for Nguyễn Văn Linh Street, designed to help the traveler decide whether to walk, ride, or show the address again.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "neighborhoods-streets",
+          "beginner",
+          "city-page-kind-phrase",
+          "place-kind-street",
+          "street-pronouncer",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "quick-say",
+            "vietnamese": "Đường Nguyễn Văn Linh gần đây không?",
+            "english": "Is Nguyen Van Linh Street near here?",
+            "phraseID": "city-danang-near-nguyen-van-linh-street"
+          },
+          {
+            "slot": "show",
+            "vietnamese": "Anh/chị chỉ giúp tôi được không?",
+            "english": "Can you show me?",
+            "phraseID": "ves-can-you-show-me-politeness"
+          },
+          {
+            "slot": "driver",
+            "vietnamese": "Cho tôi đến đường Nguyễn Văn Linh.",
+            "english": "Please take me to Nguyen Van Linh Street",
+            "phraseID": "ves-to-nguyen-van-linh-street"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this when the traveler sees the street name on a map or address and wants a quick local read: is it nearby or not?"
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Đường Nguyễn Văn Linh gần đây không? — Is Nguyen Van Linh Street near here?",
+            "phraseIDs": [
+              "city-danang-near-nguyen-van-linh-street"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Đường Nguyễn Văn Linh -> Nguyen Van Linh Street | gần đây không? -> near here?",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-near-nguyen-van-linh-street-editorial-1",
+                "vietnamese": "Đường Nguyễn Văn Linh",
+                "english": "Nguyen Van Linh Street"
+              },
+              {
+                "id": "city-danang-near-nguyen-van-linh-street-editorial-2",
+                "vietnamese": "gần đây không?",
+                "english": "near here?"
+              },
+              {
+                "id": "city-danang-near-nguyen-van-linh-street-editorial-3",
+                "vietnamese": "Đường Nguyễn Văn Linh gần đây không?",
+                "english": "Is Nguyen Van Linh Street near here?"
+              }
+            ]
+          },
+          {
+            "id": "what-happens-next",
+            "title": "What happens next",
+            "body": "Likely replies are a point, yes/no, a number of minutes, or a gesture. The user should show the map while asking."
+          },
+          {
+            "id": "recovery",
+            "title": "Recovery",
+            "body": "If the answer is unclear, use: Anh/chị chỉ giúp tôi được không? — Can you show me?",
+            "phraseIDs": [
+              "ves-can-you-show-me-politeness",
+              "ves-to-nguyen-van-linh-street"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use before committing to a walk, ride, or detour."
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Street-name pages should include likely nonverbal replies because locals may answer by pointing."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: street pronouncer, show driver, stop here, wrong place."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-near-son-tra-night-market",
@@ -4393,7 +4496,119 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-005",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A journey page for Bà Nà Hills: confirm the ride, handle tickets, find the cable car, ask for photos, buy food/drinks, and find the return pickup.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-landmark",
+          "actual-landmarks",
+          "journey-page",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "ticket",
+            "vietnamese": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+            "english": "Two tickets to Ba Na Hills, please",
+            "phraseID": "ves-two-tickets-ba-na-hills"
+          },
+          {
+            "slot": "cable-car",
+            "vietnamese": "Cáp treo ở đâu?",
+            "english": "Where is the cable car?",
+            "phraseID": "ves-where-cable-car"
+          },
+          {
+            "slot": "photo",
+            "vietnamese": "Bạn chụp giúp tôi được không?",
+            "english": "Can you take a photo for me?",
+            "phraseID": "ves-take-photo-for-me"
+          },
+          {
+            "slot": "return",
+            "vietnamese": "Gọi giúp tôi taxi được không?",
+            "english": "Can you call me a taxi?",
+            "phraseID": "ves-call-taxi-for-me"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "This is not a single place-name card. Treat Bà Nà Hills as a day-trip flow: ride/drop-off, ticket, cable car, photos, food/drinks, and return pickup."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Dạ, cho tôi hai vé lên Bà Nà Hills. — Two tickets to Ba Na Hills, please.",
+            "phraseIDs": [
+              "ves-two-tickets-ba-na-hills"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Bà Nà Hills is a place name. Learn it as one audio unit, then use it inside ticket, driver, and direction phrases.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-place-ba-na-hills-editorial-1",
+                "vietnamese": "Bà Nà",
+                "english": "name recognition for the attraction"
+              },
+              {
+                "id": "city-danang-place-ba-na-hills-editorial-2",
+                "vietnamese": "Hills",
+                "english": "English word in the attraction name"
+              },
+              {
+                "id": "city-danang-place-ba-na-hills-editorial-3",
+                "vietnamese": "Bà Nà Hills",
+                "english": "Ba Na Hills"
+              }
+            ]
+          },
+          {
+            "id": "journey-flow",
+            "title": "Journey flow",
+            "body": "1. Confirm pickup/drop-off. 2. Buy or scan tickets. 3. Find the cable car. 4. Ask for a photo. 5. Buy food/drinks. 6. Find the return ride."
+          },
+          {
+            "id": "key-phrases",
+            "title": "Key phrases",
+            "body": "Cáp treo ở đâu? / Bạn chụp giúp tôi được không? / Đi xuống ở đâu? / Gọi giúp tôi taxi được không?",
+            "phraseIDs": [
+              "ves-two-tickets-ba-na-hills",
+              "ves-where-cable-car",
+              "ves-take-photo-for-me",
+              "ves-call-taxi-for-me"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use this before or during the trip, especially when the user needs the next step rather than a description of the attraction."
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Keep the page focused on durable next steps: tickets, cable car, photos, food and drinks, and return pickup. Check changing visit details on the official screen or counter."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: Go to Bà Nà Hills, where is cable car, one/two tickets, take photo, food/drink, return taxi."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-place-bach-dang-street",
@@ -4425,7 +4640,122 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-009",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A Say This Street page for Đường Bạch Đằng: hear the street name, insert it into taxi phrases, confirm the address, and handle pickup/drop-off.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "neighborhoods-streets",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-street",
+          "street-pronouncer",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "street-only",
+            "vietnamese": "Đường Bạch Đằng",
+            "english": "Bach Dang Street",
+            "phraseID": "city-danang-place-bach-dang-street"
+          },
+          {
+            "slot": "taxi",
+            "vietnamese": "Cho tôi đến đường Bạch Đằng.",
+            "english": "Please take me to Bach Dang Street",
+            "phraseID": "ves-to-bach-dang-street"
+          },
+          {
+            "slot": "confirm",
+            "vietnamese": "Đây có phải đường Bạch Đằng không?",
+            "english": "Is this Bach Dang Street?",
+            "phraseID": "ves-is-this-bach-dang-street"
+          },
+          {
+            "slot": "drop-off",
+            "vietnamese": "Cho tôi xuống ở đây được không?",
+            "english": "Can you drop me off here?",
+            "phraseID": "ves-drop-me-off-here"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "This is a street-audio page. The user likely needs to say the street to a driver, hotel desk, or local while showing an address."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Đường Bạch Đằng. Play the street name by itself, then play the full taxi sentence.",
+            "phraseIDs": [
+              "city-danang-place-bach-dang-street"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Đường means street. Bạch Đằng is the street name. Keep Bạch Đằng together in audio.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-place-bach-dang-street-editorial-1",
+                "vietnamese": "Đường",
+                "english": "street"
+              },
+              {
+                "id": "city-danang-place-bach-dang-street-editorial-2",
+                "vietnamese": "Bạch Đằng",
+                "english": "street name to keep together"
+              },
+              {
+                "id": "city-danang-place-bach-dang-street-editorial-3",
+                "vietnamese": "Đường Bạch Đằng",
+                "english": "Bach Dang Street"
+              }
+            ]
+          },
+          {
+            "id": "show-driver",
+            "title": "Show the driver",
+            "body": "Cho tôi đến đường Bạch Đằng. — Please take me to Bach Dang Street.",
+            "phraseIDs": [
+              "city-danang-place-bach-dang-street",
+              "ves-to-bach-dang-street"
+            ]
+          },
+          {
+            "id": "confirm",
+            "title": "Confirm",
+            "body": "Đây có phải đường Bạch Đằng không? — Is this Bach Dang Street?",
+            "phraseIDs": [
+              "ves-is-this-bach-dang-street"
+            ]
+          },
+          {
+            "id": "drop-off",
+            "title": "Drop off",
+            "body": "Cho tôi xuống ở đây được không? — Can you drop me off here?",
+            "phraseIDs": [
+              "ves-drop-me-off-here"
+            ]
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Street names should always have two audio versions: street-only and full sentence."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: go by Bach Dang Street, stop at Bach Dang Street, near here, wrong place, show address."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-place-ban-co-peak",
@@ -4584,7 +4914,117 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-006",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A Da Nang landmark page for Cầu Rồng: say the bridge name, ask where it is, get dropped nearby, ask for a photo, and recover if the pickup point is confusing.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-landmark",
+          "actual-landmarks",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "quick-say",
+            "vietnamese": "Cầu Rồng",
+            "english": "Dragon Bridge",
+            "phraseID": "city-danang-place-dragon-bridge"
+          },
+          {
+            "slot": "drop-off",
+            "vietnamese": "Cho tôi xuống gần Cầu Rồng.",
+            "english": "Let me off near Dragon Bridge",
+            "phraseID": "ves-drop-near-dragon-bridge"
+          },
+          {
+            "slot": "where",
+            "vietnamese": "Cầu Rồng ở đâu?",
+            "english": "Where is Dragon Bridge?",
+            "phraseID": "city-danang-where-dragon-bridge"
+          },
+          {
+            "slot": "photo",
+            "vietnamese": "Bạn chụp giúp tôi được không?",
+            "english": "Can you take a photo for me?",
+            "phraseID": "ves-take-photo-for-me"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this around the river, in a Grab/taxi, or when asking a local to point you toward the bridge. The page should be about navigation, photos, and pickup points."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Cầu Rồng — Dragon Bridge. Practice the name, then use it in a full sentence: Cho tôi xuống gần Cầu Rồng.",
+            "phraseIDs": [
+              "city-danang-place-dragon-bridge"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Cầu means bridge. Rồng means dragon. Together: Cầu Rồng, the place name.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-place-dragon-bridge-editorial-1",
+                "vietnamese": "Cầu",
+                "english": "bridge"
+              },
+              {
+                "id": "city-danang-place-dragon-bridge-editorial-2",
+                "vietnamese": "Rồng",
+                "english": "dragon"
+              },
+              {
+                "id": "city-danang-place-dragon-bridge-editorial-3",
+                "vietnamese": "Cầu Rồng",
+                "english": "Dragon Bridge"
+              }
+            ]
+          },
+          {
+            "id": "place-brief",
+            "title": "What it is",
+            "body": "Landmark page: this is a small navigation and photo flow, centered on reaching the bridge, asking for a photo, and keeping the pickup point clear."
+          },
+          {
+            "id": "use-it-with",
+            "title": "Use it with",
+            "body": "Cho tôi xuống gần Cầu Rồng. / Cầu Rồng ở đâu? / Bạn chụp giúp tôi được không? / Tôi đang ở gần Cầu Rồng.",
+            "phraseIDs": [
+              "ves-drop-near-dragon-bridge",
+              "city-danang-where-dragon-bridge",
+              "ves-take-photo-for-me"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use it when the bridge is the meetup point, photo stop, walking direction, or pickup/drop-off landmark."
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Because the name is short, the full-sentence audio matters: street noise can make single-word place names hard to catch."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: go to Dragon Bridge, stop at Dragon Bridge, photo help, where is pickup area, taxi return."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-place-golden-bridge",
@@ -4838,7 +5278,119 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-007",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A practical attraction page for Ngũ Hành Sơn: say the Vietnamese name, buy a ticket, ask about the entrance, handle stairs/caves, and get back to the driver.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-landmark",
+          "actual-landmarks",
+          "journey-page",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "ticket",
+            "vietnamese": "Một vé vào Ngũ Hành Sơn.",
+            "english": "One ticket to Marble Mountains",
+            "phraseID": "city-danang-ticket-marble-mountains"
+          },
+          {
+            "slot": "entrance",
+            "vietnamese": "Lối vào ở đâu?",
+            "english": "Where is the entrance?",
+            "phraseID": "v500-sigh-acti-where-is-the-entrance"
+          },
+          {
+            "slot": "driver",
+            "vietnamese": "Tài xế chờ ở đâu?",
+            "english": "Where does the driver wait?",
+            "phraseID": "ves-where-driver-waits"
+          },
+          {
+            "slot": "return",
+            "vietnamese": "Gọi giúp tôi taxi được không?",
+            "english": "Can you call me a taxi?",
+            "phraseID": "ves-call-taxi-for-me"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this when the user is visiting Marble Mountains and needs the Vietnamese name to work at a ticket counter, with a driver, or while asking for the entrance."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Một vé vào Ngũ Hành Sơn. — One ticket to Marble Mountains.",
+            "phraseIDs": [
+              "city-danang-ticket-marble-mountains"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Ngũ Hành Sơn is the Vietnamese place name. Do not rely on the English translation with drivers; practice the local name and show the map pin.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-place-marble-mountains-editorial-1",
+                "vietnamese": "Ngũ Hành",
+                "english": "name recognition for the attraction"
+              },
+              {
+                "id": "city-danang-place-marble-mountains-editorial-2",
+                "vietnamese": "Sơn",
+                "english": "mountain word in the name"
+              },
+              {
+                "id": "city-danang-place-marble-mountains-editorial-3",
+                "vietnamese": "Ngũ Hành Sơn",
+                "english": "Marble Mountains"
+              }
+            ]
+          },
+          {
+            "id": "journey-flow",
+            "title": "Journey flow",
+            "body": "1. Confirm the driver/drop-off. 2. Buy ticket. 3. Ask for entrance or stairs/elevator if needed. 4. Ask where to meet again. 5. Return ride."
+          },
+          {
+            "id": "key-phrases",
+            "title": "Key phrases",
+            "body": "Một vé vào Ngũ Hành Sơn. / Lối vào ở đâu? / Tài xế chờ ở đâu? / Gọi giúp tôi taxi được không?",
+            "phraseIDs": [
+              "city-danang-ticket-marble-mountains",
+              "v500-sigh-acti-where-is-the-entrance",
+              "ves-where-driver-waits",
+              "ves-call-taxi-for-me"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use this at the ticket counter, hotel desk, taxi/Grab handoff, or when trying to return to the pickup point."
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Keep changing visit details on official signs or counters. This page focuses on durable language: ticket, entrance, caves or stairs, driver wait, and return ride."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: one ticket, entrance, how long from here, stop at Marble Mountains, taxi return."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-place-my-khe",
@@ -4967,7 +5519,122 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-010",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A Say This Street page for Đường Nguyễn Văn Linh: hear the street name, use it with a driver, confirm you are on the right street, and fix a wrong drop-off.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "neighborhoods-streets",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-street",
+          "street-pronouncer",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "street-only",
+            "vietnamese": "Đường Nguyễn Văn Linh",
+            "english": "Nguyen Van Linh Street",
+            "phraseID": "city-danang-place-nguyen-van-linh-street"
+          },
+          {
+            "slot": "taxi",
+            "vietnamese": "Cho tôi đến đường Nguyễn Văn Linh.",
+            "english": "Please take me to Nguyen Van Linh Street",
+            "phraseID": "ves-to-nguyen-van-linh-street"
+          },
+          {
+            "slot": "confirm",
+            "vietnamese": "Đây có phải đường Nguyễn Văn Linh không?",
+            "english": "Is this Nguyen Van Linh Street?",
+            "phraseID": "ves-is-this-nguyen-van-linh-street"
+          },
+          {
+            "slot": "wrong-place",
+            "vietnamese": "Hình như không đúng chỗ.",
+            "english": "I think this is not the right place",
+            "phraseID": "ves-not-right-place"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "This page solves a real traveler problem: the street name is hard to pronounce from spelling. Make the audio the main value."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Đường Nguyễn Văn Linh. Practice street-only audio first, then the taxi sentence.",
+            "phraseIDs": [
+              "city-danang-place-nguyen-van-linh-street"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Đường means street. Nguyễn Văn Linh is the street name. Do not split the personal name into fake meanings for travelers.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-place-nguyen-van-linh-street-editorial-1",
+                "vietnamese": "Đường",
+                "english": "street"
+              },
+              {
+                "id": "city-danang-place-nguyen-van-linh-street-editorial-2",
+                "vietnamese": "Nguyễn Văn Linh",
+                "english": "street name to keep together"
+              },
+              {
+                "id": "city-danang-place-nguyen-van-linh-street-editorial-3",
+                "vietnamese": "Đường Nguyễn Văn Linh",
+                "english": "Nguyen Van Linh Street"
+              }
+            ]
+          },
+          {
+            "id": "show-driver",
+            "title": "Show the driver",
+            "body": "Cho tôi đến đường Nguyễn Văn Linh. — Please take me to Nguyen Van Linh Street.",
+            "phraseIDs": [
+              "city-danang-place-nguyen-van-linh-street",
+              "ves-to-nguyen-van-linh-street"
+            ]
+          },
+          {
+            "id": "confirm",
+            "title": "Confirm",
+            "body": "Đây có phải đường Nguyễn Văn Linh không? — Is this Nguyen Van Linh Street?",
+            "phraseIDs": [
+              "ves-is-this-nguyen-van-linh-street"
+            ]
+          },
+          {
+            "id": "wrong-place",
+            "title": "Wrong place",
+            "body": "Hình như không đúng chỗ. — I think this is not the right place.",
+            "phraseIDs": [
+              "ves-not-right-place"
+            ]
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "For long Vietnamese street names, full-sentence audio is more useful than dictionary-style spelling."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: go to Nguyen Van Linh Street, stop here, near here, wrong place, show address."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-place-non-nuoc-beach",
@@ -5094,7 +5761,118 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "nature"
+      "placeKind": "nature",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-008",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A route-area page for Sơn Trà: say the peninsula name, clarify the exact stop, ask about Linh Ứng Pagoda, and arrange the return pickup.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-nature",
+          "actual-landmarks",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "route",
+            "vietnamese": "Đi bán đảo Sơn Trà.",
+            "english": "Go to Son Tra Peninsula",
+            "phraseID": "city-danang-go-son-tra"
+          },
+          {
+            "slot": "specific-stop",
+            "vietnamese": "Chùa Linh Ứng ở đâu?",
+            "english": "Where is Linh Ung Pagoda?",
+            "phraseID": "city-danang-where-linh-ung"
+          },
+          {
+            "slot": "wait",
+            "vietnamese": "Anh chờ tôi ở đây được không?",
+            "english": "Can you wait for me here?",
+            "phraseID": "ves-can-you-wait-here"
+          },
+          {
+            "slot": "return-time",
+            "vietnamese": "Mấy giờ quay lại?",
+            "english": "What time do we come back?",
+            "phraseID": "ves-what-time-come-back"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Sơn Trà is an area, not just one door. The page should help the user clarify which stop they mean and keep the driver/pickup context visible."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Đi bán đảo Sơn Trà. — Go to Son Tra Peninsula.",
+            "phraseIDs": [
+              "city-danang-go-son-tra"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Bán đảo means peninsula. Sơn Trà is the local name. Treat the full phrase as a route-area name.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-place-son-tra-editorial-1",
+                "vietnamese": "Bán đảo",
+                "english": "peninsula"
+              },
+              {
+                "id": "city-danang-place-son-tra-editorial-2",
+                "vietnamese": "Sơn Trà",
+                "english": "local place name"
+              },
+              {
+                "id": "city-danang-place-son-tra-editorial-3",
+                "vietnamese": "Bán đảo Sơn Trà",
+                "english": "Son Tra Peninsula"
+              }
+            ]
+          },
+          {
+            "id": "place-brief",
+            "title": "What it is",
+            "body": "Use this for a driver, hotel desk, or tour desk when the user is trying to reach the area or a stop inside it."
+          },
+          {
+            "id": "use-it-with",
+            "title": "Use it with",
+            "body": "Đi bán đảo Sơn Trà. / Chùa Linh Ứng ở đâu? / Anh chờ tôi ở đây được không? / Mấy giờ quay lại?",
+            "phraseIDs": [
+              "city-danang-go-son-tra",
+              "city-danang-where-linh-ung",
+              "ves-can-you-wait-here",
+              "ves-what-time-come-back"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use it when the destination is the broader area, then narrow to the exact stop with a map pin."
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Because this is an area, the map pin matters. The phrase alone may not identify the exact stop."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: Linh Ứng Pagoda, Dragon Bridge, My Khe Beach, return pickup, wait here."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-place-son-tra-night-market",
@@ -5222,7 +6000,122 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-011",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A Say This Street page for Đường Võ Nguyên Giáp: pronounce the street, insert it into driver phrases, and confirm beach-side pickup/drop-off points.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "neighborhoods-streets",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-street",
+          "street-pronouncer",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "street-only",
+            "vietnamese": "Đường Võ Nguyên Giáp",
+            "english": "Vo Nguyen Giap Street",
+            "phraseID": "city-danang-place-vo-nguyen-giap-street"
+          },
+          {
+            "slot": "taxi",
+            "vietnamese": "Cho tôi đến đường Võ Nguyên Giáp.",
+            "english": "Please take me to Vo Nguyen Giap Street",
+            "phraseID": "ves-to-vo-nguyen-giap-street"
+          },
+          {
+            "slot": "confirm",
+            "vietnamese": "Đây có phải đường Võ Nguyên Giáp không?",
+            "english": "Is this Vo Nguyen Giap Street?",
+            "phraseID": "ves-is-this-vo-nguyen-giap-street"
+          },
+          {
+            "slot": "pickup",
+            "vietnamese": "Tôi đang ở đường Võ Nguyên Giáp.",
+            "english": "I’m on Vo Nguyen Giap Street",
+            "phraseID": "ves-im-on-vo-nguyen-giap-street"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this when an address, hotel, beach stop, or Grab pickup mentions Đường Võ Nguyên Giáp and the traveler needs to say it out loud."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Đường Võ Nguyên Giáp. Play street-only audio, then the full sentence.",
+            "phraseIDs": [
+              "city-danang-place-vo-nguyen-giap-street"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Đường means street. Võ Nguyên Giáp is the street name. Keep the name as a single audio unit.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-place-vo-nguyen-giap-street-editorial-1",
+                "vietnamese": "Đường",
+                "english": "street"
+              },
+              {
+                "id": "city-danang-place-vo-nguyen-giap-street-editorial-2",
+                "vietnamese": "Võ Nguyên Giáp",
+                "english": "street name to keep together"
+              },
+              {
+                "id": "city-danang-place-vo-nguyen-giap-street-editorial-3",
+                "vietnamese": "Đường Võ Nguyên Giáp",
+                "english": "Vo Nguyen Giap Street"
+              }
+            ]
+          },
+          {
+            "id": "show-driver",
+            "title": "Show the driver",
+            "body": "Cho tôi đến đường Võ Nguyên Giáp. — Please take me to Vo Nguyen Giap Street.",
+            "phraseIDs": [
+              "city-danang-place-vo-nguyen-giap-street",
+              "ves-to-vo-nguyen-giap-street"
+            ]
+          },
+          {
+            "id": "confirm",
+            "title": "Confirm",
+            "body": "Đây có phải đường Võ Nguyên Giáp không? — Is this Vo Nguyen Giap Street?",
+            "phraseIDs": [
+              "ves-is-this-vo-nguyen-giap-street"
+            ]
+          },
+          {
+            "id": "pickup",
+            "title": "Pickup",
+            "body": "Tôi đang ở đường Võ Nguyên Giáp. — I’m on Vo Nguyen Giap Street.",
+            "phraseIDs": [
+              "ves-im-on-vo-nguyen-giap-street"
+            ]
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Street pages are most useful when the Vietnamese name is easy to show and hear: play the street name first, then play the full driver sentence."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: My Khe Beach, stop here, wrong location, show address, taxi return."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-reservation-nen",
@@ -6357,7 +7250,110 @@
       ],
       "status": "approved",
       "pageKind": "phrase",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-013",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A practical where-question for when the traveler needs a direction, counter, pickup point, or map confirmation for Bà Nà Hills.",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-phrase",
+          "place-kind-landmark",
+          "journey-page-child",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "quick-say",
+            "vietnamese": "Bà Nà Hills ở đâu?",
+            "english": "Where is Ba Na Hills?",
+            "phraseID": "city-danang-where-ba-na-hills"
+          },
+          {
+            "slot": "follow-up",
+            "vietnamese": "Cáp treo ở đâu?",
+            "english": "Where is the cable car?",
+            "phraseID": "ves-where-cable-car"
+          },
+          {
+            "slot": "repair",
+            "vietnamese": "Làm ơn nói lại.",
+            "english": "Please say that again",
+            "phraseID": "repair-1"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this when you need someone to point you toward the ticket area, pickup point, or next step connected to Bà Nà Hills."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Bà Nà Hills ở đâu? — Where is Ba Na Hills?",
+            "phraseIDs": [
+              "city-danang-where-ba-na-hills"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Bà Nà Hills -> place name | ở đâu? -> where?",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-where-ba-na-hills-editorial-1",
+                "vietnamese": "Bà Nà Hills",
+                "english": "Ba Na Hills attraction name"
+              },
+              {
+                "id": "city-danang-where-ba-na-hills-editorial-2",
+                "vietnamese": "ở đâu?",
+                "english": "where?"
+              },
+              {
+                "id": "city-danang-where-ba-na-hills-editorial-3",
+                "vietnamese": "Bà Nà Hills ở đâu?",
+                "english": "Where is Ba Na Hills?"
+              }
+            ]
+          },
+          {
+            "id": "what-happens-next",
+            "title": "What happens next",
+            "body": "The answer may be a point, a counter name, a direction, or a gesture. Follow the gesture first, then ask again if needed."
+          },
+          {
+            "id": "recovery",
+            "title": "Recovery",
+            "body": "If the answer is too fast, use: Làm ơn nói lại. — Please say that again.",
+            "phraseIDs": [
+              "ves-where-cable-car",
+              "repair-1"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use at the hotel desk, ticket area, station, or pickup zone when the exact next step is unclear."
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Where-questions should include likely replies and recovery phrases, not just the sentence."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: cable car, two tickets, return taxi, please say that again."
+          }
+        ]
+      }
     },
     {
       "id": "city-danang-where-bach-dang-street",
@@ -9093,7 +10089,121 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "iconic"
+      "contentRole": "iconic",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-001",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A walk-in guide for Bún chả Hương Liên: say the place name, order bún chả, handle drinks, pay, and get a ride back without turning the page into a review.",
+        "categoryIDs": [
+          "city-guides",
+          "hanoi",
+          "food-coffee",
+          "beginner",
+          "city-page-kind-restaurant",
+          "place-kind-restaurant",
+          "content-role-iconic",
+          "restaurants",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "quick-say",
+            "vietnamese": "Dạ, cho tôi một phần bún chả.",
+            "english": "One portion of bun cha, please",
+            "phraseID": "ves-order-bun-cha-portion"
+          },
+          {
+            "slot": "inside-the-place",
+            "vietnamese": "Cho tôi trà đá.",
+            "english": "Iced tea, please",
+            "phraseID": "vpe-one-item-please-cho-toi-mot-tra-da"
+          },
+          {
+            "slot": "inside-the-place",
+            "vietnamese": "Tính tiền giúp tôi.",
+            "english": "Bill, please",
+            "phraseID": "coffee-7"
+          },
+          {
+            "slot": "leaving",
+            "vietnamese": "Gọi giúp tôi taxi được không?",
+            "english": "Can you call me a taxi?",
+            "phraseID": "ves-call-taxi-for-me"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "You are probably using this page in one of two moments: showing the restaurant name to a driver or walking in and ordering. Keep the name visible, then move quickly into table, menu, drink, bill, or ride-back phrases."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Start with the useful sentence: Dạ, cho tôi một phần bún chả. — One portion of bun cha, please.",
+            "phraseIDs": [
+              "ves-order-bun-cha-portion"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Bún chả is the dish name. Hương Liên is the restaurant name. Treat the full name as one map/address phrase, not a sentence to translate word by word.",
+            "breakdownTokens": [
+              {
+                "id": "city-hanoi-place-bun-cha-huong-lien-editorial-1",
+                "vietnamese": "Bún chả",
+                "english": "dish name"
+              },
+              {
+                "id": "city-hanoi-place-bun-cha-huong-lien-editorial-2",
+                "vietnamese": "Hương Liên",
+                "english": "restaurant name"
+              },
+              {
+                "id": "city-hanoi-place-bun-cha-huong-lien-editorial-3",
+                "vietnamese": "Bún chả Hương Liên",
+                "english": "Bun Cha Huong Lien"
+              }
+            ]
+          },
+          {
+            "id": "place-brief",
+            "title": "What it is",
+            "body": "Restaurant page: this should feel like “I walked into this place — what do I say?” The page should help with ordering, confirming a table, asking for a recommendation, paying, and leaving."
+          },
+          {
+            "id": "before-you-go",
+            "title": "Before you go",
+            "body": "For a driver or hotel desk, show the map pin first. Say Bún chả Hương Liên once, then point to the address if pronunciation gets shaky.",
+            "phraseIDs": [
+              "ves-call-taxi-for-me"
+            ]
+          },
+          {
+            "id": "inside-the-place",
+            "title": "Inside the place",
+            "body": "Useful next phrases: Dạ, cho tôi một phần bún chả. / Cho tôi trà đá. / Tính tiền giúp tôi. / Tôi trả bằng tiền mặt.",
+            "phraseIDs": [
+              "vpe-one-item-please-cho-toi-mot-tra-da",
+              "coffee-7",
+              "ves-call-taxi-for-me"
+            ]
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Keep this page durable and action-based. Use the name, order, bill, and ride-back phrases; check current restaurant details separately if needed."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: ordering bún chả, iced tea, bill please, allergy, cash/card, and taxi return."
+          }
+        ]
+      }
     },
     {
       "id": "city-hanoi-place-cha-ca-thang-long",
@@ -9638,7 +10748,113 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "iconic"
+      "contentRole": "iconic",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-002",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A walk-in guide for Phở Bát Đàn: say the place name, order a bowl of phở, ask what to get, pay, and recover if the line or counter feels confusing.",
+        "categoryIDs": [
+          "city-guides",
+          "hanoi",
+          "food-coffee",
+          "beginner",
+          "city-page-kind-restaurant",
+          "place-kind-restaurant",
+          "content-role-iconic",
+          "restaurants",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "quick-say",
+            "vietnamese": "Dạ, cho tôi một tô phở.",
+            "english": "One bowl of pho, please",
+            "phraseID": "ves-order-pho-bowl"
+          },
+          {
+            "slot": "inside-the-place",
+            "vietnamese": "Có món nào nổi tiếng không?",
+            "english": "What is popular here?",
+            "phraseID": "ves-popular-dish-here"
+          },
+          {
+            "slot": "inside-the-place",
+            "vietnamese": "Tính tiền giúp tôi.",
+            "english": "Bill, please",
+            "phraseID": "coffee-7"
+          },
+          {
+            "slot": "leaving",
+            "vietnamese": "Cho tôi xuống ở đây được không?",
+            "english": "Can you drop me off here?",
+            "phraseID": "ves-drop-me-off-here"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this when Phở Bát Đàn is the exact food stop, not just a search result. The useful moment is usually: show the place name, order a bowl, ask what is available, pay, or get back to your ride."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Dạ, cho tôi một tô phở. — One bowl of pho, please.",
+            "phraseIDs": [
+              "ves-order-pho-bowl"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Phở is the dish. Bát Đàn is the restaurant/place name. Do not over-literalize the name; the user needs pronunciation and a useful next sentence.",
+            "breakdownTokens": [
+              {
+                "id": "city-hanoi-place-pho-bat-dan-editorial-1",
+                "vietnamese": "Phở",
+                "english": "pho / noodle soup"
+              },
+              {
+                "id": "city-hanoi-place-pho-bat-dan-editorial-2",
+                "vietnamese": "Bát Đàn",
+                "english": "restaurant name"
+              },
+              {
+                "id": "city-hanoi-place-pho-bat-dan-editorial-3",
+                "vietnamese": "Phở Bát Đàn",
+                "english": "Pho Bat Dan"
+              }
+            ]
+          },
+          {
+            "id": "place-brief",
+            "title": "What it is",
+            "body": "Restaurant page: turn the page into a small interaction flow. First: say/show the name. Next: order. Then: handle drink, bill, cash/card, or ride-back."
+          },
+          {
+            "id": "inside-the-place",
+            "title": "Inside the place",
+            "body": "Useful next phrases: Dạ, cho tôi một tô phở. / Có món nào nổi tiếng không? / Tính tiền giúp tôi. / Tôi trả bằng tiền mặt.",
+            "phraseIDs": [
+              "ves-popular-dish-here",
+              "coffee-7",
+              "ves-drop-me-off-here"
+            ]
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "If the place is busy, the user needs short phrases more than explanations. Keep sentences short enough to play as audio."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: one bowl of pho, what do you recommend, bill please, cash/card, no beef/no pork dietary pages."
+          }
+        ]
+      }
     },
     {
       "id": "city-hanoi-place-quan-thanh-temple",
@@ -24281,7 +25497,124 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "contentRole": "dish-anchor"
+      "contentRole": "dish-anchor",
+      "editorialImport": {
+        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
+        "patchID": "EP-004",
+        "approvedAt": "2026-05-03",
+        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+        "summary": "A dish guide for bún bò Huế: hear the dish name, order a bowl, manage spice level, and ask ingredient or diet questions before eating.",
+        "categoryIDs": [
+          "city-guides",
+          "hue",
+          "food-coffee",
+          "beginner",
+          "city-page-kind-dish",
+          "place-kind-dish",
+          "content-role-dish-anchor",
+          "local-dishes",
+          "editorial-pilot"
+        ],
+        "visibleRows": [
+          {
+            "slot": "quick-say",
+            "vietnamese": "Dạ, cho tôi một tô bún bò Huế.",
+            "english": "One bowl of bun bo Hue, please",
+            "phraseID": "ves-order-bun-bo-hue-bowl"
+          },
+          {
+            "slot": "spice",
+            "vietnamese": "Không cay quá nhé.",
+            "english": "Not too spicy, please",
+            "phraseID": "ves-not-too-spicy"
+          },
+          {
+            "slot": "ingredients",
+            "vietnamese": "Món này có gì?",
+            "english": "What is in this dish?",
+            "phraseID": "ves-whats-in-this-dish"
+          },
+          {
+            "slot": "pay",
+            "vietnamese": "Tính tiền giúp tôi.",
+            "english": "Bill, please",
+            "phraseID": "coffee-7"
+          }
+        ],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this when the user wants the dish, not just a nearby restaurant. The page should move from pronunciation into ordering and spice/ingredient safety."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Dạ, cho tôi một tô bún bò Huế. — One bowl of bun bo Hue, please.",
+            "phraseIDs": [
+              "ves-order-bun-bo-hue-bowl"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Bún bò Huế is the dish name. Keep it together in audio; do not break it into misleading literal pieces.",
+            "breakdownTokens": [
+              {
+                "id": "city-hue-place-bun-bo-city-editorial-1",
+                "vietnamese": "Bún bò",
+                "english": "beef noodle part of the dish name"
+              },
+              {
+                "id": "city-hue-place-bun-bo-city-editorial-2",
+                "vietnamese": "Huế",
+                "english": "Hue style / city name in the dish"
+              },
+              {
+                "id": "city-hue-place-bun-bo-city-editorial-3",
+                "vietnamese": "Bún bò Huế",
+                "english": "Bun bo Hue"
+              }
+            ]
+          },
+          {
+            "id": "how-to-order",
+            "title": "How to order",
+            "body": "Strong first sentence: Dạ, cho tôi một tô bún bò Huế. Add Không cay quá nhé if the user is worried about heat.",
+            "phraseIDs": [
+              "ves-order-bun-bo-hue-bowl",
+              "ves-not-too-spicy"
+            ]
+          },
+          {
+            "id": "ingredients-diet",
+            "title": "Ingredients and diet",
+            "body": "Surface quick safety phrases: Món này có cay không? / Tôi không ăn thịt bò. / Tôi không ăn thịt lợn. / Tôi bị dị ứng đậu phộng.",
+            "phraseIDs": [
+              "ves-not-too-spicy",
+              "ves-whats-in-this-dish"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use this at a restaurant, market stall, or when asking a hotel/café where to find the dish."
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "Keep this practical. The user wants confidence ordering, not a food encyclopedia."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Connect to: one bowl please, not too spicy, what is inside, no beef, no pork, bill please.",
+            "phraseIDs": [
+              "coffee-7"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "city-hue-place-dong-ba",
