@@ -29,6 +29,8 @@ Do not copy Duolingo-style pressure mechanics. This app should feel like a premi
 
 Before implementation, show Jojo a compact plan and ask only the clarifying questions needed to lock the first Scenario Mode v1. If Jojo steers naming, flow, or scenario priority after seeing the plan, record the accepted change in the result doc before final closeout.
 
+Keep the performance discipline from the earlier personal-queue plan: bounded, cached, request-driven loading; no deck/scenario generation in SwiftUI `body`; no preloading every future city/category path; and no broad progress observation that invalidates the UI on every answer. The personal queue is an input to Scenario Mode, not the visible product concept.
+
 ## Required Outcome
 
 - Reframe the Practice hub around scenario rehearsal while preserving this source priority:
@@ -87,6 +89,7 @@ Before implementation, show Jojo a compact plan and ask only the clarifying ques
   - missed prompts outrank added/saved/fallback scenario candidates;
   - Add-to-Practice phrases produce scenario/rehearsal candidates;
   - saved/recent pages can feed Practice without generic trivia or school-quiz framing;
+  - scenario loading is bounded/cacheable and does not require loading all city/category practice content for first render;
   - trip practice remains available as fallback;
   - wrong-answer continuation works reliably;
   - scenario steps can advance after a missed or alternate response;
