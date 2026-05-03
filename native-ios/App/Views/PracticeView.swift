@@ -16,9 +16,13 @@ struct PracticeView: View {
     @State private var deckState = PracticeDeckLoadState.loading
     @State private var activeSession: PracticeSession?
     @State private var completionSummary: PracticeCompletionSummary?
+    @State private var scenarioState = PracticeScenarioLoadState.loading
+    @State private var activeScenarioSession: PracticeScenarioSession?
+    @State private var scenarioCompletion: PracticeScenarioCompletionSummary?
     @State private var didStartInitialMode = false
     @State private var handledStartRequestID: Int?
     @State private var deckLoadGeneration = 0
+    @State private var scenarioLoadGeneration = 0
 
     init(
         intentStore: LocalUserIntentStore,
@@ -51,32 +55,32 @@ struct PracticeView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .leading, spacing: 18) {
                         Group {
-                            if let activeSession, let currentPrompt = activeSession.currentPrompt {
-                                PracticeSessionSurface(
-                                    session: activeSession,
-                                    prompt: currentPrompt,
-                                    selectedOptionID: activeSession.selectedOptionID,
-                                    isInPracticePool: intentStore.isPageInPractice(currentPrompt.source.pageID),
-                                    onSelectOption: selectOption,
-                                    onContinue: continueSession,
-                                    onOpenSource: { onOpenDetail(currentPrompt.source.pageID) },
-                                    onTogglePractice: { togglePracticePage(currentPrompt.source.pageID) }
+                            if let activeScenarioSession, let currentStep = activeScenarioSession.currentStep {
+                                PracticeScenarioSessionSurface(
+                                    session: activeScenarioSession,
+                                    step: currentStep,
+                                    selectedOptionID: activeScenarioSession.selectedOptionID,
+                                    isInPracticePool: intentStore.isPageInPractice(currentStep.source.pageID),
+                                    onSelectOption: selectScenarioOption,
+                                    onOpenSource: { onOpenDetail(currentStep.source.pageID) },
+                                    onTogglePractice: { toggleScenarioPracticePage(currentStep.source.pageID) }
                                 )
-                            } else if let completionSummary {
-                                PracticeCompletionSurface(
-                                    summary: completionSummary,
-                                    onContinue: clearCompletion,
-                                    onMissedReview: { startSession(.missedReview) },
+                            } else if let scenarioCompletion {
+                                PracticeScenarioCompletionSurface(
+                                    summary: scenarioCompletion,
+                                    onContinue: clearScenarioCompletion,
+                                    onMissedReview: startMissedScenarioIfAvailable,
                                     onBrowseTapped: onBrowseTapped
                                 )
                             } else {
-                                PracticeHubSurface(
-                                    deckState: deckState,
+                                PracticeScenarioHubSurface(
+                                    state: scenarioState,
                                     explicitPracticeCount: intentStore.practicePageIDs.count,
                                     savedPageCount: intentStore.savedPageIDs.count,
-                                    onStart: { mode in startSession(mode) },
+                                    recentPageCount: intentStore.recentPageIDs.count,
+                                    onStart: startScenario,
                                     onBrowseTapped: onBrowseTapped,
-                                    onRetry: reloadDeck
+                                    onRetry: reloadScenarioSnapshot
                                 )
                             }
                         }
@@ -91,10 +95,10 @@ struct PracticeView: View {
                 }
             }
 
-            if let activeSession, activeSession.selectedOptionID != nil {
+            if let activeScenarioSession, activeScenarioSession.selectedOptionID != nil {
                 PracticeFloatingContinueButton(
-                    title: activeSession.isOnLastPrompt ? "Finish" : "Next",
-                    onContinue: continueSession
+                    title: activeScenarioSession.isOnLastStep ? "Finish" : "Next",
+                    onContinue: continueScenarioSession
                 )
                 .padding(.horizontal, PracticeLayout.horizontalPadding)
                 .padding(.bottom, PracticeLayout.floatingContinueBottomPadding)
@@ -104,32 +108,175 @@ struct PracticeView: View {
         }
         .task {
             if isActive {
-                reloadDeck()
+                reloadScenarioSnapshot()
             } else {
-                prewarmDeck()
+                prewarmScenarioSnapshot()
             }
         }
         .onChange(of: isActive) { _, active in
             if active {
-                reloadDeck()
-                startRequestedModeIfReady()
+                reloadScenarioSnapshot()
+                startRequestedScenarioIfReady()
             } else {
-                prewarmDeck()
+                prewarmScenarioSnapshot()
             }
         }
         .onChange(of: startRequest) { _, _ in
-            startRequestedModeIfReady()
+            startRequestedScenarioIfReady()
         }
         .onChange(of: intentStore.practicePageIDs) { _, _ in
-            reloadOrPrewarmDeck()
+            reloadOrPrewarmScenarioSnapshot()
         }
         .onChange(of: intentStore.savedPageIDs) { _, _ in
-            reloadOrPrewarmDeck()
+            reloadOrPrewarmScenarioSnapshot()
+        }
+        .onChange(of: intentStore.recentPageIDs) { _, _ in
+            reloadOrPrewarmScenarioSnapshot()
         }
         .accessibilityIdentifier("PracticeView")
     }
 
     private static let scrollTopID = "PracticeViewTop"
+
+    private func startScenario(_ scenario: PracticeScenario) {
+        guard !scenario.steps.isEmpty else {
+            return
+        }
+
+        activeScenarioSession = PracticeScenarioSession(scenario: scenario)
+        scenarioCompletion = nil
+    }
+
+    private func startPrimaryScenario(context: PracticeEntryContext = .standard) {
+        guard let scenario = scenarioState.snapshot?.primaryScenario else {
+            return
+        }
+
+        activeScenarioSession = PracticeScenarioSession(scenario: scenario, context: context)
+        scenarioCompletion = nil
+    }
+
+    private func startMissedScenarioIfAvailable() {
+        guard let scenario = scenarioState.snapshot?.scenarios.first(where: { $0.queueSource == .missedReview }) else {
+            startPrimaryScenario()
+            return
+        }
+
+        startScenario(scenario)
+    }
+
+    private func selectScenarioOption(_ option: PracticeScenarioResponseOption) {
+        guard
+            var session = activeScenarioSession,
+            session.selectedOptionID == nil,
+            let step = session.currentStep
+        else {
+            return
+        }
+
+        progressStore.record(
+            promptID: PracticeScenarioBuilder.stableProgressID(step: step),
+            isCorrect: option.isBestFit
+        )
+        session.selectedOptionID = option.id
+        session.bestFitCount += option.isBestFit ? 1 : 0
+        session.reviewCount += option.isBestFit ? 0 : 1
+        activeScenarioSession = session
+    }
+
+    private func continueScenarioSession() {
+        guard var session = activeScenarioSession else {
+            return
+        }
+
+        if session.isOnLastStep {
+            scenarioCompletion = PracticeScenarioCompletionSummary(
+                scenario: session.scenario,
+                context: session.context,
+                practicedCount: session.scenario.steps.count,
+                bestFitCount: session.bestFitCount,
+                reviewCount: session.reviewCount
+            )
+            activeScenarioSession = nil
+            reloadScenarioSnapshot()
+            return
+        }
+
+        session.currentIndex += 1
+        session.selectedOptionID = nil
+        activeScenarioSession = session
+    }
+
+    private func clearScenarioCompletion() {
+        scenarioCompletion = nil
+        reloadScenarioSnapshot()
+    }
+
+    private func toggleScenarioPracticePage(_ pageID: String) {
+        intentStore.togglePracticePage(pageID)
+        reloadScenarioSnapshot()
+    }
+
+    private func reloadOrPrewarmScenarioSnapshot() {
+        if isActive {
+            reloadScenarioSnapshot()
+        } else {
+            prewarmScenarioSnapshot()
+        }
+    }
+
+    private func prewarmScenarioSnapshot() {
+        let missedPromptIDs = progressStore.missedPromptIDs
+
+        PracticeScenarioBuilder.prewarm(
+            practicePageIDs: intentStore.practicePageIDs,
+            savedPageIDs: intentStore.savedPageIDs,
+            recentPageIDs: intentStore.recentPageIDs,
+            missedPromptIDs: missedPromptIDs
+        )
+    }
+
+    private func reloadScenarioSnapshot() {
+        scenarioLoadGeneration += 1
+        let loadGeneration = scenarioLoadGeneration
+        let practicePageIDs = intentStore.practicePageIDs
+        let savedPageIDs = intentStore.savedPageIDs
+        let recentPageIDs = intentStore.recentPageIDs
+        let missedPromptIDs = progressStore.missedPromptIDs
+
+        if scenarioState.snapshot == nil {
+            scenarioState = .loading
+        }
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+                    practicePageIDs: practicePageIDs,
+                    savedPageIDs: savedPageIDs,
+                    recentPageIDs: recentPageIDs,
+                    missedPromptIDs: missedPromptIDs
+                )
+
+                DispatchQueue.main.async {
+                    guard scenarioLoadGeneration == loadGeneration else {
+                        return
+                    }
+
+                    scenarioState = .loaded(snapshot)
+                    scheduleInitialModeStartIfNeeded()
+                    startRequestedScenarioIfReady()
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    guard scenarioLoadGeneration == loadGeneration else {
+                        return
+                    }
+
+                    scenarioState = .failed(error.localizedDescription)
+                }
+            }
+        }
+    }
 
     private func startSession(_ mode: PracticeMode, context: PracticeEntryContext = .standard) {
         guard let deck = deckState.snapshot else {
@@ -160,29 +307,29 @@ struct PracticeView: View {
 
     private func startInitialMode() {
         if entryContext == .placement {
-            startSession(.hanoiBucketList, context: .placement)
+            startPrimaryScenario(context: .placement)
             return
         }
 
-        guard let initialMode else {
+        guard initialMode != nil else {
             return
         }
 
-        startSession(initialMode)
+        startPrimaryScenario()
     }
 
-    private func startRequestedModeIfReady() {
+    private func startRequestedScenarioIfReady() {
         guard
             let startRequest,
             handledStartRequestID != startRequest.id,
             isActive,
-            deckState.snapshot != nil
+            scenarioState.snapshot != nil
         else {
             return
         }
 
         handledStartRequestID = startRequest.id
-        startSession(startRequest.mode)
+        startPrimaryScenario()
     }
 
     private func selectOption(_ option: PracticeAnswerOption) {
@@ -265,7 +412,7 @@ struct PracticeView: View {
         if let snapshot = PracticeDeckSnapshot.cachedSnapshot(for: cacheKey) {
             deckState = .loaded(snapshot)
             scheduleInitialModeStartIfNeeded()
-            startRequestedModeIfReady()
+            startRequestedScenarioIfReady()
             return
         }
 
@@ -290,7 +437,7 @@ struct PracticeView: View {
                     deckState = .loaded(snapshot)
                     PracticeDeckSnapshot.storeCachedSnapshot(snapshot, for: cacheKey)
                     scheduleInitialModeStartIfNeeded()
-                    startRequestedModeIfReady()
+                    startRequestedScenarioIfReady()
                 }
             } catch {
                 DispatchQueue.main.async {
@@ -599,6 +746,618 @@ private struct PracticeCompletionSummary: Equatable {
     let correctCount: Int
     let missedCount: Int
     let readyCount: Int
+}
+
+private struct PracticeScenarioSession: Equatable {
+    let scenario: PracticeScenario
+    var context: PracticeEntryContext = .standard
+    var currentIndex = 0
+    var selectedOptionID: String?
+    var bestFitCount = 0
+    var reviewCount = 0
+
+    var currentStep: PracticeScenarioStep? {
+        guard scenario.steps.indices.contains(currentIndex) else {
+            return nil
+        }
+
+        return scenario.steps[currentIndex]
+    }
+
+    var isOnLastStep: Bool {
+        currentIndex >= scenario.steps.count - 1
+    }
+}
+
+private struct PracticeScenarioCompletionSummary: Equatable {
+    let scenario: PracticeScenario
+    let context: PracticeEntryContext
+    let practicedCount: Int
+    let bestFitCount: Int
+    let reviewCount: Int
+}
+
+private struct PracticeScenarioHubSurface: View {
+    let state: PracticeScenarioLoadState
+    let explicitPracticeCount: Int
+    let savedPageCount: Int
+    let recentPageCount: Int
+    let onStart: (PracticeScenario) -> Void
+    let onBrowseTapped: () -> Void
+    let onRetry: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            PracticeScenarioHeader()
+
+            switch state {
+            case .loading:
+                PracticeLoadingCard()
+            case .failed(let message):
+                PracticeErrorCard(message: message, onRetry: onRetry)
+            case .loaded(let snapshot):
+                if let primary = snapshot.primaryScenario {
+                    PracticeScenarioPrimaryCard(
+                        scenario: primary,
+                        explicitPracticeCount: explicitPracticeCount,
+                        savedPageCount: savedPageCount,
+                        recentPageCount: recentPageCount,
+                        reviewCount: snapshot.queueCounts[.missedReview, default: 0],
+                        onStart: { onStart(primary) }
+                    )
+                }
+
+                PracticeScenarioModeList(
+                    scenarios: snapshot.scenarios,
+                    onStart: onStart
+                )
+
+                PracticeScenarioQueueStrip(snapshot: snapshot)
+                PracticeBrowseCard(onBrowseTapped: onBrowseTapped)
+            }
+        }
+    }
+}
+
+private struct PracticeScenarioHeader: View {
+    var body: some View {
+        HStack(alignment: .top, spacing: 14) {
+            VStack(alignment: .leading, spacing: 9) {
+                HStack(spacing: 8) {
+                    Image(systemName: "figure.walk.motion")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.red)
+
+                    Text("SCENARIO MODE")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                Text("Rehearse the next 30 seconds")
+                    .font(.system(size: 34, weight: .black, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.74)
+
+                Text("Practice real travel moments with useful Vietnamese, calm recovery, and source-page context.")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .layoutPriority(1)
+
+            MeloCompanionMark(stage: .base, size: 68)
+                .padding(.top, 8)
+        }
+        .accessibilityIdentifier("Practice.Scenario.Header")
+    }
+}
+
+private struct PracticeScenarioPrimaryCard: View {
+    let scenario: PracticeScenario
+    let explicitPracticeCount: Int
+    let savedPageCount: Int
+    let recentPageCount: Int
+    let reviewCount: Int
+    let onStart: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack(alignment: .top, spacing: 14) {
+                PracticeIcon(symbolName: scenario.id.symbolName, tint: scenario.id.tint)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(scenario.queueSource.title)
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.secondary)
+
+                    Text(scenario.sceneTitle)
+                        .font(.title2.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+
+                    Text(scenario.sceneSetup)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .layoutPriority(1)
+            }
+
+            HStack(spacing: 10) {
+                PracticeMetricPill(title: "Steps", value: "\(scenario.steps.count)")
+                PracticeMetricPill(title: "Review", value: "\(reviewCount)")
+                PracticeMetricPill(title: "Added", value: "\(explicitPracticeCount)")
+            }
+
+            Text("\(savedPageCount) saved and \(recentPageCount) recent phrase page\(savedPageCount + recentPageCount == 1 ? "" : "s") can feed Scenario Mode after missed and added phrases.")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+
+            Button(action: onStart) {
+                Label("Start travel rehearsal", systemImage: "play.fill")
+                    .font(.headline.weight(.bold))
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 52)
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(.white)
+            .background(Color.red, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
+        .padding(18)
+        .phraseListCard(cornerRadius: 24, strokeOpacity: 0.05)
+        .accessibilityIdentifier("Practice.Scenario.Primary")
+    }
+}
+
+private struct PracticeScenarioModeList: View {
+    let scenarios: [PracticeScenario]
+    let onStart: (PracticeScenario) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Travel rehearsal")
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(.secondary)
+
+            VStack(spacing: 10) {
+                ForEach(scenarios) { scenario in
+                    Button {
+                        onStart(scenario)
+                    } label: {
+                        HStack(spacing: 14) {
+                            PracticeIcon(symbolName: scenario.id.symbolName, tint: scenario.id.tint, size: 40)
+
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(scenario.id.title)
+                                    .font(.headline.weight(.bold))
+                                    .foregroundStyle(.primary)
+
+                                Text(scenario.queueSource.title)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                            .layoutPriority(1)
+
+                            Text("\(scenario.steps.count)")
+                                .font(.headline.weight(.black))
+                                .foregroundStyle(.red)
+                                .frame(width: 40, height: 40)
+                                .nativeGlass(cornerRadius: 20)
+
+                            Image(systemName: "chevron.right")
+                                .font(.caption.weight(.bold))
+                                .foregroundStyle(.tertiary)
+                        }
+                        .padding(14)
+                        .phraseListCard(cornerRadius: 22)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("Practice.Scenario.\(scenario.id.rawValue)")
+                }
+            }
+        }
+    }
+}
+
+private struct PracticeScenarioQueueStrip: View {
+    let snapshot: PracticeScenarioDeckSnapshot
+
+    var body: some View {
+        HStack(spacing: 10) {
+            ForEach(snapshot.rankedQueueSources, id: \.self) { source in
+                VStack(spacing: 3) {
+                    Text("\(snapshot.queueCounts[source, default: 0])")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(source == .tripFallback ? .secondary : .primary)
+
+                    Text(source.title)
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.72)
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 64)
+                .background(.white.opacity(0.52), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            }
+        }
+        .accessibilityIdentifier("Practice.Scenario.QueueStrip")
+    }
+}
+
+private struct PracticeScenarioSessionSurface: View {
+    let session: PracticeScenarioSession
+    let step: PracticeScenarioStep
+    let selectedOptionID: String?
+    let isInPracticePool: Bool
+    let onSelectOption: (PracticeScenarioResponseOption) -> Void
+    let onOpenSource: () -> Void
+    let onTogglePractice: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(session.context == .placement ? "PLACEMENT" : "SCENARIO MODE")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+
+                Text(session.scenario.id.title)
+                    .font(.system(size: 34, weight: .black, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.78)
+            }
+
+            VStack(alignment: .leading, spacing: 18) {
+                HStack(alignment: .top, spacing: 14) {
+                    PracticeIcon(symbolName: session.scenario.id.symbolName, tint: session.scenario.id.tint)
+
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Step \(session.currentIndex + 1) of \(session.scenario.steps.count)")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(.secondary)
+
+                        Text(step.scene)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .layoutPriority(1)
+                }
+
+                PracticeScenarioLocalLine(step: step)
+
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(step.userGoal)
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(.secondary)
+
+                    ForEach(step.responseOptions) { option in
+                        PracticeScenarioOptionButton(
+                            option: option,
+                            isSelected: selectedOptionID == option.id,
+                            hasAnswered: selectedOptionID != nil,
+                            onSelect: { onSelectOption(option) }
+                        )
+                    }
+                }
+
+                if let selectedOption = step.responseOptions.first(where: { $0.id == selectedOptionID }) {
+                    PracticeScenarioFeedbackCard(
+                        step: step,
+                        selectedOption: selectedOption,
+                        isInPracticePool: isInPracticePool,
+                        onOpenSource: onOpenSource,
+                        onTogglePractice: onTogglePractice
+                    )
+                }
+            }
+            .padding(18)
+            .phraseListCard(cornerRadius: 24)
+        }
+        .accessibilityIdentifier("Practice.Scenario.Session")
+    }
+}
+
+private struct PracticeScenarioLocalLine: View {
+    let step: PracticeScenarioStep
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("They might say")
+                .font(.caption.weight(.bold))
+                .foregroundStyle(.secondary)
+
+            Text(step.localLine)
+                .font(.system(size: 28, weight: .black, design: .rounded))
+                .foregroundStyle(.primary)
+                .lineLimit(3)
+                .minimumScaleFactor(0.68)
+
+            Text(step.localLineMeaning)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.secondary)
+        }
+        .padding(14)
+        .background(.white.opacity(0.52), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+    }
+}
+
+private struct PracticeScenarioOptionButton: View {
+    let option: PracticeScenarioResponseOption
+    let isSelected: Bool
+    let hasAnswered: Bool
+    let onSelect: () -> Void
+
+    var body: some View {
+        HStack(alignment: .center, spacing: 10) {
+            Button(action: onSelect) {
+                HStack(alignment: .center, spacing: 12) {
+                    Image(systemName: symbolName)
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(symbolColor)
+                        .frame(width: 34, height: 34)
+                        .nativeGlass(cornerRadius: 17)
+
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(option.candidate.vietnamese)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.76)
+
+                        Text(option.candidate.english)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                    }
+                    .layoutPriority(1)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .disabled(hasAnswered)
+            .accessibilityIdentifier(option.isBestFit ? "Practice.Option.BestFit" : "Practice.Option.Alternate")
+
+            if let audioKey = option.audioKey {
+                AudioSpeakerButton(
+                    tint: option.candidate.tintName,
+                    size: 38,
+                    audioKey: audioKey,
+                    accessibilityIdentifier: "Practice.Option.Audio"
+                )
+            }
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(optionBackground, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(optionStroke, lineWidth: 1)
+        }
+    }
+
+    private var symbolName: String {
+        guard hasAnswered else {
+            return "circle"
+        }
+
+        if option.isBestFit {
+            return "checkmark.circle.fill"
+        }
+
+        return isSelected ? "arrow.turn.down.right" : "circle"
+    }
+
+    private var symbolColor: Color {
+        guard hasAnswered else {
+            return .secondary
+        }
+
+        if option.isBestFit {
+            return .green
+        }
+
+        return isSelected ? .orange : .secondary
+    }
+
+    private var optionBackground: Color {
+        guard hasAnswered else {
+            return .white.opacity(0.58)
+        }
+
+        if option.isBestFit {
+            return .green.opacity(0.12)
+        }
+
+        return isSelected ? .orange.opacity(0.12) : .white.opacity(0.44)
+    }
+
+    private var optionStroke: Color {
+        guard hasAnswered else {
+            return Color.black.opacity(0.05)
+        }
+
+        if option.isBestFit {
+            return .green.opacity(0.32)
+        }
+
+        return isSelected ? .orange.opacity(0.30) : Color.black.opacity(0.05)
+    }
+}
+
+private struct PracticeScenarioFeedbackCard: View {
+    let step: PracticeScenarioStep
+    let selectedOption: PracticeScenarioResponseOption
+    let isInPracticePool: Bool
+    let onOpenSource: () -> Void
+    let onTogglePractice: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 13) {
+            Label(selectedOption.feedbackTitle, systemImage: selectedOption.isBestFit ? "checkmark.seal.fill" : "arrow.triangle.2.circlepath.circle.fill")
+                .font(.headline.weight(.bold))
+                .foregroundStyle(selectedOption.isBestFit ? .green : .orange)
+
+            Text(selectedOption.feedbackBody)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text("They might say next")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.secondary)
+
+                Text(step.nextLocalLine)
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(.primary)
+
+                Text(step.nextLocalMeaning)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            .padding(12)
+            .background(.white.opacity(0.50), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text(step.recovery.title)
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.secondary)
+
+                Text(step.recovery.body)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                if let recoveryCandidate = step.recovery.candidate {
+                    Text(recoveryCandidate.vietnamese)
+                        .font(.subheadline.weight(.black))
+                        .foregroundStyle(.red)
+                }
+            }
+            .padding(12)
+            .background(.red.opacity(0.07), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+
+            HStack(spacing: 10) {
+                Button(action: onOpenSource) {
+                    Label("Source page", systemImage: "doc.text.magnifyingglass")
+                        .font(.subheadline.weight(.bold))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(.red)
+                .nativeGlass(cornerRadius: 18, interactive: true)
+
+                Button(action: onTogglePractice) {
+                    Image(systemName: isInPracticePool ? "minus.circle.fill" : "plus.circle.fill")
+                        .font(.headline.weight(.bold))
+                        .frame(width: 44, height: 44)
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(isInPracticePool ? Color.secondary : Color.red)
+                .nativeGlass(cornerRadius: 18, interactive: true)
+                .accessibilityLabel(isInPracticePool ? "Remove from practice" : "Add to practice")
+            }
+        }
+        .padding(14)
+        .background(.white.opacity(0.55), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .accessibilityIdentifier("Practice.Scenario.Feedback")
+    }
+}
+
+private struct PracticeScenarioCompletionSurface: View {
+    let summary: PracticeScenarioCompletionSummary
+    let onContinue: () -> Void
+    let onMissedReview: () -> Void
+    let onBrowseTapped: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(summary.context == .placement ? "PLACEMENT" : "SCENARIO MODE")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+
+                Text("Travel rehearsal complete")
+                    .font(.system(size: 36, weight: .black, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.74)
+            }
+
+            VStack(alignment: .leading, spacing: 16) {
+                HStack(spacing: 14) {
+                    MeloCompanionMark(stage: .completion, size: 76)
+
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(summary.scenario.id.title)
+                            .font(.title3.weight(.black))
+                            .foregroundStyle(.primary)
+
+                        Text(rewardCopy)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                            .lineLimit(3)
+                    }
+                    .layoutPriority(1)
+                }
+
+                HStack(spacing: 10) {
+                    PracticeMetricPill(title: "Steps", value: "\(summary.practicedCount)")
+                    PracticeMetricPill(title: "Good fit", value: "\(summary.bestFitCount)")
+                    PracticeMetricPill(title: "Review", value: "\(summary.reviewCount)")
+                }
+
+                Button(action: onContinue) {
+                    Label("Back to Practice", systemImage: "figure.walk.motion")
+                        .font(.headline.weight(.bold))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(.white)
+                .background(Color.red, in: RoundedRectangle(cornerRadius: 19, style: .continuous))
+
+                if summary.reviewCount > 0 {
+                    Button(action: onMissedReview) {
+                        Label("Review missed", systemImage: "arrow.counterclockwise.circle.fill")
+                            .font(.headline.weight(.bold))
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 48)
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.red)
+                    .nativeGlass(cornerRadius: 18, interactive: true)
+                } else {
+                    Button(action: onBrowseTapped) {
+                        Label("Add another phrase", systemImage: "plus.circle.fill")
+                            .font(.headline.weight(.bold))
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 48)
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.red)
+                    .nativeGlass(cornerRadius: 18, interactive: true)
+                }
+            }
+            .padding(18)
+            .phraseListCard(cornerRadius: 24)
+        }
+        .accessibilityIdentifier("Practice.Scenario.Completion")
+    }
+
+    private var rewardCopy: String {
+        if summary.reviewCount > 0 {
+            return "Useful phrases from this scene were saved for a calmer follow-up pass."
+        }
+
+        return "You handled the scene with short, source-backed Vietnamese phrases."
+    }
 }
 
 private struct PracticeHubSurface: View {

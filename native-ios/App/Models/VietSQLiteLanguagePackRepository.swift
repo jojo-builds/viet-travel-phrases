@@ -386,6 +386,7 @@ final class VietSQLiteLanguagePackRepository {
     func loadPracticeCandidates(
         pageIDs: [String]? = nil,
         cityID: String? = nil,
+        categoryIDs: [String]? = nil,
         requiringAudio: Bool = false,
         limit: Int = 80
     ) throws -> [PracticeCandidate] {
@@ -414,6 +415,20 @@ final class VietSQLiteLanguagePackRepository {
         }
         if cityID != nil {
             filters.append("pct.city_id = ?")
+        }
+        let requestedCategoryIDs = categoryIDs ?? []
+        if !requestedCategoryIDs.isEmpty {
+            let placeholders = Array(repeating: "?", count: requestedCategoryIDs.count).joined(separator: ", ")
+            filters.append(
+                """
+                EXISTS (
+                  SELECT 1
+                  FROM page_category pc_filter
+                  WHERE pc_filter.page_id = pp.id
+                    AND pc_filter.category_id IN (\(placeholders))
+                )
+                """
+            )
         }
         if requiringAudio {
             filters.append("aa.source_manifest_key IS NOT NULL")
@@ -492,6 +507,11 @@ final class VietSQLiteLanguagePackRepository {
 
             if let cityID {
                 try self.bindText(cityID, to: index, in: statement, sql: sql)
+                index += 1
+            }
+
+            for categoryID in requestedCategoryIDs {
+                try self.bindText(categoryID, to: index, in: statement, sql: sql)
                 index += 1
             }
 
