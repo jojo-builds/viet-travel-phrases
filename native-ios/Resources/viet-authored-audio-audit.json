@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-02T18:41:10.051Z",
+    "generatedAt": "2026-05-03T02:30:53.604Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 750,
     "practiceExpansionPageCount": 1350,
-    "requiredAudioCount": 3378,
+    "requiredAudioCount": 3376,
     "missingAudioCount": 2094
   },
   "required": [
@@ -12153,14 +12153,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-city-hanoi-place-temple-literature",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v500-airp-bord-arri-can-i-get-a-written-report-piece-10",
-      "text": "Văn",
-      "resolved": true
-    },
-    {
       "pageID": "viet-family-city-hanoi-place-water-puppet-theatre",
       "sectionID": "hero",
       "kind": "hero",
@@ -13342,14 +13334,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-v500-heal-phar-i-need-a-hospital-piece-5",
       "text": "Viện",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-city-hcmc-place-cho-lon",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v900-time-date-book-one-adult-ticket-please-piece-6",
-      "text": "Lớn",
       "resolved": true
     },
     {

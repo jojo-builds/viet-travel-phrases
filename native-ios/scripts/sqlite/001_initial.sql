@@ -110,6 +110,7 @@ CREATE TABLE city_place (
   vietnamese_name TEXT NOT NULL,
   english_name TEXT NOT NULL,
   place_kind TEXT NOT NULL,
+  content_role TEXT NOT NULL DEFAULT '',
   source_ids TEXT NOT NULL
 );
 
@@ -120,6 +121,8 @@ CREATE TABLE phrase_city_tag (
   place_id TEXT NOT NULL REFERENCES city_place(id),
   difficulty TEXT NOT NULL,
   page_kind TEXT NOT NULL,
+  place_kind TEXT NOT NULL DEFAULT '',
+  content_role TEXT NOT NULL DEFAULT '',
   spoken_chunks INTEGER NOT NULL,
   source_ids TEXT NOT NULL,
   rationale TEXT NOT NULL

@@ -277,6 +277,23 @@ function main() {
   assertEqual(counts.cities, (cityLibrary.cities ?? []).length, "city table count");
   assertEqual(counts.cityPlaces, (cityLibrary.places ?? []).length, "city place table count");
   assertEqual(counts.cityPhraseTags, cityLibraryPages.length, "city phrase tag count");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM city_place
+    WHERE COALESCE(place_kind, '') = '';
+  `), "city places missing place_kind");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_city_tag
+    WHERE COALESCE(page_kind, '') = ''
+       OR COALESCE(place_kind, '') = '';
+  `), "city phrase tags missing page_kind/place_kind");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_city_tag
+    WHERE page_kind IN ('restaurant', 'dish')
+      AND COALESCE(content_role, '') = '';
+  `), "restaurant/dish city pages missing content_role");
 
   assertZero(sqliteValue(`
     SELECT count(*)

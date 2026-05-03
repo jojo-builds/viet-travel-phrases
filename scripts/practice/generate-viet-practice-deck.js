@@ -353,6 +353,9 @@ function sourceForPhrase(phrase, page, questionType, sectionID = "", extra = {})
     citySubcategoryID: phrase.citySubcategoryID || "",
     difficulty: phrase.difficulty || "",
     placeID: phrase.placeID || "",
+    cityPageKind: phrase.cityLibraryPageKind || "",
+    placeKind: phrase.placeKind || "",
+    contentRole: phrase.contentRole || "",
     expansionFamily: phrase.practiceExpansion?.expansionFamily || "",
     practiceBuckets: phrase.practiceExpansion?.practiceBuckets || [],
     ...extra,
@@ -370,6 +373,9 @@ function tagsForPhrase(phrase, page, type, extra = {}) {
     difficulty: phrase.difficulty || "standard",
     placeID: phrase.placeID || "",
     placeName: phrase.placeName || "",
+    cityPageKind: phrase.cityLibraryPageKind || "",
+    placeKind: phrase.placeKind || "",
+    contentRole: phrase.contentRole || "",
     expansionFamily: phrase.practiceExpansion?.expansionFamily || "",
     practiceBuckets: phrase.practiceExpansion?.practiceBuckets || [],
     pronounCues: [],
@@ -1100,6 +1106,12 @@ function validatePracticeCore(practiceCore, options = {}) {
     if (item.source && item.source.scenarioID === "city-guides") {
       if (!item.source.cityID || !item.tags.cityID || !item.tags.citySubcategoryID || !item.tags.difficulty || !item.tags.placeID) {
         errors.push(`${item.id} city-guides item missing city/subcategory/difficulty/place tags`);
+      }
+      if (!item.source.cityPageKind || !item.tags.cityPageKind || !item.tags.placeKind) {
+        errors.push(`${item.id} city-guides item missing page-kind/place-kind tags`);
+      }
+      if (["restaurant", "dish"].includes(item.tags.cityPageKind) && !item.tags.contentRole) {
+        errors.push(`${item.id} ${item.tags.cityPageKind} city-guides item missing contentRole`);
       }
       if (item.questionType === "listening_choice" || item.requiresAudio === true) {
         errors.push(`${item.id} city-guides item must not require audio until city audio is recorded`);

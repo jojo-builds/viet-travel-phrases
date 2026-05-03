@@ -504,7 +504,8 @@ function main() {
     city_id: place.cityID,
     vietnamese_name: place.vietnameseName,
     english_name: place.englishName,
-    place_kind: place.kind,
+    place_kind: place.placeKind ?? place.kind,
+    content_role: place.contentRole ?? "",
     source_ids: (place.sourceIDs ?? []).join("|"),
   }));
   const phraseCityTagRows = cityLibraryPages.map((page) => ({
@@ -513,7 +514,9 @@ function main() {
     subcategory_id: page.subcategoryID,
     place_id: page.placeID,
     difficulty: page.difficulty,
-    page_kind: page.kind,
+    page_kind: page.pageKind ?? page.kind,
+    place_kind: page.placeKind ?? "",
+    content_role: page.contentRole ?? "",
     spoken_chunks: Number(page.spokenChunks ?? 0),
     source_ids: (page.sourceIDs ?? []).join("|"),
     rationale: page.rationale,
@@ -1762,8 +1765,8 @@ function main() {
     }))),
     insertRows("city", ["id", "language_pack_id", "title", "short_title", "vietnamese_name", "emoji", "source_ids"], cityRows),
     insertRows("city_subcategory", ["id", "language_pack_id", "title", "sort_order"], citySubcategoryRows),
-    insertRows("city_place", ["id", "city_id", "vietnamese_name", "english_name", "place_kind", "source_ids"], cityPlaceRows),
-    insertRows("phrase_city_tag", ["phrase_id", "city_id", "subcategory_id", "place_id", "difficulty", "page_kind", "spoken_chunks", "source_ids", "rationale"], phraseCityTagRows),
+    insertRows("city_place", ["id", "city_id", "vietnamese_name", "english_name", "place_kind", "content_role", "source_ids"], cityPlaceRows),
+    insertRows("phrase_city_tag", ["phrase_id", "city_id", "subcategory_id", "place_id", "difficulty", "page_kind", "place_kind", "content_role", "spoken_chunks", "source_ids", "rationale"], phraseCityTagRows),
     insertRows("cluster_scenario", ["cluster_id", "scenario_id", "relevance"], catalog.families.map((family) => ({
       cluster_id: family.id,
       scenario_id: family.scenarioID,

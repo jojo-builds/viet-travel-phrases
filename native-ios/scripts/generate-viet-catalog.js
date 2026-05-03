@@ -104,6 +104,44 @@ function normalizeCitySearchAliases({ city, place, page }) {
     .filter(Boolean);
 }
 
+const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
+const dishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
+
+function normalizeCityKind(value) {
+  return String(value ?? "").trim().toLowerCase();
+}
+
+function placeKindFor(place) {
+  const explicitKind = normalizeCityKind(place.placeKind);
+  if (explicitKind) return explicitKind;
+  const legacyKind = normalizeCityKind(place.kind);
+  if (dishPlaceKinds.has(legacyKind)) return "dish";
+  return legacyKind;
+}
+
+function pageKindFor(page, place) {
+  if (page.pageKind) return page.pageKind;
+  if (page.kind !== "place") return page.kind;
+  const placeKind = normalizeCityKind(place.kind);
+  if (restaurantPlaceKinds.has(placeKind)) return "restaurant";
+  if (dishPlaceKinds.has(placeKind)) return "dish";
+  return "place";
+}
+
+function contentRoleFor(page, place) {
+  if (page.contentRole) return page.contentRole;
+  if (place.contentRole) return place.contentRole;
+  const placeKind = placeKindFor(place);
+  if (placeKind === "dish") return "dish-anchor";
+  if (placeKind === "cafe") return "cafe";
+  if (placeKind === "restaurant") {
+    const sourceIDs = new Set([...(place.sourceIDs ?? []), ...(page.sourceIDs ?? [])]);
+    if (sourceIDs.has("michelin-vietnam")) return "fine-dining";
+    return "everyday";
+  }
+  return "";
+}
+
 function loadCityLibraryRecords() {
   if (!fs.existsSync(cityLibraryPath)) {
     return [];
@@ -133,7 +171,10 @@ function loadCityLibraryRecords() {
         throw new Error(`City library page ${page.id} references missing subcategory ${page.subcategoryID}`);
       }
 
-      const familyTitle = page.familyTitle ?? (page.kind === "place"
+      const pageKind = pageKindFor(page, place);
+      const placeKind = placeKindFor(place);
+      const contentRole = contentRoleFor(page, place);
+      const familyTitle = page.familyTitle ?? (pageKind !== "phrase"
         ? `${place.englishName} pronunciation`
         : page.englishText);
       const familySummary = page.summary ?? page.context;
@@ -144,8 +185,11 @@ function loadCityLibraryRecords() {
         `subcategory=${page.subcategoryID}`,
         `difficulty=${page.difficulty}`,
         `kind=${page.kind}`,
+        `pageKind=${pageKind}`,
+        `placeKind=${placeKind}`,
+        contentRole ? `contentRole=${contentRole}` : "",
         `place=${page.placeID}`,
-      ].join("; ");
+      ].filter(Boolean).join("; ");
 
       return {
         phrase_id: page.id,
@@ -178,6 +222,9 @@ function loadCityLibraryRecords() {
         placeName: place.englishName,
         placeVietnameseName: place.vietnameseName,
         cityLibraryKind: page.kind,
+        cityLibraryPageKind: pageKind,
+        placeKind,
+        contentRole,
         spokenChunks: page.spokenChunks,
         sourceIDs: page.sourceIDs ?? [],
       };
@@ -271,6 +318,9 @@ function main() {
     placeName: row.placeName ?? null,
     placeVietnameseName: row.placeVietnameseName ?? null,
     cityLibraryKind: row.cityLibraryKind ?? null,
+    cityLibraryPageKind: row.cityLibraryPageKind ?? null,
+    placeKind: row.placeKind ?? null,
+    contentRole: row.contentRole ?? null,
     spokenChunks: row.spokenChunks ?? null,
     sourceIDs: row.sourceIDs ?? [],
   }));

@@ -1245,12 +1245,26 @@ function removeEnglishTypeWords(english, patterns) {
   return label;
 }
 
-function placeNameRemainderLabel(restVietnamese, english, typePatterns) {
+function cityRecognitionLabel(page, fallback = "name recognition") {
+  const pageKind = page.pageKind ?? page.cityMetadata?.pageKind ?? "";
+  if (pageKind === "restaurant") return "restaurant name recognition";
+  if (pageKind === "dish") return "dish name recognition";
+  return fallback;
+}
+
+function cityRecognitionEndingLabel(page) {
+  const pageKind = page.pageKind ?? page.cityMetadata?.pageKind ?? "";
+  if (pageKind === "restaurant") return "restaurant name ending";
+  if (pageKind === "dish") return "dish name ending";
+  return "name ending";
+}
+
+function placeNameRemainderLabel(restVietnamese, english, typePatterns, page) {
   const fromEnglish = removeEnglishTypeWords(english, typePatterns);
   if (fromEnglish && normalize(fromEnglish) !== normalize(english) && !weakGloss(fromEnglish)) {
-    return fromEnglish;
+    return cityRecognitionLabel(page);
   }
-  return romanizedTitle(restVietnamese);
+  return cityRecognitionLabel(page);
 }
 
 const cityPlacePrefixRules = [
@@ -1305,16 +1319,16 @@ const cityPlaceExactSplits = new Map(Object.entries({
     ["Hà Nội", "Hanoi"],
   ],
   "ba na hills": [
-    ["Bà Nà", "Ba Na"],
-    ["Hills", "Hills"],
+    ["Bà Nà", "name recognition"],
+    ["Hills", "English word in the name"],
   ],
   "ngu hanh son": [
-    ["Ngũ Hành", "Marble"],
-    ["Sơn", "Mountains"],
+    ["Ngũ Hành", "name recognition"],
+    ["Sơn", "mountain name"],
   ],
 }));
 
-function splitFallbackPlaceName(vietnamese, english) {
+function splitFallbackPlaceName(vietnamese, english, page) {
   const viWords = String(vietnamese ?? "").split(/\s+/).filter(Boolean);
   const enWords = cleanEnglish(english).split(/\s+/).filter(Boolean);
   if (viWords.length <= 1) {
@@ -1329,8 +1343,8 @@ function splitFallbackPlaceName(vietnamese, english) {
   const enSecond = enWords.slice(enFirstCount).join(" ");
 
   return [
-    [viFirst, enFirst || romanizedTitle(viFirst)],
-    [viSecond, enSecond || romanizedTitle(viSecond)],
+    [viFirst, cityRecognitionLabel(page, "name recognition")],
+    [viSecond, cityRecognitionEndingLabel(page)],
   ];
 }
 
@@ -1347,14 +1361,17 @@ function cityPlaceChunks(page) {
     if (!rest) break;
     return [
       [prefix, typeLabel],
-      [rest, placeNameRemainderLabel(rest, english, englishTypePatterns)],
+      [rest, placeNameRemainderLabel(rest, english, englishTypePatterns, page)],
     ];
   }
-  return splitFallbackPlaceName(vietnamese, english);
+  return splitFallbackPlaceName(vietnamese, english, page);
 }
 
 function repairPage(page, glossary, stats) {
   let changed = false;
+  if (page.cityMetadata?.pageKind) {
+    return false;
+  }
   if (
     page.kind === "place"
     && Array.isArray(page.chunks)
