@@ -756,6 +756,14 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hanoi?.exploreShelves.count, 0)
     }
 
+    func testSearchRanksStandalonePlacePageBeforeHelperPhrases() {
+        let exactPlaceResults = BrowseSearchDestinations.searchResults(for: "Bà Nà Hills", limit: 5)
+        let partialPlaceResults = BrowseSearchDestinations.searchResults(for: "hills", limit: 5)
+
+        XCTAssertEqual(exactPlaceResults.first?.pageID, "viet-phrase-city-danang-place-ba-na-hills")
+        XCTAssertEqual(partialPlaceResults.first?.pageID, "viet-phrase-city-danang-place-ba-na-hills")
+    }
+
     func testForwardSwipeRestoresForwardRoute() {
         var navigation = AppShellNavigationState()
         navigation.openDetail("viet-phrase-hello-chao-anh")

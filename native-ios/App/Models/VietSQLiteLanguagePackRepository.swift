@@ -753,10 +753,23 @@ final class VietSQLiteLanguagePackRepository {
             )
         }
 
+        let normalizedQuery = Self.searchComparableText(query)
         var seenPageIDs = Set<String>()
         return rawResults.filter { result in
             seenPageIDs.insert(result.pageID).inserted
         }
+        .enumerated()
+        .sorted { left, right in
+            let leftScore = Self.searchIdentityScore(for: left.element, normalizedQuery: normalizedQuery)
+            let rightScore = Self.searchIdentityScore(for: right.element, normalizedQuery: normalizedQuery)
+
+            if leftScore == rightScore {
+                return left.offset < right.offset
+            }
+
+            return leftScore > rightScore
+        }
+        .map(\.element)
         .prefix(limit)
         .map { $0 }
     }
@@ -1293,18 +1306,77 @@ final class VietSQLiteLanguagePackRepository {
     }
 
     private static func ftsQuery(for query: String) -> String {
-        let folded = query
+        searchComparableText(query)
+            .split(separator: " ")
+            .map { "\($0)*" }
+            .joined(separator: " ")
+    }
+
+    private static func searchComparableText(_ text: String) -> String {
+        text
             .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
             .lowercased()
-
-        return folded.unicodeScalars
+            .unicodeScalars
             .map { scalar in
                 CharacterSet.alphanumerics.contains(scalar) ? String(scalar) : " "
             }
             .joined()
             .split(separator: " ")
-            .map { "\($0)*" }
             .joined(separator: " ")
+    }
+
+    private static func searchIdentityScore(for result: PhraseSearchResult, normalizedQuery: String) -> Int {
+        guard !normalizedQuery.isEmpty else {
+            return 0
+        }
+
+        let title = searchComparableText(result.title)
+        let subtitle = searchComparableText(result.subtitle)
+        let titleTokens = title.split(separator: " ")
+        let subtitleTokens = subtitle.split(separator: " ")
+        let shortestTokenCount = min(
+            titleTokens.isEmpty ? Int.max : titleTokens.count,
+            subtitleTokens.isEmpty ? Int.max : subtitleTokens.count
+        )
+        var score = 0
+
+        if title == normalizedQuery {
+            score += 10_000
+        }
+
+        if subtitle == normalizedQuery {
+            score += 9_500
+        }
+
+        if title.hasPrefix(normalizedQuery) {
+            score += 3_000
+        }
+
+        if subtitle.hasPrefix(normalizedQuery) {
+            score += 2_800
+        }
+
+        if titleTokens.contains(Substring(normalizedQuery)) {
+            score += 2_400
+        }
+
+        if subtitleTokens.contains(Substring(normalizedQuery)) {
+            score += 2_200
+        }
+
+        if title.contains(normalizedQuery) {
+            score += 1_800
+        }
+
+        if subtitle.contains(normalizedQuery) {
+            score += 1_600
+        }
+
+        if score > 0, shortestTokenCount != Int.max {
+            score += max(0, 500 - shortestTokenCount * 40)
+        }
+
+        return score
     }
 }
 
