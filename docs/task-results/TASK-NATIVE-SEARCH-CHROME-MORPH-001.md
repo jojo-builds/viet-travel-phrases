@@ -6,7 +6,7 @@ Done. The expanded Search field and bottom admin chrome now share a safer morph 
 
 ## Commit Hash
 
-Pending until commit.
+`7e5f678c`
 
 ## Root Cause
 
@@ -67,5 +67,24 @@ PASS. The change is scoped to shared chrome layering and proof/test code. Search
 ## Final `git status --short`
 
 ```text
-Pending until commit.
+ M content-draft/viet/canonical-pages/tier-one/_tier-one-index.json
+ M content-draft/viet/city-library/v1.json
+ M content-draft/viet/practice/practice-deck.sample.json
+ M docs/content-audits/viet-canonical-content-audit-001/README.md
+ M docs/content-audits/viet-canonical-content-audit-001/issue-summary.json
+ M native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json
+ M native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite
+ M native-ios/Resources/viet-authored-audio-audit.json
+ M native-ios/Resources/viet-authored-listing-pages.json
+ M native-ios/Resources/viet-phrase-catalog.json
+ M native-ios/scripts/generate-authored-tier-one-pages.js
+ M native-ios/scripts/generate-viet-catalog.js
+ M native-ios/scripts/generate-viet-sqlite-fixture.js
+ M native-ios/scripts/sqlite/001_initial.sql
+ M native-ios/scripts/validate-viet-city-library.js
+ M native-ios/scripts/validate-viet-sqlite-fixture.js
+ M prototypes/practice-quiz/practice-deck.sample.json
+ M scripts/practice/generate-viet-practice-deck.js
 ```
+
+All entries above are unrelated pre-existing or concurrent content/resource/practice work and were left unstaged. No scoped Search chrome morph changes remain uncommitted.
