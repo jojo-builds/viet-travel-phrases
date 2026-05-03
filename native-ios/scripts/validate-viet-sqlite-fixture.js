@@ -338,6 +338,10 @@ function main() {
     !relationshipWordsEligiblePageIDs.includes("viet-phrase-smalltalk-1"),
     "relationship-word eligibility should not include Tôi đến từ Mỹ"
   );
+  assertTrue(
+    !relationshipWordsEligiblePageIDs.includes("viet-family-city-danang-place-ba-na-hills"),
+    "relationship-word eligibility should not include Bà Nà Hills place page"
+  );
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -357,6 +361,14 @@ function main() {
     WHERE ps.section_key = 'relationship-words'
       AND ps.page_id NOT IN (${relationshipWordsEligiblePageIDSQL});
   `), "ineligible canonical pages with relationship-word shelf");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN phrase_page pp ON pp.id = ps.page_id
+    JOIN phrase_city_tag pct ON pct.phrase_id = pp.phrase_id
+    WHERE ps.section_key = 'relationship-words'
+      AND pct.page_kind IN ('place', 'restaurant', 'dish', 'city', 'category');
+  `), "city/place/restaurant/dish/category pages with relationship-word shelf");
 
   assertZero(sqliteValue(`
     SELECT count(*)

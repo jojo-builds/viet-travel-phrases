@@ -584,6 +584,12 @@ function main() {
 
   function shouldShowRelationshipWordsSection(phrase, authoredPage = null) {
     if (!phrase) return false;
+    const cityPageKind = authoredPage?.cityMetadata?.pageKind
+      ?? cityLibraryPageByPhraseID.get(phrase.id)?.pageKind
+      ?? "";
+    if (["place", "restaurant", "dish", "city", "category"].includes(cityPageKind)) {
+      return false;
+    }
     if (relationshipWordPhraseIDs.includes(phrase.id)) return true;
 
     const targetTokens = vietnameseWordTokens(phrase.targetText);
