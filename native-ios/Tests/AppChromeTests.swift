@@ -8,8 +8,19 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThan(AppChromeLayout.dockVerticalPadding, 5)
         XCTAssertLessThan(AppChromeLayout.searchIslandSize, 64)
         XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomSeparationHeight, 150)
+        XCTAssertLessThanOrEqual(AppChromeLayout.bottomSeparationHeight, 144)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomSeparationHeight, 112)
         XCTAssertGreaterThanOrEqual(AppChromeLayout.topSeparationHeight, 160)
+    }
+
+    func testBottomChromeHitTestEnvelopeStaysLocalToChrome() {
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomHitTestEnvelopeHeight, AppChromeLayout.searchIslandSize)
+        XCTAssertGreaterThanOrEqual(
+            AppChromeLayout.bottomHitTestEnvelopeHeight,
+            AppChromeLayout.dockItemHeight + AppChromeLayout.dockVerticalPadding * 2
+        )
+        XCTAssertLessThan(AppChromeLayout.bottomHitTestEnvelopeHeight, AppChromeLayout.bottomSeparationHeight)
+        XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
     }
 
     func testSearchMorphUsesMatchedChromeMetrics() {

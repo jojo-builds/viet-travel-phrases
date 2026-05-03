@@ -187,8 +187,7 @@ struct AppShellView: View {
                     .zIndex(360)
             }
             .overlay(alignment: .bottom) {
-                staticBottomChrome
-                    .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
+                bottomChromeHitTestEnvelope
                     .padding(.bottom, bottomChromePadding)
                     .offset(y: bottomChromeOffset)
                     .zIndex(380)
@@ -490,6 +489,24 @@ struct AppShellView: View {
         isSearchFieldFocused ? 0 : AppChromeLayout.bottomOffset
     }
 
+    private var bottomChromeHitTestEnvelope: some View {
+        ZStack(alignment: .bottom) {
+            Rectangle()
+                .fill(Color(.systemBackground).opacity(0.001))
+                .frame(maxWidth: .infinity)
+                .frame(height: AppChromeLayout.bottomHitTestEnvelopeHeight)
+                .contentShape(Rectangle())
+                .onTapGesture {}
+                .accessibilityHidden(true)
+
+            staticBottomChrome
+                .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: AppChromeLayout.bottomHitTestEnvelopeHeight, alignment: .bottom)
+        .contentShape(Rectangle())
+    }
+
     private var staticBackButton: some View {
         Button {
             goBack()
@@ -561,6 +578,8 @@ struct AppShellView: View {
                 .buttonStyle(.plain)
                 .accessibilityLabel(item.title)
                 .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
+                .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
+                .contentShape(Rectangle())
             }
         }
         .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
@@ -585,6 +604,8 @@ struct AppShellView: View {
         .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
         .accessibilityLabel("Search")
         .accessibilityIdentifier("AppChrome.SearchButton")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .contentShape(Circle())
         .zIndex(1)
     }
 
@@ -603,6 +624,8 @@ struct AppShellView: View {
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
         .accessibilityLabel(kind.title)
         .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .contentShape(Circle())
         .zIndex(2)
     }
 

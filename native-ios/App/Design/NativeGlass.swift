@@ -138,8 +138,10 @@ enum AppChromeLayout {
     static let bottomSpacing: CGFloat = 8
     static let bottomPadding: CGFloat = -10
     static let bottomOffset: CGFloat = 10
-    static let bottomSeparationHeight: CGFloat = 240
+    static let bottomSeparationHeight: CGFloat = 132
     static let topSeparationHeight: CGFloat = 170
+    static let bottomHitTestEnvelopeHeight: CGFloat = 92
+    static let chromeSeparationAllowsHitTesting = false
     static let dockItemSpacing: CGFloat = 12
     static let dockItemWidth: CGFloat = 52
     static let dockItemHeight: CGFloat = 50
@@ -169,7 +171,7 @@ struct ChromeSeparationGradient: View {
         )
         .frame(height: edge == .bottom ? AppChromeLayout.bottomSeparationHeight : AppChromeLayout.topSeparationHeight)
         .ignoresSafeArea(edges: edge == .bottom ? .bottom : .top)
-        .allowsHitTesting(false)
+        .allowsHitTesting(AppChromeLayout.chromeSeparationAllowsHitTesting)
     }
 
     private var gradientStops: [Gradient.Stop] {
@@ -177,10 +179,10 @@ struct ChromeSeparationGradient: View {
         case .bottom:
             return [
                 .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.18), location: 0.14),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.64), location: 0.42),
-                .init(color: Color(.systemBackground).opacity(0.94), location: 0.72),
-                .init(color: Color(.systemBackground), location: 1),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0.34),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.14), location: 0.60),
+                .init(color: Color(.systemBackground).opacity(0.38), location: 0.82),
+                .init(color: Color(.systemBackground).opacity(0.66), location: 1),
             ]
         case .top:
             return [
