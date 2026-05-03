@@ -2,7 +2,7 @@
 
 Status: DONE
 
-Final commit hash: supplied in the worker reply after commit.
+Final commit hash: `6d455b5ee9546e7c2ecbeb46d10bc693ff7cbd96`
 
 ## Accepted Steering
 
