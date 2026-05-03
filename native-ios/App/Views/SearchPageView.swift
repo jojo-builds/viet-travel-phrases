@@ -500,49 +500,60 @@ private struct SearchPhraseRow: View {
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            HStack(spacing: 14) {
-                Image(systemName: item.symbolName)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(item.tintName.color)
-                    .frame(width: 46, height: 46)
-                    .nativeGlass(cornerRadius: 23, tint: item.tintName.color.opacity(0.16), interactive: true)
+        HStack(spacing: 14) {
+            Image(systemName: item.symbolName)
+                .font(.headline.weight(.semibold))
+                .foregroundStyle(item.tintName.color)
+                .frame(width: 46, height: 46)
+                .nativeGlass(cornerRadius: 23, tint: item.tintName.color.opacity(0.16), interactive: true)
 
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(item.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                HStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.title)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
 
-                    Text(item.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(SearchResultRowLayout.subtitleLineLimit)
-                        .fixedSize(horizontal: false, vertical: true)
+                        Text(item.subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(SearchResultRowLayout.subtitleLineLimit)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .layoutPriority(1)
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.tertiary)
                 }
-                .layoutPriority(1)
-
-                AudioSpeakerButton(tint: item.tintName, size: 38, audioKey: item.audioKey)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
+                .contentShape(Rectangle())
             }
-            .padding(12)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .background(.white.opacity(0.48), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(Color.black.opacity(0.04), lineWidth: 1)
-            }
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity)
+            .accessibilityIdentifier("SearchResult.\(item.pageID)")
+
+            AudioSpeakerButton(
+                tint: item.tintName,
+                size: 38,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "SearchResult.Audio.\(item.pageID)"
+            )
         }
-        .buttonStyle(.plain)
-        .accessibilityElement(children: .combine)
-        .accessibilityIdentifier("SearchResult.\(item.pageID)")
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .background(.white.opacity(0.48), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .stroke(Color.black.opacity(0.04), lineWidth: 1)
+        }
+        .accessibilityElement(children: .contain)
     }
 }
 

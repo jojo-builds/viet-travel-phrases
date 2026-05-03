@@ -154,15 +154,24 @@ final class AudioPlaybackService {
             let requestedRate = Float(rate)
 
             if let player, playerURL == url, playerRate == requestedRate {
-                return replay(player, rate: requestedRate)
+                let didStart = replay(player, rate: requestedRate)
+                if !didStart {
+                    clearCachedPlayer()
+                }
+                return didStart
             }
 
             player?.stop()
             let player = try makePlayer(url)
             player.enableRate = true
             player.rate = requestedRate
-            player.prepareToPlay()
+            guard player.prepareToPlay() else {
+                return false
+            }
             let didStart = player.play()
+            guard didStart else {
+                return false
+            }
             self.player = player
             playerURL = url
             playerRate = requestedRate
@@ -187,7 +196,15 @@ final class AudioPlaybackService {
         player.currentTime = 0
         player.enableRate = true
         player.rate = rate
-        player.prepareToPlay()
+        guard player.prepareToPlay() else {
+            return false
+        }
         return player.play()
+    }
+
+    private func clearCachedPlayer() {
+        player = nil
+        playerURL = nil
+        playerRate = nil
     }
 }

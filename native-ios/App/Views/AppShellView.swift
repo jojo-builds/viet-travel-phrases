@@ -2532,37 +2532,46 @@ private struct HomeWidePhraseButton: View {
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            HStack(spacing: 12) {
-                AudioSpeakerButton(tint: item.tintName, audioKey: item.audioKey)
+        HStack(spacing: 12) {
+            AudioSpeakerButton(
+                tint: item.tintName,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "HomePhrase.Audio.\(item.pageID)"
+            )
 
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(item.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                HStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.title)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
 
-                    Text(item.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
+                        Text(item.subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .layoutPriority(1)
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.tertiary)
                 }
-                .layoutPriority(1)
-
-                Spacer()
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
+                .contentShape(Rectangle())
             }
-            .padding(14)
-            .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity)
+            .accessibilityIdentifier("HomePhrase.\(item.pageID)")
         }
-        .buttonStyle(.plain)
+        .padding(14)
+        .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
     }
 }
 
@@ -2571,51 +2580,60 @@ private struct HomePhraseCard: View {
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Image(systemName: item.symbolName)
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(item.tintName.color)
-                        .frame(width: 44, height: 44)
-                        .nativeGlass(cornerRadius: 22)
+        ZStack(alignment: .topTrailing) {
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack {
+                        Image(systemName: item.symbolName)
+                            .font(.title3.weight(.semibold))
+                            .foregroundStyle(item.tintName.color)
+                            .frame(width: 44, height: 44)
+                            .nativeGlass(cornerRadius: 22)
 
-                    Spacer()
+                        Spacer()
+                    }
 
-                    AudioSpeakerButton(tint: item.tintName, size: 38, audioKey: item.audioKey)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.title)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.78)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        Text(item.subtitle)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(3)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .layoutPriority(1)
+
+                    HStack {
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(.tertiary)
+                    }
                 }
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(item.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-                        .fixedSize(horizontal: false, vertical: true)
-
-                    Text(item.subtitle)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(3)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .layoutPriority(1)
-
-                HStack {
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                }
+                .padding(14)
+                .frame(width: 152, height: 190, alignment: .topLeading)
+                .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
+                .shadow(color: .black.opacity(0.06), radius: 16, x: 0, y: 10)
             }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("HomePhrase.\(item.pageID)")
+
+            AudioSpeakerButton(
+                tint: item.tintName,
+                size: 38,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "HomePhrase.Audio.\(item.pageID)"
+            )
             .padding(14)
-            .frame(width: 152, height: 190, alignment: .topLeading)
-            .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
-            .shadow(color: .black.opacity(0.06), radius: 16, x: 0, y: 10)
         }
-        .buttonStyle(.plain)
     }
 }
 
@@ -2702,44 +2720,60 @@ private struct HomeRelationshipRow: View {
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        Button {
+        HStack(spacing: 12) {
+            Image(systemName: phrase.symbolName)
+                .font(.headline.weight(.semibold))
+                .foregroundStyle(phrase.tintName.color)
+                .frame(width: 46, height: 46)
+                .nativeGlass(cornerRadius: 23, interactive: true)
+
             if let detailPageID = phrase.detailPageID {
-                onOpenDetail(detailPageID)
-            }
-        } label: {
-            HStack(spacing: 12) {
-                Image(systemName: phrase.symbolName)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(phrase.tintName.color)
-                    .frame(width: 46, height: 46)
-                    .nativeGlass(cornerRadius: 23, interactive: true)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(phrase.vietnamese)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.74)
-
-                    Text(phrase.english)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
+                Button {
+                    onOpenDetail(detailPageID)
+                } label: {
+                    rowContent(showsChevron: true)
+                        .contentShape(Rectangle())
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .layoutPriority(1)
+                .buttonStyle(.plain)
+                .frame(maxWidth: .infinity)
+            } else {
+                rowContent(showsChevron: false)
+            }
 
-                AudioSpeakerButton(tint: phrase.tintName, size: 34, audioKey: phrase.playbackAudioKey)
+            AudioSpeakerButton(
+                tint: phrase.tintName,
+                size: 34,
+                audioKey: phrase.playbackAudioKey,
+                accessibilityIdentifier: "HomeRelationship.Audio.\(phrase.id)"
+            )
+        }
+        .padding(.horizontal, 14)
+    }
 
+    private func rowContent(showsChevron: Bool) -> some View {
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(phrase.vietnamese)
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.74)
+
+                Text(phrase.english)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .layoutPriority(1)
+
+            if showsChevron {
                 Image(systemName: "chevron.right")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.tertiary)
             }
-            .padding(.horizontal, 14)
-            .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
     }
 }
 

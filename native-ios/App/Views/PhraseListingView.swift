@@ -267,9 +267,12 @@ struct PhraseArticleTemplateView: View {
             return
         }
 
-        didApplyInitialScrollTarget = true
         try? await Task.sleep(nanoseconds: 900_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
         scrollProxy.scrollTo(scrollID, anchor: anchor)
+        didApplyInitialScrollTarget = true
     }
 
     @ViewBuilder
@@ -884,7 +887,32 @@ private struct BreakdownTokenCard: View {
     let token: BreakdownToken
     let width: CGFloat
 
+    private var resolvedAudioKey: String? {
+        token.playbackAudioKey
+    }
+
+    @ViewBuilder
     var body: some View {
+        if let resolvedAudioKey {
+            Button {
+                AudioPlaybackService.shared.play(audioKey: resolvedAudioKey)
+            } label: {
+                cardContent
+                    .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Play \(token.vietnamese)")
+            .accessibilityIdentifier("Breakdown.Audio.\(token.id)")
+            .accessibilityAddTraits(.isButton)
+        } else {
+            cardContent
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("\(token.vietnamese), audio not available yet")
+        }
+    }
+
+    private var cardContent: some View {
         VStack(spacing: 6) {
             Text(token.vietnamese)
                 .font(.headline.weight(.black))
@@ -902,17 +930,27 @@ private struct BreakdownTokenCard: View {
                 .minimumScaleFactor(0.82)
                 .fixedSize(horizontal: false, vertical: true)
 
-            if let audioKey = token.playbackAudioKey {
-                AudioSpeakerButton(tint: .red, size: 30, audioKey: audioKey)
-                    .padding(.top, 1)
-                    .accessibilityLabel("Play \(token.vietnamese)")
-            }
+            BreakdownTokenAudioIndicator(isPlayable: resolvedAudioKey != nil)
+                .padding(.top, 1)
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 12)
         .frame(width: width)
         .frame(minHeight: 112)
         .phraseListCard(cornerRadius: 16, strokeOpacity: 0.05)
+    }
+}
+
+private struct BreakdownTokenAudioIndicator: View {
+    let isPlayable: Bool
+    private let size: CGFloat = 30
+
+    var body: some View {
+        Image(systemName: isPlayable ? "speaker.wave.2.fill" : "speaker.slash.fill")
+            .font(.system(size: size * 0.36, weight: .semibold))
+            .foregroundStyle(isPlayable ? AccentTint.red.audioColor : Color.secondary.opacity(0.72))
+            .frame(width: size, height: size)
+            .nativeGlass(cornerRadius: size / 2, interactive: isPlayable)
     }
 }
 

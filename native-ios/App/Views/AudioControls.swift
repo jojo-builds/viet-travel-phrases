@@ -4,6 +4,13 @@ struct AudioSpeakerButton: View {
     let tint: AccentTint
     var size: CGFloat = 48
     var audioKey: String? = nil
+    var accessibilityIdentifier: String? = nil
+
+    static let minimumHitSize: CGFloat = 44
+
+    static func tapTargetSize(for visualSize: CGFloat) -> CGFloat {
+        max(visualSize, minimumHitSize)
+    }
 
     static func isPlayableAudioKey(_ audioKey: String?) -> Bool {
         playableAudioKey(audioKey) != nil
@@ -24,7 +31,17 @@ struct AudioSpeakerButton: View {
         Self.playableAudioKey(audioKey)
     }
 
+    @ViewBuilder
     var body: some View {
+        if let accessibilityIdentifier {
+            button
+                .accessibilityIdentifier(accessibilityIdentifier)
+        } else {
+            button
+        }
+    }
+
+    private var button: some View {
         Button {
             if let resolvedAudioKey {
                 AudioPlaybackService.shared.play(audioKey: resolvedAudioKey)
@@ -34,10 +51,12 @@ struct AudioSpeakerButton: View {
                 .font(.system(size: size * 0.36, weight: .semibold))
                 .foregroundStyle(resolvedAudioKey == nil ? Color.secondary.opacity(0.72) : tint.audioColor)
                 .frame(width: size, height: size)
+                .nativeGlass(cornerRadius: size / 2, interactive: resolvedAudioKey != nil)
+                .frame(width: Self.tapTargetSize(for: size), height: Self.tapTargetSize(for: size))
+                .contentShape(Circle())
         }
         .buttonStyle(.plain)
         .disabled(resolvedAudioKey == nil)
-        .nativeGlass(cornerRadius: size / 2, interactive: resolvedAudioKey != nil)
         .accessibilityLabel(resolvedAudioKey == nil ? "Audio not available yet" : "Play audio")
     }
 }

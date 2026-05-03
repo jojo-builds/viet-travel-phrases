@@ -1,3 +1,4 @@
+import CoreGraphics
 import XCTest
 @testable import SpeakLocalNative
 
@@ -1101,6 +1102,44 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertFalse(AudioSpeakerButton.isPlayableAudioKey("missing-audio-key"))
     }
 
+    func testSpeakerButtonKeepsReliableMinimumTapTarget() {
+        XCTAssertGreaterThanOrEqual(AudioSpeakerButton.minimumHitSize, 44)
+        XCTAssertEqual(AudioSpeakerButton.tapTargetSize(for: 30), AudioSpeakerButton.minimumHitSize)
+        XCTAssertEqual(AudioSpeakerButton.tapTargetSize(for: 48), 48)
+    }
+
+    func testBreakdownAudioReliabilityExamplesResolvePlayableAudio() throws {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let examples: [(pageID: String, tokenText: String, expectedAudioKey: String?)] = [
+            ("viet-family-food-coffee-black", "Cho tôi", "breakdown-authored-cho-toi-18c6fe1018"),
+            ("viet-phrase-hotel-quiet-room", "Cho tôi", nil),
+        ]
+
+        for example in examples {
+            let page = try XCTUnwrap(PhraseDetailPage.page(withID: example.pageID), example.pageID)
+            let token = try XCTUnwrap(
+                page.sections.flatMap(\.breakdown).first { $0.vietnamese == example.tokenText },
+                "\(example.pageID): \(example.tokenText)"
+            )
+            let playbackAudioKey = try XCTUnwrap(token.playbackAudioKey, "\(example.pageID): \(example.tokenText)")
+
+            if let expectedAudioKey = example.expectedAudioKey {
+                XCTAssertEqual(playbackAudioKey, expectedAudioKey)
+            }
+            XCTAssertNotNil(manifest.url(for: playbackAudioKey), "\(example.pageID): \(example.tokenText)")
+            XCTAssertTrue(
+                manifest.hasPlayableEntry(for: playbackAudioKey, matchingText: example.tokenText),
+                "\(example.pageID): \(example.tokenText)"
+            )
+        }
+
+        let xinChaoToken = try XCTUnwrap(PhrasePage.xinChao.breakdown.first { $0.vietnamese == "Xin" })
+        let xinChaoAudioKey = try XCTUnwrap(xinChaoToken.playbackAudioKey)
+        XCTAssertNotNil(manifest.url(for: xinChaoAudioKey))
+        XCTAssertTrue(manifest.hasPlayableEntry(for: xinChaoAudioKey, matchingText: "Xin"))
+    }
+
     func testAudioPlaybackServiceConfiguresSessionBeforeFirstPlayback() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         var events: [String] = []
@@ -1156,6 +1195,61 @@ final class PhrasePageFixtureTests: XCTestCase {
 
         XCTAssertEqual(makePlayerCount, 1)
         XCTAssertEqual(playCount, 10)
+    }
+
+    func testAudioPlaybackServiceDoesNotCacheFailedFirstStart() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        var events: [String] = []
+        var players: [RecordingAudioPlayer] = []
+
+        let service = AudioPlaybackService(
+            manifest: manifest,
+            configureAudioSession: {},
+            makePlayer: { _ in
+                events.append("make-player")
+                let player = RecordingAudioPlayer { event in
+                    events.append(event)
+                }
+                player.playResult = players.isEmpty ? false : true
+                players.append(player)
+                return player
+            }
+        )
+
+        XCTAssertFalse(service.play(audioKey: "polite-1"))
+        XCTAssertTrue(service.play(audioKey: "polite-1"))
+        XCTAssertEqual(players.count, 2)
+        XCTAssertEqual(events, ["make-player", "prepare", "play", "make-player", "prepare", "play"])
+    }
+
+    func testAudioPlaybackServiceClearsCachedPlayerAfterFailedReplayPrepare() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        var events: [String] = []
+        var players: [RecordingAudioPlayer] = []
+
+        let service = AudioPlaybackService(
+            manifest: manifest,
+            configureAudioSession: {},
+            makePlayer: { _ in
+                events.append("make-player")
+                let player = RecordingAudioPlayer { event in
+                    events.append(event)
+                }
+                players.append(player)
+                return player
+            }
+        )
+
+        XCTAssertTrue(service.play(audioKey: "polite-1"))
+        players[0].prepareResult = false
+        XCTAssertFalse(service.play(audioKey: "polite-1"))
+        XCTAssertTrue(service.play(audioKey: "polite-1"))
+        XCTAssertEqual(players.count, 2)
+        XCTAssertEqual(events, [
+            "make-player", "prepare", "play",
+            "stop", "seek-0", "prepare",
+            "make-player", "prepare", "play",
+        ])
     }
 
     func testAllResolvedPhraseOptionAudioKeysPointToBundledFiles() throws {
@@ -1222,6 +1316,8 @@ final class PhrasePageFixtureTests: XCTestCase {
 private final class RecordingAudioPlayer: AudioPlayable {
     var enableRate = false
     var rate: Float = 1.0
+    var prepareResult = true
+    var playResult = true
     var currentTime: TimeInterval = 0 {
         didSet {
             record("seek-\(Int(currentTime))")
@@ -1236,7 +1332,7 @@ private final class RecordingAudioPlayer: AudioPlayable {
 
     func prepareToPlay() -> Bool {
         record("prepare")
-        return true
+        return prepareResult
     }
 
     func stop() {
@@ -1245,6 +1341,6 @@ private final class RecordingAudioPlayer: AudioPlayable {
 
     func play() -> Bool {
         record("play")
-        return true
+        return playResult
     }
 }
