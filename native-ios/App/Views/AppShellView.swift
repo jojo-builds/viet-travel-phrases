@@ -585,7 +585,7 @@ struct AppShellView: View {
         .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
         .padding(.vertical, AppChromeLayout.dockVerticalPadding)
         .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
-        .zIndex(2)
+        .zIndex(AppChromeLayout.dockMorphZIndex)
     }
 
     private var collapsedSearchButton: some View {
@@ -606,7 +606,7 @@ struct AppShellView: View {
         .accessibilityIdentifier("AppChrome.SearchButton")
         .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
         .contentShape(Circle())
-        .zIndex(1)
+        .zIndex(AppChromeLayout.searchMorphZIndex)
     }
 
     private func searchOriginButton(kind: DockItemKind) -> some View {
@@ -626,7 +626,7 @@ struct AppShellView: View {
         .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
         .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
         .contentShape(Circle())
-        .zIndex(2)
+        .zIndex(AppChromeLayout.searchOriginMorphZIndex)
     }
 
     private func searchFieldCluster(isKeyboardSearch: Bool) -> some View {
@@ -648,7 +648,7 @@ struct AppShellView: View {
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
         .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
         .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
-        .zIndex(1)
+        .zIndex(AppChromeLayout.searchMorphZIndex)
     }
 
     private var searchDismissKeyboardButton: some View {
@@ -665,6 +665,7 @@ struct AppShellView: View {
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
         .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
         .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
+        .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
     }
 
     private var forwardButton: some View {

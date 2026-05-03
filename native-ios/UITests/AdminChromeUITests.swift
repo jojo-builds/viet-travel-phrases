@@ -114,6 +114,38 @@ final class AdminChromeUITests: XCTestCase {
         captureProofIfRequested(app: app, name: "practice-bottom-chrome.png")
     }
 
+    func testSearchChromeMorphHomeAndBrowseProofScreenshots() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+        captureSearchMorphProofIfRequested(app: app, name: "home-collapsed.png")
+
+        openSearch(in: app, expectedOrigin: "Home", iteration: 1)
+        captureSearchMorphProofIfRequested(app: app, name: "home-search-expanded.png")
+        tapSearchOrigin(in: app, title: "Home", iteration: 1)
+        captureSearchMorphProofIfRequested(app: app, name: "home-return-immediate.png")
+        XCTAssertTrue(
+            app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2),
+            "Search field stayed visible after tapping Home origin for proof."
+        )
+        captureSearchMorphProofIfRequested(app: app, name: "home-return-final.png")
+        assertHomeVisible(in: app)
+
+        openDock("Browse", in: app)
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+        captureSearchMorphProofIfRequested(app: app, name: "browse-collapsed.png")
+
+        openSearch(in: app, expectedOrigin: "Browse", iteration: 2)
+        captureSearchMorphProofIfRequested(app: app, name: "browse-search-expanded.png")
+        tapSearchOrigin(in: app, title: "Browse", iteration: 2)
+        captureSearchMorphProofIfRequested(app: app, name: "browse-return-immediate.png")
+        XCTAssertTrue(
+            app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2),
+            "Search field stayed visible after tapping Browse origin for proof."
+        )
+        captureSearchMorphProofIfRequested(app: app, name: "browse-return-final.png")
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+    }
+
     private func openSearch(in app: XCUIApplication, expectedOrigin: String, iteration: Int) {
         let searchButton = app.buttons["AppChrome.SearchButton"]
         XCTAssertTrue(
@@ -133,16 +165,20 @@ final class AdminChromeUITests: XCTestCase {
     }
 
     private func openOrigin(in app: XCUIApplication, title: String, iteration: Int) {
+        tapSearchOrigin(in: app, title: title, iteration: iteration)
+        XCTAssertTrue(
+            app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2),
+            "Search field stayed visible after tapping \(title) origin on iteration \(iteration)."
+        )
+    }
+
+    private func tapSearchOrigin(in app: XCUIApplication, title: String, iteration: Int) {
         let originButton = app.buttons["AppChrome.SearchOriginButton.\(title)"]
         XCTAssertTrue(
             originButton.waitForExistence(timeout: 2),
             "Search \(title) origin did not become tappable before iteration \(iteration)."
         )
         originButton.tap()
-        XCTAssertTrue(
-            app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2),
-            "Search field stayed visible after tapping \(title) origin on iteration \(iteration)."
-        )
     }
 
     private func openDock(_ title: String, in app: XCUIApplication) {
@@ -222,7 +258,31 @@ final class AdminChromeUITests: XCTestCase {
         try? XCUIScreen.main.screenshot().pngRepresentation.write(to: directoryURL.appendingPathComponent(name))
     }
 
+    private func captureSearchMorphProofIfRequested(app: XCUIApplication, name: String) {
+        let sentinelPath = "/tmp/speaklocal-search-chrome-morph-proof-enabled"
+        let environmentPath = ProcessInfo.processInfo.environment["SPEAKLOCAL_SEARCH_CHROME_MORPH_PROOF_DIR"]
+        guard
+            FileManager.default.fileExists(atPath: sentinelPath) || environmentPath?.isEmpty == false,
+            let directoryURL = proofDirectoryURL(
+                environmentPath: environmentPath,
+                taskID: "TASK-NATIVE-SEARCH-CHROME-MORPH-001"
+            )
+        else {
+            return
+        }
+
+        try? FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: directoryURL.appendingPathComponent(name))
+    }
+
     private func proofDirectoryURL(environmentPath: String?) -> URL? {
+        proofDirectoryURL(
+            environmentPath: environmentPath,
+            taskID: "TASK-NATIVE-BOTTOM-CHROME-HITTEST-GRADIENT-001"
+        )
+    }
+
+    private func proofDirectoryURL(environmentPath: String?, taskID: String) -> URL? {
         if let environmentPath, !environmentPath.isEmpty {
             return URL(fileURLWithPath: environmentPath, isDirectory: true)
         }
@@ -234,6 +294,6 @@ final class AdminChromeUITests: XCTestCase {
             .deletingLastPathComponent()
 
         return repoRootURL
-            .appendingPathComponent("docs/task-results/assets/TASK-NATIVE-BOTTOM-CHROME-HITTEST-GRADIENT-001", isDirectory: true)
+            .appendingPathComponent("docs/task-results/assets/\(taskID)", isDirectory: true)
     }
 }

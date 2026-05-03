@@ -153,6 +153,10 @@ enum AppChromeLayout {
     static let searchFieldHeight: CGFloat = 58
     static let searchFieldHorizontalPadding: CGFloat = 14
     static let searchMorphDuration = 0.39
+    static let dockMorphZIndex: Double = 0
+    static let searchOriginMorphZIndex: Double = 1
+    static let searchMorphZIndex: Double = 3
+    static let keyboardDismissMorphZIndex: Double = 4
 }
 
 enum ChromeSeparationEdge {

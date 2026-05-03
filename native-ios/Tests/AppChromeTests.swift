@@ -33,6 +33,12 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(AppChromeLayout.searchMorphDuration, 0.40)
     }
 
+    func testSearchChromeMorphKeepsSearchGlassAboveReturningDock() {
+        XCTAssertGreaterThan(AppChromeLayout.searchMorphZIndex, AppChromeLayout.dockMorphZIndex)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchMorphZIndex, AppChromeLayout.searchOriginMorphZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.keyboardDismissMorphZIndex, AppChromeLayout.searchMorphZIndex)
+    }
+
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
         XCTAssertEqual(ExploreCatalogLayout.itemsPerGroup, 3)
         XCTAssertGreaterThan(ExploreCatalogLayout.fullGroupHeight, ExploreCatalogLayout.rowHeight * 3)
