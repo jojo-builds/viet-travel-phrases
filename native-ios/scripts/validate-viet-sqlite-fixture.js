@@ -124,6 +124,7 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-repair-4",
   "viet-phrase-repair-english-help",
   "viet-phrase-repair-number-amount",
+  "viet-phrase-ves-can-you-show-me-politeness",
   "viet-phrase-v900-dire-navi-can-you-call-this-place-and-ask-for-directions",
   "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
   "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",

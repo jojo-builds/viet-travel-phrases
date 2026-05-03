@@ -15,6 +15,8 @@ const canonicalPagesRoot = path.join(familyRoot, "content-draft", "viet", "canon
 const sourceRoot = path.join(canonicalPagesRoot, "tier-one");
 const catalogPromotedSourceRoot = path.join(canonicalPagesRoot, "catalog-promoted");
 const cityLibraryPath = path.join(familyRoot, "content-draft", "viet", "city-library", "v1.json");
+const editorialSupportRoot = path.join(familyRoot, "content-draft", "viet", "editorial-model-support", "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001");
+const editorialSupportManifestPath = path.join(editorialSupportRoot, "manifest.json");
 const practiceExpansionRoot = path.join(familyRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
 const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 const catalogPromotedTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
@@ -2834,6 +2836,162 @@ function loadPracticeExpansionPages() {
   return pageRecords.map((record) => practiceExpansionPageForRecord(record, { pageRecords }));
 }
 
+function loadEditorialSupportManifest() {
+  if (!fs.existsSync(editorialSupportManifestPath)) {
+    return null;
+  }
+  return JSON.parse(fs.readFileSync(editorialSupportManifestPath, "utf8"));
+}
+
+function loadEditorialSupportRecords() {
+  const manifest = loadEditorialSupportManifest();
+  if (!manifest) {
+    return [];
+  }
+
+  return (manifest.sourceShards ?? []).flatMap((relativePath) => {
+    const shardPath = path.join(editorialSupportRoot, relativePath);
+    const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
+    return (shard.pages ?? []).map((record) => ({
+      ...record,
+      sourceShard: relativePath,
+    }));
+  })
+    .filter((record) => record.status === "approved")
+    .sort((a, b) => a.phraseID.localeCompare(b.phraseID));
+}
+
+function editorialSupportPageID(record) {
+  return `viet-family-${record.phraseID}`;
+}
+
+function editorialSupportPhraseOption(phraseID, detailPageID = null, tintName = null) {
+  const phrase = phraseByID.get(phraseID);
+  if (!phrase) {
+    throw new Error(`Missing editorial support phrase in catalog: ${phraseID}`);
+  }
+  return phraseOption(phrase, detailPageID, tintName ?? tintForScenario(phrase.scenarioID));
+}
+
+function editorialSupportBreakdownTokens(record) {
+  const chunks = [...(record.chunks ?? [])];
+  const finalMatches = chunks.length > 0
+    && normalizeAudioText(chunks[chunks.length - 1].vietnamese) === normalizeAudioText(record.targetText);
+  if (!finalMatches) {
+    chunks.push({
+      id: `${record.phraseID}-full`,
+      vietnamese: record.targetText,
+      english: record.englishText,
+    });
+  }
+
+  return chunks.map((chunk, index) => ({
+    id: chunk.id ?? `${record.phraseID}-chunk-${index + 1}`,
+    vietnamese: chunk.vietnamese,
+    english: chunk.english,
+    audioKey: authoredBreakdownAudioKey(chunk.vietnamese),
+  }));
+}
+
+function editorialSupportOptions(phraseIDs, count = 4) {
+  return (phraseIDs ?? [])
+    .map((phraseID) => editorialSupportPhraseOption(phraseID, `viet-family-${phraseID}`))
+    .filter(Boolean)
+    .slice(0, count);
+}
+
+function editorialSupportPageForRecord(record) {
+  const phrase = phraseByID.get(record.phraseID);
+  if (!phrase) {
+    throw new Error(`Cannot build editorial support page ${record.phraseID}; missing catalog phrase`);
+  }
+
+  const selfOption = editorialSupportPhraseOption(record.phraseID, null, record.tintName);
+  const relatedOptions = editorialSupportOptions(record.relatedPhraseIDs, 4);
+  const exploreOptions = editorialSupportOptions(record.explorePhraseIDs ?? record.relatedPhraseIDs, 6);
+  const contrastOptions = editorialSupportOptions(record.contrastPhraseIDs ?? record.relatedPhraseIDs, 3);
+  const sections = [
+    {
+      id: "at-glance",
+      title: "At a glance",
+      body: record.atGlance,
+    },
+    {
+      id: "quick-say",
+      title: "Quick say",
+      body: record.quickSay,
+      phrases: [selfOption],
+    },
+    {
+      id: "breakdown",
+      title: "Break it down",
+      body: record.breakdownBody,
+      breakdown: editorialSupportBreakdownTokens(record),
+    },
+    {
+      id: "use-it-with",
+      title: record.useItWithTitle ?? "Use it with",
+      body: record.useItWith,
+      phrases: contrastOptions.length ? contrastOptions : relatedOptions,
+    },
+    {
+      id: "when-to-use",
+      title: "When to use it",
+      body: record.whenToUse,
+      phrases: relatedOptions,
+    },
+    {
+      id: "good-to-know",
+      title: "Good to know",
+      body: record.goodToKnow,
+    },
+    {
+      id: "explore-next",
+      title: "Explore next",
+      body: record.exploreNextBody,
+      phrases: exploreOptions.length ? exploreOptions : relatedOptions,
+    },
+  ];
+
+  return {
+    id: editorialSupportPageID(record),
+    familyID: record.familyID,
+    phraseID: record.phraseID,
+    tierRole: "editorial-model-support",
+    depth: "deep",
+    title: record.targetText,
+    englishTitle: record.englishText,
+    pronunciation: record.pronunciation,
+    summary: record.englishText,
+    iconName: record.iconName ?? symbolForScenario(record.scenarioID),
+    tintName: record.tintName ?? tintForScenario(record.scenarioID),
+    categoryIDs: Array.from(new Set([
+      record.scenarioID,
+      "editorial-model-support",
+      record.supportModel ? `support-model-${record.supportModel}` : null,
+      record.supportFamily ? `support-family-${record.supportFamily}` : null,
+      `difficulty-${record.difficulty ?? "beginner"}`,
+      ...(record.categoryIDs ?? []),
+    ].filter(Boolean))),
+    audioKey: authoredPhraseAudioKey(record.targetText, phrase.audioKey),
+    editorialSupportMetadata: {
+      taskID: record.taskID,
+      supportModel: record.supportModel,
+      supportFamily: record.supportFamily,
+      requiredForPatchIDs: record.requiredForPatchIDs ?? [],
+      sourceShard: record.sourceShard,
+      rationale: record.rationale,
+      stableFactSourceIDs: record.stableFactSourceIDs ?? [],
+    },
+    sections: withSectionPresentations(sections),
+    examples: [selfOption],
+  };
+}
+
+function loadEditorialSupportPages() {
+  return loadEditorialSupportRecords().map(editorialSupportPageForRecord);
+}
+
 function collectAudioAudit(pages) {
   const required = [];
   const missing = [];
@@ -2904,6 +3062,7 @@ function main() {
   const catalogPromotedPages = loadCatalogPromotedPages();
   const catalogPromotedPhraseIDs = loadCatalogPromotedPhraseIDs();
   const cityLibraryPages = loadCityLibraryPages();
+  const editorialSupportPages = loadEditorialSupportPages();
   const practiceExpansionPages = loadPracticeExpansionPages();
   const catalogPromotedPageIDByPhraseID = new Map(catalogPromotedPages.map((page) => [page.phraseID, page.id]));
   const taskCatalogPromotedPhraseIDs = new Set([...catalogPromotedPhraseIDs]
@@ -2973,19 +3132,21 @@ function main() {
     inventory,
   }, null, 2)}\n`);
 
-  const allPages = [...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...practiceExpansionPages];
+  const allPages = [...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...editorialSupportPages, ...practiceExpansionPages];
   const audioAudit = collectAudioAudit(allPages);
   const bundle = {
     metadata: {
       source: path.relative(root, sourceRoot),
       catalogPromotedSource: path.relative(root, catalogPromotedSourceRoot),
       cityLibrarySource: fs.existsSync(cityLibraryPath) ? path.relative(root, cityLibraryPath) : null,
+      editorialSupportSource: fs.existsSync(editorialSupportManifestPath) ? path.relative(root, editorialSupportRoot) : null,
       practiceExpansionSource: fs.existsSync(practiceExpansionManifestPath) ? path.relative(root, practiceExpansionRoot) : null,
       tierOneFamilyCount: starterFamilies.length,
       resourceMainPageCount: pages.length,
       childPageCount: childPages.length,
       catalogPromotedPageCount: catalogPromotedPages.length,
       cityLibraryPageCount: cityLibraryPages.length,
+      editorialSupportPageCount: editorialSupportPages.length,
       practiceExpansionPageCount: practiceExpansionPages.length,
       generatedAt: new Date().toISOString(),
     },
@@ -3015,6 +3176,7 @@ function main() {
       generatedAt: finalBundle.metadata?.generatedAt ?? bundle.metadata.generatedAt,
       tierOneFamilyCount: starterFamilies.length,
       cityLibraryPageCount: cityLibraryPages.length,
+      editorialSupportPageCount: editorialSupportPages.length,
       practiceExpansionPageCount: practiceExpansionPages.length,
       requiredAudioCount: finalAudioAudit.required.length,
       missingAudioCount: finalAudioAudit.missing.length,
@@ -3028,6 +3190,7 @@ function main() {
   console.log(`Child pages: ${childPages.length}`);
   console.log(`Catalog-promoted authored pages: ${catalogPromotedPages.length}`);
   console.log(`City library pages: ${cityLibraryPages.length}`);
+  console.log(`Editorial model support pages: ${editorialSupportPages.length}`);
   console.log(`Practice expansion pages: ${practiceExpansionPages.length}`);
   console.log(`Missing assigned audio: ${finalAudioAudit.missing.length}`);
   if (repairedBreakdowns) {

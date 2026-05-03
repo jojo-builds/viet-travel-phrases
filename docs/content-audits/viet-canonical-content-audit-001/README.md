@@ -1,14 +1,14 @@
 # Viet Canonical Content Audit 001
 
 Task: `TASK-VIET-CANONICAL-CONTENT-AUDIT-001`
-Generated: 2026-05-03T07:25:52.907Z
+Generated: 2026-05-03T08:16:42.812Z
 
 ## Summary
 
-- Canonical pages audited: 3038
-- Source phrase rows: 3046
+- Canonical pages audited: 3070
+- Source phrase rows: 3078
 - Duplicate normalized canonical Vietnamese groups: 0
-- Missing audio queue rows: 2094
+- Missing audio queue rows: 2126
 - Release-blocking missing audio rows: 0
 - Missing audio rows with exact reusable assets: 0
 - Missing audio rows with exact target usages: 0
@@ -17,7 +17,7 @@ Generated: 2026-05-03T07:25:52.907Z
 
 | Verdict | Pages |
 | --- | ---: |
-| PASS | 3038 |
+| PASS | 3070 |
 
 ## Source Lane Counts
 
@@ -26,6 +26,7 @@ Generated: 2026-05-03T07:25:52.907Z
 | catalog-promoted | 779 |
 | child | 14 |
 | city-v1 | 750 |
+| editorial-model-support | 32 |
 | practice-expansion | 1350 |
 | tier1 | 145 |
 

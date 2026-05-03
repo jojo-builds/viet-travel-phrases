@@ -1,0 +1,42 @@
+{
+  "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+  "status": "approved-support-only",
+  "sourceShards": [
+    "source/support-pages.json"
+  ],
+  "readinessArtifact": "audit/deferred-readiness.json",
+  "sourceNote": "Support-only canonical targets for the deferred ChatGPT editorial pilot rows. These records do not import deferred section copy.",
+  "stableFactSources": [
+    {
+      "id": "vietnam-travel-ba-na-hills",
+      "title": "How to explore and enjoy Ba Na Hills",
+      "url": "https://www.vietnam.travel/things-to-do/explore-ba-na-hills",
+      "stableUse": "Ba Na Hills is reached via cable car and is treated as a Da Nang attraction journey; no prices or schedules are imported."
+    },
+    {
+      "id": "sunworld-ba-na-cable-car",
+      "title": "Sun World Ba Na Hills official listing",
+      "url": "https://banahills.sunworld.vn/en",
+      "stableUse": "Official destination listing for Ba Na Hills; cable-car navigation remains supported by the Vietnam Tourism source, with no current hours or ticket details imported."
+    },
+    {
+      "id": "danang-fantasticity-marble-mountains",
+      "title": "The Marble Mountains",
+      "url": "https://danangfantasticity.com/en/heritage-landscape/the-marble-mountains",
+      "stableUse": "Marble Mountains has entrances, caves, pagodas, and visitor route context; no prices or hours are imported."
+    },
+    {
+      "id": "vietnam-travel-marble-mountains",
+      "title": "A walk around Marble Mountains",
+      "url": "https://vietnam.travel/things-to-do/around-marble-mountains",
+      "stableUse": "Marble Mountains is a cave/pagoda attraction near Da Nang; no current operating details are imported."
+    }
+  ],
+  "constraints": [
+    "Deferred pilot rows remain REVIEW_ONLY.",
+    "No deferred section copy is imported in this task.",
+    "New linked targets are full source-owned canonical pages, not stubs.",
+    "Existing canonical Vietnamese titles and page IDs are preserved.",
+    "No audio is generated; new support phrases use planned audio."
+  ]
+}

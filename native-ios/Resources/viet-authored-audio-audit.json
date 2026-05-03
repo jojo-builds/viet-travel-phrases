@@ -1,11 +1,12 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-03T07:25:39.753Z",
+    "generatedAt": "2026-05-03T08:16:31.805Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 750,
+    "editorialSupportPageCount": 32,
     "practiceExpansionPageCount": 1350,
-    "requiredAudioCount": 3373,
-    "missingAudioCount": 2094
+    "requiredAudioCount": 3411,
+    "missingAudioCount": 2126
   },
   "required": [
     {
@@ -15841,6 +15842,326 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-ves-call-taxi-for-me",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d",
+      "text": "Gọi giúp tôi taxi được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-call-taxi-for-me",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-hote-acco-can-you-arrange-a-taxi-for-me-piece-8",
+      "text": "taxi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-ves-call-taxi-for-me",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9",
+      "text": "Cho tôi xuống ở đây được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-call-taxi-for-me",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dia-chi-nay-dung-khong-620d046937",
+      "text": "Địa chỉ này đúng không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-can-you-show-me-politeness",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-anh-chi-chi-giup-toi-duoc-khong-8f310cf83e",
+      "text": "Anh/chị chỉ giúp tôi được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-can-you-show-me-politeness",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-nguyen-van-linh-492eadfaa8",
+      "text": "Cho tôi đến đường Nguyễn Văn Linh.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-can-you-wait-here",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-anh-cho-toi-o-day-duoc-khong-ec56a2d762",
+      "text": "Anh chờ tôi ở đây được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-can-you-wait-here",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cho-toi-588928baee",
+      "text": "chờ tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-ves-can-you-wait-here",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-may-gio-quay-lai-10be0e986d",
+      "text": "Mấy giờ quay lại?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-do-you-speak-english-anh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-anh-noi-tieng-anh-khong-38b15123ba",
+      "text": "Anh nói tiếng Anh không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-drop-me-off-here",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-hinh-nhu-khong-dung-cho-b63d5ef9e3",
+      "text": "Hình như không đúng chỗ.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-drop-near-dragon-bridge",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-cau-rong-858bbe4abc",
+      "text": "Cho tôi xuống gần Cầu Rồng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-drop-near-dragon-bridge",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-di-cau-rong-31d5036c87",
+      "text": "Cho tôi đi Cầu Rồng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-drop-near-dragon-bridge",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127",
+      "text": "Bạn chụp giúp tôi được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-toi-dang-o-duong-vo-nguyen-giap-16506a9333",
+      "text": "Tôi đang ở đường Võ Nguyên Giáp.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-day-co-phai-duong-vo-nguyen-giap-khong-d2fc0ab90a",
+      "text": "Đây có phải đường Võ Nguyên Giáp không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-vo-nguyen-giap-101f4d1608",
+      "text": "Cho tôi đến đường Võ Nguyên Giáp.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-is-this-address-correct",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "v500-poli-basi-yes",
+      "text": "đúng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-ves-is-this-address-correct",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-di-ba-na-hills-7e1fd2f0f0",
+      "text": "Cho tôi đi Bà Nà Hills.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-is-this-bach-dang-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-day-co-phai-duong-bach-dang-khong-9bf71e32a9",
+      "text": "Đây có phải đường Bạch Đằng không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-is-this-bach-dang-street",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-bach-dang-b8999db078",
+      "text": "Cho tôi đến đường Bạch Đằng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-is-this-nguyen-van-linh-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-day-co-phai-duong-nguyen-van-linh-khong-ac81b9008c",
+      "text": "Đây có phải đường Nguyễn Văn Linh không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-not-too-spicy",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-khong-cay-qua-nhe-ecc42633de",
+      "text": "Không cay quá nhé.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-not-too-spicy",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-da-cho-toi-mot-to-bun-bo-hue-f624687fc3",
+      "text": "Dạ, cho tôi một tô bún bò Huế.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-not-too-spicy",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-mon-nay-co-gi-919c3d8876",
+      "text": "Món này có gì?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-da-cho-toi-mot-ve-vao-ngu-hanh-son-7f6e289d9b",
+      "text": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cho-toi-18c6fe1018",
+      "text": "cho tôi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-time-date-book-one-ticket-please-rest",
+      "text": "một vé",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-hai-ve-vao-ngu-hanh-son-83aeec767b",
+      "text": "Hai vé vào Ngũ Hành Sơn.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-tai-xe-cho-o-dau-0b819e85a5",
+      "text": "Tài xế chờ ở đâu?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-bun-cha-portion",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-da-cho-toi-mot-phan-bun-cha-dbdee039d2",
+      "text": "Dạ, cho tôi một phần bún chả.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-bun-cha-portion",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae",
+      "text": "Cho tôi trà đá",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-bun-cha-portion",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-co-mon-nao-noi-tieng-khong-ec75eed66f",
+      "text": "Có món nào nổi tiếng không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-cao-lau-portion",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-da-cho-toi-mot-phan-cao-lau-71867ac448",
+      "text": "Dạ, cho tôi một phần cao lầu.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-cao-lau-portion",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-o-dau-co-cao-lau-ngon-36dffccaf0",
+      "text": "Ở đâu có cao lầu ngon?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-pho-bowl",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-da-cho-toi-mot-to-pho-5e65b6808d",
+      "text": "Dạ, cho tôi một tô phở.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-pho-bowl",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-food-drin-id-like-a-bowl-of-ph-please-piece-7",
+      "text": "phở",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-ves-take-me-to-ba-na-hills",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca",
+      "text": "Cáp treo ở đâu?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-take-me-to-ba-na-hills",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-da-cho-toi-hai-ve-len-ba-na-hills-cb395e159b",
+      "text": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-to-bach-dang-street",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v900-tran-the-app-shows-a-different-route-piece-7",
+      "text": "đường",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-vpe-buy-item-toi-muon-mua-anh-the",
       "sectionID": "hero",
       "kind": "hero",
@@ -17143,14 +17464,6 @@
       "audioKey": "audio-authored-co-thit-bo-khong-eb4b04bfd2",
       "text": "Có thịt bò không?",
       "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-food-has-co-duong-khong",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v900-tran-the-app-shows-a-different-route-piece-7",
-      "text": "đường",
-      "resolved": true
     },
     {
       "pageID": "viet-family-vpe-food-has-co-hai-san-khong",
@@ -22414,14 +22727,6 @@
       "kind": "phrase",
       "audioKey": "audio-authored-cho-toi-rau-song-237f5367e2",
       "text": "Cho tôi rau sống",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-den",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae",
-      "text": "Cho tôi trà đá",
       "resolved": false
     },
     {
@@ -32987,6 +33292,270 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-ves-call-taxi-for-me",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d",
+      "text": "Gọi giúp tôi taxi được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-call-taxi-for-me",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9",
+      "text": "Cho tôi xuống ở đây được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-call-taxi-for-me",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dia-chi-nay-dung-khong-620d046937",
+      "text": "Địa chỉ này đúng không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-can-you-show-me-politeness",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-anh-chi-chi-giup-toi-duoc-khong-8f310cf83e",
+      "text": "Anh/chị chỉ giúp tôi được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-can-you-show-me-politeness",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-nguyen-van-linh-492eadfaa8",
+      "text": "Cho tôi đến đường Nguyễn Văn Linh.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-can-you-wait-here",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-anh-cho-toi-o-day-duoc-khong-ec56a2d762",
+      "text": "Anh chờ tôi ở đây được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-can-you-wait-here",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-may-gio-quay-lai-10be0e986d",
+      "text": "Mấy giờ quay lại?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-do-you-speak-english-anh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-anh-noi-tieng-anh-khong-38b15123ba",
+      "text": "Anh nói tiếng Anh không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-drop-me-off-here",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-hinh-nhu-khong-dung-cho-b63d5ef9e3",
+      "text": "Hình như không đúng chỗ.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-drop-near-dragon-bridge",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-cau-rong-858bbe4abc",
+      "text": "Cho tôi xuống gần Cầu Rồng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-drop-near-dragon-bridge",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-di-cau-rong-31d5036c87",
+      "text": "Cho tôi đi Cầu Rồng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-drop-near-dragon-bridge",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127",
+      "text": "Bạn chụp giúp tôi được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-toi-dang-o-duong-vo-nguyen-giap-16506a9333",
+      "text": "Tôi đang ở đường Võ Nguyên Giáp.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-day-co-phai-duong-vo-nguyen-giap-khong-d2fc0ab90a",
+      "text": "Đây có phải đường Võ Nguyên Giáp không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-vo-nguyen-giap-101f4d1608",
+      "text": "Cho tôi đến đường Võ Nguyên Giáp.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-is-this-address-correct",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-di-ba-na-hills-7e1fd2f0f0",
+      "text": "Cho tôi đi Bà Nà Hills.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-is-this-bach-dang-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-day-co-phai-duong-bach-dang-khong-9bf71e32a9",
+      "text": "Đây có phải đường Bạch Đằng không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-is-this-bach-dang-street",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-bach-dang-b8999db078",
+      "text": "Cho tôi đến đường Bạch Đằng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-is-this-nguyen-van-linh-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-day-co-phai-duong-nguyen-van-linh-khong-ac81b9008c",
+      "text": "Đây có phải đường Nguyễn Văn Linh không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-not-too-spicy",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-khong-cay-qua-nhe-ecc42633de",
+      "text": "Không cay quá nhé.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-not-too-spicy",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-da-cho-toi-mot-to-bun-bo-hue-f624687fc3",
+      "text": "Dạ, cho tôi một tô bún bò Huế.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-not-too-spicy",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-mon-nay-co-gi-919c3d8876",
+      "text": "Món này có gì?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-da-cho-toi-mot-ve-vao-ngu-hanh-son-7f6e289d9b",
+      "text": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-hai-ve-vao-ngu-hanh-son-83aeec767b",
+      "text": "Hai vé vào Ngũ Hành Sơn.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-tai-xe-cho-o-dau-0b819e85a5",
+      "text": "Tài xế chờ ở đâu?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-bun-cha-portion",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-da-cho-toi-mot-phan-bun-cha-dbdee039d2",
+      "text": "Dạ, cho tôi một phần bún chả.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-bun-cha-portion",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae",
+      "text": "Cho tôi trà đá",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-bun-cha-portion",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-co-mon-nao-noi-tieng-khong-ec75eed66f",
+      "text": "Có món nào nổi tiếng không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-cao-lau-portion",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-da-cho-toi-mot-phan-cao-lau-71867ac448",
+      "text": "Dạ, cho tôi một phần cao lầu.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-cao-lau-portion",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-o-dau-co-cao-lau-ngon-36dffccaf0",
+      "text": "Ở đâu có cao lầu ngon?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-order-pho-bowl",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-da-cho-toi-mot-to-pho-5e65b6808d",
+      "text": "Dạ, cho tôi một tô phở.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-take-me-to-ba-na-hills",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca",
+      "text": "Cáp treo ở đâu?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-take-me-to-ba-na-hills",
+      "sectionID": "when-to-use",
+      "kind": "phrase",
+      "audioKey": "audio-authored-da-cho-toi-hai-ve-len-ba-na-hills-cb395e159b",
+      "text": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-vpe-buy-item-toi-muon-mua-anh-the",
       "sectionID": "hero",
       "kind": "hero",
@@ -39208,14 +39777,6 @@
       "kind": "phrase",
       "audioKey": "audio-authored-cho-toi-rau-song-237f5367e2",
       "text": "Cho tôi rau sống",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-den",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae",
-      "text": "Cho tôi trà đá",
       "resolved": false
     },
     {

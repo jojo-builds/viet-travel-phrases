@@ -5,6 +5,11 @@ const path = require("path");
 
 const sourcePath = path.resolve(__dirname, "../../content-draft/viet/phrase-source.csv");
 const cityLibraryPath = path.resolve(__dirname, "../../content-draft/viet/city-library/v1.json");
+const editorialSupportRoot = path.resolve(
+  __dirname,
+  "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001"
+);
+const editorialSupportManifestPath = path.join(editorialSupportRoot, "manifest.json");
 const outputPath = path.resolve(__dirname, "../Resources/viet-phrase-catalog.json");
 
 function parseCSV(text) {
@@ -231,6 +236,52 @@ function loadCityLibraryRecords() {
     });
 }
 
+function loadEditorialSupportRecords() {
+  if (!fs.existsSync(editorialSupportManifestPath)) {
+    return [];
+  }
+
+  const manifest = JSON.parse(fs.readFileSync(editorialSupportManifestPath, "utf8"));
+  const records = (manifest.sourceShards ?? []).flatMap((relativePath) => {
+    const shardPath = path.join(editorialSupportRoot, relativePath);
+    const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
+    return (shard.pages ?? []).map((record) => ({
+      ...record,
+      sourceShard: relativePath,
+    }));
+  }).filter((record) => record.status === "approved");
+
+  return records.map((record) => ({
+    phrase_id: record.phraseID,
+    family_id: record.familyID,
+    scenario_id: record.scenarioID,
+    family_title: record.familyTitle ?? record.englishText,
+    family_summary: record.familySummary ?? record.context,
+    audio_key: record.audioKey ?? "",
+    english_text: record.englishText,
+    target_text: record.targetText,
+    canonical_target_text: record.canonicalTargetText ?? record.targetText,
+    pronunciation: record.pronunciation,
+    access_tier: record.accessTier ?? "premium",
+    variant_role: record.variantRole ?? "say-first",
+    context: record.context,
+    you_may_hear: record.youMayHear ?? "",
+    search_aliases: (record.searchAliases ?? [record.englishText, record.targetText])
+      .filter(Boolean)
+      .join("|"),
+    warning_note_type: "",
+    audio_status: record.audioStatus ?? "planned",
+    emoji: record.emoji ?? "🧭",
+    notes: [
+      `task=${manifest.taskID ?? record.taskID ?? "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001"}`,
+      "editorial-model-support",
+      `support_model=${record.supportModel}`,
+      `support_family=${record.supportFamily}`,
+      record.sourceShard ? `source_shard=${record.sourceShard}` : "",
+    ].filter(Boolean).join("; "),
+  }));
+}
+
 function main() {
   const source = fs.readFileSync(sourcePath, "utf8");
   const rows = parseCSV(source);
@@ -240,7 +291,8 @@ function main() {
     .map((row) => normalizeRow(Object.fromEntries(headers.map((header, index) => [header, row[index] || ""]))))
     .filter((row) => row.status === "approved");
   const cityRecords = loadCityLibraryRecords();
-  const approvedRecords = [...records, ...cityRecords];
+  const editorialSupportRecords = loadEditorialSupportRecords();
+  const approvedRecords = [...records, ...cityRecords, ...editorialSupportRecords];
 
   const scenariosByID = new Map();
   const familiesByID = new Map();
@@ -329,9 +381,11 @@ function main() {
     metadata: {
       source: path.relative(path.dirname(outputPath), sourcePath),
       cityLibrarySource: fs.existsSync(cityLibraryPath) ? path.relative(path.dirname(outputPath), cityLibraryPath) : null,
+      editorialSupportSource: fs.existsSync(editorialSupportManifestPath) ? path.relative(path.dirname(outputPath), editorialSupportRoot) : null,
       phraseCount: phrases.length,
       basePhraseCount: records.length,
       cityPhraseCount: cityRecords.length,
+      editorialSupportPhraseCount: editorialSupportRecords.length,
       familyCount: familiesByID.size,
       scenarioCount: scenariosByID.size,
     },

@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:f01c323d62940784",
-    "generatedAt": "source-hash:f01c323d62940784"
+    "contentVersion": "viet-sqlite-fixture:86c94394d5bdf8f8",
+    "generatedAt": "source-hash:86c94394d5bdf8f8"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "da25c5986463a83b298948e6d2e6aaf89c281154852ab65b300b25dd71a0ebf6"
+      "sha256": "c7367de3bad9aa34e13b8080ed7482005d54fc69690dfdedc79544147782e92d"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "a23caa636d67f6ddd20c560e8f9f7c7f085e0d2c7c6ae6f9b84360c18fc615d7"
+      "sha256": "9ca1cbf20251e6c188530b76e4cd13d61b1cb6f9e0c1fb3fea373c5d475153d1"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -37,7 +37,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "027297d7f82eee205cc093cd660322d2b20ff3f2a03e7345c38d5a7b1c9574b2",
+    "databaseSha256": "f195d6a825cfe2a48155818d4668eed9bb7374f7ef17b785f0841a960b79f641",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -54,52 +54,52 @@
       "ok": true
     },
     "clusters": {
-      "expected": 3027,
-      "actual": 3027,
+      "expected": 3059,
+      "actual": 3059,
       "ok": true
     },
     "phrases": {
-      "expected": 3046,
-      "actual": 3046,
+      "expected": 3078,
+      "actual": 3078,
       "ok": true
     },
     "canonicalPhrasePages": {
-      "expected": 3038,
-      "actual": 3038,
+      "expected": 3070,
+      "actual": 3070,
       "ok": true
     },
     "authoredPagesOrAliases": {
-      "expected": 3038,
-      "actual": 3038,
+      "expected": 3070,
+      "actual": 3070,
       "ok": true
     }
   },
   "generatedCounts": {
     "languagePacks": 1,
     "scenarios": 19,
-    "clusters": 3027,
-    "clusterMembers": 3046,
-    "phrases": 3046,
-    "pages": 3038,
-    "aliases": 3970,
-    "pageCategories": 18179,
-    "sections": 21883,
-    "sectionItems": 43262,
-    "breakdownTokens": 11249,
-    "relations": 27949,
-    "searchDocuments": 3046,
+    "clusters": 3059,
+    "clusterMembers": 3078,
+    "phrases": 3078,
+    "pages": 3070,
+    "aliases": 4011,
+    "pageCategories": 18403,
+    "sections": 22112,
+    "sectionItems": 43677,
+    "breakdownTokens": 11386,
+    "relations": 28160,
+    "searchDocuments": 3078,
     "audioAssets": 3756,
-    "audioUsages": 15093,
+    "audioUsages": 15267,
     "audioTextDedupeRows": 2343,
-    "missingAudioAuditRows": 2094
+    "missingAudioAuditRows": 2126
   },
   "validation": {
     "integrityCheck": "ok",
     "foreignKeyCheckRows": 0,
-    "ftsRowCount": 3046,
+    "ftsRowCount": 3078,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
-    "relationshipWordsEligiblePageCount": 153,
+    "relationshipWordsEligiblePageCount": 158,
     "relationshipWordsEligiblePageIDs": [
       "viet-phrase-acknowledge-da-chao-anh",
       "viet-phrase-acknowledge-da-chao-ba",
@@ -147,6 +147,11 @@
       "viet-phrase-v900-time-date-book-one-child-ticket-please",
       "viet-phrase-v900-unde-repa-can-you-explain-it-in-english",
       "viet-phrase-v900-unde-repa-is-there-someone-who-speaks-english",
+      "viet-phrase-ves-can-you-show-me-politeness",
+      "viet-phrase-ves-can-you-wait-here",
+      "viet-phrase-ves-do-you-speak-english-anh",
+      "viet-phrase-ves-take-me-to-ba-na-hills",
+      "viet-phrase-ves-two-tickets-ba-na-hills",
       "viet-phrase-vpe-buy-item-toi-muon-mua-so-co-la-viet-nam",
       "viet-phrase-vpe-buy-item-toi-muon-mua-thuc-don-tieng-anh",
       "viet-phrase-vpe-buy-item-toi-muon-mua-ve-tre-em",
@@ -302,9 +307,9 @@
     "authoredPhraseItemsNotInCatalog": []
   },
   "canonicalIdentity": {
-    "canonicalPageCount": 3038,
-    "sourcePhraseRowCount": 3046,
-    "phrasesResolvedToCanonicalPages": 3046,
+    "canonicalPageCount": 3070,
+    "sourcePhraseRowCount": 3078,
+    "phrasesResolvedToCanonicalPages": 3078,
     "duplicateNormalizedTargetTextGroupCount": 6,
     "resolvedDuplicateNormalizedTargetTextGroups": [
       {
@@ -389,7 +394,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 27949,
+    "relationCount": 28160,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -405,7 +410,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 13181
+        "count": 13265
       },
       {
         "relationType": "same_need_alt_context",
@@ -413,7 +418,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 14730
+        "count": 14857
       }
     ]
   },
@@ -421,12 +426,12 @@
     "manifestEntries": 3756,
     "uniqueNormalizedSpokenTextCount": 2343,
     "assets": 3756,
-    "usages": 15093,
-    "missingAudioAuditRows": 2094,
-    "plannedMissingAudioAuditRows": 2094,
+    "usages": 15267,
+    "missingAudioAuditRows": 2126,
+    "plannedMissingAudioAuditRows": 2126,
     "releaseBlockingMissingAudioAuditRows": 0,
     "plannedMissingAudioQueue": "docs/audio-queues/viet-planned-missing-audio.csv",
-    "plannedMissingAudioQueueRows": 2094,
+    "plannedMissingAudioQueueRows": 2126,
     "missingAudioAuditSample": [
       {
         "id": "missing-audio:planned:79b1ad1e1fb5094a",
@@ -440,7 +445,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:3aae99ae735fb4e2",
@@ -454,7 +459,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:c2a64011dfc1a6f1",
@@ -468,7 +473,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:d8f114f7f2804631",
@@ -482,7 +487,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:30f0e3a44af6071e",
@@ -496,7 +501,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:f111a1344c310939",
@@ -510,7 +515,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:3df301c73e6ecb77",
@@ -524,7 +529,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:ab104cb99fc5d5df",
@@ -538,7 +543,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:3f21af927bd52cd2",
@@ -552,7 +557,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:5ee6f060b8ea3e87",
@@ -566,7 +571,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:a6f49540395b2c42",
@@ -580,7 +585,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:6e4db03538cf1a6d",
@@ -594,7 +599,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:10a753b68bd5ed32",
@@ -608,7 +613,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:c02fff9952bc471e",
@@ -622,7 +627,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:69eb335f4c1ce8c8",
@@ -636,7 +641,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:e5eff84d214c67c0",
@@ -650,7 +655,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:ef1683f0b60ba20b",
@@ -664,7 +669,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:6e919fd4a0a341ae",
@@ -678,7 +683,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:bfe63f9acde82b1a",
@@ -692,7 +697,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       },
       {
         "id": "missing-audio:planned:bae6f0b121d619ac",
@@ -706,18 +711,20 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:f01c323d62940784"
+        "created_at": "source-hash:86c94394d5bdf8f8"
       }
     ]
   },
   "categoryData": {
-    "authoredCategoryCount": 836,
+    "authoredCategoryCount": 896,
     "authoredCategoryIDs": [
       "actual-landmarks",
+      "address-confirm",
       "advanced",
       "airport-border-arrival",
       "airport-domestic-terminal",
       "arrivals-routes",
+      "ba-na-hills",
       "bathroom-personal-needs",
       "bathroom-shower",
       "beginner",
@@ -727,6 +734,7 @@
       "city-page-kind-place",
       "city-page-kind-restaurant",
       "city-phrases",
+      "confirm-location",
       "content-role-cafe",
       "content-role-dish-anchor",
       "content-role-everyday",
@@ -738,6 +746,13 @@
       "directions-navigation",
       "directions-pickup-point",
       "directions-which-exit",
+      "dish-order-diet",
+      "dragon-bridge",
+      "driver-ready",
+      "driver-ready-phrase",
+      "driver-wait",
+      "drop-off",
+      "editorial-model-support",
       "emergency-embassy",
       "emergency-passport-report",
       "emergency-phone-stolen",
@@ -752,6 +767,7 @@
       "food-has-meat-in-it",
       "food-has-peanuts",
       "food-no-meat",
+      "food-ordering",
       "food-split-bill",
       "food-too-spicy-now",
       "food-which-dish-safe",
@@ -770,6 +786,7 @@
       "help-file-report",
       "help-print-document",
       "help-translate-for-me",
+      "hoi-an-food",
       "hoian",
       "hotel-accommodation",
       "hotel-booking-wrong",
@@ -782,10 +799,14 @@
       "hotel-room-not-ready",
       "hotel-too-noisy",
       "hue",
+      "hue-food",
+      "ingredients",
       "intermediate",
       "landmarks-attractions",
       "local-dishes",
       "local-services-everyday-tasks",
+      "marble-mountains",
+      "menu-help",
       "money-numbers-prices",
       "money-price-changed",
       "money-service-included",
@@ -805,6 +826,9 @@
       "phone-no-signal",
       "phone-otp-not-arriving",
       "phone-password-not-working",
+      "photo-help",
+      "pickup-location",
+      "place-journey",
       "place-kind-airport",
       "place-kind-attraction",
       "place-kind-beach",
@@ -822,7 +846,9 @@
       "place-kind-station",
       "place-kind-street",
       "place-kind-village",
+      "place-navigation",
       "polite-basics",
+      "politeness-tone-cleanup",
       "practical-help-near-places",
       "practice-buy-item",
       "practice-city-destination",
@@ -851,6 +877,7 @@
       "practice-where-place",
       "premium",
       "problems-help",
+      "relationship-follow-up",
       "repair",
       "repair-show-me",
       "repair-simpler-words",
@@ -861,18 +888,55 @@
       "repair-type-phone",
       "repair-which-exit",
       "repair-which-one",
+      "restaurant-live-interaction",
       "restaurants",
+      "return-time",
+      "ride-back",
       "service-print",
       "service-refill",
       "shopping",
       "shopping-exchange",
       "shopping-markets",
+      "show-me",
       "sight-book-in-advance",
+      "sightseeing",
       "sightseeing-activities",
       "small-talk",
       "social-how-long",
       "social-recommend",
       "social-small-talk",
+      "spice",
+      "street-pronouncer",
+      "support-family-address-confirm",
+      "support-family-attraction-navigation",
+      "support-family-dish-finder",
+      "support-family-dish-ordering",
+      "support-family-driver-wait",
+      "support-family-drop-off",
+      "support-family-ingredient-check",
+      "support-family-menu-recommendation",
+      "support-family-photo-help",
+      "support-family-pickup-location",
+      "support-family-relationship-follow-up",
+      "support-family-restaurant-ordering",
+      "support-family-return-time",
+      "support-family-ride-back",
+      "support-family-route-full-sentence",
+      "support-family-show-me",
+      "support-family-spice-check",
+      "support-family-street-confirm",
+      "support-family-street-driver",
+      "support-family-ticket-counter",
+      "support-family-wrong-place",
+      "support-model-dish-order-diet",
+      "support-model-driver-ready-phrase",
+      "support-model-place-journey-navigation",
+      "support-model-place-navigation-photo",
+      "support-model-politeness-tone-cleanup",
+      "support-model-restaurant-live-interaction",
+      "support-model-street-pronouncer",
+      "support-model-ticket-counter",
+      "ticket-counter",
       "time-boarding",
       "time-dates-booking",
       "time-move-later",
@@ -1548,7 +1612,8 @@
       "v900-unde-repa-do-you-mean-today-or-tomorrow",
       "v900-unde-repa-i-think-there-is-a-misunderstanding",
       "v900-unde-repa-im-trying-but-i-dont-know-the-right-words",
-      "v900-unde-repa-is-there-someone-who-speaks-english"
+      "v900-unde-repa-is-there-someone-who-speaks-english",
+      "wrong-place"
     ]
   },
   "notes": [
