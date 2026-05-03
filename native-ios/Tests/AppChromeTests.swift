@@ -742,6 +742,20 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hanoiCollections.first?.route, .city("hanoi"))
     }
 
+    func testSearchCollectionMatchesStayLightweightWhileTyping() {
+        let hotel = BrowseSearchDestinations.matchingCollections(for: "hotel").first?.descriptor
+        let hanoi = BrowseSearchDestinations.matchingCollections(for: "hanoi").first?.descriptor
+
+        XCTAssertEqual(hotel?.route, .category("hotel"))
+        XCTAssertEqual(hanoi?.route, .city("hanoi"))
+        XCTAssertEqual(hotel?.starterItems.count, 0)
+        XCTAssertEqual(hotel?.subcategories.count, 0)
+        XCTAssertEqual(hotel?.exploreShelves.count, 0)
+        XCTAssertEqual(hanoi?.starterItems.count, 0)
+        XCTAssertEqual(hanoi?.subcategories.count, 0)
+        XCTAssertEqual(hanoi?.exploreShelves.count, 0)
+    }
+
     func testForwardSwipeRestoresForwardRoute() {
         var navigation = AppShellNavigationState()
         navigation.openDetail("viet-phrase-hello-chao-anh")

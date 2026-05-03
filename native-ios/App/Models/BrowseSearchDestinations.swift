@@ -555,18 +555,15 @@ enum BrowseSearchDestinations {
 
         let categoryRoutes = allCategoryDestinations
             .filter { destination in
-                let categoryText = destination.categoryIDs
-                    .compactMap { PhraseCatalog.category(withID: $0)?.title }
-                    .joined(separator: " ")
                 return collectionTextMatches(
                     query: normalizedQuery,
-                    text: "\(destination.title) \(destination.subtitle) \(destination.sampleQuery) \(categoryText)"
+                    text: "\(destination.title) \(destination.subtitle) \(destination.sampleQuery) \(destination.id) \(destination.categoryIDs.joined(separator: " "))"
                 )
             }
             .map(\.collectionRoute)
 
         return uniqueRoutes(categoryRoutes + cityRoutes)
-            .compactMap(collectionDescriptor(for:))
+            .compactMap(searchCollectionDescriptor(for:))
             .map(BrowseSearchCollectionMatch.init(descriptor:))
     }
 
@@ -610,6 +607,63 @@ enum BrowseSearchDestinations {
 
     private static var allCategoryDestinations: [BrowseDestination] {
         situations + startHere + phraseFamilies
+    }
+
+    private static func searchCollectionDescriptor(for route: BrowseCollectionRoute) -> BrowseCollectionDescriptor? {
+        switch route {
+        case .category(let id):
+            return searchCategoryDescriptor(id: id)
+        case .city(let id):
+            return searchCityDescriptor(id: id)
+        }
+    }
+
+    private static func searchCategoryDescriptor(id: String) -> BrowseCollectionDescriptor? {
+        guard let destination = allCategoryDestinations.first(where: { $0.id == id }) else {
+            return nil
+        }
+
+        let title = collectionTitle(for: id, fallback: destination.title)
+        return BrowseCollectionDescriptor(
+            route: .category(id),
+            title: title,
+            subtitle: collectionSubtitle(for: id, fallback: destination.subtitle),
+            eyebrow: "SPEAKLOCAL VIETNAM",
+            mastheadImageName: mastheadImageName(for: .category(id)),
+            symbolName: destination.symbolName,
+            tintName: destination.tintName,
+            subcategories: [],
+            starterTitle: starterTitle(for: id),
+            starterItems: [],
+            practiceTitle: "Practice \(title)",
+            practiceSubtitle: practiceSubtitle(for: title),
+            practiceAction: .addStarterPages([]),
+            exploreShelves: []
+        )
+    }
+
+    private static func searchCityDescriptor(id: String) -> BrowseCollectionDescriptor? {
+        guard let city = cityShortcuts.first(where: { $0.id == id }) else {
+            return nil
+        }
+
+        let title = city.title == "Ho Chi Minh City" ? "Saigon" : city.title
+        return BrowseCollectionDescriptor(
+            route: .city(id),
+            title: title,
+            subtitle: citySubtitle(for: id),
+            eyebrow: "SPEAKLOCAL VIETNAM",
+            mastheadImageName: mastheadImageName(for: .city(id)),
+            symbolName: city.symbolName,
+            tintName: city.tintName,
+            subcategories: [],
+            starterTitle: "Start in \(title)",
+            starterItems: [],
+            practiceTitle: "Practice \(title)",
+            practiceSubtitle: "City phrases in a quick practice loop.",
+            practiceAction: cityPracticeAction(for: id),
+            exploreShelves: []
+        )
     }
 
     private static func makeCategoryDescriptor(id: String) -> BrowseCollectionDescriptor? {

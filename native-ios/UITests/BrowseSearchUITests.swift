@@ -85,6 +85,28 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertEqual(app.keyboards.count, 0)
     }
 
+    func testProgressiveSearchTypingAndDeletingKeepsFieldResponsive() {
+        let app = launchApp(arguments: ["--search"])
+        let field = app.textFields["AppChrome.SearchField"]
+
+        XCTAssertTrue(field.waitForExistence(timeout: 4))
+        field.tap()
+        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
+
+        for query in ["h", "ho", "hot", "hote", "hotel"] {
+            field.typeText(String(query.last!))
+            XCTAssertTrue(app.staticTexts["Results for \(query)"].waitForExistence(timeout: 3))
+        }
+
+        for query in ["hote", "hot", "ho", "h"] {
+            field.typeText(XCUIKeyboardKey.delete.rawValue)
+            XCTAssertTrue(app.staticTexts["Results for \(query)"].waitForExistence(timeout: 3))
+        }
+
+        field.typeText("a")
+        XCTAssertTrue(app.staticTexts["Results for ha"].waitForExistence(timeout: 3))
+    }
+
     private func launchApp(arguments: [String] = []) -> XCUIApplication {
         let app = XCUIApplication()
         app.launchArguments = arguments

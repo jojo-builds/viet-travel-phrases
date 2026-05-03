@@ -37,22 +37,24 @@ struct SearchPageView: View {
     }
 
     var body: some View {
+        let results = SearchPageResults(query: trimmedQuery)
+
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
 
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
-                    header
+                    header(results: results)
 
-                    if trimmedQuery.isEmpty {
+                    if results.query.isEmpty {
                         if effectiveFieldFocused {
                             focusedContent
                         } else {
                             defaultContent
                         }
-                    } else if hasResults {
-                        resultsContent
+                    } else if results.hasResults {
+                        resultsContent(results: results)
                     } else {
                         recoveryContent
                     }
@@ -83,39 +85,7 @@ struct SearchPageView: View {
         query.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    private var phraseResults: [BrowseSearchPhraseItem] {
-        BrowseSearchDestinations.searchResults(for: trimmedQuery, limit: 8)
-    }
-
-    private var collectionResults: [BrowseSearchCollectionMatch] {
-        BrowseSearchDestinations.matchingCollections(for: trimmedQuery)
-    }
-
-    private var cityResults: [BrowseCityShortcut] {
-        BrowseSearchDestinations.matchingCities(for: trimmedQuery)
-    }
-
-    private var hasResults: Bool {
-        !collectionResults.isEmpty || !phraseResults.isEmpty || !cityResults.isEmpty
-    }
-
-    private var headerTitle: String {
-        guard !trimmedQuery.isEmpty else {
-            return "Search"
-        }
-
-        return hasResults ? "Results for \(trimmedQuery)" : "No exact match"
-    }
-
-    private var headerSubtitle: String {
-        guard !trimmedQuery.isEmpty else {
-            return "Find phrases by English, Vietnamese, situation, or what you want to do next."
-        }
-
-        return hasResults ? "Here are the most helpful matches." : "Try a nearby travel need or browse by situation."
-    }
-
-    private var header: some View {
+    private func header(results: SearchPageResults) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             HeroMastheadImage()
                 .padding(.horizontal, -SearchPageLayout.horizontalPadding)
@@ -135,7 +105,7 @@ struct SearchPageView: View {
             }
             .padding(.top, 14)
 
-            Text(headerTitle)
+            Text(results.headerTitle)
                 .font(.system(size: 42, weight: .black, design: .serif))
                 .foregroundStyle(.primary)
                 .lineLimit(2)
@@ -143,7 +113,7 @@ struct SearchPageView: View {
                 .padding(.top, 14)
                 .accessibilityIdentifier("Search.Title")
 
-            Text(headerSubtitle)
+            Text(results.headerSubtitle)
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(.secondary)
                 .lineSpacing(3)
@@ -199,24 +169,24 @@ struct SearchPageView: View {
         }
     }
 
-    private var resultsContent: some View {
+    private func resultsContent(results: SearchPageResults) -> some View {
         VStack(alignment: .leading, spacing: 24) {
             resultFilters
 
-            if selectedFilter.includesCategories, !collectionResults.isEmpty {
+            if selectedFilter.includesCategories, !results.collectionResults.isEmpty {
                 SearchSection(title: "Best match") {
                     LazyVStack(spacing: 12) {
-                        ForEach(collectionResults.prefix(3)) { match in
+                        ForEach(results.collectionResults.prefix(3)) { match in
                             SearchCollectionCard(match: match, onOpenCollection: onOpenCollection)
                         }
                     }
                 }
             }
 
-            if selectedFilter.includesPhrases, !phraseResults.isEmpty {
+            if selectedFilter.includesPhrases, !results.phraseResults.isEmpty {
                 SearchSection(title: "Best matches") {
                     LazyVStack(spacing: 10) {
-                        ForEach(phraseResults.prefix(5)) { item in
+                        ForEach(results.phraseResults.prefix(5)) { item in
                             SearchPhraseRow(item: item, onOpenDetail: onOpenDetail)
                         }
                     }
@@ -225,13 +195,13 @@ struct SearchPageView: View {
                 }
             }
 
-            if selectedFilter.includesCities, !cityResults.isEmpty {
+            if selectedFilter.includesCities, !results.cityResults.isEmpty {
                 SearchSection(title: "Cities") {
-                    cityShortcutRow(cities: cityResults)
+                    cityShortcutRow(cities: results.cityResults)
                 }
             }
 
-            relatedSearches
+            relatedSearches(query: results.query)
         }
     }
 
@@ -333,14 +303,14 @@ struct SearchPageView: View {
         .scrollClipDisabled()
     }
 
-    private var relatedSearches: some View {
-        SearchChipWrap(title: "Related searches", chips: relatedSearchChips) { chip in
+    private func relatedSearches(query: String) -> some View {
+        SearchChipWrap(title: "Related searches", chips: relatedSearchChips(for: query)) { chip in
             onSearchQuery(chip)
         }
     }
 
-    private var relatedSearchChips: [String] {
-        let normalized = trimmedQuery.lowercased()
+    private func relatedSearchChips(for query: String) -> [String] {
+        let normalized = query.lowercased()
         if normalized.contains("hotel") {
             return ["taxi to hotel", "late checkout", "breakfast time"]
         }
@@ -392,6 +362,48 @@ struct SearchPageView: View {
             .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
         }
+    }
+}
+
+private struct SearchPageResults {
+    let query: String
+    let phraseResults: [BrowseSearchPhraseItem]
+    let collectionResults: [BrowseSearchCollectionMatch]
+    let cityResults: [BrowseCityShortcut]
+
+    init(query: String) {
+        self.query = query
+
+        guard !query.isEmpty else {
+            phraseResults = []
+            collectionResults = []
+            cityResults = []
+            return
+        }
+
+        phraseResults = BrowseSearchDestinations.searchResults(for: query, limit: 8)
+        collectionResults = BrowseSearchDestinations.matchingCollections(for: query)
+        cityResults = BrowseSearchDestinations.matchingCities(for: query)
+    }
+
+    var hasResults: Bool {
+        !collectionResults.isEmpty || !phraseResults.isEmpty || !cityResults.isEmpty
+    }
+
+    var headerTitle: String {
+        guard !query.isEmpty else {
+            return "Search"
+        }
+
+        return hasResults ? "Results for \(query)" : "No exact match"
+    }
+
+    var headerSubtitle: String {
+        guard !query.isEmpty else {
+            return "Find phrases by English, Vietnamese, situation, or what you want to do next."
+        }
+
+        return hasResults ? "Here are the most helpful matches." : "Try a nearby travel need or browse by situation."
     }
 }
 
