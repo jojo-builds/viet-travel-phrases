@@ -2,7 +2,9 @@
 
 Status: done
 
-Commit hash: `8c797730fb42c94bf2b49570fb3a286ad1d1b993`
+Implementation commit hash: `b28525eeb8940d644e2aff587626b4c2153e7973`
+
+Closeout commit hash: recorded in the final thread report after this artifact is committed.
 
 ## Accepted Approval
 
