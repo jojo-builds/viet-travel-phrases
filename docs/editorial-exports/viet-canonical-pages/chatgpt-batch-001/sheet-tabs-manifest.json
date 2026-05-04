@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "speaklocal.viet.chatgpt-editorial-batch.v1",
+  "taskID": "TASK-VIET-CHATGPT-EDITORIAL-BATCH-001",
+  "batchID": "chatgpt-batch-001",
+  "spreadsheet": {
+    "id": "1mxsk9O6kuUhekBWhaNlbKH_n4innteBXtYZ4qmu1SOU",
+    "title": "SpeakLocal Viet Canonical Pages Editorial Export 2026-05-03 v2",
+    "url": "https://docs.google.com/spreadsheets/d/1mxsk9O6kuUhekBWhaNlbKH_n4innteBXtYZ4qmu1SOU/edit"
+  },
+  "tabs": [
+    {
+      "tab_name": "batch_001_pages",
+      "source_csv": "pages.csv",
+      "row_count": 25,
+      "column_count": 56,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_sections",
+      "source_csv": "sections.csv",
+      "row_count": 216,
+      "column_count": 18,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_phrase_rows",
+      "source_csv": "phrase_rows.csv",
+      "row_count": 261,
+      "column_count": 23,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_breakdowns",
+      "source_csv": "breakdowns.csv",
+      "row_count": 88,
+      "column_count": 16,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_relationships",
+      "source_csv": "relationships.csv",
+      "row_count": 223,
+      "column_count": 23,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_renderer_directives",
+      "source_csv": "renderer_directives.csv",
+      "row_count": 25,
+      "column_count": 20,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_asset_directives",
+      "source_csv": "asset_directives.csv",
+      "row_count": 25,
+      "column_count": 15,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_validator_rules",
+      "source_csv": "validator_rules.csv",
+      "row_count": 10,
+      "column_count": 9,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_review_notes",
+      "source_csv": "review_notes.csv",
+      "row_count": 25,
+      "column_count": 16,
+      "purpose": "source_snapshot"
+    },
+    {
+      "tab_name": "batch_001_page_patch",
+      "source_csv": "page_patch.csv",
+      "row_count": 25,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_section_patch",
+      "source_csv": "section_patch.csv",
+      "row_count": 216,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_phrase_row_patch",
+      "source_csv": "phrase_row_patch.csv",
+      "row_count": 261,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_breakdown_patch",
+      "source_csv": "breakdown_patch.csv",
+      "row_count": 88,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_relationship_reorder_patch",
+      "source_csv": "relationship_reorder_patch.csv",
+      "row_count": 223,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_renderer_directives_patch",
+      "source_csv": "renderer_directives_patch.csv",
+      "row_count": 25,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_asset_directives_patch",
+      "source_csv": "asset_directives_patch.csv",
+      "row_count": 25,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_validator_rules_patch",
+      "source_csv": "validator_rules_patch.csv",
+      "row_count": 10,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_questions_for_jojo",
+      "source_csv": "questions_for_jojo.csv",
+      "row_count": 25,
+      "column_count": 17,
+      "purpose": "patch_template"
+    },
+    {
+      "tab_name": "batch_001_schema_version",
+      "source_csv": "schema_version.csv",
+      "row_count": 20,
+      "column_count": 2,
+      "purpose": "source_snapshot"
+    }
+  ]
+}

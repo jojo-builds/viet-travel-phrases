@@ -1,0 +1,82 @@
+[
+  {
+    "key": "schemaVersion",
+    "value": "speaklocal.viet.chatgpt-editorial-batch.v1"
+  },
+  {
+    "key": "taskID",
+    "value": "TASK-VIET-CHATGPT-EDITORIAL-BATCH-001"
+  },
+  {
+    "key": "batchID",
+    "value": "chatgpt-batch-001"
+  },
+  {
+    "key": "generatedAt",
+    "value": "2026-05-04T13:08:08.696Z"
+  },
+  {
+    "key": "status",
+    "value": "editorial_packet_only_no_import"
+  },
+  {
+    "key": "spreadsheet",
+    "value": "{\"id\":\"1mxsk9O6kuUhekBWhaNlbKH_n4innteBXtYZ4qmu1SOU\",\"title\":\"SpeakLocal Viet Canonical Pages Editorial Export 2026-05-03 v2\",\"url\":\"https://docs.google.com/spreadsheets/d/1mxsk9O6kuUhekBWhaNlbKH_n4innteBXtYZ4qmu1SOU/edit\"}"
+  },
+  {
+    "key": "backingSpreadsheet",
+    "value": "{\"id\":\"1nhomn1B9H8vNgCr9TntBAgxF5zvy37WZP_PImX79n4g\",\"url\":\"https://docs.google.com/spreadsheets/d/1nhomn1B9H8vNgCr9TntBAgxF5zvy37WZP_PImX79n4g/edit\",\"title\":\"SpeakLocal Viet ChatGPT Editorial Batch 001\"}"
+  },
+  {
+    "key": "acceptedSteers",
+    "value": "[\"Use batch_001_* tabs in the existing Google Sheet and do not overwrite old snapshot tabs.\",\"Mirror the Sheet-ready packet back to repo CSV/JSON.\",\"Default all patch rows to REVIEW_ONLY.\",\"Include known hard pages from the prior editorial pilot.\",\"Mark Bà Nà Hills as the completed model example/reference.\",\"Add a schema/version manifest for future batches.\"]"
+  },
+  {
+    "key": "selectedPageTarget",
+    "value": "25"
+  },
+  {
+    "key": "requiredHardPhraseIDs",
+    "value": "[\"city-hanoi-place-bun-cha-huong-lien\",\"city-hanoi-place-pho-bat-dan\",\"city-hoian-place-cao-lau-city\",\"city-hue-place-bun-bo-city\",\"city-danang-place-ba-na-hills\",\"city-danang-place-dragon-bridge\",\"city-danang-place-marble-mountains\",\"city-danang-place-son-tra\",\"city-danang-place-bach-dang-street\",\"city-danang-place-nguyen-van-linh-street\",\"city-danang-place-vo-nguyen-giap-street\",\"city-danang-go-ba-na-hills\",\"city-danang-where-ba-na-hills\",\"city-danang-ticket-marble-mountains\",\"city-danang-go-dragon-bridge\",\"city-danang-near-nguyen-van-linh-street\",\"acknowledge-da-chao-anh\"]"
+  },
+  {
+    "key": "referencePhraseIDs",
+    "value": "[\"city-danang-place-ba-na-hills\"]"
+  },
+  {
+    "key": "reviewStatusDefault",
+    "value": "REVIEW_ONLY"
+  },
+  {
+    "key": "importApprovalDefault",
+    "value": "REVIEW_ONLY"
+  },
+  {
+    "key": "importApprovalValueForFutureTasks",
+    "value": "APPROVED_FOR_IMPORT"
+  },
+  {
+    "key": "requiredPatchColumns",
+    "value": "[\"patch_id\",\"page_id\",\"phrase_id\",\"review_status\",\"import_approval\",\"operation\",\"target_id\",\"target_order\",\"current_value\",\"proposed_value\",\"reason_for_change\",\"new_linked_phrase_required\",\"canonical_target_id\",\"audio_policy\",\"asset_policy\",\"validator_rule\",\"jojo_question\"]"
+  },
+  {
+    "key": "snapshotFiles",
+    "value": "[\"pages\",\"sections\",\"phrase_rows\",\"breakdowns\",\"relationships\",\"renderer_directives\",\"asset_directives\",\"validator_rules\",\"review_notes\",\"schema_version\"]"
+  },
+  {
+    "key": "patchFiles",
+    "value": "[\"page_patch\",\"section_patch\",\"phrase_row_patch\",\"breakdown_patch\",\"relationship_reorder_patch\",\"renderer_directives_patch\",\"asset_directives_patch\",\"validator_rules_patch\",\"questions_for_jojo\"]"
+  },
+  {
+    "key": "sheetTabs",
+    "value": "[\"batch_001_pages\",\"batch_001_sections\",\"batch_001_phrase_rows\",\"batch_001_breakdowns\",\"batch_001_relationships\",\"batch_001_renderer_directives\",\"batch_001_asset_directives\",\"batch_001_validator_rules\",\"batch_001_review_notes\",\"batch_001_schema_version\",\"batch_001_page_patch\",\"batch_001_section_patch\",\"batch_001_phrase_row_patch\",\"batch_001_breakdown_patch\",\"batch_001_relationship_reorder_patch\",\"batch_001_renderer_directives_patch\",\"batch_001_asset_directives_patch\",\"batch_001_validator_rules_patch\",\"batch_001_questions_for_jojo\"]"
+  },
+  {
+    "key": "rowCounts",
+    "value": "{\"pages\":25,\"sections\":216,\"phrase_rows\":261,\"breakdowns\":88,\"relationships\":223,\"renderer_directives\":25,\"asset_directives\":25,\"validator_rules\":10,\"review_notes\":25,\"page_patch\":25,\"section_patch\":216,\"phrase_row_patch\":261,\"breakdown_patch\":88,\"relationship_reorder_patch\":223,\"renderer_directives_patch\":25,\"asset_directives_patch\":25,\"validator_rules_patch\":10,\"questions_for_jojo\":25}"
+  },
+  {
+    "key": "boundaries",
+    "value": "[\"Do not author/import final listing copy in this task.\",\"Do not create new canonical pages.\",\"Do not generate or add audio/images.\",\"Do not touch native-ios/App/**.\",\"Do not touch native-ios/Resources/Audio/**.\",\"Do not modify generated Viet runtime resources.\"]"
+  }
+]

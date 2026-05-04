@@ -1,0 +1,112 @@
+[
+  {
+    "rule_id": "batch_contract",
+    "sort_order": 1,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "Patch files must preserve required columns and default to REVIEW_ONLY until Jojo approval.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "canonical_identity",
+    "sort_order": 2,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "Patch rows may not change page_id or phrase_id unless a separate explicit source-owned canonical-row proposal exists.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "no_import_this_task",
+    "sort_order": 3,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "This batch may not contain APPROVED_FOR_IMPORT values at creation time.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "linked_rows",
+    "sort_order": 4,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "Every visible linked row proposed later must resolve to exactly one canonical page or ask Jojo a question.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "page_kind_fit",
+    "sort_order": 5,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "Place, restaurant, dish, street, route, and relationship/person pages need page-kind-aware copy and section shape.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "proper_names",
+    "sort_order": 6,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "Proper names must not get fake literal breakdowns; use name recognition when no reliable simple translation exists.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "volatile_facts",
+    "sort_order": 7,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "No hours, prices, schedules, awards, best claims, or current policy claims without durable source evidence.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "audio_policy",
+    "sort_order": 8,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "No audio generation; exact audio reuse first, otherwise planned missing audio with disabled speaker state.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "anti_internal_copy",
+    "sort_order": 9,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "No user-facing AI/editorial/generator/validator/internal terminology.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  },
+  {
+    "rule_id": "anti_dense_text",
+    "sort_order": 10,
+    "scope": "chatgpt_batch_001_and_future_import",
+    "current_rule": "Avoid long runs of text-only sections; phrase rows/breakdowns should create learning interaction.",
+    "proposed_validator_rule": "",
+    "proposed_failure_message": "",
+    "reviewer_notes": "",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY"
+  }
+]
