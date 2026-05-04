@@ -101,6 +101,19 @@ Meaningful task cards should ask for one focused read-only peer reviewer near th
 
 Use two reviewers at most when the task has two truly different risk surfaces. Use three-gate review only for rare high-risk work such as release/signing, broad runtime migrations, destructive cleanup, or cross-lane changes. Docs-only or orchestration-only edits can use a self-review checklist instead.
 
+Reviewers must review the actual changed output, not only the task card. For UI/content work, that means the current diff plus generated resource and rendered simulator/browser/native surface when practical.
+
+Use this issue taxonomy:
+
+- `HARD_BLOCK`: shipping the task would be broken, misleading, legally risky, outside scope, or worse than the current app.
+- `SAFE_FIX_NOW`: fix it inside this task before closeout.
+- `FOLLOW_UP`: a real improvement, but separable from the safe work in scope.
+- `ACCEPTED_TEMPORARY_RISK`: an imperfection explicitly allowed by the task or current steering.
+
+Do not block a safe improvement because of an adjacent follow-up. If the copy/import/runtime work passes but a separate asset, audio, or visual polish task remains, commit the safe improvement and write the follow-up instead of preserving weaker live behavior.
+
+Do not send routine review back to Jojo when agent review can answer it. Ask Jojo only for true product, brand, legal/licensing, or language-correctness decisions that the repo, stable sources, and focused reviewer passes cannot resolve.
+
 ## Pre-Jojo Visual QA Gate
 
 Before Jojo is asked to visually test a user-facing change, send it through `Tester / QA` when practical.
