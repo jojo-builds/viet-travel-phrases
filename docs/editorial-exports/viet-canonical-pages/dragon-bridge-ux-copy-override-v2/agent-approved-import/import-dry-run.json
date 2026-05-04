@@ -1,0 +1,104 @@
+{
+  "taskID": "TASK-VIET-DRAGON-BRIDGE-LANDMARK-UX-OVERRIDE-001",
+  "mode": "dry-run",
+  "incomingRoot": "docs/editorial-exports/viet-canonical-pages/dragon-bridge-ux-copy-override-v2/incoming-chatgpt/completed-patch-files",
+  "approvalPath": "docs/editorial-exports/viet-canonical-pages/dragon-bridge-ux-copy-override-v2/agent-approved-import/approval-overlay.json",
+  "rawRowCounts": {
+    "page_patch": 1,
+    "section_patch": 11,
+    "phrase_row_patch": 8,
+    "renderer_directives_patch": 1,
+    "validator_rules_patch": 3
+  },
+  "approvedPageCount": 1,
+  "importedPageCount": 1,
+  "skippedPageCount": 0,
+  "imported": [
+    {
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "page_id": "viet-family-city-danang-place-dragon-bridge",
+      "patch_id": "B001-UXFIX-DRAGON-PAGE-001",
+      "source_path": "content-draft/viet/city-library/v1.json",
+      "source_lane": "city-library",
+      "changed": false,
+      "section_count": 8,
+      "phrase_row_count": 8,
+      "renderer_directive_count": 1,
+      "validator_rule_count": 3
+    }
+  ],
+  "skipped": [],
+  "pageIDMismatches": [
+    {
+      "patch_id": "B001-UXFIX-DRAGON-PAGE-001",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-place-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-place-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-UXFIX-DRAGON-ROW-001",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-place-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-place-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-place-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-UXFIX-DRAGON-ROW-002",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-go-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-go-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-go-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-UXFIX-DRAGON-ROW-003",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-where-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-where-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-where-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-UXFIX-DRAGON-ROW-004",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "ves-drop-near-dragon-bridge",
+      "proposed_page_id": "viet-phrase-ves-drop-near-dragon-bridge",
+      "current_page_id": "viet-family-ves-drop-near-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-UXFIX-DRAGON-ROW-005",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-stop-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-stop-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-stop-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-UXFIX-DRAGON-ROW-006",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "ves-take-photo-for-me",
+      "proposed_page_id": "viet-phrase-ves-take-photo-for-me",
+      "current_page_id": "viet-family-ves-take-photo-for-me",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-UXFIX-DRAGON-ROW-007",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-atm-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-atm-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-atm-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-UXFIX-DRAGON-ROW-008",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-eat-near-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-eat-near-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-eat-near-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    }
+  ]
+}

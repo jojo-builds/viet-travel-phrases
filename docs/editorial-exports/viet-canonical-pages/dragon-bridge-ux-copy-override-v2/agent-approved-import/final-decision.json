@@ -1,0 +1,25 @@
+{
+  "taskID": "TASK-VIET-DRAGON-BRIDGE-LANDMARK-UX-OVERRIDE-001",
+  "finalStatus": "BLOCKED_NOT_IMPORTED",
+  "decisionAt": "2026-05-05T00:00:00+07:00",
+  "summary": "Traveler/editorial and canonical/import safety gates approved the patch, but the required live rendered-page review blocked because the page still used a generic Vietnam masthead image. The task card forbids adding or replacing images, and no existing Dragon Bridge-specific asset was available.",
+  "sourceRuntimeImportCommitted": false,
+  "blockedBy": [
+    {
+      "gate": "live-rendered-page-review",
+      "reason": "Top of the landmark page does not visually identify Dragon Bridge / Cầu Rồng because only the generic Vietnam masthead is available."
+    }
+  ],
+  "acceptedPreLiveEvidence": [
+    "traveler-editorial-review.md",
+    "canonical-import-safety-review.md",
+    "import-dry-run.json",
+    "import-apply.json"
+  ],
+  "screenshots": [
+    "docs/task-results/assets/TASK-VIET-DRAGON-BRIDGE-LANDMARK-UX-OVERRIDE-001/dragon-bridge-top.jpg",
+    "docs/task-results/assets/TASK-VIET-DRAGON-BRIDGE-LANDMARK-UX-OVERRIDE-001/dragon-bridge-mid.jpg",
+    "docs/task-results/assets/TASK-VIET-DRAGON-BRIDGE-LANDMARK-UX-OVERRIDE-001/dragon-bridge-lower.jpg"
+  ],
+  "recommendedNextAction": "Approve or add a production-quality Dragon Bridge hero asset, then rerun the Dragon Bridge UX override import and live rendered-page review."
+}

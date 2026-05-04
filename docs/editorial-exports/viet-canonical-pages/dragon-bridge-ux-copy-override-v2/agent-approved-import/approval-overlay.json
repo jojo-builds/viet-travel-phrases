@@ -1,0 +1,41 @@
+{
+  "taskID": "TASK-VIET-DRAGON-BRIDGE-LANDMARK-UX-OVERRIDE-001",
+  "approvalMode": "agent-gated",
+  "sourcePatch": "dragon-bridge-ux-copy-override-v2/incoming-chatgpt/completed-patch-files",
+  "rawPatchPolicy": "preserve REVIEW_ONLY incoming files unchanged",
+  "preLiveReviewApprovedPages": [
+    {
+      "approval_id": "DRAGON-UX-AGENT-APPROVED-001",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "import_status": "AGENT_APPROVED_PENDING_LIVE_REVIEW",
+      "approved_by": "traveler-editorial-review+canonical-import-safety-review",
+      "approved_at": "2026-05-05T00:00:00+07:00",
+      "reason": "Passed traveler/editorial quality and canonical/import safety gates before the required live rendered-page gate."
+    }
+  ],
+  "skippedPages": [],
+  "guardrails": [
+    {
+      "id": "ban_internal_place_copy_terms",
+      "terms": [
+        "anchor",
+        "place name",
+        "useful moments",
+        "where-question",
+        "route phrase",
+        "connect to",
+        "this page",
+        "relationship rows"
+      ],
+      "scope": "Dragon Bridge rendered user-facing landmark copy and landmark-action-page validator guard"
+    },
+    {
+      "id": "landmark_page_task_headings",
+      "scope": "Dragon Bridge rendered section order and city-library landmark-action-page validator guard"
+    },
+    {
+      "id": "plain_traveler_sentence_test",
+      "scope": "read-only reviewer gate plus result evidence"
+    }
+  ]
+}
