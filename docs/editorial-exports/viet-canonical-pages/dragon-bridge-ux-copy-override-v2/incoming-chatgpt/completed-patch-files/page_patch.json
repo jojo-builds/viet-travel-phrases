@@ -1,0 +1,21 @@
+[
+  {
+    "patch_id": "B001-UXFIX-DRAGON-PAGE-001",
+    "page_id": "viet-phrase-city-danang-place-dragon-bridge",
+    "phrase_id": "city-danang-place-dragon-bridge",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY",
+    "operation": "UPSERT_PAGE_METADATA_REVIEW_ONLY",
+    "target_id": "viet-phrase-city-danang-place-dragon-bridge",
+    "target_order": "1",
+    "current_value": "{\"template_profile\": \"place-navigation-and-recovery\", \"cta_label\": \"Add to practice\"}",
+    "proposed_value": "{\"summary\": \"A practical Dragon Bridge guide for getting there, asking where it is, asking for a photo, and meeting or getting picked up nearby.\", \"template_profile\": \"landmark-action-page\", \"proposed_section_order\": [\"at-glance\", \"quick-say\", \"getting-there\", \"at-the-bridge\", \"pickup-nearby\", \"name-meaning\", \"good-to-know\", \"explore-next\"], \"suppressed_sections\": [\"place-brief\", \"use-it-with\", \"when-to-use\"], \"cta_label\": \"Practice this place\"}",
+    "reason_for_change": "Replace abstract/internal landmark framing with plain traveler tasks and remove generic section headings.",
+    "new_linked_phrase_required": "",
+    "canonical_target_id": "",
+    "audio_policy": "NO_AUDIO_GENERATION_REUSE_OR_QUEUE",
+    "asset_policy": "",
+    "validator_rule": "",
+    "jojo_question": ""
+  }
+]

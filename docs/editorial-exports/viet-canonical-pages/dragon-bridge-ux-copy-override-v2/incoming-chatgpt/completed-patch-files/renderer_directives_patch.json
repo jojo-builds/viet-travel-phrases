@@ -1,0 +1,21 @@
+[
+  {
+    "patch_id": "B001-UXFIX-DRAGON-REN-001",
+    "page_id": "viet-phrase-city-danang-place-dragon-bridge",
+    "phrase_id": "city-danang-place-dragon-bridge",
+    "review_status": "REVIEW_ONLY",
+    "import_approval": "REVIEW_ONLY",
+    "operation": "UPSERT_RENDERER_DIRECTIVE_REVIEW_ONLY",
+    "target_id": "viet-phrase-city-danang-place-dragon-bridge",
+    "target_order": "1",
+    "current_value": "",
+    "proposed_value": "{\"template_profile\": \"landmark-action-page\", \"section_order\": [\"at-glance\", \"quick-say\", \"getting-there\", \"at-the-bridge\", \"pickup-nearby\", \"name-meaning\", \"good-to-know\", \"explore-next\"], \"suppressed_sections\": [\"place-brief\", \"use-it-with\", \"when-to-use\"], \"standard_row_pattern\": \"speaker_left|phrase_text|english_subtitle|chevron_right\", \"audio_controls\": \"audio_output_only_no_microphone_no_try_saying\", \"copy_style\": \"plain_traveler_tasks_no_internal_labels\", \"hide_or_deemphasize_missing_audio\": true, \"bottom_safe_area_padding_required\": true, \"page_behavior\": \"self-contained_practical_landmark_guide_with_optional_deep_link_rows\"}",
+    "reason_for_change": "Renderer should support task-based landmark sections instead of generic article/listing section labels.",
+    "new_linked_phrase_required": "",
+    "canonical_target_id": "",
+    "audio_policy": "NO_AUDIO_GENERATION_REUSE_OR_QUEUE",
+    "asset_policy": "",
+    "validator_rule": "",
+    "jojo_question": ""
+  }
+]
