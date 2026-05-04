@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "speaklocal.viet.editorial-patch.v2",
+  "taskID": "TASK-VIET-BA-NA-HILLS-JOURNEY-PATCH-001",
+  "createdAt": "2026-05-04",
+  "notes": [
+    "SQLite/app runtime and the task card use viet-phrase-city-danang-place-ba-na-hills as the canonical page ID.",
+    "The authored listing JSON and catalog family pageID still use viet-family-city-danang-place-ba-na-hills for the same phrase source; this patch does not create another page.",
+    "This patch preserves the current runtime canonical page ID, phrase ID, Vietnamese title, and English title."
+  ],
+  "patches": [
+    {
+      "patch_id": "BNH-001",
+      "source_sheet_row": null,
+      "page_id": "viet-phrase-city-danang-place-ba-na-hills",
+      "authored_resource_page_id": "viet-family-city-danang-place-ba-na-hills",
+      "phrase_id": "city-danang-place-ba-na-hills",
+      "pageKind": "place",
+      "placeKind": "landmark",
+      "city_id": "danang",
+      "current_vietnamese": "Bà Nà Hills",
+      "current_english": "Ba Na Hills",
+      "proposed_vietnamese": "Bà Nà Hills",
+      "proposed_english": "Ba Na Hills",
+      "proposed_pronunciation": "bah na hills",
+      "proposed_summary": "A day-trip journey page for Bà Nà Hills: pickup, tickets, cable car, photos, food or drinks, and the return ride.",
+      "proposed_category_tags": "city-guides|danang|landmarks-attractions|beginner|city-page-kind-place|place-kind-landmark|actual-landmarks|journey-page|editorial-pilot|ba-na-hills-journey-v2",
+      "proposed_section_copy": "at-glance | Treat Bà Nà Hills as a day-trip flow, not just a place name. The useful moments are pickup, tickets, cable car, photos, food or drinks, and the return ride. ⏎ --- ⏎ quick-say | Use this at the ticket counter or when asking staff for help. ⏎ --- ⏎ journey-flow | Follow the day trip in order: pickup, tickets, cable car, photos, food or drinks, and return ride. ⏎ --- ⏎ key-phrases | Use these phrases when the trip moves from planning into action. ⏎ --- ⏎ breakdown | Learn the name as recognition. Do not translate the proper name word by word. ⏎ --- ⏎ good-to-know | Ticket rules, hours, and pickup details can change. Keep your ticket or booking screen visible, and confirm where your return ride will meet you. ⏎ --- ⏎ explore-next | Practice the next phrases for getting there, finding the cable car, asking for photos, buying food or drinks, and getting back.",
+      "proposed_breakdown_labels": "Bà Nà -> name recognition | Hills -> English word in the attraction name | Bà Nà Hills -> Ba Na Hills",
+      "proposed_visible_phrase_rows": "pickup: Đi Bà Nà Hills -> Go to Ba Na Hills | ticket: Dạ, cho tôi hai vé lên Bà Nà Hills. -> Two tickets to Ba Na Hills, please. | cable-car: Cáp treo ở đâu? -> Where is the cable car? | photo: Bạn chụp giúp tôi được không? -> Can you take a photo for me? | food-drinks: Cho tôi chai nước -> A bottle of water please | return: Gọi giúp tôi taxi được không? -> Can you call me a taxi?",
+      "editorial_issue_type": "journey_flow_patch",
+      "current_problem": "The current Bà Nà Hills page still feels like a generic place article and leaks editorial/meta wording into traveler-facing copy.",
+      "reviewer_notes": "Use the exact journey-page contract approved for TASK-VIET-BA-NA-HILLS-JOURNEY-PATCH-001.",
+      "review_status": "APPROVED_FOR_IMPORT",
+      "import_approval": "REVIEW_ONLY",
+      "implementation_priority": "P0",
+      "content_model": "place-journey",
+      "needs_research_reason": ""
+    }
+  ]
+}

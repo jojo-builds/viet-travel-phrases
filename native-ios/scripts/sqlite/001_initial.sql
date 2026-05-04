@@ -47,6 +47,7 @@ CREATE TABLE phrase_page (
   summary TEXT NOT NULL,
   icon_name TEXT NOT NULL,
   tint_name TEXT NOT NULL,
+  hero_image_name TEXT,
   page_renderer TEXT NOT NULL DEFAULT 'article-listing',
   completeness_status TEXT NOT NULL,
   is_authored INTEGER NOT NULL DEFAULT 0

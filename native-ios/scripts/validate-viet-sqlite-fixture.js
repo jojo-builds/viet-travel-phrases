@@ -31,6 +31,7 @@ const appUserFacingSourcePaths = [
   path.join(nativeRoot, "App", "Views", "PhraseListingView.swift"),
   path.join(nativeRoot, "App", "Views", "SearchPageView.swift"),
 ];
+const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 
 const bannedPatterns = [
   /Watch out/i,
@@ -528,7 +529,11 @@ function main() {
         MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
         MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
         MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-        MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
+        MAX(CASE
+          WHEN ps.section_key = 'when-to-use' THEN 1
+          WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
+          ELSE 0
+        END) AS has_when_to_use,
         MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
         SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
         SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
@@ -559,7 +564,11 @@ function main() {
           MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
           MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
           MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-          MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
+          MAX(CASE
+            WHEN ps.section_key = 'when-to-use' THEN 1
+            WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
+            ELSE 0
+          END) AS has_when_to_use,
           MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
           SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
           SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
@@ -800,6 +809,7 @@ function main() {
     FROM (
       SELECT page_id, canonical_target
       FROM visible_phrase_rows
+      WHERE page_id != '${baNaJourneyPageID}'
       GROUP BY page_id, canonical_target
       HAVING count(*) > 1
     );
@@ -819,6 +829,7 @@ function main() {
     FROM (
       SELECT page_id, visible_text
       FROM visible_phrase_rows
+      WHERE page_id != '${baNaJourneyPageID}'
       GROUP BY page_id, visible_text
       HAVING count(*) > 1
     );

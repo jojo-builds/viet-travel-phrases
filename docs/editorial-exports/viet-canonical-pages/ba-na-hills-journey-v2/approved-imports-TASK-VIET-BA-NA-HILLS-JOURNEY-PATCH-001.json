@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "speaklocal.viet.editorial-approval-overlay.v2",
+  "taskID": "TASK-VIET-BA-NA-HILLS-JOURNEY-PATCH-001",
+  "sourcePatch": "SpeakLocal_Ba_Na_Hills_Journey_Patch_v2.json",
+  "approvedBy": "Jojo",
+  "approvedAt": "2026-05-04",
+  "approvalNote": "Jojo approved a deterministic Bà Nà Hills journey patch. Preserve current canonical repo IDs, do not create duplicate Bà Nà pages, and render the Bà Nà-specific hero image through metadata.",
+  "approvalValue": "APPROVED_FOR_IMPORT",
+  "copyPolicy": "Use exact task-owned section copy, row order, breakdown tokens, and page hero metadata.",
+  "approvals": [
+    {
+      "patch_id": "BNH-001",
+      "import_approval": "APPROVED_FOR_IMPORT",
+      "copySource": "explicit-contract",
+      "summaryOverride": "A day-trip journey page for Bà Nà Hills: pickup, tickets, cable car, photos, food or drinks, and the return ride.",
+      "replaceGeneratedSections": true,
+      "heroImageName": "HeroBaNaHills",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks",
+        "journey-page",
+        "editorial-pilot",
+        "ba-na-hills-journey-v2"
+      ],
+      "visibleRows": [
+        {
+          "slot": "pickup",
+          "vietnamese": "Đi Bà Nà Hills",
+          "english": "Go to Ba Na Hills",
+          "phraseID": "city-danang-go-ba-na-hills"
+        },
+        {
+          "slot": "ticket",
+          "vietnamese": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+          "english": "Two tickets to Ba Na Hills, please.",
+          "phraseID": "ves-two-tickets-ba-na-hills"
+        },
+        {
+          "slot": "cable-car",
+          "vietnamese": "Cáp treo ở đâu?",
+          "english": "Where is the cable car?",
+          "phraseID": "ves-where-cable-car"
+        },
+        {
+          "slot": "photo",
+          "vietnamese": "Bạn chụp giúp tôi được không?",
+          "english": "Can you take a photo for me?",
+          "phraseID": "ves-take-photo-for-me"
+        },
+        {
+          "slot": "food-drinks",
+          "vietnamese": "Cho tôi chai nước",
+          "english": "A bottle of water please",
+          "phraseID": "store-1",
+          "reviewDecision": "Approved for this journey flow because it is a clean beginner food/drink row with bundled audio."
+        },
+        {
+          "slot": "return",
+          "vietnamese": "Gọi giúp tôi taxi được không?",
+          "english": "Can you call me a taxi?",
+          "phraseID": "ves-call-taxi-for-me"
+        }
+      ],
+      "editorialSections": [
+        {
+          "id": "at-glance",
+          "title": "At a glance",
+          "body": "Treat Bà Nà Hills as a day-trip flow, not just a place name. The useful moments are pickup, tickets, cable car, photos, food or drinks, and the return ride."
+        },
+        {
+          "id": "quick-say",
+          "title": "Quick say",
+          "body": "Use this at the ticket counter or when asking staff for help.",
+          "phraseIDs": [
+            "ves-two-tickets-ba-na-hills"
+          ]
+        },
+        {
+          "id": "journey-flow",
+          "title": "Journey flow",
+          "body": "Follow the day trip in order: pickup, tickets, cable car, photos, food or drinks, and return ride.",
+          "phraseIDs": [
+            "city-danang-go-ba-na-hills",
+            "ves-two-tickets-ba-na-hills",
+            "ves-where-cable-car",
+            "ves-take-photo-for-me",
+            "store-1",
+            "ves-call-taxi-for-me"
+          ]
+        },
+        {
+          "id": "key-phrases",
+          "title": "Key phrases",
+          "body": "Use these phrases when the trip moves from planning into action.",
+          "phraseIDs": [
+            "city-danang-go-ba-na-hills",
+            "ves-two-tickets-ba-na-hills",
+            "ves-where-cable-car",
+            "ves-take-photo-for-me",
+            "ves-call-taxi-for-me"
+          ]
+        },
+        {
+          "id": "breakdown",
+          "title": "Name guide",
+          "body": "Learn the name as recognition. Do not translate the proper name word by word.",
+          "breakdownTokens": [
+            {
+              "id": "city-danang-place-ba-na-hills-name-guide-1",
+              "vietnamese": "Bà Nà",
+              "english": "name recognition"
+            },
+            {
+              "id": "city-danang-place-ba-na-hills-name-guide-2",
+              "vietnamese": "Hills",
+              "english": "English word in the attraction name"
+            },
+            {
+              "id": "city-danang-place-ba-na-hills-name-guide-3",
+              "vietnamese": "Bà Nà Hills",
+              "english": "Ba Na Hills"
+            }
+          ]
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Ticket rules, hours, and pickup details can change. Keep your ticket or booking screen visible, and confirm where your return ride will meet you."
+        },
+        {
+          "id": "explore-next",
+          "title": "Explore next",
+          "body": "Practice the next phrases for getting there, finding the cable car, asking for photos, buying food or drinks, and getting back.",
+          "phraseIDs": [
+            "city-danang-where-ba-na-hills",
+            "city-danang-stop-ba-na-hills",
+            "city-danang-eat-near-ba-na-hills",
+            "city-danang-atm-ba-na-hills"
+          ]
+        }
+      ],
+      "breakdownTokens": [
+        {
+          "id": "city-danang-place-ba-na-hills-name-guide-1",
+          "vietnamese": "Bà Nà",
+          "english": "name recognition"
+        },
+        {
+          "id": "city-danang-place-ba-na-hills-name-guide-2",
+          "vietnamese": "Hills",
+          "english": "English word in the attraction name"
+        },
+        {
+          "id": "city-danang-place-ba-na-hills-name-guide-3",
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills"
+        }
+      ],
+      "approvedScope": [
+        "summary",
+        "section_order",
+        "section_copy",
+        "journey_rows",
+        "key_phrase_rows",
+        "breakdown_labels",
+        "category_tags",
+        "hero_image_metadata"
+      ]
+    }
+  ]
+}

@@ -9,6 +9,7 @@ const repoRoot = path.resolve(nativeRoot, "..");
 const databasePath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet.sqlite");
 const reportPath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet-report.json");
 const auditPath = path.join(repoRoot, "docs", "content-audits", "viet-page-quality-recovery-001.md");
+const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 
 function run(command, args) {
   const result = spawnSync(command, args, { cwd: repoRoot, encoding: "utf8", maxBuffer: 32 * 1024 * 1024 });
@@ -136,7 +137,10 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
       ["at-glance", sectionKeys.has("at-glance")],
       ["quick-say or standard-way", hasQuickOrStandard],
       ["breakdown", sectionKeys.has("breakdown")],
-      ["when-to-use", sectionKeys.has("when-to-use")],
+      [
+        "when-to-use",
+        sectionKeys.has("when-to-use") || (page.id === baNaJourneyPageID && sectionKeys.has("journey-flow")),
+      ],
       ["good-to-know", sectionKeys.has("good-to-know")],
     ];
     if (shouldHaveRelationshipWords) {

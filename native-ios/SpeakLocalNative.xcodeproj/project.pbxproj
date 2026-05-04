@@ -30,6 +30,7 @@
 		9578844B965CC6CF7688AC98 /* GeneratedVietContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */; };
 		9B6D21678818414B65F9EE60 /* melo-early-vietnam-jade.png in Resources */ = {isa = PBXBuildFile; fileRef = 984D2A43AF3229BAB3B464DA /* melo-early-vietnam-jade.png */; };
 		A04D20496F71BA0A1DE68782 /* BrowseCollectionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4A25A462F949B68607A96 /* BrowseCollectionPageView.swift */; };
+		A1BD02DD85DA578C1613D0E9 /* BaNaHillsJourneyProofUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA81625C08A15571CE19A9 /* BaNaHillsJourneyProofUITests.swift */; };
 		A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152EC4AC0563F01164AC24D5 /* SearchPageView.swift */; };
 		A7D9EAC643A14747CC53B62E /* PhrasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */; };
 		AB89E8F8F43D17804FA07FF9 /* AdminChromeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */; };
@@ -72,6 +73,7 @@
 		18EA78216F5959BDB34B09C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E92E39F9AC9626410FF3CDC /* AppChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChrome.swift; sourceTree = "<group>"; };
 		2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeakLocalNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CEA81625C08A15571CE19A9 /* BaNaHillsJourneyProofUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaNaHillsJourneyProofUITests.swift; sourceTree = "<group>"; };
 		310DEDEA3D4E97A9043B8EFD /* BrowseSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSearchUITests.swift; sourceTree = "<group>"; };
 		3C98DE73722F896A42D9AEC1 /* NativeGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeGlass.swift; sourceTree = "<group>"; };
 		46355A6E6495F7453685F1A4 /* SpeakLocalNativeUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SpeakLocalNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 				CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */,
 				895093494D9977421573612F /* AudioTapReliabilityUITests.swift */,
 				63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */,
+				2CEA81625C08A15571CE19A9 /* BaNaHillsJourneyProofUITests.swift */,
 				310DEDEA3D4E97A9043B8EFD /* BrowseSearchUITests.swift */,
 				B883D25427177530402A1885 /* Info.plist */,
 				9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */,
@@ -382,6 +385,7 @@
 			files = (
 				AB89E8F8F43D17804FA07FF9 /* AdminChromeUITests.swift in Sources */,
 				D1B42A9A89737128320F1355 /* AudioTapReliabilityUITests.swift in Sources */,
+				A1BD02DD85DA578C1613D0E9 /* BaNaHillsJourneyProofUITests.swift in Sources */,
 				26351589E274CA9E560ABD21 /* BackSwipeUITests.swift in Sources */,
 				C7A7E47EADADCAA9C0C7B7D1 /* BrowseSearchUITests.swift in Sources */,
 				CDFA70A16B6D74B02494DCA7 /* PracticeUITests.swift in Sources */,

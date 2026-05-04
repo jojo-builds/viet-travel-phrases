@@ -29,6 +29,9 @@ const approvedPatchIDs = new Set([
 ]);
 
 const excludedPatchIDs = new Set(["EP-003", "EP-012", "EP-014", "EP-015"]);
+const supersededPatchIDs = new Map([
+  ["EP-005", "BNH-001"],
+]);
 const internalTravelerFacingPattern = /\b(NEEDS_RESEARCH|volatile|Do not add|Best first sentence|not the trivia|placeholder|fallback|Watch out|repair phrase|Understanding Repair|question marker)\b/i;
 
 function readJSON(filePath) {
@@ -120,11 +123,14 @@ function main() {
     const authoredPage = authoredPageByPhraseID.get(patchRow.phrase_id);
     assert(authoredPage, `${patchID} generated page missing for ${patchRow.phrase_id}`);
     assert(normalize(authoredPage.title) === normalize(patchRow.current_vietnamese), `${patchID} generated title changed`);
-    assert(authoredPage.summary === patchRow.proposed_summary, `${patchID} generated summary did not import proposed summary`);
+    if (!supersededPatchIDs.has(patchID)) {
+      assert(authoredPage.summary === patchRow.proposed_summary, `${patchID} generated summary did not import proposed summary`);
+    }
 
     if (patchRow.phrase_id.startsWith("city-")) {
       const cityRecord = cityPageByID.get(patchRow.phrase_id);
-      assert(cityRecord?.editorialImport?.patchID === patchID, `${patchID} missing city-library editorialImport`);
+      const expectedPatchID = supersededPatchIDs.get(patchID) ?? patchID;
+      assert(cityRecord?.editorialImport?.patchID === expectedPatchID, `${patchID} missing city-library editorialImport`);
       assert(normalize(cityRecord.targetText) === normalize(patchRow.current_vietnamese), `${patchID} city source title changed`);
     }
 

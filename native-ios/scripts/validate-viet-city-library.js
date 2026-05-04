@@ -29,6 +29,7 @@ const minimumSubcategoryPagesPerCity = 8;
 const minimumPlacePagesPerCity = 25;
 const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
 const dishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
+const baNaJourneySourceID = "city-danang-place-ba-na-hills";
 
 function readJSON(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -273,7 +274,9 @@ function main() {
     assert((authoredPage.cityMetadata?.placeKind ?? placeKind) === placeKind, `${page.id} authored placeKind metadata mismatch`);
     assert(catalogPhrase.familyID === page.id, `${page.id} catalog family metadata mismatch`);
     const atAGlance = (authoredPage.sections ?? []).find((section) => section.id === "at-glance");
-    const whenToUse = (authoredPage.sections ?? []).find((section) => section.id === "when-to-use");
+    const whenToUse = (authoredPage.sections ?? []).find((section) =>
+      section.id === "when-to-use" || (page.id === baNaJourneySourceID && section.id === "journey-flow")
+    );
     assert(atAGlance?.body && whenToUse?.body, `${page.id} authored page needs at-glance and when-to-use bodies`);
     assert(
       normalizeText(atAGlance.body) !== normalizeText(whenToUse.body),

@@ -109,7 +109,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(coverage.searchDocumentsWithMissingPageTargets, 0)
         XCTAssertEqual(coverage.audioUsageMismatches, 0)
         XCTAssertEqual(coverage.missingAudioAuditRows, report.audio.missingAudioAuditRows)
-        XCTAssertEqual(report.audio.plannedMissingAudioAuditRows, 750)
+        XCTAssertEqual(report.audio.plannedMissingAudioAuditRows, report.audio.missingAudioAuditRows)
         XCTAssertEqual(report.audio.releaseBlockingMissingAudioAuditRows, 0)
     }
 
@@ -143,9 +143,11 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "quick-say",
             "breakdown",
             "relationship-words",
+            "when-to-use",
             "situational-greetings",
             "common-follow-ups",
             "cultural-note",
+            "good-to-know",
             "explore-next",
         ])
         XCTAssertEqual(page.sections.first { $0.id == "cultural-note" }?.presentation, .tipCallout)

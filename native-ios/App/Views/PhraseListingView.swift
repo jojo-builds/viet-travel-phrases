@@ -181,7 +181,7 @@ struct PhraseArticleTemplateView: View {
 
     private var hero: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HeroMastheadImage()
+                HeroMastheadImage(imageName: page.heroImageName ?? PhrasePageStyle.heroImageName)
 
             VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 8) {

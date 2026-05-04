@@ -360,6 +360,22 @@ function buildEditorialSections(patch, approval, catalogIndex, audioByText) {
   };
 }
 
+function validateEditorialSectionPhraseIDs(approval, catalogIndex) {
+  for (const section of approval.editorialSections ?? []) {
+    for (const phraseID of section.phraseIDs ?? []) {
+      if (!catalogIndex.phraseByID.has(phraseID)) {
+        throw new Error(`${approval.patch_id} section ${section.id} references missing phrase ${phraseID}`);
+      }
+    }
+  }
+  for (const row of approval.visibleRows ?? []) {
+    if (!row.phraseID) continue;
+    if (!catalogIndex.phraseByID.has(row.phraseID)) {
+      throw new Error(`${approval.patch_id} visible row ${row.vietnamese} references missing phrase ${row.phraseID}`);
+    }
+  }
+}
+
 function tokenWithAudio(token, page, oldBreakdown, audioByText) {
   const existing = oldBreakdown.find((item) => normalize(item.vietnamese) === normalize(token.vietnamese));
   const exactAudioKey = audioByText.byExactText.get(audioTextKey(token.vietnamese))
@@ -458,11 +474,13 @@ function applyApprovalToCityRecord(record, patch, approval) {
     taskID: approval.taskID,
     patchID: patch.patch_id,
     approvedAt: approval.approvedAt,
-    sourcePatch: "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
+    sourcePatch: approval.sourcePatch ?? "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
     summary: approval.summaryOverride,
     categoryIDs: approval.categoryIDs ?? [],
     visibleRows: approval.visibleRows ?? [],
     sections: approval.editorialSections ?? [],
+    replaceGeneratedSections: approval.replaceGeneratedSections === true,
+    heroImageName: approval.heroImageName ?? null,
   };
   if (JSON.stringify(record.editorialImport ?? null) === JSON.stringify(nextImport)) {
     return [];
@@ -498,6 +516,7 @@ function main() {
       ...approval,
       taskID: approvalFile.taskID,
       approvedAt: approvalFile.approvedAt,
+      sourcePatch: approvalFile.sourcePatch,
       summaryOverride: approval.summaryOverride ?? (approval.copySource === "pilot-proposed" ? patch.proposed_summary : undefined),
       categoryIDs: approval.categoryIDs ?? (approval.copySource === "pilot-proposed" ? parsePipeRows(patch.proposed_category_tags) : []),
     };
@@ -508,6 +527,7 @@ function main() {
       enrichedApproval.breakdownTokens = enrichedApproval.breakdownTokens ?? editorial.breakdownTokens;
       enrichedApproval.visibleRows = editorial.visibleRows;
     }
+    validateEditorialSectionPhraseIDs(enrichedApproval, catalogIndex);
 
     const source = sources.byPhraseID.get(patch.phrase_id) ?? sources.byPageID.get(patch.page_id);
     const cityRecord = citySource?.byPhraseID.get(patch.phrase_id) ?? null;

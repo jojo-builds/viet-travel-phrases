@@ -786,6 +786,7 @@ final class VietSQLiteLanguagePackRepository {
           pp.summary,
           pp.icon_name,
           pp.tint_name,
+          pp.hero_image_name,
           aa.source_manifest_key
         FROM phrase_page pp
         JOIN phrase p ON p.id = pp.phrase_id
@@ -812,7 +813,8 @@ final class VietSQLiteLanguagePackRepository {
             let summary = Self.stringColumn(statement, index: 5)
             let iconName = Self.stringColumn(statement, index: 6)
             let tintName = AccentTint(rawValue: Self.stringColumn(statement, index: 7)) ?? .gray
-            let audioKey = Self.optionalStringColumn(statement, index: 8)
+            let heroImageName = Self.optionalStringColumn(statement, index: 8)
+            let audioKey = Self.optionalStringColumn(statement, index: 9)
 
             return PhraseDetailPage(
                 id: pageID,
@@ -822,6 +824,7 @@ final class VietSQLiteLanguagePackRepository {
                 summary: summary,
                 iconName: iconName,
                 tintName: tintName,
+                heroImageName: heroImageName,
                 sections: try loadSections(forPageID: pageID),
                 examples: [],
                 audioKey: audioKey,

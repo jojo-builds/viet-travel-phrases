@@ -31,6 +31,7 @@ const relationshipWordPhraseIDs = [
 ];
 const relationshipWordTokens = new Set(["anh", "chị", "em", "ông", "bà", "chú", "cô"]);
 const greetingCategoryIDs = new Set(["greetings", "polite-basics"]);
+const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 const approvedQuickSayShortcutPairs = [
   ["viet-phrase-city-danang-place-ba-na-hills", "viet-phrase-ves-two-tickets-ba-na-hills"],
   ["viet-phrase-city-danang-place-marble-mountains", "viet-phrase-city-danang-ticket-marble-mountains"],
@@ -472,6 +473,7 @@ function main() {
       summary: pageSummaryForPhrase(phrase, authoredPage, family),
       icon_name: authoredPage?.iconName ?? scenario?.symbolName ?? "text.bubble.fill",
       tint_name: authoredPage?.tintName ?? scenario?.tintName ?? "gray",
+      hero_image_name: authoredPage?.heroImageName ?? null,
       page_renderer: "article-listing",
       completeness_status: "deep",
       is_authored: authoredPage ? 1 : 0,
@@ -1271,11 +1273,17 @@ function main() {
         const resolvedPhraseID = resolvedCatalogPhraseIDForAuthoredPhrase(phrase);
         const targetID = resolvedPhraseID ?? `authored:${phrase.id}`;
         const destinationPageID = resolvedPhraseID ? canonicalPageIDForPhrase(resolvedPhraseID) : (phrase.detailPageID ?? null);
+        const allowDuplicateJourneyRow =
+          canonicalPageID === baNaJourneyPageID
+          && ["quick-say", "journey-flow", "key-phrases"].includes(section.id);
         if (
-          (section.id === "explore-next" && destinationPageID && seenAuthoredDestinations.has(destinationPageID))
-          || !claimPagePhraseTarget(canonicalPageID, targetID, destinationPageID)
+          (!allowDuplicateJourneyRow && section.id === "explore-next" && destinationPageID && seenAuthoredDestinations.has(destinationPageID))
+          || (!allowDuplicateJourneyRow && !claimPagePhraseTarget(canonicalPageID, targetID, destinationPageID))
         ) {
           continue;
+        }
+        if (allowDuplicateJourneyRow) {
+          claimPagePhraseTarget(canonicalPageID, `${section.id}:${targetID}`, `${section.id}:${destinationPageID ?? targetID}`);
         }
         sectionItemRows.push({
           id: `${sectionID}:phrase:${itemIndex}:${stableID([phrase.id, phrase.vietnamese, phrase.english])}`,
@@ -1759,7 +1767,7 @@ function main() {
       sort_order: index,
     }))),
     insertRows("phrase", ["id", "language_pack_id", "canonical_phrase_key", "canonical_phrase_id", "target_text", "normalized_target_text", "accentless_target_text", "english_text", "pronunciation", "access_tier", "completeness_status", "audio_status", "source_path", "source_row_id", "sense_key"], phraseRows),
-    insertRows("phrase_page", ["id", "language_pack_id", "phrase_id", "title", "english_title", "summary", "icon_name", "tint_name", "page_renderer", "completeness_status", "is_authored"], pageRows),
+    insertRows("phrase_page", ["id", "language_pack_id", "phrase_id", "title", "english_title", "summary", "icon_name", "tint_name", "hero_image_name", "page_renderer", "completeness_status", "is_authored"], pageRows),
     insertRows("page_alias", ["alias_id", "canonical_page_id", "alias_kind", "source_path"], sortByID(Array.from(aliases.values()).map((alias) => ({ id: alias.alias_id, ...alias })))),
     insertRows("phrase_cluster", ["id", "language_pack_id", "cluster_kind", "title", "summary", "primary_phrase_id", "source_family_id", "source_path"], catalog.families.map((family) => ({
       id: family.id,
@@ -2016,6 +2024,7 @@ function main() {
     )
     SELECT page_id || ': ' || canonical_target || ' in ' || group_concat(section_key, ' | ')
     FROM visible_phrase_rows
+    WHERE page_id != '${baNaJourneyPageID}'
     GROUP BY page_id, canonical_target
     HAVING count(*) > 1
     ORDER BY page_id, canonical_target;
@@ -2033,6 +2042,7 @@ function main() {
     )
     SELECT page_id || ': ' || visible_text || ' in ' || group_concat(section_key, ' | ')
     FROM visible_phrase_rows
+    WHERE page_id != '${baNaJourneyPageID}'
     GROUP BY page_id, visible_text
     HAVING count(*) > 1
     ORDER BY page_id, visible_text;
@@ -2051,7 +2061,11 @@ function main() {
         MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
         MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
         MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-        MAX(CASE WHEN ps.section_key = 'when-to-use' THEN 1 ELSE 0 END) AS has_when_to_use,
+        MAX(CASE
+          WHEN ps.section_key = 'when-to-use' THEN 1
+          WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
+          ELSE 0
+        END) AS has_when_to_use,
         MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
         SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
         SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows

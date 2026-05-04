@@ -2256,7 +2256,10 @@ function applyCityEditorialImport(sections, pageRecord) {
     return sections;
   }
 
-  const nextSections = sections.map((section) => ({ ...section }));
+  const nextSections = editorialImport.replaceGeneratedSections === true
+    ? []
+    : sections.map((section) => ({ ...section }));
+  const shouldReplaceGeneratedSections = editorialImport.replaceGeneratedSections === true;
   const insertBeforeIndex = () => {
     const goodToKnowIndex = nextSections.findIndex((section) => section.id === "good-to-know");
     return goodToKnowIndex === -1 ? nextSections.length : goodToKnowIndex;
@@ -2281,6 +2284,8 @@ function applyCityEditorialImport(sections, pageRecord) {
         ...nextSections[existingIndex],
         ...next,
       };
+    } else if (shouldReplaceGeneratedSections) {
+      nextSections.push(next);
     } else {
       nextSections.splice(insertBeforeIndex(), 0, next);
     }
@@ -2641,6 +2646,7 @@ function cityPageForRecord(pageRecord, context) {
     englishTitle: pageRecord.englishText,
     pronunciation: pageRecord.pronunciation,
     summary: pageRecord.editorialImport?.summary ?? pageRecord.englishText,
+    heroImageName: pageRecord.editorialImport?.heroImageName ?? null,
     iconName: pageKind === "restaurant" ? "fork.knife"
       : pageKind === "dish" ? "takeoutbag.and.cup.and.straw.fill"
         : pageRecord.kind === "place" ? "mappin.and.ellipse" : "map.fill",

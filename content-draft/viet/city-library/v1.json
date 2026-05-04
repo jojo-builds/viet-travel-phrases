@@ -4498,11 +4498,11 @@
       "pageKind": "place",
       "placeKind": "landmark",
       "editorialImport": {
-        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
-        "patchID": "EP-005",
-        "approvedAt": "2026-05-03",
-        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
-        "summary": "A journey page for Bà Nà Hills: confirm the ride, handle tickets, find the cable car, ask for photos, buy food/drinks, and find the return pickup.",
+        "taskID": "TASK-VIET-BA-NA-HILLS-JOURNEY-PATCH-001",
+        "patchID": "BNH-001",
+        "approvedAt": "2026-05-04",
+        "sourcePatch": "SpeakLocal_Ba_Na_Hills_Journey_Patch_v2.json",
+        "summary": "A day-trip journey page for Bà Nà Hills: pickup, tickets, cable car, photos, food or drinks, and the return ride.",
         "categoryIDs": [
           "city-guides",
           "danang",
@@ -4512,13 +4512,20 @@
           "place-kind-landmark",
           "actual-landmarks",
           "journey-page",
-          "editorial-pilot"
+          "editorial-pilot",
+          "ba-na-hills-journey-v2"
         ],
         "visibleRows": [
           {
+            "slot": "pickup",
+            "vietnamese": "Đi Bà Nà Hills",
+            "english": "Go to Ba Na Hills",
+            "phraseID": "city-danang-go-ba-na-hills"
+          },
+          {
             "slot": "ticket",
             "vietnamese": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
-            "english": "Two tickets to Ba Na Hills, please",
+            "english": "Two tickets to Ba Na Hills, please.",
             "phraseID": "ves-two-tickets-ba-na-hills"
           },
           {
@@ -4534,6 +4541,13 @@
             "phraseID": "ves-take-photo-for-me"
           },
           {
+            "slot": "food-drinks",
+            "vietnamese": "Cho tôi chai nước",
+            "english": "A bottle of water please",
+            "phraseID": "store-1",
+            "reviewDecision": "Approved for this journey flow because it is a clean beginner food/drink row with bundled audio."
+          },
+          {
             "slot": "return",
             "vietnamese": "Gọi giúp tôi taxi được không?",
             "english": "Can you call me a taxi?",
@@ -4544,48 +4558,35 @@
           {
             "id": "at-glance",
             "title": "At a glance",
-            "body": "This is not a single place-name card. Treat Bà Nà Hills as a day-trip flow: ride/drop-off, ticket, cable car, photos, food/drinks, and return pickup."
+            "body": "Treat Bà Nà Hills as a day-trip flow, not just a place name. The useful moments are pickup, tickets, cable car, photos, food or drinks, and the return ride."
           },
           {
             "id": "quick-say",
             "title": "Quick say",
-            "body": "Dạ, cho tôi hai vé lên Bà Nà Hills. — Two tickets to Ba Na Hills, please.",
+            "body": "Use this at the ticket counter or when asking staff for help.",
             "phraseIDs": [
               "ves-two-tickets-ba-na-hills"
             ]
           },
           {
-            "id": "breakdown",
-            "title": "Break it down",
-            "body": "Bà Nà Hills is a place name. Learn it as one audio unit, then use it inside ticket, driver, and direction phrases.",
-            "breakdownTokens": [
-              {
-                "id": "city-danang-place-ba-na-hills-editorial-1",
-                "vietnamese": "Bà Nà",
-                "english": "name recognition for the attraction"
-              },
-              {
-                "id": "city-danang-place-ba-na-hills-editorial-2",
-                "vietnamese": "Hills",
-                "english": "English word in the attraction name"
-              },
-              {
-                "id": "city-danang-place-ba-na-hills-editorial-3",
-                "vietnamese": "Bà Nà Hills",
-                "english": "Ba Na Hills"
-              }
-            ]
-          },
-          {
             "id": "journey-flow",
             "title": "Journey flow",
-            "body": "1. Confirm pickup/drop-off. 2. Buy or scan tickets. 3. Find the cable car. 4. Ask for a photo. 5. Buy food/drinks. 6. Find the return ride."
+            "body": "Follow the day trip in order: pickup, tickets, cable car, photos, food or drinks, and return ride.",
+            "phraseIDs": [
+              "city-danang-go-ba-na-hills",
+              "ves-two-tickets-ba-na-hills",
+              "ves-where-cable-car",
+              "ves-take-photo-for-me",
+              "store-1",
+              "ves-call-taxi-for-me"
+            ]
           },
           {
             "id": "key-phrases",
             "title": "Key phrases",
-            "body": "Cáp treo ở đâu? / Bạn chụp giúp tôi được không? / Đi xuống ở đâu? / Gọi giúp tôi taxi được không?",
+            "body": "Use these phrases when the trip moves from planning into action.",
             "phraseIDs": [
+              "city-danang-go-ba-na-hills",
               "ves-two-tickets-ba-na-hills",
               "ves-where-cable-car",
               "ves-take-photo-for-me",
@@ -4593,21 +4594,46 @@
             ]
           },
           {
-            "id": "when-to-use",
-            "title": "When to use it",
-            "body": "Use this before or during the trip, especially when the user needs the next step rather than a description of the attraction."
+            "id": "breakdown",
+            "title": "Name guide",
+            "body": "Learn the name as recognition. Do not translate the proper name word by word.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-place-ba-na-hills-name-guide-1",
+                "vietnamese": "Bà Nà",
+                "english": "name recognition"
+              },
+              {
+                "id": "city-danang-place-ba-na-hills-name-guide-2",
+                "vietnamese": "Hills",
+                "english": "English word in the attraction name"
+              },
+              {
+                "id": "city-danang-place-ba-na-hills-name-guide-3",
+                "vietnamese": "Bà Nà Hills",
+                "english": "Ba Na Hills"
+              }
+            ]
           },
           {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "Keep the page focused on durable next steps: tickets, cable car, photos, food and drinks, and return pickup. Check changing visit details on the official screen or counter."
+            "body": "Ticket rules, hours, and pickup details can change. Keep your ticket or booking screen visible, and confirm where your return ride will meet you."
           },
           {
             "id": "explore-next",
             "title": "Explore next",
-            "body": "Connect to: Go to Bà Nà Hills, where is cable car, one/two tickets, take photo, food/drink, return taxi."
+            "body": "Practice the next phrases for getting there, finding the cable car, asking for photos, buying food or drinks, and getting back.",
+            "phraseIDs": [
+              "city-danang-where-ba-na-hills",
+              "city-danang-stop-ba-na-hills",
+              "city-danang-eat-near-ba-na-hills",
+              "city-danang-atm-ba-na-hills"
+            ]
           }
-        ]
+        ],
+        "replaceGeneratedSections": true,
+        "heroImageName": "HeroBaNaHills"
       }
     },
     {

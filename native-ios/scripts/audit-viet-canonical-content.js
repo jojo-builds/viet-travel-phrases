@@ -11,6 +11,7 @@ const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-list
 const reportPath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet-report.json");
 const outputRoot = path.join(repoRoot, "docs", "content-audits", "viet-canonical-content-audit-001");
 const taskID = "TASK-VIET-CANONICAL-CONTENT-AUDIT-001";
+const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 
 const requiredSectionKeys = new Set([
   "at-glance",
@@ -327,6 +328,9 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
 
   const sectionKeys = new Set(sections.map((section) => section.section_key));
   for (const key of requiredSectionKeys) {
+    if (key === "when-to-use" && page.id === baNaJourneyPageID && sectionKeys.has("journey-flow")) {
+      continue;
+    }
     if (!sectionKeys.has(key)) {
       issues.push(issue(`missing_${key}`, "must_fix", `Missing required ${key} section.`));
     }
