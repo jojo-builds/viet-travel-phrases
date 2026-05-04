@@ -32,6 +32,7 @@ const relationshipWordPhraseIDs = [
 const relationshipWordTokens = new Set(["anh", "chị", "em", "ông", "bà", "chú", "cô"]);
 const greetingCategoryIDs = new Set(["greetings", "polite-basics"]);
 const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
+const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge";
 const approvedQuickSayShortcutPairs = [
   ["viet-phrase-city-danang-place-ba-na-hills", "viet-phrase-ves-two-tickets-ba-na-hills"],
   ["viet-phrase-city-danang-place-marble-mountains", "viet-phrase-city-danang-ticket-marble-mountains"],
@@ -2064,6 +2065,7 @@ function main() {
         MAX(CASE
           WHEN ps.section_key = 'when-to-use' THEN 1
           WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
+          WHEN pp.id = '${dragonBridgeLandmarkPageID}' AND ps.section_key = 'getting-there' THEN 1
           ELSE 0
         END) AS has_when_to_use,
         MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,

@@ -5091,80 +5091,89 @@
       "pageKind": "place",
       "placeKind": "landmark",
       "editorialImport": {
-        "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
-        "patchID": "B001-PAGE-006",
-        "approvedAt": "2026-05-04T16:00:32Z",
-        "approvedBy": "reviewer-a+reviewer-b",
-        "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
-        "summary": "A navigation page for Cầu Rồng: say the landmark name, get there, ask where it is, request a photo, and manage pickup nearby.",
+        "taskID": "TASK-VIET-DRAGON-BRIDGE-LANDMARK-COPY-IMPORT-001",
+        "patchID": "B001-UXFIX-DRAGON-PAGE-001",
+        "approvedAt": "2026-05-05T00:00:00+07:00",
+        "approvedBy": "traveler-editorial-review+canonical-import-safety-review+updated-overblock-review",
+        "sourcePatch": "dragon-bridge-ux-copy-override-v2/incoming-chatgpt/completed-patch-files",
+        "priorTaskID": "TASK-VIET-DRAGON-BRIDGE-LANDMARK-UX-OVERRIDE-001",
+        "priorApprovalArtifacts": [
+          "agent-approved-import/traveler-editorial-review.md",
+          "agent-approved-import/canonical-import-safety-review.md"
+        ],
+        "summary": "A practical Dragon Bridge guide for getting there, asking where it is, asking for a photo, and meeting or getting picked up nearby.",
         "categoryIDs": [],
         "sections": [
           {
             "id": "at-glance",
-            "title": "At a glance",
-            "body": "Use Cầu Rồng as a navigation, photo, and meeting-point anchor. The useful moments are getting there, asking where it is, asking for a photo, and finding your pickup point."
+            "title": "Start here",
+            "body": "Locals usually recognize Dragon Bridge as Cầu Rồng. Say it or show it when you need to get there, meet nearby, ask where it is, or ask for a photo."
           },
           {
             "id": "quick-say",
-            "title": "Quick say",
-            "body": "Practice the place name first: Cầu Rồng. Then use it inside route, where-question, photo, and drop-off phrases.",
+            "title": "Say the name",
+            "body": "Start with the short name: Cầu Rồng. If traffic is loud or the person looks unsure, show the map pin too.",
             "phraseIDs": [
               "city-danang-place-dragon-bridge"
             ]
           },
           {
+            "id": "getting-there",
+            "title": "Getting there",
+            "body": "Use these with a driver, hotel desk, or anyone helping you find the bridge.",
+            "phraseIDs": [
+              "city-danang-go-dragon-bridge",
+              "city-danang-where-dragon-bridge"
+            ]
+          },
+          {
+            "id": "at-the-bridge",
+            "title": "At the bridge",
+            "body": "Use this when you are already near the bridge and want help with a photo or direction.",
+            "phraseIDs": [
+              "ves-take-photo-for-me"
+            ]
+          },
+          {
+            "id": "pickup-nearby",
+            "title": "Meeting or pickup",
+            "body": "Use these when you need to get dropped off, meet someone, or explain where you are nearby.",
+            "phraseIDs": [
+              "ves-drop-near-dragon-bridge",
+              "city-danang-stop-dragon-bridge"
+            ]
+          },
+          {
             "id": "breakdown",
-            "title": "Break it down",
-            "body": "Cầu means bridge. Rồng means dragon. Together, Cầu Rồng is Dragon Bridge.",
+            "title": "What the name means",
+            "body": "Cầu means bridge. Rồng means dragon. Together, Cầu Rồng means Dragon Bridge.",
             "breakdownTokens": [
               {
-                "id": "city-danang-place-dragon-bridge-batch001-1",
+                "id": "city-danang-place-dragon-bridge-copy-import-1",
                 "vietnamese": "Cầu",
                 "english": "bridge"
               },
               {
-                "id": "city-danang-place-dragon-bridge-batch001-2",
+                "id": "city-danang-place-dragon-bridge-copy-import-2",
                 "vietnamese": "Rồng",
                 "english": "dragon"
               },
               {
-                "id": "city-danang-place-dragon-bridge-batch001-3",
+                "id": "city-danang-place-dragon-bridge-copy-import-3",
                 "vietnamese": "Cầu Rồng",
                 "english": "Dragon Bridge"
               }
             ]
           },
           {
-            "id": "place-brief",
-            "title": "What it is",
-            "body": "A short landmark name that locals can recognize quickly when you show a map pin, ask a driver, or meet someone by the river."
-          },
-          {
-            "id": "use-it-with",
-            "title": "Use it with",
-            "body": "Use the bridge name with a map pin, pickup point, riverside location, or photo request.",
-            "phraseIDs": [
-              "ves-drop-near-dragon-bridge",
-              "city-danang-stop-dragon-bridge",
-              "city-danang-where-dragon-bridge",
-              "city-danang-go-dragon-bridge",
-              "ves-take-photo-for-me"
-            ]
-          },
-          {
-            "id": "when-to-use",
-            "title": "When to use it",
-            "body": "Use this at a hotel desk, in a taxi, by the river, or when you need someone to point toward the bridge."
-          },
-          {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "If the area is crowded, confirm the pickup side or nearby landmark before you separate from your driver or group."
+            "body": "Dragon Bridge can be a busy meeting spot. Confirm which side of the bridge or which nearby landmark you should use before you separate from your driver or group."
           },
           {
             "id": "explore-next",
-            "title": "Explore next",
-            "body": "Practice route, drop-off, photo request, nearby food, and ride-back phrases.",
+            "title": "Nearby needs",
+            "body": "Use these if the conversation moves to food, cash, or getting back.",
             "phraseIDs": [
               "city-danang-atm-dragon-bridge",
               "city-danang-eat-near-dragon-bridge"
@@ -5173,8 +5182,17 @@
         ],
         "replaceGeneratedSections": true,
         "heroImageName": null,
-        "templateProfile": "place-navigation-and-recovery",
-        "agentApprovalID": "B001-AGENT-APPROVED-001"
+        "templateProfile": "landmark-action-page",
+        "suppressedSections": [
+          "place-brief",
+          "use-it-with",
+          "when-to-use"
+        ],
+        "agentApprovalID": "DRAGON-COPY-AGENT-APPROVED-001",
+        "issueClassifications": {
+          "missingDragonBridgeHero": "FOLLOW_UP",
+          "legacyExportedPageID": "ACCEPTED_TEMPORARY_RISK"
+        }
       }
     },
     {

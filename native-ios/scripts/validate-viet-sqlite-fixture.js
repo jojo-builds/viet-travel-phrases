@@ -32,6 +32,7 @@ const appUserFacingSourcePaths = [
   path.join(nativeRoot, "App", "Views", "SearchPageView.swift"),
 ];
 const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
+const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge";
 
 const bannedPatterns = [
   /Watch out/i,
@@ -532,6 +533,7 @@ function main() {
         MAX(CASE
           WHEN ps.section_key = 'when-to-use' THEN 1
           WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
+          WHEN pp.id = '${dragonBridgeLandmarkPageID}' AND ps.section_key = 'getting-there' THEN 1
           ELSE 0
         END) AS has_when_to_use,
         MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
@@ -567,6 +569,7 @@ function main() {
           MAX(CASE
             WHEN ps.section_key = 'when-to-use' THEN 1
             WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
+            WHEN pp.id = '${dragonBridgeLandmarkPageID}' AND ps.section_key = 'getting-there' THEN 1
             ELSE 0
           END) AS has_when_to_use,
           MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,

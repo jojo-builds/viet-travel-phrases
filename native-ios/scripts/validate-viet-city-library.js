@@ -30,6 +30,27 @@ const minimumPlacePagesPerCity = 25;
 const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
 const dishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
 const baNaJourneySourceID = "city-danang-place-ba-na-hills";
+const landmarkActionRequiredSections = [
+  "at-glance",
+  "quick-say",
+  "getting-there",
+  "at-the-bridge",
+  "pickup-nearby",
+  "breakdown",
+  "good-to-know",
+  "explore-next",
+];
+const landmarkActionForbiddenSections = ["place-brief", "use-it-with", "when-to-use", "relationship-words"];
+const landmarkActionBannedTerms = [
+  "anchor",
+  "place name",
+  "useful moments",
+  "where-question",
+  "route phrase",
+  "connect to",
+  "this page",
+  "relationship rows",
+];
 
 function readJSON(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -135,6 +156,10 @@ function pageText(authoredPage) {
       ]),
     ]),
   ].filter(Boolean).join("\n");
+}
+
+function pageBreakdownTokens(authoredPage) {
+  return (authoredPage.sections ?? []).flatMap((section) => section.breakdown ?? []);
 }
 
 function hasSectionText(authoredPage, pattern) {
@@ -273,9 +298,12 @@ function main() {
     assert((authoredPage.cityMetadata?.pageKind ?? pageKind) === pageKind, `${page.id} authored pageKind metadata mismatch`);
     assert((authoredPage.cityMetadata?.placeKind ?? placeKind) === placeKind, `${page.id} authored placeKind metadata mismatch`);
     assert(catalogPhrase.familyID === page.id, `${page.id} catalog family metadata mismatch`);
+    const isLandmarkActionPage = page.editorialImport?.templateProfile === "landmark-action-page";
     const atAGlance = (authoredPage.sections ?? []).find((section) => section.id === "at-glance");
     const whenToUse = (authoredPage.sections ?? []).find((section) =>
-      section.id === "when-to-use" || (page.id === baNaJourneySourceID && section.id === "journey-flow")
+      section.id === "when-to-use"
+      || (page.id === baNaJourneySourceID && section.id === "journey-flow")
+      || (isLandmarkActionPage && section.id === "getting-there")
     );
     assert(atAGlance?.body && whenToUse?.body, `${page.id} authored page needs at-glance and when-to-use bodies`);
     assert(
@@ -319,12 +347,32 @@ function main() {
       }
     }
 
-    const fakeProperNameTokens = (sectionByID(authoredPage, "breakdown")?.breakdown ?? [])
+    const fakeProperNameTokens = pageBreakdownTokens(authoredPage)
       .filter((token) => normalizeText(token.vietnamese) !== normalizeText(page.targetText))
       .filter((token) => normalizeText(token.vietnamese) === normalizeText(token.english))
       .filter((token) => !isRecognitionGloss(token));
     if (fakeProperNameTokens.length > 0) {
       pageKindTemplateErrors.push(`${page.id} has fake literal proper-name breakdowns: ${fakeProperNameTokens.map((token) => `${token.vietnamese} -> ${token.english}`).join("; ")}`);
+    }
+
+    if (isLandmarkActionPage) {
+      const sectionIDs = new Set((authoredPage.sections ?? []).map((section) => section.id));
+      const missingSections = landmarkActionRequiredSections.filter((sectionID) => !sectionIDs.has(sectionID));
+      if (missingSections.length > 0) {
+        pageKindTemplateErrors.push(`${page.id} landmark-action page missing sections: ${missingSections.join(", ")}`);
+      }
+      const forbiddenSections = landmarkActionForbiddenSections.filter((sectionID) => sectionIDs.has(sectionID));
+      if (forbiddenSections.length > 0) {
+        pageKindTemplateErrors.push(`${page.id} landmark-action page has forbidden generic sections: ${forbiddenSections.join(", ")}`);
+      }
+      const bannedHits = landmarkActionBannedTerms.filter((term) => renderedText.toLowerCase().includes(term));
+      if (bannedHits.length > 0) {
+        pageKindTemplateErrors.push(`${page.id} landmark-action page has internal traveler-facing terms: ${bannedHits.join(", ")}`);
+      }
+      const nameMeaningBreakdown = sectionByID(authoredPage, "breakdown")?.breakdown ?? [];
+      if (nameMeaningBreakdown.length === 0) {
+        pageKindTemplateErrors.push(`${page.id} landmark-action page needs What the name means breakdown cards`);
+      }
     }
 
     if (pageKind === "restaurant") {

@@ -10,6 +10,7 @@ const databasePath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet",
 const reportPath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet-report.json");
 const auditPath = path.join(repoRoot, "docs", "content-audits", "viet-page-quality-recovery-001.md");
 const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
+const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge";
 
 function run(command, args) {
   const result = spawnSync(command, args, { cwd: repoRoot, encoding: "utf8", maxBuffer: 32 * 1024 * 1024 });
@@ -139,7 +140,9 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
       ["breakdown", sectionKeys.has("breakdown")],
       [
         "when-to-use",
-        sectionKeys.has("when-to-use") || (page.id === baNaJourneyPageID && sectionKeys.has("journey-flow")),
+        sectionKeys.has("when-to-use")
+          || (page.id === baNaJourneyPageID && sectionKeys.has("journey-flow"))
+          || (page.id === dragonBridgeLandmarkPageID && sectionKeys.has("getting-there")),
       ],
       ["good-to-know", sectionKeys.has("good-to-know")],
     ];

@@ -1,0 +1,53 @@
+{
+  "taskID": "TASK-VIET-DRAGON-BRIDGE-LANDMARK-COPY-IMPORT-001",
+  "approvalMode": "agent-gated",
+  "sourcePatch": "dragon-bridge-ux-copy-override-v2/incoming-chatgpt/completed-patch-files",
+  "rawPatchPolicy": "preserve REVIEW_ONLY incoming files unchanged",
+  "approvedPages": [
+    {
+      "approval_id": "DRAGON-COPY-AGENT-APPROVED-001",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "traveler-editorial-review+canonical-import-safety-review+updated-overblock-review",
+      "approved_at": "2026-05-05T00:00:00+07:00",
+      "reason": "Copy, section order, row grouping, and canonical links passed; generic masthead is classified as FOLLOW_UP per updated task card and listing-page guidance."
+    }
+  ],
+  "skippedPages": [],
+  "issueClassifications": [
+    {
+      "issue": "Generic Vietnam masthead remains on Dragon Bridge",
+      "classification": "FOLLOW_UP",
+      "action": "Do not block copy import; track as TASK-VIET-DRAGON-BRIDGE-HERO-ASSET-001."
+    },
+    {
+      "issue": "Incoming patch uses stale viet-phrase page IDs for city-library authored pages",
+      "classification": "ACCEPTED_TEMPORARY_RISK",
+      "action": "Resolve by phrase_id/current canonical family mapping and preserve existing canonical source IDs."
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "ban_internal_place_copy_terms",
+      "terms": [
+        "anchor",
+        "place name",
+        "useful moments",
+        "where-question",
+        "route phrase",
+        "connect to",
+        "this page",
+        "relationship rows"
+      ],
+      "scope": "Dragon Bridge rendered user-facing landmark copy and landmark-action-page validator guard"
+    },
+    {
+      "id": "landmark_page_task_headings",
+      "scope": "Dragon Bridge rendered section order and city-library landmark-action-page validator guard"
+    },
+    {
+      "id": "plain_traveler_sentence_test",
+      "scope": "review gate plus rendered-page result evidence"
+    }
+  ]
+}
