@@ -7,7 +7,7 @@
   "title": "Quầy taxi ở đâu?",
   "englishTitle": "Where is the taxi counter?",
   "pronunciation": "Quay taxi o dau",
-  "summary": "Where is the taxi counter?",
+  "summary": "An airport-arrival phrase for finding the taxi counter, then moving to pickup, driver meeting point, or domestic terminal directions.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,20 +20,18 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Quầy taxi ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names taxi counter in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Use Quầy taxi ở đâu? after arrival when you need the official taxi counter or staff direction before leaving the airport."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Quầy taxi ở đâu?. Show your passport, booking, baggage tag, map, or pickup screen, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Ask the short question: Quầy taxi ở đâu? — Where is the taxi counter?",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-where-is-the-taxi-counter",
           "vietnamese": "Quầy taxi ở đâu?",
           "english": "Where is the taxi counter?",
           "pronunciation": "Quay taxi o dau",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
           "detailPageID": null,
           "audioKey": "v500-airp-bord-arri-where-is-the-taxi-counter"
         }
@@ -42,41 +40,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Quầy taxi means taxi counter. Ở đâu? means where. Say the place first, then ask where.",
       "breakdown": [
         {
-          "id": "chunk-1",
+          "id": "v500-airp-bord-arri-where-is-the-taxi-counter-batch001-1",
           "vietnamese": "Quầy taxi",
           "english": "the taxi counter",
-          "audioKey": null
+          "audioKey": "breakdown-v500-airp-bord-arri-where-is-the-taxi-counter-subject"
         },
         {
-          "id": "chunk-2",
+          "id": "v500-airp-bord-arri-where-is-the-taxi-counter-batch001-2",
           "vietnamese": "ở đâu",
           "english": "where?",
-          "audioKey": null
+          "audioKey": "breakdown-authored-o-dau-ca439c525d"
         },
         {
-          "id": "chunk-3",
+          "id": "v500-airp-bord-arri-where-is-the-taxi-counter-batch001-3",
           "vietnamese": "Quầy taxi ở đâu?",
           "english": "Where is the taxi counter",
-          "audioKey": null
+          "audioKey": "v500-airp-bord-arri-where-is-the-taxi-counter"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where is the taxi counter? to another airport arrival need.",
+      "body": "Use these if the airport task shifts to immigration, baggage, SIM, pickup, or terminal directions.",
       "phrases": [
         {
           "id": "airport-1",
           "vietnamese": "Nhập cảnh ở đâu?",
           "english": "Where is immigration?",
           "pronunciation": "nyup canh uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-1",
+          "detailPageID": "viet-family-airport-immigration",
           "audioKey": "airport-1"
         },
         {
@@ -84,9 +80,7 @@
           "vietnamese": "Lấy hành lý ở đâu?",
           "english": "Where is baggage claim?",
           "pronunciation": "lay han lee uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-2",
+          "detailPageID": "viet-family-airport-baggage",
           "audioKey": "airport-2"
         },
         {
@@ -94,9 +88,7 @@
           "vietnamese": "Mua SIM ở đâu?",
           "english": "Where can I buy a SIM card?",
           "pronunciation": "moo-ah sim uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-3",
+          "detailPageID": "viet-family-airport-sim",
           "audioKey": "airport-3"
         }
       ]
@@ -104,26 +96,24 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when taxi counter can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Use this inside the airport when you want an official counter or clear staff direction, not a random car offer."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is unclear."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Quầy taxi ở đâu?.",
+      "body": "Practice pickup-area, meet-the-driver, baggage, terminal, and visa/passport phrases.",
       "phrases": [
         {
           "id": "airport-5",
           "vietnamese": "Khu đón ở đâu?",
           "english": "Where is the pickup area?",
           "pronunciation": "khoo don uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-5",
+          "detailPageID": "viet-family-airport-pickup",
           "audioKey": "airport-5"
         },
         {
@@ -131,8 +121,6 @@
           "vietnamese": "Tôi gặp tài xế ở đâu?",
           "english": "Where do I meet the driver?",
           "pronunciation": "toy gap tai seh uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
           "detailPageID": "viet-phrase-airport-pickup-clearer",
           "audioKey": "airport-pickup-clearer"
         },
@@ -141,9 +129,7 @@
           "vietnamese": "Hành lý của tôi chưa tới",
           "english": "My bag did not arrive",
           "pronunciation": "han lee koo-ah toy choo toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-6",
+          "detailPageID": "viet-family-airport-bag-missing",
           "audioKey": "airport-6"
         },
         {
@@ -151,8 +137,6 @@
           "vietnamese": "Nhà ga nội địa ở đâu?",
           "english": "Where is the domestic terminal?",
           "pronunciation": "nya ga noy dee-ah uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
           "detailPageID": "viet-phrase-airport-7",
           "audioKey": "airport-7"
         },
@@ -161,9 +145,7 @@
           "vietnamese": "Đây là thị thực của tôi",
           "english": "Here is my visa",
           "pronunciation": "Day la thi thuc cua toi",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
+          "detailPageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
           "audioKey": "v500-airp-bord-arri-here-is-my-visa"
         }
       ]
@@ -180,5 +162,14 @@
       "detailPageID": null,
       "audioKey": "v500-airp-bord-arri-where-is-the-taxi-counter"
     }
-  ]
+  ],
+  "editorialImport": {
+    "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+    "patchID": "B001-PAGE-018",
+    "approvedAt": "2026-05-04T16:00:32Z",
+    "approvedBy": "reviewer-a+reviewer-b",
+    "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+    "templateProfile": "airport-arrival-navigation",
+    "agentApprovalID": "B001-AGENT-APPROVED-008"
+  }
 }

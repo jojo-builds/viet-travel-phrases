@@ -1,0 +1,199 @@
+{
+  "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+  "batchID": "chatgpt-batch-001",
+  "approvalMode": "agent-gated",
+  "createdAt": "2026-05-04T16:00:32Z",
+  "sourcePatchRoot": "docs/editorial-exports/viet-canonical-pages/chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+  "rawPatchFilesPreserved": true,
+  "reviewers": [
+    {
+      "id": "reviewer-a-traveler-editorial",
+      "artifact": "traveler-editorial-review.md",
+      "gate": "traveler_editorial_quality",
+      "status": "APPROVE_WITH_SKIPS"
+    },
+    {
+      "id": "reviewer-b-canonical-import-safety",
+      "artifact": "canonical-import-safety-review.md",
+      "gate": "canonical_import_safety",
+      "status": "APPROVE_WITH_SKIPS"
+    }
+  ],
+  "approvedPages": [
+    {
+      "approval_id": "B001-AGENT-APPROVED-001",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "reviewer-a+reviewer-b",
+      "approved_at": "2026-05-04T16:00:32Z",
+      "reason": "Passed traveler/editorial and canonical/import safety gates."
+    },
+    {
+      "approval_id": "B001-AGENT-APPROVED-002",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "reviewer-a+reviewer-b",
+      "approved_at": "2026-05-04T16:00:32Z",
+      "reason": "Passed traveler/editorial and canonical/import safety gates."
+    },
+    {
+      "approval_id": "B001-AGENT-APPROVED-003",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "reviewer-a+reviewer-b",
+      "approved_at": "2026-05-04T16:00:32Z",
+      "reason": "Passed traveler/editorial and canonical/import safety gates."
+    },
+    {
+      "approval_id": "B001-AGENT-APPROVED-004",
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "reviewer-a+reviewer-b",
+      "approved_at": "2026-05-04T16:00:32Z",
+      "reason": "Passed traveler/editorial and canonical/import safety gates."
+    },
+    {
+      "approval_id": "B001-AGENT-APPROVED-005",
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "reviewer-a+reviewer-b",
+      "approved_at": "2026-05-04T16:00:32Z",
+      "reason": "Passed traveler/editorial and canonical/import safety gates."
+    },
+    {
+      "approval_id": "B001-AGENT-APPROVED-006",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "reviewer-a+reviewer-b",
+      "approved_at": "2026-05-04T16:00:32Z",
+      "reason": "Passed traveler/editorial and canonical/import safety gates.",
+      "agent_repair_overrides": {
+        "sections": [
+          {
+            "id": "place-anchor",
+            "body": "Keep Đường Nguyễn Văn Linh visible on your map so the answer can be a point, distance, or yes/no."
+          }
+        ],
+        "reason": "City validator requires the generated place-anchor body to visibly name the place anchor."
+      }
+    },
+    {
+      "approval_id": "B001-AGENT-APPROVED-008",
+      "phrase_id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "reviewer-a+reviewer-b",
+      "approved_at": "2026-05-04T16:00:32Z",
+      "reason": "Passed traveler/editorial and canonical/import safety gates."
+    },
+    {
+      "approval_id": "B001-AGENT-APPROVED-009",
+      "phrase_id": "hotel-9",
+      "import_status": "AGENT_APPROVED_FOR_IMPORT",
+      "approved_by": "reviewer-a+reviewer-b",
+      "approved_at": "2026-05-04T16:00:32Z",
+      "reason": "Passed traveler/editorial and canonical/import safety gates."
+    }
+  ],
+  "skippedPages": [
+    {
+      "phrase_id": "city-hanoi-place-bun-cha-huong-lien",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Restaurant page still places destination/route rows inside the in-restaurant flow."
+    },
+    {
+      "phrase_id": "city-hanoi-place-pho-bat-dan",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Restaurant page mixes go/stop/where/drop-off rows into inside-the-place ordering flow."
+    },
+    {
+      "phrase_id": "city-hoian-place-cao-lau-city",
+      "skip_category": "next_question",
+      "reason": "Canonical title decision required.",
+      "exact_decision_needed": "Should the canonical title stay \"Cao lầu ở Hội An,\" or should the page title become \"Cao lầu\" with Hội An handled as city context?"
+    },
+    {
+      "phrase_id": "city-hue-place-bun-bo-city",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Dish page retains place-style ATM/eat-near rows for the dish itself."
+    },
+    {
+      "phrase_id": "city-danang-place-ba-na-hills",
+      "skip_category": "reference_completed",
+      "reason": "Batch marks this as completed model/reference, not active import target."
+    },
+    {
+      "phrase_id": "city-danang-place-marble-mountains",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Key phrases include Dragon Bridge route row."
+    },
+    {
+      "phrase_id": "city-danang-place-son-tra",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Use-it-with includes unrelated Dragon Bridge route row."
+    },
+    {
+      "phrase_id": "city-danang-place-vo-nguyen-giap-street",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Use-it-with includes Bach Dang Street route row."
+    },
+    {
+      "phrase_id": "city-danang-where-ba-na-hills",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Visible use-it-with rows target a section missing from the proposed section order."
+    },
+    {
+      "phrase_id": "city-danang-ticket-marble-mountains",
+      "skip_category": "next_question",
+      "reason": "Canonical ticket-counter wording decision required.",
+      "exact_decision_needed": "For ticket-counter Vietnamese, should the canonical phrase remain \"Một vé vào Ngũ Hành Sơn,\" or should native review add a more polite \"Dạ, cho tôi một vé vào Ngũ Hành Sơn\"?"
+    },
+    {
+      "phrase_id": "acknowledge-da-chao-anh",
+      "skip_category": "live_rendered_page_review",
+      "reason": "Live rendered-page review found the Relationship swaps row points to \"Anh nói tiếng Anh không?\" instead of a relationship/greeting swap. The page is reverted to its pre-task source and deferred for a focused relationship-row patch."
+    },
+    {
+      "phrase_id": "v900-airp-bord-arri-can-you-help-me-track-my-bag",
+      "skip_category": "next_question",
+      "reason": "Native baggage-desk wording decision required.",
+      "exact_decision_needed": "For the airport baggage page, should the canonical Vietnamese stay \"Bạn có thể giúp tôi theo dõi túi của tôi?\" or should native review replace it with a more baggage-desk natural phrase using \"hành lý\" or \"kiểm tra hành lý\"?"
+    },
+    {
+      "phrase_id": "v900-hote-acco-can-you-arrange-a-taxi-for-me",
+      "skip_category": "next_question",
+      "reason": "Canonical hotel taxi wording decision required.",
+      "exact_decision_needed": "Should this page keep the formal \"Bạn có thể sắp xếp một chiếc taxi cho tôi được không?\" or use the shorter hotel-desk phrase \"Gọi taxi giúp tôi được không?\" as the canonical version?"
+    },
+    {
+      "phrase_id": "food-peanut-allergy",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Allergy page still surfaces generic food-order rows and weak split-token breakdowns."
+    },
+    {
+      "phrase_id": "v500-food-drin-i-am-allergic-to-shellfish",
+      "skip_category": "next_question",
+      "reason": "Native shellfish wording decision required.",
+      "exact_decision_needed": "Should \"shellfish\" be taught as \"động vật có vỏ,\" \"hải sản có vỏ,\" or a different native-validated food-allergy phrase for Vietnam?"
+    },
+    {
+      "phrase_id": "emergency-3",
+      "skip_category": "traveler_editorial_quality",
+      "reason": "Passport-loss page uses generic injury/hospital rows in local-tip/when-to-use flow."
+    },
+    {
+      "phrase_id": "emergency-hospital",
+      "skip_category": "import_support_blocker",
+      "reason": "The Tier 1 generated-source lane overwrote the direct source import during regeneration. This needs generator-level Batch 001 import support before it can be safely imported durably."
+    }
+  ],
+  "phoneTestTermsSeed": [
+    "Dragon Bridge",
+    "Cầu Rồng",
+    "Bach Dang Street",
+    "Nguyen Van Linh Street",
+    "Đi Bà Nà Hills",
+    "Đi cầu Rồng",
+    "Quầy taxi ở đâu?",
+    "Gọi taxi giúp tôi được không?"
+  ]
+}

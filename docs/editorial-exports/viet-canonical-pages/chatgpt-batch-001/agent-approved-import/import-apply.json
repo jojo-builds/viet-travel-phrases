@@ -1,0 +1,722 @@
+{
+  "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+  "mode": "apply",
+  "incomingRoot": "docs/editorial-exports/viet-canonical-pages/chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+  "approvalPath": "docs/editorial-exports/viet-canonical-pages/chatgpt-batch-001/agent-approved-import/approval-overlay.json",
+  "rawRowCounts": {
+    "page_patch": 25,
+    "section_patch": 216,
+    "phrase_row_patch": 261,
+    "breakdown_patch": 88,
+    "relationship_reorder_patch": 223,
+    "renderer_directives_patch": 25,
+    "asset_directives_patch": 25,
+    "validator_rules_patch": 10,
+    "questions_for_jojo": 25
+  },
+  "approvedPageCount": 8,
+  "importedPageCount": 8,
+  "skippedPageCount": 17,
+  "imported": [
+    {
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "page_id": "viet-family-city-danang-place-dragon-bridge",
+      "patch_id": "B001-PAGE-006",
+      "source_path": "content-draft/viet/city-library/v1.json",
+      "source_lane": "city-library",
+      "changes": [],
+      "section_count": 8,
+      "phrase_row_count": 8,
+      "breakdown_count": 3
+    },
+    {
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "page_id": "viet-family-city-danang-place-bach-dang-street",
+      "patch_id": "B001-PAGE-009",
+      "source_path": "content-draft/viet/city-library/v1.json",
+      "source_lane": "city-library",
+      "changes": [],
+      "section_count": 11,
+      "phrase_row_count": 9,
+      "breakdown_count": 3
+    },
+    {
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "page_id": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "patch_id": "B001-PAGE-010",
+      "source_path": "content-draft/viet/city-library/v1.json",
+      "source_lane": "city-library",
+      "changes": [],
+      "section_count": 11,
+      "phrase_row_count": 9,
+      "breakdown_count": 3
+    },
+    {
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "page_id": "viet-family-city-danang-go-ba-na-hills",
+      "patch_id": "B001-PAGE-012",
+      "source_path": "content-draft/viet/city-library/v1.json",
+      "source_lane": "city-library",
+      "changes": [],
+      "section_count": 7,
+      "phrase_row_count": 6,
+      "breakdown_count": 3
+    },
+    {
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "page_id": "viet-family-city-danang-go-dragon-bridge",
+      "patch_id": "B001-PAGE-015",
+      "source_path": "content-draft/viet/city-library/v1.json",
+      "source_lane": "city-library",
+      "changes": [],
+      "section_count": 7,
+      "phrase_row_count": 6,
+      "breakdown_count": 3
+    },
+    {
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "page_id": "viet-family-city-danang-near-nguyen-van-linh-street",
+      "patch_id": "B001-PAGE-016",
+      "source_path": "content-draft/viet/city-library/v1.json",
+      "source_lane": "city-library",
+      "changes": [],
+      "section_count": 9,
+      "phrase_row_count": 8,
+      "breakdown_count": 3
+    },
+    {
+      "phrase_id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+      "page_id": "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
+      "patch_id": "B001-PAGE-018",
+      "source_path": "content-draft/viet/canonical-pages/catalog-promoted/airport-border-arrival/v500-airp-bord-arri-where-is-the-taxi-counter.json",
+      "source_lane": "canonical-pages",
+      "changes": [],
+      "section_count": 7,
+      "phrase_row_count": 9,
+      "breakdown_count": 3
+    },
+    {
+      "phrase_id": "hotel-9",
+      "page_id": "viet-phrase-hotel-9",
+      "patch_id": "B001-PAGE-020",
+      "source_path": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/hotel-9.json",
+      "source_lane": "canonical-pages",
+      "changes": [],
+      "section_count": 7,
+      "phrase_row_count": 9,
+      "breakdown_count": 4
+    }
+  ],
+  "skipped": [
+    {
+      "phrase_id": "city-hanoi-place-bun-cha-huong-lien",
+      "page_id": "viet-phrase-city-hanoi-place-bun-cha-huong-lien",
+      "patch_id": "B001-PAGE-001",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-hanoi-place-pho-bat-dan",
+      "page_id": "viet-phrase-city-hanoi-place-pho-bat-dan",
+      "patch_id": "B001-PAGE-002",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-hoian-place-cao-lau-city",
+      "page_id": "viet-phrase-city-hoian-place-cao-lau-city",
+      "patch_id": "B001-PAGE-003",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-hue-place-bun-bo-city",
+      "page_id": "viet-phrase-city-hue-place-bun-bo-city",
+      "patch_id": "B001-PAGE-004",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-danang-place-ba-na-hills",
+      "page_id": "viet-phrase-city-danang-place-ba-na-hills",
+      "patch_id": "B001-PAGE-005",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-danang-place-marble-mountains",
+      "page_id": "viet-phrase-city-danang-place-marble-mountains",
+      "patch_id": "B001-PAGE-007",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-danang-place-son-tra",
+      "page_id": "viet-phrase-city-danang-place-son-tra",
+      "patch_id": "B001-PAGE-008",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-danang-place-vo-nguyen-giap-street",
+      "page_id": "viet-phrase-city-danang-place-vo-nguyen-giap-street",
+      "patch_id": "B001-PAGE-011",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-danang-where-ba-na-hills",
+      "page_id": "viet-phrase-city-danang-where-ba-na-hills",
+      "patch_id": "B001-PAGE-013",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "city-danang-ticket-marble-mountains",
+      "page_id": "viet-phrase-city-danang-ticket-marble-mountains",
+      "patch_id": "B001-PAGE-014",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "acknowledge-da-chao-anh",
+      "page_id": "viet-phrase-acknowledge-da-chao-anh",
+      "patch_id": "B001-PAGE-017",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "v900-airp-bord-arri-can-you-help-me-track-my-bag",
+      "page_id": "viet-phrase-v900-airp-bord-arri-can-you-help-me-track-my-bag",
+      "patch_id": "B001-PAGE-019",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "v900-hote-acco-can-you-arrange-a-taxi-for-me",
+      "page_id": "viet-phrase-v900-hote-acco-can-you-arrange-a-taxi-for-me",
+      "patch_id": "B001-PAGE-021",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "food-peanut-allergy",
+      "page_id": "viet-phrase-food-peanut-allergy",
+      "patch_id": "B001-PAGE-022",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "v500-food-drin-i-am-allergic-to-shellfish",
+      "page_id": "viet-phrase-v500-food-drin-i-am-allergic-to-shellfish",
+      "patch_id": "B001-PAGE-023",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "emergency-hospital",
+      "page_id": "viet-phrase-emergency-hospital",
+      "patch_id": "B001-PAGE-024",
+      "reason": "not agent-approved"
+    },
+    {
+      "phrase_id": "emergency-3",
+      "page_id": "viet-phrase-emergency-3",
+      "patch_id": "B001-PAGE-025",
+      "reason": "not agent-approved"
+    }
+  ],
+  "pageIDMismatches": [
+    {
+      "patch_id": "B001-PAGE-006",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-place-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-place-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-069",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-place-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-place-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-place-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-070",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-atm-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-atm-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-atm-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-071",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-eat-near-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-eat-near-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-eat-near-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-072",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-go-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-go-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-go-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-073",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "ves-drop-near-dragon-bridge",
+      "proposed_page_id": "viet-phrase-ves-drop-near-dragon-bridge",
+      "current_page_id": "viet-family-ves-drop-near-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-074",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-where-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-where-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-where-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-075",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "ves-take-photo-for-me",
+      "proposed_page_id": "viet-phrase-ves-take-photo-for-me",
+      "current_page_id": "viet-family-ves-take-photo-for-me",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-076",
+      "phrase_id": "city-danang-place-dragon-bridge",
+      "target_phrase_id": "city-danang-stop-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-stop-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-stop-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-PAGE-009",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "proposed_page_id": "viet-phrase-city-danang-place-bach-dang-street",
+      "current_page_id": "viet-family-city-danang-place-bach-dang-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-093",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "city-danang-place-bach-dang-street",
+      "proposed_page_id": "viet-phrase-city-danang-place-bach-dang-street",
+      "current_page_id": "viet-family-city-danang-place-bach-dang-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-094",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "city-danang-atm-bach-dang-street",
+      "proposed_page_id": "viet-phrase-city-danang-atm-bach-dang-street",
+      "current_page_id": "viet-family-city-danang-atm-bach-dang-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-095",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "city-danang-bach-dang-route",
+      "proposed_page_id": "viet-phrase-city-danang-bach-dang-route",
+      "current_page_id": "viet-family-city-danang-bach-dang-route",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-096",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "city-danang-eat-near-bach-dang-street",
+      "proposed_page_id": "viet-phrase-city-danang-eat-near-bach-dang-street",
+      "current_page_id": "viet-family-city-danang-eat-near-bach-dang-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-097",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "city-danang-near-bach-dang-street",
+      "proposed_page_id": "viet-phrase-city-danang-near-bach-dang-street",
+      "current_page_id": "viet-family-city-danang-near-bach-dang-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-098",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "ves-to-bach-dang-street",
+      "proposed_page_id": "viet-phrase-ves-to-bach-dang-street",
+      "current_page_id": "viet-family-ves-to-bach-dang-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-099",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "ves-is-this-bach-dang-street",
+      "proposed_page_id": "viet-phrase-ves-is-this-bach-dang-street",
+      "current_page_id": "viet-family-ves-is-this-bach-dang-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-100",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "ves-drop-me-off-here",
+      "proposed_page_id": "viet-phrase-ves-drop-me-off-here",
+      "current_page_id": "viet-family-ves-drop-me-off-here",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-101",
+      "phrase_id": "city-danang-place-bach-dang-street",
+      "target_phrase_id": "city-danang-stop-bach-dang-street",
+      "proposed_page_id": "viet-phrase-city-danang-stop-bach-dang-street",
+      "current_page_id": "viet-family-city-danang-stop-bach-dang-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-PAGE-010",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-place-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-102",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-place-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-103",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-go-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-go-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-go-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-104",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-near-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-near-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-105",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-stop-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-stop-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-stop-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-106",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-where-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-where-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-where-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-107",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "ves-to-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-ves-to-nguyen-van-linh-street",
+      "current_page_id": "viet-family-ves-to-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-108",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "ves-is-this-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-ves-is-this-nguyen-van-linh-street",
+      "current_page_id": "viet-family-ves-is-this-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-109",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "ves-not-right-place",
+      "proposed_page_id": "viet-phrase-ves-not-right-place",
+      "current_page_id": "viet-family-ves-not-right-place",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-110",
+      "phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-bach-dang-route",
+      "proposed_page_id": "viet-phrase-city-danang-bach-dang-route",
+      "current_page_id": "viet-family-city-danang-bach-dang-route",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-PAGE-012",
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "proposed_page_id": "viet-phrase-city-danang-go-ba-na-hills",
+      "current_page_id": "viet-family-city-danang-go-ba-na-hills",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-120",
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "target_phrase_id": "city-danang-go-ba-na-hills",
+      "proposed_page_id": "viet-phrase-city-danang-go-ba-na-hills",
+      "current_page_id": "viet-family-city-danang-go-ba-na-hills",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-128",
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "target_phrase_id": "city-danang-place-ba-na-hills",
+      "proposed_page_id": "viet-phrase-city-danang-place-ba-na-hills",
+      "current_page_id": "viet-family-city-danang-place-ba-na-hills",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-129",
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "target_phrase_id": "city-danang-atm-ba-na-hills",
+      "proposed_page_id": "viet-phrase-city-danang-atm-ba-na-hills",
+      "current_page_id": "viet-family-city-danang-atm-ba-na-hills",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-130",
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "target_phrase_id": "city-danang-eat-near-ba-na-hills",
+      "proposed_page_id": "viet-phrase-city-danang-eat-near-ba-na-hills",
+      "current_page_id": "viet-family-city-danang-eat-near-ba-na-hills",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-131",
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "target_phrase_id": "city-danang-stop-ba-na-hills",
+      "proposed_page_id": "viet-phrase-city-danang-stop-ba-na-hills",
+      "current_page_id": "viet-family-city-danang-stop-ba-na-hills",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-132",
+      "phrase_id": "city-danang-go-ba-na-hills",
+      "target_phrase_id": "city-danang-where-ba-na-hills",
+      "proposed_page_id": "viet-phrase-city-danang-where-ba-na-hills",
+      "current_page_id": "viet-family-city-danang-where-ba-na-hills",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-PAGE-015",
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-go-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-go-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-154",
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "target_phrase_id": "city-danang-go-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-go-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-go-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-155",
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "target_phrase_id": "city-danang-place-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-place-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-place-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-156",
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "target_phrase_id": "city-danang-atm-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-atm-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-atm-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-157",
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "target_phrase_id": "city-danang-eat-near-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-eat-near-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-eat-near-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-158",
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "target_phrase_id": "city-danang-stop-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-stop-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-stop-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-159",
+      "phrase_id": "city-danang-go-dragon-bridge",
+      "target_phrase_id": "city-danang-where-dragon-bridge",
+      "proposed_page_id": "viet-phrase-city-danang-where-dragon-bridge",
+      "current_page_id": "viet-family-city-danang-where-dragon-bridge",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-PAGE-016",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-near-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-near-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-160",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-near-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-near-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-161",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-place-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-place-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-162",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-go-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-go-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-go-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-163",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-stop-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-stop-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-stop-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-164",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-where-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-city-danang-where-nguyen-van-linh-street",
+      "current_page_id": "viet-family-city-danang-where-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-165",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "target_phrase_id": "ves-can-you-show-me-politeness",
+      "proposed_page_id": "viet-phrase-ves-can-you-show-me-politeness",
+      "current_page_id": "viet-family-ves-can-you-show-me-politeness",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-166",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "target_phrase_id": "ves-to-nguyen-van-linh-street",
+      "proposed_page_id": "viet-phrase-ves-to-nguyen-van-linh-street",
+      "current_page_id": "viet-family-ves-to-nguyen-van-linh-street",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-167",
+      "phrase_id": "city-danang-near-nguyen-van-linh-street",
+      "target_phrase_id": "city-danang-bach-dang-route",
+      "proposed_page_id": "viet-phrase-city-danang-bach-dang-route",
+      "current_page_id": "viet-family-city-danang-bach-dang-route",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-175",
+      "phrase_id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+      "target_phrase_id": "airport-1",
+      "proposed_page_id": "viet-phrase-airport-1",
+      "current_page_id": "viet-family-airport-immigration",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-176",
+      "phrase_id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+      "target_phrase_id": "airport-2",
+      "proposed_page_id": "viet-phrase-airport-2",
+      "current_page_id": "viet-family-airport-baggage",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-177",
+      "phrase_id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+      "target_phrase_id": "airport-3",
+      "proposed_page_id": "viet-phrase-airport-3",
+      "current_page_id": "viet-family-airport-sim",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-178",
+      "phrase_id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+      "target_phrase_id": "airport-5",
+      "proposed_page_id": "viet-phrase-airport-5",
+      "current_page_id": "viet-family-airport-pickup",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-180",
+      "phrase_id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+      "target_phrase_id": "airport-6",
+      "proposed_page_id": "viet-phrase-airport-6",
+      "current_page_id": "viet-family-airport-bag-missing",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-182",
+      "phrase_id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+      "target_phrase_id": "v500-airp-bord-arri-here-is-my-visa",
+      "proposed_page_id": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
+      "current_page_id": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-193",
+      "phrase_id": "hotel-9",
+      "target_phrase_id": "hotel-1",
+      "proposed_page_id": "viet-phrase-hotel-1",
+      "current_page_id": "viet-family-hotel-reservation",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-194",
+      "phrase_id": "hotel-9",
+      "target_phrase_id": "hotel-2",
+      "proposed_page_id": "viet-phrase-hotel-2",
+      "current_page_id": "viet-family-hotel-check-in",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-196",
+      "phrase_id": "hotel-9",
+      "target_phrase_id": "hotel-3",
+      "proposed_page_id": "viet-phrase-hotel-3",
+      "current_page_id": "viet-family-hotel-checkout-time",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-198",
+      "phrase_id": "hotel-9",
+      "target_phrase_id": "hotel-checkout",
+      "proposed_page_id": "viet-phrase-hotel-checkout",
+      "current_page_id": "viet-family-hotel-checkout",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-199",
+      "phrase_id": "hotel-9",
+      "target_phrase_id": "hotel-4",
+      "proposed_page_id": "viet-phrase-hotel-4",
+      "current_page_id": "viet-family-hotel-room-hot",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    },
+    {
+      "patch_id": "B001-ROW-200",
+      "phrase_id": "hotel-9",
+      "target_phrase_id": "hotel-5",
+      "proposed_page_id": "viet-phrase-hotel-5",
+      "current_page_id": "viet-family-hotel-aircon-broken",
+      "note": "legacy exported page ID accepted; current canonical ID preserved"
+    }
+  ]
+}

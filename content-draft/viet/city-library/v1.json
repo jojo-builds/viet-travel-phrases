@@ -3172,7 +3172,88 @@
       ],
       "status": "approved",
       "pageKind": "phrase",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "editorialImport": {
+        "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+        "patchID": "B001-PAGE-012",
+        "approvedAt": "2026-05-04T16:00:32Z",
+        "approvedBy": "reviewer-a+reviewer-b",
+        "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+        "summary": "A short route phrase for Bà Nà Hills when the map pin is visible and the traveler needs a driver, hotel desk, or pickup helper to understand the destination.",
+        "categoryIDs": [],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this short route phrase when Bà Nà Hills is already visible on your map or ride screen and you need a driver or hotel desk to understand the destination."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Show the map pin first, then say: Đi Bà Nà Hills. — Go to Bà Nà Hills.",
+            "phraseIDs": [
+              "city-danang-go-ba-na-hills"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Đi means go. Bà Nà Hills is the place name. The phrase is intentionally short for driver and map moments.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-go-ba-na-hills-batch001-1",
+                "vietnamese": "Đi",
+                "english": "go"
+              },
+              {
+                "id": "city-danang-go-ba-na-hills-batch001-2",
+                "vietnamese": "Bà Nà Hills",
+                "english": "name recognition"
+              },
+              {
+                "id": "city-danang-go-ba-na-hills-batch001-3",
+                "vietnamese": "Đi Bà Nà Hills",
+                "english": "Go to Ba Na Hills"
+              }
+            ]
+          },
+          {
+            "id": "place-anchor",
+            "title": "Place anchor",
+            "body": "Use Bà Nà Hills as the destination anchor, then add ticket, cable car, or return ride phrases after you arrive.",
+            "phraseIDs": [
+              "city-danang-place-ba-na-hills"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use this in a taxi, at a hotel desk, or at a pickup point when the destination is already clear from the map.",
+            "phraseIDs": [
+              "city-danang-stop-ba-na-hills"
+            ]
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "This clipped route phrase works best with a visible map pin. Add Dạ at the start if you want to sound more polite."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Practice the next phrases for tickets, cable car directions, photos, and return taxi.",
+            "phraseIDs": [
+              "city-danang-where-ba-na-hills",
+              "city-danang-atm-ba-na-hills",
+              "city-danang-eat-near-ba-na-hills"
+            ]
+          }
+        ],
+        "replaceGeneratedSections": true,
+        "heroImageName": null,
+        "templateProfile": "route-ticket-phrase",
+        "agentApprovalID": "B001-AGENT-APPROVED-004"
+      }
     },
     {
       "id": "city-danang-go-ban-co-peak",
@@ -3331,7 +3412,88 @@
       ],
       "status": "approved",
       "pageKind": "phrase",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "editorialImport": {
+        "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+        "patchID": "B001-PAGE-015",
+        "approvedAt": "2026-05-04T16:00:32Z",
+        "approvedBy": "reviewer-a+reviewer-b",
+        "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+        "summary": "A short route phrase for Cầu Rồng when the traveler needs to reach the bridge, riverside area, or nearby pickup point.",
+        "categoryIDs": [],
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "At a glance",
+            "body": "Use this short route phrase when Cầu Rồng is the destination, meeting point, or riverside landmark."
+          },
+          {
+            "id": "quick-say",
+            "title": "Quick say",
+            "body": "Show the map pin first, then say: Đi cầu Rồng. — Go to Dragon Bridge.",
+            "phraseIDs": [
+              "city-danang-go-dragon-bridge"
+            ]
+          },
+          {
+            "id": "breakdown",
+            "title": "Break it down",
+            "body": "Đi means go. Cầu Rồng means Dragon Bridge. The short form is useful for taxi and map moments.",
+            "breakdownTokens": [
+              {
+                "id": "city-danang-go-dragon-bridge-batch001-1",
+                "vietnamese": "Đi",
+                "english": "go"
+              },
+              {
+                "id": "city-danang-go-dragon-bridge-batch001-2",
+                "vietnamese": "cầu Rồng",
+                "english": "Dragon Bridge"
+              },
+              {
+                "id": "city-danang-go-dragon-bridge-batch001-3",
+                "vietnamese": "Đi cầu Rồng",
+                "english": "Go to Dragon Bridge"
+              }
+            ]
+          },
+          {
+            "id": "place-anchor",
+            "title": "Place anchor",
+            "body": "Use Cầu Rồng as the route anchor, then add drop-off, photo, or pickup phrases as needed.",
+            "phraseIDs": [
+              "city-danang-place-dragon-bridge"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use this with a driver, hotel desk, or walking-direction helper when the map already shows the bridge.",
+            "phraseIDs": [
+              "city-danang-stop-dragon-bridge"
+            ]
+          },
+          {
+            "id": "good-to-know",
+            "title": "Good to know",
+            "body": "For landmarks, the map pin does a lot of work. Say the name once, then show the pin or nearby side street."
+          },
+          {
+            "id": "explore-next",
+            "title": "Explore next",
+            "body": "Practice where, drop-off, photo, nearby food, and ride-back phrases.",
+            "phraseIDs": [
+              "city-danang-where-dragon-bridge",
+              "city-danang-atm-dragon-bridge",
+              "city-danang-eat-near-dragon-bridge"
+            ]
+          }
+        ],
+        "replaceGeneratedSections": true,
+        "heroImageName": null,
+        "templateProfile": "route-ticket-phrase",
+        "agentApprovalID": "B001-AGENT-APPROVED-005"
+      }
     },
     {
       "id": "city-danang-go-golden-bridge",
@@ -4164,51 +4326,23 @@
       "pageKind": "phrase",
       "placeKind": "street",
       "editorialImport": {
-        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
-        "patchID": "EP-016",
-        "approvedAt": "2026-05-03",
-        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
-        "summary": "A street-distance check for Nguyễn Văn Linh Street, designed to help the traveler decide whether to walk, ride, or show the address again.",
-        "categoryIDs": [
-          "city-guides",
-          "danang",
-          "neighborhoods-streets",
-          "beginner",
-          "city-page-kind-phrase",
-          "place-kind-street",
-          "street-pronouncer",
-          "editorial-pilot"
-        ],
-        "visibleRows": [
-          {
-            "slot": "quick-say",
-            "vietnamese": "Đường Nguyễn Văn Linh gần đây không?",
-            "english": "Is Nguyen Van Linh Street near here?",
-            "phraseID": "city-danang-near-nguyen-van-linh-street"
-          },
-          {
-            "slot": "show",
-            "vietnamese": "Anh/chị chỉ giúp tôi được không?",
-            "english": "Can you show me?",
-            "phraseID": "ves-can-you-show-me-politeness"
-          },
-          {
-            "slot": "driver",
-            "vietnamese": "Cho tôi đến đường Nguyễn Văn Linh.",
-            "english": "Please take me to Nguyen Van Linh Street",
-            "phraseID": "ves-to-nguyen-van-linh-street"
-          }
-        ],
+        "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+        "patchID": "B001-PAGE-016",
+        "approvedAt": "2026-05-04T16:00:32Z",
+        "approvedBy": "reviewer-a+reviewer-b",
+        "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+        "summary": "A street-distance check for Đường Nguyễn Văn Linh: ask if the street is nearby before walking, riding, or correcting a pickup point.",
+        "categoryIDs": [],
         "sections": [
           {
             "id": "at-glance",
             "title": "At a glance",
-            "body": "Use this when the traveler sees the street name on a map or address and wants a quick local read: is it nearby or not?"
+            "body": "Use this when you need a quick distance check for Đường Nguyễn Văn Linh before walking, riding, or correcting a pickup point."
           },
           {
             "id": "quick-say",
             "title": "Quick say",
-            "body": "Đường Nguyễn Văn Linh gần đây không? — Is Nguyen Van Linh Street near here?",
+            "body": "Ask: Đường Nguyễn Văn Linh gần đây không? — Is Nguyen Van Linh Street near here?",
             "phraseIDs": [
               "city-danang-near-nguyen-van-linh-street"
             ]
@@ -4216,20 +4350,20 @@
           {
             "id": "breakdown",
             "title": "Break it down",
-            "body": "Đường Nguyễn Văn Linh -> Nguyen Van Linh Street | gần đây không? -> near here?",
+            "body": "Đường Nguyễn Văn Linh is the street name. Gần đây không? asks whether it is near here.",
             "breakdownTokens": [
               {
-                "id": "city-danang-near-nguyen-van-linh-street-editorial-1",
+                "id": "city-danang-near-nguyen-van-linh-street-batch001-1",
                 "vietnamese": "Đường Nguyễn Văn Linh",
                 "english": "Nguyen Van Linh Street"
               },
               {
-                "id": "city-danang-near-nguyen-van-linh-street-editorial-2",
+                "id": "city-danang-near-nguyen-van-linh-street-batch001-2",
                 "vietnamese": "gần đây không?",
                 "english": "near here?"
               },
               {
-                "id": "city-danang-near-nguyen-van-linh-street-editorial-3",
+                "id": "city-danang-near-nguyen-van-linh-street-batch001-3",
                 "vietnamese": "Đường Nguyễn Văn Linh gần đây không?",
                 "english": "Is Nguyen Van Linh Street near here?"
               }
@@ -4238,12 +4372,12 @@
           {
             "id": "what-happens-next",
             "title": "What happens next",
-            "body": "Likely replies are a point, yes/no, a number of minutes, or a gesture. The user should show the map while asking."
+            "body": "You may hear a yes/no answer, a point, or a number of minutes. Watch the gesture first."
           },
           {
             "id": "recovery",
             "title": "Recovery",
-            "body": "If the answer is unclear, use: Anh/chị chỉ giúp tôi được không? — Can you show me?",
+            "body": "If the answer is unclear, show the map and ask: Đây có phải đường Nguyễn Văn Linh không?",
             "phraseIDs": [
               "ves-can-you-show-me-politeness",
               "ves-to-nguyen-van-linh-street"
@@ -4252,19 +4386,39 @@
           {
             "id": "when-to-use",
             "title": "When to use it",
-            "body": "Use before committing to a walk, ride, or detour."
+            "body": "Use this before committing to a walk, ride, or detour when the street may be close.",
+            "phraseIDs": [
+              "city-danang-go-nguyen-van-linh-street",
+              "city-danang-stop-nguyen-van-linh-street",
+              "city-danang-where-nguyen-van-linh-street"
+            ]
           },
           {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "Street-name pages should include likely nonverbal replies because locals may answer by pointing."
+            "body": "Near-here questions work best with a map pin. The reply may be short, so watch gestures."
           },
           {
             "id": "explore-next",
             "title": "Explore next",
-            "body": "Connect to: street pronouncer, show driver, stop here, wrong place."
+            "body": "Practice street name, driver sentence, confirm-street, and wrong-place phrases.",
+            "phraseIDs": [
+              "city-danang-bach-dang-route"
+            ]
+          },
+          {
+            "id": "place-anchor",
+            "title": "Place anchor",
+            "body": "Keep Đường Nguyễn Văn Linh visible on your map so the answer can be a point, distance, or yes/no.",
+            "phraseIDs": [
+              "city-danang-place-nguyen-van-linh-street"
+            ]
           }
-        ]
+        ],
+        "replaceGeneratedSections": true,
+        "heroImageName": null,
+        "templateProfile": "street-driver-check",
+        "agentApprovalID": "B001-AGENT-APPROVED-006"
       }
     },
     {
@@ -4668,57 +4822,23 @@
       "pageKind": "place",
       "placeKind": "street",
       "editorialImport": {
-        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
-        "patchID": "EP-009",
-        "approvedAt": "2026-05-03",
-        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
-        "summary": "A Say This Street page for Đường Bạch Đằng: hear the street name, insert it into taxi phrases, confirm the address, and handle pickup/drop-off.",
-        "categoryIDs": [
-          "city-guides",
-          "danang",
-          "neighborhoods-streets",
-          "beginner",
-          "city-page-kind-place",
-          "place-kind-street",
-          "street-pronouncer",
-          "editorial-pilot"
-        ],
-        "visibleRows": [
-          {
-            "slot": "street-only",
-            "vietnamese": "Đường Bạch Đằng",
-            "english": "Bach Dang Street",
-            "phraseID": "city-danang-place-bach-dang-street"
-          },
-          {
-            "slot": "taxi",
-            "vietnamese": "Cho tôi đến đường Bạch Đằng.",
-            "english": "Please take me to Bach Dang Street",
-            "phraseID": "ves-to-bach-dang-street"
-          },
-          {
-            "slot": "confirm",
-            "vietnamese": "Đây có phải đường Bạch Đằng không?",
-            "english": "Is this Bach Dang Street?",
-            "phraseID": "ves-is-this-bach-dang-street"
-          },
-          {
-            "slot": "drop-off",
-            "vietnamese": "Cho tôi xuống ở đây được không?",
-            "english": "Can you drop me off here?",
-            "phraseID": "ves-drop-me-off-here"
-          }
-        ],
+        "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+        "patchID": "B001-PAGE-009",
+        "approvedAt": "2026-05-04T16:00:32Z",
+        "approvedBy": "reviewer-a+reviewer-b",
+        "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+        "summary": "A street pronouncer for Đường Bạch Đằng: hear the street name, play a driver-ready sentence, confirm the street, and ask for drop-off.",
+        "categoryIDs": [],
         "sections": [
           {
             "id": "at-glance",
             "title": "At a glance",
-            "body": "This is a street-audio page. The user likely needs to say the street to a driver, hotel desk, or local while showing an address."
+            "body": "Use this page to hear and say Đường Bạch Đằng when a driver, hotel, map, or pickup message names the street."
           },
           {
             "id": "quick-say",
             "title": "Quick say",
-            "body": "Đường Bạch Đằng. Play the street name by itself, then play the full taxi sentence.",
+            "body": "Practice the street name first: Đường Bạch Đằng. Then play the full driver sentence.",
             "phraseIDs": [
               "city-danang-place-bach-dang-street"
             ]
@@ -4726,20 +4846,20 @@
           {
             "id": "breakdown",
             "title": "Break it down",
-            "body": "Đường means street. Bạch Đằng is the street name. Keep Bạch Đằng together in audio.",
+            "body": "Đường means street. Keep Bạch Đằng together as one name; do not split it into fake meanings.",
             "breakdownTokens": [
               {
-                "id": "city-danang-place-bach-dang-street-editorial-1",
+                "id": "city-danang-place-bach-dang-street-batch001-1",
                 "vietnamese": "Đường",
                 "english": "street"
               },
               {
-                "id": "city-danang-place-bach-dang-street-editorial-2",
+                "id": "city-danang-place-bach-dang-street-batch001-2",
                 "vietnamese": "Bạch Đằng",
                 "english": "street name to keep together"
               },
               {
-                "id": "city-danang-place-bach-dang-street-editorial-3",
+                "id": "city-danang-place-bach-dang-street-batch001-3",
                 "vietnamese": "Đường Bạch Đằng",
                 "english": "Bach Dang Street"
               }
@@ -4747,25 +4867,24 @@
           },
           {
             "id": "show-driver",
-            "title": "Show the driver",
-            "body": "Cho tôi đến đường Bạch Đằng. — Please take me to Bach Dang Street.",
+            "title": "Show driver",
+            "body": "Use the full sentence when the driver needs the destination street, not just the street name.",
             "phraseIDs": [
-              "city-danang-place-bach-dang-street",
               "ves-to-bach-dang-street"
             ]
           },
           {
             "id": "confirm",
             "title": "Confirm",
-            "body": "Đây có phải đường Bạch Đằng không? — Is this Bach Dang Street?",
+            "body": "Use this when you think you are on the right street but need a quick yes/no confirmation.",
             "phraseIDs": [
               "ves-is-this-bach-dang-street"
             ]
           },
           {
             "id": "drop-off",
-            "title": "Drop off",
-            "body": "Cho tôi xuống ở đây được không? — Can you drop me off here?",
+            "title": "Drop-off",
+            "body": "Use this when the street is close and you want to get out here.",
             "phraseIDs": [
               "ves-drop-me-off-here"
             ]
@@ -4773,14 +4892,44 @@
           {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "Street names should always have two audio versions: street-only and full sentence."
+            "body": "For long Vietnamese street names, full-sentence audio is more useful than spelling. Play the street name, then show the address."
           },
           {
             "id": "explore-next",
             "title": "Explore next",
-            "body": "Connect to: go by Bach Dang Street, stop at Bach Dang Street, near here, wrong place, show address."
+            "body": "Practice driver-ready phrases for getting there, confirming the street, dropping off, and fixing a wrong location.",
+            "phraseIDs": [
+              "city-danang-stop-bach-dang-street",
+              "city-danang-atm-bach-dang-street",
+              "city-danang-eat-near-bach-dang-street"
+            ]
+          },
+          {
+            "id": "place-brief",
+            "title": "What it is",
+            "body": "Đường Bạch Đằng is useful for riverfront addresses, taxis, and walking directions. Show the address or map pin while you play the audio.",
+            "phraseIDs": [
+              "city-danang-bach-dang-route"
+            ]
+          },
+          {
+            "id": "use-it-with",
+            "title": "Use it with",
+            "body": "Use the street name with a map pin, address, hotel note, Grab screen, or pickup message.",
+            "phraseIDs": [
+              "city-danang-near-bach-dang-street"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use this when the street name is the anchor for a ride, pickup, drop-off, walking route, or address check."
           }
-        ]
+        ],
+        "replaceGeneratedSections": true,
+        "heroImageName": null,
+        "templateProfile": "street-pronouncer",
+        "agentApprovalID": "B001-AGENT-APPROVED-002"
       }
     },
     {
@@ -4942,57 +5091,23 @@
       "pageKind": "place",
       "placeKind": "landmark",
       "editorialImport": {
-        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
-        "patchID": "EP-006",
-        "approvedAt": "2026-05-03",
-        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
-        "summary": "A Da Nang landmark page for Cầu Rồng: say the bridge name, ask where it is, get dropped nearby, ask for a photo, and recover if the pickup point is confusing.",
-        "categoryIDs": [
-          "city-guides",
-          "danang",
-          "landmarks-attractions",
-          "beginner",
-          "city-page-kind-place",
-          "place-kind-landmark",
-          "actual-landmarks",
-          "editorial-pilot"
-        ],
-        "visibleRows": [
-          {
-            "slot": "quick-say",
-            "vietnamese": "Cầu Rồng",
-            "english": "Dragon Bridge",
-            "phraseID": "city-danang-place-dragon-bridge"
-          },
-          {
-            "slot": "drop-off",
-            "vietnamese": "Cho tôi xuống gần Cầu Rồng.",
-            "english": "Let me off near Dragon Bridge",
-            "phraseID": "ves-drop-near-dragon-bridge"
-          },
-          {
-            "slot": "where",
-            "vietnamese": "Cầu Rồng ở đâu?",
-            "english": "Where is Dragon Bridge?",
-            "phraseID": "city-danang-where-dragon-bridge"
-          },
-          {
-            "slot": "photo",
-            "vietnamese": "Bạn chụp giúp tôi được không?",
-            "english": "Can you take a photo for me?",
-            "phraseID": "ves-take-photo-for-me"
-          }
-        ],
+        "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+        "patchID": "B001-PAGE-006",
+        "approvedAt": "2026-05-04T16:00:32Z",
+        "approvedBy": "reviewer-a+reviewer-b",
+        "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+        "summary": "A navigation page for Cầu Rồng: say the landmark name, get there, ask where it is, request a photo, and manage pickup nearby.",
+        "categoryIDs": [],
         "sections": [
           {
             "id": "at-glance",
             "title": "At a glance",
-            "body": "Use this around the river, in a Grab/taxi, or when asking a local to point you toward the bridge. The page should be about navigation, photos, and pickup points."
+            "body": "Use Cầu Rồng as a navigation, photo, and meeting-point anchor. The useful moments are getting there, asking where it is, asking for a photo, and finding your pickup point."
           },
           {
             "id": "quick-say",
             "title": "Quick say",
-            "body": "Cầu Rồng — Dragon Bridge. Practice the name, then use it in a full sentence: Cho tôi xuống gần Cầu Rồng.",
+            "body": "Practice the place name first: Cầu Rồng. Then use it inside route, where-question, photo, and drop-off phrases.",
             "phraseIDs": [
               "city-danang-place-dragon-bridge"
             ]
@@ -5000,20 +5115,20 @@
           {
             "id": "breakdown",
             "title": "Break it down",
-            "body": "Cầu means bridge. Rồng means dragon. Together: Cầu Rồng, the place name.",
+            "body": "Cầu means bridge. Rồng means dragon. Together, Cầu Rồng is Dragon Bridge.",
             "breakdownTokens": [
               {
-                "id": "city-danang-place-dragon-bridge-editorial-1",
+                "id": "city-danang-place-dragon-bridge-batch001-1",
                 "vietnamese": "Cầu",
                 "english": "bridge"
               },
               {
-                "id": "city-danang-place-dragon-bridge-editorial-2",
+                "id": "city-danang-place-dragon-bridge-batch001-2",
                 "vietnamese": "Rồng",
                 "english": "dragon"
               },
               {
-                "id": "city-danang-place-dragon-bridge-editorial-3",
+                "id": "city-danang-place-dragon-bridge-batch001-3",
                 "vietnamese": "Cầu Rồng",
                 "english": "Dragon Bridge"
               }
@@ -5022,34 +5137,44 @@
           {
             "id": "place-brief",
             "title": "What it is",
-            "body": "Landmark page: this is a small navigation and photo flow, centered on reaching the bridge, asking for a photo, and keeping the pickup point clear."
+            "body": "A short landmark name that locals can recognize quickly when you show a map pin, ask a driver, or meet someone by the river."
           },
           {
             "id": "use-it-with",
             "title": "Use it with",
-            "body": "Cho tôi xuống gần Cầu Rồng. / Cầu Rồng ở đâu? / Bạn chụp giúp tôi được không? / Tôi đang ở gần Cầu Rồng.",
+            "body": "Use the bridge name with a map pin, pickup point, riverside location, or photo request.",
             "phraseIDs": [
               "ves-drop-near-dragon-bridge",
+              "city-danang-stop-dragon-bridge",
               "city-danang-where-dragon-bridge",
+              "city-danang-go-dragon-bridge",
               "ves-take-photo-for-me"
             ]
           },
           {
             "id": "when-to-use",
             "title": "When to use it",
-            "body": "Use it when the bridge is the meetup point, photo stop, walking direction, or pickup/drop-off landmark."
+            "body": "Use this at a hotel desk, in a taxi, by the river, or when you need someone to point toward the bridge."
           },
           {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "Because the name is short, the full-sentence audio matters: street noise can make single-word place names hard to catch."
+            "body": "If the area is crowded, confirm the pickup side or nearby landmark before you separate from your driver or group."
           },
           {
             "id": "explore-next",
             "title": "Explore next",
-            "body": "Connect to: go to Dragon Bridge, stop at Dragon Bridge, photo help, where is pickup area, taxi return."
+            "body": "Practice route, drop-off, photo request, nearby food, and ride-back phrases.",
+            "phraseIDs": [
+              "city-danang-atm-dragon-bridge",
+              "city-danang-eat-near-dragon-bridge"
+            ]
           }
-        ]
+        ],
+        "replaceGeneratedSections": true,
+        "heroImageName": null,
+        "templateProfile": "place-navigation-and-recovery",
+        "agentApprovalID": "B001-AGENT-APPROVED-001"
       }
     },
     {
@@ -5547,57 +5672,23 @@
       "pageKind": "place",
       "placeKind": "street",
       "editorialImport": {
-        "taskID": "TASK-VIET-EDITORIAL-READY-IMPORT-001",
-        "patchID": "EP-010",
-        "approvedAt": "2026-05-03",
-        "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
-        "summary": "A Say This Street page for Đường Nguyễn Văn Linh: hear the street name, use it with a driver, confirm you are on the right street, and fix a wrong drop-off.",
-        "categoryIDs": [
-          "city-guides",
-          "danang",
-          "neighborhoods-streets",
-          "beginner",
-          "city-page-kind-place",
-          "place-kind-street",
-          "street-pronouncer",
-          "editorial-pilot"
-        ],
-        "visibleRows": [
-          {
-            "slot": "street-only",
-            "vietnamese": "Đường Nguyễn Văn Linh",
-            "english": "Nguyen Van Linh Street",
-            "phraseID": "city-danang-place-nguyen-van-linh-street"
-          },
-          {
-            "slot": "taxi",
-            "vietnamese": "Cho tôi đến đường Nguyễn Văn Linh.",
-            "english": "Please take me to Nguyen Van Linh Street",
-            "phraseID": "ves-to-nguyen-van-linh-street"
-          },
-          {
-            "slot": "confirm",
-            "vietnamese": "Đây có phải đường Nguyễn Văn Linh không?",
-            "english": "Is this Nguyen Van Linh Street?",
-            "phraseID": "ves-is-this-nguyen-van-linh-street"
-          },
-          {
-            "slot": "wrong-place",
-            "vietnamese": "Hình như không đúng chỗ.",
-            "english": "I think this is not the right place",
-            "phraseID": "ves-not-right-place"
-          }
-        ],
+        "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+        "patchID": "B001-PAGE-010",
+        "approvedAt": "2026-05-04T16:00:32Z",
+        "approvedBy": "reviewer-a+reviewer-b",
+        "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+        "summary": "A street pronouncer for Đường Nguyễn Văn Linh: hear the street name, play a driver-ready sentence, confirm the street, and recover from a wrong drop-off.",
+        "categoryIDs": [],
         "sections": [
           {
             "id": "at-glance",
             "title": "At a glance",
-            "body": "This page solves a real traveler problem: the street name is hard to pronounce from spelling. Make the audio the main value."
+            "body": "Use this page to hear and say Đường Nguyễn Văn Linh when a driver, hotel, map, or pickup message names the street."
           },
           {
             "id": "quick-say",
             "title": "Quick say",
-            "body": "Đường Nguyễn Văn Linh. Practice street-only audio first, then the taxi sentence.",
+            "body": "Practice the street name first: Đường Nguyễn Văn Linh. Then play the full driver sentence.",
             "phraseIDs": [
               "city-danang-place-nguyen-van-linh-street"
             ]
@@ -5605,20 +5696,20 @@
           {
             "id": "breakdown",
             "title": "Break it down",
-            "body": "Đường means street. Nguyễn Văn Linh is the street name. Do not split the personal name into fake meanings for travelers.",
+            "body": "Đường means street. Keep Nguyễn Văn Linh together as one name; do not split it into fake meanings.",
             "breakdownTokens": [
               {
-                "id": "city-danang-place-nguyen-van-linh-street-editorial-1",
+                "id": "city-danang-place-nguyen-van-linh-street-batch001-1",
                 "vietnamese": "Đường",
                 "english": "street"
               },
               {
-                "id": "city-danang-place-nguyen-van-linh-street-editorial-2",
+                "id": "city-danang-place-nguyen-van-linh-street-batch001-2",
                 "vietnamese": "Nguyễn Văn Linh",
                 "english": "street name to keep together"
               },
               {
-                "id": "city-danang-place-nguyen-van-linh-street-editorial-3",
+                "id": "city-danang-place-nguyen-van-linh-street-batch001-3",
                 "vietnamese": "Đường Nguyễn Văn Linh",
                 "english": "Nguyen Van Linh Street"
               }
@@ -5626,17 +5717,16 @@
           },
           {
             "id": "show-driver",
-            "title": "Show the driver",
-            "body": "Cho tôi đến đường Nguyễn Văn Linh. — Please take me to Nguyen Van Linh Street.",
+            "title": "Show driver",
+            "body": "Use the full sentence when the driver needs the destination street, not just the street name.",
             "phraseIDs": [
-              "city-danang-place-nguyen-van-linh-street",
               "ves-to-nguyen-van-linh-street"
             ]
           },
           {
             "id": "confirm",
             "title": "Confirm",
-            "body": "Đây có phải đường Nguyễn Văn Linh không? — Is this Nguyen Van Linh Street?",
+            "body": "Use this when you think you are on the right street but need a quick yes/no confirmation.",
             "phraseIDs": [
               "ves-is-this-nguyen-van-linh-street"
             ]
@@ -5644,7 +5734,7 @@
           {
             "id": "wrong-place",
             "title": "Wrong place",
-            "body": "Hình như không đúng chỗ. — I think this is not the right place.",
+            "body": "Use this when the map or drop-off does not match where you intended to go.",
             "phraseIDs": [
               "ves-not-right-place"
             ]
@@ -5652,14 +5742,44 @@
           {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "For long Vietnamese street names, full-sentence audio is more useful than dictionary-style spelling."
+            "body": "For long Vietnamese street names, full-sentence audio is more useful than spelling. Play the street name, then show the address."
           },
           {
             "id": "explore-next",
             "title": "Explore next",
-            "body": "Connect to: go to Nguyen Van Linh Street, stop here, near here, wrong place, show address."
+            "body": "Practice driver-ready phrases for getting there, confirming the street, dropping off, and fixing a wrong location.",
+            "phraseIDs": [
+              "city-danang-bach-dang-route"
+            ]
+          },
+          {
+            "id": "place-brief",
+            "title": "What it is",
+            "body": "Đường Nguyễn Văn Linh is useful for airport-to-city rides, hotels, pickup points, and address checks. Show the address or map pin while you play the audio.",
+            "phraseIDs": [
+              "city-danang-go-nguyen-van-linh-street",
+              "city-danang-near-nguyen-van-linh-street",
+              "city-danang-stop-nguyen-van-linh-street"
+            ]
+          },
+          {
+            "id": "use-it-with",
+            "title": "Use it with",
+            "body": "Use the street name with a map pin, address, hotel note, Grab screen, or pickup message.",
+            "phraseIDs": [
+              "city-danang-where-nguyen-van-linh-street"
+            ]
+          },
+          {
+            "id": "when-to-use",
+            "title": "When to use it",
+            "body": "Use this when the street name is the anchor for a ride, pickup, drop-off, walking route, or address check."
           }
-        ]
+        ],
+        "replaceGeneratedSections": true,
+        "heroImageName": null,
+        "templateProfile": "street-pronouncer",
+        "agentApprovalID": "B001-AGENT-APPROVED-003"
       }
     },
     {

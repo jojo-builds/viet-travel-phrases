@@ -7,7 +7,7 @@
   "title": "Gọi taxi giúp tôi được không?",
   "englishTitle": "Can you call a taxi for me?",
   "pronunciation": "goy taxi zoop toy dook khong",
-  "summary": "Can you call a taxi for me?",
+  "summary": "A hotel-desk taxi phrase for asking staff to call a taxi and confirm where to wait.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,20 +20,18 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Gọi taxi giúp tôi được không? asks someone to do one helpful action for you. Use it for call a taxi for me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use this at a hotel, homestay, or front desk when you want staff to call a taxi for you."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Gọi taxi giúp tôi được không? once, then make the task visible with your booking screen, room key, address, room number, or photo of the issue. The phrase is doing one job: getting a clear answer about call a taxi for me.",
+      "body": "Ask politely: Gọi taxi giúp tôi được không? — Can you call a taxi for me?",
       "phrases": [
         {
           "id": "hotel-9",
           "vietnamese": "Gọi taxi giúp tôi được không?",
           "english": "Can you call a taxi for me?",
           "pronunciation": "goy taxi zoop toy dook khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
           "detailPageID": null,
           "audioKey": "hotel-9"
         }
@@ -42,47 +40,43 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Gọi taxi means call a taxi. Giúp tôi means help me. Được không? asks if it is possible.",
       "breakdown": [
         {
-          "id": "chunk-1",
+          "id": "hotel-9-batch001-1",
           "vietnamese": "Gọi taxi giúp",
-          "english": "call",
-          "audioKey": null
+          "english": "call a taxi for me"
         },
         {
-          "id": "chunk-2",
+          "id": "hotel-9-batch001-2",
           "vietnamese": "tôi",
           "english": "I / me",
-          "audioKey": null
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
         },
         {
-          "id": "chunk-3",
+          "id": "hotel-9-batch001-3",
           "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "english": "is it possible?"
         },
         {
-          "id": "chunk-4",
+          "id": "hotel-9-batch001-4",
           "vietnamese": "Gọi taxi giúp tôi được không?",
           "english": "Can you call a taxi for me",
-          "audioKey": null
+          "audioKey": "hotel-9"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you call a taxi for me? to another hotel or stay need.",
+      "body": "Use these when the hotel moment shifts to check-in, checkout, room problems, or a quieter room.",
       "phrases": [
         {
           "id": "hotel-1",
           "vietnamese": "Tôi có đặt phòng",
           "english": "I have a reservation",
           "pronunciation": "toy koh dat fong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-1",
+          "detailPageID": "viet-family-hotel-reservation",
           "audioKey": "hotel-1"
         },
         {
@@ -90,9 +84,7 @@
           "vietnamese": "Cho tôi nhận phòng",
           "english": "I’d like to check in",
           "pronunciation": "cho toy nyun fong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-2",
+          "detailPageID": "viet-family-hotel-check-in",
           "audioKey": "hotel-2"
         },
         {
@@ -100,8 +92,6 @@
           "vietnamese": "Cho tôi nhận phòng nhé",
           "english": "I’d like to check in, please",
           "pronunciation": "cho toy nyun fong nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
           "detailPageID": "viet-phrase-hotel-check-in-polite",
           "audioKey": "hotel-check-in-polite"
         }
@@ -110,26 +100,24 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when call a taxi for me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use this when staff can help arrange a ride and you need a simple, playable request."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "After they agree, ask where to wait or show the destination on your map."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Gọi taxi giúp tôi được không?.",
+      "body": "Practice checkout time, quiet room, checkout, air conditioner, and room problem phrases.",
       "phrases": [
         {
           "id": "hotel-3",
           "vietnamese": "Mấy giờ trả phòng?",
           "english": "What time is check-out?",
           "pronunciation": "may zyuh tra fong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-3",
+          "detailPageID": "viet-family-hotel-checkout-time",
           "audioKey": "hotel-3"
         },
         {
@@ -137,8 +125,6 @@
           "vietnamese": "Cho tôi phòng yên tĩnh được không?",
           "english": "Can I have a quiet room?",
           "pronunciation": "cho toy fong yen tinh dook khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
           "detailPageID": "viet-phrase-hotel-quiet-room",
           "audioKey": "hotel-quiet-room"
         },
@@ -147,9 +133,7 @@
           "vietnamese": "Cho tôi trả phòng",
           "english": "I’d like to check out",
           "pronunciation": "cho toy tra fong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-checkout",
+          "detailPageID": "viet-family-hotel-checkout",
           "audioKey": "hotel-checkout"
         },
         {
@@ -157,9 +141,7 @@
           "vietnamese": "Phòng này nóng quá",
           "english": "This room is too hot",
           "pronunciation": "fong nai nong gwah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-4",
+          "detailPageID": "viet-family-hotel-room-hot",
           "audioKey": "hotel-4"
         },
         {
@@ -167,9 +149,7 @@
           "vietnamese": "Máy lạnh không chạy",
           "english": "The air conditioner isn’t working",
           "pronunciation": "mai lanh khong chai",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-5",
+          "detailPageID": "viet-family-hotel-aircon-broken",
           "audioKey": "hotel-5"
         }
       ]
@@ -186,5 +166,14 @@
       "detailPageID": null,
       "audioKey": "hotel-9"
     }
-  ]
+  ],
+  "editorialImport": {
+    "taskID": "TASK-VIET-CHATGPT-EDITORIAL-AGENT-IMPORT-001",
+    "patchID": "B001-PAGE-020",
+    "approvedAt": "2026-05-04T16:00:32Z",
+    "approvedBy": "reviewer-a+reviewer-b",
+    "sourcePatch": "chatgpt-batch-001/incoming-chatgpt/completed-patch-files",
+    "templateProfile": "hotel-taxi-help",
+    "agentApprovalID": "B001-AGENT-APPROVED-009"
+  }
 }

@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-04T06:54:31.718Z",
+    "generatedAt": "2026-05-04T16:43:07.136Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 750,
     "editorialSupportPageCount": 32,
     "practiceExpansionPageCount": 1350,
-    "requiredAudioCount": 3413,
+    "requiredAudioCount": 3414,
     "missingAudioCount": 2126
   },
   "required": [
@@ -3751,6 +3751,22 @@
       "kind": "hero",
       "audioKey": "v500-airp-bord-arri-where-is-the-taxi-counter",
       "text": "Quầy taxi ở đâu?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-airp-bord-arri-where-is-the-taxi-counter-subject",
+      "text": "Quầy taxi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-o-dau-ca439c525d",
+      "text": "ở đâu",
       "resolved": true
     },
     {
@@ -11079,14 +11095,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-v500-time-date-book-one-ticket-please-rest",
       "text": "Một vé",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-city-danang-where-airport",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-o-dau-ca439c525d",
-      "text": "ở đâu",
       "resolved": true
     },
     {
