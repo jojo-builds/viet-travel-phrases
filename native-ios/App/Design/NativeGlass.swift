@@ -135,26 +135,26 @@ enum PhrasePageStyle {
 
 enum AppChromeLayout {
     static let bottomOuterHorizontalPadding: CGFloat = 16
-    static let bottomSpacing: CGFloat = 8
+    static let bottomSpacing: CGFloat = 6
     static let bottomPadding: CGFloat = -10
     static let bottomOffset: CGFloat = 10
-    static let bottomSeparationHeight: CGFloat = 132
+    static let bottomSeparationHeight: CGFloat = 0
     static let topSeparationHeight: CGFloat = 170
-    static let bottomHitTestEnvelopeHeight: CGFloat = 92
+    static let bottomHitTestEnvelopeHeight: CGFloat = 84
     static let chromeSeparationAllowsHitTesting = false
-    static let dockItemSpacing: CGFloat = 12
-    static let dockItemWidth: CGFloat = 52
-    static let dockItemHeight: CGFloat = 50
-    static let dockHorizontalPadding: CGFloat = 12
-    static let dockVerticalPadding: CGFloat = 4
-    static let dockCornerRadius: CGFloat = 29
-    static let searchIslandSize: CGFloat = 58
-    static let searchIslandCornerRadius: CGFloat = 29
-    static let searchFieldHeight: CGFloat = 58
+    static let dockItemSpacing: CGFloat = 10
+    static let dockItemWidth: CGFloat = 50
+    static let dockItemHeight: CGFloat = 46
+    static let dockHorizontalPadding: CGFloat = 10
+    static let dockVerticalPadding: CGFloat = 3
+    static let dockCornerRadius: CGFloat = 26
+    static let searchIslandSize: CGFloat = 52
+    static let searchIslandCornerRadius: CGFloat = 26
+    static let searchFieldHeight: CGFloat = 52
     static let searchFieldHorizontalPadding: CGFloat = 14
     static let searchMorphDuration = 0.39
     static let dockMorphZIndex: Double = 0
-    static let searchOriginMorphZIndex: Double = 1
+    static let searchOriginMorphZIndex: Double = 0
     static let searchMorphZIndex: Double = 3
     static let keyboardDismissMorphZIndex: Double = 4
 }

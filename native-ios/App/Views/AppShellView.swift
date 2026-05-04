@@ -572,7 +572,7 @@ struct AppShellView: View {
                         kind: item,
                         selected: item == chrome.selectedDockItem,
                         chromeNamespace: chromeNamespace,
-                        isMorphSource: item == chrome.selectedDockItem && !navigation.isSearchPresented
+                        isMorphSource: item == chrome.selectedDockItem
                     )
                 }
                 .buttonStyle(.plain)
@@ -585,6 +585,8 @@ struct AppShellView: View {
         .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
         .padding(.vertical, AppChromeLayout.dockVerticalPadding)
         .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
+        .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
+        .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
         .zIndex(AppChromeLayout.dockMorphZIndex)
     }
 
@@ -615,13 +617,15 @@ struct AppShellView: View {
         } label: {
             Image(systemName: kind.symbolName)
                 .font(.title3.weight(.semibold))
-                .foregroundStyle(.red)
+                .foregroundStyle(.primary)
                 .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
                 .contentShape(Circle())
                 .chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: false)
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
+        .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
         .accessibilityLabel(kind.title)
         .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
         .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
