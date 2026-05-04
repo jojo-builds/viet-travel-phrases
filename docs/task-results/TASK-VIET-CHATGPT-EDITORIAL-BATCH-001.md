@@ -1,6 +1,6 @@
 # TASK-VIET-CHATGPT-EDITORIAL-BATCH-001 Result
 
-Status: complete. Commit hash: `PENDING_COMMIT`.
+Status: complete. Final commit hash is recorded in the thread closeout. Packet commit before this result hash update: `9087f0a42df0`.
 
 ## Accepted Steers
 
@@ -109,4 +109,4 @@ Send the existing Sheet’s `batch_001_*` tabs or the batch backing Sheet to Cha
 
 ## Final Git Status
 
-`PENDING_FINAL_STATUS`
+Clean after commit before amending result hash.
