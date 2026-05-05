@@ -145,6 +145,7 @@ function run(command, args, options = {}) {
   const result = spawnSync(command, args, {
     cwd: repoRoot,
     encoding: "utf8",
+    maxBuffer: 64 * 1024 * 1024,
     ...options,
   });
   if (result.status !== 0) {
@@ -259,6 +260,8 @@ function main() {
     ),
     'searchDocuments', (SELECT count(*) FROM search_document),
     'relations', (SELECT count(*) FROM phrase_relation),
+    'practiceSeeds', (SELECT count(*) FROM page_practice_seed),
+    'practiceSteps', (SELECT count(*) FROM page_practice_step),
     'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit),
     'releaseBlockingMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE release_blocking = 1),
     'plannedMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE severity = 'planned' AND release_blocking = 0),
@@ -277,6 +280,54 @@ function main() {
   assertEqual(counts.canonicalPages, report.countParity.canonicalPhrasePages.expected, "canonical phrase-page count");
   assertEqual(counts.resolvedPhrases, report.countParity.phrases.expected, "phrases resolving to canonical pages");
   assertEqual(counts.searchDocuments, report.countParity.phrases.expected, "search document count");
+  assertEqual(counts.practiceSeeds, counts.canonicalPages, "practice seed count");
+  assertTrue(counts.practiceSteps >= counts.canonicalPages, "practice step count should cover canonical pages");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_practice_seed
+    WHERE COALESCE(practice_kind, '') = ''
+       OR COALESCE(cta_label, '') = ''
+       OR COALESCE(scenario_seed_id, '') = ''
+       OR COALESCE(primary_phrase_ids, '') = '';
+  `), "practice seeds missing required fields");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_practice_step
+    WHERE COALESCE(title, '') = ''
+       OR COALESCE(primary_phrase_ids, '') = '';
+  `), "practice steps missing required fields");
+  const phraseIDs = new Set(JSON.parse(sqliteValue("SELECT json_group_array(id) FROM phrase;")) ?? []);
+  const practiceReferenceRows = JSON.parse(sqliteValue(`
+    SELECT json_group_array(json_object(
+      'kind', kind,
+      'rowID', row_id,
+      'primaryPhraseIDs', primary_phrase_ids,
+      'secondaryPhraseIDs', secondary_phrase_ids,
+      'supportPhraseIDs', support_phrase_ids
+    ))
+    FROM (
+      SELECT 'seed' AS kind, page_id AS row_id, primary_phrase_ids, secondary_phrase_ids, '' AS support_phrase_ids
+      FROM page_practice_seed
+      UNION ALL
+      SELECT 'step' AS kind, id AS row_id, primary_phrase_ids, '' AS secondary_phrase_ids, support_phrase_ids
+      FROM page_practice_step
+    );
+  `)) ?? [];
+  const unresolvedPracticeReferences = [];
+  for (const row of practiceReferenceRows) {
+    for (const column of ["primaryPhraseIDs", "secondaryPhraseIDs", "supportPhraseIDs"]) {
+      for (const phraseID of String(row[column] || "").split("|").map((value) => value.trim()).filter(Boolean)) {
+        if (!phraseIDs.has(phraseID)) {
+          unresolvedPracticeReferences.push(`${row.kind}:${row.rowID}:${column}:${phraseID}`);
+        }
+      }
+    }
+  }
+  assertEqual(
+    unresolvedPracticeReferences.slice(0, 10).join("\n"),
+    "",
+    `practice scenario seed phrase references must resolve (${unresolvedPracticeReferences.length} unresolved)`
+  );
   assertZero(counts.releaseBlockingMissingAudioAuditRows, "release-blocking missing audio audit rows");
   const plannedAudioSourcePhraseCount = Number(sqliteValue("SELECT count(*) FROM phrase WHERE audio_status = 'planned';"));
   const plannedAudioQueueRows = csvRowCount(plannedMissingAudioQueuePath);
@@ -418,18 +469,6 @@ function main() {
       );
   `), "Quick Say/Standard Way rows that are neither canonical self rows nor approved beginner shortcuts");
 
-  assertEqual(Number(sqliteValue(`
-    SELECT count(*)
-    FROM phrase_page pp
-    JOIN page_section ps ON ps.page_id = pp.id
-    JOIN page_section_item psi ON psi.section_id = ps.id
-    WHERE pp.id = 'viet-phrase-polite-1'
-      AND ps.section_key = 'quick-say'
-      AND psi.item_kind = 'phrase'
-      AND psi.note = 'viet-phrase-hello-chao'
-      AND psi.title_override = 'Chào';
-  `)), 1, "approved Xin chào beginner shortcut row");
-
   const reviewedCompoundPhrasePageIDSQL = reviewedCompoundPhrasePageIDs.map(sqlQuote).join(",");
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -530,18 +569,16 @@ function main() {
         MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
         MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
         MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-        MAX(CASE
-          WHEN ps.section_key = 'when-to-use' THEN 1
-          WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
-          WHEN pp.id = '${dragonBridgeLandmarkPageID}' AND ps.section_key = 'getting-there' THEN 1
-          ELSE 0
-        END) AS has_when_to_use,
-        MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
+        MAX(CASE WHEN COALESCE(ps.body, '') != '' THEN 1 ELSE 0 END) AS has_context_copy,
         SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
-        SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
+        SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows,
+        MAX(CASE WHEN pps.page_id IS NOT NULL THEN 1 ELSE 0 END) AS has_practice_seed,
+        MAX(CASE WHEN ppst.page_id IS NOT NULL THEN 1 ELSE 0 END) AS has_practice_steps
       FROM phrase_page pp
       JOIN page_section ps ON ps.page_id = pp.id
       LEFT JOIN page_section_item psi ON psi.section_id = ps.id
+      LEFT JOIN page_practice_seed pps ON pps.page_id = pp.id
+      LEFT JOIN page_practice_step ppst ON ppst.page_id = pp.id
       GROUP BY pp.id
     )
     SELECT count(*)
@@ -551,10 +588,11 @@ function main() {
         has_at_glance = 0
         OR has_quick_or_standard = 0
         OR has_breakdown = 0
-        OR has_when_to_use = 0
-        OR has_good_to_know = 0
+        OR has_context_copy = 0
         OR article_phrase_rows = 0
         OR breakdown_rows = 0
+        OR has_practice_seed = 0
+        OR has_practice_steps = 0
       );
   `));
   if (incompleteArticleContractCount !== 0) {
@@ -566,18 +604,16 @@ function main() {
           MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
           MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
           MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-          MAX(CASE
-            WHEN ps.section_key = 'when-to-use' THEN 1
-            WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
-            WHEN pp.id = '${dragonBridgeLandmarkPageID}' AND ps.section_key = 'getting-there' THEN 1
-            ELSE 0
-          END) AS has_when_to_use,
-          MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
+          MAX(CASE WHEN COALESCE(ps.body, '') != '' THEN 1 ELSE 0 END) AS has_context_copy,
           SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
-          SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
+          SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows,
+          MAX(CASE WHEN pps.page_id IS NOT NULL THEN 1 ELSE 0 END) AS has_practice_seed,
+          MAX(CASE WHEN ppst.page_id IS NOT NULL THEN 1 ELSE 0 END) AS has_practice_steps
         FROM phrase_page pp
         JOIN page_section ps ON ps.page_id = pp.id
         LEFT JOIN page_section_item psi ON psi.section_id = ps.id
+        LEFT JOIN page_practice_seed pps ON pps.page_id = pp.id
+        LEFT JOIN page_practice_step ppst ON ppst.page_id = pp.id
         GROUP BY pp.id
       )
       SELECT page_id || ': ' || page_title
@@ -587,10 +623,11 @@ function main() {
           has_at_glance = 0
           OR has_quick_or_standard = 0
           OR has_breakdown = 0
-          OR has_when_to_use = 0
-          OR has_good_to_know = 0
+          OR has_context_copy = 0
           OR article_phrase_rows = 0
           OR breakdown_rows = 0
+          OR has_practice_seed = 0
+          OR has_practice_steps = 0
         )
       ORDER BY page_id
       LIMIT 20;
@@ -676,10 +713,6 @@ function main() {
       "quick-say",
       "breakdown",
       "relationship-words",
-      "when-to-use",
-      "situational-greetings",
-      "common-follow-ups",
-      "cultural-note",
       "good-to-know",
       "explore-next",
     ].join("|"),

@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-05-05T08:44:44.151Z",
+  "pageCount": 3070,
+  "profileCounts": {
+    "singlePhrase": 2320,
+    "cityPhrase": 601,
+    "landmark": 115,
+    "streetDriver": 19,
+    "restaurant": 13,
+    "dish": 2
+  },
+  "statusCounts": {
+    "APPROVED_LIVE": 3070
+  },
+  "issueCounts": {},
+  "issueCount": 0,
+  "trackerPath": "docs/content-audits/viet-canonical-editorial-finish-all-001/tracker.jsonl",
+  "issuesPath": "docs/content-audits/viet-canonical-editorial-finish-all-001/issues.csv",
+  "representativeExcerptsPath": "docs/content-audits/viet-canonical-editorial-finish-all-001/representative-page-excerpts.md",
+  "practiceMetadataSamplesPath": "docs/content-audits/viet-canonical-editorial-finish-all-001/practice-metadata-samples.json",
+  "missingAudioPriorityPath": "docs/content-audits/viet-canonical-editorial-finish-all-001/missing-audio-priority.csv",
+  "heroImageFollowupsPath": "docs/content-audits/viet-canonical-editorial-finish-all-001/hero-image-followups.csv",
+  "fallbackTemplateReportPath": "docs/content-audits/viet-canonical-editorial-finish-all-001/fallback-template-report.json"
+}

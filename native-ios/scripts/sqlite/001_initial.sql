@@ -144,6 +144,29 @@ CREATE TABLE page_category (
   PRIMARY KEY(page_id, category_id)
 );
 
+CREATE TABLE page_practice_seed (
+  page_id TEXT PRIMARY KEY REFERENCES phrase_page(id),
+  practice_kind TEXT NOT NULL,
+  cta_label TEXT NOT NULL,
+  scenario_seed_id TEXT NOT NULL,
+  scenario_eligible INTEGER NOT NULL,
+  surface_policy TEXT NOT NULL DEFAULT 'recommended_when_relevant',
+  primary_phrase_ids TEXT NOT NULL,
+  secondary_phrase_ids TEXT NOT NULL,
+  source_page_id TEXT NOT NULL
+);
+
+CREATE TABLE page_practice_step (
+  id TEXT PRIMARY KEY,
+  page_id TEXT NOT NULL REFERENCES phrase_page(id),
+  step_id TEXT NOT NULL,
+  title TEXT NOT NULL,
+  primary_phrase_ids TEXT NOT NULL,
+  support_phrase_ids TEXT NOT NULL,
+  sort_order INTEGER NOT NULL,
+  UNIQUE(page_id, step_id)
+);
+
 CREATE TABLE page_section (
   id TEXT PRIMARY KEY,
   page_id TEXT NOT NULL REFERENCES phrase_page(id),

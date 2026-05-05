@@ -303,7 +303,7 @@ function phraseOptionFromCatalog(phraseID, currentPhraseID, catalogIndex, audioB
     vietnamese: phrase.targetText,
     english: phrase.englishText,
     pronunciation: phrase.pronunciation,
-    symbolName: "speaker.slash.fill",
+    symbolName: "text.bubble.fill",
     tintName: phrase.cityID ? "teal" : "blue",
     detailPageID,
     audioKey,

@@ -930,8 +930,10 @@ private struct BreakdownTokenCard: View {
                 .minimumScaleFactor(0.82)
                 .fixedSize(horizontal: false, vertical: true)
 
-            BreakdownTokenAudioIndicator(isPlayable: resolvedAudioKey != nil)
-                .padding(.top, 1)
+            if resolvedAudioKey != nil {
+                BreakdownTokenAudioIndicator()
+                    .padding(.top, 1)
+            }
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 12)
@@ -942,15 +944,14 @@ private struct BreakdownTokenCard: View {
 }
 
 private struct BreakdownTokenAudioIndicator: View {
-    let isPlayable: Bool
     private let size: CGFloat = 30
 
     var body: some View {
-        Image(systemName: isPlayable ? "speaker.wave.2.fill" : "speaker.slash.fill")
+        Image(systemName: "speaker.wave.2.fill")
             .font(.system(size: size * 0.36, weight: .semibold))
-            .foregroundStyle(isPlayable ? AccentTint.red.audioColor : Color.secondary.opacity(0.72))
+            .foregroundStyle(AccentTint.red.audioColor)
             .frame(width: size, height: size)
-            .nativeGlass(cornerRadius: size / 2, interactive: isPlayable)
+            .nativeGlass(cornerRadius: size / 2, interactive: true)
     }
 }
 

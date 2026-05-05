@@ -33,11 +33,13 @@ struct AudioSpeakerButton: View {
 
     @ViewBuilder
     var body: some View {
-        if let accessibilityIdentifier {
-            button
-                .accessibilityIdentifier(accessibilityIdentifier)
-        } else {
-            button
+        if resolvedAudioKey != nil {
+            if let accessibilityIdentifier {
+                button
+                    .accessibilityIdentifier(accessibilityIdentifier)
+            } else {
+                button
+            }
         }
     }
 
@@ -47,17 +49,16 @@ struct AudioSpeakerButton: View {
                 AudioPlaybackService.shared.play(audioKey: resolvedAudioKey)
             }
         } label: {
-            Image(systemName: resolvedAudioKey == nil ? "speaker.slash.fill" : "speaker.wave.2.fill")
+            Image(systemName: "speaker.wave.2.fill")
                 .font(.system(size: size * 0.36, weight: .semibold))
-                .foregroundStyle(resolvedAudioKey == nil ? Color.secondary.opacity(0.72) : tint.audioColor)
+                .foregroundStyle(tint.audioColor)
                 .frame(width: size, height: size)
-                .nativeGlass(cornerRadius: size / 2, interactive: resolvedAudioKey != nil)
+                .nativeGlass(cornerRadius: size / 2, interactive: true)
                 .frame(width: Self.tapTargetSize(for: size), height: Self.tapTargetSize(for: size))
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .disabled(resolvedAudioKey == nil)
-        .accessibilityLabel(resolvedAudioKey == nil ? "Audio not available yet" : "Play audio")
+        .accessibilityLabel("Play audio")
     }
 }
 
@@ -94,8 +95,10 @@ struct PlaybackDockView: View {
             }
             .nativeGlass(cornerRadius: 39)
 
-            raisedPlayButton
-                .offset(x: -52, y: -3)
+            if playableAudioKey != nil {
+                raisedPlayButton
+                    .offset(x: -52, y: -3)
+            }
         }
         .frame(maxWidth: .infinity)
         .frame(height: 108)
@@ -151,18 +154,17 @@ struct PlaybackDockView: View {
                     }
                     .shadow(color: .black.opacity(0.08), radius: 15, x: 0, y: 10)
 
-                Image(systemName: playableAudioKey == nil ? "speaker.slash.fill" : "play.fill")
+                Image(systemName: "play.fill")
                     .font(.system(size: 29, weight: .bold))
-                    .foregroundStyle(playableAudioKey == nil ? Color.secondary.opacity(0.72) : Color.red)
-                    .offset(x: playableAudioKey == nil ? 0 : 3)
+                    .foregroundStyle(Color.red)
+                    .offset(x: 3)
             }
             .frame(width: 96, height: 96)
             .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .disabled(playableAudioKey == nil)
-        .nativeGlass(cornerRadius: 48, tint: .white, interactive: playableAudioKey != nil)
-        .accessibilityLabel(playableAudioKey == nil ? "Audio not available yet" : "Play phrase audio")
+        .nativeGlass(cornerRadius: 48, tint: .white, interactive: true)
+        .accessibilityLabel("Play phrase audio")
     }
 
     private var selectedRate: Double {

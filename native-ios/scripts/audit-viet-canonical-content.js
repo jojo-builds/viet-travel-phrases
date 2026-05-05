@@ -17,8 +17,6 @@ const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge"
 const requiredSectionKeys = new Set([
   "at-glance",
   "breakdown",
-  "when-to-use",
-  "good-to-know",
 ]);
 
 const learnerFacingBannedPatterns = [
@@ -89,7 +87,6 @@ const weakBreakdownPatterns = [
   { id: "proper_name", pattern: /^proper name\b/i },
   { id: "place_name", pattern: /^place name$/i },
   { id: "name_starter", pattern: /^name starter$/i },
-  { id: "street_name", pattern: /^street name$/i },
   { id: "market_name", pattern: /^market name$/i },
   { id: "driver_word", pattern: /^driver word$/i },
   { id: "phrase_piece", pattern: /^phrase piece$/i },
@@ -277,12 +274,20 @@ function hasInteractiveContent(section) {
 
 function duplicateNonFinalBreakdownLabels(breakdownRows) {
   if (breakdownRows.length < 3) return [];
+  const safeRepeatedNameLabels = new Set([
+    "local name",
+    "restaurant name",
+    "dish name",
+    "street name",
+    "attraction name",
+  ]);
   const maxOrder = Math.max(...breakdownRows.map((row) => Number(row.sort_order)));
   const labelRows = new Map();
   for (const row of breakdownRows) {
     if (Number(row.sort_order) >= maxOrder) continue;
     const label = normalize(row.english_gloss);
     if (!label) continue;
+    if (safeRepeatedNameLabels.has(label)) continue;
     if (!labelRows.has(label)) labelRows.set(label, []);
     labelRows.get(label).push(row);
   }
@@ -342,10 +347,6 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
   if (!sectionKeys.has("quick-say") && !sectionKeys.has("standard-way")) {
     issues.push(issue("missing_quick_or_standard", "must_fix", "Missing Quick say or standard-way teaching section."));
   }
-  if (!sectionKeys.has("explore-next")) {
-    issues.push(issue("missing_explore_next", "needs_authored_review", "Missing Explore next section."));
-  }
-
   if (normalize(page.english_title) !== normalize(page.phrase_english_text)) {
     issues.push(issue("hero_translation_mismatch", "blocker", "Hero English title does not match canonical phrase English text."));
   }

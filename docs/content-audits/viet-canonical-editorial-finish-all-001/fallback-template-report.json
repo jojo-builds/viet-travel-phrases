@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-05-05T08:44:44.170Z",
+  "note": "Fallback here means the page is using the deterministic lightweight traveler template instead of a page-specific human patch.",
+  "countsByProfile": {
+    "singlePhrase": 2320,
+    "cityPhrase": 601,
+    "landmark": 115,
+    "streetDriver": 19,
+    "restaurant": 13,
+    "dish": 2
+  },
+  "pageSpecificHeroCount": 2,
+  "genericHeroNamePageCount": 147
+}

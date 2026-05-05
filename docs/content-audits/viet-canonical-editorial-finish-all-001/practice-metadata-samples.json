@@ -1,0 +1,320 @@
+{
+  "viet-family-city-danang-place-dragon-bridge": {
+    "title": "Cầu Rồng / Dragon Bridge",
+    "practiceMetadata": {
+      "integrationVersion": "listing-scenario-seed-v1",
+      "scenarioEligible": true,
+      "practiceKind": "place_visit_mini_scenario",
+      "practiceCTALabel": "Practice this place",
+      "practiceSurfacePolicy": "recommended_when_relevant",
+      "scenarioSeedID": "scenario-seed-city-danang-place-dragon-bridge",
+      "scenarioStepGroups": [
+        {
+          "stepID": "quick-say",
+          "title": "Hear the name",
+          "sourceSectionID": "quick-say",
+          "primaryPhraseIDs": [
+            "city-danang-place-dragon-bridge"
+          ],
+          "supportPhraseIDs": []
+        },
+        {
+          "stepID": "getting-there",
+          "title": "Getting there",
+          "sourceSectionID": "getting-there",
+          "primaryPhraseIDs": [
+            "city-danang-go-dragon-bridge"
+          ],
+          "supportPhraseIDs": [
+            "city-danang-where-dragon-bridge"
+          ]
+        },
+        {
+          "stepID": "at-the-bridge",
+          "title": "At the bridge",
+          "sourceSectionID": "at-the-bridge",
+          "primaryPhraseIDs": [
+            "ves-take-photo-for-me"
+          ],
+          "supportPhraseIDs": []
+        },
+        {
+          "stepID": "pickup-nearby",
+          "title": "Meeting or pickup",
+          "sourceSectionID": "pickup-nearby",
+          "primaryPhraseIDs": [
+            "ves-drop-near-dragon-bridge"
+          ],
+          "supportPhraseIDs": [
+            "city-danang-stop-dragon-bridge"
+          ]
+        },
+        {
+          "stepID": "explore-next",
+          "title": "Nearby needs",
+          "sourceSectionID": "explore-next",
+          "primaryPhraseIDs": [
+            "city-danang-atm-dragon-bridge"
+          ],
+          "supportPhraseIDs": [
+            "city-danang-eat-near-dragon-bridge"
+          ]
+        }
+      ],
+      "primaryPracticePhraseIDs": [
+        "city-danang-place-dragon-bridge",
+        "city-danang-go-dragon-bridge",
+        "ves-take-photo-for-me",
+        "ves-drop-near-dragon-bridge",
+        "city-danang-atm-dragon-bridge"
+      ],
+      "secondaryPracticePhraseIDs": [
+        "city-danang-where-dragon-bridge",
+        "city-danang-stop-dragon-bridge",
+        "city-danang-eat-near-dragon-bridge"
+      ],
+      "practiceSourcePageID": "viet-family-city-danang-place-dragon-bridge"
+    }
+  },
+  "viet-family-city-danang-place-ba-na-hills": {
+    "title": "Bà Nà Hills / Ba Na Hills",
+    "practiceMetadata": {
+      "integrationVersion": "listing-scenario-seed-v1",
+      "scenarioEligible": true,
+      "practiceKind": "trip_journey_scenario",
+      "practiceCTALabel": "Practice this trip",
+      "practiceSurfacePolicy": "recommended_when_relevant",
+      "scenarioSeedID": "scenario-seed-city-danang-place-ba-na-hills",
+      "scenarioStepGroups": [
+        {
+          "stepID": "quick-say",
+          "title": "Hear the name",
+          "sourceSectionID": "quick-say",
+          "primaryPhraseIDs": [
+            "city-danang-place-ba-na-hills"
+          ],
+          "supportPhraseIDs": []
+        },
+        {
+          "stepID": "key-phrases",
+          "title": "Common phrases",
+          "sourceSectionID": "key-phrases",
+          "primaryPhraseIDs": [
+            "city-danang-go-ba-na-hills"
+          ],
+          "supportPhraseIDs": [
+            "ves-two-tickets-ba-na-hills",
+            "ves-where-cable-car",
+            "ves-take-photo-for-me",
+            "ves-call-taxi-for-me"
+          ]
+        },
+        {
+          "stepID": "explore-next",
+          "title": "Nearby needs",
+          "sourceSectionID": "explore-next",
+          "primaryPhraseIDs": [
+            "city-danang-where-ba-na-hills"
+          ],
+          "supportPhraseIDs": [
+            "city-danang-stop-ba-na-hills",
+            "city-danang-eat-near-ba-na-hills",
+            "city-danang-atm-ba-na-hills"
+          ]
+        }
+      ],
+      "primaryPracticePhraseIDs": [
+        "city-danang-place-ba-na-hills",
+        "city-danang-go-ba-na-hills",
+        "city-danang-where-ba-na-hills"
+      ],
+      "secondaryPracticePhraseIDs": [
+        "ves-two-tickets-ba-na-hills",
+        "ves-where-cable-car",
+        "ves-take-photo-for-me",
+        "ves-call-taxi-for-me",
+        "city-danang-stop-ba-na-hills",
+        "city-danang-eat-near-ba-na-hills",
+        "city-danang-atm-ba-na-hills"
+      ],
+      "practiceSourcePageID": "viet-family-city-danang-place-ba-na-hills"
+    }
+  },
+  "viet-family-city-danang-place-nguyen-van-linh-street": {
+    "title": "Đường Nguyễn Văn Linh / Nguyen Van Linh Street",
+    "practiceMetadata": {
+      "integrationVersion": "listing-scenario-seed-v1",
+      "scenarioEligible": true,
+      "practiceKind": "street_driver_mini_scenario",
+      "practiceCTALabel": "Practice this street",
+      "practiceSurfacePolicy": "recommended_when_relevant",
+      "scenarioSeedID": "scenario-seed-city-danang-place-nguyen-van-linh-street",
+      "scenarioStepGroups": [
+        {
+          "stepID": "quick-say",
+          "title": "Hear the street",
+          "sourceSectionID": "quick-say",
+          "primaryPhraseIDs": [
+            "city-danang-place-nguyen-van-linh-street"
+          ],
+          "supportPhraseIDs": []
+        },
+        {
+          "stepID": "show-driver",
+          "title": "Tell the driver",
+          "sourceSectionID": "show-driver",
+          "primaryPhraseIDs": [
+            "ves-to-nguyen-van-linh-street"
+          ],
+          "supportPhraseIDs": []
+        },
+        {
+          "stepID": "place-brief",
+          "title": "Driver phrases",
+          "sourceSectionID": "place-brief",
+          "primaryPhraseIDs": [
+            "city-danang-go-nguyen-van-linh-street"
+          ],
+          "supportPhraseIDs": [
+            "city-danang-near-nguyen-van-linh-street",
+            "city-danang-stop-nguyen-van-linh-street"
+          ]
+        },
+        {
+          "stepID": "confirm",
+          "title": "Confirm",
+          "sourceSectionID": "confirm",
+          "primaryPhraseIDs": [
+            "ves-is-this-nguyen-van-linh-street"
+          ],
+          "supportPhraseIDs": []
+        },
+        {
+          "stepID": "use-it-with",
+          "title": "Find it nearby",
+          "sourceSectionID": "use-it-with",
+          "primaryPhraseIDs": [
+            "city-danang-where-nguyen-van-linh-street"
+          ],
+          "supportPhraseIDs": []
+        },
+        {
+          "stepID": "wrong-place",
+          "title": "Wrong place",
+          "sourceSectionID": "wrong-place",
+          "primaryPhraseIDs": [
+            "ves-not-right-place"
+          ],
+          "supportPhraseIDs": []
+        }
+      ],
+      "primaryPracticePhraseIDs": [
+        "city-danang-place-nguyen-van-linh-street",
+        "ves-to-nguyen-van-linh-street",
+        "city-danang-go-nguyen-van-linh-street",
+        "ves-is-this-nguyen-van-linh-street",
+        "city-danang-where-nguyen-van-linh-street",
+        "ves-not-right-place"
+      ],
+      "secondaryPracticePhraseIDs": [
+        "city-danang-near-nguyen-van-linh-street",
+        "city-danang-stop-nguyen-van-linh-street"
+      ],
+      "practiceSourcePageID": "viet-family-city-danang-place-nguyen-van-linh-street"
+    }
+  },
+  "viet-family-city-hanoi-place-bun-cha-huong-lien": {
+    "title": "Bún chả Hương Liên / Bun Cha Huong Lien",
+    "practiceMetadata": {
+      "integrationVersion": "listing-scenario-seed-v1",
+      "scenarioEligible": true,
+      "practiceKind": "restaurant_ordering_scenario",
+      "practiceCTALabel": "Practice ordering here",
+      "practiceSurfacePolicy": "recommended_when_relevant",
+      "scenarioSeedID": "scenario-seed-city-hanoi-place-bun-cha-huong-lien",
+      "scenarioStepGroups": [
+        {
+          "stepID": "quick-say",
+          "title": "Hear the restaurant",
+          "sourceSectionID": "quick-say",
+          "primaryPhraseIDs": [
+            "city-hanoi-place-bun-cha-huong-lien"
+          ],
+          "supportPhraseIDs": []
+        },
+        {
+          "stepID": "before-you-go",
+          "title": "Order",
+          "sourceSectionID": "before-you-go",
+          "primaryPhraseIDs": [
+            "ves-order-bun-cha-portion"
+          ],
+          "supportPhraseIDs": [
+            "food-1",
+            "food-need-table",
+            "food-menu",
+            "v900-food-drin-what-do-you-recommend"
+          ]
+        },
+        {
+          "stepID": "menu-dietary",
+          "title": "Drinks",
+          "sourceSectionID": "menu-dietary",
+          "primaryPhraseIDs": [
+            "vpe-one-item-please-cho-toi-mot-tra-da"
+          ],
+          "supportPhraseIDs": [
+            "store-1"
+          ]
+        },
+        {
+          "stepID": "when-to-use",
+          "title": "Pay and get back",
+          "sourceSectionID": "when-to-use",
+          "primaryPhraseIDs": [
+            "coffee-7"
+          ],
+          "supportPhraseIDs": [
+            "store-6",
+            "taxi-7",
+            "store-7",
+            "ves-call-taxi-for-me"
+          ]
+        },
+        {
+          "stepID": "place-brief",
+          "title": "Getting there",
+          "sourceSectionID": "place-brief",
+          "primaryPhraseIDs": [
+            "city-hanoi-go-bun-cha-huong-lien"
+          ],
+          "supportPhraseIDs": [
+            "city-hanoi-stop-bun-cha-huong-lien",
+            "city-hanoi-where-bun-cha-huong-lien"
+          ]
+        }
+      ],
+      "primaryPracticePhraseIDs": [
+        "city-hanoi-place-bun-cha-huong-lien",
+        "ves-order-bun-cha-portion",
+        "vpe-one-item-please-cho-toi-mot-tra-da",
+        "coffee-7",
+        "city-hanoi-go-bun-cha-huong-lien"
+      ],
+      "secondaryPracticePhraseIDs": [
+        "food-1",
+        "food-need-table",
+        "food-menu",
+        "v900-food-drin-what-do-you-recommend",
+        "store-1",
+        "store-6",
+        "taxi-7",
+        "store-7",
+        "ves-call-taxi-for-me",
+        "city-hanoi-stop-bun-cha-huong-lien",
+        "city-hanoi-where-bun-cha-huong-lien"
+      ],
+      "practiceSourcePageID": "viet-family-city-hanoi-place-bun-cha-huong-lien"
+    }
+  }
+}

@@ -33,21 +33,21 @@ Date: 2026-04-30
 | 7 | `viet-phrase-acknowledge-da-chao-ong` | Dạ, chào ông | Respectful hello to an elderly man | authored article | deep article | pass (4 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 8 | `viet-phrase-acknowledge-duoc` | Được | Okay / that works | authored article | deep article | pass (1 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 9 | `viet-phrase-acknowledge-khong` | Không | No | authored article | deep article | pass (1 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 10 | `viet-phrase-airport-1` | Nhập cảnh ở đâu? | Where is immigration? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 11 | `viet-phrase-airport-2` | Lấy hành lý ở đâu? | Where is baggage claim? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 12 | `viet-phrase-airport-3` | Mua SIM ở đâu? | Where can I buy a SIM card? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 10 | `viet-phrase-airport-1` | Nhập cảnh ở đâu? | Where is immigration? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 11 | `viet-phrase-airport-2` | Lấy hành lý ở đâu? | Where is baggage claim? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 12 | `viet-phrase-airport-3` | Mua SIM ở đâu? | Where can I buy a SIM card? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 13 | `viet-phrase-airport-4` | ATM gần nhất ở đâu? | Where is the nearest ATM? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 14 | `viet-phrase-airport-5` | Khu đón ở đâu? | Where is the pickup area? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 15 | `viet-phrase-airport-6` | Hành lý của tôi chưa tới | My bag did not arrive | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 16 | `viet-phrase-airport-7` | Nhà ga nội địa ở đâu? | Where is the domestic terminal? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 17 | `viet-phrase-airport-pickup-clearer` | Tôi gặp tài xế ở đâu? | Where do I meet the driver? | authored article | deep article | pass (5 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
-| 18 | `viet-phrase-bath-1` | Nhà vệ sinh ở đâu? | Where is the bathroom? | authored article | deep article | pass (3 cards) | canonical; 6 alias(es) | ready; missing-audio rows present | PASS |
-| 19 | `viet-phrase-bath-2` | Có giấy vệ sinh không? | Do you have toilet paper? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 18 | `viet-phrase-bath-1` | Nhà vệ sinh ở đâu? | Where is the bathroom? | authored article | deep article | pass (3 cards) | canonical; 5 alias(es) | ready; missing-audio rows present | PASS |
+| 19 | `viet-phrase-bath-2` | Có giấy vệ sinh không? | Do you have toilet paper? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 20 | `viet-phrase-bath-3` | Có xà phòng không? | Do you have soap? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 21 | `viet-phrase-bath-4` | Tôi rửa tay ở đây được không? | Can I wash my hands here? | authored article | deep article | pass (7 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 22 | `viet-phrase-bath-5` | Tôi cần nước | I need water | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 23 | `viet-phrase-bath-6` | Ở đây có chỗ tắm không? | Is there a shower here? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 24 | `viet-phrase-bathroom-use` | Tôi dùng nhà vệ sinh được không? | Can I use the bathroom? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 24 | `viet-phrase-bathroom-use` | Tôi dùng nhà vệ sinh được không? | Can I use the bathroom? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 25 | `viet-phrase-city-danang-atm-airport` | Có ATM gần Sân bay Đà Nẵng không? | Is there an ATM near Da Nang Airport? | authored article | deep article | pass (6 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 26 | `viet-phrase-city-danang-atm-apec-park` | Có ATM gần Công viên APEC không? | Is there an ATM near APEC Park? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 27 | `viet-phrase-city-danang-atm-asia-park` | Có ATM gần Công viên Châu Á không? | Is there an ATM near Asia Park? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -506,7 +506,7 @@ Date: 2026-04-30
 | 480 | `viet-phrase-city-hoian-atm-cam-chau` | Có ATM gần Cẩm Châu không? | Is there an ATM near Cam Chau? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 481 | `viet-phrase-city-hoian-atm-cam-nam` | Có ATM gần Cẩm Nam không? | Is there an ATM near Cam Nam? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 482 | `viet-phrase-city-hoian-atm-cam-thanh-coconut-village` | Có ATM gần Làng dừa Cẩm Thanh không? | Is there an ATM near Cam Thanh Coconut Village? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 483 | `viet-phrase-city-hoian-atm-cao-lau-city` | Có ATM gần Cao lầu ở Hội An không? | Is there an ATM near Cao lau in Hoi An? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 483 | `viet-phrase-city-hoian-atm-cao-lau-city` | Ở đây có cao lầu không? | Do you have cao lau here? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 484 | `viet-phrase-city-hoian-atm-cham-islands` | Có ATM gần Cù Lao Chàm không? | Is there an ATM near Cham Islands? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 485 | `viet-phrase-city-hoian-atm-cua-dai-beach` | Có ATM gần Biển Cửa Đại không? | Is there an ATM near Cua Dai Beach? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 486 | `viet-phrase-city-hoian-atm-faifo-coffee` | Có ATM gần Faifo Coffee không? | Is there an ATM near Faifo Coffee? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -527,7 +527,7 @@ Date: 2026-04-30
 | 501 | `viet-phrase-city-hoian-go-cam-chau` | Đi Cẩm Châu | Go to Cam Chau | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 502 | `viet-phrase-city-hoian-go-cam-nam` | Đi Cẩm Nam | Go to Cam Nam | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 503 | `viet-phrase-city-hoian-go-cam-thanh-coconut-village` | Đi Làng dừa Cẩm Thanh | Go to Cam Thanh Coconut Village | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 504 | `viet-phrase-city-hoian-go-cao-lau-city` | Đi Cao lầu ở Hội An | Go to Cao lau in Hoi An | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 504 | `viet-phrase-city-hoian-go-cao-lau-city` | Ăn cao lầu ở đâu? | Where can I eat cao lau? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 505 | `viet-phrase-city-hoian-go-cham-islands` | Đi Cù Lao Chàm | Go to Cham Islands | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 506 | `viet-phrase-city-hoian-go-cua-dai` | Đi biển Cửa Đại | Go to Cua Dai Beach | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 507 | `viet-phrase-city-hoian-go-faifo-coffee` | Đi Faifo Coffee | Go to Faifo Coffee | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -596,7 +596,7 @@ Date: 2026-04-30
 | 570 | `viet-phrase-city-hoian-stop-cam-chau` | Dừng ở Cẩm Châu | Stop at Cam Chau | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 571 | `viet-phrase-city-hoian-stop-cam-nam` | Dừng ở Cẩm Nam | Stop at Cam Nam | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 572 | `viet-phrase-city-hoian-stop-cam-thanh-coconut-village` | Dừng ở Làng dừa Cẩm Thanh | Stop at Cam Thanh Coconut Village | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 573 | `viet-phrase-city-hoian-stop-cao-lau-city` | Dừng ở Cao lầu ở Hội An | Stop at Cao lau in Hoi An | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 573 | `viet-phrase-city-hoian-stop-cao-lau-city` | Cho tôi cao lầu | Cao lau, please | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 574 | `viet-phrase-city-hoian-stop-cham-islands` | Dừng ở Cù Lao Chàm | Stop at Cham Islands | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 575 | `viet-phrase-city-hoian-stop-cua-dai-beach` | Dừng ở Biển Cửa Đại | Stop at Cua Dai Beach | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 576 | `viet-phrase-city-hoian-stop-faifo-coffee` | Dừng ở Faifo Coffee | Stop at Faifo Coffee | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -626,7 +626,7 @@ Date: 2026-04-30
 | 600 | `viet-phrase-city-hoian-where-cam-chau` | Cẩm Châu ở đâu? | Where is Cam Chau? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 601 | `viet-phrase-city-hoian-where-cam-nam` | Cẩm Nam ở đâu? | Where is Cam Nam? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 602 | `viet-phrase-city-hoian-where-cam-thanh-coconut-village` | Làng dừa Cẩm Thanh ở đâu? | Where is Cam Thanh Coconut Village? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 603 | `viet-phrase-city-hoian-where-cao-lau-city` | Cao lầu ở Hội An ở đâu? | Where is Cao lau in Hoi An? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 603 | `viet-phrase-city-hoian-where-cao-lau-city` | Ở đâu có cao lầu? | Where can I get cao lau? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 604 | `viet-phrase-city-hoian-where-cham-islands` | Cù Lao Chàm ở đâu? | Where is Cham Islands? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 605 | `viet-phrase-city-hoian-where-cua-dai-beach` | Biển Cửa Đại ở đâu? | Where is Cua Dai Beach? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 606 | `viet-phrase-city-hoian-where-faifo-coffee` | Faifo Coffee ở đâu? | Where is Faifo Coffee? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -651,8 +651,8 @@ Date: 2026-04-30
 | 625 | `viet-phrase-city-hue-atm-an-cuu-market` | Có ATM gần Chợ An Cựu không? | Is there an ATM near An Cuu Market? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 626 | `viet-phrase-city-hue-atm-an-dinh-palace` | Có ATM gần Cung An Định không? | Is there an ATM near An Dinh Palace? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 627 | `viet-phrase-city-hue-atm-bao-vinh-ancient-town` | Có ATM gần Phố cổ Bao Vinh không? | Is there an ATM near Bao Vinh Ancient Town? | authored article | deep article | pass (6 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 628 | `viet-phrase-city-hue-atm-bun-bo-city` | Có ATM gần Bún bò Huế không? | Is there an ATM near Bun bo Hue? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 629 | `viet-phrase-city-hue-atm-dong-ba-bun-bo` | Có ATM gần Bún bò ở chợ Đông Ba không? | Is there an ATM near Bun bo at Dong Ba Market? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 628 | `viet-phrase-city-hue-atm-bun-bo-city` | Ở đây có bún bò Huế không? | Do you have bun bo Hue here? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 629 | `viet-phrase-city-hue-atm-dong-ba-bun-bo` | Gần hàng bún bò ở chợ Đông Ba có ATM không? | Is there an ATM near the bun bo stall at Dong Ba Market? | authored article | deep article | pass (6 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 630 | `viet-phrase-city-hue-atm-dong-ba-market` | Có ATM gần Chợ Đông Ba không? | Is there an ATM near Dong Ba Market? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 631 | `viet-phrase-city-hue-atm-dong-khanh-tomb` | Có ATM gần Lăng Đồng Khánh không? | Is there an ATM near Tomb of Dong Khanh? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 632 | `viet-phrase-city-hue-atm-gia-long-tomb` | Có ATM gần Lăng Gia Long không? | Is there an ATM near Tomb of Gia Long? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -668,7 +668,7 @@ Date: 2026-04-30
 | 642 | `viet-phrase-city-hue-eat-near-an-cuu-market` | Ăn gần Chợ An Cựu | Eat near An Cuu Market | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 643 | `viet-phrase-city-hue-eat-near-an-dinh-palace` | Ăn gần Cung An Định | Eat near An Dinh Palace | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 644 | `viet-phrase-city-hue-eat-near-bao-vinh-ancient-town` | Ăn gần Phố cổ Bao Vinh | Eat near Bao Vinh Ancient Town | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 645 | `viet-phrase-city-hue-eat-near-bun-bo-city` | Ăn gần Bún bò Huế | Eat near Bun bo Hue | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 645 | `viet-phrase-city-hue-eat-near-bun-bo-city` | Ăn bún bò Huế ở đâu? | Where can I eat bun bo Hue? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 646 | `viet-phrase-city-hue-eat-near-dong-ba-bun-bo` | Ăn gần Bún bò ở chợ Đông Ba | Eat near Bun bo at Dong Ba Market | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 647 | `viet-phrase-city-hue-eat-near-dong-ba-market` | Ăn gần Chợ Đông Ba | Eat near Dong Ba Market | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 648 | `viet-phrase-city-hue-eat-near-dong-khanh-tomb` | Ăn gần Lăng Đồng Khánh | Eat near Tomb of Dong Khanh | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -679,9 +679,9 @@ Date: 2026-04-30
 | 653 | `viet-phrase-city-hue-go-an-cuu-market` | Đi Chợ An Cựu | Go to An Cuu Market | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 654 | `viet-phrase-city-hue-go-an-dinh-palace` | Đi Cung An Định | Go to An Dinh Palace | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 655 | `viet-phrase-city-hue-go-bao-vinh-ancient-town` | Đi Phố cổ Bao Vinh | Go to Bao Vinh Ancient Town | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 656 | `viet-phrase-city-hue-go-bun-bo-city` | Đi Bún bò Huế | Go to Bun bo Hue | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 656 | `viet-phrase-city-hue-go-bun-bo-city` | Tìm bún bò Huế ở đâu? | Where can I find bun bo Hue? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 657 | `viet-phrase-city-hue-go-dong-ba` | Đi chợ Đông Ba | Go to Dong Ba Market | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 658 | `viet-phrase-city-hue-go-dong-ba-bun-bo` | Đi Bún bò ở chợ Đông Ba | Go to Bun bo at Dong Ba Market | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 658 | `viet-phrase-city-hue-go-dong-ba-bun-bo` | Tôi muốn tìm bún bò ở chợ Đông Ba | I want to find bun bo at Dong Ba Market | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 659 | `viet-phrase-city-hue-go-dong-khanh-tomb` | Đi Lăng Đồng Khánh | Go to Tomb of Dong Khanh | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 660 | `viet-phrase-city-hue-go-gia-long-tomb` | Đi Lăng Gia Long | Go to Tomb of Gia Long | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 661 | `viet-phrase-city-hue-go-hen-island` | Đi Cồn Hến | Go to Hen Island | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -746,8 +746,8 @@ Date: 2026-04-30
 | 720 | `viet-phrase-city-hue-stop-an-cuu-market` | Dừng ở Chợ An Cựu | Stop at An Cuu Market | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 721 | `viet-phrase-city-hue-stop-an-dinh-palace` | Dừng ở Cung An Định | Stop at An Dinh Palace | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 722 | `viet-phrase-city-hue-stop-bao-vinh-ancient-town` | Dừng ở Phố cổ Bao Vinh | Stop at Bao Vinh Ancient Town | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 723 | `viet-phrase-city-hue-stop-bun-bo-city` | Dừng ở Bún bò Huế | Stop at Bun bo Hue | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 724 | `viet-phrase-city-hue-stop-dong-ba-bun-bo` | Dừng ở Bún bò ở chợ Đông Ba | Stop at Bun bo at Dong Ba Market | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 723 | `viet-phrase-city-hue-stop-bun-bo-city` | Cho tôi bún bò Huế | Bun bo Hue, please | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 724 | `viet-phrase-city-hue-stop-dong-ba-bun-bo` | Cho tôi xuống ở chợ Đông Ba | Let me off at Dong Ba Market | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 725 | `viet-phrase-city-hue-stop-dong-ba-market` | Dừng ở Chợ Đông Ba | Stop at Dong Ba Market | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 726 | `viet-phrase-city-hue-stop-dong-khanh-tomb` | Dừng ở Lăng Đồng Khánh | Stop at Tomb of Dong Khanh | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 727 | `viet-phrase-city-hue-stop-gia-long-tomb` | Dừng ở Lăng Gia Long | Stop at Tomb of Gia Long | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -774,8 +774,8 @@ Date: 2026-04-30
 | 748 | `viet-phrase-city-hue-where-an-cuu-market` | Chợ An Cựu ở đâu? | Where is An Cuu Market? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 749 | `viet-phrase-city-hue-where-an-dinh-palace` | Cung An Định ở đâu? | Where is An Dinh Palace? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 750 | `viet-phrase-city-hue-where-bao-vinh-ancient-town` | Phố cổ Bao Vinh ở đâu? | Where is Bao Vinh Ancient Town? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 751 | `viet-phrase-city-hue-where-bun-bo-city` | Bún bò Huế ở đâu? | Where is Bun bo Hue? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 752 | `viet-phrase-city-hue-where-dong-ba-bun-bo` | Bún bò ở chợ Đông Ba ở đâu? | Where is Bun bo at Dong Ba Market? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 751 | `viet-phrase-city-hue-where-bun-bo-city` | Ở đâu có bún bò Huế? | Where can I get bun bo Hue? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
+| 752 | `viet-phrase-city-hue-where-dong-ba-bun-bo` | Bún bò ở chợ Đông Ba ở chỗ nào? | Where is bun bo at Dong Ba Market? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 753 | `viet-phrase-city-hue-where-dong-ba-market` | Chợ Đông Ba ở đâu? | Where is Dong Ba Market? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 754 | `viet-phrase-city-hue-where-dong-khanh-tomb` | Lăng Đồng Khánh ở đâu? | Where is Tomb of Dong Khanh? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 755 | `viet-phrase-city-hue-where-gia-long-tomb` | Lăng Gia Long ở đâu? | Where is Tomb of Gia Long? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
@@ -798,25 +798,25 @@ Date: 2026-04-30
 | 772 | `viet-phrase-city-hue-where-truong-tien-bridge` | Cầu Trường Tiền ở đâu? | Where is Truong Tien Bridge? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 773 | `viet-phrase-city-hue-where-tu-duc-tomb` | Lăng Tự Đức ở đâu? | Where is Tomb of Tu Duc? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
 | 774 | `viet-phrase-city-hue-where-walking-street` | Phố đi bộ Huế ở đâu? | Where is Hue Walking Street? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | planned; missing-audio rows present | PASS |
-| 775 | `viet-phrase-coffee-1` | Cho tôi một cà phê sữa đá | One iced milk coffee please | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 776 | `viet-phrase-coffee-2` | Cho tôi cà phê đen đá | I’d like an iced black coffee | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 777 | `viet-phrase-coffee-3` | Cho tôi bạc xỉu đá | I’d like an iced bạc xỉu | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 775 | `viet-phrase-coffee-1` | Cho tôi một cà phê sữa đá | One iced milk coffee please | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 776 | `viet-phrase-coffee-2` | Cho tôi cà phê đen đá | I’d like an iced black coffee | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 777 | `viet-phrase-coffee-3` | Cho tôi bạc xỉu đá | I’d like an iced bạc xỉu | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 778 | `viet-phrase-coffee-4` | Ít đá thôi | Just a little ice | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 779 | `viet-phrase-coffee-5` | Không đường nhé | No sugar please | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 780 | `viet-phrase-coffee-6` | Mang đi | To go | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 781 | `viet-phrase-coffee-7` | Tính tiền giúp tôi | Please let me pay | authored article | deep article | pass (4 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
-| 782 | `viet-phrase-directions-1` | Cho hỏi, đi tới đó thế nào? | Excuse me, how do I get there? | authored article | deep article | pass (7 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 783 | `viet-phrase-directions-2` | Ở gần đây không? | Is it near here? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 784 | `viet-phrase-directions-3` | Đi bộ mất bao lâu? | How long does it take on foot? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 782 | `viet-phrase-directions-1` | Cho hỏi, đi tới đó thế nào? | Excuse me, how do I get there? | authored article | deep article | pass (7 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 783 | `viet-phrase-directions-2` | Ở gần đây không? | Is it near here? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 784 | `viet-phrase-directions-3` | Đi bộ mất bao lâu? | How long does it take on foot? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 785 | `viet-phrase-directions-4` | Rẽ trái ở đâu? | Where do I turn left? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 786 | `viet-phrase-directions-5` | Tôi rẽ phải đúng không? | Should I turn right? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 787 | `viet-phrase-directions-6` | Tôi đi thẳng phải không? | Should I go straight? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 788 | `viet-phrase-directions-7` | Cảm ơn, tôi hiểu rồi | Thanks, I understand now | authored article | deep article | pass (4 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 789 | `viet-phrase-directions-8` | Điểm đón ở đâu? | Where is the pickup point? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 790 | `viet-phrase-directions-9` | Lối ra nào? | Which exit? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 791 | `viet-phrase-emergency-1` | Gọi công an | Call the police | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 792 | `viet-phrase-emergency-2` | Gọi xe cứu thương | Call an ambulance | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 793 | `viet-phrase-emergency-3` | Tôi mất hộ chiếu | I lost my passport | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 791 | `viet-phrase-emergency-1` | Gọi công an | Call the police | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 792 | `viet-phrase-emergency-2` | Gọi xe cứu thương | Call an ambulance | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 793 | `viet-phrase-emergency-3` | Tôi mất hộ chiếu | I lost my passport | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 794 | `viet-phrase-emergency-4` | Tôi cảm thấy không an toàn | I feel unsafe | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 795 | `viet-phrase-emergency-5` | Cứu tôi với! | Help! | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 796 | `viet-phrase-emergency-6` | Túi của tôi bị lấy mất | My bag was stolen | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
@@ -856,7 +856,7 @@ Date: 2026-04-30
 | 830 | `viet-phrase-health-4` | Có thuốc say xe không? | Do you have motion sickness medicine? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 831 | `viet-phrase-health-5` | Tôi bị dị ứng cái này | I am allergic to this | authored article | deep article | pass (6 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 832 | `viet-phrase-health-6` | Tôi cần thuốc tiêu chảy | I need something for diarrhea | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 833 | `viet-phrase-health-pharmacy-clearer` | Nhà thuốc gần nhất ở đâu? | Where is the nearest pharmacy? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 833 | `viet-phrase-health-pharmacy-clearer` | Nhà thuốc gần nhất ở đâu? | Where is the nearest pharmacy? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 834 | `viet-phrase-hello-alo` | Alô | Hello on the phone | authored article | deep article | pass (2 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 835 | `viet-phrase-hello-chao` | Chào | Hi / hello | authored article | deep article | pass (1 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 836 | `viet-phrase-hello-chao-anh` | Chào anh | Hello to an older man | authored article | deep article | pass (3 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
@@ -881,8 +881,8 @@ Date: 2026-04-30
 | 855 | `viet-phrase-help-premium-contact-embassy` | Bạn có thể giúp tôi liên hệ với đại sứ quán được không? | Can you help me contact the embassy? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 856 | `viet-phrase-help-premium-print-document` | Tôi cần một bản in của tài liệu này. | I need a printed copy of this document. | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 857 | `viet-phrase-help-premium-translate-for-me` | Bạn có thể dịch giúp tôi được không? | Can you help translate for me? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 858 | `viet-phrase-hotel-1` | Tôi có đặt phòng | I have a reservation | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 859 | `viet-phrase-hotel-2` | Cho tôi nhận phòng | I’d like to check in | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 858 | `viet-phrase-hotel-1` | Tôi có đặt phòng | I have a reservation | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 859 | `viet-phrase-hotel-2` | Cho tôi nhận phòng | I’d like to check in | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 860 | `viet-phrase-hotel-3` | Mấy giờ trả phòng? | What time is check-out? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 861 | `viet-phrase-hotel-4` | Phòng này nóng quá | This room is too hot | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 862 | `viet-phrase-hotel-5` | Máy lạnh không chạy | The air conditioner isn’t working | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
@@ -910,8 +910,8 @@ Date: 2026-04-30
 | 884 | `viet-phrase-money-premium-total-wrong` | Tổng số này là sai. | This total is wrong. | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 885 | `viet-phrase-money-premium-what-fee` | Khoản phí này dùng để làm gì? | What is this fee for? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 886 | `viet-phrase-money-premium-write-total` | Hãy viết tổng số ra. | Please write the total down. | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 887 | `viet-phrase-phone-1` | Mật khẩu Wi-Fi là gì? | What is the Wi-Fi password? | authored article | deep article | pass (5 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
-| 888 | `viet-phrase-phone-2` | Có bán SIM không? | Do you sell SIM cards? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 887 | `viet-phrase-phone-1` | Mật khẩu Wi-Fi là gì? | What is the Wi-Fi password? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 888 | `viet-phrase-phone-2` | Có bán SIM không? | Do you sell SIM cards? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 889 | `viet-phrase-phone-3` | Điện thoại tôi hết pin rồi | My phone battery is dead | authored article | deep article | pass (6 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 890 | `viet-phrase-phone-4` | Có sạc không? | Do you have a charger? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 891 | `viet-phrase-phone-5` | Tôi sạc điện thoại ở đây được không? | Can I charge my phone here? | authored article | deep article | pass (7 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
@@ -924,16 +924,16 @@ Date: 2026-04-30
 | 898 | `viet-phrase-phone-premium-otp-not-arriving` | Mã xác minh không đến. | The verification code is not arriving. | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 899 | `viet-phrase-phone-premium-password-not-working` | Mật khẩu Wi-Fi không hoạt động. | The Wi-Fi password is not working. | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 900 | `viet-phrase-phone-wifi-common` | Pass Wi-Fi là gì? | What is the Wi-Fi password? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
-| 901 | `viet-phrase-polite-1` | Xin chào | Hello | authored article | deep article | pass (3 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
-| 902 | `viet-phrase-polite-2` | Cảm ơn | Thank you | authored article | deep article | pass (3 cards) | canonical; 4 alias(es) | ready; missing-audio rows present | PASS |
+| 901 | `viet-phrase-polite-1` | Xin chào | Hello | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 902 | `viet-phrase-polite-2` | Cảm ơn | Thank you | authored article | deep article | pass (3 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 903 | `viet-phrase-polite-3` | Dạ | Yes / polite acknowledgment | authored article | deep article | pass (1 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 904 | `viet-phrase-polite-4` | Không, cảm ơn | No, thank you | authored article | deep article | pass (3 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 905 | `viet-phrase-polite-5` | Xin lỗi | Excuse me / sorry | authored article | deep article | pass (3 cards) | canonical; 5 alias(es) | ready; missing-audio rows present | PASS |
 | 906 | `viet-phrase-polite-6` | Không sao đâu | It’s okay | authored article | deep article | pass (3 cards) | canonical; 6 alias(es) | ready; missing-audio rows present | PASS |
 | 907 | `viet-phrase-polite-7` | Tạm biệt | Goodbye | authored article | deep article | pass (3 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
-| 908 | `viet-phrase-polite-thank-you-polite` | Cảm ơn nhiều | Thank you very much | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 909 | `viet-phrase-price-1` | Cái này bao nhiêu? | How much is this? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 910 | `viet-phrase-price-2` | Bao nhiêu một ký? | How much per kilo? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 908 | `viet-phrase-polite-thank-you-polite` | Cảm ơn nhiều | Thank you very much | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 909 | `viet-phrase-price-1` | Cái này bao nhiêu? | How much is this? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 910 | `viet-phrase-price-2` | Bao nhiêu một ký? | How much per kilo? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 911 | `viet-phrase-price-3` | Mắc quá | Too expensive | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 912 | `viet-phrase-price-4` | Bớt chút được không? | Can you lower it a little? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 913 | `viet-phrase-price-5` | Giá cuối bao nhiêu? | What’s your final price? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
@@ -941,11 +941,11 @@ Date: 2026-04-30
 | 915 | `viet-phrase-price-7` | Tôi lấy cái này | I’ll take this one | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 916 | `viet-phrase-price-8` | Tổng cộng bao nhiêu? | How much altogether? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 917 | `viet-phrase-price-9` | Có tiền lẻ không? | Do you have smaller bills? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 918 | `viet-phrase-problems-1` | Tôi bị lạc đường | I’m lost | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 919 | `viet-phrase-problems-2` | Tôi không hiểu | I don’t understand | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 920 | `viet-phrase-problems-3` | Nói chậm chút được không? | Can you speak a little slower? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 921 | `viet-phrase-problems-4` | Tôi quên đồ rồi | I left something behind | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 922 | `viet-phrase-problems-6` | Tôi cần bác sĩ | I need a doctor | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 918 | `viet-phrase-problems-1` | Tôi bị lạc đường | I’m lost | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 919 | `viet-phrase-problems-2` | Tôi không hiểu | I don’t understand | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 920 | `viet-phrase-problems-3` | Nói chậm chút được không? | Can you speak a little slower? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 921 | `viet-phrase-problems-4` | Tôi quên đồ rồi | I left something behind | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 922 | `viet-phrase-problems-6` | Tôi cần bác sĩ | I need a doctor | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 923 | `viet-phrase-repair-1` | Làm ơn nói lại | Please say that again | authored article | deep article | pass (3 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 924 | `viet-phrase-repair-2` | Viết xuống giúp tôi | Please write it down | authored article | deep article | pass (3 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 925 | `viet-phrase-repair-3` | Cái đó nghĩa là gì? | What does that mean? | authored article | deep article | pass (6 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
@@ -966,21 +966,21 @@ Date: 2026-04-30
 | 940 | `viet-phrase-repair-translate-this` | Dịch giúp tôi cái này được không? | Can you translate this for me? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 941 | `viet-phrase-service-8` | In cái này được không? | Can I print this? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 942 | `viet-phrase-service-9` | Châm thêm nước vào chai này được không? | Can you refill this water bottle? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 943 | `viet-phrase-shop-1` | Tôi muốn cỡ này | I want this size | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 944 | `viet-phrase-shop-2` | Có màu khác không? | Do you have another color? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 945 | `viet-phrase-shop-3` | Tôi thử cái này được không? | Can I try this on? | authored article | deep article | pass (6 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 943 | `viet-phrase-shop-1` | Tôi muốn cỡ này | I want this size | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 944 | `viet-phrase-shop-2` | Có màu khác không? | Do you have another color? | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 945 | `viet-phrase-shop-3` | Tôi thử cái này được không? | Can I try this on? | authored article | deep article | pass (6 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 946 | `viet-phrase-shop-4` | Tôi chỉ xem thôi | I’m just looking | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 947 | `viet-phrase-shop-5` | Trả ở đâu? | Where do I pay? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 948 | `viet-phrase-shop-6` | Tôi muốn đổi cái này | I want to exchange this | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 949 | `viet-phrase-sight-1` | Vé bao nhiêu? | How much is the ticket? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 950 | `viet-phrase-sight-2` | Bắt đầu ở đâu? | Where do we start? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 951 | `viet-phrase-sight-3` | Tôi chụp hình ở đây được không? | Can I take photos here? | authored article | deep article | pass (7 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 949 | `viet-phrase-sight-1` | Vé bao nhiêu? | How much is the ticket? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 950 | `viet-phrase-sight-2` | Bắt đầu ở đâu? | Where do we start? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 951 | `viet-phrase-sight-3` | Tôi chụp hình ở đây được không? | Can I take photos here? | authored article | deep article | pass (7 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 952 | `viet-phrase-sight-4` | Mấy giờ đóng cửa? | What time does it close? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 953 | `viet-phrase-sight-5` | Điểm gặp ở đâu? | Where is the meeting point? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 954 | `viet-phrase-sight-6` | Tôi cần đặt trước không? | Do I need to book in advance? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 955 | `viet-phrase-smalltalk-1` | Tôi đến từ Mỹ | I’m from the United States | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 956 | `viet-phrase-smalltalk-2` | Tôi từ Anh | I’m from England | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 957 | `viet-phrase-smalltalk-3` | Đây là lần đầu của tôi | This is my first time | authored article | deep article | pass (6 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 955 | `viet-phrase-smalltalk-1` | Tôi đến từ Mỹ | I’m from the United States | authored article | deep article | pass (5 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 956 | `viet-phrase-smalltalk-2` | Tôi từ Anh | I’m from England | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 957 | `viet-phrase-smalltalk-3` | Đây là lần đầu của tôi | This is my first time | authored article | deep article | pass (6 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 958 | `viet-phrase-smalltalk-4` | Tôi thích Việt Nam | I like Vietnam | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 959 | `viet-phrase-smalltalk-5` | Đồ ăn ngon quá | The food is so good | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 960 | `viet-phrase-smalltalk-6` | Thời tiết nóng quá | The weather is so hot | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
@@ -989,23 +989,23 @@ Date: 2026-04-30
 | 963 | `viet-phrase-smalltalk-nice-to-meet-you` | Rất vui được gặp bạn | Nice to meet you | authored article | deep article | pass (4 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 964 | `viet-phrase-social-8` | Bạn ở đây bao lâu? | How long are you staying? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 965 | `viet-phrase-social-9` | Bạn gợi ý gì ở đây? | What do you recommend here? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 966 | `viet-phrase-store-1` | Cho tôi chai nước | A bottle of water please | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 967 | `viet-phrase-store-2` | Có túi không? | Do you have a bag? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 968 | `viet-phrase-store-3` | Cho tôi khăn giấy | Tissues please | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 966 | `viet-phrase-store-1` | Cho tôi chai nước | A bottle of water please | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 967 | `viet-phrase-store-2` | Có túi không? | Do you have a bag? | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 968 | `viet-phrase-store-3` | Cho tôi khăn giấy | Tissues please | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 969 | `viet-phrase-store-4` | Ở đâu có kem chống nắng? | Where is the sunscreen? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 970 | `viet-phrase-store-5` | Mở cái này giúp tôi | Please open this for me | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 971 | `viet-phrase-store-6` | Tôi quẹt thẻ được không? | Can I pay by card? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 972 | `viet-phrase-store-7` | Cho tôi hóa đơn | Please give me the receipt | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 973 | `viet-phrase-taxi-1` | Cho tôi tới đây | Take me here | authored article | deep article | pass (4 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
-| 974 | `viet-phrase-taxi-2` | Đi quận 1 | Go to District 1 | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 973 | `viet-phrase-taxi-1` | Cho tôi tới đây | Take me here | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 974 | `viet-phrase-taxi-2` | Đi quận 1 | Go to District 1 | authored article | deep article | pass (4 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 975 | `viet-phrase-taxi-3` | Dừng ở đây được rồi | You can stop here | authored article | deep article | pass (4 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
 | 976 | `viet-phrase-taxi-4` | Đi đường này đi | Go this way | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 977 | `viet-phrase-taxi-5` | Mở máy lạnh giúp tôi | Please turn on the air conditioning | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 978 | `viet-phrase-taxi-6` | Chờ tôi năm phút | Wait for me five minutes | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 979 | `viet-phrase-taxi-7` | Tôi trả bằng tiền mặt | I’ll pay cash | authored article | deep article | pass (4 cards) | canonical; 3 alias(es) | ready; missing-audio rows present | PASS |
-| 980 | `viet-phrase-time-1` | Mấy giờ? | What time? | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 981 | `viet-phrase-time-2` | Hôm nay | Today | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
-| 982 | `viet-phrase-time-3` | Sáng mai | Tomorrow morning | authored article | deep article | pass (3 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
+| 980 | `viet-phrase-time-1` | Mấy giờ? | What time? | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 981 | `viet-phrase-time-2` | Hôm nay | Today | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
+| 982 | `viet-phrase-time-3` | Sáng mai | Tomorrow morning | authored article | deep article | pass (3 cards) | canonical; 1 alias(es) | ready; missing-audio rows present | PASS |
 | 983 | `viet-phrase-time-4` | Tôi có đặt chỗ | I have a booking | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 984 | `viet-phrase-time-5` | Mấy giờ mở cửa? | What time does it open? | authored article | deep article | pass (5 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |
 | 985 | `viet-phrase-time-6` | Dời lại muộn hơn được không? | Can we move it later? | authored article | deep article | pass (4 cards) | canonical; 2 alias(es) | ready; missing-audio rows present | PASS |

@@ -537,6 +537,8 @@ function main() {
   const sectionItemRows = [];
   const breakdownRows = [];
   const pageCategoryRows = [];
+  const pagePracticeSeedRows = [];
+  const pagePracticeStepRows = [];
   const relationRows = [];
   const usedSectionIDs = new Set();
   const pageCategoryKeys = new Set();
@@ -576,6 +578,56 @@ function main() {
       category_id: categoryID,
       sort_order: sortOrder,
       source_path: sourcePath,
+    });
+  }
+
+  function practicePhraseIDs(values, context) {
+    const seen = new Set();
+    const ids = [];
+    for (const value of values ?? []) {
+      if (!value || seen.has(value)) continue;
+      if (!phraseByID.has(value)) {
+        throw new Error(`Practice seed ${context} references missing phrase ID: ${value}`);
+      }
+      seen.add(value);
+      ids.push(value);
+    }
+    return ids;
+  }
+
+  function addPagePracticeSeed({ pageID, page }) {
+    const metadata = page.practiceMetadata ?? {};
+    if (!metadata.practiceKind || !metadata.practiceCTALabel || !metadata.scenarioSeedID) return;
+
+    const primaryPhraseIDs = practicePhraseIDs(metadata.primaryPracticePhraseIDs ?? [], `${page.id}:primary`);
+    const secondaryPhraseIDs = practicePhraseIDs(metadata.secondaryPracticePhraseIDs ?? [], `${page.id}:secondary`);
+    const scenarioStepGroups = Array.isArray(metadata.scenarioStepGroups) ? metadata.scenarioStepGroups : [];
+
+    pagePracticeSeedRows.push({
+      page_id: pageID,
+      practice_kind: metadata.practiceKind,
+      cta_label: metadata.practiceCTALabel,
+      scenario_seed_id: metadata.scenarioSeedID,
+      scenario_eligible: metadata.scenarioEligible === false ? 0 : 1,
+      surface_policy: metadata.practiceSurfacePolicy ?? "recommended_when_relevant",
+      primary_phrase_ids: primaryPhraseIDs.join("|"),
+      secondary_phrase_ids: secondaryPhraseIDs.join("|"),
+      source_page_id: metadata.practiceSourcePageID ?? page.id,
+    });
+
+    scenarioStepGroups.forEach((group, index) => {
+      const stepID = group.stepID || `step-${index + 1}`;
+      const stepPrimaryPhraseIDs = practicePhraseIDs(group.primaryPhraseIDs ?? [], `${page.id}:${stepID}:primary`);
+      const supportPhraseIDs = practicePhraseIDs(group.supportPhraseIDs ?? [], `${page.id}:${stepID}:support`);
+      pagePracticeStepRows.push({
+        id: `${pageID}:practice-step:${stepID}`,
+        page_id: pageID,
+        step_id: stepID,
+        title: group.title || `Step ${index + 1}`,
+        primary_phrase_ids: stepPrimaryPhraseIDs.join("|"),
+        support_phrase_ids: supportPhraseIDs.join("|"),
+        sort_order: index,
+      });
     });
   }
 
@@ -1239,6 +1291,7 @@ function main() {
     for (const [index, categoryID] of (page.categoryIDs ?? []).entries()) {
       addPageCategory(canonicalPageID, categoryID, index, authoredSourcePath);
     }
+    addPagePracticeSeed({ pageID: canonicalPageID, page });
 
     const seenAuthoredDestinations = new Set();
     let relationshipWordsInserted = (page.sections ?? []).some((section) => section.id === relationshipWordSectionKey);
@@ -1806,6 +1859,8 @@ function main() {
       relevance: "primary",
     }))),
     insertRows("page_category", ["page_id", "category_id", "sort_order", "source_path"], pageCategoryRows),
+    insertRows("page_practice_seed", ["page_id", "practice_kind", "cta_label", "scenario_seed_id", "scenario_eligible", "surface_policy", "primary_phrase_ids", "secondary_phrase_ids", "source_page_id"], pagePracticeSeedRows),
+    insertRows("page_practice_step", ["id", "page_id", "step_id", "title", "primary_phrase_ids", "support_phrase_ids", "sort_order"], pagePracticeStepRows),
     insertRows("page_section", ["id", "page_id", "section_key", "title", "body", "presentation", "sort_order", "source_path"], renderedSectionRows),
     insertRows("breakdown_token", ["id", "phrase_id", "token_text", "normalized_token_text", "english_gloss", "sort_order"], breakdownRows),
     insertRows("page_section_item", ["id", "section_id", "item_kind", "target_id", "title_override", "subtitle_override", "note", "sort_order"], sectionItemRows),
@@ -1852,6 +1907,8 @@ function main() {
     'pages', (SELECT count(*) FROM phrase_page),
     'aliases', (SELECT count(*) FROM page_alias),
     'pageCategories', (SELECT count(*) FROM page_category),
+    'pagePracticeSeeds', (SELECT count(*) FROM page_practice_seed),
+    'pagePracticeSteps', (SELECT count(*) FROM page_practice_step),
     'sections', (SELECT count(*) FROM page_section),
     'sectionItems', (SELECT count(*) FROM page_section_item),
     'breakdownTokens', (SELECT count(*) FROM breakdown_token),
@@ -2062,18 +2119,16 @@ function main() {
         MAX(CASE WHEN ps.section_key = 'at-glance' THEN 1 ELSE 0 END) AS has_at_glance,
         MAX(CASE WHEN ps.section_key IN ('quick-say', 'standard-way') THEN 1 ELSE 0 END) AS has_quick_or_standard,
         MAX(CASE WHEN ps.section_key = 'breakdown' THEN 1 ELSE 0 END) AS has_breakdown,
-        MAX(CASE
-          WHEN ps.section_key = 'when-to-use' THEN 1
-          WHEN pp.id = '${baNaJourneyPageID}' AND ps.section_key = 'journey-flow' THEN 1
-          WHEN pp.id = '${dragonBridgeLandmarkPageID}' AND ps.section_key = 'getting-there' THEN 1
-          ELSE 0
-        END) AS has_when_to_use,
-        MAX(CASE WHEN ps.section_key = 'good-to-know' THEN 1 ELSE 0 END) AS has_good_to_know,
+        MAX(CASE WHEN COALESCE(ps.body, '') != '' THEN 1 ELSE 0 END) AS has_context_copy,
         SUM(CASE WHEN psi.item_kind = 'phrase' AND ps.section_key != 'relationship-words' THEN 1 ELSE 0 END) AS article_phrase_rows,
-        SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows
+        SUM(CASE WHEN psi.item_kind = 'breakdown_token' THEN 1 ELSE 0 END) AS breakdown_rows,
+        MAX(CASE WHEN pps.page_id IS NOT NULL THEN 1 ELSE 0 END) AS has_practice_seed,
+        MAX(CASE WHEN ppst.page_id IS NOT NULL THEN 1 ELSE 0 END) AS has_practice_steps
       FROM phrase_page pp
       JOIN page_section ps ON ps.page_id = pp.id
       LEFT JOIN page_section_item psi ON psi.section_id = ps.id
+      LEFT JOIN page_practice_seed pps ON pps.page_id = pp.id
+      LEFT JOIN page_practice_step ppst ON ppst.page_id = pp.id
       GROUP BY pp.id
     )
     SELECT page_id || ': ' || page_title
@@ -2083,10 +2138,11 @@ function main() {
         has_at_glance = 0
         OR has_quick_or_standard = 0
         OR has_breakdown = 0
-        OR has_when_to_use = 0
-        OR has_good_to_know = 0
+        OR has_context_copy = 0
         OR article_phrase_rows = 0
         OR breakdown_rows = 0
+        OR has_practice_seed = 0
+        OR has_practice_steps = 0
       )
     ORDER BY page_id;
   `).split("\n").filter(Boolean);
@@ -2189,7 +2245,6 @@ function main() {
         OR lower(bt.english_gloss) IN (
           'place name',
           'name starter',
-          'street name',
           'market name',
           'driver word',
           'phrase piece',
@@ -2241,6 +2296,13 @@ function main() {
       FROM rows
       WHERE sort_order < max_sort_order
         AND normalized_gloss != ''
+        AND normalized_gloss NOT IN (
+          'local name',
+          'restaurant name',
+          'dish name',
+          'street name',
+          'attraction name'
+        )
       GROUP BY page_id, section_id, normalized_gloss
       HAVING count(*) > 1
     )
@@ -2433,7 +2495,7 @@ function main() {
       "Every source phrase row resolves to one canonical phrase_page through phrase.canonical_phrase_id; exact duplicate Vietnamese rows alias to one page.",
       "Legacy family, authored page, duplicate source phrase page, and section detail IDs are represented as page_alias rows.",
       "The relation table is populated from authored page links, generated category neighbors, and same-cluster variants.",
-      "Practice tables remain schema-ready but intentionally unpopulated in this fixture step.",
+      "Practice tables are populated with listing-derived scenario seeds and steps; the native Practice UI can consume the same canonical phrase IDs later.",
       "City V1 pages may have planned missing audio; those rows are non-release-blocking and are queued for later recording.",
     ],
   };

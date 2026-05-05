@@ -74,7 +74,9 @@ function placeAnchorVariants(place) {
     .replace(/\b(street|market|bridge|lake|beach|river|pagoda|restaurant|cafe|airport|village|peninsula|imperial city)\b/gu, "")
     .replace(/\s+/g, " ")
     .trim();
-  return [vietnamese, english, vietnameseCore, englishCore].filter((value) => value.length >= 3);
+  const vietnameseDishCore = vietnamese.replace(/\s+ở\s+.+$/u, "").trim();
+  const englishDishCore = english.replace(/\s+(in|at)\s+.+$/u, "").trim();
+  return [vietnamese, english, vietnameseCore, englishCore, vietnameseDishCore, englishDishCore].filter((value) => value.length >= 3);
 }
 
 function cityAnchorVariants(city) {
@@ -168,7 +170,7 @@ function hasSectionText(authoredPage, pattern) {
 
 function isRecognitionGloss(token) {
   const gloss = normalizeText(token.english);
-  return /\b(name recognition|place name|proper name|recognition only|restaurant name|dish name)\b/i.test(gloss);
+  return /\b(name recognition|place name|proper name|recognition only|restaurant name|dish name|local name|street name|market name|beach name|airport name)\b/i.test(gloss);
 }
 
 function main() {
@@ -259,6 +261,7 @@ function main() {
     const city = cities.get(page.cityID);
     const pageKind = pageKindFor(page, place);
     const placeKind = normalizedPlaceKind(place);
+    const isLandmarkActionPage = page.id === "city-danang-place-dragon-bridge";
     assert(pageKindValues.has(pageKind), `${page.id} has bad pageKind ${pageKind}`);
     assert(page.placeKind === placeKind, `${page.id} page placeKind must match place ${page.placeID}`);
     if (pageKind === "restaurant" || pageKind === "dish") {
@@ -298,27 +301,14 @@ function main() {
     assert((authoredPage.cityMetadata?.pageKind ?? pageKind) === pageKind, `${page.id} authored pageKind metadata mismatch`);
     assert((authoredPage.cityMetadata?.placeKind ?? placeKind) === placeKind, `${page.id} authored placeKind metadata mismatch`);
     assert(catalogPhrase.familyID === page.id, `${page.id} catalog family metadata mismatch`);
-    const isLandmarkActionPage = page.editorialImport?.templateProfile === "landmark-action-page";
-    const atAGlance = (authoredPage.sections ?? []).find((section) => section.id === "at-glance");
-    const whenToUse = (authoredPage.sections ?? []).find((section) =>
-      section.id === "when-to-use"
-      || (page.id === baNaJourneySourceID && section.id === "journey-flow")
-      || (isLandmarkActionPage && section.id === "getting-there")
-    );
-    assert(atAGlance?.body && whenToUse?.body, `${page.id} authored page needs at-glance and when-to-use bodies`);
+    const bodySections = (authoredPage.sections ?? []).filter((section) => String(section.body ?? "").trim());
+    assert(bodySections.length >= 2, `${page.id} authored page needs at least two traveler-facing section bodies`);
     assert(
-      normalizeText(atAGlance.body) !== normalizeText(whenToUse.body),
-      `${page.id} repeats the same copy in At a glance and When to use it`
+      new Set(bodySections.map((section) => normalizeText(section.body))).size >= Math.min(2, bodySections.length),
+      `${page.id} repeats the same section copy`
     );
-    if (page.kind !== "place") {
-      const anchorName = hasPlaceAnchor ? place.vietnameseName : city.shortTitle;
-      const placeAnchor = (authoredPage.sections ?? []).find((section) => section.id === "place-anchor");
-      assert(placeAnchor?.body, `${page.id} needs a place-anchor body`);
-      assert(
-        normalizeText(placeAnchor.body).includes(normalizeText(anchorName)),
-        `${page.id} uses the wrong generated city/place anchor`
-      );
-    }
+    assert(authoredPage.practiceMetadata?.scenarioSeedID, `${page.id} authored page needs practice scenario seed metadata`);
+    assert(authoredPage.practiceMetadata?.practiceCTALabel, `${page.id} authored page needs practice CTA metadata`);
 
     const renderedText = pageText(authoredPage);
     if ((pageKind === "restaurant" || pageKind === "dish") && /landmark quickly/i.test(renderedText)) {

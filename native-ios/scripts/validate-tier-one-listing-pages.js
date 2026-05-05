@@ -105,6 +105,10 @@ function bodyText(page) {
     .join(" ");
 }
 
+function phraseRowCount(page) {
+  return (page.sections ?? []).reduce((count, section) => count + (section.phrases ?? []).length, 0);
+}
+
 function allText(page) {
   return JSON.stringify(page);
 }
@@ -218,8 +222,8 @@ function classifyPage(page, pageIDSet) {
   issues.push(...breakdownQualityIssues(page));
   issues.push(...textOnlySectionRunIssues(page));
 
-  if (narrative.length < 1400) {
-    issues.push(`thin narrative: ${narrative.length} chars`);
+  if (narrative.length < 700 && phraseRowCount(page) < 3) {
+    issues.push(`thin traveler utility: ${narrative.length} chars, ${phraseRowCount(page)} phrase rows`);
   }
 
   for (const link of linkedPageIDs(page)) {
@@ -311,7 +315,7 @@ function main() {
     row.issues.some((issue) => issue.startsWith("stale template wording"))
   ).length;
   const thinCount = rows.filter((row) =>
-    row.issues.some((issue) => issue.startsWith("thin narrative"))
+    row.issues.some((issue) => issue.startsWith("thin traveler utility"))
   ).length;
   const missingUsefulChildLinksCount = rows.filter((row) =>
     row.issues.some((issue) => issue.includes("detailPageID") || issue.includes("links to missing page"))

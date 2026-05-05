@@ -3762,9 +3762,9 @@
       "targetText": "Đi biển Mỹ Khê",
       "englishText": "Go to My Khe Beach",
       "pronunciation": "dee byen mee kheh",
-      "context": "Use this with a driver or hotel desk when the beach is your destination.",
-      "tip": "Beach names are common route anchors in Da Nang, so this short phrase is practical.",
-      "rationale": "Simple beach route phrase follows directly from the place page.",
+      "context": "For a driver or hotel desk, this says My Khe Beach is the destination.",
+      "tip": "Keep a map pin open if the beach name is hard to hear.",
+      "rationale": "Simple beach destination sentence follows directly from the place page.",
       "chunks": [
         [
           "Đi",
@@ -4545,7 +4545,7 @@
         ],
         [
           "Đà Nẵng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -4577,7 +4577,7 @@
         ],
         [
           "APEC",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -4609,7 +4609,7 @@
         ],
         [
           "Châu Á",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -4637,7 +4637,7 @@
       "chunks": [
         [
           "Bà Nà",
-          "name recognition"
+          "local name"
         ],
         [
           "Hills",
@@ -4811,7 +4811,7 @@
         ],
         [
           "Bạch Đằng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -4953,7 +4953,7 @@
         ],
         [
           "Bàn Cờ",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -4985,7 +4985,7 @@
         ],
         [
           "Con Gà Đà Nẵng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5017,7 +5017,7 @@
         ],
         [
           "Điêu khắc Chăm",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5049,7 +5049,7 @@
         ],
         [
           "Cồn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5081,7 +5081,7 @@
         ],
         [
           "Rồng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5216,7 +5216,7 @@
         ],
         [
           "Vàng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5248,7 +5248,7 @@
         ],
         [
           "Hàn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5279,7 +5279,7 @@
         ],
         [
           "Hàn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5311,7 +5311,7 @@
         ],
         [
           "Helio",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5343,7 +5343,7 @@
         ],
         [
           "Linh Ứng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5375,7 +5375,7 @@
         ],
         [
           "Tình Yêu",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5407,7 +5407,7 @@
         ],
         [
           "Mân Thái",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5435,7 +5435,7 @@
       "chunks": [
         [
           "Ngũ Hành",
-          "name recognition"
+          "local name"
         ],
         [
           "Sơn",
@@ -5551,7 +5551,7 @@
           {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "Keep changing visit details on official signs or counters. This page focuses on durable language: ticket, entrance, caves or stairs, driver wait, and return ride."
+            "body": "Check current visit details on official signs or at the counter. These phrases cover tickets, entrances, stairs, waiting, and getting back."
           },
           {
             "id": "explore-next",
@@ -5582,7 +5582,7 @@
         ],
         [
           "Mỹ Khê",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5613,7 +5613,7 @@
         ],
         [
           "Nam Ô",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5641,11 +5641,11 @@
       "chunks": [
         [
           "Nén Đà",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Nẵng",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -5679,7 +5679,7 @@
         ],
         [
           "Nguyễn Văn Linh",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5821,7 +5821,7 @@
         ],
         [
           "Non Nước",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5853,7 +5853,7 @@
         ],
         [
           "Non Nước",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5885,7 +5885,7 @@
         ],
         [
           "Đà Nẵng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -5917,7 +5917,7 @@
         ],
         [
           "Sơn Trà",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -6059,7 +6059,7 @@
         ],
         [
           "Sơn Trà",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -6091,7 +6091,7 @@
         ],
         [
           "Tiên Sa",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -6123,7 +6123,7 @@
         ],
         [
           "Trần Thị Lý",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -6155,7 +6155,7 @@
         ],
         [
           "Võ Nguyên Giáp",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10211,7 +10211,7 @@
         ],
         [
           "Ba Đình",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10239,11 +10239,11 @@
       "chunks": [
         [
           "Bún chả",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Hương Liên",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -10386,11 +10386,11 @@
       "chunks": [
         [
           "Chả cá",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Thăng Long",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -10423,7 +10423,7 @@
         ],
         [
           "Đồng Xuân",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10454,7 +10454,7 @@
         ],
         [
           "Dân tộc học",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10486,7 +10486,7 @@
         ],
         [
           "Giảng",
-          "restaurant name recognition"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -10516,11 +10516,11 @@
       "chunks": [
         [
           "Phố Hàng",
-          "name recognition"
+          "local name"
         ],
         [
           "Bạc",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10548,11 +10548,11 @@
       "chunks": [
         [
           "Phố Hàng",
-          "name recognition"
+          "local name"
         ],
         [
           "Gai",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10584,7 +10584,7 @@
         ],
         [
           "Bác",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10616,7 +10616,7 @@
         ],
         [
           "Hỏa Lò",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10648,7 +10648,7 @@
         ],
         [
           "Hoàn Kiếm",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10675,11 +10675,11 @@
       "chunks": [
         [
           "Hoàng thành",
-          "name recognition"
+          "local name"
         ],
         [
           "Thăng Long",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10711,7 +10711,7 @@
         ],
         [
           "Long Biên",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10743,7 +10743,7 @@
         ],
         [
           "Long Biên",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10775,7 +10775,7 @@
         ],
         [
           "Nội Bài",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10807,7 +10807,7 @@
         ],
         [
           "Hà Nội",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10838,7 +10838,7 @@
         ],
         [
           "Lớn Hà Nội",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10866,11 +10866,11 @@
       "chunks": [
         [
           "Phố Phan",
-          "name recognition"
+          "local name"
         ],
         [
           "Đình Phùng",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -10898,11 +10898,11 @@
       "chunks": [
         [
           "Phở Bát",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Đàn",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -11041,7 +11041,7 @@
         ],
         [
           "Quán Thánh",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -11073,7 +11073,7 @@
         ],
         [
           "Lớn Hà Nội",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -11101,11 +11101,11 @@
       "chunks": [
         [
           "Phố Tạ",
-          "name recognition"
+          "local name"
         ],
         [
           "Hiện",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -11132,11 +11132,11 @@
       "chunks": [
         [
           "Tầm",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Vị",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -11166,11 +11166,11 @@
       "chunks": [
         [
           "Tây",
-          "name recognition"
+          "local name"
         ],
         [
           "Hồ",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -11198,11 +11198,11 @@
       "chunks": [
         [
           "Văn",
-          "name recognition"
+          "local name"
         ],
         [
           "Miếu",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -11265,7 +11265,7 @@
         ],
         [
           "Trấn Quốc",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -11297,7 +11297,7 @@
         ],
         [
           "Trúc Bạch",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -11329,7 +11329,7 @@
         ],
         [
           "Múa rối Thăng Long",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -11361,7 +11361,7 @@
         ],
         [
           "Tây",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15684,11 +15684,11 @@
       "chunks": [
         [
           "Anăn Sài",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Gòn",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -15722,7 +15722,7 @@
         ],
         [
           "Bạch Đằng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15754,7 +15754,7 @@
         ],
         [
           "Bến Thành",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15785,7 +15785,7 @@
         ],
         [
           "Bình Tây",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15817,7 +15817,7 @@
         ],
         [
           "Bitexco",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15845,11 +15845,11 @@
       "chunks": [
         [
           "Phố Bùi",
-          "name recognition"
+          "local name"
         ],
         [
           "Viện",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15881,7 +15881,7 @@
         ],
         [
           "Lớn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15913,7 +15913,7 @@
         ],
         [
           "1",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15945,7 +15945,7 @@
         ],
         [
           "Đồng Khởi",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -15977,7 +15977,7 @@
         ],
         [
           "Mỹ thuật",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16009,7 +16009,7 @@
         ],
         [
           "Hồ Thị Kỷ",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16041,7 +16041,7 @@
         ],
         [
           "Độc Lập",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16072,7 +16072,7 @@
         ],
         [
           "Ngọc Hoàng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16100,11 +16100,11 @@
       "chunks": [
         [
           "Landmark",
-          "name recognition"
+          "local name"
         ],
         [
           "81",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16136,7 +16136,7 @@
         ],
         [
           "Lê Thánh Tôn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16168,7 +16168,7 @@
         ],
         [
           "Nguyễn Huệ",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16199,7 +16199,7 @@
         ],
         [
           "Nguyễn Trãi",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16231,7 +16231,7 @@
         ],
         [
           "Đức Bà Sài Gòn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16262,7 +16262,7 @@
         ],
         [
           "Thành phố",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16294,7 +16294,7 @@
         ],
         [
           "Pasteur",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16322,11 +16322,11 @@
       "chunks": [
         [
           "Phố Phạm",
-          "name recognition"
+          "local name"
         ],
         [
           "Ngũ Lão",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16354,11 +16354,11 @@
       "chunks": [
         [
           "Phở Hòa",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Pasteur",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -16391,7 +16391,7 @@
         ],
         [
           "Thành phố",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16422,7 +16422,7 @@
         ],
         [
           "Sài Gòn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16454,7 +16454,7 @@
         ],
         [
           "Tân Sơn Nhất",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16486,7 +16486,7 @@
         ],
         [
           "Tao Đàn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16514,11 +16514,11 @@
       "chunks": [
         [
           "Thảo",
-          "name recognition"
+          "local name"
         ],
         [
           "Điền",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16550,7 +16550,7 @@
         ],
         [
           "Con Rùa",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16582,7 +16582,7 @@
         ],
         [
           "Chứng tích Chiến tranh",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -16610,11 +16610,11 @@
       "chunks": [
         [
           "Thảo Cầm Viên",
-          "name recognition"
+          "local name"
         ],
         [
           "Sài Gòn",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -18628,28 +18628,28 @@
       "id": "city-hoian-atm-cao-lau-city",
       "kind": "phrase",
       "cityID": "hoian",
-      "subcategoryID": "practical-help-near-places",
+      "subcategoryID": "food-coffee",
       "placeID": "hoian-cao-lau-city",
-      "difficulty": "intermediate",
-      "spokenChunks": 6,
-      "targetText": "Có ATM gần Cao lầu ở Hội An không?",
-      "englishText": "Is there an ATM near Cao lau in Hoi An?",
-      "pronunciation": "koh ay tee em gun cao lau uh hoy an khong",
-      "context": "Use this when the plan near Cao lau in Hoi An depends on cash for tickets, snacks, taxis, or markets.",
-      "tip": "ATM is commonly understood. The city place anchor keeps the answer local instead of sending you across town.",
-      "rationale": "Practical-help phrase near Cao lau in Hoi An; it keeps a generic cash need tied to a real city anchor.",
+      "difficulty": "beginner",
+      "spokenChunks": 5,
+      "targetText": "Ở đây có cao lầu không?",
+      "englishText": "Do you have cao lau here?",
+      "pronunciation": "uh day koh cao lau khong",
+      "context": "Ask this at a stall or restaurant when you want to know whether cao lầu is available.",
+      "tip": "Pointing to the menu while saying cao lầu helps staff answer quickly.",
+      "rationale": "Replaces an awkward ATM-near-dish phrase with a direct dish availability phrase.",
       "chunks": [
         [
-          "Có ATM",
-          "is there an ATM"
+          "Ở đây",
+          "here"
         ],
         [
-          "gần",
-          "near"
+          "có",
+          "have / yes"
         ],
         [
-          "Cao lầu ở Hội An",
-          "Cao lau in Hoi An"
+          "cao lầu",
+          "cao lau"
         ],
         [
           "không",
@@ -19222,9 +19222,9 @@
       "targetText": "Đi Bánh mì Phượng",
       "englishText": "Go to Banh Mi Phuong",
       "pronunciation": "dee bahn mee fuong",
-      "context": "Use this for a simple route to the named food stop.",
-      "tip": "Short route phrases work well with a map or ride app open.",
-      "rationale": "Food-place route phrase naturally emerges from the place pronunciation page.",
+      "context": "For a quick ride, this says Bánh mì Phượng is the destination.",
+      "tip": "Keep the map pin open if the restaurant name is hard to hear.",
+      "rationale": "Food-place destination sentence naturally emerges from the place pronunciation page.",
       "chunks": [
         [
           "Đi",
@@ -19375,24 +19375,28 @@
       "id": "city-hoian-go-cao-lau-city",
       "kind": "phrase",
       "cityID": "hoian",
-      "subcategoryID": "arrivals-routes",
+      "subcategoryID": "food-coffee",
       "placeID": "hoian-cao-lau-city",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Cao lầu ở Hội An",
-      "englishText": "Go to Cao lau in Hoi An",
-      "pronunciation": "dee cao lau uh hoy an",
-      "context": "Use this short route phrase when Cao lau in Hoi An is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Cao lau in Hoi An; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 4,
+      "targetText": "Ăn cao lầu ở đâu?",
+      "englishText": "Where can I eat cao lau?",
+      "pronunciation": "an cao lau uh dow",
+      "context": "Ask this when you want a nearby place for cao lầu.",
+      "tip": "This is a simple food-finding question, not a route to a landmark.",
+      "rationale": "Replaces a dish-as-destination route phrase with a food-finding question.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Ăn",
+          "eat"
         ],
         [
-          "Cao lầu ở Hội An",
-          "Cao lau in Hoi An"
+          "cao lầu",
+          "cao lau"
+        ],
+        [
+          "ở đâu",
+          "where?"
         ]
       ],
       "sourceIDs": [
@@ -20366,7 +20370,7 @@
         ],
         [
           "An Bàng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20397,7 +20401,7 @@
         ],
         [
           "An Hội",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20429,7 +20433,7 @@
         ],
         [
           "Hội An",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20456,11 +20460,11 @@
       "chunks": [
         [
           "Bánh mì",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Phượng",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -20492,7 +20496,7 @@
         ],
         [
           "Bảy Mẫu",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20520,11 +20524,11 @@
       "chunks": [
         [
           "Cẩm",
-          "name recognition"
+          "local name"
         ],
         [
           "Châu",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20552,11 +20556,11 @@
       "chunks": [
         [
           "Cẩm",
-          "name recognition"
+          "local name"
         ],
         [
           "Nam",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20588,7 +20592,7 @@
         ],
         [
           "Cẩm Thanh",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20616,11 +20620,11 @@
       "chunks": [
         [
           "Cao lầu ở",
-          "dish name recognition"
+          "dish name"
         ],
         [
           "Hội An",
-          "dish name ending"
+          "dish name"
         ]
       ],
       "sourceIDs": [
@@ -20653,7 +20657,7 @@
         ],
         [
           "Chàm",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20685,7 +20689,7 @@
         ],
         [
           "Cửa Đại",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20713,11 +20717,11 @@
       "chunks": [
         [
           "Faifo",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Coffee",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -20750,7 +20754,7 @@
         ],
         [
           "Phúc Kiến",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20782,7 +20786,7 @@
         ],
         [
           "Hoài",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20814,7 +20818,7 @@
         ],
         [
           "Cầu",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20845,7 +20849,7 @@
         ],
         [
           "Kim Bồng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20877,7 +20881,7 @@
         ],
         [
           "Hội An",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20908,7 +20912,7 @@
         ],
         [
           "Ký ức Hội An",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -20936,11 +20940,11 @@
       "chunks": [
         [
           "Morning Glory",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Hội An",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -20974,7 +20978,7 @@
         ],
         [
           "Mỹ Sơn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21006,7 +21010,7 @@
         ],
         [
           "Nguyễn Hoàng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21038,7 +21042,7 @@
         ],
         [
           "Hội An",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21070,7 +21074,7 @@
         ],
         [
           "Di sản Vô giá",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21102,7 +21106,7 @@
         ],
         [
           "Quan Công",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21130,11 +21134,11 @@
       "chunks": [
         [
           "Reaching Out",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "Tea House",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -21167,7 +21171,7 @@
         ],
         [
           "Tấn Ký",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21199,7 +21203,7 @@
         ],
         [
           "Thanh Hà",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21231,7 +21235,7 @@
         ],
         [
           "Thu Bồn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21263,7 +21267,7 @@
         ],
         [
           "Trà Quế",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21291,11 +21295,11 @@
       "chunks": [
         [
           "Phố Trần",
-          "name recognition"
+          "local name"
         ],
         [
           "Phú",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -21603,24 +21607,24 @@
       "id": "city-hoian-stop-cao-lau-city",
       "kind": "phrase",
       "cityID": "hoian",
-      "subcategoryID": "arrivals-routes",
+      "subcategoryID": "food-coffee",
       "placeID": "hoian-cao-lau-city",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Cao lầu ở Hội An",
-      "englishText": "Stop at Cao lau in Hoi An",
-      "pronunciation": "zoong uh cao lau uh hoy an",
-      "context": "Use this in a car, taxi, or ride pickup when Cao lau in Hoi An is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Cao lau in Hoi An; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 4,
+      "targetText": "Cho tôi cao lầu",
+      "englishText": "Cao lau, please",
+      "pronunciation": "cho toy cao lau",
+      "context": "Use this as a short order when the dish is already clear.",
+      "tip": "For a fuller order, use the one-portion sentence on the cao lầu page.",
+      "rationale": "Replaces a drop-off phrase for a dish with a short order phrase.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi",
+          "for me / please"
         ],
         [
-          "Cao lầu ở Hội An",
-          "Cao lau in Hoi An"
+          "cao lầu",
+          "cao lau"
         ]
       ],
       "sourceIDs": [
@@ -22576,20 +22580,24 @@
       "placeID": "hoian-cao-lau-city",
       "difficulty": "beginner",
       "spokenChunks": 4,
-      "targetText": "Cao lầu ở Hội An ở đâu?",
-      "englishText": "Where is Cao lau in Hoi An?",
-      "pronunciation": "cao lau uh hoy an uh dow",
-      "context": "Use this when you are close enough for a person to point, gesture, or name the next street toward Cao lau in Hoi An.",
-      "tip": "Put the place name first, then ở đâu. That frame stays useful for nearly every Hoi An landmark or street name.",
-      "rationale": "Beginner where-question for Cao lau in Hoi An; it makes the city anchor useful in a real walking or arrival moment.",
+      "targetText": "Ở đâu có cao lầu?",
+      "englishText": "Where can I get cao lau?",
+      "pronunciation": "uh dow koh cao lau",
+      "context": "Ask this when you are looking for cao lầu nearby.",
+      "tip": "Keep the dish name together; the answer may be a point, stall name, or street.",
+      "rationale": "Replaces a place-style where-question with a dish-finding question.",
       "chunks": [
         [
-          "Cao lầu ở Hội An",
-          "Cao lau in Hoi An"
+          "Ở đâu",
+          "where?"
         ],
         [
-          "ở đâu",
-          "where?"
+          "có",
+          "have / yes"
+        ],
+        [
+          "cao lầu",
+          "cao lau"
         ]
       ],
       "sourceIDs": [
@@ -23403,28 +23411,28 @@
       "id": "city-hue-atm-bun-bo-city",
       "kind": "phrase",
       "cityID": "hue",
-      "subcategoryID": "practical-help-near-places",
+      "subcategoryID": "food-coffee",
       "placeID": "hue-bun-bo-city",
-      "difficulty": "intermediate",
-      "spokenChunks": 6,
-      "targetText": "Có ATM gần Bún bò Huế không?",
-      "englishText": "Is there an ATM near Bun bo Hue?",
-      "pronunciation": "koh ay tee em gun boon bo hweh khong",
-      "context": "Use this when the plan near Bun bo Hue depends on cash for tickets, snacks, taxis, or markets.",
-      "tip": "ATM is commonly understood. The city place anchor keeps the answer local instead of sending you across town.",
-      "rationale": "Practical-help phrase near Bun bo Hue; it keeps a generic cash need tied to a real city anchor.",
+      "difficulty": "beginner",
+      "spokenChunks": 5,
+      "targetText": "Ở đây có bún bò Huế không?",
+      "englishText": "Do you have bun bo Hue here?",
+      "pronunciation": "uh day koh boon bo hweh khong",
+      "context": "Ask this at a stall or restaurant when you want to know whether bún bò Huế is available.",
+      "tip": "Pointing to the menu while saying bún bò Huế helps staff answer quickly.",
+      "rationale": "Replaces an awkward ATM-near-dish phrase with a direct dish availability phrase.",
       "chunks": [
         [
-          "Có ATM",
-          "is there an ATM"
+          "Ở đây",
+          "here"
         ],
         [
-          "gần",
-          "near"
+          "có",
+          "have / yes"
         ],
         [
-          "Bún bò Huế",
-          "Bun bo Hue"
+          "bún bò Huế",
+          "bun bo Hue"
         ],
         [
           "không",
@@ -23445,31 +23453,31 @@
       "kind": "phrase",
       "cityID": "hue",
       "subcategoryID": "practical-help-near-places",
-      "placeID": "hue-dong-ba-bun-bo",
+      "placeID": "hue-dong-ba-market",
       "difficulty": "intermediate",
       "spokenChunks": 6,
-      "targetText": "Có ATM gần Bún bò ở chợ Đông Ba không?",
-      "englishText": "Is there an ATM near Bun bo at Dong Ba Market?",
-      "pronunciation": "koh ay tee em gun boon bo uh chuh dong ba khong",
-      "context": "Use this when the plan near Bun bo at Dong Ba Market depends on cash for tickets, snacks, taxis, or markets.",
-      "tip": "ATM is commonly understood. The city place anchor keeps the answer local instead of sending you across town.",
-      "rationale": "Practical-help phrase near Bun bo at Dong Ba Market; it keeps a generic cash need tied to a real city anchor.",
+      "targetText": "Gần hàng bún bò ở chợ Đông Ba có ATM không?",
+      "englishText": "Is there an ATM near the bun bo stall at Dong Ba Market?",
+      "pronunciation": "gun hang boon bo uh chuh dong ba koh ay tee em khong",
+      "context": "Ask this when you need cash near the bún bò area at Đông Ba Market.",
+      "tip": "This keeps the cash question tied to the food area without treating the dish as an address.",
+      "rationale": "Keeps the ATM phrase unique and traveler-readable while avoiding dish-as-destination wording.",
       "chunks": [
         [
-          "Có ATM",
-          "is there an ATM"
-        ],
-        [
-          "gần",
+          "Gần",
           "near"
         ],
         [
-          "Bún bò ở chợ Đông Ba",
-          "Bun bo at Dong Ba Market"
+          "hàng bún bò",
+          "bun bo stall"
         ],
         [
-          "không",
-          "no / not"
+          "ở chợ Đông Ba",
+          "at Dong Ba Market"
+        ],
+        [
+          "có ATM không",
+          "is there an ATM"
         ]
       ],
       "sourceIDs": [
@@ -23479,8 +23487,7 @@
       ],
       "status": "approved",
       "pageKind": "phrase",
-      "placeKind": "dish",
-      "contentRole": "dish-anchor"
+      "placeKind": "market"
     },
     {
       "id": "city-hue-atm-dong-ba-market",
@@ -23923,7 +23930,7 @@
       "englishText": "Bun bo at Dong Ba Market",
       "pronunciation": "boon bo uh chuh dong ba",
       "context": "Use this when you want Hue's noodle soup inside Dong Ba Market and need to say the food and place together.",
-      "tip": "Ở chợ Đông Ba anchors the dish to the market, so it is more useful than asking for bun bo across the whole city.",
+      "tip": "Ở chợ Đông Ba keeps the food tied to Dong Ba Market, which is clearer than asking for bun bo across the whole city.",
       "rationale": "Dong Ba Market bun bo is a documented food anchor and gives beginners a real city-specific food phrase without relying on an unsupported named stall.",
       "chunks": [
         [
@@ -24063,24 +24070,24 @@
       "placeID": "hue-bun-bo-city",
       "difficulty": "beginner",
       "spokenChunks": 5,
-      "targetText": "Ăn gần Bún bò Huế",
-      "englishText": "Eat near Bun bo Hue",
-      "pronunciation": "an gun boon bo hweh",
-      "context": "Use this clipped phrase when you are choosing food around Bun bo Hue and want the area, not a specific restaurant.",
-      "tip": "It is short, so pair it with a map gesture or a food app screen. The listener can point you toward nearby options.",
-      "rationale": "Beginner food-area phrase for Bun bo Hue; it turns a city anchor into a practical meal search.",
+      "targetText": "Ăn bún bò Huế ở đâu?",
+      "englishText": "Where can I eat bun bo Hue?",
+      "pronunciation": "an boon bo hweh uh dow",
+      "context": "Ask this when you want a nearby place for bún bò Huế.",
+      "tip": "This is a simple food-finding question, not a route to a landmark.",
+      "rationale": "Replaces an area-style dish phrase with a food-finding question.",
       "chunks": [
         [
           "Ăn",
           "eat"
         ],
         [
-          "gần",
-          "near"
+          "bún bò Huế",
+          "bun bo Hue"
         ],
         [
-          "Bún bò Huế",
-          "Bun bo Hue"
+          "ở đâu",
+          "where?"
         ]
       ],
       "sourceIDs": [
@@ -24445,24 +24452,28 @@
       "id": "city-hue-go-bun-bo-city",
       "kind": "phrase",
       "cityID": "hue",
-      "subcategoryID": "arrivals-routes",
+      "subcategoryID": "food-coffee",
       "placeID": "hue-bun-bo-city",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Bún bò Huế",
-      "englishText": "Go to Bun bo Hue",
-      "pronunciation": "dee boon bo hweh",
-      "context": "Use this short route phrase when Bun bo Hue is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Bun bo Hue; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 5,
+      "targetText": "Tìm bún bò Huế ở đâu?",
+      "englishText": "Where can I find bun bo Hue?",
+      "pronunciation": "tim boon bo hweh uh dow",
+      "context": "Ask this when you are looking for bún bò Huế nearby.",
+      "tip": "The answer may be a point, stall name, or nearby street.",
+      "rationale": "Replaces a dish-as-destination route phrase with a food-finding question.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Tìm",
+          "find"
         ],
         [
-          "Bún bò Huế",
-          "Bun bo Hue"
+          "bún bò Huế",
+          "bun bo Hue"
+        ],
+        [
+          "ở đâu",
+          "where?"
         ]
       ],
       "sourceIDs": [
@@ -24509,24 +24520,28 @@
       "id": "city-hue-go-dong-ba-bun-bo",
       "kind": "phrase",
       "cityID": "hue",
-      "subcategoryID": "arrivals-routes",
+      "subcategoryID": "food-coffee",
       "placeID": "hue-dong-ba-bun-bo",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Bún bò ở chợ Đông Ba",
-      "englishText": "Go to Bun bo at Dong Ba Market",
-      "pronunciation": "dee boon bo uh chuh dong ba",
-      "context": "Use this short route phrase when Bun bo at Dong Ba Market is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Bun bo at Dong Ba Market; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Tôi muốn tìm bún bò ở chợ Đông Ba",
+      "englishText": "I want to find bun bo at Dong Ba Market",
+      "pronunciation": "toy mwon tim boon bo uh chuh dong ba",
+      "context": "Use this when you are inside or near Đông Ba Market and looking for bún bò.",
+      "tip": "The market is the location; bún bò is the food you are trying to find.",
+      "rationale": "Replaces a route phrase to a dish with a market food-finding sentence.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Tôi muốn tìm",
+          "I want to find"
         ],
         [
-          "Bún bò ở chợ Đông Ba",
-          "Bun bo at Dong Ba Market"
+          "bún bò",
+          "bun bo"
+        ],
+        [
+          "ở chợ Đông Ba",
+          "at Dong Ba Market"
         ]
       ],
       "sourceIDs": [
@@ -25555,7 +25570,7 @@
         ],
         [
           "An Cựu",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25583,11 +25598,11 @@
       "chunks": [
         [
           "Cung An",
-          "name recognition"
+          "local name"
         ],
         [
           "Định",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25619,7 +25634,7 @@
         ],
         [
           "Bao Vinh",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25647,11 +25662,11 @@
       "chunks": [
         [
           "Bún bò",
-          "dish name recognition"
+          "dish name"
         ],
         [
           "Huế",
-          "dish name ending"
+          "dish name"
         ]
       ],
       "sourceIDs": [
@@ -25801,7 +25816,7 @@
         ],
         [
           "Đông Ba",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25832,7 +25847,7 @@
         ],
         [
           "Đồng Khánh",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25864,7 +25879,7 @@
         ],
         [
           "Gia Long",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25892,11 +25907,11 @@
       "chunks": [
         [
           "Cồn",
-          "name recognition"
+          "local name"
         ],
         [
           "Hến",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25928,7 +25943,7 @@
         ],
         [
           "Huyền Trân",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25956,11 +25971,11 @@
       "chunks": [
         [
           "Kinh thành",
-          "name recognition"
+          "local name"
         ],
         [
           "Huế",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -25991,7 +26006,7 @@
         ],
         [
           "Khải Định",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26023,7 +26038,7 @@
         ],
         [
           "Lê Lợi",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26051,11 +26066,11 @@
       "chunks": [
         [
           "Les Jardins de",
-          "restaurant name recognition"
+          "restaurant name"
         ],
         [
           "la Carambole",
-          "restaurant name ending"
+          "restaurant name"
         ]
       ],
       "sourceIDs": [
@@ -26089,7 +26104,7 @@
         ],
         [
           "Minh Mạng",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26121,7 +26136,7 @@
         ],
         [
           "Nguyễn Đình Chiểu",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26153,7 +26168,7 @@
         ],
         [
           "Huế",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26185,7 +26200,7 @@
         ],
         [
           "Hương",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26216,7 +26231,7 @@
         ],
         [
           "Phú Bài",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26248,7 +26263,7 @@
         ],
         [
           "Phủ Cam",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26280,7 +26295,7 @@
         ],
         [
           "Huế",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26312,7 +26327,7 @@
         ],
         [
           "Cổ vật Cung đình Huế",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26344,7 +26359,7 @@
         ],
         [
           "ngói Thanh Toàn",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26376,7 +26391,7 @@
         ],
         [
           "Thiên Mụ",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26403,11 +26418,11 @@
       "chunks": [
         [
           "Làng hương",
-          "name recognition"
+          "local name"
         ],
         [
           "Thủy Xuân",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26439,7 +26454,7 @@
         ],
         [
           "Trường Tiền",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26470,7 +26485,7 @@
         ],
         [
           "Tự Đức",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26502,7 +26517,7 @@
         ],
         [
           "Từ Hiếu",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26530,11 +26545,11 @@
       "chunks": [
         [
           "Đồi Vọng",
-          "name recognition"
+          "local name"
         ],
         [
           "Cảnh",
-          "name ending"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26566,7 +26581,7 @@
         ],
         [
           "Huế",
-          "name recognition"
+          "local name"
         ]
       ],
       "sourceIDs": [
@@ -26713,24 +26728,24 @@
       "id": "city-hue-stop-bun-bo-city",
       "kind": "phrase",
       "cityID": "hue",
-      "subcategoryID": "arrivals-routes",
+      "subcategoryID": "food-coffee",
       "placeID": "hue-bun-bo-city",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Bún bò Huế",
-      "englishText": "Stop at Bun bo Hue",
-      "pronunciation": "zoong uh boon bo hweh",
-      "context": "Use this in a car, taxi, or ride pickup when Bun bo Hue is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Bun bo Hue; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 4,
+      "targetText": "Cho tôi bún bò Huế",
+      "englishText": "Bun bo Hue, please",
+      "pronunciation": "cho toy boon bo hweh",
+      "context": "Use this as a short order when the dish is already clear.",
+      "tip": "For a fuller order, use the one-bowl sentence on the bún bò Huế page.",
+      "rationale": "Replaces a drop-off phrase for a dish with a short order phrase.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi",
+          "for me / please"
         ],
         [
-          "Bún bò Huế",
-          "Bun bo Hue"
+          "bún bò Huế",
+          "bun bo Hue"
         ]
       ],
       "sourceIDs": [
@@ -26747,23 +26762,23 @@
       "kind": "phrase",
       "cityID": "hue",
       "subcategoryID": "arrivals-routes",
-      "placeID": "hue-dong-ba-bun-bo",
+      "placeID": "hue-dong-ba-market",
       "difficulty": "beginner",
       "spokenChunks": 5,
-      "targetText": "Dừng ở Bún bò ở chợ Đông Ba",
-      "englishText": "Stop at Bun bo at Dong Ba Market",
-      "pronunciation": "zoong uh boon bo uh chuh dong ba",
-      "context": "Use this in a car, taxi, or ride pickup when Bun bo at Dong Ba Market is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Bun bo at Dong Ba Market; it links the city place page to the moment a traveler needs to get out.",
+      "targetText": "Cho tôi xuống ở chợ Đông Ba",
+      "englishText": "Let me off at Dong Ba Market",
+      "pronunciation": "cho toy xwong uh chuh dong ba",
+      "context": "Use this with a driver when Đông Ba Market is the drop-off point.",
+      "tip": "This keeps the ride request about the market, not a dish inside it.",
+      "rationale": "Replaces a drop-off phrase for a dish with a real market drop-off phrase.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống",
+          "let me off"
         ],
         [
-          "Bún bò ở chợ Đông Ba",
-          "Bun bo at Dong Ba Market"
+          "ở chợ Đông Ba",
+          "at Dong Ba Market"
         ]
       ],
       "sourceIDs": [
@@ -26773,8 +26788,7 @@
       ],
       "status": "approved",
       "pageKind": "phrase",
-      "placeKind": "dish",
-      "contentRole": "dish-anchor"
+      "placeKind": "market"
     },
     {
       "id": "city-hue-stop-dong-ba-market",
@@ -27625,20 +27639,24 @@
       "placeID": "hue-bun-bo-city",
       "difficulty": "beginner",
       "spokenChunks": 4,
-      "targetText": "Bún bò Huế ở đâu?",
-      "englishText": "Where is Bun bo Hue?",
-      "pronunciation": "boon bo hweh uh dow",
-      "context": "Use this when you are close enough for a person to point, gesture, or name the next street toward Bun bo Hue.",
-      "tip": "Put the place name first, then ở đâu. That frame stays useful for nearly every Hue landmark or street name.",
-      "rationale": "Beginner where-question for Bun bo Hue; it makes the city anchor useful in a real walking or arrival moment.",
+      "targetText": "Ở đâu có bún bò Huế?",
+      "englishText": "Where can I get bun bo Hue?",
+      "pronunciation": "uh dow koh boon bo hweh",
+      "context": "Ask this when you are looking for bún bò Huế nearby.",
+      "tip": "Keep the dish name together; the answer may be a point, stall name, or street.",
+      "rationale": "Replaces a place-style where-question with a dish-finding question.",
       "chunks": [
         [
-          "Bún bò Huế",
-          "Bun bo Hue"
+          "Ở đâu",
+          "where?"
         ],
         [
-          "ở đâu",
-          "where?"
+          "có",
+          "have / yes"
+        ],
+        [
+          "bún bò Huế",
+          "bun bo Hue"
         ]
       ],
       "sourceIDs": [
@@ -27658,20 +27676,24 @@
       "placeID": "hue-dong-ba-bun-bo",
       "difficulty": "beginner",
       "spokenChunks": 4,
-      "targetText": "Bún bò ở chợ Đông Ba ở đâu?",
-      "englishText": "Where is Bun bo at Dong Ba Market?",
-      "pronunciation": "boon bo uh chuh dong ba uh dow",
-      "context": "Use this when you are close enough for a person to point, gesture, or name the next street toward Bun bo at Dong Ba Market.",
-      "tip": "Put the place name first, then ở đâu. That frame stays useful for nearly every Hue landmark or street name.",
-      "rationale": "Beginner where-question for Bun bo at Dong Ba Market; it makes the city anchor useful in a real walking or arrival moment.",
+      "targetText": "Bún bò ở chợ Đông Ba ở chỗ nào?",
+      "englishText": "Where is bun bo at Dong Ba Market?",
+      "pronunciation": "boon bo uh chuh dong ba uh cho nao",
+      "context": "Ask this inside or near Đông Ba Market when you are looking for the bún bò spot.",
+      "tip": "Chỗ nào asks which spot or area, which fits a market better than a street address.",
+      "rationale": "Keeps the phrase as an inside-the-market food question instead of a city route question.",
       "chunks": [
         [
-          "Bún bò ở chợ Đông Ba",
-          "Bun bo at Dong Ba Market"
+          "Bún bò",
+          "bun bo"
         ],
         [
-          "ở đâu",
-          "where?"
+          "ở chợ Đông Ba",
+          "at Dong Ba Market"
+        ],
+        [
+          "ở chỗ nào",
+          "where / which spot"
         ]
       ],
       "sourceIDs": [

@@ -1266,18 +1266,18 @@ function removeEnglishTypeWords(english, patterns) {
   return label;
 }
 
-function cityRecognitionLabel(page, fallback = "name recognition") {
+function cityRecognitionLabel(page, fallback = "local name") {
   const pageKind = page.pageKind ?? page.cityMetadata?.pageKind ?? "";
-  if (pageKind === "restaurant") return "restaurant name recognition";
-  if (pageKind === "dish") return "dish name recognition";
+  if (pageKind === "restaurant") return "restaurant name";
+  if (pageKind === "dish") return "dish name";
   return fallback;
 }
 
 function cityRecognitionEndingLabel(page) {
   const pageKind = page.pageKind ?? page.cityMetadata?.pageKind ?? "";
-  if (pageKind === "restaurant") return "restaurant name ending";
-  if (pageKind === "dish") return "dish name ending";
-  return "name ending";
+  if (pageKind === "restaurant") return "restaurant name";
+  if (pageKind === "dish") return "dish name";
+  return "local name";
 }
 
 function placeNameRemainderLabel(restVietnamese, english, typePatterns, page) {
@@ -1340,11 +1340,11 @@ const cityPlaceExactSplits = new Map(Object.entries({
     ["Hà Nội", "Hanoi"],
   ],
   "ba na hills": [
-    ["Bà Nà", "name recognition"],
+    ["Bà Nà", "local name"],
     ["Hills", "English word in the name"],
   ],
   "ngu hanh son": [
-    ["Ngũ Hành", "name recognition"],
+    ["Ngũ Hành", "local name"],
     ["Sơn", "mountain name"],
   ],
 }));
@@ -1364,7 +1364,7 @@ function splitFallbackPlaceName(vietnamese, english, page) {
   const enSecond = enWords.slice(enFirstCount).join(" ");
 
   return [
-    [viFirst, cityRecognitionLabel(page, "name recognition")],
+    [viFirst, cityRecognitionLabel(page, "local name")],
     [viSecond, cityRecognitionEndingLabel(page)],
   ];
 }

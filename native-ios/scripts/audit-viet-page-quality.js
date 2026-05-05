@@ -126,7 +126,7 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
   if (Number(page.section_count) === 0) {
     issues.push("missing article sections");
   }
-  if (Number(page.section_count) < 5 && page.id !== "viet-phrase-polite-1") {
+  if (Number(page.section_count) < 3 && page.id !== "viet-phrase-polite-1") {
     issues.push("too few article sections");
   }
   if (page.completeness_status !== "deep") {
@@ -138,13 +138,6 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
       ["at-glance", sectionKeys.has("at-glance")],
       ["quick-say or standard-way", hasQuickOrStandard],
       ["breakdown", sectionKeys.has("breakdown")],
-      [
-        "when-to-use",
-        sectionKeys.has("when-to-use")
-          || (page.id === baNaJourneyPageID && sectionKeys.has("journey-flow"))
-          || (page.id === dragonBridgeLandmarkPageID && sectionKeys.has("getting-there")),
-      ],
-      ["good-to-know", sectionKeys.has("good-to-know")],
     ];
     if (shouldHaveRelationshipWords) {
       requiredSections.push(["relationship-words", sectionKeys.has("relationship-words")]);

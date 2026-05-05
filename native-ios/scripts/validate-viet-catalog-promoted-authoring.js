@@ -189,7 +189,7 @@ function main() {
     for (const section of page.sections ?? []) {
       for (const phrase of section.phrases ?? []) {
         const hasExactAudio = phrase.audioKey && audioTextByKey.get(phrase.audioKey) === normalize(phrase.vietnamese);
-        const expectedSymbol = hasExactAudio ? "speaker.wave.2.fill" : "speaker.slash.fill";
+        const expectedSymbol = hasExactAudio ? "speaker.wave.2.fill" : "text.bubble.fill";
         assert(phrase.symbolName === expectedSymbol, `${relative(filePath)} ${section.id} phrase ${phrase.id} should use ${expectedSymbol}`);
       }
     }
