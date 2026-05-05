@@ -6,6 +6,8 @@ Completed the Viet canonical listing reset across the current runtime universe. 
 
 This was a deterministic source/generator/resource migration. It did not call an LLM at runtime, generate new audio, or hand-edit generated runtime resources directly.
 
+Implementation commit: `7326032f`
+
 ## What Changed
 
 - Reworked listing generation by page profile:
@@ -126,4 +128,4 @@ Physical iPhone build and install completed with local signing overrides.
 
 ## Final Status
 
-Ready for checkpoint commit.
+Checkpoint committed. Final `git status --short` was clean after the closeout commit.
