@@ -235,59 +235,79 @@ extension View {
 
 struct HeroMastheadImage: View {
     var imageName: String = PhrasePageStyle.heroImageName
-    var verticalOffset: CGFloat = PhrasePageStyle.heroImageVerticalOffset
+    var verticalOffset: CGFloat? = nil
+
+    private var resolvedVerticalOffset: CGFloat {
+        verticalOffset ?? Self.defaultVerticalOffset(for: imageName)
+    }
+
+    private var imageRenderHeight: CGFloat {
+        PhrasePageStyle.heroImageHeight + abs(resolvedVerticalOffset) + 72
+    }
 
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .bottom) {
                 PhrasePageStyle.pageBackground
 
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
-                    .offset(y: verticalOffset)
-                    .clipped()
-                    .mask {
-                        LinearGradient(
-                            stops: [
-                                .init(color: .black, location: 0),
-                                .init(color: .black, location: 0.74),
-                                .init(color: .black.opacity(0.9), location: 0.84),
-                                .init(color: .black.opacity(0.34), location: 0.95),
-                                .init(color: .clear, location: 1),
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    }
+                ZStack(alignment: .top) {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: proxy.size.width, height: imageRenderHeight, alignment: .top)
+                        .offset(y: resolvedVerticalOffset)
+                }
+                .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
+                .clipped()
+                .mask {
+                    LinearGradient(
+                        stops: [
+                            .init(color: .black, location: 0),
+                            .init(color: .black, location: 0.5),
+                            .init(color: .black.opacity(0.82), location: 0.66),
+                            .init(color: .black.opacity(0.28), location: 0.88),
+                            .init(color: .clear, location: 1),
+                        ],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                }
 
                 LinearGradient(
                     stops: [
                         .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
-                        .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0.38),
-                        .init(color: PhrasePageStyle.pageBackground.opacity(0.14), location: 0.62),
-                        .init(color: PhrasePageStyle.pageBackground.opacity(0.68), location: 0.88),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0.22),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0.18), location: 0.48),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0.72), location: 0.82),
                         .init(color: PhrasePageStyle.pageBackground, location: 1),
                     ],
                     startPoint: .top,
                     endPoint: .bottom
                 )
-                .frame(height: PhrasePageStyle.heroImageFadeHeight)
+                .frame(height: PhrasePageStyle.heroImageHeight)
             }
             .overlay(alignment: .bottom) {
-                    LinearGradient(
-                        colors: [
-                            .clear,
-                            PhrasePageStyle.pageBackground,
-                        ],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                    .frame(height: 18)
+                LinearGradient(
+                    colors: [
+                        .clear,
+                        PhrasePageStyle.pageBackground,
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 28)
             }
         }
         .frame(height: PhrasePageStyle.heroImageHeight)
         .clipped()
+    }
+
+    private static func defaultVerticalOffset(for imageName: String) -> CGFloat {
+        switch imageName {
+        case "HeroBaNaHills":
+            return 0
+        default:
+            return PhrasePageStyle.heroImageVerticalOffset
+        }
     }
 }
