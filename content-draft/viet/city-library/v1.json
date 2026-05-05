@@ -5181,7 +5181,7 @@
           }
         ],
         "replaceGeneratedSections": true,
-        "heroImageName": null,
+        "heroImageName": "HeroDragonBridge",
         "templateProfile": "landmark-action-page",
         "suppressedSections": [
           "place-brief",
@@ -5190,7 +5190,7 @@
         ],
         "agentApprovalID": "DRAGON-COPY-AGENT-APPROVED-001",
         "issueClassifications": {
-          "missingDragonBridgeHero": "FOLLOW_UP",
+          "missingDragonBridgeHero": "RESOLVED_BY_TASK-VIET-DRAGON-BRIDGE-HERO-ASSET-001",
           "legacyExportedPageID": "ACCEPTED_TEMPORARY_RISK"
         }
       }

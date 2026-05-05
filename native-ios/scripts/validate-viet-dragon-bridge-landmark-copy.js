@@ -34,6 +34,8 @@ const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-libra
 const authoredResourcePath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const sqlitePath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet.sqlite");
+const heroImageName = "HeroDragonBridge";
+const assetDir = path.join(nativeRoot, "Resources", "Assets.xcassets", `${heroImageName}.imageset`);
 
 const expectedSectionOrder = [
   "at-glance",
@@ -155,7 +157,7 @@ function main() {
   assert(cityRecord.editorialImport?.taskID === taskID, "city source missing task marker");
   assert(cityRecord.editorialImport?.sourcePatch === "dragon-bridge-ux-copy-override-v2/incoming-chatgpt/completed-patch-files", "source patch marker mismatch");
   assert(cityRecord.editorialImport?.templateProfile === "landmark-action-page", "template profile mismatch");
-  assert(cityRecord.editorialImport?.heroImageName === null, "Dragon hero image should stay null in this task");
+  assert(cityRecord.editorialImport?.heroImageName === heroImageName, "Dragon hero image metadata missing");
   assertArrayEqual((cityRecord.editorialImport.sections ?? []).map((section) => section.id), expectedSectionOrder, "source section order");
 
   const authored = readJSON(authoredResourcePath);
@@ -164,7 +166,7 @@ function main() {
   assert(page.id === authoredPageID, `authored page ID changed: ${page.id}`);
   assert(page.title === "Cầu Rồng", "authored Vietnamese title changed");
   assert(page.englishTitle === "Dragon Bridge", "authored English title changed");
-  assert(page.heroImageName === null, "authored hero image should remain generic follow-up");
+  assert(page.heroImageName === heroImageName, "authored Dragon hero image missing");
   assertArrayEqual(sectionIDs(page), expectedSectionOrder, "authored section order");
   assert(!sectionIDs(page).includes("place-brief"), "place-brief must be suppressed");
   assert(!sectionIDs(page).includes("use-it-with"), "use-it-with must be suppressed");
@@ -208,7 +210,9 @@ function main() {
   assert(sqlitePages[0].id === sqlitePageID, `SQLite canonical page ID changed: ${sqlitePages[0].id}`);
   assert(sqlitePages[0].title === "Cầu Rồng", "SQLite Vietnamese title changed");
   assert(sqlitePages[0].english_title === "Dragon Bridge", "SQLite English title changed");
-  assert(!sqlitePages[0].hero_image_name, "SQLite hero image should remain empty follow-up");
+  assert(sqlitePages[0].hero_image_name === heroImageName, "SQLite Dragon hero image missing");
+  assert(fs.existsSync(path.join(assetDir, "Contents.json")), "HeroDragonBridge Contents.json missing");
+  assert(fs.existsSync(path.join(assetDir, "hero-dragon-bridge.png")), "HeroDragonBridge PNG missing");
   const sqliteSections = sqliteJSON(`
     SELECT section_key AS id
     FROM page_section
