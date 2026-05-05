@@ -770,6 +770,48 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hanoi.practiceAction, .practiceMode(.hanoiBucketList))
         XCTAssertFalse(hanoi.subcategories.isEmpty)
         XCTAssertFalse(hanoi.starterItems.isEmpty)
+        XCTAssertNotNil(hanoi.cityHub)
+        XCTAssertEqual(hanoi.cityHub?.situationTitle, "What are you doing?")
+        XCTAssertEqual(hanoi.cityHub?.namesTitle, "Names to know")
+    }
+
+    func testDaNangCityDescriptorUsesTravelModeHubInsteadOfPhraseFeed() {
+        let danang = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("danang")))
+        let cityHub = try! XCTUnwrap(danang.cityHub)
+
+        XCTAssertEqual(danang.title, "Da Nang")
+        XCTAssertEqual(danang.subtitle, "Airport arrivals, beach rides, river landmarks, markets, and day trips.")
+        XCTAssertEqual(danang.mastheadImageName, "HeroNeutralMasthead")
+        XCTAssertEqual(danang.starterTitle, "Names to know")
+        XCTAssertEqual(danang.practiceTitle, "Practice a Da Nang day")
+        XCTAssertEqual(danang.practiceSubtitle, "Airport pickup, beach drop-off, food, and a ride back.")
+        XCTAssertFalse(danang.practiceSubtitle.localizedCaseInsensitiveContains("phrase loop"))
+
+        XCTAssertEqual(
+            cityHub.situations.map(\.title),
+            ["Arriving", "Getting around", "Beach day", "Food & coffee", "Places to visit", "Help"]
+        )
+        XCTAssertTrue(cityHub.situations.allSatisfy { $0.targetRoute != nil })
+        XCTAssertEqual(cityHub.situations.first(where: { $0.title == "Food & coffee" })?.subtitle, "Restaurants, cafés, markets")
+        XCTAssertEqual(cityHub.situations.first(where: { $0.title == "Places to visit" })?.subtitle, "Dragon Bridge, Marble Mountains, Bà Nà Hills")
+        XCTAssertEqual(cityHub.namesToKnowItems.first?.pageID, "viet-phrase-city-danang-place-airport")
+        XCTAssertTrue(cityHub.namesToKnowItems.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" })
+        XCTAssertTrue(cityHub.namesToKnowItems.contains { $0.pageID == "viet-phrase-city-danang-place-nguyen-van-linh-street" })
+        XCTAssertFalse(cityHub.namesToKnowItems.contains { item in
+            item.title.localizedCaseInsensitiveContains("Cảng Tiên Sa")
+                || item.subtitle.localizedCaseInsensitiveContains("Tien Sa Port")
+        })
+
+        XCTAssertEqual(cityHub.quickPhrasesTitle, "Quick phrases")
+        XCTAssertEqual(cityHub.quickPhraseItems.first?.pageID, "viet-phrase-city-danang-to-airport")
+        XCTAssertTrue(cityHub.quickPhraseItems.contains { $0.pageID == "viet-phrase-city-danang-get-off-my-khe" })
+        XCTAssertTrue(cityHub.quickPhraseItems.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
+        XCTAssertTrue(cityHub.quickPhraseItems.contains { item in
+            item.title.localizedCaseInsensitiveContains("Nhà vệ sinh")
+                || item.subtitle.localizedCaseInsensitiveContains("bathroom")
+        })
+        XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Landmarks" })
+        XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
     }
 
     func testSearchStrongMatchesReturnBrowseCollectionsBeforePhraseRows() {

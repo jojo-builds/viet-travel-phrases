@@ -162,6 +162,27 @@ struct BrowseCollectionSubcategory: Identifiable, Equatable {
     let tintName: AccentTint
     let phraseCount: Int
     let items: [BrowseSearchPhraseItem]
+    let targetRoute: BrowseCollectionRoute?
+
+    init(
+        id: String,
+        title: String,
+        subtitle: String,
+        symbolName: String,
+        tintName: AccentTint,
+        phraseCount: Int,
+        items: [BrowseSearchPhraseItem],
+        targetRoute: BrowseCollectionRoute? = nil
+    ) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.symbolName = symbolName
+        self.tintName = tintName
+        self.phraseCount = phraseCount
+        self.items = items
+        self.targetRoute = targetRoute
+    }
 }
 
 struct BrowseCollectionShelf: Identifiable, Equatable {
@@ -201,8 +222,54 @@ struct BrowseCollectionDescriptor: Identifiable, Equatable {
     let practiceSubtitle: String
     let practiceAction: BrowseCollectionPracticeAction
     let exploreShelves: [BrowseCollectionShelf]
+    let cityHub: BrowseCityHub?
+
+    init(
+        route: BrowseCollectionRoute,
+        title: String,
+        subtitle: String,
+        eyebrow: String,
+        mastheadImageName: String,
+        symbolName: String,
+        tintName: AccentTint,
+        subcategories: [BrowseCollectionSubcategory],
+        starterTitle: String,
+        starterItems: [BrowseSearchPhraseItem],
+        practiceTitle: String,
+        practiceSubtitle: String,
+        practiceAction: BrowseCollectionPracticeAction,
+        exploreShelves: [BrowseCollectionShelf],
+        cityHub: BrowseCityHub? = nil
+    ) {
+        self.route = route
+        self.title = title
+        self.subtitle = subtitle
+        self.eyebrow = eyebrow
+        self.mastheadImageName = mastheadImageName
+        self.symbolName = symbolName
+        self.tintName = tintName
+        self.subcategories = subcategories
+        self.starterTitle = starterTitle
+        self.starterItems = starterItems
+        self.practiceTitle = practiceTitle
+        self.practiceSubtitle = practiceSubtitle
+        self.practiceAction = practiceAction
+        self.exploreShelves = exploreShelves
+        self.cityHub = cityHub
+    }
 
     var id: String { route.id }
+}
+
+struct BrowseCityHub: Equatable {
+    let situationTitle: String
+    let situations: [BrowseCollectionSubcategory]
+    let namesTitle: String
+    let namesToKnowItems: [BrowseSearchPhraseItem]
+    let quickPhrasesTitle: String
+    let quickPhraseItems: [BrowseSearchPhraseItem]
+    let browseTitle: String
+    let browseGroups: [BrowseCollectionSubcategory]
 }
 
 struct BrowseSearchCollectionMatch: Identifiable, Equatable {
@@ -657,10 +724,10 @@ enum BrowseSearchDestinations {
             symbolName: city.symbolName,
             tintName: city.tintName,
             subcategories: [],
-            starterTitle: "Start in \(title)",
+            starterTitle: "Names to know",
             starterItems: [],
-            practiceTitle: "Practice \(title)",
-            practiceSubtitle: "City phrases in a quick practice loop.",
+            practiceTitle: cityPracticeTitle(for: id, title: title),
+            practiceSubtitle: cityPracticeSubtitle(for: id),
             practiceAction: cityPracticeAction(for: id),
             exploreShelves: []
         )
@@ -709,13 +776,12 @@ enum BrowseSearchDestinations {
             return nil
         }
 
+        let title = city.title == "Ho Chi Minh City" ? "Saigon" : city.title
         let cityItems = cityCollectionItems(for: id)
         let groupedItems = Dictionary(grouping: cityItems, by: \.subcategoryID)
         let orderedSubcategoryIDs = citySubcategoryOrder.filter { groupedItems[$0] != nil }
-        let starterItems = cityItems
-            .filter { $0.subcategoryID == "arrivals-routes" }
-            .prefix(3)
-            .map(\.phraseItem)
+        let cityHub = cityHubDescriptor(for: id, title: title, city: city, cityItems: cityItems, groupedItems: groupedItems)
+        let starterItems = cityHub.namesToKnowItems
         let subcategories = orderedSubcategoryIDs.map { subcategoryID in
             let rows = groupedItems[subcategoryID, default: []]
             let title = rows.first?.subcategoryTitle ?? citySubcategoryTitles[subcategoryID] ?? "City phrases"
@@ -753,20 +819,233 @@ enum BrowseSearchDestinations {
 
         return BrowseCollectionDescriptor(
             route: .city(id),
-            title: city.title == "Ho Chi Minh City" ? "Saigon" : city.title,
+            title: title,
             subtitle: citySubtitle(for: id),
             eyebrow: "SPEAKLOCAL VIETNAM",
             mastheadImageName: mastheadImageName(for: .city(id)),
             symbolName: city.symbolName,
             tintName: city.tintName,
             subcategories: subcategories,
-            starterTitle: "Start in \(city.title == "Ho Chi Minh City" ? "Saigon" : city.title)",
+            starterTitle: cityHub.namesTitle,
             starterItems: starterItems,
-            practiceTitle: "Practice \(city.title == "Ho Chi Minh City" ? "Saigon" : city.title)",
-            practiceSubtitle: "City phrases in a quick practice loop.",
+            practiceTitle: cityPracticeTitle(for: id, title: title),
+            practiceSubtitle: cityPracticeSubtitle(for: id),
             practiceAction: cityPracticeAction(for: id),
-            exploreShelves: shelves
+            exploreShelves: shelves,
+            cityHub: cityHub
         )
+    }
+
+    private static func cityHubDescriptor(
+        for cityID: String,
+        title: String,
+        city: BrowseCityShortcut,
+        cityItems: [BrowseCityCollectionItem],
+        groupedItems: [String: [BrowseCityCollectionItem]]
+    ) -> BrowseCityHub {
+        BrowseCityHub(
+            situationTitle: "What are you doing?",
+            situations: citySituationCards(for: cityID, tintName: city.tintName),
+            namesTitle: "Names to know",
+            namesToKnowItems: cityNamesToKnowItems(for: cityID, cityItems: cityItems),
+            quickPhrasesTitle: "Quick phrases",
+            quickPhraseItems: cityQuickPhraseItems(for: cityID, cityItems: cityItems),
+            browseTitle: "Browse \(title)",
+            browseGroups: cityBrowseGroups(for: cityID, tintName: city.tintName, groupedItems: groupedItems)
+        )
+    }
+
+    private static func citySituationCards(for cityID: String, tintName: AccentTint) -> [BrowseCollectionSubcategory] {
+        let specs: [(String, String, String, String, AccentTint, BrowseCollectionRoute)] = {
+            switch cityID {
+            case "danang":
+                return [
+                    ("arriving", "Arriving", "Airport, baggage, SIM, pickup", "airplane.arrival", .red, .category("airport")),
+                    ("getting-around", "Getting around", "Taxi, Grab, streets, drop-off", "car.fill", .green, .category("getting-around")),
+                    ("beach-day", "Beach day", "My Khe, chairs, drinks, bathroom", "beach.umbrella.fill", .blue, .category("getting-around")),
+                    ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .orange, .category("food")),
+                    ("places", "Places to visit", "Dragon Bridge, Marble Mountains, Bà Nà Hills", "building.columns.fill", .blue, .category("city-guides")),
+                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                ]
+            case "hanoi":
+                return [
+                    ("arriving", "Arriving", "Airport, baggage, pickup", "airplane.arrival", .red, .category("airport")),
+                    ("getting-around", "Getting around", "Taxi, streets, drop-off", "car.fill", .green, .category("getting-around")),
+                    ("old-quarter", "Old Quarter", "Lake, streets, markets", "map.fill", .green, .category("city-guides")),
+                    ("food-coffee", "Food & coffee", "Phở, bún chả, cafés", "cup.and.saucer.fill", .orange, .category("food")),
+                    ("places", "Places to visit", "Lake, temples, museums", "building.columns.fill", .green, .category("city-guides")),
+                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                ]
+            case "hcmc":
+                return [
+                    ("arriving", "Arriving", "Airport, baggage, pickup", "airplane.arrival", .red, .category("airport")),
+                    ("getting-around", "Getting around", "Taxi, Grab, streets, drop-off", "car.fill", .green, .category("getting-around")),
+                    ("district-one", "District 1", "Hotels, cafés, landmarks", "building.2.fill", .orange, .category("city-guides")),
+                    ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .orange, .category("food")),
+                    ("markets", "Markets", "Shopping, prices, pickup", "bag.fill", .orange, .category("shopping")),
+                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                ]
+            case "hoian":
+                return [
+                    ("arriving", "Arriving", "Shuttle, hotel, baggage", "airplane.arrival", .red, .category("airport")),
+                    ("getting-around", "Getting around", "Walking, taxi, pickup", "car.fill", .green, .category("getting-around")),
+                    ("old-town", "Old Town", "Lanterns, markets, river", "house.lodge.fill", .orange, .category("city-guides")),
+                    ("food-coffee", "Food & coffee", "Cao lầu, cafés, markets", "cup.and.saucer.fill", .orange, .category("food")),
+                    ("shopping", "Shopping", "Tailors, prices, pickup", "bag.fill", .orange, .category("shopping")),
+                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                ]
+            case "hue":
+                return [
+                    ("arriving", "Arriving", "Station, hotel, pickup", "airplane.arrival", .red, .category("airport")),
+                    ("getting-around", "Getting around", "Taxi, streets, drop-off", "car.fill", .green, .category("getting-around")),
+                    ("citadel", "Citadel", "Tickets, gates, pickup", "building.columns.fill", .green, .category("city-guides")),
+                    ("food", "Food", "Bún bò Huế, markets, cafés", "cup.and.saucer.fill", .orange, .category("food")),
+                    ("river-heritage", "River & heritage", "Boats, pagodas, routes", "water.waves", .blue, .category("city-guides")),
+                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                ]
+            default:
+                return [
+                    ("arriving", "Arriving", "Airport, baggage, pickup", "airplane.arrival", .red, .category("airport")),
+                    ("getting-around", "Getting around", "Taxi, streets, drop-off", "car.fill", .green, .category("getting-around")),
+                    ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .orange, .category("food")),
+                    ("places", "Places to visit", "Landmarks, streets, day trips", "building.columns.fill", tintName, .category("city-guides")),
+                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                ]
+            }
+        }()
+
+        return specs.map { id, title, subtitle, symbolName, tint, route in
+            BrowseCollectionSubcategory(
+                id: "\(cityID).situation.\(id)",
+                title: title,
+                subtitle: subtitle,
+                symbolName: symbolName,
+                tintName: tint,
+                phraseCount: 0,
+                items: [],
+                targetRoute: route
+            )
+        }
+    }
+
+    private static func cityNamesToKnowItems(for cityID: String, cityItems: [BrowseCityCollectionItem]) -> [BrowseSearchPhraseItem] {
+        let preferredIDs: [String] = {
+            switch cityID {
+            case "danang":
+                return [
+                    "city-danang-place-airport",
+                    "city-danang-place-my-khe",
+                    "city-danang-place-dragon-bridge",
+                    "city-danang-place-ba-na-hills",
+                    "city-danang-place-marble-mountains",
+                    "city-danang-place-bach-dang-street",
+                    "city-danang-place-nguyen-van-linh-street",
+                    "city-danang-place-vo-nguyen-giap-street",
+                ]
+            default:
+                return []
+            }
+        }()
+
+        let preferredItems = pageItems(forPhraseIDs: preferredIDs)
+        if !preferredItems.isEmpty {
+            return preferredItems
+        }
+
+        return cityItems
+            .filter { $0.pageID.contains("-place-") }
+            .filter { !lowPriorityCityOverviewText($0.title, $0.subtitle) }
+            .prefix(8)
+            .map(\.phraseItem)
+    }
+
+    private static func cityQuickPhraseItems(for cityID: String, cityItems: [BrowseCityCollectionItem]) -> [BrowseSearchPhraseItem] {
+        let preferredIDs: [String] = {
+            switch cityID {
+            case "danang":
+                return [
+                    "city-danang-to-airport",
+                    "city-danang-get-off-my-khe",
+                    "city-danang-where-dragon-bridge",
+                    "ves-call-taxi-for-me",
+                ]
+            default:
+                return []
+            }
+        }()
+
+        var items = pageItems(forPhraseIDs: preferredIDs)
+        if let bathroom = BrowseSearchPhraseItem.resolve(pageID: "viet-family-bathroom-where") {
+            items.append(bathroom)
+        }
+
+        if !items.isEmpty {
+            return Array(uniquePhraseItems(items).prefix(5))
+        }
+
+        let fallback = cityItems
+            .filter { $0.subcategoryID == "arrivals-routes" || $0.subcategoryID == "practical-help-near-places" }
+            .filter { !lowPriorityCityOverviewText($0.title, $0.subtitle) }
+            .prefix(5)
+            .map(\.phraseItem)
+
+        return Array(uniquePhraseItems(fallback).prefix(5))
+    }
+
+    private static func cityBrowseGroups(
+        for cityID: String,
+        tintName: AccentTint,
+        groupedItems: [String: [BrowseCityCollectionItem]]
+    ) -> [BrowseCollectionSubcategory] {
+        let specs: [(String, String, String, String, BrowseCollectionRoute)] = [
+            ("arrivals-routes", "Arrivals", "Airport, station, pickup", "airplane.arrival", .category("airport")),
+            ("getting-around", "Getting around", "Taxi, Grab, directions", "car.fill", .category("getting-around")),
+            ("landmarks-attractions", "Landmarks", "Places, tickets, photos", "building.columns.fill", .category("city-guides")),
+            ("neighborhoods-streets", "Streets", "Street names and drop-off", "signpost.right.fill", .category("getting-around")),
+            ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .category("food")),
+            ("shopping-markets", "Markets", "Shopping, prices, pickup", "bag.fill", .category("shopping")),
+            ("practical-help-near-places", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .category("emergency")),
+        ]
+
+        return specs.compactMap { subcategoryID, label, subtitle, symbolName, route in
+            let rows = groupedItems[subcategoryID, default: []]
+            guard !rows.isEmpty || ["getting-around"].contains(subcategoryID) else {
+                return nil
+            }
+
+            return BrowseCollectionSubcategory(
+                id: "\(cityID).browse.\(subcategoryID)",
+                title: label,
+                subtitle: subtitle,
+                symbolName: symbolName,
+                tintName: tintName,
+                phraseCount: rows.count,
+                items: rows.prefix(4).map(\.phraseItem),
+                targetRoute: route
+            )
+        }
+    }
+
+    private static func pageItems(forPhraseIDs phraseIDs: [String]) -> [BrowseSearchPhraseItem] {
+        phraseIDs.compactMap { phraseID in
+            BrowseSearchPhraseItem.resolve(pageID: "viet-family-\(phraseID)")
+        }
+    }
+
+    private static func uniquePhraseItems(_ items: [BrowseSearchPhraseItem]) -> [BrowseSearchPhraseItem] {
+        var seen = Set<String>()
+        return items.filter { item in
+            seen.insert(item.pageID).inserted
+        }
+    }
+
+    private static func lowPriorityCityOverviewText(_ title: String, _ subtitle: String) -> Bool {
+        let text = normalize("\(title) \(subtitle)")
+        return text.contains("cang tien sa")
+            || text.contains("tien sa port")
+            || text.contains("atm near")
+            || text.contains("eat near")
+            || text.contains("reservation")
     }
 
     private static func cityCollectionItems(for cityID: String) -> [BrowseCityCollectionItem] {
@@ -1031,20 +1310,54 @@ enum BrowseSearchDestinations {
         "\(title) starter phrases in a quick practice loop."
     }
 
+    private static func cityPracticeTitle(for id: String, title: String) -> String {
+        switch id {
+        case "danang":
+            return "Practice a Da Nang day"
+        case "hanoi":
+            return "Practice a Hanoi day"
+        case "hcmc":
+            return "Practice a Saigon day"
+        case "hoian":
+            return "Practice a Hoi An day"
+        case "hue":
+            return "Practice a Hue day"
+        default:
+            return "Practice \(title)"
+        }
+    }
+
+    private static func cityPracticeSubtitle(for id: String) -> String {
+        switch id {
+        case "danang":
+            return "Airport pickup, beach drop-off, food, and a ride back."
+        case "hanoi":
+            return "Airport pickup, Old Quarter, food, and a ride back."
+        case "hcmc":
+            return "Airport pickup, District 1, coffee, and a ride back."
+        case "hoian":
+            return "Hotel pickup, Old Town, food, and a ride back."
+        case "hue":
+            return "Station pickup, the Citadel, food, and a ride back."
+        default:
+            return "Arrival, food, places, and getting back."
+        }
+    }
+
     private static func citySubtitle(for id: String) -> String {
         switch id {
         case "hcmc":
-            return "First-day Saigon phrases for arrivals, markets, cafes, and District 1 moments."
+            return "Airport arrivals, District 1 rides, markets, cafés, and first-day help."
         case "hanoi":
-            return "First-day phrases, street names, food, and everyday help."
+            return "Airport arrivals, Old Quarter streets, food, landmarks, and everyday help."
         case "danang":
-            return "Airport, beach, bridge, market, and mountain-route phrases."
+            return "Airport arrivals, beach rides, river landmarks, markets, and day trips."
         case "hoian":
-            return "Old Town, lantern streets, markets, cafes, and route phrases."
+            return "Old Town walks, lantern streets, cafés, markets, and rides back."
         case "hue":
-            return "Citadel, river, food, heritage-route, and practical help phrases."
+            return "Citadel visits, river rides, food stops, heritage routes, and practical help."
         default:
-            return "City-specific phrases for a smoother first day."
+            return "Arrivals, food, places, streets, and practical help."
         }
     }
 
@@ -1115,10 +1428,10 @@ enum BrowseSearchDestinations {
 
     private static let cityMastheadImages: [String: String] = [
         "hanoi": "BrowseCollectionHanoi",
-        "hcmc": "BrowseCollectionShopping",
-        "danang": "HeroVietnamMasthead",
-        "hoian": "BrowseCollectionShopping",
-        "hue": "HeroVietnamMasthead",
+        "hcmc": "HeroNeutralMasthead",
+        "danang": "HeroNeutralMasthead",
+        "hoian": "HeroNeutralMasthead",
+        "hue": "HeroNeutralMasthead",
     ]
 
     private static let cityAliases: [String: [String]] = [

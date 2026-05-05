@@ -258,11 +258,15 @@ struct HeroMastheadImage: View {
                 PhrasePageStyle.pageBackground
 
                 ZStack(alignment: .top) {
-                    Image(imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: proxy.size.width, height: imageRenderHeight, alignment: .top)
-                        .offset(y: resolvedVerticalOffset)
+                    if imageName == "HeroNeutralMasthead" {
+                        neutralMasthead(width: proxy.size.width, height: imageRenderHeight)
+                    } else {
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: proxy.size.width, height: imageRenderHeight, alignment: .top)
+                            .offset(y: resolvedVerticalOffset)
+                    }
                 }
                 .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
                 .clipped()
@@ -307,6 +311,39 @@ struct HeroMastheadImage: View {
         }
         .frame(height: PhrasePageStyle.heroImageHeight)
         .clipped()
+    }
+
+    private func neutralMasthead(width: CGFloat, height: CGFloat) -> some View {
+        ZStack {
+            LinearGradient(
+                stops: [
+                    .init(color: Color.white, location: 0),
+                    .init(color: Color(red: 0.94, green: 0.97, blue: 0.98), location: 0.44),
+                    .init(color: PhrasePageStyle.pageBackground, location: 1),
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+
+            LinearGradient(
+                colors: [
+                    Color.red.opacity(0.08),
+                    Color.clear,
+                ],
+                startPoint: .topLeading,
+                endPoint: .center
+            )
+
+            LinearGradient(
+                colors: [
+                    Color.blue.opacity(0.07),
+                    Color.clear,
+                ],
+                startPoint: .topTrailing,
+                endPoint: .center
+            )
+        }
+        .frame(width: width, height: height)
     }
 
     private static func defaultVerticalOffset(for imageName: String) -> CGFloat {

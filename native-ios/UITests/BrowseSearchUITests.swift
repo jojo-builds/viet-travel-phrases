@@ -59,6 +59,24 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 5))
     }
 
+    func testDaNangCityCollectionRendersTravelModeHub() {
+        let app = launchApp(arguments: ["--browse-city", "danang"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Airport arrivals, beach rides, river landmarks, markets, and day trips."].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["What are you doing?"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.arriving"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.beach-day"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Practice a Da Nang day"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Airport pickup, beach drop-off, food, and a ride back."].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Names to know"].waitForExistence(timeout: 2))
+        app.swipeUp()
+        XCTAssertTrue(app.staticTexts["Quick phrases"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Browse Da Nang"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.staticTexts["Start in Da Nang"].exists)
+        XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
+    }
+
     func testSearchOpensWithoutKeyboardUntilFieldTap() {
         let app = XCUIApplication()
         app.launch()

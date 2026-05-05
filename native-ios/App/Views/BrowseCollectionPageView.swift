@@ -18,26 +18,36 @@ struct BrowseCollectionPageView: View {
                         BrowseCollectionHeader(descriptor: descriptor)
                             .id(Self.scrollTopID)
 
-                        BrowseCollectionSubcategoryRail(subcategories: descriptor.subcategories)
+                        if let cityHub = descriptor.cityHub {
+                            BrowseCityHubContent(
+                                descriptor: descriptor,
+                                cityHub: cityHub,
+                                onOpenDetail: onOpenDetail,
+                                onOpenCollection: onOpenCollection,
+                                onPractice: { onPractice(descriptor.practiceAction) }
+                            )
+                        } else {
+                            BrowseCollectionSubcategoryRail(subcategories: descriptor.subcategories)
 
-                        BrowseCollectionStarterSection(
-                            title: descriptor.starterTitle,
-                            items: descriptor.starterItems,
-                            onOpenDetail: onOpenDetail
-                        )
-                        .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+                            BrowseCollectionStarterSection(
+                                title: descriptor.starterTitle,
+                                items: descriptor.starterItems,
+                                onOpenDetail: onOpenDetail
+                            )
+                            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
 
-                        BrowseCollectionPracticeCard(
-                            descriptor: descriptor,
-                            onPractice: { onPractice(descriptor.practiceAction) }
-                        )
-                        .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+                            BrowseCollectionPracticeCard(
+                                descriptor: descriptor,
+                                onPractice: { onPractice(descriptor.practiceAction) }
+                            )
+                            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
 
-                        BrowseCollectionExploreSection(
-                            shelves: descriptor.exploreShelves,
-                            onOpenDetail: onOpenDetail,
-                            onOpenCollection: onOpenCollection
-                        )
+                            BrowseCollectionExploreSection(
+                                shelves: descriptor.exploreShelves,
+                                onOpenDetail: onOpenDetail,
+                                onOpenCollection: onOpenCollection
+                            )
+                        }
                     }
                     .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
                 }
@@ -145,13 +155,124 @@ private struct BrowseCollectionSubcategoryCard: View {
     }
 }
 
+private struct BrowseCityHubContent: View {
+    let descriptor: BrowseCollectionDescriptor
+    let cityHub: BrowseCityHub
+    let onOpenDetail: (String) -> Void
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+    let onPractice: () -> Void
+
+    var body: some View {
+        LazyVStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
+            BrowseCityCardGridSection(
+                title: cityHub.situationTitle,
+                cards: cityHub.situations,
+                onOpenCollection: onOpenCollection
+            )
+
+            BrowseCollectionPracticeCard(
+                descriptor: descriptor,
+                onPractice: onPractice
+            )
+            .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
+
+            BrowseCollectionStarterSection(
+                title: cityHub.namesTitle,
+                actionTitle: "",
+                items: cityHub.namesToKnowItems,
+                onOpenDetail: onOpenDetail
+            )
+
+            BrowseCollectionStarterSection(
+                title: cityHub.quickPhrasesTitle,
+                actionTitle: "",
+                items: cityHub.quickPhraseItems,
+                onOpenDetail: onOpenDetail
+            )
+
+            BrowseCityCardGridSection(
+                title: cityHub.browseTitle,
+                cards: cityHub.browseGroups,
+                onOpenCollection: onOpenCollection
+            )
+        }
+        .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+    }
+}
+
+private struct BrowseCityCardGridSection: View {
+    let title: String
+    let cards: [BrowseCollectionSubcategory]
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    private let columns = [
+        GridItem(.flexible(), spacing: 12),
+        GridItem(.flexible(), spacing: 12),
+    ]
+
+    var body: some View {
+        BrowseCollectionSection(title: title, actionTitle: "") {
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 12) {
+                ForEach(cards) { card in
+                    BrowseCityActionCard(card: card, onOpenCollection: onOpenCollection)
+                }
+            }
+        }
+    }
+}
+
+private struct BrowseCityActionCard: View {
+    let card: BrowseCollectionSubcategory
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    var body: some View {
+        Button {
+            if let targetRoute = card.targetRoute {
+                onOpenCollection(targetRoute)
+            }
+        } label: {
+            VStack(alignment: .leading, spacing: 10) {
+                Image(systemName: card.symbolName)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(card.tintName.color)
+                    .frame(width: 46, height: 46)
+                    .nativeGlass(cornerRadius: 17, tint: card.tintName.color.opacity(0.14), interactive: true)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(card.title)
+                        .font(.subheadline.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
+
+                    Text(card.subtitle)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+
+                Spacer(minLength: 0)
+            }
+            .padding(12)
+            .frame(maxWidth: .infinity, minHeight: 146, alignment: .topLeading)
+            .phraseListCard(cornerRadius: 20)
+            .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .disabled(card.targetRoute == nil)
+        .accessibilityIdentifier("BrowseCollection.CityCard.\(card.id)")
+    }
+}
+
 private struct BrowseCollectionStarterSection: View {
     let title: String
+    var actionTitle: String = "View all"
     let items: [BrowseSearchPhraseItem]
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        BrowseCollectionSection(title: title, actionTitle: "View all") {
+        BrowseCollectionSection(title: title, actionTitle: actionTitle) {
             LazyVStack(spacing: 0) {
                 ForEach(items) { item in
                     BrowseCollectionPhraseRow(item: item, onOpenDetail: onOpenDetail)
@@ -273,9 +394,11 @@ private struct BrowseCollectionSection<Content: View>: View {
 
                 Spacer()
 
-                Text(actionTitle)
-                    .font(.caption.weight(.black))
-                    .foregroundStyle(.red)
+                if !actionTitle.isEmpty {
+                    Text(actionTitle)
+                        .font(.caption.weight(.black))
+                        .foregroundStyle(.red)
+                }
             }
 
             content
@@ -317,7 +440,7 @@ private struct BrowseCollectionPhraseRow: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            AudioSpeakerButton(tint: item.tintName, size: 44, audioKey: item.audioKey)
+            leadingControl
                 .padding(.leading, 14)
                 .padding(.trailing, 12)
 
@@ -356,6 +479,20 @@ private struct BrowseCollectionPhraseRow: View {
             .accessibilityIdentifier("BrowseCollection.Row.\(item.pageID)")
         }
         .frame(minHeight: 76)
+    }
+
+    @ViewBuilder
+    private var leadingControl: some View {
+        if AudioSpeakerButton.isPlayableAudioKey(item.audioKey) {
+            AudioSpeakerButton(tint: item.tintName, size: 44, audioKey: item.audioKey)
+        } else {
+            Image(systemName: item.symbolName)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(item.tintName.color)
+                .frame(width: 44, height: 44)
+                .nativeGlass(cornerRadius: 22, tint: item.tintName.color.opacity(0.12), interactive: false)
+                .accessibilityHidden(true)
+        }
     }
 }
 
