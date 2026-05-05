@@ -168,6 +168,23 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
     }
 
+    func testBottomChromeForegroundMorphProofScreenshots() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+        captureForegroundMorphProofIfRequested(app: app, name: "home-selected-lens.png")
+
+        openSearch(in: app, expectedOrigin: "Home", iteration: 1)
+        captureForegroundMorphProofIfRequested(app: app, name: "home-search-origin-and-field.png")
+
+        tapSearchOrigin(in: app, title: "Home", iteration: 1)
+        XCTAssertTrue(app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2))
+        captureForegroundMorphProofIfRequested(app: app, name: "home-returned-lens.png")
+
+        openDock("Saved", in: app)
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+        captureForegroundMorphProofIfRequested(app: app, name: "saved-selected-lens.png")
+    }
+
     private func openSearch(in app: XCUIApplication, expectedOrigin: String, iteration: Int) {
         let searchButton = app.buttons["AppChrome.SearchButton"]
         XCTAssertTrue(
@@ -288,6 +305,22 @@ final class AdminChromeUITests: XCTestCase {
             let directoryURL = proofDirectoryURL(
                 environmentPath: environmentPath,
                 taskID: "TASK-NATIVE-SEARCH-CHROME-MORPH-001"
+            )
+        else {
+            return
+        }
+
+        try? FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: directoryURL.appendingPathComponent(name))
+    }
+
+    private func captureForegroundMorphProofIfRequested(app: XCUIApplication, name: String) {
+        let sentinelPath = "/tmp/speaklocal-bottom-chrome-foreground-morph-proof-enabled"
+        guard
+            FileManager.default.fileExists(atPath: sentinelPath),
+            let directoryURL = proofDirectoryURL(
+                environmentPath: nil,
+                taskID: "TASK-NATIVE-BOTTOM-CHROME-FOREGROUND-MORPH-001"
             )
         else {
             return

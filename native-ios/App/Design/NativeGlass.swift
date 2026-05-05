@@ -105,7 +105,9 @@ extension View {
 
 enum AppChromeMorphID {
     static let dock = "app.chrome.dock"
+    static let dockSelection = "app.chrome.dock.selection"
     static let search = "app.chrome.search"
+    static let searchIcon = "app.chrome.search.icon"
 
     static func dockItem(_ item: DockItemKind) -> String {
         "app.chrome.dock.\(item.title)"
@@ -145,6 +147,9 @@ enum AppChromeLayout {
     static let dockItemSpacing: CGFloat = 10
     static let dockItemWidth: CGFloat = 50
     static let dockItemHeight: CGFloat = 46
+    static let dockSelectionWidth: CGFloat = 58
+    static let dockSelectionHeight: CGFloat = 44
+    static let dockSelectionCornerRadius: CGFloat = 22
     static let dockHorizontalPadding: CGFloat = 10
     static let dockVerticalPadding: CGFloat = 3
     static let dockCornerRadius: CGFloat = 26
@@ -153,10 +158,10 @@ enum AppChromeLayout {
     static let searchFieldHeight: CGFloat = 52
     static let searchFieldHorizontalPadding: CGFloat = 14
     static let searchMorphDuration = 0.39
-    static let dockMorphZIndex: Double = 0
-    static let searchOriginMorphZIndex: Double = 0
+    static let dockMorphZIndex: Double = 2
     static let searchMorphZIndex: Double = 3
-    static let keyboardDismissMorphZIndex: Double = 4
+    static let searchOriginMorphZIndex: Double = 4
+    static let keyboardDismissMorphZIndex: Double = 5
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedTopPadding: CGFloat = 8
 }

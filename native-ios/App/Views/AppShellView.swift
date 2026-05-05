@@ -624,6 +624,7 @@ struct AppShellView: View {
                 .foregroundStyle(.primary)
                 .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
                 .contentShape(Circle())
+                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
@@ -663,6 +664,7 @@ struct AppShellView: View {
             Image(systemName: "magnifyingglass")
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(.secondary)
+                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
 
             TextField("Search Vietnamese phrases", text: $searchQuery)
                 .font(.body.weight(.semibold))
@@ -1913,15 +1915,30 @@ private struct AppShellDockItem: View {
     var isMorphSource = false
 
     var body: some View {
-        VStack(spacing: 3) {
-            icon
+        ZStack {
+            if selected {
+                selectedLens
+            }
 
-            Text(kind.title)
-                .font(.caption2.weight(.semibold))
+            VStack(spacing: 3) {
+                icon
+
+                Text(kind.title)
+                    .font(.caption2.weight(.semibold))
+            }
+            .foregroundStyle(selected ? .red : .secondary)
         }
-        .foregroundStyle(selected ? .red : .secondary)
         .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
         .contentShape(Rectangle())
+    }
+
+    private var selectedLens: some View {
+        RoundedRectangle(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, style: .continuous)
+            .fill(.white.opacity(0.16))
+            .frame(width: AppChromeLayout.dockSelectionWidth, height: AppChromeLayout.dockSelectionHeight)
+            .nativeGlass(cornerRadius: AppChromeLayout.dockSelectionCornerRadius)
+            .chromeMorph(AppChromeMorphID.dockSelection, namespace: chromeNamespace, isSource: true)
+            .accessibilityHidden(true)
     }
 
     @ViewBuilder

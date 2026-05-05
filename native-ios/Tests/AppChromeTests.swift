@@ -33,13 +33,27 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testSearchOriginAndDockShareMorphLayer() {
-        XCTAssertEqual(AppChromeLayout.searchOriginMorphZIndex, AppChromeLayout.dockMorphZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.searchOriginMorphZIndex, AppChromeLayout.searchMorphZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.searchMorphZIndex, AppChromeLayout.dockMorphZIndex)
     }
 
     func testSearchChromeMorphKeepsSearchGlassAboveReturningDock() {
         XCTAssertGreaterThan(AppChromeLayout.searchMorphZIndex, AppChromeLayout.dockMorphZIndex)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchMorphZIndex, AppChromeLayout.searchOriginMorphZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.keyboardDismissMorphZIndex, AppChromeLayout.searchMorphZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.searchOriginMorphZIndex, AppChromeLayout.searchMorphZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.keyboardDismissMorphZIndex, AppChromeLayout.searchOriginMorphZIndex)
+    }
+
+    func testDockSelectionLensUsesAppStoreStylePillMetrics() {
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionHeight, AppChromeLayout.searchIslandSize)
+        XCTAssertEqual(AppChromeLayout.dockSelectionCornerRadius, AppChromeLayout.dockSelectionHeight / 2)
+    }
+
+    func testSearchAndSelectedDockIconsUseDistinctForegroundMorphIDs() {
+        XCTAssertNotEqual(AppChromeMorphID.searchIcon, AppChromeMorphID.dockItem(.home))
+        XCTAssertNotEqual(AppChromeMorphID.searchIcon, AppChromeMorphID.dockItem(.browse))
+        XCTAssertNotEqual(AppChromeMorphID.dockSelection, AppChromeMorphID.dock)
+        XCTAssertNotEqual(AppChromeMorphID.dockSelection, AppChromeMorphID.search)
     }
 
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
