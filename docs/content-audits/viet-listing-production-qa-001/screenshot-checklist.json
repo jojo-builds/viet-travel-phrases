@@ -1,0 +1,228 @@
+[
+  {
+    "label": "Tôi không hiểu",
+    "pageID": "viet-family-repair-understand",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-repair-understand"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Bàn này còn trống",
+    "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-ban-nay-con-trong"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Bà Nà Hills",
+    "pageID": "viet-family-city-danang-place-ba-na-hills",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-ba-na-hills"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Cầu Rồng",
+    "pageID": "viet-family-city-danang-place-dragon-bridge",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-dragon-bridge"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Đường Nguyễn Văn Linh",
+    "pageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-nguyen-van-linh-street"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Anăn Sài Gòn",
+    "pageID": "viet-family-city-hcmc-place-anan-saigon",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-anan-saigon"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Bún chả Hương Liên",
+    "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-place-bun-cha-huong-lien"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Phở Bát Đàn",
+    "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-place-pho-bat-dan"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Bún bò Huế",
+    "pageID": "viet-family-city-hue-place-bun-bo-city",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-place-bun-bo-city"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Cao lầu",
+    "pageID": "viet-family-city-hoian-place-cao-lau-city",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-place-cao-lau-city"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Bưu điện Thành phố ở đâu?",
+    "pageID": "viet-family-city-hcmc-where-post-office",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-where-post-office"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Hotel check-in",
+    "pageID": "viet-family-hotel-check-in",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-hotel-check-in"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Airport arrival",
+    "pageID": "viet-family-airport-immigration",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-airport-immigration"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Taxi/Grab pickup",
+    "pageID": "viet-family-airport-pickup",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-airport-pickup"
+    ],
+    "requiredProof": [
+      "top",
+      "middle",
+      "bottom"
+    ],
+    "notes": "Use launch args in the iOS simulator and capture rendered proof."
+  },
+  {
+    "label": "Shopping",
+    "pageID": null,
+    "launchArguments": [],
+    "requiredProof": [
+      "native hub top",
+      "native hub scrolled"
+    ],
+    "notes": "Open native browse collection and capture proof manually or with a targeted UI test."
+  },
+  {
+    "label": "Da Nang",
+    "pageID": null,
+    "launchArguments": [],
+    "requiredProof": [
+      "native hub top",
+      "native hub scrolled"
+    ],
+    "notes": "Open native city hub and capture proof manually or with a targeted UI test."
+  },
+  {
+    "label": "All Vietnam",
+    "pageID": null,
+    "launchArguments": [],
+    "requiredProof": [
+      "native hub top",
+      "native hub scrolled"
+    ],
+    "notes": "Open native browse root and capture proof manually or with a targeted UI test."
+  }
+]

@@ -124,6 +124,7 @@ struct AppShellView: View {
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
                     showsChrome: false,
+                    topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
                     isInPractice: intentStore.isPageInPractice(PhrasePage.xinChao.id),
                     onBackTapped: {},
@@ -317,6 +318,7 @@ struct AppShellView: View {
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
                     showsChrome: false,
+                    topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
                     isInPractice: intentStore.isPageInPractice(renderedPage.pageID),
                     onBackTapped: goBack,
@@ -416,6 +418,7 @@ struct AppShellView: View {
                 chromeNamespace: chromeNamespace,
                 isSearchActive: navigation.isSearchPresented,
                 showsChrome: false,
+                topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                 isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
                 isInPractice: intentStore.isPageInPractice(PhrasePage.xinChao.id),
                 onBackTapped: {},
@@ -438,6 +441,7 @@ struct AppShellView: View {
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
                     showsChrome: false,
+                    topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(detailPageID),
                     isInPractice: intentStore.isPageInPractice(detailPageID),
                     onBackTapped: goBack,
@@ -477,6 +481,7 @@ struct AppShellView: View {
             chromeNamespace: chromeNamespace,
             isSearchActive: navigation.isSearchPresented,
             showsChrome: false,
+            topChromeContentClearance: pinnedAudioSpeedScrollClearance,
             isSaved: intentStore.isPageSaved(routePageID),
             isInPractice: intentStore.isPageInPractice(routePageID),
             onBackTapped: onBackTapped,
@@ -509,6 +514,10 @@ struct AppShellView: View {
 
         return pinnedAudioSpeedChromeState.route == navigation.currentRoute
             && pinnedAudioSpeedChromeState.isVisible
+    }
+
+    private var pinnedAudioSpeedScrollClearance: CGFloat {
+        showsPinnedAudioSpeedControl ? AppChromeLayout.pinnedAudioSpeedScrollClearance : 0
     }
 
     private var bottomChromePadding: CGFloat {

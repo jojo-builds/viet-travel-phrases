@@ -784,6 +784,98 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertTrue(visibleSections.contains { $0.title == "Common follow-ups" })
     }
 
+    func testRenderedSimplePhraseSuppressesHeroDuplicateMeaningSection() throws {
+        let article = PhraseArticlePage(
+            id: "test-meaning-repeat",
+            destination: "SpeakLocal Vietnam",
+            title: "Nói chậm chút được không?",
+            englishTitle: "Can you speak a little slower?",
+            pronunciation: "noy cham chut duoc khong",
+            summary: "Can you speak a little slower?",
+            iconName: "message.fill",
+            tintName: .red,
+            playbackAudioKey: nil,
+            sections: [
+                PhraseArticleSection(
+                    id: "meaning",
+                    title: "Meaning",
+                    body: "Nói chậm chút được không? means “Can you speak a little slower?”",
+                    phrases: [],
+                    breakdown: [],
+                    presentation: .plainText
+                ),
+                PhraseArticleSection(
+                    id: "common-follow-ups",
+                    title: "Common follow-ups",
+                    body: "",
+                    phrases: [
+                        PhraseOption(
+                            id: "repair-repeat",
+                            vietnamese: "Làm ơn nói lại",
+                            english: "Please say that again",
+                            pronunciation: "lam un noy lai",
+                            symbolName: "speaker.wave.2.fill",
+                            tintName: .red
+                        ),
+                    ],
+                    breakdown: [],
+                    presentation: .phraseList
+                ),
+            ]
+        )
+
+        let visibleSections = PhraseArticleTemplateView.visibleSections(for: article)
+
+        XCTAssertFalse(visibleSections.contains { $0.id == "meaning" })
+        XCTAssertTrue(visibleSections.contains { $0.title == "Common follow-ups" })
+    }
+
+    func testRenderedSimplePhraseKeepsUsefulMeaningContext() throws {
+        let article = PhraseArticlePage(
+            id: "test-useful-meaning",
+            destination: "SpeakLocal Vietnam",
+            title: "Tôi không hiểu",
+            englishTitle: "I don’t understand",
+            pronunciation: "toy khong hieu",
+            summary: "A simple recovery phrase for when Vietnamese is too fast or unclear.",
+            iconName: "message.fill",
+            tintName: .red,
+            playbackAudioKey: nil,
+            sections: [
+                PhraseArticleSection(
+                    id: "meaning",
+                    title: "Meaning",
+                    body: "A simple recovery phrase for when Vietnamese is too fast or unclear.",
+                    phrases: [],
+                    breakdown: [],
+                    presentation: .plainText
+                ),
+                PhraseArticleSection(
+                    id: "common-follow-ups",
+                    title: "Common follow-ups",
+                    body: "",
+                    phrases: [
+                        PhraseOption(
+                            id: "repair-slower",
+                            vietnamese: "Nói chậm chút được không?",
+                            english: "Can you speak a little slower?",
+                            pronunciation: "noy cham chut duoc khong",
+                            symbolName: "speaker.wave.2.fill",
+                            tintName: .red
+                        ),
+                    ],
+                    breakdown: [],
+                    presentation: .phraseList
+                ),
+            ]
+        )
+
+        let visibleSections = PhraseArticleTemplateView.visibleSections(for: article)
+
+        XCTAssertTrue(visibleSections.contains { $0.id == "meaning" })
+        XCTAssertTrue(visibleSections.contains { $0.title == "Common follow-ups" })
+    }
+
     func testExploreCatalogItemsCanFilterByCategoryAndExcludeCurrentPage() {
         let localItems = PhraseCatalog.items(
             selectedCategoryID: "local-greetings",

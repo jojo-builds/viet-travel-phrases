@@ -1,0 +1,2798 @@
+{
+  "seed": 20260506,
+  "perIntent": 3,
+  "targetTotal": 50,
+  "actualTotal": 50,
+  "byIntent": {
+    "derived_place_phrase": [
+      {
+        "pageID": "viet-family-city-danang-where-nen",
+        "title": "Nhà hàng Nén Đà Nẵng ở đâu?",
+        "englishTitle": "Where is Nén Đà Nẵng?",
+        "intent": "derived_place_phrase",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "food-coffee",
+          "intermediate",
+          "city-page-kind-phrase",
+          "place-kind-restaurant",
+          "content-role-fine-dining",
+          "city-phrases",
+          "derived-place-phrases"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Related phrases",
+          "Tip"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-hcmc-atm-dong-khoi-street",
+        "title": "Có ATM gần Đường Đồng Khởi không?",
+        "englishTitle": "Is there an ATM near Dong Khoi Street?",
+        "intent": "derived_place_phrase",
+        "categoryIDs": [
+          "city-guides",
+          "hcmc",
+          "practical-help-near-places",
+          "intermediate",
+          "city-page-kind-phrase",
+          "place-kind-street",
+          "city-phrases",
+          "derived-place-phrases"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Related phrases",
+          "Tip"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-hcmc-go-binh-tay-market",
+        "title": "Đi Chợ Bình Tây",
+        "englishTitle": "Go to Binh Tay Market",
+        "intent": "derived_place_phrase",
+        "categoryIDs": [
+          "city-guides",
+          "hcmc",
+          "arrivals-routes",
+          "beginner",
+          "city-page-kind-phrase",
+          "place-kind-market",
+          "city-phrases",
+          "derived-place-phrases"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Related phrases",
+          "Tip"
+        ]
+      }
+    ],
+    "dish": [
+      {
+        "pageID": "viet-family-city-hoian-place-cao-lau-city",
+        "title": "Cao lầu ở Hội An",
+        "englishTitle": "Cao lau in Hoi An",
+        "intent": "dish",
+        "categoryIDs": [
+          "city-guides",
+          "hoian",
+          "food-coffee",
+          "beginner",
+          "city-page-kind-dish",
+          "place-kind-dish",
+          "content-role-dish-anchor",
+          "local-dishes"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the dish",
+          "Order it",
+          "Adjust it",
+          "Diet / allergy",
+          "What the name means",
+          "Good to know"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-hue-place-bun-bo-city",
+        "title": "Bún bò Huế",
+        "englishTitle": "Bun bo Hue",
+        "intent": "dish",
+        "categoryIDs": [
+          "city-guides",
+          "hue",
+          "food-coffee",
+          "beginner",
+          "city-page-kind-dish",
+          "place-kind-dish",
+          "content-role-dish-anchor",
+          "local-dishes",
+          "editorial-pilot"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the dish",
+          "Order it",
+          "Adjust it",
+          "Diet / allergy",
+          "What the name means",
+          "Good to know"
+        ]
+      }
+    ],
+    "landmark_micro_place": [
+      {
+        "pageID": "viet-family-city-hanoi-place-west-lake",
+        "title": "Hồ Tây",
+        "englishTitle": "West Lake",
+        "intent": "landmark_micro_place",
+        "categoryIDs": [
+          "city-guides",
+          "hanoi",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-landmark",
+          "actual-landmarks"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the name",
+          "Getting there",
+          "What the name means",
+          "Good to know"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-danang-place-son-tra-night-market",
+        "title": "Chợ đêm Sơn Trà",
+        "englishTitle": "Son Tra Night Market",
+        "intent": "landmark_micro_place",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "shopping-markets",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-market",
+          "actual-landmarks"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the name",
+          "Getting there",
+          "What the name means",
+          "Good to know",
+          "More Chợ đêm Sơn Trà phrases"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-danang-place-dragon-bridge",
+        "title": "Cầu Rồng",
+        "englishTitle": "Dragon Bridge",
+        "intent": "landmark_micro_place",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-landmark",
+          "actual-landmarks"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the name",
+          "Getting there",
+          "At the bridge",
+          "Meeting or pickup",
+          "What the name means",
+          "Good to know",
+          "More Cầu Rồng phrases"
+        ]
+      }
+    ],
+    "macro_attraction_journey": [
+      {
+        "pageID": "viet-family-city-danang-place-marble-mountains",
+        "title": "Ngũ Hành Sơn",
+        "englishTitle": "Marble Mountains",
+        "intent": "macro_attraction_journey",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-landmark",
+          "actual-landmarks",
+          "journey-page",
+          "editorial-pilot"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the name",
+          "Visit flow",
+          "Common phrases",
+          "Getting there",
+          "What the name means",
+          "Good to know",
+          "More Ngũ Hành Sơn phrases"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-danang-place-ba-na-hills",
+        "title": "Bà Nà Hills",
+        "englishTitle": "Ba Na Hills",
+        "intent": "macro_attraction_journey",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "landmarks-attractions",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-landmark",
+          "actual-landmarks",
+          "journey-page",
+          "editorial-pilot",
+          "ba-na-hills-journey-v2"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the name",
+          "Visit flow",
+          "Getting there",
+          "Tickets",
+          "Cable car",
+          "Photos",
+          "Getting back",
+          "Good to know",
+          "Food & cash",
+          "Name guide"
+        ]
+      }
+    ],
+    "practical_flow": [
+      {
+        "pageID": "viet-phrase-v900-hote-acco-can-i-have-a-room-with-a-window",
+        "title": "Tôi có thể đặt phòng có cửa sổ được không?",
+        "englishTitle": "Can I have a room with a window?",
+        "intent": "practical_flow",
+        "categoryIDs": [
+          "hotel-accommodation",
+          "v900-hote-acco-can-i-have-a-room-with-a-window",
+          "premium"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Good to know",
+          "Next phrases"
+        ]
+      },
+      {
+        "pageID": "viet-family-vpe-near-place-ga-tau-gan-day-khong",
+        "title": "ga tàu gần đây không?",
+        "englishTitle": "Is the train station nearby?",
+        "intent": "practical_flow",
+        "categoryIDs": [
+          "transport",
+          "practice-near-place",
+          "practice-english-to-vietnamese",
+          "practice-vietnamese-to-english",
+          "practice-missing-token",
+          "practice-city-destination",
+          "practice-distractor",
+          "difficulty-beginner"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Practice nearby",
+          "Good to know",
+          "Next phrases"
+        ]
+      },
+      {
+        "pageID": "viet-family-vpe-stop-at-place-dung-o-phong-cau-nguyen",
+        "title": "Dừng ở phòng cầu nguyện",
+        "englishTitle": "Stop at a prayer room.",
+        "intent": "practical_flow",
+        "categoryIDs": [
+          "transport",
+          "practice-stop-at-place",
+          "practice-english-to-vietnamese",
+          "practice-vietnamese-to-english",
+          "practice-missing-token",
+          "practice-city-destination",
+          "practice-distractor",
+          "difficulty-beginner"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Practice nearby",
+          "Good to know",
+          "Next phrases"
+        ]
+      }
+    ],
+    "restaurant": [
+      {
+        "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
+        "title": "Bánh mì Phượng",
+        "englishTitle": "Banh Mi Phuong",
+        "intent": "restaurant",
+        "categoryIDs": [
+          "city-guides",
+          "hoian",
+          "food-coffee",
+          "beginner",
+          "city-page-kind-restaurant",
+          "place-kind-restaurant",
+          "content-role-iconic",
+          "restaurants"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the name",
+          "Getting there",
+          "Table & menu",
+          "Order",
+          "Drinks",
+          "Pay",
+          "Getting back",
+          "Name guide",
+          "Good to know"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+        "title": "Phở Bát Đàn",
+        "englishTitle": "Pho Bat Dan",
+        "intent": "restaurant",
+        "categoryIDs": [
+          "city-guides",
+          "hanoi",
+          "food-coffee",
+          "beginner",
+          "city-page-kind-restaurant",
+          "place-kind-restaurant",
+          "content-role-iconic",
+          "restaurants",
+          "editorial-pilot"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the name",
+          "Getting there",
+          "Table & menu",
+          "Order",
+          "Drinks",
+          "Pay",
+          "Getting back",
+          "Name guide",
+          "Good to know"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+        "title": "Bún chả Hương Liên",
+        "englishTitle": "Bun Cha Huong Lien",
+        "intent": "restaurant",
+        "categoryIDs": [
+          "city-guides",
+          "hanoi",
+          "food-coffee",
+          "beginner",
+          "city-page-kind-restaurant",
+          "place-kind-restaurant",
+          "content-role-iconic",
+          "restaurants",
+          "editorial-pilot"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the name",
+          "Getting there",
+          "Table & menu",
+          "Order",
+          "Drinks",
+          "Pay",
+          "Getting back",
+          "Name guide",
+          "Good to know"
+        ]
+      }
+    ],
+    "simple_phrase": [
+      {
+        "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-xa-phong",
+        "title": "Cho tôi xà phòng",
+        "englishTitle": "Soap, please.",
+        "intent": "simple_phrase",
+        "categoryIDs": [
+          "bathroom-personal-needs",
+          "practice-one-item-please",
+          "practice-english-to-vietnamese",
+          "practice-vietnamese-to-english",
+          "practice-missing-token",
+          "practice-distractor",
+          "difficulty-beginner"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Practice nearby",
+          "Good to know",
+          "Next phrases"
+        ]
+      },
+      {
+        "pageID": "viet-phrase-v900-sigh-acti-where-is-less-crowded",
+        "title": "Nơi nào ít đông đúc hơn?",
+        "englishTitle": "Where is less crowded?",
+        "intent": "simple_phrase",
+        "categoryIDs": [
+          "sightseeing-activities",
+          "v900-sigh-acti-where-is-less-crowded",
+          "premium"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Good to know",
+          "Next phrases"
+        ]
+      },
+      {
+        "pageID": "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
+        "title": "Bạn có thể nhắc lại phần cuối được không?",
+        "englishTitle": "Can you repeat the last part?",
+        "intent": "simple_phrase",
+        "categoryIDs": [
+          "understanding-repair",
+          "v500-unde-repa-can-you-repeat-the-last-part",
+          "premium"
+        ],
+        "renderedSections": [
+          "Break it down",
+          "Good to know",
+          "Next phrases"
+        ]
+      }
+    ],
+    "street": [
+      {
+        "pageID": "viet-family-city-hcmc-place-nguyen-hue",
+        "title": "Phố đi bộ Nguyễn Huệ",
+        "englishTitle": "Nguyen Hue Walking Street",
+        "intent": "street",
+        "categoryIDs": [
+          "city-guides",
+          "hcmc",
+          "neighborhoods-streets",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-street",
+          "actual-landmarks"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the street",
+          "Driver phrases",
+          "What the name means",
+          "Good to know",
+          "More Phố đi bộ Nguyễn Huệ phrases"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-hanoi-place-phan-dinh-phung-street",
+        "title": "Phố Phan Đình Phùng",
+        "englishTitle": "Phan Dinh Phung Street",
+        "intent": "street",
+        "categoryIDs": [
+          "city-guides",
+          "hanoi",
+          "neighborhoods-streets",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-street",
+          "actual-landmarks"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the street",
+          "Driver phrases",
+          "What the name means",
+          "Good to know"
+        ]
+      },
+      {
+        "pageID": "viet-family-city-danang-place-bach-dang-street",
+        "title": "Đường Bạch Đằng",
+        "englishTitle": "Bach Dang Street",
+        "intent": "street",
+        "categoryIDs": [
+          "city-guides",
+          "danang",
+          "neighborhoods-streets",
+          "beginner",
+          "city-page-kind-place",
+          "place-kind-street",
+          "actual-landmarks"
+        ],
+        "renderedSections": [
+          "About",
+          "Hear the street",
+          "Tell the driver",
+          "Driver phrases",
+          "Confirm",
+          "Find it nearby",
+          "What the name means",
+          "Good to know",
+          "More Đường Bạch Đằng phrases"
+        ]
+      }
+    ],
+    "traveler_may_hear": [
+      {
+        "pageID": "viet-family-vpe-likely-replies-mon-nay-cay",
+        "title": "Món này cay",
+        "englishTitle": "This dish is spicy",
+        "intent": "traveler_may_hear",
+        "categoryIDs": [
+          "food-drink",
+          "practice-likely-replies",
+          "practice-vietnamese-to-english",
+          "practice-missing-token",
+          "practice-likely-reply",
+          "practice-distractor",
+          "difficulty-beginner"
+        ],
+        "renderedSections": [
+          "You may hear",
+          "Break it down",
+          "Related replies",
+          "Good to know",
+          "Related phrases"
+        ]
+      },
+      {
+        "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
+        "title": "Bàn này còn trống",
+        "englishTitle": "This table is available",
+        "intent": "traveler_may_hear",
+        "categoryIDs": [
+          "food-drink",
+          "practice-likely-replies",
+          "practice-vietnamese-to-english",
+          "practice-missing-token",
+          "practice-likely-reply",
+          "practice-distractor",
+          "difficulty-beginner"
+        ],
+        "renderedSections": [
+          "You may hear",
+          "Break it down",
+          "Say next",
+          "Good to know"
+        ]
+      },
+      {
+        "pageID": "viet-family-vpe-likely-replies-con",
+        "title": "Còn",
+        "englishTitle": "It is still available",
+        "intent": "traveler_may_hear",
+        "categoryIDs": [
+          "shopping",
+          "practice-likely-replies",
+          "practice-vietnamese-to-english",
+          "practice-missing-token",
+          "practice-likely-reply",
+          "practice-distractor",
+          "difficulty-beginner"
+        ],
+        "renderedSections": [
+          "You may hear",
+          "Break it down",
+          "Related replies",
+          "Good to know",
+          "Related phrases"
+        ]
+      }
+    ]
+  },
+  "pages": [
+    {
+      "pageID": "viet-family-city-danang-where-nen",
+      "title": "Nhà hàng Nén Đà Nẵng ở đâu?",
+      "englishTitle": "Where is Nén Đà Nẵng?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "intermediate",
+        "city-page-kind-phrase",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-dong-khoi-street",
+      "title": "Có ATM gần Đường Đồng Khởi không?",
+      "englishTitle": "Is there an ATM near Dong Khoi Street?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "practical-help-near-places",
+        "intermediate",
+        "city-page-kind-phrase",
+        "place-kind-street",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-binh-tay-market",
+      "title": "Đi Chợ Bình Tây",
+      "englishTitle": "Go to Binh Tay Market",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-market",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-cao-lau-city",
+      "title": "Cao lầu ở Hội An",
+      "englishTitle": "Cao lau in Hoi An",
+      "intent": "dish",
+      "categoryIDs": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish-anchor",
+        "local-dishes"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the dish",
+        "Order it",
+        "Adjust it",
+        "Diet / allergy",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hue-place-bun-bo-city",
+      "title": "Bún bò Huế",
+      "englishTitle": "Bun bo Hue",
+      "intent": "dish",
+      "categoryIDs": [
+        "city-guides",
+        "hue",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish-anchor",
+        "local-dishes",
+        "editorial-pilot"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the dish",
+        "Order it",
+        "Adjust it",
+        "Diet / allergy",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-west-lake",
+      "title": "Hồ Tây",
+      "englishTitle": "West Lake",
+      "intent": "landmark_micro_place",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-son-tra-night-market",
+      "title": "Chợ đêm Sơn Trà",
+      "englishTitle": "Son Tra Night Market",
+      "intent": "landmark_micro_place",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "What the name means",
+        "Good to know",
+        "More Chợ đêm Sơn Trà phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-dragon-bridge",
+      "title": "Cầu Rồng",
+      "englishTitle": "Dragon Bridge",
+      "intent": "landmark_micro_place",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "At the bridge",
+        "Meeting or pickup",
+        "What the name means",
+        "Good to know",
+        "More Cầu Rồng phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-marble-mountains",
+      "title": "Ngũ Hành Sơn",
+      "englishTitle": "Marble Mountains",
+      "intent": "macro_attraction_journey",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks",
+        "journey-page",
+        "editorial-pilot"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Visit flow",
+        "Common phrases",
+        "Getting there",
+        "What the name means",
+        "Good to know",
+        "More Ngũ Hành Sơn phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-ba-na-hills",
+      "title": "Bà Nà Hills",
+      "englishTitle": "Ba Na Hills",
+      "intent": "macro_attraction_journey",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks",
+        "journey-page",
+        "editorial-pilot",
+        "ba-na-hills-journey-v2"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Visit flow",
+        "Getting there",
+        "Tickets",
+        "Cable car",
+        "Photos",
+        "Getting back",
+        "Good to know",
+        "Food & cash",
+        "Name guide"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v900-hote-acco-can-i-have-a-room-with-a-window",
+      "title": "Tôi có thể đặt phòng có cửa sổ được không?",
+      "englishTitle": "Can I have a room with a window?",
+      "intent": "practical_flow",
+      "categoryIDs": [
+        "hotel-accommodation",
+        "v900-hote-acco-can-i-have-a-room-with-a-window",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-near-place-ga-tau-gan-day-khong",
+      "title": "ga tàu gần đây không?",
+      "englishTitle": "Is the train station nearby?",
+      "intent": "practical_flow",
+      "categoryIDs": [
+        "transport",
+        "practice-near-place",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-city-destination",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-stop-at-place-dung-o-phong-cau-nguyen",
+      "title": "Dừng ở phòng cầu nguyện",
+      "englishTitle": "Stop at a prayer room.",
+      "intent": "practical_flow",
+      "categoryIDs": [
+        "transport",
+        "practice-stop-at-place",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-city-destination",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
+      "title": "Bánh mì Phượng",
+      "englishTitle": "Banh Mi Phuong",
+      "intent": "restaurant",
+      "categoryIDs": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-iconic",
+        "restaurants"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "Table & menu",
+        "Order",
+        "Drinks",
+        "Pay",
+        "Getting back",
+        "Name guide",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+      "title": "Phở Bát Đàn",
+      "englishTitle": "Pho Bat Dan",
+      "intent": "restaurant",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-iconic",
+        "restaurants",
+        "editorial-pilot"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "Table & menu",
+        "Order",
+        "Drinks",
+        "Pay",
+        "Getting back",
+        "Name guide",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "title": "Bún chả Hương Liên",
+      "englishTitle": "Bun Cha Huong Lien",
+      "intent": "restaurant",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-iconic",
+        "restaurants",
+        "editorial-pilot"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "Table & menu",
+        "Order",
+        "Drinks",
+        "Pay",
+        "Getting back",
+        "Name guide",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-xa-phong",
+      "title": "Cho tôi xà phòng",
+      "englishTitle": "Soap, please.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "bathroom-personal-needs",
+        "practice-one-item-please",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v900-sigh-acti-where-is-less-crowded",
+      "title": "Nơi nào ít đông đúc hơn?",
+      "englishTitle": "Where is less crowded?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "sightseeing-activities",
+        "v900-sigh-acti-where-is-less-crowded",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
+      "title": "Bạn có thể nhắc lại phần cuối được không?",
+      "englishTitle": "Can you repeat the last part?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "understanding-repair",
+        "v500-unde-repa-can-you-repeat-the-last-part",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-nguyen-hue",
+      "title": "Phố đi bộ Nguyễn Huệ",
+      "englishTitle": "Nguyen Hue Walking Street",
+      "intent": "street",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the street",
+        "Driver phrases",
+        "What the name means",
+        "Good to know",
+        "More Phố đi bộ Nguyễn Huệ phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-phan-dinh-phung-street",
+      "title": "Phố Phan Đình Phùng",
+      "englishTitle": "Phan Dinh Phung Street",
+      "intent": "street",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the street",
+        "Driver phrases",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-bach-dang-street",
+      "title": "Đường Bạch Đằng",
+      "englishTitle": "Bach Dang Street",
+      "intent": "street",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the street",
+        "Tell the driver",
+        "Driver phrases",
+        "Confirm",
+        "Find it nearby",
+        "What the name means",
+        "Good to know",
+        "More Đường Bạch Đằng phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mon-nay-cay",
+      "title": "Món này cay",
+      "englishTitle": "This dish is spicy",
+      "intent": "traveler_may_hear",
+      "categoryIDs": [
+        "food-drink",
+        "practice-likely-replies",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-likely-reply",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "You may hear",
+        "Break it down",
+        "Related replies",
+        "Good to know",
+        "Related phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
+      "title": "Bàn này còn trống",
+      "englishTitle": "This table is available",
+      "intent": "traveler_may_hear",
+      "categoryIDs": [
+        "food-drink",
+        "practice-likely-replies",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-likely-reply",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "You may hear",
+        "Break it down",
+        "Say next",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-con",
+      "title": "Còn",
+      "englishTitle": "It is still available",
+      "intent": "traveler_may_hear",
+      "categoryIDs": [
+        "shopping",
+        "practice-likely-replies",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-likely-reply",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "You may hear",
+        "Break it down",
+        "Related replies",
+        "Good to know",
+        "Related phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-man-thai-beach",
+      "title": "Dừng ở Biển Mân Thái",
+      "englishTitle": "Stop at Man Thai Beach",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-beach",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-bay-mau-coconut-forest",
+      "title": "Đi Rừng dừa Bảy Mẫu",
+      "englishTitle": "Go to Bay Mau Coconut Forest",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hoian",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-nature",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-where-golden-bridge",
+      "title": "Cầu Vàng ở đâu?",
+      "englishTitle": "Where is Golden Bridge?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-landmark",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-polite-request-da-cho-toi-tuong-ot",
+      "title": "Dạ, cho tôi tương ớt",
+      "englishTitle": "Respectfully, please give me chili sauce.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "food-drink",
+        "practice-polite-request",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-polite-register",
+        "practice-distractor",
+        "difficulty-intermediate"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-reservation-anan",
+      "title": "Tôi có đặt bàn ở Anăn Sài Gòn",
+      "englishTitle": "I have a reservation at Anan Saigon",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "advanced",
+        "city-page-kind-phrase",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-sac-dien-thoai-duoc-khong",
+      "title": "Chị giúp tôi sạc điện thoại được không?",
+      "englishTitle": "Can you help me charge my phone?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "phone-internet-power",
+        "practice-pronoun-help",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-pronoun-social",
+        "practice-polite-register",
+        "practice-distractor",
+        "difficulty-intermediate"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v500-unde-repa-please-be-patient-with-me",
+      "title": "Xin hãy kiên nhẫn với tôi",
+      "englishTitle": "Please be patient with me",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "understanding-repair",
+        "v500-unde-repa-please-be-patient-with-me",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "title": "Đường Nguyễn Văn Linh",
+      "englishTitle": "Nguyen Van Linh Street",
+      "intent": "street",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the street",
+        "Tell the driver",
+        "Driver phrases",
+        "Confirm",
+        "Find it nearby",
+        "Wrong place",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-thanh-toan-o-kia",
+      "title": "Thanh toán ở kia",
+      "englishTitle": "Pay over there",
+      "intent": "traveler_may_hear",
+      "categoryIDs": [
+        "money-numbers-prices",
+        "practice-likely-replies",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-likely-reply",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "You may hear",
+        "Break it down",
+        "Related replies",
+        "Good to know",
+        "Related phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-emergency-premium-phone-stolen",
+      "title": "Điện thoại của tôi đã bị đánh cắp.",
+      "englishTitle": "My phone was stolen.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "emergency-safety",
+        "emergency-phone-stolen",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-need-item-toi-can-men-tieu-hoa",
+      "title": "Tôi cần men tiêu hóa",
+      "englishTitle": "I need digestive probiotics.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "health-pharmacy",
+        "practice-need-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-giang-cafe",
+      "title": "Đi Cà phê Giảng",
+      "englishTitle": "Go to Giang Cafe",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-cafe",
+        "content-role-cafe",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-have-item-co-ca-phe-rang-khong",
+      "title": "Có cà phê rang không?",
+      "englishTitle": "Do you have roasted coffee?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "shopping",
+        "practice-have-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "practice-likely-reply",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-near-place-nha-tho-gan-day-khong",
+      "title": "nhà thờ gần đây không?",
+      "englishTitle": "Is the church nearby?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "sightseeing-activities",
+        "practice-near-place",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-city-destination",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-ves-order-bun-cha-portion",
+      "title": "Dạ, cho tôi một phần bún chả.",
+      "englishTitle": "One portion of bun cha, please.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "food-drink",
+        "editorial-model-support",
+        "support-model-restaurant-live-interaction",
+        "support-family-restaurant-ordering",
+        "difficulty-beginner",
+        "restaurant-live-interaction",
+        "food-ordering"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-stop-at-place-dung-o-van-phong-du-lich",
+      "title": "Dừng ở văn phòng du lịch",
+      "englishTitle": "Stop at the tourist office.",
+      "intent": "practical_flow",
+      "categoryIDs": [
+        "transport",
+        "practice-stop-at-place",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-city-destination",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-have-item-co-ve-tre-em-khong",
+      "title": "Có vé trẻ em không?",
+      "englishTitle": "Do you have a child ticket?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "time-dates-booking",
+        "practice-have-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "practice-likely-reply",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-go-asia-park",
+      "title": "Đi Công viên Châu Á",
+      "englishTitle": "Go to Asia Park",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-park",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hue-where-khai-dinh-tomb",
+      "title": "Lăng Khải Định ở đâu?",
+      "englishTitle": "Where is Tomb of Khai Dinh?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-landmark",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v500-heal-phar-i-feel-nauseous",
+      "title": "tôi cảm thấy buồn nôn",
+      "englishTitle": "I feel nauseous",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "health-pharmacy",
+        "v500-heal-phar-i-feel-nauseous",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-i-have-a-sore-throat",
+      "title": "Tôi bị đau họng",
+      "englishTitle": "I have a sore throat",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "health-pharmacy",
+        "v900-heal-phar-i-have-a-sore-throat",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-thank-you",
+      "title": "Cảm ơn",
+      "englishTitle": "Thank you",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "gratitude"
+      ],
+      "renderedSections": [
+        "Meaning",
+        "Break it down",
+        "Other ways",
+        "Common follow-ups",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-price-item-mieng-dan-ha-sot-bao-nhieu-tien",
+      "title": "miếng dán hạ sốt bao nhiêu tiền?",
+      "englishTitle": "How much is cooling patches?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "money-numbers-prices",
+        "practice-price-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "practice-likely-reply",
+        "difficulty-intermediate"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-price-item-sac-dien-thoai-bao-nhieu-tien",
+      "title": "sạc điện thoại bao nhiêu tiền?",
+      "englishTitle": "How much is a phone charger?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "money-numbers-prices",
+        "practice-price-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "practice-likely-reply",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-where-cho-lon",
+      "title": "Chợ Lớn ở đâu?",
+      "englishTitle": "Where is Cho Lon?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-neighborhood",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    }
+  ],
+  "pageSummaries": [
+    {
+      "pageID": "viet-family-city-danang-where-nen",
+      "title": "Nhà hàng Nén Đà Nẵng ở đâu?",
+      "englishTitle": "Where is Nén Đà Nẵng?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "intermediate",
+        "city-page-kind-phrase",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-dong-khoi-street",
+      "title": "Có ATM gần Đường Đồng Khởi không?",
+      "englishTitle": "Is there an ATM near Dong Khoi Street?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "practical-help-near-places",
+        "intermediate",
+        "city-page-kind-phrase",
+        "place-kind-street",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-binh-tay-market",
+      "title": "Đi Chợ Bình Tây",
+      "englishTitle": "Go to Binh Tay Market",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-market",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-cao-lau-city",
+      "title": "Cao lầu ở Hội An",
+      "englishTitle": "Cao lau in Hoi An",
+      "intent": "dish",
+      "categoryIDs": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish-anchor",
+        "local-dishes"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the dish",
+        "Order it",
+        "Adjust it",
+        "Diet / allergy",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hue-place-bun-bo-city",
+      "title": "Bún bò Huế",
+      "englishTitle": "Bun bo Hue",
+      "intent": "dish",
+      "categoryIDs": [
+        "city-guides",
+        "hue",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish-anchor",
+        "local-dishes",
+        "editorial-pilot"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the dish",
+        "Order it",
+        "Adjust it",
+        "Diet / allergy",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-west-lake",
+      "title": "Hồ Tây",
+      "englishTitle": "West Lake",
+      "intent": "landmark_micro_place",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-son-tra-night-market",
+      "title": "Chợ đêm Sơn Trà",
+      "englishTitle": "Son Tra Night Market",
+      "intent": "landmark_micro_place",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "What the name means",
+        "Good to know",
+        "More Chợ đêm Sơn Trà phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-dragon-bridge",
+      "title": "Cầu Rồng",
+      "englishTitle": "Dragon Bridge",
+      "intent": "landmark_micro_place",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "At the bridge",
+        "Meeting or pickup",
+        "What the name means",
+        "Good to know",
+        "More Cầu Rồng phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-marble-mountains",
+      "title": "Ngũ Hành Sơn",
+      "englishTitle": "Marble Mountains",
+      "intent": "macro_attraction_journey",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks",
+        "journey-page",
+        "editorial-pilot"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Visit flow",
+        "Common phrases",
+        "Getting there",
+        "What the name means",
+        "Good to know",
+        "More Ngũ Hành Sơn phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-ba-na-hills",
+      "title": "Bà Nà Hills",
+      "englishTitle": "Ba Na Hills",
+      "intent": "macro_attraction_journey",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks",
+        "journey-page",
+        "editorial-pilot",
+        "ba-na-hills-journey-v2"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Visit flow",
+        "Getting there",
+        "Tickets",
+        "Cable car",
+        "Photos",
+        "Getting back",
+        "Good to know",
+        "Food & cash",
+        "Name guide"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v900-hote-acco-can-i-have-a-room-with-a-window",
+      "title": "Tôi có thể đặt phòng có cửa sổ được không?",
+      "englishTitle": "Can I have a room with a window?",
+      "intent": "practical_flow",
+      "categoryIDs": [
+        "hotel-accommodation",
+        "v900-hote-acco-can-i-have-a-room-with-a-window",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-near-place-ga-tau-gan-day-khong",
+      "title": "ga tàu gần đây không?",
+      "englishTitle": "Is the train station nearby?",
+      "intent": "practical_flow",
+      "categoryIDs": [
+        "transport",
+        "practice-near-place",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-city-destination",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-stop-at-place-dung-o-phong-cau-nguyen",
+      "title": "Dừng ở phòng cầu nguyện",
+      "englishTitle": "Stop at a prayer room.",
+      "intent": "practical_flow",
+      "categoryIDs": [
+        "transport",
+        "practice-stop-at-place",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-city-destination",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
+      "title": "Bánh mì Phượng",
+      "englishTitle": "Banh Mi Phuong",
+      "intent": "restaurant",
+      "categoryIDs": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-iconic",
+        "restaurants"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "Table & menu",
+        "Order",
+        "Drinks",
+        "Pay",
+        "Getting back",
+        "Name guide",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+      "title": "Phở Bát Đàn",
+      "englishTitle": "Pho Bat Dan",
+      "intent": "restaurant",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-iconic",
+        "restaurants",
+        "editorial-pilot"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "Table & menu",
+        "Order",
+        "Drinks",
+        "Pay",
+        "Getting back",
+        "Name guide",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "title": "Bún chả Hương Liên",
+      "englishTitle": "Bun Cha Huong Lien",
+      "intent": "restaurant",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-iconic",
+        "restaurants",
+        "editorial-pilot"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the name",
+        "Getting there",
+        "Table & menu",
+        "Order",
+        "Drinks",
+        "Pay",
+        "Getting back",
+        "Name guide",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-xa-phong",
+      "title": "Cho tôi xà phòng",
+      "englishTitle": "Soap, please.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "bathroom-personal-needs",
+        "practice-one-item-please",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v900-sigh-acti-where-is-less-crowded",
+      "title": "Nơi nào ít đông đúc hơn?",
+      "englishTitle": "Where is less crowded?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "sightseeing-activities",
+        "v900-sigh-acti-where-is-less-crowded",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
+      "title": "Bạn có thể nhắc lại phần cuối được không?",
+      "englishTitle": "Can you repeat the last part?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "understanding-repair",
+        "v500-unde-repa-can-you-repeat-the-last-part",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-nguyen-hue",
+      "title": "Phố đi bộ Nguyễn Huệ",
+      "englishTitle": "Nguyen Hue Walking Street",
+      "intent": "street",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the street",
+        "Driver phrases",
+        "What the name means",
+        "Good to know",
+        "More Phố đi bộ Nguyễn Huệ phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-phan-dinh-phung-street",
+      "title": "Phố Phan Đình Phùng",
+      "englishTitle": "Phan Dinh Phung Street",
+      "intent": "street",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the street",
+        "Driver phrases",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-bach-dang-street",
+      "title": "Đường Bạch Đằng",
+      "englishTitle": "Bach Dang Street",
+      "intent": "street",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the street",
+        "Tell the driver",
+        "Driver phrases",
+        "Confirm",
+        "Find it nearby",
+        "What the name means",
+        "Good to know",
+        "More Đường Bạch Đằng phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mon-nay-cay",
+      "title": "Món này cay",
+      "englishTitle": "This dish is spicy",
+      "intent": "traveler_may_hear",
+      "categoryIDs": [
+        "food-drink",
+        "practice-likely-replies",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-likely-reply",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "You may hear",
+        "Break it down",
+        "Related replies",
+        "Good to know",
+        "Related phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
+      "title": "Bàn này còn trống",
+      "englishTitle": "This table is available",
+      "intent": "traveler_may_hear",
+      "categoryIDs": [
+        "food-drink",
+        "practice-likely-replies",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-likely-reply",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "You may hear",
+        "Break it down",
+        "Say next",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-con",
+      "title": "Còn",
+      "englishTitle": "It is still available",
+      "intent": "traveler_may_hear",
+      "categoryIDs": [
+        "shopping",
+        "practice-likely-replies",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-likely-reply",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "You may hear",
+        "Break it down",
+        "Related replies",
+        "Good to know",
+        "Related phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-man-thai-beach",
+      "title": "Dừng ở Biển Mân Thái",
+      "englishTitle": "Stop at Man Thai Beach",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-beach",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-bay-mau-coconut-forest",
+      "title": "Đi Rừng dừa Bảy Mẫu",
+      "englishTitle": "Go to Bay Mau Coconut Forest",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hoian",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-nature",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-where-golden-bridge",
+      "title": "Cầu Vàng ở đâu?",
+      "englishTitle": "Where is Golden Bridge?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-landmark",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-polite-request-da-cho-toi-tuong-ot",
+      "title": "Dạ, cho tôi tương ớt",
+      "englishTitle": "Respectfully, please give me chili sauce.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "food-drink",
+        "practice-polite-request",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-polite-register",
+        "practice-distractor",
+        "difficulty-intermediate"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-reservation-anan",
+      "title": "Tôi có đặt bàn ở Anăn Sài Gòn",
+      "englishTitle": "I have a reservation at Anan Saigon",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "advanced",
+        "city-page-kind-phrase",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-pronoun-help-chi-giup-toi-sac-dien-thoai-duoc-khong",
+      "title": "Chị giúp tôi sạc điện thoại được không?",
+      "englishTitle": "Can you help me charge my phone?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "phone-internet-power",
+        "practice-pronoun-help",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-pronoun-social",
+        "practice-polite-register",
+        "practice-distractor",
+        "difficulty-intermediate"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v500-unde-repa-please-be-patient-with-me",
+      "title": "Xin hãy kiên nhẫn với tôi",
+      "englishTitle": "Please be patient with me",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "understanding-repair",
+        "v500-unde-repa-please-be-patient-with-me",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "title": "Đường Nguyễn Văn Linh",
+      "englishTitle": "Nguyen Van Linh Street",
+      "intent": "street",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "renderedSections": [
+        "About",
+        "Hear the street",
+        "Tell the driver",
+        "Driver phrases",
+        "Confirm",
+        "Find it nearby",
+        "Wrong place",
+        "What the name means",
+        "Good to know"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-thanh-toan-o-kia",
+      "title": "Thanh toán ở kia",
+      "englishTitle": "Pay over there",
+      "intent": "traveler_may_hear",
+      "categoryIDs": [
+        "money-numbers-prices",
+        "practice-likely-replies",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-likely-reply",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "You may hear",
+        "Break it down",
+        "Related replies",
+        "Good to know",
+        "Related phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-emergency-premium-phone-stolen",
+      "title": "Điện thoại của tôi đã bị đánh cắp.",
+      "englishTitle": "My phone was stolen.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "emergency-safety",
+        "emergency-phone-stolen",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-need-item-toi-can-men-tieu-hoa",
+      "title": "Tôi cần men tiêu hóa",
+      "englishTitle": "I need digestive probiotics.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "health-pharmacy",
+        "practice-need-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-giang-cafe",
+      "title": "Đi Cà phê Giảng",
+      "englishTitle": "Go to Giang Cafe",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-cafe",
+        "content-role-cafe",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-have-item-co-ca-phe-rang-khong",
+      "title": "Có cà phê rang không?",
+      "englishTitle": "Do you have roasted coffee?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "shopping",
+        "practice-have-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "practice-likely-reply",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-near-place-nha-tho-gan-day-khong",
+      "title": "nhà thờ gần đây không?",
+      "englishTitle": "Is the church nearby?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "sightseeing-activities",
+        "practice-near-place",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-city-destination",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-ves-order-bun-cha-portion",
+      "title": "Dạ, cho tôi một phần bún chả.",
+      "englishTitle": "One portion of bun cha, please.",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "food-drink",
+        "editorial-model-support",
+        "support-model-restaurant-live-interaction",
+        "support-family-restaurant-ordering",
+        "difficulty-beginner",
+        "restaurant-live-interaction",
+        "food-ordering"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-stop-at-place-dung-o-van-phong-du-lich",
+      "title": "Dừng ở văn phòng du lịch",
+      "englishTitle": "Stop at the tourist office.",
+      "intent": "practical_flow",
+      "categoryIDs": [
+        "transport",
+        "practice-stop-at-place",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-city-destination",
+        "practice-distractor",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-have-item-co-ve-tre-em-khong",
+      "title": "Có vé trẻ em không?",
+      "englishTitle": "Do you have a child ticket?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "time-dates-booking",
+        "practice-have-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "practice-likely-reply",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-danang-go-asia-park",
+      "title": "Đi Công viên Châu Á",
+      "englishTitle": "Go to Asia Park",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-park",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hue-where-khai-dinh-tomb",
+      "title": "Lăng Khải Định ở đâu?",
+      "englishTitle": "Where is Tomb of Khai Dinh?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-landmark",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v500-heal-phar-i-feel-nauseous",
+      "title": "tôi cảm thấy buồn nôn",
+      "englishTitle": "I feel nauseous",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "health-pharmacy",
+        "v500-heal-phar-i-feel-nauseous",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-i-have-a-sore-throat",
+      "title": "Tôi bị đau họng",
+      "englishTitle": "I have a sore throat",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "health-pharmacy",
+        "v900-heal-phar-i-have-a-sore-throat",
+        "premium"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-thank-you",
+      "title": "Cảm ơn",
+      "englishTitle": "Thank you",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "gratitude"
+      ],
+      "renderedSections": [
+        "Meaning",
+        "Break it down",
+        "Other ways",
+        "Common follow-ups",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-price-item-mieng-dan-ha-sot-bao-nhieu-tien",
+      "title": "miếng dán hạ sốt bao nhiêu tiền?",
+      "englishTitle": "How much is cooling patches?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "money-numbers-prices",
+        "practice-price-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "practice-likely-reply",
+        "difficulty-intermediate"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-vpe-price-item-sac-dien-thoai-bao-nhieu-tien",
+      "title": "sạc điện thoại bao nhiêu tiền?",
+      "englishTitle": "How much is a phone charger?",
+      "intent": "simple_phrase",
+      "categoryIDs": [
+        "money-numbers-prices",
+        "practice-price-item",
+        "practice-english-to-vietnamese",
+        "practice-vietnamese-to-english",
+        "practice-missing-token",
+        "practice-distractor",
+        "practice-likely-reply",
+        "difficulty-beginner"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Practice nearby",
+        "Good to know",
+        "Next phrases"
+      ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-where-cho-lon",
+      "title": "Chợ Lớn ở đâu?",
+      "englishTitle": "Where is Cho Lon?",
+      "intent": "derived_place_phrase",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-phrase",
+        "place-kind-neighborhood",
+        "city-phrases",
+        "derived-place-phrases"
+      ],
+      "renderedSections": [
+        "Break it down",
+        "Related phrases",
+        "Tip"
+      ]
+    }
+  ]
+}

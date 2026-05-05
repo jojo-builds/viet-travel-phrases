@@ -7,6 +7,7 @@ struct PhraseDetailView: View {
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
+    let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let isInPractice: Bool
     var onBackTapped: () -> Void
@@ -22,6 +23,7 @@ struct PhraseDetailView: View {
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
+        topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         isInPractice: Bool = false,
         onBackTapped: @escaping () -> Void,
@@ -36,6 +38,7 @@ struct PhraseDetailView: View {
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
+        self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.isInPractice = isInPractice
         self.onBackTapped = onBackTapped
@@ -55,6 +58,7 @@ struct PhraseDetailView: View {
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
             showsChrome: showsChrome,
+            topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
             isInPractice: isInPractice,
             onBackTapped: onBackTapped,

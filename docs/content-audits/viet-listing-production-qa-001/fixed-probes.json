@@ -1,0 +1,359 @@
+[
+  {
+    "label": "Tôi không hiểu",
+    "pageID": "viet-family-repair-understand",
+    "title": "Tôi không hiểu",
+    "englishTitle": "I don’t understand",
+    "expectedIntent": "simple_phrase",
+    "detectedIntent": "simple_phrase",
+    "practice": {
+      "kind": "phrase_audio_review",
+      "cta": "Practice this phrase",
+      "surfacePolicy": "saved_or_recent_only",
+      "scenarioEligible": false
+    },
+    "renderedSections": [
+      "Meaning",
+      "Break it down",
+      "Common follow-ups",
+      "Good to know",
+      "Next phrases"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Bàn này còn trống",
+    "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
+    "title": "Bàn này còn trống",
+    "englishTitle": "This table is available",
+    "expectedIntent": "traveler_may_hear",
+    "detectedIntent": "traveler_may_hear",
+    "practice": {
+      "kind": "phrase_audio_review",
+      "cta": "Practice this phrase",
+      "surfacePolicy": "saved_or_recent_only",
+      "scenarioEligible": false
+    },
+    "renderedSections": [
+      "You may hear",
+      "Break it down",
+      "Say next",
+      "Good to know"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Bà Nà Hills",
+    "pageID": "viet-family-city-danang-place-ba-na-hills",
+    "title": "Bà Nà Hills",
+    "englishTitle": "Ba Na Hills",
+    "expectedIntent": "macro_attraction_journey",
+    "detectedIntent": "macro_attraction_journey",
+    "practice": {
+      "kind": "trip_journey_scenario",
+      "cta": "Practice this trip",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "About",
+      "Hear the name",
+      "Visit flow",
+      "Getting there",
+      "Tickets",
+      "Cable car",
+      "Photos",
+      "Getting back",
+      "Good to know",
+      "Food & cash",
+      "Name guide"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Cầu Rồng",
+    "pageID": "viet-family-city-danang-place-dragon-bridge",
+    "title": "Cầu Rồng",
+    "englishTitle": "Dragon Bridge",
+    "expectedIntent": "landmark_micro_place",
+    "detectedIntent": "landmark_micro_place",
+    "practice": {
+      "kind": "place_visit_mini_scenario",
+      "cta": "Practice this place",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "About",
+      "Hear the name",
+      "Getting there",
+      "At the bridge",
+      "Meeting or pickup",
+      "What the name means",
+      "Good to know",
+      "More Cầu Rồng phrases"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Đường Nguyễn Văn Linh",
+    "pageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+    "title": "Đường Nguyễn Văn Linh",
+    "englishTitle": "Nguyen Van Linh Street",
+    "expectedIntent": "street",
+    "detectedIntent": "street",
+    "practice": {
+      "kind": "street_driver_mini_scenario",
+      "cta": "Practice this street",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "About",
+      "Hear the street",
+      "Tell the driver",
+      "Driver phrases",
+      "Confirm",
+      "Find it nearby",
+      "Wrong place",
+      "What the name means",
+      "Good to know"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Anăn Sài Gòn",
+    "pageID": "viet-family-city-hcmc-place-anan-saigon",
+    "title": "Anăn Sài Gòn",
+    "englishTitle": "Anan Saigon",
+    "expectedIntent": "restaurant",
+    "detectedIntent": "restaurant",
+    "practice": {
+      "kind": "restaurant_ordering_scenario",
+      "cta": "Practice ordering here",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "About",
+      "Hear the name",
+      "Getting there",
+      "Table & menu",
+      "Order",
+      "Drinks",
+      "Pay",
+      "Getting back",
+      "Name guide",
+      "Good to know"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Bún chả Hương Liên",
+    "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+    "title": "Bún chả Hương Liên",
+    "englishTitle": "Bun Cha Huong Lien",
+    "expectedIntent": "restaurant",
+    "detectedIntent": "restaurant",
+    "practice": {
+      "kind": "restaurant_ordering_scenario",
+      "cta": "Practice ordering here",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "About",
+      "Hear the name",
+      "Getting there",
+      "Table & menu",
+      "Order",
+      "Drinks",
+      "Pay",
+      "Getting back",
+      "Name guide",
+      "Good to know"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Phở Bát Đàn",
+    "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+    "title": "Phở Bát Đàn",
+    "englishTitle": "Pho Bat Dan",
+    "expectedIntent": "restaurant",
+    "detectedIntent": "restaurant",
+    "practice": {
+      "kind": "restaurant_ordering_scenario",
+      "cta": "Practice ordering here",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "About",
+      "Hear the name",
+      "Getting there",
+      "Table & menu",
+      "Order",
+      "Drinks",
+      "Pay",
+      "Getting back",
+      "Name guide",
+      "Good to know"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Bún bò Huế",
+    "pageID": "viet-family-city-hue-place-bun-bo-city",
+    "title": "Bún bò Huế",
+    "englishTitle": "Bun bo Hue",
+    "expectedIntent": "dish",
+    "detectedIntent": "dish",
+    "practice": {
+      "kind": "dish_ordering_scenario",
+      "cta": "Practice ordering this",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "About",
+      "Hear the dish",
+      "Order it",
+      "Adjust it",
+      "Diet / allergy",
+      "What the name means",
+      "Good to know"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Cao lầu",
+    "pageID": "viet-family-city-hoian-place-cao-lau-city",
+    "title": "Cao lầu ở Hội An",
+    "englishTitle": "Cao lau in Hoi An",
+    "expectedIntent": "dish",
+    "detectedIntent": "dish",
+    "practice": {
+      "kind": "dish_ordering_scenario",
+      "cta": "Practice ordering this",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "About",
+      "Hear the dish",
+      "Order it",
+      "Adjust it",
+      "Diet / allergy",
+      "What the name means",
+      "Good to know"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Bưu điện Thành phố ở đâu?",
+    "pageID": "viet-family-city-hcmc-where-post-office",
+    "title": "Bưu điện Thành phố ở đâu?",
+    "englishTitle": "Where is the Central Post Office?",
+    "expectedIntent": "derived_place_phrase",
+    "detectedIntent": "derived_place_phrase",
+    "practice": {
+      "kind": "phrase_audio_review",
+      "cta": "Practice this phrase",
+      "surfacePolicy": "saved_or_recent_only",
+      "scenarioEligible": false
+    },
+    "renderedSections": [
+      "Break it down",
+      "Related phrases",
+      "Tip"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Hotel check-in",
+    "pageID": "viet-family-hotel-check-in",
+    "title": "Cho tôi nhận phòng",
+    "englishTitle": "I’d like to check in",
+    "expectedIntent": "practical_flow",
+    "detectedIntent": "practical_flow",
+    "practice": {
+      "kind": "practical_flow_scenario",
+      "cta": "Practice this situation",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "Break it down",
+      "Other ways",
+      "Common follow-ups",
+      "Good to know",
+      "Next phrases"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Airport arrival",
+    "pageID": "viet-family-airport-immigration",
+    "title": "Nhập cảnh ở đâu?",
+    "englishTitle": "Where is immigration?",
+    "expectedIntent": "practical_flow",
+    "detectedIntent": "practical_flow",
+    "practice": {
+      "kind": "practical_flow_scenario",
+      "cta": "Practice this situation",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "Break it down",
+      "Common follow-ups",
+      "Good to know",
+      "Next phrases"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Taxi/Grab pickup",
+    "pageID": "viet-family-airport-pickup",
+    "title": "Khu đón ở đâu?",
+    "englishTitle": "Where is the pickup area?",
+    "expectedIntent": "practical_flow",
+    "detectedIntent": "practical_flow",
+    "practice": {
+      "kind": "practical_flow_scenario",
+      "cta": "Practice this situation",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
+    },
+    "renderedSections": [
+      "Break it down",
+      "Other ways",
+      "Common follow-ups",
+      "Good to know",
+      "Next phrases"
+    ],
+    "status": "PASS"
+  },
+  {
+    "label": "Shopping",
+    "pageID": null,
+    "expectedIntent": "topic_hub",
+    "externalSurface": "native browse collection",
+    "status": "EXTERNAL_SURFACE"
+  },
+  {
+    "label": "Da Nang",
+    "pageID": null,
+    "expectedIntent": "city_hub",
+    "externalSurface": "native city hub",
+    "status": "EXTERNAL_SURFACE"
+  },
+  {
+    "label": "All Vietnam",
+    "pageID": null,
+    "expectedIntent": "country_hub",
+    "externalSurface": "native browse root",
+    "status": "EXTERNAL_SURFACE"
+  }
+]

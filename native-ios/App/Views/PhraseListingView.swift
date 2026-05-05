@@ -13,6 +13,7 @@ struct PhraseListingView: View {
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
+    let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let isInPractice: Bool
     var onBackTapped: () -> Void = {}
@@ -29,6 +30,7 @@ struct PhraseListingView: View {
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
+        topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         isInPractice: Bool = false,
         onBackTapped: @escaping () -> Void = {},
@@ -44,6 +46,7 @@ struct PhraseListingView: View {
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
+        self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.isInPractice = isInPractice
         self.onBackTapped = onBackTapped
@@ -62,6 +65,7 @@ struct PhraseListingView: View {
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
             showsChrome: showsChrome,
+            topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
             isInPractice: isInPractice,
             onBackTapped: onBackTapped,
@@ -81,6 +85,7 @@ struct PhraseArticleTemplateView: View {
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
+    let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let isInPractice: Bool
     var onBackTapped: () -> Void = {}
@@ -98,6 +103,7 @@ struct PhraseArticleTemplateView: View {
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
+        topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         isInPractice: Bool = false,
         onBackTapped: @escaping () -> Void = {},
@@ -113,6 +119,7 @@ struct PhraseArticleTemplateView: View {
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
+        self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.isInPractice = isInPractice
         self.onBackTapped = onBackTapped
@@ -143,7 +150,7 @@ struct PhraseArticleTemplateView: View {
                                 .id(section.id)
                             }
 
-                            if page.showsCatalogExplore {
+                            if shouldRenderCatalogExplore {
                                 ExploreCatalogSection(
                                     currentPageID: page.id,
                                     onOpenDetail: onDetailTapped
@@ -161,6 +168,11 @@ struct PhraseArticleTemplateView: View {
                 }
                 .task {
                     await applyInitialScrollTargetIfNeeded(scrollProxy)
+                }
+                .safeAreaInset(edge: .top, spacing: 0) {
+                    Color.clear
+                        .frame(height: topChromeContentClearance)
+                        .accessibilityHidden(true)
                 }
             }
             .ignoresSafeArea(edges: .top)
@@ -246,6 +258,10 @@ struct PhraseArticleTemplateView: View {
         .background(PhrasePageStyle.pageBackground)
     }
 
+    private var shouldRenderCatalogExplore: Bool {
+        page.showsCatalogExplore && page.id == PhrasePage.xinChao.id
+    }
+
     private var usesCompactPhraseHero: Bool {
         page.heroImageName == "HeroCompactPhraseMasthead"
     }
@@ -259,12 +275,17 @@ struct PhraseArticleTemplateView: View {
 
     static func visibleSections(for page: PhraseArticlePage) -> [PhraseArticleSection] {
         page.sections.filter { section in
-            guard !isSelfOnlyHeroRepeat(section, page: page) else { return false }
+            guard !isHeroRepeatSection(section, page: page) else { return false }
             return !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty
         }
     }
 
-    private static func isSelfOnlyHeroRepeat(_ section: PhraseArticleSection, page: PhraseArticlePage) -> Bool {
+    private static func isHeroRepeatSection(_ section: PhraseArticleSection, page: PhraseArticlePage) -> Bool {
+        isSelfOnlyHeroPhraseRepeat(section, page: page)
+            || isHeroMeaningRepeat(section, page: page)
+    }
+
+    private static func isSelfOnlyHeroPhraseRepeat(_ section: PhraseArticleSection, page: PhraseArticlePage) -> Bool {
         let duplicateSectionTitles: Set<String> = ["Quick say", "Say this"]
         guard duplicateSectionTitles.contains(section.title), section.phrases.count == 1, let phrase = section.phrases.first else {
             return false
@@ -274,11 +295,70 @@ struct PhraseArticleTemplateView: View {
             && normalizedDisplayText(phrase.english) == normalizedDisplayText(page.englishTitle)
     }
 
+    private static func isHeroMeaningRepeat(_ section: PhraseArticleSection, page: PhraseArticlePage) -> Bool {
+        let duplicateSectionTitles: Set<String> = ["Meaning", "At a glance"]
+        guard duplicateSectionTitles.contains(section.title),
+              section.phrases.isEmpty,
+              section.breakdown.isEmpty
+        else {
+            return false
+        }
+
+        let body = normalizedSentenceText(section.body)
+        let title = normalizedSentenceText(page.title)
+        let english = normalizedSentenceText(page.englishTitle)
+        let summary = normalizedSentenceText(page.summary)
+
+        guard !body.isEmpty, !english.isEmpty else {
+            return false
+        }
+
+        if body == english {
+            return true
+        }
+
+        if !summary.isEmpty, summary == english, body == summary {
+            return true
+        }
+
+        if !title.isEmpty {
+            let directMeaning = "\(title) means \(english)"
+            let compactPair = "\(title) \(english)"
+            if body == directMeaning || body == compactPair {
+                return true
+            }
+
+            if body.hasPrefix("\(title) means "), body.contains(english) {
+                return true
+            }
+        }
+
+        let bodyWordCount = body.split(separator: " ").count
+        let englishWordCount = english.split(separator: " ").count
+        return body.hasPrefix(english) && bodyWordCount <= max(4, englishWordCount + 2)
+    }
+
     private static func normalizedDisplayText(_ value: String) -> String {
         value
             .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: Locale(identifier: "vi_VN"))
             .replacingOccurrences(of: "’", with: "'")
             .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private static func normalizedSentenceText(_ value: String) -> String {
+        let folded = value
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: Locale(identifier: "vi_VN"))
+            .replacingOccurrences(of: "đ", with: "d")
+            .replacingOccurrences(of: "Đ", with: "d")
+            .replacingOccurrences(of: "’", with: "'")
+            .replacingOccurrences(of: "“", with: "\"")
+            .replacingOccurrences(of: "”", with: "\"")
+            .lowercased()
+            .replacingOccurrences(of: #"[^a-z0-9]+"#, with: " ", options: .regularExpression)
+
+        return folded
+            .split(separator: " ")
+            .joined(separator: " ")
     }
 
     @MainActor
@@ -295,7 +375,7 @@ struct PhraseArticleTemplateView: View {
             scrollID = visibleSections.first { !$0.breakdown.isEmpty }?.id
             anchor = .center
         case .catalogExplore:
-            scrollID = page.showsCatalogExplore ? Self.catalogExploreID : visibleSections.last?.id
+            scrollID = shouldRenderCatalogExplore ? Self.catalogExploreID : visibleSections.last?.id
             anchor = .top
         }
 

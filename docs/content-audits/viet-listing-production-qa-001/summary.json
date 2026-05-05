@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-05-05T21:11:55.236Z",
+  "pageCount": 3070,
+  "issueCounts": {
+    "BLOCKER": 0,
+    "MAJOR": 0,
+    "MINOR": 7,
+    "INFO": 3
+  },
+  "fixedProbeCount": 17,
+  "randomSeed": 20260506,
+  "randomSampleCount": 50,
+  "dataDuplicateHeroCount": {
+    "meaning": 2213,
+    "sayThis": 2270,
+    "renderedHidden": 4483
+  },
+  "missingAudioPriorityCount": 500,
+  "heroImageFollowUpCount": 147,
+  "verdict": "NO_BLOCKER_OR_MAJOR_ISSUES_IN_STATIC_RENDER_MODEL"
+}

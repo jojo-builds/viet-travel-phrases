@@ -1,0 +1,462 @@
+{
+  "viet-family-city-danang-place-dragon-bridge": {
+    "integrationVersion": "listing-scenario-seed-v1",
+    "scenarioEligible": true,
+    "practiceKind": "place_visit_mini_scenario",
+    "practiceCTALabel": "Practice this place",
+    "practiceSurfacePolicy": "recommended_when_relevant",
+    "scenarioSeedID": "scenario-seed-city-danang-place-dragon-bridge",
+    "scenarioStepGroups": [
+      {
+        "stepID": "quick-say",
+        "title": "Hear the name",
+        "sourceSectionID": "quick-say",
+        "primaryPhraseIDs": [
+          "city-danang-place-dragon-bridge"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "getting-there",
+        "title": "Getting there",
+        "sourceSectionID": "getting-there",
+        "primaryPhraseIDs": [
+          "city-danang-go-dragon-bridge"
+        ],
+        "supportPhraseIDs": [
+          "city-danang-where-dragon-bridge"
+        ]
+      },
+      {
+        "stepID": "at-the-bridge",
+        "title": "At the bridge",
+        "sourceSectionID": "at-the-bridge",
+        "primaryPhraseIDs": [
+          "ves-take-photo-for-me"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "pickup-nearby",
+        "title": "Meeting or pickup",
+        "sourceSectionID": "pickup-nearby",
+        "primaryPhraseIDs": [
+          "ves-drop-near-dragon-bridge"
+        ],
+        "supportPhraseIDs": [
+          "city-danang-stop-dragon-bridge"
+        ]
+      },
+      {
+        "stepID": "explore-next",
+        "title": "More Cầu Rồng phrases",
+        "sourceSectionID": "explore-next",
+        "primaryPhraseIDs": [
+          "city-danang-atm-dragon-bridge"
+        ],
+        "supportPhraseIDs": [
+          "city-danang-eat-near-dragon-bridge"
+        ]
+      }
+    ],
+    "primaryPracticePhraseIDs": [
+      "city-danang-place-dragon-bridge",
+      "city-danang-go-dragon-bridge",
+      "ves-take-photo-for-me",
+      "ves-drop-near-dragon-bridge",
+      "city-danang-atm-dragon-bridge"
+    ],
+    "secondaryPracticePhraseIDs": [
+      "city-danang-where-dragon-bridge",
+      "city-danang-stop-dragon-bridge",
+      "city-danang-eat-near-dragon-bridge"
+    ],
+    "practiceSourcePageID": "viet-family-city-danang-place-dragon-bridge"
+  },
+  "viet-family-city-danang-place-ba-na-hills": {
+    "integrationVersion": "listing-scenario-seed-v1",
+    "scenarioEligible": true,
+    "practiceKind": "trip_journey_scenario",
+    "practiceCTALabel": "Practice this trip",
+    "practiceSurfacePolicy": "recommended_when_relevant",
+    "scenarioSeedID": "scenario-seed-city-danang-place-ba-na-hills",
+    "scenarioStepGroups": [
+      {
+        "stepID": "quick-say",
+        "title": "Hear the name",
+        "sourceSectionID": "quick-say",
+        "primaryPhraseIDs": [
+          "city-danang-place-ba-na-hills"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "getting-there",
+        "title": "Getting there",
+        "sourceSectionID": "getting-there",
+        "primaryPhraseIDs": [
+          "ves-take-me-to-ba-na-hills"
+        ],
+        "supportPhraseIDs": [
+          "city-danang-go-ba-na-hills",
+          "city-danang-where-ba-na-hills",
+          "city-danang-stop-ba-na-hills"
+        ]
+      },
+      {
+        "stepID": "tickets",
+        "title": "Tickets",
+        "sourceSectionID": "tickets",
+        "primaryPhraseIDs": [
+          "ves-two-tickets-ba-na-hills"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "cable-car",
+        "title": "Cable car",
+        "sourceSectionID": "cable-car",
+        "primaryPhraseIDs": [
+          "ves-where-cable-car"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "photos",
+        "title": "Photos",
+        "sourceSectionID": "photos",
+        "primaryPhraseIDs": [
+          "ves-take-photo-for-me"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "getting-back",
+        "title": "Getting back",
+        "sourceSectionID": "getting-back",
+        "primaryPhraseIDs": [
+          "directions-8"
+        ],
+        "supportPhraseIDs": [
+          "ves-call-taxi-for-me"
+        ]
+      }
+    ],
+    "primaryPracticePhraseIDs": [
+      "city-danang-place-ba-na-hills",
+      "ves-take-me-to-ba-na-hills",
+      "ves-two-tickets-ba-na-hills",
+      "ves-where-cable-car",
+      "ves-take-photo-for-me",
+      "directions-8"
+    ],
+    "secondaryPracticePhraseIDs": [
+      "city-danang-go-ba-na-hills",
+      "city-danang-where-ba-na-hills",
+      "city-danang-stop-ba-na-hills",
+      "ves-call-taxi-for-me"
+    ],
+    "practiceSourcePageID": "viet-family-city-danang-place-ba-na-hills"
+  },
+  "viet-family-city-danang-place-nguyen-van-linh-street": {
+    "integrationVersion": "listing-scenario-seed-v1",
+    "scenarioEligible": true,
+    "practiceKind": "street_driver_mini_scenario",
+    "practiceCTALabel": "Practice this street",
+    "practiceSurfacePolicy": "recommended_when_relevant",
+    "scenarioSeedID": "scenario-seed-city-danang-place-nguyen-van-linh-street",
+    "scenarioStepGroups": [
+      {
+        "stepID": "quick-say",
+        "title": "Hear the street",
+        "sourceSectionID": "quick-say",
+        "primaryPhraseIDs": [
+          "city-danang-place-nguyen-van-linh-street"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "show-driver",
+        "title": "Tell the driver",
+        "sourceSectionID": "show-driver",
+        "primaryPhraseIDs": [
+          "ves-to-nguyen-van-linh-street"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "place-brief",
+        "title": "Driver phrases",
+        "sourceSectionID": "place-brief",
+        "primaryPhraseIDs": [
+          "city-danang-go-nguyen-van-linh-street"
+        ],
+        "supportPhraseIDs": [
+          "city-danang-near-nguyen-van-linh-street",
+          "city-danang-stop-nguyen-van-linh-street"
+        ]
+      },
+      {
+        "stepID": "confirm",
+        "title": "Confirm",
+        "sourceSectionID": "confirm",
+        "primaryPhraseIDs": [
+          "ves-is-this-nguyen-van-linh-street"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "use-it-with",
+        "title": "Find it nearby",
+        "sourceSectionID": "use-it-with",
+        "primaryPhraseIDs": [
+          "city-danang-where-nguyen-van-linh-street"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "wrong-place",
+        "title": "Wrong place",
+        "sourceSectionID": "wrong-place",
+        "primaryPhraseIDs": [
+          "ves-not-right-place"
+        ],
+        "supportPhraseIDs": []
+      }
+    ],
+    "primaryPracticePhraseIDs": [
+      "city-danang-place-nguyen-van-linh-street",
+      "ves-to-nguyen-van-linh-street",
+      "city-danang-go-nguyen-van-linh-street",
+      "ves-is-this-nguyen-van-linh-street",
+      "city-danang-where-nguyen-van-linh-street",
+      "ves-not-right-place"
+    ],
+    "secondaryPracticePhraseIDs": [
+      "city-danang-near-nguyen-van-linh-street",
+      "city-danang-stop-nguyen-van-linh-street"
+    ],
+    "practiceSourcePageID": "viet-family-city-danang-place-nguyen-van-linh-street"
+  },
+  "viet-family-city-hcmc-place-anan-saigon": {
+    "integrationVersion": "listing-scenario-seed-v1",
+    "scenarioEligible": true,
+    "practiceKind": "restaurant_ordering_scenario",
+    "practiceCTALabel": "Practice ordering here",
+    "practiceSurfacePolicy": "recommended_when_relevant",
+    "scenarioSeedID": "scenario-seed-city-hcmc-place-anan-saigon",
+    "scenarioStepGroups": [
+      {
+        "stepID": "quick-say",
+        "title": "Hear the name",
+        "sourceSectionID": "quick-say",
+        "primaryPhraseIDs": [
+          "city-hcmc-place-anan-saigon"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "place-brief",
+        "title": "Getting there",
+        "sourceSectionID": "place-brief",
+        "primaryPhraseIDs": [
+          "city-hcmc-go-anan-saigon"
+        ],
+        "supportPhraseIDs": [
+          "city-hcmc-stop-anan-saigon",
+          "city-hcmc-where-anan",
+          "city-hcmc-where-anan-saigon"
+        ]
+      },
+      {
+        "stepID": "table-menu",
+        "title": "Table & menu",
+        "sourceSectionID": "table-menu",
+        "primaryPhraseIDs": [
+          "food-need-table"
+        ],
+        "supportPhraseIDs": [
+          "food-menu"
+        ]
+      },
+      {
+        "stepID": "before-you-go",
+        "title": "Order",
+        "sourceSectionID": "before-you-go",
+        "primaryPhraseIDs": [
+          "v900-food-drin-what-do-you-recommend"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "menu-dietary",
+        "title": "Drinks",
+        "sourceSectionID": "menu-dietary",
+        "primaryPhraseIDs": [
+          "vpe-one-item-please-cho-toi-mot-tra-da"
+        ],
+        "supportPhraseIDs": [
+          "store-1"
+        ]
+      },
+      {
+        "stepID": "when-to-use",
+        "title": "Pay",
+        "sourceSectionID": "when-to-use",
+        "primaryPhraseIDs": [
+          "coffee-7"
+        ],
+        "supportPhraseIDs": [
+          "store-6",
+          "taxi-7",
+          "store-7"
+        ]
+      }
+    ],
+    "primaryPracticePhraseIDs": [
+      "city-hcmc-place-anan-saigon",
+      "city-hcmc-go-anan-saigon",
+      "food-need-table",
+      "v900-food-drin-what-do-you-recommend",
+      "vpe-one-item-please-cho-toi-mot-tra-da",
+      "coffee-7"
+    ],
+    "secondaryPracticePhraseIDs": [
+      "city-hcmc-stop-anan-saigon",
+      "city-hcmc-where-anan",
+      "city-hcmc-where-anan-saigon",
+      "food-menu",
+      "store-1",
+      "store-6",
+      "taxi-7",
+      "store-7"
+    ],
+    "practiceSourcePageID": "viet-family-city-hcmc-place-anan-saigon"
+  },
+  "viet-family-hotel-check-in": {
+    "integrationVersion": "listing-scenario-seed-v1",
+    "scenarioEligible": true,
+    "practiceKind": "practical_flow_scenario",
+    "practiceCTALabel": "Practice this situation",
+    "practiceSurfacePolicy": "recommended_when_relevant",
+    "scenarioSeedID": "scenario-seed-hotel-2",
+    "scenarioStepGroups": [
+      {
+        "stepID": "standard-way",
+        "title": "Say this",
+        "sourceSectionID": "standard-way",
+        "primaryPhraseIDs": [
+          "hotel-2"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "natural-variations",
+        "title": "Other ways",
+        "sourceSectionID": "natural-variations",
+        "primaryPhraseIDs": [
+          "hotel-check-in-polite"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "traveler-insight",
+        "title": "Common follow-ups",
+        "sourceSectionID": "traveler-insight",
+        "primaryPhraseIDs": [
+          "hotel-1"
+        ],
+        "supportPhraseIDs": [
+          "hotel-3",
+          "hotel-checkout"
+        ]
+      },
+      {
+        "stepID": "explore-next",
+        "title": "Next phrases",
+        "sourceSectionID": "explore-next",
+        "primaryPhraseIDs": [
+          "hotel-4"
+        ],
+        "supportPhraseIDs": [
+          "hotel-5",
+          "hotel-6",
+          "hotel-7",
+          "v500-hote-acco-the-door-does-not-lock"
+        ]
+      }
+    ],
+    "primaryPracticePhraseIDs": [
+      "hotel-2",
+      "hotel-check-in-polite",
+      "hotel-1",
+      "hotel-4"
+    ],
+    "secondaryPracticePhraseIDs": [
+      "hotel-3",
+      "hotel-checkout",
+      "hotel-5",
+      "hotel-6",
+      "hotel-7",
+      "v500-hote-acco-the-door-does-not-lock"
+    ],
+    "practiceSourcePageID": "viet-family-hotel-check-in"
+  },
+  "viet-family-repair-understand": {
+    "integrationVersion": "listing-scenario-seed-v1",
+    "scenarioEligible": false,
+    "practiceKind": "phrase_audio_review",
+    "practiceCTALabel": "Practice this phrase",
+    "practiceSurfacePolicy": "saved_or_recent_only",
+    "scenarioSeedID": "scenario-seed-problems-2",
+    "scenarioStepGroups": [
+      {
+        "stepID": "standard-way",
+        "title": "Say this",
+        "sourceSectionID": "standard-way",
+        "primaryPhraseIDs": [
+          "problems-2"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "traveler-insight",
+        "title": "Common follow-ups",
+        "sourceSectionID": "traveler-insight",
+        "primaryPhraseIDs": [
+          "problems-3"
+        ],
+        "supportPhraseIDs": [
+          "repair-1",
+          "repair-2"
+        ]
+      },
+      {
+        "stepID": "explore-next",
+        "title": "Next phrases",
+        "sourceSectionID": "explore-next",
+        "primaryPhraseIDs": [
+          "repair-3"
+        ],
+        "supportPhraseIDs": [
+          "repair-6",
+          "repair-english-help",
+          "v500-unde-repa-please-say-it-slowly"
+        ]
+      }
+    ],
+    "primaryPracticePhraseIDs": [
+      "problems-2",
+      "problems-3",
+      "repair-3"
+    ],
+    "secondaryPracticePhraseIDs": [
+      "repair-1",
+      "repair-2",
+      "repair-6",
+      "repair-english-help",
+      "v500-unde-repa-please-say-it-slowly"
+    ],
+    "practiceSourcePageID": "viet-family-repair-understand"
+  }
+}

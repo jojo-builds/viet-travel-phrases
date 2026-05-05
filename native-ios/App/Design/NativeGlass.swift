@@ -164,6 +164,7 @@ enum AppChromeLayout {
     static let keyboardDismissMorphZIndex: Double = 5
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedTopPadding: CGFloat = 8
+    static let pinnedAudioSpeedScrollClearance: CGFloat = 84
 }
 
 enum ChromeSeparationEdge {
