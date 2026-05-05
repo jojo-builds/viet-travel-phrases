@@ -641,10 +641,20 @@ function buildHeroImageReport(pages) {
       englishTitle: page.englishTitle,
       intent: classifyIntent(page),
       heroImageName: page.heroImageName ?? "",
-      status: page.heroImageName ? "page_specific_or_explicit" : "generic_or_neutral_follow_up",
+      status: heroImageStatus(page.heroImageName),
     }))
     .filter((row) => row.status !== "page_specific_or_explicit")
     .slice(0, 250);
+}
+
+function heroImageStatus(heroImageName) {
+  if (!heroImageName || heroImageName === "HeroVietnamMasthead") {
+    return "generic_image_follow_up";
+  }
+  if (heroImageName === "HeroNeutralMasthead") {
+    return "neutral_fallback_follow_up";
+  }
+  return "page_specific_or_explicit";
 }
 
 function buildPracticeMetadataSamples(pageByID) {

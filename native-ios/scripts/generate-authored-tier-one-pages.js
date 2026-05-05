@@ -2963,7 +2963,7 @@ function cityPageForRecord(pageRecord, context) {
     englishTitle: pageRecord.englishText,
     pronunciation: pageRecord.pronunciation,
     summary: pageRecord.editorialImport?.summary ?? pageRecord.englishText,
-    heroImageName: pageRecord.editorialImport?.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : null),
+    heroImageName: pageRecord.editorialImport?.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : cityFallbackHeroImageName(pageKind)),
     iconName: pageKind === "restaurant" ? "fork.knife"
       : pageKind === "dish" ? "takeoutbag.and.cup.and.straw.fill"
         : pageRecord.kind === "place" ? "mappin.and.ellipse" : "map.fill",
@@ -3003,6 +3003,13 @@ function cityPageForRecord(pageRecord, context) {
     sections: withSectionPresentations(authoredSections),
     examples: [selfOption],
   };
+}
+
+function cityFallbackHeroImageName(pageKind) {
+  if (pageKind === "place" || pageKind === "restaurant" || pageKind === "dish") {
+    return "HeroNeutralMasthead";
+  }
+  return null;
 }
 
 function loadCityLibraryPages() {
