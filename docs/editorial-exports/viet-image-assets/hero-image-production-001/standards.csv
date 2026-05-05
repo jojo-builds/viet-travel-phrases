@@ -1,0 +1,9 @@
+area,standard,why
+Repo asset size,Normalize committed hero PNGs to 853 x 1844 until the native renderer standard changes.,"Matches existing HeroVietnamMasthead, HeroXinChao, HeroBaNaHills, and HeroDragonBridge assets."
+Source master,"Keep or generate a larger master when possible, preferred >= 1600 x 2400.",Lets us recrop if the phone masthead hides the subject.
+Visible crop,The first app viewport shows a 276pt masthead window with a fade; the subject must be recognizable in the upper third.,Standalone images can look good while the phone crop looks weak.
+Focal zone,"Place the primary subject around x=50%, y=25-35%, with no important detail only in the lower half.",HeroMastheadImage scales to fill and clips a shallow horizontal band.
+Copy safety,"No baked-in text, fake signs, logos, watermarks, or UI labels inside generated art.",Text artifacts are common in generated images and break trust.
+Place specificity,Specific landmarks must not use generic Vietnam or Ha Long Bay-style images.,The image must reassure the traveler that they opened the exact place.
+Ownership,Use app-owned generated art or a documented licensed source; never scrape an image into the app.,Keeps the app legally safe and repeatable.
+Proof,Every shipped hero needs source/resource/SQLite wiring proof plus simulator screenshot; phone spot-check for P0.,The asset is only done after the rendered page looks right.

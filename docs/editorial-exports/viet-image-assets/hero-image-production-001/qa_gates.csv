@@ -1,0 +1,11 @@
+gate,severity,rule
+asset_exists,FAIL,targetHeroImageName has an imageset with Contents.json and a PNG.
+metadata_wired,FAIL,"heroImageName is present in source, generated listing JSON, and SQLite when needed."
+crop_proof,FAIL,Simulator screenshot shows the actual masthead crop and page title area.
+phone_spot_check,WARN,P0 assets should be checked on the physical phone before marking DONE.
+recognizable_subject,FAIL,The page-specific landmark/place/food is recognizable in the first viewport.
+no_generic_vietnam,FAIL,Specific places cannot use unrelated generic Vietnam imagery.
+no_text_artifacts,FAIL,"No readable generated text, fake signs, labels, watermarks, or logos."
+no_wrong_place_cues,FAIL,"Do not show Ha Long Bay/karst boats for Da Nang, Hanoi, Hue, Hoi An, or restaurant-specific pages."
+focal_zone,FAIL,Important visual detail is inside the center 70% width and upper third.
+safe_fade,WARN,Bottom fade should blend to page background without making the subject disappear.

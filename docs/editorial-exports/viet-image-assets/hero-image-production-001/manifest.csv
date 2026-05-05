@@ -1,0 +1,10 @@
+key,value
+generatedAt,2026-05-05T15:32:35.702Z
+assetTrackerRows,154
+sourceAudit,docs/content-audits/viet-canonical-editorial-finish-all-001/hero-image-followups.csv
+authoredPages,native-ios/Resources/viet-authored-listing-pages.json
+existingHeroAssets,"HeroBaNaHills.imageset, HeroDragonBridge.imageset, HeroVietnamMasthead.imageset, HeroXinChao.imageset"
+statusCounts,"{""SHIPPED_REVIEW_CROP"":2,""NEEDS_OWNED_ASSET"":151,""HAS_COLLECTION_ASSET_NEEDS_CROP_AUDIT"":1}"
+rendererComponent,native-ios/App/Design/NativeGlass.swift::HeroMastheadImage
+dragonBridgeReceipt,docs/task-results/TASK-VIET-DRAGON-BRIDGE-HERO-ASSET-001.md
+baNaReceipt,docs/task-results/TASK-VIET-BA-NA-HILLS-JOURNEY-PATCH-001.md
