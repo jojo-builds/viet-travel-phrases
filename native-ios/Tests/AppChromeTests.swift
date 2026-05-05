@@ -814,6 +814,44 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
     }
 
+    func testAllVietnamDescriptorUsesCountryHubInsteadOfPhraseFeed() {
+        let vietnam = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("city-guides")))
+        let countryHub = try! XCTUnwrap(vietnam.cityHub)
+
+        XCTAssertEqual(vietnam.title, "All Vietnam")
+        XCTAssertEqual(vietnam.subtitle, "Everyday phrases for cities, food, transport, hotels, and help.")
+        XCTAssertEqual(vietnam.mastheadImageName, "HeroNeutralMasthead")
+        XCTAssertEqual(vietnam.practiceTitle, "Practice Vietnam basics")
+        XCTAssertEqual(vietnam.practiceSubtitle, "Arrival, taxi, food, hotel, and help.")
+        XCTAssertTrue(vietnam.subcategories.isEmpty)
+        XCTAssertTrue(vietnam.exploreShelves.isEmpty)
+
+        XCTAssertEqual(countryHub.situationTitle, "Start here")
+        XCTAssertEqual(
+            countryHub.situations.map(\.title),
+            ["First day in Vietnam", "Airport arrival", "Taxi / Grab", "Food & drink", "Hotel", "Help"]
+        )
+        XCTAssertTrue(countryHub.situations.allSatisfy { $0.targetRoute != nil })
+
+        XCTAssertEqual(countryHub.browseTitle, "City guides")
+        XCTAssertEqual(countryHub.browseGroups.map(\.title), ["Hanoi", "Ho Chi Minh City", "Da Nang", "Hoi An", "Hue"])
+        XCTAssertTrue(countryHub.browseGroups.allSatisfy { $0.targetRoute != nil })
+
+        XCTAssertEqual(countryHub.namesTitle, "Essential phrases")
+        XCTAssertEqual(countryHub.namesToKnowItems.map(\.pageID), [
+            "viet-phrase-polite-1",
+            "viet-phrase-polite-2",
+            "viet-phrase-problems-2",
+            "viet-phrase-repair-english-help",
+            "viet-phrase-bath-1",
+        ])
+        XCTAssertFalse(countryHub.namesToKnowItems.contains { item in
+            item.title.localizedCaseInsensitiveContains("Anăn")
+                || item.title.localizedCaseInsensitiveContains("Biển An Bàng")
+                || item.subtitle.localizedCaseInsensitiveContains("near here")
+        })
+    }
+
     func testSearchStrongMatchesReturnBrowseCollectionsBeforePhraseRows() {
         let hotelCollections = BrowseSearchDestinations.matchingCollections(for: "hotel")
         let hanoiCollections = BrowseSearchDestinations.matchingCollections(for: "hanoi")

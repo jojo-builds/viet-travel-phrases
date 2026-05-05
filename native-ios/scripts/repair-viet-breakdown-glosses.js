@@ -593,6 +593,10 @@ function stripDetail(value) {
 
 function fallbackFromVietnamese(vietnamese) {
   const raw = String(vietnamese ?? "").trim().toLowerCase();
+  if (raw === "bàn") return "table";
+  if (raw === "bạn") return "you";
+  if (raw === "còn trống") return "still available / open";
+  if (raw === "này") return "this";
   if (raw === "có") return "have / yes";
   if (raw === "cô") return "aunt-age woman / respectful female address";
   if (raw === "chưa") return "not yet";

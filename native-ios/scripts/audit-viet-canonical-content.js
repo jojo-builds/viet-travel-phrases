@@ -340,6 +340,8 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
     && sectionKeys.has("related-phrases")
     && !sectionKeys.has("quick-say")
     && !sectionKeys.has("at-glance");
+  const isLikelyReplyPage = page.id.includes("vpe-likely-replies")
+    || sections.some((section) => section.section_key === "at-glance" && /^You may hear$/i.test(String(section.title ?? "")));
   const requiredKeysForPage = isDerivedPlacePhrasePage
     ? new Set(["breakdown", "related-phrases", "good-to-know"])
     : requiredSectionKeys;
@@ -356,7 +358,7 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
       issues.push(issue(`missing_${key}`, "must_fix", `Missing required ${key} section.`));
     }
   }
-  if (!isDerivedPlacePhrasePage && !sectionKeys.has("quick-say") && !sectionKeys.has("standard-way")) {
+  if (!isDerivedPlacePhrasePage && !isLikelyReplyPage && !sectionKeys.has("quick-say") && !sectionKeys.has("standard-way")) {
     issues.push(issue("missing_quick_or_standard", "must_fix", "Missing Quick say or standard-way teaching section."));
   }
   if (normalize(page.english_title) !== normalize(page.phrase_english_text)) {

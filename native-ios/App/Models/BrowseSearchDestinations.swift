@@ -734,6 +734,10 @@ enum BrowseSearchDestinations {
     }
 
     private static func makeCategoryDescriptor(id: String) -> BrowseCollectionDescriptor? {
+        if id == "city-guides" {
+            return makeCountryHubDescriptor()
+        }
+
         let destination = allCategoryDestinations.first { $0.id == id }
         let category = PhraseCatalog.category(withID: id)
 
@@ -768,6 +772,37 @@ enum BrowseSearchDestinations {
             practiceSubtitle: practiceSubtitle(for: title),
             practiceAction: .addStarterPages(starterItems.map(\.pageID)),
             exploreShelves: shelves
+        )
+    }
+
+    private static func makeCountryHubDescriptor() -> BrowseCollectionDescriptor? {
+        let essentialItems = countryEssentialPhraseItems()
+
+        return BrowseCollectionDescriptor(
+            route: .category("city-guides"),
+            title: "All Vietnam",
+            subtitle: "Everyday phrases for cities, food, transport, hotels, and help.",
+            eyebrow: "SPEAKLOCAL VIETNAM",
+            mastheadImageName: "HeroNeutralMasthead",
+            symbolName: "star.fill",
+            tintName: .orange,
+            subcategories: [],
+            starterTitle: "Essential phrases",
+            starterItems: essentialItems,
+            practiceTitle: "Practice Vietnam basics",
+            practiceSubtitle: "Arrival, taxi, food, hotel, and help.",
+            practiceAction: .addStarterPages(essentialItems.map(\.pageID)),
+            exploreShelves: [],
+            cityHub: BrowseCityHub(
+                situationTitle: "Start here",
+                situations: countryStartCards(),
+                namesTitle: "Essential phrases",
+                namesToKnowItems: essentialItems,
+                quickPhrasesTitle: "",
+                quickPhraseItems: [],
+                browseTitle: "City guides",
+                browseGroups: countryCityGuideCards()
+            )
         )
     }
 
@@ -853,6 +888,57 @@ enum BrowseSearchDestinations {
             browseTitle: "Browse \(title)",
             browseGroups: cityBrowseGroups(for: cityID, tintName: city.tintName, groupedItems: groupedItems)
         )
+    }
+
+    private static func countryStartCards() -> [BrowseCollectionSubcategory] {
+        let specs: [(String, String, String, String, AccentTint, BrowseCollectionRoute)] = [
+            ("first-day", "First day in Vietnam", "Arrive, check in, get oriented", "calendar.badge.clock", .orange, .category("first-day")),
+            ("airport", "Airport arrival", "Passport, baggage, SIM, pickup", "airplane.arrival", .red, .category("airport")),
+            ("taxi-grab", "Taxi / Grab", "Pickup, destination, drop-off", "car.fill", .green, .category("getting-around")),
+            ("food-drink", "Food & drink", "Order, ask, pay", "takeoutbag.and.cup.and.straw.fill", .orange, .category("food")),
+            ("hotel", "Hotel", "Check in, room help, checkout", "bell.fill", .red, .category("hotel")),
+            ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+        ]
+
+        return specs.map { id, title, subtitle, symbolName, tint, route in
+            BrowseCollectionSubcategory(
+                id: "country.start.\(id)",
+                title: title,
+                subtitle: subtitle,
+                symbolName: symbolName,
+                tintName: tint,
+                phraseCount: 0,
+                items: [],
+                targetRoute: route
+            )
+        }
+    }
+
+    private static func countryCityGuideCards() -> [BrowseCollectionSubcategory] {
+        cityShortcuts
+            .filter { $0.id != "all-vietnam" }
+            .map { city in
+                BrowseCollectionSubcategory(
+                    id: "country.city.\(city.id)",
+                    title: city.title,
+                    subtitle: citySubtitle(for: city.id),
+                    symbolName: city.symbolName,
+                    tintName: city.tintName,
+                    phraseCount: 0,
+                    items: [],
+                    targetRoute: .city(city.id)
+                )
+            }
+    }
+
+    private static func countryEssentialPhraseItems() -> [BrowseSearchPhraseItem] {
+        phraseItems(for: [
+            PhrasePage.xinChao.id,
+            "viet-thank-you",
+            "viet-family-repair-understand",
+            "viet-family-repair-english-help",
+            "viet-family-bathroom-where",
+        ], limit: 5)
     }
 
     private static func citySituationCards(for cityID: String, tintName: AccentTint) -> [BrowseCollectionSubcategory] {

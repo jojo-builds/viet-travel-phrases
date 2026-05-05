@@ -990,6 +990,10 @@ function main() {
 
   function breakdownMeaning(vietnamese) {
     const raw = String(vietnamese ?? "").trim().toLowerCase();
+    if (raw === "bàn") return "table";
+    if (raw === "bạn") return "you";
+    if (raw === "còn trống") return "still available / open";
+    if (raw === "này") return "this";
     if (raw === "có") return "have / yes";
     if (raw === "cô") return "aunt-age woman / respectful female address";
     if (raw === "chưa") return "not yet";
@@ -1605,6 +1609,10 @@ function main() {
   const seenPlannedMissingAudioText = new Set();
 
   function plannedAudioTarget(targetKind, targetID) {
+    if (targetKind === "breakdown_token") {
+      const sourcePageID = String(targetID ?? "").split(":")[0];
+      return plannedAudioCanonicalPageIDs.has(sourcePageID);
+    }
     return (targetKind === "phrase" && plannedAudioPhraseIDs.has(targetID))
       || (targetKind === "phrase_page" && plannedAudioCanonicalPageIDs.has(targetID))
       || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:city-"))
@@ -2140,17 +2148,36 @@ function main() {
       SELECT DISTINCT page_id
       FROM page_category
       WHERE category_id = 'derived-place-phrases'
+    ),
+    likely_reply_pages AS (
+      SELECT DISTINCT page_id
+      FROM page_category
+      WHERE category_id = 'practice-likely-replies'
     )
     SELECT pc.page_id || ': ' || pc.page_title
     FROM page_contract pc
     LEFT JOIN derived_pages dp ON dp.page_id = pc.page_id
+    LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
     WHERE pc.page_id != 'viet-phrase-polite-1'
       AND (
         (
           dp.page_id IS NULL
+          AND lr.page_id IS NULL
           AND (
             has_at_glance = 0
             OR has_quick_or_standard = 0
+            OR has_breakdown = 0
+            OR has_context_copy = 0
+            OR article_phrase_rows = 0
+            OR breakdown_rows = 0
+            OR has_practice_seed = 0
+            OR has_practice_steps = 0
+          )
+        )
+        OR (
+          lr.page_id IS NOT NULL
+          AND (
+            has_at_glance = 0
             OR has_breakdown = 0
             OR has_context_copy = 0
             OR article_phrase_rows = 0

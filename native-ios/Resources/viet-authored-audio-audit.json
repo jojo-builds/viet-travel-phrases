@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-05T14:20:31.012Z",
+    "generatedAt": "2026-05-05T17:34:42.390Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 750,
     "editorialSupportPageCount": 32,
@@ -19925,24 +19925,8 @@
       "pageID": "viet-family-vpe-likely-replies-bac-si-dang-den",
       "sectionID": "explore-next",
       "kind": "phrase",
-      "audioKey": "audio-authored-chi-nhan-tien-mat-bc6f44a629",
-      "text": "Chỉ nhận tiền mặt",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-bac-si-dang-den",
-      "sectionID": "explore-next",
-      "kind": "phrase",
       "audioKey": "audio-authored-cho-mot-chut-f23bb6c852",
       "text": "Chờ một chút",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-bac-si-dang-den",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-co-phong-khac-6fa11a8728",
-      "text": "Có phòng khác",
       "resolved": false
     },
     {
@@ -19954,43 +19938,11 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-co-thit-heo-4bd81e4ef7",
-      "text": "Có thịt heo",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khong-co-dau-phong-89839ca872",
-      "text": "Không có đậu phộng",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-mon-nay-cay-6faa0700e6",
-      "text": "Món này cay",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-o-ben-trai-ca1634a376",
-      "text": "Ở bên trái",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-tinh-tien-o-quay-6db664b73e",
-      "text": "Tính tiền ở quầy",
+      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-chi-nhan-tien-mat-bc6f44a629",
+      "text": "Chỉ nhận tiền mặt",
       "resolved": false
     },
     {
@@ -20091,10 +20043,26 @@
     },
     {
       "pageID": "viet-family-vpe-likely-replies-co-phong-khac",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-co-phong-khac-6fa11a8728",
+      "text": "Có phòng khác",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-co-phong-khac",
       "sectionID": "explore-next",
       "kind": "phrase",
       "audioKey": "audio-authored-le-tan-se-giup-25299d5d32",
       "text": "Lễ tân sẽ giúp",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-co-thit-heo-4bd81e4ef7",
+      "text": "Có thịt heo",
       "resolved": false
     },
     {
@@ -20111,6 +20079,22 @@
       "kind": "phrase",
       "audioKey": "audio-authored-o-ben-phai-a84855380c",
       "text": "Ở bên phải",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-o-ben-trai-ca1634a376",
+      "text": "Ở bên trái",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-tinh-tien-o-quay-6db664b73e",
+      "text": "Tính tiền ở quầy",
       "resolved": false
     },
     {
@@ -20152,14 +20136,6 @@
       "audioKey": "breakdown-v500-airp-bord-arri-where-is-gate-10-subject-1",
       "text": "Cổng",
       "resolved": true
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cong-doi-roi",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-phong-chua-san-sang-d8cea48a06",
-      "text": "Phòng chưa sẵn sàng",
-      "resolved": false
     },
     {
       "pageID": "viet-family-vpe-likely-replies-di-thang",
@@ -20346,6 +20322,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-vpe-likely-replies-khong-co-dau-phong",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-khong-co-dau-phong-89839ca872",
+      "text": "Không có đậu phộng",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-vpe-likely-replies-khong-xa",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -20392,6 +20376,14 @@
       "audioKey": "breakdown-hotel-5-first",
       "text": "Máy",
       "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mon-nay-cay",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-mon-nay-cay-6faa0700e6",
+      "text": "Món này cay",
+      "resolved": false
     },
     {
       "pageID": "viet-family-vpe-likely-replies-ngay-mai-quay-lai",
@@ -20448,6 +20440,14 @@
       "audioKey": "breakdown-hotel-premium-late-checkout-piece-6",
       "text": "sau",
       "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-phong-chua-san-sang",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-phong-chua-san-sang-d8cea48a06",
+      "text": "Phòng chưa sẵn sàng",
+      "resolved": false
     },
     {
       "pageID": "viet-family-vpe-likely-replies-quet-the-duoc",
@@ -37255,64 +37255,16 @@
       "pageID": "viet-family-vpe-likely-replies-bac-si-dang-den",
       "sectionID": "explore-next",
       "kind": "phrase",
-      "audioKey": "audio-authored-chi-nhan-tien-mat-bc6f44a629",
-      "text": "Chỉ nhận tiền mặt",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-bac-si-dang-den",
-      "sectionID": "explore-next",
-      "kind": "phrase",
       "audioKey": "audio-authored-cho-mot-chut-f23bb6c852",
       "text": "Chờ một chút",
       "resolved": false
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-bac-si-dang-den",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-co-phong-khac-6fa11a8728",
-      "text": "Có phòng khác",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-co-thit-heo-4bd81e4ef7",
-      "text": "Có thịt heo",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khong-co-dau-phong-89839ca872",
-      "text": "Không có đậu phộng",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-mon-nay-cay-6faa0700e6",
-      "text": "Món này cay",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-o-ben-trai-ca1634a376",
-      "text": "Ở bên trái",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-tinh-tien-o-quay-6db664b73e",
-      "text": "Tính tiền ở quầy",
+      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-chi-nhan-tien-mat-bc6f44a629",
+      "text": "Chỉ nhận tiền mặt",
       "resolved": false
     },
     {
@@ -37381,6 +37333,14 @@
     },
     {
       "pageID": "viet-family-vpe-likely-replies-co-phong-khac",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-co-phong-khac-6fa11a8728",
+      "text": "Có phòng khác",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-co-phong-khac",
       "sectionID": "explore-next",
       "kind": "phrase",
       "audioKey": "audio-authored-le-tan-se-giup-25299d5d32",
@@ -37389,10 +37349,34 @@
     },
     {
       "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-co-thit-heo-4bd81e4ef7",
+      "text": "Có thịt heo",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
       "sectionID": "practice-pairs",
       "kind": "phrase",
       "audioKey": "audio-authored-o-ben-phai-a84855380c",
       "text": "Ở bên phải",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-o-ben-trai-ca1634a376",
+      "text": "Ở bên trái",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-tinh-tien-o-quay-6db664b73e",
+      "text": "Tính tiền ở quầy",
       "resolved": false
     },
     {
@@ -37425,14 +37409,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-cong-doi-roi-260081ccec",
       "text": "Cổng đổi rồi",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cong-doi-roi",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-phong-chua-san-sang-d8cea48a06",
-      "text": "Phòng chưa sẵn sàng",
       "resolved": false
     },
     {
@@ -37556,11 +37532,35 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-vpe-likely-replies-khong-co-dau-phong",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-khong-co-dau-phong-89839ca872",
+      "text": "Không có đậu phộng",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mon-nay-cay",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-mon-nay-cay-6faa0700e6",
+      "text": "Món này cay",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-vpe-likely-replies-o-phia-sau",
       "sectionID": "hero",
       "kind": "hero",
       "audioKey": "audio-authored-o-phia-sau-3f53289dab",
       "text": "Ở phía sau",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-phong-chua-san-sang",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-phong-chua-san-sang-d8cea48a06",
+      "text": "Phòng chưa sẵn sàng",
       "resolved": false
     },
     {

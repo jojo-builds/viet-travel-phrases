@@ -176,27 +176,45 @@ private struct BrowseCityHubContent: View {
             )
             .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
 
-            BrowseCollectionStarterSection(
-                title: cityHub.namesTitle,
-                actionTitle: "",
-                items: cityHub.namesToKnowItems,
-                onOpenDetail: onOpenDetail
-            )
+            if isCountryHub {
+                BrowseCityCardGridSection(
+                    title: cityHub.browseTitle,
+                    cards: cityHub.browseGroups,
+                    onOpenCollection: onOpenCollection
+                )
+            }
 
-            BrowseCollectionStarterSection(
-                title: cityHub.quickPhrasesTitle,
-                actionTitle: "",
-                items: cityHub.quickPhraseItems,
-                onOpenDetail: onOpenDetail
-            )
+            if !cityHub.namesToKnowItems.isEmpty {
+                BrowseCollectionStarterSection(
+                    title: cityHub.namesTitle,
+                    actionTitle: "",
+                    items: cityHub.namesToKnowItems,
+                    onOpenDetail: onOpenDetail
+                )
+            }
 
-            BrowseCityCardGridSection(
-                title: cityHub.browseTitle,
-                cards: cityHub.browseGroups,
-                onOpenCollection: onOpenCollection
-            )
+            if !cityHub.quickPhraseItems.isEmpty {
+                BrowseCollectionStarterSection(
+                    title: cityHub.quickPhrasesTitle,
+                    actionTitle: "",
+                    items: cityHub.quickPhraseItems,
+                    onOpenDetail: onOpenDetail
+                )
+            }
+
+            if !isCountryHub {
+                BrowseCityCardGridSection(
+                    title: cityHub.browseTitle,
+                    cards: cityHub.browseGroups,
+                    onOpenCollection: onOpenCollection
+                )
+            }
         }
         .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+    }
+
+    private var isCountryHub: Bool {
+        descriptor.route == .category("city-guides")
     }
 }
 

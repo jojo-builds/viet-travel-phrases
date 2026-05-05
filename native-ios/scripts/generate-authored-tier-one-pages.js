@@ -1012,6 +1012,7 @@ const preferredBreakdownChunks = new Set([
   "cho toi",
   "co ban",
   "co the",
+  "con trong",
   "cua toi",
   "dia chi",
   "dia phuong",
@@ -1118,6 +1119,7 @@ const breakdownMeanings = new Map(Object.entries({
   "toi muon": "I want",
   "toi tra": "I pay",
   "ban": "you",
+  "con trong": "still available / open",
   "co": "have / yes",
   "co the": "can",
   "co ban": "do you sell",
@@ -1250,6 +1252,11 @@ const breakdownMeanings = new Map(Object.entries({
 }));
 
 const exactBreakdownPieces = new Map(Object.entries({
+  "ban nay con trong": [
+    { vietnamese: "Bàn", english: "table" },
+    { vietnamese: "này", english: "this" },
+    { vietnamese: "còn trống", english: "still available / open" },
+  ],
   "co giay ve sinh khong": [
     { vietnamese: "Có ... không?", english: "do you have / is there?" },
     { vietnamese: "giấy vệ sinh", english: "toilet paper" },
@@ -1276,6 +1283,20 @@ const exactBreakdownPieces = new Map(Object.entries({
   ],
 }));
 
+const exactRawBreakdownMeanings = new Map(Object.entries({
+  "bàn": "table",
+  "bạn": "you",
+  "còn trống": "still available / open",
+  "này": "this",
+  "có": "have / yes",
+  "cô": "aunt-age woman / respectful female address",
+  "chưa": "not yet",
+  "chùa": "pagoda",
+  "vé": "ticket",
+  "vệ": "hygiene",
+  "giấy vệ sinh": "toilet paper",
+}));
+
 function fallbackBreakdownMeaning(vietnamese) {
   if (/^\d+$/.test(normalizedVietnameseKey(vietnamese))) return vietnamese;
   if (/^[A-ZĐ][\p{L}\p{M}'-]+(?:\s+[A-ZĐ][\p{L}\p{M}'-]+)*$/u.test(vietnamese)) {
@@ -1285,10 +1306,10 @@ function fallbackBreakdownMeaning(vietnamese) {
 }
 
 function breakdownMeaning(vietnamese) {
-  const exact = vietnamese.normalize("NFC").toLowerCase();
+  const exact = vietnamese.normalize("NFC").trim().toLowerCase();
   const normalized = normalizedVietnameseKey(vietnamese);
   if (/^\d+$/.test(normalized)) return vietnamese;
-  return glossary.get(exact) ?? breakdownMeanings.get(normalized) ?? fallbackBreakdownMeaning(vietnamese);
+  return exactRawBreakdownMeanings.get(exact) ?? glossary.get(exact) ?? breakdownMeanings.get(normalized) ?? fallbackBreakdownMeaning(vietnamese);
 }
 
 function chunkVietnamesePhrase(phrase) {
@@ -3538,6 +3559,22 @@ function authoredPageProfile(page) {
   return "phrase";
 }
 
+function phraseRoleForPage(page, profile) {
+  if (profile === "derived-place-phrase") return "derived_place_question";
+  if (isNameBasedProfile(profile)) return "name_only";
+
+  const phraseID = String(page.phraseID || page.familyID || page.id || "");
+  const summary = String(page.summary || "");
+  if (
+    phraseID.startsWith("vpe-likely-replies-")
+    || /something you may hear back/i.test(summary)
+  ) {
+    return "traveler_may_hear";
+  }
+
+  return "traveler_says";
+}
+
 function isNameBasedProfile(profile) {
   return ["place", "restaurant", "dish", "street"].includes(profile);
 }
@@ -3699,6 +3736,16 @@ function cleanTravelerSectionTitle(title, page) {
     if (sectionIDTitle) return sectionIDTitle;
   }
   const sectionID = page.__currentSectionID;
+  if (page.__phraseRole === "traveler_may_hear") {
+    const mayHearTitles = {
+      "at-glance": "You may hear",
+      "practice-pairs": isTableAvailabilityReplyPage(page) ? "Say next" : "Related replies",
+      "nearby-phrases": "Related phrases",
+      "explore-next": "Related phrases",
+      "good-to-know": "Good to know",
+    };
+    if (mayHearTitles[sectionID]) return mayHearTitles[sectionID];
+  }
   const genericByID = {
     "at-glance": "Meaning",
     "quick-say": "Say this",
@@ -3803,6 +3850,40 @@ function curatedNameSectionPhrases(page, section, profile) {
   return existing;
 }
 
+function curatedSectionPhrases(page, section, profile, phraseRole = "traveler_says") {
+  if (phraseRole === "traveler_may_hear") {
+    if (isTableAvailabilityReplyPage(page)) {
+      if (section.id === "practice-pairs" || section.id === "nearby-phrases") {
+        return tableAvailabilityNextPhrases();
+      }
+      if (section.id === "explore-next") {
+        return [];
+      }
+    }
+    return withoutUnrelatedMayHearOptions(section.phrases || []);
+  }
+  return curatedNameSectionPhrases(page, section, profile);
+}
+
+function curatedSectionBreakdown(page, section) {
+  if (section.id === "breakdown" && isTableAvailabilityReplyPage(page)) {
+    return [
+      { id: "ban-nay-con-trong-table", vietnamese: "Bàn", english: "table", audioKey: authoredBreakdownAudioKey("Bàn") },
+      { id: "ban-nay-con-trong-this", vietnamese: "này", english: "this", audioKey: authoredBreakdownAudioKey("này") },
+      { id: "ban-nay-con-trong-available", vietnamese: "còn trống", english: "still available / open", audioKey: authoredBreakdownAudioKey("còn trống") },
+      { id: "ban-nay-con-trong-full", vietnamese: "Bàn này còn trống", english: "This table is available", audioKey: authoredPhraseAudioKey("Bàn này còn trống", null) },
+    ];
+  }
+  return section.breakdown || [];
+}
+
+function withoutUnrelatedMayHearOptions(options) {
+  return (options || []).filter((option) => {
+    const text = normalizeAudioText(`${option.vietnamese ?? ""} ${option.english ?? ""}`);
+    return !/(doctor|bac si|room|phong|pork|thit heo|peanuts|dau phong|spicy|cay|cash only|chi nhan tien mat)/i.test(text);
+  });
+}
+
 function selfPhraseOptionForPage(page) {
   if (page?.phraseID && phraseByID.has(page.phraseID)) {
     return catalogPhraseOption(page.phraseID, null, page.cityMetadata?.placeKind === "street" ? "blue" : null);
@@ -3822,6 +3903,9 @@ function selfPhraseOptionForPage(page) {
 function phraseContextSentence(page) {
   const title = page.title || "";
   const english = page.englishTitle || page.summary || "";
+  if (normalizedVietnameseKey(title) === "toi khong hieu") {
+    return "A simple recovery phrase for when Vietnamese is too fast or unclear.";
+  }
   const summary = cleanTravelerBody(page.summary || "");
   if (
     summary
@@ -3836,9 +3920,47 @@ function phraseContextSentence(page) {
   return summary || english || "";
 }
 
-function phraseSectionBody(page, section) {
+function isTableAvailabilityReplyPage(page) {
+  return normalizedVietnameseKey(page.title || "") === "ban nay con trong";
+}
+
+function mayHearContextSentence(page) {
+  if (isTableAvailabilityReplyPage(page)) {
+    return "Staff may use this when a table is open.";
+  }
+  return "Listen for this as a short answer.";
+}
+
+function tableAvailabilityNextPhrases() {
+  return compactPhraseOptions([
+    phraseOptionByID("food-need-table", "green"),
+    phraseOptionByID("v900-food-drin-is-there-a-wait-for-a-table", "green"),
+    phraseOptionByID("food-menu", "green"),
+    phraseOptionByID("coffee-7", "green"),
+  ], 4);
+}
+
+function phraseSectionBody(page, section, phraseRole = "traveler_says") {
   const title = page.title || "";
   const english = page.englishTitle || page.summary || "";
+  if (phraseRole === "traveler_may_hear") {
+    switch (section.id) {
+      case "at-glance":
+        return mayHearContextSentence(page);
+      case "good-to-know":
+        if (isTableAvailabilityReplyPage(page)) {
+          return "To ask first, use the question form: “Bàn này còn trống không?”";
+        }
+        return cleanTravelerBody(section.body);
+      case "breakdown":
+      case "practice-pairs":
+      case "nearby-phrases":
+      case "explore-next":
+        return "";
+      default:
+        return cleanTravelerBody(section.body);
+    }
+  }
   switch (section.id) {
     case "at-glance":
       return phraseContextSentence(page);
@@ -3866,7 +3988,7 @@ function phraseSectionBody(page, section) {
   }
 }
 
-function shouldKeepSectionForProfile(section, profile) {
+function shouldKeepSectionForProfile(section, profile, page = null, phraseRole = "traveler_says") {
   const hasRows = (section.phrases || []).length > 0;
   const hasBreakdown = (section.breakdown || []).length > 0;
   if (profile === "derived-place-phrase") {
@@ -3883,6 +4005,24 @@ function shouldKeepSectionForProfile(section, profile) {
       dish: new Set(["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
     };
     return (keepByProfile[profile] || keepByProfile.place).has(section.id);
+  }
+
+  if (phraseRole === "traveler_may_hear") {
+    const keepIDs = new Set([
+      "at-glance",
+      "breakdown",
+      "practice-pairs",
+      "nearby-phrases",
+      "explore-next",
+      "good-to-know",
+    ]);
+    if (!keepIDs.has(section.id)) return false;
+    if (section.id === "breakdown") return hasBreakdown;
+    if (["practice-pairs", "nearby-phrases", "explore-next"].includes(section.id)) {
+      if (page && isTableAvailabilityReplyPage(page) && section.id === "explore-next") return false;
+      return hasRows || (page && isTableAvailabilityReplyPage(page) && section.id === "practice-pairs");
+    }
+    return true;
   }
 
   const keepIDs = new Set([
@@ -4129,16 +4269,17 @@ function practiceIntegrationMetadata(page, sections, profile) {
 
 function sanitizeAuthoredPage(page) {
   const profile = authoredPageProfile(page);
-  const sections = (page.sections || []).filter((section) => shouldKeepSectionForProfile(section, profile));
+  const phraseRole = phraseRoleForPage(page, profile);
+  const sections = (page.sections || []).filter((section) => shouldKeepSectionForProfile(section, profile, page, phraseRole));
   const sanitizedSections = normalizeTravelerSections(page, sections.map((section) => ({
     ...section,
-    title: cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id }),
-    body: isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section)),
-    phrases: curatedNameSectionPhrases(page, section, profile).map((phrase) => ({
+    title: cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
+    body: isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
+    phrases: curatedSectionPhrases(page, section, profile, phraseRole).map((phrase) => ({
       ...phrase,
       english: cleanTravelerBody(phrase.english),
     })),
-    breakdown: (section.breakdown || []).map((token) => ({
+    breakdown: curatedSectionBreakdown(page, section).map((token) => ({
       ...token,
       english: cleanTravelerBreakdownGloss(token.english, page),
     })),
@@ -4150,6 +4291,8 @@ function sanitizeAuthoredPage(page) {
       ? cleanFinalPunctuation(page.englishTitle || page.summary || "")
       : isNameBasedProfile(profile)
       ? cleanFinalPunctuation(adultNameAboutBody(page, profile))
+      : phraseRole === "traveler_may_hear"
+      ? cleanFinalPunctuation(page.englishTitle || page.summary || "")
       : cleanFinalPunctuation(phraseContextSentence(page)),
     practiceMetadata: practiceIntegrationMetadata(page, sanitizedSections, profile),
     sections: sanitizedSections,
