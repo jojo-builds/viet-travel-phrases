@@ -225,6 +225,23 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(for: nil, currentRoute: currentRoute))
     }
 
+    func testPinnedAudioSpeedChromeStateIgnoresFrameDriftWithinSameVisibilityBand() {
+        let currentRoute = AppRoute.detailPage("viet-phrase-polite-1")
+        let justOffscreenPlayer = PhraseAudioPlayerAnchor(
+            route: currentRoute,
+            frame: CGRect(x: 40, y: -40, width: 320, height: 108)
+        )
+        let fartherOffscreenPlayer = PhraseAudioPlayerAnchor(
+            route: currentRoute,
+            frame: CGRect(x: 40, y: -240, width: 320, height: 108)
+        )
+
+        XCTAssertEqual(
+            PinnedAudioSpeedChromePolicy.state(for: [justOffscreenPlayer], currentRoute: currentRoute),
+            PinnedAudioSpeedChromePolicy.state(for: [fartherOffscreenPlayer], currentRoute: currentRoute)
+        )
+    }
+
     func testSQLiteCanonicalXinChaoRouteUsesDesignedRootArticle() {
         XCTAssertTrue(AppShellView.shouldRenderDesignedXinChaoPage(for: PhrasePage.xinChao.id))
         XCTAssertTrue(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-polite-1"))

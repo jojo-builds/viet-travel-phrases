@@ -1027,16 +1027,69 @@ private struct CulturalNote: View {
 struct ExploreCatalogSection: View {
     let currentPageID: String
     let onOpenDetail: (String) -> Void
+    private let sections: [PhraseCatalogSection]
 
-    private var sections: [PhraseCatalogSection] {
-        Self.sections(forPageID: currentPageID)
+    init(currentPageID: String, onOpenDetail: @escaping (String) -> Void) {
+        self.currentPageID = currentPageID
+        self.onOpenDetail = onOpenDetail
+        self.sections = Self.sections(forPageID: currentPageID)
     }
 
     static func sections(forPageID pageID: String) -> [PhraseCatalogSection] {
-        PhraseCatalog.browseSections(
-            defaultCategoryID: PhraseCatalog.defaultCategoryID(forPageID: pageID),
-            excludingPageID: pageID
+        let currentCategoryIDs = PhraseCatalog.categoryIDs(forPageID: pageID)
+        let semanticCategoryIDs = currentCategoryIDs.filter(Self.isRenderedExploreCategory)
+        let preferredCategoryIDs = semanticCategoryIDs
+            .sorted { lhs, rhs in
+                let lhsRank = Self.categoryDisplayRank(lhs)
+                let rhsRank = Self.categoryDisplayRank(rhs)
+
+                if lhsRank != rhsRank {
+                    return lhsRank < rhsRank
+                }
+
+                return lhs < rhs
+            }
+            .prefix(Self.maxRenderedSections)
+
+        let preferredSections = Array(preferredCategoryIDs).compactMap { categoryID in
+            Self.section(
+                for: categoryID,
+                currentPageID: pageID,
+                currentCategoryIDs: Set(semanticCategoryIDs)
+            )
+        }
+
+        if !preferredSections.isEmpty {
+            return preferredSections
+        }
+
+        return fallbackSection(forPageID: pageID)
+            .map { [$0] }
+            ?? []
+    }
+
+    private static func section(
+        for categoryID: String,
+        currentPageID: String,
+        currentCategoryIDs: Set<String>
+    ) -> PhraseCatalogSection? {
+        guard let category = PhraseCatalog.category(withID: categoryID)
+            ?? fallbackExploreCategory(for: categoryID)
+        else {
+            return nil
+        }
+
+        let items = rankedItems(
+            for: categoryID,
+            currentPageID: currentPageID,
+            currentCategoryIDs: currentCategoryIDs
         )
+
+        guard !items.isEmpty else {
+            return nil
+        }
+
+        return PhraseCatalogSection(category: category, items: items)
     }
 
     var body: some View {
@@ -1053,6 +1106,109 @@ struct ExploreCatalogSection: View {
                 }
             }
         }
+    }
+
+    private static let maxRenderedSections = 2
+    private static let maxRenderedItemsPerSection = 6
+
+    private static let suppressedExploreCategoryIDs: Set<String> = [
+        "all",
+        "beginner",
+        "premium",
+        "city-guides",
+        "city-phrases",
+        "city-page-kind-phrase",
+        "city-page-kind-place",
+        "derived-place-phrases",
+        "actual-landmarks",
+        "editorial-pilot",
+        "journey-page",
+    ]
+
+    private static let cityCategoryIDs: Set<String> = [
+        "danang",
+        "hanoi",
+        "hcmc",
+        "hoian",
+        "hue",
+    ]
+
+    private static let fallbackExploreCategories: [String: PhraseCategory] = [
+        "danang": PhraseCategory(id: "danang", title: "Da Nang", symbolName: "building.2.fill", tintName: .teal),
+        "hanoi": PhraseCategory(id: "hanoi", title: "Hanoi", symbolName: "building.2.fill", tintName: .red),
+        "hcmc": PhraseCategory(id: "hcmc", title: "Ho Chi Minh City", symbolName: "building.2.fill", tintName: .blue),
+        "hoian": PhraseCategory(id: "hoian", title: "Hoi An", symbolName: "building.2.fill", tintName: .orange),
+        "hue": PhraseCategory(id: "hue", title: "Hue", symbolName: "building.2.fill", tintName: .purple),
+        "arrivals-routes": PhraseCategory(id: "arrivals-routes", title: "Arrivals and routes", symbolName: "car.fill", tintName: .blue),
+        "landmarks-attractions": PhraseCategory(id: "landmarks-attractions", title: "Landmarks and attractions", symbolName: "signpost.right.fill", tintName: .teal),
+        "neighborhoods-streets": PhraseCategory(id: "neighborhoods-streets", title: "Neighborhoods and streets", symbolName: "map.fill", tintName: .teal),
+        "food-coffee": PhraseCategory(id: "food-coffee", title: "Food and coffee", symbolName: "fork.knife", tintName: .green),
+        "shopping-markets": PhraseCategory(id: "shopping-markets", title: "Shopping and markets", symbolName: "bag.fill", tintName: .orange),
+        "practical-help-near-places": PhraseCategory(id: "practical-help-near-places", title: "Nearby help", symbolName: "cross.case.fill", tintName: .blue),
+    ]
+
+    private static func isRenderedExploreCategory(_ categoryID: String) -> Bool {
+        if suppressedExploreCategoryIDs.contains(categoryID) {
+            return false
+        }
+
+        if categoryID.hasPrefix("difficulty-")
+            || categoryID.hasPrefix("practice-")
+            || categoryID.hasPrefix("place-kind-")
+            || categoryID.hasPrefix("ba-na-hills-") {
+            return false
+        }
+
+        return true
+    }
+
+    private static func fallbackExploreCategory(for categoryID: String) -> PhraseCategory? {
+        fallbackExploreCategories[categoryID]
+    }
+
+    private static func fallbackSection(forPageID pageID: String) -> PhraseCatalogSection? {
+        let defaultCategoryID = PhraseCatalog.defaultCategoryID(forPageID: pageID)
+        let fallbackCategoryID = PhraseCatalog.category(withID: defaultCategoryID) == nil
+            ? "greetings"
+            : defaultCategoryID
+
+        return section(
+            for: fallbackCategoryID,
+            currentPageID: pageID,
+            currentCategoryIDs: []
+        )
+    }
+
+    private static func categoryDisplayRank(_ categoryID: String) -> Int {
+        cityCategoryIDs.contains(categoryID) ? 20 : 0
+    }
+
+    private static func rankedItems(
+        for categoryID: String,
+        currentPageID: String,
+        currentCategoryIDs: Set<String>
+    ) -> [PhraseCatalogItem] {
+        PhraseCatalog.items(selectedCategoryID: categoryID, excludingPageID: currentPageID)
+            .enumerated()
+            .sorted { lhs, rhs in
+                let lhsScore = relevanceScore(for: lhs.element, currentCategoryIDs: currentCategoryIDs)
+                let rhsScore = relevanceScore(for: rhs.element, currentCategoryIDs: currentCategoryIDs)
+
+                if lhsScore != rhsScore {
+                    return lhsScore > rhsScore
+                }
+
+                return lhs.offset < rhs.offset
+            }
+            .prefix(maxRenderedItemsPerSection)
+            .map(\.element)
+    }
+
+    private static func relevanceScore(
+        for item: PhraseCatalogItem,
+        currentCategoryIDs: Set<String>
+    ) -> Int {
+        Set(item.categoryIDs).intersection(currentCategoryIDs).count
     }
 }
 

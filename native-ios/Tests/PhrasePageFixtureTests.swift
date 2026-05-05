@@ -689,6 +689,25 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertFalse(localSections.flatMap(\.items).contains { $0.pageID == "viet-hello-anh" })
     }
 
+    func testRenderedExploreCatalogIsCappedAndRelevantForJourneyPages() throws {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        _ = try VietSQLiteLanguagePackRepository.bundled()
+
+        let sections = ExploreCatalogSection.sections(forPageID: "viet-phrase-city-danang-place-ba-na-hills")
+
+        XCTAssertFalse(sections.isEmpty)
+        XCTAssertLessThanOrEqual(sections.count, 2)
+        XCTAssertFalse(sections.contains { $0.category.id == "city-guides" })
+        XCTAssertTrue(sections.allSatisfy { $0.items.count <= 6 })
+        let unrelatedItems = sections.flatMap(\.items).filter { item in
+            !item.categoryIDs.contains("danang") && !item.categoryIDs.contains("landmarks-attractions")
+        }
+        XCTAssertTrue(unrelatedItems.isEmpty, unrelatedItems.map(\.pageID).joined(separator: "\n"))
+        XCTAssertTrue(sections.flatMap(\.items).allSatisfy { item in
+            item.categoryIDs.contains("danang") || item.categoryIDs.contains("landmarks-attractions")
+        })
+    }
+
     func testExploreCatalogItemsCanFilterByCategoryAndExcludeCurrentPage() {
         let localItems = PhraseCatalog.items(
             selectedCategoryID: "local-greetings",

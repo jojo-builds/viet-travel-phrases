@@ -355,6 +355,11 @@ enum PhraseCatalog {
         return cache.defaultCategoryIDByPageID[canonicalPageID] ?? "greetings"
     }
 
+    static func categoryIDs(forPageID pageID: String) -> [String] {
+        let canonicalPageID = canonicalPageID(forOpenablePageID: pageID) ?? pageID
+        return cache.itemsByPageID[canonicalPageID]?.categoryIDs ?? []
+    }
+
     static func browseCategories(defaultCategoryID: String) -> [PhraseCategory] {
         let defaultCategory = category(withID: defaultCategoryID)
         let remainingCategories = cache.categories.filter { $0.id != defaultCategory?.id }

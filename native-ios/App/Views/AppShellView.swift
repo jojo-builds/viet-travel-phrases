@@ -9,7 +9,7 @@ struct AppShellView: View {
     @State private var didApplyLaunchSearchFocus = false
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeMode: PracticeMode?
-    @State private var phraseAudioPlayerAnchors: [PhraseAudioPlayerAnchor] = []
+    @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
     @StateObject private var intentStore = LocalUserIntentStore()
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
@@ -178,7 +178,14 @@ struct AppShellView: View {
             .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: navigation.isSearchPresented)
             .animation(.snappy(duration: 0.24), value: navigation.forwardStack)
             .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
-                phraseAudioPlayerAnchors = anchors
+                let nextState = PinnedAudioSpeedChromePolicy.state(
+                    for: anchors,
+                    currentRoute: navigation.currentRoute
+                )
+
+                if nextState != pinnedAudioSpeedChromeState {
+                    pinnedAudioSpeedChromeState = nextState
+                }
             }
             .overlay(alignment: .leading) {
                 backSwipeCaptureEdge(width: pageWidth)
@@ -500,10 +507,8 @@ struct AppShellView: View {
             return false
         }
 
-        return PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(
-            for: phraseAudioPlayerAnchors.first { $0.route == navigation.currentRoute },
-            currentRoute: navigation.currentRoute
-        )
+        return pinnedAudioSpeedChromeState.route == navigation.currentRoute
+            && pinnedAudioSpeedChromeState.isVisible
     }
 
     private var bottomChromePadding: CGFloat {

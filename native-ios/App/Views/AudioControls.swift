@@ -272,7 +272,27 @@ struct PhraseAudioPlayerAnchorPreferenceKey: PreferenceKey {
     }
 }
 
+struct PinnedAudioSpeedChromeState: Equatable {
+    let route: AppRoute?
+    let isVisible: Bool
+
+    static let hidden = PinnedAudioSpeedChromeState(route: nil, isVisible: false)
+}
+
 enum PinnedAudioSpeedChromePolicy {
+    static func state(
+        for anchors: [PhraseAudioPlayerAnchor],
+        currentRoute: AppRoute
+    ) -> PinnedAudioSpeedChromeState {
+        let anchor = anchors.first { $0.route == currentRoute }
+        let isVisible = shouldShowPinnedControl(for: anchor, currentRoute: currentRoute)
+
+        return PinnedAudioSpeedChromeState(
+            route: isVisible ? currentRoute : nil,
+            isVisible: isVisible
+        )
+    }
+
     static func shouldShowPinnedControl(
         for anchor: PhraseAudioPlayerAnchor?,
         currentRoute: AppRoute
