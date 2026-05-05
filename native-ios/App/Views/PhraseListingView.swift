@@ -7,6 +7,7 @@ enum PhraseArticleInitialScrollTarget: String {
 
 struct PhraseListingView: View {
     let page: PhrasePage
+    let chromeRoute: AppRoute
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
     let chromeNamespace: Namespace.ID?
@@ -22,6 +23,7 @@ struct PhraseListingView: View {
 
     init(
         page: PhrasePage,
+        chromeRoute: AppRoute = .phrasePage,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
         chromeNamespace: Namespace.ID? = nil,
@@ -36,6 +38,7 @@ struct PhraseListingView: View {
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
+        self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.chromeNamespace = chromeNamespace
@@ -53,7 +56,7 @@ struct PhraseListingView: View {
     var body: some View {
         PhraseArticleTemplateView(
             page: page.articleTemplate,
-            chromeRoute: .phrasePage,
+            chromeRoute: chromeRoute,
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
             chromeNamespace: chromeNamespace,
@@ -126,7 +129,7 @@ struct PhraseArticleTemplateView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(spacing: 0) {
+                    VStack(spacing: 0) {
                         hero
                             .id(Self.scrollTopID)
 
@@ -217,7 +220,8 @@ struct PhraseArticleTemplateView: View {
                 PlaybackDockView(
                     audioKey: page.playbackAudioKey,
                     isSaved: isSaved,
-                    onToggleSaved: onToggleSaved
+                    onToggleSaved: onToggleSaved,
+                    visibilityRoute: chromeRoute
                 )
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
 
@@ -886,6 +890,7 @@ enum BreakdownLayout {
 private struct BreakdownTokenCard: View {
     let token: BreakdownToken
     let width: CGFloat
+    @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
 
     private var resolvedAudioKey: String? {
         token.playbackAudioKey
@@ -895,7 +900,7 @@ private struct BreakdownTokenCard: View {
     var body: some View {
         if let resolvedAudioKey {
             Button {
-                AudioPlaybackService.shared.play(audioKey: resolvedAudioKey)
+                AudioPlaybackService.shared.play(audioKey: resolvedAudioKey, rate: selectedRate)
             } label: {
                 cardContent
                     .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
@@ -910,6 +915,10 @@ private struct BreakdownTokenCard: View {
                 .accessibilityElement(children: .combine)
                 .accessibilityLabel("\(token.vietnamese), audio not available yet")
         }
+    }
+
+    private var selectedRate: Double {
+        AudioPlaybackPreference.rate(for: selectedSpeed)
     }
 
     private var cardContent: some View {

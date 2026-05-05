@@ -5,6 +5,7 @@ struct AudioSpeakerButton: View {
     var size: CGFloat = 48
     var audioKey: String? = nil
     var accessibilityIdentifier: String? = nil
+    @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
 
     static let minimumHitSize: CGFloat = 44
 
@@ -46,7 +47,7 @@ struct AudioSpeakerButton: View {
     private var button: some View {
         Button {
             if let resolvedAudioKey {
-                AudioPlaybackService.shared.play(audioKey: resolvedAudioKey)
+                AudioPlaybackService.shared.play(audioKey: resolvedAudioKey, rate: selectedRate)
             }
         } label: {
             Image(systemName: "speaker.wave.2.fill")
@@ -60,15 +61,19 @@ struct AudioSpeakerButton: View {
         .buttonStyle(.plain)
         .accessibilityLabel("Play audio")
     }
+
+    private var selectedRate: Double {
+        AudioPlaybackPreference.rate(for: selectedSpeed)
+    }
 }
 
 struct PlaybackDockView: View {
     var audioKey: String? = nil
     var isSaved = false
     var onToggleSaved: (() -> Void)? = nil
+    var visibilityRoute: AppRoute? = nil
 
     @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
-    private let speeds = AudioPlaybackPreference.speeds
 
     var body: some View {
         ZStack {
@@ -77,7 +82,7 @@ struct PlaybackDockView: View {
 
                 Spacer(minLength: 88)
 
-                speedSegmentedControl
+                AudioSpeedSegmentedControl()
             }
             .padding(.leading, 16)
             .padding(.trailing, 12)
@@ -102,6 +107,7 @@ struct PlaybackDockView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 108)
+        .background(playerVisibilityReporter)
     }
 
     private var favoriteButton: some View {
@@ -171,7 +177,31 @@ struct PlaybackDockView: View {
         AudioPlaybackPreference.rate(for: selectedSpeed)
     }
 
-    private var speedSegmentedControl: some View {
+    @ViewBuilder
+    private var playerVisibilityReporter: some View {
+        if let visibilityRoute {
+            GeometryReader { proxy in
+                Color.clear.preference(
+                    key: PhraseAudioPlayerAnchorPreferenceKey.self,
+                    value: [
+                        PhraseAudioPlayerAnchor(
+                            route: visibilityRoute,
+                            frame: proxy.frame(in: .global)
+                        )
+                    ]
+                )
+            }
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+struct AudioSpeedSegmentedControl: View {
+    @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
+    private let speeds = AudioPlaybackPreference.speeds
+
+    var body: some View {
         let currentSpeed = AudioPlaybackPreference.normalizedSpeed(selectedSpeed)
 
         return HStack(spacing: 0) {
@@ -216,6 +246,42 @@ struct PlaybackDockView: View {
                 .stroke(.white.opacity(0.66), lineWidth: 1)
         }
         .nativeGlass(cornerRadius: 26, interactive: true)
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Audio speed")
+        .accessibilityIdentifier("AudioSpeedControl")
+    }
+}
+
+struct PinnedAudioSpeedControl: View {
+    var body: some View {
+        AudioSpeedSegmentedControl()
+            .accessibilityIdentifier("PinnedAudioSpeedControl")
+    }
+}
+
+struct PhraseAudioPlayerAnchor: Equatable {
+    let route: AppRoute
+    let frame: CGRect
+}
+
+struct PhraseAudioPlayerAnchorPreferenceKey: PreferenceKey {
+    static var defaultValue: [PhraseAudioPlayerAnchor] = []
+
+    static func reduce(value: inout [PhraseAudioPlayerAnchor], nextValue: () -> [PhraseAudioPlayerAnchor]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+enum PinnedAudioSpeedChromePolicy {
+    static func shouldShowPinnedControl(
+        for anchor: PhraseAudioPlayerAnchor?,
+        currentRoute: AppRoute
+    ) -> Bool {
+        guard let anchor, anchor.route == currentRoute else {
+            return false
+        }
+
+        return anchor.frame.maxY <= AppChromeLayout.pinnedAudioSpeedRevealY
     }
 }
 

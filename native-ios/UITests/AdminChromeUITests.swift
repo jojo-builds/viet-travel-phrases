@@ -63,6 +63,28 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Search"].waitForExistence(timeout: 2))
     }
 
+    func testDetailPagePinsAudioSpeedControlAfterPlayerScrollsOffscreen() {
+        let app = launchApp(arguments: ["--detail-page", "viet-phrase-polite-1"])
+        XCTAssertTrue(app.staticTexts["Xin chào"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists)
+        capturePinnedAudioProofIfRequested(app: app, name: "player-visible.png")
+
+        for _ in 0..<4 where !app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists {
+            app.swipeUp()
+        }
+
+        let pinnedSpeedControl = app.descendants(matching: .any)["PinnedAudioSpeedControl"]
+        XCTAssertTrue(
+            pinnedSpeedControl.waitForExistence(timeout: 2),
+            "Pinned speed control should appear once the main player scrolls above the top chrome."
+        )
+        XCTAssertTrue(app.buttons["Go back"].exists, "Back button should remain in the top admin area.")
+        XCTAssertTrue(app.descendants(matching: .any)["0.5x"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["0.75x"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["1.0x"].exists)
+        capturePinnedAudioProofIfRequested(app: app, name: "pinned-speed-control.png")
+    }
+
     func testBottomChromeControlsWinEdgeBiasedTapsOverDenseDetailContent() {
         verifyDockTapFromDenseDetail("Browse", point: .center) { app in
             XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
@@ -266,6 +288,23 @@ final class AdminChromeUITests: XCTestCase {
             let directoryURL = proofDirectoryURL(
                 environmentPath: environmentPath,
                 taskID: "TASK-NATIVE-SEARCH-CHROME-MORPH-001"
+            )
+        else {
+            return
+        }
+
+        try? FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: directoryURL.appendingPathComponent(name))
+    }
+
+    private func capturePinnedAudioProofIfRequested(app: XCUIApplication, name: String) {
+        let sentinelPath = "/tmp/speaklocal-pinned-audio-speed-proof-enabled"
+        let environmentPath = ProcessInfo.processInfo.environment["SPEAKLOCAL_PINNED_AUDIO_SPEED_PROOF_DIR"]
+        guard
+            FileManager.default.fileExists(atPath: sentinelPath) || environmentPath?.isEmpty == false,
+            let directoryURL = proofDirectoryURL(
+                environmentPath: environmentPath,
+                taskID: "TASK-NATIVE-PINNED-AUDIO-SPEED-001"
             )
         else {
             return

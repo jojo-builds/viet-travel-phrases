@@ -157,6 +157,8 @@ enum AppChromeLayout {
     static let searchOriginMorphZIndex: Double = 0
     static let searchMorphZIndex: Double = 3
     static let keyboardDismissMorphZIndex: Double = 4
+    static let pinnedAudioSpeedRevealY: CGFloat = 96
+    static let pinnedAudioSpeedTopPadding: CGFloat = 8
 }
 
 enum ChromeSeparationEdge {

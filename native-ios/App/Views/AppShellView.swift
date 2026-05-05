@@ -9,6 +9,7 @@ struct AppShellView: View {
     @State private var didApplyLaunchSearchFocus = false
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeMode: PracticeMode?
+    @State private var phraseAudioPlayerAnchors: [PhraseAudioPlayerAnchor] = []
     @StateObject private var intentStore = LocalUserIntentStore()
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
@@ -176,6 +177,9 @@ struct AppShellView: View {
             .animation(.snappy(duration: 0.34), value: navigation.browseCollectionPath)
             .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: navigation.isSearchPresented)
             .animation(.snappy(duration: 0.24), value: navigation.forwardStack)
+            .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
+                phraseAudioPlayerAnchors = anchors
+            }
             .overlay(alignment: .leading) {
                 backSwipeCaptureEdge(width: pageWidth)
             }
@@ -195,6 +199,14 @@ struct AppShellView: View {
             .overlay(alignment: .top) {
                 ChromeSeparationGradient(edge: .top)
                     .zIndex(360)
+            }
+            .overlay(alignment: .top) {
+                if showsPinnedAudioSpeedControl {
+                    PinnedAudioSpeedControl()
+                        .padding(.top, AppChromeLayout.pinnedAudioSpeedTopPadding)
+                        .transition(.scale(scale: 0.92).combined(with: .opacity))
+                        .zIndex(410)
+                }
             }
             .overlay(alignment: .topLeading) {
                 if showsStaticBackButton {
@@ -222,6 +234,7 @@ struct AppShellView: View {
                     cancelSearchFocus()
                 }
             }
+            .animation(.snappy(duration: 0.24), value: showsPinnedAudioSpeedControl)
         }
         .preferredColorScheme(.light)
     }
@@ -451,6 +464,7 @@ struct AppShellView: View {
     ) -> some View {
         PhraseListingView(
             page: .xinChao,
+            chromeRoute: .detailPage(routePageID),
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
             chromeNamespace: chromeNamespace,
@@ -479,6 +493,17 @@ struct AppShellView: View {
 
     private var showsStaticBackButton: Bool {
         navigation.currentRoute != .home && navigation.currentRoute != .browse && navigation.currentRoute != .search
+    }
+
+    private var showsPinnedAudioSpeedControl: Bool {
+        guard showsStaticBackButton, !navigation.isSearchPresented else {
+            return false
+        }
+
+        return PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(
+            for: phraseAudioPlayerAnchors.first { $0.route == navigation.currentRoute },
+            currentRoute: navigation.currentRoute
+        )
     }
 
     private var bottomChromePadding: CGFloat {

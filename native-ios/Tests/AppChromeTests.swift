@@ -190,6 +190,27 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AudioPlaybackPreference.normalizedSpeed("stale-value"), AudioPlaybackPreference.defaultSpeed)
     }
 
+    func testPinnedAudioSpeedChromeOnlyShowsForActiveOffscreenPlayer() {
+        let currentRoute = AppRoute.detailPage("viet-phrase-polite-1")
+        let activeVisiblePlayer = PhraseAudioPlayerAnchor(
+            route: currentRoute,
+            frame: CGRect(x: 40, y: 190, width: 320, height: 108)
+        )
+        let activeOffscreenPlayer = PhraseAudioPlayerAnchor(
+            route: currentRoute,
+            frame: CGRect(x: 40, y: -132, width: 320, height: 108)
+        )
+        let inactiveOffscreenPlayer = PhraseAudioPlayerAnchor(
+            route: .detailPage("viet-phrase-hello-chao-anh"),
+            frame: CGRect(x: 40, y: -132, width: 320, height: 108)
+        )
+
+        XCTAssertFalse(PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(for: activeVisiblePlayer, currentRoute: currentRoute))
+        XCTAssertTrue(PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(for: activeOffscreenPlayer, currentRoute: currentRoute))
+        XCTAssertFalse(PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(for: inactiveOffscreenPlayer, currentRoute: currentRoute))
+        XCTAssertFalse(PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(for: nil, currentRoute: currentRoute))
+    }
+
     func testSQLiteCanonicalXinChaoRouteUsesDesignedRootArticle() {
         XCTAssertTrue(AppShellView.shouldRenderDesignedXinChaoPage(for: PhrasePage.xinChao.id))
         XCTAssertTrue(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-polite-1"))
