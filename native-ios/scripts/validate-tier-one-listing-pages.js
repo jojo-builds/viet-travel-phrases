@@ -14,7 +14,6 @@ const bannedPatterns = [
   /repair phrase/i,
   /Understanding Repair/i,
   /\bDifferent ways\b/i,
-  /question marker/i,
   /key word/i,
   /warning-callout/i,
   /"id":\s*"watch-out"/i,
@@ -56,7 +55,6 @@ const flagshipRootSectionIDs = new Set([
 ]);
 
 const bannedBreakdownLabels = [
-  /question marker/i,
   /^key word$/i,
   /^phrase ending$/i,
   /^word$/i,

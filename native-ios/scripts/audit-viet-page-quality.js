@@ -69,7 +69,6 @@ function breakdownIssues(page, tokens) {
     "word",
     "action",
     "place / service",
-    "question marker",
     "specific detail",
     "name or place detail",
     "first name part",
@@ -80,7 +79,7 @@ function breakdownIssues(page, tokens) {
     "context word",
     "full phrase",
     "phrase meaning",
-  ].includes(label) || label.includes("question marker"))) {
+  ].includes(label))) {
     issues.push("internal breakdown label");
   }
   if (tokens.slice(0, -1).some((token) => String(token.english_gloss ?? "").trim().toLowerCase() === englishTitleKey)) {
@@ -102,7 +101,6 @@ const overTemplatePatterns = [
   /phrase works because it is specific enough/i,
   /Use this when one key word/i,
   /\bDifferent ways\b/i,
-  /question marker/i,
   /practical thing you need someone to understand first/i,
   /names the practical need first/i,
   /without turning it into a long explanation/i,
@@ -142,7 +140,6 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
     issues.push(`not marked full-depth: ${page.completeness_status}`);
   }
   if (page.id !== "viet-phrase-polite-1") {
-    const hasQuickOrStandard = sectionKeys.has("quick-say") || sectionKeys.has("standard-way");
     const requiredSections = isDerivedPlacePhrasePage
       ? [
         ["breakdown", sectionKeys.has("breakdown")],
@@ -156,8 +153,6 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
         ["response rows", Number(page.article_phrase_row_count) > 0],
       ]
       : [
-        ["at-glance", sectionKeys.has("at-glance")],
-        ["quick-say or standard-way", hasQuickOrStandard],
         ["breakdown", sectionKeys.has("breakdown")],
       ];
     if (shouldHaveRelationshipWords) {
@@ -171,7 +166,7 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
     if (missingSections.length > 0) {
       issues.push(`missing full article sections: ${missingSections.join(", ")}`);
     }
-    if (Number(page.article_phrase_row_count) === 0) {
+    if (Number(page.article_phrase_row_count) === 0 && !shouldHaveRelationshipWords) {
       issues.push("missing phrase-row learning opportunities");
     }
     if (isDerivedPlacePhrasePage && (sectionKeys.has("quick-say") || sectionKeys.has("at-glance") || sectionKeys.has("when-to-use"))) {

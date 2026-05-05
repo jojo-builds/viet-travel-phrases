@@ -151,3 +151,159 @@ final class ListingProductionQADiverse20ProofUITests: XCTestCase {
         try? XCUIScreen.main.screenshot().pngRepresentation.write(to: proofDirectory.appendingPathComponent(name))
     }
 }
+
+final class ListingLatestFeedbackProofUITests: XCTestCase {
+    private let proofDirectory = URL(
+        fileURLWithPath: ProcessInfo.processInfo.environment["SPEAKLOCAL_LISTING_LATEST_FEEDBACK_PROOF_DIR"]
+            ?? "/Users/jojolim/Developer/products/speaklocal/app-family/native-ios/artifacts/TASK-VIET-LISTING-LATEST-FEEDBACK-001",
+        isDirectory: true
+    )
+
+    private let detailPages: [(label: String, pageID: String, title: String, requiredTexts: [String])] = [
+        (
+            "garlic-ingredient",
+            "viet-family-vpe-food-has-co-toi-khong",
+            "Có tỏi không?",
+            ["Other ingredients", "More ingredient questions", "tỏi", "garlic"]
+        ),
+        (
+            "taxi-help",
+            "viet-family-vpe-pronoun-help-anh-giup-toi-goi-taxi-duoc-khong",
+            "Anh giúp tôi gọi taxi được không?",
+            ["Getting a ride", "More ride phrases"]
+        ),
+        (
+            "doctor-coming",
+            "viet-family-vpe-likely-replies-bac-si-dang-den",
+            "Bác sĩ đang đến",
+            ["You may hear", "Related replies", "Stay nearby"]
+        ),
+        (
+            "marble-mountains-hero",
+            "viet-family-city-danang-place-marble-mountains",
+            "Ngũ Hành Sơn",
+            ["Marble Mountains"]
+        ),
+        (
+            "linh-ung-hero",
+            "viet-family-city-danang-place-linh-ung-pagoda",
+            "Chùa Linh Ứng",
+            ["Linh Ung Pagoda"]
+        ),
+        (
+            "my-khe-hero",
+            "viet-family-city-danang-place-my-khe",
+            "Biển Mỹ Khê",
+            ["My Khe Beach"]
+        ),
+        (
+            "han-market-hero",
+            "viet-family-city-danang-place-han-market",
+            "Chợ Hàn",
+            ["Han Market"]
+        ),
+        (
+            "nguyen-van-linh-hero",
+            "viet-family-city-danang-place-nguyen-van-linh-street",
+            "Đường Nguyễn Văn Linh",
+            ["Nguyen Van Linh Street"]
+        ),
+    ]
+
+    private let hubPages: [(label: String, arguments: [String], title: String, requiredTexts: [String])] = [
+        (
+            "emergency-hub",
+            ["--browse-category", "emergency"],
+            "Emergency",
+            ["Practice asking for help calmly.", "Help!"]
+        ),
+        (
+            "shopping-hub",
+            ["--browse-category", "shopping"],
+            "Shopping",
+            ["Practice prices, sizes, payment, and returns."]
+        ),
+        (
+            "danang-city-hub",
+            ["--browse-city", "danang"],
+            "Da Nang",
+            ["What are you doing?", "Practice a Da Nang day"]
+        ),
+        (
+            "all-vietnam-hub",
+            ["--browse-category", "city-guides"],
+            "All Vietnam",
+            ["Start here", "City guides"]
+        ),
+    ]
+
+    func testCaptureLatestFeedbackDetailPages() {
+        try? FileManager.default.createDirectory(at: proofDirectory, withIntermediateDirectories: true)
+
+        for page in detailPages {
+            let app = XCUIApplication()
+            app.launchArguments = ["--detail-page", page.pageID]
+            app.launch()
+
+            XCTAssertTrue(app.staticTexts[page.title].waitForExistence(timeout: 8), "\(page.title) did not appear.")
+            capture(name: "\(page.label)-top.png")
+
+            for text in page.requiredTexts {
+                scrollUntilExists(app: app, text: text)
+            }
+
+            app.swipeUp()
+            app.swipeUp()
+            capture(name: "\(page.label)-middle.png")
+
+            app.terminate()
+        }
+    }
+
+    func testCaptureLatestFeedbackHubPages() {
+        try? FileManager.default.createDirectory(at: proofDirectory, withIntermediateDirectories: true)
+
+        for page in hubPages {
+            let app = XCUIApplication()
+            app.launchArguments = page.arguments
+            app.launch()
+
+            XCTAssertTrue(app.staticTexts[page.title].waitForExistence(timeout: 8), "\(page.title) did not appear.")
+            capture(name: "\(page.label)-top.png")
+
+            for text in page.requiredTexts {
+                scrollUntilExists(app: app, text: text)
+            }
+
+            app.swipeUp()
+            app.swipeUp()
+            capture(name: "\(page.label)-middle.png")
+
+            app.terminate()
+        }
+    }
+
+    private func capture(name: String) {
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: proofDirectory.appendingPathComponent(name))
+    }
+
+    private func scrollUntilExists(app: XCUIApplication, text: String, maxSwipes: Int = 8) {
+        for _ in 0..<maxSwipes {
+            let element = matchingStaticText(app: app, text: text)
+            if element.exists {
+                return
+            }
+            app.swipeUp()
+        }
+        XCTAssertTrue(matchingStaticText(app: app, text: text).exists, "\(text) did not become available")
+    }
+
+    private func matchingStaticText(app: XCUIApplication, text: String) -> XCUIElement {
+        let exact = app.staticTexts[text]
+        if exact.exists {
+            return exact
+        }
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
+        return app.staticTexts.matching(predicate).firstMatch
+    }
+}

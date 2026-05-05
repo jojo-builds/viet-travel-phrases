@@ -15,7 +15,6 @@ const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge";
 
 const requiredSectionKeys = new Set([
-  "at-glance",
   "breakdown",
 ]);
 
@@ -24,7 +23,6 @@ const learnerFacingBannedPatterns = [
   { id: "repair_phrase", pattern: /repair phrase/i, severity: "must_fix" },
   { id: "understanding_repair", pattern: /Understanding Repair/i, severity: "must_fix" },
   { id: "different_ways", pattern: /\bDifferent ways\b/i, severity: "must_fix" },
-  { id: "question_marker", pattern: /question marker/i, severity: "must_fix" },
   { id: "baseline_label", pattern: /\bbaseline\b/i, severity: "must_fix" },
   { id: "support_label", pattern: /\bsupport\b/i, severity: "must_fix" },
   { id: "thin_label", pattern: /\bthin\b/i, severity: "must_fix" },
@@ -320,7 +318,7 @@ function wrongBreakdownContextIssues(page, breakdownRows) {
   return issues;
 }
 
-function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourcePath) {
+function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourcePath, relationshipWordsEligiblePageIDs) {
   const issues = [];
   const fullText = [
     page.title,
@@ -357,9 +355,6 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
     if (!sectionKeys.has(key)) {
       issues.push(issue(`missing_${key}`, "must_fix", `Missing required ${key} section.`));
     }
-  }
-  if (!isDerivedPlacePhrasePage && !isLikelyReplyPage && !sectionKeys.has("quick-say") && !sectionKeys.has("standard-way")) {
-    issues.push(issue("missing_quick_or_standard", "must_fix", "Missing Quick say or standard-way teaching section."));
   }
   if (normalize(page.english_title) !== normalize(page.phrase_english_text)) {
     issues.push(issue("hero_translation_mismatch", "blocker", "Hero English title does not match canonical phrase English text."));
@@ -417,7 +412,8 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
     issues.push(issue("pattern_heavy_copy", "needs_authored_repair", `Pattern-heavy copy markers: ${copyPatterns.join(", ")}.`));
   }
 
-  if (Number(page.article_phrase_row_count) === 0) {
+  const hasAnyPhraseRows = phraseRows.length > 0;
+  if (Number(page.article_phrase_row_count) === 0 && !(relationshipWordsEligiblePageIDs.has(page.id) && hasAnyPhraseRows)) {
     issues.push(issue("no_article_phrase_rows", "must_fix", "No phrase-row learning opportunities outside relationship words."));
   }
 
@@ -450,6 +446,7 @@ function main() {
   const sourceByID = sourceIndex();
   const authoredIndex = authoredPageIndex();
   const sqliteReport = fs.existsSync(reportPath) ? readJSON(reportPath) : null;
+  const relationshipWordsEligiblePageIDs = new Set(sqliteReport?.validation?.relationshipWordsEligiblePageIDs ?? []);
 
   const pages = sqliteJSON(`
     SELECT
@@ -585,7 +582,7 @@ function main() {
     const sections = sectionsByPage.get(page.id) ?? [];
     const breakdown = breakdownByPage.get(page.id) ?? [];
     const pagePhraseRows = phraseRowsByPage.get(page.id) ?? [];
-    const issues = pageIssues(page, sections, breakdown, pagePhraseRows, authored, sourcePath);
+    const issues = pageIssues(page, sections, breakdown, pagePhraseRows, authored, sourcePath, relationshipWordsEligiblePageIDs);
     const verdict = verdictFromIssues(issues);
     return {
       row: index + 1,

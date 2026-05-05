@@ -5260,7 +5260,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroHanMarket"
     },
     {
       "id": "city-danang-place-han-river",
@@ -5356,7 +5357,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroLinhUngPagoda"
     },
     {
       "id": "city-danang-place-love-bridge",
@@ -5563,7 +5565,8 @@
             "body": "Connect to: one ticket, entrance, how long from here, stop at Marble Mountains, taxi return."
           }
         ]
-      }
+      },
+      "heroImageName": "HeroMarbleMountains"
     },
     {
       "id": "city-danang-place-my-khe",
@@ -5594,7 +5597,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "beach"
+      "placeKind": "beach",
+      "heroImageName": "HeroMyKheBeach"
     },
     {
       "id": "city-danang-place-nam-o-reef",
@@ -5802,7 +5806,8 @@
         "heroImageName": null,
         "templateProfile": "street-pronouncer",
         "agentApprovalID": "B001-AGENT-APPROVED-003"
-      }
+      },
+      "heroImageName": "HeroNguyenVanLinhStreet"
     },
     {
       "id": "city-danang-place-non-nuoc-beach",

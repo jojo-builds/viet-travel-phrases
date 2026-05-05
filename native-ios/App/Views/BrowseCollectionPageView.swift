@@ -66,7 +66,7 @@ struct BrowseCollectionPageView: View {
 private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 24
-    static let bottomChromeContentClearance: CGFloat = 184
+    static let bottomChromeContentClearance: CGFloat = 224
 }
 
 private struct BrowseCollectionHeader: View {

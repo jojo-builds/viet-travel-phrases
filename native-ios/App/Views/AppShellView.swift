@@ -210,6 +210,13 @@ struct AppShellView: View {
             }
             .overlay(alignment: .top) {
                 if showsPinnedAudioSpeedControl {
+                    PinnedAudioTopAdminBackdrop()
+                        .transition(.opacity)
+                        .zIndex(390)
+                }
+            }
+            .overlay(alignment: .top) {
+                if showsPinnedAudioSpeedControl {
                     PinnedAudioSpeedControl()
                         .padding(.top, AppChromeLayout.pinnedAudioSpeedTopPadding)
                         .transition(.scale(scale: 0.92).combined(with: .opacity))
@@ -2406,7 +2413,7 @@ enum HomeLayout {
     static let relationshipGroupSpacing: CGFloat = 12
     static let relationshipRowHeight: CGFloat = 86
     static let relationshipGroupVerticalPadding: CGFloat = 8
-    static let bottomChromeContentClearance: CGFloat = 176
+    static let bottomChromeContentClearance: CGFloat = 224
 
     static func relationshipGroupHeight(for itemCount: Int) -> CGFloat {
         let visibleRows = max(1, min(itemCount, relationshipRowsPerGroup))

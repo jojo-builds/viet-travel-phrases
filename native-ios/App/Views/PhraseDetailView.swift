@@ -117,6 +117,7 @@ struct PhraseDetailView: View {
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
+                .contentMargins(.top, topChromeContentClearance, for: .scrollContent)
             }
             .ignoresSafeArea(edges: .top)
             .overlay(alignment: .topLeading) {

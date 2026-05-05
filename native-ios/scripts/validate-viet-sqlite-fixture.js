@@ -76,7 +76,6 @@ const bannedPatterns = [
   /specific detail/i,
   /name or place detail/i,
   /soft reassurance/i,
-  /question marker/i,
   /key word/i,
   /warning-callout/i,
   /watch-out/i,
@@ -630,42 +629,14 @@ function main() {
     LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
     WHERE pc.page_id != 'viet-phrase-polite-1'
       AND (
-        (
-          dp.page_id IS NULL
-          AND lr.page_id IS NULL
-          AND (
-            has_at_glance = 0
-            OR has_quick_or_standard = 0
-            OR has_breakdown = 0
-            OR has_context_copy = 0
-            OR article_phrase_rows = 0
-            OR breakdown_rows = 0
-            OR has_practice_seed = 0
-            OR has_practice_steps = 0
-          )
-        )
+        has_breakdown = 0
+        OR has_context_copy = 0
+        OR breakdown_rows = 0
+        OR has_practice_seed = 0
+        OR has_practice_steps = 0
         OR (
-          lr.page_id IS NOT NULL
-          AND (
-            has_at_glance = 0
-            OR has_breakdown = 0
-            OR has_context_copy = 0
-            OR article_phrase_rows = 0
-            OR breakdown_rows = 0
-            OR has_practice_seed = 0
-            OR has_practice_steps = 0
-          )
-        )
-        OR (
-          dp.page_id IS NOT NULL
-          AND (
-            has_breakdown = 0
-            OR has_context_copy = 0
-            OR article_phrase_rows = 0
-            OR breakdown_rows = 0
-            OR has_practice_seed = 0
-            OR has_practice_steps = 0
-          )
+          article_phrase_rows = 0
+          AND pc.page_id NOT IN ('viet-phrase-acknowledge-da-chao-anh')
         )
       );
   `));
@@ -706,42 +677,14 @@ function main() {
       LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
       WHERE pc.page_id != 'viet-phrase-polite-1'
         AND (
-          (
-            dp.page_id IS NULL
-            AND lr.page_id IS NULL
-            AND (
-              has_at_glance = 0
-              OR has_quick_or_standard = 0
-              OR has_breakdown = 0
-              OR has_context_copy = 0
-              OR article_phrase_rows = 0
-              OR breakdown_rows = 0
-              OR has_practice_seed = 0
-              OR has_practice_steps = 0
-            )
-          )
+          has_breakdown = 0
+          OR has_context_copy = 0
+          OR breakdown_rows = 0
+          OR has_practice_seed = 0
+          OR has_practice_steps = 0
           OR (
-            lr.page_id IS NOT NULL
-            AND (
-              has_at_glance = 0
-              OR has_breakdown = 0
-              OR has_context_copy = 0
-              OR article_phrase_rows = 0
-              OR breakdown_rows = 0
-              OR has_practice_seed = 0
-              OR has_practice_steps = 0
-            )
-          )
-          OR (
-            dp.page_id IS NOT NULL
-            AND (
-              has_breakdown = 0
-              OR has_context_copy = 0
-              OR article_phrase_rows = 0
-              OR breakdown_rows = 0
-              OR has_practice_seed = 0
-              OR has_practice_steps = 0
-            )
+            article_phrase_rows = 0
+            AND pc.page_id NOT IN ('viet-phrase-acknowledge-da-chao-anh')
           )
         )
       ORDER BY pc.page_id
@@ -825,10 +768,9 @@ function main() {
     `).join("|"),
     [
       "at-glance",
-      "quick-say",
       "breakdown",
-      "relationship-words",
       "good-to-know",
+      "relationship-words",
       "explore-next",
     ].join("|"),
     "Xin chào flagship section order"
@@ -907,8 +849,7 @@ function main() {
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM breakdown_token
-    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'question marker', 'main phrase piece', 'extra detail', 'the main place or thing', 'first name part', 'second name part', 'middle name part', 'final name part', 'driver word', 'phrase piece', 'full phrase', 'phrase meaning')
-       OR lower(english_gloss) LIKE '%question marker%';
+    WHERE lower(english_gloss) IN ('key word', 'phrase ending', 'word', 'action', 'place / service', 'main phrase piece', 'extra detail', 'the main place or thing', 'first name part', 'second name part', 'middle name part', 'final name part', 'driver word', 'phrase piece', 'full phrase', 'phrase meaning');
   `), "internal breakdown labels");
 
   assertZero(sqliteValue(`

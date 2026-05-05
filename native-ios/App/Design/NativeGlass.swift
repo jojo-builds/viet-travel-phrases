@@ -130,7 +130,7 @@ enum PhrasePageStyle {
     static let leadInToContentSpacing: CGFloat = 16
     static let listCardCornerRadius: CGFloat = 22
     static let compactCardCornerRadius: CGFloat = 20
-    static let bottomChromeContentClearance: CGFloat = 176
+    static let bottomChromeContentClearance: CGFloat = 224
     static let cardFillOpacity = 0.72
     static let cardStrokeOpacity = 0.06
 }
@@ -163,8 +163,9 @@ enum AppChromeLayout {
     static let searchOriginMorphZIndex: Double = 4
     static let keyboardDismissMorphZIndex: Double = 5
     static let pinnedAudioSpeedRevealY: CGFloat = 96
-    static let pinnedAudioSpeedTopPadding: CGFloat = 8
-    static let pinnedAudioSpeedScrollClearance: CGFloat = 84
+    static let pinnedAudioSpeedTopPadding: CGFloat = 12
+    static let pinnedAudioSpeedScrollClearance: CGFloat = 120
+    static let pinnedAudioSpeedBackdropHeight: CGFloat = 250
 }
 
 enum ChromeSeparationEdge {
@@ -204,6 +205,30 @@ struct ChromeSeparationGradient: View {
                 .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
             ]
         }
+    }
+}
+
+struct PinnedAudioTopAdminBackdrop: View {
+    var body: some View {
+        ZStack(alignment: .top) {
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .opacity(0.72)
+
+            LinearGradient(
+                stops: [
+                    .init(color: Color(.systemBackground).opacity(0.98), location: 0),
+                    .init(color: PhrasePageStyle.pageBackground.opacity(0.96), location: 0.44),
+                    .init(color: PhrasePageStyle.pageBackground.opacity(0.82), location: 0.72),
+                    .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        }
+        .frame(height: AppChromeLayout.pinnedAudioSpeedBackdropHeight)
+        .ignoresSafeArea(edges: .top)
+        .allowsHitTesting(false)
     }
 }
 

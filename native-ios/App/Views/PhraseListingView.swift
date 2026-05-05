@@ -169,11 +169,7 @@ struct PhraseArticleTemplateView: View {
                 .task {
                     await applyInitialScrollTargetIfNeeded(scrollProxy)
                 }
-                .safeAreaInset(edge: .top, spacing: 0) {
-                    Color.clear
-                        .frame(height: topChromeContentClearance)
-                        .accessibilityHidden(true)
-                }
+                .contentMargins(.top, topChromeContentClearance, for: .scrollContent)
             }
             .ignoresSafeArea(edges: .top)
             .overlay(alignment: .topLeading) {

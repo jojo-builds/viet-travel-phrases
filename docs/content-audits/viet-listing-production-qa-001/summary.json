@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T22:15:46.651Z",
+  "generatedAt": "2026-05-05T23:36:52.988Z",
   "pageCount": 3070,
   "issueCounts": {
     "BLOCKER": 0,
@@ -11,11 +11,11 @@
   "randomSeed": 20260506,
   "randomSampleCount": 50,
   "dataDuplicateHeroCount": {
-    "meaning": 2213,
-    "sayThis": 2270,
-    "renderedHidden": 4483
+    "meaning": 2,
+    "sayThis": 0,
+    "renderedHidden": 2
   },
   "missingAudioPriorityCount": 500,
-  "heroImageFollowUpCount": 147,
+  "heroImageFollowUpCount": 142,
   "verdict": "NO_BLOCKER_OR_MAJOR_ISSUES_IN_STATIC_RENDER_MODEL"
 }

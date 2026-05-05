@@ -359,7 +359,14 @@ enum BrowseSearchDestinations {
             categoryIDs: ["emergency-safety", "health-pharmacy", "problems-help"],
             symbolName: "cross.case.fill",
             tintName: .red,
-            sampleQuery: "help now"
+            sampleQuery: "help now",
+            preferredPageIDs: [
+                "viet-phrase-emergency-5",
+                "viet-family-v900-emer-safe-please-call-emergency-services",
+                "viet-family-health-doctor",
+                "viet-family-emergency-hospital",
+                "viet-family-vpe-take-me-place-cho-toi-den-don-cong-an",
+            ]
         ),
         BrowseDestination(
             id: "local-greetings",
@@ -1395,6 +1402,9 @@ enum BrowseSearchDestinations {
     private static func practiceSubtitle(for title: String) -> String {
         if title == "Shopping" {
             return "Practice prices, sizes, payment, and returns."
+        }
+        if title == "Emergency" {
+            return "Practice asking for help calmly."
         }
 
         return "Practice a quick \(title.lowercased()) conversation."

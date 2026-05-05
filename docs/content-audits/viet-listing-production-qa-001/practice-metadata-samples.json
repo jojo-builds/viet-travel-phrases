@@ -342,15 +342,6 @@
     "scenarioSeedID": "scenario-seed-hotel-2",
     "scenarioStepGroups": [
       {
-        "stepID": "standard-way",
-        "title": "Say this",
-        "sourceSectionID": "standard-way",
-        "primaryPhraseIDs": [
-          "hotel-2"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
         "stepID": "natural-variations",
         "title": "Other ways",
         "sourceSectionID": "natural-variations",
@@ -410,15 +401,6 @@
     "practiceSurfacePolicy": "saved_or_recent_only",
     "scenarioSeedID": "scenario-seed-problems-2",
     "scenarioStepGroups": [
-      {
-        "stepID": "standard-way",
-        "title": "Say this",
-        "sourceSectionID": "standard-way",
-        "primaryPhraseIDs": [
-          "problems-2"
-        ],
-        "supportPhraseIDs": []
-      },
       {
         "stepID": "traveler-insight",
         "title": "Common follow-ups",

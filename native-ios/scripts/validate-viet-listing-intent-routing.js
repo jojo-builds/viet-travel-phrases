@@ -61,8 +61,8 @@ function validateNoDuplicateSimplePhraseHero(pages) {
   assert(atGlance, "Tôi không hiểu should keep a compact context section.");
   assert(!/means.+I don.t understand/i.test(atGlance.body ?? ""), "Tôi không hiểu should not repeat the hero in a Meaning section.");
   assert(/too fast|unclear|recovery/i.test(atGlance.body ?? ""), "Tôi không hiểu needs traveler-useful context, not a duplicate definition.");
-  assert(standard, "Tôi không hiểu should keep one playable primary phrase row in the data contract.");
-  assert((standard.phrases ?? []).some((phrase) => phrase.vietnamese === "Tôi không hiểu"), "Tôi không hiểu primary phrase row missing.");
+  assert(!standard, "Tôi không hiểu should not repeat the hero as a duplicate primary row.");
+  assert(!section(page, "quick-say"), "Tôi không hiểu should not keep a duplicate Quick say section.");
   assert(section(page, "traveler-insight")?.title === "Common follow-ups", "Tôi không hiểu should keep recovery follow-ups.");
 }
 

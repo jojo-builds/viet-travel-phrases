@@ -1290,6 +1290,10 @@ const exactRawBreakdownMeanings = new Map(Object.entries({
   "này": "this",
   "có": "have / yes",
   "cô": "aunt-age woman / respectful female address",
+  "tỏi": "garlic",
+  "bơ": "butter",
+  "bỏ": "leave out / remove",
+  "không?": "question marker",
   "chưa": "not yet",
   "chùa": "pagoda",
   "vé": "ticket",
@@ -2963,7 +2967,7 @@ function cityPageForRecord(pageRecord, context) {
     englishTitle: pageRecord.englishText,
     pronunciation: pageRecord.pronunciation,
     summary: pageRecord.editorialImport?.summary ?? pageRecord.englishText,
-    heroImageName: pageRecord.editorialImport?.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : cityFallbackHeroImageName(pageKind)),
+    heroImageName: pageRecord.editorialImport?.heroImageName ?? pageRecord.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : cityFallbackHeroImageName(pageKind)),
     iconName: pageKind === "restaurant" ? "fork.knife"
       : pageKind === "dish" ? "takeoutbag.and.cup.and.straw.fill"
         : pageRecord.kind === "place" ? "mappin.and.ellipse" : "map.fill",
@@ -3711,7 +3715,12 @@ function adultNameSectionBody(page, section, profile) {
   }
 }
 
-function cleanTravelerBreakdownGloss(gloss, page) {
+function cleanTravelerBreakdownGloss(gloss, page, vietnamese = "") {
+  const exactVietnamese = String(vietnamese ?? "").normalize("NFC").trim().toLowerCase();
+  if (exactRawBreakdownMeanings.has(exactVietnamese)) {
+    return exactRawBreakdownMeanings.get(exactVietnamese);
+  }
+
   const text = String(gloss ?? "").trim();
   if (page.cityMetadata?.derivedPlacePhrase && /^(local name|place name|proper name|name recognition)$/i.test(text)) return "name";
   if (/^full phrase$/i.test(text)) return page.englishTitle || page.summary || "whole phrase";
@@ -3777,9 +3786,9 @@ function cleanTravelerSectionTitle(title, page) {
     "traveler-insight": "Common follow-ups",
     "what-happens-next": "Common follow-ups",
     "you-may-hear": "Common follow-ups",
-    "practice-pairs": "Practice nearby",
-    "nearby-phrases": "Next phrases",
-    "explore-next": "Next phrases",
+    "practice-pairs": phrasePracticePairsTitle(page),
+    "nearby-phrases": phraseNearbyTitle(page),
+    "explore-next": phraseNearbyTitle(page),
     "when-to-use": "Good to know",
   };
   if (genericByID[sectionID]) return genericByID[sectionID];
@@ -3882,6 +3891,14 @@ function curatedNameSectionPhrases(page, section, profile) {
 
 function curatedSectionPhrases(page, section, profile, phraseRole = "traveler_says") {
   if (phraseRole === "traveler_may_hear") {
+    if (isDoctorComingPage(page)) {
+      if (section.id === "practice-pairs") {
+        return doctorComingSupportOptions(3);
+      }
+      if (section.id === "nearby-phrases" || section.id === "explore-next") {
+        return doctorComingSupportOptions(5);
+      }
+    }
     if (isTableAvailabilityReplyPage(page)) {
       if (section.id === "practice-pairs" || section.id === "nearby-phrases") {
         return tableAvailabilityNextPhrases();
@@ -3891,6 +3908,20 @@ function curatedSectionPhrases(page, section, profile, phraseRole = "traveler_sa
       }
     }
     return withoutUnrelatedMayHearOptions(section.phrases || []);
+  }
+  if (profile === "phrase" && isIngredientQuestionPage(page)) {
+    if (section.id === "practice-pairs" || section.id === "nearby-phrases" || section.id === "explore-next") {
+      const options = ingredientQuestionOptions(section.id === "practice-pairs" ? 4 : 8)
+        .filter((option) => normalizeAudioText(option.vietnamese) !== normalizeAudioText(page.title || ""));
+      return compactPhraseOptions(options, section.id === "practice-pairs" ? 3 : 6);
+    }
+  }
+  if (profile === "phrase" && isTaxiRideHelpPage(page)) {
+    if (section.id === "practice-pairs" || section.id === "nearby-phrases" || section.id === "explore-next") {
+      const options = taxiRideHelpOptions(section.id === "practice-pairs" ? 4 : 8)
+        .filter((option) => normalizeAudioText(option.vietnamese) !== normalizeAudioText(page.title || ""));
+      return compactPhraseOptions(options, section.id === "practice-pairs" ? 3 : 6);
+    }
   }
   return curatedNameSectionPhrases(page, section, profile);
 }
@@ -3954,6 +3985,27 @@ function isTableAvailabilityReplyPage(page) {
   return normalizedVietnameseKey(page.title || "") === "ban nay con trong";
 }
 
+function isIngredientQuestionPage(page) {
+  const id = String(page.phraseID || page.familyID || page.id || "");
+  const english = String(page.englishTitle || page.summary || "");
+  return id.includes("vpe-food-has-") || /^does it have\b/i.test(english);
+}
+
+function isTaxiRideHelpPage(page) {
+  const text = normalizeAudioText([
+    page.phraseID,
+    page.familyID,
+    page.id,
+    page.title,
+    page.englishTitle,
+  ].filter(Boolean).join(" "));
+  return /(goi taxi|call a taxi|goi xe cong nghe|ride share|pickup point|diem don|drop me off|taxi)/i.test(text);
+}
+
+function isDoctorComingPage(page) {
+  return normalizedVietnameseKey(page.title || "") === "bac si dang den";
+}
+
 function mayHearContextSentence(page) {
   if (isTableAvailabilityReplyPage(page)) {
     return "Staff may use this when a table is open.";
@@ -3970,6 +4022,80 @@ function tableAvailabilityNextPhrases() {
   ], 4);
 }
 
+function ingredientQuestionOptions(limit = 8) {
+  return compactPhraseOptions([
+    phraseOptionByID("vpe-food-has-co-hai-san-khong", "green"),
+    phraseOptionByID("vpe-food-has-co-ot-khong", "green"),
+    phraseOptionByID("vpe-food-has-co-thit-bo-khong", "green"),
+    phraseOptionByID("vpe-food-has-co-thit-ga-khong", "green"),
+    phraseOptionByID("vpe-food-has-co-thit-heo-khong", "green"),
+    phraseOptionByID("vpe-food-has-co-bot-ngot-khong", "green"),
+    phraseOptionByID("vpe-food-has-co-ca-khong", "green"),
+    phraseOptionByID("vpe-food-has-co-bo-khong", "green"),
+  ], limit);
+}
+
+function taxiRideHelpOptions(limit = 7) {
+  return compactPhraseOptions([
+    phraseOptionByID("ves-call-taxi-for-me", "orange"),
+    phraseOptionByID("v900-tran-please-take-me-to-this-address", "green"),
+    phraseOptionByID("directions-8", "green"),
+    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong", "green"),
+    phraseOptionByID("ves-drop-me-off-here", "green"),
+    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-doi-toi-mot-chut-duoc-khong", "green"),
+    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong", "orange"),
+    phraseOptionByID("v500-unde-repa-can-you-write-the-address", "teal"),
+  ], limit);
+}
+
+function doctorComingSupportOptions(limit = 6) {
+  return compactPhraseOptions([
+    phraseOptionByID("problems-6", "red"),
+    phraseOptionByID("health-2", "red"),
+    phraseOptionByID("health-3", "red"),
+    phraseOptionByID("vpe-likely-replies-goi-cap-cuu-ngay", "red"),
+    phraseOptionByID("help-need-help-direct", "red"),
+    phraseOptionByID("polite-2", "green"),
+  ], limit);
+}
+
+function phrasePracticePairsTitle(page) {
+  if (isIngredientQuestionPage(page)) return "Other ingredients";
+  if (isTaxiRideHelpPage(page)) return "Getting a ride";
+  return "Common follow-ups";
+}
+
+function phraseNearbyTitle(page) {
+  if (isIngredientQuestionPage(page)) return "More ingredient questions";
+  if (isTaxiRideHelpPage(page)) return "More ride phrases";
+  return "Next phrases";
+}
+
+function isSelfOnlyHeroRepeatSection(section, page) {
+  if (!["quick-say", "standard-way"].includes(section.id)) return false;
+  const phrases = section.phrases || [];
+  if (phrases.length !== 1) return false;
+  const phrase = phrases[0];
+  return normalizeAudioText(phrase.vietnamese) === normalizeAudioText(page.title)
+    && normalizeAudioText(phrase.english) === normalizeAudioText(page.englishTitle);
+}
+
+function isHeroMeaningRepeatSection(section, page) {
+  if (section.id !== "at-glance") return false;
+  if ((section.phrases || []).length > 0 || (section.breakdown || []).length > 0) return false;
+
+  const body = normalizeAudioText(section.body || "");
+  const title = normalizeAudioText(page.title || "");
+  const english = normalizeAudioText(page.englishTitle || page.summary || "");
+  if (!body || !english) return false;
+  if (body === english) return true;
+  return title && body.startsWith(`${title} means `) && body.includes(english);
+}
+
+function isHeroRepeatSectionForGeneratedPage(section, page) {
+  return isSelfOnlyHeroRepeatSection(section, page) || isHeroMeaningRepeatSection(section, page);
+}
+
 function phraseSectionBody(page, section, phraseRole = "traveler_says") {
   const title = page.title || "";
   const english = page.englishTitle || page.summary || "";
@@ -3980,6 +4106,9 @@ function phraseSectionBody(page, section, phraseRole = "traveler_says") {
       case "good-to-know":
         if (isTableAvailabilityReplyPage(page)) {
           return "To ask first, use the question form: “Bàn này còn trống không?”";
+        }
+        if (isDoctorComingPage(page)) {
+          return "Stay nearby and keep your phone visible. They may ask where you are or what happened.";
         }
         return cleanTravelerBody(section.body);
       case "breakdown":
@@ -4035,6 +4164,10 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
       dish: new Set(["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
     };
     return (keepByProfile[profile] || keepByProfile.place).has(section.id);
+  }
+
+  if (profile === "phrase" && phraseRole === "traveler_says" && isHeroRepeatSectionForGeneratedPage(section, page)) {
+    return false;
   }
 
   if (phraseRole === "traveler_may_hear") {
@@ -4368,7 +4501,7 @@ function sanitizeAuthoredPage(page) {
     })),
     breakdown: curatedSectionBreakdown(page, section).map((token) => ({
       ...token,
-      english: cleanTravelerBreakdownGloss(token.english, page),
+      english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
     })),
   })), profile));
 

@@ -42,6 +42,7 @@ const bannedCopyPatterns = [
   { pattern: /\bthis page helps\b/i, reason: "product/editor voice" },
   { pattern: /\buse it with\b/i, reason: "awkward template heading" },
   { pattern: /\bnearby needs\b/i, reason: "vague bucket label" },
+  { pattern: /\bPractice nearby\b/i, reason: "generic recommender bucket label" },
   { pattern: /\bdurable next steps\b/i, reason: "internal editorial language" },
   { pattern: /\bconnect to\b/i, reason: "database navigation language" },
   { pattern: /\bstarter phrases in a quick practice loop\b/i, reason: "generic practice-card copy" },
@@ -196,6 +197,51 @@ function visibleSections(page) {
   });
 }
 
+const exactBreakdownExpectations = new Map([
+  ["tỏi", { expected: /garlic/i, forbidden: /\bI\s*\/\s*me\b|\bme\b/i }],
+  ["tôi", { expected: /\bI\s*\/\s*me\b|\bI\b/i, forbidden: /garlic/i }],
+  ["bàn", { expected: /table/i, forbidden: /\byou\b/i }],
+  ["bạn", { expected: /\byou\b|friend/i, forbidden: /table/i }],
+  ["bơ", { expected: /butter/i, forbidden: /remove|leave out/i }],
+  ["bỏ", { expected: /remove|leave out/i, forbidden: /butter/i }],
+  ["có", { expected: /have|is there|yes/i, forbidden: /aunt|female address/i }],
+  ["cô", { expected: /female address|aunt|woman/i, forbidden: /\bhave\b|is there/i }],
+  ["chưa", { expected: /not yet/i, forbidden: /pagoda/i }],
+  ["chùa", { expected: /pagoda/i, forbidden: /not yet/i }],
+]);
+
+function exactVietnamese(value) {
+  return String(value ?? "").normalize("NFC").trim().toLowerCase();
+}
+
+function phraseRows(sections) {
+  return sections.flatMap((section) => (section.phrases ?? []).map((phrase) => ({
+    ...phrase,
+    sectionID: section.id,
+    sectionTitle: section.title,
+  })));
+}
+
+function isIngredientQuestionPage(page) {
+  const id = String(page.phraseID || page.familyID || page.id || "");
+  return id.includes("vpe-food-has-") || /^does it have\b/i.test(String(page.englishTitle || page.summary || ""));
+}
+
+function isTaxiRideHelpPage(page) {
+  const text = normalize([
+    page.phraseID,
+    page.familyID,
+    page.id,
+    page.title,
+    page.englishTitle,
+  ].filter(Boolean).join(" "));
+  return /taxi|ride share|pickup point|drop me off|call a taxi|goi taxi|goi xe cong nghe/.test(text);
+}
+
+function isDoctorComingPage(page) {
+  return normalize(page.title) === "bac si dang den";
+}
+
 function isHeroRepeatSection(section, page) {
   return isSelfOnlyHeroPhraseRepeat(section, page) || isHeroMeaningRepeat(section, page);
 }
@@ -307,6 +353,77 @@ function inspectPage(page, expectedIntent, issues, source) {
         sectionID: section.id,
         sectionTitle: section.title,
         detail: "Slash-separated phrase bodies should be rendered as rows.",
+      });
+      worst = maxVerdict(worst, "FAIL");
+    }
+
+    for (const token of section.breakdown ?? []) {
+      const expectation = exactBreakdownExpectations.get(exactVietnamese(token.vietnamese));
+      if (!expectation) continue;
+      const gloss = String(token.english ?? "");
+      if (!expectation.expected.test(gloss) || expectation.forbidden.test(gloss)) {
+        addIssue(issues, {
+          severity: "BLOCKER",
+          code: "diacritic_sensitive_breakdown_gloss",
+          page,
+          source,
+          sectionID: section.id,
+          sectionTitle: section.title,
+          detail: `${token.vietnamese} has unsafe gloss "${gloss}".`,
+        });
+        worst = maxVerdict(worst, "FAIL");
+      }
+    }
+  }
+
+  if (isIngredientQuestionPage(page)) {
+    const unrelatedRows = phraseRows(rendered).filter((row) => {
+      const text = normalize(`${row.vietnamese ?? ""} ${row.english ?? ""}`);
+      return !/ingredient|allerg|seafood|chili|pork|beef|chicken|fish|butter|msg|garlic|peanut|spicy|vegetarian|does it have|co |thit|hai san|ot|bo |bot ngot|ca |dau phong/.test(text);
+    });
+    if (unrelatedRows.length > 0) {
+      addIssue(issues, {
+        severity: "BLOCKER",
+        code: "ingredient_page_unrelated_rows",
+        page,
+        source,
+        detail: `Ingredient page has unrelated rows: ${unrelatedRows.map((row) => row.english).join("; ")}`,
+      });
+      worst = maxVerdict(worst, "FAIL");
+    }
+  }
+
+  if (isTaxiRideHelpPage(page)) {
+    const unrelatedRows = phraseRows(rendered).filter((row) => {
+      const text = normalize(`${row.vietnamese ?? ""} ${row.english ?? ""}`);
+      if (normalize(row.vietnamese) === normalize(page.title)) return false;
+      return !/taxi|ride|address|pickup|driver|drop|wait|route|way|map|destination|diem don|dia chi|xuong|cho toi den|goi xe|goi taxi|cho mot chut|chi duong|write the address/.test(text);
+    });
+    if (unrelatedRows.length > 0) {
+      addIssue(issues, {
+        severity: "BLOCKER",
+        code: "taxi_help_unrelated_rows",
+        page,
+        source,
+        detail: `Taxi/ride page has unrelated rows: ${unrelatedRows.map((row) => row.english).join("; ")}`,
+      });
+      worst = maxVerdict(worst, "FAIL");
+    }
+  }
+
+  if (isDoctorComingPage(page)) {
+    const unrelatedRows = phraseRows(rendered).filter((row) => {
+      const text = normalize(`${row.vietnamese ?? ""} ${row.english ?? ""}`);
+      if (normalize(row.vietnamese) === normalize(page.title)) return false;
+      return !/doctor|pain|stomach|headache|emergency|help|thank|calm|bac si|dau|cap cuu|giup|cam on/.test(text);
+    });
+    if (unrelatedRows.length > 0) {
+      addIssue(issues, {
+        severity: "BLOCKER",
+        code: "doctor_may_hear_unrelated_rows",
+        page,
+        source,
+        detail: `Doctor may-hear page has unrelated rows: ${unrelatedRows.map((row) => row.english).join("; ")}`,
       });
       worst = maxVerdict(worst, "FAIL");
     }

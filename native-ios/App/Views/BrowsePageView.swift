@@ -288,7 +288,7 @@ private enum BrowsePageLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 26
     static let cardCornerRadius: CGFloat = 22
-    static let bottomChromeContentClearance: CGFloat = 176
+    static let bottomChromeContentClearance: CGFloat = 224
     static let situationColumns = [
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12),
