@@ -125,6 +125,10 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
   const text = `${page.summary ?? ""} ${page.section_text ?? ""}`;
   const sectionKeys = new Set(String(page.section_keys ?? "").split(" / ").filter(Boolean));
   const shouldHaveRelationshipWords = relationshipWordsEligiblePageIDs.has(page.id);
+  const isDerivedPlacePhrasePage = page.id.startsWith("viet-phrase-city-")
+    && sectionKeys.has("related-phrases")
+    && !sectionKeys.has("quick-say")
+    && !sectionKeys.has("at-glance");
 
   if (Number(page.section_count) === 0) {
     issues.push("missing article sections");
@@ -137,11 +141,17 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
   }
   if (page.id !== "viet-phrase-polite-1") {
     const hasQuickOrStandard = sectionKeys.has("quick-say") || sectionKeys.has("standard-way");
-    const requiredSections = [
-      ["at-glance", sectionKeys.has("at-glance")],
-      ["quick-say or standard-way", hasQuickOrStandard],
-      ["breakdown", sectionKeys.has("breakdown")],
-    ];
+    const requiredSections = isDerivedPlacePhrasePage
+      ? [
+        ["breakdown", sectionKeys.has("breakdown")],
+        ["related-phrases", sectionKeys.has("related-phrases")],
+        ["tip", sectionKeys.has("good-to-know")],
+      ]
+      : [
+        ["at-glance", sectionKeys.has("at-glance")],
+        ["quick-say or standard-way", hasQuickOrStandard],
+        ["breakdown", sectionKeys.has("breakdown")],
+      ];
     if (shouldHaveRelationshipWords) {
       requiredSections.push(["relationship-words", sectionKeys.has("relationship-words")]);
     } else if (sectionKeys.has("relationship-words")) {
@@ -155,6 +165,9 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
     }
     if (Number(page.article_phrase_row_count) === 0) {
       issues.push("missing phrase-row learning opportunities");
+    }
+    if (isDerivedPlacePhrasePage && (sectionKeys.has("quick-say") || sectionKeys.has("at-glance") || sectionKeys.has("when-to-use"))) {
+      issues.push("derived place phrase has duplicate destination-style sections");
     }
   }
   for (const pattern of overTemplatePatterns) {

@@ -3821,21 +3821,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "danang-nen",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Nén Đà Nẵng",
-      "englishText": "Go to Nen Da Nang",
-      "pronunciation": "dee nen da nang",
-      "context": "Use this short route phrase when Nen Da Nang is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Nen Da Nang; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Nén Đà Nẵng.",
+      "englishText": "Please take me to Nén Đà Nẵng restaurant.",
+      "pronunciation": "cho toy den nyah hang nen da nang",
+      "context": "For a driver or hotel desk when you are going to Nén Đà Nẵng.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Nén Đà Nẵng; it avoids the clipped command that felt unnatural on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Nén Đà Nẵng",
-          "Nen Da Nang"
+          "Nén Đà Nẵng"
         ]
       ],
       "sourceIDs": [
@@ -5633,19 +5637,19 @@
       "difficulty": "beginner",
       "spokenChunks": 3,
       "targetText": "Nén Đà Nẵng",
-      "englishText": "Nen Da Nang",
+      "englishText": "Nén Đà Nẵng",
       "pronunciation": "nen da nang",
-      "context": "Nén Đà Nẵng is a restaurant in Da Nang, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
-      "tip": "Keep the name visible on your map. Many staff will recognize the place name faster than a translated description, especially in Da Nang.",
-      "rationale": "Place-name page for Nen Da Nang; it gives Da Nang practice a real map anchor before route, ticket, shopping, or help phrases branch from it.",
+      "context": "Nén Đà Nẵng is a restaurant in Da Nang. Keep the map pin or booking screen handy.",
+      "tip": "For directions, show the map pin and play the full restaurant sentence.",
+      "rationale": "Restaurant page for Nén Đà Nẵng; it keeps city food browsing on the venue before route, reservation, menu, or payment phrases.",
       "chunks": [
         [
-          "Nén Đà",
+          "Nén",
           "restaurant name"
         ],
         [
-          "Nẵng",
-          "restaurant name"
+          "Đà Nẵng",
+          "Da Nang"
         ]
       ],
       "sourceIDs": [
@@ -6290,7 +6294,7 @@
       "difficulty": "advanced",
       "spokenChunks": 6,
       "targetText": "Tôi có đặt bàn ở Nén Đà Nẵng",
-      "englishText": "I have a reservation at Nen Da Nang",
+      "englishText": "I have a reservation at Nén Đà Nẵng",
       "pronunciation": "toy koh dat ban uh nen da nang",
       "context": "Use this at the restaurant entrance when staff need to find an existing booking.",
       "tip": "Show the booking screen so staff can match the name, time, and party size.",
@@ -6305,8 +6309,12 @@
           "at / in"
         ],
         [
-          "Nén Đà Nẵng",
-          "Nen Da Nang"
+          "Nén",
+          "restaurant name"
+        ],
+        [
+          "Đà Nẵng",
+          "Da Nang"
         ]
       ],
       "sourceIDs": [
@@ -7029,21 +7037,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "danang-nen",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Nén Đà Nẵng",
-      "englishText": "Stop at Nen Da Nang",
-      "pronunciation": "zoong uh nen da nang",
-      "context": "Use this in a car, taxi, or ride pickup when Nen Da Nang is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Nen Da Nang; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Nén Đà Nẵng.",
+      "englishText": "Let me off near Nén Đà Nẵng restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang nen da nang",
+      "context": "For a taxi or ride drop-off near Nén Đà Nẵng.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Nén Đà Nẵng; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Nén Đà Nẵng",
-          "Nen Da Nang"
+          "Nén Đà Nẵng"
         ]
       ],
       "sourceIDs": [
@@ -7945,11 +7957,11 @@
       "difficulty": "intermediate",
       "spokenChunks": 5,
       "targetText": "Nhà hàng Nén Đà Nẵng ở đâu?",
-      "englishText": "Where is Nen Da Nang restaurant?",
+      "englishText": "Where is Nén Đà Nẵng?",
       "pronunciation": "nyah hang nen da nang uh dow",
-      "context": "Use this if a named restaurant is already in your plan and you need help finding it.",
-      "tip": "Nhà hàng identifies it as a restaurant; the city name avoids confusion with other branches or names.",
-      "rationale": "Named restaurant phrase adds a real Da Nang food anchor without broad claims.",
+      "context": "A compact direction question for Nén Đà Nẵng.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Restaurant direction phrase for Nén Đà Nẵng; it stays as a compact child phrase under the venue page.",
       "chunks": [
         [
           "Nhà hàng",
@@ -7957,10 +7969,10 @@
         ],
         [
           "Nén Đà Nẵng",
-          "Nen Da Nang"
+          "Nén Đà Nẵng"
         ],
         [
-          "ở đâu",
+          "ở đâu?",
           "where?"
         ]
       ],
@@ -9065,21 +9077,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hanoi-bun-cha-huong-lien",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Bún chả Hương Liên",
-      "englishText": "Go to Bun Cha Huong Lien",
-      "pronunciation": "dee boon cha huong lien",
-      "context": "Use this short route phrase when Bun Cha Huong Lien is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Bun Cha Huong Lien; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Bún chả Hương Liên.",
+      "englishText": "Please take me to Bún chả Hương Liên restaurant.",
+      "pronunciation": "cho toy den nyah hang boon cha huong lien",
+      "context": "For a driver or hotel desk when you are going to Bún chả Hương Liên.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Bún chả Hương Liên; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Bún chả Hương Liên",
-          "Bun Cha Huong Lien"
+          "Bún chả Hương Liên"
         ]
       ],
       "sourceIDs": [
@@ -9098,21 +9114,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hanoi-cha-ca-thang-long",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Chả cá Thăng Long",
-      "englishText": "Go to Cha Ca Thang Long",
-      "pronunciation": "dee cha ca thang long",
-      "context": "Use this short route phrase when Cha Ca Thang Long is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Cha Ca Thang Long; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Chả cá Thăng Long.",
+      "englishText": "Please take me to Chả cá Thăng Long restaurant.",
+      "pronunciation": "cho toy den nyah hang cha ca thang long",
+      "context": "For a driver or hotel desk when you are going to Chả cá Thăng Long.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Chả cá Thăng Long; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Chả cá Thăng Long",
-          "Cha Ca Thang Long"
+          "Chả cá Thăng Long"
         ]
       ],
       "sourceIDs": [
@@ -9646,21 +9666,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hanoi-pho-bat-dan",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Phở Bát Đàn",
-      "englishText": "Go to Pho Bat Dan",
-      "pronunciation": "dee pho bat dan",
-      "context": "Use this short route phrase when Pho Bat Dan is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Pho Bat Dan; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Phở Bát Đàn.",
+      "englishText": "Please take me to Phở Bát Đàn restaurant.",
+      "pronunciation": "cho toy den nyah hang pho bat dan",
+      "context": "For a driver or hotel desk when you are going to Phở Bát Đàn.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Phở Bát Đàn; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Phở Bát Đàn",
-          "Pho Bat Dan"
+          "Phở Bát Đàn"
         ]
       ],
       "sourceIDs": [
@@ -9774,21 +9798,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hanoi-tam-vi",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Tầm Vị",
-      "englishText": "Go to Tam Vi",
-      "pronunciation": "dee tam vi",
-      "context": "Use this short route phrase when Tam Vi is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Tam Vi; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Tầm Vị.",
+      "englishText": "Please take me to Tầm Vị restaurant.",
+      "pronunciation": "cho toy den nyah hang tam vi",
+      "context": "For a driver or hotel desk when you are going to Tầm Vị.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Tầm Vị; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Tầm Vị",
-          "Tam Vi"
+          "Tầm Vị"
         ]
       ],
       "sourceIDs": [
@@ -11447,21 +11475,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hanoi-bun-cha-huong-lien",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Bún chả Hương Liên",
-      "englishText": "Stop at Bun Cha Huong Lien",
-      "pronunciation": "zoong uh boon cha huong lien",
-      "context": "Use this in a car, taxi, or ride pickup when Bun Cha Huong Lien is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Bun Cha Huong Lien; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Bún chả Hương Liên.",
+      "englishText": "Let me off near Bún chả Hương Liên restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang boon cha huong lien",
+      "context": "For a taxi or ride drop-off near Bún chả Hương Liên.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Bún chả Hương Liên; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Bún chả Hương Liên",
-          "Bun Cha Huong Lien"
+          "Bún chả Hương Liên"
         ]
       ],
       "sourceIDs": [
@@ -11480,21 +11512,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hanoi-cha-ca-thang-long",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Chả cá Thăng Long",
-      "englishText": "Stop at Cha Ca Thang Long",
-      "pronunciation": "zoong uh cha ca thang long",
-      "context": "Use this in a car, taxi, or ride pickup when Cha Ca Thang Long is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Cha Ca Thang Long; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Chả cá Thăng Long.",
+      "englishText": "Let me off near Chả cá Thăng Long restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang cha ca thang long",
+      "context": "For a taxi or ride drop-off near Chả cá Thăng Long.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Chả cá Thăng Long; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Chả cá Thăng Long",
-          "Cha Ca Thang Long"
+          "Chả cá Thăng Long"
         ]
       ],
       "sourceIDs": [
@@ -11994,21 +12030,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hanoi-pho-bat-dan",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Phở Bát Đàn",
-      "englishText": "Stop at Pho Bat Dan",
-      "pronunciation": "zoong uh pho bat dan",
-      "context": "Use this in a car, taxi, or ride pickup when Pho Bat Dan is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Pho Bat Dan; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Phở Bát Đàn.",
+      "englishText": "Let me off near Phở Bát Đàn restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang pho bat dan",
+      "context": "For a taxi or ride drop-off near Phở Bát Đàn.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Phở Bát Đàn; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Phở Bát Đàn",
-          "Pho Bat Dan"
+          "Phở Bát Đàn"
         ]
       ],
       "sourceIDs": [
@@ -12123,21 +12163,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hanoi-tam-vi",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Tầm Vị",
-      "englishText": "Stop at Tam Vi",
-      "pronunciation": "zoong uh tam vi",
-      "context": "Use this in a car, taxi, or ride pickup when Tam Vi is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Tam Vi; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Tầm Vị.",
+      "englishText": "Let me off near Tầm Vị restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang tam vi",
+      "context": "For a taxi or ride drop-off near Tầm Vị.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Tầm Vị; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Tầm Vị",
-          "Tam Vi"
+          "Tầm Vị"
         ]
       ],
       "sourceIDs": [
@@ -14420,21 +14464,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hcmc-anan-saigon",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Anăn Sài Gòn",
-      "englishText": "Go to Anan Saigon",
-      "pronunciation": "dee anan sai gon",
-      "context": "Use this short route phrase when Anan Saigon is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Anan Saigon; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Anăn Sài Gòn.",
+      "englishText": "Please take me to Anăn Sài Gòn restaurant.",
+      "pronunciation": "cho toy den nyah hang anan sai gon",
+      "context": "For a driver or hotel desk when you are going to Anăn Sài Gòn.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Anăn Sài Gòn; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Anăn Sài Gòn",
-          "Anan Saigon"
+          "Anăn Sài Gòn"
         ]
       ],
       "sourceIDs": [
@@ -15123,21 +15171,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hcmc-pho-hoa-pasteur",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Phở Hòa Pasteur",
-      "englishText": "Go to Pho Hoa Pasteur",
-      "pronunciation": "dee pho hoa pasteur",
-      "context": "Use this short route phrase when Pho Hoa Pasteur is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Pho Hoa Pasteur; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Phở Hòa Pasteur.",
+      "englishText": "Please take me to Phở Hòa Pasteur restaurant.",
+      "pronunciation": "cho toy den nyah hang pho hoa pasteur",
+      "context": "For a driver or hotel desk when you are going to Phở Hòa Pasteur.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Phở Hòa Pasteur; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Phở Hòa Pasteur",
-          "Pho Hoa Pasteur"
+          "Phở Hòa Pasteur"
         ]
       ],
       "sourceIDs": [
@@ -16703,21 +16755,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hcmc-anan-saigon",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Anăn Sài Gòn",
-      "englishText": "Stop at Anan Saigon",
-      "pronunciation": "zoong uh anan sai gon",
-      "context": "Use this in a car, taxi, or ride pickup when Anan Saigon is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Anan Saigon; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Anăn Sài Gòn.",
+      "englishText": "Let me off near Anăn Sài Gòn restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang anan sai gon",
+      "context": "For a taxi or ride drop-off near Anăn Sài Gòn.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Anăn Sài Gòn; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Anăn Sài Gòn",
-          "Anan Saigon"
+          "Anăn Sài Gòn"
         ]
       ],
       "sourceIDs": [
@@ -19218,21 +19274,25 @@
       "subcategoryID": "food-coffee",
       "placeID": "hoian-banh-mi-phuong",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Bánh mì Phượng",
-      "englishText": "Go to Banh Mi Phuong",
-      "pronunciation": "dee bahn mee fuong",
-      "context": "For a quick ride, this says Bánh mì Phượng is the destination.",
-      "tip": "Keep the map pin open if the restaurant name is hard to hear.",
-      "rationale": "Food-place destination sentence naturally emerges from the place pronunciation page.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Bánh mì Phượng.",
+      "englishText": "Please take me to Bánh mì Phượng restaurant.",
+      "pronunciation": "cho toy den nyah hang bahn mee fuong",
+      "context": "For a driver or hotel desk when you are going to Bánh mì Phượng.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Bánh mì Phượng; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Bánh mì Phượng",
-          "Banh Mi Phuong"
+          "Bánh mì Phượng"
         ]
       ],
       "sourceIDs": [
@@ -19702,21 +19762,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hoian-morning-glory",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Morning Glory Hội An",
-      "englishText": "Go to Morning Glory Hoi An",
-      "pronunciation": "dee morning glory hoy an",
-      "context": "Use this short route phrase when Morning Glory Hoi An is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Morning Glory Hoi An; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Morning Glory Hội An.",
+      "englishText": "Please take me to Morning Glory Hội An restaurant.",
+      "pronunciation": "cho toy den nyah hang morning glory hoy an",
+      "context": "For a driver or hotel desk when you are going to Morning Glory Hội An.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Morning Glory Hội An; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Morning Glory Hội An",
-          "Morning Glory Hoi An"
+          "Morning Glory Hội An"
         ]
       ],
       "sourceIDs": [
@@ -21449,21 +21513,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hoian-banh-mi-phuong",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Bánh mì Phượng",
-      "englishText": "Stop at Banh Mi Phuong",
-      "pronunciation": "zoong uh banh mi phuong",
-      "context": "Use this in a car, taxi, or ride pickup when Banh Mi Phuong is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Banh Mi Phuong; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
+      "englishText": "Let me off near Bánh mì Phượng restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang banh mi phuong",
+      "context": "For a taxi or ride drop-off near Bánh mì Phượng.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Bánh mì Phượng; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Bánh mì Phượng",
-          "Banh Mi Phuong"
+          "Bánh mì Phượng"
         ]
       ],
       "sourceIDs": [
@@ -21931,21 +21999,25 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hoian-morning-glory",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Morning Glory Hội An",
-      "englishText": "Stop at Morning Glory Hoi An",
-      "pronunciation": "zoong uh morning glory hoy an",
-      "context": "Use this in a car, taxi, or ride pickup when Morning Glory Hoi An is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Morning Glory Hoi An; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
+      "englishText": "Let me off near Morning Glory Hội An restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang morning glory hoy an",
+      "context": "For a taxi or ride drop-off near Morning Glory Hội An.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Morning Glory Hội An; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Morning Glory Hội An",
-          "Morning Glory Hoi An"
+          "Morning Glory Hội An"
         ]
       ],
       "sourceIDs": [
@@ -24752,17 +24824,21 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hue-les-jardins",
       "difficulty": "beginner",
-      "spokenChunks": 3,
-      "targetText": "Đi Les Jardins de la Carambole",
-      "englishText": "Go to Les Jardins de la Carambole",
-      "pronunciation": "dee les jardins de la carambole",
-      "context": "Use this short route phrase when Les Jardins de la Carambole is the destination and the map or ride screen already gives the rest of the context.",
-      "tip": "It is clipped on purpose. In a taxi, on foot, or at a hotel desk, the place name carries the important detail.",
-      "rationale": "Beginner route phrase for Les Jardins de la Carambole; it turns the place-name page into a direct first-trip travel command.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi đến nhà hàng Les Jardins de la Carambole.",
+      "englishText": "Please take me to Les Jardins de la Carambole restaurant.",
+      "pronunciation": "cho toy den nyah hang les jardins de la carambole",
+      "context": "For a driver or hotel desk when you are going to Les Jardins de la Carambole.",
+      "tip": "If the name is hard to say, show the map pin and play the full sentence.",
+      "rationale": "Full restaurant route sentence for Les Jardins de la Carambole; it avoids a clipped command on the child phrase page.",
       "chunks": [
         [
-          "Đi",
-          "go"
+          "Cho tôi đến",
+          "please take me to"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Les Jardins de la Carambole",
@@ -27053,17 +27129,21 @@
       "subcategoryID": "arrivals-routes",
       "placeID": "hue-les-jardins",
       "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Dừng ở Les Jardins de la Carambole",
-      "englishText": "Stop at Les Jardins de la Carambole",
-      "pronunciation": "zoong uh les jardins de la carambole",
-      "context": "Use this in a car, taxi, or ride pickup when Les Jardins de la Carambole is the drop-off landmark you want.",
-      "tip": "Dừng ở keeps the request polite and clear. Show the pin if the place has more than one entrance or side street.",
-      "rationale": "Drop-off phrase for Les Jardins de la Carambole; it links the city place page to the moment a traveler needs to get out.",
+      "spokenChunks": 6,
+      "targetText": "Cho tôi xuống gần nhà hàng Les Jardins de la Carambole.",
+      "englishText": "Let me off near Les Jardins de la Carambole restaurant.",
+      "pronunciation": "cho toy suong gun nyah hang les jardins de la carambole",
+      "context": "For a taxi or ride drop-off near Les Jardins de la Carambole.",
+      "tip": "Show the map pin if the driver asks which entrance or side street you mean.",
+      "rationale": "Full restaurant drop-off sentence for Les Jardins de la Carambole; it keeps the child phrase natural for a ride moment.",
       "chunks": [
         [
-          "Dừng ở",
-          "stop at"
+          "Cho tôi xuống gần",
+          "let me off near"
+        ],
+        [
+          "nhà hàng",
+          "restaurant"
         ],
         [
           "Les Jardins de la Carambole",

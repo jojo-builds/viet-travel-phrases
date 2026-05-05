@@ -787,7 +787,8 @@ final class VietSQLiteLanguagePackRepository {
           pp.icon_name,
           pp.tint_name,
           pp.hero_image_name,
-          aa.source_manifest_key
+          aa.source_manifest_key,
+          pps.cta_label
         FROM phrase_page pp
         JOIN phrase p ON p.id = pp.phrase_id
         LEFT JOIN audio_usage au
@@ -795,6 +796,7 @@ final class VietSQLiteLanguagePackRepository {
          AND au.target_id = p.id
          AND au.is_primary = 1
         LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+        LEFT JOIN page_practice_seed pps ON pps.page_id = pp.id
         WHERE pp.id = ?
         LIMIT 1;
         """
@@ -815,6 +817,7 @@ final class VietSQLiteLanguagePackRepository {
             let tintName = AccentTint(rawValue: Self.stringColumn(statement, index: 7)) ?? .gray
             let heroImageName = Self.optionalStringColumn(statement, index: 8)
             let audioKey = Self.optionalStringColumn(statement, index: 9)
+            let practiceCTALabel = Self.optionalStringColumn(statement, index: 10)
 
             return PhraseDetailPage(
                 id: pageID,
@@ -828,6 +831,7 @@ final class VietSQLiteLanguagePackRepository {
                 sections: try loadSections(forPageID: pageID),
                 examples: [],
                 audioKey: audioKey,
+                practiceCTALabel: practiceCTALabel,
                 showsCatalogExplore: true
             )
         }

@@ -336,18 +336,27 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
   }
 
   const sectionKeys = new Set(sections.map((section) => section.section_key));
-  for (const key of requiredSectionKeys) {
-    if (key === "when-to-use" && page.id === baNaJourneyPageID && sectionKeys.has("journey-flow")) {
-      continue;
-    }
-    if (key === "when-to-use" && page.id === dragonBridgeLandmarkPageID && sectionKeys.has("getting-there")) {
-      continue;
+  const isDerivedPlacePhrasePage = page.id.startsWith("viet-phrase-city-")
+    && sectionKeys.has("related-phrases")
+    && !sectionKeys.has("quick-say")
+    && !sectionKeys.has("at-glance");
+  const requiredKeysForPage = isDerivedPlacePhrasePage
+    ? new Set(["breakdown", "related-phrases", "good-to-know"])
+    : requiredSectionKeys;
+  for (const key of requiredKeysForPage) {
+    if (!isDerivedPlacePhrasePage) {
+      if (key === "when-to-use" && page.id === baNaJourneyPageID && sectionKeys.has("journey-flow")) {
+        continue;
+      }
+      if (key === "when-to-use" && page.id === dragonBridgeLandmarkPageID && sectionKeys.has("getting-there")) {
+        continue;
+      }
     }
     if (!sectionKeys.has(key)) {
       issues.push(issue(`missing_${key}`, "must_fix", `Missing required ${key} section.`));
     }
   }
-  if (!sectionKeys.has("quick-say") && !sectionKeys.has("standard-way")) {
+  if (!isDerivedPlacePhrasePage && !sectionKeys.has("quick-say") && !sectionKeys.has("standard-way")) {
     issues.push(issue("missing_quick_or_standard", "must_fix", "Missing Quick say or standard-way teaching section."));
   }
   if (normalize(page.english_title) !== normalize(page.phrase_english_text)) {

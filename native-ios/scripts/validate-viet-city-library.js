@@ -168,6 +168,10 @@ function hasSectionText(authoredPage, pattern) {
   return pattern.test(pageText(authoredPage));
 }
 
+function isDerivedPlacePhraseSource(page, pageKind) {
+  return page.kind === "phrase" && pageKind === "phrase" && Boolean(page.placeID);
+}
+
 function isRecognitionGloss(token) {
   const gloss = normalizeText(token.english);
   return /\b(name recognition|place name|proper name|recognition only|restaurant name|dish name|local name|street name|market name|beach name|airport name)\b/i.test(gloss);
@@ -261,6 +265,7 @@ function main() {
     const city = cities.get(page.cityID);
     const pageKind = pageKindFor(page, place);
     const placeKind = normalizedPlaceKind(place);
+    const isDerivedPlacePhrase = isDerivedPlacePhraseSource(page, pageKind);
     const isLandmarkActionPage = page.id === "city-danang-place-dragon-bridge";
     assert(pageKindValues.has(pageKind), `${page.id} has bad pageKind ${pageKind}`);
     assert(page.placeKind === placeKind, `${page.id} page placeKind must match place ${page.placeID}`);
@@ -302,11 +307,29 @@ function main() {
     assert((authoredPage.cityMetadata?.placeKind ?? placeKind) === placeKind, `${page.id} authored placeKind metadata mismatch`);
     assert(catalogPhrase.familyID === page.id, `${page.id} catalog family metadata mismatch`);
     const bodySections = (authoredPage.sections ?? []).filter((section) => String(section.body ?? "").trim());
-    assert(bodySections.length >= 2, `${page.id} authored page needs at least two traveler-facing section bodies`);
-    assert(
-      new Set(bodySections.map((section) => normalizeText(section.body))).size >= Math.min(2, bodySections.length),
-      `${page.id} repeats the same section copy`
-    );
+    if (isDerivedPlacePhrase) {
+      const sectionIDs = (authoredPage.sections ?? []).map((section) => section.id);
+      const requiredDerivedSections = ["breakdown", "related-phrases", "good-to-know"];
+      const missingDerivedSections = requiredDerivedSections.filter((sectionID) => !sectionIDs.includes(sectionID));
+      if (missingDerivedSections.length > 0) {
+        pageKindTemplateErrors.push(`${page.id} derived place phrase missing compact sections: ${missingDerivedSections.join(", ")}`);
+      }
+      const forbiddenDerivedSections = ["at-glance", "quick-say", "when-to-use", "explore-next", "relationship-words"]
+        .filter((sectionID) => sectionIDs.includes(sectionID));
+      if (forbiddenDerivedSections.length > 0) {
+        pageKindTemplateErrors.push(`${page.id} derived place phrase has destination/duplicate sections: ${forbiddenDerivedSections.join(", ")}`);
+      }
+      const relatedSection = sectionByID(authoredPage, "related-phrases");
+      if ((relatedSection?.phrases ?? []).length < 2) {
+        pageKindTemplateErrors.push(`${page.id} derived place phrase needs at least two related phrase rows`);
+      }
+    } else {
+      assert(bodySections.length >= 2, `${page.id} authored page needs at least two traveler-facing section bodies`);
+      assert(
+        new Set(bodySections.map((section) => normalizeText(section.body))).size >= Math.min(2, bodySections.length),
+        `${page.id} repeats the same section copy`
+      );
+    }
     assert(authoredPage.practiceMetadata?.scenarioSeedID, `${page.id} authored page needs practice scenario seed metadata`);
     assert(authoredPage.practiceMetadata?.practiceCTALabel, `${page.id} authored page needs practice CTA metadata`);
 
@@ -330,19 +353,43 @@ function main() {
       pageKindTemplateErrors.push(`${page.id} ${pageKind} page is categorized as actual-landmarks`);
     }
 
-    if (["place", "restaurant", "dish", "city", "category"].includes(pageKind)) {
+    if (isDerivedPlacePhrase || ["place", "restaurant", "dish", "city", "category"].includes(pageKind)) {
       const relationshipSections = (authoredPage.sections ?? []).filter((section) => section.id === "relationship-words" || section.presentation === "relationship-shelf");
       if (relationshipSections.length > 0) {
-        pageKindTemplateErrors.push(`${page.id} ${pageKind} page has a relationship/person shelf`);
+        pageKindTemplateErrors.push(`${page.id} ${isDerivedPlacePhrase ? "derived place phrase" : pageKind} page has a relationship/person shelf`);
       }
     }
 
     const fakeProperNameTokens = pageBreakdownTokens(authoredPage)
       .filter((token) => normalizeText(token.vietnamese) !== normalizeText(page.targetText))
       .filter((token) => normalizeText(token.vietnamese) === normalizeText(token.english))
+      .filter((token) => !(isDerivedPlacePhrase && normalizeText(token.vietnamese) === normalizeText(token.english)))
       .filter((token) => !isRecognitionGloss(token));
     if (fakeProperNameTokens.length > 0) {
       pageKindTemplateErrors.push(`${page.id} has fake literal proper-name breakdowns: ${fakeProperNameTokens.map((token) => `${token.vietnamese} -> ${token.english}`).join("; ")}`);
+    }
+
+    if (isDerivedPlacePhrase) {
+      const derivedBannedTerms = [
+        "local name",
+        "place name",
+        "the traveler needs",
+        "use it with",
+        "when to use it",
+        "identifies it as",
+        "other branches",
+        "route phrase",
+        "where-question",
+      ].filter((term) => renderedText.toLowerCase().includes(term));
+      if (derivedBannedTerms.length > 0) {
+        pageKindTemplateErrors.push(`${page.id} derived place phrase has internal or patronizing copy: ${derivedBannedTerms.join(", ")}`);
+      }
+      if (placeKind === "restaurant" && /^đi\s+/i.test(normalizeText(page.targetText))) {
+        pageKindTemplateErrors.push(`${page.id} restaurant route phrase is clipped; use a full "Cho tôi đến nhà hàng..." sentence`);
+      }
+      if (placeKind === "restaurant" && /^dừng ở\s+/i.test(normalizeText(page.targetText))) {
+        pageKindTemplateErrors.push(`${page.id} restaurant drop-off phrase is clipped; use a full "Cho tôi xuống gần nhà hàng..." sentence`);
+      }
     }
 
     if (isLandmarkActionPage) {

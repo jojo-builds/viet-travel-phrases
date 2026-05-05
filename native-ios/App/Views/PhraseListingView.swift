@@ -184,7 +184,12 @@ struct PhraseArticleTemplateView: View {
 
     private var hero: some View {
         VStack(alignment: .leading, spacing: 0) {
+            if usesCompactPhraseHero {
+                CompactPhraseMastheadBackground()
+                    .frame(height: 112)
+            } else {
                 HeroMastheadImage(imageName: page.heroImageName ?? PhrasePageStyle.heroImageName)
+            }
 
             VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 8) {
@@ -196,10 +201,10 @@ struct PhraseArticleTemplateView: View {
                 }
 
                 Text(page.title)
-                    .font(.system(size: 54, weight: .black, design: .serif))
+                    .font(.system(size: usesCompactPhraseHero ? 38 : 54, weight: .black, design: .serif))
                     .foregroundStyle(.primary)
-                    .lineLimit(page.id == PhrasePage.xinChao.id ? 1 : 2)
-                    .minimumScaleFactor(0.62)
+                    .lineLimit(usesCompactPhraseHero ? 3 : (page.id == PhrasePage.xinChao.id ? 1 : 2))
+                    .minimumScaleFactor(usesCompactPhraseHero ? 0.68 : 0.62)
 
                 Text(page.englishTitle)
                     .font(.title3.weight(.semibold))
@@ -228,16 +233,21 @@ struct PhraseArticleTemplateView: View {
                 if let onTogglePractice {
                     PhrasePracticeIntentButton(
                         isInPractice: isInPractice,
+                        label: page.practiceCTALabel ?? "Add to practice",
                         onTogglePractice: onTogglePractice
                     )
                     .padding(.top, 4)
                 }
             }
             .padding(.horizontal, 24)
-            .padding(.top, PhrasePageStyle.heroTextTopPadding)
+            .padding(.top, usesCompactPhraseHero ? 20 : PhrasePageStyle.heroTextTopPadding)
             .padding(.bottom, PhrasePageStyle.heroTextBottomPadding)
         }
         .background(PhrasePageStyle.pageBackground)
+    }
+
+    private var usesCompactPhraseHero: Bool {
+        page.heroImageName == "HeroCompactPhraseMasthead"
     }
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"
@@ -542,6 +552,7 @@ private struct ArticleCallout: View {
 
 private struct PhrasePracticeIntentButton: View {
     let isInPractice: Bool
+    let label: String
     let onTogglePractice: () -> Void
 
     var body: some View {
@@ -553,7 +564,7 @@ private struct PhrasePracticeIntentButton: View {
                     .font(.headline.weight(.semibold))
                     .foregroundStyle(.red)
 
-                Text(isInPractice ? "In practice pool" : "Add to practice")
+                Text(isInPractice ? "In practice pool" : label)
                     .font(.headline.weight(.semibold))
                     .foregroundStyle(.primary)
 
@@ -564,7 +575,26 @@ private struct PhrasePracticeIntentButton: View {
             .phraseListCard(cornerRadius: 20, strokeOpacity: 0.05)
         }
         .buttonStyle(.plain)
-        .accessibilityLabel(isInPractice ? "Remove from practice pool" : "Add to practice pool")
+        .accessibilityLabel(isInPractice ? "Remove from practice pool" : label)
+    }
+}
+
+private struct CompactPhraseMastheadBackground: View {
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            PhrasePageStyle.pageBackground
+
+            LinearGradient(
+                stops: [
+                    .init(color: Color.white.opacity(0.92), location: 0),
+                    .init(color: Color.white.opacity(0.72), location: 0.46),
+                    .init(color: PhrasePageStyle.pageBackground.opacity(1), location: 1),
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        }
+        .ignoresSafeArea(edges: .top)
     }
 }
 

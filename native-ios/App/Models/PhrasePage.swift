@@ -97,6 +97,7 @@ struct PhraseDetailPage: Identifiable, Equatable {
     let sections: [PhraseDetailSection]
     let examples: [PhraseOption]
     var audioKey: String? = nil
+    var practiceCTALabel: String? = nil
     var showsCatalogExplore: Bool = true
 
     var playbackAudioKey: String? {
@@ -126,6 +127,7 @@ struct PhraseArticlePage: Identifiable, Equatable {
     var heroImageName: String? = nil
     let playbackAudioKey: String?
     let sections: [PhraseArticleSection]
+    var practiceCTALabel: String? = nil
     var showsCatalogExplore: Bool = true
 }
 
@@ -1017,6 +1019,7 @@ extension PhraseDetailPage {
             heroImageName: heroImageName,
             playbackAudioKey: playbackAudioKey,
             sections: sections.map(\.articleSection),
+            practiceCTALabel: practiceCTALabel,
             showsCatalogExplore: showsCatalogExplore
         )
     }

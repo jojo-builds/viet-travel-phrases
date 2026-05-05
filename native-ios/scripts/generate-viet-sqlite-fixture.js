@@ -1788,7 +1788,15 @@ function main() {
         phrase.cityShortTitle,
         phrase.cityVietnameseName,
       ].filter(Boolean).join(" "),
-      priority_tier: page ? 100 : phrase.accessTier === "starter" ? 75 : 50,
+      priority_tier: page?.categoryIDs?.includes("derived-place-phrases")
+        ? 92
+        : page?.categoryIDs?.some((categoryID) => [
+          "city-page-kind-restaurant",
+          "city-page-kind-dish",
+          "city-page-kind-place",
+        ].includes(categoryID))
+          ? 112
+          : page ? 100 : phrase.accessTier === "starter" ? 75 : 50,
       is_canonical_page: 1,
     };
   });
@@ -2127,21 +2135,43 @@ function main() {
       LEFT JOIN page_practice_seed pps ON pps.page_id = pp.id
       LEFT JOIN page_practice_step ppst ON ppst.page_id = pp.id
       GROUP BY pp.id
+    ),
+    derived_pages AS (
+      SELECT DISTINCT page_id
+      FROM page_category
+      WHERE category_id = 'derived-place-phrases'
     )
-    SELECT page_id || ': ' || page_title
-    FROM page_contract
-    WHERE page_id != 'viet-phrase-polite-1'
+    SELECT pc.page_id || ': ' || pc.page_title
+    FROM page_contract pc
+    LEFT JOIN derived_pages dp ON dp.page_id = pc.page_id
+    WHERE pc.page_id != 'viet-phrase-polite-1'
       AND (
-        has_at_glance = 0
-        OR has_quick_or_standard = 0
-        OR has_breakdown = 0
-        OR has_context_copy = 0
-        OR article_phrase_rows = 0
-        OR breakdown_rows = 0
-        OR has_practice_seed = 0
-        OR has_practice_steps = 0
+        (
+          dp.page_id IS NULL
+          AND (
+            has_at_glance = 0
+            OR has_quick_or_standard = 0
+            OR has_breakdown = 0
+            OR has_context_copy = 0
+            OR article_phrase_rows = 0
+            OR breakdown_rows = 0
+            OR has_practice_seed = 0
+            OR has_practice_steps = 0
+          )
+        )
+        OR (
+          dp.page_id IS NOT NULL
+          AND (
+            has_breakdown = 0
+            OR has_context_copy = 0
+            OR article_phrase_rows = 0
+            OR breakdown_rows = 0
+            OR has_practice_seed = 0
+            OR has_practice_steps = 0
+          )
+        )
       )
-    ORDER BY page_id;
+    ORDER BY pc.page_id;
   `).split("\n").filter(Boolean);
   const brokenRelationCount = Number(sqliteQuery(`
     SELECT count(*)

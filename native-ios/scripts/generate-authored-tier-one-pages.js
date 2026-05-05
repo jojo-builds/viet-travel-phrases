@@ -2010,6 +2010,10 @@ function cityPageKind(pageRecord, place) {
   return "place";
 }
 
+function isDerivedCityPlacePhrase(pageRecord, pageKind) {
+  return pageKind === "phrase" && pageRecord.kind === "phrase" && Boolean(pageRecord.placeID);
+}
+
 function cityContentRole(pageRecord, place) {
   if (pageRecord.contentRole) return pageRecord.contentRole;
   if (place.contentRole) return place.contentRole;
@@ -2111,6 +2115,10 @@ function splitLongCityChunk(chunk) {
       ["Đức Bà", "Notre-Dame"],
       ["Sài Gòn", "Saigon"],
     ],
+    "Nén Đà Nẵng": [
+      ["Nén", "restaurant name"],
+      ["Đà Nẵng", "Da Nang"],
+    ],
     "Múa rối Thăng Long": [
       ["Múa rối", "water puppets"],
       ["Thăng Long", "Thang Long"],
@@ -2170,6 +2178,12 @@ function isUsefulCityPlaceWord(vietnamese, english) {
     "station",
     "port",
     "atm",
+    "da nang",
+    "hanoi",
+    "hoi an",
+    "hue",
+    "saigon",
+    "ho chi minh",
   ].some((word) => text.includes(word) || gloss.includes(word));
 }
 
@@ -2212,7 +2226,7 @@ function shouldUseCityRecognitionGloss(vietnamese, english) {
     ].includes(gloss);
 }
 
-function cityBreakdownTokens(pageRecord, pageKind = null, placeKind = null) {
+function cityBreakdownTokens(pageRecord, pageKind = null, placeKind = null, options = {}) {
   if (pageKind === "dish" && normalizeAudioText(pageRecord.targetText) === normalizeAudioText("Cao lầu ở Hội An")) {
     return [
       { id: `${pageRecord.id}-chunk-1`, vietnamese: "Cao lầu", english: "dish name", audioKey: null },
@@ -2237,6 +2251,8 @@ function cityBreakdownTokens(pageRecord, pageKind = null, placeKind = null) {
     let english = Array.isArray(chunk) ? chunk[1] : chunk.english;
     const isFinalToken = index === compactChunks.length - 1;
     if (
+      !options.preserveNameGloss
+      &&
       !isFinalToken
       && pageKind
       && looksLikeNameChunk(vietnamese, english)
@@ -2252,6 +2268,80 @@ function cityBreakdownTokens(pageRecord, pageKind = null, placeKind = null) {
       audioKey: /\b(?:local name|restaurant name|dish name|street name|market name|beach name|airport name|name recognition|name ending)\b/i.test(english) ? null : authoredBreakdownAudioKey(vietnamese),
     };
   });
+}
+
+function derivedPlacePhraseTip(placeKind) {
+  if (placeKind === "restaurant" || placeKind === "cafe") {
+    return "If the name is hard to say, show the map pin and play the full sentence.";
+  }
+  if (placeKind === "street") {
+    return "If pronunciation is hard, show the address and play the full sentence.";
+  }
+  if (["airport", "station", "port"].includes(placeKind)) {
+    return "Keep the ticket, booking, or pickup screen visible if staff ask a follow-up.";
+  }
+  return "Keep the map pin, ticket, or meeting point visible if the answer comes fast.";
+}
+
+function derivedPlacePhraseRecordScore(record, pageRecord, placeKind) {
+  const text = cityRecordSearchText(record);
+  let score = 0;
+  if (record.kind === "place") score += 1000;
+  if (record.id === pageRecord.id) score -= 10000;
+  if (placeKind === "restaurant" || placeKind === "cafe") {
+    if (/go|đến|đi /.test(text)) score += 500;
+    if (/reservation|đặt bàn/.test(text)) score += 450;
+    if (/stop|dừng|drop|xuống/.test(text)) score += 350;
+    if (/where|ở đâu/.test(text)) score += 260;
+    if (/\batm\b|ăn gần|eat near/.test(text)) score -= 250;
+  } else if (placeKind === "street") {
+    if (/đến đường|driver|taxi|đi đường/.test(text)) score += 500;
+    if (/phải đường|gần đây|near here/.test(text)) score += 450;
+    if (/stop|dừng|drop|xuống/.test(text)) score += 400;
+    if (/wrong|sai chỗ|không đúng/.test(text)) score += 350;
+  } else {
+    if (/where|ở đâu|\bgo\b|đi |stop|dừng|drop|xuống|ticket|vé|photo|chụp|taxi|call|gọi|pickup|đón/.test(text)) score += 450;
+    if (/\batm\b|ăn gần|eat near/.test(text)) score -= 150;
+  }
+  return score;
+}
+
+function derivedPlacePhraseOptions(pageRecord, relatedRecords, placePage, placeKind) {
+  const samePlaceRecords = [
+    placePage,
+    ...relatedRecords.filter((record) => record.placeID === pageRecord.placeID),
+  ]
+    .filter(Boolean)
+    .filter((record) => record.id !== pageRecord.id)
+    .filter((record) => {
+      if (placeKind !== "restaurant" && placeKind !== "cafe") return true;
+      return !/stop|dừng|drop|xuống/.test(cityRecordSearchText(record));
+    })
+    .map((record, index) => ({
+      record,
+      index,
+      score: derivedPlacePhraseRecordScore(record, pageRecord, placeKind),
+    }))
+    .sort((left, right) => (right.score - left.score) || (left.index - right.index) || left.record.id.localeCompare(right.record.id))
+    .map((entry) => cityLibraryPhraseOption(entry.record, canonicalCityDetailPageID(entry.record.id)));
+
+  const samePlaceOptions = compactPhraseOptions(samePlaceRecords, 5);
+  const supplemental = [];
+  if (placeKind === "restaurant" || placeKind === "cafe") {
+    supplemental.push(
+      phraseOptionByID("food-menu", "green"),
+      phraseOptionByID("food-need-table", "green"),
+      phraseOptionByID("coffee-7", "green")
+    );
+  } else if (samePlaceOptions.length < 2) {
+    supplemental.push(
+      phraseOptionByID("ves-can-you-show-me-politeness", "teal"),
+      phraseOptionByID("ves-not-right-place", "orange"),
+      phraseOptionByID("ves-call-taxi-for-me", "orange")
+    );
+  }
+
+  return compactPhraseOptions([...samePlaceOptions, ...supplemental], 5);
 }
 
 function linkedCityPhraseOptions(records, count = 4) {
@@ -2399,6 +2489,23 @@ function applyCityEditorialImport(sections, pageRecord) {
   }
 
   return nextSections;
+}
+
+function compactDerivedPlacePhraseSections(authoredSections, generatedSections) {
+  const generatedRelated = generatedSections.find((section) => section.id === "related-phrases");
+  const authoredRelated = authoredSections.find((section) => (
+    section.id === "related-phrases"
+    && Array.isArray(section.phrases)
+    && section.phrases.length > 0
+  ));
+
+  const breakdown = generatedSections.find((section) => section.id === "breakdown")
+    ?? authoredSections.find((section) => section.id === "breakdown");
+  const related = authoredRelated ?? generatedRelated;
+  const tip = generatedSections.find((section) => section.id === "good-to-know")
+    ?? authoredSections.find((section) => section.id === "good-to-know");
+
+  return [breakdown, related, tip].filter(Boolean);
 }
 
 function findRelatedCityRecords(pageRecord, pageRecords, placePageByPlaceID) {
@@ -2586,6 +2693,7 @@ function cityPageForRecord(pageRecord, context) {
   const pageKind = cityPageKind(pageRecord, place);
   const placeKind = cityPlaceKind(place);
   const contentRole = cityContentRole(pageRecord, place);
+  const derivedPlacePhrase = isDerivedCityPlacePhrase(pageRecord, pageKind);
   const relatedRecords = findRelatedCityRecords(pageRecord, pageRecords, placePageByPlaceID);
   const placePage = placePageByPlaceID.get(pageRecord.placeID);
   const samePlacePhraseRows = relatedRecords.filter((record) => record.kind === "phrase");
@@ -2647,29 +2755,49 @@ function cityPageForRecord(pageRecord, context) {
     phraseOptionByID("v900-food-drin-i-do-not-eat-seafood", "green"),
   ], 5);
 
-  const sections = [
-    {
-      id: "at-glance",
-      title: pageKind === "phrase" ? "Say this" : "Start here",
-      body: pageKind === "phrase" ? cityPhraseAtGlanceBody(pageRecord, city, place) : cityPlaceBrief(city, place, pageRecord, pageKind, placeKind, contentRole),
-    },
-    {
-      id: "quick-say",
-      title: pageKind === "phrase" ? "Quick say" : (pageKind === "dish" ? "Order it" : "Say it"),
-      body: quickBodyByKind[pageKind] ?? quickBodyByKind.phrase,
-      phrases: [selfOption],
-    },
-    {
-      id: "breakdown",
-      title: pageKind === "phrase" ? "Break it down" : "What the name means",
-      body: pageKind === "phrase"
-        ? "Listen for these pieces, then play the whole sentence."
-        : "Keep proper names together; use literal pieces only when they help.",
-      breakdown: cityBreakdownTokens(pageRecord, pageKind, placeKind),
-    },
-  ];
+  const sections = derivedPlacePhrase
+    ? [
+      {
+        id: "breakdown",
+        title: "Break it down",
+        body: "",
+        breakdown: cityBreakdownTokens(pageRecord, pageKind, placeKind, { preserveNameGloss: true }),
+      },
+      {
+        id: "related-phrases",
+        title: "Related phrases",
+        body: "",
+        phrases: derivedPlacePhraseOptions(pageRecord, relatedRecords, placePage, placeKind),
+      },
+      {
+        id: "good-to-know",
+        title: "Tip",
+        body: derivedPlacePhraseTip(placeKind),
+      },
+    ]
+    : [
+      {
+        id: "at-glance",
+        title: pageKind === "phrase" ? "Say this" : "Start here",
+        body: pageKind === "phrase" ? cityPhraseAtGlanceBody(pageRecord, city, place) : cityPlaceBrief(city, place, pageRecord, pageKind, placeKind, contentRole),
+      },
+      {
+        id: "quick-say",
+        title: pageKind === "phrase" ? "Quick say" : (pageKind === "dish" ? "Order it" : "Say it"),
+        body: quickBodyByKind[pageKind] ?? quickBodyByKind.phrase,
+        phrases: [selfOption],
+      },
+      {
+        id: "breakdown",
+        title: pageKind === "phrase" ? "Break it down" : "What the name means",
+        body: pageKind === "phrase"
+          ? "Listen for these pieces, then play the whole sentence."
+          : "Keep proper names together; use literal pieces only when they help.",
+        breakdown: cityBreakdownTokens(pageRecord, pageKind, placeKind),
+      },
+    ];
 
-  if (pageKind === "restaurant") {
+  if (!derivedPlacePhrase && pageKind === "restaurant") {
     sections.push(
       {
         id: "place-brief",
@@ -2697,7 +2825,7 @@ function cityPageForRecord(pageRecord, context) {
         phrases: restaurantPayOptions,
       }
     );
-  } else if (pageKind === "dish") {
+  } else if (!derivedPlacePhrase && pageKind === "dish") {
     sections.push(
       {
         id: "place-brief",
@@ -2728,7 +2856,7 @@ function cityPageForRecord(pageRecord, context) {
         phrases: dishFindOptions,
       }
     );
-  } else if (pageKind === "place") {
+  } else if (!derivedPlacePhrase && pageKind === "place") {
     sections.push(
       {
         id: "place-brief",
@@ -2750,7 +2878,7 @@ function cityPageForRecord(pageRecord, context) {
         phrases: linkedCityPhraseOptionsByIntent(relatedRecords.filter((record) => record.kind === "phrase"), "place-action", 3),
       }
     );
-  } else {
+  } else if (!derivedPlacePhrase) {
     sections.push(
       {
         id: "place-anchor",
@@ -2767,21 +2895,26 @@ function cityPageForRecord(pageRecord, context) {
     );
   }
 
-  sections.push(
-    {
-      id: "good-to-know",
-      title: "Good to know",
-      body: pageRecord.tip,
-    },
-    {
-      id: "explore-next",
-      title: "Explore next",
-      body: `Next helpful phrases around ${city.shortTitle}.`,
-      phrases: linkedCityPhraseOptions(relatedRecords, 5),
-    }
-  );
+  if (!derivedPlacePhrase) {
+    sections.push(
+      {
+        id: "good-to-know",
+        title: "Good to know",
+        body: pageRecord.tip,
+      },
+      {
+        id: "explore-next",
+        title: "Explore next",
+        body: `Next helpful phrases around ${city.shortTitle}.`,
+        phrases: linkedCityPhraseOptions(relatedRecords, 5),
+      }
+    );
+  }
 
-  const authoredSections = applyCityEditorialImport(sections, pageRecord);
+  let authoredSections = applyCityEditorialImport(sections, pageRecord);
+  if (derivedPlacePhrase) {
+    authoredSections = compactDerivedPlacePhraseSections(authoredSections, sections);
+  }
   const editorialCategoryIDs = pageRecord.editorialImport?.categoryIDs ?? [];
 
   return {
@@ -2794,7 +2927,7 @@ function cityPageForRecord(pageRecord, context) {
     englishTitle: pageRecord.englishText,
     pronunciation: pageRecord.pronunciation,
     summary: pageRecord.editorialImport?.summary ?? pageRecord.englishText,
-    heroImageName: pageRecord.editorialImport?.heroImageName ?? null,
+    heroImageName: pageRecord.editorialImport?.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : null),
     iconName: pageKind === "restaurant" ? "fork.knife"
       : pageKind === "dish" ? "takeoutbag.and.cup.and.straw.fill"
         : pageRecord.kind === "place" ? "mappin.and.ellipse" : "map.fill",
@@ -2809,6 +2942,7 @@ function cityPageForRecord(pageRecord, context) {
       contentRole ? `content-role-${contentRole}` : null,
       pageKind === "place" ? "actual-landmarks" : null,
       pageKind === "phrase" ? "city-phrases" : null,
+      derivedPlacePhrase ? "derived-place-phrases" : null,
       pageKind === "restaurant" ? "restaurants" : null,
       pageKind === "dish" ? "local-dishes" : null,
       ...editorialCategoryIDs,
@@ -2823,6 +2957,7 @@ function cityPageForRecord(pageRecord, context) {
       pageKind,
       placeKind,
       contentRole,
+      derivedPlacePhrase,
       placeID: pageRecord.placeID,
       placeName: place.englishName,
       sourceIDs: pageRecord.sourceIDs ?? [],
@@ -3394,6 +3529,7 @@ function authoredPageProfile(page) {
   const meta = page.cityMetadata || {};
   const pageKind = meta.pageKind || "";
   const placeKind = meta.placeKind || "";
+  if (pageKind === "phrase" && meta.derivedPlacePhrase) return "derived-place-phrase";
   if (pageKind === "restaurant") return "restaurant";
   if (pageKind === "dish") return "dish";
   if (pageKind === "place" && placeKind === "street") return "street";
@@ -3518,6 +3654,7 @@ function adultNameSectionBody(page, section, profile) {
 
 function cleanTravelerBreakdownGloss(gloss, page) {
   const text = String(gloss ?? "").trim();
+  if (page.cityMetadata?.derivedPlacePhrase && /^(local name|place name|proper name|name recognition)$/i.test(text)) return "name";
   if (/^full phrase$/i.test(text)) return page.englishTitle || page.summary || "whole phrase";
   if (/^key word$/i.test(text)) return "key word to hear";
   if (/^first name part$/i.test(text) || /^second name part$/i.test(text)) return "local name";
@@ -3531,6 +3668,15 @@ function cleanTravelerBreakdownGloss(gloss, page) {
 
 function cleanTravelerSectionTitle(title, page) {
   const profile = authoredPageProfile(page);
+  if (profile === "derived-place-phrase") {
+    const byID = {
+      breakdown: "Break it down",
+      "related-phrases": "Related phrases",
+      "good-to-know": "Tip",
+    };
+    const sectionIDTitle = byID[page.__currentSectionID];
+    if (sectionIDTitle) return sectionIDTitle;
+  }
   if (isNameBasedProfile(profile)) {
     const byID = {
       "at-glance": "About",
@@ -3723,6 +3869,12 @@ function phraseSectionBody(page, section) {
 function shouldKeepSectionForProfile(section, profile) {
   const hasRows = (section.phrases || []).length > 0;
   const hasBreakdown = (section.breakdown || []).length > 0;
+  if (profile === "derived-place-phrase") {
+    if (section.id === "breakdown") return hasBreakdown;
+    if (section.id === "related-phrases") return hasRows;
+    if (section.id === "good-to-know") return String(section.body ?? "").trim().length > 0;
+    return false;
+  }
   if (isNameBasedProfile(profile)) {
     const keepByProfile = {
       place: new Set(["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "at-the-bridge", "pickup-nearby", "place-brief", "use-it-with", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
@@ -3760,6 +3912,7 @@ const sectionOrderByProfile = {
   street: ["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"],
   restaurant: ["at-glance", "quick-say", "before-you-go", "menu-dietary", "when-to-use", "place-brief", "breakdown", "good-to-know"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
+  "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
   phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "traveler-insight", "what-happens-next", "you-may-hear", "practice-pairs", "nearby-phrases", "good-to-know", "explore-next"],
 };
 
@@ -3837,6 +3990,7 @@ function practicePageType(page, profile) {
   if (profile === "street") return "street";
   if (profile === "restaurant") return "restaurant";
   if (profile === "dish") return "dish";
+  if (profile === "derived-place-phrase") return "phrase";
   if (profile === "place") {
     if (
       /bà nà hills|ba na hills|ngũ hành sơn|marble mountains|airport|sân bay/i.test(title)
@@ -3992,7 +4146,9 @@ function sanitizeAuthoredPage(page) {
 
   return {
     ...page,
-    summary: isNameBasedProfile(profile)
+    summary: profile === "derived-place-phrase"
+      ? cleanFinalPunctuation(page.englishTitle || page.summary || "")
+      : isNameBasedProfile(profile)
       ? cleanFinalPunctuation(adultNameAboutBody(page, profile))
       : cleanFinalPunctuation(phraseContextSentence(page)),
     practiceMetadata: practiceIntegrationMetadata(page, sanitizedSections, profile),

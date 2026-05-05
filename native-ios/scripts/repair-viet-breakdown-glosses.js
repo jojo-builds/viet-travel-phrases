@@ -1347,6 +1347,10 @@ const cityPlaceExactSplits = new Map(Object.entries({
     ["Ngũ Hành", "local name"],
     ["Sơn", "mountain name"],
   ],
+  "nen da nang": [
+    ["Nén", "restaurant name"],
+    ["Đà Nẵng", "Da Nang"],
+  ],
 }));
 
 function splitFallbackPlaceName(vietnamese, english, page) {
