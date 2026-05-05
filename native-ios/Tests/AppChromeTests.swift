@@ -774,6 +774,7 @@ final class AppChromeTests: XCTestCase {
 
     func testBrowseCollectionDescriptorsExposeStarterRowsAndPracticePolicy() {
         let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
+        let shopping = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("shopping")))
         let hanoi = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hanoi")))
 
         XCTAssertEqual(hotel.route, .category("hotel"))
@@ -782,6 +783,9 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hotel.starterItems.isEmpty)
         XCTAssertEqual(hotel.practiceAction, .addStarterPages(hotel.starterItems.map(\.pageID)))
         XCTAssertTrue(hotel.mastheadImageName.hasPrefix("BrowseCollection"))
+
+        XCTAssertEqual(shopping.practiceSubtitle, "Practice prices, sizes, payment, and returns.")
+        XCTAssertFalse(shopping.practiceSubtitle.localizedCaseInsensitiveContains("quick practice loop"))
 
         XCTAssertEqual(hanoi.route, .city("hanoi"))
         XCTAssertEqual(hanoi.practiceAction, .practiceMode(.hanoiBucketList))

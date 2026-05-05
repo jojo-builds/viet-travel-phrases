@@ -2731,13 +2731,14 @@ function cityPageForRecord(pageRecord, context) {
   const samePlaceOptions = linkedCityPhraseOptions(samePlacePhraseRows, 8);
   const placeActionOptions = linkedCityPhraseOptionsByIntent(placePhraseRows, "place-action", 4);
   const restaurantWalkInOptions = linkedCityPhraseOptionsByIntent(placePhraseRows, "restaurant-walk-in", 4);
-  const restaurantOrderOptions = compactPhraseOptions([
-    citySpecificFoodOrderOption(pageRecord),
-    phraseOptionByID("food-1", "green"),
+  const restaurantTableMenuOptions = compactPhraseOptions([
     phraseOptionByID("food-need-table", "green"),
     phraseOptionByID("food-menu", "green"),
+  ], 4);
+  const restaurantOrderOptions = compactPhraseOptions([
+    citySpecificFoodOrderOption(pageRecord),
     phraseOptionByID("v900-food-drin-what-do-you-recommend", "green"),
-  ], 5);
+  ], 4);
   const restaurantDrinkOptions = compactPhraseOptions([
     phraseOptionByID("vpe-one-item-please-cho-toi-mot-tra-da", "green"),
     phraseOptionByID("store-1", "green"),
@@ -2745,10 +2746,12 @@ function cityPageForRecord(pageRecord, context) {
   const restaurantPayOptions = compactPhraseOptions([
     phraseOptionByID("coffee-7", "green"),
     phraseOptionByID("store-6", "green"),
-    phraseOptionByID("taxi-7", "orange"),
+    phraseOptionByID("taxi-7", "green"),
     phraseOptionByID("store-7", "green"),
+  ], 4);
+  const restaurantGettingBackOptions = compactPhraseOptions([
     phraseOptionByID("ves-call-taxi-for-me", "orange"),
-  ], 5);
+  ], 3);
   const dishOrderOptions = compactPhraseOptions([
     citySpecificFoodOrderOption(pageRecord),
     phraseOptionByID("food-1", "green"),
@@ -2822,28 +2825,40 @@ function cityPageForRecord(pageRecord, context) {
     sections.push(
       {
         id: "place-brief",
-        title: "Walk in",
+        title: "Getting there",
         body: "Map, arrival, and drop-off sentences for getting to the restaurant.",
         phrases: restaurantWalkInOptions,
       },
       {
+        id: "table-menu",
+        title: "Table & menu",
+        body: "",
+        phrases: restaurantTableMenuOptions,
+      },
+      {
         id: "before-you-go",
         title: "Order",
-        body: "Ordering, table, menu, and recommendation sentences.",
+        body: "",
         phrases: restaurantOrderOptions,
       },
       {
         id: "menu-dietary",
-        title: "Drinks or menu",
-        body: "Drink, ingredient, allergy, and vegetarian sentences.",
+        title: "Drinks",
+        body: "",
         phrases: restaurantDrinkOptions,
       },
       {
         id: "when-to-use",
-        title: "Pay and get back",
+        title: "Pay",
         presentation: "plain-text",
-        body: cityWhenToUseBody(pageRecord, city, place, pageKind, placeKind),
+        body: "",
         phrases: restaurantPayOptions,
+      },
+      {
+        id: "inside-the-place",
+        title: "Getting back",
+        body: "",
+        phrases: restaurantGettingBackOptions,
       }
     );
   } else if (!derivedPlacePhrase && pageKind === "dish") {
@@ -3717,20 +3732,21 @@ function cleanTravelerSectionTitle(title, page) {
   if (isNameBasedProfile(profile)) {
     const byID = {
       "at-glance": "About",
-      "quick-say": profile === "street" ? "Hear the street" : profile === "dish" ? "Hear the dish" : profile === "restaurant" ? "Hear the restaurant" : "Hear the name",
-      "breakdown": "What the name means",
+      "quick-say": profile === "street" ? "Hear the street" : profile === "dish" ? "Hear the dish" : "Hear the name",
+      "breakdown": profile === "restaurant" ? "Name guide" : "What the name means",
       "journey-flow": "Visit flow",
       "key-phrases": "Common phrases",
       "show-driver": profile === "street" ? "Tell the driver" : "Show driver",
       "place-brief": profile === "street" ? "Driver phrases" : profile === "restaurant" ? "Getting there" : profile === "dish" ? "Order it" : "Getting there",
+      "table-menu": "Table & menu",
       "before-you-go": profile === "restaurant" ? "Order" : "Before you go",
       "menu-dietary": profile === "restaurant" ? "Drinks" : "Ingredients and diet",
       "inside-the-place": profile === "restaurant" ? "Getting back" : "At the place",
       "how-to-order": profile === "dish" ? "Adjust it" : "How to order",
       "ingredients-diet": "Diet / allergy",
       "use-it-with": profile === "street" ? "Find it nearby" : profile === "restaurant" ? "Order and pay" : profile === "dish" ? "Ask what’s inside" : "At the place",
-      "when-to-use": profile === "street" ? "If it looks wrong" : profile === "restaurant" ? "Pay and get back" : profile === "dish" ? "Find it nearby" : "Meeting or pickup",
-      "explore-next": "Nearby needs",
+      "when-to-use": profile === "street" ? "If it looks wrong" : profile === "restaurant" ? "Pay" : profile === "dish" ? "Find it nearby" : "Meeting or pickup",
+      "explore-next": `More ${page.title || "place"} phrases`,
     };
     const sectionIDTitle = byID[page.__currentSectionID];
     if (sectionIDTitle) return sectionIDTitle;
@@ -3798,11 +3814,14 @@ function curatedNameSectionPhrases(page, section, profile) {
     if (section.id === "before-you-go") {
       return compactPhraseOptions([
         specificFoodOrderOptionForText(`${page.title ?? ""} ${page.englishTitle ?? ""}`),
-        phraseOptionByID("food-1", "green"),
+        phraseOptionByID("v900-food-drin-what-do-you-recommend", "green"),
+      ], 4);
+    }
+    if (section.id === "table-menu") {
+      return compactPhraseOptions([
         phraseOptionByID("food-need-table", "green"),
         phraseOptionByID("food-menu", "green"),
-        phraseOptionByID("v900-food-drin-what-do-you-recommend", "green"),
-      ], 5);
+      ], 4);
     }
     if (section.id === "menu-dietary") {
       return compactPhraseOptions([
@@ -3814,10 +3833,14 @@ function curatedNameSectionPhrases(page, section, profile) {
       return compactPhraseOptions([
         phraseOptionByID("coffee-7", "green"),
         phraseOptionByID("store-6", "green"),
-        phraseOptionByID("taxi-7", "orange"),
+        phraseOptionByID("taxi-7", "green"),
         phraseOptionByID("store-7", "green"),
+      ], 4);
+    }
+    if (section.id === "inside-the-place") {
+      return compactPhraseOptions([
         phraseOptionByID("ves-call-taxi-for-me", "orange"),
-      ], 5);
+      ], 3);
     }
   }
 
@@ -4001,7 +4024,7 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
     const keepByProfile = {
       place: new Set(["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "at-the-bridge", "pickup-nearby", "place-brief", "use-it-with", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
       street: new Set(["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
-      restaurant: new Set(["at-glance", "quick-say", "before-you-go", "menu-dietary", "when-to-use", "place-brief", "breakdown", "good-to-know"]),
+      restaurant: new Set(["at-glance", "quick-say", "place-brief", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "breakdown", "good-to-know"]),
       dish: new Set(["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
     };
     return (keepByProfile[profile] || keepByProfile.place).has(section.id);
@@ -4050,7 +4073,7 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
 const sectionOrderByProfile = {
   place: ["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "place-brief", "at-the-bridge", "use-it-with", "pickup-nearby", "when-to-use", "breakdown", "good-to-know", "explore-next"],
   street: ["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"],
-  restaurant: ["at-glance", "quick-say", "before-you-go", "menu-dietary", "when-to-use", "place-brief", "breakdown", "good-to-know"],
+  restaurant: ["at-glance", "quick-say", "place-brief", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "breakdown", "good-to-know"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
   "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
   phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "traveler-insight", "what-happens-next", "you-may-hear", "practice-pairs", "nearby-phrases", "good-to-know", "explore-next"],
@@ -4068,6 +4091,63 @@ function sectionHasTravelerContent(section) {
     || (section.phrases || []).length
     || (section.breakdown || []).length
   );
+}
+
+function isBaNaHillsPage(page) {
+  return normalizedVietnameseKey(page.title || "") === "ba na hills";
+}
+
+function phraseSection(id, title, phraseIDs, tintName = "teal") {
+  return {
+    id,
+    title,
+    body: "",
+    phrases: compactPhraseOptions(phraseIDs.map((phraseID) => phraseOptionByID(phraseID, tintName)), 6),
+    breakdown: [],
+    presentation: "phrase-list",
+  };
+}
+
+function rewriteBaNaHillsJourneySections(page, sections) {
+  if (!isBaNaHillsPage(page)) return sections;
+
+  const existingByID = new Map(sections.map((section) => [section.id, section]));
+  const about = existingByID.get("at-glance");
+  const hearName = existingByID.get("quick-say");
+  const visitFlow = existingByID.get("journey-flow");
+  const nameGuide = existingByID.get("breakdown");
+  const goodToKnow = existingByID.get("good-to-know");
+
+  return [
+    about ? { ...about, id: "at-glance", title: "About" } : null,
+    hearName ? { ...hearName, id: "quick-say", title: "Hear the name" } : null,
+    visitFlow ? { ...visitFlow, id: "journey-flow", title: "Visit flow", presentation: "plain-text" } : null,
+    phraseSection("getting-there", "Getting there", [
+      "ves-take-me-to-ba-na-hills",
+      "city-danang-go-ba-na-hills",
+      "city-danang-where-ba-na-hills",
+      "city-danang-stop-ba-na-hills",
+    ], "teal"),
+    phraseSection("tickets", "Tickets", [
+      "ves-two-tickets-ba-na-hills",
+    ], "orange"),
+    phraseSection("cable-car", "Cable car", [
+      "ves-where-cable-car",
+    ], "teal"),
+    phraseSection("photos", "Photos", [
+      "ves-take-photo-for-me",
+    ], "purple"),
+    phraseSection("getting-back", "Getting back", [
+      "directions-8",
+      "ves-call-taxi-for-me",
+    ], "orange"),
+    goodToKnow ? { ...goodToKnow, id: "good-to-know", title: "Good to know" } : null,
+    phraseSection("food-cash", "Food & cash", [
+      "city-danang-eat-near-ba-na-hills",
+      "city-danang-atm-ba-na-hills",
+    ], "green"),
+    nameGuide ? { ...nameGuide, id: "breakdown", title: "Name guide" } : null,
+  ].filter(Boolean).filter(sectionHasTravelerContent);
 }
 
 function sectionPhraseFilter(page, section, profile, phrase) {
@@ -4271,7 +4351,7 @@ function sanitizeAuthoredPage(page) {
   const profile = authoredPageProfile(page);
   const phraseRole = phraseRoleForPage(page, profile);
   const sections = (page.sections || []).filter((section) => shouldKeepSectionForProfile(section, profile, page, phraseRole));
-  const sanitizedSections = normalizeTravelerSections(page, sections.map((section) => ({
+  const sanitizedSections = rewriteBaNaHillsJourneySections(page, normalizeTravelerSections(page, sections.map((section) => ({
     ...section,
     title: cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
     body: isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
@@ -4283,7 +4363,7 @@ function sanitizeAuthoredPage(page) {
       ...token,
       english: cleanTravelerBreakdownGloss(token.english, page),
     })),
-  })), profile);
+  })), profile));
 
   return {
     ...page,

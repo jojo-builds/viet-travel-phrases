@@ -254,9 +254,31 @@ struct PhraseArticleTemplateView: View {
     private static let catalogExploreID = "PhraseArticleTemplateViewCatalogExplore"
 
     private var visibleSections: [PhraseArticleSection] {
+        Self.visibleSections(for: page)
+    }
+
+    static func visibleSections(for page: PhraseArticlePage) -> [PhraseArticleSection] {
         page.sections.filter { section in
-            !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty
+            guard !isSelfOnlyHeroRepeat(section, page: page) else { return false }
+            return !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty
         }
+    }
+
+    private static func isSelfOnlyHeroRepeat(_ section: PhraseArticleSection, page: PhraseArticlePage) -> Bool {
+        let duplicateSectionTitles: Set<String> = ["Quick say", "Say this"]
+        guard duplicateSectionTitles.contains(section.title), section.phrases.count == 1, let phrase = section.phrases.first else {
+            return false
+        }
+
+        return normalizedDisplayText(phrase.vietnamese) == normalizedDisplayText(page.title)
+            && normalizedDisplayText(phrase.english) == normalizedDisplayText(page.englishTitle)
+    }
+
+    private static func normalizedDisplayText(_ value: String) -> String {
+        value
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: Locale(identifier: "vi_VN"))
+            .replacingOccurrences(of: "’", with: "'")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     @MainActor
@@ -1028,11 +1050,13 @@ struct ExploreCatalogSection: View {
     let currentPageID: String
     let onOpenDetail: (String) -> Void
     private let sections: [PhraseCatalogSection]
+    private let title: String
 
     init(currentPageID: String, onOpenDetail: @escaping (String) -> Void) {
         self.currentPageID = currentPageID
         self.onOpenDetail = onOpenDetail
         self.sections = Self.sections(forPageID: currentPageID)
+        self.title = Self.browseTitle(forPageID: currentPageID)
     }
 
     static func sections(forPageID pageID: String) -> [PhraseCatalogSection] {
@@ -1068,6 +1092,26 @@ struct ExploreCatalogSection: View {
             ?? []
     }
 
+    static func browseTitle(forPageID pageID: String) -> String {
+        let categoryIDs = Set(PhraseCatalog.categoryIDs(forPageID: pageID))
+
+        if categoryIDs.contains("derived-place-phrases") {
+            if categoryIDs.contains("danang") { return "More Da Nang phrases" }
+            if categoryIDs.contains("hanoi") { return "More Hanoi phrases" }
+            if categoryIDs.contains("hcmc") { return "More Ho Chi Minh City phrases" }
+            if categoryIDs.contains("hoian") { return "More Hoi An phrases" }
+            if categoryIDs.contains("hue") { return "More Hue phrases" }
+            return "Related phrases"
+        }
+
+        if categoryIDs.contains("restaurants") { return "More restaurant phrases" }
+        if categoryIDs.contains("shopping") || categoryIDs.contains("shopping-markets") { return "More shopping phrases" }
+        if categoryIDs.contains("landmarks-attractions") { return "More place phrases" }
+        if categoryIDs.contains("neighborhoods-streets") { return "More street phrases" }
+
+        return "Browse more"
+    }
+
     private static func section(
         for categoryID: String,
         currentPageID: String,
@@ -1097,7 +1141,7 @@ struct ExploreCatalogSection: View {
             ExploreCatalogEmptyState()
         } else {
             VStack(alignment: .leading, spacing: 12) {
-                SectionHeader(title: "Browse more")
+                SectionHeader(title: title)
 
                 LazyVStack(alignment: .leading, spacing: ExploreCatalogLayout.sectionSpacing) {
                     ForEach(sections) { section in
@@ -1310,6 +1354,22 @@ private struct ExploreCatalogCategoryShelf: View {
             return "Keep the conversation moving with simple helper phrases"
         case "understanding-repair":
             return "Ask what it means, slow things down, or get it written"
+        case "danang":
+            return "Places, streets, and phrases around Da Nang"
+        case "hanoi":
+            return "Places, food, and phrases around Hanoi"
+        case "hcmc":
+            return "Places, restaurants, and phrases around Ho Chi Minh City"
+        case "hoian":
+            return "Places, food, and phrases around Hoi An"
+        case "hue":
+            return "Places, food, and phrases around Hue"
+        case "landmarks-attractions":
+            return "Names and sentences for places worth visiting"
+        case "restaurants":
+            return "Table, menu, order, and payment phrases"
+        case "shopping", "shopping-markets":
+            return "Prices, sizes, payment, and returns"
         case "goodbyes":
             return "Leave conversations cleanly"
         default:

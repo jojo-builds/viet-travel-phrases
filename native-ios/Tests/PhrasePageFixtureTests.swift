@@ -695,6 +695,7 @@ final class PhrasePageFixtureTests: XCTestCase {
 
         let sections = ExploreCatalogSection.sections(forPageID: "viet-phrase-city-danang-place-ba-na-hills")
 
+        XCTAssertEqual(ExploreCatalogSection.browseTitle(forPageID: "viet-phrase-city-danang-place-ba-na-hills"), "More place phrases")
         XCTAssertFalse(sections.isEmpty)
         XCTAssertLessThanOrEqual(sections.count, 2)
         XCTAssertFalse(sections.contains { $0.category.id == "city-guides" })
@@ -706,6 +707,81 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertTrue(sections.flatMap(\.items).allSatisfy { item in
             item.categoryIDs.contains("danang") || item.categoryIDs.contains("landmarks-attractions")
         })
+    }
+
+    func testRenderedExploreCatalogUsesContextualTitleForDerivedPlacePhrases() throws {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        _ = try VietSQLiteLanguagePackRepository.bundled()
+
+        let pageID = "viet-phrase-city-hcmc-where-post-office"
+        let sections = ExploreCatalogSection.sections(forPageID: pageID)
+
+        XCTAssertEqual(ExploreCatalogSection.browseTitle(forPageID: pageID), "More Ho Chi Minh City phrases")
+        XCTAssertFalse(sections.isEmpty)
+        XCTAssertFalse(sections.contains { $0.category.id == "city-guides" })
+        XCTAssertTrue(sections.allSatisfy { section in
+            section.items.allSatisfy { item in
+                item.categoryIDs.contains("hcmc") || item.categoryIDs.contains("landmarks-attractions")
+            }
+        })
+    }
+
+    func testRenderedSimplePhraseSuppressesSelfOnlySaySection() throws {
+        let article = PhraseArticlePage(
+            id: "test-simple-phrase",
+            destination: "SpeakLocal Vietnam",
+            title: "Tôi không hiểu",
+            englishTitle: "I don’t understand",
+            pronunciation: "toy khong hieu",
+            summary: "A simple recovery phrase for when Vietnamese is too fast or unclear.",
+            iconName: "message.fill",
+            tintName: .red,
+            playbackAudioKey: nil,
+            sections: [
+                PhraseArticleSection(
+                    id: "standard-way",
+                    title: "Say this",
+                    body: "Tôi không hiểu — I don’t understand.",
+                    phrases: [
+                        PhraseOption(
+                            id: "problems-2",
+                            vietnamese: "Tôi không hiểu",
+                            english: "I don’t understand",
+                            pronunciation: "toy khong hieu",
+                            symbolName: "speaker.wave.2.fill",
+                            tintName: .red
+                        ),
+                    ],
+                    breakdown: [],
+                    presentation: .phraseList
+                ),
+                PhraseArticleSection(
+                    id: "traveler-insight",
+                    title: "Common follow-ups",
+                    body: "",
+                    phrases: [
+                        PhraseOption(
+                            id: "repair-slower",
+                            vietnamese: "Nói chậm chút được không?",
+                            english: "Can you speak a little slower?",
+                            pronunciation: "noy cham chut duoc khong",
+                            symbolName: "speaker.wave.2.fill",
+                            tintName: .red
+                        ),
+                    ],
+                    breakdown: [],
+                    presentation: .phraseList
+                ),
+            ]
+        )
+
+        XCTAssertTrue(article.sections.contains { $0.id == "standard-way" })
+
+        let visibleSections = PhraseArticleTemplateView.visibleSections(for: article)
+
+        XCTAssertFalse(visibleSections.contains { $0.id == "standard-way" })
+        XCTAssertFalse(visibleSections.contains { $0.title == "Say this" })
+        XCTAssertTrue(visibleSections.contains { $0.title == "Common follow-ups" })
     }
 
     func testExploreCatalogItemsCanFilterByCategoryAndExcludeCurrentPage() {

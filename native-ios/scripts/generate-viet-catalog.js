@@ -86,7 +86,7 @@ const scenarioPresentation = {
   transport: ["Transport", "car.fill", "orange"],
   "hotel-accommodation": ["Hotel Accommodation", "bed.double.fill", "purple"],
   "food-drink": ["Food & Drink", "fork.knife", "green"],
-  "money-numbers-prices": ["Money, Numbers & Prices", "creditcard.fill", "green"],
+  "money-numbers-prices": ["Payment & numbers", "creditcard.fill", "green"],
   "directions-navigation": ["Directions & Navigation", "location.fill", "blue"],
   "airport-border-arrival": ["Airport Border Arrival", "airplane.arrival", "blue"],
   "health-pharmacy": ["Health & Pharmacy", "cross.case.fill", "red"],

@@ -61,7 +61,7 @@ function validateNoDuplicateSimplePhraseHero(pages) {
   assert(atGlance, "Tôi không hiểu should keep a compact context section.");
   assert(!/means.+I don.t understand/i.test(atGlance.body ?? ""), "Tôi không hiểu should not repeat the hero in a Meaning section.");
   assert(/too fast|unclear|recovery/i.test(atGlance.body ?? ""), "Tôi không hiểu needs traveler-useful context, not a duplicate definition.");
-  assert(standard, "Tôi không hiểu should keep one playable primary phrase row.");
+  assert(standard, "Tôi không hiểu should keep one playable primary phrase row in the data contract.");
   assert((standard.phrases ?? []).some((phrase) => phrase.vietnamese === "Tôi không hiểu"), "Tôi không hiểu primary phrase row missing.");
   assert(section(page, "traveler-insight")?.title === "Common follow-ups", "Tôi không hiểu should keep recovery follow-ups.");
 }
@@ -93,13 +93,59 @@ function validateTableAvailabilityMayHearPage(pages) {
   }
 }
 
+function validateBaNaHillsJourneyPage(pages) {
+  const page = pageByTitle(pages, "Bà Nà Hills");
+  const titles = (page.sections ?? []).map((item) => item.title);
+  const text = sectionText(page);
+
+  for (const banned of ["Nearby needs", "What the name means"]) {
+    assert(!titles.includes(banned), `Bà Nà Hills should not render ${banned}.`);
+  }
+
+  assert(
+    titles.join(" > ").startsWith("About > Hear the name > Visit flow > Getting there > Tickets > Cable car > Photos > Getting back > Good to know > Food & cash > Name guide"),
+    `Bà Nà Hills section order is wrong: ${titles.join(" > ")}`
+  );
+
+  const gettingThereText = sectionText({ sections: [section(page, "getting-there")] });
+  assert(gettingThereText.includes("Bà Nà Hills ở đâu?"), "Bà Nà Hills where-is row should live under Getting there.");
+  assert(gettingThereText.includes("Dừng ở Bà Nà Hills"), "Bà Nà Hills stop row should live under Getting there.");
+  assert(sectionText({ sections: [section(page, "food-cash")] }).includes("Có ATM gần Bà Nà Hills không?"), "Bà Nà Hills ATM row should live under Food & cash.");
+  assert(!/nearby needs/i.test(text), "Bà Nà Hills still includes Nearby needs copy.");
+}
+
+function validateRestaurantOrderingPage(pages) {
+  const page = pageByTitle(pages, "Anăn Sài Gòn");
+  const titles = (page.sections ?? []).map((item) => item.title);
+
+  assert(titles.includes("Hear the name"), "Restaurant pages should say Hear the name, not Hear the restaurant.");
+  assert(!titles.includes("Hear the restaurant"), "Restaurant page still says Hear the restaurant.");
+  assert(
+    titles.join(" > ").startsWith("About > Hear the name > Getting there > Table & menu > Order > Drinks > Pay > Getting back > Name guide > Good to know"),
+    `Restaurant section order is wrong: ${titles.join(" > ")}`
+  );
+
+  const tableMenuText = sectionText({ sections: [section(page, "table-menu")] });
+  const orderText = sectionText({ sections: [section(page, "before-you-go")] });
+  const drinksText = sectionText({ sections: [section(page, "menu-dietary")] });
+
+  assert(tableMenuText.includes("Cho tôi bàn cho hai người"), "Table-for-two row belongs under Table & menu.");
+  assert(!orderText.includes("Cho tôi bàn cho hai người"), "Table-for-two row must not stay under Order.");
+  assert(!orderText.includes("Cho tôi một phần"), "Anăn Sài Gòn should not show the clipped one-portion row as its main order.");
+  assert(!/đậu phộng|allergy|dị ứng|vegetarian|chay/i.test(drinksText), "Restaurant Drinks section contains diet/allergy rows.");
+}
+
 function main() {
   const pages = loadPages();
+  validateBaNaHillsJourneyPage(pages);
+  validateRestaurantOrderingPage(pages);
   validateNoDuplicateSimplePhraseHero(pages);
   validateTableAvailabilityMayHearPage(pages);
   console.log(JSON.stringify({
     ok: true,
     validated: [
+      "Bà Nà Hills journey section split",
+      "restaurant ordering section routing",
       "simple phrase duplicate suppression",
       "traveler_may_hear table availability routing",
       "tone-sensitive Bàn breakdown",

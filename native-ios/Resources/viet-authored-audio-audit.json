@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-05T17:34:42.390Z",
+    "generatedAt": "2026-05-05T19:46:46.819Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 750,
     "editorialSupportPageCount": 32,
@@ -10955,7 +10955,15 @@
     },
     {
       "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "key-phrases",
+      "sectionID": "getting-there",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-di-ba-na-hills-7e1fd2f0f0",
+      "text": "Cho tôi đi Bà Nà Hills.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-ba-na-hills",
+      "sectionID": "tickets",
       "kind": "phrase",
       "audioKey": "audio-authored-da-cho-toi-hai-ve-len-ba-na-hills-cb395e159b",
       "text": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
@@ -10963,7 +10971,7 @@
     },
     {
       "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "key-phrases",
+      "sectionID": "cable-car",
       "kind": "phrase",
       "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca",
       "text": "Cáp treo ở đâu?",
@@ -10971,7 +10979,7 @@
     },
     {
       "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "key-phrases",
+      "sectionID": "photos",
       "kind": "phrase",
       "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127",
       "text": "Bạn chụp giúp tôi được không?",
@@ -11011,18 +11019,18 @@
     },
     {
       "pageID": "viet-family-city-danang-place-nen",
-      "sectionID": "menu-dietary",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae",
-      "text": "Cho tôi trà đá",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-danang-place-nen",
       "sectionID": "place-brief",
       "kind": "phrase",
       "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-nen-da-nang-1d452a36b2",
       "text": "Cho tôi xuống gần nhà hàng Nén Đà Nẵng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-nen",
+      "sectionID": "menu-dietary",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae",
+      "text": "Cho tôi trà đá",
       "resolved": false
     },
     {
@@ -12219,18 +12227,18 @@
     },
     {
       "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-      "sectionID": "before-you-go",
-      "kind": "phrase",
-      "audioKey": "audio-authored-da-cho-toi-mot-phan-bun-cha-dbdee039d2",
-      "text": "Dạ, cho tôi một phần bún chả.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
       "sectionID": "place-brief",
       "kind": "phrase",
       "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-bun-cha-huong-lien-d22fc78377",
       "text": "Cho tôi xuống gần nhà hàng Bún chả Hương Liên.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "sectionID": "before-you-go",
+      "kind": "phrase",
+      "audioKey": "audio-authored-da-cho-toi-mot-phan-bun-cha-dbdee039d2",
+      "text": "Dạ, cho tôi một phần bún chả.",
       "resolved": false
     },
     {
@@ -12267,18 +12275,18 @@
     },
     {
       "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
-      "sectionID": "before-you-go",
-      "kind": "phrase",
-      "audioKey": "audio-authored-da-cho-toi-mot-to-pho-5e65b6808d",
-      "text": "Dạ, cho tôi một tô phở.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
       "sectionID": "place-brief",
       "kind": "phrase",
       "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-pho-bat-dan-dde984ba81",
       "text": "Cho tôi xuống gần nhà hàng Phở Bát Đàn.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+      "sectionID": "before-you-go",
+      "kind": "phrase",
+      "audioKey": "audio-authored-da-cho-toi-mot-to-pho-5e65b6808d",
+      "text": "Dạ, cho tôi một tô phở.",
       "resolved": false
     },
     {
@@ -16088,14 +16096,6 @@
       "audioKey": "v500-poli-basi-yes",
       "text": "đúng",
       "resolved": true
-    },
-    {
-      "pageID": "viet-family-ves-is-this-address-correct",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-di-ba-na-hills-7e1fd2f0f0",
-      "text": "Cho tôi đi Bà Nà Hills.",
-      "resolved": false
     },
     {
       "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
@@ -28501,7 +28501,15 @@
     },
     {
       "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "key-phrases",
+      "sectionID": "getting-there",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-di-ba-na-hills-7e1fd2f0f0",
+      "text": "Cho tôi đi Bà Nà Hills.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-ba-na-hills",
+      "sectionID": "tickets",
       "kind": "phrase",
       "audioKey": "audio-authored-da-cho-toi-hai-ve-len-ba-na-hills-cb395e159b",
       "text": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
@@ -28509,7 +28517,7 @@
     },
     {
       "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "key-phrases",
+      "sectionID": "cable-car",
       "kind": "phrase",
       "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca",
       "text": "Cáp treo ở đâu?",
@@ -28517,7 +28525,7 @@
     },
     {
       "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "key-phrases",
+      "sectionID": "photos",
       "kind": "phrase",
       "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127",
       "text": "Bạn chụp giúp tôi được không?",
@@ -28557,18 +28565,18 @@
     },
     {
       "pageID": "viet-family-city-danang-place-nen",
-      "sectionID": "menu-dietary",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae",
-      "text": "Cho tôi trà đá",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-danang-place-nen",
       "sectionID": "place-brief",
       "kind": "phrase",
       "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-nen-da-nang-1d452a36b2",
       "text": "Cho tôi xuống gần nhà hàng Nén Đà Nẵng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-nen",
+      "sectionID": "menu-dietary",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae",
+      "text": "Cho tôi trà đá",
       "resolved": false
     },
     {
@@ -29741,18 +29749,18 @@
     },
     {
       "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-      "sectionID": "before-you-go",
-      "kind": "phrase",
-      "audioKey": "audio-authored-da-cho-toi-mot-phan-bun-cha-dbdee039d2",
-      "text": "Dạ, cho tôi một phần bún chả.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
       "sectionID": "place-brief",
       "kind": "phrase",
       "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-bun-cha-huong-lien-d22fc78377",
       "text": "Cho tôi xuống gần nhà hàng Bún chả Hương Liên.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "sectionID": "before-you-go",
+      "kind": "phrase",
+      "audioKey": "audio-authored-da-cho-toi-mot-phan-bun-cha-dbdee039d2",
+      "text": "Dạ, cho tôi một phần bún chả.",
       "resolved": false
     },
     {
@@ -29781,18 +29789,18 @@
     },
     {
       "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
-      "sectionID": "before-you-go",
-      "kind": "phrase",
-      "audioKey": "audio-authored-da-cho-toi-mot-to-pho-5e65b6808d",
-      "text": "Dạ, cho tôi một tô phở.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
       "sectionID": "place-brief",
       "kind": "phrase",
       "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-pho-bat-dan-dde984ba81",
       "text": "Cho tôi xuống gần nhà hàng Phở Bát Đàn.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+      "sectionID": "before-you-go",
+      "kind": "phrase",
+      "audioKey": "audio-authored-da-cho-toi-mot-to-pho-5e65b6808d",
+      "text": "Dạ, cho tôi một tô phở.",
       "resolved": false
     },
     {
@@ -33505,14 +33513,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-dia-chi-nay-dung-khong-620d046937",
       "text": "Địa chỉ này đúng không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-is-this-address-correct",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-di-ba-na-hills-7e1fd2f0f0",
-      "text": "Cho tôi đi Bà Nà Hills.",
       "resolved": false
     },
     {

@@ -1393,7 +1393,11 @@ enum BrowseSearchDestinations {
     }
 
     private static func practiceSubtitle(for title: String) -> String {
-        "\(title) starter phrases in a quick practice loop."
+        if title == "Shopping" {
+            return "Practice prices, sizes, payment, and returns."
+        }
+
+        return "Practice a quick \(title.lowercased()) conversation."
     }
 
     private static func cityPracticeTitle(for id: String, title: String) -> String {
