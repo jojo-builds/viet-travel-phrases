@@ -65,6 +65,21 @@ function titleizeScenario(id) {
     .join(" ");
 }
 
+function cleanTravelerFacingCopy(value) {
+  return String(value ?? "")
+    .replace(/\bwhen the traveler needs\b/gi, "when you need")
+    .replace(/\bwhen a traveler needs\b/gi, "when you need")
+    .replace(/\bthe traveler needs\b/gi, "you need")
+    .replace(/\bthe user needs\b/gi, "you need")
+    .replace(/\bThis is the traveler version of\b/gi, "This is the travel version of")
+    .replace(/\btraveler version of\b/gi, "travel version of")
+    .replace(/\bwhere-question\b/gi, "question")
+    .replace(/\broute phrase\b/gi, "travel phrase")
+    .replace(/\bplace name\b/gi, "name")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 const scenarioPresentation = {
   "polite-basics": ["Polite Basics", "hand.wave.fill", "red"],
   "understanding-repair": ["When You Don't Understand", "questionmark.bubble.fill", "blue"],
@@ -182,7 +197,7 @@ function loadCityLibraryRecords() {
       const familyTitle = page.familyTitle ?? (pageKind !== "phrase"
         ? `${place.englishName} pronunciation`
         : page.englishText);
-      const familySummary = page.editorialImport?.summary ?? page.summary ?? page.context;
+      const familySummary = cleanTravelerFacingCopy(page.editorialImport?.summary ?? page.summary ?? page.context);
       const searchAliases = normalizeCitySearchAliases({ city, place, page });
       const notes = [
         "city-library-v1",
@@ -210,7 +225,7 @@ function loadCityLibraryRecords() {
         pronunciation: page.pronunciation,
         access_tier: page.accessTier ?? accessTier,
         variant_role: "say-first",
-        context: page.editorialImport?.summary ?? page.context,
+        context: cleanTravelerFacingCopy(page.editorialImport?.summary ?? page.context),
         you_may_hear: page.youMayHear ?? "",
         search_aliases: Array.from(new Set(searchAliases)).join("|"),
         warning_note_type: "",
@@ -257,7 +272,7 @@ function loadEditorialSupportRecords() {
     family_id: record.familyID,
     scenario_id: record.scenarioID,
     family_title: record.familyTitle ?? record.englishText,
-    family_summary: record.familySummary ?? record.context,
+    family_summary: cleanTravelerFacingCopy(record.familySummary ?? record.context),
     audio_key: record.audioKey ?? "",
     english_text: record.englishText,
     target_text: record.targetText,
@@ -265,7 +280,7 @@ function loadEditorialSupportRecords() {
     pronunciation: record.pronunciation,
     access_tier: record.accessTier ?? "premium",
     variant_role: record.variantRole ?? "say-first",
-    context: record.context,
+    context: cleanTravelerFacingCopy(record.context),
     you_may_hear: record.youMayHear ?? "",
     search_aliases: (record.searchAliases ?? [record.englishText, record.targetText])
       .filter(Boolean)
@@ -320,7 +335,7 @@ function main() {
         pageID: `viet-family-${row.family_id}`,
         scenarioID: row.scenario_id,
         familyTitle: row.family_title,
-        summary: row.family_summary,
+        summary: cleanTravelerFacingCopy(row.family_summary),
         primaryPhraseID: row.phrase_id,
         accessTier: row.access_tier,
         phraseIDs: [],
@@ -350,7 +365,7 @@ function main() {
     pronunciation: row.pronunciation,
     accessTier: row.access_tier,
     variantRole: row.variant_role,
-    context: row.context,
+    context: cleanTravelerFacingCopy(row.context),
     youMayHear: row.you_may_hear,
     searchAliases: row.search_aliases
       .split("|")

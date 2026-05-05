@@ -7395,9 +7395,9 @@
       "targetText": "Bà Nà Hills ở đâu?",
       "englishText": "Where is Ba Na Hills?",
       "pronunciation": "bah na hills uh dow",
-      "context": "Use this when you are close enough for a person to point, gesture, or name the next street toward Ba Na Hills.",
-      "tip": "Put the place name first, then ở đâu. That frame stays useful for nearly every Da Nang landmark or street name.",
-      "rationale": "Beginner where-question for Ba Na Hills; it makes the city anchor useful in a real walking or arrival moment.",
+      "context": "Ask for the ticket area, cable car, pickup point, or next direction for Ba Na Hills.",
+      "tip": "Keep your map or ticket screen open so staff can point you to the right area.",
+      "rationale": "Beginner direction question for Ba Na Hills; it supports the trip flow without teaching internal page structure.",
       "chunks": [
         [
           "Bà Nà Hills",
@@ -7420,7 +7420,7 @@
         "patchID": "EP-013",
         "approvedAt": "2026-05-03",
         "sourcePatch": "SpeakLocal_Vietnam_Editorial_Pilot_Patch_v1.json",
-        "summary": "A practical where-question for when the traveler needs a direction, counter, pickup point, or map confirmation for Bà Nà Hills.",
+        "summary": "Ask for the ticket area, cable car, pickup point, or next direction for Bà Nà Hills.",
         "categoryIDs": [
           "city-guides",
           "danang",
@@ -7454,12 +7454,12 @@
         "sections": [
           {
             "id": "at-glance",
-            "title": "At a glance",
-            "body": "Use this when you need someone to point you toward the ticket area, pickup point, or next step connected to Bà Nà Hills."
+            "title": "Meaning",
+            "body": "Ask for the ticket area, cable car, pickup point, or next direction for Bà Nà Hills."
           },
           {
             "id": "quick-say",
-            "title": "Quick say",
+            "title": "Say this",
             "body": "Bà Nà Hills ở đâu? — Where is Ba Na Hills?",
             "phraseIDs": [
               "city-danang-where-ba-na-hills"
@@ -7468,12 +7468,12 @@
           {
             "id": "breakdown",
             "title": "Break it down",
-            "body": "Bà Nà Hills -> place name | ở đâu? -> where?",
+            "body": "Bà Nà Hills stays together as the attraction name. Ở đâu? asks where.",
             "breakdownTokens": [
               {
                 "id": "city-danang-where-ba-na-hills-editorial-1",
                 "vietnamese": "Bà Nà Hills",
-                "english": "Ba Na Hills attraction name"
+                "english": "Ba Na Hills"
               },
               {
                 "id": "city-danang-where-ba-na-hills-editorial-2",
@@ -7490,7 +7490,7 @@
           {
             "id": "what-happens-next",
             "title": "What happens next",
-            "body": "The answer may be a point, a counter name, a direction, or a gesture. Follow the gesture first, then ask again if needed."
+            "body": "The answer may be a point, a counter name, a direction, or a gesture."
           },
           {
             "id": "recovery",
@@ -7504,17 +7504,17 @@
           {
             "id": "when-to-use",
             "title": "When to use it",
-            "body": "Use at the hotel desk, ticket area, station, or pickup zone when the exact next step is unclear."
+            "body": "Best at the hotel desk, ticket area, station, or pickup zone."
           },
           {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "Where-questions should include likely replies and recovery phrases, not just the sentence."
+            "body": "Keep nearby direction and recovery phrases close."
           },
           {
             "id": "explore-next",
             "title": "Explore next",
-            "body": "Connect to: cable car, two tickets, return taxi, please say that again."
+            "body": "Cable car, tickets, return taxi, and please say that again."
           }
         ]
       }

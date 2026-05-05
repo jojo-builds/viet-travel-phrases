@@ -353,7 +353,7 @@
       "pageID": "viet-family-transport-main-destination",
       "scenarioID": "transport",
       "familyTitle": "Go to this area",
-      "summary": "Use the place name when it is shorter than a full address.",
+      "summary": "Use the name when it is shorter than a full address.",
       "primaryPhraseID": "taxi-2",
       "accessTier": "starter",
       "phraseIDs": [
@@ -983,7 +983,7 @@
       "pageID": "viet-family-directions-how-to-get",
       "scenarioID": "directions-navigation",
       "familyTitle": "How do I get there?",
-      "summary": "Lead with the place name, not a long route story.",
+      "summary": "Lead with the name, not a long route story.",
       "primaryPhraseID": "directions-1",
       "accessTier": "starter",
       "phraseIDs": [
@@ -1067,7 +1067,7 @@
       "pageID": "viet-family-directions-pickup-point",
       "scenarioID": "directions-navigation",
       "familyTitle": "Pickup point",
-      "summary": "This is a practical route phrase once the trip is deeper than just walking.",
+      "summary": "This is a practical travel phrase once the trip is deeper than just walking.",
       "primaryPhraseID": "directions-8",
       "accessTier": "premium",
       "phraseIDs": [
@@ -1466,7 +1466,7 @@
       "pageID": "viet-family-shopping-pay-where",
       "scenarioID": "shopping",
       "familyTitle": "Where do I pay?",
-      "summary": "This is the traveler version of checkout phrasing.",
+      "summary": "This is the travel version of checkout phrasing.",
       "primaryPhraseID": "shop-5",
       "accessTier": "starter",
       "phraseIDs": [
@@ -2587,7 +2587,7 @@
       "pageID": "viet-family-emergency-passport-report",
       "scenarioID": "emergency-safety",
       "familyTitle": "Ask for a passport-loss report",
-      "summary": "Passport loss becomes real travel paralysis fast, so premium should cover the exact official document the traveler needs next.",
+      "summary": "Passport loss becomes real travel paralysis fast, so premium should cover the exact official document you need next.",
       "primaryPhraseID": "emergency-premium-passport-report",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27823,7 +27823,7 @@
       "pageID": "viet-family-city-danang-go-airport",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Da Nang Airport",
-      "summary": "Use this short route phrase when Da Nang Airport is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Da Nang Airport is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-airport",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27835,7 +27835,7 @@
       "pageID": "viet-family-city-danang-go-apec-park",
       "scenarioID": "city-guides",
       "familyTitle": "Go to APEC Park",
-      "summary": "Use this short route phrase when APEC Park is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when APEC Park is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-apec-park",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27847,7 +27847,7 @@
       "pageID": "viet-family-city-danang-go-asia-park",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Asia Park",
-      "summary": "Use this short route phrase when Asia Park is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Asia Park is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-asia-park",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27859,7 +27859,7 @@
       "pageID": "viet-family-city-danang-go-ba-na-hills",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Ba Na Hills",
-      "summary": "A short route phrase for Bà Nà Hills when the map pin is visible and the traveler needs a driver, hotel desk, or pickup helper to understand the destination.",
+      "summary": "A short travel phrase for Bà Nà Hills when the map pin is visible and you need a driver, hotel desk, or pickup helper to understand the destination.",
       "primaryPhraseID": "city-danang-go-ba-na-hills",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27871,7 +27871,7 @@
       "pageID": "viet-family-city-danang-go-ban-co-peak",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Ban Co Peak",
-      "summary": "Use this short route phrase when Ban Co Peak is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Ban Co Peak is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-ban-co-peak",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27883,7 +27883,7 @@
       "pageID": "viet-family-city-danang-go-cathedral",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Da Nang Cathedral",
-      "summary": "Use this short route phrase when Da Nang Cathedral is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Da Nang Cathedral is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-cathedral",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27895,7 +27895,7 @@
       "pageID": "viet-family-city-danang-go-cham-museum",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Museum of Cham Sculpture",
-      "summary": "Use this short route phrase when Museum of Cham Sculpture is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Museum of Cham Sculpture is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-cham-museum",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27907,7 +27907,7 @@
       "pageID": "viet-family-city-danang-go-con-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Con Market",
-      "summary": "Use this short route phrase when Con Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Con Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-con-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27919,7 +27919,7 @@
       "pageID": "viet-family-city-danang-go-dragon-bridge",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Dragon Bridge",
-      "summary": "A short route phrase for Cầu Rồng when the traveler needs to reach the bridge, riverside area, or nearby pickup point.",
+      "summary": "A short travel phrase for Cầu Rồng when you need to reach the bridge, riverside area, or nearby pickup point.",
       "primaryPhraseID": "city-danang-go-dragon-bridge",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27931,7 +27931,7 @@
       "pageID": "viet-family-city-danang-go-golden-bridge",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Golden Bridge",
-      "summary": "Use this short route phrase when Golden Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Golden Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-golden-bridge",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27943,7 +27943,7 @@
       "pageID": "viet-family-city-danang-go-han-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Han Market",
-      "summary": "Use this short route phrase when Han Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Han Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-han-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27955,7 +27955,7 @@
       "pageID": "viet-family-city-danang-go-han-river",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Han River",
-      "summary": "Use this short route phrase when Han River is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Han River is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-han-river",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27967,7 +27967,7 @@
       "pageID": "viet-family-city-danang-go-helio-night-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Helio Night Market",
-      "summary": "Use this short route phrase when Helio Night Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Helio Night Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-helio-night-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27979,7 +27979,7 @@
       "pageID": "viet-family-city-danang-go-linh-ung-pagoda",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Linh Ung Pagoda",
-      "summary": "Use this short route phrase when Linh Ung Pagoda is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Linh Ung Pagoda is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-linh-ung-pagoda",
       "accessTier": "premium",
       "phraseIDs": [
@@ -27991,7 +27991,7 @@
       "pageID": "viet-family-city-danang-go-love-bridge",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Love Bridge",
-      "summary": "Use this short route phrase when Love Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Love Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-love-bridge",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28003,7 +28003,7 @@
       "pageID": "viet-family-city-danang-go-man-thai-beach",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Man Thai Beach",
-      "summary": "Use this short route phrase when Man Thai Beach is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Man Thai Beach is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-man-thai-beach",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28015,7 +28015,7 @@
       "pageID": "viet-family-city-danang-go-marble-mountains",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Marble Mountains",
-      "summary": "Use this short route phrase when Marble Mountains is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Marble Mountains is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-marble-mountains",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28039,7 +28039,7 @@
       "pageID": "viet-family-city-danang-go-nam-o-reef",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Nam O Reef",
-      "summary": "Use this short route phrase when Nam O Reef is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Nam O Reef is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-nam-o-reef",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28051,7 +28051,7 @@
       "pageID": "viet-family-city-danang-go-nen",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Nen Da Nang",
-      "summary": "Use this short route phrase when Nen Da Nang is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Nen Da Nang is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-nen",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28063,7 +28063,7 @@
       "pageID": "viet-family-city-danang-go-nguyen-van-linh-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Nguyen Van Linh Street",
-      "summary": "Use this short route phrase when Nguyen Van Linh Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Nguyen Van Linh Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-nguyen-van-linh-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28075,7 +28075,7 @@
       "pageID": "viet-family-city-danang-go-non-nuoc-beach",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Non Nuoc Beach",
-      "summary": "Use this short route phrase when Non Nuoc Beach is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Non Nuoc Beach is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-non-nuoc-beach",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28087,7 +28087,7 @@
       "pageID": "viet-family-city-danang-go-non-nuoc-stone-village",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Non Nuoc Stone Carving Village",
-      "summary": "Use this short route phrase when Non Nuoc Stone Carving Village is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Non Nuoc Stone Carving Village is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-non-nuoc-stone-village",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28099,7 +28099,7 @@
       "pageID": "viet-family-city-danang-go-railway-station",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Da Nang Railway Station",
-      "summary": "Use this short route phrase when Da Nang Railway Station is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Da Nang Railway Station is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-railway-station",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28123,7 +28123,7 @@
       "pageID": "viet-family-city-danang-go-son-tra-night-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Son Tra Night Market",
-      "summary": "Use this short route phrase when Son Tra Night Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Son Tra Night Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-son-tra-night-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28135,7 +28135,7 @@
       "pageID": "viet-family-city-danang-go-tien-sa-port",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tien Sa Port",
-      "summary": "Use this short route phrase when Tien Sa Port is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tien Sa Port is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-tien-sa-port",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28147,7 +28147,7 @@
       "pageID": "viet-family-city-danang-go-tran-thi-ly-bridge",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tran Thi Ly Bridge",
-      "summary": "Use this short route phrase when Tran Thi Ly Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tran Thi Ly Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-tran-thi-ly-bridge",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28159,7 +28159,7 @@
       "pageID": "viet-family-city-danang-go-vo-nguyen-giap-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Vo Nguyen Giap Street",
-      "summary": "Use this short route phrase when Vo Nguyen Giap Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Vo Nguyen Giap Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-danang-go-vo-nguyen-giap-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -28519,7 +28519,7 @@
       "pageID": "viet-family-city-danang-place-nen",
       "scenarioID": "city-guides",
       "familyTitle": "Nen Da Nang pronunciation",
-      "summary": "Nén Đà Nẵng is a restaurant in Da Nang, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "summary": "Nén Đà Nẵng is a restaurant in Da Nang, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "primaryPhraseID": "city-danang-place-nen",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29047,7 +29047,7 @@
       "pageID": "viet-family-city-danang-where-ba-na-hills",
       "scenarioID": "city-guides",
       "familyTitle": "Where is Ba Na Hills?",
-      "summary": "A practical where-question for when the traveler needs a direction, counter, pickup point, or map confirmation for Bà Nà Hills.",
+      "summary": "Ask for the ticket area, cable car, pickup point, or next direction for Bà Nà Hills.",
       "primaryPhraseID": "city-danang-where-ba-na-hills",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29563,7 +29563,7 @@
       "pageID": "viet-family-city-hanoi-go-ba-dinh-square",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Ba Dinh Square",
-      "summary": "Use this short route phrase when Ba Dinh Square is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Ba Dinh Square is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-ba-dinh-square",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29575,7 +29575,7 @@
       "pageID": "viet-family-city-hanoi-go-bun-cha-huong-lien",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Bun Cha Huong Lien",
-      "summary": "Use this short route phrase when Bun Cha Huong Lien is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Bun Cha Huong Lien is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-bun-cha-huong-lien",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29587,7 +29587,7 @@
       "pageID": "viet-family-city-hanoi-go-cha-ca-thang-long",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Cha Ca Thang Long",
-      "summary": "Use this short route phrase when Cha Ca Thang Long is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Cha Ca Thang Long is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-cha-ca-thang-long",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29599,7 +29599,7 @@
       "pageID": "viet-family-city-hanoi-go-dong-xuan-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Dong Xuan Market",
-      "summary": "Use this short route phrase when Dong Xuan Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Dong Xuan Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-dong-xuan-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29611,7 +29611,7 @@
       "pageID": "viet-family-city-hanoi-go-ethnology-museum",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Vietnam Museum of Ethnology",
-      "summary": "Use this short route phrase when Vietnam Museum of Ethnology is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Vietnam Museum of Ethnology is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-ethnology-museum",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29623,7 +29623,7 @@
       "pageID": "viet-family-city-hanoi-go-giang-cafe",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Giang Cafe",
-      "summary": "Use this short route phrase when Giang Cafe is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Giang Cafe is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-giang-cafe",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29635,7 +29635,7 @@
       "pageID": "viet-family-city-hanoi-go-hang-bac-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hang Bac Street",
-      "summary": "Use this short route phrase when Hang Bac Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hang Bac Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-hang-bac-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29647,7 +29647,7 @@
       "pageID": "viet-family-city-hanoi-go-hang-gai-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hang Gai Street",
-      "summary": "Use this short route phrase when Hang Gai Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hang Gai Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-hang-gai-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29659,7 +29659,7 @@
       "pageID": "viet-family-city-hanoi-go-ho-chi-minh-mausoleum",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Ho Chi Minh Mausoleum",
-      "summary": "Use this short route phrase when Ho Chi Minh Mausoleum is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Ho Chi Minh Mausoleum is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-ho-chi-minh-mausoleum",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29671,7 +29671,7 @@
       "pageID": "viet-family-city-hanoi-go-hoa-lo-prison",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hoa Lo Prison",
-      "summary": "Use this short route phrase when Hoa Lo Prison is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hoa Lo Prison is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-hoa-lo-prison",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29695,7 +29695,7 @@
       "pageID": "viet-family-city-hanoi-go-imperial-citadel",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Imperial Citadel of Thang Long",
-      "summary": "Use this short route phrase when Imperial Citadel of Thang Long is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Imperial Citadel of Thang Long is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-imperial-citadel",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29719,7 +29719,7 @@
       "pageID": "viet-family-city-hanoi-go-long-bien-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Long Bien Market",
-      "summary": "Use this short route phrase when Long Bien Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Long Bien Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-long-bien-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29743,7 +29743,7 @@
       "pageID": "viet-family-city-hanoi-go-noi-bai-airport",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Noi Bai Airport",
-      "summary": "Use this short route phrase when Noi Bai Airport is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Noi Bai Airport is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-noi-bai-airport",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29755,7 +29755,7 @@
       "pageID": "viet-family-city-hanoi-go-old-quarter",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hanoi Old Quarter",
-      "summary": "Use this short route phrase when Hanoi Old Quarter is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hanoi Old Quarter is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-old-quarter",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29767,7 +29767,7 @@
       "pageID": "viet-family-city-hanoi-go-opera-house",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hanoi Opera House",
-      "summary": "Use this short route phrase when Hanoi Opera House is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hanoi Opera House is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-opera-house",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29779,7 +29779,7 @@
       "pageID": "viet-family-city-hanoi-go-phan-dinh-phung-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Phan Dinh Phung Street",
-      "summary": "Use this short route phrase when Phan Dinh Phung Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Phan Dinh Phung Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-phan-dinh-phung-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29791,7 +29791,7 @@
       "pageID": "viet-family-city-hanoi-go-pho-bat-dan",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Pho Bat Dan",
-      "summary": "Use this short route phrase when Pho Bat Dan is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Pho Bat Dan is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-pho-bat-dan",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29803,7 +29803,7 @@
       "pageID": "viet-family-city-hanoi-go-quan-thanh-temple",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Quan Thanh Temple",
-      "summary": "Use this short route phrase when Quan Thanh Temple is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Quan Thanh Temple is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-quan-thanh-temple",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29815,7 +29815,7 @@
       "pageID": "viet-family-city-hanoi-go-st-joseph-cathedral",
       "scenarioID": "city-guides",
       "familyTitle": "Go to St. Joseph Cathedral",
-      "summary": "Use this short route phrase when St. Joseph Cathedral is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when St. Joseph Cathedral is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-st-joseph-cathedral",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29839,7 +29839,7 @@
       "pageID": "viet-family-city-hanoi-go-tam-vi",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tam Vi",
-      "summary": "Use this short route phrase when Tam Vi is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tam Vi is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-tam-vi",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29851,7 +29851,7 @@
       "pageID": "viet-family-city-hanoi-go-tay-ho",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tay Ho",
-      "summary": "Use this short route phrase when Tay Ho is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tay Ho is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-tay-ho",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29863,7 +29863,7 @@
       "pageID": "viet-family-city-hanoi-go-temple-literature",
       "scenarioID": "city-guides",
       "familyTitle": "Go to the Temple of Literature",
-      "summary": "Use this as the simplest route phrase to the Temple of Literature.",
+      "summary": "Use this as the simplest travel phrase to the Temple of Literature.",
       "primaryPhraseID": "city-hanoi-go-temple-literature",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29875,7 +29875,7 @@
       "pageID": "viet-family-city-hanoi-go-train-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hanoi Train Street",
-      "summary": "Use this short route phrase when Hanoi Train Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hanoi Train Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-train-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29887,7 +29887,7 @@
       "pageID": "viet-family-city-hanoi-go-tran-quoc-pagoda",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tran Quoc Pagoda",
-      "summary": "Use this short route phrase when Tran Quoc Pagoda is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tran Quoc Pagoda is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-tran-quoc-pagoda",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29899,7 +29899,7 @@
       "pageID": "viet-family-city-hanoi-go-truc-bach-lake",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Truc Bach Lake",
-      "summary": "Use this short route phrase when Truc Bach Lake is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Truc Bach Lake is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-truc-bach-lake",
       "accessTier": "premium",
       "phraseIDs": [
@@ -29911,7 +29911,7 @@
       "pageID": "viet-family-city-hanoi-go-west-lake",
       "scenarioID": "city-guides",
       "familyTitle": "Go to West Lake",
-      "summary": "Use this short route phrase when West Lake is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when West Lake is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hanoi-go-west-lake",
       "accessTier": "premium",
       "phraseIDs": [
@@ -30007,7 +30007,7 @@
       "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
       "scenarioID": "city-guides",
       "familyTitle": "Bun Cha Huong Lien pronunciation",
-      "summary": "A walk-in guide for Bún chả Hương Liên: say the place name, order bún chả, handle drinks, pay, and get a ride back without turning the page into a review.",
+      "summary": "A walk-in guide for Bún chả Hương Liên: say the name, order bún chả, handle drinks, pay, and get a ride back without turning the page into a review.",
       "primaryPhraseID": "city-hanoi-place-bun-cha-huong-lien",
       "accessTier": "premium",
       "phraseIDs": [
@@ -30019,7 +30019,7 @@
       "pageID": "viet-family-city-hanoi-place-cha-ca-thang-long",
       "scenarioID": "city-guides",
       "familyTitle": "Cha Ca Thang Long pronunciation",
-      "summary": "Chả cá Thăng Long is a restaurant in Hanoi, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "summary": "Chả cá Thăng Long is a restaurant in Hanoi, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "primaryPhraseID": "city-hanoi-place-cha-ca-thang-long",
       "accessTier": "premium",
       "phraseIDs": [
@@ -30211,7 +30211,7 @@
       "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
       "scenarioID": "city-guides",
       "familyTitle": "Pho Bat Dan pronunciation",
-      "summary": "A walk-in guide for Phở Bát Đàn: say the place name, order a bowl of phở, ask what to get, pay, and recover if the line or counter feels confusing.",
+      "summary": "A walk-in guide for Phở Bát Đàn: say the name, order a bowl of phở, ask what to get, pay, and recover if the line or counter feels confusing.",
       "primaryPhraseID": "city-hanoi-place-pho-bat-dan",
       "accessTier": "premium",
       "phraseIDs": [
@@ -30259,7 +30259,7 @@
       "pageID": "viet-family-city-hanoi-place-tam-vi",
       "scenarioID": "city-guides",
       "familyTitle": "Tam Vi pronunciation",
-      "summary": "Tầm Vị is a restaurant in Hanoi, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "summary": "Tầm Vị is a restaurant in Hanoi, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "primaryPhraseID": "city-hanoi-place-tam-vi",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31423,7 +31423,7 @@
       "pageID": "viet-family-city-hcmc-go-anan-saigon",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Anan Saigon",
-      "summary": "Use this short route phrase when Anan Saigon is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Anan Saigon is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-anan-saigon",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31435,7 +31435,7 @@
       "pageID": "viet-family-city-hcmc-go-bach-dang-wharf",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Bach Dang Wharf",
-      "summary": "Use this short route phrase when Bach Dang Wharf is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Bach Dang Wharf is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-bach-dang-wharf",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31459,7 +31459,7 @@
       "pageID": "viet-family-city-hcmc-go-binh-tay-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Binh Tay Market",
-      "summary": "Use this short route phrase when Binh Tay Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Binh Tay Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-binh-tay-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31471,7 +31471,7 @@
       "pageID": "viet-family-city-hcmc-go-bitexco-tower",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Bitexco Financial Tower",
-      "summary": "Use this short route phrase when Bitexco Financial Tower is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Bitexco Financial Tower is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-bitexco-tower",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31495,7 +31495,7 @@
       "pageID": "viet-family-city-hcmc-go-central-post-office",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Central Post Office",
-      "summary": "Use this short route phrase when Central Post Office is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Central Post Office is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-central-post-office",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31507,7 +31507,7 @@
       "pageID": "viet-family-city-hcmc-go-cho-lon",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Cho Lon",
-      "summary": "Use this short route phrase when Cho Lon is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Cho Lon is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-cho-lon",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31519,7 +31519,7 @@
       "pageID": "viet-family-city-hcmc-go-district-1",
       "scenarioID": "city-guides",
       "familyTitle": "Head to District 1",
-      "summary": "Use this short route phrase when District 1 is the area you are heading toward, especially with a driver, hotel desk, or map already open.",
+      "summary": "Use this short travel phrase when District 1 is the area you are heading toward, especially with a driver, hotel desk, or map already open.",
       "primaryPhraseID": "city-hcmc-go-district-1",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31531,7 +31531,7 @@
       "pageID": "viet-family-city-hcmc-go-dong-khoi-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Dong Khoi Street",
-      "summary": "Use this short route phrase when Dong Khoi Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Dong Khoi Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-dong-khoi-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31543,7 +31543,7 @@
       "pageID": "viet-family-city-hcmc-go-fine-arts-museum",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Fine Arts Museum",
-      "summary": "Use this short route phrase when Fine Arts Museum is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Fine Arts Museum is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-fine-arts-museum",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31555,7 +31555,7 @@
       "pageID": "viet-family-city-hcmc-go-ho-thi-ky-flower-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Ho Thi Ky Flower Market",
-      "summary": "Use this short route phrase when Ho Thi Ky Flower Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Ho Thi Ky Flower Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-ho-thi-ky-flower-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31567,7 +31567,7 @@
       "pageID": "viet-family-city-hcmc-go-independence-palace",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Independence Palace",
-      "summary": "Use this short route phrase when Independence Palace is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Independence Palace is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-independence-palace",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31579,7 +31579,7 @@
       "pageID": "viet-family-city-hcmc-go-jade-emperor-pagoda",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Jade Emperor Pagoda",
-      "summary": "Use this short route phrase when Jade Emperor Pagoda is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Jade Emperor Pagoda is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-jade-emperor-pagoda",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31591,7 +31591,7 @@
       "pageID": "viet-family-city-hcmc-go-landmark-81",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Landmark 81",
-      "summary": "Use this short route phrase when Landmark 81 is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Landmark 81 is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-landmark-81",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31603,7 +31603,7 @@
       "pageID": "viet-family-city-hcmc-go-le-thanh-ton-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Le Thanh Ton Street",
-      "summary": "Use this short route phrase when Le Thanh Ton Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Le Thanh Ton Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-le-thanh-ton-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31615,7 +31615,7 @@
       "pageID": "viet-family-city-hcmc-go-nguyen-hue-walking-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Nguyen Hue Walking Street",
-      "summary": "Use this short route phrase when Nguyen Hue Walking Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Nguyen Hue Walking Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-nguyen-hue-walking-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31627,7 +31627,7 @@
       "pageID": "viet-family-city-hcmc-go-nguyen-trai-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Nguyen Trai Street",
-      "summary": "Use this short route phrase when Nguyen Trai Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Nguyen Trai Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-nguyen-trai-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31651,7 +31651,7 @@
       "pageID": "viet-family-city-hcmc-go-opera-house",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Saigon Opera House",
-      "summary": "Use this short route phrase when Saigon Opera House is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Saigon Opera House is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-opera-house",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31663,7 +31663,7 @@
       "pageID": "viet-family-city-hcmc-go-pasteur-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Pasteur Street",
-      "summary": "Use this short route phrase when Pasteur Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Pasteur Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-pasteur-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31675,7 +31675,7 @@
       "pageID": "viet-family-city-hcmc-go-pham-ngu-lao-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Pham Ngu Lao Street",
-      "summary": "Use this short route phrase when Pham Ngu Lao Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Pham Ngu Lao Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-pham-ngu-lao-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31687,7 +31687,7 @@
       "pageID": "viet-family-city-hcmc-go-pho-hoa-pasteur",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Pho Hoa Pasteur",
-      "summary": "Use this short route phrase when Pho Hoa Pasteur is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Pho Hoa Pasteur is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-pho-hoa-pasteur",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31699,7 +31699,7 @@
       "pageID": "viet-family-city-hcmc-go-saigon-river",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Saigon River",
-      "summary": "Use this short route phrase when Saigon River is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Saigon River is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-saigon-river",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31711,7 +31711,7 @@
       "pageID": "viet-family-city-hcmc-go-tan-son-nhat-airport",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tan Son Nhat Airport",
-      "summary": "Use this short route phrase when Tan Son Nhat Airport is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tan Son Nhat Airport is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-tan-son-nhat-airport",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31723,7 +31723,7 @@
       "pageID": "viet-family-city-hcmc-go-tao-dan-park",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tao Dan Park",
-      "summary": "Use this short route phrase when Tao Dan Park is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tao Dan Park is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-tao-dan-park",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31735,7 +31735,7 @@
       "pageID": "viet-family-city-hcmc-go-thao-dien",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Thao Dien",
-      "summary": "Use this short route phrase when Thao Dien is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Thao Dien is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-thao-dien",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31747,7 +31747,7 @@
       "pageID": "viet-family-city-hcmc-go-turtle-lake",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Turtle Lake",
-      "summary": "Use this short route phrase when Turtle Lake is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Turtle Lake is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-turtle-lake",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31759,7 +31759,7 @@
       "pageID": "viet-family-city-hcmc-go-war-remnants-museum",
       "scenarioID": "city-guides",
       "familyTitle": "Go to War Remnants Museum",
-      "summary": "Use this short route phrase when War Remnants Museum is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when War Remnants Museum is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-war-remnants-museum",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31771,7 +31771,7 @@
       "pageID": "viet-family-city-hcmc-go-zoo-botanical-gardens",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Saigon Zoo and Botanical Gardens",
-      "summary": "Use this short route phrase when Saigon Zoo and Botanical Gardens is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Saigon Zoo and Botanical Gardens is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hcmc-go-zoo-botanical-gardens",
       "accessTier": "premium",
       "phraseIDs": [
@@ -31891,7 +31891,7 @@
       "pageID": "viet-family-city-hcmc-place-anan-saigon",
       "scenarioID": "city-guides",
       "familyTitle": "Anan Saigon pronunciation",
-      "summary": "Anăn Sài Gòn is a restaurant in Saigon, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "summary": "Anăn Sài Gòn is a restaurant in Saigon, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "primaryPhraseID": "city-hcmc-place-anan-saigon",
       "accessTier": "premium",
       "phraseIDs": [
@@ -32143,7 +32143,7 @@
       "pageID": "viet-family-city-hcmc-place-pho-hoa-pasteur",
       "scenarioID": "city-guides",
       "familyTitle": "Pho Hoa Pasteur pronunciation",
-      "summary": "Phở Hòa Pasteur is a restaurant in Saigon, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "summary": "Phở Hòa Pasteur is a restaurant in Saigon, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "primaryPhraseID": "city-hcmc-place-pho-hoa-pasteur",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33139,7 +33139,7 @@
       "pageID": "viet-family-city-hoian-go-an-hoi-island",
       "scenarioID": "city-guides",
       "familyTitle": "Go to An Hoi Island",
-      "summary": "Use this short route phrase when An Hoi Island is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when An Hoi Island is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-an-hoi-island",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33175,7 +33175,7 @@
       "pageID": "viet-family-city-hoian-go-bay-mau-coconut-forest",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Bay Mau Coconut Forest",
-      "summary": "Use this short route phrase when Bay Mau Coconut Forest is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Bay Mau Coconut Forest is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-bay-mau-coconut-forest",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33187,7 +33187,7 @@
       "pageID": "viet-family-city-hoian-go-cam-chau",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Cam Chau",
-      "summary": "Use this short route phrase when Cam Chau is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Cam Chau is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-cam-chau",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33199,7 +33199,7 @@
       "pageID": "viet-family-city-hoian-go-cam-nam",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Cam Nam",
-      "summary": "Use this short route phrase when Cam Nam is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Cam Nam is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-cam-nam",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33211,7 +33211,7 @@
       "pageID": "viet-family-city-hoian-go-cam-thanh-coconut-village",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Cam Thanh Coconut Village",
-      "summary": "Use this short route phrase when Cam Thanh Coconut Village is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Cam Thanh Coconut Village is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-cam-thanh-coconut-village",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33235,7 +33235,7 @@
       "pageID": "viet-family-city-hoian-go-cham-islands",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Cham Islands",
-      "summary": "Use this short route phrase when Cham Islands is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Cham Islands is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-cham-islands",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33259,7 +33259,7 @@
       "pageID": "viet-family-city-hoian-go-faifo-coffee",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Faifo Coffee",
-      "summary": "Use this short route phrase when Faifo Coffee is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Faifo Coffee is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-faifo-coffee",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33271,7 +33271,7 @@
       "pageID": "viet-family-city-hoian-go-fujian-assembly-hall",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Fujian Assembly Hall",
-      "summary": "Use this short route phrase when Fujian Assembly Hall is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Fujian Assembly Hall is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-fujian-assembly-hall",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33283,7 +33283,7 @@
       "pageID": "viet-family-city-hoian-go-hoai-river",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hoai River",
-      "summary": "Use this short route phrase when Hoai River is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hoai River is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-hoai-river",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33307,7 +33307,7 @@
       "pageID": "viet-family-city-hoian-go-kim-bong-carpentry-village",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Kim Bong Carpentry Village",
-      "summary": "Use this short route phrase when Kim Bong Carpentry Village is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Kim Bong Carpentry Village is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-kim-bong-carpentry-village",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33319,7 +33319,7 @@
       "pageID": "viet-family-city-hoian-go-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hoi An Market",
-      "summary": "Use this short route phrase when Hoi An Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hoi An Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33331,7 +33331,7 @@
       "pageID": "viet-family-city-hoian-go-memories-land",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hoi An Memories Land",
-      "summary": "Use this short route phrase when Hoi An Memories Land is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hoi An Memories Land is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-memories-land",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33343,7 +33343,7 @@
       "pageID": "viet-family-city-hoian-go-morning-glory",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Morning Glory Hoi An",
-      "summary": "Use this short route phrase when Morning Glory Hoi An is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Morning Glory Hoi An is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-morning-glory",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33355,7 +33355,7 @@
       "pageID": "viet-family-city-hoian-go-my-son-sanctuary",
       "scenarioID": "city-guides",
       "familyTitle": "Go to My Son Sanctuary",
-      "summary": "Use this short route phrase when My Son Sanctuary is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when My Son Sanctuary is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-my-son-sanctuary",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33367,7 +33367,7 @@
       "pageID": "viet-family-city-hoian-go-nguyen-hoang-night-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Nguyen Hoang Night Market",
-      "summary": "Use this short route phrase when Nguyen Hoang Night Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Nguyen Hoang Night Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-nguyen-hoang-night-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33379,7 +33379,7 @@
       "pageID": "viet-family-city-hoian-go-precious-heritage-museum",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Precious Heritage Museum",
-      "summary": "Use this short route phrase when Precious Heritage Museum is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Precious Heritage Museum is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-precious-heritage-museum",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33391,7 +33391,7 @@
       "pageID": "viet-family-city-hoian-go-quan-cong-temple",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Quan Cong Temple",
-      "summary": "Use this short route phrase when Quan Cong Temple is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Quan Cong Temple is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-quan-cong-temple",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33403,7 +33403,7 @@
       "pageID": "viet-family-city-hoian-go-reach-out-tea-house",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Reaching Out Tea House",
-      "summary": "Use this short route phrase when Reaching Out Tea House is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Reaching Out Tea House is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-reach-out-tea-house",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33415,7 +33415,7 @@
       "pageID": "viet-family-city-hoian-go-tan-ky-old-house",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tan Ky Old House",
-      "summary": "Use this short route phrase when Tan Ky Old House is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tan Ky Old House is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-tan-ky-old-house",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33439,7 +33439,7 @@
       "pageID": "viet-family-city-hoian-go-thu-bon-river",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Thu Bon River",
-      "summary": "Use this short route phrase when Thu Bon River is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Thu Bon River is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-thu-bon-river",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33463,7 +33463,7 @@
       "pageID": "viet-family-city-hoian-go-tran-phu-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tran Phu Street",
-      "summary": "Use this short route phrase when Tran Phu Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tran Phu Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hoian-go-tran-phu-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -33799,7 +33799,7 @@
       "pageID": "viet-family-city-hoian-place-morning-glory",
       "scenarioID": "city-guides",
       "familyTitle": "Morning Glory Hoi An pronunciation",
-      "summary": "Morning Glory Hội An is a restaurant in Hoi An, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "summary": "Morning Glory Hội An is a restaurant in Hoi An, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "primaryPhraseID": "city-hoian-place-morning-glory",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35011,7 +35011,7 @@
       "pageID": "viet-family-city-hue-go-an-cuu-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to An Cuu Market",
-      "summary": "Use this short route phrase when An Cuu Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when An Cuu Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-an-cuu-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35023,7 +35023,7 @@
       "pageID": "viet-family-city-hue-go-an-dinh-palace",
       "scenarioID": "city-guides",
       "familyTitle": "Go to An Dinh Palace",
-      "summary": "Use this short route phrase when An Dinh Palace is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when An Dinh Palace is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-an-dinh-palace",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35035,7 +35035,7 @@
       "pageID": "viet-family-city-hue-go-bao-vinh-ancient-town",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Bao Vinh Ancient Town",
-      "summary": "Use this short route phrase when Bao Vinh Ancient Town is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Bao Vinh Ancient Town is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-bao-vinh-ancient-town",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35083,7 +35083,7 @@
       "pageID": "viet-family-city-hue-go-dong-khanh-tomb",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tomb of Dong Khanh",
-      "summary": "Use this short route phrase when Tomb of Dong Khanh is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tomb of Dong Khanh is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-dong-khanh-tomb",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35095,7 +35095,7 @@
       "pageID": "viet-family-city-hue-go-gia-long-tomb",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tomb of Gia Long",
-      "summary": "Use this short route phrase when Tomb of Gia Long is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tomb of Gia Long is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-gia-long-tomb",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35107,7 +35107,7 @@
       "pageID": "viet-family-city-hue-go-hen-island",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hen Island",
-      "summary": "Use this short route phrase when Hen Island is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hen Island is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-hen-island",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35119,7 +35119,7 @@
       "pageID": "viet-family-city-hue-go-huyen-tran-temple",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Huyen Tran Princess Temple",
-      "summary": "Use this short route phrase when Huyen Tran Princess Temple is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Huyen Tran Princess Temple is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-huyen-tran-temple",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35143,7 +35143,7 @@
       "pageID": "viet-family-city-hue-go-khai-dinh-tomb",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tomb of Khai Dinh",
-      "summary": "Use this short route phrase when Tomb of Khai Dinh is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tomb of Khai Dinh is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-khai-dinh-tomb",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35155,7 +35155,7 @@
       "pageID": "viet-family-city-hue-go-les-jardins",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Les Jardins de la Carambole",
-      "summary": "Use this short route phrase when Les Jardins de la Carambole is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Les Jardins de la Carambole is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-les-jardins",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35167,7 +35167,7 @@
       "pageID": "viet-family-city-hue-go-minh-mang-tomb",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tomb of Minh Mang",
-      "summary": "Use this short route phrase when Tomb of Minh Mang is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tomb of Minh Mang is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-minh-mang-tomb",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35179,7 +35179,7 @@
       "pageID": "viet-family-city-hue-go-nguyen-dinh-chieu-street",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Nguyen Dinh Chieu Walking Street",
-      "summary": "Use this short route phrase when Nguyen Dinh Chieu Walking Street is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Nguyen Dinh Chieu Walking Street is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-nguyen-dinh-chieu-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35191,7 +35191,7 @@
       "pageID": "viet-family-city-hue-go-night-market",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hue Night Market",
-      "summary": "Use this short route phrase when Hue Night Market is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hue Night Market is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-night-market",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35215,7 +35215,7 @@
       "pageID": "viet-family-city-hue-go-phu-bai-airport",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Phu Bai Airport",
-      "summary": "Use this short route phrase when Phu Bai Airport is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Phu Bai Airport is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-phu-bai-airport",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35227,7 +35227,7 @@
       "pageID": "viet-family-city-hue-go-phu-cam-church",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Phu Cam Church",
-      "summary": "Use this short route phrase when Phu Cam Church is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Phu Cam Church is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-phu-cam-church",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35239,7 +35239,7 @@
       "pageID": "viet-family-city-hue-go-railway-station",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hue Railway Station",
-      "summary": "Use this short route phrase when Hue Railway Station is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hue Railway Station is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-railway-station",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35251,7 +35251,7 @@
       "pageID": "viet-family-city-hue-go-royal-antiquities-museum",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Hue Museum of Royal Antiquities",
-      "summary": "Use this short route phrase when Hue Museum of Royal Antiquities is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Hue Museum of Royal Antiquities is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-royal-antiquities-museum",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35263,7 +35263,7 @@
       "pageID": "viet-family-city-hue-go-thanh-toan-bridge",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Thanh Toan Bridge",
-      "summary": "Use this short route phrase when Thanh Toan Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Thanh Toan Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-thanh-toan-bridge",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35287,7 +35287,7 @@
       "pageID": "viet-family-city-hue-go-thuy-xuan-incense-village",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Thuy Xuan Incense Village",
-      "summary": "Use this short route phrase when Thuy Xuan Incense Village is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Thuy Xuan Incense Village is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-thuy-xuan-incense-village",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35299,7 +35299,7 @@
       "pageID": "viet-family-city-hue-go-truong-tien-bridge",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Truong Tien Bridge",
-      "summary": "Use this short route phrase when Truong Tien Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Truong Tien Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-truong-tien-bridge",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35323,7 +35323,7 @@
       "pageID": "viet-family-city-hue-go-tu-hieu-pagoda",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Tu Hieu Pagoda",
-      "summary": "Use this short route phrase when Tu Hieu Pagoda is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Tu Hieu Pagoda is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-tu-hieu-pagoda",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35335,7 +35335,7 @@
       "pageID": "viet-family-city-hue-go-vong-canh-hill",
       "scenarioID": "city-guides",
       "familyTitle": "Go to Vong Canh Hill",
-      "summary": "Use this short route phrase when Vong Canh Hill is the destination and the map or ride screen already gives the rest of the context.",
+      "summary": "Use this short travel phrase when Vong Canh Hill is the destination and the map or ride screen already gives the rest of the context.",
       "primaryPhraseID": "city-hue-go-vong-canh-hill",
       "accessTier": "premium",
       "phraseIDs": [
@@ -35599,7 +35599,7 @@
       "pageID": "viet-family-city-hue-place-les-jardins",
       "scenarioID": "city-guides",
       "familyTitle": "Les Jardins de la Carambole pronunciation",
-      "summary": "Les Jardins de la Carambole is a restaurant in Hue, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "summary": "Les Jardins de la Carambole is a restaurant in Hue, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "primaryPhraseID": "city-hue-place-les-jardins",
       "accessTier": "premium",
       "phraseIDs": [
@@ -127727,7 +127727,7 @@
       "pronunciation": "dee sun bay da nang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Da Nang Airport is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Da Nang Airport is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -127772,7 +127772,7 @@
       "pronunciation": "dee kohng vee-en apec",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when APEC Park is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when APEC Park is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -127817,7 +127817,7 @@
       "pronunciation": "dee kohng vee-en chau a",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Asia Park is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Asia Park is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -127862,7 +127862,7 @@
       "pronunciation": "dee bah na hills",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "A short route phrase for Bà Nà Hills when the map pin is visible and the traveler needs a driver, hotel desk, or pickup helper to understand the destination.",
+      "context": "A short travel phrase for Bà Nà Hills when the map pin is visible and you need a driver, hotel desk, or pickup helper to understand the destination.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -127907,7 +127907,7 @@
       "pronunciation": "dee dinh ban co",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Ban Co Peak is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Ban Co Peak is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -127952,7 +127952,7 @@
       "pronunciation": "dee nyah thuh con ga da nang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Da Nang Cathedral is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Da Nang Cathedral is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -127997,7 +127997,7 @@
       "pronunciation": "dee bow tahng dieu khac cham",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Museum of Cham Sculpture is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Museum of Cham Sculpture is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128042,7 +128042,7 @@
       "pronunciation": "dee chuh con",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Con Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Con Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128087,7 +128087,7 @@
       "pronunciation": "dee cow zong",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "A short route phrase for Cầu Rồng when the traveler needs to reach the bridge, riverside area, or nearby pickup point.",
+      "context": "A short travel phrase for Cầu Rồng when you need to reach the bridge, riverside area, or nearby pickup point.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128131,7 +128131,7 @@
       "pronunciation": "dee cow vang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Golden Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Golden Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128176,7 +128176,7 @@
       "pronunciation": "dee chuh han",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Han Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Han Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128221,7 +128221,7 @@
       "pronunciation": "dee song han",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Han River is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Han River is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128266,7 +128266,7 @@
       "pronunciation": "dee chuh dem helio",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Helio Night Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Helio Night Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128311,7 +128311,7 @@
       "pronunciation": "dee choo-ah linh ung",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Linh Ung Pagoda is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Linh Ung Pagoda is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128356,7 +128356,7 @@
       "pronunciation": "dee cow tinh yeu",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Love Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Love Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128401,7 +128401,7 @@
       "pronunciation": "dee byen man thai",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Man Thai Beach is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Man Thai Beach is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128446,7 +128446,7 @@
       "pronunciation": "dee ngu hanh son",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Marble Mountains is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Marble Mountains is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128535,7 +128535,7 @@
       "pronunciation": "dee ran nam o",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Nam O Reef is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Nam O Reef is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128580,7 +128580,7 @@
       "pronunciation": "dee nen da nang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Nen Da Nang is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Nen Da Nang is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128626,7 +128626,7 @@
       "pronunciation": "dee duong ngween van linh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Nguyen Van Linh Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Nguyen Van Linh Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128671,7 +128671,7 @@
       "pronunciation": "dee byen non nuoc",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Non Nuoc Beach is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Non Nuoc Beach is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128716,7 +128716,7 @@
       "pronunciation": "dee lang da non nuoc",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Non Nuoc Stone Carving Village is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Non Nuoc Stone Carving Village is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128761,7 +128761,7 @@
       "pronunciation": "dee ga da nang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Da Nang Railway Station is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Da Nang Railway Station is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128850,7 +128850,7 @@
       "pronunciation": "dee chuh dem son chah",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Son Tra Night Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Son Tra Night Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128895,7 +128895,7 @@
       "pronunciation": "dee cang tien sa",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tien Sa Port is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tien Sa Port is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128940,7 +128940,7 @@
       "pronunciation": "dee cow chun thi ly",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tran Thi Ly Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tran Thi Ly Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -128985,7 +128985,7 @@
       "pronunciation": "dee duong vo nguyen giap",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Vo Nguyen Giap Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Vo Nguyen Giap Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -130289,7 +130289,7 @@
       "pronunciation": "nen da nang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Nén Đà Nẵng is a restaurant in Da Nang, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "context": "Nén Đà Nẵng is a restaurant in Da Nang, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -132242,7 +132242,7 @@
       "pronunciation": "bah na hills uh dow",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "A practical where-question for when the traveler needs a direction, counter, pickup point, or map confirmation for Bà Nà Hills.",
+      "context": "Ask for the ticket area, cable car, pickup point, or next direction for Bà Nà Hills.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -134170,7 +134170,7 @@
       "pronunciation": "dee quang chuong ba dinh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Ba Dinh Square is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Ba Dinh Square is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134215,7 +134215,7 @@
       "pronunciation": "dee boon cha huong lien",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Bun Cha Huong Lien is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Bun Cha Huong Lien is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134260,7 +134260,7 @@
       "pronunciation": "dee cha ca thang long",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Cha Ca Thang Long is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Cha Ca Thang Long is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134305,7 +134305,7 @@
       "pronunciation": "dee chuh dong swan",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Dong Xuan Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Dong Xuan Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134350,7 +134350,7 @@
       "pronunciation": "dee bow tahng dan toc hoc",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Vietnam Museum of Ethnology is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Vietnam Museum of Ethnology is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134395,7 +134395,7 @@
       "pronunciation": "dee kah feh giang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Giang Cafe is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Giang Cafe is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134441,7 +134441,7 @@
       "pronunciation": "dee foh hang bac",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hang Bac Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hang Bac Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134486,7 +134486,7 @@
       "pronunciation": "dee foh hang gai",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hang Gai Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hang Gai Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134531,7 +134531,7 @@
       "pronunciation": "dee lang bac",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Ho Chi Minh Mausoleum is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Ho Chi Minh Mausoleum is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134576,7 +134576,7 @@
       "pronunciation": "dee nyah tu hoa lo",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hoa Lo Prison is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hoa Lo Prison is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134665,7 +134665,7 @@
       "pronunciation": "dee hoang tahn thang long",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Imperial Citadel of Thang Long is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Imperial Citadel of Thang Long is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134754,7 +134754,7 @@
       "pronunciation": "dee chuh long bien",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Long Bien Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Long Bien Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134843,7 +134843,7 @@
       "pronunciation": "dee sun bay noy bai",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Noi Bai Airport is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Noi Bai Airport is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134888,7 +134888,7 @@
       "pronunciation": "dee foh co ha noy",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hanoi Old Quarter is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hanoi Old Quarter is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134933,7 +134933,7 @@
       "pronunciation": "dee nyah hat lon ha noy",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hanoi Opera House is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hanoi Opera House is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -134978,7 +134978,7 @@
       "pronunciation": "dee foh phan dinh phung",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Phan Dinh Phung Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Phan Dinh Phung Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135023,7 +135023,7 @@
       "pronunciation": "dee pho bat dan",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Pho Bat Dan is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Pho Bat Dan is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135068,7 +135068,7 @@
       "pronunciation": "dee den kwan thanh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Quan Thanh Temple is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Quan Thanh Temple is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135113,7 +135113,7 @@
       "pronunciation": "dee nyah thuh lon ha noy",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when St. Joseph Cathedral is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when St. Joseph Cathedral is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135202,7 +135202,7 @@
       "pronunciation": "dee tam vi",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tam Vi is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tam Vi is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135248,7 +135248,7 @@
       "pronunciation": "dee tay hoh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tay Ho is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tay Ho is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135293,7 +135293,7 @@
       "pronunciation": "dee van mee-ew",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this as the simplest route phrase to the Temple of Literature.",
+      "context": "Use this as the simplest travel phrase to the Temple of Literature.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135337,7 +135337,7 @@
       "pronunciation": "dee foh duong tau ha noy",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hanoi Train Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hanoi Train Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135382,7 +135382,7 @@
       "pronunciation": "dee choo-ah tran quoc",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tran Quoc Pagoda is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tran Quoc Pagoda is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135427,7 +135427,7 @@
       "pronunciation": "dee hoh truc bach",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Truc Bach Lake is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Truc Bach Lake is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135472,7 +135472,7 @@
       "pronunciation": "dee hoh tay",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when West Lake is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when West Lake is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135828,7 +135828,7 @@
       "pronunciation": "boon cha huong lien",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "A walk-in guide for Bún chả Hương Liên: say the place name, order bún chả, handle drinks, pay, and get a ride back without turning the page into a review.",
+      "context": "A walk-in guide for Bún chả Hương Liên: say the name, order bún chả, handle drinks, pay, and get a ride back without turning the page into a review.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -135871,7 +135871,7 @@
       "pronunciation": "cha ca thang long",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Chả cá Thăng Long is a restaurant in Hanoi, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "context": "Chả cá Thăng Long is a restaurant in Hanoi, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -136557,7 +136557,7 @@
       "pronunciation": "pho bat dan",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "A walk-in guide for Phở Bát Đàn: say the place name, order a bowl of phở, ask what to get, pay, and recover if the line or counter feels confusing.",
+      "context": "A walk-in guide for Phở Bát Đàn: say the name, order a bowl of phở, ask what to get, pay, and recover if the line or counter feels confusing.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -136728,7 +136728,7 @@
       "pronunciation": "tam vi",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Tầm Vị is a restaurant in Hanoi, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "context": "Tầm Vị is a restaurant in Hanoi, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -141098,7 +141098,7 @@
       "pronunciation": "dee anan sai gon",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Anan Saigon is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Anan Saigon is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141145,7 +141145,7 @@
       "pronunciation": "dee ben bach dang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Bach Dang Wharf is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Bach Dang Wharf is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141236,7 +141236,7 @@
       "pronunciation": "dee chuh binh tay",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Binh Tay Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Binh Tay Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141282,7 +141282,7 @@
       "pronunciation": "dee toa nyah bitexco",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Bitexco Financial Tower is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Bitexco Financial Tower is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141373,7 +141373,7 @@
       "pronunciation": "dee buu dien tahn foh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Central Post Office is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Central Post Office is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141419,7 +141419,7 @@
       "pronunciation": "dee chuh lon",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Cho Lon is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Cho Lon is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141465,7 +141465,7 @@
       "pronunciation": "den kwan mot",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when District 1 is the area you are heading toward, especially with a driver, hotel desk, or map already open.",
+      "context": "Use this short travel phrase when District 1 is the area you are heading toward, especially with a driver, hotel desk, or map already open.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141511,7 +141511,7 @@
       "pronunciation": "dee duong dong khoi",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Dong Khoi Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Dong Khoi Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141557,7 +141557,7 @@
       "pronunciation": "dee bow tahng mee thuat",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Fine Arts Museum is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Fine Arts Museum is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141603,7 +141603,7 @@
       "pronunciation": "dee chuh hoa hoh thi ky",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Ho Thi Ky Flower Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Ho Thi Ky Flower Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141649,7 +141649,7 @@
       "pronunciation": "dee dinh dok lup",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Independence Palace is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Independence Palace is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141695,7 +141695,7 @@
       "pronunciation": "dee choo-ah ngoc hoang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Jade Emperor Pagoda is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Jade Emperor Pagoda is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141741,7 +141741,7 @@
       "pronunciation": "dee landmark 81",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Landmark 81 is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Landmark 81 is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141786,7 +141786,7 @@
       "pronunciation": "dee duong le thanh ton",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Le Thanh Ton Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Le Thanh Ton Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141832,7 +141832,7 @@
       "pronunciation": "dee foh dee bo ngween hweh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Nguyen Hue Walking Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Nguyen Hue Walking Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141878,7 +141878,7 @@
       "pronunciation": "dee duong ngween trai",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Nguyen Trai Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Nguyen Trai Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -141969,7 +141969,7 @@
       "pronunciation": "dee nyah hat tahn foh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Saigon Opera House is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Saigon Opera House is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142015,7 +142015,7 @@
       "pronunciation": "dee duong pasteur",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Pasteur Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Pasteur Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142061,7 +142061,7 @@
       "pronunciation": "dee foh pham ngu lao",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Pham Ngu Lao Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Pham Ngu Lao Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142107,7 +142107,7 @@
       "pronunciation": "dee pho hoa pasteur",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Pho Hoa Pasteur is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Pho Hoa Pasteur is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142153,7 +142153,7 @@
       "pronunciation": "dee song sai gon",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Saigon River is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Saigon River is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142199,7 +142199,7 @@
       "pronunciation": "dee sun bay tan son nyut",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tan Son Nhat Airport is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tan Son Nhat Airport is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142245,7 +142245,7 @@
       "pronunciation": "dee kohng vee-en tao dan",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tao Dan Park is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tao Dan Park is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142291,7 +142291,7 @@
       "pronunciation": "dee thao dien",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Thao Dien is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Thao Dien is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142337,7 +142337,7 @@
       "pronunciation": "dee hoh con rua",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Turtle Lake is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Turtle Lake is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142383,7 +142383,7 @@
       "pronunciation": "dee bow tahng chung tich chien tranh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when War Remnants Museum is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when War Remnants Museum is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142429,7 +142429,7 @@
       "pronunciation": "dee thao cam vee-en sai gon",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Saigon Zoo and Botanical Gardens is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Saigon Zoo and Botanical Gardens is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -142886,7 +142886,7 @@
       "pronunciation": "anan sai gon",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Anăn Sài Gòn is a restaurant in Saigon, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "context": "Anăn Sài Gòn is a restaurant in Saigon, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -143806,7 +143806,7 @@
       "pronunciation": "pho hoa pasteur",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Phở Hòa Pasteur is a restaurant in Saigon, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "context": "Phở Hòa Pasteur is a restaurant in Saigon, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -147570,7 +147570,7 @@
       "pronunciation": "dee dao an hoy",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when An Hoi Island is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when An Hoi Island is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -147703,7 +147703,7 @@
       "pronunciation": "dee rung dua bay mau",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Bay Mau Coconut Forest is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Bay Mau Coconut Forest is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -147748,7 +147748,7 @@
       "pronunciation": "dee cam chau",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Cam Chau is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Cam Chau is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -147793,7 +147793,7 @@
       "pronunciation": "dee cam nam",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Cam Nam is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Cam Nam is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -147838,7 +147838,7 @@
       "pronunciation": "dee lang dua cam thanh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Cam Thanh Coconut Village is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Cam Thanh Coconut Village is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -147928,7 +147928,7 @@
       "pronunciation": "dee cu lao cham",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Cham Islands is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Cham Islands is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148017,7 +148017,7 @@
       "pronunciation": "dee faifo coffee",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Faifo Coffee is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Faifo Coffee is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148061,7 +148061,7 @@
       "pronunciation": "dee hoy kwan phuc kien",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Fujian Assembly Hall is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Fujian Assembly Hall is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148106,7 +148106,7 @@
       "pronunciation": "dee song hoai",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hoai River is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hoai River is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148195,7 +148195,7 @@
       "pronunciation": "dee lang moc kim bong",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Kim Bong Carpentry Village is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Kim Bong Carpentry Village is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148240,7 +148240,7 @@
       "pronunciation": "dee chuh hoy an",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hoi An Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hoi An Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148285,7 +148285,7 @@
       "pronunciation": "dee dao ky uc hoy an",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hoi An Memories Land is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hoi An Memories Land is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148330,7 +148330,7 @@
       "pronunciation": "dee morning glory hoy an",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Morning Glory Hoi An is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Morning Glory Hoi An is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148376,7 +148376,7 @@
       "pronunciation": "dee thanh dia mee son",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when My Son Sanctuary is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when My Son Sanctuary is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148421,7 +148421,7 @@
       "pronunciation": "dee chuh dem ngween hoang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Nguyen Hoang Night Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Nguyen Hoang Night Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148466,7 +148466,7 @@
       "pronunciation": "dee bow tahng di san vo gia",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Precious Heritage Museum is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Precious Heritage Museum is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148511,7 +148511,7 @@
       "pronunciation": "dee mee-oo quan kohng",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Quan Cong Temple is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Quan Cong Temple is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148556,7 +148556,7 @@
       "pronunciation": "dee reaching out tea house",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Reaching Out Tea House is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Reaching Out Tea House is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148600,7 +148600,7 @@
       "pronunciation": "dee nyah co tan ky",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tan Ky Old House is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tan Ky Old House is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148689,7 +148689,7 @@
       "pronunciation": "dee song thu bon",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Thu Bon River is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Thu Bon River is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -148778,7 +148778,7 @@
       "pronunciation": "dee foh chun foo",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tran Phu Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tran Phu Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -149993,7 +149993,7 @@
       "pronunciation": "morning glory hoy an",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Morning Glory Hội An is a restaurant in Hoi An, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "context": "Morning Glory Hội An is a restaurant in Hoi An, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",
@@ -154500,7 +154500,7 @@
       "pronunciation": "dee chuh an cuu",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when An Cuu Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when An Cuu Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -154545,7 +154545,7 @@
       "pronunciation": "dee cung an ding",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when An Dinh Palace is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when An Dinh Palace is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -154590,7 +154590,7 @@
       "pronunciation": "dee foh co bao vinh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Bao Vinh Ancient Town is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Bao Vinh Ancient Town is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -154770,7 +154770,7 @@
       "pronunciation": "dee lang dong khanh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tomb of Dong Khanh is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tomb of Dong Khanh is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -154815,7 +154815,7 @@
       "pronunciation": "dee lang gia long",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tomb of Gia Long is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tomb of Gia Long is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -154860,7 +154860,7 @@
       "pronunciation": "dee con hen",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hen Island is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hen Island is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -154905,7 +154905,7 @@
       "pronunciation": "dee den huyen tran",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Huyen Tran Princess Temple is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Huyen Tran Princess Temple is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -154994,7 +154994,7 @@
       "pronunciation": "dee lang khai ding",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tomb of Khai Dinh is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tomb of Khai Dinh is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155039,7 +155039,7 @@
       "pronunciation": "dee les jardins de la carambole",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Les Jardins de la Carambole is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Les Jardins de la Carambole is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155084,7 +155084,7 @@
       "pronunciation": "dee lang ming mang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tomb of Minh Mang is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tomb of Minh Mang is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155129,7 +155129,7 @@
       "pronunciation": "dee foh dee bo ngween dinh chieu",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Nguyen Dinh Chieu Walking Street is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Nguyen Dinh Chieu Walking Street is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155174,7 +155174,7 @@
       "pronunciation": "dee chuh dem hweh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hue Night Market is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hue Night Market is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155263,7 +155263,7 @@
       "pronunciation": "dee sun bay foo bai",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Phu Bai Airport is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Phu Bai Airport is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155308,7 +155308,7 @@
       "pronunciation": "dee nyah thuh phu cam",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Phu Cam Church is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Phu Cam Church is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155353,7 +155353,7 @@
       "pronunciation": "dee ga hweh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hue Railway Station is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hue Railway Station is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155398,7 +155398,7 @@
       "pronunciation": "dee bow tahng co vat cung dinh hweh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Hue Museum of Royal Antiquities is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Hue Museum of Royal Antiquities is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155443,7 +155443,7 @@
       "pronunciation": "dee cow ngoi thanh toan",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Thanh Toan Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Thanh Toan Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155532,7 +155532,7 @@
       "pronunciation": "dee lang huong thuy swan",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Thuy Xuan Incense Village is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Thuy Xuan Incense Village is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155577,7 +155577,7 @@
       "pronunciation": "dee cow chuong tee-en",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Truong Tien Bridge is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Truong Tien Bridge is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155666,7 +155666,7 @@
       "pronunciation": "dee choo-ah tuh hieu",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Tu Hieu Pagoda is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Tu Hieu Pagoda is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -155711,7 +155711,7 @@
       "pronunciation": "dee doi vong canh",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Use this short route phrase when Vong Canh Hill is the destination and the map or ride screen already gives the rest of the context.",
+      "context": "Use this short travel phrase when Vong Canh Hill is the destination and the map or ride screen already gives the rest of the context.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -156672,7 +156672,7 @@
       "pronunciation": "les jardins de la carambole",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Les Jardins de la Carambole is a restaurant in Hue, useful when a named food stop is part of the plan and staff need the place name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
+      "context": "Les Jardins de la Carambole is a restaurant in Hue, useful when a named food stop is part of the plan and staff need the name clearly. Learn the Vietnamese name so a driver, hotel desk, or nearby staff member can recognize the exact place quickly.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",

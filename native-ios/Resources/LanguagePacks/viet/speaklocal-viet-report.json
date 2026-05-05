@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:51bac3491e33370d",
-    "generatedAt": "source-hash:51bac3491e33370d"
+    "contentVersion": "viet-sqlite-fixture:cff20099e2a29590",
+    "generatedAt": "source-hash:cff20099e2a29590"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "668fb078756d2221475c84716b143fa97da83838663ca6e64242923a50cbf122"
+      "sha256": "f85576498e28b43e63fe98bbd82fa6648e70b721a15d0736faec1bb182b18186"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "29f84e61cd57fb7640c68bc62f55ef956ddcb0c08a11a04f947e1666105360a5"
+      "sha256": "7fc9e22123032b9f2e3448103324653062f7756e31a20ba41219e1e2c40f1521"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -30,14 +30,14 @@
     },
     "cityLibrary": {
       "path": "content-draft/viet/city-library/v1.json",
-      "sha256": "0c5cfa636cd7c555298f9b315879721ec07377ba76f2e1269a39592091931b96"
+      "sha256": "20dd75cc8cc9b9446043a4ff2d1561f26f4c8785363f81fcfbb9f9aff3318dc3"
     }
   },
   "outputs": {
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "ad06555419a91b4c7a0794bd6e22289e77ab1f7353f233956cc06687b8f96195",
+    "databaseSha256": "fbdab4d1751cdd953faf23e6403461f1e18f37be4b9df16baa797c6bd26bb40c",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -85,10 +85,10 @@
     "pageCategories": 18414,
     "pagePracticeSeeds": 3070,
     "pagePracticeSteps": 7796,
-    "sections": 17198,
-    "sectionItems": 36645,
+    "sections": 17066,
+    "sectionItems": 35722,
     "breakdownTokens": 11395,
-    "relations": 21126,
+    "relations": 21127,
     "searchDocuments": 3078,
     "audioAssets": 3756,
     "audioUsages": 11653,
@@ -101,7 +101,7 @@
     "ftsRowCount": 3078,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
-    "relationshipWordsEligiblePageCount": 157,
+    "relationshipWordsEligiblePageCount": 25,
     "relationshipWordsEligiblePageIDs": [
       "viet-phrase-acknowledge-da-chao-anh",
       "viet-phrase-acknowledge-da-chao-ba",
@@ -109,14 +109,6 @@
       "viet-phrase-acknowledge-da-chao-chu",
       "viet-phrase-acknowledge-da-chao-co",
       "viet-phrase-acknowledge-da-chao-ong",
-      "viet-phrase-city-danang-atm-ba-na-hills",
-      "viet-phrase-city-danang-eat-near-ba-na-hills",
-      "viet-phrase-city-danang-go-ba-na-hills",
-      "viet-phrase-city-danang-stop-ba-na-hills",
-      "viet-phrase-city-danang-where-ba-na-hills",
-      "viet-phrase-city-hcmc-go-notre-dame",
-      "viet-phrase-city-hcmc-stop-notre-dame",
-      "viet-phrase-city-hcmc-where-notre-dame",
       "viet-phrase-hello-alo",
       "viet-phrase-hello-chao",
       "viet-phrase-hello-chao-anh",
@@ -130,136 +122,12 @@
       "viet-phrase-hello-da-chao-anh-chi",
       "viet-phrase-hello-good-afternoon",
       "viet-phrase-hello-good-morning",
-      "viet-phrase-help-1",
       "viet-phrase-how-are-you-anh",
       "viet-phrase-how-are-you-chi",
       "viet-phrase-how-are-you-em",
       "viet-phrase-polite-1",
-      "viet-phrase-repair-4",
-      "viet-phrase-repair-english-help",
-      "viet-phrase-repair-number-amount",
-      "viet-phrase-smalltalk-2",
       "viet-phrase-smalltalk-7",
-      "viet-phrase-smalltalk-di-dau-day",
-      "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
-      "viet-phrase-v900-hote-acco-can-i-have-a-baby-crib",
-      "viet-phrase-v900-mone-numb-pric-is-this-the-same-price-for-children",
-      "viet-phrase-v900-sigh-acti-is-there-an-english-guide",
-      "viet-phrase-v900-time-date-book-one-child-ticket-please",
-      "viet-phrase-v900-unde-repa-can-you-explain-it-in-english",
-      "viet-phrase-v900-unde-repa-is-there-someone-who-speaks-english",
-      "viet-phrase-ves-can-you-show-me-politeness",
-      "viet-phrase-ves-can-you-wait-here",
-      "viet-phrase-ves-do-you-speak-english-anh",
-      "viet-phrase-ves-take-me-to-ba-na-hills",
-      "viet-phrase-ves-two-tickets-ba-na-hills",
-      "viet-phrase-vpe-buy-item-toi-muon-mua-so-co-la-viet-nam",
-      "viet-phrase-vpe-buy-item-toi-muon-mua-thuc-don-tieng-anh",
-      "viet-phrase-vpe-buy-item-toi-muon-mua-ve-tre-em",
-      "viet-phrase-vpe-have-item-co-so-co-la-viet-nam-khong",
-      "viet-phrase-vpe-have-item-co-thuc-don-tieng-anh-khong",
-      "viet-phrase-vpe-have-item-co-ve-tre-em-khong",
-      "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-bang-tieng-anh-duoc-khong",
-      "viet-phrase-vpe-need-item-toi-can-so-co-la-viet-nam",
-      "viet-phrase-vpe-need-item-toi-can-thuc-don-tieng-anh",
-      "viet-phrase-vpe-need-item-toi-can-ve-tre-em",
-      "viet-phrase-vpe-one-item-please-cho-toi-mot-thuc-don-tieng-anh",
-      "viet-phrase-vpe-one-item-please-cho-toi-mot-ve-tre-em",
-      "viet-phrase-vpe-polite-request-da-cho-toi-thuc-don-tieng-anh",
-      "viet-phrase-vpe-polite-request-da-cho-toi-ve-tre-em",
-      "viet-phrase-vpe-price-item-so-co-la-viet-nam-bao-nhieu-tien",
-      "viet-phrase-vpe-price-item-thuc-don-tieng-anh-bao-nhieu-tien",
-      "viet-phrase-vpe-price-item-ve-tre-em-bao-nhieu-tien",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-chi-duong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-chup-anh-giup-toi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-doc-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-doi-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-doi-tien-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-goi-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-goi-taxi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-goi-xe-cong-nghe-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-in-ve-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-kiem-tra-dat-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-kiem-tra-ve-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-mo-cua-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-nhap-ma-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-sac-dien-thoai-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-scan-ma-qr-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-sua-wi-fi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-tim-hanh-ly-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-anh-giup-toi-viet-dia-chi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-chi-duong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-chup-anh-giup-toi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-doc-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-doi-tien-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-goi-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-goi-taxi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-in-ve-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-kiem-tra-dat-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-kiem-tra-ve-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-mo-cua-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-nhap-ma-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-sac-dien-thoai-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-scan-ma-qr-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-sua-wi-fi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-tim-hanh-ly-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chi-giup-toi-viet-dia-chi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-chi-duong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-chup-anh-giup-toi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-doc-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-doi-tien-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-goi-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-goi-taxi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-goi-xe-cong-nghe-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-in-ve-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-kiem-tra-dat-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-kiem-tra-ve-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-mo-cua-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-nhap-ma-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-sac-dien-thoai-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-scan-ma-qr-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-sua-wi-fi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-tim-hanh-ly-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-chu-giup-toi-viet-dia-chi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-chi-duong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-chup-anh-giup-toi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-doc-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-doi-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-doi-tien-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-goi-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-goi-taxi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-goi-xe-cong-nghe-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-in-ve-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-kiem-tra-dat-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-kiem-tra-ve-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-mo-cua-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-nhap-ma-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-sac-dien-thoai-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-scan-ma-qr-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-sua-wi-fi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-tim-hanh-ly-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-co-giup-toi-viet-dia-chi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-chi-duong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-chup-anh-giup-toi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-doc-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-doi-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-doi-tien-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-goi-so-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-goi-taxi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-goi-xe-cong-nghe-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-in-ve-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-kiem-tra-dat-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-kiem-tra-ve-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-mo-cua-phong-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-nhap-ma-nay-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-sac-dien-thoai-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-scan-ma-qr-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-sua-wi-fi-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-tim-hanh-ly-duoc-khong",
-      "viet-phrase-vpe-pronoun-help-em-giup-toi-viet-dia-chi-duoc-khong"
+      "viet-phrase-smalltalk-di-dau-day"
     ],
     "missingRelationshipWordsSectionCount": 0,
     "unexpectedRelationshipWordsSectionCount": 0,
@@ -395,7 +263,7 @@
     "aliasConflicts": []
   },
   "graph": {
-    "relationCount": 21126,
+    "relationCount": 21127,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -411,7 +279,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 15810
+        "count": 15811
       },
       {
         "relationType": "same_need_alt_context",
@@ -446,7 +314,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:3aae99ae735fb4e2",
@@ -460,7 +328,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:c2a64011dfc1a6f1",
@@ -474,7 +342,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:d8f114f7f2804631",
@@ -488,7 +356,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:30f0e3a44af6071e",
@@ -502,7 +370,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:f111a1344c310939",
@@ -516,7 +384,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:3df301c73e6ecb77",
@@ -530,7 +398,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:ab104cb99fc5d5df",
@@ -544,7 +412,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:3f21af927bd52cd2",
@@ -558,7 +426,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:5ee6f060b8ea3e87",
@@ -572,7 +440,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:a6f49540395b2c42",
@@ -586,7 +454,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:6e4db03538cf1a6d",
@@ -600,7 +468,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:10a753b68bd5ed32",
@@ -614,7 +482,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:c02fff9952bc471e",
@@ -628,7 +496,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:69eb335f4c1ce8c8",
@@ -642,7 +510,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:e5eff84d214c67c0",
@@ -656,7 +524,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:ef1683f0b60ba20b",
@@ -670,7 +538,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:6e919fd4a0a341ae",
@@ -684,7 +552,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:bfe63f9acde82b1a",
@@ -698,7 +566,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       },
       {
         "id": "missing-audio:planned:bae6f0b121d619ac",
@@ -712,7 +580,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:51bac3491e33370d"
+        "created_at": "source-hash:cff20099e2a29590"
       }
     ]
   },

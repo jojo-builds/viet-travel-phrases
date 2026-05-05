@@ -82,6 +82,12 @@ const bannedPatterns = [
   /watch-out/i,
 ];
 
+const directVoicePatterns = [
+  /\bwhen the traveler needs\b/i,
+  /\bthe traveler needs\b/i,
+  /\bthe user needs\b/i,
+];
+
 const relationshipWordVietnamese = [
   "Chào anh",
   "Chào chị",
@@ -405,6 +411,23 @@ function main() {
     !relationshipWordsEligiblePageIDs.includes("viet-family-city-danang-place-ba-na-hills"),
     "relationship-word eligibility should not include Bà Nà Hills place page"
   );
+  [
+    "viet-family-city-danang-where-ba-na-hills",
+    "viet-phrase-city-danang-where-ba-na-hills",
+    "viet-family-city-danang-go-ba-na-hills",
+    "viet-phrase-city-danang-go-ba-na-hills",
+    "viet-family-city-danang-eat-near-ba-na-hills",
+    "viet-phrase-city-danang-eat-near-ba-na-hills",
+    "viet-family-city-danang-atm-ba-na-hills",
+    "viet-phrase-city-danang-atm-ba-na-hills",
+    "viet-family-city-danang-stop-ba-na-hills",
+    "viet-phrase-city-danang-stop-ba-na-hills",
+  ].forEach((pageID) => {
+    assertTrue(
+      !relationshipWordsEligiblePageIDs.includes(pageID),
+      `relationship-word eligibility should not include Bà Nà Hills child page ${pageID}`
+    );
+  });
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -432,6 +455,16 @@ function main() {
     WHERE ps.section_key = 'relationship-words'
       AND pct.page_kind IN ('place', 'restaurant', 'dish', 'city', 'category');
   `), "city/place/restaurant/dish/category pages with relationship-word shelf");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN phrase_page pp ON pp.id = ps.page_id
+    JOIN phrase_city_tag pct ON pct.phrase_id = pp.phrase_id
+    WHERE ps.section_key = 'relationship-words'
+      AND pct.page_kind != 'relationship-person'
+      AND pp.phrase_id NOT LIKE 'hello-chao%'
+      AND pp.phrase_id != 'polite-1';
+  `), "non-greeting city-library pages with relationship-word shelf");
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -967,6 +1000,15 @@ function main() {
   ];
   if (bannedFileMatches.length > 0) {
     throw new Error(`Banned user-facing wording found:\n${JSON.stringify(bannedFileMatches, null, 2)}`);
+  }
+  const directVoiceMatches = scanBannedFiles([
+    catalogPath,
+    authoredPagesPath,
+    path.join(repoRoot, "content-draft", "viet", "practice", "practice-deck.sample.json"),
+    path.join(repoRoot, "prototypes", "practice-quiz", "practice-deck.sample.json"),
+  ], directVoicePatterns);
+  if (directVoiceMatches.length > 0) {
+    throw new Error(`Third-person traveler wording found in runtime phrasebook output:\n${JSON.stringify(directVoiceMatches, null, 2)}`);
   }
 
   assertEqual(report.countParity.phrases.actual, report.countParity.phrases.expected, "report phrase count");

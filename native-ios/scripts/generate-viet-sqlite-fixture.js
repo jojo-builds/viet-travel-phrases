@@ -29,7 +29,6 @@ const relationshipWordPhraseIDs = [
   "hello-chao-chu",
   "hello-chao-co",
 ];
-const relationshipWordTokens = new Set(["anh", "chị", "em", "ông", "bà", "chú", "cô"]);
 const greetingCategoryIDs = new Set(["greetings", "polite-basics"]);
 const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge";
@@ -641,26 +640,20 @@ function main() {
     return scenarioByID.get(scenarioID)?.title ?? "Vietnam travel";
   }
 
-  function vietnameseWordTokens(value) {
-    return Array.from(String(value ?? "").toLowerCase().matchAll(/\p{L}+/gu), (match) => match[0]);
-  }
-
   function shouldShowRelationshipWordsSection(phrase, authoredPage = null) {
     if (!phrase) return false;
+    const cityRecord = cityLibraryPageByPhraseID.get(phrase.id);
     const cityPageKind = authoredPage?.cityMetadata?.pageKind
-      ?? cityLibraryPageByPhraseID.get(phrase.id)?.pageKind
+      ?? cityRecord?.pageKind
       ?? "";
     if (["place", "restaurant", "dish", "city", "category"].includes(cityPageKind)) {
       return false;
     }
-    if (relationshipWordPhraseIDs.includes(phrase.id)) return true;
-
-    const targetTokens = vietnameseWordTokens(phrase.targetText);
-    if (targetTokens.some((token) => relationshipWordTokens.has(token))) return true;
+    const cityRelationshipPage = cityPageKind === "relationship-person";
+    const explicitRelationshipPhrase = relationshipWordPhraseIDs.includes(phrase.id);
+    if (explicitRelationshipPhrase || cityRelationshipPage) return true;
 
     const accentlessTarget = accentlessText(phrase.targetText);
-    if (accentlessTarget.split(/\s+/).includes("chao")) return true;
-
     const englishSignal = normalizeText([
       phrase.englishText,
       phrase.context,
@@ -673,7 +666,11 @@ function main() {
     const isGreetingCategory = greetingCategoryIDs.has(phrase.scenarioID)
       || Array.from(authoredCategories).some((categoryID) => greetingCategoryIDs.has(categoryID));
 
-    return isGreetingCategory && /\b(hello|hi|greeting|greet)\b/.test(englishSignal);
+    return isGreetingCategory
+      && (
+        accentlessTarget.split(/\s+/).includes("chao")
+        || /\b(hello|hi|greeting|greet)\b/.test(englishSignal)
+      );
   }
 
   function baselineContextBody(phrase, family) {

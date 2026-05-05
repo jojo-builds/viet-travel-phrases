@@ -34,6 +34,9 @@ const learnerFacingBannedPatterns = [
 
 const patternHeavyCopy = [
   { id: "answers_traveler_question", pattern: /answers the traveler question/i },
+  { id: "when_traveler_needs", pattern: /\bwhen the traveler needs\b/i },
+  { id: "traveler_needs", pattern: /\bthe traveler needs\b/i },
+  { id: "user_needs", pattern: /\bthe user needs\b/i },
   { id: "short_practice_phrase", pattern: /short practice phrase/i },
   { id: "keeps_sentence_direct", pattern: /keeps the sentence direct/i },
   { id: "clear_action_generic", pattern: /clear action/i },
