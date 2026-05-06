@@ -166,6 +166,20 @@ final class AdminChromeUITests: XCTestCase {
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-bottom.png")
     }
 
+    func testHomeScenarioStartButtonsStayInsideCardsAcrossRail() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+
+        scrollToHomeScenarioRail(in: app)
+        assertHomeScenarioStartButtonInsideCard(app: app, id: "first-day")
+        assertHomeScenarioStartButtonInsideCard(app: app, id: "hotel")
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-scenarios-visible.png")
+
+        revealHomeScenario(app: app, id: "danang")
+        assertHomeScenarioStartButtonInsideCard(app: app, id: "danang")
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-scenarios-danang.png")
+    }
+
     func testSearchChromeMorphHomeAndBrowseProofScreenshots() {
         let app = launchApp()
         assertHomeVisible(in: app)
@@ -325,6 +339,54 @@ final class AdminChromeUITests: XCTestCase {
                 "Top admin forward button and speed control should share the same row."
             )
         }
+    }
+
+    private func scrollToHomeScenarioRail(in app: XCUIApplication) {
+        for _ in 0..<5 where !app.staticTexts["Practice scenarios"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["Practice scenarios"].waitForExistence(timeout: 3))
+
+        let firstStartButton = app.buttons["HomeScenario.Start.first-day"]
+        for _ in 0..<5 where !firstStartButton.frame.intersects(app.frame) {
+            app.swipeUp()
+        }
+        XCTAssertTrue(
+            firstStartButton.waitForExistence(timeout: 3) && firstStartButton.frame.intersects(app.frame),
+            "Expected the first scenario Start button to be visible after scrolling to the rail."
+        )
+    }
+
+    private func revealHomeScenario(app: XCUIApplication, id: String) {
+        let targetButton = app.buttons["HomeScenario.Start.\(id)"]
+        for _ in 0..<5 where !targetButton.frame.intersects(app.frame) {
+            let hotelCard = app.descendants(matching: .any)["HomeScenario.hotel"]
+            if hotelCard.exists && hotelCard.frame.intersects(app.frame) {
+                hotelCard.swipeLeft()
+            } else {
+                app.swipeLeft()
+            }
+        }
+        XCTAssertTrue(
+            targetButton.frame.intersects(app.frame),
+            "Expected HomeScenario.Start.\(id) to be visible after dragging the scenario rail."
+        )
+    }
+
+    private func assertHomeScenarioStartButtonInsideCard(
+        app: XCUIApplication,
+        id: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let card = app.descendants(matching: .any)["HomeScenario.\(id)"]
+        let button = app.buttons["HomeScenario.Start.\(id)"]
+
+        XCTAssertTrue(card.waitForExistence(timeout: 3), "Missing scenario card \(id).", file: file, line: line)
+        XCTAssertTrue(button.waitForExistence(timeout: 3), "Missing Start button for scenario card \(id).", file: file, line: line)
+        XCTAssertTrue(button.frame.intersects(app.frame), "Scenario card \(id) Start button is not visible.", file: file, line: line)
+        XCTAssertGreaterThan(button.frame.width, 120, "Scenario card \(id) Start button should keep its pill width.", file: file, line: line)
+        XCTAssertGreaterThan(button.frame.height, 32, "Scenario card \(id) Start button should keep its tappable height.", file: file, line: line)
     }
 
     private func verifyDockTapFromDenseDetail(

@@ -134,6 +134,21 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThan(HomeLayout.situationImageHeight, HomeLayout.situationRowHeight)
     }
 
+    func testHomeScenarioCardsKeepStartButtonInsideCardBounds() {
+        let verticalPadding = HomeLayout.scenarioCardPadding * 2
+        let imageHeight = HomeLayout.scenarioCardImageHeight
+        let sectionSpacing = HomeLayout.scenarioCardSpacing * 3
+        let worstCaseTitleAndSubtitleHeight: CGFloat = 96
+        let startButtonHeight = HomeLayout.scenarioStartButtonHeight
+        let minimumHeight = verticalPadding
+            + imageHeight
+            + sectionSpacing
+            + worstCaseTitleAndSubtitleHeight
+            + startButtonHeight
+
+        XCTAssertGreaterThanOrEqual(HomeLayout.scenarioCardHeight, minimumHeight)
+    }
+
     func testPhrasePageChromeUsesSeparateSearchIsland() {
         let chrome = AppChrome(route: .phrasePage)
 

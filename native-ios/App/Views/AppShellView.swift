@@ -2536,7 +2536,11 @@ enum HomeLayout {
     static let largeCardCornerRadius: CGFloat = 28
     static let quickPhraseCardHeight: CGFloat = 122
     static let scenarioCardWidth: CGFloat = 198
-    static let scenarioCardHeight: CGFloat = 306
+    static let scenarioCardHeight: CGFloat = 368
+    static let scenarioCardPadding: CGFloat = 16
+    static let scenarioCardSpacing: CGFloat = 14
+    static let scenarioCardImageHeight: CGFloat = 144
+    static let scenarioStartButtonHeight: CGFloat = 44
     static let savedCardHeight: CGFloat = 172
     static let situationRowHeight: CGFloat = 96
     static let situationIconSize: CGFloat = 46
@@ -2968,14 +2972,17 @@ private struct HomeScenarioCard: View {
     let onStartPractice: (BrowseCollectionPracticeAction) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: HomeLayout.scenarioCardSpacing) {
             Button {
                 onOpenCollection(scenario.route)
             } label: {
                 Image(scenario.imageName)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: HomeLayout.scenarioCardWidth - 32, height: 144)
+                    .frame(
+                        width: HomeLayout.scenarioCardWidth - HomeLayout.scenarioCardPadding * 2,
+                        height: HomeLayout.scenarioCardImageHeight
+                    )
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             }
             .buttonStyle(.plain)
@@ -3011,14 +3018,17 @@ private struct HomeScenarioCard: View {
                     .font(.headline.weight(.bold))
                     .foregroundStyle(Color(red: 0.24, green: 0.58, blue: 0.41))
                     .frame(maxWidth: .infinity)
-                    .frame(height: 44)
+                    .frame(height: HomeLayout.scenarioStartButtonHeight)
                     .homeGlassCard(cornerRadius: 22)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Start \(scenario.title)")
+            .accessibilityIdentifier("HomeScenario.Start.\(scenario.id)")
         }
-        .padding(16)
+        .padding(HomeLayout.scenarioCardPadding)
         .frame(width: HomeLayout.scenarioCardWidth, height: HomeLayout.scenarioCardHeight, alignment: .topLeading)
         .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
+        .accessibilityElement(children: .contain)
         .accessibilityIdentifier("HomeScenario.\(scenario.id)")
     }
 }
