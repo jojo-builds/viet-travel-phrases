@@ -216,29 +216,12 @@ struct AppShellView: View {
                 }
             }
             .overlay(alignment: .top) {
-                if showsPinnedAudioSpeedControl {
-                    PinnedAudioSpeedControl()
-                        .padding(.top, AppChromeLayout.pinnedAudioSpeedTopPadding)
-                        .transition(.scale(scale: 0.92).combined(with: .opacity))
+                if showsTopAdminRow {
+                    topAdminRow
+                        .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
+                        .padding(.top, AppChromeLayout.topAdminTopPadding)
+                        .transition(.opacity)
                         .zIndex(410)
-                }
-            }
-            .overlay(alignment: .topLeading) {
-                if showsStaticBackButton {
-                    staticBackButton
-                        .padding(.leading, 24)
-                        .padding(.top, 6)
-                        .offset(y: -24)
-                        .zIndex(400)
-                }
-            }
-            .overlay(alignment: .topTrailing) {
-                if navigation.canGoForward {
-                    forwardButton
-                        .padding(.trailing, 24)
-                        .padding(.top, 6)
-                        .offset(y: -24)
-                        .zIndex(400)
                 }
             }
             .onAppear {
@@ -527,6 +510,10 @@ struct AppShellView: View {
         showsPinnedAudioSpeedControl ? AppChromeLayout.pinnedAudioSpeedScrollClearance : 0
     }
 
+    private var showsTopAdminRow: Bool {
+        showsStaticBackButton || showsPinnedAudioSpeedControl || navigation.canGoForward
+    }
+
     private var bottomChromePadding: CGFloat {
         isSearchFieldFocused ? 12 : AppChromeLayout.bottomPadding
     }
@@ -553,19 +540,47 @@ struct AppShellView: View {
         .contentShape(Rectangle())
     }
 
+    private var topAdminRow: some View {
+        ZStack {
+            HStack {
+                if showsStaticBackButton {
+                    staticBackButton
+                } else {
+                    topAdminPlaceholder
+                }
+
+                Spacer(minLength: 0)
+
+                if navigation.canGoForward {
+                    forwardButton
+                } else {
+                    topAdminPlaceholder
+                }
+            }
+
+            if showsPinnedAudioSpeedControl {
+                PinnedAudioSpeedControl()
+                    .transition(.scale(scale: 0.94).combined(with: .opacity))
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: AppChromeLayout.topAdminControlSize)
+    }
+
     private var staticBackButton: some View {
         Button {
             goBack()
         } label: {
             Image(systemName: "chevron.left")
-                .font(.title3.weight(.semibold))
-                .frame(width: 52, height: 52)
+                .font(.system(size: 20, weight: .semibold))
+                .frame(width: AppChromeLayout.topAdminControlSize, height: AppChromeLayout.topAdminControlSize)
                 .foregroundStyle(.primary)
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .nativeGlass(cornerRadius: 26, interactive: true)
+        .nativeGlass(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, interactive: true)
         .accessibilityLabel("Go back")
+        .accessibilityIdentifier("TopAdmin.BackButton")
     }
 
     @ViewBuilder
@@ -762,14 +777,22 @@ struct AppShellView: View {
             goForward()
         } label: {
             Image(systemName: "chevron.right")
-                .font(.title3.weight(.semibold))
-                .frame(width: 52, height: 52)
+                .font(.system(size: 20, weight: .semibold))
+                .frame(width: AppChromeLayout.topAdminControlSize, height: AppChromeLayout.topAdminControlSize)
                 .foregroundStyle(.primary)
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .nativeGlass(cornerRadius: 26, interactive: true)
+        .nativeGlass(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, interactive: true)
         .accessibilityLabel("Go forward")
+        .accessibilityIdentifier("TopAdmin.ForwardButton")
+    }
+
+    private var topAdminPlaceholder: some View {
+        Color.clear
+            .frame(width: AppChromeLayout.topAdminControlSize, height: AppChromeLayout.topAdminControlSize)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
     }
 
     @ViewBuilder

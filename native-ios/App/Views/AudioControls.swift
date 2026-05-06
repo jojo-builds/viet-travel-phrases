@@ -197,7 +197,51 @@ struct PlaybackDockView: View {
     }
 }
 
+struct AudioSpeedControlMetrics {
+    let textSize: CGFloat
+    let textHeight: CGFloat
+    let underlineWidth: CGFloat
+    let underlineHeight: CGFloat
+    let itemWidth: CGFloat
+    let itemHeight: CGFloat
+    let dividerHeight: CGFloat
+    let horizontalPadding: CGFloat
+    let verticalPadding: CGFloat
+    let controlHeight: CGFloat
+    let cornerRadius: CGFloat
+
+    static let regular = AudioSpeedControlMetrics(
+        textSize: 14,
+        textHeight: 29,
+        underlineWidth: 22,
+        underlineHeight: 4,
+        itemWidth: 48,
+        itemHeight: 42,
+        dividerHeight: 34,
+        horizontalPadding: 5,
+        verticalPadding: 4,
+        controlHeight: 52,
+        cornerRadius: 26
+    )
+
+    static let topAdmin = AudioSpeedControlMetrics(
+        textSize: 13,
+        textHeight: 26,
+        underlineWidth: 20,
+        underlineHeight: 3.5,
+        itemWidth: 43,
+        itemHeight: 38,
+        dividerHeight: 31,
+        horizontalPadding: 4.5,
+        verticalPadding: 3.5,
+        controlHeight: AppChromeLayout.topAdminControlSize,
+        cornerRadius: AppChromeLayout.topAdminControlCornerRadius
+    )
+}
+
 struct AudioSpeedSegmentedControl: View {
+    var metrics = AudioSpeedControlMetrics.regular
+
     @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
     private let speeds = AudioPlaybackPreference.speeds
 
@@ -213,15 +257,15 @@ struct AudioSpeedSegmentedControl: View {
                 } label: {
                     VStack(spacing: 3) {
                         Text(speed)
-                            .font(.system(size: 14, weight: .bold))
+                            .font(.system(size: metrics.textSize, weight: .bold))
                             .foregroundStyle(currentSpeed == speed ? .red : .primary)
-                            .frame(height: 29)
+                            .frame(height: metrics.textHeight)
 
                         Capsule(style: .continuous)
                             .fill(currentSpeed == speed ? Color.red : Color.clear)
-                            .frame(width: 22, height: 4)
+                            .frame(width: metrics.underlineWidth, height: metrics.underlineHeight)
                     }
-                    .frame(width: 48, height: 42)
+                    .frame(width: metrics.itemWidth, height: metrics.itemHeight)
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
@@ -229,13 +273,13 @@ struct AudioSpeedSegmentedControl: View {
                 if index < speeds.count - 1 {
                     Rectangle()
                         .fill(Color.black.opacity(0.08))
-                        .frame(width: 1, height: 34)
+                        .frame(width: 1, height: metrics.dividerHeight)
                 }
             }
         }
-        .padding(.horizontal, 5)
-        .padding(.vertical, 4)
-        .frame(height: 52)
+        .padding(.horizontal, metrics.horizontalPadding)
+        .padding(.vertical, metrics.verticalPadding)
+        .frame(height: metrics.controlHeight)
         .background {
             Capsule(style: .continuous)
                 .fill(.white.opacity(0.42))
@@ -245,7 +289,7 @@ struct AudioSpeedSegmentedControl: View {
             Capsule(style: .continuous)
                 .stroke(.white.opacity(0.66), lineWidth: 1)
         }
-        .nativeGlass(cornerRadius: 26, interactive: true)
+        .nativeGlass(cornerRadius: metrics.cornerRadius, interactive: true)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Audio speed")
         .accessibilityIdentifier("AudioSpeedControl")
@@ -254,7 +298,7 @@ struct AudioSpeedSegmentedControl: View {
 
 struct PinnedAudioSpeedControl: View {
     var body: some View {
-        AudioSpeedSegmentedControl()
+        AudioSpeedSegmentedControl(metrics: .topAdmin)
             .accessibilityIdentifier("PinnedAudioSpeedControl")
     }
 }

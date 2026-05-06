@@ -83,6 +83,7 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["0.75x"].exists)
         XCTAssertTrue(app.descendants(matching: .any)["1.0x"].exists)
         assertVisibleSectionContentClearsPinnedSpeedControl(app: app, pinnedSpeedControl: pinnedSpeedControl)
+        assertTopAdminControlsShareRow(app: app, pinnedSpeedControl: pinnedSpeedControl)
         capturePinnedAudioProofIfRequested(app: app, name: "pinned-speed-control.png")
     }
 
@@ -266,6 +267,36 @@ final class AdminChromeUITests: XCTestCase {
             pinnedSpeedControl.frame.maxY + 12,
             "Pinned speed control should not overlap the first visible section title."
         )
+    }
+
+    private func assertTopAdminControlsShareRow(
+        app: XCUIApplication,
+        pinnedSpeedControl: XCUIElement
+    ) {
+        let backButton = app.buttons["TopAdmin.BackButton"]
+        XCTAssertTrue(backButton.exists, "Expected the top admin back button to be visible.")
+
+        XCTAssertEqual(
+            backButton.frame.midY,
+            pinnedSpeedControl.frame.midY,
+            accuracy: 2,
+            "Top admin back button and speed control should share the same row."
+        )
+        XCTAssertLessThanOrEqual(
+            pinnedSpeedControl.frame.height,
+            48,
+            "Pinned speed control should use the compact top-admin height."
+        )
+
+        let forwardButton = app.buttons["TopAdmin.ForwardButton"]
+        if forwardButton.exists {
+            XCTAssertEqual(
+                forwardButton.frame.midY,
+                pinnedSpeedControl.frame.midY,
+                accuracy: 2,
+                "Top admin forward button and speed control should share the same row."
+            )
+        }
     }
 
     private func verifyDockTapFromDenseDetail(

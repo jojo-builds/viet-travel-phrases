@@ -68,6 +68,14 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testTopAdminControlsUseCompactAlignedMetrics() {
+        XCTAssertEqual(AppChromeLayout.topAdminControlSize, 47)
+        XCTAssertLessThan(AppChromeLayout.topAdminControlSize, AppChromeLayout.searchIslandSize)
+        XCTAssertEqual(AppChromeLayout.topAdminControlCornerRadius, AppChromeLayout.topAdminControlSize / 2)
+        XCTAssertEqual(AudioSpeedControlMetrics.topAdmin.controlHeight, AppChromeLayout.topAdminControlSize)
+        XCTAssertLessThan(AudioSpeedControlMetrics.topAdmin.controlHeight, AudioSpeedControlMetrics.regular.controlHeight)
+    }
+
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
         XCTAssertEqual(ExploreCatalogLayout.itemsPerGroup, 3)
         XCTAssertGreaterThan(ExploreCatalogLayout.fullGroupHeight, ExploreCatalogLayout.rowHeight * 3)

@@ -164,8 +164,11 @@ enum AppChromeLayout {
     static let keyboardDismissMorphZIndex: Double = 5
     static let searchForegroundMorphZIndex: Double = 6
     static let searchFieldIconSlotWidth: CGFloat = 24
+    static let topAdminHorizontalPadding: CGFloat = 24
+    static let topAdminTopPadding: CGFloat = 10
+    static let topAdminControlSize: CGFloat = 47
+    static let topAdminControlCornerRadius: CGFloat = topAdminControlSize / 2
     static let pinnedAudioSpeedRevealY: CGFloat = 96
-    static let pinnedAudioSpeedTopPadding: CGFloat = 12
     static let pinnedAudioSpeedScrollClearance: CGFloat = 176
     static let pinnedAudioSpeedBackdropHeight: CGFloat = pinnedAudioSpeedScrollClearance
 }
