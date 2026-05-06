@@ -9,7 +9,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 53)
         XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
         XCTAssertEqual(AppChromeLayout.bottomSeparationHeight, 0)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.topSeparationHeight, 160)
+        XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
+        XCTAssertLessThan(
+            AppChromeLayout.topSeparationHeight,
+            AppChromeLayout.pinnedAudioSpeedRevealY + AppChromeLayout.topAdminControlSize
+        )
     }
 
     func testBottomChromeHitTestEnvelopeStaysLocalToChrome() {
@@ -60,11 +64,15 @@ final class AppChromeTests: XCTestCase {
     func testPinnedAudioTopAdminClearanceCoversBackdrop() {
         XCTAssertGreaterThanOrEqual(
             AppChromeLayout.pinnedAudioSpeedScrollClearance,
-            AppChromeLayout.pinnedAudioSpeedBackdropHeight
+            AppChromeLayout.topAdminHitTestEnvelopeHeight
         )
         XCTAssertGreaterThan(
             AppChromeLayout.pinnedAudioSpeedScrollClearance,
             AppChromeLayout.pinnedAudioSpeedRevealY + AppChromeLayout.searchIslandSize
+        )
+        XCTAssertLessThanOrEqual(
+            AppChromeLayout.pinnedAudioSpeedBackdropHeight,
+            AppChromeLayout.topSeparationHeight
         )
     }
 
@@ -74,6 +82,10 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AppChromeLayout.topAdminControlCornerRadius, AppChromeLayout.topAdminControlSize / 2)
         XCTAssertEqual(AudioSpeedControlMetrics.topAdmin.controlHeight, AppChromeLayout.topAdminControlSize)
         XCTAssertLessThan(AudioSpeedControlMetrics.topAdmin.controlHeight, AudioSpeedControlMetrics.regular.controlHeight)
+        XCTAssertGreaterThanOrEqual(
+            AppChromeLayout.topAdminHitTestEnvelopeHeight,
+            AppChromeLayout.topAdminTopPadding + AppChromeLayout.topAdminControlSize
+        )
     }
 
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {

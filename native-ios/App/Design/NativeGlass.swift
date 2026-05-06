@@ -141,7 +141,7 @@ enum AppChromeLayout {
     static let bottomPadding: CGFloat = -10
     static let bottomOffset: CGFloat = 10
     static let bottomSeparationHeight: CGFloat = 0
-    static let topSeparationHeight: CGFloat = 170
+    static let topSeparationHeight: CGFloat = 112
     static let bottomHitTestEnvelopeHeight: CGFloat = 84
     static let chromeSeparationAllowsHitTesting = false
     static let dockItemSpacing: CGFloat = 10
@@ -170,7 +170,8 @@ enum AppChromeLayout {
     static let topAdminControlCornerRadius: CGFloat = topAdminControlSize / 2
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 176
-    static let pinnedAudioSpeedBackdropHeight: CGFloat = pinnedAudioSpeedScrollClearance
+    static let topAdminHitTestEnvelopeHeight: CGFloat = 132
+    static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
 }
 
 enum ChromeSeparationEdge {
@@ -204,36 +205,24 @@ struct ChromeSeparationGradient: View {
             ]
         case .top:
             return [
-                .init(color: Color(.systemBackground).opacity(0.98), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.82), location: 0.34),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.28), location: 0.72),
+                .init(color: Color(.systemBackground).opacity(0.96), location: 0),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.48), location: 0.42),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.76),
                 .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
             ]
         }
     }
 }
 
-struct PinnedAudioTopAdminBackdrop: View {
+struct TopAdminHitTestEnvelope: View {
     var body: some View {
-        ZStack(alignment: .top) {
-            Rectangle()
-                .fill(.ultraThinMaterial)
-                .opacity(0.72)
-
-            LinearGradient(
-                stops: [
-                    .init(color: Color(.systemBackground).opacity(0.98), location: 0),
-                    .init(color: PhrasePageStyle.pageBackground.opacity(0.96), location: 0.44),
-                    .init(color: PhrasePageStyle.pageBackground.opacity(0.82), location: 0.72),
-                    .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        }
-        .frame(height: AppChromeLayout.pinnedAudioSpeedBackdropHeight)
-        .ignoresSafeArea(edges: .top)
-        .allowsHitTesting(false)
+        Rectangle()
+            .fill(Color(.systemBackground).opacity(0.001))
+            .frame(maxWidth: .infinity)
+            .frame(height: AppChromeLayout.topAdminHitTestEnvelopeHeight)
+            .contentShape(Rectangle())
+            .onTapGesture {}
+            .accessibilityHidden(true)
     }
 }
 

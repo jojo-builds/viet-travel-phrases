@@ -211,9 +211,8 @@ struct AppShellView: View {
                     .zIndex(360)
             }
             .overlay(alignment: .top) {
-                if showsPinnedAudioSpeedControl {
-                    PinnedAudioTopAdminBackdrop()
-                        .transition(.opacity)
+                if showsTopAdminRow {
+                    TopAdminHitTestEnvelope()
                         .zIndex(390)
                 }
             }
