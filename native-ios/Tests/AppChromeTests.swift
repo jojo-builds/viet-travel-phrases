@@ -891,6 +891,50 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hanoi.cityHub?.namesTitle, "Names to know")
     }
 
+    func testAirportCollectionSubcategoryFiltersExposeSimAndCashLanes() {
+        let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+
+        XCTAssertEqual(
+            airport.subcategories.map(\.title),
+            ["Arrival", "Baggage", "Transport", "SIM card", "Cash"]
+        )
+        XCTAssertTrue(airport.subcategories.allSatisfy { !$0.items.isEmpty })
+        XCTAssertTrue(airport.subcategories.allSatisfy { $0.phraseCount == $0.items.count })
+        XCTAssertTrue(airport.exploreShelves.contains { $0.title == "Phone, Internet & Power" })
+        XCTAssertTrue(airport.exploreShelves.contains { $0.title == "Payment & numbers" })
+
+        let sim = try! XCTUnwrap(airport.subcategories.first { $0.title == "SIM card" })
+        XCTAssertTrue(sim.items.contains { item in
+            item.title.localizedCaseInsensitiveContains("SIM")
+                || item.subtitle.localizedCaseInsensitiveContains("SIM")
+        })
+        XCTAssertFalse(sim.items.contains { $0.title.localizedCaseInsensitiveContains("ATM") })
+
+        let cash = try! XCTUnwrap(airport.subcategories.first { $0.title == "Cash" })
+        XCTAssertTrue(cash.items.contains { item in
+            item.title.localizedCaseInsensitiveContains("ATM")
+                || item.subtitle.localizedCaseInsensitiveContains("ATM")
+                || item.title.localizedCaseInsensitiveContains("cash")
+                || item.subtitle.localizedCaseInsensitiveContains("cash")
+        })
+    }
+
+    func testVisibleCategorySubcategoryFiltersArePopulated() {
+        for route in BrowseSearchDestinations.visibleCategoryCollectionRoutes where route != .category("city-guides") {
+            let descriptor = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: route))
+            XCTAssertFalse(descriptor.subcategories.isEmpty, "\(route.id) should expose traveler filters")
+
+            for subcategory in descriptor.subcategories {
+                XCTAssertFalse(subcategory.items.isEmpty, "\(route.id) \(subcategory.title) filter should show phrase rows")
+                XCTAssertGreaterThanOrEqual(
+                    subcategory.phraseCount,
+                    subcategory.items.count,
+                    "\(route.id) \(subcategory.title) phrase count should cover the visible filter rows"
+                )
+            }
+        }
+    }
+
     func testDaNangCityDescriptorUsesTravelModeHubInsteadOfPhraseFeed() {
         let danang = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("danang")))
         let cityHub = try! XCTUnwrap(danang.cityHub)

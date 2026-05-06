@@ -7,7 +7,13 @@ struct BrowseCollectionPageView: View {
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onPractice: (BrowseCollectionPracticeAction) -> Void
 
+    @State private var selectedSubcategoryID: String?
+
     var body: some View {
+        let selectedSubcategory = descriptor.subcategories.first { $0.id == selectedSubcategoryID }
+        let starterTitle = selectedSubcategory.map { "\($0.title) phrases" } ?? descriptor.starterTitle
+        let starterItems = selectedSubcategory?.items ?? descriptor.starterItems
+
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
@@ -27,11 +33,20 @@ struct BrowseCollectionPageView: View {
                                 onPractice: { onPractice(descriptor.practiceAction) }
                             )
                         } else {
-                            BrowseCollectionSubcategoryRail(subcategories: descriptor.subcategories)
+                            BrowseCollectionSubcategoryRail(
+                                subcategories: descriptor.subcategories,
+                                selectedSubcategoryID: selectedSubcategoryID,
+                                onSelect: { subcategory in
+                                    withAnimation(.snappy(duration: 0.24)) {
+                                        selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
+                                    }
+                                }
+                            )
 
                             BrowseCollectionStarterSection(
-                                title: descriptor.starterTitle,
-                                items: descriptor.starterItems,
+                                title: starterTitle,
+                                actionTitle: selectedSubcategory == nil ? "View all" : "",
+                                items: starterItems,
                                 onOpenDetail: onOpenDetail
                             )
                             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
@@ -42,11 +57,13 @@ struct BrowseCollectionPageView: View {
                             )
                             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
 
-                            BrowseCollectionExploreSection(
-                                shelves: descriptor.exploreShelves,
-                                onOpenDetail: onOpenDetail,
-                                onOpenCollection: onOpenCollection
-                            )
+                            if selectedSubcategory == nil {
+                                BrowseCollectionExploreSection(
+                                    shelves: descriptor.exploreShelves,
+                                    onOpenDetail: onOpenDetail,
+                                    onOpenCollection: onOpenCollection
+                                )
+                            }
                         }
                     }
                     .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
@@ -56,6 +73,9 @@ struct BrowseCollectionPageView: View {
                 }
             }
             .ignoresSafeArea(edges: .top)
+        }
+        .onChange(of: descriptor.id) { _, _ in
+            selectedSubcategoryID = nil
         }
         .accessibilityIdentifier("BrowseCollection.\(descriptor.route.id)")
     }
@@ -112,12 +132,18 @@ private struct BrowseCollectionHeader: View {
 
 private struct BrowseCollectionSubcategoryRail: View {
     let subcategories: [BrowseCollectionSubcategory]
+    let selectedSubcategoryID: String?
+    let onSelect: (BrowseCollectionSubcategory) -> Void
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 10) {
                 ForEach(subcategories) { subcategory in
-                    BrowseCollectionSubcategoryCard(subcategory: subcategory)
+                    BrowseCollectionSubcategoryCard(
+                        subcategory: subcategory,
+                        isSelected: subcategory.id == selectedSubcategoryID,
+                        onSelect: { onSelect(subcategory) }
+                    )
                 }
             }
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
@@ -129,29 +155,41 @@ private struct BrowseCollectionSubcategoryRail: View {
 
 private struct BrowseCollectionSubcategoryCard: View {
     let subcategory: BrowseCollectionSubcategory
+    let isSelected: Bool
+    let onSelect: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Image(systemName: subcategory.symbolName)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(subcategory.tintName.color)
-                .frame(width: 48, height: 48)
-                .nativeGlass(cornerRadius: 18, tint: subcategory.tintName.color.opacity(0.14), interactive: true)
+        Button(action: onSelect) {
+            VStack(alignment: .leading, spacing: 10) {
+                Image(systemName: subcategory.symbolName)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(subcategory.tintName.color)
+                    .frame(width: 48, height: 48)
+                    .nativeGlass(cornerRadius: 18, tint: subcategory.tintName.color.opacity(0.14), interactive: true)
 
-            Text(subcategory.title)
-                .font(.subheadline.weight(.black))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.78)
+                Text(subcategory.title)
+                    .font(.subheadline.weight(.black))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.78)
 
-            Text("\(subcategory.phraseCount) phrase\(subcategory.phraseCount == 1 ? "" : "s")")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .lineLimit(1)
+                Text("\(subcategory.phraseCount) phrase\(subcategory.phraseCount == 1 ? "" : "s")")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+            }
+            .padding(12)
+            .frame(width: 120, height: 136, alignment: .topLeading)
+            .phraseListCard(cornerRadius: 20)
+            .overlay {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(isSelected ? subcategory.tintName.color.opacity(0.55) : .clear, lineWidth: 2)
+            }
+            .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
-        .padding(12)
-        .frame(width: 120, height: 136, alignment: .topLeading)
-        .phraseListCard(cornerRadius: 20)
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityIdentifier("BrowseCollection.Subcategory.\(subcategory.id)")
     }
 }
 

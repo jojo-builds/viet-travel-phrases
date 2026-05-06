@@ -77,6 +77,20 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
     }
 
+    func testAirportSubcategoryCardsFilterVisibleRows() {
+        let app = launchApp(arguments: ["--browse-category", "airport"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        let arrivalFilter = app.buttons["BrowseCollection.Subcategory.airport.arrival"]
+        XCTAssertTrue(arrivalFilter.waitForExistence(timeout: 2))
+
+        tapHorizontalCard(app.buttons["BrowseCollection.Subcategory.airport.sim-card"], app: app, scrollAnchor: arrivalFilter)
+
+        XCTAssertTrue(app.staticTexts["SIM card phrases"].waitForExistence(timeout: 3))
+        XCTAssertTrue(matchingStaticText(app: app, text: "SIM").waitForExistence(timeout: 2))
+        XCTAssertFalse(app.staticTexts["Good first phrases"].exists)
+    }
+
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
             ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "What are you doing?"),
@@ -197,6 +211,35 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTFail("Element was not hittable: \(element)", file: file, line: line)
+    }
+
+    private func tapHorizontalCard(_ element: XCUIElement, app: XCUIApplication, scrollAnchor: XCUIElement? = nil, file: StaticString = #filePath, line: UInt = #line) {
+        for _ in 0..<6 {
+            if element.waitForExistence(timeout: 1) {
+                let frame = element.frame
+                let appFrame = app.windows.firstMatch.frame
+
+                if !frame.isNull, !frame.isInfinite, !frame.isEmpty, frame.intersects(appFrame) {
+                    element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+                    return
+                }
+            }
+
+            let appFrame = app.windows.firstMatch.frame
+            let anchorFrame = scrollAnchor?.frame ?? .null
+            let yOffset: CGFloat
+            if !anchorFrame.isNull, !anchorFrame.isInfinite, !anchorFrame.isEmpty {
+                yOffset = max(0.08, min(0.92, anchorFrame.midY / appFrame.height))
+            } else {
+                yOffset = 0.51
+            }
+
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.88, dy: yOffset))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.18, dy: yOffset))
+            start.press(forDuration: 0.05, thenDragTo: end)
+        }
+
+        XCTFail("Horizontal card was not hittable: \(element)", file: file, line: line)
     }
 
     private func captureBrowseNextShelvesProofIfRequested() {

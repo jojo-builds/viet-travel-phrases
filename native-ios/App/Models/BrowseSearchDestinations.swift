@@ -310,7 +310,7 @@ enum BrowseSearchDestinations {
             id: "airport",
             title: "Airport",
             subtitle: "Arrival, passport, taxis, SIM cards",
-            categoryIDs: ["airport-border-arrival", "transport", "phone-internet-power"],
+            categoryIDs: ["airport-border-arrival", "transport", "phone-internet-power", "money-numbers-prices"],
             symbolName: "suitcase.rolling.fill",
             tintName: .red,
             sampleQuery: "airport taxi"
@@ -617,6 +617,10 @@ enum BrowseSearchDestinations {
             collectionDescriptorCache[route] = descriptor
         }
         return descriptor
+    }
+
+    static var visibleCategoryCollectionRoutes: [BrowseCollectionRoute] {
+        allCategoryDestinations.map { .category($0.id) }
     }
 
     static func matchingCollections(for query: String) -> [BrowseSearchCollectionMatch] {
@@ -1195,7 +1199,7 @@ enum BrowseSearchDestinations {
         }
 
         return specs.compactMap { spec in
-            let rows = items(categoryIDs: spec.categoryIDs, matchingTerms: spec.terms, limit: 4)
+            let rows = items(categoryIDs: spec.categoryIDs, matchingTerms: spec.terms, limit: 12)
             let phraseCount = spec.terms.isEmpty ? itemCount(categoryIDs: spec.categoryIDs) : rows.count
 
             guard phraseCount > 0 || !rows.isEmpty else {
@@ -1307,10 +1311,6 @@ enum BrowseSearchDestinations {
                     return rows
                 }
             }
-        }
-
-        if rows.isEmpty, !terms.isEmpty {
-            return items(categoryIDs: categoryIDs, limit: limit)
         }
 
         return rows
@@ -1480,7 +1480,8 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "arrival", title: "Arrival", subtitle: "Get oriented after landing", categoryIDs: ["airport-border-arrival"], terms: ["arrival", "tourism", "passport"], symbolName: "airplane.arrival"),
             CollectionSubcategorySpec(id: "baggage", title: "Baggage", subtitle: "Bags, tags, and lost luggage", categoryIDs: ["airport-border-arrival"], terms: ["bag", "baggage", "luggage"], symbolName: "suitcase.fill"),
             CollectionSubcategorySpec(id: "transport", title: "Transport", subtitle: "Taxi, bus, and pickup", categoryIDs: ["transport", "directions-navigation"], terms: ["taxi", "bus", "pickup"], symbolName: "car.fill"),
-            CollectionSubcategorySpec(id: "sim-cash", title: "SIM & cash", subtitle: "Phone, data, and money", categoryIDs: ["phone-internet-power", "money-numbers-prices"], terms: ["sim", "data", "cash", "atm"], symbolName: "simcard.fill"),
+            CollectionSubcategorySpec(id: "sim-card", title: "SIM card", subtitle: "SIM, eSIM, data, and Wi-Fi", categoryIDs: ["airport-border-arrival", "phone-internet-power"], terms: ["sim", "esim", "data", "wi-fi", "wifi", "internet"], symbolName: "simcard.fill"),
+            CollectionSubcategorySpec(id: "cash", title: "Cash", subtitle: "ATM, cash, cards, and exchange", categoryIDs: ["airport-border-arrival", "money-numbers-prices", "transport"], terms: ["atm", "cash", "card", "money", "exchange", "pay"], symbolName: "banknote.fill"),
         ],
         "hotel": [
             CollectionSubcategorySpec(id: "check-in", title: "Check-in", subtitle: "Reservations and arrival", categoryIDs: ["hotel-accommodation"], terms: ["reservation", "check", "room"], symbolName: "person.crop.circle.badge.checkmark"),
