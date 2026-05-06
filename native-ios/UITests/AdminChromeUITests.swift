@@ -180,6 +180,23 @@ final class AdminChromeUITests: XCTestCase {
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-scenarios-danang.png")
     }
 
+    func testHomeExploreByCityShowsAllCityGuides() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+
+        scrollToHomeCityRail(in: app)
+        assertHomeCityVisible(app: app, id: "danang")
+        assertHomeCityVisible(app: app, id: "hoian")
+        assertHomeCityVisible(app: app, id: "hcmc")
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-cities-first.png")
+
+        revealHomeCity(app: app, id: "hanoi")
+        assertHomeCityVisible(app: app, id: "hanoi")
+        revealHomeCity(app: app, id: "hue")
+        assertHomeCityVisible(app: app, id: "hue")
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-cities-all.png")
+    }
+
     func testSearchChromeMorphHomeAndBrowseProofScreenshots() {
         let app = launchApp()
         assertHomeVisible(in: app)
@@ -387,6 +404,52 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(button.frame.intersects(app.frame), "Scenario card \(id) Start button is not visible.", file: file, line: line)
         XCTAssertGreaterThan(button.frame.width, 120, "Scenario card \(id) Start button should keep its pill width.", file: file, line: line)
         XCTAssertGreaterThan(button.frame.height, 32, "Scenario card \(id) Start button should keep its tappable height.", file: file, line: line)
+    }
+
+    private func scrollToHomeCityRail(in app: XCUIApplication) {
+        for _ in 0..<6 where !app.staticTexts["Explore by city"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
+
+        let daNangCard = app.buttons["HomeCity.danang"]
+        for _ in 0..<5 where !daNangCard.frame.intersects(app.frame) {
+            app.swipeUp()
+        }
+        XCTAssertTrue(
+            daNangCard.waitForExistence(timeout: 3) && daNangCard.frame.intersects(app.frame),
+            "Expected the first city card to be visible after scrolling to the city rail."
+        )
+    }
+
+    private func revealHomeCity(app: XCUIApplication, id: String) {
+        let targetCard = app.buttons["HomeCity.\(id)"]
+        for _ in 0..<6 where !targetCard.frame.intersects(app.frame) {
+            if let visibleCard = ["hcmc", "hoian", "danang", "hanoi"]
+                .map({ app.buttons["HomeCity.\($0)"] })
+                .first(where: { $0.exists && $0.frame.intersects(app.frame) }) {
+                visibleCard.swipeLeft()
+            } else {
+                app.swipeLeft()
+            }
+        }
+        XCTAssertTrue(
+            targetCard.frame.intersects(app.frame),
+            "Expected HomeCity.\(id) to be visible after dragging the city rail."
+        )
+    }
+
+    private func assertHomeCityVisible(
+        app: XCUIApplication,
+        id: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let card = app.buttons["HomeCity.\(id)"]
+        XCTAssertTrue(card.waitForExistence(timeout: 3), "Missing home city card \(id).", file: file, line: line)
+        XCTAssertTrue(card.frame.intersects(app.frame), "Home city card \(id) is not visible.", file: file, line: line)
+        XCTAssertGreaterThan(card.frame.width, 120, "Home city card \(id) should keep its card width.", file: file, line: line)
+        XCTAssertGreaterThan(card.frame.height, 120, "Home city card \(id) should keep its card height.", file: file, line: line)
     }
 
     private func verifyDockTapFromDenseDetail(

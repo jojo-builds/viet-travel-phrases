@@ -867,6 +867,16 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(BrowseSearchDestinations.cityShortcuts.contains { $0.id == "hoi-an" })
     }
 
+    func testHomepageCityShortcutsExposeEveryCityGuide() {
+        let homepageIDs = BrowseSearchDestinations.homepageCityShortcuts.map(\.id)
+        let cityGuideIDs = BrowseSearchDestinations.cityShortcuts
+            .map(\.id)
+            .filter { $0 != "all-vietnam" }
+
+        XCTAssertEqual(homepageIDs, ["danang", "hoian", "hcmc", "hanoi", "hue"])
+        XCTAssertEqual(Set(homepageIDs), Set(cityGuideIDs))
+    }
+
     func testBrowseCollectionDescriptorsExposeStarterRowsAndPracticePolicy() {
         let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
         let shopping = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("shopping")))

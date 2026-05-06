@@ -458,6 +458,13 @@ enum BrowseSearchDestinations {
         BrowseCityShortcut(id: "all-vietnam", title: "All Vietnam", query: "Vietnam", symbolName: "star.fill", tintName: .orange),
     ]
 
+    static var homepageCityShortcuts: [BrowseCityShortcut] {
+        let preferredOrder = ["danang", "hoian", "hcmc", "hanoi", "hue"]
+        return preferredOrder.compactMap { cityID in
+            cityShortcuts.first { $0.id == cityID }
+        }
+    }
+
     static let suggestedNeeds: [SearchPrompt] = [
         SearchPrompt(
             id: "hello",

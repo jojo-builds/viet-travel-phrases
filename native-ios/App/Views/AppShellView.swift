@@ -2800,11 +2800,47 @@ private enum HomeContent {
         ),
     ]
 
-    static let cityCards = [
-        HomeCityCard(id: "danang", title: "Da Nang", imageName: "HomeCityDaNang", route: .city("danang")),
-        HomeCityCard(id: "hoian", title: "Hội An", imageName: "HomeCityHoiAn", route: .city("hoian")),
-        HomeCityCard(id: "hcmc", title: "Ho Chi Minh City", imageName: "HomeCityHCMC", route: .city("hcmc")),
-    ]
+    static var cityCards: [HomeCityCard] {
+        BrowseSearchDestinations.homepageCityShortcuts.map { city in
+            HomeCityCard(
+                id: city.id,
+                title: homeCityTitle(for: city.id, fallback: city.title),
+                imageName: homeCityImageName(for: city.id),
+                route: city.collectionRoute
+            )
+        }
+    }
+
+    private static func homeCityTitle(for cityID: String, fallback: String) -> String {
+        switch cityID {
+        case "hoian":
+            return "Hội An"
+        case "hanoi":
+            return "Hà Nội"
+        case "hue":
+            return "Huế"
+        default:
+            return fallback
+        }
+    }
+
+    private static func homeCityImageName(for cityID: String) -> String {
+        switch cityID {
+        case "danang":
+            return "HomeCityDaNang"
+        case "hoian":
+            return "HomeCityHoiAn"
+        case "hcmc":
+            return "HomeCityHCMC"
+        case "hanoi":
+            return "HomeCityHanoi"
+        case "hue":
+            return "HomeCityHue"
+        default:
+            return BrowseSearchDestinations.collectionDescriptor(for: .city(cityID))?.mastheadImageName
+                ?? "HeroVietnamMasthead"
+        }
+    }
 
     static let situationGroups = [
         HomeSituationGroup(
