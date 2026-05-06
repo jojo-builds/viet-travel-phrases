@@ -23,6 +23,7 @@ struct PracticeView: View {
     @State private var handledStartRequestID: Int?
     @State private var deckLoadGeneration = 0
     @State private var scenarioLoadGeneration = 0
+    @State private var practiceScrollResetTrigger = 0
 
     init(
         intentStore: LocalUserIntentStore,
@@ -80,6 +81,11 @@ struct PracticeView: View {
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
+                .onChange(of: practiceScrollResetTrigger) { _, _ in
+                    withAnimation(.easeInOut(duration: 0.24)) {
+                        scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                    }
+                }
             }
         }
         .task {
@@ -121,6 +127,7 @@ struct PracticeView: View {
 
         activeScenarioSession = PracticeScenarioSession(scenario: scenario)
         scenarioCompletion = nil
+        schedulePracticeScrollReset()
     }
 
     private func startPrimaryScenario(context: PracticeEntryContext = .standard) {
@@ -130,6 +137,7 @@ struct PracticeView: View {
 
         activeScenarioSession = PracticeScenarioSession(scenario: scenario, context: context)
         scenarioCompletion = nil
+        schedulePracticeScrollReset()
     }
 
     private func startAnotherScenario() {
@@ -149,11 +157,19 @@ struct PracticeView: View {
             )
             activeScenarioSession = nil
             reloadScenarioSnapshot()
+            schedulePracticeScrollReset()
             return
         }
 
         session.currentIndex += 1
         activeScenarioSession = session
+        schedulePracticeScrollReset()
+    }
+
+    private func schedulePracticeScrollReset() {
+        DispatchQueue.main.async {
+            practiceScrollResetTrigger += 1
+        }
     }
 
     private func clearScenarioCompletion() {
@@ -787,7 +803,7 @@ private struct PracticeScenarioHubSurface: View {
     let onRetry: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: 20) {
             PracticeScenarioHeader()
 
             switch state {
@@ -811,7 +827,7 @@ private struct PracticeScenarioHubSurface: View {
                     onStart: onStart
                 )
 
-                PracticeScenarioQueueStrip(snapshot: snapshot)
+                PracticeScenarioHowBuiltCard(snapshot: snapshot)
                 PracticeBrowseCard(onBrowseTapped: onBrowseTapped)
             }
         }
@@ -820,7 +836,7 @@ private struct PracticeScenarioHubSurface: View {
 
 private struct PracticeScenarioHeader: View {
     var body: some View {
-        HStack(alignment: .top, spacing: 14) {
+        HStack(alignment: .top, spacing: 16) {
             VStack(alignment: .leading, spacing: 9) {
                 HStack(spacing: 8) {
                     Image(systemName: "figure.walk.motion")
@@ -832,21 +848,22 @@ private struct PracticeScenarioHeader: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Text("Practice real travel moments")
-                    .font(.system(size: 34, weight: .black, design: .rounded))
+                Text("Practice what happens next")
+                    .font(.system(size: 38, weight: .black, design: .rounded))
                     .foregroundStyle(.primary)
                     .lineLimit(2)
-                    .minimumScaleFactor(0.74)
+                    .minimumScaleFactor(0.68)
 
-                Text("Hear what someone may say, then play useful replies before you need them.")
-                    .font(.subheadline.weight(.semibold))
+                Text("Short travel moments built from your saved phrases, recent phrases, and useful follow-ups.")
+                    .font(.body.weight(.semibold))
                     .foregroundStyle(.secondary)
+                    .lineLimit(4)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .layoutPriority(1)
 
-            MeloCompanionMark(stage: .base, size: 68)
-                .padding(.top, 8)
+            MeloCompanionMark(stage: .base, size: 72)
+                .padding(.top, 16)
         }
         .accessibilityIdentifier("Practice.Scenario.Header")
     }
@@ -860,12 +877,12 @@ private struct PracticeScenarioPrimaryCard: View {
     let onStart: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 18) {
             HStack(alignment: .top, spacing: 14) {
                 PracticeIcon(symbolName: scenario.id.symbolName, tint: scenario.id.tint)
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(scenario.queueSource.title)
+                    Text("Continue rehearsal")
                         .font(.caption.weight(.bold))
                         .foregroundStyle(.secondary)
 
@@ -883,9 +900,9 @@ private struct PracticeScenarioPrimaryCard: View {
             }
 
             HStack(spacing: 10) {
-                PracticeMetricPill(title: "Moments", value: "\(scenario.steps.count)")
-                PracticeMetricPill(title: "Phrases", value: "\(scenario.phrasePageIDs.count)")
-                PracticeMetricPill(title: "Saved", value: "\(explicitPracticeCount)")
+                PracticeMetricPill(title: "steps", value: "\(scenario.steps.count)")
+                PracticeMetricPill(title: "saved", value: "\(max(explicitPracticeCount, savedPageCount))")
+                PracticeMetricPill(title: "follow-up", value: "\(max(scenario.steps.count - 1, 1))")
             }
 
             Text("\(savedPageCount) saved and \(recentPageCount) recent phrase page\(savedPageCount + recentPageCount == 1 ? "" : "s") can become short scenes when you want to rehearse.")
@@ -903,7 +920,8 @@ private struct PracticeScenarioPrimaryCard: View {
             .background(Color.red, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .padding(18)
-        .phraseListCard(cornerRadius: 24, strokeOpacity: 0.05)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .phraseListCard(cornerRadius: 28, strokeOpacity: 0.05)
         .accessibilityIdentifier("Practice.Scenario.Primary")
     }
 }
@@ -914,74 +932,148 @@ private struct PracticeScenarioModeList: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Scenes to practice")
+            Text("Try a scenario")
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(.secondary)
 
             VStack(spacing: 10) {
                 ForEach(scenarios) { scenario in
-                    Button {
-                        onStart(scenario)
-                    } label: {
-                        HStack(spacing: 14) {
-                            PracticeIcon(symbolName: scenario.id.symbolName, tint: scenario.id.tint, size: 40)
+                    HStack(spacing: 14) {
+                        PracticeIcon(symbolName: scenario.id.symbolName, tint: scenario.id.tint, size: 40)
 
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(scenario.id.title)
-                                    .font(.headline.weight(.bold))
-                                    .foregroundStyle(.primary)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(scenario.id.title)
+                                .font(.headline.weight(.bold))
+                                .foregroundStyle(.primary)
 
-                                Text(scenario.queueSource.title)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                            }
-                            .layoutPriority(1)
-
-                            Text("\(scenario.steps.count)")
-                                .font(.headline.weight(.black))
-                                .foregroundStyle(.red)
-                                .frame(width: 40, height: 40)
-                                .nativeGlass(cornerRadius: 20)
-
-                            Image(systemName: "chevron.right")
-                                .font(.caption.weight(.bold))
-                                .foregroundStyle(.tertiary)
+                            Text(scenario.queueSource.title)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
                         }
-                        .padding(14)
-                        .phraseListCard(cornerRadius: 22)
+                        .layoutPriority(1)
+
+                        Text("\(scenario.steps.count)")
+                            .font(.headline.weight(.black))
+                            .foregroundStyle(.red)
+                            .frame(width: 40, height: 40)
+                            .nativeGlass(cornerRadius: 20)
+
+                        Image(systemName: "chevron.right")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(.tertiary)
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityIdentifier("Practice.Scenario.\(scenario.id.rawValue)")
+                    .padding(14)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .phraseListCard(cornerRadius: 22)
+                    .overlay {
+                        Button {
+                            onStart(scenario)
+                        } label: {
+                            Color.white.opacity(0.001)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(scenario.id.title)
+                        .accessibilityIdentifier("Practice.Scenario.\(scenario.id.rawValue)")
+                    }
                 }
             }
         }
     }
 }
 
-private struct PracticeScenarioQueueStrip: View {
+private struct PracticeScenarioHowBuiltCard: View {
     let snapshot: PracticeScenarioDeckSnapshot
 
     var body: some View {
-        HStack(spacing: 10) {
-            ForEach(snapshot.rankedQueueSources, id: \.self) { source in
-                VStack(spacing: 3) {
-                    Text("\(snapshot.queueCounts[source, default: 0])")
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(source == .tripFallback ? .secondary : .primary)
+        VStack(alignment: .leading, spacing: 16) {
+            Text("How scenarios are built")
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(.secondary)
 
-                    Text(source.title)
-                        .font(.caption2.weight(.bold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.72)
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .top, spacing: 0) {
+                    PracticeBuildSourceColumn(
+                        symbolName: "bookmark.fill",
+                        tint: .blue,
+                        title: "Saved phrases",
+                        subtitle: "What you've saved to keep."
+                    )
+
+                    PracticeBuildDivider()
+
+                    PracticeBuildSourceColumn(
+                        symbolName: "clock.fill",
+                        tint: .green,
+                        title: "Recent phrases",
+                        subtitle: "What you've used most recently."
+                    )
+
+                    PracticeBuildDivider()
+
+                    PracticeBuildSourceColumn(
+                        symbolName: "text.bubble.fill",
+                        tint: .purple,
+                        title: "Helpful follow-ups",
+                        subtitle: "Smart additions to keep scenes flowing."
+                    )
                 }
-                .frame(maxWidth: .infinity)
-                .frame(height: 64)
-                .background(.white.opacity(0.52), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+
+                Divider()
+                    .opacity(0.5)
+
+                Text(summary)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .phraseListCard(cornerRadius: 24)
         }
-        .accessibilityIdentifier("Practice.Scenario.QueueStrip")
+        .accessibilityIdentifier("Practice.Scenario.HowBuilt")
+    }
+
+    private var summary: String {
+        let savedCount = snapshot.queueCounts[.addedPractice, default: 0]
+        let recentCount = snapshot.queueCounts[.savedRecent, default: 0]
+        let starterCount = snapshot.queueCounts[.tripFallback, default: 0]
+        return "\(savedCount) saved, \(recentCount) recent, and \(starterCount) starter phrases can become short, useful travel scenes."
+    }
+}
+
+private struct PracticeBuildSourceColumn: View {
+    let symbolName: String
+    let tint: AccentTint
+    let title: String
+    let subtitle: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            PracticeIcon(symbolName: symbolName, tint: tint, size: 34)
+
+            Text(title)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
+
+            Text(subtitle)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .lineLimit(3)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+private struct PracticeBuildDivider: View {
+    var body: some View {
+        Rectangle()
+            .fill(Color.black.opacity(0.08))
+            .frame(width: 1)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 8)
     }
 }
 
@@ -1723,11 +1815,11 @@ private struct PracticeBrowseCard: View {
                 PracticeIcon(symbolName: "plus.circle.fill", tint: .blue)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Add from phrase pages")
+                    Text("Add from a phrase screen")
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
 
-                    Text("Open a phrase page and save it for a future scene.")
+                    Text("Save useful phrases as you browse so Practice is ready when you need it.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
@@ -1739,6 +1831,7 @@ private struct PracticeBrowseCard: View {
                     .foregroundStyle(.tertiary)
             }
             .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .phraseListCard(cornerRadius: 22)
         }
         .buttonStyle(.plain)

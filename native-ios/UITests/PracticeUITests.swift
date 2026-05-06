@@ -109,7 +109,7 @@ final class PracticeUITests: XCTestCase {
 
         let scenarioButton = app.buttons[identifier].firstMatch
         XCTAssertTrue(scenarioButton.waitForExistence(timeout: 4), "\(title) scenario did not appear.")
-        scenarioButton.tap()
+        scenarioButton.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.92)).tap()
 
         XCTAssertTrue(app.staticTexts[title].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Moment 1 of 2"].waitForExistence(timeout: 4))

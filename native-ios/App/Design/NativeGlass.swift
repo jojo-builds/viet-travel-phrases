@@ -247,6 +247,7 @@ private struct PhraseListCard: ViewModifier {
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                     .stroke(Color.black.opacity(strokeOpacity), lineWidth: 1)
+                    .allowsHitTesting(false)
             }
     }
 }
