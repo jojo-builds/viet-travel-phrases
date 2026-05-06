@@ -72,26 +72,26 @@ enum PracticeScenarioQueueSource: String, CaseIterable, Codable, Equatable, Hash
     var title: String {
         switch self {
         case .missedReview:
-            return "Review missed"
+            return "Worth repeating"
         case .addedPractice:
-            return "Rehearse added phrases"
+            return "Saved phrases"
         case .savedRecent:
-            return "Rehearse saved phrases"
+            return "Recent phrases"
         case .tripFallback:
-            return "Trip practice"
+            return "Starter scenes"
         }
     }
 
     var subtitle: String {
         switch self {
         case .missedReview:
-            return "A calm pass through phrases that need another try."
+            return "Phrases worth keeping fresh."
         case .addedPractice:
-            return "Use the phrase pages you intentionally added."
+            return "Phrase pages you kept for later."
         case .savedRecent:
-            return "Turn saved and recent phrase pages into rehearsal."
+            return "Recently opened phrase pages."
         case .tripFallback:
-            return "Start with practical travel moments when your queue is empty."
+            return "Practical travel moments to start with."
         }
     }
 
@@ -161,8 +161,6 @@ struct PracticeScenarioStep: Identifiable, Equatable {
             [
                 option.candidate.vietnamese,
                 option.candidate.english,
-                option.feedbackTitle,
-                option.feedbackBody,
             ]
         }
     }
@@ -176,6 +174,21 @@ struct PracticeScenario: Identifiable, Equatable {
     let steps: [PracticeScenarioStep]
 
     var title: String { id.title }
+
+    var recommendedCandidates: [PracticeCandidate] {
+        steps.compactMap { $0.bestResponse?.candidate }
+    }
+
+    var phrasePageIDs: [String] {
+        var seen = Set<String>()
+        return steps
+            .flatMap { step -> [String] in
+                let recoveryPageIDs = step.recovery.candidate.map { [$0.pageID] } ?? []
+                return step.responseOptions.map(\.candidate.pageID)
+                    + recoveryPageIDs
+            }
+            .filter { seen.insert($0).inserted }
+    }
 
     var visibleCopy: [String] {
         [sceneTitle, sceneSetup, queueSource.title, queueSource.subtitle]

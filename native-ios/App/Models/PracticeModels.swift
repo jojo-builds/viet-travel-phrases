@@ -24,7 +24,7 @@ enum PracticeMode: String, CaseIterable, Codable, Equatable, Identifiable {
         case .hcmcCity:
             return "Saigon First Loop"
         case .hanoiBucketList:
-            return "Hanoi Bucket List"
+            return "Hanoi first loop"
         case .danangCity:
             return "Da Nang Coast Loop"
         case .hoianCity:
@@ -32,9 +32,9 @@ enum PracticeMode: String, CaseIterable, Codable, Equatable, Identifiable {
         case .hueCity:
             return "Hue Heritage Loop"
         case .savedReview:
-            return "Saved Review"
+            return "Saved phrases"
         case .missedReview:
-            return "Missed Review"
+            return "Worth repeating"
         }
     }
 
@@ -51,9 +51,9 @@ enum PracticeMode: String, CaseIterable, Codable, Equatable, Identifiable {
         case .hueCity:
             return "Citadel, river, tomb, food, and heritage-route phrases for Hue."
         case .savedReview:
-            return "Practice saved pages without mixing them into the bucket list."
+            return "Phrase pages you kept for later."
         case .missedReview:
-            return "Calmly revisit prompts that need another pass."
+            return "Phrases worth keeping fresh."
         }
     }
 
@@ -115,13 +115,13 @@ enum PracticePromptKind: String, CaseIterable, Codable, Equatable {
     var title: String {
         switch self {
         case .listenAndPick:
-            return "Listen and pick"
+            return "Hear the phrase"
         case .englishToVietnamese:
-            return "English to Vietnamese"
+            return "English prompt"
         case .vietnameseToEnglish:
-            return "Vietnamese to English"
+            return "Vietnamese prompt"
         case .missingToken:
-            return "Missing token"
+            return "Missing word"
         }
     }
 }
@@ -196,7 +196,7 @@ struct PracticePrompt: Identifiable, Equatable {
     let source: PracticeSourceMetadata
 
     var sourceLabel: String {
-        source.cityContextLabel ?? "Source phrase page"
+        source.cityContextLabel ?? "Phrase page"
     }
 }
 

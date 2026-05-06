@@ -271,7 +271,7 @@ enum PracticeScenarioBuilder {
             id: "\(template.id):\(candidate.pageID):\(index)",
             candidate: candidate,
             isBestFit: isBestFit,
-            feedbackTitle: isBestFit ? "Good fit for this moment" : "Better for another moment",
+            feedbackTitle: isBestFit ? "Recommended reply" : "Useful in another moment",
             feedbackBody: isBestFit
                 ? template.bestFitFeedback(candidate)
                 : template.alternateFeedback(candidate, bestCandidate)
@@ -427,19 +427,19 @@ private struct PracticeScenarioStepTemplate {
     let nextStepTitle: String
 
     func bestFitFeedback(_ candidate: PracticeCandidate) -> String {
-        "\(candidate.vietnamese) keeps this exchange short and clear. It fits the scene without adding extra explanation."
+        "\(candidate.vietnamese) keeps this exchange short and clear."
     }
 
     func alternateFeedback(_ candidate: PracticeCandidate, _ bestCandidate: PracticeCandidate) -> String {
-        "\(candidate.vietnamese) is useful, but this moment usually needs \(bestCandidate.vietnamese) so the other person knows exactly what you want next."
+        "\(candidate.vietnamese) may help later. This moment starts with \(bestCandidate.vietnamese)."
     }
 }
 
 private let scenarioTemplates: [PracticeScenarioTemplate] = [
     PracticeScenarioTemplate(
         id: .taxiGrabPickup,
-        sceneTitle: "Find the right ride without spiraling",
-        sceneSetup: "You are outside your stay and a driver calls or stops nearby. Keep the exchange short, confirm the ride, and recover if the pickup point shifts.",
+        sceneTitle: "Taxi / Grab pickup",
+        sceneSetup: "Confirm the car, find the pickup point, and recover if the ride feels unclear.",
         steps: [
             PracticeScenarioStepTemplate(
                 id: "taxi-pickup-confirm",
@@ -490,15 +490,15 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 nextLocalLine: "Bạn muốn dừng ở đâu?",
                 nextLocalMeaning: "They may ask where you want to stop.",
                 recoveryTitle: "If the route still feels off",
-                recoveryBody: "Use the stop-here phrase first, then open the source page for stronger route repair phrases.",
+                recoveryBody: "Use the stop-here phrase first, then open the phrase page for stronger route repair phrases.",
                 nextStepTitle: "Confirm the stop"
             ),
         ]
     ),
     PracticeScenarioTemplate(
         id: .restaurantOrderingPayment,
-        sceneTitle: "Order and pay without holding the line",
-        sceneSetup: "You are at a casual restaurant or cafe. The useful move is one short request, then one payment phrase.",
+        sceneTitle: "Restaurant ordering",
+        sceneSetup: "Order clearly, ask for the bill, and keep the exchange moving.",
         steps: [
             PracticeScenarioStepTemplate(
                 id: "restaurant-order",
@@ -556,8 +556,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
     ),
     PracticeScenarioTemplate(
         id: .hotelCheckInHelp,
-        sceneTitle: "Check in and ask for help calmly",
-        sceneSetup: "You are at a hotel or Airbnb desk. Start with the booking, then use a precise help phrase if something is not working.",
+        sceneTitle: "Hotel check-in",
+        sceneSetup: "Check in smoothly, show the booking, and ask for help if something is not working.",
         steps: [
             PracticeScenarioStepTemplate(
                 id: "hotel-check-in",

@@ -30,8 +30,6 @@ final class PracticeScenarioModeTests: XCTestCase {
                 XCTAssertGreaterThanOrEqual(step.responseOptions.count, 2)
                 XCTAssertTrue(step.responseOptions.allSatisfy { option in
                     option.candidate.pageID.hasPrefix("viet-phrase-")
-                        && !option.feedbackTitle.isEmpty
-                        && !option.feedbackBody.isEmpty
                 })
                 XCTAssertTrue(step.responseOptions.contains(where: \.isBestFit))
             }
@@ -47,11 +45,29 @@ final class PracticeScenarioModeTests: XCTestCase {
         )
         let visibleCopy = snapshot.visibleCopy.joined(separator: "\n").lowercased()
 
-        XCTAssertFalse(visibleCopy.contains("incorrect"))
-        XCTAssertFalse(visibleCopy.contains("wrong answer"))
-        XCTAssertFalse(visibleCopy.contains("quiz"))
-        XCTAssertFalse(visibleCopy.contains("trivia"))
-        XCTAssertFalse(visibleCopy.contains("bucket list"))
+        let bannedPhrases = [
+            "answer",
+            "check fit",
+            "correct",
+            "good fit",
+            "incorrect",
+            "missed",
+            "quiz",
+            "reply options",
+            "review missed",
+            "score",
+            "source page",
+            "trivia",
+            "try saying",
+            "wrong answer",
+        ]
+
+        for bannedPhrase in bannedPhrases {
+            XCTAssertFalse(
+                visibleCopy.contains(bannedPhrase),
+                "Scenario Mode visible copy should not contain '\(bannedPhrase)'."
+            )
+        }
     }
 
     func testPersonalQueuePriorityFeedsScenarioModeBeforeTripFallback() throws {
