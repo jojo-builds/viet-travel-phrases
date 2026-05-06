@@ -159,7 +159,7 @@ struct PhraseArticleTemplateView: View {
                             }
                         }
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
-                        .padding(.top, 72)
+                        .padding(.top, 72 + topChromeContentClearance)
                         .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
                     }
                 }
@@ -169,7 +169,6 @@ struct PhraseArticleTemplateView: View {
                 .task {
                     await applyInitialScrollTargetIfNeeded(scrollProxy)
                 }
-                .contentMargins(.top, topChromeContentClearance, for: .scrollContent)
             }
             .ignoresSafeArea(edges: .top)
             .overlay(alignment: .topLeading) {
@@ -432,10 +431,12 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var bottomChromeContent: some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
+        let selectedDockItem = AppChrome(route: chromeRoute).selectedDockItem
+
+        return HStack(spacing: AppChromeLayout.bottomSpacing) {
             HStack(spacing: AppChromeLayout.dockItemSpacing) {
                 ForEach(AppChrome(route: chromeRoute).primaryDockItems, id: \.self) { item in
-                    DockItem(kind: item, selected: item == .home)
+                    DockItem(kind: item, selected: item == selectedDockItem)
                 }
             }
             .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
@@ -456,6 +457,7 @@ struct PhraseArticleTemplateView: View {
             .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchActive)
         }
     }
+
 }
 
 private struct ArticleSectionView: View {

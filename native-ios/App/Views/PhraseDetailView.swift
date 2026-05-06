@@ -110,14 +110,13 @@ struct PhraseDetailView: View {
                             )
                         }
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
-                        .padding(.top, 24)
+                        .padding(.top, 24 + topChromeContentClearance)
                         .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
                     }
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
-                .contentMargins(.top, topChromeContentClearance, for: .scrollContent)
             }
             .ignoresSafeArea(edges: .top)
             .overlay(alignment: .topLeading) {
@@ -228,10 +227,12 @@ struct PhraseDetailView: View {
     }
 
     private var bottomChromeContent: some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
+        let selectedDockItem = AppChrome(route: .detailPage(page.id)).selectedDockItem
+
+        return HStack(spacing: AppChromeLayout.bottomSpacing) {
             HStack(spacing: AppChromeLayout.dockItemSpacing) {
                 ForEach(AppChrome(route: .detailPage(page.id)).primaryDockItems, id: \.self) { item in
-                    DetailDockItem(kind: item, selected: item == .home)
+                    DetailDockItem(kind: item, selected: item == selectedDockItem)
                 }
             }
             .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
@@ -252,6 +253,7 @@ struct PhraseDetailView: View {
             .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchActive)
         }
     }
+
 }
 
 private struct DetailSectionView: View {

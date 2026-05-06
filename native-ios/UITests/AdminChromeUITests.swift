@@ -82,6 +82,7 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["0.5x"].exists)
         XCTAssertTrue(app.descendants(matching: .any)["0.75x"].exists)
         XCTAssertTrue(app.descendants(matching: .any)["1.0x"].exists)
+        assertVisibleSectionContentClearsPinnedSpeedControl(app: app, pinnedSpeedControl: pinnedSpeedControl)
         capturePinnedAudioProofIfRequested(app: app, name: "pinned-speed-control.png")
     }
 
@@ -201,6 +202,11 @@ final class AdminChromeUITests: XCTestCase {
             app.buttons["AppChrome.SearchOriginButton.\(expectedOrigin)"].waitForExistence(timeout: 2),
             "Search origin did not preserve \(expectedOrigin) before iteration \(iteration)."
         )
+        XCTAssertLessThan(
+            app.buttons["AppChrome.SearchOriginButton.\(expectedOrigin)"].frame.midX,
+            app.textFields["AppChrome.SearchField"].frame.midX,
+            "Search origin should remain to the left of the search field during the foreground morph."
+        )
     }
 
     private func openOrigin(in app: XCUIApplication, title: String, iteration: Int) {
@@ -229,6 +235,37 @@ final class AdminChromeUITests: XCTestCase {
     private func assertHomeVisible(in app: XCUIApplication) {
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.buttons["AppChrome.SearchButton"].waitForExistence(timeout: 2))
+    }
+
+    private func assertVisibleSectionContentClearsPinnedSpeedControl(
+        app: XCUIApplication,
+        pinnedSpeedControl: XCUIElement
+    ) {
+        let sectionTitles = [
+            "At a glance",
+            "Quick say",
+            "Break it down",
+            "Situational greetings",
+            "How locals actually greet",
+            "Good to know",
+            "Next phrases"
+        ]
+        let visibleTitles = sectionTitles
+            .map { app.staticTexts[$0] }
+            .filter { element in
+                element.exists && element.frame.intersects(app.frame)
+            }
+
+        guard let firstVisibleTitle = visibleTitles.min(by: { $0.frame.minY < $1.frame.minY }) else {
+            XCTFail("Expected a visible section title after pinned speed control appeared.")
+            return
+        }
+
+        XCTAssertGreaterThanOrEqual(
+            firstVisibleTitle.frame.minY,
+            pinnedSpeedControl.frame.maxY + 12,
+            "Pinned speed control should not overlap the first visible section title."
+        )
     }
 
     private func verifyDockTapFromDenseDetail(

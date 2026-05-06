@@ -585,23 +585,29 @@ struct AppShellView: View {
         let isKeyboardSearch = isSearchRoute && isSearchFieldFocused
         let chrome = AppChrome(route: navigation.currentRoute)
 
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            if isSearchRoute {
-                if !isKeyboardSearch {
-                    searchOriginButton(kind: navigation.searchOriginDockItem)
+        ZStack {
+            HStack(spacing: AppChromeLayout.bottomSpacing) {
+                if isSearchRoute {
+                    if !isKeyboardSearch {
+                        searchOriginButton(kind: navigation.searchOriginDockItem)
+                    }
+                } else {
+                    dockCluster(chrome: chrome)
                 }
-            } else {
-                dockCluster(chrome: chrome)
+
+                if isSearchRoute {
+                    searchFieldCluster(isKeyboardSearch: isKeyboardSearch)
+                } else {
+                    collapsedSearchButton
+                }
+
+                if isKeyboardSearch {
+                    searchDismissKeyboardButton
+                }
             }
 
             if isSearchRoute {
-                searchFieldCluster(isKeyboardSearch: isKeyboardSearch)
-            } else {
-                collapsedSearchButton
-            }
-
-            if isKeyboardSearch {
-                searchDismissKeyboardButton
+                searchForegroundIconPair(isKeyboardSearch: isKeyboardSearch, origin: navigation.searchOriginDockItem)
             }
         }
         .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
@@ -662,12 +668,9 @@ struct AppShellView: View {
         Button {
             performDockAction(kind)
         } label: {
-            Image(systemName: kind.symbolName)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.primary)
+            Color.clear
                 .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
                 .contentShape(Circle())
-                .chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: false)
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
@@ -682,10 +685,8 @@ struct AppShellView: View {
 
     private func searchFieldCluster(isKeyboardSearch: Bool) -> some View {
         HStack(spacing: 10) {
-            Image(systemName: "magnifyingglass")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
+            Color.clear
+                .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
 
             TextField("Search Vietnamese phrases", text: $searchQuery)
                 .font(.body.weight(.semibold))
@@ -701,6 +702,42 @@ struct AppShellView: View {
         .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
         .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
         .zIndex(AppChromeLayout.searchMorphZIndex)
+    }
+
+    private func searchForegroundIconPair(isKeyboardSearch: Bool, origin: DockItemKind) -> some View {
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            if !isKeyboardSearch {
+                Image(systemName: origin.symbolName)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(.primary)
+                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                    .contentShape(Circle())
+                    .chromeIconMorph(AppChromeMorphID.dockItem(origin), namespace: chromeNamespace, isSource: false)
+                    .accessibilityIdentifier("AppChrome.SearchForegroundOriginIcon.\(origin.title)")
+            }
+
+            HStack(spacing: 10) {
+                Image(systemName: "magnifyingglass")
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
+                    .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
+                    .accessibilityIdentifier("AppChrome.SearchForegroundSearchIcon")
+
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
+            .frame(height: AppChromeLayout.searchFieldHeight)
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            if isKeyboardSearch {
+                Color.clear
+                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+            }
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+        .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
     }
 
     private var searchDismissKeyboardButton: some View {

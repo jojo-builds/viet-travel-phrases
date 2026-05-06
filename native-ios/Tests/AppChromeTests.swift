@@ -41,6 +41,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThan(AppChromeLayout.searchMorphZIndex, AppChromeLayout.dockMorphZIndex)
         XCTAssertGreaterThan(AppChromeLayout.searchOriginMorphZIndex, AppChromeLayout.searchMorphZIndex)
         XCTAssertGreaterThan(AppChromeLayout.keyboardDismissMorphZIndex, AppChromeLayout.searchOriginMorphZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.searchForegroundMorphZIndex, AppChromeLayout.keyboardDismissMorphZIndex)
     }
 
     func testDockSelectionLensUsesAppStoreStylePillMetrics() {
@@ -54,6 +55,17 @@ final class AppChromeTests: XCTestCase {
         XCTAssertNotEqual(AppChromeMorphID.searchIcon, AppChromeMorphID.dockItem(.browse))
         XCTAssertNotEqual(AppChromeMorphID.dockSelection, AppChromeMorphID.dock)
         XCTAssertNotEqual(AppChromeMorphID.dockSelection, AppChromeMorphID.search)
+    }
+
+    func testPinnedAudioTopAdminClearanceCoversBackdrop() {
+        XCTAssertGreaterThanOrEqual(
+            AppChromeLayout.pinnedAudioSpeedScrollClearance,
+            AppChromeLayout.pinnedAudioSpeedBackdropHeight
+        )
+        XCTAssertGreaterThan(
+            AppChromeLayout.pinnedAudioSpeedScrollClearance,
+            AppChromeLayout.pinnedAudioSpeedRevealY + AppChromeLayout.searchIslandSize
+        )
     }
 
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
