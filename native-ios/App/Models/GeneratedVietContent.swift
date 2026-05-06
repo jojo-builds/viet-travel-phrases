@@ -115,6 +115,136 @@ enum SearchTextMatcher {
     }
 }
 
+enum SearchQueryExpander {
+    static func expandedQueries(for query: String) -> [String] {
+        let normalizedQuery = normalize(query)
+        guard !normalizedQuery.isEmpty else {
+            return []
+        }
+
+        var queries = [query]
+        guard hasRecoveryIntent(in: normalizedQuery) else {
+            return uniqueQueries(queries)
+        }
+
+        for rule in recoverableObjectRules where rule.matches(normalizedQuery) {
+            queries.append(contentsOf: rule.recoveryQueries)
+        }
+
+        return uniqueQueries(queries)
+    }
+
+    private struct RecoverableObjectRule {
+        let matchTerms: [String]
+        let recoveryQueries: [String]
+
+        func matches(_ normalizedQuery: String) -> Bool {
+            let tokens = Set(normalizedQuery.split(separator: " ").map(String.init))
+
+            return matchTerms.contains { term in
+                term.contains(" ") ? normalizedQuery.contains(term) : tokens.contains(term)
+            }
+        }
+    }
+
+    private static let recoverableObjectRules: [RecoverableObjectRule] = [
+        RecoverableObjectRule(
+            matchTerms: ["passport", "ho chieu"],
+            recoveryQueries: [
+                "lost passport",
+                "passport missing",
+                "do not have passport",
+                "report lost passport",
+            ]
+        ),
+        RecoverableObjectRule(
+            matchTerms: ["phone", "telephone", "mobile"],
+            recoveryQueries: [
+                "lost phone",
+                "phone missing",
+                "my phone is missing",
+                "someone took my phone",
+            ]
+        ),
+        RecoverableObjectRule(
+            matchTerms: ["wallet"],
+            recoveryQueries: [
+                "lost wallet",
+                "wallet missing",
+                "my wallet is missing",
+                "someone took my wallet",
+            ]
+        ),
+        RecoverableObjectRule(
+            matchTerms: ["bag", "bags", "baggage", "luggage", "suitcase"],
+            recoveryQueries: [
+                "lost luggage",
+                "missing bag",
+                "my suitcase is missing",
+                "lost baggage",
+            ]
+        ),
+    ]
+
+    private static let recoveryIntentTerms: Set<String> = [
+        "forgot",
+        "forget",
+        "forgotten",
+        "left",
+        "lost",
+        "missing",
+        "misplaced",
+        "quen",
+    ]
+
+    private static let recoveryIntentPhrases = [
+        "do not have",
+        "dont have",
+        "don t have",
+        "cannot find",
+        "can not find",
+        "can t find",
+        "left behind",
+        "khong co",
+    ]
+
+    private static func hasRecoveryIntent(in normalizedQuery: String) -> Bool {
+        let tokens = Set(normalizedQuery.split(separator: " ").map(String.init))
+
+        if !tokens.isDisjoint(with: recoveryIntentTerms) {
+            return true
+        }
+
+        return recoveryIntentPhrases.contains { normalizedQuery.contains($0) }
+    }
+
+    private static func uniqueQueries(_ queries: [String]) -> [String] {
+        var seen = Set<String>()
+
+        return queries.compactMap { query in
+            let normalized = normalize(query)
+            guard !normalized.isEmpty, seen.insert(normalized).inserted else {
+                return nil
+            }
+
+            return query
+        }
+    }
+
+    private static func normalize(_ value: String) -> String {
+        value
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+            .lowercased()
+            .unicodeScalars
+            .map { scalar in
+                CharacterSet.alphanumerics.contains(scalar) ? String(scalar) : " "
+            }
+            .joined()
+            .split(separator: " ")
+            .joined(separator: " ")
+    }
+}
+
 enum GeneratedVietContent {
     static let catalog: GeneratedVietCatalog? = nil
     static var tierOnePageIDs: Set<String> { [] }

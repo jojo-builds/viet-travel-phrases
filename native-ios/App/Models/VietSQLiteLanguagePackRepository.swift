@@ -722,8 +722,8 @@ final class VietSQLiteLanguagePackRepository {
     }
 
     func search(_ query: String, limit: Int = 8) throws -> [PhraseSearchResult] {
-        let ftsQuery = Self.ftsQuery(for: query)
-        guard !ftsQuery.isEmpty else {
+        let ftsQueries = Self.uniqueFTSQueries(for: SearchQueryExpander.expandedQueries(for: query))
+        guard !ftsQueries.isEmpty else {
             return []
         }
 
@@ -742,15 +742,17 @@ final class VietSQLiteLanguagePackRepository {
         LIMIT ?;
         """
 
-        let rawResults = try rows(sql, bind: { statement in
-            try self.bindText(ftsQuery, to: 1, in: statement, sql: sql)
-            try self.bindInt(limit * 4, to: 2, in: statement, sql: sql)
-        }) { statement in
-            PhraseSearchResult(
-                pageID: Self.stringColumn(statement, index: 0),
-                title: Self.stringColumn(statement, index: 1),
-                subtitle: Self.stringColumn(statement, index: 2)
-            )
+        let rawResults = try ftsQueries.flatMap { ftsQuery in
+            try rows(sql, bind: { statement in
+                try self.bindText(ftsQuery, to: 1, in: statement, sql: sql)
+                try self.bindInt(limit * 4, to: 2, in: statement, sql: sql)
+            }) { statement in
+                PhraseSearchResult(
+                    pageID: Self.stringColumn(statement, index: 0),
+                    title: Self.stringColumn(statement, index: 1),
+                    subtitle: Self.stringColumn(statement, index: 2)
+                )
+            }
         }
 
         let normalizedQuery = Self.searchComparableText(query)
@@ -1317,6 +1319,19 @@ final class VietSQLiteLanguagePackRepository {
             .split(separator: " ")
             .map { "\($0)*" }
             .joined(separator: " ")
+    }
+
+    private static func uniqueFTSQueries(for queries: [String]) -> [String] {
+        var seen = Set<String>()
+
+        return queries.compactMap { query in
+            let ftsQuery = ftsQuery(for: query)
+            guard !ftsQuery.isEmpty, seen.insert(ftsQuery).inserted else {
+                return nil
+            }
+
+            return ftsQuery
+        }
     }
 
     private static func searchComparableText(_ text: String) -> String {

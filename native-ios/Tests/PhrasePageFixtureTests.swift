@@ -1194,12 +1194,31 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testSearchIndexCanOpenGeneratedPhraseFamilies() throws {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+
         let results = PhraseSearchIndex.search("where is the ATM")
-        let result = try XCTUnwrap(results.first { $0.pageID == "viet-family-v500-airp-bord-arri-where-is-the-atm" })
+        let result = try XCTUnwrap(results.first { $0.pageID == "viet-phrase-v500-airp-bord-arri-where-is-the-atm" })
 
         XCTAssertEqual(result.title, "ATM ở đâu?")
         XCTAssertEqual(result.subtitle, "Where is the ATM?")
         XCTAssertNotNil(PhraseDetailPage.page(withID: result.pageID))
+    }
+
+    func testSearchIndexFindsPassportRecoveryWhenQuerySaysForgotPassport() {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+
+        let results = PhraseSearchIndex.search("I forgot my passport")
+        let topPageIDs = Array(results.prefix(5).map(\.pageID))
+
+        XCTAssertTrue(
+            topPageIDs.contains("viet-phrase-emergency-3"),
+            "Expected forgot-passport search to surface I lost my passport near the top, got \(topPageIDs)"
+        )
+        XCTAssertTrue(
+            topPageIDs.contains("viet-phrase-v500-emer-safe-my-passport-is-missing")
+                || topPageIDs.contains("viet-phrase-v500-emer-safe-i-do-not-have-my-passport"),
+            "Expected forgot-passport search to include another passport recovery phrase, got \(topPageIDs)"
+        )
     }
 
     func testSearchIndexKeepsGeneratedDuplicatesOnCanonicalDesignedPages() {
