@@ -77,6 +77,25 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
     }
 
+    func testCaptureRepresentativeHeroImagesForProductionReview() {
+        let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
+            ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "What are you doing?"),
+            ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Start here"),
+            ("ben-thanh-market", ["--detail-page", "viet-family-city-hcmc-place-ben-thanh-market"], "Chợ Bến Thành", "About"),
+            ("anan-saigon", ["--detail-page", "viet-family-city-hcmc-place-anan-saigon"], "Anăn Sài Gòn", "About"),
+        ]
+
+        for page in pages {
+            let app = launchApp(arguments: page.arguments)
+
+            XCTAssertTrue(app.staticTexts[page.title].waitForExistence(timeout: 8), "\(page.title) did not render.")
+            XCTAssertTrue(matchingStaticText(app: app, text: page.requiredText).waitForExistence(timeout: 4), "\(page.requiredText) did not render on \(page.label).")
+            captureHeroImageProofIfRequested(app: app, name: "\(page.label)-top.png")
+
+            app.terminate()
+        }
+    }
+
     func testBrowseNextShelvesUseUniformCardFrames() {
         let app = launchApp(arguments: ["--browse", "--seed-returning-user-shelves"])
 
@@ -198,5 +217,33 @@ final class BrowseSearchUITests: XCTestCase {
             withIntermediateDirectories: true
         )
         try? screenshot.pngRepresentation.write(to: fileURL)
+    }
+
+    private func captureHeroImageProofIfRequested(app: XCUIApplication, name: String) {
+        let screenshot = XCUIScreen.main.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot)
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
+
+        let directory = ProcessInfo.processInfo.environment["SPEAKLOCAL_HERO_IMAGE_PROOF_DIR"]
+            ?? "/Users/jojolim/Developer/products/speaklocal/app-family/native-ios/artifacts/TASK-VIET-HERO-IMAGE-PRODUCTION-001"
+
+        let fileURL = URL(fileURLWithPath: directory)
+            .appendingPathComponent(name)
+        try? FileManager.default.createDirectory(
+            at: fileURL.deletingLastPathComponent(),
+            withIntermediateDirectories: true
+        )
+        try? screenshot.pngRepresentation.write(to: fileURL)
+    }
+
+    private func matchingStaticText(app: XCUIApplication, text: String) -> XCUIElement {
+        let exact = app.staticTexts[text]
+        if exact.exists {
+            return exact
+        }
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
+        return app.staticTexts.matching(predicate).firstMatch
     }
 }

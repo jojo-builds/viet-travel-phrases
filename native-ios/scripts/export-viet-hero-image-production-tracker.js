@@ -55,41 +55,41 @@ const cityHubRows = [
     pageID: "browse-city-danang",
     title: "Da Nang / Đà Nẵng",
     profile: "cityHub",
-    heroImageName: "HeroNeutralMasthead",
-    issue: "neutral_city_fallback",
-    followUp: "Create an owned Da Nang city hub image once the city page becomes a high-priority production surface.",
+    heroImageName: "HeroCityDanang",
+    issue: "",
+    followUp: "Created in TASK-VIET-HERO-IMAGE-PRODUCTION-001; keep Dragon Bridge/river cues visible in the live crop.",
   },
   {
     pageID: "browse-city-hanoi",
     title: "Hanoi / Hà Nội",
     profile: "cityHub",
-    heroImageName: "BrowseCollectionHanoi",
+    heroImageName: "HeroCityHanoi",
     issue: "",
-    followUp: "Audit whether the existing Hanoi collection image is specific enough for the city hub crop.",
+    followUp: "Created in TASK-VIET-HERO-IMAGE-PRODUCTION-001; keep Old Quarter/lake cues visible in the live crop.",
   },
   {
     pageID: "browse-city-hoian",
     title: "Hoi An / Hội An",
     profile: "cityHub",
-    heroImageName: "HeroNeutralMasthead",
-    issue: "neutral_city_fallback",
-    followUp: "Create an owned Hoi An city hub image with lantern/old-town cues.",
+    heroImageName: "HeroCityHoian",
+    issue: "",
+    followUp: "Created in TASK-VIET-HERO-IMAGE-PRODUCTION-001; keep lantern/old-town cues visible in the live crop.",
   },
   {
     pageID: "browse-city-hue",
     title: "Hue / Huế",
     profile: "cityHub",
-    heroImageName: "HeroNeutralMasthead",
-    issue: "neutral_city_fallback",
-    followUp: "Create an owned Hue city hub image with citadel/Perfume River cues.",
+    heroImageName: "HeroCityHue",
+    issue: "",
+    followUp: "Created in TASK-VIET-HERO-IMAGE-PRODUCTION-001; keep citadel/Perfume River cues visible in the live crop.",
   },
   {
     pageID: "browse-city-hcmc",
     title: "Ho Chi Minh City / Thành phố Hồ Chí Minh",
     profile: "cityHub",
-    heroImageName: "HeroNeutralMasthead",
-    issue: "neutral_city_fallback",
-    followUp: "Create an owned HCMC city hub image with urban/river cues.",
+    heroImageName: "HeroCityHcmc",
+    issue: "",
+    followUp: "Created in TASK-VIET-HERO-IMAGE-PRODUCTION-001; keep Saigon skyline/market cues visible in the live crop.",
   },
 ];
 
@@ -232,7 +232,7 @@ function statusFor(row, assetPath) {
   if (row.heroImageName && row.heroImageName.startsWith("BrowseCollection")) {
     return "HAS_COLLECTION_ASSET_NEEDS_CROP_AUDIT";
   }
-  if (row.heroImageName && assetPath && !row.issue) {
+  if (isPageSpecificHero(row.heroImageName) && assetPath) {
     return "SHIPPED_REVIEW_CROP";
   }
   if (row.heroImageName === "HeroNeutralMasthead" || row.issue === "neutral_city_fallback") {
@@ -249,12 +249,17 @@ function trackerRows() {
   const followups = parseCsv(fs.readFileSync(heroFollowupsPath, "utf8"));
   const rows = [...cityHubRows, ...followups].map((row) => {
     const page = pages.get(row.pageID);
-    const assetPath = row.heroImageName ? firstPngInImageset(row.heroImageName) : "";
+    const currentHeroImageName = page?.heroImageName
+      ?? page?.metadata?.editorialImport?.heroImageName
+      ?? row.heroImageName
+      ?? "";
+    const assetPath = currentHeroImageName ? firstPngInImageset(currentHeroImageName) : "";
     const dimensions = pngDimensions(assetPath);
-    const priority = priorityFor(row);
-    const status = statusFor(row, assetPath);
-    const targetAssetName = row.heroImageName && row.heroImageName !== "HeroNeutralMasthead"
-      ? row.heroImageName
+    const currentRow = { ...row, heroImageName: currentHeroImageName };
+    const priority = priorityFor(currentRow);
+    const status = statusFor(currentRow, assetPath);
+    const targetAssetName = currentHeroImageName && currentHeroImageName !== "HeroNeutralMasthead"
+      ? currentHeroImageName
       : suggestedHeroName(row.pageID);
     const title = row.title || `${page?.title ?? ""} / ${page?.englishTitle ?? ""}`.trim();
     return {
@@ -263,7 +268,7 @@ function trackerRows() {
       pageID: row.pageID,
       title,
       profile: row.profile || pageProfile(page),
-      currentHeroImageName: row.heroImageName || "",
+      currentHeroImageName,
       targetHeroImageName: targetAssetName,
       assetPath: relative(assetPath),
       currentPx: dimensions,
@@ -273,13 +278,13 @@ function trackerRows() {
       focalPoint: focalPointFor(row.profile || pageProfile(page)),
       safeZone: "Recognizable subject must survive the top 276pt masthead crop; keep the key visual in the upper third and center 70% width.",
       currentIssue: row.issue || "",
-      nextAction: nextActionFor(status, row),
+      nextAction: nextActionFor(status, currentRow),
       generationPrompt: imagePromptFor(row.profile || pageProfile(page), title),
       negativePrompt: "no readable text, no watermark, no logos, no fake signs, no unrelated Ha Long Bay/karst imagery for city-specific pages, no people as the main subject",
       proofRequired: "Simulator screenshot plus phone spot-check before DONE",
-      sourceOwnership: sourceOwnership(row.currentHeroImageName || row.heroImageName),
-      receiptOrProof: createdAssetReceipts.get(row.heroImageName) || row.followUp || "",
-      notes: notesFor(row),
+      sourceOwnership: sourceOwnership(currentHeroImageName),
+      receiptOrProof: receiptForHero(currentHeroImageName) || row.followUp || "",
+      notes: notesFor(currentRow),
     };
   });
 
@@ -330,10 +335,31 @@ function sourceOwnership(heroImageName) {
   if (heroImageName === "HeroNeutralMasthead") {
     return "neutral generated fallback";
   }
-  if (heroImageName === "HeroDragonBridge" || heroImageName === "HeroBaNaHills") {
+  if (isGeneratedHero(heroImageName) || createdAssetReceipts.has(heroImageName)) {
     return "app-owned generated asset";
   }
   return "existing app asset; audit ownership before reusing broadly";
+}
+
+function isPageSpecificHero(heroImageName) {
+  return Boolean(heroImageName)
+    && heroImageName !== "HeroNeutralMasthead"
+    && heroImageName !== "HeroVietnamMasthead"
+    && !heroImageName.startsWith("BrowseCollection");
+}
+
+function isGeneratedHero(heroImageName) {
+  return /^Hero(City|Category|Country|Compact)/.test(heroImageName);
+}
+
+function receiptForHero(heroImageName) {
+  if (createdAssetReceipts.has(heroImageName)) {
+    return createdAssetReceipts.get(heroImageName);
+  }
+  if (isGeneratedHero(heroImageName)) {
+    return "docs/editorial-exports/viet-image-assets/hero-image-production-001/generated_hero_assets.json";
+  }
+  return "";
 }
 
 function nextActionFor(status, row) {
@@ -531,7 +557,11 @@ function main() {
   const rows = trackerRows();
   const queueRows = rows.filter((row) => row.status !== "SHIPPED_REVIEW_CROP");
   writeCsv(path.join(outputRoot, "asset_tracker.csv"), rows);
-  writeCsv(path.join(outputRoot, "image_queue.csv"), queueRows);
+  if (queueRows.length > 0) {
+    writeCsv(path.join(outputRoot, "image_queue.csv"), queueRows);
+  } else {
+    fs.writeFileSync(path.join(outputRoot, "image_queue.csv"), `${Object.keys(rows[0]).join(",")}\n`, "utf8");
+  }
   writeCsv(path.join(outputRoot, "standards.csv"), standardsRows());
   writeCsv(path.join(outputRoot, "qa_gates.csv"), qaGateRows());
   writeCsv(path.join(outputRoot, "prompt_recipes.csv"), promptRecipeRows());

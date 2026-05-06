@@ -371,6 +371,13 @@ struct HeroMastheadImage: View {
         case "HeroBaNaHills":
             return 0
         default:
+            if imageName.hasPrefix("HeroCity")
+                || imageName.hasPrefix("HeroCategory")
+                || imageName.hasPrefix("HeroCountry")
+                || imageName == "HeroCompactPhraseMasthead" {
+                return 0
+            }
+
             return PhrasePageStyle.heroImageVerticalOffset
         }
     }

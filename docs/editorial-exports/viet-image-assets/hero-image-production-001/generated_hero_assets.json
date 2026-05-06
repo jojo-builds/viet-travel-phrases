@@ -1,0 +1,1256 @@
+{
+  "schemaVersion": 1,
+  "targetPixelSize": "853 x 1844",
+  "generatedCount": 156,
+  "sourceLibraryUpdated": true,
+  "items": [
+    {
+      "heroImageName": "HeroCityDanangPlaceAirport",
+      "pageID": "viet-family-city-danang-place-airport",
+      "title": "Sân bay Đà Nẵng / Da Nang Airport",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceAirport.imageset/hero-city-danang-place-airport.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceApecPark",
+      "pageID": "viet-family-city-danang-place-apec-park",
+      "title": "Công viên APEC / APEC Park",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceApecPark.imageset/hero-city-danang-place-apec-park.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceAsiaPark",
+      "pageID": "viet-family-city-danang-place-asia-park",
+      "title": "Công viên Châu Á / Asia Park",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceAsiaPark.imageset/hero-city-danang-place-asia-park.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceBachDangStreet",
+      "pageID": "viet-family-city-danang-place-bach-dang-street",
+      "title": "Đường Bạch Đằng / Bach Dang Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceBachDangStreet.imageset/hero-city-danang-place-bach-dang-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceBanCoPeak",
+      "pageID": "viet-family-city-danang-place-ban-co-peak",
+      "title": "Đỉnh Bàn Cờ / Ban Co Peak",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceBanCoPeak.imageset/hero-city-danang-place-ban-co-peak.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceCathedral",
+      "pageID": "viet-family-city-danang-place-cathedral",
+      "title": "Nhà thờ Con Gà Đà Nẵng / Da Nang Cathedral",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceCathedral.imageset/hero-city-danang-place-cathedral.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceChamMuseum",
+      "pageID": "viet-family-city-danang-place-cham-museum",
+      "title": "Bảo tàng Điêu khắc Chăm / Museum of Cham Sculpture",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceChamMuseum.imageset/hero-city-danang-place-cham-museum.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceConMarket",
+      "pageID": "viet-family-city-danang-place-con-market",
+      "title": "Chợ Cồn / Con Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceConMarket.imageset/hero-city-danang-place-con-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceGoldenBridge",
+      "pageID": "viet-family-city-danang-place-golden-bridge",
+      "title": "Cầu Vàng / Golden Bridge",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceGoldenBridge.imageset/hero-city-danang-place-golden-bridge.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceHanRiver",
+      "pageID": "viet-family-city-danang-place-han-river",
+      "title": "Sông Hàn / Han River",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceHanRiver.imageset/hero-city-danang-place-han-river.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceHelioNightMarket",
+      "pageID": "viet-family-city-danang-place-helio-night-market",
+      "title": "Chợ đêm Helio / Helio Night Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceHelioNightMarket.imageset/hero-city-danang-place-helio-night-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceLoveBridge",
+      "pageID": "viet-family-city-danang-place-love-bridge",
+      "title": "Cầu Tình Yêu / Love Bridge",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceLoveBridge.imageset/hero-city-danang-place-love-bridge.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceManThaiBeach",
+      "pageID": "viet-family-city-danang-place-man-thai-beach",
+      "title": "Biển Mân Thái / Man Thai Beach",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceManThaiBeach.imageset/hero-city-danang-place-man-thai-beach.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceNamOReef",
+      "pageID": "viet-family-city-danang-place-nam-o-reef",
+      "title": "Rạn Nam Ô / Nam O Reef",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceNamOReef.imageset/hero-city-danang-place-nam-o-reef.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceNen",
+      "pageID": "viet-family-city-danang-place-nen",
+      "title": "Nén Đà Nẵng / Nén Đà Nẵng",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceNen.imageset/hero-city-danang-place-nen.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceNonNuocBeach",
+      "pageID": "viet-family-city-danang-place-non-nuoc-beach",
+      "title": "Biển Non Nước / Non Nuoc Beach",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceNonNuocBeach.imageset/hero-city-danang-place-non-nuoc-beach.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceNonNuocStoneVillage",
+      "pageID": "viet-family-city-danang-place-non-nuoc-stone-village",
+      "title": "Làng đá Non Nước / Non Nuoc Stone Carving Village",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceNonNuocStoneVillage.imageset/hero-city-danang-place-non-nuoc-stone-village.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceRailwayStation",
+      "pageID": "viet-family-city-danang-place-railway-station",
+      "title": "Ga Đà Nẵng / Da Nang Railway Station",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceRailwayStation.imageset/hero-city-danang-place-railway-station.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceSonTra",
+      "pageID": "viet-family-city-danang-place-son-tra",
+      "title": "Bán đảo Sơn Trà / Son Tra Peninsula",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceSonTra.imageset/hero-city-danang-place-son-tra.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceSonTraNightMarket",
+      "pageID": "viet-family-city-danang-place-son-tra-night-market",
+      "title": "Chợ đêm Sơn Trà / Son Tra Night Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceSonTraNightMarket.imageset/hero-city-danang-place-son-tra-night-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceTienSaPort",
+      "pageID": "viet-family-city-danang-place-tien-sa-port",
+      "title": "Cảng Tiên Sa / Tien Sa Port",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceTienSaPort.imageset/hero-city-danang-place-tien-sa-port.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceTranThiLyBridge",
+      "pageID": "viet-family-city-danang-place-tran-thi-ly-bridge",
+      "title": "Cầu Trần Thị Lý / Tran Thi Ly Bridge",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceTranThiLyBridge.imageset/hero-city-danang-place-tran-thi-ly-bridge.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanangPlaceVoNguyenGiapStreet",
+      "pageID": "viet-family-city-danang-place-vo-nguyen-giap-street",
+      "title": "Đường Võ Nguyên Giáp / Vo Nguyen Giap Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceVoNguyenGiapStreet.imageset/hero-city-danang-place-vo-nguyen-giap-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceBaDinhSquare",
+      "pageID": "viet-family-city-hanoi-place-ba-dinh-square",
+      "title": "Quảng trường Ba Đình / Ba Dinh Square",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceBaDinhSquare.imageset/hero-city-hanoi-place-ba-dinh-square.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceBunChaHuongLien",
+      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "title": "Bún chả Hương Liên / Bun Cha Huong Lien",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceBunChaHuongLien.imageset/hero-city-hanoi-place-bun-cha-huong-lien.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceChaCaThangLong",
+      "pageID": "viet-family-city-hanoi-place-cha-ca-thang-long",
+      "title": "Chả cá Thăng Long / Cha Ca Thang Long",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceChaCaThangLong.imageset/hero-city-hanoi-place-cha-ca-thang-long.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceDongXuan",
+      "pageID": "viet-family-city-hanoi-place-dong-xuan",
+      "title": "Chợ Đồng Xuân / Dong Xuan Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceDongXuan.imageset/hero-city-hanoi-place-dong-xuan.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceEthnologyMuseum",
+      "pageID": "viet-family-city-hanoi-place-ethnology-museum",
+      "title": "Bảo tàng Dân tộc học / Vietnam Museum of Ethnology",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceEthnologyMuseum.imageset/hero-city-hanoi-place-ethnology-museum.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceGiangCafe",
+      "pageID": "viet-family-city-hanoi-place-giang-cafe",
+      "title": "Cà phê Giảng / Giang Cafe",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceGiangCafe.imageset/hero-city-hanoi-place-giang-cafe.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceHangBacStreet",
+      "pageID": "viet-family-city-hanoi-place-hang-bac-street",
+      "title": "Phố Hàng Bạc / Hang Bac Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceHangBacStreet.imageset/hero-city-hanoi-place-hang-bac-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceHangGaiStreet",
+      "pageID": "viet-family-city-hanoi-place-hang-gai-street",
+      "title": "Phố Hàng Gai / Hang Gai Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceHangGaiStreet.imageset/hero-city-hanoi-place-hang-gai-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceHoChiMinhMausoleum",
+      "pageID": "viet-family-city-hanoi-place-ho-chi-minh-mausoleum",
+      "title": "Lăng Bác / Ho Chi Minh Mausoleum",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceHoChiMinhMausoleum.imageset/hero-city-hanoi-place-ho-chi-minh-mausoleum.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceHoaLoPrison",
+      "pageID": "viet-family-city-hanoi-place-hoa-lo-prison",
+      "title": "Nhà tù Hỏa Lò / Hoa Lo Prison",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceHoaLoPrison.imageset/hero-city-hanoi-place-hoa-lo-prison.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceHoanKiem",
+      "pageID": "viet-family-city-hanoi-place-hoan-kiem",
+      "title": "Hồ Hoàn Kiếm / Hoan Kiem Lake",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceHoanKiem.imageset/hero-city-hanoi-place-hoan-kiem.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceImperialCitadel",
+      "pageID": "viet-family-city-hanoi-place-imperial-citadel",
+      "title": "Hoàng thành Thăng Long / Imperial Citadel of Thang Long",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceImperialCitadel.imageset/hero-city-hanoi-place-imperial-citadel.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceLongBienBridge",
+      "pageID": "viet-family-city-hanoi-place-long-bien-bridge",
+      "title": "Cầu Long Biên / Long Bien Bridge",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceLongBienBridge.imageset/hero-city-hanoi-place-long-bien-bridge.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceLongBienMarket",
+      "pageID": "viet-family-city-hanoi-place-long-bien-market",
+      "title": "Chợ Long Biên / Long Bien Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceLongBienMarket.imageset/hero-city-hanoi-place-long-bien-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceNoiBaiAirport",
+      "pageID": "viet-family-city-hanoi-place-noi-bai-airport",
+      "title": "Sân bay Nội Bài / Noi Bai Airport",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceNoiBaiAirport.imageset/hero-city-hanoi-place-noi-bai-airport.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceOldQuarter",
+      "pageID": "viet-family-city-hanoi-place-old-quarter",
+      "title": "Phố cổ Hà Nội / Hanoi Old Quarter",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceOldQuarter.imageset/hero-city-hanoi-place-old-quarter.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceOperaHouse",
+      "pageID": "viet-family-city-hanoi-place-opera-house",
+      "title": "Nhà hát Lớn Hà Nội / Hanoi Opera House",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceOperaHouse.imageset/hero-city-hanoi-place-opera-house.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlacePhanDinhPhungStreet",
+      "pageID": "viet-family-city-hanoi-place-phan-dinh-phung-street",
+      "title": "Phố Phan Đình Phùng / Phan Dinh Phung Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlacePhanDinhPhungStreet.imageset/hero-city-hanoi-place-phan-dinh-phung-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlacePhoBatDan",
+      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+      "title": "Phở Bát Đàn / Pho Bat Dan",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlacePhoBatDan.imageset/hero-city-hanoi-place-pho-bat-dan.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceQuanThanhTemple",
+      "pageID": "viet-family-city-hanoi-place-quan-thanh-temple",
+      "title": "Đền Quán Thánh / Quan Thanh Temple",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceQuanThanhTemple.imageset/hero-city-hanoi-place-quan-thanh-temple.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceStJosephCathedral",
+      "pageID": "viet-family-city-hanoi-place-st-joseph-cathedral",
+      "title": "Nhà thờ Lớn Hà Nội / St. Joseph Cathedral",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceStJosephCathedral.imageset/hero-city-hanoi-place-st-joseph-cathedral.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceTaHien",
+      "pageID": "viet-family-city-hanoi-place-ta-hien",
+      "title": "Phố Tạ Hiện / Ta Hien Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceTaHien.imageset/hero-city-hanoi-place-ta-hien.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceTamVi",
+      "pageID": "viet-family-city-hanoi-place-tam-vi",
+      "title": "Tầm Vị / Tam Vi",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceTamVi.imageset/hero-city-hanoi-place-tam-vi.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceTayHo",
+      "pageID": "viet-family-city-hanoi-place-tay-ho",
+      "title": "Tây Hồ / Tay Ho",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceTayHo.imageset/hero-city-hanoi-place-tay-ho.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceTempleLiterature",
+      "pageID": "viet-family-city-hanoi-place-temple-literature",
+      "title": "Văn Miếu / Temple of Literature",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceTempleLiterature.imageset/hero-city-hanoi-place-temple-literature.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceTrainStreet",
+      "pageID": "viet-family-city-hanoi-place-train-street",
+      "title": "Phố đường tàu Hà Nội / Hanoi Train Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceTrainStreet.imageset/hero-city-hanoi-place-train-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceTranQuocPagoda",
+      "pageID": "viet-family-city-hanoi-place-tran-quoc-pagoda",
+      "title": "Chùa Trấn Quốc / Tran Quoc Pagoda",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceTranQuocPagoda.imageset/hero-city-hanoi-place-tran-quoc-pagoda.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceTrucBachLake",
+      "pageID": "viet-family-city-hanoi-place-truc-bach-lake",
+      "title": "Hồ Trúc Bạch / Truc Bach Lake",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceTrucBachLake.imageset/hero-city-hanoi-place-truc-bach-lake.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceWaterPuppetTheatre",
+      "pageID": "viet-family-city-hanoi-place-water-puppet-theatre",
+      "title": "Nhà hát Múa rối Thăng Long / Thang Long Water Puppet Theatre",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceWaterPuppetTheatre.imageset/hero-city-hanoi-place-water-puppet-theatre.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoiPlaceWestLake",
+      "pageID": "viet-family-city-hanoi-place-west-lake",
+      "title": "Hồ Tây / West Lake",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceWestLake.imageset/hero-city-hanoi-place-west-lake.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceAnanSaigon",
+      "pageID": "viet-family-city-hcmc-place-anan-saigon",
+      "title": "Anăn Sài Gòn / Anan Saigon",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceAnanSaigon.imageset/hero-city-hcmc-place-anan-saigon.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceBachDangWharf",
+      "pageID": "viet-family-city-hcmc-place-bach-dang-wharf",
+      "title": "Bến Bạch Đằng / Bach Dang Wharf",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceBachDangWharf.imageset/hero-city-hcmc-place-bach-dang-wharf.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceBenThanhMarket",
+      "pageID": "viet-family-city-hcmc-place-ben-thanh-market",
+      "title": "Chợ Bến Thành / Ben Thanh Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceBenThanhMarket.imageset/hero-city-hcmc-place-ben-thanh-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceBinhTayMarket",
+      "pageID": "viet-family-city-hcmc-place-binh-tay-market",
+      "title": "Chợ Bình Tây / Binh Tay Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceBinhTayMarket.imageset/hero-city-hcmc-place-binh-tay-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceBitexcoTower",
+      "pageID": "viet-family-city-hcmc-place-bitexco-tower",
+      "title": "Tòa nhà Bitexco / Bitexco Financial Tower",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceBitexcoTower.imageset/hero-city-hcmc-place-bitexco-tower.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceBuiVienStreet",
+      "pageID": "viet-family-city-hcmc-place-bui-vien-street",
+      "title": "Phố Bùi Viện / Bui Vien Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceBuiVienStreet.imageset/hero-city-hcmc-place-bui-vien-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceChoLon",
+      "pageID": "viet-family-city-hcmc-place-cho-lon",
+      "title": "Chợ Lớn / Cho Lon",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceChoLon.imageset/hero-city-hcmc-place-cho-lon.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceDistrict1",
+      "pageID": "viet-family-city-hcmc-place-district-1",
+      "title": "Quận 1 / District 1",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceDistrict1.imageset/hero-city-hcmc-place-district1.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceDongKhoiStreet",
+      "pageID": "viet-family-city-hcmc-place-dong-khoi-street",
+      "title": "Đường Đồng Khởi / Dong Khoi Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceDongKhoiStreet.imageset/hero-city-hcmc-place-dong-khoi-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceFineArtsMuseum",
+      "pageID": "viet-family-city-hcmc-place-fine-arts-museum",
+      "title": "Bảo tàng Mỹ thuật / Fine Arts Museum",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceFineArtsMuseum.imageset/hero-city-hcmc-place-fine-arts-museum.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceHoThiKyFlowerMarket",
+      "pageID": "viet-family-city-hcmc-place-ho-thi-ky-flower-market",
+      "title": "Chợ hoa Hồ Thị Kỷ / Ho Thi Ky Flower Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceHoThiKyFlowerMarket.imageset/hero-city-hcmc-place-ho-thi-ky-flower-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceIndependencePalace",
+      "pageID": "viet-family-city-hcmc-place-independence-palace",
+      "title": "Dinh Độc Lập / Independence Palace",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceIndependencePalace.imageset/hero-city-hcmc-place-independence-palace.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceJadeEmperorPagoda",
+      "pageID": "viet-family-city-hcmc-place-jade-emperor-pagoda",
+      "title": "Chùa Ngọc Hoàng / Jade Emperor Pagoda",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceJadeEmperorPagoda.imageset/hero-city-hcmc-place-jade-emperor-pagoda.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceLandmark81",
+      "pageID": "viet-family-city-hcmc-place-landmark-81",
+      "title": "Landmark 81 / Landmark 81",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceLandmark81.imageset/hero-city-hcmc-place-landmark81.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceLeThanhTonStreet",
+      "pageID": "viet-family-city-hcmc-place-le-thanh-ton-street",
+      "title": "Đường Lê Thánh Tôn / Le Thanh Ton Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceLeThanhTonStreet.imageset/hero-city-hcmc-place-le-thanh-ton-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceNguyenHue",
+      "pageID": "viet-family-city-hcmc-place-nguyen-hue",
+      "title": "Phố đi bộ Nguyễn Huệ / Nguyen Hue Walking Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceNguyenHue.imageset/hero-city-hcmc-place-nguyen-hue.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceNguyenTraiStreet",
+      "pageID": "viet-family-city-hcmc-place-nguyen-trai-street",
+      "title": "Đường Nguyễn Trãi / Nguyen Trai Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceNguyenTraiStreet.imageset/hero-city-hcmc-place-nguyen-trai-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceNotreDame",
+      "pageID": "viet-family-city-hcmc-place-notre-dame",
+      "title": "Nhà thờ Đức Bà Sài Gòn / Saigon Notre-Dame Cathedral",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceNotreDame.imageset/hero-city-hcmc-place-notre-dame.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceOperaHouse",
+      "pageID": "viet-family-city-hcmc-place-opera-house",
+      "title": "Nhà hát Thành phố / Saigon Opera House",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceOperaHouse.imageset/hero-city-hcmc-place-opera-house.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlacePasteurStreet",
+      "pageID": "viet-family-city-hcmc-place-pasteur-street",
+      "title": "Đường Pasteur / Pasteur Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlacePasteurStreet.imageset/hero-city-hcmc-place-pasteur-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlacePhamNguLaoStreet",
+      "pageID": "viet-family-city-hcmc-place-pham-ngu-lao-street",
+      "title": "Phố Phạm Ngũ Lão / Pham Ngu Lao Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlacePhamNguLaoStreet.imageset/hero-city-hcmc-place-pham-ngu-lao-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlacePhoHoaPasteur",
+      "pageID": "viet-family-city-hcmc-place-pho-hoa-pasteur",
+      "title": "Phở Hòa Pasteur / Pho Hoa Pasteur",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlacePhoHoaPasteur.imageset/hero-city-hcmc-place-pho-hoa-pasteur.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlacePostOffice",
+      "pageID": "viet-family-city-hcmc-place-post-office",
+      "title": "Bưu điện Thành phố / Central Post Office",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlacePostOffice.imageset/hero-city-hcmc-place-post-office.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceSaigonRiver",
+      "pageID": "viet-family-city-hcmc-place-saigon-river",
+      "title": "Sông Sài Gòn / Saigon River",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceSaigonRiver.imageset/hero-city-hcmc-place-saigon-river.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceTanSonNhatAirport",
+      "pageID": "viet-family-city-hcmc-place-tan-son-nhat-airport",
+      "title": "Sân bay Tân Sơn Nhất / Tan Son Nhat Airport",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceTanSonNhatAirport.imageset/hero-city-hcmc-place-tan-son-nhat-airport.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceTaoDanPark",
+      "pageID": "viet-family-city-hcmc-place-tao-dan-park",
+      "title": "Công viên Tao Đàn / Tao Dan Park",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceTaoDanPark.imageset/hero-city-hcmc-place-tao-dan-park.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceThaoDien",
+      "pageID": "viet-family-city-hcmc-place-thao-dien",
+      "title": "Thảo Điền / Thao Dien",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceThaoDien.imageset/hero-city-hcmc-place-thao-dien.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceTurtleLake",
+      "pageID": "viet-family-city-hcmc-place-turtle-lake",
+      "title": "Hồ Con Rùa / Turtle Lake",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceTurtleLake.imageset/hero-city-hcmc-place-turtle-lake.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceWarRemnantsMuseum",
+      "pageID": "viet-family-city-hcmc-place-war-remnants-museum",
+      "title": "Bảo tàng Chứng tích Chiến tranh / War Remnants Museum",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceWarRemnantsMuseum.imageset/hero-city-hcmc-place-war-remnants-museum.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmcPlaceZooBotanicalGardens",
+      "pageID": "viet-family-city-hcmc-place-zoo-botanical-gardens",
+      "title": "Thảo Cầm Viên Sài Gòn / Saigon Zoo and Botanical Gardens",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmcPlaceZooBotanicalGardens.imageset/hero-city-hcmc-place-zoo-botanical-gardens.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceAnBang",
+      "pageID": "viet-family-city-hoian-place-an-bang",
+      "title": "Biển An Bàng / An Bang Beach",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceAnBang.imageset/hero-city-hoian-place-an-bang.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceAnHoiIsland",
+      "pageID": "viet-family-city-hoian-place-an-hoi-island",
+      "title": "Đảo An Hội / An Hoi Island",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceAnHoiIsland.imageset/hero-city-hoian-place-an-hoi-island.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceAncientTown",
+      "pageID": "viet-family-city-hoian-place-ancient-town",
+      "title": "Phố cổ Hội An / Hoi An Ancient Town",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceAncientTown.imageset/hero-city-hoian-place-ancient-town.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceBanhMiPhuong",
+      "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
+      "title": "Bánh mì Phượng / Banh Mi Phuong",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceBanhMiPhuong.imageset/hero-city-hoian-place-banh-mi-phuong.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceBayMauCoconutForest",
+      "pageID": "viet-family-city-hoian-place-bay-mau-coconut-forest",
+      "title": "Rừng dừa Bảy Mẫu / Bay Mau Coconut Forest",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceBayMauCoconutForest.imageset/hero-city-hoian-place-bay-mau-coconut-forest.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceCamChau",
+      "pageID": "viet-family-city-hoian-place-cam-chau",
+      "title": "Cẩm Châu / Cam Chau",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCamChau.imageset/hero-city-hoian-place-cam-chau.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceCamNam",
+      "pageID": "viet-family-city-hoian-place-cam-nam",
+      "title": "Cẩm Nam / Cam Nam",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCamNam.imageset/hero-city-hoian-place-cam-nam.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceCamThanhCoconutVillage",
+      "pageID": "viet-family-city-hoian-place-cam-thanh-coconut-village",
+      "title": "Làng dừa Cẩm Thanh / Cam Thanh Coconut Village",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCamThanhCoconutVillage.imageset/hero-city-hoian-place-cam-thanh-coconut-village.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceCaoLauCity",
+      "pageID": "viet-family-city-hoian-place-cao-lau-city",
+      "title": "Cao lầu ở Hội An / Cao lau in Hoi An",
+      "profile": "dish",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCaoLauCity.imageset/hero-city-hoian-place-cao-lau-city.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceChamIslands",
+      "pageID": "viet-family-city-hoian-place-cham-islands",
+      "title": "Cù Lao Chàm / Cham Islands",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceChamIslands.imageset/hero-city-hoian-place-cham-islands.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceCuaDaiBeach",
+      "pageID": "viet-family-city-hoian-place-cua-dai-beach",
+      "title": "Biển Cửa Đại / Cua Dai Beach",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCuaDaiBeach.imageset/hero-city-hoian-place-cua-dai-beach.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceFaifoCoffee",
+      "pageID": "viet-family-city-hoian-place-faifo-coffee",
+      "title": "Faifo Coffee / Faifo Coffee",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceFaifoCoffee.imageset/hero-city-hoian-place-faifo-coffee.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceFujianAssemblyHall",
+      "pageID": "viet-family-city-hoian-place-fujian-assembly-hall",
+      "title": "Hội quán Phúc Kiến / Fujian Assembly Hall",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceFujianAssemblyHall.imageset/hero-city-hoian-place-fujian-assembly-hall.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceHoaiRiver",
+      "pageID": "viet-family-city-hoian-place-hoai-river",
+      "title": "Sông Hoài / Hoai River",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceHoaiRiver.imageset/hero-city-hoian-place-hoai-river.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceJapaneseBridge",
+      "pageID": "viet-family-city-hoian-place-japanese-bridge",
+      "title": "Chùa Cầu / Japanese Covered Bridge",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceJapaneseBridge.imageset/hero-city-hoian-place-japanese-bridge.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceKimBongCarpentryVillage",
+      "pageID": "viet-family-city-hoian-place-kim-bong-carpentry-village",
+      "title": "Làng mộc Kim Bồng / Kim Bong Carpentry Village",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceKimBongCarpentryVillage.imageset/hero-city-hoian-place-kim-bong-carpentry-village.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceMarket",
+      "pageID": "viet-family-city-hoian-place-market",
+      "title": "Chợ Hội An / Hoi An Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceMarket.imageset/hero-city-hoian-place-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceMemoriesLand",
+      "pageID": "viet-family-city-hoian-place-memories-land",
+      "title": "Đảo Ký ức Hội An / Hoi An Memories Land",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceMemoriesLand.imageset/hero-city-hoian-place-memories-land.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceMorningGlory",
+      "pageID": "viet-family-city-hoian-place-morning-glory",
+      "title": "Morning Glory Hội An / Morning Glory Hoi An",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceMorningGlory.imageset/hero-city-hoian-place-morning-glory.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceMySonSanctuary",
+      "pageID": "viet-family-city-hoian-place-my-son-sanctuary",
+      "title": "Thánh địa Mỹ Sơn / My Son Sanctuary",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceMySonSanctuary.imageset/hero-city-hoian-place-my-son-sanctuary.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceNguyenHoangNightMarket",
+      "pageID": "viet-family-city-hoian-place-nguyen-hoang-night-market",
+      "title": "Chợ đêm Nguyễn Hoàng / Nguyen Hoang Night Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceNguyenHoangNightMarket.imageset/hero-city-hoian-place-nguyen-hoang-night-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceNightMarket",
+      "pageID": "viet-family-city-hoian-place-night-market",
+      "title": "Chợ đêm Hội An / Hoi An Night Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceNightMarket.imageset/hero-city-hoian-place-night-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlacePreciousHeritageMuseum",
+      "pageID": "viet-family-city-hoian-place-precious-heritage-museum",
+      "title": "Bảo tàng Di sản Vô giá / Precious Heritage Museum",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlacePreciousHeritageMuseum.imageset/hero-city-hoian-place-precious-heritage-museum.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceQuanCongTemple",
+      "pageID": "viet-family-city-hoian-place-quan-cong-temple",
+      "title": "Miếu Quan Công / Quan Cong Temple",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceQuanCongTemple.imageset/hero-city-hoian-place-quan-cong-temple.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceReachOutTeaHouse",
+      "pageID": "viet-family-city-hoian-place-reach-out-tea-house",
+      "title": "Reaching Out Tea House / Reaching Out Tea House",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceReachOutTeaHouse.imageset/hero-city-hoian-place-reach-out-tea-house.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceTanKyOldHouse",
+      "pageID": "viet-family-city-hoian-place-tan-ky-old-house",
+      "title": "Nhà cổ Tấn Ký / Tan Ky Old House",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceTanKyOldHouse.imageset/hero-city-hoian-place-tan-ky-old-house.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceThanhHa",
+      "pageID": "viet-family-city-hoian-place-thanh-ha",
+      "title": "Làng gốm Thanh Hà / Thanh Ha Pottery Village",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceThanhHa.imageset/hero-city-hoian-place-thanh-ha.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceThuBonRiver",
+      "pageID": "viet-family-city-hoian-place-thu-bon-river",
+      "title": "Sông Thu Bồn / Thu Bon River",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceThuBonRiver.imageset/hero-city-hoian-place-thu-bon-river.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceTraQue",
+      "pageID": "viet-family-city-hoian-place-tra-que",
+      "title": "Làng rau Trà Quế / Tra Que Vegetable Village",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceTraQue.imageset/hero-city-hoian-place-tra-que.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoianPlaceTranPhuStreet",
+      "pageID": "viet-family-city-hoian-place-tran-phu-street",
+      "title": "Phố Trần Phú / Tran Phu Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceTranPhuStreet.imageset/hero-city-hoian-place-tran-phu-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceAnCuuMarket",
+      "pageID": "viet-family-city-hue-place-an-cuu-market",
+      "title": "Chợ An Cựu / An Cuu Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceAnCuuMarket.imageset/hero-city-hue-place-an-cuu-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceAnDinhPalace",
+      "pageID": "viet-family-city-hue-place-an-dinh-palace",
+      "title": "Cung An Định / An Dinh Palace",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceAnDinhPalace.imageset/hero-city-hue-place-an-dinh-palace.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceBaoVinhAncientTown",
+      "pageID": "viet-family-city-hue-place-bao-vinh-ancient-town",
+      "title": "Phố cổ Bao Vinh / Bao Vinh Ancient Town",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceBaoVinhAncientTown.imageset/hero-city-hue-place-bao-vinh-ancient-town.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceBunBoCity",
+      "pageID": "viet-family-city-hue-place-bun-bo-city",
+      "title": "Bún bò Huế / Bun bo Hue",
+      "profile": "dish",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceBunBoCity.imageset/hero-city-hue-place-bun-bo-city.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceDongBa",
+      "pageID": "viet-family-city-hue-place-dong-ba",
+      "title": "Chợ Đông Ba / Dong Ba Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceDongBa.imageset/hero-city-hue-place-dong-ba.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceDongKhanhTomb",
+      "pageID": "viet-family-city-hue-place-dong-khanh-tomb",
+      "title": "Lăng Đồng Khánh / Tomb of Dong Khanh",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceDongKhanhTomb.imageset/hero-city-hue-place-dong-khanh-tomb.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceGiaLongTomb",
+      "pageID": "viet-family-city-hue-place-gia-long-tomb",
+      "title": "Lăng Gia Long / Tomb of Gia Long",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceGiaLongTomb.imageset/hero-city-hue-place-gia-long-tomb.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceHenIsland",
+      "pageID": "viet-family-city-hue-place-hen-island",
+      "title": "Cồn Hến / Hen Island",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceHenIsland.imageset/hero-city-hue-place-hen-island.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceHuyenTranTemple",
+      "pageID": "viet-family-city-hue-place-huyen-tran-temple",
+      "title": "Đền Huyền Trân / Huyen Tran Princess Temple",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceHuyenTranTemple.imageset/hero-city-hue-place-huyen-tran-temple.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceImperialCity",
+      "pageID": "viet-family-city-hue-place-imperial-city",
+      "title": "Kinh thành Huế / Hue Imperial City",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceImperialCity.imageset/hero-city-hue-place-imperial-city.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceKhaiDinhTomb",
+      "pageID": "viet-family-city-hue-place-khai-dinh-tomb",
+      "title": "Lăng Khải Định / Tomb of Khai Dinh",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceKhaiDinhTomb.imageset/hero-city-hue-place-khai-dinh-tomb.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceLeLoiStreet",
+      "pageID": "viet-family-city-hue-place-le-loi-street",
+      "title": "Đường Lê Lợi / Le Loi Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceLeLoiStreet.imageset/hero-city-hue-place-le-loi-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceLesJardins",
+      "pageID": "viet-family-city-hue-place-les-jardins",
+      "title": "Les Jardins de la Carambole / Les Jardins de la Carambole",
+      "profile": "restaurant",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceLesJardins.imageset/hero-city-hue-place-les-jardins.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceMinhMangTomb",
+      "pageID": "viet-family-city-hue-place-minh-mang-tomb",
+      "title": "Lăng Minh Mạng / Tomb of Minh Mang",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceMinhMangTomb.imageset/hero-city-hue-place-minh-mang-tomb.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceNguyenDinhChieuStreet",
+      "pageID": "viet-family-city-hue-place-nguyen-dinh-chieu-street",
+      "title": "Phố đi bộ Nguyễn Đình Chiểu / Nguyen Dinh Chieu Walking Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceNguyenDinhChieuStreet.imageset/hero-city-hue-place-nguyen-dinh-chieu-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceNightMarket",
+      "pageID": "viet-family-city-hue-place-night-market",
+      "title": "Chợ đêm Huế / Hue Night Market",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceNightMarket.imageset/hero-city-hue-place-night-market.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlacePerfumeRiver",
+      "pageID": "viet-family-city-hue-place-perfume-river",
+      "title": "Sông Hương / Perfume River",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlacePerfumeRiver.imageset/hero-city-hue-place-perfume-river.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlacePhuBaiAirport",
+      "pageID": "viet-family-city-hue-place-phu-bai-airport",
+      "title": "Sân bay Phú Bài / Phu Bai Airport",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlacePhuBaiAirport.imageset/hero-city-hue-place-phu-bai-airport.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlacePhuCamChurch",
+      "pageID": "viet-family-city-hue-place-phu-cam-church",
+      "title": "Nhà thờ Phủ Cam / Phu Cam Church",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlacePhuCamChurch.imageset/hero-city-hue-place-phu-cam-church.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceRailwayStation",
+      "pageID": "viet-family-city-hue-place-railway-station",
+      "title": "Ga Huế / Hue Railway Station",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceRailwayStation.imageset/hero-city-hue-place-railway-station.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceRoyalAntiquitiesMuseum",
+      "pageID": "viet-family-city-hue-place-royal-antiquities-museum",
+      "title": "Bảo tàng Cổ vật Cung đình Huế / Hue Museum of Royal Antiquities",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceRoyalAntiquitiesMuseum.imageset/hero-city-hue-place-royal-antiquities-museum.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceThanhToanBridge",
+      "pageID": "viet-family-city-hue-place-thanh-toan-bridge",
+      "title": "Cầu ngói Thanh Toàn / Thanh Toan Bridge",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceThanhToanBridge.imageset/hero-city-hue-place-thanh-toan-bridge.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceThienMu",
+      "pageID": "viet-family-city-hue-place-thien-mu",
+      "title": "Chùa Thiên Mụ / Thien Mu Pagoda",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceThienMu.imageset/hero-city-hue-place-thien-mu.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceThuyXuanIncenseVillage",
+      "pageID": "viet-family-city-hue-place-thuy-xuan-incense-village",
+      "title": "Làng hương Thủy Xuân / Thuy Xuan Incense Village",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceThuyXuanIncenseVillage.imageset/hero-city-hue-place-thuy-xuan-incense-village.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceTruongTien",
+      "pageID": "viet-family-city-hue-place-truong-tien",
+      "title": "Cầu Trường Tiền / Truong Tien Bridge",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceTruongTien.imageset/hero-city-hue-place-truong-tien.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceTuDucTomb",
+      "pageID": "viet-family-city-hue-place-tu-duc-tomb",
+      "title": "Lăng Tự Đức / Tomb of Tu Duc",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceTuDucTomb.imageset/hero-city-hue-place-tu-duc-tomb.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceTuHieuPagoda",
+      "pageID": "viet-family-city-hue-place-tu-hieu-pagoda",
+      "title": "Chùa Từ Hiếu / Tu Hieu Pagoda",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceTuHieuPagoda.imageset/hero-city-hue-place-tu-hieu-pagoda.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceVongCanhHill",
+      "pageID": "viet-family-city-hue-place-vong-canh-hill",
+      "title": "Đồi Vọng Cảnh / Vong Canh Hill",
+      "profile": "landmark",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceVongCanhHill.imageset/hero-city-hue-place-vong-canh-hill.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHuePlaceWalkingStreet",
+      "pageID": "viet-family-city-hue-place-walking-street",
+      "title": "Phố đi bộ Huế / Hue Walking Street",
+      "profile": "streetDriver",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHuePlaceWalkingStreet.imageset/hero-city-hue-place-walking-street.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHanoi",
+      "pageID": "browse-city-hanoi",
+      "title": "Hanoi",
+      "profile": "cityHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHanoi.imageset/hero-city-hanoi.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHcmc",
+      "pageID": "browse-city-hcmc",
+      "title": "Saigon / Ho Chi Minh City",
+      "profile": "cityHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHcmc.imageset/hero-city-hcmc.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityDanang",
+      "pageID": "browse-city-danang",
+      "title": "Da Nang",
+      "profile": "cityHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityDanang.imageset/hero-city-danang.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHoian",
+      "pageID": "browse-city-hoian",
+      "title": "Hoi An",
+      "profile": "cityHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoian.imageset/hero-city-hoian.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCityHue",
+      "pageID": "browse-city-hue",
+      "title": "Hue",
+      "profile": "cityHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHue.imageset/hero-city-hue.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCountryVietnam",
+      "pageID": "category:country_vietnam",
+      "title": "HeroCountryVietnam",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCountryVietnam.imageset/hero-country-vietnam.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCategoryGreetings",
+      "pageID": "category:category_greetings",
+      "title": "HeroCategoryGreetings",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCategoryGreetings.imageset/hero-category-greetings.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCategoryEssentials",
+      "pageID": "category:category_essentials",
+      "title": "HeroCategoryEssentials",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCategoryEssentials.imageset/hero-category-essentials.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCategoryEmergency",
+      "pageID": "category:category_emergency",
+      "title": "HeroCategoryEmergency",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCategoryEmergency.imageset/hero-category-emergency.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCategoryQuestions",
+      "pageID": "category:category_questions",
+      "title": "HeroCategoryQuestions",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCategoryQuestions.imageset/hero-category-questions.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCategoryPoliteRepair",
+      "pageID": "category:category_polite_repair",
+      "title": "HeroCategoryPoliteRepair",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCategoryPoliteRepair.imageset/hero-category-polite-repair.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCategoryFirstDay",
+      "pageID": "category:category_first_day",
+      "title": "HeroCategoryFirstDay",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCategoryFirstDay.imageset/hero-category-first-day.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCategoryGettingAround",
+      "pageID": "category:category_getting_around",
+      "title": "HeroCategoryGettingAround",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCategoryGettingAround.imageset/hero-category-getting-around.png",
+      "sourceOwnership": "app-owned generated illustration"
+    },
+    {
+      "heroImageName": "HeroCompactPhraseMasthead",
+      "pageID": "category:compact_phrase",
+      "title": "HeroCompactPhraseMasthead",
+      "profile": "categoryHub",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCompactPhraseMasthead.imageset/hero-compact-phrase-masthead.png",
+      "sourceOwnership": "app-owned generated illustration"
+    }
+  ]
+}

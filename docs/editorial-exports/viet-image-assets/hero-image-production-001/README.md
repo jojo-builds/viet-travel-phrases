@@ -28,7 +28,7 @@ The tracker therefore records:
 
 ## Immediate Queue
 
-Open P0 rows: 15
+Open P0 rows: 0
 
 High-value P0 examples include Da Nang city, Marble Mountains, Linh Ung Pagoda, My Khe Beach, Da Nang Airport, Nén Đà Nẵng, Nguyễn Văn Linh Street, Bạch Đằng Street, Bún chả Hương Liên, Phở Bát Đàn, Bún bò Huế, and Cao lầu.
 

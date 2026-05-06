@@ -4558,7 +4558,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "airport"
+      "placeKind": "airport",
+      "heroImageName": "HeroCityDanangPlaceAirport"
     },
     {
       "id": "city-danang-place-apec-park",
@@ -4590,7 +4591,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "park"
+      "placeKind": "park",
+      "heroImageName": "HeroCityDanangPlaceApecPark"
     },
     {
       "id": "city-danang-place-asia-park",
@@ -4622,7 +4624,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "park"
+      "placeKind": "park",
+      "heroImageName": "HeroCityDanangPlaceAsiaPark"
     },
     {
       "id": "city-danang-place-ba-na-hills",
@@ -4792,7 +4795,8 @@
         ],
         "replaceGeneratedSections": true,
         "heroImageName": "HeroBaNaHills"
-      }
+      },
+      "heroImageName": "HeroBaNaHills"
     },
     {
       "id": "city-danang-place-bach-dang-street",
@@ -4934,7 +4938,8 @@
         "heroImageName": null,
         "templateProfile": "street-pronouncer",
         "agentApprovalID": "B001-AGENT-APPROVED-002"
-      }
+      },
+      "heroImageName": "HeroCityDanangPlaceBachDangStreet"
     },
     {
       "id": "city-danang-place-ban-co-peak",
@@ -4966,7 +4971,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityDanangPlaceBanCoPeak"
     },
     {
       "id": "city-danang-place-cathedral",
@@ -4998,7 +5004,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityDanangPlaceCathedral"
     },
     {
       "id": "city-danang-place-cham-museum",
@@ -5030,7 +5037,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "museum"
+      "placeKind": "museum",
+      "heroImageName": "HeroCityDanangPlaceChamMuseum"
     },
     {
       "id": "city-danang-place-con-market",
@@ -5062,7 +5070,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityDanangPlaceConMarket"
     },
     {
       "id": "city-danang-place-dragon-bridge",
@@ -5197,7 +5206,8 @@
           "missingDragonBridgeHero": "RESOLVED_BY_TASK-VIET-DRAGON-BRIDGE-HERO-ASSET-001",
           "legacyExportedPageID": "ACCEPTED_TEMPORARY_RISK"
         }
-      }
+      },
+      "heroImageName": "HeroDragonBridge"
     },
     {
       "id": "city-danang-place-golden-bridge",
@@ -5229,7 +5239,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityDanangPlaceGoldenBridge"
     },
     {
       "id": "city-danang-place-han-market",
@@ -5293,7 +5304,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityDanangPlaceHanRiver"
     },
     {
       "id": "city-danang-place-helio-night-market",
@@ -5325,7 +5337,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityDanangPlaceHelioNightMarket"
     },
     {
       "id": "city-danang-place-linh-ung-pagoda",
@@ -5390,7 +5403,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityDanangPlaceLoveBridge"
     },
     {
       "id": "city-danang-place-man-thai-beach",
@@ -5422,7 +5436,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "beach"
+      "placeKind": "beach",
+      "heroImageName": "HeroCityDanangPlaceManThaiBeach"
     },
     {
       "id": "city-danang-place-marble-mountains",
@@ -5630,7 +5645,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "nature"
+      "placeKind": "nature",
+      "heroImageName": "HeroCityDanangPlaceNamOReef"
     },
     {
       "id": "city-danang-place-nen",
@@ -5664,7 +5680,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "fine-dining"
+      "contentRole": "fine-dining",
+      "heroImageName": "HeroCityDanangPlaceNen"
     },
     {
       "id": "city-danang-place-nguyen-van-linh-street",
@@ -5839,7 +5856,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "beach"
+      "placeKind": "beach",
+      "heroImageName": "HeroCityDanangPlaceNonNuocBeach"
     },
     {
       "id": "city-danang-place-non-nuoc-stone-village",
@@ -5871,7 +5889,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "village"
+      "placeKind": "village",
+      "heroImageName": "HeroCityDanangPlaceNonNuocStoneVillage"
     },
     {
       "id": "city-danang-place-railway-station",
@@ -5903,7 +5922,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "station"
+      "placeKind": "station",
+      "heroImageName": "HeroCityDanangPlaceRailwayStation"
     },
     {
       "id": "city-danang-place-son-tra",
@@ -6045,7 +6065,8 @@
             "body": "Connect to: Linh Ứng Pagoda, Dragon Bridge, My Khe Beach, return pickup, wait here."
           }
         ]
-      }
+      },
+      "heroImageName": "HeroCityDanangPlaceSonTra"
     },
     {
       "id": "city-danang-place-son-tra-night-market",
@@ -6077,7 +6098,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityDanangPlaceSonTraNightMarket"
     },
     {
       "id": "city-danang-place-tien-sa-port",
@@ -6109,7 +6131,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "port"
+      "placeKind": "port",
+      "heroImageName": "HeroCityDanangPlaceTienSaPort"
     },
     {
       "id": "city-danang-place-tran-thi-ly-bridge",
@@ -6141,7 +6164,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityDanangPlaceTranThiLyBridge"
     },
     {
       "id": "city-danang-place-vo-nguyen-giap-street",
@@ -6288,7 +6312,8 @@
             "body": "Connect to: My Khe Beach, stop here, wrong location, show address, taxi return."
           }
         ]
-      }
+      },
+      "heroImageName": "HeroCityDanangPlaceVoNguyenGiapStreet"
     },
     {
       "id": "city-danang-reservation-nen",
@@ -10253,7 +10278,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceBaDinhSquare"
     },
     {
       "id": "city-hanoi-place-bun-cha-huong-lien",
@@ -10400,7 +10426,8 @@
             "body": "Connect to: ordering bún chả, iced tea, bill please, allergy, cash/card, and taxi return."
           }
         ]
-      }
+      },
+      "heroImageName": "HeroCityHanoiPlaceBunChaHuongLien"
     },
     {
       "id": "city-hanoi-place-cha-ca-thang-long",
@@ -10433,7 +10460,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "iconic"
+      "contentRole": "iconic",
+      "heroImageName": "HeroCityHanoiPlaceChaCaThangLong"
     },
     {
       "id": "city-hanoi-place-dong-xuan",
@@ -10464,7 +10492,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHanoiPlaceDongXuan"
     },
     {
       "id": "city-hanoi-place-ethnology-museum",
@@ -10496,7 +10525,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "museum"
+      "placeKind": "museum",
+      "heroImageName": "HeroCityHanoiPlaceEthnologyMuseum"
     },
     {
       "id": "city-hanoi-place-giang-cafe",
@@ -10530,7 +10560,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "contentRole": "cafe"
+      "contentRole": "cafe",
+      "heroImageName": "HeroCityHanoiPlaceGiangCafe"
     },
     {
       "id": "city-hanoi-place-hang-bac-street",
@@ -10562,7 +10593,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHanoiPlaceHangBacStreet"
     },
     {
       "id": "city-hanoi-place-hang-gai-street",
@@ -10594,7 +10626,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHanoiPlaceHangGaiStreet"
     },
     {
       "id": "city-hanoi-place-ho-chi-minh-mausoleum",
@@ -10626,7 +10659,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceHoChiMinhMausoleum"
     },
     {
       "id": "city-hanoi-place-hoa-lo-prison",
@@ -10658,7 +10692,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "museum"
+      "placeKind": "museum",
+      "heroImageName": "HeroCityHanoiPlaceHoaLoPrison"
     },
     {
       "id": "city-hanoi-place-hoan-kiem",
@@ -10689,7 +10724,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceHoanKiem"
     },
     {
       "id": "city-hanoi-place-imperial-citadel",
@@ -10721,7 +10757,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceImperialCitadel"
     },
     {
       "id": "city-hanoi-place-long-bien-bridge",
@@ -10753,7 +10790,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceLongBienBridge"
     },
     {
       "id": "city-hanoi-place-long-bien-market",
@@ -10785,7 +10823,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHanoiPlaceLongBienMarket"
     },
     {
       "id": "city-hanoi-place-noi-bai-airport",
@@ -10817,7 +10856,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "airport"
+      "placeKind": "airport",
+      "heroImageName": "HeroCityHanoiPlaceNoiBaiAirport"
     },
     {
       "id": "city-hanoi-place-old-quarter",
@@ -10848,7 +10888,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHanoiPlaceOldQuarter"
     },
     {
       "id": "city-hanoi-place-opera-house",
@@ -10880,7 +10921,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceOperaHouse"
     },
     {
       "id": "city-hanoi-place-phan-dinh-phung-street",
@@ -10912,7 +10954,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHanoiPlacePhanDinhPhungStreet"
     },
     {
       "id": "city-hanoi-place-pho-bat-dan",
@@ -11051,7 +11094,8 @@
             "body": "Connect to: one bowl of pho, what do you recommend, bill please, cash/card, no beef/no pork dietary pages."
           }
         ]
-      }
+      },
+      "heroImageName": "HeroCityHanoiPlacePhoBatDan"
     },
     {
       "id": "city-hanoi-place-quan-thanh-temple",
@@ -11083,7 +11127,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceQuanThanhTemple"
     },
     {
       "id": "city-hanoi-place-st-joseph-cathedral",
@@ -11115,7 +11160,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceStJosephCathedral"
     },
     {
       "id": "city-hanoi-place-ta-hien",
@@ -11146,7 +11192,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHanoiPlaceTaHien"
     },
     {
       "id": "city-hanoi-place-tam-vi",
@@ -11180,7 +11227,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "fine-dining"
+      "contentRole": "fine-dining",
+      "heroImageName": "HeroCityHanoiPlaceTamVi"
     },
     {
       "id": "city-hanoi-place-tay-ho",
@@ -11212,7 +11260,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHanoiPlaceTayHo"
     },
     {
       "id": "city-hanoi-place-temple-literature",
@@ -11243,7 +11292,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceTempleLiterature"
     },
     {
       "id": "city-hanoi-place-train-street",
@@ -11275,7 +11325,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHanoiPlaceTrainStreet"
     },
     {
       "id": "city-hanoi-place-tran-quoc-pagoda",
@@ -11307,7 +11358,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceTranQuocPagoda"
     },
     {
       "id": "city-hanoi-place-truc-bach-lake",
@@ -11339,7 +11391,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceTrucBachLake"
     },
     {
       "id": "city-hanoi-place-water-puppet-theatre",
@@ -11371,7 +11424,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "attraction"
+      "placeKind": "attraction",
+      "heroImageName": "HeroCityHanoiPlaceWaterPuppetTheatre"
     },
     {
       "id": "city-hanoi-place-west-lake",
@@ -11403,7 +11457,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHanoiPlaceWestLake"
     },
     {
       "id": "city-hanoi-reservation-tam-vi",
@@ -15756,7 +15811,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "fine-dining"
+      "contentRole": "fine-dining",
+      "heroImageName": "HeroCityHcmcPlaceAnanSaigon"
     },
     {
       "id": "city-hcmc-place-bach-dang-wharf",
@@ -15788,7 +15844,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlaceBachDangWharf"
     },
     {
       "id": "city-hcmc-place-ben-thanh-market",
@@ -15819,7 +15876,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHcmcPlaceBenThanhMarket"
     },
     {
       "id": "city-hcmc-place-binh-tay-market",
@@ -15851,7 +15909,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHcmcPlaceBinhTayMarket"
     },
     {
       "id": "city-hcmc-place-bitexco-tower",
@@ -15883,7 +15942,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlaceBitexcoTower"
     },
     {
       "id": "city-hcmc-place-bui-vien-street",
@@ -15915,7 +15975,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHcmcPlaceBuiVienStreet"
     },
     {
       "id": "city-hcmc-place-cho-lon",
@@ -15947,7 +16008,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHcmcPlaceChoLon"
     },
     {
       "id": "city-hcmc-place-district-1",
@@ -15979,7 +16041,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHcmcPlaceDistrict1"
     },
     {
       "id": "city-hcmc-place-dong-khoi-street",
@@ -16011,7 +16074,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHcmcPlaceDongKhoiStreet"
     },
     {
       "id": "city-hcmc-place-fine-arts-museum",
@@ -16043,7 +16107,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "museum"
+      "placeKind": "museum",
+      "heroImageName": "HeroCityHcmcPlaceFineArtsMuseum"
     },
     {
       "id": "city-hcmc-place-ho-thi-ky-flower-market",
@@ -16075,7 +16140,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHcmcPlaceHoThiKyFlowerMarket"
     },
     {
       "id": "city-hcmc-place-independence-palace",
@@ -16106,7 +16172,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlaceIndependencePalace"
     },
     {
       "id": "city-hcmc-place-jade-emperor-pagoda",
@@ -16138,7 +16205,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlaceJadeEmperorPagoda"
     },
     {
       "id": "city-hcmc-place-landmark-81",
@@ -16170,7 +16238,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlaceLandmark81"
     },
     {
       "id": "city-hcmc-place-le-thanh-ton-street",
@@ -16202,7 +16271,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHcmcPlaceLeThanhTonStreet"
     },
     {
       "id": "city-hcmc-place-nguyen-hue",
@@ -16233,7 +16303,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHcmcPlaceNguyenHue"
     },
     {
       "id": "city-hcmc-place-nguyen-trai-street",
@@ -16265,7 +16336,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHcmcPlaceNguyenTraiStreet"
     },
     {
       "id": "city-hcmc-place-notre-dame",
@@ -16296,7 +16368,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlaceNotreDame"
     },
     {
       "id": "city-hcmc-place-opera-house",
@@ -16328,7 +16401,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlaceOperaHouse"
     },
     {
       "id": "city-hcmc-place-pasteur-street",
@@ -16360,7 +16434,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHcmcPlacePasteurStreet"
     },
     {
       "id": "city-hcmc-place-pham-ngu-lao-street",
@@ -16392,7 +16467,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHcmcPlacePhamNguLaoStreet"
     },
     {
       "id": "city-hcmc-place-pho-hoa-pasteur",
@@ -16425,7 +16501,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "iconic"
+      "contentRole": "iconic",
+      "heroImageName": "HeroCityHcmcPlacePhoHoaPasteur"
     },
     {
       "id": "city-hcmc-place-post-office",
@@ -16456,7 +16533,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlacePostOffice"
     },
     {
       "id": "city-hcmc-place-saigon-river",
@@ -16488,7 +16566,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "river"
+      "placeKind": "river",
+      "heroImageName": "HeroCityHcmcPlaceSaigonRiver"
     },
     {
       "id": "city-hcmc-place-tan-son-nhat-airport",
@@ -16520,7 +16599,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "airport"
+      "placeKind": "airport",
+      "heroImageName": "HeroCityHcmcPlaceTanSonNhatAirport"
     },
     {
       "id": "city-hcmc-place-tao-dan-park",
@@ -16552,7 +16632,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "park"
+      "placeKind": "park",
+      "heroImageName": "HeroCityHcmcPlaceTaoDanPark"
     },
     {
       "id": "city-hcmc-place-thao-dien",
@@ -16584,7 +16665,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHcmcPlaceThaoDien"
     },
     {
       "id": "city-hcmc-place-turtle-lake",
@@ -16616,7 +16698,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHcmcPlaceTurtleLake"
     },
     {
       "id": "city-hcmc-place-war-remnants-museum",
@@ -16648,7 +16731,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "museum"
+      "placeKind": "museum",
+      "heroImageName": "HeroCityHcmcPlaceWarRemnantsMuseum"
     },
     {
       "id": "city-hcmc-place-zoo-botanical-gardens",
@@ -16680,7 +16764,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "park"
+      "placeKind": "park",
+      "heroImageName": "HeroCityHcmcPlaceZooBotanicalGardens"
     },
     {
       "id": "city-hcmc-reservation-anan",
@@ -20447,7 +20532,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "beach"
+      "placeKind": "beach",
+      "heroImageName": "HeroCityHoianPlaceAnBang"
     },
     {
       "id": "city-hoian-place-an-hoi-island",
@@ -20479,7 +20565,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHoianPlaceAnHoiIsland"
     },
     {
       "id": "city-hoian-place-ancient-town",
@@ -20510,7 +20597,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHoianPlaceAncientTown"
     },
     {
       "id": "city-hoian-place-banh-mi-phuong",
@@ -20542,7 +20630,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "iconic"
+      "contentRole": "iconic",
+      "heroImageName": "HeroCityHoianPlaceBanhMiPhuong"
     },
     {
       "id": "city-hoian-place-bay-mau-coconut-forest",
@@ -20574,7 +20663,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "nature"
+      "placeKind": "nature",
+      "heroImageName": "HeroCityHoianPlaceBayMauCoconutForest"
     },
     {
       "id": "city-hoian-place-cam-chau",
@@ -20606,7 +20696,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHoianPlaceCamChau"
     },
     {
       "id": "city-hoian-place-cam-nam",
@@ -20638,7 +20729,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHoianPlaceCamNam"
     },
     {
       "id": "city-hoian-place-cam-thanh-coconut-village",
@@ -20670,7 +20762,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "village"
+      "placeKind": "village",
+      "heroImageName": "HeroCityHoianPlaceCamThanhCoconutVillage"
     },
     {
       "id": "city-hoian-place-cao-lau-city",
@@ -20703,7 +20796,8 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "contentRole": "dish-anchor"
+      "contentRole": "dish-anchor",
+      "heroImageName": "HeroCityHoianPlaceCaoLauCity"
     },
     {
       "id": "city-hoian-place-cham-islands",
@@ -20735,7 +20829,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "nature"
+      "placeKind": "nature",
+      "heroImageName": "HeroCityHoianPlaceChamIslands"
     },
     {
       "id": "city-hoian-place-cua-dai-beach",
@@ -20767,7 +20862,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "beach"
+      "placeKind": "beach",
+      "heroImageName": "HeroCityHoianPlaceCuaDaiBeach"
     },
     {
       "id": "city-hoian-place-faifo-coffee",
@@ -20800,7 +20896,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "contentRole": "cafe"
+      "contentRole": "cafe",
+      "heroImageName": "HeroCityHoianPlaceFaifoCoffee"
     },
     {
       "id": "city-hoian-place-fujian-assembly-hall",
@@ -20832,7 +20929,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHoianPlaceFujianAssemblyHall"
     },
     {
       "id": "city-hoian-place-hoai-river",
@@ -20864,7 +20962,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHoianPlaceHoaiRiver"
     },
     {
       "id": "city-hoian-place-japanese-bridge",
@@ -20895,7 +20994,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHoianPlaceJapaneseBridge"
     },
     {
       "id": "city-hoian-place-kim-bong-carpentry-village",
@@ -20927,7 +21027,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "village"
+      "placeKind": "village",
+      "heroImageName": "HeroCityHoianPlaceKimBongCarpentryVillage"
     },
     {
       "id": "city-hoian-place-market",
@@ -20958,7 +21059,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHoianPlaceMarket"
     },
     {
       "id": "city-hoian-place-memories-land",
@@ -20990,7 +21092,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "attraction"
+      "placeKind": "attraction",
+      "heroImageName": "HeroCityHoianPlaceMemoriesLand"
     },
     {
       "id": "city-hoian-place-morning-glory",
@@ -21024,7 +21127,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "everyday"
+      "contentRole": "everyday",
+      "heroImageName": "HeroCityHoianPlaceMorningGlory"
     },
     {
       "id": "city-hoian-place-my-son-sanctuary",
@@ -21056,7 +21160,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHoianPlaceMySonSanctuary"
     },
     {
       "id": "city-hoian-place-nguyen-hoang-night-market",
@@ -21088,7 +21193,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHoianPlaceNguyenHoangNightMarket"
     },
     {
       "id": "city-hoian-place-night-market",
@@ -21120,7 +21226,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHoianPlaceNightMarket"
     },
     {
       "id": "city-hoian-place-precious-heritage-museum",
@@ -21152,7 +21259,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "museum"
+      "placeKind": "museum",
+      "heroImageName": "HeroCityHoianPlacePreciousHeritageMuseum"
     },
     {
       "id": "city-hoian-place-quan-cong-temple",
@@ -21184,7 +21292,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHoianPlaceQuanCongTemple"
     },
     {
       "id": "city-hoian-place-reach-out-tea-house",
@@ -21217,7 +21326,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "contentRole": "cafe"
+      "contentRole": "cafe",
+      "heroImageName": "HeroCityHoianPlaceReachOutTeaHouse"
     },
     {
       "id": "city-hoian-place-tan-ky-old-house",
@@ -21249,7 +21359,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHoianPlaceTanKyOldHouse"
     },
     {
       "id": "city-hoian-place-thanh-ha",
@@ -21281,7 +21392,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "village"
+      "placeKind": "village",
+      "heroImageName": "HeroCityHoianPlaceThanhHa"
     },
     {
       "id": "city-hoian-place-thu-bon-river",
@@ -21313,7 +21425,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "river"
+      "placeKind": "river",
+      "heroImageName": "HeroCityHoianPlaceThuBonRiver"
     },
     {
       "id": "city-hoian-place-tra-que",
@@ -21345,7 +21458,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "village"
+      "placeKind": "village",
+      "heroImageName": "HeroCityHoianPlaceTraQue"
     },
     {
       "id": "city-hoian-place-tran-phu-street",
@@ -21377,7 +21491,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHoianPlaceTranPhuStreet"
     },
     {
       "id": "city-hoian-reservation-morning-glory",
@@ -25660,7 +25775,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHuePlaceAnCuuMarket"
     },
     {
       "id": "city-hue-place-an-dinh-palace",
@@ -25692,7 +25808,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceAnDinhPalace"
     },
     {
       "id": "city-hue-place-bao-vinh-ancient-town",
@@ -25724,7 +25841,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHuePlaceBaoVinhAncientTown"
     },
     {
       "id": "city-hue-place-bun-bo-city",
@@ -25874,7 +25992,8 @@
             ]
           }
         ]
-      }
+      },
+      "heroImageName": "HeroCityHuePlaceBunBoCity"
     },
     {
       "id": "city-hue-place-dong-ba",
@@ -25905,7 +26024,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHuePlaceDongBa"
     },
     {
       "id": "city-hue-place-dong-khanh-tomb",
@@ -25937,7 +26057,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceDongKhanhTomb"
     },
     {
       "id": "city-hue-place-gia-long-tomb",
@@ -25969,7 +26090,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceGiaLongTomb"
     },
     {
       "id": "city-hue-place-hen-island",
@@ -26001,7 +26123,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "neighborhood"
+      "placeKind": "neighborhood",
+      "heroImageName": "HeroCityHuePlaceHenIsland"
     },
     {
       "id": "city-hue-place-huyen-tran-temple",
@@ -26033,7 +26156,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceHuyenTranTemple"
     },
     {
       "id": "city-hue-place-imperial-city",
@@ -26064,7 +26188,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceImperialCity"
     },
     {
       "id": "city-hue-place-khai-dinh-tomb",
@@ -26096,7 +26221,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceKhaiDinhTomb"
     },
     {
       "id": "city-hue-place-le-loi-street",
@@ -26128,7 +26254,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHuePlaceLeLoiStreet"
     },
     {
       "id": "city-hue-place-les-jardins",
@@ -26162,7 +26289,8 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "contentRole": "everyday"
+      "contentRole": "everyday",
+      "heroImageName": "HeroCityHuePlaceLesJardins"
     },
     {
       "id": "city-hue-place-minh-mang-tomb",
@@ -26194,7 +26322,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceMinhMangTomb"
     },
     {
       "id": "city-hue-place-nguyen-dinh-chieu-street",
@@ -26226,7 +26355,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHuePlaceNguyenDinhChieuStreet"
     },
     {
       "id": "city-hue-place-night-market",
@@ -26258,7 +26388,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "market"
+      "placeKind": "market",
+      "heroImageName": "HeroCityHuePlaceNightMarket"
     },
     {
       "id": "city-hue-place-perfume-river",
@@ -26289,7 +26420,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "river"
+      "placeKind": "river",
+      "heroImageName": "HeroCityHuePlacePerfumeRiver"
     },
     {
       "id": "city-hue-place-phu-bai-airport",
@@ -26321,7 +26453,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "airport"
+      "placeKind": "airport",
+      "heroImageName": "HeroCityHuePlacePhuBaiAirport"
     },
     {
       "id": "city-hue-place-phu-cam-church",
@@ -26353,7 +26486,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlacePhuCamChurch"
     },
     {
       "id": "city-hue-place-railway-station",
@@ -26385,7 +26519,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "station"
+      "placeKind": "station",
+      "heroImageName": "HeroCityHuePlaceRailwayStation"
     },
     {
       "id": "city-hue-place-royal-antiquities-museum",
@@ -26417,7 +26552,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "museum"
+      "placeKind": "museum",
+      "heroImageName": "HeroCityHuePlaceRoyalAntiquitiesMuseum"
     },
     {
       "id": "city-hue-place-thanh-toan-bridge",
@@ -26449,7 +26585,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceThanhToanBridge"
     },
     {
       "id": "city-hue-place-thien-mu",
@@ -26480,7 +26617,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceThienMu"
     },
     {
       "id": "city-hue-place-thuy-xuan-incense-village",
@@ -26512,7 +26650,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "village"
+      "placeKind": "village",
+      "heroImageName": "HeroCityHuePlaceThuyXuanIncenseVillage"
     },
     {
       "id": "city-hue-place-truong-tien",
@@ -26543,7 +26682,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceTruongTien"
     },
     {
       "id": "city-hue-place-tu-duc-tomb",
@@ -26575,7 +26715,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceTuDucTomb"
     },
     {
       "id": "city-hue-place-tu-hieu-pagoda",
@@ -26607,7 +26748,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceTuHieuPagoda"
     },
     {
       "id": "city-hue-place-vong-canh-hill",
@@ -26639,7 +26781,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "landmark"
+      "placeKind": "landmark",
+      "heroImageName": "HeroCityHuePlaceVongCanhHill"
     },
     {
       "id": "city-hue-place-walking-street",
@@ -26671,7 +26814,8 @@
       ],
       "status": "approved",
       "pageKind": "place",
-      "placeKind": "street"
+      "placeKind": "street",
+      "heroImageName": "HeroCityHuePlaceWalkingStreet"
     },
     {
       "id": "city-hue-reservation-les-jardins",

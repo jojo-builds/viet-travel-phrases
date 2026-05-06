@@ -895,7 +895,7 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(danang.title, "Da Nang")
         XCTAssertEqual(danang.subtitle, "Airport arrivals, beach rides, river landmarks, markets, and day trips.")
-        XCTAssertEqual(danang.mastheadImageName, "HeroNeutralMasthead")
+        XCTAssertEqual(danang.mastheadImageName, "HeroCityDanang")
         XCTAssertEqual(danang.starterTitle, "Names to know")
         XCTAssertEqual(danang.practiceTitle, "Practice a Da Nang day")
         XCTAssertEqual(danang.practiceSubtitle, "Airport pickup, beach drop-off, food, and a ride back.")
@@ -928,13 +928,28 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
     }
 
+    func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {
+        let saigon = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hcmc")))
+        let greetings = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("greetings")))
+        let emergency = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("emergency")))
+
+        XCTAssertEqual(saigon.title, "Saigon")
+        XCTAssertEqual(saigon.mastheadImageName, "HeroCityHcmc")
+        XCTAssertEqual(greetings.mastheadImageName, "HeroCategoryGreetings")
+        XCTAssertEqual(emergency.mastheadImageName, "HeroCategoryEmergency")
+        XCTAssertFalse([saigon, greetings, emergency].contains { descriptor in
+            descriptor.mastheadImageName == "HeroVietnamMasthead"
+                || descriptor.mastheadImageName == "HeroNeutralMasthead"
+        })
+    }
+
     func testAllVietnamDescriptorUsesCountryHubInsteadOfPhraseFeed() {
         let vietnam = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("city-guides")))
         let countryHub = try! XCTUnwrap(vietnam.cityHub)
 
         XCTAssertEqual(vietnam.title, "All Vietnam")
         XCTAssertEqual(vietnam.subtitle, "Everyday phrases for cities, food, transport, hotels, and help.")
-        XCTAssertEqual(vietnam.mastheadImageName, "HeroNeutralMasthead")
+        XCTAssertEqual(vietnam.mastheadImageName, "HeroCountryVietnam")
         XCTAssertEqual(vietnam.practiceTitle, "Practice Vietnam basics")
         XCTAssertEqual(vietnam.practiceSubtitle, "Arrival, taxi, food, hotel, and help.")
         XCTAssertTrue(vietnam.subcategories.isEmpty)
