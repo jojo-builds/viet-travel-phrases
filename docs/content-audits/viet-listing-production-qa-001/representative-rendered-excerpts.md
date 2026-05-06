@@ -171,7 +171,7 @@ For pickup, confirm which side of the bridge or nearby landmark is easiest to me
 
 ### What the name means
 - Đường = street
-- Nguyễn Văn Linh = street name to keep together
+- Nguyễn Văn Linh = name to keep together
 - Đường Nguyễn Văn Linh = Nguyen Van Linh Street
 
 ### Good to know

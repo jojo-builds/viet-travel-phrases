@@ -202,6 +202,13 @@ const exactBreakdownExpectations = new Map([
   ["tôi", { expected: /\bI\s*\/\s*me\b|\bI\b/i, forbidden: /garlic/i }],
   ["bàn", { expected: /table/i, forbidden: /\byou\b/i }],
   ["bạn", { expected: /\byou\b|friend/i, forbidden: /table/i }],
+  ["chỉ", { expected: /only/i, forbidden: /older woman|female address/i }],
+  ["chị", { expected: /older woman|female address|woman/i, forbidden: /\bonly\b/i }],
+  ["nhận", { expected: /accept|receive/i, forbidden: /receipt/i }],
+  ["mặt", { expected: /cash|face/i, forbidden: /lost|password/i }],
+  ["cổng", { expected: /gate/i, forbidden: /public|port/i }],
+  ["đổi", { expected: /change/i, forbidden: /wait/i }],
+  ["đợi", { expected: /wait/i, forbidden: /change/i }],
   ["bơ", { expected: /butter/i, forbidden: /remove|leave out/i }],
   ["bỏ", { expected: /remove|leave out/i, forbidden: /butter/i }],
   ["có", { expected: /have|is there|yes/i, forbidden: /aunt|female address/i }],
@@ -240,6 +247,14 @@ function isTaxiRideHelpPage(page) {
 
 function isDoctorComingPage(page) {
   return normalize(page.title) === "bac si dang den";
+}
+
+function isCashOnlyPage(page) {
+  return normalize(page.title) === "chi nhan tien mat";
+}
+
+function isGateChangedPage(page) {
+  return normalize(page.title) === "cong doi roi";
 }
 
 function isHeroRepeatSection(section, page) {
@@ -376,6 +391,18 @@ function inspectPage(page, expectedIntent, issues, source) {
     }
   }
 
+  const duplicateRenderedTitles = duplicateSectionTitles(rendered);
+  if (duplicateRenderedTitles.length > 0) {
+    addIssue(issues, {
+      severity: "MAJOR",
+      code: "duplicate_rendered_section_title",
+      page,
+      source,
+      detail: `Rendered page repeats section titles: ${duplicateRenderedTitles.join(", ")}`,
+    });
+    worst = maxVerdict(worst, "FAIL");
+  }
+
   if (isIngredientQuestionPage(page)) {
     const unrelatedRows = phraseRows(rendered).filter((row) => {
       const text = normalize(`${row.vietnamese ?? ""} ${row.english ?? ""}`);
@@ -424,6 +451,42 @@ function inspectPage(page, expectedIntent, issues, source) {
         page,
         source,
         detail: `Doctor may-hear page has unrelated rows: ${unrelatedRows.map((row) => row.english).join("; ")}`,
+      });
+      worst = maxVerdict(worst, "FAIL");
+    }
+  }
+
+  if (isCashOnlyPage(page)) {
+    const unrelatedRows = phraseRows(rendered).filter((row) => {
+      const text = normalize(`${row.vietnamese ?? ""} ${row.english ?? ""}`);
+      if (normalize(row.vietnamese) === normalize(page.title)) return false;
+      return !/cash|card|pay|receipt|atm|money|tien mat|quet the|hoa don|thanh toan/.test(text);
+    });
+    if (unrelatedRows.length > 0) {
+      addIssue(issues, {
+        severity: "BLOCKER",
+        code: "cash_only_unrelated_rows",
+        page,
+        source,
+        detail: `Cash-only may-hear page has unrelated rows: ${unrelatedRows.map((row) => row.english).join("; ")}`,
+      });
+      worst = maxVerdict(worst, "FAIL");
+    }
+  }
+
+  if (isGateChangedPage(page)) {
+    const unrelatedRows = phraseRows(rendered).filter((row) => {
+      const text = normalize(`${row.vietnamese ?? ""} ${row.english ?? ""}`);
+      if (normalize(row.vietnamese) === normalize(page.title)) return false;
+      return !/gate|boarding|baggage|passport|pickup|driver|cong|hanh ly|ho chieu|diem don|tai xe/.test(text);
+    });
+    if (unrelatedRows.length > 0) {
+      addIssue(issues, {
+        severity: "BLOCKER",
+        code: "gate_changed_unrelated_rows",
+        page,
+        source,
+        detail: `Gate-changed may-hear page has unrelated rows: ${unrelatedRows.map((row) => row.english).join("; ")}`,
       });
       worst = maxVerdict(worst, "FAIL");
     }
@@ -566,6 +629,20 @@ function inspectPage(page, expectedIntent, issues, source) {
   }
 
   return worst === "PASS" ? "PASS" : "FAIL";
+}
+
+function duplicateSectionTitles(sections) {
+  const seen = new Set();
+  const duplicates = new Set();
+
+  for (const section of sections) {
+    const key = normalize(section.title || "");
+    if (!key) continue;
+    if (seen.has(key)) duplicates.add(section.title);
+    seen.add(key);
+  }
+
+  return [...duplicates];
 }
 
 function assertSectionOrder(page, rendered, issues, source, expectedTitles, code) {

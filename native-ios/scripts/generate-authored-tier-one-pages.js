@@ -1286,6 +1286,13 @@ const exactBreakdownPieces = new Map(Object.entries({
 const exactRawBreakdownMeanings = new Map(Object.entries({
   "bàn": "table",
   "bạn": "you",
+  "chỉ": "only",
+  "chị": "older woman / respectful female address",
+  "nhận": "accept / receive",
+  "mặt": "cash (in tiền mặt)",
+  "cổng": "gate",
+  "đổi": "change",
+  "đợi": "wait",
   "còn trống": "still available / open",
   "này": "this",
   "có": "have / yes",
@@ -3726,6 +3733,7 @@ function cleanTravelerBreakdownGloss(gloss, page, vietnamese = "") {
   if (/^full phrase$/i.test(text)) return page.englishTitle || page.summary || "whole phrase";
   if (/^key word$/i.test(text)) return "key word to hear";
   if (/^first name part$/i.test(text) || /^second name part$/i.test(text)) return "local name";
+  if (/^street name to keep together$/i.test(text)) return "name to keep together";
   if (/^question ending$/i.test(text)) return "asks yes or no";
   if (/^restaurant name recognition$/i.test(text) || /^restaurant name ending$/i.test(text)) return "restaurant name";
   if (/^dish name recognition$/i.test(text) || /^dish name ending$/i.test(text)) return "dish name";
@@ -3907,6 +3915,10 @@ function curatedSectionPhrases(page, section, profile, phraseRole = "traveler_sa
         return [];
       }
     }
+    const laneOptions = mayHearLaneSupportOptions(page, section.id);
+    if (laneOptions) {
+      return laneOptions;
+    }
     return withoutUnrelatedMayHearOptions(section.phrases || []);
   }
   if (profile === "phrase" && isIngredientQuestionPage(page)) {
@@ -3943,6 +3955,84 @@ function withoutUnrelatedMayHearOptions(options) {
     const text = normalizeAudioText(`${option.vietnamese ?? ""} ${option.english ?? ""}`);
     return !/(doctor|bac si|room|phong|pork|thit heo|peanuts|dau phong|spicy|cay|cash only|chi nhan tien mat)/i.test(text);
   });
+}
+
+function mayHearLaneSupportOptions(page, sectionID) {
+  const titleKey = normalizedVietnameseKey(page.title || "");
+  const categoryIDs = new Set(page.categoryIDs || []);
+  const limit = sectionID === "practice-pairs" ? 3 : 6;
+  const optionIDs = (() => {
+    if (titleKey === "chi nhan tien mat") {
+      return [
+        "taxi-7",
+        "store-6",
+        "store-7",
+        "airport-4",
+        "vpe-help-action-anh-chi-giup-toi-doi-sang-tien-mat-duoc-khong",
+      ];
+    }
+    if (titleKey === "cong doi roi") {
+      return [
+        "v500-airp-bord-arri-where-is-gate-10",
+        "vpe-help-action-anh-chi-giup-toi-xac-nhan-cong-ra-duoc-khong",
+        "vpe-where-place-cong-len-may-bay-o-dau",
+      ];
+    }
+    if (titleKey === "co phong khac") {
+      return [
+        "hotel-quiet-room",
+        "hotel-1",
+        "hotel-8",
+        "hotel-9",
+      ];
+    }
+    if (titleKey === "dua ho chieu ra") {
+      return [
+        "v500-airp-bord-arri-here-is-my-passport",
+        "v500-airp-bord-arri-here-is-my-visa",
+        "v500-airp-bord-arri-where-do-i-sign",
+        "airport-pickup-clearer",
+      ];
+    }
+    if (titleKey === "cho mot chut" || titleKey === "doi o day") {
+      return [
+        "polite-6",
+        "taxi-6",
+        "directions-8",
+        "v500-tran-please-wait-here",
+      ];
+    }
+    if (categoryIDs.has("food-drink")) {
+      return [
+        "ves-whats-in-this-dish",
+        "vpe-food-has-co-thit-heo-khong",
+        "vpe-food-has-co-hai-san-khong",
+        "vpe-food-has-co-dau-phong-khong",
+        "food-vegetarian",
+      ];
+    }
+    if (categoryIDs.has("hotel-accommodation")) {
+      return [
+        "hotel-1",
+        "hotel-quiet-room",
+        "hotel-8",
+        "hotel-9",
+      ];
+    }
+    if (categoryIDs.has("airport-border-arrival")) {
+      return [
+        "airport-2",
+        "airport-5",
+        "v500-airp-bord-arri-here-is-my-passport",
+        "airport-pickup-clearer",
+      ];
+    }
+    return null;
+  })();
+
+  if (!optionIDs) return null;
+  if (!["practice-pairs", "nearby-phrases", "explore-next"].includes(sectionID)) return null;
+  return compactPhraseOptions(optionIDs.map((phraseID) => phraseOptionByID(phraseID, "teal")), limit);
 }
 
 function selfPhraseOptionForPage(page) {
@@ -4004,6 +4094,14 @@ function isTaxiRideHelpPage(page) {
 
 function isDoctorComingPage(page) {
   return normalizedVietnameseKey(page.title || "") === "bac si dang den";
+}
+
+function isCashOnlyPage(page) {
+  return normalizedVietnameseKey(page.title || "") === "chi nhan tien mat";
+}
+
+function isGateChangedPage(page) {
+  return normalizedVietnameseKey(page.title || "") === "cong doi roi";
 }
 
 function mayHearContextSentence(page) {
@@ -4104,6 +4202,12 @@ function phraseSectionBody(page, section, phraseRole = "traveler_says") {
       case "at-glance":
         return mayHearContextSentence(page);
       case "good-to-know":
+        if (isCashOnlyPage(page)) {
+          return "If cards are not accepted, ask for the nearest ATM or pay in cash.";
+        }
+        if (isGateChangedPage(page)) {
+          return "Check the screen again and ask staff to confirm the new gate.";
+        }
         if (isTableAvailabilityReplyPage(page)) {
           return "To ask first, use the question form: “Bàn này còn trống không?”";
         }
@@ -4216,7 +4320,7 @@ const sectionOrderByProfile = {
   restaurant: ["at-glance", "quick-say", "place-brief", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "breakdown", "good-to-know"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
   "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
-  phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "traveler-insight", "what-happens-next", "you-may-hear", "practice-pairs", "nearby-phrases", "good-to-know", "explore-next"],
+  phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "traveler-insight", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "nearby-phrases", "explore-next"],
 };
 
 function phraseDedupKey(option) {
@@ -4231,6 +4335,45 @@ function sectionHasTravelerContent(section) {
     || (section.phrases || []).length
     || (section.breakdown || []).length
   );
+}
+
+function mergeDuplicateVisibleSections(sections) {
+  const merged = [];
+  const titleIndexes = new Map();
+
+  for (const section of sections) {
+    const titleKey = normalizeAudioText(section.title || section.id || "");
+    if (!titleKey || !titleIndexes.has(titleKey)) {
+      titleIndexes.set(titleKey, merged.length);
+      merged.push(section);
+      continue;
+    }
+
+    const existingIndex = titleIndexes.get(titleKey);
+    const existing = merged[existingIndex];
+    merged[existingIndex] = {
+      ...existing,
+      body: [existing.body, section.body].filter(Boolean).find((body) => String(body).trim()) || "",
+      phrases: compactPhraseOptions([...(existing.phrases || []), ...(section.phrases || [])], 12),
+      breakdown: compactBreakdownRows([...(existing.breakdown || []), ...(section.breakdown || [])]),
+    };
+  }
+
+  return merged;
+}
+
+function compactBreakdownRows(rows) {
+  const seen = new Set();
+  const compacted = [];
+
+  for (const row of rows || []) {
+    const key = `${normalizeAudioText(row?.vietnamese || "")}|${normalizeAudioText(row?.english || "")}`;
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    compacted.push(row);
+  }
+
+  return compacted;
 }
 
 function isBaNaHillsPage(page) {
@@ -4293,6 +4436,9 @@ function rewriteBaNaHillsJourneySections(page, sections) {
 function sectionPhraseFilter(page, section, profile, phrase) {
   if (!isNameBasedProfile(profile)) return true;
   if (section.id === "explore-next") return optionMatchesPageName(phrase, page);
+  if (profile === "street" && ["place-brief", "use-it-with", "when-to-use"].includes(section.id)) {
+    return optionMatchesPageName(phrase, page);
+  }
   if (profile === "place" && ["place-brief", "use-it-with", "when-to-use"].includes(section.id)) {
     return optionMatchesPageName(phrase, page);
   }
@@ -4322,12 +4468,13 @@ function normalizeTravelerSections(page, sections, profile) {
   });
 
   const order = sectionOrderByProfile[profile] || sectionOrderByProfile.phrase;
-  return deduped.sort((left, right) => {
+  const sorted = deduped.sort((left, right) => {
     const leftIndex = order.includes(left.id) ? order.indexOf(left.id) : order.length;
     const rightIndex = order.includes(right.id) ? order.indexOf(right.id) : order.length;
     if (leftIndex !== rightIndex) return leftIndex - rightIndex;
     return 0;
   });
+  return mergeDuplicateVisibleSections(sorted);
 }
 
 function shortenBodyForMobile(body) {

@@ -332,7 +332,12 @@ enum BrowseSearchDestinations {
             categoryIDs: ["food-drink", "money-numbers-prices"],
             symbolName: "takeoutbag.and.cup.and.straw.fill",
             tintName: .orange,
-            sampleQuery: "food allergies"
+            sampleQuery: "food allergies",
+            preferredPageIDs: [
+                "viet-family-food-need-table",
+                "viet-family-food-menu",
+                "viet-family-service-water",
+            ]
         ),
         BrowseDestination(
             id: "getting-around",

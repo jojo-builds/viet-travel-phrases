@@ -307,3 +307,114 @@ final class ListingLatestFeedbackProofUITests: XCTestCase {
         return app.staticTexts.matching(predicate).firstMatch
     }
 }
+
+final class ListingHubRandomLoopProofUITests: XCTestCase {
+    private let proofDirectory = URL(
+        fileURLWithPath: ProcessInfo.processInfo.environment["SPEAKLOCAL_LISTING_HUB_RANDOM_LOOP_PROOF_DIR"]
+            ?? "/Users/jojolim/Developer/products/speaklocal/app-family/native-ios/artifacts/TASK-VIET-LISTING-HUB-RANDOM-LOOP-001",
+        isDirectory: true
+    )
+
+    private let hubPages: [(label: String, arguments: [String], title: String, requiredTexts: [String])] = [
+        ("all-vietnam", ["--browse-category", "city-guides"], "All Vietnam", ["Start here", "City guides", "Practice Vietnam basics"]),
+        ("hanoi", ["--browse-city", "hanoi"], "Hanoi", ["What are you doing?", "Practice a Hanoi day", "Names to know", "Quick phrases"]),
+        ("saigon", ["--browse-city", "hcmc"], "Saigon", ["What are you doing?", "Practice a Saigon day", "Names to know", "Quick phrases"]),
+        ("hoi-an", ["--browse-city", "hoian"], "Hoi An", ["What are you doing?", "Practice a Hoi An day", "Names to know", "Quick phrases"]),
+        ("hue", ["--browse-city", "hue"], "Hue", ["What are you doing?", "Practice a Hue day", "Names to know", "Quick phrases"]),
+        ("airport-topic", ["--browse-category", "airport"], "Airport", ["Good first phrases", "Practice Airport"]),
+        ("hotel-topic", ["--browse-category", "hotel"], "Hotel", ["At the hotel desk", "Practice Hotel"]),
+        ("food-topic", ["--browse-category", "food"], "Food", ["Start at the table", "A table for two", "Can I see the menu?", "Practice Food"]),
+        ("getting-around-topic", ["--browse-category", "getting-around"], "Getting Around", ["Start here", "Practice Getting Around"]),
+        ("local-greetings-topic", ["--browse-category", "local-greetings"], "Local Greetings", ["Start here", "Practice Local Greetings"]),
+    ]
+
+    private let detailPages: [(label: String, pageID: String, title: String, requiredTexts: [String])] = [
+        ("excuse-sorry", "viet-excuse-sorry", "Xin lỗi", ["Break it down", "Common follow-ups", "Good to know", "Next phrases"]),
+        ("cash-only", "viet-family-vpe-likely-replies-chi-nhan-tien-mat", "Chỉ nhận tiền mặt", ["You may hear", "Related replies", "Can I pay by card?", "nearest ATM"]),
+        ("gate-changed", "viet-family-vpe-likely-replies-cong-doi-roi", "Cổng đổi rồi", ["You may hear", "confirm the new gate", "Where is the boarding gate?"]),
+        ("atm-cathedral", "viet-family-city-danang-atm-cathedral", "Có ATM gần Nhà thờ Con Gà Đà Nẵng không?", ["Break it down", "Related phrases", "Tip"]),
+        ("vo-nguyen-giap", "viet-family-city-danang-place-vo-nguyen-giap-street", "Đường Võ Nguyên Giáp", ["About", "Hear the street", "Driver phrases", "Confirm"]),
+        ("hang-bac", "viet-family-city-hanoi-place-hang-bac-street", "Phố Hàng Bạc", ["About", "Hear the street", "Driver phrases", "Good to know"]),
+        ("golden-bridge", "viet-family-city-danang-place-golden-bridge", "Cầu Vàng", ["About", "Hear the name", "Getting there", "Good to know"]),
+        ("pho-hoa-pasteur", "viet-family-city-hcmc-place-pho-hoa-pasteur", "Phở Hòa Pasteur", ["Getting there", "Table & menu", "Order", "Pay"]),
+        ("banh-mi-phuong", "viet-family-city-hoian-place-banh-mi-phuong", "Bánh mì Phượng", ["Getting there", "Table & menu", "Drinks", "Pay"]),
+        ("take-me-here", "viet-family-transport-destination", "Cho tôi tới đây", ["Break it down", "Common follow-ups", "More ride phrases"]),
+        ("fare", "viet-family-transport-fare", "Tiền xe bao nhiêu?", ["Break it down", "Common follow-ups", "Good to know"]),
+    ]
+
+    func testCaptureHubPagesForCityCountryTopicQA() {
+        try? FileManager.default.createDirectory(at: proofDirectory, withIntermediateDirectories: true)
+
+        for hub in hubPages {
+            let app = XCUIApplication()
+            app.launchArguments = hub.arguments
+            app.launch()
+
+            XCTAssertTrue(app.staticTexts[hub.title].waitForExistence(timeout: 8), "\(hub.title) did not appear.")
+            capture(name: "hub-\(hub.label)-top.png")
+
+            for text in hub.requiredTexts {
+                scrollUntilExists(app: app, text: text)
+            }
+
+            XCTAssertFalse(app.staticTexts["Practice nearby"].exists, "Practice nearby should not render on \(hub.label).")
+            XCTAssertFalse(app.staticTexts["Nearby needs"].exists, "Nearby needs should not render on \(hub.label).")
+
+            app.swipeUp()
+            app.swipeUp()
+            capture(name: "hub-\(hub.label)-middle.png")
+
+            app.terminate()
+        }
+    }
+
+    func testCaptureFreshDiverseListingLoopPages() {
+        try? FileManager.default.createDirectory(at: proofDirectory, withIntermediateDirectories: true)
+
+        for (index, page) in detailPages.enumerated() {
+            let app = XCUIApplication()
+            app.launchArguments = ["--detail-page", page.pageID]
+            app.launch()
+
+            XCTAssertTrue(app.staticTexts[page.title].waitForExistence(timeout: 8), "\(page.title) did not appear.")
+            capture(name: String(format: "listing-%02d-%@-top.png", index + 1, page.label))
+
+            for text in page.requiredTexts {
+                scrollUntilExists(app: app, text: text)
+            }
+
+            XCTAssertFalse(app.staticTexts["Practice nearby"].exists, "Practice nearby should not render on \(page.label).")
+            XCTAssertFalse(app.staticTexts["Nearby needs"].exists, "Nearby needs should not render on \(page.label).")
+
+            app.swipeUp()
+            app.swipeUp()
+            capture(name: String(format: "listing-%02d-%@-middle.png", index + 1, page.label))
+
+            app.terminate()
+        }
+    }
+
+    private func capture(name: String) {
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: proofDirectory.appendingPathComponent(name))
+    }
+
+    private func scrollUntilExists(app: XCUIApplication, text: String, maxSwipes: Int = 10) {
+        for _ in 0..<maxSwipes {
+            let element = matchingStaticText(app: app, text: text)
+            if element.exists {
+                return
+            }
+            app.swipeUp()
+        }
+        XCTAssertTrue(matchingStaticText(app: app, text: text).exists, "\(text) did not become available")
+    }
+
+    private func matchingStaticText(app: XCUIApplication, text: String) -> XCUIElement {
+        let exact = app.staticTexts[text]
+        if exact.exists {
+            return exact
+        }
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
+        return app.staticTexts.matching(predicate).firstMatch
+    }
+}

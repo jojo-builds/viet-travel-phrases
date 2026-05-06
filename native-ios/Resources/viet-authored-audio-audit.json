@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-05T22:53:26.515Z",
+    "generatedAt": "2026-05-06T00:29:20.526Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 750,
     "editorialSupportPageCount": 32,
@@ -171,7 +171,7 @@
     },
     {
       "pageID": "viet-excuse-sorry",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "breakdown-viet-hello-ba-full",
       "text": "Chào bà",
@@ -179,7 +179,7 @@
     },
     {
       "pageID": "viet-excuse-sorry",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "breakdown-viet-hello-chu-full",
       "text": "Chào chú",
@@ -187,7 +187,7 @@
     },
     {
       "pageID": "viet-excuse-sorry",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "breakdown-viet-hello-co-full",
       "text": "Chào cô",
@@ -195,7 +195,7 @@
     },
     {
       "pageID": "viet-excuse-sorry",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "breakdown-food-5-first",
       "text": "Có",
@@ -1123,7 +1123,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "food-6",
       "text": "Cho tôi muỗng với đũa",
@@ -1131,7 +1131,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "food-7",
       "text": "Gói mang về",
@@ -1139,7 +1139,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "food-vegetarian",
       "text": "Tôi ăn chay",
@@ -1147,7 +1147,7 @@
     },
     {
       "pageID": "viet-family-food-coffee-milk",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "food-peanut-allergy",
       "text": "Tôi bị dị ứng đậu phộng",
@@ -2939,7 +2939,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "smalltalk-5",
       "text": "Đồ ăn ngon quá",
@@ -2947,7 +2947,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "smalltalk-6",
       "text": "Thời tiết nóng quá",
@@ -2955,7 +2955,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "smalltalk-7",
       "text": "Bạn khỏe không?",
@@ -2963,7 +2963,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "audio-phrase-di-dau-day",
       "text": "Đi đâu đấy?",
@@ -2971,7 +2971,7 @@
     },
     {
       "pageID": "viet-family-social-from-us",
-      "sectionID": "explore-next",
+      "sectionID": "nearby-phrases",
       "kind": "phrase",
       "audioKey": "audio-phrase-rat-vui-duoc-gap-ban",
       "text": "Rất vui được gặp bạn",
@@ -19930,41 +19930,9 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-mang-yeu-cf4004305e",
-      "text": "Mạng yếu",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-mat-khau-o-day-79842cb508",
-      "text": "Mật khẩu ở đây",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-may-bi-loi-bb50fe7e84",
-      "text": "Máy bị lỗi",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-nha-thuoc-o-gan-day-4023f4f0cc",
-      "text": "Nhà thuốc ở gần đây",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "explore-next",
-      "kind": "phrase",
+      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
+      "sectionID": "hero",
+      "kind": "hero",
       "audioKey": "audio-authored-cho-mot-chut-f23bb6c852",
       "text": "Chờ một chút",
       "resolved": false
@@ -19978,59 +19946,11 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-con-75f5cf26ec",
-      "text": "Còn",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-dung-roi-030334c5fa",
-      "text": "Đúng rồi",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-het-roi-05417ff796",
-      "text": "Hết rồi",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khong-co-8d5f260f89",
-      "text": "Không có",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khong-duoc-6eb02f1bf7",
-      "text": "Không được",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-vpe-likely-replies-co-phong-khac",
       "sectionID": "hero",
       "kind": "hero",
       "audioKey": "audio-authored-co-phong-khac-6fa11a8728",
       "text": "Có phòng khác",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-co-phong-khac",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-le-tan-se-giup-25299d5d32",
-      "text": "Lễ tân sẽ giúp",
       "resolved": false
     },
     {
@@ -20042,35 +19962,11 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "breakdown-v500-tran-please-go-straight-rest",
-      "text": "Đi thẳng",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-o-ben-phai-a84855380c",
-      "text": "Ở bên phải",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-o-ben-trai-ca1634a376",
-      "text": "Ở bên trái",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-tinh-tien-o-quay-6db664b73e",
-      "text": "Tính tiền ở quầy",
+      "pageID": "viet-family-vpe-likely-replies-con",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-con-75f5cf26ec",
+      "text": "Còn",
       "resolved": false
     },
     {
@@ -20079,6 +19975,22 @@
       "kind": "phrase",
       "audioKey": "audio-authored-doi-o-day-697ddd297d",
       "text": "Đợi ở đây",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-con",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dung-roi-030334c5fa",
+      "text": "Đúng rồi",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-con",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-khong-co-8d5f260f89",
+      "text": "Không có",
       "resolved": false
     },
     {
@@ -20111,6 +20023,22 @@
       "kind": "breakdown",
       "audioKey": "breakdown-v500-airp-bord-arri-where-is-gate-10-subject-1",
       "text": "Cổng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-cong-doi-roi",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cong-len-may-bay-o-dau-3113ee0b88",
+      "text": "cổng lên máy bay ở đâu?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-di-thang",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "breakdown-v500-tran-please-go-straight-rest",
+      "text": "Đi thẳng",
       "resolved": true
     },
     {
@@ -20154,38 +20082,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-doi-o-day",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khoang-muoi-phut-c5a3cfd49e",
-      "text": "Khoảng mười phút",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-doi-o-day",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khong-xa-004f44bdb4",
-      "text": "Không xa",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-doi-o-day",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-len-xe-nay-d2729ed3ab",
-      "text": "Lên xe này",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-doi-o-day",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-qua-duong-dc985f4cee",
-      "text": "Qua đường",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-vpe-likely-replies-dong-cua-roi",
       "sectionID": "hero",
       "kind": "hero",
@@ -20200,6 +20096,14 @@
       "audioKey": "breakdown-v900-time-date-book-is-it-closed-on-mondays-piece-3",
       "text": "Đóng",
       "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-dong-cua-roi",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-may-bi-loi-bb50fe7e84",
+      "text": "Máy bị lỗi",
+      "resolved": false
     },
     {
       "pageID": "viet-family-vpe-likely-replies-dong-cua-roi",
@@ -20242,11 +20146,19 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-dua-ho-chieu-ra",
+      "pageID": "viet-family-vpe-likely-replies-dung-roi",
       "sectionID": "practice-pairs",
       "kind": "phrase",
-      "audioKey": "audio-authored-lay-hanh-ly-o-kia-6f42720a0b",
-      "text": "Lấy hành lý ở kia",
+      "audioKey": "audio-authored-len-xe-nay-d2729ed3ab",
+      "text": "Lên xe này",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-dung-roi",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-qua-duong-dc985f4cee",
+      "text": "Qua đường",
       "resolved": false
     },
     {
@@ -20255,6 +20167,22 @@
       "kind": "hero",
       "audioKey": "audio-authored-gan-day-5c3d644b14",
       "text": "Gần đây",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-gan-day",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-het-roi-05417ff796",
+      "text": "Hết rồi",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-gan-day",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-khong-duoc-6eb02f1bf7",
+      "text": "Không được",
       "resolved": false
     },
     {
@@ -20279,6 +20207,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-giu-binh-tinh-e2f217e63b",
       "text": "Giữ bình tĩnh",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-giu-binh-tinh",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-lay-hanh-ly-o-kia-6f42720a0b",
+      "text": "Lấy hành lý ở kia",
       "resolved": false
     },
     {
@@ -20307,6 +20243,14 @@
     },
     {
       "pageID": "viet-family-vpe-likely-replies-khoang-muoi-phut",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-khoang-muoi-phut-c5a3cfd49e",
+      "text": "Khoảng mười phút",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-khoang-muoi-phut",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-taxi-6-piece-4",
@@ -20331,6 +20275,14 @@
     },
     {
       "pageID": "viet-family-vpe-likely-replies-khong-xa",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-khong-xa-004f44bdb4",
+      "text": "Không xa",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-khong-xa",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-v900-hote-acco-can-i-have-a-room-away-from-the-street-piece-8",
@@ -20347,6 +20299,14 @@
     },
     {
       "pageID": "viet-family-vpe-likely-replies-le-tan-se-giup",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-le-tan-se-giup-25299d5d32",
+      "text": "Lễ tân sẽ giúp",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-le-tan-se-giup",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-v500-loca-serv-ever-task-how-long-will-it-take-first",
@@ -20360,6 +20320,30 @@
       "audioKey": "breakdown-time-7-piece-5",
       "text": "Lên",
       "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mang-yeu",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-mang-yeu-cf4004305e",
+      "text": "Mạng yếu",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mang-yeu",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-mat-khau-o-day-79842cb508",
+      "text": "Mật khẩu ở đây",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mang-yeu",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-nha-thuoc-o-gan-day-4023f4f0cc",
+      "text": "Nhà thuốc ở gần đây",
+      "resolved": false
     },
     {
       "pageID": "viet-family-vpe-likely-replies-mat-khoang-nam-phut",
@@ -20403,6 +20387,14 @@
     },
     {
       "pageID": "viet-family-vpe-likely-replies-o-ben-phai",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-o-ben-phai-a84855380c",
+      "text": "Ở bên phải",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-o-ben-phai",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "breakdown-v900-tran-the-entrance-is-on-the-other-side-piece-6",
@@ -20416,6 +20408,14 @@
       "audioKey": "breakdown-v500-time-date-book-how-long-does-it-take-first",
       "text": "phải",
       "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-o-ben-trai",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-o-ben-trai-ca1634a376",
+      "text": "Ở bên trái",
+      "resolved": false
     },
     {
       "pageID": "viet-family-vpe-likely-replies-o-phia-sau",
@@ -20456,6 +20456,14 @@
       "audioKey": "breakdown-authored-quet-f98989a914",
       "text": "Quẹt",
       "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-tinh-tien-o-quay",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-tinh-tien-o-quay-6db664b73e",
+      "text": "Tính tiền ở quầy",
+      "resolved": false
     },
     {
       "pageID": "viet-family-vpe-likely-replies-xa-lam",
@@ -27015,14 +27023,6 @@
       "kind": "phrase",
       "audioKey": "audio-authored-quan-ca-phe-o-dau-4ccd40d886",
       "text": "quán cà phê ở đâu?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-where-place-buu-dien-o-dau",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cong-len-may-bay-o-dau-3113ee0b88",
-      "text": "cổng lên máy bay ở đâu?",
       "resolved": false
     },
     {
@@ -37228,83 +37228,11 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-mang-yeu-cf4004305e",
-      "text": "Mạng yếu",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-mat-khau-o-day-79842cb508",
-      "text": "Mật khẩu ở đây",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-may-bi-loi-bb50fe7e84",
-      "text": "Máy bị lỗi",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-nha-thuoc-o-gan-day-4023f4f0cc",
-      "text": "Nhà thuốc ở gần đây",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
-      "sectionID": "explore-next",
-      "kind": "phrase",
+      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
+      "sectionID": "hero",
+      "kind": "hero",
       "audioKey": "audio-authored-cho-mot-chut-f23bb6c852",
       "text": "Chờ một chút",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-con-75f5cf26ec",
-      "text": "Còn",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-dung-roi-030334c5fa",
-      "text": "Đúng rồi",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-het-roi-05417ff796",
-      "text": "Hết rồi",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khong-co-8d5f260f89",
-      "text": "Không có",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-cho-mot-chut",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khong-duoc-6eb02f1bf7",
-      "text": "Không được",
       "resolved": false
     },
     {
@@ -37316,14 +37244,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-co-phong-khac",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-le-tan-se-giup-25299d5d32",
-      "text": "Lễ tân sẽ giúp",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
       "sectionID": "hero",
       "kind": "hero",
@@ -37332,27 +37252,11 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-o-ben-phai-a84855380c",
-      "text": "Ở bên phải",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-o-ben-trai-ca1634a376",
-      "text": "Ở bên trái",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-co-thit-heo",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-tinh-tien-o-quay-6db664b73e",
-      "text": "Tính tiền ở quầy",
+      "pageID": "viet-family-vpe-likely-replies-con",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-con-75f5cf26ec",
+      "text": "Còn",
       "resolved": false
     },
     {
@@ -37361,6 +37265,22 @@
       "kind": "phrase",
       "audioKey": "audio-authored-doi-o-day-697ddd297d",
       "text": "Đợi ở đây",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-con",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dung-roi-030334c5fa",
+      "text": "Đúng rồi",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-con",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-khong-co-8d5f260f89",
+      "text": "Không có",
       "resolved": false
     },
     {
@@ -37388,6 +37308,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-vpe-likely-replies-cong-doi-roi",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cong-len-may-bay-o-dau-3113ee0b88",
+      "text": "cổng lên máy bay ở đâu?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-vpe-likely-replies-di-thang",
       "sectionID": "practice-pairs",
       "kind": "phrase",
@@ -37412,43 +37340,19 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-doi-o-day",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khoang-muoi-phut-c5a3cfd49e",
-      "text": "Khoảng mười phút",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-doi-o-day",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-khong-xa-004f44bdb4",
-      "text": "Không xa",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-doi-o-day",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-len-xe-nay-d2729ed3ab",
-      "text": "Lên xe này",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-likely-replies-doi-o-day",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-qua-duong-dc985f4cee",
-      "text": "Qua đường",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-vpe-likely-replies-dong-cua-roi",
       "sectionID": "hero",
       "kind": "hero",
       "audioKey": "audio-authored-dong-cua-roi-ecb1159d12",
       "text": "Đóng cửa rồi",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-dong-cua-roi",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-may-bi-loi-bb50fe7e84",
+      "text": "Máy bị lỗi",
       "resolved": false
     },
     {
@@ -37484,11 +37388,19 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-vpe-likely-replies-dua-ho-chieu-ra",
+      "pageID": "viet-family-vpe-likely-replies-dung-roi",
       "sectionID": "practice-pairs",
       "kind": "phrase",
-      "audioKey": "audio-authored-lay-hanh-ly-o-kia-6f42720a0b",
-      "text": "Lấy hành lý ở kia",
+      "audioKey": "audio-authored-len-xe-nay-d2729ed3ab",
+      "text": "Lên xe này",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-dung-roi",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-qua-duong-dc985f4cee",
+      "text": "Qua đường",
       "resolved": false
     },
     {
@@ -37497,6 +37409,22 @@
       "kind": "hero",
       "audioKey": "audio-authored-gan-day-5c3d644b14",
       "text": "Gần đây",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-gan-day",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-het-roi-05417ff796",
+      "text": "Hết rồi",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-gan-day",
+      "sectionID": "practice-pairs",
+      "kind": "phrase",
+      "audioKey": "audio-authored-khong-duoc-6eb02f1bf7",
+      "text": "Không được",
       "resolved": false
     },
     {
@@ -37524,6 +37452,22 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-vpe-likely-replies-giu-binh-tinh",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-lay-hanh-ly-o-kia-6f42720a0b",
+      "text": "Lấy hành lý ở kia",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-khoang-muoi-phut",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-khoang-muoi-phut-c5a3cfd49e",
+      "text": "Khoảng mười phút",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-vpe-likely-replies-khoang-muoi-phut",
       "sectionID": "practice-pairs",
       "kind": "phrase",
@@ -37540,11 +37484,67 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-vpe-likely-replies-khong-xa",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-khong-xa-004f44bdb4",
+      "text": "Không xa",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-le-tan-se-giup",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-le-tan-se-giup-25299d5d32",
+      "text": "Lễ tân sẽ giúp",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mang-yeu",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-mang-yeu-cf4004305e",
+      "text": "Mạng yếu",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mang-yeu",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-mat-khau-o-day-79842cb508",
+      "text": "Mật khẩu ở đây",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-mang-yeu",
+      "sectionID": "explore-next",
+      "kind": "phrase",
+      "audioKey": "audio-authored-nha-thuoc-o-gan-day-4023f4f0cc",
+      "text": "Nhà thuốc ở gần đây",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-vpe-likely-replies-mon-nay-cay",
       "sectionID": "hero",
       "kind": "hero",
       "audioKey": "audio-authored-mon-nay-cay-6faa0700e6",
       "text": "Món này cay",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-o-ben-phai",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-o-ben-phai-a84855380c",
+      "text": "Ở bên phải",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-o-ben-trai",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-o-ben-trai-ca1634a376",
+      "text": "Ở bên trái",
       "resolved": false
     },
     {
@@ -37561,6 +37561,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-phong-chua-san-sang-d8cea48a06",
       "text": "Phòng chưa sẵn sàng",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-likely-replies-tinh-tien-o-quay",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-tinh-tien-o-quay-6db664b73e",
+      "text": "Tính tiền ở quầy",
       "resolved": false
     },
     {
@@ -44025,14 +44033,6 @@
       "kind": "phrase",
       "audioKey": "audio-authored-quan-ca-phe-o-dau-4ccd40d886",
       "text": "quán cà phê ở đâu?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-vpe-where-place-buu-dien-o-dau",
-      "sectionID": "practice-pairs",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cong-len-may-bay-o-dau-3113ee0b88",
-      "text": "cổng lên máy bay ở đâu?",
       "resolved": false
     },
     {
