@@ -633,24 +633,37 @@ struct AppShellView: View {
     }
 
     private func dockCluster(chrome: AppChrome) -> some View {
-        HStack(spacing: AppChromeLayout.dockItemSpacing) {
-            ForEach(chrome.primaryDockItems, id: \.self) { item in
-                Button {
-                    performDockAction(item)
-                } label: {
-                    AppShellDockItem(
-                        kind: item,
-                        selected: item == chrome.selectedDockItem,
-                        chromeNamespace: chromeNamespace,
-                        isMorphSource: item == chrome.selectedDockItem
-                    )
+        let selectedIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
+
+        return ZStack(alignment: .leading) {
+            AppShellDockSelectionLens(chromeNamespace: chromeNamespace)
+                .offset(x: dockSelectionLensXOffset(selectedIndex: selectedIndex))
+                .animation(
+                    .snappy(duration: AppChromeLayout.dockSelectionMorphDuration, extraBounce: 0.13),
+                    value: selectedIndex
+                )
+                .zIndex(AppChromeLayout.dockSelectionLensZIndex)
+
+            HStack(spacing: AppChromeLayout.dockItemSpacing) {
+                ForEach(chrome.primaryDockItems, id: \.self) { item in
+                    Button {
+                        performDockAction(item)
+                    } label: {
+                        AppShellDockItem(
+                            kind: item,
+                            selected: item == chrome.selectedDockItem,
+                            chromeNamespace: chromeNamespace,
+                            isMorphSource: item == chrome.selectedDockItem
+                        )
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(item.title)
+                    .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
+                    .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
+                    .contentShape(Rectangle())
                 }
-                .buttonStyle(.plain)
-                .accessibilityLabel(item.title)
-                .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
-                .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
-                .contentShape(Rectangle())
             }
+            .zIndex(AppChromeLayout.dockItemForegroundZIndex)
         }
         .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
         .padding(.vertical, AppChromeLayout.dockVerticalPadding)
@@ -658,6 +671,11 @@ struct AppShellView: View {
         .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
         .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
         .zIndex(AppChromeLayout.dockMorphZIndex)
+    }
+
+    private func dockSelectionLensXOffset(selectedIndex: Int) -> CGFloat {
+        CGFloat(selectedIndex) * (AppChromeLayout.dockItemWidth + AppChromeLayout.dockItemSpacing)
+            + (AppChromeLayout.dockItemWidth - AppChromeLayout.dockSelectionWidth) / 2
     }
 
     private var collapsedSearchButton: some View {
@@ -2033,30 +2051,15 @@ private struct AppShellDockItem: View {
     var isMorphSource = false
 
     var body: some View {
-        ZStack {
-            if selected {
-                selectedLens
-            }
+        VStack(spacing: 3) {
+            icon
 
-            VStack(spacing: 3) {
-                icon
-
-                Text(kind.title)
-                    .font(.caption2.weight(.semibold))
-            }
-            .foregroundStyle(selected ? .red : .secondary)
+            Text(kind.title)
+                .font(.caption2.weight(.semibold))
         }
+        .foregroundStyle(selected ? .red : .secondary)
         .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
         .contentShape(Rectangle())
-    }
-
-    private var selectedLens: some View {
-        RoundedRectangle(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, style: .continuous)
-            .fill(.white.opacity(0.16))
-            .frame(width: AppChromeLayout.dockSelectionWidth, height: AppChromeLayout.dockSelectionHeight)
-            .nativeGlass(cornerRadius: AppChromeLayout.dockSelectionCornerRadius)
-            .chromeMorph(AppChromeMorphID.dockSelection, namespace: chromeNamespace, isSource: true)
-            .accessibilityHidden(true)
     }
 
     @ViewBuilder
@@ -2069,6 +2072,53 @@ private struct AppShellDockItem: View {
         } else {
             image
         }
+    }
+}
+
+private struct AppShellDockSelectionLens: View {
+    var chromeNamespace: Namespace.ID?
+
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, style: .continuous)
+                .fill(.white.opacity(0.20))
+
+            LinearGradient(
+                colors: [
+                    .white.opacity(0.54),
+                    .white.opacity(0.16),
+                    Color(red: 0.28, green: 0.68, blue: 1.0).opacity(0.18),
+                    Color(red: 1.0, green: 0.88, blue: 0.28).opacity(0.16),
+                    .white.opacity(0.28),
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .blendMode(.screen)
+
+            LinearGradient(
+                colors: [
+                    .white.opacity(0.0),
+                    .white.opacity(0.40),
+                    .white.opacity(0.0),
+                ],
+                startPoint: .leading,
+                endPoint: .trailing
+            )
+            .offset(x: -8)
+            .blendMode(.screen)
+
+            RoundedRectangle(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, style: .continuous)
+                .stroke(.white.opacity(0.62), lineWidth: 1)
+        }
+        .frame(width: AppChromeLayout.dockSelectionWidth, height: AppChromeLayout.dockSelectionHeight)
+        .clipShape(RoundedRectangle(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, style: .continuous))
+        .nativeGlass(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, tint: .white, interactive: true)
+        .nativeGlassMorphID(AppChromeMorphID.dockSelection, namespace: chromeNamespace)
+        .shadow(color: .white.opacity(0.34), radius: 14, x: 0, y: 0)
+        .shadow(color: .black.opacity(0.10), radius: 16, x: 0, y: 8)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 }
 

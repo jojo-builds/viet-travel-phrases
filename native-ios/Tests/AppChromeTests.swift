@@ -52,6 +52,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth)
         XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionHeight, AppChromeLayout.searchIslandSize)
         XCTAssertEqual(AppChromeLayout.dockSelectionCornerRadius, AppChromeLayout.dockSelectionHeight / 2)
+        XCTAssertGreaterThan(AppChromeLayout.dockItemForegroundZIndex, AppChromeLayout.dockSelectionLensZIndex)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.40)
     }
 
     func testSearchAndSelectedDockIconsUseDistinctForegroundMorphIDs() {

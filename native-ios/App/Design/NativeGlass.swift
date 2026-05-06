@@ -150,6 +150,7 @@ enum AppChromeLayout {
     static let dockSelectionWidth: CGFloat = 58
     static let dockSelectionHeight: CGFloat = 44
     static let dockSelectionCornerRadius: CGFloat = 22
+    static let dockSelectionMorphDuration = 0.42
     static let dockHorizontalPadding: CGFloat = 10
     static let dockVerticalPadding: CGFloat = 3
     static let dockCornerRadius: CGFloat = 26
@@ -163,6 +164,8 @@ enum AppChromeLayout {
     static let searchOriginMorphZIndex: Double = 4
     static let keyboardDismissMorphZIndex: Double = 5
     static let searchForegroundMorphZIndex: Double = 6
+    static let dockSelectionLensZIndex: Double = 1
+    static let dockItemForegroundZIndex: Double = 2
     static let searchFieldIconSlotWidth: CGFloat = 24
     static let topAdminHorizontalPadding: CGFloat = 24
     static let topAdminTopPadding: CGFloat = 10
