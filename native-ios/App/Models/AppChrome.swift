@@ -119,7 +119,7 @@ final class LocalUserIntentStore: ObservableObject {
         static let practicePageIDs = "SpeakLocal.LocalIntent.practicePageIDs.v1"
     }
 
-    init(defaults: UserDefaults = .standard) {
+    init(defaults: UserDefaults = .standard, launchArguments: [String] = ProcessInfo.processInfo.arguments) {
         self.defaults = defaults
 
         let loadedRecentPages = Self.load([RecentPhrasePage].self, key: Key.recentPages, defaults: defaults) ?? []
@@ -129,6 +129,17 @@ final class LocalUserIntentStore: ObservableObject {
         recentPages = Self.canonicalizedRecentPages(loadedRecentPages)
         savedPageIDs = Self.canonicalizedPageIDs(loadedSavedPageIDs)
         practicePageIDs = Self.canonicalizedPageIDs(loadedPracticePageIDs)
+
+#if DEBUG
+        if launchArguments.contains("--seed-returning-user-shelves") {
+            recentPages = Self.returningUserShelfSeedRecentPages
+            savedPageIDs = Self.returningUserShelfSeedSavedPageIDs
+            practicePageIDs = Self.returningUserShelfSeedPracticePageIDs
+            persist(recentPages, key: Key.recentPages)
+            persist(savedPageIDs, key: Key.savedPageIDs)
+            persist(practicePageIDs, key: Key.practicePageIDs)
+        }
+#endif
 
         if recentPages != loadedRecentPages {
             persist(recentPages, key: Key.recentPages)
@@ -286,4 +297,24 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     private static let maxRecentPages = 12
+
+#if DEBUG
+    private static let returningUserShelfSeedRecentPages: [RecentPhrasePage] = [
+        RecentPhrasePage(pageID: "viet-phrase-hello-chao-anh", openedAt: Date(timeIntervalSinceReferenceDate: 800_000_000), source: .home),
+        RecentPhrasePage(pageID: "viet-phrase-polite-2", openedAt: Date(timeIntervalSinceReferenceDate: 799_999_000), source: .search),
+    ]
+
+    private static let returningUserShelfSeedSavedPageIDs = LocalUserIntentStore.canonicalizedPageIDs([
+        "viet-phrase-polite-2",
+        "viet-phrase-problems-2",
+    ])
+
+    private static let returningUserShelfSeedPracticePageIDs = LocalUserIntentStore.canonicalizedPageIDs([
+        "viet-phrase-problems-2",
+        "viet-phrase-polite-2",
+        "viet-phrase-hello-chao-anh",
+        "viet-phrase-hello-chao-chi",
+        "viet-phrase-hello-chao-em",
+    ])
+#endif
 }

@@ -284,11 +284,15 @@ struct BrowsePageView: View {
     }
 }
 
-private enum BrowsePageLayout {
+enum BrowsePageLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 26
     static let cardCornerRadius: CGFloat = 22
     static let bottomChromeContentClearance: CGFloat = 224
+    static let nextShelfRowHeight: CGFloat = 108
+    static let nextShelfIconSize: CGFloat = 48
+    static let nextShelfRowPadding: CGFloat = 14
+    static let nextShelfRowSpacing: CGFloat = 14
     static let situationColumns = [
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12),
@@ -552,34 +556,45 @@ private struct BrowseNextShelfRow: View {
 
     var body: some View {
         Button(action: row.action) {
-            HStack(spacing: 14) {
+            HStack(spacing: BrowsePageLayout.nextShelfRowSpacing) {
                 Image(systemName: row.symbolName)
                     .font(.headline.weight(.semibold))
                     .foregroundStyle(row.tintName.color)
-                    .frame(width: 48, height: 48)
-                    .nativeGlass(cornerRadius: 24, tint: row.tintName.color.opacity(0.16), interactive: true)
+                    .frame(width: BrowsePageLayout.nextShelfIconSize, height: BrowsePageLayout.nextShelfIconSize)
+                    .nativeGlass(
+                        cornerRadius: BrowsePageLayout.nextShelfIconSize / 2,
+                        tint: row.tintName.color.opacity(0.16),
+                        interactive: true
+                    )
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(row.title)
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
                         .lineLimit(1)
+                        .minimumScaleFactor(0.82)
 
                     Text(row.subtitle)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
+                        .minimumScaleFactor(0.86)
                 }
                 .layoutPriority(1)
+
+                Spacer(minLength: 8)
 
                 Image(systemName: "chevron.right")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.tertiary)
             }
-            .padding(14)
+            .padding(BrowsePageLayout.nextShelfRowPadding)
+            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.nextShelfRowHeight, maxHeight: BrowsePageLayout.nextShelfRowHeight, alignment: .leading)
             .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)
+        .frame(maxWidth: .infinity)
+        .accessibilityIdentifier("Browse.NextShelf.\(row.id)")
     }
 }
 

@@ -77,6 +77,31 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
     }
 
+    func testBrowseNextShelvesUseUniformCardFrames() {
+        let app = launchApp(arguments: ["--browse", "--seed-returning-user-shelves"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+
+        let savedRow = app.buttons["Browse.NextShelf.saved"]
+        let practiceRow = app.buttons["Browse.NextShelf.practice"]
+        let recentRow = app.buttons["Browse.NextShelf.recent"]
+
+        scrollUntilHittable(recentRow, app: app)
+
+        XCTAssertTrue(savedRow.exists)
+        XCTAssertTrue(practiceRow.exists)
+        XCTAssertTrue(recentRow.exists)
+
+        let rowFrames = [savedRow.frame, practiceRow.frame, recentRow.frame]
+        for frame in rowFrames {
+            XCTAssertGreaterThan(frame.width, 300)
+            XCTAssertEqual(frame.height, rowFrames[0].height, accuracy: 1)
+            XCTAssertEqual(frame.width, rowFrames[0].width, accuracy: 1)
+        }
+
+        captureBrowseNextShelvesProofIfRequested()
+    }
+
     func testSearchOpensWithoutKeyboardUntilFieldTap() {
         let app = XCUIApplication()
         app.launch()
@@ -142,5 +167,36 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTFail("Element was not hittable: \(element)", file: file, line: line)
+    }
+
+    private func scrollUntilHittable(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        for _ in 0..<8 {
+            if element.waitForExistence(timeout: 1), element.isHittable {
+                return
+            }
+            app.swipeUp()
+        }
+
+        XCTFail("Element was not hittable: \(element)", file: file, line: line)
+    }
+
+    private func captureBrowseNextShelvesProofIfRequested() {
+        let screenshot = XCUIScreen.main.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot)
+        attachment.name = "browse-next-shelves-uniform"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+
+        guard let directory = ProcessInfo.processInfo.environment["SPEAKLOCAL_BROWSE_NEXT_SHELVES_PROOF_DIR"], !directory.isEmpty else {
+            return
+        }
+
+        let fileURL = URL(fileURLWithPath: directory)
+            .appendingPathComponent("browse-next-shelves-uniform.png")
+        try? FileManager.default.createDirectory(
+            at: fileURL.deletingLastPathComponent(),
+            withIntermediateDirectories: true
+        )
+        try? screenshot.pngRepresentation.write(to: fileURL)
     }
 }

@@ -149,6 +149,16 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(HomeLayout.scenarioCardHeight, minimumHeight)
     }
 
+    func testBrowseNextShelfRowsUseStableFullWidthCardMetrics() {
+        XCTAssertEqual(BrowsePageLayout.nextShelfRowHeight, 108)
+        XCTAssertEqual(BrowsePageLayout.nextShelfIconSize, 48)
+        XCTAssertEqual(BrowsePageLayout.nextShelfRowPadding, 14)
+        XCTAssertGreaterThanOrEqual(
+            BrowsePageLayout.nextShelfRowHeight,
+            BrowsePageLayout.nextShelfIconSize + BrowsePageLayout.nextShelfRowPadding * 2
+        )
+    }
+
     func testPhrasePageChromeUsesSeparateSearchIsland() {
         let chrome = AppChrome(route: .phrasePage)
 
