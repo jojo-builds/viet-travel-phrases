@@ -115,9 +115,11 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testHomeSituationRowsUseStableCardMetrics() {
-        XCTAssertEqual(HomeLayout.situationRowHeight, 104)
+        XCTAssertEqual(HomeLayout.situationRowHeight, 96)
         XCTAssertEqual(HomeLayout.situationIconSize, 46)
-        XCTAssertLessThan(HomeLayout.situationIconSize, HomeLayout.situationRowHeight)
+        XCTAssertEqual(HomeLayout.situationImageWidth, 108)
+        XCTAssertEqual(HomeLayout.situationImageHeight, 68)
+        XCTAssertLessThan(HomeLayout.situationImageHeight, HomeLayout.situationRowHeight)
     }
 
     func testPhrasePageChromeUsesSeparateSearchIsland() {

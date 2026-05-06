@@ -138,6 +138,34 @@ final class AdminChromeUITests: XCTestCase {
         captureProofIfRequested(app: app, name: "practice-bottom-chrome.png")
     }
 
+    func testHomeLiquidGlassRedesignProofScreenshots() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+        XCTAssertTrue(app.staticTexts["Start speaking now"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["What do you need to say?"].exists)
+        XCTAssertTrue(app.staticTexts["Continue"].exists)
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-top.png")
+
+        app.swipeUp()
+        XCTAssertTrue(app.staticTexts["Practice scenarios"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["First day in Vietnam"].exists)
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-mid.png")
+
+        for _ in 0..<3 where !app.staticTexts["Explore by city"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Da Nang"].exists)
+        XCTAssertTrue(app.staticTexts["Your practice list"].exists)
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-lower.png")
+
+        for _ in 0..<5 where !app.staticTexts["Tip"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["Tip"].waitForExistence(timeout: 3))
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-bottom.png")
+    }
+
     func testSearchChromeMorphHomeAndBrowseProofScreenshots() {
         let app = launchApp()
         assertHomeVisible(in: app)
@@ -406,6 +434,23 @@ final class AdminChromeUITests: XCTestCase {
             let directoryURL = proofDirectoryURL(
                 environmentPath: environmentPath,
                 taskID: "TASK-NATIVE-PINNED-AUDIO-SPEED-001"
+            )
+        else {
+            return
+        }
+
+        try? FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: directoryURL.appendingPathComponent(name))
+    }
+
+    private func captureHomeLiquidGlassProofIfRequested(app: XCUIApplication, name: String) {
+        let sentinelPath = "/tmp/speaklocal-home-liquid-glass-proof-enabled"
+        let environmentPath = ProcessInfo.processInfo.environment["SPEAKLOCAL_HOME_LIQUID_GLASS_PROOF_DIR"]
+        guard
+            FileManager.default.fileExists(atPath: sentinelPath) || environmentPath?.isEmpty == false,
+            let directoryURL = proofDirectoryURL(
+                environmentPath: environmentPath,
+                taskID: "TASK-HOME-LIQUID-GLASS-REDESIGN-001"
             )
         else {
             return
