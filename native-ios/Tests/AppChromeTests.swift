@@ -506,6 +506,40 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
+    func testHomeCollectionBackChainReturnsToHomeInsteadOfBrowse() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openHomeBrowseCollection(.city("danang"))
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
+        XCTAssertEqual(navigation.backPreviewRoute, .home)
+
+        navigation.openDetail("viet-phrase-city-danang-place-dragon-bridge")
+        XCTAssertEqual(navigation.backPreviewRoute, .browseCollection(.city("danang")))
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
+        XCTAssertEqual(navigation.backPreviewRoute, .home)
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-city-danang-place-dragon-bridge"), .browseCollection(.city("danang"))])
+    }
+
+    func testBrowseCollectionBackChainStillReturnsToBrowse() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openBrowse()
+        navigation.openBrowseCollection(.city("danang"))
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
+        XCTAssertEqual(navigation.backPreviewRoute, .browse)
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.city("danang"))])
+    }
+
     func testOpeningPracticeRouteCanReturnHome() {
         var navigation = AppShellNavigationState()
 

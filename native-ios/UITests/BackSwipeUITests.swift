@@ -62,4 +62,27 @@ final class BackSwipeUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.textFields["AppChrome.SearchField"].waitForExistence(timeout: 2))
     }
+
+    func testHomeCityCardBackButtonReturnsHome() {
+        let app = XCUIApplication()
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        let daNangCard = app.buttons["HomeCity.danang"]
+        for _ in 0..<5 where !daNangCard.isHittable {
+            app.swipeUp()
+        }
+
+        XCTAssertTrue(daNangCard.waitForExistence(timeout: 3))
+        daNangCard.tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.city.danang"].waitForExistence(timeout: 5))
+
+        app.buttons["Go back"].tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.staticTexts["Browse.Title"].exists)
+        XCTAssertTrue(app.buttons["AppChrome.Dock.Home"].waitForExistence(timeout: 2))
+    }
 }

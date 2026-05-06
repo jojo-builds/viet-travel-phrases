@@ -46,7 +46,7 @@ struct AppShellView: View {
                     isSearchActive: navigation.isSearchPresented,
                     onSearchTapped: openSearch,
                     onOpenDetail: openDetailFromHome,
-                    onOpenCollection: openBrowseCollection,
+                    onOpenCollection: openBrowseCollectionFromHome,
                     onStartPractice: openPractice,
                     onBrowseAllTapped: openBrowseAll
                 )
@@ -363,7 +363,7 @@ struct AppShellView: View {
                 isSearchActive: navigation.isSearchPresented,
                 onSearchTapped: openSearch,
                 onOpenDetail: openDetailFromHome,
-                onOpenCollection: openBrowseCollection,
+                onOpenCollection: openBrowseCollectionFromHome,
                 onStartPractice: openPractice,
                 onBrowseAllTapped: openBrowseAll
             )
@@ -946,8 +946,20 @@ struct AppShellView: View {
         }
     }
 
+    private func openBrowseCollectionFromHome(_ route: BrowseCollectionRoute) {
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.openHomeBrowseCollection(route)
+        }
+    }
+
     private func openBrowseCollectionFromSearch(_ route: BrowseCollectionRoute) {
-        openBrowseCollection(route)
+        if navigation.searchOriginDockItem == .home {
+            openBrowseCollectionFromHome(route)
+        } else {
+            openBrowseCollection(route)
+        }
     }
 
     private func openBrowseAll() {
@@ -1383,7 +1395,7 @@ struct AppShellNavigationState: Equatable {
 
         if !browseCollectionPath.isEmpty {
             guard browseCollectionPath.count > 1 else {
-                return .browse
+                return rootRoute == .home ? .home : .browse
             }
 
             return .browseCollection(browseCollectionPath[browseCollectionPath.count - 2])
@@ -1567,6 +1579,24 @@ struct AppShellNavigationState: Equatable {
         browseCollectionScrollToTopTrigger += 1
     }
 
+    mutating func openHomeBrowseCollection(_ route: BrowseCollectionRoute) {
+        guard currentRoute != .browseCollection(route) else {
+            browseCollectionScrollToTopTrigger += 1
+            isSearchPresented = false
+            return
+        }
+
+        rootRoute = .home
+        detailPath.removeAll()
+        isSearchPresented = false
+        forwardStack.removeAll()
+
+        if browseCollectionPath.last != route {
+            browseCollectionPath.append(route)
+        }
+        browseCollectionScrollToTopTrigger += 1
+    }
+
     mutating func goBack() {
         if isSearchPresented {
             isSearchPresented = false
@@ -1578,7 +1608,11 @@ struct AppShellNavigationState: Equatable {
             if let currentCollection = browseCollectionPath.popLast() {
                 forwardStack.append(.browseCollection(currentCollection))
                 if browseCollectionPath.isEmpty {
-                    browseScrollToTopTrigger += 1
+                    if rootRoute == .home {
+                        homeScrollToTopTrigger += 1
+                    } else {
+                        browseScrollToTopTrigger += 1
+                    }
                 } else {
                     browseCollectionScrollToTopTrigger += 1
                 }
@@ -1633,7 +1667,7 @@ struct AppShellNavigationState: Equatable {
         case .browseCollection(let route):
             isSearchPresented = false
             detailPath.removeAll()
-            rootRoute = .browse
+            rootRoute = rootRoute == .home ? .home : .browse
 
             if browseCollectionPath.last != route {
                 browseCollectionPath.append(route)
