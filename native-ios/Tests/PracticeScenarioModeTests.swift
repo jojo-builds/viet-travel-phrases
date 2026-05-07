@@ -20,6 +20,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         for scenario in snapshot.scenarios {
             XCTAssertFalse(scenario.sceneTitle.isEmpty)
             XCTAssertFalse(scenario.sceneSetup.isEmpty)
+            XCTAssertEqual(scenario.id.flowBeats.count, 3)
 
             for step in scenario.steps {
                 XCTAssertFalse(step.scene.isEmpty)
@@ -81,12 +82,16 @@ final class PracticeScenarioModeTests: XCTestCase {
         )
 
         let taxi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .taxiGrabPickup })
+        XCTAssertEqual(taxi.sceneSetup, "Confirm the driver, find the pickup point, and stay safe if the car looks wrong.")
+        XCTAssertEqual(taxi.id.flowBeats, ["Confirm car", "Find pickup", "If unsure"])
         let taxiFirstStep = try XCTUnwrap(taxi.steps.first)
         XCTAssertEqual(taxiFirstStep.localPhrase.scenarioVietnamese, "Bạn đặt xe phải không?")
         XCTAssertEqual(taxiFirstStep.bestResponse?.scenarioVietnamese, "Đúng rồi.")
         XCTAssertEqual(taxiFirstStep.bestResponse?.scenarioEnglish, "Yes, that’s right.")
 
         let restaurant = try XCTUnwrap(snapshot.scenarios.first { $0.id == .restaurantOrderingPayment })
+        XCTAssertEqual(restaurant.sceneSetup, "Ask for the menu, order one thing, and pay without a long exchange.")
+        XCTAssertEqual(restaurant.id.flowBeats, ["Ask menu", "Order one", "Pay"])
         let restaurantFirstStep = try XCTUnwrap(restaurant.steps.first)
         XCTAssertEqual(restaurantFirstStep.localPhrase.scenarioVietnamese, "Bạn muốn gọi món gì?")
         XCTAssertEqual(restaurantFirstStep.bestResponse?.scenarioVietnamese, "Cho tôi một phần này.")
@@ -95,6 +100,8 @@ final class PracticeScenarioModeTests: XCTestCase {
         })
 
         let hotel = try XCTUnwrap(snapshot.scenarios.first { $0.id == .hotelCheckInHelp })
+        XCTAssertEqual(hotel.sceneSetup, "Confirm your booking, show your passport, and handle room details.")
+        XCTAssertEqual(hotel.id.flowBeats, ["Booking", "Passport", "Room details"])
         let hotelFirstStep = try XCTUnwrap(hotel.steps.first)
         XCTAssertEqual(hotelFirstStep.localPhrase.scenarioVietnamese, "Bạn có đặt phòng chưa ạ?")
         XCTAssertEqual(hotelFirstStep.bestResponse?.scenarioVietnamese, "Tôi có đặt phòng.")

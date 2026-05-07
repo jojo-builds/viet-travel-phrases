@@ -482,7 +482,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
     PracticeScenarioTemplate(
         id: .taxiGrabPickup,
         sceneTitle: "Taxi / Grab pickup",
-        sceneSetup: "Confirm the car, find the pickup point, and recover if the ride feels unclear.",
+        sceneSetup: "Confirm the driver, find the pickup point, and stay safe if the car looks wrong.",
         steps: [
             PracticeScenarioStepTemplate(
                 id: "taxi-pickup-confirm",
@@ -563,7 +563,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
     PracticeScenarioTemplate(
         id: .restaurantOrderingPayment,
         sceneTitle: "Restaurant ordering",
-        sceneSetup: "Order clearly, ask for the bill, and keep the exchange moving.",
+        sceneSetup: "Ask for the menu, order one thing, and pay without a long exchange.",
         steps: [
             PracticeScenarioStepTemplate(
                 id: "restaurant-order",
@@ -644,7 +644,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
     PracticeScenarioTemplate(
         id: .hotelCheckInHelp,
         sceneTitle: "Hotel check-in",
-        sceneSetup: "Check in smoothly, show the booking, and ask for help if something is not working.",
+        sceneSetup: "Confirm your booking, show your passport, and handle room details.",
         steps: [
             PracticeScenarioStepTemplate(
                 id: "hotel-check-in",

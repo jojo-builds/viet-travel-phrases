@@ -13,8 +13,15 @@ final class PracticeUITests: XCTestCase {
 
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 8))
         XCTAssertTrue(app.staticTexts["SCENARIO MODE"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Practice real travel moments"].exists)
+        XCTAssertTrue(app.staticTexts["Hear what someone may say, then play useful replies before you need them."].exists)
 
-        let startButton = app.buttons["Start scene"].firstMatch
+        XCTAssertTrue(app.staticTexts["Confirm car"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Find pickup"].exists)
+        XCTAssertTrue(app.staticTexts["If unsure"].exists)
+        XCTAssertFalse(app.staticTexts["follow-up"].exists)
+
+        let startButton = app.buttons["Start scenario"].firstMatch
         XCTAssertTrue(startButton.waitForExistence(timeout: 4))
         startButton.tap()
 
@@ -101,20 +108,21 @@ final class PracticeUITests: XCTestCase {
     }
 
     private func startPrimaryScenario(in app: XCUIApplication) {
-        tapButton("Start scene", in: app)
+        tapButton("Start scenario", in: app)
     }
 
     private func openScenario(identifier: String, title: String, in app: XCUIApplication) {
         XCTAssertTrue(app.staticTexts["SCENARIO MODE"].waitForExistence(timeout: 4))
-        app.swipeUp()
+        let dragStart = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.82))
+        let dragEnd = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.56))
+        dragStart.press(forDuration: 0.01, thenDragTo: dragEnd)
 
         let scenarioButton = app.buttons[identifier].firstMatch
         XCTAssertTrue(scenarioButton.waitForExistence(timeout: 4), "\(title) scenario did not appear.")
-        scenarioButton.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.82)).tap()
+        scenarioButton.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
 
-        XCTAssertTrue(app.staticTexts[title].waitForExistence(timeout: 4))
         if !app.staticTexts["Moment 1 of 2"].waitForExistence(timeout: 2) {
-            app.swipeUp()
+            scenarioButton.tap()
         }
         XCTAssertTrue(app.staticTexts["Moment 1 of 2"].waitForExistence(timeout: 4))
     }

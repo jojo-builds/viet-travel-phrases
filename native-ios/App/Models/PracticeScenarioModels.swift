@@ -61,6 +61,17 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["hotel-accommodation", "problems-help"]
         }
     }
+
+    var flowBeats: [String] {
+        switch self {
+        case .taxiGrabPickup:
+            return ["Confirm car", "Find pickup", "If unsure"]
+        case .restaurantOrderingPayment:
+            return ["Ask menu", "Order one", "Pay"]
+        case .hotelCheckInHelp:
+            return ["Booking", "Passport", "Room details"]
+        }
+    }
 }
 
 enum PracticeScenarioQueueSource: String, CaseIterable, Codable, Equatable, Hashable {

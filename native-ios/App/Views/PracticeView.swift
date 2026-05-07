@@ -59,9 +59,6 @@ struct PracticeView: View {
                             activeScenarioSession: activeScenarioSession,
                             scenarioCompletion: scenarioCompletion,
                             scenarioState: scenarioState,
-                            explicitPracticeCount: intentStore.practicePageIDs.count,
-                            savedPageCount: intentStore.savedPageIDs.count,
-                            recentPageCount: intentStore.recentPageIDs.count,
                             isInPracticePool: isScenarioPageInPractice,
                             onOpenPhrasePage: openScenarioPhrasePage,
                             onTogglePracticePage: toggleScenarioPracticePage,
@@ -749,9 +746,6 @@ private struct PracticeCurrentScenarioSurface: View {
     let activeScenarioSession: PracticeScenarioSession?
     let scenarioCompletion: PracticeScenarioCompletionSummary?
     let scenarioState: PracticeScenarioLoadState
-    let explicitPracticeCount: Int
-    let savedPageCount: Int
-    let recentPageCount: Int
     let isInPracticePool: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
@@ -782,9 +776,6 @@ private struct PracticeCurrentScenarioSurface: View {
         } else {
             PracticeScenarioHubSurface(
                 state: scenarioState,
-                explicitPracticeCount: explicitPracticeCount,
-                savedPageCount: savedPageCount,
-                recentPageCount: recentPageCount,
                 onStart: onStart,
                 onBrowseTapped: onBrowseTapped,
                 onRetry: onRetry
@@ -795,9 +786,6 @@ private struct PracticeCurrentScenarioSurface: View {
 
 private struct PracticeScenarioHubSurface: View {
     let state: PracticeScenarioLoadState
-    let explicitPracticeCount: Int
-    let savedPageCount: Int
-    let recentPageCount: Int
     let onStart: (PracticeScenario) -> Void
     let onBrowseTapped: () -> Void
     let onRetry: () -> Void
@@ -815,9 +803,6 @@ private struct PracticeScenarioHubSurface: View {
                 if let primary = snapshot.primaryScenario {
                     PracticeScenarioPrimaryCard(
                         scenario: primary,
-                        explicitPracticeCount: explicitPracticeCount,
-                        savedPageCount: savedPageCount,
-                        recentPageCount: recentPageCount,
                         onStart: { onStart(primary) }
                     )
                 }
@@ -848,13 +833,13 @@ private struct PracticeScenarioHeader: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Text("Practice what happens next")
+                Text("Practice real travel moments")
                     .font(.system(size: 38, weight: .black, design: .rounded))
                     .foregroundStyle(.primary)
                     .lineLimit(2)
                     .minimumScaleFactor(0.68)
 
-                Text("Short travel moments built from your saved phrases, recent phrases, and useful follow-ups.")
+                Text("Hear what someone may say, then play useful replies before you need them.")
                     .font(.body.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .lineLimit(4)
@@ -871,9 +856,6 @@ private struct PracticeScenarioHeader: View {
 
 private struct PracticeScenarioPrimaryCard: View {
     let scenario: PracticeScenario
-    let explicitPracticeCount: Int
-    let savedPageCount: Int
-    let recentPageCount: Int
     let onStart: () -> Void
 
     var body: some View {
@@ -899,18 +881,10 @@ private struct PracticeScenarioPrimaryCard: View {
                 .layoutPriority(1)
             }
 
-            HStack(spacing: 10) {
-                PracticeMetricPill(title: "steps", value: "\(scenario.steps.count)")
-                PracticeMetricPill(title: "saved", value: "\(max(explicitPracticeCount, savedPageCount))")
-                PracticeMetricPill(title: "follow-up", value: "\(max(scenario.steps.count - 1, 1))")
-            }
-
-            Text("\(savedPageCount) saved and \(recentPageCount) recent phrase page\(savedPageCount + recentPageCount == 1 ? "" : "s") can become short scenes when you want to rehearse.")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
+            PracticeScenarioBeatRow(beats: scenario.id.flowBeats, tint: scenario.id.tint)
 
             Button(action: onStart) {
-                Label("Start scene", systemImage: "play.fill")
+                Label("Start scenario", systemImage: "play.fill")
                     .font(.headline.weight(.bold))
                     .frame(maxWidth: .infinity)
                     .frame(height: 52)
@@ -926,6 +900,46 @@ private struct PracticeScenarioPrimaryCard: View {
     }
 }
 
+private struct PracticeScenarioBeatRow: View {
+    let beats: [String]
+    let tint: AccentTint
+
+    var body: some View {
+        HStack(spacing: 10) {
+            ForEach(beats, id: \.self) { beat in
+                PracticeScenarioBeatChip(title: beat, tint: tint)
+            }
+        }
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("Practice.Scenario.Beats")
+    }
+}
+
+private struct PracticeScenarioBeatChip: View {
+    let title: String
+    let tint: AccentTint
+
+    var body: some View {
+        Text(title)
+            .font(.caption.weight(.bold))
+            .foregroundStyle(tint.color)
+            .lineLimit(1)
+            .minimumScaleFactor(0.72)
+            .frame(maxWidth: .infinity)
+            .frame(height: 44)
+            .padding(.horizontal, 8)
+            .background(
+                tint.color.opacity(0.09),
+                in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(.white.opacity(0.72), lineWidth: 1)
+            )
+            .accessibilityIdentifier("Practice.Scenario.Beat.\(title)")
+    }
+}
+
 private struct PracticeScenarioModeList: View {
     let scenarios: [PracticeScenario]
     let onStart: (PracticeScenario) -> Void
@@ -938,17 +952,14 @@ private struct PracticeScenarioModeList: View {
 
             VStack(spacing: 10) {
                 ForEach(scenarios) { scenario in
-                    PracticeScenarioModeRow(scenario: scenario)
-                        .onTapGesture {
-                            onStart(scenario)
-                        }
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityAddTraits(.isButton)
-                        .accessibilityLabel(scenario.id.title)
-                        .accessibilityIdentifier("Practice.Scenario.\(scenario.id.rawValue)")
-                        .accessibilityAction {
-                            onStart(scenario)
-                        }
+                    Button {
+                        onStart(scenario)
+                    } label: {
+                        PracticeScenarioModeRow(scenario: scenario)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(scenario.id.title)
+                    .accessibilityIdentifier("Practice.Scenario.\(scenario.id.rawValue)")
                 }
             }
         }
