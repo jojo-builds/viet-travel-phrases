@@ -54,6 +54,60 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AppChromeLayout.dockSelectionCornerRadius, AppChromeLayout.dockSelectionHeight / 2)
         XCTAssertGreaterThan(AppChromeLayout.dockItemForegroundZIndex, AppChromeLayout.dockSelectionLensZIndex)
         XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.40)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionDragCommitDistance, 0)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionStretchFactor, 0)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionMaximumStretch, 0)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionLagFactor, 0)
+    }
+
+    func testDockSelectionDragMapsLocationsAcrossPrimaryTabs() {
+        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 4, itemCount: 4), 0)
+        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 64, itemCount: 4), 1)
+        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 128, itemCount: 4), 2)
+        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 224, itemCount: 4), 3)
+        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: -40, itemCount: 4), 0)
+        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 600, itemCount: 4), 3)
+    }
+
+    func testDockSelectionLensStretchesWhileDraggingAndSettlesWhenReducedMotion() {
+        let selectedMetrics = AppDockSelectionLayout.lensMetrics(
+            selectedIndex: 0,
+            activeIndex: 0,
+            dragX: nil,
+            itemCount: 4,
+            reduceMotion: false
+        )
+        XCTAssertEqual(selectedMetrics.width, AppChromeLayout.dockSelectionWidth)
+        XCTAssertEqual(
+            selectedMetrics.xOffset,
+            AppDockSelectionLayout.itemCenterX(index: 0) - AppChromeLayout.dockSelectionWidth / 2
+        )
+
+        let draggedMetrics = AppDockSelectionLayout.lensMetrics(
+            selectedIndex: 0,
+            activeIndex: 3,
+            dragX: AppDockSelectionLayout.itemCenterX(index: 3),
+            itemCount: 4,
+            reduceMotion: false
+        )
+        XCTAssertGreaterThan(draggedMetrics.width, selectedMetrics.width)
+        XCTAssertLessThanOrEqual(
+            draggedMetrics.width,
+            AppChromeLayout.dockSelectionWidth + AppChromeLayout.dockSelectionMaximumStretch
+        )
+
+        let reducedMotionMetrics = AppDockSelectionLayout.lensMetrics(
+            selectedIndex: 0,
+            activeIndex: 3,
+            dragX: AppDockSelectionLayout.itemCenterX(index: 3),
+            itemCount: 4,
+            reduceMotion: true
+        )
+        XCTAssertEqual(reducedMotionMetrics.width, AppChromeLayout.dockSelectionWidth)
+        XCTAssertEqual(
+            reducedMotionMetrics.xOffset,
+            AppDockSelectionLayout.itemCenterX(index: 3) - AppChromeLayout.dockSelectionWidth / 2
+        )
     }
 
     func testSearchAndSelectedDockIconsUseDistinctForegroundMorphIDs() {

@@ -48,6 +48,26 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
     }
 
+    func testDockDragGestureCommitsTabUnderFinger() {
+        let app = XCUIApplication()
+        app.launch()
+
+        assertHomeVisible(in: app)
+
+        let homeButton = app.buttons["AppChrome.Dock.Home"]
+        let practiceButton = app.buttons["AppChrome.Dock.Practice"]
+        XCTAssertTrue(homeButton.waitForExistence(timeout: 2))
+        XCTAssertTrue(practiceButton.waitForExistence(timeout: 2))
+
+        homeButton.press(forDuration: 0.18, thenDragTo: practiceButton)
+        XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
+
+        let browseButton = app.buttons["AppChrome.Dock.Browse"]
+        XCTAssertTrue(browseButton.waitForExistence(timeout: 2))
+        practiceButton.press(forDuration: 0.18, thenDragTo: browseButton)
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+    }
+
     func testDetailSearchBrowseOriginRoundTripKeepsChromeResponsive() {
         let app = XCUIApplication()
         app.launchArguments = ["--detail-page", "viet-phrase-hello-chao-anh"]

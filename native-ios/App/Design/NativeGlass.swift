@@ -151,6 +151,11 @@ enum AppChromeLayout {
     static let dockSelectionHeight: CGFloat = 44
     static let dockSelectionCornerRadius: CGFloat = 22
     static let dockSelectionMorphDuration = 0.42
+    static let dockSelectionDragCommitDistance: CGFloat = 8
+    static let dockSelectionStretchFactor: CGFloat = 0.24
+    static let dockSelectionMaximumStretch: CGFloat = 38
+    static let dockSelectionLagFactor: CGFloat = 0.12
+    static let dockSelectionMaximumLag: CGFloat = 14
     static let dockHorizontalPadding: CGFloat = 10
     static let dockVerticalPadding: CGFloat = 3
     static let dockCornerRadius: CGFloat = 26
@@ -175,6 +180,73 @@ enum AppChromeLayout {
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
+}
+
+struct AppDockSelectionLensMetrics: Equatable {
+    let xOffset: CGFloat
+    let width: CGFloat
+}
+
+enum AppDockSelectionLayout {
+    static func contentWidth(itemCount: Int) -> CGFloat {
+        guard itemCount > 0 else {
+            return 0
+        }
+
+        return CGFloat(itemCount) * AppChromeLayout.dockItemWidth
+            + CGFloat(itemCount - 1) * AppChromeLayout.dockItemSpacing
+    }
+
+    static func itemIndex(for locationX: CGFloat, itemCount: Int) -> Int? {
+        guard itemCount > 0 else {
+            return nil
+        }
+
+        let pitch = AppChromeLayout.dockItemWidth + AppChromeLayout.dockItemSpacing
+        let clampedX = min(max(locationX, 0), contentWidth(itemCount: itemCount))
+        let rawIndex = ((clampedX - AppChromeLayout.dockItemWidth / 2) / pitch).rounded()
+        return min(max(Int(rawIndex), 0), itemCount - 1)
+    }
+
+    static func clampedDragX(_ locationX: CGFloat, itemCount: Int) -> CGFloat {
+        min(max(locationX, AppChromeLayout.dockItemWidth / 2), contentWidth(itemCount: itemCount) - AppChromeLayout.dockItemWidth / 2)
+    }
+
+    static func itemCenterX(index: Int) -> CGFloat {
+        CGFloat(index) * (AppChromeLayout.dockItemWidth + AppChromeLayout.dockItemSpacing)
+            + AppChromeLayout.dockItemWidth / 2
+    }
+
+    static func lensMetrics(
+        selectedIndex: Int,
+        activeIndex: Int?,
+        dragX: CGFloat?,
+        itemCount: Int,
+        reduceMotion: Bool
+    ) -> AppDockSelectionLensMetrics {
+        let selectedCenter = itemCenterX(index: selectedIndex)
+        let fallbackCenter = activeIndex.map(itemCenterX(index:)) ?? selectedCenter
+        let targetCenter = dragX.map { clampedDragX($0, itemCount: itemCount) } ?? fallbackCenter
+
+        guard !reduceMotion, dragX != nil else {
+            return AppDockSelectionLensMetrics(
+                xOffset: fallbackCenter - AppChromeLayout.dockSelectionWidth / 2,
+                width: AppChromeLayout.dockSelectionWidth
+            )
+        }
+
+        let distance = abs(targetCenter - selectedCenter)
+        let stretch = min(distance * AppChromeLayout.dockSelectionStretchFactor, AppChromeLayout.dockSelectionMaximumStretch)
+        let lag = min(distance * AppChromeLayout.dockSelectionLagFactor, AppChromeLayout.dockSelectionMaximumLag)
+        let direction: CGFloat = targetCenter >= selectedCenter ? 1 : -1
+        let liquidCenter = targetCenter - direction * lag
+        let width = AppChromeLayout.dockSelectionWidth + stretch
+
+        return AppDockSelectionLensMetrics(
+            xOffset: liquidCenter - width / 2,
+            width: width
+        )
+    }
 }
 
 enum ChromeSeparationEdge {
