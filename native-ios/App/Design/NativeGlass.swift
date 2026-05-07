@@ -370,9 +370,9 @@ struct HeroMastheadImage: View {
                     LinearGradient(
                         stops: [
                             .init(color: .black, location: 0),
-                            .init(color: .black, location: 0.5),
-                            .init(color: .black.opacity(0.82), location: 0.66),
-                            .init(color: .black.opacity(0.28), location: 0.88),
+                            .init(color: .black, location: 0.58),
+                            .init(color: .black.opacity(0.88), location: 0.74),
+                            .init(color: .black.opacity(0.36), location: 0.92),
                             .init(color: .clear, location: 1),
                         ],
                         startPoint: .top,
@@ -383,9 +383,9 @@ struct HeroMastheadImage: View {
                 LinearGradient(
                     stops: [
                         .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
-                        .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0.22),
-                        .init(color: PhrasePageStyle.pageBackground.opacity(0.18), location: 0.48),
-                        .init(color: PhrasePageStyle.pageBackground.opacity(0.72), location: 0.82),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0.36),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.6),
+                        .init(color: PhrasePageStyle.pageBackground.opacity(0.58), location: 0.88),
                         .init(color: PhrasePageStyle.pageBackground, location: 1),
                     ],
                     startPoint: .top,

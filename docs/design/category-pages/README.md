@@ -76,6 +76,7 @@ These are the image directions that should be used when the app expands from thi
 - Keep Melo out of category/search utility surfaces for now.
 - Keep category pages calm and useful for first-time travelers: phrase groups first, dense-but-readable rows, and no generic feature-tour copy.
 - The image-generation standard for future category pages is captured in `prompt-packet.md`.
+- City masthead source images now live in `assets/city-masthead-sources/` and are prepared for the app by `native-ios/scripts/prepare-viet-city-mastheads.swift`. Do not regenerate city hubs with procedural/vector shape scripts; the shipped mastheads should remain photo-like and city-specific.
 
 ## Local Review
 
