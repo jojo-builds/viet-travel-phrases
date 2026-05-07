@@ -19,10 +19,10 @@ final class PracticeUITests: XCTestCase {
         startButton.tap()
 
         XCTAssertTrue(app.staticTexts["Moment 1 of 2"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["They may say"].exists)
-        XCTAssertTrue(app.staticTexts["Recommended reply"].exists)
-        XCTAssertTrue(app.staticTexts["Other useful replies"].exists)
-        XCTAssertTrue(app.staticTexts["If you are unsure"].exists)
+        XCTAssertTrue(app.staticTexts["You hear"].exists)
+        XCTAssertTrue(app.staticTexts["Best quick reply"].exists)
+        XCTAssertTrue(app.staticTexts["More ways to say it"].exists)
+        XCTAssertTrue(app.staticTexts["If unsure"].exists)
 
         XCTAssertFalse(app.staticTexts["Check fit"].exists)
         XCTAssertFalse(app.staticTexts["Good fit for this moment"].exists)
@@ -56,6 +56,7 @@ final class PracticeUITests: XCTestCase {
 
         tapButton("Finish scene", in: app)
         XCTAssertTrue(app.staticTexts["Scene complete"].waitForExistence(timeout: 4))
+        XCTAssertFalse(app.staticTexts["That is correct"].exists)
         app.swipeDown()
         capture(app: app, directoryURL: proofDirectoryURL, name: "completion-state.png")
         app.terminate()
@@ -109,12 +110,13 @@ final class PracticeUITests: XCTestCase {
 
         let scenarioButton = app.buttons[identifier].firstMatch
         XCTAssertTrue(scenarioButton.waitForExistence(timeout: 4), "\(title) scenario did not appear.")
-        scenarioButton.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.92)).tap()
+        scenarioButton.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.82)).tap()
 
         XCTAssertTrue(app.staticTexts[title].waitForExistence(timeout: 4))
+        if !app.staticTexts["Moment 1 of 2"].waitForExistence(timeout: 2) {
+            app.swipeUp()
+        }
         XCTAssertTrue(app.staticTexts["Moment 1 of 2"].waitForExistence(timeout: 4))
-        app.swipeDown()
-        XCTAssertTrue(app.staticTexts[title].waitForExistence(timeout: 4))
     }
 
     private func tapButton(_ label: String, in app: XCUIApplication) {

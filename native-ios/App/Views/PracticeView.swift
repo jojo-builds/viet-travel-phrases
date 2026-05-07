@@ -167,7 +167,7 @@ struct PracticeView: View {
     }
 
     private func schedulePracticeScrollReset() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             practiceScrollResetTrigger += 1
         }
     }
@@ -938,46 +938,55 @@ private struct PracticeScenarioModeList: View {
 
             VStack(spacing: 10) {
                 ForEach(scenarios) { scenario in
-                    HStack(spacing: 14) {
-                        PracticeIcon(symbolName: scenario.id.symbolName, tint: scenario.id.tint, size: 40)
-
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(scenario.id.title)
-                                .font(.headline.weight(.bold))
-                                .foregroundStyle(.primary)
-
-                            Text(scenario.queueSource.title)
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
-                        }
-                        .layoutPriority(1)
-
-                        Text("\(scenario.steps.count)")
-                            .font(.headline.weight(.black))
-                            .foregroundStyle(.red)
-                            .frame(width: 40, height: 40)
-                            .nativeGlass(cornerRadius: 20)
-
-                        Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(.tertiary)
-                    }
-                    .padding(14)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .phraseListCard(cornerRadius: 22)
-                    .overlay {
-                        Button {
+                    PracticeScenarioModeRow(scenario: scenario)
+                        .onTapGesture {
                             onStart(scenario)
-                        } label: {
-                            Color.white.opacity(0.001)
                         }
-                        .buttonStyle(.plain)
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityAddTraits(.isButton)
                         .accessibilityLabel(scenario.id.title)
                         .accessibilityIdentifier("Practice.Scenario.\(scenario.id.rawValue)")
-                    }
+                        .accessibilityAction {
+                            onStart(scenario)
+                        }
                 }
             }
         }
+    }
+}
+
+private struct PracticeScenarioModeRow: View {
+    let scenario: PracticeScenario
+
+    var body: some View {
+        HStack(spacing: 14) {
+            PracticeIcon(symbolName: scenario.id.symbolName, tint: scenario.id.tint, size: 40)
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(scenario.id.title)
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.primary)
+
+                Text(scenario.queueSource.title)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            .layoutPriority(1)
+
+            Text("\(scenario.steps.count)")
+                .font(.headline.weight(.black))
+                .foregroundStyle(.red)
+                .frame(width: 40, height: 40)
+                .nativeGlass(cornerRadius: 20)
+
+            Image(systemName: "chevron.right")
+                .font(.caption.weight(.bold))
+                .foregroundStyle(.tertiary)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, minHeight: 86, alignment: .leading)
+        .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .phraseListCard(cornerRadius: 22)
     }
 }
 
@@ -1130,7 +1139,7 @@ private struct PracticeScenarioSessionSurface: View {
 
                 if let recommendedOption {
                     PracticeScenarioReplySection(
-                        title: "Recommended reply",
+                        title: "Best quick reply",
                         options: [recommendedOption],
                         style: .recommended,
                         isInPracticePool: isInPracticePool,
@@ -1141,7 +1150,7 @@ private struct PracticeScenarioSessionSurface: View {
 
                 if !otherOptions.isEmpty {
                     PracticeScenarioReplySection(
-                        title: "Other useful replies",
+                        title: "More ways to say it",
                         options: otherOptions,
                         style: .standard,
                         isInPracticePool: isInPracticePool,
@@ -1174,17 +1183,17 @@ private struct PracticeScenarioLocalLine: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("They may say")
+            Text("You hear")
                 .font(.caption.weight(.bold))
                 .foregroundStyle(.secondary)
 
-            Text(step.localLine)
+            Text(step.localPhrase.scenarioVietnamese)
                 .font(.system(size: 28, weight: .black, design: .rounded))
                 .foregroundStyle(.primary)
                 .lineLimit(3)
                 .minimumScaleFactor(0.68)
 
-            Text(step.localLineMeaning)
+            Text(step.localPhrase.scenarioEnglish)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.secondary)
         }
@@ -1238,18 +1247,18 @@ private struct PracticeScenarioReplyRow: View {
                 HStack(alignment: .center, spacing: 12) {
                     Image(systemName: style == .recommended ? "text.bubble.fill" : "bubble.left.and.text.bubble.right.fill")
                         .font(.headline.weight(.bold))
-                        .foregroundStyle(option.candidate.tintName.color)
+                        .foregroundStyle(rowTint.color)
                         .frame(width: 34, height: 34)
-                        .nativeGlass(cornerRadius: 17, tint: option.candidate.tintName.color.opacity(0.14))
+                        .nativeGlass(cornerRadius: 17, tint: rowTint.color.opacity(0.14))
 
                     VStack(alignment: .leading, spacing: 3) {
-                        Text(option.candidate.vietnamese)
+                        Text(option.scenarioVietnamese)
                             .font(.headline.weight(.bold))
                             .foregroundStyle(.primary)
                             .lineLimit(2)
                             .minimumScaleFactor(0.76)
 
-                        Text(option.candidate.english)
+                        Text(option.scenarioEnglish)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                             .lineLimit(2)
@@ -1264,7 +1273,7 @@ private struct PracticeScenarioReplyRow: View {
 
             if let audioKey = option.audioKey {
                 AudioSpeakerButton(
-                    tint: option.candidate.tintName,
+                    tint: rowTint,
                     size: 38,
                     audioKey: audioKey,
                     accessibilityIdentifier: "Practice.Option.Audio"
@@ -1291,11 +1300,15 @@ private struct PracticeScenarioReplyRow: View {
     }
 
     private var rowBackground: Color {
-        style == .recommended ? option.candidate.tintName.color.opacity(0.10) : .white.opacity(0.58)
+        style == .recommended ? rowTint.color.opacity(0.10) : .white.opacity(0.58)
     }
 
     private var rowStroke: Color {
-        style == .recommended ? option.candidate.tintName.color.opacity(0.28) : Color.black.opacity(0.05)
+        style == .recommended ? rowTint.color.opacity(0.28) : Color.black.opacity(0.05)
+    }
+
+    private var rowTint: AccentTint {
+        style == .recommended ? .green : option.candidate.tintName
     }
 }
 
@@ -1307,7 +1320,7 @@ private struct PracticeScenarioRecoveryPanel: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("If you are unsure")
+            Text("If unsure")
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(.secondary)
 
@@ -1322,6 +1335,13 @@ private struct PracticeScenarioRecoveryPanel: View {
                         id: "recovery:\(recoveryCandidate.pageID)",
                         candidate: recoveryCandidate,
                         isBestFit: false,
+                        scenarioCopy: PracticeScenarioPhraseCopy(
+                            scenarioVietnamese: recoveryCandidate.vietnamese,
+                            scenarioEnglish: recoveryCandidate.english,
+                            scenarioRole: .ifUnsure,
+                            scenarioContext: "scenario_recovery",
+                            sourcePhraseID: recoveryCandidate.phraseID
+                        ),
                         feedbackTitle: "",
                         feedbackBody: ""
                     ),
@@ -1333,7 +1353,7 @@ private struct PracticeScenarioRecoveryPanel: View {
             }
         }
         .padding(14)
-        .background(.red.opacity(0.07), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .background(Color.blue.opacity(0.06), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
     }
 }
 
@@ -1403,14 +1423,15 @@ private struct PracticeScenarioCompletionSurface: View {
             .padding(18)
             .phraseListCard(cornerRadius: 24)
 
-            if !summary.scenario.recommendedCandidates.isEmpty {
+            let recommendedOptions = summary.scenario.steps.compactMap(\.bestResponse)
+            if !recommendedOptions.isEmpty {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Phrase pages used")
+                    Text("Related phrases")
                         .font(.subheadline.weight(.bold))
                         .foregroundStyle(.secondary)
 
-                    ForEach(summary.scenario.recommendedCandidates.prefix(3), id: \.pageID) { candidate in
-                        PracticeScenarioCompletionPhraseRow(candidate: candidate)
+                    ForEach(recommendedOptions.prefix(3), id: \.id) { option in
+                        PracticeScenarioCompletionPhraseRow(option: option)
                     }
                 }
             }
@@ -1430,19 +1451,19 @@ private struct PracticeScenarioCompletionSurface: View {
 }
 
 private struct PracticeScenarioCompletionPhraseRow: View {
-    let candidate: PracticeCandidate
+    let option: PracticeScenarioResponseOption
 
     var body: some View {
         HStack(spacing: 12) {
-            PracticeIcon(symbolName: candidate.symbolName, tint: candidate.tintName, size: 38)
+            PracticeIcon(symbolName: option.candidate.symbolName, tint: option.candidate.tintName, size: 38)
 
             VStack(alignment: .leading, spacing: 3) {
-                Text(candidate.vietnamese)
+                Text(option.scenarioVietnamese)
                     .font(.headline.weight(.bold))
                     .foregroundStyle(.primary)
                     .lineLimit(2)
 
-                Text(candidate.english)
+                Text(option.scenarioEnglish)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .lineLimit(2)

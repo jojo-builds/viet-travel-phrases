@@ -109,15 +109,52 @@ enum PracticeScenarioQueueSource: String, CaseIterable, Codable, Equatable, Hash
     }
 }
 
+enum PracticeScenarioPhraseRole: String, Codable, Equatable {
+    case youHear = "you_hear"
+    case bestQuickReply = "best_quick_reply"
+    case moreReply = "more_reply"
+    case ifUnsure = "if_unsure"
+}
+
+struct PracticeScenarioPhraseCopy: Equatable {
+    let scenarioVietnamese: String
+    let scenarioEnglish: String
+    let scenarioRole: PracticeScenarioPhraseRole
+    let scenarioContext: String
+    let sourcePhraseID: String?
+}
+
 struct PracticeScenarioResponseOption: Identifiable, Equatable {
     let id: String
     let candidate: PracticeCandidate
     let isBestFit: Bool
+    let scenarioCopy: PracticeScenarioPhraseCopy?
     let feedbackTitle: String
     let feedbackBody: String
 
+    var scenarioVietnamese: String {
+        scenarioCopy?.scenarioVietnamese ?? candidate.vietnamese
+    }
+
+    var scenarioEnglish: String {
+        scenarioCopy?.scenarioEnglish ?? candidate.english
+    }
+
+    var scenarioRole: PracticeScenarioPhraseRole {
+        scenarioCopy?.scenarioRole ?? (isBestFit ? .bestQuickReply : .moreReply)
+    }
+
+    var scenarioContext: String {
+        scenarioCopy?.scenarioContext ?? "scenario_response"
+    }
+
+    var sourcePhraseID: String {
+        scenarioCopy?.sourcePhraseID ?? candidate.phraseID
+    }
+
     var audioKey: String? {
-        candidate.playableAudioKey
+        AudioAssetManifest.main?.audioKey(forExactText: scenarioVietnamese)
+            ?? (scenarioCopy == nil ? candidate.playableAudioKey : nil)
     }
 }
 
@@ -132,6 +169,7 @@ struct PracticeScenarioStep: Identifiable, Equatable {
     let scenarioID: PracticeScenarioID
     let queueSource: PracticeScenarioQueueSource
     let scene: String
+    let localPhrase: PracticeScenarioPhraseCopy
     let localLine: String
     let localLineMeaning: String
     let userGoal: String
@@ -149,8 +187,8 @@ struct PracticeScenarioStep: Identifiable, Equatable {
     var visibleCopy: [String] {
         [
             scene,
-            localLine,
-            localLineMeaning,
+            localPhrase.scenarioVietnamese,
+            localPhrase.scenarioEnglish,
             userGoal,
             nextLocalLine,
             nextLocalMeaning,
@@ -159,8 +197,8 @@ struct PracticeScenarioStep: Identifiable, Equatable {
             nextStepTitle,
         ] + responseOptions.flatMap { option in
             [
-                option.candidate.vietnamese,
-                option.candidate.english,
+                option.scenarioVietnamese,
+                option.scenarioEnglish,
             ]
         }
     }

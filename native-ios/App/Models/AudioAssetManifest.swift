@@ -94,6 +94,7 @@ struct AudioAssetManifest {
         value
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .lowercased()
+            .trimmingCharacters(in: CharacterSet(charactersIn: ".。!?！？"))
     }
 }
 

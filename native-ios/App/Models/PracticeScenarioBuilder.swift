@@ -214,15 +214,14 @@ enum PracticeScenarioBuilder {
             return nil
         }
 
+        let alternatePageIDs = uniquePageIDs(template.alternatePageIDs + Array(template.bestPageIDs.dropFirst()))
         let alternateCandidates = uniqueCandidates(
-            candidates.filter { candidate in
-                template.alternatePageIDs.contains(candidate.pageID)
-                    || template.bestPageIDs.dropFirst().contains(candidate.pageID)
+            alternatePageIDs.compactMap { pageID in
+                firstCandidate(pageIDs: [pageID], in: candidates)
             }
         )
-        .filter { $0.pageID != bestCandidate.pageID }
-        let options = ([bestCandidate] + alternateCandidates)
-            .prefix(4)
+            .filter { $0.pageID != bestCandidate.pageID }
+        let options = ([bestCandidate] + alternateCandidates.prefix(2))
             .enumerated()
             .map { index, candidate in
                 responseOption(
@@ -244,6 +243,7 @@ enum PracticeScenarioBuilder {
             scenarioID: scenarioID,
             queueSource: queueSource,
             scene: template.scene,
+            localPhrase: template.localPhraseCopy,
             localLine: template.localLine,
             localLineMeaning: template.localLineMeaning,
             userGoal: template.userGoal,
@@ -271,7 +271,8 @@ enum PracticeScenarioBuilder {
             id: "\(template.id):\(candidate.pageID):\(index)",
             candidate: candidate,
             isBestFit: isBestFit,
-            feedbackTitle: isBestFit ? "Recommended reply" : "Useful in another moment",
+            scenarioCopy: template.scenarioCopy(for: candidate, isBestFit: isBestFit),
+            feedbackTitle: isBestFit ? "Best quick reply" : "Useful later",
             feedbackBody: isBestFit
                 ? template.bestFitFeedback(candidate)
                 : template.alternateFeedback(candidate, bestCandidate)
@@ -425,6 +426,41 @@ private struct PracticeScenarioStepTemplate {
     let recoveryTitle: String
     let recoveryBody: String
     let nextStepTitle: String
+    var localScenarioContext = "you_hear"
+    var scenarioResponseCopies: [String: PracticeScenarioPhraseTemplate] = [:]
+
+    var localPhraseCopy: PracticeScenarioPhraseCopy {
+        PracticeScenarioPhraseCopy(
+            scenarioVietnamese: localLine,
+            scenarioEnglish: localLineMeaning,
+            scenarioRole: .youHear,
+            scenarioContext: localScenarioContext,
+            sourcePhraseID: nil
+        )
+    }
+
+    func scenarioCopy(for candidate: PracticeCandidate, isBestFit: Bool) -> PracticeScenarioPhraseCopy? {
+        let copy = scenarioResponseCopies[candidate.pageID]
+        let role: PracticeScenarioPhraseRole = isBestFit ? .bestQuickReply : .moreReply
+
+        guard let copy else {
+            return PracticeScenarioPhraseCopy(
+                scenarioVietnamese: candidate.vietnamese,
+                scenarioEnglish: candidate.english,
+                scenarioRole: role,
+                scenarioContext: id,
+                sourcePhraseID: candidate.phraseID
+            )
+        }
+
+        return PracticeScenarioPhraseCopy(
+            scenarioVietnamese: copy.vietnamese,
+            scenarioEnglish: copy.english,
+            scenarioRole: copy.role ?? role,
+            scenarioContext: copy.context ?? id,
+            sourcePhraseID: candidate.phraseID
+        )
+    }
 
     func bestFitFeedback(_ candidate: PracticeCandidate) -> String {
         "\(candidate.vietnamese) keeps this exchange short and clear."
@@ -433,6 +469,13 @@ private struct PracticeScenarioStepTemplate {
     func alternateFeedback(_ candidate: PracticeCandidate, _ bestCandidate: PracticeCandidate) -> String {
         "\(candidate.vietnamese) may help later. This moment starts with \(bestCandidate.vietnamese)."
     }
+}
+
+private struct PracticeScenarioPhraseTemplate {
+    let vietnamese: String
+    let english: String
+    var role: PracticeScenarioPhraseRole?
+    var context: String?
 }
 
 private let scenarioTemplates: [PracticeScenarioTemplate] = [
@@ -444,18 +487,18 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
             PracticeScenarioStepTemplate(
                 id: "taxi-pickup-confirm",
                 scene: "A car pulls up near the pickup point and the driver looks unsure.",
-                localLine: "Bạn là Jojo phải không?",
-                localLineMeaning: "They are checking if you are the right passenger.",
-                userGoal: "Confirm the driver or show that you are checking the ride.",
+                localLine: "Bạn đặt xe phải không?",
+                localLineMeaning: "Did you book a ride?",
+                userGoal: "Confirm the ride without giving extra personal details.",
                 bestPageIDs: [
-                    "viet-phrase-v500-tran-are-you-my-driver",
+                    "viet-phrase-vpe-likely-replies-dung-roi",
                     "viet-phrase-v500-tran-is-this-my-car",
-                    "viet-phrase-taxi-1",
+                    "viet-phrase-directions-8",
                 ],
                 alternatePageIDs: [
+                    "viet-phrase-v500-tran-is-this-my-car",
                     "viet-phrase-directions-8",
                     "viet-phrase-v500-tran-please-call-the-driver",
-                    "viet-phrase-v500-tran-please-wait-here",
                 ],
                 recoveryPageIDs: [
                     "viet-phrase-v500-tran-please-call-the-driver",
@@ -464,8 +507,29 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 nextLocalLine: "Biển số xe là gì?",
                 nextLocalMeaning: "They may ask you to check the license plate.",
                 recoveryTitle: "If the car does not match",
-                recoveryBody: "Use the driver-call or wait-here phrase instead of getting in while unsure.",
-                nextStepTitle: "Check the pickup point"
+                recoveryBody: "Stay outside and ask them to call the driver.",
+                nextStepTitle: "Check the pickup point",
+                localScenarioContext: "taxi_pickup_confirm",
+                scenarioResponseCopies: [
+                    "viet-phrase-vpe-likely-replies-dung-roi": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Đúng rồi.",
+                        english: "Yes, that’s right.",
+                        role: .bestQuickReply,
+                        context: "taxi_pickup_confirm"
+                    ),
+                    "viet-phrase-v500-tran-is-this-my-car": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Đây có phải xe của tôi không?",
+                        english: "Is this my car?",
+                        role: .moreReply,
+                        context: "taxi_pickup_confirm"
+                    ),
+                    "viet-phrase-directions-8": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Điểm đón ở đâu?",
+                        english: "Where is the pickup point?",
+                        role: .moreReply,
+                        context: "taxi_pickup_confirm"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "taxi-route-recover",
@@ -490,8 +554,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 nextLocalLine: "Bạn muốn dừng ở đâu?",
                 nextLocalMeaning: "They may ask where you want to stop.",
                 recoveryTitle: "If the route still feels off",
-                recoveryBody: "Use the stop-here phrase first, then open the phrase page for stronger route repair phrases.",
-                nextStepTitle: "Confirm the stop"
+                recoveryBody: "Ask to stop first, then use a stronger route-repair phrase if needed.",
+                nextStepTitle: "Confirm the stop",
+                localScenarioContext: "taxi_route_recover"
             ),
         ]
     ),
@@ -503,9 +568,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
             PracticeScenarioStepTemplate(
                 id: "restaurant-order",
                 scene: "The server is ready and the table is moving quickly.",
-                localLine: "Anh/chị dùng gì?",
-                localLineMeaning: "They are asking what you would like.",
-                userGoal: "Order one thing clearly.",
+                localLine: "Bạn muốn gọi món gì?",
+                localLineMeaning: "What would you like to order?",
+                userGoal: "Order one thing or ask for the menu.",
                 bestPageIDs: [
                     "viet-phrase-food-1",
                     "viet-phrase-v500-food-drin-id-like-a-bowl-of-ph-please",
@@ -513,7 +578,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 ],
                 alternatePageIDs: [
                     "viet-phrase-food-menu",
-                    "viet-phrase-food-need-table",
+                    "viet-phrase-v900-food-drin-what-do-you-recommend",
                     "viet-phrase-food-3",
                 ],
                 recoveryPageIDs: [
@@ -524,7 +589,28 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 nextLocalMeaning: "They may ask if you want anything else.",
                 recoveryTitle: "If you are not ready",
                 recoveryBody: "Ask for the menu first, then come back to the short order phrase.",
-                nextStepTitle: "Add or close the order"
+                nextStepTitle: "Add or close the order",
+                localScenarioContext: "restaurant_order",
+                scenarioResponseCopies: [
+                    "viet-phrase-food-1": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi một phần này.",
+                        english: "One portion of this, please.",
+                        role: .bestQuickReply,
+                        context: "restaurant_order"
+                    ),
+                    "viet-phrase-food-menu": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi xem thực đơn được không?",
+                        english: "Can I see the menu?",
+                        role: .moreReply,
+                        context: "restaurant_order"
+                    ),
+                    "viet-phrase-v900-food-drin-what-do-you-recommend": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn đề xuất món gì?",
+                        english: "What do you recommend?",
+                        role: .moreReply,
+                        context: "restaurant_order"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "restaurant-payment",
@@ -550,7 +636,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 nextLocalMeaning: "They may ask whether you will use cash or card.",
                 recoveryTitle: "If the total is unclear",
                 recoveryBody: "Ask them to write the price before you negotiate or hand over cash.",
-                nextStepTitle: "Confirm payment"
+                nextStepTitle: "Confirm payment",
+                localScenarioContext: "restaurant_payment"
             ),
         ]
     ),
@@ -561,55 +648,95 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
         steps: [
             PracticeScenarioStepTemplate(
                 id: "hotel-check-in",
-                scene: "The host asks for your booking name and passport.",
-                localLine: "Bạn có đặt phòng chưa?",
-                localLineMeaning: "They are asking whether you have a reservation.",
-                userGoal: "Say you are checking in or have a reservation.",
+                scene: "The host checks whether you have a reservation.",
+                localLine: "Bạn có đặt phòng chưa ạ?",
+                localLineMeaning: "Do you have a reservation?",
+                userGoal: "Reply directly and show the booking if needed.",
                 bestPageIDs: [
-                    "viet-phrase-hotel-2",
                     "viet-phrase-hotel-1",
-                    "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in",
+                    "viet-phrase-v500-hote-acco-i-booked-online",
+                    "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
                 ],
                 alternatePageIDs: [
                     "viet-phrase-v500-hote-acco-i-booked-online",
-                    "viet-phrase-v500-hote-acco-can-i-check-in-early",
-                    "viet-phrase-hotel-3",
+                    "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
+                    "viet-phrase-hotel-2",
                 ],
                 recoveryPageIDs: [
                     "viet-phrase-v500-hote-acco-i-booked-online",
                     "viet-phrase-hotel-premium-booking-wrong",
                 ],
-                nextLocalLine: "Cho tôi xem hộ chiếu nhé.",
+                nextLocalLine: "Cho tôi xem hộ chiếu được không?",
                 nextLocalMeaning: "They may ask to see your passport.",
                 recoveryTitle: "If they cannot find the booking",
                 recoveryBody: "Use the online-booking or booking-problem phrase and show the confirmation screen.",
-                nextStepTitle: "Show the booking"
+                nextStepTitle: "Show the booking",
+                localScenarioContext: "hotel_check_in_booking",
+                scenarioResponseCopies: [
+                    "viet-phrase-hotel-1": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi có đặt phòng.",
+                        english: "I have a reservation.",
+                        role: .bestQuickReply,
+                        context: "hotel_check_in_booking"
+                    ),
+                    "viet-phrase-v500-hote-acco-i-booked-online": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi đã đặt trực tuyến.",
+                        english: "I booked online.",
+                        role: .moreReply,
+                        context: "hotel_check_in_booking"
+                    ),
+                    "viet-phrase-v500-airp-bord-arri-here-is-my-passport": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Đây là hộ chiếu của tôi.",
+                        english: "Here is my passport.",
+                        role: .moreReply,
+                        context: "hotel_check_in_booking"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
-                id: "hotel-room-help",
-                scene: "You are in the room and one practical thing needs fixing.",
-                localLine: "Phòng có vấn đề gì không?",
-                localLineMeaning: "They are asking what is wrong with the room.",
-                userGoal: "Name the room issue and ask for help.",
+                id: "hotel-passport",
+                scene: "The host needs to see your passport before check-in continues.",
+                localLine: "Cho tôi xem hộ chiếu được không?",
+                localLineMeaning: "Can I see your passport?",
+                userGoal: "Show the passport with one short line.",
                 bestPageIDs: [
-                    "viet-phrase-hotel-8",
-                    "viet-phrase-hotel-5",
-                    "viet-phrase-v500-hote-acco-can-someone-come-fix-it",
+                    "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
+                    "viet-phrase-v500-hote-acco-i-booked-online",
                 ],
                 alternatePageIDs: [
-                    "viet-phrase-hotel-6",
-                    "viet-phrase-hotel-9",
-                    "viet-phrase-v500-hote-acco-can-i-change-rooms",
+                    "viet-phrase-v500-hote-acco-i-booked-online",
+                    "viet-phrase-hotel-1",
                 ],
                 recoveryPageIDs: [
-                    "viet-phrase-v500-hote-acco-can-someone-come-fix-it",
-                    "viet-phrase-help-2",
+                    "viet-phrase-v500-hote-acco-i-booked-online",
+                    "viet-phrase-hotel-premium-booking-wrong",
                 ],
-                nextLocalLine: "Tôi sẽ cho người lên kiểm tra.",
-                nextLocalMeaning: "They may say someone will come check it.",
-                recoveryTitle: "If the problem is hard to explain",
-                recoveryBody: "Use the can-someone-fix-it phrase, then point to the issue in the room.",
-                nextStepTitle: "Wait for help"
+                nextLocalLine: "Cảm ơn.",
+                nextLocalMeaning: "They may thank you and continue the check-in.",
+                recoveryTitle: "If the booking is still unclear",
+                recoveryBody: "Show the booking screen and say you booked online.",
+                nextStepTitle: "Finish check-in",
+                localScenarioContext: "hotel_check_in_passport",
+                scenarioResponseCopies: [
+                    "viet-phrase-v500-airp-bord-arri-here-is-my-passport": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Đây là hộ chiếu của tôi.",
+                        english: "Here is my passport.",
+                        role: .bestQuickReply,
+                        context: "hotel_check_in_passport"
+                    ),
+                    "viet-phrase-v500-hote-acco-i-booked-online": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi đã đặt trực tuyến.",
+                        english: "I booked online.",
+                        role: .moreReply,
+                        context: "hotel_check_in_passport"
+                    ),
+                    "viet-phrase-hotel-1": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi có đặt phòng.",
+                        english: "I have a reservation.",
+                        role: .moreReply,
+                        context: "hotel_check_in_passport"
+                    ),
+                ]
             ),
         ]
     ),
