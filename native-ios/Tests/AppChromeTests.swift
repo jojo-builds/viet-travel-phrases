@@ -1036,15 +1036,27 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {
+        let hanoi = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hanoi")))
         let saigon = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hcmc")))
+        let danang = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("danang")))
+        let hoian = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hoian")))
+        let hue = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hue")))
         let greetings = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("greetings")))
         let emergency = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("emergency")))
 
+        XCTAssertEqual(hanoi.title, "Hanoi")
+        XCTAssertEqual(hanoi.mastheadImageName, "HeroCityHanoi")
         XCTAssertEqual(saigon.title, "Saigon")
         XCTAssertEqual(saigon.mastheadImageName, "HeroCityHcmc")
+        XCTAssertEqual(danang.title, "Da Nang")
+        XCTAssertEqual(danang.mastheadImageName, "HeroCityDanang")
+        XCTAssertEqual(hoian.title, "Hoi An")
+        XCTAssertEqual(hoian.mastheadImageName, "HeroCityHoian")
+        XCTAssertEqual(hue.title, "Hue")
+        XCTAssertEqual(hue.mastheadImageName, "HeroCityHue")
         XCTAssertEqual(greetings.mastheadImageName, "HeroCategoryGreetings")
         XCTAssertEqual(emergency.mastheadImageName, "HeroCategoryEmergency")
-        XCTAssertFalse([saigon, greetings, emergency].contains { descriptor in
+        XCTAssertFalse([hanoi, saigon, danang, hoian, hue, greetings, emergency].contains { descriptor in
             descriptor.mastheadImageName == "HeroVietnamMasthead"
                 || descriptor.mastheadImageName == "HeroNeutralMasthead"
         })
