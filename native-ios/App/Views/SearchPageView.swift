@@ -1,4 +1,7 @@
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct SearchPageView: View {
     @Binding private var query: String
@@ -38,40 +41,45 @@ struct SearchPageView: View {
 
     var body: some View {
         let results = SearchPageResults(query: trimmedQuery)
+        GeometryReader { proxy in
+            let topMastheadBleed = max(proxy.safeAreaInsets.top, currentWindowTopSafeAreaInset)
 
-        ZStack(alignment: .bottom) {
-            PhrasePageStyle.pageBackground
-                .ignoresSafeArea()
+            ZStack(alignment: .bottom) {
+                PhrasePageStyle.pageBackground
+                    .ignoresSafeArea()
 
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
-                    header(results: results)
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
+                        header(results: results)
 
-                    if results.query.isEmpty {
-                        if effectiveFieldFocused {
-                            focusedContent
+                        if results.query.isEmpty {
+                            if effectiveFieldFocused {
+                                focusedContent
+                            } else {
+                                defaultContent
+                            }
+                        } else if results.hasResults {
+                            resultsContent(results: results)
                         } else {
-                            defaultContent
+                            recoveryContent
                         }
-                    } else if results.hasResults {
-                        resultsContent(results: results)
-                    } else {
-                        recoveryContent
                     }
+                    .padding(.top, -topMastheadBleed)
+                    .padding(.horizontal, SearchPageLayout.horizontalPadding)
+                    .padding(.bottom, SearchPageLayout.resultsBottomClearance)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .padding(.horizontal, SearchPageLayout.horizontalPadding)
-                .padding(.bottom, SearchPageLayout.resultsBottomClearance)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            .scrollDismissesKeyboard(.interactively)
-            .zIndex(SearchPageLayout.resultsZIndex)
+                .scrollDismissesKeyboard(.interactively)
+                .ignoresSafeArea(edges: .top)
+                .zIndex(SearchPageLayout.resultsZIndex)
 
-            if showsChrome {
-                searchBottomChrome
-                    .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
-                    .padding(.bottom, AppChromeLayout.bottomPadding)
-                    .offset(y: AppChromeLayout.bottomOffset)
-                    .zIndex(SearchPageLayout.pinnedChromeZIndex)
+                if showsChrome {
+                    searchBottomChrome
+                        .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
+                        .padding(.bottom, AppChromeLayout.bottomPadding)
+                        .offset(y: AppChromeLayout.bottomOffset)
+                        .zIndex(SearchPageLayout.pinnedChromeZIndex)
+                }
             }
         }
         .accessibilityIdentifier("SearchPageView")
@@ -83,6 +91,18 @@ struct SearchPageView: View {
 
     private var trimmedQuery: String {
         query.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var currentWindowTopSafeAreaInset: CGFloat {
+        #if canImport(UIKit)
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap(\.windows)
+            .first(where: \.isKeyWindow)?
+            .safeAreaInsets.top ?? 0
+        #else
+        0
+        #endif
     }
 
     private func header(results: SearchPageResults) -> some View {
