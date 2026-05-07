@@ -63,14 +63,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertNotEqual(AppChromeMorphID.dockSelection, AppChromeMorphID.search)
     }
 
-    func testPinnedAudioTopAdminClearanceCoversBackdrop() {
+    func testPinnedAudioTopAdminDoesNotReserveScrollClearance() {
+        XCTAssertEqual(AppChromeLayout.pinnedAudioSpeedScrollClearance, 0)
         XCTAssertGreaterThanOrEqual(
-            AppChromeLayout.pinnedAudioSpeedScrollClearance,
-            AppChromeLayout.topAdminHitTestEnvelopeHeight
-        )
-        XCTAssertGreaterThan(
-            AppChromeLayout.pinnedAudioSpeedScrollClearance,
-            AppChromeLayout.pinnedAudioSpeedRevealY + AppChromeLayout.searchIslandSize
+            AppChromeLayout.topAdminHitTestEnvelopeHeight,
+            AppChromeLayout.pinnedAudioSpeedRevealY
         )
         XCTAssertLessThanOrEqual(
             AppChromeLayout.pinnedAudioSpeedBackdropHeight,

@@ -510,7 +510,7 @@ struct AppShellView: View {
     }
 
     private var pinnedAudioSpeedScrollClearance: CGFloat {
-        showsPinnedAudioSpeedControl ? AppChromeLayout.pinnedAudioSpeedScrollClearance : 0
+        AppChromeLayout.pinnedAudioSpeedScrollClearance
     }
 
     private var showsTopAdminRow: Bool {
