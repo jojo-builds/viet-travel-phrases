@@ -179,6 +179,19 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(SearchResultRowLayout.subtitleLineLimit, 2)
     }
 
+    func testSearchRowsPromotePlayablePhraseAudioToLeadingControl() throws {
+        let xinChaoAudioKey = try XCTUnwrap(AudioAssetManifest.main?.audioKey(forExactText: "Xin chào"))
+
+        XCTAssertTrue(SearchResultRowLayout.usesLeadingAudioControl(audioKey: xinChaoAudioKey))
+        XCTAssertFalse(SearchResultRowLayout.usesLeadingAudioControl(audioKey: nil))
+
+        let chaoResults = BrowseSearchDestinations.searchResults(for: "chao", limit: 5)
+        XCTAssertTrue(
+            chaoResults.contains { SearchResultRowLayout.usesLeadingAudioControl(audioKey: $0.audioKey) },
+            "Search phrase rows with playable audio should render the speaker as the leading control."
+        )
+    }
+
     func testHomeSituationRowsUseStableCardMetrics() {
         XCTAssertEqual(HomeLayout.situationRowHeight, 96)
         XCTAssertEqual(HomeLayout.situationIconSize, 46)

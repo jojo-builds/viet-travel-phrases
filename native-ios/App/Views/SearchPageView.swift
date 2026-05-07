@@ -533,11 +533,7 @@ private struct SearchPhraseRow: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            Image(systemName: item.symbolName)
-                .font(.headline.weight(.semibold))
-                .foregroundStyle(item.tintName.color)
-                .frame(width: 46, height: 46)
-                .nativeGlass(cornerRadius: 23, tint: item.tintName.color.opacity(0.16), interactive: true)
+            leadingControl
 
             Button {
                 onOpenDetail(item.pageID)
@@ -569,13 +565,6 @@ private struct SearchPhraseRow: View {
             .buttonStyle(.plain)
             .frame(maxWidth: .infinity)
             .accessibilityIdentifier("SearchResult.\(item.pageID)")
-
-            AudioSpeakerButton(
-                tint: item.tintName,
-                size: 38,
-                audioKey: item.audioKey,
-                accessibilityIdentifier: "SearchResult.Audio.\(item.pageID)"
-            )
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -586,6 +575,32 @@ private struct SearchPhraseRow: View {
                 .stroke(Color.black.opacity(0.04), lineWidth: 1)
         }
         .accessibilityElement(children: .contain)
+    }
+
+    @ViewBuilder
+    private var leadingControl: some View {
+        if SearchResultRowLayout.usesLeadingAudioControl(audioKey: item.audioKey) {
+            AudioSpeakerButton(
+                tint: .red,
+                size: SearchResultRowLayout.leadingControlSize,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "SearchResult.Audio.\(item.pageID)"
+            )
+        } else {
+            Image(systemName: item.symbolName)
+                .font(.headline.weight(.semibold))
+                .foregroundStyle(item.tintName.color)
+                .frame(
+                    width: SearchResultRowLayout.leadingControlSize,
+                    height: SearchResultRowLayout.leadingControlSize
+                )
+                .nativeGlass(
+                    cornerRadius: SearchResultRowLayout.leadingControlSize / 2,
+                    tint: item.tintName.color.opacity(0.16),
+                    interactive: true
+                )
+                .accessibilityHidden(true)
+        }
     }
 }
 
@@ -907,6 +922,11 @@ private struct SearchTextChip: View {
 
 enum SearchResultRowLayout {
     static let subtitleLineLimit = 2
+    static let leadingControlSize: CGFloat = 46
+
+    static func usesLeadingAudioControl(audioKey: String?) -> Bool {
+        AudioSpeakerButton.isPlayableAudioKey(audioKey)
+    }
 }
 
 #Preview("Search default") {
