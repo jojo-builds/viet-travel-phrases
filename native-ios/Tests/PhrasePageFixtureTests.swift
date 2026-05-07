@@ -1221,6 +1221,104 @@ final class PhrasePageFixtureTests: XCTestCase {
         )
     }
 
+    func testSearchIndexFindsNaturalIntentAliases() {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+
+        let cases: [(query: String, expectedPageIDs: Set<String>)] = [
+            (
+                "I misplaced my passport",
+                [
+                    "viet-phrase-emergency-3",
+                    "viet-phrase-v500-emer-safe-my-passport-is-missing",
+                    "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
+                ]
+            ),
+            (
+                "where is my passport",
+                [
+                    "viet-phrase-emergency-3",
+                    "viet-phrase-v500-emer-safe-my-passport-is-missing",
+                    "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
+                ]
+            ),
+            (
+                "pass port missing",
+                [
+                    "viet-phrase-emergency-3",
+                    "viet-phrase-v500-emer-safe-my-passport-is-missing",
+                    "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
+                ]
+            ),
+            (
+                "no peanuts",
+                [
+                    "viet-phrase-vpe-food-without-khong-dau-phong",
+                    "viet-phrase-food-peanut-allergy",
+                    "viet-phrase-food-premium-has-peanuts",
+                    "viet-phrase-v500-food-drin-does-this-contain-peanuts",
+                ]
+            ),
+            (
+                "does this have peanuts",
+                [
+                    "viet-phrase-vpe-food-has-co-dau-phong-khong",
+                    "viet-phrase-food-premium-has-peanuts",
+                    "viet-phrase-v500-food-drin-does-this-contain-peanuts",
+                ]
+            ),
+            (
+                "toilet",
+                [
+                    "viet-phrase-bath-1",
+                    "viet-phrase-bathroom-use",
+                    "viet-phrase-v500-dire-navi-where-is-the-nearest-restroom",
+                ]
+            ),
+            (
+                "driver can't find me",
+                [
+                    "viet-phrase-v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t",
+                    "viet-phrase-v500-airp-bord-arri-i-cannot-find-my-driver",
+                    "viet-phrase-v500-tran-please-call-the-driver",
+                    "viet-phrase-directions-8",
+                ]
+            ),
+            (
+                "hotel reservation",
+                [
+                    "viet-phrase-hotel-1",
+                    "viet-phrase-time-4",
+                    "viet-phrase-v500-hote-acco-i-booked-online",
+                ]
+            ),
+            (
+                "speak slower",
+                [
+                    "viet-phrase-problems-3",
+                    "viet-phrase-repair-slower-polite",
+                    "viet-phrase-v900-unde-repa-could-you-speak-a-little-slower-please",
+                ]
+            ),
+            (
+                "nearest hospital",
+                [
+                    "viet-phrase-emergency-hospital",
+                    "viet-phrase-v500-heal-phar-i-need-a-hospital",
+                    "viet-phrase-v900-emer-safe-please-take-me-to-the-hospital",
+                ]
+            ),
+        ]
+
+        for testCase in cases {
+            let topPageIDs = Array(PhraseSearchIndex.search(testCase.query).prefix(5).map(\.pageID))
+            XCTAssertFalse(topPageIDs.isEmpty, "Expected results for \(testCase.query)")
+            XCTAssertTrue(
+                topPageIDs.contains { testCase.expectedPageIDs.contains($0) },
+                "Expected \(testCase.query) to surface one of \(testCase.expectedPageIDs), got \(topPageIDs)"
+            )
+        }
+    }
+
     func testSearchIndexKeepsGeneratedDuplicatesOnCanonicalDesignedPages() {
         let xinLoiResults = PhraseSearchIndex.search("Xin lỗi").filter { $0.title == "Xin lỗi" }
         let camOnResults = PhraseSearchIndex.search("Cảm ơn").filter { $0.title == "Cảm ơn" }

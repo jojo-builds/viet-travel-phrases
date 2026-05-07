@@ -722,7 +722,8 @@ final class VietSQLiteLanguagePackRepository {
     }
 
     func search(_ query: String, limit: Int = 8) throws -> [PhraseSearchResult] {
-        let ftsQueries = Self.uniqueFTSQueries(for: SearchQueryExpander.expandedQueries(for: query))
+        let expandedQueries = SearchQueryExpander.expandedQueries(for: query)
+        let ftsQueries = Self.uniqueFTSQueries(for: expandedQueries)
         guard !ftsQueries.isEmpty else {
             return []
         }
@@ -755,15 +756,17 @@ final class VietSQLiteLanguagePackRepository {
             }
         }
 
-        let normalizedQuery = Self.searchComparableText(query)
+        let normalizedQueries = expandedQueries
+            .map(Self.searchComparableText)
+            .filter { !$0.isEmpty }
         var seenPageIDs = Set<String>()
         return rawResults.filter { result in
             seenPageIDs.insert(result.pageID).inserted
         }
         .enumerated()
         .sorted { left, right in
-            let leftScore = Self.searchIdentityScore(for: left.element, normalizedQuery: normalizedQuery)
-            let rightScore = Self.searchIdentityScore(for: right.element, normalizedQuery: normalizedQuery)
+            let leftScore = Self.searchIdentityScore(for: left.element, normalizedQueries: normalizedQueries)
+            let rightScore = Self.searchIdentityScore(for: right.element, normalizedQueries: normalizedQueries)
 
             if leftScore == rightScore {
                 return left.offset < right.offset
@@ -1399,6 +1402,12 @@ final class VietSQLiteLanguagePackRepository {
         }
 
         return score
+    }
+
+    private static func searchIdentityScore(for result: PhraseSearchResult, normalizedQueries: [String]) -> Int {
+        normalizedQueries
+            .map { searchIdentityScore(for: result, normalizedQuery: $0) }
+            .max() ?? 0
     }
 }
 

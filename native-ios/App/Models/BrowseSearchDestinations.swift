@@ -631,23 +631,28 @@ enum BrowseSearchDestinations {
     }
 
     static func matchingCollections(for query: String) -> [BrowseSearchCollectionMatch] {
-        let normalizedQuery = normalize(query)
-        guard !normalizedQuery.isEmpty else {
+        let normalizedQueries = SearchQueryExpander.expandedQueries(for: query)
+            .map(normalize)
+            .filter { !$0.isEmpty }
+        guard !normalizedQueries.isEmpty else {
             return []
         }
 
         let cityRoutes = cityShortcuts
             .filter { city in
                 city.id != "all-vietnam"
-                    && collectionTextMatches(query: normalizedQuery, text: "\(city.title) \(city.query) \(cityAliases[city.id, default: []].joined(separator: " "))")
+                    && collectionTextMatches(
+                        queries: normalizedQueries,
+                        text: "\(city.title) \(city.query) \(cityAliases[city.id, default: []].joined(separator: " "))"
+                    )
             }
             .map(\.collectionRoute)
 
         let categoryRoutes = allCategoryDestinations
             .filter { destination in
                 return collectionTextMatches(
-                    query: normalizedQuery,
-                    text: "\(destination.title) \(destination.subtitle) \(destination.sampleQuery) \(destination.id) \(destination.categoryIDs.joined(separator: " "))"
+                    queries: normalizedQueries,
+                    text: "\(destination.title) \(destination.subtitle) \(destination.sampleQuery) \(destination.id) \(destination.categoryIDs.joined(separator: " ")) \(categorySearchAliases[destination.id, default: []].joined(separator: " "))"
                 )
             }
             .map(\.collectionRoute)
@@ -1338,6 +1343,10 @@ enum BrowseSearchDestinations {
             || normalizedQuery.split(separator: " ").allSatisfy { searchText.contains($0) }
     }
 
+    private static func collectionTextMatches(queries normalizedQueries: [String], text: String) -> Bool {
+        normalizedQueries.contains { collectionTextMatches(query: $0, text: text) }
+    }
+
     private static func uniqueRoutes(_ routes: [BrowseCollectionRoute]) -> [BrowseCollectionRoute] {
         var seen = Set<BrowseCollectionRoute>()
         return routes.filter { route in
@@ -1537,6 +1546,60 @@ enum BrowseSearchDestinations {
         "questions": "HeroCategoryQuestions",
         "numbers-money": "BrowseCollectionShopping",
         "polite-repair": "HeroCategoryPoliteRepair",
+    ]
+
+    private static let categorySearchAliases: [String: [String]] = [
+        "airport": [
+            "airport arrival",
+            "baggage claim",
+            "buy sim card",
+            "airport atm",
+            "airport pickup",
+        ],
+        "hotel": [
+            "hotel reservation",
+            "hotel booking",
+            "check in hotel",
+            "booked online",
+            "hotel passport",
+        ],
+        "food": [
+            "no peanuts",
+            "peanut allergy",
+            "does this have peanuts",
+            "does this contain",
+            "ingredient question",
+            "restaurant ordering",
+        ],
+        "getting-around": [
+            "driver cannot find me",
+            "driver can not find me",
+            "grab pickup",
+            "taxi pickup",
+            "pickup point",
+            "call taxi",
+            "call driver",
+        ],
+        "emergency": [
+            "lost passport",
+            "passport missing",
+            "passport problem",
+            "report lost passport",
+            "lost phone",
+            "missing wallet",
+            "stolen card",
+            "need police",
+            "need doctor",
+            "nearest hospital",
+        ],
+        "polite-repair": [
+            "i do not understand",
+            "i don't understand",
+            "speak slower",
+            "say that again",
+            "write it down",
+            "do you speak english",
+        ],
     ]
 
     private static let cityMastheadImages: [String: String] = [

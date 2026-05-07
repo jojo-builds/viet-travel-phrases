@@ -2411,11 +2411,11 @@ struct HomeView: View {
                     .nativeGlass(cornerRadius: 29, interactive: true)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("What do you need to say?")
+                    Text("Find a phrase or situation")
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
 
-                    Text("Search English, Vietnamese, situations, or next steps")
+                    Text("Try \"lost passport\", \"no peanuts\", or \"taxi to airport\"")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)

@@ -415,7 +415,7 @@ private struct SearchPageResults {
             return "Search"
         }
 
-        return hasResults ? "Results for \(query)" : "No exact match"
+        return hasResults ? "Results for \(query)" : "No exact phrase yet"
     }
 
     var headerSubtitle: String {
@@ -423,7 +423,7 @@ private struct SearchPageResults {
             return "Find phrases by English, Vietnamese, situation, or what you want to do next."
         }
 
-        return hasResults ? "Here are the most helpful matches." : "Try a nearby travel need or browse by situation."
+        return hasResults ? "Here are the most helpful matches." : "Try these close matches or browse by situation."
     }
 }
 

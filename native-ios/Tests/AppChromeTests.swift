@@ -1110,6 +1110,18 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hanoi?.exploreShelves.count, 0)
     }
 
+    func testSearchCollectionMatchesUseIntentExpansions() {
+        let lostPassportRoutes = BrowseSearchDestinations.matchingCollections(for: "I lost my passport").map(\.route)
+        let noPeanutsRoutes = BrowseSearchDestinations.matchingCollections(for: "no peanuts").map(\.route)
+        let rideProblemRoutes = BrowseSearchDestinations.matchingCollections(for: "driver can't find me").map(\.route)
+        let hotelBookingRoutes = BrowseSearchDestinations.matchingCollections(for: "hotel reservation").map(\.route)
+
+        XCTAssertTrue(lostPassportRoutes.contains(.category("emergency")), "\(lostPassportRoutes)")
+        XCTAssertTrue(noPeanutsRoutes.contains(.category("food")), "\(noPeanutsRoutes)")
+        XCTAssertTrue(rideProblemRoutes.contains(.category("getting-around")), "\(rideProblemRoutes)")
+        XCTAssertTrue(hotelBookingRoutes.contains(.category("hotel")), "\(hotelBookingRoutes)")
+    }
+
     func testSearchRanksStandalonePlacePageBeforeHelperPhrases() {
         let exactPlaceResults = BrowseSearchDestinations.searchResults(for: "Bà Nà Hills", limit: 5)
         let partialPlaceResults = BrowseSearchDestinations.searchResults(for: "hills", limit: 5)
