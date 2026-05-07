@@ -8,6 +8,7 @@ struct BrowseCollectionPageView: View {
     var onPractice: (BrowseCollectionPracticeAction) -> Void
 
     @State private var selectedSubcategoryID: String?
+    @State private var selectedCityCardID: String?
 
     var body: some View {
         let selectedSubcategory = descriptor.subcategories.first { $0.id == selectedSubcategoryID }
@@ -28,9 +29,11 @@ struct BrowseCollectionPageView: View {
                             BrowseCityHubContent(
                                 descriptor: descriptor,
                                 cityHub: cityHub,
+                                selectedCityCardID: $selectedCityCardID,
                                 onOpenDetail: onOpenDetail,
                                 onOpenCollection: onOpenCollection,
-                                onPractice: { onPractice(descriptor.practiceAction) }
+                                onPractice: { onPractice(descriptor.practiceAction) },
+                                onCityCardSelectionActivated: { _ in }
                             )
                         } else {
                             BrowseCollectionSubcategoryRail(
@@ -71,11 +74,23 @@ struct BrowseCollectionPageView: View {
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
+                .onChange(of: selectedCityCardID) { _, newValue in
+                    guard let newValue else { return }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.18) {
+                        withAnimation(.snappy(duration: 0.24)) {
+                            scrollProxy.scrollTo(
+                                BrowseCollectionLayout.citySelectedSectionID(for: newValue),
+                                anchor: BrowseCollectionLayout.citySelectedSectionAnchor
+                            )
+                        }
+                    }
+                }
             }
             .ignoresSafeArea(edges: .top)
         }
         .onChange(of: descriptor.id) { _, _ in
             selectedSubcategoryID = nil
+            selectedCityCardID = nil
         }
         .accessibilityIdentifier("BrowseCollection.\(descriptor.route.id)")
     }
@@ -87,6 +102,11 @@ private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 24
     static let bottomChromeContentClearance: CGFloat = 224
+    static func citySelectedSectionID(for cardID: String) -> String {
+        "BrowseCollectionCitySelectedSection.\(cardID)"
+    }
+
+    static let citySelectedSectionAnchor = UnitPoint(x: 0.5, y: 0.4)
 }
 
 private struct BrowseCollectionHeader: View {
@@ -196,17 +216,39 @@ private struct BrowseCollectionSubcategoryCard: View {
 private struct BrowseCityHubContent: View {
     let descriptor: BrowseCollectionDescriptor
     let cityHub: BrowseCityHub
+    @Binding var selectedCityCardID: String?
+
     let onOpenDetail: (String) -> Void
     let onOpenCollection: (BrowseCollectionRoute) -> Void
     let onPractice: () -> Void
+    let onCityCardSelectionActivated: (String) -> Void
 
     var body: some View {
-        LazyVStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
+        let selectedSituation = cityHub.situations.first { $0.id == selectedCityCardID }
+        let selectedBrowseGroup = cityHub.browseGroups.first { $0.id == selectedCityCardID }
+
+        VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
+            if let cityNameAudioItem = cityHub.cityNameAudioItem {
+                BrowseCityNameAudioCard(item: cityNameAudioItem)
+            }
+
             BrowseCityCardGridSection(
                 title: cityHub.situationTitle,
                 cards: cityHub.situations,
-                onOpenCollection: onOpenCollection
+                selectedCardID: selectedCityCardID,
+                onOpenCollection: onOpenCollection,
+                onSelectCard: isCountryHub ? nil : selectCityCard
             )
+
+            if let selectedSituation, !selectedSituation.items.isEmpty, !isCountryHub {
+                BrowseCollectionStarterSection(
+                    title: citySectionTitle(for: selectedSituation),
+                    actionTitle: "",
+                    items: selectedSituation.items,
+                    onOpenDetail: onOpenDetail
+                )
+                .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedSituation.id))
+            }
 
             BrowseCollectionPracticeCard(
                 descriptor: descriptor,
@@ -244,8 +286,20 @@ private struct BrowseCityHubContent: View {
                 BrowseCityCardGridSection(
                     title: cityHub.browseTitle,
                     cards: cityHub.browseGroups,
-                    onOpenCollection: onOpenCollection
+                    selectedCardID: selectedCityCardID,
+                    onOpenCollection: onOpenCollection,
+                    onSelectCard: selectCityCard
                 )
+
+                if let selectedBrowseGroup, !selectedBrowseGroup.items.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: citySectionTitle(for: selectedBrowseGroup),
+                        actionTitle: "",
+                        items: selectedBrowseGroup.items,
+                        onOpenDetail: onOpenDetail
+                    )
+                    .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedBrowseGroup.id))
+                }
             }
         }
         .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
@@ -254,12 +308,33 @@ private struct BrowseCityHubContent: View {
     private var isCountryHub: Bool {
         descriptor.route == .category("city-guides")
     }
+
+    private func selectCityCard(_ card: BrowseCollectionSubcategory) {
+        guard !card.items.isEmpty else {
+            return
+        }
+
+        let isActivatingCard = selectedCityCardID != card.id
+        withAnimation(.snappy(duration: 0.24)) {
+            selectedCityCardID = isActivatingCard ? card.id : nil
+        }
+
+        if isActivatingCard {
+            onCityCardSelectionActivated(card.id)
+        }
+    }
+
+    private func citySectionTitle(for card: BrowseCollectionSubcategory) -> String {
+        "\(card.title) in \(descriptor.title)"
+    }
 }
 
 private struct BrowseCityCardGridSection: View {
     let title: String
     let cards: [BrowseCollectionSubcategory]
+    var selectedCardID: String? = nil
     let onOpenCollection: (BrowseCollectionRoute) -> Void
+    var onSelectCard: ((BrowseCollectionSubcategory) -> Void)? = nil
 
     private let columns = [
         GridItem(.flexible(), spacing: 12),
@@ -270,7 +345,12 @@ private struct BrowseCityCardGridSection: View {
         BrowseCollectionSection(title: title, actionTitle: "") {
             LazyVGrid(columns: columns, alignment: .leading, spacing: 12) {
                 ForEach(cards) { card in
-                    BrowseCityActionCard(card: card, onOpenCollection: onOpenCollection)
+                    BrowseCityActionCard(
+                        card: card,
+                        isSelected: card.id == selectedCardID,
+                        onOpenCollection: onOpenCollection,
+                        onSelectCard: onSelectCard
+                    )
                 }
             }
         }
@@ -279,20 +359,19 @@ private struct BrowseCityCardGridSection: View {
 
 private struct BrowseCityActionCard: View {
     let card: BrowseCollectionSubcategory
+    let isSelected: Bool
     let onOpenCollection: (BrowseCollectionRoute) -> Void
+    let onSelectCard: ((BrowseCollectionSubcategory) -> Void)?
 
     var body: some View {
-        Button {
-            if let targetRoute = card.targetRoute {
-                onOpenCollection(targetRoute)
-            }
-        } label: {
+        Button(action: activate) {
             VStack(alignment: .leading, spacing: 10) {
                 Image(systemName: card.symbolName)
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(card.tintName.color)
                     .frame(width: 46, height: 46)
-                    .nativeGlass(cornerRadius: 17, tint: card.tintName.color.opacity(0.14), interactive: true)
+                    .nativeGlass(cornerRadius: 17, tint: card.tintName.color.opacity(0.14), interactive: false)
+                    .allowsHitTesting(false)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(card.title)
@@ -313,11 +392,57 @@ private struct BrowseCityActionCard: View {
             .padding(12)
             .frame(maxWidth: .infinity, minHeight: 146, alignment: .topLeading)
             .phraseListCard(cornerRadius: 20)
+            .overlay {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(isSelected ? card.tintName.color.opacity(0.55) : .clear, lineWidth: 2)
+            }
             .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .buttonStyle(.plain)
-        .disabled(card.targetRoute == nil)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
         .accessibilityIdentifier("BrowseCollection.CityCard.\(card.id)")
+    }
+
+    private func activate() {
+        if let targetRoute = card.targetRoute {
+            onOpenCollection(targetRoute)
+        } else {
+            onSelectCard?(card)
+        }
+    }
+}
+
+private struct BrowseCityNameAudioCard: View {
+    let item: BrowseCityNameAudioItem
+
+    var body: some View {
+        HStack(spacing: 14) {
+            if AudioSpeakerButton.isPlayableAudioKey(item.audioKey) {
+                AudioSpeakerButton(tint: item.tintName, size: 48, audioKey: item.audioKey)
+            } else {
+                Image(systemName: "mappin.and.ellipse")
+                    .font(.system(size: 19, weight: .semibold))
+                    .foregroundStyle(item.tintName.color)
+                    .frame(width: 48, height: 48)
+                    .nativeGlass(cornerRadius: 24, tint: item.tintName.color.opacity(0.12), interactive: false)
+                    .accessibilityHidden(true)
+            }
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(item.title)
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(.primary)
+
+                Text(item.subtitle)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer()
+        }
+        .padding(14)
+        .phraseListCard(cornerRadius: 24)
+        .accessibilityIdentifier("BrowseCollection.CityNameAudio.\(item.subtitle)")
     }
 }
 

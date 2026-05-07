@@ -82,6 +82,16 @@ struct BrowseSearchPhraseItem: Identifiable, Equatable {
     }
 }
 
+private struct CitySituationCardSpec {
+    let id: String
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let tintName: AccentTint
+    var preferredPageIDs: [String] = []
+    let subcategoryIDs: [String]
+}
+
 struct BrowseDestination: Identifiable, Equatable {
     let id: String
     let title: String
@@ -185,6 +195,13 @@ struct BrowseCollectionSubcategory: Identifiable, Equatable {
     }
 }
 
+struct BrowseCityNameAudioItem: Equatable {
+    let title: String
+    let subtitle: String
+    let audioKey: String?
+    let tintName: AccentTint
+}
+
 struct BrowseCollectionShelf: Identifiable, Equatable {
     let id: String
     let title: String
@@ -262,6 +279,7 @@ struct BrowseCollectionDescriptor: Identifiable, Equatable {
 }
 
 struct BrowseCityHub: Equatable {
+    let cityNameAudioItem: BrowseCityNameAudioItem?
     let situationTitle: String
     let situations: [BrowseCollectionSubcategory]
     let namesTitle: String
@@ -822,6 +840,7 @@ enum BrowseSearchDestinations {
             practiceAction: .addStarterPages(essentialItems.map(\.pageID)),
             exploreShelves: [],
             cityHub: BrowseCityHub(
+                cityNameAudioItem: nil,
                 situationTitle: "Start here",
                 situations: countryStartCards(),
                 namesTitle: "Essential phrases",
@@ -907,8 +926,9 @@ enum BrowseSearchDestinations {
         groupedItems: [String: [BrowseCityCollectionItem]]
     ) -> BrowseCityHub {
         BrowseCityHub(
+            cityNameAudioItem: cityNameAudioItem(for: cityID, city: city),
             situationTitle: "What are you doing?",
-            situations: citySituationCards(for: cityID, tintName: city.tintName),
+            situations: citySituationCards(for: cityID, tintName: city.tintName, groupedItems: groupedItems),
             namesTitle: "Names to know",
             namesToKnowItems: cityNamesToKnowItems(for: cityID, cityItems: cityItems),
             quickPhrasesTitle: "Quick phrases",
@@ -969,77 +989,134 @@ enum BrowseSearchDestinations {
         ], limit: 5)
     }
 
-    private static func citySituationCards(for cityID: String, tintName: AccentTint) -> [BrowseCollectionSubcategory] {
-        let specs: [(String, String, String, String, AccentTint, BrowseCollectionRoute)] = {
+    private static func citySituationCards(
+        for cityID: String,
+        tintName: AccentTint,
+        groupedItems: [String: [BrowseCityCollectionItem]]
+    ) -> [BrowseCollectionSubcategory] {
+        let specs: [CitySituationCardSpec] = {
             switch cityID {
             case "danang":
                 return [
-                    ("arriving", "Arriving", "Airport, baggage, SIM, pickup", "airplane.arrival", .red, .category("airport")),
-                    ("getting-around", "Getting around", "Taxi, Grab, streets, drop-off", "car.fill", .green, .category("getting-around")),
-                    ("beach-day", "Beach day", "My Khe, chairs, drinks, bathroom", "beach.umbrella.fill", .blue, .category("getting-around")),
-                    ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .orange, .category("food")),
-                    ("places", "Places to visit", "Dragon Bridge, Marble Mountains, Bà Nà Hills", "building.columns.fill", .blue, .category("city-guides")),
-                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                    CitySituationCardSpec(id: "arriving", title: "Arriving", subtitle: "Airport, baggage, SIM, pickup", symbolName: "airplane.arrival", tintName: .red, preferredPageIDs: [
+                        "viet-family-city-danang-place-airport",
+                        "viet-family-city-danang-go-airport",
+                        "viet-family-city-danang-where-airport",
+                        "viet-phrase-airport-3",
+                        "viet-phrase-airport-4",
+                        "viet-phrase-vpe-help-action-anh-chi-giup-toi-goi-taxi-duoc-khong",
+                    ], subcategoryIDs: ["arrivals-routes"]),
+                    CitySituationCardSpec(id: "getting-around", title: "Getting around", subtitle: "Taxi, Grab, streets, drop-off", symbolName: "car.fill", tintName: .green, preferredPageIDs: [
+                        "viet-phrase-vpe-help-action-anh-chi-giup-toi-goi-taxi-duoc-khong",
+                        "viet-phrase-vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
+                        "viet-family-city-danang-get-off-my-khe",
+                        "viet-family-city-danang-place-nguyen-van-linh-street",
+                        "viet-family-city-danang-place-bach-dang-street",
+                    ], subcategoryIDs: ["arrivals-routes", "neighborhoods-streets"]),
+                    CitySituationCardSpec(id: "beach-day", title: "Beach day", subtitle: "My Khe, chairs, drinks, bathroom", symbolName: "beach.umbrella.fill", tintName: .blue, preferredPageIDs: [
+                        "viet-family-city-danang-place-my-khe",
+                        "viet-family-city-danang-get-off-my-khe",
+                        "viet-family-city-danang-seafood-my-khe",
+                        "viet-phrase-bath-1",
+                    ], subcategoryIDs: ["landmarks-attractions", "food-coffee", "practical-help-near-places"]),
+                    CitySituationCardSpec(id: "food-coffee", title: "Food & coffee", subtitle: "Restaurants, cafés, markets", symbolName: "cup.and.saucer.fill", tintName: .orange, preferredPageIDs: [
+                        "viet-family-city-danang-place-nen",
+                        "viet-family-city-danang-go-nen",
+                        "viet-family-city-danang-reservation-nen",
+                        "viet-family-city-danang-seafood-my-khe",
+                        "viet-phrase-food-menu",
+                    ], subcategoryIDs: ["food-coffee"]),
+                    CitySituationCardSpec(id: "places", title: "Places to visit", subtitle: "Dragon Bridge, Marble Mountains, Bà Nà Hills", symbolName: "building.columns.fill", tintName: .blue, preferredPageIDs: [
+                        "viet-family-city-danang-place-dragon-bridge",
+                        "viet-family-city-danang-where-dragon-bridge",
+                        "viet-family-city-danang-place-marble-mountains",
+                        "viet-family-city-danang-place-ba-na-hills",
+                        "viet-family-city-danang-place-linh-ung-pagoda",
+                    ], subcategoryIDs: ["landmarks-attractions"]),
+                    CitySituationCardSpec(id: "help", title: "Help", subtitle: "Bathroom, pharmacy, lost item", symbolName: "cross.case.fill", tintName: .red, preferredPageIDs: [
+                        "viet-phrase-bath-1",
+                        "viet-phrase-health-1",
+                        "viet-phrase-help-need-help-direct",
+                        "viet-phrase-emergency-3",
+                        "viet-phrase-v500-prob-help-my-phone-is-missing",
+                    ], subcategoryIDs: ["practical-help-near-places"]),
                 ]
             case "hanoi":
                 return [
-                    ("arriving", "Arriving", "Airport, baggage, pickup", "airplane.arrival", .red, .category("airport")),
-                    ("getting-around", "Getting around", "Taxi, streets, drop-off", "car.fill", .green, .category("getting-around")),
-                    ("old-quarter", "Old Quarter", "Lake, streets, markets", "map.fill", .green, .category("city-guides")),
-                    ("food-coffee", "Food & coffee", "Phở, bún chả, cafés", "cup.and.saucer.fill", .orange, .category("food")),
-                    ("places", "Places to visit", "Lake, temples, museums", "building.columns.fill", .green, .category("city-guides")),
-                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                    CitySituationCardSpec(id: "arriving", title: "Arriving", subtitle: "Airport, baggage, pickup", symbolName: "airplane.arrival", tintName: .red, subcategoryIDs: ["arrivals-routes"]),
+                    CitySituationCardSpec(id: "getting-around", title: "Getting around", subtitle: "Taxi, streets, drop-off", symbolName: "car.fill", tintName: .green, subcategoryIDs: ["arrivals-routes", "neighborhoods-streets"]),
+                    CitySituationCardSpec(id: "old-quarter", title: "Old Quarter", subtitle: "Lake, streets, markets", symbolName: "map.fill", tintName: .green, subcategoryIDs: ["landmarks-attractions", "neighborhoods-streets", "shopping-markets"]),
+                    CitySituationCardSpec(id: "food-coffee", title: "Food & coffee", subtitle: "Phở, bún chả, cafés", symbolName: "cup.and.saucer.fill", tintName: .orange, subcategoryIDs: ["food-coffee"]),
+                    CitySituationCardSpec(id: "places", title: "Places to visit", subtitle: "Lake, temples, museums", symbolName: "building.columns.fill", tintName: .green, subcategoryIDs: ["landmarks-attractions"]),
+                    CitySituationCardSpec(id: "help", title: "Help", subtitle: "Bathroom, pharmacy, lost item", symbolName: "cross.case.fill", tintName: .red, subcategoryIDs: ["practical-help-near-places"]),
                 ]
             case "hcmc":
                 return [
-                    ("arriving", "Arriving", "Airport, baggage, pickup", "airplane.arrival", .red, .category("airport")),
-                    ("getting-around", "Getting around", "Taxi, Grab, streets, drop-off", "car.fill", .green, .category("getting-around")),
-                    ("district-one", "District 1", "Hotels, cafés, landmarks", "building.2.fill", .orange, .category("city-guides")),
-                    ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .orange, .category("food")),
-                    ("markets", "Markets", "Shopping, prices, pickup", "bag.fill", .orange, .category("shopping")),
-                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                    CitySituationCardSpec(id: "arriving", title: "Arriving", subtitle: "Airport, baggage, pickup", symbolName: "airplane.arrival", tintName: .red, subcategoryIDs: ["arrivals-routes"]),
+                    CitySituationCardSpec(id: "getting-around", title: "Getting around", subtitle: "Taxi, Grab, streets, drop-off", symbolName: "car.fill", tintName: .green, subcategoryIDs: ["arrivals-routes", "neighborhoods-streets"]),
+                    CitySituationCardSpec(id: "district-one", title: "District 1", subtitle: "Hotels, cafés, landmarks", symbolName: "building.2.fill", tintName: .orange, subcategoryIDs: ["landmarks-attractions", "neighborhoods-streets", "food-coffee"]),
+                    CitySituationCardSpec(id: "food-coffee", title: "Food & coffee", subtitle: "Restaurants, cafés, markets", symbolName: "cup.and.saucer.fill", tintName: .orange, subcategoryIDs: ["food-coffee"]),
+                    CitySituationCardSpec(id: "markets", title: "Markets", subtitle: "Shopping, prices, pickup", symbolName: "bag.fill", tintName: .orange, subcategoryIDs: ["shopping-markets"]),
+                    CitySituationCardSpec(id: "help", title: "Help", subtitle: "Bathroom, pharmacy, lost item", symbolName: "cross.case.fill", tintName: .red, subcategoryIDs: ["practical-help-near-places"]),
                 ]
             case "hoian":
                 return [
-                    ("arriving", "Arriving", "Shuttle, hotel, baggage", "airplane.arrival", .red, .category("airport")),
-                    ("getting-around", "Getting around", "Walking, taxi, pickup", "car.fill", .green, .category("getting-around")),
-                    ("old-town", "Old Town", "Lanterns, markets, river", "house.lodge.fill", .orange, .category("city-guides")),
-                    ("food-coffee", "Food & coffee", "Cao lầu, cafés, markets", "cup.and.saucer.fill", .orange, .category("food")),
-                    ("shopping", "Shopping", "Tailors, prices, pickup", "bag.fill", .orange, .category("shopping")),
-                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                    CitySituationCardSpec(id: "arriving", title: "Arriving", subtitle: "Shuttle, hotel, baggage", symbolName: "airplane.arrival", tintName: .red, subcategoryIDs: ["arrivals-routes"]),
+                    CitySituationCardSpec(id: "getting-around", title: "Getting around", subtitle: "Walking, taxi, pickup", symbolName: "car.fill", tintName: .green, subcategoryIDs: ["arrivals-routes", "neighborhoods-streets"]),
+                    CitySituationCardSpec(id: "old-town", title: "Old Town", subtitle: "Lanterns, markets, river", symbolName: "house.lodge.fill", tintName: .orange, subcategoryIDs: ["landmarks-attractions", "shopping-markets"]),
+                    CitySituationCardSpec(id: "food-coffee", title: "Food & coffee", subtitle: "Cao lầu, cafés, markets", symbolName: "cup.and.saucer.fill", tintName: .orange, subcategoryIDs: ["food-coffee"]),
+                    CitySituationCardSpec(id: "shopping", title: "Shopping", subtitle: "Tailors, prices, pickup", symbolName: "bag.fill", tintName: .orange, subcategoryIDs: ["shopping-markets"]),
+                    CitySituationCardSpec(id: "help", title: "Help", subtitle: "Bathroom, pharmacy, lost item", symbolName: "cross.case.fill", tintName: .red, subcategoryIDs: ["practical-help-near-places"]),
                 ]
             case "hue":
                 return [
-                    ("arriving", "Arriving", "Station, hotel, pickup", "airplane.arrival", .red, .category("airport")),
-                    ("getting-around", "Getting around", "Taxi, streets, drop-off", "car.fill", .green, .category("getting-around")),
-                    ("citadel", "Citadel", "Tickets, gates, pickup", "building.columns.fill", .green, .category("city-guides")),
-                    ("food", "Food", "Bún bò Huế, markets, cafés", "cup.and.saucer.fill", .orange, .category("food")),
-                    ("river-heritage", "River & heritage", "Boats, pagodas, routes", "water.waves", .blue, .category("city-guides")),
-                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                    CitySituationCardSpec(id: "arriving", title: "Arriving", subtitle: "Station, hotel, pickup", symbolName: "airplane.arrival", tintName: .red, subcategoryIDs: ["arrivals-routes"]),
+                    CitySituationCardSpec(id: "getting-around", title: "Getting around", subtitle: "Taxi, streets, drop-off", symbolName: "car.fill", tintName: .green, subcategoryIDs: ["arrivals-routes", "neighborhoods-streets"]),
+                    CitySituationCardSpec(id: "citadel", title: "Citadel", subtitle: "Tickets, gates, pickup", symbolName: "building.columns.fill", tintName: .green, subcategoryIDs: ["landmarks-attractions"]),
+                    CitySituationCardSpec(id: "food", title: "Food", subtitle: "Bún bò Huế, markets, cafés", symbolName: "cup.and.saucer.fill", tintName: .orange, subcategoryIDs: ["food-coffee"]),
+                    CitySituationCardSpec(id: "river-heritage", title: "River & heritage", subtitle: "Boats, pagodas, routes", symbolName: "water.waves", tintName: .blue, subcategoryIDs: ["landmarks-attractions"]),
+                    CitySituationCardSpec(id: "help", title: "Help", subtitle: "Bathroom, pharmacy, lost item", symbolName: "cross.case.fill", tintName: .red, subcategoryIDs: ["practical-help-near-places"]),
                 ]
             default:
                 return [
-                    ("arriving", "Arriving", "Airport, baggage, pickup", "airplane.arrival", .red, .category("airport")),
-                    ("getting-around", "Getting around", "Taxi, streets, drop-off", "car.fill", .green, .category("getting-around")),
-                    ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .orange, .category("food")),
-                    ("places", "Places to visit", "Landmarks, streets, day trips", "building.columns.fill", tintName, .category("city-guides")),
-                    ("help", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .red, .category("emergency")),
+                    CitySituationCardSpec(id: "arriving", title: "Arriving", subtitle: "Airport, baggage, pickup", symbolName: "airplane.arrival", tintName: .red, subcategoryIDs: ["arrivals-routes"]),
+                    CitySituationCardSpec(id: "getting-around", title: "Getting around", subtitle: "Taxi, streets, drop-off", symbolName: "car.fill", tintName: .green, subcategoryIDs: ["arrivals-routes", "neighborhoods-streets"]),
+                    CitySituationCardSpec(id: "food-coffee", title: "Food & coffee", subtitle: "Restaurants, cafés, markets", symbolName: "cup.and.saucer.fill", tintName: .orange, subcategoryIDs: ["food-coffee"]),
+                    CitySituationCardSpec(id: "places", title: "Places to visit", subtitle: "Landmarks, streets, day trips", symbolName: "building.columns.fill", tintName: tintName, subcategoryIDs: ["landmarks-attractions", "neighborhoods-streets"]),
+                    CitySituationCardSpec(id: "help", title: "Help", subtitle: "Bathroom, pharmacy, lost item", symbolName: "cross.case.fill", tintName: .red, subcategoryIDs: ["practical-help-near-places"]),
                 ]
             }
         }()
 
-        return specs.map { id, title, subtitle, symbolName, tint, route in
-            BrowseCollectionSubcategory(
-                id: "\(cityID).situation.\(id)",
-                title: title,
-                subtitle: subtitle,
-                symbolName: symbolName,
-                tintName: tint,
-                phraseCount: 0,
-                items: [],
-                targetRoute: route
+        return specs.map { spec in
+            let items = citySituationItems(for: spec, groupedItems: groupedItems)
+            return BrowseCollectionSubcategory(
+                id: "\(cityID).situation.\(spec.id)",
+                title: spec.title,
+                subtitle: spec.subtitle,
+                symbolName: spec.symbolName,
+                tintName: spec.tintName,
+                phraseCount: max(items.count, spec.subcategoryIDs.reduce(0) { total, subcategoryID in
+                    total + groupedItems[subcategoryID, default: []].count
+                }),
+                items: items,
+                targetRoute: nil
             )
         }
+    }
+
+    private static func citySituationItems(
+        for spec: CitySituationCardSpec,
+        groupedItems: [String: [BrowseCityCollectionItem]]
+    ) -> [BrowseSearchPhraseItem] {
+        let preferredItems = pageItems(forOpenablePageIDs: spec.preferredPageIDs)
+        let fallbackItems = spec.subcategoryIDs
+            .flatMap { groupedItems[$0, default: []] }
+            .filter { !lowPriorityCityOverviewText($0.title, $0.subtitle) }
+            .prefix(8)
+            .map(\.phraseItem)
+
+        return Array(uniquePhraseItems(preferredItems + fallbackItems).prefix(6))
     }
 
     private static func cityNamesToKnowItems(for cityID: String, cityItems: [BrowseCityCollectionItem]) -> [BrowseSearchPhraseItem] {
@@ -1135,8 +1212,35 @@ enum BrowseSearchDestinations {
                 tintName: tintName,
                 phraseCount: rows.count,
                 items: rows.prefix(4).map(\.phraseItem),
-                targetRoute: route
+                targetRoute: nil
             )
+        }
+    }
+
+    private static func cityNameAudioItem(for cityID: String, city: BrowseCityShortcut) -> BrowseCityNameAudioItem {
+        let vietnameseName = cityVietnameseName(for: cityID)
+        return BrowseCityNameAudioItem(
+            title: vietnameseName,
+            subtitle: city.title,
+            audioKey: AudioAssetManifest.main?.audioKey(forExactText: vietnameseName),
+            tintName: city.tintName
+        )
+    }
+
+    private static func cityVietnameseName(for cityID: String) -> String {
+        switch cityID {
+        case "danang":
+            return "Đà Nẵng"
+        case "hanoi":
+            return "Hà Nội"
+        case "hcmc":
+            return "Sài Gòn"
+        case "hoian":
+            return "Hội An"
+        case "hue":
+            return "Huế"
+        default:
+            return cityShortcuts.first(where: { $0.id == cityID })?.title ?? cityID
         }
     }
 
@@ -1144,6 +1248,10 @@ enum BrowseSearchDestinations {
         phraseIDs.compactMap { phraseID in
             BrowseSearchPhraseItem.resolve(pageID: "viet-family-\(phraseID)")
         }
+    }
+
+    private static func pageItems(forOpenablePageIDs pageIDs: [String]) -> [BrowseSearchPhraseItem] {
+        pageIDs.compactMap(BrowseSearchPhraseItem.resolve(pageID:))
     }
 
     private static func uniquePhraseItems(_ items: [BrowseSearchPhraseItem]) -> [BrowseSearchPhraseItem] {

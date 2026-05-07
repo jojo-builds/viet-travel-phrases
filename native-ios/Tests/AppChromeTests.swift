@@ -1025,9 +1025,18 @@ final class AppChromeTests: XCTestCase {
             cityHub.situations.map(\.title),
             ["Arriving", "Getting around", "Beach day", "Food & coffee", "Places to visit", "Help"]
         )
-        XCTAssertTrue(cityHub.situations.allSatisfy { $0.targetRoute != nil })
+        XCTAssertTrue(cityHub.situations.allSatisfy { $0.targetRoute == nil })
+        XCTAssertTrue(cityHub.situations.allSatisfy { !$0.items.isEmpty })
+        XCTAssertEqual(cityHub.cityNameAudioItem?.title, "Đà Nẵng")
+        XCTAssertEqual(cityHub.cityNameAudioItem?.subtitle, "Da Nang")
+        XCTAssertNotNil(AudioAssetManifest.main?.url(for: cityHub.cityNameAudioItem?.audioKey))
         XCTAssertEqual(cityHub.situations.first(where: { $0.title == "Food & coffee" })?.subtitle, "Restaurants, cafés, markets")
         XCTAssertEqual(cityHub.situations.first(where: { $0.title == "Places to visit" })?.subtitle, "Dragon Bridge, Marble Mountains, Bà Nà Hills")
+        XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Arriving" })?.items.contains { $0.pageID == "viet-phrase-airport-3" } == true)
+        XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Getting around" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-nguyen-van-linh-street" } == true)
+        XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Beach day" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-my-khe" } == true)
+        XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Food & coffee" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-nen" } == true)
+        XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Places to visit" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" } == true)
         XCTAssertEqual(cityHub.namesToKnowItems.first?.pageID, "viet-phrase-city-danang-place-airport")
         XCTAssertTrue(cityHub.namesToKnowItems.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" })
         XCTAssertTrue(cityHub.namesToKnowItems.contains { $0.pageID == "viet-phrase-city-danang-place-nguyen-van-linh-street" })
@@ -1046,6 +1055,7 @@ final class AppChromeTests: XCTestCase {
         })
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Landmarks" })
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
+        XCTAssertTrue(cityHub.browseGroups.allSatisfy { $0.targetRoute == nil })
     }
 
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {
