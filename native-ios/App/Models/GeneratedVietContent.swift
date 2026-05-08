@@ -107,6 +107,14 @@ enum SearchTextMatcher {
         }
     }
 
+    static func matchesAnyToken(_ tokens: [String], in normalizedText: String) -> Bool {
+        let indexedTokens = Set(searchTokens(in: normalizedText))
+
+        return tokens.contains { token in
+            indexedTokens.contains(token) || indexedTokens.contains { $0.hasPrefix(token) }
+        }
+    }
+
     private static func searchTokens(in normalizedText: String) -> [String] {
         normalizedText
             .unicodeScalars
@@ -116,6 +124,14 @@ enum SearchTextMatcher {
 }
 
 enum SearchQueryExpander {
+    static let defaultFallbackQueries: [String] = [
+        "hello",
+        "I don't understand",
+        "please help me",
+        "where is the bathroom",
+        "call a taxi",
+    ]
+
     static func expandedQueries(for query: String) -> [String] {
         let normalizedQuery = normalize(query)
         guard !normalizedQuery.isEmpty else {
@@ -125,6 +141,41 @@ enum SearchQueryExpander {
         var queries = [query]
 
         queries.append(contentsOf: spellingAndSpacingVariants(for: normalizedQuery))
+
+        for rule in recoverableObjectRules where rule.matches(normalizedQuery) {
+            queries.append(contentsOf: rule.recoveryQueries)
+        }
+
+        for rule in intentExpansionRules where rule.matches(normalizedQuery) {
+            queries.append(contentsOf: rule.expandedQueries)
+        }
+
+        return uniqueQueries(queries)
+    }
+
+    static func looseFallbackQueries(for query: String) -> [String] {
+        let normalizedQuery = normalize(query)
+        guard !normalizedQuery.isEmpty else {
+            return []
+        }
+
+        var queries: [String] = []
+
+        for token in normalizedQuery.split(separator: " ").map(String.init) {
+            guard isLooseSearchToken(token) else {
+                continue
+            }
+
+            queries.append(token)
+
+            if let singularToken = singularToken(for: token) {
+                queries.append(singularToken)
+            }
+
+            for candidate in looseTokenExpansions[token, default: []] {
+                queries.append(candidate)
+            }
+        }
 
         for rule in recoverableObjectRules where rule.matches(normalizedQuery) {
             queries.append(contentsOf: rule.recoveryQueries)
@@ -192,6 +243,104 @@ enum SearchQueryExpander {
         }
 
         return variants
+    }
+
+    private static let looseStopwords: Set<String> = [
+        "a",
+        "am",
+        "an",
+        "and",
+        "are",
+        "as",
+        "at",
+        "be",
+        "can",
+        "could",
+        "do",
+        "does",
+        "for",
+        "from",
+        "get",
+        "give",
+        "have",
+        "how",
+        "i",
+        "in",
+        "is",
+        "it",
+        "me",
+        "my",
+        "need",
+        "new",
+        "of",
+        "on",
+        "or",
+        "please",
+        "show",
+        "that",
+        "the",
+        "this",
+        "to",
+        "want",
+        "where",
+        "with",
+        "you",
+        "your",
+    ]
+
+    private static let shortLooseTokens: Set<String> = [
+        "qr",
+        "sim",
+        "atm",
+        "wc",
+        "ve",
+    ]
+
+    private static let looseTokenExpansions: [String: [String]] = [
+        "air": ["airport", "flight", "plane", "sân bay"],
+        "bridge": ["bridge", "cầu", "dragon bridge", "golden bridge"],
+        "cab": ["taxi", "grab", "ride"],
+        "car": ["taxi", "grab", "ride", "driver"],
+        "hcmc": ["saigon", "ho chi minh city"],
+        "hello": ["hello", "chào", "xin chào"],
+        "help": ["please help me", "can you help me", "emergency"],
+        "passport": ["passport", "hộ chiếu", "lost passport", "passport missing"],
+        "phone": ["phone", "lost phone", "someone took my phone"],
+        "ride": ["taxi", "grab", "pickup point", "driver"],
+        "saigon": ["saigon", "ho chi minh city"],
+        "table": ["table", "bàn", "table for two", "restaurant"],
+        "taxi": ["taxi", "grab", "ride", "driver", "pickup"],
+        "ticket": ["ticket", "tickets", "vé", "bus ticket", "train ticket"],
+        "tickets": ["ticket", "tickets", "vé", "bus ticket", "train ticket"],
+        "ve": ["ticket", "vé"],
+    ]
+
+    private static func isLooseSearchToken(_ token: String) -> Bool {
+        guard !looseStopwords.contains(token) else {
+            return false
+        }
+
+        return token.count >= 3 || shortLooseTokens.contains(token)
+    }
+
+    private static func singularToken(for token: String) -> String? {
+        guard token.count > 3 else {
+            return nil
+        }
+
+        if token.hasSuffix("ies"), token.count > 4 {
+            return String(token.dropLast(3)) + "y"
+        }
+
+        if token.hasSuffix("ses") || token.hasSuffix("xes") || token.hasSuffix("ches") || token.hasSuffix("shes") {
+            return String(token.dropLast(2))
+        }
+
+        if token.hasSuffix("s"), !token.hasSuffix("ss") {
+            return String(token.dropLast())
+        }
+
+        return nil
     }
 
     private static let recoveryIntentTerms: [String] = [

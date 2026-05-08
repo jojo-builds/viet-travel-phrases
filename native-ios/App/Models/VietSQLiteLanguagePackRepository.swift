@@ -722,11 +722,15 @@ final class VietSQLiteLanguagePackRepository {
     }
 
     func search(_ query: String, limit: Int = 8) throws -> [PhraseSearchResult] {
-        let expandedQueries = SearchQueryExpander.expandedQueries(for: query)
-        let ftsQueries = Self.uniqueFTSQueries(for: expandedQueries)
-        guard !ftsQueries.isEmpty else {
+        guard !Self.searchComparableText(query).isEmpty else {
             return []
         }
+
+        let expandedQueries = SearchQueryExpander.expandedQueries(for: query)
+        let ftsQueries = Self.uniqueFTSQueries(for: expandedQueries)
+        let looseQueries = SearchQueryExpander.looseFallbackQueries(for: query)
+        let looseFTSQueries = Self.uniqueFTSQueries(for: looseQueries)
+            .filter { !ftsQueries.contains($0) }
 
         let sql = """
         SELECT
@@ -743,20 +747,29 @@ final class VietSQLiteLanguagePackRepository {
         LIMIT ?;
         """
 
-        let rawResults = try ftsQueries.flatMap { ftsQuery in
-            try rows(sql, bind: { statement in
-                try self.bindText(ftsQuery, to: 1, in: statement, sql: sql)
-                try self.bindInt(limit * 4, to: 2, in: statement, sql: sql)
-            }) { statement in
-                PhraseSearchResult(
-                    pageID: Self.stringColumn(statement, index: 0),
-                    title: Self.stringColumn(statement, index: 1),
-                    subtitle: Self.stringColumn(statement, index: 2)
-                )
+        func results(for ftsQueries: [String], perQueryLimit: Int) throws -> [PhraseSearchResult] {
+            try ftsQueries.flatMap { ftsQuery in
+                try rows(sql, bind: { statement in
+                    try self.bindText(ftsQuery, to: 1, in: statement, sql: sql)
+                    try self.bindInt(perQueryLimit, to: 2, in: statement, sql: sql)
+                }) { statement in
+                    PhraseSearchResult(
+                        pageID: Self.stringColumn(statement, index: 0),
+                        title: Self.stringColumn(statement, index: 1),
+                        subtitle: Self.stringColumn(statement, index: 2)
+                    )
+                }
             }
         }
 
-        let normalizedQueries = expandedQueries
+        let strictResults = try results(for: ftsQueries, perQueryLimit: limit * 4)
+        let looseResults = try results(for: looseFTSQueries, perQueryLimit: limit * 3)
+        let defaultResults = (strictResults + looseResults).isEmpty
+            ? try results(for: Self.uniqueFTSQueries(for: SearchQueryExpander.defaultFallbackQueries), perQueryLimit: limit * 2)
+            : []
+        let rawResults = strictResults + looseResults + defaultResults
+
+        let normalizedQueries = (expandedQueries + looseQueries + (defaultResults.isEmpty ? [] : SearchQueryExpander.defaultFallbackQueries))
             .map(Self.searchComparableText)
             .filter { !$0.isEmpty }
         var seenPageIDs = Set<String>()

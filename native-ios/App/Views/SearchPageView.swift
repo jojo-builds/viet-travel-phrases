@@ -193,16 +193,6 @@ struct SearchPageView: View {
         VStack(alignment: .leading, spacing: 24) {
             resultFilters
 
-            if selectedFilter.includesCategories, !results.collectionResults.isEmpty {
-                SearchSection(title: "Best match") {
-                    LazyVStack(spacing: 12) {
-                        ForEach(results.collectionResults.prefix(3)) { match in
-                            SearchCollectionCard(match: match, onOpenCollection: onOpenCollection)
-                        }
-                    }
-                }
-            }
-
             if selectedFilter.includesPhrases, !results.phraseResults.isEmpty {
                 SearchSection(title: "Best matches") {
                     LazyVStack(spacing: 10) {
@@ -212,6 +202,16 @@ struct SearchPageView: View {
                     }
                     .padding(14)
                     .phraseListCard(cornerRadius: 24)
+                }
+            }
+
+            if selectedFilter.includesCategories, !results.collectionResults.isEmpty {
+                SearchSection(title: "Browse matches") {
+                    LazyVStack(spacing: 12) {
+                        ForEach(results.collectionResults.prefix(3)) { match in
+                            SearchCollectionCard(match: match, onOpenCollection: onOpenCollection)
+                        }
+                    }
                 }
             }
 

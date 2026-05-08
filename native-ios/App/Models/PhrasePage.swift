@@ -751,6 +751,38 @@ enum PhraseSearchIndex {
             .split(separator: " ")
             .map(String.init)
 
+        func uniqueTokens(for normalizedQueries: [String]) -> [String] {
+            var seen = Set<String>()
+            return normalizedQueries
+                .flatMap { $0.split(separator: " ").map(String.init) }
+                .filter { seen.insert($0).inserted }
+        }
+
+        func bestScore(
+            title: String,
+            englishTitle: String,
+            pronunciation: String,
+            haystack: String,
+            identityHaystack: String,
+            normalizedQueries: [String],
+            priority: SearchPriorityTier
+        ) -> Int {
+            normalizedQueries
+                .map { query in
+                    let queryTokens = query.split(separator: " ").map(String.init)
+                    return score(
+                        title: title,
+                        englishTitle: englishTitle,
+                        pronunciation: pronunciation,
+                        haystack: haystack,
+                        normalizedQuery: query,
+                        priority: priority,
+                        priorityMatchesQuery: SearchTextMatcher.matchesAllTokens(queryTokens, in: identityHaystack)
+                    )
+                }
+                .max() ?? 0
+        }
+
         let rootResults = rootPages
             .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
                 let haystack = normalize(searchText(for: page))
@@ -803,9 +835,135 @@ enum PhraseSearchIndex {
                 )
             }
 
+        var candidateResults = rootResults + designedResults
+
+        if candidateResults.count < 8 {
+            let looseQueries = SearchQueryExpander.looseFallbackQueries(for: query)
+                .map(normalize)
+                .filter { !$0.isEmpty }
+            let looseTokens = uniqueTokens(for: looseQueries)
+
+            if !looseTokens.isEmpty {
+                let looseRootResults = rootPages
+                    .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
+                        let haystack = normalize(searchText(for: page))
+                        guard SearchTextMatcher.matchesAnyToken(looseTokens, in: haystack) else {
+                            return nil
+                        }
+
+                        let identityHaystack = normalize(searchIdentityText(for: page))
+                        return (
+                            PhraseSearchResult(
+                                pageID: page.id,
+                                title: page.title,
+                                subtitle: page.intentSummary
+                            ),
+                            bestScore(
+                                title: page.title,
+                                englishTitle: page.englishTitle,
+                                pronunciation: page.pronunciation,
+                                haystack: haystack,
+                                identityHaystack: identityHaystack,
+                                normalizedQueries: looseQueries,
+                                priority: .anchor
+                            )
+                        )
+                    }
+
+                let looseDesignedResults = PhraseDetailPage.all
+                    .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
+                        let haystack = normalize(searchText(for: page))
+                        guard SearchTextMatcher.matchesAnyToken(looseTokens, in: haystack) else {
+                            return nil
+                        }
+
+                        let identityHaystack = normalize(searchIdentityText(for: page))
+                        return (
+                            PhraseSearchResult(
+                                pageID: page.id,
+                                title: page.title,
+                                subtitle: page.englishTitle
+                            ),
+                            bestScore(
+                                title: page.title,
+                                englishTitle: page.englishTitle,
+                                pronunciation: page.pronunciation,
+                                haystack: haystack,
+                                identityHaystack: identityHaystack,
+                                normalizedQueries: looseQueries,
+                                priority: searchPriority(for: page)
+                            )
+                        )
+                    }
+
+                candidateResults += looseRootResults + looseDesignedResults
+            }
+        }
+
+        if candidateResults.isEmpty {
+            let fallbackQueries = SearchQueryExpander.defaultFallbackQueries
+                .map(normalize)
+                .filter { !$0.isEmpty }
+            let fallbackTokens = uniqueTokens(for: fallbackQueries)
+
+            let fallbackRootResults = rootPages
+                .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
+                    let haystack = normalize(searchText(for: page))
+                    guard SearchTextMatcher.matchesAnyToken(fallbackTokens, in: haystack) else {
+                        return nil
+                    }
+
+                    let identityHaystack = normalize(searchIdentityText(for: page))
+                    return (
+                        PhraseSearchResult(
+                            pageID: page.id,
+                            title: page.title,
+                            subtitle: page.intentSummary
+                        ),
+                        bestScore(
+                            title: page.title,
+                            englishTitle: page.englishTitle,
+                            pronunciation: page.pronunciation,
+                            haystack: haystack,
+                            identityHaystack: identityHaystack,
+                            normalizedQueries: fallbackQueries,
+                            priority: .anchor
+                        )
+                    )
+                }
+
+            let fallbackDesignedResults = PhraseDetailPage.all
+                .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
+                    let haystack = normalize(searchText(for: page))
+                    guard SearchTextMatcher.matchesAnyToken(fallbackTokens, in: haystack) else {
+                        return nil
+                    }
+
+                    let identityHaystack = normalize(searchIdentityText(for: page))
+                    return (
+                        PhraseSearchResult(
+                            pageID: page.id,
+                            title: page.title,
+                            subtitle: page.englishTitle
+                        ),
+                        bestScore(
+                            title: page.title,
+                            englishTitle: page.englishTitle,
+                            pronunciation: page.pronunciation,
+                            haystack: haystack,
+                            identityHaystack: identityHaystack,
+                            normalizedQueries: fallbackQueries,
+                            priority: searchPriority(for: page)
+                        )
+                    )
+                }
+
+            candidateResults = fallbackRootResults + fallbackDesignedResults
+        }
+
         var bestByPageID: [String: (result: PhraseSearchResult, score: Int)] = [:]
 
-        for scoredResult in rootResults + designedResults {
+        for scoredResult in candidateResults {
             let currentScore = bestByPageID[scoredResult.result.pageID]?.score ?? Int.min
             if scoredResult.score > currentScore {
                 bestByPageID[scoredResult.result.pageID] = scoredResult

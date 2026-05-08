@@ -1328,6 +1328,39 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
+    func testSearchIndexSalvagesKnownTokensFromNoisyQueries() {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+
+        let cases: [(query: String, expectedTerms: [String])] = [
+            ("heksn shsgs kwodh tickets", ["ticket", "tickets", "vé"]),
+            ("asdf bridge random", ["bridge", "cầu"]),
+            ("blah blah passport words", ["passport", "hộ chiếu"]),
+            ("nonsense hello qqq", ["hello", "chào"]),
+        ]
+
+        for testCase in cases {
+            let results = Array(PhraseSearchIndex.search(testCase.query).prefix(8))
+            let combinedResultText = Self.normalizedSearchAssertionText(results)
+            let browseSearchRows = BrowseSearchDestinations.searchResults(for: testCase.query, limit: 8)
+            let combinedBrowseText = Self.normalizedSearchAssertionText(browseSearchRows)
+
+            XCTAssertFalse(results.isEmpty, "Expected loose results for \(testCase.query)")
+            XCTAssertTrue(
+                testCase.expectedTerms.contains { term in
+                    combinedResultText.contains(Self.normalizedSearchAssertionText(term))
+                },
+                "Expected \(testCase.query) to salvage one of \(testCase.expectedTerms), got \(results.map { "\($0.title) / \($0.subtitle)" })"
+            )
+            XCTAssertFalse(browseSearchRows.isEmpty, "Expected search UI rows for \(testCase.query)")
+            XCTAssertTrue(
+                testCase.expectedTerms.contains { term in
+                    combinedBrowseText.contains(Self.normalizedSearchAssertionText(term))
+                },
+                "Expected Browse search for \(testCase.query) to surface one of \(testCase.expectedTerms), got \(browseSearchRows.map { "\($0.title) / \($0.subtitle)" })"
+            )
+        }
+    }
+
     func testSearchIndexKeepsGeneratedDuplicatesOnCanonicalDesignedPages() {
         let xinLoiResults = PhraseSearchIndex.search("Xin lỗi").filter { $0.title == "Xin lỗi" }
         let camOnResults = PhraseSearchIndex.search("Cảm ơn").filter { $0.title == "Cảm ơn" }
@@ -1623,6 +1656,28 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
 
         XCTAssertTrue(missingContexts.isEmpty, missingContexts.joined(separator: "\n"))
+    }
+
+    private static func normalizedSearchAssertionText(_ results: [PhraseSearchResult]) -> String {
+        normalizedSearchAssertionText(
+            results
+                .flatMap { [$0.title, $0.subtitle] }
+                .joined(separator: " ")
+        )
+    }
+
+    private static func normalizedSearchAssertionText(_ results: [BrowseSearchPhraseItem]) -> String {
+        normalizedSearchAssertionText(
+            results
+                .flatMap { [$0.title, $0.subtitle] }
+                .joined(separator: " ")
+        )
+    }
+
+    private static func normalizedSearchAssertionText(_ text: String) -> String {
+        text
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+            .lowercased()
     }
 }
 

@@ -650,7 +650,7 @@ enum BrowseSearchDestinations {
     }
 
     static func matchingCollections(for query: String) -> [BrowseSearchCollectionMatch] {
-        let normalizedQueries = SearchQueryExpander.expandedQueries(for: query)
+        let normalizedQueries = (SearchQueryExpander.expandedQueries(for: query) + SearchQueryExpander.looseFallbackQueries(for: query))
             .map(normalize)
             .filter { !$0.isEmpty }
         guard !normalizedQueries.isEmpty else {
@@ -682,8 +682,10 @@ enum BrowseSearchDestinations {
     }
 
     static func matchingSituations(for query: String) -> [BrowseDestination] {
-        let normalizedQuery = normalize(query)
-        guard !normalizedQuery.isEmpty else {
+        let normalizedQueries = (SearchQueryExpander.expandedQueries(for: query) + SearchQueryExpander.looseFallbackQueries(for: query))
+            .map(normalize)
+            .filter { !$0.isEmpty }
+        guard !normalizedQueries.isEmpty else {
             return []
         }
 
@@ -693,19 +695,24 @@ enum BrowseSearchDestinations {
                 .joined(separator: " ")
 
             let searchText = normalize("\(destination.title) \(destination.subtitle) \(destination.sampleQuery) \(categoryText)")
-            return searchText.contains(normalizedQuery)
-                || normalizedQuery.split(separator: " ").allSatisfy { searchText.contains($0) }
+            return normalizedQueries.contains { normalizedQuery in
+                searchText.contains(normalizedQuery)
+                    || normalizedQuery.split(separator: " ").allSatisfy { searchText.contains($0) }
+            }
         }
     }
 
     static func matchingCities(for query: String) -> [BrowseCityShortcut] {
-        let normalizedQuery = normalize(query)
-        guard !normalizedQuery.isEmpty else {
+        let normalizedQueries = (SearchQueryExpander.expandedQueries(for: query) + SearchQueryExpander.looseFallbackQueries(for: query))
+            .map(normalize)
+            .filter { !$0.isEmpty }
+        guard !normalizedQueries.isEmpty else {
             return []
         }
 
         return cityShortcuts.filter { city in
-            normalize("\(city.title) \(city.query)").contains(normalizedQuery)
+            let searchText = normalize("\(city.title) \(city.query) \(cityAliases[city.id, default: []].joined(separator: " "))")
+            return normalizedQueries.contains { searchText.contains($0) }
         }
     }
 
