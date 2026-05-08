@@ -226,6 +226,25 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(HomeLayout.scenarioCardHeight, minimumHeight)
     }
 
+    func testHomeUseNowShelfUsesTwoRowCarouselMetrics() {
+        XCTAssertGreaterThanOrEqual(HomeLayout.quickPhraseCardWidth, 140)
+        XCTAssertLessThanOrEqual(HomeLayout.quickPhraseCardWidth, 160)
+        XCTAssertGreaterThanOrEqual(HomeLayout.quickPhraseCardHeight, 120)
+        XCTAssertEqual(HomeLayout.quickPhraseGridRowSpacing, 12)
+        XCTAssertGreaterThan(
+            HomeLayout.quickPhraseCardHeight * 2 + HomeLayout.quickPhraseGridRowSpacing,
+            HomeLayout.quickPhraseCardHeight
+        )
+    }
+
+    func testHomeUseNowShelfHasFriendlyStarterDepth() {
+        XCTAssertGreaterThanOrEqual(HomeUseNowCatalog.starterIDs.count, 10)
+        XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains(PhrasePage.xinChao.id))
+        XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains("viet-thank-you"))
+        XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains("viet-family-bathroom-where"))
+        XCTAssertFalse(HomeUseNowCatalog.starterIDs.contains("viet-family-health-doctor"))
+    }
+
     func testBrowseNextShelfRowsUseStableFullWidthCardMetrics() {
         XCTAssertEqual(BrowsePageLayout.nextShelfRowHeight, 108)
         XCTAssertEqual(BrowsePageLayout.nextShelfIconSize, 48)

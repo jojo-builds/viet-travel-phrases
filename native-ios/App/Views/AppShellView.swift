@@ -2557,9 +2557,9 @@ struct HomeView: View {
 
     private var useNowShelf: some View {
         HomeShelf(title: "Use now", subtitle: "Quick phrases for everyday moments") {
-            HomeQuickPhraseGrid(items: Array(HomeContent.useNowItems.prefix(3)), onOpenDetail: onOpenDetail)
+            HomeQuickPhraseGrid(items: HomeContent.useNowItems, onOpenDetail: onOpenDetail)
         }
-        .padding(.horizontal, HomeLayout.horizontalPadding)
+        .padding(.leading, HomeLayout.horizontalPadding)
     }
 
     private var practiceScenariosShelf: some View {
@@ -2797,6 +2797,8 @@ enum HomeLayout {
     static let cardCornerRadius: CGFloat = 22
     static let largeCardCornerRadius: CGFloat = 28
     static let quickPhraseCardHeight: CGFloat = 122
+    static let quickPhraseCardWidth: CGFloat = 146
+    static let quickPhraseGridRowSpacing: CGFloat = 12
     static let scenarioCardWidth: CGFloat = 198
     static let scenarioCardHeight: CGFloat = 368
     static let scenarioCardPadding: CGFloat = 16
@@ -2925,14 +2927,25 @@ private struct HomeSituationGroup: Identifiable {
     }
 }
 
-private enum HomeContent {
-    static let useNowIDs = [
+enum HomeUseNowCatalog {
+    static let starterIDs = [
         PhrasePage.xinChao.id,
         "viet-thank-you",
+        "viet-excuse-sorry",
+        "viet-family-polite-its-okay",
+        "viet-goodbye",
         "viet-family-repair-understand",
+        "viet-family-repair-slower",
+        "viet-family-repair-repeat",
+        "viet-family-service-water",
+        "viet-family-food-menu",
+        "viet-family-food-pay-now",
         "viet-family-bathroom-where",
-        "viet-family-health-doctor",
     ]
+}
+
+private enum HomeContent {
+    static let useNowIDs = HomeUseNowCatalog.starterIDs
 
     static let featuredIDs = [
         PhrasePage.xinChao.id,
@@ -3186,13 +3199,23 @@ private struct HomeQuickPhraseGrid: View {
     let items: [HomePhraseItem]
     let onOpenDetail: (String) -> Void
 
+    private let rows = [
+        GridItem(.fixed(HomeLayout.quickPhraseCardHeight), spacing: HomeLayout.quickPhraseGridRowSpacing),
+        GridItem(.fixed(HomeLayout.quickPhraseCardHeight), spacing: 0),
+    ]
+
     var body: some View {
-        HStack(spacing: 12) {
-            ForEach(items) { item in
-                HomeQuickPhraseCard(item: item, onOpenDetail: onOpenDetail)
-                    .frame(maxWidth: .infinity)
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHGrid(rows: rows, alignment: .top, spacing: 12) {
+                ForEach(items) { item in
+                    HomeQuickPhraseCard(item: item, onOpenDetail: onOpenDetail)
+                }
             }
+            .padding(.trailing, HomeLayout.horizontalPadding)
+            .padding(.bottom, 2)
         }
+        .frame(height: HomeLayout.quickPhraseCardHeight * 2 + HomeLayout.quickPhraseGridRowSpacing)
+        .scrollClipDisabled()
     }
 }
 
@@ -3232,8 +3255,7 @@ private struct HomeQuickPhraseCard: View {
             }
             .padding(.horizontal, 10)
             .padding(.vertical, 12)
-            .frame(maxWidth: .infinity)
-            .frame(height: HomeLayout.quickPhraseCardHeight)
+            .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
             .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)

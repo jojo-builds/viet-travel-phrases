@@ -200,6 +200,19 @@ final class AdminChromeUITests: XCTestCase {
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-bottom.png")
     }
 
+    func testHomeUseNowTwoRowCarouselProofScreenshots() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+
+        for _ in 0..<3 where !app.staticTexts["Use now"].exists {
+            app.swipeUp()
+        }
+
+        XCTAssertTrue(app.staticTexts["Use now"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["HomeQuick.viet-phrase-polite-1"].waitForExistence(timeout: 3))
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-use-now-two-row-start.png")
+    }
+
     func testHomeScenarioStartButtonsStayInsideCardsAcrossRail() {
         let app = launchApp()
         assertHomeVisible(in: app)
