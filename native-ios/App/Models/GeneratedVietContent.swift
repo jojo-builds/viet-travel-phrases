@@ -225,10 +225,25 @@ enum SearchQueryExpander {
         recoveryIntentTerms + recoveryIntentPhrases
     }
 
+    private static var travelDocumentSupportIntentTriggers: [String] {
+        recoveryIntentTriggers + [
+            "new",
+            "replacement",
+            "replace",
+            "replacing",
+            "renew",
+            "renewal",
+            "get",
+            "obtain",
+            "need",
+            "help",
+        ]
+    }
+
     private static let recoverableObjectRules: [RecoverableObjectRule] = [
         RecoverableObjectRule(
             matchTerms: ["passport", "ho chieu"],
-            intentTerms: recoveryIntentTriggers,
+            intentTerms: travelDocumentSupportIntentTriggers,
             recoveryQueries: [
                 "lost passport",
                 "passport missing",

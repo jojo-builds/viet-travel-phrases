@@ -1250,6 +1250,15 @@ final class PhrasePageFixtureTests: XCTestCase {
                 ]
             ),
             (
+                "where can I get a new passport",
+                [
+                    "viet-phrase-emergency-3",
+                    "viet-phrase-v500-emer-safe-my-passport-is-missing",
+                    "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
+                    "viet-phrase-emergency-premium-passport-report",
+                ]
+            ),
+            (
                 "no peanuts",
                 [
                     "viet-phrase-vpe-food-without-khong-dau-phong",
