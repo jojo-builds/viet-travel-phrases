@@ -59,7 +59,9 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionMaximumStretch, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionLagFactor, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapActivationDelay, 0)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapCommitDelay, AppChromeLayout.dockSelectionTapActivationDelay)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapWaypointDelay, AppChromeLayout.dockSelectionTapActivationDelay)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapSettleDelay, 0)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapDeactivateDelay, 0)
     }
 
     func testDockSelectionDragMapsLocationsAcrossPrimaryTabs() {
@@ -69,6 +71,13 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 224, itemCount: 4), 3)
         XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: -40, itemCount: 4), 0)
         XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 600, itemCount: 4), 3)
+    }
+
+    func testDockSelectionTapFlightVisitsIntermediateTabs() {
+        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 0, to: 3), [1, 2, 3])
+        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 3, to: 0), [2, 1, 0])
+        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 1, to: 2), [2])
+        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 2, to: 2), [2])
     }
 
     func testDockSelectionLensStretchesWhileDraggingAndSettlesWhenReducedMotion() {

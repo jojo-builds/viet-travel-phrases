@@ -714,17 +714,24 @@ struct AppShellView: View {
         dockSelectionTapRequestID += 1
 
         let previousItem = dockDrag.activeItem
-        let startItem = dockDrag.startItem ?? item
+        let startItem = dockDrag.startItem ?? chrome.selectedDockItem
+        let didMoveBeyondTap = dockDrag.didMoveBeyondTap
+            || abs(value.translation.width) >= AppChromeLayout.dockSelectionDragCommitDistance
+        let activeItem = didMoveBeyondTap ? item : chrome.selectedDockItem
+        let dragX = didMoveBeyondTap
+            ? value.location.x
+            : AppDockSelectionLayout.itemCenterX(
+                index: chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
+            )
 
         dockDrag = AppDockInteractionState(
             startItem: startItem,
-            activeItem: item,
-            dragX: value.location.x,
-            didMoveBeyondTap: dockDrag.didMoveBeyondTap
-                || abs(value.translation.width) >= AppChromeLayout.dockSelectionDragCommitDistance
+            activeItem: activeItem,
+            dragX: dragX,
+            didMoveBeyondTap: didMoveBeyondTap
         )
 
-        if previousItem != nil, previousItem != item {
+        if didMoveBeyondTap, previousItem != nil, previousItem != item {
             playDockCrossingHaptic()
         }
     }
@@ -757,7 +764,10 @@ struct AppShellView: View {
         let sourceIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
         let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? sourceIndex
         let sourceX = AppDockSelectionLayout.itemCenterX(index: sourceIndex)
-        let destinationX = AppDockSelectionLayout.itemCenterX(index: destinationIndex)
+        let waypoints = AppDockSelectionLayout.waypointIndexes(
+            from: sourceIndex,
+            to: destinationIndex
+        )
 
         cancelSearchFocus()
 
@@ -776,17 +786,30 @@ struct AppShellView: View {
                 return
             }
 
-            playDockCrossingHaptic()
-            withAnimation(.interactiveSpring(response: 0.34, dampingFraction: 0.74, blendDuration: 0.12)) {
-                dockDrag = AppDockInteractionState(
-                    startItem: chrome.selectedDockItem,
-                    activeItem: item,
-                    dragX: destinationX,
-                    didMoveBeyondTap: true
-                )
+            for waypoint in waypoints {
+                guard requestID == dockSelectionTapRequestID,
+                      chrome.primaryDockItems.indices.contains(waypoint)
+                else {
+                    return
+                }
+
+                let waypointItem = chrome.primaryDockItems[waypoint]
+                let waypointX = AppDockSelectionLayout.itemCenterX(index: waypoint)
+
+                playDockCrossingHaptic()
+                withAnimation(.interactiveSpring(response: 0.28, dampingFraction: 0.70, blendDuration: 0.10)) {
+                    dockDrag = AppDockInteractionState(
+                        startItem: chrome.selectedDockItem,
+                        activeItem: waypointItem,
+                        dragX: waypointX,
+                        didMoveBeyondTap: true
+                    )
+                }
+
+                try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapWaypointDelay)
             }
 
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapCommitDelay)
+            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapSettleDelay)
             guard requestID == dockSelectionTapRequestID else {
                 return
             }
@@ -816,7 +839,7 @@ struct AppShellView: View {
         }
 
         Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 90_000_000)
+            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapDeactivateDelay)
             guard requestID == dockSelectionTapRequestID else {
                 return
             }
