@@ -71,6 +71,7 @@ struct PlaybackDockView: View {
     var audioKey: String? = nil
     var isSaved = false
     var onToggleSaved: (() -> Void)? = nil
+    var showsFavoriteButton = true
     var visibilityRoute: AppRoute? = nil
 
     @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
@@ -78,7 +79,13 @@ struct PlaybackDockView: View {
     var body: some View {
         ZStack {
             HStack(spacing: 0) {
-                favoriteButton
+                if showsFavoriteButton {
+                    favoriteButton
+                } else {
+                    Color.clear
+                        .frame(width: 54, height: 54)
+                        .accessibilityHidden(true)
+                }
 
                 Spacer(minLength: 88)
 

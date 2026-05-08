@@ -64,7 +64,8 @@ final class BrowseSearchUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Airport arrivals, beach rides, river landmarks, markets, and day trips."].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityNameAudio.Da Nang"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.otherElements["BrowseCollection.CityNamePlayer.Da Nang"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["What are you doing?"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.arriving"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.beach-day"].waitForExistence(timeout: 2))

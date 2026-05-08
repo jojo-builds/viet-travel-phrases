@@ -114,7 +114,7 @@ private struct BrowseCollectionHeader: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HeroMastheadImage(imageName: descriptor.mastheadImageName, verticalOffset: 0)
+            HeroMastheadImage(imageName: descriptor.mastheadImageName)
 
             VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 8) {
@@ -229,7 +229,7 @@ private struct BrowseCityHubContent: View {
 
         VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
             if let cityNameAudioItem = cityHub.cityNameAudioItem {
-                BrowseCityNameAudioCard(item: cityNameAudioItem)
+                BrowseCityNameAudioPlayer(item: cityNameAudioItem)
             }
 
             BrowseCityCardGridSection(
@@ -412,37 +412,40 @@ private struct BrowseCityActionCard: View {
     }
 }
 
-private struct BrowseCityNameAudioCard: View {
+private struct BrowseCityNameAudioPlayer: View {
     let item: BrowseCityNameAudioItem
 
     var body: some View {
-        HStack(spacing: 14) {
-            if AudioSpeakerButton.isPlayableAudioKey(item.audioKey) {
-                AudioSpeakerButton(tint: item.tintName, size: 48, audioKey: item.audioKey)
-            } else {
-                Image(systemName: "mappin.and.ellipse")
-                    .font(.system(size: 19, weight: .semibold))
-                    .foregroundStyle(item.tintName.color)
-                    .frame(width: 48, height: 48)
-                    .nativeGlass(cornerRadius: 24, tint: item.tintName.color.opacity(0.12), interactive: false)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 10) {
+                Image(systemName: "waveform")
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundStyle(item.tintName.audioColor)
+                    .frame(width: 42, height: 42)
+                    .nativeGlass(cornerRadius: 21, tint: item.tintName.color.opacity(0.12), interactive: false)
                     .accessibilityHidden(true)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(item.title)
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+
+                    Text(item.subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
 
-            VStack(alignment: .leading, spacing: 3) {
-                Text(item.title)
-                    .font(.headline.weight(.black))
-                    .foregroundStyle(.primary)
-
-                Text(item.subtitle)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-
-            Spacer()
+            PlaybackDockView(
+                audioKey: item.audioKey,
+                showsFavoriteButton: false
+            )
+            .frame(height: 108)
         }
-        .padding(14)
-        .phraseListCard(cornerRadius: 24)
-        .accessibilityIdentifier("BrowseCollection.CityNameAudio.\(item.subtitle)")
+        .padding(.horizontal, 6)
+        .padding(.vertical, 2)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("BrowseCollection.CityNamePlayer.\(item.subtitle)")
     }
 }
 
