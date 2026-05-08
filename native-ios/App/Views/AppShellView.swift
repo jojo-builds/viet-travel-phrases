@@ -1947,15 +1947,6 @@ struct AppShellNavigationState: Equatable {
         guard !detailPath.isEmpty else {
             if let currentCollection = browseCollectionPath.popLast() {
                 forwardStack.append(.browseCollection(currentCollection))
-                if browseCollectionPath.isEmpty {
-                    if rootRoute == .home {
-                        homeScrollToTopTrigger += 1
-                    } else {
-                        browseScrollToTopTrigger += 1
-                    }
-                } else {
-                    browseCollectionScrollToTopTrigger += 1
-                }
                 return
             }
 

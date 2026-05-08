@@ -661,6 +661,22 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.forwardStack, [.browseCollection(.city("danang"))])
     }
 
+    func testBackFromBrowseCollectionPreservesBrowseScrollPosition() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openBrowse()
+        let browseTopTriggerCount = navigation.browseScrollToTopTrigger
+
+        navigation.openBrowseCollection(.category("first-day"))
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("first-day")))
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertEqual(navigation.browseScrollToTopTrigger, browseTopTriggerCount)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("first-day"))])
+    }
+
     func testOpeningPracticeRouteCanReturnHome() {
         var navigation = AppShellNavigationState()
 

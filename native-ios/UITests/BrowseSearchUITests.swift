@@ -151,6 +151,22 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Browse.Situation.airport"].waitForExistence(timeout: 2))
     }
 
+    func testBackFromBrowseCollectionPreservesBrowseScrollPosition() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+
+        let lowerBrowseCard = app.buttons["Browse.PhraseFamily.polite-repair"]
+        tapWhenComfortablyVisible(identifier: "Browse.PhraseFamily.polite-repair", app: app)
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.polite-repair"].waitForExistence(timeout: 4))
+
+        app.buttons["Go back"].tap()
+
+        XCTAssertTrue(lowerBrowseCard.waitForExistence(timeout: 3))
+        XCTAssertTrue(lowerBrowseCard.isHittable, "Back should return to the card area that opened the collection, not the top of Browse.")
+    }
+
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
             ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "What are you doing?"),

@@ -434,6 +434,7 @@ private struct BrowseStartHereCard: View {
             .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("Browse.StartHereCard.\(destination.id)")
     }
 }
 
@@ -511,6 +512,7 @@ private struct BrowsePhraseFamilyCard: View {
             .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("Browse.PhraseFamily.\(destination.id)")
     }
 }
 
