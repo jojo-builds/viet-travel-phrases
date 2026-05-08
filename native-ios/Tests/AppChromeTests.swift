@@ -58,6 +58,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionStretchFactor, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionMaximumStretch, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionLagFactor, 0)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapActivationDelay, 0)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapCommitDelay, AppChromeLayout.dockSelectionTapActivationDelay)
     }
 
     func testDockSelectionDragMapsLocationsAcrossPrimaryTabs() {

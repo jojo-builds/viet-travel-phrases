@@ -68,6 +68,20 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
     }
 
+    func testDockTapRunsLensFlightAndCommitsDestination() {
+        let app = XCUIApplication()
+        app.launch()
+
+        assertHomeVisible(in: app)
+
+        let practiceButton = app.buttons["AppChrome.Dock.Practice"]
+        XCTAssertTrue(practiceButton.waitForExistence(timeout: 2))
+
+        practiceButton.tap()
+        XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
+        captureProofIfRequested(app: app, name: "dock-tap-home-to-practice-settled.png")
+    }
+
     func testDetailSearchBrowseOriginRoundTripKeepsChromeResponsive() {
         let app = XCUIApplication()
         app.launchArguments = ["--detail-page", "viet-phrase-hello-chao-anh"]
