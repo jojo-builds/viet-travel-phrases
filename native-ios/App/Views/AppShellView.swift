@@ -14,6 +14,7 @@ struct AppShellView: View {
     @State private var didApplyLaunchSearchFocus = false
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeMode: PracticeMode?
+    @State private var requestedPracticeScenarioID: PracticeScenarioID?
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -245,11 +246,15 @@ struct AppShellView: View {
     }
 
     private var practiceStartRequest: PracticeStartRequest? {
-        guard let requestedPracticeMode else {
-            return nil
+        if let requestedPracticeScenarioID {
+            return PracticeStartRequest(id: practiceStartRequestID, scenarioID: requestedPracticeScenarioID)
         }
 
-        return PracticeStartRequest(id: practiceStartRequestID, mode: requestedPracticeMode)
+        if let requestedPracticeMode {
+            return PracticeStartRequest(id: practiceStartRequestID, mode: requestedPracticeMode)
+        }
+
+        return nil
     }
 
     @ViewBuilder
@@ -1344,9 +1349,15 @@ struct AppShellView: View {
         case .addStarterPages(let pageIDs):
             intentStore.addPracticePages(pageIDs)
             requestedPracticeMode = nil
+            requestedPracticeScenarioID = nil
         case .practiceMode(let mode):
             practiceStartRequestID += 1
             requestedPracticeMode = mode
+            requestedPracticeScenarioID = nil
+        case .practiceScenario(let scenarioID):
+            practiceStartRequestID += 1
+            requestedPracticeMode = nil
+            requestedPracticeScenarioID = scenarioID
         }
 
         openPractice()
@@ -2679,7 +2690,7 @@ struct HomeView: View {
     }
 
     private var practiceScenariosShelf: some View {
-        HomeShelf(title: "Practice scenarios", subtitle: "Real situations, ready when you are") {
+        HomeShelf(title: "Travel Stories", subtitle: "Short guided scenes for your trip") {
             HomeScenarioRail(
                 scenarios: HomeContent.practiceScenarios,
                 onOpenCollection: onOpenCollection,
@@ -2885,7 +2896,7 @@ struct SavedPagesView: View {
                     .nativeGlass(cornerRadius: 23, interactive: true)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Save useful phrase pages as you explore")
+                    Text("Save useful phrases as you explore")
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
 
@@ -3090,21 +3101,19 @@ private enum HomeContent {
         [
             HomeScenario(
                 id: "first-day",
-                title: "First day in Vietnam",
-                subtitle: "Arrive, check in, get oriented",
+                title: "First day in Da Nang",
+                subtitle: "Airport, ride, hotel, first meal",
                 imageName: "HomeScenarioFirstDay",
                 route: .category("first-day"),
-                practiceAction: BrowseSearchDestinations.collectionDescriptor(for: .category("first-day"))?.practiceAction
-                    ?? .practiceMode(.danangCity)
+                practiceAction: .practiceScenario(.danangFirstDay)
             ),
             HomeScenario(
                 id: "hotel",
                 title: "At the hotel",
-                subtitle: "Check in, rooms, key issues",
+                subtitle: "Booking, passport, Wi-Fi, room help",
                 imageName: "HomeScenarioHotel",
                 route: .category("hotel"),
-                practiceAction: BrowseSearchDestinations.collectionDescriptor(for: .category("hotel"))?.practiceAction
-                    ?? .addStarterPages(["viet-family-hotel-check-in", "viet-phrase-hotel-3"])
+                practiceAction: .practiceScenario(.hotelCheckInHelp)
             ),
             HomeScenario(
                 id: "danang",
@@ -3112,7 +3121,7 @@ private enum HomeContent {
                 subtitle: "Beach, bridge, food, ride back",
                 imageName: "HomeCityDaNang",
                 route: .city("danang"),
-                practiceAction: .practiceMode(.danangCity)
+                practiceAction: .practiceScenario(.danangDay)
             ),
         ]
     }
@@ -3450,7 +3459,7 @@ private struct HomeScenarioCard: View {
             Button {
                 onStartPractice(scenario.practiceAction)
             } label: {
-                Text("Start")
+                Text("Start story")
                     .font(.headline.weight(.bold))
                     .foregroundStyle(Color(red: 0.24, green: 0.58, blue: 0.41))
                     .frame(maxWidth: .infinity)

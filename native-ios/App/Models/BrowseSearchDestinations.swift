@@ -17,6 +17,7 @@ enum BrowseCollectionRoute: Hashable, Equatable, Identifiable {
 enum BrowseCollectionPracticeAction: Equatable {
     case addStarterPages([String])
     case practiceMode(PracticeMode)
+    case practiceScenario(PracticeScenarioID)
 }
 
 struct BrowseSearchPhraseItem: Identifiable, Equatable {

@@ -1,6 +1,8 @@
 import Foundation
 
 enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable {
+    case danangFirstDay
+    case danangDay
     case taxiGrabPickup
     case restaurantOrderingPayment
     case hotelCheckInHelp
@@ -9,17 +11,25 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
 
     var title: String {
         switch self {
+        case .danangFirstDay:
+            return "First day in Da Nang"
+        case .danangDay:
+            return "Da Nang day"
         case .taxiGrabPickup:
             return "Taxi / Grab pickup"
         case .restaurantOrderingPayment:
             return "Restaurant ordering"
         case .hotelCheckInHelp:
-            return "Hotel check-in"
+            return "At the hotel"
         }
     }
 
     var shortTitle: String {
         switch self {
+        case .danangFirstDay:
+            return "First day"
+        case .danangDay:
+            return "Da Nang"
         case .taxiGrabPickup:
             return "Taxi"
         case .restaurantOrderingPayment:
@@ -31,6 +41,10 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
 
     var symbolName: String {
         switch self {
+        case .danangFirstDay:
+            return "airplane.arrival"
+        case .danangDay:
+            return "sun.max.fill"
         case .taxiGrabPickup:
             return "car.fill"
         case .restaurantOrderingPayment:
@@ -42,6 +56,10 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
 
     var tint: AccentTint {
         switch self {
+        case .danangFirstDay:
+            return .blue
+        case .danangDay:
+            return .teal
         case .taxiGrabPickup:
             return .orange
         case .restaurantOrderingPayment:
@@ -53,6 +71,10 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
 
     var categoryIDs: [String] {
         switch self {
+        case .danangFirstDay:
+            return ["airport-border-arrival", "transport", "hotel-accommodation", "food-drink"]
+        case .danangDay:
+            return ["directions-navigation", "food-drink", "bathroom-personal-needs", "transport"]
         case .taxiGrabPickup:
             return ["transport", "directions-navigation"]
         case .restaurantOrderingPayment:
@@ -64,14 +86,24 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
 
     var flowBeats: [String] {
         switch self {
+        case .danangFirstDay:
+            return ["Airport", "Ride", "Hotel", "Food"]
+        case .danangDay:
+            return ["Beach", "Food", "Photo", "Ride back"]
         case .taxiGrabPickup:
             return ["Confirm car", "Find pickup", "If unsure"]
         case .restaurantOrderingPayment:
             return ["Ask menu", "Order one", "Pay"]
         case .hotelCheckInHelp:
-            return ["Booking", "Passport", "Room details"]
+            return ["Booking", "Passport", "Wi-Fi", "Room help"]
         }
     }
+}
+
+enum PracticeScenarioMomentType: String, Codable, Equatable {
+    case ask
+    case listen
+    case recovery
 }
 
 enum PracticeScenarioQueueSource: String, CaseIterable, Codable, Equatable, Hashable {
@@ -98,9 +130,9 @@ enum PracticeScenarioQueueSource: String, CaseIterable, Codable, Equatable, Hash
         case .missedReview:
             return "Phrases worth keeping fresh."
         case .addedPractice:
-            return "Phrase pages you kept for later."
+            return "Phrases you kept for later."
         case .savedRecent:
-            return "Recently opened phrase pages."
+            return "Recently opened phrases."
         case .tripFallback:
             return "Practical travel moments to start with."
         }
@@ -179,6 +211,7 @@ struct PracticeScenarioStep: Identifiable, Equatable {
     let id: String
     let scenarioID: PracticeScenarioID
     let queueSource: PracticeScenarioQueueSource
+    let momentType: PracticeScenarioMomentType
     let scene: String
     let localPhrase: PracticeScenarioPhraseCopy
     let localLine: String
@@ -196,10 +229,8 @@ struct PracticeScenarioStep: Identifiable, Equatable {
     }
 
     var visibleCopy: [String] {
-        [
+        var copy = [
             scene,
-            localPhrase.scenarioVietnamese,
-            localPhrase.scenarioEnglish,
             userGoal,
             nextLocalLine,
             nextLocalMeaning,
@@ -212,6 +243,11 @@ struct PracticeScenarioStep: Identifiable, Equatable {
                 option.scenarioEnglish,
             ]
         }
+        if momentType == .listen {
+            copy.append(localPhrase.scenarioVietnamese)
+            copy.append(localPhrase.scenarioEnglish)
+        }
+        return copy
     }
 }
 

@@ -103,7 +103,20 @@ enum PracticeEntryContext: String, Codable, Equatable {
 
 struct PracticeStartRequest: Equatable {
     let id: Int
-    let mode: PracticeMode
+    let mode: PracticeMode?
+    let scenarioID: PracticeScenarioID?
+
+    init(id: Int, mode: PracticeMode) {
+        self.id = id
+        self.mode = mode
+        self.scenarioID = nil
+    }
+
+    init(id: Int, scenarioID: PracticeScenarioID) {
+        self.id = id
+        self.mode = nil
+        self.scenarioID = scenarioID
+    }
 }
 
 enum PracticePromptKind: String, CaseIterable, Codable, Equatable {
