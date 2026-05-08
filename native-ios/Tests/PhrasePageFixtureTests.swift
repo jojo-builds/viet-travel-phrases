@@ -1361,6 +1361,19 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
+    func testBrowseSearchCanReturnMoreThanFirstScreenOfPhraseResults() {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+
+        let results = BrowseSearchDestinations.searchResults(for: "hello", limit: 100)
+
+        XCTAssertGreaterThanOrEqual(
+            results.count,
+            12,
+            "Search should expose a scrollable set of phrase results, not just the first few rows: \(results.map { "\($0.title) / \($0.subtitle)" })"
+        )
+        XCTAssertLessThanOrEqual(results.count, 100)
+    }
+
     func testSearchIndexKeepsGeneratedDuplicatesOnCanonicalDesignedPages() {
         let xinLoiResults = PhraseSearchIndex.search("Xin lỗi").filter { $0.title == "Xin lỗi" }
         let camOnResults = PhraseSearchIndex.search("Cảm ơn").filter { $0.title == "Cảm ơn" }

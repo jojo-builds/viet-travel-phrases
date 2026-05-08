@@ -621,7 +621,7 @@ enum BrowseSearchDestinations {
     }
 
     static func searchResults(for query: String, limit: Int) -> [BrowseSearchPhraseItem] {
-        PhraseSearchIndex.search(query)
+        PhraseSearchIndex.search(query, limit: limit)
             .prefix(limit)
             .map(BrowseSearchPhraseItem.fromSearchResult)
     }

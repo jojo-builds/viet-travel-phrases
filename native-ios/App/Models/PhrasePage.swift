@@ -737,8 +737,8 @@ extension PhrasePage {
 }
 
 enum PhraseSearchIndex {
-    static func search(_ query: String) -> [PhraseSearchResult] {
-        if let sqliteResults = VietSQLitePhraseGraphRuntime.search(query) {
+    static func search(_ query: String, limit: Int = 100) -> [PhraseSearchResult] {
+        if let sqliteResults = VietSQLitePhraseGraphRuntime.search(query, limit: limit) {
             return sqliteResults
         }
 
@@ -979,6 +979,8 @@ enum PhraseSearchIndex {
                 return $0.score > $1.score
             }
             .map(\.result)
+            .prefix(limit)
+            .map { $0 }
     }
 
     private static var rootPages: [PhrasePage] {

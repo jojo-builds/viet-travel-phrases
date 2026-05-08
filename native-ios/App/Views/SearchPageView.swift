@@ -194,9 +194,9 @@ struct SearchPageView: View {
             resultFilters
 
             if selectedFilter.includesPhrases, !results.phraseResults.isEmpty {
-                SearchSection(title: "Best matches") {
+                SearchSection(title: "Results") {
                     LazyVStack(spacing: 10) {
-                        ForEach(results.phraseResults.prefix(5)) { item in
+                        ForEach(results.phraseResults) { item in
                             SearchPhraseRow(item: item, onOpenDetail: onOpenDetail)
                         }
                     }
@@ -386,6 +386,8 @@ struct SearchPageView: View {
 }
 
 private struct SearchPageResults {
+    private static let phraseResultLimit = 100
+
     let query: String
     let phraseResults: [BrowseSearchPhraseItem]
     let collectionResults: [BrowseSearchCollectionMatch]
@@ -401,7 +403,7 @@ private struct SearchPageResults {
             return
         }
 
-        phraseResults = BrowseSearchDestinations.searchResults(for: query, limit: 8)
+        phraseResults = BrowseSearchDestinations.searchResults(for: query, limit: Self.phraseResultLimit)
         collectionResults = BrowseSearchDestinations.matchingCollections(for: query)
         cityResults = BrowseSearchDestinations.matchingCities(for: query)
     }
