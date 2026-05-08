@@ -729,7 +729,7 @@ struct AppShellView: View {
             .zIndex(AppChromeLayout.dockItemForegroundZIndex)
         }
         .contentShape(Rectangle())
-        .gesture(dockSelectionGesture(chrome: chrome))
+        .simultaneousGesture(dockSelectionGesture(chrome: chrome), including: .all)
         .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
         .padding(.vertical, AppChromeLayout.dockVerticalPadding)
         .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
@@ -2417,17 +2417,23 @@ private struct AppShellDockSelectionLens: View {
     var chromeNamespace: Namespace.ID?
 
     var body: some View {
+        let cornerRadius = AppChromeLayout.dockSelectionCornerRadius
+
         ZStack {
-            RoundedRectangle(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, style: .continuous)
-                .fill(.white.opacity(0.20))
+            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                .fill(Color.black.opacity(active ? 0.135 : 0.102))
+
+            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                .fill(.white.opacity(active ? 0.30 : 0.24))
+                .blendMode(.plusLighter)
 
             LinearGradient(
                 colors: [
-                    .white.opacity(0.54),
-                    .white.opacity(0.16),
-                    Color(red: 0.28, green: 0.68, blue: 1.0).opacity(0.18),
-                    Color(red: 1.0, green: 0.88, blue: 0.28).opacity(0.16),
-                    .white.opacity(0.28),
+                    .white.opacity(active ? 0.82 : 0.68),
+                    .white.opacity(active ? 0.20 : 0.14),
+                    Color(red: 0.28, green: 0.68, blue: 1.0).opacity(active ? 0.22 : 0.16),
+                    Color(red: 1.0, green: 0.88, blue: 0.28).opacity(active ? 0.20 : 0.14),
+                    .white.opacity(active ? 0.42 : 0.32),
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -2437,7 +2443,7 @@ private struct AppShellDockSelectionLens: View {
             LinearGradient(
                 colors: [
                     .white.opacity(0.0),
-                    .white.opacity(0.40),
+                    .white.opacity(active ? 0.56 : 0.44),
                     .white.opacity(0.0),
                 ],
                 startPoint: .leading,
@@ -2446,16 +2452,20 @@ private struct AppShellDockSelectionLens: View {
             .offset(x: -8)
             .blendMode(.screen)
 
-            RoundedRectangle(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, style: .continuous)
-                .stroke(.white.opacity(0.62), lineWidth: 1)
+            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                .stroke(.white.opacity(active ? 0.94 : 0.82), lineWidth: active ? 1.35 : 1.1)
+
+            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                .stroke(Color.black.opacity(active ? 0.075 : 0.05), lineWidth: 0.8)
+                .blendMode(.multiply)
         }
         .frame(width: width, height: AppChromeLayout.dockSelectionHeight)
-        .clipShape(RoundedRectangle(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, style: .continuous))
-        .nativeGlass(cornerRadius: AppChromeLayout.dockSelectionCornerRadius, tint: .white, interactive: true)
+        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+        .nativeGlass(cornerRadius: cornerRadius, tint: Color.black.opacity(0.16), interactive: true)
         .nativeGlassMorphID(AppChromeMorphID.dockSelection, namespace: chromeNamespace)
-        .scaleEffect(active ? 1.035 : 1.0)
-        .shadow(color: .white.opacity(active ? 0.52 : 0.34), radius: active ? 20 : 14, x: 0, y: 0)
-        .shadow(color: .black.opacity(active ? 0.15 : 0.10), radius: active ? 20 : 16, x: 0, y: active ? 10 : 8)
+        .scaleEffect(active ? 1.045 : 1.0)
+        .shadow(color: .white.opacity(active ? 0.64 : 0.44), radius: active ? 24 : 17, x: 0, y: 0)
+        .shadow(color: .black.opacity(active ? 0.22 : 0.15), radius: active ? 24 : 18, x: 0, y: active ? 12 : 9)
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
