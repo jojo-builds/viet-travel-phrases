@@ -238,7 +238,7 @@ enum PracticeScenarioBuilder {
             }
         )
             .filter { $0.pageID != bestCandidate.pageID }
-        let options = ([bestCandidate] + alternateCandidates.prefix(2))
+        let options = ([bestCandidate] + alternateCandidates.prefix(template.alternateLimit))
             .enumerated()
             .map { index, candidate in
                 responseOption(
@@ -467,6 +467,7 @@ private struct PracticeScenarioStepTemplate {
     let userGoal: String
     let bestPageIDs: [String]
     let alternatePageIDs: [String]
+    var alternateLimit = 2
     let recoveryPageIDs: [String]
     let nextLocalLine: String
     let nextLocalMeaning: String
@@ -940,6 +941,145 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryBody: "Ask where the pickup point is, then show the hotel map pin.",
                 nextStepTitle: "Finish story",
                 localScenarioContext: "danang_day_ride_back"
+            ),
+        ]
+    ),
+    PracticeScenarioTemplate(
+        id: .restaurantOrderingPayment,
+        sceneTitle: "Restaurant ordering",
+        sceneSetup: "Choose a table, order simply, ask for help, and pay.",
+        steps: [
+            PracticeScenarioStepTemplate(
+                id: "restaurant-story-arrive",
+                momentType: .ask,
+                scene: "You walk in and a staff member looks over.",
+                localLine: "",
+                localLineMeaning: "",
+                userGoal: "Choose the first thing you need.",
+                bestPageIDs: [
+                    "viet-family-food-need-table",
+                    "viet-family-vpe-one-item-please-cho-toi-mot-ban-cho-hai-nguoi",
+                ],
+                alternatePageIDs: [
+                    "viet-family-food-menu",
+                    "viet-phrase-v500-prob-help-can-you-help-me",
+                ],
+                recoveryPageIDs: [
+                    "viet-phrase-v500-prob-help-can-you-help-me",
+                    "viet-family-food-menu",
+                ],
+                nextLocalLine: "",
+                nextLocalMeaning: "",
+                recoveryTitle: "If you are unsure",
+                recoveryBody: "Start with the menu or help phrase. Keep it short.",
+                nextStepTitle: "The server is ready",
+                localScenarioContext: "restaurant_story_arrive"
+            ),
+            PracticeScenarioStepTemplate(
+                id: "restaurant-story-server-ready",
+                momentType: .listen,
+                scene: "The server comes back to the table.",
+                localLine: "Bạn dùng gì?",
+                localLineMeaning: "What would you like?",
+                userGoal: "Choose what you want to do next.",
+                bestPageIDs: [
+                    "viet-family-food-one-portion",
+                    "viet-family-ves-order-cao-lau-portion",
+                ],
+                alternatePageIDs: [
+                    "viet-family-food-menu",
+                    "viet-phrase-v900-food-drin-what-do-you-recommend",
+                    "viet-family-vpe-food-has-co-dau-phong-khong",
+                ],
+                alternateLimit: 3,
+                recoveryPageIDs: [
+                    "viet-phrase-v500-prob-help-can-you-help-me",
+                    "viet-family-food-menu",
+                ],
+                nextLocalLine: "",
+                nextLocalMeaning: "",
+                recoveryTitle: "If the menu is hard",
+                recoveryBody: "Point to the item first, then play the short phrase.",
+                nextStepTitle: "Check what is inside",
+                localScenarioContext: "restaurant_story_server_ready"
+            ),
+            PracticeScenarioStepTemplate(
+                id: "restaurant-story-ingredients",
+                momentType: .ask,
+                scene: "You want to avoid something in the dish.",
+                localLine: "",
+                localLineMeaning: "",
+                userGoal: "Check one ingredient or keep the spice level simple.",
+                bestPageIDs: [
+                    "viet-family-vpe-food-has-co-dau-phong-khong",
+                    "viet-phrase-food-premium-has-peanuts",
+                ],
+                alternatePageIDs: [
+                    "viet-family-vpe-food-has-co-thit-heo-khong",
+                    "viet-family-food-not-spicy",
+                ],
+                recoveryPageIDs: [
+                    "viet-family-food-peanut-allergy",
+                    "viet-phrase-v500-prob-help-can-you-help-me",
+                ],
+                nextLocalLine: "",
+                nextLocalMeaning: "",
+                recoveryTitle: "If allergies matter",
+                recoveryBody: "Use the allergy phrase and show the ingredient if you can.",
+                nextStepTitle: "Order a drink",
+                localScenarioContext: "restaurant_story_ingredients"
+            ),
+            PracticeScenarioStepTemplate(
+                id: "restaurant-story-drink",
+                momentType: .listen,
+                scene: "The server asks about drinks.",
+                localLine: "Bạn uống gì?",
+                localLineMeaning: "What would you like to drink?",
+                userGoal: "Pick a simple drink reply.",
+                bestPageIDs: [
+                    "viet-family-service-water",
+                    "viet-phrase-v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water",
+                ],
+                alternatePageIDs: [
+                    "viet-family-vpe-one-item-please-cho-toi-mot-tra-da",
+                    "viet-thanks-khong-cam-on",
+                ],
+                recoveryPageIDs: [
+                    "viet-phrase-v500-prob-help-can-you-help-me",
+                    "viet-family-service-water",
+                ],
+                nextLocalLine: "",
+                nextLocalMeaning: "",
+                recoveryTitle: "If you want to keep it easy",
+                recoveryBody: "Water or iced tea are short, common replies.",
+                nextStepTitle: "Pay",
+                localScenarioContext: "restaurant_story_drink"
+            ),
+            PracticeScenarioStepTemplate(
+                id: "restaurant-story-pay",
+                momentType: .ask,
+                scene: "You are finished and ready to pay.",
+                localLine: "",
+                localLineMeaning: "",
+                userGoal: "Ask for the bill or choose how to pay.",
+                bestPageIDs: [
+                    "viet-family-food-pay-now",
+                    "viet-phrase-v900-food-drin-can-i-pay-the-bill-by-card",
+                ],
+                alternatePageIDs: [
+                    "viet-family-service-card",
+                    "viet-family-transport-cash",
+                ],
+                recoveryPageIDs: [
+                    "viet-family-vpe-help-action-anh-chi-giup-toi-chia-hoa-don-duoc-khong",
+                    "viet-phrase-help-4",
+                ],
+                nextLocalLine: "",
+                nextLocalMeaning: "",
+                recoveryTitle: "If payment gets unclear",
+                recoveryBody: "Show the bill and use one payment phrase at a time.",
+                nextStepTitle: "Finish story",
+                localScenarioContext: "restaurant_story_pay"
             ),
         ]
     ),

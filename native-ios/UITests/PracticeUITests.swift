@@ -16,17 +16,16 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Practice travel stories"].exists)
         XCTAssertTrue(app.staticTexts["Short guided scenes for real moments in Vietnam."].exists)
 
-        XCTAssertTrue(app.staticTexts["Airport"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["Ride"].exists)
-        XCTAssertTrue(app.staticTexts["Hotel"].exists)
-        XCTAssertTrue(app.staticTexts["Food"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Scenario.Primary"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["First day in Da Nang"].exists)
+        XCTAssertTrue(app.staticTexts["Land, get a ride, check in, and order your first meal."].exists)
         XCTAssertFalse(app.staticTexts["follow-up"].exists)
 
         let startButton = app.buttons["Start story"].firstMatch
         XCTAssertTrue(startButton.waitForExistence(timeout: 4))
-        startButton.tap()
+        openScenario(identifier: "Practice.Scenario.danangFirstDay", title: "First day in Da Nang", in: app)
 
-        XCTAssertTrue(app.staticTexts["Moment 1 of 5"].waitForExistence(timeout: 4))
+        XCTAssertTrue(waitForStaticText(containing: "Moment 1 of 5", in: app, timeout: 4))
         XCTAssertFalse(app.staticTexts["You hear"].exists)
         XCTAssertTrue(app.staticTexts["Say this"].exists)
         XCTAssertTrue(app.staticTexts["More ways to say it"].exists)
@@ -37,12 +36,16 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Review missed"].exists)
         XCTAssertFalse(app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "incorrect")).element.exists)
 
-        let continueButton = app.buttons["Next moment"].firstMatch
+        let continueButton = app.buttons["Continue"].firstMatch
         XCTAssertTrue(continueButton.waitForExistence(timeout: 3))
         continueButton.tap()
 
-        XCTAssertTrue(app.staticTexts["Moment 2 of 5"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["Next moment"].waitForExistence(timeout: 3))
+        XCTAssertTrue(waitForStaticText(containing: "Moment 2 of 5", in: app, timeout: 3))
+        if !waitForStaticText(containing: "complete", in: app, timeout: 2) {
+            app.swipeDown()
+        }
+        XCTAssertTrue(waitForStaticText(containing: "complete", in: app, timeout: 3))
+        XCTAssertTrue(app.buttons["Continue"].waitForExistence(timeout: 3))
     }
 
     func testScenarioModeProofScreenshots() {
@@ -54,16 +57,16 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["TRAVEL STORIES"].waitForExistence(timeout: 4))
         capture(app: app, directoryURL: proofDirectoryURL, name: "travel-stories-hub.png")
 
-        startPrimaryScenario(in: app)
-        XCTAssertTrue(app.staticTexts["Moment 1 of 5"].waitForExistence(timeout: 4))
+        openScenario(identifier: "Practice.Scenario.danangFirstDay", title: "First day in Da Nang", in: app)
+        XCTAssertTrue(waitForStaticText(containing: "Moment 1 of 5", in: app, timeout: 4))
         capture(app: app, directoryURL: proofDirectoryURL, name: "first-day-danang-moment-1.png")
 
-        tapButton("Next moment", in: app)
-        XCTAssertTrue(app.staticTexts["Moment 2 of 5"].waitForExistence(timeout: 3))
+        tapButton("Continue", in: app)
+        XCTAssertTrue(waitForStaticText(containing: "Moment 2 of 5", in: app, timeout: 3))
         capture(app: app, directoryURL: proofDirectoryURL, name: "first-day-danang-moment-2.png")
 
         for _ in 0..<3 {
-            tapButton("Next moment", in: app)
+            tapButton("Continue", in: app)
         }
         tapButton("Finish story", in: app)
         XCTAssertTrue(app.staticTexts["Story complete"].waitForExistence(timeout: 4))
@@ -80,6 +83,17 @@ final class PracticeUITests: XCTestCase {
         app = launchPracticeApp()
         openScenario(identifier: "Practice.Scenario.danangDay", title: "Da Nang day", in: app)
         capture(app: app, directoryURL: proofDirectoryURL, name: "danang-day-moment-1.png")
+        app.terminate()
+
+        app = launchPracticeApp()
+        openScenario(identifier: "Practice.Scenario.restaurantOrderingPayment", title: "Restaurant ordering", in: app)
+        XCTAssertTrue(app.staticTexts["What do you want to do?"].waitForExistence(timeout: 3))
+        capture(app: app, directoryURL: proofDirectoryURL, name: "restaurant-choice-before-selection.png")
+        let menuChoice = app.staticTexts["Cho tôi xem thực đơn được không?"].firstMatch
+        XCTAssertTrue(menuChoice.waitForExistence(timeout: 3))
+        menuChoice.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        XCTAssertTrue(app.staticTexts["You chose"].waitForExistence(timeout: 3))
+        capture(app: app, directoryURL: proofDirectoryURL, name: "restaurant-choice-after-selection.png")
         app.terminate()
     }
 
@@ -111,10 +125,6 @@ final class PracticeUITests: XCTestCase {
         return app
     }
 
-    private func startPrimaryScenario(in app: XCUIApplication) {
-        tapButton("Start story", in: app)
-    }
-
     private func openScenario(identifier: String, title: String, in app: XCUIApplication) {
         XCTAssertTrue(app.staticTexts["TRAVEL STORIES"].waitForExistence(timeout: 4))
         let dragStart = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.82))
@@ -125,16 +135,21 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(scenarioButton.waitForExistence(timeout: 4), "\(title) scenario did not appear.")
         scenarioButton.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
 
-        if !app.staticTexts["Moment 1 of 5"].waitForExistence(timeout: 2) {
+        if !waitForStaticText(containing: "Moment 1 of 5", in: app, timeout: 2) {
             scenarioButton.tap()
         }
-        XCTAssertTrue(app.staticTexts["Moment 1 of 5"].waitForExistence(timeout: 4))
+        XCTAssertTrue(waitForStaticText(containing: "Moment 1 of 5", in: app, timeout: 4))
     }
 
     private func tapButton(_ label: String, in app: XCUIApplication) {
         let button = app.buttons[label].firstMatch
         XCTAssertTrue(button.waitForExistence(timeout: 4), "\(label) button did not appear.")
         button.tap()
+    }
+
+    private func waitForStaticText(containing text: String, in app: XCUIApplication, timeout: TimeInterval) -> Bool {
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
+        return app.staticTexts.containing(predicate).element.waitForExistence(timeout: timeout)
     }
 
     private func capture(app: XCUIApplication, directoryURL: URL, name: String) {

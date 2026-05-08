@@ -93,7 +93,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .taxiGrabPickup:
             return ["Confirm car", "Find pickup", "If unsure"]
         case .restaurantOrderingPayment:
-            return ["Ask menu", "Order one", "Pay"]
+            return ["Table", "Menu", "Order", "Pay"]
         case .hotelCheckInHelp:
             return ["Booking", "Passport", "Wi-Fi", "Room help"]
         }

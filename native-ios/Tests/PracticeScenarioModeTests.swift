@@ -2,7 +2,7 @@ import XCTest
 @testable import SpeakLocalNative
 
 final class PracticeScenarioModeTests: XCTestCase {
-    func testScenarioModeUsesThreeAuthoredStarterScenarios() throws {
+    func testScenarioModeUsesAuthoredStarterStories() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
             savedPageIDs: [],
@@ -14,6 +14,7 @@ final class PracticeScenarioModeTests: XCTestCase {
             .danangFirstDay,
             .hotelCheckInHelp,
             .danangDay,
+            .restaurantOrderingPayment,
         ])
         XCTAssertTrue(snapshot.scenarios.allSatisfy { $0.steps.count >= 5 })
 
@@ -27,7 +28,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 XCTAssertFalse(step.recovery.title.isEmpty)
                 XCTAssertFalse(step.recovery.body.isEmpty)
                 XCTAssertGreaterThanOrEqual(step.responseOptions.count, 2)
-                XCTAssertLessThanOrEqual(step.responseOptions.count, 3)
+                XCTAssertLessThanOrEqual(step.responseOptions.count, 4)
                 if step.momentType == .listen {
                     XCTAssertFalse(step.localLine.isEmpty)
                     XCTAssertFalse(step.localLineMeaning.isEmpty)
@@ -190,6 +191,7 @@ final class PracticeScenarioModeTests: XCTestCase {
             .danangFirstDay,
             .hotelCheckInHelp,
             .danangDay,
+            .restaurantOrderingPayment,
         ])
         XCTAssertLessThanOrEqual(snapshot.loadedFallbackCandidateCount, 128)
     }

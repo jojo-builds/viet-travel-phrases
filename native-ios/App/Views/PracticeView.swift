@@ -24,6 +24,7 @@ struct PracticeView: View {
     @State private var deckLoadGeneration = 0
     @State private var scenarioLoadGeneration = 0
     @State private var practiceScrollResetTrigger = 0
+    @State private var practiceScrollTargetID: String?
 
     init(
         intentStore: LocalUserIntentStore,
@@ -62,6 +63,7 @@ struct PracticeView: View {
                             isInPracticePool: isScenarioPageInPractice,
                             onOpenPhrasePage: openScenarioPhrasePage,
                             onTogglePracticePage: toggleScenarioPracticePage,
+                            onSelectScenarioOption: selectScenarioOption,
                             onContinueScenario: continueScenarioSession,
                             onPracticeAnother: startAnotherScenario,
                             onBackToPractice: clearScenarioCompletion,
@@ -75,13 +77,27 @@ struct PracticeView: View {
                     .padding(.top, topContentPadding)
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    if let activeScenarioSession {
+                        PracticeScenarioStickyActionBar(
+                            title: activeScenarioSession.isOnLastStep ? "Finish story" : "Continue",
+                            onContinue: continueScenarioSession
+                        )
+                        .padding(.horizontal, PracticeLayout.horizontalPadding)
+                        .padding(.bottom, PracticeLayout.storyActionBarBottomPadding)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
+                }
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
                 .onChange(of: practiceScrollResetTrigger) { _, _ in
+                    let targetID = practiceScrollTargetID ?? Self.scrollTopID
+                    let targetAnchor: UnitPoint = practiceScrollTargetID == nil ? .top : .center
                     withAnimation(.easeInOut(duration: 0.24)) {
-                        scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                        scrollProxy.scrollTo(targetID, anchor: targetAnchor)
                     }
+                    practiceScrollTargetID = nil
                 }
             }
 
@@ -159,6 +175,12 @@ struct PracticeView: View {
             return
         }
 
+        if let currentStep = session.currentStep,
+           session.selectedOptionIDs[currentStep.id] == nil,
+           let bestResponseID = currentStep.bestResponse?.id {
+            session.selectedOptionIDs[currentStep.id] = bestResponseID
+        }
+
         if session.isOnLastStep {
             scenarioCompletion = PracticeScenarioCompletionSummary(
                 scenario: session.scenario,
@@ -173,10 +195,15 @@ struct PracticeView: View {
 
         session.currentIndex += 1
         activeScenarioSession = session
-        schedulePracticeScrollReset()
+        if let currentStep = session.currentStep {
+            schedulePracticeScrollReset(targetID: PracticeScenarioTimelineID.moment(currentStep))
+        } else {
+            schedulePracticeScrollReset()
+        }
     }
 
-    private func schedulePracticeScrollReset() {
+    private func schedulePracticeScrollReset(targetID: String? = nil) {
+        practiceScrollTargetID = targetID
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             practiceScrollResetTrigger += 1
         }
@@ -198,6 +225,15 @@ struct PracticeView: View {
     private func toggleScenarioPracticePage(_ pageID: String) {
         intentStore.togglePracticePage(pageID)
         reloadScenarioSnapshot()
+    }
+
+    private func selectScenarioOption(_ option: PracticeScenarioResponseOption, for step: PracticeScenarioStep) {
+        guard var session = activeScenarioSession else {
+            return
+        }
+
+        session.selectedOptionIDs[step.id] = option.id
+        activeScenarioSession = session
     }
 
     private func reloadOrPrewarmScenarioSnapshot() {
@@ -741,6 +777,7 @@ private struct PracticeScenarioSession: Equatable {
     let scenario: PracticeScenario
     var context: PracticeEntryContext = .standard
     var currentIndex = 0
+    var selectedOptionIDs: [String: String] = [:]
 
     var currentStep: PracticeScenarioStep? {
         guard scenario.steps.indices.contains(currentIndex) else {
@@ -752,6 +789,14 @@ private struct PracticeScenarioSession: Equatable {
 
     var isOnLastStep: Bool {
         currentIndex >= scenario.steps.count - 1
+    }
+
+    func selectedOption(for step: PracticeScenarioStep) -> PracticeScenarioResponseOption? {
+        guard let selectedOptionID = selectedOptionIDs[step.id] else {
+            return step.bestResponse
+        }
+
+        return step.responseOptions.first { $0.id == selectedOptionID } ?? step.bestResponse
     }
 }
 
@@ -768,6 +813,7 @@ private struct PracticeCurrentScenarioSurface: View {
     let isInPracticePool: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
+    let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
     let onContinueScenario: () -> Void
     let onPracticeAnother: () -> Void
     let onBackToPractice: () -> Void
@@ -779,11 +825,10 @@ private struct PracticeCurrentScenarioSurface: View {
         if let activeScenarioSession, let currentStep = activeScenarioSession.currentStep {
             PracticeScenarioSessionSurface(
                 session: activeScenarioSession,
-                step: currentStep,
                 isInPracticePool: isInPracticePool,
                 onOpenPhrasePage: onOpenPhrasePage,
                 onTogglePracticePage: onTogglePracticePage,
-                onContinue: onContinueScenario
+                onSelectOption: { option in onSelectScenarioOption(option, currentStep) }
             )
         } else if let scenarioCompletion {
             PracticeScenarioCompletionSurface(
@@ -1113,30 +1158,10 @@ private struct PracticeBuildDivider: View {
 
 private struct PracticeScenarioSessionSurface: View {
     let session: PracticeScenarioSession
-    let step: PracticeScenarioStep
     let isInPracticePool: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
-    let onContinue: () -> Void
-
-    private var recommendedOption: PracticeScenarioResponseOption? {
-        step.bestResponse
-    }
-
-    private var otherOptions: [PracticeScenarioResponseOption] {
-        step.responseOptions.filter { option in
-            option.id != recommendedOption?.id
-        }
-    }
-
-    private var recommendedSectionTitle: String {
-        switch step.momentType {
-        case .listen:
-            return "Best quick reply"
-        case .ask, .recovery:
-            return "Say this"
-        }
-    }
+    let onSelectOption: (PracticeScenarioResponseOption) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
@@ -1153,68 +1178,471 @@ private struct PracticeScenarioSessionSurface: View {
             }
             .padding(.leading, 104)
 
-            VStack(alignment: .leading, spacing: 18) {
-                HStack(alignment: .top, spacing: 14) {
-                    PracticeIcon(symbolName: session.scenario.id.symbolName, tint: session.scenario.id.tint)
+            PracticeScenarioTimeline(
+                session: session,
+                isInPracticePool: isInPracticePool,
+                onOpenPhrasePage: onOpenPhrasePage,
+                onTogglePracticePage: onTogglePracticePage,
+                onSelectOption: onSelectOption
+            )
+        }
+        .accessibilityIdentifier("Practice.Scenario.Session")
+    }
+}
 
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Moment \(session.currentIndex + 1) of \(session.scenario.steps.count)")
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(.secondary)
+private enum PracticeScenarioTimelineID {
+    static func moment(_ step: PracticeScenarioStep) -> String {
+        "PracticeScenarioMoment.\(step.id)"
+    }
+}
 
-                        Text(step.scene)
+private struct PracticeScenarioTimelineEntry: Identifiable {
+    let index: Int
+    let step: PracticeScenarioStep
+
+    var id: String { step.id }
+}
+
+private struct PracticeScenarioTimeline: View {
+    let session: PracticeScenarioSession
+    let isInPracticePool: (String) -> Bool
+    let onOpenPhrasePage: (String) -> Void
+    let onTogglePracticePage: (String) -> Void
+    let onSelectOption: (PracticeScenarioResponseOption) -> Void
+
+    private var entries: [PracticeScenarioTimelineEntry] {
+        Array(session.scenario.steps.prefix(session.currentIndex + 1).enumerated())
+            .map { PracticeScenarioTimelineEntry(index: $0.offset, step: $0.element) }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            ForEach(entries) { entry in
+                if entry.index < session.currentIndex {
+                    PracticeScenarioCompletedMomentCard(
+                        scenario: session.scenario,
+                        step: entry.step,
+                        index: entry.index,
+                        selectedOption: session.selectedOption(for: entry.step),
+                        isInPracticePool: isInPracticePool,
+                        onOpenPhrasePage: onOpenPhrasePage,
+                        onTogglePracticePage: onTogglePracticePage
+                    )
+                    .id(PracticeScenarioTimelineID.moment(entry.step))
+                } else {
+                    PracticeScenarioCurrentMomentCard(
+                        scenario: session.scenario,
+                        step: entry.step,
+                        index: entry.index,
+                        selectedOptionID: session.selectedOptionIDs[entry.step.id],
+                        isInPracticePool: isInPracticePool,
+                        onOpenPhrasePage: onOpenPhrasePage,
+                        onTogglePracticePage: onTogglePracticePage,
+                        onSelectOption: onSelectOption
+                    )
+                    .id(PracticeScenarioTimelineID.moment(entry.step))
+                }
+            }
+        }
+        .accessibilityIdentifier("Practice.Scenario.Timeline")
+    }
+}
+
+private struct PracticeScenarioCompletedMomentCard: View {
+    let scenario: PracticeScenario
+    let step: PracticeScenarioStep
+    let index: Int
+    let selectedOption: PracticeScenarioResponseOption?
+    let isInPracticePool: (String) -> Bool
+    let onOpenPhrasePage: (String) -> Void
+    let onTogglePracticePage: (String) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 10) {
+                Image(systemName: "checkmark")
+                    .font(.caption.weight(.black))
+                    .foregroundStyle(.white)
+                    .frame(width: 24, height: 24)
+                    .background(scenario.id.tint.color, in: Circle())
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("\(momentTitle) complete")
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .accessibilityIdentifier("Practice.Scenario.CompletedMomentTitle.\(step.id)")
+
+                    Text("Moment \(index + 1)")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer(minLength: 8)
+            }
+
+            if let selectedOption {
+                HStack(spacing: 10) {
+                    if let audioKey = selectedOption.audioKey {
+                        AudioSpeakerButton(
+                            tint: selectedOption.candidate.tintName,
+                            size: 38,
+                            audioKey: audioKey,
+                            accessibilityIdentifier: "Practice.Completed.Audio"
+                        )
+                    } else {
+                        PracticeIcon(symbolName: selectedOption.candidate.symbolName, tint: selectedOption.candidate.tintName, size: 38)
+                    }
+
+                    Button(action: { onOpenPhrasePage(selectedOption.candidate.pageID) }) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(selectedOption.scenarioVietnamese)
+                                .font(.headline.weight(.bold))
+                                .foregroundStyle(.primary)
+                                .lineLimit(2)
+                                .minimumScaleFactor(0.78)
+
+                            Text(selectedOption.scenarioEnglish)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(2)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+
+                    Button(action: { onTogglePracticePage(selectedOption.candidate.pageID) }) {
+                        Image(systemName: isInPracticePool(selectedOption.candidate.pageID) ? "bookmark.fill" : "bookmark")
+                            .font(.subheadline.weight(.bold))
+                            .frame(width: 34, height: 34)
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(isInPracticePool(selectedOption.candidate.pageID) ? Color.green : Color.secondary)
+                    .nativeGlass(cornerRadius: 17, interactive: true)
+                    .accessibilityLabel(isInPracticePool(selectedOption.candidate.pageID) ? "Saved for later" : "Save for later")
+                }
+                .padding(12)
+                .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.white.opacity(0.48), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .stroke(Color.black.opacity(0.05), lineWidth: 1)
+        }
+        .accessibilityIdentifier("Practice.Scenario.CompletedMoment.\(step.id)")
+    }
+
+    private var momentTitle: String {
+        PracticeScenarioMomentTitle.title(for: scenario, index: index, step: step)
+    }
+}
+
+private struct PracticeScenarioCurrentMomentCard: View {
+    let scenario: PracticeScenario
+    let step: PracticeScenarioStep
+    let index: Int
+    let selectedOptionID: String?
+    let isInPracticePool: (String) -> Bool
+    let onOpenPhrasePage: (String) -> Void
+    let onTogglePracticePage: (String) -> Void
+    let onSelectOption: (PracticeScenarioResponseOption) -> Void
+
+    private var selectedOption: PracticeScenarioResponseOption? {
+        guard let selectedOptionID else {
+            return nil
+        }
+
+        return step.responseOptions.first { $0.id == selectedOptionID }
+    }
+
+    private var selectedOrDefaultOptionID: String? {
+        if scenario.id == .restaurantOrderingPayment && selectedOption == nil {
+            return nil
+        }
+
+        return selectedOption?.id ?? step.bestResponse?.id
+    }
+
+    private var recommendedOption: PracticeScenarioResponseOption? {
+        step.bestResponse
+    }
+
+    private var primaryOptions: [PracticeScenarioResponseOption] {
+        if let selectedOption {
+            return [selectedOption]
+        }
+
+        if scenario.id == .restaurantOrderingPayment {
+            return step.responseOptions
+        }
+
+        if let recommendedOption {
+            return [recommendedOption]
+        }
+
+        return []
+    }
+
+    private var otherOptions: [PracticeScenarioResponseOption] {
+        let excludedIDs = Set(primaryOptions.map(\.id))
+        return step.responseOptions.filter { option in
+            !excludedIDs.contains(option.id)
+        }
+    }
+
+    private var primarySectionTitle: String {
+        if selectedOptionID != nil {
+            return "You chose"
+        }
+
+        if scenario.id == .restaurantOrderingPayment {
+            return "What do you want to do?"
+        }
+
+        switch step.momentType {
+        case .listen:
+            return "Best quick reply"
+        case .ask, .recovery:
+            return "Say this"
+        }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            HStack(alignment: .top, spacing: 14) {
+                PracticeIcon(symbolName: scenario.id.symbolName, tint: scenario.id.tint)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Moment \(index + 1) of \(scenario.steps.count) · \(momentTitle)")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.secondary)
+
+                    Text(step.scene)
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .layoutPriority(1)
+            }
+
+            if step.momentType == .listen {
+                PracticeScenarioLocalLine(step: step)
+            }
+
+            if !primaryOptions.isEmpty {
+                PracticeScenarioChoiceSection(
+                    title: primarySectionTitle,
+                    options: primaryOptions,
+                    selectedOptionID: selectedOrDefaultOptionID,
+                    isPrimarySection: true,
+                    isCollapsed: false,
+                    isInPracticePool: isInPracticePool,
+                    onOpenPhrasePage: onOpenPhrasePage,
+                    onTogglePracticePage: onTogglePracticePage,
+                    onSelectOption: onSelectOption
+                )
+            }
+
+            if !otherOptions.isEmpty {
+                PracticeScenarioChoiceSection(
+                    title: secondarySectionTitle,
+                    options: otherOptions,
+                    selectedOptionID: selectedOrDefaultOptionID,
+                    isPrimarySection: false,
+                    isCollapsed: selectedOptionID != nil,
+                    isInPracticePool: isInPracticePool,
+                    onOpenPhrasePage: onOpenPhrasePage,
+                    onTogglePracticePage: onTogglePracticePage,
+                    onSelectOption: onSelectOption
+                )
+            }
+
+            if !step.recovery.body.isEmpty || step.recovery.candidate != nil {
+                PracticeScenarioRecoveryPanel(
+                    recovery: step.recovery,
+                    isInPracticePool: isInPracticePool,
+                    onOpenPhrasePage: onOpenPhrasePage,
+                    onTogglePracticePage: onTogglePracticePage
+                )
+            }
+        }
+        .padding(18)
+        .phraseListCard(cornerRadius: 24)
+        .accessibilityIdentifier("Practice.Scenario.CurrentMoment.\(step.id)")
+    }
+
+    private var momentTitle: String {
+        PracticeScenarioMomentTitle.title(for: scenario, index: index, step: step)
+    }
+
+    private var secondarySectionTitle: String {
+        selectedOptionID == nil ? "More ways to say it" : "More options"
+    }
+}
+
+private struct PracticeScenarioChoiceSection: View {
+    let title: String
+    let options: [PracticeScenarioResponseOption]
+    let selectedOptionID: String?
+    let isPrimarySection: Bool
+    let isCollapsed: Bool
+    let isInPracticePool: (String) -> Bool
+    let onOpenPhrasePage: (String) -> Void
+    let onTogglePracticePage: (String) -> Void
+    let onSelectOption: (PracticeScenarioResponseOption) -> Void
+
+    var body: some View {
+        if isCollapsed {
+            DisclosureGroup {
+                rows
+                    .padding(.top, 10)
+            } label: {
+                titleLabel
+            }
+            .tint(.secondary)
+        } else {
+            VStack(alignment: .leading, spacing: 10) {
+                titleLabel
+                rows
+            }
+        }
+    }
+
+    private var titleLabel: some View {
+        Text(title)
+            .font(.subheadline.weight(.bold))
+            .foregroundStyle(.secondary)
+    }
+
+    private var rows: some View {
+        ForEach(options) { option in
+            PracticeScenarioChoiceRow(
+                option: option,
+                isSelected: selectedOptionID == option.id,
+                isPrimarySection: isPrimarySection,
+                isSaved: isInPracticePool(option.candidate.pageID),
+                onSelect: { onSelectOption(option) },
+                onOpenPhrasePage: { onOpenPhrasePage(option.candidate.pageID) },
+                onTogglePracticePage: { onTogglePracticePage(option.candidate.pageID) }
+            )
+        }
+    }
+}
+
+private struct PracticeScenarioChoiceRow: View {
+    let option: PracticeScenarioResponseOption
+    let isSelected: Bool
+    let isPrimarySection: Bool
+    let isSaved: Bool
+    let onSelect: () -> Void
+    let onOpenPhrasePage: () -> Void
+    let onTogglePracticePage: () -> Void
+
+    var body: some View {
+        HStack(alignment: .center, spacing: 10) {
+            Button(action: onSelect) {
+                HStack(alignment: .center, spacing: 12) {
+                    Image(systemName: iconName)
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(rowTint.color)
+                        .frame(width: 34, height: 34)
+                        .nativeGlass(cornerRadius: 17, tint: rowTint.color.opacity(0.14), interactive: true)
+
+                    VStack(alignment: .leading, spacing: 3) {
+                        if isSelected {
+                            Text("Selected")
+                                .font(.caption2.weight(.black))
+                                .foregroundStyle(rowTint.color)
+                                .textCase(.uppercase)
+                        }
+
+                        Text(option.scenarioVietnamese)
                             .font(.headline.weight(.bold))
                             .foregroundStyle(.primary)
-                            .fixedSize(horizontal: false, vertical: true)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.76)
+
+                        Text(option.scenarioEnglish)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
                     }
                     .layoutPriority(1)
                 }
-
-                if step.momentType == .listen {
-                    PracticeScenarioLocalLine(step: step)
-                }
-
-                if let recommendedOption {
-                    PracticeScenarioReplySection(
-                        title: recommendedSectionTitle,
-                        options: [recommendedOption],
-                        style: .recommended,
-                        isInPracticePool: isInPracticePool,
-                        onOpenPhrasePage: onOpenPhrasePage,
-                        onTogglePracticePage: onTogglePracticePage
-                    )
-                }
-
-                if !otherOptions.isEmpty {
-                    PracticeScenarioReplySection(
-                        title: "More ways to say it",
-                        options: otherOptions,
-                        style: .standard,
-                        isInPracticePool: isInPracticePool,
-                        onOpenPhrasePage: onOpenPhrasePage,
-                        onTogglePracticePage: onTogglePracticePage
-                    )
-                }
-
-                PracticeStoryContinueButton(
-                    title: session.isOnLastStep ? "Finish story" : "Next moment",
-                    onContinue: onContinue
-                )
-
-                if !step.recovery.body.isEmpty || step.recovery.candidate != nil {
-                    PracticeScenarioRecoveryPanel(
-                        recovery: step.recovery,
-                        isInPracticePool: isInPracticePool,
-                        onOpenPhrasePage: onOpenPhrasePage,
-                        onTogglePracticePage: onTogglePracticePage
-                    )
-                }
-
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .contentShape(Rectangle())
             }
-            .padding(18)
-            .phraseListCard(cornerRadius: 24)
+            .buttonStyle(.plain)
+            .accessibilityIdentifier(isSelected ? "Practice.Choice.Selected" : "Practice.Choice.Option")
+
+            if let audioKey = option.audioKey {
+                AudioSpeakerButton(
+                    tint: rowTint,
+                    size: 38,
+                    audioKey: audioKey,
+                    accessibilityIdentifier: "Practice.Option.Audio"
+                )
+            }
+
+            Button(action: onTogglePracticePage) {
+                Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
+                    .font(.headline.weight(.bold))
+                    .frame(width: 38, height: 38)
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(isSaved ? Color.green : Color.secondary)
+            .nativeGlass(cornerRadius: 19, interactive: true)
+            .accessibilityLabel(isSaved ? "Saved for later" : "Save for later")
+
+            Button(action: onOpenPhrasePage) {
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.black))
+                    .frame(width: 28, height: 38)
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(.tertiary)
+            .accessibilityLabel("Open phrase")
         }
-        .accessibilityIdentifier("Practice.Scenario.Session")
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(rowBackground, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(rowStroke, lineWidth: 1)
+        }
+    }
+
+    private var iconName: String {
+        isSelected ? "checkmark.circle.fill" : (isPrimarySection ? "text.bubble.fill" : "bubble.left.and.text.bubble.right.fill")
+    }
+
+    private var rowTint: AccentTint {
+        isSelected ? .blue : (isPrimarySection ? .teal : option.candidate.tintName)
+    }
+
+    private var rowBackground: Color {
+        isSelected ? rowTint.color.opacity(0.12) : .white.opacity(0.58)
+    }
+
+    private var rowStroke: Color {
+        isSelected ? rowTint.color.opacity(0.32) : Color.black.opacity(0.05)
+    }
+}
+
+private enum PracticeScenarioMomentTitle {
+    static func title(for scenario: PracticeScenario, index: Int, step: PracticeScenarioStep) -> String {
+        if scenario.id.flowBeats.indices.contains(index) {
+            return scenario.id.flowBeats[index]
+        }
+
+        if !step.nextStepTitle.isEmpty && step.nextStepTitle != "Finish story" {
+            return step.nextStepTitle
+        }
+
+        return "Wrap up"
     }
 }
 
@@ -1446,9 +1874,9 @@ private struct PracticeScenarioCompletionSurface: View {
                 }
 
                 HStack(spacing: 10) {
-                    PracticeMetricPill(title: "Moments", value: "\(summary.practicedCount)")
-                    PracticeMetricPill(title: "Phrases", value: "\(summary.scenario.phrasePageIDs.count)")
-                    PracticeMetricPill(title: "Scenes", value: "1")
+                        PracticeMetricPill(title: "Moments", value: "\(summary.practicedCount)")
+                        PracticeMetricPill(title: "Kept", value: "\(recommendedOptions.count)")
+                        PracticeMetricPill(title: "Story", value: "1")
                 }
 
                 Button(action: onPracticeAnother) {
@@ -1474,7 +1902,6 @@ private struct PracticeScenarioCompletionSurface: View {
             .padding(18)
             .phraseListCard(cornerRadius: 24)
 
-            let recommendedOptions = summary.scenario.steps.compactMap(\.bestResponse)
             if !recommendedOptions.isEmpty {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Saved from this story")
@@ -1498,6 +1925,10 @@ private struct PracticeScenarioCompletionSurface: View {
             .nativeGlass(cornerRadius: 18, interactive: true)
         }
         .accessibilityIdentifier("Practice.Scenario.Completion")
+    }
+
+    private var recommendedOptions: [PracticeScenarioResponseOption] {
+        summary.scenario.steps.compactMap(\.bestResponse)
     }
 }
 
@@ -2138,23 +2569,28 @@ private struct PracticeFeedbackCard: View {
     }
 }
 
-private struct PracticeStoryContinueButton: View {
+private struct PracticeScenarioStickyActionBar: View {
     let title: String
     let onContinue: () -> Void
 
     var body: some View {
-        Button(action: onContinue) {
-            Label(title, systemImage: "arrow.right")
-                .font(.headline.weight(.bold))
-                .frame(maxWidth: .infinity)
-                .frame(height: 48)
-                .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        HStack(spacing: 12) {
+            Button(action: onContinue) {
+                Label(title, systemImage: title == "Finish story" ? "checkmark" : "arrow.down")
+                    .font(.headline.weight(.bold))
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(.white)
+            .background(Color.red, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(color: .red.opacity(0.16), radius: 12, x: 0, y: 6)
+            .accessibilityIdentifier("Practice.ContinueButton")
         }
-        .buttonStyle(.plain)
-        .foregroundStyle(.white)
-        .background(Color.red, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .shadow(color: .red.opacity(0.16), radius: 12, x: 0, y: 6)
-        .accessibilityIdentifier("Practice.ContinueButton")
+        .padding(8)
+        .nativeGlass(cornerRadius: 28, interactive: true)
+        .accessibilityIdentifier("Practice.Story.ActionBar")
     }
 }
 
@@ -2414,7 +2850,7 @@ private struct MeloBundleImage: View {
 
 private enum PracticeLayout {
     static let horizontalPadding: CGFloat = 20
-    static let floatingContinueBottomPadding: CGFloat = 92
+    static let storyActionBarBottomPadding: CGFloat = 92
 }
 
 #Preview {
