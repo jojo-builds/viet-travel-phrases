@@ -73,6 +73,32 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 600, itemCount: 4), 3)
     }
 
+    func testDockSelectionDragMapsAcrossExpandedChromeTrack() {
+        let expandedWidth = AppDockSelectionLayout.contentWidth(itemCount: 4) + 90
+        let firstCenter = AppDockSelectionLayout.itemCenterX(index: 0, itemCount: 4, contentWidth: expandedWidth)
+        let lastCenter = AppDockSelectionLayout.itemCenterX(index: 3, itemCount: 4, contentWidth: expandedWidth)
+
+        XCTAssertEqual(firstCenter, AppChromeLayout.dockItemWidth / 2)
+        XCTAssertEqual(lastCenter, expandedWidth - AppChromeLayout.dockItemWidth / 2)
+        XCTAssertEqual(
+            AppDockSelectionLayout.itemIndex(for: lastCenter, itemCount: 4, contentWidth: expandedWidth),
+            3
+        )
+
+        let expandedLens = AppDockSelectionLayout.lensMetrics(
+            selectedIndex: 0,
+            activeIndex: 3,
+            dragX: lastCenter,
+            itemCount: 4,
+            reduceMotion: true,
+            contentWidth: expandedWidth
+        )
+        XCTAssertEqual(
+            expandedLens.xOffset,
+            lastCenter - AppChromeLayout.dockSelectionWidth / 2
+        )
+    }
+
     func testDockSelectionTapFlightVisitsIntermediateTabs() {
         XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 0, to: 3), [1, 2, 3])
         XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 3, to: 0), [2, 1, 0])

@@ -139,7 +139,7 @@ enum AppChromeLayout {
     static let bottomOuterHorizontalPadding: CGFloat = 16
     static let bottomSpacing: CGFloat = 6
     static let bottomPadding: CGFloat = -10
-    static let bottomOffset: CGFloat = 10
+    static let bottomOffset: CGFloat = 2
     static let bottomSeparationHeight: CGFloat = 0
     static let topSeparationHeight: CGFloat = 112
     static let bottomHitTestEnvelopeHeight: CGFloat = 84
@@ -202,23 +202,55 @@ enum AppDockSelectionLayout {
     }
 
     static func itemIndex(for locationX: CGFloat, itemCount: Int) -> Int? {
+        itemIndex(for: locationX, itemCount: itemCount, contentWidth: contentWidth(itemCount: itemCount))
+    }
+
+    static func itemIndex(for locationX: CGFloat, itemCount: Int, contentWidth: CGFloat) -> Int? {
         guard itemCount > 0 else {
             return nil
         }
 
-        let pitch = AppChromeLayout.dockItemWidth + AppChromeLayout.dockItemSpacing
-        let clampedX = min(max(locationX, 0), contentWidth(itemCount: itemCount))
-        let rawIndex = ((clampedX - AppChromeLayout.dockItemWidth / 2) / pitch).rounded()
+        let trackWidth = max(contentWidth, self.contentWidth(itemCount: itemCount))
+        guard itemCount > 1 else {
+            return 0
+        }
+
+        let leadingCenter = AppChromeLayout.dockItemWidth / 2
+        let trailingCenter = trackWidth - AppChromeLayout.dockItemWidth / 2
+        let pitch = (trailingCenter - leadingCenter) / CGFloat(itemCount - 1)
+        let clampedX = min(max(locationX, 0), trackWidth)
+        let rawIndex = ((clampedX - leadingCenter) / pitch).rounded()
         return min(max(Int(rawIndex), 0), itemCount - 1)
     }
 
     static func clampedDragX(_ locationX: CGFloat, itemCount: Int) -> CGFloat {
-        min(max(locationX, AppChromeLayout.dockItemWidth / 2), contentWidth(itemCount: itemCount) - AppChromeLayout.dockItemWidth / 2)
+        clampedDragX(locationX, itemCount: itemCount, contentWidth: contentWidth(itemCount: itemCount))
+    }
+
+    static func clampedDragX(_ locationX: CGFloat, itemCount: Int, contentWidth: CGFloat) -> CGFloat {
+        let trackWidth = max(contentWidth, self.contentWidth(itemCount: itemCount))
+        return min(max(locationX, AppChromeLayout.dockItemWidth / 2), trackWidth - AppChromeLayout.dockItemWidth / 2)
     }
 
     static func itemCenterX(index: Int) -> CGFloat {
         CGFloat(index) * (AppChromeLayout.dockItemWidth + AppChromeLayout.dockItemSpacing)
             + AppChromeLayout.dockItemWidth / 2
+    }
+
+    static func itemCenterX(index: Int, itemCount: Int, contentWidth: CGFloat) -> CGFloat {
+        guard itemCount > 0 else {
+            return 0
+        }
+
+        guard itemCount > 1 else {
+            return max(contentWidth, AppChromeLayout.dockItemWidth) / 2
+        }
+
+        let trackWidth = max(contentWidth, self.contentWidth(itemCount: itemCount))
+        let leadingCenter = AppChromeLayout.dockItemWidth / 2
+        let trailingCenter = trackWidth - AppChromeLayout.dockItemWidth / 2
+        let pitch = (trailingCenter - leadingCenter) / CGFloat(itemCount - 1)
+        return leadingCenter + CGFloat(min(max(index, 0), itemCount - 1)) * pitch
     }
 
     static func waypointIndexes(from sourceIndex: Int, to destinationIndex: Int) -> [Int] {
@@ -235,11 +267,15 @@ enum AppDockSelectionLayout {
         activeIndex: Int?,
         dragX: CGFloat?,
         itemCount: Int,
-        reduceMotion: Bool
+        reduceMotion: Bool,
+        contentWidth: CGFloat? = nil
     ) -> AppDockSelectionLensMetrics {
-        let selectedCenter = itemCenterX(index: selectedIndex)
-        let fallbackCenter = activeIndex.map(itemCenterX(index:)) ?? selectedCenter
-        let targetCenter = dragX.map { clampedDragX($0, itemCount: itemCount) } ?? fallbackCenter
+        let trackWidth = contentWidth ?? self.contentWidth(itemCount: itemCount)
+        let selectedCenter = itemCenterX(index: selectedIndex, itemCount: itemCount, contentWidth: trackWidth)
+        let fallbackCenter = activeIndex.map {
+            itemCenterX(index: $0, itemCount: itemCount, contentWidth: trackWidth)
+        } ?? selectedCenter
+        let targetCenter = dragX.map { clampedDragX($0, itemCount: itemCount, contentWidth: trackWidth) } ?? fallbackCenter
 
         guard !reduceMotion, dragX != nil else {
             return AppDockSelectionLensMetrics(

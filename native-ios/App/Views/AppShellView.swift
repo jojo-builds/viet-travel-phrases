@@ -604,9 +604,11 @@ struct AppShellView: View {
                 GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
                     staticBottomChromeGlassContent
                 }
+                .frame(maxWidth: .infinity)
 
                 searchRouteForegroundControls
             }
+            .frame(maxWidth: .infinity)
         } else {
             staticBottomChromeContent
         }
@@ -637,6 +639,7 @@ struct AppShellView: View {
                 searchDismissKeyboardGlassShell
             }
         }
+        .frame(maxWidth: .infinity)
         .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
         .animation(.snappy(duration: 0.34), value: isSearchFieldFocused)
     }
@@ -676,80 +679,101 @@ struct AppShellView: View {
                 searchDismissKeyboardFallbackButton
             }
         }
+        .frame(maxWidth: .infinity)
         .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
         .animation(.snappy(duration: 0.34), value: isSearchFieldFocused)
     }
 
     private func dockCluster(chrome: AppChrome) -> some View {
-        let selectedIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
-        let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
-        let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
-        let lensMetrics = AppDockSelectionLayout.lensMetrics(
-            selectedIndex: selectedIndex,
-            activeIndex: activeIndex,
-            dragX: dockDrag.dragX,
-            itemCount: chrome.primaryDockItems.count,
-            reduceMotion: reduceMotion
-        )
-
-        return ZStack(alignment: .leading) {
-            AppShellDockSelectionLens(
-                width: lensMetrics.width,
-                active: dockDrag.dragX != nil,
-                chromeNamespace: chromeNamespace
+        GeometryReader { proxy in
+            let itemCount = chrome.primaryDockItems.count
+            let contentWidth = max(
+                AppDockSelectionLayout.contentWidth(itemCount: itemCount),
+                proxy.size.width - AppChromeLayout.dockHorizontalPadding * 2
             )
-                .offset(x: lensMetrics.xOffset)
-                .animation(
-                    reduceMotion
-                    ? .easeOut(duration: 0.16)
-                    : .interactiveSpring(response: 0.34, dampingFraction: 0.74, blendDuration: 0.12),
-                    value: lensMetrics
-                )
-                .zIndex(AppChromeLayout.dockSelectionLensZIndex)
+            let selectedIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
+            let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
+            let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
+            let lensMetrics = AppDockSelectionLayout.lensMetrics(
+                selectedIndex: selectedIndex,
+                activeIndex: activeIndex,
+                dragX: dockDrag.dragX,
+                itemCount: itemCount,
+                reduceMotion: reduceMotion,
+                contentWidth: contentWidth
+            )
 
-            HStack(spacing: AppChromeLayout.dockItemSpacing) {
-                ForEach(chrome.primaryDockItems, id: \.self) { item in
-                    Button {
-                        performDockTapAction(item, chrome: chrome)
-                    } label: {
-                        AppShellDockItem(
-                            kind: item,
-                            selected: item == activeItem,
-                            chromeNamespace: chromeNamespace,
-                            isMorphSource: item == chrome.selectedDockItem
-                        )
+            ZStack(alignment: .leading) {
+                AppShellDockSelectionLens(
+                    width: lensMetrics.width,
+                    active: dockDrag.dragX != nil,
+                    chromeNamespace: chromeNamespace
+                )
+                    .offset(x: lensMetrics.xOffset)
+                    .animation(
+                        reduceMotion
+                        ? .easeOut(duration: 0.16)
+                        : .interactiveSpring(response: 0.34, dampingFraction: 0.74, blendDuration: 0.12),
+                        value: lensMetrics
+                    )
+                    .zIndex(AppChromeLayout.dockSelectionLensZIndex)
+
+                HStack(spacing: 0) {
+                    ForEach(Array(chrome.primaryDockItems.enumerated()), id: \.element) { index, item in
+                        Button {
+                            performDockTapAction(item, chrome: chrome, contentWidth: contentWidth)
+                        } label: {
+                            AppShellDockItem(
+                                kind: item,
+                                selected: item == activeItem,
+                                chromeNamespace: chromeNamespace,
+                                isMorphSource: item == chrome.selectedDockItem
+                            )
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(item.title)
+                        .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
+                        .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
+                        .contentShape(Rectangle())
+
+                        if index < chrome.primaryDockItems.count - 1 {
+                            Spacer(minLength: AppChromeLayout.dockItemSpacing)
+                        }
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel(item.title)
-                    .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
-                    .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
-                    .contentShape(Rectangle())
                 }
+                .frame(width: contentWidth)
+                .zIndex(AppChromeLayout.dockItemForegroundZIndex)
             }
-            .zIndex(AppChromeLayout.dockItemForegroundZIndex)
+            .frame(width: contentWidth, height: AppChromeLayout.dockItemHeight)
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                dockSelectionGesture(chrome: chrome, contentWidth: contentWidth),
+                including: .all
+            )
+            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
+            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
+            .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
+            .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
+            .zIndex(AppChromeLayout.dockMorphZIndex)
         }
-        .contentShape(Rectangle())
-        .simultaneousGesture(dockSelectionGesture(chrome: chrome), including: .all)
-        .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
-        .padding(.vertical, AppChromeLayout.dockVerticalPadding)
-        .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
-        .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
-        .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
-        .zIndex(AppChromeLayout.dockMorphZIndex)
+        .frame(height: AppChromeLayout.searchIslandSize)
+        .layoutPriority(1)
     }
 
-    private func dockSelectionGesture(chrome: AppChrome) -> some Gesture {
+    private func dockSelectionGesture(chrome: AppChrome, contentWidth: CGFloat) -> some Gesture {
         DragGesture(minimumDistance: 0, coordinateSpace: .local)
             .onChanged { value in
-                updateDockSelectionDrag(value, chrome: chrome)
+                updateDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
             }
             .onEnded { value in
-                finishDockSelectionDrag(value, chrome: chrome)
+                finishDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
             }
     }
 
-    private func updateDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome) {
-        guard let item = dockItem(for: value.location.x, chrome: chrome) else {
+    private func updateDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
+        guard let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth) else {
             return
         }
 
@@ -763,7 +787,9 @@ struct AppShellView: View {
         let dragX = didMoveBeyondTap
             ? value.location.x
             : AppDockSelectionLayout.itemCenterX(
-                index: chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
+                index: chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0,
+                itemCount: chrome.primaryDockItems.count,
+                contentWidth: contentWidth
             )
 
         dockDrag = AppDockInteractionState(
@@ -778,9 +804,9 @@ struct AppShellView: View {
         }
     }
 
-    private func finishDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome) {
+    private func finishDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
         let shouldCommitDrag = dockDrag.didMoveBeyondTap
-        let item = dockItem(for: value.location.x, chrome: chrome)
+        let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth)
 
         withAnimation(
             reduceMotion
@@ -795,7 +821,7 @@ struct AppShellView: View {
         }
     }
 
-    private func performDockTapAction(_ item: DockItemKind, chrome: AppChrome) {
+    private func performDockTapAction(_ item: DockItemKind, chrome: AppChrome, contentWidth: CGFloat) {
         guard item != chrome.selectedDockItem, !reduceMotion else {
             performDockAction(item)
             return
@@ -805,7 +831,11 @@ struct AppShellView: View {
         let requestID = dockSelectionTapRequestID
         let sourceIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
         let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? sourceIndex
-        let sourceX = AppDockSelectionLayout.itemCenterX(index: sourceIndex)
+        let sourceX = AppDockSelectionLayout.itemCenterX(
+            index: sourceIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        )
         let waypoints = AppDockSelectionLayout.waypointIndexes(
             from: sourceIndex,
             to: destinationIndex
@@ -836,7 +866,11 @@ struct AppShellView: View {
                 }
 
                 let waypointItem = chrome.primaryDockItems[waypoint]
-                let waypointX = AppDockSelectionLayout.itemCenterX(index: waypoint)
+                let waypointX = AppDockSelectionLayout.itemCenterX(
+                    index: waypoint,
+                    itemCount: chrome.primaryDockItems.count,
+                    contentWidth: contentWidth
+                )
 
                 playDockCrossingHaptic()
                 withAnimation(.interactiveSpring(response: 0.28, dampingFraction: 0.70, blendDuration: 0.10)) {
@@ -858,6 +892,18 @@ struct AppShellView: View {
 
             commitDockTapAction(item, requestID: requestID)
         }
+    }
+
+    private func dockItem(for locationX: CGFloat, chrome: AppChrome, contentWidth: CGFloat) -> DockItemKind? {
+        guard let index = AppDockSelectionLayout.itemIndex(
+            for: locationX,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        ) else {
+            return nil
+        }
+
+        return chrome.primaryDockItems[index]
     }
 
     private func commitDockTapAction(_ item: DockItemKind, requestID: Int) {
@@ -890,17 +936,6 @@ struct AppShellView: View {
                 dockDrag = .inactive
             }
         }
-    }
-
-    private func dockItem(for locationX: CGFloat, chrome: AppChrome) -> DockItemKind? {
-        guard let index = AppDockSelectionLayout.itemIndex(
-            for: locationX,
-            itemCount: chrome.primaryDockItems.count
-        ) else {
-            return nil
-        }
-
-        return chrome.primaryDockItems[index]
     }
 
     private func playDockCrossingHaptic() {
@@ -973,6 +1008,7 @@ struct AppShellView: View {
                 searchDismissKeyboardForegroundButton
             }
         }
+        .frame(maxWidth: .infinity)
         .compositingGroup()
         .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
     }
