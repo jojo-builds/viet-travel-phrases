@@ -21,7 +21,7 @@ struct BrowseCollectionPageView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
+                    VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
                         BrowseCollectionHeader(descriptor: descriptor)
                             .id(Self.scrollTopID)
 
@@ -157,7 +157,7 @@ private struct BrowseCollectionSubcategoryRail: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 10) {
+            HStack(spacing: 10) {
                 ForEach(subcategories) { subcategory in
                     BrowseCollectionSubcategoryCard(
                         subcategory: subcategory,
@@ -454,7 +454,7 @@ private struct BrowseCollectionStarterSection: View {
 
     var body: some View {
         BrowseCollectionSection(title: title, actionTitle: actionTitle) {
-            LazyVStack(spacing: 0) {
+            VStack(spacing: 0) {
                 ForEach(items) { item in
                     BrowseCollectionPhraseRow(item: item, onOpenDetail: onOpenDetail)
 

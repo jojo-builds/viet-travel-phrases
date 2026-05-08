@@ -129,6 +129,28 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Good first phrases"].exists)
     }
 
+    func testAirportArrivalFilterFromBrowseRemainsInteractive() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["Browse.Situation.airport"], app: app)
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+
+        let arrivalFilter = app.buttons["BrowseCollection.Subcategory.airport.arrival"]
+        XCTAssertTrue(arrivalFilter.waitForExistence(timeout: 2))
+        arrivalFilter.tap()
+
+        XCTAssertTrue(app.staticTexts["Arrival phrases"].waitForExistence(timeout: 3))
+
+        app.swipeUp()
+        XCTAssertTrue(app.buttons["AppChrome.Dock.Browse"].waitForExistence(timeout: 2))
+
+        app.buttons["Go back"].tap()
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["Browse.Situation.airport"].waitForExistence(timeout: 2))
+    }
+
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
             ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "What are you doing?"),
