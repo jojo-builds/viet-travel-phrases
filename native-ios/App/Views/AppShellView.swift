@@ -595,11 +595,54 @@ struct AppShellView: View {
     @ViewBuilder
     private var staticBottomChrome: some View {
         if #available(iOS 26.0, *) {
-            GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
-                staticBottomChromeContent
+            ZStack {
+                GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
+                    staticBottomChromeGlassContent
+                }
+
+                searchRouteForegroundControls
             }
         } else {
             staticBottomChromeContent
+        }
+    }
+
+    @ViewBuilder
+    private var staticBottomChromeGlassContent: some View {
+        let isSearchRoute = navigation.currentRoute == .search
+        let isKeyboardSearch = isSearchRoute && isSearchFieldFocused
+        let chrome = AppChrome(route: navigation.currentRoute)
+
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            if isSearchRoute {
+                if !isKeyboardSearch {
+                    searchOriginGlassShell(kind: navigation.searchOriginDockItem)
+                }
+            } else {
+                dockCluster(chrome: chrome)
+            }
+
+            if isSearchRoute {
+                searchFieldGlassShell
+            } else {
+                collapsedSearchButton
+            }
+
+            if isKeyboardSearch {
+                searchDismissKeyboardGlassShell
+            }
+        }
+        .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
+        .animation(.snappy(duration: 0.34), value: isSearchFieldFocused)
+    }
+
+    @ViewBuilder
+    private var searchRouteForegroundControls: some View {
+        if navigation.currentRoute == .search {
+            searchForegroundControls(
+                isKeyboardSearch: isSearchFieldFocused,
+                origin: navigation.searchOriginDockItem
+            )
         }
     }
 
@@ -609,29 +652,23 @@ struct AppShellView: View {
         let isKeyboardSearch = isSearchRoute && isSearchFieldFocused
         let chrome = AppChrome(route: navigation.currentRoute)
 
-        ZStack {
-            HStack(spacing: AppChromeLayout.bottomSpacing) {
-                if isSearchRoute {
-                    if !isKeyboardSearch {
-                        searchOriginButton(kind: navigation.searchOriginDockItem)
-                    }
-                } else {
-                    dockCluster(chrome: chrome)
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            if isSearchRoute {
+                if !isKeyboardSearch {
+                    searchOriginFallbackButton(kind: navigation.searchOriginDockItem)
                 }
-
-                if isSearchRoute {
-                    searchFieldCluster(isKeyboardSearch: isKeyboardSearch)
-                } else {
-                    collapsedSearchButton
-                }
-
-                if isKeyboardSearch {
-                    searchDismissKeyboardButton
-                }
+            } else {
+                dockCluster(chrome: chrome)
             }
 
             if isSearchRoute {
-                searchForegroundIconPair(isKeyboardSearch: isKeyboardSearch, origin: navigation.searchOriginDockItem)
+                searchFieldFallbackCluster
+            } else {
+                collapsedSearchButton
+            }
+
+            if isKeyboardSearch {
+                searchDismissKeyboardFallbackButton
             }
         }
         .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
@@ -893,18 +930,133 @@ struct AppShellView: View {
         .zIndex(AppChromeLayout.searchMorphZIndex)
     }
 
-    private func searchOriginButton(kind: DockItemKind) -> some View {
+    private func searchOriginGlassShell(kind _: DockItemKind) -> some View {
+        Color.clear
+            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+            .contentShape(Circle())
+            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
+            .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
+            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+            .contentShape(Circle())
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+            .zIndex(AppChromeLayout.searchOriginMorphZIndex)
+    }
+
+    private var searchFieldGlassShell: some View {
+        Color.clear
+            .frame(height: AppChromeLayout.searchFieldHeight)
+            .frame(maxWidth: .infinity)
+            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
+            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+            .zIndex(AppChromeLayout.searchMorphZIndex)
+    }
+
+    private func searchForegroundControls(isKeyboardSearch: Bool, origin: DockItemKind) -> some View {
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            if !isKeyboardSearch {
+                searchOriginForegroundButton(kind: origin)
+            }
+
+            searchFieldForegroundCluster
+
+            if isKeyboardSearch {
+                searchDismissKeyboardForegroundButton
+            }
+        }
+        .compositingGroup()
+        .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
+    }
+
+    private func searchOriginForegroundButton(kind: DockItemKind) -> some View {
         Button {
             performDockAction(kind)
         } label: {
-            Color.clear
+            Image(systemName: kind.symbolName)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(Circle())
+                .chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: false)
+                .accessibilityIdentifier("AppChrome.SearchForegroundOriginIcon.\(kind.title)")
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(kind.title)
+        .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .contentShape(Circle())
+    }
+
+    private var searchFieldForegroundCluster: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "magnifyingglass")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
+                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
+                .accessibilityIdentifier("AppChrome.SearchForegroundSearchIcon")
+
+            TextField("Search Vietnamese phrases", text: $searchQuery)
+                .font(.body.weight(.semibold))
+                .foregroundStyle(.primary)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .focused($isSearchFieldFocused)
+                .accessibilityIdentifier("AppChrome.SearchField")
+                .layoutPriority(1)
+        }
+        .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
+        .frame(height: AppChromeLayout.searchFieldHeight)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous))
+        .onTapGesture {
+            focusSearchField()
+        }
+    }
+
+    private var searchDismissKeyboardGlassShell: some View {
+        Color.clear
+            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+            .contentShape(Circle())
+            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+            .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
+    }
+
+    private var searchDismissKeyboardForegroundButton: some View {
+        Button {
+            clearFocusedSearch()
+        } label: {
+            Image(systemName: "xmark")
+                .font(.title2.weight(.semibold))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
+        .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
+    }
+
+    private func searchOriginFallbackButton(kind: DockItemKind) -> some View {
+        Button {
+            performDockAction(kind)
+        } label: {
+            Image(systemName: kind.symbolName)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.primary)
                 .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-        .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
-        .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
         .accessibilityLabel(kind.title)
         .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
         .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
@@ -912,9 +1064,11 @@ struct AppShellView: View {
         .zIndex(AppChromeLayout.searchOriginMorphZIndex)
     }
 
-    private func searchFieldCluster(isKeyboardSearch: Bool) -> some View {
+    private var searchFieldFallbackCluster: some View {
         HStack(spacing: 10) {
-            Color.clear
+            Image(systemName: "magnifyingglass")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
                 .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
 
             TextField("Search Vietnamese phrases", text: $searchQuery)
@@ -928,48 +1082,10 @@ struct AppShellView: View {
         .frame(height: AppChromeLayout.searchFieldHeight)
         .frame(maxWidth: .infinity)
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-        .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-        .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
         .zIndex(AppChromeLayout.searchMorphZIndex)
     }
 
-    private func searchForegroundIconPair(isKeyboardSearch: Bool, origin: DockItemKind) -> some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            if !isKeyboardSearch {
-                Image(systemName: origin.symbolName)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.primary)
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                    .contentShape(Circle())
-                    .chromeIconMorph(AppChromeMorphID.dockItem(origin), namespace: chromeNamespace, isSource: false)
-                    .accessibilityIdentifier("AppChrome.SearchForegroundOriginIcon.\(origin.title)")
-            }
-
-            HStack(spacing: 10) {
-                Image(systemName: "magnifyingglass")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
-                    .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
-                    .accessibilityIdentifier("AppChrome.SearchForegroundSearchIcon")
-
-                Spacer(minLength: 0)
-            }
-            .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
-            .frame(height: AppChromeLayout.searchFieldHeight)
-            .frame(maxWidth: .infinity, alignment: .leading)
-
-            if isKeyboardSearch {
-                Color.clear
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            }
-        }
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
-        .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
-    }
-
-    private var searchDismissKeyboardButton: some View {
+    private var searchDismissKeyboardFallbackButton: some View {
         Button {
             clearFocusedSearch()
         } label: {
