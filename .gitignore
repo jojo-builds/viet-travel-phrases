@@ -32,6 +32,9 @@
 /native-ios/**/*.xcuserstate
 /native-ios/**/*.xcuserdata/
 
+# Local parallel feature worktrees
+/.worktrees/
+
 # Python/local scratch
 __pycache__/
 *.py[cod]
