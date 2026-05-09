@@ -2,6 +2,76 @@ import XCTest
 @testable import SpeakLocalNative
 
 final class PracticeScenarioModeTests: XCTestCase {
+    func testStoryTranscriptStartsWithSceneLocalCueAndChoiceSet() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let firstDay = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangFirstDay })
+        let firstStep = try XCTUnwrap(firstDay.steps.first)
+        let turns = PracticeStoryTranscript.turns(
+            for: firstDay,
+            currentIndex: 0,
+            selectedOptionIDs: [:]
+        )
+
+        XCTAssertEqual(firstDay.id, .danangFirstDay)
+        XCTAssertEqual(snapshot.starterScenario?.id, .danangFirstDay)
+        XCTAssertEqual(turns.map(\.role), [.scene, .localSpeaker, .choiceSet])
+        XCTAssertEqual(turns.first?.text, firstStep.scene)
+        XCTAssertEqual(turns[1].vietnamese, firstStep.localLine)
+        XCTAssertFalse(firstStep.localLine.isEmpty)
+        XCTAssertNil(turns.first { $0.role == .travelerReply })
+
+        let choiceTurn = try XCTUnwrap(turns.first { $0.role == .choiceSet })
+        XCTAssertGreaterThanOrEqual(choiceTurn.responseOptions.count, 2)
+        XCTAssertLessThanOrEqual(choiceTurn.responseOptions.count, 3)
+        XCTAssertTrue(choiceTurn.responseOptions.allSatisfy { !$0.scenarioVietnamese.isEmpty })
+        XCTAssertFalse(choiceTurn.responseOptions.contains { option in
+            option.candidate.pageID.contains("bathroom")
+                || option.scenarioEnglish.localizedCaseInsensitiveContains("bathroom")
+        })
+    }
+
+    func testStoryTranscriptAddsTravelerBubbleThenWaitsForLocalReplyAfterSend() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let firstDay = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangFirstDay })
+        let firstStep = try XCTUnwrap(firstDay.steps.first)
+        let selectedOption = try XCTUnwrap(firstStep.bestResponse)
+        let waitingTurns = PracticeStoryTranscript.turns(
+            for: firstDay,
+            currentIndex: 0,
+            selectedOptionIDs: [firstStep.id: selectedOption.id]
+        )
+
+        XCTAssertEqual(waitingTurns.map(\.role), [.scene, .localSpeaker, .travelerReply, .localTyping])
+        let travelerTurn = try XCTUnwrap(waitingTurns.first { $0.role == .travelerReply })
+        XCTAssertEqual(travelerTurn.vietnamese, selectedOption.scenarioVietnamese)
+        XCTAssertEqual(travelerTurn.english, selectedOption.scenarioEnglish)
+        XCTAssertEqual(travelerTurn.source?.pageID, selectedOption.candidate.pageID)
+        XCTAssertNil(waitingTurns.first { $0.role == .choiceSet })
+        XCTAssertNil(waitingTurns.first { $0.role == .recovery })
+
+        let repliedTurns = PracticeStoryTranscript.turns(
+            for: firstDay,
+            currentIndex: 0,
+            selectedOptionIDs: [firstStep.id: selectedOption.id],
+            revealedReplyStepIDs: [firstStep.id]
+        )
+
+        XCTAssertEqual(repliedTurns.map(\.role), [.scene, .localSpeaker, .travelerReply, .localSpeaker])
+        let localReply = repliedTurns[3]
+        XCTAssertEqual(localReply.vietnamese, firstStep.nextLocalLine)
+        XCTAssertFalse(firstStep.nextLocalLine.isEmpty)
+    }
+
     func testScenarioModeUsesAuthoredStarterStories() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -13,10 +83,12 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(snapshot.scenarios.map(\.id), [
             .danangFirstDay,
             .hotelCheckInHelp,
+            .taxiGrabPickup,
+            .pharmacyHelp,
             .danangDay,
             .restaurantOrderingPayment,
         ])
-        XCTAssertTrue(snapshot.scenarios.allSatisfy { $0.steps.count >= 5 })
+        XCTAssertTrue(snapshot.scenarios.allSatisfy { $0.steps.count >= 4 })
 
         for scenario in snapshot.scenarios {
             XCTAssertFalse(scenario.sceneTitle.isEmpty)
@@ -32,9 +104,6 @@ final class PracticeScenarioModeTests: XCTestCase {
                 if step.momentType == .listen {
                     XCTAssertFalse(step.localLine.isEmpty)
                     XCTAssertFalse(step.localLineMeaning.isEmpty)
-                } else {
-                    XCTAssertTrue(step.localLine.isEmpty)
-                    XCTAssertTrue(step.localLineMeaning.isEmpty)
                 }
                 XCTAssertTrue(step.responseOptions.allSatisfy { option in
                     option.candidate.pageID.hasPrefix("viet-phrase-")
@@ -106,6 +175,16 @@ final class PracticeScenarioModeTests: XCTestCase {
         let hotelPassportStep = try XCTUnwrap(hotel.steps.dropFirst().first)
         XCTAssertEqual(hotelPassportStep.localPhrase.scenarioVietnamese, "Cho tôi xem hộ chiếu được không?")
         XCTAssertEqual(hotelPassportStep.bestResponse?.scenarioVietnamese, "Đây là hộ chiếu của tôi")
+
+        let taxi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .taxiGrabPickup })
+        XCTAssertEqual(taxi.sceneSetup, "Confirm the car, find the pickup point, show the address, and get dropped off.")
+        XCTAssertEqual(taxi.id.flowBeats, ["Confirm car", "Pickup point", "Route", "Drop-off"])
+        XCTAssertEqual(taxi.steps.map(\.momentType), [.listen, .ask, .ask, .ask])
+
+        let pharmacy = try XCTUnwrap(snapshot.scenarios.first { $0.id == .pharmacyHelp })
+        XCTAssertEqual(pharmacy.sceneSetup, "Find a pharmacy, explain one symptom, understand the medicine, and ask how to take it.")
+        XCTAssertEqual(pharmacy.id.flowBeats, ["Find help", "Symptoms", "Medicine", "Directions"])
+        XCTAssertEqual(pharmacy.steps.map(\.momentType), [.ask, .listen, .ask, .ask])
 
         let danangDay = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangDay })
         XCTAssertEqual(danangDay.sceneSetup, "Beach, food, Dragon Bridge, and getting back.")
@@ -190,6 +269,8 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(snapshot.loadedFallbackScenarioIDs, [
             .danangFirstDay,
             .hotelCheckInHelp,
+            .taxiGrabPickup,
+            .pharmacyHelp,
             .danangDay,
             .restaurantOrderingPayment,
         ])

@@ -40,7 +40,7 @@ enum DockItemKind: Equatable, Hashable {
         case .saved:
             return "Saved"
         case .practice:
-            return "Practice"
+            return "Messages"
         }
     }
 }

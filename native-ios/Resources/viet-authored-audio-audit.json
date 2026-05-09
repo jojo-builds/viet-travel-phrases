@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-06T00:29:20.526Z",
+    "generatedAt": "2026-05-08T02:32:46.610Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 750,
     "editorialSupportPageCount": 32,
     "practiceExpansionPageCount": 1350,
-    "requiredAudioCount": 3410,
+    "requiredAudioCount": 3414,
     "missingAudioCount": 2126
   },
   "required": [
@@ -9771,6 +9771,14 @@
     },
     {
       "pageID": "viet-family-city-danang-atm-airport",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "city-name-danang",
+      "text": "Đà Nẵng",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-city-danang-atm-airport",
       "sectionID": "related-phrases",
       "kind": "phrase",
       "audioKey": "audio-authored-san-bay-da-nang-152a0e4b10",
@@ -12338,6 +12346,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-train-street",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "city-name-hanoi",
+      "text": "Hà Nội",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-water-puppet-theatre",
       "sectionID": "hero",
       "kind": "hero",
@@ -13240,6 +13256,14 @@
       "audioKey": "audio-authored-di-nha-tho-duc-ba-sai-gon-275ed2930a",
       "text": "Đi Nhà thờ Đức Bà Sài Gòn",
       "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-notre-dame",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "city-name-hcmc",
+      "text": "Sài Gòn",
+      "resolved": true
     },
     {
       "pageID": "viet-family-city-hcmc-go-notre-dame",
@@ -16016,6 +16040,14 @@
       "audioKey": "audio-authored-da-cho-toi-mot-to-bun-bo-hue-f624687fc3",
       "text": "Dạ, cho tôi một tô bún bò Huế.",
       "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hue-place-bun-bo-city",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "city-name-hue",
+      "text": "Huế",
+      "resolved": true
     },
     {
       "pageID": "viet-family-city-hue-place-les-jardins",

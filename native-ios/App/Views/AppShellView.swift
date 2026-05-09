@@ -28,6 +28,7 @@ struct AppShellView: View {
     init(
         initialRoute: AppRoute = AppShellView.initialRoute,
         initialPracticeMode: PracticeMode? = AppShellView.initialPracticeMode,
+        initialPracticeScenarioID: PracticeScenarioID? = AppShellView.initialPracticeScenarioID,
         initialPracticeEntryContext: PracticeEntryContext = AppShellView.initialPracticeEntryContext,
         initialDetailScrollTarget: PhraseArticleInitialScrollTarget? = AppShellView.initialDetailScrollTarget,
         initialSearchQuery: String = AppShellView.initialSearchQuery,
@@ -35,6 +36,7 @@ struct AppShellView: View {
     ) {
         _navigation = State(initialValue: AppShellNavigationState(initialRoute: initialRoute))
         _searchQuery = State(initialValue: initialSearchQuery)
+        _requestedPracticeScenarioID = State(initialValue: initialPracticeScenarioID)
         self.launchPracticeMode = initialPracticeMode
         self.launchPracticeEntryContext = initialPracticeEntryContext
         self.launchDetailScrollTarget = initialDetailScrollTarget
@@ -508,7 +510,10 @@ struct AppShellView: View {
     }
 
     private var showsStaticBackButton: Bool {
-        navigation.currentRoute != .home && navigation.currentRoute != .browse && navigation.currentRoute != .search
+        navigation.currentRoute != .home
+            && navigation.currentRoute != .browse
+            && navigation.currentRoute != .practice
+            && navigation.currentRoute != .search
     }
 
     private var showsPinnedAudioSpeedControl: Bool {
@@ -1591,6 +1596,7 @@ struct AppShellView: View {
 
         if arguments.contains("--practice")
             || arguments.contains("--practice-placement")
+            || initialPracticeScenarioID(for: arguments) != nil
             || initialPracticeMode(for: arguments) != nil {
             return .practice
         }
@@ -1632,12 +1638,27 @@ struct AppShellView: View {
         return mode
     }
 
+    static func initialPracticeScenarioID(for arguments: [String]) -> PracticeScenarioID? {
+        guard
+            let flagIndex = arguments.firstIndex(of: "--practice-scenario"),
+            arguments.indices.contains(arguments.index(after: flagIndex))
+        else {
+            return nil
+        }
+
+        return PracticeScenarioID(rawValue: arguments[arguments.index(after: flagIndex)])
+    }
+
     static func initialPracticeEntryContext(for arguments: [String]) -> PracticeEntryContext {
         arguments.contains("--practice-placement") ? .placement : .standard
     }
 
     private static var initialPracticeMode: PracticeMode? {
         initialPracticeMode(for: ProcessInfo.processInfo.arguments)
+    }
+
+    private static var initialPracticeScenarioID: PracticeScenarioID? {
+        initialPracticeScenarioID(for: ProcessInfo.processInfo.arguments)
     }
 
     private static var initialPracticeEntryContext: PracticeEntryContext {
@@ -2419,6 +2440,9 @@ private struct AppShellDockItem: View {
 
             Text(kind.title)
                 .font(.caption2.weight(.semibold))
+                .lineLimit(1)
+                .minimumScaleFactor(0.68)
+                .frame(maxWidth: AppChromeLayout.dockItemWidth - 4)
         }
         .foregroundStyle(selected ? .red : .secondary)
         .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
@@ -2727,7 +2751,7 @@ struct HomeView: View {
     }
 
     private var practiceScenariosShelf: some View {
-        HomeShelf(title: "Travel Stories", subtitle: "Short guided scenes for your trip") {
+        HomeShelf(title: "Messages", subtitle: "Offline conversations for your trip") {
             HomeScenarioRail(
                 scenarios: HomeContent.practiceScenarios,
                 onOpenCollection: onOpenCollection,
@@ -3496,7 +3520,7 @@ private struct HomeScenarioCard: View {
             Button {
                 onStartPractice(scenario.practiceAction)
             } label: {
-                Text("Start story")
+                Text("Open thread")
                     .font(.headline.weight(.bold))
                     .foregroundStyle(Color(red: 0.24, green: 0.58, blue: 0.41))
                     .frame(maxWidth: .infinity)

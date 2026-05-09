@@ -41,10 +41,10 @@ final class AdminChromeUITests: XCTestCase {
         openOrigin(in: app, title: "Saved", iteration: 3)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
 
-        openDock("Practice", in: app)
+        openDock("Messages", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
-        openSearch(in: app, expectedOrigin: "Practice", iteration: 4)
-        openOrigin(in: app, title: "Practice", iteration: 4)
+        openSearch(in: app, expectedOrigin: "Messages", iteration: 4)
+        openOrigin(in: app, title: "Messages", iteration: 4)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
     }
 
@@ -55,7 +55,7 @@ final class AdminChromeUITests: XCTestCase {
         assertHomeVisible(in: app)
 
         let homeButton = app.buttons["AppChrome.Dock.Home"]
-        let practiceButton = app.buttons["AppChrome.Dock.Practice"]
+        let practiceButton = app.buttons["AppChrome.Dock.Messages"]
         XCTAssertTrue(homeButton.waitForExistence(timeout: 2))
         XCTAssertTrue(practiceButton.waitForExistence(timeout: 2))
 
@@ -74,7 +74,7 @@ final class AdminChromeUITests: XCTestCase {
 
         assertHomeVisible(in: app)
 
-        let practiceButton = app.buttons["AppChrome.Dock.Practice"]
+        let practiceButton = app.buttons["AppChrome.Dock.Messages"]
         XCTAssertTrue(practiceButton.waitForExistence(timeout: 2))
 
         practiceButton.tap()
@@ -137,7 +137,7 @@ final class AdminChromeUITests: XCTestCase {
         verifyDockTapFromDenseDetail("Saved", point: .leadingEdge) { app in
             XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
         }
-        verifyDockTapFromDenseDetail("Practice", point: .bottomEdge) { app in
+        verifyDockTapFromDenseDetail("Messages", point: .bottomEdge) { app in
             XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
         }
 

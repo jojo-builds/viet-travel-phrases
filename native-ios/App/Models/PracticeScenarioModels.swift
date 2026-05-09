@@ -6,6 +6,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     case taxiGrabPickup
     case restaurantOrderingPayment
     case hotelCheckInHelp
+    case pharmacyHelp
 
     var id: String { rawValue }
 
@@ -21,6 +22,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Restaurant ordering"
         case .hotelCheckInHelp:
             return "At the hotel"
+        case .pharmacyHelp:
+            return "Pharmacy help"
         }
     }
 
@@ -36,6 +39,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Restaurant"
         case .hotelCheckInHelp:
             return "Hotel"
+        case .pharmacyHelp:
+            return "Pharmacy"
         }
     }
 
@@ -51,6 +56,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "fork.knife"
         case .hotelCheckInHelp:
             return "bed.double.fill"
+        case .pharmacyHelp:
+            return "cross.case.fill"
         }
     }
 
@@ -66,6 +73,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return .green
         case .hotelCheckInHelp:
             return .purple
+        case .pharmacyHelp:
+            return .red
         }
     }
 
@@ -81,6 +90,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["food-drink", "money-numbers-prices"]
         case .hotelCheckInHelp:
             return ["hotel-accommodation", "problems-help"]
+        case .pharmacyHelp:
+            return ["health-pharmacy", "problems-help"]
         }
     }
 
@@ -91,11 +102,81 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .danangDay:
             return ["Beach", "Food", "Photo", "Ride back"]
         case .taxiGrabPickup:
-            return ["Confirm car", "Find pickup", "If unsure"]
+            return ["Confirm car", "Pickup point", "Route", "Drop-off"]
         case .restaurantOrderingPayment:
             return ["Table", "Menu", "Order", "Pay"]
         case .hotelCheckInHelp:
             return ["Booking", "Passport", "Wi-Fi", "Room help"]
+        case .pharmacyHelp:
+            return ["Find help", "Symptoms", "Medicine", "Directions"]
+        }
+    }
+
+    var messageContactName: String {
+        switch self {
+        case .danangFirstDay:
+            return "Airport Staff"
+        case .hotelCheckInHelp:
+            return "Hotel Desk"
+        case .taxiGrabPickup:
+            return "Driver"
+        case .pharmacyHelp:
+            return "Pharmacist"
+        case .danangDay:
+            return "Beach Vendor"
+        case .restaurantOrderingPayment:
+            return "Server"
+        }
+    }
+
+    var messageLocation: String {
+        switch self {
+        case .danangFirstDay:
+            return "Da Nang Airport"
+        case .hotelCheckInHelp:
+            return "Ngu Hanh Son, Da Nang"
+        case .taxiGrabPickup:
+            return "Pickup point"
+        case .pharmacyHelp:
+            return "Nearby pharmacy"
+        case .danangDay:
+            return "Beach day"
+        case .restaurantOrderingPayment:
+            return "Local restaurant"
+        }
+    }
+
+    var messageInitials: String {
+        switch self {
+        case .danangFirstDay:
+            return "AS"
+        case .hotelCheckInHelp:
+            return "HD"
+        case .taxiGrabPickup:
+            return "DR"
+        case .pharmacyHelp:
+            return "PH"
+        case .danangDay:
+            return "BV"
+        case .restaurantOrderingPayment:
+            return "SV"
+        }
+    }
+
+    var messageAvatarSymbolName: String {
+        switch self {
+        case .danangFirstDay:
+            return "airplane.arrival"
+        case .hotelCheckInHelp:
+            return "person.crop.circle.badge.checkmark"
+        case .taxiGrabPickup:
+            return "car.fill"
+        case .pharmacyHelp:
+            return "cross.case.fill"
+        case .danangDay:
+            return "beach.umbrella.fill"
+        case .restaurantOrderingPayment:
+            return "fork.knife"
         }
     }
 }
@@ -134,7 +215,7 @@ enum PracticeScenarioQueueSource: String, CaseIterable, Codable, Equatable, Hash
         case .savedRecent:
             return "Recently opened phrases."
         case .tripFallback:
-            return "Practical travel moments to start with."
+            return "Practical travel conversations to start with."
         }
     }
 
@@ -290,6 +371,10 @@ struct PracticeScenarioDeckSnapshot: Equatable {
 
     var primaryScenario: PracticeScenario? {
         scenarios.first
+    }
+
+    var starterScenario: PracticeScenario? {
+        scenarios.first { $0.id == .danangFirstDay } ?? primaryScenario
     }
 
     var visibleCopy: [String] {
