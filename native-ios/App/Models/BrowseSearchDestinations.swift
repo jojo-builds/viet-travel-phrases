@@ -458,11 +458,11 @@ enum BrowseSearchDestinations {
         ),
         BrowseDestination(
             id: "polite-repair",
-            title: "Polite repair",
-            subtitle: "Fix misunderstandings politely.",
+            title: "When You Don't Understand",
+            subtitle: "Ask people to repeat, slow down, write it, or use English.",
             categoryIDs: ["understanding-repair", "polite-basics", "problems-help"],
-            symbolName: "heart",
-            tintName: .red,
+            symbolName: "questionmark.bubble.fill",
+            tintName: .green,
             sampleQuery: "i don't understand",
             preferredPageIDs: ["viet-family-repair-understand", "viet-family-repair-meaning"]
         ),
@@ -1627,6 +1627,15 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "paying", title: "Paying", subtitle: "Bills, cards, and cash", categoryIDs: ["money-numbers-prices", "food-drink"], terms: ["bill", "pay", "card", "cash"], symbolName: "dongsign.circle.fill"),
             CollectionSubcategorySpec(id: "drinks", title: "Drinks", subtitle: "Coffee, tea, and water", categoryIDs: ["food-drink"], terms: ["coffee", "tea", "water", "drink"], symbolName: "cup.and.saucer.fill"),
         ],
+        "questions": [
+            CollectionSubcategorySpec(id: "directions", title: "Directions", subtitle: "Ask how to get there", categoryIDs: ["directions-navigation"], terms: [], symbolName: "location.north.fill"),
+            CollectionSubcategorySpec(id: "time", title: "Time", subtitle: "Dates, booking, and hours", categoryIDs: ["time-dates-booking"], terms: [], symbolName: "calendar"),
+            CollectionSubcategorySpec(id: "clarify", title: "Clarify", subtitle: "Repeat, slow down, or write it", categoryIDs: ["understanding-repair"], terms: [], symbolName: "questionmark.bubble.fill"),
+        ],
+        "numbers-money": [
+            CollectionSubcategorySpec(id: "payment", title: "Payment", subtitle: "Cards, cash, and QR", categoryIDs: ["money-numbers-prices"], terms: [], symbolName: "creditcard.fill"),
+            CollectionSubcategorySpec(id: "shopping", title: "Shopping", subtitle: "Prices, sizes, and receipts", categoryIDs: ["shopping"], terms: [], symbolName: "bag.fill"),
+        ],
         "shopping": [
             CollectionSubcategorySpec(id: "prices", title: "Prices", subtitle: "Ask costs and compare", categoryIDs: ["shopping", "money-numbers-prices"], terms: ["price", "cost", "much"], symbolName: "tag.fill"),
             CollectionSubcategorySpec(id: "sizes", title: "Sizes", subtitle: "Sizes, colors, and fit", categoryIDs: ["shopping"], terms: ["size", "color", "fit"], symbolName: "tshirt.fill"),
@@ -1645,13 +1654,18 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "safety", title: "Safety", subtitle: "Safer travel moments", categoryIDs: ["emergency-safety"], terms: ["safe", "police", "emergency"], symbolName: "shield.fill"),
             CollectionSubcategorySpec(id: "problems", title: "Problems", subtitle: "Lost items, billing, and help", categoryIDs: ["problems-help"], terms: ["lost", "problem", "manager"], symbolName: "wrench.and.screwdriver.fill"),
         ],
+        "polite-repair": [
+            CollectionSubcategorySpec(id: "clarify", title: "Clarify", subtitle: "Repeat, slow down, or write it", categoryIDs: ["understanding-repair"], terms: [], symbolName: "questionmark.bubble.fill"),
+            CollectionSubcategorySpec(id: "polite-basics", title: "Polite basics", subtitle: "Please, sorry, and thank you", categoryIDs: ["polite-basics"], terms: [], symbolName: "hand.wave.fill"),
+            CollectionSubcategorySpec(id: "get-help", title: "Get help", subtitle: "Ask for backup when stuck", categoryIDs: ["problems-help"], terms: [], symbolName: "ellipsis.bubble.fill"),
+        ],
     ]
 
     private static let categoryMastheadImages: [String: String] = [
-        "airport": "BrowseCollectionAirport",
-        "hotel": "BrowseCollectionHotel",
-        "food": "BrowseCollectionFood",
-        "shopping": "BrowseCollectionShopping",
+        "airport": "HeroCategoryAirport",
+        "hotel": "HeroCategoryHotel",
+        "food": "HeroCategoryFood",
+        "shopping": "HeroCategoryNumbersMoney",
         "getting-around": "HeroCategoryGettingAround",
         "first-day": "HeroCategoryFirstDay",
         "city-guides": "HeroCountryVietnam",
@@ -1660,7 +1674,7 @@ enum BrowseSearchDestinations {
         "essentials": "HeroCategoryEssentials",
         "greetings": "HeroCategoryGreetings",
         "questions": "HeroCategoryQuestions",
-        "numbers-money": "BrowseCollectionShopping",
+        "numbers-money": "HeroCategoryNumbersMoney",
         "polite-repair": "HeroCategoryPoliteRepair",
     ]
 
