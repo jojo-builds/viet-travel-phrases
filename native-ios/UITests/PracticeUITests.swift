@@ -14,8 +14,15 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 8))
         XCTAssertTrue(app.staticTexts["Messages"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Contacts"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Airport messages"].exists)
+        XCTAssertTrue(app.staticTexts["Hotel messages"].exists)
+        XCTAssertTrue(app.staticTexts["Food messages"].exists)
         XCTAssertTrue(app.buttons["Practice.Message.Contact.danangFirstDay"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.buttons["Practice.Message.Contact.airportPassportControl"].exists)
+        XCTAssertTrue(app.buttons["Practice.Message.Contact.airportSimCash"].exists)
         XCTAssertTrue(app.staticTexts["Airport Baggage"].exists)
+        XCTAssertTrue(app.staticTexts["Passport Control"].exists)
+        XCTAssertTrue(app.staticTexts["SIM & Cash"].exists)
         XCTAssertTrue(app.staticTexts["Hotel Check-In"].exists)
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Message.Contact.UnreadDot.danangFirstDay"].exists)
         XCTAssertTrue(app.staticTexts["Practice.Message.Contact.Preview.danangFirstDay"].exists)
@@ -162,7 +169,7 @@ final class PracticeUITests: XCTestCase {
         ("hotelCheckInHelp", "Hotel Check-In", "hotel-check-in"),
         ("taxiGrabPickup", "Grab Pickup", "grab-pickup"),
         ("pharmacyHelp", "Pharmacy Visit", "pharmacy-visit"),
-        ("danangDay", "Beach Chair", "beach-chair"),
+        ("danangDay", "Beach Snacks", "beach-snacks"),
         ("restaurantOrderingPayment", "Restaurant Table", "restaurant-table"),
     ]
 

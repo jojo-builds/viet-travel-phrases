@@ -236,7 +236,8 @@ struct PracticeView: View {
         }
 
         if let currentStep = session.currentStep,
-           !currentStep.nextLocalLine.isEmpty,
+           let selectedOption = session.selectedOption(for: currentStep),
+           currentStep.hasLocalReply(after: selectedOption),
            !session.revealedReplyStepIDs.contains(currentStep.id) {
             return
         }
@@ -1158,23 +1159,70 @@ private struct PracticeMessageContactGrid: View {
     let onMarkUnread: (PracticeScenarioID) -> Void
     let onStart: (PracticeScenario) -> Void
 
-    private var columns: [GridItem] {
-        Array(repeating: GridItem(.flexible(), spacing: 20), count: 3)
+    private struct Section: Identifiable {
+        let title: String
+        let scenarios: [PracticeScenario]
+
+        var id: String { title }
+    }
+
+    private var sections: [Section] {
+        let grouped = Dictionary(grouping: scenarios) { $0.id.messageSectionTitle }
+
+        return grouped
+            .map { title, scenarios in
+                Section(
+                    title: title,
+                    scenarios: scenarios.sorted {
+                        scenarioSortRank($0) < scenarioSortRank($1)
+                    }
+                )
+            }
+            .sorted { lhs, rhs in
+                let lhsRank = lhs.scenarios.first?.id.messageSectionSortRank ?? Int.max
+                let rhsRank = rhs.scenarios.first?.id.messageSectionSortRank ?? Int.max
+
+                if lhsRank != rhsRank {
+                    return lhsRank < rhsRank
+                }
+
+                return lhs.title < rhs.title
+            }
     }
 
     var body: some View {
-        LazyVGrid(columns: columns, alignment: .center, spacing: 30) {
-            ForEach(scenarios) { scenario in
-                PracticeMessageContactButton(
-                    scenario: scenario,
-                    isUnread: unreadScenarioIDs.contains(scenario.id),
-                    onMarkUnread: { onMarkUnread(scenario.id) },
-                    onStart: { onStart(scenario) }
-                )
+        VStack(alignment: .leading, spacing: 30) {
+            ForEach(sections) { section in
+                VStack(alignment: .leading, spacing: 18) {
+                    Text(section.title)
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .accessibilityIdentifier("Practice.Messages.Section.\(section.id)")
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(alignment: .top, spacing: 22) {
+                            ForEach(section.scenarios) { scenario in
+                                PracticeMessageContactButton(
+                                    scenario: scenario,
+                                    isUnread: unreadScenarioIDs.contains(scenario.id),
+                                    onMarkUnread: { onMarkUnread(scenario.id) },
+                                    onStart: { onStart(scenario) }
+                                )
+                                .frame(width: 118)
+                            }
+                        }
+                        .padding(.horizontal, 2)
+                    }
+                    .accessibilityIdentifier("Practice.Messages.SectionRow.\(section.id)")
+                }
             }
         }
         .padding(.top, 8)
         .accessibilityIdentifier("Practice.Messages.Contacts")
+    }
+
+    private func scenarioSortRank(_ scenario: PracticeScenario) -> Int {
+        scenarios.firstIndex { $0.id == scenario.id } ?? Int.max
     }
 }
 

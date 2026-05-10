@@ -145,14 +145,14 @@ enum PracticeStoryTranscript {
             if let selectedOption {
                 turns.append(.traveler(step: step, option: selectedOption))
 
-                if !step.nextLocalLine.isEmpty {
+                if step.hasLocalReply(after: selectedOption) {
                     if revealedReplyStepIDs.contains(step.id) {
                         turns.append(
                             .local(
                                 step: step,
                                 idSuffix: "reply",
-                                vietnamese: step.nextLocalLine,
-                                english: step.nextLocalMeaning
+                                vietnamese: step.localReplyLine(after: selectedOption),
+                                english: step.localReplyMeaning(after: selectedOption)
                             )
                         )
                     } else {

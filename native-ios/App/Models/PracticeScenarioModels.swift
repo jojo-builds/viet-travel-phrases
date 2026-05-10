@@ -2,11 +2,26 @@ import Foundation
 
 enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable {
     case danangFirstDay
-    case danangDay
-    case taxiGrabPickup
-    case restaurantOrderingPayment
+    case airportPassportControl
+    case airportSimCash
     case hotelCheckInHelp
+    case hotelRoomHelp
+    case hotelBagsTaxi
+    case restaurantOrderingPayment
+    case danangDay
+    case foodAllergyHelp
+    case taxiGrabPickup
+    case taxiRouteHelp
+    case driverProblemHelp
+    case shoppingMarketPrice
+    case shoppingSizeGift
+    case shoppingReceiptHelp
     case pharmacyHelp
+    case emergencyLostPassport
+    case emergencyLostBag
+    case localGreetingMarket
+    case localGreetingHotel
+    case localGreetingRespect
 
     var id: String { rawValue }
 
@@ -14,16 +29,46 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return "Airport baggage"
-        case .danangDay:
-            return "Beach chair"
-        case .taxiGrabPickup:
-            return "Grab pickup"
-        case .restaurantOrderingPayment:
-            return "Restaurant table"
+        case .airportPassportControl:
+            return "Passport control"
+        case .airportSimCash:
+            return "SIM and cash"
         case .hotelCheckInHelp:
             return "Hotel check-in"
+        case .hotelRoomHelp:
+            return "Room help"
+        case .hotelBagsTaxi:
+            return "Bags and taxi"
+        case .restaurantOrderingPayment:
+            return "Restaurant table"
+        case .danangDay:
+            return "Beach snacks"
+        case .foodAllergyHelp:
+            return "Food allergies"
+        case .taxiGrabPickup:
+            return "Grab pickup"
+        case .taxiRouteHelp:
+            return "Taxi route"
+        case .driverProblemHelp:
+            return "Driver help"
+        case .shoppingMarketPrice:
+            return "Market price"
+        case .shoppingSizeGift:
+            return "Size and gift"
+        case .shoppingReceiptHelp:
+            return "Receipt help"
         case .pharmacyHelp:
             return "Pharmacy visit"
+        case .emergencyLostPassport:
+            return "Lost passport"
+        case .emergencyLostBag:
+            return "Lost bag"
+        case .localGreetingMarket:
+            return "Market hello"
+        case .localGreetingHotel:
+            return "Hotel hello"
+        case .localGreetingRespect:
+            return "Respectful hello"
         }
     }
 
@@ -31,16 +76,46 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return "Baggage"
-        case .danangDay:
-            return "Beach"
-        case .taxiGrabPickup:
-            return "Grab"
-        case .restaurantOrderingPayment:
-            return "Table"
+        case .airportPassportControl:
+            return "Passport"
+        case .airportSimCash:
+            return "SIM"
         case .hotelCheckInHelp:
             return "Check-In"
+        case .hotelRoomHelp:
+            return "Room"
+        case .hotelBagsTaxi:
+            return "Bags"
+        case .restaurantOrderingPayment:
+            return "Table"
+        case .danangDay:
+            return "Snacks"
+        case .foodAllergyHelp:
+            return "Allergy"
+        case .taxiGrabPickup:
+            return "Grab"
+        case .taxiRouteHelp:
+            return "Route"
+        case .driverProblemHelp:
+            return "Driver"
+        case .shoppingMarketPrice:
+            return "Market"
+        case .shoppingSizeGift:
+            return "Gift"
+        case .shoppingReceiptHelp:
+            return "Receipt"
         case .pharmacyHelp:
             return "Pharmacy"
+        case .emergencyLostPassport:
+            return "Passport"
+        case .emergencyLostBag:
+            return "Lost Bag"
+        case .localGreetingMarket:
+            return "Market"
+        case .localGreetingHotel:
+            return "Hotel"
+        case .localGreetingRespect:
+            return "Respect"
         }
     }
 
@@ -48,16 +123,46 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return "airplane.arrival"
-        case .danangDay:
-            return "sun.max.fill"
-        case .taxiGrabPickup:
-            return "car.fill"
-        case .restaurantOrderingPayment:
-            return "fork.knife"
+        case .airportPassportControl:
+            return "doc.text.fill"
+        case .airportSimCash:
+            return "simcard.fill"
         case .hotelCheckInHelp:
             return "bed.double.fill"
+        case .hotelRoomHelp:
+            return "key.fill"
+        case .hotelBagsTaxi:
+            return "suitcase.cart.fill"
+        case .restaurantOrderingPayment:
+            return "fork.knife"
+        case .danangDay:
+            return "cup.and.saucer.fill"
+        case .foodAllergyHelp:
+            return "leaf.fill"
+        case .taxiGrabPickup:
+            return "car.fill"
+        case .taxiRouteHelp:
+            return "map.fill"
+        case .driverProblemHelp:
+            return "exclamationmark.triangle.fill"
+        case .shoppingMarketPrice:
+            return "basket.fill"
+        case .shoppingSizeGift:
+            return "gift.fill"
+        case .shoppingReceiptHelp:
+            return "receipt.fill"
         case .pharmacyHelp:
             return "cross.case.fill"
+        case .emergencyLostPassport:
+            return "doc.badge.exclamationmark.fill"
+        case .emergencyLostBag:
+            return "bag.fill"
+        case .localGreetingMarket:
+            return "hand.wave.fill"
+        case .localGreetingHotel:
+            return "person.crop.circle.badge.checkmark"
+        case .localGreetingRespect:
+            return "person.2.fill"
         }
     }
 
@@ -65,16 +170,22 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return .blue
-        case .danangDay:
-            return .teal
-        case .taxiGrabPickup:
-            return .orange
-        case .restaurantOrderingPayment:
-            return .green
-        case .hotelCheckInHelp:
-            return .purple
-        case .pharmacyHelp:
+        case .airportPassportControl:
             return .red
+        case .airportSimCash:
+            return .green
+        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi:
+            return .purple
+        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp:
+            return .green
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+            return .orange
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp:
+            return .orange
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+            return .red
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return .teal
         }
     }
 
@@ -82,16 +193,42 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return ["airport-border-arrival", "transport", "hotel-accommodation", "food-drink"]
-        case .danangDay:
-            return ["directions-navigation", "food-drink", "bathroom-personal-needs", "transport"]
-        case .taxiGrabPickup:
-            return ["transport", "directions-navigation"]
-        case .restaurantOrderingPayment:
-            return ["food-drink", "money-numbers-prices"]
+        case .airportPassportControl:
+            return ["airport-border-arrival", "directions-navigation"]
+        case .airportSimCash:
+            return ["airport-border-arrival", "phone-internet-power", "money-numbers-prices"]
         case .hotelCheckInHelp:
             return ["hotel-accommodation", "problems-help"]
+        case .hotelRoomHelp:
+            return ["hotel-accommodation", "phone-internet-power", "problems-help"]
+        case .hotelBagsTaxi:
+            return ["hotel-accommodation", "transport", "directions-navigation"]
+        case .restaurantOrderingPayment:
+            return ["food-drink", "money-numbers-prices"]
+        case .danangDay:
+            return ["food-drink", "local-services-everyday-tasks", "money-numbers-prices"]
+        case .foodAllergyHelp:
+            return ["food-drink", "health-pharmacy", "understanding-repair"]
+        case .taxiGrabPickup:
+            return ["transport", "directions-navigation"]
+        case .taxiRouteHelp:
+            return ["transport", "directions-navigation", "money-numbers-prices"]
+        case .driverProblemHelp:
+            return ["transport", "problems-help", "emergency-safety"]
+        case .shoppingMarketPrice:
+            return ["shopping", "money-numbers-prices"]
+        case .shoppingSizeGift:
+            return ["shopping", "local-services-everyday-tasks"]
+        case .shoppingReceiptHelp:
+            return ["shopping", "money-numbers-prices", "local-services-everyday-tasks"]
         case .pharmacyHelp:
             return ["health-pharmacy", "problems-help"]
+        case .emergencyLostPassport:
+            return ["emergency-safety", "problems-help", "airport-border-arrival"]
+        case .emergencyLostBag:
+            return ["emergency-safety", "problems-help", "airport-border-arrival"]
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return ["polite-basics", "social-small-talk", "relationship-aware-hellos"]
         }
     }
 
@@ -99,16 +236,46 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return ["Baggage", "Pickup", "Driver", "Water"]
-        case .danangDay:
-            return ["Water", "Shade", "Snack", "Pay"]
-        case .taxiGrabPickup:
-            return ["Confirm car", "Pickup point", "Route", "Drop-off"]
-        case .restaurantOrderingPayment:
-            return ["Table", "Menu", "Order", "Pay"]
+        case .airportPassportControl:
+            return ["Passport", "Visa", "Purpose", "Signature"]
+        case .airportSimCash:
+            return ["SIM", "Cash", "Info desk", "Pickup"]
         case .hotelCheckInHelp:
             return ["Booking", "Passport", "Wi-Fi", "Room help"]
+        case .hotelRoomHelp:
+            return ["Key card", "Wi-Fi", "AC", "Supplies"]
+        case .hotelBagsTaxi:
+            return ["Hold bags", "Pickup", "Taxi", "Airport"]
+        case .restaurantOrderingPayment:
+            return ["Table", "Menu", "Order", "Pay"]
+        case .danangDay:
+            return ["Water", "Shade", "Snack", "Pay"]
+        case .foodAllergyHelp:
+            return ["Allergy", "Ingredients", "Safer dish", "Fix order"]
+        case .taxiGrabPickup:
+            return ["Confirm car", "Pickup point", "Route", "Drop-off"]
+        case .taxiRouteHelp:
+            return ["Hotel", "Map", "Turns", "Receipt"]
+        case .driverProblemHelp:
+            return ["Wrong car", "Call driver", "Unsafe", "Report"]
+        case .shoppingMarketPrice:
+            return ["Price", "Discount", "Two items", "Pay"]
+        case .shoppingSizeGift:
+            return ["Gift", "Size", "Color", "Pack"]
+        case .shoppingReceiptHelp:
+            return ["Card", "Receipt", "Wrong charge", "Refund"]
         case .pharmacyHelp:
             return ["Find help", "Symptoms", "Medicine", "Directions"]
+        case .emergencyLostPassport:
+            return ["Passport", "Police", "Embassy", "Report"]
+        case .emergencyLostBag:
+            return ["Stolen bag", "Security", "Camera", "Report"]
+        case .localGreetingMarket:
+            return ["Hello", "Look around", "Thanks", "Goodbye"]
+        case .localGreetingHotel:
+            return ["Polite hello", "Wait", "Sorry", "Thanks"]
+        case .localGreetingRespect:
+            return ["Older man", "Older woman", "Permission", "Close"]
         }
     }
 
@@ -116,16 +283,46 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return "Airport Baggage"
+        case .airportPassportControl:
+            return "Passport Control"
+        case .airportSimCash:
+            return "SIM & Cash"
         case .hotelCheckInHelp:
             return "Hotel Check-In"
-        case .taxiGrabPickup:
-            return "Grab Pickup"
-        case .pharmacyHelp:
-            return "Pharmacy Visit"
-        case .danangDay:
-            return "Beach Chair"
+        case .hotelRoomHelp:
+            return "Room Help"
+        case .hotelBagsTaxi:
+            return "Bags & Taxi"
         case .restaurantOrderingPayment:
             return "Restaurant Table"
+        case .danangDay:
+            return "Beach Snacks"
+        case .foodAllergyHelp:
+            return "Food Allergies"
+        case .taxiGrabPickup:
+            return "Grab Pickup"
+        case .taxiRouteHelp:
+            return "Taxi Route"
+        case .driverProblemHelp:
+            return "Driver Help"
+        case .shoppingMarketPrice:
+            return "Market Price"
+        case .shoppingSizeGift:
+            return "Gift & Size"
+        case .shoppingReceiptHelp:
+            return "Receipt Help"
+        case .pharmacyHelp:
+            return "Pharmacy Visit"
+        case .emergencyLostPassport:
+            return "Lost Passport"
+        case .emergencyLostBag:
+            return "Lost Bag"
+        case .localGreetingMarket:
+            return "Market Hello"
+        case .localGreetingHotel:
+            return "Hotel Hello"
+        case .localGreetingRespect:
+            return "Respectful Hello"
         }
     }
 
@@ -133,16 +330,46 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return "Da Nang Airport"
+        case .airportPassportControl:
+            return "Arrival desk"
+        case .airportSimCash:
+            return "Airport services"
         case .hotelCheckInHelp:
             return "Ngu Hanh Son, Da Nang"
-        case .taxiGrabPickup:
-            return "Pickup point"
-        case .pharmacyHelp:
-            return "Nearby pharmacy"
-        case .danangDay:
-            return "Beach day"
+        case .hotelRoomHelp:
+            return "Hotel room"
+        case .hotelBagsTaxi:
+            return "Front desk"
         case .restaurantOrderingPayment:
             return "Local restaurant"
+        case .danangDay:
+            return "Beach stand"
+        case .foodAllergyHelp:
+            return "Street food stall"
+        case .taxiGrabPickup:
+            return "Pickup point"
+        case .taxiRouteHelp:
+            return "In the taxi"
+        case .driverProblemHelp:
+            return "Ride problem"
+        case .shoppingMarketPrice:
+            return "Local market"
+        case .shoppingSizeGift:
+            return "Gift shop"
+        case .shoppingReceiptHelp:
+            return "Checkout counter"
+        case .pharmacyHelp:
+            return "Nearby pharmacy"
+        case .emergencyLostPassport:
+            return "Police station"
+        case .emergencyLostBag:
+            return "Security desk"
+        case .localGreetingMarket:
+            return "Morning market"
+        case .localGreetingHotel:
+            return "Hotel lobby"
+        case .localGreetingRespect:
+            return "Neighborhood shop"
         }
     }
 
@@ -150,16 +377,46 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return "AB"
+        case .airportPassportControl:
+            return "PC"
+        case .airportSimCash:
+            return "SC"
         case .hotelCheckInHelp:
             return "HC"
-        case .taxiGrabPickup:
-            return "GP"
-        case .pharmacyHelp:
-            return "PV"
-        case .danangDay:
-            return "BC"
+        case .hotelRoomHelp:
+            return "RH"
+        case .hotelBagsTaxi:
+            return "BT"
         case .restaurantOrderingPayment:
             return "RT"
+        case .danangDay:
+            return "BS"
+        case .foodAllergyHelp:
+            return "FA"
+        case .taxiGrabPickup:
+            return "GP"
+        case .taxiRouteHelp:
+            return "TR"
+        case .driverProblemHelp:
+            return "DH"
+        case .shoppingMarketPrice:
+            return "MP"
+        case .shoppingSizeGift:
+            return "GS"
+        case .shoppingReceiptHelp:
+            return "RH"
+        case .pharmacyHelp:
+            return "PV"
+        case .emergencyLostPassport:
+            return "LP"
+        case .emergencyLostBag:
+            return "LB"
+        case .localGreetingMarket:
+            return "MH"
+        case .localGreetingHotel:
+            return "HH"
+        case .localGreetingRespect:
+            return "RH"
         }
     }
 
@@ -167,16 +424,84 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         switch self {
         case .danangFirstDay:
             return "airplane.arrival"
+        case .airportPassportControl:
+            return "doc.text.fill"
+        case .airportSimCash:
+            return "simcard.fill"
         case .hotelCheckInHelp:
             return "person.crop.circle.badge.checkmark"
-        case .taxiGrabPickup:
-            return "car.fill"
-        case .pharmacyHelp:
-            return "cross.case.fill"
-        case .danangDay:
-            return "beach.umbrella.fill"
+        case .hotelRoomHelp:
+            return "key.fill"
+        case .hotelBagsTaxi:
+            return "suitcase.cart.fill"
         case .restaurantOrderingPayment:
             return "fork.knife"
+        case .danangDay:
+            return "cup.and.saucer.fill"
+        case .foodAllergyHelp:
+            return "leaf.fill"
+        case .taxiGrabPickup:
+            return "car.fill"
+        case .taxiRouteHelp:
+            return "map.fill"
+        case .driverProblemHelp:
+            return "exclamationmark.triangle.fill"
+        case .shoppingMarketPrice:
+            return "basket.fill"
+        case .shoppingSizeGift:
+            return "gift.fill"
+        case .shoppingReceiptHelp:
+            return "receipt.fill"
+        case .pharmacyHelp:
+            return "cross.case.fill"
+        case .emergencyLostPassport:
+            return "doc.badge.exclamationmark.fill"
+        case .emergencyLostBag:
+            return "bag.fill"
+        case .localGreetingMarket:
+            return "hand.wave.fill"
+        case .localGreetingHotel:
+            return "person.crop.circle.badge.checkmark"
+        case .localGreetingRespect:
+            return "person.2.fill"
+        }
+    }
+
+    var messageSectionTitle: String {
+        switch self {
+        case .danangFirstDay, .airportPassportControl, .airportSimCash:
+            return "Airport messages"
+        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi:
+            return "Hotel messages"
+        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp:
+            return "Food messages"
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+            return "Getting around messages"
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp:
+            return "Shopping messages"
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+            return "Emergency messages"
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return "Local greetings messages"
+        }
+    }
+
+    var messageSectionSortRank: Int {
+        switch self {
+        case .danangFirstDay, .airportPassportControl, .airportSimCash:
+            return 0
+        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi:
+            return 1
+        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp:
+            return 2
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+            return 3
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp:
+            return 4
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+            return 5
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return 6
         }
     }
 }
@@ -253,6 +578,8 @@ struct PracticeScenarioResponseOption: Identifiable, Equatable {
     let candidate: PracticeCandidate
     let isBestFit: Bool
     let scenarioCopy: PracticeScenarioPhraseCopy?
+    let nextLocalLine: String?
+    let nextLocalMeaning: String?
     let feedbackTitle: String
     let feedbackBody: String
 
@@ -279,6 +606,10 @@ struct PracticeScenarioResponseOption: Identifiable, Equatable {
     var audioKey: String? {
         AudioAssetManifest.main?.audioKey(forExactText: scenarioVietnamese)
             ?? (scenarioCopy == nil ? candidate.playableAudioKey : nil)
+    }
+
+    var hasSpecificLocalReply: Bool {
+        nextLocalLine?.isEmpty == false || nextLocalMeaning?.isEmpty == false
     }
 }
 
@@ -309,9 +640,23 @@ struct PracticeScenarioStep: Identifiable, Equatable {
         responseOptions.first(where: \.isBestFit)
     }
 
+    func localReplyLine(after option: PracticeScenarioResponseOption) -> String {
+        option.nextLocalLine ?? nextLocalLine
+    }
+
+    func localReplyMeaning(after option: PracticeScenarioResponseOption) -> String {
+        option.nextLocalMeaning ?? nextLocalMeaning
+    }
+
+    func hasLocalReply(after option: PracticeScenarioResponseOption) -> Bool {
+        !localReplyLine(after: option).isEmpty || !localReplyMeaning(after: option).isEmpty
+    }
+
     var visibleCopy: [String] {
-        var copy = [
+        [
             scene,
+            localLine,
+            localLineMeaning,
             userGoal,
             nextLocalLine,
             nextLocalMeaning,
@@ -322,13 +667,10 @@ struct PracticeScenarioStep: Identifiable, Equatable {
             [
                 option.scenarioVietnamese,
                 option.scenarioEnglish,
+                option.nextLocalLine ?? "",
+                option.nextLocalMeaning ?? "",
             ]
         }
-        if momentType == .listen {
-            copy.append(localPhrase.scenarioVietnamese)
-            copy.append(localPhrase.scenarioEnglish)
-        }
-        return copy
     }
 }
 

@@ -389,11 +389,11 @@ private struct PracticeStoryChoiceChip: View {
     let onSelect: () -> Void
 
     private var minWidth: CGFloat {
-        isSelected ? 214 : 132
+        isSelected ? 236 : 132
     }
 
     private var maxWidth: CGFloat {
-        isSelected ? 252 : 176
+        isSelected ? 312 : 176
     }
 
     var body: some View {
