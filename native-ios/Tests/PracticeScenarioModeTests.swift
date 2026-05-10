@@ -19,9 +19,8 @@ final class PracticeScenarioModeTests: XCTestCase {
 
         XCTAssertEqual(firstDay.id, .danangFirstDay)
         XCTAssertEqual(snapshot.starterScenario?.id, .danangFirstDay)
-        XCTAssertEqual(turns.map(\.role), [.scene, .localSpeaker, .choiceSet])
-        XCTAssertEqual(turns.first?.text, firstStep.scene)
-        XCTAssertEqual(turns[1].vietnamese, firstStep.localLine)
+        XCTAssertEqual(turns.map(\.role), [.localSpeaker, .choiceSet])
+        XCTAssertEqual(turns.first?.vietnamese, firstStep.localLine)
         XCTAssertFalse(firstStep.localLine.isEmpty)
         XCTAssertNil(turns.first { $0.role == .travelerReply })
 
@@ -51,7 +50,7 @@ final class PracticeScenarioModeTests: XCTestCase {
             selectedOptionIDs: [firstStep.id: selectedOption.id]
         )
 
-        XCTAssertEqual(waitingTurns.map(\.role), [.scene, .localSpeaker, .travelerReply, .localTyping])
+        XCTAssertEqual(waitingTurns.map(\.role), [.localSpeaker, .travelerReply, .localTyping])
         let travelerTurn = try XCTUnwrap(waitingTurns.first { $0.role == .travelerReply })
         XCTAssertEqual(travelerTurn.vietnamese, selectedOption.scenarioVietnamese)
         XCTAssertEqual(travelerTurn.english, selectedOption.scenarioEnglish)
@@ -66,10 +65,70 @@ final class PracticeScenarioModeTests: XCTestCase {
             revealedReplyStepIDs: [firstStep.id]
         )
 
-        XCTAssertEqual(repliedTurns.map(\.role), [.scene, .localSpeaker, .travelerReply, .localSpeaker])
-        let localReply = repliedTurns[3]
+        XCTAssertEqual(repliedTurns.map(\.role), [.localSpeaker, .travelerReply, .localSpeaker])
+        let localReply = repliedTurns[2]
         XCTAssertEqual(localReply.vietnamese, firstStep.nextLocalLine)
         XCTAssertFalse(firstStep.nextLocalLine.isEmpty)
+    }
+
+    func testStoryTranscriptIsContinuousConversationWithoutMomentSceneTurns() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let firstDay = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangFirstDay })
+        let selectedOptionIDs = Dictionary(
+            uniqueKeysWithValues: try firstDay.steps.map { step in
+                let bestResponse = try XCTUnwrap(step.bestResponse)
+                return (step.id, bestResponse.id)
+            }
+        )
+        let turns = PracticeStoryTranscript.turns(
+            for: firstDay,
+            currentIndex: firstDay.steps.count - 1,
+            selectedOptionIDs: selectedOptionIDs,
+            revealedReplyStepIDs: Set(firstDay.steps.map(\.id))
+        )
+
+        XCTAssertFalse(turns.contains { $0.role == .scene })
+        XCTAssertEqual(turns.first?.role, .localSpeaker)
+        XCTAssertEqual(turns.first?.vietnamese, "Xin chào, bạn cần hỗ trợ gì ở sân bay?")
+        XCTAssertGreaterThanOrEqual(turns.filter { $0.role == .travelerReply }.count, 6)
+        XCTAssertGreaterThanOrEqual(turns.filter { $0.role == .localSpeaker }.count, 12)
+    }
+
+    func testEveryMessageScenarioBuildsOneContinuousSixToTenTurnConversation() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+
+        for scenario in snapshot.scenarios {
+            let selectedOptionIDs = Dictionary(
+                uniqueKeysWithValues: try scenario.steps.map { step in
+                    let bestResponse = try XCTUnwrap(step.bestResponse)
+                    return (step.id, bestResponse.id)
+                }
+            )
+            let turns = PracticeStoryTranscript.turns(
+                for: scenario,
+                currentIndex: scenario.steps.count - 1,
+                selectedOptionIDs: selectedOptionIDs,
+                revealedReplyStepIDs: Set(scenario.steps.map(\.id))
+            )
+
+            XCTAssertFalse(turns.contains { $0.role == .scene }, "\(scenario.id) should not show separate moment breaks.")
+            XCTAssertEqual(turns.first?.role, .localSpeaker)
+            XCTAssertTrue((6...10).contains(scenario.steps.count), "\(scenario.id) should stay short but conversational.")
+            XCTAssertEqual(turns.filter { $0.role == .travelerReply }.count, scenario.steps.count)
+            XCTAssertEqual(turns.filter { $0.role == .localSpeaker }.count, scenario.steps.count * 2)
+            XCTAssertEqual(scenario.steps.first?.localLine, scenario.unreadPreview)
+            XCTAssertTrue(scenario.steps.last?.id.hasSuffix("goodbye") ?? false)
+        }
     }
 
     func testScenarioModeUsesAuthoredStarterStories() throws {
@@ -88,12 +147,24 @@ final class PracticeScenarioModeTests: XCTestCase {
             .danangDay,
             .restaurantOrderingPayment,
         ])
-        XCTAssertTrue(snapshot.scenarios.allSatisfy { $0.steps.count >= 4 })
+        XCTAssertTrue(snapshot.scenarios.allSatisfy { $0.steps.count >= 6 })
 
         for scenario in snapshot.scenarios {
             XCTAssertFalse(scenario.sceneTitle.isEmpty)
             XCTAssertFalse(scenario.sceneSetup.isEmpty)
             XCTAssertGreaterThanOrEqual(scenario.id.flowBeats.count, 4)
+
+            let openingStep = try XCTUnwrap(scenario.steps.first)
+            XCTAssertTrue(openingStep.id.hasSuffix("opening"))
+            XCTAssertTrue(openingStep.localLine.contains("Xin chào"))
+            XCTAssertNotEqual(openingStep.bestResponse?.scenarioVietnamese, "Xin chào")
+            XCTAssertFalse(openingStep.bestResponse?.scenarioVietnamese.isEmpty ?? true)
+
+            let goodbyeStep = try XCTUnwrap(scenario.steps.last)
+            XCTAssertTrue(goodbyeStep.id.hasSuffix("goodbye"))
+            XCTAssertEqual(goodbyeStep.bestResponse?.scenarioVietnamese, "Cảm ơn")
+            XCTAssertEqual(goodbyeStep.nextStepTitle, "Finish story")
+            XCTAssertTrue(goodbyeStep.visibleCopy.contains { $0.contains("Tạm biệt") })
 
             for step in scenario.steps {
                 XCTAssertFalse(step.scene.isEmpty)
@@ -158,39 +229,48 @@ final class PracticeScenarioModeTests: XCTestCase {
         )
 
         let firstDay = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangFirstDay })
-        XCTAssertEqual(firstDay.sceneSetup, "Land, get a ride, check in, and order your first meal.")
-        XCTAssertEqual(firstDay.id.flowBeats, ["Airport", "Ride", "Hotel", "Food"])
-        XCTAssertEqual(firstDay.steps.map(\.momentType), [.ask, .ask, .ask, .listen, .ask])
-        let firstDayBaggage = try XCTUnwrap(firstDay.steps.first)
-        XCTAssertEqual(firstDayBaggage.scene, "You have just landed in Da Nang. First, find baggage claim.")
-        XCTAssertEqual(firstDayBaggage.bestResponse?.scenarioVietnamese, "Lấy hành lý ở đâu?")
+        XCTAssertEqual(firstDay.sceneSetup, "Ask airport staff for baggage, pickup, driver help, water, and a polite close.")
+        XCTAssertEqual(firstDay.id.flowBeats, ["Baggage", "Pickup", "Driver", "Water"])
+        XCTAssertEqual(firstDay.steps.map(\.momentType), [.ask, .ask, .ask, .ask, .ask, .ask])
+        let firstDayGreeting = try XCTUnwrap(firstDay.steps.first)
+        XCTAssertEqual(firstDayGreeting.localPhrase.scenarioVietnamese, "Xin chào, bạn cần hỗ trợ gì ở sân bay?")
+        XCTAssertEqual(firstDayGreeting.bestResponse?.scenarioVietnamese, "Lấy hành lý ở đâu?")
+        let firstDayBaggage = try XCTUnwrap(firstDay.steps.dropFirst().first)
+        XCTAssertEqual(firstDayBaggage.scene, "At baggage claim, you want to confirm the belt before waiting.")
+        XCTAssertEqual(firstDayBaggage.bestResponse?.scenarioVietnamese, "Giúp tôi tìm hành lý được không?")
 
         let hotel = try XCTUnwrap(snapshot.scenarios.first { $0.id == .hotelCheckInHelp })
-        XCTAssertEqual(hotel.sceneSetup, "Check in, show documents, ask room basics, and fix small issues.")
+        XCTAssertEqual(hotel.sceneSetup, "Greet the desk, check in, handle room basics, and say thanks.")
         XCTAssertEqual(hotel.id.flowBeats, ["Booking", "Passport", "Wi-Fi", "Room help"])
-        XCTAssertEqual(hotel.steps.map(\.momentType), [.listen, .listen, .ask, .recovery, .ask])
-        let hotelFirstStep = try XCTUnwrap(hotel.steps.first)
-        XCTAssertEqual(hotelFirstStep.localPhrase.scenarioVietnamese, "Bạn có đặt phòng chưa?")
-        XCTAssertEqual(hotelFirstStep.bestResponse?.scenarioVietnamese, "Tôi có đặt phòng")
-        let hotelPassportStep = try XCTUnwrap(hotel.steps.dropFirst().first)
+        XCTAssertEqual(hotel.steps.map(\.momentType), [.listen, .listen, .listen, .ask, .recovery, .ask, .ask])
+        let hotelFirstStep = try XCTUnwrap(hotel.steps.dropFirst().first)
+        XCTAssertEqual(hotelFirstStep.localPhrase.scenarioVietnamese, "Đặt phòng tên gì ạ?")
+        XCTAssertEqual(hotelFirstStep.bestResponse?.scenarioVietnamese, "Đặt chỗ dưới tên này")
+        let hotelPassportStep = try XCTUnwrap(hotel.steps.dropFirst(2).first)
         XCTAssertEqual(hotelPassportStep.localPhrase.scenarioVietnamese, "Cho tôi xem hộ chiếu được không?")
         XCTAssertEqual(hotelPassportStep.bestResponse?.scenarioVietnamese, "Đây là hộ chiếu của tôi")
 
         let taxi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .taxiGrabPickup })
-        XCTAssertEqual(taxi.sceneSetup, "Confirm the car, find the pickup point, show the address, and get dropped off.")
+        XCTAssertEqual(taxi.sceneSetup, "Greet the driver, confirm the car, set the route, and close the ride.")
         XCTAssertEqual(taxi.id.flowBeats, ["Confirm car", "Pickup point", "Route", "Drop-off"])
-        XCTAssertEqual(taxi.steps.map(\.momentType), [.listen, .ask, .ask, .ask])
+        XCTAssertEqual(taxi.steps.map(\.momentType), [.listen, .listen, .ask, .ask, .ask, .ask])
 
         let pharmacy = try XCTUnwrap(snapshot.scenarios.first { $0.id == .pharmacyHelp })
-        XCTAssertEqual(pharmacy.sceneSetup, "Find a pharmacy, explain one symptom, understand the medicine, and ask how to take it.")
+        XCTAssertEqual(pharmacy.sceneSetup, "Greet, explain one symptom, understand the medicine, and say thanks.")
         XCTAssertEqual(pharmacy.id.flowBeats, ["Find help", "Symptoms", "Medicine", "Directions"])
-        XCTAssertEqual(pharmacy.steps.map(\.momentType), [.ask, .listen, .ask, .ask])
+        XCTAssertEqual(pharmacy.steps.map(\.momentType), [.listen, .ask, .listen, .ask, .ask, .ask])
 
         let danangDay = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangDay })
-        XCTAssertEqual(danangDay.sceneSetup, "Beach, food, Dragon Bridge, and getting back.")
-        XCTAssertEqual(danangDay.id.flowBeats, ["Beach", "Food", "Photo", "Ride back"])
-        XCTAssertEqual(danangDay.steps.map(\.momentType), [.ask, .ask, .ask, .ask, .ask])
-        XCTAssertTrue(danangDay.visibleCopy.contains("You are near Dragon Bridge and want a quick photo."))
+        XCTAssertEqual(danangDay.sceneSetup, "Buy water, ask for shade, choose a snack, understand the price, and close politely.")
+        XCTAssertEqual(danangDay.id.flowBeats, ["Water", "Shade", "Snack", "Pay"])
+        XCTAssertEqual(danangDay.steps.map(\.momentType), [.ask, .ask, .ask, .ask, .ask, .ask])
+        XCTAssertTrue(danangDay.visibleCopy.contains("You walk up to a small stand by the beach and want to start with something easy."))
+        XCTAssertFalse(danangDay.visibleCopy.joined(separator: "\n").localizedCaseInsensitiveContains("Dragon Bridge"))
+        XCTAssertFalse(danangDay.visibleCopy.joined(separator: "\n").localizedCaseInsensitiveContains("get off"))
+
+        let restaurant = try XCTUnwrap(snapshot.scenarios.first { $0.id == .restaurantOrderingPayment })
+        XCTAssertEqual(restaurant.sceneSetup, "Greet the server, choose a table, order, ask for help, and pay.")
+        XCTAssertEqual(restaurant.steps.map(\.momentType), [.listen, .ask, .listen, .ask, .listen, .ask, .ask])
 
         let visibleCopy = snapshot.visibleCopy.joined(separator: "\n")
         XCTAssertFalse(visibleCopy.contains("Jojo"))
@@ -275,6 +355,29 @@ final class PracticeScenarioModeTests: XCTestCase {
             .restaurantOrderingPayment,
         ])
         XCTAssertLessThanOrEqual(snapshot.loadedFallbackCandidateCount, 128)
+    }
+
+    func testMessagesUseShortSituationNamesAndUnreadPreviews() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+
+        let namesByID = Dictionary(uniqueKeysWithValues: snapshot.scenarios.map { ($0.id, $0.id.messageContactName) })
+        XCTAssertEqual(namesByID[.danangFirstDay], "Airport Baggage")
+        XCTAssertEqual(namesByID[.hotelCheckInHelp], "Hotel Check-In")
+        XCTAssertEqual(namesByID[.taxiGrabPickup], "Grab Pickup")
+        XCTAssertEqual(namesByID[.pharmacyHelp], "Pharmacy Visit")
+        XCTAssertEqual(namesByID[.danangDay], "Beach Chair")
+        XCTAssertEqual(namesByID[.restaurantOrderingPayment], "Restaurant Table")
+
+        for scenario in snapshot.scenarios {
+            XCTAssertLessThanOrEqual(scenario.id.messageContactName.split(separator: " ").count, 3)
+            XCTAssertEqual(scenario.unreadPreview, scenario.steps.first?.localLine)
+            XCTAssertFalse(scenario.unreadPreview.isEmpty)
+        }
     }
 
     func testRepositoryLoadsPracticeCandidatesByCategory() throws {

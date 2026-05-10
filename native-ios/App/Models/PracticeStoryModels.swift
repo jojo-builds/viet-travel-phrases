@@ -127,8 +127,6 @@ enum PracticeStoryTranscript {
         var turns: [PracticeStoryTurn] = []
 
         for (index, step) in visibleSteps.enumerated() {
-            turns.append(.scene(step: step, index: index))
-
             if !step.localLine.isEmpty {
                 turns.append(
                     .local(

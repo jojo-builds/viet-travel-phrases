@@ -4,8 +4,10 @@ struct PracticeStoryTranscriptView: View {
     let turns: [PracticeStoryTurn]
     let tint: AccentTint
     let isInPracticePool: (String) -> Bool
+    let isSavedPhrasePage: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
+    let onToggleSavedPhrasePage: (String) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -19,8 +21,10 @@ struct PracticeStoryTranscriptView: View {
                         turn: turn,
                         tint: tint,
                         isInPracticePool: isInPracticePool,
+                        isSavedPhrasePage: isSavedPhrasePage,
                         onOpenPhrasePage: onOpenPhrasePage,
-                        onTogglePracticePage: onTogglePracticePage
+                        onTogglePracticePage: onTogglePracticePage,
+                        onToggleSavedPhrasePage: onToggleSavedPhrasePage
                     )
                     .transition(rowTransition(for: turn))
                 case .localTyping:
@@ -58,11 +62,9 @@ private struct PracticeStorySceneLine: View {
     let turn: PracticeStoryTurn
 
     var body: some View {
-        Rectangle()
-            .fill(Color.primary.opacity(0.16))
+        Color.clear
             .frame(maxWidth: .infinity)
-            .frame(height: 1)
-        .padding(.vertical, 8)
+            .frame(height: 12)
         .accessibilityLabel(turn.text ?? "Conversation break")
         .accessibilityIdentifier("Practice.Story.Scene.\(turn.stepID)")
     }
@@ -112,8 +114,10 @@ private struct PracticeStoryBubble: View {
     let turn: PracticeStoryTurn
     let tint: AccentTint
     let isInPracticePool: (String) -> Bool
+    let isSavedPhrasePage: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
+    let onToggleSavedPhrasePage: (String) -> Void
 
     private var isTraveler: Bool {
         turn.role == .travelerReply
@@ -121,6 +125,10 @@ private struct PracticeStoryBubble: View {
 
     private var pageID: String? {
         turn.source?.pageID
+    }
+
+    private var hasPhraseActions: Bool {
+        pageID != nil
     }
 
     var body: some View {
@@ -176,8 +184,27 @@ private struct PracticeStoryBubble: View {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
                     .stroke(.white.opacity(isTraveler ? 0.24 : 0.72), lineWidth: 1)
             }
+            .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("Practice.Story.Bubble.\(isTraveler ? "traveler" : "local").\(turn.stepID)")
+            .contextMenu {
+                if let pageID, hasPhraseActions {
+                    Button {
+                        onToggleSavedPhrasePage(pageID)
+                    } label: {
+                        Label(
+                            isSavedPhrasePage(pageID) ? "Remove from Saved Phrases" : "Save to Saved Phrases",
+                            systemImage: isSavedPhrasePage(pageID) ? "bookmark.slash" : "bookmark"
+                        )
+                    }
+
+                    Button {
+                        onOpenPhrasePage(pageID)
+                    } label: {
+                        Label("Open Phrase Page", systemImage: "doc.text.magnifyingglass")
+                    }
+                }
+            }
 
             if !isTraveler {
                 Spacer(minLength: 52)
@@ -200,26 +227,6 @@ private struct PracticeStoryBubble: View {
             .accessibilityHidden(true)
     }
 
-    private var detailsMenu: some View {
-        Menu {
-            if let pageID {
-                Button("Open phrase") {
-                    onOpenPhrasePage(pageID)
-                }
-
-                Button(isInPracticePool(pageID) ? "Remove from saved practice" : "Save for practice") {
-                    onTogglePracticePage(pageID)
-                }
-            }
-        } label: {
-            Label("Details", systemImage: "ellipsis")
-                .font(.caption.weight(.bold))
-                .foregroundStyle(.white.opacity(0.86))
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(.white.opacity(0.14), in: Capsule())
-        }
-    }
 }
 
 private struct PracticeStoryTypingBubble: View {

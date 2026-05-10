@@ -25,6 +25,7 @@ struct PracticeView: View {
     @State private var scenarioLoadGeneration = 0
     @State private var practiceScrollResetTrigger = 0
     @State private var practiceScrollTargetID: String?
+    @State private var unreadScenarioIDs = Set(PracticeScenarioID.allCases)
 
     init(
         intentStore: LocalUserIntentStore,
@@ -58,7 +59,9 @@ struct PracticeView: View {
                     LazyVStack(alignment: .leading, spacing: 18) {
                         PracticeCurrentScenarioSurface(
                             scenarioState: scenarioState,
+                            unreadScenarioIDs: unreadScenarioIDs,
                             onStart: startScenario,
+                            onMarkUnread: markScenarioUnread,
                             onBrowseTapped: onBrowseTapped,
                             onRetry: reloadScenarioSnapshot
                         )
@@ -86,11 +89,13 @@ struct PracticeView: View {
                 activeScenarioSession: activeScenarioSession,
                 scenarioCompletion: scenarioCompletion,
                 isInPracticePool: isScenarioPageInPractice,
+                isSavedPhrasePage: isScenarioPageSaved,
                 onOpenPhrasePage: { pageID in
                     dismissScenarioSheet()
                     openScenarioPhrasePage(pageID)
                 },
                 onTogglePracticePage: toggleScenarioPracticePage,
+                onToggleSavedPhrasePage: toggleScenarioSavedPage,
                 onSelectScenarioOption: { option, step in
                     selectScenarioOption(option, for: step)
                 },
@@ -158,6 +163,7 @@ struct PracticeView: View {
             return
         }
 
+        unreadScenarioIDs.remove(scenario.id)
         activeScenarioSession = PracticeScenarioSession(scenario: scenario)
         scenarioCompletion = nil
     }
@@ -167,6 +173,7 @@ struct PracticeView: View {
             return
         }
 
+        unreadScenarioIDs.remove(scenario.id)
         activeScenarioSession = PracticeScenarioSession(scenario: scenario, context: context)
         scenarioCompletion = nil
     }
@@ -228,6 +235,10 @@ struct PracticeView: View {
         intentStore.isPageInPractice(pageID)
     }
 
+    private func isScenarioPageSaved(_ pageID: String) -> Bool {
+        intentStore.isPageSaved(pageID)
+    }
+
     private func openScenarioPhrasePage(_ pageID: String) {
         onOpenDetail(pageID)
     }
@@ -235,6 +246,15 @@ struct PracticeView: View {
     private func toggleScenarioPracticePage(_ pageID: String) {
         intentStore.togglePracticePage(pageID)
         reloadScenarioSnapshot()
+    }
+
+    private func toggleScenarioSavedPage(_ pageID: String) {
+        intentStore.toggleSavedPage(pageID)
+        reloadScenarioSnapshot()
+    }
+
+    private func markScenarioUnread(_ scenarioID: PracticeScenarioID) {
+        unreadScenarioIDs.insert(scenarioID)
     }
 
     private func selectScenarioOption(_ option: PracticeScenarioResponseOption, for step: PracticeScenarioStep) {
@@ -848,14 +868,18 @@ struct PracticeScenarioCompletionSummary: Equatable {
 
 private struct PracticeCurrentScenarioSurface: View {
     let scenarioState: PracticeScenarioLoadState
+    let unreadScenarioIDs: Set<PracticeScenarioID>
     let onStart: (PracticeScenario) -> Void
+    let onMarkUnread: (PracticeScenarioID) -> Void
     let onBrowseTapped: () -> Void
     let onRetry: () -> Void
 
     var body: some View {
         PracticeMessagesHubSurface(
             state: scenarioState,
+            unreadScenarioIDs: unreadScenarioIDs,
             onStart: onStart,
+            onMarkUnread: onMarkUnread,
             onBrowseTapped: onBrowseTapped,
             onRetry: onRetry
         )
@@ -864,7 +888,9 @@ private struct PracticeCurrentScenarioSurface: View {
 
 private struct PracticeMessagesHubSurface: View {
     let state: PracticeScenarioLoadState
+    let unreadScenarioIDs: Set<PracticeScenarioID>
     let onStart: (PracticeScenario) -> Void
+    let onMarkUnread: (PracticeScenarioID) -> Void
     let onBrowseTapped: () -> Void
     let onRetry: () -> Void
 
@@ -880,6 +906,8 @@ private struct PracticeMessagesHubSurface: View {
             case .loaded(let snapshot):
                 PracticeMessageContactGrid(
                     scenarios: snapshot.scenarios,
+                    unreadScenarioIDs: unreadScenarioIDs,
+                    onMarkUnread: onMarkUnread,
                     onStart: onStart
                 )
             }
@@ -889,42 +917,19 @@ private struct PracticeMessagesHubSurface: View {
 
 private struct PracticeMessagesHeader: View {
     var body: some View {
-        HStack(alignment: .center) {
-            Button("Edit") {}
-                .font(.title3.weight(.medium))
-                .foregroundStyle(.primary)
-                .padding(.horizontal, 18)
-                .frame(height: 58)
-                .background(.white.opacity(0.74), in: Capsule())
-                .buttonStyle(.plain)
-                .accessibilityIdentifier("Practice.Messages.Edit")
-
-            Spacer(minLength: 0)
-
-            Text("Messages")
-                .font(.system(size: 32, weight: .bold))
-                .foregroundStyle(.primary)
-
-            Spacer(minLength: 0)
-
-            Button {} label: {
-                Image(systemName: "line.3.horizontal")
-                    .font(.system(size: 24, weight: .semibold))
-                    .foregroundStyle(.primary)
-                    .frame(width: 58, height: 58)
-                    .contentShape(Circle())
-            }
-            .buttonStyle(.plain)
-            .background(.white.opacity(0.74), in: Circle())
-            .accessibilityLabel("Message options")
-            .accessibilityIdentifier("Practice.Messages.Menu")
-        }
+        Text("Messages")
+            .font(.system(size: 32, weight: .bold))
+            .foregroundStyle(.primary)
+            .frame(maxWidth: .infinity)
+            .frame(height: 58)
         .accessibilityIdentifier("Practice.Messages.Header")
     }
 }
 
 private struct PracticeMessageContactGrid: View {
     let scenarios: [PracticeScenario]
+    let unreadScenarioIDs: Set<PracticeScenarioID>
+    let onMarkUnread: (PracticeScenarioID) -> Void
     let onStart: (PracticeScenario) -> Void
 
     private var columns: [GridItem] {
@@ -936,6 +941,8 @@ private struct PracticeMessageContactGrid: View {
             ForEach(scenarios) { scenario in
                 PracticeMessageContactButton(
                     scenario: scenario,
+                    isUnread: unreadScenarioIDs.contains(scenario.id),
+                    onMarkUnread: { onMarkUnread(scenario.id) },
                     onStart: { onStart(scenario) }
                 )
             }
@@ -947,29 +954,58 @@ private struct PracticeMessageContactGrid: View {
 
 private struct PracticeMessageContactButton: View {
     let scenario: PracticeScenario
+    let isUnread: Bool
+    let onMarkUnread: () -> Void
     let onStart: () -> Void
 
     var body: some View {
         Button(action: onStart) {
-            VStack(spacing: 10) {
+            VStack(spacing: 8) {
                 PracticeMessageAvatar(
                     scenarioID: scenario.id,
                     size: 92,
                     showsSymbol: true
                 )
 
-                Text(scenario.id.messageContactName)
-                    .font(.callout.weight(.medium))
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.82)
-                    .frame(minHeight: 40, alignment: .top)
+                VStack(spacing: 4) {
+                    HStack(spacing: 5) {
+                        if isUnread {
+                            Circle()
+                                .fill(Color(red: 0.0, green: 0.48, blue: 1.0))
+                                .frame(width: 7, height: 7)
+                                .accessibilityLabel("Unread")
+                                .accessibilityIdentifier("Practice.Message.Contact.UnreadDot.\(scenario.id.rawValue)")
+                        }
+
+                        Text(scenario.id.messageContactName)
+                            .font(.callout.weight(isUnread ? .semibold : .medium))
+                            .foregroundStyle(isUnread ? .primary : .secondary)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.82)
+                    }
+                    .frame(maxWidth: .infinity)
+
+                    Text(scenario.unreadPreview)
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.78)
+                        .frame(maxWidth: .infinity, minHeight: 28, alignment: .top)
+                        .opacity(isUnread ? 1 : 0.58)
+                        .accessibilityIdentifier("Practice.Message.Contact.Preview.\(scenario.id.rawValue)")
+                }
             }
             .frame(maxWidth: .infinity)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .contextMenu {
+            Button(action: onMarkUnread) {
+                Label("Mark Unread", systemImage: "circle.fill")
+            }
+        }
         .accessibilityLabel(scenario.id.messageContactName)
         .accessibilityIdentifier("Practice.Message.Contact.\(scenario.id.rawValue)")
     }

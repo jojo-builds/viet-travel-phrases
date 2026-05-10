@@ -13,32 +13,32 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     var title: String {
         switch self {
         case .danangFirstDay:
-            return "First day in Da Nang"
+            return "Airport baggage"
         case .danangDay:
-            return "Da Nang day"
+            return "Beach chair"
         case .taxiGrabPickup:
-            return "Taxi / Grab pickup"
+            return "Grab pickup"
         case .restaurantOrderingPayment:
-            return "Restaurant ordering"
+            return "Restaurant table"
         case .hotelCheckInHelp:
-            return "At the hotel"
+            return "Hotel check-in"
         case .pharmacyHelp:
-            return "Pharmacy help"
+            return "Pharmacy visit"
         }
     }
 
     var shortTitle: String {
         switch self {
         case .danangFirstDay:
-            return "First day"
+            return "Baggage"
         case .danangDay:
-            return "Da Nang"
+            return "Beach"
         case .taxiGrabPickup:
-            return "Taxi"
+            return "Grab"
         case .restaurantOrderingPayment:
-            return "Restaurant"
+            return "Table"
         case .hotelCheckInHelp:
-            return "Hotel"
+            return "Check-In"
         case .pharmacyHelp:
             return "Pharmacy"
         }
@@ -98,9 +98,9 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     var flowBeats: [String] {
         switch self {
         case .danangFirstDay:
-            return ["Airport", "Ride", "Hotel", "Food"]
+            return ["Baggage", "Pickup", "Driver", "Water"]
         case .danangDay:
-            return ["Beach", "Food", "Photo", "Ride back"]
+            return ["Water", "Shade", "Snack", "Pay"]
         case .taxiGrabPickup:
             return ["Confirm car", "Pickup point", "Route", "Drop-off"]
         case .restaurantOrderingPayment:
@@ -115,17 +115,17 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     var messageContactName: String {
         switch self {
         case .danangFirstDay:
-            return "Airport Staff"
+            return "Airport Baggage"
         case .hotelCheckInHelp:
-            return "Hotel Desk"
+            return "Hotel Check-In"
         case .taxiGrabPickup:
-            return "Driver"
+            return "Grab Pickup"
         case .pharmacyHelp:
-            return "Pharmacist"
+            return "Pharmacy Visit"
         case .danangDay:
-            return "Beach Vendor"
+            return "Beach Chair"
         case .restaurantOrderingPayment:
-            return "Server"
+            return "Restaurant Table"
         }
     }
 
@@ -149,17 +149,17 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     var messageInitials: String {
         switch self {
         case .danangFirstDay:
-            return "AS"
+            return "AB"
         case .hotelCheckInHelp:
-            return "HD"
+            return "HC"
         case .taxiGrabPickup:
-            return "DR"
+            return "GP"
         case .pharmacyHelp:
-            return "PH"
+            return "PV"
         case .danangDay:
-            return "BV"
+            return "BC"
         case .restaurantOrderingPayment:
-            return "SV"
+            return "RT"
         }
     }
 
@@ -340,6 +340,10 @@ struct PracticeScenario: Identifiable, Equatable {
     let steps: [PracticeScenarioStep]
 
     var title: String { id.title }
+
+    var unreadPreview: String {
+        steps.first?.localLine ?? sceneSetup
+    }
 
     var recommendedCandidates: [PracticeCandidate] {
         steps.compactMap { $0.bestResponse?.candidate }
