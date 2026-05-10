@@ -247,7 +247,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(hotel.steps.map(\.momentType), [.listen, .listen, .listen, .ask, .recovery, .ask, .ask])
         let hotelFirstStep = try XCTUnwrap(hotel.steps.dropFirst().first)
         XCTAssertEqual(hotelFirstStep.localPhrase.scenarioVietnamese, "Đặt phòng tên gì ạ?")
-        XCTAssertEqual(hotelFirstStep.bestResponse?.scenarioVietnamese, "Tên đặt phòng là tên này")
+        XCTAssertEqual(hotelFirstStep.bestResponse?.scenarioVietnamese, "Đặt chỗ dưới tên này")
         let hotelPassportStep = try XCTUnwrap(hotel.steps.dropFirst(2).first)
         XCTAssertEqual(hotelPassportStep.localPhrase.scenarioVietnamese, "Cho tôi xem hộ chiếu được không?")
         XCTAssertEqual(hotelPassportStep.bestResponse?.scenarioVietnamese, "Đây là hộ chiếu của tôi")
@@ -340,16 +340,30 @@ final class PracticeScenarioModeTests: XCTestCase {
         let hotel = try XCTUnwrap(snapshot.scenarios.first { $0.id == .hotelCheckInHelp })
         assertTopReplies(
             hotel,
+            stepID: "hotel-story-reservation",
+            vietnamese: [
+                "Đặt chỗ dưới tên này",
+                "Tôi đặt phòng online, tên này",
+                "Đây là tên đặt phòng",
+            ],
+            english: [
+                "The reservation is under this name",
+                "I booked online under this name",
+                "Here is the reservation name",
+            ]
+        )
+        assertTopReplies(
+            hotel,
             stepID: "hotel-story-passport",
             vietnamese: [
                 "Đây là hộ chiếu của tôi",
                 "Đây là hộ chiếu của tôi để nhận phòng",
-                "Đây là xác nhận đặt phòng",
+                "Tôi không có hộ chiếu",
             ],
             english: [
                 "Here is my passport",
                 "Here is my passport for check-in",
-                "Here is my booking confirmation",
+                "I do not have my passport",
             ]
         )
 
@@ -403,13 +417,13 @@ final class PracticeScenarioModeTests: XCTestCase {
             stepID: "restaurant-story-opening",
             vietnamese: [
                 "Cho tôi bàn cho hai người nhé",
-                "Cho tôi bàn cho hai người",
-                "Cho tôi xem thực đơn được không?",
+                "Cho tôi bàn cho một người",
+                "Cho tôi bàn cho bốn người",
             ],
             english: [
                 "A table for two, please",
-                "A table for two, please",
-                "Can I see the menu?",
+                "A table for one, please",
+                "A table for four, please",
             ]
         )
         assertTopReplies(
@@ -556,6 +570,26 @@ final class PracticeScenarioModeTests: XCTestCase {
             XCTAssertLessThanOrEqual(scenario.id.messageContactName.split(separator: " ").count, 3)
             XCTAssertEqual(scenario.unreadPreview, scenario.steps.first?.localLine)
             XCTAssertFalse(scenario.unreadPreview.isEmpty)
+        }
+    }
+
+    func testTopMessageChoicesDoNotDuplicateVisibleEnglish() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+
+        for scenario in snapshot.scenarios {
+            for step in scenario.steps {
+                let topEnglish = Array(step.responseOptions.prefix(3)).map(\.scenarioEnglish)
+                XCTAssertEqual(
+                    Set(topEnglish).count,
+                    topEnglish.count,
+                    "\(scenario.id.rawValue) \(step.id) should not repeat the same visible reply."
+                )
+            }
         }
     }
 

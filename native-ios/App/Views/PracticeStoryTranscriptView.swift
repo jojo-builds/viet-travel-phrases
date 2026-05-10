@@ -388,6 +388,14 @@ private struct PracticeStoryChoiceChip: View {
     let isSelected: Bool
     let onSelect: () -> Void
 
+    private var minWidth: CGFloat {
+        isSelected ? 214 : 132
+    }
+
+    private var maxWidth: CGFloat {
+        isSelected ? 252 : 176
+    }
+
     var body: some View {
         Button(action: onSelect) {
             Text(option.scenarioEnglish)
@@ -399,7 +407,7 @@ private struct PracticeStoryChoiceChip: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 10)
-                .frame(width: 132)
+                .frame(minWidth: minWidth, maxWidth: maxWidth)
                 .frame(minHeight: 58)
                 .background(chipBackground, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
                 .overlay {

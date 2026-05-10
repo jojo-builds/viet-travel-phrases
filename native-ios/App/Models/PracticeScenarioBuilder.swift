@@ -793,8 +793,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-phrase-v500-prob-help-can-you-help-me",
                     "viet-family-hotel-reservation",
                 ],
-                nextLocalLine: "Dạ, bạn cho tôi xem xác nhận đặt phòng nhé.",
-                nextLocalMeaning: "Yes, please show me your booking confirmation.",
+                nextLocalLine: "Dạ, tôi kiểm tra giúp bạn.",
+                nextLocalMeaning: "Yes, I can check that for you.",
                 recoveryTitle: "If the desk is busy",
                 recoveryBody: "Keep the confirmation screen visible and use the reservation phrase first.",
                 nextStepTitle: "Give the booking name",
@@ -809,7 +809,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                         english: "I booked online"
                     ),
                     "viet-phrase-v900-hote-acco-the-reservation-is-under-this-name": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Tên đặt phòng là tên này",
+                        vietnamese: "Đặt chỗ dưới tên này",
                         english: "The reservation is under this name"
                     ),
                 ]
@@ -841,16 +841,16 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 localScenarioContext: "hotel_story_reservation",
                 scenarioResponseCopies: [
                     "viet-phrase-v900-hote-acco-the-reservation-is-under-this-name": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Tên đặt phòng là tên này",
+                        vietnamese: "Đặt chỗ dưới tên này",
                         english: "The reservation is under this name"
                     ),
                     "viet-family-hotel-reservation": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Dạ, tôi có đặt phòng",
-                        english: "Yes, I have a reservation"
+                        vietnamese: "Đây là tên đặt phòng",
+                        english: "Here is the reservation name"
                     ),
                     "viet-phrase-v500-hote-acco-i-booked-online": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Tôi đã đặt phòng online",
-                        english: "I booked online"
+                        vietnamese: "Tôi đặt phòng online, tên này",
+                        english: "I booked online under this name"
                     ),
                 ]
             ),
@@ -867,12 +867,11 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 ],
                 alternatePageIDs: [
                     "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in",
-                    "viet-phrase-v500-hote-acco-i-booked-online",
-                    "viet-family-hotel-reservation",
+                    "viet-family-v500-emer-safe-i-do-not-have-my-passport",
                 ],
                 recoveryPageIDs: [
                     "viet-phrase-v500-prob-help-can-you-help-me",
-                    "viet-phrase-v500-prob-help-can-you-help-me",
+                    "viet-family-v500-emer-safe-i-do-not-have-my-passport",
                 ],
                 nextLocalLine: "Cảm ơn, tôi kiểm tra một chút.",
                 nextLocalMeaning: "Thank you, I will check now.",
@@ -889,9 +888,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                         vietnamese: "Đây là hộ chiếu của tôi để nhận phòng",
                         english: "Here is my passport for check-in"
                     ),
-                    "viet-phrase-v500-hote-acco-i-booked-online": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Đây là xác nhận đặt phòng",
-                        english: "Here is my booking confirmation"
+                    "viet-family-v500-emer-safe-i-do-not-have-my-passport": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi không có hộ chiếu",
+                        english: "I do not have my passport"
                     ),
                 ]
             ),
@@ -1581,7 +1580,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 ],
                 alternatePageIDs: [
                     "viet-family-food-one-portion",
-                    "viet-family-food-not-spicy",
+                    "viet-thanks-khong-cam-on",
                 ],
                 recoveryPageIDs: [
                     "viet-family-food-menu",
@@ -1602,9 +1601,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                         vietnamese: "Cho tôi một phần món này",
                         english: "One portion of this, please"
                     ),
-                    "viet-family-food-not-spicy": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Không cay nhé",
-                        english: "Not spicy, please"
+                    "viet-thanks-khong-cam-on": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không, cảm ơn",
+                        english: "No, thank you"
                     ),
                 ]
             ),
@@ -1707,8 +1706,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-vpe-one-item-please-cho-toi-mot-ban-cho-hai-nguoi",
                 ],
                 alternatePageIDs: [
-                    "viet-family-vpe-one-item-please-cho-toi-mot-ban-cho-hai-nguoi",
-                    "viet-family-food-menu",
+                    "viet-phrase-v900-food-drin-a-table-for-one-please",
+                    "viet-phrase-v900-food-drin-a-table-for-four-please",
                 ],
                 recoveryPageIDs: [
                     "viet-phrase-v500-prob-help-can-you-help-me",
@@ -1729,9 +1728,13 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                         vietnamese: "Cho tôi bàn cho hai người",
                         english: "A table for two, please"
                     ),
-                    "viet-family-food-menu": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Cho tôi xem thực đơn được không?",
-                        english: "Can I see the menu?"
+                    "viet-phrase-v900-food-drin-a-table-for-one-please": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi bàn cho một người",
+                        english: "A table for one, please"
+                    ),
+                    "viet-phrase-v900-food-drin-a-table-for-four-please": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi bàn cho bốn người",
+                        english: "A table for four, please"
                     ),
                 ]
             ),
@@ -1787,7 +1790,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-ves-order-cao-lau-portion",
                 ],
                 alternatePageIDs: [
-                    "viet-family-food-menu",
+                    "viet-family-ves-order-cao-lau-portion",
                     "viet-phrase-v900-food-drin-what-do-you-recommend",
                     "viet-family-vpe-food-has-co-dau-phong-khong",
                 ],
