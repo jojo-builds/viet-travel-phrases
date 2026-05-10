@@ -28,6 +28,7 @@ Rules:
 - Default pinned Codex specialist threads should all open `/Users/jojolim/Developer/products/speaklocal/app-family` and work from `main`.
 - Treat pinned threads such as `Native UI / Simulator`, `Content + Listing Pages`, `SQLite / Data Runtime`, `Practice / Quiz`, and `Research / Product Strategy` as conversation/work lanes, not permanent branches or permanent worktrees.
 - Use a separate branch/worktree only for risky native runtime changes, long throwaway experiments, overlapping write scopes, release/signing work, or work that should not disturb the main simulator lane. Fold completed branch/worktree work back into `main` or park it promptly.
+- For parallel feature worktrees, use a branch-specific Simulator instance for native UI/manual QA so sessions do not overwrite each other's installed app, screenshots, logs, or simulator state. Prefer a clear simulator name such as `SpeakLocal Messages`, `SpeakLocal Homepage`, or `SpeakLocal Browse`; create one with `xcrun simctl create "SpeakLocal <Feature>" "iPhone 17 Pro"` if needed. Compiling can share destinations, but launching, tapping, screenshots, and UI tests should target that feature's own Simulator. Physical iPhone installs replace the same bundle ID, so only build the branch currently being tested on-device.
 - Current Mac session roots:
   - native iOS app work: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
   - full repo, content, docs, generators, and migration work: `/Users/jojolim/Developer/products/speaklocal/app-family`
