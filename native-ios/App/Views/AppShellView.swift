@@ -17,6 +17,7 @@ struct AppShellView: View {
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
     @State private var homePhraseHeroMorphPageID: String?
+    @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -143,6 +144,7 @@ struct AppShellView: View {
                     isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
                     isInPractice: intentStore.isPageInPractice(PhrasePage.xinChao.id),
                     heroMorphPageID: homePhraseHeroMorphPageID,
+                    heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
                     onBackTapped: {},
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
@@ -331,6 +333,7 @@ struct AppShellView: View {
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
                     isInPractice: intentStore.isPageInPractice(renderedPage.pageID),
                     heroMorphPageID: homePhraseHeroMorphPageID,
+                    heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(renderedPage.pageID) },
@@ -513,6 +516,7 @@ struct AppShellView: View {
             isSaved: intentStore.isPageSaved(routePageID),
             isInPractice: intentStore.isPageInPractice(routePageID),
             heroMorphPageID: homePhraseHeroMorphPageID,
+            heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: openSearch,
             onToggleSaved: { intentStore.toggleSavedPage(routePageID) },
@@ -1321,6 +1325,7 @@ struct AppShellView: View {
 
         withoutRouteAnimation {
             homePhraseHeroMorphPageID = morphPageID
+            homePhraseHeroContentHoldPageID = morphPageID
         }
 
         Task { @MainActor in
@@ -1333,7 +1338,21 @@ struct AppShellView: View {
                 navigation.openDetail(id)
             }
             intentStore.recordOpenedPage(id, source: .home)
+            revealHomePhraseHeroContent(after: resetID)
             clearHomePhraseHeroMorph(after: resetID)
+        }
+    }
+
+    private func revealHomePhraseHeroContent(after resetID: Int) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: HomePhraseHeroMorphTiming.articleRevealDelayNanoseconds)
+            guard homePhraseHeroMorphResetID == resetID else {
+                return
+            }
+
+            withAnimation(HomePhraseHeroMorphTiming.articleRevealAnimation) {
+                homePhraseHeroContentHoldPageID = nil
+            }
         }
     }
 
@@ -1559,6 +1578,7 @@ struct AppShellView: View {
         dockSelectionTapRequestID += 1
         homePhraseHeroMorphResetID += 1
         homePhraseHeroMorphPageID = nil
+        homePhraseHeroContentHoldPageID = nil
         interactiveDrag = nil
         dockDrag = .inactive
     }
@@ -2488,6 +2508,8 @@ enum HomePhraseHeroMorphTiming {
     static let sourcePrimingDelayNanoseconds: UInt64 = 16_000_000
     static let navigationAnimation: Animation = .timingCurve(0.22, 1, 0.36, 1, duration: 0.68)
     static let pageFadeAnimation: Animation = .easeInOut(duration: 0.68)
+    static let articleRevealDelayNanoseconds: UInt64 = 700_000_000
+    static let articleRevealAnimation: Animation = .easeOut(duration: 0.18)
     static let cleanupDelayNanoseconds: UInt64 = 1_120_000_000
 }
 

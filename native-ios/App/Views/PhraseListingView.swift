@@ -17,6 +17,7 @@ struct PhraseListingView: View {
     let isSaved: Bool
     let isInPractice: Bool
     let heroMorphPageID: String?
+    let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -35,6 +36,7 @@ struct PhraseListingView: View {
         isSaved: Bool = false,
         isInPractice: Bool = false,
         heroMorphPageID: String? = nil,
+        heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -52,6 +54,7 @@ struct PhraseListingView: View {
         self.isSaved = isSaved
         self.isInPractice = isInPractice
         self.heroMorphPageID = heroMorphPageID
+        self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -72,6 +75,7 @@ struct PhraseListingView: View {
             isSaved: isSaved,
             isInPractice: isInPractice,
             heroMorphPageID: heroMorphPageID,
+            heroMorphContentHoldPageID: heroMorphContentHoldPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
@@ -93,6 +97,7 @@ struct PhraseArticleTemplateView: View {
     let isSaved: Bool
     let isInPractice: Bool
     let heroMorphPageID: String?
+    let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -112,6 +117,7 @@ struct PhraseArticleTemplateView: View {
         isSaved: Bool = false,
         isInPractice: Bool = false,
         heroMorphPageID: String? = nil,
+        heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -129,6 +135,7 @@ struct PhraseArticleTemplateView: View {
         self.isSaved = isSaved
         self.isInPractice = isInPractice
         self.heroMorphPageID = heroMorphPageID
+        self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -168,6 +175,10 @@ struct PhraseArticleTemplateView: View {
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
                         .padding(.top, 72 + topChromeContentClearance)
                         .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
+                        .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
+                        .offset(y: holdsArticleContentForHomeMorph ? 18 : 0)
+                        .allowsHitTesting(!holdsArticleContentForHomeMorph)
+                        .animation(HomePhraseHeroMorphTiming.articleRevealAnimation, value: holdsArticleContentForHomeMorph)
                     }
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
@@ -251,6 +262,9 @@ struct PhraseArticleTemplateView: View {
                         onTogglePractice: onTogglePractice
                     )
                     .padding(.top, 4)
+                    .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
+                    .allowsHitTesting(!holdsArticleContentForHomeMorph)
+                    .animation(HomePhraseHeroMorphTiming.articleRevealAnimation, value: holdsArticleContentForHomeMorph)
                 }
             }
             .padding(.horizontal, 24)
@@ -270,6 +284,10 @@ struct PhraseArticleTemplateView: View {
 
     private var usesHomePhraseHeroMorph: Bool {
         heroMorphPageID == morphPageID
+    }
+
+    private var holdsArticleContentForHomeMorph: Bool {
+        heroMorphContentHoldPageID == morphPageID
     }
 
     private var morphPageID: String {

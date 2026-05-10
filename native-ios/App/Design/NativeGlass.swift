@@ -184,14 +184,6 @@ struct PhraseHeroCopyStack: View {
                 .lineLimit(titleLineLimit)
                 .minimumScaleFactor(0.62)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .homePhraseHeroMorph(
-                    morphID(.title),
-                    namespace: morphNamespace,
-                    isActive: isMorphActive && morphPageID != nil,
-                    isSource: isMorphSource,
-                    properties: .position,
-                    anchor: .topLeading
-                )
 
             Text(englishTitle)
                 .font(.title3.weight(.semibold))
@@ -199,14 +191,6 @@ struct PhraseHeroCopyStack: View {
                 .lineLimit(2)
                 .minimumScaleFactor(0.78)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .homePhraseHeroMorph(
-                    morphID(.english),
-                    namespace: morphNamespace,
-                    isActive: isMorphActive && morphPageID != nil,
-                    isSource: isMorphSource,
-                    properties: .position,
-                    anchor: .topLeading
-                )
 
             if !pronunciation.isEmpty {
                 HStack(spacing: 10) {
@@ -222,37 +206,22 @@ struct PhraseHeroCopyStack: View {
                         .minimumScaleFactor(0.72)
                 }
                 .padding(.top, 2)
-                .homePhraseHeroMorph(
-                    morphID(.pronunciation),
-                    namespace: morphNamespace,
-                    isActive: isMorphActive && morphPageID != nil,
-                    isSource: isMorphSource,
-                    properties: .position,
-                    anchor: .topLeading
-                )
             }
         }
+        .homePhraseHeroMorph(
+            morphID,
+            namespace: morphNamespace,
+            isActive: isMorphActive && morphPageID != nil,
+            isSource: isMorphSource,
+            anchor: .topLeading
+        )
     }
 
-    private func morphID(_ slot: Slot) -> String {
+    private var morphID: String {
         guard let morphPageID else {
             return ""
         }
-
-        switch slot {
-        case .title:
-            return HomePhraseHeroMorphID.title(morphPageID)
-        case .english:
-            return HomePhraseHeroMorphID.english(morphPageID)
-        case .pronunciation:
-            return HomePhraseHeroMorphID.pronunciation(morphPageID)
-        }
-    }
-
-    private enum Slot {
-        case title
-        case english
-        case pronunciation
+        return HomePhraseHeroMorphID.copyStack(morphPageID)
     }
 }
 
