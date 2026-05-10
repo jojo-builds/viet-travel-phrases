@@ -214,48 +214,19 @@ struct PhraseArticleTemplateView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Text(page.title)
-                    .font(.system(size: usesCompactPhraseHero ? 38 : 54, weight: .black, design: .serif))
-                    .foregroundStyle(.primary)
-                    .lineLimit(usesCompactPhraseHero ? 3 : (page.id == PhrasePage.xinChao.id ? 1 : 2))
-                    .minimumScaleFactor(usesCompactPhraseHero ? 0.68 : 0.62)
-                    .homePhraseHeroMorph(
-                        HomePhraseHeroMorphID.title(page.id),
-                        namespace: chromeNamespace,
-                        isActive: usesHomePhraseHeroMorph,
-                        isSource: false,
-                        anchor: .leading
-                    )
-
-                Text(page.englishTitle)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.78)
-                    .homePhraseHeroMorph(
-                        HomePhraseHeroMorphID.english(page.id),
-                        namespace: chromeNamespace,
-                        isActive: usesHomePhraseHeroMorph,
-                        isSource: false,
-                        anchor: .leading
-                    )
-
-                HStack(spacing: 10) {
-                    Image(systemName: "waveform")
-                        .foregroundStyle(.red)
-                    Text(page.pronunciation)
-                        .font(.title3)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.76)
-                }
-                .homePhraseHeroMorph(
-                    HomePhraseHeroMorphID.pronunciation(page.id),
-                    namespace: chromeNamespace,
-                    isActive: usesHomePhraseHeroMorph,
-                    isSource: false,
-                    anchor: .leading
+                PhraseHeroCopyStack(
+                    title: page.title,
+                    englishTitle: page.englishTitle,
+                    pronunciation: page.pronunciation,
+                    titleSize: usesCompactPhraseHero ? 38 : 54,
+                    titleLineLimit: usesCompactPhraseHero ? 3 : 2,
+                    pronunciationLineLimit: 2,
+                    morphPageID: morphPageID,
+                    morphNamespace: chromeNamespace,
+                    isMorphActive: usesHomePhraseHeroMorph,
+                    isMorphSource: false
                 )
+                .zIndex(usesHomePhraseHeroMorph ? 4 : 0)
 
                 PlaybackDockView(
                     audioKey: page.playbackAudioKey,
@@ -264,11 +235,13 @@ struct PhraseArticleTemplateView: View {
                     visibilityRoute: chromeRoute
                 )
                     .homePhraseHeroMorph(
-                        HomePhraseHeroMorphID.player(page.id),
+                        HomePhraseHeroMorphID.player(morphPageID),
                         namespace: chromeNamespace,
                         isActive: usesHomePhraseHeroMorph,
-                        isSource: false
+                        isSource: false,
+                        anchor: .topLeading
                     )
+                    .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
 
                 if let onTogglePractice {
@@ -296,7 +269,11 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var usesHomePhraseHeroMorph: Bool {
-        heroMorphPageID == page.id
+        heroMorphPageID == morphPageID
+    }
+
+    private var morphPageID: String {
+        PhraseCatalog.canonicalPageID(forOpenablePageID: page.id) ?? page.id
     }
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"

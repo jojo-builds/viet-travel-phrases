@@ -123,6 +123,10 @@ enum HomePhraseHeroMorphID {
         "home.phrase.hero.title.\(pageID)"
     }
 
+    static func copyStack(_ pageID: String) -> String {
+        "home.phrase.hero.copy.\(pageID)"
+    }
+
     static func english(_ pageID: String) -> String {
         "home.phrase.hero.english.\(pageID)"
     }
@@ -157,6 +161,98 @@ extension View {
         } else {
             self
         }
+    }
+}
+
+struct PhraseHeroCopyStack: View {
+    let title: String
+    let englishTitle: String
+    let pronunciation: String
+    var titleSize: CGFloat
+    var titleLineLimit = 2
+    var pronunciationLineLimit = 2
+    var morphPageID: String? = nil
+    var morphNamespace: Namespace.ID? = nil
+    var isMorphActive = false
+    var isMorphSource = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.system(size: titleSize, weight: .black, design: .serif))
+                .foregroundStyle(.primary)
+                .lineLimit(titleLineLimit)
+                .minimumScaleFactor(0.62)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .homePhraseHeroMorph(
+                    morphID(.title),
+                    namespace: morphNamespace,
+                    isActive: isMorphActive && morphPageID != nil,
+                    isSource: isMorphSource,
+                    properties: .position,
+                    anchor: .topLeading
+                )
+
+            Text(englishTitle)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.78)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .homePhraseHeroMorph(
+                    morphID(.english),
+                    namespace: morphNamespace,
+                    isActive: isMorphActive && morphPageID != nil,
+                    isSource: isMorphSource,
+                    properties: .position,
+                    anchor: .topLeading
+                )
+
+            if !pronunciation.isEmpty {
+                HStack(spacing: 10) {
+                    Image(systemName: "waveform")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundStyle(Color.red)
+                        .frame(width: 26)
+
+                    Text(pronunciation)
+                        .font(.title3)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(pronunciationLineLimit)
+                        .minimumScaleFactor(0.72)
+                }
+                .padding(.top, 2)
+                .homePhraseHeroMorph(
+                    morphID(.pronunciation),
+                    namespace: morphNamespace,
+                    isActive: isMorphActive && morphPageID != nil,
+                    isSource: isMorphSource,
+                    properties: .position,
+                    anchor: .topLeading
+                )
+            }
+        }
+    }
+
+    private func morphID(_ slot: Slot) -> String {
+        guard let morphPageID else {
+            return ""
+        }
+
+        switch slot {
+        case .title:
+            return HomePhraseHeroMorphID.title(morphPageID)
+        case .english:
+            return HomePhraseHeroMorphID.english(morphPageID)
+        case .pronunciation:
+            return HomePhraseHeroMorphID.pronunciation(morphPageID)
+        }
+    }
+
+    private enum Slot {
+        case title
+        case english
+        case pronunciation
     }
 }
 

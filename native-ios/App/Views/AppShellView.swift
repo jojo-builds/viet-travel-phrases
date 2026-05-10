@@ -354,9 +354,18 @@ struct AppShellView: View {
     }
 
     private func detailTransition(for pageID: String) -> AnyTransition {
-        homePhraseHeroMorphPageID == pageID
+        isHomePhraseHeroMorphActive(for: pageID)
             ? AppPageTransition.phraseHeroMorph
             : AppPageTransition.slideFromTrailing
+    }
+
+    private func isHomePhraseHeroMorphActive(for pageID: String) -> Bool {
+        guard let homePhraseHeroMorphPageID else {
+            return false
+        }
+
+        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
+        return homePhraseHeroMorphPageID == canonicalPageID
     }
 
     @ViewBuilder
@@ -1302,7 +1311,7 @@ struct AppShellView: View {
     }
 
     private func openFeaturedDetailFromHome(_ id: String) {
-        let morphPageID = HomeFeaturePhraseItem.resolve(pageID: id)?.pageID
+        let morphPageID = HomeFeaturePhraseItem.resolve(pageID: id)?.morphPageID
             ?? PhraseCatalog.canonicalPageID(forOpenablePageID: id)
             ?? id
 
@@ -2455,7 +2464,7 @@ enum AppPageTransition {
     )
 
     static let phraseHeroMorph = AnyTransition.asymmetric(
-        insertion: .opacity.combined(with: .scale(scale: 0.992, anchor: .top)),
+        insertion: .opacity,
         removal: .opacity
     )
 }
@@ -3143,6 +3152,7 @@ private struct HomePhraseItem: Identifiable, Equatable {
 
 private struct HomeFeaturePhraseItem: Identifiable, Equatable {
     let pageID: String
+    let morphPageID: String
     let title: String
     let englishTitle: String
     let pronunciation: String
@@ -3163,6 +3173,7 @@ private struct HomeFeaturePhraseItem: Identifiable, Equatable {
         if let item = HomePhraseItem.resolve(pageID: pageID) {
             return HomeFeaturePhraseItem(
                 pageID: item.pageID,
+                morphPageID: PhraseCatalog.canonicalPageID(forOpenablePageID: item.pageID) ?? item.pageID,
                 title: item.title,
                 englishTitle: item.subtitle,
                 pronunciation: "",
@@ -3176,6 +3187,7 @@ private struct HomeFeaturePhraseItem: Identifiable, Equatable {
 
     private init(page: PhraseArticlePage) {
         self.pageID = page.id
+        self.morphPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: page.id) ?? page.id
         self.title = page.title
         self.englishTitle = page.englishTitle
         self.pronunciation = page.pronunciation
@@ -3185,6 +3197,7 @@ private struct HomeFeaturePhraseItem: Identifiable, Equatable {
 
     private init(
         pageID: String,
+        morphPageID: String,
         title: String,
         englishTitle: String,
         pronunciation: String,
@@ -3192,6 +3205,7 @@ private struct HomeFeaturePhraseItem: Identifiable, Equatable {
         audioKey: String?
     ) {
         self.pageID = pageID
+        self.morphPageID = morphPageID
         self.title = title
         self.englishTitle = englishTitle
         self.pronunciation = pronunciation
@@ -3548,12 +3562,12 @@ private struct HomeFeaturedPhraseCarousel: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 14) {
+            HStack(spacing: 14) {
                 ForEach(items) { item in
                     HomeFeaturedPhraseCard(
                         item: item,
                         isSaved: isSaved(item.pageID),
-                        isHeroMorphSource: heroMorphPageID == item.pageID,
+                        isHeroMorphSource: heroMorphPageID == item.morphPageID,
                         chromeNamespace: chromeNamespace,
                         onOpenDetail: onOpenDetail,
                         onToggleSaved: { onToggleSaved(item.pageID) }
@@ -3581,58 +3595,26 @@ private struct HomeFeaturedPhraseCard: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             VStack(alignment: .leading, spacing: 12) {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text(item.title)
-                        .font(.system(size: 42, weight: .black, design: .serif))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.56)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .homePhraseHeroMorph(
-                            HomePhraseHeroMorphID.title(item.pageID),
-                            namespace: chromeNamespace,
-                            isActive: isHeroMorphSource,
-                            isSource: true,
-                            anchor: .leading
-                        )
-
-                    Text(item.englishTitle)
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-                        .homePhraseHeroMorph(
-                            HomePhraseHeroMorphID.english(item.pageID),
-                            namespace: chromeNamespace,
-                            isActive: isHeroMorphSource,
-                            isSource: true,
-                            anchor: .leading
-                        )
-
-                    if !item.pronunciation.isEmpty {
-                        HStack(spacing: 10) {
-                            Image(systemName: "waveform")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundStyle(Color.red)
-                                .frame(width: 26)
-
-                            Text(item.pronunciation)
-                                .font(.title3)
-                                .foregroundStyle(.secondary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.72)
-                        }
-                        .padding(.top, 2)
-                        .homePhraseHeroMorph(
-                            HomePhraseHeroMorphID.pronunciation(item.pageID),
-                            namespace: chromeNamespace,
-                            isActive: isHeroMorphSource,
-                            isSource: true,
-                            anchor: .leading
-                        )
-                    }
+                Button {
+                    onOpenDetail(item.pageID)
+                } label: {
+                    PhraseHeroCopyStack(
+                        title: item.title,
+                        englishTitle: item.englishTitle,
+                        pronunciation: item.pronunciation,
+                        titleSize: 42,
+                        pronunciationLineLimit: 1,
+                        morphPageID: item.morphPageID,
+                        morphNamespace: chromeNamespace,
+                        isMorphActive: isHeroMorphSource,
+                        isMorphSource: true
+                    )
+                    .padding(.trailing, 48)
+                    .contentShape(Rectangle())
                 }
-                .padding(.trailing, 48)
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("HomeFeaturedPhrase.Open.\(item.pageID)")
+                .zIndex(isHeroMorphSource ? 4 : 0)
 
                 Spacer(minLength: 0)
 
@@ -3642,11 +3624,13 @@ private struct HomeFeaturedPhraseCard: View {
                     onToggleSaved: onToggleSaved
                 )
                 .homePhraseHeroMorph(
-                    HomePhraseHeroMorphID.player(item.pageID),
+                    HomePhraseHeroMorphID.player(item.morphPageID),
                     namespace: chromeNamespace,
                     isActive: isHeroMorphSource,
-                    isSource: true
+                    isSource: true,
+                    anchor: .topLeading
                 )
+                .zIndex(isHeroMorphSource ? 3 : 0)
             }
             .padding(.horizontal, 18)
             .padding(.top, 22)
@@ -3659,16 +3643,6 @@ private struct HomeFeaturedPhraseCard: View {
             }
             .shadow(color: .black.opacity(0.07), radius: 22, x: 0, y: 14)
             .nativeGlass(cornerRadius: 32)
-
-            Button {
-                onOpenDetail(item.pageID)
-            } label: {
-                Color.clear
-                    .frame(width: HomeLayout.featurePhraseCardWidth, height: 210)
-                    .contentShape(RoundedRectangle(cornerRadius: 32, style: .continuous))
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Open phrase page")
         }
         .accessibilityIdentifier("HomeFeaturedPhrase.\(item.pageID)")
     }
