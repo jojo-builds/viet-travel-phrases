@@ -114,6 +114,52 @@ enum AppChromeMorphID {
     }
 }
 
+enum HomePhraseHeroMorphID {
+    static func card(_ pageID: String) -> String {
+        "home.phrase.hero.card.\(pageID)"
+    }
+
+    static func title(_ pageID: String) -> String {
+        "home.phrase.hero.title.\(pageID)"
+    }
+
+    static func english(_ pageID: String) -> String {
+        "home.phrase.hero.english.\(pageID)"
+    }
+
+    static func pronunciation(_ pageID: String) -> String {
+        "home.phrase.hero.pronunciation.\(pageID)"
+    }
+
+    static func player(_ pageID: String) -> String {
+        "home.phrase.hero.player.\(pageID)"
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func homePhraseHeroMorph(
+        _ id: String,
+        namespace: Namespace.ID?,
+        isActive: Bool,
+        isSource: Bool,
+        properties: MatchedGeometryProperties = .frame,
+        anchor: UnitPoint = .center
+    ) -> some View {
+        if isActive, let namespace {
+            matchedGeometryEffect(
+                id: id,
+                in: namespace,
+                properties: properties,
+                anchor: anchor,
+                isSource: isSource
+            )
+        } else {
+            self
+        }
+    }
+}
+
 enum PhrasePageStyle {
     static let pageBackground = Color(red: 0.96, green: 0.97, blue: 0.98)
     static let heroImageName = "HeroVietnamMasthead"

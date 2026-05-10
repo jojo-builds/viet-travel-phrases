@@ -16,6 +16,8 @@ struct AppShellView: View {
     @State private var requestedPracticeMode: PracticeMode?
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
+    @State private var homePhraseHeroMorphPageID: String?
+    @State private var homePhraseHeroMorphResetID = 0
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @FocusState private var isSearchFieldFocused: Bool
@@ -53,8 +55,10 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.homeScrollToTopTrigger,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
+                    heroMorphPageID: homePhraseHeroMorphPageID,
                     onSearchTapped: openSearch,
                     onOpenDetail: openDetailFromHome,
+                    onOpenFeaturedDetail: openFeaturedDetailFromHome,
                     onOpenCollection: openBrowseCollectionFromHome,
                     onStartPractice: openPractice,
                     onBrowseAllTapped: openBrowseAll
@@ -138,6 +142,7 @@ struct AppShellView: View {
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
                     isInPractice: intentStore.isPageInPractice(PhrasePage.xinChao.id),
+                    heroMorphPageID: homePhraseHeroMorphPageID,
                     onBackTapped: {},
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
@@ -304,7 +309,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(AppPageTransition.slideFromTrailing)
+                .transition(detailTransition(for: renderedPage.pageID))
                 .zIndex(Double(index + 10))
                 .navigationPageMotion(
                     route: route,
@@ -325,6 +330,7 @@ struct AppShellView: View {
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
                     isInPractice: intentStore.isPageInPractice(renderedPage.pageID),
+                    heroMorphPageID: homePhraseHeroMorphPageID,
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(renderedPage.pageID) },
@@ -333,7 +339,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(AppPageTransition.slideFromTrailing)
+                .transition(detailTransition(for: renderedPage.pageID))
                 .zIndex(Double(index + 10))
                 .navigationPageMotion(
                     route: route,
@@ -345,6 +351,12 @@ struct AppShellView: View {
                 )
             }
         }
+    }
+
+    private func detailTransition(for pageID: String) -> AnyTransition {
+        homePhraseHeroMorphPageID == pageID
+            ? AppPageTransition.phraseHeroMorph
+            : AppPageTransition.slideFromTrailing
     }
 
     @ViewBuilder
@@ -376,6 +388,7 @@ struct AppShellView: View {
                 isSearchActive: navigation.isSearchPresented,
                 onSearchTapped: openSearch,
                 onOpenDetail: openDetailFromHome,
+                onOpenFeaturedDetail: openFeaturedDetailFromHome,
                 onOpenCollection: openBrowseCollectionFromHome,
                 onStartPractice: openPractice,
                 onBrowseAllTapped: openBrowseAll
@@ -490,6 +503,7 @@ struct AppShellView: View {
             topChromeContentClearance: pinnedAudioSpeedScrollClearance,
             isSaved: intentStore.isPageSaved(routePageID),
             isInPractice: intentStore.isPageInPractice(routePageID),
+            heroMorphPageID: homePhraseHeroMorphPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: openSearch,
             onToggleSaved: { intentStore.toggleSavedPage(routePageID) },
@@ -1287,6 +1301,31 @@ struct AppShellView: View {
         openDetail(id, source: .home)
     }
 
+    private func openFeaturedDetailFromHome(_ id: String) {
+        let morphPageID = HomeFeaturePhraseItem.resolve(pageID: id)?.pageID
+            ?? PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+            ?? id
+
+        cancelInteractiveChromeState()
+        homePhraseHeroMorphResetID += 1
+        let resetID = homePhraseHeroMorphResetID
+
+        withAnimation(.snappy(duration: 0.54)) {
+            homePhraseHeroMorphPageID = morphPageID
+            navigation.openDetail(id)
+        }
+        intentStore.recordOpenedPage(id, source: .home)
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 720_000_000)
+            guard homePhraseHeroMorphResetID == resetID else {
+                return
+            }
+
+            homePhraseHeroMorphPageID = nil
+        }
+    }
+
     private func openDetailFromBrowse(_ id: String) {
         openDetail(id, source: .browse)
     }
@@ -1494,6 +1533,8 @@ struct AppShellView: View {
     private func cancelInteractiveChromeState() {
         interactiveDragResolutionID += 1
         dockSelectionTapRequestID += 1
+        homePhraseHeroMorphResetID += 1
+        homePhraseHeroMorphPageID = nil
         interactiveDrag = nil
         dockDrag = .inactive
     }
@@ -2412,6 +2453,11 @@ enum AppPageTransition {
         insertion: .opacity.combined(with: .scale(scale: 0.985, anchor: .bottom)),
         removal: .opacity.combined(with: .scale(scale: 0.985, anchor: .bottom))
     )
+
+    static let phraseHeroMorph = AnyTransition.asymmetric(
+        insertion: .opacity.combined(with: .scale(scale: 0.992, anchor: .top)),
+        removal: .opacity
+    )
 }
 
 private struct AppDockInteractionState: Equatable {
@@ -2590,8 +2636,10 @@ struct HomeView: View {
     let scrollToTopTrigger: Int
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
+    let heroMorphPageID: String?
     var onSearchTapped: () -> Void
     var onOpenDetail: (String) -> Void
+    var onOpenFeaturedDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onStartPractice: (BrowseCollectionPracticeAction) -> Void
     var onBrowseAllTapped: () -> Void
@@ -2601,8 +2649,10 @@ struct HomeView: View {
         scrollToTopTrigger: Int = 0,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
+        heroMorphPageID: String? = nil,
         onSearchTapped: @escaping () -> Void,
         onOpenDetail: @escaping (String) -> Void,
+        onOpenFeaturedDetail: @escaping (String) -> Void,
         onOpenCollection: @escaping (BrowseCollectionRoute) -> Void,
         onStartPractice: @escaping (BrowseCollectionPracticeAction) -> Void,
         onBrowseAllTapped: @escaping () -> Void
@@ -2611,8 +2661,10 @@ struct HomeView: View {
         self.scrollToTopTrigger = scrollToTopTrigger
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
+        self.heroMorphPageID = heroMorphPageID
         self.onSearchTapped = onSearchTapped
         self.onOpenDetail = onOpenDetail
+        self.onOpenFeaturedDetail = onOpenFeaturedDetail
         self.onOpenCollection = onOpenCollection
         self.onStartPractice = onStartPractice
         self.onBrowseAllTapped = onBrowseAllTapped
@@ -2756,7 +2808,9 @@ struct HomeView: View {
         HomeShelf(title: "Test phrase cards", subtitle: "Larger listen cards for common moments") {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.featuredPhraseCardItems,
-                onOpenDetail: onOpenDetail,
+                heroMorphPageID: heroMorphPageID,
+                chromeNamespace: chromeNamespace,
+                onOpenDetail: onOpenFeaturedDetail,
                 isSaved: { intentStore.isPageSaved($0) },
                 onToggleSaved: { intentStore.toggleSavedPage($0) }
             )
@@ -3211,8 +3265,8 @@ private enum HomeContent {
     static let useNowIDs = HomeUseNowCatalog.starterIDs
 
     static let featuredIDs = [
-        PhrasePage.xinChao.id,
         "viet-thank-you",
+        PhrasePage.xinChao.id,
         "viet-excuse-sorry",
         "viet-family-repair-meaning",
         "viet-family-hotel-checkout-time",
@@ -3486,6 +3540,8 @@ private struct HomeQuickPhraseGrid: View {
 
 private struct HomeFeaturedPhraseCarousel: View {
     let items: [HomeFeaturePhraseItem]
+    let heroMorphPageID: String?
+    let chromeNamespace: Namespace.ID?
     let onOpenDetail: (String) -> Void
     let isSaved: (String) -> Bool
     let onToggleSaved: (String) -> Void
@@ -3497,6 +3553,8 @@ private struct HomeFeaturedPhraseCarousel: View {
                     HomeFeaturedPhraseCard(
                         item: item,
                         isSaved: isSaved(item.pageID),
+                        isHeroMorphSource: heroMorphPageID == item.pageID,
+                        chromeNamespace: chromeNamespace,
                         onOpenDetail: onOpenDetail,
                         onToggleSaved: { onToggleSaved(item.pageID) }
                     )
@@ -3515,11 +3573,13 @@ private struct HomeFeaturedPhraseCarousel: View {
 private struct HomeFeaturedPhraseCard: View {
     let item: HomeFeaturePhraseItem
     let isSaved: Bool
+    let isHeroMorphSource: Bool
+    let chromeNamespace: Namespace.ID?
     let onOpenDetail: (String) -> Void
     let onToggleSaved: () -> Void
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
+        ZStack(alignment: .topLeading) {
             VStack(alignment: .leading, spacing: 12) {
                 VStack(alignment: .leading, spacing: 10) {
                     Text(item.title)
@@ -3528,12 +3588,26 @@ private struct HomeFeaturedPhraseCard: View {
                         .lineLimit(2)
                         .minimumScaleFactor(0.56)
                         .fixedSize(horizontal: false, vertical: true)
+                        .homePhraseHeroMorph(
+                            HomePhraseHeroMorphID.title(item.pageID),
+                            namespace: chromeNamespace,
+                            isActive: isHeroMorphSource,
+                            isSource: true,
+                            anchor: .leading
+                        )
 
                     Text(item.englishTitle)
                         .font(.title3.weight(.semibold))
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
                         .minimumScaleFactor(0.78)
+                        .homePhraseHeroMorph(
+                            HomePhraseHeroMorphID.english(item.pageID),
+                            namespace: chromeNamespace,
+                            isActive: isHeroMorphSource,
+                            isSource: true,
+                            anchor: .leading
+                        )
 
                     if !item.pronunciation.isEmpty {
                         HStack(spacing: 10) {
@@ -3549,6 +3623,13 @@ private struct HomeFeaturedPhraseCard: View {
                                 .minimumScaleFactor(0.72)
                         }
                         .padding(.top, 2)
+                        .homePhraseHeroMorph(
+                            HomePhraseHeroMorphID.pronunciation(item.pageID),
+                            namespace: chromeNamespace,
+                            isActive: isHeroMorphSource,
+                            isSource: true,
+                            anchor: .leading
+                        )
                     }
                 }
                 .padding(.trailing, 48)
@@ -3559,6 +3640,12 @@ private struct HomeFeaturedPhraseCard: View {
                     audioKey: item.audioKey,
                     isSaved: isSaved,
                     onToggleSaved: onToggleSaved
+                )
+                .homePhraseHeroMorph(
+                    HomePhraseHeroMorphID.player(item.pageID),
+                    namespace: chromeNamespace,
+                    isActive: isHeroMorphSource,
+                    isSource: true
                 )
             }
             .padding(.horizontal, 18)
@@ -3576,15 +3663,11 @@ private struct HomeFeaturedPhraseCard: View {
             Button {
                 onOpenDetail(item.pageID)
             } label: {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.secondary)
-                    .frame(width: 38, height: 38)
-                    .contentShape(Circle())
+                Color.clear
+                    .frame(width: HomeLayout.featurePhraseCardWidth, height: 210)
+                    .contentShape(RoundedRectangle(cornerRadius: 32, style: .continuous))
             }
             .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: 19, interactive: true)
-            .padding(16)
             .accessibilityLabel("Open phrase page")
         }
         .accessibilityIdentifier("HomeFeaturedPhrase.\(item.pageID)")

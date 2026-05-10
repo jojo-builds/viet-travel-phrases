@@ -16,6 +16,7 @@ struct PhraseListingView: View {
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let isInPractice: Bool
+    let heroMorphPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -33,6 +34,7 @@ struct PhraseListingView: View {
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         isInPractice: Bool = false,
+        heroMorphPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -49,6 +51,7 @@ struct PhraseListingView: View {
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.isInPractice = isInPractice
+        self.heroMorphPageID = heroMorphPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -68,6 +71,7 @@ struct PhraseListingView: View {
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
             isInPractice: isInPractice,
+            heroMorphPageID: heroMorphPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
@@ -88,6 +92,7 @@ struct PhraseArticleTemplateView: View {
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let isInPractice: Bool
+    let heroMorphPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -106,6 +111,7 @@ struct PhraseArticleTemplateView: View {
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         isInPractice: Bool = false,
+        heroMorphPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -122,6 +128,7 @@ struct PhraseArticleTemplateView: View {
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.isInPractice = isInPractice
+        self.heroMorphPageID = heroMorphPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -212,12 +219,26 @@ struct PhraseArticleTemplateView: View {
                     .foregroundStyle(.primary)
                     .lineLimit(usesCompactPhraseHero ? 3 : (page.id == PhrasePage.xinChao.id ? 1 : 2))
                     .minimumScaleFactor(usesCompactPhraseHero ? 0.68 : 0.62)
+                    .homePhraseHeroMorph(
+                        HomePhraseHeroMorphID.title(page.id),
+                        namespace: chromeNamespace,
+                        isActive: usesHomePhraseHeroMorph,
+                        isSource: false,
+                        anchor: .leading
+                    )
 
                 Text(page.englishTitle)
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .lineLimit(2)
                     .minimumScaleFactor(0.78)
+                    .homePhraseHeroMorph(
+                        HomePhraseHeroMorphID.english(page.id),
+                        namespace: chromeNamespace,
+                        isActive: usesHomePhraseHeroMorph,
+                        isSource: false,
+                        anchor: .leading
+                    )
 
                 HStack(spacing: 10) {
                     Image(systemName: "waveform")
@@ -228,6 +249,13 @@ struct PhraseArticleTemplateView: View {
                         .lineLimit(2)
                         .minimumScaleFactor(0.76)
                 }
+                .homePhraseHeroMorph(
+                    HomePhraseHeroMorphID.pronunciation(page.id),
+                    namespace: chromeNamespace,
+                    isActive: usesHomePhraseHeroMorph,
+                    isSource: false,
+                    anchor: .leading
+                )
 
                 PlaybackDockView(
                     audioKey: page.playbackAudioKey,
@@ -235,6 +263,12 @@ struct PhraseArticleTemplateView: View {
                     onToggleSaved: onToggleSaved,
                     visibilityRoute: chromeRoute
                 )
+                    .homePhraseHeroMorph(
+                        HomePhraseHeroMorphID.player(page.id),
+                        namespace: chromeNamespace,
+                        isActive: usesHomePhraseHeroMorph,
+                        isSource: false
+                    )
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
 
                 if let onTogglePractice {
@@ -259,6 +293,10 @@ struct PhraseArticleTemplateView: View {
 
     private var usesCompactPhraseHero: Bool {
         page.heroImageName == "HeroCompactPhraseMasthead"
+    }
+
+    private var usesHomePhraseHeroMorph: Bool {
+        heroMorphPageID == page.id
     }
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"
