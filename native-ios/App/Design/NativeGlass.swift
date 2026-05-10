@@ -499,6 +499,12 @@ struct HeroMastheadImage: View {
             return -152
         case "HeroCityHanoi", "HeroCityDanang", "HeroCityHoian", "HeroCityHue":
             return -132
+        case "HeroCategoryAirport":
+            return -126
+        case "HeroCategoryFirstDay":
+            return -112
+        case "HeroCategoryEmergency", "HeroCategoryEssentials":
+            return -78
         default:
             if imageName.hasPrefix("HeroCity")
                 || imageName.hasPrefix("HeroCategory")

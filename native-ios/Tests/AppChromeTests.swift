@@ -1082,6 +1082,7 @@ final class AppChromeTests: XCTestCase {
     func testQuestionAndMoneyCollectionsUseCompactTravelerFilters() {
         let questions = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("questions")))
         let numbersMoney = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("numbers-money")))
+        let firstDay = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("first-day")))
 
         XCTAssertEqual(
             questions.subcategories.map(\.title),
@@ -1091,8 +1092,14 @@ final class AppChromeTests: XCTestCase {
             numbersMoney.subcategories.map(\.title),
             ["Payment", "Shopping"]
         )
+        XCTAssertEqual(
+            firstDay.subcategories.map(\.title),
+            ["Airport", "Hotel", "Transport"]
+        )
 
-        let visibleLabels = questions.subcategories.map(\.title) + numbersMoney.subcategories.map(\.title)
+        let visibleLabels = questions.subcategories.map(\.title)
+            + numbersMoney.subcategories.map(\.title)
+            + firstDay.subcategories.map(\.title)
         XCTAssertFalse(visibleLabels.contains { $0.localizedCaseInsensitiveContains("repair") })
         XCTAssertTrue(visibleLabels.allSatisfy { $0.count <= 10 })
     }

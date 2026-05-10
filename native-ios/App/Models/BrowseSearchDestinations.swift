@@ -1627,6 +1627,11 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "paying", title: "Paying", subtitle: "Bills, cards, and cash", categoryIDs: ["money-numbers-prices", "food-drink"], terms: ["bill", "pay", "card", "cash"], symbolName: "dongsign.circle.fill"),
             CollectionSubcategorySpec(id: "drinks", title: "Drinks", subtitle: "Coffee, tea, and water", categoryIDs: ["food-drink"], terms: ["coffee", "tea", "water", "drink"], symbolName: "cup.and.saucer.fill"),
         ],
+        "first-day": [
+            CollectionSubcategorySpec(id: "airport", title: "Airport", subtitle: "Arrival, bags, and SIM cards", categoryIDs: ["airport-border-arrival"], terms: [], symbolName: "airplane.arrival"),
+            CollectionSubcategorySpec(id: "hotel", title: "Hotel", subtitle: "Check-in and luggage", categoryIDs: ["hotel-accommodation"], terms: [], symbolName: "bed.double.fill"),
+            CollectionSubcategorySpec(id: "transport", title: "Transport", subtitle: "Pickup, taxis, and directions", categoryIDs: ["transport", "directions-navigation"], terms: [], symbolName: "car.fill"),
+        ],
         "questions": [
             CollectionSubcategorySpec(id: "directions", title: "Directions", subtitle: "Ask how to get there", categoryIDs: ["directions-navigation"], terms: [], symbolName: "location.north.fill"),
             CollectionSubcategorySpec(id: "time", title: "Time", subtitle: "Dates, booking, and hours", categoryIDs: ["time-dates-booking"], terms: [], symbolName: "calendar"),
