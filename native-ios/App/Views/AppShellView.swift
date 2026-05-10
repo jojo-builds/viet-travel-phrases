@@ -2635,6 +2635,8 @@ struct HomeView: View {
                         continueShelf
                             .padding(.horizontal, HomeLayout.horizontalPadding)
 
+                        phraseCardTestShelf
+
                         useNowShelf
 
                         practiceScenariosShelf
@@ -2746,6 +2748,18 @@ struct HomeView: View {
     private var useNowShelf: some View {
         HomeShelf(title: "Use now", subtitle: "Quick phrases for everyday moments") {
             HomeQuickPhraseGrid(items: HomeContent.useNowItems, onOpenDetail: onOpenDetail)
+        }
+        .padding(.leading, HomeLayout.horizontalPadding)
+    }
+
+    private var phraseCardTestShelf: some View {
+        HomeShelf(title: "Test phrase cards", subtitle: "Larger listen cards for common moments") {
+            HomeFeaturedPhraseCarousel(
+                items: HomeContent.featuredPhraseCardItems,
+                onOpenDetail: onOpenDetail,
+                isSaved: { intentStore.isPageSaved($0) },
+                onToggleSaved: { intentStore.toggleSavedPage($0) }
+            )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
     }
@@ -2987,6 +3001,8 @@ enum HomeLayout {
     static let quickPhraseCardHeight: CGFloat = 122
     static let quickPhraseCardWidth: CGFloat = 146
     static let quickPhraseGridRowSpacing: CGFloat = 12
+    static let featurePhraseCardWidth: CGFloat = 344
+    static let featurePhraseCardHeight: CGFloat = 326
     static let scenarioCardWidth: CGFloat = 198
     static let scenarioCardHeight: CGFloat = 368
     static let scenarioCardPadding: CGFloat = 16
@@ -3068,6 +3084,65 @@ private struct HomePhraseItem: Identifiable, Equatable {
         }
 
         return nil
+    }
+}
+
+private struct HomeFeaturePhraseItem: Identifiable, Equatable {
+    let pageID: String
+    let title: String
+    let englishTitle: String
+    let pronunciation: String
+    let tintName: AccentTint
+    let audioKey: String?
+
+    var id: String { pageID }
+
+    static func resolve(pageID: String) -> HomeFeaturePhraseItem? {
+        if pageID == PhrasePage.xinChao.id {
+            return HomeFeaturePhraseItem(page: PhrasePage.xinChao.articleTemplate)
+        }
+
+        if let page = PhraseDetailPage.page(withID: pageID)?.articleTemplate {
+            return HomeFeaturePhraseItem(page: page)
+        }
+
+        if let item = HomePhraseItem.resolve(pageID: pageID) {
+            return HomeFeaturePhraseItem(
+                pageID: item.pageID,
+                title: item.title,
+                englishTitle: item.subtitle,
+                pronunciation: "",
+                tintName: item.tintName,
+                audioKey: item.audioKey
+            )
+        }
+
+        return nil
+    }
+
+    private init(page: PhraseArticlePage) {
+        self.pageID = page.id
+        self.title = page.title
+        self.englishTitle = page.englishTitle
+        self.pronunciation = page.pronunciation
+        self.tintName = page.tintName
+        self.audioKey = page.playbackAudioKey
+    }
+
+    private init(
+        pageID: String,
+        title: String,
+        englishTitle: String,
+        pronunciation: String,
+        tintName: AccentTint,
+        audioKey: String?
+    ) {
+        self.pageID = pageID
+        self.title = title
+        self.englishTitle = englishTitle
+        self.pronunciation = pronunciation
+        self.tintName = tintName
+        self.audioKey = audioKey
     }
 }
 
@@ -3156,6 +3231,10 @@ private enum HomeContent {
 
     static var featuredItems: [HomePhraseItem] {
         featuredIDs.compactMap(HomePhraseItem.resolve(pageID:))
+    }
+
+    static var featuredPhraseCardItems: [HomeFeaturePhraseItem] {
+        featuredIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
     }
 
     static var practiceScenarios: [HomeScenario] {
@@ -3402,6 +3481,113 @@ private struct HomeQuickPhraseGrid: View {
         }
         .frame(height: HomeLayout.quickPhraseCardHeight * 2 + HomeLayout.quickPhraseGridRowSpacing)
         .scrollClipDisabled()
+    }
+}
+
+private struct HomeFeaturedPhraseCarousel: View {
+    let items: [HomeFeaturePhraseItem]
+    let onOpenDetail: (String) -> Void
+    let isSaved: (String) -> Bool
+    let onToggleSaved: (String) -> Void
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: 14) {
+                ForEach(items) { item in
+                    HomeFeaturedPhraseCard(
+                        item: item,
+                        isSaved: isSaved(item.pageID),
+                        onOpenDetail: onOpenDetail,
+                        onToggleSaved: { onToggleSaved(item.pageID) }
+                    )
+                }
+            }
+            .scrollTargetLayout()
+            .padding(.trailing, HomeLayout.horizontalPadding)
+            .padding(.bottom, 3)
+        }
+        .frame(height: HomeLayout.featurePhraseCardHeight)
+        .scrollTargetBehavior(.viewAligned)
+        .scrollClipDisabled()
+    }
+}
+
+private struct HomeFeaturedPhraseCard: View {
+    let item: HomeFeaturePhraseItem
+    let isSaved: Bool
+    let onOpenDetail: (String) -> Void
+    let onToggleSaved: () -> Void
+
+    var body: some View {
+        ZStack(alignment: .topTrailing) {
+            VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(item.title)
+                        .font(.system(size: 42, weight: .black, design: .serif))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.56)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    Text(item.englishTitle)
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.78)
+
+                    if !item.pronunciation.isEmpty {
+                        HStack(spacing: 10) {
+                            Image(systemName: "waveform")
+                                .font(.system(size: 20, weight: .bold))
+                                .foregroundStyle(Color.red)
+                                .frame(width: 26)
+
+                            Text(item.pronunciation)
+                                .font(.title3)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.72)
+                        }
+                        .padding(.top, 2)
+                    }
+                }
+                .padding(.trailing, 48)
+
+                Spacer(minLength: 0)
+
+                PlaybackDockView(
+                    audioKey: item.audioKey,
+                    isSaved: isSaved,
+                    onToggleSaved: onToggleSaved
+                )
+            }
+            .padding(.horizontal, 18)
+            .padding(.top, 22)
+            .padding(.bottom, 14)
+            .frame(width: HomeLayout.featurePhraseCardWidth, height: HomeLayout.featurePhraseCardHeight, alignment: .topLeading)
+            .background(.white.opacity(0.64), in: RoundedRectangle(cornerRadius: 32, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 32, style: .continuous)
+                    .stroke(.white.opacity(0.72), lineWidth: 1)
+            }
+            .shadow(color: .black.opacity(0.07), radius: 22, x: 0, y: 14)
+            .nativeGlass(cornerRadius: 32)
+
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.secondary)
+                    .frame(width: 38, height: 38)
+                    .contentShape(Circle())
+            }
+            .buttonStyle(.plain)
+            .nativeGlass(cornerRadius: 19, interactive: true)
+            .padding(16)
+            .accessibilityLabel("Open phrase page")
+        }
+        .accessibilityIdentifier("HomeFeaturedPhrase.\(item.pageID)")
     }
 }
 
