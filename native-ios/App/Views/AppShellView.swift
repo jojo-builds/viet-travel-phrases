@@ -137,11 +137,9 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
-                    isInPractice: intentStore.isPageInPractice(PhrasePage.xinChao.id),
                     onBackTapped: {},
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
-                    onTogglePractice: { intentStore.togglePracticePage(PhrasePage.xinChao.id) },
                     onDetailTapped: openDetail
                 )
                 .allowsHitTesting(navigation.currentRoute == .phrasePage && !isPreviewingForwardPage)
@@ -324,11 +322,9 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
-                    isInPractice: intentStore.isPageInPractice(renderedPage.pageID),
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(renderedPage.pageID) },
-                    onTogglePractice: { intentStore.togglePracticePage(renderedPage.pageID) },
                     onDetailTapped: openDetail
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
@@ -426,11 +422,9 @@ struct AppShellView: View {
                 showsChrome: false,
                 topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                 isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
-                isInPractice: intentStore.isPageInPractice(PhrasePage.xinChao.id),
                 onBackTapped: {},
                 onSearchTapped: openSearch,
                 onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
-                onTogglePractice: { intentStore.togglePracticePage(PhrasePage.xinChao.id) },
                 onDetailTapped: openDetail
             )
         case .detailPage(let detailPageID):
@@ -449,11 +443,9 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(detailPageID),
-                    isInPractice: intentStore.isPageInPractice(detailPageID),
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(detailPageID) },
-                    onTogglePractice: { intentStore.togglePracticePage(detailPageID) },
                     onDetailTapped: openDetail
                 )
             }
@@ -489,11 +481,9 @@ struct AppShellView: View {
             showsChrome: false,
             topChromeContentClearance: pinnedAudioSpeedScrollClearance,
             isSaved: intentStore.isPageSaved(routePageID),
-            isInPractice: intentStore.isPageInPractice(routePageID),
             onBackTapped: onBackTapped,
             onSearchTapped: openSearch,
             onToggleSaved: { intentStore.toggleSavedPage(routePageID) },
-            onTogglePractice: { intentStore.togglePracticePage(routePageID) },
             onDetailTapped: openDetail
         )
     }

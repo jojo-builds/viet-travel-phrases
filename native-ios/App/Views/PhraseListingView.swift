@@ -15,11 +15,9 @@ struct PhraseListingView: View {
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
-    let isInPractice: Bool
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
-    var onTogglePractice: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
 
     init(
@@ -32,11 +30,9 @@ struct PhraseListingView: View {
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
-        isInPractice: Bool = false,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
-        onTogglePractice: (() -> Void)? = nil,
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
@@ -48,11 +44,9 @@ struct PhraseListingView: View {
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
-        self.isInPractice = isInPractice
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
-        self.onTogglePractice = onTogglePractice
         self.onDetailTapped = onDetailTapped
     }
 
@@ -67,11 +61,9 @@ struct PhraseListingView: View {
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
-            isInPractice: isInPractice,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
-            onTogglePractice: onTogglePractice,
             onDetailTapped: onDetailTapped
         )
     }
@@ -87,11 +79,9 @@ struct PhraseArticleTemplateView: View {
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
-    let isInPractice: Bool
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
-    var onTogglePractice: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
     @State private var didApplyInitialScrollTarget = false
 
@@ -105,11 +95,9 @@ struct PhraseArticleTemplateView: View {
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
-        isInPractice: Bool = false,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
-        onTogglePractice: (() -> Void)? = nil,
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
@@ -121,11 +109,9 @@ struct PhraseArticleTemplateView: View {
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
-        self.isInPractice = isInPractice
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
-        self.onTogglePractice = onTogglePractice
         self.onDetailTapped = onDetailTapped
     }
 
@@ -236,15 +222,6 @@ struct PhraseArticleTemplateView: View {
                     visibilityRoute: chromeRoute
                 )
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
-
-                if let onTogglePractice {
-                    PhrasePracticeIntentButton(
-                        isInPractice: isInPractice,
-                        label: page.practiceCTALabel ?? "Add to practice",
-                        onTogglePractice: onTogglePractice
-                    )
-                    .padding(.top, 4)
-                }
             }
             .padding(.horizontal, 24)
             .padding(.top, usesCompactPhraseHero ? 20 : PhrasePageStyle.heroTextTopPadding)
@@ -647,35 +624,6 @@ private struct ArticleCallout: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .stroke(tint.color.opacity(0.22), lineWidth: 1)
         }
-    }
-}
-
-private struct PhrasePracticeIntentButton: View {
-    let isInPractice: Bool
-    let label: String
-    let onTogglePractice: () -> Void
-
-    var body: some View {
-        Button {
-            onTogglePractice()
-        } label: {
-            HStack(spacing: 10) {
-                Image(systemName: isInPractice ? "checkmark.circle.fill" : "plus.circle.fill")
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.red)
-
-                Text(isInPractice ? "In practice pool" : label)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.primary)
-
-                Spacer()
-            }
-            .padding(.horizontal, 16)
-            .frame(height: 52)
-            .phraseListCard(cornerRadius: 20, strokeOpacity: 0.05)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(isInPractice ? "Remove from practice pool" : label)
     }
 }
 
