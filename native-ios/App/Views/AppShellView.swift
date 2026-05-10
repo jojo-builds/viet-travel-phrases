@@ -1319,19 +1319,34 @@ struct AppShellView: View {
         homePhraseHeroMorphResetID += 1
         let resetID = homePhraseHeroMorphResetID
 
-        withAnimation(.snappy(duration: 0.54)) {
+        withoutRouteAnimation {
             homePhraseHeroMorphPageID = morphPageID
-            navigation.openDetail(id)
         }
-        intentStore.recordOpenedPage(id, source: .home)
 
         Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 720_000_000)
+            try? await Task.sleep(nanoseconds: HomePhraseHeroMorphTiming.sourcePrimingDelayNanoseconds)
             guard homePhraseHeroMorphResetID == resetID else {
                 return
             }
 
-            homePhraseHeroMorphPageID = nil
+            withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
+                navigation.openDetail(id)
+            }
+            intentStore.recordOpenedPage(id, source: .home)
+            clearHomePhraseHeroMorph(after: resetID)
+        }
+    }
+
+    private func clearHomePhraseHeroMorph(after resetID: Int) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: HomePhraseHeroMorphTiming.cleanupDelayNanoseconds)
+            guard homePhraseHeroMorphResetID == resetID else {
+                return
+            }
+
+            withoutRouteAnimation {
+                homePhraseHeroMorphPageID = nil
+            }
         }
     }
 
@@ -2464,9 +2479,16 @@ enum AppPageTransition {
     )
 
     static let phraseHeroMorph = AnyTransition.asymmetric(
-        insertion: .opacity,
-        removal: .opacity
+        insertion: .opacity.animation(HomePhraseHeroMorphTiming.pageFadeAnimation),
+        removal: .opacity.animation(HomePhraseHeroMorphTiming.pageFadeAnimation)
     )
+}
+
+enum HomePhraseHeroMorphTiming {
+    static let sourcePrimingDelayNanoseconds: UInt64 = 16_000_000
+    static let navigationAnimation: Animation = .timingCurve(0.22, 1, 0.36, 1, duration: 0.68)
+    static let pageFadeAnimation: Animation = .easeInOut(duration: 0.68)
+    static let cleanupDelayNanoseconds: UInt64 = 1_120_000_000
 }
 
 private struct AppDockInteractionState: Equatable {
