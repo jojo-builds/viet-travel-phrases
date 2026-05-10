@@ -607,16 +607,17 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 id: "airport-story-baggage-belt",
                 momentType: .ask,
                 scene: "At baggage claim, you want to confirm the belt before waiting.",
-                localLine: "Bạn bay từ chuyến nào?",
-                localLineMeaning: "Which flight were you on?",
-                userGoal: "Ask them to help you find your luggage area.",
+                localLine: "Cho tôi xem thẻ hành lý của bạn được không?",
+                localLineMeaning: "Can I see your baggage tag?",
+                userGoal: "Show your baggage tag and ask where to wait.",
                 bestPageIDs: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong",
+                    "viet-family-v500-airp-bord-arri-this-is-my-baggage-tag",
                     "viet-family-airport-baggage",
                 ],
                 alternatePageIDs: [
                     "viet-family-airport-baggage",
                     "viet-phrase-v500-prob-help-can-you-help-me",
+                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong",
                 ],
                 recoveryPageIDs: [
                     "viet-phrase-v500-prob-help-can-you-help-me",
@@ -627,7 +628,25 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If the belt changes",
                 recoveryBody: "Show your flight number and keep the baggage phrase ready.",
                 nextStepTitle: "Ask for the pickup area",
-                localScenarioContext: "airport_story_baggage_belt"
+                localScenarioContext: "airport_story_baggage_belt",
+                scenarioResponseCopies: [
+                    "viet-family-v500-airp-bord-arri-this-is-my-baggage-tag": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Đây là thẻ hành lý của tôi",
+                        english: "Here is my baggage tag"
+                    ),
+                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn giúp tôi tìm hành lý được không?",
+                        english: "Can you help me find my luggage?"
+                    ),
+                    "viet-family-airport-baggage": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Lấy hành lý ở đâu?",
+                        english: "Where is baggage claim?"
+                    ),
+                    "viet-phrase-v500-prob-help-can-you-help-me": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn giúp tôi được không?",
+                        english: "Can you help me?"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "airport-story-pickup-area",
@@ -679,7 +698,25 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If calling feels hard",
                 recoveryBody: "Show the driver screen and ask staff to call for you.",
                 nextStepTitle: "Buy water before leaving",
-                localScenarioContext: "airport_story_call_driver"
+                localScenarioContext: "airport_story_call_driver",
+                scenarioResponseCopies: [
+                    "viet-family-v900-airp-bord-arri-please-call-this-driver-for-me": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ có. Gọi tài xế này giúp tôi",
+                        english: "Yes. Please call this driver for me"
+                    ),
+                    "viet-phrase-v500-tran-please-call-the-driver": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Gọi tài xế giúp tôi",
+                        english: "Please call the driver for me"
+                    ),
+                    "viet-family-v500-tran-please-call-the-driver": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Gọi tài xế giúp tôi",
+                        english: "Please call the driver for me"
+                    ),
+                    "viet-family-v500-prob-help-can-you-contact-the-driver": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn liên hệ tài xế giúp tôi được không?",
+                        english: "Can you contact the driver for me?"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "airport-story-water",
@@ -693,19 +730,33 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-food-bottled-water",
                 ],
                 alternatePageIDs: [
-                    "viet-family-money-how-much",
+                    "viet-family-food-bottled-water",
                     "viet-phrase-v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water",
                 ],
                 recoveryPageIDs: [
                     "viet-family-money-how-much",
                     "viet-phrase-v500-prob-help-can-you-help-me",
                 ],
-                nextLocalLine: "Quầy nước ở bên phải, gần cửa ra.",
-                nextLocalMeaning: "The water counter is on the right, near the exit.",
+                nextLocalLine: "Có, quầy nước ở bên phải, gần cửa ra.",
+                nextLocalMeaning: "Yes, the water counter is on the right, near the exit.",
                 recoveryTitle: "If you need to point",
                 recoveryBody: "Point to a bottle and ask how much before paying.",
                 nextStepTitle: "Say thanks",
-                localScenarioContext: "airport_story_water"
+                localScenarioContext: "airport_story_water",
+                scenarioResponseCopies: [
+                    "viet-family-service-water": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi chai nước",
+                        english: "A bottle of water please"
+                    ),
+                    "viet-family-food-bottled-water": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Có nước suối không?",
+                        english: "Do you have bottled water?"
+                    ),
+                    "viet-phrase-v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi có thể mua một chai nước ở đâu?",
+                        english: "Where can I buy a bottle of water?"
+                    ),
+                ]
             ),
             messageGoodbyeStep(
                 id: "airport-story-goodbye",
@@ -747,7 +798,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If the desk is busy",
                 recoveryBody: "Keep the confirmation screen visible and use the reservation phrase first.",
                 nextStepTitle: "Give the booking name",
-                localScenarioContext: "hotel_story_opening"
+                localScenarioContext: "hotel_story_opening",
+                scenarioResponseCopies: [
+                    "viet-family-hotel-reservation": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, tôi có đặt phòng",
+                        english: "Yes, I have a reservation"
+                    ),
+                    "viet-phrase-v500-hote-acco-i-booked-online": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi đã đặt phòng online",
+                        english: "I booked online"
+                    ),
+                    "viet-phrase-v900-hote-acco-the-reservation-is-under-this-name": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tên đặt phòng là tên này",
+                        english: "The reservation is under this name"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "hotel-story-reservation",
@@ -773,7 +838,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If they cannot find it",
                 recoveryBody: "Show the confirmation screen and keep the booking phrase ready.",
                 nextStepTitle: "Show your passport",
-                localScenarioContext: "hotel_story_reservation"
+                localScenarioContext: "hotel_story_reservation",
+                scenarioResponseCopies: [
+                    "viet-phrase-v900-hote-acco-the-reservation-is-under-this-name": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tên đặt phòng là tên này",
+                        english: "The reservation is under this name"
+                    ),
+                    "viet-family-hotel-reservation": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, tôi có đặt phòng",
+                        english: "Yes, I have a reservation"
+                    ),
+                    "viet-phrase-v500-hote-acco-i-booked-online": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi đã đặt phòng online",
+                        english: "I booked online"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "hotel-story-passport",
@@ -787,6 +866,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in",
                 ],
                 alternatePageIDs: [
+                    "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in",
                     "viet-phrase-v500-hote-acco-i-booked-online",
                     "viet-family-hotel-reservation",
                 ],
@@ -799,7 +879,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If check-in pauses",
                 recoveryBody: "Keep your passport and booking confirmation together.",
                 nextStepTitle: "Ask room basics",
-                localScenarioContext: "hotel_story_passport"
+                localScenarioContext: "hotel_story_passport",
+                scenarioResponseCopies: [
+                    "viet-family-v500-airp-bord-arri-here-is-my-passport": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Đây là hộ chiếu của tôi",
+                        english: "Here is my passport"
+                    ),
+                    "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Đây là hộ chiếu của tôi để nhận phòng",
+                        english: "Here is my passport for check-in"
+                    ),
+                    "viet-phrase-v500-hote-acco-i-booked-online": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Đây là xác nhận đặt phòng",
+                        english: "Here is my booking confirmation"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "hotel-story-room-basics",
@@ -807,7 +901,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 scene: "You have your room and need the basic details.",
                 localLine: "Bạn cần gì thêm không?",
                 localLineMeaning: "Do you need anything else?",
-                userGoal: "Ask for Wi-Fi, check-out, or room details.",
+                userGoal: "Ask for the Wi-Fi first.",
                 bestPageIDs: [
                     "viet-family-phone-wifi-password",
                     "viet-phrase-phone-wifi-common",
@@ -857,8 +951,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 id: "hotel-story-ride",
                 momentType: .ask,
                 scene: "You are leaving the hotel and need help with a ride.",
-                localLine: "Bạn muốn đi đâu?",
-                localLineMeaning: "Where would you like to go?",
+                localLine: "Bạn cần gọi xe đi đâu?",
+                localLineMeaning: "Where do you need a car to?",
                 userGoal: "Ask for a taxi or show where you want to go.",
                 bestPageIDs: [
                     "viet-family-ves-call-taxi-for-me",
@@ -877,7 +971,25 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If the place name is hard",
                 recoveryBody: "Show the map pin and keep the ride phrase short.",
                 nextStepTitle: "Say thanks",
-                localScenarioContext: "hotel_story_ride"
+                localScenarioContext: "hotel_story_ride",
+                scenarioResponseCopies: [
+                    "viet-family-ves-call-taxi-for-me": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Gọi taxi giúp tôi được không?",
+                        english: "Can you call a taxi for me?"
+                    ),
+                    "viet-phrase-hotel-9": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Gọi taxi giúp tôi được không?",
+                        english: "Can you call a taxi for me?"
+                    ),
+                    "viet-phrase-v900-tran-please-take-me-to-this-address": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi muốn đến địa chỉ này",
+                        english: "I want to go to this address"
+                    ),
+                    "viet-family-city-danang-where-dragon-bridge": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi muốn đến Cầu Rồng",
+                        english: "I want to go to Dragon Bridge"
+                    ),
+                ]
             ),
             messageGoodbyeStep(
                 id: "hotel-story-goodbye",
@@ -908,7 +1020,6 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 ],
                 alternatePageIDs: [
                     "viet-family-v900-airp-bord-arri-i-have-an-airport-pickup-booked",
-                    "viet-family-v500-airp-bord-arri-i-cannot-find-my-driver",
                 ],
                 recoveryPageIDs: [
                     "viet-family-v900-airp-bord-arri-please-call-this-driver-for-me",
@@ -919,7 +1030,17 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If the car does not match",
                 recoveryBody: "Stay outside the car, show the app screen, and ask to confirm the driver.",
                 nextStepTitle: "Confirm the car",
-                localScenarioContext: "taxi_story_opening"
+                localScenarioContext: "taxi_story_opening",
+                scenarioResponseCopies: [
+                    "viet-family-v500-tran-are-you-my-driver": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ đúng rồi, bạn là tài xế của tôi à?",
+                        english: "Yes, that's right. Are you my driver?"
+                    ),
+                    "viet-family-v900-airp-bord-arri-i-have-an-airport-pickup-booked": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, tôi đã đặt xe này",
+                        english: "Yes, I booked this ride"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "taxi-story-confirm-driver",
@@ -933,6 +1054,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-v900-tran-can-you-pick-me-up-here",
                 ],
                 alternatePageIDs: [
+                    "viet-family-v900-tran-can-you-pick-me-up-here",
                     "viet-family-directions-pickup-point",
                     "viet-family-v500-airp-bord-arri-where-do-i-meet-the-driver",
                 ],
@@ -940,12 +1062,26 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-v500-prob-help-can-you-contact-the-driver",
                     "viet-family-v500-tran-please-call-the-driver",
                 ],
-                nextLocalLine: "Tôi sẽ tới cổng này.",
-                nextLocalMeaning: "I will come to this gate.",
+                nextLocalLine: "Tôi sẽ tới cửa này.",
+                nextLocalMeaning: "I will come to this entrance.",
                 recoveryTitle: "If you still cannot meet",
                 recoveryBody: "Show the entrance number or ask nearby staff to contact the driver.",
                 nextStepTitle: "Show the address",
-                localScenarioContext: "taxi_story_confirm_driver"
+                localScenarioContext: "taxi_story_confirm_driver",
+                scenarioResponseCopies: [
+                    "viet-family-v900-tran-pick-me-up-at-this-entrance": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi đang ở cửa này",
+                        english: "I'm at this entrance"
+                    ),
+                    "viet-family-v900-tran-can-you-pick-me-up-here": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn đón tôi ở đây được không?",
+                        english: "Can you pick me up here?"
+                    ),
+                    "viet-family-directions-pickup-point": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Điểm đón ở đâu?",
+                        english: "Where is the pickup point?"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "taxi-story-pickup-point",
@@ -971,22 +1107,36 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If the address looks wrong",
                 recoveryBody: "Show the map pin again before the car starts moving.",
                 nextStepTitle: "Confirm the route",
-                localScenarioContext: "taxi_story_pickup_point"
+                localScenarioContext: "taxi_story_pickup_point",
+                scenarioResponseCopies: [
+                    "viet-family-v500-tran-please-take-me-to-this-hotel": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ đúng, khách sạn này",
+                        english: "Yes, this hotel"
+                    ),
+                    "viet-family-v900-tran-please-take-me-to-this-address": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ đúng, địa chỉ này",
+                        english: "Yes, this address"
+                    ),
+                    "viet-family-v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ đúng, khách sạn trong đặt phòng này",
+                        english: "Yes, the hotel on this booking"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "taxi-story-address",
                 momentType: .ask,
                 scene: "The car is moving and the driver checks the route.",
-                localLine: "Đường này hơi kẹt xe, bạn đi theo bản đồ nhé?",
+                localLine: "Đường này hơi kẹt xe, tôi đi theo bản đồ nhé?",
                 localLineMeaning: "This road has some traffic; should I follow the map?",
                 userGoal: "Keep the route simple and follow the map.",
                 bestPageIDs: [
-                    "viet-family-v900-tran-please-take-me-to-this-address",
+                    "viet-family-v500-tran-please-follow-the-map",
                     "viet-family-v500-tran-please-take-me-to-this-hotel",
                 ],
                 alternatePageIDs: [
                     "viet-family-v500-tran-please-take-me-to-this-hotel",
-                    "viet-family-city-danang-go-my-khe",
+                    "viet-family-v900-tran-please-take-me-to-this-address",
                 ],
                 recoveryPageIDs: [
                     "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-dia-chi-duoc-khong",
@@ -1000,8 +1150,12 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 localScenarioContext: "taxi_story_route",
                 scenarioResponseCopies: [
                     "viet-family-v900-tran-please-take-me-to-this-address": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Đi theo bản đồ giúp tôi",
-                        english: "Please follow the map"
+                        vietnamese: "Dạ, đi theo địa chỉ này giúp tôi",
+                        english: "Yes, please follow this address"
+                    ),
+                    "viet-family-v500-tran-please-follow-the-map": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, đi theo bản đồ giúp tôi",
+                        english: "Yes, please follow the map"
                     ),
                     "viet-family-v500-tran-please-take-me-to-this-hotel": PracticeScenarioPhraseTemplate(
                         vietnamese: "Đến khách sạn này giúp tôi",
@@ -1013,15 +1167,16 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 id: "taxi-story-dropoff",
                 momentType: .ask,
                 scene: "You are close to the destination and want to get out here.",
-                localLine: "Dừng ở đây được không?",
-                localLineMeaning: "Can I stop here?",
+                localLine: "Bạn muốn xuống ở đâu?",
+                localLineMeaning: "Where would you like to get out?",
                 userGoal: "Ask for a simple drop-off and close the ride.",
                 bestPageIDs: [
                     "viet-family-ves-drop-me-off-here",
+                    "viet-family-transport-stop-here",
                     "viet-family-city-danang-get-off-my-khe",
                 ],
                 alternatePageIDs: [
-                    "viet-family-v900-dire-navi-where-should-the-driver-stop",
+                    "viet-family-transport-stop-here",
                     "viet-family-v500-tran-i-will-pay-the-driver-in-cash",
                 ],
                 recoveryPageIDs: [
@@ -1033,7 +1188,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If payment comes up",
                 recoveryBody: "Keep the app screen open and use one payment phrase at a time.",
                 nextStepTitle: "Say thanks",
-                localScenarioContext: "taxi_story_dropoff"
+                localScenarioContext: "taxi_story_dropoff",
+                scenarioResponseCopies: [
+                    "viet-family-ves-drop-me-off-here": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi xuống ở đây được không?",
+                        english: "Can you drop me off here?"
+                    ),
+                    "viet-family-transport-stop-here": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dừng ở đây được rồi",
+                        english: "You can stop here"
+                    ),
+                    "viet-family-v500-tran-i-will-pay-the-driver-in-cash": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi trả bằng tiền mặt",
+                        english: "I'll pay cash"
+                    ),
+                ]
             ),
             messageGoodbyeStep(
                 id: "taxi-story-goodbye",
@@ -1055,8 +1224,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 id: "pharmacy-story-opening",
                 momentType: .listen,
                 scene: "You walk up to the pharmacy counter and keep the first symptom simple.",
-                localLine: "Xin chào, bạn cần mua thuốc gì?",
-                localLineMeaning: "Hello, what medicine do you need?",
+                localLine: "Xin chào, bạn cần thuốc cho triệu chứng gì?",
+                localLineMeaning: "Hello, what symptom do you need medicine for?",
                 userGoal: "Say one clear symptom.",
                 bestPageIDs: [
                     "viet-family-health-headache",
@@ -1075,7 +1244,25 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If symptoms are serious",
                 recoveryBody: "Ask for a clinic or doctor instead of trying to explain everything.",
                 nextStepTitle: "Find help",
-                localScenarioContext: "pharmacy_story_opening"
+                localScenarioContext: "pharmacy_story_opening",
+                scenarioResponseCopies: [
+                    "viet-family-health-headache": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi bị đau đầu",
+                        english: "I have a headache"
+                    ),
+                    "viet-family-v500-heal-phar-i-have-a-fever": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi bị sốt",
+                        english: "I have a fever"
+                    ),
+                    "viet-family-health-stomach": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi đau bụng",
+                        english: "My stomach hurts"
+                    ),
+                    "viet-family-v500-heal-phar-i-feel-nauseous": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi cảm thấy buồn nôn",
+                        english: "I feel nauseous"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "pharmacy-story-find",
@@ -1089,6 +1276,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-health-headache",
                 ],
                 alternatePageIDs: [
+                    "viet-family-health-headache",
                     "viet-family-health-stomach",
                     "viet-family-v500-heal-phar-i-feel-nauseous",
                 ],
@@ -1096,12 +1284,30 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-v500-heal-phar-i-need-a-clinic",
                     "viet-family-health-doctor",
                 ],
-                nextLocalLine: "Nếu sốt cao, bạn nên đi khám bác sĩ.",
-                nextLocalMeaning: "If the fever is high, you should see a doctor.",
+                nextLocalLine: "Cảm ơn, để tôi xem thuốc phù hợp.",
+                nextLocalMeaning: "Thank you, let me look for suitable medicine.",
                 recoveryTitle: "If you need more help",
                 recoveryBody: "Ask for a clinic or doctor when the symptom feels stronger than a simple pharmacy stop.",
                 nextStepTitle: "Confirm the symptom",
-                localScenarioContext: "pharmacy_story_find"
+                localScenarioContext: "pharmacy_story_find",
+                scenarioResponseCopies: [
+                    "viet-family-v500-heal-phar-i-have-a-fever": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Có, tôi bị sốt",
+                        english: "Yes, I have a fever"
+                    ),
+                    "viet-family-health-headache": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không, tôi bị đau đầu",
+                        english: "No, I have a headache"
+                    ),
+                    "viet-family-health-stomach": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi đau bụng",
+                        english: "My stomach hurts"
+                    ),
+                    "viet-family-v500-heal-phar-i-feel-nauseous": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi cảm thấy buồn nôn",
+                        english: "I feel nauseous"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "pharmacy-story-symptom",
@@ -1111,23 +1317,37 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 localLineMeaning: "Are you allergic to any medicine?",
                 userGoal: "Mention allergies or keep the reply simple.",
                 bestPageIDs: [
+                    "viet-family-acknowledge-khong",
                     "viet-family-health-allergy",
-                    "viet-family-v500-heal-phar-i-need-a-clinic",
                 ],
                 alternatePageIDs: [
-                    "viet-phrase-v500-prob-help-can-you-help-me",
-                    "viet-family-health-doctor",
+                    "viet-family-health-allergy",
+                    "viet-family-v500-heal-phar-i-need-a-clinic",
                 ],
                 recoveryPageIDs: [
                     "viet-family-v500-heal-phar-i-need-a-clinic",
                     "viet-family-health-doctor",
                 ],
-                nextLocalLine: "Cảm ơn, tôi sẽ chọn loại nhẹ.",
-                nextLocalMeaning: "Thank you, I will choose a mild one.",
+                nextLocalLine: "Cảm ơn, tôi sẽ chọn loại phù hợp.",
+                nextLocalMeaning: "Thank you, I will choose a suitable type.",
                 recoveryTitle: "If symptoms are serious",
                 recoveryBody: "Ask for a clinic or doctor instead of trying to explain everything.",
                 nextStepTitle: "Ask for medicine",
-                localScenarioContext: "pharmacy_story_symptom"
+                localScenarioContext: "pharmacy_story_symptom",
+                scenarioResponseCopies: [
+                    "viet-family-acknowledge-khong": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không, tôi không bị dị ứng thuốc",
+                        english: "No, I am not allergic to medicine"
+                    ),
+                    "viet-family-health-allergy": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi bị dị ứng thuốc này",
+                        english: "I am allergic to this medicine"
+                    ),
+                    "viet-family-v500-heal-phar-i-need-a-clinic": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi cần phòng khám",
+                        english: "I need a clinic"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "pharmacy-story-medicine",
@@ -1153,7 +1373,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If the directions are unclear",
                 recoveryBody: "Ask the pharmacist to write the dose on the box.",
                 nextStepTitle: "Close the exchange",
-                localScenarioContext: "pharmacy_story_medicine"
+                localScenarioContext: "pharmacy_story_medicine",
+                scenarioResponseCopies: [
+                    "viet-family-v500-heal-phar-how-do-i-take-this": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi uống thuốc này như thế nào?",
+                        english: "How do I take this medicine?"
+                    ),
+                    "viet-family-v500-heal-phar-how-many-times-per-day": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Uống bao nhiêu lần mỗi ngày?",
+                        english: "How many times per day should I take it?"
+                    ),
+                    "viet-family-health-allergy": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi bị dị ứng thuốc này",
+                        english: "I am allergic to this medicine"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "pharmacy-story-pay",
@@ -1179,7 +1413,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "Before you leave",
                 recoveryBody: "Keep the box and written directions together in your bag.",
                 nextStepTitle: "Say thanks",
-                localScenarioContext: "pharmacy_story_pay"
+                localScenarioContext: "pharmacy_story_pay",
+                scenarioResponseCopies: [
+                    "viet-family-food-pay-now": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi thanh toán luôn nhé",
+                        english: "I'll pay now"
+                    ),
+                    "viet-family-money-how-much": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bao nhiêu tiền?",
+                        english: "How much is it?"
+                    ),
+                    "viet-family-service-card": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi quẹt thẻ được không?",
+                        english: "Can I pay by card?"
+                    ),
+                ]
             ),
             messageGoodbyeStep(
                 id: "pharmacy-story-goodbye",
@@ -1224,7 +1472,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If you only point",
                 recoveryBody: "Point to the bottle, ask how much, then pay after they confirm.",
                 nextStepTitle: "Ask for shade",
-                localScenarioContext: "beach_vendor_opening"
+                localScenarioContext: "beach_vendor_opening",
+                scenarioResponseCopies: [
+                    "viet-family-service-water": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi chai nước",
+                        english: "A bottle of water please"
+                    ),
+                    "viet-family-food-bottled-water": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Có nước suối không?",
+                        english: "Do you have bottled water?"
+                    ),
+                    "viet-family-money-how-much": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Nước suối bao nhiêu tiền?",
+                        english: "How much is bottled water?"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "beach-vendor-chair",
@@ -1245,19 +1507,33 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-money-how-much",
                     "viet-phrase-v500-prob-help-can-you-help-me",
                 ],
-                nextLocalLine: "Có, ghế và dù ở hàng đầu tiên.",
+                nextLocalLine: "Dạ, ghế và dù ở hàng đầu tiên.",
                 nextLocalMeaning: "Yes, the chairs and umbrellas are in the first row.",
                 recoveryTitle: "If the setup is unclear",
                 recoveryBody: "Point to the chair or umbrella and ask how much before sitting down.",
                 nextStepTitle: "Ask the price",
-                localScenarioContext: "beach_vendor_chair"
+                localScenarioContext: "beach_vendor_chair",
+                scenarioResponseCopies: [
+                    "viet-phrase-v500-loca-serv-ever-task-i-need-an-umbrella": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, cho tôi ghế với dù",
+                        english: "Yes, a chair and umbrella, please"
+                    ),
+                    "viet-family-money-how-much": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Ghế với dù bao nhiêu tiền?",
+                        english: "How much are the chair and umbrella?"
+                    ),
+                    "viet-family-service-sunscreen": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Có kem chống nắng không?",
+                        english: "Do you have sunscreen?"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "beach-vendor-price",
                 momentType: .ask,
                 scene: "Before you sit down, you want the price to be clear.",
-                localLine: "Bạn ngồi bao lâu?",
-                localLineMeaning: "How long will you sit?",
+                localLine: "Bạn muốn thuê ghế này không?",
+                localLineMeaning: "Do you want to rent this chair?",
                 userGoal: "Ask how much it costs.",
                 bestPageIDs: [
                     "viet-family-money-how-much",
@@ -1276,7 +1552,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If the price is unclear",
                 recoveryBody: "Ask how much and wait for the number before agreeing.",
                 nextStepTitle: "Order a beach snack",
-                localScenarioContext: "beach_vendor_price"
+                localScenarioContext: "beach_vendor_price",
+                scenarioResponseCopies: [
+                    "viet-family-money-how-much": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Ghế này bao nhiêu tiền?",
+                        english: "How much is this chair?"
+                    ),
+                    "viet-family-service-card": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi quẹt thẻ được không?",
+                        english: "Can I pay by card?"
+                    ),
+                    "viet-family-transport-cash": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi trả bằng tiền mặt",
+                        english: "I'll pay cash"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "beach-vendor-snack",
@@ -1297,12 +1587,26 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-food-menu",
                     "viet-phrase-v500-prob-help-can-you-help-me",
                 ],
-                nextLocalLine: "Có dừa lạnh, tôi lấy cho bạn.",
-                nextLocalMeaning: "We have cold coconut; I will get one for you.",
+                nextLocalLine: "Có, tôi lấy cho bạn.",
+                nextLocalMeaning: "Yes, I'll get it for you.",
                 recoveryTitle: "If you are not hungry",
                 recoveryBody: "Use no thank you, then keep the water or coconut order simple.",
                 nextStepTitle: "Adjust the order",
-                localScenarioContext: "beach_vendor_snack"
+                localScenarioContext: "beach_vendor_snack",
+                scenarioResponseCopies: [
+                    "viet-phrase-v900-food-drin-one-fresh-coconut-please": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi một trái dừa",
+                        english: "One coconut, please"
+                    ),
+                    "viet-family-food-one-portion": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi một phần món này",
+                        english: "One portion of this, please"
+                    ),
+                    "viet-family-food-not-spicy": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không cay nhé",
+                        english: "Not spicy, please"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "beach-vendor-adjust",
@@ -1316,29 +1620,73 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-thanks-khong-cam-on",
                 ],
                 alternatePageIDs: [
+                    "viet-thanks-khong-cam-on",
                     "viet-family-vpe-food-has-co-dau-phong-khong",
-                    "viet-family-food-one-portion",
                 ],
                 recoveryPageIDs: [
                     "viet-family-food-peanut-allergy",
                     "viet-phrase-v500-prob-help-can-you-help-me",
                 ],
-                nextLocalLine: "Được, tôi làm không cay.",
-                nextLocalMeaning: "Okay, I will make it not spicy.",
+                nextLocalLine: "Được, tôi làm nhẹ cho bạn.",
+                nextLocalMeaning: "Okay, I'll make it mild for you.",
                 recoveryTitle: "If food safety matters",
                 recoveryBody: "Use one clear ingredient or allergy phrase, then point to the food.",
                 nextStepTitle: "Say thanks",
-                localScenarioContext: "beach_vendor_adjust"
+                localScenarioContext: "beach_vendor_adjust",
+                scenarioResponseCopies: [
+                    "viet-family-food-not-spicy": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không cay nhé",
+                        english: "Not spicy, please"
+                    ),
+                    "viet-thanks-khong-cam-on": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không, cảm ơn",
+                        english: "No, thank you"
+                    ),
+                    "viet-family-vpe-food-has-co-dau-phong-khong": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Có đậu phộng không?",
+                        english: "Does it have peanuts?"
+                    ),
+                ]
             ),
-            messageGoodbyeStep(
+            PracticeScenarioStepTemplate(
                 id: "beach-vendor-goodbye",
+                momentType: .ask,
                 scene: "You have water, shade, and the price is clear.",
                 localLine: "Bạn muốn tính tiền luôn không?",
                 localLineMeaning: "Would you like to pay now?",
                 userGoal: "Pay, say thank you, and close the exchange.",
+                bestPageIDs: [
+                    "viet-family-food-pay-now",
+                    "viet-family-money-how-much",
+                ],
+                alternatePageIDs: [
+                    "viet-family-service-card",
+                    "viet-family-transport-cash",
+                ],
+                recoveryPageIDs: [
+                    "viet-family-money-how-much",
+                    "viet-phrase-v500-prob-help-can-you-help-me",
+                ],
                 nextLocalLine: "Cảm ơn, chúc bạn đi biển vui.",
                 nextLocalMeaning: "Thank you, enjoy the beach.",
-                localScenarioContext: "beach_vendor_goodbye"
+                recoveryTitle: "If payment is unclear",
+                recoveryBody: "Show the price and use one payment phrase at a time.",
+                nextStepTitle: "Finish story",
+                localScenarioContext: "beach_vendor_goodbye",
+                scenarioResponseCopies: [
+                    "viet-family-food-pay-now": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, tính tiền giúp tôi",
+                        english: "Yes, please let me pay"
+                    ),
+                    "viet-family-service-card": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi quẹt thẻ được không?",
+                        english: "Can I pay by card?"
+                    ),
+                    "viet-family-transport-cash": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi trả bằng tiền mặt",
+                        english: "I'll pay cash"
+                    ),
+                ]
             ),
         ]
     ),
@@ -1359,8 +1707,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-family-vpe-one-item-please-cho-toi-mot-ban-cho-hai-nguoi",
                 ],
                 alternatePageIDs: [
+                    "viet-family-vpe-one-item-please-cho-toi-mot-ban-cho-hai-nguoi",
                     "viet-family-food-menu",
-                    "viet-phrase-v500-prob-help-can-you-help-me",
                 ],
                 recoveryPageIDs: [
                     "viet-phrase-v500-prob-help-can-you-help-me",
@@ -1371,7 +1719,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If you are unsure",
                 recoveryBody: "Start with the table or menu phrase. Keep it short.",
                 nextStepTitle: "Choose a table",
-                localScenarioContext: "restaurant_story_opening"
+                localScenarioContext: "restaurant_story_opening",
+                scenarioResponseCopies: [
+                    "viet-family-food-need-table": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi bàn cho hai người nhé",
+                        english: "A table for two, please"
+                    ),
+                    "viet-family-vpe-one-item-please-cho-toi-mot-ban-cho-hai-nguoi": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi bàn cho hai người",
+                        english: "A table for two, please"
+                    ),
+                    "viet-family-food-menu": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi xem thực đơn được không?",
+                        english: "Can I see the menu?"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "restaurant-story-arrive",
@@ -1386,18 +1748,32 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 ],
                 alternatePageIDs: [
                     "viet-phrase-v900-food-drin-what-do-you-recommend",
-                    "viet-phrase-v500-prob-help-can-you-help-me",
+                    "viet-thanks-khong-cam-on",
                 ],
                 recoveryPageIDs: [
                     "viet-phrase-v500-prob-help-can-you-help-me",
                     "viet-family-food-menu",
                 ],
-                nextLocalLine: "Đây là thực đơn, món này dễ ăn.",
-                nextLocalMeaning: "Here is the menu; this dish is easy to eat.",
+                nextLocalLine: "Dạ, đây là thực đơn. Món này dễ ăn.",
+                nextLocalMeaning: "Yes, here is the menu. This dish is easy to eat.",
                 recoveryTitle: "If you are unsure",
                 recoveryBody: "Start with the menu or help phrase. Keep it short.",
                 nextStepTitle: "The server is ready",
-                localScenarioContext: "restaurant_story_arrive"
+                localScenarioContext: "restaurant_story_arrive",
+                scenarioResponseCopies: [
+                    "viet-family-food-menu": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, cho tôi xem thực đơn",
+                        english: "Yes, the menu please"
+                    ),
+                    "viet-phrase-v900-food-drin-what-do-you-recommend": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn đề xuất món gì?",
+                        english: "What do you recommend?"
+                    ),
+                    "viet-thanks-khong-cam-on": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không, cảm ơn",
+                        english: "No, thank you"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "restaurant-story-server-ready",
@@ -1425,7 +1801,29 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If the menu is hard",
                 recoveryBody: "Point to the item first, then play the short phrase.",
                 nextStepTitle: "Check what is inside",
-                localScenarioContext: "restaurant_story_server_ready"
+                localScenarioContext: "restaurant_story_server_ready",
+                scenarioResponseCopies: [
+                    "viet-family-food-one-portion": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, cho tôi một phần món này",
+                        english: "One portion of this, please"
+                    ),
+                    "viet-family-ves-order-cao-lau-portion": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, cho tôi một phần cao lầu",
+                        english: "One portion of cao lau, please"
+                    ),
+                    "viet-family-food-menu": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi xem thực đơn được không?",
+                        english: "Can I see the menu?"
+                    ),
+                    "viet-phrase-v900-food-drin-what-do-you-recommend": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn đề xuất món gì?",
+                        english: "What do you recommend?"
+                    ),
+                    "viet-family-vpe-food-has-co-dau-phong-khong": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Có đậu phộng không?",
+                        english: "Does it have peanuts?"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "restaurant-story-ingredients",
@@ -1433,25 +1831,39 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 scene: "You want to avoid something in the dish.",
                 localLine: "Bạn có ăn được cay không?",
                 localLineMeaning: "Can you eat spicy food?",
-                userGoal: "Check one ingredient or keep the spice level simple.",
+                userGoal: "Ask for it not spicy, or check one ingredient.",
                 bestPageIDs: [
+                    "viet-family-food-not-spicy",
                     "viet-family-vpe-food-has-co-dau-phong-khong",
-                    "viet-phrase-food-premium-has-peanuts",
                 ],
                 alternatePageIDs: [
+                    "viet-family-vpe-food-has-co-dau-phong-khong",
                     "viet-family-vpe-food-has-co-thit-heo-khong",
-                    "viet-family-food-not-spicy",
                 ],
                 recoveryPageIDs: [
                     "viet-family-food-peanut-allergy",
                     "viet-phrase-v500-prob-help-can-you-help-me",
                 ],
-                nextLocalLine: "Tôi sẽ dặn bếp làm nhẹ thôi.",
-                nextLocalMeaning: "I will ask the kitchen to make it mild.",
+                nextLocalLine: "Được, tôi sẽ dặn bếp.",
+                nextLocalMeaning: "Okay, I'll tell the kitchen.",
                 recoveryTitle: "If allergies matter",
                 recoveryBody: "Use the allergy phrase and show the ingredient if you can.",
                 nextStepTitle: "Order a drink",
-                localScenarioContext: "restaurant_story_ingredients"
+                localScenarioContext: "restaurant_story_ingredients",
+                scenarioResponseCopies: [
+                    "viet-family-food-not-spicy": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không cay nhé",
+                        english: "Not spicy, please"
+                    ),
+                    "viet-family-vpe-food-has-co-dau-phong-khong": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Có đậu phộng không?",
+                        english: "Does it have peanuts?"
+                    ),
+                    "viet-family-vpe-food-has-co-thit-heo-khong": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Có thịt heo không?",
+                        english: "Does it have pork?"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "restaurant-story-drink",
@@ -1472,12 +1884,26 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                     "viet-phrase-v500-prob-help-can-you-help-me",
                     "viet-family-service-water",
                 ],
-                nextLocalLine: "Có nước lọc và trà đá.",
-                nextLocalMeaning: "We have water and iced tea.",
+                nextLocalLine: "Dạ, tôi lấy đồ uống cho bạn.",
+                nextLocalMeaning: "Yes, I'll bring your drink.",
                 recoveryTitle: "If you want to keep it easy",
                 recoveryBody: "Water or iced tea are short, common replies.",
                 nextStepTitle: "Pay",
-                localScenarioContext: "restaurant_story_drink"
+                localScenarioContext: "restaurant_story_drink",
+                scenarioResponseCopies: [
+                    "viet-family-service-water": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi chai nước",
+                        english: "A bottle of water please"
+                    ),
+                    "viet-family-vpe-one-item-please-cho-toi-mot-tra-da": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cho tôi trà đá",
+                        english: "Iced tea, please"
+                    ),
+                    "viet-thanks-khong-cam-on": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Không, cảm ơn",
+                        english: "No, thank you"
+                    ),
+                ]
             ),
             PracticeScenarioStepTemplate(
                 id: "restaurant-story-pay",
@@ -1503,7 +1929,25 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = [
                 recoveryTitle: "If payment gets unclear",
                 recoveryBody: "Show the bill and use one payment phrase at a time.",
                 nextStepTitle: "Say thanks",
-                localScenarioContext: "restaurant_story_pay"
+                localScenarioContext: "restaurant_story_pay",
+                scenarioResponseCopies: [
+                    "viet-family-food-pay-now": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Dạ, tính tiền giúp tôi",
+                        english: "Yes, please bring the bill"
+                    ),
+                    "viet-phrase-v900-food-drin-can-i-pay-the-bill-by-card": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi thanh toán hóa đơn bằng thẻ được không?",
+                        english: "Can I pay the bill by card?"
+                    ),
+                    "viet-family-service-card": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi quẹt thẻ được không?",
+                        english: "Can I pay by card?"
+                    ),
+                    "viet-family-transport-cash": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi trả bằng tiền mặt",
+                        english: "I'll pay cash"
+                    ),
+                ]
             ),
             messageGoodbyeStep(
                 id: "restaurant-story-goodbye",

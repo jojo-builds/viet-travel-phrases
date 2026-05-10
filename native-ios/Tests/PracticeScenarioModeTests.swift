@@ -162,9 +162,11 @@ final class PracticeScenarioModeTests: XCTestCase {
 
             let goodbyeStep = try XCTUnwrap(scenario.steps.last)
             XCTAssertTrue(goodbyeStep.id.hasSuffix("goodbye"))
-            XCTAssertEqual(goodbyeStep.bestResponse?.scenarioVietnamese, "Cảm ơn")
+            XCTAssertFalse(goodbyeStep.bestResponse?.scenarioVietnamese.isEmpty ?? true)
             XCTAssertEqual(goodbyeStep.nextStepTitle, "Finish story")
-            XCTAssertTrue(goodbyeStep.visibleCopy.contains { $0.contains("Tạm biệt") })
+            XCTAssertTrue(
+                goodbyeStep.visibleCopy.contains { $0.contains("Tạm biệt") || $0.contains("Cảm ơn") }
+            )
 
             for step in scenario.steps {
                 XCTAssertFalse(step.scene.isEmpty)
@@ -237,7 +239,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(firstDayGreeting.bestResponse?.scenarioVietnamese, "Lấy hành lý ở đâu?")
         let firstDayBaggage = try XCTUnwrap(firstDay.steps.dropFirst().first)
         XCTAssertEqual(firstDayBaggage.scene, "At baggage claim, you want to confirm the belt before waiting.")
-        XCTAssertEqual(firstDayBaggage.bestResponse?.scenarioVietnamese, "Giúp tôi tìm hành lý được không?")
+        XCTAssertEqual(firstDayBaggage.bestResponse?.scenarioVietnamese, "Đây là thẻ hành lý của tôi")
 
         let hotel = try XCTUnwrap(snapshot.scenarios.first { $0.id == .hotelCheckInHelp })
         XCTAssertEqual(hotel.sceneSetup, "Greet the desk, check in, handle room basics, and say thanks.")
@@ -245,7 +247,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(hotel.steps.map(\.momentType), [.listen, .listen, .listen, .ask, .recovery, .ask, .ask])
         let hotelFirstStep = try XCTUnwrap(hotel.steps.dropFirst().first)
         XCTAssertEqual(hotelFirstStep.localPhrase.scenarioVietnamese, "Đặt phòng tên gì ạ?")
-        XCTAssertEqual(hotelFirstStep.bestResponse?.scenarioVietnamese, "Đặt chỗ dưới tên này")
+        XCTAssertEqual(hotelFirstStep.bestResponse?.scenarioVietnamese, "Tên đặt phòng là tên này")
         let hotelPassportStep = try XCTUnwrap(hotel.steps.dropFirst(2).first)
         XCTAssertEqual(hotelPassportStep.localPhrase.scenarioVietnamese, "Cho tôi xem hộ chiếu được không?")
         XCTAssertEqual(hotelPassportStep.bestResponse?.scenarioVietnamese, "Đây là hộ chiếu của tôi")
@@ -277,6 +279,183 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertFalse(visibleCopy.localizedCaseInsensitiveContains("anh/chị"))
         XCTAssertFalse(visibleCopy.contains("Bạn là Jojo"))
         XCTAssertFalse(visibleCopy.contains("Cho tôi nhận phòng"))
+    }
+
+    func testRestaurantMenuQuestionOffersDirectBeginnerReplies() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let restaurant = try XCTUnwrap(snapshot.scenarios.first { $0.id == .restaurantOrderingPayment })
+        let menuStep = try XCTUnwrap(restaurant.steps.first { $0.id == "restaurant-story-arrive" })
+
+        XCTAssertEqual(menuStep.localLine, "Bạn muốn xem thực đơn không?")
+        XCTAssertEqual(menuStep.localLineMeaning, "Would you like to see the menu?")
+        XCTAssertEqual(
+            Array(menuStep.responseOptions.prefix(3)).map(\.scenarioVietnamese),
+            [
+                "Dạ, cho tôi xem thực đơn",
+                "Bạn đề xuất món gì?",
+                "Không, cảm ơn",
+            ]
+        )
+        XCTAssertEqual(
+            Array(menuStep.responseOptions.prefix(3)).map(\.scenarioEnglish),
+            [
+                "Yes, the menu please",
+                "What do you recommend?",
+                "No, thank you",
+            ]
+        )
+        XCTAssertEqual(menuStep.nextLocalLine, "Dạ, đây là thực đơn. Món này dễ ăn.")
+        XCTAssertEqual(menuStep.nextLocalMeaning, "Yes, here is the menu. This dish is easy to eat.")
+    }
+
+    func testMessageScenarioChoicesStayCoherentWithPreviousBubble() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+
+        let airport = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangFirstDay })
+        assertTopReplies(
+            airport,
+            stepID: "airport-story-baggage-belt",
+            vietnamese: [
+                "Đây là thẻ hành lý của tôi",
+                "Lấy hành lý ở đâu?",
+                "Bạn giúp tôi được không?",
+            ],
+            english: [
+                "Here is my baggage tag",
+                "Where is baggage claim?",
+                "Can you help me?",
+            ]
+        )
+
+        let hotel = try XCTUnwrap(snapshot.scenarios.first { $0.id == .hotelCheckInHelp })
+        assertTopReplies(
+            hotel,
+            stepID: "hotel-story-passport",
+            vietnamese: [
+                "Đây là hộ chiếu của tôi",
+                "Đây là hộ chiếu của tôi để nhận phòng",
+                "Đây là xác nhận đặt phòng",
+            ],
+            english: [
+                "Here is my passport",
+                "Here is my passport for check-in",
+                "Here is my booking confirmation",
+            ]
+        )
+
+        let taxi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .taxiGrabPickup })
+        assertTopReplies(
+            taxi,
+            stepID: "taxi-story-opening",
+            vietnamese: [
+                "Dạ đúng rồi, bạn là tài xế của tôi à?",
+                "Dạ, tôi đã đặt xe này",
+            ],
+            english: [
+                "Yes, that's right. Are you my driver?",
+                "Yes, I booked this ride",
+            ]
+        )
+        assertTopReplies(
+            taxi,
+            stepID: "taxi-story-confirm-driver",
+            vietnamese: [
+                "Tôi đang ở cửa này",
+                "Bạn đón tôi ở đây được không?",
+                "Điểm đón ở đâu?",
+            ],
+            english: [
+                "I'm at this entrance",
+                "Can you pick me up here?",
+                "Where is the pickup point?",
+            ]
+        )
+
+        let beach = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangDay })
+        assertTopReplies(
+            beach,
+            stepID: "beach-vendor-goodbye",
+            vietnamese: [
+                "Dạ, tính tiền giúp tôi",
+                "Tôi quẹt thẻ được không?",
+                "Tôi trả bằng tiền mặt",
+            ],
+            english: [
+                "Yes, please let me pay",
+                "Can I pay by card?",
+                "I'll pay cash",
+            ]
+        )
+
+        let restaurant = try XCTUnwrap(snapshot.scenarios.first { $0.id == .restaurantOrderingPayment })
+        assertTopReplies(
+            restaurant,
+            stepID: "restaurant-story-opening",
+            vietnamese: [
+                "Cho tôi bàn cho hai người nhé",
+                "Cho tôi bàn cho hai người",
+                "Cho tôi xem thực đơn được không?",
+            ],
+            english: [
+                "A table for two, please",
+                "A table for two, please",
+                "Can I see the menu?",
+            ]
+        )
+        assertTopReplies(
+            restaurant,
+            stepID: "restaurant-story-ingredients",
+            vietnamese: [
+                "Không cay nhé",
+                "Có đậu phộng không?",
+                "Có thịt heo không?",
+            ],
+            english: [
+                "Not spicy, please",
+                "Does it have peanuts?",
+                "Does it have pork?",
+            ]
+        )
+
+        let pharmacy = try XCTUnwrap(snapshot.scenarios.first { $0.id == .pharmacyHelp })
+        assertTopReplies(
+            pharmacy,
+            stepID: "pharmacy-story-find",
+            vietnamese: [
+                "Có, tôi bị sốt",
+                "Không, tôi bị đau đầu",
+                "Tôi đau bụng",
+            ],
+            english: [
+                "Yes, I have a fever",
+                "No, I have a headache",
+                "My stomach hurts",
+            ]
+        )
+        assertTopReplies(
+            pharmacy,
+            stepID: "pharmacy-story-medicine",
+            vietnamese: [
+                "Tôi uống thuốc này như thế nào?",
+                "Uống bao nhiêu lần mỗi ngày?",
+                "Tôi bị dị ứng thuốc này",
+            ],
+            english: [
+                "How do I take this medicine?",
+                "How many times per day should I take it?",
+                "I am allergic to this medicine",
+            ]
+        )
     }
 
     func testPersonalQueuePriorityFeedsScenarioModeBeforeTripFallback() throws {
@@ -400,5 +579,23 @@ final class PracticeScenarioModeTests: XCTestCase {
             defaults.removePersistentDomain(forName: suiteName)
         }
         return LocalPracticeProgressStore(defaults: defaults)
+    }
+
+    private func assertTopReplies(
+        _ scenario: PracticeScenario,
+        stepID: String,
+        vietnamese: [String],
+        english: [String],
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        guard let step = scenario.steps.first(where: { $0.id == stepID }) else {
+            XCTFail("Missing step \(stepID)", file: file, line: line)
+            return
+        }
+
+        let options = Array(step.responseOptions.prefix(vietnamese.count))
+        XCTAssertEqual(options.map(\.scenarioVietnamese), vietnamese, file: file, line: line)
+        XCTAssertEqual(options.map(\.scenarioEnglish), english, file: file, line: line)
     }
 }
