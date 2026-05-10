@@ -113,6 +113,44 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(report.audio.releaseBlockingMissingAudioAuditRows, 0)
     }
 
+    func testSQLiteCityPagesUsePremiumHeroFallbacks() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+        let cityHeroNames = try repository.loadCityPageHeroImageNames()
+        let retiredHeroNames = Set([
+            "HeroHanMarket",
+            "HeroLinhUngPagoda",
+            "HeroMarbleMountains",
+            "HeroMyKheBeach",
+            "HeroNguyenVanLinhStreet",
+        ])
+        let allowedHeroNames = Set([
+            "HeroCompactPhraseMasthead",
+            "HeroCityDanang",
+            "HeroCityHanoi",
+            "HeroCityHcmc",
+            "HeroCityHoian",
+            "HeroCityHue",
+            "HeroDragonBridge",
+            "HeroBaNaHills",
+        ])
+
+        XCTAssertEqual(cityHeroNames.count, 750)
+        XCTAssertEqual(cityHeroNames["city-hcmc-place-anan-saigon"], "HeroCityHcmc")
+        XCTAssertEqual(cityHeroNames["city-hcmc-where-anan-saigon"], "HeroCompactPhraseMasthead")
+
+        let invalidHeroRows = cityHeroNames.filter { _, heroName in
+            heroName.isEmpty
+                || retiredHeroNames.contains(heroName)
+                || heroName.range(of: "^HeroCity[A-Za-z]+Place", options: .regularExpression) != nil
+                || !allowedHeroNames.contains(heroName)
+        }
+
+        XCTAssertTrue(
+            invalidHeroRows.isEmpty,
+            "City pages should use city/compact/premium hero images only: \(invalidHeroRows)"
+        )
+    }
+
     func testSQLiteCanonicalLookupResolvesAliasesAndDuplicatePhraseRows() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
 

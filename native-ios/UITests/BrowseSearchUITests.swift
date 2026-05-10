@@ -30,6 +30,28 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
     }
 
+    func testAdminDetoursFromBrowseCollectionBackReturnToCollection() {
+        var app = launchApp(arguments: ["--browse-category", "airport"])
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+
+        tapWhenVisible(app.buttons["AppChrome.Dock.Saved"], app: app)
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+
+        tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 3))
+
+        app.terminate()
+
+        app = launchApp(arguments: ["--browse-category", "hotel"])
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
+
+        tapWhenVisible(app.buttons["AppChrome.Dock.Messages"], app: app)
+        XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
+
+        tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 3))
+    }
+
     func testSearchCategoryResultHandsOffToBrowseCollection() {
         let app = launchApp(arguments: ["--search-query", "hotel"])
 
@@ -38,6 +60,20 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.buttons["AppChrome.Dock.Browse"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Search.Title"].exists)
+    }
+
+    func testSearchOriginFromBrowseCollectionReturnsToCollection() {
+        let app = launchApp(arguments: ["--browse-category", "hotel"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
+
+        tapWhenVisible(app.buttons["AppChrome.SearchButton"], app: app)
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
+
+        tapWhenVisible(app.buttons["AppChrome.SearchOriginButton.Browse"], app: app)
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.staticTexts["Browse.Title"].exists)
     }
 
     func testSearchCityResultHandsOffToBrowseCollection() {
@@ -77,6 +113,25 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Browse Da Nang"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Start in Da Nang"].exists)
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
+    }
+
+    func testBackFromCityQuickPhraseRowPreservesCollectionScrollPosition() {
+        let app = launchApp(arguments: ["--browse"])
+        let quickPhraseRowID = "BrowseCollection.Row.viet-phrase-city-danang-to-airport"
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["Browse.City.danang"], app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        tapWhenComfortablyVisible(identifier: quickPhraseRowID, app: app)
+
+        XCTAssertTrue(app.staticTexts["Cho tôi đến sân bay Đà Nẵng"].waitForExistence(timeout: 5))
+
+        app.buttons["TopAdmin.BackButton"].tap()
+
+        let quickPhraseRow = app.buttons.matching(identifier: quickPhraseRowID).firstMatch
+        XCTAssertTrue(quickPhraseRow.waitForExistence(timeout: 3))
+        XCTAssertTrue(quickPhraseRow.isHittable, "Back should restore the city collection near the row that opened the detail page.")
+        XCTAssertFalse(app.staticTexts["BrowseCollection.Title.city.danang"].isHittable)
     }
 
     func testDaNangSituationCardsRevealCityRowsInsteadOfGenericCategoryPages() {

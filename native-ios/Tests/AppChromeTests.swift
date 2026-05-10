@@ -687,6 +687,52 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.forwardStack, [.browseCollection(.city("danang"))])
     }
 
+    func testSavedDetourFromBrowseCollectionReturnsToCollection() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openBrowse()
+        navigation.openBrowseCollection(.category("airport"))
+        navigation.openSaved()
+
+        XCTAssertEqual(navigation.currentRoute, .saved)
+        XCTAssertEqual(navigation.backPreviewRoute, .browseCollection(.category("airport")))
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("airport")))
+        XCTAssertEqual(navigation.browseCollectionPath, [.category("airport")])
+        XCTAssertEqual(navigation.forwardStack, [.saved])
+
+        navigation.goForward()
+        XCTAssertEqual(navigation.currentRoute, .saved)
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("airport")))
+    }
+
+    func testPracticeDetourFromBrowseCollectionReturnsToCollection() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openBrowse()
+        navigation.openBrowseCollection(.category("hotel"))
+        navigation.openPractice()
+
+        XCTAssertEqual(navigation.currentRoute, .practice)
+        XCTAssertEqual(navigation.backPreviewRoute, .browseCollection(.category("hotel")))
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertEqual(navigation.browseCollectionPath, [.category("hotel")])
+        XCTAssertEqual(navigation.forwardStack, [.practice])
+
+        navigation.goForward()
+        XCTAssertEqual(navigation.currentRoute, .practice)
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+    }
+
     func testBackFromBrowseCollectionPreservesBrowseScrollPosition() {
         var navigation = AppShellNavigationState()
 
@@ -1167,6 +1213,38 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Landmarks" })
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
         XCTAssertTrue(cityHub.browseGroups.allSatisfy { $0.targetRoute == nil })
+    }
+
+    func testCityBrowseGroupsAreEntityFirstAcrossCities() {
+        let cityIDs = ["hanoi", "hcmc", "danang", "hoian", "hue"]
+        let disallowedBrowseGroupTitles = ["Getting around", "Help"]
+
+        for cityID in cityIDs {
+            let descriptor = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city(cityID)))
+            let cityHub = try! XCTUnwrap(descriptor.cityHub)
+            let groupTitles = cityHub.browseGroups.map(\.title)
+
+            XCTAssertGreaterThanOrEqual(cityHub.browseGroups.count, 6, "\(descriptor.title) should expose an even noun-first Browse grid")
+            XCTAssertTrue(groupTitles.contains("Landmarks"), "\(descriptor.title) should expose landmark nouns")
+            XCTAssertTrue(groupTitles.contains("Streets"), "\(descriptor.title) should expose street-name nouns")
+            XCTAssertTrue(groupTitles.contains("Food & coffee"), "\(descriptor.title) should expose restaurant/cafe/dish nouns")
+            XCTAssertTrue(groupTitles.contains("Markets"), "\(descriptor.title) should expose market nouns")
+
+            for disallowedTitle in disallowedBrowseGroupTitles {
+                XCTAssertFalse(groupTitles.contains(disallowedTitle), "\(descriptor.title) Browse groups should be entities, not broad action lanes")
+            }
+
+            for group in cityHub.browseGroups {
+                XCTAssertFalse(group.items.isEmpty, "\(descriptor.title) \(group.title) should drill into entity rows")
+                XCTAssertTrue(group.items.allSatisfy { $0.pageID.contains("-place-") }, "\(descriptor.title) \(group.title) should start with noun/entity pages: \(group.items.map(\.pageID))")
+                XCTAssertFalse(group.items.contains { item in
+                    item.title.localizedCaseInsensitiveContains("ở đâu")
+                        || item.subtitle.localizedCaseInsensitiveContains("where is")
+                        || item.subtitle.localizedCaseInsensitiveContains("go to")
+                        || item.subtitle.localizedCaseInsensitiveContains("near here")
+                }, "\(descriptor.title) \(group.title) should not start with long-tail question/route phrase rows")
+            }
+        }
     }
 
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {

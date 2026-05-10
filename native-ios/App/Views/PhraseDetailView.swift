@@ -4,6 +4,7 @@ struct PhraseDetailView: View {
     let page: PhraseDetailPage
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
@@ -18,6 +19,7 @@ struct PhraseDetailView: View {
         page: PhraseDetailPage,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
+        scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
@@ -31,6 +33,7 @@ struct PhraseDetailView: View {
         self.page = page
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
+        self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
@@ -49,6 +52,7 @@ struct PhraseDetailView: View {
             chromeRoute: .detailPage(page.id),
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
+            scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
             showsChrome: showsChrome,
@@ -107,6 +111,10 @@ struct PhraseDetailView: View {
                     }
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
+                    guard scrollToTopRoute == nil || scrollToTopRoute == .detailPage(page.id) else {
+                        return
+                    }
+
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
             }

@@ -10,6 +10,7 @@ struct PhraseListingView: View {
     let chromeRoute: AppRoute
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
@@ -25,6 +26,7 @@ struct PhraseListingView: View {
         chromeRoute: AppRoute = .phrasePage,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
+        scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
@@ -39,6 +41,7 @@ struct PhraseListingView: View {
         self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
+        self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
@@ -56,6 +59,7 @@ struct PhraseListingView: View {
             chromeRoute: chromeRoute,
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
+            scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
             showsChrome: showsChrome,
@@ -74,6 +78,7 @@ struct PhraseArticleTemplateView: View {
     let chromeRoute: AppRoute
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
@@ -90,6 +95,7 @@ struct PhraseArticleTemplateView: View {
         chromeRoute: AppRoute,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
+        scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
@@ -104,6 +110,7 @@ struct PhraseArticleTemplateView: View {
         self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
+        self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
@@ -150,6 +157,10 @@ struct PhraseArticleTemplateView: View {
                     }
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
+                    guard scrollToTopRoute == nil || scrollToTopRoute == chromeRoute else {
+                        return
+                    }
+
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
                 .task {
