@@ -40,13 +40,30 @@ struct PracticeMessagesThreadHost: View {
 
             if let scenario {
                 PracticeMessagesThreadHeader(
-                    scenario: scenario,
-                    onBack: onDismiss
+                    scenario: scenario
                 )
                 .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
+
+                PracticeMessagesThreadBackButton(action: onDismiss)
+                    .padding(.leading, AppChromeLayout.topAdminHorizontalPadding)
+                    .padding(.top, AppChromeLayout.topAdminTopPadding)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .zIndex(AppChromeLayout.searchForegroundMorphZIndex + 1)
             }
+
+            threadAccessibilityMarker
         }
-        .accessibilityIdentifier("Practice.Messages.Thread")
+    }
+
+    private var threadAccessibilityMarker: some View {
+        Text("Messages thread")
+            .font(.caption2)
+            .frame(width: 1, height: 1)
+            .opacity(0.001)
+            .allowsHitTesting(false)
+            .accessibilityIdentifier("Practice.Messages.Thread")
+            .accessibilityLabel("Messages thread")
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 }
 
@@ -61,7 +78,6 @@ private enum PracticeMessagesThreadHeaderLayout {
 
 private struct PracticeMessagesThreadHeader: View {
     let scenario: PracticeScenario
-    let onBack: () -> Void
 
     var body: some View {
         headerControls
@@ -82,7 +98,6 @@ private struct PracticeMessagesThreadHeader: View {
                 .ignoresSafeArea(edges: .top)
                 .allowsHitTesting(false)
             }
-        .accessibilityIdentifier("Practice.Messages.ThreadHeader")
     }
 
     @ViewBuilder
@@ -98,24 +113,12 @@ private struct PracticeMessagesThreadHeader: View {
 
     private var controlRow: some View {
         HStack(alignment: .top, spacing: 0) {
-            Button(action: onBack) {
-                Image(systemName: "chevron.left")
-                    .font(.system(size: 23, weight: .semibold))
-                    .foregroundStyle(.primary)
-                    .frame(
-                        width: PracticeMessagesThreadHeaderLayout.controlSize,
-                        height: PracticeMessagesThreadHeaderLayout.controlSize
-                    )
-                    .contentShape(Circle())
-            }
-            .buttonStyle(.plain)
-            .nativeGlass(
-                cornerRadius: AppChromeLayout.topAdminControlCornerRadius,
-                tint: .white.opacity(0.38),
-                interactive: true
-            )
-            .accessibilityLabel("Back to Messages")
-            .accessibilityIdentifier("Practice.Messages.Back")
+            Color.clear
+                .frame(
+                    width: PracticeMessagesThreadHeaderLayout.controlSize,
+                    height: PracticeMessagesThreadHeaderLayout.controlSize
+                )
+                .accessibilityHidden(true)
 
             Spacer(minLength: 0)
 
@@ -130,6 +133,36 @@ private struct PracticeMessagesThreadHeader: View {
                 )
                 .accessibilityHidden(true)
         }
+    }
+}
+
+private struct PracticeMessagesThreadBackButton: View {
+    let action: () -> Void
+
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous)
+                .fill(.white.opacity(0.62))
+
+            Image(systemName: "chevron.left")
+                .font(.system(size: 23, weight: .semibold))
+                .foregroundStyle(.primary)
+        }
+        .frame(
+            width: PracticeMessagesThreadHeaderLayout.controlSize,
+            height: PracticeMessagesThreadHeaderLayout.controlSize
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous)
+                .stroke(.white.opacity(0.78), lineWidth: 1)
+        }
+        .shadow(color: .black.opacity(0.08), radius: 12, y: 5)
+        .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous))
+        .onTapGesture(perform: action)
+        .accessibilityElement()
+        .accessibilityLabel("Back to Messages")
+        .accessibilityIdentifier("Practice.Messages.Back")
+        .accessibilityAddTraits(.isButton)
     }
 }
 

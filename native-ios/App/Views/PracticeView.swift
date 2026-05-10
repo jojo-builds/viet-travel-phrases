@@ -4,6 +4,7 @@ import UIKit
 struct PracticeView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
     @StateObject private var progressStore: LocalPracticeProgressStore
+    @StateObject private var messageStore: LocalPracticeMessageStore
 
     let initialMode: PracticeMode?
     let entryContext: PracticeEntryContext
@@ -12,6 +13,7 @@ struct PracticeView: View {
     let scrollToTopTrigger: Int
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
+    var onThreadPresentationChanged: (Bool) -> Void
 
     @State private var deckState = PracticeDeckLoadState.loading
     @State private var activeSession: PracticeSession?
@@ -19,6 +21,8 @@ struct PracticeView: View {
     @State private var scenarioState = PracticeScenarioLoadState.loading
     @State private var activeScenarioSession: PracticeScenarioSession?
     @State private var scenarioCompletion: PracticeScenarioCompletionSummary?
+    @State private var isScenarioThreadPresented = false
+    @State private var pendingScenarioReturnID: PracticeScenarioID?
     @State private var didStartInitialMode = false
     @State private var handledStartRequestID: Int?
     @State private var deckLoadGeneration = 0
@@ -35,8 +39,10 @@ struct PracticeView: View {
         isActive: Bool = true,
         scrollToTopTrigger: Int = 0,
         progressStore: LocalPracticeProgressStore = LocalPracticeProgressStore(),
+        messageStore: LocalPracticeMessageStore = LocalPracticeMessageStore(),
         onOpenDetail: @escaping (String) -> Void,
-        onBrowseTapped: @escaping () -> Void
+        onBrowseTapped: @escaping () -> Void,
+        onThreadPresentationChanged: @escaping (Bool) -> Void = { _ in }
     ) {
         self.intentStore = intentStore
         self.initialMode = initialMode
@@ -46,7 +52,9 @@ struct PracticeView: View {
         self.scrollToTopTrigger = scrollToTopTrigger
         self.onOpenDetail = onOpenDetail
         self.onBrowseTapped = onBrowseTapped
+        self.onThreadPresentationChanged = onThreadPresentationChanged
         _progressStore = StateObject(wrappedValue: progressStore)
+        _messageStore = StateObject(wrappedValue: messageStore)
     }
 
     var body: some View {
@@ -82,32 +90,35 @@ struct PracticeView: View {
                     }
                     practiceScrollTargetID = nil
                 }
+                .accessibilityIdentifier("PracticeView")
             }
-        }
-        .fullScreenCover(isPresented: scenarioPresentationBinding) {
-            PracticeMessagesThreadHost(
-                activeScenarioSession: activeScenarioSession,
-                scenarioCompletion: scenarioCompletion,
-                isInPracticePool: isScenarioPageInPractice,
-                isSavedPhrasePage: isScenarioPageSaved,
-                onOpenPhrasePage: { pageID in
-                    dismissScenarioSheet()
-                    openScenarioPhrasePage(pageID)
-                },
-                onTogglePracticePage: toggleScenarioPracticePage,
-                onToggleSavedPhrasePage: toggleScenarioSavedPage,
-                onSelectScenarioOption: { option, step in
-                    selectScenarioOption(option, for: step)
-                },
-                onPracticeAnother: startAnotherScenario,
-                onBackToPractice: dismissScenarioSheet,
-                onBrowseTapped: {
-                    dismissScenarioSheet()
-                    onBrowseTapped()
-                },
-                onDismiss: dismissScenarioSheet
-            )
-            .presentationBackground(.clear)
+
+            if isScenarioThreadVisible {
+                PracticeMessagesThreadHost(
+                    activeScenarioSession: activeScenarioSession,
+                    scenarioCompletion: scenarioCompletion,
+                    isInPracticePool: isScenarioPageInPractice,
+                    isSavedPhrasePage: isScenarioPageSaved,
+                    onOpenPhrasePage: { pageID in
+                        openScenarioPhrasePage(pageID)
+                    },
+                    onTogglePracticePage: toggleScenarioPracticePage,
+                    onToggleSavedPhrasePage: toggleScenarioSavedPage,
+                    onSelectScenarioOption: { option, step in
+                        selectScenarioOption(option, for: step)
+                    },
+                    onPracticeAnother: startAnotherScenario,
+                    onBackToPractice: dismissScenarioSheet,
+                    onBrowseTapped: {
+                        dismissScenarioSheet()
+                        onBrowseTapped()
+                    },
+                    onDismiss: dismissScenarioSheet
+                )
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .transition(.opacity)
+                .zIndex(20)
+            }
         }
         .task {
             if isActive {
@@ -136,36 +147,28 @@ struct PracticeView: View {
         .onChange(of: intentStore.recentPageIDs) { _, _ in
             reloadOrPrewarmScenarioSnapshot()
         }
-        .accessibilityIdentifier("PracticeView")
+        .onChange(of: isScenarioThreadVisible) { _, isVisible in
+            onThreadPresentationChanged(isVisible)
+        }
     }
 
     private static let scrollTopID = "PracticeViewTop"
     private static let scenarioReplyRevealDelay: TimeInterval = 1.6
     private static let scenarioAdvanceDelayAfterReply: TimeInterval = 0.9
+    private static let scenarioReturnPresentationDelay: TimeInterval = 0.85
 
     private var topContentPadding: CGFloat {
         58
     }
 
-    private var scenarioPresentationBinding: Binding<Bool> {
-        Binding(
-            get: { activeScenarioSession != nil || scenarioCompletion != nil },
-            set: { isPresented in
-                if !isPresented {
-                    dismissScenarioSheet()
-                }
-            }
-        )
+    private var isScenarioThreadVisible: Bool {
+        isActive
+            && isScenarioThreadPresented
+            && (activeScenarioSession != nil || scenarioCompletion != nil)
     }
 
     private func startScenario(_ scenario: PracticeScenario) {
-        guard !scenario.steps.isEmpty else {
-            return
-        }
-
-        unreadScenarioIDs.remove(scenario.id)
-        activeScenarioSession = PracticeScenarioSession(scenario: scenario)
-        scenarioCompletion = nil
+        presentScenarioThread(scenario)
     }
 
     private func startPrimaryScenario(context: PracticeEntryContext = .standard) {
@@ -173,13 +176,53 @@ struct PracticeView: View {
             return
         }
 
-        unreadScenarioIDs.remove(scenario.id)
-        activeScenarioSession = PracticeScenarioSession(scenario: scenario, context: context)
-        scenarioCompletion = nil
+        presentScenarioThread(scenario, context: context)
     }
 
     private func startAnotherScenario() {
+        if let scenario = scenarioCompletion?.scenario {
+            presentScenarioThread(scenario, context: scenarioCompletion?.context ?? .standard, reset: true)
+            return
+        }
+
         startPrimaryScenario()
+    }
+
+    private func presentScenarioThread(
+        _ scenario: PracticeScenario,
+        context: PracticeEntryContext = .standard,
+        reset: Bool = false
+    ) {
+        guard !scenario.steps.isEmpty else {
+            return
+        }
+
+        unreadScenarioIDs.remove(scenario.id)
+
+        if reset {
+            messageStore.clear(scenario.id)
+        }
+
+        if !reset, let completion = messageStore.completion(for: scenario) {
+            activeScenarioSession = nil
+            scenarioCompletion = completion
+            isScenarioThreadPresented = true
+            return
+        }
+
+        if !reset, let restoredSession = messageStore.session(for: scenario) {
+            activeScenarioSession = restoredSession
+            scenarioCompletion = nil
+            isScenarioThreadPresented = true
+            resumePendingScenarioTimers(for: restoredSession)
+            return
+        }
+
+        let session = PracticeScenarioSession(scenario: scenario, context: context)
+        activeScenarioSession = session
+        scenarioCompletion = nil
+        isScenarioThreadPresented = true
+        messageStore.save(session)
     }
 
     private func continueScenarioSession() {
@@ -205,12 +248,14 @@ struct PracticeView: View {
                 practicedCount: session.scenario.steps.count
             )
             activeScenarioSession = nil
+            messageStore.markComplete(session)
             reloadScenarioSnapshot()
             return
         }
 
         session.currentIndex += 1
         activeScenarioSession = session
+        messageStore.save(session)
     }
 
     private func schedulePracticeScrollReset(targetID: String? = nil) {
@@ -226,8 +271,7 @@ struct PracticeView: View {
     }
 
     private func dismissScenarioSheet() {
-        activeScenarioSession = nil
-        scenarioCompletion = nil
+        isScenarioThreadPresented = false
         reloadScenarioSnapshot()
     }
 
@@ -240,6 +284,8 @@ struct PracticeView: View {
     }
 
     private func openScenarioPhrasePage(_ pageID: String) {
+        pendingScenarioReturnID = activeScenarioSession?.scenario.id ?? scenarioCompletion?.scenario.id
+        isScenarioThreadPresented = false
         onOpenDetail(pageID)
     }
 
@@ -264,6 +310,7 @@ struct PracticeView: View {
 
         session.selectedOptionIDs[step.id] = option.id
         activeScenarioSession = session
+        messageStore.save(session)
         scheduleScenarioAdvanceAfterSend(stepID: step.id)
     }
 
@@ -279,19 +326,38 @@ struct PracticeView: View {
 
             session.revealedReplyStepIDs.insert(stepID)
             activeScenarioSession = session
+            messageStore.save(session)
+            scheduleScenarioAdvanceAfterReply(stepID: stepID)
+        }
+    }
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + Self.scenarioAdvanceDelayAfterReply) {
-                guard
-                    let session = activeScenarioSession,
-                    session.currentStep?.id == stepID,
-                    session.selectedOptionIDs[stepID] != nil,
-                    session.revealedReplyStepIDs.contains(stepID)
-                else {
-                    return
-                }
-
-                continueScenarioSession()
+    private func scheduleScenarioAdvanceAfterReply(stepID: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Self.scenarioAdvanceDelayAfterReply) {
+            guard
+                let session = activeScenarioSession,
+                session.currentStep?.id == stepID,
+                session.selectedOptionIDs[stepID] != nil,
+                session.revealedReplyStepIDs.contains(stepID)
+            else {
+                return
             }
+
+            continueScenarioSession()
+        }
+    }
+
+    private func resumePendingScenarioTimers(for session: PracticeScenarioSession) {
+        guard
+            let currentStep = session.currentStep,
+            session.selectedOptionIDs[currentStep.id] != nil
+        else {
+            return
+        }
+
+        if session.revealedReplyStepIDs.contains(currentStep.id) {
+            scheduleScenarioAdvanceAfterReply(stepID: currentStep.id)
+        } else {
+            scheduleScenarioAdvanceAfterSend(stepID: currentStep.id)
         }
     }
 
@@ -342,6 +408,7 @@ struct PracticeView: View {
 
                     scenarioState = .loaded(snapshot)
                     scheduleInitialModeStartIfNeeded()
+                    restorePendingScenarioThreadIfReady()
                     startRequestedScenarioIfReady()
                 }
             } catch {
@@ -397,6 +464,10 @@ struct PracticeView: View {
     }
 
     private func startRequestedScenarioIfReady() {
+        guard pendingScenarioReturnID == nil else {
+            return
+        }
+
         guard
             let startRequest,
             handledStartRequestID != startRequest.id,
@@ -414,6 +485,26 @@ struct PracticeView: View {
         }
 
         startPrimaryScenario()
+    }
+
+    private func restorePendingScenarioThreadIfReady() {
+        guard
+            isActive,
+            let pendingScenarioReturnID,
+            let scenario = scenarioState.snapshot?.scenarios.first(where: { $0.id == pendingScenarioReturnID })
+        else {
+            return
+        }
+
+        self.pendingScenarioReturnID = nil
+        DispatchQueue.main.asyncAfter(deadline: .now() + Self.scenarioReturnPresentationDelay) {
+            guard isActive else {
+                self.pendingScenarioReturnID = scenario.id
+                return
+            }
+
+            presentScenarioThread(scenario)
+        }
     }
 
     private func selectOption(_ option: PracticeAnswerOption) {
@@ -864,6 +955,141 @@ struct PracticeScenarioCompletionSummary: Equatable {
     let scenario: PracticeScenario
     let context: PracticeEntryContext
     let practicedCount: Int
+}
+
+private struct PracticeScenarioThreadRecord: Codable, Equatable {
+    let scenarioID: PracticeScenarioID
+    var context: PracticeEntryContext
+    var currentIndex: Int
+    var selectedOptionIDs: [String: String]
+    var revealedReplyStepIDs: [String]
+    var isComplete: Bool
+
+    init(session: PracticeScenarioSession, isComplete: Bool = false) {
+        scenarioID = session.scenario.id
+        context = session.context
+        currentIndex = session.currentIndex
+        selectedOptionIDs = session.selectedOptionIDs
+        revealedReplyStepIDs = session.revealedReplyStepIDs.sorted()
+        self.isComplete = isComplete
+    }
+
+    func session(for scenario: PracticeScenario) -> PracticeScenarioSession? {
+        guard !isComplete, scenario.id == scenarioID, !scenario.steps.isEmpty else {
+            return nil
+        }
+
+        let optionIDsByStepID = Dictionary(
+            uniqueKeysWithValues: scenario.steps.map { step in
+                (step.id, Set(step.responseOptions.map(\.id)))
+            }
+        )
+        let filteredSelectedOptionIDs = selectedOptionIDs.filter { stepID, optionID in
+            optionIDsByStepID[stepID]?.contains(optionID) == true
+        }
+        let filteredRevealedReplyStepIDs = Set(revealedReplyStepIDs.filter { stepID in
+            filteredSelectedOptionIDs[stepID] != nil
+        })
+        let lastStepIndex = max(scenario.steps.count - 1, 0)
+        let clampedIndex = min(max(currentIndex, 0), lastStepIndex)
+
+        return PracticeScenarioSession(
+            scenario: scenario,
+            context: context,
+            currentIndex: clampedIndex,
+            selectedOptionIDs: filteredSelectedOptionIDs,
+            revealedReplyStepIDs: filteredRevealedReplyStepIDs
+        )
+    }
+
+    func completion(for scenario: PracticeScenario) -> PracticeScenarioCompletionSummary? {
+        guard isComplete, scenario.id == scenarioID else {
+            return nil
+        }
+
+        return PracticeScenarioCompletionSummary(
+            scenario: scenario,
+            context: context,
+            practicedCount: scenario.steps.count
+        )
+    }
+}
+
+final class LocalPracticeMessageStore: ObservableObject {
+    private var recordsByScenarioID: [PracticeScenarioID: PracticeScenarioThreadRecord]
+
+    private let defaults: UserDefaults
+    private let decoder = JSONDecoder()
+    private let encoder = JSONEncoder()
+
+    private enum Key {
+        static let threads = "SpeakLocal.Practice.messageThreads.v1"
+    }
+
+    init(defaults: UserDefaults = .standard, launchArguments: [String] = ProcessInfo.processInfo.arguments) {
+        self.defaults = defaults
+
+#if DEBUG
+        if launchArguments.contains("--reset-practice-message-threads") {
+            defaults.removeObject(forKey: Key.threads)
+        }
+#endif
+
+        recordsByScenarioID = Self.loadRecords(defaults: defaults)
+    }
+
+    func session(for scenario: PracticeScenario) -> PracticeScenarioSession? {
+        recordsByScenarioID[scenario.id]?.session(for: scenario)
+    }
+
+    func completion(for scenario: PracticeScenario) -> PracticeScenarioCompletionSummary? {
+        recordsByScenarioID[scenario.id]?.completion(for: scenario)
+    }
+
+    func save(_ session: PracticeScenarioSession) {
+        recordsByScenarioID[session.scenario.id] = PracticeScenarioThreadRecord(session: session)
+        persist()
+    }
+
+    @discardableResult
+    func markComplete(_ session: PracticeScenarioSession) -> PracticeScenarioCompletionSummary {
+        let record = PracticeScenarioThreadRecord(session: session, isComplete: true)
+        recordsByScenarioID[session.scenario.id] = record
+        persist()
+
+        return record.completion(for: session.scenario) ?? PracticeScenarioCompletionSummary(
+            scenario: session.scenario,
+            context: session.context,
+            practicedCount: session.scenario.steps.count
+        )
+    }
+
+    func clear(_ scenarioID: PracticeScenarioID) {
+        recordsByScenarioID.removeValue(forKey: scenarioID)
+        persist()
+    }
+
+    private func persist() {
+        let records = recordsByScenarioID.values.sorted { lhs, rhs in
+            lhs.scenarioID.rawValue < rhs.scenarioID.rawValue
+        }
+
+        guard let data = try? encoder.encode(records) else {
+            return
+        }
+
+        defaults.set(data, forKey: Key.threads)
+    }
+
+    private static func loadRecords(defaults: UserDefaults) -> [PracticeScenarioID: PracticeScenarioThreadRecord] {
+        guard let data = defaults.data(forKey: Key.threads),
+              let records = try? JSONDecoder().decode([PracticeScenarioThreadRecord].self, from: data)
+        else {
+            return [:]
+        }
+
+        return Dictionary(uniqueKeysWithValues: records.map { ($0.scenarioID, $0) })
+    }
 }
 
 private struct PracticeCurrentScenarioSurface: View {

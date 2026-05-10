@@ -155,6 +155,7 @@ private struct PracticeStoryBubble: View {
                                 .foregroundStyle(isTraveler ? .white : .primary)
                                 .multilineTextAlignment(isTraveler ? .trailing : .leading)
                                 .fixedSize(horizontal: false, vertical: true)
+                                .accessibilityIdentifier("Practice.Story.Text.\(isTraveler ? "traveler" : "local").\(turn.id).vietnamese")
                         }
 
                         if let english = turn.english, !english.isEmpty {
@@ -163,6 +164,7 @@ private struct PracticeStoryBubble: View {
                                 .foregroundStyle(isTraveler ? .white.opacity(0.82) : .secondary)
                                 .multilineTextAlignment(isTraveler ? .trailing : .leading)
                                 .fixedSize(horizontal: false, vertical: true)
+                                .accessibilityIdentifier("Practice.Story.Text.\(isTraveler ? "traveler" : "local").\(turn.id).english")
                         }
                     }
 
@@ -286,57 +288,98 @@ struct PracticeStoryComposer: View {
     }
 
     private var pendingOption: PracticeScenarioResponseOption? {
-        guard let pendingOptionID else {
+        guard let selectedOptionID else {
             return nil
         }
 
-        return options.first { $0.id == pendingOptionID }
+        return options.first { $0.id == selectedOptionID }
+    }
+
+    private var selectedOptionID: String? {
+        if let pendingOptionID, options.contains(where: { $0.id == pendingOptionID }) {
+            return pendingOptionID
+        }
+
+        return options.first?.id
     }
 
     private var canSend: Bool {
-        pendingOptionID != nil
+        pendingOption != nil
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            VStack(alignment: .leading, spacing: 10) {
-                ForEach(options) { option in
-                    PracticeStoryChoiceChip(
-                        option: option,
-                        isSelected: option.id == pendingOptionID,
-                        onSelect: { pendingOptionID = option.id }
-                    )
-                }
+            selectedPhraseBar
 
-                HStack {
-                    Spacer()
-
-                    Button(action: {
-                        if let pendingOption {
-                            onSend(pendingOption)
-                        }
-                    }) {
-                        Image(systemName: "arrow.up.circle.fill")
-                            .font(.system(size: 38, weight: .bold))
-                            .foregroundStyle(canSend ? Color(red: 0.07, green: 0.50, blue: 1.0) : Color.secondary.opacity(0.36))
-                            .frame(width: 46, height: 46)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(alignment: .center, spacing: 10) {
+                    ForEach(options) { option in
+                        PracticeStoryChoiceChip(
+                            option: option,
+                            isSelected: option.id == selectedOptionID,
+                            onSelect: { pendingOptionID = option.id }
+                        )
                     }
-                    .buttonStyle(.plain)
-                    .disabled(!canSend)
-                    .accessibilityLabel("Send phrase")
-                    .accessibilityIdentifier("Practice.Story.Send")
                 }
+                .padding(.horizontal, 14)
+                .padding(.bottom, 2)
             }
+            .scrollClipDisabled()
         }
-        .padding(12)
+        .padding(.horizontal, 14)
+        .padding(.top, 14)
+        .padding(.bottom, 12)
         .frame(maxWidth: .infinity)
-        .background(Color.white.opacity(0.92), in: RoundedRectangle(cornerRadius: 28, style: .continuous))
+        .background(Color.white.opacity(0.90), in: RoundedRectangle(cornerRadius: 28, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 28, style: .continuous)
-                .stroke(.white.opacity(0.72), lineWidth: 1)
+                .stroke(.white.opacity(0.78), lineWidth: 1)
         }
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("Practice.Story.Composer")
+    }
+
+    private var selectedPhraseBar: some View {
+        HStack(alignment: .center, spacing: 12) {
+            Text(pendingOption?.scenarioVietnamese ?? "")
+                .font(.system(size: 23, weight: .regular))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.82)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityIdentifier("Practice.Story.SelectedPhrase")
+
+            Spacer(minLength: 8)
+
+            Button(action: {
+                if let pendingOption {
+                    onSend(pendingOption)
+                }
+            }) {
+                Image(systemName: "arrow.up")
+                    .font(.system(size: 21, weight: .heavy))
+                    .foregroundStyle(.white)
+                    .frame(width: 44, height: 44)
+                    .background(
+                        Circle()
+                            .fill(canSend ? Color(red: 0.07, green: 0.50, blue: 1.0) : Color.secondary.opacity(0.32))
+                    )
+            }
+            .buttonStyle(.plain)
+            .disabled(!canSend)
+            .accessibilityLabel("Send phrase")
+            .accessibilityIdentifier("Practice.Story.Send")
+        }
+        .padding(.leading, 18)
+        .padding(.trailing, 10)
+        .padding(.vertical, 10)
+        .frame(minHeight: 60)
+        .frame(maxWidth: .infinity)
+        .background(Color.white.opacity(0.82), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(Color(.separator).opacity(0.22), lineWidth: 1)
+        }
     }
 }
 
@@ -347,44 +390,34 @@ private struct PracticeStoryChoiceChip: View {
 
     var body: some View {
         Button(action: onSelect) {
-            HStack(alignment: .center, spacing: 10) {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(option.scenarioVietnamese)
-                        .font(.subheadline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-                        .fixedSize(horizontal: false, vertical: true)
-
-                    Text(option.scenarioEnglish)
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
+            Text(option.scenarioEnglish)
+                .font(.system(size: 16, weight: isSelected ? .bold : .regular))
+                .foregroundStyle(isSelected ? Color(red: 0.02, green: 0.37, blue: 0.95) : .primary)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.82)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 10)
+                .frame(width: 132)
+                .frame(minHeight: 58)
+                .background(chipBackground, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .stroke(
+                            isSelected ? Color(red: 0.02, green: 0.37, blue: 0.95) : Color(.separator).opacity(0.34),
+                            lineWidth: isSelected ? 2 : 1
+                        )
                 }
-
-                Spacer(minLength: 8)
-
-                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 22, weight: .semibold))
-                    .foregroundStyle(isSelected ? Color(red: 0.07, green: 0.50, blue: 1.0) : Color.secondary.opacity(0.34))
-            }
-            .padding(.horizontal, 13)
-            .padding(.vertical, 10)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(chipBackground, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? Color(red: 0.07, green: 0.50, blue: 1.0).opacity(0.32) : Color.white.opacity(0.68), lineWidth: 1)
-            }
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Practice.Story.Choice.\(option.id)")
+        .accessibilityValue(isSelected ? "Selected" : "Not selected")
     }
 
     private var chipBackground: some ShapeStyle {
         isSelected
-            ? AnyShapeStyle(Color(.systemGray6).opacity(1.0))
-            : AnyShapeStyle(Color(.systemGray6).opacity(0.76))
+            ? AnyShapeStyle(Color.white.opacity(0.98))
+            : AnyShapeStyle(Color.white.opacity(0.96))
     }
 }

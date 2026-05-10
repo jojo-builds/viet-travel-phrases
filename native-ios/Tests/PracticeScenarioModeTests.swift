@@ -559,6 +559,47 @@ final class PracticeScenarioModeTests: XCTestCase {
         }
     }
 
+    func testMessageThreadProgressPersistsForReturnToThread() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let scenario = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangFirstDay })
+        let firstStep = try XCTUnwrap(scenario.steps.first)
+        let secondStep = try XCTUnwrap(scenario.steps.dropFirst().first)
+        let selectedOption = try XCTUnwrap(firstStep.bestResponse)
+        let suiteName = "PracticeMessageThreadStoreTests.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suiteName)!
+        defaults.removePersistentDomain(forName: suiteName)
+        addTeardownBlock {
+            defaults.removePersistentDomain(forName: suiteName)
+        }
+
+        var session = PracticeScenarioSession(scenario: scenario)
+        session.selectedOptionIDs[firstStep.id] = selectedOption.id
+        session.revealedReplyStepIDs.insert(firstStep.id)
+        session.currentIndex = 1
+        LocalPracticeMessageStore(defaults: defaults).save(session)
+
+        let restoredStore = LocalPracticeMessageStore(defaults: defaults)
+        let restoredSession = try XCTUnwrap(restoredStore.session(for: scenario))
+        let restoredTurns = PracticeStoryTranscript.turns(
+            for: restoredSession.scenario,
+            currentIndex: restoredSession.currentIndex,
+            selectedOptionIDs: restoredSession.selectedOptionIDs,
+            revealedReplyStepIDs: restoredSession.revealedReplyStepIDs
+        )
+
+        XCTAssertEqual(restoredSession.currentIndex, 1)
+        XCTAssertEqual(restoredSession.currentStep?.id, secondStep.id)
+        XCTAssertEqual(restoredSession.selectedOptionIDs[firstStep.id], selectedOption.id)
+        XCTAssertTrue(restoredSession.revealedReplyStepIDs.contains(firstStep.id))
+        XCTAssertTrue(restoredTurns.contains { $0.role == .travelerReply && $0.vietnamese == selectedOption.scenarioVietnamese })
+        XCTAssertTrue(restoredTurns.contains { $0.role == .choiceSet && $0.stepID == secondStep.id })
+    }
+
     func testRepositoryLoadsPracticeCandidatesByCategory() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let candidates = try repository.loadPracticeCandidates(

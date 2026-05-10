@@ -15,6 +15,7 @@ struct AppShellView: View {
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeMode: PracticeMode?
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
+    @State private var isPracticeThreadPresented = false
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -116,7 +117,8 @@ struct AppShellView: View {
                     isActive: navigation.currentRoute == .practice,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
                     onOpenDetail: openDetailFromPractice,
-                    onBrowseTapped: openBrowseAll
+                    onBrowseTapped: openBrowseAll,
+                    onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
                 )
                 .allowsHitTesting(navigation.currentRoute == .practice && !isPreviewingForwardPage)
                 .accessibilityHidden(navigation.currentRoute != .practice)
@@ -200,24 +202,34 @@ struct AppShellView: View {
                 }
             }
             .overlay(alignment: .leading) {
-                backSwipeCaptureEdge(width: pageWidth)
+                if !isPracticeThreadPresented {
+                    backSwipeCaptureEdge(width: pageWidth)
+                }
             }
             .overlay(alignment: .trailing) {
-                forwardSwipeCaptureEdge(width: pageWidth)
+                if !isPracticeThreadPresented {
+                    forwardSwipeCaptureEdge(width: pageWidth)
+                }
             }
             .overlay(alignment: .bottom) {
-                ChromeSeparationGradient(edge: .bottom)
-                    .zIndex(360)
+                if !isPracticeThreadPresented {
+                    ChromeSeparationGradient(edge: .bottom)
+                        .zIndex(360)
+                }
             }
             .overlay(alignment: .bottom) {
-                bottomChromeHitTestEnvelope
-                    .padding(.bottom, bottomChromePadding)
-                    .offset(y: bottomChromeOffset)
-                    .zIndex(380)
+                if !isPracticeThreadPresented {
+                    bottomChromeHitTestEnvelope
+                        .padding(.bottom, bottomChromePadding)
+                        .offset(y: bottomChromeOffset)
+                        .zIndex(380)
+                }
             }
             .overlay(alignment: .top) {
-                ChromeSeparationGradient(edge: .top)
-                    .zIndex(360)
+                if !isPracticeThreadPresented {
+                    ChromeSeparationGradient(edge: .top)
+                        .zIndex(360)
+                }
             }
             .overlay(alignment: .top) {
                 if showsTopAdminRow {
@@ -530,7 +542,8 @@ struct AppShellView: View {
     }
 
     private var showsTopAdminRow: Bool {
-        showsStaticBackButton || showsPinnedAudioSpeedControl || navigation.canGoForward
+        !isPracticeThreadPresented
+            && (showsStaticBackButton || showsPinnedAudioSpeedControl || navigation.canGoForward)
     }
 
     private var bottomChromePadding: CGFloat {
