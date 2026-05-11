@@ -945,7 +945,7 @@ enum BrowseSearchDestinations {
     ) -> BrowseCityHub {
         BrowseCityHub(
             cityNameAudioItem: cityNameAudioItem(for: cityID, city: city),
-            situationTitle: "What are you doing?",
+            situationTitle: "Common moments",
             situations: citySituationCards(for: cityID, tintName: city.tintName, groupedItems: groupedItems),
             namesTitle: "Names to know",
             namesToKnowItems: cityNamesToKnowItems(for: cityID, cityItems: cityItems),

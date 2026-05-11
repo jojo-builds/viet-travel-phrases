@@ -1079,7 +1079,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hanoi.subcategories.isEmpty)
         XCTAssertFalse(hanoi.starterItems.isEmpty)
         XCTAssertNotNil(hanoi.cityHub)
-        XCTAssertEqual(hanoi.cityHub?.situationTitle, "What are you doing?")
+        XCTAssertEqual(hanoi.cityHub?.situationTitle, "Common moments")
         XCTAssertEqual(hanoi.cityHub?.namesTitle, "Names to know")
     }
 
