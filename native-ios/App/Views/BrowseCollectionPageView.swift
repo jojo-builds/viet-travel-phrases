@@ -10,6 +10,7 @@ struct BrowseCollectionPageView: View {
 
     @State private var selectedSubcategoryID: String?
     @State private var selectedCityCardID: String?
+    @State private var cityCardScrollRequestID = 0
 
     var body: some View {
         let selectedSubcategory = descriptor.subcategories.first { $0.id == selectedSubcategoryID }
@@ -43,9 +44,7 @@ struct BrowseCollectionPageView: View {
                                 subcategories: descriptor.subcategories,
                                 selectedSubcategoryID: selectedSubcategoryID,
                                 onSelect: { subcategory in
-                                    withAnimation(.snappy(duration: 0.24)) {
-                                        selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
-                                    }
+                                    selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
                                 }
                             )
 
@@ -82,8 +81,18 @@ struct BrowseCollectionPageView: View {
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
                 .onChange(of: selectedCityCardID) { _, newValue in
+                    cityCardScrollRequestID += 1
+                    let requestID = cityCardScrollRequestID
                     guard let newValue else { return }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.18) {
+                    Task { @MainActor in
+                        try? await Task.sleep(nanoseconds: BrowseCollectionLayout.citySelectedScrollDelayNanoseconds)
+                        guard
+                            requestID == cityCardScrollRequestID,
+                            selectedCityCardID == newValue
+                        else {
+                            return
+                        }
+
                         withAnimation(.snappy(duration: 0.24)) {
                             scrollProxy.scrollTo(
                                 BrowseCollectionLayout.citySelectedSectionID(for: newValue),
@@ -96,6 +105,7 @@ struct BrowseCollectionPageView: View {
             .ignoresSafeArea(edges: .top)
         }
         .onChange(of: descriptor.id) { _, _ in
+            cityCardScrollRequestID += 1
             selectedSubcategoryID = nil
             selectedCityCardID = nil
         }
@@ -109,6 +119,8 @@ private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 24
     static let bottomChromeContentClearance: CGFloat = 224
+    static let citySelectedScrollDelayNanoseconds: UInt64 = 180_000_000
+
     static func citySelectedSectionID(for cardID: String) -> String {
         "BrowseCollectionCitySelectedSection.\(cardID)"
     }
@@ -350,9 +362,7 @@ private struct BrowseCityHubContent: View {
         }
 
         let isActivatingCard = selectedCityCardID != card.id
-        withAnimation(.snappy(duration: 0.24)) {
-            selectedCityCardID = isActivatingCard ? card.id : nil
-        }
+        selectedCityCardID = isActivatingCard ? card.id : nil
 
         if isActivatingCard {
             onCityCardSelectionActivated(card.id)
