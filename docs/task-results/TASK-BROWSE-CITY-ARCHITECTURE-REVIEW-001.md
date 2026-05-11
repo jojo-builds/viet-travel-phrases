@@ -93,4 +93,4 @@ Tests were updated so city pages use `Common moments` for action cards and rende
 
 Manual proof screenshot:
 
-- `native-ios/artifacts/browse-city-architecture-review/danang-entity-first-top.jpg`
+- `docs/task-results/assets/browse-city-architecture-review/danang-entity-first-top.jpg`
