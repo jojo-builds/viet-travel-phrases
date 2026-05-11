@@ -227,7 +227,7 @@ final class ListingLatestFeedbackProofUITests: XCTestCase {
             "danang-city-hub",
             ["--browse-city", "danang"],
             "Da Nang",
-            ["What are you doing?", "Practice a Da Nang day"]
+            ["Names to know", "Browse Da Nang", "Practice a Da Nang day"]
         ),
         (
             "all-vietnam-hub",
@@ -317,10 +317,10 @@ final class ListingHubRandomLoopProofUITests: XCTestCase {
 
     private let hubPages: [(label: String, arguments: [String], title: String, requiredTexts: [String])] = [
         ("all-vietnam", ["--browse-category", "city-guides"], "All Vietnam", ["Start here", "City guides", "Practice Vietnam basics"]),
-        ("hanoi", ["--browse-city", "hanoi"], "Hanoi", ["What are you doing?", "Practice a Hanoi day", "Names to know", "Quick phrases"]),
-        ("saigon", ["--browse-city", "hcmc"], "Saigon", ["What are you doing?", "Practice a Saigon day", "Names to know", "Quick phrases"]),
-        ("hoi-an", ["--browse-city", "hoian"], "Hoi An", ["What are you doing?", "Practice a Hoi An day", "Names to know", "Quick phrases"]),
-        ("hue", ["--browse-city", "hue"], "Hue", ["What are you doing?", "Practice a Hue day", "Names to know", "Quick phrases"]),
+        ("hanoi", ["--browse-city", "hanoi"], "Hanoi", ["Names to know", "Browse Hanoi", "Common moments", "Quick phrases"]),
+        ("saigon", ["--browse-city", "hcmc"], "Saigon", ["Names to know", "Browse Saigon", "Common moments", "Quick phrases"]),
+        ("hoi-an", ["--browse-city", "hoian"], "Hoi An", ["Names to know", "Browse Hoi An", "Common moments", "Quick phrases"]),
+        ("hue", ["--browse-city", "hue"], "Hue", ["Names to know", "Browse Hue", "Common moments", "Quick phrases"]),
         ("airport-topic", ["--browse-category", "airport"], "Airport", ["Good first phrases", "Practice Airport"]),
         ("hotel-topic", ["--browse-category", "hotel"], "Hotel", ["At the hotel desk", "Practice Hotel"]),
         ("food-topic", ["--browse-category", "food"], "Food", ["Start at the table", "A table for two", "Can I see the menu?", "Practice Food"]),

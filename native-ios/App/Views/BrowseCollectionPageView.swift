@@ -237,57 +237,52 @@ private struct BrowseCityHubContent: View {
                 BrowseCityNameAudioPlayer(item: cityNameAudioItem)
             }
 
-            BrowseCityCardGridSection(
-                title: cityHub.situationTitle,
-                cards: cityHub.situations,
-                selectedCardID: selectedCityCardID,
-                onOpenCollection: onOpenCollection,
-                onSelectCard: isCountryHub ? nil : selectCityCard
-            )
-
-            if let selectedSituation, !selectedSituation.items.isEmpty, !isCountryHub {
-                BrowseCollectionStarterSection(
-                    title: citySectionTitle(for: selectedSituation),
-                    actionTitle: "",
-                    items: selectedSituation.items,
-                    onOpenDetail: onOpenDetail
-                )
-                .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedSituation.id))
-            }
-
-            BrowseCollectionPracticeCard(
-                descriptor: descriptor,
-                onPractice: onPractice
-            )
-            .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
-
             if isCountryHub {
+                BrowseCityCardGridSection(
+                    title: cityHub.situationTitle,
+                    cards: cityHub.situations,
+                    onOpenCollection: onOpenCollection
+                )
+
+                BrowseCollectionPracticeCard(
+                    descriptor: descriptor,
+                    onPractice: onPractice
+                )
+                .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
+
                 BrowseCityCardGridSection(
                     title: cityHub.browseTitle,
                     cards: cityHub.browseGroups,
                     onOpenCollection: onOpenCollection
                 )
-            }
 
-            if !cityHub.namesToKnowItems.isEmpty {
-                BrowseCollectionStarterSection(
-                    title: cityHub.namesTitle,
-                    actionTitle: "",
-                    items: cityHub.namesToKnowItems,
-                    onOpenDetail: onOpenDetail
-                )
-            }
+                if !cityHub.namesToKnowItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.namesTitle,
+                        actionTitle: "",
+                        items: cityHub.namesToKnowItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
 
-            if !cityHub.quickPhraseItems.isEmpty {
-                BrowseCollectionStarterSection(
-                    title: cityHub.quickPhrasesTitle,
-                    actionTitle: "",
-                    items: cityHub.quickPhraseItems,
-                    onOpenDetail: onOpenDetail
-                )
-            }
+                if !cityHub.quickPhraseItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.quickPhrasesTitle,
+                        actionTitle: "",
+                        items: cityHub.quickPhraseItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
+            } else {
+                if !cityHub.namesToKnowItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.namesTitle,
+                        actionTitle: "",
+                        items: cityHub.namesToKnowItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
 
-            if !isCountryHub {
                 BrowseCityCardGridSection(
                     title: cityHub.browseTitle,
                     cards: cityHub.browseGroups,
@@ -304,6 +299,39 @@ private struct BrowseCityHubContent: View {
                         onOpenDetail: onOpenDetail
                     )
                     .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedBrowseGroup.id))
+                }
+
+                BrowseCollectionPracticeCard(
+                    descriptor: descriptor,
+                    onPractice: onPractice
+                )
+                .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
+
+                BrowseCityCardGridSection(
+                    title: cityHub.situationTitle,
+                    cards: cityHub.situations,
+                    selectedCardID: selectedCityCardID,
+                    onOpenCollection: onOpenCollection,
+                    onSelectCard: selectCityCard
+                )
+
+                if let selectedSituation, !selectedSituation.items.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: citySectionTitle(for: selectedSituation),
+                        actionTitle: "",
+                        items: selectedSituation.items,
+                        onOpenDetail: onOpenDetail
+                    )
+                    .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedSituation.id))
+                }
+
+                if !cityHub.quickPhraseItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.quickPhrasesTitle,
+                        actionTitle: "",
+                        items: cityHub.quickPhraseItems,
+                        onOpenDetail: onOpenDetail
+                    )
                 }
             }
         }

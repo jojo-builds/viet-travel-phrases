@@ -102,15 +102,18 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Airport arrivals, beach rides, river landmarks, markets, and day trips."].waitForExistence(timeout: 2))
         XCTAssertTrue(app.otherElements["BrowseCollection.CityNamePlayer.Da Nang"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["What are you doing?"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.arriving"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.beach-day"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Names to know"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Browse Da Nang"].waitForExistence(timeout: 2))
+        app.swipeUp()
+        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.browse.landmarks"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Practice a Da Nang day"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Airport pickup, beach drop-off, food, and a ride back."].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Names to know"].waitForExistence(timeout: 2))
+        app.swipeUp()
+        XCTAssertTrue(app.staticTexts["Common moments"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.arriving"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.beach-day"].waitForExistence(timeout: 2))
         app.swipeUp()
         XCTAssertTrue(app.staticTexts["Quick phrases"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Browse Da Nang"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Start in Da Nang"].exists)
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
     }
@@ -225,7 +228,7 @@ final class BrowseSearchUITests: XCTestCase {
 
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
-            ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "What are you doing?"),
+            ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "Names to know"),
             ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Start here"),
             ("ben-thanh-market", ["--detail-page", "viet-family-city-hcmc-place-ben-thanh-market"], "Chợ Bến Thành", "About"),
             ("anan-saigon", ["--detail-page", "viet-family-city-hcmc-place-anan-saigon"], "Anăn Sài Gòn", "About"),
