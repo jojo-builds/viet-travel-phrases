@@ -8,6 +8,7 @@ const repoRoot = path.resolve(nativeRoot, "..");
 const sourcePath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
+const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifest.json");
 const audioAuditPath = path.join(nativeRoot, "Resources", "viet-authored-audio-audit.json");
 const audioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 
@@ -29,6 +30,26 @@ const minimumSubcategoryPagesPerCity = 8;
 const minimumPlacePagesPerCity = 25;
 const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
 const dishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
+const browseNounPageKinds = new Set(["place", "restaurant", "dish"]);
+const browseNounPlaceKinds = new Set([
+  "airport",
+  "station",
+  "port",
+  "landmark",
+  "attraction",
+  "museum",
+  "neighborhood",
+  "street",
+  "restaurant",
+  "cafe",
+  "dish",
+  "market",
+  "beach",
+  "nature",
+  "park",
+  "river",
+  "village",
+]);
 const baNaJourneySourceID = "city-danang-place-ba-na-hills";
 const landmarkActionRequiredSections = [
   "at-glance",
@@ -126,6 +147,15 @@ function normalizedPlaceKind(place) {
   return legacyKind;
 }
 
+function isBrowseNounPage(pageKind, placeKind) {
+  return browseNounPageKinds.has(pageKind) && browseNounPlaceKinds.has(placeKind);
+}
+
+function hasExactAudio(audioManifest, audioKey, text) {
+  const entry = audioManifest[audioKey];
+  return Boolean(entry?.fileName && normalizeText(entry.text) === normalizeText(text));
+}
+
 function pageKindFor(page, place) {
   if (page.pageKind) return page.pageKind;
   if (page.kind !== "place") return page.kind;
@@ -181,6 +211,7 @@ function main() {
   const library = readJSON(sourcePath);
   const catalog = readJSON(catalogPath);
   const authoredPages = readJSON(authoredPagesPath);
+  const audioManifest = readJSON(audioManifestPath);
   const audioAudit = readJSON(audioAuditPath);
   const cities = new Map((library.cities ?? []).map((city) => [city.id, city]));
   const places = new Map((library.places ?? []).map((place) => [place.id, place]));
@@ -297,7 +328,16 @@ function main() {
     assert(catalogPhrase.cityLibraryPageKind === pageKind, `${page.id} catalog pageKind mismatch`);
     assert(catalogPhrase.placeKind === placeKind, `${page.id} catalog placeKind mismatch`);
     assert((catalogPhrase.contentRole ?? "") === (page.contentRole ?? ""), `${page.id} catalog contentRole mismatch`);
-    assert(catalogPhrase.audioStatus === "planned", `${page.id} catalog audio status must be planned until city audio is recorded`);
+    if (isBrowseNounPage(pageKind, placeKind)) {
+      assert(page.audioStatus === "ready", `${page.id} browse noun audio status must be ready`);
+      assert(page.audioKey, `${page.id} browse noun must declare an audioKey`);
+      assert(hasExactAudio(audioManifest, page.audioKey, page.targetText), `${page.id} browse noun audioKey must resolve to exact manifest text`);
+      assert(catalogPhrase.audioStatus === "ready", `${page.id} catalog audio status must be ready`);
+      assert(catalogPhrase.audioKey === page.audioKey, `${page.id} catalog audioKey mismatch`);
+    } else {
+      const expectedAudioStatus = page.audioStatus ?? library.audioStatus ?? "planned";
+      assert(catalogPhrase.audioStatus === expectedAudioStatus, `${page.id} catalog audio status mismatch`);
+    }
 
     const authoredPageID = `viet-family-${page.id}`;
     const authoredPage = authoredCityPagesByID.get(authoredPageID);

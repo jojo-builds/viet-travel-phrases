@@ -4559,7 +4559,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "airport",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-san-bay-da-nang-152a0e4b10",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-apec-park",
@@ -4592,7 +4594,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "park",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cong-vien-apec-00b5ce7ccb",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-asia-park",
@@ -4625,7 +4629,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "park",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cong-vien-chau-a-a60c17b24c",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-ba-na-hills",
@@ -4796,7 +4802,9 @@
         "replaceGeneratedSections": true,
         "heroImageName": "HeroBaNaHills"
       },
-      "heroImageName": "HeroBaNaHills"
+      "heroImageName": "HeroBaNaHills",
+      "audioKey": "audio-authored-ba-na-hills-c5674a9b64",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-bach-dang-street",
@@ -4939,7 +4947,9 @@
         "templateProfile": "street-pronouncer",
         "agentApprovalID": "B001-AGENT-APPROVED-002"
       },
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-duong-bach-dang-905007f3e8",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-ban-co-peak",
@@ -4972,7 +4982,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-dinh-ban-co-f4170cb874",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-cathedral",
@@ -5005,7 +5017,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-nha-tho-con-ga-da-nang-d73e3f6db2",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-cham-museum",
@@ -5038,7 +5052,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-bao-tang-dieu-khac-cham-9a8b3b4f01",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-con-market",
@@ -5071,7 +5087,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cho-con-7a0aea6c64",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-dragon-bridge",
@@ -5207,7 +5225,9 @@
           "legacyExportedPageID": "ACCEPTED_TEMPORARY_RISK"
         }
       },
-      "heroImageName": "HeroDragonBridge"
+      "heroImageName": "HeroDragonBridge",
+      "audioKey": "audio-authored-cau-rong-90dc128d4b",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-golden-bridge",
@@ -5240,7 +5260,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cau-vang-2c608d285a",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-han-market",
@@ -5272,7 +5294,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cho-han-f68fe61ccf",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-han-river",
@@ -5305,7 +5329,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-song-han-0c389f11af",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-helio-night-market",
@@ -5338,7 +5364,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cho-dem-helio-2cb101a5fa",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-linh-ung-pagoda",
@@ -5371,7 +5399,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-chua-linh-ung-703e8f3b92",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-love-bridge",
@@ -5404,7 +5434,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cau-tinh-yeu-dae5912687",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-man-thai-beach",
@@ -5437,7 +5469,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "beach",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-bien-man-thai-397d136a26",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-marble-mountains",
@@ -5581,7 +5615,9 @@
           }
         ]
       },
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-ngu-hanh-son-7cd09d8626",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-my-khe",
@@ -5613,7 +5649,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "beach",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-bien-my-khe-cc07e59f70",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-nam-o-reef",
@@ -5646,7 +5684,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-ran-nam-o-f3cbae8893",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-nen",
@@ -5681,7 +5721,9 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "fine-dining",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-nen-da-nang-762c6e4180",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-nguyen-van-linh-street",
@@ -5824,7 +5866,9 @@
         "templateProfile": "street-pronouncer",
         "agentApprovalID": "B001-AGENT-APPROVED-003"
       },
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-duong-nguyen-van-linh-2fa0fcb186",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-non-nuoc-beach",
@@ -5857,7 +5901,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "beach",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-bien-non-nuoc-6554d5ecf2",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-non-nuoc-stone-village",
@@ -5890,7 +5936,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-lang-da-non-nuoc-8642dec883",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-railway-station",
@@ -5923,7 +5971,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "station",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-ga-da-nang-47d24faee3",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-son-tra",
@@ -6066,7 +6116,9 @@
           }
         ]
       },
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-ban-dao-son-tra-2364c7b9ad",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-son-tra-night-market",
@@ -6099,7 +6151,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cho-dem-son-tra-21d84be110",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-tien-sa-port",
@@ -6132,7 +6186,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "port",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cang-tien-sa-00a20c3b42",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-tran-thi-ly-bridge",
@@ -6165,7 +6221,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-cau-tran-thi-ly-c3efadb5bf",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-place-vo-nguyen-giap-street",
@@ -6313,7 +6371,9 @@
           }
         ]
       },
-      "heroImageName": "HeroCityDanang"
+      "heroImageName": "HeroCityDanang",
+      "audioKey": "audio-authored-duong-vo-nguyen-giap-63dd6840e9",
+      "audioStatus": "ready"
     },
     {
       "id": "city-danang-reservation-nen",
@@ -10279,7 +10339,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-quang-truong-ba-dinh-f6485982ee",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-bun-cha-huong-lien",
@@ -10427,7 +10489,9 @@
           }
         ]
       },
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-bun-cha-huong-lien-7123b3d369",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-cha-ca-thang-long",
@@ -10461,7 +10525,9 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "iconic",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-cha-ca-thang-long-be49acaab5",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-dong-xuan",
@@ -10493,7 +10559,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-cho-dong-xuan-f18b81788e",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-ethnology-museum",
@@ -10526,7 +10594,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-bao-tang-dan-toc-hoc-289fb68b03",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-giang-cafe",
@@ -10561,7 +10631,9 @@
       "pageKind": "restaurant",
       "placeKind": "cafe",
       "contentRole": "cafe",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-ca-phe-giang-f008ae0fe9",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-hang-bac-street",
@@ -10594,7 +10666,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-pho-hang-bac-beafc75d60",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-hang-gai-street",
@@ -10627,7 +10701,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-pho-hang-gai-fcaa0ed790",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-ho-chi-minh-mausoleum",
@@ -10660,7 +10736,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-lang-bac-8b842c6c9f",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-hoa-lo-prison",
@@ -10693,7 +10771,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-nha-tu-hoa-lo-c1d28e4722",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-hoan-kiem",
@@ -10725,7 +10805,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-ho-hoan-kiem-9dd14822a0",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-imperial-citadel",
@@ -10758,7 +10840,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-hoang-thanh-thang-long-ffe47b481c",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-long-bien-bridge",
@@ -10791,7 +10875,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-cau-long-bien-25c0c0b154",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-long-bien-market",
@@ -10824,7 +10910,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-cho-long-bien-51bc2585e2",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-noi-bai-airport",
@@ -10857,7 +10945,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "airport",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-san-bay-noi-bai-d05e004837",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-old-quarter",
@@ -10889,7 +10979,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-pho-co-ha-noi-3a9c474cdb",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-opera-house",
@@ -10922,7 +11014,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-nha-hat-lon-ha-noi-bef24cb33c",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-phan-dinh-phung-street",
@@ -10955,7 +11049,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-pho-phan-dinh-phung-96cad2143a",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-pho-bat-dan",
@@ -11095,7 +11191,9 @@
           }
         ]
       },
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-pho-bat-dan-5484f2c6ca",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-quan-thanh-temple",
@@ -11128,7 +11226,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-den-quan-thanh-fbed2afa89",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-st-joseph-cathedral",
@@ -11161,7 +11261,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-nha-tho-lon-ha-noi-b724787e93",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-ta-hien",
@@ -11193,7 +11295,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-pho-ta-hien-fb695b0958",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-tam-vi",
@@ -11228,7 +11332,9 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "fine-dining",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-tam-vi-1336abffcd",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-tay-ho",
@@ -11261,7 +11367,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-tay-ho-e1feb07783",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-temple-literature",
@@ -11293,7 +11401,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-van-mieu-1cb0b15574",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-train-street",
@@ -11326,7 +11436,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-pho-duong-tau-ha-noi-ee65be1d03",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-tran-quoc-pagoda",
@@ -11359,7 +11471,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-chua-tran-quoc-cfe2d77d7b",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-truc-bach-lake",
@@ -11392,7 +11506,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-ho-truc-bach-2d9fcbf59f",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-water-puppet-theatre",
@@ -11425,7 +11541,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "attraction",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-nha-hat-mua-roi-thang-long-bee079cc3d",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-place-west-lake",
@@ -11458,7 +11576,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHanoi"
+      "heroImageName": "HeroCityHanoi",
+      "audioKey": "audio-authored-ho-tay-e93d0b9507",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hanoi-reservation-tam-vi",
@@ -15812,7 +15932,9 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "fine-dining",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-anan-sai-gon-d937cbff91",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-bach-dang-wharf",
@@ -15845,7 +15967,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-ben-bach-dang-566a5d22c4",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-ben-thanh-market",
@@ -15877,7 +16001,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-cho-ben-thanh-e903b82c55",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-binh-tay-market",
@@ -15910,7 +16036,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-cho-binh-tay-4e1f45d293",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-bitexco-tower",
@@ -15943,7 +16071,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-toa-nha-bitexco-ce74d5e48b",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-bui-vien-street",
@@ -15976,7 +16106,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-pho-bui-vien-120e855cda",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-cho-lon",
@@ -16009,7 +16141,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-cho-lon-108164c159",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-district-1",
@@ -16042,7 +16176,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-quan-1-654f4c2a3f",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-dong-khoi-street",
@@ -16075,7 +16211,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-duong-dong-khoi-c023621487",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-fine-arts-museum",
@@ -16108,7 +16246,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-bao-tang-my-thuat-7c89469d5f",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-ho-thi-ky-flower-market",
@@ -16141,7 +16281,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-cho-hoa-ho-thi-ky-6c536fe596",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-independence-palace",
@@ -16173,7 +16315,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-dinh-doc-lap-1772cc060a",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-jade-emperor-pagoda",
@@ -16206,7 +16350,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-chua-ngoc-hoang-44ffea01a3",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-landmark-81",
@@ -16239,7 +16385,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-landmark-81-23977f8a15",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-le-thanh-ton-street",
@@ -16272,7 +16420,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-duong-le-thanh-ton-da11debdb4",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-nguyen-hue",
@@ -16304,7 +16454,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-pho-di-bo-nguyen-hue-2bf0e11ba1",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-nguyen-trai-street",
@@ -16337,7 +16489,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-duong-nguyen-trai-02c6b2e488",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-notre-dame",
@@ -16369,7 +16523,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-nha-tho-duc-ba-sai-gon-65fbc315f7",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-opera-house",
@@ -16402,7 +16558,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-nha-hat-thanh-pho-ce9596ab88",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-pasteur-street",
@@ -16435,7 +16593,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-duong-pasteur-67fc5488cf",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-pham-ngu-lao-street",
@@ -16468,7 +16628,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-pho-pham-ngu-lao-98f8f45da5",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-pho-hoa-pasteur",
@@ -16502,7 +16664,9 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "iconic",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-pho-hoa-pasteur-8a55612d65",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-post-office",
@@ -16534,7 +16698,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-buu-dien-thanh-pho-d72b512408",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-saigon-river",
@@ -16567,7 +16733,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "river",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-song-sai-gon-76ad5580da",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-tan-son-nhat-airport",
@@ -16600,7 +16768,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "airport",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-san-bay-tan-son-nhat-eece10f965",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-tao-dan-park",
@@ -16633,7 +16803,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "park",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-cong-vien-tao-dan-5bef9b2155",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-thao-dien",
@@ -16666,7 +16838,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-thao-dien-7bbac64f94",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-turtle-lake",
@@ -16699,7 +16873,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-ho-con-rua-05c5dc7f57",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-war-remnants-museum",
@@ -16732,7 +16908,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-bao-tang-chung-tich-chien-tranh-2b98ad2fdc",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-place-zoo-botanical-gardens",
@@ -16765,7 +16943,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "park",
-      "heroImageName": "HeroCityHcmc"
+      "heroImageName": "HeroCityHcmc",
+      "audioKey": "audio-authored-thao-cam-vien-sai-gon-d9cacc4157",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hcmc-reservation-anan",
@@ -20533,7 +20713,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "beach",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-bien-an-bang-75a08f8df0",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-an-hoi-island",
@@ -20566,7 +20748,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-dao-an-hoi-caf3fa03f4",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-ancient-town",
@@ -20598,7 +20782,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-pho-co-hoi-an-dad0e3f293",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-banh-mi-phuong",
@@ -20631,7 +20817,9 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "iconic",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-banh-mi-phuong-db1ed9143b",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-bay-mau-coconut-forest",
@@ -20664,7 +20852,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-rung-dua-bay-mau-86616e4ba7",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-cam-chau",
@@ -20697,7 +20887,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-cam-chau-65e81d1042",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-cam-nam",
@@ -20730,7 +20922,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-cam-nam-c0265f2b60",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-cam-thanh-coconut-village",
@@ -20763,7 +20957,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-lang-dua-cam-thanh-b392e21530",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-cao-lau-city",
@@ -20797,7 +20993,9 @@
       "pageKind": "dish",
       "placeKind": "dish",
       "contentRole": "dish-anchor",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-cao-lau-o-hoi-an-60088f31fc",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-cham-islands",
@@ -20830,7 +21028,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-cu-lao-cham-a56d294df0",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-cua-dai-beach",
@@ -20863,7 +21063,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "beach",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-bien-cua-dai-973f406ec5",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-faifo-coffee",
@@ -20897,7 +21099,9 @@
       "pageKind": "restaurant",
       "placeKind": "cafe",
       "contentRole": "cafe",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-faifo-coffee-7e9cf20535",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-fujian-assembly-hall",
@@ -20930,7 +21134,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-hoi-quan-phuc-kien-9b940f7920",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-hoai-river",
@@ -20963,7 +21169,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-song-hoai-b43d44c10a",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-japanese-bridge",
@@ -20995,7 +21203,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-chua-cau-1a150570a2",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-kim-bong-carpentry-village",
@@ -21028,7 +21238,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-lang-moc-kim-bong-d04a2fccd8",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-market",
@@ -21060,7 +21272,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-cho-hoi-an-21c54be924",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-memories-land",
@@ -21093,7 +21307,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "attraction",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-dao-ky-uc-hoi-an-334d77090b",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-morning-glory",
@@ -21128,7 +21344,9 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "everyday",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-morning-glory-hoi-an-23a4c1cd06",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-my-son-sanctuary",
@@ -21161,7 +21379,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-thanh-dia-my-son-753e846337",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-nguyen-hoang-night-market",
@@ -21194,7 +21414,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-cho-dem-nguyen-hoang-a985d67a93",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-night-market",
@@ -21227,7 +21449,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-cho-dem-hoi-an-49ee15d5c0",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-precious-heritage-museum",
@@ -21260,7 +21484,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-bao-tang-di-san-vo-gia-9626caf2e0",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-quan-cong-temple",
@@ -21293,7 +21519,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-mieu-quan-cong-6eb9694a92",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-reach-out-tea-house",
@@ -21327,7 +21555,9 @@
       "pageKind": "restaurant",
       "placeKind": "cafe",
       "contentRole": "cafe",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-reaching-out-tea-house-66e6535b2f",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-tan-ky-old-house",
@@ -21360,7 +21590,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-nha-co-tan-ky-b4e3c45de2",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-thanh-ha",
@@ -21393,7 +21625,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-lang-gom-thanh-ha-3243968343",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-thu-bon-river",
@@ -21426,7 +21660,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "river",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-song-thu-bon-21ccb108aa",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-tra-que",
@@ -21459,7 +21695,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-lang-rau-tra-que-7657234b1c",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-place-tran-phu-street",
@@ -21492,7 +21730,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHoian"
+      "heroImageName": "HeroCityHoian",
+      "audioKey": "audio-authored-pho-tran-phu-1b1635024b",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hoian-reservation-morning-glory",
@@ -25776,7 +26016,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-cho-an-cuu-8be5ddeb54",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-an-dinh-palace",
@@ -25809,7 +26051,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-cung-an-dinh-2f846e7509",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-bao-vinh-ancient-town",
@@ -25842,7 +26086,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-pho-co-bao-vinh-32eb0a803a",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-bun-bo-city",
@@ -25993,7 +26239,9 @@
           }
         ]
       },
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-bun-bo-hue-d24e6940ff",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-dong-ba",
@@ -26025,7 +26273,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-cho-dong-ba-9912a894df",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-dong-khanh-tomb",
@@ -26058,7 +26308,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-lang-dong-khanh-0a174d31f6",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-gia-long-tomb",
@@ -26091,7 +26343,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-lang-gia-long-c74f2689ef",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-hen-island",
@@ -26124,7 +26378,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-con-hen-4f60ff1af2",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-huyen-tran-temple",
@@ -26157,7 +26413,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-den-huyen-tran-3698ce4246",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-imperial-city",
@@ -26189,7 +26447,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-kinh-thanh-hue-de5f6bd582",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-khai-dinh-tomb",
@@ -26222,7 +26482,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-lang-khai-dinh-f288b1b267",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-le-loi-street",
@@ -26255,7 +26517,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-duong-le-loi-01f6855c42",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-les-jardins",
@@ -26290,7 +26554,9 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "everyday",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-les-jardins-de-la-carambole-f6ee3d6d4e",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-minh-mang-tomb",
@@ -26323,7 +26589,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-lang-minh-mang-72102727f8",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-nguyen-dinh-chieu-street",
@@ -26356,7 +26624,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-pho-di-bo-nguyen-dinh-chieu-44a42a9d42",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-night-market",
@@ -26389,7 +26659,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-cho-dem-hue-4bf5e32962",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-perfume-river",
@@ -26421,7 +26693,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "river",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-song-huong-c35e0a05ca",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-phu-bai-airport",
@@ -26454,7 +26728,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "airport",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-san-bay-phu-bai-d5c67cd22a",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-phu-cam-church",
@@ -26487,7 +26763,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-nha-tho-phu-cam-aa283c1b46",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-railway-station",
@@ -26520,7 +26798,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "station",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-ga-hue-de638a95f8",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-royal-antiquities-museum",
@@ -26553,7 +26833,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-bao-tang-co-vat-cung-dinh-hue-f79a38abcb",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-thanh-toan-bridge",
@@ -26586,7 +26868,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-cau-ngoi-thanh-toan-6e6b5a9eec",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-thien-mu",
@@ -26618,7 +26902,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-chua-thien-mu-701da3ec1f",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-thuy-xuan-incense-village",
@@ -26651,7 +26937,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-lang-huong-thuy-xuan-a4e21804da",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-truong-tien",
@@ -26683,7 +26971,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-cau-truong-tien-457b4dcf02",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-tu-duc-tomb",
@@ -26716,7 +27006,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-lang-tu-duc-da4ab18573",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-tu-hieu-pagoda",
@@ -26749,7 +27041,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-chua-tu-hieu-d2a26763e6",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-vong-canh-hill",
@@ -26782,7 +27076,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-doi-vong-canh-973c1cfd1f",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-place-walking-street",
@@ -26815,7 +27111,9 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHue"
+      "heroImageName": "HeroCityHue",
+      "audioKey": "audio-authored-pho-di-bo-hue-a8bcc9ad7d",
+      "audioStatus": "ready"
     },
     {
       "id": "city-hue-reservation-les-jardins",
