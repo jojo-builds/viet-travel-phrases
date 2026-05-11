@@ -193,10 +193,6 @@ struct AppShellView: View {
 
                 forwardPreviewPage(width: pageWidth)
             }
-            .animation(.snappy(duration: 0.34), value: navigation.detailPath)
-            .animation(.snappy(duration: 0.34), value: navigation.browseCollectionPath)
-            .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: navigation.isSearchPresented)
-            .animation(.snappy(duration: 0.24), value: navigation.forwardStack)
             .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
                 let nextState = PinnedAudioSpeedChromePolicy.state(
                     for: anchors,

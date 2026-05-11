@@ -799,28 +799,39 @@ final class VietSQLiteLanguagePackRepository {
             .map(Self.searchComparableText)
             .filter { !$0.isEmpty }
         var seenPageIDs = Set<String>()
-        return rawResults.filter { result in
-            seenPageIDs.insert(result.pageID).inserted
-        }
-        .enumerated()
-        .sorted { left, right in
-            let leftPrimaryScore = Self.searchIdentityScore(for: left.element, normalizedQueries: primaryRankingQueries)
-            let rightPrimaryScore = Self.searchIdentityScore(for: right.element, normalizedQueries: primaryRankingQueries)
-
-            if leftPrimaryScore != rightPrimaryScore {
-                return leftPrimaryScore > rightPrimaryScore
+        let scoredResults = rawResults.enumerated().compactMap { offset, result -> SearchScoredResult? in
+            guard seenPageIDs.insert(result.pageID).inserted else {
+                return nil
             }
 
-            let leftScore = Self.searchIdentityScore(for: left.element, normalizedQueries: normalizedQueries)
-            let rightScore = Self.searchIdentityScore(for: right.element, normalizedQueries: normalizedQueries)
+            let identityText = Self.searchIdentityText(for: result)
+            return SearchScoredResult(
+                result: result,
+                offset: offset,
+                primaryScore: Self.searchIdentityScore(
+                    for: identityText,
+                    normalizedQueries: primaryRankingQueries
+                ),
+                secondaryScore: Self.searchIdentityScore(
+                    for: identityText,
+                    normalizedQueries: normalizedQueries
+                )
+            )
+        }
 
-            if leftScore == rightScore {
+        return scoredResults
+        .sorted { left, right in
+            if left.primaryScore != right.primaryScore {
+                return left.primaryScore > right.primaryScore
+            }
+
+            if left.secondaryScore == right.secondaryScore {
                 return left.offset < right.offset
             }
 
-            return leftScore > rightScore
+            return left.secondaryScore > right.secondaryScore
         }
-        .map(\.element)
+        .map(\.result)
         .prefix(limit)
         .map { $0 }
     }
@@ -1396,11 +1407,22 @@ final class VietSQLiteLanguagePackRepository {
             .joined(separator: " ")
     }
 
-    private static func searchIdentityScore(for result: PhraseSearchResult, normalizedQuery: String) -> Int {
-        guard !normalizedQuery.isEmpty else {
-            return 0
-        }
+    private struct SearchIdentityText {
+        let title: String
+        let subtitle: String
+        let titleTokens: [Substring]
+        let subtitleTokens: [Substring]
+        let shortestTokenCount: Int
+    }
 
+    private struct SearchScoredResult {
+        let result: PhraseSearchResult
+        let offset: Int
+        let primaryScore: Int
+        let secondaryScore: Int
+    }
+
+    private static func searchIdentityText(for result: PhraseSearchResult) -> SearchIdentityText {
         let title = searchComparableText(result.title)
         let subtitle = searchComparableText(result.subtitle)
         let titleTokens = title.split(separator: " ")
@@ -1409,6 +1431,27 @@ final class VietSQLiteLanguagePackRepository {
             titleTokens.isEmpty ? Int.max : titleTokens.count,
             subtitleTokens.isEmpty ? Int.max : subtitleTokens.count
         )
+
+        return SearchIdentityText(
+            title: title,
+            subtitle: subtitle,
+            titleTokens: titleTokens,
+            subtitleTokens: subtitleTokens,
+            shortestTokenCount: shortestTokenCount
+        )
+    }
+
+    private static func searchIdentityScore(for result: PhraseSearchResult, normalizedQuery: String) -> Int {
+        searchIdentityScore(for: searchIdentityText(for: result), normalizedQuery: normalizedQuery)
+    }
+
+    private static func searchIdentityScore(for identityText: SearchIdentityText, normalizedQuery: String) -> Int {
+        guard !normalizedQuery.isEmpty else {
+            return 0
+        }
+
+        let title = identityText.title
+        let subtitle = identityText.subtitle
         var score = 0
 
         if title == normalizedQuery {
@@ -1427,11 +1470,11 @@ final class VietSQLiteLanguagePackRepository {
             score += 2_800
         }
 
-        if titleTokens.contains(Substring(normalizedQuery)) {
+        if identityText.titleTokens.contains(Substring(normalizedQuery)) {
             score += 2_400
         }
 
-        if subtitleTokens.contains(Substring(normalizedQuery)) {
+        if identityText.subtitleTokens.contains(Substring(normalizedQuery)) {
             score += 2_200
         }
 
@@ -1443,8 +1486,8 @@ final class VietSQLiteLanguagePackRepository {
             score += 1_600
         }
 
-        if score > 0, shortestTokenCount != Int.max {
-            score += max(0, 500 - shortestTokenCount * 40)
+        if score > 0, identityText.shortestTokenCount != Int.max {
+            score += max(0, 500 - identityText.shortestTokenCount * 40)
         }
 
         let tokenScore = searchVisibleTokenScore(
@@ -1458,8 +1501,12 @@ final class VietSQLiteLanguagePackRepository {
     }
 
     private static func searchIdentityScore(for result: PhraseSearchResult, normalizedQueries: [String]) -> Int {
+        searchIdentityScore(for: searchIdentityText(for: result), normalizedQueries: normalizedQueries)
+    }
+
+    private static func searchIdentityScore(for identityText: SearchIdentityText, normalizedQueries: [String]) -> Int {
         normalizedQueries
-            .map { searchIdentityScore(for: result, normalizedQuery: $0) }
+            .map { searchIdentityScore(for: identityText, normalizedQuery: $0) }
             .max() ?? 0
     }
 
