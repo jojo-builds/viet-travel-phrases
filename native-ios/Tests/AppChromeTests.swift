@@ -1237,6 +1237,7 @@ final class AppChromeTests: XCTestCase {
             for group in cityHub.browseGroups {
                 XCTAssertFalse(group.items.isEmpty, "\(descriptor.title) \(group.title) should drill into entity rows")
                 XCTAssertTrue(group.items.allSatisfy { $0.pageID.contains("-place-") }, "\(descriptor.title) \(group.title) should start with noun/entity pages: \(group.items.map(\.pageID))")
+                XCTAssertTrue(group.items.allSatisfy { $0.audioKey != nil }, "\(descriptor.title) \(group.title) noun rows should have playable audio keys")
                 XCTAssertFalse(group.items.contains { item in
                     item.title.localizedCaseInsensitiveContains("ở đâu")
                         || item.subtitle.localizedCaseInsensitiveContains("where is")
