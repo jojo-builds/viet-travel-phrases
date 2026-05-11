@@ -144,13 +144,11 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
-                    isInPractice: intentStore.isPageInPractice(PhrasePage.xinChao.id),
                     heroMorphPageID: homePhraseHeroMorphPageID,
                     heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
                     onBackTapped: {},
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
-                    onTogglePractice: { intentStore.togglePracticePage(PhrasePage.xinChao.id) },
                     onDetailTapped: openDetail
                 )
                 .allowsHitTesting(navigation.currentRoute == .phrasePage && !isPreviewingForwardPage)
@@ -287,7 +285,8 @@ struct AppShellView: View {
             if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
                 BrowseCollectionPageView(
                     descriptor: descriptor,
-                    scrollToTopTrigger: isActive ? navigation.browseCollectionScrollToTopTrigger : 0,
+                    scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
+                    scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -318,7 +317,8 @@ struct AppShellView: View {
                 xinChaoListingView(
                     routePageID: renderedPage.pageID,
                     initialScrollTarget: launchDetailScrollTarget,
-                    scrollToTopTrigger: isActive ? navigation.detailScrollToTopTrigger : 0,
+                    scrollToTopTrigger: navigation.detailScrollToTopTrigger,
+                    scrollToTopRoute: navigation.detailScrollToTopRoute,
                     onBackTapped: goBack
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
@@ -337,19 +337,18 @@ struct AppShellView: View {
                 PhraseDetailView(
                     page: detailPage,
                     initialScrollTarget: launchDetailScrollTarget,
-                    scrollToTopTrigger: isActive ? navigation.detailScrollToTopTrigger : 0,
+                    scrollToTopTrigger: navigation.detailScrollToTopTrigger,
+                    scrollToTopRoute: navigation.detailScrollToTopRoute,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
-                    isInPractice: intentStore.isPageInPractice(renderedPage.pageID),
                     heroMorphPageID: homePhraseHeroMorphPageID,
                     heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(renderedPage.pageID) },
-                    onTogglePractice: { intentStore.togglePracticePage(renderedPage.pageID) },
                     onDetailTapped: openDetail
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
@@ -433,6 +432,7 @@ struct AppShellView: View {
                 BrowseCollectionPageView(
                     descriptor: descriptor,
                     scrollToTopTrigger: 0,
+                    scrollToTopRoute: nil,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -463,11 +463,9 @@ struct AppShellView: View {
                 showsChrome: false,
                 topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                 isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
-                isInPractice: intentStore.isPageInPractice(PhrasePage.xinChao.id),
                 onBackTapped: {},
                 onSearchTapped: openSearch,
                 onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
-                onTogglePractice: { intentStore.togglePracticePage(PhrasePage.xinChao.id) },
                 onDetailTapped: openDetail
             )
         case .detailPage(let detailPageID):
@@ -486,11 +484,9 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(detailPageID),
-                    isInPractice: intentStore.isPageInPractice(detailPageID),
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(detailPageID) },
-                    onTogglePractice: { intentStore.togglePracticePage(detailPageID) },
                     onDetailTapped: openDetail
                 )
             }
@@ -514,6 +510,7 @@ struct AppShellView: View {
         routePageID: String,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int,
+        scrollToTopRoute: AppRoute? = nil,
         onBackTapped: @escaping () -> Void
     ) -> some View {
         PhraseListingView(
@@ -521,18 +518,17 @@ struct AppShellView: View {
             chromeRoute: .detailPage(routePageID),
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
+            scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: navigation.isSearchPresented,
             showsChrome: false,
             topChromeContentClearance: pinnedAudioSpeedScrollClearance,
             isSaved: intentStore.isPageSaved(routePageID),
-            isInPractice: intentStore.isPageInPractice(routePageID),
             heroMorphPageID: homePhraseHeroMorphPageID,
             heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: openSearch,
             onToggleSaved: { intentStore.toggleSavedPage(routePageID) },
-            onTogglePractice: { intentStore.togglePracticePage(routePageID) },
             onDetailTapped: openDetail
         )
     }
@@ -549,10 +545,14 @@ struct AppShellView: View {
     }
 
     private var showsStaticBackButton: Bool {
-        navigation.currentRoute != .home
-            && navigation.currentRoute != .browse
-            && navigation.currentRoute != .practice
-            && navigation.currentRoute != .search
+        switch navigation.currentRoute {
+        case .home, .browse, .search:
+            return false
+        case .practice:
+            return navigation.hasExplicitBackHistory
+        case .browseCollection, .phrasePage, .saved, .detailPage:
+            return true
+        }
     }
 
     private var showsPinnedAudioSpeedControl: Bool {
@@ -1060,7 +1060,7 @@ struct AppShellView: View {
 
     private func searchOriginForegroundButton(kind: DockItemKind) -> some View {
         Button {
-            performDockAction(kind)
+            closeSearch()
         } label: {
             Image(systemName: kind.symbolName)
                 .font(.title3.weight(.semibold))
@@ -1133,7 +1133,7 @@ struct AppShellView: View {
 
     private func searchOriginFallbackButton(kind: DockItemKind) -> some View {
         Button {
-            performDockAction(kind)
+            closeSearch()
         } label: {
             Image(systemName: kind.symbolName)
                 .font(.title3.weight(.semibold))
@@ -1808,19 +1808,45 @@ struct AppShellView: View {
     }
 }
 
+private struct AppShellNavigationSnapshot: Equatable {
+    var rootRoute: AppRoute
+    var browseCollectionPath: [BrowseCollectionRoute]
+    var detailPath: [String]
+    var isSearchPresented: Bool
+
+    var currentRoute: AppRoute {
+        if isSearchPresented {
+            return .search
+        }
+
+        if let detailPageID = detailPath.last {
+            return .detailPage(detailPageID)
+        }
+
+        if let collectionRoute = browseCollectionPath.last {
+            return .browseCollection(collectionRoute)
+        }
+
+        return rootRoute
+    }
+}
+
 struct AppShellNavigationState: Equatable {
     var rootRoute: AppRoute
     var browseCollectionPath: [BrowseCollectionRoute]
     var detailPath: [String]
     var isSearchPresented: Bool
     var forwardStack: [AppRoute] = []
+    private var backStack: [AppShellNavigationSnapshot] = []
     var homeScrollToTopTrigger = 0
     var browseScrollToTopTrigger = 0
     var rootScrollToTopTrigger = 0
     var savedScrollToTopTrigger = 0
     var practiceScrollToTopTrigger = 0
     var browseCollectionScrollToTopTrigger = 0
+    var browseCollectionScrollToTopRoute: BrowseCollectionRoute?
     var detailScrollToTopTrigger = 0
+    var detailScrollToTopRoute: AppRoute?
 
     init(initialRoute: AppRoute = .home) {
         rootRoute = .home
@@ -1896,6 +1922,10 @@ struct AppShellNavigationState: Equatable {
             return .browseCollection(browseCollectionPath[browseCollectionPath.count - 2])
         }
 
+        if let previousRoute = backStack.last?.currentRoute {
+            return previousRoute
+        }
+
         if rootRoute == .browse || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice {
             return .home
         }
@@ -1909,6 +1939,10 @@ struct AppShellNavigationState: Equatable {
 
     var canGoForward: Bool {
         forwardPreviewRoute != nil
+    }
+
+    var hasExplicitBackHistory: Bool {
+        !backStack.isEmpty
     }
 
     private var routeBelowSearch: AppRoute {
@@ -1956,7 +1990,43 @@ struct AppShellNavigationState: Equatable {
     }
 
     var canNavigateBackWithSwipe: Bool {
-        isSearchPresented || !detailPath.isEmpty || !browseCollectionPath.isEmpty || rootRoute == .browse || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice
+        isSearchPresented
+            || !detailPath.isEmpty
+            || !browseCollectionPath.isEmpty
+            || !backStack.isEmpty
+            || rootRoute == .browse
+            || rootRoute == .phrasePage
+            || rootRoute == .saved
+            || rootRoute == .practice
+    }
+
+    private var currentSnapshot: AppShellNavigationSnapshot {
+        AppShellNavigationSnapshot(
+            rootRoute: rootRoute,
+            browseCollectionPath: browseCollectionPath,
+            detailPath: detailPath,
+            isSearchPresented: isSearchPresented
+        )
+    }
+
+    private mutating func recordCurrentRouteForBackHistory() {
+        guard !isSearchPresented else {
+            return
+        }
+
+        let snapshot = currentSnapshot
+        guard backStack.last != snapshot else {
+            return
+        }
+
+        backStack.append(snapshot)
+    }
+
+    private mutating func restore(_ snapshot: AppShellNavigationSnapshot) {
+        rootRoute = snapshot.rootRoute
+        browseCollectionPath = snapshot.browseCollectionPath
+        detailPath = snapshot.detailPath
+        isSearchPresented = snapshot.isSearchPresented
     }
 
     mutating func openDetail(_ id: String) {
@@ -1988,6 +2058,7 @@ struct AppShellNavigationState: Equatable {
         isSearchPresented = false
         forwardStack.removeAll()
         detailPath.append(canonicalPageID)
+        detailScrollToTopRoute = .detailPage(canonicalPageID)
         detailScrollToTopTrigger += 1
     }
 
@@ -1997,6 +2068,7 @@ struct AppShellNavigationState: Equatable {
             return
         }
 
+        recordCurrentRouteForBackHistory()
         rootRoute = .home
         browseCollectionPath.removeAll()
         detailPath.removeAll()
@@ -2011,6 +2083,7 @@ struct AppShellNavigationState: Equatable {
             return
         }
 
+        recordCurrentRouteForBackHistory()
         rootRoute = .browse
         browseCollectionPath.removeAll()
         detailPath.removeAll()
@@ -2025,6 +2098,7 @@ struct AppShellNavigationState: Equatable {
             return
         }
 
+        recordCurrentRouteForBackHistory()
         rootRoute = .saved
         browseCollectionPath.removeAll()
         detailPath.removeAll()
@@ -2039,6 +2113,7 @@ struct AppShellNavigationState: Equatable {
             return
         }
 
+        recordCurrentRouteForBackHistory()
         rootRoute = .practice
         browseCollectionPath.removeAll()
         detailPath.removeAll()
@@ -2058,6 +2133,7 @@ struct AppShellNavigationState: Equatable {
 
     mutating func openBrowseCollection(_ route: BrowseCollectionRoute) {
         guard currentRoute != .browseCollection(route) else {
+            browseCollectionScrollToTopRoute = route
             browseCollectionScrollToTopTrigger += 1
             isSearchPresented = false
             return
@@ -2071,11 +2147,13 @@ struct AppShellNavigationState: Equatable {
         if browseCollectionPath.last != route {
             browseCollectionPath.append(route)
         }
+        browseCollectionScrollToTopRoute = route
         browseCollectionScrollToTopTrigger += 1
     }
 
     mutating func openHomeBrowseCollection(_ route: BrowseCollectionRoute) {
         guard currentRoute != .browseCollection(route) else {
+            browseCollectionScrollToTopRoute = route
             browseCollectionScrollToTopTrigger += 1
             isSearchPresented = false
             return
@@ -2089,6 +2167,7 @@ struct AppShellNavigationState: Equatable {
         if browseCollectionPath.last != route {
             browseCollectionPath.append(route)
         }
+        browseCollectionScrollToTopRoute = route
         browseCollectionScrollToTopTrigger += 1
     }
 
@@ -2102,6 +2181,12 @@ struct AppShellNavigationState: Equatable {
         guard !detailPath.isEmpty else {
             if let currentCollection = browseCollectionPath.popLast() {
                 forwardStack.append(.browseCollection(currentCollection))
+                return
+            }
+
+            if let previousSnapshot = backStack.popLast() {
+                forwardStack.append(currentRoute)
+                restore(previousSnapshot)
                 return
             }
 
@@ -2139,12 +2224,14 @@ struct AppShellNavigationState: Equatable {
 
         switch route {
         case .home:
+            recordCurrentRouteForBackHistory()
             isSearchPresented = false
             browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .home
             homeScrollToTopTrigger += 1
         case .browse:
+            recordCurrentRouteForBackHistory()
             isSearchPresented = false
             browseCollectionPath.removeAll()
             detailPath.removeAll()
@@ -2157,6 +2244,7 @@ struct AppShellNavigationState: Equatable {
 
             if browseCollectionPath.last != route {
                 browseCollectionPath.append(route)
+                browseCollectionScrollToTopRoute = route
                 browseCollectionScrollToTopTrigger += 1
             }
         case .phrasePage:
@@ -2166,12 +2254,14 @@ struct AppShellNavigationState: Equatable {
             rootRoute = .phrasePage
             rootScrollToTopTrigger += 1
         case .saved:
+            recordCurrentRouteForBackHistory()
             isSearchPresented = false
             browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .saved
             savedScrollToTopTrigger += 1
         case .practice:
+            recordCurrentRouteForBackHistory()
             isSearchPresented = false
             browseCollectionPath.removeAll()
             detailPath.removeAll()
@@ -2186,6 +2276,7 @@ struct AppShellNavigationState: Equatable {
 
             if detailPath.last != canonicalPageID {
                 detailPath.append(canonicalPageID)
+                detailScrollToTopRoute = .detailPage(canonicalPageID)
                 detailScrollToTopTrigger += 1
             }
         case .search:

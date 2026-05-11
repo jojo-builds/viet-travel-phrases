@@ -589,7 +589,9 @@ final class VietSQLiteLanguagePackRepository {
           pct.city_id,
           c.title,
           pct.subcategory_id,
-          cs.title
+          cs.title,
+          pct.page_kind,
+          pct.place_kind
         FROM phrase_city_tag pct
         JOIN phrase p ON p.id = pct.phrase_id
         JOIN phrase_page pp ON pp.phrase_id = p.id
@@ -627,7 +629,9 @@ final class VietSQLiteLanguagePackRepository {
                 cityID: Self.stringColumn(statement, index: 7),
                 cityName: Self.stringColumn(statement, index: 8),
                 subcategoryID: Self.stringColumn(statement, index: 9),
-                subcategoryTitle: Self.stringColumn(statement, index: 10)
+                subcategoryTitle: Self.stringColumn(statement, index: 10),
+                pageKind: Self.stringColumn(statement, index: 11),
+                placeKind: Self.stringColumn(statement, index: 12)
             )
         }
     }
@@ -675,6 +679,25 @@ final class VietSQLiteLanguagePackRepository {
                 """),
             missingAudioAuditRows: try intValue("SELECT count(*) FROM missing_audio_audit;")
         )
+    }
+
+    func loadCityPageHeroImageNames() throws -> [String: String] {
+        let sql = """
+        SELECT
+          p.id,
+          COALESCE(pp.hero_image_name, '')
+        FROM phrase_page pp
+        JOIN phrase p ON p.id = pp.phrase_id
+        WHERE p.id LIKE 'city-%'
+        ORDER BY p.id;
+        """
+
+        return Dictionary(uniqueKeysWithValues: try rows(sql) { statement in
+            (
+                Self.stringColumn(statement, index: 0),
+                Self.stringColumn(statement, index: 1)
+            )
+        })
     }
 
     func canonicalPageID(forPhraseID phraseID: String) throws -> String {

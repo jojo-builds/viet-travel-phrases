@@ -10,18 +10,17 @@ struct PhraseListingView: View {
     let chromeRoute: AppRoute
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
-    let isInPractice: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
-    var onTogglePractice: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
 
     init(
@@ -29,36 +28,34 @@ struct PhraseListingView: View {
         chromeRoute: AppRoute = .phrasePage,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
+        scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
-        isInPractice: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
-        onTogglePractice: (() -> Void)? = nil,
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
         self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
+        self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
-        self.isInPractice = isInPractice
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
-        self.onTogglePractice = onTogglePractice
         self.onDetailTapped = onDetailTapped
     }
 
@@ -68,18 +65,17 @@ struct PhraseListingView: View {
             chromeRoute: chromeRoute,
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
+            scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
-            isInPractice: isInPractice,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
-            onTogglePractice: onTogglePractice,
             onDetailTapped: onDetailTapped
         )
     }
@@ -90,18 +86,17 @@ struct PhraseArticleTemplateView: View {
     let chromeRoute: AppRoute
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
-    let isInPractice: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
-    var onTogglePractice: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
     @State private var didApplyInitialScrollTarget = false
 
@@ -110,36 +105,34 @@ struct PhraseArticleTemplateView: View {
         chromeRoute: AppRoute,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
+        scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
-        isInPractice: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
-        onTogglePractice: (() -> Void)? = nil,
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
         self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
+        self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
-        self.isInPractice = isInPractice
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
-        self.onTogglePractice = onTogglePractice
         self.onDetailTapped = onDetailTapped
     }
 
@@ -182,6 +175,10 @@ struct PhraseArticleTemplateView: View {
                     }
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
+                    guard scrollToTopRoute == nil || scrollToTopRoute == chromeRoute else {
+                        return
+                    }
+
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
                 .task {
@@ -254,18 +251,6 @@ struct PhraseArticleTemplateView: View {
                     )
                     .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
-
-                if let onTogglePractice {
-                    PhrasePracticeIntentButton(
-                        isInPractice: isInPractice,
-                        label: page.practiceCTALabel ?? "Add to practice",
-                        onTogglePractice: onTogglePractice
-                    )
-                    .padding(.top, 4)
-                    .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
-                    .allowsHitTesting(!holdsArticleContentForHomeMorph)
-                    .animation(HomePhraseHeroMorphTiming.articleRevealAnimation, value: holdsArticleContentForHomeMorph)
-                }
             }
             .padding(.horizontal, 24)
             .padding(.top, usesCompactPhraseHero ? 20 : PhrasePageStyle.heroTextTopPadding)
@@ -680,35 +665,6 @@ private struct ArticleCallout: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .stroke(tint.color.opacity(0.22), lineWidth: 1)
         }
-    }
-}
-
-private struct PhrasePracticeIntentButton: View {
-    let isInPractice: Bool
-    let label: String
-    let onTogglePractice: () -> Void
-
-    var body: some View {
-        Button {
-            onTogglePractice()
-        } label: {
-            HStack(spacing: 10) {
-                Image(systemName: isInPractice ? "checkmark.circle.fill" : "plus.circle.fill")
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.red)
-
-                Text(isInPractice ? "In practice pool" : label)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.primary)
-
-                Spacer()
-            }
-            .padding(.horizontal, 16)
-            .frame(height: 52)
-            .phraseListCard(cornerRadius: 20, strokeOpacity: 0.05)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(isInPractice ? "Remove from practice pool" : label)
     }
 }
 

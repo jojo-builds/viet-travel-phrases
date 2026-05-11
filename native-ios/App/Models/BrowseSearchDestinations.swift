@@ -93,6 +93,14 @@ private struct CitySituationCardSpec {
     let subcategoryIDs: [String]
 }
 
+private struct CityBrowseGroupSpec {
+    let id: String
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let placeKinds: Set<String>
+}
+
 struct BrowseDestination: Identifiable, Equatable {
     let id: String
     let title: String
@@ -310,6 +318,8 @@ struct BrowseCityCollectionItem: Equatable {
     let cityName: String
     let subcategoryID: String
     let subcategoryTitle: String
+    let pageKind: String
+    let placeKind: String
 
     var phraseItem: BrowseSearchPhraseItem {
         BrowseSearchPhraseItem(
@@ -458,11 +468,11 @@ enum BrowseSearchDestinations {
         ),
         BrowseDestination(
             id: "polite-repair",
-            title: "Polite repair",
-            subtitle: "Fix misunderstandings politely.",
+            title: "When You Don't Understand",
+            subtitle: "Ask people to repeat, slow down, write it, or use English.",
             categoryIDs: ["understanding-repair", "polite-basics", "problems-help"],
-            symbolName: "heart",
-            tintName: .red,
+            symbolName: "questionmark.bubble.fill",
+            tintName: .green,
             sampleQuery: "i don't understand",
             preferredPageIDs: ["viet-family-repair-understand", "viet-family-repair-meaning"]
         ),
@@ -1196,32 +1206,115 @@ enum BrowseSearchDestinations {
         tintName: AccentTint,
         groupedItems: [String: [BrowseCityCollectionItem]]
     ) -> [BrowseCollectionSubcategory] {
-        let specs: [(String, String, String, String, BrowseCollectionRoute)] = [
-            ("arrivals-routes", "Arrivals", "Airport, station, pickup", "airplane.arrival", .category("airport")),
-            ("getting-around", "Getting around", "Taxi, Grab, directions", "car.fill", .category("getting-around")),
-            ("landmarks-attractions", "Landmarks", "Places, tickets, photos", "building.columns.fill", .category("city-guides")),
-            ("neighborhoods-streets", "Streets", "Street names and drop-off", "signpost.right.fill", .category("getting-around")),
-            ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .category("food")),
-            ("shopping-markets", "Markets", "Shopping, prices, pickup", "bag.fill", .category("shopping")),
-            ("practical-help-near-places", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .category("emergency")),
+        let specs: [CityBrowseGroupSpec] = [
+            CityBrowseGroupSpec(
+                id: "arrivals",
+                title: "Arrivals",
+                subtitle: "Airports, stations, ports",
+                symbolName: "airplane.arrival",
+                placeKinds: ["airport", "station", "port"]
+            ),
+            CityBrowseGroupSpec(
+                id: "landmarks",
+                title: "Landmarks",
+                subtitle: "Sights, temples, museums",
+                symbolName: "building.columns.fill",
+                placeKinds: ["landmark", "attraction", "museum"]
+            ),
+            CityBrowseGroupSpec(
+                id: "neighborhoods",
+                title: "Neighborhoods",
+                subtitle: "Areas and districts",
+                symbolName: "map.fill",
+                placeKinds: ["neighborhood"]
+            ),
+            CityBrowseGroupSpec(
+                id: "streets",
+                title: "Streets",
+                subtitle: "Street names and drop-off",
+                symbolName: "signpost.right.fill",
+                placeKinds: ["street"]
+            ),
+            CityBrowseGroupSpec(
+                id: "food-coffee",
+                title: "Food & coffee",
+                subtitle: "Restaurants, cafés, dishes",
+                symbolName: "cup.and.saucer.fill",
+                placeKinds: ["restaurant", "cafe", "dish"]
+            ),
+            CityBrowseGroupSpec(
+                id: "markets",
+                title: "Markets",
+                subtitle: "Markets and shopping stops",
+                symbolName: "bag.fill",
+                placeKinds: ["market"]
+            ),
+            CityBrowseGroupSpec(
+                id: "beaches-nature",
+                title: "Beaches & nature",
+                subtitle: "Beaches, parks, rivers",
+                symbolName: "water.waves",
+                placeKinds: ["beach", "nature", "park", "river", "village"]
+            ),
         ]
 
-        return specs.compactMap { subcategoryID, label, subtitle, symbolName, route in
-            let rows = groupedItems[subcategoryID, default: []]
-            guard !rows.isEmpty || ["getting-around"].contains(subcategoryID) else {
+        let entityRows = groupedItems.values.flatMap { $0 }
+        return specs.compactMap { spec in
+            let items = cityBrowseEntityItems(from: entityRows, matching: spec.placeKinds)
+            guard !items.isEmpty else {
                 return nil
             }
 
             return BrowseCollectionSubcategory(
-                id: "\(cityID).browse.\(subcategoryID)",
-                title: label,
-                subtitle: subtitle,
-                symbolName: symbolName,
+                id: "\(cityID).browse.\(spec.id)",
+                title: spec.title,
+                subtitle: spec.subtitle,
+                symbolName: spec.symbolName,
                 tintName: tintName,
-                phraseCount: rows.count,
-                items: rows.prefix(4).map(\.phraseItem),
+                phraseCount: items.count,
+                items: Array(items.prefix(4).map(\.phraseItem)),
                 targetRoute: nil
             )
+        }
+    }
+
+    private static func cityBrowseEntityItems(
+        from rows: [BrowseCityCollectionItem],
+        matching placeKinds: Set<String>
+    ) -> [BrowseCityCollectionItem] {
+        rows
+            .filter { item in
+                isBrowseEntityPageKind(item.pageKind)
+                    && placeKinds.contains(item.placeKind)
+                    && !lowPriorityCityOverviewText(item.title, item.subtitle)
+            }
+            .sorted { left, right in
+                if entitySortPriority(left) != entitySortPriority(right) {
+                    return entitySortPriority(left) < entitySortPriority(right)
+                }
+
+                if left.title.localizedCaseInsensitiveCompare(right.title) != .orderedSame {
+                    return left.title.localizedCaseInsensitiveCompare(right.title) == .orderedAscending
+                }
+
+                return left.pageID < right.pageID
+            }
+    }
+
+    private static func isBrowseEntityPageKind(_ pageKind: String) -> Bool {
+        ["place", "restaurant", "dish"].contains(pageKind)
+    }
+
+    private static func entitySortPriority(_ item: BrowseCityCollectionItem) -> Int {
+        switch item.pageKind {
+        case "place":
+            return 0
+        case "restaurant":
+            return 1
+        case "dish":
+            return 2
+        default:
+            return 9
         }
     }
 
@@ -1283,7 +1376,7 @@ enum BrowseSearchDestinations {
             return cachedItems
         }
 
-        let rows = (try? VietSQLiteLanguagePackRepository.bundled().loadBrowseCityCollectionItems(cityID: cityID, limit: 120))
+        let rows = (try? VietSQLiteLanguagePackRepository.bundled().loadBrowseCityCollectionItems(cityID: cityID, limit: 240))
             ?? fallbackCityCollectionItems(for: cityID)
         cityCollectionItemCache[cityID] = rows
         return rows
@@ -1294,7 +1387,8 @@ enum BrowseSearchDestinations {
             .filter { $0.pageID.contains("city-\(cityID)-") }
             .prefix(80)
             .map { item in
-                BrowseCityCollectionItem(
+                let pageKind = item.pageID.contains("-place-") ? "place" : "phrase"
+                return BrowseCityCollectionItem(
                     pageID: item.pageID,
                     title: item.title,
                     subtitle: item.subtitle,
@@ -1305,9 +1399,53 @@ enum BrowseSearchDestinations {
                     cityID: cityID,
                     cityName: cityShortcuts.first(where: { $0.id == cityID })?.title ?? cityID,
                     subcategoryID: "arrivals-routes",
-                    subcategoryTitle: "Arrivals and routes"
+                    subcategoryTitle: "Arrivals and routes",
+                    pageKind: pageKind,
+                    placeKind: pageKind == "place" ? fallbackPlaceKind(for: item) : ""
                 )
             }
+    }
+
+    private static func fallbackPlaceKind(for item: PhraseCatalogItem) -> String {
+        let text = normalize("\(item.pageID) \(item.title) \(item.subtitle)")
+
+        if text.contains("airport") {
+            return "airport"
+        }
+
+        if text.contains("station") {
+            return "station"
+        }
+
+        if text.contains("port") {
+            return "port"
+        }
+
+        if text.contains("street") {
+            return "street"
+        }
+
+        if text.contains("market") {
+            return "market"
+        }
+
+        if text.contains("cafe") || text.contains("coffee") || text.contains("restaurant") {
+            return "restaurant"
+        }
+
+        if text.contains("beach") {
+            return "beach"
+        }
+
+        if text.contains("park") {
+            return "park"
+        }
+
+        if text.contains("river") || text.contains("lake") {
+            return "river"
+        }
+
+        return "landmark"
     }
 
     private static func categorySubcategories(
@@ -1627,6 +1765,20 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "paying", title: "Paying", subtitle: "Bills, cards, and cash", categoryIDs: ["money-numbers-prices", "food-drink"], terms: ["bill", "pay", "card", "cash"], symbolName: "dongsign.circle.fill"),
             CollectionSubcategorySpec(id: "drinks", title: "Drinks", subtitle: "Coffee, tea, and water", categoryIDs: ["food-drink"], terms: ["coffee", "tea", "water", "drink"], symbolName: "cup.and.saucer.fill"),
         ],
+        "first-day": [
+            CollectionSubcategorySpec(id: "airport", title: "Airport", subtitle: "Arrival, bags, and SIM cards", categoryIDs: ["airport-border-arrival"], terms: [], symbolName: "airplane.arrival"),
+            CollectionSubcategorySpec(id: "hotel", title: "Hotel", subtitle: "Check-in and luggage", categoryIDs: ["hotel-accommodation"], terms: [], symbolName: "bed.double.fill"),
+            CollectionSubcategorySpec(id: "transport", title: "Transport", subtitle: "Pickup, taxis, and directions", categoryIDs: ["transport", "directions-navigation"], terms: [], symbolName: "car.fill"),
+        ],
+        "questions": [
+            CollectionSubcategorySpec(id: "directions", title: "Directions", subtitle: "Ask how to get there", categoryIDs: ["directions-navigation"], terms: [], symbolName: "location.north.fill"),
+            CollectionSubcategorySpec(id: "time", title: "Time", subtitle: "Dates, booking, and hours", categoryIDs: ["time-dates-booking"], terms: [], symbolName: "calendar"),
+            CollectionSubcategorySpec(id: "clarify", title: "Clarify", subtitle: "Repeat, slow down, or write it", categoryIDs: ["understanding-repair"], terms: [], symbolName: "questionmark.bubble.fill"),
+        ],
+        "numbers-money": [
+            CollectionSubcategorySpec(id: "payment", title: "Payment", subtitle: "Cards, cash, and QR", categoryIDs: ["money-numbers-prices"], terms: [], symbolName: "creditcard.fill"),
+            CollectionSubcategorySpec(id: "shopping", title: "Shopping", subtitle: "Prices, sizes, and receipts", categoryIDs: ["shopping"], terms: [], symbolName: "bag.fill"),
+        ],
         "shopping": [
             CollectionSubcategorySpec(id: "prices", title: "Prices", subtitle: "Ask costs and compare", categoryIDs: ["shopping", "money-numbers-prices"], terms: ["price", "cost", "much"], symbolName: "tag.fill"),
             CollectionSubcategorySpec(id: "sizes", title: "Sizes", subtitle: "Sizes, colors, and fit", categoryIDs: ["shopping"], terms: ["size", "color", "fit"], symbolName: "tshirt.fill"),
@@ -1645,13 +1797,18 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "safety", title: "Safety", subtitle: "Safer travel moments", categoryIDs: ["emergency-safety"], terms: ["safe", "police", "emergency"], symbolName: "shield.fill"),
             CollectionSubcategorySpec(id: "problems", title: "Problems", subtitle: "Lost items, billing, and help", categoryIDs: ["problems-help"], terms: ["lost", "problem", "manager"], symbolName: "wrench.and.screwdriver.fill"),
         ],
+        "polite-repair": [
+            CollectionSubcategorySpec(id: "clarify", title: "Clarify", subtitle: "Repeat, slow down, or write it", categoryIDs: ["understanding-repair"], terms: [], symbolName: "questionmark.bubble.fill"),
+            CollectionSubcategorySpec(id: "polite-basics", title: "Polite basics", subtitle: "Please, sorry, and thank you", categoryIDs: ["polite-basics"], terms: [], symbolName: "hand.wave.fill"),
+            CollectionSubcategorySpec(id: "get-help", title: "Get help", subtitle: "Ask for backup when stuck", categoryIDs: ["problems-help"], terms: [], symbolName: "ellipsis.bubble.fill"),
+        ],
     ]
 
     private static let categoryMastheadImages: [String: String] = [
-        "airport": "BrowseCollectionAirport",
-        "hotel": "BrowseCollectionHotel",
-        "food": "BrowseCollectionFood",
-        "shopping": "BrowseCollectionShopping",
+        "airport": "HeroCategoryAirport",
+        "hotel": "HeroCategoryHotel",
+        "food": "HeroCategoryFood",
+        "shopping": "HeroCategoryNumbersMoney",
         "getting-around": "HeroCategoryGettingAround",
         "first-day": "HeroCategoryFirstDay",
         "city-guides": "HeroCountryVietnam",
@@ -1660,7 +1817,7 @@ enum BrowseSearchDestinations {
         "essentials": "HeroCategoryEssentials",
         "greetings": "HeroCategoryGreetings",
         "questions": "HeroCategoryQuestions",
-        "numbers-money": "BrowseCollectionShopping",
+        "numbers-money": "HeroCategoryNumbersMoney",
         "polite-repair": "HeroCategoryPoliteRepair",
     ]
 
