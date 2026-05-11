@@ -177,22 +177,16 @@ private struct PracticeMessagesThreadProfileControl: View {
                 showsSymbol: true
             )
 
-            HStack(spacing: 4) {
-                Text(scenario.id.messageContactName)
-                    .font(.system(size: 14, weight: .bold))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.78)
-
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(.secondary)
-            }
-            .padding(.horizontal, 11)
-            .frame(height: PracticeMessagesThreadHeaderLayout.nameCapsuleHeight)
-            .nativeGlass(
-                cornerRadius: PracticeMessagesThreadHeaderLayout.nameCapsuleHeight / 2,
-                tint: .white.opacity(0.34)
-            )
+            Text(scenario.id.messageContactName)
+                .font(.system(size: 14, weight: .bold))
+                .lineLimit(1)
+                .minimumScaleFactor(0.78)
+                .padding(.horizontal, 11)
+                .frame(height: PracticeMessagesThreadHeaderLayout.nameCapsuleHeight)
+                .nativeGlass(
+                    cornerRadius: PracticeMessagesThreadHeaderLayout.nameCapsuleHeight / 2,
+                    tint: .white.opacity(0.34)
+                )
         }
         .frame(maxWidth: 150)
         .accessibilityElement(children: .combine)

@@ -71,6 +71,53 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertFalse(firstStep.nextLocalLine.isEmpty)
     }
 
+    func testStoryTranscriptUsesCanonicalAudioForAdaptedMessageCopy() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let marketPrice = try XCTUnwrap(snapshot.scenarios.first { $0.id == .shoppingMarketPrice })
+        let priceStep = try XCTUnwrap(marketPrice.steps.first { $0.id == "shopping-market-price" })
+        let bestPriceOption = try XCTUnwrap(priceStep.bestResponse)
+
+        XCTAssertEqual(bestPriceOption.scenarioVietnamese, "Giá tốt nhất là bao nhiêu?")
+        XCTAssertEqual(bestPriceOption.candidate.vietnamese, "Giá tốt nhất của bạn là gì?")
+
+        let audioKey = try XCTUnwrap(bestPriceOption.audioKey)
+        XCTAssertTrue(AudioSpeakerButton.isPlayableAudioKey(audioKey))
+        XCTAssertEqual(AudioAssetManifest.main?.entry(for: audioKey)?.text, bestPriceOption.candidate.vietnamese)
+
+        let turns = PracticeStoryTranscript.turns(
+            for: marketPrice,
+            currentIndex: 1,
+            selectedOptionIDs: [priceStep.id: bestPriceOption.id]
+        )
+        let travelerTurn = try XCTUnwrap(turns.first { $0.role == .travelerReply && $0.stepID == priceStep.id })
+        XCTAssertEqual(travelerTurn.vietnamese, bestPriceOption.scenarioVietnamese)
+        XCTAssertEqual(travelerTurn.playbackAudioKey, audioKey)
+    }
+
+    func testMessageScenarioOptionsSurfaceEveryAvailableCandidateAudio() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+
+        for scenario in snapshot.scenarios {
+            for step in scenario.steps {
+                for option in step.responseOptions where option.candidate.playableAudioKey != nil {
+                    let context = "\(scenario.id.rawValue) / \(step.id) / \(option.scenarioEnglish)"
+                    let audioKey = try XCTUnwrap(option.audioKey, context)
+                    XCTAssertTrue(AudioSpeakerButton.isPlayableAudioKey(audioKey), context)
+                }
+            }
+        }
+    }
+
     func testStoryTranscriptAnswersTheSelectedMessageOption() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],

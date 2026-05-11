@@ -131,6 +131,10 @@ private struct PracticeStoryBubble: View {
         pageID != nil
     }
 
+    private var playbackAudioKey: String? {
+        turn.playbackAudioKey
+    }
+
     var body: some View {
         HStack(alignment: .bottom, spacing: 8) {
             if isTraveler {
@@ -139,11 +143,11 @@ private struct PracticeStoryBubble: View {
 
             VStack(alignment: isTraveler ? .trailing : .leading, spacing: 8) {
                 HStack(alignment: .top, spacing: 8) {
-                    if !isTraveler, AudioSpeakerButton.isPlayableAudioKey(turn.audioKey) {
+                    if !isTraveler, playbackAudioKey != nil {
                         AudioSpeakerButton(
                             tint: tint,
                             size: 38,
-                            audioKey: turn.audioKey,
+                            audioKey: playbackAudioKey,
                             accessibilityIdentifier: "Practice.Story.Audio.\(turn.id)"
                         )
                     }
@@ -168,11 +172,11 @@ private struct PracticeStoryBubble: View {
                         }
                     }
 
-                    if isTraveler, AudioSpeakerButton.isPlayableAudioKey(turn.audioKey) {
+                    if isTraveler, playbackAudioKey != nil {
                         AudioSpeakerButton(
                             tint: .red,
                             size: 38,
-                            audioKey: turn.audioKey,
+                            audioKey: playbackAudioKey,
                             accessibilityIdentifier: "Practice.Story.Audio.\(turn.id)"
                         )
                     }
@@ -182,10 +186,14 @@ private struct PracticeStoryBubble: View {
             .padding(.vertical, 10)
             .frame(maxWidth: 302, alignment: isTraveler ? .trailing : .leading)
             .background(bubbleFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
-                RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(.white.opacity(isTraveler ? 0.24 : 0.72), lineWidth: 1)
+                if !isTraveler {
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .stroke(.white.opacity(0.72), lineWidth: 1)
+                }
             }
+            .compositingGroup()
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("Practice.Story.Bubble.\(isTraveler ? "traveler" : "local").\(turn.stepID)")

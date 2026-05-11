@@ -21,6 +21,18 @@ struct PracticeStoryTurn: Identifiable, Equatable {
     let source: PracticeSourceMetadata?
     let responseOptions: [PracticeScenarioResponseOption]
 
+    var playbackAudioKey: String? {
+        if let audioKey, AudioAssetManifest.main?.url(for: audioKey) != nil {
+            return audioKey
+        }
+
+        guard let vietnamese else {
+            return nil
+        }
+
+        return AudioAssetManifest.main?.audioKey(forExactText: vietnamese)
+    }
+
     static func scene(step: PracticeScenarioStep, index: Int) -> PracticeStoryTurn {
         PracticeStoryTurn(
             id: "\(step.id):scene:\(index)",

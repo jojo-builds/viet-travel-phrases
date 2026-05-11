@@ -105,6 +105,29 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Open Phrase Page"].exists)
     }
 
+    func testAdaptedMarketPriceMessageShowsAudioAndPhraseActions() {
+        let app = launchPracticeApp(scenarioID: "shoppingMarketPrice", title: "Market Price")
+        tapFirstStoryChoice(in: app)
+        tapButton("Practice.Story.Send", in: app)
+
+        XCTAssertTrue(waitForStaticText(containing: "Cái này đẹp", in: app, timeout: 5))
+
+        tapFirstStoryChoice(in: app)
+        tapButton("Practice.Story.Send", in: app)
+
+        let priceAudioButton = app.buttons.matching(
+            NSPredicate(format: "identifier BEGINSWITH %@", "Practice.Story.Audio.shopping-market-price:traveler:")
+        ).firstMatch
+        XCTAssertTrue(priceAudioButton.waitForExistence(timeout: 4))
+
+        let travelerPhrase = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Giá tốt nhất là bao nhiêu")).firstMatch
+        XCTAssertTrue(travelerPhrase.waitForExistence(timeout: 4))
+        travelerPhrase.press(forDuration: 1.0)
+
+        XCTAssertTrue(app.buttons["Save to Saved Phrases"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.buttons["Open Phrase Page"].exists)
+    }
+
     func testMessageComposerDefaultsFirstOptionIntoSelectionBar() {
         let app = launchPracticeApp(scenarioID: "danangFirstDay", title: "Airport Baggage")
         let selectedPhrase = app.staticTexts["Practice.Story.SelectedPhrase"].firstMatch
