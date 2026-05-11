@@ -792,6 +792,9 @@ final class VietSQLiteLanguagePackRepository {
             : []
         let rawResults = strictResults + looseResults + defaultResults
 
+        let primaryRankingQueries = ([query] + SearchQueryExpander.looseRankingQueries(for: query))
+            .map(Self.searchComparableText)
+            .filter { !$0.isEmpty }
         let normalizedQueries = (expandedQueries + looseQueries + (defaultResults.isEmpty ? [] : SearchQueryExpander.defaultFallbackQueries))
             .map(Self.searchComparableText)
             .filter { !$0.isEmpty }
@@ -801,6 +804,13 @@ final class VietSQLiteLanguagePackRepository {
         }
         .enumerated()
         .sorted { left, right in
+            let leftPrimaryScore = Self.searchIdentityScore(for: left.element, normalizedQueries: primaryRankingQueries)
+            let rightPrimaryScore = Self.searchIdentityScore(for: right.element, normalizedQueries: primaryRankingQueries)
+
+            if leftPrimaryScore != rightPrimaryScore {
+                return leftPrimaryScore > rightPrimaryScore
+            }
+
             let leftScore = Self.searchIdentityScore(for: left.element, normalizedQueries: normalizedQueries)
             let rightScore = Self.searchIdentityScore(for: right.element, normalizedQueries: normalizedQueries)
 
@@ -1437,6 +1447,13 @@ final class VietSQLiteLanguagePackRepository {
             score += max(0, 500 - shortestTokenCount * 40)
         }
 
+        let tokenScore = searchVisibleTokenScore(
+            title: title,
+            subtitle: subtitle,
+            normalizedQuery: normalizedQuery
+        )
+        score += tokenScore
+
         return score
     }
 
@@ -1444,6 +1461,123 @@ final class VietSQLiteLanguagePackRepository {
         normalizedQueries
             .map { searchIdentityScore(for: result, normalizedQuery: $0) }
             .max() ?? 0
+    }
+
+    private static let searchRankingStopwords: Set<String> = [
+        "a",
+        "am",
+        "an",
+        "and",
+        "are",
+        "as",
+        "at",
+        "be",
+        "can",
+        "could",
+        "do",
+        "does",
+        "for",
+        "from",
+        "get",
+        "give",
+        "have",
+        "how",
+        "i",
+        "in",
+        "is",
+        "it",
+        "me",
+        "my",
+        "new",
+        "of",
+        "on",
+        "or",
+        "please",
+        "show",
+        "that",
+        "the",
+        "this",
+        "to",
+        "want",
+        "where",
+        "with",
+        "you",
+        "your",
+    ]
+
+    private static let shortSearchRankingTokens: Set<String> = [
+        "qr",
+        "sim",
+        "atm",
+        "wc",
+        "ve",
+    ]
+
+    private static func searchVisibleTokenScore(
+        title: String,
+        subtitle: String,
+        normalizedQuery: String
+    ) -> Int {
+        let queryTokens = normalizedQuery
+            .split(separator: " ")
+            .map(String.init)
+            .filter { token in
+                !searchRankingStopwords.contains(token)
+                    && (token.count >= 3 || shortSearchRankingTokens.contains(token))
+            }
+        guard !queryTokens.isEmpty else {
+            return 0
+        }
+
+        let visibleText = "\(title) \(subtitle)"
+        let visibleTokens = Set(visibleText.split(separator: " ").map(String.init))
+        let compactVisibleText = visibleText.replacingOccurrences(of: " ", with: "")
+        var matchedTokenCount = 0
+
+        for token in queryTokens {
+            let variants = searchRankingTokenVariants(for: token)
+            let matched = variants.contains { variant in
+                visibleTokens.contains(variant)
+                    || visibleTokens.contains { visibleToken in
+                        visibleToken.hasPrefix(variant)
+                            || (variant.count >= 4 && variant.hasPrefix(visibleToken))
+                    }
+                    || compactVisibleText.contains(variant)
+            }
+
+            if matched {
+                matchedTokenCount += 1
+            }
+        }
+
+        guard matchedTokenCount > 0 else {
+            return 0
+        }
+
+        var score = matchedTokenCount * 180
+        if matchedTokenCount >= 2 {
+            score += 420
+        }
+        if matchedTokenCount == queryTokens.count {
+            score += 850
+        }
+
+        return score
+    }
+
+    private static func searchRankingTokenVariants(for token: String) -> Set<String> {
+        var variants: Set<String> = [token]
+
+        if token.count > 3, token.hasSuffix("ies"), token.count > 4 {
+            variants.insert(String(token.dropLast(3)) + "y")
+        } else if token.count > 3,
+                  token.hasSuffix("ses") || token.hasSuffix("xes") || token.hasSuffix("ches") || token.hasSuffix("shes") {
+            variants.insert(String(token.dropLast(2)))
+        } else if token.count > 3, token.hasSuffix("s"), !token.hasSuffix("ss") {
+            variants.insert(String(token.dropLast()))
+        }
+
+        return variants
     }
 }
 
