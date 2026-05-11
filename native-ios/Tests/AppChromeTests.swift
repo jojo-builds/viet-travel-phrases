@@ -1248,6 +1248,64 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
+    func testGenericFoodCollectionStartsWithEntityNamesBeforeActionPhrases() {
+        let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
+
+        XCTAssertEqual(food.starterTitle, "Food names to know")
+        XCTAssertEqual(
+            food.subcategories.map(\.title),
+            ["Restaurants", "Cafes", "Dishes", "Markets"]
+        )
+        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-nen" })
+        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-hanoi-place-giang-cafe" })
+        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-hue-place-bun-bo-city" })
+        assertEntityFirstBrowseRows(food.starterItems, context: "food starter")
+
+        for subcategory in food.subcategories {
+            XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into entity rows")
+            assertEntityFirstBrowseRows(subcategory.items, context: "food \(subcategory.title)")
+        }
+    }
+
+    func testGenericLandmarkAndStreetCollectionsStartWithEntitiesBeforePhraseDepth() {
+        let landmarks = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("landmarks-attractions")))
+        let streets = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("neighborhoods-streets")))
+
+        XCTAssertEqual(landmarks.starterTitle, "Places to know")
+        XCTAssertTrue(landmarks.subcategories.map(\.title).contains("Landmarks"))
+        XCTAssertTrue(landmarks.subcategories.map(\.title).contains("Markets"))
+        XCTAssertTrue(landmarks.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" })
+        XCTAssertTrue(landmarks.starterItems.contains { $0.pageID == "viet-phrase-city-hanoi-place-hoan-kiem" })
+        assertEntityFirstBrowseRows(landmarks.starterItems, context: "landmarks starter")
+
+        XCTAssertEqual(streets.starterTitle, "Names to know")
+        XCTAssertEqual(streets.subcategories.map(\.title), ["Neighborhoods", "Streets"])
+        XCTAssertTrue(streets.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-bach-dang-street" })
+        assertEntityFirstBrowseRows(streets.starterItems, context: "streets starter")
+
+        for subcategory in landmarks.subcategories + streets.subcategories {
+            XCTAssertFalse(subcategory.items.isEmpty, "\(subcategory.title) should drill into entity rows")
+            assertEntityFirstBrowseRows(subcategory.items, context: subcategory.title)
+        }
+    }
+
+    private func assertEntityFirstBrowseRows(_ items: [BrowseSearchPhraseItem], context: String) {
+        XCTAssertFalse(items.isEmpty, "\(context) should not be empty")
+        XCTAssertTrue(
+            items.allSatisfy { $0.pageID.contains("-place-") },
+            "\(context) should show noun/entity pages before phrase depth: \(items.map(\.pageID))"
+        )
+        XCTAssertFalse(items.contains { item in
+            item.title.localizedCaseInsensitiveContains("ở đâu")
+                || item.title.localizedCaseInsensitiveContains("Cho tôi")
+                || item.title.hasPrefix("Đi ")
+                || item.subtitle.localizedCaseInsensitiveContains("where is")
+                || item.subtitle.localizedCaseInsensitiveContains("please take")
+                || item.subtitle.localizedCaseInsensitiveContains("near ")
+                || item.subtitle.localizedCaseInsensitiveContains("please")
+        }, "\(context) should not start with long-tail action phrase rows: \(items.map { "\($0.title) — \($0.subtitle)" })")
+    }
+
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {
         let hanoi = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hanoi")))
         let saigon = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hcmc")))
