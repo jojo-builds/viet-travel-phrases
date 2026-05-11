@@ -13,7 +13,9 @@ struct BrowseCollectionPageView: View {
 
     var body: some View {
         let selectedSubcategory = descriptor.subcategories.first { $0.id == selectedSubcategoryID }
-        let starterTitle = selectedSubcategory.map { "\($0.title) phrases" } ?? descriptor.starterTitle
+        let starterTitle = selectedSubcategory.map {
+            $0.countUnit == "item" ? $0.title : "\($0.title) phrases"
+        } ?? descriptor.starterTitle
         let starterItems = selectedSubcategory?.items ?? descriptor.starterItems
 
         ZStack(alignment: .bottom) {
@@ -198,7 +200,7 @@ private struct BrowseCollectionSubcategoryCard: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.78)
 
-                Text("\(subcategory.phraseCount) phrase\(subcategory.phraseCount == 1 ? "" : "s")")
+                Text("\(subcategory.phraseCount) \(subcategory.countUnit)\(subcategory.phraseCount == 1 ? "" : "s")")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
