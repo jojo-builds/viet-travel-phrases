@@ -687,6 +687,52 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.forwardStack, [.browseCollection(.city("danang"))])
     }
 
+    func testSavedDetourFromBrowseCollectionReturnsToCollection() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openBrowse()
+        navigation.openBrowseCollection(.category("airport"))
+        navigation.openSaved()
+
+        XCTAssertEqual(navigation.currentRoute, .saved)
+        XCTAssertEqual(navigation.backPreviewRoute, .browseCollection(.category("airport")))
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("airport")))
+        XCTAssertEqual(navigation.browseCollectionPath, [.category("airport")])
+        XCTAssertEqual(navigation.forwardStack, [.saved])
+
+        navigation.goForward()
+        XCTAssertEqual(navigation.currentRoute, .saved)
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("airport")))
+    }
+
+    func testPracticeDetourFromBrowseCollectionReturnsToCollection() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openBrowse()
+        navigation.openBrowseCollection(.category("hotel"))
+        navigation.openPractice()
+
+        XCTAssertEqual(navigation.currentRoute, .practice)
+        XCTAssertEqual(navigation.backPreviewRoute, .browseCollection(.category("hotel")))
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertEqual(navigation.browseCollectionPath, [.category("hotel")])
+        XCTAssertEqual(navigation.forwardStack, [.practice])
+
+        navigation.goForward()
+        XCTAssertEqual(navigation.currentRoute, .practice)
+
+        navigation.goBack()
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+    }
+
     func testBackFromBrowseCollectionPreservesBrowseScrollPosition() {
         var navigation = AppShellNavigationState()
 
@@ -1023,7 +1069,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hotel.subcategories.isEmpty)
         XCTAssertFalse(hotel.starterItems.isEmpty)
         XCTAssertEqual(hotel.practiceAction, .addStarterPages(hotel.starterItems.map(\.pageID)))
-        XCTAssertTrue(hotel.mastheadImageName.hasPrefix("BrowseCollection"))
+        XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
 
         XCTAssertEqual(shopping.practiceSubtitle, "Practice prices, sizes, payment, and returns.")
         XCTAssertFalse(shopping.practiceSubtitle.localizedCaseInsensitiveContains("quick practice loop"))
@@ -1063,6 +1109,45 @@ final class AppChromeTests: XCTestCase {
                 || item.title.localizedCaseInsensitiveContains("cash")
                 || item.subtitle.localizedCaseInsensitiveContains("cash")
         })
+    }
+
+    func testClarificationCollectionUsesTravelerFacingFilterLabels() {
+        let clarification = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("polite-repair")))
+
+        XCTAssertEqual(clarification.title, "When You Don't Understand")
+        XCTAssertEqual(
+            clarification.subcategories.map(\.title),
+            ["Clarify", "Polite basics", "Get help"]
+        )
+        XCTAssertTrue(clarification.subcategories.allSatisfy { !$0.items.isEmpty })
+        XCTAssertFalse(clarification.subcategories.contains { subcategory in
+            subcategory.title.localizedCaseInsensitiveContains("repair")
+        })
+    }
+
+    func testQuestionAndMoneyCollectionsUseCompactTravelerFilters() {
+        let questions = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("questions")))
+        let numbersMoney = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("numbers-money")))
+        let firstDay = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("first-day")))
+
+        XCTAssertEqual(
+            questions.subcategories.map(\.title),
+            ["Directions", "Time", "Clarify"]
+        )
+        XCTAssertEqual(
+            numbersMoney.subcategories.map(\.title),
+            ["Payment", "Shopping"]
+        )
+        XCTAssertEqual(
+            firstDay.subcategories.map(\.title),
+            ["Airport", "Hotel", "Transport"]
+        )
+
+        let visibleLabels = questions.subcategories.map(\.title)
+            + numbersMoney.subcategories.map(\.title)
+            + firstDay.subcategories.map(\.title)
+        XCTAssertFalse(visibleLabels.contains { $0.localizedCaseInsensitiveContains("repair") })
+        XCTAssertTrue(visibleLabels.allSatisfy { $0.count <= 10 })
     }
 
     func testVisibleCategorySubcategoryFiltersArePopulated() {
@@ -1130,13 +1215,51 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(cityHub.browseGroups.allSatisfy { $0.targetRoute == nil })
     }
 
+    func testCityBrowseGroupsAreEntityFirstAcrossCities() {
+        let cityIDs = ["hanoi", "hcmc", "danang", "hoian", "hue"]
+        let disallowedBrowseGroupTitles = ["Getting around", "Help"]
+
+        for cityID in cityIDs {
+            let descriptor = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city(cityID)))
+            let cityHub = try! XCTUnwrap(descriptor.cityHub)
+            let groupTitles = cityHub.browseGroups.map(\.title)
+
+            XCTAssertGreaterThanOrEqual(cityHub.browseGroups.count, 6, "\(descriptor.title) should expose an even noun-first Browse grid")
+            XCTAssertTrue(groupTitles.contains("Landmarks"), "\(descriptor.title) should expose landmark nouns")
+            XCTAssertTrue(groupTitles.contains("Streets"), "\(descriptor.title) should expose street-name nouns")
+            XCTAssertTrue(groupTitles.contains("Food & coffee"), "\(descriptor.title) should expose restaurant/cafe/dish nouns")
+            XCTAssertTrue(groupTitles.contains("Markets"), "\(descriptor.title) should expose market nouns")
+
+            for disallowedTitle in disallowedBrowseGroupTitles {
+                XCTAssertFalse(groupTitles.contains(disallowedTitle), "\(descriptor.title) Browse groups should be entities, not broad action lanes")
+            }
+
+            for group in cityHub.browseGroups {
+                XCTAssertFalse(group.items.isEmpty, "\(descriptor.title) \(group.title) should drill into entity rows")
+                XCTAssertTrue(group.items.allSatisfy { $0.pageID.contains("-place-") }, "\(descriptor.title) \(group.title) should start with noun/entity pages: \(group.items.map(\.pageID))")
+                XCTAssertFalse(group.items.contains { item in
+                    item.title.localizedCaseInsensitiveContains("ở đâu")
+                        || item.subtitle.localizedCaseInsensitiveContains("where is")
+                        || item.subtitle.localizedCaseInsensitiveContains("go to")
+                        || item.subtitle.localizedCaseInsensitiveContains("near here")
+                }, "\(descriptor.title) \(group.title) should not start with long-tail question/route phrase rows")
+            }
+        }
+    }
+
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {
         let hanoi = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hanoi")))
         let saigon = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hcmc")))
         let danang = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("danang")))
         let hoian = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hoian")))
         let hue = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hue")))
+        let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+        let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
+        let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
         let greetings = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("greetings")))
+        let questions = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("questions")))
+        let numbersMoney = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("numbers-money")))
+        let clarification = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("polite-repair")))
         let emergency = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("emergency")))
 
         XCTAssertEqual(hanoi.title, "Hanoi")
@@ -1149,11 +1272,19 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hoian.mastheadImageName, "HeroCityHoian")
         XCTAssertEqual(hue.title, "Hue")
         XCTAssertEqual(hue.mastheadImageName, "HeroCityHue")
+        XCTAssertEqual(airport.mastheadImageName, "HeroCategoryAirport")
+        XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
+        XCTAssertEqual(food.mastheadImageName, "HeroCategoryFood")
         XCTAssertEqual(greetings.mastheadImageName, "HeroCategoryGreetings")
+        XCTAssertEqual(questions.mastheadImageName, "HeroCategoryQuestions")
+        XCTAssertEqual(numbersMoney.mastheadImageName, "HeroCategoryNumbersMoney")
+        XCTAssertEqual(clarification.title, "When You Don't Understand")
+        XCTAssertEqual(clarification.mastheadImageName, "HeroCategoryPoliteRepair")
         XCTAssertEqual(emergency.mastheadImageName, "HeroCategoryEmergency")
-        XCTAssertFalse([hanoi, saigon, danang, hoian, hue, greetings, emergency].contains { descriptor in
+        XCTAssertFalse([hanoi, saigon, danang, hoian, hue, airport, hotel, food, greetings, questions, numbersMoney, clarification, emergency].contains { descriptor in
             descriptor.mastheadImageName == "HeroVietnamMasthead"
                 || descriptor.mastheadImageName == "HeroNeutralMasthead"
+                || descriptor.mastheadImageName.hasPrefix("BrowseCollection")
         })
     }
 

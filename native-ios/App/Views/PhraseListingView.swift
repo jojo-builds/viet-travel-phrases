@@ -10,16 +10,17 @@ struct PhraseListingView: View {
     let chromeRoute: AppRoute
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
-    let isInPractice: Bool
+    let heroMorphPageID: String?
+    let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
-    var onTogglePractice: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
 
     init(
@@ -27,32 +28,34 @@ struct PhraseListingView: View {
         chromeRoute: AppRoute = .phrasePage,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
+        scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
-        isInPractice: Bool = false,
+        heroMorphPageID: String? = nil,
+        heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
-        onTogglePractice: (() -> Void)? = nil,
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
         self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
+        self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
-        self.isInPractice = isInPractice
+        self.heroMorphPageID = heroMorphPageID
+        self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
-        self.onTogglePractice = onTogglePractice
         self.onDetailTapped = onDetailTapped
     }
 
@@ -62,16 +65,17 @@ struct PhraseListingView: View {
             chromeRoute: chromeRoute,
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
+            scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
-            isInPractice: isInPractice,
+            heroMorphPageID: heroMorphPageID,
+            heroMorphContentHoldPageID: heroMorphContentHoldPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
-            onTogglePractice: onTogglePractice,
             onDetailTapped: onDetailTapped
         )
     }
@@ -82,16 +86,17 @@ struct PhraseArticleTemplateView: View {
     let chromeRoute: AppRoute
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
-    let isInPractice: Bool
+    let heroMorphPageID: String?
+    let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
-    var onTogglePractice: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
     @State private var didApplyInitialScrollTarget = false
 
@@ -100,32 +105,34 @@ struct PhraseArticleTemplateView: View {
         chromeRoute: AppRoute,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
+        scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
-        isInPractice: Bool = false,
+        heroMorphPageID: String? = nil,
+        heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
-        onTogglePractice: (() -> Void)? = nil,
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
         self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
+        self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
-        self.isInPractice = isInPractice
+        self.heroMorphPageID = heroMorphPageID
+        self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
-        self.onTogglePractice = onTogglePractice
         self.onDetailTapped = onDetailTapped
     }
 
@@ -161,9 +168,17 @@ struct PhraseArticleTemplateView: View {
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
                         .padding(.top, 72 + topChromeContentClearance)
                         .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
+                        .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
+                        .offset(y: holdsArticleContentForHomeMorph ? 18 : 0)
+                        .allowsHitTesting(!holdsArticleContentForHomeMorph)
+                        .animation(HomePhraseHeroMorphTiming.articleRevealAnimation, value: holdsArticleContentForHomeMorph)
                     }
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
+                    guard scrollToTopRoute == nil || scrollToTopRoute == chromeRoute else {
+                        return
+                    }
+
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
                 .task {
@@ -207,27 +222,19 @@ struct PhraseArticleTemplateView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Text(page.title)
-                    .font(.system(size: usesCompactPhraseHero ? 38 : 54, weight: .black, design: .serif))
-                    .foregroundStyle(.primary)
-                    .lineLimit(usesCompactPhraseHero ? 3 : (page.id == PhrasePage.xinChao.id ? 1 : 2))
-                    .minimumScaleFactor(usesCompactPhraseHero ? 0.68 : 0.62)
-
-                Text(page.englishTitle)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.78)
-
-                HStack(spacing: 10) {
-                    Image(systemName: "waveform")
-                        .foregroundStyle(.red)
-                    Text(page.pronunciation)
-                        .font(.title3)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.76)
-                }
+                PhraseHeroCopyStack(
+                    title: page.title,
+                    englishTitle: page.englishTitle,
+                    pronunciation: page.pronunciation,
+                    titleSize: usesCompactPhraseHero ? 38 : 54,
+                    titleLineLimit: usesCompactPhraseHero ? 3 : 2,
+                    pronunciationLineLimit: 2,
+                    morphPageID: morphPageID,
+                    morphNamespace: chromeNamespace,
+                    isMorphActive: usesHomePhraseHeroMorph,
+                    isMorphSource: false
+                )
+                .zIndex(usesHomePhraseHeroMorph ? 4 : 0)
 
                 PlaybackDockView(
                     audioKey: page.playbackAudioKey,
@@ -235,16 +242,15 @@ struct PhraseArticleTemplateView: View {
                     onToggleSaved: onToggleSaved,
                     visibilityRoute: chromeRoute
                 )
-                    .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
-
-                if let onTogglePractice {
-                    PhrasePracticeIntentButton(
-                        isInPractice: isInPractice,
-                        label: page.practiceCTALabel ?? "Add to practice",
-                        onTogglePractice: onTogglePractice
+                    .homePhraseHeroMorph(
+                        HomePhraseHeroMorphID.player(morphPageID),
+                        namespace: chromeNamespace,
+                        isActive: usesHomePhraseHeroMorph,
+                        isSource: false,
+                        anchor: .topLeading
                     )
-                    .padding(.top, 4)
-                }
+                    .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
+                    .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
             }
             .padding(.horizontal, 24)
             .padding(.top, usesCompactPhraseHero ? 20 : PhrasePageStyle.heroTextTopPadding)
@@ -259,6 +265,18 @@ struct PhraseArticleTemplateView: View {
 
     private var usesCompactPhraseHero: Bool {
         page.heroImageName == "HeroCompactPhraseMasthead"
+    }
+
+    private var usesHomePhraseHeroMorph: Bool {
+        heroMorphPageID == morphPageID
+    }
+
+    private var holdsArticleContentForHomeMorph: Bool {
+        heroMorphContentHoldPageID == morphPageID
+    }
+
+    private var morphPageID: String {
+        PhraseCatalog.canonicalPageID(forOpenablePageID: page.id) ?? page.id
     }
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"
@@ -647,35 +665,6 @@ private struct ArticleCallout: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .stroke(tint.color.opacity(0.22), lineWidth: 1)
         }
-    }
-}
-
-private struct PhrasePracticeIntentButton: View {
-    let isInPractice: Bool
-    let label: String
-    let onTogglePractice: () -> Void
-
-    var body: some View {
-        Button {
-            onTogglePractice()
-        } label: {
-            HStack(spacing: 10) {
-                Image(systemName: isInPractice ? "checkmark.circle.fill" : "plus.circle.fill")
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.red)
-
-                Text(isInPractice ? "In practice pool" : label)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.primary)
-
-                Spacer()
-            }
-            .padding(.horizontal, 16)
-            .frame(height: 52)
-            .phraseListCard(cornerRadius: 20, strokeOpacity: 0.05)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(isInPractice ? "Remove from practice pool" : label)
     }
 }
 

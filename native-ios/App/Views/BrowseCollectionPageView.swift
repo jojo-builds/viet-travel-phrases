@@ -3,6 +3,7 @@ import SwiftUI
 struct BrowseCollectionPageView: View {
     let descriptor: BrowseCollectionDescriptor
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: BrowseCollectionRoute?
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onPractice: (BrowseCollectionPracticeAction) -> Void
@@ -72,6 +73,10 @@ struct BrowseCollectionPageView: View {
                     .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
+                    guard scrollToTopRoute == nil || scrollToTopRoute == descriptor.route else {
+                        return
+                    }
+
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
                 .onChange(of: selectedCityCardID) { _, newValue in
@@ -685,6 +690,7 @@ private struct BrowseCollectionPhraseRow: View {
         BrowseCollectionPageView(
             descriptor: descriptor,
             scrollToTopTrigger: 0,
+            scrollToTopRoute: nil,
             onOpenDetail: { _ in },
             onOpenCollection: { _ in },
             onPractice: { _ in }
