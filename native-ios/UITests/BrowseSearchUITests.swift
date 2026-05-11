@@ -294,7 +294,11 @@ final class BrowseSearchUITests: XCTestCase {
     }
 
     func testProgressiveSearchTypingAndDeletingKeepsFieldResponsive() {
-        let app = launchApp(arguments: ["--search"])
+        let app = launchApp()
+        let searchButton = app.buttons["AppChrome.SearchButton"]
+        XCTAssertTrue(searchButton.waitForExistence(timeout: 4))
+        searchButton.tap()
+
         let field = app.textFields["AppChrome.SearchField"]
 
         XCTAssertTrue(field.waitForExistence(timeout: 4))

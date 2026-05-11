@@ -29,6 +29,11 @@ const relationshipWordPhraseIDs = [
   "hello-chao-chu",
   "hello-chao-co",
 ];
+const howAreYouRelationshipFormPhraseIDs = [
+  "how-are-you-anh",
+  "how-are-you-chi",
+  "how-are-you-em",
+];
 const greetingCategoryIDs = new Set(["greetings", "polite-basics"]);
 const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge";
@@ -252,6 +257,13 @@ function main() {
     const phrase = phraseByID.get(phraseID);
     if (!phrase) {
       throw new Error(`Missing required relationship-word phrase ${phraseID}`);
+    }
+    return phrase;
+  });
+  const howAreYouRelationshipFormPhrases = howAreYouRelationshipFormPhraseIDs.map((phraseID) => {
+    const phrase = phraseByID.get(phraseID);
+    if (!phrase) {
+      throw new Error(`Missing required how-are-you relationship form phrase ${phraseID}`);
     }
     return phrase;
   });
@@ -654,12 +666,12 @@ function main() {
     if (explicitRelationshipPhrase || cityRelationshipPage) return true;
 
     const accentlessTarget = accentlessText(phrase.targetText);
-    const englishSignal = normalizeText([
+    const primaryGreetingSignal = normalizeText([
       phrase.englishText,
-      phrase.context,
       ...(phrase.searchAliases ?? []),
+      authoredPage?.title,
+      authoredPage?.englishTitle,
       authoredPage?.summary,
-      ...(authoredPage?.sections ?? []).flatMap((section) => [section.title, section.body]),
     ].filter(Boolean).join(" "));
 
     const authoredCategories = new Set(authoredPage?.categoryIDs ?? []);
@@ -669,8 +681,12 @@ function main() {
     return isGreetingCategory
       && (
         accentlessTarget.split(/\s+/).includes("chao")
-        || /\b(hello|hi|greeting|greet)\b/.test(englishSignal)
+        || /\b(hello|hi|greeting|greet)\b/.test(primaryGreetingSignal)
       );
+  }
+
+  function shouldShowHowAreYouRelationshipFormsSection(phrase) {
+    return phrase?.id === "smalltalk-7";
   }
 
   function baselineContextBody(phrase, family) {
@@ -1235,7 +1251,8 @@ function main() {
 
   function addRelationshipWordsSection({ pageID, sortOrder, sourcePath }) {
     const newRelationshipPhrases = relationshipWordPhrases.filter((phrase) => (
-      !hasPagePhraseTarget(pageID, phrase.id, canonicalPageIDForPhrase(phrase.id))
+      canonicalPageIDForPhrase(phrase.id) !== pageID
+      && !hasPagePhraseTarget(pageID, phrase.id, canonicalPageIDForPhrase(phrase.id))
     ));
     if (newRelationshipPhrases.length === 0) return false;
 
@@ -1250,6 +1267,34 @@ function main() {
     });
 
     newRelationshipPhrases.forEach((phrase, index) => {
+      addPhraseSectionItem({
+        sectionID,
+        phrase,
+        sortOrder: index,
+        note: canonicalPageIDForPhrase(phrase.id),
+      });
+    });
+    return true;
+  }
+
+  function addHowAreYouRelationshipFormsSection({ pageID, sortOrder, sourcePath }) {
+    const newRelationshipFormPhrases = howAreYouRelationshipFormPhrases.filter((phrase) => (
+      canonicalPageIDForPhrase(phrase.id) !== pageID
+      && !hasPagePhraseTarget(pageID, phrase.id, canonicalPageIDForPhrase(phrase.id))
+    ));
+    if (newRelationshipFormPhrases.length === 0) return false;
+
+    const sectionID = addSection({
+      pageID,
+      sectionKey: "relationship-forms",
+      title: "Relationship forms",
+      body: "Swap the first word when the person is clearly older or younger.",
+      presentation: "phrase-list",
+      sortOrder,
+      sourcePath,
+    });
+
+    newRelationshipFormPhrases.forEach((phrase, index) => {
       addPhraseSectionItem({
         sectionID,
         phrase,
@@ -1287,6 +1332,7 @@ function main() {
     if (!canonicalPageID) continue;
     const authoredSourcePath = relative(authoredPagesPath);
     const relationshipWordsSortOrder = 3;
+    const relationshipFormsSortOrder = 3;
     const phrase = phraseByID.get(page.phraseID);
 
     for (const [index, categoryID] of (page.categoryIDs ?? []).entries()) {
@@ -1296,6 +1342,15 @@ function main() {
 
     const seenAuthoredDestinations = new Set();
     let relationshipWordsInserted = (page.sections ?? []).some((section) => section.id === relationshipWordSectionKey);
+    let relationshipFormsInserted = (page.sections ?? []).some((section) => section.id === "relationship-forms");
+    const maybeAddHowAreYouRelationshipFormsSection = () => {
+      if (relationshipFormsInserted || !shouldShowHowAreYouRelationshipFormsSection(phrase, page)) return;
+      relationshipFormsInserted = addHowAreYouRelationshipFormsSection({
+        pageID: canonicalPageID,
+        sortOrder: relationshipFormsSortOrder,
+        sourcePath: authoredSourcePath,
+      }) === true;
+    };
     const maybeAddRelationshipWordsSection = () => {
       if (relationshipWordsInserted || !shouldShowRelationshipWordsSection(phrase, page)) return;
       relationshipWordsInserted = addRelationshipWordsSection({
@@ -1306,6 +1361,9 @@ function main() {
     };
 
     for (const [sectionIndex, section] of (page.sections ?? []).entries()) {
+      if (sectionIndex >= relationshipFormsSortOrder) {
+        maybeAddHowAreYouRelationshipFormsSection();
+      }
       if (sectionIndex >= relationshipWordsSortOrder) {
         maybeAddRelationshipWordsSection();
       }
@@ -1421,6 +1479,7 @@ function main() {
     }
 
     maybeAddRelationshipWordsSection();
+    maybeAddHowAreYouRelationshipFormsSection();
   }
 
   for (const pageRow of pageRows) {

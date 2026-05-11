@@ -37,7 +37,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "cda7a959543a63eacca52edc514e4d14b472d401c8009dfc25fd7f51c9d858bf",
+    "databaseSha256": "44dd0af32af1d2b4b1bcce56fd6ebd3324c8a655dad37c84be76b7ddefdd703a",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -85,10 +85,10 @@
     "pageCategories": 19015,
     "pagePracticeSeeds": 3070,
     "pagePracticeSteps": 4899,
-    "sections": 11337,
-    "sectionItems": 32103,
+    "sections": 11333,
+    "sectionItems": 32067,
     "breakdownTokens": 11414,
-    "relations": 20410,
+    "relations": 20413,
     "searchDocuments": 3078,
     "audioAssets": 3910,
     "audioUsages": 12484,
@@ -101,7 +101,7 @@
     "ftsRowCount": 3078,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
-    "relationshipWordsEligiblePageCount": 25,
+    "relationshipWordsEligiblePageCount": 20,
     "relationshipWordsEligiblePageIDs": [
       "viet-phrase-acknowledge-da-chao-anh",
       "viet-phrase-acknowledge-da-chao-ba",
@@ -122,12 +122,7 @@
       "viet-phrase-hello-da-chao-anh-chi",
       "viet-phrase-hello-good-afternoon",
       "viet-phrase-hello-good-morning",
-      "viet-phrase-how-are-you-anh",
-      "viet-phrase-how-are-you-chi",
-      "viet-phrase-how-are-you-em",
-      "viet-phrase-polite-1",
-      "viet-phrase-smalltalk-7",
-      "viet-phrase-smalltalk-di-dau-day"
+      "viet-phrase-polite-1"
     ],
     "missingRelationshipWordsSectionCount": 0,
     "unexpectedRelationshipWordsSectionCount": 0,
@@ -276,7 +271,7 @@
     ]
   },
   "graph": {
-    "relationCount": 20410,
+    "relationCount": 20413,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -292,7 +287,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 12435
+        "count": 12438
       },
       {
         "relationType": "same_need_alt_context",

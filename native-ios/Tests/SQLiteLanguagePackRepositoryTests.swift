@@ -178,17 +178,12 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(page.summary, "Hello (universal greeting)")
         XCTAssertEqual(page.sections.map(\.id), [
             "at-glance",
-            "quick-say",
             "breakdown",
-            "relationship-words",
-            "when-to-use",
-            "situational-greetings",
-            "common-follow-ups",
-            "cultural-note",
             "good-to-know",
+            "relationship-words",
             "explore-next",
         ])
-        XCTAssertEqual(page.sections.first { $0.id == "cultural-note" }?.presentation, .tipCallout)
+        XCTAssertEqual(page.sections.first { $0.id == "good-to-know" }?.presentation, .tipCallout)
         XCTAssertEqual(page.sections.first { $0.id == "breakdown" }?.breakdown.map(\.vietnamese), [
             "Xin",
             "chào",
@@ -227,13 +222,19 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "Chào cô",
         ]
 
-        for pageID in ["viet-phrase-polite-1", "viet-phrase-hello-chao"] {
+        let pageExpectations: [(pageID: String, phrases: [String])] = [
+            ("viet-phrase-polite-1", expectedVietnamese),
+            ("viet-phrase-hello-chao", Array(expectedVietnamese.dropFirst())),
+        ]
+
+        for expectation in pageExpectations {
+            let pageID = expectation.pageID
             let page = try repository.loadPhraseDetailPage(pageID: pageID)
             let section = try XCTUnwrap(page.sections.first { $0.id == "relationship-words" }, pageID)
 
             XCTAssertEqual(section.title, "Relationship words", pageID)
             XCTAssertEqual(section.presentation, .relationshipShelf, pageID)
-            XCTAssertEqual(section.phrases.map(\.vietnamese), expectedVietnamese, pageID)
+            XCTAssertEqual(section.phrases.map(\.vietnamese), expectation.phrases, pageID)
             XCTAssertTrue(section.phrases.allSatisfy { phrase in
                 phrase.detailPageID?.hasPrefix("viet-phrase-") == true
             }, pageID)
@@ -244,6 +245,15 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertFalse(chaoAnhShelf.phrases.contains { $0.vietnamese == "Chào anh" })
         XCTAssertEqual(chaoAnhShelf.phrases.map(\.vietnamese), Array(expectedVietnamese.dropFirst()))
 
+        let howAreYouPage = try repository.loadPhraseDetailPage(pageID: "viet-phrase-smalltalk-7")
+        XCTAssertFalse(howAreYouPage.sections.contains { $0.id == "relationship-words" })
+        let relationshipForms = try XCTUnwrap(howAreYouPage.sections.first { $0.id == "relationship-forms" })
+        XCTAssertEqual(relationshipForms.phrases.map(\.vietnamese), [
+            "Anh khỏe không?",
+            "Chị khỏe không?",
+            "Em khỏe không?",
+        ])
+
         let fromUnitedStatesPage = try repository.loadPhraseDetailPage(pageID: "viet-phrase-smalltalk-1")
         XCTAssertFalse(
             fromUnitedStatesPage.sections.contains { $0.id == "relationship-words" },
@@ -251,21 +261,22 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         )
     }
 
-    func testSQLiteQuickSayRowsUseCanonicalPhraseOrApprovedBeginnerShortcut() throws {
+    func testSQLitePhraseRowsResolveToOpenableCanonicalPages() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
 
         let xinChao = try repository.loadPhraseDetailPage(pageID: "viet-phrase-polite-1")
-        let xinChaoQuickSay = try XCTUnwrap(xinChao.sections.first { $0.id == "quick-say" })
-        XCTAssertEqual(xinChaoQuickSay.phrases.map(\.vietnamese), ["Xin chào", "Chào"])
-        XCTAssertEqual(xinChaoQuickSay.phrases.map { $0.detailPageID ?? "" }, ["viet-phrase-polite-1", "viet-phrase-hello-chao"])
+        XCTAssertFalse(xinChao.sections.contains { $0.id == "quick-say" })
 
         for pageID in ["viet-phrase-hello-chao", "viet-phrase-directions-2", "viet-phrase-health-1"] {
             let page = try repository.loadPhraseDetailPage(pageID: pageID)
-            let teachingSection = try XCTUnwrap(page.sections.first { $0.id == "quick-say" || $0.id == "standard-way" }, pageID)
-            let firstPhrase = try XCTUnwrap(teachingSection.phrases.first, pageID)
+            let phraseRows = page.sections.flatMap(\.phrases)
 
-            XCTAssertEqual(firstPhrase.vietnamese, page.title, pageID)
-            XCTAssertEqual(firstPhrase.detailPageID, page.id, pageID)
+            XCTAssertFalse(phraseRows.isEmpty, pageID)
+            for phrase in phraseRows {
+                if let detailPageID = phrase.detailPageID {
+                    XCTAssertTrue(try repository.canOpenPage(pageIDOrAlias: detailPageID), "\(pageID) -> \(detailPageID)")
+                }
+            }
         }
     }
 
