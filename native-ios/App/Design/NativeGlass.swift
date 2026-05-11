@@ -114,6 +114,117 @@ enum AppChromeMorphID {
     }
 }
 
+enum HomePhraseHeroMorphID {
+    static func card(_ pageID: String) -> String {
+        "home.phrase.hero.card.\(pageID)"
+    }
+
+    static func title(_ pageID: String) -> String {
+        "home.phrase.hero.title.\(pageID)"
+    }
+
+    static func copyStack(_ pageID: String) -> String {
+        "home.phrase.hero.copy.\(pageID)"
+    }
+
+    static func english(_ pageID: String) -> String {
+        "home.phrase.hero.english.\(pageID)"
+    }
+
+    static func pronunciation(_ pageID: String) -> String {
+        "home.phrase.hero.pronunciation.\(pageID)"
+    }
+
+    static func player(_ pageID: String) -> String {
+        "home.phrase.hero.player.\(pageID)"
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func homePhraseHeroMorph(
+        _ id: String,
+        namespace: Namespace.ID?,
+        isActive: Bool,
+        isSource: Bool,
+        properties: MatchedGeometryProperties = .frame,
+        anchor: UnitPoint = .center
+    ) -> some View {
+        if isActive, let namespace {
+            matchedGeometryEffect(
+                id: id,
+                in: namespace,
+                properties: properties,
+                anchor: anchor,
+                isSource: isSource
+            )
+        } else {
+            self
+        }
+    }
+}
+
+struct PhraseHeroCopyStack: View {
+    let title: String
+    let englishTitle: String
+    let pronunciation: String
+    var titleSize: CGFloat
+    var titleLineLimit = 2
+    var pronunciationLineLimit = 2
+    var morphPageID: String? = nil
+    var morphNamespace: Namespace.ID? = nil
+    var isMorphActive = false
+    var isMorphSource = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.system(size: titleSize, weight: .black, design: .serif))
+                .foregroundStyle(.primary)
+                .lineLimit(titleLineLimit)
+                .minimumScaleFactor(0.62)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            Text(englishTitle)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.78)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            if !pronunciation.isEmpty {
+                HStack(spacing: 10) {
+                    Image(systemName: "waveform")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundStyle(Color.red)
+                        .frame(width: 26)
+
+                    Text(pronunciation)
+                        .font(.title3)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(pronunciationLineLimit)
+                        .minimumScaleFactor(0.72)
+                }
+                .padding(.top, 2)
+            }
+        }
+        .homePhraseHeroMorph(
+            morphID,
+            namespace: morphNamespace,
+            isActive: isMorphActive && morphPageID != nil,
+            isSource: isMorphSource,
+            anchor: .topLeading
+        )
+    }
+
+    private var morphID: String {
+        guard let morphPageID else {
+            return ""
+        }
+        return HomePhraseHeroMorphID.copyStack(morphPageID)
+    }
+}
+
 enum PhrasePageStyle {
     static let pageBackground = Color(red: 0.96, green: 0.97, blue: 0.98)
     static let heroImageName = "HeroVietnamMasthead"

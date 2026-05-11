@@ -16,6 +16,8 @@ struct PhraseListingView: View {
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let isInPractice: Bool
+    let heroMorphPageID: String?
+    let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -33,6 +35,8 @@ struct PhraseListingView: View {
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         isInPractice: Bool = false,
+        heroMorphPageID: String? = nil,
+        heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -49,6 +53,8 @@ struct PhraseListingView: View {
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.isInPractice = isInPractice
+        self.heroMorphPageID = heroMorphPageID
+        self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -68,6 +74,8 @@ struct PhraseListingView: View {
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
             isInPractice: isInPractice,
+            heroMorphPageID: heroMorphPageID,
+            heroMorphContentHoldPageID: heroMorphContentHoldPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
@@ -88,6 +96,8 @@ struct PhraseArticleTemplateView: View {
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let isInPractice: Bool
+    let heroMorphPageID: String?
+    let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -106,6 +116,8 @@ struct PhraseArticleTemplateView: View {
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         isInPractice: Bool = false,
+        heroMorphPageID: String? = nil,
+        heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -122,6 +134,8 @@ struct PhraseArticleTemplateView: View {
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.isInPractice = isInPractice
+        self.heroMorphPageID = heroMorphPageID
+        self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -161,6 +175,10 @@ struct PhraseArticleTemplateView: View {
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
                         .padding(.top, 72 + topChromeContentClearance)
                         .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
+                        .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
+                        .offset(y: holdsArticleContentForHomeMorph ? 18 : 0)
+                        .allowsHitTesting(!holdsArticleContentForHomeMorph)
+                        .animation(HomePhraseHeroMorphTiming.articleRevealAnimation, value: holdsArticleContentForHomeMorph)
                     }
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
@@ -207,27 +225,19 @@ struct PhraseArticleTemplateView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Text(page.title)
-                    .font(.system(size: usesCompactPhraseHero ? 38 : 54, weight: .black, design: .serif))
-                    .foregroundStyle(.primary)
-                    .lineLimit(usesCompactPhraseHero ? 3 : (page.id == PhrasePage.xinChao.id ? 1 : 2))
-                    .minimumScaleFactor(usesCompactPhraseHero ? 0.68 : 0.62)
-
-                Text(page.englishTitle)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.78)
-
-                HStack(spacing: 10) {
-                    Image(systemName: "waveform")
-                        .foregroundStyle(.red)
-                    Text(page.pronunciation)
-                        .font(.title3)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.76)
-                }
+                PhraseHeroCopyStack(
+                    title: page.title,
+                    englishTitle: page.englishTitle,
+                    pronunciation: page.pronunciation,
+                    titleSize: usesCompactPhraseHero ? 38 : 54,
+                    titleLineLimit: usesCompactPhraseHero ? 3 : 2,
+                    pronunciationLineLimit: 2,
+                    morphPageID: morphPageID,
+                    morphNamespace: chromeNamespace,
+                    isMorphActive: usesHomePhraseHeroMorph,
+                    isMorphSource: false
+                )
+                .zIndex(usesHomePhraseHeroMorph ? 4 : 0)
 
                 PlaybackDockView(
                     audioKey: page.playbackAudioKey,
@@ -235,6 +245,14 @@ struct PhraseArticleTemplateView: View {
                     onToggleSaved: onToggleSaved,
                     visibilityRoute: chromeRoute
                 )
+                    .homePhraseHeroMorph(
+                        HomePhraseHeroMorphID.player(morphPageID),
+                        namespace: chromeNamespace,
+                        isActive: usesHomePhraseHeroMorph,
+                        isSource: false,
+                        anchor: .topLeading
+                    )
+                    .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
 
                 if let onTogglePractice {
@@ -244,6 +262,9 @@ struct PhraseArticleTemplateView: View {
                         onTogglePractice: onTogglePractice
                     )
                     .padding(.top, 4)
+                    .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
+                    .allowsHitTesting(!holdsArticleContentForHomeMorph)
+                    .animation(HomePhraseHeroMorphTiming.articleRevealAnimation, value: holdsArticleContentForHomeMorph)
                 }
             }
             .padding(.horizontal, 24)
@@ -259,6 +280,18 @@ struct PhraseArticleTemplateView: View {
 
     private var usesCompactPhraseHero: Bool {
         page.heroImageName == "HeroCompactPhraseMasthead"
+    }
+
+    private var usesHomePhraseHeroMorph: Bool {
+        heroMorphPageID == morphPageID
+    }
+
+    private var holdsArticleContentForHomeMorph: Bool {
+        heroMorphContentHoldPageID == morphPageID
+    }
+
+    private var morphPageID: String {
+        PhraseCatalog.canonicalPageID(forOpenablePageID: page.id) ?? page.id
     }
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"
