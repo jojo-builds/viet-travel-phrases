@@ -16,6 +16,7 @@ struct AppShellView: View {
     @State private var requestedPracticeMode: PracticeMode?
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
+    @State private var homePhraseHeroRoutePageID: String?
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
@@ -357,18 +358,18 @@ struct AppShellView: View {
     }
 
     private func detailTransition(for pageID: String) -> AnyTransition {
-        isHomePhraseHeroMorphActive(for: pageID)
+        isHomePhraseHeroRouteActive(for: pageID)
             ? AppPageTransition.phraseHeroMorph
             : AppPageTransition.slideFromTrailing
     }
 
-    private func isHomePhraseHeroMorphActive(for pageID: String) -> Bool {
-        guard let homePhraseHeroMorphPageID else {
+    private func isHomePhraseHeroRouteActive(for pageID: String) -> Bool {
+        guard let homePhraseHeroRoutePageID else {
             return false
         }
 
         let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
-        return homePhraseHeroMorphPageID == canonicalPageID
+        return homePhraseHeroRoutePageID == canonicalPageID
     }
 
     @ViewBuilder
@@ -1324,23 +1325,17 @@ struct AppShellView: View {
         let resetID = homePhraseHeroMorphResetID
 
         withoutRouteAnimation {
-            homePhraseHeroMorphPageID = morphPageID
+            homePhraseHeroRoutePageID = morphPageID
+            homePhraseHeroMorphPageID = nil
             homePhraseHeroContentHoldPageID = morphPageID
         }
 
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: HomePhraseHeroMorphTiming.sourcePrimingDelayNanoseconds)
-            guard homePhraseHeroMorphResetID == resetID else {
-                return
-            }
-
-            withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
-                navigation.openDetail(id)
-            }
-            intentStore.recordOpenedPage(id, source: .home)
-            revealHomePhraseHeroContent(after: resetID)
-            clearHomePhraseHeroMorph(after: resetID)
+        withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
+            navigation.openDetail(id)
         }
+        intentStore.recordOpenedPage(id, source: .home)
+        revealHomePhraseHeroContent(after: resetID)
+        clearHomePhraseHeroLaunch(after: resetID)
     }
 
     private func revealHomePhraseHeroContent(after resetID: Int) {
@@ -1356,7 +1351,7 @@ struct AppShellView: View {
         }
     }
 
-    private func clearHomePhraseHeroMorph(after resetID: Int) {
+    private func clearHomePhraseHeroLaunch(after resetID: Int) {
         Task { @MainActor in
             try? await Task.sleep(nanoseconds: HomePhraseHeroMorphTiming.cleanupDelayNanoseconds)
             guard homePhraseHeroMorphResetID == resetID else {
@@ -1364,6 +1359,7 @@ struct AppShellView: View {
             }
 
             withoutRouteAnimation {
+                homePhraseHeroRoutePageID = nil
                 homePhraseHeroMorphPageID = nil
             }
         }
@@ -1577,6 +1573,7 @@ struct AppShellView: View {
         interactiveDragResolutionID += 1
         dockSelectionTapRequestID += 1
         homePhraseHeroMorphResetID += 1
+        homePhraseHeroRoutePageID = nil
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
         interactiveDrag = nil
@@ -2505,10 +2502,9 @@ enum AppPageTransition {
 }
 
 enum HomePhraseHeroMorphTiming {
-    static let sourcePrimingDelayNanoseconds: UInt64 = 16_000_000
     static let navigationAnimation: Animation = .timingCurve(0.22, 1, 0.36, 1, duration: 0.68)
     static let pageFadeAnimation: Animation = .easeInOut(duration: 0.68)
-    static let articleRevealDelayNanoseconds: UInt64 = 700_000_000
+    static let articleRevealDelayNanoseconds: UInt64 = 320_000_000
     static let articleRevealAnimation: Animation = .easeOut(duration: 0.18)
     static let cleanupDelayNanoseconds: UInt64 = 1_120_000_000
 }
