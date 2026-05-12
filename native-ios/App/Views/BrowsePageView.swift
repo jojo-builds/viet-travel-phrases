@@ -18,7 +18,7 @@ struct BrowsePageView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: BrowsePageLayout.sectionSpacing) {
+                    VStack(alignment: .leading, spacing: BrowsePageLayout.sectionSpacing) {
                         header
                             .id(Self.scrollTopID)
 
@@ -92,10 +92,16 @@ struct BrowsePageView: View {
     }
 
     private var situationGrid: some View {
-        LazyVGrid(columns: BrowsePageLayout.situationColumns, spacing: 12) {
-            ForEach(BrowseSearchDestinations.situations) { situation in
+        VStack(spacing: 12) {
+            BrowseTwoColumnGrid(
+                items: BrowseSearchDestinations.situations.filter { $0.id != "local-greetings" },
+                spacing: 12
+            ) { situation in
                 BrowseSituationCard(destination: situation) { open(destination: situation) }
-                    .gridCellColumns(situation.id == "local-greetings" ? 2 : 1)
+            }
+
+            if let localGreetings = BrowseSearchDestinations.situations.first(where: { $0.id == "local-greetings" }) {
+                BrowseSituationCard(destination: localGreetings) { open(destination: localGreetings) }
             }
         }
     }
@@ -119,10 +125,11 @@ struct BrowsePageView: View {
 
     private var startHereShelf: some View {
         BrowseShelf(title: "Start here") {
-            LazyVGrid(columns: BrowsePageLayout.startHereColumns, spacing: 12) {
-                ForEach(BrowseSearchDestinations.startHere) { destination in
-                    BrowseStartHereCard(destination: destination) { open(destination: destination) }
-                }
+            BrowseTwoColumnGrid(
+                items: BrowseSearchDestinations.startHere,
+                spacing: 12
+            ) { destination in
+                BrowseStartHereCard(destination: destination) { open(destination: destination) }
             }
             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
         }
@@ -176,10 +183,11 @@ struct BrowsePageView: View {
 
     private var phraseFamilies: some View {
         BrowseShelf(title: "Phrase families") {
-            LazyVGrid(columns: BrowsePageLayout.familyColumns, spacing: 12) {
-                ForEach(BrowseSearchDestinations.phraseFamilies) { family in
-                    BrowsePhraseFamilyCard(destination: family) { open(destination: family) }
-                }
+            BrowseTwoColumnGrid(
+                items: BrowseSearchDestinations.phraseFamilies,
+                spacing: 12
+            ) { family in
+                BrowsePhraseFamilyCard(destination: family) { open(destination: family) }
             }
         }
     }
@@ -207,7 +215,7 @@ struct BrowsePageView: View {
 
         if !shelves.isEmpty {
             BrowseShelf(title: "Your next shelves") {
-                LazyVStack(spacing: 10) {
+                VStack(spacing: 10) {
                     ForEach(shelves) { row in
                         BrowseNextShelfRow(row: row)
                     }
@@ -330,6 +338,37 @@ private struct BrowseShelf<Content: View>: View {
                 .padding(.horizontal, BrowsePageLayout.horizontalPadding)
 
             content
+        }
+    }
+}
+
+private struct BrowseTwoColumnGrid<Item: Identifiable, Content: View>: View {
+    let items: [Item]
+    let spacing: CGFloat
+    let content: (Item) -> Content
+
+    var body: some View {
+        VStack(spacing: spacing) {
+            ForEach(rows.indices, id: \.self) { rowIndex in
+                HStack(alignment: .top, spacing: spacing) {
+                    ForEach(rows[rowIndex]) { item in
+                        content(item)
+                            .frame(maxWidth: .infinity)
+                    }
+
+                    if rows[rowIndex].count == 1 {
+                        Color.clear
+                            .frame(maxWidth: .infinity)
+                            .accessibilityHidden(true)
+                    }
+                }
+            }
+        }
+    }
+
+    private var rows: [[Item]] {
+        stride(from: 0, to: items.count, by: 2).map { startIndex in
+            Array(items[startIndex..<Swift.min(startIndex + 2, items.count)])
         }
     }
 }

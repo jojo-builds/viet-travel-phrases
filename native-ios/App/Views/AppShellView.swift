@@ -4272,15 +4272,19 @@ private struct HomeCityRail: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 14) {
+            HStack(spacing: 14) {
                 ForEach(cities) { city in
                     HomeCityCardView(city: city, onOpenCollection: onOpenCollection)
                 }
             }
+            .scrollTargetLayout()
             .padding(.trailing, HomeLayout.horizontalPadding)
             .padding(.bottom, 4)
         }
+        .frame(height: HomeLayout.cityCardHeight + 4)
+        .scrollTargetBehavior(.viewAligned)
         .scrollClipDisabled()
+        .accessibilityIdentifier("HomeCityRail")
     }
 }
 

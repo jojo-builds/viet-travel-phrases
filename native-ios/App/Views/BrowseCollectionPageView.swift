@@ -56,13 +56,21 @@ struct BrowseCollectionPageView: View {
                             )
                             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
 
-                            BrowseCollectionMessageSection(
-                                descriptor: descriptor,
-                                onStartScenario: { scenarioID in
-                                    onPractice(.practiceScenario(scenarioID))
-                                }
-                            )
-                            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+                            if descriptor.hasMessageSection {
+                                BrowseCollectionMessageSection(
+                                    descriptor: descriptor,
+                                    onStartScenario: { scenarioID in
+                                        onPractice(.practiceScenario(scenarioID))
+                                    }
+                                )
+                                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+                            } else {
+                                BrowseCollectionPracticeCard(
+                                    descriptor: descriptor,
+                                    onPractice: { onPractice(descriptor.practiceAction) }
+                                )
+                                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+                            }
 
                             if selectedSubcategory == nil {
                                 BrowseCollectionExploreSection(
@@ -264,7 +272,6 @@ private struct BrowseCityHubContent: View {
                     descriptor: descriptor,
                     onPractice: onPractice
                 )
-                .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
 
                 BrowseCityCardGridSection(
                     title: cityHub.browseTitle,
@@ -321,7 +328,6 @@ private struct BrowseCityHubContent: View {
                     descriptor: descriptor,
                     onPractice: onPractice
                 )
-                .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
 
                 BrowseCityCardGridSection(
                     title: cityHub.situationTitle,
@@ -558,6 +564,12 @@ private struct BrowseCollectionPracticeCard: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("BrowseCollection.Practice.\(descriptor.route.id)")
+    }
+}
+
+private extension BrowseCollectionDescriptor {
+    var hasMessageSection: Bool {
+        messageSectionTitle != nil && !messageScenarioIDs.isEmpty
     }
 }
 

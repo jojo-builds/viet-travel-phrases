@@ -452,11 +452,10 @@ final class AdminChromeUITests: XCTestCase {
 
     private func revealHomeCity(app: XCUIApplication, id: String) {
         let targetCard = app.buttons["HomeCity.\(id)"]
+        let cityRail = app.descendants(matching: .any)["HomeCityRail"]
         for _ in 0..<6 where !targetCard.frame.intersects(app.frame) {
-            if let visibleCard = ["hcmc", "hoian", "danang", "hanoi"]
-                .map({ app.buttons["HomeCity.\($0)"] })
-                .first(where: { $0.exists && $0.frame.intersects(app.frame) }) {
-                visibleCard.swipeLeft()
+            if cityRail.exists && cityRail.frame.intersects(app.frame) {
+                cityRail.swipeLeft()
             } else {
                 app.swipeLeft()
             }
