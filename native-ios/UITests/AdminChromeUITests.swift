@@ -177,6 +177,7 @@ final class AdminChromeUITests: XCTestCase {
         assertHomeVisible(in: app)
         XCTAssertTrue(app.staticTexts["Start speaking now"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.staticTexts["Test phrase cards"].exists)
+        XCTAssertFalse(app.staticTexts["Larger listen cards for common moments"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Home.SearchEntry"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-top.png")
 
@@ -185,12 +186,14 @@ final class AdminChromeUITests: XCTestCase {
         }
         XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.staticTexts["Keep going"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.staticTexts["Recent pages, saved phrases, and practice"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-mid.png")
 
         for _ in 0..<3 where !app.staticTexts["Messages"].exists {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["Messages"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.staticTexts["Practice short trip conversations"].exists)
         XCTAssertTrue(app.buttons["HomeScenario.danangFirstDay"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-lower.png")
 
