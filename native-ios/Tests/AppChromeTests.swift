@@ -6,8 +6,8 @@ final class AppChromeTests: XCTestCase {
     func testBottomChromeLayoutUsesNativeScaleIslandMetrics() {
         XCTAssertLessThan(AppChromeLayout.dockHorizontalPadding, 16)
         XCTAssertLessThanOrEqual(AppChromeLayout.dockVerticalPadding, 6)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchIslandSize, 66)
-        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 70)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchIslandSize, 62)
+        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 66)
         XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
         XCTAssertEqual(AppChromeLayout.bottomSeparationHeight, 0)
         XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
@@ -50,11 +50,14 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testDockSelectionLensUsesAppStoreStylePillMetrics() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth * 1.8)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionHeight, AppChromeLayout.searchIslandSize)
-        XCTAssertEqual(AppChromeLayout.dockSelectionCornerRadius, AppChromeLayout.dockSelectionHeight / 2)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth * 1.25)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionHeight, AppChromeLayout.searchIslandSize)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedWidth, AppChromeLayout.dockSelectionWidth)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedHeight, AppChromeLayout.dockSelectionHeight)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedHeight, AppChromeLayout.searchIslandSize)
         XCTAssertGreaterThan(AppChromeLayout.dockItemForegroundZIndex, AppChromeLayout.dockSelectionLensZIndex)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.40)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.30)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.36)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionDragCommitDistance, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionStretchFactor, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionMaximumStretch, 0)
@@ -96,8 +99,9 @@ final class AppChromeTests: XCTestCase {
         )
         XCTAssertEqual(
             expandedLens.xOffset,
-            lastCenter - AppChromeLayout.dockSelectionWidth / 2
+            lastCenter - AppChromeLayout.dockSelectionPressedWidth / 2
         )
+        XCTAssertEqual(expandedLens.height, AppChromeLayout.dockSelectionPressedHeight)
     }
 
     func testDockSelectionTapFlightVisitsIntermediateTabs() {
@@ -116,6 +120,7 @@ final class AppChromeTests: XCTestCase {
             reduceMotion: false
         )
         XCTAssertEqual(selectedMetrics.width, AppChromeLayout.dockSelectionWidth)
+        XCTAssertEqual(selectedMetrics.height, AppChromeLayout.dockSelectionHeight)
         XCTAssertEqual(
             selectedMetrics.xOffset,
             AppDockSelectionLayout.itemCenterX(index: 0) - AppChromeLayout.dockSelectionWidth / 2
@@ -128,10 +133,11 @@ final class AppChromeTests: XCTestCase {
             itemCount: 4,
             reduceMotion: false
         )
-        XCTAssertGreaterThan(draggedMetrics.width, selectedMetrics.width)
+        XCTAssertGreaterThan(draggedMetrics.width, AppChromeLayout.dockSelectionPressedWidth)
+        XCTAssertGreaterThan(draggedMetrics.height, AppChromeLayout.dockSelectionPressedHeight)
         XCTAssertLessThanOrEqual(
             draggedMetrics.width,
-            AppChromeLayout.dockSelectionWidth + AppChromeLayout.dockSelectionMaximumStretch
+            AppChromeLayout.dockSelectionPressedWidth + AppChromeLayout.dockSelectionMaximumStretch
         )
 
         let reducedMotionMetrics = AppDockSelectionLayout.lensMetrics(
@@ -141,10 +147,11 @@ final class AppChromeTests: XCTestCase {
             itemCount: 4,
             reduceMotion: true
         )
-        XCTAssertEqual(reducedMotionMetrics.width, AppChromeLayout.dockSelectionWidth)
+        XCTAssertEqual(reducedMotionMetrics.width, AppChromeLayout.dockSelectionPressedWidth)
+        XCTAssertEqual(reducedMotionMetrics.height, AppChromeLayout.dockSelectionPressedHeight)
         XCTAssertEqual(
             reducedMotionMetrics.xOffset,
-            AppDockSelectionLayout.itemCenterX(index: 3) - AppChromeLayout.dockSelectionWidth / 2
+            AppDockSelectionLayout.itemCenterX(index: 3) - AppChromeLayout.dockSelectionPressedWidth / 2
         )
     }
 
