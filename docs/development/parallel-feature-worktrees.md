@@ -5,11 +5,14 @@ Current baseline:
 - `main` is the tested iPhone baseline.
 - Create each feature branch from `main`.
 - Keep feature branches in `.worktrees/` so the primary checkout stays clean.
+- Use feature-specific Simulators for branch QA. Jojo's physical iPhone should run `main` unless he explicitly asks to test a branch on-device.
+- Before a finished branch merges into `main`, merge current `main` into the branch first and validate there. Resolve conflicts in the branch, not in `main`.
+- Do not resolve conflicts by taking a whole file from one side unless Jojo explicitly asks for that. Preserve both feature intents and rerun the focused tests/screenshots for the touched surface.
 
 Create a feature lane:
 
 ```sh
-git worktree add .worktrees/<feature-slug> -b feature/<feature-slug> main
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh create <feature-slug>
 ```
 
 Work in that lane:
@@ -23,6 +26,34 @@ Check active lanes:
 ```sh
 git worktree list
 ```
+
+Sync an existing clean lane before new work:
+
+```sh
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh sync <feature-slug-or-path>
+```
+
+Finish a lane:
+
+```sh
+cd .worktrees/<feature-slug>
+git status --short
+git add -A
+git commit -m "Finish <feature> work"
+
+cd /Users/jojolim/Developer/products/speaklocal/app-family
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh finish <feature-slug>
+```
+
+If `finish` or `sync` reports conflicts, resolve them inside `.worktrees/<feature-slug>`, preserve the current `main` behavior plus the branch feature, validate, commit the merge resolution, then rerun `finish`.
+
+Build the phone after app changes are merged:
+
+```sh
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh build-phone main
+```
+
+The helper refuses non-`main` phone builds by default so Jojo does not accidentally test a stale branch.
 
 Remove a finished lane after it has been merged or intentionally abandoned:
 

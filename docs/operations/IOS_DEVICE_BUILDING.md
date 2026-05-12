@@ -6,6 +6,8 @@ Use this note whenever a worker needs to build, install, or launch SpeakLocal on
 
 Physical-device testing can be wired or wireless. The repo must stay clean either way.
 
+Jojo's physical iPhone is the live `main` test target by default. Parallel feature branches should use their own Simulator instances; do not install a feature branch on the physical iPhone unless Jojo explicitly asks to test that branch before it merges. After feature work merges, build `main` so the phone reflects the current combined app.
+
 Do not commit:
 
 - personal Apple Team IDs;
@@ -43,6 +45,14 @@ Use the local safe helper:
 ```sh
 /Users/jojolim/.codex/skills/speaklocal-ios-device-build/scripts/build_on_phone.sh
 ```
+
+When working through the parallel-feature helper, prefer:
+
+```sh
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh build-phone main
+```
+
+That wrapper refuses non-`main` phone builds by default, which helps keep Jojo's phone from being overwritten by a stale feature branch.
 
 The helper should:
 
