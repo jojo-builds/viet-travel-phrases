@@ -379,7 +379,7 @@ final class PracticeScenarioModeTests: XCTestCase {
 
         let expectedGroups: [(String, [PracticeScenarioID], [String])] = [
             (
-                "Airport messages",
+                "Airport",
                 [.danangFirstDay, .airportPassportControl, .airportSimCash],
                 [
                     "Đây là hộ chiếu của tôi",
@@ -392,7 +392,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             (
-                "Hotel messages",
+                "Hotel",
                 [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi],
                 [
                     "Thẻ phòng không dùng được",
@@ -404,7 +404,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             (
-                "Food messages",
+                "Food",
                 [.restaurantOrderingPayment, .danangDay, .foodAllergyHelp],
                 [
                     "Cho tôi bàn cho hai người nhé",
@@ -416,7 +416,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             (
-                "Getting around messages",
+                "Getting Around",
                 [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp],
                 [
                     "Bạn là tài xế của tôi à?",
@@ -428,7 +428,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             (
-                "Shopping messages",
+                "Shopping",
                 [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp],
                 [
                     "Giá tốt nhất là bao nhiêu?",
@@ -440,7 +440,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             (
-                "Emergency messages",
+                "Emergency",
                 [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag],
                 [
                     "Tôi bị đau đầu",
@@ -452,7 +452,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             (
-                "Local greetings messages",
+                "Local Greetings",
                 [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect],
                 [
                     "Chào bạn",

@@ -470,19 +470,19 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     var messageSectionTitle: String {
         switch self {
         case .danangFirstDay, .airportPassportControl, .airportSimCash:
-            return "Airport messages"
+            return "Airport"
         case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi:
-            return "Hotel messages"
+            return "Hotel"
         case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp:
-            return "Food messages"
+            return "Food"
         case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
-            return "Getting around messages"
+            return "Getting Around"
         case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp:
-            return "Shopping messages"
+            return "Shopping"
         case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
-            return "Emergency messages"
+            return "Emergency"
         case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
-            return "Local greetings messages"
+            return "Local Greetings"
         }
     }
 
