@@ -1006,6 +1006,10 @@ struct AppShellView: View {
                 .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
         }
         .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: Circle()
+        )
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
         .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
         .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
@@ -1020,6 +1024,10 @@ struct AppShellView: View {
         Color.clear
             .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
             .contentShape(Circle())
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: Circle()
+            )
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
             .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
@@ -1034,6 +1042,10 @@ struct AppShellView: View {
         Color.clear
             .frame(height: AppChromeLayout.searchFieldHeight)
             .frame(maxWidth: .infinity)
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
+            )
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
             .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
@@ -1109,6 +1121,10 @@ struct AppShellView: View {
         Color.clear
             .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
             .contentShape(Circle())
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: Circle()
+            )
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
             .allowsHitTesting(false)
             .accessibilityHidden(true)
@@ -1143,6 +1159,10 @@ struct AppShellView: View {
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: Circle()
+        )
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
         .accessibilityLabel(kind.title)
         .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
@@ -1168,6 +1188,10 @@ struct AppShellView: View {
         .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
         .frame(height: AppChromeLayout.searchFieldHeight)
         .frame(maxWidth: .infinity)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
+        )
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
         .zIndex(AppChromeLayout.searchMorphZIndex)
     }
@@ -1183,6 +1207,10 @@ struct AppShellView: View {
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: Circle()
+        )
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
         .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
         .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
@@ -2634,16 +2662,16 @@ private struct AppShellDockItem: View {
     var isMorphSource = false
 
     var body: some View {
-        VStack(spacing: 3) {
+        VStack(spacing: 4) {
             icon
 
             Text(kind.title)
-                .font(.caption2.weight(.semibold))
+                .font(.system(size: 13, weight: .semibold))
                 .lineLimit(1)
                 .minimumScaleFactor(0.68)
                 .frame(maxWidth: AppChromeLayout.dockItemWidth - 4)
         }
-        .foregroundStyle(selected ? .red : .secondary)
+        .foregroundStyle(selected ? Color(red: 0.98, green: 0.18, blue: 0.22) : Color.primary.opacity(0.68))
         .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
         .contentShape(Rectangle())
     }
@@ -2651,7 +2679,7 @@ private struct AppShellDockItem: View {
     @ViewBuilder
     private var icon: some View {
         let image = Image(systemName: kind.symbolName)
-            .font(.system(size: 18, weight: .semibold))
+            .font(.system(size: 22, weight: .semibold))
 
         if isMorphSource {
             image.chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: true)
@@ -2671,19 +2699,19 @@ private struct AppShellDockSelectionLens: View {
 
         ZStack {
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .fill(Color.black.opacity(active ? 0.135 : 0.102))
+                .fill(Color.white.opacity(active ? 0.46 : 0.38))
 
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .fill(.white.opacity(active ? 0.30 : 0.24))
+                .fill(.white.opacity(active ? 0.42 : 0.34))
                 .blendMode(.plusLighter)
 
             LinearGradient(
                 colors: [
-                    .white.opacity(active ? 0.82 : 0.68),
-                    .white.opacity(active ? 0.20 : 0.14),
-                    Color(red: 0.28, green: 0.68, blue: 1.0).opacity(active ? 0.22 : 0.16),
-                    Color(red: 1.0, green: 0.88, blue: 0.28).opacity(active ? 0.20 : 0.14),
-                    .white.opacity(active ? 0.42 : 0.32),
+                    .white.opacity(active ? 0.90 : 0.78),
+                    .white.opacity(active ? 0.30 : 0.22),
+                    Color(red: 0.28, green: 0.68, blue: 1.0).opacity(active ? 0.28 : 0.20),
+                    Color(red: 1.0, green: 0.88, blue: 0.28).opacity(active ? 0.26 : 0.18),
+                    .white.opacity(active ? 0.52 : 0.40),
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -2693,7 +2721,7 @@ private struct AppShellDockSelectionLens: View {
             LinearGradient(
                 colors: [
                     .white.opacity(0.0),
-                    .white.opacity(active ? 0.56 : 0.44),
+                    .white.opacity(active ? 0.68 : 0.52),
                     .white.opacity(0.0),
                 ],
                 startPoint: .leading,
@@ -2703,19 +2731,19 @@ private struct AppShellDockSelectionLens: View {
             .blendMode(.screen)
 
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .stroke(.white.opacity(active ? 0.94 : 0.82), lineWidth: active ? 1.35 : 1.1)
+                .stroke(.white.opacity(active ? 0.98 : 0.88), lineWidth: active ? 1.45 : 1.15)
 
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .stroke(Color.black.opacity(active ? 0.075 : 0.05), lineWidth: 0.8)
+                .stroke(Color.black.opacity(active ? 0.07 : 0.045), lineWidth: 0.8)
                 .blendMode(.multiply)
         }
         .frame(width: width, height: AppChromeLayout.dockSelectionHeight)
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-        .nativeGlass(cornerRadius: cornerRadius, tint: Color.black.opacity(0.16), interactive: true)
+        .nativeGlass(cornerRadius: cornerRadius, tint: .white, interactive: true)
         .nativeGlassMorphID(AppChromeMorphID.dockSelection, namespace: chromeNamespace)
         .scaleEffect(active ? 1.045 : 1.0)
-        .shadow(color: .white.opacity(active ? 0.64 : 0.44), radius: active ? 24 : 17, x: 0, y: 0)
-        .shadow(color: .black.opacity(active ? 0.22 : 0.15), radius: active ? 24 : 18, x: 0, y: active ? 12 : 9)
+        .shadow(color: .white.opacity(active ? 0.76 : 0.56), radius: active ? 28 : 20, x: 0, y: 0)
+        .shadow(color: .black.opacity(active ? 0.20 : 0.13), radius: active ? 24 : 18, x: 0, y: active ? 12 : 9)
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
