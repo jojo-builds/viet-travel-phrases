@@ -2730,17 +2730,16 @@ struct HomeView: View {
                         header
                             .id(Self.scrollTopID)
 
-                        searchEntry
-                            .padding(.horizontal, HomeLayout.horizontalPadding)
+                        phraseCardTestShelf
+
+                        cityShelf
 
                         continueShelf
                             .padding(.horizontal, HomeLayout.horizontalPadding)
 
-                        phraseCardTestShelf
+                        practiceScenariosShelf
 
                         useNowShelf
-
-                        practiceScenariosShelf
 
                         savedForLaterShelf
                             .padding(.horizontal, HomeLayout.horizontalPadding)
@@ -2748,8 +2747,6 @@ struct HomeView: View {
                         relationshipShelf
 
                         situationShelves
-
-                        cityShelf
 
                         practiceListShelf
                             .padding(.horizontal, HomeLayout.horizontalPadding)
@@ -2804,44 +2801,22 @@ struct HomeView: View {
         }
     }
 
-    private var searchEntry: some View {
-        Button {
-            onSearchTapped()
-        } label: {
-            HStack(spacing: 16) {
-                Image(systemName: "magnifyingglass")
-                    .font(.system(size: 26, weight: .semibold))
-                    .foregroundStyle(.red)
-                    .frame(width: 58, height: 58)
-                    .nativeGlass(cornerRadius: 29, interactive: true)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Find a phrase or situation")
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-
-                    Text("Try \"lost passport\", \"no peanuts\", or \"taxi to airport\"")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                }
-                .layoutPriority(1)
-            }
-            .padding(14)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("Home.SearchEntry")
-    }
-
     private var continueShelf: some View {
-        HomeShelf(title: "Continue", subtitle: "Pick up where you left off") {
-            HomeContinueCard(
-                item: continueDisplayItem,
-                imageName: "HomeContinueStation",
-                progress: 0.60,
-                onOpenDetail: onOpenDetail
+        HomeShelf(title: "Keep going", subtitle: "Recent pages, saved phrases, and practice") {
+            HomeContinuePanel(
+                item: continueItem,
+                savedCount: savedItems.count,
+                practiceCount: practiceItems.count,
+                onOpenDetail: onOpenDetail,
+                onOpenSavedFallback: {
+                    if let pageID = savedItems.first?.pageID {
+                        onOpenDetail(pageID)
+                    } else {
+                        onBrowseAllTapped()
+                    }
+                },
+                onStartPractice: { onStartPractice(.practiceMode(.savedReview)) },
+                onBrowseAllTapped: onBrowseAllTapped
             )
         }
     }
@@ -2868,10 +2843,9 @@ struct HomeView: View {
     }
 
     private var practiceScenariosShelf: some View {
-        HomeShelf(title: "Messages", subtitle: "Offline conversations for your trip") {
+        HomeShelf(title: "Messages", subtitle: "Practice short trip conversations") {
             HomeScenarioRail(
                 scenarios: HomeContent.practiceScenarios,
-                onOpenCollection: onOpenCollection,
                 onStartPractice: onStartPractice
             )
         }
@@ -2948,20 +2922,6 @@ struct HomeView: View {
 
     private var continueItem: HomePhraseItem? {
         intentStore.recentPageIDs.compactMap(HomePhraseItem.resolve(pageID:)).first
-    }
-
-    private var continueDisplayItem: HomePhraseItem {
-        continueItem
-            ?? HomePhraseItem.resolve(pageID: "viet-phrase-city-hue-place-railway-station")
-            ?? HomeContent.useNowItems.first
-            ?? HomePhraseItem(
-                pageID: PhrasePage.xinChao.id,
-                title: PhrasePage.xinChao.title,
-                subtitle: "Hello",
-                symbolName: "hand.wave.fill",
-                tintName: .red,
-                audioKey: PhrasePage.xinChao.quickSay.first?.playbackAudioKey
-            )
     }
 
     private var savedItems: [HomePhraseItem] {
@@ -3106,12 +3066,11 @@ enum HomeLayout {
     static let quickPhraseGridRowSpacing: CGFloat = 12
     static let featurePhraseCardWidth: CGFloat = 344
     static let featurePhraseCardHeight: CGFloat = 326
-    static let scenarioCardWidth: CGFloat = 198
-    static let scenarioCardHeight: CGFloat = 368
-    static let scenarioCardPadding: CGFloat = 16
-    static let scenarioCardSpacing: CGFloat = 14
-    static let scenarioCardImageHeight: CGFloat = 144
-    static let scenarioStartButtonHeight: CGFloat = 44
+    static let continuePrimaryIconSize: CGFloat = 58
+    static let continueActionHeight: CGFloat = 46
+    static let messageContactWidth: CGFloat = 104
+    static let messageAvatarSize: CGFloat = 82
+    static let messageRailHeight: CGFloat = 134
     static let savedCardHeight: CGFloat = 172
     static let situationRowHeight: CGFloat = 96
     static let situationIconSize: CGFloat = 46
@@ -3255,12 +3214,10 @@ private struct HomeFeaturePhraseItem: Identifiable, Equatable {
 }
 
 private struct HomeScenario: Identifiable {
-    let id: String
-    let title: String
-    let subtitle: String
-    let imageName: String
-    let route: BrowseCollectionRoute
-    let practiceAction: BrowseCollectionPracticeAction
+    let scenarioID: PracticeScenarioID
+
+    var id: String { scenarioID.rawValue }
+    var practiceAction: BrowseCollectionPracticeAction { .practiceScenario(scenarioID) }
 }
 
 private struct HomeSituationCard: Identifiable {
@@ -3347,31 +3304,13 @@ private enum HomeContent {
 
     static var practiceScenarios: [HomeScenario] {
         [
-            HomeScenario(
-                id: "first-day",
-                title: "First day in Da Nang",
-                subtitle: "Airport, ride, hotel, first meal",
-                imageName: "HomeScenarioFirstDay",
-                route: .category("first-day"),
-                practiceAction: .practiceScenario(.danangFirstDay)
-            ),
-            HomeScenario(
-                id: "hotel",
-                title: "At the hotel",
-                subtitle: "Booking, passport, Wi-Fi, room help",
-                imageName: "HomeScenarioHotel",
-                route: .category("hotel"),
-                practiceAction: .practiceScenario(.hotelCheckInHelp)
-            ),
-            HomeScenario(
-                id: "danang",
-                title: "Da Nang day",
-                subtitle: "Beach, bridge, food, ride back",
-                imageName: "HomeCityDaNang",
-                route: .city("danang"),
-                practiceAction: .practiceScenario(.danangDay)
-            ),
-        ]
+            .danangFirstDay,
+            .hotelCheckInHelp,
+            .taxiGrabPickup,
+            .pharmacyHelp,
+            .danangDay,
+            .restaurantOrderingPayment,
+        ].map { HomeScenario(scenarioID: $0) }
     }
 
     static let situationCards = [
@@ -3508,63 +3447,143 @@ private struct HomeShelf<Content: View>: View {
     }
 }
 
-private struct HomeContinueCard: View {
-    let item: HomePhraseItem
-    let imageName: String
-    let progress: CGFloat
+private struct HomeContinuePanel: View {
+    let item: HomePhraseItem?
+    let savedCount: Int
+    let practiceCount: Int
     let onOpenDetail: (String) -> Void
+    let onOpenSavedFallback: () -> Void
+    let onStartPractice: () -> Void
+    let onBrowseAllTapped: () -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            HStack(spacing: 16) {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 86, height: 86)
-                    .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        VStack(spacing: 12) {
+            Button(action: primaryAction) {
+                HStack(spacing: 14) {
+                    ZStack {
+                        Circle()
+                            .fill(primaryTint.color.opacity(0.14))
+                            .overlay {
+                                Circle().stroke(.white.opacity(0.76), lineWidth: 1)
+                            }
 
-                VStack(alignment: .leading, spacing: 9) {
+                        Image(systemName: primarySymbolName)
+                            .font(.system(size: 25, weight: .semibold))
+                            .foregroundStyle(primaryTint.color)
+                    }
+                    .frame(width: HomeLayout.continuePrimaryIconSize, height: HomeLayout.continuePrimaryIconSize)
+
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(item.title)
+                        Text(item == nil ? "Start here" : "Last viewed")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(primaryTint.color)
+                            .textCase(.uppercase)
+
+                        Text(primaryTitle)
                             .font(.headline.weight(.bold))
                             .foregroundStyle(.primary)
                             .lineLimit(1)
-                            .minimumScaleFactor(0.82)
+                            .minimumScaleFactor(0.78)
 
-                        Text(item.subtitle)
+                        Text(primarySubtitle)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                             .lineLimit(2)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .layoutPriority(1)
 
-                    HStack(spacing: 14) {
-                        GeometryReader { proxy in
-                            ZStack(alignment: .leading) {
-                                Capsule(style: .continuous)
-                                    .fill(Color.black.opacity(0.08))
-
-                                Capsule(style: .continuous)
-                                    .fill(Color(red: 0.24, green: 0.58, blue: 0.41))
-                                    .frame(width: proxy.size.width * min(max(progress, 0), 1))
-                            }
-                        }
-                        .frame(height: 5)
-
-                        Text("\(Int(progress * 100))%")
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Color(red: 0.24, green: 0.58, blue: 0.41))
-                    }
+                    Image(systemName: "chevron.right")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.tertiary)
                 }
-                .layoutPriority(1)
+                .contentShape(Rectangle())
             }
-            .padding(14)
-            .frame(maxWidth: .infinity, minHeight: 112, alignment: .leading)
-            .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("Home.ContinuePrimary")
+
+            HStack(spacing: 10) {
+                HomeContinueActionPill(
+                    title: savedActionTitle,
+                    symbolName: "heart.fill",
+                    tintName: .red,
+                    action: onOpenSavedFallback
+                )
+
+                HomeContinueActionPill(
+                    title: practiceActionTitle,
+                    symbolName: "play.fill",
+                    tintName: .green,
+                    action: onStartPractice
+                )
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
+        .accessibilityIdentifier("Home.ContinuePanel")
+    }
+
+    private var primaryTitle: String {
+        item?.title ?? "Browse phrases"
+    }
+
+    private var primarySubtitle: String {
+        item?.subtitle ?? "Pick a useful page to save or practice."
+    }
+
+    private var primarySymbolName: String {
+        item?.symbolName ?? "square.grid.2x2.fill"
+    }
+
+    private var primaryTint: AccentTint {
+        item?.tintName ?? .blue
+    }
+
+    private var savedActionTitle: String {
+        savedCount == 0 ? "Saved phrases" : "\(savedCount) saved"
+    }
+
+    private var practiceActionTitle: String {
+        practiceCount == 0 ? "Practice list" : "\(practiceCount) practice"
+    }
+
+    private func primaryAction() {
+        if let item {
+            onOpenDetail(item.pageID)
+        } else {
+            onBrowseAllTapped()
+        }
+    }
+}
+
+private struct HomeContinueActionPill: View {
+    let title: String
+    let symbolName: String
+    let tintName: AccentTint
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 7) {
+                Image(systemName: symbolName)
+                    .font(.caption.weight(.bold))
+
+                Text(title)
+                    .font(.subheadline.weight(.bold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.76)
+            }
+            .foregroundStyle(tintName.color)
+            .frame(maxWidth: .infinity)
+            .frame(height: HomeLayout.continueActionHeight)
+            .background(tintName.color.opacity(0.10), in: Capsule(style: .continuous))
+            .overlay {
+                Capsule(style: .continuous)
+                    .stroke(tintName.color.opacity(0.18), lineWidth: 1)
+            }
         }
         .buttonStyle(.plain)
-        .accessibilityIdentifier("Home.ContinueCard")
     }
 }
 
@@ -3734,90 +3753,54 @@ private struct HomeQuickPhraseCard: View {
 
 private struct HomeScenarioRail: View {
     let scenarios: [HomeScenario]
-    let onOpenCollection: (BrowseCollectionRoute) -> Void
     let onStartPractice: (BrowseCollectionPracticeAction) -> Void
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 14) {
+            LazyHStack(alignment: .top, spacing: 8) {
                 ForEach(scenarios) { scenario in
-                    HomeScenarioCard(
+                    HomeScenarioContactButton(
                         scenario: scenario,
-                        onOpenCollection: onOpenCollection,
                         onStartPractice: onStartPractice
                     )
                 }
             }
             .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 4)
+            .padding(.bottom, 2)
         }
+        .frame(height: HomeLayout.messageRailHeight)
         .scrollClipDisabled()
     }
 }
 
-private struct HomeScenarioCard: View {
+private struct HomeScenarioContactButton: View {
     let scenario: HomeScenario
-    let onOpenCollection: (BrowseCollectionRoute) -> Void
     let onStartPractice: (BrowseCollectionPracticeAction) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: HomeLayout.scenarioCardSpacing) {
-            Button {
-                onOpenCollection(scenario.route)
-            } label: {
-                Image(scenario.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(
-                        width: HomeLayout.scenarioCardWidth - HomeLayout.scenarioCardPadding * 2,
-                        height: HomeLayout.scenarioCardImageHeight
-                    )
-                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        Button {
+            onStartPractice(scenario.practiceAction)
+        } label: {
+            VStack(spacing: 9) {
+                PracticeMessageAvatar(
+                    scenarioID: scenario.scenarioID,
+                    size: HomeLayout.messageAvatarSize,
+                    showsSymbol: true
+                )
+
+                Text(scenario.scenarioID.messageContactName)
+                    .font(.callout.weight(.medium))
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.78)
+                    .frame(height: 38, alignment: .top)
             }
-            .buttonStyle(.plain)
-
-            Button {
-                onOpenCollection(scenario.route)
-            } label: {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text(scenario.title)
-                        .font(.system(size: 20, weight: .black, design: .serif))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-                        .fixedSize(horizontal: false, vertical: true)
-
-                    Text(scenario.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            .buttonStyle(.plain)
-
-            Spacer(minLength: 0)
-
-            Button {
-                onStartPractice(scenario.practiceAction)
-            } label: {
-                Text("Open thread")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(Color(red: 0.24, green: 0.58, blue: 0.41))
-                    .frame(maxWidth: .infinity)
-                    .frame(height: HomeLayout.scenarioStartButtonHeight)
-                    .homeGlassCard(cornerRadius: 22)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Start \(scenario.title)")
-            .accessibilityIdentifier("HomeScenario.Start.\(scenario.id)")
+            .frame(width: HomeLayout.messageContactWidth, alignment: .top)
+            .contentShape(Rectangle())
         }
-        .padding(HomeLayout.scenarioCardPadding)
-        .frame(width: HomeLayout.scenarioCardWidth, height: HomeLayout.scenarioCardHeight, alignment: .topLeading)
-        .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
-        .accessibilityElement(children: .contain)
+        .buttonStyle(.plain)
+        .accessibilityLabel(scenario.scenarioID.messageContactName)
         .accessibilityIdentifier("HomeScenario.\(scenario.id)")
     }
 }
