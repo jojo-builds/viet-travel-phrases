@@ -96,6 +96,11 @@ const relationshipWordVietnamese = [
   "Chào chú",
   "Chào cô",
 ];
+const howAreYouRelationshipForms = [
+  "Anh khỏe không?",
+  "Chị khỏe không?",
+  "Em khỏe không?",
+];
 
 const requiredLegacyNativePageAliases = [
   ["viet-polite-hello", "viet-phrase-polite-1"],
@@ -407,6 +412,10 @@ function main() {
     "relationship-word eligibility should not include Tôi đến từ Mỹ"
   );
   assertTrue(
+    !relationshipWordsEligiblePageIDs.includes("viet-phrase-smalltalk-7"),
+    "relationship-word eligibility should not include Bạn khỏe không?"
+  );
+  assertTrue(
     !relationshipWordsEligiblePageIDs.includes("viet-family-city-danang-place-ba-na-hills"),
     "relationship-word eligibility should not include Bà Nà Hills place page"
   );
@@ -464,6 +473,34 @@ function main() {
       AND pp.phrase_id NOT LIKE 'hello-chao%'
       AND pp.phrase_id != 'polite-1';
   `), "non-greeting city-library pages with relationship-word shelf");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    WHERE ps.section_key = 'relationship-words'
+      AND ps.page_id IN (
+        'viet-phrase-smalltalk-7',
+        'viet-phrase-how-are-you-anh',
+        'viet-phrase-how-are-you-chi',
+        'viet-phrase-how-are-you-em'
+      );
+  `), "how-are-you pages with generic greeting relationship-word shelf");
+
+  assertEqual(
+    sqliteValue(`
+      SELECT group_concat(title_override, '|')
+      FROM (
+        SELECT psi.title_override
+        FROM page_section ps
+        JOIN page_section_item psi ON psi.section_id = ps.id
+        WHERE ps.page_id = 'viet-phrase-smalltalk-7'
+          AND ps.section_key = 'relationship-forms'
+          AND psi.item_kind = 'phrase'
+        ORDER BY psi.sort_order
+      );
+    `),
+    howAreYouRelationshipForms.join("|"),
+    "Bạn khỏe không? relationship forms"
+  );
 
   assertZero(sqliteValue(`
     SELECT count(*)

@@ -188,6 +188,37 @@ enum SearchQueryExpander {
         return uniqueQueries(queries)
     }
 
+    static func looseRankingQueries(for query: String) -> [String] {
+        let normalizedQuery = normalize(query)
+        guard !normalizedQuery.isEmpty else {
+            return []
+        }
+
+        var queries: [String] = []
+
+        for token in normalizedQuery.split(separator: " ").map(String.init) {
+            guard isLooseSearchToken(token) else {
+                continue
+            }
+
+            queries.append(token)
+
+            if let singularToken = singularToken(for: token) {
+                queries.append(singularToken)
+            }
+
+            for candidate in looseTokenExpansions[token, default: []] {
+                queries.append(candidate)
+            }
+        }
+
+        for rule in recoverableObjectRules where rule.matches(normalizedQuery) {
+            queries.append(contentsOf: rule.recoveryQueries)
+        }
+
+        return uniqueQueries(queries)
+    }
+
     private struct RecoverableObjectRule {
         let matchTerms: [String]
         let intentTerms: [String]
@@ -298,6 +329,7 @@ enum SearchQueryExpander {
 
     private static let looseTokenExpansions: [String: [String]] = [
         "air": ["airport", "flight", "plane", "sân bay"],
+        "bathroom": ["bathroom", "toilet", "restroom", "nhà vệ sinh"],
         "bridge": ["bridge", "cầu", "dragon bridge", "golden bridge"],
         "cab": ["taxi", "grab", "ride"],
         "car": ["taxi", "grab", "ride", "driver"],
@@ -312,6 +344,7 @@ enum SearchQueryExpander {
         "taxi": ["taxi", "grab", "ride", "driver", "pickup"],
         "ticket": ["ticket", "tickets", "vé", "bus ticket", "train ticket"],
         "tickets": ["ticket", "tickets", "vé", "bus ticket", "train ticket"],
+        "toilet": ["bathroom", "toilet", "restroom", "nhà vệ sinh"],
         "ve": ["ticket", "vé"],
     ]
 

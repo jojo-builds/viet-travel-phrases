@@ -3,16 +3,20 @@ import SwiftUI
 struct BrowseCollectionPageView: View {
     let descriptor: BrowseCollectionDescriptor
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: BrowseCollectionRoute?
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onPractice: (BrowseCollectionPracticeAction) -> Void
 
     @State private var selectedSubcategoryID: String?
     @State private var selectedCityCardID: String?
+    @State private var cityCardScrollRequestID = 0
 
     var body: some View {
         let selectedSubcategory = descriptor.subcategories.first { $0.id == selectedSubcategoryID }
-        let starterTitle = selectedSubcategory.map { "\($0.title) phrases" } ?? descriptor.starterTitle
+        let starterTitle = selectedSubcategory.map {
+            $0.countUnit == "item" ? $0.title : "\($0.title) phrases"
+        } ?? descriptor.starterTitle
         let starterItems = selectedSubcategory?.items ?? descriptor.starterItems
 
         ZStack(alignment: .bottom) {
@@ -40,9 +44,7 @@ struct BrowseCollectionPageView: View {
                                 subcategories: descriptor.subcategories,
                                 selectedSubcategoryID: selectedSubcategoryID,
                                 onSelect: { subcategory in
-                                    withAnimation(.snappy(duration: 0.24)) {
-                                        selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
-                                    }
+                                    selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
                                 }
                             )
 
@@ -72,11 +74,25 @@ struct BrowseCollectionPageView: View {
                     .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
+                    guard scrollToTopRoute == nil || scrollToTopRoute == descriptor.route else {
+                        return
+                    }
+
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
                 .onChange(of: selectedCityCardID) { _, newValue in
+                    cityCardScrollRequestID += 1
+                    let requestID = cityCardScrollRequestID
                     guard let newValue else { return }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.18) {
+                    Task { @MainActor in
+                        try? await Task.sleep(nanoseconds: BrowseCollectionLayout.citySelectedScrollDelayNanoseconds)
+                        guard
+                            requestID == cityCardScrollRequestID,
+                            selectedCityCardID == newValue
+                        else {
+                            return
+                        }
+
                         withAnimation(.snappy(duration: 0.24)) {
                             scrollProxy.scrollTo(
                                 BrowseCollectionLayout.citySelectedSectionID(for: newValue),
@@ -89,6 +105,7 @@ struct BrowseCollectionPageView: View {
             .ignoresSafeArea(edges: .top)
         }
         .onChange(of: descriptor.id) { _, _ in
+            cityCardScrollRequestID += 1
             selectedSubcategoryID = nil
             selectedCityCardID = nil
         }
@@ -102,6 +119,8 @@ private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 24
     static let bottomChromeContentClearance: CGFloat = 224
+    static let citySelectedScrollDelayNanoseconds: UInt64 = 180_000_000
+
     static func citySelectedSectionID(for cardID: String) -> String {
         "BrowseCollectionCitySelectedSection.\(cardID)"
     }
@@ -193,7 +212,7 @@ private struct BrowseCollectionSubcategoryCard: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.78)
 
-                Text("\(subcategory.phraseCount) phrase\(subcategory.phraseCount == 1 ? "" : "s")")
+                Text("\(subcategory.phraseCount) \(subcategory.countUnit)\(subcategory.phraseCount == 1 ? "" : "s")")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
@@ -232,57 +251,52 @@ private struct BrowseCityHubContent: View {
                 BrowseCityNameAudioPlayer(item: cityNameAudioItem)
             }
 
-            BrowseCityCardGridSection(
-                title: cityHub.situationTitle,
-                cards: cityHub.situations,
-                selectedCardID: selectedCityCardID,
-                onOpenCollection: onOpenCollection,
-                onSelectCard: isCountryHub ? nil : selectCityCard
-            )
-
-            if let selectedSituation, !selectedSituation.items.isEmpty, !isCountryHub {
-                BrowseCollectionStarterSection(
-                    title: citySectionTitle(for: selectedSituation),
-                    actionTitle: "",
-                    items: selectedSituation.items,
-                    onOpenDetail: onOpenDetail
-                )
-                .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedSituation.id))
-            }
-
-            BrowseCollectionPracticeCard(
-                descriptor: descriptor,
-                onPractice: onPractice
-            )
-            .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
-
             if isCountryHub {
+                BrowseCityCardGridSection(
+                    title: cityHub.situationTitle,
+                    cards: cityHub.situations,
+                    onOpenCollection: onOpenCollection
+                )
+
+                BrowseCollectionPracticeCard(
+                    descriptor: descriptor,
+                    onPractice: onPractice
+                )
+                .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
+
                 BrowseCityCardGridSection(
                     title: cityHub.browseTitle,
                     cards: cityHub.browseGroups,
                     onOpenCollection: onOpenCollection
                 )
-            }
 
-            if !cityHub.namesToKnowItems.isEmpty {
-                BrowseCollectionStarterSection(
-                    title: cityHub.namesTitle,
-                    actionTitle: "",
-                    items: cityHub.namesToKnowItems,
-                    onOpenDetail: onOpenDetail
-                )
-            }
+                if !cityHub.namesToKnowItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.namesTitle,
+                        actionTitle: "",
+                        items: cityHub.namesToKnowItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
 
-            if !cityHub.quickPhraseItems.isEmpty {
-                BrowseCollectionStarterSection(
-                    title: cityHub.quickPhrasesTitle,
-                    actionTitle: "",
-                    items: cityHub.quickPhraseItems,
-                    onOpenDetail: onOpenDetail
-                )
-            }
+                if !cityHub.quickPhraseItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.quickPhrasesTitle,
+                        actionTitle: "",
+                        items: cityHub.quickPhraseItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
+            } else {
+                if !cityHub.namesToKnowItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.namesTitle,
+                        actionTitle: "",
+                        items: cityHub.namesToKnowItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
 
-            if !isCountryHub {
                 BrowseCityCardGridSection(
                     title: cityHub.browseTitle,
                     cards: cityHub.browseGroups,
@@ -300,6 +314,39 @@ private struct BrowseCityHubContent: View {
                     )
                     .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedBrowseGroup.id))
                 }
+
+                BrowseCollectionPracticeCard(
+                    descriptor: descriptor,
+                    onPractice: onPractice
+                )
+                .accessibilityIdentifier("BrowseCollection.CityPractice.\(descriptor.route.id)")
+
+                BrowseCityCardGridSection(
+                    title: cityHub.situationTitle,
+                    cards: cityHub.situations,
+                    selectedCardID: selectedCityCardID,
+                    onOpenCollection: onOpenCollection,
+                    onSelectCard: selectCityCard
+                )
+
+                if let selectedSituation, !selectedSituation.items.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: citySectionTitle(for: selectedSituation),
+                        actionTitle: "",
+                        items: selectedSituation.items,
+                        onOpenDetail: onOpenDetail
+                    )
+                    .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedSituation.id))
+                }
+
+                if !cityHub.quickPhraseItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.quickPhrasesTitle,
+                        actionTitle: "",
+                        items: cityHub.quickPhraseItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
             }
         }
         .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
@@ -315,9 +362,7 @@ private struct BrowseCityHubContent: View {
         }
 
         let isActivatingCard = selectedCityCardID != card.id
-        withAnimation(.snappy(duration: 0.24)) {
-            selectedCityCardID = isActivatingCard ? card.id : nil
-        }
+        selectedCityCardID = isActivatingCard ? card.id : nil
 
         if isActivatingCard {
             onCityCardSelectionActivated(card.id)
@@ -685,6 +730,7 @@ private struct BrowseCollectionPhraseRow: View {
         BrowseCollectionPageView(
             descriptor: descriptor,
             scrollToTopTrigger: 0,
+            scrollToTopRoute: nil,
             onOpenDetail: { _ in },
             onOpenCollection: { _ in },
             onPractice: { _ in }

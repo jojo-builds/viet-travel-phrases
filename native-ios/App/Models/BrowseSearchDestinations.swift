@@ -93,6 +93,14 @@ private struct CitySituationCardSpec {
     let subcategoryIDs: [String]
 }
 
+private struct CityBrowseGroupSpec {
+    let id: String
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let placeKinds: Set<String>
+}
+
 struct BrowseDestination: Identifiable, Equatable {
     let id: String
     let title: String
@@ -172,6 +180,7 @@ struct BrowseCollectionSubcategory: Identifiable, Equatable {
     let symbolName: String
     let tintName: AccentTint
     let phraseCount: Int
+    let countUnit: String
     let items: [BrowseSearchPhraseItem]
     let targetRoute: BrowseCollectionRoute?
 
@@ -182,6 +191,7 @@ struct BrowseCollectionSubcategory: Identifiable, Equatable {
         symbolName: String,
         tintName: AccentTint,
         phraseCount: Int,
+        countUnit: String = "phrase",
         items: [BrowseSearchPhraseItem],
         targetRoute: BrowseCollectionRoute? = nil
     ) {
@@ -191,6 +201,7 @@ struct BrowseCollectionSubcategory: Identifiable, Equatable {
         self.symbolName = symbolName
         self.tintName = tintName
         self.phraseCount = phraseCount
+        self.countUnit = countUnit
         self.items = items
         self.targetRoute = targetRoute
     }
@@ -310,6 +321,8 @@ struct BrowseCityCollectionItem: Equatable {
     let cityName: String
     let subcategoryID: String
     let subcategoryTitle: String
+    let pageKind: String
+    let placeKind: String
 
     var phraseItem: BrowseSearchPhraseItem {
         BrowseSearchPhraseItem(
@@ -458,11 +471,11 @@ enum BrowseSearchDestinations {
         ),
         BrowseDestination(
             id: "polite-repair",
-            title: "Polite repair",
-            subtitle: "Fix misunderstandings politely.",
+            title: "When You Don't Understand",
+            subtitle: "Ask people to repeat, slow down, write it, or use English.",
             categoryIDs: ["understanding-repair", "polite-basics", "problems-help"],
-            symbolName: "heart",
-            tintName: .red,
+            symbolName: "questionmark.bubble.fill",
+            tintName: .green,
             sampleQuery: "i don't understand",
             preferredPageIDs: ["viet-family-repair-understand", "viet-family-repair-meaning"]
         ),
@@ -794,37 +807,42 @@ enum BrowseSearchDestinations {
 
         let destination = allCategoryDestinations.first { $0.id == id }
         let category = PhraseCatalog.category(withID: id)
+        let entityContent = categoryEntityContent(for: id, tintName: destination?.tintName ?? category?.tintName ?? categoryEntityTint(for: id) ?? .green)
 
-        guard destination != nil || category != nil else {
+        guard destination != nil || category != nil || entityContent != nil else {
             return nil
         }
 
         let categoryIDs = destination?.categoryIDs ?? [id]
-        let title = collectionTitle(for: id, fallback: destination?.title ?? category?.title ?? "Browse")
-        let tint = destination?.tintName ?? category?.tintName ?? .green
-        let symbolName = destination?.symbolName ?? category?.symbolName ?? "square.grid.2x2"
-        let starterItems = starterItems(
+        let title = collectionTitle(for: id, fallback: destination?.title ?? category?.title ?? categoryEntityTitle(for: id) ?? "Browse")
+        let tint = destination?.tintName ?? category?.tintName ?? categoryEntityTint(for: id) ?? .green
+        let symbolName = destination?.symbolName ?? category?.symbolName ?? categoryEntitySymbolName(for: id) ?? "square.grid.2x2"
+        let phraseStarterItems = starterItems(
             categoryIDs: categoryIDs,
             preferredPageIDs: destination?.preferredPageIDs ?? [],
             limit: 3
         )
-        let subcategories = categorySubcategories(for: id, categoryIDs: categoryIDs, tintName: tint)
-        let shelves = categoryExploreShelves(categoryIDs: categoryIDs, excluding: starterItems.map(\.pageID))
+        let starterItems = entityContent?.starterItems ?? phraseStarterItems
+        let subcategories = entityContent?.subcategories ?? categorySubcategories(for: id, categoryIDs: categoryIDs, tintName: tint)
+        let shelves = categoryExploreShelves(
+            categoryIDs: categoryIDs,
+            excluding: (starterItems + phraseStarterItems).map(\.pageID)
+        )
 
         return BrowseCollectionDescriptor(
             route: .category(id),
             title: title,
-            subtitle: collectionSubtitle(for: id, fallback: destination?.subtitle ?? category?.title ?? "Useful phrase pages for this travel moment."),
+            subtitle: collectionSubtitle(for: id, fallback: destination?.subtitle ?? category?.title ?? categoryEntitySubtitle(for: id) ?? "Useful phrase pages for this travel moment."),
             eyebrow: "SPEAKLOCAL VIETNAM",
             mastheadImageName: mastheadImageName(for: .category(id)),
             symbolName: symbolName,
             tintName: tint,
             subcategories: subcategories,
-            starterTitle: starterTitle(for: id),
+            starterTitle: entityContent?.starterTitle ?? starterTitle(for: id),
             starterItems: starterItems,
             practiceTitle: "Practice \(title)",
             practiceSubtitle: practiceSubtitle(for: title),
-            practiceAction: .addStarterPages(starterItems.map(\.pageID)),
+            practiceAction: .addStarterPages(phraseStarterItems.map(\.pageID)),
             exploreShelves: shelves
         )
     }
@@ -935,7 +953,7 @@ enum BrowseSearchDestinations {
     ) -> BrowseCityHub {
         BrowseCityHub(
             cityNameAudioItem: cityNameAudioItem(for: cityID, city: city),
-            situationTitle: "What are you doing?",
+            situationTitle: "Common moments",
             situations: citySituationCards(for: cityID, tintName: city.tintName, groupedItems: groupedItems),
             namesTitle: "Names to know",
             namesToKnowItems: cityNamesToKnowItems(for: cityID, cityItems: cityItems),
@@ -1196,32 +1214,115 @@ enum BrowseSearchDestinations {
         tintName: AccentTint,
         groupedItems: [String: [BrowseCityCollectionItem]]
     ) -> [BrowseCollectionSubcategory] {
-        let specs: [(String, String, String, String, BrowseCollectionRoute)] = [
-            ("arrivals-routes", "Arrivals", "Airport, station, pickup", "airplane.arrival", .category("airport")),
-            ("getting-around", "Getting around", "Taxi, Grab, directions", "car.fill", .category("getting-around")),
-            ("landmarks-attractions", "Landmarks", "Places, tickets, photos", "building.columns.fill", .category("city-guides")),
-            ("neighborhoods-streets", "Streets", "Street names and drop-off", "signpost.right.fill", .category("getting-around")),
-            ("food-coffee", "Food & coffee", "Restaurants, cafés, markets", "cup.and.saucer.fill", .category("food")),
-            ("shopping-markets", "Markets", "Shopping, prices, pickup", "bag.fill", .category("shopping")),
-            ("practical-help-near-places", "Help", "Bathroom, pharmacy, lost item", "cross.case.fill", .category("emergency")),
+        let specs: [CityBrowseGroupSpec] = [
+            CityBrowseGroupSpec(
+                id: "arrivals",
+                title: "Arrivals",
+                subtitle: "Airports, stations, ports",
+                symbolName: "airplane.arrival",
+                placeKinds: ["airport", "station", "port"]
+            ),
+            CityBrowseGroupSpec(
+                id: "landmarks",
+                title: "Landmarks",
+                subtitle: "Sights, temples, museums",
+                symbolName: "building.columns.fill",
+                placeKinds: ["landmark", "attraction", "museum"]
+            ),
+            CityBrowseGroupSpec(
+                id: "neighborhoods",
+                title: "Neighborhoods",
+                subtitle: "Areas and districts",
+                symbolName: "map.fill",
+                placeKinds: ["neighborhood"]
+            ),
+            CityBrowseGroupSpec(
+                id: "streets",
+                title: "Streets",
+                subtitle: "Street names and drop-off",
+                symbolName: "signpost.right.fill",
+                placeKinds: ["street"]
+            ),
+            CityBrowseGroupSpec(
+                id: "food-coffee",
+                title: "Food & coffee",
+                subtitle: "Restaurants, cafés, dishes",
+                symbolName: "cup.and.saucer.fill",
+                placeKinds: ["restaurant", "cafe", "dish"]
+            ),
+            CityBrowseGroupSpec(
+                id: "markets",
+                title: "Markets",
+                subtitle: "Markets and shopping stops",
+                symbolName: "bag.fill",
+                placeKinds: ["market"]
+            ),
+            CityBrowseGroupSpec(
+                id: "beaches-nature",
+                title: "Beaches & nature",
+                subtitle: "Beaches, parks, rivers",
+                symbolName: "water.waves",
+                placeKinds: ["beach", "nature", "park", "river", "village"]
+            ),
         ]
 
-        return specs.compactMap { subcategoryID, label, subtitle, symbolName, route in
-            let rows = groupedItems[subcategoryID, default: []]
-            guard !rows.isEmpty || ["getting-around"].contains(subcategoryID) else {
+        let entityRows = groupedItems.values.flatMap { $0 }
+        return specs.compactMap { spec in
+            let items = cityBrowseEntityItems(from: entityRows, matching: spec.placeKinds)
+            guard !items.isEmpty else {
                 return nil
             }
 
             return BrowseCollectionSubcategory(
-                id: "\(cityID).browse.\(subcategoryID)",
-                title: label,
-                subtitle: subtitle,
-                symbolName: symbolName,
+                id: "\(cityID).browse.\(spec.id)",
+                title: spec.title,
+                subtitle: spec.subtitle,
+                symbolName: spec.symbolName,
                 tintName: tintName,
-                phraseCount: rows.count,
-                items: rows.prefix(4).map(\.phraseItem),
+                phraseCount: items.count,
+                items: Array(items.prefix(4).map(\.phraseItem)),
                 targetRoute: nil
             )
+        }
+    }
+
+    private static func cityBrowseEntityItems(
+        from rows: [BrowseCityCollectionItem],
+        matching placeKinds: Set<String>
+    ) -> [BrowseCityCollectionItem] {
+        rows
+            .filter { item in
+                isBrowseEntityPageKind(item.pageKind)
+                    && placeKinds.contains(item.placeKind)
+                    && !lowPriorityCityOverviewText(item.title, item.subtitle)
+            }
+            .sorted { left, right in
+                if entitySortPriority(left) != entitySortPriority(right) {
+                    return entitySortPriority(left) < entitySortPriority(right)
+                }
+
+                if left.title.localizedCaseInsensitiveCompare(right.title) != .orderedSame {
+                    return left.title.localizedCaseInsensitiveCompare(right.title) == .orderedAscending
+                }
+
+                return left.pageID < right.pageID
+            }
+    }
+
+    private static func isBrowseEntityPageKind(_ pageKind: String) -> Bool {
+        ["place", "restaurant", "dish"].contains(pageKind)
+    }
+
+    private static func entitySortPriority(_ item: BrowseCityCollectionItem) -> Int {
+        switch item.pageKind {
+        case "place":
+            return 0
+        case "restaurant":
+            return 1
+        case "dish":
+            return 2
+        default:
+            return 9
         }
     }
 
@@ -1283,7 +1384,7 @@ enum BrowseSearchDestinations {
             return cachedItems
         }
 
-        let rows = (try? VietSQLiteLanguagePackRepository.bundled().loadBrowseCityCollectionItems(cityID: cityID, limit: 120))
+        let rows = (try? VietSQLiteLanguagePackRepository.bundled().loadBrowseCityCollectionItems(cityID: cityID, limit: 240))
             ?? fallbackCityCollectionItems(for: cityID)
         cityCollectionItemCache[cityID] = rows
         return rows
@@ -1294,7 +1395,8 @@ enum BrowseSearchDestinations {
             .filter { $0.pageID.contains("city-\(cityID)-") }
             .prefix(80)
             .map { item in
-                BrowseCityCollectionItem(
+                let pageKind = item.pageID.contains("-place-") ? "place" : "phrase"
+                return BrowseCityCollectionItem(
                     pageID: item.pageID,
                     title: item.title,
                     subtitle: item.subtitle,
@@ -1305,9 +1407,53 @@ enum BrowseSearchDestinations {
                     cityID: cityID,
                     cityName: cityShortcuts.first(where: { $0.id == cityID })?.title ?? cityID,
                     subcategoryID: "arrivals-routes",
-                    subcategoryTitle: "Arrivals and routes"
+                    subcategoryTitle: "Arrivals and routes",
+                    pageKind: pageKind,
+                    placeKind: pageKind == "place" ? fallbackPlaceKind(for: item) : ""
                 )
             }
+    }
+
+    private static func fallbackPlaceKind(for item: PhraseCatalogItem) -> String {
+        let text = normalize("\(item.pageID) \(item.title) \(item.subtitle)")
+
+        if text.contains("airport") {
+            return "airport"
+        }
+
+        if text.contains("station") {
+            return "station"
+        }
+
+        if text.contains("port") {
+            return "port"
+        }
+
+        if text.contains("street") {
+            return "street"
+        }
+
+        if text.contains("market") {
+            return "market"
+        }
+
+        if text.contains("cafe") || text.contains("coffee") || text.contains("restaurant") {
+            return "restaurant"
+        }
+
+        if text.contains("beach") {
+            return "beach"
+        }
+
+        if text.contains("park") {
+            return "park"
+        }
+
+        if text.contains("river") || text.contains("lake") {
+            return "river"
+        }
+
+        return "landmark"
     }
 
     private static func categorySubcategories(
@@ -1344,6 +1490,75 @@ enum BrowseSearchDestinations {
                 items: rows
             )
         }
+    }
+
+    private static func categoryEntityContent(
+        for collectionID: String,
+        tintName: AccentTint
+    ) -> (starterTitle: String, starterItems: [BrowseSearchPhraseItem], subcategories: [BrowseCollectionSubcategory])? {
+        let specs = categoryEntityGroupSpecs(for: collectionID)
+        guard !specs.isEmpty else {
+            return nil
+        }
+
+        let allKinds = Set(specs.flatMap(\.placeKinds))
+        let starterItems = categoryEntityItems(
+            matching: allKinds,
+            preferredPageIDs: categoryEntityStarterPreferredPageIDs(for: collectionID),
+            limit: 8
+        )
+        let subcategories = specs.compactMap { spec -> BrowseCollectionSubcategory? in
+            let totalCount = categoryEntityRows(matching: spec.placeKinds).count
+            let items = categoryEntityItems(
+                matching: spec.placeKinds,
+                preferredPageIDs: spec.preferredPageIDs,
+                limit: 12
+            )
+
+            guard totalCount > 0 || !items.isEmpty else {
+                return nil
+            }
+
+            return BrowseCollectionSubcategory(
+                id: "\(collectionID).entity.\(spec.id)",
+                title: spec.title,
+                subtitle: spec.subtitle,
+                symbolName: spec.symbolName,
+                tintName: tintName,
+                phraseCount: max(totalCount, items.count),
+                countUnit: "item",
+                items: items
+            )
+        }
+
+        guard !starterItems.isEmpty || !subcategories.isEmpty else {
+            return nil
+        }
+
+        return (
+            starterTitle: categoryEntityStarterTitle(for: collectionID),
+            starterItems: starterItems.isEmpty ? Array(subcategories.flatMap(\.items).prefix(8)) : starterItems,
+            subcategories: subcategories
+        )
+    }
+
+    private static func categoryEntityRows(matching placeKinds: Set<String>) -> [BrowseCityCollectionItem] {
+        let rows = cityShortcuts
+            .filter { $0.id != "all-vietnam" }
+            .flatMap { cityCollectionItems(for: $0.id) }
+
+        return cityBrowseEntityItems(from: rows, matching: placeKinds)
+    }
+
+    private static func categoryEntityItems(
+        matching placeKinds: Set<String>,
+        preferredPageIDs: [String],
+        limit: Int
+    ) -> [BrowseSearchPhraseItem] {
+        let preferredItems = pageItems(forOpenablePageIDs: preferredPageIDs)
+        let fallbackItems = categoryEntityRows(matching: placeKinds).map(\.phraseItem)
+
+        return Array(uniquePhraseItems(preferredItems + fallbackItems).prefix(limit))
     }
 
     private static func categoryExploreShelves(categoryIDs: [String], excluding excludedPageIDs: [String]) -> [BrowseCollectionShelf] {
@@ -1495,6 +1710,12 @@ enum BrowseSearchDestinations {
             return "Local Greetings"
         case "city-guides":
             return "All Vietnam"
+        case "food-coffee":
+            return "Food & Coffee"
+        case "landmarks-attractions":
+            return "Landmarks"
+        case "neighborhoods-streets":
+            return "Streets & Neighborhoods"
         default:
             return fallback
         }
@@ -1518,8 +1739,64 @@ enum BrowseSearchDestinations {
             return "Relationship-aware hellos and warm local openers."
         case "city-guides":
             return "City phrases for arrival, landmarks, streets, food, and everyday help."
+        case "food-coffee":
+            return "Restaurant, cafe, market, and dish names first, with useful phrases after."
+        case "landmarks-attractions":
+            return "Landmarks, markets, museums, beaches, and nature stops before phrase depth."
+        case "neighborhoods-streets":
+            return "Neighborhood and street names first, then directions and drop-off phrases."
         default:
             return fallback
+        }
+    }
+
+    private static func categoryEntityTitle(for id: String) -> String? {
+        switch id {
+        case "food-coffee":
+            return "Food & Coffee"
+        case "landmarks-attractions":
+            return "Landmarks"
+        case "neighborhoods-streets":
+            return "Streets & Neighborhoods"
+        default:
+            return nil
+        }
+    }
+
+    private static func categoryEntitySubtitle(for id: String) -> String? {
+        switch id {
+        case "food-coffee":
+            return "Restaurant, cafe, market, and dish names first, with useful phrases after."
+        case "landmarks-attractions":
+            return "Landmarks, markets, museums, beaches, and nature stops before phrase depth."
+        case "neighborhoods-streets":
+            return "Neighborhood and street names first, then directions and drop-off phrases."
+        default:
+            return nil
+        }
+    }
+
+    private static func categoryEntitySymbolName(for id: String) -> String? {
+        switch id {
+        case "food-coffee":
+            return "cup.and.saucer.fill"
+        case "landmarks-attractions":
+            return "building.columns.fill"
+        case "neighborhoods-streets":
+            return "signpost.right.fill"
+        default:
+            return nil
+        }
+    }
+
+    private static func categoryEntityTint(for id: String) -> AccentTint? {
+        switch id {
+        case "food-coffee":
+            return .orange
+        case "landmarks-attractions", "neighborhoods-streets":
+            return .green
+        default:
+            return nil
         }
     }
 
@@ -1607,6 +1884,246 @@ enum BrowseSearchDestinations {
         let symbolName: String
     }
 
+    private struct CategoryEntityGroupSpec {
+        let id: String
+        let title: String
+        let subtitle: String
+        let symbolName: String
+        let placeKinds: Set<String>
+        let preferredPageIDs: [String]
+    }
+
+    private static func categoryEntityGroupSpecs(for collectionID: String) -> [CategoryEntityGroupSpec] {
+        switch collectionID {
+        case "food", "food-coffee":
+            return [
+                CategoryEntityGroupSpec(
+                    id: "restaurants",
+                    title: "Restaurants",
+                    subtitle: "Names you can show or say",
+                    symbolName: "fork.knife",
+                    placeKinds: ["restaurant"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-danang-place-nen",
+                        "viet-phrase-city-hcmc-place-anan-saigon",
+                        "viet-phrase-city-hanoi-place-bun-cha-huong-lien",
+                        "viet-phrase-city-hoian-place-morning-glory-hoi-an",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "cafes",
+                    title: "Cafes",
+                    subtitle: "Coffee stops and tea houses",
+                    symbolName: "cup.and.saucer.fill",
+                    placeKinds: ["cafe"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-hanoi-place-giang-cafe",
+                        "viet-phrase-city-hoian-place-faifo-coffee",
+                        "viet-phrase-city-hoian-place-reaching-out-tea-house",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "dishes",
+                    title: "Dishes",
+                    subtitle: "Local foods to recognize",
+                    symbolName: "takeoutbag.and.cup.and.straw.fill",
+                    placeKinds: ["dish"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-hue-place-bun-bo-city",
+                        "viet-phrase-city-hoian-place-cao-lau",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "markets",
+                    title: "Markets",
+                    subtitle: "Food and shopping markets",
+                    symbolName: "bag.fill",
+                    placeKinds: ["market"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-hcmc-place-ben-thanh-market",
+                        "viet-phrase-city-danang-place-con-market",
+                        "viet-phrase-city-danang-place-han-market",
+                    ]
+                ),
+            ]
+        case "landmarks-attractions":
+            return [
+                CategoryEntityGroupSpec(
+                    id: "landmarks",
+                    title: "Landmarks",
+                    subtitle: "Sights and famous places",
+                    symbolName: "building.columns.fill",
+                    placeKinds: ["landmark", "attraction"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-danang-place-dragon-bridge",
+                        "viet-phrase-city-hanoi-place-hoan-kiem",
+                        "viet-phrase-city-danang-place-ba-na-hills",
+                        "viet-phrase-city-hue-place-imperial-city",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "temples-museums",
+                    title: "Temples & museums",
+                    subtitle: "Cultural stops",
+                    symbolName: "building.columns",
+                    placeKinds: ["temple", "museum", "pagoda"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-danang-place-linh-ung-pagoda",
+                        "viet-phrase-city-hcmc-place-war-remnants-museum",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "markets",
+                    title: "Markets",
+                    subtitle: "Markets worth hearing",
+                    symbolName: "bag.fill",
+                    placeKinds: ["market"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-hcmc-place-ben-thanh-market",
+                        "viet-phrase-city-danang-place-con-market",
+                        "viet-phrase-city-hanoi-place-dong-xuan-market",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "nature",
+                    title: "Beaches & nature",
+                    subtitle: "Water, parks, and day trips",
+                    symbolName: "water.waves",
+                    placeKinds: ["beach", "nature", "park", "river", "village"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-danang-place-my-khe",
+                        "viet-phrase-city-danang-place-marble-mountains",
+                        "viet-phrase-city-hue-place-perfume-river",
+                    ]
+                ),
+            ]
+        case "neighborhoods-streets":
+            return [
+                CategoryEntityGroupSpec(
+                    id: "neighborhoods",
+                    title: "Neighborhoods",
+                    subtitle: "Areas and districts",
+                    symbolName: "map.fill",
+                    placeKinds: ["neighborhood"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-hcmc-place-district-one",
+                        "viet-phrase-city-hoian-place-old-town",
+                        "viet-phrase-city-hanoi-place-old-quarter",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "streets",
+                    title: "Streets",
+                    subtitle: "Street names and drop-off",
+                    symbolName: "signpost.right.fill",
+                    placeKinds: ["street"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-danang-place-bach-dang-street",
+                        "viet-phrase-city-danang-place-nguyen-van-linh-street",
+                        "viet-phrase-city-hcmc-place-bui-vien-street",
+                    ]
+                ),
+            ]
+        case "getting-around":
+            return [
+                CategoryEntityGroupSpec(
+                    id: "streets",
+                    title: "Streets",
+                    subtitle: "Street names and drop-off",
+                    symbolName: "signpost.right.fill",
+                    placeKinds: ["street"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-danang-place-bach-dang-street",
+                        "viet-phrase-city-danang-place-nguyen-van-linh-street",
+                        "viet-phrase-city-hcmc-place-bui-vien-street",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "airports-stations",
+                    title: "Stations",
+                    subtitle: "Airports, train stations, ports",
+                    symbolName: "tram.fill",
+                    placeKinds: ["airport", "station", "port"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-danang-place-airport",
+                        "viet-phrase-city-hanoi-place-airport",
+                        "viet-phrase-city-hue-place-train-station",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "neighborhoods",
+                    title: "Neighborhoods",
+                    subtitle: "Areas and districts",
+                    symbolName: "map.fill",
+                    placeKinds: ["neighborhood"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-hcmc-place-district-one",
+                        "viet-phrase-city-hanoi-place-old-quarter",
+                        "viet-phrase-city-hoian-place-old-town",
+                    ]
+                ),
+            ]
+        default:
+            return []
+        }
+    }
+
+    private static func categoryEntityStarterPreferredPageIDs(for collectionID: String) -> [String] {
+        switch collectionID {
+        case "food", "food-coffee":
+            return [
+                "viet-phrase-city-danang-place-nen",
+                "viet-phrase-city-hcmc-place-anan-saigon",
+                "viet-phrase-city-hanoi-place-giang-cafe",
+                "viet-phrase-city-hoian-place-faifo-coffee",
+                "viet-phrase-city-hue-place-bun-bo-city",
+                "viet-phrase-city-hoian-place-cao-lau",
+                "viet-phrase-city-hcmc-place-ben-thanh-market",
+                "viet-phrase-city-danang-place-con-market",
+            ]
+        case "landmarks-attractions":
+            return [
+                "viet-phrase-city-danang-place-dragon-bridge",
+                "viet-phrase-city-hanoi-place-hoan-kiem",
+                "viet-phrase-city-hcmc-place-ben-thanh-market",
+                "viet-phrase-city-danang-place-ba-na-hills",
+                "viet-phrase-city-danang-place-my-khe",
+                "viet-phrase-city-hue-place-imperial-city",
+                "viet-phrase-city-hoian-place-old-town",
+            ]
+        case "neighborhoods-streets":
+            return [
+                "viet-phrase-city-hcmc-place-district-one",
+                "viet-phrase-city-hoian-place-old-town",
+                "viet-phrase-city-hanoi-place-old-quarter",
+                "viet-phrase-city-danang-place-bach-dang-street",
+                "viet-phrase-city-danang-place-nguyen-van-linh-street",
+                "viet-phrase-city-hcmc-place-bui-vien-street",
+            ]
+        case "getting-around":
+            return [
+                "viet-phrase-city-danang-place-bach-dang-street",
+                "viet-phrase-city-danang-place-airport",
+                "viet-phrase-city-hanoi-place-airport",
+                "viet-phrase-city-hcmc-place-district-one",
+                "viet-phrase-city-hoian-place-old-town",
+            ]
+        default:
+            return []
+        }
+    }
+
+    private static func categoryEntityStarterTitle(for collectionID: String) -> String {
+        switch collectionID {
+        case "food", "food-coffee":
+            return "Food names to know"
+        case "landmarks-attractions":
+            return "Places to know"
+        default:
+            return "Names to know"
+        }
+    }
+
     private static let subcategorySpecs: [String: [CollectionSubcategorySpec]] = [
         "airport": [
             CollectionSubcategorySpec(id: "arrival", title: "Arrival", subtitle: "Get oriented after landing", categoryIDs: ["airport-border-arrival"], terms: ["arrival", "tourism", "passport"], symbolName: "airplane.arrival"),
@@ -1627,6 +2144,20 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "paying", title: "Paying", subtitle: "Bills, cards, and cash", categoryIDs: ["money-numbers-prices", "food-drink"], terms: ["bill", "pay", "card", "cash"], symbolName: "dongsign.circle.fill"),
             CollectionSubcategorySpec(id: "drinks", title: "Drinks", subtitle: "Coffee, tea, and water", categoryIDs: ["food-drink"], terms: ["coffee", "tea", "water", "drink"], symbolName: "cup.and.saucer.fill"),
         ],
+        "first-day": [
+            CollectionSubcategorySpec(id: "airport", title: "Airport", subtitle: "Arrival, bags, and SIM cards", categoryIDs: ["airport-border-arrival"], terms: [], symbolName: "airplane.arrival"),
+            CollectionSubcategorySpec(id: "hotel", title: "Hotel", subtitle: "Check-in and luggage", categoryIDs: ["hotel-accommodation"], terms: [], symbolName: "bed.double.fill"),
+            CollectionSubcategorySpec(id: "transport", title: "Transport", subtitle: "Pickup, taxis, and directions", categoryIDs: ["transport", "directions-navigation"], terms: [], symbolName: "car.fill"),
+        ],
+        "questions": [
+            CollectionSubcategorySpec(id: "directions", title: "Directions", subtitle: "Ask how to get there", categoryIDs: ["directions-navigation"], terms: [], symbolName: "location.north.fill"),
+            CollectionSubcategorySpec(id: "time", title: "Time", subtitle: "Dates, booking, and hours", categoryIDs: ["time-dates-booking"], terms: [], symbolName: "calendar"),
+            CollectionSubcategorySpec(id: "clarify", title: "Clarify", subtitle: "Repeat, slow down, or write it", categoryIDs: ["understanding-repair"], terms: [], symbolName: "questionmark.bubble.fill"),
+        ],
+        "numbers-money": [
+            CollectionSubcategorySpec(id: "payment", title: "Payment", subtitle: "Cards, cash, and QR", categoryIDs: ["money-numbers-prices"], terms: [], symbolName: "creditcard.fill"),
+            CollectionSubcategorySpec(id: "shopping", title: "Shopping", subtitle: "Prices, sizes, and receipts", categoryIDs: ["shopping"], terms: [], symbolName: "bag.fill"),
+        ],
         "shopping": [
             CollectionSubcategorySpec(id: "prices", title: "Prices", subtitle: "Ask costs and compare", categoryIDs: ["shopping", "money-numbers-prices"], terms: ["price", "cost", "much"], symbolName: "tag.fill"),
             CollectionSubcategorySpec(id: "sizes", title: "Sizes", subtitle: "Sizes, colors, and fit", categoryIDs: ["shopping"], terms: ["size", "color", "fit"], symbolName: "tshirt.fill"),
@@ -1645,13 +2176,18 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "safety", title: "Safety", subtitle: "Safer travel moments", categoryIDs: ["emergency-safety"], terms: ["safe", "police", "emergency"], symbolName: "shield.fill"),
             CollectionSubcategorySpec(id: "problems", title: "Problems", subtitle: "Lost items, billing, and help", categoryIDs: ["problems-help"], terms: ["lost", "problem", "manager"], symbolName: "wrench.and.screwdriver.fill"),
         ],
+        "polite-repair": [
+            CollectionSubcategorySpec(id: "clarify", title: "Clarify", subtitle: "Repeat, slow down, or write it", categoryIDs: ["understanding-repair"], terms: [], symbolName: "questionmark.bubble.fill"),
+            CollectionSubcategorySpec(id: "polite-basics", title: "Polite basics", subtitle: "Please, sorry, and thank you", categoryIDs: ["polite-basics"], terms: [], symbolName: "hand.wave.fill"),
+            CollectionSubcategorySpec(id: "get-help", title: "Get help", subtitle: "Ask for backup when stuck", categoryIDs: ["problems-help"], terms: [], symbolName: "ellipsis.bubble.fill"),
+        ],
     ]
 
     private static let categoryMastheadImages: [String: String] = [
-        "airport": "BrowseCollectionAirport",
-        "hotel": "BrowseCollectionHotel",
-        "food": "BrowseCollectionFood",
-        "shopping": "BrowseCollectionShopping",
+        "airport": "HeroCategoryAirport",
+        "hotel": "HeroCategoryHotel",
+        "food": "HeroCategoryFood",
+        "shopping": "HeroCategoryNumbersMoney",
         "getting-around": "HeroCategoryGettingAround",
         "first-day": "HeroCategoryFirstDay",
         "city-guides": "HeroCountryVietnam",
@@ -1660,8 +2196,11 @@ enum BrowseSearchDestinations {
         "essentials": "HeroCategoryEssentials",
         "greetings": "HeroCategoryGreetings",
         "questions": "HeroCategoryQuestions",
-        "numbers-money": "BrowseCollectionShopping",
+        "numbers-money": "HeroCategoryNumbersMoney",
         "polite-repair": "HeroCategoryPoliteRepair",
+        "food-coffee": "HeroCategoryFood",
+        "landmarks-attractions": "HeroCategoryGettingAround",
+        "neighborhoods-streets": "HeroCategoryGettingAround",
     ]
 
     private static let categorySearchAliases: [String: [String]] = [

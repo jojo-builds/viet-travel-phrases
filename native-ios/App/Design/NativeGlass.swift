@@ -258,6 +258,7 @@ enum AppChromeLayout {
     static let dockItemSpacing: CGFloat = 10
     static let dockItemWidth: CGFloat = 50
     static let dockItemHeight: CGFloat = 46
+    static let dockBackdropFillOpacity: Double = 0.38
     static let dockSelectionWidth: CGFloat = 68
     static let dockSelectionHeight: CGFloat = 46
     static let dockSelectionCornerRadius: CGFloat = 23
@@ -610,6 +611,12 @@ struct HeroMastheadImage: View {
             return -152
         case "HeroCityHanoi", "HeroCityDanang", "HeroCityHoian", "HeroCityHue":
             return -132
+        case "HeroCategoryAirport":
+            return -126
+        case "HeroCategoryFirstDay":
+            return -112
+        case "HeroCategoryEmergency", "HeroCategoryEssentials":
+            return -78
         default:
             if imageName.hasPrefix("HeroCity")
                 || imageName.hasPrefix("HeroCategory")

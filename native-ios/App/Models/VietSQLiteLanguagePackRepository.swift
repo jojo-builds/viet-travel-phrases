@@ -589,7 +589,9 @@ final class VietSQLiteLanguagePackRepository {
           pct.city_id,
           c.title,
           pct.subcategory_id,
-          cs.title
+          cs.title,
+          pct.page_kind,
+          pct.place_kind
         FROM phrase_city_tag pct
         JOIN phrase p ON p.id = pct.phrase_id
         JOIN phrase_page pp ON pp.phrase_id = p.id
@@ -627,7 +629,9 @@ final class VietSQLiteLanguagePackRepository {
                 cityID: Self.stringColumn(statement, index: 7),
                 cityName: Self.stringColumn(statement, index: 8),
                 subcategoryID: Self.stringColumn(statement, index: 9),
-                subcategoryTitle: Self.stringColumn(statement, index: 10)
+                subcategoryTitle: Self.stringColumn(statement, index: 10),
+                pageKind: Self.stringColumn(statement, index: 11),
+                placeKind: Self.stringColumn(statement, index: 12)
             )
         }
     }
@@ -675,6 +679,25 @@ final class VietSQLiteLanguagePackRepository {
                 """),
             missingAudioAuditRows: try intValue("SELECT count(*) FROM missing_audio_audit;")
         )
+    }
+
+    func loadCityPageHeroImageNames() throws -> [String: String] {
+        let sql = """
+        SELECT
+          p.id,
+          COALESCE(pp.hero_image_name, '')
+        FROM phrase_page pp
+        JOIN phrase p ON p.id = pp.phrase_id
+        WHERE p.id LIKE 'city-%'
+        ORDER BY p.id;
+        """
+
+        return Dictionary(uniqueKeysWithValues: try rows(sql) { statement in
+            (
+                Self.stringColumn(statement, index: 0),
+                Self.stringColumn(statement, index: 1)
+            )
+        })
     }
 
     func canonicalPageID(forPhraseID phraseID: String) throws -> String {
@@ -769,25 +792,46 @@ final class VietSQLiteLanguagePackRepository {
             : []
         let rawResults = strictResults + looseResults + defaultResults
 
+        let primaryRankingQueries = ([query] + SearchQueryExpander.looseRankingQueries(for: query))
+            .map(Self.searchComparableText)
+            .filter { !$0.isEmpty }
         let normalizedQueries = (expandedQueries + looseQueries + (defaultResults.isEmpty ? [] : SearchQueryExpander.defaultFallbackQueries))
             .map(Self.searchComparableText)
             .filter { !$0.isEmpty }
         var seenPageIDs = Set<String>()
-        return rawResults.filter { result in
-            seenPageIDs.insert(result.pageID).inserted
-        }
-        .enumerated()
-        .sorted { left, right in
-            let leftScore = Self.searchIdentityScore(for: left.element, normalizedQueries: normalizedQueries)
-            let rightScore = Self.searchIdentityScore(for: right.element, normalizedQueries: normalizedQueries)
+        let scoredResults = rawResults.enumerated().compactMap { offset, result -> SearchScoredResult? in
+            guard seenPageIDs.insert(result.pageID).inserted else {
+                return nil
+            }
 
-            if leftScore == rightScore {
+            let identityText = Self.searchIdentityText(for: result)
+            return SearchScoredResult(
+                result: result,
+                offset: offset,
+                primaryScore: Self.searchIdentityScore(
+                    for: identityText,
+                    normalizedQueries: primaryRankingQueries
+                ),
+                secondaryScore: Self.searchIdentityScore(
+                    for: identityText,
+                    normalizedQueries: normalizedQueries
+                )
+            )
+        }
+
+        return scoredResults
+        .sorted { left, right in
+            if left.primaryScore != right.primaryScore {
+                return left.primaryScore > right.primaryScore
+            }
+
+            if left.secondaryScore == right.secondaryScore {
                 return left.offset < right.offset
             }
 
-            return leftScore > rightScore
+            return left.secondaryScore > right.secondaryScore
         }
-        .map(\.element)
+        .map(\.result)
         .prefix(limit)
         .map { $0 }
     }
@@ -1363,11 +1407,22 @@ final class VietSQLiteLanguagePackRepository {
             .joined(separator: " ")
     }
 
-    private static func searchIdentityScore(for result: PhraseSearchResult, normalizedQuery: String) -> Int {
-        guard !normalizedQuery.isEmpty else {
-            return 0
-        }
+    private struct SearchIdentityText {
+        let title: String
+        let subtitle: String
+        let titleTokens: [Substring]
+        let subtitleTokens: [Substring]
+        let shortestTokenCount: Int
+    }
 
+    private struct SearchScoredResult {
+        let result: PhraseSearchResult
+        let offset: Int
+        let primaryScore: Int
+        let secondaryScore: Int
+    }
+
+    private static func searchIdentityText(for result: PhraseSearchResult) -> SearchIdentityText {
         let title = searchComparableText(result.title)
         let subtitle = searchComparableText(result.subtitle)
         let titleTokens = title.split(separator: " ")
@@ -1376,6 +1431,27 @@ final class VietSQLiteLanguagePackRepository {
             titleTokens.isEmpty ? Int.max : titleTokens.count,
             subtitleTokens.isEmpty ? Int.max : subtitleTokens.count
         )
+
+        return SearchIdentityText(
+            title: title,
+            subtitle: subtitle,
+            titleTokens: titleTokens,
+            subtitleTokens: subtitleTokens,
+            shortestTokenCount: shortestTokenCount
+        )
+    }
+
+    private static func searchIdentityScore(for result: PhraseSearchResult, normalizedQuery: String) -> Int {
+        searchIdentityScore(for: searchIdentityText(for: result), normalizedQuery: normalizedQuery)
+    }
+
+    private static func searchIdentityScore(for identityText: SearchIdentityText, normalizedQuery: String) -> Int {
+        guard !normalizedQuery.isEmpty else {
+            return 0
+        }
+
+        let title = identityText.title
+        let subtitle = identityText.subtitle
         var score = 0
 
         if title == normalizedQuery {
@@ -1394,11 +1470,11 @@ final class VietSQLiteLanguagePackRepository {
             score += 2_800
         }
 
-        if titleTokens.contains(Substring(normalizedQuery)) {
+        if identityText.titleTokens.contains(Substring(normalizedQuery)) {
             score += 2_400
         }
 
-        if subtitleTokens.contains(Substring(normalizedQuery)) {
+        if identityText.subtitleTokens.contains(Substring(normalizedQuery)) {
             score += 2_200
         }
 
@@ -1410,17 +1486,145 @@ final class VietSQLiteLanguagePackRepository {
             score += 1_600
         }
 
-        if score > 0, shortestTokenCount != Int.max {
-            score += max(0, 500 - shortestTokenCount * 40)
+        if score > 0, identityText.shortestTokenCount != Int.max {
+            score += max(0, 500 - identityText.shortestTokenCount * 40)
         }
+
+        let tokenScore = searchVisibleTokenScore(
+            title: title,
+            subtitle: subtitle,
+            normalizedQuery: normalizedQuery
+        )
+        score += tokenScore
 
         return score
     }
 
     private static func searchIdentityScore(for result: PhraseSearchResult, normalizedQueries: [String]) -> Int {
+        searchIdentityScore(for: searchIdentityText(for: result), normalizedQueries: normalizedQueries)
+    }
+
+    private static func searchIdentityScore(for identityText: SearchIdentityText, normalizedQueries: [String]) -> Int {
         normalizedQueries
-            .map { searchIdentityScore(for: result, normalizedQuery: $0) }
+            .map { searchIdentityScore(for: identityText, normalizedQuery: $0) }
             .max() ?? 0
+    }
+
+    private static let searchRankingStopwords: Set<String> = [
+        "a",
+        "am",
+        "an",
+        "and",
+        "are",
+        "as",
+        "at",
+        "be",
+        "can",
+        "could",
+        "do",
+        "does",
+        "for",
+        "from",
+        "get",
+        "give",
+        "have",
+        "how",
+        "i",
+        "in",
+        "is",
+        "it",
+        "me",
+        "my",
+        "new",
+        "of",
+        "on",
+        "or",
+        "please",
+        "show",
+        "that",
+        "the",
+        "this",
+        "to",
+        "want",
+        "where",
+        "with",
+        "you",
+        "your",
+    ]
+
+    private static let shortSearchRankingTokens: Set<String> = [
+        "qr",
+        "sim",
+        "atm",
+        "wc",
+        "ve",
+    ]
+
+    private static func searchVisibleTokenScore(
+        title: String,
+        subtitle: String,
+        normalizedQuery: String
+    ) -> Int {
+        let queryTokens = normalizedQuery
+            .split(separator: " ")
+            .map(String.init)
+            .filter { token in
+                !searchRankingStopwords.contains(token)
+                    && (token.count >= 3 || shortSearchRankingTokens.contains(token))
+            }
+        guard !queryTokens.isEmpty else {
+            return 0
+        }
+
+        let visibleText = "\(title) \(subtitle)"
+        let visibleTokens = Set(visibleText.split(separator: " ").map(String.init))
+        let compactVisibleText = visibleText.replacingOccurrences(of: " ", with: "")
+        var matchedTokenCount = 0
+
+        for token in queryTokens {
+            let variants = searchRankingTokenVariants(for: token)
+            let matched = variants.contains { variant in
+                visibleTokens.contains(variant)
+                    || visibleTokens.contains { visibleToken in
+                        visibleToken.hasPrefix(variant)
+                            || (variant.count >= 4 && variant.hasPrefix(visibleToken))
+                    }
+                    || compactVisibleText.contains(variant)
+            }
+
+            if matched {
+                matchedTokenCount += 1
+            }
+        }
+
+        guard matchedTokenCount > 0 else {
+            return 0
+        }
+
+        var score = matchedTokenCount * 180
+        if matchedTokenCount >= 2 {
+            score += 420
+        }
+        if matchedTokenCount == queryTokens.count {
+            score += 850
+        }
+
+        return score
+    }
+
+    private static func searchRankingTokenVariants(for token: String) -> Set<String> {
+        var variants: Set<String> = [token]
+
+        if token.count > 3, token.hasSuffix("ies"), token.count > 4 {
+            variants.insert(String(token.dropLast(3)) + "y")
+        } else if token.count > 3,
+                  token.hasSuffix("ses") || token.hasSuffix("xes") || token.hasSuffix("ches") || token.hasSuffix("shes") {
+            variants.insert(String(token.dropLast(2)))
+        } else if token.count > 3, token.hasSuffix("s"), !token.hasSuffix("ss") {
+            variants.insert(String(token.dropLast()))
+        }
+
+        return variants
     }
 }
 

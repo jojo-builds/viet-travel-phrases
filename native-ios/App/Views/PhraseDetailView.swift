@@ -4,53 +4,50 @@ struct PhraseDetailView: View {
     let page: PhraseDetailPage
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
+    let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
-    let isInPractice: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     var onBackTapped: () -> Void
     var onSearchTapped: () -> Void
     var onToggleSaved: (() -> Void)?
-    var onTogglePractice: (() -> Void)?
     var onDetailTapped: (String) -> Void
 
     init(
         page: PhraseDetailPage,
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int = 0,
+        scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
-        isInPractice: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
         onBackTapped: @escaping () -> Void,
         onSearchTapped: @escaping () -> Void,
         onToggleSaved: (() -> Void)? = nil,
-        onTogglePractice: (() -> Void)? = nil,
         onDetailTapped: @escaping (String) -> Void
     ) {
         self.page = page
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
+        self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
-        self.isInPractice = isInPractice
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
-        self.onTogglePractice = onTogglePractice
         self.onDetailTapped = onDetailTapped
     }
 
@@ -61,18 +58,17 @@ struct PhraseDetailView: View {
             chromeRoute: .detailPage(page.id),
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
+            scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
-            isInPractice: isInPractice,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
-            onTogglePractice: onTogglePractice,
             onDetailTapped: onDetailTapped
         )
     }
@@ -123,6 +119,10 @@ struct PhraseDetailView: View {
                     }
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
+                    guard scrollToTopRoute == nil || scrollToTopRoute == .detailPage(page.id) else {
+                        return
+                    }
+
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
             }
@@ -207,14 +207,6 @@ struct PhraseDetailView: View {
                     onToggleSaved: onToggleSaved
                 )
                     .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
-
-                if let onTogglePractice {
-                    DetailPracticeIntentButton(
-                        isInPractice: isInPractice,
-                        onTogglePractice: onTogglePractice
-                    )
-                    .padding(.top, 4)
-                }
             }
             .padding(.horizontal, 24)
             .padding(.top, PhrasePageStyle.heroTextTopPadding)
@@ -276,34 +268,6 @@ private struct DetailSectionView: View {
         } else {
             DetailSectionCard(section: section)
         }
-    }
-}
-
-private struct DetailPracticeIntentButton: View {
-    let isInPractice: Bool
-    let onTogglePractice: () -> Void
-
-    var body: some View {
-        Button {
-            onTogglePractice()
-        } label: {
-            HStack(spacing: 10) {
-                Image(systemName: isInPractice ? "checkmark.circle.fill" : "plus.circle.fill")
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.red)
-
-                Text(isInPractice ? "In practice pool" : "Add to practice")
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.primary)
-
-                Spacer()
-            }
-            .padding(.horizontal, 16)
-            .frame(height: 52)
-            .phraseListCard(cornerRadius: 20, strokeOpacity: 0.05)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(isInPractice ? "Remove from practice pool" : "Add to practice pool")
     }
 }
 

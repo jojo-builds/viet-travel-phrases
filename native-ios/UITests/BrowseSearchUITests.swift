@@ -30,6 +30,28 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
     }
 
+    func testAdminDetoursFromBrowseCollectionBackReturnToCollection() {
+        var app = launchApp(arguments: ["--browse-category", "airport"])
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+
+        tapWhenVisible(app.buttons["AppChrome.Dock.Saved"], app: app)
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+
+        tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 3))
+
+        app.terminate()
+
+        app = launchApp(arguments: ["--browse-category", "hotel"])
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
+
+        tapWhenVisible(app.buttons["AppChrome.Dock.Messages"], app: app)
+        XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
+
+        tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 3))
+    }
+
     func testSearchCategoryResultHandsOffToBrowseCollection() {
         let app = launchApp(arguments: ["--search-query", "hotel"])
 
@@ -38,6 +60,20 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.buttons["AppChrome.Dock.Browse"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Search.Title"].exists)
+    }
+
+    func testSearchOriginFromBrowseCollectionReturnsToCollection() {
+        let app = launchApp(arguments: ["--browse-category", "hotel"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
+
+        tapWhenVisible(app.buttons["AppChrome.SearchButton"], app: app)
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
+
+        tapWhenVisible(app.buttons["AppChrome.SearchOriginButton.Browse"], app: app)
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.staticTexts["Browse.Title"].exists)
     }
 
     func testSearchCityResultHandsOffToBrowseCollection() {
@@ -66,17 +102,39 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Airport arrivals, beach rides, river landmarks, markets, and day trips."].waitForExistence(timeout: 2))
         XCTAssertTrue(app.otherElements["BrowseCollection.CityNamePlayer.Da Nang"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["What are you doing?"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.arriving"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.beach-day"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Names to know"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Browse Da Nang"].waitForExistence(timeout: 2))
+        app.swipeUp()
+        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.browse.landmarks"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Practice a Da Nang day"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Airport pickup, beach drop-off, food, and a ride back."].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Names to know"].waitForExistence(timeout: 2))
+        app.swipeUp()
+        XCTAssertTrue(app.staticTexts["Common moments"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.arriving"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.beach-day"].waitForExistence(timeout: 2))
         app.swipeUp()
         XCTAssertTrue(app.staticTexts["Quick phrases"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Browse Da Nang"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Start in Da Nang"].exists)
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
+    }
+
+    func testBackFromCityQuickPhraseRowPreservesCollectionScrollPosition() {
+        let app = launchApp(arguments: ["--browse"])
+        let quickPhraseRowID = "BrowseCollection.Row.viet-phrase-city-danang-to-airport"
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["Browse.City.danang"], app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        tapWhenComfortablyVisible(identifier: quickPhraseRowID, app: app)
+
+        XCTAssertTrue(app.staticTexts["Cho tôi đến sân bay Đà Nẵng"].waitForExistence(timeout: 5))
+
+        app.buttons["TopAdmin.BackButton"].tap()
+
+        let quickPhraseRow = app.buttons.matching(identifier: quickPhraseRowID).firstMatch
+        XCTAssertTrue(quickPhraseRow.waitForExistence(timeout: 3))
+        XCTAssertTrue(quickPhraseRow.isHittable, "Back should restore the city collection near the row that opened the detail page.")
+        XCTAssertFalse(app.staticTexts["BrowseCollection.Title.city.danang"].isHittable)
     }
 
     func testDaNangSituationCardsRevealCityRowsInsteadOfGenericCategoryPages() {
@@ -170,7 +228,7 @@ final class BrowseSearchUITests: XCTestCase {
 
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
-            ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "What are you doing?"),
+            ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "Names to know"),
             ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Start here"),
             ("ben-thanh-market", ["--detail-page", "viet-family-city-hcmc-place-ben-thanh-market"], "Chợ Bến Thành", "About"),
             ("anan-saigon", ["--detail-page", "viet-family-city-hcmc-place-anan-saigon"], "Anăn Sài Gòn", "About"),
@@ -239,7 +297,11 @@ final class BrowseSearchUITests: XCTestCase {
     }
 
     func testProgressiveSearchTypingAndDeletingKeepsFieldResponsive() {
-        let app = launchApp(arguments: ["--search"])
+        let app = launchApp()
+        let searchButton = app.buttons["AppChrome.SearchButton"]
+        XCTAssertTrue(searchButton.waitForExistence(timeout: 4))
+        searchButton.tap()
+
         let field = app.textFields["AppChrome.SearchField"]
 
         XCTAssertTrue(field.waitForExistence(timeout: 4))

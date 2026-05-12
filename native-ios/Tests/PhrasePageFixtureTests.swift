@@ -1361,6 +1361,81 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
+    func testSearchIndexNeverDeadEndsForMessyRealWorldQueries() {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+
+        let cases: [(query: String, expectedVisibleTerms: [String], topLimit: Int)] = [
+            ("heksn shsgs kwodh tickets", ["ticket", "tickets", "vé"], 20),
+            ("random words tickets", ["ticket", "tickets", "vé"], 20),
+            ("refund ticket please", ["refund", "ticket", "tickets", "vé", "hoàn"], 20),
+            ("where passport", ["passport", "hộ chiếu"], 20),
+            ("where can i get a new passport", ["passport", "hộ chiếu"], 20),
+            ("blah blah passport words", ["passport", "hộ chiếu"], 20),
+            ("driver cant find me", ["driver", "tài xế", "pickup", "đón"], 20),
+            ("grab driver cannot find me", ["driver", "tài xế", "pickup", "đón"], 20),
+            ("taxi pickup air random", ["taxi", "driver", "pickup", "đón", "airport", "sân bay"], 20),
+            ("black coffee", ["black coffee", "coffee", "cà phê"], 20),
+            ("order black coffee", ["black coffee", "coffee", "cà phê"], 20),
+            ("salt coffee", ["salt coffee", "coffee", "cà phê", "muối"], 20),
+            ("dragon bridge", ["dragon bridge", "cầu rồng", "bridge", "cầu"], 20),
+            ("where is dragon bridge", ["dragon bridge", "cầu rồng", "bridge", "cầu"], 20),
+            ("asdf bridge random", ["bridge", "cầu"], 20),
+            ("no peanuts", ["peanut", "peanuts", "đậu phộng"], 20),
+            ("does this have pork", ["pork", "thịt heo"], 20),
+            ("peanut allergy", ["peanut", "peanuts", "đậu phộng", "allergy"], 20),
+            ("bathroom", ["bathroom", "toilet", "restroom", "nhà vệ sinh"], 20),
+            ("toilet please", ["bathroom", "toilet", "restroom", "nhà vệ sinh"], 20),
+            ("sim card airport", ["sim", "airport", "sân bay"], 20),
+            ("wifi not working", ["wi-fi", "wifi", "working", "hoạt động"], 20),
+            ("hotel reservation", ["reservation", "booking", "đặt phòng"], 20),
+            ("check in hotel", ["check-in", "check in", "hotel", "đặt phòng"], 20),
+            ("table restaurant", ["table", "bàn", "restaurant"], 20),
+            ("nonsense hello qqq", ["hello", "chào"], 20),
+        ]
+
+        for testCase in cases {
+            XCTContext.runActivity(named: testCase.query) { _ in
+                let rawResults = PhraseSearchIndex.search(testCase.query, limit: 100)
+                let browseRows = BrowseSearchDestinations.searchResults(for: testCase.query, limit: 100)
+
+                XCTAssertFalse(rawResults.isEmpty, "Expected raw search results for \(testCase.query)")
+                XCTAssertFalse(browseRows.isEmpty, "Expected visible search rows for \(testCase.query)")
+
+                let visibleTopText = Self.normalizedSearchAssertionText(Array(browseRows.prefix(testCase.topLimit)))
+                XCTAssertTrue(
+                    testCase.expectedVisibleTerms.contains { term in
+                        visibleTopText.contains(Self.normalizedSearchAssertionText(term))
+                    },
+                    "Expected visible top \(testCase.topLimit) rows for \(testCase.query) to include one of \(testCase.expectedVisibleTerms), got \(browseRows.prefix(testCase.topLimit).map { "\($0.title) / \($0.subtitle)" })"
+                )
+            }
+        }
+    }
+
+    func testBrowseSearchReturnsScrollableResultSetsForBroadQueries() {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+
+        let cases: [(query: String, minimumCount: Int)] = [
+            ("hello", 12),
+            ("hotel", 12),
+            ("ticket", 12),
+            ("passport", 8),
+            ("coffee", 8),
+            ("bridge", 8),
+        ]
+
+        for testCase in cases {
+            let results = BrowseSearchDestinations.searchResults(for: testCase.query, limit: 100)
+
+            XCTAssertGreaterThanOrEqual(
+                results.count,
+                testCase.minimumCount,
+                "\(testCase.query) should expose a scrollable set of phrase results, got \(results.count): \(results.map { "\($0.title) / \($0.subtitle)" })"
+            )
+            XCTAssertLessThanOrEqual(results.count, 100)
+        }
+    }
+
     func testBrowseSearchCanReturnMoreThanFirstScreenOfPhraseResults() {
         VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
 

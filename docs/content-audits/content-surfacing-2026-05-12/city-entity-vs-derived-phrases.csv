@@ -1,0 +1,109 @@
+cityID,pageKind,placeKind,layer,pageCount,surfacingRisk,recommendation
+hue,phrase,landmark,derived,49,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,phrase,landmark,derived,44,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,phrase,landmark,derived,43,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,phrase,landmark,derived,36,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,phrase,market,derived,23,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,phrase,street,derived,23,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,phrase,neighborhood,derived,22,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,phrase,market,derived,21,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,phrase,landmark,derived,21,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,phrase,market,derived,21,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,phrase,street,derived,20,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,phrase,restaurant,derived,17,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,phrase,market,derived,15,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,phrase,market,derived,14,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,phrase,neighborhood,derived,14,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,place,landmark,entity,14,safe-entity-row,Use as level-zero browse row and message topic.
+danang,phrase,street,derived,13,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,place,landmark,entity,12,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,phrase,village,derived,12,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,phrase,beach,derived,11,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,phrase,neighborhood,derived,11,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,phrase,street,derived,11,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,phrase,beach,derived,10,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,phrase,park,derived,10,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,place,landmark,entity,10,safe-entity-row,Use as level-zero browse row and message topic.
+hcmc,phrase,restaurant,derived,10,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,phrase,dish,derived,10,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,place,landmark,entity,9,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,phrase,museum,derived,8,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,phrase,neighborhood,derived,8,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,phrase,nature,derived,8,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,phrase,restaurant,derived,8,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,place,street,entity,7,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,phrase,cafe,derived,7,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,phrase,museum,derived,6,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,place,landmark,entity,6,safe-entity-row,Use as level-zero browse row and message topic.
+danang,phrase,airport,derived,5,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,phrase,museum,derived,5,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,place,street,entity,5,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,phrase,dish,derived,5,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,phrase,restaurant,derived,5,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,phrase,restaurant,derived,4,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,place,market,entity,4,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,phrase,cafe,derived,4,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,restaurant,restaurant,entity,4,safe-entity-row,Use as level-zero browse row and message topic.
+hcmc,phrase,park,derived,4,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,place,neighborhood,entity,4,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,place,village,entity,4,safe-entity-row,Use as level-zero browse row and message topic.
+danang,phrase,nature,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,phrase,village,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,place,beach,entity,3,safe-entity-row,Use as level-zero browse row and message topic.
+danang,place,street,entity,3,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,phrase,airport,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,place,market,entity,3,safe-entity-row,Use as level-zero browse row and message topic.
+hcmc,place,neighborhood,entity,3,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,phrase,attraction,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,phrase,museum,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,phrase,river,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,place,market,entity,3,safe-entity-row,Use as level-zero browse row and message topic.
+hue,phrase,airport,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,phrase,museum,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,phrase,river,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,phrase,station,derived,3,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,place,market,entity,3,safe-entity-row,Use as level-zero browse row and message topic.
+hue,place,street,entity,3,safe-entity-row,Use as level-zero browse row and message topic.
+danang,phrase,station,derived,2,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,place,nature,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+danang,place,park,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,phrase,attraction,derived,2,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,place,market,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,place,museum,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,place,neighborhood,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hcmc,phrase,airport,derived,2,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,phrase,river,derived,2,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,place,museum,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hcmc,place,park,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hcmc,restaurant,restaurant,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,phrase,street,derived,2,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,place,beach,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,place,nature,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,restaurant,cafe,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,restaurant,restaurant,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+hue,phrase,village,derived,2,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,place,neighborhood,entity,2,safe-entity-row,Use as level-zero browse row and message topic.
+danang,phrase,port,derived,1,hide-from-level-zero-browse,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,place,airport,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+danang,place,museum,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+danang,place,port,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+danang,place,station,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+danang,place,village,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+danang,restaurant,restaurant,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,place,airport,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,place,attraction,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hanoi,restaurant,cafe,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hcmc,place,airport,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hcmc,place,river,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,dish,dish,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,place,attraction,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,place,museum,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,place,river,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hoian,place,street,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hue,dish,dish,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hue,place,airport,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hue,place,museum,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hue,place,river,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hue,place,station,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hue,place,village,entity,1,safe-entity-row,Use as level-zero browse row and message topic.
+hue,restaurant,restaurant,entity,1,safe-entity-row,Use as level-zero browse row and message topic.

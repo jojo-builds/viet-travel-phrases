@@ -1,0 +1,57 @@
+area,gapType,sourcePageID,currentTitle,currentEnglish,suggestedEntityLayer,recommendation
+food-drink,phrase-first-category-row,viet-family-food-coffee-milk,Cho tôi một cà phê sữa đá,One iced milk coffee please,Cà phê sữa đá / iced milk coffee,"Consider a noun/entity page first, then attach order/adjust phrases below it."
+food-drink,phrase-first-category-row,viet-family-food-coffee-black,Cho tôi cà phê đen đá,I’d like an iced black coffee,Cà phê đen đá / iced black coffee,"Consider a noun/entity page first, then attach order/adjust phrases below it."
+food-drink,phrase-first-category-row,viet-family-food-coffee-bac-xiu,Cho tôi bạc xỉu đá,I’d like an iced bạc xỉu,Bạc xỉu đá / iced bạc xỉu,"Consider a noun/entity page first, then attach order/adjust phrases below it."
+food-drink,phrase-first-category-row,viet-family-food-one-portion,Cho tôi một phần,One portion please,Một phần / one portion,"Consider a noun/entity page first, then attach order/adjust phrases below it."
+food-drink,phrase-first-category-row,viet-family-food-this-bowl,Cho tôi tô này,I’ll take this bowl,Tô này / this bowl,"Consider a noun/entity page first, then attach order/adjust phrases below it."
+food-drink,phrase-first-category-row,viet-family-food-bottled-water,Có nước suối không?,Do you have bottled water?,Nước suối / bottled water,"Consider a noun/entity page first, then attach order/adjust phrases below it."
+hue,derived-city-phrase-volume,,49 landmark derived phrase pages,phrase,landmark,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,44 landmark derived phrase pages,phrase,landmark,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,43 landmark derived phrase pages,phrase,landmark,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,derived-city-phrase-volume,,36 landmark derived phrase pages,phrase,landmark,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,derived-city-phrase-volume,,23 market derived phrase pages,phrase,market,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,derived-city-phrase-volume,,23 street derived phrase pages,phrase,street,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,22 neighborhood derived phrase pages,phrase,neighborhood,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,21 market derived phrase pages,phrase,market,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,21 landmark derived phrase pages,phrase,landmark,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,21 market derived phrase pages,phrase,market,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,20 street derived phrase pages,phrase,street,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,17 restaurant derived phrase pages,phrase,restaurant,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,15 market derived phrase pages,phrase,market,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,14 market derived phrase pages,phrase,market,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,derived-city-phrase-volume,,14 neighborhood derived phrase pages,phrase,neighborhood,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,13 street derived phrase pages,phrase,street,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,12 village derived phrase pages,phrase,village,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,11 beach derived phrase pages,phrase,beach,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,11 neighborhood derived phrase pages,phrase,neighborhood,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,11 street derived phrase pages,phrase,street,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,10 beach derived phrase pages,phrase,beach,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,10 park derived phrase pages,phrase,park,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,derived-city-phrase-volume,,10 restaurant derived phrase pages,phrase,restaurant,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,10 dish derived phrase pages,phrase,dish,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,8 museum derived phrase pages,phrase,museum,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,8 neighborhood derived phrase pages,phrase,neighborhood,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,8 nature derived phrase pages,phrase,nature,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,8 restaurant derived phrase pages,phrase,restaurant,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,7 cafe derived phrase pages,phrase,cafe,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,derived-city-phrase-volume,,6 museum derived phrase pages,phrase,museum,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,5 airport derived phrase pages,phrase,airport,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,5 museum derived phrase pages,phrase,museum,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,5 dish derived phrase pages,phrase,dish,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,5 restaurant derived phrase pages,phrase,restaurant,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,4 restaurant derived phrase pages,phrase,restaurant,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,4 cafe derived phrase pages,phrase,cafe,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,derived-city-phrase-volume,,4 park derived phrase pages,phrase,park,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,3 nature derived phrase pages,phrase,nature,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,3 village derived phrase pages,phrase,village,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,3 airport derived phrase pages,phrase,airport,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,3 attraction derived phrase pages,phrase,attraction,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,3 museum derived phrase pages,phrase,museum,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hoian,derived-city-phrase-volume,,3 river derived phrase pages,phrase,river,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,3 airport derived phrase pages,phrase,airport,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,3 museum derived phrase pages,phrase,museum,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,3 river derived phrase pages,phrase,river,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hue,derived-city-phrase-volume,,3 station derived phrase pages,phrase,station,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+danang,derived-city-phrase-volume,,2 station derived phrase pages,phrase,station,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hanoi,derived-city-phrase-volume,,2 attraction derived phrase pages,phrase,attraction,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.
+hcmc,derived-city-phrase-volume,,2 airport derived phrase pages,phrase,airport,Keep searchable and visible inside entity pages/messages; do not top-surface as city browse rows.

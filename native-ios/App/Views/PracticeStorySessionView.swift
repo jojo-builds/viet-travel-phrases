@@ -4,8 +4,10 @@ struct PracticeMessagesThreadHost: View {
     let activeScenarioSession: PracticeScenarioSession?
     let scenarioCompletion: PracticeScenarioCompletionSummary?
     let isInPracticePool: (String) -> Bool
+    let isSavedPhrasePage: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
+    let onToggleSavedPhrasePage: (String) -> Void
     let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
     let onPracticeAnother: () -> Void
     let onBackToPractice: () -> Void
@@ -17,109 +19,190 @@ struct PracticeMessagesThreadHost: View {
     }
 
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             PhrasePageStyle.pageBackground
             .ignoresSafeArea()
 
-            VStack(spacing: 0) {
-                if let scenario {
-                    PracticeMessagesThreadHeader(
-                        scenario: scenario,
-                        onBack: onDismiss
-                    )
-                }
+            PracticeMessagesThreadContent(
+                activeScenarioSession: activeScenarioSession,
+                scenarioCompletion: scenarioCompletion,
+                topContentPadding: scenario == nil ? 0 : PracticeMessagesThreadHeaderLayout.contentClearance,
+                isInPracticePool: isInPracticePool,
+                isSavedPhrasePage: isSavedPhrasePage,
+                onOpenPhrasePage: onOpenPhrasePage,
+                onTogglePracticePage: onTogglePracticePage,
+                onToggleSavedPhrasePage: onToggleSavedPhrasePage,
+                onSelectScenarioOption: onSelectScenarioOption,
+                onPracticeAnother: onPracticeAnother,
+                onBackToPractice: onBackToPractice,
+                onBrowseTapped: onBrowseTapped
+            )
 
-                PracticeMessagesThreadContent(
-                    activeScenarioSession: activeScenarioSession,
-                    scenarioCompletion: scenarioCompletion,
-                    isInPracticePool: isInPracticePool,
-                    onOpenPhrasePage: onOpenPhrasePage,
-                    onTogglePracticePage: onTogglePracticePage,
-                    onSelectScenarioOption: onSelectScenarioOption,
-                    onPracticeAnother: onPracticeAnother,
-                    onBackToPractice: onBackToPractice,
-                    onBrowseTapped: onBrowseTapped
+            if let scenario {
+                PracticeMessagesThreadHeader(
+                    scenario: scenario
                 )
+                .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
+
+                PracticeMessagesThreadBackButton(action: onDismiss)
+                    .padding(.leading, AppChromeLayout.topAdminHorizontalPadding)
+                    .padding(.top, AppChromeLayout.topAdminTopPadding)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .zIndex(AppChromeLayout.searchForegroundMorphZIndex + 1)
             }
+
+            threadAccessibilityMarker
         }
-        .accessibilityIdentifier("Practice.Messages.Thread")
     }
+
+    private var threadAccessibilityMarker: some View {
+        Text("Messages thread")
+            .font(.caption2)
+            .frame(width: 1, height: 1)
+            .opacity(0.001)
+            .allowsHitTesting(false)
+            .accessibilityIdentifier("Practice.Messages.Thread")
+            .accessibilityLabel("Messages thread")
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+    }
+}
+
+private enum PracticeMessagesThreadHeaderLayout {
+    static let height: CGFloat = AppChromeLayout.topAdminHitTestEnvelopeHeight
+    static let backdropHeight: CGFloat = AppChromeLayout.topSeparationHeight + 38
+    static let controlSize: CGFloat = AppChromeLayout.topAdminControlSize
+    static let avatarSize: CGFloat = 62
+    static let contentClearance: CGFloat = 128
+    static let nameCapsuleHeight: CGFloat = 28
 }
 
 private struct PracticeMessagesThreadHeader: View {
     let scenario: PracticeScenario
-    let onBack: () -> Void
 
     var body: some View {
-        ZStack(alignment: .top) {
-            HStack {
-                Button(action: onBack) {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.primary)
-                        .frame(width: 64, height: 64)
-                        .contentShape(Circle())
-                }
-                .buttonStyle(.plain)
-                .background(.white.opacity(0.74), in: Circle())
-                .accessibilityLabel("Back to Messages")
-                .accessibilityIdentifier("Practice.Messages.Back")
-
-                Spacer(minLength: 0)
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 18)
-
-            VStack(spacing: 0) {
-                PracticeMessageAvatar(
-                    scenarioID: scenario.id,
-                    size: 86,
-                    showsSymbol: true
+        headerControls
+            .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
+            .padding(.top, AppChromeLayout.topAdminTopPadding)
+            .frame(height: PracticeMessagesThreadHeaderLayout.height, alignment: .top)
+            .background(alignment: .top) {
+                LinearGradient(
+                    colors: [
+                        PhrasePageStyle.pageBackground.opacity(0.96),
+                        PhrasePageStyle.pageBackground.opacity(0.72),
+                        PhrasePageStyle.pageBackground.opacity(0.0),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
                 )
-                .padding(.top, 6)
-                .offset(y: 22)
-                .zIndex(1)
-
-                VStack(spacing: 2) {
-                    HStack(spacing: 6) {
-                        Text(scenario.id.messageContactName)
-                            .font(.system(size: 25, weight: .bold))
-                            .foregroundStyle(.primary)
-
-                        Image(systemName: "chevron.right")
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundStyle(.secondary)
-                    }
-
-                    Text(scenario.id.messageLocation)
-                        .font(.callout.weight(.medium))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.82)
-                }
-                .padding(.horizontal, 22)
-                .padding(.top, 34)
-                .padding(.bottom, 14)
-                .background(.white.opacity(0.76), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .stroke(.white.opacity(0.8), lineWidth: 1)
-                }
-                .shadow(color: .black.opacity(0.06), radius: 18, x: 0, y: 8)
+                .frame(height: PracticeMessagesThreadHeaderLayout.backdropHeight)
+                .ignoresSafeArea(edges: .top)
+                .allowsHitTesting(false)
             }
-            .frame(maxWidth: 260)
+    }
+
+    @ViewBuilder
+    private var headerControls: some View {
+        if #available(iOS 26.0, *) {
+            GlassEffectContainer(spacing: 18) {
+                controlRow
+            }
+        } else {
+            controlRow
         }
-        .frame(height: 176, alignment: .top)
-        .accessibilityIdentifier("Practice.Messages.ThreadHeader")
+    }
+
+    private var controlRow: some View {
+        HStack(alignment: .top, spacing: 0) {
+            Color.clear
+                .frame(
+                    width: PracticeMessagesThreadHeaderLayout.controlSize,
+                    height: PracticeMessagesThreadHeaderLayout.controlSize
+                )
+                .accessibilityHidden(true)
+
+            Spacer(minLength: 0)
+
+            PracticeMessagesThreadProfileControl(scenario: scenario)
+
+            Spacer(minLength: 0)
+
+            Color.clear
+                .frame(
+                    width: PracticeMessagesThreadHeaderLayout.controlSize,
+                    height: PracticeMessagesThreadHeaderLayout.controlSize
+                )
+                .accessibilityHidden(true)
+        }
+    }
+}
+
+private struct PracticeMessagesThreadBackButton: View {
+    let action: () -> Void
+
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous)
+                .fill(.white.opacity(0.62))
+
+            Image(systemName: "chevron.left")
+                .font(.system(size: 23, weight: .semibold))
+                .foregroundStyle(.primary)
+        }
+        .frame(
+            width: PracticeMessagesThreadHeaderLayout.controlSize,
+            height: PracticeMessagesThreadHeaderLayout.controlSize
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous)
+                .stroke(.white.opacity(0.78), lineWidth: 1)
+        }
+        .shadow(color: .black.opacity(0.08), radius: 12, y: 5)
+        .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous))
+        .onTapGesture(perform: action)
+        .accessibilityElement()
+        .accessibilityLabel("Back to Messages")
+        .accessibilityIdentifier("Practice.Messages.Back")
+        .accessibilityAddTraits(.isButton)
+    }
+}
+
+private struct PracticeMessagesThreadProfileControl: View {
+    let scenario: PracticeScenario
+
+    var body: some View {
+        VStack(spacing: 5) {
+            PracticeMessageAvatar(
+                scenarioID: scenario.id,
+                size: PracticeMessagesThreadHeaderLayout.avatarSize,
+                showsSymbol: true
+            )
+
+            Text(scenario.id.messageContactName)
+                .font(.system(size: 14, weight: .bold))
+                .lineLimit(1)
+                .minimumScaleFactor(0.78)
+                .padding(.horizontal, 11)
+                .frame(height: PracticeMessagesThreadHeaderLayout.nameCapsuleHeight)
+                .nativeGlass(
+                    cornerRadius: PracticeMessagesThreadHeaderLayout.nameCapsuleHeight / 2,
+                    tint: .white.opacity(0.34)
+                )
+        }
+        .frame(maxWidth: 150)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(scenario.id.messageContactName), \(scenario.id.messageLocation)")
     }
 }
 
 struct PracticeMessagesThreadContent: View {
     let activeScenarioSession: PracticeScenarioSession?
     let scenarioCompletion: PracticeScenarioCompletionSummary?
+    let topContentPadding: CGFloat
     let isInPracticePool: (String) -> Bool
+    let isSavedPhrasePage: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
+    let onToggleSavedPhrasePage: (String) -> Void
     let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
     let onPracticeAnother: () -> Void
     let onBackToPractice: () -> Void
@@ -131,9 +214,12 @@ struct PracticeMessagesThreadContent: View {
                 PracticeStorySessionSurface(
                     session: activeScenarioSession,
                     showsHeader: false,
+                    topContentPadding: topContentPadding,
                     isInPracticePool: isInPracticePool,
+                    isSavedPhrasePage: isSavedPhrasePage,
                     onOpenPhrasePage: onOpenPhrasePage,
                     onTogglePracticePage: onTogglePracticePage,
+                    onToggleSavedPhrasePage: onToggleSavedPhrasePage,
                     onSelectOption: { option in onSelectScenarioOption(option, currentStep) }
                 )
             } else if let scenarioCompletion {
@@ -145,7 +231,7 @@ struct PracticeMessagesThreadContent: View {
                         onBrowseTapped: onBrowseTapped
                     )
                     .padding(.horizontal, 20)
-                    .padding(.top, 22)
+                    .padding(.top, topContentPadding + 22)
                     .padding(.bottom, 28)
                 }
             } else {
@@ -158,12 +244,17 @@ struct PracticeMessagesThreadContent: View {
 struct PracticeStorySessionSurface: View {
     let session: PracticeScenarioSession
     var showsHeader = true
+    var topContentPadding: CGFloat = 0
     let isInPracticePool: (String) -> Bool
+    let isSavedPhrasePage: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
+    let onToggleSavedPhrasePage: (String) -> Void
     let onSelectOption: (PracticeScenarioResponseOption) -> Void
+    @State private var scrollRequestID = 0
 
     private static let transcriptBottomID = "Practice.Story.Transcript.Bottom"
+    private static let scrollDelayNanoseconds: UInt64 = 50_000_000
 
     private var turns: [PracticeStoryTurn] {
         PracticeStoryTranscript.turns(
@@ -193,8 +284,10 @@ struct PracticeStorySessionSurface: View {
                             turns: turns,
                             tint: session.scenario.id.tint,
                             isInPracticePool: isInPracticePool,
+                            isSavedPhrasePage: isSavedPhrasePage,
                             onOpenPhrasePage: onOpenPhrasePage,
-                            onTogglePracticePage: onTogglePracticePage
+                            onTogglePracticePage: onTogglePracticePage,
+                            onToggleSavedPhrasePage: onToggleSavedPhrasePage
                         )
 
                         Color.clear
@@ -202,7 +295,7 @@ struct PracticeStorySessionSurface: View {
                             .id(Self.transcriptBottomID)
                     }
                     .padding(.horizontal, 20)
-                    .padding(.top, showsHeader ? 6 : 4)
+                    .padding(.top, topContentPadding + (showsHeader ? 6 : 4))
                     .padding(.bottom, 18)
                 }
                 .onAppear {
@@ -245,7 +338,15 @@ struct PracticeStorySessionSurface: View {
     }
 
     private func scrollToBottom(_ proxy: ScrollViewProxy, animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        scrollRequestID += 1
+        let requestID = scrollRequestID
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: Self.scrollDelayNanoseconds)
+            guard requestID == scrollRequestID else {
+                return
+            }
+
             if animated {
                 withAnimation(.easeOut(duration: 0.24)) {
                     proxy.scrollTo(Self.transcriptBottomID, anchor: .bottom)

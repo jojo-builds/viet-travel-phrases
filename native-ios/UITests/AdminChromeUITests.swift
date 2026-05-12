@@ -82,7 +82,7 @@ final class AdminChromeUITests: XCTestCase {
         captureProofIfRequested(app: app, name: "dock-tap-home-to-practice-settled.png")
     }
 
-    func testDetailSearchBrowseOriginRoundTripKeepsChromeResponsive() {
+    func testDetailSearchOriginRoundTripKeepsChromeResponsive() {
         let app = XCUIApplication()
         app.launchArguments = ["--detail-page", "viet-phrase-hello-chao-anh"]
         app.launch()
@@ -91,7 +91,7 @@ final class AdminChromeUITests: XCTestCase {
 
         openSearch(in: app, expectedOrigin: "Browse", iteration: 1)
         openOrigin(in: app, title: "Browse", iteration: 1)
-        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Chào anh"].waitForExistence(timeout: 3))
 
         openSearch(in: app, expectedOrigin: "Browse", iteration: 2)
         XCTAssertTrue(app.staticTexts["Search"].waitForExistence(timeout: 2))

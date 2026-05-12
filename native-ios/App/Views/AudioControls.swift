@@ -5,7 +5,6 @@ struct AudioSpeakerButton: View {
     var size: CGFloat = 48
     var audioKey: String? = nil
     var accessibilityIdentifier: String? = nil
-    @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
 
     static let minimumHitSize: CGFloat = 44
 
@@ -63,7 +62,7 @@ struct AudioSpeakerButton: View {
     }
 
     private var selectedRate: Double {
-        AudioPlaybackPreference.rate(for: selectedSpeed)
+        AudioPlaybackPreference.currentRate()
     }
 }
 
@@ -374,6 +373,14 @@ enum AudioPlaybackPreference {
         default:
             return 1.0
         }
+    }
+
+    static func currentSpeed(defaults: UserDefaults = .standard) -> String {
+        normalizedSpeed(defaults.string(forKey: speedKey) ?? defaultSpeed)
+    }
+
+    static func currentRate(defaults: UserDefaults = .standard) -> Double {
+        rate(for: currentSpeed(defaults: defaults))
     }
 }
 

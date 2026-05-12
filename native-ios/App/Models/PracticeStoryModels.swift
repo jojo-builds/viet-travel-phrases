@@ -21,6 +21,18 @@ struct PracticeStoryTurn: Identifiable, Equatable {
     let source: PracticeSourceMetadata?
     let responseOptions: [PracticeScenarioResponseOption]
 
+    var playbackAudioKey: String? {
+        if let audioKey, AudioAssetManifest.main?.url(for: audioKey) != nil {
+            return audioKey
+        }
+
+        guard let vietnamese else {
+            return nil
+        }
+
+        return AudioAssetManifest.main?.audioKey(forExactText: vietnamese)
+    }
+
     static func scene(step: PracticeScenarioStep, index: Int) -> PracticeStoryTurn {
         PracticeStoryTurn(
             id: "\(step.id):scene:\(index)",
@@ -127,8 +139,6 @@ enum PracticeStoryTranscript {
         var turns: [PracticeStoryTurn] = []
 
         for (index, step) in visibleSteps.enumerated() {
-            turns.append(.scene(step: step, index: index))
-
             if !step.localLine.isEmpty {
                 turns.append(
                     .local(
@@ -147,14 +157,14 @@ enum PracticeStoryTranscript {
             if let selectedOption {
                 turns.append(.traveler(step: step, option: selectedOption))
 
-                if !step.nextLocalLine.isEmpty {
+                if step.hasLocalReply(after: selectedOption) {
                     if revealedReplyStepIDs.contains(step.id) {
                         turns.append(
                             .local(
                                 step: step,
                                 idSuffix: "reply",
-                                vietnamese: step.nextLocalLine,
-                                english: step.nextLocalMeaning
+                                vietnamese: step.localReplyLine(after: selectedOption),
+                                english: step.localReplyMeaning(after: selectedOption)
                             )
                         )
                     } else {
