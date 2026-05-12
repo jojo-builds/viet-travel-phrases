@@ -46,6 +46,10 @@ struct SearchPageView: View {
     var body: some View {
         GeometryReader { proxy in
             let topMastheadBleed = max(proxy.safeAreaInsets.top, currentWindowTopSafeAreaInset)
+            let headerMode = SearchPageLayout.headerMode(
+                query: searchResults.query,
+                isFieldFocused: effectiveFieldFocused
+            )
 
             ZStack(alignment: .bottom) {
                 PhrasePageStyle.pageBackground
@@ -53,7 +57,7 @@ struct SearchPageView: View {
 
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
-                        header(results: searchResults)
+                        header(results: searchResults, mode: headerMode)
 
                         if searchResults.query.isEmpty {
                             if effectiveFieldFocused {
@@ -67,7 +71,7 @@ struct SearchPageView: View {
                             recoveryContent
                         }
                     }
-                    .padding(.top, -topMastheadBleed)
+                    .padding(.top, headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed))
                     .padding(.horizontal, SearchPageLayout.horizontalPadding)
                     .padding(.bottom, SearchPageLayout.resultsBottomClearance)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -121,10 +125,12 @@ struct SearchPageView: View {
         #endif
     }
 
-    private func header(results: SearchPageResults) -> some View {
+    private func header(results: SearchPageResults, mode: SearchPageHeaderMode) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            HeroMastheadImage()
-                .padding(.horizontal, -SearchPageLayout.horizontalPadding)
+            if mode.showsMasthead {
+                HeroMastheadImage()
+                    .padding(.horizontal, -SearchPageLayout.horizontalPadding)
+            }
 
             HStack(spacing: 8) {
                 ZStack {
@@ -139,21 +145,23 @@ struct SearchPageView: View {
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
             }
-            .padding(.top, 14)
+            .padding(.top, mode.brandTopPadding)
 
             Text(results.headerTitle)
-                .font(.system(size: 42, weight: .black, design: .serif))
+                .font(.system(size: mode.titleSize, weight: .black, design: .serif))
                 .foregroundStyle(.primary)
                 .lineLimit(2)
                 .minimumScaleFactor(0.66)
-                .padding(.top, 14)
+                .padding(.top, mode.titleTopPadding)
                 .accessibilityIdentifier("Search.Title")
 
-            Text(results.headerSubtitle)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .lineSpacing(3)
-                .padding(.top, 10)
+            if mode.showsSubtitle {
+                Text(results.headerSubtitle)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(3)
+                    .padding(.top, 10)
+            }
         }
     }
 

@@ -487,12 +487,66 @@ struct TopAdminHitTestEnvelope: View {
 enum SearchPageLayout {
     static let horizontalPadding: CGFloat = 24
     static let titleTopPadding: CGFloat = 74
+    static let focusedResultsTopPadding: CGFloat = 64
     static let contentSpacing: CGFloat = 20
     static let resultGroupSpacing: CGFloat = 12
     static let resultGroupTopPadding: CGFloat = 10
     static let resultsBottomClearance: CGFloat = 148
     static let resultsZIndex: Double = 0
     static let pinnedChromeZIndex: Double = 2
+
+    static func headerMode(query: String, isFieldFocused _: Bool) -> SearchPageHeaderMode {
+        query.isEmpty ? .full : .compactResults
+    }
+}
+
+enum SearchPageHeaderMode: Equatable {
+    case full
+    case compactResults
+
+    var showsMasthead: Bool {
+        self == .full
+    }
+
+    var showsSubtitle: Bool {
+        self == .full
+    }
+
+    var brandTopPadding: CGFloat {
+        switch self {
+        case .full:
+            return 14
+        case .compactResults:
+            return 0
+        }
+    }
+
+    var titleSize: CGFloat {
+        switch self {
+        case .full:
+            return 42
+        case .compactResults:
+            return 34
+        }
+    }
+
+    var titleTopPadding: CGFloat {
+        switch self {
+        case .full:
+            return 14
+        case .compactResults:
+            return 8
+        }
+    }
+
+    func contentTopPadding(topMastheadBleed: CGFloat) -> CGFloat {
+        switch self {
+        case .full:
+            return -topMastheadBleed
+        case .compactResults:
+            return SearchPageLayout.focusedResultsTopPadding
+        }
+    }
 }
 
 private struct PhraseListCard: ViewModifier {

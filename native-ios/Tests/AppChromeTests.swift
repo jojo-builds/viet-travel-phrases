@@ -558,6 +558,30 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testSearchPageUsesCompactHeaderForQueryResults() {
+        let inactiveQueryMode = SearchPageLayout.headerMode(query: "hotel", isFieldFocused: false)
+        let compactMode = SearchPageLayout.headerMode(query: "hotel", isFieldFocused: true)
+
+        XCTAssertEqual(inactiveQueryMode, .compactResults)
+        XCTAssertFalse(inactiveQueryMode.showsMasthead)
+
+        XCTAssertEqual(compactMode, .compactResults)
+        XCTAssertFalse(compactMode.showsMasthead)
+        XCTAssertFalse(compactMode.showsSubtitle)
+        XCTAssertEqual(
+            compactMode.contentTopPadding(topMastheadBleed: 59),
+            SearchPageLayout.focusedResultsTopPadding
+        )
+        XCTAssertLessThan(compactMode.titleSize, SearchPageHeaderMode.full.titleSize)
+    }
+
+    func testEmptyFocusedSearchKeepsFullDiscoveryHeader() {
+        let mode = SearchPageLayout.headerMode(query: "", isFieldFocused: true)
+
+        XCTAssertEqual(mode, .full)
+        XCTAssertTrue(mode.showsMasthead)
+    }
+
     func testPhraseRowNavigationSuppressesCanonicalSelfLinks() {
         XCTAssertNil(
             PhraseRowNavigation.destinationPageID(
