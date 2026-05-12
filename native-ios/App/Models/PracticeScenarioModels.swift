@@ -504,6 +504,48 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return 6
         }
     }
+
+    var messageContactSortRank: Int {
+        switch self {
+        case .danangFirstDay, .hotelCheckInHelp, .foodAllergyHelp, .taxiGrabPickup, .shoppingMarketPrice, .pharmacyHelp, .localGreetingMarket:
+            return 0
+        case .airportPassportControl, .hotelRoomHelp, .restaurantOrderingPayment, .taxiRouteHelp, .shoppingSizeGift, .emergencyLostPassport, .localGreetingHotel:
+            return 1
+        case .airportSimCash, .hotelBagsTaxi, .danangDay, .driverProblemHelp, .shoppingReceiptHelp, .emergencyLostBag, .localGreetingRespect:
+            return 2
+        }
+    }
+
+    static var messageSectionTitles: [String] {
+        let titlesByRank = Dictionary(grouping: allCases, by: \.messageSectionTitle)
+
+        return titlesByRank.keys.sorted { lhs, rhs in
+            let lhsRank = titlesByRank[lhs]?.first?.messageSectionSortRank ?? Int.max
+            let rhsRank = titlesByRank[rhs]?.first?.messageSectionSortRank ?? Int.max
+
+            if lhsRank != rhsRank {
+                return lhsRank < rhsRank
+            }
+
+            return lhs < rhs
+        }
+    }
+
+    static func messageScenarioIDs(in sectionTitle: String) -> [PracticeScenarioID] {
+        allCases
+            .filter { $0.messageSectionTitle == sectionTitle }
+            .sorted { lhs, rhs in
+                if lhs.messageContactSortRank != rhs.messageContactSortRank {
+                    return lhs.messageContactSortRank < rhs.messageContactSortRank
+                }
+
+                return declarationIndex(of: lhs) < declarationIndex(of: rhs)
+            }
+    }
+
+    private static func declarationIndex(of id: PracticeScenarioID) -> Int {
+        allCases.firstIndex(of: id) ?? Int.max
+    }
 }
 
 enum PracticeScenarioMomentType: String, Codable, Equatable {
