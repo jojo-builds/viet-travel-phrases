@@ -323,9 +323,9 @@ struct PracticeStorySessionSurface: View {
             .background {
                 LinearGradient(
                     colors: [
-                        PhrasePageStyle.pageBackground.opacity(0.10),
-                        PhrasePageStyle.pageBackground,
-                        PhrasePageStyle.pageBackground,
+                        PhrasePageStyle.pageBackground.opacity(0.0),
+                        PhrasePageStyle.pageBackground.opacity(0.34),
+                        PhrasePageStyle.pageBackground.opacity(0.62),
                     ],
                     startPoint: .top,
                     endPoint: .bottom
