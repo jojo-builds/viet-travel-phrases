@@ -250,6 +250,7 @@ struct BrowseCollectionDescriptor: Identifiable, Equatable {
     let practiceTitle: String
     let practiceSubtitle: String
     let practiceAction: BrowseCollectionPracticeAction
+    let messageSectionTitle: String?
     let exploreShelves: [BrowseCollectionShelf]
     let cityHub: BrowseCityHub?
 
@@ -267,6 +268,7 @@ struct BrowseCollectionDescriptor: Identifiable, Equatable {
         practiceTitle: String,
         practiceSubtitle: String,
         practiceAction: BrowseCollectionPracticeAction,
+        messageSectionTitle: String? = nil,
         exploreShelves: [BrowseCollectionShelf],
         cityHub: BrowseCityHub? = nil
     ) {
@@ -283,11 +285,20 @@ struct BrowseCollectionDescriptor: Identifiable, Equatable {
         self.practiceTitle = practiceTitle
         self.practiceSubtitle = practiceSubtitle
         self.practiceAction = practiceAction
+        self.messageSectionTitle = messageSectionTitle
         self.exploreShelves = exploreShelves
         self.cityHub = cityHub
     }
 
     var id: String { route.id }
+
+    var messageScenarioIDs: [PracticeScenarioID] {
+        guard let messageSectionTitle else {
+            return []
+        }
+
+        return PracticeScenarioID.messageScenarioIDs(in: messageSectionTitle)
+    }
 }
 
 struct BrowseCityHub: Equatable {
@@ -772,6 +783,7 @@ enum BrowseSearchDestinations {
             practiceTitle: "Practice \(title)",
             practiceSubtitle: practiceSubtitle(for: title),
             practiceAction: .addStarterPages([]),
+            messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
             exploreShelves: []
         )
     }
@@ -843,6 +855,7 @@ enum BrowseSearchDestinations {
             practiceTitle: "Practice \(title)",
             practiceSubtitle: practiceSubtitle(for: title),
             practiceAction: .addStarterPages(phraseStarterItems.map(\.pageID)),
+            messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
             exploreShelves: shelves
         )
     }
@@ -1810,6 +1823,27 @@ enum BrowseSearchDestinations {
             return "At the hotel desk"
         default:
             return "Start here"
+        }
+    }
+
+    private static func categoryMessageSectionTitle(for id: String, title: String) -> String? {
+        switch id {
+        case "airport":
+            return "Airport"
+        case "hotel":
+            return "Hotel"
+        case "food":
+            return "Food"
+        case "getting-around", "transport":
+            return "Getting Around"
+        case "shopping":
+            return "Shopping"
+        case "emergency":
+            return "Emergency"
+        case "local-greetings", "greetings":
+            return "Local Greetings"
+        default:
+            return PracticeScenarioID.messageSectionTitles.contains(title) ? title : nil
         }
     }
 

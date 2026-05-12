@@ -1102,7 +1102,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(Set(homepageIDs), Set(cityGuideIDs))
     }
 
-    func testBrowseCollectionDescriptorsExposeStarterRowsAndPracticePolicy() {
+    func testBrowseCollectionDescriptorsExposeStarterRowsAndMessagePolicy() {
         let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
         let shopping = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("shopping")))
         let hanoi = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hanoi")))
@@ -1111,19 +1111,41 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hotel.title, "Hotel")
         XCTAssertFalse(hotel.subcategories.isEmpty)
         XCTAssertFalse(hotel.starterItems.isEmpty)
-        XCTAssertEqual(hotel.practiceAction, .addStarterPages(hotel.starterItems.map(\.pageID)))
+        XCTAssertEqual(hotel.messageSectionTitle, "Hotel")
+        XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi])
         XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
 
-        XCTAssertEqual(shopping.practiceSubtitle, "Practice prices, sizes, payment, and returns.")
-        XCTAssertFalse(shopping.practiceSubtitle.localizedCaseInsensitiveContains("quick practice loop"))
+        XCTAssertEqual(shopping.messageSectionTitle, "Shopping")
+        XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp])
 
         XCTAssertEqual(hanoi.route, .city("hanoi"))
         XCTAssertEqual(hanoi.practiceAction, .practiceMode(.hanoiBucketList))
+        XCTAssertNil(hanoi.messageSectionTitle)
         XCTAssertFalse(hanoi.subcategories.isEmpty)
         XCTAssertFalse(hanoi.starterItems.isEmpty)
         XCTAssertNotNil(hanoi.cityHub)
         XCTAssertEqual(hanoi.cityHub?.situationTitle, "Common moments")
         XCTAssertEqual(hanoi.cityHub?.namesTitle, "Names to know")
+    }
+
+    func testBrowseCategoryMessageSectionsMirrorMessagesHubGroups() {
+        let expectations: [(String, String, [PracticeScenarioID])] = [
+            ("airport", "Airport", [.danangFirstDay, .airportPassportControl, .airportSimCash]),
+            ("hotel", "Hotel", [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi]),
+            ("food", "Food", [.foodAllergyHelp, .restaurantOrderingPayment, .danangDay]),
+            ("getting-around", "Getting Around", [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp]),
+            ("shopping", "Shopping", [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp]),
+            ("emergency", "Emergency", [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag]),
+            ("local-greetings", "Local Greetings", [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect]),
+        ]
+
+        for (categoryID, sectionTitle, scenarioIDs) in expectations {
+            let descriptor = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category(categoryID)))
+
+            XCTAssertEqual(descriptor.messageSectionTitle, sectionTitle)
+            XCTAssertEqual(descriptor.messageScenarioIDs, scenarioIDs)
+            XCTAssertEqual(descriptor.messageScenarioIDs.map(\.messageSectionTitle), Array(repeating: sectionTitle, count: scenarioIDs.count))
+        }
     }
 
     func testAirportCollectionSubcategoryFiltersExposeSimAndCashLanes() {

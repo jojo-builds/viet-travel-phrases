@@ -56,9 +56,11 @@ struct BrowseCollectionPageView: View {
                             )
                             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
 
-                            BrowseCollectionPracticeCard(
+                            BrowseCollectionMessageSection(
                                 descriptor: descriptor,
-                                onPractice: { onPractice(descriptor.practiceAction) }
+                                onStartScenario: { scenarioID in
+                                    onPractice(.practiceScenario(scenarioID))
+                                }
                             )
                             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
 
@@ -556,6 +558,65 @@ private struct BrowseCollectionPracticeCard: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("BrowseCollection.Practice.\(descriptor.route.id)")
+    }
+}
+
+private struct BrowseCollectionMessageSection: View {
+    let descriptor: BrowseCollectionDescriptor
+    let onStartScenario: (PracticeScenarioID) -> Void
+
+    var body: some View {
+        if let title = descriptor.messageSectionTitle, !descriptor.messageScenarioIDs.isEmpty {
+            BrowseCollectionSection(title: title, actionTitle: "Messages") {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(alignment: .top, spacing: 16) {
+                        ForEach(descriptor.messageScenarioIDs) { scenarioID in
+                            BrowseCollectionMessageContactButton(
+                                scenarioID: scenarioID,
+                                onStart: { onStartScenario(scenarioID) }
+                            )
+                            .frame(width: 104)
+                        }
+                    }
+                    .padding(.horizontal, 1)
+                    .padding(.bottom, 2)
+                }
+                .frame(height: 144)
+                .scrollClipDisabled()
+                .accessibilityIdentifier("BrowseCollection.Messages.SectionRow.\(descriptor.route.id)")
+            }
+            .accessibilityIdentifier("BrowseCollection.Messages.\(descriptor.route.id)")
+        }
+    }
+}
+
+private struct BrowseCollectionMessageContactButton: View {
+    let scenarioID: PracticeScenarioID
+    let onStart: () -> Void
+
+    var body: some View {
+        Button(action: onStart) {
+            VStack(spacing: 10) {
+                PracticeMessageAvatar(
+                    scenarioID: scenarioID,
+                    size: 88,
+                    showsSymbol: true
+                )
+
+                Text(scenarioID.messageContactName)
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundStyle(.primary)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.78)
+                    .frame(maxWidth: .infinity, minHeight: 40, alignment: .top)
+            }
+            .frame(maxWidth: .infinity)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(scenarioID.messageContactName)
+        .accessibilityIdentifier("BrowseCollection.Message.Contact.\(scenarioID.rawValue)")
     }
 }
 

@@ -1169,24 +1169,18 @@ private struct PracticeMessageContactGrid: View {
     private var sections: [Section] {
         let grouped = Dictionary(grouping: scenarios) { $0.id.messageSectionTitle }
 
-        return grouped
-            .map { title, scenarios in
-                Section(
+        return PracticeScenarioID.messageSectionTitles
+            .compactMap { title -> Section? in
+                guard let scenarios = grouped[title], !scenarios.isEmpty else {
+                    return nil
+                }
+
+                return Section(
                     title: title,
                     scenarios: scenarios.sorted {
                         scenarioSortRank($0) < scenarioSortRank($1)
                     }
                 )
-            }
-            .sorted { lhs, rhs in
-                let lhsRank = lhs.scenarios.first?.id.messageSectionSortRank ?? Int.max
-                let rhsRank = rhs.scenarios.first?.id.messageSectionSortRank ?? Int.max
-
-                if lhsRank != rhsRank {
-                    return lhsRank < rhsRank
-                }
-
-                return lhs.title < rhs.title
             }
     }
 
@@ -1222,7 +1216,7 @@ private struct PracticeMessageContactGrid: View {
     }
 
     private func scenarioSortRank(_ scenario: PracticeScenario) -> Int {
-        scenario.id.messageHubSortRank * 100 + (scenarios.firstIndex { $0.id == scenario.id } ?? Int.max)
+        scenario.id.messageContactSortRank * 100 + (scenarios.firstIndex { $0.id == scenario.id } ?? Int.max)
     }
 }
 
@@ -1931,16 +1925,6 @@ private extension PracticeScenarioID {
         }
     }
 
-    var messageHubSortRank: Int {
-        switch self {
-        case .danangFirstDay, .hotelCheckInHelp, .foodAllergyHelp, .taxiGrabPickup, .shoppingMarketPrice, .pharmacyHelp, .localGreetingMarket:
-            return 0
-        case .airportPassportControl, .hotelRoomHelp, .restaurantOrderingPayment, .taxiRouteHelp, .shoppingSizeGift, .emergencyLostPassport, .localGreetingHotel:
-            return 1
-        case .airportSimCash, .hotelBagsTaxi, .danangDay, .driverProblemHelp, .shoppingReceiptHelp, .emergencyLostBag, .localGreetingRespect:
-            return 2
-        }
-    }
 }
 
 private struct PracticeScenarioPrimaryCard: View {
