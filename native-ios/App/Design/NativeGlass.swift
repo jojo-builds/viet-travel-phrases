@@ -270,10 +270,9 @@ enum AppChromeLayout {
     static let dockSelectionMaximumStretch: CGFloat = 54
     static let dockSelectionLagFactor: CGFloat = 0.16
     static let dockSelectionMaximumLag: CGFloat = 14
-    static let dockSelectionTapActivationDelay: UInt64 = 45_000_000
-    static let dockSelectionTapWaypointDelay: UInt64 = 94_000_000
-    static let dockSelectionTapSettleDelay: UInt64 = 120_000_000
-    static let dockSelectionTapDeactivateDelay: UInt64 = 90_000_000
+    static let dockSelectionTapActivationDelay: UInt64 = 35_000_000
+    static let dockSelectionTapTravelDelay: UInt64 = 150_000_000
+    static let dockSelectionTapDeactivateDelay: UInt64 = 80_000_000
     static let dockHorizontalPadding: CGFloat = 10
     static let dockVerticalPadding: CGFloat = 4
     static let dockCornerRadius: CGFloat = 34
@@ -366,15 +365,6 @@ enum AppDockSelectionLayout {
         let trailingCenter = trackWidth - AppChromeLayout.dockItemWidth / 2
         let pitch = (trailingCenter - leadingCenter) / CGFloat(itemCount - 1)
         return leadingCenter + CGFloat(min(max(index, 0), itemCount - 1)) * pitch
-    }
-
-    static func waypointIndexes(from sourceIndex: Int, to destinationIndex: Int) -> [Int] {
-        guard sourceIndex != destinationIndex else {
-            return [destinationIndex]
-        }
-
-        let step = destinationIndex > sourceIndex ? 1 : -1
-        return Array(stride(from: sourceIndex + step, through: destinationIndex, by: step))
     }
 
     static func lensMetrics(
