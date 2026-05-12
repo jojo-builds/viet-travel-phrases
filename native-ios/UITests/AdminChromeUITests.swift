@@ -299,6 +299,31 @@ final class AdminChromeUITests: XCTestCase {
         captureForegroundMorphProofIfRequested(app: app, name: "saved-selected-lens.png")
     }
 
+    func testFocusedSearchChromeKeepsDismissButtonTappable() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+
+        openSearch(in: app, expectedOrigin: "Home", iteration: 1)
+        let searchField = app.textFields["AppChrome.SearchField"]
+        XCTAssertTrue(searchField.waitForExistence(timeout: 2))
+        searchField.tap()
+
+        let dismissButton = app.buttons["AppChrome.SearchDismissKeyboardButton"]
+        XCTAssertTrue(
+            dismissButton.waitForExistence(timeout: 3),
+            "Focused search chrome should expose a tappable clear/dismiss button."
+        )
+        XCTAssertGreaterThan(
+            dismissButton.frame.minX,
+            searchField.frame.maxX,
+            "Dismiss button should sit as its own trailing glass control instead of overlapping the search field."
+        )
+
+        dismissButton.tap()
+        XCTAssertTrue(app.buttons["AppChrome.SearchOriginButton.Home"].waitForExistence(timeout: 2))
+        captureFocusedSearchChromeProofIfRequested(app: app, name: "focused-search-dismiss-return.png")
+    }
+
     private func openSearch(in app: XCUIApplication, expectedOrigin: String, iteration: Int) {
         let searchButton = app.buttons["AppChrome.SearchButton"]
         XCTAssertTrue(
@@ -570,6 +595,23 @@ final class AdminChromeUITests: XCTestCase {
             let directoryURL = proofDirectoryURL(
                 environmentPath: nil,
                 taskID: "TASK-NATIVE-BOTTOM-CHROME-FOREGROUND-MORPH-001"
+            )
+        else {
+            return
+        }
+
+        try? FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: directoryURL.appendingPathComponent(name))
+    }
+
+    private func captureFocusedSearchChromeProofIfRequested(app: XCUIApplication, name: String) {
+        let sentinelPath = "/tmp/speaklocal-focused-search-chrome-proof-enabled"
+        let environmentPath = ProcessInfo.processInfo.environment["SPEAKLOCAL_FOCUSED_SEARCH_CHROME_PROOF_DIR"]
+        guard
+            FileManager.default.fileExists(atPath: sentinelPath) || environmentPath?.isEmpty == false,
+            let directoryURL = proofDirectoryURL(
+                environmentPath: environmentPath,
+                taskID: "TASK-NATIVE-FOCUSED-SEARCH-CHROME-001"
             )
         else {
             return

@@ -32,8 +32,8 @@ extension AccentTint {
     }
 }
 
-struct NativeGlass: ViewModifier {
-    let cornerRadius: CGFloat
+struct NativeGlass<S: Shape>: ViewModifier {
+    let shape: S
     var tint: Color = .white
     var interactive = false
 
@@ -41,26 +41,34 @@ struct NativeGlass: ViewModifier {
         if #available(iOS 26.0, *) {
             if interactive {
                 content
-                    .glassEffect(.regular.tint(tint.opacity(0.28)).interactive(), in: .rect(cornerRadius: cornerRadius))
+                    .glassEffect(.regular.tint(tint.opacity(0.20)).interactive(), in: shape)
             } else {
                 content
-                    .glassEffect(.regular.tint(tint.opacity(0.22)), in: .rect(cornerRadius: cornerRadius))
+                    .glassEffect(.regular.tint(tint.opacity(0.14)), in: shape)
             }
         } else {
             content
-                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+                .background(.ultraThinMaterial, in: shape)
                 .overlay {
-                    RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                        .stroke(.white.opacity(0.52), lineWidth: 0.8)
+                    shape
+                        .stroke(.white.opacity(0.46), lineWidth: 0.8)
                 }
-                .shadow(color: .black.opacity(0.08), radius: 18, x: 0, y: 10)
+                .shadow(color: .black.opacity(0.07), radius: 16, x: 0, y: 8)
         }
     }
 }
 
 extension View {
     func nativeGlass(cornerRadius: CGFloat, tint: Color = .white, interactive: Bool = false) -> some View {
-        modifier(NativeGlass(cornerRadius: cornerRadius, tint: tint, interactive: interactive))
+        nativeGlass(
+            in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous),
+            tint: tint,
+            interactive: interactive
+        )
+    }
+
+    func nativeGlass<S: Shape>(in shape: S, tint: Color = .white, interactive: Bool = false) -> some View {
+        modifier(NativeGlass(shape: shape, tint: tint, interactive: interactive))
     }
 
     @ViewBuilder
@@ -108,6 +116,7 @@ enum AppChromeMorphID {
     static let dockSelection = "app.chrome.dock.selection"
     static let search = "app.chrome.search"
     static let searchIcon = "app.chrome.search.icon"
+    static let searchDismissKeyboard = "app.chrome.search.dismissKeyboard"
 
     static func dockItem(_ item: DockItemKind) -> String {
         "app.chrome.dock.\(item.title)"
@@ -248,18 +257,20 @@ enum PhrasePageStyle {
 
 enum AppChromeLayout {
     static let bottomOuterHorizontalPadding: CGFloat = 12
-    static let bottomSpacing: CGFloat = 0
+    static let bottomSpacing: CGFloat = 10
     static let bottomPadding: CGFloat = -2
     static let bottomOffset: CGFloat = 0
     static let bottomSeparationHeight: CGFloat = 0
     static let topSeparationHeight: CGFloat = 112
-    static let bottomHitTestEnvelopeHeight: CGFloat = 108
+    static let bottomVisibleHitSlop: CGFloat = 14
+    static let bottomHitTestEnvelopeHeight: CGFloat = searchIslandSize + bottomVisibleHitSlop * 2
     static let chromeSeparationAllowsHitTesting = false
     static let dockItemSpacing: CGFloat = 8
     static let dockItemWidth: CGFloat = 58
     static let dockItemHeight: CGFloat = 56
-    static let dockBackdropFillOpacity: Double = 0.40
-    static let chromeControlBackdropFillOpacity: Double = 0.46
+    static let dockBackdropFillOpacity: Double = 0.24
+    static let chromeControlBackdropFillOpacity: Double = 0.28
+    static let dockMaximumContentWidth: CGFloat = 292
     static let dockSelectionWidth: CGFloat = 76
     static let dockSelectionPressedWidth: CGFloat = 104
     static let dockSelectionHeight: CGFloat = 58
@@ -288,6 +299,12 @@ enum AppChromeLayout {
     static let searchForegroundMorphZIndex: Double = 6
     static let dockSelectionLensZIndex: Double = 1
     static let dockItemForegroundZIndex: Double = 2
+    static let contentPageLayerZIndex: Double = 0
+    static let searchPageLayerZIndex: Double = 200
+    static let chromeSeparationLayerZIndex: Double = 360
+    static let bottomChromeLayerZIndex: Double = 380
+    static let topAdminHitTestLayerZIndex: Double = 390
+    static let topAdminControlLayerZIndex: Double = 410
     static let searchFieldIconSlotWidth: CGFloat = 28
     static let topAdminHorizontalPadding: CGFloat = 24
     static let topAdminTopPadding: CGFloat = 10
