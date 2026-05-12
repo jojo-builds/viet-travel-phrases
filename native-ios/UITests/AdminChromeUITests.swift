@@ -173,7 +173,7 @@ final class AdminChromeUITests: XCTestCase {
     }
 
     func testHomeLiquidGlassRedesignProofScreenshots() {
-        let app = launchApp()
+        let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
         XCTAssertTrue(app.staticTexts["Start speaking now"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.staticTexts["Use now"].exists)
@@ -186,29 +186,36 @@ final class AdminChromeUITests: XCTestCase {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["First hour in Vietnam"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.staticTexts["Food & coffee"].waitForExistence(timeout: 3))
-        XCTAssertFalse(app.staticTexts["Recent pages, saved phrases, and practice"].exists)
+        XCTAssertFalse(app.staticTexts["Keep going"].exists)
+        XCTAssertFalse(app.staticTexts["Saved for later"].exists)
+        XCTAssertFalse(app.staticTexts["Message list"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-mid.png")
 
-        for _ in 0..<3 where !app.staticTexts["Messages"].exists {
+        for _ in 0..<3 where !app.staticTexts["Popular city guides for your trip"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["Messages"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-city.png")
+
+        for _ in 0..<3 where !app.staticTexts["Practice short trip conversations"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["Practice short trip conversations"].waitForExistence(timeout: 3))
         for _ in 0..<2 where !app.buttons["HomeScenario.danangFirstDay"].exists {
             app.swipeUp()
         }
         XCTAssertTrue(app.buttons["HomeScenario.danangFirstDay"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-lower.png")
 
-        for _ in 0..<5 where !app.staticTexts["Explore by city"].exists {
+        for _ in 0..<5 where !app.staticTexts["Who are you speaking to?"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Who are you speaking to?"].waitForExistence(timeout: 3))
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-bottom.png")
     }
 
     func testHomeUseNowTwoRowCarouselProofScreenshots() {
-        let app = launchApp()
+        let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
 
         for _ in 0..<3 where !app.staticTexts["Use now"].exists {
@@ -221,7 +228,7 @@ final class AdminChromeUITests: XCTestCase {
     }
 
     func testHomeMessageCirclesStayVisibleAcrossRail() {
-        let app = launchApp()
+        let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
 
         scrollToHomeScenarioRail(in: app)
@@ -237,7 +244,7 @@ final class AdminChromeUITests: XCTestCase {
     }
 
     func testHomeExploreByCityShowsAllCityGuides() {
-        let app = launchApp()
+        let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
 
         scrollToHomeCityRail(in: app)
@@ -417,10 +424,10 @@ final class AdminChromeUITests: XCTestCase {
     }
 
     private func scrollToHomeScenarioRail(in app: XCUIApplication) {
-        for _ in 0..<5 where !app.staticTexts["Messages"].exists {
+        for _ in 0..<5 where !app.staticTexts["Practice short trip conversations"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["Messages"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Practice short trip conversations"].waitForExistence(timeout: 3))
 
         let firstContact = app.buttons["HomeScenario.danangFirstDay"]
         for _ in 0..<5 where !firstContact.frame.intersects(app.frame) {
@@ -434,10 +441,10 @@ final class AdminChromeUITests: XCTestCase {
 
     private func revealHomeScenario(app: XCUIApplication, id: String) {
         let targetButton = app.buttons["HomeScenario.\(id)"]
+        let scenarioRail = app.descendants(matching: .any)["HomeScenarioRail"]
         for _ in 0..<5 where !targetButton.frame.intersects(app.frame) {
-            let hotelContact = app.buttons["HomeScenario.hotelCheckInHelp"]
-            if hotelContact.exists && hotelContact.frame.intersects(app.frame) {
-                hotelContact.swipeLeft()
+            if scenarioRail.exists && scenarioRail.frame.intersects(app.frame) {
+                dragRailLeft(scenarioRail)
             } else {
                 app.swipeLeft()
             }
@@ -463,10 +470,10 @@ final class AdminChromeUITests: XCTestCase {
     }
 
     private func scrollToHomeCityRail(in app: XCUIApplication) {
-        for _ in 0..<6 where !app.staticTexts["Explore by city"].exists {
+        for _ in 0..<6 where !app.staticTexts["Popular city guides for your trip"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Popular city guides for your trip"].waitForExistence(timeout: 3))
 
         let daNangCard = app.buttons["HomeCity.danang"]
         for _ in 0..<5 where !daNangCard.frame.intersects(app.frame) {
@@ -483,7 +490,7 @@ final class AdminChromeUITests: XCTestCase {
         let cityRail = app.descendants(matching: .any)["HomeCityRail"]
         for _ in 0..<6 where !targetCard.frame.intersects(app.frame) {
             if cityRail.exists && cityRail.frame.intersects(app.frame) {
-                cityRail.swipeLeft()
+                dragRailLeft(cityRail)
             } else {
                 app.swipeLeft()
             }
@@ -505,6 +512,12 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(card.frame.intersects(app.frame), "Home city card \(id) is not visible.", file: file, line: line)
         XCTAssertGreaterThan(card.frame.width, 120, "Home city card \(id) should keep its card width.", file: file, line: line)
         XCTAssertGreaterThan(card.frame.height, 120, "Home city card \(id) should keep its card height.", file: file, line: line)
+    }
+
+    private func dragRailLeft(_ rail: XCUIElement) {
+        let start = rail.coordinate(withNormalizedOffset: CGVector(dx: 0.88, dy: 0.5))
+        let end = rail.coordinate(withNormalizedOffset: CGVector(dx: 0.12, dy: 0.5))
+        start.press(forDuration: 0.05, thenDragTo: end)
     }
 
     private func verifyDockTapFromDenseDetail(
