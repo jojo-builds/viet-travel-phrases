@@ -247,22 +247,22 @@ enum PhrasePageStyle {
 }
 
 enum AppChromeLayout {
-    static let bottomOuterHorizontalPadding: CGFloat = 16
-    static let bottomSpacing: CGFloat = 8
-    static let bottomPadding: CGFloat = -4
+    static let bottomOuterHorizontalPadding: CGFloat = 12
+    static let bottomSpacing: CGFloat = 0
+    static let bottomPadding: CGFloat = -2
     static let bottomOffset: CGFloat = 0
     static let bottomSeparationHeight: CGFloat = 0
     static let topSeparationHeight: CGFloat = 112
-    static let bottomHitTestEnvelopeHeight: CGFloat = 100
+    static let bottomHitTestEnvelopeHeight: CGFloat = 116
     static let chromeSeparationAllowsHitTesting = false
-    static let dockItemSpacing: CGFloat = 10
-    static let dockItemWidth: CGFloat = 56
-    static let dockItemHeight: CGFloat = 52
-    static let dockBackdropFillOpacity: Double = 0.56
-    static let chromeControlBackdropFillOpacity: Double = 0.58
-    static let dockSelectionWidth: CGFloat = 82
-    static let dockSelectionHeight: CGFloat = 54
-    static let dockSelectionCornerRadius: CGFloat = 27
+    static let dockItemSpacing: CGFloat = 8
+    static let dockItemWidth: CGFloat = 58
+    static let dockItemHeight: CGFloat = 60
+    static let dockBackdropFillOpacity: Double = 0.40
+    static let chromeControlBackdropFillOpacity: Double = 0.46
+    static let dockSelectionWidth: CGFloat = 112
+    static let dockSelectionHeight: CGFloat = 86
+    static let dockSelectionCornerRadius: CGFloat = 43
     static let dockSelectionMorphDuration = 0.42
     static let dockSelectionDragCommitDistance: CGFloat = 4
     static let dockSelectionStretchFactor: CGFloat = 0.30
@@ -273,12 +273,12 @@ enum AppChromeLayout {
     static let dockSelectionTapWaypointDelay: UInt64 = 94_000_000
     static let dockSelectionTapSettleDelay: UInt64 = 120_000_000
     static let dockSelectionTapDeactivateDelay: UInt64 = 90_000_000
-    static let dockHorizontalPadding: CGFloat = 12
+    static let dockHorizontalPadding: CGFloat = 10
     static let dockVerticalPadding: CGFloat = 4
-    static let dockCornerRadius: CGFloat = 30
-    static let searchIslandSize: CGFloat = 60
-    static let searchIslandCornerRadius: CGFloat = 30
-    static let searchFieldHeight: CGFloat = 60
+    static let dockCornerRadius: CGFloat = 34
+    static let searchIslandSize: CGFloat = 68
+    static let searchIslandCornerRadius: CGFloat = 34
+    static let searchFieldHeight: CGFloat = 68
     static let searchFieldHorizontalPadding: CGFloat = 16
     static let searchMorphDuration = 0.39
     static let dockMorphZIndex: Double = 2

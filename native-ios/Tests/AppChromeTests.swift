@@ -6,8 +6,8 @@ final class AppChromeTests: XCTestCase {
     func testBottomChromeLayoutUsesNativeScaleIslandMetrics() {
         XCTAssertLessThan(AppChromeLayout.dockHorizontalPadding, 16)
         XCTAssertLessThanOrEqual(AppChromeLayout.dockVerticalPadding, 6)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchIslandSize, 58)
-        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 62)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchIslandSize, 66)
+        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 70)
         XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
         XCTAssertEqual(AppChromeLayout.bottomSeparationHeight, 0)
         XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
@@ -50,8 +50,8 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testDockSelectionLensUsesAppStoreStylePillMetrics() {
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionHeight, AppChromeLayout.searchIslandSize)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth * 1.8)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionHeight, AppChromeLayout.searchIslandSize)
         XCTAssertEqual(AppChromeLayout.dockSelectionCornerRadius, AppChromeLayout.dockSelectionHeight / 2)
         XCTAssertGreaterThan(AppChromeLayout.dockItemForegroundZIndex, AppChromeLayout.dockSelectionLensZIndex)
         XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.40)
@@ -284,10 +284,10 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testDockGlassUsesBackingFillToPreventContentBleed() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.52)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.62)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.34)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.48)
         XCTAssertGreaterThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, AppChromeLayout.dockBackdropFillOpacity)
-        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.64)
+        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.54)
     }
 
     func testPhrasePageChromeUsesSeparateSearchIsland() {
