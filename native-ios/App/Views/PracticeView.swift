@@ -158,7 +158,7 @@ struct PracticeView: View {
     private static let scenarioReturnPresentationDelay: TimeInterval = 0.85
 
     private var topContentPadding: CGFloat {
-        58
+        40
     }
 
     private var isScenarioThreadVisible: Bool {
@@ -1148,7 +1148,7 @@ private struct PracticeMessagesHeader: View {
             .font(.system(size: 32, weight: .bold))
             .foregroundStyle(.primary)
             .frame(maxWidth: .infinity)
-            .frame(height: 58)
+            .frame(height: 54)
         .accessibilityIdentifier("Practice.Messages.Header")
     }
 }
@@ -1191,16 +1191,16 @@ private struct PracticeMessageContactGrid: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 30) {
+        VStack(alignment: .leading, spacing: 18) {
             ForEach(sections) { section in
-                VStack(alignment: .leading, spacing: 18) {
+                VStack(alignment: .leading, spacing: 16) {
                     Text(section.title)
-                        .font(.title2.weight(.bold))
+                        .font(.system(size: 26, weight: .bold))
                         .foregroundStyle(.primary)
                         .accessibilityIdentifier("Practice.Messages.Section.\(section.id)")
 
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .top, spacing: 22) {
+                        HStack(alignment: .top, spacing: 16) {
                             ForEach(section.scenarios) { scenario in
                                 PracticeMessageContactButton(
                                     scenario: scenario,
@@ -1208,10 +1208,10 @@ private struct PracticeMessageContactGrid: View {
                                     onMarkUnread: { onMarkUnread(scenario.id) },
                                     onStart: { onStart(scenario) }
                                 )
-                                .frame(width: 118)
+                                .frame(width: 102)
                             }
                         }
-                        .padding(.horizontal, 2)
+                        .padding(.horizontal, 1)
                     }
                     .accessibilityIdentifier("Practice.Messages.SectionRow.\(section.id)")
                 }
@@ -1222,7 +1222,7 @@ private struct PracticeMessageContactGrid: View {
     }
 
     private func scenarioSortRank(_ scenario: PracticeScenario) -> Int {
-        scenarios.firstIndex { $0.id == scenario.id } ?? Int.max
+        scenario.id.messageHubSortRank * 100 + (scenarios.firstIndex { $0.id == scenario.id } ?? Int.max)
     }
 }
 
@@ -1234,42 +1234,34 @@ private struct PracticeMessageContactButton: View {
 
     var body: some View {
         Button(action: onStart) {
-            VStack(spacing: 8) {
+            VStack(spacing: 10) {
                 PracticeMessageAvatar(
                     scenarioID: scenario.id,
-                    size: 92,
+                    size: 88,
                     showsSymbol: true
                 )
-
-                VStack(spacing: 4) {
-                    HStack(spacing: 5) {
-                        if isUnread {
-                            Circle()
-                                .fill(Color(red: 0.0, green: 0.48, blue: 1.0))
-                                .frame(width: 7, height: 7)
-                                .accessibilityLabel("Unread")
-                                .accessibilityIdentifier("Practice.Message.Contact.UnreadDot.\(scenario.id.rawValue)")
-                        }
-
-                        Text(scenario.id.messageContactName)
-                            .font(.callout.weight(isUnread ? .semibold : .medium))
-                            .foregroundStyle(isUnread ? .primary : .secondary)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.82)
+                .overlay(alignment: .topTrailing) {
+                    if isUnread {
+                        Circle()
+                            .fill(Color(red: 0.0, green: 0.48, blue: 1.0))
+                            .frame(width: 9, height: 9)
+                            .overlay {
+                                Circle()
+                                    .stroke(.white, lineWidth: 2)
+                            }
+                            .offset(x: -6, y: 6)
+                            .accessibilityLabel("Unread")
+                            .accessibilityIdentifier("Practice.Message.Contact.UnreadDot.\(scenario.id.rawValue)")
                     }
-                    .frame(maxWidth: .infinity)
-
-                    Text(scenario.unreadPreview)
-                        .font(.caption2.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-                        .frame(maxWidth: .infinity, minHeight: 28, alignment: .top)
-                        .opacity(isUnread ? 1 : 0.58)
-                        .accessibilityIdentifier("Practice.Message.Contact.Preview.\(scenario.id.rawValue)")
                 }
+
+                Text(scenario.id.messageContactName)
+                    .font(.system(size: 16, weight: isUnread ? .bold : .semibold))
+                    .foregroundStyle(.primary)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.78)
+                    .frame(maxWidth: .infinity, minHeight: 40, alignment: .top)
             }
             .frame(maxWidth: .infinity)
             .contentShape(Rectangle())
@@ -1292,22 +1284,16 @@ struct PracticeMessageAvatar: View {
 
     var body: some View {
         ZStack {
-            Circle()
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            scenarioID.tint.color.opacity(0.72),
-                            scenarioID.tint.color.opacity(0.34),
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
+            PracticeMessageBadgeBackdrop(scenarioID: scenarioID, size: size)
 
             if showsSymbol {
                 Image(systemName: scenarioID.messageAvatarSymbolName)
-                    .font(.system(size: size * 0.38, weight: .semibold))
-                    .foregroundStyle(.white)
+                    .font(.system(size: size * scenarioID.messageBadgeIconScale, weight: .heavy))
+                    .foregroundStyle(
+                        .white,
+                        .white.opacity(0.86)
+                    )
+                    .shadow(color: .black.opacity(0.22), radius: size * 0.05, x: 0, y: size * 0.035)
             } else {
                 Text(scenarioID.messageInitials)
                     .font(.system(size: size * 0.36, weight: .bold))
@@ -1315,12 +1301,540 @@ struct PracticeMessageAvatar: View {
             }
         }
         .frame(width: size, height: size)
+        .clipShape(Circle())
         .overlay {
             Circle()
-                .stroke(.white.opacity(0.86), lineWidth: 1)
+                .strokeBorder(.white.opacity(0.92), lineWidth: max(1, size * 0.018))
         }
-        .shadow(color: scenarioID.tint.color.opacity(0.14), radius: 16, x: 0, y: 8)
+        .overlay {
+            Circle()
+                .strokeBorder(.black.opacity(0.05), lineWidth: 0.5)
+        }
+        .shadow(color: scenarioID.tint.color.opacity(0.18), radius: size * 0.16, x: 0, y: size * 0.08)
         .accessibilityHidden(true)
+    }
+}
+
+private struct PracticeMessageBadgeBackdrop: View {
+    let scenarioID: PracticeScenarioID
+    let size: CGFloat
+
+    var body: some View {
+        ZStack {
+            LinearGradient(
+                colors: scenarioID.messageBadgePalette,
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+
+            PracticeMessageBadgeBaseScene(kind: scenarioID.messageBadgeSceneKind, size: size)
+
+            if let label = scenarioID.messageBadgeSceneLabel {
+                Text(label)
+                    .font(.system(size: size * 0.11, weight: .black, design: .rounded))
+                    .kerning(0.6)
+                    .foregroundStyle(.white.opacity(0.18))
+                    .offset(x: -size * 0.18, y: -size * 0.28)
+            }
+
+            Image(systemName: scenarioID.messageBadgeBackdropSymbolName)
+                .font(.system(size: size * 0.58, weight: .semibold))
+                .foregroundStyle(.white.opacity(0.16))
+                .offset(x: size * 0.22, y: -size * 0.17)
+                .rotationEffect(.degrees(scenarioID.messageBadgeBackdropRotation))
+
+            LinearGradient(
+                colors: [
+                    .white.opacity(0.22),
+                    .white.opacity(0.04),
+                    .black.opacity(0.16),
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        }
+    }
+}
+
+private struct PracticeMessageBadgeBaseScene: View {
+    let kind: PracticeMessageBadgeSceneKind
+    let size: CGFloat
+
+    var body: some View {
+        ZStack {
+            switch kind {
+            case .airport:
+                airportScene
+            case .passportDesk:
+                passportDeskScene
+            case .airportServices:
+                airportServicesScene
+            case .hotelLobby:
+                hotelLobbyScene
+            case .hotelRoom:
+                hotelRoomScene
+            case .luggageLobby:
+                luggageLobbyScene
+            case .restaurantTable:
+                restaurantTableScene
+            case .beachCafe:
+                beachCafeScene
+            case .allergyPlate:
+                allergyPlateScene
+            case .road:
+                roadScene
+            case .routeMap:
+                routeMapScene
+            case .market:
+                marketScene
+            case .giftShop:
+                giftShopScene
+            case .checkout:
+                checkoutScene
+            case .pharmacy:
+                pharmacyScene
+            case .emergencyDesk:
+                emergencyDeskScene
+            case .greeting:
+                greetingScene
+            }
+        }
+        .frame(width: size, height: size)
+    }
+
+    private var airportScene: some View {
+        ZStack {
+            sceneLine(width: 0.9, height: 0.012, y: -0.26)
+            sceneLine(width: 0.82, height: 0.012, y: -0.03)
+            sceneLine(width: 0.012, height: 0.72, x: -0.2, y: -0.12)
+            sceneLine(width: 0.012, height: 0.72, x: 0.18, y: -0.12)
+            sceneCapsule(width: 0.76, height: 0.09, y: 0.31, opacity: 0.18)
+            sceneCapsule(width: 0.25, height: 0.06, x: -0.24, y: 0.17, opacity: 0.16)
+            sceneCapsule(width: 0.25, height: 0.06, x: 0.18, y: 0.17, opacity: 0.16)
+        }
+    }
+
+    private var passportDeskScene: some View {
+        ZStack {
+            sceneCapsule(width: 0.86, height: 0.12, y: 0.29, opacity: 0.2)
+            sceneCapsule(width: 0.58, height: 0.055, y: -0.22, opacity: 0.18)
+            sceneLine(width: 0.012, height: 0.42, x: -0.25, y: 0.03)
+            sceneLine(width: 0.012, height: 0.42, x: 0.25, y: 0.03)
+            sceneCapsule(width: 0.16, height: 0.04, x: -0.25, y: 0.14, opacity: 0.22)
+            sceneCapsule(width: 0.16, height: 0.04, x: 0.25, y: 0.14, opacity: 0.22)
+        }
+    }
+
+    private var airportServicesScene: some View {
+        ZStack {
+            sceneLine(width: 0.78, height: 0.012, y: -0.18)
+            sceneLine(width: 0.78, height: 0.012, y: 0.21)
+            RoundedRectangle(cornerRadius: size * 0.035, style: .continuous)
+                .fill(.white.opacity(0.13))
+                .frame(width: size * 0.23, height: size * 0.45)
+                .offset(x: size * 0.25, y: size * 0.04)
+            sceneCapsule(width: 0.19, height: 0.055, x: 0.25, y: -0.09, opacity: 0.22)
+            sceneCapsule(width: 0.2, height: 0.26, x: -0.25, y: 0.03, opacity: 0.14)
+        }
+    }
+
+    private var hotelLobbyScene: some View {
+        ZStack {
+            sceneCapsule(width: 0.82, height: 0.12, y: 0.29, opacity: 0.22)
+            sceneCapsule(width: 0.46, height: 0.2, x: -0.11, y: 0.16, opacity: 0.14)
+            sceneLine(width: 0.012, height: 0.38, x: 0.31, y: 0.04)
+            sceneCapsule(width: 0.13, height: 0.05, x: 0.31, y: -0.14, opacity: 0.2)
+            sceneLine(width: 0.012, height: 0.2, x: -0.34, y: 0.17)
+            Circle()
+                .fill(.white.opacity(0.16))
+                .frame(width: size * 0.11, height: size * 0.11)
+                .offset(x: -size * 0.34, y: size * 0.04)
+        }
+    }
+
+    private var hotelRoomScene: some View {
+        ZStack {
+            sceneLine(width: 0.8, height: 0.012, y: -0.24)
+            sceneLine(width: 0.012, height: 0.4, x: 0.22, y: -0.13)
+            sceneCapsule(width: 0.62, height: 0.18, x: -0.08, y: 0.2, opacity: 0.18)
+            sceneCapsule(width: 0.25, height: 0.08, x: -0.28, y: 0.09, opacity: 0.2)
+            sceneLine(width: 0.012, height: 0.28, x: 0.33, y: 0.08)
+            sceneCapsule(width: 0.16, height: 0.06, x: 0.33, y: -0.08, opacity: 0.2)
+        }
+    }
+
+    private var luggageLobbyScene: some View {
+        ZStack {
+            sceneCapsule(width: 0.76, height: 0.12, y: 0.31, opacity: 0.2)
+            RoundedRectangle(cornerRadius: size * 0.035, style: .continuous)
+                .stroke(.white.opacity(0.17), lineWidth: size * 0.018)
+                .frame(width: size * 0.4, height: size * 0.34)
+                .offset(x: size * 0.11, y: size * 0.03)
+            sceneLine(width: 0.012, height: 0.52, x: -0.24, y: -0.01)
+            Circle()
+                .stroke(.white.opacity(0.16), lineWidth: size * 0.018)
+                .frame(width: size * 0.48, height: size * 0.48)
+                .offset(x: size * 0.07, y: -size * 0.04)
+        }
+    }
+
+    private var restaurantTableScene: some View {
+        ZStack {
+            Circle()
+                .stroke(.white.opacity(0.16), lineWidth: size * 0.018)
+                .frame(width: size * 0.48, height: size * 0.48)
+                .offset(x: -size * 0.16, y: size * 0.08)
+            Circle()
+                .stroke(.white.opacity(0.13), lineWidth: size * 0.016)
+                .frame(width: size * 0.3, height: size * 0.3)
+                .offset(x: size * 0.2, y: size * 0.16)
+            sceneLine(width: 0.78, height: 0.012, y: 0.33)
+            sceneLine(width: 0.012, height: 0.46, x: 0.31, y: -0.03)
+        }
+    }
+
+    private var beachCafeScene: some View {
+        ZStack {
+            sceneCapsule(width: 0.92, height: 0.08, y: 0.27, opacity: 0.18)
+            sceneCapsule(width: 0.82, height: 0.065, y: 0.38, opacity: 0.14)
+            sceneLine(width: 0.012, height: 0.6, x: -0.27, y: -0.04, degrees: -12)
+            sceneCapsule(width: 0.28, height: 0.055, x: -0.18, y: -0.29, degrees: -26, opacity: 0.18)
+            sceneCapsule(width: 0.28, height: 0.055, x: -0.37, y: -0.2, degrees: 26, opacity: 0.18)
+            sceneCapsule(width: 0.24, height: 0.12, x: 0.22, y: 0.11, opacity: 0.16)
+        }
+    }
+
+    private var allergyPlateScene: some View {
+        ZStack {
+            Circle()
+                .stroke(.white.opacity(0.16), lineWidth: size * 0.02)
+                .frame(width: size * 0.62, height: size * 0.62)
+                .offset(x: size * 0.15, y: size * 0.11)
+            sceneCapsule(width: 0.42, height: 0.11, x: 0.16, y: 0.14, degrees: 18, opacity: 0.16)
+            sceneCapsule(width: 0.32, height: 0.08, x: -0.3, y: -0.1, degrees: -26, opacity: 0.18)
+            sceneCapsule(width: 0.3, height: 0.08, x: -0.18, y: -0.25, degrees: 22, opacity: 0.16)
+        }
+    }
+
+    private var roadScene: some View {
+        ZStack {
+            sceneLine(width: 0.012, height: 1.0, x: -0.12, y: 0.08, degrees: -18)
+            sceneLine(width: 0.012, height: 1.0, x: 0.2, y: 0.08, degrees: -18)
+            sceneCapsule(width: 0.16, height: 0.06, x: -0.07, y: -0.22, degrees: -18, opacity: 0.2)
+            sceneCapsule(width: 0.18, height: 0.06, x: 0.04, y: 0.08, degrees: -18, opacity: 0.18)
+            sceneCapsule(width: 0.2, height: 0.06, x: 0.15, y: 0.36, degrees: -18, opacity: 0.16)
+        }
+    }
+
+    private var routeMapScene: some View {
+        ZStack {
+            sceneLine(width: 0.7, height: 0.018, x: -0.06, y: -0.12, degrees: -22)
+            sceneLine(width: 0.56, height: 0.018, x: 0.11, y: 0.15, degrees: 28)
+            Circle()
+                .fill(.white.opacity(0.2))
+                .frame(width: size * 0.1, height: size * 0.1)
+                .offset(x: -size * 0.3, y: -size * 0.24)
+            Circle()
+                .fill(.white.opacity(0.18))
+                .frame(width: size * 0.08, height: size * 0.08)
+                .offset(x: size * 0.33, y: size * 0.27)
+            sceneLine(width: 0.012, height: 0.92, x: 0.0, y: 0.0)
+        }
+    }
+
+    private var marketScene: some View {
+        ZStack {
+            sceneCapsule(width: 0.78, height: 0.1, y: -0.2, opacity: 0.18)
+            sceneLine(width: 0.012, height: 0.5, x: -0.34, y: 0.08)
+            sceneLine(width: 0.012, height: 0.5, x: 0.34, y: 0.08)
+            sceneCapsule(width: 0.86, height: 0.14, y: 0.31, opacity: 0.2)
+            sceneCapsule(width: 0.2, height: 0.08, x: -0.17, y: 0.12, opacity: 0.16)
+            sceneCapsule(width: 0.18, height: 0.08, x: 0.18, y: 0.11, opacity: 0.16)
+        }
+    }
+
+    private var giftShopScene: some View {
+        ZStack {
+            sceneLine(width: 0.72, height: 0.012, y: -0.22)
+            sceneLine(width: 0.72, height: 0.012, y: 0.03)
+            sceneLine(width: 0.72, height: 0.012, y: 0.28)
+            RoundedRectangle(cornerRadius: size * 0.035, style: .continuous)
+                .stroke(.white.opacity(0.17), lineWidth: size * 0.018)
+                .frame(width: size * 0.28, height: size * 0.25)
+                .offset(x: -size * 0.21, y: size * 0.1)
+            sceneCapsule(width: 0.24, height: 0.1, x: 0.23, y: -0.09, opacity: 0.16)
+        }
+    }
+
+    private var checkoutScene: some View {
+        ZStack {
+            sceneCapsule(width: 0.84, height: 0.13, y: 0.31, opacity: 0.22)
+            RoundedRectangle(cornerRadius: size * 0.025, style: .continuous)
+                .fill(.white.opacity(0.13))
+                .frame(width: size * 0.28, height: size * 0.38)
+                .offset(x: -size * 0.22, y: -size * 0.02)
+            sceneLine(width: 0.2, height: 0.012, x: -0.22, y: -0.12)
+            sceneLine(width: 0.2, height: 0.012, x: -0.22, y: -0.02)
+            sceneCapsule(width: 0.3, height: 0.09, x: 0.22, y: 0.08, opacity: 0.16)
+        }
+    }
+
+    private var pharmacyScene: some View {
+        ZStack {
+            sceneLine(width: 0.72, height: 0.012, y: -0.21)
+            sceneLine(width: 0.72, height: 0.012, y: 0.08)
+            RoundedRectangle(cornerRadius: size * 0.035, style: .continuous)
+                .fill(.white.opacity(0.13))
+                .frame(width: size * 0.46, height: size * 0.34)
+                .offset(x: -size * 0.05, y: size * 0.16)
+            sceneLine(width: 0.26, height: 0.035, x: 0.22, y: -0.17)
+            sceneLine(width: 0.035, height: 0.26, x: 0.22, y: -0.17)
+        }
+    }
+
+    private var emergencyDeskScene: some View {
+        ZStack {
+            sceneCapsule(width: 0.84, height: 0.13, y: 0.31, opacity: 0.22)
+            sceneLine(width: 0.72, height: 0.012, y: -0.23)
+            RoundedRectangle(cornerRadius: size * 0.04, style: .continuous)
+                .stroke(.white.opacity(0.17), lineWidth: size * 0.018)
+                .frame(width: size * 0.34, height: size * 0.4)
+                .offset(x: -size * 0.19, y: size * 0.02)
+            sceneCapsule(width: 0.3, height: 0.09, x: 0.23, y: 0.07, opacity: 0.16)
+        }
+    }
+
+    private var greetingScene: some View {
+        ZStack {
+            sceneCapsule(width: 0.8, height: 0.1, y: -0.2, opacity: 0.16)
+            sceneCapsule(width: 0.82, height: 0.14, y: 0.31, opacity: 0.18)
+            RoundedRectangle(cornerRadius: size * 0.04, style: .continuous)
+                .stroke(.white.opacity(0.16), lineWidth: size * 0.018)
+                .frame(width: size * 0.34, height: size * 0.28)
+                .offset(x: -size * 0.2, y: size * 0.05)
+            sceneCapsule(width: 0.25, height: 0.1, x: 0.26, y: -0.02, opacity: 0.16)
+            Circle()
+                .fill(.white.opacity(0.15))
+                .frame(width: size * 0.09, height: size * 0.09)
+                .offset(x: size * 0.1, y: size * 0.03)
+        }
+    }
+
+    private func sceneLine(
+        width: CGFloat,
+        height: CGFloat,
+        x: CGFloat = 0,
+        y: CGFloat = 0,
+        degrees: Double = 0,
+        opacity: Double = 0.18
+    ) -> some View {
+        Capsule()
+            .fill(.white.opacity(opacity))
+            .frame(width: size * width, height: max(1, size * height))
+            .rotationEffect(.degrees(degrees))
+            .offset(x: size * x, y: size * y)
+    }
+
+    private func sceneCapsule(
+        width: CGFloat,
+        height: CGFloat,
+        x: CGFloat = 0,
+        y: CGFloat = 0,
+        degrees: Double = 0,
+        opacity: Double = 0.18
+    ) -> some View {
+        Capsule()
+            .fill(.black.opacity(opacity))
+            .frame(width: size * width, height: size * height)
+            .rotationEffect(.degrees(degrees))
+            .offset(x: size * x, y: size * y)
+    }
+}
+
+private enum PracticeMessageBadgeSceneKind {
+    case airport
+    case passportDesk
+    case airportServices
+    case hotelLobby
+    case hotelRoom
+    case luggageLobby
+    case restaurantTable
+    case beachCafe
+    case allergyPlate
+    case road
+    case routeMap
+    case market
+    case giftShop
+    case checkout
+    case pharmacy
+    case emergencyDesk
+    case greeting
+}
+
+private extension PracticeScenarioID {
+    var messageBadgeSceneKind: PracticeMessageBadgeSceneKind {
+        switch self {
+        case .danangFirstDay:
+            return .airport
+        case .airportPassportControl:
+            return .passportDesk
+        case .airportSimCash:
+            return .airportServices
+        case .hotelCheckInHelp:
+            return .hotelLobby
+        case .hotelRoomHelp:
+            return .hotelRoom
+        case .hotelBagsTaxi:
+            return .luggageLobby
+        case .restaurantOrderingPayment:
+            return .restaurantTable
+        case .danangDay:
+            return .beachCafe
+        case .foodAllergyHelp:
+            return .allergyPlate
+        case .taxiGrabPickup, .driverProblemHelp:
+            return .road
+        case .taxiRouteHelp:
+            return .routeMap
+        case .shoppingMarketPrice:
+            return .market
+        case .shoppingSizeGift:
+            return .giftShop
+        case .shoppingReceiptHelp:
+            return .checkout
+        case .pharmacyHelp:
+            return .pharmacy
+        case .emergencyLostPassport, .emergencyLostBag:
+            return .emergencyDesk
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return .greeting
+        }
+    }
+
+    var messageBadgePalette: [Color] {
+        switch self {
+        case .danangFirstDay:
+            return [Color(red: 0.22, green: 0.52, blue: 0.9), Color(red: 0.07, green: 0.28, blue: 0.58)]
+        case .airportPassportControl:
+            return [Color(red: 0.98, green: 0.3, blue: 0.34), Color(red: 0.62, green: 0.08, blue: 0.16)]
+        case .airportSimCash:
+            return [Color(red: 0.19, green: 0.62, blue: 0.52), Color(red: 0.05, green: 0.34, blue: 0.32)]
+        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi:
+            return [Color(red: 0.62, green: 0.43, blue: 0.85), Color(red: 0.28, green: 0.17, blue: 0.55)]
+        case .restaurantOrderingPayment:
+            return [Color(red: 0.24, green: 0.58, blue: 0.44), Color(red: 0.08, green: 0.34, blue: 0.27)]
+        case .danangDay:
+            return [Color(red: 0.32, green: 0.72, blue: 0.66), Color(red: 0.14, green: 0.43, blue: 0.44)]
+        case .foodAllergyHelp:
+            return [Color(red: 0.22, green: 0.6, blue: 0.43), Color(red: 0.08, green: 0.34, blue: 0.28)]
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+            return [Color(red: 0.88, green: 0.58, blue: 0.18), Color(red: 0.49, green: 0.28, blue: 0.07)]
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp:
+            return [Color(red: 0.88, green: 0.52, blue: 0.22), Color(red: 0.52, green: 0.23, blue: 0.08)]
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+            return [Color(red: 0.94, green: 0.22, blue: 0.25), Color(red: 0.55, green: 0.06, blue: 0.13)]
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return [Color(red: 0.17, green: 0.62, blue: 0.62), Color(red: 0.07, green: 0.32, blue: 0.39)]
+        }
+    }
+
+    var messageBadgeSceneLabel: String? {
+        switch self {
+        case .airportPassportControl:
+            return "PASSPORT"
+        case .airportSimCash:
+            return "SIM"
+        case .hotelCheckInHelp:
+            return "HOTEL"
+        case .shoppingMarketPrice:
+            return "MARKET"
+        case .pharmacyHelp:
+            return "PHARMACY"
+        default:
+            return nil
+        }
+    }
+
+    var messageBadgeBackdropSymbolName: String {
+        switch self {
+        case .danangFirstDay:
+            return "airplane"
+        case .airportPassportControl:
+            return "person.text.rectangle"
+        case .airportSimCash:
+            return "creditcard.and.123"
+        case .hotelCheckInHelp:
+            return "building.2.fill"
+        case .hotelRoomHelp:
+            return "bed.double.fill"
+        case .hotelBagsTaxi:
+            return "cart.fill"
+        case .restaurantOrderingPayment:
+            return "wineglass.fill"
+        case .danangDay:
+            return "water.waves"
+        case .foodAllergyHelp:
+            return "fork.knife.circle"
+        case .taxiGrabPickup:
+            return "car.fill"
+        case .taxiRouteHelp:
+            return "point.topleft.down.curvedto.point.bottomright.up"
+        case .driverProblemHelp:
+            return "exclamationmark.triangle.fill"
+        case .shoppingMarketPrice:
+            return "storefront.fill"
+        case .shoppingSizeGift:
+            return "shippingbox.fill"
+        case .shoppingReceiptHelp:
+            return "creditcard.fill"
+        case .pharmacyHelp:
+            return "pills.fill"
+        case .emergencyLostPassport:
+            return "building.columns.fill"
+        case .emergencyLostBag:
+            return "camera.viewfinder"
+        case .localGreetingMarket:
+            return "bubble.left.and.bubble.right.fill"
+        case .localGreetingHotel:
+            return "door.left.hand.open"
+        case .localGreetingRespect:
+            return "person.2.fill"
+        }
+    }
+
+    var messageBadgeBackdropRotation: Double {
+        switch self {
+        case .danangFirstDay:
+            return -12
+        case .taxiRouteHelp:
+            return 9
+        case .danangDay:
+            return -4
+        default:
+            return 0
+        }
+    }
+
+    var messageBadgeIconScale: CGFloat {
+        switch self {
+        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp:
+            return 0.4
+        case .airportPassportControl, .airportSimCash, .hotelCheckInHelp, .hotelBagsTaxi:
+            return 0.38
+        default:
+            return 0.42
+        }
+    }
+
+    var messageHubSortRank: Int {
+        switch self {
+        case .danangFirstDay, .hotelCheckInHelp, .foodAllergyHelp, .taxiGrabPickup, .shoppingMarketPrice, .pharmacyHelp, .localGreetingMarket:
+            return 0
+        case .airportPassportControl, .hotelRoomHelp, .restaurantOrderingPayment, .taxiRouteHelp, .shoppingSizeGift, .emergencyLostPassport, .localGreetingHotel:
+            return 1
+        case .airportSimCash, .hotelBagsTaxi, .danangDay, .driverProblemHelp, .shoppingReceiptHelp, .emergencyLostBag, .localGreetingRespect:
+            return 2
+        }
     }
 }
 

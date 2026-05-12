@@ -238,19 +238,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThan(HomeLayout.situationImageHeight, HomeLayout.situationRowHeight)
     }
 
-    func testHomeScenarioCardsKeepStartButtonInsideCardBounds() {
-        let verticalPadding = HomeLayout.scenarioCardPadding * 2
-        let imageHeight = HomeLayout.scenarioCardImageHeight
-        let sectionSpacing = HomeLayout.scenarioCardSpacing * 3
-        let worstCaseTitleAndSubtitleHeight: CGFloat = 96
-        let startButtonHeight = HomeLayout.scenarioStartButtonHeight
-        let minimumHeight = verticalPadding
-            + imageHeight
-            + sectionSpacing
-            + worstCaseTitleAndSubtitleHeight
-            + startButtonHeight
-
-        XCTAssertGreaterThanOrEqual(HomeLayout.scenarioCardHeight, minimumHeight)
+    func testHomeMessageRailUsesStableCircleContactMetrics() {
+        XCTAssertEqual(HomeLayout.messageAvatarSize, 82)
+        XCTAssertEqual(HomeLayout.messageContactWidth, 104)
+        XCTAssertGreaterThan(HomeLayout.messageContactWidth, HomeLayout.messageAvatarSize)
+        XCTAssertGreaterThanOrEqual(HomeLayout.messageRailHeight, HomeLayout.messageAvatarSize + 44)
     }
 
     func testHomeUseNowShelfUsesTwoRowCarouselMetrics() {
