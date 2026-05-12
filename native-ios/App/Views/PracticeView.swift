@@ -1304,7 +1304,7 @@ struct PracticeMessageAvatar: View {
             Circle()
                 .strokeBorder(.black.opacity(0.05), lineWidth: 0.5)
         }
-        .shadow(color: scenarioID.tint.color.opacity(0.18), radius: size * 0.16, x: 0, y: size * 0.08)
+        .shadow(color: scenarioID.messageBadgeOverlayColor.opacity(0.18), radius: size * 0.16, x: 0, y: size * 0.08)
         .accessibilityHidden(true)
     }
 }
@@ -1315,38 +1315,43 @@ private struct PracticeMessageBadgeBackdrop: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(
-                colors: scenarioID.messageBadgePalette,
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+            Image(scenarioID.messageBadgeBackgroundImageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: size, height: size)
+                .scaleEffect(scenarioID.messageBadgeImageScale)
+                .offset(
+                    x: scenarioID.messageBadgeImageOffset.width * size,
+                    y: scenarioID.messageBadgeImageOffset.height * size
+                )
+                .saturation(0.95)
+                .contrast(1.05)
 
-            PracticeMessageBadgeBaseScene(kind: scenarioID.messageBadgeSceneKind, size: size)
-
-            if let label = scenarioID.messageBadgeSceneLabel {
-                Text(label)
-                    .font(.system(size: size * 0.11, weight: .black, design: .rounded))
-                    .kerning(0.6)
-                    .foregroundStyle(.white.opacity(0.18))
-                    .offset(x: -size * 0.18, y: -size * 0.28)
-            }
-
-            Image(systemName: scenarioID.messageBadgeBackdropSymbolName)
-                .font(.system(size: size * 0.58, weight: .semibold))
-                .foregroundStyle(.white.opacity(0.16))
-                .offset(x: size * 0.22, y: -size * 0.17)
-                .rotationEffect(.degrees(scenarioID.messageBadgeBackdropRotation))
+            scenarioID.messageBadgeOverlayColor
+                .opacity(0.36)
+                .blendMode(.multiply)
 
             LinearGradient(
                 colors: [
-                    .white.opacity(0.22),
-                    .white.opacity(0.04),
-                    .black.opacity(0.16),
+                    .white.opacity(0.2),
+                    .white.opacity(0.02),
+                    .black.opacity(0.18),
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
+
+            LinearGradient(
+                colors: [
+                    .white.opacity(0.14),
+                    .clear,
+                ],
+                startPoint: .top,
+                endPoint: .center
+            )
         }
+        .frame(width: size, height: size)
+        .clipped()
     }
 }
 
@@ -1666,6 +1671,106 @@ private enum PracticeMessageBadgeSceneKind {
 }
 
 private extension PracticeScenarioID {
+    var messageBadgeBackgroundImageName: String {
+        switch self {
+        case .danangFirstDay:
+            return "HeroCategoryAirport"
+        case .airportPassportControl:
+            return "HeroCategoryAirport"
+        case .airportSimCash:
+            return "HeroCategoryFirstDay"
+        case .hotelCheckInHelp, .hotelBagsTaxi:
+            return "HeroCategoryHotel"
+        case .hotelRoomHelp:
+            return "BrowseCollectionHotel"
+        case .foodAllergyHelp:
+            return "BrowseCollectionFood"
+        case .restaurantOrderingPayment:
+            return "HeroCategoryFood"
+        case .danangDay:
+            return "HeroVietnamMasthead"
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+            return "HeroCategoryGettingAround"
+        case .shoppingMarketPrice:
+            return "BrowseCollectionShopping"
+        case .shoppingSizeGift:
+            return "HomeSituationFoodShopping"
+        case .shoppingReceiptHelp:
+            return "HeroCategoryNumbersMoney"
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+            return "HeroCategoryEmergency"
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return "HeroCategoryGreetings"
+        }
+    }
+
+    var messageBadgeOverlayColor: Color {
+        switch self {
+        case .danangFirstDay:
+            return Color(red: 0.08, green: 0.38, blue: 0.74)
+        case .airportPassportControl:
+            return Color(red: 0.05, green: 0.45, blue: 0.78)
+        case .airportSimCash:
+            return Color(red: 0.05, green: 0.52, blue: 0.62)
+        case .hotelCheckInHelp:
+            return Color(red: 0.48, green: 0.31, blue: 0.76)
+        case .hotelRoomHelp:
+            return Color(red: 0.55, green: 0.36, blue: 0.78)
+        case .hotelBagsTaxi:
+            return Color(red: 0.38, green: 0.25, blue: 0.67)
+        case .restaurantOrderingPayment:
+            return Color(red: 0.08, green: 0.43, blue: 0.32)
+        case .danangDay:
+            return Color(red: 0.2, green: 0.63, blue: 0.58)
+        case .foodAllergyHelp:
+            return Color(red: 0.1, green: 0.52, blue: 0.35)
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+            return Color(red: 0.7, green: 0.42, blue: 0.08)
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp:
+            return Color(red: 0.72, green: 0.42, blue: 0.08)
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+            return Color(red: 0.78, green: 0.12, blue: 0.16)
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return Color(red: 0.06, green: 0.5, blue: 0.52)
+        }
+    }
+
+    var messageBadgeImageScale: CGFloat {
+        switch self {
+        case .hotelRoomHelp, .foodAllergyHelp, .airportPassportControl, .shoppingMarketPrice:
+            return 1.18
+        case .shoppingSizeGift:
+            return 1.08
+        default:
+            return 1
+        }
+    }
+
+    var messageBadgeImageOffset: CGSize {
+        switch self {
+        case .danangFirstDay, .airportPassportControl:
+            return CGSize(width: 0, height: 0.22)
+        case .airportSimCash:
+            return CGSize(width: 0, height: 0.18)
+        case .hotelCheckInHelp, .hotelBagsTaxi:
+            return CGSize(width: 0, height: 0.26)
+        case .hotelRoomHelp:
+            return CGSize(width: 0.08, height: 0)
+        case .restaurantOrderingPayment:
+            return CGSize(width: 0, height: 0.24)
+        case .foodAllergyHelp:
+            return CGSize(width: 0.08, height: 0)
+        case .danangDay:
+            return CGSize(width: -0.08, height: 0.24)
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+            return CGSize(width: 0, height: 0.18)
+        case .shoppingReceiptHelp, .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+            return CGSize(width: 0, height: 0.2)
+        default:
+            return .zero
+        }
+    }
+
     var messageBadgeSceneKind: PracticeMessageBadgeSceneKind {
         switch self {
         case .danangFirstDay:

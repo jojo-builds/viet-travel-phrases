@@ -738,6 +738,7 @@ struct AppShellView: View {
             let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
             let isPressingDockSelection = dockDrag.dragX != nil
             let isDraggingDockSelection = dockDrag.didMoveBeyondTap
+            let lensAnimation = dockSelectionLensAnimation(isFingerTracking: dockDrag.isFingerTracking)
             let lensMetrics = AppDockSelectionLayout.lensMetrics(
                 selectedIndex: selectedIndex,
                 activeIndex: activeIndex,
@@ -758,9 +759,7 @@ struct AppShellView: View {
                 )
                     .offset(x: lensMetrics.xOffset)
                     .animation(
-                        reduceMotion
-                        ? .easeOut(duration: 0.16)
-                        : .interactiveSpring(response: 0.34, dampingFraction: 0.74, blendDuration: 0.12),
+                        lensAnimation,
                         value: lensMetrics
                     )
                     .zIndex(AppChromeLayout.dockSelectionLensZIndex)
@@ -827,6 +826,16 @@ struct AppShellView: View {
             }
     }
 
+    private func dockSelectionLensAnimation(isFingerTracking: Bool) -> Animation? {
+        if isFingerTracking {
+            return nil
+        }
+
+        return reduceMotion
+            ? .easeOut(duration: 0.14)
+            : .interactiveSpring(response: 0.24, dampingFraction: 0.78, blendDuration: 0.06)
+    }
+
     private func updateDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
         guard let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth) else {
             return
@@ -853,6 +862,7 @@ struct AppShellView: View {
             activeItem: activeItem,
             dragX: dragX,
             predictedDragX: predictedDragX,
+            isFingerTracking: didMoveBeyondTap,
             didMoveBeyondTap: didMoveBeyondTap
         )
 
@@ -865,17 +875,80 @@ struct AppShellView: View {
         let shouldCommitDrag = dockDrag.didMoveBeyondTap
         let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth)
 
-        withAnimation(
-            reduceMotion
-            ? .easeOut(duration: 0.16)
-            : .interactiveSpring(response: 0.34, dampingFraction: 0.82, blendDuration: 0.12)
-        ) {
-            dockDrag = .inactive
+        guard shouldCommitDrag, let item else {
+            withAnimation(
+                reduceMotion
+                ? .easeOut(duration: 0.14)
+                : .interactiveSpring(response: 0.24, dampingFraction: 0.84, blendDuration: 0.06)
+            ) {
+                dockDrag = .inactive
+            }
+            return
         }
 
-        if shouldCommitDrag, let item {
-            performDockAction(item)
+        dockSelectionTapRequestID += 1
+        let requestID = dockSelectionTapRequestID
+        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
+        let destinationX = AppDockSelectionLayout.itemCenterX(
+            index: destinationIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        )
+
+        withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.80, blendDuration: 0.05)) {
+            dockDrag = AppDockInteractionState(
+                startItem: dockDrag.startItem ?? chrome.selectedDockItem,
+                activeItem: item,
+                dragX: destinationX,
+                predictedDragX: destinationX,
+                isFingerTracking: false,
+                didMoveBeyondTap: true
+            )
         }
+
+        commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
+    }
+
+    private func deactivateDockSelection(requestID: Int, delay: UInt64) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: delay)
+            guard requestID == dockSelectionTapRequestID else {
+                return
+            }
+
+            withAnimation(.interactiveSpring(response: 0.22, dampingFraction: 0.86, blendDuration: 0.04)) {
+                dockDrag = .inactive
+            }
+        }
+    }
+
+    private func commitDockSelectionAction(_ item: DockItemKind, requestID: Int, deactivateDelay: UInt64) {
+        interactiveDragResolutionID += 1
+        homePhraseHeroMorphResetID += 1
+        homePhraseHeroRoutePageID = nil
+        homePhraseHeroMorphPageID = nil
+        homePhraseHeroContentHoldPageID = nil
+        interactiveDrag = nil
+        cancelSearchFocus()
+
+        withAnimation(.snappy(duration: 0.30)) {
+            switch item {
+            case .home:
+                navigation.openHome()
+            case .browse:
+                navigation.openBrowse()
+            case .saved:
+                navigation.openSaved()
+            case .practice:
+                navigation.openPractice()
+            }
+        }
+
+        if item == .home {
+            searchQuery = ""
+        }
+
+        deactivateDockSelection(requestID: requestID, delay: deactivateDelay)
     }
 
     private func performDockTapAction(_ item: DockItemKind, chrome: AppChrome, contentWidth: CGFloat) {
@@ -893,9 +966,10 @@ struct AppShellView: View {
             itemCount: chrome.primaryDockItems.count,
             contentWidth: contentWidth
         )
-        let waypoints = AppDockSelectionLayout.waypointIndexes(
-            from: sourceIndex,
-            to: destinationIndex
+        let destinationX = AppDockSelectionLayout.itemCenterX(
+            index: destinationIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
         )
 
         cancelSearchFocus()
@@ -906,6 +980,7 @@ struct AppShellView: View {
                 activeItem: chrome.selectedDockItem,
                 dragX: sourceX,
                 predictedDragX: sourceX,
+                isFingerTracking: false,
                 didMoveBeyondTap: false
             )
         }
@@ -916,40 +991,24 @@ struct AppShellView: View {
                 return
             }
 
-            for waypoint in waypoints {
-                guard requestID == dockSelectionTapRequestID,
-                      chrome.primaryDockItems.indices.contains(waypoint)
-                else {
-                    return
-                }
-
-                let waypointItem = chrome.primaryDockItems[waypoint]
-                let waypointX = AppDockSelectionLayout.itemCenterX(
-                    index: waypoint,
-                    itemCount: chrome.primaryDockItems.count,
-                    contentWidth: contentWidth
+            playDockCrossingHaptic()
+            withAnimation(.interactiveSpring(response: 0.24, dampingFraction: 0.76, blendDuration: 0.06)) {
+                dockDrag = AppDockInteractionState(
+                    startItem: chrome.selectedDockItem,
+                    activeItem: item,
+                    dragX: destinationX,
+                    predictedDragX: destinationX,
+                    isFingerTracking: false,
+                    didMoveBeyondTap: true
                 )
-
-                playDockCrossingHaptic()
-                withAnimation(.interactiveSpring(response: 0.28, dampingFraction: 0.70, blendDuration: 0.10)) {
-                    dockDrag = AppDockInteractionState(
-                        startItem: chrome.selectedDockItem,
-                        activeItem: waypointItem,
-                        dragX: waypointX,
-                        predictedDragX: waypointX,
-                        didMoveBeyondTap: true
-                    )
-                }
-
-                try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapWaypointDelay)
             }
 
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapSettleDelay)
+            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapTravelDelay)
             guard requestID == dockSelectionTapRequestID else {
                 return
             }
 
-            commitDockTapAction(item, requestID: requestID)
+            commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
         }
     }
 
@@ -963,38 +1022,6 @@ struct AppShellView: View {
         }
 
         return chrome.primaryDockItems[index]
-    }
-
-    private func commitDockTapAction(_ item: DockItemKind, requestID: Int) {
-        cancelSearchFocus()
-
-        withAnimation(.snappy(duration: 0.34)) {
-            switch item {
-            case .home:
-                navigation.openHome()
-            case .browse:
-                navigation.openBrowse()
-            case .saved:
-                navigation.openSaved()
-            case .practice:
-                navigation.openPractice()
-            }
-        }
-
-        if item == .home {
-            searchQuery = ""
-        }
-
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapDeactivateDelay)
-            guard requestID == dockSelectionTapRequestID else {
-                return
-            }
-
-            withAnimation(.interactiveSpring(response: 0.22, dampingFraction: 0.86, blendDuration: 0.04)) {
-                dockDrag = .inactive
-            }
-        }
     }
 
     private func playDockCrossingHaptic() {
@@ -2672,6 +2699,7 @@ private struct AppDockInteractionState: Equatable {
     var activeItem: DockItemKind?
     var dragX: CGFloat?
     var predictedDragX: CGFloat?
+    var isFingerTracking: Bool
     var didMoveBeyondTap: Bool
 
     static let inactive = AppDockInteractionState(
@@ -2679,6 +2707,7 @@ private struct AppDockInteractionState: Equatable {
         activeItem: nil,
         dragX: nil,
         predictedDragX: nil,
+        isFingerTracking: false,
         didMoveBeyondTap: false
     )
 }
@@ -3659,30 +3688,20 @@ private enum HomeContent {
 
 private struct HomeShelf<Content: View>: View {
     let title: String
-    let subtitle: String
     let content: Content
 
-    init(title: String, subtitle: String, @ViewBuilder content: () -> Content) {
+    init(title: String, subtitle _: String, @ViewBuilder content: () -> Content) {
         self.title = title
-        self.subtitle = subtitle
         self.content = content()
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            VStack(alignment: .leading, spacing: 3) {
-                Text(title)
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.82)
-
-                Text(subtitle)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
+            Text(title)
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
 
             content
         }
