@@ -176,16 +176,17 @@ final class AdminChromeUITests: XCTestCase {
         let app = launchApp()
         assertHomeVisible(in: app)
         XCTAssertTrue(app.staticTexts["Start speaking now"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.staticTexts["Test phrase cards"].exists)
+        XCTAssertTrue(app.staticTexts["Use now"].exists)
+        XCTAssertFalse(app.staticTexts["Test phrase cards"].exists)
         XCTAssertFalse(app.staticTexts["Larger listen cards for common moments"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Home.SearchEntry"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-top.png")
 
-        for _ in 0..<3 where !app.staticTexts["Keep going"].exists {
+        for _ in 0..<3 where !app.staticTexts["First hour in Vietnam"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.staticTexts["Keep going"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["First hour in Vietnam"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Food & coffee"].waitForExistence(timeout: 3))
         XCTAssertFalse(app.staticTexts["Recent pages, saved phrases, and practice"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-mid.png")
 
@@ -193,14 +194,16 @@ final class AdminChromeUITests: XCTestCase {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["Messages"].waitForExistence(timeout: 3))
-        XCTAssertFalse(app.staticTexts["Practice short trip conversations"].exists)
+        for _ in 0..<2 where !app.buttons["HomeScenario.danangFirstDay"].exists {
+            app.swipeUp()
+        }
         XCTAssertTrue(app.buttons["HomeScenario.danangFirstDay"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-lower.png")
 
-        for _ in 0..<5 where !app.staticTexts["Tip"].exists {
+        for _ in 0..<5 where !app.staticTexts["Explore by city"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["Tip"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-bottom.png")
     }
 
@@ -297,6 +300,31 @@ final class AdminChromeUITests: XCTestCase {
         openDock("Saved", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
         captureForegroundMorphProofIfRequested(app: app, name: "saved-selected-lens.png")
+    }
+
+    func testFocusedSearchChromeKeepsDismissButtonTappable() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+
+        openSearch(in: app, expectedOrigin: "Home", iteration: 1)
+        let searchField = app.textFields["AppChrome.SearchField"]
+        XCTAssertTrue(searchField.waitForExistence(timeout: 2))
+        searchField.tap()
+
+        let dismissButton = app.buttons["AppChrome.SearchDismissKeyboardButton"]
+        XCTAssertTrue(
+            dismissButton.waitForExistence(timeout: 3),
+            "Focused search chrome should expose a tappable clear/dismiss button."
+        )
+        XCTAssertGreaterThan(
+            dismissButton.frame.minX,
+            searchField.frame.maxX,
+            "Dismiss button should sit as its own trailing glass control instead of overlapping the search field."
+        )
+
+        dismissButton.tap()
+        XCTAssertTrue(app.buttons["AppChrome.SearchOriginButton.Home"].waitForExistence(timeout: 2))
+        captureFocusedSearchChromeProofIfRequested(app: app, name: "focused-search-dismiss-return.png")
     }
 
     private func openSearch(in app: XCUIApplication, expectedOrigin: String, iteration: Int) {
@@ -570,6 +598,23 @@ final class AdminChromeUITests: XCTestCase {
             let directoryURL = proofDirectoryURL(
                 environmentPath: nil,
                 taskID: "TASK-NATIVE-BOTTOM-CHROME-FOREGROUND-MORPH-001"
+            )
+        else {
+            return
+        }
+
+        try? FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: directoryURL.appendingPathComponent(name))
+    }
+
+    private func captureFocusedSearchChromeProofIfRequested(app: XCUIApplication, name: String) {
+        let sentinelPath = "/tmp/speaklocal-focused-search-chrome-proof-enabled"
+        let environmentPath = ProcessInfo.processInfo.environment["SPEAKLOCAL_FOCUSED_SEARCH_CHROME_PROOF_DIR"]
+        guard
+            FileManager.default.fileExists(atPath: sentinelPath) || environmentPath?.isEmpty == false,
+            let directoryURL = proofDirectoryURL(
+                environmentPath: environmentPath,
+                taskID: "TASK-NATIVE-FOCUSED-SEARCH-CHROME-001"
             )
         else {
             return

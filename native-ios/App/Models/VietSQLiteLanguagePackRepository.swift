@@ -850,9 +850,11 @@ final class VietSQLiteLanguagePackRepository {
           pp.tint_name,
           pp.hero_image_name,
           aa.source_manifest_key,
-          pps.cta_label
+          pps.cta_label,
+          pct.page_kind
         FROM phrase_page pp
         JOIN phrase p ON p.id = pp.phrase_id
+        LEFT JOIN phrase_city_tag pct ON pct.phrase_id = p.id
         LEFT JOIN audio_usage au
           ON au.target_kind = 'phrase'
          AND au.target_id = p.id
@@ -880,6 +882,8 @@ final class VietSQLiteLanguagePackRepository {
             let heroImageName = Self.optionalStringColumn(statement, index: 8)
             let audioKey = Self.optionalStringColumn(statement, index: 9)
             let practiceCTALabel = Self.optionalStringColumn(statement, index: 10)
+            let pageKind = Self.stringColumn(statement, index: 11)
+            let suppressDerivedPlacePhraseRows = Self.entityPageKinds.contains(pageKind)
 
             return PhraseDetailPage(
                 id: pageID,
@@ -890,7 +894,10 @@ final class VietSQLiteLanguagePackRepository {
                 iconName: iconName,
                 tintName: tintName,
                 heroImageName: heroImageName,
-                sections: try loadSections(forPageID: pageID),
+                sections: try loadSections(
+                    forPageID: pageID,
+                    suppressDerivedPlacePhraseRows: suppressDerivedPlacePhraseRows
+                ),
                 examples: [],
                 audioKey: audioKey,
                 practiceCTALabel: practiceCTALabel,
@@ -1025,7 +1032,16 @@ final class VietSQLiteLanguagePackRepository {
         }
     }
 
-    private func loadSections(forPageID pageID: String) throws -> [PhraseDetailSection] {
+    private static let entityPageKinds: Set<String> = [
+        "place",
+        "restaurant",
+        "dish",
+    ]
+
+    private func loadSections(
+        forPageID pageID: String,
+        suppressDerivedPlacePhraseRows: Bool = false
+    ) throws -> [PhraseDetailSection] {
         let sql = """
         SELECT id, section_key, title, body, presentation
         FROM page_section
@@ -1044,14 +1060,20 @@ final class VietSQLiteLanguagePackRepository {
                 id: sectionKey,
                 title: Self.stringColumn(statement, index: 2),
                 body: Self.stringColumn(statement, index: 3),
-                phrases: try loadPhraseOptions(forSectionID: sectionID),
+                phrases: try loadPhraseOptions(
+                    forSectionID: sectionID,
+                    suppressDerivedPlacePhraseRows: suppressDerivedPlacePhraseRows
+                ),
                 breakdown: try loadBreakdownTokens(forSectionID: sectionID),
                 presentation: presentation
             )
         }
     }
 
-    private func loadPhraseOptions(forSectionID sectionID: String) throws -> [PhraseOption] {
+    private func loadPhraseOptions(
+        forSectionID sectionID: String,
+        suppressDerivedPlacePhraseRows: Bool = false
+    ) throws -> [PhraseOption] {
         let sql = """
         SELECT
           psi.id,
@@ -1082,11 +1104,23 @@ final class VietSQLiteLanguagePackRepository {
         LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
         WHERE psi.section_id = ?
           AND psi.item_kind IN ('phrase', 'authored_phrase')
+          AND (
+            ? = 0
+            OR psi.item_kind != 'phrase'
+            OR pp.id IS NULL
+            OR NOT EXISTS (
+              SELECT 1
+              FROM page_category pc
+              WHERE pc.page_id = pp.id
+                AND pc.category_id = 'derived-place-phrases'
+            )
+          )
         ORDER BY psi.sort_order;
         """
 
         return try rows(sql, bind: { statement in
             try self.bindText(sectionID, to: 1, in: statement, sql: sql)
+            try self.bindInt(suppressDerivedPlacePhraseRows ? 1 : 0, to: 2, in: statement, sql: sql)
         }) { statement in
             let itemKind = Self.stringColumn(statement, index: 1)
             let targetID = Self.stringColumn(statement, index: 2)
