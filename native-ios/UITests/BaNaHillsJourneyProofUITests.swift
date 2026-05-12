@@ -215,19 +215,19 @@ final class ListingLatestFeedbackProofUITests: XCTestCase {
             "emergency-hub",
             ["--browse-category", "emergency"],
             "Emergency",
-            ["Practice asking for help calmly.", "Help!"]
+            ["Ask for help calmly.", "Help!"]
         ),
         (
             "shopping-hub",
             ["--browse-category", "shopping"],
             "Shopping",
-            ["Practice prices, sizes, payment, and returns."]
+            ["Prices, sizes, payment, and returns."]
         ),
         (
             "danang-city-hub",
             ["--browse-city", "danang"],
             "Da Nang",
-            ["Names to know", "Browse Da Nang", "Practice a Da Nang day"]
+            ["Names to know", "Browse Da Nang", "Da Nang day"]
         ),
         (
             "all-vietnam-hub",
@@ -316,14 +316,14 @@ final class ListingHubRandomLoopProofUITests: XCTestCase {
     )
 
     private let hubPages: [(label: String, arguments: [String], title: String, requiredTexts: [String])] = [
-        ("all-vietnam", ["--browse-category", "city-guides"], "All Vietnam", ["Start here", "City guides", "Practice Vietnam basics"]),
+        ("all-vietnam", ["--browse-category", "city-guides"], "All Vietnam", ["Start here", "City guides", "Vietnam basics"]),
         ("hanoi", ["--browse-city", "hanoi"], "Hanoi", ["Names to know", "Browse Hanoi", "Common moments", "Quick phrases"]),
         ("saigon", ["--browse-city", "hcmc"], "Saigon", ["Names to know", "Browse Saigon", "Common moments", "Quick phrases"]),
         ("hoi-an", ["--browse-city", "hoian"], "Hoi An", ["Names to know", "Browse Hoi An", "Common moments", "Quick phrases"]),
         ("hue", ["--browse-city", "hue"], "Hue", ["Names to know", "Browse Hue", "Common moments", "Quick phrases"]),
         ("airport-topic", ["--browse-category", "airport"], "Airport", ["Good first phrases", "Airport Baggage", "Passport Control", "SIM & Cash"]),
         ("hotel-topic", ["--browse-category", "hotel"], "Hotel", ["At the hotel desk", "Hotel Check-In", "Room Help", "Bags & Taxi"]),
-        ("food-topic", ["--browse-category", "food"], "Food", ["Start at the table", "A table for two", "Can I see the menu?", "Food Allergies", "Restaurant Table", "Beach Snacks"]),
+        ("food-topic", ["--browse-category", "food"], "Food & coffee", ["Places, dishes, and coffee", "Coffee shops", "Coffee & drinks", "Dishes to order", "Food Allergies", "Restaurant Table", "Beach Snacks"]),
         ("getting-around-topic", ["--browse-category", "getting-around"], "Getting Around", ["Start here", "Grab Pickup", "Taxi Route", "Driver Help"]),
         ("local-greetings-topic", ["--browse-category", "local-greetings"], "Local Greetings", ["Start here", "Market Hello", "Hotel Hello", "Respectful Hello"]),
     ]

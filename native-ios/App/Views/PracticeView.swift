@@ -13,6 +13,7 @@ struct PracticeView: View {
     let scrollToTopTrigger: Int
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
+    var onThreadBackToOrigin: () -> Void
     var onThreadPresentationChanged: (Bool) -> Void
 
     @State private var deckState = PracticeDeckLoadState.loading
@@ -22,6 +23,7 @@ struct PracticeView: View {
     @State private var activeScenarioSession: PracticeScenarioSession?
     @State private var scenarioCompletion: PracticeScenarioCompletionSummary?
     @State private var isScenarioThreadPresented = false
+    @State private var activeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
     @State private var pendingScenarioReturnID: PracticeScenarioID?
     @State private var didStartInitialMode = false
     @State private var handledStartRequestID: Int?
@@ -42,6 +44,7 @@ struct PracticeView: View {
         messageStore: LocalPracticeMessageStore = LocalPracticeMessageStore(),
         onOpenDetail: @escaping (String) -> Void,
         onBrowseTapped: @escaping () -> Void,
+        onThreadBackToOrigin: @escaping () -> Void = {},
         onThreadPresentationChanged: @escaping (Bool) -> Void = { _ in }
     ) {
         self.intentStore = intentStore
@@ -52,6 +55,7 @@ struct PracticeView: View {
         self.scrollToTopTrigger = scrollToTopTrigger
         self.onOpenDetail = onOpenDetail
         self.onBrowseTapped = onBrowseTapped
+        self.onThreadBackToOrigin = onThreadBackToOrigin
         self.onThreadPresentationChanged = onThreadPresentationChanged
         _progressStore = StateObject(wrappedValue: progressStore)
         _messageStore = StateObject(wrappedValue: messageStore)
@@ -108,12 +112,12 @@ struct PracticeView: View {
                         selectScenarioOption(option, for: step)
                     },
                     onPracticeAnother: startAnotherScenario,
-                    onBackToPractice: dismissScenarioSheet,
+                    onBackToPractice: dismissScenarioThread,
                     onBrowseTapped: {
                         dismissScenarioSheet()
                         onBrowseTapped()
                     },
-                    onDismiss: dismissScenarioSheet
+                    onDismiss: dismissScenarioThread
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .transition(.opacity)
@@ -181,7 +185,12 @@ struct PracticeView: View {
 
     private func startAnotherScenario() {
         if let scenario = scenarioCompletion?.scenario {
-            presentScenarioThread(scenario, context: scenarioCompletion?.context ?? .standard, reset: true)
+            presentScenarioThread(
+                scenario,
+                context: scenarioCompletion?.context ?? .standard,
+                reset: true,
+                threadDismissal: activeScenarioThreadDismissal
+            )
             return
         }
 
@@ -191,13 +200,15 @@ struct PracticeView: View {
     private func presentScenarioThread(
         _ scenario: PracticeScenario,
         context: PracticeEntryContext = .standard,
-        reset: Bool = false
+        reset: Bool = false,
+        threadDismissal: PracticeScenarioThreadDismissal = .messagesHub
     ) {
         guard !scenario.steps.isEmpty else {
             return
         }
 
         unreadScenarioIDs.remove(scenario.id)
+        activeScenarioThreadDismissal = threadDismissal
 
         if reset {
             messageStore.clear(scenario.id)
@@ -274,6 +285,18 @@ struct PracticeView: View {
     private func dismissScenarioSheet() {
         isScenarioThreadPresented = false
         reloadScenarioSnapshot()
+    }
+
+    private func dismissScenarioThread() {
+        switch activeScenarioThreadDismissal {
+        case .messagesHub:
+            dismissScenarioSheet()
+        case .originRoute:
+            isScenarioThreadPresented = false
+            activeScenarioThreadDismissal = .messagesHub
+            reloadScenarioSnapshot()
+            onThreadBackToOrigin()
+        }
     }
 
     private func isScenarioPageInPractice(_ pageID: String) -> Bool {
@@ -481,7 +504,10 @@ struct PracticeView: View {
         handledStartRequestID = startRequest.id
         if let scenarioID = startRequest.scenarioID,
            let scenario = snapshot.scenarios.first(where: { $0.id == scenarioID }) {
-            startScenario(scenario)
+            presentScenarioThread(
+                scenario,
+                threadDismissal: startRequest.scenarioThreadDismissal
+            )
             return
         }
 
@@ -504,7 +530,7 @@ struct PracticeView: View {
                 return
             }
 
-            presentScenarioThread(scenario)
+            presentScenarioThread(scenario, threadDismissal: activeScenarioThreadDismissal)
         }
     }
 

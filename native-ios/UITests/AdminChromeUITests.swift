@@ -176,16 +176,17 @@ final class AdminChromeUITests: XCTestCase {
         let app = launchApp()
         assertHomeVisible(in: app)
         XCTAssertTrue(app.staticTexts["Start speaking now"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.staticTexts["Test phrase cards"].exists)
+        XCTAssertTrue(app.staticTexts["Use now"].exists)
+        XCTAssertFalse(app.staticTexts["Test phrase cards"].exists)
         XCTAssertFalse(app.staticTexts["Larger listen cards for common moments"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Home.SearchEntry"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-top.png")
 
-        for _ in 0..<3 where !app.staticTexts["Keep going"].exists {
+        for _ in 0..<3 where !app.staticTexts["First hour in Vietnam"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.staticTexts["Keep going"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["First hour in Vietnam"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Food & coffee"].waitForExistence(timeout: 3))
         XCTAssertFalse(app.staticTexts["Recent pages, saved phrases, and practice"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-mid.png")
 
@@ -193,14 +194,16 @@ final class AdminChromeUITests: XCTestCase {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["Messages"].waitForExistence(timeout: 3))
-        XCTAssertFalse(app.staticTexts["Practice short trip conversations"].exists)
+        for _ in 0..<2 where !app.buttons["HomeScenario.danangFirstDay"].exists {
+            app.swipeUp()
+        }
         XCTAssertTrue(app.buttons["HomeScenario.danangFirstDay"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-lower.png")
 
-        for _ in 0..<5 where !app.staticTexts["Tip"].exists {
+        for _ in 0..<5 where !app.staticTexts["Explore by city"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["Tip"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-bottom.png")
     }
 
