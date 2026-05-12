@@ -2,6 +2,20 @@
 
 This is the active Mac app folder for SpeakLocal Vietnam native iOS work.
 
+## Paywall Lane Override
+
+This native checkout belongs to `feature/paywall` at `/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/paywall`.
+
+For this lane only:
+
+- Do not merge paywall work into `main` unless Jojo explicitly says the paywall is ready.
+- Use a dedicated Simulator for UI work, preferably `SpeakLocal Paywall`.
+- If Jojo asks to test the paywall on-device, building this branch to the physical iPhone is allowed. Report clearly that the phone now has the paywall branch build, because it replaces the normal `main` build on the same bundle ID.
+- Keep all Apple signing and device-specific details local. Do not commit Team IDs, provisioning IDs, certificate identifiers, device IDs, or App Store Connect credentials.
+- Use StoreKit test/sandbox-safe infrastructure while developing. Do not assume production products, pricing, trial language, or subscription terms until Jojo confirms them.
+- Keep a developer bypass, test launch argument, or equivalent debug path so the rest of the app can still be inspected while the paywall is under construction.
+- Validate paywall UI in simulator first, then on device when requested. StoreKit purchase behavior needs explicit sandbox/device verification before this branch can be considered ready for `main`.
+
 Open this folder in Codex for:
 
 - SwiftUI UI implementation

@@ -1,5 +1,29 @@
 # SpeakLocal-App-Family
 
+## Paywall Feature Lane
+
+This checkout is the dedicated paywall lane:
+
+- branch: `feature/paywall`
+- worktree: `/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/paywall`
+
+Paywall work is intentionally more isolated than the usual fast merge lanes. Do not merge this branch into `main` until Jojo explicitly says the paywall is ready. It is acceptable for this branch to be tested directly on Jojo's physical iPhone when Jojo asks, because the point is to fully test the paywall before it becomes part of the normal app build.
+
+When working in this lane:
+
+- Start from this worktree, not the primary `main` checkout.
+- If the worktree is clean and you are starting new work, merge the current local `main` first so the branch stays fresh.
+- If the worktree has uncommitted edits, checkpoint or finish those edits before merging `main`; never overwrite in-progress paywall work to "get latest."
+- Commit intentional paywall work in this branch with clear messages and focused validation.
+- Use a dedicated Simulator for branch QA, preferably named `SpeakLocal Paywall`.
+- Physical iPhone builds are allowed for this branch only when Jojo explicitly asks to test the paywall branch on-device. Say clearly that the phone now has the paywall branch build, not `main`.
+- Keep signing local. Do not commit Team IDs, provisioning profile IDs, certificate details, device IDs, or phone-specific signing.
+- Do not add real payment secrets, private App Store Connect credentials, or hardcoded personal purchase data to the repo.
+- Prefer StoreKit test configuration, sandbox-safe flows, launch arguments, or local test toggles while the paywall is being developed.
+- Keep a clear bypass or test path for development builds so the app can still be inspected when the paywall itself is not the test target.
+- Paywall copy, pricing, product IDs, trial terms, and legal/compliance claims are product decisions. Use placeholders or config seams until Jojo confirms the final details.
+- Before handoff, report what is gated, what remains free, what was tested, whether a phone build was installed, and what still needs App Store/Sandbox verification.
+
 Read these first for broad manual repo sessions:
 - `docs/DECISIONS.md`
 - `docs/PRIORITIES.md` for the current roadmap and near-term next steps
