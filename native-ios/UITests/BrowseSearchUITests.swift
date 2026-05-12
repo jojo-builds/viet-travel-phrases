@@ -86,11 +86,11 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Search.Title"].exists)
     }
 
-    func testCityCollectionPracticeEntryOpensPractice() {
+    func testCityCollectionMessageEntryOpensMessages() {
         let app = launchApp(arguments: ["--browse-city", "hanoi"])
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.hanoi"].waitForExistence(timeout: 4))
-        tapWhenVisible(app.buttons["BrowseCollection.Practice.city.hanoi"], app: app)
+        tapWhenVisible(app.buttons["BrowseCollection.MessagesEntry.city.hanoi"], app: app)
 
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 5))
     }
@@ -106,7 +106,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Browse Da Nang"].waitForExistence(timeout: 2))
         app.swipeUp()
         XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.browse.landmarks"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Practice a Da Nang day"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Da Nang day"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Airport pickup, beach drop-off, food, and a ride back."].waitForExistence(timeout: 2))
         app.swipeUp()
         XCTAssertTrue(app.staticTexts["Common moments"].waitForExistence(timeout: 2))

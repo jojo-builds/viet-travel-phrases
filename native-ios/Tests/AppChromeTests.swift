@@ -1239,7 +1239,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(danang.subtitle, "Airport arrivals, beach rides, river landmarks, markets, and day trips.")
         XCTAssertEqual(danang.mastheadImageName, "HeroCityDanang")
         XCTAssertEqual(danang.starterTitle, "Names to know")
-        XCTAssertEqual(danang.practiceTitle, "Practice a Da Nang day")
+        XCTAssertEqual(danang.practiceTitle, "Da Nang day")
         XCTAssertEqual(danang.practiceSubtitle, "Airport pickup, beach drop-off, food, and a ride back.")
         XCTAssertFalse(danang.practiceSubtitle.localizedCaseInsensitiveContains("phrase loop"))
 
@@ -1419,7 +1419,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(vietnam.title, "All Vietnam")
         XCTAssertEqual(vietnam.subtitle, "Everyday phrases for cities, food, transport, hotels, and help.")
         XCTAssertEqual(vietnam.mastheadImageName, "HeroCountryVietnam")
-        XCTAssertEqual(vietnam.practiceTitle, "Practice Vietnam basics")
+        XCTAssertEqual(vietnam.practiceTitle, "Vietnam basics")
         XCTAssertEqual(vietnam.practiceSubtitle, "Arrival, taxi, food, hotel, and help.")
         XCTAssertTrue(vietnam.subcategories.isEmpty)
         XCTAssertTrue(vietnam.exploreShelves.isEmpty)

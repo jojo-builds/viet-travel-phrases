@@ -780,7 +780,7 @@ enum BrowseSearchDestinations {
             subcategories: [],
             starterTitle: starterTitle(for: id),
             starterItems: [],
-            practiceTitle: "Practice \(title)",
+            practiceTitle: messageEntryTitle(for: title),
             practiceSubtitle: practiceSubtitle(for: title),
             practiceAction: .addStarterPages([]),
             messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
@@ -852,7 +852,7 @@ enum BrowseSearchDestinations {
             subcategories: subcategories,
             starterTitle: entityContent?.starterTitle ?? starterTitle(for: id),
             starterItems: starterItems,
-            practiceTitle: "Practice \(title)",
+            practiceTitle: messageEntryTitle(for: title),
             practiceSubtitle: practiceSubtitle(for: title),
             practiceAction: .addStarterPages(phraseStarterItems.map(\.pageID)),
             messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
@@ -874,7 +874,7 @@ enum BrowseSearchDestinations {
             subcategories: [],
             starterTitle: "Essential phrases",
             starterItems: essentialItems,
-            practiceTitle: "Practice Vietnam basics",
+            practiceTitle: "Vietnam basics",
             practiceSubtitle: "Arrival, taxi, food, hotel, and help.",
             practiceAction: .addStarterPages(essentialItems.map(\.pageID)),
             exploreShelves: [],
@@ -1849,29 +1849,33 @@ enum BrowseSearchDestinations {
 
     private static func practiceSubtitle(for title: String) -> String {
         if title == "Shopping" {
-            return "Practice prices, sizes, payment, and returns."
+            return "Prices, sizes, payment, and returns."
         }
         if title == "Emergency" {
-            return "Practice asking for help calmly."
+            return "Ask for help calmly."
         }
 
-        return "Practice a quick \(title.lowercased()) conversation."
+        return "A quick \(title.lowercased()) conversation."
+    }
+
+    private static func messageEntryTitle(for title: String) -> String {
+        "\(title) messages"
     }
 
     private static func cityPracticeTitle(for id: String, title: String) -> String {
         switch id {
         case "danang":
-            return "Practice a Da Nang day"
+            return "Da Nang day"
         case "hanoi":
-            return "Practice a Hanoi day"
+            return "Hanoi day"
         case "hcmc":
-            return "Practice a Saigon day"
+            return "Saigon day"
         case "hoian":
-            return "Practice a Hoi An day"
+            return "Hoi An day"
         case "hue":
-            return "Practice a Hue day"
+            return "Hue day"
         default:
-            return "Practice \(title)"
+            return "\(title) messages"
         }
     }
 
