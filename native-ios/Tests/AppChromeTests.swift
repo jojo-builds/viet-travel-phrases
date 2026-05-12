@@ -1242,7 +1242,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(danang.subtitle, "Airport arrivals, beach rides, river landmarks, markets, and day trips.")
         XCTAssertEqual(danang.mastheadImageName, "HeroCityDanang")
         XCTAssertEqual(danang.starterTitle, "Names to know")
-        XCTAssertEqual(danang.practiceTitle, "Practice a Da Nang day")
+        XCTAssertEqual(danang.practiceTitle, "Da Nang day")
         XCTAssertEqual(danang.practiceSubtitle, "Airport pickup, beach drop-off, food, and a ride back.")
         XCTAssertFalse(danang.practiceSubtitle.localizedCaseInsensitiveContains("phrase loop"))
 
@@ -1271,16 +1271,62 @@ final class AppChromeTests: XCTestCase {
         })
 
         XCTAssertEqual(cityHub.quickPhrasesTitle, "Quick phrases")
-        XCTAssertEqual(cityHub.quickPhraseItems.first?.pageID, "viet-phrase-city-danang-to-airport")
-        XCTAssertTrue(cityHub.quickPhraseItems.contains { $0.pageID == "viet-phrase-city-danang-get-off-my-khe" })
         XCTAssertTrue(cityHub.quickPhraseItems.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
         XCTAssertTrue(cityHub.quickPhraseItems.contains { item in
             item.title.localizedCaseInsensitiveContains("Nhà vệ sinh")
                 || item.subtitle.localizedCaseInsensitiveContains("bathroom")
         })
+        assertNoDerivedPlacePhraseRows(cityHub.quickPhraseItems, context: "Da Nang quick phrases")
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Landmarks" })
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
         XCTAssertTrue(cityHub.browseGroups.allSatisfy { $0.targetRoute == nil })
+    }
+
+    func testCityHubAndSearchDoNotTreatDerivedPlacePhrasesAsBrowseInventory() {
+        let danang = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("danang")))
+        let cityHub = try! XCTUnwrap(danang.cityHub)
+
+        let citySurfaceItems = cityHub.situations.flatMap(\.items)
+            + cityHub.namesToKnowItems
+            + cityHub.quickPhraseItems
+            + cityHub.browseGroups.flatMap(\.items)
+        assertNoDerivedPlacePhraseRows(citySurfaceItems, context: "Da Nang city surface")
+
+        let entityOnlyResults = BrowseSearchDestinations.searchResults(for: "Dragon Bridge", limit: 10)
+        XCTAssertEqual(entityOnlyResults.first?.pageID, "viet-phrase-city-danang-place-dragon-bridge")
+        assertNoDerivedPlacePhraseRows(entityOnlyResults, context: "Dragon Bridge entity-only search")
+
+        let actionResults = BrowseSearchDestinations.searchResults(for: "where is Dragon Bridge", limit: 10)
+        XCTAssertTrue(
+            actionResults.contains { $0.pageID == "viet-phrase-city-danang-where-dragon-bridge" },
+            actionResults.map(\.pageID).joined(separator: "\n")
+        )
+    }
+
+    func testEntityDetailPagesHideGeneratedPlaceTemplateRows() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+
+        let baNa = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-ba-na-hills")
+        let baNaRows = baNa.sections.flatMap(\.phrases)
+        XCTAssertTrue(baNaRows.contains { $0.detailPageID == "viet-phrase-ves-take-me-to-ba-na-hills" })
+        assertNoDerivedPlacePhraseRows(baNaRows.map { phrase in
+            BrowseSearchPhraseItem(
+                pageID: phrase.detailPageID ?? phrase.id,
+                title: phrase.vietnamese,
+                subtitle: phrase.english,
+                symbolName: phrase.symbolName,
+                tintName: phrase.tintName,
+                audioKey: phrase.audioKey
+            )
+        }, context: "Ba Na Hills detail")
+        XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("ATM near Ba Na Hills") })
+        XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("Eat near Ba Na Hills") })
+
+        let dragonBridge = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-dragon-bridge")
+        let dragonRows = dragonBridge.sections.flatMap(\.phrases)
+        XCTAssertTrue(dragonRows.contains { $0.detailPageID == "viet-phrase-ves-drop-near-dragon-bridge" })
+        XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-go-dragon-bridge" })
+        XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-where-dragon-bridge" })
     }
 
     func testCityBrowseGroupsAreEntityFirstAcrossCities() {
@@ -1390,6 +1436,17 @@ final class AppChromeTests: XCTestCase {
         }, "\(context) should not start with long-tail action phrase rows: \(items.map { "\($0.title) — \($0.subtitle)" })")
     }
 
+    private func assertNoDerivedPlacePhraseRows(_ items: [BrowseSearchPhraseItem], context: String) {
+        let derivedItems = items.filter { item in
+            PhraseCatalog.categoryIDs(forPageID: item.pageID).contains("derived-place-phrases")
+        }
+
+        XCTAssertTrue(
+            derivedItems.isEmpty,
+            "\(context) should not surface generated place-template rows: \(derivedItems.map(\.pageID).joined(separator: "\n"))"
+        )
+    }
+
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {
         let hanoi = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hanoi")))
         let saigon = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hcmc")))
@@ -1438,7 +1495,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(vietnam.title, "All Vietnam")
         XCTAssertEqual(vietnam.subtitle, "Everyday phrases for cities, food, transport, hotels, and help.")
         XCTAssertEqual(vietnam.mastheadImageName, "HeroCountryVietnam")
-        XCTAssertEqual(vietnam.practiceTitle, "Practice Vietnam basics")
+        XCTAssertEqual(vietnam.practiceTitle, "Vietnam basics")
         XCTAssertEqual(vietnam.practiceSubtitle, "Arrival, taxi, food, hotel, and help.")
         XCTAssertTrue(vietnam.subcategories.isEmpty)
         XCTAssertTrue(vietnam.exploreShelves.isEmpty)

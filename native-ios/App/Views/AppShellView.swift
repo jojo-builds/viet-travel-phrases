@@ -3059,26 +3059,34 @@ struct HomeView: View {
                         header
                             .id(Self.scrollTopID)
 
-                        phraseCardTestShelf
+                        useNowShelf
 
-                        cityShelf
-
-                        continueShelf
-                            .padding(.horizontal, HomeLayout.horizontalPadding)
+                        homepagePhraseShelves
 
                         practiceScenariosShelf
 
-                        useNowShelf
+                        situationShelves
 
-                        savedForLaterShelf
-                            .padding(.horizontal, HomeLayout.horizontalPadding)
+                        cityShelf
+
+                        if hasPersonalProgress {
+                            continueShelf
+                                .padding(.horizontal, HomeLayout.horizontalPadding)
+
+                            if !savedItems.isEmpty {
+                                savedForLaterShelf
+                                    .padding(.horizontal, HomeLayout.horizontalPadding)
+                            }
+
+                            if !savedItems.isEmpty || !practiceItems.isEmpty {
+                                practiceListShelf
+                                    .padding(.horizontal, HomeLayout.horizontalPadding)
+                            }
+                        }
 
                         relationshipShelf
 
-                        situationShelves
-
-                        practiceListShelf
-                            .padding(.horizontal, HomeLayout.horizontalPadding)
+                        featuredPhrasesShelf
                     }
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
@@ -3131,7 +3139,7 @@ struct HomeView: View {
     }
 
     private var continueShelf: some View {
-        HomeShelf(title: "Keep going", subtitle: "Recent pages, saved phrases, and practice") {
+        HomeShelf(title: "Keep going", subtitle: "Recent pages and saved phrases") {
             HomeContinuePanel(
                 item: continueItem,
                 savedCount: savedItems.count,
@@ -3157,8 +3165,20 @@ struct HomeView: View {
         .padding(.leading, HomeLayout.horizontalPadding)
     }
 
-    private var phraseCardTestShelf: some View {
-        HomeShelf(title: "Test phrase cards", subtitle: "Larger listen cards for common moments") {
+    private var homepagePhraseShelves: some View {
+        VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+            ForEach(HomeContent.homepagePhraseShelves) { shelf in
+                HomeRoutePhraseShelf(
+                    shelf: shelf,
+                    onOpenDetail: onOpenDetail,
+                    onOpenCollection: onOpenCollection
+                )
+            }
+        }
+    }
+
+    private var featuredPhrasesShelf: some View {
+        HomeShelf(title: "Deeper phrase cards", subtitle: "Slow down with larger audio controls") {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.featuredPhraseCardItems,
                 heroMorphPageID: heroMorphPageID,
@@ -3220,10 +3240,10 @@ struct HomeView: View {
     }
 
     private var practiceListShelf: some View {
-        HomeShelf(title: "Your practice list", subtitle: "Save pages now and rehearse them later") {
+        HomeShelf(title: "Message list", subtitle: "Save pages now and rehearse them later") {
             LazyVStack(spacing: 12) {
                 HomePracticeListRow(
-                    title: "Ready to practice",
+                    title: "Ready for Messages",
                     subtitle: practiceReadySubtitle,
                     symbolName: "bookmark.fill",
                     tintName: .green,
@@ -3264,6 +3284,12 @@ struct HomeView: View {
         }
 
         return HomeContent.savedFallbackItems
+    }
+
+    private var hasPersonalProgress: Bool {
+        !intentStore.recentPageIDs.isEmpty
+            || !intentStore.savedPageIDs.isEmpty
+            || !intentStore.practicePageIDs.isEmpty
     }
 
     private var practiceItems: [HomePhraseItem] {
@@ -3557,6 +3583,33 @@ private struct HomeSituationCard: Identifiable {
     let route: BrowseCollectionRoute
 }
 
+private struct HomePhraseShelfDefinition: Identifiable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let route: BrowseCollectionRoute
+    let sourceCategoryIDs: [String]
+    let pageIDs: [String]
+
+    var items: [HomePhraseItem] {
+        var seen = Set<String>()
+        var rows: [HomePhraseItem] = []
+
+        for item in pageIDs.compactMap(HomePhraseItem.resolve(pageID:)) {
+            guard seen.insert(item.pageID).inserted else {
+                continue
+            }
+            rows.append(item)
+        }
+
+        return rows
+    }
+
+    var browseTitle: String {
+        BrowseSearchDestinations.collectionDescriptor(for: route)?.title ?? "Browse"
+    }
+}
+
 private struct HomeCityCard: Identifiable {
     let id: String
     let title: String
@@ -3603,6 +3656,117 @@ enum HomeUseNowCatalog {
 
 private enum HomeContent {
     static let useNowIDs = HomeUseNowCatalog.starterIDs
+
+    static let homepagePhraseShelves: [HomePhraseShelfDefinition] = [
+        HomePhraseShelfDefinition(
+            id: "first-hour",
+            title: "First hour in Vietnam",
+            subtitle: "Airport, pickup, SIM, ATM, and check-in.",
+            route: .category("first-day"),
+            sourceCategoryIDs: ["airport-border-arrival", "hotel-accommodation", "transport", "directions-navigation"],
+            pageIDs: [
+                "viet-phrase-airport-2",
+                "viet-phrase-airport-5",
+                "viet-phrase-airport-3",
+                "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
+                "viet-phrase-v500-tran-please-take-me-to-this-hotel",
+                "viet-phrase-hotel-1",
+                "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
+                "viet-phrase-phone-1",
+            ]
+        ),
+        HomePhraseShelfDefinition(
+            id: "food-coffee",
+            title: "Food & coffee",
+            subtitle: "Menu, water, coffee, spice, allergies, and paying.",
+            route: .category("food"),
+            sourceCategoryIDs: ["food-drink", "money-numbers-prices"],
+            pageIDs: [
+                "viet-phrase-food-menu",
+                "viet-phrase-vpe-one-item-please-cho-toi-mot-nuoc-suoi",
+                "viet-phrase-coffee-1",
+                "viet-phrase-food-3",
+                "viet-phrase-vpe-food-has-co-dau-phong-khong",
+                "viet-phrase-coffee-7",
+            ]
+        ),
+        HomePhraseShelfDefinition(
+            id: "when-stuck",
+            title: "When you get stuck",
+            subtitle: "Slow down, repeat, write it, use English, or ask for help.",
+            route: .category("polite-repair"),
+            sourceCategoryIDs: ["understanding-repair", "polite-basics", "problems-help"],
+            pageIDs: [
+                "viet-phrase-problems-2",
+                "viet-phrase-problems-3",
+                "viet-phrase-repair-1",
+                "viet-phrase-repair-2",
+                "viet-phrase-repair-english-help",
+                "viet-phrase-help-need-help-direct",
+                "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
+            ]
+        ),
+        HomePhraseShelfDefinition(
+            id: "taxi-getting-around",
+            title: "Taxi & getting around",
+            subtitle: "Pickup points, drivers, addresses, and getting back.",
+            route: .category("getting-around"),
+            sourceCategoryIDs: ["transport", "directions-navigation"],
+            pageIDs: [
+                "viet-phrase-taxi-1",
+                "viet-phrase-directions-8",
+                "viet-phrase-v500-tran-please-call-the-driver",
+                "viet-phrase-v900-tran-please-take-me-to-this-address",
+                "viet-phrase-v500-tran-please-take-me-to-this-hotel",
+                "viet-phrase-ves-call-taxi-for-me",
+            ]
+        ),
+        HomePhraseShelfDefinition(
+            id: "hotel-basics",
+            title: "Hotel basics",
+            subtitle: "Reservation, passport, Wi-Fi, checkout, and room help.",
+            route: .category("hotel"),
+            sourceCategoryIDs: ["hotel-accommodation", "time-dates-booking", "local-services-everyday-tasks"],
+            pageIDs: [
+                "viet-phrase-hotel-1",
+                "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in",
+                "viet-phrase-phone-1",
+                "viet-phrase-hotel-3",
+                "viet-phrase-v900-hote-acco-the-reservation-is-under-this-name",
+            ]
+        ),
+        HomePhraseShelfDefinition(
+            id: "money-shopping",
+            title: "Money & shopping",
+            subtitle: "Prices, receipts, cards, cash, and sizes.",
+            route: .category("shopping"),
+            sourceCategoryIDs: ["shopping", "money-numbers-prices", "local-services-everyday-tasks"],
+            pageIDs: [
+                "viet-phrase-money-how-much-common",
+                "viet-phrase-price-1",
+                "viet-phrase-v500-mone-numb-pric-can-i-have-a-receipt",
+                "viet-phrase-v500-mone-numb-pric-can-i-try-another-card",
+                "viet-phrase-price-9",
+                "viet-phrase-shop-1",
+            ]
+        ),
+        HomePhraseShelfDefinition(
+            id: "help-emergency",
+            title: "Help & emergency",
+            subtitle: "Need help, pharmacy, doctor, police, passport.",
+            route: .category("emergency"),
+            sourceCategoryIDs: ["problems-help", "health-pharmacy", "emergency-safety"],
+            pageIDs: [
+                "viet-phrase-help-need-help-direct",
+                "viet-phrase-health-pharmacy-clearer",
+                "viet-phrase-problems-6",
+                "viet-phrase-emergency-3",
+                "viet-phrase-emergency-4",
+                "viet-phrase-emergency-1",
+                "viet-phrase-emergency-hospital",
+            ]
+        ),
+    ]
 
     static let featuredIDs = [
         "viet-thank-you",
@@ -3746,20 +3910,32 @@ private enum HomeContent {
 
 private struct HomeShelf<Content: View>: View {
     let title: String
+    let subtitle: String
     let content: Content
 
-    init(title: String, subtitle _: String, @ViewBuilder content: () -> Content) {
+    init(title: String, subtitle: String, @ViewBuilder content: () -> Content) {
         self.title = title
+        self.subtitle = subtitle
         self.content = content()
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(title)
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.82)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.82)
+
+                if !subtitle.isEmpty {
+                    Text(subtitle)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.86)
+                }
+            }
 
             content
         }
@@ -4469,6 +4645,88 @@ private extension View {
             }
             .shadow(color: .black.opacity(0.055), radius: 18, x: 0, y: 10)
             .nativeGlass(cornerRadius: cornerRadius)
+    }
+}
+
+private struct HomeRoutePhraseShelf: View {
+    let shelf: HomePhraseShelfDefinition
+    let onOpenDetail: (String) -> Void
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    var body: some View {
+        let items = shelf.items
+
+        if !items.isEmpty {
+            HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(alignment: .top, spacing: 12) {
+                        ForEach(items) { item in
+                            HomeQuickPhraseCard(item: item, onOpenDetail: onOpenDetail)
+                        }
+
+                        HomeBrowseRouteCard(
+                            identifier: shelf.id,
+                            title: "More",
+                            subtitle: shelf.browseTitle,
+                            route: shelf.route,
+                            onOpenCollection: onOpenCollection
+                        )
+                    }
+                    .padding(.trailing, HomeLayout.horizontalPadding)
+                    .padding(.bottom, 2)
+                }
+                .frame(height: HomeLayout.quickPhraseCardHeight)
+                .scrollClipDisabled()
+            }
+            .padding(.leading, HomeLayout.horizontalPadding)
+        }
+    }
+}
+
+private struct HomeBrowseRouteCard: View {
+    let identifier: String
+    let title: String
+    let subtitle: String
+    let route: BrowseCollectionRoute
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    var body: some View {
+        Button {
+            onOpenCollection(route)
+        } label: {
+            VStack(spacing: 10) {
+                ZStack {
+                    Circle()
+                        .fill(AccentTint.red.color.opacity(0.12))
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 23, weight: .black))
+                        .foregroundStyle(AccentTint.red.color)
+                }
+                .frame(width: 52, height: 52)
+
+                VStack(spacing: 3) {
+                    Text(title)
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+
+                    Text(subtitle)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.78)
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 12)
+            .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
+            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("HomeShelf.More.\(identifier)")
     }
 }
 

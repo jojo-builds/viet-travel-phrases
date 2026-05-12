@@ -1300,6 +1300,9 @@ struct ExploreCatalogSection: View {
         currentCategoryIDs: Set<String>
     ) -> [PhraseCatalogItem] {
         PhraseCatalog.items(selectedCategoryID: categoryID, excludingPageID: currentPageID)
+            .filter { item in
+                !item.categoryIDs.contains("derived-place-phrases")
+            }
             .enumerated()
             .sorted { lhs, rhs in
                 let lhsScore = relevanceScore(for: lhs.element, currentCategoryIDs: currentCategoryIDs)

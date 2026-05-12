@@ -67,7 +67,7 @@ struct BrowseCollectionPageView: View {
                                 .id(BrowseCollectionFocusRequest.messageSectionScrollTargetID)
                                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
                             } else {
-                                BrowseCollectionPracticeCard(
+                                BrowseCollectionMessageEntryCard(
                                     descriptor: descriptor,
                                     onPractice: { onPractice(descriptor.practiceAction) }
                                 )
@@ -289,7 +289,7 @@ private struct BrowseCityHubContent: View {
                     onOpenCollection: onOpenCollection
                 )
 
-                BrowseCollectionPracticeCard(
+                BrowseCollectionMessageEntryCard(
                     descriptor: descriptor,
                     onPractice: onPractice
                 )
@@ -345,7 +345,7 @@ private struct BrowseCityHubContent: View {
                     .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedBrowseGroup.id))
                 }
 
-                BrowseCollectionPracticeCard(
+                BrowseCollectionMessageEntryCard(
                     descriptor: descriptor,
                     onPractice: onPractice
                 )
@@ -546,7 +546,7 @@ private struct BrowseCollectionStarterSection: View {
     }
 }
 
-private struct BrowseCollectionPracticeCard: View {
+private struct BrowseCollectionMessageEntryCard: View {
     let descriptor: BrowseCollectionDescriptor
     let onPractice: () -> Void
 
@@ -573,7 +573,7 @@ private struct BrowseCollectionPracticeCard: View {
                 }
                 .layoutPriority(1)
 
-                Text("Start")
+                Text("Open")
                     .font(.caption.weight(.black))
                     .foregroundStyle(.red)
                     .padding(.horizontal, 14)
@@ -584,7 +584,7 @@ private struct BrowseCollectionPracticeCard: View {
             .phraseListCard(cornerRadius: 24)
         }
         .buttonStyle(.plain)
-        .accessibilityIdentifier("BrowseCollection.Practice.\(descriptor.route.id)")
+        .accessibilityIdentifier("BrowseCollection.MessagesEntry.\(descriptor.route.id)")
     }
 }
 
