@@ -8,6 +8,7 @@ Current baseline:
 - Use feature-specific Simulators for branch QA. Jojo's physical iPhone should run `main` unless he explicitly asks to test a branch on-device.
 - Before a finished branch merges into `main`, merge current `main` into the branch first and validate there. Resolve conflicts in the branch, not in `main`.
 - Do not resolve conflicts by taking a whole file from one side unless Jojo explicitly asks for that. Preserve both feature intents and rerun the focused tests/screenshots for the touched surface.
+- Feature threads can stop once their own branch is committed, validated enough for scope, and summarized. The orchestrator can later sweep completed branches into `main`, review the combined app, and build `main` on Jojo's phone.
 
 Create a feature lane:
 
@@ -54,6 +55,20 @@ Build the phone after app changes are merged:
 ```
 
 The helper refuses non-`main` phone builds by default so Jojo does not accidentally test a stale branch.
+
+Orchestrator sweep:
+
+```sh
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh status
+```
+
+For each completed clean branch that is not already in `main`, sync/merge it safely:
+
+```sh
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh finish <feature-slug>
+```
+
+Then review the combined app on `main`, run focused checks, and build `main` on the phone. Skip dirty/active lanes unless Jojo explicitly says to checkpoint and include them.
 
 Remove a finished lane after it has been merged or intentionally abandoned:
 
