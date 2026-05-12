@@ -227,7 +227,7 @@ final class AdminChromeUITests: XCTestCase {
         assertHomeScenarioContactVisible(app: app, id: "taxiGrabPickup")
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-message-circles-taxi.png")
 
-        XCTAssertTrue(app.staticTexts["Driver"].exists)
+        XCTAssertTrue(app.staticTexts["Grab Pickup"].exists)
     }
 
     func testHomeExploreByCityShowsAllCityGuides() {
