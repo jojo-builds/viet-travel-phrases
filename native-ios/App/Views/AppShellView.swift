@@ -193,10 +193,6 @@ struct AppShellView: View {
 
                 forwardPreviewPage(width: pageWidth)
             }
-            .animation(.snappy(duration: 0.34), value: navigation.detailPath)
-            .animation(.snappy(duration: 0.34), value: navigation.browseCollectionPath)
-            .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: navigation.isSearchPresented)
-            .animation(.snappy(duration: 0.24), value: navigation.forwardStack)
             .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
                 let nextState = PinnedAudioSpeedChromePolicy.state(
                     for: anchors,
@@ -740,26 +736,30 @@ struct AppShellView: View {
             let selectedIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
             let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
             let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
+            let isPressingDockSelection = dockDrag.dragX != nil
+            let isDraggingDockSelection = dockDrag.didMoveBeyondTap
+            let lensAnimation = dockSelectionLensAnimation(isFingerTracking: dockDrag.isFingerTracking)
             let lensMetrics = AppDockSelectionLayout.lensMetrics(
                 selectedIndex: selectedIndex,
                 activeIndex: activeIndex,
                 dragX: dockDrag.dragX,
                 itemCount: itemCount,
                 reduceMotion: reduceMotion,
-                contentWidth: contentWidth
+                contentWidth: contentWidth,
+                predictedDragX: dockDrag.predictedDragX
             )
 
             ZStack(alignment: .leading) {
                 AppShellDockSelectionLens(
                     width: lensMetrics.width,
-                    active: dockDrag.dragX != nil,
+                    height: lensMetrics.height,
+                    isPressed: isPressingDockSelection,
+                    isDragging: isDraggingDockSelection,
                     chromeNamespace: chromeNamespace
                 )
                     .offset(x: lensMetrics.xOffset)
                     .animation(
-                        reduceMotion
-                        ? .easeOut(duration: 0.16)
-                        : .interactiveSpring(response: 0.34, dampingFraction: 0.74, blendDuration: 0.12),
+                        lensAnimation,
                         value: lensMetrics
                     )
                     .zIndex(AppChromeLayout.dockSelectionLensZIndex)
@@ -799,7 +799,15 @@ struct AppShellView: View {
             .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
             .padding(.vertical, AppChromeLayout.dockVerticalPadding)
             .frame(maxWidth: .infinity, alignment: .center)
+            .background(
+                Color.white.opacity(AppChromeLayout.dockBackdropFillOpacity),
+                in: RoundedRectangle(cornerRadius: AppChromeLayout.dockCornerRadius, style: .continuous)
+            )
             .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
+            .appChromeGlassOutline(
+                in: RoundedRectangle(cornerRadius: AppChromeLayout.dockCornerRadius, style: .continuous),
+                prominence: 0.52
+            )
             .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
             .zIndex(AppChromeLayout.dockMorphZIndex)
@@ -816,6 +824,16 @@ struct AppShellView: View {
             .onEnded { value in
                 finishDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
             }
+    }
+
+    private func dockSelectionLensAnimation(isFingerTracking: Bool) -> Animation? {
+        if isFingerTracking {
+            return nil
+        }
+
+        return reduceMotion
+            ? .easeOut(duration: 0.14)
+            : .interactiveSpring(response: 0.24, dampingFraction: 0.78, blendDuration: 0.06)
     }
 
     private func updateDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
@@ -837,11 +855,14 @@ struct AppShellView: View {
                 itemCount: chrome.primaryDockItems.count,
                 contentWidth: contentWidth
             )
+        let predictedDragX = didMoveBeyondTap ? value.predictedEndLocation.x : dragX
 
         dockDrag = AppDockInteractionState(
             startItem: startItem,
             activeItem: activeItem,
             dragX: dragX,
+            predictedDragX: predictedDragX,
+            isFingerTracking: didMoveBeyondTap,
             didMoveBeyondTap: didMoveBeyondTap
         )
 
@@ -854,17 +875,80 @@ struct AppShellView: View {
         let shouldCommitDrag = dockDrag.didMoveBeyondTap
         let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth)
 
-        withAnimation(
-            reduceMotion
-            ? .easeOut(duration: 0.16)
-            : .interactiveSpring(response: 0.34, dampingFraction: 0.82, blendDuration: 0.12)
-        ) {
-            dockDrag = .inactive
+        guard shouldCommitDrag, let item else {
+            withAnimation(
+                reduceMotion
+                ? .easeOut(duration: 0.14)
+                : .interactiveSpring(response: 0.24, dampingFraction: 0.84, blendDuration: 0.06)
+            ) {
+                dockDrag = .inactive
+            }
+            return
         }
 
-        if shouldCommitDrag, let item {
-            performDockAction(item)
+        dockSelectionTapRequestID += 1
+        let requestID = dockSelectionTapRequestID
+        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
+        let destinationX = AppDockSelectionLayout.itemCenterX(
+            index: destinationIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        )
+
+        withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.80, blendDuration: 0.05)) {
+            dockDrag = AppDockInteractionState(
+                startItem: dockDrag.startItem ?? chrome.selectedDockItem,
+                activeItem: item,
+                dragX: destinationX,
+                predictedDragX: destinationX,
+                isFingerTracking: false,
+                didMoveBeyondTap: true
+            )
         }
+
+        commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
+    }
+
+    private func deactivateDockSelection(requestID: Int, delay: UInt64) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: delay)
+            guard requestID == dockSelectionTapRequestID else {
+                return
+            }
+
+            withAnimation(.interactiveSpring(response: 0.22, dampingFraction: 0.86, blendDuration: 0.04)) {
+                dockDrag = .inactive
+            }
+        }
+    }
+
+    private func commitDockSelectionAction(_ item: DockItemKind, requestID: Int, deactivateDelay: UInt64) {
+        interactiveDragResolutionID += 1
+        homePhraseHeroMorphResetID += 1
+        homePhraseHeroRoutePageID = nil
+        homePhraseHeroMorphPageID = nil
+        homePhraseHeroContentHoldPageID = nil
+        interactiveDrag = nil
+        cancelSearchFocus()
+
+        withAnimation(.snappy(duration: 0.30)) {
+            switch item {
+            case .home:
+                navigation.openHome()
+            case .browse:
+                navigation.openBrowse()
+            case .saved:
+                navigation.openSaved()
+            case .practice:
+                navigation.openPractice()
+            }
+        }
+
+        if item == .home {
+            searchQuery = ""
+        }
+
+        deactivateDockSelection(requestID: requestID, delay: deactivateDelay)
     }
 
     private func performDockTapAction(_ item: DockItemKind, chrome: AppChrome, contentWidth: CGFloat) {
@@ -882,9 +966,10 @@ struct AppShellView: View {
             itemCount: chrome.primaryDockItems.count,
             contentWidth: contentWidth
         )
-        let waypoints = AppDockSelectionLayout.waypointIndexes(
-            from: sourceIndex,
-            to: destinationIndex
+        let destinationX = AppDockSelectionLayout.itemCenterX(
+            index: destinationIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
         )
 
         cancelSearchFocus()
@@ -894,6 +979,8 @@ struct AppShellView: View {
                 startItem: chrome.selectedDockItem,
                 activeItem: chrome.selectedDockItem,
                 dragX: sourceX,
+                predictedDragX: sourceX,
+                isFingerTracking: false,
                 didMoveBeyondTap: false
             )
         }
@@ -904,39 +991,24 @@ struct AppShellView: View {
                 return
             }
 
-            for waypoint in waypoints {
-                guard requestID == dockSelectionTapRequestID,
-                      chrome.primaryDockItems.indices.contains(waypoint)
-                else {
-                    return
-                }
-
-                let waypointItem = chrome.primaryDockItems[waypoint]
-                let waypointX = AppDockSelectionLayout.itemCenterX(
-                    index: waypoint,
-                    itemCount: chrome.primaryDockItems.count,
-                    contentWidth: contentWidth
+            playDockCrossingHaptic()
+            withAnimation(.interactiveSpring(response: 0.24, dampingFraction: 0.76, blendDuration: 0.06)) {
+                dockDrag = AppDockInteractionState(
+                    startItem: chrome.selectedDockItem,
+                    activeItem: item,
+                    dragX: destinationX,
+                    predictedDragX: destinationX,
+                    isFingerTracking: false,
+                    didMoveBeyondTap: true
                 )
-
-                playDockCrossingHaptic()
-                withAnimation(.interactiveSpring(response: 0.28, dampingFraction: 0.70, blendDuration: 0.10)) {
-                    dockDrag = AppDockInteractionState(
-                        startItem: chrome.selectedDockItem,
-                        activeItem: waypointItem,
-                        dragX: waypointX,
-                        didMoveBeyondTap: true
-                    )
-                }
-
-                try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapWaypointDelay)
             }
 
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapSettleDelay)
+            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapTravelDelay)
             guard requestID == dockSelectionTapRequestID else {
                 return
             }
 
-            commitDockTapAction(item, requestID: requestID)
+            commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
         }
     }
 
@@ -950,38 +1022,6 @@ struct AppShellView: View {
         }
 
         return chrome.primaryDockItems[index]
-    }
-
-    private func commitDockTapAction(_ item: DockItemKind, requestID: Int) {
-        cancelSearchFocus()
-
-        withAnimation(.snappy(duration: 0.34)) {
-            switch item {
-            case .home:
-                navigation.openHome()
-            case .browse:
-                navigation.openBrowse()
-            case .saved:
-                navigation.openSaved()
-            case .practice:
-                navigation.openPractice()
-            }
-        }
-
-        if item == .home {
-            searchQuery = ""
-        }
-
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapDeactivateDelay)
-            guard requestID == dockSelectionTapRequestID else {
-                return
-            }
-
-            withAnimation(.interactiveSpring(response: 0.22, dampingFraction: 0.86, blendDuration: 0.04)) {
-                dockDrag = .inactive
-            }
-        }
     }
 
     private func playDockCrossingHaptic() {
@@ -1006,7 +1046,12 @@ struct AppShellView: View {
                 .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
         }
         .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: Circle()
+        )
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .appChromeGlassOutline(in: Circle(), prominence: 0.78)
         .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
         .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
         .accessibilityLabel("Search")
@@ -1020,7 +1065,12 @@ struct AppShellView: View {
         Color.clear
             .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
             .contentShape(Circle())
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: Circle()
+            )
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .appChromeGlassOutline(in: Circle(), prominence: 0.74)
             .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
             .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
@@ -1034,7 +1084,15 @@ struct AppShellView: View {
         Color.clear
             .frame(height: AppChromeLayout.searchFieldHeight)
             .frame(maxWidth: .infinity)
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
+            )
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .appChromeGlassOutline(
+                in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous),
+                prominence: 0.70
+            )
             .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
             .allowsHitTesting(false)
@@ -1109,7 +1167,12 @@ struct AppShellView: View {
         Color.clear
             .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
             .contentShape(Circle())
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: Circle()
+            )
             .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+            .appChromeGlassOutline(in: Circle(), prominence: 0.74)
             .allowsHitTesting(false)
             .accessibilityHidden(true)
             .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
@@ -1143,7 +1206,12 @@ struct AppShellView: View {
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: Circle()
+        )
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .appChromeGlassOutline(in: Circle(), prominence: 0.74)
         .accessibilityLabel(kind.title)
         .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
         .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
@@ -1168,7 +1236,15 @@ struct AppShellView: View {
         .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
         .frame(height: AppChromeLayout.searchFieldHeight)
         .frame(maxWidth: .infinity)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
+        )
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .appChromeGlassOutline(
+            in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous),
+            prominence: 0.70
+        )
         .zIndex(AppChromeLayout.searchMorphZIndex)
     }
 
@@ -1183,7 +1259,12 @@ struct AppShellView: View {
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: Circle()
+        )
         .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
+        .appChromeGlassOutline(in: Circle(), prominence: 0.74)
         .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
         .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
         .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
@@ -2617,14 +2698,62 @@ private struct AppDockInteractionState: Equatable {
     var startItem: DockItemKind?
     var activeItem: DockItemKind?
     var dragX: CGFloat?
+    var predictedDragX: CGFloat?
+    var isFingerTracking: Bool
     var didMoveBeyondTap: Bool
 
     static let inactive = AppDockInteractionState(
         startItem: nil,
         activeItem: nil,
         dragX: nil,
+        predictedDragX: nil,
+        isFingerTracking: false,
         didMoveBeyondTap: false
     )
+}
+
+private struct AppChromeGlassOutline<S: InsettableShape>: ViewModifier {
+    let shape: S
+    var prominence: Double
+
+    func body(content: Content) -> some View {
+        let clampedProminence = min(max(prominence, 0), 1)
+
+        content
+            .overlay {
+                shape
+                    .strokeBorder(.white.opacity(0.34 + 0.48 * clampedProminence), lineWidth: 0.65 + 0.65 * clampedProminence)
+                    .blendMode(.screen)
+
+                shape
+                    .strokeBorder(
+                        AngularGradient(
+                            colors: [
+                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.42 * clampedProminence),
+                                Color(red: 0.95, green: 0.42, blue: 1.0).opacity(0.32 * clampedProminence),
+                                .white.opacity(0.0),
+                                Color(red: 1.0, green: 0.87, blue: 0.36).opacity(0.28 * clampedProminence),
+                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.42 * clampedProminence),
+                            ],
+                            center: .center
+                        ),
+                        lineWidth: 1.6 + 0.9 * clampedProminence
+                    )
+                    .blendMode(.screen)
+
+                shape
+                    .strokeBorder(Color.black.opacity(0.02 + 0.03 * clampedProminence), lineWidth: 0.65)
+                    .blendMode(.multiply)
+            }
+            .shadow(color: .white.opacity(0.16 + 0.28 * clampedProminence), radius: 16 + 8 * clampedProminence, x: 0, y: 0)
+            .shadow(color: .black.opacity(0.055 + 0.055 * clampedProminence), radius: 14 + 10 * clampedProminence, x: 0, y: 6 + 6 * clampedProminence)
+    }
+}
+
+private extension View {
+    func appChromeGlassOutline<S: InsettableShape>(in shape: S, prominence: Double = 1.0) -> some View {
+        modifier(AppChromeGlassOutline(shape: shape, prominence: prominence))
+    }
 }
 
 private struct AppShellDockItem: View {
@@ -2634,16 +2763,16 @@ private struct AppShellDockItem: View {
     var isMorphSource = false
 
     var body: some View {
-        VStack(spacing: 3) {
+        VStack(spacing: 4) {
             icon
 
             Text(kind.title)
-                .font(.caption2.weight(.semibold))
+                .font(.system(size: 13, weight: .semibold))
                 .lineLimit(1)
                 .minimumScaleFactor(0.68)
                 .frame(maxWidth: AppChromeLayout.dockItemWidth - 4)
         }
-        .foregroundStyle(selected ? .red : .secondary)
+        .foregroundStyle(selected ? Color(red: 0.98, green: 0.18, blue: 0.22) : Color.primary.opacity(0.68))
         .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
         .contentShape(Rectangle())
     }
@@ -2651,7 +2780,7 @@ private struct AppShellDockItem: View {
     @ViewBuilder
     private var icon: some View {
         let image = Image(systemName: kind.symbolName)
-            .font(.system(size: 18, weight: .semibold))
+            .font(.system(size: 22, weight: .semibold))
 
         if isMorphSource {
             image.chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: true)
@@ -2663,59 +2792,97 @@ private struct AppShellDockItem: View {
 
 private struct AppShellDockSelectionLens: View {
     var width = AppChromeLayout.dockSelectionWidth
-    var active = false
+    var height = AppChromeLayout.dockSelectionHeight
+    var isPressed = false
+    var isDragging = false
     var chromeNamespace: Namespace.ID?
 
     var body: some View {
-        let cornerRadius = AppChromeLayout.dockSelectionCornerRadius
+        let cornerRadius = height / 2
+        let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+        let surfaceOpacity = isDragging ? 0.64 : (isPressed ? 0.56 : 0.24)
+        let highlightOpacity = isDragging ? 0.52 : (isPressed ? 0.38 : 0.12)
+        let edgeProminence = isDragging ? 0.58 : (isPressed ? 0.36 : 0.08)
 
         ZStack {
-            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .fill(Color.black.opacity(active ? 0.135 : 0.102))
+            shape
+                .fill(Color.white.opacity(surfaceOpacity))
 
-            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .fill(.white.opacity(active ? 0.30 : 0.24))
+            shape
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            .white.opacity(0.54 + highlightOpacity),
+                            Color(red: 0.78, green: 0.94, blue: 1.0).opacity(0.16 + highlightOpacity * 0.44),
+                            Color(red: 1.0, green: 0.84, blue: 0.98).opacity(0.10 + highlightOpacity * 0.34),
+                            .white.opacity(0.24 + highlightOpacity * 0.5),
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
                 .blendMode(.plusLighter)
 
-            LinearGradient(
-                colors: [
-                    .white.opacity(active ? 0.82 : 0.68),
-                    .white.opacity(active ? 0.20 : 0.14),
-                    Color(red: 0.28, green: 0.68, blue: 1.0).opacity(active ? 0.22 : 0.16),
-                    Color(red: 1.0, green: 0.88, blue: 0.28).opacity(active ? 0.20 : 0.14),
-                    .white.opacity(active ? 0.42 : 0.32),
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .blendMode(.screen)
+            if isPressed {
+                shape
+                    .fill(
+                        RadialGradient(
+                            colors: [
+                                Color(red: 0.72, green: 0.94, blue: 1.0).opacity(isDragging ? 0.34 : 0.22),
+                                .white.opacity(0.0),
+                            ],
+                            center: .topLeading,
+                            startRadius: 0,
+                            endRadius: isDragging ? 86 : 64
+                        )
+                    )
+                    .blendMode(.screen)
 
-            LinearGradient(
-                colors: [
-                    .white.opacity(0.0),
-                    .white.opacity(active ? 0.56 : 0.44),
-                    .white.opacity(0.0),
-                ],
-                startPoint: .leading,
-                endPoint: .trailing
-            )
-            .offset(x: -8)
-            .blendMode(.screen)
+                LinearGradient(
+                    colors: [
+                        .white.opacity(0.0),
+                        .white.opacity(isDragging ? 0.66 : 0.46),
+                        .white.opacity(0.0),
+                    ],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+                .offset(x: isDragging ? -10 : -6)
+                .blendMode(.screen)
 
-            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .stroke(.white.opacity(active ? 0.94 : 0.82), lineWidth: active ? 1.35 : 1.1)
+                shape
+                    .strokeBorder(
+                        AngularGradient(
+                            colors: [
+                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.72 : 0.42),
+                                Color(red: 0.88, green: 0.18, blue: 1.0).opacity(isDragging ? 0.58 : 0.32),
+                                .white.opacity(isDragging ? 0.72 : 0.48),
+                                Color(red: 1.0, green: 0.80, blue: 0.10).opacity(isDragging ? 0.50 : 0.28),
+                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.72 : 0.42),
+                            ],
+                            center: .center
+                        ),
+                        lineWidth: isDragging ? 2.4 : 1.5
+                    )
+                    .blendMode(.screen)
+            }
 
-            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .stroke(Color.black.opacity(active ? 0.075 : 0.05), lineWidth: 0.8)
+            shape
+                .stroke(.white.opacity(isPressed ? 0.88 : 0.64), lineWidth: isPressed ? 1.0 : 0.7)
+                .blendMode(.screen)
+
+            shape
+                .stroke(Color.black.opacity(isPressed ? 0.06 : 0.03), lineWidth: 0.6)
                 .blendMode(.multiply)
         }
-        .frame(width: width, height: AppChromeLayout.dockSelectionHeight)
-        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-        .nativeGlass(cornerRadius: cornerRadius, tint: Color.black.opacity(0.16), interactive: true)
+        .frame(width: width, height: height)
+        .clipShape(shape)
+        .nativeGlass(cornerRadius: cornerRadius, tint: isPressed ? Color(red: 0.84, green: 0.95, blue: 1.0) : .white, interactive: isPressed)
+        .appChromeGlassOutline(in: shape, prominence: edgeProminence)
         .nativeGlassMorphID(AppChromeMorphID.dockSelection, namespace: chromeNamespace)
-        .scaleEffect(active ? 1.045 : 1.0)
-        .shadow(color: .white.opacity(active ? 0.64 : 0.44), radius: active ? 24 : 17, x: 0, y: 0)
-        .shadow(color: .black.opacity(active ? 0.22 : 0.15), radius: active ? 24 : 18, x: 0, y: active ? 12 : 9)
+        .scaleEffect(isDragging ? 1.02 : (isPressed ? 1.01 : 1.0))
+        .shadow(color: .white.opacity(isPressed ? 0.54 : 0.22), radius: isPressed ? 24 : 14, x: 0, y: 0)
+        .shadow(color: .black.opacity(isPressed ? 0.13 : 0.07), radius: isPressed ? 20 : 12, x: 0, y: isPressed ? 8 : 5)
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
@@ -2834,17 +3001,16 @@ struct HomeView: View {
                         header
                             .id(Self.scrollTopID)
 
-                        searchEntry
-                            .padding(.horizontal, HomeLayout.horizontalPadding)
+                        phraseCardTestShelf
+
+                        cityShelf
 
                         continueShelf
                             .padding(.horizontal, HomeLayout.horizontalPadding)
 
-                        phraseCardTestShelf
+                        practiceScenariosShelf
 
                         useNowShelf
-
-                        practiceScenariosShelf
 
                         savedForLaterShelf
                             .padding(.horizontal, HomeLayout.horizontalPadding)
@@ -2852,8 +3018,6 @@ struct HomeView: View {
                         relationshipShelf
 
                         situationShelves
-
-                        cityShelf
 
                         practiceListShelf
                             .padding(.horizontal, HomeLayout.horizontalPadding)
@@ -2908,44 +3072,22 @@ struct HomeView: View {
         }
     }
 
-    private var searchEntry: some View {
-        Button {
-            onSearchTapped()
-        } label: {
-            HStack(spacing: 16) {
-                Image(systemName: "magnifyingglass")
-                    .font(.system(size: 26, weight: .semibold))
-                    .foregroundStyle(.red)
-                    .frame(width: 58, height: 58)
-                    .nativeGlass(cornerRadius: 29, interactive: true)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Find a phrase or situation")
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-
-                    Text("Try \"lost passport\", \"no peanuts\", or \"taxi to airport\"")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                }
-                .layoutPriority(1)
-            }
-            .padding(14)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("Home.SearchEntry")
-    }
-
     private var continueShelf: some View {
-        HomeShelf(title: "Continue", subtitle: "Pick up where you left off") {
-            HomeContinueCard(
-                item: continueDisplayItem,
-                imageName: "HomeContinueStation",
-                progress: 0.60,
-                onOpenDetail: onOpenDetail
+        HomeShelf(title: "Keep going", subtitle: "Recent pages, saved phrases, and practice") {
+            HomeContinuePanel(
+                item: continueItem,
+                savedCount: savedItems.count,
+                practiceCount: practiceItems.count,
+                onOpenDetail: onOpenDetail,
+                onOpenSavedFallback: {
+                    if let pageID = savedItems.first?.pageID {
+                        onOpenDetail(pageID)
+                    } else {
+                        onBrowseAllTapped()
+                    }
+                },
+                onStartPractice: { onStartPractice(.practiceMode(.savedReview)) },
+                onBrowseAllTapped: onBrowseAllTapped
             )
         }
     }
@@ -2972,10 +3114,9 @@ struct HomeView: View {
     }
 
     private var practiceScenariosShelf: some View {
-        HomeShelf(title: "Messages", subtitle: "Offline conversations for your trip") {
+        HomeShelf(title: "Messages", subtitle: "Practice short trip conversations") {
             HomeScenarioRail(
                 scenarios: HomeContent.practiceScenarios,
-                onOpenCollection: onOpenCollection,
                 onStartPractice: onStartPractice
             )
         }
@@ -3052,20 +3193,6 @@ struct HomeView: View {
 
     private var continueItem: HomePhraseItem? {
         intentStore.recentPageIDs.compactMap(HomePhraseItem.resolve(pageID:)).first
-    }
-
-    private var continueDisplayItem: HomePhraseItem {
-        continueItem
-            ?? HomePhraseItem.resolve(pageID: "viet-phrase-city-hue-place-railway-station")
-            ?? HomeContent.useNowItems.first
-            ?? HomePhraseItem(
-                pageID: PhrasePage.xinChao.id,
-                title: PhrasePage.xinChao.title,
-                subtitle: "Hello",
-                symbolName: "hand.wave.fill",
-                tintName: .red,
-                audioKey: PhrasePage.xinChao.quickSay.first?.playbackAudioKey
-            )
     }
 
     private var savedItems: [HomePhraseItem] {
@@ -3210,12 +3337,11 @@ enum HomeLayout {
     static let quickPhraseGridRowSpacing: CGFloat = 12
     static let featurePhraseCardWidth: CGFloat = 344
     static let featurePhraseCardHeight: CGFloat = 326
-    static let scenarioCardWidth: CGFloat = 198
-    static let scenarioCardHeight: CGFloat = 368
-    static let scenarioCardPadding: CGFloat = 16
-    static let scenarioCardSpacing: CGFloat = 14
-    static let scenarioCardImageHeight: CGFloat = 144
-    static let scenarioStartButtonHeight: CGFloat = 44
+    static let continuePrimaryIconSize: CGFloat = 58
+    static let continueActionHeight: CGFloat = 46
+    static let messageContactWidth: CGFloat = 104
+    static let messageAvatarSize: CGFloat = 82
+    static let messageRailHeight: CGFloat = 134
     static let savedCardHeight: CGFloat = 172
     static let situationRowHeight: CGFloat = 96
     static let situationIconSize: CGFloat = 46
@@ -3359,12 +3485,10 @@ private struct HomeFeaturePhraseItem: Identifiable, Equatable {
 }
 
 private struct HomeScenario: Identifiable {
-    let id: String
-    let title: String
-    let subtitle: String
-    let imageName: String
-    let route: BrowseCollectionRoute
-    let practiceAction: BrowseCollectionPracticeAction
+    let scenarioID: PracticeScenarioID
+
+    var id: String { scenarioID.rawValue }
+    var practiceAction: BrowseCollectionPracticeAction { .practiceScenario(scenarioID) }
 }
 
 private struct HomeSituationCard: Identifiable {
@@ -3451,31 +3575,13 @@ private enum HomeContent {
 
     static var practiceScenarios: [HomeScenario] {
         [
-            HomeScenario(
-                id: "first-day",
-                title: "First day in Da Nang",
-                subtitle: "Airport, ride, hotel, first meal",
-                imageName: "HomeScenarioFirstDay",
-                route: .category("first-day"),
-                practiceAction: .practiceScenario(.danangFirstDay)
-            ),
-            HomeScenario(
-                id: "hotel",
-                title: "At the hotel",
-                subtitle: "Booking, passport, Wi-Fi, room help",
-                imageName: "HomeScenarioHotel",
-                route: .category("hotel"),
-                practiceAction: .practiceScenario(.hotelCheckInHelp)
-            ),
-            HomeScenario(
-                id: "danang",
-                title: "Da Nang day",
-                subtitle: "Beach, bridge, food, ride back",
-                imageName: "HomeCityDaNang",
-                route: .city("danang"),
-                practiceAction: .practiceScenario(.danangDay)
-            ),
-        ]
+            .danangFirstDay,
+            .hotelCheckInHelp,
+            .taxiGrabPickup,
+            .pharmacyHelp,
+            .danangDay,
+            .restaurantOrderingPayment,
+        ].map { HomeScenario(scenarioID: $0) }
     }
 
     static let situationCards = [
@@ -3582,93 +3688,163 @@ private enum HomeContent {
 
 private struct HomeShelf<Content: View>: View {
     let title: String
-    let subtitle: String
     let content: Content
 
-    init(title: String, subtitle: String, @ViewBuilder content: () -> Content) {
+    init(title: String, subtitle _: String, @ViewBuilder content: () -> Content) {
         self.title = title
-        self.subtitle = subtitle
         self.content = content()
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            VStack(alignment: .leading, spacing: 3) {
-                Text(title)
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.82)
-
-                Text(subtitle)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
+            Text(title)
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
 
             content
         }
     }
 }
 
-private struct HomeContinueCard: View {
-    let item: HomePhraseItem
-    let imageName: String
-    let progress: CGFloat
+private struct HomeContinuePanel: View {
+    let item: HomePhraseItem?
+    let savedCount: Int
+    let practiceCount: Int
     let onOpenDetail: (String) -> Void
+    let onOpenSavedFallback: () -> Void
+    let onStartPractice: () -> Void
+    let onBrowseAllTapped: () -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            HStack(spacing: 16) {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 86, height: 86)
-                    .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        VStack(spacing: 12) {
+            Button(action: primaryAction) {
+                HStack(spacing: 14) {
+                    ZStack {
+                        Circle()
+                            .fill(primaryTint.color.opacity(0.14))
+                            .overlay {
+                                Circle().stroke(.white.opacity(0.76), lineWidth: 1)
+                            }
 
-                VStack(alignment: .leading, spacing: 9) {
+                        Image(systemName: primarySymbolName)
+                            .font(.system(size: 25, weight: .semibold))
+                            .foregroundStyle(primaryTint.color)
+                    }
+                    .frame(width: HomeLayout.continuePrimaryIconSize, height: HomeLayout.continuePrimaryIconSize)
+
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(item.title)
+                        Text(item == nil ? "Start here" : "Last viewed")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(primaryTint.color)
+                            .textCase(.uppercase)
+
+                        Text(primaryTitle)
                             .font(.headline.weight(.bold))
                             .foregroundStyle(.primary)
                             .lineLimit(1)
-                            .minimumScaleFactor(0.82)
+                            .minimumScaleFactor(0.78)
 
-                        Text(item.subtitle)
+                        Text(primarySubtitle)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                             .lineLimit(2)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .layoutPriority(1)
 
-                    HStack(spacing: 14) {
-                        GeometryReader { proxy in
-                            ZStack(alignment: .leading) {
-                                Capsule(style: .continuous)
-                                    .fill(Color.black.opacity(0.08))
-
-                                Capsule(style: .continuous)
-                                    .fill(Color(red: 0.24, green: 0.58, blue: 0.41))
-                                    .frame(width: proxy.size.width * min(max(progress, 0), 1))
-                            }
-                        }
-                        .frame(height: 5)
-
-                        Text("\(Int(progress * 100))%")
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Color(red: 0.24, green: 0.58, blue: 0.41))
-                    }
+                    Image(systemName: "chevron.right")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.tertiary)
                 }
-                .layoutPriority(1)
+                .contentShape(Rectangle())
             }
-            .padding(14)
-            .frame(maxWidth: .infinity, minHeight: 112, alignment: .leading)
-            .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("Home.ContinuePrimary")
+
+            HStack(spacing: 10) {
+                HomeContinueActionPill(
+                    title: savedActionTitle,
+                    symbolName: "heart.fill",
+                    tintName: .red,
+                    action: onOpenSavedFallback
+                )
+
+                HomeContinueActionPill(
+                    title: practiceActionTitle,
+                    symbolName: "play.fill",
+                    tintName: .green,
+                    action: onStartPractice
+                )
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
+        .accessibilityIdentifier("Home.ContinuePanel")
+    }
+
+    private var primaryTitle: String {
+        item?.title ?? "Browse phrases"
+    }
+
+    private var primarySubtitle: String {
+        item?.subtitle ?? "Pick a useful page to save or practice."
+    }
+
+    private var primarySymbolName: String {
+        item?.symbolName ?? "square.grid.2x2.fill"
+    }
+
+    private var primaryTint: AccentTint {
+        item?.tintName ?? .blue
+    }
+
+    private var savedActionTitle: String {
+        savedCount == 0 ? "Saved phrases" : "\(savedCount) saved"
+    }
+
+    private var practiceActionTitle: String {
+        practiceCount == 0 ? "Practice list" : "\(practiceCount) practice"
+    }
+
+    private func primaryAction() {
+        if let item {
+            onOpenDetail(item.pageID)
+        } else {
+            onBrowseAllTapped()
+        }
+    }
+}
+
+private struct HomeContinueActionPill: View {
+    let title: String
+    let symbolName: String
+    let tintName: AccentTint
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 7) {
+                Image(systemName: symbolName)
+                    .font(.caption.weight(.bold))
+
+                Text(title)
+                    .font(.subheadline.weight(.bold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.76)
+            }
+            .foregroundStyle(tintName.color)
+            .frame(maxWidth: .infinity)
+            .frame(height: HomeLayout.continueActionHeight)
+            .background(tintName.color.opacity(0.10), in: Capsule(style: .continuous))
+            .overlay {
+                Capsule(style: .continuous)
+                    .stroke(tintName.color.opacity(0.18), lineWidth: 1)
+            }
         }
         .buttonStyle(.plain)
-        .accessibilityIdentifier("Home.ContinueCard")
     }
 }
 
@@ -3838,90 +4014,54 @@ private struct HomeQuickPhraseCard: View {
 
 private struct HomeScenarioRail: View {
     let scenarios: [HomeScenario]
-    let onOpenCollection: (BrowseCollectionRoute) -> Void
     let onStartPractice: (BrowseCollectionPracticeAction) -> Void
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 14) {
+            LazyHStack(alignment: .top, spacing: 8) {
                 ForEach(scenarios) { scenario in
-                    HomeScenarioCard(
+                    HomeScenarioContactButton(
                         scenario: scenario,
-                        onOpenCollection: onOpenCollection,
                         onStartPractice: onStartPractice
                     )
                 }
             }
             .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 4)
+            .padding(.bottom, 2)
         }
+        .frame(height: HomeLayout.messageRailHeight)
         .scrollClipDisabled()
     }
 }
 
-private struct HomeScenarioCard: View {
+private struct HomeScenarioContactButton: View {
     let scenario: HomeScenario
-    let onOpenCollection: (BrowseCollectionRoute) -> Void
     let onStartPractice: (BrowseCollectionPracticeAction) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: HomeLayout.scenarioCardSpacing) {
-            Button {
-                onOpenCollection(scenario.route)
-            } label: {
-                Image(scenario.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(
-                        width: HomeLayout.scenarioCardWidth - HomeLayout.scenarioCardPadding * 2,
-                        height: HomeLayout.scenarioCardImageHeight
-                    )
-                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        Button {
+            onStartPractice(scenario.practiceAction)
+        } label: {
+            VStack(spacing: 9) {
+                PracticeMessageAvatar(
+                    scenarioID: scenario.scenarioID,
+                    size: HomeLayout.messageAvatarSize,
+                    showsSymbol: true
+                )
+
+                Text(scenario.scenarioID.messageContactName)
+                    .font(.callout.weight(.medium))
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.78)
+                    .frame(height: 38, alignment: .top)
             }
-            .buttonStyle(.plain)
-
-            Button {
-                onOpenCollection(scenario.route)
-            } label: {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text(scenario.title)
-                        .font(.system(size: 20, weight: .black, design: .serif))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-                        .fixedSize(horizontal: false, vertical: true)
-
-                    Text(scenario.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.78)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            .buttonStyle(.plain)
-
-            Spacer(minLength: 0)
-
-            Button {
-                onStartPractice(scenario.practiceAction)
-            } label: {
-                Text("Open thread")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(Color(red: 0.24, green: 0.58, blue: 0.41))
-                    .frame(maxWidth: .infinity)
-                    .frame(height: HomeLayout.scenarioStartButtonHeight)
-                    .homeGlassCard(cornerRadius: 22)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Start \(scenario.title)")
-            .accessibilityIdentifier("HomeScenario.Start.\(scenario.id)")
+            .frame(width: HomeLayout.messageContactWidth, alignment: .top)
+            .contentShape(Rectangle())
         }
-        .padding(HomeLayout.scenarioCardPadding)
-        .frame(width: HomeLayout.scenarioCardWidth, height: HomeLayout.scenarioCardHeight, alignment: .topLeading)
-        .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
-        .accessibilityElement(children: .contain)
+        .buttonStyle(.plain)
+        .accessibilityLabel(scenario.scenarioID.messageContactName)
         .accessibilityIdentifier("HomeScenario.\(scenario.id)")
     }
 }

@@ -289,6 +289,8 @@ enum BrowsePageLayout {
     static let sectionSpacing: CGFloat = 26
     static let cardCornerRadius: CGFloat = 22
     static let bottomChromeContentClearance: CGFloat = 224
+    static let situationIconSize: CGFloat = 48
+    static let situationCardMinHeight: CGFloat = 136
     static let nextShelfRowHeight: CGFloat = 108
     static let nextShelfIconSize: CGFloat = 48
     static let nextShelfRowPadding: CGFloat = 14
@@ -305,6 +307,10 @@ enum BrowsePageLayout {
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12),
     ]
+
+    static func situationCardTitleContentWidth(cardWidth: CGFloat) -> CGFloat {
+        max(0, cardWidth - (14 * 2))
+    }
 }
 
 private struct BrowseShelf<Content: View>: View {
@@ -334,12 +340,24 @@ private struct BrowseSituationCard: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 12) {
-                Image(systemName: destination.symbolName)
-                    .font(.title2.weight(.semibold))
-                    .foregroundStyle(destination.tintName.color)
-                    .frame(width: 50, height: 50)
-                    .nativeGlass(cornerRadius: 25, tint: destination.tintName.color.opacity(0.18), interactive: true)
+            VStack(alignment: .leading, spacing: 12) {
+                HStack {
+                    Image(systemName: destination.symbolName)
+                        .font(.title2.weight(.semibold))
+                        .foregroundStyle(destination.tintName.color)
+                        .frame(width: BrowsePageLayout.situationIconSize, height: BrowsePageLayout.situationIconSize)
+                        .nativeGlass(
+                            cornerRadius: BrowsePageLayout.situationIconSize / 2,
+                            tint: destination.tintName.color.opacity(0.18),
+                            interactive: true
+                        )
+
+                    Spacer(minLength: 8)
+
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.tertiary)
+                }
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(destination.title)
@@ -347,21 +365,19 @@ private struct BrowseSituationCard: View {
                         .foregroundStyle(.primary)
                         .lineLimit(2)
                         .minimumScaleFactor(0.8)
+                        .frame(maxWidth: .infinity, alignment: .leading)
 
                     Text(destination.subtitle)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
+                        .minimumScaleFactor(0.84)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
-            .frame(maxWidth: .infinity, minHeight: 96, alignment: .leading)
+            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.situationCardMinHeight, alignment: .topLeading)
             .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)

@@ -67,6 +67,15 @@ Design rules Jojo has locked in:
 - The bottom toolbar and search island should stay compact and close enough to feel like one native control area without touching the device edge.
 - Long subtitles should wrap or use a detail page, not clip important meaning.
 - Horizontal Explore shelves should show category-style groups and speaker icons for audio playback.
+- Homepage phrase shelves should be friendly labels over existing Browse routes, not duplicate category IDs:
+  - `Use now` -> `.category("essentials")`
+  - `First hour in Vietnam` -> `.category("first-day")`
+  - `Food & coffee` -> `.category("food")`
+  - `When you don't understand` -> `.category("polite-repair")`
+  - `Taxi & getting around` -> `.category("getting-around")`
+  - `Hotel basics` -> `.category("hotel")`
+  - `Money & shopping` -> `.category("shopping")`
+  - `Tiny conversations` -> Messages/Practice surface, not a normal Browse category page
 - Break-it-down should be a horizontal strip/carousel with one idea per card, plus signs between tokens, and an equals sign before the full phrase.
 - Avoid internal UI labels such as `repair`; use traveler language like "When You Don't Understand."
 

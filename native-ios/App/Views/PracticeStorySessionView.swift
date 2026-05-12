@@ -251,8 +251,10 @@ struct PracticeStorySessionSurface: View {
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectOption: (PracticeScenarioResponseOption) -> Void
+    @State private var scrollRequestID = 0
 
     private static let transcriptBottomID = "Practice.Story.Transcript.Bottom"
+    private static let scrollDelayNanoseconds: UInt64 = 50_000_000
 
     private var turns: [PracticeStoryTurn] {
         PracticeStoryTranscript.turns(
@@ -336,7 +338,15 @@ struct PracticeStorySessionSurface: View {
     }
 
     private func scrollToBottom(_ proxy: ScrollViewProxy, animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        scrollRequestID += 1
+        let requestID = scrollRequestID
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: Self.scrollDelayNanoseconds)
+            guard requestID == scrollRequestID else {
+                return
+            }
+
             if animated {
                 withAnimation(.easeOut(duration: 0.24)) {
                     proxy.scrollTo(Self.transcriptBottomID, anchor: .bottom)

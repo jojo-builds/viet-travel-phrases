@@ -3,10 +3,11 @@ import CoreGraphics
 @testable import SpeakLocalNative
 
 final class AppChromeTests: XCTestCase {
-    func testBottomChromeLayoutUsesCompactIslandMetrics() {
+    func testBottomChromeLayoutUsesNativeScaleIslandMetrics() {
         XCTAssertLessThan(AppChromeLayout.dockHorizontalPadding, 16)
-        XCTAssertLessThan(AppChromeLayout.dockVerticalPadding, 5)
-        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 53)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockVerticalPadding, 6)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchIslandSize, 62)
+        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 66)
         XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
         XCTAssertEqual(AppChromeLayout.bottomSeparationHeight, 0)
         XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
@@ -22,7 +23,7 @@ final class AppChromeTests: XCTestCase {
             AppChromeLayout.bottomHitTestEnvelopeHeight,
             AppChromeLayout.dockItemHeight + AppChromeLayout.dockVerticalPadding * 2
         )
-        XCTAssertLessThan(AppChromeLayout.bottomHitTestEnvelopeHeight, 110)
+        XCTAssertLessThan(AppChromeLayout.bottomHitTestEnvelopeHeight, 120)
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
     }
 
@@ -49,18 +50,20 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testDockSelectionLensUsesAppStoreStylePillMetrics() {
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth * 1.25)
         XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionHeight, AppChromeLayout.searchIslandSize)
-        XCTAssertEqual(AppChromeLayout.dockSelectionCornerRadius, AppChromeLayout.dockSelectionHeight / 2)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedWidth, AppChromeLayout.dockSelectionWidth)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedHeight, AppChromeLayout.dockSelectionHeight)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedHeight, AppChromeLayout.searchIslandSize)
         XCTAssertGreaterThan(AppChromeLayout.dockItemForegroundZIndex, AppChromeLayout.dockSelectionLensZIndex)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.40)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.30)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.36)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionDragCommitDistance, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionStretchFactor, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionMaximumStretch, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionLagFactor, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapActivationDelay, 0)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapWaypointDelay, AppChromeLayout.dockSelectionTapActivationDelay)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapSettleDelay, 0)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapTravelDelay, AppChromeLayout.dockSelectionTapActivationDelay)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapDeactivateDelay, 0)
     }
 
@@ -95,15 +98,20 @@ final class AppChromeTests: XCTestCase {
         )
         XCTAssertEqual(
             expandedLens.xOffset,
-            lastCenter - AppChromeLayout.dockSelectionWidth / 2
+            lastCenter - AppChromeLayout.dockSelectionPressedWidth / 2
         )
+        XCTAssertEqual(expandedLens.height, AppChromeLayout.dockSelectionPressedHeight)
     }
 
-    func testDockSelectionTapFlightVisitsIntermediateTabs() {
-        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 0, to: 3), [1, 2, 3])
-        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 3, to: 0), [2, 1, 0])
-        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 1, to: 2), [2])
-        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 2, to: 2), [2])
+    func testDockSelectionTapFlightUsesSingleFluidTravelWindow() {
+        let totalTapFlightDelay = AppChromeLayout.dockSelectionTapActivationDelay
+            + AppChromeLayout.dockSelectionTapTravelDelay
+            + AppChromeLayout.dockSelectionTapDeactivateDelay
+
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapActivationDelay, 45_000_000)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapTravelDelay, 170_000_000)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapDeactivateDelay, 90_000_000)
+        XCTAssertLessThanOrEqual(totalTapFlightDelay, 305_000_000)
     }
 
     func testDockSelectionLensStretchesWhileDraggingAndSettlesWhenReducedMotion() {
@@ -115,6 +123,7 @@ final class AppChromeTests: XCTestCase {
             reduceMotion: false
         )
         XCTAssertEqual(selectedMetrics.width, AppChromeLayout.dockSelectionWidth)
+        XCTAssertEqual(selectedMetrics.height, AppChromeLayout.dockSelectionHeight)
         XCTAssertEqual(
             selectedMetrics.xOffset,
             AppDockSelectionLayout.itemCenterX(index: 0) - AppChromeLayout.dockSelectionWidth / 2
@@ -127,10 +136,11 @@ final class AppChromeTests: XCTestCase {
             itemCount: 4,
             reduceMotion: false
         )
-        XCTAssertGreaterThan(draggedMetrics.width, selectedMetrics.width)
+        XCTAssertGreaterThan(draggedMetrics.width, AppChromeLayout.dockSelectionPressedWidth)
+        XCTAssertGreaterThan(draggedMetrics.height, AppChromeLayout.dockSelectionPressedHeight)
         XCTAssertLessThanOrEqual(
             draggedMetrics.width,
-            AppChromeLayout.dockSelectionWidth + AppChromeLayout.dockSelectionMaximumStretch
+            AppChromeLayout.dockSelectionPressedWidth + AppChromeLayout.dockSelectionMaximumStretch
         )
 
         let reducedMotionMetrics = AppDockSelectionLayout.lensMetrics(
@@ -140,10 +150,11 @@ final class AppChromeTests: XCTestCase {
             itemCount: 4,
             reduceMotion: true
         )
-        XCTAssertEqual(reducedMotionMetrics.width, AppChromeLayout.dockSelectionWidth)
+        XCTAssertEqual(reducedMotionMetrics.width, AppChromeLayout.dockSelectionPressedWidth)
+        XCTAssertEqual(reducedMotionMetrics.height, AppChromeLayout.dockSelectionPressedHeight)
         XCTAssertEqual(
             reducedMotionMetrics.xOffset,
-            AppDockSelectionLayout.itemCenterX(index: 3) - AppChromeLayout.dockSelectionWidth / 2
+            AppDockSelectionLayout.itemCenterX(index: 3) - AppChromeLayout.dockSelectionPressedWidth / 2
         )
     }
 
@@ -237,19 +248,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThan(HomeLayout.situationImageHeight, HomeLayout.situationRowHeight)
     }
 
-    func testHomeScenarioCardsKeepStartButtonInsideCardBounds() {
-        let verticalPadding = HomeLayout.scenarioCardPadding * 2
-        let imageHeight = HomeLayout.scenarioCardImageHeight
-        let sectionSpacing = HomeLayout.scenarioCardSpacing * 3
-        let worstCaseTitleAndSubtitleHeight: CGFloat = 96
-        let startButtonHeight = HomeLayout.scenarioStartButtonHeight
-        let minimumHeight = verticalPadding
-            + imageHeight
-            + sectionSpacing
-            + worstCaseTitleAndSubtitleHeight
-            + startButtonHeight
-
-        XCTAssertGreaterThanOrEqual(HomeLayout.scenarioCardHeight, minimumHeight)
+    func testHomeMessageRailUsesStableCircleContactMetrics() {
+        XCTAssertEqual(HomeLayout.messageAvatarSize, 82)
+        XCTAssertEqual(HomeLayout.messageContactWidth, 104)
+        XCTAssertGreaterThan(HomeLayout.messageContactWidth, HomeLayout.messageAvatarSize)
+        XCTAssertGreaterThanOrEqual(HomeLayout.messageRailHeight, HomeLayout.messageAvatarSize + 44)
     }
 
     func testHomeUseNowShelfUsesTwoRowCarouselMetrics() {
@@ -279,6 +282,22 @@ final class AppChromeTests: XCTestCase {
             BrowsePageLayout.nextShelfRowHeight,
             BrowsePageLayout.nextShelfIconSize + BrowsePageLayout.nextShelfRowPadding * 2
         )
+    }
+
+    func testBrowseSituationCardsReserveReadableTextWidth() {
+        XCTAssertEqual(BrowsePageLayout.situationIconSize, 48)
+        XCTAssertGreaterThanOrEqual(BrowsePageLayout.situationCardMinHeight, 132)
+        XCTAssertGreaterThanOrEqual(
+            BrowsePageLayout.situationCardTitleContentWidth(cardWidth: 176),
+            124
+        )
+    }
+
+    func testDockGlassUsesBackingFillToPreventContentBleed() {
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.34)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.48)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, AppChromeLayout.dockBackdropFillOpacity)
+        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.54)
     }
 
     func testPhrasePageChromeUsesSeparateSearchIsland() {
@@ -1103,7 +1122,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hanoi.subcategories.isEmpty)
         XCTAssertFalse(hanoi.starterItems.isEmpty)
         XCTAssertNotNil(hanoi.cityHub)
-        XCTAssertEqual(hanoi.cityHub?.situationTitle, "What are you doing?")
+        XCTAssertEqual(hanoi.cityHub?.situationTitle, "Common moments")
         XCTAssertEqual(hanoi.cityHub?.namesTitle, "Names to know")
     }
 
@@ -1270,6 +1289,64 @@ final class AppChromeTests: XCTestCase {
                 }, "\(descriptor.title) \(group.title) should not start with long-tail question/route phrase rows")
             }
         }
+    }
+
+    func testGenericFoodCollectionStartsWithEntityNamesBeforeActionPhrases() {
+        let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
+
+        XCTAssertEqual(food.starterTitle, "Food names to know")
+        XCTAssertEqual(
+            food.subcategories.map(\.title),
+            ["Restaurants", "Cafes", "Dishes", "Markets"]
+        )
+        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-nen" })
+        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-hanoi-place-giang-cafe" })
+        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-hue-place-bun-bo-city" })
+        assertEntityFirstBrowseRows(food.starterItems, context: "food starter")
+
+        for subcategory in food.subcategories {
+            XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into entity rows")
+            assertEntityFirstBrowseRows(subcategory.items, context: "food \(subcategory.title)")
+        }
+    }
+
+    func testGenericLandmarkAndStreetCollectionsStartWithEntitiesBeforePhraseDepth() {
+        let landmarks = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("landmarks-attractions")))
+        let streets = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("neighborhoods-streets")))
+
+        XCTAssertEqual(landmarks.starterTitle, "Places to know")
+        XCTAssertTrue(landmarks.subcategories.map(\.title).contains("Landmarks"))
+        XCTAssertTrue(landmarks.subcategories.map(\.title).contains("Markets"))
+        XCTAssertTrue(landmarks.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" })
+        XCTAssertTrue(landmarks.starterItems.contains { $0.pageID == "viet-phrase-city-hanoi-place-hoan-kiem" })
+        assertEntityFirstBrowseRows(landmarks.starterItems, context: "landmarks starter")
+
+        XCTAssertEqual(streets.starterTitle, "Names to know")
+        XCTAssertEqual(streets.subcategories.map(\.title), ["Neighborhoods", "Streets"])
+        XCTAssertTrue(streets.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-bach-dang-street" })
+        assertEntityFirstBrowseRows(streets.starterItems, context: "streets starter")
+
+        for subcategory in landmarks.subcategories + streets.subcategories {
+            XCTAssertFalse(subcategory.items.isEmpty, "\(subcategory.title) should drill into entity rows")
+            assertEntityFirstBrowseRows(subcategory.items, context: subcategory.title)
+        }
+    }
+
+    private func assertEntityFirstBrowseRows(_ items: [BrowseSearchPhraseItem], context: String) {
+        XCTAssertFalse(items.isEmpty, "\(context) should not be empty")
+        XCTAssertTrue(
+            items.allSatisfy { $0.pageID.contains("-place-") },
+            "\(context) should show noun/entity pages before phrase depth: \(items.map(\.pageID))"
+        )
+        XCTAssertFalse(items.contains { item in
+            item.title.localizedCaseInsensitiveContains("ở đâu")
+                || item.title.localizedCaseInsensitiveContains("Cho tôi")
+                || item.title.hasPrefix("Đi ")
+                || item.subtitle.localizedCaseInsensitiveContains("where is")
+                || item.subtitle.localizedCaseInsensitiveContains("please take")
+                || item.subtitle.localizedCaseInsensitiveContains("near ")
+                || item.subtitle.localizedCaseInsensitiveContains("please")
+        }, "\(context) should not start with long-tail action phrase rows: \(items.map { "\($0.title) — \($0.subtitle)" })")
     }
 
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {

@@ -6,6 +6,7 @@ import UIKit
 struct SearchPageView: View {
     @Binding private var query: String
     @State private var selectedFilter: SearchResultFilter = .all
+    @State private var searchResults: SearchPageResults
     @FocusState private var localSearchFieldFocused: Bool
 
     let isFieldFocused: Bool
@@ -29,6 +30,9 @@ struct SearchPageView: View {
         onBrowseTapped: @escaping () -> Void = {}
     ) {
         _query = query
+        _searchResults = State(
+            initialValue: SearchPageResults(query: query.wrappedValue.trimmingCharacters(in: .whitespacesAndNewlines))
+        )
         self.isFieldFocused = isFieldFocused
         self.chromeNamespace = chromeNamespace
         self.showsChrome = showsChrome
@@ -40,11 +44,10 @@ struct SearchPageView: View {
     }
 
     var body: some View {
-        let results = SearchPageResults(query: trimmedQuery)
         GeometryReader { proxy in
             let topMastheadBleed = max(proxy.safeAreaInsets.top, currentWindowTopSafeAreaInset)
             let headerMode = SearchPageLayout.headerMode(
-                query: results.query,
+                query: searchResults.query,
                 isFieldFocused: effectiveFieldFocused
             )
 
@@ -54,16 +57,16 @@ struct SearchPageView: View {
 
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
-                        header(results: results, mode: headerMode)
+                        header(results: searchResults, mode: headerMode)
 
-                        if results.query.isEmpty {
+                        if searchResults.query.isEmpty {
                             if effectiveFieldFocused {
                                 focusedContent
                             } else {
                                 defaultContent
                             }
-                        } else if results.hasResults {
-                            resultsContent(results: results)
+                        } else if searchResults.hasResults {
+                            resultsContent(results: searchResults)
                         } else {
                             recoveryContent
                         }
@@ -87,6 +90,10 @@ struct SearchPageView: View {
             }
         }
         .accessibilityIdentifier("SearchPageView")
+        .onAppear(perform: refreshSearchResultsIfNeeded)
+        .onChange(of: trimmedQuery) { _, _ in
+            refreshSearchResultsIfNeeded()
+        }
     }
 
     private var effectiveFieldFocused: Bool {
@@ -95,6 +102,15 @@ struct SearchPageView: View {
 
     private var trimmedQuery: String {
         query.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private func refreshSearchResultsIfNeeded() {
+        let nextQuery = trimmedQuery
+        guard searchResults.query != nextQuery else {
+            return
+        }
+
+        searchResults = SearchPageResults(query: nextQuery)
     }
 
     private var currentWindowTopSafeAreaInset: CGFloat {
