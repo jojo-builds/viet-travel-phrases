@@ -323,7 +323,7 @@ final class ListingHubRandomLoopProofUITests: XCTestCase {
         ("hue", ["--browse-city", "hue"], "Hue", ["Names to know", "Browse Hue", "Common moments", "Quick phrases"]),
         ("airport-topic", ["--browse-category", "airport"], "Airport", ["Good first phrases", "Airport Baggage", "Passport Control", "SIM & Cash"]),
         ("hotel-topic", ["--browse-category", "hotel"], "Hotel", ["At the hotel desk", "Hotel Check-In", "Room Help", "Bags & Taxi"]),
-        ("food-topic", ["--browse-category", "food"], "Food", ["Start at the table", "A table for two", "Can I see the menu?", "Food Allergies", "Restaurant Table", "Beach Snacks"]),
+        ("food-topic", ["--browse-category", "food"], "Food & coffee", ["Places, dishes, and coffee", "Coffee shops", "Coffee & drinks", "Dishes to order", "Food Allergies", "Restaurant Table", "Beach Snacks"]),
         ("getting-around-topic", ["--browse-category", "getting-around"], "Getting Around", ["Start here", "Grab Pickup", "Taxi Route", "Driver Help"]),
         ("local-greetings-topic", ["--browse-category", "local-greetings"], "Local Greetings", ["Start here", "Market Hello", "Hotel Hello", "Respectful Hello"]),
     ]

@@ -95,6 +95,61 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 5))
     }
 
+    func testBrowseMessageThreadBackReturnsToCollectionMessageFocus() {
+        let app = launchApp(arguments: ["--browse-category", "airport"])
+        let scenarioID = "BrowseCollection.Message.Contact.danangFirstDay"
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        tapWhenComfortablyVisible(identifier: scenarioID, app: app)
+
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForExistence(timeout: 5))
+        tapWhenVisible(app.buttons["Practice.Messages.Back"], app: app)
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        let messageContact = app.buttons.matching(identifier: scenarioID).firstMatch
+        XCTAssertTrue(messageContact.waitForExistence(timeout: 3))
+        XCTAssertTrue(
+            messageContact.isHittable,
+            "Back from a Browse-launched message should restore the Airport page near the message contact that opened it."
+        )
+        XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Thread"].exists)
+    }
+
+    func testFoodMessageSectionUsesQuickConversationsLabel() {
+        let app = launchApp(arguments: ["--browse-category", "food"])
+        let scenarioID = "BrowseCollection.Message.Contact.foodAllergyHelp"
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.food"].waitForExistence(timeout: 4))
+        scrollUntilHittable(app.buttons[scenarioID], app: app)
+
+        XCTAssertTrue(app.staticTexts["Quick conversations"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.staticTexts["Food"].isHittable, "Food is the message-system grouping; the Browse section should explain the row content.")
+    }
+
+    func testFoodCollectionSurfacesCoffeeAndDishPhraseLanes() {
+        let app = launchApp(arguments: ["--browse-category", "food"])
+
+        XCTAssertTrue(app.staticTexts["Food & coffee"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Places, dishes, and coffee"].waitForExistence(timeout: 2))
+        tapHorizontalCard(
+            app.buttons["BrowseCollection.Subcategory.food.phrases.coffee-drinks"],
+            app: app,
+            scrollAnchor: app.buttons["BrowseCollection.Subcategory.food.entity.restaurants"]
+        )
+
+        XCTAssertTrue(app.staticTexts["Coffee & drinks"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-coffee-1"].waitForExistence(timeout: 2))
+
+        tapHorizontalCard(
+            app.buttons["BrowseCollection.Subcategory.food.phrases.dishes-to-order"],
+            app: app,
+            scrollAnchor: app.buttons["BrowseCollection.Subcategory.food.phrases.coffee-drinks"]
+        )
+
+        XCTAssertTrue(app.staticTexts["Dishes to order"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-ves-order-pho-bowl"].waitForExistence(timeout: 2))
+    }
+
     func testDaNangCityCollectionRendersTravelModeHub() {
         let app = launchApp(arguments: ["--browse-city", "danang"])
 

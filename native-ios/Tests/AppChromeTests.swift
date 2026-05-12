@@ -1112,15 +1112,18 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hotel.subcategories.isEmpty)
         XCTAssertFalse(hotel.starterItems.isEmpty)
         XCTAssertEqual(hotel.messageSectionTitle, "Hotel")
+        XCTAssertEqual(hotel.browseMessageSectionTitle, "Quick conversations")
         XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi])
         XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
 
         XCTAssertEqual(shopping.messageSectionTitle, "Shopping")
+        XCTAssertEqual(shopping.browseMessageSectionTitle, "Quick conversations")
         XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp])
 
         XCTAssertEqual(hanoi.route, .city("hanoi"))
         XCTAssertEqual(hanoi.practiceAction, .practiceMode(.hanoiBucketList))
         XCTAssertNil(hanoi.messageSectionTitle)
+        XCTAssertNil(hanoi.browseMessageSectionTitle)
         XCTAssertFalse(hanoi.subcategories.isEmpty)
         XCTAssertFalse(hanoi.starterItems.isEmpty)
         XCTAssertNotNil(hanoi.cityHub)
@@ -1359,13 +1362,14 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
-    func testGenericFoodCollectionStartsWithEntityNamesBeforeActionPhrases() {
+    func testGenericFoodCollectionSurfacesCoffeeWithoutLosingEntityRows() {
         let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
 
-        XCTAssertEqual(food.starterTitle, "Food names to know")
+        XCTAssertEqual(food.title, "Food & coffee")
+        XCTAssertEqual(food.starterTitle, "Places, dishes, and coffee")
         XCTAssertEqual(
             food.subcategories.map(\.title),
-            ["Restaurants", "Cafes", "Dishes", "Markets"]
+            ["Restaurants", "Coffee shops", "Coffee & drinks", "Dishes to order", "Markets"]
         )
         XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-nen" })
         XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-hanoi-place-giang-cafe" })
@@ -1374,7 +1378,22 @@ final class AppChromeTests: XCTestCase {
 
         for subcategory in food.subcategories {
             XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into entity rows")
-            assertEntityFirstBrowseRows(subcategory.items, context: "food \(subcategory.title)")
+            if subcategory.title == "Coffee & drinks" {
+                XCTAssertEqual(subcategory.countUnit, "phrase")
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-coffee-1" })
+                XCTAssertTrue(subcategory.items.contains { item in
+                    item.title.localizedCaseInsensitiveContains("coffee")
+                        || item.subtitle.localizedCaseInsensitiveContains("coffee")
+                        || item.pageID.localizedCaseInsensitiveContains("coffee")
+                })
+            } else if subcategory.title == "Dishes to order" {
+                XCTAssertEqual(subcategory.countUnit, "phrase")
+                XCTAssertGreaterThanOrEqual(subcategory.items.count, 10)
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-ves-order-pho-bowl" })
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo" })
+            } else {
+                assertEntityFirstBrowseRows(subcategory.items, context: "food \(subcategory.title)")
+            }
         }
     }
 

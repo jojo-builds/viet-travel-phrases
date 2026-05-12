@@ -4,6 +4,7 @@ struct BrowseCollectionPageView: View {
     let descriptor: BrowseCollectionDescriptor
     let scrollToTopTrigger: Int
     let scrollToTopRoute: BrowseCollectionRoute?
+    let focusRequest: BrowseCollectionFocusRequest?
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onPractice: (BrowseCollectionPracticeAction) -> Void
@@ -63,6 +64,7 @@ struct BrowseCollectionPageView: View {
                                         onPractice(.practiceScenario(scenarioID))
                                     }
                                 )
+                                .id(BrowseCollectionFocusRequest.messageSectionScrollTargetID)
                                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
                             } else {
                                 BrowseCollectionMessageEntryCard(
@@ -89,6 +91,9 @@ struct BrowseCollectionPageView: View {
                     }
 
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                }
+                .task(id: focusRequest?.id) {
+                    await restoreFocusIfNeeded(scrollProxy)
                 }
                 .onChange(of: selectedCityCardID) { _, newValue in
                     cityCardScrollRequestID += 1
@@ -123,6 +128,21 @@ struct BrowseCollectionPageView: View {
     }
 
     private static let scrollTopID = "BrowseCollectionTop"
+
+    @MainActor
+    private func restoreFocusIfNeeded(_ scrollProxy: ScrollViewProxy) async {
+        guard
+            let focusRequest,
+            focusRequest.route == descriptor.route
+        else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: BrowseCollectionLayout.focusRestoreDelayNanoseconds)
+        withAnimation(.snappy(duration: 0.24)) {
+            scrollProxy.scrollTo(focusRequest.target.scrollTargetID, anchor: .center)
+        }
+    }
 }
 
 private enum BrowseCollectionLayout {
@@ -130,6 +150,7 @@ private enum BrowseCollectionLayout {
     static let sectionSpacing: CGFloat = 24
     static let bottomChromeContentClearance: CGFloat = 224
     static let citySelectedScrollDelayNanoseconds: UInt64 = 180_000_000
+    static let focusRestoreDelayNanoseconds: UInt64 = 520_000_000
 
     static func citySelectedSectionID(for cardID: String) -> String {
         "BrowseCollectionCitySelectedSection.\(cardID)"
@@ -578,8 +599,8 @@ private struct BrowseCollectionMessageSection: View {
     let onStartScenario: (PracticeScenarioID) -> Void
 
     var body: some View {
-        if let title = descriptor.messageSectionTitle, !descriptor.messageScenarioIDs.isEmpty {
-            BrowseCollectionSection(title: title, actionTitle: "Messages") {
+        if let title = descriptor.browseMessageSectionTitle {
+            BrowseCollectionSection(title: title, actionTitle: "") {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(alignment: .top, spacing: 16) {
                         ForEach(descriptor.messageScenarioIDs) { scenarioID in
@@ -804,6 +825,7 @@ private struct BrowseCollectionPhraseRow: View {
             descriptor: descriptor,
             scrollToTopTrigger: 0,
             scrollToTopRoute: nil,
+            focusRequest: nil,
             onOpenDetail: { _ in },
             onOpenCollection: { _ in },
             onPractice: { _ in }
