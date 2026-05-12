@@ -3,10 +3,11 @@ import CoreGraphics
 @testable import SpeakLocalNative
 
 final class AppChromeTests: XCTestCase {
-    func testBottomChromeLayoutUsesCompactIslandMetrics() {
+    func testBottomChromeLayoutUsesNativeScaleIslandMetrics() {
         XCTAssertLessThan(AppChromeLayout.dockHorizontalPadding, 16)
-        XCTAssertLessThan(AppChromeLayout.dockVerticalPadding, 5)
-        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 53)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockVerticalPadding, 6)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchIslandSize, 58)
+        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 62)
         XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
         XCTAssertEqual(AppChromeLayout.bottomSeparationHeight, 0)
         XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
@@ -22,7 +23,7 @@ final class AppChromeTests: XCTestCase {
             AppChromeLayout.bottomHitTestEnvelopeHeight,
             AppChromeLayout.dockItemHeight + AppChromeLayout.dockVerticalPadding * 2
         )
-        XCTAssertLessThan(AppChromeLayout.bottomHitTestEnvelopeHeight, 110)
+        XCTAssertLessThan(AppChromeLayout.bottomHitTestEnvelopeHeight, 120)
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
     }
 
@@ -283,8 +284,10 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testDockGlassUsesBackingFillToPreventContentBleed() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.32)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.58)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.52)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.62)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, AppChromeLayout.dockBackdropFillOpacity)
+        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.64)
     }
 
     func testPhrasePageChromeUsesSeparateSearchIsland() {
