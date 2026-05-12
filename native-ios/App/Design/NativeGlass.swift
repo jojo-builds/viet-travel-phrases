@@ -258,6 +258,7 @@ enum AppChromeLayout {
     static let dockItemSpacing: CGFloat = 10
     static let dockItemWidth: CGFloat = 50
     static let dockItemHeight: CGFloat = 46
+    static let dockBackdropFillOpacity: Double = 0.38
     static let dockSelectionWidth: CGFloat = 68
     static let dockSelectionHeight: CGFloat = 46
     static let dockSelectionCornerRadius: CGFloat = 23

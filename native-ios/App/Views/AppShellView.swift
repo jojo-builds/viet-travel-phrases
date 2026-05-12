@@ -795,6 +795,10 @@ struct AppShellView: View {
             .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
             .padding(.vertical, AppChromeLayout.dockVerticalPadding)
             .frame(maxWidth: .infinity, alignment: .center)
+            .background(
+                Color.white.opacity(AppChromeLayout.dockBackdropFillOpacity),
+                in: RoundedRectangle(cornerRadius: AppChromeLayout.dockCornerRadius, style: .continuous)
+            )
             .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
             .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
             .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)

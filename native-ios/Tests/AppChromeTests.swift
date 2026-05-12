@@ -281,6 +281,20 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBrowseSituationCardsReserveReadableTextWidth() {
+        XCTAssertEqual(BrowsePageLayout.situationIconSize, 48)
+        XCTAssertGreaterThanOrEqual(BrowsePageLayout.situationCardMinHeight, 132)
+        XCTAssertGreaterThanOrEqual(
+            BrowsePageLayout.situationCardTitleContentWidth(cardWidth: 176),
+            124
+        )
+    }
+
+    func testDockGlassUsesBackingFillToPreventContentBleed() {
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.32)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.58)
+    }
+
     func testPhrasePageChromeUsesSeparateSearchIsland() {
         let chrome = AppChrome(route: .phrasePage)
 
