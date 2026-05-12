@@ -316,6 +316,27 @@ struct PracticeStoryComposer: View {
     }
 
     var body: some View {
+        composerGlassGroup
+            .padding(.horizontal, 14)
+            .padding(.top, 8)
+            .padding(.bottom, 8)
+            .frame(maxWidth: .infinity)
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("Practice.Story.Composer")
+    }
+
+    @ViewBuilder
+    private var composerGlassGroup: some View {
+        if #available(iOS 26.0, *) {
+            GlassEffectContainer(spacing: 12) {
+                composerContent
+            }
+        } else {
+            composerContent
+        }
+    }
+
+    private var composerContent: some View {
         VStack(alignment: .leading, spacing: 12) {
             selectedPhraseBar
 
@@ -334,20 +355,12 @@ struct PracticeStoryComposer: View {
             }
             .scrollClipDisabled()
         }
-        .padding(.horizontal, 14)
-        .padding(.top, 14)
-        .padding(.bottom, 12)
-        .frame(maxWidth: .infinity)
-        .background(Color.white.opacity(0.90), in: RoundedRectangle(cornerRadius: 28, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 28, style: .continuous)
-                .stroke(.white.opacity(0.78), lineWidth: 1)
-        }
-        .accessibilityElement(children: .contain)
-        .accessibilityIdentifier("Practice.Story.Composer")
     }
 
+    @ViewBuilder
     private var selectedPhraseBar: some View {
+        let shape = RoundedRectangle(cornerRadius: 24, style: .continuous)
+
         HStack(alignment: .center, spacing: 12) {
             Text(pendingOption?.scenarioVietnamese ?? "")
                 .font(.system(size: 23, weight: .regular))
@@ -383,11 +396,17 @@ struct PracticeStoryComposer: View {
         .padding(.vertical, 10)
         .frame(minHeight: 60)
         .frame(maxWidth: .infinity)
-        .background(Color.white.opacity(0.82), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .background(Color.white.opacity(0.38), in: shape)
+        .nativeGlass(cornerRadius: 24, tint: .white, interactive: true)
         .overlay {
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .stroke(Color(.separator).opacity(0.22), lineWidth: 1)
+            shape
+                .stroke(.white.opacity(0.70), lineWidth: 0.9)
+                .blendMode(.screen)
+
+            shape
+                .stroke(Color(.separator).opacity(0.18), lineWidth: 0.7)
         }
+        .shadow(color: .black.opacity(0.07), radius: 18, x: 0, y: 10)
     }
 }
 
@@ -405,6 +424,8 @@ private struct PracticeStoryChoiceChip: View {
     }
 
     var body: some View {
+        let shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
+
         Button(action: onSelect) {
             Text(option.scenarioEnglish)
                 .font(.system(size: 16, weight: isSelected ? .bold : .regular))
@@ -417,14 +438,16 @@ private struct PracticeStoryChoiceChip: View {
                 .padding(.vertical, 10)
                 .frame(minWidth: minWidth, maxWidth: maxWidth)
                 .frame(minHeight: 58)
-                .background(chipBackground, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .background(chipBackground, in: shape)
+                .nativeGlass(cornerRadius: 20, tint: chipGlassTint, interactive: true)
                 .overlay {
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    shape
                         .stroke(
                             isSelected ? Color(red: 0.02, green: 0.37, blue: 0.95) : Color(.separator).opacity(0.34),
                             lineWidth: isSelected ? 2 : 1
                         )
                 }
+                .shadow(color: .black.opacity(isSelected ? 0.08 : 0.045), radius: isSelected ? 16 : 11, x: 0, y: isSelected ? 8 : 5)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Practice.Story.Choice.\(option.id)")
@@ -433,7 +456,13 @@ private struct PracticeStoryChoiceChip: View {
 
     private var chipBackground: some ShapeStyle {
         isSelected
-            ? AnyShapeStyle(Color.white.opacity(0.98))
-            : AnyShapeStyle(Color.white.opacity(0.96))
+            ? AnyShapeStyle(Color.white.opacity(0.54))
+            : AnyShapeStyle(Color.white.opacity(0.32))
+    }
+
+    private var chipGlassTint: Color {
+        isSelected
+            ? Color(red: 0.84, green: 0.92, blue: 1.0)
+            : .white
     }
 }
