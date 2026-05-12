@@ -7,7 +7,10 @@ struct SearchPageView: View {
     @Binding private var query: String
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
+    @State private var searchRefreshTask: Task<Void, Never>?
     @FocusState private var localSearchFieldFocused: Bool
+
+    private static let queryRefreshDelay: UInt64 = 90_000_000
 
     let isFieldFocused: Bool
     let chromeNamespace: Namespace.ID?
@@ -91,8 +94,12 @@ struct SearchPageView: View {
         }
         .accessibilityIdentifier("SearchPageView")
         .onAppear(perform: refreshSearchResultsIfNeeded)
-        .onChange(of: trimmedQuery) { _, _ in
-            refreshSearchResultsIfNeeded()
+        .onChange(of: trimmedQuery) { _, nextQuery in
+            scheduleSearchResultsRefresh(for: nextQuery)
+        }
+        .onDisappear {
+            searchRefreshTask?.cancel()
+            searchRefreshTask = nil
         }
     }
 
@@ -111,6 +118,26 @@ struct SearchPageView: View {
         }
 
         searchResults = SearchPageResults(query: nextQuery)
+    }
+
+    private func scheduleSearchResultsRefresh(for nextQuery: String) {
+        searchRefreshTask?.cancel()
+        guard searchResults.query != nextQuery else {
+            searchRefreshTask = nil
+            return
+        }
+
+        searchRefreshTask = Task { @MainActor in
+            if !nextQuery.isEmpty {
+                try? await Task.sleep(nanoseconds: Self.queryRefreshDelay)
+            }
+
+            guard !Task.isCancelled else {
+                return
+            }
+
+            searchResults = SearchPageResults(query: nextQuery)
+        }
     }
 
     private var currentWindowTopSafeAreaInset: CGFloat {
