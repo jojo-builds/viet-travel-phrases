@@ -595,13 +595,16 @@ enum BrowseSearchDestinations {
     static func firstOpenablePageID(categoryIDs: [String]) -> String? {
         categoryIDs.lazy
             .flatMap { categoryID in PhraseCatalog.items(selectedCategoryID: categoryID) }
+            .filter(shouldSurfaceCatalogItemInBrowse)
             .compactMap { item in PhraseCatalog.canonicalPageID(forOpenablePageID: item.pageID) }
             .first
     }
 
     static func itemCount(categoryIDs: [String]) -> Int {
         let pageIDs = categoryIDs.flatMap { categoryID in
-            PhraseCatalog.items(selectedCategoryID: categoryID).map(\.pageID)
+            PhraseCatalog.items(selectedCategoryID: categoryID)
+                .filter(shouldSurfaceCatalogItemInBrowse)
+                .map(\.pageID)
         }
 
         return Set(pageIDs).count
@@ -613,6 +616,10 @@ enum BrowseSearchDestinations {
 
         for categoryID in categoryIDs {
             for item in PhraseCatalog.items(selectedCategoryID: categoryID) {
+                guard shouldSurfaceCatalogItemInBrowse(item) else {
+                    continue
+                }
+
                 guard seen.insert(item.pageID).inserted else {
                     continue
                 }
@@ -645,7 +652,14 @@ enum BrowseSearchDestinations {
     }
 
     static func searchResults(for query: String, limit: Int) -> [BrowseSearchPhraseItem] {
-        PhraseSearchIndex.search(query, limit: limit)
+        let rawResults = PhraseSearchIndex.search(query, limit: max(limit * 3, limit))
+        let allowsDerivedPlacePhrases = allowsDerivedPlacePhraseSearchResults(for: query)
+        let filteredResults = rawResults.filter { result in
+            allowsDerivedPlacePhrases || !isDerivedPlacePhrase(pageID: result.pageID)
+        }
+        let results = filteredResults.isEmpty ? rawResults : filteredResults
+
+        return results
             .prefix(limit)
             .map(BrowseSearchPhraseItem.fromSearchResult)
     }
@@ -904,7 +918,7 @@ enum BrowseSearchDestinations {
         let cityHub = cityHubDescriptor(for: id, title: title, city: city, cityItems: cityItems, groupedItems: groupedItems)
         let starterItems = cityHub.namesToKnowItems
         let subcategories = orderedSubcategoryIDs.map { subcategoryID in
-            let rows = groupedItems[subcategoryID, default: []]
+            let rows = groupedItems[subcategoryID, default: []].filter(shouldSurfaceCityItemInBrowse)
             let title = rows.first?.subcategoryTitle ?? citySubcategoryTitles[subcategoryID] ?? "City phrases"
             return BrowseCollectionSubcategory(
                 id: "\(id).\(subcategoryID)",
@@ -920,7 +934,10 @@ enum BrowseSearchDestinations {
             .filter { $0 != "arrivals-routes" }
             .prefix(3)
             .compactMap { subcategoryID -> BrowseCollectionShelf? in
-                let rows = groupedItems[subcategoryID, default: []].prefix(6).map(\.phraseItem)
+                let rows = groupedItems[subcategoryID, default: []]
+                    .filter(shouldSurfaceCityItemInBrowse)
+                    .prefix(6)
+                    .map(\.phraseItem)
                 guard !rows.isEmpty else {
                     return nil
                 }
@@ -1149,8 +1166,10 @@ enum BrowseSearchDestinations {
         groupedItems: [String: [BrowseCityCollectionItem]]
     ) -> [BrowseSearchPhraseItem] {
         let preferredItems = pageItems(forOpenablePageIDs: spec.preferredPageIDs)
+            .filter(shouldSurfacePhraseItemInBrowse)
         let fallbackItems = spec.subcategoryIDs
             .flatMap { groupedItems[$0, default: []] }
+            .filter(shouldSurfaceCityItemInBrowse)
             .filter { !lowPriorityCityOverviewText($0.title, $0.subtitle) }
             .prefix(8)
             .map(\.phraseItem)
@@ -1205,6 +1224,7 @@ enum BrowseSearchDestinations {
         }()
 
         var items = pageItems(forPhraseIDs: preferredIDs)
+            .filter(shouldSurfacePhraseItemInBrowse)
         if let bathroom = BrowseSearchPhraseItem.resolve(pageID: "viet-family-bathroom-where") {
             items.append(bathroom)
         }
@@ -1215,6 +1235,7 @@ enum BrowseSearchDestinations {
 
         let fallback = cityItems
             .filter { $0.subcategoryID == "arrivals-routes" || $0.subcategoryID == "practical-help-near-places" }
+            .filter(shouldSurfaceCityItemInBrowse)
             .filter { !lowPriorityCityOverviewText($0.title, $0.subtitle) }
             .prefix(5)
             .map(\.phraseItem)
@@ -1578,6 +1599,7 @@ enum BrowseSearchDestinations {
         let excluded = Set(excludedPageIDs)
         return categoryIDs.compactMap { categoryID in
             let rows = PhraseCatalog.items(selectedCategoryID: categoryID)
+                .filter(shouldSurfaceCatalogItemInBrowse)
                 .filter { !excluded.contains($0.pageID) }
                 .prefix(6)
                 .map { item in
@@ -1612,6 +1634,10 @@ enum BrowseSearchDestinations {
         var rows: [BrowseSearchPhraseItem] = []
 
         for item in preferredPageIDs.compactMap(BrowseSearchPhraseItem.resolve(pageID:)) {
+            guard shouldSurfacePhraseItemInBrowse(item) else {
+                continue
+            }
+
             guard seen.insert(item.pageID).inserted else {
                 continue
             }
@@ -1641,6 +1667,10 @@ enum BrowseSearchDestinations {
 
         for categoryID in categoryIDs {
             for item in PhraseCatalog.items(selectedCategoryID: categoryID) {
+                guard shouldSurfaceCatalogItemInBrowse(item) else {
+                    continue
+                }
+
                 guard seen.insert(item.pageID).inserted else {
                     continue
                 }
@@ -1670,6 +1700,51 @@ enum BrowseSearchDestinations {
         }
 
         return rows
+    }
+
+    private static let derivedPlacePhraseCategoryID = "derived-place-phrases"
+
+    private static let derivedPlacePhraseActionTokens: Set<String> = [
+        "address",
+        "atm",
+        "direction",
+        "directions",
+        "drop",
+        "eat",
+        "find",
+        "get",
+        "go",
+        "near",
+        "nearby",
+        "off",
+        "pickup",
+        "stop",
+        "take",
+        "taxi",
+        "there",
+        "to",
+        "where",
+    ]
+
+    private static func shouldSurfaceCatalogItemInBrowse(_ item: PhraseCatalogItem) -> Bool {
+        !item.categoryIDs.contains(derivedPlacePhraseCategoryID)
+    }
+
+    private static func shouldSurfaceCityItemInBrowse(_ item: BrowseCityCollectionItem) -> Bool {
+        !item.categoryIDs.contains(derivedPlacePhraseCategoryID)
+    }
+
+    private static func shouldSurfacePhraseItemInBrowse(_ item: BrowseSearchPhraseItem) -> Bool {
+        !isDerivedPlacePhrase(pageID: item.pageID)
+    }
+
+    private static func isDerivedPlacePhrase(pageID: String) -> Bool {
+        PhraseCatalog.categoryIDs(forPageID: pageID).contains(derivedPlacePhraseCategoryID)
+    }
+
+    private static func allowsDerivedPlacePhraseSearchResults(for query: String) -> Bool {
+        let tokens = Set(normalize(query).split(separator: " ").map(String.init))
+        return !tokens.intersection(derivedPlacePhraseActionTokens).isEmpty
     }
 
     private static func mastheadImageName(for route: BrowseCollectionRoute) -> String {

@@ -64,6 +64,7 @@ Rules:
 - `native-ios/scripts/generate-viet-catalog.js` generates the native phrase catalog from repo content.
 - `native-ios/scripts/generate-authored-tier-one-pages.js` generates the authored Tier 1 listing-page resource and audio audit from `content-draft/viet/listing-pages/**`.
 - Phrase/listing navigation is a canonical page graph, not a strict parent-child tree. Each traveler-facing phrase page has one stable page ID, and search, browse, related rows, and "ways to say it" links must all point to that canonical page instead of creating duplicate pages for the same phrase.
+- Entity/place pages should not inflate the app by surfacing every generated `action + place` row as catalog inventory. Follow `docs/content/ENTITY_TEMPLATE_PHRASE_POLICY.md`: Browse/Home/city/category surfaces are entity-first, `derived-place-phrases` stay hidden from top-level shelves, and those helper rows surface only for explicit action search, intentional template UI, or Messages/Story flows.
 - Listing pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" article pages with real traveler utility, not generic generated filler.
 - Homepage phrase shelves should reuse existing Browse routes when they are genuinely close instead of creating duplicate category IDs. Current homepage shelf routing contract:
   - `Use now` -> `.category("essentials")`

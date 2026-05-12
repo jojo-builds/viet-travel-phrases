@@ -1268,16 +1268,62 @@ final class AppChromeTests: XCTestCase {
         })
 
         XCTAssertEqual(cityHub.quickPhrasesTitle, "Quick phrases")
-        XCTAssertEqual(cityHub.quickPhraseItems.first?.pageID, "viet-phrase-city-danang-to-airport")
-        XCTAssertTrue(cityHub.quickPhraseItems.contains { $0.pageID == "viet-phrase-city-danang-get-off-my-khe" })
         XCTAssertTrue(cityHub.quickPhraseItems.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
         XCTAssertTrue(cityHub.quickPhraseItems.contains { item in
             item.title.localizedCaseInsensitiveContains("Nhà vệ sinh")
                 || item.subtitle.localizedCaseInsensitiveContains("bathroom")
         })
+        assertNoDerivedPlacePhraseRows(cityHub.quickPhraseItems, context: "Da Nang quick phrases")
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Landmarks" })
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
         XCTAssertTrue(cityHub.browseGroups.allSatisfy { $0.targetRoute == nil })
+    }
+
+    func testCityHubAndSearchDoNotTreatDerivedPlacePhrasesAsBrowseInventory() {
+        let danang = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("danang")))
+        let cityHub = try! XCTUnwrap(danang.cityHub)
+
+        let citySurfaceItems = cityHub.situations.flatMap(\.items)
+            + cityHub.namesToKnowItems
+            + cityHub.quickPhraseItems
+            + cityHub.browseGroups.flatMap(\.items)
+        assertNoDerivedPlacePhraseRows(citySurfaceItems, context: "Da Nang city surface")
+
+        let entityOnlyResults = BrowseSearchDestinations.searchResults(for: "Dragon Bridge", limit: 10)
+        XCTAssertEqual(entityOnlyResults.first?.pageID, "viet-phrase-city-danang-place-dragon-bridge")
+        assertNoDerivedPlacePhraseRows(entityOnlyResults, context: "Dragon Bridge entity-only search")
+
+        let actionResults = BrowseSearchDestinations.searchResults(for: "where is Dragon Bridge", limit: 10)
+        XCTAssertTrue(
+            actionResults.contains { $0.pageID == "viet-phrase-city-danang-where-dragon-bridge" },
+            actionResults.map(\.pageID).joined(separator: "\n")
+        )
+    }
+
+    func testEntityDetailPagesHideGeneratedPlaceTemplateRows() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+
+        let baNa = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-ba-na-hills")
+        let baNaRows = baNa.sections.flatMap(\.phrases)
+        XCTAssertTrue(baNaRows.contains { $0.detailPageID == "viet-phrase-ves-take-me-to-ba-na-hills" })
+        assertNoDerivedPlacePhraseRows(baNaRows.map { phrase in
+            BrowseSearchPhraseItem(
+                pageID: phrase.detailPageID ?? phrase.id,
+                title: phrase.vietnamese,
+                subtitle: phrase.english,
+                symbolName: phrase.symbolName,
+                tintName: phrase.tintName,
+                audioKey: phrase.audioKey
+            )
+        }, context: "Ba Na Hills detail")
+        XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("ATM near Ba Na Hills") })
+        XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("Eat near Ba Na Hills") })
+
+        let dragonBridge = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-dragon-bridge")
+        let dragonRows = dragonBridge.sections.flatMap(\.phrases)
+        XCTAssertTrue(dragonRows.contains { $0.detailPageID == "viet-phrase-ves-drop-near-dragon-bridge" })
+        XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-go-dragon-bridge" })
+        XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-where-dragon-bridge" })
     }
 
     func testCityBrowseGroupsAreEntityFirstAcrossCities() {
@@ -1369,6 +1415,17 @@ final class AppChromeTests: XCTestCase {
                 || item.subtitle.localizedCaseInsensitiveContains("near ")
                 || item.subtitle.localizedCaseInsensitiveContains("please")
         }, "\(context) should not start with long-tail action phrase rows: \(items.map { "\($0.title) — \($0.subtitle)" })")
+    }
+
+    private func assertNoDerivedPlacePhraseRows(_ items: [BrowseSearchPhraseItem], context: String) {
+        let derivedItems = items.filter { item in
+            PhraseCatalog.categoryIDs(forPageID: item.pageID).contains("derived-place-phrases")
+        }
+
+        XCTAssertTrue(
+            derivedItems.isEmpty,
+            "\(context) should not surface generated place-template rows: \(derivedItems.map(\.pageID).joined(separator: "\n"))"
+        )
     }
 
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {
