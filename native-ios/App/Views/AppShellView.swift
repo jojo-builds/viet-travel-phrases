@@ -15,6 +15,10 @@ struct AppShellView: View {
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeMode: PracticeMode?
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
+    @State private var requestedPracticeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
+    @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
+    @State private var browseCollectionFocusRequestID = 0
+    @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
     @State private var homePhraseHeroRoutePageID: String?
@@ -124,6 +128,7 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
                     onOpenDetail: openDetailFromPractice,
                     onBrowseTapped: openBrowseAll,
+                    onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
                     onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
                 )
                 .allowsHitTesting(navigation.currentRoute == .practice && !isPreviewingForwardPage)
@@ -263,7 +268,11 @@ struct AppShellView: View {
 
     private var practiceStartRequest: PracticeStartRequest? {
         if let requestedPracticeScenarioID {
-            return PracticeStartRequest(id: practiceStartRequestID, scenarioID: requestedPracticeScenarioID)
+            return PracticeStartRequest(
+                id: practiceStartRequestID,
+                scenarioID: requestedPracticeScenarioID,
+                scenarioThreadDismissal: requestedPracticeScenarioThreadDismissal
+            )
         }
 
         if let requestedPracticeMode {
@@ -284,6 +293,7 @@ struct AppShellView: View {
                     descriptor: descriptor,
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
+                    focusRequest: browseCollectionFocusRequest,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -430,6 +440,7 @@ struct AppShellView: View {
                     descriptor: descriptor,
                     scrollToTopTrigger: 0,
                     scrollToTopRoute: nil,
+                    focusRequest: nil,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -1563,17 +1574,64 @@ struct AppShellView: View {
             intentStore.addPracticePages(pageIDs)
             requestedPracticeMode = nil
             requestedPracticeScenarioID = nil
+            requestedPracticeScenarioThreadDismissal = .messagesHub
+            pendingPracticeThreadReturnFocus = nil
         case .practiceMode(let mode):
             practiceStartRequestID += 1
             requestedPracticeMode = mode
             requestedPracticeScenarioID = nil
+            requestedPracticeScenarioThreadDismissal = .messagesHub
+            pendingPracticeThreadReturnFocus = nil
         case .practiceScenario(let scenarioID):
             practiceStartRequestID += 1
             requestedPracticeMode = nil
             requestedPracticeScenarioID = scenarioID
+            if case .browseCollection(let route) = navigation.currentRoute {
+                requestedPracticeScenarioThreadDismissal = .originRoute
+                pendingPracticeThreadReturnFocus = BrowseCollectionFocusRequest(
+                    id: 0,
+                    route: route,
+                    target: .messageScenario(scenarioID)
+                )
+            } else {
+                requestedPracticeScenarioThreadDismissal = .messagesHub
+                pendingPracticeThreadReturnFocus = nil
+            }
         }
 
         openPractice()
+    }
+
+    private func returnFromPracticeThreadToOrigin() {
+        let focusRequest = pendingPracticeThreadReturnFocus
+        pendingPracticeThreadReturnFocus = nil
+        cancelInteractiveChromeState()
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.goBack()
+        }
+        restoreBrowseCollectionFocusIfNeeded(focusRequest)
+    }
+
+    private func restoreBrowseCollectionFocusIfNeeded(_ focusRequest: BrowseCollectionFocusRequest?) {
+        guard let focusRequest else {
+            return
+        }
+
+        DispatchQueue.main.async {
+            browseCollectionFocusRequestID += 1
+            let request = BrowseCollectionFocusRequest(
+                id: browseCollectionFocusRequestID,
+                route: focusRequest.route,
+                target: focusRequest.target
+            )
+            browseCollectionFocusRequest = request
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if browseCollectionFocusRequest == request {
+                    browseCollectionFocusRequest = nil
+                }
+            }
+        }
     }
 
     private func goBack() {

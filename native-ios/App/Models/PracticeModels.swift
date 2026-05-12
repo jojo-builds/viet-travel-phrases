@@ -101,21 +101,33 @@ enum PracticeEntryContext: String, Codable, Equatable {
     case placement
 }
 
+enum PracticeScenarioThreadDismissal: Equatable {
+    case messagesHub
+    case originRoute
+}
+
 struct PracticeStartRequest: Equatable {
     let id: Int
     let mode: PracticeMode?
     let scenarioID: PracticeScenarioID?
+    let scenarioThreadDismissal: PracticeScenarioThreadDismissal
 
     init(id: Int, mode: PracticeMode) {
         self.id = id
         self.mode = mode
         self.scenarioID = nil
+        self.scenarioThreadDismissal = .messagesHub
     }
 
-    init(id: Int, scenarioID: PracticeScenarioID) {
+    init(
+        id: Int,
+        scenarioID: PracticeScenarioID,
+        scenarioThreadDismissal: PracticeScenarioThreadDismissal = .messagesHub
+    ) {
         self.id = id
         self.mode = nil
         self.scenarioID = scenarioID
+        self.scenarioThreadDismissal = scenarioThreadDismissal
     }
 }
 
