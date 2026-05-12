@@ -63,8 +63,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionMaximumStretch, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionLagFactor, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapActivationDelay, 0)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapWaypointDelay, AppChromeLayout.dockSelectionTapActivationDelay)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapSettleDelay, 0)
+        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapTravelDelay, AppChromeLayout.dockSelectionTapActivationDelay)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapDeactivateDelay, 0)
     }
 
@@ -104,11 +103,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(expandedLens.height, AppChromeLayout.dockSelectionPressedHeight)
     }
 
-    func testDockSelectionTapFlightVisitsIntermediateTabs() {
-        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 0, to: 3), [1, 2, 3])
-        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 3, to: 0), [2, 1, 0])
-        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 1, to: 2), [2])
-        XCTAssertEqual(AppDockSelectionLayout.waypointIndexes(from: 2, to: 2), [2])
+    func testDockSelectionTapFlightUsesSingleFluidTravelWindow() {
+        let totalTapFlightDelay = AppChromeLayout.dockSelectionTapActivationDelay
+            + AppChromeLayout.dockSelectionTapTravelDelay
+            + AppChromeLayout.dockSelectionTapDeactivateDelay
+
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapActivationDelay, 45_000_000)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapTravelDelay, 170_000_000)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapDeactivateDelay, 90_000_000)
+        XCTAssertLessThanOrEqual(totalTapFlightDelay, 305_000_000)
     }
 
     func testDockSelectionLensStretchesWhileDraggingAndSettlesWhenReducedMotion() {
