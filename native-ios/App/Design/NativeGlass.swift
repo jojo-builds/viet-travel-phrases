@@ -253,17 +253,18 @@ enum AppChromeLayout {
     static let bottomOffset: CGFloat = 0
     static let bottomSeparationHeight: CGFloat = 0
     static let topSeparationHeight: CGFloat = 112
-    static let bottomHitTestEnvelopeHeight: CGFloat = 116
+    static let bottomHitTestEnvelopeHeight: CGFloat = 108
     static let chromeSeparationAllowsHitTesting = false
     static let dockItemSpacing: CGFloat = 8
     static let dockItemWidth: CGFloat = 58
-    static let dockItemHeight: CGFloat = 60
+    static let dockItemHeight: CGFloat = 56
     static let dockBackdropFillOpacity: Double = 0.40
     static let chromeControlBackdropFillOpacity: Double = 0.46
-    static let dockSelectionWidth: CGFloat = 112
-    static let dockSelectionHeight: CGFloat = 86
-    static let dockSelectionCornerRadius: CGFloat = 43
-    static let dockSelectionMorphDuration = 0.42
+    static let dockSelectionWidth: CGFloat = 76
+    static let dockSelectionPressedWidth: CGFloat = 104
+    static let dockSelectionHeight: CGFloat = 58
+    static let dockSelectionPressedHeight: CGFloat = 74
+    static let dockSelectionMorphDuration = 0.34
     static let dockSelectionDragCommitDistance: CGFloat = 4
     static let dockSelectionStretchFactor: CGFloat = 0.30
     static let dockSelectionMaximumStretch: CGFloat = 54
@@ -276,9 +277,9 @@ enum AppChromeLayout {
     static let dockHorizontalPadding: CGFloat = 10
     static let dockVerticalPadding: CGFloat = 4
     static let dockCornerRadius: CGFloat = 34
-    static let searchIslandSize: CGFloat = 68
-    static let searchIslandCornerRadius: CGFloat = 34
-    static let searchFieldHeight: CGFloat = 68
+    static let searchIslandSize: CGFloat = 64
+    static let searchIslandCornerRadius: CGFloat = 32
+    static let searchFieldHeight: CGFloat = 64
     static let searchFieldHorizontalPadding: CGFloat = 16
     static let searchMorphDuration = 0.39
     static let dockMorphZIndex: Double = 2
@@ -302,6 +303,7 @@ enum AppChromeLayout {
 struct AppDockSelectionLensMetrics: Equatable {
     let xOffset: CGFloat
     let width: CGFloat
+    let height: CGFloat
 }
 
 enum AppDockSelectionLayout {
@@ -381,8 +383,13 @@ enum AppDockSelectionLayout {
         dragX: CGFloat?,
         itemCount: Int,
         reduceMotion: Bool,
-        contentWidth: CGFloat? = nil
+        contentWidth: CGFloat? = nil,
+        predictedDragX: CGFloat? = nil
     ) -> AppDockSelectionLensMetrics {
+        guard itemCount > 0 else {
+            return AppDockSelectionLensMetrics(xOffset: 0, width: 0, height: 0)
+        }
+
         let trackWidth = contentWidth ?? self.contentWidth(itemCount: itemCount)
         let selectedCenter = itemCenterX(index: selectedIndex, itemCount: itemCount, contentWidth: trackWidth)
         let fallbackCenter = activeIndex.map {
@@ -390,23 +397,47 @@ enum AppDockSelectionLayout {
         } ?? selectedCenter
         let targetCenter = dragX.map { clampedDragX($0, itemCount: itemCount, contentWidth: trackWidth) } ?? fallbackCenter
 
-        guard !reduceMotion, dragX != nil else {
+        guard dragX != nil else {
             return AppDockSelectionLensMetrics(
                 xOffset: fallbackCenter - AppChromeLayout.dockSelectionWidth / 2,
-                width: AppChromeLayout.dockSelectionWidth
+                width: AppChromeLayout.dockSelectionWidth,
+                height: AppChromeLayout.dockSelectionHeight
+            )
+        }
+
+        guard !reduceMotion else {
+            return AppDockSelectionLensMetrics(
+                xOffset: fallbackCenter - AppChromeLayout.dockSelectionPressedWidth / 2,
+                width: AppChromeLayout.dockSelectionPressedWidth,
+                height: AppChromeLayout.dockSelectionPressedHeight
             )
         }
 
         let distance = abs(targetCenter - selectedCenter)
-        let stretch = min(distance * AppChromeLayout.dockSelectionStretchFactor, AppChromeLayout.dockSelectionMaximumStretch)
-        let lag = min(distance * AppChromeLayout.dockSelectionLagFactor, AppChromeLayout.dockSelectionMaximumLag)
+        let predictedCenter = predictedDragX.map {
+            clampedDragX($0, itemCount: itemCount, contentWidth: trackWidth)
+        } ?? targetCenter
+        let predictedTravel = abs(predictedCenter - targetCenter)
+        let stretch = min(
+            distance * AppChromeLayout.dockSelectionStretchFactor + predictedTravel * 0.16,
+            AppChromeLayout.dockSelectionMaximumStretch
+        )
+        let lag = min(
+            (distance + predictedTravel * 0.24) * AppChromeLayout.dockSelectionLagFactor,
+            AppChromeLayout.dockSelectionMaximumLag
+        )
         let direction: CGFloat = targetCenter >= selectedCenter ? 1 : -1
         let liquidCenter = targetCenter - direction * lag
-        let width = AppChromeLayout.dockSelectionWidth + stretch
+        let width = AppChromeLayout.dockSelectionPressedWidth + stretch
+        let height = min(
+            AppChromeLayout.dockSelectionPressedHeight + stretch * 0.08,
+            AppChromeLayout.dockSelectionPressedHeight + 6
+        )
 
         return AppDockSelectionLensMetrics(
             xOffset: liquidCenter - width / 2,
-            width: width
+            width: width,
+            height: height
         )
     }
 }

@@ -736,19 +736,24 @@ struct AppShellView: View {
             let selectedIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
             let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
             let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
+            let isPressingDockSelection = dockDrag.dragX != nil
+            let isDraggingDockSelection = dockDrag.didMoveBeyondTap
             let lensMetrics = AppDockSelectionLayout.lensMetrics(
                 selectedIndex: selectedIndex,
                 activeIndex: activeIndex,
                 dragX: dockDrag.dragX,
                 itemCount: itemCount,
                 reduceMotion: reduceMotion,
-                contentWidth: contentWidth
+                contentWidth: contentWidth,
+                predictedDragX: dockDrag.predictedDragX
             )
 
             ZStack(alignment: .leading) {
                 AppShellDockSelectionLens(
                     width: lensMetrics.width,
-                    active: dockDrag.dragX != nil,
+                    height: lensMetrics.height,
+                    isPressed: isPressingDockSelection,
+                    isDragging: isDraggingDockSelection,
                     chromeNamespace: chromeNamespace
                 )
                     .offset(x: lensMetrics.xOffset)
@@ -841,11 +846,13 @@ struct AppShellView: View {
                 itemCount: chrome.primaryDockItems.count,
                 contentWidth: contentWidth
             )
+        let predictedDragX = didMoveBeyondTap ? value.predictedEndLocation.x : dragX
 
         dockDrag = AppDockInteractionState(
             startItem: startItem,
             activeItem: activeItem,
             dragX: dragX,
+            predictedDragX: predictedDragX,
             didMoveBeyondTap: didMoveBeyondTap
         )
 
@@ -898,6 +905,7 @@ struct AppShellView: View {
                 startItem: chrome.selectedDockItem,
                 activeItem: chrome.selectedDockItem,
                 dragX: sourceX,
+                predictedDragX: sourceX,
                 didMoveBeyondTap: false
             )
         }
@@ -928,6 +936,7 @@ struct AppShellView: View {
                         startItem: chrome.selectedDockItem,
                         activeItem: waypointItem,
                         dragX: waypointX,
+                        predictedDragX: waypointX,
                         didMoveBeyondTap: true
                     )
                 }
@@ -2662,12 +2671,14 @@ private struct AppDockInteractionState: Equatable {
     var startItem: DockItemKind?
     var activeItem: DockItemKind?
     var dragX: CGFloat?
+    var predictedDragX: CGFloat?
     var didMoveBeyondTap: Bool
 
     static let inactive = AppDockInteractionState(
         startItem: nil,
         activeItem: nil,
         dragX: nil,
+        predictedDragX: nil,
         didMoveBeyondTap: false
     )
 }
@@ -2677,34 +2688,36 @@ private struct AppChromeGlassOutline<S: InsettableShape>: ViewModifier {
     var prominence: Double
 
     func body(content: Content) -> some View {
+        let clampedProminence = min(max(prominence, 0), 1)
+
         content
             .overlay {
                 shape
-                    .strokeBorder(.white.opacity(0.84 + 0.12 * prominence), lineWidth: 1.1 + 0.35 * prominence)
+                    .strokeBorder(.white.opacity(0.34 + 0.48 * clampedProminence), lineWidth: 0.65 + 0.65 * clampedProminence)
                     .blendMode(.screen)
 
                 shape
                     .strokeBorder(
                         AngularGradient(
                             colors: [
-                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.42 * prominence),
-                                Color(red: 0.95, green: 0.42, blue: 1.0).opacity(0.32 * prominence),
+                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.42 * clampedProminence),
+                                Color(red: 0.95, green: 0.42, blue: 1.0).opacity(0.32 * clampedProminence),
                                 .white.opacity(0.0),
-                                Color(red: 1.0, green: 0.87, blue: 0.36).opacity(0.28 * prominence),
-                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.42 * prominence),
+                                Color(red: 1.0, green: 0.87, blue: 0.36).opacity(0.28 * clampedProminence),
+                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.42 * clampedProminence),
                             ],
                             center: .center
                         ),
-                        lineWidth: 1.6 + 0.9 * prominence
+                        lineWidth: 1.6 + 0.9 * clampedProminence
                     )
                     .blendMode(.screen)
 
                 shape
-                    .strokeBorder(Color.black.opacity(0.045), lineWidth: 0.8)
+                    .strokeBorder(Color.black.opacity(0.02 + 0.03 * clampedProminence), lineWidth: 0.65)
                     .blendMode(.multiply)
             }
-            .shadow(color: .white.opacity(0.34 + 0.22 * prominence), radius: 22, x: 0, y: 0)
-            .shadow(color: .black.opacity(0.11), radius: 24, x: 0, y: 12)
+            .shadow(color: .white.opacity(0.16 + 0.28 * clampedProminence), radius: 16 + 8 * clampedProminence, x: 0, y: 0)
+            .shadow(color: .black.opacity(0.055 + 0.055 * clampedProminence), radius: 14 + 10 * clampedProminence, x: 0, y: 6 + 6 * clampedProminence)
     }
 }
 
@@ -2750,25 +2763,30 @@ private struct AppShellDockItem: View {
 
 private struct AppShellDockSelectionLens: View {
     var width = AppChromeLayout.dockSelectionWidth
-    var active = false
+    var height = AppChromeLayout.dockSelectionHeight
+    var isPressed = false
+    var isDragging = false
     var chromeNamespace: Namespace.ID?
 
     var body: some View {
-        let cornerRadius = AppChromeLayout.dockSelectionCornerRadius
+        let cornerRadius = height / 2
         let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+        let surfaceOpacity = isDragging ? 0.64 : (isPressed ? 0.56 : 0.24)
+        let highlightOpacity = isDragging ? 0.52 : (isPressed ? 0.38 : 0.12)
+        let edgeProminence = isDragging ? 0.58 : (isPressed ? 0.36 : 0.08)
 
         ZStack {
             shape
-                .fill(Color.white.opacity(active ? 0.78 : 0.66))
+                .fill(Color.white.opacity(surfaceOpacity))
 
             shape
                 .fill(
                     LinearGradient(
                         colors: [
-                            .white.opacity(active ? 0.96 : 0.86),
-                            Color(red: 0.78, green: 0.94, blue: 1.0).opacity(active ? 0.36 : 0.26),
-                            Color(red: 1.0, green: 0.84, blue: 0.98).opacity(active ? 0.28 : 0.20),
-                            .white.opacity(active ? 0.56 : 0.44),
+                            .white.opacity(0.54 + highlightOpacity),
+                            Color(red: 0.78, green: 0.94, blue: 1.0).opacity(0.16 + highlightOpacity * 0.44),
+                            Color(red: 1.0, green: 0.84, blue: 0.98).opacity(0.10 + highlightOpacity * 0.34),
+                            .white.opacity(0.24 + highlightOpacity * 0.5),
                         ],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
@@ -2776,63 +2794,66 @@ private struct AppShellDockSelectionLens: View {
                 )
                 .blendMode(.plusLighter)
 
-            shape
-                .fill(
-                    RadialGradient(
-                        colors: [
-                            Color(red: 0.72, green: 0.94, blue: 1.0).opacity(active ? 0.42 : 0.30),
-                            .white.opacity(0.0),
-                        ],
-                        center: .topLeading,
-                        startRadius: 0,
-                        endRadius: active ? 86 : 70
+            if isPressed {
+                shape
+                    .fill(
+                        RadialGradient(
+                            colors: [
+                                Color(red: 0.72, green: 0.94, blue: 1.0).opacity(isDragging ? 0.34 : 0.22),
+                                .white.opacity(0.0),
+                            ],
+                            center: .topLeading,
+                            startRadius: 0,
+                            endRadius: isDragging ? 86 : 64
+                        )
                     )
+                    .blendMode(.screen)
+
+                LinearGradient(
+                    colors: [
+                        .white.opacity(0.0),
+                        .white.opacity(isDragging ? 0.66 : 0.46),
+                        .white.opacity(0.0),
+                    ],
+                    startPoint: .leading,
+                    endPoint: .trailing
                 )
+                .offset(x: isDragging ? -10 : -6)
                 .blendMode(.screen)
 
-            LinearGradient(
-                colors: [
-                    .white.opacity(0.0),
-                    .white.opacity(active ? 0.86 : 0.68),
-                    .white.opacity(0.0),
-                ],
-                startPoint: .leading,
-                endPoint: .trailing
-            )
-            .offset(x: active ? -12 : -8)
-            .blendMode(.screen)
+                shape
+                    .strokeBorder(
+                        AngularGradient(
+                            colors: [
+                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.72 : 0.42),
+                                Color(red: 0.88, green: 0.18, blue: 1.0).opacity(isDragging ? 0.58 : 0.32),
+                                .white.opacity(isDragging ? 0.72 : 0.48),
+                                Color(red: 1.0, green: 0.80, blue: 0.10).opacity(isDragging ? 0.50 : 0.28),
+                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.72 : 0.42),
+                            ],
+                            center: .center
+                        ),
+                        lineWidth: isDragging ? 2.4 : 1.5
+                    )
+                    .blendMode(.screen)
+            }
 
             shape
-                .strokeBorder(
-                    AngularGradient(
-                        colors: [
-                            Color(red: 0.02, green: 0.62, blue: 1.0).opacity(active ? 0.98 : 0.80),
-                            Color(red: 0.88, green: 0.18, blue: 1.0).opacity(active ? 0.90 : 0.68),
-                            .white.opacity(active ? 0.96 : 0.78),
-                            Color(red: 1.0, green: 0.80, blue: 0.10).opacity(active ? 0.86 : 0.62),
-                            Color(red: 0.02, green: 0.62, blue: 1.0).opacity(active ? 0.98 : 0.80),
-                        ],
-                        center: .center
-                    ),
-                    lineWidth: active ? 4.6 : 3.6
-                )
-
-            shape
-                .stroke(.white.opacity(active ? 0.98 : 0.90), lineWidth: active ? 1.5 : 1.1)
+                .stroke(.white.opacity(isPressed ? 0.88 : 0.64), lineWidth: isPressed ? 1.0 : 0.7)
                 .blendMode(.screen)
 
             shape
-                .stroke(Color.black.opacity(active ? 0.075 : 0.045), lineWidth: 0.8)
+                .stroke(Color.black.opacity(isPressed ? 0.06 : 0.03), lineWidth: 0.6)
                 .blendMode(.multiply)
         }
-        .frame(width: width, height: AppChromeLayout.dockSelectionHeight)
+        .frame(width: width, height: height)
         .clipShape(shape)
-        .nativeGlass(cornerRadius: cornerRadius, tint: Color(red: 0.84, green: 0.95, blue: 1.0), interactive: true)
-        .appChromeGlassOutline(in: shape, prominence: active ? 1.0 : 0.86)
+        .nativeGlass(cornerRadius: cornerRadius, tint: isPressed ? Color(red: 0.84, green: 0.95, blue: 1.0) : .white, interactive: isPressed)
+        .appChromeGlassOutline(in: shape, prominence: edgeProminence)
         .nativeGlassMorphID(AppChromeMorphID.dockSelection, namespace: chromeNamespace)
-        .scaleEffect(active ? 1.075 : 1.0)
-        .shadow(color: .white.opacity(active ? 0.92 : 0.72), radius: active ? 34 : 24, x: 0, y: 0)
-        .shadow(color: .black.opacity(active ? 0.24 : 0.16), radius: active ? 28 : 20, x: 0, y: active ? 13 : 10)
+        .scaleEffect(isDragging ? 1.02 : (isPressed ? 1.01 : 1.0))
+        .shadow(color: .white.opacity(isPressed ? 0.54 : 0.22), radius: isPressed ? 24 : 14, x: 0, y: 0)
+        .shadow(color: .black.opacity(isPressed ? 0.13 : 0.07), radius: isPressed ? 20 : 12, x: 0, y: isPressed ? 8 : 5)
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
