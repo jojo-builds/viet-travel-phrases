@@ -306,7 +306,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .hotelCheckInHelp:
             return ["Booking", "Passport", "Wi-Fi", "Room help"]
         case .hotelRoomHelp:
-            return ["Key card", "Wi-Fi", "AC", "Supplies"]
+            return ["Key card", "Try again", "Staff", "Supplies"]
         case .hotelBagsTaxi:
             return ["Hold bags", "Pickup", "Taxi", "Airport"]
         case .hotelWifiCheckout:
@@ -348,9 +348,9 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .localGreetingHotel:
             return ["Polite hello", "Wait", "Sorry", "Thanks"]
         case .localGreetingRespect:
-            return ["Older man", "Older woman", "Permission", "Close"]
+            return ["Respectful hello", "Look around", "Permission", "Thanks"]
         case .localThanksSorry:
-            return ["Thank you", "Sorry", "Repeat", "Goodbye"]
+            return ["Thank you", "Sorry", "Repeat", "No thanks"]
         }
     }
 

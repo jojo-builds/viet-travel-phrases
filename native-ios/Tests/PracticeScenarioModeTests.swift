@@ -182,6 +182,47 @@ final class PracticeScenarioModeTests: XCTestCase {
         }
     }
 
+    func testRoomHelpKeyCardThreadDoesNotJumpToWifi() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let roomHelp = try XCTUnwrap(snapshot.scenarios.first { $0.id == .hotelRoomHelp })
+        let openingStep = try XCTUnwrap(roomHelp.steps.first { $0.id == "hotel-room-opening" })
+        let keyCardOption = try XCTUnwrap(
+            openingStep.responseOptions.first { $0.scenarioEnglish.localizedCaseInsensitiveContains("key card") }
+        )
+        let turns = PracticeStoryTranscript.turns(
+            for: roomHelp,
+            currentIndex: 1,
+            selectedOptionIDs: [openingStep.id: keyCardOption.id],
+            revealedReplyStepIDs: [openingStep.id]
+        )
+        let visibleEnglish = turns.compactMap(\.english).joined(separator: "\n")
+        let choiceTurn = try XCTUnwrap(turns.last { $0.role == .choiceSet })
+        let visibleChoices = Array(choiceTurn.responseOptions.prefix(3)).map(\.scenarioEnglish)
+
+        XCTAssertTrue(
+            visibleEnglish.localizedCaseInsensitiveContains("reactivated the key card")
+                || visibleEnglish.localizedCaseInsensitiveContains("made a new key card"),
+            "Room Help should resolve the key-card exchange before offering the next reply."
+        )
+        XCTAssertEqual(
+            visibleChoices,
+            [
+                "Okay, I will try it",
+                "Can I change rooms?",
+                "Can someone come fix it?",
+            ]
+        )
+        XCTAssertFalse(
+            visibleChoices.contains { $0.localizedCaseInsensitiveContains("Wi-Fi") || $0.localizedCaseInsensitiveContains("password") },
+            "Room Help should not jump from key card help to Wi-Fi password choices."
+        )
+    }
+
     func testMessageThreadStartsAtTopBeforeFirstReply() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -768,7 +809,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Tôi đang vội",
                     "Chào anh",
                     "Chào chị",
-                    "chào ông",
+                    "chào cô",
                     "chào bà",
                     "Tôi có thể vào được không?",
                     "Xin lỗi",
@@ -1700,24 +1741,24 @@ final class PracticeScenarioModeTests: XCTestCase {
             MessageScriptContract(
                 scenarioID: .localGreetingRespect,
                 stepID: "greeting-respect-woman",
-                localMeaning: "Hello.",
+                localMeaning: "What would you like to look at?",
                 expectedTopEnglish: [
-                    "Respectful hello, ma'am.",
-                    "Hello, ma'am.",
-                    "Hello, auntie.",
+                    "I'm just looking",
+                    "I'm looking for a gift",
+                    "Can you help me?",
                 ],
                 forbiddenTopEnglish: [
-                    "Hello to an older woman",
+                    "Respectful hello, sir.",
                     "Can I sit here?",
                 ]
             ),
             MessageScriptContract(
                 scenarioID: .localThanksSorry,
                 stepID: "thanks-sorry-apology",
-                localMeaning: "It's okay.",
+                localMeaning: "You are in the wrong line.",
                 expectedTopEnglish: [
                     "Sorry",
-                    "No problem",
+                    "Please say that again",
                     "Thank you",
                 ],
                 forbiddenTopEnglish: [
@@ -1735,6 +1776,281 @@ final class PracticeScenarioModeTests: XCTestCase {
                 "Missing scenario \(contract.scenarioID.rawValue)"
             )
             assertMessageScriptContract(contract, in: scenario)
+        }
+    }
+
+    func testMessageScenarioTransitionsReadLikeContinuousConversations() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let scenariosByID = Dictionary(uniqueKeysWithValues: snapshot.scenarios.map { ($0.id, $0) })
+
+        let contracts: [MessageTransitionContract] = [
+            MessageTransitionContract(
+                scenarioID: .danangFirstDay,
+                selectedStepID: "airport-story-opening",
+                selectedEnglishFragment: "baggage claim",
+                nextStepID: "airport-story-baggage-belt",
+                nextLocalMeaningFragment: "baggage tag",
+                expectedNextTopEnglishFragments: ["baggage tag", "lost luggage", "help me"],
+                forbiddenNextTopEnglishFragments: ["Grab", "passport"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .airportPassportControl,
+                selectedStepID: "airport-passport-opening",
+                selectedEnglishFragment: "passport",
+                nextStepID: "airport-passport-visa",
+                nextLocalMeaningFragment: "visa",
+                expectedNextTopEnglishFragments: ["visa", "simpler"],
+                forbiddenNextTopEnglishFragments: ["baggage tag"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .airportSimCash,
+                selectedStepID: "airport-service-opening",
+                selectedEnglishFragment: "local SIM",
+                nextStepID: "airport-service-sim-type",
+                nextLocalMeaningFragment: "regular SIM",
+                expectedNextTopEnglishFragments: ["SIM card with data", "eSIM", "How much"],
+                forbiddenNextTopEnglishFragments: ["ATM", "pickup point"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .airportWifiPower,
+                selectedStepID: "airport-wifi-opening",
+                selectedEnglishFragment: "airport Wi-Fi",
+                nextStepID: "airport-wifi-desk",
+                nextLocalMeaningFragment: "information desk",
+                expectedNextTopEnglishFragments: ["information desk", "understand now", "simpler"],
+                forbiddenNextTopEnglishFragments: ["passport", "receipt"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .hotelCheckInHelp,
+                selectedStepID: "hotel-story-opening",
+                selectedEnglishFragment: "reservation",
+                nextStepID: "hotel-story-reservation",
+                nextLocalMeaningFragment: "reservation",
+                expectedNextTopEnglishFragments: ["reservation", "booked online", "reservation"],
+                forbiddenNextTopEnglishFragments: ["passport", "Wi-Fi"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .hotelRoomHelp,
+                selectedStepID: "hotel-room-opening",
+                selectedEnglishFragment: "key card",
+                nextStepID: "hotel-room-key-card-check",
+                nextLocalMeaningFragment: "key card",
+                expectedNextTopEnglishFragments: ["try", "change rooms", "come fix"],
+                forbiddenNextTopEnglishFragments: ["Wi-Fi", "password"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .hotelBagsTaxi,
+                selectedStepID: "hotel-bags-opening",
+                selectedEnglishFragment: "bags",
+                nextStepID: "hotel-bags-pickup",
+                nextLocalMeaningFragment: "pick up your luggage",
+                expectedNextTopEnglishFragments: ["pick up my luggage", "What time", "How long"],
+                forbiddenNextTopEnglishFragments: ["taxi", "airport"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .hotelWifiCheckout,
+                selectedStepID: "hotel-wifi-opening",
+                selectedEnglishFragment: "Wi-Fi password",
+                nextStepID: "hotel-wifi-problem",
+                nextLocalMeaningFragment: "Wi-Fi working",
+                expectedNextTopEnglishFragments: ["Wi-Fi is not working", "password is not working", "help me"],
+                forbiddenNextTopEnglishFragments: ["check-out", "luggage"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .restaurantOrderingPayment,
+                selectedStepID: "restaurant-story-opening",
+                selectedEnglishFragment: "table for two",
+                nextStepID: "restaurant-story-arrive",
+                nextLocalMeaningFragment: "menu",
+                expectedNextTopEnglishFragments: ["menu", "recommend", "No, thank you"],
+                forbiddenNextTopEnglishFragments: ["bill", "pay"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .danangDay,
+                selectedStepID: "beach-vendor-opening",
+                selectedEnglishFragment: "water",
+                nextStepID: "beach-vendor-chair",
+                nextLocalMeaningFragment: "chair and umbrella",
+                expectedNextTopEnglishFragments: ["umbrella", "How much", "sunscreen"],
+                forbiddenNextTopEnglishFragments: ["baggage", "passport"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .foodAllergyHelp,
+                selectedStepID: "food-allergy-opening",
+                selectedEnglishFragment: "Iced milk coffee",
+                nextStepID: "food-allergy-drink",
+                nextLocalMeaningFragment: "less ice",
+                expectedNextTopEnglishFragments: ["Less ice", "No sugar", "To go"],
+                forbiddenNextTopEnglishFragments: ["peanuts", "bill"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .foodCoffeeOrder,
+                selectedStepID: "coffee-order-opening",
+                selectedEnglishFragment: "Iced milk coffee",
+                nextStepID: "coffee-order-ice",
+                nextLocalMeaningFragment: "less ice",
+                expectedNextTopEnglishFragments: ["Less ice", "No sugar", "Less sugar"],
+                forbiddenNextTopEnglishFragments: ["allergic", "passport"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .taxiGrabPickup,
+                selectedStepID: "taxi-story-opening",
+                selectedEnglishFragment: "driver",
+                nextStepID: "taxi-story-confirm-driver",
+                nextLocalMeaningFragment: "entrance",
+                expectedNextTopEnglishFragments: ["entrance", "pick me up", "pickup point"],
+                forbiddenNextTopEnglishFragments: ["baggage", "passport"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .taxiRouteHelp,
+                selectedStepID: "taxi-route-opening",
+                selectedEnglishFragment: "hotel",
+                nextStepID: "taxi-route-map",
+                nextLocalMeaningFragment: "route",
+                expectedNextTopEnglishFragments: ["map", "this way", "faster route"],
+                forbiddenNextTopEnglishFragments: ["fitting room", "luggage"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .driverProblemHelp,
+                selectedStepID: "driver-problem-opening",
+                selectedEnglishFragment: "driver",
+                nextStepID: "driver-problem-wrong-car",
+                nextLocalMeaningFragment: "plate number",
+                expectedNextTopEnglishFragments: ["not my car", "car number", "call the driver"],
+                forbiddenNextTopEnglishFragments: ["security", "ATM"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .walkingDirectionsHelp,
+                selectedStepID: "walking-help-opening",
+                selectedEnglishFragment: "information desk",
+                nextStepID: "walking-help-turn",
+                nextLocalMeaningFragment: "turn right",
+                expectedNextTopEnglishFragments: ["go straight", "turn right", "turn left"],
+                forbiddenNextTopEnglishFragments: ["pay by card", "doctor"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .shoppingMarketPrice,
+                selectedStepID: "shopping-market-opening",
+                selectedEnglishFragment: "see that one",
+                nextStepID: "shopping-market-price",
+                nextLocalMeaningFragment: "price",
+                expectedNextTopEnglishFragments: ["best price", "How much", "write"],
+                forbiddenNextTopEnglishFragments: ["fitting room", "receipt"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .shoppingSizeGift,
+                selectedStepID: "shopping-gift-opening",
+                selectedEnglishFragment: "gift",
+                nextStepID: "shopping-gift-fitting",
+                nextLocalMeaningFragment: "try it on",
+                expectedNextTopEnglishFragments: ["fitting room", "try this on", "fits well"],
+                forbiddenNextTopEnglishFragments: ["receipt", "refund"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .shoppingReceiptHelp,
+                selectedStepID: "shopping-receipt-opening",
+                selectedEnglishFragment: "pay by card",
+                nextStepID: "shopping-receipt-print",
+                nextLocalMeaningFragment: "receipt",
+                expectedNextTopEnglishFragments: ["receipt", "print", "email"],
+                forbiddenNextTopEnglishFragments: ["refund", "discount"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .shoppingPayCard,
+                selectedStepID: "pay-card-opening",
+                selectedEnglishFragment: "pay by card",
+                nextStepID: "pay-card-retry",
+                nextLocalMeaningFragment: "card did not work",
+                expectedNextTopEnglishFragments: ["another card", "pay by card", "help me"],
+                forbiddenNextTopEnglishFragments: ["smaller size", "doctor"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .pharmacyHelp,
+                selectedStepID: "pharmacy-story-opening",
+                selectedEnglishFragment: "headache",
+                nextStepID: "pharmacy-story-find",
+                nextLocalMeaningFragment: "fever",
+                expectedNextTopEnglishFragments: ["fever", "headache", "stomach"],
+                forbiddenNextTopEnglishFragments: ["pay", "receipt"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .emergencyLostPassport,
+                selectedStepID: "emergency-passport-opening",
+                selectedEnglishFragment: "passport",
+                nextStepID: "emergency-passport-police",
+                nextLocalMeaningFragment: "police station",
+                expectedNextTopEnglishFragments: ["police station", "police station", "police"],
+                forbiddenNextTopEnglishFragments: ["embassy", "camera"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .emergencyLostBag,
+                selectedStepID: "emergency-bag-opening",
+                selectedEnglishFragment: "bag",
+                nextStepID: "emergency-bag-security",
+                nextLocalMeaningFragment: "security",
+                expectedNextTopEnglishFragments: ["security", "police", "stay with me"],
+                forbiddenNextTopEnglishFragments: ["embassy", "passport"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .emergencyDoctorHelp,
+                selectedStepID: "doctor-help-opening",
+                selectedEnglishFragment: "doctor",
+                nextStepID: "doctor-help-hospital",
+                nextLocalMeaningFragment: "clinic or hospital",
+                expectedNextTopEnglishFragments: ["hospital", "clinic", "English-speaking"],
+                forbiddenNextTopEnglishFragments: ["pay by card", "fitting room"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .localGreetingMarket,
+                selectedStepID: "greeting-market-opening",
+                selectedEnglishFragment: "peer",
+                nextStepID: "greeting-market-browse",
+                nextLocalMeaningFragment: "buy this one",
+                expectedNextTopEnglishFragments: ["just looking", "No, thank you", "think about"],
+                forbiddenNextTopEnglishFragments: ["discount", "doctor"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .localGreetingHotel,
+                selectedStepID: "greeting-hotel-opening",
+                selectedEnglishFragment: "male staff",
+                nextStepID: "greeting-hotel-wait",
+                nextLocalMeaningFragment: "wait a moment",
+                expectedNextTopEnglishFragments: ["acknowledgment", "Yes", "Wait for me"],
+                forbiddenNextTopEnglishFragments: ["repeat", "discount"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .localGreetingRespect,
+                selectedStepID: "greeting-respect-opening",
+                selectedEnglishFragment: "auntie",
+                nextStepID: "greeting-respect-woman",
+                nextLocalMeaningFragment: "look at",
+                expectedNextTopEnglishFragments: ["just looking", "gift", "help me"],
+                forbiddenNextTopEnglishFragments: ["sir", "sit here"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .localThanksSorry,
+                selectedStepID: "thanks-sorry-opening",
+                selectedEnglishFragment: "Thank you",
+                nextStepID: "thanks-sorry-apology",
+                nextLocalMeaningFragment: "wrong line",
+                expectedNextTopEnglishFragments: ["Sorry", "say that again", "Thank you"],
+                forbiddenNextTopEnglishFragments: ["pay by card", "hospital"]
+            ),
+        ]
+
+        XCTAssertEqual(contracts.count, PracticeScenarioID.allCases.count)
+
+        for contract in contracts {
+            let scenario = try XCTUnwrap(
+                scenariosByID[contract.scenarioID],
+                "Missing scenario \(contract.scenarioID.rawValue)"
+            )
+            assertMessageTransitionContract(contract, in: scenario)
         }
     }
 
@@ -1827,6 +2143,16 @@ final class PracticeScenarioModeTests: XCTestCase {
         let forbiddenTopEnglish: [String]
     }
 
+    private struct MessageTransitionContract {
+        let scenarioID: PracticeScenarioID
+        let selectedStepID: String
+        let selectedEnglishFragment: String
+        let nextStepID: String
+        let nextLocalMeaningFragment: String
+        let expectedNextTopEnglishFragments: [String]
+        let forbiddenNextTopEnglishFragments: [String]
+    }
+
     private func assertMessageScriptContract(
         _ contract: MessageScriptContract,
         in scenario: PracticeScenario,
@@ -1863,6 +2189,109 @@ final class PracticeScenarioModeTests: XCTestCase {
             XCTAssertTrue(
                 step.hasLocalReply(after: option),
                 "\(scenario.id.rawValue) \(step.id) '\(option.scenarioEnglish)' should produce a local reply that follows from the chosen message.",
+                file: file,
+                line: line
+            )
+        }
+    }
+
+    private func assertMessageTransitionContract(
+        _ contract: MessageTransitionContract,
+        in scenario: PracticeScenario,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        guard let selectedStepIndex = scenario.steps.firstIndex(where: { $0.id == contract.selectedStepID }) else {
+            XCTFail("Missing step \(contract.selectedStepID)", file: file, line: line)
+            return
+        }
+        let selectedStep = scenario.steps[selectedStepIndex]
+
+        guard let nextStepIndex = scenario.steps.firstIndex(where: { $0.id == contract.nextStepID }) else {
+            XCTFail("Missing next step \(contract.nextStepID)", file: file, line: line)
+            return
+        }
+        let nextStep = scenario.steps[nextStepIndex]
+
+        guard let selectedOption = selectedStep.responseOptions.first(where: {
+            $0.scenarioEnglish.localizedCaseInsensitiveContains(contract.selectedEnglishFragment)
+        }) else {
+            XCTFail(
+                "\(scenario.id.rawValue) \(selectedStep.id) should offer '\(contract.selectedEnglishFragment)' before the transition.",
+                file: file,
+                line: line
+            )
+            return
+        }
+
+        XCTAssertEqual(
+            nextStepIndex,
+            selectedStepIndex + 1,
+            "\(scenario.id.rawValue) \(contract.selectedStepID) should flow directly into \(contract.nextStepID).",
+            file: file,
+            line: line
+        )
+        XCTAssertTrue(
+            selectedStep.hasLocalReply(after: selectedOption),
+            "\(scenario.id.rawValue) \(selectedStep.id) '\(selectedOption.scenarioEnglish)' should receive a local reply before the next prompt.",
+            file: file,
+            line: line
+        )
+        XCTAssertTrue(
+            nextStep.localLineMeaning.localizedCaseInsensitiveContains(contract.nextLocalMeaningFragment),
+            "\(scenario.id.rawValue) \(nextStep.id) should keep the same exchange moving after '\(selectedOption.scenarioEnglish)'.",
+            file: file,
+            line: line
+        )
+
+        let turns = PracticeStoryTranscript.turns(
+            for: scenario,
+            currentIndex: nextStepIndex,
+            selectedOptionIDs: [selectedStep.id: selectedOption.id],
+            revealedReplyStepIDs: [selectedStep.id]
+        )
+        let transcriptEnglish = turns.compactMap(\.english).joined(separator: "\n")
+        XCTAssertTrue(
+            transcriptEnglish.localizedCaseInsensitiveContains(selectedOption.scenarioEnglish),
+            "\(scenario.id.rawValue) transcript should keep the selected user message visible.",
+            file: file,
+            line: line
+        )
+        XCTAssertTrue(
+            transcriptEnglish.localizedCaseInsensitiveContains(nextStep.localLineMeaning),
+            "\(scenario.id.rawValue) transcript should show the next local prompt before new choices.",
+            file: file,
+            line: line
+        )
+
+        guard let choiceTurn = turns.last(where: { $0.role == .choiceSet && $0.stepID == nextStep.id }) else {
+            XCTFail("Missing visible choices for \(scenario.id.rawValue) \(nextStep.id)", file: file, line: line)
+            return
+        }
+
+        let visibleEnglish = Array(choiceTurn.responseOptions.prefix(contract.expectedNextTopEnglishFragments.count))
+            .map(\.scenarioEnglish)
+        XCTAssertEqual(
+            visibleEnglish.count,
+            contract.expectedNextTopEnglishFragments.count,
+            "\(scenario.id.rawValue) \(nextStep.id) should have enough visible choices for the continuity contract.",
+            file: file,
+            line: line
+        )
+
+        for (visibleOption, expectedFragment) in zip(visibleEnglish, contract.expectedNextTopEnglishFragments) {
+            XCTAssertTrue(
+                visibleOption.localizedCaseInsensitiveContains(expectedFragment),
+                "\(scenario.id.rawValue) \(nextStep.id) expected '\(visibleOption)' to contain '\(expectedFragment)'.",
+                file: file,
+                line: line
+            )
+        }
+
+        for forbidden in contract.forbiddenNextTopEnglishFragments {
+            XCTAssertFalse(
+                visibleEnglish.contains { $0.localizedCaseInsensitiveContains(forbidden) },
+                "\(scenario.id.rawValue) \(nextStep.id) should not jump to '\(forbidden)' after '\(selectedOption.scenarioEnglish)'.",
                 file: file,
                 line: line
             )
