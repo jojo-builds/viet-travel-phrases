@@ -1,3 +1,4 @@
+import CoreGraphics
 import XCTest
 @testable import SpeakLocalNative
 
@@ -69,6 +70,78 @@ final class PracticeScenarioModeTests: XCTestCase {
         let localReply = repliedTurns[2]
         XCTAssertEqual(localReply.vietnamese, firstStep.nextLocalLine)
         XCTAssertFalse(firstStep.nextLocalLine.isEmpty)
+    }
+
+    func testStoryTranscriptContinuesWithTravelerChoiceAfterLocalReply() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let airportWifi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .airportWifiPower })
+        let openingStep = try XCTUnwrap(airportWifi.steps.first { $0.id == "airport-wifi-opening" })
+        let deskStep = try XCTUnwrap(airportWifi.steps.first { $0.id == "airport-wifi-desk" })
+        let selectedOption = try XCTUnwrap(openingStep.bestResponse)
+
+        let turns = PracticeStoryTranscript.turns(
+            for: airportWifi,
+            currentIndex: 1,
+            selectedOptionIDs: [openingStep.id: selectedOption.id],
+            revealedReplyStepIDs: [openingStep.id]
+        )
+
+        XCTAssertEqual(turns.map(\.role), [.localSpeaker, .travelerReply, .localSpeaker, .choiceSet])
+        XCTAssertFalse(turns.contains { $0.role == .localSpeaker && $0.stepID == deskStep.id })
+
+        let choiceTurn = try XCTUnwrap(turns.last { $0.role == .choiceSet && $0.stepID == deskStep.id })
+        XCTAssertEqual(
+            Array(choiceTurn.responseOptions.prefix(3)).map(\.scenarioEnglish),
+            [
+                "Where is the information desk?",
+                "Thanks, I understand now",
+                "Can you say it in a simpler way?",
+            ]
+        )
+    }
+
+    func testMessageThreadStartsAtTopBeforeFirstReply() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let airportWifi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .airportWifiPower })
+        let freshSession = PracticeScenarioSession(scenario: airportWifi)
+
+        XCTAssertEqual(
+            PracticeStorySessionLayoutPolicy.startPosition(for: freshSession),
+            .top
+        )
+        XCTAssertFalse(PracticeStorySessionLayoutPolicy.shouldScrollToBottomOnAppear(for: freshSession))
+    }
+
+    func testMessageThreadKeepsTopFlowAndScrollsToLatestTurnAfterConversationStarts() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let airportWifi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .airportWifiPower })
+        let firstStep = try XCTUnwrap(airportWifi.steps.first)
+        let firstReply = try XCTUnwrap(firstStep.bestResponse)
+        var activeSession = PracticeScenarioSession(scenario: airportWifi)
+        activeSession.selectedOptionIDs[firstStep.id] = firstReply.id
+        activeSession.revealedReplyStepIDs.insert(firstStep.id)
+        activeSession.currentIndex = 1
+
+        XCTAssertEqual(
+            PracticeStorySessionLayoutPolicy.startPosition(for: activeSession),
+            .top
+        )
+        XCTAssertTrue(PracticeStorySessionLayoutPolicy.shouldScrollToBottomOnAppear(for: activeSession))
     }
 
     func testStoryTranscriptUsesCanonicalAudioForAdaptedMessageCopy() throws {
@@ -208,7 +281,11 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(turns.first?.role, .localSpeaker)
         XCTAssertEqual(turns.first?.vietnamese, "Xin chào, bạn cần hỗ trợ gì ở sân bay?")
         XCTAssertGreaterThanOrEqual(turns.filter { $0.role == .travelerReply }.count, 6)
-        XCTAssertGreaterThanOrEqual(turns.filter { $0.role == .localSpeaker }.count, 12)
+        XCTAssertEqual(
+            turns.filter { $0.role == .localSpeaker }.count,
+            turns.filter { $0.role == .travelerReply }.count + 1
+        )
+        assertNoAdjacentLocalSpeakerTurns(in: turns)
     }
 
     func testEveryMessageScenarioBuildsOneContinuousSixToTenTurnConversation() throws {
@@ -237,7 +314,8 @@ final class PracticeScenarioModeTests: XCTestCase {
             XCTAssertEqual(turns.first?.role, .localSpeaker)
             XCTAssertTrue((6...10).contains(scenario.steps.count), "\(scenario.id) should stay short but conversational.")
             XCTAssertEqual(turns.filter { $0.role == .travelerReply }.count, scenario.steps.count)
-            XCTAssertEqual(turns.filter { $0.role == .localSpeaker }.count, scenario.steps.count * 2)
+            XCTAssertEqual(turns.filter { $0.role == .localSpeaker }.count, scenario.steps.count + 1)
+            assertNoAdjacentLocalSpeakerTurns(in: turns)
             XCTAssertEqual(scenario.steps.first?.localLine, scenario.unreadPreview)
             XCTAssertTrue(scenario.steps.last?.id.hasSuffix("goodbye") ?? false)
         }
@@ -437,6 +515,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Bàn thông tin ở đâu?",
                     "Tôi có thể lấy Wi-Fi sân bay ở đâu?",
                     "Tôi có thể sạc điện thoại ở đâu?",
+                    "Cảm ơn, tôi hiểu rồi",
                 ]
             ),
             (
@@ -544,6 +623,17 @@ final class PracticeScenarioModeTests: XCTestCase {
                 )
             }
         }
+    }
+
+    func testMessagesHubRowsReadAsScrollableCarouselOnPhoneWidth() {
+        let viewportWidth: CGFloat = 390
+        let fourthColumnFrame = PracticeMessageHubLayout.columnFrame(column: 3)
+
+        XCTAssertGreaterThan(PracticeMessageHubLayout.avatarSize, 66)
+        XCTAssertGreaterThan(PracticeMessageHubLayout.itemSpacing, 8)
+        XCTAssertGreaterThan(PracticeMessageHubLayout.sectionSpacing, 18)
+        XCTAssertLessThan(fourthColumnFrame.minX, viewportWidth)
+        XCTAssertGreaterThan(fourthColumnFrame.maxX, viewportWidth)
     }
 
     func testRestaurantMenuQuestionOffersDirectBeginnerReplies() throws {
@@ -763,6 +853,22 @@ final class PracticeScenarioModeTests: XCTestCase {
                 "Where can I get airport Wi-Fi?",
                 "Where can I charge my phone?",
                 "Where is the information desk?",
+            ]
+        )
+
+        let airportWifi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .airportWifiPower })
+        assertTopReplies(
+            airportWifi,
+            stepID: "airport-wifi-desk",
+            vietnamese: [
+                "Bàn thông tin ở đâu?",
+                "Cảm ơn, tôi hiểu rồi",
+                "Bạn nói đơn giản hơn được không?",
+            ],
+            english: [
+                "Where is the information desk?",
+                "Thanks, I understand now",
+                "Can you say it in a simpler way?",
             ]
         )
 
@@ -1540,6 +1646,22 @@ final class PracticeScenarioModeTests: XCTestCase {
         let options = Array(step.responseOptions.prefix(vietnamese.count))
         XCTAssertEqual(options.map(\.scenarioVietnamese), vietnamese, file: file, line: line)
         XCTAssertEqual(options.map(\.scenarioEnglish), english, file: file, line: line)
+    }
+
+    private func assertNoAdjacentLocalSpeakerTurns(
+        in turns: [PracticeStoryTurn],
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let roles = turns.map(\.role)
+        for index in roles.indices.dropFirst() {
+            XCTAssertFalse(
+                roles[index - 1] == .localSpeaker && roles[index] == .localSpeaker,
+                "Transcript should not show two local-speaker bubbles in a row.",
+                file: file,
+                line: line
+            )
+        }
     }
 
     private struct MessageScriptContract {
