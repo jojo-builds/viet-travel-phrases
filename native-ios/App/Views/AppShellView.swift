@@ -3696,7 +3696,7 @@ struct HomeView: View {
 
                         useNowShelf
 
-                        homepagePhraseShelf("first-hour")
+                        homepagePhraseShelf("first-day")
 
                         cityShelf
 
@@ -3760,7 +3760,7 @@ struct HomeView: View {
 
     private var useNowShelf: some View {
         HomeShelf(
-            title: "Use now",
+            title: "Essentials",
             subtitle: "Core phrases for any trip",
             route: .category("essentials"),
             onOpenCollection: onOpenCollection
@@ -4139,7 +4139,7 @@ private struct HomeSituationCard: Identifiable {
 }
 
 private struct HomePhraseShelfDefinition: Identifiable {
-    private static let maximumShelfItems = 12
+    private static let defaultMaximumShelfItems = 12
 
     let id: String
     let title: String
@@ -4148,6 +4148,8 @@ private struct HomePhraseShelfDefinition: Identifiable {
     let sourceCategoryIDs: [String]
     let pageIDs: [String]
     let layout: HomePhraseShelfLayout
+    let maximumItemCount: Int
+    let fillsFromSourceCategories: Bool
 
     init(
         id: String,
@@ -4156,7 +4158,9 @@ private struct HomePhraseShelfDefinition: Identifiable {
         route: BrowseCollectionRoute,
         sourceCategoryIDs: [String],
         pageIDs: [String],
-        layout: HomePhraseShelfLayout = .quickTiles
+        layout: HomePhraseShelfLayout = .quickTiles,
+        maximumItemCount: Int = Self.defaultMaximumShelfItems,
+        fillsFromSourceCategories: Bool = true
     ) {
         self.id = id
         self.title = title
@@ -4165,6 +4169,8 @@ private struct HomePhraseShelfDefinition: Identifiable {
         self.sourceCategoryIDs = sourceCategoryIDs
         self.pageIDs = pageIDs
         self.layout = layout
+        self.maximumItemCount = maximumItemCount
+        self.fillsFromSourceCategories = fillsFromSourceCategories
     }
 
     var items: [HomePhraseItem] {
@@ -4172,6 +4178,9 @@ private struct HomePhraseShelfDefinition: Identifiable {
         var rows: [HomePhraseItem] = []
 
         func append(_ item: HomePhraseItem) {
+            guard rows.count < maximumItemCount else {
+                return
+            }
             guard seen.insert(item.pageID).inserted else {
                 return
             }
@@ -4182,9 +4191,13 @@ private struct HomePhraseShelfDefinition: Identifiable {
             append(item)
         }
 
-        for categoryID in sourceCategoryIDs where rows.count < Self.maximumShelfItems {
+        guard fillsFromSourceCategories else {
+            return rows
+        }
+
+        for categoryID in sourceCategoryIDs where rows.count < maximumItemCount {
             let categoryItems = PhraseCatalog.items(selectedCategoryID: categoryID)
-            for catalogItem in categoryItems where rows.count < Self.maximumShelfItems {
+            for catalogItem in categoryItems where rows.count < maximumItemCount {
                 if let item = HomePhraseItem.resolve(pageID: catalogItem.pageID) {
                     append(item)
                 }
@@ -4270,27 +4283,35 @@ enum HomeRecentlyViewedContent {
     }
 }
 
+enum HomeFirstDayShelfContent {
+    static let title = "First Day in Vietnam"
+    static let maximumCards = 8
+    static let pageIDs = [
+        "viet-phrase-airport-1",
+        "viet-phrase-airport-3",
+        "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
+        "viet-phrase-airport-5",
+        "viet-phrase-taxi-1",
+        "viet-phrase-hotel-1",
+        "viet-phrase-hotel-2",
+        "viet-phrase-directions-9",
+    ]
+}
+
 private enum HomeContent {
     static let useNowIDs = HomeUseNowCatalog.starterIDs
 
     static let homepagePhraseShelves: [HomePhraseShelfDefinition] = [
         HomePhraseShelfDefinition(
-            id: "first-hour",
-            title: "First hour in Vietnam",
-            subtitle: "Airport, pickup, SIM, ATM, and check-in.",
+            id: "first-day",
+            title: HomeFirstDayShelfContent.title,
+            subtitle: "Short airport, ride, and check-in phrases.",
             route: .category("first-day"),
             sourceCategoryIDs: ["airport-border-arrival", "hotel-accommodation", "transport", "directions-navigation"],
-            pageIDs: [
-                "viet-phrase-airport-2",
-                "viet-phrase-airport-5",
-                "viet-phrase-airport-3",
-                "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
-                "viet-phrase-v500-tran-please-take-me-to-this-hotel",
-                "viet-phrase-hotel-1",
-                "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
-                "viet-phrase-phone-1",
-            ],
-            layout: .spotlightRows
+            pageIDs: HomeFirstDayShelfContent.pageIDs,
+            layout: .spotlightRows,
+            maximumItemCount: HomeFirstDayShelfContent.maximumCards,
+            fillsFromSourceCategories: false
         ),
         HomePhraseShelfDefinition(
             id: "food-coffee",
@@ -4534,6 +4555,10 @@ enum HomePageLinkRegistry {
             + HomeContent.savedFallbackPageIDs
             + PhrasePage.xinChao.localGreetings.prefix(3).compactMap(\.detailPageID)
         )
+    }
+
+    static var firstDayHomepagePageIDs: [String] {
+        HomeContent.homepagePhraseShelf("first-day")?.items.map(\.pageID) ?? []
     }
 
     private static func uniquePageIDs(_ pageIDs: [String]) -> [String] {

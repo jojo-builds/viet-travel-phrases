@@ -177,22 +177,20 @@ final class AdminChromeUITests: XCTestCase {
         assertHomeVisible(in: app)
         XCTAssertFalse(app.staticTexts["Start speaking now"].exists)
         XCTAssertFalse(app.staticTexts["Offline phrases, audio, and local ways to say it."].exists)
-        XCTAssertTrue(app.staticTexts["Use now"].exists)
+        XCTAssertTrue(app.staticTexts["Essentials"].exists)
         XCTAssertTrue(app.buttons["HomeShelf.Header.category.essentials"].exists)
         XCTAssertFalse(app.staticTexts["Test phrase cards"].exists)
         XCTAssertFalse(app.staticTexts["Larger listen cards for common moments"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Home.SearchEntry"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-top.png")
 
-        for _ in 0..<3 where !app.staticTexts["First hour in Vietnam"].exists {
+        for _ in 0..<3 where !app.staticTexts["First Day in Vietnam"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.staticTexts["First hour in Vietnam"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["First Day in Vietnam"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.buttons["HomeShelf.Header.category.first-day"].exists)
-        XCTAssertFalse(app.buttons["HomeShelf.More.first-hour"].exists)
-        XCTAssertFalse(app.staticTexts["Keep going"].exists)
-        XCTAssertFalse(app.staticTexts["Saved for later"].exists)
-        XCTAssertFalse(app.staticTexts["Message list"].exists)
+        XCTAssertFalse(app.buttons["HomeShelf.More.first-day"].exists)
+        XCTAssertFalse(app.staticTexts["Recently viewed"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-mid.png")
 
         for _ in 0..<3 where !app.staticTexts["Explore by city"].exists {
@@ -230,11 +228,11 @@ final class AdminChromeUITests: XCTestCase {
         let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
 
-        for _ in 0..<3 where !app.staticTexts["Use now"].exists {
+        for _ in 0..<3 where !app.staticTexts["Essentials"].exists {
             app.swipeUp()
         }
 
-        XCTAssertTrue(app.staticTexts["Use now"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Essentials"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.buttons["HomeShelf.Header.category.essentials"].exists)
         XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-use-now-large-card-start.png")
