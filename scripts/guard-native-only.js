@@ -6,6 +6,7 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..");
 
 const forbiddenPaths = [
+  "app",
   "app/package.json",
   "app/app.config.js",
   "app/metro.config.js",
