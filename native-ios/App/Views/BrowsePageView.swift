@@ -4,6 +4,8 @@ struct BrowsePageView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
 
     let scrollToTopTrigger: Int
+    var chromeNamespace: Namespace.ID? = nil
+    var cityHeroMorphRoute: BrowseCollectionRoute? = nil
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onSearchTapped: () -> Void
@@ -36,8 +38,6 @@ struct BrowsePageView: View {
 
                         phraseFamilies
                             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-
-                        byCityShelf
 
                         returningUserShelves
                     }
@@ -108,18 +108,12 @@ struct BrowsePageView: View {
 
     private var cityShortcuts: some View {
         BrowseShelf(title: "Cities") {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(BrowseSearchDestinations.cityShortcuts) { city in
-                        BrowseCityChip(city: city) {
-                            onOpenCollection(city.collectionRoute)
-                        }
-                    }
-                }
-                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-                .padding(.bottom, 2)
-            }
-            .scrollClipDisabled()
+            BrowseCityHeroRail(
+                cities: cityHeroShortcuts,
+                chromeNamespace: chromeNamespace,
+                activeMorphRoute: cityHeroMorphRoute,
+                onOpenCollection: onOpenCollection
+            )
         }
     }
 
@@ -189,23 +183,6 @@ struct BrowsePageView: View {
             ) { family in
                 BrowsePhraseFamilyCard(destination: family) { open(destination: family) }
             }
-        }
-    }
-
-    private var byCityShelf: some View {
-        BrowseShelf(title: "By city") {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(BrowseSearchDestinations.cityShortcuts.filter { $0.id != "all-vietnam" }) { city in
-                        BrowseCityCard(city: city) {
-                            onOpenCollection(city.collectionRoute)
-                        }
-                    }
-                }
-                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-                .padding(.bottom, 2)
-            }
-            .scrollClipDisabled()
         }
     }
 
@@ -287,6 +264,11 @@ struct BrowsePageView: View {
         return titles.joined(separator: ", ")
     }
 
+    private var cityHeroShortcuts: [BrowseCityShortcut] {
+        let allVietnam = BrowseSearchDestinations.cityShortcuts.first { $0.id == "all-vietnam" }
+        return BrowseSearchDestinations.homepageCityShortcuts + (allVietnam.map { [$0] } ?? [])
+    }
+
     private func open(destination: BrowseDestination) {
         onOpenCollection(destination.collectionRoute)
     }
@@ -299,6 +281,8 @@ enum BrowsePageLayout {
     static let bottomChromeContentClearance: CGFloat = 224
     static let situationIconSize: CGFloat = 48
     static let situationCardMinHeight: CGFloat = 136
+    static let cityHeroCardHeight: CGFloat = 346
+    static let cityHeroCardSpacing: CGFloat = 14
     static let nextShelfRowHeight: CGFloat = 108
     static let nextShelfIconSize: CGFloat = 48
     static let nextShelfRowPadding: CGFloat = 14
@@ -318,6 +302,10 @@ enum BrowsePageLayout {
 
     static func situationCardTitleContentWidth(cardWidth: CGFloat) -> CGFloat {
         max(0, cardWidth - (14 * 2))
+    }
+
+    static func cityHeroCardWidth(containerWidth: CGFloat) -> CGFloat {
+        min(326, max(288, containerWidth - 72))
     }
 }
 
@@ -424,25 +412,153 @@ private struct BrowseSituationCard: View {
     }
 }
 
-private struct BrowseCityChip: View {
-    let city: BrowseCityShortcut
-    let action: () -> Void
+private struct BrowseCityHeroRail: View {
+    let cities: [BrowseCityShortcut]
+    let chromeNamespace: Namespace.ID?
+    let activeMorphRoute: BrowseCollectionRoute?
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
 
     var body: some View {
-        Button(action: action) {
-            HStack(spacing: 8) {
-                Image(systemName: city.symbolName)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(city.tintName.color)
+        GeometryReader { proxy in
+            let cardWidth = BrowsePageLayout.cityHeroCardWidth(containerWidth: proxy.size.width)
 
-                Text(city.title)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: BrowsePageLayout.cityHeroCardSpacing) {
+                    ForEach(cities) { city in
+                        BrowseCityHeroCard(
+                            city: city,
+                            width: cardWidth,
+                            chromeNamespace: chromeNamespace,
+                            isMorphSource: activeMorphRoute == city.collectionRoute,
+                            onOpenCollection: onOpenCollection
+                        )
+                    }
+                }
+                .scrollTargetLayout()
+                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+                .padding(.bottom, 4)
             }
-            .padding(.horizontal, 14)
-            .frame(height: 46)
-            .nativeGlass(cornerRadius: 23, interactive: true)
+            .scrollTargetBehavior(.viewAligned)
+            .scrollClipDisabled()
+        }
+        .frame(height: BrowsePageLayout.cityHeroCardHeight + 4)
+        .accessibilityIdentifier("Browse.CityHeroRail")
+    }
+}
+
+private struct BrowseCityHeroCard: View {
+    let city: BrowseCityShortcut
+    let width: CGFloat
+    let chromeNamespace: Namespace.ID?
+    let isMorphSource: Bool
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    private var descriptor: BrowseCollectionDescriptor? {
+        BrowseSearchDestinations.collectionDescriptor(for: city.collectionRoute)
+    }
+
+    private var routeID: String {
+        city.collectionRoute.id
+    }
+
+    private var title: String {
+        descriptor?.title ?? city.title
+    }
+
+    private var subtitle: String {
+        descriptor?.subtitle ?? "Names, places, and practical phrases."
+    }
+
+    private var imageName: String {
+        descriptor?.mastheadImageName ?? "HeroVietnamMasthead"
+    }
+
+    var body: some View {
+        Button {
+            onOpenCollection(city.collectionRoute)
+        } label: {
+            ZStack(alignment: .bottomLeading) {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight)
+                    .clipped()
+                    .homePhraseHeroMorph(
+                        BrowseCityHeroMorphID.image(routeID),
+                        namespace: chromeNamespace,
+                        isActive: isMorphSource,
+                        isSource: true,
+                        anchor: .top
+                    )
+
+                LinearGradient(
+                    stops: [
+                        .init(color: .clear, location: 0.0),
+                        .init(color: Color.white.opacity(0.18), location: 0.42),
+                        .init(color: Color.white.opacity(0.78), location: 0.66),
+                        .init(color: Color.white.opacity(0.97), location: 1.0),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+
+                VStack(alignment: .leading, spacing: 9) {
+                    HStack(alignment: .bottom, spacing: 10) {
+                        Text(title)
+                            .font(.system(size: 32, weight: .black, design: .serif))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.72)
+                            .homePhraseHeroMorph(
+                                BrowseCityHeroMorphID.title(routeID),
+                                namespace: chromeNamespace,
+                                isActive: isMorphSource,
+                                isSource: true,
+                                properties: .position,
+                                anchor: .leading
+                            )
+
+                        Spacer(minLength: 8)
+
+                        Image(systemName: "chevron.right")
+                            .font(.callout.weight(.bold))
+                            .foregroundStyle(.secondary)
+                            .frame(width: 34, height: 34)
+                            .background(.white.opacity(0.58), in: Circle())
+                            .overlay {
+                                Circle().stroke(.white.opacity(0.76), lineWidth: 1)
+                            }
+                    }
+
+                    Text(subtitle)
+                        .font(.callout.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineSpacing(2)
+                        .lineLimit(3)
+                        .minimumScaleFactor(0.82)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .homePhraseHeroMorph(
+                            BrowseCityHeroMorphID.subtitle(routeID),
+                            namespace: chromeNamespace,
+                            isActive: isMorphSource,
+                            isSource: true,
+                            properties: .position,
+                            anchor: .leading
+                        )
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 22)
+                .frame(maxWidth: .infinity, alignment: .bottomLeading)
+            }
+            .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight)
+            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .stroke(.white.opacity(0.78), lineWidth: 1)
+            }
+            .shadow(color: .black.opacity(0.07), radius: 22, x: 0, y: 14)
+            .nativeGlass(cornerRadius: 30)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Browse.City.\(city.id)")
@@ -568,34 +684,6 @@ private struct BrowsePhraseFamilyCard: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Browse.PhraseFamily.\(destination.id)")
-    }
-}
-
-private struct BrowseCityCard: View {
-    let city: BrowseCityShortcut
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 10) {
-                Image(systemName: city.symbolName)
-                    .font(.title2.weight(.semibold))
-                    .foregroundStyle(city.tintName.color)
-                    .frame(width: 56, height: 56)
-                    .nativeGlass(cornerRadius: 20, tint: city.tintName.color.opacity(0.14), interactive: true)
-
-                Text(city.title)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.center)
-                    .minimumScaleFactor(0.75)
-            }
-            .padding(12)
-            .frame(width: 116, height: 128)
-            .phraseListCard(cornerRadius: 18)
-        }
-        .buttonStyle(.plain)
     }
 }
 

@@ -5,6 +5,8 @@ struct BrowseCollectionPageView: View {
     let scrollToTopTrigger: Int
     let scrollToTopRoute: BrowseCollectionRoute?
     let focusRequest: BrowseCollectionFocusRequest?
+    var chromeNamespace: Namespace.ID? = nil
+    var cityHeroMorphRoute: BrowseCollectionRoute? = nil
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onPractice: (BrowseCollectionPracticeAction) -> Void
@@ -27,7 +29,11 @@ struct BrowseCollectionPageView: View {
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
-                        BrowseCollectionHeader(descriptor: descriptor)
+                        BrowseCollectionHeader(
+                            descriptor: descriptor,
+                            chromeNamespace: chromeNamespace,
+                            cityHeroMorphRoute: cityHeroMorphRoute
+                        )
                             .id(Self.scrollTopID)
 
                         if let cityHub = descriptor.cityHub {
@@ -161,10 +167,23 @@ private enum BrowseCollectionLayout {
 
 private struct BrowseCollectionHeader: View {
     let descriptor: BrowseCollectionDescriptor
+    let chromeNamespace: Namespace.ID?
+    let cityHeroMorphRoute: BrowseCollectionRoute?
+
+    private var usesCityHeroMorph: Bool {
+        cityHeroMorphRoute == descriptor.route
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HeroMastheadImage(imageName: descriptor.mastheadImageName)
+                .homePhraseHeroMorph(
+                    BrowseCityHeroMorphID.image(descriptor.route.id),
+                    namespace: chromeNamespace,
+                    isActive: usesCityHeroMorph,
+                    isSource: false,
+                    anchor: .top
+                )
 
             VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 8) {
@@ -186,6 +205,14 @@ private struct BrowseCollectionHeader: View {
                     .foregroundStyle(.primary)
                     .lineLimit(2)
                     .minimumScaleFactor(0.64)
+                    .homePhraseHeroMorph(
+                        BrowseCityHeroMorphID.title(descriptor.route.id),
+                        namespace: chromeNamespace,
+                        isActive: usesCityHeroMorph,
+                        isSource: false,
+                        properties: .position,
+                        anchor: .leading
+                    )
                     .accessibilityIdentifier("BrowseCollection.Title.\(descriptor.route.id)")
 
                 Text(descriptor.subtitle)
@@ -193,6 +220,14 @@ private struct BrowseCollectionHeader: View {
                     .foregroundStyle(.secondary)
                     .lineSpacing(3)
                     .fixedSize(horizontal: false, vertical: true)
+                    .homePhraseHeroMorph(
+                        BrowseCityHeroMorphID.subtitle(descriptor.route.id),
+                        namespace: chromeNamespace,
+                        isActive: usesCityHeroMorph,
+                        isSource: false,
+                        properties: .position,
+                        anchor: .leading
+                    )
             }
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.top, 16)
