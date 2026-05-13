@@ -340,20 +340,33 @@ struct PracticeStoryComposer: View {
         VStack(alignment: .leading, spacing: 12) {
             selectedPhraseBar
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(alignment: .center, spacing: 10) {
-                    ForEach(options) { option in
-                        PracticeStoryChoiceChip(
-                            option: option,
-                            isSelected: option.id == selectedOptionID,
-                            onSelect: { pendingOptionID = option.id }
-                        )
+            ScrollViewReader { scrollProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .center, spacing: 10) {
+                        ForEach(options) { option in
+                            PracticeStoryChoiceChip(
+                                option: option,
+                                isSelected: option.id == selectedOptionID,
+                                onSelect: { pendingOptionID = option.id }
+                            )
+                            .id(option.id)
+                        }
+
+                        Color.clear
+                            .frame(width: PracticeStoryChoiceStripLayout.trailingFocusSpace)
+                            .accessibilityHidden(true)
                     }
+                    .padding(.horizontal, PracticeStoryChoiceStripLayout.horizontalPadding)
+                    .padding(.bottom, 2)
                 }
-                .padding(.horizontal, 14)
-                .padding(.bottom, 2)
+                .scrollClipDisabled()
+                .onAppear {
+                    focusSelectedChoice(with: scrollProxy, animated: false)
+                }
+                .onChange(of: selectedOptionID) { _, _ in
+                    focusSelectedChoice(with: scrollProxy, animated: true)
+                }
             }
-            .scrollClipDisabled()
         }
     }
 
@@ -408,6 +421,29 @@ struct PracticeStoryComposer: View {
         }
         .shadow(color: .black.opacity(0.07), radius: 18, x: 0, y: 10)
     }
+
+    private func focusSelectedChoice(with scrollProxy: ScrollViewProxy, animated: Bool) {
+        guard let selectedOptionID else {
+            return
+        }
+
+        let focus = {
+            scrollProxy.scrollTo(selectedOptionID, anchor: .leading)
+        }
+
+        if animated {
+            withAnimation(.spring(response: 0.34, dampingFraction: 0.86)) {
+                focus()
+            }
+        } else {
+            focus()
+        }
+    }
+}
+
+private enum PracticeStoryChoiceStripLayout {
+    static let horizontalPadding: CGFloat = 14
+    static let trailingFocusSpace: CGFloat = 260
 }
 
 private struct PracticeStoryChoiceChip: View {

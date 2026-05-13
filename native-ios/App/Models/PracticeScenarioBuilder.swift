@@ -722,7 +722,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                     "viet-family-airport-baggage",
                 ],
                 alternatePageIDs: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong",
+                    "viet-family-v500-airp-bord-arri-i-need-to-report-lost-luggage",
                     "viet-phrase-v500-prob-help-can-you-help-me",
                 ],
                 recoveryPageIDs: [
@@ -740,11 +740,11 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         vietnamese: "Lấy hành lý ở đâu?",
                         english: "Where is baggage claim?"
                     ),
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Bạn giúp tôi tìm hành lý được không?",
-                        english: "Can you help me find my luggage?",
-                        nextLocalLine: "Được, khu lấy hành lý ở tầng dưới. Tôi chỉ bạn lối đi.",
-                        nextLocalMeaning: "Yes, baggage claim is downstairs. I can show you where to start."
+                    "viet-family-v500-airp-bord-arri-i-need-to-report-lost-luggage": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi cần báo cáo hành lý thất lạc",
+                        english: "I need to report lost luggage",
+                        nextLocalLine: "Tôi hiểu, khu hành lý thất lạc ở bên trái.",
+                        nextLocalMeaning: "I understand. The lost-luggage counter is on the left."
                     ),
                     "viet-phrase-v500-prob-help-can-you-help-me": PracticeScenarioPhraseTemplate(
                         vietnamese: "Bạn giúp tôi được không?",
@@ -766,7 +766,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                     "viet-family-airport-baggage",
                 ],
                 alternatePageIDs: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong",
+                    "viet-family-v500-airp-bord-arri-i-need-to-report-lost-luggage",
                     "viet-phrase-v500-prob-help-can-you-help-me",
                     "viet-family-airport-baggage",
                 ],
@@ -785,9 +785,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         vietnamese: "Đây là thẻ hành lý của tôi",
                         english: "Here is my baggage tag"
                     ),
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-hanh-ly-duoc-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Bạn giúp tôi tìm hành lý được không?",
-                        english: "Can you help me find my luggage?",
+                    "viet-family-v500-airp-bord-arri-i-need-to-report-lost-luggage": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi cần báo cáo hành lý thất lạc",
+                        english: "I need to report lost luggage",
                         nextLocalLine: "Được, cho tôi xem thẻ hành lý nhé.",
                         nextLocalMeaning: "Yes, show me your baggage tag."
                     ),
@@ -817,7 +817,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                     "viet-family-airport-pickup",
                 ],
                 alternatePageIDs: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong",
+                    "viet-family-v500-airp-bord-arri-where-do-i-meet-the-driver",
                     "viet-phrase-directions-8",
                 ],
                 recoveryPageIDs: [
@@ -835,11 +835,11 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         vietnamese: "Điểm đón Grab ở đâu?",
                         english: "Where is the Grab pickup point?"
                     ),
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Bạn giúp tôi tìm điểm đón được không?",
-                        english: "Can you help me find the pickup point?",
-                        nextLocalLine: "Được, đi thẳng ra cửa số 3 nhé.",
-                        nextLocalMeaning: "Yes, go straight to Gate 3."
+                    "viet-family-v500-airp-bord-arri-where-do-i-meet-the-driver": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi gặp tài xế ở đâu?",
+                        english: "Where do I meet the driver?",
+                        nextLocalLine: "Bạn gặp tài xế ở cửa số 3.",
+                        nextLocalMeaning: "Meet the driver at Gate 3."
                     ),
                     "viet-phrase-directions-8": PracticeScenarioPhraseTemplate(
                         vietnamese: "Điểm đón ở đâu?",
@@ -1245,10 +1245,10 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 ],
                 alternatePageIDs: [
                     "viet-family-v500-phon-inte-powe-i-need-an-esim",
-                    "viet-family-vpe-price-item-the-sim-bao-nhieu-tien",
+                    "viet-family-money-how-much",
                 ],
                 recoveryPageIDs: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-sim-nay-duoc-khong",
+                    "viet-family-phone-activate-sim",
                     "viet-family-v500-prob-help-can-you-help-me",
                 ],
                 nextLocalLine: "Được, tôi lấy SIM có data cho bạn.",
@@ -1268,9 +1268,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         nextLocalLine: "Được, tôi kiểm tra điện thoại của bạn trước.",
                         nextLocalMeaning: "Okay, I will check your phone first."
                     ),
-                    "viet-family-vpe-price-item-the-sim-bao-nhieu-tien": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Thẻ SIM bao nhiêu tiền?",
-                        english: "How much is a SIM card?",
+                    "viet-family-money-how-much": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cái này bao nhiêu?",
+                        english: "How much is this?",
                         nextLocalLine: "Gói này là ba trăm nghìn và có data.",
                         nextLocalMeaning: "This plan is three hundred thousand and includes data."
                     ),
@@ -1284,11 +1284,10 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 localLineMeaning: "Would you like me to activate the SIM for you?",
                 userGoal: "Ask for help checking or activating the SIM.",
                 bestPageIDs: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-sim-nay-duoc-khong",
                     "viet-family-phone-activate-sim",
                 ],
                 alternatePageIDs: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-kich-hoat-esim-duoc-khong",
+                    "viet-family-phone-esim",
                     "viet-family-v900-phon-inte-powe-the-sim-card-is-not-working",
                 ],
                 recoveryPageIDs: [
@@ -1302,13 +1301,13 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 nextStepTitle: "Find cash",
                 localScenarioContext: "airport_service_sim_help",
                 scenarioResponseCopies: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-sim-nay-duoc-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Bạn giúp tôi kiểm tra SIM này được không?",
-                        english: "Can you help me check this SIM?"
+                    "viet-family-phone-activate-sim": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn có thể giúp tôi kích hoạt SIM được không?",
+                        english: "Can you help me activate the SIM?"
                     ),
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-kich-hoat-esim-duoc-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Bạn giúp tôi kích hoạt eSIM được không?",
-                        english: "Can you help me activate the eSIM?",
+                    "viet-family-phone-esim": PracticeScenarioPhraseTemplate(
+                        vietnamese: "eSIM của tôi không hoạt động",
+                        english: "My eSIM is not working",
                         nextLocalLine: "Được, mở phần cài đặt điện thoại giúp tôi.",
                         nextLocalMeaning: "Yes, please open your phone settings."
                     ),
@@ -1377,7 +1376,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 ],
                 alternatePageIDs: [
                     "viet-family-v900-dire-navi-where-is-the-nearest-information-desk",
-                    "viet-family-vpe-near-place-quay-thong-tin-gan-day-khong",
+                    "viet-family-v500-prob-help-can-you-help-me",
                 ],
                 recoveryPageIDs: [
                     "viet-family-v900-unde-repa-can-you-say-it-in-a-simpler-way",
@@ -1400,13 +1399,52 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         nextLocalLine: "Quầy thông tin gần nhất ở giữa sảnh.",
                         nextLocalMeaning: "The nearest information desk is in the middle of the hall."
                     ),
-                    "viet-family-vpe-near-place-quay-thong-tin-gan-day-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Quầy thông tin gần đây không?",
-                        english: "Is the information desk nearby?",
+                    "viet-family-v500-prob-help-can-you-help-me": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Bạn có thể giúp tôi được không?",
+                        english: "Can you help me?",
                         nextLocalLine: "Có, quầy thông tin ở giữa sảnh.",
                         nextLocalMeaning: "Yes, the information desk is in the middle of the hall."
                     ),
                 ]
+            ),
+            messageScenarioStep(
+                id: "airport-service-wifi",
+                momentType: .ask,
+                scene: "Before you leave the arrivals hall, your phone needs Wi-Fi or charging.",
+                localLine: "Bạn cần Wi-Fi sân bay hay sạc điện thoại không?",
+                localLineMeaning: "Do you need airport Wi-Fi or to charge your phone?",
+                userGoal: "Ask for airport Wi-Fi first.",
+                best: messageReply(
+                    "viet-family-v900-airp-bord-arri-where-can-i-get-airport-wi-fi",
+                    vietnamese: "Tôi có thể lấy Wi-Fi sân bay ở đâu?",
+                    english: "Where can I get airport Wi-Fi?",
+                    nextLocalLine: "Wi-Fi miễn phí ở quầy thông tin, tôi chỉ bạn nhé.",
+                    nextLocalMeaning: "Free Wi-Fi is at the information desk; I will show you."
+                ),
+                alternates: [
+                    messageReply(
+                        "viet-family-v900-airp-bord-arri-where-can-i-charge-my-phone",
+                        vietnamese: "Tôi có thể sạc điện thoại ở đâu?",
+                        english: "Where can I charge my phone?",
+                        nextLocalLine: "Ổ sạc ở cạnh quầy thông tin.",
+                        nextLocalMeaning: "The charging outlet is beside the information desk."
+                    ),
+                    messageReply(
+                        "viet-family-v900-airp-bord-arri-where-is-the-information-desk",
+                        vietnamese: "Bàn thông tin ở đâu?",
+                        english: "Where is the information desk?",
+                        nextLocalLine: "Bàn thông tin ở giữa sảnh.",
+                        nextLocalMeaning: "The information desk is in the middle of the hall."
+                    ),
+                ],
+                recoveryPageIDs: [
+                    "viet-family-v900-airp-bord-arri-where-is-the-information-desk",
+                    "viet-family-v500-prob-help-can-you-help-me",
+                ],
+                recoveryTitle: "If the phone is low",
+                recoveryBody: "Ask for charging first, then handle Wi-Fi or pickup details.",
+                nextStepTitle: "Find pickup",
+                localScenarioContext: "airport_service_wifi"
             ),
             PracticeScenarioStepTemplate(
                 id: "airport-service-pickup",
@@ -1417,10 +1455,10 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 userGoal: "Ask for the Grab or pickup point.",
                 bestPageIDs: [
                     "viet-family-v900-airp-bord-arri-where-is-the-grab-pickup-point",
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong",
+                    "viet-family-directions-pickup-point",
                 ],
                 alternatePageIDs: [
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong",
+                    "viet-family-directions-pickup-point",
                     "viet-family-v500-airp-bord-arri-where-do-i-meet-the-driver",
                 ],
                 recoveryPageIDs: [
@@ -1438,11 +1476,11 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         vietnamese: "Điểm đón Grab ở đâu?",
                         english: "Where is the Grab pickup point?"
                     ),
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Bạn giúp tôi tìm điểm đón được không?",
-                        english: "Can you help me find the pickup point?",
-                        nextLocalLine: "Được, đi thẳng ra cửa số 3 nhé.",
-                        nextLocalMeaning: "Yes, go straight to Gate 3."
+                    "viet-family-directions-pickup-point": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Điểm đón ở đâu?",
+                        english: "Where is the pickup point?",
+                        nextLocalLine: "Điểm đón ở cửa số 3, đi thẳng nhé.",
+                        nextLocalMeaning: "The pickup point is at Gate 3. Go straight."
                     ),
                     "viet-family-v500-airp-bord-arri-where-do-i-meet-the-driver": PracticeScenarioPhraseTemplate(
                         vietnamese: "Tôi gặp tài xế ở đâu?",
@@ -1615,7 +1653,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 ],
                 alternatePageIDs: [
                     "viet-family-hotel-checkout-time",
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-so-phong-duoc-khong",
+                    "viet-family-v900-hote-acco-the-wi-fi-is-not-working-in-my-room",
                 ],
                 recoveryPageIDs: [
                     "viet-phrase-v900-hote-acco-the-wi-fi-is-not-working-in-my-room",
@@ -1638,11 +1676,11 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         nextLocalLine: "Trả phòng lúc mười hai giờ trưa.",
                         nextLocalMeaning: "Check-out is at noon."
                     ),
-                    "viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-so-phong-duoc-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Bạn giúp tôi xác nhận số phòng được không?",
-                        english: "Can you help me confirm the room number?",
-                        nextLocalLine: "Dạ, số phòng của bạn ở trên thẻ này.",
-                        nextLocalMeaning: "Yes, your room number is on this card."
+                    "viet-family-v900-hote-acco-the-wi-fi-is-not-working-in-my-room": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Wi-Fi không hoạt động trong phòng tôi",
+                        english: "The Wi-Fi is not working in my room",
+                        nextLocalLine: "Tôi sẽ nhờ kỹ thuật kiểm tra Wi-Fi trong phòng.",
+                        nextLocalMeaning: "I will ask maintenance to check the Wi-Fi in your room."
                     ),
                 ]
             ),
@@ -1703,7 +1741,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 ],
                 alternatePageIDs: [
                     "viet-phrase-v900-tran-please-take-me-to-this-address",
-                    "viet-family-city-danang-where-dragon-bridge",
+                    "viet-family-v900-airp-bord-arri-please-call-this-driver-for-me",
                 ],
                 recoveryPageIDs: [
                     "viet-family-vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
@@ -1730,11 +1768,11 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         nextLocalLine: "Tôi sẽ gọi xe đến địa chỉ này cho bạn.",
                         nextLocalMeaning: "I will call a car to this address for you."
                     ),
-                    "viet-family-city-danang-where-dragon-bridge": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Tôi muốn đến Cầu Rồng",
-                        english: "I want to go to Dragon Bridge",
-                        nextLocalLine: "Tôi sẽ gọi xe đi Cầu Rồng cho bạn.",
-                        nextLocalMeaning: "I will call a car to Dragon Bridge for you."
+                    "viet-family-v900-airp-bord-arri-please-call-this-driver-for-me": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Hãy gọi tài xế này cho tôi",
+                        english: "Please call this driver for me",
+                        nextLocalLine: "Được, cho tôi xem số điện thoại tài xế.",
+                        nextLocalMeaning: "Okay, please show me the driver's phone number."
                     ),
                 ]
             ),
@@ -1934,9 +1972,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 localLineMeaning: "Where would you like to get out?",
                 userGoal: "Ask for a simple drop-off and close the ride.",
                 bestPageIDs: [
-                    "viet-family-ves-drop-me-off-here",
                     "viet-family-transport-stop-here",
-                    "viet-family-city-danang-get-off-my-khe",
                 ],
                 alternatePageIDs: [
                     "viet-family-transport-stop-here",
@@ -1953,10 +1989,6 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 nextStepTitle: "Say thanks",
                 localScenarioContext: "taxi_story_dropoff",
                 scenarioResponseCopies: [
-                    "viet-family-ves-drop-me-off-here": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Cho tôi xuống ở đây được không?",
-                        english: "Can you drop me off here?"
-                    ),
                     "viet-family-transport-stop-here": PracticeScenarioPhraseTemplate(
                         vietnamese: "Dừng ở đây được rồi",
                         english: "You can stop here",
@@ -2430,7 +2462,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 ],
                 alternatePageIDs: [
                     "viet-thanks-khong-cam-on",
-                    "viet-family-vpe-food-has-co-dau-phong-khong",
+                    "viet-family-food-has-peanuts",
                 ],
                 recoveryPageIDs: [
                     "viet-family-food-peanut-allergy",
@@ -2453,9 +2485,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         nextLocalLine: "Không sao, tôi không làm món đó nhé.",
                         nextLocalMeaning: "No problem. I will not prepare that snack."
                     ),
-                    "viet-family-vpe-food-has-co-dau-phong-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Có đậu phộng không?",
-                        english: "Does it have peanuts?",
+                    "viet-family-food-has-peanuts": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cái này có đậu phộng không?",
+                        english: "Does this have peanuts?",
                         nextLocalLine: "Có đậu phộng. Nếu bạn cần tránh, chọn món khác nhé.",
                         nextLocalMeaning: "Yes, it has peanuts. Choose another snack if you need to avoid them."
                     ),
@@ -2613,12 +2645,12 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 userGoal: "Choose what you want to do next.",
                 bestPageIDs: [
                     "viet-family-food-one-portion",
-                    "viet-family-ves-order-cao-lau-portion",
+                    "viet-family-v500-food-drin-id-like-a-b-nh-m-please",
                 ],
                 alternatePageIDs: [
-                    "viet-family-ves-order-cao-lau-portion",
+                    "viet-family-v500-food-drin-id-like-a-b-nh-m-please",
                     "viet-phrase-v900-food-drin-what-do-you-recommend",
-                    "viet-family-vpe-food-has-co-dau-phong-khong",
+                    "viet-family-food-has-peanuts",
                 ],
                 alternateLimit: 3,
                 recoveryPageIDs: [
@@ -2636,9 +2668,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         vietnamese: "Dạ, cho tôi một phần món này",
                         english: "One portion of this, please"
                     ),
-                    "viet-family-ves-order-cao-lau-portion": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Dạ, cho tôi một phần cao lầu",
-                        english: "One portion of cao lau, please",
+                    "viet-family-v500-food-drin-id-like-a-b-nh-m-please": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Làm ơn cho tôi một cái bánh mì",
+                        english: "I'd like a banh mi, please",
                         nextLocalLine: "Được, bạn chờ một chút nhé.",
                         nextLocalMeaning: "Okay, please wait here."
                     ),
@@ -2652,9 +2684,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         nextLocalLine: "Tôi đề xuất cao lầu, món này dễ thử.",
                         nextLocalMeaning: "I recommend cao lau; it is easy to try."
                     ),
-                    "viet-family-vpe-food-has-co-dau-phong-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Có đậu phộng không?",
-                        english: "Does it have peanuts?",
+                    "viet-family-food-has-peanuts": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cái này có đậu phộng không?",
+                        english: "Does this have peanuts?",
                         nextLocalLine: "Để tôi hỏi bếp xem có đậu phộng không.",
                         nextLocalMeaning: "Let me check with the kitchen about peanuts."
                     ),
@@ -2669,11 +2701,11 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 userGoal: "Ask for it not spicy, or check one ingredient.",
                 bestPageIDs: [
                     "viet-family-food-not-spicy",
-                    "viet-family-vpe-food-has-co-dau-phong-khong",
+                    "viet-family-food-has-peanuts",
                 ],
                 alternatePageIDs: [
-                    "viet-family-vpe-food-has-co-dau-phong-khong",
-                    "viet-family-vpe-food-has-co-thit-heo-khong",
+                    "viet-family-food-has-peanuts",
+                    "viet-family-v900-food-drin-i-do-not-eat-pork",
                 ],
                 recoveryPageIDs: [
                     "viet-family-food-peanut-allergy",
@@ -2690,15 +2722,15 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         vietnamese: "Không cay nhé",
                         english: "Not spicy, please"
                     ),
-                    "viet-family-vpe-food-has-co-dau-phong-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Có đậu phộng không?",
-                        english: "Does it have peanuts?",
+                    "viet-family-food-has-peanuts": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Cái này có đậu phộng không?",
+                        english: "Does this have peanuts?",
                         nextLocalLine: "Để tôi hỏi bếp xem có đậu phộng không.",
                         nextLocalMeaning: "Let me check with the kitchen about peanuts."
                     ),
-                    "viet-family-vpe-food-has-co-thit-heo-khong": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Có thịt heo không?",
-                        english: "Does it have pork?",
+                    "viet-family-v900-food-drin-i-do-not-eat-pork": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi không ăn thịt lợn",
+                        english: "I do not eat pork",
                         nextLocalLine: "Để tôi hỏi bếp xem có thịt heo không.",
                         nextLocalMeaning: "Let me check with the kitchen about pork."
                     ),
@@ -2716,7 +2748,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                     "viet-phrase-v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water",
                 ],
                 alternatePageIDs: [
-                    "viet-family-vpe-one-item-please-cho-toi-mot-tra-da",
+                    "viet-family-v900-food-drin-one-iced-tea-please",
                     "viet-thanks-khong-cam-on",
                 ],
                 recoveryPageIDs: [
@@ -2734,9 +2766,9 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         vietnamese: "Cho tôi chai nước",
                         english: "A bottle of water please"
                     ),
-                    "viet-family-vpe-one-item-please-cho-toi-mot-tra-da": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Cho tôi trà đá",
-                        english: "Iced tea, please",
+                    "viet-family-v900-food-drin-one-iced-tea-please": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Làm ơn cho một ly trà đá",
+                        english: "One iced tea, please",
                         nextLocalLine: "Dạ, tôi lấy đồ uống cho bạn.",
                         nextLocalMeaning: "Yes, I'll bring your drink."
                     ),
@@ -2839,11 +2871,11 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-mo-cua-phong-duoc-khong",
-                            vietnamese: "Bạn giúp tôi mở cửa phòng được không?",
-                            english: "Can you help me open the room door?",
-                            nextLocalLine: "Được, tôi sẽ kiểm tra thẻ phòng cho bạn.",
-                            nextLocalMeaning: "Yes, I will check your key card."
+                            "viet-family-v500-hote-acco-the-door-does-not-lock",
+                            vietnamese: "Cửa không khóa",
+                            english: "The door does not lock",
+                            nextLocalLine: "Xin lỗi, tôi sẽ kiểm tra khóa cửa ngay.",
+                            nextLocalMeaning: "Sorry, I will check the door lock right away."
                         ),
                         messageReply(
                             "viet-family-v500-prob-help-i-lost-my-room-key",
@@ -2879,9 +2911,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Sorry, I will ask maintenance to check it."
                         ),
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-sua-wi-fi-duoc-khong",
-                            vietnamese: "Bạn giúp tôi sửa Wi-Fi được không?",
-                            english: "Can you help me fix the Wi-Fi?",
+                            "viet-family-phone-password-not-working",
+                            vietnamese: "Mật khẩu Wi-Fi không hoạt động.",
+                            english: "The Wi-Fi password is not working",
                             nextLocalLine: "Được, tôi sẽ kiểm tra mạng trong phòng bạn.",
                             nextLocalMeaning: "Yes, I will check the network in your room."
                         ),
@@ -2921,6 +2953,45 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ],
                     nextStepTitle: "Ask for a repair",
                     localScenarioContext: "hotel_room_ac"
+                ),
+                messageScenarioStep(
+                    id: "hotel-room-bathroom",
+                    momentType: .ask,
+                    scene: "The staff is checking the room, and you add one concrete room problem.",
+                    localLine: "Còn vấn đề nào khác trong phòng không?",
+                    localLineMeaning: "Is there any other problem in the room?",
+                    userGoal: "Name the bathroom or door problem clearly.",
+                    best: messageReply(
+                        "viet-family-v500-hote-acco-the-toilet-is-not-working",
+                        vietnamese: "Nhà vệ sinh không hoạt động",
+                        english: "The toilet is not working",
+                        nextLocalLine: "Xin lỗi, tôi sẽ báo kỹ thuật kiểm tra ngay.",
+                        nextLocalMeaning: "Sorry, I will ask maintenance to check it right away."
+                    ),
+                    alternates: [
+                        messageReply(
+                            "viet-family-v500-hote-acco-the-door-does-not-lock",
+                            vietnamese: "Cửa không khóa",
+                            english: "The door does not lock",
+                            nextLocalLine: "Xin lỗi, tôi sẽ kiểm tra khóa cửa ngay.",
+                            nextLocalMeaning: "Sorry, I will check the door lock right away."
+                        ),
+                        messageReply(
+                            "viet-family-v900-hote-acco-the-room-smells-like-smoke",
+                            vietnamese: "Căn phòng có mùi khói",
+                            english: "The room smells like smoke",
+                            nextLocalLine: "Tôi hiểu rồi. Tôi sẽ kiểm tra phòng khác cho bạn.",
+                            nextLocalMeaning: "I understand. I will check another room for you."
+                        ),
+                    ],
+                    recoveryPageIDs: [
+                        "viet-family-v500-hote-acco-can-someone-come-fix-it",
+                        "viet-family-v500-hote-acco-can-i-change-rooms",
+                    ],
+                    recoveryTitle: "If the room issue affects safety",
+                    recoveryBody: "Name the specific problem first, then ask for staff to come up.",
+                    nextStepTitle: "Ask for a repair",
+                    localScenarioContext: "hotel_room_bathroom"
                 ),
                 messageScenarioStep(
                     id: "hotel-room-fix",
@@ -3027,9 +3098,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Yes, we will keep your bags for you."
                         ),
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-gui-hanh-ly-duoc-khong",
-                            vietnamese: "Bạn giúp tôi gửi hành lý được không?",
-                            english: "Can you help me store my luggage?",
+                            "viet-family-v900-hote-acco-can-you-store-my-luggage-after-check-out",
+                            vietnamese: "Bạn có thể gửi hành lý của tôi sau khi trả phòng không?",
+                            english: "Can you store my luggage after check-out?",
                             nextLocalLine: "Được, để hành lý ở quầy này nhé.",
                             nextLocalMeaning: "Yes, leave your luggage at this counter."
                         ),
@@ -3152,9 +3223,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-viet-dia-chi-duoc-khong",
-                            vietnamese: "Bạn giúp tôi viết địa chỉ được không?",
-                            english: "Can you help me write the address?",
+                            "viet-family-v500-unde-repa-can-you-write-the-address",
+                            vietnamese: "Bạn có thể viết địa chỉ được không?",
+                            english: "Can you write the address?",
                             nextLocalLine: "Được, tôi sẽ viết địa chỉ bằng tiếng Việt.",
                             nextLocalMeaning: "Yes, I will write the address in Vietnamese."
                         ),
@@ -3318,6 +3389,45 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     localScenarioContext: "food_allergy_spice"
                 ),
                 messageScenarioStep(
+                    id: "food-allergy-kitchen-note",
+                    momentType: .ask,
+                    scene: "Before the kitchen starts, you confirm the safest version of the dish.",
+                    localLine: "Bạn muốn tôi dặn bếp thế nào?",
+                    localLineMeaning: "How would you like me to tell the kitchen?",
+                    userGoal: "Ask for a safer version with less spice or no peanuts.",
+                    best: messageReply(
+                        "viet-family-v500-food-drin-please-make-it-without-peanuts",
+                        vietnamese: "Hãy làm món này mà không cần đậu phộng",
+                        english: "Please make it without peanuts",
+                        nextLocalLine: "Được, tôi sẽ dặn bếp không dùng đậu phộng.",
+                        nextLocalMeaning: "Okay, I will tell the kitchen not to use peanuts."
+                    ),
+                    alternates: [
+                        messageReply(
+                            "viet-family-v900-food-drin-please-make-it-less-spicy",
+                            vietnamese: "Làm ơn làm cho nó bớt cay đi",
+                            english: "Please make it less spicy",
+                            nextLocalLine: "Được, tôi sẽ dặn bếp làm ít cay.",
+                            nextLocalMeaning: "Okay, I will tell the kitchen to make it less spicy."
+                        ),
+                        messageReply(
+                            "viet-family-v900-food-drin-can-i-have-napkins",
+                            vietnamese: "Tôi có thể có khăn ăn được không?",
+                            english: "Can I have napkins?",
+                            nextLocalLine: "Được, tôi lấy khăn ăn cho bạn ngay.",
+                            nextLocalMeaning: "Sure, I will bring napkins right away."
+                        ),
+                    ],
+                    recoveryPageIDs: [
+                        "viet-family-food-peanut-allergy",
+                        "viet-family-food-not-spicy",
+                    ],
+                    recoveryTitle: "If the kitchen note matters",
+                    recoveryBody: "Repeat the allergy or spice request before the order goes in.",
+                    nextStepTitle: "Fix the order",
+                    localScenarioContext: "food_allergy_kitchen_note"
+                ),
+                messageScenarioStep(
                     id: "food-allergy-fix",
                     momentType: .ask,
                     scene: "The dish arrives and you want to fix it politely before eating.",
@@ -3340,9 +3450,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Sorry, I will ask the kitchen to remake it."
                         ),
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-doi-mon-nay-duoc-khong",
-                            vietnamese: "Bạn giúp tôi đổi món này được không?",
-                            english: "Can you help me change this dish?",
+                            "viet-family-food-wrong-order",
+                            vietnamese: "Đây không phải món tôi gọi",
+                            english: "This isn't what I ordered",
                             nextLocalLine: "Được, tôi sẽ đổi món khác cho bạn.",
                             nextLocalMeaning: "Yes, I will change it to another dish for you."
                         ),
@@ -3530,6 +3640,45 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ],
                     nextStepTitle: "Say thanks",
                     localScenarioContext: "taxi_route_fare"
+                ),
+                messageScenarioStep(
+                    id: "taxi-route-app-price",
+                    momentType: .ask,
+                    scene: "The driver mentions payment again and you want to keep it aligned with the app.",
+                    localLine: "Bạn muốn thanh toán theo ứng dụng đúng không?",
+                    localLineMeaning: "You want to pay according to the app, right?",
+                    userGoal: "Ask to use the Grab app price.",
+                    best: messageReply(
+                        "viet-family-v900-tran-please-use-the-price-in-the-grab-app",
+                        vietnamese: "Vui lòng sử dụng giá trên ứng dụng Grab.",
+                        english: "Please use the price in the Grab app.",
+                        nextLocalLine: "Được, tôi dùng giá trong ứng dụng.",
+                        nextLocalMeaning: "Okay, I will use the price in the app."
+                    ),
+                    alternates: [
+                        messageReply(
+                            "viet-family-v900-tran-can-i-pay-by-bank-transfer",
+                            vietnamese: "Tôi có thể thanh toán bằng chuyển khoản ngân hàng không?",
+                            english: "Can I pay by bank transfer?",
+                            nextLocalLine: "Được, bạn có thể chuyển khoản.",
+                            nextLocalMeaning: "Yes, you can pay by bank transfer."
+                        ),
+                        messageReply(
+                            "viet-family-v900-tran-please-tell-me-when-to-get-off",
+                            vietnamese: "Hãy cho tôi biết khi nào nên xuống xe",
+                            english: "Please tell me when to get off",
+                            nextLocalLine: "Được, gần đến nơi tôi sẽ báo bạn.",
+                            nextLocalMeaning: "Okay, I will tell you when we are close."
+                        ),
+                    ],
+                    recoveryPageIDs: [
+                        "viet-family-v900-tran-is-that-the-total-price",
+                        "viet-family-v500-prob-help-can-you-help-me",
+                    ],
+                    recoveryTitle: "If payment drifts",
+                    recoveryBody: "Point to the app price and ask one payment question at a time.",
+                    nextStepTitle: "Say thanks",
+                    localScenarioContext: "taxi_route_app_price"
                 ),
                 messageGoodbyeStep(
                     id: "taxi-route-goodbye",
@@ -3830,6 +3979,45 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     localScenarioContext: "shopping_market_discount"
                 ),
                 messageScenarioStep(
+                    id: "shopping-market-cheaper",
+                    momentType: .ask,
+                    scene: "The vendor shows a similar item and you want a cheaper option before deciding.",
+                    localLine: "Bạn muốn xem mẫu khác không?",
+                    localLineMeaning: "Would you like to see another style?",
+                    userGoal: "Ask for a cheaper or simpler option.",
+                    best: messageReply(
+                        "viet-family-v900-shop-do-you-have-a-cheaper-one",
+                        vietnamese: "Bạn có cái nào rẻ hơn không?",
+                        english: "Do you have a cheaper one?",
+                        nextLocalLine: "Có, tôi cho bạn xem mẫu rẻ hơn.",
+                        nextLocalMeaning: "Yes, I will show you a cheaper one."
+                    ),
+                    alternates: [
+                        messageReply(
+                            "viet-family-v900-shop-can-you-make-it-a-round-number",
+                            vietnamese: "Bạn có thể biến nó thành một số tròn được không?",
+                            english: "Can you make it a round number?",
+                            nextLocalLine: "Được, tôi làm tròn giá cho bạn.",
+                            nextLocalMeaning: "Okay, I can make it a round price for you."
+                        ),
+                        messageReply(
+                            "viet-family-v900-shop-do-you-have-this-in-black",
+                            vietnamese: "Bạn có cái này màu đen không?",
+                            english: "Do you have this in black?",
+                            nextLocalLine: "Có, tôi lấy màu đen cho bạn xem.",
+                            nextLocalMeaning: "Yes, I will show you the black one."
+                        ),
+                    ],
+                    recoveryPageIDs: [
+                        "viet-family-v900-shop-can-you-give-me-a-discount",
+                        "viet-family-v500-shop-how-much-is-this-item",
+                    ],
+                    recoveryTitle: "If bargaining feels awkward",
+                    recoveryBody: "Ask for a cheaper option before naming a lower price.",
+                    nextStepTitle: "Buy two",
+                    localScenarioContext: "shopping_market_cheaper"
+                ),
+                messageScenarioStep(
                     id: "shopping-market-two",
                     momentType: .ask,
                     scene: "You may buy two if the price works.",
@@ -4000,9 +4188,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Yes, I will get a larger size for you."
                         ),
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-kich-co-duoc-khong",
-                            vietnamese: "Bạn giúp tôi kiểm tra kích cỡ được không?",
-                            english: "Can you help me check the size?",
+                            "viet-family-shopping-size",
+                            vietnamese: "Tôi muốn cỡ này",
+                            english: "I want this size",
                             nextLocalLine: "Được, tôi sẽ kiểm tra kích cỡ cho bạn.",
                             nextLocalMeaning: "Yes, I will check the size for you."
                         ),
@@ -4033,11 +4221,11 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Yes, I will show you another color."
                         ),
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-tim-mau-khac-duoc-khong",
-                            vietnamese: "Bạn giúp tôi tìm màu khác được không?",
-                            english: "Can you help me find another color?",
-                            nextLocalLine: "Được, tôi sẽ tìm màu khác cho bạn.",
-                            nextLocalMeaning: "Yes, I will find another color for you."
+                            "viet-family-v900-shop-do-you-have-a-better-quality-one",
+                            vietnamese: "Bạn có cái nào chất lượng hơn không?",
+                            english: "Do you have a better quality one?",
+                            nextLocalLine: "Có, tôi cho bạn xem loại tốt hơn.",
+                            nextLocalMeaning: "Yes, I will show you a better quality one."
                         ),
                     ],
                     nextStepTitle: "Pack it",
@@ -4066,9 +4254,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Yes, I will wrap it carefully."
                         ),
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-dong-goi-do-nay-duoc-khong",
-                            vietnamese: "Bạn giúp tôi đóng gói đồ này được không?",
-                            english: "Can you help me pack this item?",
+                            "viet-family-food-pack-to-go",
+                            vietnamese: "Gói mang về",
+                            english: "Pack it to go",
                             nextLocalLine: "Được, tôi sẽ đóng gói cho bạn.",
                             nextLocalMeaning: "Yes, I will pack it for you."
                         ),
@@ -4331,9 +4519,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Okay, I will show you the way."
                         ),
                         messageReply(
-                            "viet-family-vpe-help-action-anh-chi-giup-toi-goi-canh-sat-duoc-khong",
-                            vietnamese: "Bạn giúp tôi gọi công an được không?",
-                            english: "Can you help me call the police?",
+                            "viet-family-v500-emer-safe-please-call-the-police",
+                            vietnamese: "Hãy gọi cảnh sát",
+                            english: "Please call the police",
                             nextLocalLine: "Được, tôi sẽ gọi công an giúp bạn.",
                             nextLocalMeaning: "Yes, I will call the police for you."
                         ),
@@ -4603,6 +4791,45 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     localScenarioContext: "emergency_bag_report"
                 ),
                 messageScenarioStep(
+                    id: "emergency-bag-emergency-help",
+                    momentType: .ask,
+                    scene: "The desk checks whether you need medical or emergency help after the bag incident.",
+                    localLine: "Bạn có cần hỗ trợ khẩn cấp hoặc y tế không?",
+                    localLineMeaning: "Do you need emergency or medical help?",
+                    userGoal: "Ask when to seek emergency help, or name a simple medical need.",
+                    best: messageReply(
+                        "viet-family-v900-heal-phar-when-should-i-seek-emergency-help",
+                        vietnamese: "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
+                        english: "When should I seek emergency help?",
+                        nextLocalLine: "Nếu bạn bị thương hoặc thấy không an toàn, chúng tôi gọi hỗ trợ ngay.",
+                        nextLocalMeaning: "If you are injured or feel unsafe, we will call help right away."
+                    ),
+                    alternates: [
+                        messageReply(
+                            "viet-family-v500-heal-phar-i-need-a-dentist",
+                            vietnamese: "Tôi cần một nha sĩ",
+                            english: "I need a dentist",
+                            nextLocalLine: "Được, tôi sẽ chỉ phòng khám nha gần đây.",
+                            nextLocalMeaning: "Okay, I will show you a nearby dental clinic."
+                        ),
+                        messageReply(
+                            "viet-family-v900-heal-phar-i-need-mosquito-repellent",
+                            vietnamese: "Tôi cần thuốc chống muỗi",
+                            english: "I need mosquito repellent",
+                            nextLocalLine: "Nhà thuốc gần đây có thuốc chống muỗi.",
+                            nextLocalMeaning: "The nearby pharmacy has mosquito repellent."
+                        ),
+                    ],
+                    recoveryPageIDs: [
+                        "viet-family-v500-prob-help-i-need-help-now",
+                        "viet-family-v500-prob-help-can-i-have-an-interpreter",
+                    ],
+                    recoveryTitle: "If you feel unsafe or hurt",
+                    recoveryBody: "Ask for emergency help before continuing the report.",
+                    nextStepTitle: "Leave contact info",
+                    localScenarioContext: "emergency_bag_emergency_help"
+                ),
+                messageScenarioStep(
                     id: "emergency-bag-contact",
                     momentType: .ask,
                     scene: "The desk may need to contact you if they find the bag.",
@@ -4784,6 +5011,45 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     localScenarioContext: "greeting_market_thanks"
                 ),
                 messageScenarioStep(
+                    id: "greeting-market-small-talk",
+                    momentType: .ask,
+                    scene: "The exchange is friendly, and you want one light local phrase before leaving.",
+                    localLine: "Bạn muốn nói gì thêm không?",
+                    localLineMeaning: "Would you like to say anything else?",
+                    userGoal: "Use a short friendly phrase that keeps the conversation easy.",
+                    best: messageReply(
+                        "viet-family-hello-good-morning",
+                        vietnamese: "Chào buổi sáng",
+                        english: "Good morning",
+                        nextLocalLine: "Chào buổi sáng, chúc bạn một ngày vui.",
+                        nextLocalMeaning: "Good morning, have a nice day."
+                    ),
+                    alternates: [
+                        messageReply(
+                            "viet-family-v900-poli-basi-no-problem",
+                            vietnamese: "Không có gì",
+                            english: "No problem",
+                            nextLocalLine: "Dạ, không sao. Bạn cứ xem tiếp nhé.",
+                            nextLocalMeaning: "No problem. Feel free to keep looking."
+                        ),
+                        messageReply(
+                            "viet-family-v900-poli-basi-im-in-a-hurry",
+                            vietnamese: "Tôi đang vội",
+                            english: "I'm in a hurry",
+                            nextLocalLine: "Dạ được, hẹn gặp lại bạn.",
+                            nextLocalMeaning: "Okay, see you again."
+                        ),
+                    ],
+                    recoveryPageIDs: [
+                        "viet-family-polite-thank-you",
+                        "viet-goodbye",
+                    ],
+                    recoveryTitle: "If small talk feels hard",
+                    recoveryBody: "A short hello, thank-you, or goodbye is enough.",
+                    nextStepTitle: "Close",
+                    localScenarioContext: "greeting_market_small_talk"
+                ),
+                messageScenarioStep(
                     id: "greeting-market-goodbye-prep",
                     momentType: .ask,
                     scene: "You are leaving the stall.",
@@ -4873,26 +5139,26 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     localLineMeaning: "Please wait a moment.",
                     userGoal: "Acknowledge the wait.",
                     best: messageReply(
-                        "viet-family-vpe-likely-replies-cho-mot-chut",
-                        vietnamese: "Tôi chờ một chút",
-                        english: "I will wait a moment",
+                        "viet-family-polite-acknowledge",
+                        vietnamese: "Dạ, được",
+                        english: "Yes, okay",
                         nextLocalLine: "Cảm ơn bạn đã chờ.",
                         nextLocalMeaning: "Thank you for waiting."
                     ),
                     alternates: [
-                        messageReply(
-                            "viet-family-polite-acknowledge",
-                            vietnamese: "Dạ, được",
-                            english: "Yes, okay",
-                            nextLocalLine: "Cảm ơn bạn.",
-                            nextLocalMeaning: "Thank you."
-                        ),
                         messageReply(
                             "viet-family-v500-poli-basi-yes",
                             vietnamese: "Dạ",
                             english: "Yes",
                             nextLocalLine: "Bạn chờ một chút nhé.",
                             nextLocalMeaning: "Please wait a moment."
+                        ),
+                        messageReply(
+                            "viet-family-transport-wait",
+                            vietnamese: "Chờ tôi năm phút",
+                            english: "Wait for me five minutes",
+                            nextLocalLine: "Được, tôi chờ bạn ở sảnh.",
+                            nextLocalMeaning: "Okay, I will wait for you in the lobby."
                         ),
                     ],
                     nextStepTitle: "Repair politely",
