@@ -271,11 +271,10 @@ struct ChromeSeparationGradient: View {
 struct TopAdminHitTestEnvelope: View {
     var body: some View {
         Rectangle()
-            .fill(Color(.systemBackground).opacity(0.001))
+            .fill(Color.clear)
             .frame(maxWidth: .infinity)
             .frame(height: AppChromeLayout.topAdminHitTestEnvelopeHeight)
-            .contentShape(Rectangle())
-            .onTapGesture {}
+            .allowsHitTesting(false)
             .accessibilityHidden(true)
     }
 }

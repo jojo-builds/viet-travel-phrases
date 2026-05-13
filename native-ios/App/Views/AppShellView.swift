@@ -3041,14 +3041,16 @@ private enum HomeContent {
             route: .category("shopping"),
             sourceCategoryIDs: ["shopping", "money-numbers-prices", "local-services-everyday-tasks"],
             pageIDs: [
-                "viet-phrase-money-how-much-common",
                 "viet-phrase-price-1",
+                "viet-phrase-v500-shop-can-you-lower-the-price",
                 "viet-phrase-v500-mone-numb-pric-can-i-have-a-receipt",
                 "viet-phrase-v500-mone-numb-pric-can-i-try-another-card",
                 "viet-phrase-price-9",
                 "viet-phrase-shop-1",
             ],
-            layout: .mediumGrid
+            layout: .mediumGrid,
+            maximumItemCount: 6,
+            fillsFromSourceCategories: false
         ),
         HomePhraseShelfDefinition(
             id: "help-emergency",
@@ -3218,10 +3220,38 @@ enum HomePageLinkRegistry {
         HomeContent.homepagePhraseShelf("first-day")?.items.map(\.pageID) ?? []
     }
 
+    static var homepagePhraseShelfSnapshots: [HomePagePhraseShelfSnapshot] {
+        HomeContent.homepagePhraseShelves.map { shelf in
+            HomePagePhraseShelfSnapshot(
+                id: shelf.id,
+                title: shelf.title,
+                items: shelf.items.map { item in
+                    HomePagePhraseShelfSnapshot.Item(
+                        pageID: item.pageID,
+                        title: item.title,
+                        subtitle: item.subtitle
+                    )
+                }
+            )
+        }
+    }
+
     private static func uniquePageIDs(_ pageIDs: [String]) -> [String] {
         var seen = Set<String>()
         return pageIDs.filter { seen.insert($0).inserted }
     }
+}
+
+struct HomePagePhraseShelfSnapshot: Equatable {
+    struct Item: Equatable {
+        let pageID: String
+        let title: String
+        let subtitle: String
+    }
+
+    let id: String
+    let title: String
+    let items: [Item]
 }
 #endif
 
