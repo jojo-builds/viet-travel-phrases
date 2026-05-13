@@ -31,7 +31,7 @@ Authority lane: native iOS transition and Codex carryover truth
 - Archived pre-Mac worktree snapshots, if needed for history only: `/Users/jojolim/Developer/products/speaklocal/recovered-worktrees`
 - Command Line Tools, Swift CLI, Git, full Xcode, Homebrew, Node, and npm are installed.
 - Xcode is installed at `/Applications/Xcode.app`.
-- iOS 26.4 simulator tooling is installed and an iPhone 17 Pro simulator has been boot-verified.
+- Xcode 26.5 and iOS 26.5 simulator tooling are installed; an iPhone 17 Pro iOS 26.5 simulator has been build/test-verified.
 - Native SwiftUI implementation has started in `native-ios/`.
 - The first native proof app is `native-ios/SpeakLocalNative.xcodeproj`.
 - The first flagship page running natively is the `Xin chào` listing/answer page.
@@ -117,7 +117,7 @@ Do not treat app logs as project memory. The durable continuity source is the re
    - `node native-ios/scripts/validate-viet-sqlite-fixture.js`
 6. Validate the native lane from `native-ios/` when touching SwiftUI/native resources:
    - `xcodegen generate`
-   - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build`
+   - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build`
 7. After visible native UI changes, launch the app in the simulator so Jojo can test the exact result.
 
 ## Codex workflow continuity on the Mac

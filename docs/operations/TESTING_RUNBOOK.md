@@ -56,7 +56,7 @@ node native-ios/scripts/sync-viet-audio.js
 node native-ios/scripts/validate-viet-sqlite-fixture.js
 node scripts/guard-native-only.js
 git diff --check
-xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build CODE_SIGNING_ALLOWED=NO
+xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build CODE_SIGNING_ALLOWED=NO
 ```
 
 For focused app changes, also run the relevant Xcode test target or UI smoke test for that surface.

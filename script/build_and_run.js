@@ -9,11 +9,7 @@ const rootDir = path.resolve(__dirname, "..");
 const nativeDir = path.join(rootDir, "native-ios");
 const projectPath = path.join(nativeDir, "SpeakLocalNative.xcodeproj");
 const defaultDestination =
-  process.env.SPEAKLOCAL_SIM_DESTINATION || "platform=iOS Simulator,name=iPhone 17 Pro";
-
-function commandName(base) {
-  return process.platform === "win32" ? `${base}.cmd` : base;
-}
+  process.env.SPEAKLOCAL_SIM_DESTINATION || "platform=iOS Simulator,name=iPhone 17 Pro,OS=latest";
 
 function ensureNativeProject() {
   if (!fs.existsSync(projectPath)) {
@@ -87,7 +83,7 @@ switch (mode) {
   case "xcodegen": {
     ensureNativeProject();
     console.log(`Regenerating native Xcode project from ${path.join(nativeDir, "project.yml")}`);
-    runProcess(commandName("xcodegen"), ["generate"], { cwd: nativeDir });
+    runProcess("xcodegen", ["generate"], { cwd: nativeDir });
     break;
   }
 

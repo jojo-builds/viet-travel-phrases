@@ -85,5 +85,5 @@ Verification expectations:
 - After visible UI changes, build and launch the simulator so Jojo can test it.
 - For code changes, run the relevant Xcode build/test command when practical:
   - `xcodegen generate`
-  - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build`
+  - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build`
 - For content/resource changes, regenerate the relevant resource and inspect the diff before committing.

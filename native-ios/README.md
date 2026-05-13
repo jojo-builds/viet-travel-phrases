@@ -33,7 +33,7 @@ xcodegen generate
 Build from this folder:
 
 ```sh
-xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build
+xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build
 ```
 
 For local physical-device testing, keep personal signing out of repo files. Pass the developer team only as a local command-line override:
@@ -56,7 +56,7 @@ Physical-device testing can be wired or wireless after the iPhone is paired with
 Run tests from this folder:
 
 ```sh
-xcodebuild test -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
+xcodebuild test -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest'
 ```
 
 After visible UI changes, launch the app in the iOS simulator for Jojo to test.

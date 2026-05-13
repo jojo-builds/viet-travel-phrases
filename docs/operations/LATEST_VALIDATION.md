@@ -34,9 +34,9 @@ Fresh command evidence from this pass:
   - passed: `3078` source phrases, `3070` canonical pages, `20413` relations, `0` release-blocking missing-audio rows, `0` banned file matches
 - `git diff --check`
   - passed
-- `xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build CODE_SIGNING_ALLOWED=NO`
-  - passed
-- `xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' test -only-testing:SpeakLocalNativeTests/AppChromeTests -only-testing:SpeakLocalNativeTests/SQLiteLanguagePackRepositoryTests -only-testing:SpeakLocalNativeTests/PracticeScenarioModeTests CODE_SIGNING_ALLOWED=NO`
+- `xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build CODE_SIGNING_ALLOWED=NO`
+  - passed on Xcode `26.5` / iOS Simulator SDK `26.5`
+- `xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,id=45430432-6E67-495B-8A1F-A0086D721315' test -only-testing:SpeakLocalNativeTests/AppChromeTests -only-testing:SpeakLocalNativeTests/SQLiteLanguagePackRepositoryTests -only-testing:SpeakLocalNativeTests/PracticeScenarioModeTests CODE_SIGNING_ALLOWED=NO`
   - passed: `158` tests, `0` failures
 
 Known pre-existing test debt:
@@ -47,14 +47,14 @@ Known pre-existing test debt:
 ## Last Known Native App Truth
 
 - Active app root: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
-- Bundle ID: `com.jojobuilds.viettravelphrases`
+- Bundle ID: `app.speaklocal.vietnam.native`
 - Product ID: `com.jojobuilds.viettravelphrases.premiumunlock`
 - Current language pack under active development: Viet
 - Tagalog remains a future native language-pack candidate unless Jojo explicitly reactivates that lane.
 
 ## Remaining Proof Needed
 
-- Fresh physical iPhone install from current `main` after native-only cleanup is merged.
+- Fresh physical iPhone install from current `main` after Jojo's iPhone finishes updating to iOS 26.5 and appears available to Xcode.
 - Fresh StoreKit purchase/restore/relaunch proof when the native paywall branch is ready.
 - Fresh screenshots for any native UI work that changes visible app behavior.
 

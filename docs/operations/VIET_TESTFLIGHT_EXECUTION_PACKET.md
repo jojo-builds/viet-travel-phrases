@@ -48,7 +48,7 @@ Record:
 Run a native build before touching the physical iPhone:
 
 ```sh
-xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build CODE_SIGNING_ALLOWED=NO
+xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build CODE_SIGNING_ALLOWED=NO
 ```
 
 If the pass includes visible UI changes, capture simulator screenshots for the changed screens.
