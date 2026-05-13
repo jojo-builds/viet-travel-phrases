@@ -368,16 +368,31 @@ struct AppShellView: View {
 
     private func selectSystemTab(_ tab: AppSystemTab) {
         switch tab {
-        case .home:
-            openHome()
-        case .browse:
-            openBrowse()
-        case .saved:
-            openSaved()
-        case .practice:
-            openPractice()
+        case .home, .browse, .saved, .practice:
+            openPrimarySystemTab(tab)
         case .search:
             openSearch(prefilledQuery: nil, focusField: true)
+        }
+    }
+
+    private func openPrimarySystemTab(_ tab: AppSystemTab) {
+        withoutRouteAnimation {
+            cancelInteractiveChromeState()
+            cancelSearchFocus()
+
+            switch tab {
+            case .home:
+                navigation.openHome()
+                searchQuery = ""
+            case .browse:
+                navigation.openBrowse()
+            case .saved:
+                navigation.openSaved()
+            case .practice:
+                navigation.openPractice()
+            case .search:
+                break
+            }
         }
     }
 
