@@ -109,7 +109,7 @@ struct PracticeStoryTurn: Identifiable, Equatable {
             english: nil,
             audioKey: nil,
             source: step.source,
-            responseOptions: Array(step.responseOptions.prefix(3))
+            responseOptions: Array(step.responseOptions.prefix(4))
         )
     }
 

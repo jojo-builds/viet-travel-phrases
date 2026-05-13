@@ -292,7 +292,7 @@ struct PracticeStoryComposer: View {
     @State private var pendingOptionID: String?
 
     private var options: [PracticeScenarioResponseOption] {
-        Array(step.responseOptions.prefix(3))
+        Array(step.responseOptions.prefix(4))
     }
 
     private var pendingOption: PracticeScenarioResponseOption? {
@@ -378,7 +378,7 @@ struct PracticeStoryComposer: View {
 
         HStack(alignment: .center, spacing: 12) {
             Text(pendingOption?.scenarioVietnamese ?? "")
-                .font(.system(size: 23, weight: .regular))
+                .font(.system(size: 22, weight: .regular))
                 .foregroundStyle(.primary)
                 .lineLimit(2)
                 .minimumScaleFactor(0.82)
@@ -408,8 +408,8 @@ struct PracticeStoryComposer: View {
         }
         .padding(.leading, 18)
         .padding(.trailing, 10)
-        .padding(.vertical, 10)
-        .frame(minHeight: 60)
+        .padding(.vertical, 9)
+        .frame(minHeight: 56)
         .frame(maxWidth: .infinity)
         .background(Color.white.opacity(0.38), in: shape)
         .nativeGlass(cornerRadius: 24, tint: .white, interactive: true)
@@ -446,7 +446,7 @@ struct PracticeStoryComposer: View {
 private enum PracticeStoryChoiceStripLayout {
     static let horizontalPadding: CGFloat = 14
     static let trailingFocusSpace: CGFloat = 260
-    static let height: CGFloat = 76
+    static let height: CGFloat = 70
 }
 
 private struct PracticeStoryChoiceChip: View {
@@ -455,11 +455,11 @@ private struct PracticeStoryChoiceChip: View {
     let onSelect: () -> Void
 
     private var minWidth: CGFloat {
-        isSelected ? 236 : 132
+        isSelected ? 224 : 126
     }
 
     private var maxWidth: CGFloat {
-        isSelected ? 312 : 176
+        isSelected ? 300 : 172
     }
 
     var body: some View {
@@ -474,9 +474,9 @@ private struct PracticeStoryChoiceChip: View {
                 .minimumScaleFactor(0.82)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 14)
-                .padding(.vertical, 10)
+                .padding(.vertical, 8)
                 .frame(minWidth: minWidth, maxWidth: maxWidth)
-                .frame(minHeight: 58)
+                .frame(minHeight: 52)
                 .background(chipBackground, in: shape)
                 .nativeGlass(cornerRadius: 20, tint: chipGlassTint, interactive: true)
                 .overlay {

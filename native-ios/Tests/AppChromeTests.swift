@@ -1202,12 +1202,12 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hotel.starterItems.isEmpty)
         XCTAssertEqual(hotel.messageSectionTitle, "Hotel")
         XCTAssertEqual(hotel.browseMessageSectionTitle, "Quick conversations")
-        XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi])
+        XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout])
         XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
 
         XCTAssertEqual(shopping.messageSectionTitle, "Shopping")
         XCTAssertEqual(shopping.browseMessageSectionTitle, "Quick conversations")
-        XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp])
+        XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard])
 
         XCTAssertEqual(hanoi.route, .city("hanoi"))
         XCTAssertEqual(hanoi.practiceAction, .practiceMode(.hanoiBucketList))
@@ -1222,13 +1222,13 @@ final class AppChromeTests: XCTestCase {
 
     func testBrowseCategoryMessageSectionsMirrorMessagesHubGroups() {
         let expectations: [(String, String, [PracticeScenarioID])] = [
-            ("airport", "Airport", [.danangFirstDay, .airportPassportControl, .airportSimCash]),
-            ("hotel", "Hotel", [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi]),
-            ("food", "Food", [.foodAllergyHelp, .restaurantOrderingPayment, .danangDay]),
-            ("getting-around", "Getting Around", [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp]),
-            ("shopping", "Shopping", [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp]),
-            ("emergency", "Emergency", [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag]),
-            ("local-greetings", "Local Greetings", [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect]),
+            ("airport", "Airport", [.danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower]),
+            ("hotel", "Hotel", [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout]),
+            ("food", "Food", [.foodAllergyHelp, .restaurantOrderingPayment, .danangDay, .foodCoffeeOrder]),
+            ("getting-around", "Getting Around", [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp]),
+            ("shopping", "Shopping", [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard]),
+            ("emergency", "Emergency", [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp]),
+            ("local-greetings", "Local Greetings", [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry]),
         ]
 
         for (categoryID, sectionTitle, scenarioIDs) in expectations {

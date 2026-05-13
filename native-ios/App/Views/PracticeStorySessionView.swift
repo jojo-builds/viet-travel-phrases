@@ -280,38 +280,45 @@ struct PracticeStorySessionSurface: View {
                 .padding(.bottom, 14)
             }
 
-            ScrollViewReader { scrollProxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        PracticeStoryTranscriptView(
-                            turns: turns,
-                            tint: session.scenario.id.tint,
-                            isInPracticePool: isInPracticePool,
-                            isSavedPhrasePage: isSavedPhrasePage,
-                            onOpenPhrasePage: onOpenPhrasePage,
-                            onTogglePracticePage: onTogglePracticePage,
-                            onToggleSavedPhrasePage: onToggleSavedPhrasePage
-                        )
+            GeometryReader { geometry in
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(alignment: .leading, spacing: 0) {
+                            PracticeStoryTranscriptView(
+                                turns: turns,
+                                tint: session.scenario.id.tint,
+                                isInPracticePool: isInPracticePool,
+                                isSavedPhrasePage: isSavedPhrasePage,
+                                onOpenPhrasePage: onOpenPhrasePage,
+                                onTogglePracticePage: onTogglePracticePage,
+                                onToggleSavedPhrasePage: onToggleSavedPhrasePage
+                            )
 
-                        Color.clear
-                            .frame(height: 1)
-                            .id(Self.transcriptBottomID)
+                            Color.clear
+                                .frame(height: 1)
+                                .id(Self.transcriptBottomID)
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.top, topContentPadding + (showsHeader ? 6 : 4))
+                        .padding(.bottom, 18)
+                        .frame(
+                            maxWidth: .infinity,
+                            minHeight: geometry.size.height,
+                            alignment: .bottom
+                        )
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.top, topContentPadding + (showsHeader ? 6 : 4))
-                    .padding(.bottom, 18)
-                }
-                .onAppear {
-                    scrollToBottom(scrollProxy, animated: false)
-                }
-                .onChange(of: session.currentIndex) { _, _ in
-                    scrollToBottom(scrollProxy, animated: true)
-                }
-                .onChange(of: session.selectedOptionIDs) { _, _ in
-                    scrollToBottom(scrollProxy, animated: true)
-                }
-                .onChange(of: session.revealedReplyStepIDs) { _, _ in
-                    scrollToBottom(scrollProxy, animated: true)
+                    .onAppear {
+                        scrollToBottom(scrollProxy, animated: false)
+                    }
+                    .onChange(of: session.currentIndex) { _, _ in
+                        scrollToBottom(scrollProxy, animated: true)
+                    }
+                    .onChange(of: session.selectedOptionIDs) { _, _ in
+                        scrollToBottom(scrollProxy, animated: true)
+                    }
+                    .onChange(of: session.revealedReplyStepIDs) { _, _ in
+                        scrollToBottom(scrollProxy, animated: true)
+                    }
                 }
             }
         }

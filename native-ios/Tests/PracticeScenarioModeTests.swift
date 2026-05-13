@@ -26,7 +26,7 @@ final class PracticeScenarioModeTests: XCTestCase {
 
         let choiceTurn = try XCTUnwrap(turns.first { $0.role == .choiceSet })
         XCTAssertGreaterThanOrEqual(choiceTurn.responseOptions.count, 2)
-        XCTAssertLessThanOrEqual(choiceTurn.responseOptions.count, 3)
+        XCTAssertLessThanOrEqual(choiceTurn.responseOptions.count, 4)
         XCTAssertTrue(choiceTurn.responseOptions.allSatisfy { !$0.scenarioVietnamese.isEmpty })
         XCTAssertFalse(choiceTurn.responseOptions.contains { option in
             option.candidate.pageID.contains("bathroom")
@@ -130,7 +130,7 @@ final class PracticeScenarioModeTests: XCTestCase {
 
         for scenario in snapshot.scenarios {
             for step in scenario.steps {
-                for option in Array(step.responseOptions.prefix(3)) {
+                for option in Array(step.responseOptions.prefix(4)) {
                     let context = "\(scenario.id.rawValue) / \(step.id) / \(option.scenarioEnglish)"
                     guard let audioKey = option.audioKey else {
                         failures.append("\(context) is missing an audio key")
@@ -255,24 +255,31 @@ final class PracticeScenarioModeTests: XCTestCase {
             .danangFirstDay,
             .airportPassportControl,
             .airportSimCash,
+            .airportWifiPower,
             .hotelCheckInHelp,
             .hotelRoomHelp,
             .hotelBagsTaxi,
+            .hotelWifiCheckout,
             .restaurantOrderingPayment,
             .danangDay,
             .foodAllergyHelp,
+            .foodCoffeeOrder,
             .taxiGrabPickup,
             .taxiRouteHelp,
             .driverProblemHelp,
+            .walkingDirectionsHelp,
             .shoppingMarketPrice,
             .shoppingSizeGift,
             .shoppingReceiptHelp,
+            .shoppingPayCard,
             .pharmacyHelp,
             .emergencyLostPassport,
             .emergencyLostBag,
+            .emergencyDoctorHelp,
             .localGreetingMarket,
             .localGreetingHotel,
             .localGreetingRespect,
+            .localThanksSorry,
         ])
         XCTAssertTrue(snapshot.scenarios.allSatisfy { $0.steps.count >= 6 })
 
@@ -408,7 +415,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertFalse(visibleCopy.contains("Cho tôi nhận phòng"))
     }
 
-    func testMessagesGroupThreeThreadsForEachBrowseCategory() throws {
+    func testMessagesGroupFourThreadsForEachBrowseCategory() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
             savedPageIDs: [],
@@ -419,7 +426,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         let expectedGroups: [(String, [PracticeScenarioID], [String])] = [
             (
                 "Airport",
-                [.danangFirstDay, .airportPassportControl, .airportSimCash],
+                [.danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower],
                 [
                     "Đây là hộ chiếu của tôi",
                     "Đây là visa của tôi",
@@ -429,11 +436,12 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "ATM ở đâu?",
                     "Bàn thông tin ở đâu?",
                     "Tôi có thể lấy Wi-Fi sân bay ở đâu?",
+                    "Tôi có thể sạc điện thoại ở đâu?",
                 ]
             ),
             (
                 "Hotel",
-                [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi],
+                [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout],
                 [
                     "Thẻ phòng không dùng được",
                     "Máy lạnh không hoạt động",
@@ -442,11 +450,13 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Tôi gửi hành lý được không?",
                     "Tôi lấy hành lý ở đâu?",
                     "Bạn đặt taxi giúp tôi được không?",
+                    "Mật khẩu Wi-Fi là gì?",
+                    "Mấy giờ trả phòng?",
                 ]
             ),
             (
                 "Food",
-                [.restaurantOrderingPayment, .danangDay, .foodAllergyHelp],
+                [.restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder],
                 [
                     "Cho tôi bàn cho hai người nhé",
                     "Có nước suối không?",
@@ -455,11 +465,13 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Hãy làm món này mà không cần đậu phộng",
                     "Món này có đậu phộng không?",
                     "Món nào không quá cay?",
+                    "Ít đá thôi",
+                    "Không đường",
                 ]
             ),
             (
                 "Getting Around",
-                [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp],
+                [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp],
                 [
                     "Bạn là tài xế của tôi à?",
                     "Làm ơn đi theo bản đồ",
@@ -468,11 +480,13 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Biển số xe khác",
                     "Bạn gọi bảo vệ giúp tôi được không?",
                     "Tài xế đi mất rồi",
+                    "Bàn thông tin gần nhất ở đâu?",
+                    "Làm ơn nói lại",
                 ]
             ),
             (
                 "Shopping",
-                [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp],
+                [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard],
                 [
                     "Giá tốt nhất là bao nhiêu?",
                     "Bạn giảm giá cho tôi được không?",
@@ -481,11 +495,13 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Bạn có size nhỏ hơn không?",
                     "Cho tôi hóa đơn được không?",
                     "Bạn hoàn tiền giúp tôi được không?",
+                    "Tôi quẹt thẻ được không?",
+                    "Tôi thử thẻ khác được không?",
                 ]
             ),
             (
                 "Emergency",
-                [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag],
+                [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp],
                 [
                     "Tôi bị đau đầu",
                     "Hộ chiếu của tôi bị mất",
@@ -494,11 +510,13 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Túi của tôi bị lấy mất",
                     "Bạn kiểm tra camera an ninh giúp tôi được không?",
                     "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
+                    "Tôi cần bác sĩ",
+                    "Tôi bị sốt",
                 ]
             ),
             (
                 "Local Greetings",
-                [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect],
+                [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry],
                 [
                     "Chào bạn",
                     "Tôi đang vội",
@@ -507,6 +525,8 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "chào ông",
                     "chào bà",
                     "Con vào được không?",
+                    "Xin lỗi",
+                    "Không, cảm ơn",
                 ]
             ),
         ]
@@ -514,7 +534,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         for (sectionTitle, expectedIDs, expectedVisiblePhrases) in expectedGroups {
             let sectionScenarios = snapshot.scenarios.filter { $0.id.messageSectionTitle == sectionTitle }
             XCTAssertEqual(sectionScenarios.map(\.id), expectedIDs)
-            XCTAssertEqual(sectionScenarios.count, 3, "\(sectionTitle) should have exactly three message scenarios.")
+            XCTAssertEqual(sectionScenarios.count, 4, "\(sectionTitle) should have exactly four message scenarios.")
 
             let visibleCopy = sectionScenarios.flatMap(\.visibleCopy).joined(separator: "\n")
             for phrase in expectedVisiblePhrases {
@@ -914,24 +934,31 @@ final class PracticeScenarioModeTests: XCTestCase {
             .danangFirstDay,
             .airportPassportControl,
             .airportSimCash,
+            .airportWifiPower,
             .hotelCheckInHelp,
             .hotelRoomHelp,
             .hotelBagsTaxi,
+            .hotelWifiCheckout,
             .restaurantOrderingPayment,
             .danangDay,
             .foodAllergyHelp,
+            .foodCoffeeOrder,
             .taxiGrabPickup,
             .taxiRouteHelp,
             .driverProblemHelp,
+            .walkingDirectionsHelp,
             .shoppingMarketPrice,
             .shoppingSizeGift,
             .shoppingReceiptHelp,
+            .shoppingPayCard,
             .pharmacyHelp,
             .emergencyLostPassport,
             .emergencyLostBag,
+            .emergencyDoctorHelp,
             .localGreetingMarket,
             .localGreetingHotel,
             .localGreetingRespect,
+            .localThanksSorry,
         ])
         XCTAssertLessThanOrEqual(snapshot.loadedFallbackCandidateCount, 420)
     }
@@ -948,24 +975,31 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(namesByID[.danangFirstDay], "Airport Baggage")
         XCTAssertEqual(namesByID[.airportPassportControl], "Passport Control")
         XCTAssertEqual(namesByID[.airportSimCash], "SIM & Cash")
+        XCTAssertEqual(namesByID[.airportWifiPower], "Airport Wi-Fi")
         XCTAssertEqual(namesByID[.hotelCheckInHelp], "Hotel Check-In")
         XCTAssertEqual(namesByID[.hotelRoomHelp], "Room Help")
         XCTAssertEqual(namesByID[.hotelBagsTaxi], "Bags & Taxi")
+        XCTAssertEqual(namesByID[.hotelWifiCheckout], "Hotel Wi-Fi")
         XCTAssertEqual(namesByID[.restaurantOrderingPayment], "Restaurant Table")
         XCTAssertEqual(namesByID[.danangDay], "Beach Snacks")
         XCTAssertEqual(namesByID[.foodAllergyHelp], "Food Allergies")
+        XCTAssertEqual(namesByID[.foodCoffeeOrder], "Coffee Order")
         XCTAssertEqual(namesByID[.taxiGrabPickup], "Grab Pickup")
         XCTAssertEqual(namesByID[.taxiRouteHelp], "Taxi Route")
         XCTAssertEqual(namesByID[.driverProblemHelp], "Driver Help")
+        XCTAssertEqual(namesByID[.walkingDirectionsHelp], "Walking Help")
         XCTAssertEqual(namesByID[.shoppingMarketPrice], "Market Price")
         XCTAssertEqual(namesByID[.shoppingSizeGift], "Gift & Size")
         XCTAssertEqual(namesByID[.shoppingReceiptHelp], "Receipt Help")
+        XCTAssertEqual(namesByID[.shoppingPayCard], "Pay by Card")
         XCTAssertEqual(namesByID[.pharmacyHelp], "Pharmacy Visit")
         XCTAssertEqual(namesByID[.emergencyLostPassport], "Lost Passport")
         XCTAssertEqual(namesByID[.emergencyLostBag], "Lost Bag")
+        XCTAssertEqual(namesByID[.emergencyDoctorHelp], "Doctor Help")
         XCTAssertEqual(namesByID[.localGreetingMarket], "Market Hello")
         XCTAssertEqual(namesByID[.localGreetingHotel], "Hotel Hello")
         XCTAssertEqual(namesByID[.localGreetingRespect], "Respectful Hello")
+        XCTAssertEqual(namesByID[.localThanksSorry], "Thanks & Sorry")
 
         for scenario in snapshot.scenarios {
             XCTAssertLessThanOrEqual(scenario.id.messageContactName.split(separator: " ").count, 3)
@@ -984,7 +1018,7 @@ final class PracticeScenarioModeTests: XCTestCase {
 
         for scenario in snapshot.scenarios {
             for step in scenario.steps {
-                let topEnglish = Array(step.responseOptions.prefix(3)).map(\.scenarioEnglish)
+                let topEnglish = Array(step.responseOptions.prefix(4)).map(\.scenarioEnglish)
                 XCTAssertEqual(
                     Set(topEnglish).count,
                     topEnglish.count,
@@ -1004,7 +1038,7 @@ final class PracticeScenarioModeTests: XCTestCase {
 
         for scenario in snapshot.scenarios {
             for step in scenario.steps {
-                for option in Array(step.responseOptions.prefix(3)) where !option.isBestFit {
+                for option in Array(step.responseOptions.prefix(4)) where !option.isBestFit {
                     XCTAssertTrue(
                         option.hasSpecificLocalReply,
                         "\(scenario.id.rawValue) \(step.id) '\(option.scenarioEnglish)' should have a local reply for that selected message."
@@ -1067,6 +1101,19 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             MessageScriptContract(
+                scenarioID: .airportWifiPower,
+                stepID: "airport-wifi-charge",
+                localMeaning: "Is your phone almost out of battery?",
+                expectedTopEnglish: [
+                    "Where can I charge my phone?",
+                    "Mobile data is not working",
+                ],
+                forbiddenTopEnglish: [
+                    "Here is my passport",
+                    "Can I have a receipt?",
+                ]
+            ),
+            MessageScriptContract(
                 scenarioID: .hotelCheckInHelp,
                 stepID: "hotel-story-reservation",
                 localMeaning: "What name is the reservation under?",
@@ -1106,6 +1153,19 @@ final class PracticeScenarioModeTests: XCTestCase {
                 forbiddenTopEnglish: [
                     "Can I leave my bags until check-in?",
                     "Please call a car for me",
+                ]
+            ),
+            MessageScriptContract(
+                scenarioID: .hotelWifiCheckout,
+                stepID: "hotel-wifi-checkout",
+                localMeaning: "Do you need the check-out time?",
+                expectedTopEnglish: [
+                    "What time is check-out?",
+                    "What time is okay?",
+                ],
+                forbiddenTopEnglish: [
+                    "Can I leave my bags until check-in?",
+                    "The AC is not working",
                 ]
             ),
             MessageScriptContract(
@@ -1151,6 +1211,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             MessageScriptContract(
+                scenarioID: .foodCoffeeOrder,
+                stepID: "coffee-order-ice",
+                localMeaning: "Would you like less ice or less sugar?",
+                expectedTopEnglish: [
+                    "Less ice, please",
+                    "No sugar, please",
+                    "Less sugar, please",
+                ],
+                forbiddenTopEnglish: [
+                    "I am allergic to peanuts",
+                    "Can I see your passport?",
+                ]
+            ),
+            MessageScriptContract(
                 scenarioID: .taxiGrabPickup,
                 stepID: "taxi-story-confirm-driver",
                 localMeaning: "Which entrance are you at?",
@@ -1190,6 +1264,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 forbiddenTopEnglish: [
                     "Please stop right here",
                     "Where is the ATM?",
+                ]
+            ),
+            MessageScriptContract(
+                scenarioID: .walkingDirectionsHelp,
+                stepID: "walking-help-repeat",
+                localMeaning: "Do you understand?",
+                expectedTopEnglish: [
+                    "Please say that again",
+                    "Can you speak a little slower?",
+                    "Can you help me?",
+                ],
+                forbiddenTopEnglish: [
+                    "Can I pay by card?",
+                    "I need a doctor",
                 ]
             ),
             MessageScriptContract(
@@ -1235,6 +1323,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             MessageScriptContract(
+                scenarioID: .shoppingPayCard,
+                stepID: "pay-card-retry",
+                localMeaning: "This card did not work.",
+                expectedTopEnglish: [
+                    "Can I try another card?",
+                    "Can I pay by card?",
+                    "Can you help me?",
+                ],
+                forbiddenTopEnglish: [
+                    "Do you have a smaller size?",
+                    "I need a doctor",
+                ]
+            ),
+            MessageScriptContract(
                 scenarioID: .pharmacyHelp,
                 stepID: "pharmacy-story-symptom",
                 localMeaning: "Are you allergic to any medicine?",
@@ -1277,6 +1379,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             MessageScriptContract(
+                scenarioID: .emergencyDoctorHelp,
+                stepID: "doctor-help-symptom",
+                localMeaning: "What is wrong?",
+                expectedTopEnglish: [
+                    "I have a fever",
+                    "I have a headache",
+                    "My stomach hurts",
+                ],
+                forbiddenTopEnglish: [
+                    "Can I pay by card?",
+                    "Where is the fitting room?",
+                ]
+            ),
+            MessageScriptContract(
                 scenarioID: .localGreetingMarket,
                 stepID: "greeting-market-thanks",
                 localMeaning: "Do you need me to hold this item?",
@@ -1316,6 +1432,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 forbiddenTopEnglish: [
                     "Hello to an older woman",
                     "Can I sit here?",
+                ]
+            ),
+            MessageScriptContract(
+                scenarioID: .localThanksSorry,
+                stepID: "thanks-sorry-apology",
+                localMeaning: "It's okay.",
+                expectedTopEnglish: [
+                    "Sorry",
+                    "No problem",
+                    "Thank you",
+                ],
+                forbiddenTopEnglish: [
+                    "Can I pay by card?",
+                    "Where is the hospital?",
                 ]
             ),
         ]

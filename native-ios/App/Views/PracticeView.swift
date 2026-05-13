@@ -1220,7 +1220,7 @@ private struct PracticeMessageContactGrid: View {
                         .accessibilityIdentifier("Practice.Messages.Section.\(section.id)")
 
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .top, spacing: 16) {
+                        HStack(alignment: .top, spacing: 8) {
                             ForEach(section.scenarios) { scenario in
                                 PracticeMessageContactButton(
                                     scenario: scenario,
@@ -1228,7 +1228,7 @@ private struct PracticeMessageContactGrid: View {
                                     onMarkUnread: { onMarkUnread(scenario.id) },
                                     onStart: { onStart(scenario) }
                                 )
-                                .frame(width: 102)
+                                .frame(width: 76)
                             }
                         }
                         .padding(.horizontal, 1)
@@ -1257,7 +1257,7 @@ private struct PracticeMessageContactButton: View {
             VStack(spacing: 10) {
                 PracticeMessageAvatar(
                     scenarioID: scenario.id,
-                    size: 88,
+                    size: 66,
                     showsSymbol: true
                 )
                 .overlay(alignment: .topTrailing) {
@@ -1276,12 +1276,12 @@ private struct PracticeMessageContactButton: View {
                 }
 
                 Text(scenario.id.messageContactName)
-                    .font(.system(size: 16, weight: isUnread ? .bold : .semibold))
+                    .font(.system(size: 13, weight: isUnread ? .bold : .semibold))
                     .foregroundStyle(.primary)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .minimumScaleFactor(0.78)
-                    .frame(maxWidth: .infinity, minHeight: 40, alignment: .top)
+                    .frame(maxWidth: .infinity, minHeight: 34, alignment: .top)
             }
             .frame(maxWidth: .infinity)
             .contentShape(Rectangle())
@@ -1705,27 +1705,29 @@ private extension PracticeScenarioID {
             return "HeroCategoryAirport"
         case .airportSimCash:
             return "HeroCategoryFirstDay"
-        case .hotelCheckInHelp, .hotelBagsTaxi:
+        case .airportWifiPower:
+            return "HeroCategoryAirport"
+        case .hotelCheckInHelp, .hotelBagsTaxi, .hotelWifiCheckout:
             return "HeroCategoryHotel"
         case .hotelRoomHelp:
             return "BrowseCollectionHotel"
-        case .foodAllergyHelp:
+        case .foodAllergyHelp, .foodCoffeeOrder:
             return "BrowseCollectionFood"
         case .restaurantOrderingPayment:
             return "HeroCategoryFood"
         case .danangDay:
             return "HeroVietnamMasthead"
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
             return "HeroCategoryGettingAround"
         case .shoppingMarketPrice:
             return "BrowseCollectionShopping"
         case .shoppingSizeGift:
             return "HomeSituationFoodShopping"
-        case .shoppingReceiptHelp:
+        case .shoppingReceiptHelp, .shoppingPayCard:
             return "HeroCategoryNumbersMoney"
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
             return "HeroCategoryEmergency"
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
             return "HeroCategoryGreetings"
         }
     }
@@ -1738,32 +1740,38 @@ private extension PracticeScenarioID {
             return Color(red: 0.05, green: 0.45, blue: 0.78)
         case .airportSimCash:
             return Color(red: 0.05, green: 0.52, blue: 0.62)
+        case .airportWifiPower:
+            return Color(red: 0.05, green: 0.46, blue: 0.58)
         case .hotelCheckInHelp:
             return Color(red: 0.48, green: 0.31, blue: 0.76)
         case .hotelRoomHelp:
             return Color(red: 0.55, green: 0.36, blue: 0.78)
         case .hotelBagsTaxi:
             return Color(red: 0.38, green: 0.25, blue: 0.67)
+        case .hotelWifiCheckout:
+            return Color(red: 0.45, green: 0.29, blue: 0.72)
         case .restaurantOrderingPayment:
             return Color(red: 0.08, green: 0.43, blue: 0.32)
         case .danangDay:
             return Color(red: 0.2, green: 0.63, blue: 0.58)
         case .foodAllergyHelp:
             return Color(red: 0.1, green: 0.52, blue: 0.35)
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+        case .foodCoffeeOrder:
+            return Color(red: 0.08, green: 0.45, blue: 0.34)
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
             return Color(red: 0.7, green: 0.42, blue: 0.08)
-        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp:
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard:
             return Color(red: 0.72, green: 0.42, blue: 0.08)
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
             return Color(red: 0.78, green: 0.12, blue: 0.16)
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
             return Color(red: 0.06, green: 0.5, blue: 0.52)
         }
     }
 
     var messageBadgeImageScale: CGFloat {
         switch self {
-        case .hotelRoomHelp, .foodAllergyHelp, .airportPassportControl, .shoppingMarketPrice:
+        case .hotelRoomHelp, .foodAllergyHelp, .airportPassportControl, .shoppingMarketPrice, .foodCoffeeOrder:
             return 1.18
         case .shoppingSizeGift:
             return 1.08
@@ -1776,21 +1784,21 @@ private extension PracticeScenarioID {
         switch self {
         case .danangFirstDay, .airportPassportControl:
             return CGSize(width: 0, height: 0.22)
-        case .airportSimCash:
+        case .airportSimCash, .airportWifiPower:
             return CGSize(width: 0, height: 0.18)
-        case .hotelCheckInHelp, .hotelBagsTaxi:
+        case .hotelCheckInHelp, .hotelBagsTaxi, .hotelWifiCheckout:
             return CGSize(width: 0, height: 0.26)
         case .hotelRoomHelp:
             return CGSize(width: 0.08, height: 0)
         case .restaurantOrderingPayment:
             return CGSize(width: 0, height: 0.24)
-        case .foodAllergyHelp:
+        case .foodAllergyHelp, .foodCoffeeOrder:
             return CGSize(width: 0.08, height: 0)
         case .danangDay:
             return CGSize(width: -0.08, height: 0.24)
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
             return CGSize(width: 0, height: 0.18)
-        case .shoppingReceiptHelp, .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+        case .shoppingReceiptHelp, .shoppingPayCard, .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp, .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
             return CGSize(width: 0, height: 0.2)
         default:
             return .zero
@@ -1805,33 +1813,39 @@ private extension PracticeScenarioID {
             return .passportDesk
         case .airportSimCash:
             return .airportServices
+        case .airportWifiPower:
+            return .airportServices
         case .hotelCheckInHelp:
             return .hotelLobby
         case .hotelRoomHelp:
             return .hotelRoom
         case .hotelBagsTaxi:
             return .luggageLobby
+        case .hotelWifiCheckout:
+            return .hotelLobby
         case .restaurantOrderingPayment:
             return .restaurantTable
         case .danangDay:
             return .beachCafe
         case .foodAllergyHelp:
             return .allergyPlate
+        case .foodCoffeeOrder:
+            return .beachCafe
         case .taxiGrabPickup, .driverProblemHelp:
             return .road
-        case .taxiRouteHelp:
+        case .taxiRouteHelp, .walkingDirectionsHelp:
             return .routeMap
         case .shoppingMarketPrice:
             return .market
         case .shoppingSizeGift:
             return .giftShop
-        case .shoppingReceiptHelp:
+        case .shoppingReceiptHelp, .shoppingPayCard:
             return .checkout
-        case .pharmacyHelp:
+        case .pharmacyHelp, .emergencyDoctorHelp:
             return .pharmacy
         case .emergencyLostPassport, .emergencyLostBag:
             return .emergencyDesk
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
             return .greeting
         }
     }
@@ -1844,21 +1858,23 @@ private extension PracticeScenarioID {
             return [Color(red: 0.98, green: 0.3, blue: 0.34), Color(red: 0.62, green: 0.08, blue: 0.16)]
         case .airportSimCash:
             return [Color(red: 0.19, green: 0.62, blue: 0.52), Color(red: 0.05, green: 0.34, blue: 0.32)]
-        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi:
+        case .airportWifiPower:
+            return [Color(red: 0.2, green: 0.58, blue: 0.72), Color(red: 0.04, green: 0.29, blue: 0.44)]
+        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout:
             return [Color(red: 0.62, green: 0.43, blue: 0.85), Color(red: 0.28, green: 0.17, blue: 0.55)]
         case .restaurantOrderingPayment:
             return [Color(red: 0.24, green: 0.58, blue: 0.44), Color(red: 0.08, green: 0.34, blue: 0.27)]
         case .danangDay:
             return [Color(red: 0.32, green: 0.72, blue: 0.66), Color(red: 0.14, green: 0.43, blue: 0.44)]
-        case .foodAllergyHelp:
+        case .foodAllergyHelp, .foodCoffeeOrder:
             return [Color(red: 0.22, green: 0.6, blue: 0.43), Color(red: 0.08, green: 0.34, blue: 0.28)]
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp:
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
             return [Color(red: 0.88, green: 0.58, blue: 0.18), Color(red: 0.49, green: 0.28, blue: 0.07)]
-        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp:
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard:
             return [Color(red: 0.88, green: 0.52, blue: 0.22), Color(red: 0.52, green: 0.23, blue: 0.08)]
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag:
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
             return [Color(red: 0.94, green: 0.22, blue: 0.25), Color(red: 0.55, green: 0.06, blue: 0.13)]
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
             return [Color(red: 0.17, green: 0.62, blue: 0.62), Color(red: 0.07, green: 0.32, blue: 0.39)]
         }
     }
@@ -1869,6 +1885,8 @@ private extension PracticeScenarioID {
             return "PASSPORT"
         case .airportSimCash:
             return "SIM"
+        case .airportWifiPower:
+            return "WI-FI"
         case .hotelCheckInHelp:
             return "HOTEL"
         case .shoppingMarketPrice:
@@ -1888,29 +1906,39 @@ private extension PracticeScenarioID {
             return "person.text.rectangle"
         case .airportSimCash:
             return "creditcard.and.123"
+        case .airportWifiPower:
+            return "wifi"
         case .hotelCheckInHelp:
             return "building.2.fill"
         case .hotelRoomHelp:
             return "bed.double.fill"
         case .hotelBagsTaxi:
             return "cart.fill"
+        case .hotelWifiCheckout:
+            return "wifi.router.fill"
         case .restaurantOrderingPayment:
             return "wineglass.fill"
         case .danangDay:
             return "water.waves"
         case .foodAllergyHelp:
             return "fork.knife.circle"
+        case .foodCoffeeOrder:
+            return "cup.and.saucer.fill"
         case .taxiGrabPickup:
             return "car.fill"
         case .taxiRouteHelp:
             return "point.topleft.down.curvedto.point.bottomright.up"
         case .driverProblemHelp:
             return "exclamationmark.triangle.fill"
+        case .walkingDirectionsHelp:
+            return "figure.walk"
         case .shoppingMarketPrice:
             return "storefront.fill"
         case .shoppingSizeGift:
             return "shippingbox.fill"
         case .shoppingReceiptHelp:
+            return "creditcard.fill"
+        case .shoppingPayCard:
             return "creditcard.fill"
         case .pharmacyHelp:
             return "pills.fill"
@@ -1918,12 +1946,16 @@ private extension PracticeScenarioID {
             return "building.columns.fill"
         case .emergencyLostBag:
             return "camera.viewfinder"
+        case .emergencyDoctorHelp:
+            return "stethoscope"
         case .localGreetingMarket:
             return "bubble.left.and.bubble.right.fill"
         case .localGreetingHotel:
             return "door.left.hand.open"
         case .localGreetingRespect:
             return "person.2.fill"
+        case .localThanksSorry:
+            return "bubble.left.and.bubble.right.fill"
         }
     }
 
@@ -1942,9 +1974,9 @@ private extension PracticeScenarioID {
 
     var messageBadgeIconScale: CGFloat {
         switch self {
-        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp:
+        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder:
             return 0.4
-        case .airportPassportControl, .airportSimCash, .hotelCheckInHelp, .hotelBagsTaxi:
+        case .airportPassportControl, .airportSimCash, .airportWifiPower, .hotelCheckInHelp, .hotelBagsTaxi, .hotelWifiCheckout:
             return 0.38
         default:
             return 0.42
