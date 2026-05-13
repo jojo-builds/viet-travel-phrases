@@ -379,12 +379,6 @@ private struct BrowseSituationCard: View {
                             tint: destination.tintName.color.opacity(0.18),
                             interactive: true
                         )
-
-                    Spacer(minLength: 8)
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
 
                 VStack(alignment: .leading, spacing: 4) {
@@ -529,15 +523,6 @@ private struct BrowseCityHeroCard: View {
                             )
 
                         Spacer(minLength: 8)
-
-                        Image(systemName: "chevron.right")
-                            .font(.callout.weight(.bold))
-                            .foregroundStyle(.secondary)
-                            .frame(width: 34, height: 34)
-                            .background(.white.opacity(0.58), in: Circle())
-                            .overlay {
-                                Circle().stroke(.white.opacity(0.76), lineWidth: 1)
-                            }
                     }
 
                     Text(subtitle)
@@ -602,13 +587,9 @@ private struct BrowseStartHereCard: View {
                         .lineLimit(3)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    HStack(spacing: 5) {
-                        Text("Start")
-                            .font(.subheadline.weight(.bold))
-                        Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                    }
-                    .foregroundStyle(.red)
+                    Text("Start")
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(.red)
                 }
                 .layoutPriority(1)
             }
@@ -661,11 +642,6 @@ private struct BrowsePhraseFamilyCard: View {
                         .nativeGlass(cornerRadius: 24, tint: destination.tintName.color.opacity(0.16), interactive: true)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                        .padding(.top, 18)
                 }
 
                 Text(destination.title)
@@ -740,10 +716,6 @@ private struct BrowseNextShelfRow: View {
                 .layoutPriority(1)
 
                 Spacer(minLength: 8)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(BrowsePageLayout.nextShelfRowPadding)
             .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.nextShelfRowHeight, maxHeight: BrowsePageLayout.nextShelfRowHeight, alignment: .leading)

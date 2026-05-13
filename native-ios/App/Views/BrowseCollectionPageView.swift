@@ -875,10 +875,6 @@ private struct BrowseCollectionPhraseRow: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }

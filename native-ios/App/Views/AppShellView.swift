@@ -3987,10 +3987,6 @@ struct SavedPagesView: View {
                         .lineLimit(2)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
@@ -4978,10 +4974,6 @@ private struct HomeSituationActionRow: View {
                         .minimumScaleFactor(0.76)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(10)
             .frame(maxWidth: .infinity)
@@ -5039,10 +5031,6 @@ private struct HomeCityCardView: View {
                         .fixedSize(horizontal: false, vertical: true)
 
                     Spacer(minLength: 2)
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .padding(.horizontal, 12)
                 .frame(height: 56)
@@ -5137,10 +5125,6 @@ private struct HomeWidePhraseButton: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }
@@ -5184,10 +5168,6 @@ private struct HomeSituationGroupRow: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .frame(
@@ -5247,13 +5227,13 @@ private struct HomeRelationshipRow: View {
                 Button {
                     onOpenDetail(detailPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .frame(maxWidth: .infinity)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
 
             AudioSpeakerButton(
@@ -5266,7 +5246,7 @@ private struct HomeRelationshipRow: View {
         .padding(.horizontal, 14)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
                 Text(phrase.vietnamese)
@@ -5283,12 +5263,6 @@ private struct HomeRelationshipRow: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .layoutPriority(1)
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }
