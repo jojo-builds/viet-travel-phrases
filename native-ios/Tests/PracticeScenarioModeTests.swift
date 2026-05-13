@@ -1,3 +1,4 @@
+import CoreGraphics
 import XCTest
 @testable import SpeakLocalNative
 
@@ -622,6 +623,17 @@ final class PracticeScenarioModeTests: XCTestCase {
                 )
             }
         }
+    }
+
+    func testMessagesHubRowsReadAsScrollableCarouselOnPhoneWidth() {
+        let viewportWidth: CGFloat = 390
+        let fourthColumnFrame = PracticeMessageHubLayout.columnFrame(column: 3)
+
+        XCTAssertGreaterThan(PracticeMessageHubLayout.avatarSize, 66)
+        XCTAssertGreaterThan(PracticeMessageHubLayout.itemSpacing, 8)
+        XCTAssertGreaterThan(PracticeMessageHubLayout.sectionSpacing, 18)
+        XCTAssertLessThan(fourthColumnFrame.minX, viewportWidth)
+        XCTAssertGreaterThan(fourthColumnFrame.maxX, viewportWidth)
     }
 
     func testRestaurantMenuQuestionOffersDirectBeginnerReplies() throws {
