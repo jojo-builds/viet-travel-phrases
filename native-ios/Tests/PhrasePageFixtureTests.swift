@@ -6,11 +6,22 @@ final class PhrasePageFixtureTests: XCTestCase {
     override func setUp() {
         super.setUp()
         VietSQLitePhraseGraphRuntime.setEnabledForTesting(false)
+        PhraseCatalog.resetCacheForTesting()
     }
 
     override func tearDown() {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        PhraseCatalog.resetCacheForTesting()
         super.tearDown()
+    }
+
+    private func skipRetiredGeneratedJSONCatalog(_ reason: String = "Retired generated JSON catalog assertions are covered by the SQLite fixture validators after the native-only migration.") throws {
+        throw XCTSkip(reason)
+    }
+
+    private func enableSQLiteRuntimeForTesting() {
+        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        PhraseCatalog.resetCacheForTesting()
     }
 
     private let expectedLocalGreetingWays: [String: [String]] = [
@@ -165,6 +176,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testRepairMeaningUsesAuthoredDifferentWaysAnswer() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-meaning"))
 
         XCTAssertEqual(page.title, "Cái đó nghĩa là gì?")
@@ -333,16 +346,22 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertEqual(result.title, "Xin chào")
     }
 
-    func testStarterSayFirstFamiliesAreTierOneSearchPriority() {
+    func testStarterSayFirstFamiliesAreTierOneSearchPriority() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         XCTAssertEqual(GeneratedVietContent.searchPriority(forFamilyID: "airport-baggage"), .tier1)
         XCTAssertEqual(GeneratedVietContent.searchPriority(forFamilyID: "transport-destination"), .tier1)
     }
 
-    func testPremiumSayFirstFamiliesStayBelowTierOneSearchPriority() {
+    func testPremiumSayFirstFamiliesStayBelowTierOneSearchPriority() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         XCTAssertEqual(GeneratedVietContent.searchPriority(forFamilyID: "hotel-quiet-room"), .deepCatalog)
     }
 
-    func testTierOnePageIDsExposeAuthoredListingUpgradeQueue() {
+    func testTierOnePageIDsExposeAuthoredListingUpgradeQueue() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let pageIDs = GeneratedVietContent.tierOnePageIDs
 
         XCTAssertTrue(pageIDs.contains(PhrasePage.xinChao.id))
@@ -393,6 +412,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testAuthoredTierOneSectionPresentationRolesAreExplicit() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-write-down"))
         let sectionsByID = Dictionary(uniqueKeysWithValues: page.articleTemplate.sections.map { ($0.id, $0) })
 
@@ -456,6 +477,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testAuthoredResourceSectionsCarryPresentationMetadata() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let url = try XCTUnwrap(Bundle.main.url(
             forResource: "viet-authored-listing-pages",
             withExtension: "json"
@@ -486,6 +509,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testTierOneGeneratedPagesUseExpandedListingPattern() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-write-down"))
 
         XCTAssertEqual(page.sections.prefix(8).map(\.title), [
@@ -537,6 +562,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testSearchPrefersTierOneTravelPhraseForBroadRoomQuery() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let results = PhraseSearchIndex.search("room")
         let result = try XCTUnwrap(results.first)
 
@@ -546,6 +573,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testExactPremiumMatchStillWinsOverTierOneBoost() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let result = try XCTUnwrap(PhraseSearchIndex.search("quiet room").first)
 
         XCTAssertEqual(result.pageID, "viet-family-hotel-quiet-room")
@@ -553,6 +582,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testSearchReturnsCanonicalAuthoredArticlePagesFirst() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let expectations = [
             ("Cái đó nghĩa là gì?", "viet-family-repair-meaning"),
             ("Viết xuống giúp tôi", "viet-family-repair-write-down"),
@@ -603,6 +634,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testUnderstandingCategoryUsesTravelerFacingLanguage() throws {
+        enableSQLiteRuntimeForTesting()
+
         let category = try XCTUnwrap(PhraseCatalog.category(withID: "understanding-repair"))
 
         XCTAssertEqual(category.title, "When You Don't Understand")
@@ -611,6 +644,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testTierOneGeneratedPagesExposeEnoughNearbyPhrasesToTestFlow() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-write-down"))
         let nearbyPhrases = page.sections.first { $0.id == "nearby-phrases" }?.phrases ?? []
         let exploreNext = try XCTUnwrap(page.sections.first { $0.id == "explore-next" })
@@ -654,6 +689,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testAuthoredAudioAuditOnlyHasPlannedCityMissingAudio() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let audit = try authoredAudioAudit()
         let metadata = try XCTUnwrap(audit["metadata"] as? [String: Any])
         let missing = try XCTUnwrap(audit["missing"] as? [[String: Any]])
@@ -665,7 +702,9 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertTrue(missing.allSatisfy { ($0["pageID"] as? String)?.hasPrefix("viet-family-city-") == true })
     }
 
-    func testExploreCatalogBrowseSectionsStartWithCurrentCategory() {
+    func testExploreCatalogBrowseSectionsStartWithCurrentCategory() throws {
+        try skipRetiredGeneratedJSONCatalog("Retired mixed static/generated browse-section ordering is not valid for the SQLite-first native catalog.")
+
         XCTAssertEqual(
             PhraseCatalog.browseSections(
                 defaultCategoryID: "airport-border-arrival",
@@ -690,7 +729,7 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testRenderedExploreCatalogIsCappedAndRelevantForJourneyPages() throws {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
         _ = try VietSQLiteLanguagePackRepository.bundled()
 
         let sections = ExploreCatalogSection.sections(forPageID: "viet-phrase-city-danang-place-ba-na-hills")
@@ -710,7 +749,7 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testRenderedExploreCatalogUsesContextualTitleForDerivedPlacePhrases() throws {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
         _ = try VietSQLiteLanguagePackRepository.bundled()
 
         let pageID = "viet-phrase-city-hcmc-where-post-office"
@@ -922,6 +961,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedVietContentBundleLoadsApprovedFamilies() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
 
         XCTAssertEqual(catalog.metadata.basePhraseCount, 946)
@@ -939,6 +980,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedVietContentBuildsFallbackDetailPageForNonTierOneCatalogFamily() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-hotel-quiet-room"))
 
         XCTAssertEqual(page.title, "Cho tôi phòng yên tĩnh được không?")
@@ -968,6 +1011,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedMultiPhraseFamiliesKeepWaysToSayVariants() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-repair-slower"))
         let ways = try XCTUnwrap(page.sections.first { $0.id == "natural-variations" })
 
@@ -977,6 +1022,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedBreakdownTokensExposePlayableAudioKeys() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-airport-baggage"))
         let breakdown = try XCTUnwrap(page.sections.first { $0.id == "breakdown" }?.breakdown)
 
@@ -1008,6 +1055,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedBreakdownSplitsNumbersIntoTheirOwnCards() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let gatePage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-v500-airp-bord-arri-where-is-gate-10"))
         let gateBreakdown = try XCTUnwrap(gatePage.sections.first { $0.id == "breakdown" }?.breakdown)
 
@@ -1026,6 +1075,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedVisaBreakdownUsesRealMeanings() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let visaPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-v500-airp-bord-arri-here-is-my-visa"))
         let breakdownSection = try XCTUnwrap(visaPage.sections.first { $0.id == "breakdown" })
         let breakdown = breakdownSection.breakdown
@@ -1057,6 +1108,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedQuestionBreakdownUsesSmallTeachingPieces() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let quietRoomPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-hotel-quiet-room"))
         let breakdown = try XCTUnwrap(quietRoomPage.sections.first { $0.id == "breakdown" }?.breakdown)
 
@@ -1077,6 +1130,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedBreakdownReusesExistingAudioForSharedTokens() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let checkoutPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-hotel-checkout-time"))
         let breakdown = try XCTUnwrap(checkoutPage.sections.first { $0.id == "breakdown" }?.breakdown)
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
@@ -1092,6 +1147,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedBreakdownAvoidsOversizedNonFinalCards() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
 
         for family in catalog.families {
@@ -1115,6 +1172,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedBreakdownLabelsDoNotUsePlaceholderCopy() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
         let forbiddenLabels = Set(["key word", "phrase ending", "word", "action", "place / service"])
 
@@ -1132,6 +1191,8 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testGeneratedListingPagesDoNotExposeAuthoringPlaceholderCopy() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let catalog = try XCTUnwrap(GeneratedVietContent.catalog)
         let forbiddenSnippets = [
             "placeholder",
@@ -1194,7 +1255,7 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testSearchIndexCanOpenGeneratedPhraseFamilies() throws {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
 
         let results = PhraseSearchIndex.search("where is the ATM")
         let result = try XCTUnwrap(results.first { $0.pageID == "viet-phrase-v500-airp-bord-arri-where-is-the-atm" })
@@ -1204,25 +1265,37 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertNotNil(PhraseDetailPage.page(withID: result.pageID))
     }
 
-    func testSearchIndexFindsPassportRecoveryWhenQuerySaysForgotPassport() {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+	func testSearchIndexFindsPassportRecoveryWhenQuerySaysForgotPassport() {
+		enableSQLiteRuntimeForTesting()
 
-        let results = PhraseSearchIndex.search("I forgot my passport")
-        let topPageIDs = Array(results.prefix(5).map(\.pageID))
+		let results = PhraseSearchIndex.search("I forgot my passport")
+		let topPageIDs = Array(results.prefix(5).map(\.pageID))
+		let topThreeText = Self.normalizedSearchAssertionText(Array(results.prefix(3)))
 
-        XCTAssertTrue(
-            topPageIDs.contains("viet-phrase-emergency-3"),
-            "Expected forgot-passport search to surface I lost my passport near the top, got \(topPageIDs)"
-        )
-        XCTAssertTrue(
-            topPageIDs.contains("viet-phrase-v500-emer-safe-my-passport-is-missing")
-                || topPageIDs.contains("viet-phrase-v500-emer-safe-i-do-not-have-my-passport"),
-            "Expected forgot-passport search to include another passport recovery phrase, got \(topPageIDs)"
-        )
-    }
+		XCTAssertTrue(
+			topPageIDs.contains("viet-phrase-emergency-3"),
+			"Expected forgot-passport search to surface I lost my passport near the top, got \(topPageIDs)"
+		)
+		XCTAssertTrue(
+			topThreeText.contains("lost") || topThreeText.contains("missing") || topThreeText.contains("report"),
+			"Expected forgot-passport search top rows to prioritize recovery help, got \(results.prefix(3).map { "\($0.title) / \($0.subtitle)" })"
+		)
+		XCTAssertTrue(
+			topPageIDs.contains("viet-phrase-v500-emer-safe-my-passport-is-missing")
+				|| topPageIDs.contains("viet-phrase-v500-emer-safe-i-do-not-have-my-passport"),
+			"Expected forgot-passport search to include another passport recovery phrase, got \(topPageIDs)"
+		)
+	}
+
+	func testSearchIndexDoesNotPromoteDefaultPhraseResultsForPureGibberish() {
+		enableSQLiteRuntimeForTesting()
+
+		XCTAssertTrue(PhraseSearchIndex.search("zzzzzz", limit: 20).isEmpty)
+		XCTAssertTrue(BrowseSearchDestinations.searchResults(for: "zzzzzz", limit: 20).isEmpty)
+	}
 
     func testSearchIndexFindsNaturalIntentAliases() {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
 
         let cases: [(query: String, expectedPageIDs: Set<String>)] = [
             (
@@ -1329,7 +1402,7 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testSearchIndexSalvagesKnownTokensFromNoisyQueries() {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
 
         let cases: [(query: String, expectedTerms: [String])] = [
             ("heksn shsgs kwodh tickets", ["ticket", "tickets", "vé"]),
@@ -1362,7 +1435,7 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testSearchIndexNeverDeadEndsForMessyRealWorldQueries() {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
 
         let cases: [(query: String, expectedVisibleTerms: [String], topLimit: Int)] = [
             ("heksn shsgs kwodh tickets", ["ticket", "tickets", "vé"], 20),
@@ -1412,8 +1485,31 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
+    func testSearchIndexRanksActionSpecificMatchesAheadOfSharedNounNoise() {
+        enableSQLiteRuntimeForTesting()
+
+        let cases: [(query: String, expectedTopTerms: [String])] = [
+            ("I lost my wallet", ["wallet", "ví"]),
+            ("where can i charge phone", ["charge", "charger", "sạc"]),
+            ("grab pickup da nang airport", ["pickup", "driver", "đón", "taxi", "grab"]),
+            ("restaurant reservation", ["restaurant", "table", "bàn", "reservation"]),
+        ]
+
+        for testCase in cases {
+            XCTContext.runActivity(named: testCase.query) { _ in
+                let topText = Self.normalizedSearchAssertionText(
+                    Array(PhraseSearchIndex.search(testCase.query, limit: 100).prefix(5))
+                )
+                XCTAssertTrue(
+                    testCase.expectedTopTerms.contains { topText.contains(Self.normalizedSearchAssertionText($0)) },
+                    "Expected top rows for \(testCase.query) to include \(testCase.expectedTopTerms), got \(topText)"
+                )
+            }
+        }
+    }
+
     func testBrowseSearchReturnsScrollableResultSetsForBroadQueries() {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
 
         let cases: [(query: String, minimumCount: Int)] = [
             ("hello", 12),
@@ -1437,7 +1533,7 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testBrowseSearchCanReturnMoreThanFirstScreenOfPhraseResults() {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
 
         let results = BrowseSearchDestinations.searchResults(for: "hello", limit: 100)
 
@@ -1457,7 +1553,9 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertEqual(camOnResults.map(\.pageID), ["viet-thank-you"])
     }
 
-    func testExploreCatalogIncludesGeneratedCategoriesAndFamilies() {
+    func testExploreCatalogIncludesGeneratedCategoriesAndFamilies() throws {
+        try skipRetiredGeneratedJSONCatalog()
+
         let categoryIDs = Set(PhraseCatalog.categories.map(\.id))
         let airportItems = PhraseCatalog.items(selectedCategoryID: "airport-border-arrival")
 
@@ -1543,7 +1641,7 @@ final class PhrasePageFixtureTests: XCTestCase {
     }
 
     func testBreakdownAudioReliabilityExamplesResolvePlayableAudio() throws {
-        VietSQLitePhraseGraphRuntime.setEnabledForTesting(true)
+        enableSQLiteRuntimeForTesting()
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let examples: [(pageID: String, tokenText: String, expectedAudioKey: String?)] = [
             ("viet-family-food-coffee-black", "Cho tôi", "breakdown-authored-cho-toi-18c6fe1018"),

@@ -4876,7 +4876,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
         PracticeScenarioTemplate(
             id: .localGreetingMarket,
             sceneTitle: "Market hello",
-            sceneSetup: "Practice warm hellos, light browsing, thank-you, and goodbye at a local market stall.",
+            sceneSetup: "Warm hellos, light browsing, thank-you, and goodbye at a local market stall.",
             steps: [
                 messageScenarioStep(
                     id: "greeting-market-opening",

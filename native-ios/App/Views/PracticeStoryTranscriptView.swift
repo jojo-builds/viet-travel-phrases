@@ -211,7 +211,7 @@ private struct PracticeStoryBubble: View {
                     Button {
                         onOpenPhrasePage(pageID)
                     } label: {
-                        Label("Open Phrase Page", systemImage: "doc.text.magnifyingglass")
+                        Label("Open Details", systemImage: "doc.text.magnifyingglass")
                     }
                 }
             }
@@ -321,6 +321,7 @@ struct PracticeStoryComposer: View {
             .padding(.top, 8)
             .padding(.bottom, 8)
             .frame(maxWidth: .infinity)
+            .fixedSize(horizontal: false, vertical: true)
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("Practice.Story.Composer")
     }
@@ -360,6 +361,7 @@ struct PracticeStoryComposer: View {
                     .padding(.bottom, 2)
                 }
                 .scrollClipDisabled()
+                .frame(height: PracticeStoryChoiceStripLayout.height)
                 .onAppear {
                     focusSelectedChoice(with: scrollProxy, animated: false)
                 }
@@ -444,6 +446,7 @@ struct PracticeStoryComposer: View {
 private enum PracticeStoryChoiceStripLayout {
     static let horizontalPadding: CGFloat = 14
     static let trailingFocusSpace: CGFloat = 260
+    static let height: CGFloat = 76
 }
 
 private struct PracticeStoryChoiceChip: View {

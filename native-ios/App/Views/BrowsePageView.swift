@@ -233,7 +233,7 @@ struct BrowsePageView: View {
                 BrowseNextShelfRowModel(
                     id: "saved",
                     title: "Saved phrases",
-                    subtitle: "\(intentStore.savedPageIDs.count) saved phrase pages",
+                    subtitle: "\(intentStore.savedPageIDs.count) saved phrases",
                     symbolName: "bookmark.fill",
                     tintName: .red,
                     action: onSavedTapped
@@ -245,7 +245,7 @@ struct BrowsePageView: View {
             rows.append(
                 BrowseNextShelfRowModel(
                     id: "practice",
-                    title: "Ready to practice",
+                    title: "Ready in Messages",
                     subtitle: "Continue with \(intentStore.practicePageIDs.count) chosen pages",
                     symbolName: "waveform",
                     tintName: .green,

@@ -166,7 +166,7 @@ struct PhraseArticleTemplateView: View {
                             }
                         }
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
-                        .padding(.top, 72 + topChromeContentClearance)
+                        .padding(.top, PhrasePageStyle.articleSectionsTopPadding + topChromeContentClearance)
                         .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
                         .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
                         .offset(y: holdsArticleContentForHomeMorph ? 18 : 0)
@@ -1443,7 +1443,7 @@ private struct ExploreCatalogCategoryShelf: View {
         case "goodbyes":
             return "Leave conversations cleanly"
         default:
-            return "Useful phrase pages for this travel moment"
+            return "Useful phrases for this travel moment"
         }
     }
 }

@@ -3864,7 +3864,7 @@ struct HomeView: View {
     }
 
     private var practiceScenariosShelf: some View {
-        HomeShelf(title: "Messages", subtitle: "Practice short trip conversations") {
+        HomeShelf(title: "Messages", subtitle: "Short trip conversations") {
             HomeScenarioRail(
                 scenarios: HomeContent.practiceScenarios,
                 onStartPractice: onStartPractice
@@ -4755,7 +4755,7 @@ private struct HomeContinuePanel: View {
     }
 
     private var primarySubtitle: String {
-        item?.subtitle ?? "Pick a useful page to save or practice."
+        item?.subtitle ?? "Pick a useful page to save or hear later."
     }
 
     private var primarySymbolName: String {
@@ -4771,7 +4771,7 @@ private struct HomeContinuePanel: View {
     }
 
     private var practiceActionTitle: String {
-        practiceCount == 0 ? "Practice list" : "\(practiceCount) practice"
+        practiceCount == 0 ? "Message list" : "\(practiceCount) queued"
     }
 
     private func primaryAction() {
@@ -5351,7 +5351,7 @@ private struct HomeTipCard: View {
                     .font(.title3.weight(.bold))
                     .foregroundStyle(.primary)
 
-                Text("Save phrases as you browse so Practice is ready when you need it.")
+                Text("Save phrases as you browse so Messages can use them later.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .lineLimit(3)

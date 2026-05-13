@@ -886,7 +886,7 @@ enum BrowseSearchDestinations {
         return BrowseCollectionDescriptor(
             route: .category(id),
             title: title,
-            subtitle: collectionSubtitle(for: id, fallback: destination?.subtitle ?? category?.title ?? categoryEntitySubtitle(for: id) ?? "Useful phrase pages for this travel moment."),
+            subtitle: collectionSubtitle(for: id, fallback: destination?.subtitle ?? category?.title ?? categoryEntitySubtitle(for: id) ?? "Useful phrases for this travel moment."),
             eyebrow: "SPEAKLOCAL VIETNAM",
             mastheadImageName: mastheadImageName(for: .category(id)),
             symbolName: symbolName,
@@ -1527,7 +1527,7 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(
                 id: categoryID,
                 title: PhraseCatalog.category(withID: categoryID)?.title ?? collectionTitle(for: categoryID, fallback: categoryID),
-                subtitle: "Useful phrase pages",
+                subtitle: "Useful phrases",
                 categoryIDs: [categoryID],
                 terms: [],
                 symbolName: PhraseCatalog.category(withID: categoryID)?.symbolName ?? "ellipsis.bubble"

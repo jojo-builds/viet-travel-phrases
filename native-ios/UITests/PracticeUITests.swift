@@ -102,7 +102,7 @@ final class PracticeUITests: XCTestCase {
         travelerPhrase.press(forDuration: 1.0)
 
         XCTAssertTrue(app.buttons["Save to Saved Phrases"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.buttons["Open Phrase Page"].exists)
+        XCTAssertTrue(app.buttons["Open Details"].exists)
     }
 
     func testAdaptedMarketPriceMessageShowsAudioAndPhraseActions() {
@@ -125,7 +125,7 @@ final class PracticeUITests: XCTestCase {
         travelerPhrase.press(forDuration: 1.0)
 
         XCTAssertTrue(app.buttons["Save to Saved Phrases"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.buttons["Open Phrase Page"].exists)
+        XCTAssertTrue(app.buttons["Open Details"].exists)
     }
 
     func testMessageComposerDefaultsFirstOptionIntoSelectionBar() {
@@ -184,8 +184,8 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(firstTravelerMessage.waitForExistence(timeout: 4))
 
         firstTravelerMessage.press(forDuration: 1.0)
-        XCTAssertTrue(app.buttons["Open Phrase Page"].waitForExistence(timeout: 4))
-        app.buttons["Open Phrase Page"].tap()
+        XCTAssertTrue(app.buttons["Open Details"].waitForExistence(timeout: 4))
+        app.buttons["Open Details"].tap()
 
         XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 5))
         app.buttons["TopAdmin.BackButton"].tap()

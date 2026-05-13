@@ -248,6 +248,7 @@ enum PhrasePageStyle {
     static let headerToContentSpacing: CGFloat = 12
     static let headerToLeadInSpacing: CGFloat = 8
     static let leadInToContentSpacing: CGFloat = 16
+    static let articleSectionsTopPadding: CGFloat = 28
     static let listCardCornerRadius: CGFloat = 22
     static let compactCardCornerRadius: CGFloat = 20
     static let bottomChromeContentClearance: CGFloat = 224

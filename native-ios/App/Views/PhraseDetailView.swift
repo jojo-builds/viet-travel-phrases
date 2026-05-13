@@ -91,7 +91,7 @@ struct PhraseDetailView: View {
 
                             if !page.examples.isEmpty {
                                 VStack(alignment: .leading, spacing: 10) {
-                                    Text("Practice it")
+                                    Text("Try it in context")
                                         .font(.headline.weight(.bold))
 
                                     VStack(spacing: 0) {

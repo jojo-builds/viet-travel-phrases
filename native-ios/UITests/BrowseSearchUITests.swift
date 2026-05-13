@@ -173,22 +173,25 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
     }
 
-    func testBackFromCityQuickPhraseRowPreservesCollectionScrollPosition() {
+    func testBackFromCitySituationCardPreservesCollectionScrollPosition() {
         let app = launchApp(arguments: ["--browse"])
-        let quickPhraseRowID = "BrowseCollection.Row.viet-phrase-city-danang-to-airport"
+        let situationCardID = "BrowseCollection.CityCard.danang.situation.beach-day"
+        let expandedRowID = "BrowseCollection.Row.viet-phrase-city-danang-place-my-khe"
 
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
         tapWhenVisible(app.buttons["Browse.City.danang"], app: app)
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
-        tapWhenComfortablyVisible(identifier: quickPhraseRowID, app: app)
+        tapWhenComfortablyVisible(identifier: situationCardID, app: app)
 
-        XCTAssertTrue(app.staticTexts["Cho tôi đến sân bay Đà Nẵng"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Beach day in Da Nang"].waitForExistence(timeout: 5))
+        tapWhenComfortablyVisible(identifier: expandedRowID, app: app)
+        XCTAssertTrue(app.staticTexts["Biển Mỹ Khê"].waitForExistence(timeout: 5))
 
         app.buttons["TopAdmin.BackButton"].tap()
 
-        let quickPhraseRow = app.buttons.matching(identifier: quickPhraseRowID).firstMatch
-        XCTAssertTrue(quickPhraseRow.waitForExistence(timeout: 3))
-        XCTAssertTrue(quickPhraseRow.isHittable, "Back should restore the city collection near the row that opened the detail page.")
+        let openedRow = app.buttons.matching(identifier: expandedRowID).firstMatch
+        XCTAssertTrue(openedRow.waitForExistence(timeout: 3))
+        XCTAssertTrue(openedRow.isHittable, "Back should restore the city collection near the row that opened the child page.")
         XCTAssertFalse(app.staticTexts["BrowseCollection.Title.city.danang"].isHittable)
     }
 

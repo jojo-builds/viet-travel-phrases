@@ -244,18 +244,6 @@ struct SearchPageView: View {
         VStack(alignment: .leading, spacing: 24) {
             resultFilters
 
-            if selectedFilter.includesPhrases, !results.phraseResults.isEmpty {
-                SearchSection(title: "Results") {
-                    LazyVStack(spacing: 10) {
-                        ForEach(results.phraseResults) { item in
-                            SearchPhraseRow(item: item, onOpenDetail: onOpenDetail)
-                        }
-                    }
-                    .padding(14)
-                    .phraseListCard(cornerRadius: 24)
-                }
-            }
-
             if selectedFilter.includesCategories, !results.collectionResults.isEmpty {
                 SearchSection(title: "Browse matches") {
                     LazyVStack(spacing: 12) {
@@ -269,6 +257,18 @@ struct SearchPageView: View {
             if selectedFilter.includesCities, !results.cityResults.isEmpty {
                 SearchSection(title: "Cities") {
                     cityShortcutRow(cities: results.cityResults)
+                }
+            }
+
+            if selectedFilter.includesPhrases, !results.phraseResults.isEmpty {
+                SearchSection(title: "Results") {
+                    LazyVStack(spacing: 10) {
+                        ForEach(results.phraseResults) { item in
+                            SearchPhraseRow(item: item, onOpenDetail: onOpenDetail)
+                        }
+                    }
+                    .padding(14)
+                    .phraseListCard(cornerRadius: 24)
                 }
             }
 

@@ -2556,7 +2556,7 @@ private struct PracticeBrowseCard: View {
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
 
-                    Text("Save useful phrases as you browse so Practice is ready when you need it.")
+                    Text("Save useful phrases as you browse so Messages can use them later.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
@@ -2790,7 +2790,7 @@ private struct PracticeFeedbackCard: View {
                     .buttonStyle(.plain)
                     .foregroundStyle(.secondary)
                     .nativeGlass(cornerRadius: 18, interactive: true)
-                    .accessibilityLabel("Remove from practice")
+                    .accessibilityLabel("Remove from Messages")
                 }
             }
         }
@@ -2932,7 +2932,7 @@ private struct PracticeLoadingCard: View {
             ProgressView()
                 .tint(.red)
 
-            Text("Preparing phrase-sourced practice...")
+            Text("Preparing phrase-sourced messages...")
                 .font(.headline.weight(.bold))
                 .foregroundStyle(.secondary)
         }
@@ -2948,7 +2948,7 @@ private struct PracticeErrorCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label("Practice data is unavailable", systemImage: "exclamationmark.triangle.fill")
+            Label("Messages are unavailable", systemImage: "exclamationmark.triangle.fill")
                 .font(.headline.weight(.bold))
                 .foregroundStyle(.orange)
 

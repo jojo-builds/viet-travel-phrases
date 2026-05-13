@@ -222,6 +222,7 @@ struct PracticeMessagesThreadContent: View {
                     onToggleSavedPhrasePage: onToggleSavedPhrasePage,
                     onSelectOption: { option in onSelectScenarioOption(option, currentStep) }
                 )
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             } else if let scenarioCompletion {
                 ScrollView(.vertical, showsIndicators: false) {
                     PracticeStoryCompletionSurface(
@@ -234,10 +235,12 @@ struct PracticeMessagesThreadContent: View {
                     .padding(.top, topContentPadding + 22)
                     .padding(.bottom, 28)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             } else {
                 EmptyView()
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
@@ -312,6 +315,7 @@ struct PracticeStorySessionSurface: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .safeAreaInset(edge: .bottom, spacing: 0) {
             PracticeStoryComposerSurface(
                 session: session,

@@ -900,67 +900,6 @@ enum PhraseSearchIndex {
             }
         }
 
-        if candidateResults.isEmpty {
-            let fallbackQueries = SearchQueryExpander.defaultFallbackQueries
-                .map(normalize)
-                .filter { !$0.isEmpty }
-            let fallbackTokens = uniqueTokens(for: fallbackQueries)
-
-            let fallbackRootResults = rootPages
-                .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
-                    let haystack = normalize(searchText(for: page))
-                    guard SearchTextMatcher.matchesAnyToken(fallbackTokens, in: haystack) else {
-                        return nil
-                    }
-
-                    let identityHaystack = normalize(searchIdentityText(for: page))
-                    return (
-                        PhraseSearchResult(
-                            pageID: page.id,
-                            title: page.title,
-                            subtitle: page.intentSummary
-                        ),
-                        bestScore(
-                            title: page.title,
-                            englishTitle: page.englishTitle,
-                            pronunciation: page.pronunciation,
-                            haystack: haystack,
-                            identityHaystack: identityHaystack,
-                            normalizedQueries: fallbackQueries,
-                            priority: .anchor
-                        )
-                    )
-                }
-
-            let fallbackDesignedResults = PhraseDetailPage.all
-                .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
-                    let haystack = normalize(searchText(for: page))
-                    guard SearchTextMatcher.matchesAnyToken(fallbackTokens, in: haystack) else {
-                        return nil
-                    }
-
-                    let identityHaystack = normalize(searchIdentityText(for: page))
-                    return (
-                        PhraseSearchResult(
-                            pageID: page.id,
-                            title: page.title,
-                            subtitle: page.englishTitle
-                        ),
-                        bestScore(
-                            title: page.title,
-                            englishTitle: page.englishTitle,
-                            pronunciation: page.pronunciation,
-                            haystack: haystack,
-                            identityHaystack: identityHaystack,
-                            normalizedQueries: fallbackQueries,
-                            priority: searchPriority(for: page)
-                        )
-                    )
-                }
-
-            candidateResults = fallbackRootResults + fallbackDesignedResults
-        }
-
         var bestByPageID: [String: (result: PhraseSearchResult, score: Int)] = [:]
 
         for scoredResult in candidateResults {
