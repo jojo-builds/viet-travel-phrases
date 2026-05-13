@@ -15,9 +15,6 @@ const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues",
 const phraseSourcePath = path.join(repoRoot, "content-draft", "viet", "phrase-source.csv");
 const relationSamplePath = path.join(repoRoot, "content-draft", "viet", "relation-sample-v1.json");
 const websitePreviewPath = path.join(repoRoot, "content-draft", "viet", "website-preview.json");
-const expoVietPackPath = path.join(repoRoot, "app", "family", "packs", "viet.generated.ts");
-const expoVietPresentationPath = path.join(repoRoot, "app", "family", "presentation", "viet.ts");
-const expoVietPremiumPath = path.join(repoRoot, "app", "family", "presentation", "vietPremium.ts");
 const tierOnePagesRoot = path.join(repoRoot, "content-draft", "viet", "canonical-pages", "tier-one");
 const catalogPromotedPagesRoot = path.join(repoRoot, "content-draft", "viet", "canonical-pages", "catalog-promoted");
 const sitePreviewDataRoot = path.join(repoRoot, "site", "data", "phrase-previews");
@@ -1045,9 +1042,6 @@ function main() {
     phraseSourcePath,
     relationSamplePath,
     websitePreviewPath,
-    expoVietPackPath,
-    expoVietPresentationPath,
-    expoVietPremiumPath,
     ...walkJSONFiles(tierOnePagesRoot),
     ...walkJSONFiles(catalogPromotedPagesRoot),
     ...walkJSONFiles(sitePreviewDataRoot),

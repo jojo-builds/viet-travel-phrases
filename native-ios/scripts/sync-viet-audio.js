@@ -1,46 +1,62 @@
+#!/usr/bin/env node
+
 const fs = require("fs");
 const path = require("path");
 
-const sourceAudioDir = path.resolve(__dirname, "../../app/assets/audio");
-const sourceManifestPath = path.join(sourceAudioDir, "manifest.json");
-const resourcesDir = path.resolve(__dirname, "../Resources");
-const outputAudioDir = path.join(resourcesDir, "Audio");
-const outputManifestPath = path.join(resourcesDir, "viet-audio-manifest.json");
+const nativeRoot = path.resolve(__dirname, "..");
+const resourcesDir = path.join(nativeRoot, "Resources");
+const audioDir = path.join(resourcesDir, "Audio");
+const manifestPath = path.join(resourcesDir, "viet-audio-manifest.json");
+const shouldWrite = process.env.SPEAKLOCAL_SYNC_AUDIO_WRITE === "1";
 
-if (!fs.existsSync(sourceManifestPath)) {
-  throw new Error(`Missing source audio manifest: ${sourceManifestPath}`);
+if (!fs.existsSync(manifestPath)) {
+  throw new Error(`Missing native audio manifest: ${manifestPath}`);
 }
 
-const manifest = JSON.parse(fs.readFileSync(sourceManifestPath, "utf8"));
-const sortedEntries = Object.entries(manifest).sort(([leftKey], [rightKey]) =>
-  leftKey.localeCompare(rightKey)
-);
-const nativeManifest = {};
+const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+const normalizedManifest = {};
+const missingFiles = [];
+const invalidEntries = [];
 
-fs.mkdirSync(outputAudioDir, { recursive: true });
-
-for (const [audioKey, entry] of sortedEntries) {
+for (const [audioKey, entry] of Object.entries(manifest)) {
   if (!entry.fileName || !entry.text) {
-    throw new Error(`Invalid manifest entry for ${audioKey}`);
+    invalidEntries.push(audioKey);
+    continue;
   }
 
-  const sourcePath = path.join(sourceAudioDir, entry.fileName);
-  const outputPath = path.join(outputAudioDir, entry.fileName);
-
-  if (!fs.existsSync(sourcePath)) {
-    throw new Error(`Missing source audio file for ${audioKey}: ${sourcePath}`);
+  const audioPath = path.join(audioDir, entry.fileName);
+  if (!fs.existsSync(audioPath)) {
+    missingFiles.push({ audioKey, fileName: entry.fileName });
   }
 
-  fs.copyFileSync(sourcePath, outputPath);
-  nativeManifest[audioKey] = {
+  normalizedManifest[audioKey] = {
     fileName: entry.fileName,
     text: entry.text,
   };
 }
 
-fs.writeFileSync(
-  outputManifestPath,
-  `${JSON.stringify(nativeManifest, null, 2)}\n`
-);
+if (invalidEntries.length > 0 || missingFiles.length > 0) {
+  throw new Error(
+    [
+      "Native audio manifest is not valid.",
+      invalidEntries.length > 0 ? `Invalid entries: ${invalidEntries.join(", ")}` : null,
+      missingFiles.length > 0
+        ? `Missing files: ${JSON.stringify(missingFiles.slice(0, 25), null, 2)}`
+        : null,
+      missingFiles.length > 25 ? `...and ${missingFiles.length - 25} more` : null,
+    ]
+      .filter(Boolean)
+      .join("\n")
+  );
+}
 
-console.log(`Synced ${sortedEntries.length} audio files into ${outputAudioDir}`);
+if (shouldWrite) {
+  fs.writeFileSync(manifestPath, `${JSON.stringify(normalizedManifest, null, 2)}\n`);
+}
+
+console.log(
+  `Validated ${Object.keys(normalizedManifest).length} native audio manifest entries in ${path.relative(
+    path.resolve(nativeRoot, ".."),
+    audioDir
+  )}`
+);

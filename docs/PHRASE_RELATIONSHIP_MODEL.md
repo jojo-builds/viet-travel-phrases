@@ -147,7 +147,7 @@ Preferred first implementation shape:
 
 The first concrete Viet handoff stays additive to the current model:
 - `content-draft/viet/phrase-source.csv` remains the row-level authoring truth
-- `app/family/packs/viet.generated.ts` remains the generated runtime truth
+- `native-ios/Resources/LanguagePacks/` and generated SQLite/native resources remain the app runtime truth
 - `content-draft/viet/relation-sample-v1.json` carries a bounded `29`-cluster starter-safe family-level relation sidecar for phrase-detail and listing work
 - `content-draft/viet/relation-authoring-notes.md` explains how to extend the sidecar without turning it into a second content system
 

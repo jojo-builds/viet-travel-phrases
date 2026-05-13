@@ -32,9 +32,10 @@ Scope: Viet content allocation, premium philosophy, and future-only expansion gu
 - Planning unit = intent-family primary, not raw phrase rows.
 - One family = one travel situation, one best phrase to say first, plus only a few nearby variants when they materially help.
 - Starter vs premium boundary lives on the family primary.
-- Use `content-draft/viet/phrase-source.csv`, `app/family/packs/viet.generated.ts`, `app/scripts/validate-premium-boundary.ts`, and `app/family/presentation/vietPremium.ts` for current live-build truth.
+- Use `content-draft/viet/phrase-source.csv`, `native-ios/Resources/LanguagePacks/`, `native-ios/Resources/viet-authored-listing-pages.json`, `native-ios/Resources/viet-audio-manifest.json`, and native validators under `native-ios/scripts/` for current live-build truth.
 - Use this doc for live scenario allocation and any future-only thinking beyond the current live 900-family pack.
 - Do not treat `200 / 1000` as current live truth.
+- Do not use the removed Expo/React Native `app/` tree as product, pack, presentation, or premium truth.
 
 ## Premium philosophy
 

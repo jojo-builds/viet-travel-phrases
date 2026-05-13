@@ -8,8 +8,9 @@ Prep-only work should stay in:
 
 - `content-draft/<variant>`
 - `ops/apps/<variant>.json`
+- `native-ios/Config/apps/<variant>.json` when a native config placeholder is needed
 
-Do not wire a new language into `app/family/appRegistry.js` or `app/family/currentApp.ts` until it has:
+Do not wire a new language into the native runtime, bundled SQLite resources, or app launcher until it has:
 
 - the shared 10-scenario baseline reviewed
 - translation coverage in `phrase-source.csv`
@@ -19,12 +20,9 @@ Do not wire a new language into `app/family/appRegistry.js` or `app/family/curre
 
 ## Commands
 
-Run from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
+Run from `/Users/jojolim/Developer/products/speaklocal/app-family`.
 
-- scaffold a new prep lane:
-  - `npm run scaffold:language-prep -- --variant <variant> --language "<language>" --country "<country>" --language-code <code> --display-name "<display name>"`
-- build a runtime pack once a lane is ready:
-  - `npm run build:pack -- --variant <variant>`
+Prep-only lanes are currently maintained through repo files and native validators. Do not use deleted Expo/React Native commands or an `app/` working directory. If a new prep automation is needed, add it under `native-ios/scripts/` or `scripts/` and document the native validation command next to it.
 
 Shared neutral traveler baseline source:
 
@@ -58,7 +56,7 @@ Shared-source seam rule:
   - `phrase-source.csv` needs real translation coverage
   - pronunciation needs to be filled
   - audio posture needs to be decided honestly
-  - runtime languages must add localized `presentation.search` copy and pass shared-search validation
+  - runtime languages must add native search/copy metadata and pass shared-search validation
 - Current blocker for future-lane graduation:
   - Thai, Japanese, Turkish, Spanish, Italian, French, German, Korean, Indonesian, and Tagalog v2 still remain prep-only because shortlist/readiness work is not the same as translation coverage, pronunciation completion, audio posture, runtime search proof, or native review on sensitive lines
 - Search normalization is only proven today for the current Latin-script pair. Future non-Latin runtime promotion needs a fresh UX/localization review before inheriting the same exact search contract.

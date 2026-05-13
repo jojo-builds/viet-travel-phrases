@@ -1,19 +1,21 @@
 # Search Rollout Brief
 
+Status: historical Expo-era rollout brief, not the current search execution packet.
+
+Current search work must happen in the native SwiftUI app under `native-ios/`. Do not use Expo, EAS, Metro, React Native, or an `app/` directory from this document as current instructions.
+
 ## Current session root
 
 - Current Mac root: `/Users/jojolim/Developer/products/speaklocal/app-family`
-- Legacy Windows root retained for archive lookup only: `E:\AI\SpeakLocal-App-Family`
+- Active native app root: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
+- Legacy Windows roots are archive context only and must not be used for new work.
 
 ## What is already true
 
 - Viet is the live release-distributed app.
 - Tagalog is the current second runtime app candidate through the shared family seam.
 - The corrected Tagalog preview build has been installed on device and visually confirmed by the user to launch as Tagalog and match the Viet baseline UI.
-- The shared runtime seam already exists through:
-  - `currentApp`
-  - app registry
-  - pack / presentation / audio / storage boundaries
+- The old shared runtime seam described below belonged to the retired Expo lane. Current search/runtime proof lives in native SwiftUI, bundled SQLite, and native resources.
 - Spanish, Italian, Japanese, and Turkish still exist as prep-only lanes under `content-draft/` and `ops/apps/`.
 - Shared search is now implemented locally across Viet and Tagalog and passes the local validation matrix.
 
@@ -76,16 +78,7 @@ Use 4 reviewer lanes at each gate:
 
 ## Validation expectations
 
-Run from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
-
-- `npm run build:tagalog-pack`
-- `npm run validate:family`
-- `npx --no-install tsc --noEmit`
-- `npx expo config --type public --json`
-- `npx expo export --platform ios --output-dir .expo-export-viet-check`
-- `EXPO_PUBLIC_APP_VARIANT=tagalog npx --no-install tsc --noEmit`
-- `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo config --type public --json`
-- `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo export --platform ios --output-dir .expo-export-tagalog-check`
+Use `docs/operations/TESTING_RUNBOOK.md` for current native validation. Search validation should be native Xcode tests and simulator/iPhone proof against `native-ios/`.
 
 Search-specific validation must prove:
 
@@ -102,13 +95,7 @@ Search-specific validation must prove:
 
 ## Current rollout state
 
-- Local/shared validation is green:
-  - `npm run validate:family`
-  - `npx --no-install tsc --noEmit`
-  - `npx expo config --type public --json`
-  - `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo config --type public --json`
-  - `npx expo export --platform ios --output-dir .expo-export-viet-check`
-  - `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo export --platform ios --output-dir .expo-export-tagalog-check`
+- Historical local/shared validation was green in the retired Expo lane. It is not current native app proof.
 - The remaining blockers are the device proof gates on both variants:
   - verify or install the current Viet preview target before smoke if needed
   - capture runtime/manual search smoke in both Viet and Tagalog
@@ -124,7 +111,7 @@ Search-specific validation must prove:
 - Search-enabled internal preview builds now exist for that smoke step:
   - Viet: `fd48c1f8-3105-4228-9b6d-98a66e9c8299`
   - Tagalog: `d1cfa295-fdad-43ed-b23b-dacb9d914c0d`
-  - historical Windows build root used: `E:\AI\SpeakLocal-EAS-Build`
+  - historical Windows/EAS build roots are archive context only
 
 ## After Viet + Tagalog search is proven
 
