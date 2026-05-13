@@ -21,7 +21,7 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
    - static glass chrome
    - swipe back and forward history
    - search-island-to-search-field morphing
-9. Use Expo only as a bridge/reference lane during the transition. Keep design exploration and structural proof there when useful, but stop treating Expo shell polish as the final destination once it stops teaching us something.
+9. Keep the repo native-only for app work. No new product UI should be built in Expo, React Native, Metro, or any resurrected `app/` shell.
 10. Keep Viet first. Tagalog and future destinations should inherit the hardened content/listing-page/native-shell/practice pattern rather than forcing simultaneous rewrites.
 
 ## Not doing right now
@@ -29,8 +29,8 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 - subscriptions
 - account sync
 - cloud-backed unlock dependency
-- treating Windows as the main working machine
-- deleting Expo or the shared repo before native parity exists
+- reopening old non-Mac development lanes
+- resurrecting Expo/React Native as an app surface
 - rewriting all 10+ apps simultaneously before the family shell exists
 - a third runtime-wired app before Viet + Tagalog content proof is stronger
 - turning the website into the full phrase library

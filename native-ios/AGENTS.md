@@ -14,7 +14,8 @@ Open the repo root instead for:
 - authored content under `content-draft/`
 - native resource generation scripts
 - durable docs and migration/source-of-truth updates
-- shared Expo/reference app work under `app/`
+
+Do not open or edit a React Native/Expo app for product work. `native-ios/` is the only active app product surface.
 
 Read these before meaningful changes:
 

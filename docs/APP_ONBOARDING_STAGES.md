@@ -32,7 +32,7 @@ Summary rules:
 ## Testing gates
 
 - `localValidation`
-  - repo-local machine validation such as TypeScript, family validator, Expo config, and export checks
+  - repo-local native validation such as content generation, native resource validators, `git diff --check`, and Xcode build/test checks
 - `previewBuild`
   - an internal preview build exists when the current milestone needs one
 - `previewInstall`

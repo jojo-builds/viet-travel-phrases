@@ -15,9 +15,8 @@
 - Device-proof note:
   - the shared shell behavior is now implemented and locally validated in repo truth, but the small-iPhone physical walkthrough and native purchase proof still remain open in `docs/operations/*`
 - A real family premium seam:
-  - app registry product IDs
-  - `expo-iap` plugin wired in Expo config
-  - iOS one-time purchase / restore adapter
+  - native app config product IDs
+  - native StoreKit one-time purchase / restore adapter
   - StoreKit entitlement sync plus on-device persistence
   - dev validation unlock only when the real store path is unavailable
 - A real Viet content boundary on top of that seam:
@@ -63,12 +62,11 @@ For the fuller schema details, see `docs/V2_CONTENT_MODEL.md`.
 
 Tagalog now inherits automatically:
 
-- the generated-pack builder path
+- the native resource generation pattern
 - the family-aware phrase schema
 - starter vs premium filtering behavior
 - the grouped scenario UI
-- the website-preview export tooling
-- the `expo-iap` plugin and shared premium provider seam
+- native StoreKit premium-provider expectations
 - the `$4.99` one-time unlock surface
 - the `SpeakLocal Philippines` build name
 

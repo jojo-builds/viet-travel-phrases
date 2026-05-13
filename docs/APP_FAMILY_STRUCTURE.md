@@ -18,7 +18,6 @@ app-family/
   docs/                       # durable product/process truth
   .agent/                     # repo-local task queue
   site/                       # website/gateway
-  app/                        # legacy Expo/reference/shared-family lane
 ```
 
 Use these roots in Codex:
@@ -26,6 +25,8 @@ Use these roots in Codex:
 - Native SwiftUI/UI/Xcode work: `native-ios/`
 - Content, docs, generators, queue, and migration work: repo root
 - Reusable skills: `/Users/jojolim/Developer/labs/skill-labs`
+
+`native-ios/` is the only active app product surface. Legacy Expo/React Native code has been removed from the active repo so new sessions do not accidentally polish or test the wrong app.
 
 Do not use `/Users/jojolim/Documents/New project` for app work.
 

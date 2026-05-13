@@ -1,14 +1,12 @@
 {
   "version": "2026-04-13",
-  "canonicalSessionRoot": "E:\\AI\\SpeakLocal-App-Family",
-  "compatibilityAliases": [
-    "E:\\AI\\Viet-Travel-Phrases"
-  ],
+  "canonicalSessionRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
+  "compatibilityAliases": [],
   "canonicalSurfaces": {
     "manifestDir": "ops/apps",
-    "runtimeRegistry": "app/family/appRegistry.js",
-    "dynamicConfig": "app/app.config.js",
-    "releaseConfig": "app/eas.json",
+    "runtimeRegistry": "native-ios/Resources",
+    "dynamicConfig": "native-ios/Config/apps",
+    "releaseConfig": "native-ios/project.yml",
     "operationsDocs": "docs/operations",
     "draftRoot": "content-draft"
   },
@@ -205,9 +203,8 @@
   ],
   "audit": {
     "ignorePathGlobs": [
-      "tmp-eas-inspect-*",
-      "tmp-eas-prebuild-*",
-      "app/.expo-export*"
+      "native-ios/build",
+      "native-ios/artifacts"
     ],
     "repoMarkers": [
       "AGENTS.md",
@@ -219,9 +216,9 @@
       "docs/operations/README.md",
       "docs/START_SESSION.md",
       "ops/apps",
-      "app/family/appRegistry.js",
-      "app/app.config.js",
-      "app/eas.json"
+      "native-ios/Config/apps",
+      "native-ios/project.yml",
+      "native-ios/Resources"
     ]
   }
 }

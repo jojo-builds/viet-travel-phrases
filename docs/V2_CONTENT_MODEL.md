@@ -219,9 +219,8 @@ Tagalog prep sample:
 - `content-draft/tagalog/relation-sample-v1.json`
 - `content-draft/tagalog/relation-authoring-notes.md`
 
-Generated runtime output:
+Generated native runtime output:
 
-- `app/family/packs/viet.generated.ts`
 - `native-ios/Resources/viet-phrase-catalog.json`
 - `native-ios/Resources/viet-authored-listing-pages.json`
 - `native-ios/Resources/viet-audio-manifest.json`
@@ -232,7 +231,7 @@ Native generation scripts:
 
 - `native-ios/scripts/generate-viet-catalog.js`
 - `native-ios/scripts/generate-authored-tier-one-pages.js`
-- `native-ios/scripts/sync-viet-audio.js`
+- `native-ios/scripts/sync-viet-audio.js` validates and normalizes native audio manifest coverage
 - `native-ios/scripts/generate-breakdown-audio-elevenlabs.js`
 
 Website export output:
@@ -246,7 +245,7 @@ Website export output:
 
 - the website consumes the exported JSON manifest and module payloads, not app runtime internals directly
 - `content-draft/*/website-preview.json` remains the article-module selection layer
-- `npm run export:website-previews` projects starter/default-first phrase/audio modules from the generated app-family pack into site-owned data paths
+- website preview exports should be regenerated from native/content source paths, not from a React Native app pack
 - each exported module now carries website-safe module metadata plus phrase-level fields needed for reuse:
   - destination, language, languageCode, country, variant
   - scenarioId / scenarioName

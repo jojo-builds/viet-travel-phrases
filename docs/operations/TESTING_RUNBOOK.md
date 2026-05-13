@@ -1,242 +1,157 @@
 # Testing Runbook
 
-Last updated: 2026-04-28
-Authority lane: live app operational truth
+Last updated: 2026-05-13
+Authority lane: live native iOS build and validation truth
 
-## Use this doc for
+## Use This Doc For
 
 - repo-owned validation commands
-- the repo-owned build/test handoff order
-- lane split and post-run sync targets
+- native iOS build/test handoff order
+- feature branch sync and physical iPhone install rules
+- post-run operational-doc sync targets
 
-Do not maintain a second literal copy of the human iPhone execution checklist here. `VIET_TESTFLIGHT_EXECUTION_PACKET.md` now owns the single ordered operator checklist for the next Viet pass.
+## Current Development Truth
 
-Truth-sync note: this `2026-04-21` refresh did not add new build or device evidence. It keeps the literal next-operator checklist and exact six-item return packet in `VIET_TESTFLIGHT_EXECUTION_PACKET.md`, including the stable field labels and fold-in order, while narrowing this file to repo-owned sequencing, retry rules, and sync targets. The later `2026-04-18` Viet purchase-surface audit and `2026-04-20` Tagalog search-copy rerun remain bounded repo-side honesty evidence only and do not change the human/device lane.
+SpeakLocal app development now happens on Jojo's MacBook from:
 
-## Working directories
+`/Users/jojolim/Developer/products/speaklocal/app-family`
 
-- Canonical Mac repo root: `/Users/jojolim/Developer/products/speaklocal/app-family`
-- Preferred legacy Expo app root: `/Users/jojolim/Developer/products/speaklocal/app-family/app`
-- Preferred native iOS app root: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
-- Legacy Windows root retained for archive/migration lookup only: `E:\AI\SpeakLocal-App-Family`
+The active app product surface is:
 
-## Codex app preview loop
+`/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
 
-For the Codex desktop app, the repo now exposes project-local run actions through:
+Do not use Windows paths, Expo, React Native, Metro, EAS, or a resurrected `app/` directory for current app work. Historical logs may mention those paths, but they are not development instructions.
+
+## Codex Native Loop
+
+The Codex desktop app exposes native actions through:
 
 - `.codex/environments/environment.toml`
 - `script/build_and_run.js`
-- compatibility wrappers:
-  - `script/build_and_run.cmd`
-  - `script/build_and_run.sh`
+- `script/build_and_run.sh`
 
-Preferred Codex-side loop:
+Preferred local loop:
 
-1. Use the Codex app `Run Web Preview` action.
-2. Let it start Expo web from `app/` on port `19008`.
-3. Use the Codex app browser/preview surfaces for the local web output when available, and fall back to the authenticated dashboard canvas when you need the stable phone-framed route.
+1. Use `Native Build` for a simulator build.
+2. Use `Native Test` for native Xcode tests.
+3. Use branch-specific simulators for manual UI proof.
+4. Build `main` on Jojo's physical iPhone when app code changes and should be tested on-device.
 
-Notes:
+Equivalent commands from the repo root:
 
-- This is the fast in-app visual loop for routine UI work, not a replacement for paid native iPhone milestone builds.
-- The Codex-side preview is the closest available "vibe-code and inspect immediately" path for this Expo repo. It reflects the web/native-review lane, not a true iPhone simulator.
-- If the Codex desktop app starts showing repeated `loading model` or reauthentication issues during worker-heavy runs, restart the app first before assuming the repo or machine is at fault.
-- The preferred direct command path is now cross-platform:
-  - `node script/build_and_run.js web`
-  - `node script/build_and_run.js doctor`
-  - `node script/build_and_run.js run`
+```sh
+node script/build_and_run.js build
+node script/build_and_run.js test
+node script/build_and_run.js doctor
+```
 
-## Current local validation commands
+## Current Validation Commands
 
-From `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
+Run only the commands that match the change. For broad app/content changes, use this order from the repo root:
 
-1. `npm run build:viet-pack`
-2. `npm run build:tagalog-pack`
-3. `npm run validate:family`
-4. `npm run validate:premium-boundary`
-5. `npm run validate:premium-expansion`
-6. `npm run export:website-previews`
-7. `npx --no-install tsc --noEmit`
+```sh
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/sync-viet-audio.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node scripts/guard-native-only.js
+git diff --check
+xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build CODE_SIGNING_ALLOWED=NO
+```
 
-## Validation interpretation
+For focused app changes, also run the relevant Xcode test target or UI smoke test for that surface.
 
-- `build:viet-pack` rebuilds the live Viet v2 content pack from `content-draft/viet/`.
-- `build:tagalog-pack` confirms Tagalog still rebuilds on the shared generated-pack path.
-- `validate:family` validates structural integrity, starter/premium boundaries, search access behavior, and ready-vs-planned audio expectations.
-- `validate:premium-boundary` validates the live Viet `150 starter / 750 premium / 900 total` boundary, starter/premium search gating, unique product IDs, and Tagalog inheritance for the current premium surface.
-- `validate:premium-expansion` validates future lane scaffolds plus promoted-live lane manifests.
-- `export:website-previews` regenerates the approved Viet starter-only website phrase/audio module JSON exports.
+## Validation Interpretation
 
-## Private phone preview for live UI passes
+- Native generation commands rebuild and validate the bundled resources used by the SwiftUI app.
+- Native Xcode build/test output is the gate for app behavior.
+- Visible UI changes need native simulator screenshots or physical iPhone proof, not web previews.
+- `node scripts/guard-native-only.js` must pass after workflow or repo-structure changes.
 
-From `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
+## Branch And Device Policy
 
-1. Start the authenticated Expo web lane:
-   - `EXPO_PUBLIC_APP_VARIANT=viet BROWSER=none npx expo start --web --port 19008 --clear`
-2. Sign into `https://dashboard.jayopsai.com`
-3. Open:
-   - `https://dashboard.jayopsai.com/design/viet`
+1. `main` is the app Jojo expects to test on his phone.
+2. Feature branches/worktrees are temporary parallel lanes.
+3. A feature lane should start by syncing from the latest local `main` when clean.
+4. A finished feature lane should be committed, validated enough for scope, then merged into `main`.
+5. Before merging into `main`, merge current `main` into the feature lane and resolve conflicts there.
+6. Only build `main` on Jojo's physical iPhone by default.
+7. Build a feature branch on the physical iPhone only if Jojo explicitly asks to test that branch before merge.
 
-Notes:
+Use the workflow skill/helper for branch work:
 
-- This route embeds the live Expo web app behind the existing dashboard auth wall.
-- Fast Refresh now reaches the dashboard canvas, so preview-only text and layout changes should appear without rebuilding a native iPhone app.
-- Use `/design-live/<preset>` routes when you need deterministic real-app states like search results, saved-filled, premium-unlocked, or scenario-locked instead of tapping through the app by hand.
-- If the frame ever stalls after a larger change, use the canvas `Reload frame` button before treating the route as broken.
+```sh
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh status
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh start <feature-slug-or-path>
+/Users/jojolim/.codex/skills/speaklocal-parallel-feature-workflows/scripts/speaklocal-feature-flow.sh finish <feature-slug-or-path>
+```
 
-Optional screenshot verification from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
+## Physical iPhone Build
 
-1. Set dashboard auth in the shell if you are targeting the hosted domain:
-   - `export DASHBOARD_AUTH_TOKEN='<dashboard token>'`
-2. Capture the exact hosted canvas state:
-   - `npm run capture:design -- --dashboard-url https://dashboard.jayopsai.com --route /design-live/home-search-results --device iphone-15-pro`
+After app changes are merged to `main`, build from the primary checkout:
 
-Notes:
+```sh
+SPEAKLOCAL_REPO_ROOT=/Users/jojolim/Developer/products/speaklocal/app-family \
+  /Users/jojolim/.codex/skills/speaklocal-ios-device-build/scripts/build_on_phone.sh
+```
 
-- The capture script uses the same authenticated dashboard surface rather than a separate local-only page.
-- Default output lands under `artifacts/design-captures/`.
-- For loopback-only validation on the server, you can swap `https://dashboard.jayopsai.com` for `http://127.0.0.1:18790`.
+Report:
 
-## Branch and paid-build policy
+- installed `main` commit hash
+- build/install/launch result
+- whether the phone was locked or unavailable
+- signing hygiene result
 
-Use this branch/testing model unless a task has a stronger explicit release instruction:
+## Native TestFlight / StoreKit Lane
 
-1. `main` is the current accepted baseline.
-2. Each major feature or workstream should have one active feature branch.
-3. Do not keep pushing the same feature forward on multiple active branches once a winner is clear.
-4. Use the dashboard/authenticated Expo web preview as the default loop for design, copy, state, and interaction iteration.
-5. Treat paid native iPhone builds as milestone validation, not the default preview loop.
+Use TestFlight only when the goal is Apple-side behavior that cannot be proven locally, such as StoreKit purchase, restore, or App Store sheet behavior.
 
-### When to pay for a native iPhone build
+Before a durable purchase test:
 
-Prefer a paid build only when at least one of these is true:
+- confirm the bundle ID is `com.jojobuilds.viettravelphrases`
+- confirm the product ID is `com.jojobuilds.viettravelphrases.premiumunlock`
+- confirm App Store Connect metadata and sandbox-account readiness
+- archive/export from the native Xcode project or the agreed native release path
+- record the exact build number, device model, iOS version, and Apple-side product state
 
-- the branch bundles a substantial set of changes, roughly `10+` meaningful tested features/fixes
-- the branch contains one clearly substantial experience change such as a new shell/navigation model, purchase flow, or major phrase-page interaction redesign
-- real device behavior is the thing being validated, such as StoreKit, haptics, safe areas, gesture feel, audio behavior, keyboard behavior, or native-only optical polish
+Do not use EAS or Expo build commands for this app.
 
-Do not spend a paid build for:
+## Website Checks
 
-- small copy edits
-- isolated spacing/color tweaks
-- routine dashboard-preview design passes
-- minor hidden-review-route experiments that can be judged on the authenticated web lane
+The `site/` folder is a separate website surface. Website tasks may validate and publish `site/`, but they do not define app runtime truth.
 
-### How to bundle multiple features into one paid build
+When a task edits `site/`, validate:
 
-When several approved features should be tested together on iPhone:
-
-1. keep each major feature on its own feature branch while it is still moving
-2. once the included features are approved for the same test pass, create one integration candidate branch from `main`
-3. merge the approved feature branches into that integration candidate branch
-4. run the paid iPhone build from the integration candidate branch
-5. after device validation, merge the accepted result back to `main`
-
-This keeps the paid build cadence aligned with meaningful milestone testing instead of forcing a separate native build for every feature branch.
-
-## Website bundle checks for `site/` passes
-
-When a task edits the richer website bundle under `site/`, also validate:
-
-1. route-pair parity for any edited `foo.html` and `foo/index.html` pages
+1. route-pair parity for edited `foo.html` and `foo/index.html` pages
 2. local link integrity across `site/**/*.html`
-3. direct-serve preview-data parity:
-   - `site/data/phrase-previews/manifest.json`
-   - `site/public/data/phrase-previews/manifest.json`
-   - no stale source-unbacked preview JSON files
-   - manifest and module JSON shape stays valid for the website-safe phrase/audio seam
-4. run the repo validator from `/Users/jojolim/Developer/products/speaklocal/app-family`:
-   - `pwsh -NoProfile -File ./scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`
-5. manual smoke on the pages actually changed before calling the website pass complete
-   - confirm the page fetches the exported module JSON over HTTP rather than relying on hardcoded phrase markup
+3. direct-serve preview-data parity under `site/data/` and `site/public/data/`
+4. website artifact validation:
 
-## Website staging-first publish flow
+```sh
+pwsh -NoProfile -File ./scripts/website/Test-SpeakLocalWebsiteArtifact.ps1
+```
 
-From `/Users/jojolim/Developer/products/speaklocal/app-family`:
+5. local smoke with:
 
-1. Edit `site/`
-2. If preview data changed, regenerate it from `app/`:
-   - `npm run export:website-previews`
-3. Validate the artifact:
-   - `pwsh -NoProfile -File ./scripts/website/Test-SpeakLocalWebsiteArtifact.ps1`
-4. Review the working artifact locally:
-   - `python3 -m http.server 4173 --directory site`
-   - review `http://127.0.0.1:4173/`
-5. Publish the reviewed bytes to staging:
-   - `pwsh -NoProfile -File ./scripts/website/Publish-SpeakLocalWebsiteStaging.ps1`
-6. Review the real staging surface:
-   - `http://speaklocal.app:8081/`
-   - fallback: `http://38.247.143.2:8081/`
-   - inspect `/__deployment.json` if you need to confirm which artifact is staged
-7. Promote only after signoff:
-   - `pwsh -NoProfile -File ./scripts/website/Promote-SpeakLocalWebsiteLive.ps1`
-8. Verify live:
-   - `https://speaklocal.app/`
-   - `https://www.speaklocal.app/`
-9. Roll back from the latest live backup noted in the deployment handoff if a promotion needs to be undone
+```sh
+python3 -m http.server 4173 --directory site
+```
 
-## Exact next Viet iPhone validation pass
+Website preview data must come from current native/content source paths, not from a React Native app pack.
 
-Use `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the literal next-operator checklist.
-The older OpenClaw docs remain reference inputs only and should not compete with the repo-owned execution packet.
+## Evidence Minimum
 
-### Repo-owned handoff order
+For native app work, close with:
 
-1. Confirm the current snapshot and latest installable artifact in `APP_STATUS.md`.
-2. Confirm the still-open gates in `CURRENT_BLOCKERS.md`.
-3. Follow `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the exact preview/TestFlight/App Store Connect/device-proof sequence.
-   - if the disposable staging root does not carry git metadata, either set `EAS_NO_VCS=1` or initialize git there before calling `eas`
-4. First try to reuse the tracked in-flight preview/store builds from that packet.
-5. Rebuild the same repo snapshot again only if Step 2 of the execution packet says the current preview or store/TestFlight builds are still not ready.
-6. If a rebuild is required, keep store/TestFlight distribution on the same staged snapshot at a higher explicit staged build number and submit the finished store build without `--what-to-test`.
-7. Run the exact device pass from `VIET_TESTFLIGHT_EXECUTION_PACKET.md` only after the packet's readiness gates are satisfied.
-8. Treat the older OpenClaw docs as historical references only if reconciliation is needed.
-9. After evidence arrives, fold it back in this order:
-   - update Step 6 in `VIET_TESTFLIGHT_EXECUTION_PACKET.md` first
-   - then mirror `APP_STATUS.md`
-   - then mirror `TESTING_RUNBOOK.md` if build-lane facts, retry posture, or repo sync instructions changed
-   - then mirror `ops/apps/viet.json` if gate status, hard-block wording, or handoff wording changed
-   - update `CURRENT_BLOCKERS.md` only if blocker truth changed
-   - update `LATEST_VALIDATION.md` only if fresh durable evidence changed the last validation snapshot
+- branch and commit hash
+- files changed
+- validation commands and results
+- simulator screenshot paths when UI changed
+- physical iPhone result when built to device
+- remaining risks or blockers
 
-### Current truth that the execution packet must preserve
+## Current Operational Limits
 
-- `150 starter / 750 premium / 900 total`
-- `919` approved rows
-- `919 ready / 0 planned`
-- bundle ID: `com.jojobuilds.viettravelphrases`
-- product ID: `com.jojobuilds.viettravelphrases.premiumunlock`
-- fixed locked-state queries: `hello`, `xin chao`, `pharmacy`, `charged twice`, `zzzzz`
-
-### Current `2026-04-16` build-lane facts
-
-- standalone root used for the current execution lane:
-  - `E:\AI\SpeakLocal-EAS-Build-20260416-viet-preview-r1`
-- current in-flight internal preview build:
-  - `39b7fbfd-909c-48fe-9317-f8be2c5e6e02`
-  - `1.0.0 (4)`
-- current in-flight store/TestFlight build:
-  - `5f61efeb-661d-426b-a280-aed866dcb5c2`
-  - `1.0.0 (5)`
-- canonical `app.config.js` still resolves Viet as build `2`, so both preview and store lanes require explicit staged build-number control rather than trusting canonical config
-- canonical `production.autoIncrement` is not usable with the current `app.config.js` setup inside the disposable staging root; future retries should keep the store/TestFlight build number explicit
-- if using EAS auto-submit on the current Expo plan, do not pass `--what-to-test`
-- as of `2026-04-21`, repo truth still does not show either in-flight build as installable or TestFlight-processed
-
-### Lane split that remains in force
-
-- internal preview build = install and locked-state preflight only
-- TestFlight plus Sandbox Apple Account = durable purchase / restore / restart proof
-- if the internal preview snapshot does not load the product or never shows a real App Store sheet, record the blocker and move the same snapshot into TestFlight before escalating it as a repo defect
-
-### Evidence minimum
-
-Use `VIET_TESTFLIGHT_EXECUTION_PACKET.md` for the exact six-item return packet and run-end capture template. The packet owner there is authoritative for these six headings, in this order: `Preview-install state`, `Store/TestFlight state`, `Apple-side purchase readiness`, `Physical device proof`, `Shared-search carry-forward`, and `Repo sync decision`. This runbook should not maintain a second copy of that packet.
-
-## Current operational limits
-
-- no dedicated automated UI test suite exists
-- no lint script exists
-- no server-side receipt verification exists in this pass
-- the live Viet pack now has `919` approved rows marked `audioStatus=ready`, but broader continuity benchmarking on the mixed lane is still outstanding
-- direct remote EAS builds from the canonical repo path still fail because of project-root packaging drift
+- StoreKit purchase/restore still needs fresh native-device proof when the paywall lane is ready.
+- Audio quality and continuity should be reviewed through native resources, not legacy audio folders.
+- Historical Expo/EAS issues are no longer app-development blockers.

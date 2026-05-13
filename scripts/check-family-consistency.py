@@ -3,13 +3,12 @@ from __future__ import annotations
 
 import argparse
 import json
-import subprocess
 import sys
 from pathlib import Path
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Check the SpeakLocal family repo for contract drift.")
+    parser = argparse.ArgumentParser(description="Check SpeakLocal native family contract drift.")
     parser.add_argument("--repo-root", type=Path, default=None, help="Repo root to inspect.")
     return parser.parse_args()
 
@@ -35,20 +34,15 @@ def load_project_meta(path: Path) -> dict[str, str]:
     return values
 
 
-def run_node_json(repo_root: Path, script: str, *args: str) -> dict:
-    completed = subprocess.run(
-        ["node", "-e", script, *args],
-        cwd=repo_root,
-        text=True,
-        capture_output=True,
-        check=True,
-    )
-    return json.loads(completed.stdout)
-
-
-def path_from_registry_runtime(app_family_root: Path, runtime_value: str) -> Path:
-    trimmed = runtime_value.removeprefix("./")
-    return app_family_root / f"{trimmed}.ts"
+def normalize_variant_name(value: str) -> str:
+    normalized = value.lower().strip()
+    if normalized == "tagalog":
+        return "philippines"
+    if normalized == "viet":
+        return "vietnam"
+    if normalized == "japanese":
+        return "japan"
+    return normalized
 
 
 def main() -> int:
@@ -70,121 +64,69 @@ def main() -> int:
             "ops/app-manifest-contract.json canonicalSessionRoot."
         )
 
-    registry = run_node_json(
-        repo_root,
-        (
-            "const { appRegistry, supportedAppVariants } = require(process.argv[1]);"
-            "console.log(JSON.stringify({ appRegistry, supportedAppVariants }));"
-        ),
-        str(repo_root / "app" / "family" / "appRegistry.js"),
-    )
+    native_ios_root = project_meta.get("native_ios_root")
+    if native_ios_root != f"{contract['canonicalSessionRoot']}/native-ios":
+        errors.append("docs/project-meta.yaml native_ios_root does not point at the canonical native-ios root.")
 
-    app_family_root = repo_root / "app" / "family"
-    supported_variants = registry["supportedAppVariants"]
-    if not supported_variants:
-        errors.append("appRegistry.js returned no supported variants.")
+    for surface_name, surface_path in contract.get("canonicalSurfaces", {}).items():
+        if not (repo_root / surface_path).exists():
+            errors.append(f"Missing canonical surface '{surface_name}': {surface_path}")
 
-    for variant in supported_variants:
-        definition = registry["appRegistry"][variant]
-        manifest_path = repo_root / "ops" / "apps" / f"{variant}.json"
-        if not manifest_path.exists():
-            errors.append(f"Missing operator manifest for variant '{variant}'.")
-            continue
+    manifest_dir = repo_root / contract["canonicalSurfaces"]["manifestDir"]
+    config_dir = repo_root / contract["canonicalSurfaces"]["dynamicConfig"]
+    manifests = sorted(manifest_dir.glob("*.json"))
+    if not manifests:
+        errors.append("No ops/apps/*.json manifests found.")
 
+    for manifest_path in manifests:
         manifest = load_json(manifest_path)
-        if manifest.get("variant") != variant:
-            errors.append(f"ops/apps/{variant}.json has mismatched variant '{manifest.get('variant')}'.")
-        if manifest.get("displayName") != definition["build"]["name"]:
-            errors.append(
-                f"ops/apps/{variant}.json displayName '{manifest.get('displayName')}' "
-                f"does not match appRegistry name '{definition['build']['name']}'."
-            )
-        if manifest.get("appId") != definition["build"]["slug"]:
-            errors.append(
-                f"ops/apps/{variant}.json appId '{manifest.get('appId')}' "
-                f"does not match appRegistry slug '{definition['build']['slug']}'."
-            )
-        if manifest.get("sessionRoot") != contract["canonicalSessionRoot"]:
-            errors.append(
-                f"ops/apps/{variant}.json sessionRoot '{manifest.get('sessionRoot')}' "
-                f"does not match canonical session root."
+        variant = manifest.get("variant")
+        if manifest_path.stem != variant:
+            notes.append(
+                f"ops/apps/{manifest_path.name} filename differs from variant '{variant}'. "
+                "This is allowed only for historical variant names."
             )
 
         for field in contract["requiredFields"]:
             if field not in manifest:
-                errors.append(f"ops/apps/{variant}.json is missing required field '{field}'.")
+                errors.append(f"{manifest_path.relative_to(repo_root)} is missing required field '{field}'.")
+
+        if manifest.get("sessionRoot") != contract["canonicalSessionRoot"]:
+            errors.append(
+                f"{manifest_path.relative_to(repo_root)} sessionRoot '{manifest.get('sessionRoot')}' "
+                "does not match canonical session root."
+            )
+
         for gate_key in contract["testingGateKeys"]:
             if gate_key not in manifest.get("testingGates", {}):
-                errors.append(f"ops/apps/{variant}.json is missing testing gate '{gate_key}'.")
+                errors.append(f"{manifest_path.relative_to(repo_root)} is missing testing gate '{gate_key}'.")
 
-        for runtime_key in ("packModule", "presentationModule", "audioModule", "storageModule"):
-            runtime_path = path_from_registry_runtime(app_family_root, definition["runtime"][runtime_key])
-            if not runtime_path.exists():
-                errors.append(
-                    f"Runtime module for variant '{variant}' is missing: {runtime_path.relative_to(repo_root)}"
-                )
-
-        app_config = run_node_json(
-            repo_root,
-            (
-                "process.env.EXPO_PUBLIC_APP_VARIANT = process.argv[2];"
-                "const loadConfig = require(process.argv[1]);"
-                "const config = loadConfig();"
-                "console.log(JSON.stringify({"
-                "name: config.expo.name,"
-                "slug: config.expo.slug,"
-                "scheme: config.expo.scheme,"
-                "bundleIdentifier: config.expo.ios.bundleIdentifier,"
-                "packageName: config.expo.android.package,"
-                "appVariant: config.expo.extra.appVariant,"
-                "easProjectId: config.expo.extra.eas ? config.expo.extra.eas.projectId : ''"
-                "}));"
-            ),
-            str(repo_root / "app" / "app.config.js"),
-            variant,
-        )
-
-        expected = definition["build"]
-        for key, expected_value in (
-            ("name", expected["name"]),
-            ("slug", expected["slug"]),
-            ("scheme", expected["scheme"]),
-            ("bundleIdentifier", expected["bundleIdentifier"]),
-            ("packageName", expected["packageName"]),
-            ("appVariant", expected["appVariant"]),
-        ):
-            if app_config.get(key) != expected_value:
-                errors.append(
-                    f"app.config.js for variant '{variant}' returned {key}='{app_config.get(key)}' "
-                    f"but appRegistry expects '{expected_value}'."
-                )
-
-        expected_eas_project = expected.get("easProjectId", "")
-        if app_config.get("easProjectId", "") != expected_eas_project:
+        expected_config = config_dir / f"{normalize_variant_name(str(variant))}.json"
+        if not expected_config.exists():
             errors.append(
-                f"app.config.js for variant '{variant}' returned easProjectId='{app_config.get('easProjectId')}' "
-                f"but appRegistry expects '{expected_eas_project}'."
+                f"{manifest_path.relative_to(repo_root)} has no native app config at "
+                f"{expected_config.relative_to(repo_root)}."
             )
 
     actual_repo_root = str(repo_root)
     canonical_root = contract["canonicalSessionRoot"]
     if actual_repo_root != canonical_root:
         notes.append(
-            f"Repo is operating from compatibility path '{actual_repo_root}' while canonical root is '{canonical_root}'."
+            f"Repo is operating from feature/worktree path '{actual_repo_root}' while canonical root is '{canonical_root}'."
         )
 
     if errors:
-        print("SpeakLocal family consistency check FAILED")
+        print("SpeakLocal native family consistency check FAILED")
         for error in errors:
             print(f"- {error}")
         for note in notes:
             print(f"note: {note}")
         return 1
 
-    print("SpeakLocal family consistency check passed.")
+    print("SpeakLocal native family consistency check passed.")
     print(f"canonical_root: {canonical_root}")
     print(f"repo_root: {actual_repo_root}")
-    print(f"supported_variants: {', '.join(supported_variants)}")
+    print(f"manifest_count: {len(manifests)}")
     for note in notes:
         print(f"note: {note}")
     return 0
@@ -193,7 +135,6 @@ def main() -> int:
 if __name__ == "__main__":
     try:
         raise SystemExit(main())
-    except subprocess.CalledProcessError as error:
-        if error.stderr:
-            print(error.stderr.strip(), file=sys.stderr)
+    except json.JSONDecodeError as error:
+        print(str(error), file=sys.stderr)
         raise

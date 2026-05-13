@@ -1,29 +1,26 @@
 # Native Mac Cutover
 
-Last updated: 2026-04-28
+Last updated: 2026-05-13
 Authority lane: native iOS transition and Codex carryover truth
 
 ## Use this doc for
 
 - confirming the current Mac/native status
-- deciding what stays on Windows during the overlap period
-- moving Codex over without losing workflow continuity
-- keeping the native SwiftUI/Xcode transition grounded in the current shared repo instead of creating split-brain state
+- keeping Codex sessions pointed at the native SwiftUI/Xcode app
+- avoiding split-brain state between native app work and historical Expo/React references
 
 ## Current target state
 
-- The Mac is the primary day-to-day native iOS development machine.
-- Xcode and SwiftUI become the primary ship-facing app-shell toolchain.
+- Jojo's MacBook is the only current development machine for the app.
+- Xcode and SwiftUI are the only ship-facing app-shell toolchain.
 - The current repo remains the single source of truth for:
-  - app-family registry
   - content packs
-  - answer-page exports
   - relation data
-  - audio registry/manifest truth
+  - native audio manifest truth
   - premium boundary truth
   - queue/task state
   - durable project decisions
-- Expo remains the bridge/reference lane during the transition, not the final UX destination.
+- Expo/React Native is no longer an active app lane.
 
 ## Mac status on 2026-04-28
 
@@ -31,7 +28,7 @@ Authority lane: native iOS transition and Codex carryover truth
 - Native iOS app-session path: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
 - Skill Lab path: `/Users/jojolim/Developer/labs/skill-labs`
 - Compatibility symlink path: `/Users/jojolim/Documents/Projects/speaklocal-app-family`
-- Recovered Windows worktree snapshots: `/Users/jojolim/Developer/products/speaklocal/recovered-worktrees`
+- Archived pre-Mac worktree snapshots, if needed for history only: `/Users/jojolim/Developer/products/speaklocal/recovered-worktrees`
 - Command Line Tools, Swift CLI, Git, full Xcode, Homebrew, Node, and npm are installed.
 - Xcode is installed at `/Applications/Xcode.app`.
 - iOS 26.4 simulator tooling is installed and an iPhone 17 Pro simulator has been boot-verified.
@@ -49,14 +46,14 @@ Authority lane: native iOS transition and Codex carryover truth
 ## Post-cutover posture
 
 - Use the Mac native lane for day-to-day app implementation.
-- Treat the Windows server as legacy/archive lookup unless deliberately inspecting old state.
+- Treat pre-Mac machine state as archive-only. Do not use it for development.
 - Keep portable product truth in the repo:
   - content under `content-draft/`
   - native generated resources under `native-ios/Resources/`
   - durable decisions under `docs/`
   - skill process truth under `/Users/jojolim/Developer/labs/skill-labs`
-- Preserve Expo as bridge/reference and live-app history, but do not optimize final UX around it unless a concrete migration blocker requires it.
-- New implementation should happen in fresh focused Codex sessions opened at the correct Mac folder instead of old Windows threads.
+- Do not preserve or revive Expo as an app implementation lane. Historical mentions remain archive context only.
+- New implementation should happen in fresh focused Codex sessions opened at the correct Mac folder.
 
 ## What must survive unchanged
 
@@ -66,7 +63,7 @@ Authority lane: native iOS transition and Codex carryover truth
 - `.codex\` in the repo remains the project-local Codex workflow lane.
 - `content-draft\` remains the authored content source of truth.
 - `content-draft/viet/canonical-pages/**` remains the authored canonical phrase-page source for native article pages.
-- `app/family/` remains shared runtime/content contract history until native parity fully replaces those runtime reads.
+- Native resources under `native-ios/Resources/` now own bundled runtime truth for the app.
 - `native-ios/project.yml` remains the reproducible native project source.
 - `docs/APP_FAMILY_STRUCTURE.md` now owns the monorepo/native-language-pack structure.
 - `native-ios/Config/apps/*.json` is the native app-variant planning/config surface.
@@ -75,9 +72,9 @@ Authority lane: native iOS transition and Codex carryover truth
   - Current Viet resources stay at root-level `native-ios/Resources/*.json` plus `native-ios/Resources/Audio/`.
   - Do not move them into `LanguagePacks/viet/` until Swift loaders, generators, XcodeGen resource rules, tests, and docs are updated together.
 
-## What to carry from Windows to the Mac
+## Historical Carryover Note
 
-Primary continuity should come from the repo itself, not from a single live thread.
+Primary continuity now comes from the repo itself, not from old machine state or a single live thread.
 
 Carry these first:
 
@@ -86,9 +83,9 @@ Carry these first:
 - `.codex\`
 - `docs\`
 
-Selective Codex-home carryover is recommended when useful:
+Old Codex-home carryover is historical only:
 
-- Windows source: `C:\Users\Administrator\.codex\`
+- old source: `C:\Users\Administrator\.codex\`
 - Mac target: `~/.codex/`
 
 Highest-value carryover inside Codex home:
@@ -114,11 +111,10 @@ Do not treat app logs as project memory. The durable continuity source is the re
    - `content-draft/viet/README.md` for Viet authored source surfaces
 4. Validate the shared tooling from the repo root when touching shared content:
    - `node script/build_and_run.js doctor`
-5. Validate the content/runtime lane from `app/` when touching Expo/shared pack logic:
-   - `npm run build:viet-pack`
-   - `npm run validate:family`
-   - `npm run validate:premium-boundary`
-   - `npm run validate:premium-expansion`
+5. Validate native generated content/resources from the repo root or `native-ios/` as appropriate:
+   - `node native-ios/scripts/generate-viet-catalog.js`
+   - `node native-ios/scripts/generate-authored-tier-one-pages.js`
+   - `node native-ios/scripts/validate-viet-sqlite-fixture.js`
 6. Validate the native lane from `native-ios/` when touching SwiftUI/native resources:
    - `xcodegen generate`
    - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build`
@@ -126,7 +122,7 @@ Do not treat app logs as project memory. The durable continuity source is the re
 
 ## Codex workflow continuity on the Mac
 
-- Start a fresh orchestrator thread on the Mac instead of trying to preserve one old live Windows thread as the only memory source.
+- Start fresh focused threads on the Mac instead of trying to preserve old machine threads as the only memory source.
 - The same workflow should continue:
   - pinned orchestrator thread for direction and review
   - fresh worker threads for meaningful implementation tasks
@@ -151,7 +147,7 @@ Legacy wrappers remain for compatibility:
 - `script/build_and_run.cmd`
 - `script/build_and_run.sh`
 
-Codex run actions should prefer the Node wrapper so the same project-local actions work on both Windows and macOS with less workflow redo.
+Codex run actions should prefer the native Node wrapper from this Mac repo.
 
 ## Native first milestone
 

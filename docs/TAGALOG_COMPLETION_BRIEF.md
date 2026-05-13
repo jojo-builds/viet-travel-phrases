@@ -1,12 +1,14 @@
 # Tagalog Completion Brief
 
-Superseded as the default next execution target by `docs/SEARCH_ROLLOUT_BRIEF.md`.
-Keep this brief for Tagalog-specific preview, release, and fuller device-validation follow-up only.
+Status: historical brief, not a current execution packet.
+
+Tagalog remains useful planning context, but this document describes an older Expo/EAS validation lane. Current app work is MacBook-only and native iOS-only. Do not run Expo, EAS, Metro, or `app/` commands from this brief.
 
 ## Current session root
 
 - Current Mac root: `/Users/jojolim/Developer/products/speaklocal/app-family`
-- Legacy Windows root retained for archive lookup only: `E:\AI\SpeakLocal-App-Family`
+- Active native app root: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
+- Legacy Windows roots are archive context only and must not be used for new work.
 
 ## What is already true
 
@@ -17,12 +19,12 @@ Keep this brief for Tagalog-specific preview, release, and fuller device-validat
   - storage namespace
   - bundled-audio path
 - Tagalog already resolves through the same runtime/build registry seam as Viet.
-- TypeScript and Expo config resolution already work for Tagalog from this repo.
+- Older TypeScript/Expo config checks were historical validation only, not current app truth.
 - Tagalog now has:
   - a 10-scenario / 70-phrase runtime pack
   - Tagalog draft artifacts with stable phrase IDs and audio keys
   - generated bundled mp3 audio plus a Tagalog-local registry and manifest
-  - an additive `preview-tagalog` EAS profile
+  - a historical `preview-tagalog` EAS profile from the retired Expo lane
   - a repo-local family parity validator
 
 ## What Tagalog still lacks
@@ -48,34 +50,19 @@ Keep this brief for Tagalog-specific preview, release, and fuller device-validat
 - `hardBlock.type: device-access`
 - keep Tagalog release-transition work deferred until the current device-only shared-search block clears
 
-## Required next-session work
+## Native Follow-Up Shape
 
-1. advance `testingGates.runtimeManualSmoke` by running the real shared-search smoke on the current Tagalog preview build
-2. advance `testingGates.deviceWalkthrough` by capturing the fuller durable walkthrough for the corrected Tagalog build
-3. clear the active device-access hard block only after both of those gates are captured in durable operational truth
-4. update operational truth and the compact operator manifest summary after those gates change
-5. if future remote builds are needed before the canonical repo-path issue is fixed, use the standalone app-root build directory workaround
-6. keep Tagalog-specific release ops separate from the new shared-search family milestone until the device-only block is fully cleared
+If Tagalog is reactivated, create a native language-pack task that:
+
+1. keeps source work in `content-draft/tagalog` and `ops/apps/tagalog.json`
+2. generates native resources under `native-ios/Resources/LanguagePacks/`
+3. adds or updates `native-ios/Config/apps/philippines.json`
+4. validates with native scripts and Xcode tests
+5. captures simulator or iPhone proof from `native-ios/`
 
 ## Validation expectations
 
-Run from `/Users/jojolim/Developer/products/speaklocal/app-family/app`:
-
-- `npm run build:tagalog-pack`
-- `npm run validate:family`
-- `npx --no-install tsc --noEmit`
-- `npx expo config --type public --json`
-- `npx expo export --platform ios --output-dir .expo-export-viet-check`
-- `EXPO_PUBLIC_APP_VARIANT=tagalog npx --no-install tsc --noEmit`
-- `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo config --type public --json`
-- `EXPO_PUBLIC_APP_VARIANT=tagalog npx expo export --platform ios --output-dir .expo-export-tagalog-check`
-- `npx eas-cli credentials:configure-build -p ios -e preview-tagalog`
-
-If another Tagalog preview build is needed before the canonical repo-path EAS packaging issue is fixed:
-
-1. copy `/Users/jojolim/Developer/products/speaklocal/app-family/app` to a standalone app-root folder
-2. from that standalone folder, run `npm ci`
-3. from that standalone folder, run `EXPO_PUBLIC_APP_VARIANT=tagalog npx eas-cli build --platform ios --profile preview-tagalog --non-interactive`
+Use the native validation runbook in `docs/operations/TESTING_RUNBOOK.md`. Do not use the removed Expo/React Native app shell for Tagalog validation.
 
 If the session materially changes audio, content wiring, or app readiness truth, also update:
 

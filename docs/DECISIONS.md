@@ -4,12 +4,12 @@
 
 - `/Users/jojolim/Developer/products/speaklocal/app-family` is the canonical Mac implementation root for the SpeakLocal app family.
 - `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios` is the active native iOS app-session root in Codex for SwiftUI/Xcode work.
-- Legacy Windows roots such as `E:\AI\SpeakLocal-App-Family` are migration/archive references, not the preferred active workspace. Older Windows desktop-agent paths may appear in historical logs only.
+- Historical pre-Mac roots such as `E:\AI\SpeakLocal-App-Family` are archive references only. Older desktop-agent paths may appear in historical logs only and must not be used for development.
 - The preferred native family architecture is one shared SwiftUI/Xcode shell plus per-app config and language packs. SpeakLocal Vietnam is the active proof app; future destinations should inherit the shell rather than become separate rewrites.
 - Current live Viet native resources remain at `native-ios/Resources/*.json` plus `native-ios/Resources/Audio/` until a coordinated language-pack migration updates Swift loaders, generators, XcodeGen resource rules, tests, and docs together.
-- `app/` remains the canonical shared content/pipeline workspace during the transition, but the ship-facing app-shell direction is now a native SwiftUI/Xcode family shell. Expo is the bridge/reference lane, not the final premium UX destination.
-- `app/family/appRegistry.js` remains the canonical shared runtime/build registry.
-- Hidden Expo web/native preview routes under `app/app/design-preview/*` and `app/app/app-preview-wireframes/*` are the preferred fast visual review surface for UI iteration; they are sidecar review tools, not ship-facing product routes.
+- `native-ios/` is the only active app product surface. The legacy Expo/React Native shell is no longer an implementation lane for app work.
+- Native app identity and variant planning live in `native-ios/Config/apps/*.json`; bundled phrase/audio runtime truth lives in `native-ios/Resources/` and authored source under `content-draft/`.
+- App UI review should use native simulator and physical iPhone builds from `native-ios/`, not Expo web preview routes.
 - SpeakLocal v2 is being framed as a travel phrasebook, not an academic language-learning app.
 - Current repo naming and pricing direction is now:
   - `SpeakLocal Vietnam`
@@ -30,7 +30,7 @@
 
 ## Monetization decisions
 
-- Viet v2 uses a single non-consumable iOS unlock through `expo-iap` and StoreKit.
+- Viet v2 uses a single non-consumable iOS unlock through native StoreKit.
 - Viet v2 does not add a custom backend for purchase verification in this pass. Repo truth should describe that as a deliberate v2 simplicity tradeoff, not hidden completeness.
 - Premium access truth is:
   - real StoreKit entitlement when the iOS native store path is available
@@ -99,17 +99,15 @@
 
 ## Design review surface decisions
 
-- The fastest private review lane for live UI changes is now the authenticated dashboard canvas at `https://dashboard.jayopsai.com/design/viet`, backed by the Expo web preview for the live app repo rather than a separate mock shell.
-- The Expo app keeps hidden review routes under `app/app/design-preview/*`, and the dashboard proxies those routes so phone review can happen without building or installing a fresh iPhone binary for every visual pass.
-- Exact deterministic real-app review states now live under `app/app/design-live/*`, with preset truth owned by `app/lib/designReviewPresets.ts` and state overrides owned by `app/lib/designReview.tsx`.
-- Dashboard review should prefer `design-live` preset routes for repeatable frontend work, and the repo now ships `npm run capture:design` so the same authenticated dashboard surface can be screenshot-verified with Playwright instead of relying on manual visual memory alone.
-- The dashboard/authenticated Expo web lane is the default review surface for routine UI and copy iteration; paid native iPhone builds should be treated as milestone validation, not the default loop for small design tweaks.
+- Native simulator screenshots and physical iPhone builds are the app review surfaces.
+- Liquid Glass and native interaction work must be judged against the SwiftUI app in `native-ios/`, not a web or React Native approximation.
+- Routine UI proof should use a dedicated simulator per feature branch; Jojo's physical phone should run `main` unless he explicitly asks to test a feature branch on-device.
 - Build/release workflow should follow a simple branch policy:
   - `main` = current accepted baseline
   - one active feature branch per major feature or workstream
   - do not advance the same feature on multiple active branches in parallel once a winner is clear
   - when multiple approved features need one paid iPhone test pass, bundle them into a single integration candidate branch/build instead of paying for isolated builds per feature
-- Windows-server history should now be used only for archive/migration lookup. Current hardening of portable content/model/export seams and design references happens from the Mac repo.
+- Pre-Mac server history is archive-only. Current hardening of portable content/model/export seams and design references happens from the Mac repo.
 
 ## Native iOS transition decisions
 
@@ -166,7 +164,7 @@
   - restart the Codex desktop app
   - reopen the repo
   - resume from the task files in a fresh worker thread instead of trusting the old thread to self-heal cleanly
-- The active Codex machine is now this Mac; Windows Codex install/update notes are archive-only unless the old server is intentionally reopened.
+- The active Codex machine is this MacBook. Old install/update notes from other machines are archive-only.
 - Queue recovery should prefer explicit recovery tasks over silently reusing interrupted tasks. If a meaningful task is materially complete but the app/runtime interrupted the closeout, keep the original task as historical interruption truth and finish the salvage path in a fresh recovery task.
 - For machine transitions, repo-persisted docs plus `.agent` task state are the primary continuity source, not any single live Codex thread.
 - Preferred Codex carryover into a new machine is:
