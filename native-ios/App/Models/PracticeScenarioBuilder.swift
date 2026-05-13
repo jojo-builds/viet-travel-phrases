@@ -2903,11 +2903,11 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-dire-navi-where-is-the-nearest-information-desk",
-                            vietnamese: "Bàn thông tin gần nhất ở đâu?",
-                            english: "Where is the nearest information desk?",
-                            nextLocalLine: "Quầy gần nhất ở giữa sảnh.",
-                            nextLocalMeaning: "The nearest desk is in the middle of the hall."
+                            "viet-family-directions-understand-now",
+                            vietnamese: "Cảm ơn, tôi hiểu rồi",
+                            english: "Thanks, I understand now",
+                            nextLocalLine: "Không có gì",
+                            nextLocalMeaning: "No problem."
                         ),
                         messageReply(
                             "viet-family-v900-unde-repa-can-you-say-it-in-a-simpler-way",
