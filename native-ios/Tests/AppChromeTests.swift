@@ -155,6 +155,26 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(metrics.height, AppChromeLayout.dockSelectionPressedHeight)
     }
 
+    func testDockSelectionTapTravelDoesNotUseDragStretch() {
+        let touchedCenter = AppDockSelectionLayout.itemCenterX(index: 3)
+        let metrics = AppDockSelectionLayout.lensMetrics(
+            selectedIndex: 0,
+            activeIndex: 3,
+            dragX: touchedCenter,
+            itemCount: 4,
+            reduceMotion: false,
+            predictedDragX: touchedCenter,
+            stretchesWithMotion: false
+        )
+
+        XCTAssertEqual(
+            metrics.xOffset,
+            touchedCenter - AppChromeLayout.dockSelectionPressedWidth / 2
+        )
+        XCTAssertEqual(metrics.width, AppChromeLayout.dockSelectionPressedWidth)
+        XCTAssertEqual(metrics.height, AppChromeLayout.dockSelectionPressedHeight)
+    }
+
     func testDockSelectionLensStretchesWhileDraggingAndSettlesWhenReducedMotion() {
         let selectedMetrics = AppDockSelectionLayout.lensMetrics(
             selectedIndex: 0,
@@ -383,10 +403,10 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testDockGlassUsesBackingFillToPreventContentBleed() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.18)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.30)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.40)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.50)
         XCTAssertGreaterThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, AppChromeLayout.dockBackdropFillOpacity)
-        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.34)
+        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.50)
     }
 
     func testPhrasePageChromeUsesSeparateSearchIsland() {
@@ -443,6 +463,33 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(chrome.primaryDockItems, [.home])
         XCTAssertEqual(chrome.selectedDockItem, .home)
         XCTAssertEqual(chrome.searchPresentation, .expandedField)
+    }
+
+    func testDockSelectionRouteChangePolicyLetsSelectedTabAnimationSettle() {
+        XCTAssertFalse(
+            AppDockInteractionPolicy.shouldResetSelectionLens(
+                activeItem: .practice,
+                newRoute: .practice
+            )
+        )
+        XCTAssertFalse(
+            AppDockInteractionPolicy.shouldResetSelectionLens(
+                activeItem: .browse,
+                newRoute: .browseCollection(.category("hotel"))
+            )
+        )
+        XCTAssertTrue(
+            AppDockInteractionPolicy.shouldResetSelectionLens(
+                activeItem: .practice,
+                newRoute: .browse
+            )
+        )
+        XCTAssertTrue(
+            AppDockInteractionPolicy.shouldResetSelectionLens(
+                activeItem: .practice,
+                newRoute: .search
+            )
+        )
     }
 
     func testSearchOriginIconTracksRouteBelowSearch() {

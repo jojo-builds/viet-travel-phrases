@@ -41,10 +41,10 @@ struct NativeGlass<S: Shape>: ViewModifier {
         if #available(iOS 26.0, *) {
             if interactive {
                 content
-                    .glassEffect(.regular.tint(tint.opacity(0.20)).interactive(), in: shape)
+                    .glassEffect(.regular.tint(tint.opacity(0.44)).interactive(), in: shape)
             } else {
                 content
-                    .glassEffect(.regular.tint(tint.opacity(0.14)), in: shape)
+                    .glassEffect(.regular.tint(tint.opacity(0.36)), in: shape)
             }
         } else {
             content
@@ -269,8 +269,8 @@ enum AppChromeLayout {
     static let dockItemSpacing: CGFloat = 8
     static let dockItemWidth: CGFloat = 58
     static let dockItemHeight: CGFloat = 56
-    static let dockBackdropFillOpacity: Double = 0.24
-    static let chromeControlBackdropFillOpacity: Double = 0.28
+    static let dockBackdropFillOpacity: Double = 0.44
+    static let chromeControlBackdropFillOpacity: Double = 0.44
     static let dockMaximumContentWidth: CGFloat = 292
     static let dockSelectionWidth: CGFloat = 76
     static let dockSelectionPressedWidth: CGFloat = 104
@@ -392,7 +392,8 @@ enum AppDockSelectionLayout {
         itemCount: Int,
         reduceMotion: Bool,
         contentWidth: CGFloat? = nil,
-        predictedDragX: CGFloat? = nil
+        predictedDragX: CGFloat? = nil,
+        stretchesWithMotion: Bool = true
     ) -> AppDockSelectionLensMetrics {
         guard itemCount > 0 else {
             return AppDockSelectionLensMetrics(xOffset: 0, width: 0, height: 0)
@@ -416,6 +417,14 @@ enum AppDockSelectionLayout {
         guard !reduceMotion else {
             return AppDockSelectionLensMetrics(
                 xOffset: fallbackCenter - AppChromeLayout.dockSelectionPressedWidth / 2,
+                width: AppChromeLayout.dockSelectionPressedWidth,
+                height: AppChromeLayout.dockSelectionPressedHeight
+            )
+        }
+
+        guard stretchesWithMotion else {
+            return AppDockSelectionLensMetrics(
+                xOffset: targetCenter - AppChromeLayout.dockSelectionPressedWidth / 2,
                 width: AppChromeLayout.dockSelectionPressedWidth,
                 height: AppChromeLayout.dockSelectionPressedHeight
             )

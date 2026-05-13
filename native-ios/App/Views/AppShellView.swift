@@ -761,7 +761,7 @@ struct AppShellView: View {
             let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
             let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
             let isPressingDockSelection = dockDrag.dragX != nil
-            let isDraggingDockSelection = dockDrag.didMoveBeyondTap
+            let isDraggingDockSelection = dockDrag.didMoveBeyondTap && dockDrag.isFingerTracking
             let lensAnimation = dockSelectionLensAnimation(isFingerTracking: dockDrag.isFingerTracking)
             let lensMetrics = AppDockSelectionLayout.lensMetrics(
                 selectedIndex: selectedIndex,
@@ -770,7 +770,8 @@ struct AppShellView: View {
                 itemCount: itemCount,
                 reduceMotion: reduceMotion,
                 contentWidth: contentWidth,
-                predictedDragX: dockDrag.predictedDragX
+                predictedDragX: dockDrag.predictedDragX,
+                stretchesWithMotion: dockDrag.didMoveBeyondTap && dockDrag.isFingerTracking
             )
 
             ZStack(alignment: .leading) {
@@ -930,7 +931,7 @@ struct AppShellView: View {
                 dragX: destinationX,
                 predictedDragX: destinationX,
                 isFingerTracking: false,
-                didMoveBeyondTap: true
+                didMoveBeyondTap: wasDraggingSelection
             )
         }
 
@@ -1010,7 +1011,7 @@ struct AppShellView: View {
                 dragX: destinationX,
                 predictedDragX: destinationX,
                 isFingerTracking: false,
-                didMoveBeyondTap: true
+                didMoveBeyondTap: false
             )
         }
 
@@ -2796,8 +2797,8 @@ private struct AppShellBottomChrome: View {
 
     var body: some View {
         chromeBody
-            .onChange(of: route) { _, _ in
-                resetDockInteraction()
+            .onChange(of: route) { _, newRoute in
+                handleRouteChange(to: newRoute)
             }
     }
 
@@ -2904,7 +2905,7 @@ private struct AppShellBottomChrome: View {
             let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
             let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
             let isPressingDockSelection = dockDrag.dragX != nil
-            let isDraggingDockSelection = dockDrag.didMoveBeyondTap
+            let isDraggingDockSelection = dockDrag.didMoveBeyondTap && dockDrag.isFingerTracking
             let lensAnimation = dockSelectionLensAnimation(isFingerTracking: dockDrag.isFingerTracking)
             let lensMetrics = AppDockSelectionLayout.lensMetrics(
                 selectedIndex: selectedIndex,
@@ -2913,7 +2914,8 @@ private struct AppShellBottomChrome: View {
                 itemCount: itemCount,
                 reduceMotion: reduceMotion,
                 contentWidth: contentWidth,
-                predictedDragX: dockDrag.predictedDragX
+                predictedDragX: dockDrag.predictedDragX,
+                stretchesWithMotion: dockDrag.didMoveBeyondTap && dockDrag.isFingerTracking
             )
             let dockShape = RoundedRectangle(cornerRadius: AppChromeLayout.dockCornerRadius, style: .continuous)
 
@@ -3070,7 +3072,7 @@ private struct AppShellBottomChrome: View {
                 dragX: destinationX,
                 predictedDragX: destinationX,
                 isFingerTracking: false,
-                didMoveBeyondTap: true
+                didMoveBeyondTap: wasDraggingSelection
             )
         }
 
@@ -3126,7 +3128,7 @@ private struct AppShellBottomChrome: View {
                 dragX: destinationX,
                 predictedDragX: destinationX,
                 isFingerTracking: false,
-                didMoveBeyondTap: true
+                didMoveBeyondTap: false
             )
         }
 
@@ -3418,6 +3420,17 @@ private struct AppShellBottomChrome: View {
         dockSelectionTapRequestID += 1
         dockDrag = .inactive
     }
+
+    private func handleRouteChange(to newRoute: AppRoute) {
+        guard AppDockInteractionPolicy.shouldResetSelectionLens(
+            activeItem: dockDrag.activeItem,
+            newRoute: newRoute
+        ) else {
+            return
+        }
+
+        resetDockInteraction()
+    }
 }
 
 private struct AppChromeGlassOutline<S: InsettableShape>: ViewModifier {
@@ -3431,22 +3444,6 @@ private struct AppChromeGlassOutline<S: InsettableShape>: ViewModifier {
             .overlay {
                 shape
                     .strokeBorder(.white.opacity(0.22 + 0.30 * clampedProminence), lineWidth: 0.45 + 0.35 * clampedProminence)
-                    .blendMode(.screen)
-
-                shape
-                    .strokeBorder(
-                        AngularGradient(
-                            colors: [
-                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.18 * clampedProminence),
-                                Color(red: 0.95, green: 0.42, blue: 1.0).opacity(0.14 * clampedProminence),
-                                .white.opacity(0.0),
-                                Color(red: 1.0, green: 0.87, blue: 0.36).opacity(0.12 * clampedProminence),
-                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.18 * clampedProminence),
-                            ],
-                            center: .center
-                        ),
-                        lineWidth: 0.8 + 0.4 * clampedProminence
-                    )
                     .blendMode(.screen)
 
                 shape
@@ -3521,8 +3518,8 @@ private struct AppShellDockSelectionLens: View {
                     LinearGradient(
                         colors: [
                             .white.opacity(0.54 + highlightOpacity),
-                            Color(red: 0.78, green: 0.94, blue: 1.0).opacity(0.16 + highlightOpacity * 0.44),
-                            Color(red: 1.0, green: 0.84, blue: 0.98).opacity(0.10 + highlightOpacity * 0.34),
+                            .white.opacity(0.24 + highlightOpacity * 0.30),
+                            Color(red: 0.88, green: 0.91, blue: 0.94).opacity(0.10 + highlightOpacity * 0.18),
                             .white.opacity(0.24 + highlightOpacity * 0.5),
                         ],
                         startPoint: .topLeading,
@@ -3536,7 +3533,7 @@ private struct AppShellDockSelectionLens: View {
                     .fill(
                         RadialGradient(
                             colors: [
-                                Color(red: 0.72, green: 0.94, blue: 1.0).opacity(isDragging ? 0.34 : 0.22),
+                                .white.opacity(isDragging ? 0.38 : 0.24),
                                 .white.opacity(0.0),
                             ],
                             center: .topLeading,
@@ -3559,19 +3556,7 @@ private struct AppShellDockSelectionLens: View {
                 .blendMode(.screen)
 
                 shape
-                    .strokeBorder(
-                        AngularGradient(
-                            colors: [
-                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.42 : 0.26),
-                                Color(red: 0.88, green: 0.18, blue: 1.0).opacity(isDragging ? 0.34 : 0.20),
-                                .white.opacity(isDragging ? 0.48 : 0.34),
-                                Color(red: 1.0, green: 0.80, blue: 0.10).opacity(isDragging ? 0.30 : 0.18),
-                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.42 : 0.26),
-                            ],
-                            center: .center
-                        ),
-                        lineWidth: isDragging ? 2.4 : 1.5
-                    )
+                    .strokeBorder(.white.opacity(isDragging ? 0.72 : 0.48), lineWidth: isDragging ? 1.6 : 1.1)
                     .blendMode(.screen)
             }
 

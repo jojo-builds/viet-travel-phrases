@@ -85,6 +85,20 @@ struct AppChrome: Equatable {
     }
 }
 
+enum AppDockInteractionPolicy {
+    static func shouldResetSelectionLens(activeItem: DockItemKind?, newRoute: AppRoute) -> Bool {
+        guard newRoute != .search else {
+            return true
+        }
+
+        guard let activeItem else {
+            return false
+        }
+
+        return AppChrome(route: newRoute).selectedDockItem != activeItem
+    }
+}
+
 // MARK: - Local User Intent State
 
 enum UserIntentSource: String, Codable, Equatable {
