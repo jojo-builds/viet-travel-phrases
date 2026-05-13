@@ -3690,7 +3690,7 @@ struct HomeView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                    VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
                         header
                             .id(Self.scrollTopID)
 

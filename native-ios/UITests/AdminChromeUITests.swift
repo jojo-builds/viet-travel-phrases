@@ -271,6 +271,26 @@ final class AdminChromeUITests: XCTestCase {
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-cities-all.png")
     }
 
+    func testHomeHeroHeaderStaysFixedAfterBrowseRoundTrip() {
+        let app = launchApp(arguments: ["--reset-demo-state"])
+        assertHomeVisible(in: app)
+
+        let initialHeaderY = homeEssentialsHeader(in: app).frame.minY
+
+        openDock("Browse", in: app)
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+
+        openDock("Home", in: app)
+        assertHomeVisible(in: app)
+
+        XCTAssertEqual(
+            homeEssentialsHeader(in: app).frame.minY,
+            initialHeaderY,
+            accuracy: 1,
+            "Home hero content should settle at the same vertical position after returning from Browse."
+        )
+    }
+
     func testSearchChromeMorphHomeAndBrowseProofScreenshots() {
         let app = launchApp()
         assertHomeVisible(in: app)
@@ -394,6 +414,12 @@ final class AdminChromeUITests: XCTestCase {
     private func assertHomeVisible(in app: XCUIApplication) {
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.buttons["AppChrome.SearchButton"].waitForExistence(timeout: 2))
+    }
+
+    private func homeEssentialsHeader(in app: XCUIApplication) -> XCUIElement {
+        let header = app.staticTexts["Essentials"].firstMatch
+        XCTAssertTrue(header.waitForExistence(timeout: 3))
+        return header
     }
 
     private func assertPinnedSpeedControlFloatsInTopAdmin(pinnedSpeedControl: XCUIElement) {
