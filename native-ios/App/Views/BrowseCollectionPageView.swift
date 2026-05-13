@@ -14,7 +14,6 @@ struct BrowseCollectionPageView: View {
 
     @State private var selectedSubcategoryID: String?
     @State private var selectedCityCardID: String?
-    @State private var cityCardScrollRequestID = 0
 
     var body: some View {
         let selectedSubcategory = descriptor.subcategories.first { $0.id == selectedSubcategoryID }
@@ -45,8 +44,7 @@ struct BrowseCollectionPageView: View {
                                 selectedCityCardID: $selectedCityCardID,
                                 onOpenDetail: onOpenDetail,
                                 onOpenCollection: onOpenCollection,
-                                onPractice: { onPractice(descriptor.practiceAction) },
-                                onCityCardSelectionActivated: { _ in }
+                                onPractice: { onPractice(descriptor.practiceAction) }
                             )
                             .browseCityHeroContentReveal(isHeld: holdsContentForCityHeroMorph)
                         } else {
@@ -104,32 +102,10 @@ struct BrowseCollectionPageView: View {
                 .task(id: focusRequest?.id) {
                     await restoreFocusIfNeeded(scrollProxy)
                 }
-                .onChange(of: selectedCityCardID) { _, newValue in
-                    cityCardScrollRequestID += 1
-                    let requestID = cityCardScrollRequestID
-                    guard let newValue else { return }
-                    Task { @MainActor in
-                        try? await Task.sleep(nanoseconds: BrowseCollectionLayout.citySelectedScrollDelayNanoseconds)
-                        guard
-                            requestID == cityCardScrollRequestID,
-                            selectedCityCardID == newValue
-                        else {
-                            return
-                        }
-
-                        withAnimation(.snappy(duration: 0.24)) {
-                            scrollProxy.scrollTo(
-                                BrowseCollectionLayout.citySelectedSectionID(for: newValue),
-                                anchor: BrowseCollectionLayout.citySelectedSectionAnchor
-                            )
-                        }
-                    }
-                }
             }
             .ignoresSafeArea(edges: .top)
         }
         .onChange(of: descriptor.id) { _, _ in
-            cityCardScrollRequestID += 1
             selectedSubcategoryID = nil
             selectedCityCardID = nil
         }
@@ -167,14 +143,7 @@ private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 24
     static let bottomChromeContentClearance: CGFloat = 48
-    static let citySelectedScrollDelayNanoseconds: UInt64 = 180_000_000
     static let focusRestoreDelayNanoseconds: UInt64 = 520_000_000
-
-    static func citySelectedSectionID(for cardID: String) -> String {
-        "BrowseCollectionCitySelectedSection.\(cardID)"
-    }
-
-    static let citySelectedSectionAnchor = UnitPoint(x: 0.5, y: 0.4)
 }
 
 private struct BrowseCollectionHeader: View {
@@ -319,7 +288,6 @@ private struct BrowseCityHubContent: View {
     let onOpenDetail: (String) -> Void
     let onOpenCollection: (BrowseCollectionRoute) -> Void
     let onPractice: () -> Void
-    let onCityCardSelectionActivated: (String) -> Void
 
     var body: some View {
         let cityBrowseFilters = cityHub.cityBrowseFilters
@@ -373,7 +341,6 @@ private struct BrowseCityHubContent: View {
                         selectedFilterID: selectedCityCardID,
                         allItems: cityBrowseAllItems,
                         tintName: descriptor.tintName,
-                        scrollTargetID: BrowseCollectionLayout.citySelectedSectionID(for: selectedCityCardID ?? "all"),
                         onSelectAll: selectAllCityFilters,
                         onSelectFilter: selectCityFilter,
                         onOpenDetail: onOpenDetail
@@ -397,12 +364,7 @@ private struct BrowseCityHubContent: View {
             return
         }
 
-        let isActivatingFilter = selectedCityCardID != filter.id
         selectedCityCardID = filter.id
-
-        if isActivatingFilter {
-            onCityCardSelectionActivated(filter.id)
-        }
     }
 }
 
@@ -412,7 +374,6 @@ private struct BrowseCityFilterSection: View {
     let selectedFilterID: String?
     let allItems: [BrowseSearchPhraseItem]
     let tintName: AccentTint
-    let scrollTargetID: String
     let onSelectAll: () -> Void
     let onSelectFilter: (BrowseCollectionSubcategory) -> Void
     let onOpenDetail: (String) -> Void
@@ -428,30 +389,39 @@ private struct BrowseCityFilterSection: View {
     var body: some View {
         BrowseCollectionSection(title: title, actionTitle: "") {
             VStack(alignment: .leading, spacing: 12) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        BrowseCityFilterPill(
-                            title: "All",
-                            identifier: "BrowseCollection.CityFilter.all",
-                            isSelected: selectedFilterID == nil,
-                            tintName: tintName,
-                            onSelect: onSelectAll
-                        )
-
-                        ForEach(filters) { filter in
+                ScrollViewReader { filterScrollProxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
                             BrowseCityFilterPill(
-                                title: filter.title,
-                                identifier: "BrowseCollection.CityFilter.\(filter.id)",
-                                isSelected: filter.id == selectedFilterID,
-                                tintName: filter.tintName,
-                                onSelect: { onSelectFilter(filter) }
+                                title: "All",
+                                identifier: "BrowseCollection.CityFilter.all",
+                                isSelected: selectedFilterID == nil,
+                                tintName: tintName,
+                                onSelect: onSelectAll
                             )
+                            .id(Self.filterScrollID(nil))
+
+                            ForEach(filters) { filter in
+                                BrowseCityFilterPill(
+                                    title: filter.title,
+                                    identifier: "BrowseCollection.CityFilter.\(filter.id)",
+                                    isSelected: filter.id == selectedFilterID,
+                                    tintName: filter.tintName,
+                                    onSelect: { onSelectFilter(filter) }
+                                )
+                                .id(Self.filterScrollID(filter.id))
+                            }
+                        }
+                        .padding(.horizontal, 1)
+                        .padding(.bottom, 2)
+                    }
+                    .scrollClipDisabled()
+                    .onChange(of: selectedFilterID) { _, newValue in
+                        withAnimation(.snappy(duration: 0.24)) {
+                            filterScrollProxy.scrollTo(Self.filterScrollID(newValue), anchor: .leading)
                         }
                     }
-                    .padding(.horizontal, 1)
-                    .padding(.bottom, 2)
                 }
-                .scrollClipDisabled()
 
                 VStack(spacing: 0) {
                     ForEach(visibleItems) { item in
@@ -465,9 +435,12 @@ private struct BrowseCityFilterSection: View {
                 .padding(.vertical, 8)
                 .phraseListCard(cornerRadius: 24)
                 .accessibilityIdentifier("BrowseCollection.CityFilterRows")
-                .id(scrollTargetID)
             }
         }
+    }
+
+    private static func filterScrollID(_ filterID: String?) -> String {
+        "BrowseCollection.CityFilter.ScrollTarget.\(filterID ?? "all")"
     }
 }
 
