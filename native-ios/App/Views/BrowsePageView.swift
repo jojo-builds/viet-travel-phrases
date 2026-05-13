@@ -265,8 +265,7 @@ struct BrowsePageView: View {
     }
 
     private var cityHeroShortcuts: [BrowseCityShortcut] {
-        let allVietnam = BrowseSearchDestinations.cityShortcuts.first { $0.id == "all-vietnam" }
-        return BrowseSearchDestinations.homepageCityShortcuts + (allVietnam.map { [$0] } ?? [])
+        BrowseSearchDestinations.homepageCityShortcuts
     }
 
     private func open(destination: BrowseDestination) {
@@ -281,7 +280,9 @@ enum BrowsePageLayout {
     static let bottomChromeContentClearance: CGFloat = 224
     static let situationIconSize: CGFloat = 48
     static let situationCardMinHeight: CGFloat = 136
-    static let cityHeroCardHeight: CGFloat = 346
+    static let cityHeroCardHeight: CGFloat = 368
+    static let cityHeroImageHeight: CGFloat = 216
+    static let cityHeroImageFadeHeight: CGFloat = 82
     static let cityHeroCardSpacing: CGFloat = 14
     static let nextShelfRowHeight: CGFloat = 108
     static let nextShelfIconSize: CGFloat = 48
@@ -305,7 +306,7 @@ enum BrowsePageLayout {
     }
 
     static func cityHeroCardWidth(containerWidth: CGFloat) -> CGFloat {
-        min(326, max(288, containerWidth - 72))
+        min(292, max(264, containerWidth * 0.78))
     }
 }
 
@@ -478,34 +479,43 @@ private struct BrowseCityHeroCard: View {
             onOpenCollection(city.collectionRoute)
         } label: {
             ZStack(alignment: .bottomLeading) {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight)
-                    .clipped()
-                    .homePhraseHeroMorph(
-                        BrowseCityHeroMorphID.image(routeID),
-                        namespace: chromeNamespace,
-                        isActive: isMorphSource,
-                        isSource: true,
-                        anchor: .top
-                    )
+                VStack(spacing: 0) {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: width, height: BrowsePageLayout.cityHeroImageHeight, alignment: .top)
+                        .clipped()
+                        .homePhraseHeroMorph(
+                            BrowseCityHeroMorphID.image(routeID),
+                            namespace: chromeNamespace,
+                            isActive: isMorphSource,
+                            isSource: true,
+                            anchor: .top
+                        )
+
+                    Color.white.opacity(0.96)
+                        .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight - BrowsePageLayout.cityHeroImageHeight)
+                }
 
                 LinearGradient(
                     stops: [
-                        .init(color: .clear, location: 0.0),
-                        .init(color: Color.white.opacity(0.18), location: 0.42),
-                        .init(color: Color.white.opacity(0.78), location: 0.66),
-                        .init(color: Color.white.opacity(0.97), location: 1.0),
+                        .init(color: .clear, location: 0),
+                        .init(color: Color.white.opacity(0.12), location: 0.32),
+                        .init(color: Color.white.opacity(0.82), location: 0.76),
+                        .init(color: Color.white.opacity(0.96), location: 1),
                     ],
                     startPoint: .top,
                     endPoint: .bottom
                 )
+                .frame(width: width, height: BrowsePageLayout.cityHeroImageFadeHeight)
+                .frame(maxHeight: .infinity, alignment: .top)
+                .offset(y: BrowsePageLayout.cityHeroImageHeight - BrowsePageLayout.cityHeroImageFadeHeight + 8)
+                .allowsHitTesting(false)
 
                 VStack(alignment: .leading, spacing: 9) {
-                    HStack(alignment: .bottom, spacing: 10) {
+                    HStack(alignment: .firstTextBaseline, spacing: 10) {
                         Text(title)
-                            .font(.system(size: 32, weight: .black, design: .serif))
+                            .font(.system(size: 31, weight: .black, design: .serif))
                             .foregroundStyle(.primary)
                             .lineLimit(2)
                             .minimumScaleFactor(0.72)
@@ -547,7 +557,8 @@ private struct BrowseCityHeroCard: View {
                         )
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom, 22)
+                .padding(.bottom, 24)
+                .padding(.top, 18)
                 .frame(maxWidth: .infinity, alignment: .bottomLeading)
             }
             .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight)
@@ -558,7 +569,8 @@ private struct BrowseCityHeroCard: View {
                     .stroke(.white.opacity(0.78), lineWidth: 1)
             }
             .shadow(color: .black.opacity(0.07), radius: 22, x: 0, y: 14)
-            .nativeGlass(cornerRadius: 30)
+            .nativeGlass(cornerRadius: 30, interactive: true)
+            .contentShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Browse.City.\(city.id)")
