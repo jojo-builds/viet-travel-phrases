@@ -10,8 +10,6 @@ struct BrowsePageView: View {
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onSearchTapped: () -> Void
     var onSearchQuery: (String) -> Void
-    var onSavedTapped: () -> Void
-    var onPracticeTapped: () -> Void
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -38,8 +36,6 @@ struct BrowsePageView: View {
 
                         phraseFamilies
                             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-
-                        returningUserShelves
                     }
                     .padding(.bottom, BrowsePageLayout.bottomChromeContentClearance)
                 }
@@ -186,84 +182,6 @@ struct BrowsePageView: View {
         }
     }
 
-    @ViewBuilder
-    private var returningUserShelves: some View {
-        let shelves = returningUserRows
-
-        if !shelves.isEmpty {
-            BrowseShelf(title: "Your next shelves") {
-                VStack(spacing: 10) {
-                    ForEach(shelves) { row in
-                        BrowseNextShelfRow(row: row)
-                    }
-                }
-                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-            }
-        }
-    }
-
-    private var returningUserRows: [BrowseNextShelfRowModel] {
-        var rows: [BrowseNextShelfRowModel] = []
-
-        if !intentStore.savedPageIDs.isEmpty {
-            rows.append(
-                BrowseNextShelfRowModel(
-                    id: "saved",
-                    title: "Saved phrases",
-                    subtitle: "\(intentStore.savedPageIDs.count) saved phrases",
-                    symbolName: "bookmark.fill",
-                    tintName: .red,
-                    action: onSavedTapped
-                )
-            )
-        }
-
-        if !intentStore.practicePageIDs.isEmpty {
-            rows.append(
-                BrowseNextShelfRowModel(
-                    id: "practice",
-                    title: "Ready in Messages",
-                    subtitle: "Continue with \(intentStore.practicePageIDs.count) chosen pages",
-                    symbolName: "waveform",
-                    tintName: .green,
-                    action: onPracticeTapped
-                )
-            )
-        }
-
-        if let recentTitle = recentSummary {
-            rows.append(
-                BrowseNextShelfRowModel(
-                    id: "recent",
-                    title: "Recently viewed",
-                    subtitle: recentTitle,
-                    symbolName: "clock.fill",
-                    tintName: .orange,
-                    action: {
-                        if let pageID = intentStore.recentPageIDs.first {
-                            onOpenDetail(pageID)
-                        }
-                    }
-                )
-            )
-        }
-
-        return rows
-    }
-
-    private var recentSummary: String? {
-        let titles = intentStore.recentPageIDs
-            .compactMap(BrowseSearchPhraseItem.resolve(pageID:))
-            .prefix(3)
-            .map(\.title)
-
-        guard !titles.isEmpty else {
-            return nil
-        }
-
-        return titles.joined(separator: ", ")
-    }
-
     private var cityHeroShortcuts: [BrowseCityShortcut] {
         BrowseSearchDestinations.homepageCityShortcuts
     }
@@ -285,10 +203,6 @@ enum BrowsePageLayout {
     static let cityHeroCopyAreaHeight: CGFloat = cityHeroCardHeight - cityHeroImageHeight
     static let cityHeroImageFadeHeight: CGFloat = 146
     static let cityHeroCardSpacing: CGFloat = 14
-    static let nextShelfRowHeight: CGFloat = 108
-    static let nextShelfIconSize: CGFloat = 48
-    static let nextShelfRowPadding: CGFloat = 14
-    static let nextShelfRowSpacing: CGFloat = 14
     static let phraseFamilyCardHeight: CGFloat = 166
     static let situationColumns = [
         GridItem(.flexible(), spacing: 12),
@@ -684,58 +598,6 @@ private struct BrowsePhraseFamilyCard: View {
     }
 }
 
-private struct BrowseNextShelfRowModel: Identifiable {
-    let id: String
-    let title: String
-    let subtitle: String
-    let symbolName: String
-    let tintName: AccentTint
-    let action: () -> Void
-}
-
-private struct BrowseNextShelfRow: View {
-    let row: BrowseNextShelfRowModel
-
-    var body: some View {
-        Button(action: row.action) {
-            HStack(spacing: BrowsePageLayout.nextShelfRowSpacing) {
-                Image(systemName: row.symbolName)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(row.tintName.color)
-                    .frame(width: BrowsePageLayout.nextShelfIconSize, height: BrowsePageLayout.nextShelfIconSize)
-                    .nativeGlass(
-                        cornerRadius: BrowsePageLayout.nextShelfIconSize / 2,
-                        tint: row.tintName.color.opacity(0.16),
-                        interactive: true
-                    )
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(row.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.82)
-
-                    Text(row.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.86)
-                }
-                .layoutPriority(1)
-
-                Spacer(minLength: 8)
-            }
-            .padding(BrowsePageLayout.nextShelfRowPadding)
-            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.nextShelfRowHeight, maxHeight: BrowsePageLayout.nextShelfRowHeight, alignment: .leading)
-            .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .frame(maxWidth: .infinity)
-        .accessibilityIdentifier("Browse.NextShelf.\(row.id)")
-    }
-}
-
 #Preview {
     BrowsePageView(
         intentStore: LocalUserIntentStore(defaults: .standard),
@@ -743,8 +605,6 @@ private struct BrowseNextShelfRow: View {
         onOpenDetail: { _ in },
         onOpenCollection: { _ in },
         onSearchTapped: {},
-        onSearchQuery: { _ in },
-        onSavedTapped: {},
-        onPracticeTapped: {}
+        onSearchQuery: { _ in }
     )
 }

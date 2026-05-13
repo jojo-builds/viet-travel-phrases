@@ -128,9 +128,7 @@ struct AppShellView: View {
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onSearchTapped: openSearch,
-                    onSearchQuery: openSearchQuery,
-                    onSavedTapped: openSaved,
-                    onPracticeTapped: openPractice
+                    onSearchQuery: openSearchQuery
                 )
                 .allowsHitTesting(navigation.currentRoute == .browse && !isPreviewingForwardPage)
                 .accessibilityHidden(navigation.currentRoute != .browse)
@@ -503,9 +501,7 @@ struct AppShellView: View {
                 onOpenDetail: openDetailFromBrowse,
                 onOpenCollection: openBrowseCollection,
                 onSearchTapped: openSearch,
-                onSearchQuery: openSearchQuery,
-                onSavedTapped: openSaved,
-                onPracticeTapped: openPractice
+                onSearchQuery: openSearchQuery
             )
         case .browseCollection(let collectionRoute):
             if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {

@@ -251,16 +251,6 @@ final class AppChromeTests: XCTestCase {
         return nil
     }
 
-    func testBrowseNextShelfRowsUseStableFullWidthCardMetrics() {
-        XCTAssertEqual(BrowsePageLayout.nextShelfRowHeight, 108)
-        XCTAssertEqual(BrowsePageLayout.nextShelfIconSize, 48)
-        XCTAssertEqual(BrowsePageLayout.nextShelfRowPadding, 14)
-        XCTAssertGreaterThanOrEqual(
-            BrowsePageLayout.nextShelfRowHeight,
-            BrowsePageLayout.nextShelfIconSize + BrowsePageLayout.nextShelfRowPadding * 2
-        )
-    }
-
     func testBrowseSituationCardsReserveReadableTextWidth() {
         XCTAssertEqual(BrowsePageLayout.situationIconSize, 48)
         XCTAssertGreaterThanOrEqual(BrowsePageLayout.situationCardMinHeight, 132)

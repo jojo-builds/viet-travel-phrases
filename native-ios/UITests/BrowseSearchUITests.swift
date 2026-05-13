@@ -305,29 +305,18 @@ final class BrowseSearchUITests: XCTestCase {
         }
     }
 
-    func testBrowseNextShelvesUseUniformCardFrames() {
+    func testBrowseDoesNotRenderNextShelvesForReturningUsers() {
         let app = launchApp(arguments: ["--browse", "--seed-returning-user-shelves"])
 
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
 
-        let savedRow = app.buttons["Browse.NextShelf.saved"]
-        let practiceRow = app.buttons["Browse.NextShelf.practice"]
-        let recentRow = app.buttons["Browse.NextShelf.recent"]
+        let phraseFamilies = app.buttons["Browse.PhraseFamily.polite-repair"]
+        scrollUntilHittable(phraseFamilies, app: app)
 
-        scrollUntilHittable(recentRow, app: app)
-
-        XCTAssertTrue(savedRow.exists)
-        XCTAssertTrue(practiceRow.exists)
-        XCTAssertTrue(recentRow.exists)
-
-        let rowFrames = [savedRow.frame, practiceRow.frame, recentRow.frame]
-        for frame in rowFrames {
-            XCTAssertGreaterThan(frame.width, 300)
-            XCTAssertEqual(frame.height, rowFrames[0].height, accuracy: 1)
-            XCTAssertEqual(frame.width, rowFrames[0].width, accuracy: 1)
-        }
-
-        captureBrowseNextShelvesProofIfRequested()
+        XCTAssertFalse(app.staticTexts["Your next shelves"].exists)
+        XCTAssertFalse(app.buttons["Browse.NextShelf.saved"].exists)
+        XCTAssertFalse(app.buttons["Browse.NextShelf.practice"].exists)
+        XCTAssertFalse(app.buttons["Browse.NextShelf.recent"].exists)
     }
 
     func testSearchTabOpensSystemSearchField() {
@@ -591,26 +580,6 @@ final class BrowseSearchUITests: XCTestCase {
 
         let fileURL = URL(fileURLWithPath: directory)
             .appendingPathComponent(name)
-        try? FileManager.default.createDirectory(
-            at: fileURL.deletingLastPathComponent(),
-            withIntermediateDirectories: true
-        )
-        try? screenshot.pngRepresentation.write(to: fileURL)
-    }
-
-    private func captureBrowseNextShelvesProofIfRequested() {
-        let screenshot = XCUIScreen.main.screenshot()
-        let attachment = XCTAttachment(screenshot: screenshot)
-        attachment.name = "browse-next-shelves-uniform"
-        attachment.lifetime = .keepAlways
-        add(attachment)
-
-        guard let directory = ProcessInfo.processInfo.environment["SPEAKLOCAL_BROWSE_NEXT_SHELVES_PROOF_DIR"], !directory.isEmpty else {
-            return
-        }
-
-        let fileURL = URL(fileURLWithPath: directory)
-            .appendingPathComponent("browse-next-shelves-uniform.png")
         try? FileManager.default.createDirectory(
             at: fileURL.deletingLastPathComponent(),
             withIntermediateDirectories: true
