@@ -681,6 +681,20 @@ private extension BrowseCollectionDescriptor {
     }
 }
 
+enum BrowseCollectionMessageLayout {
+    static let contactWidth: CGFloat = 104
+    static let avatarSize: CGFloat = 88
+    static let itemSpacing: CGFloat = 16
+    static let rowHeight: CGFloat = 144
+    static let rowHorizontalInset: CGFloat = 1
+    static var rowViewportHorizontalBleed: CGFloat { BrowseCollectionLayout.horizontalPadding }
+    static var rowContentHorizontalInset: CGFloat { BrowseCollectionLayout.horizontalPadding + rowHorizontalInset }
+
+    static func rowViewportWidth(contentColumnWidth: CGFloat) -> CGFloat {
+        contentColumnWidth + (rowViewportHorizontalBleed * 2)
+    }
+}
+
 private struct BrowseCollectionMessageSection: View {
     let descriptor: BrowseCollectionDescriptor
     let onStartScenario: (PracticeScenarioID) -> Void
@@ -689,19 +703,20 @@ private struct BrowseCollectionMessageSection: View {
         if let title = descriptor.browseMessageSectionTitle {
             BrowseCollectionSection(title: title, actionTitle: "") {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(alignment: .top, spacing: 16) {
+                    LazyHStack(alignment: .top, spacing: BrowseCollectionMessageLayout.itemSpacing) {
                         ForEach(descriptor.messageScenarioIDs) { scenarioID in
                             BrowseCollectionMessageContactButton(
                                 scenarioID: scenarioID,
                                 onStart: { onStartScenario(scenarioID) }
                             )
-                            .frame(width: 104)
+                            .frame(width: BrowseCollectionMessageLayout.contactWidth)
                         }
                     }
-                    .padding(.horizontal, 1)
+                    .padding(.horizontal, BrowseCollectionMessageLayout.rowContentHorizontalInset)
                     .padding(.bottom, 2)
                 }
-                .frame(height: 144)
+                .frame(height: BrowseCollectionMessageLayout.rowHeight)
+                .padding(.horizontal, -BrowseCollectionMessageLayout.rowViewportHorizontalBleed)
                 .scrollClipDisabled()
                 .accessibilityIdentifier("BrowseCollection.Messages.SectionRow.\(descriptor.route.id)")
             }
@@ -719,7 +734,7 @@ private struct BrowseCollectionMessageContactButton: View {
             VStack(spacing: 10) {
                 PracticeMessageAvatar(
                     scenarioID: scenarioID,
-                    size: 88,
+                    size: BrowseCollectionMessageLayout.avatarSize,
                     showsSymbol: true
                 )
 

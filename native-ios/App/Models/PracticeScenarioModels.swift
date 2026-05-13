@@ -780,7 +780,6 @@ struct PracticeScenarioResponseOption: Identifiable, Equatable {
 
     var audioKey: String? {
         AudioAssetManifest.main?.audioKey(forExactText: scenarioVietnamese)
-            ?? candidate.playableAudioKey
     }
 
     var hasSpecificLocalReply: Bool {
