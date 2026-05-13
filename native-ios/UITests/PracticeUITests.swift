@@ -114,12 +114,10 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Open Details"].exists)
     }
 
-    func testAdaptedMarketPriceMessageShowsAudioAndPhraseActions() {
+    func testAdaptedMarketPriceMessageUsesCatalogAudioAndKeepsPhraseActions() {
         let app = launchPracticeApp(scenarioID: "shoppingMarketPrice", title: "Market Price")
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
-
-        XCTAssertTrue(waitForStaticText(containing: "Cái này đẹp", in: app, timeout: 5))
 
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
@@ -129,7 +127,7 @@ final class PracticeUITests: XCTestCase {
         ).firstMatch
         XCTAssertTrue(priceAudioButton.waitForExistence(timeout: 4))
 
-        let travelerPhrase = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Giá tốt nhất là bao nhiêu")).firstMatch
+        let travelerPhrase = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Giá tốt nhất của bạn là gì")).firstMatch
         XCTAssertTrue(travelerPhrase.waitForExistence(timeout: 4))
         travelerPhrase.press(forDuration: 1.0)
 

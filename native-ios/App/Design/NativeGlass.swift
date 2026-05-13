@@ -99,6 +99,20 @@ enum HomePhraseHeroMorphID {
     }
 }
 
+enum BrowseCityHeroMorphID {
+    static func image(_ routeID: String) -> String {
+        "browse.city.hero.image.\(routeID)"
+    }
+
+    static func title(_ routeID: String) -> String {
+        "browse.city.hero.title.\(routeID)"
+    }
+
+    static func subtitle(_ routeID: String) -> String {
+        "browse.city.hero.subtitle.\(routeID)"
+    }
+}
+
 extension View {
     @ViewBuilder
     func homePhraseHeroMorph(

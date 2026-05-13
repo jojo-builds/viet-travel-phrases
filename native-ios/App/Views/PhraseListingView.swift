@@ -723,19 +723,19 @@ private struct PhraseRow: View {
                 Button {
                     onOpenDetail(detailPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 9)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
@@ -749,12 +749,6 @@ private struct PhraseRow: View {
             }
 
             Spacer()
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }
@@ -784,19 +778,6 @@ private struct SituationCard: View {
 
             HStack(spacing: 10) {
                 AudioSpeakerButton(tint: phrase.tintName, size: 42, audioKey: phrase.playbackAudioKey)
-
-                if let destinationPageID {
-                    Button {
-                        onOpenDetail(destinationPageID)
-                    } label: {
-                        Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(.tertiary)
-                            .frame(width: 24, height: 42)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                }
             }
         }
         .padding(.horizontal, 10)
@@ -851,19 +832,19 @@ private struct LocalGreetingRow: View {
                 Button {
                     onOpenDetail(destinationPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 9)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
@@ -880,12 +861,6 @@ private struct LocalGreetingRow: View {
             }
 
             Spacer()
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }
@@ -1518,10 +1493,6 @@ private struct ExploreCatalogRow: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }

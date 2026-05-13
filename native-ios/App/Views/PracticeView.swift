@@ -1186,6 +1186,8 @@ enum PracticeMessageHubLayout {
     static let sectionSpacing: CGFloat = 28
     static let titleToRowSpacing: CGFloat = 18
     static let rowHorizontalInset: CGFloat = 1
+    static var rowViewportHorizontalBleed: CGFloat { PracticeLayout.horizontalPadding }
+    static var rowContentHorizontalInset: CGFloat { PracticeLayout.horizontalPadding + rowHorizontalInset }
     static let itemTextSpacing: CGFloat = 12
     static let labelFontSize: CGFloat = 14
     static let labelMinHeight: CGFloat = 38
@@ -1194,11 +1196,15 @@ enum PracticeMessageHubLayout {
 
     static func columnFrame(column: Int) -> CGRect {
         CGRect(
-            x: CGFloat(column) * (itemWidth + itemSpacing),
+            x: rowContentHorizontalInset + CGFloat(column) * (itemWidth + itemSpacing),
             y: 0,
             width: itemWidth,
             height: avatarSize
         )
+    }
+
+    static func rowViewportWidth(contentColumnWidth: CGFloat) -> CGFloat {
+        contentColumnWidth + (rowViewportHorizontalBleed * 2)
     }
 }
 
@@ -1254,8 +1260,10 @@ private struct PracticeMessageContactGrid: View {
                                 .frame(width: PracticeMessageHubLayout.itemWidth)
                             }
                         }
-                        .padding(.horizontal, PracticeMessageHubLayout.rowHorizontalInset)
+                        .padding(.horizontal, PracticeMessageHubLayout.rowContentHorizontalInset)
                     }
+                    .padding(.horizontal, -PracticeMessageHubLayout.rowViewportHorizontalBleed)
+                    .scrollClipDisabled()
                     .accessibilityIdentifier("Practice.Messages.SectionRow.\(section.id)")
                 }
             }
@@ -2141,10 +2149,6 @@ private struct PracticeScenarioModeRow: View {
                     .lineLimit(2)
             }
             .layoutPriority(1)
-
-            Image(systemName: "chevron.right")
-                .font(.caption.weight(.bold))
-                .foregroundStyle(.tertiary)
         }
         .padding(14)
         .frame(maxWidth: .infinity, minHeight: 86, alignment: .leading)
@@ -2568,10 +2572,6 @@ private struct PracticeReviewModeRow: View {
                     .foregroundStyle(isEnabled ? .red : .secondary)
                     .frame(width: 42, height: 42)
                     .nativeGlass(cornerRadius: 21)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .phraseListCard(cornerRadius: 22)
@@ -2620,10 +2620,6 @@ private struct PracticeBrowseCard: View {
                         .lineLimit(2)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)

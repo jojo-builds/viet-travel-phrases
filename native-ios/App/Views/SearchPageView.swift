@@ -508,10 +508,6 @@ private struct SearchPromptRow: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -550,10 +546,6 @@ private struct SearchPhraseRow: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }
@@ -643,16 +635,12 @@ private struct SearchCollectionCard: View {
                         .lineLimit(3)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    HStack(spacing: 8) {
-                        Text("Open in Browse")
-                            .font(.caption.weight(.black))
-                        Image(systemName: "chevron.right")
-                            .font(.caption2.weight(.black))
-                    }
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 12)
-                    .frame(height: 32)
-                    .background(Color.red, in: Capsule())
+                    Text("Open in Browse")
+                        .font(.caption.weight(.black))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 12)
+                        .frame(height: 32)
+                        .background(Color.red, in: Capsule())
                 }
                 .layoutPriority(1)
             }
@@ -689,10 +677,6 @@ private struct SearchSituationCard: View {
                         .nativeGlass(cornerRadius: 23, tint: destination.tintName.color.opacity(0.16), interactive: true)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
 
                 Text(destination.title)
@@ -775,12 +759,6 @@ private struct SearchRecoveryCard: View {
                         .background(action.tintName.color.opacity(0.09), in: Capsule())
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.red)
-                    .frame(width: 42, height: 42)
-                    .nativeGlass(cornerRadius: 21, interactive: true)
             }
             .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -813,10 +791,6 @@ private struct SearchBrowseAllRecoveryCard: View {
                         .lineLimit(2)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.red)
             }
             .padding(14)
             .phraseListCard(cornerRadius: 22)

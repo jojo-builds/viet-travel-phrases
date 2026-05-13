@@ -23,6 +23,8 @@ struct AppShellView: View {
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
+    @State private var browseCityHeroRoute: BrowseCollectionRoute?
+    @State private var browseCityHeroMorphResetID = 0
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @FocusState private var isSearchFieldFocused: Bool
@@ -121,6 +123,8 @@ struct AppShellView: View {
                 BrowsePageView(
                     intentStore: intentStore,
                     scrollToTopTrigger: navigation.browseScrollToTopTrigger,
+                    chromeNamespace: chromeNamespace,
+                    cityHeroMorphRoute: browseCityHeroRoute,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onSearchTapped: openSearch,
@@ -314,13 +318,15 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     focusRequest: browseCollectionFocusRequest,
+                    chromeNamespace: chromeNamespace,
+                    cityHeroMorphRoute: browseCityHeroRoute,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(AppPageTransition.slideFromTrailing)
+                .transition(browseCollectionTransition(for: renderedCollection.route))
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -437,6 +443,12 @@ struct AppShellView: View {
 
     private func detailTransition(for pageID: String) -> AnyTransition {
         isHomePhraseHeroRouteActive(for: pageID)
+            ? AppPageTransition.phraseHeroMorph
+            : AppPageTransition.slideFromTrailing
+    }
+
+    private func browseCollectionTransition(for route: BrowseCollectionRoute) -> AnyTransition {
+        browseCityHeroRoute == route
             ? AppPageTransition.phraseHeroMorph
             : AppPageTransition.slideFromTrailing
     }
@@ -913,10 +925,52 @@ struct AppShellView: View {
     }
 
     private func openBrowseCollection(_ route: BrowseCollectionRoute) {
+        if shouldUseBrowseCityHeroMorph(for: route) {
+            openBrowseCollectionWithCityHeroMorph(route)
+            return
+        }
+
         cancelInteractiveChromeState()
         cancelSearchFocus()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openBrowseCollection(route)
+        }
+    }
+
+    private func shouldUseBrowseCityHeroMorph(for route: BrowseCollectionRoute) -> Bool {
+        guard case .city = route else {
+            return false
+        }
+
+        return navigation.currentRoute == .browse && !navigation.isSearchPresented
+    }
+
+    private func openBrowseCollectionWithCityHeroMorph(_ route: BrowseCollectionRoute) {
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
+        browseCityHeroMorphResetID += 1
+        let resetID = browseCityHeroMorphResetID
+
+        withoutRouteAnimation {
+            browseCityHeroRoute = route
+        }
+
+        withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
+            navigation.openBrowseCollection(route)
+        }
+        clearBrowseCityHeroLaunch(after: resetID)
+    }
+
+    private func clearBrowseCityHeroLaunch(after resetID: Int) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: HomePhraseHeroMorphTiming.cleanupDelayNanoseconds)
+            guard browseCityHeroMorphResetID == resetID else {
+                return
+            }
+
+            withoutRouteAnimation {
+                browseCityHeroRoute = nil
+            }
         }
     }
 
@@ -1124,9 +1178,11 @@ struct AppShellView: View {
     private func cancelInteractiveChromeState() {
         interactiveDragResolutionID += 1
         homePhraseHeroMorphResetID += 1
+        browseCityHeroMorphResetID += 1
         homePhraseHeroRoutePageID = nil
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
+        browseCityHeroRoute = nil
         interactiveDrag = nil
     }
 
@@ -2259,13 +2315,13 @@ struct HomeView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                    VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
                         header
                             .id(Self.scrollTopID)
 
                         useNowShelf
 
-                        homepagePhraseShelf("first-hour")
+                        homepagePhraseShelf("first-day")
 
                         cityShelf
 
@@ -2287,7 +2343,7 @@ struct HomeView: View {
 
                         homepagePhraseShelf("help-emergency")
 
-                        featuredPhrasesShelf
+                        recentlyViewedShelf
                     }
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
@@ -2329,7 +2385,7 @@ struct HomeView: View {
 
     private var useNowShelf: some View {
         HomeShelf(
-            title: "Use now",
+            title: "Essentials",
             subtitle: "Core phrases for any trip",
             route: .category("essentials"),
             onOpenCollection: onOpenCollection
@@ -2358,18 +2414,29 @@ struct HomeView: View {
         }
     }
 
-    private var featuredPhrasesShelf: some View {
-        HomeShelf(title: "Listen closer", subtitle: "") {
-            HomeFeaturedPhraseCarousel(
-                items: HomeContent.featuredPhraseCardItems,
-                heroMorphPageID: heroMorphPageID,
-                chromeNamespace: chromeNamespace,
-                onOpenDetail: onOpenFeaturedDetail,
-                isSaved: { intentStore.isPageSaved($0) },
-                onToggleSaved: { intentStore.toggleSavedPage($0) }
-            )
+    @ViewBuilder
+    private var recentlyViewedShelf: some View {
+        let items = recentlyViewedFeatureItems
+
+        if !items.isEmpty {
+            HomeShelf(title: "Recently viewed", subtitle: "Pick up where you left off") {
+                HomeFeaturedPhraseCarousel(
+                    items: items,
+                    heroMorphPageID: heroMorphPageID,
+                    chromeNamespace: chromeNamespace,
+                    onOpenDetail: onOpenFeaturedDetail,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) }
+                )
+            }
+            .padding(.leading, HomeLayout.horizontalPadding)
         }
-        .padding(.leading, HomeLayout.horizontalPadding)
+    }
+
+    private var recentlyViewedFeatureItems: [HomeFeaturePhraseItem] {
+        HomeRecentlyViewedContent
+            .cardPageIDs(from: intentStore.recentPageIDs)
+            .compactMap(HomeFeaturePhraseItem.resolve(pageID:))
     }
 
     private var practiceScenariosShelf: some View {
@@ -2501,10 +2568,6 @@ struct SavedPagesView: View {
                         .lineLimit(2)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
@@ -2698,7 +2761,7 @@ private struct HomeSituationCard: Identifiable {
 }
 
 private struct HomePhraseShelfDefinition: Identifiable {
-    private static let maximumShelfItems = 12
+    private static let defaultMaximumShelfItems = 12
 
     let id: String
     let title: String
@@ -2707,6 +2770,8 @@ private struct HomePhraseShelfDefinition: Identifiable {
     let sourceCategoryIDs: [String]
     let pageIDs: [String]
     let layout: HomePhraseShelfLayout
+    let maximumItemCount: Int
+    let fillsFromSourceCategories: Bool
 
     init(
         id: String,
@@ -2715,7 +2780,9 @@ private struct HomePhraseShelfDefinition: Identifiable {
         route: BrowseCollectionRoute,
         sourceCategoryIDs: [String],
         pageIDs: [String],
-        layout: HomePhraseShelfLayout = .quickTiles
+        layout: HomePhraseShelfLayout = .quickTiles,
+        maximumItemCount: Int = Self.defaultMaximumShelfItems,
+        fillsFromSourceCategories: Bool = true
     ) {
         self.id = id
         self.title = title
@@ -2724,6 +2791,8 @@ private struct HomePhraseShelfDefinition: Identifiable {
         self.sourceCategoryIDs = sourceCategoryIDs
         self.pageIDs = pageIDs
         self.layout = layout
+        self.maximumItemCount = maximumItemCount
+        self.fillsFromSourceCategories = fillsFromSourceCategories
     }
 
     var items: [HomePhraseItem] {
@@ -2731,6 +2800,9 @@ private struct HomePhraseShelfDefinition: Identifiable {
         var rows: [HomePhraseItem] = []
 
         func append(_ item: HomePhraseItem) {
+            guard rows.count < maximumItemCount else {
+                return
+            }
             guard seen.insert(item.pageID).inserted else {
                 return
             }
@@ -2741,9 +2813,13 @@ private struct HomePhraseShelfDefinition: Identifiable {
             append(item)
         }
 
-        for categoryID in sourceCategoryIDs where rows.count < Self.maximumShelfItems {
+        guard fillsFromSourceCategories else {
+            return rows
+        }
+
+        for categoryID in sourceCategoryIDs where rows.count < maximumItemCount {
             let categoryItems = PhraseCatalog.items(selectedCategoryID: categoryID)
-            for catalogItem in categoryItems where rows.count < Self.maximumShelfItems {
+            for catalogItem in categoryItems where rows.count < maximumItemCount {
                 if let item = HomePhraseItem.resolve(pageID: catalogItem.pageID) {
                     append(item)
                 }
@@ -2804,27 +2880,60 @@ enum HomeUseNowCatalog {
     static let featureCardIDs = Array(starterIDs.prefix(6))
 }
 
+enum HomeRecentlyViewedContent {
+    static let maximumFeatureCards = 6
+
+    static func cardPageIDs(from recentPageIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        var cardPageIDs: [String] = []
+
+        for pageID in recentPageIDs {
+            guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
+                continue
+            }
+            guard seen.insert(canonicalPageID).inserted else {
+                continue
+            }
+
+            cardPageIDs.append(canonicalPageID)
+            if cardPageIDs.count == maximumFeatureCards {
+                break
+            }
+        }
+
+        return cardPageIDs
+    }
+}
+
+enum HomeFirstDayShelfContent {
+    static let title = "First Day in Vietnam"
+    static let maximumCards = 8
+    static let pageIDs = [
+        "viet-phrase-airport-1",
+        "viet-phrase-airport-3",
+        "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
+        "viet-phrase-airport-5",
+        "viet-phrase-taxi-1",
+        "viet-phrase-hotel-1",
+        "viet-phrase-hotel-2",
+        "viet-phrase-directions-9",
+    ]
+}
+
 private enum HomeContent {
     static let useNowIDs = HomeUseNowCatalog.starterIDs
 
     static let homepagePhraseShelves: [HomePhraseShelfDefinition] = [
         HomePhraseShelfDefinition(
-            id: "first-hour",
-            title: "First hour in Vietnam",
-            subtitle: "Airport, pickup, SIM, ATM, and check-in.",
+            id: "first-day",
+            title: HomeFirstDayShelfContent.title,
+            subtitle: "Short airport, ride, and check-in phrases.",
             route: .category("first-day"),
             sourceCategoryIDs: ["airport-border-arrival", "hotel-accommodation", "transport", "directions-navigation"],
-            pageIDs: [
-                "viet-phrase-airport-2",
-                "viet-phrase-airport-5",
-                "viet-phrase-airport-3",
-                "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
-                "viet-phrase-v500-tran-please-take-me-to-this-hotel",
-                "viet-phrase-hotel-1",
-                "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
-                "viet-phrase-phone-1",
-            ],
-            layout: .spotlightRows
+            pageIDs: HomeFirstDayShelfContent.pageIDs,
+            layout: .spotlightRows,
+            maximumItemCount: HomeFirstDayShelfContent.maximumCards,
+            fillsFromSourceCategories: false
         ),
         HomePhraseShelfDefinition(
             id: "food-coffee",
@@ -2929,14 +3038,6 @@ private enum HomeContent {
         homepagePhraseShelves.first { $0.id == id }
     }
 
-    static let featuredIDs = [
-        "viet-thank-you",
-        PhrasePage.xinChao.id,
-        "viet-excuse-sorry",
-        "viet-family-repair-meaning",
-        "viet-family-hotel-checkout-time",
-    ]
-
     static var useNowItems: [HomePhraseItem] {
         useNowIDs.compactMap(HomePhraseItem.resolve(pageID:))
     }
@@ -2953,14 +3054,6 @@ private enum HomeContent {
         "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
         "viet-phrase-hotel-3",
     ]
-
-    static var featuredItems: [HomePhraseItem] {
-        featuredIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
-
-    static var featuredPhraseCardItems: [HomeFeaturePhraseItem] {
-        featuredIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
-    }
 
     static var practiceScenarios: [HomeScenario] {
         [
@@ -3081,10 +3174,13 @@ enum HomePageLinkRegistry {
         uniquePageIDs(
             HomeUseNowCatalog.featureCardIDs
             + HomeContent.homepagePhraseShelves.flatMap(\.pageIDs)
-            + HomeContent.featuredIDs
             + HomeContent.savedFallbackPageIDs
             + PhrasePage.xinChao.localGreetings.prefix(3).compactMap(\.detailPageID)
         )
+    }
+
+    static var firstDayHomepagePageIDs: [String] {
+        HomeContent.homepagePhraseShelf("first-day")?.items.map(\.pageID) ?? []
     }
 
     private static func uniquePageIDs(_ pageIDs: [String]) -> [String] {
@@ -3514,10 +3610,6 @@ private struct HomeSituationActionRow: View {
                         .minimumScaleFactor(0.76)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(10)
             .frame(maxWidth: .infinity)
@@ -3575,10 +3667,6 @@ private struct HomeCityCardView: View {
                         .fixedSize(horizontal: false, vertical: true)
 
                     Spacer(minLength: 2)
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .padding(.horizontal, 12)
                 .frame(height: 56)
@@ -3673,10 +3761,6 @@ private struct HomeWidePhraseButton: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }
@@ -3720,10 +3804,6 @@ private struct HomeSituationGroupRow: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .frame(
@@ -3783,13 +3863,13 @@ private struct HomeRelationshipRow: View {
                 Button {
                     onOpenDetail(detailPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .frame(maxWidth: .infinity)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
 
             AudioSpeakerButton(
@@ -3802,7 +3882,7 @@ private struct HomeRelationshipRow: View {
         .padding(.horizontal, 14)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
                 Text(phrase.vietnamese)
@@ -3819,12 +3899,6 @@ private struct HomeRelationshipRow: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .layoutPriority(1)
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }
