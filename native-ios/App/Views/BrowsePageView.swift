@@ -282,6 +282,7 @@ enum BrowsePageLayout {
     static let situationCardMinHeight: CGFloat = 136
     static let cityHeroCardHeight: CGFloat = 368
     static let cityHeroImageHeight: CGFloat = 216
+    static let cityHeroCopyAreaHeight: CGFloat = cityHeroCardHeight - cityHeroImageHeight
     static let cityHeroImageFadeHeight: CGFloat = 82
     static let cityHeroCardSpacing: CGFloat = 14
     static let nextShelfRowHeight: CGFloat = 108
@@ -488,7 +489,7 @@ private struct BrowseCityHeroCard: View {
                         )
 
                     Color.white.opacity(0.96)
-                        .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight - BrowsePageLayout.cityHeroImageHeight)
+                        .frame(width: width, height: BrowsePageLayout.cityHeroCopyAreaHeight)
                 }
 
                 LinearGradient(
@@ -544,7 +545,7 @@ private struct BrowseCityHeroCard: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 24)
                 .padding(.top, 18)
-                .frame(maxWidth: .infinity, alignment: .bottomLeading)
+                .frame(width: width, height: BrowsePageLayout.cityHeroCopyAreaHeight, alignment: .topLeading)
             }
             .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight)
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))

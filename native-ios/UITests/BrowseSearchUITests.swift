@@ -16,6 +16,26 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Browse.Situation.hotel"].waitForExistence(timeout: 2))
     }
 
+    func testBrowseCityHeroTitlesShareTopAlignment() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.buttons["Browse.City.hoian"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["Browse.City.hcmc"].waitForExistence(timeout: 3))
+
+        let hoiAnTitle = app.staticTexts["Hoi An"].firstMatch
+        let saigonTitle = app.staticTexts["Saigon"].firstMatch
+
+        XCTAssertTrue(hoiAnTitle.waitForExistence(timeout: 2))
+        XCTAssertTrue(saigonTitle.waitForExistence(timeout: 2))
+        XCTAssertEqual(
+            hoiAnTitle.frame.minY,
+            saigonTitle.frame.minY,
+            accuracy: 2,
+            "Browse city-card headings should start at the same height even when subtitle wrapping differs."
+        )
+    }
+
     func testBrowseCategoryCardOpensCollectionAndBackReturnsToBrowse() {
         let app = launchApp(arguments: ["--browse"])
 
