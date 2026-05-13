@@ -2149,10 +2149,6 @@ private struct PracticeScenarioModeRow: View {
                     .lineLimit(2)
             }
             .layoutPriority(1)
-
-            Image(systemName: "chevron.right")
-                .font(.caption.weight(.bold))
-                .foregroundStyle(.tertiary)
         }
         .padding(14)
         .frame(maxWidth: .infinity, minHeight: 86, alignment: .leading)
@@ -2576,10 +2572,6 @@ private struct PracticeReviewModeRow: View {
                     .foregroundStyle(isEnabled ? .red : .secondary)
                     .frame(width: 42, height: 42)
                     .nativeGlass(cornerRadius: 21)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .phraseListCard(cornerRadius: 22)
@@ -2628,10 +2620,6 @@ private struct PracticeBrowseCard: View {
                         .lineLimit(2)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)

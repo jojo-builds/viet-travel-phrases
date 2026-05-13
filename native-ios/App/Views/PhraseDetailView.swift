@@ -355,19 +355,19 @@ private struct DetailExampleRow: View {
                 Button {
                     onOpenDetail?(detailPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 11)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(alignment: .center, spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
@@ -386,12 +386,6 @@ private struct DetailExampleRow: View {
             .layoutPriority(1)
 
             Spacer()
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }

@@ -69,8 +69,8 @@ Rules:
 - Entity/place pages should not inflate the app by surfacing every generated `action + place` row as catalog inventory. Follow `docs/content/ENTITY_TEMPLATE_PHRASE_POLICY.md`: Browse/Home/city/category surfaces are entity-first, `derived-place-phrases` stay hidden from top-level shelves, and those helper rows surface only for explicit action search, intentional template UI, or Messages/Story flows.
 - Listing pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" article pages with real traveler utility, not generic generated filler.
 - Homepage phrase shelves should reuse existing Browse routes when they are genuinely close instead of creating duplicate category IDs. Current homepage shelf routing contract:
-  - `Use now` -> `.category("essentials")`
-  - `First hour in Vietnam` -> `.category("first-day")`
+  - `Essentials` -> `.category("essentials")`
+  - `First Day in Vietnam` -> `.category("first-day")`
   - `Food & coffee` -> `.category("food")`
   - `When you don't understand` -> `.category("polite-repair")`
   - `Taxi & getting around` -> `.category("getting-around")`
