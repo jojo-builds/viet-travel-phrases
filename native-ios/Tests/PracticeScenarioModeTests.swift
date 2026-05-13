@@ -104,6 +104,45 @@ final class PracticeScenarioModeTests: XCTestCase {
         )
     }
 
+    func testMessageThreadStartsAtTopBeforeFirstReply() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let airportWifi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .airportWifiPower })
+        let freshSession = PracticeScenarioSession(scenario: airportWifi)
+
+        XCTAssertEqual(
+            PracticeStorySessionLayoutPolicy.startPosition(for: freshSession),
+            .top
+        )
+        XCTAssertFalse(PracticeStorySessionLayoutPolicy.shouldScrollToBottomOnAppear(for: freshSession))
+    }
+
+    func testMessageThreadKeepsTopFlowAndScrollsToLatestTurnAfterConversationStarts() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let airportWifi = try XCTUnwrap(snapshot.scenarios.first { $0.id == .airportWifiPower })
+        let firstStep = try XCTUnwrap(airportWifi.steps.first)
+        let firstReply = try XCTUnwrap(firstStep.bestResponse)
+        var activeSession = PracticeScenarioSession(scenario: airportWifi)
+        activeSession.selectedOptionIDs[firstStep.id] = firstReply.id
+        activeSession.revealedReplyStepIDs.insert(firstStep.id)
+        activeSession.currentIndex = 1
+
+        XCTAssertEqual(
+            PracticeStorySessionLayoutPolicy.startPosition(for: activeSession),
+            .top
+        )
+        XCTAssertTrue(PracticeStorySessionLayoutPolicy.shouldScrollToBottomOnAppear(for: activeSession))
+    }
+
     func testStoryTranscriptUsesCanonicalAudioForAdaptedMessageCopy() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
