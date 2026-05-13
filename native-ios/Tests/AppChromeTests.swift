@@ -264,6 +264,17 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
     }
 
+    func testBrowseCityHeroMorphTimingLetsHeroLeadDestinationBody() {
+        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.navigationDuration, 0.38)
+        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.pageFadeDuration, 0.22)
+        XCTAssertGreaterThan(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 0)
+        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 180_000_000)
+        XCTAssertLessThan(
+            BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds,
+            BrowseCityHeroMorphTiming.navigationDurationNanoseconds
+        )
+    }
+
     func testPlaybackSpeedPreferenceMapsToGlobalRates() {
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.5x"), 0.5, accuracy: 0.001)
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.75x"), 0.75, accuracy: 0.001)
