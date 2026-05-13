@@ -275,23 +275,71 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(HomeLayout.messageRailHeight, HomeLayout.messageAvatarSize + 44)
     }
 
-    func testHomeUseNowShelfUsesTwoRowCarouselMetrics() {
-        XCTAssertGreaterThanOrEqual(HomeLayout.quickPhraseCardWidth, 140)
-        XCTAssertLessThanOrEqual(HomeLayout.quickPhraseCardWidth, 160)
-        XCTAssertGreaterThanOrEqual(HomeLayout.quickPhraseCardHeight, 120)
-        XCTAssertEqual(HomeLayout.quickPhraseGridRowSpacing, 12)
-        XCTAssertGreaterThan(
-            HomeLayout.quickPhraseCardHeight * 2 + HomeLayout.quickPhraseGridRowSpacing,
-            HomeLayout.quickPhraseCardHeight
-        )
+    func testHomeUseNowShelfUsesLargeFeatureCardMetrics() {
+        XCTAssertGreaterThanOrEqual(HomeLayout.featurePhraseCardWidth, 320)
+        XCTAssertGreaterThanOrEqual(HomeLayout.featurePhraseCardHeight, 300)
+        XCTAssertLessThanOrEqual(HomeLayout.featurePhraseCardWidth / HomeLayout.featurePhraseCardHeight, 1.12)
     }
 
     func testHomeUseNowShelfHasFriendlyStarterDepth() {
         XCTAssertGreaterThanOrEqual(HomeUseNowCatalog.starterIDs.count, 10)
+        XCTAssertEqual(HomeUseNowCatalog.featureCardIDs.count, 6)
         XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains(PhrasePage.xinChao.id))
         XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains("viet-thank-you"))
         XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains("viet-family-bathroom-where"))
         XCTAssertFalse(HomeUseNowCatalog.starterIDs.contains("viet-family-health-doctor"))
+    }
+
+    func testHomepagePhraseCardsOpenBuiltOutListingPages() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let issues = HomePageLinkRegistry.homepageListingPageIDs.compactMap {
+            homepageListingPageIssue($0, manifest: manifest)
+        }
+
+        XCTAssertTrue(issues.isEmpty, "Homepage phrase cards should open built-out listing pages. Missing: \(issues.joined(separator: ", "))")
+    }
+
+    private func homepageListingPageIssue(_ pageID: String, manifest: AudioAssetManifest) -> String? {
+        guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
+            return "\(pageID): no canonical page"
+        }
+
+        let article: PhraseArticlePage?
+        if canonicalPageID == PhrasePage.xinChao.id {
+            article = PhrasePage.xinChao.articleTemplate
+        } else {
+            article = PhraseDetailPage.page(withID: canonicalPageID)?.articleTemplate
+        }
+
+        guard let article else {
+            return "\(pageID): no article"
+        }
+
+        let sectionIDs = Set(article.sections.map(\.id))
+        guard sectionIDs.contains("breakdown") else {
+            return "\(pageID): missing breakdown"
+        }
+        guard sectionIDs.contains("at-glance")
+            || sectionIDs.contains("traveler-insight")
+            || sectionIDs.contains("good-to-know")
+            || sectionIDs.contains("when-to-use")
+        else {
+            return "\(pageID): missing guide section"
+        }
+        guard article.showsCatalogExplore else {
+            return "\(pageID): catalog explore hidden"
+        }
+        guard manifest.url(for: article.playbackAudioKey) != nil else {
+            return "\(pageID): missing hero audio"
+        }
+        guard article.sections.contains(where: { section in
+            !section.phrases.isEmpty
+                && (section.presentation == .phraseList || section.presentation == .horizontalPhraseCards)
+        }) else {
+            return "\(pageID): no phrase-list section"
+        }
+
+        return nil
     }
 
     func testBrowseNextShelfRowsUseStableFullWidthCardMetrics() {
