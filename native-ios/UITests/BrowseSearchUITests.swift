@@ -170,7 +170,11 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Coffee, dishes, and drinks"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Local dishes"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Order & adjust"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Black coffee, milk coffee, tea, and water"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Cà phê đen"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Black coffee"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-coffee-2"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.staticTexts["12 phrases"].exists)
         XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-nen"].exists)
     }
 

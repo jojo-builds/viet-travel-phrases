@@ -1285,12 +1285,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(
             Array(starterIDs.prefix(4)),
             [
-                "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den",
                 "viet-phrase-coffee-2",
                 "viet-phrase-coffee-1",
                 "viet-phrase-coffee-3",
+                "viet-phrase-ves-order-pho-bowl",
             ]
         )
+        XCTAssertEqual(Array(food.starterItems.prefix(4).map(\.title)), ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Phở"])
+        XCTAssertEqual(food.starterItems.first?.subtitle, "Black coffee")
+        XCTAssertEqual(food.starterItems.first?.audioKey, "breakdown-authored-ca-phe-den-855822aaf3")
         XCTAssertTrue(starterIDs.contains("viet-phrase-ves-order-pho-bowl"))
         XCTAssertTrue(starterIDs.contains("viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo"))
         XCTAssertFalse(starterIDs.prefix(6).contains { $0.contains("-place-") })
@@ -1299,14 +1302,15 @@ final class AppChromeTests: XCTestCase {
             XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into useful rows")
             if subcategory.title == "Coffee & drinks" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
-                XCTAssertEqual(subcategory.items.first?.pageID, "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den")
+                XCTAssertEqual(subcategory.items.first?.pageID, "viet-phrase-coffee-2")
+                XCTAssertEqual(subcategory.items.first?.title, "Cà phê đen")
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-coffee-2" })
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-it-duong" })
                 XCTAssertFalse(subcategory.items.prefix(6).contains { $0.pageID.contains("-place-") })
             } else if subcategory.title == "Local dishes" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
                 XCTAssertGreaterThanOrEqual(subcategory.items.count, 10)
-                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-ves-order-pho-bowl" })
+                XCTAssertEqual(subcategory.items.first?.title, "Phở")
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo" })
                 XCTAssertFalse(subcategory.items.prefix(8).contains { $0.pageID.contains("-place-") })
             } else if subcategory.title == "Places to eat & drink" {

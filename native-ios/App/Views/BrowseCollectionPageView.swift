@@ -278,10 +278,11 @@ private struct BrowseCollectionSubcategoryCard: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.78)
 
-                Text("\(subcategory.phraseCount) \(subcategory.countUnit)\(subcategory.phraseCount == 1 ? "" : "s")")
+                Text(subcategory.subtitle)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
-                    .lineLimit(1)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             .padding(12)
             .frame(width: 120, height: 136, alignment: .topLeading)
