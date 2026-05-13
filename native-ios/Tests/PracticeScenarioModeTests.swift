@@ -627,11 +627,15 @@ final class PracticeScenarioModeTests: XCTestCase {
 
     func testMessagesHubRowsReadAsScrollableCarouselOnPhoneWidth() {
         let viewportWidth: CGFloat = 390
+        let contentColumnWidth = viewportWidth - (PracticeMessageHubLayout.rowViewportHorizontalBleed * 2)
         let fourthColumnFrame = PracticeMessageHubLayout.columnFrame(column: 3)
 
         XCTAssertGreaterThan(PracticeMessageHubLayout.avatarSize, 66)
         XCTAssertGreaterThan(PracticeMessageHubLayout.itemSpacing, 8)
         XCTAssertGreaterThan(PracticeMessageHubLayout.sectionSpacing, 18)
+        XCTAssertEqual(PracticeMessageHubLayout.rowViewportHorizontalBleed, 20)
+        XCTAssertEqual(PracticeMessageHubLayout.rowContentHorizontalInset, 21)
+        XCTAssertEqual(PracticeMessageHubLayout.rowViewportWidth(contentColumnWidth: contentColumnWidth), viewportWidth)
         XCTAssertLessThan(fourthColumnFrame.minX, viewportWidth)
         XCTAssertGreaterThan(fourthColumnFrame.maxX, viewportWidth)
     }

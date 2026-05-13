@@ -316,6 +316,17 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(HomeLayout.messageRailHeight, HomeLayout.messageAvatarSize + 44)
     }
 
+    func testBrowseMessageRailUsesScreenEdgeViewport() {
+        let viewportWidth: CGFloat = 390
+        let contentColumnWidth = viewportWidth - (BrowseCollectionMessageLayout.rowViewportHorizontalBleed * 2)
+
+        XCTAssertEqual(BrowseCollectionMessageLayout.avatarSize, 88)
+        XCTAssertEqual(BrowseCollectionMessageLayout.contactWidth, 104)
+        XCTAssertEqual(BrowseCollectionMessageLayout.rowViewportHorizontalBleed, 20)
+        XCTAssertEqual(BrowseCollectionMessageLayout.rowContentHorizontalInset, 21)
+        XCTAssertEqual(BrowseCollectionMessageLayout.rowViewportWidth(contentColumnWidth: contentColumnWidth), viewportWidth)
+    }
+
     func testHomeUseNowShelfUsesLargeFeatureCardMetrics() {
         XCTAssertGreaterThanOrEqual(HomeLayout.featurePhraseCardWidth, 320)
         XCTAssertGreaterThanOrEqual(HomeLayout.featurePhraseCardHeight, 300)
