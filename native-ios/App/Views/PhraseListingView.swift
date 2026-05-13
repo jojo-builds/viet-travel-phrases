@@ -194,13 +194,6 @@ struct PhraseArticleTemplateView: View {
                         .offset(y: -24)
                 }
             }
-
-            if showsChrome {
-                bottomChrome
-                    .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
-                    .padding(.bottom, AppChromeLayout.bottomPadding)
-                    .offset(y: AppChromeLayout.bottomOffset)
-            }
         }
     }
 
@@ -435,45 +428,6 @@ struct PhraseArticleTemplateView: View {
         }
         .buttonStyle(.plain)
         .nativeGlass(cornerRadius: 26, interactive: true)
-    }
-
-    @ViewBuilder
-    private var bottomChrome: some View {
-        if #available(iOS 26.0, *) {
-            GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
-                bottomChromeContent
-            }
-        } else {
-            bottomChromeContent
-        }
-    }
-
-    private var bottomChromeContent: some View {
-        let selectedDockItem = AppChrome(route: chromeRoute).selectedDockItem
-
-        return HStack(spacing: AppChromeLayout.bottomSpacing) {
-            HStack(spacing: AppChromeLayout.dockItemSpacing) {
-                ForEach(AppChrome(route: chromeRoute).primaryDockItems, id: \.self) { item in
-                    DockItem(kind: item, selected: item == selectedDockItem)
-                }
-            }
-            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
-            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
-            .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
-
-            Button {
-                onSearchTapped()
-            } label: {
-                Image(systemName: "magnifyingglass")
-                    .font(.title2.weight(.medium))
-                    .foregroundStyle(.primary)
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            }
-            .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchActive)
-        }
     }
 
 }
@@ -1602,22 +1556,6 @@ private struct CircleIcon: View {
             .foregroundStyle(tint.color)
             .frame(width: 48, height: 48)
             .nativeGlass(cornerRadius: 24)
-    }
-}
-
-private struct DockItem: View {
-    let kind: DockItemKind
-    let selected: Bool
-
-    var body: some View {
-        VStack(spacing: 3) {
-            Image(systemName: kind.symbolName)
-                .font(.system(size: 18, weight: .semibold))
-            Text(kind.title)
-                .font(.caption2.weight(.semibold))
-        }
-        .foregroundStyle(selected ? .red : .secondary)
-        .frame(width: 52, height: 50)
     }
 }
 

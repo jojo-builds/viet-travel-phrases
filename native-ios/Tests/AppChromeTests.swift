@@ -3,227 +3,39 @@ import CoreGraphics
 @testable import SpeakLocalNative
 
 final class AppChromeTests: XCTestCase {
-    func testBottomChromeLayoutUsesNativeScaleIslandMetrics() {
-        XCTAssertLessThan(AppChromeLayout.dockHorizontalPadding, 16)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockVerticalPadding, 6)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchIslandSize, 62)
-        XCTAssertLessThanOrEqual(AppChromeLayout.searchIslandSize, 66)
-        XCTAssertLessThan(AppChromeLayout.bottomOffset, 14)
-        XCTAssertEqual(AppChromeLayout.bottomSeparationHeight, 0)
+    func testSystemTabsMapRoutesToAppleTabBarDestinations() {
+        XCTAssertEqual(AppSystemTab(route: .home), .home)
+        XCTAssertEqual(AppSystemTab(route: .browse), .browse)
+        XCTAssertEqual(AppSystemTab(route: .browseCollection(.category("hotel"))), .browse)
+        XCTAssertEqual(AppSystemTab(route: .phrasePage), .browse)
+        XCTAssertEqual(AppSystemTab(route: .detailPage("viet-phrase-hello-chao-anh")), .browse)
+        XCTAssertEqual(AppSystemTab(route: .saved), .saved)
+        XCTAssertEqual(AppSystemTab(route: .practice), .practice)
+        XCTAssertEqual(AppSystemTab(route: .search), .search)
+    }
+
+    func testPrimarySystemTabsUseStableAppleSFSymbolsAndLabels() {
+        XCTAssertEqual(DockItemKind.home.symbolName, "house.fill")
+        XCTAssertEqual(DockItemKind.home.title, "Home")
+        XCTAssertEqual(DockItemKind.browse.symbolName, "square.grid.2x2")
+        XCTAssertEqual(DockItemKind.browse.title, "Browse")
+        XCTAssertEqual(DockItemKind.saved.symbolName, "heart")
+        XCTAssertEqual(DockItemKind.saved.title, "Saved")
+        XCTAssertEqual(DockItemKind.practice.symbolName, "text.bubble.fill")
+        XCTAssertEqual(DockItemKind.practice.title, "Messages")
+    }
+
+    func testOnlyTopAdminAndAppSpecificChromeStayLayeredAboveContent() {
         XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
         XCTAssertLessThan(
             AppChromeLayout.topSeparationHeight,
             AppChromeLayout.pinnedAudioSpeedRevealY + AppChromeLayout.topAdminControlSize
         )
-    }
-
-    func testBottomChromeHitTestEnvelopeStaysLocalToChrome() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomHitTestEnvelopeHeight, AppChromeLayout.searchIslandSize)
-        XCTAssertGreaterThanOrEqual(
-            AppChromeLayout.bottomHitTestEnvelopeHeight,
-            AppChromeLayout.dockItemHeight + AppChromeLayout.dockVerticalPadding * 2
-        )
-        XCTAssertLessThanOrEqual(
-            AppChromeLayout.bottomHitTestEnvelopeHeight,
-            AppChromeLayout.searchIslandSize + AppChromeLayout.bottomVisibleHitSlop * 2
-        )
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
-    }
-
-    func testBottomChromeGlassSurfacesHaveNativeBreathingRoom() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomSpacing, 8)
-        XCTAssertLessThanOrEqual(AppChromeLayout.bottomSpacing, 14)
-        XCTAssertLessThanOrEqual(
-            AppChromeLayout.dockMaximumContentWidth,
-            AppDockSelectionLayout.contentWidth(itemCount: 4) + 36
-        )
-    }
-
-    func testOuterChromeLayersUseSemanticOrdering() {
         XCTAssertGreaterThan(AppChromeLayout.searchPageLayerZIndex, AppChromeLayout.contentPageLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.chromeSeparationLayerZIndex, AppChromeLayout.searchPageLayerZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.bottomChromeLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.topAdminHitTestLayerZIndex, AppChromeLayout.bottomChromeLayerZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.topAdminHitTestLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.topAdminControlLayerZIndex, AppChromeLayout.topAdminHitTestLayerZIndex)
-    }
-
-    func testSearchMorphUsesMatchedChromeMetrics() {
-        XCTAssertEqual(AppChromeLayout.searchFieldHeight, AppChromeLayout.searchIslandSize)
-        XCTAssertEqual(
-            AppChromeLayout.dockItemHeight + AppChromeLayout.dockVerticalPadding * 2,
-            AppChromeLayout.searchIslandSize
-        )
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.searchMorphDuration, 0.38)
-        XCTAssertLessThanOrEqual(AppChromeLayout.searchMorphDuration, 0.40)
-    }
-
-    func testSearchOriginAndDockShareMorphLayer() {
-        XCTAssertGreaterThan(AppChromeLayout.searchOriginMorphZIndex, AppChromeLayout.searchMorphZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.searchMorphZIndex, AppChromeLayout.dockMorphZIndex)
-    }
-
-    func testSearchChromeMorphKeepsSearchGlassAboveReturningDock() {
-        XCTAssertGreaterThan(AppChromeLayout.searchMorphZIndex, AppChromeLayout.dockMorphZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.searchOriginMorphZIndex, AppChromeLayout.searchMorphZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.keyboardDismissMorphZIndex, AppChromeLayout.searchOriginMorphZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.searchForegroundMorphZIndex, AppChromeLayout.keyboardDismissMorphZIndex)
-    }
-
-    func testDockSelectionLensUsesAppStoreStylePillMetrics() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionWidth, AppChromeLayout.dockItemWidth * 1.25)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionHeight, AppChromeLayout.searchIslandSize)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedWidth, AppChromeLayout.dockSelectionWidth)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedHeight, AppChromeLayout.dockSelectionHeight)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionPressedHeight, AppChromeLayout.searchIslandSize)
-        XCTAssertGreaterThan(AppChromeLayout.dockItemForegroundZIndex, AppChromeLayout.dockSelectionLensZIndex)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.30)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionMorphDuration, 0.36)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionDragCommitDistance, 0)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionStretchFactor, 0)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionMaximumStretch, 0)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionLagFactor, 0)
-        XCTAssertEqual(AppChromeLayout.dockSelectionTapActivationDelay, 0)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapTravelDelay, AppChromeLayout.dockSelectionTapActivationDelay)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapDeactivateDelay, 0)
-    }
-
-    func testDockSelectionDragMapsLocationsAcrossPrimaryTabs() {
-        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 4, itemCount: 4), 0)
-        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 64, itemCount: 4), 1)
-        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 128, itemCount: 4), 2)
-        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 224, itemCount: 4), 3)
-        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: -40, itemCount: 4), 0)
-        XCTAssertEqual(AppDockSelectionLayout.itemIndex(for: 600, itemCount: 4), 3)
-    }
-
-    func testDockSelectionDragMapsAcrossExpandedChromeTrack() {
-        let expandedWidth = AppDockSelectionLayout.contentWidth(itemCount: 4) + 90
-        let firstCenter = AppDockSelectionLayout.itemCenterX(index: 0, itemCount: 4, contentWidth: expandedWidth)
-        let lastCenter = AppDockSelectionLayout.itemCenterX(index: 3, itemCount: 4, contentWidth: expandedWidth)
-
-        XCTAssertEqual(firstCenter, AppChromeLayout.dockItemWidth / 2)
-        XCTAssertEqual(lastCenter, expandedWidth - AppChromeLayout.dockItemWidth / 2)
-        XCTAssertEqual(
-            AppDockSelectionLayout.itemIndex(for: lastCenter, itemCount: 4, contentWidth: expandedWidth),
-            3
-        )
-
-        let expandedLens = AppDockSelectionLayout.lensMetrics(
-            selectedIndex: 0,
-            activeIndex: 3,
-            dragX: lastCenter,
-            itemCount: 4,
-            reduceMotion: true,
-            contentWidth: expandedWidth
-        )
-        XCTAssertEqual(
-            expandedLens.xOffset,
-            lastCenter - AppChromeLayout.dockSelectionPressedWidth / 2
-        )
-        XCTAssertEqual(expandedLens.height, AppChromeLayout.dockSelectionPressedHeight)
-    }
-
-    func testDockSelectionTapFlightUsesSingleFluidTravelWindow() {
-        let totalTapFlightDelay = AppChromeLayout.dockSelectionTapActivationDelay
-            + AppChromeLayout.dockSelectionTapTravelDelay
-            + AppChromeLayout.dockSelectionTapDeactivateDelay
-
-        XCTAssertEqual(AppChromeLayout.dockSelectionTapActivationDelay, 0)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapTravelDelay, 170_000_000)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapDeactivateDelay, 90_000_000)
-        XCTAssertLessThanOrEqual(totalTapFlightDelay, 260_000_000)
-    }
-
-    func testDockSelectionTouchDownMovesLensToTouchedItemImmediately() {
-        let itemCount = 4
-        let selectedIndex = 0
-        let touchedIndex = 3
-        let touchedCenter = AppDockSelectionLayout.itemCenterX(index: touchedIndex)
-        let metrics = AppDockSelectionLayout.lensMetrics(
-            selectedIndex: selectedIndex,
-            activeIndex: touchedIndex,
-            dragX: touchedCenter,
-            itemCount: itemCount,
-            reduceMotion: true
-        )
-
-        XCTAssertEqual(
-            metrics.xOffset,
-            touchedCenter - AppChromeLayout.dockSelectionPressedWidth / 2
-        )
-        XCTAssertEqual(metrics.width, AppChromeLayout.dockSelectionPressedWidth)
-        XCTAssertEqual(metrics.height, AppChromeLayout.dockSelectionPressedHeight)
-    }
-
-    func testDockSelectionTapTravelDoesNotUseDragStretch() {
-        let touchedCenter = AppDockSelectionLayout.itemCenterX(index: 3)
-        let metrics = AppDockSelectionLayout.lensMetrics(
-            selectedIndex: 0,
-            activeIndex: 3,
-            dragX: touchedCenter,
-            itemCount: 4,
-            reduceMotion: false,
-            predictedDragX: touchedCenter,
-            stretchesWithMotion: false
-        )
-
-        XCTAssertEqual(
-            metrics.xOffset,
-            touchedCenter - AppChromeLayout.dockSelectionPressedWidth / 2
-        )
-        XCTAssertEqual(metrics.width, AppChromeLayout.dockSelectionPressedWidth)
-        XCTAssertEqual(metrics.height, AppChromeLayout.dockSelectionPressedHeight)
-    }
-
-    func testDockSelectionLensStretchesWhileDraggingAndSettlesWhenReducedMotion() {
-        let selectedMetrics = AppDockSelectionLayout.lensMetrics(
-            selectedIndex: 0,
-            activeIndex: 0,
-            dragX: nil,
-            itemCount: 4,
-            reduceMotion: false
-        )
-        XCTAssertEqual(selectedMetrics.width, AppChromeLayout.dockSelectionWidth)
-        XCTAssertEqual(selectedMetrics.height, AppChromeLayout.dockSelectionHeight)
-        XCTAssertEqual(
-            selectedMetrics.xOffset,
-            AppDockSelectionLayout.itemCenterX(index: 0) - AppChromeLayout.dockSelectionWidth / 2
-        )
-
-        let draggedMetrics = AppDockSelectionLayout.lensMetrics(
-            selectedIndex: 0,
-            activeIndex: 3,
-            dragX: AppDockSelectionLayout.itemCenterX(index: 3),
-            itemCount: 4,
-            reduceMotion: false
-        )
-        XCTAssertGreaterThan(draggedMetrics.width, AppChromeLayout.dockSelectionPressedWidth)
-        XCTAssertGreaterThan(draggedMetrics.height, AppChromeLayout.dockSelectionPressedHeight)
-        XCTAssertLessThanOrEqual(
-            draggedMetrics.width,
-            AppChromeLayout.dockSelectionPressedWidth + AppChromeLayout.dockSelectionMaximumStretch
-        )
-
-        let reducedMotionMetrics = AppDockSelectionLayout.lensMetrics(
-            selectedIndex: 0,
-            activeIndex: 3,
-            dragX: AppDockSelectionLayout.itemCenterX(index: 3),
-            itemCount: 4,
-            reduceMotion: true
-        )
-        XCTAssertEqual(reducedMotionMetrics.width, AppChromeLayout.dockSelectionPressedWidth)
-        XCTAssertEqual(reducedMotionMetrics.height, AppChromeLayout.dockSelectionPressedHeight)
-        XCTAssertEqual(
-            reducedMotionMetrics.xOffset,
-            AppDockSelectionLayout.itemCenterX(index: 3) - AppChromeLayout.dockSelectionPressedWidth / 2
-        )
-    }
-
-    func testSearchAndSelectedDockIconsUseDistinctForegroundMorphIDs() {
-        XCTAssertNotEqual(AppChromeMorphID.searchIcon, AppChromeMorphID.dockItem(.home))
-        XCTAssertNotEqual(AppChromeMorphID.searchIcon, AppChromeMorphID.dockItem(.browse))
-        XCTAssertNotEqual(AppChromeMorphID.dockSelection, AppChromeMorphID.dock)
-        XCTAssertNotEqual(AppChromeMorphID.dockSelection, AppChromeMorphID.search)
     }
 
     func testPinnedAudioTopAdminDoesNotReserveScrollClearance() {
@@ -240,7 +52,7 @@ final class AppChromeTests: XCTestCase {
 
     func testTopAdminControlsUseCompactAlignedMetrics() {
         XCTAssertEqual(AppChromeLayout.topAdminControlSize, 47)
-        XCTAssertLessThan(AppChromeLayout.topAdminControlSize, AppChromeLayout.searchIslandSize)
+        XCTAssertLessThanOrEqual(AppChromeLayout.topAdminControlSize, 48)
         XCTAssertEqual(AppChromeLayout.topAdminControlCornerRadius, AppChromeLayout.topAdminControlSize / 2)
         XCTAssertEqual(AudioSpeedControlMetrics.topAdmin.controlHeight, AppChromeLayout.topAdminControlSize)
         XCTAssertLessThan(AudioSpeedControlMetrics.topAdmin.controlHeight, AudioSpeedControlMetrics.regular.controlHeight)
@@ -402,136 +214,6 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testDockGlassUsesBackingFillToPreventContentBleed() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.40)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.50)
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, AppChromeLayout.dockBackdropFillOpacity)
-        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.50)
-    }
-
-    func testPhrasePageChromeUsesSeparateSearchIsland() {
-        let chrome = AppChrome(route: .phrasePage)
-
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
-        XCTAssertEqual(chrome.selectedDockItem, .browse)
-        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
-    }
-
-    func testHomeChromeUsesHomeSelectedDockWithSearchIsland() {
-        let chrome = AppChrome(route: .home)
-
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
-        XCTAssertEqual(chrome.selectedDockItem, .home)
-        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
-    }
-
-    func testBrowseChromeUsesBrowseSelectedDockWithSearchIsland() {
-        let chrome = AppChrome(route: .browse)
-
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
-        XCTAssertEqual(chrome.selectedDockItem, .browse)
-        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
-    }
-
-    func testBrowseCollectionChromeUsesBrowseSelectedDockWithSearchIsland() {
-        let chrome = AppChrome(route: .browseCollection(.category("hotel")))
-
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
-        XCTAssertEqual(chrome.selectedDockItem, .browse)
-        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
-    }
-
-    func testSavedChromeUsesSavedSelectedDockWithSearchIsland() {
-        let chrome = AppChrome(route: .saved)
-
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
-        XCTAssertEqual(chrome.selectedDockItem, .saved)
-        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
-    }
-
-    func testPracticeChromeUsesPracticeSelectedDockWithSearchIsland() {
-        let chrome = AppChrome(route: .practice)
-
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
-        XCTAssertEqual(chrome.selectedDockItem, .practice)
-        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
-    }
-
-    func testSearchPageChromeExpandsSearchAndShrinksDock() {
-        let chrome = AppChrome(route: .search)
-
-        XCTAssertEqual(chrome.primaryDockItems, [.home])
-        XCTAssertEqual(chrome.selectedDockItem, .home)
-        XCTAssertEqual(chrome.searchPresentation, .expandedField)
-    }
-
-    func testDockSelectionRouteChangePolicyLetsSelectedTabAnimationSettle() {
-        XCTAssertFalse(
-            AppDockInteractionPolicy.shouldResetSelectionLens(
-                activeItem: .practice,
-                newRoute: .practice
-            )
-        )
-        XCTAssertFalse(
-            AppDockInteractionPolicy.shouldResetSelectionLens(
-                activeItem: .browse,
-                newRoute: .browseCollection(.category("hotel"))
-            )
-        )
-        XCTAssertTrue(
-            AppDockInteractionPolicy.shouldResetSelectionLens(
-                activeItem: .practice,
-                newRoute: .browse
-            )
-        )
-        XCTAssertTrue(
-            AppDockInteractionPolicy.shouldResetSelectionLens(
-                activeItem: .practice,
-                newRoute: .search
-            )
-        )
-    }
-
-    func testSearchOriginIconTracksRouteBelowSearch() {
-        var navigation = AppShellNavigationState()
-
-        navigation.openSearch()
-        XCTAssertEqual(navigation.searchOriginDockItem, .home)
-
-        navigation.goBack()
-        navigation.openBrowse()
-        navigation.openSearch()
-
-        XCTAssertEqual(navigation.searchOriginDockItem, .browse)
-
-        navigation.goBack()
-        navigation.openBrowseCollection(.category("hotel"))
-        navigation.openSearch()
-
-        XCTAssertEqual(navigation.searchOriginDockItem, .browse)
-
-        navigation.goBack()
-        navigation.openSaved()
-        navigation.openSearch()
-
-        XCTAssertEqual(navigation.searchOriginDockItem, .saved)
-
-        navigation.goBack()
-        navigation.openPractice()
-        navigation.openSearch()
-
-        XCTAssertEqual(navigation.searchOriginDockItem, .practice)
-    }
-
-    func testDetailSearchOriginUsesBrowseDockItem() {
-        var navigation = AppShellNavigationState()
-
-        navigation.openDetail("viet-phrase-hello-chao-anh")
-        navigation.openSearch()
-
-        XCTAssertEqual(navigation.searchOriginDockItem, .browse)
-    }
-
     func testPlaybackSpeedPreferenceMapsToGlobalRates() {
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.5x"), 0.5, accuracy: 0.001)
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.75x"), 0.75, accuracy: 0.001)
@@ -559,6 +241,50 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(for: activeOffscreenPlayer, currentRoute: currentRoute))
         XCTAssertFalse(PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(for: inactiveOffscreenPlayer, currentRoute: currentRoute))
         XCTAssertFalse(PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(for: nil, currentRoute: currentRoute))
+    }
+
+    func testPinnedAudioSpeedChromeCanAppearOnHomeWithoutBackButton() {
+        XCTAssertTrue(
+            PinnedAudioSpeedChromePolicy.canShowPinnedControl(
+                on: .home,
+                hasStaticBackButton: false,
+                isSearchPresented: false
+            )
+        )
+        XCTAssertFalse(
+            PinnedAudioSpeedChromePolicy.canShowPinnedControl(
+                on: .browse,
+                hasStaticBackButton: false,
+                isSearchPresented: false
+            )
+        )
+        XCTAssertFalse(
+            PinnedAudioSpeedChromePolicy.canShowPinnedControl(
+                on: .home,
+                hasStaticBackButton: false,
+                isSearchPresented: true
+            )
+        )
+    }
+
+    func testPinnedAudioSpeedChromeStateUsesHomePlayerAnchor() {
+        let visibleHomePlayer = PhraseAudioPlayerAnchor(
+            route: .home,
+            frame: CGRect(x: 24, y: 210, width: 344, height: 108)
+        )
+        let offscreenHomePlayer = PhraseAudioPlayerAnchor(
+            route: .home,
+            frame: CGRect(x: 24, y: -118, width: 344, height: 108)
+        )
+
+        XCTAssertEqual(
+            PinnedAudioSpeedChromePolicy.state(for: [visibleHomePlayer], currentRoute: .home),
+            .hidden
+        )
+        XCTAssertEqual(
+            PinnedAudioSpeedChromePolicy.state(for: [offscreenHomePlayer], currentRoute: .home),
+            PinnedAudioSpeedChromeState(route: .home, isVisible: true)
+        )
     }
 
     func testPinnedAudioSpeedChromeStateIgnoresFrameDriftWithinSameVisibilityBand() {
@@ -683,15 +409,9 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testSearchPageResultsStayClearOfPinnedSearchChrome() {
-        XCTAssertGreaterThan(
-            SearchPageLayout.pinnedChromeZIndex,
-            SearchPageLayout.resultsZIndex
-        )
-        XCTAssertGreaterThanOrEqual(
-            SearchPageLayout.resultsBottomClearance,
-            AppChromeLayout.searchFieldHeight + AppChromeLayout.searchIslandSize + AppChromeLayout.bottomSpacing
-        )
+    func testSearchPageResultsUseSystemTabBarScaleBottomClearance() {
+        XCTAssertGreaterThanOrEqual(SearchPageLayout.resultsBottomClearance, 40)
+        XCTAssertLessThanOrEqual(SearchPageLayout.resultsBottomClearance, 64)
     }
 
     func testSearchPageUsesCompactHeaderForQueryResults() {
@@ -732,14 +452,6 @@ final class AppChromeTests: XCTestCase {
             ),
             "viet-phrase-hello-chao-chi"
         )
-    }
-
-    func testDetailPageChromeMatchesPhrasePageChrome() {
-        let chrome = AppChrome(route: .detailPage("viet-local-greetings"))
-
-        XCTAssertEqual(chrome.primaryDockItems, [.home, .browse, .saved, .practice])
-        XCTAssertEqual(chrome.selectedDockItem, .browse)
-        XCTAssertEqual(chrome.searchPresentation, .collapsedIsland)
     }
 
     func testForwardDetailNavigationRequestsTopScroll() {

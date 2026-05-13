@@ -296,7 +296,7 @@ enum BrowsePageLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 26
     static let cardCornerRadius: CGFloat = 22
-    static let bottomChromeContentClearance: CGFloat = 224
+    static let bottomChromeContentClearance: CGFloat = 48
     static let situationIconSize: CGFloat = 48
     static let situationCardMinHeight: CGFloat = 136
     static let nextShelfRowHeight: CGFloat = 108

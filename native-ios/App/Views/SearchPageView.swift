@@ -8,13 +8,10 @@ struct SearchPageView: View {
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
     @State private var searchRefreshTask: Task<Void, Never>?
-    @FocusState private var localSearchFieldFocused: Bool
 
     private static let queryRefreshDelay: UInt64 = 90_000_000
 
     let isFieldFocused: Bool
-    let chromeNamespace: Namespace.ID?
-    let showsChrome: Bool
     let onClose: () -> Void
     var onOpenDetail: (String) -> Void = { _ in }
     var onOpenCollection: (BrowseCollectionRoute) -> Void = { _ in }
@@ -24,8 +21,6 @@ struct SearchPageView: View {
     init(
         query: Binding<String> = .constant(""),
         isFieldFocused: Bool = false,
-        chromeNamespace: Namespace.ID? = nil,
-        showsChrome: Bool = true,
         onClose: @escaping () -> Void,
         onOpenDetail: @escaping (String) -> Void = { _ in },
         onOpenCollection: @escaping (BrowseCollectionRoute) -> Void = { _ in },
@@ -37,8 +32,6 @@ struct SearchPageView: View {
             initialValue: SearchPageResults(query: query.wrappedValue.trimmingCharacters(in: .whitespacesAndNewlines))
         )
         self.isFieldFocused = isFieldFocused
-        self.chromeNamespace = chromeNamespace
-        self.showsChrome = showsChrome
         self.onClose = onClose
         self.onOpenDetail = onOpenDetail
         self.onOpenCollection = onOpenCollection
@@ -54,7 +47,7 @@ struct SearchPageView: View {
                 isFieldFocused: effectiveFieldFocused
             )
 
-            ZStack(alignment: .bottom) {
+            ZStack {
                 PhrasePageStyle.pageBackground
                     .ignoresSafeArea()
 
@@ -82,14 +75,6 @@ struct SearchPageView: View {
                 .scrollDismissesKeyboard(.interactively)
                 .ignoresSafeArea(edges: .top)
                 .zIndex(SearchPageLayout.resultsZIndex)
-
-                if showsChrome {
-                    searchBottomChrome
-                        .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
-                        .padding(.bottom, AppChromeLayout.bottomPadding)
-                        .offset(y: AppChromeLayout.bottomOffset)
-                        .zIndex(SearchPageLayout.pinnedChromeZIndex)
-                }
             }
         }
         .accessibilityIdentifier("SearchPageView")
@@ -104,7 +89,7 @@ struct SearchPageView: View {
     }
 
     private var effectiveFieldFocused: Bool {
-        isFieldFocused || localSearchFieldFocused
+        isFieldFocused
     }
 
     private var trimmedQuery: String {
@@ -391,49 +376,6 @@ struct SearchPageView: View {
         return ["taxi", "bathroom", "thank you"]
     }
 
-    @ViewBuilder
-    private var searchBottomChrome: some View {
-        if #available(iOS 26.0, *) {
-            GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
-                searchBottomChromeContent
-            }
-        } else {
-            searchBottomChromeContent
-        }
-    }
-
-    private var searchBottomChromeContent: some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            Button {
-                onClose()
-            } label: {
-                Image(systemName: "house.fill")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.red)
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            }
-            .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-
-            HStack(spacing: 10) {
-                Image(systemName: "magnifyingglass")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.red)
-
-                TextField("Search Vietnamese phrases", text: $query)
-                    .font(.body.weight(.semibold))
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .focused($localSearchFieldFocused)
-            }
-            .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
-            .frame(height: AppChromeLayout.searchFieldHeight)
-            .frame(maxWidth: .infinity)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
-        }
-    }
 }
 
 private struct SearchPageResults {

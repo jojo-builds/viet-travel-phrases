@@ -22,8 +22,7 @@ final class BrowseSearchUITests: XCTestCase {
         tapWhenVisible(app.buttons["Browse.Situation.hotel"], app: app)
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.buttons["AppChrome.Dock.Browse"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["AppChrome.SearchButton"].waitForExistence(timeout: 2))
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
 
         app.buttons["Go back"].tap()
 
@@ -34,7 +33,7 @@ final class BrowseSearchUITests: XCTestCase {
         var app = launchApp(arguments: ["--browse-category", "airport"])
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
 
-        tapWhenVisible(app.buttons["AppChrome.Dock.Saved"], app: app)
+        openDock("Saved", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
 
         tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
@@ -45,7 +44,7 @@ final class BrowseSearchUITests: XCTestCase {
         app = launchApp(arguments: ["--browse-category", "hotel"])
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
 
-        tapWhenVisible(app.buttons["AppChrome.Dock.Messages"], app: app)
+        openDock("Messages", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
 
         tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
@@ -58,19 +57,19 @@ final class BrowseSearchUITests: XCTestCase {
         tapWhenVisible(app.buttons["Search.Collection.category.hotel"], app: app)
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.buttons["AppChrome.Dock.Browse"].waitForExistence(timeout: 2))
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Search.Title"].exists)
     }
 
-    func testSearchOriginFromBrowseCollectionReturnsToCollection() {
+    func testBackFromSearchReturnsToBrowseCollection() {
         let app = launchApp(arguments: ["--browse-category", "hotel"])
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
 
-        tapWhenVisible(app.buttons["AppChrome.SearchButton"], app: app)
+        openSearch(in: app)
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
 
-        tapWhenVisible(app.buttons["AppChrome.SearchOriginButton.Browse"], app: app)
+        tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 3))
         XCTAssertFalse(app.staticTexts["Browse.Title"].exists)
@@ -82,7 +81,7 @@ final class BrowseSearchUITests: XCTestCase {
         tapWhenVisible(app.buttons["Search.Collection.city.hanoi"], app: app)
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.hanoi"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.buttons["AppChrome.Dock.Browse"].waitForExistence(timeout: 2))
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Search.Title"].exists)
     }
 
@@ -261,7 +260,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Arrival phrases"].waitForExistence(timeout: 3))
 
         app.swipeUp()
-        XCTAssertTrue(app.buttons["AppChrome.Dock.Browse"].waitForExistence(timeout: 2))
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
 
         app.buttons["Go back"].tap()
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
@@ -328,20 +327,14 @@ final class BrowseSearchUITests: XCTestCase {
         captureBrowseNextShelvesProofIfRequested()
     }
 
-    func testSearchOpensWithoutKeyboardUntilFieldTap() {
+    func testSearchTabOpensSystemSearchField() {
         let app = XCUIApplication()
         app.launch()
 
-        let searchButton = app.buttons["AppChrome.SearchButton"]
-        XCTAssertTrue(searchButton.waitForExistence(timeout: 4))
-        searchButton.tap()
+        openSearch(in: app)
 
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.textFields["AppChrome.SearchField"].waitForExistence(timeout: 2))
-        XCTAssertEqual(app.keyboards.count, 0)
-
-        app.textFields["AppChrome.SearchField"].tap()
-        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
+        XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
     }
 
     func testSearchQueryLaunchShowsResultsWithoutKeyboard() {
@@ -350,17 +343,14 @@ final class BrowseSearchUITests: XCTestCase {
         app.launch()
 
         XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.textFields["AppChrome.SearchField"].waitForExistence(timeout: 2))
         XCTAssertEqual(app.keyboards.count, 0)
     }
 
     func testProgressiveSearchTypingAndDeletingKeepsFieldResponsive() {
         let app = launchApp()
-        let searchButton = app.buttons["AppChrome.SearchButton"]
-        XCTAssertTrue(searchButton.waitForExistence(timeout: 4))
-        searchButton.tap()
+        openSearch(in: app)
 
-        let field = app.textFields["AppChrome.SearchField"]
+        let field = searchField(in: app)
 
         XCTAssertTrue(field.waitForExistence(timeout: 4))
         field.tap()
@@ -385,6 +375,66 @@ final class BrowseSearchUITests: XCTestCase {
         app.launchArguments = arguments
         app.launch()
         return app
+    }
+
+    private func openSearch(in app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        openDock("Search", in: app, file: file, line: line)
+    }
+
+    private func openDock(_ title: String, in app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        let tab = systemTab(title, in: app)
+        if tab.waitForExistence(timeout: 3) {
+            tab.tap()
+        } else {
+            systemTabCoordinate(title, in: app).tap()
+        }
+    }
+
+    private func systemTab(_ title: String, in app: XCUIApplication) -> XCUIElement {
+        let tabBarButton = app.tabBars.buttons[title]
+        if tabBarButton.exists {
+            return tabBarButton
+        }
+
+        return app.buttons[title]
+    }
+
+    private func systemTabHost(in app: XCUIApplication) -> XCUIElement {
+        app.descendants(matching: .any)["Tab Bar"]
+    }
+
+    private func systemTabCoordinate(_ title: String, in app: XCUIApplication) -> XCUICoordinate {
+        let normalizedX: CGFloat
+        switch title {
+        case "Home":
+            normalizedX = 0.14
+        case "Browse":
+            normalizedX = 0.31
+        case "Saved":
+            normalizedX = 0.49
+        case "Messages":
+            normalizedX = 0.66
+        case "Search":
+            normalizedX = 0.88
+        default:
+            normalizedX = 0.5
+        }
+
+        return app.coordinate(withNormalizedOffset: CGVector(dx: normalizedX, dy: 0.94))
+    }
+
+    private func searchField(in app: XCUIApplication) -> XCUIElement {
+        let promptedSearchField = app.searchFields["Search Vietnamese phrases"]
+        if promptedSearchField.exists {
+            return promptedSearchField
+        }
+
+        let anySearchField = app.searchFields.firstMatch
+        if anySearchField.exists {
+            return anySearchField
+        }
+
+        return app.textFields["Search Vietnamese phrases"]
     }
 
     private func tapWhenVisible(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
