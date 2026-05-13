@@ -122,6 +122,14 @@ final class LocalUserIntentStore: ObservableObject {
     init(defaults: UserDefaults = .standard, launchArguments: [String] = ProcessInfo.processInfo.arguments) {
         self.defaults = defaults
 
+#if DEBUG
+        if launchArguments.contains("--reset-demo-state") {
+            defaults.removeObject(forKey: Key.recentPages)
+            defaults.removeObject(forKey: Key.savedPageIDs)
+            defaults.removeObject(forKey: Key.practicePageIDs)
+        }
+#endif
+
         let loadedRecentPages = Self.load([RecentPhrasePage].self, key: Key.recentPages, defaults: defaults) ?? []
         let loadedSavedPageIDs = Self.load([String].self, key: Key.savedPageIDs, defaults: defaults) ?? []
         let loadedPracticePageIDs = Self.load([String].self, key: Key.practicePageIDs, defaults: defaults) ?? []

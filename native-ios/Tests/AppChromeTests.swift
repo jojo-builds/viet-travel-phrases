@@ -23,8 +23,28 @@ final class AppChromeTests: XCTestCase {
             AppChromeLayout.bottomHitTestEnvelopeHeight,
             AppChromeLayout.dockItemHeight + AppChromeLayout.dockVerticalPadding * 2
         )
-        XCTAssertLessThan(AppChromeLayout.bottomHitTestEnvelopeHeight, 120)
+        XCTAssertLessThanOrEqual(
+            AppChromeLayout.bottomHitTestEnvelopeHeight,
+            AppChromeLayout.searchIslandSize + AppChromeLayout.bottomVisibleHitSlop * 2
+        )
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
+    }
+
+    func testBottomChromeGlassSurfacesHaveNativeBreathingRoom() {
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomSpacing, 8)
+        XCTAssertLessThanOrEqual(AppChromeLayout.bottomSpacing, 14)
+        XCTAssertLessThanOrEqual(
+            AppChromeLayout.dockMaximumContentWidth,
+            AppDockSelectionLayout.contentWidth(itemCount: 4) + 36
+        )
+    }
+
+    func testOuterChromeLayersUseSemanticOrdering() {
+        XCTAssertGreaterThan(AppChromeLayout.searchPageLayerZIndex, AppChromeLayout.contentPageLayerZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.chromeSeparationLayerZIndex, AppChromeLayout.searchPageLayerZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.bottomChromeLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.topAdminHitTestLayerZIndex, AppChromeLayout.bottomChromeLayerZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.topAdminControlLayerZIndex, AppChromeLayout.topAdminHitTestLayerZIndex)
     }
 
     func testSearchMorphUsesMatchedChromeMetrics() {
@@ -255,23 +275,71 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(HomeLayout.messageRailHeight, HomeLayout.messageAvatarSize + 44)
     }
 
-    func testHomeUseNowShelfUsesTwoRowCarouselMetrics() {
-        XCTAssertGreaterThanOrEqual(HomeLayout.quickPhraseCardWidth, 140)
-        XCTAssertLessThanOrEqual(HomeLayout.quickPhraseCardWidth, 160)
-        XCTAssertGreaterThanOrEqual(HomeLayout.quickPhraseCardHeight, 120)
-        XCTAssertEqual(HomeLayout.quickPhraseGridRowSpacing, 12)
-        XCTAssertGreaterThan(
-            HomeLayout.quickPhraseCardHeight * 2 + HomeLayout.quickPhraseGridRowSpacing,
-            HomeLayout.quickPhraseCardHeight
-        )
+    func testHomeUseNowShelfUsesLargeFeatureCardMetrics() {
+        XCTAssertGreaterThanOrEqual(HomeLayout.featurePhraseCardWidth, 320)
+        XCTAssertGreaterThanOrEqual(HomeLayout.featurePhraseCardHeight, 300)
+        XCTAssertLessThanOrEqual(HomeLayout.featurePhraseCardWidth / HomeLayout.featurePhraseCardHeight, 1.12)
     }
 
     func testHomeUseNowShelfHasFriendlyStarterDepth() {
         XCTAssertGreaterThanOrEqual(HomeUseNowCatalog.starterIDs.count, 10)
+        XCTAssertEqual(HomeUseNowCatalog.featureCardIDs.count, 6)
         XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains(PhrasePage.xinChao.id))
         XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains("viet-thank-you"))
         XCTAssertTrue(HomeUseNowCatalog.starterIDs.contains("viet-family-bathroom-where"))
         XCTAssertFalse(HomeUseNowCatalog.starterIDs.contains("viet-family-health-doctor"))
+    }
+
+    func testHomepagePhraseCardsOpenBuiltOutListingPages() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let issues = HomePageLinkRegistry.homepageListingPageIDs.compactMap {
+            homepageListingPageIssue($0, manifest: manifest)
+        }
+
+        XCTAssertTrue(issues.isEmpty, "Homepage phrase cards should open built-out listing pages. Missing: \(issues.joined(separator: ", "))")
+    }
+
+    private func homepageListingPageIssue(_ pageID: String, manifest: AudioAssetManifest) -> String? {
+        guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
+            return "\(pageID): no canonical page"
+        }
+
+        let article: PhraseArticlePage?
+        if canonicalPageID == PhrasePage.xinChao.id {
+            article = PhrasePage.xinChao.articleTemplate
+        } else {
+            article = PhraseDetailPage.page(withID: canonicalPageID)?.articleTemplate
+        }
+
+        guard let article else {
+            return "\(pageID): no article"
+        }
+
+        let sectionIDs = Set(article.sections.map(\.id))
+        guard sectionIDs.contains("breakdown") else {
+            return "\(pageID): missing breakdown"
+        }
+        guard sectionIDs.contains("at-glance")
+            || sectionIDs.contains("traveler-insight")
+            || sectionIDs.contains("good-to-know")
+            || sectionIDs.contains("when-to-use")
+        else {
+            return "\(pageID): missing guide section"
+        }
+        guard article.showsCatalogExplore else {
+            return "\(pageID): catalog explore hidden"
+        }
+        guard manifest.url(for: article.playbackAudioKey) != nil else {
+            return "\(pageID): missing hero audio"
+        }
+        guard article.sections.contains(where: { section in
+            !section.phrases.isEmpty
+                && (section.presentation == .phraseList || section.presentation == .horizontalPhraseCards)
+        }) else {
+            return "\(pageID): no phrase-list section"
+        }
+
+        return nil
     }
 
     func testBrowseNextShelfRowsUseStableFullWidthCardMetrics() {
@@ -294,10 +362,10 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testDockGlassUsesBackingFillToPreventContentBleed() {
-        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.34)
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.48)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.18)
+        XCTAssertLessThanOrEqual(AppChromeLayout.dockBackdropFillOpacity, 0.30)
         XCTAssertGreaterThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, AppChromeLayout.dockBackdropFillOpacity)
-        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.54)
+        XCTAssertLessThanOrEqual(AppChromeLayout.chromeControlBackdropFillOpacity, 0.34)
     }
 
     func testPhrasePageChromeUsesSeparateSearchIsland() {
@@ -1112,15 +1180,18 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hotel.subcategories.isEmpty)
         XCTAssertFalse(hotel.starterItems.isEmpty)
         XCTAssertEqual(hotel.messageSectionTitle, "Hotel")
+        XCTAssertEqual(hotel.browseMessageSectionTitle, "Quick conversations")
         XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi])
         XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
 
         XCTAssertEqual(shopping.messageSectionTitle, "Shopping")
+        XCTAssertEqual(shopping.browseMessageSectionTitle, "Quick conversations")
         XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp])
 
         XCTAssertEqual(hanoi.route, .city("hanoi"))
         XCTAssertEqual(hanoi.practiceAction, .practiceMode(.hanoiBucketList))
         XCTAssertNil(hanoi.messageSectionTitle)
+        XCTAssertNil(hanoi.browseMessageSectionTitle)
         XCTAssertFalse(hanoi.subcategories.isEmpty)
         XCTAssertFalse(hanoi.starterItems.isEmpty)
         XCTAssertNotNil(hanoi.cityHub)
@@ -1268,16 +1339,62 @@ final class AppChromeTests: XCTestCase {
         })
 
         XCTAssertEqual(cityHub.quickPhrasesTitle, "Quick phrases")
-        XCTAssertEqual(cityHub.quickPhraseItems.first?.pageID, "viet-phrase-city-danang-to-airport")
-        XCTAssertTrue(cityHub.quickPhraseItems.contains { $0.pageID == "viet-phrase-city-danang-get-off-my-khe" })
         XCTAssertTrue(cityHub.quickPhraseItems.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
         XCTAssertTrue(cityHub.quickPhraseItems.contains { item in
             item.title.localizedCaseInsensitiveContains("Nhà vệ sinh")
                 || item.subtitle.localizedCaseInsensitiveContains("bathroom")
         })
+        assertNoDerivedPlacePhraseRows(cityHub.quickPhraseItems, context: "Da Nang quick phrases")
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Landmarks" })
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
         XCTAssertTrue(cityHub.browseGroups.allSatisfy { $0.targetRoute == nil })
+    }
+
+    func testCityHubAndSearchDoNotTreatDerivedPlacePhrasesAsBrowseInventory() {
+        let danang = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("danang")))
+        let cityHub = try! XCTUnwrap(danang.cityHub)
+
+        let citySurfaceItems = cityHub.situations.flatMap(\.items)
+            + cityHub.namesToKnowItems
+            + cityHub.quickPhraseItems
+            + cityHub.browseGroups.flatMap(\.items)
+        assertNoDerivedPlacePhraseRows(citySurfaceItems, context: "Da Nang city surface")
+
+        let entityOnlyResults = BrowseSearchDestinations.searchResults(for: "Dragon Bridge", limit: 10)
+        XCTAssertEqual(entityOnlyResults.first?.pageID, "viet-phrase-city-danang-place-dragon-bridge")
+        assertNoDerivedPlacePhraseRows(entityOnlyResults, context: "Dragon Bridge entity-only search")
+
+        let actionResults = BrowseSearchDestinations.searchResults(for: "where is Dragon Bridge", limit: 10)
+        XCTAssertTrue(
+            actionResults.contains { $0.pageID == "viet-phrase-city-danang-where-dragon-bridge" },
+            actionResults.map(\.pageID).joined(separator: "\n")
+        )
+    }
+
+    func testEntityDetailPagesHideGeneratedPlaceTemplateRows() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+
+        let baNa = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-ba-na-hills")
+        let baNaRows = baNa.sections.flatMap(\.phrases)
+        XCTAssertTrue(baNaRows.contains { $0.detailPageID == "viet-phrase-ves-take-me-to-ba-na-hills" })
+        assertNoDerivedPlacePhraseRows(baNaRows.map { phrase in
+            BrowseSearchPhraseItem(
+                pageID: phrase.detailPageID ?? phrase.id,
+                title: phrase.vietnamese,
+                subtitle: phrase.english,
+                symbolName: phrase.symbolName,
+                tintName: phrase.tintName,
+                audioKey: phrase.audioKey
+            )
+        }, context: "Ba Na Hills detail")
+        XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("ATM near Ba Na Hills") })
+        XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("Eat near Ba Na Hills") })
+
+        let dragonBridge = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-dragon-bridge")
+        let dragonRows = dragonBridge.sections.flatMap(\.phrases)
+        XCTAssertTrue(dragonRows.contains { $0.detailPageID == "viet-phrase-ves-drop-near-dragon-bridge" })
+        XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-go-dragon-bridge" })
+        XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-where-dragon-bridge" })
     }
 
     func testCityBrowseGroupsAreEntityFirstAcrossCities() {
@@ -1313,13 +1430,14 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
-    func testGenericFoodCollectionStartsWithEntityNamesBeforeActionPhrases() {
+    func testGenericFoodCollectionSurfacesCoffeeWithoutLosingEntityRows() {
         let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
 
-        XCTAssertEqual(food.starterTitle, "Food names to know")
+        XCTAssertEqual(food.title, "Food & coffee")
+        XCTAssertEqual(food.starterTitle, "Places, dishes, and coffee")
         XCTAssertEqual(
             food.subcategories.map(\.title),
-            ["Restaurants", "Cafes", "Dishes", "Markets"]
+            ["Restaurants", "Coffee shops", "Coffee & drinks", "Dishes to order", "Markets"]
         )
         XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-nen" })
         XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-hanoi-place-giang-cafe" })
@@ -1328,7 +1446,22 @@ final class AppChromeTests: XCTestCase {
 
         for subcategory in food.subcategories {
             XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into entity rows")
-            assertEntityFirstBrowseRows(subcategory.items, context: "food \(subcategory.title)")
+            if subcategory.title == "Coffee & drinks" {
+                XCTAssertEqual(subcategory.countUnit, "phrase")
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-coffee-1" })
+                XCTAssertTrue(subcategory.items.contains { item in
+                    item.title.localizedCaseInsensitiveContains("coffee")
+                        || item.subtitle.localizedCaseInsensitiveContains("coffee")
+                        || item.pageID.localizedCaseInsensitiveContains("coffee")
+                })
+            } else if subcategory.title == "Dishes to order" {
+                XCTAssertEqual(subcategory.countUnit, "phrase")
+                XCTAssertGreaterThanOrEqual(subcategory.items.count, 10)
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-ves-order-pho-bowl" })
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo" })
+            } else {
+                assertEntityFirstBrowseRows(subcategory.items, context: "food \(subcategory.title)")
+            }
         }
     }
 
@@ -1369,6 +1502,17 @@ final class AppChromeTests: XCTestCase {
                 || item.subtitle.localizedCaseInsensitiveContains("near ")
                 || item.subtitle.localizedCaseInsensitiveContains("please")
         }, "\(context) should not start with long-tail action phrase rows: \(items.map { "\($0.title) — \($0.subtitle)" })")
+    }
+
+    private func assertNoDerivedPlacePhraseRows(_ items: [BrowseSearchPhraseItem], context: String) {
+        let derivedItems = items.filter { item in
+            PhraseCatalog.categoryIDs(forPageID: item.pageID).contains("derived-place-phrases")
+        }
+
+        XCTAssertTrue(
+            derivedItems.isEmpty,
+            "\(context) should not surface generated place-template rows: \(derivedItems.map(\.pageID).joined(separator: "\n"))"
+        )
     }
 
     func testBrowseCollectionMastheadsUseOwnedHeroArtForVisibleHubs() {

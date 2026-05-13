@@ -15,6 +15,10 @@ struct AppShellView: View {
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeMode: PracticeMode?
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
+    @State private var requestedPracticeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
+    @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
+    @State private var browseCollectionFocusRequestID = 0
+    @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
     @State private var homePhraseHeroRoutePageID: String?
@@ -124,6 +128,7 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
                     onOpenDetail: openDetailFromPractice,
                     onBrowseTapped: openBrowseAll,
+                    onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
                     onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
                 )
                 .allowsHitTesting(navigation.currentRoute == .practice && !isPreviewingForwardPage)
@@ -180,7 +185,7 @@ struct AppShellView: View {
                         onBrowseTapped: openBrowse
                     )
                     .transition(AppPageTransition.searchMorph)
-                    .zIndex(200)
+                    .zIndex(AppChromeLayout.searchPageLayerZIndex)
                     .navigationPageMotion(
                         route: .search,
                         currentRoute: navigation.currentRoute,
@@ -216,7 +221,7 @@ struct AppShellView: View {
             .overlay(alignment: .bottom) {
                 if !isPracticeThreadPresented {
                     ChromeSeparationGradient(edge: .bottom)
-                        .zIndex(360)
+                        .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
                 }
             }
             .overlay(alignment: .bottom) {
@@ -224,19 +229,19 @@ struct AppShellView: View {
                     bottomChromeHitTestEnvelope
                         .padding(.bottom, bottomChromePadding)
                         .offset(y: bottomChromeOffset)
-                        .zIndex(380)
+                        .zIndex(AppChromeLayout.bottomChromeLayerZIndex)
                 }
             }
             .overlay(alignment: .top) {
                 if !isPracticeThreadPresented {
                     ChromeSeparationGradient(edge: .top)
-                        .zIndex(360)
+                        .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
                 }
             }
             .overlay(alignment: .top) {
                 if showsTopAdminRow {
                     TopAdminHitTestEnvelope()
-                        .zIndex(390)
+                        .zIndex(AppChromeLayout.topAdminHitTestLayerZIndex)
                 }
             }
             .overlay(alignment: .top) {
@@ -245,7 +250,7 @@ struct AppShellView: View {
                         .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
                         .padding(.top, AppChromeLayout.topAdminTopPadding)
                         .transition(.opacity)
-                        .zIndex(410)
+                        .zIndex(AppChromeLayout.topAdminControlLayerZIndex)
                 }
             }
             .onAppear {
@@ -263,7 +268,11 @@ struct AppShellView: View {
 
     private var practiceStartRequest: PracticeStartRequest? {
         if let requestedPracticeScenarioID {
-            return PracticeStartRequest(id: practiceStartRequestID, scenarioID: requestedPracticeScenarioID)
+            return PracticeStartRequest(
+                id: practiceStartRequestID,
+                scenarioID: requestedPracticeScenarioID,
+                scenarioThreadDismissal: requestedPracticeScenarioThreadDismissal
+            )
         }
 
         if let requestedPracticeMode {
@@ -284,6 +293,7 @@ struct AppShellView: View {
                     descriptor: descriptor,
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
+                    focusRequest: browseCollectionFocusRequest,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -430,6 +440,7 @@ struct AppShellView: View {
                     descriptor: descriptor,
                     scrollToTopTrigger: 0,
                     scrollToTopRoute: nil,
+                    focusRequest: nil,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -597,6 +608,20 @@ struct AppShellView: View {
     }
 
     private var topAdminRow: some View {
+        Group {
+            if #available(iOS 26.0, *) {
+                GlassEffectContainer(spacing: 14) {
+                    topAdminRowContent
+                }
+            } else {
+                topAdminRowContent
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: AppChromeLayout.topAdminControlSize)
+    }
+
+    private var topAdminRowContent: some View {
         ZStack {
             HStack {
                 if showsStaticBackButton {
@@ -619,8 +644,6 @@ struct AppShellView: View {
                     .transition(.scale(scale: 0.94).combined(with: .opacity))
             }
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: AppChromeLayout.topAdminControlSize)
     }
 
     private var staticBackButton: some View {
@@ -634,26 +657,27 @@ struct AppShellView: View {
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .nativeGlass(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, interactive: true)
+        .nativeGlass(in: Circle(), interactive: true)
         .accessibilityLabel("Go back")
         .accessibilityIdentifier("TopAdmin.BackButton")
     }
 
     @ViewBuilder
     private var staticBottomChrome: some View {
-        if #available(iOS 26.0, *) {
-            ZStack {
-                GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
-                    staticBottomChromeGlassContent
-                }
-                .frame(maxWidth: .infinity)
-
-                searchRouteForegroundControls
-            }
-            .frame(maxWidth: .infinity)
-        } else {
-            staticBottomChromeContent
-        }
+        AppShellBottomChrome(
+            route: navigation.currentRoute,
+            searchOriginDockItem: navigation.searchOriginDockItem,
+            isSearchFieldFocused: isSearchFieldFocused,
+            searchQuery: $searchQuery,
+            searchFieldFocus: $isSearchFieldFocused,
+            chromeNamespace: chromeNamespace,
+            onOpenSearch: openSearch,
+            onCloseSearch: closeSearch,
+            onFocusSearchField: focusSearchField,
+            onClearFocusedSearch: clearFocusedSearch,
+            onCancelSearchFocus: cancelSearchFocus,
+            onSelectDockItem: performDockAction
+        )
     }
 
     @ViewBuilder
@@ -1281,7 +1305,7 @@ struct AppShellView: View {
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .nativeGlass(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, interactive: true)
+        .nativeGlass(in: Circle(), interactive: true)
         .accessibilityLabel("Go forward")
         .accessibilityIdentifier("TopAdmin.ForwardButton")
     }
@@ -1563,17 +1587,64 @@ struct AppShellView: View {
             intentStore.addPracticePages(pageIDs)
             requestedPracticeMode = nil
             requestedPracticeScenarioID = nil
+            requestedPracticeScenarioThreadDismissal = .messagesHub
+            pendingPracticeThreadReturnFocus = nil
         case .practiceMode(let mode):
             practiceStartRequestID += 1
             requestedPracticeMode = mode
             requestedPracticeScenarioID = nil
+            requestedPracticeScenarioThreadDismissal = .messagesHub
+            pendingPracticeThreadReturnFocus = nil
         case .practiceScenario(let scenarioID):
             practiceStartRequestID += 1
             requestedPracticeMode = nil
             requestedPracticeScenarioID = scenarioID
+            if case .browseCollection(let route) = navigation.currentRoute {
+                requestedPracticeScenarioThreadDismissal = .originRoute
+                pendingPracticeThreadReturnFocus = BrowseCollectionFocusRequest(
+                    id: 0,
+                    route: route,
+                    target: .messageScenario(scenarioID)
+                )
+            } else {
+                requestedPracticeScenarioThreadDismissal = .messagesHub
+                pendingPracticeThreadReturnFocus = nil
+            }
         }
 
         openPractice()
+    }
+
+    private func returnFromPracticeThreadToOrigin() {
+        let focusRequest = pendingPracticeThreadReturnFocus
+        pendingPracticeThreadReturnFocus = nil
+        cancelInteractiveChromeState()
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.goBack()
+        }
+        restoreBrowseCollectionFocusIfNeeded(focusRequest)
+    }
+
+    private func restoreBrowseCollectionFocusIfNeeded(_ focusRequest: BrowseCollectionFocusRequest?) {
+        guard let focusRequest else {
+            return
+        }
+
+        DispatchQueue.main.async {
+            browseCollectionFocusRequestID += 1
+            let request = BrowseCollectionFocusRequest(
+                id: browseCollectionFocusRequestID,
+                route: focusRequest.route,
+                target: focusRequest.target
+            )
+            browseCollectionFocusRequest = request
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if browseCollectionFocusRequest == request {
+                    browseCollectionFocusRequest = nil
+                }
+            }
+        }
     }
 
     private func goBack() {
@@ -2712,6 +2783,657 @@ private struct AppDockInteractionState: Equatable {
     )
 }
 
+private struct AppShellBottomChrome: View {
+    let route: AppRoute
+    let searchOriginDockItem: DockItemKind
+    let isSearchFieldFocused: Bool
+    @Binding var searchQuery: String
+    let searchFieldFocus: FocusState<Bool>.Binding
+    let chromeNamespace: Namespace.ID
+    let onOpenSearch: () -> Void
+    let onCloseSearch: () -> Void
+    let onFocusSearchField: () -> Void
+    let onClearFocusedSearch: () -> Void
+    let onCancelSearchFocus: () -> Void
+    let onSelectDockItem: (DockItemKind) -> Void
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var dockDrag = AppDockInteractionState.inactive
+    @State private var dockSelectionTapRequestID = 0
+
+    var body: some View {
+        chromeBody
+            .onChange(of: route) { _, _ in
+                resetDockInteraction()
+            }
+    }
+
+    @ViewBuilder
+    private var chromeBody: some View {
+        if #available(iOS 26.0, *) {
+            ZStack {
+                GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
+                    staticBottomChromeGlassContent
+                }
+                .frame(maxWidth: .infinity)
+
+                searchRouteForegroundControls
+            }
+            .frame(maxWidth: .infinity)
+        } else {
+            staticBottomChromeContent
+        }
+    }
+
+    @ViewBuilder
+    private var staticBottomChromeGlassContent: some View {
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            if isSearchRoute {
+                if !isKeyboardSearch {
+                    searchOriginGlassShell(kind: searchOriginDockItem)
+                }
+            } else {
+                dockCluster(chrome: chrome)
+            }
+
+            if isSearchRoute {
+                searchFieldGlassShell
+            } else {
+                collapsedSearchButton
+            }
+
+            if isKeyboardSearch {
+                searchDismissKeyboardGlassShell
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
+        .animation(.snappy(duration: 0.30), value: isSearchFieldFocused)
+    }
+
+    @ViewBuilder
+    private var searchRouteForegroundControls: some View {
+        if isSearchRoute {
+            searchForegroundControls(
+                isKeyboardSearch: isKeyboardSearch,
+                origin: searchOriginDockItem
+            )
+        }
+    }
+
+    @ViewBuilder
+    private var staticBottomChromeContent: some View {
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            if isSearchRoute {
+                if !isKeyboardSearch {
+                    searchOriginFallbackButton(kind: searchOriginDockItem)
+                }
+            } else {
+                dockCluster(chrome: chrome)
+            }
+
+            if isSearchRoute {
+                searchFieldFallbackCluster
+            } else {
+                collapsedSearchButton
+            }
+
+            if isKeyboardSearch {
+                searchDismissKeyboardFallbackButton
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
+        .animation(.snappy(duration: 0.30), value: isSearchFieldFocused)
+    }
+
+    private var isSearchRoute: Bool {
+        route == .search
+    }
+
+    private var isKeyboardSearch: Bool {
+        isSearchRoute && isSearchFieldFocused
+    }
+
+    private var chrome: AppChrome {
+        AppChrome(route: route)
+    }
+
+    private func dockCluster(chrome: AppChrome) -> some View {
+        GeometryReader { proxy in
+            let itemCount = chrome.primaryDockItems.count
+            let baseContentWidth = AppDockSelectionLayout.contentWidth(itemCount: itemCount)
+            let minimumSurfaceWidth = baseContentWidth + AppChromeLayout.dockHorizontalPadding * 2
+            let maximumSurfaceWidth = AppChromeLayout.dockMaximumContentWidth + AppChromeLayout.dockHorizontalPadding * 2
+            let surfaceWidth = min(max(minimumSurfaceWidth, proxy.size.width), maximumSurfaceWidth)
+            let contentWidth = max(baseContentWidth, surfaceWidth - AppChromeLayout.dockHorizontalPadding * 2)
+            let selectedIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
+            let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
+            let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
+            let isPressingDockSelection = dockDrag.dragX != nil
+            let isDraggingDockSelection = dockDrag.didMoveBeyondTap
+            let lensAnimation = dockSelectionLensAnimation(isFingerTracking: dockDrag.isFingerTracking)
+            let lensMetrics = AppDockSelectionLayout.lensMetrics(
+                selectedIndex: selectedIndex,
+                activeIndex: activeIndex,
+                dragX: dockDrag.dragX,
+                itemCount: itemCount,
+                reduceMotion: reduceMotion,
+                contentWidth: contentWidth,
+                predictedDragX: dockDrag.predictedDragX
+            )
+            let dockShape = RoundedRectangle(cornerRadius: AppChromeLayout.dockCornerRadius, style: .continuous)
+
+            ZStack(alignment: .leading) {
+                AppShellDockSelectionLens(
+                    width: lensMetrics.width,
+                    height: lensMetrics.height,
+                    isPressed: isPressingDockSelection,
+                    isDragging: isDraggingDockSelection,
+                    chromeNamespace: chromeNamespace
+                )
+                .offset(x: lensMetrics.xOffset)
+                .animation(lensAnimation, value: lensMetrics)
+                .zIndex(AppChromeLayout.dockSelectionLensZIndex)
+
+                HStack(spacing: 0) {
+                    ForEach(Array(chrome.primaryDockItems.enumerated()), id: \.element) { index, item in
+                        Button {
+                            performDockTapAction(item, chrome: chrome, contentWidth: contentWidth)
+                        } label: {
+                            AppShellDockItem(
+                                kind: item,
+                                selected: item == activeItem,
+                                chromeNamespace: chromeNamespace,
+                                isMorphSource: item == chrome.selectedDockItem
+                            )
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(item.title)
+                        .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
+                        .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
+                        .contentShape(Rectangle())
+
+                        if index < chrome.primaryDockItems.count - 1 {
+                            Spacer(minLength: AppChromeLayout.dockItemSpacing)
+                        }
+                    }
+                }
+                .frame(width: contentWidth)
+                .zIndex(AppChromeLayout.dockItemForegroundZIndex)
+            }
+            .frame(width: contentWidth, height: AppChromeLayout.dockItemHeight)
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                dockSelectionGesture(chrome: chrome, contentWidth: contentWidth),
+                including: .all
+            )
+            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
+            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
+            .frame(width: surfaceWidth, height: AppChromeLayout.searchIslandSize)
+            .background(
+                Color.white.opacity(AppChromeLayout.dockBackdropFillOpacity),
+                in: dockShape
+            )
+            .nativeGlass(in: dockShape)
+            .appChromeGlassOutline(in: dockShape, prominence: 0.28)
+            .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
+            .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !isSearchRoute)
+            .contentShape(dockShape)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .zIndex(AppChromeLayout.dockMorphZIndex)
+        }
+        .frame(height: AppChromeLayout.searchIslandSize)
+        .layoutPriority(1)
+    }
+
+    private func dockSelectionGesture(chrome: AppChrome, contentWidth: CGFloat) -> some Gesture {
+        DragGesture(minimumDistance: 0, coordinateSpace: .local)
+            .onChanged { value in
+                updateDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
+            }
+            .onEnded { value in
+                finishDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
+            }
+    }
+
+    private func dockSelectionLensAnimation(isFingerTracking: Bool) -> Animation? {
+        if isFingerTracking {
+            return nil
+        }
+
+        return reduceMotion
+            ? .easeOut(duration: 0.14)
+            : .interactiveSpring(response: 0.24, dampingFraction: 0.78, blendDuration: 0.06)
+    }
+
+    private func updateDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
+        guard let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth) else {
+            return
+        }
+
+        dockSelectionTapRequestID += 1
+
+        let previousItem = dockDrag.activeItem
+        let startItem = dockDrag.startItem ?? chrome.selectedDockItem
+        let didMoveBeyondTap = dockDrag.didMoveBeyondTap
+            || abs(value.translation.width) >= AppChromeLayout.dockSelectionDragCommitDistance
+        let activeItem = didMoveBeyondTap ? item : chrome.selectedDockItem
+        let dragX = didMoveBeyondTap
+            ? value.location.x
+            : AppDockSelectionLayout.itemCenterX(
+                index: chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0,
+                itemCount: chrome.primaryDockItems.count,
+                contentWidth: contentWidth
+            )
+        let predictedDragX = didMoveBeyondTap ? value.predictedEndLocation.x : dragX
+
+        dockDrag = AppDockInteractionState(
+            startItem: startItem,
+            activeItem: activeItem,
+            dragX: dragX,
+            predictedDragX: predictedDragX,
+            isFingerTracking: didMoveBeyondTap,
+            didMoveBeyondTap: didMoveBeyondTap
+        )
+
+        if didMoveBeyondTap, previousItem != nil, previousItem != item {
+            playDockCrossingHaptic()
+        }
+    }
+
+    private func finishDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
+        let shouldCommitDrag = dockDrag.didMoveBeyondTap
+        let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth)
+
+        guard shouldCommitDrag, let item else {
+            withAnimation(
+                reduceMotion
+                ? .easeOut(duration: 0.14)
+                : .interactiveSpring(response: 0.24, dampingFraction: 0.84, blendDuration: 0.06)
+            ) {
+                dockDrag = .inactive
+            }
+            return
+        }
+
+        dockSelectionTapRequestID += 1
+        let requestID = dockSelectionTapRequestID
+        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
+        let destinationX = AppDockSelectionLayout.itemCenterX(
+            index: destinationIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        )
+
+        withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.80, blendDuration: 0.05)) {
+            dockDrag = AppDockInteractionState(
+                startItem: dockDrag.startItem ?? chrome.selectedDockItem,
+                activeItem: item,
+                dragX: destinationX,
+                predictedDragX: destinationX,
+                isFingerTracking: false,
+                didMoveBeyondTap: true
+            )
+        }
+
+        commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
+    }
+
+    private func deactivateDockSelection(requestID: Int, delay: UInt64) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: delay)
+            guard requestID == dockSelectionTapRequestID else {
+                return
+            }
+
+            withAnimation(.interactiveSpring(response: 0.22, dampingFraction: 0.86, blendDuration: 0.04)) {
+                dockDrag = .inactive
+            }
+        }
+    }
+
+    private func commitDockSelectionAction(_ item: DockItemKind, requestID: Int, deactivateDelay: UInt64) {
+        onSelectDockItem(item)
+        deactivateDockSelection(requestID: requestID, delay: deactivateDelay)
+    }
+
+    private func performDockTapAction(_ item: DockItemKind, chrome: AppChrome, contentWidth: CGFloat) {
+        guard item != chrome.selectedDockItem, !reduceMotion else {
+            onSelectDockItem(item)
+            return
+        }
+
+        dockSelectionTapRequestID += 1
+        let requestID = dockSelectionTapRequestID
+        let sourceIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
+        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? sourceIndex
+        let sourceX = AppDockSelectionLayout.itemCenterX(
+            index: sourceIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        )
+        let destinationX = AppDockSelectionLayout.itemCenterX(
+            index: destinationIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        )
+
+        onCancelSearchFocus()
+
+        withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.78, blendDuration: 0.04)) {
+            dockDrag = AppDockInteractionState(
+                startItem: chrome.selectedDockItem,
+                activeItem: chrome.selectedDockItem,
+                dragX: sourceX,
+                predictedDragX: sourceX,
+                isFingerTracking: false,
+                didMoveBeyondTap: false
+            )
+        }
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapActivationDelay)
+            guard requestID == dockSelectionTapRequestID else {
+                return
+            }
+
+            playDockCrossingHaptic()
+            withAnimation(.interactiveSpring(response: 0.24, dampingFraction: 0.76, blendDuration: 0.06)) {
+                dockDrag = AppDockInteractionState(
+                    startItem: chrome.selectedDockItem,
+                    activeItem: item,
+                    dragX: destinationX,
+                    predictedDragX: destinationX,
+                    isFingerTracking: false,
+                    didMoveBeyondTap: true
+                )
+            }
+
+            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapTravelDelay)
+            guard requestID == dockSelectionTapRequestID else {
+                return
+            }
+
+            commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
+        }
+    }
+
+    private func dockItem(for locationX: CGFloat, chrome: AppChrome, contentWidth: CGFloat) -> DockItemKind? {
+        guard let index = AppDockSelectionLayout.itemIndex(
+            for: locationX,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        ) else {
+            return nil
+        }
+
+        return chrome.primaryDockItems[index]
+    }
+
+    private func playDockCrossingHaptic() {
+        #if canImport(UIKit)
+        guard !reduceMotion else {
+            return
+        }
+
+        UIImpactFeedbackGenerator(style: .light).impactOccurred(intensity: 0.55)
+        #endif
+    }
+
+    private var collapsedSearchButton: some View {
+        let shape = Circle()
+
+        return Button {
+            onOpenSearch()
+        } label: {
+            Image(systemName: "magnifyingglass")
+                .font(.title2.weight(.medium))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(shape)
+                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: !isSearchRoute)
+        }
+        .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: shape
+        )
+        .nativeGlass(in: shape, interactive: true)
+        .appChromeGlassOutline(in: shape, prominence: 0.42)
+        .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
+        .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchRoute)
+        .accessibilityLabel("Search")
+        .accessibilityIdentifier("AppChrome.SearchButton")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .contentShape(shape)
+        .zIndex(AppChromeLayout.searchMorphZIndex)
+    }
+
+    private func searchOriginGlassShell(kind _: DockItemKind) -> some View {
+        let shape = Circle()
+
+        return Color.clear
+            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+            .contentShape(shape)
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: shape
+            )
+            .nativeGlass(in: shape, interactive: true)
+            .appChromeGlassOutline(in: shape, prominence: 0.34)
+            .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
+            .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: isSearchRoute)
+            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+            .contentShape(shape)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+            .zIndex(AppChromeLayout.searchOriginMorphZIndex)
+    }
+
+    private var searchFieldGlassShell: some View {
+        let shape = RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
+
+        return Color.clear
+            .frame(height: AppChromeLayout.searchFieldHeight)
+            .frame(maxWidth: .infinity)
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: shape
+            )
+            .nativeGlass(in: shape, interactive: true)
+            .appChromeGlassOutline(in: shape, prominence: 0.36)
+            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
+            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+            .zIndex(AppChromeLayout.searchMorphZIndex)
+    }
+
+    private func searchForegroundControls(isKeyboardSearch: Bool, origin: DockItemKind) -> some View {
+        HStack(spacing: AppChromeLayout.bottomSpacing) {
+            if !isKeyboardSearch {
+                searchOriginForegroundButton(kind: origin)
+            }
+
+            searchFieldForegroundCluster
+
+            if isKeyboardSearch {
+                searchDismissKeyboardForegroundButton
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .compositingGroup()
+        .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
+    }
+
+    private func searchOriginForegroundButton(kind: DockItemKind) -> some View {
+        Button {
+            onCloseSearch()
+        } label: {
+            Image(systemName: kind.symbolName)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(Circle())
+                .chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: false)
+                .accessibilityIdentifier("AppChrome.SearchForegroundOriginIcon.\(kind.title)")
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(kind.title)
+        .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .contentShape(Circle())
+    }
+
+    private var searchFieldForegroundCluster: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "magnifyingglass")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
+                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: isSearchRoute)
+                .accessibilityIdentifier("AppChrome.SearchForegroundSearchIcon")
+
+            TextField("Search Vietnamese phrases", text: $searchQuery)
+                .font(.body.weight(.semibold))
+                .foregroundStyle(.primary)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .focused(searchFieldFocus)
+                .accessibilityIdentifier("AppChrome.SearchField")
+                .layoutPriority(1)
+        }
+        .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
+        .frame(height: AppChromeLayout.searchFieldHeight)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous))
+        .onTapGesture {
+            onFocusSearchField()
+        }
+    }
+
+    private var searchDismissKeyboardGlassShell: some View {
+        let shape = Circle()
+
+        return Color.clear
+            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+            .contentShape(shape)
+            .background(
+                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+                in: shape
+            )
+            .nativeGlass(in: shape, interactive: true)
+            .appChromeGlassOutline(in: shape, prominence: 0.34)
+            .nativeGlassMorphID(AppChromeMorphID.searchDismissKeyboard, namespace: chromeNamespace)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+            .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
+    }
+
+    private var searchDismissKeyboardForegroundButton: some View {
+        Button {
+            onClearFocusedSearch()
+        } label: {
+            Image(systemName: "xmark")
+                .font(.title2.weight(.semibold))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
+        .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
+    }
+
+    private func searchOriginFallbackButton(kind: DockItemKind) -> some View {
+        let shape = Circle()
+
+        return Button {
+            onCloseSearch()
+        } label: {
+            Image(systemName: kind.symbolName)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(shape)
+        }
+        .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: shape
+        )
+        .nativeGlass(in: shape, interactive: true)
+        .appChromeGlassOutline(in: shape, prominence: 0.34)
+        .accessibilityLabel(kind.title)
+        .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .contentShape(shape)
+        .zIndex(AppChromeLayout.searchOriginMorphZIndex)
+    }
+
+    private var searchFieldFallbackCluster: some View {
+        let shape = RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
+
+        return HStack(spacing: 10) {
+            Image(systemName: "magnifyingglass")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
+
+            TextField("Search Vietnamese phrases", text: $searchQuery)
+                .font(.body.weight(.semibold))
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .focused(searchFieldFocus)
+                .accessibilityIdentifier("AppChrome.SearchField")
+        }
+        .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
+        .frame(height: AppChromeLayout.searchFieldHeight)
+        .frame(maxWidth: .infinity)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: shape
+        )
+        .nativeGlass(in: shape, interactive: true)
+        .appChromeGlassOutline(in: shape, prominence: 0.36)
+        .zIndex(AppChromeLayout.searchMorphZIndex)
+    }
+
+    private var searchDismissKeyboardFallbackButton: some View {
+        let shape = Circle()
+
+        return Button {
+            onClearFocusedSearch()
+        } label: {
+            Image(systemName: "xmark")
+                .font(.title2.weight(.semibold))
+                .foregroundStyle(.primary)
+                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+                .contentShape(shape)
+        }
+        .buttonStyle(.plain)
+        .background(
+            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
+            in: shape
+        )
+        .nativeGlass(in: shape, interactive: true)
+        .appChromeGlassOutline(in: shape, prominence: 0.34)
+        .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
+        .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
+        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+        .contentShape(shape)
+        .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
+    }
+
+    private func resetDockInteraction() {
+        dockSelectionTapRequestID += 1
+        dockDrag = .inactive
+    }
+}
+
 private struct AppChromeGlassOutline<S: InsettableShape>: ViewModifier {
     let shape: S
     var prominence: Double
@@ -2722,31 +3444,31 @@ private struct AppChromeGlassOutline<S: InsettableShape>: ViewModifier {
         content
             .overlay {
                 shape
-                    .strokeBorder(.white.opacity(0.34 + 0.48 * clampedProminence), lineWidth: 0.65 + 0.65 * clampedProminence)
+                    .strokeBorder(.white.opacity(0.22 + 0.30 * clampedProminence), lineWidth: 0.45 + 0.35 * clampedProminence)
                     .blendMode(.screen)
 
                 shape
                     .strokeBorder(
                         AngularGradient(
                             colors: [
-                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.42 * clampedProminence),
-                                Color(red: 0.95, green: 0.42, blue: 1.0).opacity(0.32 * clampedProminence),
+                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.18 * clampedProminence),
+                                Color(red: 0.95, green: 0.42, blue: 1.0).opacity(0.14 * clampedProminence),
                                 .white.opacity(0.0),
-                                Color(red: 1.0, green: 0.87, blue: 0.36).opacity(0.28 * clampedProminence),
-                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.42 * clampedProminence),
+                                Color(red: 1.0, green: 0.87, blue: 0.36).opacity(0.12 * clampedProminence),
+                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.18 * clampedProminence),
                             ],
                             center: .center
                         ),
-                        lineWidth: 1.6 + 0.9 * clampedProminence
+                        lineWidth: 0.8 + 0.4 * clampedProminence
                     )
                     .blendMode(.screen)
 
                 shape
-                    .strokeBorder(Color.black.opacity(0.02 + 0.03 * clampedProminence), lineWidth: 0.65)
+                    .strokeBorder(Color.black.opacity(0.015 + 0.02 * clampedProminence), lineWidth: 0.5)
                     .blendMode(.multiply)
             }
-            .shadow(color: .white.opacity(0.16 + 0.28 * clampedProminence), radius: 16 + 8 * clampedProminence, x: 0, y: 0)
-            .shadow(color: .black.opacity(0.055 + 0.055 * clampedProminence), radius: 14 + 10 * clampedProminence, x: 0, y: 6 + 6 * clampedProminence)
+            .shadow(color: .white.opacity(0.10 + 0.16 * clampedProminence), radius: 10 + 6 * clampedProminence, x: 0, y: 0)
+            .shadow(color: .black.opacity(0.035 + 0.04 * clampedProminence), radius: 10 + 8 * clampedProminence, x: 0, y: 4 + 4 * clampedProminence)
     }
 }
 
@@ -2800,9 +3522,9 @@ private struct AppShellDockSelectionLens: View {
     var body: some View {
         let cornerRadius = height / 2
         let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-        let surfaceOpacity = isDragging ? 0.64 : (isPressed ? 0.56 : 0.24)
-        let highlightOpacity = isDragging ? 0.52 : (isPressed ? 0.38 : 0.12)
-        let edgeProminence = isDragging ? 0.58 : (isPressed ? 0.36 : 0.08)
+        let surfaceOpacity = isDragging ? 0.50 : (isPressed ? 0.42 : 0.18)
+        let highlightOpacity = isDragging ? 0.34 : (isPressed ? 0.24 : 0.08)
+        let edgeProminence = isDragging ? 0.38 : (isPressed ? 0.24 : 0.06)
 
         ZStack {
             shape
@@ -2854,11 +3576,11 @@ private struct AppShellDockSelectionLens: View {
                     .strokeBorder(
                         AngularGradient(
                             colors: [
-                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.72 : 0.42),
-                                Color(red: 0.88, green: 0.18, blue: 1.0).opacity(isDragging ? 0.58 : 0.32),
-                                .white.opacity(isDragging ? 0.72 : 0.48),
-                                Color(red: 1.0, green: 0.80, blue: 0.10).opacity(isDragging ? 0.50 : 0.28),
-                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.72 : 0.42),
+                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.42 : 0.26),
+                                Color(red: 0.88, green: 0.18, blue: 1.0).opacity(isDragging ? 0.34 : 0.20),
+                                .white.opacity(isDragging ? 0.48 : 0.34),
+                                Color(red: 1.0, green: 0.80, blue: 0.10).opacity(isDragging ? 0.30 : 0.18),
+                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.42 : 0.26),
                             ],
                             center: .center
                         ),
@@ -3001,26 +3723,35 @@ struct HomeView: View {
                         header
                             .id(Self.scrollTopID)
 
-                        phraseCardTestShelf
-
-                        cityShelf
-
-                        continueShelf
-                            .padding(.horizontal, HomeLayout.horizontalPadding)
-
-                        practiceScenariosShelf
+                        if hasPersonalProgress {
+                            personalProgressShelves
+                        }
 
                         useNowShelf
 
-                        savedForLaterShelf
-                            .padding(.horizontal, HomeLayout.horizontalPadding)
+                        homepagePhraseShelf("first-hour")
 
-                        relationshipShelf
+                        cityShelf
+
+                        homepagePhraseShelf("food-coffee")
+
+                        practiceScenariosShelf
+
+                        homepagePhraseShelf("taxi-getting-around")
 
                         situationShelves
 
-                        practiceListShelf
-                            .padding(.horizontal, HomeLayout.horizontalPadding)
+                        homepagePhraseShelf("when-stuck")
+
+                        homepagePhraseShelf("hotel-basics")
+
+                        relationshipShelf
+
+                        homepagePhraseShelf("money-shopping")
+
+                        homepagePhraseShelf("help-emergency")
+
+                        featuredPhrasesShelf
                     }
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
@@ -3072,8 +3803,23 @@ struct HomeView: View {
         }
     }
 
+    private var personalProgressShelves: some View {
+        VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+            continueShelf
+
+            if !savedItems.isEmpty {
+                savedForLaterShelf
+            }
+
+            if !savedItems.isEmpty || !practiceItems.isEmpty {
+                practiceListShelf
+            }
+        }
+        .padding(.horizontal, HomeLayout.horizontalPadding)
+    }
+
     private var continueShelf: some View {
-        HomeShelf(title: "Keep going", subtitle: "Recent pages, saved phrases, and practice") {
+        HomeShelf(title: "Keep going", subtitle: "Recent pages and saved phrases") {
             HomeContinuePanel(
                 item: continueItem,
                 savedCount: savedItems.count,
@@ -3093,14 +3839,32 @@ struct HomeView: View {
     }
 
     private var useNowShelf: some View {
-        HomeShelf(title: "Use now", subtitle: "Quick phrases for everyday moments") {
-            HomeQuickPhraseGrid(items: HomeContent.useNowItems, onOpenDetail: onOpenDetail)
+        HomeShelf(title: "Use now", subtitle: "") {
+            HomeFeaturedPhraseCarousel(
+                items: HomeContent.useNowFeaturePhraseCardItems,
+                heroMorphPageID: heroMorphPageID,
+                chromeNamespace: chromeNamespace,
+                onOpenDetail: onOpenFeaturedDetail,
+                isSaved: { intentStore.isPageSaved($0) },
+                onToggleSaved: { intentStore.toggleSavedPage($0) }
+            )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
     }
 
-    private var phraseCardTestShelf: some View {
-        HomeShelf(title: "Test phrase cards", subtitle: "Larger listen cards for common moments") {
+    @ViewBuilder
+    private func homepagePhraseShelf(_ id: String) -> some View {
+        if let shelf = HomeContent.homepagePhraseShelf(id) {
+            HomeRoutePhraseShelf(
+                shelf: shelf,
+                onOpenDetail: onOpenDetail,
+                onOpenCollection: onOpenCollection
+            )
+        }
+    }
+
+    private var featuredPhrasesShelf: some View {
+        HomeShelf(title: "Listen closer", subtitle: "") {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.featuredPhraseCardItems,
                 heroMorphPageID: heroMorphPageID,
@@ -3162,10 +3926,10 @@ struct HomeView: View {
     }
 
     private var practiceListShelf: some View {
-        HomeShelf(title: "Your practice list", subtitle: "Save pages now and rehearse them later") {
+        HomeShelf(title: "Message list", subtitle: "Save pages now and rehearse them later") {
             LazyVStack(spacing: 12) {
                 HomePracticeListRow(
-                    title: "Ready to practice",
+                    title: "Ready for Messages",
                     subtitle: practiceReadySubtitle,
                     symbolName: "bookmark.fill",
                     tintName: .green,
@@ -3200,12 +3964,13 @@ struct HomeView: View {
     }
 
     private var savedForLaterDisplayItems: [HomePhraseItem] {
-        let resolvedSavedItems = Array(savedItems.prefix(2))
-        guard resolvedSavedItems.isEmpty else {
-            return resolvedSavedItems
-        }
+        Array(savedItems.prefix(4))
+    }
 
-        return HomeContent.savedFallbackItems
+    private var hasPersonalProgress: Bool {
+        !intentStore.recentPageIDs.isEmpty
+            || !intentStore.savedPageIDs.isEmpty
+            || !intentStore.practicePageIDs.isEmpty
     }
 
     private var practiceItems: [HomePhraseItem] {
@@ -3213,12 +3978,16 @@ struct HomeView: View {
     }
 
     private var practiceReadySubtitle: String {
-        let count = max(savedItems.count, practiceItems.count)
+        let count = practiceItems.isEmpty ? savedItems.count : practiceItems.count
         if count == 0 {
-            return "Continue with saved pages"
+            return "Save a few phrases to start a message"
         }
 
-        return "Continue with \(count) saved \(count == 1 ? "page" : "pages")"
+        if practiceItems.isEmpty {
+            return "Build a short message from \(count) saved \(count == 1 ? "page" : "pages")"
+        }
+
+        return "Continue with \(count) message-ready \(count == 1 ? "page" : "pages")"
     }
 
     private var recentlyViewedSubtitle: String {
@@ -3337,6 +4106,10 @@ enum HomeLayout {
     static let quickPhraseGridRowSpacing: CGFloat = 12
     static let featurePhraseCardWidth: CGFloat = 344
     static let featurePhraseCardHeight: CGFloat = 326
+    static let tallPhraseCardWidth: CGFloat = 158
+    static let tallPhraseCardHeight: CGFloat = 190
+    static let compactPhraseRowWidth: CGFloat = 278
+    static let compactPhraseRowHeight: CGFloat = 88
     static let continuePrimaryIconSize: CGFloat = 58
     static let continueActionHeight: CGFloat = 46
     static let messageContactWidth: CGFloat = 104
@@ -3491,12 +4264,66 @@ private struct HomeScenario: Identifiable {
     var practiceAction: BrowseCollectionPracticeAction { .practiceScenario(scenarioID) }
 }
 
+private enum HomePhraseShelfLayout {
+    case quickTiles
+    case spotlightRows
+    case mediumGrid
+    case wideRows
+    case tallCards
+}
+
 private struct HomeSituationCard: Identifiable {
     let id: String
     let title: String
     let subtitle: String
     let imageName: String
     let route: BrowseCollectionRoute
+}
+
+private struct HomePhraseShelfDefinition: Identifiable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let route: BrowseCollectionRoute
+    let sourceCategoryIDs: [String]
+    let pageIDs: [String]
+    let layout: HomePhraseShelfLayout
+
+    init(
+        id: String,
+        title: String,
+        subtitle: String,
+        route: BrowseCollectionRoute,
+        sourceCategoryIDs: [String],
+        pageIDs: [String],
+        layout: HomePhraseShelfLayout = .quickTiles
+    ) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.route = route
+        self.sourceCategoryIDs = sourceCategoryIDs
+        self.pageIDs = pageIDs
+        self.layout = layout
+    }
+
+    var items: [HomePhraseItem] {
+        var seen = Set<String>()
+        var rows: [HomePhraseItem] = []
+
+        for item in pageIDs.compactMap(HomePhraseItem.resolve(pageID:)) {
+            guard seen.insert(item.pageID).inserted else {
+                continue
+            }
+            rows.append(item)
+        }
+
+        return rows
+    }
+
+    var browseTitle: String {
+        BrowseSearchDestinations.collectionDescriptor(for: route)?.title ?? "Browse"
+    }
 }
 
 private struct HomeCityCard: Identifiable {
@@ -3541,10 +4368,134 @@ enum HomeUseNowCatalog {
         "viet-family-food-pay-now",
         "viet-family-bathroom-where",
     ]
+
+    static let featureCardIDs = Array(starterIDs.prefix(6))
 }
 
 private enum HomeContent {
     static let useNowIDs = HomeUseNowCatalog.starterIDs
+
+    static let homepagePhraseShelves: [HomePhraseShelfDefinition] = [
+        HomePhraseShelfDefinition(
+            id: "first-hour",
+            title: "First hour in Vietnam",
+            subtitle: "Airport, pickup, SIM, ATM, and check-in.",
+            route: .category("first-day"),
+            sourceCategoryIDs: ["airport-border-arrival", "hotel-accommodation", "transport", "directions-navigation"],
+            pageIDs: [
+                "viet-phrase-airport-2",
+                "viet-phrase-airport-5",
+                "viet-phrase-airport-3",
+                "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
+                "viet-phrase-v500-tran-please-take-me-to-this-hotel",
+                "viet-phrase-hotel-1",
+                "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
+                "viet-phrase-phone-1",
+            ],
+            layout: .spotlightRows
+        ),
+        HomePhraseShelfDefinition(
+            id: "food-coffee",
+            title: "Food & coffee",
+            subtitle: "Menu, water, coffee, spice, allergies, and paying.",
+            route: .category("food"),
+            sourceCategoryIDs: ["food-drink", "money-numbers-prices"],
+            pageIDs: [
+                "viet-phrase-food-menu",
+                "viet-family-food-bottled-water",
+                "viet-phrase-coffee-1",
+                "viet-phrase-food-3",
+                "viet-family-food-peanut-allergy",
+                "viet-phrase-coffee-7",
+            ],
+            layout: .mediumGrid
+        ),
+        HomePhraseShelfDefinition(
+            id: "when-stuck",
+            title: "When you get stuck",
+            subtitle: "Slow down, repeat, write it, use English, or ask for help.",
+            route: .category("polite-repair"),
+            sourceCategoryIDs: ["understanding-repair", "polite-basics", "problems-help"],
+            pageIDs: [
+                "viet-phrase-problems-2",
+                "viet-phrase-problems-3",
+                "viet-phrase-repair-1",
+                "viet-phrase-repair-2",
+                "viet-phrase-repair-english-help",
+                "viet-phrase-help-need-help-direct",
+                "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
+            ],
+            layout: .quickTiles
+        ),
+        HomePhraseShelfDefinition(
+            id: "taxi-getting-around",
+            title: "Taxi & getting around",
+            subtitle: "Pickup points, drivers, addresses, and getting back.",
+            route: .category("getting-around"),
+            sourceCategoryIDs: ["transport", "directions-navigation"],
+            pageIDs: [
+                "viet-phrase-taxi-1",
+                "viet-phrase-directions-8",
+                "viet-phrase-v500-tran-please-call-the-driver",
+                "viet-phrase-v900-tran-please-take-me-to-this-address",
+                "viet-phrase-v500-tran-please-take-me-to-this-hotel",
+                "viet-family-hotel-call-taxi",
+            ],
+            layout: .wideRows
+        ),
+        HomePhraseShelfDefinition(
+            id: "hotel-basics",
+            title: "Hotel basics",
+            subtitle: "Reservation, passport, Wi-Fi, checkout, and room help.",
+            route: .category("hotel"),
+            sourceCategoryIDs: ["hotel-accommodation", "time-dates-booking", "local-services-everyday-tasks"],
+            pageIDs: [
+                "viet-phrase-hotel-1",
+                "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in",
+                "viet-phrase-phone-1",
+                "viet-phrase-hotel-3",
+                "viet-phrase-v900-hote-acco-the-reservation-is-under-this-name",
+            ],
+            layout: .spotlightRows
+        ),
+        HomePhraseShelfDefinition(
+            id: "money-shopping",
+            title: "Money & shopping",
+            subtitle: "Prices, receipts, cards, cash, and sizes.",
+            route: .category("shopping"),
+            sourceCategoryIDs: ["shopping", "money-numbers-prices", "local-services-everyday-tasks"],
+            pageIDs: [
+                "viet-phrase-money-how-much-common",
+                "viet-phrase-price-1",
+                "viet-phrase-v500-mone-numb-pric-can-i-have-a-receipt",
+                "viet-phrase-v500-mone-numb-pric-can-i-try-another-card",
+                "viet-phrase-price-9",
+                "viet-phrase-shop-1",
+            ],
+            layout: .mediumGrid
+        ),
+        HomePhraseShelfDefinition(
+            id: "help-emergency",
+            title: "Help & emergency",
+            subtitle: "Need help, pharmacy, doctor, police, passport.",
+            route: .category("emergency"),
+            sourceCategoryIDs: ["problems-help", "health-pharmacy", "emergency-safety"],
+            pageIDs: [
+                "viet-phrase-help-need-help-direct",
+                "viet-phrase-health-pharmacy-clearer",
+                "viet-phrase-problems-6",
+                "viet-phrase-emergency-3",
+                "viet-phrase-emergency-4",
+                "viet-phrase-emergency-1",
+                "viet-phrase-emergency-hospital",
+            ],
+            layout: .wideRows
+        ),
+    ]
+
+    static func homepagePhraseShelf(_ id: String) -> HomePhraseShelfDefinition? {
+        homepagePhraseShelves.first { $0.id == id }
+    }
 
     static let featuredIDs = [
         "viet-thank-you",
@@ -3558,12 +4509,18 @@ private enum HomeContent {
         useNowIDs.compactMap(HomePhraseItem.resolve(pageID:))
     }
 
-    static var savedFallbackItems: [HomePhraseItem] {
-        [
-            "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
-            "viet-phrase-hotel-3",
-        ].compactMap(HomePhraseItem.resolve(pageID:))
+    static var useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] {
+        HomeUseNowCatalog.featureCardIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
     }
+
+    static var savedFallbackItems: [HomePhraseItem] {
+        savedFallbackPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
+    }
+
+    static let savedFallbackPageIDs = [
+        "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
+        "viet-phrase-hotel-3",
+    ]
 
     static var featuredItems: [HomePhraseItem] {
         featuredIDs.compactMap(HomePhraseItem.resolve(pageID:))
@@ -3686,12 +4643,33 @@ private enum HomeContent {
     ]
 }
 
+#if DEBUG
+enum HomePageLinkRegistry {
+    static var homepageListingPageIDs: [String] {
+        uniquePageIDs(
+            HomeUseNowCatalog.featureCardIDs
+            + HomeContent.homepagePhraseShelves.flatMap(\.pageIDs)
+            + HomeContent.featuredIDs
+            + HomeContent.savedFallbackPageIDs
+            + PhrasePage.xinChao.localGreetings.prefix(3).compactMap(\.detailPageID)
+        )
+    }
+
+    private static func uniquePageIDs(_ pageIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        return pageIDs.filter { seen.insert($0).inserted }
+    }
+}
+#endif
+
 private struct HomeShelf<Content: View>: View {
     let title: String
+    let subtitle: String
     let content: Content
 
-    init(title: String, subtitle _: String, @ViewBuilder content: () -> Content) {
+    init(title: String, subtitle: String, @ViewBuilder content: () -> Content) {
         self.title = title
+        self.subtitle = subtitle
         self.content = content()
     }
 
@@ -3702,6 +4680,7 @@ private struct HomeShelf<Content: View>: View {
                 .foregroundStyle(.primary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.82)
+                .accessibilityHint(subtitle)
 
             content
         }
@@ -4031,6 +5010,7 @@ private struct HomeScenarioRail: View {
         }
         .frame(height: HomeLayout.messageRailHeight)
         .scrollClipDisabled()
+        .accessibilityIdentifier("HomeScenarioRail")
     }
 }
 
@@ -4414,6 +5394,262 @@ private extension View {
     }
 }
 
+private struct HomeRoutePhraseShelf: View {
+    let shelf: HomePhraseShelfDefinition
+    let onOpenDetail: (String) -> Void
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    var body: some View {
+        let items = shelf.items
+
+        if !items.isEmpty {
+            switch shelf.layout {
+            case .quickTiles:
+                quickTileShelf(items: items)
+            case .spotlightRows:
+                spotlightRowsShelf(items: items)
+            case .mediumGrid:
+                mediumGridShelf(items: items)
+            case .wideRows:
+                wideRowsShelf(items: items)
+            case .tallCards:
+                tallCardsShelf(items: items)
+            }
+        }
+    }
+
+    private func quickTileShelf(items: [HomePhraseItem]) -> some View {
+        HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top, spacing: 12) {
+                    ForEach(items) { item in
+                        HomeQuickPhraseCard(item: item, onOpenDetail: onOpenDetail)
+                    }
+
+                    HomeBrowseRouteCard(
+                        identifier: shelf.id,
+                        title: "More",
+                        subtitle: shelf.browseTitle,
+                        route: shelf.route,
+                        onOpenCollection: onOpenCollection
+                    )
+                }
+                .padding(.trailing, HomeLayout.horizontalPadding)
+                .padding(.bottom, 2)
+            }
+            .frame(height: HomeLayout.quickPhraseCardHeight)
+            .scrollClipDisabled()
+        }
+        .padding(.leading, HomeLayout.horizontalPadding)
+    }
+
+    private func spotlightRowsShelf(items: [HomePhraseItem]) -> some View {
+        let leadingItem = items.first
+        let sideItems = Array(items.dropFirst().prefix(2))
+        let trailingItems = Array(items.dropFirst(3).prefix(2))
+
+        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top, spacing: 12) {
+                    if let leadingItem {
+                        HomePhraseCard(item: leadingItem, onOpenDetail: onOpenDetail)
+                    }
+
+                    if !sideItems.isEmpty {
+                        VStack(spacing: 12) {
+                            ForEach(sideItems) { item in
+                                HomeCompactPhraseRow(item: item, onOpenDetail: onOpenDetail)
+                            }
+                        }
+                    }
+
+                    ForEach(trailingItems) { item in
+                        HomePhraseCard(item: item, onOpenDetail: onOpenDetail)
+                    }
+
+                    HomeBrowseRouteCard(
+                        identifier: shelf.id,
+                        title: "More",
+                        subtitle: shelf.browseTitle,
+                        route: shelf.route,
+                        onOpenCollection: onOpenCollection
+                    )
+                    .frame(height: HomeLayout.tallPhraseCardHeight)
+                }
+                .padding(.trailing, HomeLayout.horizontalPadding)
+                .padding(.bottom, 3)
+            }
+            .frame(height: HomeLayout.tallPhraseCardHeight)
+            .scrollClipDisabled()
+        }
+        .padding(.leading, HomeLayout.horizontalPadding)
+    }
+
+    private func mediumGridShelf(items: [HomePhraseItem]) -> some View {
+        let gridItems = Array(items.prefix(4))
+
+        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
+            VStack(spacing: 12) {
+                LazyVGrid(
+                    columns: [
+                        GridItem(.flexible(), spacing: 12),
+                        GridItem(.flexible(), spacing: 12),
+                    ],
+                    spacing: 12
+                ) {
+                    ForEach(gridItems) { item in
+                        HomeSavedPhraseCard(item: item, onOpenDetail: onOpenDetail)
+                    }
+                }
+
+                HomeBrowseRouteWideCard(
+                    identifier: shelf.id,
+                    title: "More \(shelf.browseTitle)",
+                    subtitle: shelf.subtitle,
+                    route: shelf.route,
+                    onOpenCollection: onOpenCollection
+                )
+            }
+        }
+        .padding(.horizontal, HomeLayout.horizontalPadding)
+    }
+
+    private func wideRowsShelf(items: [HomePhraseItem]) -> some View {
+        let rowItems = Array(items.prefix(4))
+
+        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
+            LazyVStack(spacing: 12) {
+                ForEach(rowItems) { item in
+                    HomeWidePhraseButton(item: item, onOpenDetail: onOpenDetail)
+                }
+
+                HomeBrowseRouteWideCard(
+                    identifier: shelf.id,
+                    title: "More \(shelf.browseTitle)",
+                    subtitle: shelf.subtitle,
+                    route: shelf.route,
+                    onOpenCollection: onOpenCollection
+                )
+            }
+        }
+        .padding(.horizontal, HomeLayout.horizontalPadding)
+    }
+
+    private func tallCardsShelf(items: [HomePhraseItem]) -> some View {
+        HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top, spacing: 12) {
+                    ForEach(items) { item in
+                        HomePhraseCard(item: item, onOpenDetail: onOpenDetail)
+                    }
+
+                    HomeBrowseRouteCard(
+                        identifier: shelf.id,
+                        title: "More",
+                        subtitle: shelf.browseTitle,
+                        route: shelf.route,
+                        onOpenCollection: onOpenCollection
+                    )
+                }
+                .padding(.trailing, HomeLayout.horizontalPadding)
+                .padding(.bottom, 2)
+            }
+            .frame(height: HomeLayout.tallPhraseCardHeight)
+            .scrollClipDisabled()
+        }
+        .padding(.leading, HomeLayout.horizontalPadding)
+    }
+}
+
+private struct HomeBrowseRouteCard: View {
+    let identifier: String
+    let title: String
+    let subtitle: String
+    let route: BrowseCollectionRoute
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    var body: some View {
+        Button {
+            onOpenCollection(route)
+        } label: {
+            VStack(spacing: 10) {
+                ZStack {
+                    Circle()
+                        .fill(AccentTint.red.color.opacity(0.12))
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 23, weight: .black))
+                        .foregroundStyle(AccentTint.red.color)
+                }
+                .frame(width: 52, height: 52)
+
+                VStack(spacing: 3) {
+                    Text(title)
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+
+                    Text(subtitle)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.78)
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 12)
+            .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
+            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("HomeShelf.More.\(identifier)")
+    }
+}
+
+private struct HomeBrowseRouteWideCard: View {
+    let identifier: String
+    let title: String
+    let subtitle: String
+    let route: BrowseCollectionRoute
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    var body: some View {
+        Button {
+            onOpenCollection(route)
+        } label: {
+            HStack(spacing: 14) {
+                ZStack {
+                    Circle()
+                        .fill(AccentTint.red.color.opacity(0.12))
+
+                    Image(systemName: "chevron.right")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(AccentTint.red.color)
+                }
+                .frame(width: 48, height: 48)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .layoutPriority(1)
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, minHeight: 76)
+            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("HomeShelf.More.\(identifier)")
+        .accessibilityHint(subtitle)
+    }
+}
+
 private struct HomeHorizontalPhraseShelf: View {
     let title: String
     let subtitle: String
@@ -4487,6 +5723,54 @@ private struct HomeWidePhraseButton: View {
     }
 }
 
+private struct HomeCompactPhraseRow: View {
+    let item: HomePhraseItem
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        HStack(spacing: 10) {
+            AudioSpeakerButton(
+                tint: item.tintName,
+                size: 42,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "HomeCompact.Audio.\(item.pageID)"
+            )
+
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                HStack(spacing: 8) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.title)
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.74)
+
+                        Text(item.subtitle)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.76)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .layoutPriority(1)
+
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.tertiary)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(12)
+        .frame(width: HomeLayout.compactPhraseRowWidth, height: HomeLayout.compactPhraseRowHeight)
+        .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
+        .accessibilityIdentifier("HomeCompact.\(item.pageID)")
+    }
+}
+
 private struct HomePhraseCard: View {
     let item: HomePhraseItem
     let onOpenDetail: (String) -> Void
@@ -4496,16 +5780,9 @@ private struct HomePhraseCard: View {
             Button {
                 onOpenDetail(item.pageID)
             } label: {
-                VStack(alignment: .leading, spacing: 12) {
-                    HStack {
-                        Image(systemName: item.symbolName)
-                            .font(.title3.weight(.semibold))
-                            .foregroundStyle(item.tintName.color)
-                            .frame(width: 44, height: 44)
-                            .nativeGlass(cornerRadius: 22)
-
-                        Spacer()
-                    }
+                VStack(alignment: .leading, spacing: 10) {
+                    Color.clear
+                    .frame(height: 52)
 
                     VStack(alignment: .leading, spacing: 4) {
                         Text(item.title)
@@ -4518,7 +5795,7 @@ private struct HomePhraseCard: View {
                         Text(item.subtitle)
                             .font(.caption)
                             .foregroundStyle(.secondary)
-                            .lineLimit(3)
+                            .lineLimit(2)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .layoutPriority(1)
@@ -4531,7 +5808,7 @@ private struct HomePhraseCard: View {
                     }
                 }
                 .padding(14)
-                .frame(width: 152, height: 190, alignment: .topLeading)
+                .frame(width: HomeLayout.tallPhraseCardWidth, height: HomeLayout.tallPhraseCardHeight, alignment: .topLeading)
                 .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
                 .shadow(color: .black.opacity(0.06), radius: 16, x: 0, y: 10)
             }
@@ -4540,7 +5817,7 @@ private struct HomePhraseCard: View {
 
             AudioSpeakerButton(
                 tint: item.tintName,
-                size: 38,
+                size: 50,
                 audioKey: item.audioKey,
                 accessibilityIdentifier: "HomePhrase.Audio.\(item.pageID)"
             )

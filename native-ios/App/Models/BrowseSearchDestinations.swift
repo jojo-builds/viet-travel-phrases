@@ -14,6 +14,25 @@ enum BrowseCollectionRoute: Hashable, Equatable, Identifiable {
     }
 }
 
+struct BrowseCollectionFocusRequest: Equatable {
+    static let messageSectionScrollTargetID = "BrowseCollection.MessageSection"
+
+    let id: Int
+    let route: BrowseCollectionRoute
+    let target: Target
+
+    enum Target: Equatable {
+        case messageScenario(PracticeScenarioID)
+
+        var scrollTargetID: String {
+            switch self {
+            case .messageScenario:
+                return BrowseCollectionFocusRequest.messageSectionScrollTargetID
+            }
+        }
+    }
+}
+
 enum BrowseCollectionPracticeAction: Equatable {
     case addStarterPages([String])
     case practiceMode(PracticeMode)
@@ -237,6 +256,8 @@ struct BrowseCollectionShelf: Identifiable, Equatable {
 }
 
 struct BrowseCollectionDescriptor: Identifiable, Equatable {
+    static let messageSectionDisplayTitle = "Quick conversations"
+
     let route: BrowseCollectionRoute
     let title: String
     let subtitle: String
@@ -291,6 +312,10 @@ struct BrowseCollectionDescriptor: Identifiable, Equatable {
     }
 
     var id: String { route.id }
+
+    var browseMessageSectionTitle: String? {
+        messageScenarioIDs.isEmpty ? nil : Self.messageSectionDisplayTitle
+    }
 
     var messageScenarioIDs: [PracticeScenarioID] {
         guard let messageSectionTitle else {
@@ -370,8 +395,8 @@ enum BrowseSearchDestinations {
         ),
         BrowseDestination(
             id: "food",
-            title: "Food",
-            subtitle: "Order, allergies, water, pay",
+            title: "Food & coffee",
+            subtitle: "Order, coffee, allergies, pay",
             categoryIDs: ["food-drink", "money-numbers-prices"],
             symbolName: "takeoutbag.and.cup.and.straw.fill",
             tintName: .orange,
@@ -595,13 +620,16 @@ enum BrowseSearchDestinations {
     static func firstOpenablePageID(categoryIDs: [String]) -> String? {
         categoryIDs.lazy
             .flatMap { categoryID in PhraseCatalog.items(selectedCategoryID: categoryID) }
+            .filter(shouldSurfaceCatalogItemInBrowse)
             .compactMap { item in PhraseCatalog.canonicalPageID(forOpenablePageID: item.pageID) }
             .first
     }
 
     static func itemCount(categoryIDs: [String]) -> Int {
         let pageIDs = categoryIDs.flatMap { categoryID in
-            PhraseCatalog.items(selectedCategoryID: categoryID).map(\.pageID)
+            PhraseCatalog.items(selectedCategoryID: categoryID)
+                .filter(shouldSurfaceCatalogItemInBrowse)
+                .map(\.pageID)
         }
 
         return Set(pageIDs).count
@@ -613,6 +641,10 @@ enum BrowseSearchDestinations {
 
         for categoryID in categoryIDs {
             for item in PhraseCatalog.items(selectedCategoryID: categoryID) {
+                guard shouldSurfaceCatalogItemInBrowse(item) else {
+                    continue
+                }
+
                 guard seen.insert(item.pageID).inserted else {
                     continue
                 }
@@ -645,7 +677,14 @@ enum BrowseSearchDestinations {
     }
 
     static func searchResults(for query: String, limit: Int) -> [BrowseSearchPhraseItem] {
-        PhraseSearchIndex.search(query, limit: limit)
+        let rawResults = PhraseSearchIndex.search(query, limit: max(limit * 3, limit))
+        let allowsDerivedPlacePhrases = allowsDerivedPlacePhraseSearchResults(for: query)
+        let filteredResults = rawResults.filter { result in
+            allowsDerivedPlacePhrases || !isDerivedPlacePhrase(pageID: result.pageID)
+        }
+        let results = filteredResults.isEmpty ? rawResults : filteredResults
+
+        return results
             .prefix(limit)
             .map(BrowseSearchPhraseItem.fromSearchResult)
     }
@@ -819,13 +858,16 @@ enum BrowseSearchDestinations {
 
         let destination = allCategoryDestinations.first { $0.id == id }
         let category = PhraseCatalog.category(withID: id)
-        let entityContent = categoryEntityContent(for: id, tintName: destination?.tintName ?? category?.tintName ?? categoryEntityTint(for: id) ?? .green)
+        let categoryIDs = destination?.categoryIDs ?? [id]
+        let entityContent = categoryEntityContent(
+            for: id,
+            tintName: destination?.tintName ?? category?.tintName ?? categoryEntityTint(for: id) ?? .green
+        )
 
         guard destination != nil || category != nil || entityContent != nil else {
             return nil
         }
 
-        let categoryIDs = destination?.categoryIDs ?? [id]
         let title = collectionTitle(for: id, fallback: destination?.title ?? category?.title ?? categoryEntityTitle(for: id) ?? "Browse")
         let tint = destination?.tintName ?? category?.tintName ?? categoryEntityTint(for: id) ?? .green
         let symbolName = destination?.symbolName ?? category?.symbolName ?? categoryEntitySymbolName(for: id) ?? "square.grid.2x2"
@@ -904,7 +946,7 @@ enum BrowseSearchDestinations {
         let cityHub = cityHubDescriptor(for: id, title: title, city: city, cityItems: cityItems, groupedItems: groupedItems)
         let starterItems = cityHub.namesToKnowItems
         let subcategories = orderedSubcategoryIDs.map { subcategoryID in
-            let rows = groupedItems[subcategoryID, default: []]
+            let rows = groupedItems[subcategoryID, default: []].filter(shouldSurfaceCityItemInBrowse)
             let title = rows.first?.subcategoryTitle ?? citySubcategoryTitles[subcategoryID] ?? "City phrases"
             return BrowseCollectionSubcategory(
                 id: "\(id).\(subcategoryID)",
@@ -920,7 +962,10 @@ enum BrowseSearchDestinations {
             .filter { $0 != "arrivals-routes" }
             .prefix(3)
             .compactMap { subcategoryID -> BrowseCollectionShelf? in
-                let rows = groupedItems[subcategoryID, default: []].prefix(6).map(\.phraseItem)
+                let rows = groupedItems[subcategoryID, default: []]
+                    .filter(shouldSurfaceCityItemInBrowse)
+                    .prefix(6)
+                    .map(\.phraseItem)
                 guard !rows.isEmpty else {
                     return nil
                 }
@@ -1149,8 +1194,10 @@ enum BrowseSearchDestinations {
         groupedItems: [String: [BrowseCityCollectionItem]]
     ) -> [BrowseSearchPhraseItem] {
         let preferredItems = pageItems(forOpenablePageIDs: spec.preferredPageIDs)
+            .filter(shouldSurfacePhraseItemInBrowse)
         let fallbackItems = spec.subcategoryIDs
             .flatMap { groupedItems[$0, default: []] }
+            .filter(shouldSurfaceCityItemInBrowse)
             .filter { !lowPriorityCityOverviewText($0.title, $0.subtitle) }
             .prefix(8)
             .map(\.phraseItem)
@@ -1205,6 +1252,7 @@ enum BrowseSearchDestinations {
         }()
 
         var items = pageItems(forPhraseIDs: preferredIDs)
+            .filter(shouldSurfacePhraseItemInBrowse)
         if let bathroom = BrowseSearchPhraseItem.resolve(pageID: "viet-family-bathroom-where") {
             items.append(bathroom)
         }
@@ -1215,6 +1263,7 @@ enum BrowseSearchDestinations {
 
         let fallback = cityItems
             .filter { $0.subcategoryID == "arrivals-routes" || $0.subcategoryID == "practical-help-near-places" }
+            .filter(shouldSurfaceCityItemInBrowse)
             .filter { !lowPriorityCityOverviewText($0.title, $0.subtitle) }
             .prefix(5)
             .map(\.phraseItem)
@@ -1520,7 +1569,7 @@ enum BrowseSearchDestinations {
             preferredPageIDs: categoryEntityStarterPreferredPageIDs(for: collectionID),
             limit: 8
         )
-        let subcategories = specs.compactMap { spec -> BrowseCollectionSubcategory? in
+        let entitySubcategories = specs.compactMap { spec -> BrowseCollectionSubcategory? in
             let totalCount = categoryEntityRows(matching: spec.placeKinds).count
             let items = categoryEntityItems(
                 matching: spec.placeKinds,
@@ -1543,6 +1592,15 @@ enum BrowseSearchDestinations {
                 items: items
             )
         }
+        let supplementalSubcategories = categoryEntitySupplementalPhraseSubcategories(
+            for: collectionID,
+            tintName: tintName
+        )
+        let subcategories = categoryEntitySubcategories(
+            entitySubcategories,
+            inserting: supplementalSubcategories,
+            for: collectionID
+        )
 
         guard !starterItems.isEmpty || !subcategories.isEmpty else {
             return nil
@@ -1553,6 +1611,92 @@ enum BrowseSearchDestinations {
             starterItems: starterItems.isEmpty ? Array(subcategories.flatMap(\.items).prefix(8)) : starterItems,
             subcategories: subcategories
         )
+    }
+
+    private static func categoryEntitySupplementalPhraseSubcategories(
+        for collectionID: String,
+        tintName: AccentTint
+    ) -> [BrowseCollectionSubcategory] {
+        switch collectionID {
+        case "food", "food-coffee":
+            let coffeeRows = foodCoffeePhraseRows()
+            let dishRows = foodDishPhraseRows()
+            return [
+                BrowseCollectionSubcategory(
+                    id: "\(collectionID).phrases.coffee-drinks",
+                    title: "Coffee & drinks",
+                    subtitle: "Coffee, tea, and water",
+                    symbolName: "cup.and.saucer.fill",
+                    tintName: tintName,
+                    phraseCount: coffeeRows.count,
+                    items: coffeeRows
+                ),
+                BrowseCollectionSubcategory(
+                    id: "\(collectionID).phrases.dishes-to-order",
+                    title: "Dishes to order",
+                    subtitle: "Pho, banh mi, bun cha, and more",
+                    symbolName: "takeoutbag.and.cup.and.straw.fill",
+                    tintName: tintName,
+                    phraseCount: dishRows.count,
+                    items: dishRows
+                ),
+            ].filter { !$0.items.isEmpty }
+        default:
+            return []
+        }
+    }
+
+    private static func foodCoffeePhraseRows() -> [BrowseSearchPhraseItem] {
+        let preferredCoffeeRows = pageItems(forOpenablePageIDs: [
+            "viet-family-food-coffee-milk",
+            "viet-family-food-coffee-black",
+            "viet-family-food-coffee-bac-xiu",
+        ])
+        let matchingDrinkRows = items(
+            categoryIDs: ["food-drink"],
+            matchingTerms: ["coffee", "tea", "water", "drink"],
+            limit: 12
+        )
+
+        return Array(uniquePhraseItems(preferredCoffeeRows + matchingDrinkRows).prefix(12))
+    }
+
+    private static func foodDishPhraseRows() -> [BrowseSearchPhraseItem] {
+        pageItems(forOpenablePageIDs: [
+            "viet-phrase-ves-order-pho-bowl",
+            "viet-phrase-v500-food-drin-id-like-a-b-nh-m-please",
+            "viet-phrase-ves-order-bun-bo-hue-bowl",
+            "viet-phrase-ves-order-bun-cha-portion",
+            "viet-phrase-ves-order-cao-lau-portion",
+            "viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo",
+            "viet-phrase-vpe-one-item-please-cho-toi-mot-pho-bo",
+            "viet-phrase-vpe-one-item-please-cho-toi-mot-pho-ga",
+            "viet-phrase-vpe-one-item-please-cho-toi-mot-banh-mi-chay",
+            "viet-phrase-vpe-one-item-please-cho-toi-mot-do-chay",
+            "viet-phrase-vpe-one-item-please-cho-toi-mot-com-trang",
+        ])
+    }
+
+    private static func categoryEntitySubcategories(
+        _ entitySubcategories: [BrowseCollectionSubcategory],
+        inserting supplementalSubcategories: [BrowseCollectionSubcategory],
+        for collectionID: String
+    ) -> [BrowseCollectionSubcategory] {
+        guard !supplementalSubcategories.isEmpty else {
+            return entitySubcategories
+        }
+
+        switch collectionID {
+        case "food", "food-coffee":
+            var subcategories = entitySubcategories
+            let insertIndex = subcategories.firstIndex { $0.id.hasSuffix(".entity.cafes") }
+                .map { $0 + 1 }
+                ?? subcategories.count
+            subcategories.insert(contentsOf: supplementalSubcategories, at: insertIndex)
+            return subcategories
+        default:
+            return entitySubcategories + supplementalSubcategories
+        }
     }
 
     private static func categoryEntityRows(matching placeKinds: Set<String>) -> [BrowseCityCollectionItem] {
@@ -1578,6 +1722,7 @@ enum BrowseSearchDestinations {
         let excluded = Set(excludedPageIDs)
         return categoryIDs.compactMap { categoryID in
             let rows = PhraseCatalog.items(selectedCategoryID: categoryID)
+                .filter(shouldSurfaceCatalogItemInBrowse)
                 .filter { !excluded.contains($0.pageID) }
                 .prefix(6)
                 .map { item in
@@ -1612,6 +1757,10 @@ enum BrowseSearchDestinations {
         var rows: [BrowseSearchPhraseItem] = []
 
         for item in preferredPageIDs.compactMap(BrowseSearchPhraseItem.resolve(pageID:)) {
+            guard shouldSurfacePhraseItemInBrowse(item) else {
+                continue
+            }
+
             guard seen.insert(item.pageID).inserted else {
                 continue
             }
@@ -1641,6 +1790,10 @@ enum BrowseSearchDestinations {
 
         for categoryID in categoryIDs {
             for item in PhraseCatalog.items(selectedCategoryID: categoryID) {
+                guard shouldSurfaceCatalogItemInBrowse(item) else {
+                    continue
+                }
+
                 guard seen.insert(item.pageID).inserted else {
                     continue
                 }
@@ -1670,6 +1823,51 @@ enum BrowseSearchDestinations {
         }
 
         return rows
+    }
+
+    private static let derivedPlacePhraseCategoryID = "derived-place-phrases"
+
+    private static let derivedPlacePhraseActionTokens: Set<String> = [
+        "address",
+        "atm",
+        "direction",
+        "directions",
+        "drop",
+        "eat",
+        "find",
+        "get",
+        "go",
+        "near",
+        "nearby",
+        "off",
+        "pickup",
+        "stop",
+        "take",
+        "taxi",
+        "there",
+        "to",
+        "where",
+    ]
+
+    private static func shouldSurfaceCatalogItemInBrowse(_ item: PhraseCatalogItem) -> Bool {
+        !item.categoryIDs.contains(derivedPlacePhraseCategoryID)
+    }
+
+    private static func shouldSurfaceCityItemInBrowse(_ item: BrowseCityCollectionItem) -> Bool {
+        !item.categoryIDs.contains(derivedPlacePhraseCategoryID)
+    }
+
+    private static func shouldSurfacePhraseItemInBrowse(_ item: BrowseSearchPhraseItem) -> Bool {
+        !isDerivedPlacePhrase(pageID: item.pageID)
+    }
+
+    private static func isDerivedPlacePhrase(pageID: String) -> Bool {
+        PhraseCatalog.categoryIDs(forPageID: pageID).contains(derivedPlacePhraseCategoryID)
+    }
+
+    private static func allowsDerivedPlacePhraseSearchResults(for query: String) -> Bool {
+        let tokens = Set(normalize(query).split(separator: " ").map(String.init))
+        return !tokens.intersection(derivedPlacePhraseActionTokens).isEmpty
     }
 
     private static func mastheadImageName(for route: BrowseCollectionRoute) -> String {
@@ -1950,7 +2148,7 @@ enum BrowseSearchDestinations {
                 ),
                 CategoryEntityGroupSpec(
                     id: "cafes",
-                    title: "Cafes",
+                    title: "Coffee shops",
                     subtitle: "Coffee stops and tea houses",
                     symbolName: "cup.and.saucer.fill",
                     placeKinds: ["cafe"],
@@ -1958,17 +2156,6 @@ enum BrowseSearchDestinations {
                         "viet-phrase-city-hanoi-place-giang-cafe",
                         "viet-phrase-city-hoian-place-faifo-coffee",
                         "viet-phrase-city-hoian-place-reaching-out-tea-house",
-                    ]
-                ),
-                CategoryEntityGroupSpec(
-                    id: "dishes",
-                    title: "Dishes",
-                    subtitle: "Local foods to recognize",
-                    symbolName: "takeoutbag.and.cup.and.straw.fill",
-                    placeKinds: ["dish"],
-                    preferredPageIDs: [
-                        "viet-phrase-city-hue-place-bun-bo-city",
-                        "viet-phrase-city-hoian-place-cao-lau",
                     ]
                 ),
                 CategoryEntityGroupSpec(
@@ -2154,7 +2341,7 @@ enum BrowseSearchDestinations {
     private static func categoryEntityStarterTitle(for collectionID: String) -> String {
         switch collectionID {
         case "food", "food-coffee":
-            return "Food names to know"
+            return "Places, dishes, and coffee"
         case "landmarks-attractions":
             return "Places to know"
         default:
@@ -2180,7 +2367,7 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "ordering", title: "Ordering", subtitle: "Ask for food clearly", categoryIDs: ["food-drink"], terms: ["menu", "order", "water", "food"], symbolName: "menucard.fill"),
             CollectionSubcategorySpec(id: "allergies", title: "Allergies", subtitle: "Ingredients and diet needs", categoryIDs: ["food-drink", "health-pharmacy"], terms: ["allergy", "allergic", "vegetarian", "spicy"], symbolName: "exclamationmark.circle.fill"),
             CollectionSubcategorySpec(id: "paying", title: "Paying", subtitle: "Bills, cards, and cash", categoryIDs: ["money-numbers-prices", "food-drink"], terms: ["bill", "pay", "card", "cash"], symbolName: "dongsign.circle.fill"),
-            CollectionSubcategorySpec(id: "drinks", title: "Drinks", subtitle: "Coffee, tea, and water", categoryIDs: ["food-drink"], terms: ["coffee", "tea", "water", "drink"], symbolName: "cup.and.saucer.fill"),
+            CollectionSubcategorySpec(id: "drinks", title: "Coffee & drinks", subtitle: "Coffee, tea, and water", categoryIDs: ["food-drink"], terms: ["coffee", "tea", "water", "drink"], symbolName: "cup.and.saucer.fill"),
         ],
         "first-day": [
             CollectionSubcategorySpec(id: "airport", title: "Airport", subtitle: "Arrival, bags, and SIM cards", categoryIDs: ["airport-border-arrival"], terms: [], symbolName: "airplane.arrival"),
