@@ -10,14 +10,17 @@
 		034037B7D97D6400BEC8F0E8 /* AppChromeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094EBCA2A1C2908334452B3A /* AppChromeTests.swift */; };
 		05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */; };
 		0705C583B1734184937E5F87 /* AppChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92E39F9AC9626410FF3CDC /* AppChrome.swift */; };
+		11FA03A26B0F89F7AB1F2761 /* SubscriptionAccessState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C7BA3C4B14895D7A191130 /* SubscriptionAccessState.swift */; };
 		22EC11796C0EB30CCA4073B1 /* PracticeScenarioModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162BD8536877D352B522211 /* PracticeScenarioModeTests.swift */; };
 		26351589E274CA9E560ABD21 /* BackSwipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */; };
 		26D2BC5260F76BC78193101B /* PracticeScenarioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95965F71E19D6B246BAFF9F4 /* PracticeScenarioModels.swift */; };
+		2FFE92901BA127174882261B /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D5DB44E1EF2E800CA33A0D /* SubscriptionStore.swift */; };
 		347FD2205654329BE96CC306 /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEEF420BD953C06190A6E3 /* PracticeView.swift */; };
 		36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */; };
 		38B893276AD8652F98766E0F /* LanguagePacks in Resources */ = {isa = PBXBuildFile; fileRef = A83272548030E59BD55C69E3 /* LanguagePacks */; };
 		3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875EEA097A552AA1510358 /* AppShellView.swift */; };
 		3CC4718D118F88AD295C606F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */; };
+		45F9BF780789F2CF0C53C509 /* SubscriptionGateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2F15E7869DE97D4A22E43 /* SubscriptionGateUITests.swift */; };
 		532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */; };
 		5E445B4FD180B59D157E434D /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = C29EA500445CB089DEEDA380 /* Audio */; };
 		63A9110E76FE4649A20494AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */; };
@@ -35,12 +38,14 @@
 		A1BD02DD85DA578C1613D0E9 /* BaNaHillsJourneyProofUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA81625C08A15571CE19A9 /* BaNaHillsJourneyProofUITests.swift */; };
 		A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152EC4AC0563F01164AC24D5 /* SearchPageView.swift */; };
 		A7D9EAC643A14747CC53B62E /* PhrasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */; };
+		AACA10EF9F0CFECCF2BCDB2F /* AccessGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42099D705D3A77C3BC4F3E1C /* AccessGateView.swift */; };
 		AB89E8F8F43D17804FA07FF9 /* AdminChromeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */; };
 		AE8BE3879C05C9EC7BA1F804 /* AudioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16251C7B60B5DAA58A148B9 /* AudioControls.swift */; };
 		AEE5FB83D9461435CD3B8547 /* PracticeStoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAD3EAD2003E3D122ACEB2 /* PracticeStoryModels.swift */; };
 		B2652114653119239ABAB769 /* PracticeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ABDE2FD3A5A1E1C7458759 /* PracticeModels.swift */; };
 		B34399CF6C5B98FB4862E2E9 /* PhraseListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C570403C2E33918DCE587ED /* PhraseListingView.swift */; };
 		B4BB1FA3BE7357CB5035A731 /* PhrasePageFixtureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */; };
+		C4919ABC88C00D65F0D5509A /* SubscriptionPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D5F69F7367DEFAA21ADE4D /* SubscriptionPaywallView.swift */; };
 		C4CCD078FF1A029730CCD5FD /* PhraseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */; };
 		C69456802442B60E166F758C /* PracticeScenarioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84F197AE0DEC49C85AFD39 /* PracticeScenarioBuilder.swift */; };
 		C7A7E47EADADCAA9C0C7B7D1 /* BrowseSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DEDEA3D4E97A9043B8EFD /* BrowseSearchUITests.swift */; };
@@ -48,6 +53,7 @@
 		D1B42A9A89737128320F1355 /* AudioTapReliabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895093494D9977421573612F /* AudioTapReliabilityUITests.swift */; };
 		E4D0111388419D5C846F75DA /* BrowsePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4864105E47882DA1C4AC75 /* BrowsePageView.swift */; };
 		EA5ADDE73A6232C5884B736C /* AuthoredVietListingPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */; };
+		EAB4ADBCB828FAE1D5125BCC /* SubscriptionAccessStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68918C13B3C5BEBCCF817122 /* SubscriptionAccessStateTests.swift */; };
 		F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */; };
 /* End PBXBuildFile section */
 
@@ -79,21 +85,27 @@
 		2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeakLocalNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CEA81625C08A15571CE19A9 /* BaNaHillsJourneyProofUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaNaHillsJourneyProofUITests.swift; sourceTree = "<group>"; };
 		310DEDEA3D4E97A9043B8EFD /* BrowseSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSearchUITests.swift; sourceTree = "<group>"; };
+		38A2F15E7869DE97D4A22E43 /* SubscriptionGateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionGateUITests.swift; sourceTree = "<group>"; };
+		39C7BA3C4B14895D7A191130 /* SubscriptionAccessState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionAccessState.swift; sourceTree = "<group>"; };
 		3C98DE73722F896A42D9AEC1 /* NativeGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeGlass.swift; sourceTree = "<group>"; };
+		42099D705D3A77C3BC4F3E1C /* AccessGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessGateView.swift; sourceTree = "<group>"; };
 		46355A6E6495F7453685F1A4 /* SpeakLocalNativeUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SpeakLocalNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDetailView.swift; sourceTree = "<group>"; };
 		4FC11BA1B42CEF9D5F7C954C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		51D5DB44E1EF2E800CA33A0D /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
 		54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "viet-audio-manifest.json"; sourceTree = "<group>"; };
 		5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteLanguagePackRepositoryTests.swift; sourceTree = "<group>"; };
 		6162BD8536877D352B522211 /* PracticeScenarioModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeScenarioModeTests.swift; sourceTree = "<group>"; };
 		63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackSwipeUITests.swift; sourceTree = "<group>"; };
 		65875EEA097A552AA1510358 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
 		66BB33D2DD6D5436415A66F6 /* BrowseSearchDestinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSearchDestinations.swift; sourceTree = "<group>"; };
+		68918C13B3C5BEBCCF817122 /* SubscriptionAccessStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionAccessStateTests.swift; sourceTree = "<group>"; };
 		6B84F197AE0DEC49C85AFD39 /* PracticeScenarioBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeScenarioBuilder.swift; sourceTree = "<group>"; };
 		75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePageFixtureTests.swift; sourceTree = "<group>"; };
 		7C570403C2E33918DCE587ED /* PhraseListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListingView.swift; sourceTree = "<group>"; };
 		81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakLocalNativeApp.swift; sourceTree = "<group>"; };
+		82D5F69F7367DEFAA21ADE4D /* SubscriptionPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPaywallView.swift; sourceTree = "<group>"; };
 		895093494D9977421573612F /* AudioTapReliabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTapReliabilityUITests.swift; sourceTree = "<group>"; };
 		89A4A25A462F949B68607A96 /* BrowseCollectionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionPageView.swift; sourceTree = "<group>"; };
 		8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSQLiteLanguagePackRepository.swift; sourceTree = "<group>"; };
@@ -140,6 +152,7 @@
 				F8A4E79814EEDFC2BC7F2750 /* PracticeNativeMVPTests.swift */,
 				6162BD8536877D352B522211 /* PracticeScenarioModeTests.swift */,
 				5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */,
+				68918C13B3C5BEBCCF817122 /* SubscriptionAccessStateTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -155,6 +168,7 @@
 		3E745989854A54FDA88A0313 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				42099D705D3A77C3BC4F3E1C /* AccessGateView.swift */,
 				65875EEA097A552AA1510358 /* AppShellView.swift */,
 				B16251C7B60B5DAA58A148B9 /* AudioControls.swift */,
 				89A4A25A462F949B68607A96 /* BrowseCollectionPageView.swift */,
@@ -165,6 +179,7 @@
 				ADA3A7EC05C7713DDEBCB850 /* PracticeStoryTranscriptView.swift */,
 				FAEEEF420BD953C06190A6E3 /* PracticeView.swift */,
 				152EC4AC0563F01164AC24D5 /* SearchPageView.swift */,
+				82D5F69F7367DEFAA21ADE4D /* SubscriptionPaywallView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +214,7 @@
 				310DEDEA3D4E97A9043B8EFD /* BrowseSearchUITests.swift */,
 				B883D25427177530402A1885 /* Info.plist */,
 				9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */,
+				38A2F15E7869DE97D4A22E43 /* SubscriptionGateUITests.swift */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -234,6 +250,8 @@
 				6B84F197AE0DEC49C85AFD39 /* PracticeScenarioBuilder.swift */,
 				95965F71E19D6B246BAFF9F4 /* PracticeScenarioModels.swift */,
 				8BCAD3EAD2003E3D122ACEB2 /* PracticeStoryModels.swift */,
+				39C7BA3C4B14895D7A191130 /* SubscriptionAccessState.swift */,
+				51D5DB44E1EF2E800CA33A0D /* SubscriptionStore.swift */,
 				8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */,
 			);
 			path = Models;
@@ -385,6 +403,7 @@
 				90ECDFDBCC9D88406892F37F /* PracticeNativeMVPTests.swift in Sources */,
 				22EC11796C0EB30CCA4073B1 /* PracticeScenarioModeTests.swift in Sources */,
 				05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */,
+				EAB4ADBCB828FAE1D5125BCC /* SubscriptionAccessStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +417,7 @@
 				26351589E274CA9E560ABD21 /* BackSwipeUITests.swift in Sources */,
 				C7A7E47EADADCAA9C0C7B7D1 /* BrowseSearchUITests.swift in Sources */,
 				CDFA70A16B6D74B02494DCA7 /* PracticeUITests.swift in Sources */,
+				45F9BF780789F2CF0C53C509 /* SubscriptionGateUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACA10EF9F0CFECCF2BCDB2F /* AccessGateView.swift in Sources */,
 				0705C583B1734184937E5F87 /* AppChrome.swift in Sources */,
 				3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */,
 				532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */,
@@ -427,6 +448,9 @@
 				347FD2205654329BE96CC306 /* PracticeView.swift in Sources */,
 				A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */,
 				74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */,
+				11FA03A26B0F89F7AB1F2761 /* SubscriptionAccessState.swift in Sources */,
+				C4919ABC88C00D65F0D5509A /* SubscriptionPaywallView.swift in Sources */,
+				2FFE92901BA127174882261B /* SubscriptionStore.swift in Sources */,
 				36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

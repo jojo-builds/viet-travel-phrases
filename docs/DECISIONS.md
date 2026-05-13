@@ -30,6 +30,11 @@
 
 ## Monetization decisions
 
+- Paywall feature lane (`feature/paywall`) is testing a native Apple subscription foundation before any merge to `main`:
+  - StoreKit 2 is the entitlement authority.
+  - The initial placeholder product is `app.speaklocal.vietnam.subscription.monthly`.
+  - The intended App Store Connect setup is a monthly auto-renewable subscription with a 7-day introductory free trial and `$4.99` placeholder pricing.
+  - Paywall design, final copy, pricing, product IDs, and exact premium benefit framing remain unfinalized product decisions until Jojo approves them.
 - Viet v2 uses a single non-consumable iOS unlock through `expo-iap` and StoreKit.
 - Viet v2 does not add a custom backend for purchase verification in this pass. Repo truth should describe that as a deliberate v2 simplicity tradeoff, not hidden completeness.
 - Premium access truth is:

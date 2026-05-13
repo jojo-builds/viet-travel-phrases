@@ -5,6 +5,8 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 
 ## Active focus
 
+Paywall lane exception: this checkout is `feature/paywall`, so native Apple subscription/paywall skeleton work is active here even though subscription rollout remains gated from `main` until Jojo says it is ready.
+
 1. Continue the native SwiftUI/Xcode app in `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`; this is now the active ship-facing app lane on the Mac.
 2. Keep the shared repo authoritative and portable so the native client reads correct product truth instead of rebuilding logic from scratch.
 3. Finish and keep improving Viet canonical phrase pages as authored offline "Different ways to say [phrase] in Vietnam" article pages using `content-draft/viet/canonical-pages/**` and the `speaklocal-listing-pages` skill.
@@ -26,7 +28,7 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 
 ## Not doing right now
 
-- subscriptions
+- merging subscriptions/paywall into `main` before Jojo explicitly says this paywall lane is ready
 - account sync
 - cloud-backed unlock dependency
 - treating Windows as the main working machine

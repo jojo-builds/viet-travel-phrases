@@ -87,3 +87,5 @@ schemes:
       targets:
         - name: SpeakLocalNativeTests
         - name: SpeakLocalNativeUITests
+    run:
+      storeKitConfiguration: Config/StoreKit/SpeakLocalPaywall.storekit
