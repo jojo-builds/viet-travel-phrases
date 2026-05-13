@@ -43,6 +43,8 @@ Use this lane for:
 - launch checklists, beta/tester messaging, and retention ideas;
 - measurement plans, experiment logs, and ROI assumptions.
 
+For work that spans several of these areas, create a project folder under `marketing/projects/<project-slug>/`.
+
 ## Required Marketing Output Shape
 
 Every campaign, creative, or App Store asset should state:
@@ -97,4 +99,3 @@ Do not leave a marketing idea as vibes only. Make it executable.
 4. Produce a brief, draft, script, or plan in the matching subfolder.
 5. Mark anything unverified as `NEEDS_APP_PROOF`, `NEEDS_SOURCE`, `NEEDS_SCREENSHOT`, or `FUTURE / DO NOT PUBLISH`.
 6. Close with changed files, assumptions, sources used, and next steps.
-
