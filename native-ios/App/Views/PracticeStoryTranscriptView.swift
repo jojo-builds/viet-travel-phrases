@@ -136,6 +136,8 @@ private struct PracticeStoryBubble: View {
     }
 
     var body: some View {
+        let bubbleShape = RoundedRectangle(cornerRadius: 22, style: .continuous)
+
         HStack(alignment: .bottom, spacing: 8) {
             if isTraveler {
                 Spacer(minLength: 52)
@@ -185,16 +187,17 @@ private struct PracticeStoryBubble: View {
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
             .frame(maxWidth: 302, alignment: isTraveler ? .trailing : .leading)
-            .background(bubbleFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(bubbleFill, in: bubbleShape)
+            .clipShape(bubbleShape)
             .overlay {
                 if !isTraveler {
-                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    bubbleShape
                         .stroke(.white.opacity(0.72), lineWidth: 1)
                 }
             }
             .compositingGroup()
-            .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .contentShape(bubbleShape)
+            .contentShape(.contextMenuPreview, bubbleShape)
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("Practice.Story.Bubble.\(isTraveler ? "traveler" : "local").\(turn.stepID)")
             .contextMenu {

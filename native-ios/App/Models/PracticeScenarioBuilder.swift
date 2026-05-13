@@ -517,6 +517,17 @@ private struct PracticeScenarioStepTemplate {
             )
         }
 
+        guard hasExactBundledAudio(for: copy.vietnamese)
+            || !hasExactBundledAudio(for: candidate.vietnamese) else {
+            return PracticeScenarioPhraseCopy(
+                scenarioVietnamese: candidate.vietnamese,
+                scenarioEnglish: candidate.english,
+                scenarioRole: copy.role ?? role,
+                scenarioContext: copy.context ?? id,
+                sourcePhraseID: candidate.phraseID
+            )
+        }
+
         return PracticeScenarioPhraseCopy(
             scenarioVietnamese: copy.vietnamese,
             scenarioEnglish: copy.english,
@@ -553,6 +564,10 @@ private struct PracticeScenarioStepTemplate {
         scenarioResponseCopies[candidate.pageID] ?? scenarioResponseCopies.first { templatePageID, _ in
             (canonicalPageIDsByTemplateID[templatePageID] ?? templatePageID) == candidate.pageID
         }?.value
+    }
+
+    private func hasExactBundledAudio(for vietnamese: String) -> Bool {
+        AudioAssetManifest.main?.audioKey(forExactText: vietnamese) != nil
     }
 
     func bestFitFeedback(_ candidate: PracticeCandidate) -> String {
@@ -715,8 +730,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 id: "airport-story-opening",
                 momentType: .ask,
                 scene: "You have just landed in Da Nang and need one clear first step.",
-                localLine: "Xin chào, bạn cần hỗ trợ gì ở sân bay?",
-                localLineMeaning: "Hello, what airport help do you need?",
+                localLine: "Xin chào, tôi có thể giúp gì cho bạn?",
+                localLineMeaning: "Hello, how can I help you?",
                 userGoal: "Ask for baggage claim first.",
                 bestPageIDs: [
                     "viet-family-airport-baggage",
@@ -1192,8 +1207,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 id: "airport-service-opening",
                 momentType: .ask,
                 scene: "You are in the arrivals hall and need the useful counters before leaving.",
-                localLine: "Xin chào, bạn cần SIM, ATM hay quầy thông tin?",
-                localLineMeaning: "Hello, do you need a SIM, ATM, or information desk?",
+                localLine: "Xin chào, tôi có thể giúp gì cho bạn?",
+                localLineMeaning: "Hello, how can I help you?",
                 userGoal: "Ask for the SIM counter first.",
                 bestPageIDs: [
                     "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
@@ -1411,8 +1426,8 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 id: "airport-service-wifi",
                 momentType: .ask,
                 scene: "Before you leave the arrivals hall, your phone needs Wi-Fi or charging.",
-                localLine: "Bạn cần Wi-Fi sân bay hay sạc điện thoại không?",
-                localLineMeaning: "Do you need airport Wi-Fi or to charge your phone?",
+                localLine: "Bạn cần Wi-Fi hay sạc điện thoại không?",
+                localLineMeaning: "Do you need Wi-Fi or to charge your phone?",
                 userGoal: "Ask for airport Wi-Fi first.",
                 best: messageReply(
                     "viet-family-v900-airp-bord-arri-where-can-i-get-airport-wi-fi",
@@ -2859,8 +2874,8 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     id: "airport-wifi-opening",
                     momentType: .listen,
                     scene: "You are still in arrivals and your phone needs internet before you leave.",
-                    localLine: "Xin chào, bạn cần Wi-Fi sân bay hay sạc điện thoại không?",
-                    localLineMeaning: "Do you need airport Wi-Fi or to charge your phone?",
+                    localLine: "Xin chào, tôi có thể giúp gì cho bạn?",
+                    localLineMeaning: "Hello, how can I help you?",
                     userGoal: "Ask for airport Wi-Fi first.",
                     best: messageReply(
                         "viet-family-v900-airp-bord-arri-where-can-i-get-airport-wi-fi",
@@ -3036,8 +3051,8 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     id: "hotel-room-opening",
                     momentType: .listen,
                     scene: "You come back to the hotel desk because something in the room is not working.",
-                    localLine: "Xin chào, phòng của bạn có vấn đề gì?",
-                    localLineMeaning: "Hello, what problem does your room have?",
+                    localLine: "Xin chào, tôi có thể giúp gì cho bạn?",
+                    localLineMeaning: "Hello, how can I help you?",
                     userGoal: "Start with the key-card problem.",
                     best: messageReply(
                         "viet-family-hotel-key-card",
@@ -4996,8 +5011,8 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     id: "emergency-passport-opening",
                     momentType: .listen,
                     scene: "You are at a desk asking for help after realizing your passport is missing.",
-                    localLine: "Xin chào, bạn cần hỗ trợ khẩn cấp gì?",
-                    localLineMeaning: "Hello, what urgent help do you need?",
+                    localLine: "Xin chào, tôi có thể giúp gì cho bạn?",
+                    localLineMeaning: "Hello, how can I help you?",
                     userGoal: "Say your passport is missing.",
                     best: messageReply(
                         "viet-family-v500-emer-safe-my-passport-is-missing",
@@ -5185,8 +5200,8 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     id: "emergency-bag-opening",
                     momentType: .listen,
                     scene: "You are at a hotel, mall, or station security desk after losing a bag.",
-                    localLine: "Xin chào, bạn cần báo mất đồ phải không?",
-                    localLineMeaning: "Hello, do you need to report something missing?",
+                    localLine: "Xin chào, tôi có thể giúp gì cho bạn?",
+                    localLineMeaning: "Hello, how can I help you?",
                     userGoal: "Say your bag was stolen.",
                     best: messageReply(
                         "viet-family-emergency-stolen-bag",
@@ -5814,30 +5829,30 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     id: "greeting-respect-opening",
                     momentType: .listen,
                     scene: "An older man at a neighborhood shop smiles and greets you.",
-                    localLine: "Xin chào, con cần gì?",
-                    localLineMeaning: "Hello, what do you need?",
-                    userGoal: "Use a respectful hello and ask for help.",
+                    localLine: "Xin chào.",
+                    localLineMeaning: "Hello.",
+                    userGoal: "Use a respectful hello.",
                     best: messageReply(
-                        "viet-family-hello-chao-ong",
-                        vietnamese: "Dạ, chào ông. Ông giúp con được không?",
-                        english: "Hello, sir. Can you help me?",
-                        nextLocalLine: "Được, con cần gì?",
-                        nextLocalMeaning: "Yes, what do you need?"
+                        "viet-family-acknowledge-da-chao-ong",
+                        vietnamese: "Dạ, chào ông",
+                        english: "Respectful hello, sir.",
+                        nextLocalLine: "Chào con, con cần gì?",
+                        nextLocalMeaning: "Hello, what do you need?"
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-acknowledge-da-chao-ong",
-                            vietnamese: "Dạ, chào ông. Con muốn hỏi một chút",
-                            english: "Hello, sir. I want to ask something",
-                            nextLocalLine: "Ừ, con hỏi đi.",
-                            nextLocalMeaning: "Yes, go ahead and ask."
+                            "viet-family-hello-chao-ong",
+                            vietnamese: "Chào ông",
+                            english: "Hello, sir.",
+                            nextLocalLine: "Chào con, con cần gì?",
+                            nextLocalMeaning: "Hello, what do you need?"
                         ),
                         messageReply(
                             "viet-family-hello-chao-chu",
-                            vietnamese: "Chào chú, chú giúp con được không?",
-                            english: "Hello, uncle. Can you help me?",
-                            nextLocalLine: "Được, chú giúp con.",
-                            nextLocalMeaning: "Yes, I can help."
+                            vietnamese: "Chào chú",
+                            english: "Hello, uncle.",
+                            nextLocalLine: "Chào con, chú giúp gì được?",
+                            nextLocalMeaning: "Hello, how can I help?"
                         ),
                     ],
                     nextStepTitle: "Greet an older woman",
@@ -5847,30 +5862,30 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     id: "greeting-respect-woman",
                     momentType: .listen,
                     scene: "An older woman at the counter asks whether you need help.",
-                    localLine: "Chào con, con muốn hỏi gì?",
-                    localLineMeaning: "Hello, what would you like to ask?",
-                    userGoal: "Use a respectful hello and ask for help.",
+                    localLine: "Xin chào.",
+                    localLineMeaning: "Hello.",
+                    userGoal: "Use a respectful hello.",
                     best: messageReply(
-                        "viet-family-hello-chao-ba",
-                        vietnamese: "Dạ, chào bà. Bà giúp con được không?",
-                        english: "Hello, ma'am. Can you help me?",
-                        nextLocalLine: "Được, bà nghe đây.",
-                        nextLocalMeaning: "Yes, I am listening."
+                        "viet-family-acknowledge-da-chao-ba",
+                        vietnamese: "Dạ, chào bà",
+                        english: "Respectful hello, ma'am.",
+                        nextLocalLine: "Chào con, con cần gì?",
+                        nextLocalMeaning: "Hello, what do you need?"
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-acknowledge-da-chao-ba",
-                            vietnamese: "Dạ, chào bà. Con muốn hỏi một chút",
-                            english: "Hello, ma'am. I want to ask something",
-                            nextLocalLine: "Ừ, con hỏi đi.",
-                            nextLocalMeaning: "Yes, go ahead and ask."
+                            "viet-family-hello-chao-ba",
+                            vietnamese: "Chào bà",
+                            english: "Hello, ma'am.",
+                            nextLocalLine: "Chào con, con cần gì?",
+                            nextLocalMeaning: "Hello, what do you need?"
                         ),
                         messageReply(
                             "viet-family-hello-chao-co",
-                            vietnamese: "Chào cô, cô giúp con được không?",
-                            english: "Hello, auntie. Can you help me?",
-                            nextLocalLine: "Được, cô giúp con.",
-                            nextLocalMeaning: "Yes, I can help."
+                            vietnamese: "Chào cô",
+                            english: "Hello, auntie.",
+                            nextLocalLine: "Chào con, cô giúp gì được?",
+                            nextLocalMeaning: "Hello, how can I help?"
                         ),
                     ],
                     nextStepTitle: "Ask permission",
@@ -5880,29 +5895,29 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     id: "greeting-respect-permission",
                     momentType: .ask,
                     scene: "You want to enter a small room or sit down before asking a question.",
-                    localLine: "Con muốn vào xem không?",
+                    localLine: "Bạn muốn vào xem không?",
                     localLineMeaning: "Would you like to come in and look?",
                     userGoal: "Ask permission before entering.",
                     best: messageReply(
                         "viet-family-v900-poli-basi-can-i-come-in",
-                        vietnamese: "Con vào được không?",
+                        vietnamese: "Tôi có thể vào được không?",
                         english: "Can I come in?",
-                        nextLocalLine: "Được, con vào đi.",
+                        nextLocalLine: "Được, bạn vào đi.",
                         nextLocalMeaning: "Yes, come in."
                     ),
                     alternates: [
                         messageReply(
                             "viet-family-v900-poli-basi-can-i-sit-here",
-                            vietnamese: "Con ngồi đây được không?",
+                            vietnamese: "Tôi có thể ngồi đây được không?",
                             english: "Can I sit here?",
-                            nextLocalLine: "Được, con ngồi đây.",
+                            nextLocalLine: "Được, bạn ngồi đây.",
                             nextLocalMeaning: "Yes, sit here."
                         ),
                         messageReply(
                             "viet-family-v900-poli-basi-may-i",
-                            vietnamese: "Con xin phép",
+                            vietnamese: "Tôi có thể không?",
                             english: "May I?",
-                            nextLocalLine: "Được, con cứ tự nhiên.",
+                            nextLocalLine: "Được, bạn cứ tự nhiên.",
                             nextLocalMeaning: "Yes, please feel free."
                         ),
                     ],
@@ -6349,8 +6364,8 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     id: "doctor-help-opening",
                     momentType: .listen,
                     scene: "You are not feeling well and need medical help.",
-                    localLine: "Xin chào, bạn cần hỗ trợ gì?",
-                    localLineMeaning: "What help do you need?",
+                    localLine: "Xin chào, tôi có thể giúp gì cho bạn?",
+                    localLineMeaning: "Hello, how can I help you?",
                     userGoal: "Say you need a doctor.",
                     best: messageReply(
                         "viet-family-health-doctor",
