@@ -24,6 +24,7 @@ struct AppShellView: View {
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
     @State private var browseCityHeroRoute: BrowseCollectionRoute?
+    @State private var browseCityHeroContentHoldRoute: BrowseCollectionRoute?
     @State private var browseCityHeroMorphResetID = 0
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -128,9 +129,7 @@ struct AppShellView: View {
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onSearchTapped: openSearch,
-                    onSearchQuery: openSearchQuery,
-                    onSavedTapped: openSaved,
-                    onPracticeTapped: openPractice
+                    onSearchQuery: openSearchQuery
                 )
                 .allowsHitTesting(navigation.currentRoute == .browse && !isPreviewingForwardPage)
                 .accessibilityHidden(navigation.currentRoute != .browse)
@@ -320,6 +319,7 @@ struct AppShellView: View {
                     focusRequest: browseCollectionFocusRequest,
                     chromeNamespace: chromeNamespace,
                     cityHeroMorphRoute: browseCityHeroRoute,
+                    cityHeroContentHoldRoute: browseCityHeroContentHoldRoute,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -449,7 +449,7 @@ struct AppShellView: View {
 
     private func browseCollectionTransition(for route: BrowseCollectionRoute) -> AnyTransition {
         browseCityHeroRoute == route
-            ? AppPageTransition.phraseHeroMorph
+            ? AppPageTransition.browseCityHeroMorph
             : AppPageTransition.slideFromTrailing
     }
 
@@ -503,9 +503,7 @@ struct AppShellView: View {
                 onOpenDetail: openDetailFromBrowse,
                 onOpenCollection: openBrowseCollection,
                 onSearchTapped: openSearch,
-                onSearchQuery: openSearchQuery,
-                onSavedTapped: openSaved,
-                onPracticeTapped: openPractice
+                onSearchQuery: openSearchQuery
             )
         case .browseCollection(let collectionRoute):
             if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
@@ -953,23 +951,39 @@ struct AppShellView: View {
 
         withoutRouteAnimation {
             browseCityHeroRoute = route
+            browseCityHeroContentHoldRoute = route
         }
 
-        withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
+        withAnimation(BrowseCityHeroMorphTiming.navigationAnimation) {
             navigation.openBrowseCollection(route)
         }
+        revealBrowseCityHeroContent(after: resetID)
         clearBrowseCityHeroLaunch(after: resetID)
+    }
+
+    private func revealBrowseCityHeroContent(after resetID: Int) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds)
+            guard browseCityHeroMorphResetID == resetID else {
+                return
+            }
+
+            withAnimation(BrowseCityHeroMorphTiming.contentRevealAnimation) {
+                browseCityHeroContentHoldRoute = nil
+            }
+        }
     }
 
     private func clearBrowseCityHeroLaunch(after resetID: Int) {
         Task { @MainActor in
-            try? await Task.sleep(nanoseconds: HomePhraseHeroMorphTiming.cleanupDelayNanoseconds)
+            try? await Task.sleep(nanoseconds: BrowseCityHeroMorphTiming.cleanupDelayNanoseconds)
             guard browseCityHeroMorphResetID == resetID else {
                 return
             }
 
             withoutRouteAnimation {
                 browseCityHeroRoute = nil
+                browseCityHeroContentHoldRoute = nil
             }
         }
     }
@@ -1183,6 +1197,7 @@ struct AppShellView: View {
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
         browseCityHeroRoute = nil
+        browseCityHeroContentHoldRoute = nil
         interactiveDrag = nil
     }
 
@@ -2196,6 +2211,11 @@ enum AppPageTransition {
         insertion: .opacity.animation(HomePhraseHeroMorphTiming.pageFadeAnimation),
         removal: .opacity.animation(HomePhraseHeroMorphTiming.pageFadeAnimation)
     )
+
+    static let browseCityHeroMorph = AnyTransition.asymmetric(
+        insertion: .opacity.animation(BrowseCityHeroMorphTiming.pageFadeAnimation),
+        removal: .opacity.animation(BrowseCityHeroMorphTiming.pageFadeAnimation)
+    )
 }
 
 enum HomePhraseHeroMorphTiming {
@@ -2204,6 +2224,21 @@ enum HomePhraseHeroMorphTiming {
     static let articleRevealDelayNanoseconds: UInt64 = 320_000_000
     static let articleRevealAnimation: Animation = .easeOut(duration: 0.18)
     static let cleanupDelayNanoseconds: UInt64 = 1_120_000_000
+}
+
+enum BrowseCityHeroMorphTiming {
+    static let navigationDuration = 0.36
+    static let pageFadeDuration = 0.18
+    static let contentRevealDelayNanoseconds: UInt64 = 150_000_000
+    static let contentRevealAnimation: Animation = .easeOut(duration: 0.16)
+    static let cleanupDelayNanoseconds: UInt64 = 650_000_000
+
+    static var navigationDurationNanoseconds: UInt64 {
+        UInt64(navigationDuration * 1_000_000_000)
+    }
+
+    static let navigationAnimation: Animation = .timingCurve(0.22, 1, 0.36, 1, duration: navigationDuration)
+    static let pageFadeAnimation: Animation = .easeOut(duration: pageFadeDuration)
 }
 
 private struct NavigationPageMotion: ViewModifier {
