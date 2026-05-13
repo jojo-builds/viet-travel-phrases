@@ -82,7 +82,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionStretchFactor, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionMaximumStretch, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionLagFactor, 0)
-        XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapActivationDelay, 0)
+        XCTAssertEqual(AppChromeLayout.dockSelectionTapActivationDelay, 0)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapTravelDelay, AppChromeLayout.dockSelectionTapActivationDelay)
         XCTAssertGreaterThan(AppChromeLayout.dockSelectionTapDeactivateDelay, 0)
     }
@@ -128,10 +128,31 @@ final class AppChromeTests: XCTestCase {
             + AppChromeLayout.dockSelectionTapTravelDelay
             + AppChromeLayout.dockSelectionTapDeactivateDelay
 
-        XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapActivationDelay, 45_000_000)
+        XCTAssertEqual(AppChromeLayout.dockSelectionTapActivationDelay, 0)
         XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapTravelDelay, 170_000_000)
         XCTAssertLessThanOrEqual(AppChromeLayout.dockSelectionTapDeactivateDelay, 90_000_000)
-        XCTAssertLessThanOrEqual(totalTapFlightDelay, 305_000_000)
+        XCTAssertLessThanOrEqual(totalTapFlightDelay, 260_000_000)
+    }
+
+    func testDockSelectionTouchDownMovesLensToTouchedItemImmediately() {
+        let itemCount = 4
+        let selectedIndex = 0
+        let touchedIndex = 3
+        let touchedCenter = AppDockSelectionLayout.itemCenterX(index: touchedIndex)
+        let metrics = AppDockSelectionLayout.lensMetrics(
+            selectedIndex: selectedIndex,
+            activeIndex: touchedIndex,
+            dragX: touchedCenter,
+            itemCount: itemCount,
+            reduceMotion: true
+        )
+
+        XCTAssertEqual(
+            metrics.xOffset,
+            touchedCenter - AppChromeLayout.dockSelectionPressedWidth / 2
+        )
+        XCTAssertEqual(metrics.width, AppChromeLayout.dockSelectionPressedWidth)
+        XCTAssertEqual(metrics.height, AppChromeLayout.dockSelectionPressedHeight)
     }
 
     func testDockSelectionLensStretchesWhileDraggingAndSettlesWhenReducedMotion() {

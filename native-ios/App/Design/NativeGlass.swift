@@ -281,7 +281,7 @@ enum AppChromeLayout {
     static let dockSelectionMaximumStretch: CGFloat = 54
     static let dockSelectionLagFactor: CGFloat = 0.16
     static let dockSelectionMaximumLag: CGFloat = 14
-    static let dockSelectionTapActivationDelay: UInt64 = 35_000_000
+    static let dockSelectionTapActivationDelay: UInt64 = 0
     static let dockSelectionTapTravelDelay: UInt64 = 150_000_000
     static let dockSelectionTapDeactivateDelay: UInt64 = 80_000_000
     static let dockHorizontalPadding: CGFloat = 10
