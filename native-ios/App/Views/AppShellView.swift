@@ -3718,7 +3718,7 @@ struct HomeView: View {
 
                         homepagePhraseShelf("help-emergency")
 
-                        featuredPhrasesShelf
+                        recentlyViewedShelf
                     }
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
@@ -3788,18 +3788,29 @@ struct HomeView: View {
         }
     }
 
-    private var featuredPhrasesShelf: some View {
-        HomeShelf(title: "Listen closer", subtitle: "") {
-            HomeFeaturedPhraseCarousel(
-                items: HomeContent.featuredPhraseCardItems,
-                heroMorphPageID: heroMorphPageID,
-                chromeNamespace: chromeNamespace,
-                onOpenDetail: onOpenFeaturedDetail,
-                isSaved: { intentStore.isPageSaved($0) },
-                onToggleSaved: { intentStore.toggleSavedPage($0) }
-            )
+    @ViewBuilder
+    private var recentlyViewedShelf: some View {
+        let items = recentlyViewedFeatureItems
+
+        if !items.isEmpty {
+            HomeShelf(title: "Recently viewed", subtitle: "Pick up where you left off") {
+                HomeFeaturedPhraseCarousel(
+                    items: items,
+                    heroMorphPageID: heroMorphPageID,
+                    chromeNamespace: chromeNamespace,
+                    onOpenDetail: onOpenFeaturedDetail,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) }
+                )
+            }
+            .padding(.leading, HomeLayout.horizontalPadding)
         }
-        .padding(.leading, HomeLayout.horizontalPadding)
+    }
+
+    private var recentlyViewedFeatureItems: [HomeFeaturePhraseItem] {
+        HomeRecentlyViewedContent
+            .cardPageIDs(from: intentStore.recentPageIDs)
+            .compactMap(HomeFeaturePhraseItem.resolve(pageID:))
     }
 
     private var practiceScenariosShelf: some View {
@@ -4234,6 +4245,31 @@ enum HomeUseNowCatalog {
     static let featureCardIDs = Array(starterIDs.prefix(6))
 }
 
+enum HomeRecentlyViewedContent {
+    static let maximumFeatureCards = 6
+
+    static func cardPageIDs(from recentPageIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        var cardPageIDs: [String] = []
+
+        for pageID in recentPageIDs {
+            guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
+                continue
+            }
+            guard seen.insert(canonicalPageID).inserted else {
+                continue
+            }
+
+            cardPageIDs.append(canonicalPageID)
+            if cardPageIDs.count == maximumFeatureCards {
+                break
+            }
+        }
+
+        return cardPageIDs
+    }
+}
+
 private enum HomeContent {
     static let useNowIDs = HomeUseNowCatalog.starterIDs
 
@@ -4359,14 +4395,6 @@ private enum HomeContent {
         homepagePhraseShelves.first { $0.id == id }
     }
 
-    static let featuredIDs = [
-        "viet-thank-you",
-        PhrasePage.xinChao.id,
-        "viet-excuse-sorry",
-        "viet-family-repair-meaning",
-        "viet-family-hotel-checkout-time",
-    ]
-
     static var useNowItems: [HomePhraseItem] {
         useNowIDs.compactMap(HomePhraseItem.resolve(pageID:))
     }
@@ -4383,14 +4411,6 @@ private enum HomeContent {
         "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
         "viet-phrase-hotel-3",
     ]
-
-    static var featuredItems: [HomePhraseItem] {
-        featuredIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
-
-    static var featuredPhraseCardItems: [HomeFeaturePhraseItem] {
-        featuredIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
-    }
 
     static var practiceScenarios: [HomeScenario] {
         [
@@ -4511,7 +4531,6 @@ enum HomePageLinkRegistry {
         uniquePageIDs(
             HomeUseNowCatalog.featureCardIDs
             + HomeContent.homepagePhraseShelves.flatMap(\.pageIDs)
-            + HomeContent.featuredIDs
             + HomeContent.savedFallbackPageIDs
             + PhrasePage.xinChao.localGreetings.prefix(3).compactMap(\.detailPageID)
         )

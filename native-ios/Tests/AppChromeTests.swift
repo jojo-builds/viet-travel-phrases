@@ -331,6 +331,33 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(HomeUseNowCatalog.starterIDs.contains("viet-family-health-doctor"))
     }
 
+    func testHomeRecentlyViewedShelfUsesSixMostRecentCanonicalPages() throws {
+        let expected = try HomeUseNowCatalog.starterIDs.prefix(6).map { pageID in
+            try XCTUnwrap(PhraseCatalog.canonicalPageID(forOpenablePageID: pageID))
+        }
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.cardPageIDs(from: HomeUseNowCatalog.starterIDs),
+            expected
+        )
+        XCTAssertEqual(HomeRecentlyViewedContent.maximumFeatureCards, 6)
+    }
+
+    func testHomeRecentlyViewedShelfSkipsDuplicatesAndMissingPages() throws {
+        let thankYouID = try XCTUnwrap(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-thank-you"))
+        let sorryID = try XCTUnwrap(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-excuse-sorry"))
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.cardPageIDs(from: [
+                "missing-page",
+                "viet-thank-you",
+                thankYouID,
+                "viet-excuse-sorry",
+            ]),
+            [thankYouID, sorryID]
+        )
+    }
+
     func testHomepagePhraseCardsOpenBuiltOutListingPages() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let issues = HomePageLinkRegistry.homepageListingPageIDs.compactMap {
