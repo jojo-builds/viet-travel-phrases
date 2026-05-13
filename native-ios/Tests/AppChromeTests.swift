@@ -172,6 +172,39 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(HomePageLinkRegistry.firstDayHomepagePageIDs, HomeFirstDayShelfContent.pageIDs)
     }
 
+    func testHomePhraseShelvesDoNotRepeatVisibleEnglishSubtitles() throws {
+        for shelf in HomePageLinkRegistry.homepagePhraseShelfSnapshots {
+            var pageIDByNormalizedSubtitle: [String: String] = [:]
+
+            for item in shelf.items {
+                let normalizedSubtitle = item.subtitle
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                    .lowercased()
+
+                if let existingPageID = pageIDByNormalizedSubtitle[normalizedSubtitle] {
+                    XCTFail(
+                        "\(shelf.id) repeats visible English subtitle '\(item.subtitle)' for \(existingPageID) and \(item.pageID)"
+                    )
+                } else {
+                    pageIDByNormalizedSubtitle[normalizedSubtitle] = item.pageID
+                }
+            }
+        }
+    }
+
+    func testHomeMoneyShoppingShelfShowsOneHowMuchCard() throws {
+        let shelf = try XCTUnwrap(
+            HomePageLinkRegistry.homepagePhraseShelfSnapshots.first { $0.id == "money-shopping" }
+        )
+        let pageIDs = shelf.items.map(\.pageID)
+        let howMuchItems = shelf.items.filter { $0.subtitle == "How much is this?" }
+
+        XCTAssertEqual(pageIDs.first, "viet-phrase-price-1")
+        XCTAssertTrue(pageIDs.contains("viet-phrase-v500-shop-can-you-lower-the-price"))
+        XCTAssertFalse(pageIDs.contains("viet-phrase-money-how-much-common"))
+        XCTAssertEqual(howMuchItems.map(\.pageID), ["viet-phrase-price-1"])
+    }
+
     func testHomeRecentlyViewedShelfUsesSixMostRecentCanonicalPages() throws {
         let expected = try HomeUseNowCatalog.starterIDs.prefix(6).map { pageID in
             try XCTUnwrap(PhraseCatalog.canonicalPageID(forOpenablePageID: pageID))
