@@ -3825,8 +3825,15 @@ struct HomeView: View {
     }
 
     private var useNowShelf: some View {
-        HomeShelf(title: "Use now", subtitle: "Quick phrases for everyday moments") {
-            HomeQuickPhraseGrid(items: HomeContent.useNowItems, onOpenDetail: onOpenDetail)
+        HomeShelf(title: "Use now", subtitle: "") {
+            HomeFeaturedPhraseCarousel(
+                items: HomeContent.useNowFeaturePhraseCardItems,
+                heroMorphPageID: heroMorphPageID,
+                chromeNamespace: chromeNamespace,
+                onOpenDetail: onOpenFeaturedDetail,
+                isSaved: { intentStore.isPageSaved($0) },
+                onToggleSaved: { intentStore.toggleSavedPage($0) }
+            )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
     }
@@ -3843,7 +3850,7 @@ struct HomeView: View {
     }
 
     private var featuredPhrasesShelf: some View {
-        HomeShelf(title: "Deeper phrase cards", subtitle: "Slow down with larger audio controls") {
+        HomeShelf(title: "Listen closer", subtitle: "") {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.featuredPhraseCardItems,
                 heroMorphPageID: heroMorphPageID,
@@ -4347,6 +4354,8 @@ enum HomeUseNowCatalog {
         "viet-family-food-pay-now",
         "viet-family-bathroom-where",
     ]
+
+    static let featureCardIDs = Array(starterIDs.prefix(6))
 }
 
 private enum HomeContent {
@@ -4379,10 +4388,10 @@ private enum HomeContent {
             sourceCategoryIDs: ["food-drink", "money-numbers-prices"],
             pageIDs: [
                 "viet-phrase-food-menu",
-                "viet-phrase-vpe-one-item-please-cho-toi-mot-nuoc-suoi",
+                "viet-family-food-bottled-water",
                 "viet-phrase-coffee-1",
                 "viet-phrase-food-3",
-                "viet-phrase-vpe-food-has-co-dau-phong-khong",
+                "viet-family-food-peanut-allergy",
                 "viet-phrase-coffee-7",
             ],
             layout: .mediumGrid
@@ -4416,7 +4425,7 @@ private enum HomeContent {
                 "viet-phrase-v500-tran-please-call-the-driver",
                 "viet-phrase-v900-tran-please-take-me-to-this-address",
                 "viet-phrase-v500-tran-please-take-me-to-this-hotel",
-                "viet-phrase-ves-call-taxi-for-me",
+                "viet-family-hotel-call-taxi",
             ],
             layout: .wideRows
         ),
@@ -4486,12 +4495,18 @@ private enum HomeContent {
         useNowIDs.compactMap(HomePhraseItem.resolve(pageID:))
     }
 
-    static var savedFallbackItems: [HomePhraseItem] {
-        [
-            "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
-            "viet-phrase-hotel-3",
-        ].compactMap(HomePhraseItem.resolve(pageID:))
+    static var useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] {
+        HomeUseNowCatalog.featureCardIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
     }
+
+    static var savedFallbackItems: [HomePhraseItem] {
+        savedFallbackPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
+    }
+
+    static let savedFallbackPageIDs = [
+        "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
+        "viet-phrase-hotel-3",
+    ]
 
     static var featuredItems: [HomePhraseItem] {
         featuredIDs.compactMap(HomePhraseItem.resolve(pageID:))
@@ -4614,6 +4629,25 @@ private enum HomeContent {
     ]
 }
 
+#if DEBUG
+enum HomePageLinkRegistry {
+    static var homepageListingPageIDs: [String] {
+        uniquePageIDs(
+            HomeUseNowCatalog.featureCardIDs
+            + HomeContent.homepagePhraseShelves.flatMap(\.pageIDs)
+            + HomeContent.featuredIDs
+            + HomeContent.savedFallbackPageIDs
+            + PhrasePage.xinChao.localGreetings.prefix(3).compactMap(\.detailPageID)
+        )
+    }
+
+    private static func uniquePageIDs(_ pageIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        return pageIDs.filter { seen.insert($0).inserted }
+    }
+}
+#endif
+
 private struct HomeShelf<Content: View>: View {
     let title: String
     let subtitle: String
@@ -4627,21 +4661,12 @@ private struct HomeShelf<Content: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.82)
-
-                if !subtitle.isEmpty {
-                    Text(subtitle)
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.86)
-                }
-            }
+            Text(title)
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+                .accessibilityHint(subtitle)
 
             content
         }
@@ -5597,12 +5622,6 @@ private struct HomeBrowseRouteWideCard: View {
                         .foregroundStyle(.primary)
                         .lineLimit(1)
                         .minimumScaleFactor(0.78)
-
-                    Text(subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.76)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
@@ -5613,6 +5632,7 @@ private struct HomeBrowseRouteWideCard: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("HomeShelf.More.\(identifier)")
+        .accessibilityHint(subtitle)
     }
 }
 
