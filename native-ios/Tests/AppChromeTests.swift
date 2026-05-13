@@ -331,6 +331,51 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(HomeUseNowCatalog.starterIDs.contains("viet-family-health-doctor"))
     }
 
+    func testHomeFirstDayShelfUsesShortBeginnerPhrasePages() throws {
+        XCTAssertEqual(HomeFirstDayShelfContent.title, "First Day in Vietnam")
+        XCTAssertEqual(HomeFirstDayShelfContent.pageIDs.count, HomeFirstDayShelfContent.maximumCards)
+        XCTAssertTrue(HomeFirstDayShelfContent.pageIDs.contains("viet-phrase-taxi-1"))
+        XCTAssertFalse(HomeFirstDayShelfContent.pageIDs.contains("viet-phrase-v500-tran-please-take-me-to-this-hotel"))
+        XCTAssertFalse(HomeFirstDayShelfContent.pageIDs.contains("viet-phrase-v500-airp-bord-arri-here-is-my-passport"))
+
+        for pageID in HomeFirstDayShelfContent.pageIDs {
+            let item = try XCTUnwrap(PhraseCatalog.catalogItem(forOpenablePageID: pageID))
+            XCTAssertLessThanOrEqual(
+                item.title.split(separator: " ").count,
+                4,
+                "\(pageID) should stay short enough for a beginner Home shelf."
+            )
+        }
+        XCTAssertEqual(HomePageLinkRegistry.firstDayHomepagePageIDs, HomeFirstDayShelfContent.pageIDs)
+    }
+
+    func testHomeRecentlyViewedShelfUsesSixMostRecentCanonicalPages() throws {
+        let expected = try HomeUseNowCatalog.starterIDs.prefix(6).map { pageID in
+            try XCTUnwrap(PhraseCatalog.canonicalPageID(forOpenablePageID: pageID))
+        }
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.cardPageIDs(from: HomeUseNowCatalog.starterIDs),
+            expected
+        )
+        XCTAssertEqual(HomeRecentlyViewedContent.maximumFeatureCards, 6)
+    }
+
+    func testHomeRecentlyViewedShelfSkipsDuplicatesAndMissingPages() throws {
+        let thankYouID = try XCTUnwrap(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-thank-you"))
+        let sorryID = try XCTUnwrap(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-excuse-sorry"))
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.cardPageIDs(from: [
+                "missing-page",
+                "viet-thank-you",
+                thankYouID,
+                "viet-excuse-sorry",
+            ]),
+            [thankYouID, sorryID]
+        )
+    }
+
     func testHomepagePhraseCardsOpenBuiltOutListingPages() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let issues = HomePageLinkRegistry.homepageListingPageIDs.compactMap {
