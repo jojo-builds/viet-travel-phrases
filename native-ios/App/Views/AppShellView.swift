@@ -3694,10 +3694,6 @@ struct HomeView: View {
                         header
                             .id(Self.scrollTopID)
 
-                        if hasPersonalProgress {
-                            personalProgressShelves
-                        }
-
                         useNowShelf
 
                         homepagePhraseShelf("first-hour")
@@ -3755,62 +3751,20 @@ struct HomeView: View {
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
-
-                Text("Start speaking now")
-                    .font(.system(size: 36, weight: .black, design: .serif))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.68)
-
-                Text("Offline phrases, audio, and local ways to say it.")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.78)
             }
             .padding(.horizontal, HomeLayout.horizontalPadding)
             .padding(.top, 10)
-            .padding(.bottom, 2)
-        }
-    }
-
-    private var personalProgressShelves: some View {
-        VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
-            continueShelf
-
-            if !savedItems.isEmpty {
-                savedForLaterShelf
-            }
-
-            if !savedItems.isEmpty || !practiceItems.isEmpty {
-                practiceListShelf
-            }
-        }
-        .padding(.horizontal, HomeLayout.horizontalPadding)
-    }
-
-    private var continueShelf: some View {
-        HomeShelf(title: "Keep going", subtitle: "Recent pages and saved phrases") {
-            HomeContinuePanel(
-                item: continueItem,
-                savedCount: savedItems.count,
-                practiceCount: practiceItems.count,
-                onOpenDetail: onOpenDetail,
-                onOpenSavedFallback: {
-                    if let pageID = savedItems.first?.pageID {
-                        onOpenDetail(pageID)
-                    } else {
-                        onBrowseAllTapped()
-                    }
-                },
-                onStartPractice: { onStartPractice(.practiceMode(.savedReview)) },
-                onBrowseAllTapped: onBrowseAllTapped
-            )
+            .padding(.bottom, 0)
         }
     }
 
     private var useNowShelf: some View {
-        HomeShelf(title: "Use now", subtitle: "") {
+        HomeShelf(
+            title: "Use now",
+            subtitle: "Core phrases for any trip",
+            route: .category("essentials"),
+            onOpenCollection: onOpenCollection
+        ) {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.useNowFeaturePhraseCardItems,
                 heroMorphPageID: heroMorphPageID,
@@ -3858,12 +3812,6 @@ struct HomeView: View {
         .padding(.leading, HomeLayout.horizontalPadding)
     }
 
-    private var savedForLaterShelf: some View {
-        HomeShelf(title: "Saved for later", subtitle: "Pages you marked to come back to") {
-            HomeSavedPhraseGrid(items: savedForLaterDisplayItems, onOpenDetail: onOpenDetail)
-        }
-    }
-
     private var situationShelves: some View {
         HomeShelf(title: "Start with a situation", subtitle: "Go straight to what is happening around you") {
             LazyVStack(spacing: 12) {
@@ -3875,12 +3823,13 @@ struct HomeView: View {
         .padding(.horizontal, HomeLayout.horizontalPadding)
     }
 
-    private var relationshipPhraseGroups: [[PhraseOption]] {
-        PhrasePage.xinChao.localGreetings.chunked(into: HomeLayout.relationshipRowsPerGroup)
-    }
-
     private var relationshipShelf: some View {
-        HomeShelf(title: "Who are you speaking to?", subtitle: "Pick a warmer hello by age or relationship") {
+        HomeShelf(
+            title: "Who are you speaking to?",
+            subtitle: "Pick a warmer hello by age or relationship",
+            route: .category("local-greetings"),
+            onOpenCollection: onOpenCollection
+        ) {
             HomeRelationshipListCard(
                 phrases: Array(PhrasePage.xinChao.localGreetings.prefix(3)),
                 onOpenDetail: onOpenDetail
@@ -3890,88 +3839,15 @@ struct HomeView: View {
     }
 
     private var cityShelf: some View {
-        HomeShelf(title: "Explore by city", subtitle: "Popular city guides for your trip") {
+        HomeShelf(
+            title: "Explore by city",
+            subtitle: "Popular city guides for your trip",
+            route: .category("city-guides"),
+            onOpenCollection: onOpenCollection
+        ) {
             HomeCityRail(cities: HomeContent.cityCards, onOpenCollection: onOpenCollection)
         }
         .padding(.leading, HomeLayout.horizontalPadding)
-    }
-
-    private var practiceListShelf: some View {
-        HomeShelf(title: "Message list", subtitle: "Save pages now and rehearse them later") {
-            LazyVStack(spacing: 12) {
-                HomePracticeListRow(
-                    title: "Ready for Messages",
-                    subtitle: practiceReadySubtitle,
-                    symbolName: "bookmark.fill",
-                    tintName: .green,
-                    action: { onStartPractice(.practiceMode(.savedReview)) }
-                )
-
-                HomePracticeListRow(
-                    title: "Recently viewed",
-                    subtitle: recentlyViewedSubtitle,
-                    symbolName: "clock.fill",
-                    tintName: .blue,
-                    action: {
-                        if let pageID = continueItem?.pageID {
-                            onOpenDetail(pageID)
-                        } else {
-                            onBrowseAllTapped()
-                        }
-                    }
-                )
-
-                HomeTipCard()
-            }
-        }
-    }
-
-    private var continueItem: HomePhraseItem? {
-        intentStore.recentPageIDs.compactMap(HomePhraseItem.resolve(pageID:)).first
-    }
-
-    private var savedItems: [HomePhraseItem] {
-        intentStore.savedPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
-
-    private var savedForLaterDisplayItems: [HomePhraseItem] {
-        Array(savedItems.prefix(4))
-    }
-
-    private var hasPersonalProgress: Bool {
-        !intentStore.recentPageIDs.isEmpty
-            || !intentStore.savedPageIDs.isEmpty
-            || !intentStore.practicePageIDs.isEmpty
-    }
-
-    private var practiceItems: [HomePhraseItem] {
-        intentStore.practicePageIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
-
-    private var practiceReadySubtitle: String {
-        let count = practiceItems.isEmpty ? savedItems.count : practiceItems.count
-        if count == 0 {
-            return "Save a few phrases to start a message"
-        }
-
-        if practiceItems.isEmpty {
-            return "Build a short message from \(count) saved \(count == 1 ? "page" : "pages")"
-        }
-
-        return "Continue with \(count) message-ready \(count == 1 ? "page" : "pages")"
-    }
-
-    private var recentlyViewedSubtitle: String {
-        let recentTitles = intentStore.recentPageIDs
-            .compactMap(HomePhraseItem.resolve(pageID:))
-            .prefix(3)
-            .map(\.title)
-
-        guard !recentTitles.isEmpty else {
-            return "Browse a few pages, then return here"
-        }
-
-        return recentTitles.joined(separator: ", ")
     }
 }
 
@@ -4069,11 +3945,11 @@ struct SavedPagesView: View {
 
 enum HomeLayout {
     static let horizontalPadding: CGFloat = 24
-    static let sectionSpacing: CGFloat = 28
+    static let sectionSpacing: CGFloat = 42
     static let cardCornerRadius: CGFloat = 22
     static let largeCardCornerRadius: CGFloat = 28
-    static let quickPhraseCardHeight: CGFloat = 122
-    static let quickPhraseCardWidth: CGFloat = 146
+    static let quickPhraseCardHeight: CGFloat = 142
+    static let quickPhraseCardWidth: CGFloat = 160
     static let quickPhraseGridRowSpacing: CGFloat = 12
     static let featurePhraseCardWidth: CGFloat = 344
     static let featurePhraseCardHeight: CGFloat = 326
@@ -4252,6 +4128,8 @@ private struct HomeSituationCard: Identifiable {
 }
 
 private struct HomePhraseShelfDefinition: Identifiable {
+    private static let maximumShelfItems = 12
+
     let id: String
     let title: String
     let subtitle: String
@@ -4282,11 +4160,24 @@ private struct HomePhraseShelfDefinition: Identifiable {
         var seen = Set<String>()
         var rows: [HomePhraseItem] = []
 
-        for item in pageIDs.compactMap(HomePhraseItem.resolve(pageID:)) {
+        func append(_ item: HomePhraseItem) {
             guard seen.insert(item.pageID).inserted else {
-                continue
+                return
             }
             rows.append(item)
+        }
+
+        for item in pageIDs.compactMap(HomePhraseItem.resolve(pageID:)) {
+            append(item)
+        }
+
+        for categoryID in sourceCategoryIDs where rows.count < Self.maximumShelfItems {
+            let categoryItems = PhraseCatalog.items(selectedCategoryID: categoryID)
+            for catalogItem in categoryItems where rows.count < Self.maximumShelfItems {
+                if let item = HomePhraseItem.resolve(pageID: catalogItem.pageID) {
+                    append(item)
+                }
+            }
         }
 
         return rows
@@ -4636,189 +4527,64 @@ enum HomePageLinkRegistry {
 private struct HomeShelf<Content: View>: View {
     let title: String
     let subtitle: String
+    let route: BrowseCollectionRoute?
+    let onOpenCollection: ((BrowseCollectionRoute) -> Void)?
     let content: Content
 
-    init(title: String, subtitle: String, @ViewBuilder content: () -> Content) {
+    init(
+        title: String,
+        subtitle: String,
+        route: BrowseCollectionRoute? = nil,
+        onOpenCollection: ((BrowseCollectionRoute) -> Void)? = nil,
+        @ViewBuilder content: () -> Content
+    ) {
         self.title = title
         self.subtitle = subtitle
+        self.route = route
+        self.onOpenCollection = onOpenCollection
         self.content = content()
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
+            header
+
+            content
+        }
+    }
+
+    @ViewBuilder
+    private var header: some View {
+        if let route, let onOpenCollection {
+            Button {
+                onOpenCollection(route)
+            } label: {
+                headerContent(showsChevron: true)
+            }
+            .buttonStyle(.plain)
+            .accessibilityHint(subtitle)
+            .accessibilityIdentifier("HomeShelf.Header.\(route.id)")
+        } else {
+            headerContent(showsChevron: false)
+                .accessibilityHint(subtitle)
+        }
+    }
+
+    private func headerContent(showsChevron: Bool) -> some View {
+        HStack(spacing: 7) {
             Text(title)
                 .font(.title2.weight(.bold))
                 .foregroundStyle(.primary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.82)
-                .accessibilityHint(subtitle)
 
-            content
-        }
-    }
-}
-
-private struct HomeContinuePanel: View {
-    let item: HomePhraseItem?
-    let savedCount: Int
-    let practiceCount: Int
-    let onOpenDetail: (String) -> Void
-    let onOpenSavedFallback: () -> Void
-    let onStartPractice: () -> Void
-    let onBrowseAllTapped: () -> Void
-
-    var body: some View {
-        VStack(spacing: 12) {
-            Button(action: primaryAction) {
-                HStack(spacing: 14) {
-                    ZStack {
-                        Circle()
-                            .fill(primaryTint.color.opacity(0.14))
-                            .overlay {
-                                Circle().stroke(.white.opacity(0.76), lineWidth: 1)
-                            }
-
-                        Image(systemName: primarySymbolName)
-                            .font(.system(size: 25, weight: .semibold))
-                            .foregroundStyle(primaryTint.color)
-                    }
-                    .frame(width: HomeLayout.continuePrimaryIconSize, height: HomeLayout.continuePrimaryIconSize)
-
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(item == nil ? "Start here" : "Last viewed")
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(primaryTint.color)
-                            .textCase(.uppercase)
-
-                        Text(primaryTitle)
-                            .font(.headline.weight(.bold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.78)
-
-                        Text(primarySubtitle)
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(2)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .layoutPriority(1)
-
-                    Image(systemName: "chevron.right")
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                }
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier("Home.ContinuePrimary")
-
-            HStack(spacing: 10) {
-                HomeContinueActionPill(
-                    title: savedActionTitle,
-                    symbolName: "heart.fill",
-                    tintName: .red,
-                    action: onOpenSavedFallback
-                )
-
-                HomeContinueActionPill(
-                    title: practiceActionTitle,
-                    symbolName: "play.fill",
-                    tintName: .green,
-                    action: onStartPractice
-                )
+            if showsChevron {
+                Image(systemName: "chevron.right")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.tertiary)
             }
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
-        .accessibilityIdentifier("Home.ContinuePanel")
-    }
-
-    private var primaryTitle: String {
-        item?.title ?? "Browse phrases"
-    }
-
-    private var primarySubtitle: String {
-        item?.subtitle ?? "Pick a useful page to save or hear later."
-    }
-
-    private var primarySymbolName: String {
-        item?.symbolName ?? "square.grid.2x2.fill"
-    }
-
-    private var primaryTint: AccentTint {
-        item?.tintName ?? .blue
-    }
-
-    private var savedActionTitle: String {
-        savedCount == 0 ? "Saved phrases" : "\(savedCount) saved"
-    }
-
-    private var practiceActionTitle: String {
-        practiceCount == 0 ? "Message list" : "\(practiceCount) queued"
-    }
-
-    private func primaryAction() {
-        if let item {
-            onOpenDetail(item.pageID)
-        } else {
-            onBrowseAllTapped()
-        }
-    }
-}
-
-private struct HomeContinueActionPill: View {
-    let title: String
-    let symbolName: String
-    let tintName: AccentTint
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 7) {
-                Image(systemName: symbolName)
-                    .font(.caption.weight(.bold))
-
-                Text(title)
-                    .font(.subheadline.weight(.bold))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.76)
-            }
-            .foregroundStyle(tintName.color)
-            .frame(maxWidth: .infinity)
-            .frame(height: HomeLayout.continueActionHeight)
-            .background(tintName.color.opacity(0.10), in: Capsule(style: .continuous))
-            .overlay {
-                Capsule(style: .continuous)
-                    .stroke(tintName.color.opacity(0.18), lineWidth: 1)
-            }
-        }
-        .buttonStyle(.plain)
-    }
-}
-
-private struct HomeQuickPhraseGrid: View {
-    let items: [HomePhraseItem]
-    let onOpenDetail: (String) -> Void
-
-    private let rows = [
-        GridItem(.fixed(HomeLayout.quickPhraseCardHeight), spacing: HomeLayout.quickPhraseGridRowSpacing),
-        GridItem(.fixed(HomeLayout.quickPhraseCardHeight), spacing: 0),
-    ]
-
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHGrid(rows: rows, alignment: .top, spacing: 12) {
-                ForEach(items) { item in
-                    HomeQuickPhraseCard(item: item, onOpenDetail: onOpenDetail)
-                }
-            }
-            .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 2)
-        }
-        .frame(height: HomeLayout.quickPhraseCardHeight * 2 + HomeLayout.quickPhraseGridRowSpacing)
-        .scrollClipDisabled()
+        .contentShape(Rectangle())
     }
 }
 
@@ -4832,25 +4598,40 @@ private struct HomeFeaturedPhraseCarousel: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 14) {
-                ForEach(items) { item in
-                    HomeFeaturedPhraseCard(
-                        item: item,
-                        isSaved: isSaved(item.pageID),
-                        isHeroMorphSource: heroMorphPageID == item.morphPageID,
-                        chromeNamespace: chromeNamespace,
-                        onOpenDetail: onOpenDetail,
-                        onToggleSaved: { onToggleSaved(item.pageID) }
-                    )
-                }
-            }
-            .scrollTargetLayout()
-            .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 3)
+            carouselContent
+                .padding(.trailing, HomeLayout.horizontalPadding)
+                .padding(.bottom, 3)
         }
         .frame(height: HomeLayout.featurePhraseCardHeight)
         .scrollTargetBehavior(.viewAligned)
         .scrollClipDisabled()
+    }
+
+    @ViewBuilder
+    private var carouselContent: some View {
+        if #available(iOS 26.0, *) {
+            GlassEffectContainer(spacing: 14) {
+                carouselItems
+            }
+        } else {
+            carouselItems
+        }
+    }
+
+    private var carouselItems: some View {
+        LazyHStack(spacing: 14) {
+            ForEach(items) { item in
+                HomeFeaturedPhraseCard(
+                    item: item,
+                    isSaved: isSaved(item.pageID),
+                    isHeroMorphSource: heroMorphPageID == item.morphPageID,
+                    chromeNamespace: chromeNamespace,
+                    onOpenDetail: onOpenDetail,
+                    onToggleSaved: { onToggleSaved(item.pageID) }
+                )
+            }
+        }
+        .scrollTargetLayout()
     }
 }
 
@@ -4941,12 +4722,12 @@ private struct HomeQuickPhraseCard: View {
                         .foregroundStyle(.primary)
                         .lineLimit(2)
                         .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.72)
+                        .minimumScaleFactor(0.66)
 
                     Text(item.subtitle)
                         .font(.caption)
                         .foregroundStyle(.secondary)
-                        .lineLimit(2)
+                        .lineLimit(1)
                         .multilineTextAlignment(.center)
                         .minimumScaleFactor(0.78)
                 }
@@ -5014,67 +4795,6 @@ private struct HomeScenarioContactButton: View {
         .buttonStyle(.plain)
         .accessibilityLabel(scenario.scenarioID.messageContactName)
         .accessibilityIdentifier("HomeScenario.\(scenario.id)")
-    }
-}
-
-private struct HomeSavedPhraseGrid: View {
-    let items: [HomePhraseItem]
-    let onOpenDetail: (String) -> Void
-
-    private let columns = [
-        GridItem(.flexible(), spacing: 12),
-        GridItem(.flexible(), spacing: 12),
-    ]
-
-    var body: some View {
-        LazyVGrid(columns: columns, spacing: 12) {
-            ForEach(items) { item in
-                HomeSavedPhraseCard(item: item, onOpenDetail: onOpenDetail)
-            }
-        }
-    }
-}
-
-private struct HomeSavedPhraseCard: View {
-    let item: HomePhraseItem
-    let onOpenDetail: (String) -> Void
-
-    var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            VStack(spacing: 14) {
-                AudioSpeakerButton(
-                    tint: item.tintName,
-                    size: 52,
-                    audioKey: item.audioKey,
-                    accessibilityIdentifier: "HomeSaved.Audio.\(item.pageID)"
-                )
-                .frame(height: 56)
-
-                VStack(spacing: 5) {
-                    Text(item.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(3)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.68)
-
-                    Text(item.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(3)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.76)
-                }
-            }
-            .padding(14)
-            .frame(maxWidth: .infinity)
-            .frame(height: HomeLayout.savedCardHeight)
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("HomeSaved.\(item.pageID)")
     }
 }
 
@@ -5280,78 +5000,6 @@ private struct HomeCityCardView: View {
     }
 }
 
-private struct HomePracticeListRow: View {
-    let title: String
-    let subtitle: String
-    let symbolName: String
-    let tintName: AccentTint
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 18) {
-                Image(systemName: symbolName)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(tintName.color)
-                    .frame(width: 62, height: 62)
-                    .nativeGlass(cornerRadius: 31, tint: tintName.color.opacity(0.32), interactive: true)
-
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(title)
-                        .font(.title3.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-
-                    Text(subtitle)
-                        .font(.body)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.76)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
-            .padding(16)
-            .frame(maxWidth: .infinity)
-            .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
-        }
-        .buttonStyle(.plain)
-    }
-}
-
-private struct HomeTipCard: View {
-    var body: some View {
-        HStack(spacing: 16) {
-            Image(systemName: "lightbulb.fill")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(Color(red: 0.82, green: 0.53, blue: 0.08))
-                .frame(width: 62, height: 62)
-                .nativeGlass(cornerRadius: 31, tint: Color(red: 0.82, green: 0.53, blue: 0.08).opacity(0.24))
-
-            VStack(alignment: .leading, spacing: 5) {
-                Text("Tip")
-                    .font(.title3.weight(.bold))
-                    .foregroundStyle(.primary)
-
-                Text("Save phrases as you browse so Messages can use them later.")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(3)
-            }
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(red: 1.0, green: 0.94, blue: 0.78).opacity(0.18), in: RoundedRectangle(cornerRadius: HomeLayout.cardCornerRadius, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: HomeLayout.cardCornerRadius, style: .continuous)
-                .stroke(Color(red: 0.82, green: 0.53, blue: 0.08).opacity(0.28), lineWidth: 1)
-        }
-    }
-}
-
 private extension View {
     func homeGlassCard(cornerRadius: CGFloat) -> some View {
         self
@@ -5374,36 +5022,22 @@ private struct HomeRoutePhraseShelf: View {
         let items = shelf.items
 
         if !items.isEmpty {
-            switch shelf.layout {
-            case .quickTiles:
-                quickTileShelf(items: items)
-            case .spotlightRows:
-                spotlightRowsShelf(items: items)
-            case .mediumGrid:
-                mediumGridShelf(items: items)
-            case .wideRows:
-                wideRowsShelf(items: items)
-            case .tallCards:
-                tallCardsShelf(items: items)
-            }
+            phraseRail(items: items)
         }
     }
 
-    private func quickTileShelf(items: [HomePhraseItem]) -> some View {
-        HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
+    private func phraseRail(items: [HomePhraseItem]) -> some View {
+        HomeShelf(
+            title: shelf.title,
+            subtitle: shelf.subtitle,
+            route: shelf.route,
+            onOpenCollection: onOpenCollection
+        ) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 12) {
                     ForEach(items) { item in
                         HomeQuickPhraseCard(item: item, onOpenDetail: onOpenDetail)
                     }
-
-                    HomeBrowseRouteCard(
-                        identifier: shelf.id,
-                        title: "More",
-                        subtitle: shelf.browseTitle,
-                        route: shelf.route,
-                        onOpenCollection: onOpenCollection
-                    )
                 }
                 .padding(.trailing, HomeLayout.horizontalPadding)
                 .padding(.bottom, 2)
@@ -5412,237 +5046,6 @@ private struct HomeRoutePhraseShelf: View {
             .scrollClipDisabled()
         }
         .padding(.leading, HomeLayout.horizontalPadding)
-    }
-
-    private func spotlightRowsShelf(items: [HomePhraseItem]) -> some View {
-        let leadingItem = items.first
-        let sideItems = Array(items.dropFirst().prefix(2))
-        let trailingItems = Array(items.dropFirst(3).prefix(2))
-
-        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(alignment: .top, spacing: 12) {
-                    if let leadingItem {
-                        HomePhraseCard(item: leadingItem, onOpenDetail: onOpenDetail)
-                    }
-
-                    if !sideItems.isEmpty {
-                        VStack(spacing: 12) {
-                            ForEach(sideItems) { item in
-                                HomeCompactPhraseRow(item: item, onOpenDetail: onOpenDetail)
-                            }
-                        }
-                    }
-
-                    ForEach(trailingItems) { item in
-                        HomePhraseCard(item: item, onOpenDetail: onOpenDetail)
-                    }
-
-                    HomeBrowseRouteCard(
-                        identifier: shelf.id,
-                        title: "More",
-                        subtitle: shelf.browseTitle,
-                        route: shelf.route,
-                        onOpenCollection: onOpenCollection
-                    )
-                    .frame(height: HomeLayout.tallPhraseCardHeight)
-                }
-                .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 3)
-            }
-            .frame(height: HomeLayout.tallPhraseCardHeight)
-            .scrollClipDisabled()
-        }
-        .padding(.leading, HomeLayout.horizontalPadding)
-    }
-
-    private func mediumGridShelf(items: [HomePhraseItem]) -> some View {
-        let gridItems = Array(items.prefix(4))
-
-        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
-            VStack(spacing: 12) {
-                LazyVGrid(
-                    columns: [
-                        GridItem(.flexible(), spacing: 12),
-                        GridItem(.flexible(), spacing: 12),
-                    ],
-                    spacing: 12
-                ) {
-                    ForEach(gridItems) { item in
-                        HomeSavedPhraseCard(item: item, onOpenDetail: onOpenDetail)
-                    }
-                }
-
-                HomeBrowseRouteWideCard(
-                    identifier: shelf.id,
-                    title: "More \(shelf.browseTitle)",
-                    subtitle: shelf.subtitle,
-                    route: shelf.route,
-                    onOpenCollection: onOpenCollection
-                )
-            }
-        }
-        .padding(.horizontal, HomeLayout.horizontalPadding)
-    }
-
-    private func wideRowsShelf(items: [HomePhraseItem]) -> some View {
-        let rowItems = Array(items.prefix(4))
-
-        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
-            LazyVStack(spacing: 12) {
-                ForEach(rowItems) { item in
-                    HomeWidePhraseButton(item: item, onOpenDetail: onOpenDetail)
-                }
-
-                HomeBrowseRouteWideCard(
-                    identifier: shelf.id,
-                    title: "More \(shelf.browseTitle)",
-                    subtitle: shelf.subtitle,
-                    route: shelf.route,
-                    onOpenCollection: onOpenCollection
-                )
-            }
-        }
-        .padding(.horizontal, HomeLayout.horizontalPadding)
-    }
-
-    private func tallCardsShelf(items: [HomePhraseItem]) -> some View {
-        HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(alignment: .top, spacing: 12) {
-                    ForEach(items) { item in
-                        HomePhraseCard(item: item, onOpenDetail: onOpenDetail)
-                    }
-
-                    HomeBrowseRouteCard(
-                        identifier: shelf.id,
-                        title: "More",
-                        subtitle: shelf.browseTitle,
-                        route: shelf.route,
-                        onOpenCollection: onOpenCollection
-                    )
-                }
-                .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 2)
-            }
-            .frame(height: HomeLayout.tallPhraseCardHeight)
-            .scrollClipDisabled()
-        }
-        .padding(.leading, HomeLayout.horizontalPadding)
-    }
-}
-
-private struct HomeBrowseRouteCard: View {
-    let identifier: String
-    let title: String
-    let subtitle: String
-    let route: BrowseCollectionRoute
-    let onOpenCollection: (BrowseCollectionRoute) -> Void
-
-    var body: some View {
-        Button {
-            onOpenCollection(route)
-        } label: {
-            VStack(spacing: 10) {
-                ZStack {
-                    Circle()
-                        .fill(AccentTint.red.color.opacity(0.12))
-
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 23, weight: .black))
-                        .foregroundStyle(AccentTint.red.color)
-                }
-                .frame(width: 52, height: 52)
-
-                VStack(spacing: 3) {
-                    Text(title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-
-                    Text(subtitle)
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.78)
-                }
-                .frame(maxWidth: .infinity)
-            }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 12)
-            .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("HomeShelf.More.\(identifier)")
-    }
-}
-
-private struct HomeBrowseRouteWideCard: View {
-    let identifier: String
-    let title: String
-    let subtitle: String
-    let route: BrowseCollectionRoute
-    let onOpenCollection: (BrowseCollectionRoute) -> Void
-
-    var body: some View {
-        Button {
-            onOpenCollection(route)
-        } label: {
-            HStack(spacing: 14) {
-                ZStack {
-                    Circle()
-                        .fill(AccentTint.red.color.opacity(0.12))
-
-                    Image(systemName: "chevron.right")
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(AccentTint.red.color)
-                }
-                .frame(width: 48, height: 48)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.78)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .layoutPriority(1)
-            }
-            .padding(14)
-            .frame(maxWidth: .infinity, minHeight: 76)
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("HomeShelf.More.\(identifier)")
-        .accessibilityHint(subtitle)
-    }
-}
-
-private struct HomeHorizontalPhraseShelf: View {
-    let title: String
-    let subtitle: String
-    let items: [HomePhraseItem]
-    let onOpenDetail: (String) -> Void
-
-    var body: some View {
-        if !items.isEmpty {
-            HomeShelf(title: title, subtitle: subtitle) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 12) {
-                        ForEach(items) { item in
-                            HomePhraseCard(item: item, onOpenDetail: onOpenDetail)
-                        }
-                    }
-                    .padding(.trailing, HomeLayout.horizontalPadding)
-                    .padding(.bottom, 2)
-                }
-                .scrollClipDisabled()
-            }
-            .padding(.leading, HomeLayout.horizontalPadding)
-        }
     }
 }
 
@@ -5691,109 +5094,6 @@ private struct HomeWidePhraseButton: View {
         }
         .padding(14)
         .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
-    }
-}
-
-private struct HomeCompactPhraseRow: View {
-    let item: HomePhraseItem
-    let onOpenDetail: (String) -> Void
-
-    var body: some View {
-        HStack(spacing: 10) {
-            AudioSpeakerButton(
-                tint: item.tintName,
-                size: 42,
-                audioKey: item.audioKey,
-                accessibilityIdentifier: "HomeCompact.Audio.\(item.pageID)"
-            )
-
-            Button {
-                onOpenDetail(item.pageID)
-            } label: {
-                HStack(spacing: 8) {
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text(item.title)
-                            .font(.subheadline.weight(.bold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.74)
-
-                        Text(item.subtitle)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.76)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .layoutPriority(1)
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                }
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(12)
-        .frame(width: HomeLayout.compactPhraseRowWidth, height: HomeLayout.compactPhraseRowHeight)
-        .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
-        .accessibilityIdentifier("HomeCompact.\(item.pageID)")
-    }
-}
-
-private struct HomePhraseCard: View {
-    let item: HomePhraseItem
-    let onOpenDetail: (String) -> Void
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            Button {
-                onOpenDetail(item.pageID)
-            } label: {
-                VStack(alignment: .leading, spacing: 10) {
-                    Color.clear
-                    .frame(height: 52)
-
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(item.title)
-                            .font(.headline.weight(.bold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.78)
-                            .fixedSize(horizontal: false, vertical: true)
-
-                        Text(item.subtitle)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(2)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    .layoutPriority(1)
-
-                    HStack {
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(.tertiary)
-                    }
-                }
-                .padding(14)
-                .frame(width: HomeLayout.tallPhraseCardWidth, height: HomeLayout.tallPhraseCardHeight, alignment: .topLeading)
-                .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
-                .shadow(color: .black.opacity(0.06), radius: 16, x: 0, y: 10)
-            }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier("HomePhrase.\(item.pageID)")
-
-            AudioSpeakerButton(
-                tint: item.tintName,
-                size: 50,
-                audioKey: item.audioKey,
-                accessibilityIdentifier: "HomePhrase.Audio.\(item.pageID)"
-            )
-            .padding(14)
-        }
     }
 }
 

@@ -1,5 +1,25 @@
 import SwiftUI
 
+enum PracticeStorySessionStartPosition: Equatable {
+    case top
+
+    var stackAlignment: Alignment {
+        .top
+    }
+}
+
+enum PracticeStorySessionLayoutPolicy {
+    static func startPosition(for session: PracticeScenarioSession) -> PracticeStorySessionStartPosition {
+        .top
+    }
+
+    static func shouldScrollToBottomOnAppear(for session: PracticeScenarioSession) -> Bool {
+        session.currentIndex > 0
+            || !session.selectedOptionIDs.isEmpty
+            || !session.revealedReplyStepIDs.isEmpty
+    }
+}
+
 struct PracticeMessagesThreadHost: View {
     let activeScenarioSession: PracticeScenarioSession?
     let scenarioCompletion: PracticeScenarioCompletionSummary?
@@ -268,6 +288,10 @@ struct PracticeStorySessionSurface: View {
         )
     }
 
+    private var startPosition: PracticeStorySessionStartPosition {
+        PracticeStorySessionLayoutPolicy.startPosition(for: session)
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             if showsHeader {
@@ -304,11 +328,13 @@ struct PracticeStorySessionSurface: View {
                         .frame(
                             maxWidth: .infinity,
                             minHeight: geometry.size.height,
-                            alignment: .bottom
+                            alignment: startPosition.stackAlignment
                         )
                     }
                     .onAppear {
-                        scrollToBottom(scrollProxy, animated: false)
+                        if PracticeStorySessionLayoutPolicy.shouldScrollToBottomOnAppear(for: session) {
+                            scrollToBottom(scrollProxy, animated: false)
+                        }
                     }
                     .onChange(of: session.currentIndex) { _, _ in
                         scrollToBottom(scrollProxy, animated: true)

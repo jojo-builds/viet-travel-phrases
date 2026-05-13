@@ -175,8 +175,10 @@ final class AdminChromeUITests: XCTestCase {
     func testHomeLiquidGlassRedesignProofScreenshots() {
         let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
-        XCTAssertTrue(app.staticTexts["Start speaking now"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.staticTexts["Start speaking now"].exists)
+        XCTAssertFalse(app.staticTexts["Offline phrases, audio, and local ways to say it."].exists)
         XCTAssertTrue(app.staticTexts["Use now"].exists)
+        XCTAssertTrue(app.buttons["HomeShelf.Header.category.essentials"].exists)
         XCTAssertFalse(app.staticTexts["Test phrase cards"].exists)
         XCTAssertFalse(app.staticTexts["Larger listen cards for common moments"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Home.SearchEntry"].exists)
@@ -186,6 +188,8 @@ final class AdminChromeUITests: XCTestCase {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["First hour in Vietnam"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["HomeShelf.Header.category.first-day"].exists)
+        XCTAssertFalse(app.buttons["HomeShelf.More.first-hour"].exists)
         XCTAssertFalse(app.staticTexts["Keep going"].exists)
         XCTAssertFalse(app.staticTexts["Saved for later"].exists)
         XCTAssertFalse(app.staticTexts["Message list"].exists)
@@ -195,7 +199,14 @@ final class AdminChromeUITests: XCTestCase {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["HomeShelf.Header.category.city-guides"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-city.png")
+
+        for _ in 0..<3 where !app.staticTexts["Food & coffee"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.buttons["HomeShelf.Header.category.food"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.buttons["HomeShelf.More.food-coffee"].exists)
 
         let scenarioRail = app.descendants(matching: .any)["HomeScenarioRail"]
         for _ in 0..<3 where !scenarioRail.exists {
@@ -224,6 +235,7 @@ final class AdminChromeUITests: XCTestCase {
         }
 
         XCTAssertTrue(app.staticTexts["Use now"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["HomeShelf.Header.category.essentials"].exists)
         XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-use-now-large-card-start.png")
     }

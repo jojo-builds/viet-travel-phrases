@@ -139,7 +139,12 @@ enum PracticeStoryTranscript {
         var turns: [PracticeStoryTurn] = []
 
         for (index, step) in visibleSteps.enumerated() {
-            if !step.localLine.isEmpty {
+            if !step.localLine.isEmpty, !followsRevealedLocalReply(
+                in: visibleSteps,
+                index: index,
+                selectedOptionIDs: selectedOptionIDs,
+                revealedReplyStepIDs: revealedReplyStepIDs
+            ) {
                 turns.append(
                     .local(
                         step: step,
@@ -178,5 +183,27 @@ enum PracticeStoryTranscript {
         }
 
         return turns
+    }
+
+    private static func followsRevealedLocalReply(
+        in steps: [PracticeScenarioStep],
+        index: Int,
+        selectedOptionIDs: [String: String],
+        revealedReplyStepIDs: Set<String>
+    ) -> Bool {
+        guard index > 0 else {
+            return false
+        }
+
+        let previousStep = steps[index - 1]
+        guard
+            let selectedOptionID = selectedOptionIDs[previousStep.id],
+            let selectedOption = previousStep.responseOptions.first(where: { $0.id == selectedOptionID }),
+            previousStep.hasLocalReply(after: selectedOption)
+        else {
+            return false
+        }
+
+        return revealedReplyStepIDs.contains(previousStep.id)
     }
 }
