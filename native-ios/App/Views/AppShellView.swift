@@ -4847,25 +4847,40 @@ private struct HomeFeaturedPhraseCarousel: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 14) {
-                ForEach(items) { item in
-                    HomeFeaturedPhraseCard(
-                        item: item,
-                        isSaved: isSaved(item.pageID),
-                        isHeroMorphSource: heroMorphPageID == item.morphPageID,
-                        chromeNamespace: chromeNamespace,
-                        onOpenDetail: onOpenDetail,
-                        onToggleSaved: { onToggleSaved(item.pageID) }
-                    )
-                }
-            }
-            .scrollTargetLayout()
-            .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 3)
+            carouselContent
+                .padding(.trailing, HomeLayout.horizontalPadding)
+                .padding(.bottom, 3)
         }
         .frame(height: HomeLayout.featurePhraseCardHeight)
         .scrollTargetBehavior(.viewAligned)
         .scrollClipDisabled()
+    }
+
+    @ViewBuilder
+    private var carouselContent: some View {
+        if #available(iOS 26.0, *) {
+            GlassEffectContainer(spacing: 14) {
+                carouselItems
+            }
+        } else {
+            carouselItems
+        }
+    }
+
+    private var carouselItems: some View {
+        LazyHStack(spacing: 14) {
+            ForEach(items) { item in
+                HomeFeaturedPhraseCard(
+                    item: item,
+                    isSaved: isSaved(item.pageID),
+                    isHeroMorphSource: heroMorphPageID == item.morphPageID,
+                    chromeNamespace: chromeNamespace,
+                    onOpenDetail: onOpenDetail,
+                    onToggleSaved: { onToggleSaved(item.pageID) }
+                )
+            }
+        }
+        .scrollTargetLayout()
     }
 }
 
