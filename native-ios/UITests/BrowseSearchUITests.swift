@@ -36,6 +36,24 @@ final class BrowseSearchUITests: XCTestCase {
         )
     }
 
+    func testBrowsePhraseFamilyCardsUseImageHeadlinesWithoutBodyCopy() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        scrollUntilHittable(app.buttons["Browse.PhraseFamily.greetings"], app: app)
+
+        XCTAssertTrue(app.buttons["Browse.PhraseFamily.greetings"].exists)
+        XCTAssertTrue(app.buttons["Browse.PhraseFamily.questions"].exists)
+        XCTAssertTrue(app.buttons["Browse.PhraseFamily.numbers-money"].exists)
+        XCTAssertTrue(app.buttons["Browse.PhraseFamily.polite-repair"].exists)
+
+        XCTAssertFalse(app.staticTexts["Say hello and start conversations."].exists)
+        XCTAssertFalse(app.staticTexts["Ask for information with confidence."].exists)
+        XCTAssertFalse(app.staticTexts["Count, pay, and handle prices."].exists)
+        XCTAssertFalse(app.staticTexts["Ask people to repeat, slow down, write it, or use English."].exists)
+        XCTAssertFalse(app.staticTexts["Alô"].exists)
+    }
+
     func testBrowseCategoryCardOpensCollectionAndBackReturnsToBrowse() {
         let app = launchApp(arguments: ["--browse"])
 

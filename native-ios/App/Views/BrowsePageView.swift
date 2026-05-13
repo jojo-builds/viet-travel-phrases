@@ -289,6 +289,7 @@ enum BrowsePageLayout {
     static let nextShelfIconSize: CGFloat = 48
     static let nextShelfRowPadding: CGFloat = 14
     static let nextShelfRowSpacing: CGFloat = 14
+    static let phraseFamilyCardHeight: CGFloat = 166
     static let situationColumns = [
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12),
@@ -632,44 +633,51 @@ private struct BrowsePhraseFamilyCard: View {
     let destination: BrowseDestination
     let action: () -> Void
 
+    private var heroImageName: String {
+        BrowseSearchDestinations.collectionDescriptor(for: destination.collectionRoute)?.mastheadImageName ?? "HeroVietnamMasthead"
+    }
+
     var body: some View {
         Button(action: action) {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack(alignment: .top) {
-                    Image(systemName: destination.symbolName)
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(destination.tintName.color)
-                        .frame(width: 48, height: 48)
-                        .nativeGlass(cornerRadius: 24, tint: destination.tintName.color.opacity(0.16), interactive: true)
+            ZStack(alignment: .bottomLeading) {
+                Image(heroImageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.phraseFamilyCardHeight)
+                    .clipped()
+                    .accessibilityHidden(true)
 
-                    Spacer()
-                }
+                LinearGradient(
+                    stops: [
+                        .init(color: .clear, location: 0.08),
+                        .init(color: Color.white.opacity(0.18), location: 0.46),
+                        .init(color: Color.white.opacity(0.88), location: 0.78),
+                        .init(color: Color.white.opacity(0.97), location: 1),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .allowsHitTesting(false)
 
                 Text(destination.title)
-                    .font(.headline.weight(.bold))
+                    .font(.system(size: 21, weight: .black))
                     .foregroundStyle(.primary)
                     .lineLimit(2)
-                    .minimumScaleFactor(0.8)
-
-                Text(destination.subtitle)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(3)
-                    .fixedSize(horizontal: false, vertical: true)
-
-                if let sample = destination.items.first {
-                    Text(sample.title)
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(destination.tintName.color)
-                        .lineLimit(1)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(destination.tintName.color.opacity(0.09), in: Capsule())
-                }
+                    .minimumScaleFactor(0.74)
+                    .padding(.horizontal, 14)
+                    .padding(.bottom, 16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(14)
-            .frame(maxWidth: .infinity, minHeight: 206, alignment: .topLeading)
-            .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
+            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.phraseFamilyCardHeight, maxHeight: BrowsePageLayout.phraseFamilyCardHeight)
+            .clipShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
+                    .stroke(.white.opacity(0.76), lineWidth: 1)
+            }
+            .shadow(color: .black.opacity(0.06), radius: 18, x: 0, y: 10)
+            .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)
+            .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Browse.PhraseFamily.\(destination.id)")
