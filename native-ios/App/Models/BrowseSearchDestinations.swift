@@ -1818,7 +1818,27 @@ enum BrowseSearchDestinations {
     }
 
     private static func foodCoffeePhraseRows() -> [BrowseSearchPhraseItem] {
-        let preferredCoffeeRows = pageItems(forOpenablePageIDs: [
+        let nounRows = foodNounItems([
+            (
+                pageID: "viet-family-food-coffee-black",
+                title: "Cà phê đen",
+                subtitle: "Black coffee",
+                audioKey: "breakdown-authored-ca-phe-den-855822aaf3"
+            ),
+            (
+                pageID: "viet-family-food-coffee-milk",
+                title: "Cà phê sữa",
+                subtitle: "Milk coffee",
+                audioKey: "breakdown-authored-ca-phe-sua-617d03a211"
+            ),
+            (
+                pageID: "viet-family-food-coffee-bac-xiu",
+                title: "Bạc xỉu",
+                subtitle: "Sweet milk coffee",
+                audioKey: nil
+            ),
+        ])
+        let followUpRows = pageItems(forOpenablePageIDs: [
             "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-den",
             "viet-family-food-coffee-black",
             "viet-family-food-coffee-milk",
@@ -1836,11 +1856,43 @@ enum BrowseSearchDestinations {
             limit: 12
         )
 
-        return Array(uniquePhraseItems(preferredCoffeeRows + matchingDrinkRows).prefix(12))
+        return Array(uniquePhraseItems(nounRows + followUpRows + matchingDrinkRows).prefix(12))
     }
 
     private static func foodDishPhraseRows() -> [BrowseSearchPhraseItem] {
-        pageItems(forOpenablePageIDs: [
+        let nounRows = foodNounItems([
+            (
+                pageID: "viet-family-ves-order-pho-bowl",
+                title: "Phở",
+                subtitle: "Vietnamese noodle soup",
+                audioKey: "breakdown-v500-food-drin-id-like-a-bowl-of-ph-please-piece-7"
+            ),
+            (
+                pageID: "viet-family-v500-food-drin-id-like-a-b-nh-m-please",
+                title: "Bánh mì",
+                subtitle: "Vietnamese sandwich",
+                audioKey: nil
+            ),
+            (
+                pageID: "viet-family-ves-order-bun-bo-hue-bowl",
+                title: "Bún bò Huế",
+                subtitle: "Hue beef noodle soup",
+                audioKey: "audio-authored-bun-bo-hue-d24e6940ff"
+            ),
+            (
+                pageID: "viet-family-ves-order-cao-lau-portion",
+                title: "Cao lầu",
+                subtitle: "Hoi An noodle dish",
+                audioKey: nil
+            ),
+            (
+                pageID: "viet-family-vpe-one-item-please-cho-toi-mot-banh-xeo",
+                title: "Bánh xèo",
+                subtitle: "Crispy savory pancake",
+                audioKey: nil
+            ),
+        ])
+        let followUpRows = pageItems(forOpenablePageIDs: [
             "viet-family-ves-order-pho-bowl",
             "viet-family-v500-food-drin-id-like-a-b-nh-m-please",
             "viet-family-ves-order-bun-bo-hue-bowl",
@@ -1854,6 +1906,8 @@ enum BrowseSearchDestinations {
             "viet-family-vpe-one-item-please-cho-toi-mot-do-chay",
             "viet-family-vpe-one-item-please-cho-toi-mot-com-trang",
         ])
+
+        return Array(uniquePhraseItems(nounRows + followUpRows).prefix(12))
     }
 
     private static func foodOrderAdjustPhraseRows() -> [BrowseSearchPhraseItem] {
@@ -1942,8 +1996,10 @@ enum BrowseSearchDestinations {
     ) -> [BrowseSearchPhraseItem] {
         switch collectionID {
         case "food", "food-coffee":
-            let preferredRows = pageItems(forOpenablePageIDs: categoryEntityStarterPreferredPageIDs(for: collectionID))
-            return Array(uniquePhraseItems(preferredRows + foodCoffeePhraseRows() + foodDishPhraseRows()).prefix(limit))
+            let coffeeRows = foodCoffeePhraseRows()
+            let dishRows = foodDishPhraseRows()
+            let nounForwardRows = Array(coffeeRows.prefix(3)) + Array(dishRows.prefix(5))
+            return Array(uniquePhraseItems(nounForwardRows + coffeeRows + dishRows).prefix(limit))
         default:
             return categoryEntityItems(
                 matching: placeKinds,
@@ -1970,6 +2026,25 @@ enum BrowseSearchDestinations {
         let fallbackItems = categoryEntityRows(matching: placeKinds).map(\.phraseItem)
 
         return Array(uniquePhraseItems(preferredItems + fallbackItems).prefix(limit))
+    }
+
+    private static func foodNounItems(
+        _ specs: [(pageID: String, title: String, subtitle: String, audioKey: String?)]
+    ) -> [BrowseSearchPhraseItem] {
+        specs.compactMap { spec in
+            guard let resolved = BrowseSearchPhraseItem.resolve(pageID: spec.pageID) else {
+                return nil
+            }
+
+            return BrowseSearchPhraseItem(
+                pageID: resolved.pageID,
+                title: spec.title,
+                subtitle: spec.subtitle,
+                symbolName: resolved.symbolName,
+                tintName: resolved.tintName,
+                audioKey: spec.audioKey
+            )
+        }
     }
 
     private static func categoryExploreShelves(categoryIDs: [String], excluding excludedPageIDs: [String]) -> [BrowseCollectionShelf] {

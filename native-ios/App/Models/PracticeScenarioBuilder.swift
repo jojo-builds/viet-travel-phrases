@@ -3045,7 +3045,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
         PracticeScenarioTemplate(
             id: .hotelRoomHelp,
             sceneTitle: "Room help",
-            sceneSetup: "Ask the front desk for help with a key card, Wi-Fi, AC, supplies, and a room change if needed.",
+            sceneSetup: "Keep one front-desk conversation going while the hotel fixes a room problem.",
             steps: [
                 messageScenarioStep(
                     id: "hotel-room-opening",
@@ -3058,67 +3058,67 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                         "viet-family-hotel-key-card",
                         vietnamese: "Thẻ phòng không dùng được",
                         english: "The key card is not working",
-                        nextLocalLine: "Được, cho tôi xem thẻ phòng nhé.",
-                        nextLocalMeaning: "Okay, please show me the key card."
+                        nextLocalLine: "Được, tôi làm thẻ phòng mới cho bạn ngay.",
+                        nextLocalMeaning: "Okay, I will make a new key card for you now."
                     ),
                     alternates: [
                         messageReply(
                             "viet-family-v500-hote-acco-the-door-does-not-lock",
                             vietnamese: "Cửa không khóa",
                             english: "The door does not lock",
-                            nextLocalLine: "Xin lỗi, tôi sẽ kiểm tra khóa cửa ngay.",
-                            nextLocalMeaning: "Sorry, I will check the door lock right away."
+                            nextLocalLine: "Xin lỗi, tôi sẽ cho nhân viên lên kiểm tra cửa ngay.",
+                            nextLocalMeaning: "Sorry, I will send staff to check the door right away."
                         ),
                         messageReply(
                             "viet-family-v500-prob-help-i-lost-my-room-key",
                             vietnamese: "Tôi làm mất chìa khóa phòng",
                             english: "I lost my room key",
-                            nextLocalLine: "Tôi hiểu rồi. Tôi cần xem thông tin đặt phòng của bạn.",
-                            nextLocalMeaning: "I understand. I need to see your booking information."
+                            nextLocalLine: "Tôi hiểu rồi. Tôi sẽ làm chìa khóa mới sau khi kiểm tra đặt phòng.",
+                            nextLocalMeaning: "I understand. I will make a new key after checking the booking."
                         ),
                     ],
-                    nextStepTitle: "Fix the Wi-Fi",
+                    nextStepTitle: "Try the key card",
                     localScenarioContext: "hotel_room_opening"
                 ),
                 messageScenarioStep(
-                    id: "hotel-room-wifi",
+                    id: "hotel-room-key-card-check",
                     momentType: .ask,
-                    scene: "The room is open, but you still cannot get online.",
-                    localLine: "Wi-Fi trong phòng bạn dùng được chưa?",
-                    localLineMeaning: "Is the Wi-Fi in your room working yet?",
-                    userGoal: "Ask for the Wi-Fi password or repair help.",
+                    scene: "The front desk has made a new key card and asks you to try it before moving on.",
+                    localLine: "Tôi đã làm thẻ mới. Bạn thử lại được không?",
+                    localLineMeaning: "I made a new key card. Can you try it again?",
+                    userGoal: "Acknowledge the plan, or ask for staff or a room change if the card still fails.",
                     best: messageReply(
-                        "viet-family-phone-wifi-password",
-                        vietnamese: "Mật khẩu Wi-Fi là gì?",
-                        english: "What is the Wi-Fi password?",
-                        nextLocalLine: "Mật khẩu ở trên thẻ phòng, để tôi chỉ cho bạn.",
-                        nextLocalMeaning: "The password is on the room card. I will show you."
+                        "viet-family-polite-acknowledge",
+                        vietnamese: "Dạ",
+                        english: "Okay, I will try it",
+                        nextLocalLine: "Cảm ơn. Nếu thẻ vẫn không mở, tôi cho nhân viên lên ngay.",
+                        nextLocalMeaning: "Thank you. If the card still does not open, I will send staff up right away."
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-hote-acco-the-wi-fi-is-not-working-in-my-room",
-                            vietnamese: "Wi-Fi trong phòng tôi không hoạt động",
-                            english: "The Wi-Fi is not working in my room",
-                            nextLocalLine: "Xin lỗi, tôi sẽ nhờ kỹ thuật kiểm tra.",
-                            nextLocalMeaning: "Sorry, I will ask maintenance to check it."
+                            "viet-family-v500-hote-acco-can-i-change-rooms",
+                            vietnamese: "Tôi đổi phòng được không?",
+                            english: "Can I change rooms?",
+                            nextLocalLine: "Tôi sẽ kiểm tra phòng trống cho bạn.",
+                            nextLocalMeaning: "I will check available rooms for you."
                         ),
                         messageReply(
-                            "viet-family-phone-password-not-working",
-                            vietnamese: "Mật khẩu Wi-Fi không hoạt động.",
-                            english: "The Wi-Fi password is not working",
-                            nextLocalLine: "Được, tôi sẽ kiểm tra mạng trong phòng bạn.",
-                            nextLocalMeaning: "Yes, I will check the network in your room."
+                            "viet-family-v500-hote-acco-can-someone-come-fix-it",
+                            vietnamese: "Có ai lên sửa giúp tôi được không?",
+                            english: "Can someone come fix it?",
+                            nextLocalLine: "Được, tôi cho nhân viên lên kiểm tra thẻ và cửa.",
+                            nextLocalMeaning: "Yes, I will send staff up to check the card and the door."
                         ),
                     ],
-                    nextStepTitle: "Report the AC",
-                    localScenarioContext: "hotel_room_wifi"
+                    nextStepTitle: "Check the room",
+                    localScenarioContext: "hotel_room_key_card_check"
                 ),
                 messageScenarioStep(
                     id: "hotel-room-ac",
                     momentType: .ask,
-                    scene: "The room feels warm and you want a simple fix.",
-                    localLine: "Máy lạnh trong phòng có ổn không?",
-                    localLineMeaning: "Is the air conditioning in the room okay?",
+                    scene: "The key-card fix is underway, and the desk checks whether the room itself needs attention.",
+                    localLine: "Nhân viên sẽ kiểm tra thẻ phòng. Trong phòng còn gì không ổn không?",
+                    localLineMeaning: "Staff will check the key card. Is anything else in the room not okay?",
                     userGoal: "Say the AC is not working.",
                     best: messageReply(
                         "viet-family-hotel-aircon-broken",
@@ -3149,9 +3149,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                 messageScenarioStep(
                     id: "hotel-room-bathroom",
                     momentType: .ask,
-                    scene: "The staff is checking the room, and you add one concrete room problem.",
-                    localLine: "Còn vấn đề nào khác trong phòng không?",
-                    localLineMeaning: "Is there any other problem in the room?",
+                    scene: "The desk is collecting the room details before sending maintenance upstairs.",
+                    localLine: "Tôi sẽ báo kỹ thuật. Bạn cần nói thêm vấn đề nào không?",
+                    localLineMeaning: "I will tell maintenance. Do you need to add any other problem?",
                     userGoal: "Name the bathroom or door problem clearly.",
                     best: messageReply(
                         "viet-family-v500-hote-acco-the-toilet-is-not-working",
@@ -3188,10 +3188,10 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                 messageScenarioStep(
                     id: "hotel-room-fix",
                     momentType: .ask,
-                    scene: "You want someone from the hotel to come to the room.",
-                    localLine: "Bạn muốn nhân viên lên phòng không?",
-                    localLineMeaning: "Would you like staff to come to the room?",
-                    userGoal: "Ask someone to come fix it.",
+                    scene: "The desk has the problem list and is ready to choose the next action.",
+                    localLine: "Tôi đã ghi lại rồi. Bạn muốn nhân viên lên phòng hay đổi phòng?",
+                    localLineMeaning: "I wrote that down. Do you want staff to come up or to change rooms?",
+                    userGoal: "Ask someone to come fix it or change rooms.",
                     best: messageReply(
                         "viet-family-v500-hote-acco-can-someone-come-fix-it",
                         vietnamese: "Có ai lên sửa giúp tôi được không?",
@@ -5823,69 +5823,69 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
         PracticeScenarioTemplate(
             id: .localGreetingRespect,
             sceneTitle: "Respectful hello",
-            sceneSetup: "Practice choosing warm Vietnamese greetings for older men, older women, and shop neighbors.",
+            sceneSetup: "Keep one respectful neighborhood-shop exchange going from hello to help, thanks, and goodbye.",
             steps: [
                 messageScenarioStep(
                     id: "greeting-respect-opening",
                     momentType: .listen,
-                    scene: "An older man at a neighborhood shop smiles and greets you.",
+                    scene: "An older woman at a neighborhood shop smiles and greets you.",
                     localLine: "Xin chào.",
                     localLineMeaning: "Hello.",
-                    userGoal: "Use a respectful hello.",
+                    userGoal: "Use a respectful hello for an older woman.",
                     best: messageReply(
-                        "viet-family-acknowledge-da-chao-ong",
-                        vietnamese: "Dạ, chào ông",
-                        english: "Respectful hello, sir.",
-                        nextLocalLine: "Chào con, con cần gì?",
-                        nextLocalMeaning: "Hello, what do you need?"
+                        "viet-family-acknowledge-da-chao-co",
+                        vietnamese: "Dạ, chào cô",
+                        english: "Respectful hello, auntie.",
+                        nextLocalLine: "Chào bạn, bạn muốn xem gì?",
+                        nextLocalMeaning: "Hello, what would you like to look at?"
                     ),
                     alternates: [
-                        messageReply(
-                            "viet-family-hello-chao-ong",
-                            vietnamese: "Chào ông",
-                            english: "Hello, sir.",
-                            nextLocalLine: "Chào con, con cần gì?",
-                            nextLocalMeaning: "Hello, what do you need?"
-                        ),
-                        messageReply(
-                            "viet-family-hello-chao-chu",
-                            vietnamese: "Chào chú",
-                            english: "Hello, uncle.",
-                            nextLocalLine: "Chào con, chú giúp gì được?",
-                            nextLocalMeaning: "Hello, how can I help?"
-                        ),
-                    ],
-                    nextStepTitle: "Greet an older woman",
-                    localScenarioContext: "greeting_respect_opening"
-                ),
-                messageScenarioStep(
-                    id: "greeting-respect-woman",
-                    momentType: .listen,
-                    scene: "An older woman at the counter asks whether you need help.",
-                    localLine: "Xin chào.",
-                    localLineMeaning: "Hello.",
-                    userGoal: "Use a respectful hello.",
-                    best: messageReply(
-                        "viet-family-acknowledge-da-chao-ba",
-                        vietnamese: "Dạ, chào bà",
-                        english: "Respectful hello, ma'am.",
-                        nextLocalLine: "Chào con, con cần gì?",
-                        nextLocalMeaning: "Hello, what do you need?"
-                    ),
-                    alternates: [
-                        messageReply(
-                            "viet-family-hello-chao-ba",
-                            vietnamese: "Chào bà",
-                            english: "Hello, ma'am.",
-                            nextLocalLine: "Chào con, con cần gì?",
-                            nextLocalMeaning: "Hello, what do you need?"
-                        ),
                         messageReply(
                             "viet-family-hello-chao-co",
                             vietnamese: "Chào cô",
                             english: "Hello, auntie.",
-                            nextLocalLine: "Chào con, cô giúp gì được?",
-                            nextLocalMeaning: "Hello, how can I help?"
+                            nextLocalLine: "Chào bạn, bạn muốn xem gì?",
+                            nextLocalMeaning: "Hello, what would you like to look at?"
+                        ),
+                        messageReply(
+                            "viet-family-acknowledge-da-chao-ba",
+                            vietnamese: "Dạ, chào bà",
+                            english: "Respectful hello, ma'am.",
+                            nextLocalLine: "Chào bạn, bạn muốn xem gì?",
+                            nextLocalMeaning: "Hello, what would you like to look at?"
+                        ),
+                    ],
+                    nextStepTitle: "Look around",
+                    localScenarioContext: "greeting_respect_opening"
+                ),
+                messageScenarioStep(
+                    id: "greeting-respect-woman",
+                    momentType: .ask,
+                    scene: "The shop owner keeps the same conversation going after your greeting.",
+                    localLine: "Bạn muốn xem gì?",
+                    localLineMeaning: "What would you like to look at?",
+                    userGoal: "Say you are just looking, or ask for help.",
+                    best: messageReply(
+                        "viet-family-shopping-just-looking",
+                        vietnamese: "Tôi chỉ xem thôi",
+                        english: "I'm just looking",
+                        nextLocalLine: "Dạ, bạn cứ xem tự nhiên.",
+                        nextLocalMeaning: "Okay, feel free to look around."
+                    ),
+                    alternates: [
+                        messageReply(
+                            "viet-family-v900-shop-im-looking-for-a-gift",
+                            vietnamese: "Tôi đang tìm một món quà",
+                            english: "I'm looking for a gift",
+                            nextLocalLine: "Dạ, quà nhỏ ở kệ này.",
+                            nextLocalMeaning: "Okay, small gifts are on this shelf."
+                        ),
+                        messageReply(
+                            "viet-family-v500-prob-help-can-you-help-me",
+                            vietnamese: "Cô giúp tôi được không?",
+                            english: "Can you help me?",
+                            nextLocalLine: "Dạ được, bạn cần tìm gì?",
+                            nextLocalMeaning: "Yes, what do you need to find?"
                         ),
                     ],
                     nextStepTitle: "Ask permission",
@@ -6572,31 +6572,31 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                 ),
                 messageScenarioStep(
                     id: "thanks-sorry-apology",
-                    scene: "You bump a bag or step in someone's way by accident.",
-                    localLine: "Không sao đâu.",
-                    localLineMeaning: "It's okay.",
-                    userGoal: "Say sorry.",
+                    scene: "At the same counter, the staff gently tells you that you are in the wrong line.",
+                    localLine: "Bạn đứng nhầm hàng rồi.",
+                    localLineMeaning: "You are in the wrong line.",
+                    userGoal: "Apologize, or ask them to repeat the instruction.",
                     best: messageReply(
                         "viet-family-v500-poli-basi-sorry",
                         vietnamese: "Xin lỗi",
                         english: "Sorry",
-                        nextLocalLine: "Không sao.",
-                        nextLocalMeaning: "It's okay."
+                        nextLocalLine: "Không sao, bạn lấy số thứ tự ở kia.",
+                        nextLocalMeaning: "It's okay, take a queue number over there."
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-poli-basi-no-problem",
-                            vietnamese: "Không sao",
-                            english: "No problem",
-                            nextLocalLine: "Dạ, không sao.",
-                            nextLocalMeaning: "Yes, no problem."
+                            "viet-family-repair-repeat",
+                            vietnamese: "Làm ơn nói lại",
+                            english: "Please say that again",
+                            nextLocalLine: "Bạn lấy số thứ tự ở kia.",
+                            nextLocalMeaning: "Take a queue number over there."
                         ),
                         messageReply(
                             "viet-family-polite-thank-you",
                             vietnamese: "Cảm ơn",
                             english: "Thank you",
-                            nextLocalLine: "Không có gì.",
-                            nextLocalMeaning: "You are welcome."
+                            nextLocalLine: "Không có gì, bạn lấy số ở kia nhé.",
+                            nextLocalMeaning: "You are welcome, please take a number over there."
                         ),
                     ],
                     nextStepTitle: "Ask again",

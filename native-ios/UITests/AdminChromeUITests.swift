@@ -114,7 +114,7 @@ final class AdminChromeUITests: XCTestCase {
     func testHomeUseNowPinsAudioSpeedControlAfterPlayerScrollsOffscreen() {
         let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
-        XCTAssertTrue(app.staticTexts["Use now"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["Essentials"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
         XCTAssertFalse(app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists)
         capturePinnedAudioProofIfRequested(app: app, name: "home-use-now-player-visible.png")
@@ -148,6 +148,34 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertFalse(
             app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists,
             "Pinned speed control should go away once the Home Use Now player returns into view."
+        )
+    }
+
+    func testHomePinnedSpeedTopBandAllowsVerticalScrollGestures() {
+        let app = launchApp(arguments: ["--reset-demo-state"])
+        assertHomeVisible(in: app)
+        XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
+
+        for _ in 0..<4 where !app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists {
+            app.swipeUp()
+        }
+
+        let pinnedSpeedControl = app.descendants(matching: .any)["PinnedAudioSpeedControl"]
+        XCTAssertTrue(
+            pinnedSpeedControl.waitForExistence(timeout: 2),
+            "Pinned speed control should be visible before testing the top-band scroll gesture."
+        )
+
+        let topBandStart = app.coordinate(withNormalizedOffset: CGVector(dx: 0.18, dy: 0.13))
+        let contentEnd = app.coordinate(withNormalizedOffset: CGVector(dx: 0.18, dy: 0.82))
+
+        for _ in 0..<3 where pinnedSpeedControl.exists {
+            topBandStart.press(forDuration: 0.05, thenDragTo: contentEnd)
+        }
+
+        XCTAssertFalse(
+            pinnedSpeedControl.exists,
+            "Vertical drags that start in the empty top chrome band should continue scrolling Home."
         )
     }
 
