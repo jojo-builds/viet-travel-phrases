@@ -1179,6 +1179,29 @@ private struct PracticeMessagesHeader: View {
     }
 }
 
+enum PracticeMessageHubLayout {
+    static let itemWidth: CGFloat = 96
+    static let avatarSize: CGFloat = 78
+    static let itemSpacing: CGFloat = 22
+    static let sectionSpacing: CGFloat = 28
+    static let titleToRowSpacing: CGFloat = 18
+    static let rowHorizontalInset: CGFloat = 1
+    static let itemTextSpacing: CGFloat = 12
+    static let labelFontSize: CGFloat = 14
+    static let labelMinHeight: CGFloat = 38
+    static let unreadDotSize: CGFloat = 11
+    static let unreadDotOffset = CGSize(width: -7, height: 7)
+
+    static func columnFrame(column: Int) -> CGRect {
+        CGRect(
+            x: CGFloat(column) * (itemWidth + itemSpacing),
+            y: 0,
+            width: itemWidth,
+            height: avatarSize
+        )
+    }
+}
+
 private struct PracticeMessageContactGrid: View {
     let scenarios: [PracticeScenario]
     let unreadScenarioIDs: Set<PracticeScenarioID>
@@ -1211,16 +1234,16 @@ private struct PracticeMessageContactGrid: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: PracticeMessageHubLayout.sectionSpacing) {
             ForEach(sections) { section in
-                VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: PracticeMessageHubLayout.titleToRowSpacing) {
                     Text(section.title)
                         .font(.system(size: 26, weight: .bold))
                         .foregroundStyle(.primary)
                         .accessibilityIdentifier("Practice.Messages.Section.\(section.id)")
 
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .top, spacing: 8) {
+                        HStack(alignment: .top, spacing: PracticeMessageHubLayout.itemSpacing) {
                             ForEach(section.scenarios) { scenario in
                                 PracticeMessageContactButton(
                                     scenario: scenario,
@@ -1228,10 +1251,10 @@ private struct PracticeMessageContactGrid: View {
                                     onMarkUnread: { onMarkUnread(scenario.id) },
                                     onStart: { onStart(scenario) }
                                 )
-                                .frame(width: 76)
+                                .frame(width: PracticeMessageHubLayout.itemWidth)
                             }
                         }
-                        .padding(.horizontal, 1)
+                        .padding(.horizontal, PracticeMessageHubLayout.rowHorizontalInset)
                     }
                     .accessibilityIdentifier("Practice.Messages.SectionRow.\(section.id)")
                 }
@@ -1254,34 +1277,37 @@ private struct PracticeMessageContactButton: View {
 
     var body: some View {
         Button(action: onStart) {
-            VStack(spacing: 10) {
+            VStack(spacing: PracticeMessageHubLayout.itemTextSpacing) {
                 PracticeMessageAvatar(
                     scenarioID: scenario.id,
-                    size: 66,
+                    size: PracticeMessageHubLayout.avatarSize,
                     showsSymbol: true
                 )
                 .overlay(alignment: .topTrailing) {
                     if isUnread {
                         Circle()
                             .fill(Color(red: 0.0, green: 0.48, blue: 1.0))
-                            .frame(width: 9, height: 9)
+                            .frame(
+                                width: PracticeMessageHubLayout.unreadDotSize,
+                                height: PracticeMessageHubLayout.unreadDotSize
+                            )
                             .overlay {
                                 Circle()
                                     .stroke(.white, lineWidth: 2)
                             }
-                            .offset(x: -6, y: 6)
+                            .offset(PracticeMessageHubLayout.unreadDotOffset)
                             .accessibilityLabel("Unread")
                             .accessibilityIdentifier("Practice.Message.Contact.UnreadDot.\(scenario.id.rawValue)")
                     }
                 }
 
                 Text(scenario.id.messageContactName)
-                    .font(.system(size: 13, weight: isUnread ? .bold : .semibold))
+                    .font(.system(size: PracticeMessageHubLayout.labelFontSize, weight: isUnread ? .bold : .semibold))
                     .foregroundStyle(.primary)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .minimumScaleFactor(0.78)
-                    .frame(maxWidth: .infinity, minHeight: 34, alignment: .top)
+                    .frame(maxWidth: .infinity, minHeight: PracticeMessageHubLayout.labelMinHeight, alignment: .top)
             }
             .frame(maxWidth: .infinity)
             .contentShape(Rectangle())
