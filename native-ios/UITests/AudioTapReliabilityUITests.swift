@@ -64,7 +64,20 @@ final class AudioTapReliabilityUITests: XCTestCase {
         captureProofIfRequested(app: app, name: "\(pageID)-after-taps.png")
 
         XCTAssertTrue(app.staticTexts[title].exists, file: file, line: line)
-        XCTAssertTrue(app.buttons["AppChrome.SearchButton"].waitForExistence(timeout: 2), file: file, line: line)
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2), file: file, line: line)
+    }
+
+    private func systemTab(_ title: String, in app: XCUIApplication) -> XCUIElement {
+        let tabBarButton = app.tabBars.buttons[title]
+        if tabBarButton.exists {
+            return tabBarButton
+        }
+
+        return app.buttons[title]
+    }
+
+    private func systemTabHost(in app: XCUIApplication) -> XCUIElement {
+        app.descendants(matching: .any)["Tab Bar"]
     }
 
     private func makeElementHittable(

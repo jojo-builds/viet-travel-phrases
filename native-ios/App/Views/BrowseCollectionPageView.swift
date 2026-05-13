@@ -154,7 +154,7 @@ struct BrowseCollectionPageView: View {
 private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 24
-    static let bottomChromeContentClearance: CGFloat = 224
+    static let bottomChromeContentClearance: CGFloat = 48
     static let citySelectedScrollDelayNanoseconds: UInt64 = 180_000_000
     static let focusRestoreDelayNanoseconds: UInt64 = 520_000_000
 

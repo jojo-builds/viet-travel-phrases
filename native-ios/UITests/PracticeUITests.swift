@@ -36,7 +36,7 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(waitForStaticText(containing: "Moment", in: app, timeout: 0.5))
         XCTAssertFalse(app.buttons["Practice.Story.Next"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Practice.Story.Panel"].exists)
-        XCTAssertFalse(app.buttons["AppChrome.Dock.Messages"].isHittable)
+        XCTAssertFalse(systemTab("Messages", in: app).isHittable)
         XCTAssertTrue(waitForStaticText(containing: "Xin chào", in: app, timeout: 3))
         XCTAssertEqual(app.textFields.count, 0)
         XCTAssertEqual(app.secureTextFields.count, 0)
@@ -72,6 +72,15 @@ final class PracticeUITests: XCTestCase {
 
         XCTAssertTrue(waitForStaticText(containing: "Bạn cần tìm cửa ra hay điểm đón xe?", in: app, timeout: 5))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
+    }
+
+    private func systemTab(_ title: String, in app: XCUIApplication) -> XCUIElement {
+        let tabBarButton = app.tabBars.buttons[title]
+        if tabBarButton.exists {
+            return tabBarButton
+        }
+
+        return app.buttons[title]
     }
 
     func testMessagesHubCanMarkThreadUnread() {

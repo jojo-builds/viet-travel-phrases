@@ -6,80 +6,70 @@ final class AdminChromeUITests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func testHomeAndSearchIslandCanSwitchRepeatedly() {
+    func testHomeAndSearchSystemTabCanSwitchRepeatedly() {
         let app = XCUIApplication()
         app.launch()
 
         assertHomeVisible(in: app)
 
         for iteration in 1...8 {
-            openSearch(in: app, expectedOrigin: "Home", iteration: iteration)
-            openOrigin(in: app, title: "Home", iteration: iteration)
+            openSearch(in: app, iteration: iteration)
+            openDock("Home", in: app)
             assertHomeVisible(in: app)
         }
     }
 
-    func testPrimaryTabsPreserveSearchOriginIcon() {
+    func testPrimarySystemTabsRemainReachableAroundSearch() {
         let app = XCUIApplication()
         app.launch()
 
         assertHomeVisible(in: app)
 
-        openSearch(in: app, expectedOrigin: "Home", iteration: 1)
-        openOrigin(in: app, title: "Home", iteration: 1)
+        openSearch(in: app, iteration: 1)
+        openDock("Home", in: app)
         assertHomeVisible(in: app)
 
         openDock("Browse", in: app)
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
-        openSearch(in: app, expectedOrigin: "Browse", iteration: 2)
-        openOrigin(in: app, title: "Browse", iteration: 2)
+        openSearch(in: app, iteration: 2)
+        openDock("Browse", in: app)
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
 
         openDock("Saved", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
-        openSearch(in: app, expectedOrigin: "Saved", iteration: 3)
-        openOrigin(in: app, title: "Saved", iteration: 3)
+        openSearch(in: app, iteration: 3)
+        openDock("Saved", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
 
         openDock("Messages", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
-        openSearch(in: app, expectedOrigin: "Messages", iteration: 4)
-        openOrigin(in: app, title: "Messages", iteration: 4)
+        openSearch(in: app, iteration: 4)
+        openDock("Messages", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
     }
 
-    func testDockDragGestureCommitsTabUnderFinger() {
+    func testSystemTabTapsCommitDestinations() {
         let app = XCUIApplication()
         app.launch()
 
         assertHomeVisible(in: app)
 
-        let homeButton = app.buttons["AppChrome.Dock.Home"]
-        let practiceButton = app.buttons["AppChrome.Dock.Messages"]
-        XCTAssertTrue(homeButton.waitForExistence(timeout: 2))
-        XCTAssertTrue(practiceButton.waitForExistence(timeout: 2))
-
-        homeButton.press(forDuration: 0.18, thenDragTo: practiceButton)
+        openDock("Messages", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
 
-        let browseButton = app.buttons["AppChrome.Dock.Browse"]
-        XCTAssertTrue(browseButton.waitForExistence(timeout: 2))
-        practiceButton.press(forDuration: 0.18, thenDragTo: browseButton)
+        openDock("Browse", in: app)
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
     }
 
-    func testDockTapRunsLensFlightAndCommitsDestination() {
+    func testSystemTabTapCommitsDestination() {
         let app = XCUIApplication()
         app.launch()
 
         assertHomeVisible(in: app)
 
-        let practiceButton = app.buttons["AppChrome.Dock.Messages"]
-        XCTAssertTrue(practiceButton.waitForExistence(timeout: 2))
-
-        practiceButton.tap()
+        openDock("Messages", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
-        captureProofIfRequested(app: app, name: "dock-tap-home-to-practice-settled.png")
+        captureProofIfRequested(app: app, name: "system-tab-home-to-messages-settled.png")
     }
 
     func testDetailSearchOriginRoundTripKeepsChromeResponsive() {
@@ -89,11 +79,11 @@ final class AdminChromeUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["Chào anh"].waitForExistence(timeout: 5))
 
-        openSearch(in: app, expectedOrigin: "Browse", iteration: 1)
-        openOrigin(in: app, title: "Browse", iteration: 1)
-        XCTAssertTrue(app.staticTexts["Chào anh"].waitForExistence(timeout: 3))
+        openSearch(in: app, iteration: 1)
+        openDock("Browse", in: app)
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
 
-        openSearch(in: app, expectedOrigin: "Browse", iteration: 2)
+        openSearch(in: app, iteration: 2)
         XCTAssertTrue(app.staticTexts["Search"].waitForExistence(timeout: 2))
     }
 
@@ -121,6 +111,46 @@ final class AdminChromeUITests: XCTestCase {
         capturePinnedAudioProofIfRequested(app: app, name: "pinned-speed-control.png")
     }
 
+    func testHomeUseNowPinsAudioSpeedControlAfterPlayerScrollsOffscreen() {
+        let app = launchApp(arguments: ["--reset-demo-state"])
+        assertHomeVisible(in: app)
+        XCTAssertTrue(app.staticTexts["Use now"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists)
+        capturePinnedAudioProofIfRequested(app: app, name: "home-use-now-player-visible.png")
+
+        for _ in 0..<4 where !app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists {
+            app.swipeUp()
+        }
+
+        let pinnedSpeedControl = app.descendants(matching: .any)["PinnedAudioSpeedControl"]
+        XCTAssertTrue(
+            pinnedSpeedControl.waitForExistence(timeout: 2),
+            "Pinned speed control should appear once the Home Use Now player scrolls above the top chrome."
+        )
+        XCTAssertFalse(app.buttons["TopAdmin.BackButton"].exists, "Home should show the speed pill without adding a Back button.")
+        XCTAssertTrue(app.descendants(matching: .any)["0.5x"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["0.75x"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["1.0x"].exists)
+        assertPinnedSpeedControlFloatsInTopAdmin(pinnedSpeedControl: pinnedSpeedControl)
+        XCTAssertLessThanOrEqual(
+            pinnedSpeedControl.frame.height,
+            48,
+            "Home pinned speed control should use the same compact top-admin height as listing pages."
+        )
+        capturePinnedAudioProofIfRequested(app: app, name: "home-use-now-pinned-speed-control.png")
+
+        for _ in 0..<5 where app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists {
+            app.swipeDown()
+        }
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
+        XCTAssertFalse(
+            app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists,
+            "Pinned speed control should go away once the Home Use Now player returns into view."
+        )
+    }
+
     func testBottomChromeControlsWinEdgeBiasedTapsOverDenseDetailContent() {
         verifyDockTapFromDenseDetail("Browse", point: .center) { app in
             XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
@@ -142,34 +172,34 @@ final class AdminChromeUITests: XCTestCase {
         }
 
         let app = launchDenseDetail()
-        tapChrome(app.buttons["AppChrome.SearchButton"], point: .topEdge)
+        openSearch(in: app, iteration: 1)
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.textFields["AppChrome.SearchField"].waitForExistence(timeout: 2))
+        XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
     }
 
-    func testBottomChromeGradientProofScreenshots() {
+    func testSystemTabChromeProofScreenshots() {
         var app = launchApp(arguments: ["--detail-page", "viet-phrase-hello-chao-anh"])
         XCTAssertTrue(app.staticTexts["Chào anh"].waitForExistence(timeout: 5))
-        captureProofIfRequested(app: app, name: "detail-bottom-chrome.png")
+        captureProofIfRequested(app: app, name: "detail-system-tab-chrome.png")
 
         app = launchApp()
         assertHomeVisible(in: app)
-        captureProofIfRequested(app: app, name: "home-bottom-chrome.png")
+        captureProofIfRequested(app: app, name: "home-system-tab-chrome.png")
         openDock("Saved", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
-        captureProofIfRequested(app: app, name: "saved-bottom-chrome.png")
+        captureProofIfRequested(app: app, name: "saved-system-tab-chrome.png")
 
         app = launchApp(arguments: ["--browse"])
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 5))
-        captureProofIfRequested(app: app, name: "browse-bottom-chrome.png")
+        captureProofIfRequested(app: app, name: "browse-system-tab-chrome.png")
 
         app = launchApp(arguments: ["--search"])
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 5))
-        captureProofIfRequested(app: app, name: "search-bottom-chrome.png")
+        captureProofIfRequested(app: app, name: "search-system-tab-chrome.png")
 
         app = launchApp(arguments: ["--practice"])
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 5))
-        captureProofIfRequested(app: app, name: "practice-bottom-chrome.png")
+        captureProofIfRequested(app: app, name: "practice-system-tab-chrome.png")
     }
 
     func testHomeLiquidGlassRedesignProofScreenshots() {
@@ -271,6 +301,30 @@ final class AdminChromeUITests: XCTestCase {
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-cities-all.png")
     }
 
+    func testSystemSearchTabHomeAndBrowseProofScreenshots() {
+        let app = launchApp()
+        assertHomeVisible(in: app)
+        captureSearchMorphProofIfRequested(app: app, name: "home-collapsed.png")
+
+        openSearch(in: app, iteration: 1)
+        captureSearchMorphProofIfRequested(app: app, name: "home-search-expanded.png")
+        openDock("Home", in: app)
+        captureSearchMorphProofIfRequested(app: app, name: "home-return-immediate.png")
+        captureSearchMorphProofIfRequested(app: app, name: "home-return-final.png")
+        assertHomeVisible(in: app)
+
+        openDock("Browse", in: app)
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+        captureSearchMorphProofIfRequested(app: app, name: "browse-collapsed.png")
+
+        openSearch(in: app, iteration: 2)
+        captureSearchMorphProofIfRequested(app: app, name: "browse-search-expanded.png")
+        openDock("Browse", in: app)
+        captureSearchMorphProofIfRequested(app: app, name: "browse-return-immediate.png")
+        captureSearchMorphProofIfRequested(app: app, name: "browse-return-final.png")
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+    }
+
     func testHomeHeroHeaderStaysFixedAfterBrowseRoundTrip() {
         let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
@@ -291,129 +345,111 @@ final class AdminChromeUITests: XCTestCase {
         )
     }
 
-    func testSearchChromeMorphHomeAndBrowseProofScreenshots() {
+    func testSystemTabSelectionProofScreenshots() {
         let app = launchApp()
         assertHomeVisible(in: app)
-        captureSearchMorphProofIfRequested(app: app, name: "home-collapsed.png")
+        captureForegroundMorphProofIfRequested(app: app, name: "home-system-tab-selected.png")
 
-        openSearch(in: app, expectedOrigin: "Home", iteration: 1)
-        captureSearchMorphProofIfRequested(app: app, name: "home-search-expanded.png")
-        tapSearchOrigin(in: app, title: "Home", iteration: 1)
-        captureSearchMorphProofIfRequested(app: app, name: "home-return-immediate.png")
-        XCTAssertTrue(
-            app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2),
-            "Search field stayed visible after tapping Home origin for proof."
-        )
-        captureSearchMorphProofIfRequested(app: app, name: "home-return-final.png")
-        assertHomeVisible(in: app)
+        openSearch(in: app, iteration: 1)
+        captureForegroundMorphProofIfRequested(app: app, name: "home-system-search-selected.png")
 
-        openDock("Browse", in: app)
-        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
-        captureSearchMorphProofIfRequested(app: app, name: "browse-collapsed.png")
-
-        openSearch(in: app, expectedOrigin: "Browse", iteration: 2)
-        captureSearchMorphProofIfRequested(app: app, name: "browse-search-expanded.png")
-        tapSearchOrigin(in: app, title: "Browse", iteration: 2)
-        captureSearchMorphProofIfRequested(app: app, name: "browse-return-immediate.png")
-        XCTAssertTrue(
-            app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2),
-            "Search field stayed visible after tapping Browse origin for proof."
-        )
-        captureSearchMorphProofIfRequested(app: app, name: "browse-return-final.png")
-        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
-    }
-
-    func testBottomChromeForegroundMorphProofScreenshots() {
-        let app = launchApp()
-        assertHomeVisible(in: app)
-        captureForegroundMorphProofIfRequested(app: app, name: "home-selected-lens.png")
-
-        openSearch(in: app, expectedOrigin: "Home", iteration: 1)
-        captureForegroundMorphProofIfRequested(app: app, name: "home-search-origin-and-field.png")
-
-        tapSearchOrigin(in: app, title: "Home", iteration: 1)
-        XCTAssertTrue(app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2))
-        captureForegroundMorphProofIfRequested(app: app, name: "home-returned-lens.png")
+        openDock("Home", in: app)
+        captureForegroundMorphProofIfRequested(app: app, name: "home-returned-system-tab.png")
 
         openDock("Saved", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
-        captureForegroundMorphProofIfRequested(app: app, name: "saved-selected-lens.png")
+        captureForegroundMorphProofIfRequested(app: app, name: "saved-system-tab-selected.png")
     }
 
-    func testFocusedSearchChromeKeepsDismissButtonTappable() {
+    func testFocusedSystemSearchFieldAcceptsTyping() {
         let app = launchApp()
         assertHomeVisible(in: app)
 
-        openSearch(in: app, expectedOrigin: "Home", iteration: 1)
-        let searchField = app.textFields["AppChrome.SearchField"]
+        openSearch(in: app, iteration: 1)
+        let searchField = searchField(in: app)
         XCTAssertTrue(searchField.waitForExistence(timeout: 2))
         searchField.tap()
-
-        let dismissButton = app.buttons["AppChrome.SearchDismissKeyboardButton"]
-        XCTAssertTrue(
-            dismissButton.waitForExistence(timeout: 3),
-            "Focused search chrome should expose a tappable clear/dismiss button."
-        )
-        XCTAssertGreaterThan(
-            dismissButton.frame.minX,
-            searchField.frame.maxX,
-            "Dismiss button should sit as its own trailing glass control instead of overlapping the search field."
-        )
-
-        dismissButton.tap()
-        XCTAssertTrue(app.buttons["AppChrome.SearchOriginButton.Home"].waitForExistence(timeout: 2))
-        captureFocusedSearchChromeProofIfRequested(app: app, name: "focused-search-dismiss-return.png")
+        searchField.typeText("hotel")
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
+        captureFocusedSearchChromeProofIfRequested(app: app, name: "focused-system-search-results.png")
     }
 
-    private func openSearch(in app: XCUIApplication, expectedOrigin: String, iteration: Int) {
-        let searchButton = app.buttons["AppChrome.SearchButton"]
-        XCTAssertTrue(
-            searchButton.waitForExistence(timeout: 2),
-            "Search island did not become tappable before iteration \(iteration)."
-        )
-        searchButton.tap()
+    private func openSearch(in app: XCUIApplication, iteration: Int) {
+        openDock("Search", in: app)
 
         XCTAssertTrue(
-            app.textFields["AppChrome.SearchField"].waitForExistence(timeout: 2),
-            "Search field did not appear after tapping search on iteration \(iteration)."
-        )
-        XCTAssertTrue(
-            app.buttons["AppChrome.SearchOriginButton.\(expectedOrigin)"].waitForExistence(timeout: 2),
-            "Search origin did not preserve \(expectedOrigin) before iteration \(iteration)."
-        )
-        XCTAssertLessThan(
-            app.buttons["AppChrome.SearchOriginButton.\(expectedOrigin)"].frame.midX,
-            app.textFields["AppChrome.SearchField"].frame.midX,
-            "Search origin should remain to the left of the search field during the foreground morph."
+            app.staticTexts["Search.Title"].waitForExistence(timeout: 3) || app.staticTexts["Search"].waitForExistence(timeout: 1),
+            "Search page did not appear after tapping the system search tab on iteration \(iteration)."
         )
     }
 
     private func openOrigin(in app: XCUIApplication, title: String, iteration: Int) {
         tapSearchOrigin(in: app, title: title, iteration: iteration)
-        XCTAssertTrue(
-            app.textFields["AppChrome.SearchField"].waitForNonExistence(timeout: 2),
-            "Search field stayed visible after tapping \(title) origin on iteration \(iteration)."
-        )
     }
 
     private func tapSearchOrigin(in app: XCUIApplication, title: String, iteration: Int) {
-        let originButton = app.buttons["AppChrome.SearchOriginButton.\(title)"]
-        XCTAssertTrue(
-            originButton.waitForExistence(timeout: 2),
-            "Search \(title) origin did not become tappable before iteration \(iteration)."
-        )
-        originButton.tap()
+        openDock(title, in: app)
     }
 
     private func openDock(_ title: String, in app: XCUIApplication) {
-        let dockButton = app.buttons["AppChrome.Dock.\(title)"]
-        XCTAssertTrue(dockButton.waitForExistence(timeout: 2), "\(title) dock button was not available.")
-        dockButton.tap()
+        let dockButton = systemTab(title, in: app)
+        if dockButton.waitForExistence(timeout: 2) {
+            dockButton.tap()
+        } else {
+            systemTabCoordinate(title, in: app).tap()
+        }
     }
 
     private func assertHomeVisible(in app: XCUIApplication) {
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["AppChrome.SearchButton"].waitForExistence(timeout: 2))
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+    }
+
+    private func systemTab(_ title: String, in app: XCUIApplication) -> XCUIElement {
+        let tabBarButton = app.tabBars.buttons[title]
+        if tabBarButton.exists {
+            return tabBarButton
+        }
+
+        return app.buttons[title]
+    }
+
+    private func systemTabHost(in app: XCUIApplication) -> XCUIElement {
+        app.descendants(matching: .any)["Tab Bar"]
+    }
+
+    private func systemTabCoordinate(_ title: String, in app: XCUIApplication) -> XCUICoordinate {
+        let normalizedX: CGFloat
+        switch title {
+        case "Home":
+            normalizedX = 0.14
+        case "Browse":
+            normalizedX = 0.31
+        case "Saved":
+            normalizedX = 0.49
+        case "Messages":
+            normalizedX = 0.66
+        case "Search":
+            normalizedX = 0.88
+        default:
+            normalizedX = 0.5
+        }
+
+        return app.coordinate(withNormalizedOffset: CGVector(dx: normalizedX, dy: 0.94))
+    }
+
+    private func searchField(in app: XCUIApplication) -> XCUIElement {
+        let promptedSearchField = app.searchFields["Search Vietnamese phrases"]
+        if promptedSearchField.exists {
+            return promptedSearchField
+        }
+
+        let anySearchField = app.searchFields.firstMatch
+        if anySearchField.exists {
+            return anySearchField
+        }
+
+        return app.textFields["Search Vietnamese phrases"]
     }
 
     private func homeEssentialsHeader(in app: XCUIApplication) -> XCUIElement {
@@ -564,7 +600,7 @@ final class AdminChromeUITests: XCTestCase {
         assertion: (XCUIApplication) -> Void
     ) {
         let app = launchDenseDetail()
-        tapChrome(app.buttons["AppChrome.Dock.\(title)"], point: point)
+        openDock(title, in: app)
         assertion(app)
         XCTAssertFalse(app.staticTexts["Hello, older brother / slightly older man"].isHittable)
     }

@@ -330,6 +330,18 @@ struct PinnedAudioSpeedChromeState: Equatable {
 }
 
 enum PinnedAudioSpeedChromePolicy {
+    static func canShowPinnedControl(
+        on route: AppRoute,
+        hasStaticBackButton: Bool,
+        isSearchPresented: Bool
+    ) -> Bool {
+        guard !isSearchPresented else {
+            return false
+        }
+
+        return route == .home || hasStaticBackButton
+    }
+
     static func state(
         for anchors: [PhraseAudioPlayerAnchor],
         currentRoute: AppRoute

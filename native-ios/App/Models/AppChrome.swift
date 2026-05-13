@@ -45,57 +45,26 @@ enum DockItemKind: Equatable, Hashable {
     }
 }
 
-enum SearchPresentation: Equatable {
-    case collapsedIsland
-    case expandedField
-}
+enum AppSystemTab: Hashable {
+    case home
+    case browse
+    case saved
+    case practice
+    case search
 
-struct AppChrome: Equatable {
-    let route: AppRoute
-
-    var primaryDockItems: [DockItemKind] {
+    init(route: AppRoute) {
         switch route {
-        case .home, .browse, .browseCollection, .phrasePage, .saved, .practice, .detailPage:
-            return [.home, .browse, .saved, .practice]
-        case .search:
-            return [.home]
-        }
-    }
-
-    var selectedDockItem: DockItemKind {
-        switch route {
-        case .home, .search:
-            return .home
+        case .home:
+            self = .home
         case .browse, .browseCollection, .phrasePage, .detailPage:
-            return .browse
+            self = .browse
         case .saved:
-            return .saved
+            self = .saved
         case .practice:
-            return .practice
-        }
-    }
-
-    var searchPresentation: SearchPresentation {
-        switch route {
-        case .home, .browse, .browseCollection, .phrasePage, .saved, .practice, .detailPage:
-            return .collapsedIsland
+            self = .practice
         case .search:
-            return .expandedField
+            self = .search
         }
-    }
-}
-
-enum AppDockInteractionPolicy {
-    static func shouldResetSelectionLens(activeItem: DockItemKind?, newRoute: AppRoute) -> Bool {
-        guard newRoute != .search else {
-            return true
-        }
-
-        guard let activeItem else {
-            return false
-        }
-
-        return AppChrome(route: newRoute).selectedDockItem != activeItem
     }
 }
 
