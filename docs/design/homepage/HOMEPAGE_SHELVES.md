@@ -12,6 +12,7 @@ Each phrase shelf should:
 - end with a `More` card that opens the existing Browse route
 - use friendly, beginner-safe phrases before scary or complicated phrases
 - keep emergency/help content reachable without making it the first impression
+- avoid section subtitles on the homepage; the shelf title should carry the job
 
 ## Visual Rhythm
 
@@ -19,22 +20,22 @@ The homepage should feel like a mixed discovery feed, closer to a streaming app 
 
 Use the existing card families deliberately:
 
-- quick two-row audio tiles for instant beginner phrases
+- large player cards at the top for instant beginner phrases
 - spotlight phrase cards plus compact rows for first-hour and hotel basics
 - realistic image cards for city discovery
 - medium two-column audio grids for food, coffee, money, and shopping
 - circular message contacts for guided conversations
 - wide phrase rows for transport and help
 - image-backed situation rows for Browse entry points
-- large player cards lower on the page for deeper phrase practice
+- large player cards lower on the page again for slower phrase practice
 
 Personal shelves are state-gated. `Keep going`, `Saved for later`, and `Message list` must not appear on a fresh first launch; they should show only after local recent/saved/practice state exists.
 
 ## First-Launch Shelf Order
 
 1. `Use now`
-   - Source: `HomeUseNowCatalog.starterIDs`
-   - Layout: two-row quick audio carousel.
+   - Source: `HomeUseNowCatalog.featureCardIDs`
+   - Layout: large player-card carousel.
    - Purpose: fastest beginner phrases to play immediately.
 
 2. `First hour in Vietnam`
@@ -99,7 +100,7 @@ Personal shelves are state-gated. `Keep going`, `Saved for later`, and `Message 
    - Layout: wide phrase rows plus a wide `More` row.
    - Purpose: help, pharmacy, doctor, passport, police/hospital basics.
 
-13. `Deeper phrase cards`
+13. `Listen closer`
     - Source: `HomeContent.featuredIDs`
     - Layout: large player cards.
     - Purpose: slower, richer phrase practice after the quick entry shelves.

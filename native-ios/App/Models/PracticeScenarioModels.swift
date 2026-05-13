@@ -154,7 +154,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .pharmacyHelp:
             return "cross.case.fill"
         case .emergencyLostPassport:
-            return "doc.badge.exclamationmark.fill"
+            return "person.text.rectangle.fill"
         case .emergencyLostBag:
             return "bag.fill"
         case .localGreetingMarket:
@@ -455,7 +455,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .pharmacyHelp:
             return "cross.case.fill"
         case .emergencyLostPassport:
-            return "doc.badge.exclamationmark.fill"
+            return "person.text.rectangle.fill"
         case .emergencyLostBag:
             return "bag.fill"
         case .localGreetingMarket:

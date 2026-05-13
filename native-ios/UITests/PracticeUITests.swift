@@ -142,6 +142,35 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(sendButton.isEnabled)
     }
 
+    func testMessageComposerFocusesSelectedChoiceAtLeadingEdge() {
+        let app = launchPracticeApp(scenarioID: "danangFirstDay", title: "Airport Baggage")
+        let composer = app.descendants(matching: .any)["Practice.Story.Composer"].firstMatch
+        XCTAssertTrue(composer.waitForExistence(timeout: 4))
+
+        let choices = app.buttons.matching(
+            NSPredicate(format: "identifier BEGINSWITH %@", "Practice.Story.Choice.airport-story-opening:")
+        )
+        let secondChoice = choices.element(boundBy: 1)
+        let thirdChoice = choices.element(boundBy: 2)
+        XCTAssertTrue(secondChoice.waitForExistence(timeout: 4))
+        XCTAssertTrue(thirdChoice.waitForExistence(timeout: 4))
+
+        secondChoice.tap()
+        waitForSelectedChoiceFocus(secondChoice, in: app)
+
+        if !thirdChoice.isHittable {
+            composer.coordinate(withNormalizedOffset: CGVector(dx: 0.86, dy: 0.84))
+                .press(
+                    forDuration: 0.05,
+                    thenDragTo: composer.coordinate(withNormalizedOffset: CGVector(dx: 0.22, dy: 0.84))
+                )
+        }
+
+        XCTAssertTrue(thirdChoice.isHittable, "Third message choice should be reachable before selection.")
+        thirdChoice.tap()
+        waitForSelectedChoiceFocus(thirdChoice, in: app)
+    }
+
     func testMessageThreadPersistsThroughHubAndPhrasePageRoundTrip() {
         let app = launchPracticeApp(scenarioID: "danangFirstDay", title: "Airport Baggage")
         let firstTravelerMessage = app.staticTexts["Practice.Story.Text.traveler.airport-story-opening:traveler:airport-story-opening:viet-phrase-airport-2:0.vietnamese"]
@@ -343,6 +372,27 @@ final class PracticeUITests: XCTestCase {
 
     private func waitBriefly(_ seconds: TimeInterval) {
         RunLoop.current.run(until: Date().addingTimeInterval(seconds))
+    }
+
+    private func waitForSelectedChoiceFocus(
+        _ choice: XCUIElement,
+        in app: XCUIApplication,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let deadline = Date().addingTimeInterval(4)
+        repeat {
+            if choice.exists,
+               choice.value as? String == "Selected",
+               choice.frame.minX >= app.frame.minX + 8,
+               choice.frame.minX <= app.frame.minX + 36,
+               choice.frame.maxX <= app.frame.maxX - 8 {
+                return
+            }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        } while Date() < deadline
+
+        XCTFail("Selected message choice did not focus at the leading edge.", file: file, line: line)
     }
 
     private func capture(app: XCUIApplication, directoryURL: URL, name: String) {

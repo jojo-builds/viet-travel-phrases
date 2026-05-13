@@ -871,14 +871,16 @@ struct AppShellView: View {
         let startItem = dockDrag.startItem ?? chrome.selectedDockItem
         let didMoveBeyondTap = dockDrag.didMoveBeyondTap
             || abs(value.translation.width) >= AppChromeLayout.dockSelectionDragCommitDistance
-        let activeItem = didMoveBeyondTap ? item : chrome.selectedDockItem
-        let dragX = didMoveBeyondTap
-            ? value.location.x
-            : AppDockSelectionLayout.itemCenterX(
-                index: chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0,
-                itemCount: chrome.primaryDockItems.count,
-                contentWidth: contentWidth
-            )
+        let activeItem = item
+        let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
+            ?? chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem)
+            ?? 0
+        let activeCenterX = AppDockSelectionLayout.itemCenterX(
+            index: activeIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        )
+        let dragX = didMoveBeyondTap ? value.location.x : activeCenterX
         let predictedDragX = didMoveBeyondTap ? value.predictedEndLocation.x : dragX
 
         dockDrag = AppDockInteractionState(
@@ -896,10 +898,12 @@ struct AppShellView: View {
     }
 
     private func finishDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
-        let shouldCommitDrag = dockDrag.didMoveBeyondTap
+        let wasDraggingSelection = dockDrag.didMoveBeyondTap
+        let shouldCommitSelection = wasDraggingSelection
+            || (dockDrag.activeItem != nil && dockDrag.activeItem != chrome.selectedDockItem)
         let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth)
 
-        guard shouldCommitDrag, let item else {
+        guard shouldCommitSelection, let item else {
             withAnimation(
                 reduceMotion
                 ? .easeOut(duration: 0.14)
@@ -930,6 +934,9 @@ struct AppShellView: View {
             )
         }
 
+        if !wasDraggingSelection, item != chrome.selectedDockItem {
+            playDockCrossingHaptic()
+        }
         commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
     }
 
@@ -980,16 +987,13 @@ struct AppShellView: View {
             performDockAction(item)
             return
         }
+        guard dockDrag.activeItem != item else {
+            return
+        }
 
         dockSelectionTapRequestID += 1
         let requestID = dockSelectionTapRequestID
-        let sourceIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
-        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? sourceIndex
-        let sourceX = AppDockSelectionLayout.itemCenterX(
-            index: sourceIndex,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        )
+        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
         let destinationX = AppDockSelectionLayout.itemCenterX(
             index: destinationIndex,
             itemCount: chrome.primaryDockItems.count,
@@ -998,14 +1002,15 @@ struct AppShellView: View {
 
         cancelSearchFocus()
 
+        playDockCrossingHaptic()
         withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.78, blendDuration: 0.04)) {
             dockDrag = AppDockInteractionState(
                 startItem: chrome.selectedDockItem,
-                activeItem: chrome.selectedDockItem,
-                dragX: sourceX,
-                predictedDragX: sourceX,
+                activeItem: item,
+                dragX: destinationX,
+                predictedDragX: destinationX,
                 isFingerTracking: false,
-                didMoveBeyondTap: false
+                didMoveBeyondTap: true
             )
         }
 
@@ -1013,18 +1018,6 @@ struct AppShellView: View {
             try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapActivationDelay)
             guard requestID == dockSelectionTapRequestID else {
                 return
-            }
-
-            playDockCrossingHaptic()
-            withAnimation(.interactiveSpring(response: 0.24, dampingFraction: 0.76, blendDuration: 0.06)) {
-                dockDrag = AppDockInteractionState(
-                    startItem: chrome.selectedDockItem,
-                    activeItem: item,
-                    dragX: destinationX,
-                    predictedDragX: destinationX,
-                    isFingerTracking: false,
-                    didMoveBeyondTap: true
-                )
             }
 
             try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapTravelDelay)
@@ -3018,14 +3011,16 @@ private struct AppShellBottomChrome: View {
         let startItem = dockDrag.startItem ?? chrome.selectedDockItem
         let didMoveBeyondTap = dockDrag.didMoveBeyondTap
             || abs(value.translation.width) >= AppChromeLayout.dockSelectionDragCommitDistance
-        let activeItem = didMoveBeyondTap ? item : chrome.selectedDockItem
-        let dragX = didMoveBeyondTap
-            ? value.location.x
-            : AppDockSelectionLayout.itemCenterX(
-                index: chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0,
-                itemCount: chrome.primaryDockItems.count,
-                contentWidth: contentWidth
-            )
+        let activeItem = item
+        let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
+            ?? chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem)
+            ?? 0
+        let activeCenterX = AppDockSelectionLayout.itemCenterX(
+            index: activeIndex,
+            itemCount: chrome.primaryDockItems.count,
+            contentWidth: contentWidth
+        )
+        let dragX = didMoveBeyondTap ? value.location.x : activeCenterX
         let predictedDragX = didMoveBeyondTap ? value.predictedEndLocation.x : dragX
 
         dockDrag = AppDockInteractionState(
@@ -3043,10 +3038,12 @@ private struct AppShellBottomChrome: View {
     }
 
     private func finishDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
-        let shouldCommitDrag = dockDrag.didMoveBeyondTap
+        let wasDraggingSelection = dockDrag.didMoveBeyondTap
+        let shouldCommitSelection = wasDraggingSelection
+            || (dockDrag.activeItem != nil && dockDrag.activeItem != chrome.selectedDockItem)
         let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth)
 
-        guard shouldCommitDrag, let item else {
+        guard shouldCommitSelection, let item else {
             withAnimation(
                 reduceMotion
                 ? .easeOut(duration: 0.14)
@@ -3077,6 +3074,9 @@ private struct AppShellBottomChrome: View {
             )
         }
 
+        if !wasDraggingSelection, item != chrome.selectedDockItem {
+            playDockCrossingHaptic()
+        }
         commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
     }
 
@@ -3103,16 +3103,13 @@ private struct AppShellBottomChrome: View {
             onSelectDockItem(item)
             return
         }
+        guard dockDrag.activeItem != item else {
+            return
+        }
 
         dockSelectionTapRequestID += 1
         let requestID = dockSelectionTapRequestID
-        let sourceIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
-        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? sourceIndex
-        let sourceX = AppDockSelectionLayout.itemCenterX(
-            index: sourceIndex,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        )
+        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
         let destinationX = AppDockSelectionLayout.itemCenterX(
             index: destinationIndex,
             itemCount: chrome.primaryDockItems.count,
@@ -3121,14 +3118,15 @@ private struct AppShellBottomChrome: View {
 
         onCancelSearchFocus()
 
+        playDockCrossingHaptic()
         withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.78, blendDuration: 0.04)) {
             dockDrag = AppDockInteractionState(
                 startItem: chrome.selectedDockItem,
-                activeItem: chrome.selectedDockItem,
-                dragX: sourceX,
-                predictedDragX: sourceX,
+                activeItem: item,
+                dragX: destinationX,
+                predictedDragX: destinationX,
                 isFingerTracking: false,
-                didMoveBeyondTap: false
+                didMoveBeyondTap: true
             )
         }
 
@@ -3136,18 +3134,6 @@ private struct AppShellBottomChrome: View {
             try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapActivationDelay)
             guard requestID == dockSelectionTapRequestID else {
                 return
-            }
-
-            playDockCrossingHaptic()
-            withAnimation(.interactiveSpring(response: 0.24, dampingFraction: 0.76, blendDuration: 0.06)) {
-                dockDrag = AppDockInteractionState(
-                    startItem: chrome.selectedDockItem,
-                    activeItem: item,
-                    dragX: destinationX,
-                    predictedDragX: destinationX,
-                    isFingerTracking: false,
-                    didMoveBeyondTap: true
-                )
             }
 
             try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapTravelDelay)
@@ -3839,8 +3825,15 @@ struct HomeView: View {
     }
 
     private var useNowShelf: some View {
-        HomeShelf(title: "Use now", subtitle: "Quick phrases for everyday moments") {
-            HomeQuickPhraseGrid(items: HomeContent.useNowItems, onOpenDetail: onOpenDetail)
+        HomeShelf(title: "Use now", subtitle: "") {
+            HomeFeaturedPhraseCarousel(
+                items: HomeContent.useNowFeaturePhraseCardItems,
+                heroMorphPageID: heroMorphPageID,
+                chromeNamespace: chromeNamespace,
+                onOpenDetail: onOpenFeaturedDetail,
+                isSaved: { intentStore.isPageSaved($0) },
+                onToggleSaved: { intentStore.toggleSavedPage($0) }
+            )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
     }
@@ -3857,7 +3850,7 @@ struct HomeView: View {
     }
 
     private var featuredPhrasesShelf: some View {
-        HomeShelf(title: "Deeper phrase cards", subtitle: "Slow down with larger audio controls") {
+        HomeShelf(title: "Listen closer", subtitle: "") {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.featuredPhraseCardItems,
                 heroMorphPageID: heroMorphPageID,
@@ -4361,6 +4354,8 @@ enum HomeUseNowCatalog {
         "viet-family-food-pay-now",
         "viet-family-bathroom-where",
     ]
+
+    static let featureCardIDs = Array(starterIDs.prefix(6))
 }
 
 private enum HomeContent {
@@ -4393,10 +4388,10 @@ private enum HomeContent {
             sourceCategoryIDs: ["food-drink", "money-numbers-prices"],
             pageIDs: [
                 "viet-phrase-food-menu",
-                "viet-phrase-vpe-one-item-please-cho-toi-mot-nuoc-suoi",
+                "viet-family-food-bottled-water",
                 "viet-phrase-coffee-1",
                 "viet-phrase-food-3",
-                "viet-phrase-vpe-food-has-co-dau-phong-khong",
+                "viet-family-food-peanut-allergy",
                 "viet-phrase-coffee-7",
             ],
             layout: .mediumGrid
@@ -4430,7 +4425,7 @@ private enum HomeContent {
                 "viet-phrase-v500-tran-please-call-the-driver",
                 "viet-phrase-v900-tran-please-take-me-to-this-address",
                 "viet-phrase-v500-tran-please-take-me-to-this-hotel",
-                "viet-phrase-ves-call-taxi-for-me",
+                "viet-family-hotel-call-taxi",
             ],
             layout: .wideRows
         ),
@@ -4500,12 +4495,18 @@ private enum HomeContent {
         useNowIDs.compactMap(HomePhraseItem.resolve(pageID:))
     }
 
-    static var savedFallbackItems: [HomePhraseItem] {
-        [
-            "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
-            "viet-phrase-hotel-3",
-        ].compactMap(HomePhraseItem.resolve(pageID:))
+    static var useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] {
+        HomeUseNowCatalog.featureCardIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
     }
+
+    static var savedFallbackItems: [HomePhraseItem] {
+        savedFallbackPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
+    }
+
+    static let savedFallbackPageIDs = [
+        "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
+        "viet-phrase-hotel-3",
+    ]
 
     static var featuredItems: [HomePhraseItem] {
         featuredIDs.compactMap(HomePhraseItem.resolve(pageID:))
@@ -4628,6 +4629,25 @@ private enum HomeContent {
     ]
 }
 
+#if DEBUG
+enum HomePageLinkRegistry {
+    static var homepageListingPageIDs: [String] {
+        uniquePageIDs(
+            HomeUseNowCatalog.featureCardIDs
+            + HomeContent.homepagePhraseShelves.flatMap(\.pageIDs)
+            + HomeContent.featuredIDs
+            + HomeContent.savedFallbackPageIDs
+            + PhrasePage.xinChao.localGreetings.prefix(3).compactMap(\.detailPageID)
+        )
+    }
+
+    private static func uniquePageIDs(_ pageIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        return pageIDs.filter { seen.insert($0).inserted }
+    }
+}
+#endif
+
 private struct HomeShelf<Content: View>: View {
     let title: String
     let subtitle: String
@@ -4641,21 +4661,12 @@ private struct HomeShelf<Content: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.82)
-
-                if !subtitle.isEmpty {
-                    Text(subtitle)
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.86)
-                }
-            }
+            Text(title)
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+                .accessibilityHint(subtitle)
 
             content
         }
@@ -5611,12 +5622,6 @@ private struct HomeBrowseRouteWideCard: View {
                         .foregroundStyle(.primary)
                         .lineLimit(1)
                         .minimumScaleFactor(0.78)
-
-                    Text(subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.76)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
@@ -5627,6 +5632,7 @@ private struct HomeBrowseRouteWideCard: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("HomeShelf.More.\(identifier)")
+        .accessibilityHint(subtitle)
     }
 }
 
