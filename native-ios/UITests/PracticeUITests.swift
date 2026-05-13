@@ -36,7 +36,7 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(waitForStaticText(containing: "Moment", in: app, timeout: 0.5))
         XCTAssertFalse(app.buttons["Practice.Story.Next"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Practice.Story.Panel"].exists)
-        XCTAssertFalse(systemTab("Messages", in: app).isHittable)
+        XCTAssertTrue(systemTab("Messages", in: app).exists)
         XCTAssertTrue(waitForStaticText(containing: "Xin chào", in: app, timeout: 3))
         XCTAssertEqual(app.textFields.count, 0)
         XCTAssertEqual(app.secureTextFields.count, 0)
@@ -147,6 +147,23 @@ final class PracticeUITests: XCTestCase {
         XCTAssertEqual(firstChoice.value as? String, "Selected")
         XCTAssertTrue(sendButton.waitForExistence(timeout: 4))
         XCTAssertTrue(sendButton.isEnabled)
+    }
+
+    func testPharmacyThreadShowsFollowUpPromptBeforeNextChoices() {
+        let app = launchPracticeApp(scenarioID: "pharmacyHelp", title: "Pharmacy Visit")
+        let selectedPhrase = app.staticTexts["Practice.Story.SelectedPhrase"].firstMatch
+
+        XCTAssertTrue(waitForStaticText(containing: "triệu chứng gì", in: app, timeout: 4))
+        XCTAssertTrue(selectedPhrase.waitForExistence(timeout: 4))
+        XCTAssertEqual(selectedPhrase.label, "Tôi bị đau đầu")
+
+        tapFirstStoryChoice(in: app)
+        tapButton("Practice.Story.Send", in: app)
+
+        XCTAssertTrue(waitForStaticText(containing: "để tôi xem thuốc phù hợp", in: app, timeout: 5))
+        XCTAssertTrue(waitForStaticText(containing: "Bạn có sốt không?", in: app, timeout: 5))
+        XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
+        XCTAssertEqual(selectedPhrase.label, "tôi bị sốt")
     }
 
     func testMessageComposerFocusesSelectedChoiceAtLeadingEdge() {

@@ -91,8 +91,12 @@ final class PracticeScenarioModeTests: XCTestCase {
             revealedReplyStepIDs: [openingStep.id]
         )
 
-        XCTAssertEqual(turns.map(\.role), [.localSpeaker, .travelerReply, .localSpeaker, .choiceSet])
-        XCTAssertFalse(turns.contains { $0.role == .localSpeaker && $0.stepID == deskStep.id })
+        XCTAssertEqual(turns.map(\.role), [.localSpeaker, .travelerReply, .localSpeaker, .localSpeaker, .choiceSet])
+        XCTAssertTrue(turns.contains { turn in
+            turn.role == .localSpeaker
+                && turn.stepID == deskStep.id
+                && turn.vietnamese == deskStep.localLine
+        })
 
         let choiceTurn = try XCTUnwrap(turns.last { $0.role == .choiceSet && $0.stepID == deskStep.id })
         XCTAssertEqual(
@@ -103,6 +107,79 @@ final class PracticeScenarioModeTests: XCTestCase {
                 "Can you say it in a simpler way?",
             ]
         )
+    }
+
+    func testStoryTranscriptShowsCurrentLocalPromptBeforeNextChoiceSet() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let pharmacy = try XCTUnwrap(snapshot.scenarios.first { $0.id == .pharmacyHelp })
+        let openingStep = try XCTUnwrap(pharmacy.steps.first { $0.id == "pharmacy-story-opening" })
+        let feverQuestionStep = try XCTUnwrap(pharmacy.steps.first { $0.id == "pharmacy-story-find" })
+        let headacheOption = try XCTUnwrap(
+            openingStep.responseOptions.first { $0.scenarioEnglish == "I have a headache" }
+        )
+
+        let turns = PracticeStoryTranscript.turns(
+            for: pharmacy,
+            currentIndex: 1,
+            selectedOptionIDs: [openingStep.id: headacheOption.id],
+            revealedReplyStepIDs: [openingStep.id]
+        )
+
+        XCTAssertEqual(
+            turns.map(\.role),
+            [.localSpeaker, .travelerReply, .localSpeaker, .localSpeaker, .choiceSet]
+        )
+        XCTAssertTrue(turns.contains { turn in
+            turn.role == .localSpeaker
+                && turn.stepID == feverQuestionStep.id
+                && turn.vietnamese == "Bạn có sốt không?"
+        })
+        XCTAssertEqual(turns.last?.role, .choiceSet)
+        XCTAssertEqual(turns.last?.stepID, feverQuestionStep.id)
+    }
+
+    func testEveryMessageChoiceSetIncludesTheLocalPromptItAnswers() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+
+        for scenario in snapshot.scenarios {
+            for stepIndex in scenario.steps.indices {
+                let selectedPreviousOptions = Dictionary(
+                    uniqueKeysWithValues: try scenario.steps.prefix(stepIndex).map { step in
+                        let bestResponse = try XCTUnwrap(step.bestResponse)
+                        return (step.id, bestResponse.id)
+                    }
+                )
+                let revealedPreviousReplies = Set(scenario.steps.prefix(stepIndex).map(\.id))
+                let currentStep = scenario.steps[stepIndex]
+                let turns = PracticeStoryTranscript.turns(
+                    for: scenario,
+                    currentIndex: stepIndex,
+                    selectedOptionIDs: selectedPreviousOptions,
+                    revealedReplyStepIDs: revealedPreviousReplies
+                )
+
+                XCTAssertTrue(
+                    turns.contains { turn in
+                        turn.role == .localSpeaker
+                            && turn.stepID == currentStep.id
+                            && turn.vietnamese == currentStep.localLine
+                    },
+                    "\(scenario.id.rawValue) \(currentStep.id) should show the local prompt before its visible choices."
+                )
+                XCTAssertEqual(turns.last?.role, .choiceSet)
+                XCTAssertEqual(turns.last?.stepID, currentStep.id)
+            }
+        }
     }
 
     func testMessageThreadStartsAtTopBeforeFirstReply() throws {
@@ -292,9 +369,8 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(turns.filter { $0.role == .travelerReply }.count, 6)
         XCTAssertEqual(
             turns.filter { $0.role == .localSpeaker }.count,
-            turns.filter { $0.role == .travelerReply }.count + 1
+            turns.filter { $0.role == .travelerReply }.count * 2
         )
-        assertNoAdjacentLocalSpeakerTurns(in: turns)
     }
 
     func testEveryMessageScenarioBuildsOneContinuousSixToTenTurnConversation() throws {
@@ -323,8 +399,7 @@ final class PracticeScenarioModeTests: XCTestCase {
             XCTAssertEqual(turns.first?.role, .localSpeaker)
             XCTAssertTrue((6...10).contains(scenario.steps.count), "\(scenario.id) should stay short but conversational.")
             XCTAssertEqual(turns.filter { $0.role == .travelerReply }.count, scenario.steps.count)
-            XCTAssertEqual(turns.filter { $0.role == .localSpeaker }.count, scenario.steps.count + 1)
-            assertNoAdjacentLocalSpeakerTurns(in: turns)
+            XCTAssertEqual(turns.filter { $0.role == .localSpeaker }.count, scenario.steps.count * 2)
             XCTAssertEqual(scenario.steps.first?.localLine, scenario.unreadPreview)
             XCTAssertTrue(scenario.steps.last?.id.hasSuffix("goodbye") ?? false)
         }
@@ -1742,22 +1817,6 @@ final class PracticeScenarioModeTests: XCTestCase {
         let options = Array(step.responseOptions.prefix(vietnamese.count))
         XCTAssertEqual(options.map(\.scenarioVietnamese), vietnamese, file: file, line: line)
         XCTAssertEqual(options.map(\.scenarioEnglish), english, file: file, line: line)
-    }
-
-    private func assertNoAdjacentLocalSpeakerTurns(
-        in turns: [PracticeStoryTurn],
-        file: StaticString = #filePath,
-        line: UInt = #line
-    ) {
-        let roles = turns.map(\.role)
-        for index in roles.indices.dropFirst() {
-            XCTAssertFalse(
-                roles[index - 1] == .localSpeaker && roles[index] == .localSpeaker,
-                "Transcript should not show two local-speaker bubbles in a row.",
-                file: file,
-                line: line
-            )
-        }
     }
 
     private struct MessageScriptContract {
