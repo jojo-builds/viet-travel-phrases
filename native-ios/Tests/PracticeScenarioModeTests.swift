@@ -118,6 +118,45 @@ final class PracticeScenarioModeTests: XCTestCase {
         }
     }
 
+    func testVisibleMessageChoicesUseBundledReadyAudio() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        var failures: [String] = []
+
+        for scenario in snapshot.scenarios {
+            for step in scenario.steps {
+                for option in Array(step.responseOptions.prefix(3)) {
+                    let context = "\(scenario.id.rawValue) / \(step.id) / \(option.scenarioEnglish)"
+                    guard let audioKey = option.audioKey else {
+                        failures.append("\(context) is missing an audio key")
+                        continue
+                    }
+
+                    guard let entry = manifest.entry(for: audioKey) else {
+                        failures.append("\(context) is missing manifest entry \(audioKey)")
+                        continue
+                    }
+
+                    if !AudioSpeakerButton.isPlayableAudioKey(audioKey) {
+                        failures.append("\(context) has non-playable audio key \(audioKey)")
+                    }
+
+                    if normalizedAudioText(entry.text) != normalizedAudioText(option.scenarioVietnamese)
+                        && normalizedAudioText(entry.text) != normalizedAudioText(option.candidate.vietnamese) {
+                        failures.append("\(context) uses audio for '\(entry.text)'")
+                    }
+                }
+            }
+        }
+
+        XCTAssertTrue(failures.isEmpty, failures.joined(separator: "\n"))
+    }
+
     func testStoryTranscriptAnswersTheSelectedMessageOption() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -128,7 +167,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         let airport = try XCTUnwrap(snapshot.scenarios.first { $0.id == .danangFirstDay })
         let baggageStep = try XCTUnwrap(airport.steps.first { $0.id == "airport-story-baggage-belt" })
         let luggageHelpOption = try XCTUnwrap(
-            baggageStep.responseOptions.first { $0.scenarioEnglish == "Can you help me find my luggage?" }
+            baggageStep.responseOptions.first { $0.scenarioEnglish == "I need to report lost luggage" }
         )
 
         let turns = PracticeStoryTranscript.turns(
@@ -389,6 +428,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Tôi có thể mua SIM địa phương ở đâu?",
                     "ATM ở đâu?",
                     "Bàn thông tin ở đâu?",
+                    "Tôi có thể lấy Wi-Fi sân bay ở đâu?",
                 ]
             ),
             (
@@ -397,6 +437,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 [
                     "Thẻ phòng không dùng được",
                     "Máy lạnh không hoạt động",
+                    "Nhà vệ sinh không hoạt động",
                     "Có ai lên sửa giúp tôi được không?",
                     "Tôi gửi hành lý được không?",
                     "Tôi lấy hành lý ở đâu?",
@@ -411,6 +452,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Có nước suối không?",
                     "Cho tôi cà phê sữa đá",
                     "Tôi bị dị ứng đậu phộng",
+                    "Hãy làm món này mà không cần đậu phộng",
                     "Món này có đậu phộng không?",
                     "Món nào không quá cay?",
                 ]
@@ -422,6 +464,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Bạn là tài xế của tôi à?",
                     "Làm ơn đi theo bản đồ",
                     "Ứng dụng hiển thị tuyến đường khác",
+                    "Vui lòng sử dụng giá trên ứng dụng Grab.",
                     "Biển số xe khác",
                     "Bạn gọi bảo vệ giúp tôi được không?",
                     "Tài xế đi mất rồi",
@@ -433,6 +476,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 [
                     "Giá tốt nhất là bao nhiêu?",
                     "Bạn giảm giá cho tôi được không?",
+                    "Bạn có cái nào rẻ hơn không?",
                     "Phòng thử đồ ở đâu?",
                     "Bạn có size nhỏ hơn không?",
                     "Cho tôi hóa đơn được không?",
@@ -449,6 +493,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Làm ơn cho tôi một bản sao báo cáo",
                     "Túi của tôi bị lấy mất",
                     "Bạn kiểm tra camera an ninh giúp tôi được không?",
+                    "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
                 ]
             ),
             (
@@ -456,6 +501,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect],
                 [
                     "Chào bạn",
+                    "Tôi đang vội",
                     "Chào anh",
                     "Chào chị",
                     "chào ông",
@@ -526,12 +572,12 @@ final class PracticeScenarioModeTests: XCTestCase {
             stepID: "airport-story-baggage-belt",
             vietnamese: [
                 "Đây là thẻ hành lý của tôi",
-                "Bạn giúp tôi tìm hành lý được không?",
+                "Tôi cần báo cáo hành lý thất lạc",
                 "Bạn giúp tôi được không?",
             ],
             english: [
                 "Here is my baggage tag",
-                "Can you help me find my luggage?",
+                "I need to report lost luggage",
                 "Can you help me?",
             ]
         )
@@ -644,13 +690,13 @@ final class PracticeScenarioModeTests: XCTestCase {
             stepID: "restaurant-story-ingredients",
             vietnamese: [
                 "Không cay nhé",
-                "Có đậu phộng không?",
-                "Có thịt heo không?",
+                "Cái này có đậu phộng không?",
+                "Tôi không ăn thịt lợn",
             ],
             english: [
                 "Not spicy, please",
-                "Does it have peanuts?",
-                "Does it have pork?",
+                "Does this have peanuts?",
+                "I do not eat pork",
             ]
         )
 
@@ -681,6 +727,118 @@ final class PracticeScenarioModeTests: XCTestCase {
                 "How do I take this medicine?",
                 "How many times per day should I take it?",
                 "I am allergic to this medicine",
+            ]
+        )
+
+        let airportServices = try XCTUnwrap(snapshot.scenarios.first { $0.id == .airportSimCash })
+        assertTopReplies(
+            airportServices,
+            stepID: "airport-service-wifi",
+            vietnamese: [
+                "Tôi có thể lấy Wi-Fi sân bay ở đâu?",
+                "Tôi có thể sạc điện thoại ở đâu?",
+                "Bàn thông tin ở đâu?",
+            ],
+            english: [
+                "Where can I get airport Wi-Fi?",
+                "Where can I charge my phone?",
+                "Where is the information desk?",
+            ]
+        )
+
+        let roomHelp = try XCTUnwrap(snapshot.scenarios.first { $0.id == .hotelRoomHelp })
+        assertTopReplies(
+            roomHelp,
+            stepID: "hotel-room-bathroom",
+            vietnamese: [
+                "Nhà vệ sinh không hoạt động",
+                "Cửa không khóa",
+                "Căn phòng có mùi khói",
+            ],
+            english: [
+                "The toilet is not working",
+                "The door does not lock",
+                "The room smells like smoke",
+            ]
+        )
+
+        let foodAllergy = try XCTUnwrap(snapshot.scenarios.first { $0.id == .foodAllergyHelp })
+        assertTopReplies(
+            foodAllergy,
+            stepID: "food-allergy-kitchen-note",
+            vietnamese: [
+                "Hãy làm món này mà không cần đậu phộng",
+                "Làm ơn làm cho nó bớt cay đi",
+                "Tôi có thể có khăn ăn được không?",
+            ],
+            english: [
+                "Please make it without peanuts",
+                "Please make it less spicy",
+                "Can I have napkins?",
+            ]
+        )
+
+        let taxiRoute = try XCTUnwrap(snapshot.scenarios.first { $0.id == .taxiRouteHelp })
+        assertTopReplies(
+            taxiRoute,
+            stepID: "taxi-route-app-price",
+            vietnamese: [
+                "Vui lòng sử dụng giá trên ứng dụng Grab.",
+                "Tôi có thể thanh toán bằng chuyển khoản ngân hàng không?",
+                "Hãy cho tôi biết khi nào nên xuống xe",
+            ],
+            english: [
+                "Please use the price in the Grab app.",
+                "Can I pay by bank transfer?",
+                "Please tell me when to get off",
+            ]
+        )
+
+        let marketPrice = try XCTUnwrap(snapshot.scenarios.first { $0.id == .shoppingMarketPrice })
+        assertTopReplies(
+            marketPrice,
+            stepID: "shopping-market-cheaper",
+            vietnamese: [
+                "Bạn có cái nào rẻ hơn không?",
+                "Bạn có thể biến nó thành một số tròn được không?",
+                "Bạn có cái này màu đen không?",
+            ],
+            english: [
+                "Do you have a cheaper one?",
+                "Can you make it a round number?",
+                "Do you have this in black?",
+            ]
+        )
+
+        let lostBag = try XCTUnwrap(snapshot.scenarios.first { $0.id == .emergencyLostBag })
+        assertTopReplies(
+            lostBag,
+            stepID: "emergency-bag-emergency-help",
+            vietnamese: [
+                "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
+                "Tôi cần một nha sĩ",
+                "Tôi cần thuốc chống muỗi",
+            ],
+            english: [
+                "When should I seek emergency help?",
+                "I need a dentist",
+                "I need mosquito repellent",
+            ]
+        )
+
+        let marketHello = try XCTUnwrap(snapshot.scenarios.first { $0.id == .localGreetingMarket })
+        assertTopReplies(
+            marketHello,
+            stepID: "greeting-market-small-talk",
+            vietnamese: [
+                "Chào buổi sáng",
+                "Không có gì",
+                "Tôi đang vội",
+            ],
+            english: [
+                "Good morning",
+                "No problem",
+                "I'm in a hurry",
             ]
         )
     }
@@ -872,7 +1030,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 localMeaning: "Can I see your baggage tag?",
                 expectedTopEnglish: [
                     "Here is my baggage tag",
-                    "Can you help me find my luggage?",
+                    "I need to report lost luggage",
                     "Can you help me?",
                 ],
                 forbiddenTopEnglish: [
@@ -901,7 +1059,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "I need a SIM card with data",
                     "I need an eSIM",
-                    "How much is a SIM card?",
+                    "How much is this?",
                 ],
                 forbiddenTopEnglish: [
                     "Where is the ATM?",
@@ -928,7 +1086,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 localMeaning: "Hello, what problem does your room have?",
                 expectedTopEnglish: [
                     "The key card is not working",
-                    "Can you help me open the room door?",
+                    "The door does not lock",
                     "I lost my room key",
                 ],
                 forbiddenTopEnglish: [
@@ -956,7 +1114,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 localMeaning: "What would you like?",
                 expectedTopEnglish: [
                     "One portion of this, please",
-                    "One portion of cao lau, please",
+                    "I'd like a banh mi, please",
                     "What do you recommend?",
                 ],
                 forbiddenTopEnglish: [
@@ -1055,7 +1213,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "Do you have a smaller size?",
                     "Do you have a larger size?",
-                    "Can you help me check the size?",
+                    "I want this size",
                 ],
                 forbiddenTopEnglish: [
                     "Can I have a receipt?",
@@ -1302,5 +1460,12 @@ final class PracticeScenarioModeTests: XCTestCase {
                 line: line
             )
         }
+    }
+
+    private func normalizedAudioText(_ value: String) -> String {
+        value
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+            .trimmingCharacters(in: CharacterSet(charactersIn: ".。!?！？"))
     }
 }
