@@ -25,6 +25,8 @@ struct AppShellView: View {
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
+    @State private var browseCityHeroRoute: BrowseCollectionRoute?
+    @State private var browseCityHeroMorphResetID = 0
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @FocusState private var isSearchFieldFocused: Bool
@@ -84,6 +86,8 @@ struct AppShellView: View {
                 BrowsePageView(
                     intentStore: intentStore,
                     scrollToTopTrigger: navigation.browseScrollToTopTrigger,
+                    chromeNamespace: chromeNamespace,
+                    cityHeroMorphRoute: browseCityHeroRoute,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onSearchTapped: openSearch,
@@ -294,13 +298,15 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     focusRequest: browseCollectionFocusRequest,
+                    chromeNamespace: chromeNamespace,
+                    cityHeroMorphRoute: browseCityHeroRoute,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(AppPageTransition.slideFromTrailing)
+                .transition(browseCollectionTransition(for: renderedCollection.route))
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -376,6 +382,12 @@ struct AppShellView: View {
 
     private func detailTransition(for pageID: String) -> AnyTransition {
         isHomePhraseHeroRouteActive(for: pageID)
+            ? AppPageTransition.phraseHeroMorph
+            : AppPageTransition.slideFromTrailing
+    }
+
+    private func browseCollectionTransition(for route: BrowseCollectionRoute) -> AnyTransition {
+        browseCityHeroRoute == route
             ? AppPageTransition.phraseHeroMorph
             : AppPageTransition.slideFromTrailing
     }
@@ -1502,10 +1514,52 @@ struct AppShellView: View {
     }
 
     private func openBrowseCollection(_ route: BrowseCollectionRoute) {
+        if shouldUseBrowseCityHeroMorph(for: route) {
+            openBrowseCollectionWithCityHeroMorph(route)
+            return
+        }
+
         cancelInteractiveChromeState()
         cancelSearchFocus()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openBrowseCollection(route)
+        }
+    }
+
+    private func shouldUseBrowseCityHeroMorph(for route: BrowseCollectionRoute) -> Bool {
+        guard case .city = route else {
+            return false
+        }
+
+        return navigation.currentRoute == .browse && !navigation.isSearchPresented
+    }
+
+    private func openBrowseCollectionWithCityHeroMorph(_ route: BrowseCollectionRoute) {
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
+        browseCityHeroMorphResetID += 1
+        let resetID = browseCityHeroMorphResetID
+
+        withoutRouteAnimation {
+            browseCityHeroRoute = route
+        }
+
+        withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
+            navigation.openBrowseCollection(route)
+        }
+        clearBrowseCityHeroLaunch(after: resetID)
+    }
+
+    private func clearBrowseCityHeroLaunch(after resetID: Int) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: HomePhraseHeroMorphTiming.cleanupDelayNanoseconds)
+            guard browseCityHeroMorphResetID == resetID else {
+                return
+            }
+
+            withoutRouteAnimation {
+                browseCityHeroRoute = nil
+            }
         }
     }
 
@@ -1732,9 +1786,11 @@ struct AppShellView: View {
         interactiveDragResolutionID += 1
         dockSelectionTapRequestID += 1
         homePhraseHeroMorphResetID += 1
+        browseCityHeroMorphResetID += 1
         homePhraseHeroRoutePageID = nil
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
+        browseCityHeroRoute = nil
         interactiveDrag = nil
         dockDrag = .inactive
     }
@@ -3942,10 +3998,6 @@ struct SavedPagesView: View {
                         .lineLimit(2)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
@@ -4966,10 +5018,6 @@ private struct HomeSituationActionRow: View {
                         .minimumScaleFactor(0.76)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(10)
             .frame(maxWidth: .infinity)
@@ -5027,10 +5075,6 @@ private struct HomeCityCardView: View {
                         .fixedSize(horizontal: false, vertical: true)
 
                     Spacer(minLength: 2)
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .padding(.horizontal, 12)
                 .frame(height: 56)
@@ -5125,10 +5169,6 @@ private struct HomeWidePhraseButton: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }
@@ -5172,10 +5212,6 @@ private struct HomeSituationGroupRow: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .frame(
@@ -5235,13 +5271,13 @@ private struct HomeRelationshipRow: View {
                 Button {
                     onOpenDetail(detailPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .frame(maxWidth: .infinity)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
 
             AudioSpeakerButton(
@@ -5254,7 +5290,7 @@ private struct HomeRelationshipRow: View {
         .padding(.horizontal, 14)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
                 Text(phrase.vietnamese)
@@ -5271,12 +5307,6 @@ private struct HomeRelationshipRow: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .layoutPriority(1)
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }

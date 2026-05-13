@@ -1308,8 +1308,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hanoi.subcategories.isEmpty)
         XCTAssertFalse(hanoi.starterItems.isEmpty)
         XCTAssertNotNil(hanoi.cityHub)
-        XCTAssertEqual(hanoi.cityHub?.situationTitle, "Common moments")
+        XCTAssertEqual(hanoi.cityHub?.situationTitle, "Browse by")
+        XCTAssertEqual(hanoi.cityHub?.browseTitle, "Browse by")
         XCTAssertEqual(hanoi.cityHub?.namesTitle, "Names to know")
+        XCTAssertEqual(hanoi.cityHub?.cityBrowseFilters.first?.title, "Arrivals")
+        XCTAssertFalse((hanoi.cityHub?.cityBrowseAllItems ?? []).isEmpty)
     }
 
     func testBrowseCategoryMessageSectionsMirrorMessagesHubGroups() {
@@ -1461,6 +1464,13 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Landmarks" })
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
         XCTAssertTrue(cityHub.browseGroups.allSatisfy { $0.targetRoute == nil })
+        XCTAssertEqual(Array(cityHub.cityBrowseFilters.map(\.title).prefix(4)), ["Arrivals", "Landmarks", "Neighborhoods", "Food & coffee"])
+        XCTAssertTrue(cityHub.cityBrowseFilters.contains { $0.title == "Getting around" })
+        XCTAssertFalse(cityHub.cityBrowseFilters.contains { $0.title == "Quick phrases" })
+        XCTAssertEqual(cityHub.cityBrowseAllItems.first?.pageID, "viet-phrase-city-danang-place-airport")
+        XCTAssertTrue(cityHub.cityBrowseAllItems.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" })
+        XCTAssertTrue(cityHub.cityBrowseAllItems.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
+        XCTAssertEqual(Set(cityHub.cityBrowseAllItems.map(\.pageID)).count, cityHub.cityBrowseAllItems.count)
     }
 
     func testCityHubAndSearchDoNotTreatDerivedPlacePhrasesAsBrowseInventory() {
@@ -1471,6 +1481,7 @@ final class AppChromeTests: XCTestCase {
             + cityHub.namesToKnowItems
             + cityHub.quickPhraseItems
             + cityHub.browseGroups.flatMap(\.items)
+            + cityHub.cityBrowseAllItems
         assertNoDerivedPlacePhraseRows(citySurfaceItems, context: "Da Nang city surface")
 
         let entityOnlyResults = BrowseSearchDestinations.searchResults(for: "Dragon Bridge", limit: 10)
@@ -1543,37 +1554,52 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
-    func testGenericFoodCollectionSurfacesCoffeeWithoutLosingEntityRows() {
+    func testGenericFoodCollectionStartsWithCoffeeAndDishNounsBeforePlaces() {
         let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
 
         XCTAssertEqual(food.title, "Food & coffee")
-        XCTAssertEqual(food.starterTitle, "Places, dishes, and coffee")
+        XCTAssertEqual(food.starterTitle, "Coffee, dishes, and drinks")
         XCTAssertEqual(
             food.subcategories.map(\.title),
-            ["Restaurants", "Coffee shops", "Coffee & drinks", "Dishes to order", "Markets"]
+            ["Coffee & drinks", "Local dishes", "Order & adjust", "Allergies & diet", "Paying", "Places to eat & drink"]
         )
-        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-danang-place-nen" })
-        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-hanoi-place-giang-cafe" })
-        XCTAssertTrue(food.starterItems.contains { $0.pageID == "viet-phrase-city-hue-place-bun-bo-city" })
-        assertEntityFirstBrowseRows(food.starterItems, context: "food starter")
+
+        let starterIDs = food.starterItems.map(\.pageID)
+        XCTAssertEqual(
+            Array(starterIDs.prefix(4)),
+            [
+                "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den",
+                "viet-phrase-coffee-2",
+                "viet-phrase-coffee-1",
+                "viet-phrase-coffee-3",
+            ]
+        )
+        XCTAssertTrue(starterIDs.contains("viet-phrase-ves-order-pho-bowl"))
+        XCTAssertTrue(starterIDs.contains("viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo"))
+        XCTAssertFalse(starterIDs.prefix(6).contains { $0.contains("-place-") })
 
         for subcategory in food.subcategories {
-            XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into entity rows")
+            XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into useful rows")
             if subcategory.title == "Coffee & drinks" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
-                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-coffee-1" })
-                XCTAssertTrue(subcategory.items.contains { item in
-                    item.title.localizedCaseInsensitiveContains("coffee")
-                        || item.subtitle.localizedCaseInsensitiveContains("coffee")
-                        || item.pageID.localizedCaseInsensitiveContains("coffee")
-                })
-            } else if subcategory.title == "Dishes to order" {
+                XCTAssertEqual(subcategory.items.first?.pageID, "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den")
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-coffee-2" })
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-it-duong" })
+                XCTAssertFalse(subcategory.items.prefix(6).contains { $0.pageID.contains("-place-") })
+            } else if subcategory.title == "Local dishes" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
                 XCTAssertGreaterThanOrEqual(subcategory.items.count, 10)
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-ves-order-pho-bowl" })
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo" })
-            } else {
+                XCTAssertFalse(subcategory.items.prefix(8).contains { $0.pageID.contains("-place-") })
+            } else if subcategory.title == "Places to eat & drink" {
+                XCTAssertEqual(subcategory.countUnit, "item")
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-city-danang-place-nen" })
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-city-hanoi-place-giang-cafe" })
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-city-hcmc-place-ben-thanh-market" })
                 assertEntityFirstBrowseRows(subcategory.items, context: "food \(subcategory.title)")
+            } else {
+                XCTAssertFalse(subcategory.items.prefix(6).contains { $0.pageID.contains("-place-") })
             }
         }
     }
