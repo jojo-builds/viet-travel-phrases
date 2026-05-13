@@ -274,8 +274,8 @@ private struct BrowseCityHubContent: View {
     let onCityCardSelectionActivated: (String) -> Void
 
     var body: some View {
-        let selectedSituation = cityHub.situations.first { $0.id == selectedCityCardID }
-        let selectedBrowseGroup = cityHub.browseGroups.first { $0.id == selectedCityCardID }
+        let cityBrowseFilters = cityHub.cityBrowseFilters
+        let cityBrowseAllItems = cityHub.cityBrowseAllItems
 
         VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
             if let cityNameAudioItem = cityHub.cityNameAudioItem {
@@ -318,61 +318,16 @@ private struct BrowseCityHubContent: View {
                     )
                 }
             } else {
-                if !cityHub.namesToKnowItems.isEmpty {
-                    BrowseCollectionStarterSection(
-                        title: cityHub.namesTitle,
-                        actionTitle: "",
-                        items: cityHub.namesToKnowItems,
-                        onOpenDetail: onOpenDetail
-                    )
-                }
-
-                BrowseCityCardGridSection(
-                    title: cityHub.browseTitle,
-                    cards: cityHub.browseGroups,
-                    selectedCardID: selectedCityCardID,
-                    onOpenCollection: onOpenCollection,
-                    onSelectCard: selectCityCard
-                )
-
-                if let selectedBrowseGroup, !selectedBrowseGroup.items.isEmpty {
-                    BrowseCollectionStarterSection(
-                        title: citySectionTitle(for: selectedBrowseGroup),
-                        actionTitle: "",
-                        items: selectedBrowseGroup.items,
-                        onOpenDetail: onOpenDetail
-                    )
-                    .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedBrowseGroup.id))
-                }
-
-                BrowseCollectionMessageEntryCard(
-                    descriptor: descriptor,
-                    onPractice: onPractice
-                )
-
-                BrowseCityCardGridSection(
-                    title: cityHub.situationTitle,
-                    cards: cityHub.situations,
-                    selectedCardID: selectedCityCardID,
-                    onOpenCollection: onOpenCollection,
-                    onSelectCard: selectCityCard
-                )
-
-                if let selectedSituation, !selectedSituation.items.isEmpty {
-                    BrowseCollectionStarterSection(
-                        title: citySectionTitle(for: selectedSituation),
-                        actionTitle: "",
-                        items: selectedSituation.items,
-                        onOpenDetail: onOpenDetail
-                    )
-                    .id(BrowseCollectionLayout.citySelectedSectionID(for: selectedSituation.id))
-                }
-
-                if !cityHub.quickPhraseItems.isEmpty {
-                    BrowseCollectionStarterSection(
-                        title: cityHub.quickPhrasesTitle,
-                        actionTitle: "",
-                        items: cityHub.quickPhraseItems,
+                if !cityBrowseAllItems.isEmpty {
+                    BrowseCityFilterSection(
+                        title: cityHub.browseTitle,
+                        filters: cityBrowseFilters,
+                        selectedFilterID: selectedCityCardID,
+                        allItems: cityBrowseAllItems,
+                        tintName: descriptor.tintName,
+                        scrollTargetID: BrowseCollectionLayout.citySelectedSectionID(for: selectedCityCardID ?? "all"),
+                        onSelectAll: selectAllCityFilters,
+                        onSelectFilter: selectCityFilter,
                         onOpenDetail: onOpenDetail
                     )
                 }
@@ -385,21 +340,118 @@ private struct BrowseCityHubContent: View {
         descriptor.route == .category("city-guides")
     }
 
-    private func selectCityCard(_ card: BrowseCollectionSubcategory) {
-        guard !card.items.isEmpty else {
+    private func selectAllCityFilters() {
+        selectedCityCardID = nil
+    }
+
+    private func selectCityFilter(_ filter: BrowseCollectionSubcategory) {
+        guard !filter.items.isEmpty else {
             return
         }
 
-        let isActivatingCard = selectedCityCardID != card.id
-        selectedCityCardID = isActivatingCard ? card.id : nil
+        let isActivatingFilter = selectedCityCardID != filter.id
+        selectedCityCardID = filter.id
 
-        if isActivatingCard {
-            onCityCardSelectionActivated(card.id)
+        if isActivatingFilter {
+            onCityCardSelectionActivated(filter.id)
         }
     }
+}
 
-    private func citySectionTitle(for card: BrowseCollectionSubcategory) -> String {
-        "\(card.title) in \(descriptor.title)"
+private struct BrowseCityFilterSection: View {
+    let title: String
+    let filters: [BrowseCollectionSubcategory]
+    let selectedFilterID: String?
+    let allItems: [BrowseSearchPhraseItem]
+    let tintName: AccentTint
+    let scrollTargetID: String
+    let onSelectAll: () -> Void
+    let onSelectFilter: (BrowseCollectionSubcategory) -> Void
+    let onOpenDetail: (String) -> Void
+
+    private var selectedFilter: BrowseCollectionSubcategory? {
+        filters.first { $0.id == selectedFilterID }
+    }
+
+    private var visibleItems: [BrowseSearchPhraseItem] {
+        selectedFilter?.items ?? allItems
+    }
+
+    var body: some View {
+        BrowseCollectionSection(title: title, actionTitle: "") {
+            VStack(alignment: .leading, spacing: 12) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        BrowseCityFilterPill(
+                            title: "All",
+                            identifier: "BrowseCollection.CityFilter.all",
+                            isSelected: selectedFilterID == nil,
+                            tintName: tintName,
+                            onSelect: onSelectAll
+                        )
+
+                        ForEach(filters) { filter in
+                            BrowseCityFilterPill(
+                                title: filter.title,
+                                identifier: "BrowseCollection.CityFilter.\(filter.id)",
+                                isSelected: filter.id == selectedFilterID,
+                                tintName: filter.tintName,
+                                onSelect: { onSelectFilter(filter) }
+                            )
+                        }
+                    }
+                    .padding(.horizontal, 1)
+                    .padding(.bottom, 2)
+                }
+                .scrollClipDisabled()
+
+                VStack(spacing: 0) {
+                    ForEach(visibleItems) { item in
+                        BrowseCollectionPhraseRow(item: item, onOpenDetail: onOpenDetail)
+
+                        if item.id != visibleItems.last?.id {
+                            Divider().padding(.leading, 70)
+                        }
+                    }
+                }
+                .padding(.vertical, 8)
+                .phraseListCard(cornerRadius: 24)
+                .accessibilityIdentifier("BrowseCollection.CityFilterRows")
+                .id(scrollTargetID)
+            }
+        }
+    }
+}
+
+private struct BrowseCityFilterPill: View {
+    let title: String
+    let identifier: String
+    let isSelected: Bool
+    let tintName: AccentTint
+    let onSelect: () -> Void
+
+    var body: some View {
+        Button(action: onSelect) {
+            Text(title)
+                .font(.subheadline.weight(.black))
+                .foregroundStyle(isSelected ? tintName.audioColor : .primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+                .padding(.horizontal, 15)
+                .frame(height: 38)
+                .background {
+                    Capsule(style: .continuous)
+                        .fill(isSelected ? tintName.color.opacity(0.16) : Color(.secondarySystemBackground).opacity(0.92))
+                }
+                .overlay {
+                    Capsule(style: .continuous)
+                        .stroke(isSelected ? tintName.color.opacity(0.58) : Color.black.opacity(0.08), lineWidth: 1)
+                }
+                .contentShape(Capsule(style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityIdentifier(identifier)
     }
 }
 
