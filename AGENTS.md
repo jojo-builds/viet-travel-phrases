@@ -41,6 +41,7 @@ Rules:
 - Current MacBook-only session roots:
   - native iOS app work: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
   - full repo, content, docs, generators, and migration work: `/Users/jojolim/Developer/products/speaklocal/app-family`
+  - marketing, App Store, screenshot/video, campaign, and launch work: `/Users/jojolim/Developer/products/speaklocal/app-family/marketing`
   - reusable Codex skill work: `/Users/jojolim/Developer/labs/skill-labs`
 - Do not start app work from `/Users/jojolim/Documents/New project`; that folder is not this repo.
 - Historical pre-Mac roots may appear in old logs or archived docs only. Never use them for development:
@@ -51,6 +52,7 @@ Rules:
 - Older desktop-agent workspace paths may appear in historical logs or archived task files only. Do not use them as active startup paths.
 - Stay scoped to shared app-family implementation, current Viet/Tagalog dual-variant work, and future reusable feature rollout.
 - `native-ios/` is the active ship-facing SwiftUI app lane on the Mac.
+- `marketing/` is the active marketing-agency lane for positioning, App Store copy, ASO, screenshot/video planning, campaign briefs, creative direction, launch plans, and measurement. Marketing agents must read `marketing/AGENTS.md` and use the current native iOS app as product truth.
 - `native-ios/` should be treated as one shared native shell with app/language variants supplied by config and language packs.
 - `docs/APP_FAMILY_STRUCTURE.md` is the durable source for the monorepo/native-language-pack structure.
 - `native-ios/Config/apps/*.json` is the native app-variant planning/config surface.
