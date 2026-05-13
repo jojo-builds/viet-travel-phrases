@@ -270,6 +270,10 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBrowseCityHeroImageFadeIsStrongEnoughToHideImagePanelSeam() {
+        XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
+    }
+
     func testPlaybackSpeedPreferenceMapsToGlobalRates() {
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.5x"), 0.5, accuracy: 0.001)
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.75x"), 0.75, accuracy: 0.001)

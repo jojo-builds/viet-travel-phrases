@@ -283,7 +283,7 @@ enum BrowsePageLayout {
     static let cityHeroCardHeight: CGFloat = 368
     static let cityHeroImageHeight: CGFloat = 216
     static let cityHeroCopyAreaHeight: CGFloat = cityHeroCardHeight - cityHeroImageHeight
-    static let cityHeroImageFadeHeight: CGFloat = 82
+    static let cityHeroImageFadeHeight: CGFloat = 146
     static let cityHeroCardSpacing: CGFloat = 14
     static let nextShelfRowHeight: CGFloat = 108
     static let nextShelfIconSize: CGFloat = 48
@@ -489,23 +489,23 @@ private struct BrowseCityHeroCard: View {
                             anchor: .top
                         )
 
-                    Color.white.opacity(0.96)
+                    Color.white.opacity(0.98)
                         .frame(width: width, height: BrowsePageLayout.cityHeroCopyAreaHeight)
                 }
 
                 LinearGradient(
                     stops: [
                         .init(color: .clear, location: 0),
-                        .init(color: Color.white.opacity(0.12), location: 0.32),
-                        .init(color: Color.white.opacity(0.82), location: 0.76),
-                        .init(color: Color.white.opacity(0.96), location: 1),
+                        .init(color: Color.white.opacity(0.24), location: 0.38),
+                        .init(color: Color.white.opacity(0.72), location: 0.68),
+                        .init(color: Color.white.opacity(0.98), location: 1),
                     ],
                     startPoint: .top,
                     endPoint: .bottom
                 )
                 .frame(width: width, height: BrowsePageLayout.cityHeroImageFadeHeight)
                 .frame(maxHeight: .infinity, alignment: .top)
-                .offset(y: BrowsePageLayout.cityHeroImageHeight - BrowsePageLayout.cityHeroImageFadeHeight + 8)
+                .offset(y: BrowsePageLayout.cityHeroImageHeight - BrowsePageLayout.cityHeroImageFadeHeight)
                 .allowsHitTesting(false)
 
                 VStack(alignment: .leading, spacing: 9) {

@@ -210,6 +210,30 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.getting-around"].exists)
     }
 
+    func testCaptureBrowseCityHeroFadeProofForAllCityCards() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        scrollUntilHittable(app.buttons["Browse.City.danang"], app: app)
+        captureBrowseCityHeroFadeProofIfRequested(app: app, name: "city-rail-01-danang-hoian.png")
+
+        let targets = [
+            "Browse.City.hoian",
+            "Browse.City.hcmc",
+            "Browse.City.hanoi",
+            "Browse.City.hue",
+        ]
+
+        var scrollAnchor = app.buttons["Browse.City.danang"]
+        for (index, targetID) in targets.enumerated() {
+            let target = app.buttons[targetID]
+            scrollHorizontalCardUntilVisible(target, app: app, scrollAnchor: scrollAnchor)
+            XCTAssertTrue(isComfortablyVisible(target, in: app), "\(targetID) should be comfortably visible for city hero fade review.")
+            captureBrowseCityHeroFadeProofIfRequested(app: app, name: "city-rail-\(index + 2)-\(targetID.replacingOccurrences(of: "Browse.City.", with: "")).png")
+            scrollAnchor = target
+        }
+    }
+
     func testAirportSubcategoryCardsFilterVisibleRows() {
         let app = launchApp(arguments: ["--browse-category", "airport"])
 
@@ -520,6 +544,58 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTFail("Horizontal card was not hittable: \(element)", file: file, line: line)
+    }
+
+    private func scrollHorizontalCardUntilVisible(_ element: XCUIElement, app: XCUIApplication, scrollAnchor: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
+        for _ in 0..<8 {
+            if element.waitForExistence(timeout: 1) {
+                if isComfortablyVisible(element, in: app) {
+                    return
+                }
+            }
+
+            let appFrame = app.windows.firstMatch.frame
+            let anchorFrame = scrollAnchor.frame
+            let yOffset = max(0.08, min(0.92, anchorFrame.midY / appFrame.height))
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.88, dy: yOffset))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.14, dy: yOffset))
+            start.press(forDuration: 0.05, thenDragTo: end)
+        }
+
+        XCTFail("Horizontal card was not visible: \(element)", file: file, line: line)
+    }
+
+    private func isComfortablyVisible(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
+        let frame = element.frame
+        let appFrame = app.windows.firstMatch.frame
+
+        guard !frame.isNull, !frame.isInfinite, !frame.isEmpty else {
+            return false
+        }
+
+        return frame.minX >= appFrame.minX + 8
+            && frame.maxX <= appFrame.maxX - 8
+            && frame.intersects(appFrame)
+    }
+
+    private func captureBrowseCityHeroFadeProofIfRequested(app: XCUIApplication, name: String) {
+        let screenshot = XCUIScreen.main.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot)
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
+
+        guard let directory = ProcessInfo.processInfo.environment["SPEAKLOCAL_CITY_HERO_FADE_PROOF_DIR"], !directory.isEmpty else {
+            return
+        }
+
+        let fileURL = URL(fileURLWithPath: directory)
+            .appendingPathComponent(name)
+        try? FileManager.default.createDirectory(
+            at: fileURL.deletingLastPathComponent(),
+            withIntermediateDirectories: true
+        )
+        try? screenshot.pngRepresentation.write(to: fileURL)
     }
 
     private func captureBrowseNextShelvesProofIfRequested() {
