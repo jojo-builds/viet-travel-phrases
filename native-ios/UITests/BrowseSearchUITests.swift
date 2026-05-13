@@ -86,13 +86,13 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Search.Title"].exists)
     }
 
-    func testCityCollectionMessageEntryOpensMessages() {
+    func testCityCollectionHidesMessageEntry() {
         let app = launchApp(arguments: ["--browse-city", "hanoi"])
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.hanoi"].waitForExistence(timeout: 4))
-        tapWhenVisible(app.buttons["BrowseCollection.MessagesEntry.city.hanoi"], app: app)
-
-        XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.all"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.buttons["BrowseCollection.MessagesEntry.city.hanoi"].exists)
     }
 
     func testBrowseMessageThreadBackReturnsToCollectionMessageFocus() {
@@ -126,28 +126,15 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Food"].isHittable, "Food is the message-system grouping; the Browse section should explain the row content.")
     }
 
-    func testFoodCollectionSurfacesCoffeeAndDishPhraseLanes() {
+    func testFoodCollectionStartsWithCoffeeNounRows() {
         let app = launchApp(arguments: ["--browse-category", "food"])
 
         XCTAssertTrue(app.staticTexts["Food & coffee"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["Places, dishes, and coffee"].waitForExistence(timeout: 2))
-        tapHorizontalCard(
-            app.buttons["BrowseCollection.Subcategory.food.phrases.coffee-drinks"],
-            app: app,
-            scrollAnchor: app.buttons["BrowseCollection.Subcategory.food.entity.restaurants"]
-        )
-
-        XCTAssertTrue(app.staticTexts["Coffee & drinks"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-coffee-1"].waitForExistence(timeout: 2))
-
-        tapHorizontalCard(
-            app.buttons["BrowseCollection.Subcategory.food.phrases.dishes-to-order"],
-            app: app,
-            scrollAnchor: app.buttons["BrowseCollection.Subcategory.food.phrases.coffee-drinks"]
-        )
-
-        XCTAssertTrue(app.staticTexts["Dishes to order"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-ves-order-pho-bowl"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Coffee, dishes, and drinks"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Local dishes"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Order & adjust"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-nen"].exists)
     }
 
     func testDaNangCityCollectionRendersTravelModeHub() {
@@ -155,81 +142,35 @@ final class BrowseSearchUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Airport arrivals, beach rides, river landmarks, markets, and day trips."].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.otherElements["BrowseCollection.CityNamePlayer.Da Nang"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Names to know"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Browse Da Nang"].waitForExistence(timeout: 2))
-        app.swipeUp()
-        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.browse.landmarks"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Da Nang day"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Airport pickup, beach drop-off, food, and a ride back."].waitForExistence(timeout: 2))
-        app.swipeUp()
-        XCTAssertTrue(app.staticTexts["Common moments"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.arriving"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityCard.danang.situation.beach-day"].waitForExistence(timeout: 2))
-        app.swipeUp()
-        XCTAssertTrue(app.staticTexts["Quick phrases"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.all"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.arrivals"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.streets"].waitForExistence(timeout: 2))
+        tapWhenVisible(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"], app: app)
+        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].isSelected)
+        XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-airport"].exists)
+        XCTAssertFalse(app.staticTexts["Names to know"].exists)
+        XCTAssertFalse(app.staticTexts["Browse Da Nang"].exists)
+        XCTAssertFalse(app.staticTexts["Da Nang day"].exists)
+        XCTAssertFalse(app.staticTexts["Common moments"].exists)
+        XCTAssertFalse(app.staticTexts["Quick phrases"].exists)
         XCTAssertFalse(app.staticTexts["Start in Da Nang"].exists)
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
     }
 
-    func testBackFromCitySituationCardPreservesCollectionScrollPosition() {
+    func testCityFilterSelectionStaysOnCollection() {
         let app = launchApp(arguments: ["--browse"])
-        let situationCardID = "BrowseCollection.CityCard.danang.situation.beach-day"
-        let expandedRowID = "BrowseCollection.Row.viet-phrase-city-danang-place-my-khe"
+        let filterID = "BrowseCollection.CityFilter.danang.browse.landmarks"
 
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
         tapWhenVisible(app.buttons["Browse.City.danang"], app: app)
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
-        tapWhenComfortablyVisible(identifier: situationCardID, app: app)
-
-        XCTAssertTrue(app.staticTexts["Beach day in Da Nang"].waitForExistence(timeout: 5))
-        tapWhenComfortablyVisible(identifier: expandedRowID, app: app)
-        XCTAssertTrue(app.staticTexts["Biển Mỹ Khê"].waitForExistence(timeout: 5))
-
-        app.buttons["TopAdmin.BackButton"].tap()
-
-        let openedRow = app.buttons.matching(identifier: expandedRowID).firstMatch
-        XCTAssertTrue(openedRow.waitForExistence(timeout: 3))
-        XCTAssertTrue(openedRow.isHittable, "Back should restore the city collection near the row that opened the child page.")
-        XCTAssertFalse(app.staticTexts["BrowseCollection.Title.city.danang"].isHittable)
-    }
-
-    func testDaNangSituationCardsRevealCityRowsInsteadOfGenericCategoryPages() {
-        let cards: [(id: String, sectionTitle: String, expectedRowID: String)] = [
-            ("arriving", "Arriving in Da Nang", "BrowseCollection.Row.viet-phrase-city-danang-place-airport"),
-            ("getting-around", "Getting around in Da Nang", "BrowseCollection.Row.viet-phrase-city-danang-place-nguyen-van-linh-street"),
-            ("beach-day", "Beach day in Da Nang", "BrowseCollection.Row.viet-phrase-city-danang-place-my-khe"),
-            ("food-coffee", "Food & coffee in Da Nang", "BrowseCollection.Row.viet-phrase-city-danang-place-nen"),
-            ("places", "Places to visit in Da Nang", "BrowseCollection.Row.viet-phrase-city-danang-place-dragon-bridge"),
-            ("help", "Help in Da Nang", "BrowseCollection.Row.viet-phrase-bath-1"),
-        ]
-
-        for card in cards {
-            let app = launchApp(arguments: ["--browse-city", "danang"])
-            XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
-            if card.id == "arriving" {
-                captureCityHubFlowProofIfRequested(name: "danang-top", app: app)
-            }
-
-            tapWhenComfortablyVisible(
-                identifier: "BrowseCollection.CityCard.danang.situation.\(card.id)",
-                app: app
-            )
-
-            XCTAssertTrue(app.staticTexts[card.sectionTitle].waitForExistence(timeout: 3), "\(card.sectionTitle) did not appear after tapping \(card.id).")
-            if ["arriving", "food-coffee", "places"].contains(card.id) {
-                captureCityHubFlowProofIfRequested(name: "danang-\(card.id)-selected", app: app)
-            }
-            XCTAssertTrue(
-                app.buttons.matching(identifier: card.expectedRowID).firstMatch.waitForExistence(timeout: 2),
-                "\(card.expectedRowID) did not appear inside \(card.sectionTitle) after tapping \(card.id)."
-            )
-            XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.airport"].exists, "\(card.id) should not navigate out to the generic Airport page.")
-            XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.getting-around"].exists, "\(card.id) should not navigate out to the generic Getting around page.")
-
-            app.terminate()
-        }
+        tapWhenComfortablyVisible(identifier: filterID, app: app)
+        XCTAssertTrue(app.buttons[filterID].isSelected)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].exists)
+        XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.getting-around"].exists)
     }
 
     func testAirportSubcategoryCardsFilterVisibleRows() {
@@ -286,7 +227,7 @@ final class BrowseSearchUITests: XCTestCase {
 
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
-            ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "Names to know"),
+            ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "Browse by"),
             ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Start here"),
             ("ben-thanh-market", ["--detail-page", "viet-family-city-hcmc-place-ben-thanh-market"], "Chợ Bến Thành", "About"),
             ("anan-saigon", ["--detail-page", "viet-family-city-hcmc-place-anan-saigon"], "Anăn Sài Gòn", "About"),
