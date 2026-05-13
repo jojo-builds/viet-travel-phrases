@@ -172,6 +172,39 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(HomePageLinkRegistry.firstDayHomepagePageIDs, HomeFirstDayShelfContent.pageIDs)
     }
 
+    func testHomePhraseShelvesDoNotRepeatVisibleEnglishSubtitles() throws {
+        for shelf in HomePageLinkRegistry.homepagePhraseShelfSnapshots {
+            var pageIDByNormalizedSubtitle: [String: String] = [:]
+
+            for item in shelf.items {
+                let normalizedSubtitle = item.subtitle
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                    .lowercased()
+
+                if let existingPageID = pageIDByNormalizedSubtitle[normalizedSubtitle] {
+                    XCTFail(
+                        "\(shelf.id) repeats visible English subtitle '\(item.subtitle)' for \(existingPageID) and \(item.pageID)"
+                    )
+                } else {
+                    pageIDByNormalizedSubtitle[normalizedSubtitle] = item.pageID
+                }
+            }
+        }
+    }
+
+    func testHomeMoneyShoppingShelfShowsOneHowMuchCard() throws {
+        let shelf = try XCTUnwrap(
+            HomePageLinkRegistry.homepagePhraseShelfSnapshots.first { $0.id == "money-shopping" }
+        )
+        let pageIDs = shelf.items.map(\.pageID)
+        let howMuchItems = shelf.items.filter { $0.subtitle == "How much is this?" }
+
+        XCTAssertEqual(pageIDs.first, "viet-phrase-price-1")
+        XCTAssertTrue(pageIDs.contains("viet-phrase-v500-shop-can-you-lower-the-price"))
+        XCTAssertFalse(pageIDs.contains("viet-phrase-money-how-much-common"))
+        XCTAssertEqual(howMuchItems.map(\.pageID), ["viet-phrase-price-1"])
+    }
+
     func testHomeRecentlyViewedShelfUsesSixMostRecentCanonicalPages() throws {
         let expected = try HomeUseNowCatalog.starterIDs.prefix(6).map { pageID in
             try XCTUnwrap(PhraseCatalog.canonicalPageID(forOpenablePageID: pageID))
@@ -251,22 +284,27 @@ final class AppChromeTests: XCTestCase {
         return nil
     }
 
-    func testBrowseNextShelfRowsUseStableFullWidthCardMetrics() {
-        XCTAssertEqual(BrowsePageLayout.nextShelfRowHeight, 108)
-        XCTAssertEqual(BrowsePageLayout.nextShelfIconSize, 48)
-        XCTAssertEqual(BrowsePageLayout.nextShelfRowPadding, 14)
-        XCTAssertGreaterThanOrEqual(
-            BrowsePageLayout.nextShelfRowHeight,
-            BrowsePageLayout.nextShelfIconSize + BrowsePageLayout.nextShelfRowPadding * 2
-        )
-    }
-
     func testBrowseSituationCardsReserveReadableTextWidth() {
         XCTAssertEqual(BrowsePageLayout.situationIconSize, 48)
         XCTAssertGreaterThanOrEqual(BrowsePageLayout.situationCardMinHeight, 132)
         XCTAssertGreaterThanOrEqual(
             BrowsePageLayout.situationCardTitleContentWidth(cardWidth: 176),
             124
+        )
+    }
+
+    func testBrowseCityHeroImageFadeIsStrongEnoughToHideImagePanelSeam() {
+        XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
+    }
+
+    func testBrowseCityHeroMorphTimingLetsHeroLeadDestinationBody() {
+        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.navigationDuration, 0.38)
+        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.pageFadeDuration, 0.22)
+        XCTAssertGreaterThan(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 0)
+        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 180_000_000)
+        XCTAssertLessThan(
+            BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds,
+            BrowseCityHeroMorphTiming.navigationDurationNanoseconds
         )
     }
 
@@ -1291,12 +1329,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(
             Array(starterIDs.prefix(4)),
             [
-                "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den",
                 "viet-phrase-coffee-2",
                 "viet-phrase-coffee-1",
                 "viet-phrase-coffee-3",
+                "viet-phrase-ves-order-pho-bowl",
             ]
         )
+        XCTAssertEqual(Array(food.starterItems.prefix(4).map(\.title)), ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Phở"])
+        XCTAssertEqual(food.starterItems.first?.subtitle, "Black coffee")
+        XCTAssertEqual(food.starterItems.first?.audioKey, "breakdown-authored-ca-phe-den-855822aaf3")
         XCTAssertTrue(starterIDs.contains("viet-phrase-ves-order-pho-bowl"))
         XCTAssertTrue(starterIDs.contains("viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo"))
         XCTAssertFalse(starterIDs.prefix(6).contains { $0.contains("-place-") })
@@ -1305,14 +1346,15 @@ final class AppChromeTests: XCTestCase {
             XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into useful rows")
             if subcategory.title == "Coffee & drinks" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
-                XCTAssertEqual(subcategory.items.first?.pageID, "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den")
+                XCTAssertEqual(subcategory.items.first?.pageID, "viet-phrase-coffee-2")
+                XCTAssertEqual(subcategory.items.first?.title, "Cà phê đen")
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-coffee-2" })
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-it-duong" })
                 XCTAssertFalse(subcategory.items.prefix(6).contains { $0.pageID.contains("-place-") })
             } else if subcategory.title == "Local dishes" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
                 XCTAssertGreaterThanOrEqual(subcategory.items.count, 10)
-                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-ves-order-pho-bowl" })
+                XCTAssertEqual(subcategory.items.first?.title, "Phở")
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo" })
                 XCTAssertFalse(subcategory.items.prefix(8).contains { $0.pageID.contains("-place-") })
             } else if subcategory.title == "Places to eat & drink" {

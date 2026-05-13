@@ -13,6 +13,7 @@ Use this folder like a small marketing agency workspace:
 - `research/` - competitive research, ASO research, source notes, channel specs.
 - `measurement/` - KPI plans, experiment logs, ROI assumptions, launch metrics.
 - `exports/` - local export staging only; avoid committing large raw files unless explicitly requested.
+- `projects/` - cross-functional marketing projects that combine strategy, copy, screenshots, video, campaigns, and measurement.
 
 ## Operating Principle
 
@@ -51,4 +52,4 @@ Good first marketing projects:
 7. Beta tester recruitment message.
 
 Each project should live in its matching subfolder with a short brief and a clear output.
-
+If a project spans multiple work areas, create it under `projects/<project-slug>/` and link out to any supporting files in the other folders.

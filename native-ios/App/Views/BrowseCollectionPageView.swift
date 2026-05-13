@@ -7,6 +7,7 @@ struct BrowseCollectionPageView: View {
     let focusRequest: BrowseCollectionFocusRequest?
     var chromeNamespace: Namespace.ID? = nil
     var cityHeroMorphRoute: BrowseCollectionRoute? = nil
+    var cityHeroContentHoldRoute: BrowseCollectionRoute? = nil
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onPractice: (BrowseCollectionPracticeAction) -> Void
@@ -21,6 +22,7 @@ struct BrowseCollectionPageView: View {
             $0.countUnit == "item" ? $0.title : "\($0.title) phrases"
         } ?? descriptor.starterTitle
         let starterItems = selectedSubcategory?.items ?? descriptor.starterItems
+        let holdsContentForCityHeroMorph = cityHeroContentHoldRoute == descriptor.route
 
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
@@ -46,6 +48,7 @@ struct BrowseCollectionPageView: View {
                                 onPractice: { onPractice(descriptor.practiceAction) },
                                 onCityCardSelectionActivated: { _ in }
                             )
+                            .browseCityHeroContentReveal(isHeld: holdsContentForCityHeroMorph)
                         } else {
                             BrowseCollectionSubcategoryRail(
                                 subcategories: descriptor.subcategories,
@@ -148,6 +151,15 @@ struct BrowseCollectionPageView: View {
         withAnimation(.snappy(duration: 0.24)) {
             scrollProxy.scrollTo(focusRequest.target.scrollTargetID, anchor: .center)
         }
+    }
+}
+
+private extension View {
+    func browseCityHeroContentReveal(isHeld: Bool) -> some View {
+        opacity(isHeld ? 0 : 1)
+            .offset(y: isHeld ? 14 : 0)
+            .allowsHitTesting(!isHeld)
+            .animation(BrowseCityHeroMorphTiming.contentRevealAnimation, value: isHeld)
     }
 }
 
@@ -278,10 +290,11 @@ private struct BrowseCollectionSubcategoryCard: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.78)
 
-                Text("\(subcategory.phraseCount) \(subcategory.countUnit)\(subcategory.phraseCount == 1 ? "" : "s")")
+                Text(subcategory.subtitle)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
-                    .lineLimit(1)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             .padding(12)
             .frame(width: 120, height: 136, alignment: .topLeading)

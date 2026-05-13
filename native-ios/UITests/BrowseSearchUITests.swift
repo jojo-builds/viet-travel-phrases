@@ -16,6 +16,44 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Browse.Situation.hotel"].waitForExistence(timeout: 2))
     }
 
+    func testBrowseCityHeroTitlesShareTopAlignment() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.buttons["Browse.City.hoian"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["Browse.City.hcmc"].waitForExistence(timeout: 3))
+
+        let hoiAnTitle = app.staticTexts["Hoi An"].firstMatch
+        let saigonTitle = app.staticTexts["Saigon"].firstMatch
+
+        XCTAssertTrue(hoiAnTitle.waitForExistence(timeout: 2))
+        XCTAssertTrue(saigonTitle.waitForExistence(timeout: 2))
+        XCTAssertEqual(
+            hoiAnTitle.frame.minY,
+            saigonTitle.frame.minY,
+            accuracy: 2,
+            "Browse city-card headings should start at the same height even when subtitle wrapping differs."
+        )
+    }
+
+    func testBrowsePhraseFamilyCardsUseImageHeadlinesWithoutBodyCopy() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        scrollUntilHittable(app.buttons["Browse.PhraseFamily.greetings"], app: app)
+
+        XCTAssertTrue(app.buttons["Browse.PhraseFamily.greetings"].exists)
+        XCTAssertTrue(app.buttons["Browse.PhraseFamily.questions"].exists)
+        XCTAssertTrue(app.buttons["Browse.PhraseFamily.numbers-money"].exists)
+        XCTAssertTrue(app.buttons["Browse.PhraseFamily.polite-repair"].exists)
+
+        XCTAssertFalse(app.staticTexts["Say hello and start conversations."].exists)
+        XCTAssertFalse(app.staticTexts["Ask for information with confidence."].exists)
+        XCTAssertFalse(app.staticTexts["Count, pay, and handle prices."].exists)
+        XCTAssertFalse(app.staticTexts["Ask people to repeat, slow down, write it, or use English."].exists)
+        XCTAssertFalse(app.staticTexts["Alô"].exists)
+    }
+
     func testBrowseCategoryCardOpensCollectionAndBackReturnsToBrowse() {
         let app = launchApp(arguments: ["--browse"])
 
@@ -132,7 +170,11 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Coffee, dishes, and drinks"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Local dishes"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Order & adjust"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-den"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Black coffee, milk coffee, tea, and water"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Cà phê đen"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Black coffee"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-coffee-2"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.staticTexts["12 phrases"].exists)
         XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-nen"].exists)
     }
 
@@ -170,6 +212,30 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons[filterID].isSelected)
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].exists)
         XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.getting-around"].exists)
+    }
+
+    func testCaptureBrowseCityHeroFadeProofForAllCityCards() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        scrollUntilHittable(app.buttons["Browse.City.danang"], app: app)
+        captureBrowseCityHeroFadeProofIfRequested(app: app, name: "city-rail-01-danang-hoian.png")
+
+        let targets = [
+            "Browse.City.hoian",
+            "Browse.City.hcmc",
+            "Browse.City.hanoi",
+            "Browse.City.hue",
+        ]
+
+        var scrollAnchor = app.buttons["Browse.City.danang"]
+        for (index, targetID) in targets.enumerated() {
+            let target = app.buttons[targetID]
+            scrollHorizontalCardUntilVisible(target, app: app, scrollAnchor: scrollAnchor)
+            XCTAssertTrue(isComfortablyVisible(target, in: app), "\(targetID) should be comfortably visible for city hero fade review.")
+            captureBrowseCityHeroFadeProofIfRequested(app: app, name: "city-rail-\(index + 2)-\(targetID.replacingOccurrences(of: "Browse.City.", with: "")).png")
+            scrollAnchor = target
+        }
     }
 
     func testAirportSubcategoryCardsFilterVisibleRows() {
@@ -243,29 +309,18 @@ final class BrowseSearchUITests: XCTestCase {
         }
     }
 
-    func testBrowseNextShelvesUseUniformCardFrames() {
+    func testBrowseDoesNotRenderNextShelvesForReturningUsers() {
         let app = launchApp(arguments: ["--browse", "--seed-returning-user-shelves"])
 
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
 
-        let savedRow = app.buttons["Browse.NextShelf.saved"]
-        let practiceRow = app.buttons["Browse.NextShelf.practice"]
-        let recentRow = app.buttons["Browse.NextShelf.recent"]
+        let phraseFamilies = app.buttons["Browse.PhraseFamily.polite-repair"]
+        scrollUntilHittable(phraseFamilies, app: app)
 
-        scrollUntilHittable(recentRow, app: app)
-
-        XCTAssertTrue(savedRow.exists)
-        XCTAssertTrue(practiceRow.exists)
-        XCTAssertTrue(recentRow.exists)
-
-        let rowFrames = [savedRow.frame, practiceRow.frame, recentRow.frame]
-        for frame in rowFrames {
-            XCTAssertGreaterThan(frame.width, 300)
-            XCTAssertEqual(frame.height, rowFrames[0].height, accuracy: 1)
-            XCTAssertEqual(frame.width, rowFrames[0].width, accuracy: 1)
-        }
-
-        captureBrowseNextShelvesProofIfRequested()
+        XCTAssertFalse(app.staticTexts["Your next shelves"].exists)
+        XCTAssertFalse(app.buttons["Browse.NextShelf.saved"].exists)
+        XCTAssertFalse(app.buttons["Browse.NextShelf.practice"].exists)
+        XCTAssertFalse(app.buttons["Browse.NextShelf.recent"].exists)
     }
 
     func testSearchTabOpensSystemSearchField() {
@@ -484,19 +539,51 @@ final class BrowseSearchUITests: XCTestCase {
         XCTFail("Horizontal card was not hittable: \(element)", file: file, line: line)
     }
 
-    private func captureBrowseNextShelvesProofIfRequested() {
+    private func scrollHorizontalCardUntilVisible(_ element: XCUIElement, app: XCUIApplication, scrollAnchor: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
+        for _ in 0..<8 {
+            if element.waitForExistence(timeout: 1) {
+                if isComfortablyVisible(element, in: app) {
+                    return
+                }
+            }
+
+            let appFrame = app.windows.firstMatch.frame
+            let anchorFrame = scrollAnchor.frame
+            let yOffset = max(0.08, min(0.92, anchorFrame.midY / appFrame.height))
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.88, dy: yOffset))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.14, dy: yOffset))
+            start.press(forDuration: 0.05, thenDragTo: end)
+        }
+
+        XCTFail("Horizontal card was not visible: \(element)", file: file, line: line)
+    }
+
+    private func isComfortablyVisible(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
+        let frame = element.frame
+        let appFrame = app.windows.firstMatch.frame
+
+        guard !frame.isNull, !frame.isInfinite, !frame.isEmpty else {
+            return false
+        }
+
+        return frame.minX >= appFrame.minX + 8
+            && frame.maxX <= appFrame.maxX - 8
+            && frame.intersects(appFrame)
+    }
+
+    private func captureBrowseCityHeroFadeProofIfRequested(app: XCUIApplication, name: String) {
         let screenshot = XCUIScreen.main.screenshot()
         let attachment = XCTAttachment(screenshot: screenshot)
-        attachment.name = "browse-next-shelves-uniform"
+        attachment.name = name
         attachment.lifetime = .keepAlways
         add(attachment)
 
-        guard let directory = ProcessInfo.processInfo.environment["SPEAKLOCAL_BROWSE_NEXT_SHELVES_PROOF_DIR"], !directory.isEmpty else {
+        guard let directory = ProcessInfo.processInfo.environment["SPEAKLOCAL_CITY_HERO_FADE_PROOF_DIR"], !directory.isEmpty else {
             return
         }
 
         let fileURL = URL(fileURLWithPath: directory)
-            .appendingPathComponent("browse-next-shelves-uniform.png")
+            .appendingPathComponent(name)
         try? FileManager.default.createDirectory(
             at: fileURL.deletingLastPathComponent(),
             withIntermediateDirectories: true
