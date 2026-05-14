@@ -226,6 +226,7 @@ enum AppChromeLayout {
     static let contentPageLayerZIndex: Double = 0
     static let searchPageLayerZIndex: Double = 200
     static let chromeSeparationLayerZIndex: Double = 360
+    static let menuSectionBackdropLayerZIndex: Double = 365
     static let topAdminHitTestLayerZIndex: Double = 390
     static let topAdminControlLayerZIndex: Double = 410
     static let topAdminHorizontalPadding: CGFloat = 24
@@ -234,6 +235,9 @@ enum AppChromeLayout {
     static let topAdminControlCornerRadius: CGFloat = topAdminControlSize / 2
     static let menuSectionChromeHeight: CGFloat = 38
     static let menuSectionChromeRowSpacing: CGFloat = 8
+    static let menuSectionBackdropTopOffset: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing
+    static let menuSectionBackdropHeight: CGFloat = 92
+    static let menuSectionBackdropAllowsHitTesting = false
     static let menuSectionJumpClearance: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing + menuSectionChromeHeight + 44
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
@@ -264,6 +268,35 @@ struct ChromeSeparationGradient: View {
             .init(color: Color(.systemBackground).opacity(0.96), location: 0),
             .init(color: PhrasePageStyle.pageBackground.opacity(0.48), location: 0.42),
             .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.76),
+            .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
+        ]
+    }
+}
+
+struct MenuSectionChromeBackdropGradient: View {
+    var body: some View {
+        VStack(spacing: 0) {
+            Color.clear
+                .frame(height: AppChromeLayout.menuSectionBackdropTopOffset)
+
+            LinearGradient(
+                gradient: Gradient(stops: gradientStops),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(height: AppChromeLayout.menuSectionBackdropHeight)
+        }
+        .frame(maxWidth: .infinity, alignment: .top)
+        .ignoresSafeArea(edges: .top)
+        .allowsHitTesting(AppChromeLayout.menuSectionBackdropAllowsHitTesting)
+        .accessibilityHidden(true)
+    }
+
+    private var gradientStops: [Gradient.Stop] {
+        [
+            .init(color: Color(.systemBackground).opacity(0.94), location: 0),
+            .init(color: Color(.systemBackground).opacity(0.76), location: 0.34),
+            .init(color: PhrasePageStyle.pageBackground.opacity(0.36), location: 0.72),
             .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
         ]
     }

@@ -2519,13 +2519,13 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
     let menuSectionRail: () -> MenuSectionRail
 
     func body(content: Content) -> some View {
-        let showsPinnedAudioSpeedControl = pinnedAudioSpeedChromeState.route == currentRoute
-            && pinnedAudioSpeedChromeState.isVisible
-            && PinnedAudioSpeedChromePolicy.canShowPinnedControl(
-                on: currentRoute,
-                hasStaticBackButton: showsStaticBackButton,
-                isSearchPresented: isSearchPresented
-            )
+        let showsPinnedAudioSpeedControl = PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(
+            chromeState: pinnedAudioSpeedChromeState,
+            currentRoute: currentRoute,
+            hasStaticBackButton: showsStaticBackButton,
+            isSearchPresented: isSearchPresented,
+            isMenuSectionChromeVisible: showsMenuSectionChrome
+        )
         let showsTopAdminRow = !isPracticeThreadPresented
             && (showsStaticBackButton || showsPinnedAudioSpeedControl || canGoForward)
         let showsTopGlassChrome = showsTopAdminRow || showsMenuSectionChrome
@@ -2555,6 +2555,13 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
                 if !isPracticeThreadPresented {
                     ChromeSeparationGradient(edge: .top)
                         .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
+                }
+            }
+            .overlay(alignment: .top) {
+                if !isPracticeThreadPresented, showsMenuSectionChrome {
+                    MenuSectionChromeBackdropGradient()
+                        .transition(.opacity)
+                        .zIndex(AppChromeLayout.menuSectionBackdropLayerZIndex)
                 }
             }
             .overlay(alignment: .top) {
