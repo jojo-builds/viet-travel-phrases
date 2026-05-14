@@ -210,6 +210,51 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-nen"].exists)
     }
 
+    func testVietnameseFoodMenuSectionRailScrollsToCategory() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
+
+        XCTAssertTrue(app.staticTexts["Vietnamese menu"].waitForExistence(timeout: 4))
+        let popularRail = app.buttons["VietnameseMenu.SectionRail.popular"]
+        let scrollAnchor: XCUIElement
+        if popularRail.waitForExistence(timeout: 2) {
+            scrollAnchor = popularRail
+        } else {
+            scrollAnchor = app.buttons["VietnameseMenu.SectionRail.noodle-soups"]
+            XCTAssertTrue(scrollAnchor.waitForExistence(timeout: 2))
+        }
+
+        tapHorizontalCard(app.buttons["VietnameseMenu.SectionRail.seafood"], app: app, scrollAnchor: scrollAnchor)
+
+        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.seafood"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-ca-kho-to"].waitForExistence(timeout: 3))
+    }
+
+    func testVietnameseMenuTopSectionPillAppearsAfterInPageRailScrollsOff() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
+
+        XCTAssertTrue(app.staticTexts["Vietnamese menu"].waitForExistence(timeout: 4))
+        XCTAssertFalse(app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"].exists)
+
+        for _ in 0..<4 where !app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"].exists {
+            app.swipeUp()
+            RunLoop.current.run(until: Date().addingTimeInterval(0.18))
+        }
+
+        let sectionPill = app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"]
+        XCTAssertTrue(sectionPill.waitForExistence(timeout: 2))
+        sectionPill.tap()
+
+        let noodleSoups = app.buttons["VietnameseMenu.TopSectionMenu.noodle-soups"]
+        if noodleSoups.waitForExistence(timeout: 2) {
+            noodleSoups.tap()
+        } else {
+            app.buttons["Noodle soups"].tap()
+        }
+
+        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.noodle-soups"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-pho-bo"].waitForExistence(timeout: 3))
+    }
+
     func testVietnameseMenuDetailHeroImageOpensLightbox() {
         let app = launchApp(arguments: ["--detail-page", "viet-menu-food-pho-bo"])
 
@@ -221,6 +266,37 @@ final class BrowseSearchUITests: XCTestCase {
 
         tapWhenVisible(app.buttons["PhraseArticle.HeroImageLightbox.Close"], app: app)
         XCTAssertFalse(app.images["PhraseArticle.HeroImageLightbox.Image.viet-menu-food-pho-bo"].waitForExistence(timeout: 1))
+    }
+
+    func testVietnameseMenuDetailUsesMenuChipsInsteadOfBreakdownMath() {
+        let app = launchApp(arguments: ["--detail-page", "viet-menu-food-pho-bo"])
+
+        XCTAssertTrue(app.staticTexts["Phở bò"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["What it is"].waitForExistence(timeout: 2))
+        for _ in 0..<6 where !app.staticTexts["MenuDetail.Chip.usually-includes.beef-broth"].exists {
+            app.swipeUp()
+        }
+
+        XCTAssertTrue(app.staticTexts["MenuDetail.Chip.usually-includes.beef-broth"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["MenuDetail.Chip.usually-includes.rice-noodles"].exists)
+        XCTAssertFalse(app.buttons["Breakdown.Audio.include-0-beef-broth"].exists)
+
+        for _ in 0..<6 where !app.staticTexts["Worth knowing"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["Worth knowing"].waitForExistence(timeout: 2))
+
+        for _ in 0..<6 where !app.staticTexts["MenuDetail.Chip.common-options.less-spicy"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["MenuDetail.Chip.common-options.less-spicy"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["MenuDetail.Chip.common-options.no-msg"].exists)
+        XCTAssertFalse(app.buttons["Breakdown.Audio.option-0-extra-herbs"].exists)
+
+        for _ in 0..<6 where !app.staticTexts["Cho tôi một tô phở bò."].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["Cho tôi một tô phở bò."].waitForExistence(timeout: 2))
     }
 
     func testDaNangCityCollectionRendersTravelModeHub() {
@@ -599,17 +675,19 @@ final class BrowseSearchUITests: XCTestCase {
     private func tapHorizontalCard(_ element: XCUIElement, app: XCUIApplication, scrollAnchor: XCUIElement? = nil, file: StaticString = #filePath, line: UInt = #line) {
         for _ in 0..<6 {
             if element.waitForExistence(timeout: 1) {
-                let frame = element.frame
-                let appFrame = app.windows.firstMatch.frame
-
-                if !frame.isNull, !frame.isInfinite, !frame.isEmpty, frame.intersects(appFrame) {
+                if isComfortablyVisible(element, in: app) {
                     element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
                     return
                 }
             }
 
             let appFrame = app.windows.firstMatch.frame
-            let anchorFrame = scrollAnchor?.frame ?? .null
+            let anchorFrame: CGRect
+            if let scrollAnchor, scrollAnchor.exists {
+                anchorFrame = scrollAnchor.frame
+            } else {
+                anchorFrame = .null
+            }
             let yOffset: CGFloat
             if !anchorFrame.isNull, !anchorFrame.isInfinite, !anchorFrame.isEmpty {
                 yOffset = max(0.08, min(0.92, anchorFrame.midY / appFrame.height))

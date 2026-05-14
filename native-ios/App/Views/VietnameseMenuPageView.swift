@@ -4,32 +4,44 @@ struct VietnameseMenuPageView: View {
     let kind: VietnameseMenuKind
     let scrollToTopTrigger: Int
     let scrollToTopRoute: BrowseCollectionRoute?
+    let sectionJumpRequest: VietnameseMenuSectionJumpRequest?
     var onOpenDetail: (String) -> Void
 
-    @State private var selectedCategoryID: String?
+    @State private var currentSectionID: String?
+    @State private var isSectionRailPinned = false
+    @State private var pendingSectionJumpID = 0
+    @State private var pendingSectionJumpSectionID: String?
 
     private var route: BrowseCollectionRoute {
         .category(kind.routeID)
     }
 
-    private var categories: [VietnameseMenuCategory] {
-        VietnameseMenuCatalog.categories(for: kind)
+    private var sections: [VietnameseMenuSection] {
+        VietnameseMenuCatalog.sections(for: kind)
     }
 
-    private var selectedCategory: VietnameseMenuCategory? {
-        categories.first { $0.id == selectedCategoryID }
+    private var resolvedCurrentSectionID: String {
+        currentSectionID ?? sections.first?.id ?? "popular"
     }
 
-    private var visibleItems: [VietnameseMenuItem] {
-        if let selectedCategory {
-            return Array(selectedCategory.items.prefix(24))
+    private var sectionChromeState: VietnameseMenuSectionChromeState? {
+        guard !sections.isEmpty else {
+            return nil
         }
 
-        return VietnameseMenuCatalog.popularItems(for: kind, limit: 5)
-    }
-
-    private var visibleItemsTitle: String {
-        selectedCategory?.title ?? kind.popularTitle
+        return VietnameseMenuSectionChromeState(
+            route: route,
+            currentSectionID: resolvedCurrentSectionID,
+            isPinned: isSectionRailPinned,
+            sections: sections.map { section in
+                VietnameseMenuSectionChromeItem(
+                    id: section.id,
+                    title: section.title,
+                    symbolName: section.symbolName,
+                    tintName: section.tintName
+                )
+            }
+        )
     }
 
     var body: some View {
@@ -43,15 +55,18 @@ struct VietnameseMenuPageView: View {
                         header
                             .id(Self.scrollTopID)
 
-                        filterRail
+                        sectionRail(scrollProxy: scrollProxy)
 
-                        browseByTypeSection
-                            .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
-
-                        itemListSection
+                        sectionedMenu
                             .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
                     }
                     .padding(.bottom, VietnameseMenuLayout.bottomChromeContentClearance)
+                }
+                .onPreferenceChange(VietnameseMenuSectionFramePreferenceKey.self) { frames in
+                    updateCurrentSection(from: frames)
+                }
+                .onPreferenceChange(VietnameseMenuRailFramePreferenceKey.self) { frame in
+                    isSectionRailPinned = (frame?.maxY ?? .greatestFiniteMagnitude) <= VietnameseMenuLayout.glassRailRevealY
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     guard scrollToTopRoute == nil || scrollToTopRoute == route else {
@@ -60,9 +75,23 @@ struct VietnameseMenuPageView: View {
 
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
+                .onChange(of: sectionJumpRequest?.requestID) { _, _ in
+                    guard let sectionJumpRequest, sectionJumpRequest.route == route else {
+                        return
+                    }
+
+                    jumpToSection(sectionJumpRequest.sectionID)
+                }
+                .task(id: pendingSectionJumpID) {
+                    await performPendingSectionJump(scrollProxy)
+                }
             }
             .ignoresSafeArea(edges: .top)
         }
+        .preference(
+            key: VietnameseMenuSectionChromePreferenceKey.self,
+            value: sectionChromeState.map { [$0] } ?? []
+        )
         .accessibilityIdentifier("VietnameseMenu.\(kind.routeID)")
     }
 
@@ -105,101 +134,137 @@ struct VietnameseMenuPageView: View {
         }
     }
 
-    private var filterRail: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                VietnameseMenuFilterCard(
-                    title: "Popular",
-                    symbolName: "star.fill",
-                    tintName: .orange,
-                    isSelected: selectedCategoryID == nil,
-                    action: { selectedCategoryID = nil }
-                )
-                .padding(.leading, VietnameseMenuLayout.horizontalPadding)
+    private func sectionRail(scrollProxy: ScrollViewProxy) -> some View {
+        GeometryReader { proxy in
+            let cardWidth = VietnameseMenuLayout.sectionCardWidth(containerWidth: proxy.size.width)
 
-                ForEach(categories.prefix(kind == .food ? 6 : 5)) { category in
-                    VietnameseMenuFilterCard(
-                        title: category.title,
-                        symbolName: category.symbolName,
-                        tintName: category.tintName,
-                        isSelected: selectedCategoryID == category.id,
-                        action: { selectedCategoryID = category.id }
-                    )
+            ScrollViewReader { railProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: VietnameseMenuLayout.sectionCardSpacing) {
+                        ForEach(sections) { section in
+                            VietnameseMenuSectionImageCard(
+                                accessibilityID: section.id,
+                                title: section.title,
+                                imageName: section.featuredImageName,
+                                tintName: section.tintName,
+                                isSelected: resolvedCurrentSectionID == section.id,
+                                action: { jumpToSection(section.id) }
+                            )
+                            .frame(width: cardWidth)
+                            .id(Self.railScrollID(for: section.id))
+                        }
+                    }
+                    .padding(.leading, VietnameseMenuLayout.horizontalPadding)
+                    .padding(.trailing, VietnameseMenuLayout.horizontalPadding)
+                    .padding(.bottom, 2)
+                    .scrollTargetLayout()
                 }
-            }
-            .padding(.trailing, VietnameseMenuLayout.horizontalPadding)
-            .padding(.bottom, 2)
-        }
-        .scrollClipDisabled()
-    }
-
-    private var browseByTypeSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text("Browse by type")
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(.primary)
-
-                Spacer()
-
-                Button {
-                    selectedCategoryID = nil
-                } label: {
-                    Text("View all")
-                        .font(.subheadline.weight(.black))
-                        .foregroundStyle(.red)
-                }
-                .buttonStyle(.plain)
-            }
-
-            LazyVGrid(columns: VietnameseMenuLayout.typeColumns, spacing: 12) {
-                ForEach(typeCardCategories) { category in
-                    VietnameseMenuTypeCard(
-                        category: category,
-                        isSelected: selectedCategoryID == category.id,
-                        action: { selectedCategoryID = category.id }
-                    )
-                }
-            }
-        }
-    }
-
-    private var typeCardCategories: [VietnameseMenuCategory] {
-        let preferredTitles: [String]
-        switch kind {
-        case .food:
-            preferredTitles = ["Seafood", "Pork", "Chicken & duck", "Vegetarian"]
-        case .drink:
-            preferredTitles = ["Coffee", "Tea", "Smoothies", "Water & more"]
-        }
-
-        let preferred = preferredTitles.compactMap { title in
-            categories.first { $0.title == title }
-        }
-        return preferred.isEmpty ? Array(categories.prefix(4)) : preferred
-    }
-
-    private var itemListSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(visibleItemsTitle)
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
-
-            VStack(spacing: 0) {
-                ForEach(visibleItems) { item in
-                    VietnameseMenuItemRow(
-                        item: item,
-                        heroImageName: menuThumbnailImageName(for: item),
-                        onOpenDetail: { onOpenDetail(item.detailPageID) }
-                    )
-
-                    if item.id != visibleItems.last?.id {
-                        Divider().padding(.leading, 86)
+                .scrollTargetBehavior(.viewAligned)
+                .scrollClipDisabled()
+                .onChange(of: resolvedCurrentSectionID) { _, sectionID in
+                    withAnimation(.snappy(duration: 0.24)) {
+                        railProxy.scrollTo(Self.railScrollID(for: sectionID), anchor: .leading)
                     }
                 }
             }
-            .padding(.vertical, 8)
-            .phraseListCard(cornerRadius: 24)
+        }
+        .frame(height: VietnameseMenuLayout.sectionCardHeight)
+        .background {
+            GeometryReader { proxy in
+                Color.clear.preference(
+                    key: VietnameseMenuRailFramePreferenceKey.self,
+                    value: proxy.frame(in: .global)
+                )
+            }
+        }
+    }
+
+    private var sectionedMenu: some View {
+        LazyVStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(sections.enumerated()), id: \.element.id) { index, section in
+                Color.clear
+                    .frame(width: 1, height: 1)
+                    .id(Self.sectionAnchorID(for: section.id))
+                    .accessibilityHidden(true)
+
+                VietnameseMenuSectionBlock(
+                    section: section,
+                    heroImageName: menuThumbnailImageName,
+                    onOpenDetail: onOpenDetail
+                )
+                .padding(.top, index == 0 ? 0 : VietnameseMenuLayout.sectionSpacing)
+                .background {
+                    GeometryReader { proxy in
+                        Color.clear.preference(
+                            key: VietnameseMenuSectionFramePreferenceKey.self,
+                            value: [
+                                VietnameseMenuSectionFrame(
+                                    id: section.id,
+                                    order: index,
+                                    minY: proxy.frame(in: .global).minY
+                                ),
+                            ]
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private func jumpToSection(_ sectionID: String) {
+        guard sections.contains(where: { $0.id == sectionID }) else {
+            return
+        }
+
+        currentSectionID = sectionID
+        pendingSectionJumpSectionID = sectionID
+        pendingSectionJumpID += 1
+    }
+
+    @MainActor
+    private func performPendingSectionJump(_ scrollProxy: ScrollViewProxy) async {
+        guard pendingSectionJumpID > 0, let pendingSectionJumpSectionID else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: VietnameseMenuLayout.sectionJumpDelayNanoseconds)
+        guard !Task.isCancelled else {
+            return
+        }
+
+        withAnimation(.snappy(duration: 0.32)) {
+            scrollProxy.scrollTo(
+                Self.sectionAnchorID(for: pendingSectionJumpSectionID),
+                anchor: UnitPoint(x: 0.5, y: VietnameseMenuLayout.sectionJumpViewportAnchorY)
+            )
+        }
+    }
+
+    private static func railScrollID(for sectionID: String) -> String {
+        "rail-\(sectionID)"
+    }
+
+    private static func sectionAnchorID(for sectionID: String) -> String {
+        "section-anchor-\(sectionID)"
+    }
+
+    private func updateCurrentSection(from frames: [VietnameseMenuSectionFrame]) {
+        guard !frames.isEmpty else {
+            return
+        }
+
+        let sortedFrames = frames.sorted { lhs, rhs in
+            if lhs.order == rhs.order {
+                return lhs.minY < rhs.minY
+            }
+
+            return lhs.order < rhs.order
+        }
+        let activeFrames = sortedFrames.filter { $0.minY <= VietnameseMenuLayout.sectionActivationY }
+        let selectedFrame = activeFrames.max { $0.minY < $1.minY } ?? sortedFrames.first
+
+        if currentSectionID != selectedFrame?.id {
+            currentSectionID = selectedFrame?.id
         }
     }
 
@@ -213,111 +278,109 @@ private enum VietnameseMenuLayout {
     static let sectionSpacing: CGFloat = 20
     static let heroHeight: CGFloat = 240
     static let bottomChromeContentClearance: CGFloat = 132
-    static let typeColumns = [
-        GridItem(.flexible(), spacing: 12),
-        GridItem(.flexible(), spacing: 12),
-    ]
+    static let sectionCardSpacing: CGFloat = 12
+    static let sectionCardHeight: CGFloat = 166
+    static let sectionImageHeight: CGFloat = 108
+    static let sectionActivationY: CGFloat = AppChromeLayout.menuSectionJumpClearance + 32
+    static let sectionJumpViewportAnchorY: CGFloat = 0.19
+    static let sectionJumpDelayNanoseconds: UInt64 = 80_000_000
+    static let glassRailRevealY: CGFloat = 72
+
+    static func sectionCardWidth(containerWidth: CGFloat) -> CGFloat {
+        max(154, (containerWidth - horizontalPadding * 2 - sectionCardSpacing) / 2)
+    }
 }
 
-private struct VietnameseMenuFilterCard: View {
+private struct VietnameseMenuSectionImageCard: View {
+    let accessibilityID: String
     let title: String
-    let symbolName: String
+    let imageName: String
     let tintName: AccentTint
     let isSelected: Bool
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 8) {
-                Image(systemName: symbolName)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(tintName.color)
-                    .frame(width: 42, height: 42)
-                    .nativeGlass(cornerRadius: 21, tint: tintName.color.opacity(0.15), interactive: true)
+            VStack(alignment: .leading, spacing: 0) {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: VietnameseMenuLayout.sectionImageHeight)
+                    .frame(maxWidth: .infinity)
+                    .clipped()
 
                 Text(title)
-                    .font(.subheadline.weight(.black))
+                    .font(.headline.weight(.black))
                     .foregroundStyle(.primary)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.74)
+                    .minimumScaleFactor(0.72)
+                    .padding(.horizontal, 14)
+                    .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
+                    .background(.white.opacity(0.96))
             }
-            .padding(.horizontal, 8)
-            .frame(width: 106, height: 108)
-            .background(isSelected ? tintName.color.opacity(0.10) : .white.opacity(0.72), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(isSelected ? tintName.color.opacity(0.42) : Color.black.opacity(0.06), lineWidth: 1)
+                    .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
+            .shadow(color: .black.opacity(0.07), radius: 12, x: 0, y: 8)
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(isSelected ? .isSelected : [])
-        .accessibilityIdentifier("VietnameseMenu.Filter.\(title)")
+        .accessibilityIdentifier("VietnameseMenu.SectionRail.\(accessibilityID)")
     }
 }
 
-private struct VietnameseMenuTypeCard: View {
-    let category: VietnameseMenuCategory
-    let isSelected: Bool
-    let action: () -> Void
+private struct VietnameseMenuSectionBlock: View {
+    let section: VietnameseMenuSection
+    let heroImageName: (VietnameseMenuItem) -> String
+    let onOpenDetail: (String) -> Void
 
     var body: some View {
-        Button(action: action) {
-            VStack(alignment: .leading, spacing: 0) {
-                Image(category.featuredImageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 102)
-                    .frame(maxWidth: .infinity)
-                    .clipped()
-                    .overlay(alignment: .bottom) {
-                        LinearGradient(
-                            colors: [.clear, .black.opacity(0.12)],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                        .frame(height: 34)
-                    }
-                    .overlay(alignment: .topTrailing) {
-                        Image(systemName: category.symbolName)
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(category.tintName.color)
-                            .frame(width: 30, height: 30)
-                            .nativeGlass(cornerRadius: 15, tint: .white.opacity(0.2), interactive: false)
-                            .padding(8)
-                    }
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline, spacing: 10) {
+                Text(section.title)
+                    .font(.title2.weight(.black))
+                    .foregroundStyle(.primary)
+                    .accessibilityIdentifier("VietnameseMenu.SectionTitle.\(section.id)")
 
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(category.title)
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.76)
+                Text("\(section.itemCount)")
+                    .font(.caption.weight(.black))
+                    .foregroundStyle(section.tintName.color)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(section.tintName.color.opacity(0.10), in: Capsule(style: .continuous))
 
-                    Text(category.subtitle)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.76)
+                Spacer(minLength: 0)
+            }
+
+            if !section.subtitle.isEmpty {
+                Text(section.subtitle)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            VStack(spacing: 0) {
+                ForEach(section.items) { item in
+                    VietnameseMenuItemRow(
+                        item: item,
+                        heroImageName: heroImageName(item),
+                        onOpenDetail: { onOpenDetail(item.detailPageID) }
+                    )
+
+                    if item.id != section.items.last?.id {
+                        Divider().padding(.leading, 86)
+                    }
                 }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 10)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(.white.opacity(0.96))
             }
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .background(isSelected ? category.tintName.color.opacity(0.08) : .clear, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? category.tintName.color.opacity(0.48) : Color.black.opacity(0.06), lineWidth: 1)
-                    .allowsHitTesting(false)
-            }
-            .shadow(color: .black.opacity(0.06), radius: 12, x: 0, y: 8)
-            .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.vertical, 8)
+            .phraseListCard(cornerRadius: 24)
         }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("VietnameseMenu.TypeCard.\(category.id)")
     }
 }
 
@@ -353,7 +416,10 @@ private struct VietnameseMenuItemRow: View {
                         .lineLimit(2)
                         .fixedSize(horizontal: false, vertical: true)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
+
+                Spacer(minLength: 0)
 
                 if let audioKey = AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem) {
                     AudioSpeakerButton(tint: item.kind?.tintName ?? .orange, audioKey: audioKey)
@@ -365,11 +431,62 @@ private struct VietnameseMenuItemRow: View {
                         .nativeGlass(cornerRadius: 18, interactive: false)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("VietnameseMenu.Row.\(item.itemID)")
+    }
+}
+
+struct VietnameseMenuSectionJumpRequest: Equatable {
+    let requestID: Int
+    let route: BrowseCollectionRoute
+    let sectionID: String
+}
+
+struct VietnameseMenuSectionChromeItem: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let symbolName: String
+    let tintName: AccentTint
+}
+
+struct VietnameseMenuSectionChromeState: Equatable {
+    let route: BrowseCollectionRoute
+    let currentSectionID: String
+    let isPinned: Bool
+    let sections: [VietnameseMenuSectionChromeItem]
+}
+
+struct VietnameseMenuSectionChromePreferenceKey: PreferenceKey {
+    static var defaultValue: [VietnameseMenuSectionChromeState] = []
+
+    static func reduce(value: inout [VietnameseMenuSectionChromeState], nextValue: () -> [VietnameseMenuSectionChromeState]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+private struct VietnameseMenuSectionFrame: Equatable {
+    let id: String
+    let order: Int
+    let minY: CGFloat
+}
+
+private struct VietnameseMenuSectionFramePreferenceKey: PreferenceKey {
+    static var defaultValue: [VietnameseMenuSectionFrame] = []
+
+    static func reduce(value: inout [VietnameseMenuSectionFrame], nextValue: () -> [VietnameseMenuSectionFrame]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+private struct VietnameseMenuRailFramePreferenceKey: PreferenceKey {
+    static var defaultValue: CGRect?
+
+    static func reduce(value: inout CGRect?, nextValue: () -> CGRect?) {
+        value = nextValue() ?? value
     }
 }

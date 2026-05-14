@@ -32,6 +32,9 @@ struct AppShellView: View {
     @State private var browseCityHeroRoute: BrowseCollectionRoute?
     @State private var browseCityHeroContentHoldRoute: BrowseCollectionRoute?
     @State private var browseCityHeroMorphResetID = 0
+    @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
+    @State private var menuSectionJumpRequestID = 0
+    @State private var menuSectionJumpRequest: VietnameseMenuSectionJumpRequest?
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @FocusState private var isSearchFieldFocused: Bool
@@ -145,7 +148,8 @@ struct AppShellView: View {
                     backPreviewRoute: navigation.backPreviewRoute,
                     forwardPreviewRoute: navigation.forwardPreviewRoute,
                     drag: interactiveDrag,
-                    width: pageWidth
+                    width: pageWidth,
+                    visibleInactiveRoutes: browseCityHeroVisibleRoutes
                 )
 
                 SavedPagesView(
@@ -252,6 +256,9 @@ struct AppShellView: View {
                     pinnedAudioSpeedChromeState = nextState
                 }
             }
+            .onPreferenceChange(VietnameseMenuSectionChromePreferenceKey.self) { states in
+                menuSectionChromeStates = states
+            }
             .overlay(alignment: .leading) {
                 if !isPracticeThreadPresented {
                     backSwipeCaptureEdge(width: pageWidth)
@@ -269,14 +276,14 @@ struct AppShellView: View {
                 }
             }
             .overlay(alignment: .top) {
-                if showsTopAdminRow {
+                if showsTopGlassChrome {
                     TopAdminHitTestEnvelope()
                         .zIndex(AppChromeLayout.topAdminHitTestLayerZIndex)
                 }
             }
             .overlay(alignment: .top) {
-                if showsTopAdminRow {
-                    topAdminRow
+                if showsTopGlassChrome {
+                    topGlassChromeRows
                         .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
                         .padding(.top, AppChromeLayout.topAdminTopPadding)
                         .transition(.opacity)
@@ -321,6 +328,7 @@ struct AppShellView: View {
                     kind: menuKind,
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
+                    sectionJumpRequest: menuSectionJumpRequest,
                     onOpenDetail: openDetailFromBrowse
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
@@ -333,7 +341,8 @@ struct AppShellView: View {
                     backPreviewRoute: navigation.backPreviewRoute,
                     forwardPreviewRoute: navigation.forwardPreviewRoute,
                     drag: interactiveDrag,
-                    width: width
+                    width: width,
+                    visibleInactiveRoutes: browseCityHeroVisibleRoutes
                 )
             } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
                 BrowseCollectionPageView(
@@ -358,7 +367,8 @@ struct AppShellView: View {
                     backPreviewRoute: navigation.backPreviewRoute,
                     forwardPreviewRoute: navigation.forwardPreviewRoute,
                     drag: interactiveDrag,
-                    width: width
+                    width: width,
+                    visibleInactiveRoutes: browseCityHeroVisibleRoutes
                 )
             }
         }
@@ -390,6 +400,17 @@ struct AppShellView: View {
         )
     }
 
+    private var browseCityHeroVisibleRoutes: [AppRoute] {
+        guard let browseCityHeroRoute else {
+            return []
+        }
+
+        return [
+            .browse,
+            .browseCollection(browseCityHeroRoute),
+        ]
+    }
+
     private func selectSystemTab(_ tab: AppSystemTab) {
         switch tab {
         case .home, .browse, .saved, .practice:
@@ -397,6 +418,19 @@ struct AppShellView: View {
         case .search:
             openSearch(prefilledQuery: nil, focusField: true)
         }
+    }
+
+    private func jumpToMenuSection(_ sectionID: String) {
+        guard let currentMenuSectionChromeState else {
+            return
+        }
+
+        menuSectionJumpRequestID += 1
+        menuSectionJumpRequest = VietnameseMenuSectionJumpRequest(
+            requestID: menuSectionJumpRequestID,
+            route: currentMenuSectionChromeState.route,
+            sectionID: sectionID
+        )
     }
 
     private func openPrimarySystemTab(_ tab: AppSystemTab) {
@@ -555,6 +589,7 @@ struct AppShellView: View {
                     kind: menuKind,
                     scrollToTopTrigger: 0,
                     scrollToTopRoute: nil,
+                    sectionJumpRequest: nil,
                     onOpenDetail: openDetailFromBrowse
                 )
             } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
@@ -707,6 +742,42 @@ struct AppShellView: View {
             && (showsStaticBackButton || showsPinnedAudioSpeedControl || navigation.canGoForward)
     }
 
+    private var currentMenuSectionChromeState: VietnameseMenuSectionChromeState? {
+        guard case .browseCollection(let route) = navigation.currentRoute else {
+            return nil
+        }
+
+        return menuSectionChromeStates.last { $0.route == route }
+    }
+
+    private var showsMenuSectionChrome: Bool {
+        guard !isPracticeThreadPresented, !navigation.isSearchPresented else {
+            return false
+        }
+
+        return currentMenuSectionChromeState?.isPinned == true
+    }
+
+    private var showsTopGlassChrome: Bool {
+        showsTopAdminRow || showsMenuSectionChrome
+    }
+
+    private var topGlassChromeRows: some View {
+        VStack(spacing: AppChromeLayout.menuSectionChromeRowSpacing) {
+            if showsTopAdminRow {
+                topAdminRow
+            }
+
+            if showsMenuSectionChrome, let currentMenuSectionChromeState {
+                VietnameseMenuTopSectionRail(
+                    state: currentMenuSectionChromeState,
+                    onSelect: jumpToMenuSection
+                )
+                .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
+            }
+        }
+    }
+
     private var topAdminRow: some View {
         Group {
             if #available(iOS 26.0, *) {
@@ -782,6 +853,67 @@ struct AppShellView: View {
             .frame(width: AppChromeLayout.topAdminControlSize, height: AppChromeLayout.topAdminControlSize)
             .allowsHitTesting(false)
             .accessibilityHidden(true)
+    }
+
+    private struct VietnameseMenuTopSectionRail: View {
+        let state: VietnameseMenuSectionChromeState
+        let onSelect: (String) -> Void
+
+        private var currentSection: VietnameseMenuSectionChromeItem? {
+            state.sections.first { $0.id == state.currentSectionID } ?? state.sections.first
+        }
+
+        var body: some View {
+            HStack {
+                Spacer(minLength: 0)
+
+                Menu {
+                    ForEach(state.sections) { section in
+                        Button {
+                            onSelect(section.id)
+                        } label: {
+                            Label(section.title, systemImage: section.symbolName)
+                        }
+                        .accessibilityIdentifier("VietnameseMenu.TopSectionMenu.\(section.id)")
+                    }
+                } label: {
+                    HStack(spacing: 7) {
+                        if let currentSection {
+                            Image(systemName: currentSection.symbolName)
+                                .font(.caption.weight(.black))
+                                .foregroundStyle(currentSection.tintName.color)
+
+                            Text(currentSection.title)
+                                .font(.subheadline.weight(.black))
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.78)
+                        }
+
+                        Image(systemName: "chevron.down")
+                            .font(.caption2.weight(.black))
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.horizontal, 14)
+                    .frame(height: AppChromeLayout.menuSectionChromeHeight)
+                    .background(.white.opacity(0.42), in: Capsule(style: .continuous))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(0.66), lineWidth: 1)
+                            .allowsHitTesting(false)
+                    }
+                    .contentShape(Capsule(style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
+                .accessibilityLabel("Menu section")
+                .accessibilityValue(currentSection?.title ?? "")
+                .accessibilityIdentifier("VietnameseMenu.TopSectionPill")
+
+                Spacer(minLength: 0)
+            }
+            .frame(height: AppChromeLayout.menuSectionChromeHeight)
+        }
     }
 
     @ViewBuilder
@@ -2257,13 +2389,15 @@ struct AppInteractiveNavigationPresentation: Equatable {
         backPreviewRoute: AppRoute?,
         forwardPreviewRoute: AppRoute?,
         drag: AppInteractiveNavigationDrag?,
-        width: CGFloat
+        width: CGFloat,
+        visibleInactiveRoutes: [AppRoute] = []
     ) -> AppInteractiveNavigationPresentation {
         let isCurrentRoute = route == currentRoute
+        let shouldKeepVisible = isCurrentRoute || visibleInactiveRoutes.contains(route)
         guard let drag else {
             return AppInteractiveNavigationPresentation(
                 horizontalOffset: 0,
-                opacity: isCurrentRoute ? 1 : 0,
+                opacity: shouldKeepVisible ? 1 : 0,
                 scale: 1,
                 brightness: 0,
                 shadowOpacity: 0,
@@ -2322,8 +2456,8 @@ enum AppPageTransition {
     )
 
     static let browseCityHeroMorph = AnyTransition.asymmetric(
-        insertion: .opacity.animation(BrowseCityHeroMorphTiming.pageFadeAnimation),
-        removal: .opacity.animation(BrowseCityHeroMorphTiming.pageFadeAnimation)
+        insertion: .identity,
+        removal: .identity
     )
 }
 
@@ -2337,17 +2471,15 @@ enum HomePhraseHeroMorphTiming {
 
 enum BrowseCityHeroMorphTiming {
     static let navigationDuration = 0.36
-    static let pageFadeDuration = 0.18
-    static let contentRevealDelayNanoseconds: UInt64 = 150_000_000
-    static let contentRevealAnimation: Animation = .easeOut(duration: 0.16)
-    static let cleanupDelayNanoseconds: UInt64 = 650_000_000
+    static let contentRevealDelayNanoseconds: UInt64 = 280_000_000
+    static let contentRevealAnimation: Animation = .easeOut(duration: 0.18)
+    static let cleanupDelayNanoseconds: UInt64 = 740_000_000
 
     static var navigationDurationNanoseconds: UInt64 {
         UInt64(navigationDuration * 1_000_000_000)
     }
 
     static let navigationAnimation: Animation = .timingCurve(0.22, 1, 0.36, 1, duration: navigationDuration)
-    static let pageFadeAnimation: Animation = .easeOut(duration: pageFadeDuration)
 }
 
 private struct NavigationPageMotion: ViewModifier {
@@ -2357,6 +2489,7 @@ private struct NavigationPageMotion: ViewModifier {
     let forwardPreviewRoute: AppRoute?
     let drag: AppInteractiveNavigationDrag?
     let width: CGFloat
+    let visibleInactiveRoutes: [AppRoute]
 
     func body(content: Content) -> some View {
         content
@@ -2383,7 +2516,8 @@ private struct NavigationPageMotion: ViewModifier {
             backPreviewRoute: backPreviewRoute,
             forwardPreviewRoute: forwardPreviewRoute,
             drag: drag,
-            width: width
+            width: width,
+            visibleInactiveRoutes: visibleInactiveRoutes
         )
     }
 }
@@ -2395,7 +2529,8 @@ private extension View {
         backPreviewRoute: AppRoute?,
         forwardPreviewRoute: AppRoute?,
         drag: AppInteractiveNavigationDrag?,
-        width: CGFloat
+        width: CGFloat,
+        visibleInactiveRoutes: [AppRoute] = []
     ) -> some View {
         modifier(
             NavigationPageMotion(
@@ -2404,7 +2539,8 @@ private extension View {
                 backPreviewRoute: backPreviewRoute,
                 forwardPreviewRoute: forwardPreviewRoute,
                 drag: drag,
-                width: width
+                width: width,
+                visibleInactiveRoutes: visibleInactiveRoutes
             )
         )
     }
