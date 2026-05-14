@@ -24,7 +24,6 @@ struct AppShellView: View {
     @State private var browseCollectionFocusRequestID = 0
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
-    @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
     @State private var homePhraseHeroRoutePageID: String?
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
@@ -65,24 +64,24 @@ struct AppShellView: View {
     var body: some View {
         TabView(selection: systemTabSelection) {
             Tab("Home", systemImage: DockItemKind.home.symbolName, value: AppSystemTab.home) {
-                shellContent
+                tabShellContent(for: .home)
             }
 
             Tab("Browse", systemImage: DockItemKind.browse.symbolName, value: AppSystemTab.browse) {
-                shellContent
+                tabShellContent(for: .browse)
             }
 
             Tab("Saved", systemImage: DockItemKind.saved.symbolName, value: AppSystemTab.saved) {
-                shellContent
+                tabShellContent(for: .saved)
             }
 
             Tab("Messages", systemImage: DockItemKind.practice.symbolName, value: AppSystemTab.practice) {
-                shellContent
+                tabShellContent(for: .practice)
             }
 
             Tab("Search", systemImage: "magnifyingglass", value: AppSystemTab.search, role: .search) {
                 NavigationStack {
-                    shellContent
+                    tabShellContent(for: .search)
                 }
                 .navigationTitle("Search")
                 .searchable(
@@ -94,6 +93,16 @@ struct AppShellView: View {
             }
         }
         .tabViewSearchActivation(.searchTabSelection)
+    }
+
+    @ViewBuilder
+    private func tabShellContent(for tab: AppSystemTab) -> some View {
+        if AppSystemTab(route: navigation.currentRoute) == tab {
+            shellContent
+        } else {
+            Color.clear
+                .accessibilityHidden(true)
+        }
     }
 
     private var shellContent: some View {
@@ -246,49 +255,29 @@ struct AppShellView: View {
 
                 forwardPreviewPage(width: pageWidth)
             }
-            .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
-                let nextState = PinnedAudioSpeedChromePolicy.state(
-                    for: anchors,
-                    currentRoute: navigation.currentRoute
-                )
-
-                if nextState != pinnedAudioSpeedChromeState {
-                    pinnedAudioSpeedChromeState = nextState
+            .appShellChromeOverlays(
+                currentRoute: navigation.currentRoute,
+                isSearchPresented: navigation.isSearchPresented,
+                isPracticeThreadPresented: isPracticeThreadPresented,
+                showsStaticBackButton: showsStaticBackButton,
+                showsMenuSectionChrome: showsMenuSectionChrome,
+                canGoForward: navigation.canGoForward,
+                backSwipeCaptureEdge: { backSwipeCaptureEdge(width: pageWidth) },
+                forwardSwipeCaptureEdge: { forwardSwipeCaptureEdge(width: pageWidth) },
+                topAdminRow: { showsPinnedAudioSpeedControl in
+                    topAdminRow(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
+                },
+                menuSectionRail: {
+                    if let currentMenuSectionChromeState {
+                        VietnameseMenuTopSectionRail(
+                            state: currentMenuSectionChromeState,
+                            onSelect: jumpToMenuSection
+                        )
+                    }
                 }
-            }
+            )
             .onPreferenceChange(VietnameseMenuSectionChromePreferenceKey.self) { states in
                 menuSectionChromeStates = states
-            }
-            .overlay(alignment: .leading) {
-                if !isPracticeThreadPresented {
-                    backSwipeCaptureEdge(width: pageWidth)
-                }
-            }
-            .overlay(alignment: .trailing) {
-                if !isPracticeThreadPresented {
-                    forwardSwipeCaptureEdge(width: pageWidth)
-                }
-            }
-            .overlay(alignment: .top) {
-                if !isPracticeThreadPresented {
-                    ChromeSeparationGradient(edge: .top)
-                        .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
-                }
-            }
-            .overlay(alignment: .top) {
-                if showsTopGlassChrome {
-                    TopAdminHitTestEnvelope()
-                        .zIndex(AppChromeLayout.topAdminHitTestLayerZIndex)
-                }
-            }
-            .overlay(alignment: .top) {
-                if showsTopGlassChrome {
-                    topGlassChromeRows
-                        .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
-                        .padding(.top, AppChromeLayout.topAdminTopPadding)
-                        .transition(.opacity)
-                        .zIndex(AppChromeLayout.topAdminControlLayerZIndex)
-                }
             }
             .onAppear {
                 applyLaunchSearchFocusIfNeeded()
@@ -720,26 +709,8 @@ struct AppShellView: View {
         }
     }
 
-    private var showsPinnedAudioSpeedControl: Bool {
-        guard PinnedAudioSpeedChromePolicy.canShowPinnedControl(
-            on: navigation.currentRoute,
-            hasStaticBackButton: showsStaticBackButton,
-            isSearchPresented: navigation.isSearchPresented
-        ) else {
-            return false
-        }
-
-        return pinnedAudioSpeedChromeState.route == navigation.currentRoute
-            && pinnedAudioSpeedChromeState.isVisible
-    }
-
     private var pinnedAudioSpeedScrollClearance: CGFloat {
         AppChromeLayout.pinnedAudioSpeedScrollClearance
-    }
-
-    private var showsTopAdminRow: Bool {
-        !isPracticeThreadPresented
-            && (showsStaticBackButton || showsPinnedAudioSpeedControl || navigation.canGoForward)
     }
 
     private var currentMenuSectionChromeState: VietnameseMenuSectionChromeState? {
@@ -758,41 +729,21 @@ struct AppShellView: View {
         return currentMenuSectionChromeState?.isPinned == true
     }
 
-    private var showsTopGlassChrome: Bool {
-        showsTopAdminRow || showsMenuSectionChrome
-    }
-
-    private var topGlassChromeRows: some View {
-        VStack(spacing: AppChromeLayout.menuSectionChromeRowSpacing) {
-            if showsTopAdminRow {
-                topAdminRow
-            }
-
-            if showsMenuSectionChrome, let currentMenuSectionChromeState {
-                VietnameseMenuTopSectionRail(
-                    state: currentMenuSectionChromeState,
-                    onSelect: jumpToMenuSection
-                )
-                .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
-            }
-        }
-    }
-
-    private var topAdminRow: some View {
+    private func topAdminRow(showsPinnedAudioSpeedControl: Bool) -> some View {
         Group {
             if #available(iOS 26.0, *) {
                 GlassEffectContainer(spacing: 14) {
-                    topAdminRowContent
+                    topAdminRowContent(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
                 }
             } else {
-                topAdminRowContent
+                topAdminRowContent(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
             }
         }
         .frame(maxWidth: .infinity)
         .frame(height: AppChromeLayout.topAdminControlSize)
     }
 
-    private var topAdminRowContent: some View {
+    private func topAdminRowContent(showsPinnedAudioSpeedControl: Bool) -> some View {
         ZStack {
             HStack {
                 if showsStaticBackButton {
@@ -2523,6 +2474,34 @@ private struct NavigationPageMotion: ViewModifier {
 }
 
 private extension View {
+    func appShellChromeOverlays<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View, MenuSectionRail: View>(
+        currentRoute: AppRoute,
+        isSearchPresented: Bool,
+        isPracticeThreadPresented: Bool,
+        showsStaticBackButton: Bool,
+        showsMenuSectionChrome: Bool,
+        canGoForward: Bool,
+        @ViewBuilder backSwipeCaptureEdge: @escaping () -> BackSwipeCaptureEdge,
+        @ViewBuilder forwardSwipeCaptureEdge: @escaping () -> ForwardSwipeCaptureEdge,
+        @ViewBuilder topAdminRow: @escaping (_ showsPinnedAudioSpeedControl: Bool) -> TopAdminRow,
+        @ViewBuilder menuSectionRail: @escaping () -> MenuSectionRail
+    ) -> some View {
+        modifier(
+            AppShellChromeOverlayModifier(
+                currentRoute: currentRoute,
+                isSearchPresented: isSearchPresented,
+                isPracticeThreadPresented: isPracticeThreadPresented,
+                showsStaticBackButton: showsStaticBackButton,
+                showsMenuSectionChrome: showsMenuSectionChrome,
+                canGoForward: canGoForward,
+                backSwipeCaptureEdge: backSwipeCaptureEdge,
+                forwardSwipeCaptureEdge: forwardSwipeCaptureEdge,
+                topAdminRow: topAdminRow,
+                menuSectionRail: menuSectionRail
+            )
+        )
+    }
+
     func navigationPageMotion(
         route: AppRoute,
         currentRoute: AppRoute,
@@ -2543,6 +2522,85 @@ private extension View {
                 visibleInactiveRoutes: visibleInactiveRoutes
             )
         )
+    }
+}
+
+private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View, MenuSectionRail: View>: ViewModifier {
+    @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
+
+    let currentRoute: AppRoute
+    let isSearchPresented: Bool
+    let isPracticeThreadPresented: Bool
+    let showsStaticBackButton: Bool
+    let showsMenuSectionChrome: Bool
+    let canGoForward: Bool
+    let backSwipeCaptureEdge: () -> BackSwipeCaptureEdge
+    let forwardSwipeCaptureEdge: () -> ForwardSwipeCaptureEdge
+    let topAdminRow: (_ showsPinnedAudioSpeedControl: Bool) -> TopAdminRow
+    let menuSectionRail: () -> MenuSectionRail
+
+    func body(content: Content) -> some View {
+        let showsPinnedAudioSpeedControl = pinnedAudioSpeedChromeState.route == currentRoute
+            && pinnedAudioSpeedChromeState.isVisible
+            && PinnedAudioSpeedChromePolicy.canShowPinnedControl(
+                on: currentRoute,
+                hasStaticBackButton: showsStaticBackButton,
+                isSearchPresented: isSearchPresented
+            )
+        let showsTopAdminRow = !isPracticeThreadPresented
+            && (showsStaticBackButton || showsPinnedAudioSpeedControl || canGoForward)
+        let showsTopGlassChrome = showsTopAdminRow || showsMenuSectionChrome
+
+        content
+            .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
+                let nextState = PinnedAudioSpeedChromePolicy.state(
+                    for: anchors,
+                    currentRoute: currentRoute
+                )
+
+                if nextState != pinnedAudioSpeedChromeState {
+                    pinnedAudioSpeedChromeState = nextState
+                }
+            }
+            .overlay(alignment: .leading) {
+                if !isPracticeThreadPresented {
+                    backSwipeCaptureEdge()
+                }
+            }
+            .overlay(alignment: .trailing) {
+                if !isPracticeThreadPresented {
+                    forwardSwipeCaptureEdge()
+                }
+            }
+            .overlay(alignment: .top) {
+                if !isPracticeThreadPresented {
+                    ChromeSeparationGradient(edge: .top)
+                        .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
+                }
+            }
+            .overlay(alignment: .top) {
+                if showsTopGlassChrome {
+                    TopAdminHitTestEnvelope()
+                        .zIndex(AppChromeLayout.topAdminHitTestLayerZIndex)
+                }
+            }
+            .overlay(alignment: .top) {
+                if !isPracticeThreadPresented, showsTopGlassChrome {
+                    VStack(spacing: AppChromeLayout.menuSectionChromeRowSpacing) {
+                        if showsTopAdminRow {
+                            topAdminRow(showsPinnedAudioSpeedControl)
+                        }
+
+                        if showsMenuSectionChrome {
+                            menuSectionRail()
+                                .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
+                        }
+                    }
+                        .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
+                        .padding(.top, AppChromeLayout.topAdminTopPadding)
+                        .zIndex(AppChromeLayout.topAdminControlLayerZIndex)
+                }
+            }
     }
 }
 
@@ -2636,6 +2694,9 @@ struct HomeView: View {
             .ignoresSafeArea(edges: .top)
         }
         .accessibilityIdentifier("HomeView")
+        .task {
+            HomeImagePreheater.preheat(HomeContent.homeScrollCriticalImageNames)
+        }
     }
 
     private static let scrollTopID = "HomeViewTop"
@@ -2884,6 +2945,7 @@ enum HomeLayout {
     static let situationImageHeight: CGFloat = 68
     static let cityCardWidth: CGFloat = 118
     static let cityCardHeight: CGFloat = 178
+    static let cityImageHeight: CGFloat = 122
     static let relationshipRowsPerGroup = 3
     static let relationshipGroupSpacing: CGFloat = 12
     static let relationshipRowHeight: CGFloat = 102
@@ -3397,6 +3459,10 @@ private enum HomeContent {
         }
     }()
 
+    static let homeScrollCriticalImageNames: [String] = {
+        cityCards.map(\.imageName) + situationCards.map(\.imageName)
+    }()
+
     private static func homeCityTitle(for cityID: String, fallback: String) -> String {
         switch cityID {
         case "hoian":
@@ -3462,6 +3528,68 @@ private enum HomeContent {
             tintName: .orange
         ),
     ]
+}
+
+private enum HomeImagePreheater {
+    #if canImport(UIKit)
+    private static let lock = NSLock()
+    private static var preheatedImageNames = Set<String>()
+    private static var preheatedImages = [String: UIImage]()
+
+    static func preheat(_ imageNames: [String]) {
+        let uniqueImageNames = Array(Set(imageNames)).sorted()
+        lock.lock()
+        let pendingImageNames = uniqueImageNames.filter { !preheatedImageNames.contains($0) }
+        pendingImageNames.forEach { preheatedImageNames.insert($0) }
+        lock.unlock()
+
+        guard !pendingImageNames.isEmpty else {
+            return
+        }
+
+        Task.detached(priority: .utility) {
+            for imageName in pendingImageNames {
+                autoreleasepool {
+                    if let preparedImage = UIImage(named: imageName)?.preparingForDisplay() {
+                        lock.lock()
+                        preheatedImages[imageName] = preparedImage
+                        lock.unlock()
+                    }
+                }
+            }
+        }
+    }
+
+    static func preparedImage(named imageName: String) -> UIImage? {
+        lock.lock()
+        defer { lock.unlock() }
+        return preheatedImages[imageName]
+    }
+    #else
+    static func preheat(_ imageNames: [String]) {}
+    #endif
+}
+
+private struct HomePreparedImage: View {
+    let name: String
+
+    var body: some View {
+        #if canImport(UIKit)
+        if let preparedImage = HomeImagePreheater.preparedImage(named: name) {
+            Image(uiImage: preparedImage)
+                .resizable()
+                .interpolation(.medium)
+        } else {
+            Image(name)
+                .resizable()
+                .interpolation(.medium)
+        }
+        #else
+        Image(name)
+            .resizable()
+            .interpolation(.medium)
+        #endif
+    }
 }
 
 #if DEBUG
@@ -3914,8 +4042,7 @@ private struct HomeSituationActionRow: View {
             onOpenCollection(card.route)
         } label: {
             HStack(spacing: 18) {
-                Image(card.imageName)
-                    .resizable()
+                HomePreparedImage(name: card.imageName)
                     .scaledToFill()
                     .frame(width: HomeLayout.situationImageWidth, height: HomeLayout.situationImageHeight)
                     .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -3951,7 +4078,7 @@ private struct HomeCityRail: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 14) {
+            LazyHStack(spacing: 14) {
                 ForEach(cities) { city in
                     HomeCityCardView(city: city, onOpenCollection: onOpenCollection)
                 }
@@ -3960,7 +4087,6 @@ private struct HomeCityRail: View {
             .padding(.bottom, 4)
         }
         .frame(height: HomeLayout.cityCardHeight + 4)
-        .scrollClipDisabled()
         .accessibilityIdentifier("HomeCityRail")
     }
 }
@@ -3974,10 +4100,9 @@ private struct HomeCityCardView: View {
             onOpenCollection(city.route)
         } label: {
             VStack(alignment: .leading, spacing: 0) {
-                Image(city.imageName)
-                    .resizable()
+                HomePreparedImage(name: city.imageName)
                     .scaledToFill()
-                    .frame(width: HomeLayout.cityCardWidth, height: 122)
+                    .frame(width: HomeLayout.cityCardWidth, height: HomeLayout.cityImageHeight)
                     .clipped()
 
                 HStack(spacing: 6) {
@@ -3995,7 +4120,7 @@ private struct HomeCityCardView: View {
             }
             .frame(width: HomeLayout.cityCardWidth, height: HomeLayout.cityCardHeight)
             .clipShape(RoundedRectangle(cornerRadius: HomeLayout.cardCornerRadius, style: .continuous))
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
+            .homeStaticImageCard(cornerRadius: HomeLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("HomeCity.\(city.id)")
@@ -4012,6 +4137,17 @@ private extension View {
             }
             .shadow(color: .black.opacity(0.055), radius: 18, x: 0, y: 10)
             .nativeGlass(cornerRadius: cornerRadius)
+    }
+
+    func homeStaticImageCard(cornerRadius: CGFloat) -> some View {
+        self
+            .background(.white.opacity(0.82), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                    .stroke(Color.black.opacity(0.055), lineWidth: 1)
+                    .allowsHitTesting(false)
+            }
+            .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
     }
 }
 

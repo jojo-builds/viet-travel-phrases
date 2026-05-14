@@ -46,27 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đi vào trung",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "Đi vào trung tâm thành phố",
+          "english": "go downtown"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tâm thành phố",
-          "english": "how long does it take to get downtown",
-          "audioKey": null
+          "vietnamese": "mất bao lâu",
+          "english": "takes how long"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "mất bao lâu",
-          "english": "asks how long",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Đi vào trung tâm thành phố mất bao lâu?",
           "english": "How long does it take to get downtown",
-          "audioKey": null
+          "audioKey": "v900-airp-bord-arri-how-long-does-it-take-to-get-downtown"
         }
       ]
     },

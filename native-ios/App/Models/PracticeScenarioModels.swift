@@ -755,6 +755,7 @@ struct PracticeScenarioResponseOption: Identifiable, Equatable {
     let scenarioCopy: PracticeScenarioPhraseCopy?
     let nextLocalLine: String?
     let nextLocalMeaning: String?
+    let nextStepID: String?
     let feedbackTitle: String
     let feedbackBody: String
 
@@ -905,6 +906,64 @@ struct PracticeScenario: Identifiable, Equatable {
         return visible
     }
 
+    func nextStepIndex(
+        after currentIndex: Int,
+        selectedOptionIDs: [String: String]
+    ) -> Int? {
+        guard steps.indices.contains(currentIndex) else {
+            return nil
+        }
+
+        let currentStep = steps[currentIndex]
+        if let selectedOption = selectedOption(for: currentStep, selectedOptionIDs: selectedOptionIDs),
+           let nextStepID = selectedOption.nextStepID,
+           let branchIndex = steps.firstIndex(where: { $0.id == nextStepID }),
+           branchIndex > currentIndex {
+            return branchIndex
+        }
+
+        let nextIndex = currentIndex + 1
+        guard steps.indices.contains(nextIndex) else {
+            return nil
+        }
+
+        return nextIndex
+    }
+
+    func visibleSteps(
+        through currentIndex: Int,
+        selectedOptionIDs: [String: String]
+    ) -> [PracticeScenarioStep] {
+        guard !steps.isEmpty else {
+            return []
+        }
+
+        let clampedCurrentIndex = min(max(currentIndex, 0), steps.count - 1)
+        var visible: [PracticeScenarioStep] = []
+        var stepIndex = 0
+        var visited = Set<Int>()
+
+        while steps.indices.contains(stepIndex), visited.insert(stepIndex).inserted {
+            visible.append(steps[stepIndex])
+
+            if stepIndex == clampedCurrentIndex {
+                break
+            }
+
+            guard let nextIndex = nextStepIndex(after: stepIndex, selectedOptionIDs: selectedOptionIDs) else {
+                break
+            }
+
+            if nextIndex > clampedCurrentIndex {
+                break
+            }
+
+            stepIndex = nextIndex
+        }
+
+        return visible
+    }
+
     var visibleCopy: [String] {
         [sceneTitle, sceneSetup, queueSource.title, queueSource.subtitle]
             + steps.flatMap(\.visibleCopy)
@@ -944,6 +1003,17 @@ struct PracticeScenario: Identifiable, Equatable {
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .lowercased()
             .trimmingCharacters(in: CharacterSet(charactersIn: ".。!?！？"))
+    }
+
+    private func selectedOption(
+        for step: PracticeScenarioStep,
+        selectedOptionIDs: [String: String]
+    ) -> PracticeScenarioResponseOption? {
+        guard let selectedID = selectedOptionIDs[step.id] else {
+            return nil
+        }
+
+        return step.responseOptions.first { $0.id == selectedID }
     }
 }
 

@@ -46,6 +46,66 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertTrue(definitions.isEmpty)
     }
 
+    func testHowLongMessageBreakdownUsesSemanticChunks() {
+        let definitions = PracticeStoryBreakdownDefinitions.tokens(
+            forVietnamese: "Sẽ mất bao lâu?",
+            pageID: "viet-phrase-v500-loca-serv-ever-task-how-long-will-it-take"
+        )
+
+        XCTAssertEqual(definitions.map(\.vietnamese), ["Sẽ mất", "bao lâu"])
+        XCTAssertEqual(definitions.map(\.english), ["will take", "how long"])
+    }
+
+    func testMessageDefinitionBubblesDoNotShowInternalOrWholeSentenceGlosses() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        var failures: [String] = []
+
+        for scenario in snapshot.scenarios {
+            for step in scenario.steps {
+                auditDefinitionBubble(
+                    PracticeStoryTurn.local(
+                        step: step,
+                        idSuffix: "prompt",
+                        vietnamese: step.localLine,
+                        english: step.localLineMeaning
+                    ),
+                    scenarioID: scenario.id.rawValue,
+                    failures: &failures
+                )
+
+                for option in step.responseOptions {
+                    auditDefinitionBubble(
+                        PracticeStoryTurn.traveler(step: step, option: option),
+                        scenarioID: scenario.id.rawValue,
+                        failures: &failures
+                    )
+
+                    guard step.hasLocalReply(after: option) else { continue }
+                    auditDefinitionBubble(
+                        PracticeStoryTurn.local(
+                            step: step,
+                            idSuffix: "reply",
+                            vietnamese: step.localReplyLine(after: option),
+                            english: step.localReplyMeaning(after: option)
+                        ),
+                        scenarioID: scenario.id.rawValue,
+                        failures: &failures
+                    )
+                }
+            }
+        }
+
+        XCTAssertTrue(
+            failures.isEmpty,
+            failures.prefix(20).joined(separator: "\n")
+        )
+    }
+
     func testStoryTranscriptStartsWithSceneLocalCueAndChoiceSet() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -2304,6 +2364,44 @@ final class PracticeScenarioModeTests: XCTestCase {
         }
     }
 
+    func testMessageBranchTranscriptSkipsPromptsThatDoNotMatchSelectedReply() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let doctorHelp = try XCTUnwrap(snapshot.scenarios.first { $0.id == .emergencyDoctorHelp })
+        let openingStep = try XCTUnwrap(doctorHelp.steps.first { $0.id == "doctor-help-opening" })
+        let callDoctorOption = try XCTUnwrap(
+            openingStep.responseOptions.first { $0.scenarioEnglish.localizedCaseInsensitiveContains("call a doctor") }
+        )
+        let goodbyeIndex = try XCTUnwrap(doctorHelp.steps.firstIndex { $0.id == "doctor-help-goodbye" })
+
+        let turns = PracticeStoryTranscript.turns(
+            for: doctorHelp,
+            currentIndex: goodbyeIndex,
+            selectedOptionIDs: [openingStep.id: callDoctorOption.id],
+            revealedReplyStepIDs: [openingStep.id]
+        )
+        let visibleStepIDs = turns.map(\.stepID)
+        let visibleEnglish = turns.compactMap(\.english).joined(separator: "\n")
+
+        XCTAssertTrue(visibleStepIDs.contains("doctor-help-opening"))
+        XCTAssertTrue(visibleStepIDs.contains("doctor-help-goodbye"))
+        XCTAssertFalse(
+            visibleStepIDs.contains("doctor-help-hospital"),
+            "After asking someone to call a doctor, the thread should not ask the traveler to choose clinic vs hospital."
+        )
+        XCTAssertFalse(
+            visibleStepIDs.contains("doctor-help-symptom"),
+            "After asking someone to call a doctor, the thread should not keep walking the normal symptom script."
+        )
+        XCTAssertTrue(visibleEnglish.localizedCaseInsensitiveContains("call a doctor"))
+        XCTAssertTrue(visibleEnglish.localizedCaseInsensitiveContains("Yes, I will call now."))
+        XCTAssertTrue(visibleEnglish.localizedCaseInsensitiveContains("I will call a doctor for you."))
+    }
+
     func testMessageThreadProgressPersistsForReturnToThread() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -2546,6 +2644,67 @@ final class PracticeScenarioModeTests: XCTestCase {
                 line: line
             )
         }
+    }
+
+    private func auditDefinitionBubble(
+        _ turn: PracticeStoryTurn,
+        scenarioID: String,
+        failures: inout [String]
+    ) {
+        let definitions = PracticeStoryBreakdownDefinitions.tokens(for: turn)
+        guard !definitions.isEmpty else { return }
+
+        let turnVietnamese = normalizedVietnamese(turn.vietnamese ?? "")
+        let turnEnglish = normalizedEnglish(turn.english ?? "")
+        for token in definitions {
+            let tokenVietnamese = normalizedVietnamese(token.vietnamese)
+            let tokenEnglish = normalizedEnglish(token.english)
+            if tokenEnglish == "code", !vietnameseLooksLikeCodeToken(token.vietnamese) {
+                failures.append("\(scenarioID) \(turn.stepID): \(token.vietnamese) surfaced internal gloss 'code'")
+            }
+            if !turnEnglish.isEmpty,
+               tokenEnglish == turnEnglish,
+               tokenVietnamese != turnVietnamese {
+                failures.append("\(scenarioID) \(turn.stepID): \(token.vietnamese) reused whole sentence gloss '\(token.english)'")
+            }
+        }
+    }
+
+    private func vietnameseLooksLikeCodeToken(_ value: String) -> Bool {
+        let rawWords = value
+            .precomposedStringWithCanonicalMapping
+            .lowercased()
+            .components(separatedBy: CharacterSet.alphanumerics.inverted)
+            .filter { !$0.isEmpty }
+        let normalized = normalizedVietnamese(value)
+        return rawWords.contains("mã")
+            || (
+                rawWords.contains("ma")
+                && (
+                    normalized.contains("ma qr")
+                        || normalized.contains("ma xac minh")
+                        || normalized.contains("ma dat")
+                        || normalized.contains("ma pin")
+                        || normalized.contains("ma otp")
+                )
+            )
+    }
+
+    private func normalizedVietnamese(_ value: String) -> String {
+        value
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: Locale(identifier: "vi_VN"))
+            .replacingOccurrences(of: "đ", with: "d")
+            .replacingOccurrences(of: "Đ", with: "d")
+            .components(separatedBy: CharacterSet.alphanumerics.inverted)
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
+    }
+
+    private func normalizedEnglish(_ value: String) -> String {
+        value
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+            .trimmingCharacters(in: CharacterSet(charactersIn: ".。!?！？"))
     }
 
     private func normalizedAudioText(_ value: String) -> String {

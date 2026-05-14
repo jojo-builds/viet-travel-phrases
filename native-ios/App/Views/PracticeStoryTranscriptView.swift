@@ -8,6 +8,7 @@ struct PracticeStoryTranscriptView: View {
     let onOpenPhrasePage: (String) -> Void
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
+    @Binding var selectedDefinitionToken: PracticeStoryDefinitionToken?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -20,6 +21,7 @@ struct PracticeStoryTranscriptView: View {
                     PracticeStoryBubble(
                         turn: turn,
                         tint: tint,
+                        selectedDefinitionToken: $selectedDefinitionToken,
                         isInPracticePool: isInPracticePool,
                         isSavedPhrasePage: isSavedPhrasePage,
                         onOpenPhrasePage: onOpenPhrasePage,
@@ -39,6 +41,7 @@ struct PracticeStoryTranscriptView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .topLeading)
         .animation(.easeOut(duration: 0.24), value: turns.map(\.id))
         .accessibilityIdentifier("Practice.Story.Transcript")
     }
@@ -113,6 +116,7 @@ private struct PracticeStoryRecoveryLine: View {
 private struct PracticeStoryBubble: View {
     let turn: PracticeStoryTurn
     let tint: AccentTint
+    @Binding var selectedDefinitionToken: PracticeStoryDefinitionToken?
     let isInPracticePool: (String) -> Bool
     let isSavedPhrasePage: (String) -> Bool
     let onOpenPhrasePage: (String) -> Void
@@ -159,7 +163,8 @@ private struct PracticeStoryBubble: View {
                             PracticeStoryVietnameseLine(
                                 turn: turn,
                                 vietnamese: vietnamese,
-                                isTraveler: isTraveler
+                                isTraveler: isTraveler,
+                                selectedToken: $selectedDefinitionToken
                             )
                                 .accessibilityIdentifier("Practice.Story.Text.\(isTraveler ? "traveler" : "local").\(turn.id).vietnamese")
                         }
@@ -188,7 +193,6 @@ private struct PracticeStoryBubble: View {
             .padding(.vertical, 10)
             .frame(maxWidth: 302, alignment: isTraveler ? .trailing : .leading)
             .background(bubbleFill, in: bubbleShape)
-            .clipShape(bubbleShape)
             .overlay {
                 if !isTraveler {
                     bubbleShape
@@ -197,6 +201,11 @@ private struct PracticeStoryBubble: View {
             }
             .compositingGroup()
             .contentShape(bubbleShape)
+            .simultaneousGesture(
+                TapGesture().onEnded {
+                    selectedDefinitionToken = nil
+                }
+            )
             .contentShape(.contextMenuPreview, bubbleShape)
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("Practice.Story.Bubble.\(isTraveler ? "traveler" : "local").\(turn.stepID)")
@@ -246,7 +255,7 @@ private struct PracticeStoryVietnameseLine: View {
     let turn: PracticeStoryTurn
     let vietnamese: String
     let isTraveler: Bool
-    @State private var selectedToken: PracticeStoryDefinitionToken?
+    @Binding var selectedToken: PracticeStoryDefinitionToken?
 
     private var definitionTokens: [PracticeStoryDefinitionToken] {
         PracticeStoryBreakdownDefinitions.tokens(for: turn)
@@ -260,18 +269,21 @@ private struct PracticeStoryVietnameseLine: View {
                 .multilineTextAlignment(isTraveler ? .trailing : .leading)
                 .fixedSize(horizontal: false, vertical: true)
         } else {
-            PracticeStoryDefinitionFlowLayout(
-                horizontalSpacing: 5,
-                verticalSpacing: 4,
-                alignment: isTraveler ? .trailing : .leading
-            ) {
-                ForEach(definitionTokens) { token in
-                    PracticeStoryDefinitionTokenButton(
-                        token: token,
-                        isTraveler: isTraveler,
-                        selectedToken: $selectedToken
-                    )
+            ZStack(alignment: isTraveler ? .topTrailing : .topLeading) {
+                PracticeStoryDefinitionFlowLayout(
+                    horizontalSpacing: 5,
+                    verticalSpacing: 4,
+                    alignment: isTraveler ? .trailing : .leading
+                ) {
+                    ForEach(definitionTokens) { token in
+                        PracticeStoryDefinitionTokenButton(
+                            token: token,
+                            isTraveler: isTraveler,
+                            selectedToken: $selectedToken
+                        )
+                    }
                 }
+                .zIndex(1)
             }
             .fixedSize(horizontal: false, vertical: true)
             .accessibilityElement(children: .contain)
@@ -286,7 +298,10 @@ private struct PracticeStoryDefinitionTokenButton: View {
 
     var body: some View {
         Button {
-            selectedToken = token
+            let nextSelection = selectedToken?.id == token.id ? nil : token
+            DispatchQueue.main.async {
+                selectedToken = nextSelection
+            }
         } label: {
             Text(token.vietnamese)
                 .font(.subheadline.weight(.bold))
@@ -298,37 +313,49 @@ private struct PracticeStoryDefinitionTokenButton: View {
                     PracticeStoryDottedUnderline(color: underlineColor)
                         .offset(y: 1)
                 }
+                .overlay(alignment: .top) {
+                    if selectedToken?.id == token.id {
+                        PracticeStoryDefinitionCallout(token: token)
+                            .offset(y: -94)
+                            .transition(.opacity.combined(with: .scale(scale: 0.98, anchor: .bottom)))
+                            .allowsHitTesting(false)
+                            .zIndex(2)
+                    }
+                }
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .accessibilityLabel("\(token.vietnamese), \(token.english)")
         .accessibilityHint("Shows meaning")
         .accessibilityIdentifier("Practice.Story.DefinitionToken.\(token.id)")
-        .popover(item: selectedTokenBinding, attachmentAnchor: .rect(.bounds), arrowEdge: .bottom) { selectedToken in
-            PracticeStoryDefinitionPopover(token: selectedToken)
-                .presentationCompactAdaptation(.popover)
-        }
-    }
-
-    private var selectedTokenBinding: Binding<PracticeStoryDefinitionToken?> {
-        Binding(
-            get: {
-                selectedToken?.id == token.id ? selectedToken : nil
-            },
-            set: { newValue in
-                if let newValue {
-                    selectedToken = newValue
-                } else if selectedToken?.id == token.id {
-                    selectedToken = nil
-                }
-            }
-        )
+        .zIndex(selectedToken?.id == token.id ? 2 : 1)
     }
 
     private var underlineColor: Color {
         isTraveler
             ? .white.opacity(0.76)
             : Color(red: 0.07, green: 0.50, blue: 1.0).opacity(0.72)
+    }
+}
+
+private struct PracticeStoryDefinitionCallout: View {
+    let token: PracticeStoryDefinitionToken
+
+    var body: some View {
+        VStack(spacing: 0) {
+            PracticeStoryDefinitionPopover(token: token)
+
+            PracticeStoryDefinitionCalloutTail()
+                .fill(Color(.secondarySystemBackground).opacity(0.98))
+                .frame(width: 28, height: 16)
+                .overlay {
+                    PracticeStoryDefinitionCalloutTail()
+                        .stroke(.white.opacity(0.78), lineWidth: 1)
+                }
+                .offset(y: -1)
+        }
+        .shadow(color: .black.opacity(0.14), radius: 18, x: 0, y: 10)
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -340,16 +367,34 @@ private struct PracticeStoryDefinitionPopover: View {
             Text(token.vietnamese)
                 .font(.headline.weight(.bold))
                 .foregroundStyle(.primary)
+                .accessibilityIdentifier("Practice.Story.DefinitionCallout.Vietnamese")
 
             Text(token.english)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
+                .accessibilityIdentifier("Practice.Story.DefinitionCallout.English")
         }
         .padding(16)
         .frame(minWidth: 172, maxWidth: 260, alignment: .leading)
+        .background(Color(.secondarySystemBackground).opacity(0.98), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(.white.opacity(0.78), lineWidth: 1)
+        }
         .accessibilityElement(children: .combine)
         .accessibilityIdentifier("Practice.Story.DefinitionPopover.\(token.id)")
+    }
+}
+
+private struct PracticeStoryDefinitionCalloutTail: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.midX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.closeSubpath()
+        return path
     }
 }
 

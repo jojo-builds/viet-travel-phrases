@@ -133,6 +133,13 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThan(HomeLayout.situationImageHeight, HomeLayout.situationRowHeight)
     }
 
+    func testHomeCityRailUsesCompactStableImageMetrics() {
+        XCTAssertEqual(HomeLayout.cityCardWidth, 118)
+        XCTAssertEqual(HomeLayout.cityCardHeight, 178)
+        XCTAssertEqual(HomeLayout.cityImageHeight, 122)
+        XCTAssertLessThan(HomeLayout.cityImageHeight, HomeLayout.cityCardHeight)
+    }
+
     func testHomeMessageRailUsesStableCircleContactMetrics() {
         XCTAssertEqual(HomeLayout.messageAvatarSize, 82)
         XCTAssertEqual(HomeLayout.messageContactWidth, 104)

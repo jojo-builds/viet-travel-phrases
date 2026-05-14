@@ -46,21 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Phải mất bao",
-          "english": "code",
-          "audioKey": null
+          "vietnamese": "Phải mất",
+          "english": "takes"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lâu",
-          "english": "how long will it take",
-          "audioKey": null
+          "vietnamese": "bao lâu",
+          "english": "how long"
         },
         {
           "id": "chunk-3",
           "vietnamese": "Phải mất bao lâu?",
           "english": "How long does it take",
-          "audioKey": null
+          "audioKey": "v500-time-date-book-how-long-does-it-take"
         }
       ]
     },
