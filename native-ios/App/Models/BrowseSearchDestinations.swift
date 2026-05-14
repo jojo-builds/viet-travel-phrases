@@ -239,13 +239,21 @@ struct BrowseCollectionShelf: Identifiable, Equatable {
     let subtitle: String
     let items: [BrowseSearchPhraseItem]
     let itemGroups: [[BrowseSearchPhraseItem]]
+    let targetRoute: BrowseCollectionRoute?
 
-    init(id: String, title: String, subtitle: String, items: [BrowseSearchPhraseItem]) {
+    init(
+        id: String,
+        title: String,
+        subtitle: String,
+        items: [BrowseSearchPhraseItem],
+        targetRoute: BrowseCollectionRoute? = nil
+    ) {
         self.id = id
         self.title = title
         self.subtitle = subtitle
         self.items = items
         self.itemGroups = Self.groupItems(items)
+        self.targetRoute = targetRoute
     }
 
     private static func groupItems(_ items: [BrowseSearchPhraseItem]) -> [[BrowseSearchPhraseItem]] {
@@ -530,6 +538,24 @@ enum BrowseSearchDestinations {
                 "viet-family-food-coffee-black",
                 "viet-family-ves-order-pho-bowl",
             ]
+        ),
+        BrowseDestination(
+            id: VietnameseMenuKind.food.routeID,
+            title: "Vietnamese menu",
+            subtitle: "Dishes by type, with quick ordering phrases",
+            categoryIDs: ["food-drink"],
+            symbolName: "fork.knife",
+            tintName: .orange,
+            sampleQuery: "vietnamese food menu pho bun cha"
+        ),
+        BrowseDestination(
+            id: VietnameseMenuKind.drink.routeID,
+            title: "Vietnamese drinks",
+            subtitle: "Coffee, tea, smoothies, juice, water",
+            categoryIDs: ["food-drink"],
+            symbolName: "cup.and.saucer.fill",
+            tintName: .teal,
+            sampleQuery: "vietnamese drinks coffee tea smoothie"
         ),
         BrowseDestination(
             id: "getting-around",
@@ -927,6 +953,10 @@ enum BrowseSearchDestinations {
     }
 
     private static func searchCategoryDescriptor(id: String) -> BrowseCollectionDescriptor? {
+        if let kind = VietnameseMenuKind.kind(forRouteID: id) {
+            return VietnameseMenuCatalog.descriptor(for: kind)
+        }
+
         guard let destination = allCategoryDestinations.first(where: { $0.id == id }) else {
             return nil
         }
@@ -976,6 +1006,10 @@ enum BrowseSearchDestinations {
     }
 
     private static func makeCategoryDescriptor(id: String) -> BrowseCollectionDescriptor? {
+        if let kind = VietnameseMenuKind.kind(forRouteID: id) {
+            return VietnameseMenuCatalog.descriptor(for: kind)
+        }
+
         if id == "city-guides" {
             return makeCountryHubDescriptor()
         }
@@ -1003,6 +1037,7 @@ enum BrowseSearchDestinations {
         let starterItems = entityContent?.starterItems ?? phraseStarterItems
         let subcategories = entityContent?.subcategories ?? categorySubcategories(for: id, categoryIDs: categoryIDs, tintName: tint)
         let shelves = categoryExploreShelves(
+            collectionID: id,
             categoryIDs: categoryIDs,
             excluding: (starterItems + phraseStarterItems).map(\.pageID)
         )
@@ -1217,14 +1252,14 @@ enum BrowseSearchDestinations {
                     CitySituationCardSpec(id: "getting-around", title: "Getting around", subtitle: "Taxi, Grab, streets, drop-off", symbolName: "car.fill", tintName: .green, preferredPageIDs: [
                         "viet-phrase-vpe-help-action-anh-chi-giup-toi-goi-taxi-duoc-khong",
                         "viet-phrase-vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
-                        "viet-family-city-danang-get-off-my-khe",
+                        "viet-phrase-v500-tran-please-stop-right-here",
                         "viet-family-city-danang-place-nguyen-van-linh-street",
                         "viet-family-city-danang-place-bach-dang-street",
                     ], subcategoryIDs: ["arrivals-routes", "neighborhoods-streets"]),
                     CitySituationCardSpec(id: "beach-day", title: "Beach day", subtitle: "My Khe, chairs, drinks, bathroom", symbolName: "beach.umbrella.fill", tintName: .blue, preferredPageIDs: [
                         "viet-family-city-danang-place-my-khe",
-                        "viet-family-city-danang-get-off-my-khe",
-                        "viet-family-city-danang-seafood-my-khe",
+                        "viet-phrase-v500-tran-please-stop-right-here",
+                        "viet-phrase-ves-take-photo-for-me",
                         "viet-phrase-bath-1",
                     ], subcategoryIDs: ["landmarks-attractions", "food-coffee", "practical-help-near-places"]),
                     CitySituationCardSpec(id: "food-coffee", title: "Food & coffee", subtitle: "Restaurants, cafés, markets", symbolName: "cup.and.saucer.fill", tintName: .orange, preferredPageIDs: [
@@ -1236,7 +1271,7 @@ enum BrowseSearchDestinations {
                     ], subcategoryIDs: ["food-coffee"]),
                     CitySituationCardSpec(id: "places", title: "Places to visit", subtitle: "Dragon Bridge, Marble Mountains, Bà Nà Hills", symbolName: "building.columns.fill", tintName: .blue, preferredPageIDs: [
                         "viet-family-city-danang-place-dragon-bridge",
-                        "viet-family-city-danang-where-dragon-bridge",
+                        "viet-family-city-danang-place-love-bridge",
                         "viet-family-city-danang-place-marble-mountains",
                         "viet-family-city-danang-place-ba-na-hills",
                         "viet-family-city-danang-place-linh-ung-pagoda",
@@ -1366,8 +1401,8 @@ enum BrowseSearchDestinations {
             case "danang":
                 return [
                     "city-danang-to-airport",
-                    "city-danang-get-off-my-khe",
-                    "city-danang-where-dragon-bridge",
+                    "v500-tran-please-stop-right-here",
+                    "directions-8",
                     "ves-call-taxi-for-me",
                 ]
             default:
@@ -2047,7 +2082,11 @@ enum BrowseSearchDestinations {
         }
     }
 
-    private static func categoryExploreShelves(categoryIDs: [String], excluding excludedPageIDs: [String]) -> [BrowseCollectionShelf] {
+    private static func categoryExploreShelves(
+        collectionID: String,
+        categoryIDs: [String],
+        excluding excludedPageIDs: [String]
+    ) -> [BrowseCollectionShelf] {
         let excluded = Set(excludedPageIDs)
         return categoryIDs.compactMap { categoryID in
             let rows = PhraseCatalog.items(selectedCategoryID: categoryID)
@@ -2074,7 +2113,8 @@ enum BrowseSearchDestinations {
                 id: "category.\(categoryID)",
                 title: title,
                 subtitle: "More useful phrases",
-                items: Array(rows)
+                items: Array(rows),
+                targetRoute: categoryID == collectionID ? nil : .category(categoryID)
             )
         }
         .prefix(4)
@@ -2735,6 +2775,8 @@ enum BrowseSearchDestinations {
         "numbers-money": "HeroCategoryNumbersMoney",
         "polite-repair": "HeroCategoryPoliteRepair",
         "food-coffee": "HeroCategoryFood",
+        VietnameseMenuKind.food.routeID: "HeroVietnameseFoodMenu",
+        VietnameseMenuKind.drink.routeID: "HeroVietnameseDrinkMenu",
         "landmarks-attractions": "HeroCategoryGettingAround",
         "neighborhoods-streets": "HeroCategoryGettingAround",
     ]
@@ -2761,6 +2803,24 @@ enum BrowseSearchDestinations {
             "does this contain",
             "ingredient question",
             "restaurant ordering",
+        ],
+        VietnameseMenuKind.food.routeID: [
+            "vietnamese menu",
+            "vietnamese food menu",
+            "pho",
+            "bun cha",
+            "banh mi",
+            "seafood",
+            "vegetarian dishes",
+        ],
+        VietnameseMenuKind.drink.routeID: [
+            "vietnamese drink menu",
+            "vietnamese drinks",
+            "coffee",
+            "iced coffee",
+            "tea",
+            "smoothie",
+            "sugarcane juice",
         ],
         "getting-around": [
             "driver cannot find me",
