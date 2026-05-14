@@ -1333,7 +1333,7 @@ struct PracticeMessageAvatar: View {
                         .white,
                         .white.opacity(0.86)
                     )
-                    .shadow(color: .black.opacity(0.22), radius: size * 0.05, x: 0, y: size * 0.035)
+                    .shadow(color: .black.opacity(0.12), radius: size * 0.035, x: 0, y: size * 0.02)
             } else {
                 Text(scenarioID.messageInitials)
                     .font(.system(size: size * 0.36, weight: .bold))
@@ -1350,7 +1350,7 @@ struct PracticeMessageAvatar: View {
             Circle()
                 .strokeBorder(.black.opacity(0.05), lineWidth: 0.5)
         }
-        .shadow(color: scenarioID.messageBadgeOverlayColor.opacity(0.18), radius: size * 0.16, x: 0, y: size * 0.08)
+        .shadow(color: scenarioID.messageBadgeOverlayColor.opacity(0.08), radius: size * 0.09, x: 0, y: size * 0.04)
         .accessibilityHidden(true)
     }
 }
@@ -2859,7 +2859,7 @@ private struct PracticeScenarioStickyActionBar: View {
             .buttonStyle(.plain)
             .foregroundStyle(.white)
             .background(Color.red, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .shadow(color: .red.opacity(0.16), radius: 12, x: 0, y: 6)
+            .shadow(color: .red.opacity(0.06), radius: 7, x: 0, y: 3)
             .accessibilityIdentifier("Practice.ContinueButton")
         }
         .padding(8)

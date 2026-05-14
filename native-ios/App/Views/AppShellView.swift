@@ -2428,7 +2428,7 @@ private struct NavigationPageMotion: ViewModifier {
             .scaleEffect(presentation.scale)
             .brightness(presentation.brightness)
             .shadow(
-                color: .black.opacity(presentation.shadowOpacity),
+                color: .black.opacity(presentation.shadowOpacity * 0.55),
                 radius: 22 * progress,
                 x: presentation.shadowXOffset,
                 y: 0
@@ -3811,7 +3811,7 @@ private struct HomeFeaturedPhraseCard: View {
                 RoundedRectangle(cornerRadius: 32, style: .continuous)
                     .stroke(.white.opacity(0.72), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.07), radius: 22, x: 0, y: 14)
+            .shadow(color: .black.opacity(0.035), radius: 12, x: 0, y: 7)
             .nativeGlass(cornerRadius: 32)
         }
         .accessibilityIdentifier("HomeFeaturedPhrase.\(item.pageID)")
@@ -4114,7 +4114,7 @@ private extension View {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                     .stroke(.white.opacity(0.72), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.055), radius: 18, x: 0, y: 10)
+            .shadow(color: .black.opacity(0.03), radius: 10, x: 0, y: 5)
             .nativeGlass(cornerRadius: cornerRadius)
     }
 
@@ -4126,7 +4126,7 @@ private extension View {
                     .stroke(Color.black.opacity(0.055), lineWidth: 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
+            .shadow(color: .black.opacity(0.022), radius: 7, x: 0, y: 3)
     }
 }
 

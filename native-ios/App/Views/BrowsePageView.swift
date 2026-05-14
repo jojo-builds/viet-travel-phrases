@@ -469,7 +469,7 @@ private struct BrowseCityHeroCard: View {
                 RoundedRectangle(cornerRadius: 30, style: .continuous)
                     .stroke(.white.opacity(0.78), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.07), radius: 22, x: 0, y: 14)
+            .shadow(color: .black.opacity(0.035), radius: 12, x: 0, y: 7)
             .nativeGlass(cornerRadius: 30, interactive: true)
             .contentShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         }
@@ -589,7 +589,7 @@ private struct BrowsePhraseFamilyCard: View {
                 RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
                     .stroke(.white.opacity(0.76), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.06), radius: 18, x: 0, y: 10)
+            .shadow(color: .black.opacity(0.03), radius: 10, x: 0, y: 5)
             .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)
             .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
         }
