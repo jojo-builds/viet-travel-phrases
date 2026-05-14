@@ -13,7 +13,7 @@ struct PracticeView: View {
     let scrollToTopTrigger: Int
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
-    var onThreadBackToOrigin: () -> Void
+    var onThreadBackToOrigin: (PracticeScenarioID?) -> Void
     var onThreadPresentationChanged: (Bool) -> Void
 
     @State private var deckState = PracticeDeckLoadState.loading
@@ -44,7 +44,7 @@ struct PracticeView: View {
         messageStore: LocalPracticeMessageStore = LocalPracticeMessageStore(),
         onOpenDetail: @escaping (String) -> Void,
         onBrowseTapped: @escaping () -> Void,
-        onThreadBackToOrigin: @escaping () -> Void = {},
+        onThreadBackToOrigin: @escaping (PracticeScenarioID?) -> Void = { _ in },
         onThreadPresentationChanged: @escaping (Bool) -> Void = { _ in }
     ) {
         self.intentStore = intentStore
@@ -292,10 +292,11 @@ struct PracticeView: View {
         case .messagesHub:
             dismissScenarioSheet()
         case .originRoute:
+            let scenarioID = activeScenarioSession?.scenario.id ?? scenarioCompletion?.scenario.id
             isScenarioThreadPresented = false
             activeScenarioThreadDismissal = .messagesHub
             reloadScenarioSnapshot()
-            onThreadBackToOrigin()
+            onThreadBackToOrigin(scenarioID)
         }
     }
 

@@ -148,7 +148,11 @@ struct BrowseCollectionPageView: View {
         }
 
         try? await Task.sleep(nanoseconds: BrowseCollectionLayout.focusRestoreDelayNanoseconds)
-        withAnimation(.snappy(duration: 0.24)) {
+        guard !Task.isCancelled else {
+            return
+        }
+
+        withAnimation(.snappy(duration: BrowseCollectionLayout.focusRestoreAnimationDuration)) {
             scrollProxy.scrollTo(focusRequest.target.scrollTargetID, anchor: .center)
         }
     }
@@ -168,7 +172,8 @@ private enum BrowseCollectionLayout {
     static let sectionSpacing: CGFloat = 24
     static let bottomChromeContentClearance: CGFloat = 48
     static let citySelectedScrollDelayNanoseconds: UInt64 = 180_000_000
-    static let focusRestoreDelayNanoseconds: UInt64 = 520_000_000
+    static let focusRestoreDelayNanoseconds: UInt64 = 140_000_000
+    static let focusRestoreAnimationDuration: TimeInterval = 0.18
 
     static func citySelectedSectionID(for cardID: String) -> String {
         "BrowseCollectionCitySelectedSection.\(cardID)"

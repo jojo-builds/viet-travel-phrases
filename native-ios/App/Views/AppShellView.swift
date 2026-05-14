@@ -3,6 +3,11 @@ import SwiftUI
 import UIKit
 #endif
 
+private struct PracticeThreadForwardRestore: Equatable {
+    let scenarioID: PracticeScenarioID
+    let focusRequest: BrowseCollectionFocusRequest?
+}
+
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
@@ -15,6 +20,7 @@ struct AppShellView: View {
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
     @State private var requestedPracticeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
     @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
+    @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
     @State private var browseCollectionFocusRequestID = 0
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
@@ -382,13 +388,18 @@ struct AppShellView: View {
 
             switch tab {
             case .home:
+                clearPracticeThreadForwardRestore()
                 navigation.openHome()
                 searchQuery = ""
             case .browse:
+                clearPracticeThreadForwardRestore()
                 navigation.openBrowse()
             case .saved:
+                clearPracticeThreadForwardRestore()
                 navigation.openSaved()
             case .practice:
+                clearPracticeThreadForwardRestore()
+                clearPracticeStartRequest()
                 navigation.openPractice()
             case .search:
                 break
@@ -638,8 +649,10 @@ struct AppShellView: View {
 
     private var showsStaticBackButton: Bool {
         switch navigation.currentRoute {
-        case .home, .browse, .search:
+        case .home, .browse:
             return false
+        case .search:
+            return navigation.backPreviewRoute != nil
         case .practice:
             return navigation.hasExplicitBackHistory
         case .browseCollection, .phrasePage, .saved, .detailPage:
@@ -927,6 +940,7 @@ struct AppShellView: View {
 
     private func openDetail(_ id: String, source: UserIntentSource) {
         cancelInteractiveChromeState()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openDetail(id)
         }
@@ -945,6 +959,7 @@ struct AppShellView: View {
 
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openBrowseCollection(route)
         }
@@ -961,6 +976,7 @@ struct AppShellView: View {
     private func openBrowseCollectionWithCityHeroMorph(_ route: BrowseCollectionRoute) {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
         browseCityHeroMorphResetID += 1
         let resetID = browseCityHeroMorphResetID
 
@@ -1006,6 +1022,7 @@ struct AppShellView: View {
     private func openBrowseCollectionFromHome(_ route: BrowseCollectionRoute) {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openHomeBrowseCollection(route)
         }
@@ -1026,6 +1043,7 @@ struct AppShellView: View {
     private func openHome() {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openHome()
         }
@@ -1035,6 +1053,7 @@ struct AppShellView: View {
     private func openBrowse() {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openBrowse()
         }
@@ -1043,14 +1062,19 @@ struct AppShellView: View {
     private func openSaved() {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSaved()
         }
     }
 
-    private func openPractice() {
+    private func openPractice(preservingStartRequest: Bool = false) {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
+        if !preservingStartRequest {
+            clearPracticeStartRequest()
+        }
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openPractice()
         }
@@ -1074,50 +1098,56 @@ struct AppShellView: View {
             practiceStartRequestID += 1
             requestedPracticeMode = nil
             requestedPracticeScenarioID = scenarioID
+            clearPracticeThreadForwardRestore()
             if case .browseCollection(let route) = navigation.currentRoute {
-                requestedPracticeScenarioThreadDismissal = .originRoute
-                pendingPracticeThreadReturnFocus = BrowseCollectionFocusRequest(
+                let focusRequest = BrowseCollectionFocusRequest(
                     id: 0,
                     route: route,
                     target: .messageScenario(scenarioID)
                 )
+                requestedPracticeScenarioThreadDismissal = .originRoute
+                pendingPracticeThreadReturnFocus = focusRequest
             } else {
                 requestedPracticeScenarioThreadDismissal = .messagesHub
                 pendingPracticeThreadReturnFocus = nil
             }
         }
 
-        openPractice()
+        openPractice(preservingStartRequest: true)
     }
 
-    private func returnFromPracticeThreadToOrigin() {
+    private func returnFromPracticeThreadToOrigin(_ scenarioID: PracticeScenarioID?) {
         let focusRequest = pendingPracticeThreadReturnFocus
         pendingPracticeThreadReturnFocus = nil
+        if let scenarioID {
+            pendingPracticeThreadForwardRestore = PracticeThreadForwardRestore(
+                scenarioID: scenarioID,
+                focusRequest: focusRequest
+            )
+        }
         cancelInteractiveChromeState()
+        prepareBrowseCollectionFocusRestoreIfNeeded(focusRequest)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
-        restoreBrowseCollectionFocusIfNeeded(focusRequest)
     }
 
-    private func restoreBrowseCollectionFocusIfNeeded(_ focusRequest: BrowseCollectionFocusRequest?) {
+    private func prepareBrowseCollectionFocusRestoreIfNeeded(_ focusRequest: BrowseCollectionFocusRequest?) {
         guard let focusRequest else {
             return
         }
 
-        DispatchQueue.main.async {
-            browseCollectionFocusRequestID += 1
-            let request = BrowseCollectionFocusRequest(
-                id: browseCollectionFocusRequestID,
-                route: focusRequest.route,
-                target: focusRequest.target
-            )
-            browseCollectionFocusRequest = request
+        browseCollectionFocusRequestID += 1
+        let request = BrowseCollectionFocusRequest(
+            id: browseCollectionFocusRequestID,
+            route: focusRequest.route,
+            target: focusRequest.target
+        )
+        browseCollectionFocusRequest = request
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                if browseCollectionFocusRequest == request {
-                    browseCollectionFocusRequest = nil
-                }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            if browseCollectionFocusRequest == request {
+                browseCollectionFocusRequest = nil
             }
         }
     }
@@ -1132,7 +1162,7 @@ struct AppShellView: View {
     private func goForward() {
         cancelInteractiveChromeState()
         withAnimation(.snappy(duration: 0.34)) {
-            navigation.goForward()
+            navigateForwardInState()
         }
     }
 
@@ -1146,6 +1176,7 @@ struct AppShellView: View {
 
     private func openSearch(prefilledQuery: String?, focusField: Bool) {
         cancelInteractiveChromeState()
+        clearPracticeThreadForwardRestore()
         if let prefilledQuery {
             searchQuery = prefilledQuery
         }
@@ -1216,6 +1247,17 @@ struct AppShellView: View {
         interactiveDrag = nil
     }
 
+    private func clearPracticeStartRequest() {
+        requestedPracticeMode = nil
+        requestedPracticeScenarioID = nil
+        requestedPracticeScenarioThreadDismissal = .messagesHub
+        pendingPracticeThreadReturnFocus = nil
+    }
+
+    private func clearPracticeThreadForwardRestore() {
+        pendingPracticeThreadForwardRestore = nil
+    }
+
     private func cancelInteractiveDrag() {
         guard let drag = interactiveDrag else {
             return
@@ -1274,11 +1316,34 @@ struct AppShellView: View {
                 case .back:
                     navigation.goBack()
                 case .forward:
-                    navigation.goForward()
+                    navigateForwardInState()
                 }
                 interactiveDrag = nil
             }
         }
+    }
+
+    private func navigateForwardInState() {
+        preparePracticeThreadForwardRestoreIfNeeded(for: navigation.forwardPreviewRoute)
+        navigation.goForward()
+    }
+
+    private func preparePracticeThreadForwardRestoreIfNeeded(for route: AppRoute?) {
+        guard route == .practice else {
+            return
+        }
+
+        guard let restore = pendingPracticeThreadForwardRestore else {
+            clearPracticeStartRequest()
+            return
+        }
+
+        practiceStartRequestID += 1
+        requestedPracticeMode = nil
+        requestedPracticeScenarioID = restore.scenarioID
+        requestedPracticeScenarioThreadDismissal = .originRoute
+        pendingPracticeThreadReturnFocus = restore.focusRequest
+        pendingPracticeThreadForwardRestore = nil
     }
 
     private func withoutRouteAnimation(_ updates: () -> Void) {
