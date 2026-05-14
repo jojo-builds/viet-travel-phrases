@@ -2392,7 +2392,7 @@ struct HomeView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                    LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
                         header
                             .id(Self.scrollTopID)
 
@@ -2849,6 +2849,7 @@ private struct HomePhraseShelfDefinition: Identifiable {
     let layout: HomePhraseShelfLayout
     let maximumItemCount: Int
     let fillsFromSourceCategories: Bool
+    let items: [HomePhraseItem]
 
     init(
         id: String,
@@ -2870,9 +2871,20 @@ private struct HomePhraseShelfDefinition: Identifiable {
         self.layout = layout
         self.maximumItemCount = maximumItemCount
         self.fillsFromSourceCategories = fillsFromSourceCategories
+        self.items = Self.resolveItems(
+            pageIDs: pageIDs,
+            sourceCategoryIDs: sourceCategoryIDs,
+            maximumItemCount: maximumItemCount,
+            fillsFromSourceCategories: fillsFromSourceCategories
+        )
     }
 
-    var items: [HomePhraseItem] {
+    private static func resolveItems(
+        pageIDs: [String],
+        sourceCategoryIDs: [String],
+        maximumItemCount: Int,
+        fillsFromSourceCategories: Bool
+    ) -> [HomePhraseItem] {
         var seen = Set<String>()
         var rows: [HomePhraseItem] = []
 
@@ -3117,24 +3129,24 @@ private enum HomeContent {
         homepagePhraseShelves.first { $0.id == id }
     }
 
-    static var useNowItems: [HomePhraseItem] {
+    static let useNowItems: [HomePhraseItem] = {
         useNowIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
+    }()
 
-    static var useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] {
+    static let useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] = {
         HomeUseNowCatalog.featureCardIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
-    }
+    }()
 
-    static var savedFallbackItems: [HomePhraseItem] {
+    static let savedFallbackItems: [HomePhraseItem] = {
         savedFallbackPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
+    }()
 
     static let savedFallbackPageIDs = [
         "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
         "viet-phrase-hotel-3",
     ]
 
-    static var practiceScenarios: [HomeScenario] {
+    static let practiceScenarios: [HomeScenario] = {
         [
             .danangFirstDay,
             .hotelCheckInHelp,
@@ -3143,7 +3155,7 @@ private enum HomeContent {
             .danangDay,
             .restaurantOrderingPayment,
         ].map { HomeScenario(scenarioID: $0) }
-    }
+    }()
 
     static let situationCards = [
         HomeSituationCard(
@@ -3169,7 +3181,7 @@ private enum HomeContent {
         ),
     ]
 
-    static var cityCards: [HomeCityCard] {
+    static let cityCards: [HomeCityCard] = {
         BrowseSearchDestinations.homepageCityShortcuts.map { city in
             HomeCityCard(
                 id: city.id,
@@ -3178,7 +3190,7 @@ private enum HomeContent {
                 route: city.collectionRoute
             )
         }
-    }
+    }()
 
     private static func homeCityTitle(for cityID: String, fallback: String) -> String {
         switch cityID {
@@ -3418,7 +3430,7 @@ private struct HomeFeaturedPhraseCarousel: View {
                     isSaved: isSaved(item.pageID),
                     isHeroMorphSource: heroMorphPageID == item.morphPageID,
                     chromeNamespace: chromeNamespace,
-                    visibilityRoute: visibilityRoute,
+                    visibilityRoute: item.id == items.first?.id ? visibilityRoute : nil,
                     onOpenDetail: onOpenDetail,
                     onToggleSaved: { onToggleSaved(item.pageID) }
                 )
