@@ -212,7 +212,7 @@ private struct PracticeMessagesThreadBackButton: View {
             RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous)
                 .stroke(.white.opacity(0.78), lineWidth: 1)
         }
-        .shadow(color: .black.opacity(0.08), radius: 12, y: 5)
+        .shadow(color: .black.opacity(0.035), radius: 7, y: 3)
         .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous))
         .onTapGesture(perform: action)
         .accessibilityElement()

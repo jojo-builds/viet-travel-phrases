@@ -29,7 +29,6 @@ struct AppShellView: View {
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
     @State private var browseCityHeroRoute: BrowseCollectionRoute?
-    @State private var browseCityHeroContentHoldRoute: BrowseCollectionRoute?
     @State private var browseCityHeroMorphResetID = 0
     @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
     @State private var menuSectionJumpRequestID = 0
@@ -341,7 +340,6 @@ struct AppShellView: View {
                     focusRequest: browseCollectionFocusRequest,
                     chromeNamespace: chromeNamespace,
                     cityHeroMorphRoute: browseCityHeroRoute,
-                    cityHeroContentHoldRoute: browseCityHeroContentHoldRoute,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -1089,27 +1087,12 @@ struct AppShellView: View {
 
         withoutRouteAnimation {
             browseCityHeroRoute = route
-            browseCityHeroContentHoldRoute = route
         }
 
         withAnimation(BrowseCityHeroMorphTiming.navigationAnimation) {
             navigation.openBrowseCollection(route)
         }
-        revealBrowseCityHeroContent(after: resetID)
         clearBrowseCityHeroLaunch(after: resetID)
-    }
-
-    private func revealBrowseCityHeroContent(after resetID: Int) {
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds)
-            guard browseCityHeroMorphResetID == resetID else {
-                return
-            }
-
-            withAnimation(BrowseCityHeroMorphTiming.contentRevealAnimation) {
-                browseCityHeroContentHoldRoute = nil
-            }
-        }
     }
 
     private func clearBrowseCityHeroLaunch(after resetID: Int) {
@@ -1121,7 +1104,6 @@ struct AppShellView: View {
 
             withoutRouteAnimation {
                 browseCityHeroRoute = nil
-                browseCityHeroContentHoldRoute = nil
             }
         }
     }
@@ -1350,7 +1332,6 @@ struct AppShellView: View {
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
         browseCityHeroRoute = nil
-        browseCityHeroContentHoldRoute = nil
         interactiveDrag = nil
     }
 
@@ -2422,8 +2403,6 @@ enum HomePhraseHeroMorphTiming {
 
 enum BrowseCityHeroMorphTiming {
     static let navigationDuration = 0.36
-    static let contentRevealDelayNanoseconds: UInt64 = 280_000_000
-    static let contentRevealAnimation: Animation = .easeOut(duration: 0.18)
     static let cleanupDelayNanoseconds: UInt64 = 740_000_000
 
     static var navigationDurationNanoseconds: UInt64 {
@@ -2449,7 +2428,7 @@ private struct NavigationPageMotion: ViewModifier {
             .scaleEffect(presentation.scale)
             .brightness(presentation.brightness)
             .shadow(
-                color: .black.opacity(presentation.shadowOpacity),
+                color: .black.opacity(presentation.shadowOpacity * 0.55),
                 radius: 22 * progress,
                 x: presentation.shadowXOffset,
                 y: 0
@@ -3832,7 +3811,7 @@ private struct HomeFeaturedPhraseCard: View {
                 RoundedRectangle(cornerRadius: 32, style: .continuous)
                     .stroke(.white.opacity(0.72), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.07), radius: 22, x: 0, y: 14)
+            .shadow(color: .black.opacity(0.035), radius: 12, x: 0, y: 7)
             .nativeGlass(cornerRadius: 32)
         }
         .accessibilityIdentifier("HomeFeaturedPhrase.\(item.pageID)")
@@ -4135,7 +4114,7 @@ private extension View {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                     .stroke(.white.opacity(0.72), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.055), radius: 18, x: 0, y: 10)
+            .shadow(color: .black.opacity(0.03), radius: 10, x: 0, y: 5)
             .nativeGlass(cornerRadius: cornerRadius)
     }
 
@@ -4147,7 +4126,7 @@ private extension View {
                     .stroke(Color.black.opacity(0.055), lineWidth: 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
+            .shadow(color: .black.opacity(0.022), radius: 7, x: 0, y: 3)
     }
 }
 

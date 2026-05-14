@@ -276,6 +276,7 @@ struct VietnameseMenuPageView: View {
 private enum VietnameseMenuLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 20
+    static let sectionTitleToRowsSpacing: CGFloat = 26
     static let heroHeight: CGFloat = 240
     static let bottomChromeContentClearance: CGFloat = 132
     static let sectionCardSpacing: CGFloat = 12
@@ -325,7 +326,7 @@ private struct VietnameseMenuSectionImageCard: View {
                     .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.07), radius: 12, x: 0, y: 8)
+            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         }
         .buttonStyle(.plain)
@@ -340,29 +341,13 @@ private struct VietnameseMenuSectionBlock: View {
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .firstTextBaseline, spacing: 10) {
-                Text(section.title)
-                    .font(.title2.weight(.black))
-                    .foregroundStyle(.primary)
-                    .accessibilityIdentifier("VietnameseMenu.SectionTitle.\(section.id)")
-
-                Text("\(section.itemCount)")
-                    .font(.caption.weight(.black))
-                    .foregroundStyle(section.tintName.color)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(section.tintName.color.opacity(0.10), in: Capsule(style: .continuous))
-
-                Spacer(minLength: 0)
-            }
-
-            if !section.subtitle.isEmpty {
-                Text(section.subtitle)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
+        VStack(alignment: .leading, spacing: VietnameseMenuLayout.sectionTitleToRowsSpacing) {
+            Text(section.title)
+                .font(.title2.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityIdentifier("VietnameseMenu.SectionTitle.\(section.id)")
 
             VStack(spacing: 0) {
                 ForEach(section.items) { item in
