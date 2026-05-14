@@ -695,16 +695,7 @@ struct AppShellView: View {
     }
 
     private var showsStaticBackButton: Bool {
-        switch navigation.currentRoute {
-        case .home, .browse:
-            return false
-        case .search:
-            return navigation.backPreviewRoute != nil
-        case .practice:
-            return navigation.hasExplicitBackHistory
-        case .browseCollection, .phrasePage, .saved, .detailPage:
-            return true
-        }
+        navigation.showsStaticBackButton
     }
 
     private var pinnedAudioSpeedScrollClearance: CGFloat {
@@ -1720,6 +1711,17 @@ struct AppShellNavigationState: Equatable {
 
     var hasExplicitBackHistory: Bool {
         !backStack.isEmpty
+    }
+
+    var showsStaticBackButton: Bool {
+        switch currentRoute {
+        case .home:
+            return false
+        case .practice:
+            return hasExplicitBackHistory
+        default:
+            return backPreviewRoute != nil
+        }
     }
 
     private var routeBelowSearch: AppRoute {
