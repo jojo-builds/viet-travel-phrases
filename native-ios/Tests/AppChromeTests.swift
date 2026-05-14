@@ -316,12 +316,10 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
     }
 
-    func testBrowseCityHeroMorphTimingLetsHeroLeadDestinationBody() {
+    func testBrowseCityHeroMorphTimingKeepsDestinationBodyMounted() {
         XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.navigationDuration, 0.38)
-        XCTAssertGreaterThan(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 0)
-        XCTAssertGreaterThanOrEqual(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 240_000_000)
-        XCTAssertLessThan(
-            BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds,
+        XCTAssertGreaterThan(
+            BrowseCityHeroMorphTiming.cleanupDelayNanoseconds,
             BrowseCityHeroMorphTiming.navigationDurationNanoseconds
         )
     }
@@ -1558,6 +1556,46 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(caRiDe.sections.first { $0.id == "usually-includes" }?.chips.contains("fish") == true)
     }
 
+    func testVietnameseMenuCulturalCopyOverridesSpecificMenuRows() {
+        func item(_ id: String) -> VietnameseMenuItem {
+            VietnameseMenuCatalog.allItems.first { $0.itemID == id }!
+        }
+
+        let thitKhoTau = item("food-thit-kho-tau")
+        XCTAssertTrue(thitKhoTau.atAGlance.contains("coconut water"))
+        XCTAssertTrue(thitKhoTau.goodToKnow.contains("family-meal food"))
+        XCTAssertTrue(thitKhoTau.guideWorthKnowing.contains("Tết tables"))
+        XCTAssertEqual(thitKhoTau.usuallyIncludes, ["pork belly", "eggs", "coconut water", "fish sauce caramel", "black pepper"])
+
+        let caKhoTo = item("food-ca-kho-to")
+        XCTAssertTrue(caKhoTo.atAGlance.contains("fish sauce, caramelized sugar"))
+        XCTAssertTrue(caKhoTo.goodToKnow.contains("fish-sauce caramel"))
+        XCTAssertTrue(caKhoTo.guideWorthKnowing.contains("clay pot and fish-sauce caramel"))
+
+        let banhBao = item("food-banh-bao")
+        XCTAssertTrue(banhBao.atAGlance.contains("soft steamed bun"))
+        XCTAssertTrue(banhBao.goodToKnow.contains("Do not ask for this toasted"))
+        XCTAssertFalse(banhBao.atAGlance.localizedCaseInsensitiveContains("crisp baguette"))
+
+        let chaCa = item("food-cha-ca-la-vong")
+        XCTAssertTrue(chaCa.atAGlance.contains("Hanoi-style turmeric fish"))
+        XCTAssertTrue(chaCa.usuallyIncludes.contains("dill"))
+        XCTAssertTrue(chaCa.guideWorthKnowing.contains("Dill is not a garnish"))
+
+        let cheBaMau = item("food-che-ba-mau")
+        XCTAssertTrue(cheBaMau.atAGlance.contains("three-color dessert cup"))
+        XCTAssertEqual(cheBaMau.usuallyIncludes, ["mung beans", "red beans", "pandan jelly", "coconut milk", "crushed ice"])
+
+        let traBiDao = item("drink-tra-bi-dao")
+        XCTAssertTrue(traBiDao.atAGlance.contains("winter melon tea"))
+        XCTAssertTrue(traBiDao.goodToKnow.contains("not peach"))
+        XCTAssertFalse(traBiDao.usuallyIncludes.contains("peach"))
+
+        let ruouDe = item("drink-ruou-de")
+        XCTAssertTrue(ruouDe.travelerCaution?.contains("Alcoholic") == true)
+        XCTAssertTrue(ruouDe.guideWorthKnowing.contains("rice-liquor culture"))
+    }
+
     func testVietnameseMenuGuideCopyAuditFindsNoMissingOrGenericGuideFields() {
         XCTAssertEqual(VietnameseMenuCatalog.guideCopyAuditFailures(), [])
     }
@@ -1575,6 +1613,24 @@ final class AppChromeTests: XCTestCase {
     func testVietnameseMenuImageAssetsExistForEveryItem() {
         for item in VietnameseMenuCatalog.allItems {
             XCTAssertNotNil(UIImage(named: item.menuImageName), "Missing menu image asset for \(item.itemID): \(item.menuImageName)")
+        }
+    }
+
+    func testVietnameseMenuItemsHavePlayableNameAudio() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+
+        for item in VietnameseMenuCatalog.allItems {
+            let audioKey = try XCTUnwrap(
+                manifest.audioKey(forExactText: item.vietnameseItem),
+                "\(item.itemID) missing menu-name audio for \(item.vietnameseItem)"
+            )
+            XCTAssertTrue(
+                manifest.hasPlayableEntry(for: audioKey, matchingText: item.vietnameseItem),
+                "\(item.itemID) menu-name audio is not playable for \(item.vietnameseItem)"
+            )
+
+            let detail = try XCTUnwrap(PhraseDetailPage.page(withID: item.detailPageID))
+            XCTAssertEqual(detail.playbackAudioKey, audioKey, "\(item.itemID) detail page should play its menu-name audio")
         }
     }
 
