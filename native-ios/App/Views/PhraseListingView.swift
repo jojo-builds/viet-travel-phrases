@@ -543,7 +543,10 @@ private struct PhraseHeroImageLightbox: View {
             ZoomableAssetImageView(
                 imageName: presentation.imageName,
                 accessibilityIdentifier: "PhraseArticle.HeroImageLightbox.Image.\(presentation.pageID)",
-                accessibilityLabel: "\(presentation.title) photo"
+                accessibilityLabel: "\(presentation.title) photo",
+                onVerticalSwipe: {
+                    dismiss()
+                }
             )
                 .ignoresSafeArea()
 
@@ -588,9 +591,11 @@ private struct ZoomableAssetImageView: UIViewRepresentable {
     let imageName: String
     let accessibilityIdentifier: String
     let accessibilityLabel: String
+    let onVerticalSwipe: () -> Void
 
     func makeUIView(context: Context) -> AssetImageZoomScrollView {
         let scrollView = AssetImageZoomScrollView()
+        scrollView.onVerticalSwipe = onVerticalSwipe
         scrollView.configure(
             imageName: imageName,
             accessibilityIdentifier: accessibilityIdentifier,
@@ -600,6 +605,7 @@ private struct ZoomableAssetImageView: UIViewRepresentable {
     }
 
     func updateUIView(_ scrollView: AssetImageZoomScrollView, context: Context) {
+        scrollView.onVerticalSwipe = onVerticalSwipe
         scrollView.configure(
             imageName: imageName,
             accessibilityIdentifier: accessibilityIdentifier,
@@ -608,9 +614,18 @@ private struct ZoomableAssetImageView: UIViewRepresentable {
     }
 }
 
-private final class AssetImageZoomScrollView: UIScrollView, UIScrollViewDelegate {
+private final class AssetImageZoomScrollView: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+    var onVerticalSwipe: (() -> Void)?
+
     private let imageView = UIImageView()
     private var loadedImageName: String?
+    private lazy var verticalDismissPanRecognizer: UIPanGestureRecognizer = {
+        let recognizer = UIPanGestureRecognizer(target: self, action: #selector(handleVerticalDismissPan(_:)))
+        recognizer.cancelsTouchesInView = false
+        recognizer.maximumNumberOfTouches = 1
+        recognizer.delegate = self
+        return recognizer
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -630,6 +645,7 @@ private final class AssetImageZoomScrollView: UIScrollView, UIScrollViewDelegate
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
         doubleTap.numberOfTapsRequired = 2
         imageView.addGestureRecognizer(doubleTap)
+        addGestureRecognizer(verticalDismissPanRecognizer)
     }
 
     @available(*, unavailable)
@@ -671,6 +687,10 @@ private final class AssetImageZoomScrollView: UIScrollView, UIScrollViewDelegate
         centerImageIfNeeded()
     }
 
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        gestureRecognizer === verticalDismissPanRecognizer || otherGestureRecognizer === verticalDismissPanRecognizer
+    }
+
     @objc private func handleDoubleTap(_ gesture: UITapGestureRecognizer) {
         if zoomScale > minimumZoomScale {
             setZoomScale(minimumZoomScale, animated: true)
@@ -680,6 +700,22 @@ private final class AssetImageZoomScrollView: UIScrollView, UIScrollViewDelegate
             let size = CGSize(width: bounds.width / targetScale, height: bounds.height / targetScale)
             let origin = CGPoint(x: point.x - size.width / 2, y: point.y - size.height / 2)
             zoom(to: CGRect(origin: origin, size: size), animated: true)
+        }
+    }
+
+    @objc private func handleVerticalDismissPan(_ gesture: UIPanGestureRecognizer) {
+        guard gesture.state == .ended, zoomScale <= minimumZoomScale + 0.01 else {
+            return
+        }
+
+        let translation = gesture.translation(in: self)
+        let velocity = gesture.velocity(in: self)
+        let isMostlyVertical = abs(translation.y) > abs(translation.x) * 1.25
+        let movedEnough = abs(translation.y) > 96
+        let flungEnough = abs(velocity.y) > 900 && abs(translation.y) > 32
+
+        if isMostlyVertical && (movedEnough || flungEnough) {
+            onVerticalSwipe?()
         }
     }
 
