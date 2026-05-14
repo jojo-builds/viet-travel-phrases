@@ -1387,11 +1387,15 @@ struct AppShellView: View {
         }
 
         let pageID = arguments[arguments.index(after: flagIndex)]
-        guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
-            return shortcutRoute(for: arguments)
+        if let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) {
+            return .detailPage(canonicalPageID)
         }
 
-        return .detailPage(canonicalPageID)
+        if VietnameseMenuCatalog.detailItem(withPageID: pageID) != nil {
+            return .detailPage(pageID)
+        }
+
+        return shortcutRoute(for: arguments)
     }
 
     private static func shortcutRoute(for arguments: [String]) -> AppRoute {

@@ -210,6 +210,19 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-nen"].exists)
     }
 
+    func testVietnameseMenuDetailHeroImageOpensLightbox() {
+        let app = launchApp(arguments: ["--detail-page", "viet-menu-food-pho-bo"])
+
+        XCTAssertTrue(app.staticTexts["Phở bò"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
+
+        XCTAssertTrue(app.images["PhraseArticle.HeroImageLightbox.Image.viet-menu-food-pho-bo"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["PhraseArticle.HeroImageLightbox.Close"].exists)
+
+        tapWhenVisible(app.buttons["PhraseArticle.HeroImageLightbox.Close"], app: app)
+        XCTAssertFalse(app.images["PhraseArticle.HeroImageLightbox.Image.viet-menu-food-pho-bo"].waitForExistence(timeout: 1))
+    }
+
     func testDaNangCityCollectionRendersTravelModeHub() {
         let app = launchApp(arguments: ["--browse-city", "danang"])
 
