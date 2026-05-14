@@ -291,7 +291,6 @@ struct AppShellView: View {
                     cancelSearchFocus()
                 }
             }
-            .animation(.snappy(duration: 0.24), value: showsPinnedAudioSpeedControl)
         }
     }
 
@@ -742,7 +741,6 @@ struct AppShellView: View {
 
             if showsPinnedAudioSpeedControl {
                 PinnedAudioSpeedControl()
-                    .transition(.scale(scale: 0.94).combined(with: .opacity))
             }
         }
     }
@@ -2457,7 +2455,7 @@ struct HomeView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                    VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
                         header
                             .id(Self.scrollTopID)
 
@@ -2467,25 +2465,27 @@ struct HomeView: View {
 
                         cityShelf
 
-                        homepagePhraseShelf("food-coffee")
+                        LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                            homepagePhraseShelf("food-coffee")
 
-                        practiceScenariosShelf
+                            practiceScenariosShelf
 
-                        homepagePhraseShelf("taxi-getting-around")
+                            homepagePhraseShelf("taxi-getting-around")
 
-                        situationShelves
+                            situationShelves
 
-                        homepagePhraseShelf("when-stuck")
+                            homepagePhraseShelf("when-stuck")
 
-                        homepagePhraseShelf("hotel-basics")
+                            homepagePhraseShelf("hotel-basics")
 
-                        relationshipShelf
+                            relationshipShelf
 
-                        homepagePhraseShelf("money-shopping")
+                            homepagePhraseShelf("money-shopping")
 
-                        homepagePhraseShelf("help-emergency")
+                            homepagePhraseShelf("help-emergency")
 
-                        recentlyViewedShelf
+                            recentlyViewedShelf
+                        }
                     }
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
@@ -3816,12 +3816,10 @@ private struct HomeCityRail: View {
                     HomeCityCardView(city: city, onOpenCollection: onOpenCollection)
                 }
             }
-            .scrollTargetLayout()
             .padding(.trailing, HomeLayout.horizontalPadding)
             .padding(.bottom, 4)
         }
         .frame(height: HomeLayout.cityCardHeight + 4)
-        .scrollTargetBehavior(.viewAligned)
         .scrollClipDisabled()
         .accessibilityIdentifier("HomeCityRail")
     }
