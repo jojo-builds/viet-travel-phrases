@@ -58,9 +58,7 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(waitForStaticText(containing: "Lối này", in: app, timeout: 0.35))
         XCTAssertTrue(waitForStaticText(containing: "Xin chào", in: app, timeout: 3))
         XCTAssertTrue(waitForStaticText(containing: "Khu lấy hành lý", in: app, timeout: 3))
-        XCTAssertFalse(waitForStaticText(containing: "Cho tôi xem thẻ hành lý", in: app, timeout: 1.25))
-        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 2))
-        tapButton("Practice.Story.Continue", in: app)
+        XCTAssertFalse(app.buttons["Practice.Story.Continue"].firstMatch.exists)
         XCTAssertTrue(waitForStaticText(containing: "Cho tôi xem thẻ hành lý", in: app, timeout: 3))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
 
@@ -71,25 +69,19 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(waitForStaticText(containing: "Băng chuyền số 4", in: app, timeout: 3))
         XCTAssertEqual(app.keyboards.count, 0)
         XCTAssertFalse(app.buttons["Practice.Story.Next"].exists)
-        XCTAssertFalse(waitForStaticText(containing: "Bạn cần tìm cửa ra hay điểm đón xe?", in: app, timeout: 1.25))
-        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 2))
-
-        tapButton("Practice.Story.Continue", in: app)
+        XCTAssertFalse(app.buttons["Practice.Story.Continue"].firstMatch.exists)
         XCTAssertTrue(waitForStaticText(containing: "Bạn cần tìm cửa ra hay điểm đón xe?", in: app, timeout: 5))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
     }
 
-    func testMessageThreadWaitsForContinueAfterLocalReply() {
+    func testMessageThreadAutoAdvancesAfterLocalReply() {
         let app = launchPracticeApp(scenarioID: "danangFirstDay", title: "Airport Baggage")
 
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
 
         XCTAssertTrue(waitForStaticText(containing: "Khu lấy hành lý", in: app, timeout: 4))
-        XCTAssertFalse(waitForStaticText(containing: "Cho tôi xem thẻ hành lý", in: app, timeout: 1.25))
-        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 2))
-
-        tapButton("Practice.Story.Continue", in: app)
+        XCTAssertFalse(app.buttons["Practice.Story.Continue"].firstMatch.exists)
 
         XCTAssertTrue(waitForStaticText(containing: "Cho tôi xem thẻ hành lý", in: app, timeout: 4))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 4))
@@ -157,8 +149,8 @@ final class PracticeUITests: XCTestCase {
         let app = launchPracticeApp(scenarioID: "shoppingMarketPrice", title: "Market Price")
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
-        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 4))
-        tapButton("Practice.Story.Continue", in: app)
+        XCTAssertFalse(app.buttons["Practice.Story.Continue"].firstMatch.exists)
+        XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 6))
 
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
@@ -202,8 +194,7 @@ final class PracticeUITests: XCTestCase {
         tapButton("Practice.Story.Send", in: app)
 
         XCTAssertTrue(waitForStaticText(containing: "để tôi xem thuốc phù hợp", in: app, timeout: 5))
-        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 4))
-        tapButton("Practice.Story.Continue", in: app)
+        XCTAssertFalse(app.buttons["Practice.Story.Continue"].firstMatch.exists)
         XCTAssertTrue(waitForStaticText(containing: "Bạn có sốt không?", in: app, timeout: 5))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
         XCTAssertEqual(selectedPhrase.label, "tôi bị sốt")
@@ -241,9 +232,7 @@ final class PracticeUITests: XCTestCase {
     func testMessageThreadPersistsThroughHubAndPhrasePageRoundTrip() {
         let app = launchPracticeApp(scenarioID: "danangFirstDay", title: "Airport Baggage")
         let firstTravelerMessage = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Where is baggage claim")).firstMatch
-        let secondStepChoice = app.buttons.matching(
-            NSPredicate(format: "identifier BEGINSWITH %@", "Practice.Story.Choice.airport-story-baggage-belt:")
-        ).firstMatch
+        let baggageTagPrompt = "Cho tôi xem thẻ hành lý"
 
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
@@ -258,13 +247,14 @@ final class PracticeUITests: XCTestCase {
         app.buttons["TopAdmin.BackButton"].tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 5))
-        tapButton("Practice.Story.Continue", in: app)
-        XCTAssertTrue(secondStepChoice.waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["Practice.Story.Continue"].firstMatch.exists)
+        XCTAssertTrue(waitForStaticText(containing: baggageTagPrompt, in: app, timeout: 5))
+        XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
 
         dismissMessagesThread(in: app)
         openScenario(identifier: "Practice.Message.Contact.danangFirstDay", title: "Airport Baggage", in: app)
-        XCTAssertTrue(secondStepChoice.waitForExistence(timeout: 5))
+        XCTAssertTrue(waitForStaticText(containing: baggageTagPrompt, in: app, timeout: 5))
+        XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
     }
 
     func testScenarioModeProofScreenshots() {
@@ -433,10 +423,6 @@ final class PracticeUITests: XCTestCase {
             if app.staticTexts["Conversation complete"].exists {
                 capture(app: app, directoryURL: directoryURL, name: "\(slug)-complete.png")
                 return
-            }
-
-            if app.buttons["Practice.Story.Continue"].firstMatch.exists {
-                tapButton("Practice.Story.Continue", in: app)
             }
 
             XCTAssertTrue(

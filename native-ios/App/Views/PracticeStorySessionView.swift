@@ -29,7 +29,6 @@ struct PracticeMessagesThreadHost: View {
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
-    let onContinueScenario: () -> Void
     let onPracticeAnother: () -> Void
     let onBackToPractice: () -> Void
     let onBrowseTapped: () -> Void
@@ -57,7 +56,6 @@ struct PracticeMessagesThreadHost: View {
                     onTogglePracticePage: onTogglePracticePage,
                     onToggleSavedPhrasePage: onToggleSavedPhrasePage,
                     onSelectScenarioOption: onSelectScenarioOption,
-                    onContinueScenario: onContinueScenario,
                     onPracticeAnother: onPracticeAnother,
                     onBackToPractice: onBackToPractice,
                     onBrowseTapped: onBrowseTapped
@@ -262,7 +260,6 @@ struct PracticeMessagesThreadContent: View {
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
-    let onContinueScenario: () -> Void
     let onPracticeAnother: () -> Void
     let onBackToPractice: () -> Void
     let onBrowseTapped: () -> Void
@@ -279,8 +276,7 @@ struct PracticeMessagesThreadContent: View {
                     onOpenPhrasePage: onOpenPhrasePage,
                     onTogglePracticePage: onTogglePracticePage,
                     onToggleSavedPhrasePage: onToggleSavedPhrasePage,
-                    onSelectOption: { option in onSelectScenarioOption(option, currentStep) },
-                    onContinue: onContinueScenario
+                    onSelectOption: { option in onSelectScenarioOption(option, currentStep) }
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             } else if let scenarioCompletion {
@@ -314,7 +310,6 @@ struct PracticeStorySessionSurface: View {
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectOption: (PracticeScenarioResponseOption) -> Void
-    let onContinue: () -> Void
     @State private var scrollRequestID = 0
     @State private var selectedDefinitionToken: PracticeStoryDefinitionToken?
 
@@ -414,8 +409,7 @@ struct PracticeStorySessionSurface: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             PracticeStoryComposerSurface(
                 session: session,
-                onSelectOption: onSelectOption,
-                onContinue: onContinue
+                onSelectOption: onSelectOption
             )
             .padding(.horizontal, 20)
             .padding(.top, 10)
@@ -461,7 +455,6 @@ struct PracticeStorySessionSurface: View {
 struct PracticeStoryComposerSurface: View {
     let session: PracticeScenarioSession
     let onSelectOption: (PracticeScenarioResponseOption) -> Void
-    let onContinue: () -> Void
 
     private var currentStep: PracticeScenarioStep? {
         session.currentStep
@@ -489,18 +482,6 @@ struct PracticeStoryComposerSurface: View {
         )
     }
 
-    private var canContinue: Bool {
-        guard
-            let currentStep,
-            let currentSelectedOption
-        else {
-            return false
-        }
-
-        return !currentStep.hasLocalReply(after: currentSelectedOption)
-            || session.revealedReplyStepIDs.contains(currentStep.id)
-    }
-
     var body: some View {
         if let currentStep, currentSelectedOption == nil {
             PracticeStoryComposer(
@@ -509,27 +490,7 @@ struct PracticeStoryComposerSurface: View {
                 onSend: onSelectOption
             )
             .id(currentStep.id)
-        } else if canContinue {
-            PracticeStoryContinueButton(action: onContinue)
         }
-    }
-}
-
-private struct PracticeStoryContinueButton: View {
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Label("Continue", systemImage: "arrow.down.message.fill")
-                .font(.headline.weight(.bold))
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 15)
-                .background(Color(red: 0.07, green: 0.50, blue: 1.0), in: Capsule())
-                .shadow(color: .black.opacity(0.08), radius: 14, x: 0, y: 8)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("Practice.Story.Continue")
     }
 }
 

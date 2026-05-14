@@ -111,7 +111,6 @@ struct PracticeView: View {
                     onSelectScenarioOption: { option, step in
                         selectScenarioOption(option, for: step)
                     },
-                    onContinueScenario: continueScenarioSession,
                     onPracticeAnother: startAnotherScenario,
                     onBackToPractice: dismissScenarioThread,
                     onBrowseTapped: {
@@ -137,6 +136,7 @@ struct PracticeView: View {
                 reloadScenarioSnapshot()
                 startRequestedScenarioIfReady()
             } else {
+                onThreadPresentationChanged(false)
                 prewarmScenarioSnapshot()
             }
         }
@@ -159,6 +159,8 @@ struct PracticeView: View {
 
     private static let scrollTopID = "PracticeViewTop"
     private static let scenarioReplyRevealDelay: TimeInterval = 1.6
+    private static let scenarioNextPromptDelay: TimeInterval = 0.75
+    private static let scenarioNoReplyAdvanceDelay: TimeInterval = 0.35
     private static let scenarioReturnPresentationDelay: TimeInterval = 0.85
 
     private var topContentPadding: CGFloat {
@@ -221,6 +223,14 @@ struct PracticeView: View {
             return
         }
 
+        if !reset, let existingSession = activeScenarioSession, existingSession.scenario.id == scenario.id {
+            activeScenarioSession = existingSession
+            scenarioCompletion = nil
+            isScenarioThreadPresented = true
+            resumePendingScenarioTimers(for: existingSession)
+            return
+        }
+
         if !reset, let restoredSession = messageStore.session(for: scenario) {
             activeScenarioSession = restoredSession
             scenarioCompletion = nil
@@ -236,7 +246,7 @@ struct PracticeView: View {
         messageStore.save(session)
     }
 
-    private func continueScenarioSession() {
+    private func advanceScenarioSessionIfReady() {
         guard var session = activeScenarioSession else {
             return
         }
@@ -287,6 +297,7 @@ struct PracticeView: View {
 
     private func dismissScenarioSheet() {
         isScenarioThreadPresented = false
+        onThreadPresentationChanged(false)
         reloadScenarioSnapshot()
     }
 
@@ -297,6 +308,7 @@ struct PracticeView: View {
         case .originRoute:
             let scenarioID = activeScenarioSession?.scenario.id ?? scenarioCompletion?.scenario.id
             isScenarioThreadPresented = false
+            onThreadPresentationChanged(false)
             activeScenarioThreadDismissal = .messagesHub
             reloadScenarioSnapshot()
             onThreadBackToOrigin(scenarioID)
@@ -312,8 +324,10 @@ struct PracticeView: View {
     }
 
     private func openScenarioPhrasePage(_ pageID: String) {
+        advanceScenarioSessionIfReady()
         pendingScenarioReturnID = activeScenarioSession?.scenario.id ?? scenarioCompletion?.scenario.id
         isScenarioThreadPresented = false
+        onThreadPresentationChanged(false)
         onOpenDetail(pageID)
     }
 
@@ -339,35 +353,67 @@ struct PracticeView: View {
         session.selectedOptionIDs[step.id] = option.id
         activeScenarioSession = session
         messageStore.save(session)
-        scheduleScenarioAdvanceAfterSend(stepID: step.id)
+        scheduleScenarioProgressionAfterSend(
+            stepID: step.id,
+            initialDelay: step.hasLocalReply(after: option)
+                ? Self.scenarioReplyRevealDelay
+                : Self.scenarioNoReplyAdvanceDelay
+        )
     }
 
-    private func scheduleScenarioAdvanceAfterSend(stepID: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + Self.scenarioReplyRevealDelay) {
+    private func scheduleScenarioProgressionAfterSend(stepID: String, initialDelay: TimeInterval) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + initialDelay) {
             guard
                 var session = activeScenarioSession,
+                session.currentStep?.id == stepID,
+                let currentStep = session.currentStep,
+                let selectedOption = session.selectedOption(for: currentStep)
+            else {
+                return
+            }
+
+            if currentStep.hasLocalReply(after: selectedOption),
+               !session.revealedReplyStepIDs.contains(stepID) {
+                session.revealedReplyStepIDs.insert(stepID)
+                activeScenarioSession = session
+                messageStore.save(session)
+                scheduleScenarioAutoAdvance(stepID: stepID, after: Self.scenarioNextPromptDelay)
+            } else {
+                scheduleScenarioAutoAdvance(stepID: stepID, after: 0)
+            }
+        }
+    }
+
+    private func scheduleScenarioAutoAdvance(stepID: String, after delay: TimeInterval) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            guard
+                let session = activeScenarioSession,
                 session.currentStep?.id == stepID,
                 session.selectedOptionIDs[stepID] != nil
             else {
                 return
             }
 
-            session.revealedReplyStepIDs.insert(stepID)
-            activeScenarioSession = session
-            messageStore.save(session)
+            advanceScenarioSessionIfReady()
         }
     }
 
     private func resumePendingScenarioTimers(for session: PracticeScenarioSession) {
         guard
             let currentStep = session.currentStep,
-            session.selectedOptionIDs[currentStep.id] != nil
+            let selectedOption = session.selectedOption(for: currentStep)
         else {
             return
         }
 
-        if !session.revealedReplyStepIDs.contains(currentStep.id) {
-            scheduleScenarioAdvanceAfterSend(stepID: currentStep.id)
+        if currentStep.hasLocalReply(after: selectedOption),
+           !session.revealedReplyStepIDs.contains(currentStep.id) {
+            scheduleScenarioProgressionAfterSend(
+                stepID: currentStep.id,
+                initialDelay: Self.scenarioReplyRevealDelay
+            )
+        } else {
+            scheduleScenarioAutoAdvance(stepID: currentStep.id, after: Self.scenarioNoReplyAdvanceDelay)
         }
     }
 
@@ -1034,6 +1080,7 @@ final class LocalPracticeMessageStore: ObservableObject {
     private let defaults: UserDefaults
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
+    private static var didApplyLaunchReset = false
 
     private enum Key {
         static let threads = "SpeakLocal.Practice.messageThreads.v1"
@@ -1043,8 +1090,9 @@ final class LocalPracticeMessageStore: ObservableObject {
         self.defaults = defaults
 
 #if DEBUG
-        if launchArguments.contains("--reset-practice-message-threads") {
+        if launchArguments.contains("--reset-practice-message-threads"), !Self.didApplyLaunchReset {
             defaults.removeObject(forKey: Key.threads)
+            Self.didApplyLaunchReset = true
         }
 #endif
 
