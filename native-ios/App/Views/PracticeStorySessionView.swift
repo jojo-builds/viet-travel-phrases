@@ -20,12 +20,18 @@ enum PracticeStorySessionLayoutPolicy {
     }
 }
 
+struct PracticeStoryReturnFocusRequest: Equatable {
+    let id: Int
+    let turnID: String
+}
+
 struct PracticeMessagesThreadHost: View {
     let activeScenarioSession: PracticeScenarioSession?
     let scenarioCompletion: PracticeScenarioCompletionSummary?
+    let returnFocusRequest: PracticeStoryReturnFocusRequest?
     let isInPracticePool: (String) -> Bool
     let isSavedPhrasePage: (String) -> Bool
-    let onOpenPhrasePage: (String) -> Void
+    let onOpenPhrasePage: PracticeStoryOpenPhrasePageAction
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
@@ -33,6 +39,7 @@ struct PracticeMessagesThreadHost: View {
     let onBackToPractice: () -> Void
     let onBrowseTapped: () -> Void
     let onDismiss: () -> Void
+    let onReturnFocusConsumed: () -> Void
 
     private var scenario: PracticeScenario? {
         activeScenarioSession?.scenario ?? scenarioCompletion?.scenario
@@ -49,6 +56,7 @@ struct PracticeMessagesThreadHost: View {
                 PracticeMessagesThreadContent(
                     activeScenarioSession: activeScenarioSession,
                     scenarioCompletion: scenarioCompletion,
+                    returnFocusRequest: returnFocusRequest,
                     topContentPadding: scenario == nil ? 0 : PracticeMessagesThreadHeaderLayout.contentClearance,
                     isInPracticePool: isInPracticePool,
                     isSavedPhrasePage: isSavedPhrasePage,
@@ -58,7 +66,8 @@ struct PracticeMessagesThreadHost: View {
                     onSelectScenarioOption: onSelectScenarioOption,
                     onPracticeAnother: onPracticeAnother,
                     onBackToPractice: onBackToPractice,
-                    onBrowseTapped: onBrowseTapped
+                    onBrowseTapped: onBrowseTapped,
+                    onReturnFocusConsumed: onReturnFocusConsumed
                 )
 
                 threadBackSwipeCaptureEdge(width: pageWidth)
@@ -253,16 +262,18 @@ private struct PracticeMessagesThreadProfileControl: View {
 struct PracticeMessagesThreadContent: View {
     let activeScenarioSession: PracticeScenarioSession?
     let scenarioCompletion: PracticeScenarioCompletionSummary?
+    let returnFocusRequest: PracticeStoryReturnFocusRequest?
     let topContentPadding: CGFloat
     let isInPracticePool: (String) -> Bool
     let isSavedPhrasePage: (String) -> Bool
-    let onOpenPhrasePage: (String) -> Void
+    let onOpenPhrasePage: PracticeStoryOpenPhrasePageAction
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
     let onPracticeAnother: () -> Void
     let onBackToPractice: () -> Void
     let onBrowseTapped: () -> Void
+    let onReturnFocusConsumed: () -> Void
 
     var body: some View {
         Group {
@@ -270,13 +281,15 @@ struct PracticeMessagesThreadContent: View {
                 PracticeStorySessionSurface(
                     session: activeScenarioSession,
                     showsHeader: false,
+                    returnFocusRequest: returnFocusRequest,
                     topContentPadding: topContentPadding,
                     isInPracticePool: isInPracticePool,
                     isSavedPhrasePage: isSavedPhrasePage,
                     onOpenPhrasePage: onOpenPhrasePage,
                     onTogglePracticePage: onTogglePracticePage,
                     onToggleSavedPhrasePage: onToggleSavedPhrasePage,
-                    onSelectOption: { option in onSelectScenarioOption(option, currentStep) }
+                    onSelectOption: { option in onSelectScenarioOption(option, currentStep) },
+                    onReturnFocusConsumed: onReturnFocusConsumed
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             } else if let scenarioCompletion {
@@ -303,14 +316,17 @@ struct PracticeMessagesThreadContent: View {
 struct PracticeStorySessionSurface: View {
     let session: PracticeScenarioSession
     var showsHeader = true
+    var returnFocusRequest: PracticeStoryReturnFocusRequest?
     var topContentPadding: CGFloat = 0
     let isInPracticePool: (String) -> Bool
     let isSavedPhrasePage: (String) -> Bool
-    let onOpenPhrasePage: (String) -> Void
+    let onOpenPhrasePage: PracticeStoryOpenPhrasePageAction
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectOption: (PracticeScenarioResponseOption) -> Void
+    let onReturnFocusConsumed: () -> Void
     @State private var scrollRequestID = 0
+    @State private var handledReturnFocusRequestID: Int?
     @State private var selectedDefinitionToken: PracticeStoryDefinitionToken?
 
     private static let transcriptBottomID = "Practice.Story.Transcript.Bottom"
@@ -380,9 +396,16 @@ struct PracticeStorySessionSurface: View {
                             )
                         }
                         .onAppear {
+                            if scrollToReturnFocusIfNeeded(scrollProxy, animated: false) {
+                                return
+                            }
+
                             if PracticeStorySessionLayoutPolicy.shouldScrollToBottomOnAppear(for: session) {
                                 scrollToBottom(scrollProxy, animated: false)
                             }
+                        }
+                        .onChange(of: returnFocusRequest) { _, _ in
+                            _ = scrollToReturnFocusIfNeeded(scrollProxy, animated: false)
                         }
                         .onChange(of: session.currentIndex) { _, _ in
                             scrollToBottom(scrollProxy, animated: true)
@@ -429,6 +452,44 @@ struct PracticeStorySessionSurface: View {
         }
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("Practice.Story.Session")
+    }
+
+    @discardableResult
+    private func scrollToReturnFocusIfNeeded(_ proxy: ScrollViewProxy, animated: Bool) -> Bool {
+        guard
+            let returnFocusRequest,
+            handledReturnFocusRequestID != returnFocusRequest.id
+        else {
+            return false
+        }
+
+        handledReturnFocusRequestID = returnFocusRequest.id
+
+        guard turns.contains(where: { $0.id == returnFocusRequest.turnID }) else {
+            onReturnFocusConsumed()
+            return false
+        }
+
+        scrollRequestID += 1
+        let requestID = scrollRequestID
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: Self.scrollDelayNanoseconds)
+            guard requestID == scrollRequestID else {
+                return
+            }
+
+            if animated {
+                withAnimation(.easeOut(duration: 0.24)) {
+                    proxy.scrollTo(returnFocusRequest.turnID, anchor: .center)
+                }
+            } else {
+                proxy.scrollTo(returnFocusRequest.turnID, anchor: .center)
+            }
+            onReturnFocusConsumed()
+        }
+
+        return true
     }
 
     private func scrollToBottom(_ proxy: ScrollViewProxy, animated: Bool) {
