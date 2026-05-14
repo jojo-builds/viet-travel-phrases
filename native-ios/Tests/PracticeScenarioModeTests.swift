@@ -1420,6 +1420,54 @@ final class PracticeScenarioModeTests: XCTestCase {
         }
     }
 
+    func testDoctorHelpDoesNotRepeatEnglishSpeakingDoctorChoiceAfterAlreadyAsked() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let doctorHelp = try XCTUnwrap(snapshot.scenarios.first { $0.id == .emergencyDoctorHelp })
+        let hospitalStep = try XCTUnwrap(doctorHelp.steps.first { $0.id == "doctor-help-hospital" })
+        let symptomStep = try XCTUnwrap(doctorHelp.steps.first { $0.id == "doctor-help-symptom" })
+        let englishStepIndex = try XCTUnwrap(doctorHelp.steps.firstIndex { $0.id == "doctor-help-english" })
+        let englishSpeakingOption = try XCTUnwrap(
+            hospitalStep.responseOptions.first {
+                $0.scenarioEnglish == "Is there an English-speaking doctor or pharmacist?"
+            }
+        )
+        let stomachOption = try XCTUnwrap(
+            symptomStep.responseOptions.first { $0.scenarioEnglish == "My stomach hurts" }
+        )
+
+        let turns = PracticeStoryTranscript.turns(
+            for: doctorHelp,
+            currentIndex: englishStepIndex,
+            selectedOptionIDs: [
+                hospitalStep.id: englishSpeakingOption.id,
+                symptomStep.id: stomachOption.id,
+            ],
+            revealedReplyStepIDs: [hospitalStep.id, symptomStep.id]
+        )
+        let choiceTurn = try XCTUnwrap(
+            turns.last { $0.role == .choiceSet && $0.stepID == "doctor-help-english" }
+        )
+        let visibleEnglish = Array(choiceTurn.responseOptions.prefix(3)).map(\.scenarioEnglish)
+
+        XCTAssertFalse(
+            visibleEnglish.contains(englishSpeakingOption.scenarioEnglish),
+            "Doctor Help should not offer the same English-speaking doctor/pharmacist request again after the traveler already selected it."
+        )
+        XCTAssertEqual(
+            visibleEnglish,
+            [
+                "Can I have an interpreter?",
+                "Can you help me?",
+                "Can you speak a little slower?",
+            ]
+        )
+    }
+
     func testVisibleAlternateMessageChoicesHaveBranchReplies() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],

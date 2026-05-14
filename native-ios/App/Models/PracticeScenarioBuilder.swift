@@ -6473,18 +6473,18 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
-                            vietnamese: "Có bác sĩ hoặc dược sĩ nói tiếng Anh không?",
-                            english: "Is there an English-speaking doctor or pharmacist?",
-                            nextLocalLine: "Tôi sẽ hỏi giúp bạn.",
-                            nextLocalMeaning: "I will ask for you."
-                        ),
-                        messageReply(
                             "viet-family-v500-prob-help-can-you-help-me",
                             vietnamese: "Bạn giúp tôi được không?",
                             english: "Can you help me?",
                             nextLocalLine: "Được, tôi sẽ giúp bạn.",
                             nextLocalMeaning: "Yes, I will help you."
+                        ),
+                        messageReply(
+                            "viet-family-repair-slower",
+                            vietnamese: "Nói chậm chút được không?",
+                            english: "Can you speak a little slower?",
+                            nextLocalLine: "Được, tôi sẽ nói chậm hơn.",
+                            nextLocalMeaning: "Yes, I will speak more slowly."
                         ),
                     ],
                     nextStepTitle: "Say thanks",
