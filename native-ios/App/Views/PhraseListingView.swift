@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 enum PhraseArticleInitialScrollTarget: String {
     case firstBreakdown = "first-breakdown"
@@ -99,6 +100,7 @@ struct PhraseArticleTemplateView: View {
     var onToggleSaved: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
     @State private var didApplyInitialScrollTarget = false
+    @State private var presentedHeroImage: PhraseHeroImagePresentation?
 
     init(
         page: PhraseArticlePage,
@@ -195,6 +197,9 @@ struct PhraseArticleTemplateView: View {
                 }
             }
         }
+        .fullScreenCover(item: $presentedHeroImage) { presentation in
+            PhraseHeroImageLightbox(presentation: presentation)
+        }
     }
 
     private var hero: some View {
@@ -203,10 +208,7 @@ struct PhraseArticleTemplateView: View {
                 CompactPhraseMastheadBackground()
                     .frame(height: 112)
             } else {
-                HeroMastheadImage(
-                    imageName: page.heroImageName ?? PhrasePageStyle.heroImageName,
-                    height: heroImageHeight
-                )
+                heroImage
             }
 
             VStack(alignment: .leading, spacing: 12) {
@@ -255,6 +257,44 @@ struct PhraseArticleTemplateView: View {
         .background(PhrasePageStyle.pageBackground)
     }
 
+    @ViewBuilder
+    private var heroImage: some View {
+        let imageName = page.heroImageName ?? PhrasePageStyle.heroImageName
+        let masthead = HeroMastheadImage(
+            imageName: imageName,
+            height: heroImageHeight
+        )
+
+        if supportsHeroImageLightbox {
+            Button {
+                presentedHeroImage = PhraseHeroImagePresentation(
+                    pageID: page.id,
+                    imageName: imageName,
+                    title: page.title,
+                    subtitle: page.englishTitle
+                )
+            } label: {
+                masthead
+                    .overlay(alignment: .bottomTrailing) {
+                        Image(systemName: "arrow.up.left.and.arrow.down.right")
+                            .font(.caption.weight(.black))
+                            .foregroundStyle(.primary)
+                            .frame(width: 36, height: 36)
+                            .nativeGlass(cornerRadius: 18, tint: .white.opacity(0.22), interactive: true)
+                            .padding(.trailing, 24)
+                            .padding(.bottom, 28)
+                            .accessibilityHidden(true)
+                    }
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Open \(page.title) photo")
+            .accessibilityIdentifier("PhraseArticle.HeroImageButton.\(page.id)")
+        } else {
+            masthead
+        }
+    }
+
     private var shouldRenderCatalogExplore: Bool {
         page.showsCatalogExplore && page.id == PhrasePage.xinChao.id
     }
@@ -265,6 +305,10 @@ struct PhraseArticleTemplateView: View {
 
     private var usesVietnameseMenuDetailFit: Bool {
         page.id.hasPrefix("viet-menu-")
+    }
+
+    private var supportsHeroImageLightbox: Bool {
+        usesVietnameseMenuDetailFit && page.heroImageName != nil
     }
 
     private var heroImageHeight: CGFloat {
@@ -469,6 +513,177 @@ struct PhraseArticleTemplateView: View {
         .nativeGlass(cornerRadius: 26, interactive: true)
     }
 
+}
+
+private struct PhraseHeroImagePresentation: Identifiable, Equatable {
+    let pageID: String
+    let imageName: String
+    let title: String
+    let subtitle: String
+
+    var id: String { pageID }
+}
+
+private struct PhraseHeroImageLightbox: View {
+    let presentation: PhraseHeroImagePresentation
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        ZStack(alignment: .top) {
+            Color.black
+                .ignoresSafeArea()
+
+            ZoomableAssetImageView(
+                imageName: presentation.imageName,
+                accessibilityIdentifier: "PhraseArticle.HeroImageLightbox.Image.\(presentation.pageID)",
+                accessibilityLabel: "\(presentation.title) photo"
+            )
+                .ignoresSafeArea()
+
+            HStack(alignment: .center, spacing: 12) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(presentation.title)
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.white)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
+
+                    Text(presentation.subtitle)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.white.opacity(0.72))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
+                }
+                .layoutPriority(1)
+
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.white)
+                        .frame(width: 46, height: 46)
+                        .background(.ultraThinMaterial, in: Circle())
+                        .contentShape(Circle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Close image")
+                .accessibilityIdentifier("PhraseArticle.HeroImageLightbox.Close")
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 18)
+        }
+        .statusBarHidden()
+    }
+}
+
+private struct ZoomableAssetImageView: UIViewRepresentable {
+    let imageName: String
+    let accessibilityIdentifier: String
+    let accessibilityLabel: String
+
+    func makeUIView(context: Context) -> AssetImageZoomScrollView {
+        let scrollView = AssetImageZoomScrollView()
+        scrollView.configure(
+            imageName: imageName,
+            accessibilityIdentifier: accessibilityIdentifier,
+            accessibilityLabel: accessibilityLabel
+        )
+        return scrollView
+    }
+
+    func updateUIView(_ scrollView: AssetImageZoomScrollView, context: Context) {
+        scrollView.configure(
+            imageName: imageName,
+            accessibilityIdentifier: accessibilityIdentifier,
+            accessibilityLabel: accessibilityLabel
+        )
+    }
+}
+
+private final class AssetImageZoomScrollView: UIScrollView, UIScrollViewDelegate {
+    private let imageView = UIImageView()
+    private var loadedImageName: String?
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .black
+        delegate = self
+        minimumZoomScale = 1
+        maximumZoomScale = 4
+        bouncesZoom = true
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
+        contentInsetAdjustmentBehavior = .never
+
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        addSubview(imageView)
+
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+        doubleTap.numberOfTapsRequired = 2
+        imageView.addGestureRecognizer(doubleTap)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func configure(imageName: String, accessibilityIdentifier: String, accessibilityLabel: String) {
+        isAccessibilityElement = true
+        self.accessibilityIdentifier = accessibilityIdentifier
+        self.accessibilityLabel = accessibilityLabel
+        accessibilityTraits = [.image, .allowsDirectInteraction]
+
+        guard loadedImageName != imageName else {
+            return
+        }
+
+        loadedImageName = imageName
+        imageView.image = UIImage(named: imageName)
+        zoomScale = minimumZoomScale
+        setNeedsLayout()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if zoomScale == minimumZoomScale {
+            imageView.frame = bounds
+        }
+
+        centerImageIfNeeded()
+    }
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        imageView
+    }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        centerImageIfNeeded()
+    }
+
+    @objc private func handleDoubleTap(_ gesture: UITapGestureRecognizer) {
+        if zoomScale > minimumZoomScale {
+            setZoomScale(minimumZoomScale, animated: true)
+        } else {
+            let point = gesture.location(in: imageView)
+            let targetScale = min(maximumZoomScale, 2.6)
+            let size = CGSize(width: bounds.width / targetScale, height: bounds.height / targetScale)
+            let origin = CGPoint(x: point.x - size.width / 2, y: point.y - size.height / 2)
+            zoom(to: CGRect(origin: origin, size: size), animated: true)
+        }
+    }
+
+    private func centerImageIfNeeded() {
+        let boundsSize = bounds.size
+        var frame = imageView.frame
+
+        frame.origin.x = frame.size.width < boundsSize.width ? (boundsSize.width - frame.size.width) / 2 : 0
+        frame.origin.y = frame.size.height < boundsSize.height ? (boundsSize.height - frame.size.height) / 2 : 0
+        imageView.frame = frame
+    }
 }
 
 private struct ArticleSectionView: View {
