@@ -22,10 +22,8 @@ extension AccentTint {
 
     var audioColor: Color {
         switch self {
-        case .red, .blue, .purple:
+        case .red, .orange, .green, .blue, .purple, .teal:
             return Color(red: 0.93, green: 0.12, blue: 0.15)
-        case .orange, .green, .teal:
-            return Color(red: 0.82, green: 0.53, blue: 0.08)
         case .gray:
             return Color(red: 0.42, green: 0.42, blue: 0.42)
         }
@@ -53,7 +51,7 @@ struct NativeGlass<S: Shape>: ViewModifier {
                     shape
                         .stroke(.white.opacity(0.46), lineWidth: 0.8)
                 }
-                .shadow(color: .black.opacity(0.07), radius: 16, x: 0, y: 8)
+                .shadow(color: .black.opacity(0.03), radius: 8, x: 0, y: 4)
         }
     }
 }

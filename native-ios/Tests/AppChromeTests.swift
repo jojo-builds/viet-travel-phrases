@@ -1,5 +1,6 @@
 import XCTest
 import CoreGraphics
+import SwiftUI
 import UIKit
 @testable import SpeakLocalNative
 
@@ -24,6 +25,18 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(DockItemKind.saved.title, "Saved")
         XCTAssertEqual(DockItemKind.practice.symbolName, "text.bubble.fill")
         XCTAssertEqual(DockItemKind.practice.title, "Messages")
+    }
+
+    func testPlayableAudioTintsUseOneConsistentActionColor() {
+        let expected = rgbaComponents(for: AccentTint.red.audioColor)
+
+        for tint in [AccentTint.orange, .green, .blue, .purple, .teal] {
+            let actual = rgbaComponents(for: tint.audioColor)
+            XCTAssertEqual(actual.red, expected.red, accuracy: 0.001, "\(tint) red")
+            XCTAssertEqual(actual.green, expected.green, accuracy: 0.001, "\(tint) green")
+            XCTAssertEqual(actual.blue, expected.blue, accuracy: 0.001, "\(tint) blue")
+            XCTAssertEqual(actual.alpha, expected.alpha, accuracy: 0.001, "\(tint) alpha")
+        }
     }
 
     func testOnlyTopAdminAndAppSpecificChromeStayLayeredAboveContent() {
@@ -1879,6 +1892,17 @@ final class AppChromeTests: XCTestCase {
             0,
             accuracy: 0.001
         )
+    }
+
+    private func rgbaComponents(for color: Color) -> (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        let uiColor = UIColor(color)
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+
+        XCTAssertTrue(uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha))
+        return (red, green, blue, alpha)
     }
 }
 

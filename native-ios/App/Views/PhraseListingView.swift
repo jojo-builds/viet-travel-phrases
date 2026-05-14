@@ -1162,7 +1162,7 @@ private struct SituationCard: View {
         .padding(.vertical, 16)
         .frame(width: 112, height: 174)
         .phraseListCard(strokeOpacity: 0.05)
-        .shadow(color: .black.opacity(0.06), radius: 16, x: 0, y: 10)
+        .shadow(color: .black.opacity(0.025), radius: 8, x: 0, y: 4)
     }
 
     private var cardSummary: some View {

@@ -325,7 +325,7 @@ private struct VietnameseMenuSectionImageCard: View {
                     .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.07), radius: 12, x: 0, y: 8)
+            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         }
         .buttonStyle(.plain)

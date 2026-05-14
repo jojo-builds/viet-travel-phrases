@@ -97,8 +97,8 @@ struct PlaybackDockView: View {
             .background {
                 Capsule(style: .continuous)
                     .fill(.white.opacity(0.34))
-                    .shadow(color: .black.opacity(0.10), radius: 24, x: 0, y: 14)
-                    .shadow(color: .white.opacity(0.92), radius: 10, x: 0, y: -6)
+                    .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
+                    .shadow(color: .white.opacity(0.45), radius: 5, x: 0, y: -3)
             }
             .overlay {
                 Capsule(style: .continuous)
@@ -123,7 +123,7 @@ struct PlaybackDockView: View {
             ZStack {
                 Circle()
                     .fill(.white.opacity(0.48))
-                    .shadow(color: .black.opacity(0.09), radius: 12, x: 0, y: 8)
+                    .shadow(color: .black.opacity(0.035), radius: 6, x: 0, y: 3)
 
                 Image(systemName: isSaved ? "heart.fill" : "heart")
                     .font(.system(size: 22, weight: .semibold))
@@ -154,8 +154,8 @@ struct PlaybackDockView: View {
                         Circle()
                             .stroke(.white.opacity(0.76), lineWidth: 1)
                     }
-                    .shadow(color: .black.opacity(0.11), radius: 22, x: 0, y: 13)
-                    .shadow(color: .white.opacity(0.90), radius: 10, x: 0, y: -7)
+                    .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
+                    .shadow(color: .white.opacity(0.45), radius: 5, x: 0, y: -3)
 
                 Circle()
                     .fill(.white.opacity(0.82))
@@ -164,7 +164,7 @@ struct PlaybackDockView: View {
                         Circle()
                             .stroke(.white.opacity(0.74), lineWidth: 1)
                     }
-                    .shadow(color: .black.opacity(0.08), radius: 15, x: 0, y: 10)
+                    .shadow(color: .black.opacity(0.035), radius: 8, x: 0, y: 5)
 
                 Image(systemName: "play.fill")
                     .font(.system(size: 29, weight: .bold))
@@ -289,7 +289,7 @@ struct AudioSpeedSegmentedControl: View {
         .background {
             Capsule(style: .continuous)
                 .fill(.white.opacity(0.42))
-                .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: 8)
+                .shadow(color: .black.opacity(0.035), radius: 7, x: 0, y: 4)
         }
         .overlay {
             Capsule(style: .continuous)

@@ -354,7 +354,7 @@ private struct PracticeStoryDefinitionCallout: View {
                 }
                 .offset(y: -1)
         }
-        .shadow(color: .black.opacity(0.14), radius: 18, x: 0, y: 10)
+        .shadow(color: .black.opacity(0.07), radius: 12, x: 0, y: 6)
         .accessibilityElement(children: .contain)
     }
 }
@@ -714,7 +714,7 @@ struct PracticeStoryComposer: View {
             shape
                 .stroke(Color(.separator).opacity(0.18), lineWidth: 0.7)
         }
-        .shadow(color: .black.opacity(0.07), radius: 18, x: 0, y: 10)
+        .shadow(color: .black.opacity(0.035), radius: 10, x: 0, y: 5)
     }
 
     private func focusSelectedChoice(with scrollProxy: ScrollViewProxy, animated: Bool) {
@@ -779,7 +779,7 @@ private struct PracticeStoryChoiceChip: View {
                             lineWidth: isSelected ? 2 : 1
                         )
                 }
-                .shadow(color: .black.opacity(isSelected ? 0.08 : 0.045), radius: isSelected ? 16 : 11, x: 0, y: isSelected ? 8 : 5)
+                .shadow(color: .black.opacity(isSelected ? 0.04 : 0.02), radius: isSelected ? 8 : 6, x: 0, y: isSelected ? 4 : 2)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Practice.Story.Choice.\(option.id)")
