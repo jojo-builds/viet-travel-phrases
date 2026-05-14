@@ -38,15 +38,19 @@ struct BrowseCollectionPageView: View {
                             .id(Self.scrollTopID)
 
                         if let cityHub = descriptor.cityHub {
-                            BrowseCityHubContent(
-                                descriptor: descriptor,
-                                cityHub: cityHub,
-                                selectedCityCardID: $selectedCityCardID,
-                                onOpenDetail: onOpenDetail,
-                                onOpenCollection: onOpenCollection,
-                                onPractice: { onPractice(descriptor.practiceAction) }
-                            )
-                            .browseCityHeroContentReveal(isHeld: holdsContentForCityHeroMorph)
+                            if holdsContentForCityHeroMorph {
+                                BrowseCityHeroBodyPlaceholder()
+                            } else {
+                                BrowseCityHubContent(
+                                    descriptor: descriptor,
+                                    cityHub: cityHub,
+                                    selectedCityCardID: $selectedCityCardID,
+                                    onOpenDetail: onOpenDetail,
+                                    onOpenCollection: onOpenCollection,
+                                    onPractice: { onPractice(descriptor.practiceAction) }
+                                )
+                                .transition(.opacity.combined(with: .move(edge: .bottom)))
+                            }
                         } else {
                             BrowseCollectionSubcategoryRail(
                                 subcategories: descriptor.subcategories,
@@ -133,21 +137,21 @@ struct BrowseCollectionPageView: View {
     }
 }
 
-private extension View {
-    func browseCityHeroContentReveal(isHeld: Bool) -> some View {
-        opacity(isHeld ? 0 : 1)
-            .offset(y: isHeld ? 14 : 0)
-            .allowsHitTesting(!isHeld)
-            .animation(BrowseCityHeroMorphTiming.contentRevealAnimation, value: isHeld)
-    }
-}
-
 private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = HomeLayout.sectionSpacing
     static let bottomChromeContentClearance: CGFloat = 48
     static let focusRestoreDelayNanoseconds: UInt64 = 520_000_000
     static let focusRestoreAnimationDuration: TimeInterval = 0.24
+}
+
+private struct BrowseCityHeroBodyPlaceholder: View {
+    var body: some View {
+        Color.clear
+            .frame(height: 1)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+    }
 }
 
 private struct BrowseCollectionHeader: View {

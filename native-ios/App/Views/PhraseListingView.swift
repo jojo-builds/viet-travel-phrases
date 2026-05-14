@@ -234,21 +234,23 @@ struct PhraseArticleTemplateView: View {
                 )
                 .zIndex(usesHomePhraseHeroMorph ? 4 : 0)
 
-                PlaybackDockView(
-                    audioKey: page.playbackAudioKey,
-                    isSaved: isSaved,
-                    onToggleSaved: onToggleSaved,
-                    visibilityRoute: chromeRoute
-                )
-                    .homePhraseHeroMorph(
-                        HomePhraseHeroMorphID.player(morphPageID),
-                        namespace: chromeNamespace,
-                        isActive: usesHomePhraseHeroMorph,
-                        isSource: false,
-                        anchor: .topLeading
+                if shouldShowHeroPlaybackDock {
+                    PlaybackDockView(
+                        audioKey: page.playbackAudioKey,
+                        isSaved: isSaved,
+                        onToggleSaved: onToggleSaved,
+                        visibilityRoute: chromeRoute
                     )
-                    .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
-                    .padding(.top, heroPlayerTopSpacing)
+                        .homePhraseHeroMorph(
+                            HomePhraseHeroMorphID.player(morphPageID),
+                            namespace: chromeNamespace,
+                            isActive: usesHomePhraseHeroMorph,
+                            isSource: false,
+                            anchor: .topLeading
+                        )
+                        .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
+                        .padding(.top, heroPlayerTopSpacing)
+                }
             }
             .padding(.horizontal, 24)
             .padding(.top, heroTextTopPadding)
@@ -311,6 +313,10 @@ struct PhraseArticleTemplateView: View {
         usesVietnameseMenuDetailFit && page.heroImageName != nil
     }
 
+    private var shouldShowHeroPlaybackDock: Bool {
+        !usesVietnameseMenuDetailFit || page.playbackAudioKey != nil
+    }
+
     private var heroImageHeight: CGFloat {
         usesVietnameseMenuDetailFit ? 238 : PhrasePageStyle.heroImageHeight
     }
@@ -365,7 +371,7 @@ struct PhraseArticleTemplateView: View {
     static func visibleSections(for page: PhraseArticlePage) -> [PhraseArticleSection] {
         page.sections.filter { section in
             guard !isHeroRepeatSection(section, page: page) else { return false }
-            return !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty
+            return !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty || !section.chips.isEmpty
         }
     }
 
@@ -388,7 +394,8 @@ struct PhraseArticleTemplateView: View {
         let duplicateSectionTitles: Set<String> = ["Meaning", "At a glance"]
         guard duplicateSectionTitles.contains(section.title),
               section.phrases.isEmpty,
-              section.breakdown.isEmpty
+              section.breakdown.isEmpty,
+              section.chips.isEmpty
         else {
             return false
         }
@@ -695,6 +702,8 @@ private struct ArticleSectionView: View {
         switch section.presentation {
         case .breakdownStrip:
             breakdownSection
+        case .menuChips:
+            menuChipsSection
         case .relationshipShelf:
             relationshipShelfSection
         case .horizontalPhraseCards:
@@ -839,6 +848,113 @@ private struct ArticleSectionView: View {
             }
         }
     }
+
+    private var menuChipsSection: some View {
+        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+            if section.chips.isEmpty {
+                Text(section.body)
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                MenuChipFlow(chips: section.chips, sectionID: section.id)
+            }
+        }
+    }
+}
+
+private struct MenuChipFlow: View {
+    let chips: [String]
+    let sectionID: String
+
+    var body: some View {
+        MenuChipFlowLayout(horizontalSpacing: 8, verticalSpacing: 8) {
+            ForEach(chips, id: \.self) { chip in
+                Text(chip)
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(.white.opacity(0.78), in: Capsule(style: .continuous))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(Color.black.opacity(0.06), lineWidth: 1)
+                            .allowsHitTesting(false)
+                    }
+                    .accessibilityIdentifier("MenuDetail.Chip.\(sectionID).\(chip.normalizedMenuChipIdentifier)")
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+private struct MenuChipFlowLayout: Layout {
+    let horizontalSpacing: CGFloat
+    let verticalSpacing: CGFloat
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
+        guard !sizes.isEmpty else {
+            return .zero
+        }
+
+        let maxWidth = max(1, proposal.width ?? sizes.reduce(0) { $0 + $1.width + horizontalSpacing })
+        let rows = arrangedRows(for: sizes, maxWidth: maxWidth)
+        let height = rows.reduce(CGFloat.zero) { partial, row in
+            partial + row.height
+        } + CGFloat(max(0, rows.count - 1)) * verticalSpacing
+
+        return CGSize(width: maxWidth, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
+        let rows = arrangedRows(for: sizes, maxWidth: bounds.width)
+        var y = bounds.minY
+
+        for row in rows {
+            var x = bounds.minX
+            for index in row.indices {
+                subviews[index].place(
+                    at: CGPoint(x: x, y: y + (row.height - sizes[index].height) / 2),
+                    anchor: .topLeading,
+                    proposal: ProposedViewSize(sizes[index])
+                )
+                x += sizes[index].width + horizontalSpacing
+            }
+            y += row.height + verticalSpacing
+        }
+    }
+
+    private func arrangedRows(for sizes: [CGSize], maxWidth: CGFloat) -> [MenuChipFlowRow] {
+        var rows: [MenuChipFlowRow] = []
+        var current = MenuChipFlowRow(indices: [], width: 0, height: 0)
+
+        for (index, size) in sizes.enumerated() {
+            let proposedWidth = current.indices.isEmpty ? size.width : current.width + horizontalSpacing + size.width
+            if !current.indices.isEmpty, proposedWidth > maxWidth {
+                rows.append(current)
+                current = MenuChipFlowRow(indices: [index], width: size.width, height: size.height)
+            } else {
+                current.indices.append(index)
+                current.width = proposedWidth
+                current.height = max(current.height, size.height)
+            }
+        }
+
+        if !current.indices.isEmpty {
+            rows.append(current)
+        }
+
+        return rows
+    }
+}
+
+private struct MenuChipFlowRow {
+    var indices: [Int]
+    var width: CGFloat
+    var height: CGFloat
 }
 
 private struct ArticleCallout: View {
@@ -929,6 +1045,14 @@ private struct SectionBlock<Content: View>: View {
 private extension String {
     var nilIfEmpty: String? {
         isEmpty ? nil : self
+    }
+
+    var normalizedMenuChipIdentifier: String {
+        lowercased()
+            .replacingOccurrences(of: "&", with: "and")
+            .components(separatedBy: CharacterSet.alphanumerics.inverted)
+            .filter { !$0.isEmpty }
+            .joined(separator: "-")
     }
 }
 

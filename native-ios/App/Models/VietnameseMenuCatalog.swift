@@ -88,7 +88,13 @@ struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
     let soundOut: String
     let notes: String
     let atAGlance: String
+    let whatItIs: String?
     let usuallyIncludes: [String]
+    let howToEnjoy: String?
+    let worthKnowing: String?
+    let regionalAssociation: String?
+    let originPosture: String?
+    let travelerCaution: String?
     let goodToKnow: String
     let commonOptions: [String]
     let quickSayVietnamese: String
@@ -106,6 +112,18 @@ struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
     var displayPronunciation: String {
         soundOut.isEmpty ? romanizedNoTones : soundOut
     }
+
+    var guideWhatItIs: String {
+        whatItIs.nonEmptyValue ?? atAGlance
+    }
+
+    var guideHowToEnjoy: String {
+        howToEnjoy.nonEmptyValue ?? goodToKnow
+    }
+
+    var guideWorthKnowing: String {
+        worthKnowing.nonEmptyValue ?? regionalAssociation.nonEmptyValue.map { "\(vietnameseItem) is associated with \($0), but preparations can still vary by shop and region." } ?? ""
+    }
 }
 
 struct VietnameseMenuCategory: Identifiable, Equatable {
@@ -116,6 +134,19 @@ struct VietnameseMenuCategory: Identifiable, Equatable {
     let tintName: AccentTint
     let featuredImageName: String
     let items: [VietnameseMenuItem]
+
+    var itemCount: Int { items.count }
+}
+
+struct VietnameseMenuSection: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let tintName: AccentTint
+    let featuredImageName: String
+    let items: [VietnameseMenuItem]
+    let isPopular: Bool
 
     var itemCount: Int { items.count }
 }
@@ -185,6 +216,34 @@ enum VietnameseMenuCatalog {
         Array(items(for: kind).filter(\.popular).prefix(limit))
     }
 
+    static func sections(for kind: VietnameseMenuKind) -> [VietnameseMenuSection] {
+        let popular = VietnameseMenuSection(
+            id: "popular",
+            title: kind.popularTitle,
+            subtitle: "Traveler favorites",
+            symbolName: "star.fill",
+            tintName: .orange,
+            featuredImageName: popularItems(for: kind, limit: 1).first?.menuImageName ?? kind.heroImageName,
+            items: popularItems(for: kind, limit: 5),
+            isPopular: true
+        )
+
+        let categorySections = categories(for: kind).map { category in
+            VietnameseMenuSection(
+                id: category.id,
+                title: category.title,
+                subtitle: category.subtitle,
+                symbolName: category.symbolName,
+                tintName: category.tintName,
+                featuredImageName: category.featuredImageName,
+                items: category.items,
+                isPopular: false
+            )
+        }
+
+        return [popular] + categorySections
+    }
+
     static func detailItem(withPageID pageID: String) -> VietnameseMenuItem? {
         guard pageID.hasPrefix("viet-menu-") else {
             return nil
@@ -199,12 +258,6 @@ enum VietnameseMenuCatalog {
             return nil
         }
 
-        let includeTokens = item.usuallyIncludes.enumerated().map { index, value in
-            BreakdownToken(id: "include-\(index)-\(slug(value))", vietnamese: value, english: "")
-        }
-        let optionTokens = item.commonOptions.enumerated().map { index, value in
-            BreakdownToken(id: "option-\(index)-\(slug(value))", vietnamese: value, english: "")
-        }
         let quickSay = PhraseOption(
             id: "\(item.detailPageID)-quick-say",
             vietnamese: item.quickSayVietnamese,
@@ -214,54 +267,294 @@ enum VietnameseMenuCatalog {
             tintName: kind.tintName,
             detailPageID: nil
         )
+        let helperPhrases = menuHelperPhrases(for: item, kind: kind)
+
+        let worthKnowing = item.guideWorthKnowing
+        let sections = [
+            PhraseDetailSection(
+                id: "what-it-is",
+                title: "What it is",
+                body: item.guideWhatItIs
+            ),
+            PhraseDetailSection(
+                id: "usually-includes",
+                title: "Usually includes",
+                body: "",
+                chips: item.usuallyIncludes,
+                presentation: .menuChips
+            ),
+            PhraseDetailSection(
+                id: "how-to-enjoy",
+                title: "How to enjoy it",
+                body: item.guideHowToEnjoy
+            ),
+            PhraseDetailSection(
+                id: "worth-knowing",
+                title: "Worth knowing",
+                body: worthKnowing,
+                presentation: .tipCallout
+            ),
+            PhraseDetailSection(
+                id: "common-options",
+                title: "Common options",
+                body: "",
+                chips: item.commonOptions,
+                presentation: .menuChips
+            ),
+            PhraseDetailSection(
+                id: "useful-phrases",
+                title: "Useful phrases",
+                body: "",
+                phrases: helperPhrases,
+                presentation: .phraseList
+            ),
+            PhraseDetailSection(
+                id: "standard-way",
+                title: "Quick say",
+                body: "",
+                phrases: [quickSay],
+                presentation: .phraseList
+            ),
+        ].filter { section in
+            !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty || !section.chips.isEmpty
+        }
 
         return PhraseDetailPage(
             id: item.detailPageID,
             title: item.vietnameseItem,
             englishTitle: item.englishTranslation,
             pronunciation: item.displayPronunciation,
-            summary: item.atAGlance,
+            summary: item.guideWhatItIs,
             iconName: kind.symbolName,
             tintName: kind.tintName,
             heroImageName: heroImageName(for: item, kind: kind),
-            sections: [
-                PhraseDetailSection(
-                    id: "at-glance",
-                    title: "At a glance",
-                    body: item.atAGlance
-                ),
-                PhraseDetailSection(
-                    id: "usually-includes",
-                    title: "Usually includes",
-                    body: "",
-                    breakdown: includeTokens,
-                    presentation: .breakdownStrip
-                ),
-                PhraseDetailSection(
-                    id: "good-to-know",
-                    title: "Good to know",
-                    body: item.goodToKnow,
-                    presentation: .tipCallout
-                ),
-                PhraseDetailSection(
-                    id: "common-options",
-                    title: "Common options",
-                    body: "",
-                    breakdown: optionTokens,
-                    presentation: .breakdownStrip
-                ),
-                PhraseDetailSection(
-                    id: "standard-way",
-                    title: "Quick say",
-                    body: "",
-                    phrases: [quickSay],
-                    presentation: .phraseList
-                ),
-            ],
+            sections: sections,
             examples: [],
             audioKey: nil,
             practiceCTALabel: "Practice ordering this",
             showsCatalogExplore: false
+        )
+    }
+
+    static func guideCopyAuditFailures() -> [String] {
+        let genericFragments = [
+            "centered on",
+            "usually combines noodles or rice porridge",
+            "Vietnamese menu item",
+            "common drink order",
+            "easy point-and-order choice",
+            "meant for mixing:",
+            "with the main topping",
+            "bread or bun order featuring",
+            "meat-free dish featuring",
+            "Depending on the order",
+            "strong café-style finish",
+        ]
+        let coffeeGenericFragments = [
+            "Vietnam is a major coffee country",
+            "Stir before drinking if milk or cream is involved",
+            "Depending on the order",
+            "a Vietnamese coffee order with bold flavor",
+        ]
+        let visibleBlockFragments = [
+            "the main topping",
+            "common anchors",
+            "strong café-style finish",
+        ]
+        let foodVisibleBlockFragments = [
+            "many travelers",
+            "travelers picture",
+            "before you travel",
+            "useful to recognize",
+            "without guessing from the menu",
+            "helpful travel context",
+            "easy to point",
+            "point-and-order",
+            "cautious eaters",
+            "meant for mixing:",
+            "easy to customize",
+            "dressing or sauce",
+            "broth or sauce",
+            "savory sauce",
+            "built around",
+            "centered on",
+            "broth and topping should make sense together",
+        ]
+        let vegetarianMeatTerms = [
+            "beef",
+            "pork",
+            "chicken",
+            "duck",
+            "fish",
+            "shrimp",
+            "crab",
+            "shellfish",
+            "seafood",
+            "clams",
+            "cockles",
+            "snails",
+            "squid",
+        ]
+        let quickSayUnitMarkers: [(marker: String, unit: String)] = [
+            ("một chai", "bottle"),
+            ("một ly", "glass"),
+            ("một cốc", "cup"),
+            ("một tách", "cup"),
+            ("một tô", "bowl"),
+            ("một bát", "bowl"),
+            ("một đĩa", "plate"),
+            ("một ổ", "sandwich"),
+            ("một phần", "order"),
+        ]
+
+        return allItems.flatMap { item in
+            let guideFailures = [
+                ("whatItIs", item.whatItIs),
+                ("howToEnjoy", item.howToEnjoy),
+                ("worthKnowing", item.worthKnowing),
+            ].compactMap { fieldName, value -> String? in
+                guard let value = value?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else {
+                    return "\(item.itemID): missing \(fieldName)"
+                }
+
+                if let genericFragment = genericFragments.first(where: { value.localizedCaseInsensitiveContains($0) }) {
+                    return "\(item.itemID): \(fieldName) contains generic fragment '\(genericFragment)'"
+                }
+
+                if item.category == "Coffee",
+                   let genericFragment = coffeeGenericFragments.first(where: { value.localizedCaseInsensitiveContains($0) }) {
+                    return "\(item.itemID): \(fieldName) contains generic coffee fragment '\(genericFragment)'"
+                }
+
+                return nil
+            }
+
+            let visibleText = ([item.atAGlance, item.goodToKnow, item.guideWhatItIs, item.guideHowToEnjoy, item.guideWorthKnowing, item.travelerCaution ?? ""] + item.usuallyIncludes + item.commonOptions)
+                .joined(separator: "\n")
+            let lowerIncludes = item.usuallyIncludes.map { $0.lowercased() }
+            let searchableText = "\(item.itemID) \(item.vietnameseItem) \(item.englishTranslation)".lowercased()
+            let lowerQuickSayVietnamese = item.quickSayVietnamese.lowercased()
+            let lowerQuickSayEnglish = item.quickSayEnglish.lowercased()
+            let isFood = item.menuType == VietnameseMenuKind.food.rawValue
+            let includesEggNoodles = lowerIncludes.contains { $0.contains("egg noodles") }
+            let includesRiceVermicelli = lowerIncludes.contains { $0.contains("rice vermicelli") }
+            let includesGlassNoodles = lowerIncludes.contains { $0.contains("glass noodles") }
+            let includesTurmericRiceNoodles = lowerIncludes.contains { $0.contains("turmeric rice noodles") }
+            let isBunOrVermicelli = item.itemID.contains("food-bun-")
+                || item.itemID.contains("banh-hoi")
+                || searchableText.contains("bún")
+                || searchableText.contains("bánh hỏi")
+                || searchableText.contains("vermicelli")
+            let isMienOrGlassNoodles = item.itemID.contains("mien-")
+                || searchableText.contains("miến")
+                || searchableText.contains("glass noodle")
+            let isMiQuang = item.itemID.contains("mi-quang")
+                || searchableText.contains("mì quảng")
+
+            let guardrailFailures: [String?] = [
+                item.menuType == VietnameseMenuKind.drink.rawValue && item.travelerCaution?.localizedCaseInsensitiveContains("spicy") == true
+                    ? "\(item.itemID): drink item has a spicy caution"
+                    : nil,
+                visibleBlockFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
+                    "\(item.itemID): visible menu copy contains blocked fragment '\($0)'"
+                },
+                item.category == "Coffee" ? coffeeGenericFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
+                    "\(item.itemID): visible coffee copy contains generic fragment '\($0)'"
+                } : nil,
+                isFood ? foodVisibleBlockFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
+                    "\(item.itemID): visible food copy contains blocked fragment '\($0)'"
+                } : nil,
+                isFood && isBunOrVermicelli && includesEggNoodles
+                    ? "\(item.itemID): bún/vermicelli item includes egg noodles"
+                    : nil,
+                isFood && isBunOrVermicelli && !includesRiceVermicelli
+                    ? "\(item.itemID): bún/vermicelli item is missing rice vermicelli"
+                    : nil,
+                isFood && isMienOrGlassNoodles && includesEggNoodles
+                    ? "\(item.itemID): miến/glass-noodle item includes egg noodles"
+                    : nil,
+                isFood && isMienOrGlassNoodles && !includesGlassNoodles
+                    ? "\(item.itemID): miến/glass-noodle item is missing glass noodles"
+                    : nil,
+                isFood && isMiQuang && includesEggNoodles
+                    ? "\(item.itemID): Mì Quảng item includes egg noodles"
+                    : nil,
+                isFood && isMiQuang && !includesTurmericRiceNoodles
+                    ? "\(item.itemID): Mì Quảng item is missing turmeric rice noodles"
+                    : nil,
+                item.category == "Vegetarian" ? lowerIncludes.first(where: { include in
+                    vegetarianMeatTerms.contains { include.contains($0) }
+                }).map {
+                    "\(item.itemID): vegetarian includes non-vegetarian chip '\($0)'"
+                } : nil,
+                item.category == "Vegetarian" && item.travelerCaution?.localizedCaseInsensitiveContains("pork") == true
+                    ? "\(item.itemID): vegetarian item has a pork caution"
+                    : nil,
+                quickSayUnitMarkers.first(where: { spec in
+                    lowerQuickSayVietnamese.contains(spec.marker) && !lowerQuickSayEnglish.contains("one \(spec.unit) of")
+                }).map { spec in
+                    "\(item.itemID): quick say unit '\(spec.marker)' is not translated as one \(spec.unit)"
+                },
+            ]
+
+            return guideFailures + guardrailFailures.compactMap { $0 }
+        }
+    }
+
+    private static func menuHelperPhrases(for item: VietnameseMenuItem, kind: VietnameseMenuKind) -> [PhraseOption] {
+        switch kind {
+        case .food:
+            if item.category == "Desserts & sweets" {
+                return [
+                    helperPhrase(.lessSugar, tintName: kind.tintName),
+                    helperPhrase(.noIce, tintName: kind.tintName),
+                    helperPhrase(.payNow, tintName: kind.tintName),
+                ]
+            }
+
+            return [
+                helperPhrase(.notSpicy, tintName: kind.tintName),
+                helperPhrase(.lessSpicy, tintName: kind.tintName),
+                helperPhrase(.seeMenu, tintName: kind.tintName),
+                helperPhrase(.payNow, tintName: kind.tintName),
+            ]
+
+        case .drink:
+            if item.category == "Coffee" {
+                return [
+                    helperPhrase(.lessSugar, tintName: kind.tintName),
+                    helperPhrase(.lessIce, tintName: kind.tintName),
+                    helperPhrase(.noIce, tintName: kind.tintName),
+                    helperPhrase(.payNow, tintName: kind.tintName),
+                ]
+            }
+
+            if ["Tea", "Smoothies", "Juices & fresh drinks"].contains(item.category) {
+                return [
+                    helperPhrase(.lessSugar, tintName: kind.tintName),
+                    helperPhrase(.noIce, tintName: kind.tintName),
+                    helperPhrase(.payNow, tintName: kind.tintName),
+                ]
+            }
+
+            return [
+                helperPhrase(.noIce, tintName: kind.tintName),
+                helperPhrase(.lessIce, tintName: kind.tintName),
+                helperPhrase(.payNow, tintName: kind.tintName),
+            ]
+        }
+    }
+
+    private static func helperPhrase(_ phrase: VietnameseMenuHelperPhrase, tintName: AccentTint) -> PhraseOption {
+        PhraseOption(
+            id: phrase.id,
+            vietnamese: phrase.vietnamese,
+            english: phrase.english,
+            pronunciation: phrase.pronunciation,
+            symbolName: "text.bubble.fill",
+            tintName: tintName,
+            detailPageID: phrase.detailPageID,
+            audioKey: phrase.audioKey
         )
     }
 
@@ -507,5 +800,135 @@ enum VietnameseMenuCatalog {
         }
 
         return payload.items
+    }
+}
+
+private enum VietnameseMenuHelperPhrase {
+    case lessSugar
+    case lessIce
+    case noIce
+    case notSpicy
+    case lessSpicy
+    case seeMenu
+    case payNow
+
+    var id: String {
+        switch self {
+        case .lessSugar:
+            return "menu-helper-less-sugar"
+        case .lessIce:
+            return "menu-helper-less-ice"
+        case .noIce:
+            return "menu-helper-no-ice"
+        case .notSpicy:
+            return "menu-helper-not-spicy"
+        case .lessSpicy:
+            return "menu-helper-less-spicy"
+        case .seeMenu:
+            return "menu-helper-see-menu"
+        case .payNow:
+            return "menu-helper-pay-now"
+        }
+    }
+
+    var vietnamese: String {
+        switch self {
+        case .lessSugar:
+            return "Ít đường thôi"
+        case .lessIce:
+            return "Ít đá thôi"
+        case .noIce:
+            return "Không đá"
+        case .notSpicy:
+            return "Không cay nhé"
+        case .lessSpicy:
+            return "Ít cay thôi"
+        case .seeMenu:
+            return "Cho tôi xem thực đơn được không?"
+        case .payNow:
+            return "Tính tiền giúp tôi"
+        }
+    }
+
+    var english: String {
+        switch self {
+        case .lessSugar:
+            return "Just a little sugar."
+        case .lessIce:
+            return "Just a little ice."
+        case .noIce:
+            return "No ice."
+        case .notSpicy:
+            return "Not spicy, please."
+        case .lessSpicy:
+            return "Less spicy, please."
+        case .seeMenu:
+            return "Can I see the menu?"
+        case .payNow:
+            return "Please let me pay."
+        }
+    }
+
+    var pronunciation: String {
+        switch self {
+        case .lessSugar:
+            return "eet duong thoy"
+        case .lessIce:
+            return "eet dah toy"
+        case .noIce:
+            return "khong da"
+        case .notSpicy:
+            return "khong kai nhe"
+        case .lessSpicy:
+            return "eet kai thoy"
+        case .seeMenu:
+            return "cho toy sem thook dun dook khong"
+        case .payNow:
+            return "ting tyen zoop toy"
+        }
+    }
+
+    var detailPageID: String {
+        switch self {
+        case .lessSugar:
+            return "viet-family-vpe-food-less-it-duong-thoi"
+        case .lessIce:
+            return "viet-family-food-less-ice"
+        case .noIce:
+            return "viet-family-vpe-food-without-khong-da"
+        case .notSpicy, .lessSpicy:
+            return "viet-family-food-not-spicy"
+        case .seeMenu:
+            return "viet-family-food-menu"
+        case .payNow:
+            return "viet-family-food-pay-now"
+        }
+    }
+
+    var audioKey: String? {
+        switch self {
+        case .lessIce:
+            return "coffee-4"
+        case .notSpicy:
+            return "food-3"
+        case .lessSpicy:
+            return "audio-authored-it-cay-thoi-05b8e258a2"
+        case .seeMenu:
+            return "food-menu"
+        case .payNow:
+            return "coffee-7"
+        case .lessSugar, .noIce:
+            return nil
+        }
+    }
+}
+
+private extension Optional where Wrapped == String {
+    var nonEmptyValue: String? {
+        guard let value = self?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else {
+            return nil
+        }
+
+        return value
     }
 }

@@ -137,6 +137,7 @@ struct PhraseArticleSection: Identifiable, Equatable {
     let body: String
     let phrases: [PhraseOption]
     let breakdown: [BreakdownToken]
+    var chips: [String] = []
     let presentation: SectionPresentation
 }
 
@@ -147,6 +148,7 @@ enum SectionPresentation: String, Decodable, Equatable {
     case horizontalPhraseCards = "horizontal-phrase-cards"
     case relationshipShelf = "relationship-shelf"
     case breakdownStrip = "breakdown-strip"
+    case menuChips = "menu-chips"
     case tipCallout = "tip-callout"
     case warningCallout = "warning-callout"
 
@@ -194,6 +196,7 @@ struct PhraseDetailSection: Identifiable, Equatable {
     let body: String
     var phrases: [PhraseOption] = []
     var breakdown: [BreakdownToken] = []
+    var chips: [String] = []
     var presentation: SectionPresentation = .automatic
 
     var articleSection: PhraseArticleSection {
@@ -209,6 +212,7 @@ struct PhraseDetailSection: Identifiable, Equatable {
             body: body,
             phrases: phrases,
             breakdown: breakdown,
+            chips: chips,
             presentation: resolvedPresentation
         )
     }

@@ -234,6 +234,9 @@ enum AppChromeLayout {
     static let topAdminTopPadding: CGFloat = 10
     static let topAdminControlSize: CGFloat = 47
     static let topAdminControlCornerRadius: CGFloat = topAdminControlSize / 2
+    static let menuSectionChromeHeight: CGFloat = 38
+    static let menuSectionChromeRowSpacing: CGFloat = 8
+    static let menuSectionJumpClearance: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing + menuSectionChromeHeight + 44
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
