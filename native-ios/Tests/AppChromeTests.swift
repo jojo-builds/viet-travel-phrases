@@ -63,6 +63,17 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testMenuSectionChromeFitsBelowTopAdminRow() {
+        let stackedChromeHeight = AppChromeLayout.topAdminTopPadding
+            + AppChromeLayout.topAdminControlSize
+            + AppChromeLayout.menuSectionChromeRowSpacing
+            + AppChromeLayout.menuSectionChromeHeight
+
+        XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
+        XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topSeparationHeight)
+        XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
+    }
+
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
         XCTAssertEqual(ExploreCatalogLayout.itemsPerGroup, 3)
         XCTAssertGreaterThan(ExploreCatalogLayout.fullGroupHeight, ExploreCatalogLayout.rowHeight * 3)
@@ -300,9 +311,8 @@ final class AppChromeTests: XCTestCase {
 
     func testBrowseCityHeroMorphTimingLetsHeroLeadDestinationBody() {
         XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.navigationDuration, 0.38)
-        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.pageFadeDuration, 0.22)
         XCTAssertGreaterThan(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 0)
-        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 180_000_000)
+        XCTAssertGreaterThanOrEqual(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 240_000_000)
         XCTAssertLessThan(
             BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds,
             BrowseCityHeroMorphTiming.navigationDurationNanoseconds
@@ -1426,24 +1436,123 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(drinks.subcategories.first?.phraseCount, 14)
     }
 
+    func testVietnameseMenuSectionsExposeFullVerticalInventory() {
+        let foodSections = VietnameseMenuCatalog.sections(for: .food)
+        let drinkSections = VietnameseMenuCatalog.sections(for: .drink)
+
+        XCTAssertEqual(foodSections.map(\.id), [
+            "popular",
+            "noodle-soups",
+            "dry-noodles-and-vermicelli",
+            "rice-and-sticky-rice",
+            "rolls-appetizers-and-street-snacks",
+            "banh-mi-bread-and-buns",
+            "pork",
+            "chicken-and-duck",
+            "beef-and-goat",
+            "seafood",
+            "vegetarian",
+            "soups-hot-pots-and-family-style",
+            "desserts-and-sweets",
+        ])
+        XCTAssertEqual(foodSections.first?.items.map(\.itemID), ["food-pho-bo", "food-pho-ga", "food-bun-bo-hue", "food-bun-rieu-cua", "food-hu-tieu-nam-vang"])
+        XCTAssertEqual(foodSections.first?.featuredImageName, "HeroMenuFoodPhoBo")
+        XCTAssertEqual(foodSections.first { $0.id == "seafood" }?.featuredImageName, "HeroMenuFoodTomRangMuoi")
+        XCTAssertEqual(foodSections.dropFirst().reduce(0) { $0 + $1.itemCount }, 269)
+
+        XCTAssertEqual(drinkSections.map(\.id), [
+            "popular",
+            "coffee",
+            "tea",
+            "smoothies",
+            "juices-and-fresh-drinks",
+            "water-soda-and-other-drinks",
+        ])
+        XCTAssertEqual(drinkSections.first?.items.map(\.itemID), ["drink-ca-phe-sua-da", "drink-ca-phe-den-da", "drink-bac-xiu", "drink-ca-phe-trung", "drink-ca-phe-cot-dua"])
+        XCTAssertEqual(drinkSections.first?.featuredImageName, "HeroMenuDrinkCaPheSuaDa")
+        XCTAssertEqual(drinkSections.first { $0.id == "tea" }?.featuredImageName, "HeroMenuDrinkTraDa")
+        XCTAssertEqual(drinkSections.dropFirst().reduce(0) { $0 + $1.itemCount }, 86)
+    }
+
     func testVietnameseMenuDetailPagesUseSuppliedTemplateCopy() {
         let pho = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
         let coffee = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-drink-ca-phe-sua-da"))
+        let eggCoffee = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-drink-ca-phe-trung"))
 
         XCTAssertEqual(pho.title, "Phở bò")
         XCTAssertEqual(pho.englishTitle, "Beef noodle soup")
         XCTAssertEqual(pho.pronunciation, "fuh baw")
         XCTAssertEqual(pho.heroImageName, "HeroMenuFoodPhoBo")
-        XCTAssertTrue(pho.sections.first?.body.contains("best-known noodle soup") == true)
-        XCTAssertEqual(pho.sections.first { $0.id == "usually-includes" }?.breakdown.map(\.vietnamese), ["beef broth", "rice noodles", "sliced beef", "herbs", "lime"])
+        XCTAssertEqual(pho.sections.map(\.id), ["what-it-is", "usually-includes", "how-to-enjoy", "worth-knowing", "common-options", "useful-phrases", "standard-way"])
+        XCTAssertTrue(pho.sections.first?.body.contains("clear, fragrant broth") == true)
+        XCTAssertTrue(pho.sections.first { $0.id == "how-to-enjoy" }?.body.contains("Taste the broth first") == true)
+        XCTAssertTrue(pho.sections.first { $0.id == "worth-knowing" }?.body.contains("signature noodle soups") == true)
+        XCTAssertEqual(pho.sections.first { $0.id == "usually-includes" }?.presentation, .menuChips)
+        XCTAssertEqual(pho.sections.first { $0.id == "usually-includes" }?.chips, ["beef broth", "rice noodles", "sliced beef", "herbs", "lime"])
+        XCTAssertEqual(pho.sections.first { $0.id == "usually-includes" }?.breakdown, [])
+        XCTAssertEqual(pho.sections.first { $0.id == "common-options" }?.presentation, .menuChips)
+        XCTAssertEqual(pho.sections.first { $0.id == "common-options" }?.chips, ["extra herbs", "chili", "bean sprouts", "less spicy", "no MSG"])
+        XCTAssertEqual(pho.sections.first { $0.id == "common-options" }?.breakdown, [])
         XCTAssertEqual(pho.sections.first { $0.id == "standard-way" }?.phrases.first?.vietnamese, "Cho tôi một tô phở bò.")
 
         XCTAssertEqual(coffee.title, "Cà phê sữa đá")
         XCTAssertEqual(coffee.englishTitle, "Vietnamese iced milk coffee")
         XCTAssertEqual(coffee.heroImageName, "HeroMenuDrinkCaPheSuaDa")
-        XCTAssertTrue(coffee.sections.first?.body.contains("iconic iced milk coffee") == true)
+        XCTAssertTrue(coffee.sections.first?.body.contains("robusta coffee") == true)
+        XCTAssertTrue(coffee.sections.first { $0.id == "worth-knowing" }?.body.contains("phin") == true)
+        XCTAssertEqual(coffee.sections.first { $0.id == "useful-phrases" }?.phrases.map(\.vietnamese), ["Ít đường thôi", "Ít đá thôi", "Không đá", "Tính tiền giúp tôi"])
         XCTAssertEqual(coffee.practiceCTALabel, "Practice ordering this")
         XCTAssertFalse(coffee.showsCatalogExplore)
+
+        XCTAssertEqual(eggCoffee.title, "Cà phê trứng")
+        XCTAssertTrue(eggCoffee.sections.first?.body.contains("Hanoi-born egg coffee") == true)
+        XCTAssertTrue(eggCoffee.sections.first { $0.id == "usually-includes" }?.chips.contains("egg cream") == true)
+        XCTAssertTrue(eggCoffee.sections.first { $0.id == "worth-knowing" }?.body.contains("Hanoi café culture") == true)
+    }
+
+    func testVietnameseFoodMenuCopyHighlightsFoodSaucesAndCorrectIngredients() {
+        let bunBoXao = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-bun-bo-xao"))
+        let bunDau = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-bun-dau-mam-tom"))
+        let bunChaCa = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-bun-cha-ca"))
+        let supCua = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-sup-cua"))
+        let banhMiBoKho = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-banh-mi-bo-kho"))
+        let boKhoBanhMi = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-bo-kho-banh-mi"))
+        let caRiDe = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-ca-ri-de"))
+
+        XCTAssertTrue(bunBoXao.sections.first?.body.contains("nước chấm") == true)
+        XCTAssertTrue(bunBoXao.sections.first { $0.id == "worth-knowing" }?.body.contains("fish sauce balanced with lime") == true)
+        XCTAssertEqual(bunBoXao.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "stir-fried beef", "fresh herbs", "nước chấm", "peanuts or fried shallots"])
+        XCTAssertFalse(bunBoXao.sections.first { $0.id == "usually-includes" }?.chips.contains("egg noodles") == true)
+
+        XCTAssertTrue(bunDau.sections.first?.body.contains("shrimp-paste sauce") == true)
+        XCTAssertEqual(bunDau.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "fried tofu", "fresh herbs", "mắm tôm", "pork optional"])
+
+        XCTAssertTrue(bunChaCa.sections.first?.body.contains("fish cakes") == true)
+        XCTAssertEqual(bunChaCa.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "fish cakes", "fresh herbs", "nước chấm or light broth", "fried shallots"])
+        XCTAssertFalse(bunChaCa.sections.first?.body.localizedCaseInsensitiveContains("grilled pork") == true)
+        XCTAssertFalse(bunChaCa.sections.first { $0.id == "worth-knowing" }?.body.localizedCaseInsensitiveContains("Hanoi") == true)
+
+        XCTAssertTrue(supCua.sections.first?.body.contains("thick crab soup") == true)
+        XCTAssertEqual(supCua.sections.first { $0.id == "usually-includes" }?.chips, ["crab soup", "egg ribbons", "corn or asparagus", "cilantro", "pepper"])
+        XCTAssertFalse(supCua.sections.first { $0.id == "usually-includes" }?.chips.contains("rice paper") == true)
+
+        XCTAssertTrue(banhMiBoKho.sections.first?.body.contains("beef stew served with bread") == true)
+        XCTAssertEqual(banhMiBoKho.sections.first { $0.id == "usually-includes" }?.chips, ["baguette", "beef stew", "carrots", "herbs", "spiced broth"])
+        XCTAssertFalse(banhMiBoKho.sections.first?.body.localizedCaseInsensitiveContains("sandwich with") == true)
+        XCTAssertEqual(banhMiBoKho.sections.first { $0.id == "standard-way" }?.phrases.first?.english, "I’d like one order of beef stew with bread.")
+
+        XCTAssertTrue(boKhoBanhMi.sections.first?.body.contains("beef stew served with bread") == true)
+        XCTAssertEqual(boKhoBanhMi.sections.first { $0.id == "usually-includes" }?.chips, ["beef stew", "baguette", "carrots", "herbs", "spiced broth"])
+        XCTAssertEqual(boKhoBanhMi.sections.first { $0.id == "standard-way" }?.phrases.first?.english, "I’d like one order of beef stew with bread.")
+        XCTAssertFalse(boKhoBanhMi.sections.first { $0.id == "standard-way" }?.phrases.first?.english.localizedCaseInsensitiveContains("sandwich") == true)
+
+        XCTAssertTrue(caRiDe.sections.first?.body.contains("goat curry") == true)
+        XCTAssertEqual(caRiDe.sections.first { $0.id == "usually-includes" }?.chips, ["goat", "curry sauce", "warm spices", "herbs", "bread or rice"])
+        XCTAssertFalse(caRiDe.sections.first { $0.id == "usually-includes" }?.chips.contains("fish") == true)
+    }
+
+    func testVietnameseMenuGuideCopyAuditFindsNoMissingOrGenericGuideFields() {
+        XCTAssertEqual(VietnameseMenuCatalog.guideCopyAuditFailures(), [])
     }
 
     func testVietnameseMenuItemsUseUniqueImageAssetNames() {
@@ -1730,6 +1839,21 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(forwardPresentation.scale, 1, accuracy: 0.001)
         XCTAssertEqual(currentPresentation.horizontalOffset, -21.6, accuracy: 0.001)
         XCTAssertEqual(forwardPresentation.horizontalOffset, 280, accuracy: 0.001)
+    }
+
+    func testCityHeroMorphKeepsInactiveBrowsePageVisible() {
+        let presentation = AppInteractiveNavigationPresentation.presentation(
+            route: .browse,
+            currentRoute: .browseCollection(.city("danang")),
+            backPreviewRoute: .browse,
+            forwardPreviewRoute: nil,
+            drag: nil,
+            width: 400,
+            visibleInactiveRoutes: [.browse]
+        )
+
+        XCTAssertEqual(presentation.opacity, 1, accuracy: 0.001)
+        XCTAssertEqual(presentation.horizontalOffset, 0, accuracy: 0.001)
     }
 
     func testInteractiveNavigationCompletionTargetsAreDeterministic() {
