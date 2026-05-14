@@ -6,6 +6,10 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..", "..");
 const menuPath = path.join(repoRoot, "native-ios", "Resources", "vietnamese-menu-copy.json");
 const payload = JSON.parse(fs.readFileSync(menuPath, "utf8"));
+const culturalOverridesPath = path.join(__dirname, "vietnamese-menu-cultural-copy-overrides.json");
+const culturalOverrides = fs.existsSync(culturalOverridesPath)
+  ? JSON.parse(fs.readFileSync(culturalOverridesPath, "utf8"))
+  : {};
 
 const exactCopy = {
   "food-pho-bo": {
@@ -883,17 +887,34 @@ function polishItem(item) {
     commonOptions: optionsFor(item),
     quickSayEnglish: quickSayEnglishFor(item),
   };
-  const exact = exactCopy[item.itemID] ?? {};
+  const exact = {
+    ...(exactCopy[item.itemID] ?? {}),
+    ...(culturalOverrides[item.itemID] ?? {}),
+  };
   const guideBase = {
     ...item,
     ...polished,
     ...exact,
   };
+  const guide = guideCopyFor(guideBase);
+
+  for (const field of [
+    "whatItIs",
+    "howToEnjoy",
+    "worthKnowing",
+    "regionalAssociation",
+    "originPosture",
+    "travelerCaution",
+  ]) {
+    if (Object.prototype.hasOwnProperty.call(exact, field)) {
+      guide[field] = exact[field];
+    }
+  }
 
   return {
     ...polished,
     ...exact,
-    ...guideCopyFor(guideBase),
+    ...guide,
   };
 }
 

@@ -349,6 +349,14 @@ enum VietnameseMenuCatalog {
             "meat-free dish featuring",
             "Depending on the order",
             "strong café-style finish",
+            "Vietnamese sweet with",
+            "Vietnamese sweet:",
+            "a tea drink that can be light",
+            "fresh Vietnamese drink with",
+            "cold, simple, or familiar drink order",
+            "small finish that may be",
+            "rice plate with rice with",
+            "savory toppings and savory toppings",
         ]
         let coffeeGenericFragments = [
             "Vietnam is a major coffee country",
@@ -360,6 +368,14 @@ enum VietnameseMenuCatalog {
             "the main topping",
             "common anchors",
             "strong café-style finish",
+            "Vietnamese sweet with",
+            "Vietnamese sweet:",
+            "a tea drink that can be light",
+            "fresh Vietnamese drink with",
+            "cold, simple, or familiar drink order",
+            "small finish that may be",
+            "rice plate with rice with",
+            "savory toppings and savory toppings",
         ]
         let foodVisibleBlockFragments = [
             "many travelers",
@@ -436,6 +452,8 @@ enum VietnameseMenuCatalog {
             let lowerQuickSayVietnamese = item.quickSayVietnamese.lowercased()
             let lowerQuickSayEnglish = item.quickSayEnglish.lowercased()
             let isFood = item.menuType == VietnameseMenuKind.food.rawValue
+            let isDrink = item.menuType == VietnameseMenuKind.drink.rawValue
+            let isAlcoholDrink = item.itemID.hasPrefix("drink-bia-") || item.itemID.hasPrefix("drink-ruou-")
             let includesEggNoodles = lowerIncludes.contains { $0.contains("egg noodles") }
             let includesRiceVermicelli = lowerIncludes.contains { $0.contains("rice vermicelli") }
             let includesGlassNoodles = lowerIncludes.contains { $0.contains("glass noodles") }
@@ -481,6 +499,15 @@ enum VietnameseMenuCatalog {
                     : nil,
                 isFood && isMiQuang && !includesTurmericRiceNoodles
                     ? "\(item.itemID): Mì Quảng item is missing turmeric rice noodles"
+                    : nil,
+                isDrink && !isAlcoholDrink && visibleText.localizedCaseInsensitiveContains("beer")
+                    ? "\(item.itemID): non-alcoholic drink copy mentions beer"
+                    : nil,
+                isDrink && !isAlcoholDrink && visibleText.localizedCaseInsensitiveContains("alcohol")
+                    ? "\(item.itemID): non-alcoholic drink copy mentions alcohol"
+                    : nil,
+                isDrink && !isAlcoholDrink && visibleText.localizedCaseInsensitiveContains("rice-wine")
+                    ? "\(item.itemID): non-alcoholic drink copy mentions rice wine"
                     : nil,
                 item.category == "Vegetarian" ? lowerIncludes.first(where: { include in
                     vegetarianMeatTerms.contains { include.contains($0) }

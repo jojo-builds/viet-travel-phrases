@@ -1558,6 +1558,46 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(caRiDe.sections.first { $0.id == "usually-includes" }?.chips.contains("fish") == true)
     }
 
+    func testVietnameseMenuCulturalCopyOverridesSpecificMenuRows() {
+        func item(_ id: String) -> VietnameseMenuItem {
+            VietnameseMenuCatalog.allItems.first { $0.itemID == id }!
+        }
+
+        let thitKhoTau = item("food-thit-kho-tau")
+        XCTAssertTrue(thitKhoTau.atAGlance.contains("coconut water"))
+        XCTAssertTrue(thitKhoTau.goodToKnow.contains("family-meal food"))
+        XCTAssertTrue(thitKhoTau.guideWorthKnowing.contains("Tết tables"))
+        XCTAssertEqual(thitKhoTau.usuallyIncludes, ["pork belly", "eggs", "coconut water", "fish sauce caramel", "black pepper"])
+
+        let caKhoTo = item("food-ca-kho-to")
+        XCTAssertTrue(caKhoTo.atAGlance.contains("fish sauce, caramelized sugar"))
+        XCTAssertTrue(caKhoTo.goodToKnow.contains("fish-sauce caramel"))
+        XCTAssertTrue(caKhoTo.guideWorthKnowing.contains("clay pot and fish-sauce caramel"))
+
+        let banhBao = item("food-banh-bao")
+        XCTAssertTrue(banhBao.atAGlance.contains("soft steamed bun"))
+        XCTAssertTrue(banhBao.goodToKnow.contains("Do not ask for this toasted"))
+        XCTAssertFalse(banhBao.atAGlance.localizedCaseInsensitiveContains("crisp baguette"))
+
+        let chaCa = item("food-cha-ca-la-vong")
+        XCTAssertTrue(chaCa.atAGlance.contains("Hanoi-style turmeric fish"))
+        XCTAssertTrue(chaCa.usuallyIncludes.contains("dill"))
+        XCTAssertTrue(chaCa.guideWorthKnowing.contains("Dill is not a garnish"))
+
+        let cheBaMau = item("food-che-ba-mau")
+        XCTAssertTrue(cheBaMau.atAGlance.contains("three-color dessert cup"))
+        XCTAssertEqual(cheBaMau.usuallyIncludes, ["mung beans", "red beans", "pandan jelly", "coconut milk", "crushed ice"])
+
+        let traBiDao = item("drink-tra-bi-dao")
+        XCTAssertTrue(traBiDao.atAGlance.contains("winter melon tea"))
+        XCTAssertTrue(traBiDao.goodToKnow.contains("not peach"))
+        XCTAssertFalse(traBiDao.usuallyIncludes.contains("peach"))
+
+        let ruouDe = item("drink-ruou-de")
+        XCTAssertTrue(ruouDe.travelerCaution?.contains("Alcoholic") == true)
+        XCTAssertTrue(ruouDe.guideWorthKnowing.contains("rice-liquor culture"))
+    }
+
     func testVietnameseMenuGuideCopyAuditFindsNoMissingOrGenericGuideFields() {
         XCTAssertEqual(VietnameseMenuCatalog.guideCopyAuditFailures(), [])
     }
