@@ -1616,6 +1616,24 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
+    func testVietnameseMenuItemsHavePlayableNameAudio() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+
+        for item in VietnameseMenuCatalog.allItems {
+            let audioKey = try XCTUnwrap(
+                manifest.audioKey(forExactText: item.vietnameseItem),
+                "\(item.itemID) missing menu-name audio for \(item.vietnameseItem)"
+            )
+            XCTAssertTrue(
+                manifest.hasPlayableEntry(for: audioKey, matchingText: item.vietnameseItem),
+                "\(item.itemID) menu-name audio is not playable for \(item.vietnameseItem)"
+            )
+
+            let detail = try XCTUnwrap(PhraseDetailPage.page(withID: item.detailPageID))
+            XCTAssertEqual(detail.playbackAudioKey, audioKey, "\(item.itemID) detail page should play its menu-name audio")
+        }
+    }
+
     func testGenericLandmarkAndStreetCollectionsStartWithEntitiesBeforePhraseDepth() {
         let landmarks = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("landmarks-attractions")))
         let streets = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("neighborhoods-streets")))
