@@ -48,6 +48,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
         XCTAssertGreaterThan(AppChromeLayout.searchPageLayerZIndex, AppChromeLayout.contentPageLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.chromeSeparationLayerZIndex, AppChromeLayout.searchPageLayerZIndex)
+        XCTAssertGreaterThan(AppChromeLayout.menuSectionBackdropLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
+        XCTAssertLessThan(AppChromeLayout.menuSectionBackdropLayerZIndex, AppChromeLayout.topAdminHitTestLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.topAdminHitTestLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.topAdminControlLayerZIndex, AppChromeLayout.topAdminHitTestLayerZIndex)
     }
@@ -85,6 +87,21 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
         XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topSeparationHeight)
         XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
+    }
+
+    func testMenuSectionBackdropFadeStartsAtSectionRowAndExtendsBehindContent() {
+        let sectionRowY = AppChromeLayout.topAdminTopPadding
+            + AppChromeLayout.topAdminControlSize
+            + AppChromeLayout.menuSectionChromeRowSpacing
+        let sectionRowBottomY = sectionRowY + AppChromeLayout.menuSectionChromeHeight
+
+        XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, sectionRowY)
+        XCTAssertGreaterThan(AppChromeLayout.menuSectionBackdropHeight, AppChromeLayout.menuSectionChromeHeight)
+        XCTAssertGreaterThan(
+            AppChromeLayout.menuSectionBackdropTopOffset + AppChromeLayout.menuSectionBackdropHeight,
+            sectionRowBottomY + 32
+        )
+        XCTAssertFalse(AppChromeLayout.menuSectionBackdropAllowsHitTesting)
     }
 
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
@@ -408,6 +425,43 @@ final class AppChromeTests: XCTestCase {
             PinnedAudioSpeedChromePolicy.state(for: [offscreenHomePlayer], currentRoute: .home),
             PinnedAudioSpeedChromeState(route: .home, isVisible: true)
         )
+    }
+
+    func testPinnedAudioSpeedChromeAppearsWithVietnameseMenuSectionChrome() {
+        for kind in [VietnameseMenuKind.food, .drink] {
+            let route = AppRoute.browseCollection(.category(kind.routeID))
+
+            XCTAssertTrue(
+                PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(
+                    chromeState: .hidden,
+                    currentRoute: route,
+                    hasStaticBackButton: true,
+                    isSearchPresented: false,
+                    isMenuSectionChromeVisible: true
+                ),
+                "\(kind.routeID) should show speed control above the pinned section menu"
+            )
+            XCTAssertFalse(
+                PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(
+                    chromeState: .hidden,
+                    currentRoute: route,
+                    hasStaticBackButton: true,
+                    isSearchPresented: false,
+                    isMenuSectionChromeVisible: false
+                ),
+                "\(kind.routeID) should wait until the section menu is pinned"
+            )
+            XCTAssertFalse(
+                PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(
+                    chromeState: .hidden,
+                    currentRoute: route,
+                    hasStaticBackButton: true,
+                    isSearchPresented: true,
+                    isMenuSectionChromeVisible: true
+                ),
+                "\(kind.routeID) should not show speed control while search is presented"
+            )
+        }
     }
 
     func testPinnedAudioSpeedChromeStateIgnoresFrameDriftWithinSameVisibilityBand() {
