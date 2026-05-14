@@ -25,6 +25,9 @@ struct PracticeView: View {
     @State private var isScenarioThreadPresented = false
     @State private var activeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
     @State private var pendingScenarioReturnID: PracticeScenarioID?
+    @State private var pendingScenarioReturnTurnID: String?
+    @State private var scenarioReturnFocusRequest: PracticeStoryReturnFocusRequest?
+    @State private var scenarioReturnFocusRequestID = 0
     @State private var didStartInitialMode = false
     @State private var handledStartRequestID: Int?
     @State private var deckLoadGeneration = 0
@@ -101,10 +104,11 @@ struct PracticeView: View {
                 PracticeMessagesThreadHost(
                     activeScenarioSession: activeScenarioSession,
                     scenarioCompletion: scenarioCompletion,
+                    returnFocusRequest: scenarioReturnFocusRequest,
                     isInPracticePool: isScenarioPageInPractice,
                     isSavedPhrasePage: isScenarioPageSaved,
-                    onOpenPhrasePage: { pageID in
-                        openScenarioPhrasePage(pageID)
+                    onOpenPhrasePage: { pageID, returnTurnID in
+                        openScenarioPhrasePage(pageID, returnTurnID: returnTurnID)
                     },
                     onTogglePracticePage: toggleScenarioPracticePage,
                     onToggleSavedPhrasePage: toggleScenarioSavedPage,
@@ -117,7 +121,10 @@ struct PracticeView: View {
                         dismissScenarioSheet()
                         onBrowseTapped()
                     },
-                    onDismiss: dismissScenarioThread
+                    onDismiss: dismissScenarioThread,
+                    onReturnFocusConsumed: {
+                        scenarioReturnFocusRequest = nil
+                    }
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .transition(.opacity)
@@ -203,7 +210,8 @@ struct PracticeView: View {
         _ scenario: PracticeScenario,
         context: PracticeEntryContext = .standard,
         reset: Bool = false,
-        threadDismissal: PracticeScenarioThreadDismissal = .messagesHub
+        threadDismissal: PracticeScenarioThreadDismissal = .messagesHub,
+        returnFocusRequest: PracticeStoryReturnFocusRequest? = nil
     ) {
         guard !scenario.steps.isEmpty else {
             return
@@ -211,6 +219,7 @@ struct PracticeView: View {
 
         unreadScenarioIDs.remove(scenario.id)
         activeScenarioThreadDismissal = threadDismissal
+        scenarioReturnFocusRequest = returnFocusRequest
 
         if reset {
             messageStore.clear(scenario.id)
@@ -297,6 +306,7 @@ struct PracticeView: View {
 
     private func dismissScenarioSheet() {
         isScenarioThreadPresented = false
+        scenarioReturnFocusRequest = nil
         onThreadPresentationChanged(false)
         reloadScenarioSnapshot()
     }
@@ -308,6 +318,7 @@ struct PracticeView: View {
         case .originRoute:
             let scenarioID = activeScenarioSession?.scenario.id ?? scenarioCompletion?.scenario.id
             isScenarioThreadPresented = false
+            scenarioReturnFocusRequest = nil
             onThreadPresentationChanged(false)
             activeScenarioThreadDismissal = .messagesHub
             reloadScenarioSnapshot()
@@ -323,9 +334,10 @@ struct PracticeView: View {
         intentStore.isPageSaved(pageID)
     }
 
-    private func openScenarioPhrasePage(_ pageID: String) {
+    private func openScenarioPhrasePage(_ pageID: String, returnTurnID: String?) {
         advanceScenarioSessionIfReady()
         pendingScenarioReturnID = activeScenarioSession?.scenario.id ?? scenarioCompletion?.scenario.id
+        pendingScenarioReturnTurnID = returnTurnID
         isScenarioThreadPresented = false
         onThreadPresentationChanged(false)
         onOpenDetail(pageID)
@@ -555,14 +567,32 @@ struct PracticeView: View {
             return
         }
 
+        let returnTurnID = pendingScenarioReturnTurnID
+        let returnFocusRequest: PracticeStoryReturnFocusRequest?
+        if let returnTurnID {
+            scenarioReturnFocusRequestID += 1
+            returnFocusRequest = PracticeStoryReturnFocusRequest(
+                id: scenarioReturnFocusRequestID,
+                turnID: returnTurnID
+            )
+        } else {
+            returnFocusRequest = nil
+        }
+
         self.pendingScenarioReturnID = nil
+        self.pendingScenarioReturnTurnID = nil
         DispatchQueue.main.asyncAfter(deadline: .now() + Self.scenarioReturnPresentationDelay) {
             guard isActive else {
                 self.pendingScenarioReturnID = scenario.id
+                self.pendingScenarioReturnTurnID = returnTurnID
                 return
             }
 
-            presentScenarioThread(scenario, threadDismissal: activeScenarioThreadDismissal)
+            presentScenarioThread(
+                scenario,
+                threadDismissal: activeScenarioThreadDismissal,
+                returnFocusRequest: returnFocusRequest
+            )
         }
     }
 
@@ -1409,27 +1439,45 @@ private struct PracticeMessageBadgeBackdrop: View {
 
     var body: some View {
         ZStack {
-            Image(scenarioID.messageBadgeBackgroundImageName)
-                .resizable()
-                .scaledToFill()
-                .frame(width: size, height: size)
-                .scaleEffect(scenarioID.messageBadgeImageScale)
+            LinearGradient(
+                colors: scenarioID.messageBadgePalette,
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+
+            PracticeMessageBadgeBaseScene(kind: scenarioID.messageBadgeSceneKind, size: size)
+                .opacity(0.82)
+
+            Image(systemName: scenarioID.messageBadgeBackdropSymbolName)
+                .font(.system(size: size * scenarioID.messageBadgeBackdropSymbolScale, weight: .black))
+                .foregroundStyle(.white.opacity(0.2))
+                .rotationEffect(.degrees(scenarioID.messageBadgeBackdropRotation))
                 .offset(
-                    x: scenarioID.messageBadgeImageOffset.width * size,
-                    y: scenarioID.messageBadgeImageOffset.height * size
+                    x: scenarioID.messageBadgeBackdropSymbolOffset.width * size,
+                    y: scenarioID.messageBadgeBackdropSymbolOffset.height * size
                 )
-                .saturation(0.95)
-                .contrast(1.05)
+
+            if let label = scenarioID.messageBadgeSceneLabel {
+                Text(label)
+                    .font(.system(size: size * 0.112, weight: .black, design: .rounded))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.74)
+                    .foregroundStyle(.white.opacity(0.74))
+                    .padding(.horizontal, size * 0.07)
+                    .padding(.vertical, size * 0.025)
+                    .background(.black.opacity(0.16), in: Capsule())
+                    .offset(y: -size * 0.31)
+            }
 
             scenarioID.messageBadgeOverlayColor
-                .opacity(0.36)
-                .blendMode(.multiply)
+                .opacity(0.14)
+                .blendMode(.overlay)
 
             LinearGradient(
                 colors: [
-                    .white.opacity(0.2),
+                    .white.opacity(0.24),
                     .white.opacity(0.02),
-                    .black.opacity(0.18),
+                    .black.opacity(0.22),
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -1744,7 +1792,7 @@ private struct PracticeMessageBadgeBaseScene: View {
     }
 }
 
-private enum PracticeMessageBadgeSceneKind {
+enum PracticeMessageBadgeSceneKind: String {
     case airport
     case passportDesk
     case airportServices
@@ -1764,42 +1812,7 @@ private enum PracticeMessageBadgeSceneKind {
     case greeting
 }
 
-private extension PracticeScenarioID {
-    var messageBadgeBackgroundImageName: String {
-        switch self {
-        case .danangFirstDay:
-            return "HeroCategoryAirport"
-        case .airportPassportControl:
-            return "HeroCategoryAirport"
-        case .airportSimCash:
-            return "HeroCategoryFirstDay"
-        case .airportWifiPower:
-            return "HeroCategoryAirport"
-        case .hotelCheckInHelp, .hotelBagsTaxi, .hotelWifiCheckout:
-            return "HeroCategoryHotel"
-        case .hotelRoomHelp:
-            return "BrowseCollectionHotel"
-        case .foodAllergyHelp, .foodCoffeeOrder:
-            return "BrowseCollectionFood"
-        case .restaurantOrderingPayment:
-            return "HeroCategoryFood"
-        case .danangDay:
-            return "HeroVietnamMasthead"
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
-            return "HeroCategoryGettingAround"
-        case .shoppingMarketPrice:
-            return "BrowseCollectionShopping"
-        case .shoppingSizeGift:
-            return "HomeSituationFoodShopping"
-        case .shoppingReceiptHelp, .shoppingPayCard:
-            return "HeroCategoryNumbersMoney"
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
-            return "HeroCategoryEmergency"
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
-            return "HeroCategoryGreetings"
-        }
-    }
-
+extension PracticeScenarioID {
     var messageBadgeOverlayColor: Color {
         switch self {
         case .danangFirstDay:
@@ -1837,40 +1850,20 @@ private extension PracticeScenarioID {
         }
     }
 
-    var messageBadgeImageScale: CGFloat {
-        switch self {
-        case .hotelRoomHelp, .foodAllergyHelp, .airportPassportControl, .shoppingMarketPrice, .foodCoffeeOrder:
-            return 1.18
-        case .shoppingSizeGift:
-            return 1.08
-        default:
-            return 1
-        }
+    var messageBadgeBackgroundSignature: String {
+        [
+            messageBadgePaletteID,
+            messageBadgeSceneKind.rawValue,
+            messageBadgeBackdropSymbolName,
+            messageBadgeSceneLabel ?? "none",
+        ].joined(separator: "|")
     }
 
-    var messageBadgeImageOffset: CGSize {
-        switch self {
-        case .danangFirstDay, .airportPassportControl:
-            return CGSize(width: 0, height: 0.22)
-        case .airportSimCash, .airportWifiPower:
-            return CGSize(width: 0, height: 0.18)
-        case .hotelCheckInHelp, .hotelBagsTaxi, .hotelWifiCheckout:
-            return CGSize(width: 0, height: 0.26)
-        case .hotelRoomHelp:
-            return CGSize(width: 0.08, height: 0)
-        case .restaurantOrderingPayment:
-            return CGSize(width: 0, height: 0.24)
-        case .foodAllergyHelp, .foodCoffeeOrder:
-            return CGSize(width: 0.08, height: 0)
-        case .danangDay:
-            return CGSize(width: -0.08, height: 0.24)
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
-            return CGSize(width: 0, height: 0.18)
-        case .shoppingReceiptHelp, .shoppingPayCard, .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp, .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
-            return CGSize(width: 0, height: 0.2)
-        default:
-            return .zero
-        }
+    var messageAvatarArtSignature: String {
+        [
+            messageAvatarSymbolName,
+            messageBadgeBackgroundSignature,
+        ].joined(separator: "|")
     }
 
     var messageBadgeSceneKind: PracticeMessageBadgeSceneKind {
@@ -1918,58 +1911,193 @@ private extension PracticeScenarioID {
         }
     }
 
+    var messageBadgePaletteID: String {
+        switch self {
+        case .danangFirstDay:
+            return "baggage-blue"
+        case .airportPassportControl:
+            return "passport-red"
+        case .airportSimCash:
+            return "sim-cash-teal"
+        case .airportWifiPower:
+            return "wifi-cyan"
+        case .hotelCheckInHelp:
+            return "hotel-checkin-violet"
+        case .hotelRoomHelp:
+            return "hotel-room-lavender"
+        case .hotelBagsTaxi:
+            return "hotel-bags-indigo"
+        case .hotelWifiCheckout:
+            return "hotel-checkout-mauve"
+        case .restaurantOrderingPayment:
+            return "restaurant-table-green"
+        case .danangDay:
+            return "beach-snacks-aqua"
+        case .foodAllergyHelp:
+            return "food-allergy-leaf"
+        case .foodCoffeeOrder:
+            return "coffee-order-caramel"
+        case .taxiGrabPickup:
+            return "grab-pickup-green"
+        case .taxiRouteHelp:
+            return "taxi-route-amber"
+        case .driverProblemHelp:
+            return "driver-help-alert"
+        case .walkingDirectionsHelp:
+            return "walking-help-bluegreen"
+        case .shoppingMarketPrice:
+            return "market-price-orange"
+        case .shoppingSizeGift:
+            return "gift-size-rose"
+        case .shoppingReceiptHelp:
+            return "receipt-help-gold"
+        case .shoppingPayCard:
+            return "pay-card-blue"
+        case .pharmacyHelp:
+            return "pharmacy-red-teal"
+        case .emergencyLostPassport:
+            return "lost-passport-navy"
+        case .emergencyLostBag:
+            return "lost-bag-crimson"
+        case .emergencyDoctorHelp:
+            return "doctor-help-clinical"
+        case .localGreetingMarket:
+            return "market-hello-teal"
+        case .localGreetingHotel:
+            return "hotel-hello-blue"
+        case .localGreetingRespect:
+            return "respect-hello-indigo"
+        case .localThanksSorry:
+            return "thanks-sorry-rose"
+        }
+    }
+
     var messageBadgePalette: [Color] {
         switch self {
         case .danangFirstDay:
-            return [Color(red: 0.22, green: 0.52, blue: 0.9), Color(red: 0.07, green: 0.28, blue: 0.58)]
+            return [Color(red: 0.22, green: 0.52, blue: 0.9), Color(red: 0.06, green: 0.21, blue: 0.48)]
         case .airportPassportControl:
-            return [Color(red: 0.98, green: 0.3, blue: 0.34), Color(red: 0.62, green: 0.08, blue: 0.16)]
+            return [Color(red: 0.96, green: 0.25, blue: 0.3), Color(red: 0.38, green: 0.09, blue: 0.2)]
         case .airportSimCash:
-            return [Color(red: 0.19, green: 0.62, blue: 0.52), Color(red: 0.05, green: 0.34, blue: 0.32)]
+            return [Color(red: 0.13, green: 0.65, blue: 0.52), Color(red: 0.04, green: 0.33, blue: 0.35)]
         case .airportWifiPower:
-            return [Color(red: 0.2, green: 0.58, blue: 0.72), Color(red: 0.04, green: 0.29, blue: 0.44)]
-        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout:
-            return [Color(red: 0.62, green: 0.43, blue: 0.85), Color(red: 0.28, green: 0.17, blue: 0.55)]
+            return [Color(red: 0.16, green: 0.58, blue: 0.82), Color(red: 0.04, green: 0.25, blue: 0.5)]
+        case .hotelCheckInHelp:
+            return [Color(red: 0.6, green: 0.39, blue: 0.84), Color(red: 0.27, green: 0.15, blue: 0.55)]
+        case .hotelRoomHelp:
+            return [Color(red: 0.68, green: 0.48, blue: 0.86), Color(red: 0.31, green: 0.2, blue: 0.62)]
+        case .hotelBagsTaxi:
+            return [Color(red: 0.48, green: 0.37, blue: 0.78), Color(red: 0.17, green: 0.2, blue: 0.55)]
+        case .hotelWifiCheckout:
+            return [Color(red: 0.65, green: 0.38, blue: 0.66), Color(red: 0.25, green: 0.16, blue: 0.48)]
         case .restaurantOrderingPayment:
-            return [Color(red: 0.24, green: 0.58, blue: 0.44), Color(red: 0.08, green: 0.34, blue: 0.27)]
+            return [Color(red: 0.24, green: 0.58, blue: 0.44), Color(red: 0.07, green: 0.31, blue: 0.24)]
         case .danangDay:
-            return [Color(red: 0.32, green: 0.72, blue: 0.66), Color(red: 0.14, green: 0.43, blue: 0.44)]
-        case .foodAllergyHelp, .foodCoffeeOrder:
-            return [Color(red: 0.22, green: 0.6, blue: 0.43), Color(red: 0.08, green: 0.34, blue: 0.28)]
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
-            return [Color(red: 0.88, green: 0.58, blue: 0.18), Color(red: 0.49, green: 0.28, blue: 0.07)]
-        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard:
-            return [Color(red: 0.88, green: 0.52, blue: 0.22), Color(red: 0.52, green: 0.23, blue: 0.08)]
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
-            return [Color(red: 0.94, green: 0.22, blue: 0.25), Color(red: 0.55, green: 0.06, blue: 0.13)]
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
-            return [Color(red: 0.17, green: 0.62, blue: 0.62), Color(red: 0.07, green: 0.32, blue: 0.39)]
+            return [Color(red: 0.32, green: 0.72, blue: 0.66), Color(red: 0.1, green: 0.38, blue: 0.46)]
+        case .foodAllergyHelp:
+            return [Color(red: 0.28, green: 0.66, blue: 0.38), Color(red: 0.08, green: 0.31, blue: 0.22)]
+        case .foodCoffeeOrder:
+            return [Color(red: 0.72, green: 0.49, blue: 0.28), Color(red: 0.26, green: 0.17, blue: 0.12)]
+        case .taxiGrabPickup:
+            return [Color(red: 0.28, green: 0.64, blue: 0.36), Color(red: 0.42, green: 0.3, blue: 0.08)]
+        case .taxiRouteHelp:
+            return [Color(red: 0.88, green: 0.58, blue: 0.18), Color(red: 0.4, green: 0.25, blue: 0.06)]
+        case .driverProblemHelp:
+            return [Color(red: 0.9, green: 0.45, blue: 0.2), Color(red: 0.5, green: 0.12, blue: 0.08)]
+        case .walkingDirectionsHelp:
+            return [Color(red: 0.18, green: 0.56, blue: 0.68), Color(red: 0.08, green: 0.32, blue: 0.34)]
+        case .shoppingMarketPrice:
+            return [Color(red: 0.88, green: 0.52, blue: 0.22), Color(red: 0.43, green: 0.23, blue: 0.07)]
+        case .shoppingSizeGift:
+            return [Color(red: 0.9, green: 0.38, blue: 0.56), Color(red: 0.43, green: 0.16, blue: 0.4)]
+        case .shoppingReceiptHelp:
+            return [Color(red: 0.82, green: 0.58, blue: 0.2), Color(red: 0.34, green: 0.25, blue: 0.11)]
+        case .shoppingPayCard:
+            return [Color(red: 0.22, green: 0.5, blue: 0.82), Color(red: 0.18, green: 0.22, blue: 0.56)]
+        case .pharmacyHelp:
+            return [Color(red: 0.9, green: 0.24, blue: 0.26), Color(red: 0.08, green: 0.39, blue: 0.41)]
+        case .emergencyLostPassport:
+            return [Color(red: 0.78, green: 0.14, blue: 0.22), Color(red: 0.12, green: 0.15, blue: 0.36)]
+        case .emergencyLostBag:
+            return [Color(red: 0.94, green: 0.25, blue: 0.18), Color(red: 0.42, green: 0.08, blue: 0.1)]
+        case .emergencyDoctorHelp:
+            return [Color(red: 0.9, green: 0.22, blue: 0.28), Color(red: 0.13, green: 0.28, blue: 0.56)]
+        case .localGreetingMarket:
+            return [Color(red: 0.15, green: 0.62, blue: 0.54), Color(red: 0.06, green: 0.32, blue: 0.29)]
+        case .localGreetingHotel:
+            return [Color(red: 0.18, green: 0.52, blue: 0.72), Color(red: 0.12, green: 0.25, blue: 0.5)]
+        case .localGreetingRespect:
+            return [Color(red: 0.36, green: 0.46, blue: 0.78), Color(red: 0.08, green: 0.29, blue: 0.42)]
+        case .localThanksSorry:
+            return [Color(red: 0.74, green: 0.36, blue: 0.5), Color(red: 0.08, green: 0.34, blue: 0.38)]
         }
     }
 
     var messageBadgeSceneLabel: String? {
         switch self {
+        case .danangFirstDay:
+            return "BAGS"
         case .airportPassportControl:
-            return "PASSPORT"
+            return "PASS"
         case .airportSimCash:
             return "SIM"
         case .airportWifiPower:
             return "WI-FI"
         case .hotelCheckInHelp:
-            return "HOTEL"
+            return "CHECK"
+        case .hotelRoomHelp:
+            return "ROOM"
+        case .hotelBagsTaxi:
+            return "TAXI"
+        case .hotelWifiCheckout:
+            return "OUT"
+        case .restaurantOrderingPayment:
+            return "TABLE"
+        case .danangDay:
+            return "SNACKS"
+        case .foodAllergyHelp:
+            return "ALLERGY"
+        case .foodCoffeeOrder:
+            return "COFFEE"
+        case .taxiGrabPickup:
+            return "PICKUP"
+        case .taxiRouteHelp:
+            return "ROUTE"
+        case .driverProblemHelp:
+            return "HELP"
+        case .walkingDirectionsHelp:
+            return "WALK"
         case .shoppingMarketPrice:
             return "MARKET"
+        case .shoppingSizeGift:
+            return "GIFT"
+        case .shoppingReceiptHelp:
+            return "RCPT"
+        case .shoppingPayCard:
+            return "CARD"
         case .pharmacyHelp:
-            return "PHARMACY"
-        default:
-            return nil
+            return "MEDS"
+        case .emergencyLostPassport:
+            return "PASS"
+        case .emergencyLostBag:
+            return "BAG"
+        case .emergencyDoctorHelp:
+            return "DOCTOR"
+        case .localGreetingMarket:
+            return "MARKET"
+        case .localGreetingHotel:
+            return "HOTEL"
+        case .localGreetingRespect:
+            return "FORMAL"
+        case .localThanksSorry:
+            return "THANKS"
         }
     }
 
     var messageBadgeBackdropSymbolName: String {
         switch self {
         case .danangFirstDay:
-            return "airplane"
+            return "airplane.arrival"
         case .airportPassportControl:
             return "person.text.rectangle"
         case .airportSimCash:
@@ -1981,7 +2109,7 @@ private extension PracticeScenarioID {
         case .hotelRoomHelp:
             return "bed.double.fill"
         case .hotelBagsTaxi:
-            return "cart.fill"
+            return "car.fill"
         case .hotelWifiCheckout:
             return "wifi.router.fill"
         case .restaurantOrderingPayment:
@@ -1989,7 +2117,7 @@ private extension PracticeScenarioID {
         case .danangDay:
             return "water.waves"
         case .foodAllergyHelp:
-            return "fork.knife.circle"
+            return "exclamationmark.triangle.fill"
         case .foodCoffeeOrder:
             return "cup.and.saucer.fill"
         case .taxiGrabPickup:
@@ -2005,7 +2133,7 @@ private extension PracticeScenarioID {
         case .shoppingSizeGift:
             return "shippingbox.fill"
         case .shoppingReceiptHelp:
-            return "creditcard.fill"
+            return "receipt.fill"
         case .shoppingPayCard:
             return "creditcard.fill"
         case .pharmacyHelp:
@@ -2017,7 +2145,7 @@ private extension PracticeScenarioID {
         case .emergencyDoctorHelp:
             return "stethoscope"
         case .localGreetingMarket:
-            return "bubble.left.and.bubble.right.fill"
+            return "basket.fill"
         case .localGreetingHotel:
             return "door.left.hand.open"
         case .localGreetingRespect:
@@ -2035,8 +2163,88 @@ private extension PracticeScenarioID {
             return 9
         case .danangDay:
             return -4
+        case .driverProblemHelp:
+            return 7
+        case .walkingDirectionsHelp:
+            return -8
         default:
             return 0
+        }
+    }
+
+    var messageBadgeBackdropSymbolScale: CGFloat {
+        switch self {
+        case .airportPassportControl, .emergencyLostPassport:
+            return 0.58
+        case .hotelCheckInHelp, .localGreetingHotel:
+            return 0.52
+        case .danangFirstDay, .hotelBagsTaxi, .emergencyLostBag:
+            return 0.64
+        case .restaurantOrderingPayment, .foodAllergyHelp:
+            return 0.56
+        default:
+            return 0.6
+        }
+    }
+
+    var messageBadgeBackdropSymbolOffset: CGSize {
+        switch self {
+        case .danangFirstDay:
+            return CGSize(width: 0.15, height: 0.15)
+        case .airportPassportControl:
+            return CGSize(width: 0.13, height: 0.1)
+        case .airportSimCash:
+            return CGSize(width: -0.14, height: 0.14)
+        case .airportWifiPower:
+            return CGSize(width: 0.12, height: 0.12)
+        case .hotelCheckInHelp:
+            return CGSize(width: 0.13, height: 0.16)
+        case .hotelRoomHelp:
+            return CGSize(width: -0.12, height: 0.14)
+        case .hotelBagsTaxi:
+            return CGSize(width: 0.16, height: 0.15)
+        case .hotelWifiCheckout:
+            return CGSize(width: 0.14, height: 0.13)
+        case .restaurantOrderingPayment:
+            return CGSize(width: 0.16, height: 0.14)
+        case .danangDay:
+            return CGSize(width: 0.16, height: 0.16)
+        case .foodAllergyHelp:
+            return CGSize(width: -0.14, height: 0.16)
+        case .foodCoffeeOrder:
+            return CGSize(width: 0.15, height: 0.12)
+        case .taxiGrabPickup:
+            return CGSize(width: 0.16, height: 0.15)
+        case .taxiRouteHelp:
+            return CGSize(width: 0.06, height: 0.16)
+        case .driverProblemHelp:
+            return CGSize(width: 0.14, height: 0.13)
+        case .walkingDirectionsHelp:
+            return CGSize(width: 0.14, height: 0.14)
+        case .shoppingMarketPrice:
+            return CGSize(width: -0.12, height: 0.15)
+        case .shoppingSizeGift:
+            return CGSize(width: 0.14, height: 0.12)
+        case .shoppingReceiptHelp:
+            return CGSize(width: -0.12, height: 0.14)
+        case .shoppingPayCard:
+            return CGSize(width: 0.13, height: 0.13)
+        case .pharmacyHelp:
+            return CGSize(width: 0.14, height: 0.14)
+        case .emergencyLostPassport:
+            return CGSize(width: 0.14, height: 0.12)
+        case .emergencyLostBag:
+            return CGSize(width: 0.15, height: 0.14)
+        case .emergencyDoctorHelp:
+            return CGSize(width: 0.13, height: 0.14)
+        case .localGreetingMarket:
+            return CGSize(width: -0.13, height: 0.14)
+        case .localGreetingHotel:
+            return CGSize(width: 0.15, height: 0.13)
+        case .localGreetingRespect:
+            return CGSize(width: 0.14, height: 0.13)
+        case .localThanksSorry:
+            return CGSize(width: 0.12, height: 0.14)
         }
     }
 

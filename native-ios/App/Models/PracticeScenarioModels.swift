@@ -157,7 +157,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     var symbolName: String {
         switch self {
         case .danangFirstDay:
-            return "airplane.arrival"
+            return "suitcase.rolling.fill"
         case .airportPassportControl:
             return "doc.text.fill"
         case .airportSimCash:
@@ -175,7 +175,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .restaurantOrderingPayment:
             return "fork.knife"
         case .danangDay:
-            return "cup.and.saucer.fill"
+            return "takeoutbag.and.cup.and.straw.fill"
         case .foodAllergyHelp:
             return "leaf.fill"
         case .foodCoffeeOrder:
@@ -207,7 +207,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .localGreetingMarket:
             return "hand.wave.fill"
         case .localGreetingHotel:
-            return "person.crop.circle.badge.checkmark"
+            return "door.left.hand.open"
         case .localGreetingRespect:
             return "person.2.fill"
         case .localThanksSorry:
@@ -540,7 +540,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     var messageAvatarSymbolName: String {
         switch self {
         case .danangFirstDay:
-            return "airplane.arrival"
+            return "suitcase.rolling.fill"
         case .airportPassportControl:
             return "doc.text.fill"
         case .airportSimCash:
@@ -558,7 +558,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .restaurantOrderingPayment:
             return "fork.knife"
         case .danangDay:
-            return "cup.and.saucer.fill"
+            return "takeoutbag.and.cup.and.straw.fill"
         case .foodAllergyHelp:
             return "leaf.fill"
         case .foodCoffeeOrder:
@@ -590,7 +590,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .localGreetingMarket:
             return "hand.wave.fill"
         case .localGreetingHotel:
-            return "person.crop.circle.badge.checkmark"
+            return "door.left.hand.open"
         case .localGreetingRespect:
             return "person.2.fill"
         case .localThanksSorry:

@@ -1,4 +1,5 @@
 import CoreGraphics
+import UIKit
 import XCTest
 @testable import SpeakLocalNative
 
@@ -54,6 +55,16 @@ final class PracticeScenarioModeTests: XCTestCase {
 
         XCTAssertEqual(definitions.map(\.vietnamese), ["Sẽ mất", "bao lâu"])
         XCTAssertEqual(definitions.map(\.english), ["will take", "how long"])
+    }
+
+    func testFreshCoconutMessageBreakdownUsesPreciseObjectChunk() {
+        let definitions = PracticeStoryBreakdownDefinitions.tokens(
+            forVietnamese: "Làm ơn cho một quả dừa tươi",
+            pageID: "viet-phrase-v900-food-drin-one-fresh-coconut-please"
+        )
+
+        XCTAssertEqual(definitions.map(\.vietnamese), ["Làm ơn", "cho một quả", "dừa tươi"])
+        XCTAssertEqual(definitions.map(\.english), ["please", "give me one", "fresh coconut"])
     }
 
     func testMessageDefinitionBubblesDoNotShowInternalOrWholeSentenceGlosses() throws {
@@ -856,7 +867,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Có nước suối không?",
                     "Cho tôi một cà phê sữa đá",
                     "Tôi bị dị ứng đậu phộng",
-                    "Hãy làm món này mà không cần đậu phộng",
+                    "Ít cay thôi",
                     "Cái này có chứa đậu phộng không?",
                     "Cái gì không quá cay?",
                     "Ít đá thôi",
@@ -871,7 +882,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Hãy đi theo bản đồ",
                     "Ứng dụng hiển thị một tuyến đường khác",
                     "Vui lòng sử dụng giá trên ứng dụng Grab.",
-                    "Số xe khác hẳn",
+                    "Đây không phải là xe của tôi",
                     "Bạn có thể gọi bảo vệ được không?",
                     "Người lái xe rời đi mà không có tôi",
                     "Bàn thông tin gần nhất ở đâu?",
@@ -1210,13 +1221,13 @@ final class PracticeScenarioModeTests: XCTestCase {
             foodAllergy,
             stepID: "food-allergy-kitchen-note",
             vietnamese: [
-                "Hãy làm món này mà không cần đậu phộng",
-                "Làm ơn làm cho nó bớt cay đi",
+                "Tôi bị dị ứng đậu phộng",
+                "Ít cay thôi",
                 "Cái này có trứng hay đậu phộng không?",
             ],
             english: [
-                "Please make it without peanuts",
-                "Please make it less spicy",
+                "I am allergic to peanuts",
+                "Less spicy, please",
                 "Does this have egg or peanuts?",
             ]
         )
@@ -1243,12 +1254,12 @@ final class PracticeScenarioModeTests: XCTestCase {
             stepID: "shopping-market-cheaper",
             vietnamese: [
                 "Bạn có cái nào rẻ hơn không?",
-                "Bạn có thể biến nó thành một số tròn được không?",
+                "Giảm giá chút được không?",
                 "Bạn có cái này màu đen không?",
             ],
             english: [
                 "Do you have a cheaper one?",
-                "Can you make it a round number?",
+                "Can you lower the price?",
                 "Do you have this in black?",
             ]
         )
@@ -1260,7 +1271,7 @@ final class PracticeScenarioModeTests: XCTestCase {
             vietnamese: [
                 "Tôi cần giúp đỡ bây giờ",
                 "Tôi cảm thấy không an toàn",
-                "tôi bị thương",
+                "Tôi bị thương",
             ],
             english: [
                 "I need help now",
@@ -1428,6 +1439,49 @@ final class PracticeScenarioModeTests: XCTestCase {
             XCTAssertLessThanOrEqual(scenario.id.messageContactName.split(separator: " ").count, 3)
             XCTAssertEqual(scenario.unreadPreview, scenario.steps.first?.localLine)
             XCTAssertFalse(scenario.unreadPreview.isEmpty)
+        }
+    }
+
+    func testMessageAvatarsUseUniqueSceneSpecificArt() {
+        let duplicateSymbols = duplicateScenarioGroups(
+            keyedBy: { $0.messageAvatarSymbolName }
+        )
+        XCTAssertTrue(
+            duplicateSymbols.isEmpty,
+            "Message avatar symbols should be unique per scenario: \(duplicateSymbols)"
+        )
+
+        let duplicateBackgroundSignatures = duplicateScenarioGroups(
+            keyedBy: { $0.messageBadgeBackgroundSignature }
+        )
+        XCTAssertTrue(
+            duplicateBackgroundSignatures.isEmpty,
+            "Message avatar backgrounds should be unique per scenario: \(duplicateBackgroundSignatures)"
+        )
+
+        let duplicateArtSignatures = duplicateScenarioGroups(
+            keyedBy: { $0.messageAvatarArtSignature }
+        )
+        XCTAssertTrue(
+            duplicateArtSignatures.isEmpty,
+            "Message avatar art should be unique per scenario: \(duplicateArtSignatures)"
+        )
+
+        XCTAssertEqual(PracticeScenarioID.danangFirstDay.messageAvatarSymbolName, "suitcase.rolling.fill")
+        XCTAssertEqual(PracticeScenarioID.danangDay.messageAvatarSymbolName, "takeoutbag.and.cup.and.straw.fill")
+        XCTAssertEqual(PracticeScenarioID.localGreetingHotel.messageAvatarSymbolName, "door.left.hand.open")
+    }
+
+    func testMessageAvatarSystemSymbolsExist() {
+        for scenarioID in PracticeScenarioID.allCases {
+            XCTAssertNotNil(
+                UIImage(systemName: scenarioID.messageAvatarSymbolName),
+                "\(scenarioID.rawValue) foreground symbol should render."
+            )
+            XCTAssertNotNil(
+                UIImage(systemName: scenarioID.messageBadgeBackdropSymbolName),
+                "\(scenarioID.rawValue) backdrop symbol should render."
+            )
         }
     }
 
@@ -2233,8 +2287,8 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "driver",
                 nextStepID: "driver-problem-wrong-car",
                 nextLocalMeaningFragment: "plate number",
-                expectedNextTopEnglishFragments: ["not my car", "car number", "call the driver"],
-                forbiddenNextTopEnglishFragments: ["security", "ATM"]
+                expectedNextTopEnglishFragments: ["not my car", "security", "call the driver"],
+                forbiddenNextTopEnglishFragments: ["baggage", "ATM"]
             ),
             MessageTransitionContract(
                 scenarioID: .walkingDirectionsHelp,
@@ -2700,6 +2754,16 @@ final class PracticeScenarioModeTests: XCTestCase {
             .components(separatedBy: CharacterSet.alphanumerics.inverted)
             .filter { !$0.isEmpty }
             .joined(separator: " ")
+    }
+
+    private func duplicateScenarioGroups(
+        keyedBy key: (PracticeScenarioID) -> String
+    ) -> [String: [String]] {
+        Dictionary(grouping: PracticeScenarioID.allCases, by: key)
+            .filter { $0.value.count > 1 }
+            .mapValues { scenarioIDs in
+                scenarioIDs.map(\.rawValue).sorted()
+            }
     }
 
     private func normalizedEnglish(_ value: String) -> String {

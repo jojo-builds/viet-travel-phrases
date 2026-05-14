@@ -239,6 +239,13 @@ final class PracticeUITests: XCTestCase {
 
         XCTAssertTrue(firstTravelerMessage.waitForExistence(timeout: 4))
 
+        tapFirstStoryChoice(in: app)
+        tapButton("Practice.Story.Send", in: app)
+        XCTAssertTrue(waitForStaticText(containing: "Băng chuyền số 4", in: app, timeout: 5))
+        XCTAssertTrue(waitForStaticText(containing: "Bạn cần tìm cửa ra hay điểm đón xe?", in: app, timeout: 5))
+        revealIfNeeded(firstTravelerMessage, in: app, bySwiping: .down)
+        XCTAssertTrue(firstTravelerMessage.isHittable, "The original message should be visible before opening details.")
+
         firstTravelerMessage.press(forDuration: 1.0)
         XCTAssertTrue(app.buttons["Open Details"].waitForExistence(timeout: 4))
         app.buttons["Open Details"].tap()
@@ -247,6 +254,8 @@ final class PracticeUITests: XCTestCase {
         app.buttons["TopAdmin.BackButton"].tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForExistence(timeout: 5))
+        XCTAssertTrue(firstTravelerMessage.waitForExistence(timeout: 4))
+        XCTAssertTrue(firstTravelerMessage.isHittable, "Back from details should restore the message that opened details.")
         XCTAssertFalse(app.buttons["Practice.Story.Continue"].firstMatch.exists)
         XCTAssertTrue(waitForStaticText(containing: baggageTagPrompt, in: app, timeout: 5))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))

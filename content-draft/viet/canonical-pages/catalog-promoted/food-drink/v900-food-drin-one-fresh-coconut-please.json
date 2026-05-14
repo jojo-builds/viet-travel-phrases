@@ -52,12 +52,18 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho một quả dừa tươi",
-          "english": "fresh coconut",
+          "vietnamese": "cho một quả",
+          "english": "give me one",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "dừa tươi",
+          "english": "fresh coconut",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
           "vietnamese": "Làm ơn cho một quả dừa tươi",
           "english": "One fresh coconut, please",
           "audioKey": null
