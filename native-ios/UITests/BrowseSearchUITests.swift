@@ -152,6 +152,38 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Thread"].exists)
     }
 
+    func testBrowseMessageThreadEdgeSwipesBackAndForwardToSameThread() {
+        let app = launchApp(arguments: ["--browse-category", "airport", "--reset-practice-message-threads"])
+        let scenarioID = "BrowseCollection.Message.Contact.airportWifiPower"
+        let thread = app.descendants(matching: .any)["Practice.Messages.Thread"]
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        tapWhenComfortablyVisible(identifier: scenarioID, app: app)
+
+        XCTAssertTrue(thread.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Airport Wi-Fi"].waitForExistence(timeout: 4))
+
+        edgeSwipeBack(app)
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertTrue(thread.waitForNonExistence(timeout: 4))
+
+        let messageContact = app.buttons.matching(identifier: scenarioID).firstMatch
+        XCTAssertTrue(messageContact.waitForExistence(timeout: 3))
+        XCTAssertTrue(
+            messageContact.isHittable,
+            "Back swipe from Airport Wi-Fi should restore the Airport page near the exact message contact."
+        )
+
+        edgeSwipeForward(app)
+
+        XCTAssertTrue(thread.waitForExistence(timeout: 5))
+        XCTAssertTrue(
+            app.staticTexts["Airport Wi-Fi"].waitForExistence(timeout: 4),
+            "Forward swipe should reopen the Airport Wi-Fi thread, not the generic Messages hub."
+        )
+    }
+
     func testFoodMessageSectionUsesQuickConversationsLabel() {
         let app = launchApp(arguments: ["--browse-category", "food"])
         let scenarioID = "BrowseCollection.Message.Contact.foodAllergyHelp"
@@ -513,6 +545,18 @@ final class BrowseSearchUITests: XCTestCase {
         let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.76))
         let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.58))
         start.press(forDuration: 0.04, thenDragTo: end)
+    }
+
+    private func edgeSwipeBack(_ app: XCUIApplication) {
+        let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.5))
+        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.38, dy: 0.5))
+        start.press(forDuration: 0.05, thenDragTo: end)
+    }
+
+    private func edgeSwipeForward(_ app: XCUIApplication) {
+        let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.5))
+        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.62, dy: 0.5))
+        start.press(forDuration: 0.05, thenDragTo: end)
     }
 
     private func scrollUntilHittable(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {

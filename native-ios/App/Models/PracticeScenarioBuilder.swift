@@ -669,16 +669,19 @@ private func messageGoodbyeStep(
     scene: String,
     localLine: String,
     localLineMeaning: String,
-    userGoal: String = "Say thank you and close the conversation.",
+    userGoal: String = "Close the conversation politely.",
     nextLocalLine: String = "Tạm biệt",
     nextLocalMeaning: String = "Goodbye.",
     recoveryTitle: String = "If you only remember one thing",
-    recoveryBody: String = "A smile plus cảm ơn is enough for most quick service moments.",
+    recoveryBody: String = "Use a short goodbye or polite acknowledgment, then let the conversation end.",
     goodbyeNextLocalLine: String? = nil,
     goodbyeNextLocalMeaning: String? = nil,
     localScenarioContext: String
 ) -> PracticeScenarioStepTemplate {
-    PracticeScenarioStepTemplate(
+    let politeCloseLine = goodbyeNextLocalLine ?? "Tạm biệt nhé."
+    let politeCloseMeaning = goodbyeNextLocalMeaning ?? "Goodbye."
+
+    return PracticeScenarioStepTemplate(
         id: id,
         momentType: .ask,
         scene: scene,
@@ -686,16 +689,14 @@ private func messageGoodbyeStep(
         localLineMeaning: localLineMeaning,
         userGoal: userGoal,
         bestPageIDs: [
-            "viet-thank-you",
-            "viet-family-polite-thank-you",
+            "viet-goodbye",
         ],
         alternatePageIDs: [
-            "viet-goodbye",
-            "viet-thanks-cam-on-nhieu",
+            "viet-family-polite-acknowledge",
         ],
         recoveryPageIDs: [
-            "viet-thank-you",
             "viet-goodbye",
+            "viet-family-polite-acknowledge",
         ],
         nextLocalLine: nextLocalLine,
         nextLocalMeaning: nextLocalMeaning,
@@ -707,14 +708,14 @@ private func messageGoodbyeStep(
             "viet-goodbye": PracticeScenarioPhraseTemplate(
                 vietnamese: "Tạm biệt",
                 english: "Goodbye",
-                nextLocalLine: goodbyeNextLocalLine ?? nextLocalLine,
-                nextLocalMeaning: goodbyeNextLocalMeaning ?? nextLocalMeaning
+                nextLocalLine: politeCloseLine,
+                nextLocalMeaning: politeCloseMeaning
             ),
-            "viet-thanks-cam-on-nhieu": PracticeScenarioPhraseTemplate(
-                vietnamese: "Cảm ơn nhiều",
-                english: "Thank you very much",
-                nextLocalLine: nextLocalLine,
-                nextLocalMeaning: nextLocalMeaning
+            "viet-family-polite-acknowledge": PracticeScenarioPhraseTemplate(
+                vietnamese: "Dạ",
+                english: "Okay",
+                nextLocalLine: politeCloseLine,
+                nextLocalMeaning: politeCloseMeaning
             ),
         ]
     )
@@ -2848,7 +2849,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 scene: "You have paid and are leaving the table.",
                 localLine: "Cảm ơn bạn.",
                 localLineMeaning: "Thank you.",
-                userGoal: "Say thanks and goodbye before you leave.",
+                userGoal: "Say goodbye before you leave.",
                 nextLocalLine: "Tạm biệt, hẹn gặp lại.",
                 nextLocalMeaning: "Goodbye, see you again.",
                 localScenarioContext: "restaurant_story_goodbye"
@@ -4009,8 +4010,8 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                 messageGoodbyeStep(
                     id: "coffee-order-goodbye",
                     scene: "You have your coffee and are leaving the counter.",
-                    localLine: "Cảm ơn bạn.",
-                    localLineMeaning: "Thank you.",
+                    localLine: "Tạm biệt nhé.",
+                    localLineMeaning: "Goodbye.",
                     nextLocalLine: "Không có gì, hẹn gặp lại.",
                     nextLocalMeaning: "You are welcome, see you again.",
                     localScenarioContext: "coffee_order_goodbye"
@@ -6347,8 +6348,8 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                 messageGoodbyeStep(
                     id: "pay-card-goodbye",
                     scene: "You have paid and have the receipt.",
-                    localLine: "Cảm ơn bạn.",
-                    localLineMeaning: "Thank you.",
+                    localLine: "Tạm biệt nhé.",
+                    localLineMeaning: "Goodbye.",
                     nextLocalLine: "Không có gì, hẹn gặp lại.",
                     nextLocalMeaning: "You are welcome, see you again.",
                     localScenarioContext: "shopping_pay_card_goodbye"
@@ -6472,18 +6473,18 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
-                            vietnamese: "Có bác sĩ hoặc dược sĩ nói tiếng Anh không?",
-                            english: "Is there an English-speaking doctor or pharmacist?",
-                            nextLocalLine: "Tôi sẽ hỏi giúp bạn.",
-                            nextLocalMeaning: "I will ask for you."
-                        ),
-                        messageReply(
                             "viet-family-v500-prob-help-can-you-help-me",
                             vietnamese: "Bạn giúp tôi được không?",
                             english: "Can you help me?",
                             nextLocalLine: "Được, tôi sẽ giúp bạn.",
                             nextLocalMeaning: "Yes, I will help you."
+                        ),
+                        messageReply(
+                            "viet-family-repair-slower",
+                            vietnamese: "Nói chậm chút được không?",
+                            english: "Can you speak a little slower?",
+                            nextLocalLine: "Được, tôi sẽ nói chậm hơn.",
+                            nextLocalMeaning: "Yes, I will speak more slowly."
                         ),
                     ],
                     nextStepTitle: "Say thanks",
@@ -6592,11 +6593,11 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Take a queue number over there."
                         ),
                         messageReply(
-                            "viet-family-polite-thank-you",
-                            vietnamese: "Cảm ơn",
-                            english: "Thank you",
-                            nextLocalLine: "Không có gì, bạn lấy số ở kia nhé.",
-                            nextLocalMeaning: "You are welcome, please take a number over there."
+                            "viet-family-polite-acknowledge",
+                            vietnamese: "Dạ",
+                            english: "Okay",
+                            nextLocalLine: "Bạn lấy số ở kia nhé.",
+                            nextLocalMeaning: "Please take a number over there."
                         ),
                     ],
                     nextStepTitle: "Ask again",
@@ -6681,18 +6682,18 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v500-unde-repa-thank-you-for-understanding",
-                            vietnamese: "Cảm ơn vì đã thông cảm",
-                            english: "Thank you for understanding",
-                            nextLocalLine: "Không có gì.",
-                            nextLocalMeaning: "You are welcome."
+                            "viet-family-v500-poli-basi-okay",
+                            vietnamese: "Đồng ý",
+                            english: "Okay",
+                            nextLocalLine: "Dạ, không sao.",
+                            nextLocalMeaning: "Yes, no problem."
                         ),
                         messageReply(
-                            "viet-family-polite-thank-you",
-                            vietnamese: "Cảm ơn",
-                            english: "Thank you",
-                            nextLocalLine: "Không có gì.",
-                            nextLocalMeaning: "You are welcome."
+                            "viet-family-v900-poli-basi-thats-fine",
+                            vietnamese: "Không sao đâu",
+                            english: "That's fine",
+                            nextLocalLine: "Dạ, cảm ơn bạn.",
+                            nextLocalMeaning: "Yes, thank you."
                         ),
                     ],
                     nextStepTitle: "Say goodbye",

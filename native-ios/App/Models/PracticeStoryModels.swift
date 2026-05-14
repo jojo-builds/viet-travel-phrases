@@ -98,7 +98,8 @@ struct PracticeStoryTurn: Identifiable, Equatable {
     }
 
     static func choiceSet(
-        step: PracticeScenarioStep
+        step: PracticeScenarioStep,
+        responseOptions: [PracticeScenarioResponseOption]
     ) -> PracticeStoryTurn {
         PracticeStoryTurn(
             id: "\(step.id):choices",
@@ -109,7 +110,7 @@ struct PracticeStoryTurn: Identifiable, Equatable {
             english: nil,
             audioKey: nil,
             source: step.source,
-            responseOptions: Array(step.responseOptions.prefix(4))
+            responseOptions: responseOptions
         )
     }
 
@@ -173,7 +174,15 @@ enum PracticeStoryTranscript {
                 }
 
             } else if index == currentIndex {
-                turns.append(.choiceSet(step: step))
+                turns.append(
+                    .choiceSet(
+                        step: step,
+                        responseOptions: scenario.visibleResponseOptions(
+                            for: step,
+                            selectedOptionIDs: selectedOptionIDs
+                        )
+                    )
+                )
             }
         }
 

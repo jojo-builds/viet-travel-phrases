@@ -39,39 +39,47 @@ struct PracticeMessagesThreadHost: View {
     }
 
     var body: some View {
-        ZStack(alignment: .top) {
-            PhrasePageStyle.pageBackground
-            .ignoresSafeArea()
+        GeometryReader { proxy in
+            let pageWidth = max(proxy.size.width, 1)
 
-            PracticeMessagesThreadContent(
-                activeScenarioSession: activeScenarioSession,
-                scenarioCompletion: scenarioCompletion,
-                topContentPadding: scenario == nil ? 0 : PracticeMessagesThreadHeaderLayout.contentClearance,
-                isInPracticePool: isInPracticePool,
-                isSavedPhrasePage: isSavedPhrasePage,
-                onOpenPhrasePage: onOpenPhrasePage,
-                onTogglePracticePage: onTogglePracticePage,
-                onToggleSavedPhrasePage: onToggleSavedPhrasePage,
-                onSelectScenarioOption: onSelectScenarioOption,
-                onPracticeAnother: onPracticeAnother,
-                onBackToPractice: onBackToPractice,
-                onBrowseTapped: onBrowseTapped
-            )
+            ZStack(alignment: .top) {
+                PhrasePageStyle.pageBackground
+                    .ignoresSafeArea()
 
-            if let scenario {
-                PracticeMessagesThreadHeader(
-                    scenario: scenario
+                PracticeMessagesThreadContent(
+                    activeScenarioSession: activeScenarioSession,
+                    scenarioCompletion: scenarioCompletion,
+                    topContentPadding: scenario == nil ? 0 : PracticeMessagesThreadHeaderLayout.contentClearance,
+                    isInPracticePool: isInPracticePool,
+                    isSavedPhrasePage: isSavedPhrasePage,
+                    onOpenPhrasePage: onOpenPhrasePage,
+                    onTogglePracticePage: onTogglePracticePage,
+                    onToggleSavedPhrasePage: onToggleSavedPhrasePage,
+                    onSelectScenarioOption: onSelectScenarioOption,
+                    onPracticeAnother: onPracticeAnother,
+                    onBackToPractice: onBackToPractice,
+                    onBrowseTapped: onBrowseTapped
                 )
-                .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
 
-                PracticeMessagesThreadBackButton(action: onDismiss)
-                    .padding(.leading, AppChromeLayout.topAdminHorizontalPadding)
-                    .padding(.top, AppChromeLayout.topAdminTopPadding)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .zIndex(AppChromeLayout.searchForegroundMorphZIndex + 1)
+                threadBackSwipeCaptureEdge(width: pageWidth)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
+
+                if let scenario {
+                    PracticeMessagesThreadHeader(
+                        scenario: scenario
+                    )
+                    .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
+
+                    PracticeMessagesThreadBackButton(action: onDismiss)
+                        .padding(.leading, AppChromeLayout.topAdminHorizontalPadding)
+                        .padding(.top, AppChromeLayout.topAdminTopPadding)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .zIndex(AppChromeLayout.searchForegroundMorphZIndex + 1)
+                }
+
+                threadAccessibilityMarker
             }
-
-            threadAccessibilityMarker
         }
     }
 
@@ -84,6 +92,34 @@ struct PracticeMessagesThreadHost: View {
             .accessibilityIdentifier("Practice.Messages.Thread")
             .accessibilityLabel("Messages thread")
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+    }
+
+    private func threadBackSwipeCaptureEdge(width: CGFloat) -> some View {
+        Rectangle()
+            .fill(.clear)
+            .frame(width: AppBackSwipeGesturePolicy.edgeStartWidth)
+            .frame(maxHeight: .infinity)
+            .contentShape(Rectangle())
+            .gesture(threadBackSwipeGesture(width: width))
+            .accessibilityHidden(true)
+    }
+
+    private func threadBackSwipeGesture(width: CGFloat) -> some Gesture {
+        DragGesture(
+            minimumDistance: AppBackSwipeGesturePolicy.minimumDistance,
+            coordinateSpace: .local
+        )
+        .onEnded { value in
+            guard AppBackSwipeGesturePolicy.shouldCommitBackSwipe(
+                translation: value.translation,
+                predictedEndTranslation: value.predictedEndTranslation,
+                width: width
+            ) else {
+                return
+            }
+
+            onDismiss()
+        }
     }
 }
 
@@ -414,10 +450,22 @@ struct PracticeStoryComposerSurface: View {
         return currentStep.responseOptions.first { $0.id == selectedOptionID }
     }
 
+    private var currentResponseOptions: [PracticeScenarioResponseOption] {
+        guard let currentStep else {
+            return []
+        }
+
+        return session.scenario.visibleResponseOptions(
+            for: currentStep,
+            selectedOptionIDs: session.selectedOptionIDs
+        )
+    }
+
     var body: some View {
         if let currentStep, currentSelectedOption == nil {
             PracticeStoryComposer(
                 step: currentStep,
+                responseOptions: currentResponseOptions,
                 onSend: onSelectOption
             )
             .id(currentStep.id)
