@@ -262,6 +262,7 @@ final class BrowseSearchUITests: XCTestCase {
 
         let sectionPill = app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"]
         XCTAssertTrue(sectionPill.waitForExistence(timeout: 2))
+        XCTAssertTrue(app.descendants(matching: .any)["PinnedAudioSpeedControl"].waitForExistence(timeout: 2))
         sectionPill.tap()
 
         let noodleSoups = app.buttons["VietnameseMenu.TopSectionMenu.noodle-soups"]

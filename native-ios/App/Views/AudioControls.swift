@@ -356,6 +356,25 @@ enum PinnedAudioSpeedChromePolicy {
     }
 
     static func shouldShowPinnedControl(
+        chromeState: PinnedAudioSpeedChromeState,
+        currentRoute: AppRoute,
+        hasStaticBackButton: Bool,
+        isSearchPresented: Bool,
+        isMenuSectionChromeVisible: Bool = false
+    ) -> Bool {
+        guard canShowPinnedControl(
+            on: currentRoute,
+            hasStaticBackButton: hasStaticBackButton,
+            isSearchPresented: isSearchPresented
+        ) else {
+            return false
+        }
+
+        return (chromeState.route == currentRoute && chromeState.isVisible)
+            || isMenuSectionChromeVisible
+    }
+
+    static func shouldShowPinnedControl(
         for anchor: PhraseAudioPlayerAnchor?,
         currentRoute: AppRoute
     ) -> Bool {
