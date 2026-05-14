@@ -14,7 +14,6 @@ struct BrowseCollectionPageView: View {
 
     @State private var selectedSubcategoryID: String?
     @State private var selectedCityCardID: String?
-    @State private var cityCardScrollRequestID = 0
 
     var body: some View {
         let selectedSubcategory = descriptor.subcategories.first { $0.id == selectedSubcategoryID }
@@ -45,8 +44,7 @@ struct BrowseCollectionPageView: View {
                                 selectedCityCardID: $selectedCityCardID,
                                 onOpenDetail: onOpenDetail,
                                 onOpenCollection: onOpenCollection,
-                                onPractice: { onPractice(descriptor.practiceAction) },
-                                onCityCardSelectionActivated: { _ in }
+                                onPractice: { onPractice(descriptor.practiceAction) }
                             )
                             .browseCityHeroContentReveal(isHeld: holdsContentForCityHeroMorph)
                         } else {
@@ -60,7 +58,6 @@ struct BrowseCollectionPageView: View {
 
                             BrowseCollectionStarterSection(
                                 title: starterTitle,
-                                actionTitle: selectedSubcategory == nil ? "View all" : "",
                                 items: starterItems,
                                 onOpenDetail: onOpenDetail
                             )
@@ -104,32 +101,10 @@ struct BrowseCollectionPageView: View {
                 .task(id: focusRequest?.id) {
                     await restoreFocusIfNeeded(scrollProxy)
                 }
-                .onChange(of: selectedCityCardID) { _, newValue in
-                    cityCardScrollRequestID += 1
-                    let requestID = cityCardScrollRequestID
-                    guard let newValue else { return }
-                    Task { @MainActor in
-                        try? await Task.sleep(nanoseconds: BrowseCollectionLayout.citySelectedScrollDelayNanoseconds)
-                        guard
-                            requestID == cityCardScrollRequestID,
-                            selectedCityCardID == newValue
-                        else {
-                            return
-                        }
-
-                        withAnimation(.snappy(duration: 0.24)) {
-                            scrollProxy.scrollTo(
-                                BrowseCollectionLayout.citySelectedSectionID(for: newValue),
-                                anchor: BrowseCollectionLayout.citySelectedSectionAnchor
-                            )
-                        }
-                    }
-                }
             }
             .ignoresSafeArea(edges: .top)
         }
         .onChange(of: descriptor.id) { _, _ in
-            cityCardScrollRequestID += 1
             selectedSubcategoryID = nil
             selectedCityCardID = nil
         }
@@ -169,17 +144,10 @@ private extension View {
 
 private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
-    static let sectionSpacing: CGFloat = 24
+    static let sectionSpacing: CGFloat = HomeLayout.sectionSpacing
     static let bottomChromeContentClearance: CGFloat = 48
-    static let citySelectedScrollDelayNanoseconds: UInt64 = 180_000_000
-    static let focusRestoreDelayNanoseconds: UInt64 = 140_000_000
-    static let focusRestoreAnimationDuration: TimeInterval = 0.18
-
-    static func citySelectedSectionID(for cardID: String) -> String {
-        "BrowseCollectionCitySelectedSection.\(cardID)"
-    }
-
-    static let citySelectedSectionAnchor = UnitPoint(x: 0.5, y: 0.4)
+    static let focusRestoreDelayNanoseconds: UInt64 = 520_000_000
+    static let focusRestoreAnimationDuration: TimeInterval = 0.24
 }
 
 private struct BrowseCollectionHeader: View {
@@ -324,7 +292,6 @@ private struct BrowseCityHubContent: View {
     let onOpenDetail: (String) -> Void
     let onOpenCollection: (BrowseCollectionRoute) -> Void
     let onPractice: () -> Void
-    let onCityCardSelectionActivated: (String) -> Void
 
     var body: some View {
         let cityBrowseFilters = cityHub.cityBrowseFilters
@@ -356,7 +323,6 @@ private struct BrowseCityHubContent: View {
                 if !cityHub.namesToKnowItems.isEmpty {
                     BrowseCollectionStarterSection(
                         title: cityHub.namesTitle,
-                        actionTitle: "",
                         items: cityHub.namesToKnowItems,
                         onOpenDetail: onOpenDetail
                     )
@@ -365,7 +331,6 @@ private struct BrowseCityHubContent: View {
                 if !cityHub.quickPhraseItems.isEmpty {
                     BrowseCollectionStarterSection(
                         title: cityHub.quickPhrasesTitle,
-                        actionTitle: "",
                         items: cityHub.quickPhraseItems,
                         onOpenDetail: onOpenDetail
                     )
@@ -378,7 +343,6 @@ private struct BrowseCityHubContent: View {
                         selectedFilterID: selectedCityCardID,
                         allItems: cityBrowseAllItems,
                         tintName: descriptor.tintName,
-                        scrollTargetID: BrowseCollectionLayout.citySelectedSectionID(for: selectedCityCardID ?? "all"),
                         onSelectAll: selectAllCityFilters,
                         onSelectFilter: selectCityFilter,
                         onOpenDetail: onOpenDetail
@@ -402,12 +366,7 @@ private struct BrowseCityHubContent: View {
             return
         }
 
-        let isActivatingFilter = selectedCityCardID != filter.id
         selectedCityCardID = filter.id
-
-        if isActivatingFilter {
-            onCityCardSelectionActivated(filter.id)
-        }
     }
 }
 
@@ -417,7 +376,6 @@ private struct BrowseCityFilterSection: View {
     let selectedFilterID: String?
     let allItems: [BrowseSearchPhraseItem]
     let tintName: AccentTint
-    let scrollTargetID: String
     let onSelectAll: () -> Void
     let onSelectFilter: (BrowseCollectionSubcategory) -> Void
     let onOpenDetail: (String) -> Void
@@ -431,32 +389,41 @@ private struct BrowseCityFilterSection: View {
     }
 
     var body: some View {
-        BrowseCollectionSection(title: title, actionTitle: "") {
+        BrowseCollectionSection(title: title) {
             VStack(alignment: .leading, spacing: 12) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        BrowseCityFilterPill(
-                            title: "All",
-                            identifier: "BrowseCollection.CityFilter.all",
-                            isSelected: selectedFilterID == nil,
-                            tintName: tintName,
-                            onSelect: onSelectAll
-                        )
-
-                        ForEach(filters) { filter in
+                ScrollViewReader { filterScrollProxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
                             BrowseCityFilterPill(
-                                title: filter.title,
-                                identifier: "BrowseCollection.CityFilter.\(filter.id)",
-                                isSelected: filter.id == selectedFilterID,
-                                tintName: filter.tintName,
-                                onSelect: { onSelectFilter(filter) }
+                                title: "All",
+                                identifier: "BrowseCollection.CityFilter.all",
+                                isSelected: selectedFilterID == nil,
+                                tintName: tintName,
+                                onSelect: onSelectAll
                             )
+                            .id(Self.filterScrollID(nil))
+
+                            ForEach(filters) { filter in
+                                BrowseCityFilterPill(
+                                    title: filter.title,
+                                    identifier: "BrowseCollection.CityFilter.\(filter.id)",
+                                    isSelected: filter.id == selectedFilterID,
+                                    tintName: filter.tintName,
+                                    onSelect: { onSelectFilter(filter) }
+                                )
+                                .id(Self.filterScrollID(filter.id))
+                            }
+                        }
+                        .padding(.horizontal, 1)
+                        .padding(.bottom, 2)
+                    }
+                    .scrollClipDisabled()
+                    .onChange(of: selectedFilterID) { _, newValue in
+                        withAnimation(.snappy(duration: 0.24)) {
+                            filterScrollProxy.scrollTo(Self.filterScrollID(newValue), anchor: .leading)
                         }
                     }
-                    .padding(.horizontal, 1)
-                    .padding(.bottom, 2)
                 }
-                .scrollClipDisabled()
 
                 VStack(spacing: 0) {
                     ForEach(visibleItems) { item in
@@ -470,9 +437,12 @@ private struct BrowseCityFilterSection: View {
                 .padding(.vertical, 8)
                 .phraseListCard(cornerRadius: 24)
                 .accessibilityIdentifier("BrowseCollection.CityFilterRows")
-                .id(scrollTargetID)
             }
         }
+    }
+
+    private static func filterScrollID(_ filterID: String?) -> String {
+        "BrowseCollection.CityFilter.ScrollTarget.\(filterID ?? "all")"
     }
 }
 
@@ -521,7 +491,7 @@ private struct BrowseCityCardGridSection: View {
     ]
 
     var body: some View {
-        BrowseCollectionSection(title: title, actionTitle: "") {
+        BrowseCollectionSection(title: title) {
             LazyVGrid(columns: columns, alignment: .leading, spacing: 12) {
                 ForEach(cards) { card in
                     BrowseCityActionCard(
@@ -630,12 +600,11 @@ private struct BrowseCityNameAudioPlayer: View {
 
 private struct BrowseCollectionStarterSection: View {
     let title: String
-    var actionTitle: String = "View all"
     let items: [BrowseSearchPhraseItem]
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        BrowseCollectionSection(title: title, actionTitle: actionTitle) {
+        BrowseCollectionSection(title: title) {
             VStack(spacing: 0) {
                 ForEach(items) { item in
                     BrowseCollectionPhraseRow(item: item, onOpenDetail: onOpenDetail)
@@ -719,7 +688,7 @@ private struct BrowseCollectionMessageSection: View {
 
     var body: some View {
         if let title = descriptor.browseMessageSectionTitle {
-            BrowseCollectionSection(title: title, actionTitle: "") {
+            BrowseCollectionSection(title: title) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(alignment: .top, spacing: BrowseCollectionMessageLayout.itemSpacing) {
                         ForEach(descriptor.messageScenarioIDs) { scenarioID in
@@ -779,9 +748,13 @@ private struct BrowseCollectionExploreSection: View {
     let onOpenCollection: (BrowseCollectionRoute) -> Void
 
     var body: some View {
-        LazyVStack(alignment: .leading, spacing: 22) {
+        LazyVStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
             ForEach(shelves) { shelf in
-                BrowseCollectionShelfView(shelf: shelf, onOpenDetail: onOpenDetail)
+                BrowseCollectionShelfView(
+                    shelf: shelf,
+                    onOpenDetail: onOpenDetail,
+                    onOpenCollection: onOpenCollection
+                )
             }
         }
         .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
@@ -791,9 +764,14 @@ private struct BrowseCollectionExploreSection: View {
 private struct BrowseCollectionShelfView: View {
     let shelf: BrowseCollectionShelf
     let onOpenDetail: (String) -> Void
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
 
     var body: some View {
-        BrowseCollectionSection(title: shelf.title, actionTitle: "Browse") {
+        BrowseCollectionSection(
+            title: shelf.title,
+            targetRoute: shelf.targetRoute,
+            onOpenCollection: onOpenCollection
+        ) {
             GeometryReader { proxy in
                 let groupWidth = max(274, min(338, proxy.size.width - 42))
 
@@ -819,33 +797,60 @@ private struct BrowseCollectionShelfView: View {
 
 private struct BrowseCollectionSection<Content: View>: View {
     let title: String
-    let actionTitle: String
+    let targetRoute: BrowseCollectionRoute?
+    let onOpenCollection: ((BrowseCollectionRoute) -> Void)?
     let content: Content
 
-    init(title: String, actionTitle: String, @ViewBuilder content: () -> Content) {
+    init(
+        title: String,
+        targetRoute: BrowseCollectionRoute? = nil,
+        onOpenCollection: ((BrowseCollectionRoute) -> Void)? = nil,
+        @ViewBuilder content: () -> Content
+    ) {
         self.title = title
-        self.actionTitle = actionTitle
+        self.targetRoute = targetRoute
+        self.onOpenCollection = onOpenCollection
         self.content = content()
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text(title)
-                    .font(.title3.weight(.black))
-                    .foregroundStyle(.primary)
-
-                Spacer()
-
-                if !actionTitle.isEmpty {
-                    Text(actionTitle)
-                        .font(.caption.weight(.black))
-                        .foregroundStyle(.red)
-                }
-            }
+            header
 
             content
         }
+    }
+
+    @ViewBuilder
+    private var header: some View {
+        if let targetRoute, let onOpenCollection {
+            Button {
+                onOpenCollection(targetRoute)
+            } label: {
+                headerContent(showsChevron: true)
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("BrowseCollection.SectionHeader.\(targetRoute.id)")
+        } else {
+            headerContent(showsChevron: false)
+        }
+    }
+
+    private func headerContent(showsChevron: Bool) -> some View {
+        HStack(spacing: 7) {
+            Text(title)
+                .font(.title3.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+
+            if showsChevron {
+                Image(systemName: "chevron.right")
+                    .font(.subheadline.weight(.black))
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .contentShape(Rectangle())
     }
 }
 

@@ -930,9 +930,11 @@ function buildPracticeCore({ repoRoot }) {
       const familyCompare = String(aRecord?.expansionFamily ?? "").localeCompare(String(bRecord?.expansionFamily ?? ""));
       return familyCompare || a.id.localeCompare(b.id);
     });
+  const readyNonCityPhrases = eligiblePhrases
+    .filter((phrase) => phrase.scenarioID !== "city-guides");
 
   const allItems = [
-    ...buildListeningItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
+    ...buildListeningItems(readyNonCityPhrases, pagesByFamily, readyNonCityPhrases),
     ...buildEnglishToVietnameseItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
     ...buildVietnameseToEnglishItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
     ...buildSituationItems(eligiblePhrases, pagesByFamily, eligiblePhrases),
@@ -1174,8 +1176,8 @@ function validatePracticeCore(practiceCore, options = {}) {
   if (cityItems.length < cityLibraryPageCount) {
     errors.push(`expected at least one city-guides practice item per city library page, found ${cityItems.length} items for ${cityLibraryPageCount} pages`);
   }
-  if (cityLibraryPageCount < 750) {
-    errors.push(`expected at least 750 city library pages, found ${cityLibraryPageCount}`);
+  if (cityLibraryPageCount < 450) {
+    errors.push(`expected at least 450 city library pages after attraction long-tail pruning, found ${cityLibraryPageCount}`);
   }
   const practiceExpansionPageCount = practiceCore.metadata?.practiceExpansionPageCount ?? 0;
   const practiceExpansionItems = (practiceCore.items || []).filter((item) => item.source?.practiceBuckets?.length > 0);

@@ -140,9 +140,6 @@ const reviewedCompoundPhrasePageIDs = [
 ];
 
 const approvedQuickSayShortcutPairs = [
-  ["viet-phrase-city-danang-place-ba-na-hills", "viet-phrase-ves-two-tickets-ba-na-hills"],
-  ["viet-phrase-city-danang-place-marble-mountains", "viet-phrase-city-danang-ticket-marble-mountains"],
-  ["viet-phrase-city-danang-place-son-tra", "viet-phrase-city-danang-go-son-tra"],
   ["viet-phrase-city-hanoi-place-bun-cha-huong-lien", "viet-phrase-ves-order-bun-cha-portion"],
   ["viet-phrase-city-hanoi-place-pho-bat-dan", "viet-phrase-ves-order-pho-bowl"],
   ["viet-phrase-city-hue-place-bun-bo-city", "viet-phrase-ves-order-bun-bo-hue-bowl"],
@@ -416,23 +413,13 @@ function main() {
     !relationshipWordsEligiblePageIDs.includes("viet-family-city-danang-place-ba-na-hills"),
     "relationship-word eligibility should not include Bà Nà Hills place page"
   );
-  [
-    "viet-family-city-danang-where-ba-na-hills",
-    "viet-phrase-city-danang-where-ba-na-hills",
-    "viet-family-city-danang-go-ba-na-hills",
-    "viet-phrase-city-danang-go-ba-na-hills",
-    "viet-family-city-danang-eat-near-ba-na-hills",
-    "viet-phrase-city-danang-eat-near-ba-na-hills",
-    "viet-family-city-danang-atm-ba-na-hills",
-    "viet-phrase-city-danang-atm-ba-na-hills",
-    "viet-family-city-danang-stop-ba-na-hills",
-    "viet-phrase-city-danang-stop-ba-na-hills",
-  ].forEach((pageID) => {
-    assertTrue(
-      !relationshipWordsEligiblePageIDs.includes(pageID),
-      `relationship-word eligibility should not include Bà Nà Hills child page ${pageID}`
-    );
-  });
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase p
+    JOIN phrase_city_tag pct ON pct.phrase_id = p.id
+    WHERE pct.page_kind = 'phrase'
+      AND pct.place_kind IN ('attraction', 'beach', 'landmark', 'museum', 'nature', 'park', 'river', 'village');
+  `), "attraction action child pages should be retired, not relationship-word eligible");
 
   assertZero(sqliteValue(`
     SELECT count(*)

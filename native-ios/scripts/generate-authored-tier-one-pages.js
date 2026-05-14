@@ -2024,6 +2024,16 @@ function cityLibraryPhraseOption(pageRecord, detailPageID = null) {
 
 const cityRestaurantPlaceKinds = new Set(["restaurant", "cafe"]);
 const cityDishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
+const cityAttractionPlaceKinds = new Set([
+  "attraction",
+  "beach",
+  "landmark",
+  "museum",
+  "nature",
+  "park",
+  "river",
+  "village",
+]);
 
 function cityPlaceKind(place) {
   const explicitKind = String(place.placeKind ?? "").trim();
@@ -2044,6 +2054,10 @@ function cityPageKind(pageRecord, place) {
 
 function isDerivedCityPlacePhrase(pageRecord, pageKind) {
   return pageKind === "phrase" && pageRecord.kind === "phrase" && Boolean(pageRecord.placeID);
+}
+
+function isCityAttractionPlaceKind(placeKind) {
+  return cityAttractionPlaceKinds.has(String(placeKind ?? "").trim().toLowerCase());
 }
 
 function cityContentRole(pageRecord, place) {
@@ -2447,6 +2461,43 @@ function linkedCityPhraseOptionsByIntent(records, intent, count = 4) {
   return linkedCityPhraseOptions(rankedCityPhraseRows(records, intent, count), count);
 }
 
+function genericAttractionGettingThereOptions() {
+  return compactPhraseOptions([
+    phraseOptionByID("taxi-1", "orange"),
+    phraseOptionByID("v500-unde-repa-can-you-show-me-on-the-map", "teal"),
+    phraseOptionByID("v500-tran-please-stop-right-here", "orange"),
+    phraseOptionByID("ves-is-this-address-correct", "teal"),
+  ], 4);
+}
+
+function genericAttractionVisitOptions() {
+  return compactPhraseOptions([
+    phraseOptionByID("v500-time-date-book-two-tickets-please", "purple"),
+    phraseOptionByID("v500-sigh-acti-where-is-the-entrance", "teal"),
+    phraseOptionByID("ves-take-photo-for-me", "teal"),
+    phraseOptionByID("ves-call-taxi-for-me", "orange"),
+  ], 4);
+}
+
+function genericAttractionPickupOptions() {
+  return compactPhraseOptions([
+    phraseOptionByID("directions-8", "teal"),
+    phraseOptionByID("v900-dire-navi-is-this-the-correct-pickup-point", "teal"),
+    phraseOptionByID("v500-tran-please-stop-right-here", "orange"),
+    phraseOptionByID("ves-call-taxi-for-me", "orange"),
+  ], 4);
+}
+
+function genericAttractionExploreOptions() {
+  return compactPhraseOptions([
+    phraseOptionByID("sight-1", "purple"),
+    phraseOptionByID("v500-time-date-book-one-ticket-please", "purple"),
+    phraseOptionByID("v500-sigh-acti-where-can-i-buy-tickets", "purple"),
+    phraseOptionByID("v500-sigh-acti-where-is-the-exit", "teal"),
+    phraseOptionByID("airport-4", "teal"),
+  ], 5);
+}
+
 function specificFoodOrderOptionForText(value) {
   const text = String(value ?? "").toLowerCase();
   if (/bún chả|bun cha/i.test(text)) return phraseOptionByID("ves-order-bun-cha-portion", "green");
@@ -2740,7 +2791,19 @@ function cityPageForRecord(pageRecord, context) {
     dish: "Start with the dish name, then use the ordering and ingredient phrases when you need to ask where to get it or what is inside.",
   };
   const samePlaceOptions = linkedCityPhraseOptions(samePlacePhraseRows, 8);
-  const placeActionOptions = linkedCityPhraseOptionsByIntent(placePhraseRows, "place-action", 4);
+  const attractionPlaceKind = isCityAttractionPlaceKind(placeKind);
+  const placeActionOptions = attractionPlaceKind
+    ? genericAttractionGettingThereOptions()
+    : linkedCityPhraseOptionsByIntent(placePhraseRows, "place-action", 4);
+  const placeVisitOptions = attractionPlaceKind
+    ? genericAttractionVisitOptions()
+    : placeActionOptions;
+  const placePickupOptions = attractionPlaceKind
+    ? genericAttractionPickupOptions()
+    : linkedCityPhraseOptionsByIntent(relatedRecords.filter((record) => record.kind === "phrase"), "place-action", 3);
+  const placeExploreOptions = attractionPlaceKind
+    ? genericAttractionExploreOptions()
+    : linkedCityPhraseOptions(relatedRecords, 5);
   const restaurantWalkInOptions = linkedCityPhraseOptionsByIntent(placePhraseRows, "restaurant-walk-in", 4);
   const restaurantTableMenuOptions = compactPhraseOptions([
     phraseOptionByID("food-need-table", "green"),
@@ -2908,21 +2971,25 @@ function cityPageForRecord(pageRecord, context) {
       {
         id: "place-brief",
         title: "Getting there",
-        body: cityPlaceWhatItIsBody(city, place, pageRecord, pageKind, placeKind, contentRole),
+        body: attractionPlaceKind
+          ? "Use the place name with your map or ticket screen, then use a reusable ride phrase."
+          : cityPlaceWhatItIsBody(city, place, pageRecord, pageKind, placeKind, contentRole),
         phrases: placeActionOptions,
       },
       {
         id: "use-it-with",
         title: "At the place",
-        body: "Direction, ticket, photo, and pickup sentences.",
-        phrases: placeActionOptions,
+        body: attractionPlaceKind
+          ? "Ticket, entrance, photo, and return-ride phrases that work at many attractions."
+          : "Direction, ticket, photo, and pickup sentences.",
+        phrases: placeVisitOptions,
       },
       {
         id: "when-to-use",
         title: "Meeting or pickup",
         presentation: "plain-text",
         body: cityWhenToUseBody(pageRecord, city, place, pageKind, placeKind),
-        phrases: linkedCityPhraseOptionsByIntent(relatedRecords.filter((record) => record.kind === "phrase"), "place-action", 3),
+        phrases: placePickupOptions,
       }
     );
   } else if (!derivedPlacePhrase) {
@@ -2953,7 +3020,7 @@ function cityPageForRecord(pageRecord, context) {
         id: "explore-next",
         title: "Explore next",
         body: `Next helpful phrases around ${city.shortTitle}.`,
-        phrases: linkedCityPhraseOptions(relatedRecords, 5),
+        phrases: placeExploreOptions,
       }
     );
   }
@@ -4406,13 +4473,15 @@ function rewriteBaNaHillsJourneySections(page, sections) {
     hearName ? { ...hearName, id: "quick-say", title: "Hear the name" } : null,
     visitFlow ? { ...visitFlow, id: "journey-flow", title: "Visit flow", presentation: "plain-text" } : null,
     phraseSection("getting-there", "Getting there", [
-      "ves-take-me-to-ba-na-hills",
-      "city-danang-go-ba-na-hills",
-      "city-danang-where-ba-na-hills",
-      "city-danang-stop-ba-na-hills",
+      "taxi-1",
+      "v500-unde-repa-can-you-show-me-on-the-map",
+      "v500-tran-please-stop-right-here",
+      "ves-is-this-address-correct",
     ], "teal"),
     phraseSection("tickets", "Tickets", [
-      "ves-two-tickets-ba-na-hills",
+      "v500-time-date-book-two-tickets-please",
+      "v500-time-date-book-one-ticket-please",
+      "v500-sigh-acti-where-can-i-buy-tickets",
     ], "orange"),
     phraseSection("cable-car", "Cable car", [
       "ves-where-cable-car",
@@ -4422,12 +4491,13 @@ function rewriteBaNaHillsJourneySections(page, sections) {
     ], "purple"),
     phraseSection("getting-back", "Getting back", [
       "directions-8",
+      "v900-dire-navi-is-this-the-correct-pickup-point",
       "ves-call-taxi-for-me",
     ], "orange"),
     goodToKnow ? { ...goodToKnow, id: "good-to-know", title: "Good to know" } : null,
     phraseSection("food-cash", "Food & cash", [
-      "city-danang-eat-near-ba-na-hills",
-      "city-danang-atm-ba-na-hills",
+      "store-1",
+      "airport-4",
     ], "green"),
     nameGuide ? { ...nameGuide, id: "breakdown", title: "Name guide" } : null,
   ].filter(Boolean).filter(sectionHasTravelerContent);
@@ -4435,6 +4505,8 @@ function rewriteBaNaHillsJourneySections(page, sections) {
 
 function sectionPhraseFilter(page, section, profile, phrase) {
   if (!isNameBasedProfile(profile)) return true;
+  const attractionPlace = profile === "place" && isCityAttractionPlaceKind(page.cityMetadata?.placeKind);
+  if (attractionPlace && ["use-it-with", "when-to-use", "explore-next"].includes(section.id)) return true;
   if (section.id === "explore-next") return optionMatchesPageName(phrase, page);
   if (profile === "street" && ["place-brief", "use-it-with", "when-to-use"].includes(section.id)) {
     return optionMatchesPageName(phrase, page);

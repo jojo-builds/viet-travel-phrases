@@ -27,7 +27,7 @@ Rows tagged `derived-place-phrases` are generated helper phrases such as:
 - `Stop at Dragon Bridge`
 - `Is there an ATM near Dragon Bridge?`
 
-These rows are useful as contextual helpers, but they are not top-level catalog inventory.
+These rows may be useful as temporary contextual helpers, but they are not top-level catalog inventory.
 
 Do not surface them in:
 
@@ -39,11 +39,13 @@ Do not surface them in:
 - entity-first category cards
 - entity-only search results such as `Dragon Bridge`
 
-They may surface when:
+For attractions, landmarks, museums, parks, rivers, beaches, nature sights, and villages, do not create durable action-plus-place phrase pages. The traveler page should teach the attraction name, then link reusable phrase pages such as `Take me here`, `Please stop right here`, `Two tickets, please`, `Where is the entrance?`, `Where is the pickup point?`, and `Can you take a photo for me?`.
 
-- the query contains an explicit action intent such as `where`, `go`, `take`, `near`, `ATM`, `taxi`, `drop`, or `stop`
+They may surface only when:
+
 - a future template UI intentionally renders "ways to use this name" without promoting every row as a full listing page
-- a Message/Story flow deliberately needs that exact phrase
+- a Message/Story flow deliberately needs that exact phrase and the phrase is explicitly promoted as high value
+- the entity type is outside the attraction/landmark family and a reviewed product decision says that action-plus-place audio is worth the app size
 
 ## Audio Rule
 
@@ -58,6 +60,7 @@ For long-tail place actions, prefer a template/entity model:
 - one reviewed template
 - one reviewed entity name
 - full audio only when the phrase is promoted as high value
+- no full listing page for one-off attraction actions such as `Let me off near Dragon Bridge` or `Two tickets to Bà Nà Hills`
 
 ## Vietnamese Template Guardrail
 
@@ -75,4 +78,3 @@ Food/drink-compatible examples:
 - `{item} có gì?`
 
 Do not blindly apply place templates to dishes, drinks, ingredients, services, or people.
-

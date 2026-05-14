@@ -317,7 +317,26 @@ struct AppShellView: View {
             let route = AppRoute.browseCollection(renderedCollection.route)
             let isActive = route == navigation.currentRoute
 
-            if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
+            if let menuKind = VietnameseMenuCatalog.kind(for: renderedCollection.route) {
+                VietnameseMenuPageView(
+                    kind: menuKind,
+                    scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
+                    scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
+                    onOpenDetail: openDetailFromBrowse
+                )
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .accessibilityHidden(!isActive || navigation.isSearchPresented)
+                .transition(browseCollectionTransition(for: renderedCollection.route))
+                .zIndex(Double(index + 6))
+                .navigationPageMotion(
+                    route: route,
+                    currentRoute: navigation.currentRoute,
+                    backPreviewRoute: navigation.backPreviewRoute,
+                    forwardPreviewRoute: navigation.forwardPreviewRoute,
+                    drag: interactiveDrag,
+                    width: width
+                )
+            } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
                 BrowseCollectionPageView(
                     descriptor: descriptor,
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
@@ -532,7 +551,14 @@ struct AppShellView: View {
                 onSearchQuery: openSearchQuery
             )
         case .browseCollection(let collectionRoute):
-            if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
+            if let menuKind = VietnameseMenuCatalog.kind(for: collectionRoute) {
+                VietnameseMenuPageView(
+                    kind: menuKind,
+                    scrollToTopTrigger: 0,
+                    scrollToTopRoute: nil,
+                    onOpenDetail: openDetailFromBrowse
+                )
+            } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
                 BrowseCollectionPageView(
                     descriptor: descriptor,
                     scrollToTopTrigger: 0,
@@ -1716,6 +1742,7 @@ struct AppShellNavigationState: Equatable {
 
     mutating func openDetail(_ id: String) {
         let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+            ?? (VietnameseMenuCatalog.detailItem(withPageID: id) == nil ? nil : id)
 
         if id == PhrasePage.xinChao.id && canonicalPageID == PhrasePage.xinChao.id {
             guard currentRoute != .phrasePage else {
@@ -2430,7 +2457,7 @@ struct HomeView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                    LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
                         header
                             .id(Self.scrollTopID)
 
@@ -2887,6 +2914,7 @@ private struct HomePhraseShelfDefinition: Identifiable {
     let layout: HomePhraseShelfLayout
     let maximumItemCount: Int
     let fillsFromSourceCategories: Bool
+    let items: [HomePhraseItem]
 
     init(
         id: String,
@@ -2908,9 +2936,20 @@ private struct HomePhraseShelfDefinition: Identifiable {
         self.layout = layout
         self.maximumItemCount = maximumItemCount
         self.fillsFromSourceCategories = fillsFromSourceCategories
+        self.items = Self.resolveItems(
+            pageIDs: pageIDs,
+            sourceCategoryIDs: sourceCategoryIDs,
+            maximumItemCount: maximumItemCount,
+            fillsFromSourceCategories: fillsFromSourceCategories
+        )
     }
 
-    var items: [HomePhraseItem] {
+    private static func resolveItems(
+        pageIDs: [String],
+        sourceCategoryIDs: [String],
+        maximumItemCount: Int,
+        fillsFromSourceCategories: Bool
+    ) -> [HomePhraseItem] {
         var seen = Set<String>()
         var rows: [HomePhraseItem] = []
 
@@ -3155,24 +3194,24 @@ private enum HomeContent {
         homepagePhraseShelves.first { $0.id == id }
     }
 
-    static var useNowItems: [HomePhraseItem] {
+    static let useNowItems: [HomePhraseItem] = {
         useNowIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
+    }()
 
-    static var useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] {
+    static let useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] = {
         HomeUseNowCatalog.featureCardIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
-    }
+    }()
 
-    static var savedFallbackItems: [HomePhraseItem] {
+    static let savedFallbackItems: [HomePhraseItem] = {
         savedFallbackPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
+    }()
 
     static let savedFallbackPageIDs = [
         "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
         "viet-phrase-hotel-3",
     ]
 
-    static var practiceScenarios: [HomeScenario] {
+    static let practiceScenarios: [HomeScenario] = {
         [
             .danangFirstDay,
             .hotelCheckInHelp,
@@ -3181,7 +3220,7 @@ private enum HomeContent {
             .danangDay,
             .restaurantOrderingPayment,
         ].map { HomeScenario(scenarioID: $0) }
-    }
+    }()
 
     static let situationCards = [
         HomeSituationCard(
@@ -3207,7 +3246,7 @@ private enum HomeContent {
         ),
     ]
 
-    static var cityCards: [HomeCityCard] {
+    static let cityCards: [HomeCityCard] = {
         BrowseSearchDestinations.homepageCityShortcuts.map { city in
             HomeCityCard(
                 id: city.id,
@@ -3216,7 +3255,7 @@ private enum HomeContent {
                 route: city.collectionRoute
             )
         }
-    }
+    }()
 
     private static func homeCityTitle(for cityID: String, fallback: String) -> String {
         switch cityID {
@@ -3456,7 +3495,7 @@ private struct HomeFeaturedPhraseCarousel: View {
                     isSaved: isSaved(item.pageID),
                     isHeroMorphSource: heroMorphPageID == item.morphPageID,
                     chromeNamespace: chromeNamespace,
-                    visibilityRoute: visibilityRoute,
+                    visibilityRoute: item.id == items.first?.id ? visibilityRoute : nil,
                     onOpenDetail: onOpenDetail,
                     onToggleSaved: { onToggleSaved(item.pageID) }
                 )

@@ -246,6 +246,35 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.getting-around"].exists)
     }
 
+    func testCityFilterSelectionKeepsBrowseByStableAndPromotesSelectedPill() {
+        let app = launchApp(arguments: ["--browse-city", "danang"])
+        let targetFilterID = "BrowseCollection.CityFilter.danang.browse.landmarks"
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        let browseByTitle = app.staticTexts["Browse by"]
+        let targetFilter = app.buttons[targetFilterID]
+        XCTAssertTrue(browseByTitle.waitForExistence(timeout: 2))
+        XCTAssertTrue(targetFilter.waitForExistence(timeout: 2))
+
+        let stableBrowseByY = browseByTitle.frame.minY
+        targetFilter.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        RunLoop.current.run(until: Date().addingTimeInterval(0.45))
+
+        XCTAssertTrue(targetFilter.isSelected)
+        XCTAssertEqual(
+            browseByTitle.frame.minY,
+            stableBrowseByY,
+            accuracy: 3,
+            "Changing city filters should not move the vertical Browse by section."
+        )
+        XCTAssertEqual(
+            targetFilter.frame.minX,
+            browseByTitle.frame.minX,
+            accuracy: 24,
+            "The selected city filter should animate to the leading filter position."
+        )
+    }
+
     func testCaptureBrowseCityHeroFadeProofForAllCityCards() {
         let app = launchApp(arguments: ["--browse"])
 

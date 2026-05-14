@@ -166,8 +166,8 @@ struct PhraseArticleTemplateView: View {
                             }
                         }
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
-                        .padding(.top, PhrasePageStyle.articleSectionsTopPadding + topChromeContentClearance)
-                        .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
+                        .padding(.top, articleSectionsTopPadding + topChromeContentClearance)
+                        .padding(.bottom, articleBottomChromeContentClearance)
                         .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
                         .offset(y: holdsArticleContentForHomeMorph ? 18 : 0)
                         .allowsHitTesting(!holdsArticleContentForHomeMorph)
@@ -203,7 +203,10 @@ struct PhraseArticleTemplateView: View {
                 CompactPhraseMastheadBackground()
                     .frame(height: 112)
             } else {
-                HeroMastheadImage(imageName: page.heroImageName ?? PhrasePageStyle.heroImageName)
+                HeroMastheadImage(
+                    imageName: page.heroImageName ?? PhrasePageStyle.heroImageName,
+                    height: heroImageHeight
+                )
             }
 
             VStack(alignment: .leading, spacing: 12) {
@@ -219,7 +222,7 @@ struct PhraseArticleTemplateView: View {
                     title: page.title,
                     englishTitle: page.englishTitle,
                     pronunciation: page.pronunciation,
-                    titleSize: usesCompactPhraseHero ? 38 : 54,
+                    titleSize: heroTitleSize,
                     titleLineLimit: usesCompactPhraseHero ? 3 : 2,
                     pronunciationLineLimit: 2,
                     morphPageID: morphPageID,
@@ -243,10 +246,10 @@ struct PhraseArticleTemplateView: View {
                         anchor: .topLeading
                     )
                     .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
-                    .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
+                    .padding(.top, heroPlayerTopSpacing)
             }
             .padding(.horizontal, 24)
-            .padding(.top, usesCompactPhraseHero ? 20 : PhrasePageStyle.heroTextTopPadding)
+            .padding(.top, heroTextTopPadding)
             .padding(.bottom, PhrasePageStyle.heroTextBottomPadding)
         }
         .background(PhrasePageStyle.pageBackground)
@@ -258,6 +261,42 @@ struct PhraseArticleTemplateView: View {
 
     private var usesCompactPhraseHero: Bool {
         page.heroImageName == "HeroCompactPhraseMasthead"
+    }
+
+    private var usesVietnameseMenuDetailFit: Bool {
+        page.id.hasPrefix("viet-menu-")
+    }
+
+    private var heroImageHeight: CGFloat {
+        usesVietnameseMenuDetailFit ? 238 : PhrasePageStyle.heroImageHeight
+    }
+
+    private var heroTitleSize: CGFloat {
+        if usesCompactPhraseHero {
+            return 38
+        }
+
+        return usesVietnameseMenuDetailFit ? 46 : 54
+    }
+
+    private var heroTextTopPadding: CGFloat {
+        if usesCompactPhraseHero {
+            return 20
+        }
+
+        return usesVietnameseMenuDetailFit ? 20 : PhrasePageStyle.heroTextTopPadding
+    }
+
+    private var heroPlayerTopSpacing: CGFloat {
+        usesVietnameseMenuDetailFit ? 12 : PhrasePageStyle.heroPlayerTopSpacing
+    }
+
+    private var articleSectionsTopPadding: CGFloat {
+        usesVietnameseMenuDetailFit ? 22 : PhrasePageStyle.articleSectionsTopPadding
+    }
+
+    private var articleBottomChromeContentClearance: CGFloat {
+        usesVietnameseMenuDetailFit ? 132 : PhrasePageStyle.bottomChromeContentClearance
     }
 
     private var usesHomePhraseHeroMorph: Bool {

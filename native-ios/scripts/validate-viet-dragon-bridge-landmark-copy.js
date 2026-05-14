@@ -49,11 +49,20 @@ const expectedSectionOrder = [
 ];
 const expectedRows = new Map([
   ["quick-say", ["city-danang-place-dragon-bridge"]],
-  ["getting-there", ["city-danang-go-dragon-bridge", "city-danang-where-dragon-bridge"]],
+  ["getting-there", ["taxi-1", "v500-unde-repa-can-you-show-me-on-the-map"]],
   ["at-the-bridge", ["ves-take-photo-for-me"]],
-  ["pickup-nearby", ["ves-drop-near-dragon-bridge", "city-danang-stop-dragon-bridge"]],
-  ["explore-next", ["city-danang-atm-dragon-bridge", "city-danang-eat-near-dragon-bridge"]],
+  ["pickup-nearby", ["v500-tran-please-stop-right-here", "directions-8", "v900-dire-navi-is-this-the-correct-pickup-point"]],
+  ["explore-next", ["airport-4", "ves-call-taxi-for-me"]],
 ]);
+const retiredAttractionPhraseIDs = [
+  "city-danang-go-dragon-bridge",
+  "city-danang-where-dragon-bridge",
+  "city-danang-stop-dragon-bridge",
+  "city-danang-atm-dragon-bridge",
+  "city-danang-eat-near-dragon-bridge",
+  "ves-drop-near-dragon-bridge",
+  "ves-take-me-to-dragon-bridge",
+];
 const bannedUserFacingTerms = [
   "anchor",
   "place name",
@@ -174,6 +183,10 @@ function main() {
   for (const [sectionID, expectedPhraseIDs] of expectedRows) {
     const section = page.sections.find((candidate) => candidate.id === sectionID);
     assertArrayEqual(phraseIDs(section), expectedPhraseIDs, `${sectionID} phrase rows`);
+  }
+  const pageJSON = JSON.stringify(page);
+  for (const phraseID of retiredAttractionPhraseIDs) {
+    assert(!pageJSON.includes(phraseID), `Dragon Bridge page still links retired attraction phrase ${phraseID}`);
   }
   const selfRow = page.sections.find((section) => section.id === "quick-say")?.phrases?.[0];
   assert(selfRow?.id === phraseID, "quick-say self row missing");
