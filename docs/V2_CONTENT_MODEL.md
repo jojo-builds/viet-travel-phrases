@@ -233,6 +233,7 @@ Native generation scripts:
 - `native-ios/scripts/generate-authored-tier-one-pages.js`
 - `native-ios/scripts/sync-viet-audio.js` validates and normalizes native audio manifest coverage
 - `native-ios/scripts/generate-breakdown-audio-elevenlabs.js`
+- `native-ios/scripts/generate-vietnamese-menu-audio-elevenlabs.js`
 
 Website export output:
 

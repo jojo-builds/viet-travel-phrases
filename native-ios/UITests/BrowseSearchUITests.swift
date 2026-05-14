@@ -229,6 +229,26 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-ca-kho-to"].waitForExistence(timeout: 3))
     }
 
+    func testVietnameseMenuSectionHeadersHideCountsAndHelperSubtitles() {
+        let food = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
+
+        XCTAssertTrue(food.staticTexts["Vietnamese menu"].waitForExistence(timeout: 4))
+        tapHorizontalCard(food.buttons["VietnameseMenu.SectionRail.noodle-soups"], app: food, scrollAnchor: food.buttons["VietnameseMenu.SectionRail.popular"])
+        XCTAssertTrue(food.staticTexts["VietnameseMenu.SectionTitle.noodle-soups"].waitForExistence(timeout: 3))
+        XCTAssertFalse(food.staticTexts["26"].exists)
+        XCTAssertFalse(food.staticTexts["phở, bún, mì"].exists)
+        food.terminate()
+
+        let drinks = launchApp(arguments: ["--browse-category", "vietnamese-drink-menu"])
+
+        XCTAssertTrue(drinks.staticTexts["Vietnamese drinks"].waitForExistence(timeout: 4))
+        tapHorizontalCard(drinks.buttons["VietnameseMenu.SectionRail.coffee"], app: drinks, scrollAnchor: drinks.buttons["VietnameseMenu.SectionRail.popular"])
+        XCTAssertTrue(drinks.staticTexts["VietnameseMenu.SectionTitle.coffee"].waitForExistence(timeout: 3))
+        XCTAssertFalse(drinks.staticTexts["14"].exists)
+        XCTAssertFalse(drinks.staticTexts["iced, black, milk"].exists)
+        drinks.terminate()
+    }
+
     func testVietnameseMenuTopSectionPillAppearsAfterInPageRailScrollsOff() {
         let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
 
@@ -333,6 +353,18 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons[filterID].isSelected)
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].exists)
         XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.getting-around"].exists)
+    }
+
+    func testBrowseCityCardTransitionKeepsDestinationBodyMounted() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["Browse.City.danang"], app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 1))
+        XCTAssertTrue(
+            app.staticTexts["Browse by"].waitForExistence(timeout: 0.2),
+            "City-card transitions should not swap the destination body for a blank placeholder."
+        )
     }
 
     func testCityFilterSelectionKeepsBrowseByStableAndPromotesSelectedPill() {
