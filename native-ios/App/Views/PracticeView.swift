@@ -111,6 +111,7 @@ struct PracticeView: View {
                     onSelectScenarioOption: { option, step in
                         selectScenarioOption(option, for: step)
                     },
+                    onContinueScenario: continueScenarioSession,
                     onPracticeAnother: startAnotherScenario,
                     onBackToPractice: dismissScenarioThread,
                     onBrowseTapped: {
@@ -158,7 +159,6 @@ struct PracticeView: View {
 
     private static let scrollTopID = "PracticeViewTop"
     private static let scenarioReplyRevealDelay: TimeInterval = 1.6
-    private static let scenarioAdvanceDelayAfterReply: TimeInterval = 0.9
     private static let scenarioReturnPresentationDelay: TimeInterval = 0.85
 
     private var topContentPadding: CGFloat {
@@ -253,11 +253,14 @@ struct PracticeView: View {
             return
         }
 
-        if session.isOnLastStep {
+        guard let nextIndex = session.scenario.nextStepIndex(
+            after: session.currentIndex,
+            selectedOptionIDs: session.selectedOptionIDs
+        ) else {
             scenarioCompletion = PracticeScenarioCompletionSummary(
                 scenario: session.scenario,
                 context: session.context,
-                practicedCount: session.scenario.steps.count
+                practicedCount: session.selectedOptionIDs.count
             )
             activeScenarioSession = nil
             messageStore.markComplete(session)
@@ -265,7 +268,7 @@ struct PracticeView: View {
             return
         }
 
-        session.currentIndex += 1
+        session.currentIndex = nextIndex
         activeScenarioSession = session
         messageStore.save(session)
     }
@@ -352,22 +355,6 @@ struct PracticeView: View {
             session.revealedReplyStepIDs.insert(stepID)
             activeScenarioSession = session
             messageStore.save(session)
-            scheduleScenarioAdvanceAfterReply(stepID: stepID)
-        }
-    }
-
-    private func scheduleScenarioAdvanceAfterReply(stepID: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + Self.scenarioAdvanceDelayAfterReply) {
-            guard
-                let session = activeScenarioSession,
-                session.currentStep?.id == stepID,
-                session.selectedOptionIDs[stepID] != nil,
-                session.revealedReplyStepIDs.contains(stepID)
-            else {
-                return
-            }
-
-            continueScenarioSession()
         }
     }
 
@@ -379,9 +366,7 @@ struct PracticeView: View {
             return
         }
 
-        if session.revealedReplyStepIDs.contains(currentStep.id) {
-            scheduleScenarioAdvanceAfterReply(stepID: currentStep.id)
-        } else {
+        if !session.revealedReplyStepIDs.contains(currentStep.id) {
             scheduleScenarioAdvanceAfterSend(stepID: currentStep.id)
         }
     }

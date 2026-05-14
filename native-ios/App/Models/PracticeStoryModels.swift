@@ -136,7 +136,10 @@ enum PracticeStoryTranscript {
         selectedOptionIDs: [String: String],
         revealedReplyStepIDs: Set<String> = []
     ) -> [PracticeStoryTurn] {
-        let visibleSteps = Array(scenario.steps.prefix(max(0, currentIndex) + 1))
+        let visibleSteps = scenario.visibleSteps(
+            through: currentIndex,
+            selectedOptionIDs: selectedOptionIDs
+        )
         var turns: [PracticeStoryTurn] = []
 
         for (index, step) in visibleSteps.enumerated() {
@@ -173,7 +176,7 @@ enum PracticeStoryTranscript {
                     }
                 }
 
-            } else if index == currentIndex {
+            } else if index == visibleSteps.count - 1 {
                 turns.append(
                     .choiceSet(
                         step: step,

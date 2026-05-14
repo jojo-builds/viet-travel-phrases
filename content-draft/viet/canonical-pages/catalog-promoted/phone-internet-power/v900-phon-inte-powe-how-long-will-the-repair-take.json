@@ -47,26 +47,23 @@
         {
           "id": "chunk-1",
           "vietnamese": "Việc sửa chữa",
-          "english": "the repair",
-          "audioKey": null
+          "english": "the repair"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "sẽ mất bao",
-          "english": "code",
-          "audioKey": null
+          "vietnamese": "sẽ mất",
+          "english": "will take"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "lâu",
-          "english": "how long will it take",
-          "audioKey": null
+          "vietnamese": "bao lâu",
+          "english": "how long"
         },
         {
           "id": "chunk-4",
           "vietnamese": "Việc sửa chữa sẽ mất bao lâu?",
           "english": "How long will the repair take",
-          "audioKey": null
+          "audioKey": "v900-phon-inte-powe-how-long-will-the-repair-take"
         }
       ]
     },

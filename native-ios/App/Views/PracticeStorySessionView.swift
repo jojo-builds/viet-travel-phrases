@@ -29,6 +29,7 @@ struct PracticeMessagesThreadHost: View {
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
+    let onContinueScenario: () -> Void
     let onPracticeAnother: () -> Void
     let onBackToPractice: () -> Void
     let onBrowseTapped: () -> Void
@@ -56,6 +57,7 @@ struct PracticeMessagesThreadHost: View {
                     onTogglePracticePage: onTogglePracticePage,
                     onToggleSavedPhrasePage: onToggleSavedPhrasePage,
                     onSelectScenarioOption: onSelectScenarioOption,
+                    onContinueScenario: onContinueScenario,
                     onPracticeAnother: onPracticeAnother,
                     onBackToPractice: onBackToPractice,
                     onBrowseTapped: onBrowseTapped
@@ -260,6 +262,7 @@ struct PracticeMessagesThreadContent: View {
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectScenarioOption: (PracticeScenarioResponseOption, PracticeScenarioStep) -> Void
+    let onContinueScenario: () -> Void
     let onPracticeAnother: () -> Void
     let onBackToPractice: () -> Void
     let onBrowseTapped: () -> Void
@@ -276,7 +279,8 @@ struct PracticeMessagesThreadContent: View {
                     onOpenPhrasePage: onOpenPhrasePage,
                     onTogglePracticePage: onTogglePracticePage,
                     onToggleSavedPhrasePage: onToggleSavedPhrasePage,
-                    onSelectOption: { option in onSelectScenarioOption(option, currentStep) }
+                    onSelectOption: { option in onSelectScenarioOption(option, currentStep) },
+                    onContinue: onContinueScenario
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             } else if let scenarioCompletion {
@@ -310,7 +314,9 @@ struct PracticeStorySessionSurface: View {
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     let onSelectOption: (PracticeScenarioResponseOption) -> Void
+    let onContinue: () -> Void
     @State private var scrollRequestID = 0
+    @State private var selectedDefinitionToken: PracticeStoryDefinitionToken?
 
     private static let transcriptBottomID = "Practice.Story.Transcript.Bottom"
     private static let scrollDelayNanoseconds: UInt64 = 50_000_000
@@ -329,66 +335,87 @@ struct PracticeStorySessionSurface: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            if showsHeader {
-                PracticeStoryHeader(
-                    scenario: session.scenario,
-                    isPlacement: session.context == .placement
-                )
-                .padding(.horizontal, 20)
-                .padding(.top, 18)
-                .padding(.bottom, 14)
+        ZStack(alignment: .topLeading) {
+            if selectedDefinitionToken != nil {
+                Color.clear
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        selectedDefinitionToken = nil
+                    }
+                    .zIndex(0)
             }
 
-            GeometryReader { geometry in
-                ScrollViewReader { scrollProxy in
-                    ScrollView(.vertical, showsIndicators: false) {
-                        VStack(alignment: .leading, spacing: 0) {
-                            PracticeStoryTranscriptView(
-                                turns: turns,
-                                tint: session.scenario.id.tint,
-                                isInPracticePool: isInPracticePool,
-                                isSavedPhrasePage: isSavedPhrasePage,
-                                onOpenPhrasePage: onOpenPhrasePage,
-                                onTogglePracticePage: onTogglePracticePage,
-                                onToggleSavedPhrasePage: onToggleSavedPhrasePage
-                            )
+            VStack(alignment: .leading, spacing: 0) {
+                if showsHeader {
+                    PracticeStoryHeader(
+                        scenario: session.scenario,
+                        isPlacement: session.context == .placement
+                    )
+                    .padding(.horizontal, 20)
+                    .padding(.top, 18)
+                    .padding(.bottom, 14)
+                }
 
-                            Color.clear
-                                .frame(height: 1)
-                                .id(Self.transcriptBottomID)
+                GeometryReader { geometry in
+                    ScrollViewReader { scrollProxy in
+                        ScrollView(.vertical, showsIndicators: false) {
+                            VStack(alignment: .leading, spacing: 0) {
+                                PracticeStoryTranscriptView(
+                                    turns: turns,
+                                    tint: session.scenario.id.tint,
+                                    isInPracticePool: isInPracticePool,
+                                    isSavedPhrasePage: isSavedPhrasePage,
+                                    onOpenPhrasePage: onOpenPhrasePage,
+                                    onTogglePracticePage: onTogglePracticePage,
+                                    onToggleSavedPhrasePage: onToggleSavedPhrasePage,
+                                    selectedDefinitionToken: $selectedDefinitionToken
+                                )
+
+                                Color.clear
+                                    .frame(height: 1)
+                                    .id(Self.transcriptBottomID)
+                            }
+                            .padding(.horizontal, 20)
+                            .padding(.top, topContentPadding + (showsHeader ? 6 : 4))
+                            .padding(.bottom, 18)
+                            .frame(
+                                maxWidth: .infinity,
+                                minHeight: geometry.size.height,
+                                alignment: startPosition.stackAlignment
+                            )
                         }
-                        .padding(.horizontal, 20)
-                        .padding(.top, topContentPadding + (showsHeader ? 6 : 4))
-                        .padding(.bottom, 18)
-                        .frame(
-                            maxWidth: .infinity,
-                            minHeight: geometry.size.height,
-                            alignment: startPosition.stackAlignment
-                        )
-                    }
-                    .onAppear {
-                        if PracticeStorySessionLayoutPolicy.shouldScrollToBottomOnAppear(for: session) {
-                            scrollToBottom(scrollProxy, animated: false)
+                        .onAppear {
+                            if PracticeStorySessionLayoutPolicy.shouldScrollToBottomOnAppear(for: session) {
+                                scrollToBottom(scrollProxy, animated: false)
+                            }
                         }
-                    }
-                    .onChange(of: session.currentIndex) { _, _ in
-                        scrollToBottom(scrollProxy, animated: true)
-                    }
-                    .onChange(of: session.selectedOptionIDs) { _, _ in
-                        scrollToBottom(scrollProxy, animated: true)
-                    }
-                    .onChange(of: session.revealedReplyStepIDs) { _, _ in
-                        scrollToBottom(scrollProxy, animated: true)
+                        .onChange(of: session.currentIndex) { _, _ in
+                            scrollToBottom(scrollProxy, animated: true)
+                        }
+                        .onChange(of: session.selectedOptionIDs) { _, _ in
+                            scrollToBottom(scrollProxy, animated: true)
+                        }
+                        .onChange(of: session.revealedReplyStepIDs) { _, _ in
+                            scrollToBottom(scrollProxy, animated: true)
+                        }
                     }
                 }
             }
+            .zIndex(1)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .simultaneousGesture(
+            TapGesture().onEnded {
+                if selectedDefinitionToken != nil {
+                    selectedDefinitionToken = nil
+                }
+            }
+        )
         .safeAreaInset(edge: .bottom, spacing: 0) {
             PracticeStoryComposerSurface(
                 session: session,
-                onSelectOption: onSelectOption
+                onSelectOption: onSelectOption,
+                onContinue: onContinue
             )
             .padding(.horizontal, 20)
             .padding(.top, 10)
@@ -434,6 +461,7 @@ struct PracticeStorySessionSurface: View {
 struct PracticeStoryComposerSurface: View {
     let session: PracticeScenarioSession
     let onSelectOption: (PracticeScenarioResponseOption) -> Void
+    let onContinue: () -> Void
 
     private var currentStep: PracticeScenarioStep? {
         session.currentStep
@@ -461,6 +489,18 @@ struct PracticeStoryComposerSurface: View {
         )
     }
 
+    private var canContinue: Bool {
+        guard
+            let currentStep,
+            let currentSelectedOption
+        else {
+            return false
+        }
+
+        return !currentStep.hasLocalReply(after: currentSelectedOption)
+            || session.revealedReplyStepIDs.contains(currentStep.id)
+    }
+
     var body: some View {
         if let currentStep, currentSelectedOption == nil {
             PracticeStoryComposer(
@@ -469,7 +509,27 @@ struct PracticeStoryComposerSurface: View {
                 onSend: onSelectOption
             )
             .id(currentStep.id)
+        } else if canContinue {
+            PracticeStoryContinueButton(action: onContinue)
         }
+    }
+}
+
+private struct PracticeStoryContinueButton: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Label("Continue", systemImage: "arrow.down.message.fill")
+                .font(.headline.weight(.bold))
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+                .background(Color(red: 0.07, green: 0.50, blue: 1.0), in: Capsule())
+                .shadow(color: .black.opacity(0.08), radius: 14, x: 0, y: 8)
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("Practice.Story.Continue")
     }
 }
 

@@ -58,6 +58,9 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(waitForStaticText(containing: "Lối này", in: app, timeout: 0.35))
         XCTAssertTrue(waitForStaticText(containing: "Xin chào", in: app, timeout: 3))
         XCTAssertTrue(waitForStaticText(containing: "Khu lấy hành lý", in: app, timeout: 3))
+        XCTAssertFalse(waitForStaticText(containing: "Cho tôi xem thẻ hành lý", in: app, timeout: 1.25))
+        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 2))
+        tapButton("Practice.Story.Continue", in: app)
         XCTAssertTrue(waitForStaticText(containing: "Cho tôi xem thẻ hành lý", in: app, timeout: 3))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
 
@@ -65,13 +68,31 @@ final class PracticeUITests: XCTestCase {
         tapButton("Practice.Story.Send", in: app)
 
         XCTAssertFalse(waitForStaticText(containing: "Lối này", in: app, timeout: 0.35))
-        XCTAssertTrue(waitForStaticText(containing: "Đây là thẻ hành lý", in: app, timeout: 3))
         XCTAssertTrue(waitForStaticText(containing: "Băng chuyền số 4", in: app, timeout: 3))
         XCTAssertEqual(app.keyboards.count, 0)
         XCTAssertFalse(app.buttons["Practice.Story.Next"].exists)
+        XCTAssertFalse(waitForStaticText(containing: "Bạn cần tìm cửa ra hay điểm đón xe?", in: app, timeout: 1.25))
+        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 2))
 
+        tapButton("Practice.Story.Continue", in: app)
         XCTAssertTrue(waitForStaticText(containing: "Bạn cần tìm cửa ra hay điểm đón xe?", in: app, timeout: 5))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
+    }
+
+    func testMessageThreadWaitsForContinueAfterLocalReply() {
+        let app = launchPracticeApp(scenarioID: "danangFirstDay", title: "Airport Baggage")
+
+        tapFirstStoryChoice(in: app)
+        tapButton("Practice.Story.Send", in: app)
+
+        XCTAssertTrue(waitForStaticText(containing: "Khu lấy hành lý", in: app, timeout: 4))
+        XCTAssertFalse(waitForStaticText(containing: "Cho tôi xem thẻ hành lý", in: app, timeout: 1.25))
+        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 2))
+
+        tapButton("Practice.Story.Continue", in: app)
+
+        XCTAssertTrue(waitForStaticText(containing: "Cho tôi xem thẻ hành lý", in: app, timeout: 4))
+        XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 4))
     }
 
     private func systemTab(_ title: String, in app: XCUIApplication) -> XCUIElement {
@@ -106,7 +127,7 @@ final class PracticeUITests: XCTestCase {
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
 
-        let travelerPhrase = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Lấy hành lý")).firstMatch
+        let travelerPhrase = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Where is baggage claim")).firstMatch
         XCTAssertTrue(travelerPhrase.waitForExistence(timeout: 4))
         travelerPhrase.press(forDuration: 1.0)
 
@@ -114,21 +135,41 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Open Details"].exists)
     }
 
+    func testDefinitionBubbleSwitchesBetweenAdjacentTokens() {
+        let app = launchPracticeApp(scenarioID: "danangFirstDay", title: "Airport Baggage")
+        tapFirstStoryChoice(in: app)
+        tapButton("Practice.Story.Send", in: app)
+
+        let collectToken = definitionToken(containingLabel: "Lấy", in: app)
+        collectToken.tap()
+
+        let calloutEnglish = app.staticTexts["Practice.Story.DefinitionCallout.English"].firstMatch
+        XCTAssertTrue(calloutEnglish.waitForExistence(timeout: 4))
+        XCTAssertEqual(calloutEnglish.label, "claim / collect")
+
+        let baggageToken = definitionToken(containingLabel: "hành lý", in: app)
+        baggageToken.tap()
+        XCTAssertTrue(calloutEnglish.waitForExistence(timeout: 2))
+        XCTAssertEqual(calloutEnglish.label, "baggage")
+    }
+
     func testAdaptedMarketPriceMessageUsesCatalogAudioAndKeepsPhraseActions() {
         let app = launchPracticeApp(scenarioID: "shoppingMarketPrice", title: "Market Price")
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
+        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 4))
+        tapButton("Practice.Story.Continue", in: app)
 
         tapFirstStoryChoice(in: app)
         tapButton("Practice.Story.Send", in: app)
 
+        let travelerPhrase = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "What is your best price")).firstMatch
+        revealIfNeeded(travelerPhrase, in: app, bySwiping: .down)
+        XCTAssertTrue(travelerPhrase.waitForExistence(timeout: 4))
         let priceAudioButton = app.buttons.matching(
             NSPredicate(format: "identifier BEGINSWITH %@", "Practice.Story.Audio.shopping-market-price:traveler:")
         ).firstMatch
         XCTAssertTrue(priceAudioButton.waitForExistence(timeout: 4))
-
-        let travelerPhrase = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Giá tốt nhất của bạn là gì")).firstMatch
-        XCTAssertTrue(travelerPhrase.waitForExistence(timeout: 4))
         travelerPhrase.press(forDuration: 1.0)
 
         XCTAssertTrue(app.buttons["Save to Saved Phrases"].waitForExistence(timeout: 4))
@@ -161,6 +202,8 @@ final class PracticeUITests: XCTestCase {
         tapButton("Practice.Story.Send", in: app)
 
         XCTAssertTrue(waitForStaticText(containing: "để tôi xem thuốc phù hợp", in: app, timeout: 5))
+        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 4))
+        tapButton("Practice.Story.Continue", in: app)
         XCTAssertTrue(waitForStaticText(containing: "Bạn có sốt không?", in: app, timeout: 5))
         XCTAssertTrue(app.buttons["Practice.Story.Send"].firstMatch.waitForExistence(timeout: 5))
         XCTAssertEqual(selectedPhrase.label, "tôi bị sốt")
@@ -197,7 +240,7 @@ final class PracticeUITests: XCTestCase {
 
     func testMessageThreadPersistsThroughHubAndPhrasePageRoundTrip() {
         let app = launchPracticeApp(scenarioID: "danangFirstDay", title: "Airport Baggage")
-        let firstTravelerMessage = app.staticTexts["Practice.Story.Text.traveler.airport-story-opening:traveler:airport-story-opening:viet-phrase-airport-2:0.vietnamese"]
+        let firstTravelerMessage = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "Where is baggage claim")).firstMatch
         let secondStepChoice = app.buttons.matching(
             NSPredicate(format: "identifier BEGINSWITH %@", "Practice.Story.Choice.airport-story-baggage-belt:")
         ).firstMatch
@@ -215,6 +258,8 @@ final class PracticeUITests: XCTestCase {
         app.buttons["TopAdmin.BackButton"].tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["Practice.Story.Continue"].firstMatch.waitForExistence(timeout: 5))
+        tapButton("Practice.Story.Continue", in: app)
         XCTAssertTrue(secondStepChoice.waitForExistence(timeout: 5))
 
         dismissMessagesThread(in: app)
@@ -341,6 +386,33 @@ final class PracticeUITests: XCTestCase {
         chip.tap()
     }
 
+    private enum SwipeDirection {
+        case down
+        case up
+    }
+
+    private func revealIfNeeded(_ element: XCUIElement, in app: XCUIApplication, bySwiping direction: SwipeDirection) {
+        for _ in 0..<4 where !element.exists || !element.isHittable {
+            switch direction {
+            case .down:
+                app.swipeDown()
+            case .up:
+                app.swipeUp()
+            }
+        }
+    }
+
+    private func definitionToken(containingLabel labelFragment: String, in app: XCUIApplication) -> XCUIElement {
+        let predicate = NSPredicate(
+            format: "identifier BEGINSWITH %@ AND label CONTAINS[c] %@",
+            "Practice.Story.DefinitionToken.",
+            labelFragment
+        )
+        let query = app.buttons.matching(predicate)
+        XCTAssertTrue(query.firstMatch.waitForExistence(timeout: 4), "Definition token containing \(labelFragment) did not appear.")
+        return enabledHittableElement(in: query, label: "Definition token \(labelFragment)", preferLast: true)
+    }
+
     private func completeScenario(app: XCUIApplication, directoryURL: URL, slug: String) {
         for stepIndex in 1...10 {
             if app.staticTexts["Conversation complete"].exists {
@@ -361,6 +433,10 @@ final class PracticeUITests: XCTestCase {
             if app.staticTexts["Conversation complete"].exists {
                 capture(app: app, directoryURL: directoryURL, name: "\(slug)-complete.png")
                 return
+            }
+
+            if app.buttons["Practice.Story.Continue"].firstMatch.exists {
+                tapButton("Practice.Story.Continue", in: app)
             }
 
             XCTAssertTrue(

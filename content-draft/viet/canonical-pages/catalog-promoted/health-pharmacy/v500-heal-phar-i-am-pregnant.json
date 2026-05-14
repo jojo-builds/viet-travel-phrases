@@ -46,21 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "tôi đang mang",
-          "english": "code",
-          "audioKey": null
+          "vietnamese": "tôi đang",
+          "english": "I am"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thai",
-          "english": "pregnant",
-          "audioKey": null
+          "vietnamese": "mang thai",
+          "english": "pregnant"
         },
         {
           "id": "chunk-3",
           "vietnamese": "tôi đang mang thai",
           "english": "I am pregnant",
-          "audioKey": null
+          "audioKey": "v500-heal-phar-i-am-pregnant"
         }
       ]
     },

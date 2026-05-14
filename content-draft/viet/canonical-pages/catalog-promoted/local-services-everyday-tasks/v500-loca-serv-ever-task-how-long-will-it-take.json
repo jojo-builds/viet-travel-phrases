@@ -46,21 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Sẽ mất bao",
-          "english": "code",
-          "audioKey": null
+          "vietnamese": "Sẽ mất",
+          "english": "will take"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lâu",
-          "english": "how long will it take",
-          "audioKey": null
+          "vietnamese": "bao lâu",
+          "english": "how long"
         },
         {
           "id": "chunk-3",
           "vietnamese": "Sẽ mất bao lâu?",
           "english": "How long will it take",
-          "audioKey": null
+          "audioKey": "v500-loca-serv-ever-task-how-long-will-it-take"
         }
       ]
     },
