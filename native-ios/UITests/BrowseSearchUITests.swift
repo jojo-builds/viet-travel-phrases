@@ -275,17 +275,26 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-pho-bo"].waitForExistence(timeout: 3))
     }
 
-    func testVietnameseMenuDetailHeroImageOpensLightbox() {
+    func testVietnameseMenuDetailHeroImageSupportsAllDismissPaths() {
         let app = launchApp(arguments: ["--detail-page", "viet-menu-food-pho-bo"])
+        let imageIdentifier = "PhraseArticle.HeroImageLightbox.Image.viet-menu-food-pho-bo"
 
         XCTAssertTrue(app.staticTexts["Phở bò"].waitForExistence(timeout: 4))
         tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
 
-        XCTAssertTrue(app.images["PhraseArticle.HeroImageLightbox.Image.viet-menu-food-pho-bo"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.images[imageIdentifier].waitForExistence(timeout: 3))
         XCTAssertTrue(app.buttons["PhraseArticle.HeroImageLightbox.Close"].exists)
 
         tapWhenVisible(app.buttons["PhraseArticle.HeroImageLightbox.Close"], app: app)
-        XCTAssertFalse(app.images["PhraseArticle.HeroImageLightbox.Image.viet-menu-food-pho-bo"].waitForExistence(timeout: 1))
+        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+
+        tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
+        swipeHeroImageLightbox(app.images[imageIdentifier], direction: .down)
+        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+
+        tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
+        swipeHeroImageLightbox(app.images[imageIdentifier], direction: .up)
+        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
     }
 
     func testVietnameseMenuDetailUsesMenuChipsInsteadOfBreakdownMath() {
@@ -765,6 +774,30 @@ final class BrowseSearchUITests: XCTestCase {
         return frame.minX >= appFrame.minX + 8
             && frame.maxX <= appFrame.maxX - 8
             && frame.intersects(appFrame)
+    }
+
+    private enum HeroImageLightboxSwipeDirection {
+        case up
+        case down
+    }
+
+    private func swipeHeroImageLightbox(_ image: XCUIElement, direction: HeroImageLightboxSwipeDirection, file: StaticString = #filePath, line: UInt = #line) {
+        XCTAssertTrue(image.waitForExistence(timeout: 3), "Hero image lightbox was not visible.", file: file, line: line)
+
+        let startOffset: CGVector
+        let endOffset: CGVector
+        switch direction {
+        case .up:
+            startOffset = CGVector(dx: 0.5, dy: 0.78)
+            endOffset = CGVector(dx: 0.5, dy: 0.18)
+        case .down:
+            startOffset = CGVector(dx: 0.5, dy: 0.22)
+            endOffset = CGVector(dx: 0.5, dy: 0.82)
+        }
+
+        let start = image.coordinate(withNormalizedOffset: startOffset)
+        let end = image.coordinate(withNormalizedOffset: endOffset)
+        start.press(forDuration: 0.05, thenDragTo: end)
     }
 
     private func captureBrowseCityHeroFadeProofIfRequested(app: XCUIApplication, name: String) {
