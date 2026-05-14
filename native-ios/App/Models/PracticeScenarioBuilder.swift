@@ -309,6 +309,10 @@ enum PracticeScenarioBuilder {
                 for: candidate,
                 canonicalPageIDsByTemplateID: canonicalPageIDsByTemplateID
             ),
+            nextStepID: template.nextStepID(
+                for: candidate,
+                canonicalPageIDsByTemplateID: canonicalPageIDsByTemplateID
+            ),
             feedbackTitle: isBestFit ? "Best quick reply" : "Useful later",
             feedbackBody: isBestFit
                 ? template.bestFitFeedback(candidate)
@@ -557,6 +561,16 @@ private struct PracticeScenarioStepTemplate {
         )?.nextLocalMeaning
     }
 
+    func nextStepID(
+        for candidate: PracticeCandidate,
+        canonicalPageIDsByTemplateID: [String: String]
+    ) -> String? {
+        scenarioPhraseTemplate(
+            for: candidate,
+            canonicalPageIDsByTemplateID: canonicalPageIDsByTemplateID
+        )?.nextStepID
+    }
+
     private func scenarioPhraseTemplate(
         for candidate: PracticeCandidate,
         canonicalPageIDsByTemplateID: [String: String]
@@ -586,6 +600,7 @@ private struct PracticeScenarioPhraseTemplate {
     var context: String?
     var nextLocalLine: String?
     var nextLocalMeaning: String?
+    var nextStepID: String?
 }
 
 private struct MessageReplySpec {
@@ -594,6 +609,7 @@ private struct MessageReplySpec {
     let english: String
     let nextLocalLine: String
     let nextLocalMeaning: String
+    let nextStepID: String?
 }
 
 private func messageReply(
@@ -601,14 +617,16 @@ private func messageReply(
     vietnamese: String,
     english: String,
     nextLocalLine: String,
-    nextLocalMeaning: String
+    nextLocalMeaning: String,
+    nextStepID: String? = nil
 ) -> MessageReplySpec {
     MessageReplySpec(
         pageID: pageID,
         vietnamese: vietnamese,
         english: english,
         nextLocalLine: nextLocalLine,
-        nextLocalMeaning: nextLocalMeaning
+        nextLocalMeaning: nextLocalMeaning,
+        nextStepID: nextStepID
     )
 }
 
@@ -638,7 +656,8 @@ private func messageScenarioStep(
                     vietnamese: reply.vietnamese,
                     english: reply.english,
                     nextLocalLine: reply.nextLocalLine,
-                    nextLocalMeaning: reply.nextLocalMeaning
+                    nextLocalMeaning: reply.nextLocalMeaning,
+                    nextStepID: reply.nextStepID
                 )
             )
         }
@@ -6381,7 +6400,8 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             vietnamese: "Bạn gọi bác sĩ giúp tôi được không?",
                             english: "Can you call a doctor for me?",
                             nextLocalLine: "Được, tôi gọi ngay.",
-                            nextLocalMeaning: "Yes, I will call now."
+                            nextLocalMeaning: "Yes, I will call now.",
+                            nextStepID: "doctor-help-goodbye"
                         ),
                         messageReply(
                             "viet-family-v500-heal-phar-i-need-a-clinic",

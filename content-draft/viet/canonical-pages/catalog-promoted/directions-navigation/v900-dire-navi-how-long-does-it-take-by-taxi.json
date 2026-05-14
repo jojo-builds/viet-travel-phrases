@@ -46,21 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đi taxi mất",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "Đi taxi",
+          "english": "the action"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "bao lâu",
-          "english": "how long",
-          "audioKey": null
+          "vietnamese": "mất bao lâu",
+          "english": "takes how long"
         },
         {
           "id": "chunk-3",
           "vietnamese": "Đi taxi mất bao lâu?",
           "english": "How long does it take by taxi",
-          "audioKey": null
+          "audioKey": "v900-dire-navi-how-long-does-it-take-by-taxi"
         }
       ]
     },

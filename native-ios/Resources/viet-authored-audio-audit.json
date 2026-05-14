@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-13T22:15:01.682Z",
+    "generatedAt": "2026-05-14T12:43:46.145Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 456,
     "editorialSupportPageCount": 26,
     "practiceExpansionPageCount": 1350,
-    "requiredAudioCount": 3126,
+    "requiredAudioCount": 3124,
     "missingAudioCount": 1678
   },
   "required": [
@@ -1778,30 +1778,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-directions-how-long",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-di-bo-4b0917ce90",
-      "text": "Đi bộ",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-directions-how-long",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-emergency-premium-passport-report-piece-10",
-      "text": "mất",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-directions-how-long",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-bao-lau-e86acb5e0c",
-      "text": "bao lâu",
-      "resolved": true
-    },
-    {
       "pageID": "viet-family-directions-turn-left",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -2807,6 +2783,14 @@
       "kind": "breakdown",
       "audioKey": "breakdown-emergency-2-rest",
       "text": "xe cứu thương",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-emergency-passport",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-emergency-premium-passport-report-piece-10",
+      "text": "mất",
       "resolved": true
     },
     {
