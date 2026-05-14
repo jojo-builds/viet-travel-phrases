@@ -1,5 +1,6 @@
 import XCTest
 import CoreGraphics
+import UIKit
 @testable import SpeakLocalNative
 
 final class AppChromeTests: XCTestCase {
@@ -1107,6 +1108,14 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(airport.subcategories.allSatisfy { $0.phraseCount == $0.items.count })
         XCTAssertTrue(airport.exploreShelves.contains { $0.title == "Phone, Internet & Power" })
         XCTAssertTrue(airport.exploreShelves.contains { $0.title == "Payment & numbers" })
+        XCTAssertEqual(
+            airport.exploreShelves.first { $0.title == "Phone, Internet & Power" }?.targetRoute,
+            .category("phone-internet-power")
+        )
+        XCTAssertEqual(
+            airport.exploreShelves.first { $0.title == "Payment & numbers" }?.targetRoute,
+            .category("money-numbers-prices")
+        )
 
         let sim = try! XCTUnwrap(airport.subcategories.first { $0.title == "SIM card" })
         XCTAssertTrue(sim.items.contains { item in
@@ -1121,6 +1130,19 @@ final class AppChromeTests: XCTestCase {
                 || item.subtitle.localizedCaseInsensitiveContains("ATM")
                 || item.title.localizedCaseInsensitiveContains("cash")
                 || item.subtitle.localizedCaseInsensitiveContains("cash")
+        })
+    }
+
+    func testHotelExploreShelfHeadersCanRouteToTheirCategories() {
+        let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
+
+        XCTAssertFalse(hotel.exploreShelves.isEmpty)
+        XCTAssertTrue(hotel.exploreShelves.allSatisfy { shelf in
+            guard let targetRoute = shelf.targetRoute else {
+                return false
+            }
+
+            return targetRoute != .category("hotel")
         })
     }
 
@@ -1250,10 +1272,9 @@ final class AppChromeTests: XCTestCase {
         assertNoDerivedPlacePhraseRows(entityOnlyResults, context: "Dragon Bridge entity-only search")
 
         let actionResults = BrowseSearchDestinations.searchResults(for: "where is Dragon Bridge", limit: 10)
-        XCTAssertTrue(
-            actionResults.contains { $0.pageID == "viet-phrase-city-danang-where-dragon-bridge" },
-            actionResults.map(\.pageID).joined(separator: "\n")
-        )
+        XCTAssertEqual(actionResults.first?.pageID, "viet-phrase-city-danang-place-dragon-bridge")
+        assertNoDerivedPlacePhraseRows(actionResults, context: "Dragon Bridge action search")
+        XCTAssertFalse(actionResults.contains { $0.pageID == "viet-phrase-city-danang-where-dragon-bridge" })
     }
 
     func testEntityDetailPagesHideGeneratedPlaceTemplateRows() throws {
@@ -1261,7 +1282,8 @@ final class AppChromeTests: XCTestCase {
 
         let baNa = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-ba-na-hills")
         let baNaRows = baNa.sections.flatMap(\.phrases)
-        XCTAssertTrue(baNaRows.contains { $0.detailPageID == "viet-phrase-ves-take-me-to-ba-na-hills" })
+        XCTAssertTrue(baNaRows.contains { $0.detailPageID == "viet-phrase-taxi-1" })
+        XCTAssertTrue(baNaRows.contains { $0.detailPageID == "viet-phrase-v500-time-date-book-two-tickets-please" })
         assertNoDerivedPlacePhraseRows(baNaRows.map { phrase in
             BrowseSearchPhraseItem(
                 pageID: phrase.detailPageID ?? phrase.id,
@@ -1272,12 +1294,16 @@ final class AppChromeTests: XCTestCase {
                 audioKey: phrase.audioKey
             )
         }, context: "Ba Na Hills detail")
+        XCTAssertFalse(baNaRows.contains { $0.detailPageID == "viet-phrase-ves-take-me-to-ba-na-hills" })
+        XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("Ba Na Hills") && $0.id != "city-danang-place-ba-na-hills" })
         XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("ATM near Ba Na Hills") })
         XCTAssertFalse(baNaRows.contains { $0.english.localizedCaseInsensitiveContains("Eat near Ba Na Hills") })
 
         let dragonBridge = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-dragon-bridge")
         let dragonRows = dragonBridge.sections.flatMap(\.phrases)
-        XCTAssertTrue(dragonRows.contains { $0.detailPageID == "viet-phrase-ves-drop-near-dragon-bridge" })
+        XCTAssertTrue(dragonRows.contains { $0.detailPageID == "viet-phrase-v500-tran-please-stop-right-here" })
+        XCTAssertTrue(dragonRows.contains { $0.detailPageID == "viet-phrase-directions-8" })
+        XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-ves-drop-near-dragon-bridge" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-go-dragon-bridge" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-where-dragon-bridge" })
     }
@@ -1366,6 +1392,66 @@ final class AppChromeTests: XCTestCase {
             } else {
                 XCTAssertFalse(subcategory.items.prefix(6).contains { $0.pageID.contains("-place-") })
             }
+        }
+    }
+
+    func testVietnameseMenuCollectionsUseCsvBackedInventory() {
+        let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category(VietnameseMenuKind.food.routeID)))
+        let drinks = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category(VietnameseMenuKind.drink.routeID)))
+
+        XCTAssertEqual(VietnameseMenuCatalog.items(for: .food).count, 269)
+        XCTAssertEqual(VietnameseMenuCatalog.items(for: .drink).count, 86)
+
+        XCTAssertEqual(food.title, "Vietnamese menu")
+        XCTAssertEqual(food.mastheadImageName, "HeroVietnameseFoodMenu")
+        XCTAssertEqual(food.starterTitle, "Popular dishes")
+        XCTAssertEqual(food.starterItems.first?.pageID, "viet-menu-food-pho-bo")
+        XCTAssertEqual(food.starterItems.first?.title, "Phở bò")
+        XCTAssertEqual(food.subcategories.first?.title, "Noodle soups")
+        XCTAssertEqual(food.subcategories.first?.phraseCount, 26)
+
+        XCTAssertEqual(drinks.title, "Vietnamese drinks")
+        XCTAssertEqual(drinks.mastheadImageName, "HeroVietnameseDrinkMenu")
+        XCTAssertEqual(drinks.starterTitle, "Popular drinks")
+        XCTAssertEqual(drinks.starterItems.first?.pageID, "viet-menu-drink-ca-phe-sua-da")
+        XCTAssertEqual(drinks.starterItems.first?.title, "Cà phê sữa đá")
+        XCTAssertEqual(drinks.subcategories.first?.title, "Coffee")
+        XCTAssertEqual(drinks.subcategories.first?.phraseCount, 14)
+    }
+
+    func testVietnameseMenuDetailPagesUseSuppliedTemplateCopy() {
+        let pho = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
+        let coffee = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-drink-ca-phe-sua-da"))
+
+        XCTAssertEqual(pho.title, "Phở bò")
+        XCTAssertEqual(pho.englishTitle, "Beef noodle soup")
+        XCTAssertEqual(pho.pronunciation, "fuh baw")
+        XCTAssertEqual(pho.heroImageName, "HeroMenuFoodPhoBo")
+        XCTAssertTrue(pho.sections.first?.body.contains("best-known noodle soup") == true)
+        XCTAssertEqual(pho.sections.first { $0.id == "usually-includes" }?.breakdown.map(\.vietnamese), ["beef broth", "rice noodles", "sliced beef", "herbs", "lime"])
+        XCTAssertEqual(pho.sections.first { $0.id == "standard-way" }?.phrases.first?.vietnamese, "Cho tôi một tô phở bò.")
+
+        XCTAssertEqual(coffee.title, "Cà phê sữa đá")
+        XCTAssertEqual(coffee.englishTitle, "Vietnamese iced milk coffee")
+        XCTAssertEqual(coffee.heroImageName, "HeroMenuDrinkCaPheSuaDa")
+        XCTAssertTrue(coffee.sections.first?.body.contains("iconic iced milk coffee") == true)
+        XCTAssertEqual(coffee.practiceCTALabel, "Practice ordering this")
+        XCTAssertFalse(coffee.showsCatalogExplore)
+    }
+
+    func testVietnameseMenuItemsUseUniqueImageAssetNames() {
+        let items = VietnameseMenuCatalog.allItems
+        let imageNames = items.map(\.menuImageName)
+
+        XCTAssertEqual(items.count, 355)
+        XCTAssertEqual(Set(imageNames).count, items.count)
+        XCTAssertEqual(VietnameseMenuImages.assetName(forItemID: "food-pho-bo"), "HeroMenuFoodPhoBo")
+        XCTAssertEqual(VietnameseMenuImages.assetName(forItemID: "drink-ca-phe-sua-da"), "HeroMenuDrinkCaPheSuaDa")
+    }
+
+    func testVietnameseMenuImageAssetsExistForEveryItem() {
+        for item in VietnameseMenuCatalog.allItems {
+            XCTAssertNotNil(UIImage(named: item.menuImageName), "Missing menu image asset for \(item.itemID): \(item.menuImageName)")
         }
     }
 

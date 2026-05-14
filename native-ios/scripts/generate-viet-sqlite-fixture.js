@@ -38,9 +38,6 @@ const greetingCategoryIDs = new Set(["greetings", "polite-basics"]);
 const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge";
 const approvedQuickSayShortcutPairs = [
-  ["viet-phrase-city-danang-place-ba-na-hills", "viet-phrase-ves-two-tickets-ba-na-hills"],
-  ["viet-phrase-city-danang-place-marble-mountains", "viet-phrase-city-danang-ticket-marble-mountains"],
-  ["viet-phrase-city-danang-place-son-tra", "viet-phrase-city-danang-go-son-tra"],
   ["viet-phrase-city-hanoi-place-bun-cha-huong-lien", "viet-phrase-ves-order-bun-cha-portion"],
   ["viet-phrase-city-hanoi-place-pho-bat-dan", "viet-phrase-ves-order-pho-bowl"],
   ["viet-phrase-city-hue-place-bun-bo-city", "viet-phrase-ves-order-bun-bo-hue-bowl"],

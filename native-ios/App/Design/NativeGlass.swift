@@ -370,13 +370,14 @@ extension View {
 struct HeroMastheadImage: View {
     var imageName: String = PhrasePageStyle.heroImageName
     var verticalOffset: CGFloat? = nil
+    var height: CGFloat = PhrasePageStyle.heroImageHeight
 
     private var resolvedVerticalOffset: CGFloat {
         verticalOffset ?? Self.defaultVerticalOffset(for: imageName)
     }
 
     private var imageRenderHeight: CGFloat {
-        PhrasePageStyle.heroImageHeight + abs(resolvedVerticalOffset) + 72
+        height + abs(resolvedVerticalOffset) + 72
     }
 
     var body: some View {
@@ -395,7 +396,7 @@ struct HeroMastheadImage: View {
                             .offset(y: resolvedVerticalOffset)
                     }
                 }
-                .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
+                .frame(width: proxy.size.width, height: height, alignment: .top)
                 .clipped()
                 .mask {
                     LinearGradient(
@@ -422,7 +423,7 @@ struct HeroMastheadImage: View {
                     startPoint: .top,
                     endPoint: .bottom
                 )
-                .frame(height: PhrasePageStyle.heroImageHeight)
+                .frame(height: height)
             }
             .overlay(alignment: .bottom) {
                 LinearGradient(
@@ -436,7 +437,7 @@ struct HeroMastheadImage: View {
                 .frame(height: 28)
             }
         }
-        .frame(height: PhrasePageStyle.heroImageHeight)
+        .frame(height: height)
         .clipped()
     }
 
