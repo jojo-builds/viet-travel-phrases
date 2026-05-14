@@ -335,6 +335,18 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.getting-around"].exists)
     }
 
+    func testBrowseCityCardTransitionKeepsDestinationBodyMounted() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["Browse.City.danang"], app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 1))
+        XCTAssertTrue(
+            app.staticTexts["Browse by"].waitForExistence(timeout: 0.2),
+            "City-card transitions should not swap the destination body for a blank placeholder."
+        )
+    }
+
     func testCityFilterSelectionKeepsBrowseByStableAndPromotesSelectedPill() {
         let app = launchApp(arguments: ["--browse-city", "danang"])
         let targetFilterID = "BrowseCollection.CityFilter.danang.browse.landmarks"

@@ -316,12 +316,10 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
     }
 
-    func testBrowseCityHeroMorphTimingLetsHeroLeadDestinationBody() {
+    func testBrowseCityHeroMorphTimingKeepsDestinationBodyMounted() {
         XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.navigationDuration, 0.38)
-        XCTAssertGreaterThan(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 0)
-        XCTAssertGreaterThanOrEqual(BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds, 240_000_000)
-        XCTAssertLessThan(
-            BrowseCityHeroMorphTiming.contentRevealDelayNanoseconds,
+        XCTAssertGreaterThan(
+            BrowseCityHeroMorphTiming.cleanupDelayNanoseconds,
             BrowseCityHeroMorphTiming.navigationDurationNanoseconds
         )
     }
