@@ -1,5 +1,13 @@
 # V2 Baseline
 
+## Product audience baseline
+
+- SpeakLocal v2 is a native travel phrasebook for the excited pre-trip traveler, not a general translator and not an academic language-learning app.
+- The primary user is planning or seriously considering a destination trip and wants to absorb the place before arrival through food, cities, menus, culture, pronunciation, and useful everyday phrases.
+- The app should still work in-country, but that utility is the payoff for pre-trip preparation. Google Translate, Apple Translate, and general-purpose AI own arbitrary live translation; SpeakLocal should own curated trip fluency.
+- For Vietnam, the strongest app signals should be food and coffee, city/place exploration, menu and drink vocabulary, noun-first browse paths, culturally respectful phrase hubs, audio-first pronunciation, and saved/practice loops that help the traveler build a personal trip phrase set.
+- Arrival, transport, repair, health, and emergency flows remain important and starter-safe, but they should be presented as reachable support surfaces rather than the emotional lead of the product.
+
 ## What now exists
 
 - Shared shell implementation now verified in repo across Viet and Tagalog:
