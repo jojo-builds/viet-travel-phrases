@@ -493,6 +493,13 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testDetailLaunchArgumentOpensVietnameseMenuItems() {
+        XCTAssertEqual(
+            AppShellView.initialRoute(for: ["SpeakLocalNative", "--detail-page", "viet-menu-food-pho-bo"]),
+            .detailPage("viet-menu-food-pho-bo")
+        )
+    }
+
     func testStaleDetailLaunchArgumentFallsBackToSafeRoute() {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--detail-page", "missing-page"]),
