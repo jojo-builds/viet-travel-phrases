@@ -1,11 +1,13 @@
 import SwiftUI
 
+typealias PracticeStoryOpenPhrasePageAction = (_ pageID: String, _ returnTurnID: String?) -> Void
+
 struct PracticeStoryTranscriptView: View {
     let turns: [PracticeStoryTurn]
     let tint: AccentTint
     let isInPracticePool: (String) -> Bool
     let isSavedPhrasePage: (String) -> Bool
-    let onOpenPhrasePage: (String) -> Void
+    let onOpenPhrasePage: PracticeStoryOpenPhrasePageAction
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
     @Binding var selectedDefinitionToken: PracticeStoryDefinitionToken?
@@ -28,6 +30,7 @@ struct PracticeStoryTranscriptView: View {
                         onTogglePracticePage: onTogglePracticePage,
                         onToggleSavedPhrasePage: onToggleSavedPhrasePage
                     )
+                    .id(turn.id)
                     .transition(rowTransition(for: turn))
                 case .localTyping:
                     PracticeStoryTypingBubble(turn: turn)
@@ -119,7 +122,7 @@ private struct PracticeStoryBubble: View {
     @Binding var selectedDefinitionToken: PracticeStoryDefinitionToken?
     let isInPracticePool: (String) -> Bool
     let isSavedPhrasePage: (String) -> Bool
-    let onOpenPhrasePage: (String) -> Void
+    let onOpenPhrasePage: PracticeStoryOpenPhrasePageAction
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
 
@@ -221,7 +224,7 @@ private struct PracticeStoryBubble: View {
                     }
 
                     Button {
-                        onOpenPhrasePage(pageID)
+                        onOpenPhrasePage(pageID, turn.id)
                     } label: {
                         Label("Open Details", systemImage: "doc.text.magnifyingglass")
                     }

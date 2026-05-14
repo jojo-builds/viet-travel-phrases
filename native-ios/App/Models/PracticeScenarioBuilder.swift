@@ -3788,17 +3788,17 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     localLineMeaning: "How would you like me to tell the kitchen?",
                     userGoal: "Ask for a safer version with less spice or no peanuts.",
                     best: messageReply(
-                        "viet-family-v500-food-drin-please-make-it-without-peanuts",
-                        vietnamese: "Hãy làm món này mà không cần đậu phộng",
-                        english: "Please make it without peanuts",
+                        "viet-family-food-peanut-allergy",
+                        vietnamese: "Tôi bị dị ứng đậu phộng",
+                        english: "I am allergic to peanuts",
                         nextLocalLine: "Được, tôi sẽ dặn bếp không dùng đậu phộng.",
                         nextLocalMeaning: "Okay, I will tell the kitchen not to use peanuts."
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-food-drin-please-make-it-less-spicy",
-                            vietnamese: "Làm ơn làm cho nó bớt cay đi",
-                            english: "Please make it less spicy",
+                            "viet-family-food-not-spicy",
+                            vietnamese: "Ít cay thôi",
+                            english: "Less spicy, please",
                             nextLocalLine: "Được, tôi sẽ dặn bếp làm ít cay.",
                             nextLocalMeaning: "Okay, I will tell the kitchen to make it less spicy."
                         ),
@@ -4121,7 +4121,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                         ),
                         messageReply(
                             "viet-family-v900-tran-this-is-the-wrong-address",
-                            vietnamese: "Đây là sai địa chỉ",
+                            vietnamese: "Đây là địa chỉ sai",
                             english: "This is the wrong address",
                             nextLocalLine: "Xin lỗi, bạn cho tôi xem lại địa chỉ nhé.",
                             nextLocalMeaning: "Sorry, please show me the address again."
@@ -4274,9 +4274,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Please check the plate number in the app."
                         ),
                         messageReply(
-                            "viet-family-v900-tran-the-car-number-is-different",
-                            vietnamese: "Biển số xe khác",
-                            english: "The car number is different",
+                            "viet-family-transport-wrong-car",
+                            vietnamese: "Đây không phải là xe của tôi",
+                            english: "This is not my car",
                             nextLocalLine: "Vậy bạn đừng lên xe này nhé.",
                             nextLocalMeaning: "Then please do not get in this car."
                         ),
@@ -4293,18 +4293,18 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     userGoal: "Say this is not your car.",
                     best: messageReply(
                         "viet-family-transport-wrong-car",
-                        vietnamese: "Đây không phải xe của tôi",
+                        vietnamese: "Đây không phải là xe của tôi",
                         english: "This is not my car",
                         nextLocalLine: "Đúng rồi, bạn nên chờ đúng xe trong ứng dụng.",
                         nextLocalMeaning: "That is right, you should wait for the car in the app."
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-tran-the-car-number-is-different",
-                            vietnamese: "Biển số xe khác",
-                            english: "The car number is different",
-                            nextLocalLine: "Bạn chờ xe đúng biển số nhé.",
-                            nextLocalMeaning: "Please wait for the car with the matching plate."
+                            "viet-family-v500-prob-help-can-you-call-security",
+                            vietnamese: "Bạn có thể gọi bảo vệ được không?",
+                            english: "Can you call security?",
+                            nextLocalLine: "Được, bạn đứng gần bảo vệ nhé.",
+                            nextLocalMeaning: "Okay, stand near security."
                         ),
                         messageReply(
                             "viet-family-v500-tran-please-call-the-driver",
@@ -4549,11 +4549,11 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-shop-can-you-make-it-a-round-number",
-                            vietnamese: "Bạn có thể biến nó thành một số tròn được không?",
-                            english: "Can you make it a round number?",
-                            nextLocalLine: "Được, tôi làm tròn giá cho bạn.",
-                            nextLocalMeaning: "Okay, I can make it a round price for you."
+                            "viet-family-v500-shop-can-you-lower-the-price",
+                            vietnamese: "Giảm giá chút được không?",
+                            english: "Can you lower the price?",
+                            nextLocalLine: "Được, tôi giảm một chút cho bạn.",
+                            nextLocalMeaning: "Okay, I can lower it a little for you."
                         ),
                         messageReply(
                             "viet-family-v900-shop-do-you-have-this-in-black",
@@ -5369,7 +5369,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                         ),
                         messageReply(
                             "viet-family-v500-emer-safe-i-am-injured",
-                            vietnamese: "tôi bị thương",
+                            vietnamese: "Tôi bị thương",
                             english: "I am injured",
                             nextLocalLine: "Được, chúng tôi sẽ gọi hỗ trợ y tế ngay.",
                             nextLocalMeaning: "Okay, we will call medical help right away."
