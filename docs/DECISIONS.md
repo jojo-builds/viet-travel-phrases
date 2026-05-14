@@ -11,6 +11,10 @@
 - Native app identity and variant planning live in `native-ios/Config/apps/*.json`; bundled phrase/audio runtime truth lives in `native-ios/Resources/` and authored source under `content-draft/`.
 - App UI review should use native simulator and physical iPhone builds from `native-ios/`, not Expo web preview routes.
 - SpeakLocal v2 is being framed as a travel phrasebook, not an academic language-learning app.
+- SpeakLocal v2's primary audience is the excited pre-trip traveler who has booked or is seriously planning a destination trip and wants to absorb the country through food, cities, culture, pronunciation, and useful local phrases before arrival.
+- In-destination utility remains important, but it validates the pre-trip preparation rather than defining the app as a panic translator. SpeakLocal should not compete head-on with Google Translate, Apple Translate, or general-purpose AI for arbitrary live translation.
+- The product wedge is curated trip fluency: destination-specific food/menu vocabulary, city/place exploration, culturally respectful phrasing, audio-first pronunciation, saved trip phrases, and practiceable everyday moments that make the trip feel richer.
+- Home and Browse should lead with desire and exploration first, especially food, coffee, menus, cities, markets, greetings, and confidence-building phrase hubs. Arrival, transport, repair, health, and emergency utility should stay easy to find and starter-safe, but should not become the emotional center of the product.
 - Current repo naming and pricing direction is now:
   - `SpeakLocal Vietnam`
   - `SpeakLocal Philippines`

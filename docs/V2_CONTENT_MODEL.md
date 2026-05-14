@@ -4,7 +4,9 @@ Alignment note: `docs/OFFLINE_SQLITE_PHRASE_GRAPH_PLAN.md` now owns the proposed
 
 ## Goal
 
-Keep the current app shell shippable while moving the content system away from a phrase warehouse and toward a traveler decision engine.
+Keep the current app shell shippable while moving the content system away from a phrase warehouse and toward curated trip fluency for an excited pre-trip traveler.
+
+The content system should help travelers explore a destination before arrival through food, cities, menus, culture, pronunciation, and useful everyday phrases, then keep those phrases usable in-country. It should not optimize primarily for arbitrary live translation.
 
 ## Runtime shape
 
