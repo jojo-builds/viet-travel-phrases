@@ -3,6 +3,49 @@ import XCTest
 @testable import SpeakLocalNative
 
 final class PracticeScenarioModeTests: XCTestCase {
+    func testStoryBreakdownDefinitionsTrimFullPhraseTokenForMessageSegments() {
+        let definitions = PracticeStoryBreakdownDefinitions.tokens(
+            forVietnamese: "Đây là hộ chiếu của tôi.",
+            breakdownTokens: [
+                BreakdownToken(id: "this-is", vietnamese: "Đây là", english: "this is"),
+                BreakdownToken(id: "passport", vietnamese: "hộ chiếu", english: "passport"),
+                BreakdownToken(id: "mine", vietnamese: "của tôi", english: "my / mine"),
+                BreakdownToken(id: "full", vietnamese: "Đây là hộ chiếu của tôi", english: "This is my passport"),
+            ],
+            pageID: "passport-test"
+        )
+
+        XCTAssertEqual(definitions.map(\.vietnamese), ["Đây là", "hộ chiếu", "của tôi"])
+        XCTAssertEqual(definitions.map(\.english), ["this is", "passport", "my / mine"])
+    }
+
+    func testStoryBreakdownDefinitionsIgnoreUnrelatedTokens() {
+        let definitions = PracticeStoryBreakdownDefinitions.tokens(
+            forVietnamese: "Xin chào.",
+            breakdownTokens: [
+                BreakdownToken(id: "thanks", vietnamese: "Cảm ơn", english: "thank you"),
+                BreakdownToken(id: "full", vietnamese: "Cảm ơn nhiều", english: "thank you very much"),
+            ],
+            pageID: "thanks-test"
+        )
+
+        XCTAssertTrue(definitions.isEmpty)
+    }
+
+    func testStoryBreakdownDefinitionsKeepNormalTextWhenCoverageIsPartial() {
+        let definitions = PracticeStoryBreakdownDefinitions.tokens(
+            forVietnamese: "Lấy hành lý ở tầng dưới.",
+            breakdownTokens: [
+                BreakdownToken(id: "claim", vietnamese: "Lấy", english: "claim / collect"),
+                BreakdownToken(id: "baggage", vietnamese: "hành lý", english: "baggage"),
+                BreakdownToken(id: "full", vietnamese: "Lấy hành lý ở đâu?", english: "Where is baggage claim?"),
+            ],
+            pageID: "baggage-test"
+        )
+
+        XCTAssertTrue(definitions.isEmpty)
+    }
+
     func testStoryTranscriptStartsWithSceneLocalCueAndChoiceSet() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],

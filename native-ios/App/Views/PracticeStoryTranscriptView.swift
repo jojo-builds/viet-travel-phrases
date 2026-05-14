@@ -156,11 +156,11 @@ private struct PracticeStoryBubble: View {
 
                     VStack(alignment: isTraveler ? .trailing : .leading, spacing: 4) {
                         if let vietnamese = turn.vietnamese, !vietnamese.isEmpty {
-                            Text(vietnamese)
-                                .font(.subheadline.weight(.bold))
-                                .foregroundStyle(isTraveler ? .white : .primary)
-                                .multilineTextAlignment(isTraveler ? .trailing : .leading)
-                                .fixedSize(horizontal: false, vertical: true)
+                            PracticeStoryVietnameseLine(
+                                turn: turn,
+                                vietnamese: vietnamese,
+                                isTraveler: isTraveler
+                            )
                                 .accessibilityIdentifier("Practice.Story.Text.\(isTraveler ? "traveler" : "local").\(turn.id).vietnamese")
                         }
 
@@ -240,6 +240,240 @@ private struct PracticeStoryBubble: View {
             .accessibilityHidden(true)
     }
 
+}
+
+private struct PracticeStoryVietnameseLine: View {
+    let turn: PracticeStoryTurn
+    let vietnamese: String
+    let isTraveler: Bool
+    @State private var selectedToken: PracticeStoryDefinitionToken?
+
+    private var definitionTokens: [PracticeStoryDefinitionToken] {
+        PracticeStoryBreakdownDefinitions.tokens(for: turn)
+    }
+
+    var body: some View {
+        if definitionTokens.isEmpty {
+            Text(vietnamese)
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(isTraveler ? .white : .primary)
+                .multilineTextAlignment(isTraveler ? .trailing : .leading)
+                .fixedSize(horizontal: false, vertical: true)
+        } else {
+            PracticeStoryDefinitionFlowLayout(
+                horizontalSpacing: 5,
+                verticalSpacing: 4,
+                alignment: isTraveler ? .trailing : .leading
+            ) {
+                ForEach(definitionTokens) { token in
+                    PracticeStoryDefinitionTokenButton(
+                        token: token,
+                        isTraveler: isTraveler,
+                        selectedToken: $selectedToken
+                    )
+                }
+            }
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityElement(children: .contain)
+        }
+    }
+}
+
+private struct PracticeStoryDefinitionTokenButton: View {
+    let token: PracticeStoryDefinitionToken
+    let isTraveler: Bool
+    @Binding var selectedToken: PracticeStoryDefinitionToken?
+
+    var body: some View {
+        Button {
+            selectedToken = token
+        } label: {
+            Text(token.vietnamese)
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(isTraveler ? .white : .primary)
+                .lineLimit(1)
+                .fixedSize()
+                .padding(.bottom, 4)
+                .overlay(alignment: .bottom) {
+                    PracticeStoryDottedUnderline(color: underlineColor)
+                        .offset(y: 1)
+                }
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(token.vietnamese), \(token.english)")
+        .accessibilityHint("Shows meaning")
+        .accessibilityIdentifier("Practice.Story.DefinitionToken.\(token.id)")
+        .popover(item: selectedTokenBinding, attachmentAnchor: .rect(.bounds), arrowEdge: .bottom) { selectedToken in
+            PracticeStoryDefinitionPopover(token: selectedToken)
+                .presentationCompactAdaptation(.popover)
+        }
+    }
+
+    private var selectedTokenBinding: Binding<PracticeStoryDefinitionToken?> {
+        Binding(
+            get: {
+                selectedToken?.id == token.id ? selectedToken : nil
+            },
+            set: { newValue in
+                if let newValue {
+                    selectedToken = newValue
+                } else if selectedToken?.id == token.id {
+                    selectedToken = nil
+                }
+            }
+        )
+    }
+
+    private var underlineColor: Color {
+        isTraveler
+            ? .white.opacity(0.76)
+            : Color(red: 0.07, green: 0.50, blue: 1.0).opacity(0.72)
+    }
+}
+
+private struct PracticeStoryDefinitionPopover: View {
+    let token: PracticeStoryDefinitionToken
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(token.vietnamese)
+                .font(.headline.weight(.bold))
+                .foregroundStyle(.primary)
+
+            Text(token.english)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(16)
+        .frame(minWidth: 172, maxWidth: 260, alignment: .leading)
+        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("Practice.Story.DefinitionPopover.\(token.id)")
+    }
+}
+
+private struct PracticeStoryDottedUnderline: View {
+    let color: Color
+
+    var body: some View {
+        Canvas { context, size in
+            var path = Path()
+            path.move(to: CGPoint(x: 0, y: size.height / 2))
+            path.addLine(to: CGPoint(x: size.width, y: size.height / 2))
+            context.stroke(
+                path,
+                with: .color(color),
+                style: StrokeStyle(lineWidth: 1.35, lineCap: .round, dash: [1, 3])
+            )
+        }
+        .frame(height: 2)
+    }
+}
+
+private struct PracticeStoryDefinitionFlowLayout: Layout {
+    enum Alignment {
+        case leading
+        case trailing
+    }
+
+    var horizontalSpacing: CGFloat
+    var verticalSpacing: CGFloat
+    var alignment: Alignment
+
+    func sizeThatFits(
+        proposal: ProposedViewSize,
+        subviews: Subviews,
+        cache: inout Void
+    ) -> CGSize {
+        let maxWidth = proposal.width ?? CGFloat.greatestFiniteMagnitude
+        let rows = rows(for: subviews, maxWidth: maxWidth)
+        let width = proposal.width.map { min($0, rows.map(\.width).max() ?? 0) } ?? (rows.map(\.width).max() ?? 0)
+        let height = rows.reduce(CGFloat(0)) { result, row in
+            result + row.height
+        } + CGFloat(max(0, rows.count - 1)) * verticalSpacing
+
+        return CGSize(width: width, height: height)
+    }
+
+    func placeSubviews(
+        in bounds: CGRect,
+        proposal: ProposedViewSize,
+        subviews: Subviews,
+        cache: inout Void
+    ) {
+        let rows = rows(for: subviews, maxWidth: bounds.width)
+        var y = bounds.minY
+
+        for row in rows {
+            var x = bounds.minX
+            if alignment == .trailing {
+                x += max(0, bounds.width - row.width)
+            }
+
+            for item in row.items {
+                subviews[item.index].place(
+                    at: CGPoint(x: x, y: y),
+                    anchor: .topLeading,
+                    proposal: ProposedViewSize(item.size)
+                )
+                x += item.size.width + horizontalSpacing
+            }
+
+            y += row.height + verticalSpacing
+        }
+    }
+
+    private func rows(for subviews: Subviews, maxWidth: CGFloat) -> [Row] {
+        guard !subviews.isEmpty else {
+            return []
+        }
+
+        let resolvedMaxWidth = maxWidth.isFinite && maxWidth > 0 ? maxWidth : CGFloat.greatestFiniteMagnitude
+        var rows: [Row] = []
+        var current = Row()
+
+        for index in subviews.indices {
+            let size = subviews[index].sizeThatFits(.unspecified)
+            let nextWidth = current.items.isEmpty
+                ? size.width
+                : current.width + horizontalSpacing + size.width
+
+            if !current.items.isEmpty, nextWidth > resolvedMaxWidth {
+                rows.append(current)
+                current = Row()
+            }
+
+            current.append(Item(index: index, size: size), spacing: horizontalSpacing)
+        }
+
+        if !current.items.isEmpty {
+            rows.append(current)
+        }
+
+        return rows
+    }
+
+    private struct Item {
+        let index: Int
+        let size: CGSize
+    }
+
+    private struct Row {
+        var items: [Item] = []
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+
+        mutating func append(_ item: Item, spacing: CGFloat) {
+            if !items.isEmpty {
+                width += spacing
+            }
+
+            items.append(item)
+            width += item.size.width
+            height = max(height, item.size.height)
+        }
+    }
 }
 
 private struct PracticeStoryTypingBubble: View {
