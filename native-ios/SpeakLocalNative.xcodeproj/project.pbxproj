@@ -10,6 +10,7 @@
 		034037B7D97D6400BEC8F0E8 /* AppChromeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094EBCA2A1C2908334452B3A /* AppChromeTests.swift */; };
 		05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */; };
 		0705C583B1734184937E5F87 /* AppChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92E39F9AC9626410FF3CDC /* AppChrome.swift */; };
+		20E5946D7A277D47E72FDF27 /* PracticeStoryBreakdownDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E2D04DC4EC1F71F3CD982 /* PracticeStoryBreakdownDefinitions.swift */; };
 		22EC11796C0EB30CCA4073B1 /* PracticeScenarioModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162BD8536877D352B522211 /* PracticeScenarioModeTests.swift */; };
 		26351589E274CA9E560ABD21 /* BackSwipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */; };
 		26D2BC5260F76BC78193101B /* PracticeScenarioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95965F71E19D6B246BAFF9F4 /* PracticeScenarioModels.swift */; };
@@ -120,6 +121,7 @@
 		D34BE92DD2418521F1F8A962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePage.swift; sourceTree = "<group>"; };
 		EC4864105E47882DA1C4AC75 /* BrowsePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePageView.swift; sourceTree = "<group>"; };
+		ED7E2D04DC4EC1F71F3CD982 /* PracticeStoryBreakdownDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStoryBreakdownDefinitions.swift; sourceTree = "<group>"; };
 		F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedVietContent.swift; sourceTree = "<group>"; };
 		F8A4E79814EEDFC2BC7F2750 /* PracticeNativeMVPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeNativeMVPTests.swift; sourceTree = "<group>"; };
 		FAEEEF420BD953C06190A6E3 /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				18ABDE2FD3A5A1E1C7458759 /* PracticeModels.swift */,
 				6B84F197AE0DEC49C85AFD39 /* PracticeScenarioBuilder.swift */,
 				95965F71E19D6B246BAFF9F4 /* PracticeScenarioModels.swift */,
+				ED7E2D04DC4EC1F71F3CD982 /* PracticeStoryBreakdownDefinitions.swift */,
 				8BCAD3EAD2003E3D122ACEB2 /* PracticeStoryModels.swift */,
 				4D3723F574BB0F2BBDADECC7 /* VietnameseMenuCatalog.swift */,
 				8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */,
@@ -431,6 +434,7 @@
 				B2652114653119239ABAB769 /* PracticeModels.swift in Sources */,
 				C69456802442B60E166F758C /* PracticeScenarioBuilder.swift in Sources */,
 				26D2BC5260F76BC78193101B /* PracticeScenarioModels.swift in Sources */,
+				20E5946D7A277D47E72FDF27 /* PracticeStoryBreakdownDefinitions.swift in Sources */,
 				AEE5FB83D9461435CD3B8547 /* PracticeStoryModels.swift in Sources */,
 				826F1B8FF581BD91DE94F50C /* PracticeStorySessionView.swift in Sources */,
 				823A89032E506F7A15CE8A3A /* PracticeStoryTranscriptView.swift in Sources */,
