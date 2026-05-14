@@ -1103,6 +1103,10 @@ extension PhraseDetailPage {
             return sqlitePage
         }
 
+        if let menuPage = VietnameseMenuCatalog.detailPage(withID: id) {
+            return menuPage
+        }
+
         return pagesByID[id]
     }
 

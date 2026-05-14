@@ -311,7 +311,26 @@ struct AppShellView: View {
             let route = AppRoute.browseCollection(renderedCollection.route)
             let isActive = route == navigation.currentRoute
 
-            if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
+            if let menuKind = VietnameseMenuCatalog.kind(for: renderedCollection.route) {
+                VietnameseMenuPageView(
+                    kind: menuKind,
+                    scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
+                    scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
+                    onOpenDetail: openDetailFromBrowse
+                )
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .accessibilityHidden(!isActive || navigation.isSearchPresented)
+                .transition(browseCollectionTransition(for: renderedCollection.route))
+                .zIndex(Double(index + 6))
+                .navigationPageMotion(
+                    route: route,
+                    currentRoute: navigation.currentRoute,
+                    backPreviewRoute: navigation.backPreviewRoute,
+                    forwardPreviewRoute: navigation.forwardPreviewRoute,
+                    drag: interactiveDrag,
+                    width: width
+                )
+            } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
                 BrowseCollectionPageView(
                     descriptor: descriptor,
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
@@ -521,7 +540,14 @@ struct AppShellView: View {
                 onSearchQuery: openSearchQuery
             )
         case .browseCollection(let collectionRoute):
-            if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
+            if let menuKind = VietnameseMenuCatalog.kind(for: collectionRoute) {
+                VietnameseMenuPageView(
+                    kind: menuKind,
+                    scrollToTopTrigger: 0,
+                    scrollToTopRoute: nil,
+                    onOpenDetail: openDetailFromBrowse
+                )
+            } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
                 BrowseCollectionPageView(
                     descriptor: descriptor,
                     scrollToTopTrigger: 0,
@@ -1651,6 +1677,7 @@ struct AppShellNavigationState: Equatable {
 
     mutating func openDetail(_ id: String) {
         let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+            ?? (VietnameseMenuCatalog.detailItem(withPageID: id) == nil ? nil : id)
 
         if id == PhrasePage.xinChao.id && canonicalPageID == PhrasePage.xinChao.id {
             guard currentRoute != .phrasePage else {
