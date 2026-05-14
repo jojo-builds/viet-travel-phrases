@@ -290,12 +290,23 @@ private struct PracticeStoryTypingBubble: View {
 
 struct PracticeStoryComposer: View {
     let step: PracticeScenarioStep
+    let responseOptions: [PracticeScenarioResponseOption]
     let onSend: (PracticeScenarioResponseOption) -> Void
 
     @State private var pendingOptionID: String?
 
+    init(
+        step: PracticeScenarioStep,
+        responseOptions: [PracticeScenarioResponseOption]? = nil,
+        onSend: @escaping (PracticeScenarioResponseOption) -> Void
+    ) {
+        self.step = step
+        self.responseOptions = responseOptions ?? Array(step.responseOptions.prefix(4))
+        self.onSend = onSend
+    }
+
     private var options: [PracticeScenarioResponseOption] {
-        Array(step.responseOptions.prefix(4))
+        Array(responseOptions.prefix(4))
     }
 
     private var pendingOption: PracticeScenarioResponseOption? {

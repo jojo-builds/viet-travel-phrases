@@ -876,9 +876,74 @@ struct PracticeScenario: Identifiable, Equatable {
             .filter { seen.insert($0).inserted }
     }
 
+    func visibleResponseOptions(
+        for step: PracticeScenarioStep,
+        selectedOptionIDs: [String: String],
+        limit: Int = 4
+    ) -> [PracticeScenarioResponseOption] {
+        var blockedKeys = previouslySelectedReplyKeys(before: step, selectedOptionIDs: selectedOptionIDs)
+        var visible: [PracticeScenarioResponseOption] = []
+
+        for option in step.responseOptions {
+            let optionKeys = Self.replyKeys(for: option)
+            guard optionKeys.isDisjoint(with: blockedKeys) else {
+                continue
+            }
+
+            visible.append(option)
+            blockedKeys.formUnion(optionKeys)
+
+            if visible.count == limit {
+                break
+            }
+        }
+
+        if visible.isEmpty {
+            return Array(step.responseOptions.prefix(limit))
+        }
+
+        return visible
+    }
+
     var visibleCopy: [String] {
         [sceneTitle, sceneSetup, queueSource.title, queueSource.subtitle]
             + steps.flatMap(\.visibleCopy)
+    }
+
+    private func previouslySelectedReplyKeys(
+        before step: PracticeScenarioStep,
+        selectedOptionIDs: [String: String]
+    ) -> Set<String> {
+        guard let currentStepIndex = steps.firstIndex(where: { $0.id == step.id }) else {
+            return []
+        }
+
+        return steps.prefix(currentStepIndex).reduce(into: Set<String>()) { keys, previousStep in
+            guard
+                let selectedOptionID = selectedOptionIDs[previousStep.id],
+                let selectedOption = previousStep.responseOptions.first(where: { $0.id == selectedOptionID })
+            else {
+                return
+            }
+
+            keys.formUnion(Self.replyKeys(for: selectedOption))
+        }
+    }
+
+    private static func replyKeys(for option: PracticeScenarioResponseOption) -> Set<String> {
+        let key = normalizedReplyKey(option.scenarioEnglish)
+        if key.isEmpty {
+            return []
+        }
+
+        return [key]
+    }
+
+    private static func normalizedReplyKey(_ value: String) -> String {
+        value
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+            .trimmingCharacters(in: CharacterSet(charactersIn: ".。!?！？"))
     }
 }
 

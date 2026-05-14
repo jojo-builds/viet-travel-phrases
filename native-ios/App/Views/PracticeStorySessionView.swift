@@ -414,10 +414,22 @@ struct PracticeStoryComposerSurface: View {
         return currentStep.responseOptions.first { $0.id == selectedOptionID }
     }
 
+    private var currentResponseOptions: [PracticeScenarioResponseOption] {
+        guard let currentStep else {
+            return []
+        }
+
+        return session.scenario.visibleResponseOptions(
+            for: currentStep,
+            selectedOptionIDs: session.selectedOptionIDs
+        )
+    }
+
     var body: some View {
         if let currentStep, currentSelectedOption == nil {
             PracticeStoryComposer(
                 step: currentStep,
+                responseOptions: currentResponseOptions,
                 onSend: onSelectOption
             )
             .id(currentStep.id)

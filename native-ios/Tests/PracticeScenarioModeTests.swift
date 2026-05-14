@@ -1468,6 +1468,91 @@ final class PracticeScenarioModeTests: XCTestCase {
         )
     }
 
+    func testPayByCardRetryHidesAlreadyChosenCardQuestion() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let payByCard = try XCTUnwrap(snapshot.scenarios.first { $0.id == .shoppingPayCard })
+        let openingStep = try XCTUnwrap(payByCard.steps.first { $0.id == "pay-card-opening" })
+        let retryStep = try XCTUnwrap(payByCard.steps.first { $0.id == "pay-card-retry" })
+        let cardOption = try XCTUnwrap(
+            openingStep.responseOptions.first { $0.scenarioEnglish == "Can I pay by card?" }
+        )
+
+        let visibleRetryOptions = payByCard.visibleResponseOptions(
+            for: retryStep,
+            selectedOptionIDs: [openingStep.id: cardOption.id]
+        )
+        let visibleRetryEnglish = visibleRetryOptions.map(\.scenarioEnglish)
+
+        XCTAssertFalse(
+            visibleRetryEnglish.contains(cardOption.scenarioEnglish),
+            "Pay by Card should not offer the same card-payment question again after the traveler already selected it."
+        )
+        XCTAssertEqual(
+            Array(visibleRetryEnglish.prefix(2)),
+            [
+                "Can I try another card?",
+                "Can you help me?",
+            ]
+        )
+    }
+
+    func testMessageScenariosHidePreviouslyChosenVisibleReplyTextLaterInSameThread() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        var reofferedFindings: [String] = []
+
+        for scenario in snapshot.scenarios {
+            for earlierStepIndex in scenario.steps.indices.dropLast() {
+                let earlierStep = scenario.steps[earlierStepIndex]
+
+                for selectedOption in earlierStep.responseOptions.prefix(4) {
+                    let selectedReply = normalizedVisibleReply(selectedOption.scenarioEnglish)
+                    guard !selectedReply.isEmpty else {
+                        continue
+                    }
+
+                    for laterStepIndex in scenario.steps.indices.dropFirst(earlierStepIndex + 1) {
+                        let laterStep = scenario.steps[laterStepIndex]
+                        let rawLaterHasSameReply = laterStep.responseOptions.contains {
+                            normalizedVisibleReply($0.scenarioEnglish) == selectedReply
+                        }
+                        guard rawLaterHasSameReply else {
+                            continue
+                        }
+
+                        let visibleLaterOptions = scenario.visibleResponseOptions(
+                            for: laterStep,
+                            selectedOptionIDs: [earlierStep.id: selectedOption.id]
+                        )
+                        let visibleLaterReply = visibleLaterOptions.contains {
+                            normalizedVisibleReply($0.scenarioEnglish) == selectedReply
+                        }
+
+                        if visibleLaterReply || visibleLaterOptions.isEmpty {
+                            reofferedFindings.append(
+                                "\(scenario.id.rawValue): '\(selectedOption.scenarioEnglish)' selected in \(earlierStep.id), then visible again in \(laterStep.id)"
+                            )
+                        }
+                    }
+                }
+            }
+        }
+
+        XCTAssertTrue(
+            reofferedFindings.isEmpty,
+            "Messages should hide exact visible replies already chosen earlier in the same thread:\n\(reofferedFindings.joined(separator: "\n"))"
+        )
+    }
+
     func testVisibleAlternateMessageChoicesHaveBranchReplies() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -1953,7 +2038,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "reservation",
                 nextStepID: "hotel-story-reservation",
                 nextLocalMeaningFragment: "reservation",
-                expectedNextTopEnglishFragments: ["reservation", "booked online", "reservation"],
+                expectedNextTopEnglishFragments: ["reservation", "booked online"],
                 forbiddenNextTopEnglishFragments: ["passport", "Wi-Fi"]
             ),
             MessageTransitionContract(
@@ -2088,7 +2173,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "pay by card",
                 nextStepID: "pay-card-retry",
                 nextLocalMeaningFragment: "card did not work",
-                expectedNextTopEnglishFragments: ["another card", "pay by card", "help me"],
+                expectedNextTopEnglishFragments: ["another card", "help me"],
                 forbiddenNextTopEnglishFragments: ["smaller size", "doctor"]
             ),
             MessageTransitionContract(
@@ -2097,7 +2182,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "headache",
                 nextStepID: "pharmacy-story-find",
                 nextLocalMeaningFragment: "fever",
-                expectedNextTopEnglishFragments: ["fever", "headache", "stomach"],
+                expectedNextTopEnglishFragments: ["fever", "stomach"],
                 forbiddenNextTopEnglishFragments: ["pay", "receipt"]
             ),
             MessageTransitionContract(
@@ -2421,6 +2506,13 @@ final class PracticeScenarioModeTests: XCTestCase {
     }
 
     private func normalizedAudioText(_ value: String) -> String {
+        value
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+            .trimmingCharacters(in: CharacterSet(charactersIn: ".。!?！？"))
+    }
+
+    private func normalizedVisibleReply(_ value: String) -> String {
         value
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .lowercased()
