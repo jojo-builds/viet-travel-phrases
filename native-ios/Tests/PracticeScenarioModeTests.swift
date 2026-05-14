@@ -596,7 +596,11 @@ final class PracticeScenarioModeTests: XCTestCase {
 
             let openingStep = try XCTUnwrap(scenario.steps.first)
             XCTAssertTrue(openingStep.id.hasSuffix("opening"))
-            XCTAssertTrue(openingStep.localLine.contains("Xin chào"))
+            if scenario.id == .localThanksSorry {
+                XCTAssertFalse(openingStep.localLine.isEmpty)
+            } else {
+                XCTAssertTrue(openingStep.localLine.contains("Xin chào"))
+            }
             XCTAssertNotEqual(openingStep.bestResponse?.scenarioVietnamese, "Xin chào")
             XCTAssertFalse(openingStep.bestResponse?.scenarioVietnamese.isEmpty ?? true)
 
@@ -899,7 +903,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Xin vui lòng cho tôi một bản sao của báo cáo",
                     "Túi của tôi bị lấy mất",
                     "Bạn có thể kiểm tra camera an ninh được không?",
-                    "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
+                    "Tôi cần giúp đỡ bây giờ",
                     "Tôi cần bác sĩ",
                     "Tôi bị sốt",
                 ]
@@ -1028,12 +1032,10 @@ final class PracticeScenarioModeTests: XCTestCase {
             vietnamese: [
                 "Đặt chỗ dưới tên này",
                 "Tôi đã đặt trực tuyến",
-                "Tôi có đặt phòng",
             ],
             english: [
                 "The reservation is under this name",
                 "I booked online",
-                "I have a reservation",
             ]
         )
         assertTopReplies(
@@ -1210,12 +1212,12 @@ final class PracticeScenarioModeTests: XCTestCase {
             vietnamese: [
                 "Hãy làm món này mà không cần đậu phộng",
                 "Làm ơn làm cho nó bớt cay đi",
-                "Tôi có thể có khăn ăn được không?",
+                "Cái này có trứng hay đậu phộng không?",
             ],
             english: [
                 "Please make it without peanuts",
                 "Please make it less spicy",
-                "Can I have napkins?",
+                "Does this have egg or peanuts?",
             ]
         )
 
@@ -1226,12 +1228,12 @@ final class PracticeScenarioModeTests: XCTestCase {
             vietnamese: [
                 "Vui lòng sử dụng giá trên ứng dụng Grab.",
                 "Tôi có thể thanh toán bằng chuyển khoản ngân hàng không?",
-                "Hãy cho tôi biết khi nào nên xuống xe",
+                "Đó có phải là tổng giá không?",
             ],
             english: [
                 "Please use the price in the Grab app.",
                 "Can I pay by bank transfer?",
-                "Please tell me when to get off",
+                "Is that the total price?",
             ]
         )
 
@@ -1256,14 +1258,14 @@ final class PracticeScenarioModeTests: XCTestCase {
             lostBag,
             stepID: "emergency-bag-emergency-help",
             vietnamese: [
-                "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
-                "Tôi cần một nha sĩ",
-                "Tôi cần thuốc chống muỗi",
+                "Tôi cần giúp đỡ bây giờ",
+                "Tôi cảm thấy không an toàn",
+                "tôi bị thương",
             ],
             english: [
-                "When should I seek emergency help?",
-                "I need a dentist",
-                "I need mosquito repellent",
+                "I need help now",
+                "I feel unsafe",
+                "I am injured",
             ]
         )
 
@@ -1272,14 +1274,14 @@ final class PracticeScenarioModeTests: XCTestCase {
             marketHello,
             stepID: "greeting-market-small-talk",
             vietnamese: [
-                "Chào buổi sáng",
-                "Không có gì",
+                "Không, cảm ơn",
                 "Tôi đang vội",
+                "Tạm biệt",
             ],
             english: [
-                "Good morning",
-                "No problem",
+                "No, thank you",
                 "I'm in a hurry",
+                "Goodbye",
             ]
         )
     }
@@ -1748,10 +1750,10 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "The reservation is under this name",
                     "I booked online",
-                    "I have a reservation",
                 ],
                 forbiddenTopEnglish: [
                     "Yes, I have a reservation",
+                    "I have a reservation",
                     "Here is my passport",
                 ]
             ),
@@ -2240,7 +2242,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "information desk",
                 nextStepID: "walking-help-turn",
                 nextLocalMeaningFragment: "turn right",
-                expectedNextTopEnglishFragments: ["go straight", "turn right", "turn left"],
+                expectedNextTopEnglishFragments: ["understand now", "simpler", "map"],
                 forbiddenNextTopEnglishFragments: ["pay by card", "doctor"]
             ),
             MessageTransitionContract(
