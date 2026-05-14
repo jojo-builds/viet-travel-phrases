@@ -1346,6 +1346,80 @@ final class PracticeScenarioModeTests: XCTestCase {
         }
     }
 
+    func testCoffeeOrderDoesNotOfferSecondThankYouAfterPickupThanks() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+        let coffeeOrder = try XCTUnwrap(snapshot.scenarios.first { $0.id == .foodCoffeeOrder })
+        let pickupIndex = try XCTUnwrap(coffeeOrder.steps.firstIndex { $0.id == "coffee-order-pickup" })
+        let goodbyeIndex = try XCTUnwrap(coffeeOrder.steps.firstIndex { $0.id == "coffee-order-goodbye" })
+        XCTAssertEqual(goodbyeIndex, pickupIndex + 1)
+
+        let selectedOptionIDs = Dictionary(
+            uniqueKeysWithValues: try coffeeOrder.steps.prefix(goodbyeIndex).map { step in
+                let bestResponse = try XCTUnwrap(step.bestResponse)
+                return (step.id, bestResponse.id)
+            }
+        )
+        let turns = PracticeStoryTranscript.turns(
+            for: coffeeOrder,
+            currentIndex: goodbyeIndex,
+            selectedOptionIDs: selectedOptionIDs,
+            revealedReplyStepIDs: Set(coffeeOrder.steps.prefix(goodbyeIndex).map(\.id))
+        )
+        let goodbyePrompt = try XCTUnwrap(
+            turns.last { $0.role == .localSpeaker && $0.stepID == "coffee-order-goodbye" }
+        )
+        let choiceTurn = try XCTUnwrap(
+            turns.last { $0.role == .choiceSet && $0.stepID == "coffee-order-goodbye" }
+        )
+
+        XCTAssertFalse(
+            isClosingThanks(goodbyePrompt.english ?? ""),
+            "Coffee Order should not restart a thank-you exchange after the traveler already said thank you and heard you are welcome."
+        )
+        XCTAssertFalse(
+            choiceTurn.responseOptions.prefix(4).contains { isClosingThanks($0.scenarioEnglish) },
+            "Coffee Order should close with goodbye/okay options after the pickup thanks, not another Thank you chip."
+        )
+    }
+
+    func testMessageThreadsDoNotRestartThanksAfterWelcomeReply() throws {
+        let snapshot = try PracticeScenarioBuilder.loadSnapshot(
+            practicePageIDs: [],
+            savedPageIDs: [],
+            recentPageIDs: [],
+            progressStore: isolatedProgressStore()
+        )
+
+        for scenario in snapshot.scenarios {
+            for stepIndex in scenario.steps.indices.dropLast() {
+                let step = scenario.steps[stepIndex]
+                let nextStep = scenario.steps[stepIndex + 1]
+                for option in step.responseOptions.prefix(4) {
+                    guard isClosingThanks(option.scenarioEnglish) else {
+                        continue
+                    }
+                    guard step.localReplyMeaning(after: option).localizedCaseInsensitiveContains("welcome") else {
+                        continue
+                    }
+
+                    XCTAssertFalse(
+                        isClosingThanks(nextStep.localLineMeaning),
+                        "\(scenario.id.rawValue) \(nextStep.id) should not ask for another thanks after '\(option.scenarioEnglish)' already received a welcome reply."
+                    )
+                    XCTAssertFalse(
+                        nextStep.responseOptions.prefix(4).contains { isClosingThanks($0.scenarioEnglish) },
+                        "\(scenario.id.rawValue) \(nextStep.id) should not offer another thanks after '\(option.scenarioEnglish)' already received a welcome reply."
+                    )
+                }
+            }
+        }
+    }
+
     func testVisibleAlternateMessageChoicesHaveBranchReplies() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -1759,7 +1833,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "Sorry",
                     "Please say that again",
-                    "Thank you",
+                    "Okay",
                 ],
                 forbiddenTopEnglish: [
                     "Can I pay by card?",
@@ -2038,7 +2112,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "Thank you",
                 nextStepID: "thanks-sorry-apology",
                 nextLocalMeaningFragment: "wrong line",
-                expectedNextTopEnglishFragments: ["Sorry", "say that again", "Thank you"],
+                expectedNextTopEnglishFragments: ["Sorry", "say that again", "Okay"],
                 forbiddenNextTopEnglishFragments: ["pay by card", "hospital"]
             ),
         ]
@@ -2303,5 +2377,15 @@ final class PracticeScenarioModeTests: XCTestCase {
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .lowercased()
             .trimmingCharacters(in: CharacterSet(charactersIn: ".。!?！？"))
+    }
+
+    private func isClosingThanks(_ value: String) -> Bool {
+        let normalized = value
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+            .trimmingCharacters(in: CharacterSet(charactersIn: ".。!?！？"))
+        return normalized == "thank you"
+            || normalized == "thank you very much"
+            || normalized.hasPrefix("thank you for ")
     }
 }
