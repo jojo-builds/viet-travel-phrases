@@ -1,0 +1,62 @@
+{
+  "itemID": "drink-ruou-de",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Rượu đế",
+  "englishTranslation": "Vietnamese rice liquor",
+  "romanizedNoTones": "Ruou de",
+  "soundOut": "roo-uh day",
+  "notes": "",
+  "atAGlance": "Rượu đế is Vietnamese rice liquor, clear, fiery, rustic, and meant for small shared pours with food.",
+  "whatItIs": "Rượu đế is traditional rice spirit, often stronger than wine or beer. Expect rice liquor with a clear, fiery bite and a rustic grain finish.",
+  "usuallyIncludes": [
+    "rice liquor",
+    "small glass",
+    "shared bottle"
+  ],
+  "howToEnjoy": "Treat it as a small shared pour, not a casual soft drink.",
+  "howLocalsOrder": "Order rượu đế only if you want a strong small-glass spirit, usually with food and shared pours. Say không rượu clearly if avoiding alcohol.",
+  "worthKnowing": "In Vietnamese rice-spirit culture, rượu đế may appear at countryside meals or specialty restaurants; it is stronger than beer or wine.",
+  "goodToKnow": "Alcoholic and strong.",
+  "commonOptions": [
+    "small glass",
+    "with food",
+    "share bottle",
+    "no alcohol"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Alcoholic and can be strong.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly rượu đế.",
+    "english": "I’d like one glass of Vietnamese rice liquor.",
+    "pronunciation": "chaw toy moht lee roo-uh day",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now",
+    "menu-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Rượu đế was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "itemID": "food-bo-xao-luc-lac",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò xào lúc lắc",
+  "englishTranslation": "Stir-fried cubed beef",
+  "romanizedNoTones": "Bo xao luc lac",
+  "soundOut": "baw sow look lak",
+  "notes": "",
+  "atAGlance": "Bò xào lúc lắc is wok-tossed shaking beef pieces, usually with onion, bell pepper, rice, and lime-pepper salt.",
+  "whatItIs": "Bò xào lúc lắc is shaking beef: wok-tossed beef cubes with onion, garlic, pepper, and a savory glaze, usually served with lime-pepper salt, salad, or rice.",
+  "usuallyIncludes": [
+    "seared beef cubes",
+    "onion",
+    "bell pepper",
+    "lime-pepper salt",
+    "rice or salad"
+  ],
+  "howToEnjoy": "Dip beef cubes lightly in lime-pepper salt and eat while the wok-seared edges are hot. Rice or salad balances the beef richness.",
+  "howLocalsOrder": "Order bò xào lúc lắc as a shared plate or rice companion. Ask for less onion, less pepper, or lime-pepper salt on the side.",
+  "worthKnowing": "In Vietnamese restaurants, lúc lắc refers to the shaking wok motion, a useful clue that the beef comes cubed and seared.",
+  "goodToKnow": "The wok glaze should cling to the beef cubes and vegetables. Use lime-pepper salt as the bright accent, not as a separate heavy dip.",
+  "commonOptions": [
+    "lime-pepper salt on the side",
+    "less onion",
+    "with rice",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò xào lúc lắc.",
+    "english": "I’d like one order of stir-fried cubed beef.",
+    "pronunciation": "chaw toy moht fuhn baw sow look lak",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Bò xào lúc lắc was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-heo-quay-banh-hoi",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Heo quay bánh hỏi",
+  "englishTranslation": "Roasted pork with fine rice vermicelli",
+  "romanizedNoTones": "Heo quay banh hoi",
+  "soundOut": "heh-oh kway bahn hoy",
+  "notes": "",
+  "atAGlance": "Heo quay bánh hỏi is roast pork with fine bánh hỏi noodles, usually with crackling skin, scallion oil, herbs, and fish sauce.",
+  "whatItIs": "Heo quay bánh hỏi pairs roast pork with fine woven rice-noodle sheets, herbs, scallion oil, and nước chấm. Crisp pork skin meets delicate noodles.",
+  "usuallyIncludes": [
+    "roasted pork",
+    "fine rice vermicelli sheets",
+    "fresh herbs",
+    "rice paper",
+    "nước chấm"
+  ],
+  "howToEnjoy": "Build small bites with bánh hỏi, heo quay, herbs, and rice paper if served, then dip lightly in nước chấm so the crackling stays crisp.",
+  "howLocalsOrder": "Order heo quay bánh hỏi as a shared plate. Ask for extra rice paper, herbs, or no chili in the nước chấm before everyone starts wrapping.",
+  "worthKnowing": "This is a party-platter style dish in many Vietnamese settings: rich pork, delicate noodles, and fresh herbs designed for sharing.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "no chili",
+    "extra nước chấm"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần heo quay bánh hỏi.",
+    "english": "I’d like one order of roasted pork with fine rice vermicelli.",
+    "pronunciation": "chaw toy moht fuhn heh-oh kway bahn hoy",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Heo quay bánh hỏi was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

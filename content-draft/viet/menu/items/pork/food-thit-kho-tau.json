@@ -1,0 +1,65 @@
+{
+  "itemID": "food-thit-kho-tau",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Thịt kho tàu",
+  "englishTranslation": "Southern-style braised pork and eggs",
+  "romanizedNoTones": "Thit kho tau",
+  "soundOut": "tit kaw tow",
+  "notes": "",
+  "atAGlance": "Thịt kho tàu is pork and eggs braised in coconut water, fish sauce, caramelized sugar, and pepper until the broth turns glossy and savory-sweet.",
+  "whatItIs": "Thịt kho tàu is pork belly and eggs braised in coconut water, fish sauce, and caramel until sweet-salty and tender. It is home-style food made for rice.",
+  "usuallyIncludes": [
+    "pork belly",
+    "eggs",
+    "coconut water",
+    "fish sauce caramel",
+    "black pepper"
+  ],
+  "howToEnjoy": "Spoon the braising liquid over rice, then balance rich pork with pickles, greens, or soup if served. The egg soaks up the caramel-salty broth.",
+  "howLocalsOrder": "Order thịt kho tàu when you want a homestyle pork braise. Ask for extra rice or more egg if you want to stretch the coconut-water caramel flavor.",
+  "worthKnowing": "This dish belongs on southern Vietnam family meals and Tết tables, even when restaurants serve it year-round.",
+  "goodToKnow": "This is family-meal food, not a creamy coconut curry. Coconut water adds gentle sweetness and depth; spoon the braising liquid over rice.",
+  "commonOptions": [
+    "extra rice",
+    "extra egg",
+    "less fatty pork",
+    "more braising liquid"
+  ],
+  "regionalAssociation": "southern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Contains pork, egg, and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần thịt kho tàu.",
+    "english": "I’d like one order of southern-style braised pork and eggs.",
+    "pronunciation": "chaw toy moht fuhn tit kaw tow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-test-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "native copy audit fix"
+    ],
+    "reviewNote": "Thịt kho tàu was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

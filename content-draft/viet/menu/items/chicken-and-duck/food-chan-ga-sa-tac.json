@@ -1,0 +1,67 @@
+{
+  "itemID": "food-chan-ga-sa-tac",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chân gà sả tắc",
+  "englishTranslation": "Chicken feet with lemongrass and kumquat",
+  "romanizedNoTones": "Chan ga sa tac",
+  "soundOut": "chan gah sah tak",
+  "notes": "",
+  "atAGlance": "Chân gà sả tắc is chicken feet tossed with lemongrass and kumquat, usually with crunchy skin, citrus, chili, and fish sauce.",
+  "whatItIs": "Chân gà sả tắc are chicken feet tossed with lemongrass, kumquat, chili, fish sauce, and aromatics. They are chewy, sour, salty, and snacky.",
+  "usuallyIncludes": [
+    "chicken feet",
+    "lemongrass",
+    "kumquat",
+    "chili",
+    "fish-sauce dressing"
+  ],
+  "howToEnjoy": "Eat slowly for texture, using the kumquat and lemongrass to cut the richness. Ask for less chili if you want sour-citrus flavor without heat.",
+  "howLocalsOrder": "Order chân gà sả tắc as a snack or beer-food plate. Say ít cay before it is tossed if you want less chili.",
+  "worthKnowing": "Tắc means kumquat in southern usage; it gives the dish its sharp citrus snap.",
+  "goodToKnow": "This is a chewy snack, not meaty chicken. The sả tắc dressing should taste sweet-sour, citrusy, salty, and a little spicy.",
+  "commonOptions": [
+    "less spicy",
+    "extra kumquat",
+    "no chili",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chân gà sả tắc.",
+    "english": "I’d like one order of chicken feet with lemongrass and kumquat.",
+    "pronunciation": "chaw toy moht fuhn chan gah sah tak",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Chân gà sả tắc was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

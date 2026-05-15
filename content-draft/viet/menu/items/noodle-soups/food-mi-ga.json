@@ -1,0 +1,64 @@
+{
+  "itemID": "food-mi-ga",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mì gà",
+  "englishTranslation": "Chicken egg noodle soup",
+  "romanizedNoTones": "Mi ga",
+  "soundOut": "mee gah",
+  "notes": "",
+  "atAGlance": "Mì gà is chicken egg-noodle soup, usually with springy mì, chicken, greens, and clear broth.",
+  "whatItIs": "Mì gà is chicken egg-noodle soup: yellow noodles with chicken, greens, scallions, and a broth that should taste gently of poultry and aromatics.",
+  "usuallyIncludes": [
+    "egg noodles",
+    "chicken",
+    "chicken broth",
+    "greens",
+    "scallions"
+  ],
+  "howToEnjoy": "Lift the noodles while they are still springy, then sip the broth before adding chili. A little lime or herbs can brighten the chicken without hiding it.",
+  "howLocalsOrder": "Order mì gà when you want chicken but prefer chewy egg noodles over rice noodles. Ask for less chili or extra greens before the bowl is finished.",
+  "worthKnowing": "Mì signals wheat egg noodles on many Vietnamese menus, so mì gà reads differently from phở gà or miến gà even when the protein is the same.",
+  "goodToKnow": "Ask for không cay if you want Mì gà without added chili.",
+  "commonOptions": [
+    "less spicy",
+    "extra greens",
+    "no chili",
+    "no MSG"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô mì gà.",
+    "english": "I’d like one bowl of chicken egg noodle soup.",
+    "pronunciation": "chaw toy moht toh mee gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Mì gà was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

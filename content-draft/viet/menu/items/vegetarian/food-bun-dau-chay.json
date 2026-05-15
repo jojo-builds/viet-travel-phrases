@@ -1,0 +1,65 @@
+{
+  "itemID": "food-bun-dau-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún đậu chay",
+  "englishTranslation": "Vegetarian tofu vermicelli platter",
+  "romanizedNoTones": "Bun dau chay",
+  "soundOut": "boon dow chai",
+  "notes": "",
+  "atAGlance": "Bún đậu chay is a vegetarian take on the bún đậu platter: rice vermicelli, fried tofu, herbs, vegetables, and a vegetarian soy-lime or fermented-bean dip.",
+  "whatItIs": "Bún đậu chay is the vegetarian version of bún đậu, usually with tofu, rice vermicelli, herbs, cucumber, and a vegetarian soy-lime or fermented-bean dip.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "fried tofu",
+    "fresh herbs",
+    "cucumber",
+    "vegetarian soy-lime dip"
+  ],
+  "howToEnjoy": "Build bites of tofu, bún, herbs, and cucumber, then dip lightly. Ask what the dip is made from if strict vegetarian eating matters.",
+  "howLocalsOrder": "Order bún đậu chay and ask không nước mắm if the dip must be fully vegetarian. Request extra tofu or extra herbs before the platter arrives.",
+  "worthKnowing": "The chay version keeps the platter rhythm of bún đậu while replacing meat and mắm tôm with vegetarian-friendly pieces.",
+  "goodToKnow": "The standard non-vegetarian platter centers mắm tôm and pork. Chay should move it into tofu and a vegetarian mắm-style dip.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "extra tofu",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the vegetarian mắm-style dip is truly vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bún đậu chay.",
+    "english": "I’d like one order of vegetarian tofu vermicelli platter.",
+    "pronunciation": "chaw toy moht fuhn boon dow chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Bún đậu chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

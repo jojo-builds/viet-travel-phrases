@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ghe-hap-bia",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Ghẹ hấp bia",
+  "englishTranslation": "Blue crab steamed with beer",
+  "romanizedNoTones": "Ghe hap bia",
+  "soundOut": "geh hup bee-ah",
+  "notes": "",
+  "atAGlance": "Ghẹ hấp bia is blue swimmer crab steamed with beer, usually with lemongrass, ginger, salt-pepper-lime dip, and sweet crab meat.",
+  "whatItIs": "Ghẹ hấp bia is blue crab steamed with beer, lemongrass, and light aromatics so the crab stays clean and sweet.",
+  "usuallyIncludes": [
+    "blue crab",
+    "beer steam",
+    "lemongrass",
+    "dipping salt",
+    "herbs optional"
+  ],
+  "howToEnjoy": "Crack the shells and taste the crab before adding much dipping salt. The beer steam should make the crab smell clean, not boozy.",
+  "howLocalsOrder": "Order ghẹ hấp bia as a shared seafood plate. Ask about size, shells, and dipping salt before the crab arrives.",
+  "worthKnowing": "Ghẹ is blue swimmer crab; steaming with beer and lemongrass is a Vietnamese seafood-shop way to keep it sweet and aromatic.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "share size",
+    "dipping salt",
+    "less spicy",
+    "ask size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần ghẹ hấp bia.",
+    "english": "I’d like one order of blue crab steamed with beer.",
+    "pronunciation": "chaw toy moht fuhn geh hup bee-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Ghẹ hấp bia was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

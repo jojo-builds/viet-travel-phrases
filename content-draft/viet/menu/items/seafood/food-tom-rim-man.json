@@ -1,0 +1,65 @@
+{
+  "itemID": "food-tom-rim-man",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Tôm rim mặn",
+  "englishTranslation": "Savory caramelized shrimp",
+  "romanizedNoTones": "Tom rim man",
+  "soundOut": "tom reem mahn",
+  "notes": "",
+  "atAGlance": "Tôm rim mặn is shrimp simmered salty-sweet, usually with fish sauce caramel, pepper, and rice.",
+  "whatItIs": "Tôm rim mặn is shrimp simmered down in a salty-sweet fish-sauce caramel until glossy. It is intense, savory, and made to eat with rice.",
+  "usuallyIncludes": [
+    "shrimp",
+    "fish-sauce caramel",
+    "black pepper",
+    "scallions",
+    "plain rice"
+  ],
+  "howToEnjoy": "Use rice to catch the glaze, and check whether the shrimp are shell-on. A little cucumber or greens helps balance the salt and sweetness.",
+  "howLocalsOrder": "Order tôm rim mặn when you want shrimp for rice, not a dry snack. Ask about shells and request extra rice if the glaze is rich.",
+  "worthKnowing": "Rim means simmered down until concentrated; here it turns shrimp into a sticky rice companion.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "ask about shells",
+    "extra rice",
+    "less spicy",
+    "extra cucumber"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần tôm rim mặn.",
+    "english": "I’d like one order of savory caramelized shrimp.",
+    "pronunciation": "chaw toy moht fuhn tom reem mahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Tôm rim mặn was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "itemID": "food-dau-hu-kho-nam",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Đậu hũ kho nấm",
+  "englishTranslation": "Tofu braised with mushrooms",
+  "romanizedNoTones": "Dau hu kho nam",
+  "soundOut": "dow hoo kaw nahm",
+  "notes": "",
+  "atAGlance": "Đậu hũ kho nấm is tofu and mushrooms braised in a peppery soy-caramel glaze, served with rice for a quiet chay comfort dish.",
+  "whatItIs": "Đậu hũ kho nấm is a vegetarian kho: tofu and mushrooms simmered until they soak up soy, pepper, and caramelized aromatics. It should feel savory and home-style, not like a plain stir-fry.",
+  "usuallyIncludes": [
+    "tofu",
+    "mushrooms",
+    "soy-caramel glaze",
+    "black pepper",
+    "rice"
+  ],
+  "howToEnjoy": "Eat it with plain rice so the peppery soy-caramel glaze has somewhere to land. Ask about fish sauce if you need strict vegetarian cooking.",
+  "howLocalsOrder": "Đậu hũ kho nấm is a tofu-and-mushroom braise, so order it with rice and ask whether the caramel seasoning is fully vegetarian. Less pepper keeps the soy-caramel flavor round rather than sharp.",
+  "worthKnowing": "In Vietnam, Đậu hũ kho nấm shows how chay cooking borrows the comfort of kho braising without meat. Mushrooms give the dish depth while tofu carries the glaze.",
+  "goodToKnow": "Ask whether the braise is fully vegetarian if needed.",
+  "commonOptions": [
+    "no fish sauce",
+    "extra tofu",
+    "with rice",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask whether the braise is fully vegetarian if needed.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần đậu hũ kho nấm.",
+    "english": "I’d like one order of tofu braised with mushrooms.",
+    "pronunciation": "chaw toy moht fuhn dow hoo kaw nahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "strict sauce wording",
+      "vegetarian chip guardrail",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Đậu hũ kho nấm was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

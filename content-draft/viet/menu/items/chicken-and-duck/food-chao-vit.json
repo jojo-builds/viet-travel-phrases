@@ -1,0 +1,66 @@
+{
+  "itemID": "food-chao-vit",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cháo vịt",
+  "englishTranslation": "Duck rice porridge",
+  "romanizedNoTones": "Chao vit",
+  "soundOut": "chow veet",
+  "notes": "",
+  "atAGlance": "Cháo vịt is duck rice porridge, usually with ginger, scallion, shredded duck, and sometimes cabbage salad.",
+  "whatItIs": "Cháo vịt is duck rice porridge, often served with sliced duck, herbs, rau răm, ginger fish sauce, and sometimes cabbage salad.",
+  "usuallyIncludes": [
+    "rice porridge",
+    "duck",
+    "ginger fish sauce",
+    "scallions",
+    "black pepper"
+  ],
+  "howToEnjoy": "Eat the porridge warm, then dip duck pieces lightly in ginger fish sauce. Add pepper or herbs after tasting the broth.",
+  "howLocalsOrder": "Order cháo vịt when you want duck in a comforting bowl. Ask for ginger fish sauce on the side or less pepper if you want a gentler meal.",
+  "worthKnowing": "In Vietnam, the side herbs and ginger dip are part of the duck-porridge rhythm, not extras.",
+  "goodToKnow": "Duck porridge is richer than chicken porridge. Ginger fish sauce wakes up the duck, so add it gradually if you want the bowl to stay mellow.",
+  "commonOptions": [
+    "ginger fish sauce on the side",
+    "less pepper",
+    "extra herbs",
+    "extra duck"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô cháo vịt.",
+    "english": "I’d like one bowl of duck rice porridge.",
+    "pronunciation": "chaw toy moht toh chow veet",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Cháo vịt was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

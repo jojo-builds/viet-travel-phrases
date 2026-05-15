@@ -1,0 +1,62 @@
+{
+  "itemID": "food-banh-canh-cha-ca",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh canh chả cá",
+  "englishTranslation": "Thick noodle soup with fish cakes",
+  "romanizedNoTones": "Banh canh cha ca",
+  "soundOut": "bahn kan chah kah",
+  "notes": "",
+  "atAGlance": "Bánh canh chả cá is thick noodle soup with springy fish cakes and a light seafood broth. It is gentler than crab bánh canh but still has the chewy noodle texture.",
+  "whatItIs": "Bánh canh chả cá pairs thick chewy noodles with fish cakes and a light seafood broth. It is springy, gentle, and easier than many shellfish-heavy soups.",
+  "usuallyIncludes": [
+    "thick tapioca noodles",
+    "fish cakes",
+    "seafood broth",
+    "scallions",
+    "pepper"
+  ],
+  "howToEnjoy": "Taste a fish cake with broth before adding lime or chili. The fish cake texture should be bouncy, not flaky.",
+  "howLocalsOrder": "Bánh canh chả cá is the fish-cake version, so order it when you want springy fish cakes more than crab. Ask for extra chả cá or less pepper before the bowl is finished.",
+  "worthKnowing": "Chả cá can mean fish cake in many everyday menu contexts, not only the famous Hanoi turmeric fish dish.",
+  "goodToKnow": "Chả cá means fish cake here. The fish is usually formed into slices or patties, not a whole fillet.",
+  "commonOptions": [
+    "extra fish cake",
+    "less pepper",
+    "extra herbs",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bánh canh chả cá.",
+    "english": "I’d like one bowl of thick noodle soup with fish cakes.",
+    "pronunciation": "chaw toy moht toh bahn kan chah kah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh canh chả cá was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "food-hu-tieu-nam-vang",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Hủ tiếu Nam Vang",
+  "englishTranslation": "Phnom Penh-style rice noodle soup",
+  "romanizedNoTones": "Hu tieu Nam Vang",
+  "soundOut": "hoo tee-ew nahm vahng",
+  "notes": "",
+  "atAGlance": "Hủ tiếu Nam Vang is a rice-noodle soup with clear savory broth, herbs, and pork and shrimp. It usually feels lighter and more flexible than richer beef soups.",
+  "whatItIs": "Hủ tiếu Nam Vang is a rice-noodle soup with a clear savory broth and toppings that often include pork, shrimp, herbs, and crisp vegetables. It can feel lighter and more flexible than heavier beef soups.",
+  "usuallyIncludes": [
+    "broth",
+    "rice noodles",
+    "pork and shrimp",
+    "herbs",
+    "lime"
+  ],
+  "howToEnjoy": "Ask whether it comes nước or khô if the shop offers both: soup-style or dry with broth on the side. Add chili slowly because the clear broth is easy to overwhelm.",
+  "howLocalsOrder": "With Hủ tiếu Nam Vang, locals may choose soup style or dry style. If you want the safer first bowl, order it as soup and add herbs, bean sprouts, lime, and chili little by little.",
+  "worthKnowing": "The name points to Nam Vang, the Vietnamese name for Phnom Penh, and the dish is especially common in southern Vietnam. Treat that as menu context rather than one fixed recipe.",
+  "goodToKnow": "If you want a milder bowl, ask for less spicy or no chili. The soup will still have plenty of flavor.",
+  "commonOptions": [
+    "extra herbs",
+    "chili",
+    "bean sprouts",
+    "less spicy",
+    "no MSG"
+  ],
+  "regionalAssociation": "southern Vietnam and Phnom Penh-style rice-noodle shops",
+  "originPosture": "commonly-associated-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô hủ tiếu Nam Vang.",
+    "english": "I’d like one bowl of Phnom Penh-style rice noodle soup.",
+    "pronunciation": "chaw toy moht toh hoo tee-ew nahm vahng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Hủ tiếu Nam Vang was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

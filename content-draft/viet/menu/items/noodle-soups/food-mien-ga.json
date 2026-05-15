@@ -1,0 +1,63 @@
+{
+  "itemID": "food-mien-ga",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Miến gà",
+  "englishTranslation": "Chicken glass noodle soup",
+  "romanizedNoTones": "Mien ga",
+  "soundOut": "mee-en gah",
+  "notes": "",
+  "atAGlance": "Miến gà is chicken glass-noodle soup, usually with slippery miến, shredded chicken, herbs, and clear broth.",
+  "whatItIs": "Miến gà is chicken glass-noodle soup, lighter and silkier than egg-noodle bowls. The translucent noodles soak up chicken broth, pepper, scallions, and herbs.",
+  "usuallyIncludes": [
+    "glass noodles",
+    "chicken",
+    "chicken broth",
+    "scallions",
+    "pepper and herbs"
+  ],
+  "howToEnjoy": "Eat the glass noodles before they soften too much, then season with pepper, lime, or chili only after tasting the broth. The clean chicken flavor should still come through.",
+  "howLocalsOrder": "Order miến gà when you want a lighter chicken noodle bowl. Ask for extra herbs or no chili early, and use lime carefully so the broth stays delicate.",
+  "worthKnowing": "Miến means glass noodles, a useful word for recognizing lighter soups and stir-fries across Vietnamese menus.",
+  "goodToKnow": "Miến means glass noodles, so expect slippery transparent noodles in chicken broth, not wheat or egg noodles.",
+  "commonOptions": [
+    "extra herbs",
+    "less spicy",
+    "no chili",
+    "no MSG"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô miến gà.",
+    "english": "I’d like one bowl of chicken glass noodle soup.",
+    "pronunciation": "chaw toy moht toh mee-en gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Miến gà was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "itemID": "drink-bia-sai-gon",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bia Sài Gòn",
+  "englishTranslation": "Saigon beer",
+  "romanizedNoTones": "Bia Sai Gon",
+  "soundOut": "bee-ah sai gawn",
+  "notes": "",
+  "atAGlance": "Bia Sài Gòn is a crisp southern lager for seafood, grilled food, and casual tables where beer often arrives with ice.",
+  "whatItIs": "Bia Sài Gòn is Saigon-branded beer served by bottle or can, often with ice at casual restaurants. Expect crisp southern lager, lightly bitter, easy-drinking, and built for seafood or grilled food.",
+  "usuallyIncludes": [
+    "beer",
+    "chilled bottle or can"
+  ],
+  "howToEnjoy": "Order it cold; say không đá if you do not want it poured over ice.",
+  "howLocalsOrder": "Bia Sài Gòn is usually ordered cold by bottle or can, and ice in the glass is common in Vietnam. Ask không đá if you do not want ice, especially at seafood or street tables.",
+  "worthKnowing": "In Vietnam, Bia Sài Gòn belongs to southern Vietnam’s casual beer-table culture, especially at seafood and barbecue spots.",
+  "goodToKnow": "Alcoholic; beer may arrive with ice.",
+  "commonOptions": [
+    "cold",
+    "can or bottle",
+    "with ice",
+    "share bucket"
+  ],
+  "regionalAssociation": "southern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một chai bia Sài Gòn.",
+    "english": "I’d like one bottle of Saigon beer.",
+    "pronunciation": "chaw toy moht chai bee-ah sai gawn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now",
+    "menu-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bia Sài Gòn was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

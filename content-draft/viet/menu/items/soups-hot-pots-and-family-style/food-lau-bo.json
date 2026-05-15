@@ -1,0 +1,63 @@
+{
+  "itemID": "food-lau-bo",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu bò",
+  "englishTranslation": "Beef hot pot",
+  "romanizedNoTones": "Lau bo",
+  "soundOut": "low baw",
+  "notes": "",
+  "atAGlance": "Lẩu bò is beef hot pot, usually with thin beef, greens, tofu, noodles, and shared broth.",
+  "whatItIs": "Lẩu bò is beef hot pot with broth, sliced beef, meatballs or tendon, tofu, greens, mushrooms, herbs, and noodles. It is a table meal, not a quick bowl.",
+  "usuallyIncludes": [
+    "beef slices",
+    "hot-pot broth",
+    "greens",
+    "tofu or mushrooms",
+    "noodles"
+  ],
+  "howToEnjoy": "Cook beef briefly so it stays tender, then add greens and noodles later. Ask for less spicy broth before the pot arrives.",
+  "howLocalsOrder": "Order lẩu bò by table size and ask what cuts are included. Request extra greens, extra noodles, or less spicy broth before cooking starts.",
+  "worthKnowing": "Vietnamese beef hot pot is social food, often stretched over conversation with rounds of greens and noodles.",
+  "goodToKnow": "Cook thin beef briefly so it stays tender, then add greens and noodles in later rounds. The pot is meant to stretch over conversation.",
+  "commonOptions": [
+    "less spicy",
+    "extra greens",
+    "extra noodles",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu bò.",
+    "english": "I’d like one order of beef hot pot.",
+    "pronunciation": "chaw toy moht noy low baw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Lẩu bò was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

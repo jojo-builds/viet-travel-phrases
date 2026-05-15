@@ -1,0 +1,64 @@
+{
+  "itemID": "food-bo-ne",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bò né",
+  "englishTranslation": "Sizzling beef steak with eggs",
+  "romanizedNoTones": "Bo ne",
+  "soundOut": "baw neh",
+  "notes": "",
+  "atAGlance": "Bò né is a sizzling hot-plate beef breakfast or brunch order, often with egg, pâté, onions, tomato, and a baguette for swiping through the pan juices.",
+  "whatItIs": "Bò né is sizzling beef served on a hot plate, often with egg, pâté, sausage, onion, butter, and a baguette. It is breakfast-steak energy, Vietnamese style.",
+  "usuallyIncludes": [
+    "sizzling beef",
+    "fried egg",
+    "pâté if included",
+    "baguette",
+    "onion or tomato"
+  ],
+  "howToEnjoy": "Tear bread into the egg, beef juices, and pâté while the plate is still sizzling. Watch the hot plate and keep sauce splatter in mind.",
+  "howLocalsOrder": "Order bò né when you want a hot-plate beef breakfast. Ask for no pâté, extra bread, or egg well-done before the plate hits the table.",
+  "worthKnowing": "Né means to dodge, a playful name for the sizzling plate that can spit oil when it arrives.",
+  "goodToKnow": "Né means to dodge, a playful nod to the spattering hot plate. Keep your face back when it lands, then use the bread to catch egg yolk, beef juices, and pâté.",
+  "commonOptions": [
+    "extra bread",
+    "egg well-done",
+    "no pâté",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò né.",
+    "english": "I’d like one order of sizzling beef steak with eggs.",
+    "pronunciation": "chaw toy moht fuhn baw neh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bò né was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

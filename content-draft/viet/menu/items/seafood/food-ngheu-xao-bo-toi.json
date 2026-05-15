@@ -1,0 +1,64 @@
+{
+  "itemID": "food-ngheu-xao-bo-toi",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nghêu xào bơ tỏi",
+  "englishTranslation": "Clams stir-fried with garlic butter",
+  "romanizedNoTones": "Ngheu xao bo toi",
+  "soundOut": "ngay-ew sow buh toy",
+  "notes": "",
+  "atAGlance": "Nghêu xào bơ tỏi is clams stir-fried in garlic-butter sauce. It is briny, rich, aromatic, and best while the shells are still hot.",
+  "whatItIs": "Nghêu xào bơ tỏi are clams stir-fried with butter and garlic, often rich, fragrant, and a little sweet from the shellfish juices.",
+  "usuallyIncludes": [
+    "clams",
+    "butter",
+    "garlic",
+    "herbs",
+    "bread or rice if offered"
+  ],
+  "howToEnjoy": "Scoop the butter-garlic juices with bread or rice if offered, and leave any clam that stays closed. The garlic should be fragrant, not harsh.",
+  "howLocalsOrder": "Order nghêu xào bơ tỏi when you want a richer clam plate. Ask for less chili or extra bread before the clams arrive.",
+  "worthKnowing": "Bơ tỏi means butter-garlic, a popular ốc-shop flavor that is different from fish-sauce stir-fry seasoning.",
+  "goodToKnow": "Bơ tỏi means butter-garlic. Expect sweet clam juices, toasted garlic, and richness from butter rather than the sharper fish-sauce profile of other seafood plates.",
+  "commonOptions": [
+    "less spicy",
+    "extra bread",
+    "share size",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "name-and-menu-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần nghêu xào bơ tỏi.",
+    "english": "I’d like one order of clams stir-fried with garlic butter.",
+    "pronunciation": "chaw toy moht fuhn ngay-ew sow buh toy",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Nghêu xào bơ tỏi was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "itemID": "food-cha-lua",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chả lụa",
+  "englishTranslation": "Vietnamese pork sausage",
+  "romanizedNoTones": "Cha lua",
+  "soundOut": "chah loo-uh",
+  "notes": "",
+  "atAGlance": "Chả lụa is Vietnamese steamed pork sausage, usually with smooth slices, pepper, banana-leaf aroma, and rice or bánh mì.",
+  "whatItIs": "Chả lụa is smooth steamed Vietnamese pork sausage wrapped in banana leaf. It is mild, springy, and often sliced into bánh mì, bánh cuốn, xôi, or rice plates.",
+  "usuallyIncludes": [
+    "smooth steamed pork sausage",
+    "banana-leaf aroma",
+    "white pepper",
+    "slices for bánh mì or rice",
+    "chả texture"
+  ],
+  "howToEnjoy": "Eat it sliced with rice, sticky rice, bánh cuốn, or inside bánh mì. The banana-leaf aroma and smooth bounce are the point.",
+  "howLocalsOrder": "Order chả lụa when you want the mild pork sausage side or filling. Ask for it sliced, added to bánh mì, or served with bánh cuốn depending on the shop.",
+  "worthKnowing": "Chả lụa is a building-block food in Vietnam; recognizing it helps decode many breakfast and snack plates.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "sliced",
+    "with bánh cuốn",
+    "with xôi",
+    "add to bánh mì"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chả lụa.",
+    "english": "I’d like one order of Vietnamese pork sausage.",
+    "pronunciation": "chaw toy moht fuhn chah loo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Chả lụa was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

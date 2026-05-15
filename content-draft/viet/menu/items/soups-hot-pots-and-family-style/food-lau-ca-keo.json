@@ -1,0 +1,64 @@
+{
+  "itemID": "food-lau-ca-keo",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu cá kèo",
+  "englishTranslation": "Mudskipper fish hot pot",
+  "romanizedNoTones": "Lau ca keo",
+  "soundOut": "low kah keh-oh",
+  "notes": "",
+  "atAGlance": "Lẩu cá kèo is goby fish hot pot, usually with sour broth, herbs, fish, and noodles.",
+  "whatItIs": "Lẩu cá kèo is hot pot with small mudskipper or goby fish in a sour broth, often with rau đắng, herbs, tomatoes, and noodles.",
+  "usuallyIncludes": [
+    "cá kèo goby fish",
+    "sour broth",
+    "rau đắng or greens",
+    "herbs",
+    "noodles"
+  ],
+  "howToEnjoy": "Cook the fish gently and watch for bones. Add bitter greens and noodles in stages so the broth stays lively.",
+  "howLocalsOrder": "Order lẩu cá kèo as a shared sour fish hot pot. Ask about bones, less spicy broth, or extra rau đắng before the pot arrives.",
+  "worthKnowing": "Cá kèo is a small fish loved in southern Vietnam; the slightly bitter greens make the broth distinctive.",
+  "goodToKnow": "Cá kèo is small and bony, so eat carefully. The southern pleasure is the sour broth meeting slightly bitter greens.",
+  "commonOptions": [
+    "ask about bones",
+    "less spicy",
+    "extra greens",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu cá kèo.",
+    "english": "I’d like one order of mudskipper fish hot pot.",
+    "pronunciation": "chaw toy moht noy low kah keh-oh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Lẩu cá kèo was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

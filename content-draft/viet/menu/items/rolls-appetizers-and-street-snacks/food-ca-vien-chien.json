@@ -1,0 +1,66 @@
+{
+  "itemID": "food-ca-vien-chien",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cá viên chiên",
+  "englishTranslation": "Fried fish balls",
+  "romanizedNoTones": "Ca vien chien",
+  "soundOut": "kah vee-en chee-en",
+  "notes": "",
+  "atAGlance": "Cá viên chiên is fried fish balls, usually with skewers, chili sauce, and lime-pepper salt dip or ginger fish sauce.",
+  "whatItIs": "Cá viên chiên are fried fish balls, often skewered or served in a basket with chili dip, cucumber, and sometimes lime-pepper salt. They are a casual street snack.",
+  "usuallyIncludes": [
+    "fish balls",
+    "fried edges",
+    "skewers optional",
+    "chili dip",
+    "cucumber optional"
+  ],
+  "howToEnjoy": "Eat them hot while the outside is springy-crisp, then dip lightly in chili or lime-pepper salt. Ask for no chili if you want the fish-cake sweetness plain.",
+  "howLocalsOrder": "Order cá viên chiên by choosing skewers or asking for a mixed fried snack plate. Say không cay before the vendor adds chili dip.",
+  "worthKnowing": "This is school-snack and street-cart territory in Vietnam: quick, fun, and more about texture than a formal meal.",
+  "goodToKnow": "Ask for không cay if you want Cá viên chiên without added chili.",
+  "commonOptions": [
+    "no chili",
+    "mixed skewers",
+    "lime-pepper salt",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cá viên chiên.",
+    "english": "I’d like one order of fried fish balls.",
+    "pronunciation": "chaw toy moht fuhn kah vee-en chee-en",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-validator-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "validator cleanup"
+    ],
+    "reviewNote": "Cá viên chiên was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

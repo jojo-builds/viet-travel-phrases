@@ -1,0 +1,58 @@
+{
+  "itemID": "drink-bia-ha-noi",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bia Hà Nội",
+  "englishTranslation": "Hanoi beer",
+  "romanizedNoTones": "Bia Ha Noi",
+  "soundOut": "bee-ah hah noy",
+  "notes": "",
+  "atAGlance": "Bia Hà Nội is a northern lager tied to the capital’s beer tables, clean, gently bitter, and usually poured very cold.",
+  "whatItIs": "Bia Hà Nội is Hanoi-branded beer served by bottle or can. Expect northern lager with a clean malt note, gentle bitterness, and a crisp finish.",
+  "usuallyIncludes": [
+    "beer",
+    "chilled bottle or can"
+  ],
+  "howToEnjoy": "Drink it cold with grilled, fried, or salty snacks.",
+  "howLocalsOrder": "Bia Hà Nội is usually ordered cold by bottle or can, and ice in the glass is common in Vietnam. Ask không đá if you do not want ice, especially at seafood or street tables.",
+  "worthKnowing": "In Vietnam, Bia Hà Nội is tied to the capital’s beer culture, especially when you see it beside bia hơi and street-side drinking food.",
+  "goodToKnow": "Alcoholic; ask for no ice if needed.",
+  "commonOptions": [
+    "cold",
+    "can or bottle",
+    "with ice",
+    "share bucket"
+  ],
+  "regionalAssociation": "Hanoi",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một chai bia Hà Nội.",
+    "english": "I’d like one bottle of Hanoi beer.",
+    "pronunciation": "chaw toy moht chai bee-ah hah noy",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now",
+    "menu-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bia Hà Nội was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

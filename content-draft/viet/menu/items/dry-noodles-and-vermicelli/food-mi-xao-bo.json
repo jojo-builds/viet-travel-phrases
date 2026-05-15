@@ -1,0 +1,65 @@
+{
+  "itemID": "food-mi-xao-bo",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mì xào bò",
+  "englishTranslation": "Stir-fried egg noodles with beef",
+  "romanizedNoTones": "Mi xao bo",
+  "soundOut": "mee sow baw",
+  "notes": "",
+  "atAGlance": "Mì xào bò is stir-fried egg noodles with beef, usually with greens, garlic, onion, and glossy sauce.",
+  "whatItIs": "Mì xào bò is wok-fried egg noodles with beef, vegetables, garlic, and a glossy savory seasoning. The appeal is hot-wok aroma and chewy noodles, not broth.",
+  "usuallyIncludes": [
+    "egg noodles",
+    "beef",
+    "fresh herbs",
+    "garlic-fish-sauce stir-fry glaze",
+    "fried shallots or crunchy topping"
+  ],
+  "howToEnjoy": "Eat it while the noodles are still springy and the beef is hot from the wok. Add chili or soy-lime seasoning lightly so the garlic and beef stay clear.",
+  "howLocalsOrder": "Order mì xào bò when you want stir-fried noodles. Ask ít dầu for less oil, ít cay for less chili, or thêm rau if you want more greens.",
+  "worthKnowing": "Xào means stir-fried, a key menu word for recognizing fast wok dishes across Vietnam.",
+  "goodToKnow": "Ask for không cay if you want Mì xào bò without added chili.",
+  "commonOptions": [
+    "less spicy",
+    "less oil",
+    "extra vegetables",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô mì xào bò.",
+    "english": "I’d like one bowl of stir-fried egg noodles with beef.",
+    "pronunciation": "chaw toy moht toh mee sow baw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Mì xào bò was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

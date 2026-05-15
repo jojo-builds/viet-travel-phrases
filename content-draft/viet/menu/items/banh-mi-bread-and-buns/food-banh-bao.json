@@ -1,0 +1,62 @@
+{
+  "itemID": "food-banh-bao",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh bao",
+  "englishTranslation": "Steamed bun",
+  "romanizedNoTones": "Banh bao",
+  "soundOut": "bahn bow",
+  "notes": "",
+  "atAGlance": "Bánh bao is a soft steamed bun with a sealed savory filling inside slightly sweet dough. It is warm, portable, and closer to a filled bun than a sandwich.",
+  "whatItIs": "Bánh bao is a Vietnamese steamed bun, often with pork, egg, mushroom, or other savory filling sealed inside fluffy dough.",
+  "usuallyIncludes": [
+    "steamed bun",
+    "savory filling",
+    "soft dough",
+    "egg optional",
+    "pork optional"
+  ],
+  "howToEnjoy": "Eat it warm and split carefully if you want to check the filling first. The bun can be more filling than it looks.",
+  "howLocalsOrder": "Bánh bao is a warm takeaway bun order; ask what filling is inside if the tray is mixed. Locals buy it for a quick breakfast or snack, so ask for it warmed before leaving.",
+  "worthKnowing": "Bánh bao sits in Vietnam’s bakery and snack world, but it is steamed rather than baked or toasted.",
+  "goodToKnow": "Do not ask for this toasted like bánh mì. The point is the soft steamed dough and hidden filling.",
+  "commonOptions": [
+    "warm",
+    "takeaway",
+    "ask what filling",
+    "no egg"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork and egg.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một cái bánh bao.",
+    "english": "I’d like one order of steamed bun.",
+    "pronunciation": "chaw toy moht kai bahn bow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh bao was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

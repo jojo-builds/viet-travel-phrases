@@ -1,0 +1,62 @@
+{
+  "itemID": "food-pho-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Phở chay",
+  "englishTranslation": "Vegetarian pho",
+  "romanizedNoTones": "Pho chay",
+  "soundOut": "fuh chai",
+  "notes": "",
+  "atAGlance": "Vegetarian phở with rice noodles, herbs, and a lighter broth built from vegetables, mushrooms, and warm spices instead of beef bones.",
+  "whatItIs": "Phở chay keeps the recognizable phở shape: flat noodles, fragrant broth, herbs, lime, and chili, but it swaps meat for tofu, mushrooms, vegetables, or plant-based toppings.",
+  "usuallyIncludes": [
+    "flat rice noodles",
+    "vegetable-mushroom broth",
+    "tofu or mushrooms",
+    "herbs",
+    "lime and chili"
+  ],
+  "howToEnjoy": "Taste the broth first; good phở chay gets sweetness from vegetables and depth from mushrooms. Add herbs and lime gradually so the gentle broth stays balanced.",
+  "howLocalsOrder": "Say Phở chay and chay clearly so the shop understands you want the vegetarian version, not just extra vegetables. If you avoid fish sauce, ask có nước mắm không before adding any dip or broth seasoning.",
+  "worthKnowing": "Chay food is especially visible around Buddhist observance days, and dishes like phở chay let travelers experience familiar Vietnamese forms through temple and vegetarian cooking traditions.",
+  "goodToKnow": "Ask whether the broth is vegetable-based and whether fish sauce is used in seasoning if you need it fully vegetarian.",
+  "commonOptions": [
+    "no fish sauce",
+    "extra tofu",
+    "extra herbs",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "Confirm the broth and seasoning are vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô phở chay.",
+    "english": "I’d like one bowl of vegetarian pho.",
+    "pronunciation": "chaw toy moht toh fuh chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Phở chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

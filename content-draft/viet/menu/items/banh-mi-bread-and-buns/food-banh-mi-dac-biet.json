@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-mi-dac-biet",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh mì đặc biệt",
+  "englishTranslation": "Special Vietnamese sandwich",
+  "romanizedNoTones": "Banh mi dac biet",
+  "soundOut": "bahn mee dak bee-et",
+  "notes": "",
+  "atAGlance": "Bánh mì đặc biệt is the house-special sandwich, stacking the French-Vietnamese bánh mì story with pâté, cold cuts, pickles, cucumber, cilantro, chili, and seasoning.",
+  "whatItIs": "Bánh mì đặc biệt is the “special” mixed-meat bánh mì, usually layered with pâté, Vietnamese cold cuts, pork floss or ham, đồ chua pickles, cucumber, cilantro, chili, and Maggi-style seasoning.",
+  "usuallyIncludes": [
+    "baguette",
+    "pâté",
+    "Vietnamese cold cuts",
+    "pickles and cucumber",
+    "cilantro and chili"
+  ],
+  "howToEnjoy": "Eat it soon, while the bread is crisp and the pâté is still rich against the pickles. The fun is how many layers fit into a loaf that still feels fresh and quick.",
+  "howLocalsOrder": "Order bánh mì đặc biệt when you want the fully loaded house version. Ask what meats are inside if you avoid pork, and say không ớt for no chili before the vendor closes it.",
+  "worthKnowing": "Đặc biệt means special, so each stall’s version tells you what that vendor is proud of. It also shows why bánh mì lasted: French-influenced bread became a flexible Vietnamese street-food platform.",
+  "goodToKnow": "Fillings vary by shop. Ask what meats are inside if pork, pâté, or processed meat matters, and keep the pickles unless you truly dislike sour crunch.",
+  "commonOptions": [
+    "no chili",
+    "extra pâté",
+    "extra pickles",
+    "no pork"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "Often contains pork and pâté.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì đặc biệt.",
+    "english": "I’d like one special bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee dak bee-et",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Bánh mì đặc biệt was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

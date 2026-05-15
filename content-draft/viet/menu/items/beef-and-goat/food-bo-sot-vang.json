@@ -1,0 +1,65 @@
+{
+  "itemID": "food-bo-sot-vang",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò sốt vang",
+  "englishTranslation": "Vietnamese red wine beef stew",
+  "romanizedNoTones": "Bo sot vang",
+  "soundOut": "baw sot vahng",
+  "notes": "",
+  "atAGlance": "Bò sốt vang is northern-style beef in red wine sauce, usually with carrot, herbs, tomato-rich gravy, and bread or noodles.",
+  "whatItIs": "Bò sốt vang is Vietnamese red-wine beef stew with tomatoes, carrots, warm spices, and tender beef, often eaten with bread or noodles.",
+  "usuallyIncludes": [
+    "beef",
+    "spiced broth",
+    "carrots",
+    "herbs",
+    "bread or noodles"
+  ],
+  "howToEnjoy": "Use bread to scoop the red-wine tomato gravy, or choose noodles if you want it as a bowl. Add chili only after tasting the stew.",
+  "howLocalsOrder": "Order bò sốt vang for a northern-style beef stew. Ask for bread or noodles, and request less chili if you want the wine-spice warmth without heat.",
+  "worthKnowing": "The dish reflects French-influenced Vietnamese comfort food, but it tastes Vietnamese through fish sauce, spices, and baguette culture.",
+  "goodToKnow": "Ask for không cay if you want Bò sốt vang without added chili.",
+  "commonOptions": [
+    "with bread",
+    "with noodles",
+    "less spicy",
+    "extra beef"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò sốt vang.",
+    "english": "I’d like one order of Vietnamese red wine beef stew.",
+    "pronunciation": "chaw toy moht fuhn baw sot vahng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bò sốt vang was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

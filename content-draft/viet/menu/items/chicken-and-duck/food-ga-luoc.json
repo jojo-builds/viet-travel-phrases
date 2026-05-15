@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-luoc",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gà luộc",
+  "englishTranslation": "Boiled chicken",
+  "romanizedNoTones": "Ga luoc",
+  "soundOut": "gah loo-uk",
+  "notes": "",
+  "atAGlance": "Gà luộc is poached chicken, usually with lime-pepper salt, herbs, and sometimes sticky rice or porridge.",
+  "whatItIs": "Gà luộc is poached chicken, usually served with rau răm, lime-pepper salt, and sometimes ginger fish sauce. The texture is firmer and cleaner than fried chicken.",
+  "usuallyIncludes": [
+    "poached chicken",
+    "rau răm",
+    "lime-pepper salt",
+    "ginger fish sauce optional",
+    "rice or porridge side"
+  ],
+  "howToEnjoy": "Dip small pieces in lime-pepper salt and eat with herbs or rice. If it is free-range chicken, expect more chew and flavor.",
+  "howLocalsOrder": "Order gà luộc when you want plain poached chicken for dipping. Ask for lime-pepper salt on the side or extra rau răm before the plate arrives.",
+  "worthKnowing": "Poached chicken is a celebratory and family-table staple in Vietnam, especially when the chicken has good texture.",
+  "goodToKnow": "Boiled chicken is often about clean chicken flavor, firm texture, and lime-pepper salt. Dip lightly so the salt and citrus lift the meat without covering it.",
+  "commonOptions": [
+    "lime-pepper salt on the side",
+    "extra rau răm",
+    "with rice",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà luộc.",
+    "english": "I’d like one order of boiled chicken.",
+    "pronunciation": "chaw toy moht fuhn gah loo-uk",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gà luộc was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

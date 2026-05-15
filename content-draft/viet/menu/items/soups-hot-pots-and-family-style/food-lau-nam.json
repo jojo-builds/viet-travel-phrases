@@ -1,0 +1,64 @@
+{
+  "itemID": "food-lau-nam",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu nấm",
+  "englishTranslation": "Mushroom hot pot",
+  "romanizedNoTones": "Lau nam",
+  "soundOut": "low nahm",
+  "notes": "",
+  "atAGlance": "Lẩu nấm is mushroom hot pot, usually with mixed mushrooms, tofu or vegetables, greens, and clear broth.",
+  "whatItIs": "Lẩu nấm is mushroom hot pot with mixed mushrooms, tofu, greens, herbs, noodles, and a broth that grows earthier as the table cooks.",
+  "usuallyIncludes": [
+    "mixed mushrooms",
+    "hot-pot broth",
+    "tofu optional",
+    "greens",
+    "noodles"
+  ],
+  "howToEnjoy": "Add mushrooms in waves, then greens, then noodles near the end so they do not overcook. Ask whether the broth is vegetarian if that matters.",
+  "howLocalsOrder": "Order lẩu nấm by table size and decide whether it should be vegetarian. Ask for extra mushrooms, extra greens, or extra noodles before the pot starts.",
+  "worthKnowing": "In Vietnam, mushroom hot pot is a shared-table choice when people want deep broth flavor without a heavy meat focus.",
+  "goodToKnow": "The broth may not be vegetarian at mixed restaurants, even when mushrooms are the headline.",
+  "commonOptions": [
+    "vegetarian broth",
+    "extra mushrooms",
+    "extra greens",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu nấm.",
+    "english": "I’d like one order of mushroom hot pot.",
+    "pronunciation": "chaw toy moht noy low nahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Lẩu nấm was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

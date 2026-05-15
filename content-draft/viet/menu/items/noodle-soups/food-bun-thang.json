@@ -1,0 +1,62 @@
+{
+  "itemID": "food-bun-thang",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún thang",
+  "englishTranslation": "Hanoi chicken, egg, and pork noodle soup",
+  "romanizedNoTones": "Bun thang",
+  "soundOut": "boon tang",
+  "notes": "",
+  "atAGlance": "Bún thang is a delicate Hanoi noodle soup layered with shredded chicken, egg ribbons, pork sausage, herbs, and clear broth. It is refined rather than fiery.",
+  "whatItIs": "Bún thang is a Hanoi soup where thin rice vermicelli sits under careful strips of chicken, egg, pork sausage, herbs, and clear broth.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "clear chicken broth",
+    "shredded chicken",
+    "egg ribbons",
+    "pork sausage"
+  ],
+  "howToEnjoy": "Keep the first spoonful gentle. Add chili only after tasting the broth, because the pleasure is in the layered clean flavors.",
+  "howLocalsOrder": "Bún thang is a delicate Hanoi-style bowl, so locals do not bury it under chili right away. Order it by name and let the chicken, egg ribbons, and pork sausage stay clear and tidy.",
+  "worthKnowing": "Bún thang is associated with Hanoi cooking and a more delicate soup style than many southern or central bowls.",
+  "goodToKnow": "The bowl can include pork sausage, egg, and dried-shrimp flavor. It is not just chicken soup.",
+  "commonOptions": [
+    "extra herbs",
+    "less pepper",
+    "no pork sausage",
+    "ask about shrimp"
+  ],
+  "regionalAssociation": "Hanoi",
+  "originPosture": "regional-association",
+  "travelerCaution": "May include pork, egg, and dried shrimp.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún thang.",
+    "english": "I’d like one bowl of Hanoi chicken, egg, and pork noodle soup.",
+    "pronunciation": "chaw toy moht toh boon tang",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bún thang was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

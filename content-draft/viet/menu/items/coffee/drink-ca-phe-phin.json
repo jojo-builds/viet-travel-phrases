@@ -1,0 +1,59 @@
+{
+  "itemID": "drink-ca-phe-phin",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà phê phin",
+  "englishTranslation": "Vietnamese drip coffee",
+  "romanizedNoTones": "Ca phe phin",
+  "soundOut": "kah fay fin",
+  "notes": "",
+  "atAGlance": "Cà phê phin is the slow metal-filter ritual behind many Vietnamese coffee orders, letting a strong cup change drip by drip.",
+  "whatItIs": "Cà phê phin is coffee brewed through a small metal phin filter, with or without milk. Expect slow phin coffee with a concentrated roasted aroma and a cup that changes as it drips.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter"
+  ],
+  "howToEnjoy": "Give the drip time; the slow wait is part of the experience.",
+  "howLocalsOrder": "Cà phê phin is about the drip, so order hot or iced and give the phin time to finish. Ask for condensed milk only if you want the sweeter Vietnamese café style.",
+  "worthKnowing": "In Vietnam, Cà phê phin is the brewing method behind many Vietnamese coffee orders, so learning phin helps you recognize the style anywhere.",
+  "goodToKnow": "Ask whether it comes black or with condensed milk.",
+  "commonOptions": [
+    "black",
+    "with condensed milk",
+    "iced",
+    "hot"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê phin.",
+    "english": "I’d like one glass of Vietnamese drip coffee.",
+    "pronunciation": "chaw toy moht lee kah fay fin",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê phin was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

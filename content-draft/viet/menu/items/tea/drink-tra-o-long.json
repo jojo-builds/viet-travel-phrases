@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-tra-o-long",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà ô long",
+  "englishTranslation": "Oolong tea",
+  "romanizedNoTones": "Tra o long",
+  "soundOut": "chah oh lawng",
+  "notes": "",
+  "atAGlance": "Trà ô long is oolong tea, roasted, honeyed, or floral depending on the brew, and useful when plain tea still wants aroma.",
+  "whatItIs": "Trà ô long is oolong tea served plain, iced, or café-style. Expect oolong tea with a roasted, honeyed, or floral taste depending on the brew.",
+  "usuallyIncludes": [
+    "oolong tea",
+    "hot water or ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Try it less sweet first; oolong has enough aroma to stand on its own.",
+  "howLocalsOrder": "Trà ô long is ordered by temperature and sweetness. Ask ít đường or ít đá before the glass is made, because Vietnamese tea drinks can arrive sweeter and icier than expected.",
+  "worthKnowing": "In Vietnam, Trà ô long sits between green and black tea on Vietnamese menus, useful when you want fragrance without milk.",
+  "goodToKnow": "Ask whether it is plain tea or a sweet café drink.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà ô long.",
+    "english": "I’d like one glass of oolong tea.",
+    "pronunciation": "chaw toy moht lee chah oh lawng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trà ô long was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "food-banh-mi-thit-nuong",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh mì thịt nướng",
+  "englishTranslation": "Grilled pork sandwich",
+  "romanizedNoTones": "Banh mi thit nuong",
+  "soundOut": "bahn mee tit noong",
+  "notes": "",
+  "atAGlance": "A smoky grilled-pork bánh mì with sweet-savory marinade, fresh herbs, cucumber, pickles, and chili tucked into a crisp loaf.",
+  "whatItIs": "Bánh mì thịt nướng centers on charred slices or strips of marinated pork, usually fragrant with lemongrass, fish sauce, garlic, and sugar, balanced by cilantro and đồ chua.",
+  "usuallyIncludes": [
+    "baguette",
+    "pork",
+    "pickled vegetables",
+    "cilantro",
+    "chili optional"
+  ],
+  "howToEnjoy": "Choose it when you smell meat grilling nearby; that little bit of smoke is the point. It is great for lunch or a late-night snack after the grill has built up flavor.",
+  "howLocalsOrder": "Order bánh mì thịt nướng when you want grilled pork rather than cold cuts. Ask for no chili early, and keep the pickles because they cut the smoky sweetness.",
+  "worthKnowing": "Thịt nướng is a core southern Vietnamese flavor, also found over rice noodles and broken rice. In bánh mì form, it shows how Vietnam took the French-influenced loaf and filled it with local grill smoke, fish sauce, herbs, and đồ chua.",
+  "goodToKnow": "Ask for less chili if you want to focus on the lemongrass sweetness.",
+  "commonOptions": [
+    "no chili",
+    "extra pickles",
+    "extra grilled pork",
+    "less sauce"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì thịt nướng.",
+    "english": "I’d like one grilled pork bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee tit noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "non-generic culinary detail",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh mì thịt nướng was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

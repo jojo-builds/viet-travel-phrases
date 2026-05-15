@@ -1,0 +1,65 @@
+{
+  "itemID": "food-suon-nuong",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sườn nướng",
+  "englishTranslation": "Grilled pork ribs",
+  "romanizedNoTones": "Suon nuong",
+  "soundOut": "swoon noong",
+  "notes": "",
+  "atAGlance": "Sườn nướng is grilled pork chop or ribs, usually with lemongrass marinade, rice, scallion oil, and pickles.",
+  "whatItIs": "Sườn nướng is grilled pork ribs or chops, usually smoky-sweet, served with rice, herbs, pickles, cucumber, or nước mắm depending on the shop.",
+  "usuallyIncludes": [
+    "grilled pork rib or chop",
+    "rice",
+    "pickles",
+    "scallion oil",
+    "nước mắm dressing"
+  ],
+  "howToEnjoy": "Eat the grilled edges with rice and pickles, then use nước mắm or lime-pepper salt lightly if served. The char and marinade should stay in front.",
+  "howLocalsOrder": "Order sườn nướng when you want grilled pork as the main protein. Ask for extra pickles, less chili, or rice on the side before the plate lands.",
+  "worthKnowing": "Nướng means grilled, a high-value Vietnamese menu word for smoky pork, chicken, seafood, and goat.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra pickles",
+    "with rice",
+    "less spicy",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần sườn nướng.",
+    "english": "I’d like one order of grilled pork ribs.",
+    "pronunciation": "chaw toy moht fuhn swoon noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Sườn nướng was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-lap-xuong",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lạp xưởng",
+  "englishTranslation": "Chinese-style sausage",
+  "romanizedNoTones": "Lap xuong",
+  "soundOut": "lap swoong",
+  "notes": "",
+  "atAGlance": "Lạp xưởng is sweet-savory Chinese-style sausage, usually with sticky rice or rice, rendered fat, and a glossy bite.",
+  "whatItIs": "Lạp xưởng is sweet-savory Chinese-style sausage, often sliced into sticky rice, fried rice, bánh bao, or simple rice plates.",
+  "usuallyIncludes": [
+    "sweet Chinese-style sausage",
+    "pork fat",
+    "rice or sticky rice",
+    "soy-salty sweetness",
+    "sliced pieces"
+  ],
+  "howToEnjoy": "Eat it in slices with rice or xôi so the sweet sausage fat perfumes the grains. A little goes a long way.",
+  "howLocalsOrder": "Ask for lạp xưởng when you want the sweet sausage topping added to xôi, fried rice, or a mixed plate.",
+  "worthKnowing": "Lạp xưởng is common in Vietnamese-Chinese cooking and breakfast stalls, especially where sweet-salty richness is welcome.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "add to xôi",
+    "add to fried rice",
+    "extra sausage",
+    "sliced"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần lạp xưởng.",
+    "english": "I’d like one order of chinese-style sausage.",
+    "pronunciation": "chaw toy moht fuhn lap swoong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Lạp xưởng was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

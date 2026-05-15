@@ -1,0 +1,64 @@
+{
+  "itemID": "food-canh-chua-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Canh chua chay",
+  "englishTranslation": "Vegetarian sour soup",
+  "romanizedNoTones": "Canh chua chay",
+  "soundOut": "kan choo-ah chai",
+  "notes": "",
+  "atAGlance": "Canh chua chay is vegetarian sour soup, usually with tamarind, pineapple, tomato, okra, herbs, tofu, and rice.",
+  "whatItIs": "Canh chua chay is vegetarian sour soup with tamarind, pineapple, tomato, okra, bạc hà stems, tofu, herbs, and vegetable broth.",
+  "usuallyIncludes": [
+    "tamarind sour broth",
+    "pineapple",
+    "tomato",
+    "okra or bạc hà",
+    "tofu and herbs"
+  ],
+  "howToEnjoy": "Eat it with rice and taste the sour broth before adding chili. Ask about fish sauce if strict vegetarian seasoning matters.",
+  "howLocalsOrder": "Order canh chua chay when you want the southern sour-soup flavor without fish. Say không nước mắm and ít cay before the pot or bowl is finished.",
+  "worthKnowing": "Canh chua is loved for its tamarind sourness and vegetable sweetness; the chay version keeps that bright rhythm with tofu and herbs.",
+  "goodToKnow": "Ask whether the sour broth uses vegetarian seasoning; fish sauce can appear quietly in mixed kitchens.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "less spicy",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask about fish sauce or stock if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô canh chua chay.",
+    "english": "I’d like one bowl of vegetarian sour soup.",
+    "pronunciation": "chaw toy moht toh kan choo-ah chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Canh chua chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

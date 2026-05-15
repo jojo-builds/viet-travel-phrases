@@ -1,0 +1,61 @@
+{
+  "itemID": "food-trai-cay-dia",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trái cây dĩa",
+  "englishTranslation": "Mixed fruit plate",
+  "romanizedNoTones": "Trai cay dia",
+  "soundOut": "chai kay yee-ah",
+  "notes": "",
+  "atAGlance": "Trái cây dĩa is a mixed fruit plate, usually fresh cut fruit served cold with salt-chili dip, yogurt, or syrup depending on the shop.",
+  "whatItIs": "Trái cây dĩa is a plate of cut fruit, a simple cooling dessert or snack.",
+  "usuallyIncludes": [
+    "fresh fruit",
+    "ice optional",
+    "salt-chili dip optional",
+    "yogurt optional"
+  ],
+  "howToEnjoy": "Use the salt-chili dip lightly if it comes with the fruit. It can make mango, guava, or pineapple pop.",
+  "howLocalsOrder": "Trái cây dĩa is ordered as a fresh fruit plate, good after a heavy meal. Ask for no sugar or no chili salt if you want the fruit's natural sweetness.",
+  "worthKnowing": "Fresh fruit is an everyday Vietnam dessert move, especially when you want something lighter than chè.",
+  "goodToKnow": "Dĩa means plate. Ask what fruit is included if you are avoiding durian, jackfruit, or anything very ripe.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần trái cây dĩa.",
+    "english": "I’d like one order of mixed fruit plate.",
+    "pronunciation": "chaw toy moht fuhn chai kay yee-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-sauce-on-side",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trái cây dĩa was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

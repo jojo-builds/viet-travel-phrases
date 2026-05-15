@@ -1,0 +1,65 @@
+{
+  "itemID": "food-mi-kho",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mì khô",
+  "englishTranslation": "Dry egg noodles",
+  "romanizedNoTones": "Mi kho",
+  "soundOut": "mee koh",
+  "notes": "",
+  "atAGlance": "Mì khô is dry egg noodles, usually with char siu or chicken, greens, sauce, and a side bowl of broth.",
+  "whatItIs": "Mì khô is dry egg noodles mixed with savory seasoning, char siu, chicken, or other toppings, fried shallots, greens, and often a clear broth served on the side.",
+  "usuallyIncludes": [
+    "egg noodles",
+    "savory toppings",
+    "fried shallots",
+    "greens",
+    "side broth"
+  ],
+  "howToEnjoy": "Mix from the bottom so the seasoning coats the noodles, then sip the side broth between bites. Add chili slowly so the shallot crunch and noodle chew stay clear.",
+  "howLocalsOrder": "Order mì khô when you want noodles without soup. Ask for broth on the side, extra fried shallots, or less chili before the bowl is mixed.",
+  "worthKnowing": "Mì khô belongs to Vietnam's dry-noodle rhythm, where mixing at the table is part of the meal rather than a final flourish.",
+  "goodToKnow": "Khô means dry, but a small broth bowl often comes with it; that two-part eating style is normal.",
+  "commonOptions": [
+    "side broth",
+    "extra fried shallots",
+    "extra greens",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô mì khô.",
+    "english": "I’d like one bowl of dry egg noodles.",
+    "pronunciation": "chaw toy moht toh mee koh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Mì khô was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

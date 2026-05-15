@@ -1,0 +1,64 @@
+{
+  "itemID": "food-com-thit-kho-trung",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cơm thịt kho trứng",
+  "englishTranslation": "Rice with braised pork and eggs",
+  "romanizedNoTones": "Com thit kho trung",
+  "soundOut": "kum tit kaw choong",
+  "notes": "",
+  "atAGlance": "Cơm thịt kho trứng is rice with caramel-braised pork and egg, usually in a salty-sweet fish-sauce braise. The rice is there to soak up the dark sauce.",
+  "whatItIs": "Cơm thịt kho trứng is rice with pork belly or pork pieces braised with eggs in coconut-water fish-sauce caramel. It is sweet-salty, homey, and made for spooning over rice.",
+  "usuallyIncludes": [
+    "rice",
+    "braised pork",
+    "egg",
+    "caramel fish-sauce braise",
+    "pickles or greens"
+  ],
+  "howToEnjoy": "Break the egg into the rice, spoon a little braising liquid over the grains, and balance the richness with pickles or greens if they come with the plate.",
+  "howLocalsOrder": "Order cơm thịt kho trứng when you want a homestyle pork-and-egg rice plate. Ask for extra rice or more egg if you want the sweet-salty braise to go further.",
+  "worthKnowing": "Thịt kho trứng is strongly tied to Vietnamese home cooking and Tết memories, so it can feel more like family food than street food.",
+  "goodToKnow": "This is the rice-plate version of a family-style braise. Ask for more rice rather than more sauce if the flavor is too intense.",
+  "commonOptions": [
+    "extra rice",
+    "extra egg",
+    "more braising liquid",
+    "less fatty pork"
+  ],
+  "regionalAssociation": "southern Vietnam and family meals",
+  "originPosture": "cultural-context",
+  "travelerCaution": "Contains pork, egg, and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm thịt kho trứng.",
+    "english": "I’d like one order of rice with braised pork and eggs.",
+    "pronunciation": "chaw toy moht fuhn kum tit kaw choong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm thịt kho trứng was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "itemID": "food-xa-xiu",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Xá xíu",
+  "englishTranslation": "Vietnamese-style barbecue pork",
+  "romanizedNoTones": "Xa xiu",
+  "soundOut": "sah see-ew",
+  "notes": "",
+  "atAGlance": "Xá xíu is Vietnamese char siu pork, usually with red-edged roast pork, sweet glaze, rice or noodles.",
+  "whatItIs": "Xá xíu is Vietnamese char siu-style pork, red-brown, sweet-savory, and often sliced into noodles, rice, or bánh mì.",
+  "usuallyIncludes": [
+    "char siu pork",
+    "sweet-savory glaze",
+    "rice or egg noodles",
+    "bánh mì filling",
+    "scallions"
+  ],
+  "howToEnjoy": "Eat it with rice or noodles so the sweet glaze has balance. In bánh mì, pickles and herbs keep the pork from feeling heavy.",
+  "howLocalsOrder": "Ask for xá xíu when you want the sweet roasted pork topping. Ask for extra pickles in bánh mì or extra rice with a plate.",
+  "worthKnowing": "This is another Chinese-Vietnamese menu bridge, recognizable by its sweet glaze and red roast-pork look.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "with rice",
+    "with noodles",
+    "extra pickles",
+    "add to bánh mì"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần xá xíu.",
+    "english": "I’d like one order of Vietnamese-style barbecue pork.",
+    "pronunciation": "chaw toy moht fuhn sah see-ew",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Xá xíu was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

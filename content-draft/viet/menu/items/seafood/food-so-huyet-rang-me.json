@@ -1,0 +1,62 @@
+{
+  "itemID": "food-so-huyet-rang-me",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sò huyết rang me",
+  "englishTranslation": "Blood cockles with tamarind sauce",
+  "romanizedNoTones": "So huyet rang me",
+  "soundOut": "saw hweet rang meh",
+  "notes": "",
+  "atAGlance": "Sò huyết rang me is blood cockles tossed in tamarind sauce until sweet, sour, salty, and sticky. It is shell-picking seafood-table food.",
+  "whatItIs": "Sò huyết rang me is tamarind-glazed blood cockles served in the shell. The tamarind sauce (sweet-sour tamarind) is sticky and bright, not a plain seafood dip.",
+  "usuallyIncludes": [
+    "blood cockles",
+    "tamarind sauce",
+    "garlic",
+    "chili optional",
+    "shells"
+  ],
+  "howToEnjoy": "Pick the cockles from the shell and use the tamarind sauce sparingly. Order at busy seafood spots where turnover is high.",
+  "howLocalsOrder": "Sò huyết rang me is blood cockles with tamarind, a bold shellfish order. Ask for less chili and make sure you are comfortable with cockles before ordering.",
+  "worthKnowing": "This is a classic sweet-sour shellfish order for a Vietnamese seafood table.",
+  "goodToKnow": "Blood cockles can sound intense in English. The menu point is the briny shellfish and tangy tamarind glaze.",
+  "commonOptions": [
+    "less chili",
+    "share plate",
+    "with rice",
+    "extra tamarind sauce"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains shellfish; consider seafood freshness and doneness.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần sò huyết rang me.",
+    "english": "I’d like one order of blood cockles with tamarind sauce.",
+    "pronunciation": "chaw toy moht fuhn saw hweet rang meh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sò huyết rang me was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

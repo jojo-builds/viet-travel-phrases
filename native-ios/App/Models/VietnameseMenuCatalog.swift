@@ -91,6 +91,7 @@ struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
     let whatItIs: String?
     let usuallyIncludes: [String]
     let howToEnjoy: String?
+    let howLocalsOrder: String?
     let worthKnowing: String?
     let regionalAssociation: String?
     let originPosture: String?
@@ -100,6 +101,9 @@ struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
     let quickSayVietnamese: String
     let quickSayEnglish: String
     let quickSaySoundOut: String
+    let orderLine: VietnameseMenuOrderLine?
+    let helperPhraseIDs: [String]?
+    let editorialReview: VietnameseMenuEditorialReview?
 
     var id: String { itemID }
     var detailPageID: String { "viet-menu-\(itemID)" }
@@ -121,8 +125,56 @@ struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
         howToEnjoy.nonEmptyValue ?? goodToKnow
     }
 
+    var guideHowLocalsOrder: String {
+        howLocalsOrder.nonEmptyValue ?? ""
+    }
+
     var guideWorthKnowing: String {
         worthKnowing.nonEmptyValue ?? regionalAssociation.nonEmptyValue.map { "\(vietnameseItem) is associated with \($0), but preparations can still vary by shop and region." } ?? ""
+    }
+
+    var guideOrderLine: VietnameseMenuOrderLine {
+        orderLine ?? VietnameseMenuOrderLine(
+            vietnamese: quickSayVietnamese,
+            english: quickSayEnglish,
+            pronunciation: quickSaySoundOut,
+            audioPolicy: "text-only"
+        )
+    }
+
+    var guideOrderLineBody: String {
+        let line = guideOrderLine
+        return "\(line.vietnamese)\n\(line.english)\n\(line.pronunciation)"
+    }
+}
+
+struct VietnameseMenuOrderLine: Decodable, Equatable {
+    let vietnamese: String
+    let english: String
+    let pronunciation: String
+    let audioPolicy: String
+}
+
+struct VietnameseMenuEditorialReview: Decodable, Equatable {
+    let status: String
+    let reviewedBy: String?
+    let reviewedAt: String?
+    let checks: [String]?
+    let reviewNote: String?
+}
+
+struct VietnameseMenuHelperPhraseDefinition: Identifiable, Decodable, Equatable {
+    let id: String
+    let vietnamese: String
+    let english: String
+    let pronunciation: String
+    let audioKey: String?
+    let detailPageID: String?
+    let audioStatus: String
+    let appliesTo: [String]
+
+    var isReady: Bool {
+        audioStatus == "ready"
     }
 }
 
@@ -163,11 +215,15 @@ enum VietnameseMenuImages {
 }
 
 private struct VietnameseMenuPayload: Decodable {
+    let helperPhrases: [VietnameseMenuHelperPhraseDefinition]?
     let items: [VietnameseMenuItem]
 }
 
 enum VietnameseMenuCatalog {
-    static let allItems: [VietnameseMenuItem] = loadItems()
+    private static let payload: VietnameseMenuPayload = loadPayload()
+    static let allItems: [VietnameseMenuItem] = payload.items
+    static let helperPhrases: [VietnameseMenuHelperPhraseDefinition] = payload.helperPhrases ?? []
+    private static let helperPhrasesByID = Dictionary(uniqueKeysWithValues: helperPhrases.map { ($0.id, $0) })
 
     static func kind(for route: BrowseCollectionRoute) -> VietnameseMenuKind? {
         guard case .category(let id) = route else {
@@ -258,15 +314,6 @@ enum VietnameseMenuCatalog {
             return nil
         }
 
-        let quickSay = PhraseOption(
-            id: "\(item.detailPageID)-quick-say",
-            vietnamese: item.quickSayVietnamese,
-            english: item.quickSayEnglish,
-            pronunciation: item.quickSaySoundOut,
-            symbolName: "speaker.wave.2.fill",
-            tintName: kind.tintName,
-            detailPageID: nil
-        )
         let helperPhrases = menuHelperPhrases(for: item, kind: kind)
 
         let worthKnowing = item.guideWorthKnowing
@@ -289,6 +336,12 @@ enum VietnameseMenuCatalog {
                 body: item.guideHowToEnjoy
             ),
             PhraseDetailSection(
+                id: "how-locals-order",
+                title: "How locals order",
+                body: item.guideHowLocalsOrder,
+                presentation: .plainText
+            ),
+            PhraseDetailSection(
                 id: "worth-knowing",
                 title: "Worth knowing",
                 body: worthKnowing,
@@ -309,11 +362,10 @@ enum VietnameseMenuCatalog {
                 presentation: .phraseList
             ),
             PhraseDetailSection(
-                id: "standard-way",
-                title: "Quick say",
-                body: "",
-                phrases: [quickSay],
-                presentation: .phraseList
+                id: "order-line",
+                title: "Order line",
+                body: item.guideOrderLineBody,
+                presentation: .plainText
             ),
         ].filter { section in
             !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty || !section.chips.isEmpty
@@ -357,6 +409,54 @@ enum VietnameseMenuCatalog {
             "small finish that may be",
             "rice plate with rice with",
             "savory toppings and savory toppings",
+            "the likely ingredients are",
+            "how sweet or icy",
+            "hot version",
+            "herbs, broth, grill, or dip",
+            "depending on the shop, the balance may lean",
+            "useful window",
+            "whole eating style",
+            "cultural value",
+            "the thing to notice is",
+            "A plate or bowl of",
+            "which make the dish easier to spot",
+            "details tell you whether",
+            "so the pleasure is in how those pieces meet",
+            "The cue is",
+            "as the detail to watch for",
+            "best ordered by cooking style and protein",
+            "a sharp a small",
+            "chiliping",
+            "For a cautious order",
+            "hot bowls",
+            "grilled plates",
+            "rolls before",
+            "rice, noodles, greens, or wrapper",
+            "hands-on Vietnamese snack eating",
+            "herbs, wrappers, crunch",
+            "vegetarian soy-lime vegetarian",
+            "an useful",
+            "the a small dipping bowl",
+            "made with winter melon soup",
+            "one sandwich of",
+            "bBQ",
+            "Maggi-style soy seasoning, chili or pâté spread",
+            "soy-based muối tiêu",
+            "For fish, ask about bones",
+            "Pointing at",
+            "typically made with",
+            "Travelers can read",
+            "ordering cue",
+            "works in Vietnam",
+            "American menus",
+            "Americans",
+            "For Americans",
+            "thick soup base",
+            "vegetarian sauce",
+            "mushrooms or tofu",
+            "a small dipping bowl",
+            "generic fish in sauce",
+            "generic chicken-and-rice plate",
         ]
         let coffeeGenericFragments = [
             "Vietnam is a major coffee country",
@@ -376,6 +476,45 @@ enum VietnameseMenuCatalog {
             "small finish that may be",
             "rice plate with rice with",
             "savory toppings and savory toppings",
+            "A plate or bowl of",
+            "which make the dish easier to spot",
+            "details tell you whether",
+            "so the pleasure is in how those pieces meet",
+            "The cue is",
+            "as the detail to watch for",
+            "best ordered by cooking style and protein",
+            "a sharp a small",
+            "chiliping",
+            "For a cautious order",
+            "hot bowls",
+            "grilled plates",
+            "rolls before",
+            "rice, noodles, greens, or wrapper",
+            "hands-on Vietnamese snack eating",
+            "herbs, wrappers, crunch",
+            "vegetarian soy-lime vegetarian",
+            "an useful",
+            "the a small dipping bowl",
+            "made with winter melon soup",
+            "one sandwich of",
+            "bBQ",
+            "Maggi-style soy seasoning, chili or pâté spread",
+            "soy-based muối tiêu",
+            "For fish, ask about bones",
+            "Pointing at",
+            "typically made with",
+            "Travelers can read",
+            "ordering cue",
+            "works in Vietnam",
+            "American menus",
+            "Americans",
+            "For Americans",
+            "thick soup base",
+            "vegetarian sauce",
+            "mushrooms or tofu",
+            "a small dipping bowl",
+            "generic fish in sauce",
+            "generic chicken-and-rice plate",
         ]
         let foodVisibleBlockFragments = [
             "many travelers",
@@ -395,6 +534,74 @@ enum VietnameseMenuCatalog {
             "built around",
             "centered on",
             "broth and topping should make sense together",
+        ]
+        let vagueSauceFragments = [
+            "extra sauce",
+            "dipping sauce",
+            "house sauce",
+            "rich sauce",
+            "seasoning sauce",
+            "stir-fry sauce",
+            "braising sauce",
+            "sweet-and-sour sauce",
+            "with sauce",
+            "and sauce",
+            "the sauce",
+            "sauce is served separately",
+        ]
+        let drinkSensoryMarkers = [
+            "alcoholic",
+            "bitter",
+            "body",
+            "bubbles",
+            "buttery",
+            "caffeine",
+            "caramel",
+            "clean",
+            "cold",
+            "condensed",
+            "cooling",
+            "cream",
+            "creamy",
+            "crisp",
+            "earthy",
+            "fizzy",
+            "floral",
+            "fragrant",
+            "grassy",
+            "herbal",
+            "ice",
+            "icy",
+            "juicy",
+            "lager",
+            "light",
+            "malt",
+            "mellow",
+            "milk",
+            "mineral",
+            "neutral",
+            "nutty",
+            "plain",
+            "pulpy",
+            "refreshing",
+            "roasted",
+            "salty",
+            "sharp",
+            "silky",
+            "slippery",
+            "smooth",
+            "soft",
+            "sour",
+            "sparkling",
+            "strong",
+            "sweet",
+            "sweetness",
+            "syrupy",
+            "tangy",
+            "tannic",
+            "tart",
+            "thick",
+            "tropical",
         ]
         let vegetarianMeatTerms = [
             "beef",
@@ -422,11 +629,146 @@ enum VietnameseMenuCatalog {
             ("một ổ", "sandwich"),
             ("một phần", "order"),
         ]
+        let localContextMarkers = [
+            "Vietnam",
+            "Vietnamese",
+            "Hanoi",
+            "Hà Nội",
+            "Huế",
+            "Hội An",
+            "Saigon",
+            "Sài Gòn",
+            "Chợ Lớn",
+            "Mekong",
+            "Mỹ Tho",
+            "Đà Lạt",
+            "Nha Trang",
+            "Vũng Tàu",
+            "Phú Yên",
+            "Quảng Nam",
+            "Cầu Mống",
+            "Sóc Trăng",
+            "Tết",
+            "northern Vietnam",
+            "southern Vietnam",
+            "central Vietnam",
+            "central coast",
+            "Mekong Delta",
+            "northern",
+            "southern",
+            "central",
+            "coastal",
+            "highland",
+            "street",
+            "stall",
+            "shop",
+            "rice-shop",
+            "noodle-shop",
+            "snack",
+            "family",
+            "home",
+            "homestyle",
+            "home-style",
+            "breakfast",
+            "market",
+            "table",
+            "party",
+            "wedding",
+            "gift",
+            "Buddhist",
+            "Chinese-Vietnamese",
+            "French-influenced",
+            "chay",
+            "rice paper",
+            "mắm",
+            "nước mắm",
+            "means",
+            "word",
+            "signals",
+            "points to",
+        ]
+        let ricePaperGuidanceRequirements: [String: [String]] = [
+            "food-banh-xeo": ["rice paper", "herbs", "nước chấm"],
+            "food-banh-xeo-chay": ["rice paper", "herbs", "vegetarian"],
+            "food-banh-khot": ["rice paper", "herbs", "nước chấm"],
+            "food-goi-cuon-chay": ["rice paper", "herbs"],
+            "food-nem-nuong": ["rice paper", "herbs"],
+            "food-thit-luoc-cuon-banh-trang": ["rice paper", "roll", "herbs"],
+            "food-be-thui-cuon-banh-trang": ["rice paper", "roll", "herbs"],
+            "food-bo-nhung-dam": ["rice paper", "roll", "herbs"],
+            "food-ca-loc-nuong-trui": ["rice paper", "bones", "herbs"],
+            "food-chao-tom": ["rice paper", "sugarcane", "herbs"],
+            "food-banh-hoi-thit-nuong": ["rice paper", "herbs"],
+            "food-banh-hoi-heo-quay": ["rice paper", "herbs"],
+            "food-heo-quay-banh-hoi": ["rice paper", "herbs"],
+        ]
+        let originConnectionRequirements: [String: [String]] = [
+            "drink-ca-phe-trung": ["Hanoi", "1946", "milk"],
+            "food-com-tam-suon": ["broken rice", "southern"],
+            "food-com-tam-bi-cha-suon": ["broken rice", "southern"],
+            "food-com-tam-suon-bi-cha-trung": ["broken-rice", "southern"],
+            "food-banh-mi-pate": ["French", "Vietnam", "street"],
+            "food-banh-mi-thit": ["French", "Vietnam", "street"],
+            "food-banh-mi-dac-biet": ["French", "Vietnam", "street"],
+            "food-banh-mi-cha-lua": ["French", "Vietnam"],
+            "food-banh-mi-ga": ["French", "Vietnam", "street"],
+            "food-banh-mi-heo-quay": ["French", "Vietnam"],
+            "food-banh-mi-op-la": ["French", "Vietnam"],
+            "food-banh-mi-thit-nuong": ["French", "Vietnam"],
+            "food-banh-mi-xiu-mai": ["French", "Vietnam"],
+            "food-banh-mi-chay": ["French", "Vietnam"],
+        ]
+        let itemSpecificBlockedFragments: [String: [String]] = [
+            "food-hu-tieu-my-tho": ["fish-sauce caramel braise"],
+            "food-cao-lau": ["nước chấm"],
+            "food-hu-tieu-kho": ["fish-sauce caramel braise"],
+            "food-com-tam-suon": ["muối tiêu chanh"],
+            "food-com-bo-luc-lac": ["nước chấm"],
+            "food-com-chien-hai-san": ["muối tiêu chanh", "ginger fish sauce"],
+            "food-com-chien-ga": ["muối tiêu chanh"],
+            "food-com-chien-bo": ["nước chấm"],
+            "food-com-chien-trung": ["nước chấm"],
+            "food-xoi-bap": ["nước chấm"],
+            "food-banh-beo": ["rolls"],
+            "food-khoai-lang-chien": ["fish-sauce caramel braise"],
+            "food-khoai-tay-chien": ["fish-sauce caramel braise"],
+            "food-cha-ca-la-vong": ["lime-pepper/ginger fish sauce"],
+            "food-tom-chien-xu": ["fish-sauce caramel braise"],
+            "food-muc-xao-chua-ngot": ["garlic-fish-sauce glaze"],
+            "food-ngheu-xao-bo-toi": ["garlic-fish-sauce glaze", "generated correction"],
+            "food-thit-kho-tau": ["creamy coconut sauce"],
+            "food-gio-heo-ham": ["fish-sauce caramel braise", "caramel sauce"],
+            "food-ga-hap-hanh": ["tamarind sauce"],
+            "food-ga-nuong-la-chanh": ["tamarind sauce"],
+            "food-bo-luc-lac": ["tamarind sauce"],
+            "food-bo-ne": ["nước chấm"],
+            "food-bo-kho-banh-mi": ["fish-sauce caramel braise"],
+            "food-de-hap-tia-to": ["tamarind sauce"],
+            "food-ca-ri-de": ["lime-pepper", "ginger fish sauce"],
+            "food-de-xao-lan": ["garlic-fish-sauce glaze"],
+            "food-vit-om-sau": ["muối tiêu chanh"],
+            "food-bo-xao-luc-lac": ["garlic-fish-sauce stir-fry glaze"],
+            "food-bo-xao-rau-cai": ["garlic-fish-sauce stir-fry glaze"],
+            "food-bo-xao-sa-ot": ["garlic-fish-sauce stir-fry glaze"],
+            "food-bun-bo-hue-chay": ["vegetarian sauce"],
+            "food-hu-tieu-chay": ["vegetarian sauce"],
+            "food-pho-chay": ["vegetarian sauce"],
+        ]
+        let helperContextMarkers: [String: [String]] = [
+            "menu-ask-peanuts": ["peanut"],
+            "menu-peanut-allergy": ["peanut"],
+            "menu-sauce-on-side": ["sauce", "dip", "dressing", "glaze", "gravy", "nước", "mắm", "soy", "tương", "broth"],
+            "menu-less-sugar": ["sweet", "sugar", "syrup", "condensed", "caramel", "dessert", "cake", "chè", "milk", "coconut", "chocolate", "honey"],
+            "menu-no-sugar": ["sweet", "sugar", "syrup", "condensed", "caramel", "dessert", "cake", "chè", "milk", "coconut", "chocolate", "honey"],
+            "menu-less-ice": ["ice", "iced", "cold", "chilled", "bottle", "can", "glass", "sparkling", "water", "smoothie", "juice", "tea", "coffee"],
+            "menu-no-ice": ["ice", "iced", "cold", "chilled", "bottle", "can", "glass", "sparkling", "water", "smoothie", "juice", "tea", "coffee"],
+        ]
 
         return allItems.flatMap { item in
             let guideFailures = [
                 ("whatItIs", item.whatItIs),
                 ("howToEnjoy", item.howToEnjoy),
+                ("howLocalsOrder", item.howLocalsOrder),
                 ("worthKnowing", item.worthKnowing),
             ].compactMap { fieldName, value -> String? in
                 guard let value = value?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else {
@@ -442,11 +784,17 @@ enum VietnameseMenuCatalog {
                     return "\(item.itemID): \(fieldName) contains generic coffee fragment '\(genericFragment)'"
                 }
 
+                if fieldName == "worthKnowing",
+                   !localContextMarkers.contains(where: { value.localizedCaseInsensitiveContains($0) }) {
+                    return "\(item.itemID): worthKnowing missing Vietnam-specific context"
+                }
+
                 return nil
             }
 
-            let visibleText = ([item.atAGlance, item.goodToKnow, item.guideWhatItIs, item.guideHowToEnjoy, item.guideWorthKnowing, item.travelerCaution ?? ""] + item.usuallyIncludes + item.commonOptions)
+            let visibleText = ([item.atAGlance, item.goodToKnow, item.guideWhatItIs, item.guideHowToEnjoy, item.guideHowLocalsOrder, item.guideWorthKnowing, item.travelerCaution ?? ""] + item.usuallyIncludes + item.commonOptions)
                 .joined(separator: "\n")
+            let localOrderText = item.guideHowLocalsOrder
             let lowerIncludes = item.usuallyIncludes.map { $0.lowercased() }
             let searchableText = "\(item.itemID) \(item.vietnameseItem) \(item.englishTranslation)".lowercased()
             let lowerQuickSayVietnamese = item.quickSayVietnamese.lowercased()
@@ -468,20 +816,72 @@ enum VietnameseMenuCatalog {
                 || searchableText.contains("glass noodle")
             let isMiQuang = item.itemID.contains("mi-quang")
                 || searchableText.contains("mì quảng")
+            let ricePaperGuidanceText = [
+                item.guideWhatItIs,
+                item.guideHowToEnjoy,
+                item.guideHowLocalsOrder,
+                item.usuallyIncludes.joined(separator: " "),
+                item.commonOptions.joined(separator: " "),
+            ].joined(separator: "\n")
+            let ricePaperGuidanceFailures = (ricePaperGuidanceRequirements[item.itemID] ?? []).compactMap { term in
+                ricePaperGuidanceText.localizedCaseInsensitiveContains(term)
+                    ? nil
+                    : "\(item.itemID): rice-paper/local eating guidance is missing '\(term)'"
+            }
+            let originConnectionText = [
+                item.atAGlance,
+                item.guideWhatItIs,
+                item.guideHowToEnjoy,
+                item.guideHowLocalsOrder,
+                item.guideWorthKnowing,
+                item.goodToKnow,
+                item.regionalAssociation ?? "",
+                item.originPosture ?? "",
+            ].joined(separator: "\n")
+            let originConnectionFailures = (originConnectionRequirements[item.itemID] ?? []).compactMap { term in
+                originConnectionText.localizedCaseInsensitiveContains(term)
+                    ? nil
+                    : "\(item.itemID): origin/Vietnam story guidance is missing '\(term)'"
+            }
+            let itemSpecificBlockedFailures = (itemSpecificBlockedFragments[item.itemID] ?? []).compactMap { fragment in
+                visibleText.localizedCaseInsensitiveContains(fragment)
+                    ? "\(item.itemID): item-specific semantic guard blocks '\(fragment)'"
+                    : nil
+            }
+            let helperContextFailures = (item.helperPhraseIDs ?? []).compactMap { helperID -> String? in
+                guard let markers = helperContextMarkers[helperID], !markers.isEmpty else {
+                    return nil
+                }
+                return markers.contains(where: { visibleText.localizedCaseInsensitiveContains($0) })
+                    ? nil
+                    : "\(item.itemID): helper \(helperID) lacks visible copy context"
+            }
 
             let guardrailFailures: [String?] = [
+                isDrink && item.atAGlance.localizedCaseInsensitiveContains("\(item.vietnameseItem) is ") && item.atAGlance.contains(":")
+                    ? "\(item.itemID): drink atAGlance still uses item-is-translation template wording"
+                    : nil,
                 item.menuType == VietnameseMenuKind.drink.rawValue && item.travelerCaution?.localizedCaseInsensitiveContains("spicy") == true
                     ? "\(item.itemID): drink item has a spicy caution"
                     : nil,
                 visibleBlockFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
                     "\(item.itemID): visible menu copy contains blocked fragment '\($0)'"
                 },
+                localOrderText.split(separator: " ").count < 18
+                    ? "\(item.itemID): howLocalsOrder needs a specific local ordering note"
+                    : nil,
                 item.category == "Coffee" ? coffeeGenericFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
                     "\(item.itemID): visible coffee copy contains generic fragment '\($0)'"
                 } : nil,
                 isFood ? foodVisibleBlockFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
                     "\(item.itemID): visible food copy contains blocked fragment '\($0)'"
                 } : nil,
+                vagueSauceFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
+                    "\(item.itemID): sauce copy must name or explain the sauce instead of '\($0)'"
+                },
+                isDrink && !drinkSensoryMarkers.contains(where: { visibleText.localizedCaseInsensitiveContains($0) })
+                    ? "\(item.itemID): drink copy needs flavor, body, texture, or experience descriptors"
+                    : nil,
                 isFood && isBunOrVermicelli && includesEggNoodles
                     ? "\(item.itemID): bún/vermicelli item includes egg noodles"
                     : nil,
@@ -518,71 +918,43 @@ enum VietnameseMenuCatalog {
                     ? "\(item.itemID): vegetarian item has a pork caution"
                     : nil,
                 quickSayUnitMarkers.first(where: { spec in
-                    lowerQuickSayVietnamese.contains(spec.marker) && !lowerQuickSayEnglish.contains("one \(spec.unit) of")
+                    lowerQuickSayVietnamese.contains(spec.marker)
+                        && !lowerQuickSayEnglish.contains("one \(spec.unit) of")
+                        && !(spec.marker == "một ổ" && lowerQuickSayEnglish.contains("one ") && lowerQuickSayEnglish.contains("bánh mì"))
                 }).map { spec in
                     "\(item.itemID): quick say unit '\(spec.marker)' is not translated as one \(spec.unit)"
                 },
             ]
 
-            return guideFailures + guardrailFailures.compactMap { $0 }
+            var failures = guideFailures
+            failures.append(contentsOf: guardrailFailures.compactMap { $0 })
+            failures.append(contentsOf: ricePaperGuidanceFailures)
+            failures.append(contentsOf: originConnectionFailures)
+            failures.append(contentsOf: itemSpecificBlockedFailures)
+            failures.append(contentsOf: helperContextFailures)
+            return failures
         }
     }
 
     private static func menuHelperPhrases(for item: VietnameseMenuItem, kind: VietnameseMenuKind) -> [PhraseOption] {
-        switch kind {
-        case .food:
-            if item.category == "Desserts & sweets" {
-                return [
-                    helperPhrase(.lessSugar, tintName: kind.tintName),
-                    helperPhrase(.noIce, tintName: kind.tintName),
-                    helperPhrase(.payNow, tintName: kind.tintName),
-                ]
+        (item.helperPhraseIDs ?? []).compactMap { helperID in
+            guard let helper = helperPhrasesByID[helperID], helper.isReady else {
+                return nil
             }
 
-            return [
-                helperPhrase(.notSpicy, tintName: kind.tintName),
-                helperPhrase(.lessSpicy, tintName: kind.tintName),
-                helperPhrase(.seeMenu, tintName: kind.tintName),
-                helperPhrase(.payNow, tintName: kind.tintName),
-            ]
+            let phrase = PhraseOption(
+                id: helper.id,
+                vietnamese: helper.vietnamese,
+                english: helper.english,
+                pronunciation: helper.pronunciation,
+                symbolName: "text.bubble.fill",
+                tintName: kind.tintName,
+                detailPageID: helper.detailPageID,
+                audioKey: helper.audioKey
+            )
 
-        case .drink:
-            if item.category == "Coffee" {
-                return [
-                    helperPhrase(.lessSugar, tintName: kind.tintName),
-                    helperPhrase(.lessIce, tintName: kind.tintName),
-                    helperPhrase(.noIce, tintName: kind.tintName),
-                    helperPhrase(.payNow, tintName: kind.tintName),
-                ]
-            }
-
-            if ["Tea", "Smoothies", "Juices & fresh drinks"].contains(item.category) {
-                return [
-                    helperPhrase(.lessSugar, tintName: kind.tintName),
-                    helperPhrase(.noIce, tintName: kind.tintName),
-                    helperPhrase(.payNow, tintName: kind.tintName),
-                ]
-            }
-
-            return [
-                helperPhrase(.noIce, tintName: kind.tintName),
-                helperPhrase(.lessIce, tintName: kind.tintName),
-                helperPhrase(.payNow, tintName: kind.tintName),
-            ]
+            return phrase.playbackAudioKey == nil ? nil : phrase
         }
-    }
-
-    private static func helperPhrase(_ phrase: VietnameseMenuHelperPhrase, tintName: AccentTint) -> PhraseOption {
-        PhraseOption(
-            id: phrase.id,
-            vietnamese: phrase.vietnamese,
-            english: phrase.english,
-            pronunciation: phrase.pronunciation,
-            symbolName: "text.bubble.fill",
-            tintName: tintName,
-            detailPageID: phrase.detailPageID,
-            audioKey: phrase.audioKey
-        )
     }
 
     static func descriptor(for kind: VietnameseMenuKind) -> BrowseCollectionDescriptor {
@@ -817,136 +1189,16 @@ enum VietnameseMenuCatalog {
         return folded.isEmpty ? "menu-item" : folded
     }
 
-    private static func loadItems() -> [VietnameseMenuItem] {
+    private static func loadPayload() -> VietnameseMenuPayload {
         guard
             let url = Bundle.main.url(forResource: "vietnamese-menu-copy", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let payload = try? JSONDecoder().decode(VietnameseMenuPayload.self, from: data)
         else {
-            return []
+            return VietnameseMenuPayload(helperPhrases: [], items: [])
         }
 
-        return payload.items
-    }
-}
-
-private enum VietnameseMenuHelperPhrase {
-    case lessSugar
-    case lessIce
-    case noIce
-    case notSpicy
-    case lessSpicy
-    case seeMenu
-    case payNow
-
-    var id: String {
-        switch self {
-        case .lessSugar:
-            return "menu-helper-less-sugar"
-        case .lessIce:
-            return "menu-helper-less-ice"
-        case .noIce:
-            return "menu-helper-no-ice"
-        case .notSpicy:
-            return "menu-helper-not-spicy"
-        case .lessSpicy:
-            return "menu-helper-less-spicy"
-        case .seeMenu:
-            return "menu-helper-see-menu"
-        case .payNow:
-            return "menu-helper-pay-now"
-        }
-    }
-
-    var vietnamese: String {
-        switch self {
-        case .lessSugar:
-            return "Ít đường thôi"
-        case .lessIce:
-            return "Ít đá thôi"
-        case .noIce:
-            return "Không đá"
-        case .notSpicy:
-            return "Không cay nhé"
-        case .lessSpicy:
-            return "Ít cay thôi"
-        case .seeMenu:
-            return "Cho tôi xem thực đơn được không?"
-        case .payNow:
-            return "Tính tiền giúp tôi"
-        }
-    }
-
-    var english: String {
-        switch self {
-        case .lessSugar:
-            return "Just a little sugar."
-        case .lessIce:
-            return "Just a little ice."
-        case .noIce:
-            return "No ice."
-        case .notSpicy:
-            return "Not spicy, please."
-        case .lessSpicy:
-            return "Less spicy, please."
-        case .seeMenu:
-            return "Can I see the menu?"
-        case .payNow:
-            return "Please let me pay."
-        }
-    }
-
-    var pronunciation: String {
-        switch self {
-        case .lessSugar:
-            return "eet duong thoy"
-        case .lessIce:
-            return "eet dah toy"
-        case .noIce:
-            return "khong da"
-        case .notSpicy:
-            return "khong kai nhe"
-        case .lessSpicy:
-            return "eet kai thoy"
-        case .seeMenu:
-            return "cho toy sem thook dun dook khong"
-        case .payNow:
-            return "ting tyen zoop toy"
-        }
-    }
-
-    var detailPageID: String {
-        switch self {
-        case .lessSugar:
-            return "viet-family-vpe-food-less-it-duong-thoi"
-        case .lessIce:
-            return "viet-family-food-less-ice"
-        case .noIce:
-            return "viet-family-vpe-food-without-khong-da"
-        case .notSpicy, .lessSpicy:
-            return "viet-family-food-not-spicy"
-        case .seeMenu:
-            return "viet-family-food-menu"
-        case .payNow:
-            return "viet-family-food-pay-now"
-        }
-    }
-
-    var audioKey: String? {
-        switch self {
-        case .lessIce:
-            return "coffee-4"
-        case .notSpicy:
-            return "food-3"
-        case .lessSpicy:
-            return "audio-authored-it-cay-thoi-05b8e258a2"
-        case .seeMenu:
-            return "food-menu"
-        case .payNow:
-            return "coffee-7"
-        case .lessSugar, .noIce:
-            return nil
-        }
+        return payload
     }
 }
 

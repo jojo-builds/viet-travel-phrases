@@ -1,0 +1,63 @@
+{
+  "itemID": "food-chao-ga",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cháo gà",
+  "englishTranslation": "Chicken rice porridge",
+  "romanizedNoTones": "Chao ga",
+  "soundOut": "chow gah",
+  "notes": "",
+  "atAGlance": "Cháo gà is chicken rice porridge, usually with shredded chicken, scallions, pepper, herbs, and sometimes fried dough sticks.",
+  "whatItIs": "Cháo gà is soft chicken rice porridge, comforting rather than flashy. It is often finished with shredded chicken, scallions, black pepper, herbs, and a little ginger or lime on the side.",
+  "usuallyIncludes": [
+    "rice porridge",
+    "shredded chicken",
+    "ginger",
+    "scallions",
+    "black pepper"
+  ],
+  "howToEnjoy": "Stir gently, taste the porridge warm, then add pepper, lime, or herbs in small amounts. If quẩy is offered, dip the fried dough into the cháo for crunch.",
+  "howLocalsOrder": "Order cháo gà when you want something gentle, warm, and easy to eat. Ask for less pepper or no chili if you want the chicken and rice comfort to stay mild.",
+  "worthKnowing": "Cháo is Vietnam’s comfort-bowl language: breakfast, late-night food, sick-day food, and a soft landing when rich dishes feel like too much.",
+  "goodToKnow": "Cháo gà is gentle food, but not bland when it is good. Stir in pepper, herbs, or ginger gradually so the chicken broth stays soothing.",
+  "commonOptions": [
+    "less pepper",
+    "extra chicken",
+    "no chili",
+    "fried dough sticks"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô cháo gà.",
+    "english": "I’d like one bowl of chicken rice porridge.",
+    "pronunciation": "chaw toy moht toh chow gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cháo gà was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

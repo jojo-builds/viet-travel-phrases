@@ -3,6 +3,13 @@
 const fs = require("fs");
 const path = require("path");
 
+if (!process.argv.includes("--draft")) {
+  console.error(
+    "polish-vietnamese-menu-copy.js is draft-only. Final menu prose is authored in content-draft/viet/menu/items/**; run native-ios/scripts/generate-vietnamese-menu-copy.js for production output."
+  );
+  process.exit(2);
+}
+
 const repoRoot = path.resolve(__dirname, "..", "..");
 const menuPath = path.join(repoRoot, "native-ios", "Resources", "vietnamese-menu-copy.json");
 const payload = JSON.parse(fs.readFileSync(menuPath, "utf8"));
@@ -910,6 +917,7 @@ function polishItem(item) {
       guide[field] = exact[field];
     }
   }
+  guide.worthKnowing = vietnamConnectionCopyFor(item, guide.worthKnowing);
 
   return {
     ...polished,
@@ -1565,57 +1573,168 @@ function worthKnowingFor(item) {
   const text = searchableText(item);
 
   if (region) {
-    return `${item.vietnameseItem} is associated with ${region}. That link tells you where the dish’s local identity is strongest, even though recipes still shift by city, shop, and family style.`;
+    const itemKind = item.menuType === "Drink" ? "drink" : "dish";
+    const variationNoun = item.menuType === "Drink" ? "serving habits" : "recipes";
+    return `${item.vietnameseItem} is associated with ${region}. That link tells you where the ${itemKind}’s local identity is strongest, even though ${variationNoun} still shift by city, shop, and family style.`;
   }
 
   switch (item.category) {
     case "Noodle soups":
+      if (/porridge|chao|cháo/.test(text)) {
+        return "In Vietnam, cháo is a rice-porridge comfort-food lane. The topping tells you whether the bowl stays gentle or turns more adventurous.";
+      }
       return "Noodle soups are often breakfast or lunch food in Vietnam, but busy shops may serve them all day. The broth style can tell you as much as the toppings.";
     case "Dry noodles & vermicelli":
-      return "Dry noodle bowls work through contrast: cool herbs, warm toppings, bright sauce, crunch, and soft noodles. Mixing is part of the dish.";
+      return "In Vietnamese dry noodle and vermicelli bowls, cool herbs, warm toppings, bright sauce, crunch, and soft noodles all matter. Mixing is part of the dish.";
     case "Rice & sticky rice":
       return /xoi|sticky rice|xôi/.test(text)
-        ? "Sticky rice is common as a portable breakfast or snack. It can be savory, sweet, or both depending on the topping."
-        : "Rice plates are everyday food, not just restaurant food. They are good when you want something complete and easy to understand.";
+        ? "In Vietnam, sticky rice is common as a portable breakfast or snack. It can be savory, sweet, or both depending on the topping."
+        : "In Vietnam, rice plates are everyday food, not just restaurant food. They are good when you want something complete and easy to understand.";
     case "Rolls, appetizers & street snacks":
-      return "Street snacks vary by region and stall, so the same name may look a little different from place to place. The sauce and texture are often the best clues.";
+      return "In Vietnam, street snacks vary by region and stall, so the same name may look a little different from place to place. The sauce and texture are often the best clues.";
     case "Bánh mì, bread & buns":
+      if (/banh-mi-chay|bánh mì chay/.test(text)) {
+        return "In Vietnam, chay marks the vegetarian lane. For bánh mì, that usually means the local bread-and-pickle format stays, while the filling shifts to tofu, mushrooms, vegetables, or a meat-free spread.";
+      }
+      if (/banh-bao|bánh bao|steamed bun/.test(text)) {
+        return "In Vietnam, bánh bao belongs to the snack-counter world: soft steamed dough, hidden filling, and quick takeaway warmth rather than crisp baguette texture.";
+      }
       if (/banh-mi-bo-kho|bánh mì bò kho|stew/.test(text)) {
         return "Bánh mì bò kho shows how Vietnamese bread can be used for dipping, not only sandwiches. The broth, carrots, herbs, and bread make one meal.";
       }
       if (/banh-tieu|bánh tiêu|sesame donut/.test(text)) {
-        return "Bánh tiêu sits in the street-snack and bakery world: sesame aroma, hollow crunch, and a light sweetness rather than a heavy filling.";
+        return "In Vietnam, bánh tiêu sits in the street-snack and bakery world: sesame aroma, hollow crunch, and a light sweetness rather than a heavy filling.";
       }
       if (/pate-so|patê sô|pâté sô|puff pastry/.test(text)) {
         return "Patê sô reflects Vietnam’s bakery culture, where flaky pastry and savory fillings sit beside bánh mì and sweet snacks.";
       }
       return "Vietnamese bread orders are shaped by local fillings, herbs, pickles, sauces, and quick street-service habits, not just the bread itself.";
     case "Seafood":
-      return "Seafood is often ordered for sharing, especially near the coast. Prices and portions can vary more than noodle or rice dishes.";
+      return "In Vietnam, seafood is often ordered for sharing, especially near the coast. Garlic, lemongrass, chili, fish sauce, and salt-pepper-lime dip often carry the local flavor.";
     case "Pork":
-      return "Pork is common in everyday Vietnamese meals, from grilled rice plates to braised family dishes. Sauces often carry sweet-salty balance.";
+      return "In Vietnam, pork is common in everyday meals, from grilled rice plates to braised family dishes. Sauces often carry sweet-salty balance.";
     case "Chicken & duck":
-      return "Chicken and duck dishes often rely on herbs, dipping sauce, or rice to complete the bite. The side sauce can be as important as the meat.";
+      return "In Vietnam, chicken and duck dishes often rely on herbs, dipping sauce, or rice to complete the bite. The side sauce can be as important as the meat.";
     case "Beef & goat":
-      return "Beef and goat dishes can lean aromatic, grilled, or stew-like. If goat is unfamiliar, expect stronger seasoning than a simple chicken dish.";
+      return "In Vietnam, beef and goat dishes can lean aromatic, grilled, curry-spiced, or stew-like. If goat is unfamiliar, expect stronger seasoning than a simple chicken dish.";
     case "Vegetarian":
-      return "Chay signals vegetarian food, but strict vegetarians should still ask about fish sauce, egg, or dairy because house practices differ.";
+      return "In Vietnam, chay signals vegetarian food, but strict vegetarians should still ask about sauce, egg, or dairy because house practices differ.";
     case "Soups, hot pots & family-style":
-      return "Family-style dishes are about sharing and pacing the meal. They make more sense when you are sitting down than when you need a quick bite.";
+      return "In Vietnamese family meals, soups, hot pots, and shared plates are about pacing the table with rice, vegetables, herbs, and broth.";
     case "Desserts & sweets":
-      return "Vietnamese sweets often care as much about texture as sweetness: beans, jellies, coconut milk, ice, sticky rice, and fruit can share one cup.";
+      return "In Vietnam, sweets often care as much about texture as sweetness: beans, jellies, coconut milk, ice, sticky rice, and fruit can share one cup.";
     case "Coffee":
       return "Vietnamese coffee culture ranges from sidewalk phin cups to inventive café drinks. The best order depends on whether you want strong, creamy, icy, or dessert-like.";
     case "Tea":
-      return "Tea ranges from plain meal tea to sweet fruit or milk tea. The same English word can cover very different drinks.";
+      return "In Vietnam, tea ranges from plain meal tea to sweet fruit or milk tea. The same English word can cover very different drinks.";
     case "Smoothies":
-      return "Smoothies are a warm-weather café and street-stall comfort. Condensed milk can make them richer and sweeter than a typical US smoothie.";
+      return "In Vietnamese cafés and street stalls, smoothies are warm-weather comfort. Condensed milk can make them richer and sweeter than a typical US smoothie.";
     case "Juices & fresh drinks":
-      return "Fresh drinks are part refreshment, part street-side pause. Sugar and ice levels are flexible if you ask before mixing.";
+      return "In Vietnam, fresh drinks are part refreshment, part street-side pause. Sugar and ice levels are flexible if you ask before mixing.";
     case "Water, soda & other drinks":
-      return "Simple drinks still have local habits: beer may come with ice, bottled water may not be chilled, and canned drinks may arrive with a glass.";
+      if (isBeer(item)) {
+        return "In Vietnam, beer is often a cold shared-table drink, sometimes poured over ice and paired with snacks.";
+      }
+      if (isWineOrLiquor(item)) {
+        return "In Vietnam, rice liquor and local spirits usually belong to shared-table drinking, so pour size and setting matter.";
+      }
+      return "In Vietnam, simple drink orders still have local habits: bottled water may not be chilled, and canned drinks may arrive with a separate glass of ice.";
     default:
       return "Menu names are useful cultural clues. Learning the Vietnamese name helps you recognize the dish even when the English translation changes.";
+  }
+}
+
+function vietnamConnectionCopyFor(item, current) {
+  const value = String(current ?? "").trim();
+  const context = vietnamConnectionSentenceFor(item);
+
+  if (!value) {
+    return context;
+  }
+
+  if (hasVietnamContext(value)) {
+    return value;
+  }
+
+  return `${value} ${context}`;
+}
+
+function hasVietnamContext(value) {
+  return /(vietnam|việt nam|vietnamese|hanoi|hà nội|huế|hội an|saigon|sài gòn|chợ lớn|mekong|mỹ tho|đà lạt|nha trang|phú yên|quảng nam|cầu mống|sóc trăng)/iu.test(value);
+}
+
+function vietnamConnectionSentenceFor(item) {
+  const region = regionalAssociationFor(item);
+  const text = searchableText(item);
+
+  if (/bun-dau-mam-tom|bún đậu mắm tôm/.test(text)) {
+    return "In northern Vietnamese snacking, the mắm tôm is the defining choice: pungent shrimp paste, tofu, herbs, and shared bites.";
+  }
+  if (/bun-mang-vit|bún măng vịt/.test(text)) {
+    return "In Vietnam, bún măng vịt sits closer to a soup meal than a dry noodle bowl; the duck, bamboo-shoot broth, herbs, and ginger dip make it read local.";
+  }
+  if (/porridge|chao|cháo/.test(text)) {
+    return "In Vietnam, cháo is a rice-porridge comfort-food lane. The topping tells you whether the bowl stays gentle or turns more adventurous.";
+  }
+  if (/banh-mi-chay|bánh mì chay/.test(text)) {
+    return "In Vietnam, chay marks the vegetarian lane. For bánh mì, the bread-and-pickle format stays, while the filling shifts to tofu, mushrooms, vegetables, or a meat-free spread.";
+  }
+  if (/banh-bao|bánh bao|steamed bun/.test(text)) {
+    return "In Vietnam, bánh bao belongs to the snack-counter world: soft steamed dough, hidden filling, and quick takeaway warmth rather than crisp baguette texture.";
+  }
+  if (/ruou-nep|rượu nếp/.test(text)) {
+    return "Rượu nếp belongs to Vietnam’s rice-alcohol lane, so ask about pour size and setting before ordering; it is usually a deliberate shared-table drink, not a casual soft drink.";
+  }
+
+  if (region) {
+    return `${item.vietnameseItem} is tied to ${region}; that link is part of its Vietnamese identity, even though shop versions still vary.`;
+  }
+
+  switch (item.category) {
+    case "Noodle soups":
+      return "In Vietnam, noodle soups get their identity from broth style, local herbs, and shop routine, not just the topping name.";
+    case "Dry noodles & vermicelli":
+      return "In Vietnamese dry noodle and vermicelli bowls, cool herbs, warm toppings, sauce, crunch, and soft noodles all matter.";
+    case "Rice & sticky rice":
+      return /xoi|sticky rice|xôi/.test(text)
+        ? "In Vietnam, sticky rice can be a portable breakfast, snack, or small meal, with sweet or savory toppings changing the whole mood."
+        : "In Vietnam, rice plates are everyday meals shaped by broken rice, scallion oil, pickles, fish-sauce caramel, and quick street-service habits.";
+    case "Rolls, appetizers & street snacks":
+      return "In Vietnam, snacks like this depend on rice paper, herbs, dipping sauce, and stall texture; the same name can shift by region.";
+    case "Bánh mì, bread & buns":
+      return "In Vietnam, bread orders come from local baguette culture: crisp bread, pickles, herbs, pâté or sauce, and fast street-service rhythm.";
+    case "Seafood":
+      return "In Vietnam, seafood dishes often reflect coastal eating and shared-table meals, with garlic, lemongrass, chili, salt-pepper-lime, or fish sauce doing the local work.";
+    case "Pork":
+      return "In Vietnamese home and street cooking, pork often gets its identity from caramelized fish sauce, grill smoke, pickles, herbs, or rice-plate sides.";
+    case "Chicken & duck":
+      return "In Vietnam, chicken and duck dishes often hinge on herbs and dipping sauce, so the side sauce can be as defining as the meat.";
+    case "Beef & goat":
+      return "In Vietnam, beef and goat dishes often lean on aromatics, herbs, curry spice, vinegar, or grill smoke rather than plain steak-style seasoning.";
+    case "Vegetarian":
+      return "In Vietnam, chay cooking adapts familiar noodle, soup, rice, and snack forms with tofu, mushrooms, vegetables, and soy-based sauces.";
+    case "Soups, hot pots & family-style":
+      return "In Vietnamese family meals, soups and hot pots are shared around rice, herbs, vegetables, and broth, so they carry table rhythm as much as flavor.";
+    case "Desserts & sweets":
+      return "In Vietnam, sweets often prize texture as much as sugar: beans, jellies, sticky rice, coconut milk, shaved ice, or fruit can share one bowl.";
+    case "Coffee":
+      return "In Vietnam’s café culture, coffee is often robusta-forward, phin-brewed, and shaped by condensed milk, ice, cream, coconut, egg, or salt.";
+    case "Tea":
+      return "In Vietnam, tea ranges from plain meal tea to sweet café drinks; ice, sugar, fruit, herbs, or milk can make the same word feel very different.";
+    case "Smoothies":
+      return "In Vietnamese cafés and street stalls, smoothies often use ripe fruit, ice, and condensed milk, so they sit closer to dessert than plain juice.";
+    case "Juices & fresh drinks":
+      return "In Vietnam, fresh drinks are part of street-side refreshment, with sugar, ice, kumquat, coconut water, pennywort, or sugarcane shaping the local style.";
+    case "Water, soda & other drinks":
+      if (isBeer(item)) {
+        return "In Vietnam, beer is often treated as a cold shared-table drink, sometimes poured over ice and paired with snacks.";
+      }
+      if (isWineOrLiquor(item)) {
+        return "In Vietnam, rice liquor and local spirits usually belong to shared-table drinking, so pour size and setting matter.";
+      }
+      return "In Vietnam, simple drink orders still carry local habits: bottled water may not be chilled, and canned drinks may arrive with a separate glass of ice.";
+    default:
+      return "In Vietnam, the Vietnamese menu name is the strongest clue when English translations change from shop to shop.";
   }
 }
 

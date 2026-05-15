@@ -1,0 +1,63 @@
+{
+  "itemID": "drink-ca-phe-cot-dua",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cà phê cốt dừa",
+  "englishTranslation": "Coconut coffee",
+  "romanizedNoTones": "Ca phe cot dua",
+  "soundOut": "kah fay koht yoo-uh",
+  "notes": "",
+  "atAGlance": "Cà phê cốt dừa turns strong Vietnamese coffee into a coconut-cream café treat, cold, rich, and especially welcome in beach-city heat.",
+  "whatItIs": "Cà phê cốt dừa layers bitter robusta coffee with icy coconut cream or coconut slush. It tastes like coffee and dessert meeting in the same glass.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter",
+    "coconut cream",
+    "ice"
+  ],
+  "howToEnjoy": "Stir just enough to pull coffee through the coconut, then taste before adding sugar. The best version keeps the coffee bitter enough to balance the sweet coconut.",
+  "howLocalsOrder": "Order cà phê cốt dừa when you want a cold, dessert-like coffee. Ask ít ngọt, thêm cà phê, or ít đá if you want it less sweet, stronger, or richer.",
+  "worthKnowing": "Vietnamese cafés use robusta bitterness well here: the coffee keeps the coconut from tasting flat or candy-sweet.",
+  "goodToKnow": "Usually sweet and creamy; ask before ordering if you avoid dairy or coconut cream.",
+  "commonOptions": [
+    "less sweet",
+    "more coffee",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "Vietnamese cafés",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê cốt dừa.",
+    "english": "I’d like one glass of coconut coffee.",
+    "pronunciation": "chaw toy moht lee kah fay koht yoo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cà phê cốt dừa was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

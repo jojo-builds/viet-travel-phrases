@@ -1,0 +1,62 @@
+{
+  "itemID": "food-banh-flan",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh flan",
+  "englishTranslation": "Caramel flan",
+  "romanizedNoTones": "Banh flan",
+  "soundOut": "bahn flan",
+  "notes": "",
+  "atAGlance": "Bánh flan is Vietnamese caramel flan, usually silky custard with dark caramel and sometimes crushed ice or coffee.",
+  "whatItIs": "Bánh flan is caramel custard adopted into Vietnam’s dessert-counter culture.",
+  "usuallyIncludes": [
+    "egg custard",
+    "caramel",
+    "crushed ice optional",
+    "coffee optional"
+  ],
+  "howToEnjoy": "Eat it cold and spoon caramel with each bite. Coffee makes it more bitter and grown-up.",
+  "howLocalsOrder": "Bánh flan is a cool dessert order, often served with coffee syrup or shaved ice. Ask for less ice if you want the custard texture to stay silky.",
+  "worthKnowing": "Bánh flan reflects Vietnam’s easy adoption of custard into everyday café and dessert-shop culture. It is usually served cold, casual, and often with coffee or caramel syrup.",
+  "goodToKnow": "Some shops serve flan with coffee poured over ice. Ask if you want it plain.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh flan.",
+    "english": "I’d like one order of caramel flan.",
+    "pronunciation": "chaw toy moht fuhn bahn flan",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh flan was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

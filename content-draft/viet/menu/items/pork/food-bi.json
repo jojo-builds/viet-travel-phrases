@@ -1,0 +1,65 @@
+{
+  "itemID": "food-bi",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bì",
+  "englishTranslation": "Shredded pork skin",
+  "romanizedNoTones": "Bi",
+  "soundOut": "bee",
+  "notes": "",
+  "atAGlance": "Bì is shredded pork skin, usually with toasted rice powder, lean pork, herbs, and rice plates or rolls.",
+  "whatItIs": "Bì is shredded pork skin mixed with thính, toasted rice powder, giving it a nutty aroma and fine, chewy texture. It appears in cơm tấm, rolls, and rice-paper plates.",
+  "usuallyIncludes": [
+    "shredded pork skin",
+    "toasted rice powder",
+    "pork",
+    "rice plate or rolls",
+    "herbs"
+  ],
+  "howToEnjoy": "Eat bì with rice, herbs, pickles, or rice paper so the toasted-rice aroma has contrast. It is rarely meant to be a plain standalone protein.",
+  "howLocalsOrder": "Ask for bì when you want the shredded pork-skin topping, especially on cơm tấm or bì cuốn. If texture worries you, order a small portion first.",
+  "worthKnowing": "In Vietnam, thính is the hidden magic: toasted rice powder makes bì smell nutty instead of just “pork skin.”",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "add to cơm tấm",
+    "with rice paper",
+    "extra herbs",
+    "small portion"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bì.",
+    "english": "I’d like one order of shredded pork skin.",
+    "pronunciation": "chaw toy moht fuhn bee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Bì was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

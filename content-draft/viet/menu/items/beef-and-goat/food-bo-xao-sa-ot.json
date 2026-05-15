@@ -1,0 +1,65 @@
+{
+  "itemID": "food-bo-xao-sa-ot",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò xào sả ớt",
+  "englishTranslation": "Beef stir-fried with lemongrass and chili",
+  "romanizedNoTones": "Bo xao sa ot",
+  "soundOut": "baw sow sah uht",
+  "notes": "",
+  "atAGlance": "Bò xào sả ớt is beef stir-fried with lemongrass and chili, usually with rice, onion, herbs, and fragrant sả.",
+  "whatItIs": "Bò xào sả ớt is beef stir-fried with lemongrass, chili, garlic, and fish-sauce seasoning. It is fragrant first and spicy second when cooked well.",
+  "usuallyIncludes": [
+    "beef",
+    "lemongrass",
+    "chili",
+    "garlic",
+    "rice"
+  ],
+  "howToEnjoy": "Eat with rice and let the lemongrass aroma lead before adding chili. The beef should be hot from the wok, not swimming in liquid.",
+  "howLocalsOrder": "Order bò xào sả ớt when you want lemongrass-chili beef. Say ít cay before cooking if you need less heat.",
+  "worthKnowing": "Sả ớt is a core Vietnamese flavor pairing, turning a simple beef plate into something bright and aromatic.",
+  "goodToKnow": "Ask for less spicy if heat is a concern.",
+  "commonOptions": [
+    "less spicy",
+    "with rice",
+    "extra lemongrass",
+    "less oil"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask for less spicy if heat is a concern.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò xào sả ớt.",
+    "english": "I’d like one order of beef stir-fried with lemongrass and chili.",
+    "pronunciation": "chaw toy moht fuhn baw sow sah uht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bò xào sả ớt was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

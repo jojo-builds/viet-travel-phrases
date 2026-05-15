@@ -1,0 +1,67 @@
+{
+  "itemID": "food-goi-xoai",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gỏi xoài",
+  "englishTranslation": "Green mango salad",
+  "romanizedNoTones": "Goi xoai",
+  "soundOut": "goy swai",
+  "notes": "",
+  "atAGlance": "Gỏi xoài is green mango salad, usually with herbs, peanuts, dried shrimp or seafood, and chili-fish sauce dressing.",
+  "whatItIs": "Gỏi xoài is green mango salad, usually tossed with herbs, peanuts, dried shrimp or beef jerky depending on the shop, and fish-sauce-lime dressing. It is crisp, tart, sweet, salty, and lively.",
+  "usuallyIncludes": [
+    "green mango",
+    "herbs",
+    "peanuts",
+    "dried shrimp optional",
+    "fish-sauce-lime dressing"
+  ],
+  "howToEnjoy": "Toss before eating so the dressing reaches the mango, then taste before adding chili. Ask about dried shrimp or beef jerky if you avoid either.",
+  "howLocalsOrder": "Order gỏi xoài as a snack or shared salad. Say ít cay, không đậu phộng, or no dried shrimp before it is tossed.",
+  "worthKnowing": "Green mango in Vietnam is firm and sour, which is why the dressing can be sweet, salty, spicy, and still feel refreshing.",
+  "goodToKnow": "Ask about dried shrimp, dried beef, peanuts, and chili before it is tossed; those small toppings change the whole salad.",
+  "commonOptions": [
+    "less spicy",
+    "no peanuts",
+    "no dried shrimp",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi xoài.",
+    "english": "I’d like one order of green mango salad.",
+    "pronunciation": "chaw toy moht fuhn goy swai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "rice paper and wrapper specificity audit",
+      "review-gate fix",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Gỏi xoài was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "itemID": "drink-soda-bac-ha",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Soda bạc hà",
+  "englishTranslation": "Mint soda",
+  "romanizedNoTones": "Soda bac ha",
+  "soundOut": "soh-dah bak hah",
+  "notes": "",
+  "atAGlance": "Soda bạc hà is bright mint soda from Vietnam’s playful café menu world, fizzy, green, sweet, and cooling.",
+  "whatItIs": "Soda bạc hà is soda water with mint syrup and ice. Expect mint soda that is fizzy, sweet, cooling, and bright green on many café menus.",
+  "usuallyIncludes": [
+    "soda water",
+    "mint syrup",
+    "ice",
+    "lime optional"
+  ],
+  "howToEnjoy": "Order it when you want a cold, sweet, minty break rather than fruit.",
+  "howLocalsOrder": "Order soda bạc hà when you want a sweet mint soda. Ask ít ngọt or ít đá before stirring if you want less syrup or less ice.",
+  "worthKnowing": "At Vietnamese cafés, soda bạc hà is playful: bright green mint syrup, fizz, ice, and cooling sweetness rather than traditional tea.",
+  "goodToKnow": "Often syrupy and brightly colored.",
+  "commonOptions": [
+    "less sweet",
+    "less ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly soda bạc hà.",
+    "english": "I’d like one glass of mint soda.",
+    "pronunciation": "chaw toy moht lee soh-dah bak hah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Soda bạc hà was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

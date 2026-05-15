@@ -1,0 +1,59 @@
+{
+  "itemID": "food-banh-pate-so",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh patê sô",
+  "englishTranslation": "Savory puff pastry",
+  "romanizedNoTones": "Banh pate so",
+  "soundOut": "bahn pah-tay soh",
+  "notes": "",
+  "atAGlance": "Bánh patê sô is a savory puff pastry with flaky layers and seasoned filling. It belongs to Vietnam’s bakery-counter snack lane.",
+  "whatItIs": "Bánh patê sô is a savory puff pastry with flaky layers and seasoned filling. It is familiar in shape but belongs naturally to Vietnamese bakery counters.",
+  "usuallyIncludes": [
+    "puff pastry",
+    "savory filling",
+    "buttery layers"
+  ],
+  "howToEnjoy": "Eat it warm for the best flaky texture. It works as a quick bakery snack rather than a full sandwich.",
+  "howLocalsOrder": "Bánh patê sô is a bakery-style order, so ask whether it is warm from the oven. Locals treat the flaky pastry as a quick snack; share size makes sense if you are tasting several items.",
+  "worthKnowing": "Patê sô reflects Vietnam’s bakery culture, where flaky pastry and savory fillings sit beside bánh mì and sweet snacks.",
+  "goodToKnow": "It is best warm, when the pastry is flaky and the filling is aromatic. Treat it as a quick bakery snack, not a bánh mì.",
+  "commonOptions": [
+    "warm",
+    "takeaway",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một cái bánh patê sô.",
+    "english": "I’d like one order of savory puff pastry.",
+    "pronunciation": "chaw toy moht kai bahn pah-tay soh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh patê sô was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

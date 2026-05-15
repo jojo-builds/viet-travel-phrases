@@ -1,0 +1,63 @@
+{
+  "itemID": "drink-sinh-to-dua-hau",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố dưa hấu",
+  "englishTranslation": "Watermelon smoothie",
+  "romanizedNoTones": "Sinh to dua hau",
+  "soundOut": "sing toh yoo-uh how",
+  "notes": "",
+  "atAGlance": "Sinh tố dưa hấu is watermelon blended into a cold, light smoothie that stays more refreshing than creamy.",
+  "whatItIs": "Sinh tố dưa hấu is watermelon blended with ice and sometimes sugar. Expect watermelon smoothie that is icy, juicy, light, and thirst-quenching.",
+  "usuallyIncludes": [
+    "watermelon",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for little or no sugar if the watermelon is ripe.",
+  "howLocalsOrder": "Order sinh tố dưa hấu when you want something cold and light. Ask ít đường or ít đá before blending if you want more fruit flavor.",
+  "worthKnowing": "Watermelon smoothie is the blended version of a hot-day market fruit break: icy, light, and refreshing rather than creamy.",
+  "goodToKnow": "Much lighter than avocado or coconut smoothies.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố dưa hấu.",
+    "english": "I’d like one glass of watermelon smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh yoo-uh how",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Sinh tố dưa hấu was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "itemID": "food-kem-bo",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Kem bơ",
+  "englishTranslation": "Avocado ice cream",
+  "romanizedNoTones": "Kem bo",
+  "soundOut": "kem buh",
+  "notes": "",
+  "atAGlance": "Kem bơ is avocado ice cream or avocado cream, famously associated with Đà Lạt-style dessert shops. It is creamy, green, and richer than a fruit smoothie.",
+  "whatItIs": "Kem bơ is a cold avocado dessert, often blended avocado topped with ice cream or coconut.",
+  "usuallyIncludes": [
+    "avocado",
+    "ice cream",
+    "condensed milk",
+    "coconut optional"
+  ],
+  "howToEnjoy": "Eat it while cold and stir just enough to mix the avocado with the ice cream.",
+  "howLocalsOrder": "Kem bơ is a casual cold dessert, so choose the flavor and whether you want toppings. Eat it quickly in Vietnam's heat before the creamy texture turns soupy.",
+  "worthKnowing": "Đà Lạt is especially known for avocado desserts, and kem bơ is the easy order to remember.",
+  "goodToKnow": "Bơ means avocado here, not butter. Expect dessert creaminess rather than a savory avocado flavor.",
+  "commonOptions": [
+    "less sweet",
+    "extra ice cream",
+    "no coconut",
+    "takeaway cup"
+  ],
+  "regionalAssociation": "Đà Lạt",
+  "originPosture": "regional-association",
+  "travelerCaution": "Usually contains dairy.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly kem bơ.",
+    "english": "I’d like one glass of avocado ice cream.",
+    "pronunciation": "chaw toy moht lee kem buh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Kem bơ was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

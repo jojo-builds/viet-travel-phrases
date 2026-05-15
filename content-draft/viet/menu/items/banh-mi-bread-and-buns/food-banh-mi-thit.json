@@ -1,0 +1,63 @@
+{
+  "itemID": "food-banh-mi-thit",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh mì thịt",
+  "englishTranslation": "Vietnamese pork sandwich",
+  "romanizedNoTones": "Banh mi thit",
+  "soundOut": "bahn mee tit",
+  "notes": "",
+  "atAGlance": "The classic mixed-meat bánh mì: French-introduced bread made Vietnamese with pâté, pork, đồ chua pickles, cilantro, cucumber, chili, and street-cart speed.",
+  "whatItIs": "Bánh mì thịt is the everyday meat sandwich many visitors imagine first, but it is also a compact food history: baguette and pâté meeting Vietnamese pork, herbs, pickled carrot and daikon, and Maggi-style seasoning.",
+  "usuallyIncludes": [
+    "baguette",
+    "pork",
+    "pickled vegetables",
+    "cilantro",
+    "chili optional"
+  ],
+  "howToEnjoy": "Point to the fillings you want if the cart has a glass case. Eat it soon after ordering so the crust stays crisp, the pâté is warm, and the pickles still cut through the pork.",
+  "howLocalsOrder": "Order bánh mì thịt for a pork bánh mì, then say no chili or extra pickles before the vendor adds the final seasoning. Locals keep coming back because it works as breakfast, a workday snack, or a meal you can carry on a motorbike.",
+  "worthKnowing": "Bánh mì became beloved because Vietnam transformed a colonial-era baguette into democratic street food: affordable, fast, layered, and unmistakably local once herbs, pickles, chili, and pork went inside.",
+  "goodToKnow": "If you do not eat pâté or pork liver, ask before ordering.",
+  "commonOptions": [
+    "no chili",
+    "extra pickles",
+    "extra pâté",
+    "less sauce"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "origin-story",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì thịt.",
+    "english": "I’d like one bánh mì thịt.",
+    "pronunciation": "chaw toy moht oh bahn mee tit",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh mì thịt was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

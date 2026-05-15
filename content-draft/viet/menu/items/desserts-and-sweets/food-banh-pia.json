@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-pia",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh pía",
+  "englishTranslation": "Durian mung bean pastry",
+  "romanizedNoTones": "Banh pia",
+  "soundOut": "bahn pee-ah",
+  "notes": "",
+  "atAGlance": "Bánh pía is a flaky southern pastry, often from Sóc Trăng, filled with mung bean, salted egg yolk, and sometimes durian.",
+  "whatItIs": "Bánh pía is a layered pastry with a dense sweet filling, commonly mung bean plus salted egg yolk and sometimes durian.",
+  "usuallyIncludes": [
+    "flaky pastry",
+    "mung bean filling",
+    "salted egg yolk",
+    "durian optional"
+  ],
+  "howToEnjoy": "Eat in small wedges; the pastry is rich, flaky, and often fragrant with durian, mung bean, and salted egg. It pairs well with hot tea.",
+  "howLocalsOrder": "Order bánh pía by piece or box, especially as a Sóc Trăng gift. Ask whether it has durian or salted egg before buying.",
+  "worthKnowing": "Bánh pía is strongly associated with Sóc Trăng and Chinese-Vietnamese pastry traditions.",
+  "goodToKnow": "Ask about durian before buying if the aroma is a concern. The pastry can be rich and sweet-salty.",
+  "commonOptions": [
+    "one piece",
+    "gift box",
+    "ask about durian",
+    "ask about salted egg"
+  ],
+  "regionalAssociation": "Sóc Trăng and southern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "May contain durian and salted egg yolk.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh pía.",
+    "english": "I’d like one order of durian mung bean pastry.",
+    "pronunciation": "chaw toy moht fuhn bahn pee-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh pía was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

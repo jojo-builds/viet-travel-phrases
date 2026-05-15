@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ngheu-hap-sa",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nghêu hấp sả",
+  "englishTranslation": "Clams steamed with lemongrass",
+  "romanizedNoTones": "Ngheu hap sa",
+  "soundOut": "ngay-ew hup sah",
+  "notes": "",
+  "atAGlance": "Nghêu hấp sả is clams steamed with lemongrass, usually with ginger, chili, basil, and a fragrant broth.",
+  "whatItIs": "Nghêu hấp sả are clams steamed with lemongrass, chili, and a light briny broth. The broth should smell fresh, citrusy, and herbal.",
+  "usuallyIncludes": [
+    "clams",
+    "lemongrass",
+    "light clam broth",
+    "chili optional",
+    "herbs"
+  ],
+  "howToEnjoy": "Open the clams, sip a little lemongrass broth, and leave any clam that smells off or stays closed. Add chili only if you want heat over the clean broth.",
+  "howLocalsOrder": "Order nghêu hấp sả as a shared ốc-shop plate. Ask for less chili and check freshness by the aroma when it arrives.",
+  "worthKnowing": "Ốc and seafood shops often serve shellfish slowly, with broth, herbs, and chatter doing as much work as the clams.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "extra lemongrass",
+    "share size",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần nghêu hấp sả.",
+    "english": "I’d like one order of clams steamed with lemongrass.",
+    "pronunciation": "chaw toy moht fuhn ngay-ew hup sah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Nghêu hấp sả was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-nuong-muoi-ot",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Gà nướng muối ớt",
+  "englishTranslation": "Grilled chicken with chili salt",
+  "romanizedNoTones": "Ga nuong muoi ot",
+  "soundOut": "gah noong moo-ee uht",
+  "notes": "",
+  "atAGlance": "Gà nướng muối ớt is salt-chili grilled chicken, usually with smoky skin, chili salt rub, herbs, and cucumber.",
+  "whatItIs": "Gà nướng muối ớt is chicken grilled with chili salt until the skin is smoky, salty, and spicy. The seasoning is part of the crust, not just a side condiment.",
+  "usuallyIncludes": [
+    "chicken",
+    "chili-salt rub",
+    "grilled skin",
+    "cucumber or herbs",
+    "lime-pepper salt optional"
+  ],
+  "howToEnjoy": "Eat with cucumber, herbs, or rice to balance the chili-salt crust. Ask for less spicy before grilling because the rub goes on early.",
+  "howLocalsOrder": "Order gà nướng muối ớt when you want heat built into the grilled chicken. Say ít cay before the grill, then use lime or herbs lightly at the table.",
+  "worthKnowing": "In Vietnam, Gà nướng muối ớt belongs to Vietnamese poultry cooking; look for a lively order when you want heat built into the marinade rather than added later.",
+  "goodToKnow": "This can be spicy even without adding dip, because the chili salt cooks onto the chicken.",
+  "commonOptions": [
+    "less spicy",
+    "with rice",
+    "extra cucumber",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask for less spicy if heat is a concern.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà nướng muối ớt.",
+    "english": "I’d like one order of grilled chicken with chili salt.",
+    "pronunciation": "chaw toy moht fuhn gah noong moo-ee uht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Gà nướng muối ớt was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

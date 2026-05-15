@@ -1,0 +1,66 @@
+{
+  "itemID": "food-thit-kho-trung",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Thịt kho trứng",
+  "englishTranslation": "Braised pork with eggs",
+  "romanizedNoTones": "Thit kho trung",
+  "soundOut": "tit kaw choong",
+  "notes": "",
+  "atAGlance": "Thịt kho trứng is caramel-braised pork and eggs, usually with coconut water or caramel sauce, fish sauce, and rice.",
+  "whatItIs": "Thịt kho trứng is pork and eggs braised in fish sauce, caramel, and often coconut water until the braising liquid turns glossy and salty-sweet. It is rice-table comfort food.",
+  "usuallyIncludes": [
+    "pork",
+    "boiled eggs",
+    "fish-sauce caramel",
+    "coconut water optional",
+    "rice on the side"
+  ],
+  "howToEnjoy": "Break the egg into rice, spoon over a little braising liquid, and use pickles or greens to balance the rich pork.",
+  "howLocalsOrder": "Order thịt kho trứng when you want homestyle pork-and-egg braise. Ask for extra egg, leaner pork, or extra rice before plating.",
+  "worthKnowing": "This is family-meal food in Vietnam: sweet-salty braise, egg, pork, and plain rice doing the comforting work together.",
+  "goodToKnow": "The caramel is savory fish-sauce caramel, not dessert caramel.",
+  "commonOptions": [
+    "extra rice",
+    "extra egg",
+    "leaner pork",
+    "more braising liquid"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần thịt kho trứng.",
+    "english": "I’d like one order of braised pork with eggs.",
+    "pronunciation": "chaw toy moht fuhn tit kaw choong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-validator-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording",
+      "validator cleanup"
+    ],
+    "reviewNote": "Thịt kho trứng was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "itemID": "food-lau-de",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu dê",
+  "englishTranslation": "Goat hot pot",
+  "romanizedNoTones": "Lau de",
+  "soundOut": "low yay",
+  "notes": "",
+  "atAGlance": "Lẩu dê is goat hot pot for the table, usually with herbs, tofu skin, noodles, taro, and a deep goat broth.",
+  "whatItIs": "Lẩu dê is goat hot pot with broth, goat slices or ribs, tofu, taro, greens, herbs, noodles, and dipping condiments. It is a table order built for sharing.",
+  "usuallyIncludes": [
+    "goat hot-pot broth",
+    "goat pieces",
+    "taro",
+    "tofu or tofu skin",
+    "greens and noodles"
+  ],
+  "howToEnjoy": "Cook goat and greens in stages, then add noodles near the end so they do not overcook. Ask about spice level and portion size before the pot arrives.",
+  "howLocalsOrder": "Order lẩu dê by table size, then ask for less spicy broth, extra greens, or extra noodles. It is not usually a solo quick bowl.",
+  "worthKnowing": "Goat hot pot is a social meal in Vietnam, often part of a longer dê restaurant spread with grilled or steamed goat dishes.",
+  "goodToKnow": "Cook goat, taro, tofu, and greens in stages, then add noodles near the end. Ask how many people the pot serves before ordering.",
+  "commonOptions": [
+    "less spicy",
+    "extra greens",
+    "extra noodles",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần lẩu dê.",
+    "english": "I’d like one order of goat hot pot.",
+    "pronunciation": "chaw toy moht fuhn low yay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Lẩu dê was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

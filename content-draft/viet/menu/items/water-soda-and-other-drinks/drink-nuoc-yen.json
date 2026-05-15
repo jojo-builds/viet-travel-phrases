@@ -1,0 +1,62 @@
+{
+  "itemID": "drink-nuoc-yen",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước yến",
+  "englishTranslation": "Bird's nest drink",
+  "romanizedNoTones": "Nuoc yen",
+  "soundOut": "nook yen",
+  "notes": "",
+  "atAGlance": "Nước yến is bird’s nest drink, lightly sweet and silky, prized in Vietnam more for texture and nourishment than bold flavor.",
+  "whatItIs": "Nước yến is sweet drink with bird’s nest strands. Expect bird’s nest drink that is lightly sweet, silky, and prized more for texture than bold flavor.",
+  "usuallyIncludes": [
+    "bird’s nest drink",
+    "sugar syrup",
+    "soft strands",
+    "bottle or can"
+  ],
+  "howToEnjoy": "Sip slowly; the delicate strands are part of the experience.",
+  "howLocalsOrder": "Order nước yến cold if you want the bottled version. Ask before opening if you are unsure about the suspended bird’s-nest texture.",
+  "worthKnowing": "In Vietnamese bottled-drink culture, nước yến is treated as premium and nourishing; the delicate bird’s-nest strands are part of the appeal.",
+  "goodToKnow": "Texture can be unusual if you have never tried bird’s nest.",
+  "commonOptions": [
+    "cold bottle",
+    "no ice",
+    "takeaway",
+    "ask before opening"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains bird’s nest and a noticeable suspended texture.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một chai nước yến.",
+    "english": "I’d like one bottle of bird's nest drink.",
+    "pronunciation": "chaw toy moht chai nook yen",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Nước yến was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

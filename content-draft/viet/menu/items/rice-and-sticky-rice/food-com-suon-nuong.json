@@ -1,0 +1,65 @@
+{
+  "itemID": "food-com-suon-nuong",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm sườn nướng",
+  "englishTranslation": "Rice with grilled pork chop",
+  "romanizedNoTones": "Com suon nuong",
+  "soundOut": "kum swoon noong",
+  "notes": "",
+  "atAGlance": "Cơm sườn nướng is rice with a grilled pork chop, pickles, cucumber, scallion oil, and nước mắm. It is the straightforward cousin of cơm tấm.",
+  "whatItIs": "Cơm sườn nướng is grilled pork over rice, usually with pickles, cucumber, scallion oil, and nước mắm. It is the simpler rice-plate cousin of cơm tấm sườn.",
+  "usuallyIncludes": [
+    "rice",
+    "grilled pork chop",
+    "pickles",
+    "scallion oil",
+    "fish-sauce dressing"
+  ],
+  "howToEnjoy": "Cut the pork into the rice, add pickles for crunch, then spoon nước mắm gradually. The scallion oil and grilled edges should stay noticeable.",
+  "howLocalsOrder": "Order cơm sườn nướng when you want a straightforward grilled pork rice plate. Ask for nước mắm riêng, extra pickles, or less chili before the plate is finished.",
+  "worthKnowing": "Rice plates are everyday lunch language in Vietnam: fast, filling, and anchored by one strong protein plus pickles and nước mắm.",
+  "goodToKnow": "Sườn here usually means pork chop or cutlet, not American barbecue ribs.",
+  "commonOptions": [
+    "nước mắm on the side",
+    "extra pickles",
+    "add fried egg",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains pork and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm sườn nướng.",
+    "english": "I’d like one order of rice with grilled pork chop.",
+    "pronunciation": "chaw toy moht fuhn kum swoon noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Cơm sườn nướng was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

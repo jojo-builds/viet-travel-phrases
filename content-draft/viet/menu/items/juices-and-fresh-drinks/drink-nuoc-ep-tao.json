@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-ep-tao",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước ép táo",
+  "englishTranslation": "Apple juice",
+  "romanizedNoTones": "Nuoc ep tao",
+  "soundOut": "nook ep tow",
+  "notes": "",
+  "atAGlance": "Nước ép táo is a familiar café juice option, crisp and mild, useful when a traveler wants something simple on a Vietnamese drink menu.",
+  "whatItIs": "Nước ép táo is fresh or café-style apple juice. Expect apple juice that is crisp, mild, sweet, and familiar.",
+  "usuallyIncludes": [
+    "apple",
+    "water",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Order it when you want a gentle fruit drink without strong tropical aroma.",
+  "howLocalsOrder": "Nước ép táo is usually made or poured cold, so ask no sugar, less sugar, or no ice before the glass is finished. Fresh fruit versions taste best when the flavor stays tart, pulpy, or fragrant.",
+  "worthKnowing": "In Vietnam, Nước ép táo is more café-style than deeply traditional, but useful on mixed drink menus.",
+  "goodToKnow": "May be sweetened.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước ép táo.",
+    "english": "I’d like one glass of apple juice.",
+    "pronunciation": "chaw toy moht lee nook ep tow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước ép táo was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

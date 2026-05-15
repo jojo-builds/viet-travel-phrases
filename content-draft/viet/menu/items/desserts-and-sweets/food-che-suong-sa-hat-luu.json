@@ -1,0 +1,63 @@
+{
+  "itemID": "food-che-suong-sa-hat-luu",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chè sương sa hạt lựu",
+  "englishTranslation": "Jelly and faux pomegranate seed dessert",
+  "romanizedNoTones": "Che suong sa hat luu",
+  "soundOut": "cheh soong sah hat loo-oo",
+  "notes": "",
+  "atAGlance": "Chè sương sa hạt lựu is a jelly dessert with agar, coconut milk, and faux pomegranate-seed cubes that pop with chewy texture.",
+  "whatItIs": "Chè sương sa hạt lựu is a chilled jelly-and-coconut dessert where color and chew do most of the work.",
+  "usuallyIncludes": [
+    "agar jelly",
+    "faux pomegranate seeds",
+    "coconut milk",
+    "ice",
+    "syrup"
+  ],
+  "howToEnjoy": "Stir lightly and scoop across the jellies so you get more than one texture at once.",
+  "howLocalsOrder": "Order chè sương sa hạt lựu for texture: jelly strands, crunchy ruby-like tapioca bits, coconut milk, and ice. Ask ít đá if you want stronger flavor.",
+  "worthKnowing": "This is a texture-first dessert, a good reminder that Vietnamese sweets often prize chew and coolness.",
+  "goodToKnow": "Hạt lựu means pomegranate seeds, but these are usually colorful starch jellies, not real pomegranate.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly chè sương sa hạt lựu.",
+    "english": "I’d like one glass of jelly and faux pomegranate seed dessert.",
+    "pronunciation": "chaw toy moht lee cheh soong sah hat loo-oo",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chè sương sa hạt lựu was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

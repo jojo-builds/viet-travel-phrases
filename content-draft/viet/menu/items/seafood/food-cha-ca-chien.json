@@ -1,0 +1,66 @@
+{
+  "itemID": "food-cha-ca-chien",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chả cá chiên",
+  "englishTranslation": "Fried fish cake",
+  "romanizedNoTones": "Cha ca chien",
+  "soundOut": "chah kah chee-en",
+  "notes": "",
+  "atAGlance": "Chả cá chiên is fried fish cakes, usually with springy fish paste, dill or herbs, and lime-pepper salt dip or ginger fish sauce.",
+  "whatItIs": "Chả cá chiên is fried fish cake, springy inside with crisp edges, often served as a snack, noodle topping, or rice side with chili, lime, or nước chấm.",
+  "usuallyIncludes": [
+    "fish cake",
+    "fried edges",
+    "herbs optional",
+    "chili optional",
+    "nước chấm or dipping salt"
+  ],
+  "howToEnjoy": "Eat while hot so the fish cake stays bouncy and the edges stay crisp. Dip lightly in nước chấm or lime-pepper salt if served.",
+  "howLocalsOrder": "Order chả cá chiên as a snack, side, or noodle topping. Ask for no chili or extra herbs before the plate lands.",
+  "worthKnowing": "On Vietnamese menus, chả cá can mean fish cake, so chiên tells you this version is fried rather than turmeric-dill chả cá Lã Vọng.",
+  "goodToKnow": "Contains fish and may be served with chili by default.",
+  "commonOptions": [
+    "no chili",
+    "extra herbs",
+    "nước chấm",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chả cá chiên.",
+    "english": "I’d like one order of fried fish cake.",
+    "pronunciation": "chaw toy moht fuhn chah kah chee-en",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Chả cá chiên was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-ca-phe-sua-tuoi",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà phê sữa tươi",
+  "englishTranslation": "Coffee with fresh milk",
+  "romanizedNoTones": "Ca phe sua tuoi",
+  "soundOut": "kah fay soo-uh too-ee",
+  "notes": "",
+  "atAGlance": "Cà phê sữa tươi is fresh-milk coffee for a cleaner dairy finish, a modern alternative to Vietnam’s heavier condensed-milk style.",
+  "whatItIs": "Cà phê sữa tươi is Vietnamese coffee mixed with fresh milk rather than condensed milk. Expect coffee with fresh milk, lighter and less sticky than condensed-milk coffee, with a softer dairy finish.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter",
+    "fresh milk",
+    "ice optional"
+  ],
+  "howToEnjoy": "Order it if you want coffee with milk but not the heavy sweetness of cà phê sữa đá.",
+  "howLocalsOrder": "Cà phê sữa tươi is ordered by temperature, milk, and sweetness. Ask ít đường or ít sữa before the cup is mixed, because Vietnamese coffee shops often build sweetness directly into the drink.",
+  "worthKnowing": "In Vietnam, Cà phê sữa tươi reflects modern café habits where Vietnamese coffee can be adapted for people who prefer a cleaner milk taste.",
+  "goodToKnow": "Still ask about sugar; fresh milk does not always mean unsweetened.",
+  "commonOptions": [
+    "less sweet",
+    "more coffee",
+    "iced",
+    "takeaway"
+  ],
+  "regionalAssociation": "Vietnamese cafés",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê sữa tươi.",
+    "english": "I’d like one glass of coffee with fresh milk.",
+    "pronunciation": "chaw toy moht lee kah fay soo-uh too-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê sữa tươi was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

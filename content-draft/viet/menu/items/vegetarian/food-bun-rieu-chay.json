@@ -1,0 +1,65 @@
+{
+  "itemID": "food-bun-rieu-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún riêu chay",
+  "englishTranslation": "Vegetarian tomato noodle soup",
+  "romanizedNoTones": "Bun rieu chay",
+  "soundOut": "boon ree-ew chai",
+  "notes": "",
+  "atAGlance": "Bún riêu chay is vegetarian crab-style tomato noodle soup, usually with tomato broth, tofu, mushrooms, herbs, and rice vermicelli.",
+  "whatItIs": "Bún riêu chay is vegetarian tomato rice-vermicelli soup inspired by crab-based bún riêu, usually with tofu, mushrooms, tomato broth, herbs, and no crab.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "tomato broth",
+    "tofu",
+    "mushrooms",
+    "fresh herbs"
+  ],
+  "howToEnjoy": "Taste the tomato broth before adding chili or lime, then ask about fish sauce if strict vegetarian cooking matters.",
+  "howLocalsOrder": "Say bún riêu chay clearly, then ask không nước mắm if you need the broth and seasoning fully vegetarian. Ask for extra tofu or less chili before the bowl is finished.",
+  "worthKnowing": "Vietnamese chay cooking often adapts familiar meat or seafood dishes, so this keeps the tomato-herb shape of bún riêu without the crab.",
+  "goodToKnow": "Chay should mean vegetarian, but mixed shops may still use fish sauce or shared broth unless you ask.",
+  "commonOptions": [
+    "no fish sauce",
+    "extra tofu",
+    "less spicy",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask about broth and fish sauce if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún riêu chay.",
+    "english": "I’d like one bowl of vegetarian tomato noodle soup.",
+    "pronunciation": "chaw toy moht toh boon ree-ew chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Bún riêu chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

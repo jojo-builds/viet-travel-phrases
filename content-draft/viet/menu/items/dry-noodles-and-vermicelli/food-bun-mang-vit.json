@@ -1,0 +1,64 @@
+{
+  "itemID": "food-bun-mang-vit",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún măng vịt",
+  "englishTranslation": "Duck and bamboo shoot vermicelli soup",
+  "romanizedNoTones": "Bun mang vit",
+  "soundOut": "boon mahng veet",
+  "notes": "",
+  "atAGlance": "Bún măng vịt is duck and bamboo-shoot vermicelli soup, usually served with herbs and a ginger fish-sauce dip for the duck.",
+  "whatItIs": "Bún măng vịt pairs duck broth, rice vermicelli, bamboo shoots, herbs, and duck meat often dipped in ginger fish sauce. The bamboo keeps the broth earthy and clean.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "duck",
+    "bamboo shoots",
+    "herbs",
+    "ginger fish-sauce dip"
+  ],
+  "howToEnjoy": "Taste the broth, then alternate noodles with bites of duck dipped lightly in ginger fish sauce. Add herbs and chili slowly so the duck flavor stays clear.",
+  "howLocalsOrder": "Order bún măng vịt when you want duck soup with a separate ginger fish-sauce bite. Ask for less chili in the dip if you want the bamboo broth and duck to lead.",
+  "worthKnowing": "Duck noodle soups often depend on the side dip as much as the broth. Ginger, fish sauce, and chili cut through the richness of the duck. In Vietnam, bún măng vịt sits closer to a soup meal than a dry noodle bowl; the duck, bamboo-shoot broth, herbs, and ginger dip make it read local.",
+  "goodToKnow": "Duck often comes with a ginger fish-sauce dip on the side. Use it for the meat, then taste the broth before adding extra chili.",
+  "commonOptions": [
+    "extra herbs",
+    "less spicy",
+    "ginger fish sauce on the side",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún măng vịt.",
+    "english": "I’d like one bowl of duck and bamboo shoot vermicelli soup.",
+    "pronunciation": "chaw toy moht toh boon mahng veet",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bún măng vịt was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

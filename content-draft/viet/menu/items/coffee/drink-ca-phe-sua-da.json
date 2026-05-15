@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-ca-phe-sua-da",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cà phê sữa đá",
+  "englishTranslation": "Vietnamese iced milk coffee",
+  "romanizedNoTones": "Ca phe sua da",
+  "soundOut": "kah fay soo-uh dah",
+  "notes": "",
+  "atAGlance": "Cà phê sữa đá is Vietnam’s iconic iced milk coffee, balancing dark robusta bite with condensed milk and a hard chill from the ice.",
+  "whatItIs": "Cà phê sữa đá is a slow phin coffee mixed with condensed milk and poured over ice. Expect dark robusta bitterness rounded by condensed-milk sweetness, creamy body, and a hard chill from the ice.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter",
+    "condensed milk",
+    "ice"
+  ],
+  "howToEnjoy": "Stir until the condensed milk rises from the bottom; order ít đường only if you want it less dessert-like.",
+  "howLocalsOrder": "Cà phê sữa đá is the classic iced condensed-milk coffee order. Ask less sweet before it is mixed if you want the roasted robusta bite to stay stronger than the milk.",
+  "worthKnowing": "In Vietnam, Cà phê sữa đá shows why Vietnamese iced coffee tastes stronger and sweeter than many visitors expect: robusta coffee gives the bite, condensed milk gives the body.",
+  "goodToKnow": "Strong and sweet; ask for less condensed milk or more ice if you want it lighter.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê sữa đá.",
+    "english": "I’d like one glass of Vietnamese iced milk coffee.",
+    "pronunciation": "chaw toy moht lee kah fay soo-uh dah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê sữa đá was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

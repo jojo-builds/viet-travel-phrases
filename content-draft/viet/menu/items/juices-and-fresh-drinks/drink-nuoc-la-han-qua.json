@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-la-han-qua",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước la hán quả",
+  "englishTranslation": "Monk fruit herbal drink",
+  "romanizedNoTones": "Nuoc la han qua",
+  "soundOut": "nook lah han kwah",
+  "notes": "",
+  "atAGlance": "Nước la hán quả is a dark monk-fruit herbal drink, naturally sweet, cooling, and part of Vietnam’s old-school refreshment culture.",
+  "whatItIs": "Nước la hán quả is la hán quả steeped into a sweet herbal drink. Expect monk-fruit drink that is dark, herbal, naturally sweet, and gently cooling.",
+  "usuallyIncludes": [
+    "monk fruit",
+    "herbal infusion",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Drink it cold as a softer alternative to soda.",
+  "howLocalsOrder": "Nước la hán quả is an herbal sweet drink, so ask ít đường if you want the roots, longan, monk fruit, or cooling herbs to come through. Less ice keeps the flavor from turning watery.",
+  "worthKnowing": "In Vietnam, Nước la hán quả belongs to Vietnam’s cooling herbal drink culture, where sweetness can come from roots and fruits rather than syrup alone.",
+  "goodToKnow": "Usually sweet but not fizzy.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước la hán quả.",
+    "english": "I’d like one glass of monk fruit herbal drink.",
+    "pronunciation": "chaw toy moht lee nook lah han kwah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước la hán quả was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

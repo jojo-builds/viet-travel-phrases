@@ -1,0 +1,63 @@
+{
+  "itemID": "food-banh-mi-ga",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh mì gà",
+  "englishTranslation": "Chicken sandwich",
+  "romanizedNoTones": "Banh mi ga",
+  "soundOut": "bahn mee gah",
+  "notes": "",
+  "atAGlance": "A chicken bánh mì with shredded or grilled gà, crisp pickles, herbs, and bright chili, pâté, or Maggi-style seasoning inside Vietnam's famous airy baguette.",
+  "whatItIs": "Bánh mì gà usually means chicken layered into a Vietnamese baguette with cucumber, cilantro, pickled carrot and daikon, and a swipe of pâté, chili, or Maggi-style soy seasoning depending on the stall.",
+  "usuallyIncludes": [
+    "baguette",
+    "chicken",
+    "pickled vegetables",
+    "cilantro",
+    "chili optional"
+  ],
+  "howToEnjoy": "Look for a vendor turning over sandwiches quickly so the bread stays fresh. It is a good first bánh mì if you want something lighter than pork but still full of herb-and-pickle snap.",
+  "howLocalsOrder": "Order bánh mì gà when you want chicken instead of pork. Ask for no chili, extra pickles, or less mayonnaise-style spread before the sandwich is closed.",
+  "worthKnowing": "Chicken bánh mì shows how the sandwich stayed alive by adapting. The French-influenced loaf remains, but the filling can shift to chicken while the Vietnamese identity comes from herbs, đồ chua, chili, and quick street service.",
+  "goodToKnow": "Ask whether it has pâté if you avoid pork liver.",
+  "commonOptions": [
+    "no chili",
+    "extra pâté",
+    "extra pickles",
+    "toasted bread"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì gà.",
+    "english": "I’d like one chicken bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh mì gà was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

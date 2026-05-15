@@ -1,0 +1,65 @@
+{
+  "itemID": "food-mien-xao-hai-san",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Miến xào hải sản",
+  "englishTranslation": "Stir-fried glass noodles with seafood",
+  "romanizedNoTones": "Mien xao hai san",
+  "soundOut": "mee-en sow high sahn",
+  "notes": "",
+  "atAGlance": "Miến xào hải sản is glass noodles stir-fried with seafood, usually with shrimp, squid, vegetables, and garlic.",
+  "whatItIs": "Miến xào hải sản is glass noodles stir-fried with shrimp, squid, fish cake, or mixed seafood. The noodles soak up garlic, seafood juices, and wok seasoning.",
+  "usuallyIncludes": [
+    "glass noodles",
+    "seafood",
+    "garlic",
+    "garlic-fish-sauce stir-fry glaze",
+    "herbs"
+  ],
+  "howToEnjoy": "Eat it hot while the glass noodles are slippery and the seafood is tender. If shellfish is a concern, ask what seafood is included before ordering.",
+  "howLocalsOrder": "Order miến xào hải sản for a shared seafood noodle plate. Ask ít cay, ít dầu, or no shellfish before the wok starts.",
+  "worthKnowing": "In Vietnam, miến turns translucent and springy, so this seafood plate feels lighter than egg-noodle stir-fries even when the shrimp and squid flavor is strong.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "less oil",
+    "ask about shellfish",
+    "extra vegetables"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô miến xào hải sản.",
+    "english": "I’d like one bowl of stir-fried glass noodles with seafood.",
+    "pronunciation": "chaw toy moht toh mee-en sow high sahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Miến xào hải sản was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

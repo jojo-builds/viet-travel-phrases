@@ -1,0 +1,66 @@
+{
+  "itemID": "food-banh-hoi-thit-nuong",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh hỏi thịt nướng",
+  "englishTranslation": "Fine rice vermicelli sheets with grilled pork",
+  "romanizedNoTones": "Banh hoi thit nuong",
+  "soundOut": "bahn hoy tit noong",
+  "notes": "",
+  "atAGlance": "Bánh hỏi thịt nướng is fine rice-noodle sheets with grilled pork, usually with scallion oil, herbs, rice paper, and nước chấm.",
+  "whatItIs": "Bánh hỏi thịt nướng pairs delicate woven rice-noodle sheets with grilled pork, scallion oil, herbs, rice paper, and nước chấm. It is often eaten as small wrapped bites.",
+  "usuallyIncludes": [
+    "fine rice vermicelli sheets",
+    "grilled pork",
+    "scallion oil",
+    "fresh herbs",
+    "rice paper and nước chấm"
+  ],
+  "howToEnjoy": "Use rice paper if it is served: layer bánh hỏi, grilled pork, herbs, and cucumber, then dip lightly in nước chấm. The noodle sheets are delicate, so do not drown them.",
+  "howLocalsOrder": "Order bánh hỏi thịt nướng when you want a roll-your-own grilled pork plate. Ask for extra rice paper, extra herbs, or no chili in the nước chấm before everyone starts wrapping.",
+  "worthKnowing": "In Vietnam, bánh hỏi makes grilled pork feel elegant: tiny noodle sheets carry scallion oil, smoke, herbs, and fish-sauce brightness in one bite.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "no chili",
+    "extra nước chấm"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh hỏi thịt nướng.",
+    "english": "I’d like one order of fine rice vermicelli sheets with grilled pork.",
+    "pronunciation": "chaw toy moht fuhn bahn hoy tit noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Bánh hỏi thịt nướng was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

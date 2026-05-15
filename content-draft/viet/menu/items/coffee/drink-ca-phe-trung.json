@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-ca-phe-trung",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cà phê trứng",
+  "englishTranslation": "Egg coffee",
+  "romanizedNoTones": "Ca phe trung",
+  "soundOut": "kah fay choong",
+  "notes": "",
+  "atAGlance": "Cà phê trứng is Hanoi egg coffee, with strong robusta under whipped egg cream and a 1946 milk-shortage story behind the cup.",
+  "whatItIs": "Cà phê trứng is Hanoi’s egg coffee, created when fresh milk was scarce and whipped egg yolk became a clever creamy cap for strong Vietnamese coffee. Expect bittersweet robusta underneath and a custardy, almost tiramisu-like top.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter",
+    "egg cream",
+    "condensed milk"
+  ],
+  "howToEnjoy": "Use a spoon to taste the foam first, then sip through to the coffee so the bitter and custard layers meet.",
+  "howLocalsOrder": "Cà phê trứng is a café treat, so choose hot if you want the egg cream thick and custardy. Ask less sweet before it is made; stirring too early flattens the creamy top.",
+  "worthKnowing": "The drink is usually linked to Nguyễn Văn Giảng of Café Giảng in Hanoi, often dated to 1946. That origin story matters: it turns a moment of milk scarcity into a signature of Vietnamese café ingenuity.",
+  "goodToKnow": "Contains egg and is rich enough to treat like dessert. Served hot, it shows the Hanoi origin best because the egg cream stays thick and warm.",
+  "commonOptions": [
+    "hot",
+    "iced",
+    "less sweet",
+    "takeaway"
+  ],
+  "regionalAssociation": "Hanoi",
+  "originPosture": "origin-story",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê trứng.",
+    "english": "I’d like one glass of egg coffee.",
+    "pronunciation": "chaw toy moht lee kah fay choong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê trứng was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

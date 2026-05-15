@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-viet-quat",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố việt quất",
+  "englishTranslation": "Blueberry smoothie",
+  "romanizedNoTones": "Sinh to viet quat",
+  "soundOut": "sing toh vee-et kwat",
+  "notes": "",
+  "atAGlance": "Sinh tố việt quất is blueberry smoothie, more modern café than old street stall, sweet, creamy, and familiar for travelers.",
+  "whatItIs": "Sinh tố việt quất is blueberries blended with ice, milk, or yogurt. Expect blueberry smoothie that is berry-sweet, creamy, and more modern café than market-stall classic.",
+  "usuallyIncludes": [
+    "blueberry",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for less sugar if you want tart berry flavor.",
+  "howLocalsOrder": "Sinh tố việt quất is blended to order, so ask ít đường, ít sữa, or ít đá before the fruit hits the blender. The best version should taste like blueberry, not just cold condensed milk.",
+  "worthKnowing": "In Vietnam, Sinh tố việt quất belongs to the newer café side of Vietnam’s smoothie menus rather than older street-stall fruit staples.",
+  "goodToKnow": "Usually familiar but sweet.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố việt quất.",
+    "english": "I’d like one glass of blueberry smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh vee-et kwat",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố việt quất was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

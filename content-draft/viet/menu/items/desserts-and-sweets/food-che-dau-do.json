@@ -1,0 +1,62 @@
+{
+  "itemID": "food-che-dau-do",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chè đậu đỏ",
+  "englishTranslation": "Red bean sweet soup",
+  "romanizedNoTones": "Che dau do",
+  "soundOut": "cheh dow daw",
+  "notes": "",
+  "atAGlance": "Chè đậu đỏ is red bean sweet soup, usually soft beans in syrup with coconut milk or ice. It is earthy, sweet, and filling.",
+  "whatItIs": "Chè đậu đỏ is red bean chè, a bean-based dessert that can be served warm or cold.",
+  "usuallyIncludes": [
+    "red beans",
+    "sugar syrup",
+    "coconut milk optional",
+    "ice optional"
+  ],
+  "howToEnjoy": "Eat it slowly like a small bowl, not a drink. Coconut milk makes it richer.",
+  "howLocalsOrder": "Order chè đậu đỏ by bowl or cup, then choose ice or coconut milk. Ask less sugar if you want the red beans to taste earthy, not candy-sweet.",
+  "worthKnowing": "Bean-based chè is a useful Vietnam dessert lesson: red beans can be sweet, coconut-rich, and icy, with texture carrying as much pleasure as sugar.",
+  "goodToKnow": "The beans should be tender but still recognizable. Ask for less sweet if you want it lighter.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô chè đậu đỏ.",
+    "english": "I’d like one bowl of red bean sweet soup.",
+    "pronunciation": "chaw toy moht toh cheh dow daw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chè đậu đỏ was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "itemID": "food-rau-cau-dua",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Rau câu dừa",
+  "englishTranslation": "Coconut jelly",
+  "romanizedNoTones": "Rau cau dua",
+  "soundOut": "row cow yoo-uh",
+  "notes": "",
+  "atAGlance": "Rau câu dừa is coconut jelly, often layered with clear coconut water jelly and creamy coconut milk jelly.",
+  "whatItIs": "Rau câu dừa is a coconut agar dessert with a firm, refreshing jelly texture.",
+  "usuallyIncludes": [
+    "coconut jelly",
+    "coconut water",
+    "coconut milk",
+    "agar"
+  ],
+  "howToEnjoy": "Eat cold in small pieces. It is lighter than ice cream and cleaner than coconut pudding.",
+  "howLocalsOrder": "Order rau câu dừa chilled and ask less sweet if possible. The point is clean coconut flavor and a cool agar-jelly snap, not a heavy dessert.",
+  "worthKnowing": "Agar jellies are common in Vietnamese sweets because they hold shape and stay refreshing in heat.",
+  "goodToKnow": "Rau câu means agar jelly. It should be clean, cool, and sliceable.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần rau câu dừa.",
+    "english": "I’d like one order of coconut jelly.",
+    "pronunciation": "chaw toy moht fuhn row cow yoo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Rau câu dừa was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

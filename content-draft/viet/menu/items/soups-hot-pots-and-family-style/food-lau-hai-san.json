@@ -1,0 +1,64 @@
+{
+  "itemID": "food-lau-hai-san",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Lẩu hải sản",
+  "englishTranslation": "Seafood hot pot",
+  "romanizedNoTones": "Lau hai san",
+  "soundOut": "low high sahn",
+  "notes": "",
+  "atAGlance": "Lẩu hải sản is seafood hot pot, usually with shrimp, squid, fish, greens, mushrooms, and noodles.",
+  "whatItIs": "Lẩu hải sản is seafood hot pot with shrimp, squid, fish, clams or crab depending on the shop, plus sour-spicy broth, greens, mushrooms, and noodles.",
+  "usuallyIncludes": [
+    "shrimp",
+    "squid",
+    "fish or clams",
+    "sour-spicy broth",
+    "greens and noodles"
+  ],
+  "howToEnjoy": "Cook seafood in stages so shrimp, squid, and clams do not overcook. Ask about shellfish and spice level before the pot starts.",
+  "howLocalsOrder": "Order lẩu hải sản by table size, then ask what seafood is included. Request less spicy broth or no shellfish if needed.",
+  "worthKnowing": "At Vietnamese seafood hot-pot tables, timing matters: delicate seafood first, greens next, noodles near the end.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "ask about shellfish",
+    "less spicy",
+    "extra greens",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu hải sản.",
+    "english": "I’d like one order of seafood hot pot.",
+    "pronunciation": "chaw toy moht noy low high sahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Lẩu hải sản was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-cha-gio-tom-thit",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chả giò tôm thịt",
+  "englishTranslation": "Fried spring rolls with shrimp and pork",
+  "romanizedNoTones": "Cha gio tom thit",
+  "soundOut": "chah yaw tom tit",
+  "notes": "",
+  "atAGlance": "Chả giò tôm thịt is fried spring rolls with shrimp and pork, usually with rice paper or wheat wrapper, herbs, lettuce, and nước chấm.",
+  "whatItIs": "Chả giò tôm thịt are fried spring rolls filled with shrimp and pork, served crisp with lettuce, herbs, and nước chấm.",
+  "usuallyIncludes": [
+    "fried wrapper",
+    "shrimp and pork filling",
+    "lettuce",
+    "fresh herbs",
+    "nước chấm"
+  ],
+  "howToEnjoy": "Wrap the crisp roll in lettuce or herbs, then dip lightly in nước chấm. The shrimp-pork filling is richer when the greens stay fresh.",
+  "howLocalsOrder": "Order chả giò tôm thịt when you want the shrimp-and-pork fried roll. Ask for no chili in the nước chấm or extra lettuce before sharing.",
+  "worthKnowing": "Tôm thịt means shrimp and pork, a useful filling phrase across rolls, dumplings, and noodle dishes.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "extra lettuce",
+    "extra herbs",
+    "no chili",
+    "extra nước chấm"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chả giò tôm thịt.",
+    "english": "I’d like one order of fried spring rolls with shrimp and pork.",
+    "pronunciation": "chaw toy moht fuhn chah yaw tom tit",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Chả giò tôm thịt was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

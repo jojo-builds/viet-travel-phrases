@@ -1,0 +1,62 @@
+{
+  "itemID": "food-banh-mi-bo-kho",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh mì bò kho",
+  "englishTranslation": "Bread served with beef stew",
+  "romanizedNoTones": "Banh mi bo kho",
+  "soundOut": "bahn mee baw kaw",
+  "notes": "",
+  "atAGlance": "Bánh mì bò kho is Vietnamese beef stew served with crisp baguette for dipping. The stew is warm, aromatic, and rich with beef, carrots, and gentle spice.",
+  "whatItIs": "Bánh mì bò kho is Vietnamese beef stew served with bread for dipping. The bowl brings tender beef, carrots, warm spice, herbs, and broth that the baguette is meant to catch.",
+  "usuallyIncludes": [
+    "baguette",
+    "beef stew",
+    "carrots",
+    "herbs",
+    "spiced broth"
+  ],
+  "howToEnjoy": "Tear the bread and dip it into the stew while the broth is hot. Add herbs, lime, or chili gradually so the warm spice stays balanced.",
+  "howLocalsOrder": "Bánh mì bò kho is ordered as stew plus bread, not a normal sandwich. Ask for extra bread if you like dipping, and ask less spicy before the bò kho broth is ladled.",
+  "worthKnowing": "This order shows another side of bánh mì: bread as a tool for broth, not just a sandwich. Bò kho itself is a Vietnamese comfort stew with beef, carrots, and aromatics.",
+  "goodToKnow": "This is not a filled sandwich. Tear the bread and dip it into the broth, then use herbs, lime, or chili to brighten the stew.",
+  "commonOptions": [
+    "extra bread",
+    "less spicy",
+    "extra herbs",
+    "share size"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò kho bánh mì.",
+    "english": "I’d like one order of beef stew with bread.",
+    "pronunciation": "chaw toy moht fuhn baw kaw banh mee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh mì bò kho was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

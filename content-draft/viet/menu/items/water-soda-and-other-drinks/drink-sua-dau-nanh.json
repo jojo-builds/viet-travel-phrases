@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-sua-dau-nanh",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Sữa đậu nành",
+  "englishTranslation": "Soy milk",
+  "romanizedNoTones": "Sua dau nanh",
+  "soundOut": "soo-uh dow nanh",
+  "notes": "",
+  "atAGlance": "Sữa đậu nành is soy milk, nutty, soft, and familiar at breakfast stalls, markets, and bakeries.",
+  "whatItIs": "Sữa đậu nành is soy milk, often fresh and sweetened. Expect soy milk that is nutty, soft, lightly sweet, and comforting hot or cold.",
+  "usuallyIncludes": [
+    "soy milk",
+    "sugar optional",
+    "ice optional"
+  ],
+  "howToEnjoy": "Try it warm in the morning or cold with snacks.",
+  "howLocalsOrder": "Sữa đậu nành can be hot or cold depending on the stall. Ask không đường for plain soy flavor, or nóng if you want the breakfast-stall version warm.",
+  "worthKnowing": "In Vietnam, Sữa đậu nành is a familiar Vietnamese breakfast and street-drink option, especially around markets and bakeries.",
+  "goodToKnow": "Ask about sugar if you want it plain.",
+  "commonOptions": [
+    "hot",
+    "cold",
+    "less sweet",
+    "takeaway bottle"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sữa đậu nành.",
+    "english": "I’d like one glass of soy milk.",
+    "pronunciation": "chaw toy moht lee soo-uh dow nanh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sữa đậu nành was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-ro-ti",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gà rô ti",
+  "englishTranslation": "Vietnamese roasted chicken",
+  "romanizedNoTones": "Ga ro ti",
+  "soundOut": "gah roh tee",
+  "notes": "",
+  "atAGlance": "Gà rô ti is Vietnamese rô ti chicken, usually with soy or fish-sauce glaze, gentle sweetness, and rice.",
+  "whatItIs": "Gà rô ti is Vietnamese-style roasted or braised chicken with a savory-sweet glaze, often served with rice, cucumber, pickles, and chicken juices.",
+  "usuallyIncludes": [
+    "chicken",
+    "rô ti glaze",
+    "rice",
+    "pickles or cucumber",
+    "pan juices"
+  ],
+  "howToEnjoy": "Eat the glazed chicken with rice so the savory-sweet juices do not overwhelm. Pickles or cucumber keep the plate bright.",
+  "howLocalsOrder": "Order gà rô ti when you want chicken with a glossy roasted-braised flavor. Ask for extra rice, extra pickles, or less chili before the plate is dressed.",
+  "worthKnowing": "Rô ti in Vietnam often means a local roast-braise style rather than Western rotisserie.",
+  "goodToKnow": "Rô ti is usually sweet-savory and glossy, often with garlic and soy or fish-sauce depth; ask for rice to catch the pan juices.",
+  "commonOptions": [
+    "extra rice",
+    "extra pickles",
+    "less spicy",
+    "more chicken juices"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà rô ti.",
+    "english": "I’d like one order of Vietnamese roasted chicken.",
+    "pronunciation": "chaw toy moht fuhn gah roh tee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gà rô ti was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

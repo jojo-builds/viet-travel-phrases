@@ -1,0 +1,66 @@
+{
+  "itemID": "food-gio-thu",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Giò thủ",
+  "englishTranslation": "Pork head terrine",
+  "romanizedNoTones": "Gio thu",
+  "soundOut": "yaw too",
+  "notes": "",
+  "atAGlance": "Giò thủ is head cheese-style pork terrine, usually with ear, cheek, pepper, wood ear mushroom, and banana-leaf wrapping.",
+  "whatItIs": "Giò thủ is head-cheese style pork terrine made with ear, cheek, wood ear mushroom, fish sauce, and pepper, pressed into a firm sliceable roll.",
+  "usuallyIncludes": [
+    "pork terrine",
+    "ear or cheek pieces",
+    "wood ear mushroom",
+    "black pepper",
+    "banana-leaf wrapping"
+  ],
+  "howToEnjoy": "Eat thin slices for the crunch of pork ear and wood ear mushroom. It is often a snack, Tết food, or side with pickles and herbs.",
+  "howLocalsOrder": "Order giò thủ if you like chewy, peppery pork terrine textures. Ask what is inside if ear or head-meat texture is not for you.",
+  "worthKnowing": "On Vietnamese Tết and snack tables, the texture is the story: springy pork, crunchy ear, wood ear mushroom, and pepper in one slice.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "thin slices",
+    "with pickles",
+    "ask what is inside",
+    "share plate"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần giò thủ.",
+    "english": "I’d like one order of pork head terrine.",
+    "pronunciation": "chaw toy moht fuhn yaw too",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Giò thủ was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

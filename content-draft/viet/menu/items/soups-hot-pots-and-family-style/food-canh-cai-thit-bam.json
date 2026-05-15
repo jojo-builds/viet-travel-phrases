@@ -1,0 +1,64 @@
+{
+  "itemID": "food-canh-cai-thit-bam",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Canh cải thịt bằm",
+  "englishTranslation": "Mustard green soup with minced pork",
+  "romanizedNoTones": "Canh cai thit bam",
+  "soundOut": "kan kai tit bahm",
+  "notes": "",
+  "atAGlance": "Canh cải thịt bằm is mustard-green soup with minced pork, usually with peppery greens, clear broth, and rice.",
+  "whatItIs": "Canh cải thịt bằm is mustard-green soup with minced pork in a clear broth. It is simple, peppery, slightly bitter, and made for rice.",
+  "usuallyIncludes": [
+    "mustard greens",
+    "minced pork",
+    "clear broth",
+    "scallions",
+    "rice on the side"
+  ],
+  "howToEnjoy": "Eat with rice and let the bitter greens balance richer dishes on the table. Add pepper lightly if served.",
+  "howLocalsOrder": "Order canh cải thịt bằm as a home-style shared soup. Ask about pork if you avoid it, or request extra greens if you want it lighter.",
+  "worthKnowing": "Canh is everyday Vietnamese soup, usually part of a rice meal rather than a starter course.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "with rice",
+    "ask about pork",
+    "extra greens",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô canh cải thịt bằm.",
+    "english": "I’d like one bowl of mustard green soup with minced pork.",
+    "pronunciation": "chaw toy moht toh kan kai tit bahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Canh cải thịt bằm was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

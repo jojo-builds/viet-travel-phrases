@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-tra-gung",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà gừng",
+  "englishTranslation": "Ginger tea",
+  "romanizedNoTones": "Tra gung",
+  "soundOut": "chah goong",
+  "notes": "",
+  "atAGlance": "Trà gừng is ginger tea for warmth and comfort, spicy in the throat, lightly sweet, and especially welcome after rain or heavy food.",
+  "whatItIs": "Trà gừng is tea or hot water infused with ginger, often sweetened. Expect ginger tea that is warm, spicy, slightly sweet, and soothing in the throat.",
+  "usuallyIncludes": [
+    "ginger",
+    "tea or hot water",
+    "sugar or honey optional"
+  ],
+  "howToEnjoy": "Order it hot when you want something calming after rain, travel, or a heavy meal.",
+  "howLocalsOrder": "Order trà gừng hot when you want the ginger warmth most clearly. Ask ít đường if you want the spicy throat-warming flavor instead of a syrupy cup.",
+  "worthKnowing": "In Vietnam, Trà gừng fits Vietnam’s practical drink culture: ginger is used for warmth, digestion, and comfort, not just flavor.",
+  "goodToKnow": "Ask about sugar if you want it less sweet.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà gừng.",
+    "english": "I’d like one glass of ginger tea.",
+    "pronunciation": "chaw toy moht lee chah goong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trà gừng was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

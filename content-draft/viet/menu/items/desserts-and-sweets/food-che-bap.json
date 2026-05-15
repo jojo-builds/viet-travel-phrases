@@ -1,0 +1,62 @@
+{
+  "itemID": "food-che-bap",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chè bắp",
+  "englishTranslation": "Sweet corn pudding",
+  "romanizedNoTones": "Che bap",
+  "soundOut": "cheh bap",
+  "notes": "",
+  "atAGlance": "Chè bắp is sweet corn pudding, usually made with tender corn, sticky rice or tapioca body, coconut milk, and gentle sweetness.",
+  "whatItIs": "Chè bắp is corn chè, a creamy-sweet bowl where corn flavor stays visible.",
+  "usuallyIncludes": [
+    "sweet corn",
+    "coconut milk",
+    "tapioca or sticky rice",
+    "sugar"
+  ],
+  "howToEnjoy": "Eat warm or chilled depending on the shop. Coconut milk and a little salt can make the corn taste sweeter.",
+  "howLocalsOrder": "Order chè bắp warm or chilled if the vendor offers both. Ask ít đường if you want the sweet-corn flavor to stay gentle rather than syrupy.",
+  "worthKnowing": "Corn fits naturally into Vietnamese sweets. Chè bắp turns sweet corn into a soft dessert with coconut milk, showing how market produce moves easily between snack and dessert bowls.",
+  "goodToKnow": "Bắp means corn. Expect a soft spoon dessert, not a corn drink.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly chè bắp.",
+    "english": "I’d like one glass of sweet corn pudding.",
+    "pronunciation": "chaw toy moht lee cheh bap",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chè bắp was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

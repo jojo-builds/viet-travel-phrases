@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-trang-nuong",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh tráng nướng",
+  "englishTranslation": "Grilled rice paper, Vietnamese pizza",
+  "romanizedNoTones": "Banh trang nuong",
+  "soundOut": "bahn chang noong",
+  "notes": "",
+  "atAGlance": "Bánh tráng nướng is grilled rice paper “pizza”, usually with egg, scallion, dried shrimp or sausage, chili sauce, and crackle.",
+  "whatItIs": "Bánh tráng nướng is grilled rice paper cooked until crisp with egg, scallions, dried shrimp or sausage, chili, and mayonnaise-style or savory toppings. It is often nicknamed Vietnamese pizza.",
+  "usuallyIncludes": [
+    "grilled rice paper",
+    "egg or toppings",
+    "scallions",
+    "chili sauce"
+  ],
+  "howToEnjoy": "Eat it hot before the rice paper loses its crackle. Say no chili before the vendor sauces the top, because the spice gets baked into the snack.",
+  "howLocalsOrder": "Order bánh tráng nướng by topping if the stall offers choices. Ask for no chili, no dried shrimp, or extra egg before it hits the grill.",
+  "worthKnowing": "This is a street-snack texture dish: thin rice paper turns brittle and smoky, while egg and toppings make it savory enough to share.",
+  "goodToKnow": "Often called “Vietnamese pizza,” but expect rice paper, egg, dried shrimp or sausage, scallions, and chili rather than cheese-heavy pizza.",
+  "commonOptions": [
+    "no chili",
+    "extra egg",
+    "no dried shrimp",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh tráng nướng.",
+    "english": "I’d like one order of grilled rice paper, Vietnamese pizza.",
+    "pronunciation": "chaw toy moht fuhn bahn chang noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh tráng nướng was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

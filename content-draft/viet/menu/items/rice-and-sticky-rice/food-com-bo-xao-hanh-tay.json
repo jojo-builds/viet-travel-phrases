@@ -1,0 +1,62 @@
+{
+  "itemID": "food-com-bo-xao-hanh-tay",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm bò xào hành tây",
+  "englishTranslation": "Rice with stir-fried beef and onions",
+  "romanizedNoTones": "Com bo xao hanh tay",
+  "soundOut": "kum baw sow hanh tay",
+  "notes": "",
+  "atAGlance": "Cơm bò xào hành tây is rice with beef stir-fried with onions, garlic, and wok seasoning. It is a hot-wok comfort plate, not a stew.",
+  "whatItIs": "Cơm bò xào hành tây is a beef-and-onion stir-fry served over rice.",
+  "usuallyIncludes": [
+    "rice",
+    "stir-fried beef",
+    "onion",
+    "garlic",
+    "savory garlic-fish-sauce stir-fry glaze"
+  ],
+  "howToEnjoy": "Let the garlic-fish-sauce stir-fry glaze season the rice. Ask for less onion only before the dish is cooked.",
+  "howLocalsOrder": "For Cơm bò xào hành tây, name the plate and then choose the practical add-on: fried egg or extra rice. Locals balance rice plates with pickles, herbs, or a bright dip rather than eating the protein alone.",
+  "worthKnowing": "This is a practical traveler order: easy to understand, filling, and still Vietnamese in seasoning.",
+  "goodToKnow": "Hành tây means onion. Order this when you want beef-and-rice with a familiar sautéed-onion flavor.",
+  "commonOptions": [
+    "fried egg",
+    "extra rice",
+    "less garlic-fish-sauce stir-fry glaze",
+    "extra pickles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm bò xào hành tây.",
+    "english": "I’d like one order of rice with stir-fried beef and onions.",
+    "pronunciation": "chaw toy moht fuhn kum baw sow hanh tay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cơm bò xào hành tây was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}
